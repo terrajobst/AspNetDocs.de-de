@@ -59,6 +59,83 @@
       "Publish",
       "Pdf"
     ],
+{
+  "build_entry_point": "docs",
+  "docsets_to_publish": [
+    {
+      "docset_name": "AspNetDocs",
+      "build_source_folder": "aspnet",
+      "build_output_subfolder": "aspnet",
+      "locale": "de-de",
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "version": 0
+    }
+  ],
+  "notification_subscribers": [],
+  "sync_notification_subscribers": [],
+  "branches_to_filter": [
+    "live",
+    "master-sxs"
+  ],
+  "git_repository_url_open_to_public_contributors": "https://github.com/aspnet/AspNetDocs.de-de",
+  "git_repository_branch_open_to_public_contributors": "live",
+  "skip_source_output_uploading": false,
+  "need_preview_pull_request": true,
+  "need_pr_comments": false,
+  "dependent_repositories": [
+    {
+      "path_to_root": "_themes",
+      "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://github.com/aspnet/AspNetDocs",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
+    }
+  ],
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ],
+    "live-sxs": [
+      "Publish",
+      "Pdf"
+    ],
+    "master": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
+  "need_generate_pdf": false,
+  "need_generate_intellisense": false
+}
+
     "master": [
       "Publish",
       "Pdf"
