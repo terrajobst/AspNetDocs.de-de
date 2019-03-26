@@ -399,7 +399,7 @@ description: 'Erfahren Sie, wie Sie ASP.NET-Anwendungen und -Webanwendungen erst
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Echtzeit</h3>
-                                                    <p>Erfahren Sie, wie Sie eine Chatanwendung mithilfe von ASP.NET SignalR 2 und Visual Studio entwickeln.</p>
+                                                    <p>Erfahren Sie, wie Sie eine Chatanwendung mithilfe von ASP.NET SignalR 2 und Visual Studio entwickeln können.</p>
                                                 </div>
                                             </div>
                                         </div>
