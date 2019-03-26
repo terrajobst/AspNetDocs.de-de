@@ -8,19 +8,18 @@ ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 393d14799973e9126379743f63f79a7131206f38
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037817"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426080"
 ---
-<a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity
-====================
+# <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity
+
 by [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
 
 > Dieses Tutorial veranschaulicht die Schritte zum Migrieren einer vorhandenen Webanwendung mit Benutzer- und Rolle mithilfe von SQL-Mitgliedschaftsanbieter auf das neue ASP.NET Identity-System erstellt. Dieser Ansatz umfasst eine Änderung der vorhandenen Datenbankschema auf den von der ASP.NET Identity und Hook in die alte/neue Klassen, die es benötigt. Nachdem Sie diesen Ansatz, nach der Migration Ihrer Datenbank, werden zukünftige Updates für Identität mühelos verarbeitet.
-
 
 Für dieses Tutorial dauert es eine Webanwendungsvorlage (Webformulare) aus, die mithilfe von Visual Studio 2010 zum Erstellen von Benutzer-und Rolle erstellt. SQL-Skripts wird anschließend verwendet, die vorhandene Datenbank zu Tabellen, die von der Identity-System benötigt werden migriert. Als Nächstes wir installieren die erforderlichen NuGet-Pakete und Hinzufügen von neuen Konto-Verwaltungsseiten auf die das Identity-System zur Verwaltung der Gruppenmitgliedschaft verwendet. Zum Testen der Migration mit SQL-Mitgliedschaftsanbieter erstellten Benutzer sollten in der Lage, melden Sie sich, und neue Benutzer sollten in der Lage, zu registrieren. Sie finden das vollständige Beispiel [hier](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/SQLMembership-Identity-OWIN/). Siehe auch [Migration von ASP.NET-Mitgliedschaft zu ASP.NET Identity](http://travis.io/blog/2015/03/24/migrate-from-aspnet-membership-to-aspnet-identity.html).
 
@@ -50,7 +49,7 @@ Für dieses Tutorial dauert es eine Webanwendungsvorlage (Webformulare) aus, die
 
 1. Installieren von Visual Studio Express 2013 für Web- oder Visual Studio 2013, zusammen mit den [neuesten](https://www.microsoft.com/download/details.aspx?id=44921).
 2. Öffnen Sie das obige Projekt in Ihrer installierten Version von Visual Studio. Wenn SQL Server Express auf dem Computer nicht installiert ist, wird eine Aufforderung angezeigt, wenn Sie das Projekt öffnen, da die Verbindungszeichenfolge SQL Express verwendet. Sie können wahlweise zum Installieren von SQL Express oder als umgehen, ändern die Verbindungszeichenfolge auf LocalDb. In diesem Artikel werden wir es in LocalDb ändern.
-3. Öffnen Sie die Datei "Web.config", und ändern Sie die Verbindungszeichenfolge aus. SQLExpess auf V11. 0 (LocalDb). Entfernen Sie "User Instance = True" aus der Verbindungszeichenfolge.
+3. Öffnen Sie die Datei "Web.config", und ändern Sie die Verbindungszeichenfolge aus. SQLExpress auf V11. 0 (LocalDb). Entfernen Sie "User Instance = True" aus der Verbindungszeichenfolge.
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image3.jpg)
 4. Öffnen Sie Server-Explorer, und stellen Sie sicher, dass das Tabellenschema und die Daten angezeigt werden können.
@@ -86,7 +85,7 @@ Für ASP.NET Identity-Klassen, die im Lieferumfang der Daten mit den vorhandenen
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | Zeichenfolge | Id | RoleId | ProviderKey | Id |
-| Benutzername | Zeichenfolge | name | UserId | UserId | ClaimType |
+| Benutzername | Zeichenfolge | Name | UserId | UserId | ClaimType |
 | PasswordHash | Zeichenfolge |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | Zeichenfolge |  |  |  | Benutzer\_Id |
 | E-Mail | Zeichenfolge |  |  |  |  |
@@ -115,7 +114,7 @@ Mit diesen Informationen können wir die SQL-Anweisungen zum Erstellen neuer Tab
 
 [!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
-Dieses Skript zur Proxygenerierung Datenbank kann als Ausgangspunkt verwendet werden, wo wir werden zusätzliche Änderungen sein um neue Spalten hinzuzufügen, und Kopieren von Daten. Der Vorteil ist, dass wir generieren die `_MigrationHistory` Tabelle, die um das Datenbankschema zu ändern, wenn das Modell ändern, die für zukünftige Versionen von Identity-Releases Klassen von EntityFramework verwendet wird. 
+Dieses Skript zur Proxygenerierung Datenbank kann als Ausgangspunkt verwendet werden, wo wir werden zusätzliche Änderungen sein um neue Spalten hinzuzufügen, und Kopieren von Daten. Der Vorteil ist, dass wir generieren die `_MigrationHistory` Tabelle, die um das Datenbankschema zu ändern, wenn das Modell ändern, die für zukünftige Versionen von Identity-Releases Klassen von EntityFramework verwendet wird.
 
 Die SQL-Mitgliedschaftsbenutzerinformationen mussten andere Eigenschaften zusätzlich zu den in der Identity-Benutzer-Modellklasse namely-e-Mail Kennworteingaben, Datum der letzten Anmeldung, Datum der letzten Sperrung usw. an. Hierbei handelt es sich um nützliche Informationen, und wir möchten sie in das Identitätssystem übernommen werden. Dies kann erfolgen, indem das Benutzermodell zusätzliche Eigenschaften hinzugefügt, und wieder an, die die Tabellenspalten in der Datenbank. Können wir dies durch Hinzufügen einer Klasse, Unterklassen der `IdentityUser` Modell. Wir können die Eigenschaften für diese benutzerdefinierte Klasse hinzufügen und bearbeiten Sie das SQL-Skript, um die entsprechenden Spalten hinzuzufügen, beim Erstellen der Tabelle. Der Code für diese Klasse ist in diesem Artikel ausführlich beschrieben. Das SQL-Skript zum Erstellen der `AspnetUsers` Tabelle nach dem Hinzufügen neuer Eigenschaften wäre
 
@@ -125,7 +124,7 @@ Als Nächstes müssen wir die vorhandene Informationen aus der Mitgliedschaftsda
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
-In der obigen SQL-Anweisung, Informationen zu jedem Benutzer aus der *Aspnet\_Benutzer* und *Aspnet\_Mitgliedschaft* Tabellen wird in die Spalten kopiert die  *"Aspnetusers"* Tabelle. Die einzige Änderung, die hier ist, wenn wir das Wiederherstellungskennwort zu kopieren. Da der Verschlüsselungsalgorithmus für Kennwörter in der SQL-Mitgliedschaftsanbieter 'PasswordSalt' und "PasswordFormat" verwendet, kopieren wir, die zu zusammen mit dem verschlüsselten Kennwort, damit sie verwendet werden kann zum Entschlüsseln des Kennworts durch Identität. Dies wird erläutert, weiter unten in diesem Artikel, wenn Sie ein benutzerdefiniertes Kennwort Hasher einbinden. 
+In der obigen SQL-Anweisung, Informationen zu jedem Benutzer aus der *Aspnet\_Benutzer* und *Aspnet\_Mitgliedschaft* Tabellen wird in die Spalten kopiert die  *"Aspnetusers"* Tabelle. Die einzige Änderung, die hier ist, wenn wir das Wiederherstellungskennwort zu kopieren. Da der Verschlüsselungsalgorithmus für Kennwörter in der SQL-Mitgliedschaftsanbieter 'PasswordSalt' und "PasswordFormat" verwendet, kopieren wir, die zu zusammen mit dem verschlüsselten Kennwort, damit sie verwendet werden kann zum Entschlüsseln des Kennworts durch Identität. Dies wird erläutert, weiter unten in diesem Artikel, wenn Sie ein benutzerdefiniertes Kennwort Hasher einbinden.
 
 Diese Skriptdatei ist spezifisch für dieses Beispiel. Für Anwendungen, die zusätzliche Tabellen haben, können Entwickler einen ähnlichen Ansatz zum Hinzufügen von weiteren Eigenschaften auf der Model-Klasse, und ordnen sie Spalten in der Tabelle "aspnetusers" folgen. Um das Skript auszuführen,
 
@@ -158,7 +157,7 @@ Wie bereits erwähnt, wird die Identity-Funktion Entity Framework für die Kommu
 
 In unserem Beispiel haben die Tabellen AspNetRoles und "aspnetuserclaims", AspNetLogins AspNetUserRole Spalten, die ähnlich wie die vorhandene Implementierung von Identity-System. Daher können wir die vorhandenen Klassen, die an diesen Tabellen zuordnen wiederverwenden. In der Tabelle AspNetUser verfügt über einige zusätzlichen Spalten, die zum Speichern zusätzlicher Informationen aus der Mitgliedschaft in SQL-Tabellen verwendet werden. Dies kann durch Erstellen einer Modellklasse, die die vorhandene Implementierung von "IdentityUser" erweitern und fügen Sie die zusätzlichen Eigenschaften zugeordnet werden.
 
-1. Erstellt einen Modelle Ordner im Projekt und fügen Sie eine Benutzer-Klasse. Der Name der Klasse sollte die in der Spalte "Discriminator" der Tabelle "aspnetusers" "" hinzugefügten Daten übereinstimmen.
+1. Erstellen Sie einen Ordner "Models" im Projekt, und fügen Sie eine Benutzer-Klasse. Der Name der Klasse sollte die in der Spalte "Discriminator" der Tabelle "aspnetusers" "" hinzugefügten Daten übereinstimmen.
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image10.png)
 
@@ -199,7 +198,7 @@ Wir müssen einige Änderungen für das Beispiel mit dem Projekt funktioniert, h
 - Der Register.aspx.cs und Login.aspx.cs CodeBehind-Klassen verwenden die `UserManager` von Identity-Paketen zum Erstellen eines Benutzers. In diesem Beispiel verwenden Sie die UserManager im Ordner "Models" hinzugefügt werden, mithilfe der oben genannten Schritte.
 - Verwenden Sie die Benutzer-Klasse, die erstellt wurden, sodass die "identityuser" in Register.aspx.cs und Login.aspx.cs CodeBehind-Klassen. Dies klinkt sich in unsere benutzerdefinierte Klasse in das Identitätssystem.
 - Das Part, für die Datenbank zu erstellen, kann übersprungen werden.
-- Der Entwickler muss die Anwendungs-ID für den neuen Benutzer entsprechend der aktuellen Anwendung-ID festgelegt. Dies kann erfolgen, indem Sie die Anwendungs-ID für diese Anwendung Abfragen, bevor ein Objekt in der Register.aspx.cs-Klasse erstellt wird und vor dem Erstellen des Benutzers festlegen. 
+- Der Entwickler muss die Anwendungs-ID für den neuen Benutzer entsprechend der aktuellen Anwendung-ID festgelegt. Dies kann erfolgen, indem Sie die Anwendungs-ID für diese Anwendung Abfragen, bevor ein Objekt in der Register.aspx.cs-Klasse erstellt wird und vor dem Erstellen des Benutzers festlegen.
 
     Beispiel:
 

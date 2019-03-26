@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 78b488263fbb0c646d9bf6ee8c4ace2ff63ccf9d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8fb2481342fa309941257feae792d9aa3c7bf721
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040097"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422674"
 ---
 <a name="iteration-1--create-the-application-c"></a>Iteration #1 – Erstellen der Anwendung (c#)
 ====================
@@ -88,7 +88,7 @@ Als Alternative zur Durchführung aller diese Downloads einzeln nacheinander kö
 ASP.NET MVC-Webanwendungsprojekt. Starten Sie Visual Studio, und wählen Sie die Menüoption **Datei, neues Projekt**. Die **neues Projekt** angezeigt (siehe Abbildung 1). Wählen Sie die **Web** Projekttyp und die **ASP.NET MVC-Webanwendung** Vorlage. Nennen Sie das neue Projekt *ContactManager* , und klicken Sie auf die Schaltfläche "OK".
 
 
-Stellen Sie sicher, dass Sie .NET Framework 3.5 in der Dropdownliste oben ausgewählt haben rechts von der **neues Projekt** Dialogfeld. Die ASP.NET MVC-Web-Application-Vorlage, die gewonnen t, andernfalls angezeigt werden soll.
+Stellen Sie sicher, dass Sie .NET Framework 3.5 in der Dropdownliste oben ausgewählt haben rechts von der **neues Projekt** Dialogfeld. Andernfalls wird nicht die ASP.NET MVC-Web-Application-Vorlage angezeigt.
 
 
 [![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
@@ -96,7 +96,7 @@ Stellen Sie sicher, dass Sie .NET Framework 3.5 in der Dropdownliste oben ausgew
 **Abbildung 01**: Das Dialogfeld "Neues Projekt" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image2.png))
 
 
-ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** Dialogfeld wird angezeigt. Sie können dieses Dialogfeld verwenden, um anzugeben, dass Sie erstellen und ein Komponententestprojekt der Projektmappe hinzufügen, wenn Sie Ihre ASP.NET MVC-Anwendung erstellen möchten. Obwohl wir t gewonnen werden. erstellen Komponententests in dieser Iteration, wählen Sie die Option **Ja, Komponententestprojekt erstellen** , da wir Komponententests in einer späteren Iteration hinzufügen möchten. Ein Testprojekt hinzuzufügen, wenn Sie zuerst ein neues ASP.NET MVC-Projekt erstellen, ist viel einfacher als ein Testprojekt hinzuzufügen, nachdem das ASP.NET MVC-Projekt erstellt wurde.
+ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** Dialogfeld wird angezeigt. Sie können dieses Dialogfeld verwenden, um anzugeben, dass Sie erstellen und ein Komponententestprojekt der Projektmappe hinzufügen, wenn Sie Ihre ASP.NET MVC-Anwendung erstellen möchten. Obwohl wir Komponententests in dieser Iteration erstellen, wird nicht, sollten Sie die Option auswählen **Ja, erstellen Sie ein Komponententestprojekt** , da wir Komponententests in einer späteren Iteration hinzufügen möchten. Ein Testprojekt hinzuzufügen, wenn Sie zuerst ein neues ASP.NET MVC-Projekt erstellen, ist viel einfacher als ein Testprojekt hinzuzufügen, nachdem das ASP.NET MVC-Projekt erstellt wurde.
 
 > [!NOTE] 
 > 
@@ -175,7 +175,7 @@ Wir müssen eine Tabelle erstellen, die folgenden Spalten enthält:
 | E-Mail | nvarchar(255) | False |
 
 
-Die erste Spalte, der Id-Spalte ist ein Sonderfall. Sie müssen die Id-Spalte als Identitätsspalte und eine Primary Key-Spalte zu kennzeichnen. Sie angeben, dass eine Spalte eine Identitätsspalte ist, erweitern Spalte Eigenschaften mit Getter (Suchen Sie am unteren Rand der Abbildung 6), und Scrollen auf die Spezifikation der Spaltenidentität-Eigenschaft. Legen Sie die **(ist Identity)** -Eigenschaft auf den Wert **Ja**.
+Die erste Spalte, der Id-Spalte ist ein Sonderfall. Sie müssen die Id-Spalte als Identitätsspalte und eine Primary Key-Spalte zu kennzeichnen. Sie angeben, dass eine Spalte eine Identitätsspalte ist, erweitern Spalteneigenschaften (Suchen Sie am unteren Rand der Abbildung 6), und Scrollen auf die Spezifikation der Spaltenidentität-Eigenschaft. Legen Sie die **(ist Identity)** -Eigenschaft auf den Wert **Ja**.
 
 Markieren Sie eine Spalte als eine Primary Key-Spalte, indem Sie die Spalte auswählen, und klicken auf die Schaltfläche mit dem Symbol eines Schlüssels. Nachdem eine Spalte als eine Primary Key-Spalte markiert ist, wird ein Symbol eines Schlüssels neben der Spalte angezeigt (siehe Abbildung 6).
 
@@ -442,7 +442,7 @@ Der Inhalt der Ansicht für das Löschen ist im Codebeispiel 9 enthalten. Diese 
 
 ## <a name="changing-the-name-of-the-default-controller"></a>Ändern des Namens der Standardcontroller
 
-Es kann darauf hingewiesen werden, dass der Name der unser Controllerklasse für das Arbeiten mit Kontakten HomeController-Klasse heißt. Treten normalerweise t der Controller werden mit dem Namen ContactController?
+Es kann darauf hingewiesen werden, dass der Name der unser Controllerklasse für das Arbeiten mit Kontakten HomeController-Klasse heißt. Werden darf nicht der Controller ContactController benannt?
 
 Dieses Problem ist recht einfach beheben. Zunächst müssen wir den Namen des dem Home-Controller zu gestalten. Öffnen Sie die HomeController-Klasse im Visual Studio Code-Editor, klicken Sie mit der rechten Maustaste auf den Namen der Klasse, und wählen Sie die Menüoption **Refactoring des Umbenennens**. Durch Auswählen dieser Menüoption wird das Dialogfeld "Umbenennen" geöffnet.
 

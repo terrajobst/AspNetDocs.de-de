@@ -2,24 +2,24 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 title: Öffnen Sie die Typen in OData v4 mit ASP.NET Web-API | Microsoft-Dokumentation
 author: microsoft
-description: In OData v4 ist ein offener Typ ein Stuctured-Typ, der dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Öffnen...
+description: In OData v4 ist ein offener Typ eines strukturierten Typs, das dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Öffnen...
 ms.author: riande
 ms.date: 09/15/2014
 ms.assetid: f25f5ac5-4800-4950-abe5-c97750a27fc6
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 77771d85532b8b622c2ad4ca219a38990e474c9c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f901e5efc38e5cda6eb606b6bc1ecfe7dea3599c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042587"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423429"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>Öffnen Sie die Typen in OData v4 mit ASP.NET Web-API
 ====================
 by [Microsoft](https://github.com/microsoft)
 
-> In OData v4 ein *offener Typ* ist ein Stuctured, die dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Offene Typen können Sie die Flexibilität mit Ihren Datenmodellen hinzufügen. Dieses Tutorial zeigt, wie offene Typen in OData der ASP.NET Web-API verwendet wird.
+> In OData v4 ein *offener Typ* ist ein strukturierter Typ, die dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Offene Typen können Sie die Flexibilität mit Ihren Datenmodellen hinzufügen. Dieses Tutorial zeigt, wie offene Typen in OData der ASP.NET Web-API verwendet wird.
 > 
 > In diesem Tutorial wird davon ausgegangen, dass Sie bereits wissen, wie zum Erstellen eines OData-Endpunkts in ASP.NET Web-API. Falls nicht, lesen Sie zunächst [erstellen ein OData v4-Endpunkts](create-an-odata-v4-endpoint.md) erste.
 > 

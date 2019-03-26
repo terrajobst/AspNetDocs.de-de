@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d44372ef3eaf7634d3bf3a82bd2c1eb1d710f786
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 37c537931008045c5c6438fe2097652438c7e8b1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032367"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424910"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (VB)
 ====================
@@ -106,7 +106,7 @@ Mit dieser partiellen Klasse erstellt (und gespeichert), öffnen Sie die `Produc
 
 Diese partielle Klasse macht nur eine der Eigenschaften des zugrunde liegenden Verbindungsobjekts: `ConnectionString`. Wenn Sie das gesamte Verbindungsobjekt außerhalb der Grenzen des TableAdapter verfügbar machen möchten, können Sie alternativ dazu ändern die `Connection` Schutzebene s'-Eigenschaft. Die automatisch generierten Code in Schritt 1 wir untersuchten zeigen, mit dem die TableAdapter `Connection` Eigenschaft wird als markiert `Friend`, was bedeutet, dass er nur von den Klassen in der gleichen Assembly zugegriffen werden kann. Dies kann geändert werden, jedoch über die TableAdapter `ConnectionModifier` Eigenschaft.
 
-Öffnen der `Northwind` DataSet, klicken Sie auf die `ProductsTableAdatper` im Designer, und navigieren Sie zu dem Fenster "Eigenschaften". Es wird Ihnen die `ConnectionModifier` legen Sie auf den Standardwert `Assembly`. Zu den `Connection` Eigenschaft außerhalb der typisierte DataSet-s-Assembly, Änderung zur Verfügung steht die `ConnectionModifier` Eigenschaft `Public`.
+Öffnen der `Northwind` DataSet, klicken Sie auf die `ProductsTableAdapter` im Designer, und navigieren Sie zu dem Fenster "Eigenschaften". Es wird Ihnen die `ConnectionModifier` legen Sie auf den Standardwert `Assembly`. Zu den `Connection` Eigenschaft außerhalb der typisierte DataSet-s-Assembly, Änderung zur Verfügung steht die `ConnectionModifier` Eigenschaft `Public`.
 
 
 [![Die Verbindung Eigenschaft s Zugriffsebene kann über die ConnectionModifier-Eigenschaft konfiguriert werden](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image6.png)

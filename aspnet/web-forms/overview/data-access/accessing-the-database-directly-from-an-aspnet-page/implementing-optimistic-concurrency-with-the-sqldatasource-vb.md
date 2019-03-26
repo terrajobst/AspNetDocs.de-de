@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7695ffad0599701840da83670af3940569e01c21
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 879f0f491461ec49c4eef9dc8add747ac2b22f90
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037777"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422102"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementieren von optimistischer Parallelität mit dem SqlDataSource-Steuerelement (VB)
 ====================
@@ -28,7 +28,7 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Im vorherigen Tutorial untersucht wir hinzufügen, einfügen, aktualisieren und Löschen von Funktionen, um dem SqlDataSource-Steuerelement. Kurz gesagt, diese Features bieten wir zum erforderlich sind. Geben Sie den entsprechenden `INSERT`, `UPDATE`, oder `DELETE` SQL-Anweisung in das Steuerelement s `InsertCommand`, `UpdateCommand`, oder `DeleteCommand` Eigenschaften werden zusammen mit den entsprechenden Parameter in der `InsertParameters`, `UpdateParameters`, und `DeleteParameters` Sammlungen. Während diese Eigenschaften und Auflistungen manuell angegeben werden können, bietet das Konfigurieren von Datenquellen-Assistenten s Schaltfläche "Erweitert" einer generieren `INSERT`, `UPDATE`, und `DELETE` Anweisungen-Kontrollkästchen, das automatisch diese Anweisungen erstellen wird basierend auf der `SELECT` Anweisung.
 
-Zusammen mit der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen deaktivieren, aktivieren Sie das Dialogfeld Erweiterte SQL-Generierungsoptionen enthält eine Option für die Verwendung optimistischer Parallelität (siehe Abbildung 1). Wenn dieses Kontrollkästchen aktiviert, die `WHERE` Klauseln in den automatisch generierten `UPDATE` und `DELETE` -Anweisungen werden geändert, um nur das Update auszuführen oder zu löschen, wenn das zugrunde liegenden Datenbank Daten t geändert wurde, seit der Benutzer letzten Laden der das in das Raster.
+Zusammen mit der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen deaktivieren, aktivieren Sie das Dialogfeld Erweiterte SQL-Generierungsoptionen enthält eine Option für die Verwendung optimistischer Parallelität (siehe Abbildung 1). Wenn dieses Kontrollkästchen aktiviert, die `WHERE` Klauseln in den automatisch generierten `UPDATE` und `DELETE` -Anweisungen werden geändert, um nur die aktualisieren oder löschen, wenn die zugrunde liegenden Datenbankdaten nicht geändert wurde, da der Benutzer letzten der Daten in das Raster laden.
 
 
 ![Sie können die vollständige Parallelität-Unterstützung hinzufügen, von den erweiterten SQL-Generierung Dialogfeld "Optionen"](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.gif)
@@ -52,7 +52,7 @@ Abbildung 2 zeigt dies.
 **Abbildung 2**: Wenn zwei Benutzer gleichzeitig aktualisieren einen Datensatz vorhanden s Potenzial für einen Benutzer s an überschreiben die anderen s ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
 
 
-Um zu verhindern, dass dieses Szenario Herausklappen, eine Form der [parallelitätssteuerung](http://en.wikipedia.org/wiki/Concurrency_control) implementiert werden muss. [Vollständige Parallelität](http://en.wikipedia.org/wiki/Optimistic_concurrency_control) der Schwerpunkt in diesem Tutorial funktioniert auf der Annahme, dass zwar möglicherweise Parallelitätskonflikte hin und wieder, der Großteil der Zeit, die solche Konflikte t gewonnen auftreten. Aus diesem Grund, wenn ein Konflikt auftreten,, informiert Steuerung für optimistische Parallelität einfach den Benutzer, dass ihre Änderungen kann nicht gespeichert werden, da ein anderer Benutzer die gleichen Daten geändert hat.
+Um zu verhindern, dass dieses Szenario Herausklappen, eine Form der [parallelitätssteuerung](http://en.wikipedia.org/wiki/Concurrency_control) implementiert werden muss. [Vollständige Parallelität](http://en.wikipedia.org/wiki/Optimistic_concurrency_control) der Schwerpunkt in diesem Tutorial, der auf der Annahme, die beim dort Parallelitätskonflikte hin und wieder, möglicherweise den Großteil der Zeit, die solche Konflikte auftreten, wird nicht funktioniert. Aus diesem Grund, wenn ein Konflikt auftreten,, informiert Steuerung für optimistische Parallelität einfach den Benutzer, dass ihre Änderungen kann nicht gespeichert werden, da ein anderer Benutzer die gleichen Daten geändert hat.
 
 > [!NOTE]
 > Für Anwendungen, in denen davon ausgegangen wird, ist, dass es viele Parallelitätskonflikte oder solche Konflikte nicht tolerierbar sind, kann dann Steuerung durch eingeschränkte Parallelität stattdessen verwendet werden. Siehe die [optimistische Parallelität implementieren](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md) Tutorial für eine ausführlichere Erläuterung der Steuerung durch eingeschränkte Parallelität.
@@ -66,7 +66,7 @@ Steuerung für optimistische Parallelität funktioniert, indem Sie sicherstellen
 **Abbildung 3**: Für die Update- oder Delete, hergestellt wird, die ursprünglichen Werte müssen werden gleich die aktuellen Datenbankwerte ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
 
 
-Es gibt verschiedene Ansätze zum Implementieren von optimistischer Parallelität (finden Sie unter [Peter A. Bromberg](http://peterbromberg.net/) s [Optmistic Parallelität aktualisieren Logik](http://www.eggheadcafe.com/articles/20050719.asp) für einen kurzen Blick auf eine Reihe von Optionen). Die Technik, die verwendet werden, von dem SqlDataSource-Steuerelement (oder per ADO.NET typisierten DataSets, die in unserer Data Access Layer verwendet) ergänzt das `WHERE` -Klausel, um einen Vergleich aller die ursprünglichen Werte enthalten. Die folgenden `UPDATE` -Anweisung aktualisiert z. B. den Namen und den Preis eines Produkts nur dann, wenn die aktuellen Datenbankwerte die Werte gleich sind, die ursprünglich, beim Aktualisieren des Datensatzes in den GridView-Ansicht abgerufen wurden. Die `@ProductName` und `@UnitPrice` Parameter enthalten die neuen Werten, die vom Benutzer eingegeben haben, während `@original_ProductName` und `@original_UnitPrice` enthalten die Werte, die ursprünglich in der GridView geladen wurden, als auf die Schaltfläche "Bearbeiten" geklickt wurde:
+Es gibt verschiedene Ansätze zum Implementieren von optimistischer Parallelität (finden Sie unter [Peter A. Bromberg](http://peterbromberg.net/)des [optimistische Parallelität aktualisieren Logik](http://www.eggheadcafe.com/articles/20050719.asp) für einen kurzen Blick auf eine Reihe von Optionen). Die Technik, die verwendet werden, von dem SqlDataSource-Steuerelement (oder per ADO.NET typisierten DataSets, die in unserer Data Access Layer verwendet) ergänzt das `WHERE` -Klausel, um einen Vergleich aller die ursprünglichen Werte enthalten. Die folgenden `UPDATE` -Anweisung aktualisiert z. B. den Namen und den Preis eines Produkts nur dann, wenn die aktuellen Datenbankwerte die Werte gleich sind, die ursprünglich, beim Aktualisieren des Datensatzes in den GridView-Ansicht abgerufen wurden. Die `@ProductName` und `@UnitPrice` Parameter enthalten die neuen Werten, die vom Benutzer eingegeben haben, während `@original_ProductName` und `@original_UnitPrice` enthalten die Werte, die ursprünglich in der GridView geladen wurden, als auf die Schaltfläche "Bearbeiten" geklickt wurde:
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample1.sql)]
@@ -129,7 +129,7 @@ Leider ist das ergänzte `UPDATE` und `DELETE` Anweisungen automatisch generiert
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample6.sql)]
 
-Die `UnitPrice` -Spalte in der `Products` Tabelle haben `NULL` Werte. Wenn ein bestimmter Datensatz enthält eine `NULL` Wert für `UnitPrice`, `WHERE` Klausel Teil `[UnitPrice] = @original_UnitPrice` wird *immer* auf "false" ausgewertet werden, da `NULL = NULL` gibt immer "false" zurück. Aus diesem Grund, die Datensätze enthalten `NULL` Werte können nicht bearbeitet oder gelöscht wird, als die `UPDATE` und `DELETE` Anweisungen `WHERE` Klauseln gewonnen t zurück zum Aktualisieren oder Löschen von Zeilen.
+Die `UnitPrice` -Spalte in der `Products` Tabelle haben `NULL` Werte. Wenn ein bestimmter Datensatz enthält eine `NULL` Wert für `UnitPrice`, `WHERE` Klausel Teil `[UnitPrice] = @original_UnitPrice` wird *immer* auf "false" ausgewertet werden, da `NULL = NULL` gibt immer "false" zurück. Aus diesem Grund, die Datensätze enthalten `NULL` Werte können nicht bearbeitet oder gelöscht wird, als die `UPDATE` und `DELETE` Anweisungen `WHERE` Klauseln nicht zum Aktualisieren oder Löschen von Zeilen zurückgegeben.
 
 > [!NOTE]
 > Dieser Fehler wurde zuerst im Juni von 2004 in an Microsoft gemeldet [SqlDataSource-Steuerelement generiert falsche SQL-Anweisungen](https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=93937) und in der nächsten Version von ASP.NET korrigiert werden demnach geplant ist.
@@ -189,7 +189,7 @@ Wenn das zweite Browserfenster den Datensatz aktualisiert wird, wird der ursprü
 > Löschen Sie auf die gleiche Weise funktioniert. Mit zwei Browserfenster öffnen zu beginnen, indem Sie ein bestimmtes Produkt mit einem bearbeiten und dann die Änderungen zu speichern. Klicken Sie nach dem Speichern der Änderungen in einem Browser an, auf die Schaltfläche "löschen" für das gleiche Produkt in der anderen. Da die ursprünglichen Werte ich möchte faktenpartition der `DELETE` Anweisung s `WHERE` -Klausel, der Löschvorgang im Hintergrund ein Fehler auftritt.
 
 
-Aus Sicht der Endbenutzer-s in der zweiten Browserfenster nach dem Klicken auf die Schaltfläche "Aktualisieren" im Raster gibt zurück, in den Bearbeitungsmodus vor, aber die Änderungen sind verloren gegangen. Jedoch dort s keine visuelle Feedback, das Änderungen hat Teamblog zu halten. Im Idealfall eine benutzeränderungen s auf eine parallelitätsverletzung verloren gehen, wir d informiert und vielleicht das Raster im Bearbeitungsmodus belassen. Lassen Sie s, betrachten dazu zu erhalten.
+Aus Sicht der Endbenutzer-s in der zweiten Browserfenster nach dem Klicken auf die Schaltfläche "Aktualisieren" im Raster gibt zurück, in den Bearbeitungsmodus vor, aber die Änderungen sind verloren gegangen. Jedoch dort s keine visuelle Feedback, das ihre Änderungen bleiben nicht. Im Idealfall eine benutzeränderungen s auf eine parallelitätsverletzung verloren gehen, wir d informiert und vielleicht das Raster im Bearbeitungsmodus belassen. Lassen Sie s, betrachten dazu zu erhalten.
 
 ## <a name="step-3-determining-when-a-concurrency-violation-has-occurred"></a>Schritt 3: Bestimmen, wenn eine Parallelitätsverletzung aufgetreten ist
 

@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: 97c13898-0741-45f9-b3fa-7540ab1679e6
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad940afd03b66c17a4d8b1e5c727c317022fbc0a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58d4c14e2b888f933457fe421235499943354182
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040977"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422922"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>Sortieren von Daten in einem DataList- oder Wiederholungssteuerelement (VB)
 ====================
@@ -135,7 +135,7 @@ An diesem Punkt aus, wenn die Seite zuerst besuchen werden die Produkte zunächs
 
 
 > [!NOTE]
-> Klicken Sie auf die Schaltfläche "Aktualisieren" bewirkt, dass die Daten automatisch neu sortiert sein, da der Repeater-s-Ansichtszustand deaktiviert wurde, wodurch des Repeaters, um mit der Datenquelle bei jedem Postback erneut zu binden. Wenn Sie haben den Repeater s Ansichtszustand aktiviert ist, ändern die Sortierung Dropdownliste links Liste gewonnen t wirken sich alle auf die Sortierreihenfolge. Um dies zu beheben, erstellen Sie einen Ereignishandler für die Schaltfläche "Aktualisieren"-s `Click` Ereignis- und Binden des Repeaters mit der Datenquelle (durch Aufrufen des Repeaters s `DataBind()` Methode).
+> Klicken Sie auf die Schaltfläche "Aktualisieren" bewirkt, dass die Daten automatisch neu sortiert sein, da der Repeater-s-Ansichtszustand deaktiviert wurde, wodurch des Repeaters, um mit der Datenquelle bei jedem Postback erneut zu binden. Wenn Sie haben den Repeater s Ansichtszustand aktiviert ist, ändern die Sortierung Dropdownliste links keine Liste Auswirkungen auf die Sortierreihenfolge. Um dies zu beheben, erstellen Sie einen Ereignishandler für die Schaltfläche "Aktualisieren"-s `Click` Ereignis- und Binden des Repeaters mit der Datenquelle (durch Aufrufen des Repeaters s `DataBind()` Methode).
 
 
 ## <a name="remembering-the-sort-expression-and-direction"></a>Denken Sie daran, den Sortierungsausdruck und die Richtung

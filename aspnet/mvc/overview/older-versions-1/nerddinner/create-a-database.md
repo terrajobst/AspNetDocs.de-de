@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 983f3ffa-08b8-4868-b8c9-aa34593fc683
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: b6ab0740f251889f0fa0561809cac2bbe79bcb3a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48ca2984ca8e4ec5b2bc49952a8718aa26138aea
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064907"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423701"
 ---
 <a name="create-a-database"></a>Erstellen einer Datenbank
 ====================
@@ -94,7 +94,7 @@ Wir speichern Sie sie und geben Sie ihm den Namen "Bestätigung".
 
 Wir haben jetzt zwei Tabellen in unserer Datenbank. Im letzten Schritt der Schema Design werden Sie eine "1-n-Beziehung zwischen diesen beiden Tabellen – einrichten, damit wir jede Dinner-Zeile mit NULL oder mehr Zeilen von RSVP zuordnen können, die für sie gelten. Wir tun dies, indem RSVP Spalte der Tabelle "DinnerID" um einen Fremdschlüssel-Beziehung auf die Spalte "DinnerID" in der Tabelle "Dinner" konfigurieren.
 
-Zu diesem Zweck werden wir der RSVP-Tabelle im Tabellen-Designer aktivieren, indem sie im Server-Explorer darauf doppelklicken. Ich wähle klicken Sie dann die Spalte "DinnerID" darin, mit der rechten Maustaste, und wählen Sie den Befehl im Kontextmenü "Relationshps...":
+Zu diesem Zweck werden wir der RSVP-Tabelle im Tabellen-Designer aktivieren, indem sie im Server-Explorer darauf doppelklicken. Ich wähle klicken Sie dann die Spalte "DinnerID" darin, mit der rechten Maustaste, und wählen Sie "Beziehungen..." Kontextmenübefehl von "":
 
 ![](create-a-database/_static/image12.png)
 

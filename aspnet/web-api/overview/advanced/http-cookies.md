@@ -8,12 +8,12 @@ ms.date: 09/17/2012
 ms.assetid: 243db2ec-8f67-4a5e-a382-4ddcec4b4164
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: 61e0c47efdd92a3a0b329930aeec757b446eb9b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ee717085a02f4c5f5d664cfd2fa82c21864e4055
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044737"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425820"
 ---
 <a name="http-cookies-in-aspnet-web-api"></a>HTTP-Cookies in der ASP.NET-Web-API
 ====================
@@ -25,7 +25,7 @@ In diesem Thema wird beschrieben, wie zum Senden und Empfangen von HTTP-Cookies 
 
 Dieser Abschnitt enthält eine kurze Übersicht darüber, wie Cookies auf HTTP-Ebene implementiert werden. Weitere Informationen finden Sie in [RFC 6265](http://tools.ietf.org/html/rfc6265).
 
-Ein Cookie ist ein Teil der Daten, die ein Server in der HTTP-Antwort sendet. Der Client speichert das Cookie (optional) und wird für Subsequet-Anforderungen zurückgegeben. Dadurch wird dem Client und Server aus möglich. Um ein Cookie festlegen, enthält der Server einen Set-Cookie-Header in der Antwort. Das Format eines Cookies ist ein Name / Wert-Paar, mit optionalen Attributen. Zum Beispiel:
+Ein Cookie ist ein Teil der Daten, die ein Server in der HTTP-Antwort sendet. Der Client ist (optional) das Cookie gespeichert und bei nachfolgenden Anforderungen zurückgegeben. Dadurch wird dem Client und Server aus möglich. Um ein Cookie festlegen, enthält der Server einen Set-Cookie-Header in der Antwort. Das Format eines Cookies ist ein Name / Wert-Paar, mit optionalen Attributen. Zum Beispiel:
 
 [!code-powershell[Main](http-cookies/samples/sample1.ps1)]
 

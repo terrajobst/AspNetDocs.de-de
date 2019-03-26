@@ -8,12 +8,12 @@ ms.date: 05/20/2012
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: e936bdfa52f786ec86d3e84eac3cd644225b6f92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9cfbed49c1022fbf26160e89aed3ab474f5e0fdc
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039247"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425690"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>Aushandlung von Inhalten in ASP.NET Web-API
 ====================
@@ -48,7 +48,7 @@ Im Gegenzug kann der Server senden:
 
 [!code-console[Main](content-negotiation/samples/sample3.cmd)]
 
-In diesem Beispiel ist der Client angefordert hat, JSON, Javascript oder "anything" (\*/\*). Die Antwort eine JSON-Darstellung der Server die `Product` Objekt. Beachten Sie, die der Content-Type-Header in der Antwort, um festgelegt wird &quot;Application/Json&quot;.
+In diesem Beispiel ist der Client angefordert hat, JSON, Javascript oder "anything" (\*/\*). Der Server hat eine JSON-Darstellung der `Product` Objekt. Beachten Sie, die der Content-Type-Header in der Antwort, um festgelegt wird &quot;Application/Json&quot;.
 
 Ein Controller kann auch Zurückgeben einer **HttpResponseMessage** Objekt. Rufen Sie zum Angeben einer CLR-Objekt, für den Antworttext der **CreateResponse** Erweiterungsmethode:
 
@@ -62,7 +62,7 @@ Das Objekt, das die Ressource serialisiert wird aufgerufen, eine *medienformatie
 
 Die Pipeline ruft zunächst die **IContentNegotiator** -Diensts von der **HttpConfiguration** Objekt. Er ruft auch die Liste der medienformatierer aus der **HttpConfiguration.Formatters** Auflistung.
 
-Als Nächstes die Pipeline ruft **IContentNegotiatior.Negotiate**, und übergeben Sie:
+Als Nächstes die Pipeline ruft **IContentNegotiator.Negotiate**, und übergeben Sie:
 
 - Der Typ des zu serialisierenden Objekts
 - Die Auflistung der medienformatierer

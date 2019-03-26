@@ -8,12 +8,12 @@ ms.date: 05/15/2013
 ms.assetid: eaa206c4-edb3-487e-8fcb-54a3261fed36
 msc.legacyurl: /signalr/overview/older-versions/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: c8aac09c3d3e06529f7834eb3f60dca2f3073922
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 311976a9d0e79083e02231ab056af3537a3d3d25
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042637"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420802"
 ---
 <a name="dependency-injection-in-signalr-1x"></a>Abhängigkeitsinjektion in SignalR 1.x
 ====================
@@ -41,7 +41,7 @@ Ein besserer Ansatz ist auf "Einfügen" ein `ILogger` in das Objekt, z. B. durch
 
 [!code-csharp[Main](dependency-injection/samples/sample3.cs)]
 
-Nachdem das Objekt nicht verantwortlich für die Auswahl der ist `ILogger` verwenden. Sie können Swich `ILogger` Implementierungen, ohne die Objekte, die davon abhängen.
+Nachdem das Objekt nicht verantwortlich für die Auswahl der ist `ILogger` verwenden. Sie können wechseln `ILogger` Implementierungen, ohne die Objekte, die davon abhängen.
 
 [!code-csharp[Main](dependency-injection/samples/sample4.cs)]
 
@@ -161,7 +161,7 @@ Erstellen Sie eine Bindung für **IHubConnectionContext** wie folgt:
 
 [!code-csharp[Main](dependency-injection/samples/sample18.cs)]
 
-Dieser Code Creatres eine anonyme Funktion, die zurückgibt ein **IHubConnection**. Die **WhenInjectedInto** Methode weist Ninject, um diese Funktion zu verwenden, nur bei der Erstellung `IStockTicker` Instanzen. Der Grund ist, dass SignalR erstellt **IHubConnectionContext** Instanzen intern, und wir wollen nicht außer Kraft setzen, wie SignalR werden erstellt. Diese Funktion gilt nur für unsere `StockTicker` Klasse.
+Dieser Code erstellt eine anonyme Funktion, die gibt ein **IHubConnection**. Die **WhenInjectedInto** Methode weist Ninject, um diese Funktion zu verwenden, nur bei der Erstellung `IStockTicker` Instanzen. Der Grund ist, dass SignalR erstellt **IHubConnectionContext** Instanzen intern, und wir wollen nicht außer Kraft setzen, wie SignalR werden erstellt. Diese Funktion gilt nur für unsere `StockTicker` Klasse.
 
 Übergeben Sie den Abhängigkeitskonfliktlöser in die **MapHubs** Methode:
 

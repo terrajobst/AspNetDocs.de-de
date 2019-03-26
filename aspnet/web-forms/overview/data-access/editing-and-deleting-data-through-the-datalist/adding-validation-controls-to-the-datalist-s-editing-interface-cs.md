@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2fe85d6513a229f11b3aad7c7cc6c7124c94d70f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c552dd54830152afbe100ed03fb6764ddfb590dd
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047187"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422661"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (C#)
 ====================
@@ -156,10 +156,10 @@ Fügen Sie den folgenden Code am Anfang der `UpdateCommand` -Ereignishandler dir
 
 [!code-csharp[Main](adding-validation-controls-to-the-datalist-s-editing-interface-cs/samples/sample2.cs)]
 
-Durch diese hinzufügen versucht das Produkt aktualisiert werden, nur dann, wenn die übermittelten Daten gültig sind. Die meisten Benutzer, die gewonnen haben t Lage, ungültige Daten aufgrund der Steuerelemente der clientseitigen validierungsskripts postback, aber der Benutzer, deren Browser Einbau zusätzlichen t unterstützt JavaScript oder für die Unterstützung von JavaScript, deaktiviert ist, können die clientseitige Überprüfungen umgehen und senden Sie ungültige Daten.
+Durch diese hinzufügen versucht das Produkt aktualisiert werden, nur dann, wenn die übermittelten Daten gültig sind. Die meisten Benutzer können auf ungültige Daten aufgrund der Validierung Steuerelemente clientseitige Skripts, postback, aber Benutzer, deren Browser keine Nachteile für Ihr, JavaScript unterstützen oder nicht, die Unterstützung für JavaScript deaktiviert haben, können die clientseitige Überprüfungen umgehen und senden Sie ungültige Daten.
 
 > [!NOTE]
-> Der aufmerksame Leser werden sich erinnern, die beim Aktualisieren von Daten mit GridView wir hat müssen Sie explizit überprüfen die `Page.IsValid` -Eigenschaft in unserer Seite s-Code-Behind-Klasse. Dies ist, da die GridView berät das `Page.IsValid` -Eigenschaft für uns und nur fährt mit dem Update nur, wenn der Wert zurückgegeben `True`.
+> Der aufmerksame Leser werden sich erinnern, dass beim Aktualisieren von Daten mit GridView, wir nicht explizit überprüfen müssen die `Page.IsValid` -Eigenschaft in unserer Seite s-Code-Behind-Klasse. Dies ist, da die GridView berät das `Page.IsValid` -Eigenschaft für uns und nur fährt mit dem Update nur, wenn der Wert zurückgegeben `True`.
 
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>Schritt 3: Zusammenfassung der Probleme mit der Dateneingabe

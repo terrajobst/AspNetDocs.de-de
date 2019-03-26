@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 57066b8ce3254caf59cf927d16d96f8bc22a8acd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 270268b77f398084169843e20b0a2bf9f1c2a011
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046477"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423155"
 ---
 <a name="configuring-aspnet-web-api-2"></a>Konfigurieren von ASP.NET Web-API 2
 ====================
@@ -30,7 +30,7 @@ Dieses Thema beschreibt, wie Sie ASP.NET Web-API zu konfigurieren.
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>Konfigurationseinstellungen
 
-Einstellungen der Web-API-Konfiguration werden definiert, der [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) Klasse.
+Web-API-Konfigurationseinstellungen werden definiert, der [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) Klasse.
 
 | Member | Beschreibung |
 | --- | --- |
@@ -53,7 +53,7 @@ Einstellungen der Web-API-Konfiguration werden definiert, der [HttpConfiguration
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurieren von Web-API mit Hosten von ASP.NET
 
-Konfigurieren Sie in einer ASP.NET-Anwendung durch Aufrufen von Web-API- [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) in die **Anwendung\_starten** Methode. Die **konfigurieren** Methode verwendet einen Delegaten mit einem einzelnen Parameter vom Typ **HttpConfiguration**. Führen Sie alle Ihre Remotedebugger innerhalb des Delegaten.
+Konfigurieren Sie in einer ASP.NET-Anwendung durch Aufrufen von Web-API- [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) in die **Anwendung\_starten** Methode. Die **konfigurieren** Methode verwendet einen Delegaten mit einem einzelnen Parameter vom Typ **HttpConfiguration**. Führen Sie alle von Ihrer Konfiguration in den Delegaten.
 
 Hier ist ein Beispiel mit einem anonymen Delegaten:
 

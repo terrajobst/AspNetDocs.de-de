@@ -8,12 +8,12 @@ ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: c36749f82051ee8965035eca9c2e4e57a5dbd616
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d7985fcd48e1282437cc3a7d3c1b528af2e44ae0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028287"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425781"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>Verwenden asynchroner Methoden in ASP.NET 4.5
 ====================
@@ -100,7 +100,7 @@ Die folgende Abbildung zeigt die Seite "Gizmos" aus dem Beispielprojekt.
 
 ## <a id="CreatingAsynchGizmos"></a>  Erstellen einer asynchronen Gizmos-Seite
 
-Das Beispiel verwendet die neue [Async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) und ["await"](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) Schlüsselwörter (verfügbar in .NET 4.5 und Visual Studio 2012) damit vom Compiler zuständig für die Verwaltung der für der komplexen Transformations werden asynchrone Programmierung. Der Compiler ermöglicht Ihnen das Schreiben von Code zu verwenden, die die # synchrone ablaufsteuerung erstellt, und der Compiler wendet automatisch die Transformationen, die erforderlichen Rückrufe verwendet, um zu vermeiden, sodass Threads blockiert.
+Das Beispiel verwendet die neue [Async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) und ["await"](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) Schlüsselwörter (verfügbar in .NET 4.5 und Visual Studio 2012) damit vom Compiler zuständig für die Verwaltung der für der komplexen Transformations werden asynchrone Programmierung. Der Compiler können Sie das Schreiben von Code mithilfe der C#der ablaufsteuerung des synchronen erstellt und der Compiler wendet automatisch die Transformationen, die erforderlichen Rückrufe verwendet, um zu vermeiden, sodass Threads blockiert.
 
 Asynchrone ASP.NET-Seiten enthalten müssen die [Seite](https://msdn.microsoft.com/library/ydy4x04a.aspx) -Direktive zusammen mit den `Async` -Attribut auf "True" festgelegt. Der folgende code zeigt die [Seite](https://msdn.microsoft.com/library/ydy4x04a.aspx) -Direktive zusammen mit den `Async` -Attribut festgelegt ist, auf "True" für die *GizmosAsync.aspx* Seite.
 
@@ -178,7 +178,7 @@ Der folgende code zeigt die *GizmosCancelAsync.aspx.cs* Datei.
 
 [!code-csharp[Main](using-asynchronous-methods-in-aspnet-45/samples/sample12.cs?highlight=6,9)]
 
-Wählen Sie in der beispielanwendung bereitgestellt, die *GizmosCancelAsync* verknüpfen Aufrufe der *GizmosCancelAsync.aspx* Seite und zeigt, der Abbruch (durch ein Timeout) des asynchronen Aufrufs. Da die Verzögerungszeit innerhalb eines zufälligen Bereichs ist, müssen Sie die Seite mehrmals aktualisieren, um die Timeout-Fehlermeldung zu erhalten.
+Wählen Sie in der beispielanwendung bereitgestellt, die *GizmosCancelAsync* verknüpfen Aufrufe der *GizmosCancelAsync.aspx* Seite und zeigt den Abbruch des asynchronen Aufrufs (durch ein Timeout). Da die Verzögerungszeit innerhalb eines zufälligen Bereichs ist, müssen Sie die Seite mehrmals aktualisieren, um die Timeout-Fehlermeldung zu erhalten.
 
 ## <a id="ServerConfig"></a>  Server-Konfiguration für hohe Parallelität/hohe Wartezeit für Aufrufe des Webdiensts
 

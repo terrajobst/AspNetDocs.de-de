@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 5d9a2999-fcc4-4c45-a018-271fddf74a3b
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 5819d789f31b9452d40ae3aa7f821f101ae126ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c0cfd4f900c88f953cf7004a987bc267a1e1b4a2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049477"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422032"
 ---
 <a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
 ====================
@@ -55,7 +55,7 @@ Wir verwenden Migrationen zum Aktualisieren des Schemas. Erstellen Sie die Proje
 
 [!code-console[Main](adding-validation-to-the-model/samples/sample3.cmd)]
 
-Wenn dieser Befehl abgeschlossen ist, handelt es sich bei Visual Studio öffnet die Klassendatei, die die neue definiert `DbMIgration` abgeleitete Klasse mit dem angegebenen Namen (*AddDataAnnotationsMig*), und klicken Sie in der `Up` Methode sehen Sie den Code, der aktualisiert die schemaeinschränkungen. Die `Title` und `Genre` Felder sind nicht mehr NULL-Werte zulässt (d. h. Sie müssen ein einen Wert eingeben) und die `Rating` Feld hat eine maximale Länge von 5.
+Wenn dieser Befehl abgeschlossen ist, handelt es sich bei Visual Studio öffnet die Klassendatei, die die neue definiert `DbMigration` abgeleitete Klasse mit dem angegebenen Namen (*AddDataAnnotationsMig*), und klicken Sie in der `Up` Methode sehen Sie den Code, der aktualisiert die schemaeinschränkungen. Die `Title` und `Genre` Felder sind nicht mehr NULL-Werte zulässt (d. h. Sie müssen ein einen Wert eingeben) und die `Rating` Feld hat eine maximale Länge von 5.
 
 Die Validierungsattribute geben das Verhalten an, das Sie in den Modelleigenschaften erzwingen möchten, auf die sie angewendet werden. Die `Required` Attribut gibt an, dass eine Eigenschaft einen Wert verfügen muss, die in diesem Beispiel verfügt über ein Film Werte für die `Title`, `ReleaseDate`, `Genre`, und `Price` Eigenschaften, damit es gültig ist. Das Attribut `Range` schränkt einen Wert auf einen bestimmten Bereich ein. Mit dem Attribut `StringLength` können Sie die maximale Länge einer Zeichenfolgeneigenschaft und optional die minimale Länge festlegen. Systeminterne Typen (z. B. `decimal, int, float, DateTime`) sind standardmäßig erforderlich und müssen nicht die `Required` Attribut.
 

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: bb4704e7f4f13fab04acdbdd642174884517e18a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91a6496e2640668c58ec0493d47d909e2de67367
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042407"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421349"
 ---
 <a name="part-7-creating-the-main-page"></a>Teil 7: Erstellen der Hauptseite
 ====================
@@ -61,7 +61,7 @@ Beachten Sie auch die `total` Eigenschaft für die `OrderDetailsViewModel`. Dies
 Fügen Sie diese Funktionen `AppViewModel`:
 
 - `resetCart` Entfernt alle Elemente aus dem Warenkorb.
-- `getDetails` Ruft die Details einer Bestellung (von Pusing ein neues `OrderDetailsViewModel` auf die `details` Liste).
+- `getDetails` Ruft die Details einer Bestellung (durch pushen ein neues `OrderDetailsViewModel` auf die `details` Liste).
 - `createOrder` erstellt eine neue Bestellung und leert den Einkaufswagen.
 
 
@@ -105,7 +105,7 @@ Hier sind die Bindungen für die Bestelldetails anzeigen:
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample11.html)]
 
-Dies führt eine Iteration durch die Elemente in der Reihenfolge und zeigt an, das Produkt, Preis und eines Orts. Das umgebende DIV-Element ist nur sichtbar, wenn das Details-Array ein oder mehrere Elemente enthält.
+Dies führt eine Iteration durch die Elemente in der Reihenfolge und zeigt an, das Produkt, Preis und Menge. Das umgebende DIV-Element ist nur sichtbar, wenn das Details-Array ein oder mehrere Elemente enthält.
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

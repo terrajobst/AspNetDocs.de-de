@@ -8,12 +8,12 @@ ms.date: 01/28/2012
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: ba061b26b8527e447f25f6046057542a54f989a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052917"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423746"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1
 ====================
@@ -109,7 +109,7 @@ Fügen Sie die folgende Implementierung:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample2.cs)]
 
-Fügen Sie eine andere Klasse jetzt im Ordner "Models", mit dem Namen &quot;ProductRepository.&quot; Diese Klasse implementiert die `IProductRespository`-Schnittstelle. Fügen Sie die folgende Implementierung:
+Fügen Sie eine andere Klasse jetzt im Ordner "Models", mit dem Namen &quot;ProductRepository.&quot; Diese Klasse implementiert die `IProductRepository`-Schnittstelle. Fügen Sie die folgende Implementierung:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample3.cs)]
 
@@ -133,7 +133,7 @@ In der **Controller hinzufügen** Assistenten benennen Sie den Controller &quot;
 ![](creating-a-web-api-that-supports-crud-operations/_static/image7.png)
 
 > [!NOTE]
-> Es ist nicht notwendig, einen Ordner Controller Namens Ihrer Serviceprojekt abgelegt. Der Name des Ordners ist nicht wichtig; Es ist lediglich eine bequeme Möglichkeit, Ihre Quelldateien zu organisieren.
+> Es ist nicht erforderlich, die Controller in den Ordner Controller zu platzieren. Der Name des Ordners ist nicht wichtig; Es ist lediglich eine bequeme Möglichkeit, Ihre Quelldateien zu organisieren.
 
 
 Die **Controller hinzufügen** Assistent erstellt eine Datei namens ProductsController.cs im Ordner "Controllers". Wenn diese Datei noch nicht geöffnet ist, doppelklicken Sie auf die Datei, um ihn zu öffnen. Fügen Sie die folgenden **mit** Anweisung:
@@ -216,7 +216,7 @@ Der Name der Methode beginnt mit &quot;einfügen... &quot;, sodass es Web-API-PU
 
 ## <a name="deleting-a-resource"></a>Löschen einer Ressource
 
-Definieren Sie eine "..." löschen"-Methode, um eine Ressourcen zu löschen.
+Um eine Ressource zu löschen, definieren Sie eine "löschen..." -Methode.
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample12.cs)]
 

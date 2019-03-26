@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d8e837a5d56871d271590859c2e82336111cc87a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029407"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425248"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 Fundamentals
 
@@ -389,7 +389,7 @@ Die Datei **~/Views/Shared/\_layout.cshtml** können Sie eine Vorlage für gemei
    (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample7.cshtml)]
-5. Enthalten Sie ein DIV-Element um das Body-Bereich jeder Seite zu rendern. Ersetzen Sie dies  <strong>@RenderBody()</strong> durch den folgenden Higlighted-Code: (C#)
+5. Enthalten Sie ein DIV-Element um das Body-Bereich jeder Seite zu rendern. Ersetzen Sie dies  <strong>@RenderBody()</strong> mit folgendem hervorgehobenen Code: (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
@@ -529,7 +529,7 @@ In dieser Aufgabe fügen Sie dieser 2 Eigenschaften der **StoreIndexViewModel** 
     [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
 
 > [!NOTE]
-> Die **{get; festlegen;}**  Notation nutzt # Funktion für automatisch implementierte Eigenschaften. Es bietet die Vorteile einer Eigenschaft, ohne uns um ein dahinter liegendes Feld zu deklarieren.
+> Die **{get; festlegen;}**  Notation verwendet C#der automatisch implementierten Eigenschaften-Funktion. Es bietet die Vorteile einer Eigenschaft, ohne uns um ein dahinter liegendes Feld zu deklarieren.
 
 <a id="Ex5Task3"></a>
 
@@ -800,7 +800,7 @@ In dieser Aufgabe fügen Sie einen Link in der Ansicht der Store über einen Lin
    > 
    > Obwohl dieser Ansatz funktioniert, hängt es eine hartcodierte Zeichenfolge ein. Wenn Sie später den Controller umbenennen, müssen Sie diese Anweisung manuell ändern. Eine bessere Alternative ist die Verwendung einer **HTML-Hilfsobjekt** Methode. ASP.NET MVC umfasst eine HTML-Hilfsobjekt-Methode, die für die Ausführung von Aufgaben verfügbar ist. Die **Html.ActionLink()** Hilfsmethode erleichtert Ihnen die Erstellung von HTML **&lt;eine&gt;** Links, sodass Sie sicher, dass die URL-Pfade sind ordnungsgemäß URL-codiert.
    > 
-   > Htlm.ActionLink weist mehrere Überladungen. In dieser Übung werden Sie eine verwenden, die drei Parameter akzeptiert:
+   > Html.ActionLink weist mehrere Überladungen. In dieser Übung werden Sie eine verwenden, die drei Parameter akzeptiert:
    > 
    > 1. Text des Links, der den Namen "Genre" angezeigt wird
    > 2. Name des Domänencontrollers Aktion (**Durchsuchen**)
@@ -1017,7 +1017,7 @@ In diesem Anhang wird veranschaulicht, wie erstellen eine neue Website aus dem W
 1. Wechseln Sie zu der [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet.
 
     > [!NOTE]
-    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](http://aka.ms/aspnet-hol-azure).
+    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](https://aka.ms/aspnet-hol-azure).
 
     ![Melden Sie sich bei Windows Azure-Portal](aspnet-mvc-4-fundamentals/_static/image48.png "melden Sie sich bei Windows Azure-Portal")
 

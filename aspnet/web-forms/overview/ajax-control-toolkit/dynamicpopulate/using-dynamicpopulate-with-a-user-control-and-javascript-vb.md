@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 778b9009-76f2-4665-940e-afc0e35bc917
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a275eed17552d26b63f98762c6c870bd53dd455d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b863cb0045fcec202931148bff5befa7ed62db4d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037147"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424143"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>Verwenden von DynamicPopulate mit einem Benutzersteuerelement und JavaScript (VB)
 ====================
@@ -52,7 +52,7 @@ Ist das einzige, was fehlt im Steuerelement noch die `DynamicPopulateExtender` s
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-vb/samples/sample5.aspx)]
 
-Sie können erneut Notieren Sie die ungewöhnliche ID, die im Steuerelement verwendete: `mcd1$myDate` anstelle von `myDate`. Zuvor den JavaScript-Code verwendet `mcd1_dpe1` für den Zugriff auf die `DynamicPopulateExtender` anstelle von `dpe1`. Diese Benennungskonvention Strategie ist eine besondere Anforderung, bei Verwendung `DynamicPopulateExtender` in einem Benutzersteuerelement. Darüber hinaus müssen Sie die Benutzer-Verwaltungsgruppen in bestimmte Funktion, um alle dafür erforderlichen einzubetten. Erstellen Sie eine neue ASP.NET-Seite und registrieren Sie ein Tagpräfix für das Benutzersteuerelement, die, das Sie gerade implementiert haben:
+Sie können erneut Notieren Sie die ungewöhnliche ID, die im Steuerelement verwendete: `mcd1$myDate` anstelle von `myDate`. Zuvor den JavaScript-Code verwendet `mcd1_dpe1` für den Zugriff auf die `DynamicPopulateExtender` anstelle von `dpe1`. Diese Benennungskonvention Strategie ist eine besondere Anforderung, bei Verwendung `DynamicPopulateExtender` in einem Benutzersteuerelement. Darüber hinaus müssen Sie das Benutzersteuerelement in eine bestimmte Funktion aus, um alle dafür erforderlichen einzubetten. Erstellen Sie eine neue ASP.NET-Seite und registrieren Sie ein Tagpräfix für das Benutzersteuerelement, die, das Sie gerade implementiert haben:
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-vb/samples/sample6.aspx)]
 

@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 0dea8b077878139a3f513cb51447b86a93fe55b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057707"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424364"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
 ====================
@@ -139,7 +139,7 @@ Als Nächstes müssen Sie einen kurzen Blick auf die HTML-Fenster, und wie sie E
 
 Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren.
 
-Klicken Sie auf den oberen Teil der Seite die Fehlermeldung "Ihre Logohere". Untersuchen Sie ein bestimmtes Element im Detail, damit die Anzeige im Browserfenster nicht mehr geändert werden, wie Sie den Mauszeiger bewegen.
+Klicken Sie auf den oberen Teil der Seite die Fehlermeldung "Ihr Logo hier einfügen". Untersuchen Sie ein bestimmtes Element im Detail, damit die Anzeige im Browserfenster nicht mehr geändert werden, wie Sie den Mauszeiger bewegen.
 
 Nun verschieben Sie den Mauszeiger an die **HTML** Fenster. Während Sie den Mauszeiger bewegen, wird der Seitenprüfung beschrieben, das Element innerhalb der **HTML** Fenster und das entsprechende Element im Browserfenster hervorgehoben.
 

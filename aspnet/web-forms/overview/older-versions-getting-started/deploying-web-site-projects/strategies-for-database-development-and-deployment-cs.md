@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 029c17d5f996f595aef1af68c3ddb9b21f99f5cf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4ea1713541c30623c0f7c8387318549dd36a125f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046797"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423584"
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>Strategien zur Datenbankentwicklung und -bereitstellung (C#)
 ====================
@@ -66,7 +66,7 @@ Es gibt eine Reihe von Nachteilen dieses Ansatzes. Es ist beispielsweise keine H
 
 Der Hauptvorteil die datenbankänderungen im Text zu dokumentieren, ist Einfachheit. T muss Vertrautheit mit der SQL-Syntax für das Erstellen und Ändern von Datenbankobjekten Einbau zusätzlichen. Sie können stattdessen Notieren Sie die Änderungen im Text und über die grafische Benutzeroberfläche für SQL Server Management Studio s implementieren.
 
-Verwalten Ihrer Änderungsprotokoll im Text, zugegebenermaßen nicht sehr anspruchsvolle und gewonnenem t arbeiten gut mit bestimmte Projekte, z. B. ist, die im Bereich groß sind haben Sie häufige Änderungen des Datenmodells oder umfassen Sie mehrere Entwickler. Aber ich habe diesen Ansatz funktioniert sehr gut in kleinen, one-man-Projekten, die nur gelegentliche Änderungen des Datenmodells aufweisen und, in dem der Mann verfügt nicht über eine umfassende Erfahrung in der SQL-Syntax zum Erstellen und Ändern von Datenbankobjekten, gesehen.
+Verwalten Ihre Änderungsprotokoll im Text wird nicht ist, zugegeben, nicht sehr anspruchsvolle und funktionieren gut mit bestimmte Projekte, wie z. B. solche, die im Bereich groß sind, haben häufige Änderungen des Datenmodells oder umfassen mehrere Entwickler. Aber ich habe diesen Ansatz funktioniert sehr gut in kleinen, one-man-Projekten, die nur gelegentliche Änderungen des Datenmodells aufweisen und, in dem der Mann verfügt nicht über eine umfassende Erfahrung in der SQL-Syntax zum Erstellen und Ändern von Datenbankobjekten, gesehen.
 
 > [!NOTE]
 > Während die Informationen im Änderungsprotokoll, technisch gesehen nur erforderlich, bis zum Zeitpunkt der Bereitstellung ist, empfehle ich einen Verlauf der Änderungen beibehalten. Doch anstatt zu warten, eine einzelne, ständig Log-Änderungsdatei, erwägen Sie, dass eine andere Änderung Protokolldatei für jede Datenbankversion. In der Regel empfiehlt auf Version die Datenbank jedes Mal, die sie bereitgestellt wird. Indem Sie ein Protokoll der Änderungsprotokolle verwalten kann, ausgehend von der Baseline neu erstellt jede Datenbankversion durch Ausführen der Log-Änderungsskripts ab Version 1 und fortsetzen, bis Sie erreichen, dass die Version muss wiederhergestellt werden.

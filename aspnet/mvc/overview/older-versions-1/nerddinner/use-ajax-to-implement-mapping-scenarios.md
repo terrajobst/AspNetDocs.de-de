@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: f7de23ca46e6dc00fe8075e28068a8b3f95d02cd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9beddfcaf568bf374271fb9fcb3af3a38aff4b72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053257"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424832"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>Implementieren von Zuordnungsszenarien mithilfe von AJAX
 ====================
@@ -150,7 +150,7 @@ Um dies zu implementieren, werden wir eine neue "SearchController"-Klasse erstel
 
 [!code-csharp[Main](use-ajax-to-implement-mapping-scenarios/samples/sample10.cs)]
 
-Die SearchControllers SearchByLocation Action-Methode ruft intern die FindByLocation-Methode auf DinnerRespository, um eine Liste der in der Nähe Dinner zu erhalten. Anstatt die Dinner-Objekte direkt an den Client zurückgeben, allerdings es stattdessen JsonDinner gibt Objekte zurück. Die JsonDinner-Klasse stellt eine Teilmenge der Dinner-Eigenschaften (z. B.: Sicherheitsgründen weitergeben nicht die Namen der Personen, die zu einem Dinner um Antwort gebeten haben). Darüber hinaus eine RSVPCount-Eigenschaft, nicht vorhanden ist, auf der Dinner – und das durch zählen der Anzahl von RSVP-Objekten, die ein bestimmtes Essen zugeordneten dynamisch berechnet wird.
+Die SearchControllers SearchByLocation Action-Methode ruft intern die FindByLocation-Methode auf "dinnerrepository", um eine Liste der in der Nähe Dinner zu erhalten. Anstatt die Dinner-Objekte direkt an den Client zurückgeben, allerdings es stattdessen JsonDinner gibt Objekte zurück. Die JsonDinner-Klasse stellt eine Teilmenge der Dinner-Eigenschaften (z. B.: Sicherheitsgründen weitergeben nicht die Namen der Personen, die zu einem Dinner um Antwort gebeten haben). Darüber hinaus eine RSVPCount-Eigenschaft, nicht vorhanden ist, auf der Dinner – und das durch zählen der Anzahl von RSVP-Objekten, die ein bestimmtes Essen zugeordneten dynamisch berechnet wird.
 
 Wir klicken Sie dann verwenden die Parse()"-Hilfsmethode für die Basisklasse für Controller, um die Reihenfolge der Dinner mit einem JSON-basierten Wireformat zurück. JSON ist ein standard-Text-Format für einfache Datenstrukturen darstellt. Es folgt ein Beispiel für eine JSON-formatierte Liste zwei JsonDinner Objekte wie bei, die von unserer Aktionsmethode zurückgegeben:
 

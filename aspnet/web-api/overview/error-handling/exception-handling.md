@@ -8,12 +8,12 @@ ms.date: 03/12/2012
 ms.assetid: cbebeb37-2594-41f2-b71a-f4f26520d512
 msc.legacyurl: /web-api/overview/error-handling/exception-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 62e6187cd82252e7d30f21e03cc4d08418fa39ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e6a04c490a1f7e3b2a450414b4be6f02804b9681
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027197"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422596"
 ---
 <a name="exception-handling-in-aspnet-web-api"></a>Behandlung von Ausnahmen in ASP.NET Web-API
 ====================
@@ -73,7 +73,7 @@ Um den Filter auf alle Aktionen auf einem Controller anzuwenden, fügen Sie den 
 
 [!code-csharp[Main](exception-handling/samples/sample5.cs)]
 
-Um den Filter Global auf alle Web-API-Controller anzuwenden, fügen Sie eine Instanz des Filters, der die **GlobalConfiguration.Configuration.Filters** Auflistung. Batchverarbeitungsorchestrierung-Filter in dieser Auflistung können auf jeder beliebigen Controlleraktion der Web-API.
+Um den Filter Global auf alle Web-API-Controller anzuwenden, fügen Sie eine Instanz des Filters, der die **GlobalConfiguration.Configuration.Filters** Auflistung. Ausnahmefilter in dieser Auflistung gelten für alle Web-API-Controlleraktion.
 
 [!code-csharp[Main](exception-handling/samples/sample6.cs)]
 

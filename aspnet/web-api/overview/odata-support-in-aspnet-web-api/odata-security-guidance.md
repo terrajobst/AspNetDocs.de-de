@@ -8,12 +8,12 @@ ms.date: 02/06/2013
 ms.assetid: b91e6424-1544-4747-bd0b-d1f8418c9653
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 4ba53e15dab83368097a58ba4d0d2e46d113d1d2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0e43ec6b1cbe922b00f0f71d08aed4d0f4c08af8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065247"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425859"
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>Sicherheitsempfehlungen für ASP.NET Web-API 2 OData
 ====================
@@ -25,7 +25,7 @@ Dieses Thema beschreibt einige der Sicherheitsprobleme, die Sie berücksichtigen
 
 Die Semantik der Abfrage basiert auf Entity Data Model (EDM) gibt nicht die zugrunde liegenden Modelltypen. Sie können eine Eigenschaft ausschließen, aus dem EDM und wird nicht für die Abfrage sichtbar sein. Nehmen wir beispielsweise an, dass Ihr Modell einen Employee-Typ mit einem Gehalt-Eigenschaft enthält. Sie sollten diese Eigenschaft des EDM, um es von Clients ausblenden ausgeschlossen werden.
 
-Es gibt zwei Möglichkeiten, schließt eine Eigenschaft aus dem EDM. Sie können festlegen, die **[IgnoreDataMember]** Attribut für die Eigenschaft in der Modellklasse:
+Es gibt zwei Möglichkeiten, eine Eigenschaft vom EDM ausschließen. Sie können festlegen, die **[IgnoreDataMember]** Attribut für die Eigenschaft in der Modellklasse:
 
 [!code-csharp[Main](odata-security-guidance/samples/sample1.cs)]
 

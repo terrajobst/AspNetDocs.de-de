@@ -7,18 +7,18 @@ ms.author: riande
 ms.date: 11/24/2017
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: be237bee43bc5e32939cb0b3e0948fd8b35bd1eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0c360f580285967c8fab8d33ccbb9557a7316ee1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058987"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423138"
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Aufrufen einer Webs-API aus einem .NET-Client (c#)
 ====================
 durch [Mike Wasson](https://github.com/MikeWasson) und [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Herunterladen des abgeschlossenen Projekts](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) 
+[Herunterladen des abgeschlossenen Projekts](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) 
 
 In diesem Tutorial wird gezeigt, wie eine Web-API aufrufen, aus einer .NET-Anwendung mit [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -164,7 +164,7 @@ Wie GET muss eine DELETE-Anforderung nicht über einen Anforderungstext. Sie mü
 
 So testen Sie die Client-app:
 
-1. [Herunterladen](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) , und führen Sie die Server-app. [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) Stellen Sie sicher, dass die Server-app ausgeführt wird. Für Exaxmple `http://localhost:64195/api/products` sollte eine Liste von Produkten zurückgegeben.
+1. [Herunterladen](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) , und führen Sie die Server-app. [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) Stellen Sie sicher, dass die Server-app ausgeführt wird. Z. B. `http://localhost:64195/api/products` sollte eine Liste von Produkten zurückgegeben.
 2. Legen Sie die Basis-URI für HTTP-Anforderungen. Ändern Sie die Nummer des Ports, auf den Port, der in der Server-app verwendet.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

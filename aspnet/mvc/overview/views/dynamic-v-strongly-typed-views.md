@@ -8,12 +8,12 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: bd00fccc44019b2e401247de1532d2abcb5dd396
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bde40f609db25f590108bfc2396071c0033a1326
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057017"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423337"
 ---
 <a name="dynamic-v-strongly-typed-views"></a>Dynamische im Vergleich zu Stark typisierten Ansichten
 ====================
@@ -56,6 +56,6 @@ Beachten Sie, dass sie genau die gleichen return View(topBlogs) ist. Rufen Sie a
 
 In der neuen ansichtsvorlage erhalten wir Intellisense-Unterstützung.
 
-[![7002.intellesince[1]](dynamic-v-strongly-typed-views/_static/image8.png)](dynamic-v-strongly-typed-views/_static/image7.png)
+[![7002.IntelliSense[1]](dynamic-v-strongly-typed-views/_static/image8.png)](dynamic-v-strongly-typed-views/_static/image7.png)
 
 C#-Projekt kann heruntergeladen werden [hier](https://blogs.msdn.com/cfs-file.ashx/__key/CommunityServer-Blogs-Components-WeblogFiles/00-00-01-11-73-SSMS/1817.Mvc3ViewDemo.zip).

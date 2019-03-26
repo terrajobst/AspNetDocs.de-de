@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 0170fda6849c1dfb53b44908ea55ba2cad0dd067
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036617"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423415"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 – Benutzerdefinierte Aktionsfilter
 
@@ -261,7 +261,7 @@ In dieser Aufgabe erstellen Sie eine neue benutzerdefinierte Aktionsfilter beim 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > Diese benutzerdefinierte Aktionsfilter ist fast identisch als das, was Sie in der vorherigen Übung erstellt haben. Der Hauptunterschied besteht darin, dass sie hat die *&quot;protokolliert von&quot;* Attribut, die mit dieser neuen Klasse-Namen zur Identifizierung von eingetragen werden sollen Filter aktualisiert registriert das Protokoll.
+    > Diese benutzerdefinierte Aktionsfilter ist fast identisch als das, was Sie in der vorherigen Übung erstellt haben. Der Hauptunterschied besteht darin, dass sie hat die *&quot;protokolliert von&quot;* Attribut aktualisiert, die mit dieser neuen Klasse Name zum Identifizieren der Filterinformationen das Protokoll registriert.
 
 <a id="Ex2Task2"></a>
 
@@ -292,7 +292,7 @@ In dieser Aufgabe Sie einen neuen benutzerdefinierten Filter hinzufügen, in die
 <a id="Task_3_Managing_Filter_Ordering"></a>
 #### <a name="task-3-managing-filter-ordering"></a>Aufgabe 3: Verwalten die Reihenfolge der Filter
 
-In dieser Aufgabe lernen Sie, wie Sie die Ausführungsreihenfolge der Filter zu verwalten, indem Sie mit der Reihenfolge aus.
+In dieser Aufgabe lernen Sie, wie Sie die Ausführungsreihenfolge der Filter zu verwalten, indem Sie mit der Order-Eigenschaft.
 
 1. Öffnen der **StoreController** Klasse befindet sich am **MvcMusicStore\Controllers** , und geben Sie die **Reihenfolge** -Eigenschaft in beide Filter wie wie unten gezeigt.
 
@@ -325,7 +325,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Ausführungsreihenfolge der Filter zu 
 <a id="Task_4_Registering_Filters_Globally"></a>
 #### <a name="task-4-registering-filters-globally"></a>Aufgabe 4: Globale Filter registrieren
 
-In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu registrieren (**MyNewCustomActionFilter**) als globalen Filter. Auf diese Weise wird es über alle Aktionen-ausgeführt in der Anwendung und nicht nur in der StoreController werden wie in der vorherigen Aufgabe ausgelöst werden.
+In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu registrieren (**MyNewCustomActionFilter**) als globalen Filter. Auf diese Weise wird es über alle Aktionen in der Anwendung und nicht nur in der StoreController werden wie in der vorherigen Aufgabe ausgelöst werden.
 
 1. In **StoreController** -Klasse, entfernen Sie **[MyNewCustomActionFilter]** Attribut und der Order-Eigenschaft von **["customactionfilter"]**. Es sollte wie folgt aussehen:
 
@@ -375,7 +375,7 @@ Von dieser praktischen Übungseinheit haben Sie gelernt einen Aktionsfilter zum 
 
 Sie installieren können **Microsoft Visual Studio Express 2012 für Web** oder einem anderen &quot;Express&quot; Version verwenden, die **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. Die folgenden Anweisungen führen Sie über die erforderlichen Schritte zum Installieren *Visual Studio Express 2012 für Web* mit *Microsoft Web Platform Installer*.
 
-1. Wechseln Sie zu [ [ https://go.microsoft.com/? Linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169). Auch wenn Sie bereits Webplattform-Installer installiert haben, können Sie öffnen ihn, und suchen Sie nach dem Produkt &quot; <em>Visual Studio Express 2012 für das Web mit Windows Azure SDK</em>&quot;.
+1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Auch wenn Sie bereits Webplattform-Installer installiert haben, können Sie öffnen ihn, und suchen Sie nach dem Produkt &quot; <em>Visual Studio Express 2012 für das Web mit Windows Azure SDK</em>&quot;.
 2. Klicken Sie auf **jetzt installieren**. Wenn Sie keine **Webplattform-Installer** gelangen Sie zum Herunterladen und installieren Sie diese zuerst.
 3. Einmal **Webplattform-Installer** geöffnet ist, klicken Sie auf **installieren** um das Setup zu starten.
 
@@ -419,7 +419,7 @@ In diesem Anhang wird veranschaulicht, wie erstellen eine neue Website aus dem W
 1. Wechseln Sie zu der [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet.
 
     > [!NOTE]
-    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](http://aka.ms/aspnet-hol-azure).
+    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](https://aka.ms/aspnet-hol-azure).
 
     ![Melden Sie sich bei Windows Azure-Portal](aspnet-mvc-4-custom-action-filters/_static/image17.png "melden Sie sich bei Windows Azure-Portal")
 

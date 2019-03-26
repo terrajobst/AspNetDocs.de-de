@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 6331e02e-c465-4cdf-bd3f-f07680c289d6
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: deae088d1daa63e2936aedf80eded18588b1ec60
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2b0d7aeab357a0009c44a29ff66f22ce8a744a90
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026897"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422147"
 ---
 <a name="adding-client-side-confirmation-when-deleting-vb"></a>Hinzufügen von clientseitiger Bestätigung beim Löschen (VB)
 ====================
@@ -38,7 +38,7 @@ Das JavaScript `confirm(string)` Funktion zeigt die Zeichenfolgen-Eingabeparamet
 **Abbildung 1**: Das JavaScript `confirm(string)` Methode zeigt ein modales, clientseitige Messagebox an.
 
 
-Während einer Formularübergabe, wenn ein Wert von `false` von einem clientseitigen Ereignis-Handler zurückgegeben wird, und klicken Sie dann die Übermittlung des Formulars abgebrochen wird. Mit dieser Funktion können wir haben der löschen-Schaltfläche "," s-Clientseite `onclick` -Ereignishandler den Rückgabewert eines Aufrufs von `confirm("Are you sure you want to delete this product?")`. Wenn der Benutzer auf "Abbrechen", klickt `confirm(string)` gibt "false", wodurch verursacht die Übermittlung des Formulars zum abzubrechen. Kein Postback werden das Produkt, dessen löschen-Schaltfläche geklickt wurde, die gewonnen haben t gelöscht. Wenn jedoch der Benutzer in das Dialogfeld zur Bestätigung auf OK klickt, wird das Postback ungehindert und das Produkt gelöscht werden. Wenden Sie sich an [Verwenden von JavaScript-s `confirm()` Methode, um die Formularübermittlung Steuerelement](http://www.webreference.com/programming/javascript/confirm/) für Weitere Informationen zu dieser Technik.
+Während einer Formularübergabe, wenn ein Wert von `false` von einem clientseitigen Ereignis-Handler zurückgegeben wird, und klicken Sie dann die Übermittlung des Formulars abgebrochen wird. Mit dieser Funktion können wir haben der löschen-Schaltfläche "," s-Clientseite `onclick` -Ereignishandler den Rückgabewert eines Aufrufs von `confirm("Are you sure you want to delete this product?")`. Wenn der Benutzer auf "Abbrechen", klickt `confirm(string)` gibt "false", wodurch verursacht die Übermittlung des Formulars zum abzubrechen. Kein Postback nicht des Produkts, dessen löschen-Schaltfläche geklickt wurde, gelöscht. Wenn jedoch der Benutzer in das Dialogfeld zur Bestätigung auf OK klickt, wird das Postback ungehindert und das Produkt gelöscht werden. Wenden Sie sich an [Verwenden von JavaScript-s `confirm()` Methode, um die Formularübermittlung Steuerelement](http://www.webreference.com/programming/javascript/confirm/) für Weitere Informationen zu dieser Technik.
 
 Hinzufügen der erforderlichen Client-seitige Skript unterscheidet sich geringfügig bei Verwendung von Vorlagen als bei der Verwendung einer CommandField. Aus diesem Grund wird in diesem Tutorial sowohl einen FormView und GridView-Beispiel betrachten wir.
 

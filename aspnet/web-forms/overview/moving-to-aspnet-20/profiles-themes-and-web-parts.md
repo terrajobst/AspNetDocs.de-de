@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 98559c2a378c72bc5664faafe5436753050b574f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 010adaba61b15ca4421c2d3a4a7590becb53897b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062767"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422846"
 ---
 <a name="profiles-themes-and-web-parts"></a>Profile, Designs und Webparts
 ====================
@@ -222,7 +222,7 @@ In dieser Übung werden Sie ein ASP.NET-Design auf eine Website anwenden.
 3. Wählen Sie die Webkonfigurationsdatei aus der Liste der Dateien, und klicken Sie auf Hinzufügen.
 4. Mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen.
 5. Wählen Sie die Skin-Datei, und klicken Sie auf Hinzufügen.
-6. Klicken Sie auf "Ja", wenn Sie gefragt, ob eine wie die Datei in der App\_Themes-Ordner.
+6. Klicken Sie auf "Ja", wenn Sie gefragt werden, wenn Sie, die Datei in der App möchten\_Themes-Ordner.
 7. Mit der rechten Maustaste auf den Ordner SkinFile innerhalb der App\_Themes-Ordner im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen.
 8. Wählen Sie das Stylesheet aus der Liste der Dateien, und klicken Sie auf Hinzufügen. Sie haben jetzt alle Dateien erforderlich, das neue Design zu implementieren. Allerdings hat Visual Studio Ihrem Designordner SkinFile benannt. Mit der rechten Maustaste auf diesen Ordner, und ändern Sie den Namen in CoolTheme.
 9. Öffnen Sie die SkinFile.skin-Datei, und fügen Sie den folgenden Code das Ende der Datei hinzu: 

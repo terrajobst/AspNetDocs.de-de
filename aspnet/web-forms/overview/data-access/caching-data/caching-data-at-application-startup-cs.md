@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c97058e5fd54dfd0393ec5ad020ad957d9719784
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 692b2a13664a9a5153a85a230dd513b022518316
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064067"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423986"
 ---
 <a name="caching-data-at-application-startup-c"></a>Zwischenspeichern von Daten beim Anwendungsstart (C#)
 ====================
@@ -103,7 +103,7 @@ Ebenso kann das Datencache als Cachespeicher, wie im folgenden Code gezeigt verw
 
 [!code-csharp[Main](caching-data-at-application-startup-cs/samples/sample5.cs)]
 
-Verwenden Sie zum Hinzufügen eines Elements, das dem Datencache ohne Ablaufdatum zeitbasierte der `System.Web.Caching.Cache.NoAbsoluteExpiration` und `System.Web.Caching.Cache.NoSlidingExpiration` Werte als Eingabeparameter. Durch diese jeweilige Überlastung der Datencache `Insert` Methode ausgewählt wurde, damit wir angeben könnten die *Priorität* für das Cacheelement. Die Priorität wird verwendet, um zu bestimmen, welche Elemente aus dem Cache löschen sind, wenn der Speicherplatz knapp wird. Hier verwenden wir die Priorität `NotRemovable`, die sicherstellt, dass dieses Element im Cache t gewonnen geleert werden.
+Verwenden Sie zum Hinzufügen eines Elements, das dem Datencache ohne Ablaufdatum zeitbasierte der `System.Web.Caching.Cache.NoAbsoluteExpiration` und `System.Web.Caching.Cache.NoSlidingExpiration` Werte als Eingabeparameter. Durch diese jeweilige Überlastung der Datencache `Insert` Methode ausgewählt wurde, damit wir angeben könnten die *Priorität* für das Cacheelement. Die Priorität wird verwendet, um zu bestimmen, welche Elemente aus dem Cache löschen sind, wenn der Speicherplatz knapp wird. Hier verwenden wir die Priorität `NotRemovable`, die sicherstellt, dass dieses Element im Cache wird nicht geleert werden.
 
 > [!NOTE]
 > Dieses Tutorial herunterladen implementiert die `StaticCache` -Klasse unter Verwendung des statischen Member-Variable-Ansatzes. Der Code für die Anwendung Anwendungszustands und der Cache-Techniken ist verfügbar in den Kommentaren in der Klassendatei.

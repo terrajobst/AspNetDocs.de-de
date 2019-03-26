@@ -8,12 +8,12 @@ ms.date: 10/02/2014
 ms.assetid: 0a8d6044-5fab-4213-82d6-5618d5601358
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: acc13776840408756901e20589b9efacc83ff2a9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1bd90f0ceddee7d9e18c1cac2fadfb2c84841f19
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053647"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424637"
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>Erstellen einer sicheren ASP.NET Web Forms-App mit Benutzerregistrierung, E-Mail-Bestätigung und Kennwortzurücksetzung (C#)
 ====================

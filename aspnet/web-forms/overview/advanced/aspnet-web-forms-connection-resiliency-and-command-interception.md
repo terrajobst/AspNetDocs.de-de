@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 039923a91d957765fa8b2c0cfe11abc8790c1e88
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 067542e8b8aa9909bbb2147f8e11e34604986d87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052677"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424026"
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>Verbindungsresilienz von ASP.NET Web Forms und Abfangen von Befehlen
 ====================
@@ -141,7 +141,7 @@ Als Nächstes erstellen Sie die Klassen, denen das Entity Framework aufrufen wir
 
 Diese Codezeilen sind, was bewirkt, dass den Interceptor Code ausgeführt werden, wenn Entity Framework Abfragen an die Datenbank sendet. Beachten Sie, dass, da Sie separate Interceptor-Klassen für vorübergehende Fehler Simulation erstellt und Protokollierung können Sie unabhängig voneinander aktivieren und deaktivieren Sie diese.   
   
- Können Sie mithilfe von Interceptors Hinzufügen der `DbInterception.Add` Methode eine beliebige Stelle im Code; es muss keine in der `Application_Start` Methode. Eine weitere Option, wenn Sie abfangfunktionen in hinzugefügt haben die `Application_Start` Methode wäre zu aktualisieren, oder fügen Sie die Klasse, die mit dem Namen *WingtipToysConfiguration.cs* , und fügen Sie im oben stehenden Code am Ende des Konstruktors für den `WingtipToysbConfiguration` Klasse.
+ Können Sie mithilfe von Interceptors Hinzufügen der `DbInterception.Add` Methode eine beliebige Stelle im Code; es muss keine in der `Application_Start` Methode. Eine weitere Option, wenn Sie abfangfunktionen in hinzugefügt haben die `Application_Start` Methode wäre zu aktualisieren, oder fügen Sie die Klasse, die mit dem Namen *WingtipToysConfiguration.cs* , und fügen Sie im oben stehenden Code am Ende des Konstruktors für den `WingtipToysConfiguration` Klasse.
 
 Ganz egal, wo Sie diesen Code, einfügen, werden Sie darauf achten, nicht zum Ausführen `DbInterception.Add` für den gleichen Interceptor mehr als einmal, oder Sie zusätzliche interceptorinstanzen erhalten. Z. B. Wenn Sie den Interceptor Protokollierung zweimal hinzufügen, sehen Sie zwei Protokolle für alle SQL-Abfrage.
 
@@ -156,7 +156,7 @@ Sie haben die simulationscode vorübergehender Fehler in einer Weise geschrieben
 3. Geben Sie ein neues Produkt mit dem Namen "Throw" mit der entsprechenden Beschreibung "," Price "und" Image-Datei ein.
 4. Drücken Sie die **Produkt hinzufügen** Schaltfläche.  
    Sie werden feststellen, dass der Browser ist nicht mehr reagiert für einige Sekunden, während der Entity Framework die Abfrage mehrere Male wiederholt. Der erste Wiederholungsversuch erfolgt sehr schnell, und klicken Sie dann die Wartezeit vor jedem Neuversuch zusätzliche erhöht. Dieser Prozess vor jedem erneuten Versuch aufgerufen wird, beim Warten auf mehr *exponentiell ansteigende Wartezeiten* .
-5. Warten Sie, bis die Seite nicht mehr Atttempting geladen ist.
+5. Warten Sie, bis die Seite nicht mehr zu laden versucht.
 6. Beenden Sie das Projekt, und sehen Sie sich Visual Studio **Ausgabe** Fenster aus, um die Ausgabe der Ablaufverfolgung finden Sie unter. Sie finden die **Ausgabe** Fenster durch Auswahl **Debuggen**  - &gt; **Windows**  - &gt;  **Ausgabe**. Sie müssen möglicherweise über verschiedene Protokolle, die geschrieben werden, indem Sie den Logger zu scrollen.  
   
    Beachten Sie, dass Sie, die tatsächlichen SQL-Abfragen an die Datenbank gesendet sehen können. Sie sehen einige anfängliche Abfragen und Befehle, die Entity Framework ermöglicht wird, um den ersten Schritten überprüfen die Datenbank-Version und die Migration der Verlaufstabelle.   

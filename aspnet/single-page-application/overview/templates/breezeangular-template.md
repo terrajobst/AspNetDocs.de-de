@@ -8,12 +8,12 @@ ms.date: 03/08/2013
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
-ms.openlocfilehash: a3e8b42cdadf99df6971a278834b1429e129ce72
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a3021f166262ee953b0cbe9ea88762a385925b88
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041187"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423100"
 ---
 <a name="breezeangular-template"></a>Breeze-/Angular-Vorlage
 ====================
@@ -89,7 +89,7 @@ Jetzt können Sie in der der SPA Land. Alles, was Sie finden Sie unter den sowie
 
 Die Validierungslogik wird von Breeze clientseitige ausgeführt. Validierungsattribute für die Server-Modell-Klassen werden an den Client weitergegeben und automatisch ausgeführt werden, bevor der Client den Server kontaktiert.
 
-Überprüfen Sie den Netzwerkdatenverkehr. Beachten Sie, dass es keine Aufrufe an den Server, gab Wenn Breeze ein Fehler erkannt. Jede gültige Änderung führte zu einer POST-Anforderung "/ api/Todo /" SaveChanges"". Breeze bündelt die Änderungen und sendet diese zusammen als eine einzelne Anforderung an die Web-API-Controllers `SaveChanges` Methode. Unterscheidet sich vom KockoutJS SPA-Vorlage, die PUT, POST und DELETE-Anforderungen für jedes Element einzeln ist.
+Überprüfen Sie den Netzwerkdatenverkehr. Beachten Sie, dass es keine Aufrufe an den Server, gab Wenn Breeze ein Fehler erkannt. Jede gültige Änderung führte zu einer POST-Anforderung "/ api/Todo /" SaveChanges"". Breeze bündelt die Änderungen und sendet diese zusammen als eine einzelne Anforderung an die Web-API-Controllers `SaveChanges` Methode. Unterscheidet sich vom KnockoutJS SPA-Vorlage, die PUT, POST und DELETE-Anforderungen für jedes Element einzeln ist.
 
 Beachten Sie, dass kein Netzwerkdatenverkehr vorhanden ist, wenn Sie zwischen der "Todolist" sowie zu den Seiten wechseln. Das ist da die Abfrage in den lokalen Cache von Breeze eingeschränkt wurde.
 
@@ -107,7 +107,7 @@ Die serverseitigen Stapels besteht aus einige Entwickler das Codieren und drei P
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-Die grundlegende Architektur ist identisch mit der KockoutJS SPA-Vorlage. Die Implementierung ist jedoch viel einfacher: DTOs gelöscht wurden, und die meisten Details Entity Framework an Breeze.NET delegiert wurden.
+Die grundlegende Architektur ist identisch mit der KnockoutJS SPA-Vorlage. Die Implementierung ist jedoch viel einfacher: DTOs gelöscht wurden, und die meisten Details Entity Framework an Breeze.NET delegiert wurden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

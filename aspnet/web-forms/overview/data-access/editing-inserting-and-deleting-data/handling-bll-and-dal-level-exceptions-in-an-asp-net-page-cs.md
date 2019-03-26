@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 49d8a66c-3ea8-4087-839f-179d1d94512a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d4fa3e3e7bbe335af31423ec4fdd60e9791c2b0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dea7b1e8cd5be795acd27868066384fe52b065f7
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043307"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422193"
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene in einer ASP.NET-Seite (C#)
 ====================
@@ -98,7 +98,7 @@ An diesem Punkt haben wir eine Liste aller Produkte `ProductName`, `QuantityPerU
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>Schritt 2: Ordnungsgemäß Behandeln von Ausnahmen auf DAL-Ebene
 
-Unsere bearbeitbaren GridView einwandfrei funktioniert, zwar beim Benutzer gültige Werte für die bearbeitete Product Name, Preis und im Lager vorrätigen Stückzahl eingeben löst eine Ausnahme unzulässige Werte eingeben. Z. B. das Auslassen der `ProductName` Wert bewirkt, dass eine [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) seit ausgelöst werden die `ProductName` -Eigenschaft in der `ProdcutsRow` -Klasse verfügt über seine `AllowDBNull` -Eigenschaft auf festgelegt `false`; Wenn die Datenbank betriebsbereit ist, eine `SqlException` beim Versuch, eine Verbindung mit der Datenbank von der TableAdapter ausgelöst. Ohne dass eine Aktion an, diese Ausnahmen übergeben aus der Datenzugriffsebene, die Geschäftslogikebene und anschließend auf der ASP.NET-Seite und schließlich an die ASP.NET-Laufzeitumgebung.
+Unsere bearbeitbaren GridView einwandfrei funktioniert, zwar beim Benutzer gültige Werte für die bearbeitete Product Name, Preis und im Lager vorrätigen Stückzahl eingeben löst eine Ausnahme unzulässige Werte eingeben. Z. B. das Auslassen der `ProductName` Wert bewirkt, dass eine [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) seit ausgelöst werden die `ProductName` -Eigenschaft in der `ProductsRow` -Klasse verfügt über seine `AllowDBNull` -Eigenschaft auf festgelegt `false`; Wenn die Datenbank betriebsbereit ist, eine `SqlException` beim Versuch, eine Verbindung mit der Datenbank von der TableAdapter ausgelöst. Ohne dass eine Aktion an, diese Ausnahmen übergeben aus der Datenzugriffsebene, die Geschäftslogikebene und anschließend auf der ASP.NET-Seite und schließlich an die ASP.NET-Laufzeitumgebung.
 
 Je nachdem, wie Ihre Web-Anwendung konfiguriert wird und davon, ob die Anwendung von besuchte `localhost`, eine nicht behandelte Ausnahme kann dazu führen, entweder eine generische Fehlerseite des Servers, einer detaillierten Fehlerbericht oder eine benutzerfreundliche Webseite. Finden Sie unter [Web Application Error Handling in ASP.NET](http://www.15seconds.com/issue/030102.htm) und [CustomErrors-Element](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx) um mehr über die ASP.NET-Laufzeit wie auf eine nicht abgefangene Ausnahme zu reagieren.
 

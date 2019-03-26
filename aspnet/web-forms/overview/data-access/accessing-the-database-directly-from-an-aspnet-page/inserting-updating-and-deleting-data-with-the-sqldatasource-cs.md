@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: a526f0ec-779e-4a2b-a476-6604090d25ce
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2c52fcf746d80899d7ea568c8110c4dfa610224c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 06c5fea8a058f15e72d455cf0e15b462d8f91e38
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041367"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440390"
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>Einfügen, Aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (C#)
 ====================
@@ -119,7 +119,7 @@ Mit der `DeleteCommand` Eigenschaft hinzugefügt, das GridView-s-Smarttag enthä
 Nach dem Klicken auf eine Schaltfläche "löschen", ein Postback auftritt, weist der GridView der `ProductID` Parameter den Wert von der `DataKeys` -Wert für die Zeile, deren Schaltfläche "löschen" geklickt wurde, und ruft die SqlDataSource s `Delete()` Methode. Das SqlDataSource-Steuerelement klicken Sie dann eine Verbindung mit der Datenbank her und führt die `DELETE` Anweisung. GridView bindet dann erneut, auf dem SqlDataSource-Steuerelement, abrufen und Anzeigen von den aktuellen Satz von Produkten (einschließlich nicht mehr den Datensatz einfach gelöscht).
 
 > [!NOTE]
-> Da GridView verwendet die `DataKeys` Auflistung zum Auffüllen der SqlDataSource-Parameter, es wichtige s, der GridView-s `DataKeyNames` Eigenschaft festgelegt werden, um die Spalten, die den Primärschlüssel und die bilden s SqlDataSource-Steuerelement `SelectCommand` zurückgibt Diese Spalten. Darüber hinaus es wichtig, dass der Parameter in der SqlDataSource s Namen s `DeleteCommand` nastaven NA hodnotu `@ProductID`. Wenn die `DataKeyNames` Eigenschaft nicht festgelegt ist, oder der Parameter ist nicht mit dem Namen `@ProductsID`, klicken Sie auf die Schaltfläche "löschen" führt dazu, dass einen Postback, aber gewonnenem t tatsächlich einen Datensatz gelöscht.
+> Da GridView verwendet die `DataKeys` Auflistung zum Auffüllen der SqlDataSource-Parameter, es wichtige s, der GridView-s `DataKeyNames` Eigenschaft festgelegt werden, um die Spalten, die den Primärschlüssel und die bilden s SqlDataSource-Steuerelement `SelectCommand` zurückgibt Diese Spalten. Darüber hinaus es wichtig, dass der Parameter in der SqlDataSource s Namen s `DeleteCommand` nastaven NA hodnotu `@ProductID`. Wenn die `DataKeyNames` Eigenschaft nicht festgelegt ist, oder der Parameter ist nicht mit dem Namen `@ProductsID`, klicken Sie auf die Schaltfläche "löschen" bewirkt, dass einen Postback, aber jeder Datensatz wird nicht tatsächlich gelöscht.
 
 
 Abbildung 5 zeigt diese Interaktion grafisch an. Verweisen zurück auf die [Untersuchen der Ereignisse zugeordnet einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs.md) Tutorial für eine ausführlichere Erläuterung in der Kette der Ereignisse im Zusammenhang mit einfügen, aktualisieren und löschen aus einem Websteuerelement.
@@ -192,7 +192,7 @@ Seit der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen-Option ist nur
 
 Während der `INSERT`, `UPDATE`, und `DELETE` Anweisungen können manuell eingegeben werden, sollten Sie die folgenden sparen Sie Zeit. Setup-zunächst dem SqlDataSource-Steuerelement, damit sie wieder Daten einfach Abrufen der `Products` Tabelle. Verwenden Sie die Spalten aus einer Tabelle oder Sicht Bildschirm Konfigurieren von Datenquellen-Assistenten s angeben, damit Sie automatisch generieren können die `INSERT`, `UPDATE`, und `DELETE` Anweisungen. Wählen Sie dann nach Abschluss des Assistenten zum Konfigurieren der SelectQuery aus dem Fenster "Eigenschaften" (oder alternativ, wechseln Sie zurück an den Assistent zum Konfigurieren von Datenquellen, aber verwenden Sie die benutzerdefinierte SQL-Anweisung angeben oder die gespeicherte Prozedur-Option). Aktualisieren Sie dann die `SELECT` -Anweisung zum Einschließen der `JOIN` Syntax. Diese Technik bietet zeitsparende Vorteile der automatisch generierten SQL-Anweisungen und ermöglicht eine stärker angepassten `SELECT` Anweisung.
 
-Eine weitere Einschränkung der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` Anweisungen besteht, die aus den Spalten in der `INSERT` und `UPDATE` Anweisungen werden auf Grundlage der Spalten, die vom der `SELECT` Anweisung. Wir müssen möglicherweise aktualisieren oder Einfügen von mehr oder weniger Felder jedoch. Angenommen, in dem Beispiel aus Schritt2, vielleicht möchten wir haben die `UnitPrice` BoundField schreibgeschützt sein. In diesem Fall es treten normalerweise t angezeigt, der `UpdateCommand`. Oder wir können möchten, legen Sie den Wert eines Tabellenfelds, die nicht angezeigt wird, in den GridView-Ansicht. Z. B. das Hinzufügen einer neuen Datensatz möglicherweise möchten wir die `QuantityPerUnit` Wert auf TODO festgelegt.
+Eine weitere Einschränkung der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` Anweisungen besteht, die aus den Spalten in der `INSERT` und `UPDATE` Anweisungen werden auf Grundlage der Spalten, die vom der `SELECT` Anweisung. Wir müssen möglicherweise aktualisieren oder Einfügen von mehr oder weniger Felder jedoch. Angenommen, in dem Beispiel aus Schritt2, vielleicht möchten wir haben die `UnitPrice` BoundField schreibgeschützt sein. Es sollte nicht in diesem Fall angezeigt, der `UpdateCommand`. Oder wir können möchten, legen Sie den Wert eines Tabellenfelds, die nicht angezeigt wird, in den GridView-Ansicht. Z. B. das Hinzufügen einer neuen Datensatz möglicherweise möchten wir die `QuantityPerUnit` Wert auf TODO festgelegt.
 
 Wenn solche Anpassungen erforderlich sind, müssen Sie sie manuell über das Fenster "Eigenschaften", die benutzerdefinierte SQL-Anweisung angeben oder die gespeicherte Prozedur eine Option im Assistenten oder über die deklarative Syntax machen.
 
@@ -204,7 +204,7 @@ Wenn solche Anpassungen erforderlich sind, müssen Sie sie manuell über das Fen
 
 Damit die Daten, dass websteuerungselemente, um ihre integrierte einfügen, bearbeiten und Löschen von Funktionen zu nutzen muss das Datenquellen-Steuerelement an das, dem Sie gebunden sind, solche Funktionen bieten. Für dem SqlDataSource-Steuerelement, das bedeutet, dass `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen müssen zugewiesen werden, um die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften. Diese Eigenschaften und die entsprechenden Parameter Sammlungen enthalten, können manuell hinzugefügt oder mit dem Konfigurieren von Datenquellen-Assistenten automatisch generiert. In diesem Tutorial untersucht wir beide Verfahren.
 
-Untersuchten wir zu "ObjectDataSource" vollständige Parallelität mit dem [optimistische Parallelität implementieren](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md) Tutorial. Das SqlDataSource-Steuerelement unterstützt außerdem optimistische Parallelität. Wie in Schritt2 erwähnt, bei der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` -Anweisungen, die der Assistent bietet einer vollständige Parallelität-Option verwenden. Im nächsten Tutorial sehen, verwenden optimistischen Parallelität, mit dem SqlDataSource-Steuerelement ändert die `WHERE` Klauseln in der `UPDATE` und `DELETE` Anweisungen, um sicherzustellen, dass die Werte für die anderen Spalten geändert wurde, seit die Daten entsprechend letzten seiner t auf der Seite angezeigt.
+Untersuchten wir zu "ObjectDataSource" vollständige Parallelität mit dem [optimistische Parallelität implementieren](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md) Tutorial. Das SqlDataSource-Steuerelement unterstützt außerdem optimistische Parallelität. Wie in Schritt2 erwähnt, bei der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` -Anweisungen, die der Assistent bietet einer vollständige Parallelität-Option verwenden. Im nächsten Tutorial sehen, verwenden optimistischen Parallelität, mit dem SqlDataSource-Steuerelement ändert die `WHERE` Klauseln in der `UPDATE` und `DELETE` Anweisungen, um sicherzustellen, dass die Werte für die anderen Spalten nicht geändert wurden, da die Daten entsprechend letzten seiner auf der Seite angezeigt.
 
 Viel Spaß beim Programmieren!
 

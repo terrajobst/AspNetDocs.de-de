@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 00731fbc0d578afa2df881b205170fb6a4f686e1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c561534a3fa1382c8af23c6ac779fac0c1dc8160
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057867"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424182"
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>Zugreifen auf Modelldaten anhand eines Controllers
 ====================
@@ -122,7 +122,7 @@ Dies `@model` -Direktive ermöglicht Ihnen Zugriff auf die Liste von Filmen, die
 
 Da die `Model` -Objekt stark typisiert ist (als ein `IEnumerable<Movie>` Objekt), die jeweils `item` Objekt in der Schleife wird als eingegeben `Movie`. Neben anderen Vorteilen bedeutet dies, dass Sie während der Kompilierung des Codes überprüfen und vollständige IntelliSense-Unterstützung im Code-Editor:
 
-![ModelIntellisene](accessing-your-models-data-from-a-controller/_static/image8.png)
+![ModelIntelliSense](accessing-your-models-data-from-a-controller/_static/image8.png)
 
 ## <a name="working-with-sql-server-localdb"></a>Arbeiten mit SQL Server LocalDB
 

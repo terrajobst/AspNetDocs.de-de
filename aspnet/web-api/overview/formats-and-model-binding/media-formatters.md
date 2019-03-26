@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 4c56f64a-086a-44ce-99c2-4c69604cd7fd
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7b7ba2fb3f1bba0447e700c84a017266cba305e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd54a1d8ae3a2913c9d8a11c5b31ba1c829450d2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045017"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425313"
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Medienformatierer in der ASP.NET-Web-API 2
 ====================
@@ -46,7 +46,7 @@ Der Medientyp bestimmt, wie Sie Web-API zum Serialisieren und Deserialisieren vo
 Um einen medienformatierer zu erstellen, leiten Sie sich von einer dieser Klassen:
 
 - [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). In dieser Klasse verwendet den asynchronen Lesevorgang und Write-Methoden.
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Diese Klasse wird von **MediaTypeFormatter** aber werden Sychronous Lese-/Schreibzugriff Methoden verwendet.
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Diese Klasse wird von **MediaTypeFormatter** aber werden synchrone Lese-/Schreibzugriff-Methoden verwendet.
 
 Ableiten von **BufferedMediaTypeFormatter** ist einfacher, da es keinen asynchroner Code gibt, aber es bedeutet auch, dass der aufrufende Thread kann während der e/a blockiert.
 
@@ -56,7 +56,7 @@ Das folgende Beispiel zeigt einen medientypformatierer, die ein Product-Objekt i
 
 [!code-csharp[Main](media-formatters/samples/sample3.cs)]
 
-Um ein CSV-Formatierungsprogramm zu implementieren, definieren Sie eine abgeleitete Klasse **BufferedMediaTypeFormater**:
+Um ein CSV-Formatierungsprogramm zu implementieren, definieren Sie eine abgeleitete Klasse **BufferedMediaTypeFormatter**:
 
 [!code-csharp[Main](media-formatters/samples/sample4.cs)]
 

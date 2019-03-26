@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afd1551d72fa3a5b925d7499c86731db4b6f0b61
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043037"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422011"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Sortieren, Filtern und Paging mit Entitätsframework in einer ASP.NET MVC-Anwendung (3 von 10)
 ====================
@@ -89,7 +89,7 @@ In *Controllers\StudentController.cs*, ersetzen Sie die `Index` Methode durch de
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Sie haben einen `searchString`-Parameter zur `Index`-Methode hinzugefügt. Sie haben auch die LINQ-Anweisung hinzugefügt eine `where` Clausethat wählt Schüler/Studenten beschränkt, deren vor- oder Nachname die Suchzeichenfolge enthält. Der suchzeichenfolgenwert wird aus einem Textfeld empfangen, die Sie zur Indexansicht hinzufügen. Die Anweisung, die fügt die [, in denen](https://msdn.microsoft.com/library/bb535040.aspx) -Klausel ausgeführt wird, nur bei ein zu suchenden Wert an.
+Sie haben einen `searchString`-Parameter zur `Index`-Methode hinzugefügt. Sie haben auch die LINQ-Anweisung hinzugefügt eine `where` -Klausel, die nur Studenten auswählt, deren vor- oder Nachname die Suchzeichenfolge enthält. Der suchzeichenfolgenwert wird aus einem Textfeld empfangen, die Sie zur Indexansicht hinzufügen. Die Anweisung, die fügt die [, in denen](https://msdn.microsoft.com/library/bb535040.aspx) -Klausel ausgeführt wird, nur bei ein zu suchenden Wert an.
 
 > [!NOTE]
 > In vielen Fällen können Sie die gleiche Methode aufrufen, an einer Entity Framework-Entitätenmenge oder als eine Erweiterungsmethode in einer in-Memory-Sammlung. Die Ergebnisse sind normalerweise identisch, aber in einigen Fällen können abweichen. Z. B. die Implementierung von .NET Framework die `Contains` Methode gibt alle Zeilen zurück, wenn Sie eine leere Zeichenfolge an sie übergeben, aber die Entity Framework-Anbieter für SQL Server Compact 4.0 gibt 0 (null) Zeilen auf leere Zeichenfolgen zurück. Aus diesem Grund wird der Code im Beispiel (Einfügen der `Where` -Anweisung innerhalb einer `if` Anweisung) stellt sicher, dass Sie die gleichen Ergebnisse für alle Versionen von SQL Server erhalten. Darüber hinaus die Implementierung von .NET Framework die `Contains` -Methode führt einen Vergleich Groß-/Kleinschreibung standardmäßig, aber die Entity Framework SQL Server-Ressourcenanbieter führen die Groß-/Kleinschreibung Vergleiche standardmäßig. Aus diesem Grund Aufrufen der `ToUpper` Methode, um den Test explizit Groß-/Kleinschreibung, wird sichergestellt, dass die Ergebnisse nicht ändern, wenn Sie ändern den Code später ein Repository verwenden, die zurückgibt, wird ein `IEnumerable` -Sammlung anstelle einer `IQueryable` Objekt. (Beim Aufrufen der `Contains`-Methode einer `IEnumerable`-Sammlung erhalten Sie die .NET Framework-Implementierung. Wenn Sie sie auf einem `IQueryable`-Objekt aufrufen, erhalten Sie die Implementierung des Datenanbieters.)

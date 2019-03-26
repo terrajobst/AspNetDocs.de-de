@@ -8,12 +8,12 @@ ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f1799b3f9d698053c397e57da3f33ff900ec4013
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7ed2d543ca019e926a87e6897aa0d8a0784f4796
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026797"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422622"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Simulieren des Entitätsframework bei Komponententests für ASP.NET Web API 2
 ====================
@@ -138,7 +138,7 @@ Sie können nun können Sie das Testprojekt einrichten.
 <a id="testpackages"></a>
 ## <a name="install-nuget-packages-in-test-project"></a>Installieren von NuGet-Pakete im Test-Projekt
 
-Wenn Sie die leere Vorlage verwenden, um eine Anwendung zu erstellen, umfasst das Komponententestprojekt (StoreApp.Tests) keine installierten NuGet-Pakete. Weitere Vorlagen, wie z. B. die Web-API-Vorlage, schließen Sie einige NuGet-Pakete in das Komponententestprojekt. Für dieses Tutorial müssen Sie die Entity Framework-Paket und das Microsoft ASP.NET Web API 2-Core-Paket für das Testprojekt einschließen.
+Wenn Sie die leere Vorlage verwenden, um eine Anwendung zu erstellen, umfasst das Komponententestprojekt (StoreApp.Tests) keine installierten NuGet-Pakete. Weitere Vorlagen, wie z. B. die Web-API-Vorlage, schließen Sie einige NuGet-Pakete in das Komponententestprojekt. Für dieses Tutorial müssen Sie das Entity Framework-Paket und das Microsoft ASP.NET Web API 2-Core-Paket für das Testprojekt einschließen.
 
 Mit der rechten Maustaste in des StoreApp.Tests-Projekts, und wählen Sie **NuGet-Pakete verwalten**. Sie müssen das Projekt StoreApp.Tests, um die Pakete dem Projekt hinzufügen auswählen.
 

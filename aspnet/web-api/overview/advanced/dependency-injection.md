@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 318a2f1c587feb360212a390bb5de7bdc127513d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5011d42d0c2200bc782ab548f6bfa0d952f6e72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043867"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420919"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>Abhängigkeitsinjektion in ASP.NET Web-API 2
 ====================
@@ -49,7 +49,7 @@ Beachten Sie, von denen die Controller-Klasse abhängt `ProductRepository`, und 
 
 - Wenn Sie ersetzen möchten `ProductRepository` durch eine andere Implementierung verwenden, müssen Sie auch die Controllerklasse ändern.
 - Wenn die `ProductRepository` über Abhängigkeiten verfügt, müssen Sie diese in den Controller konfigurieren. Für ein großes Projekt mit mehreren Controllern wird der Konfigurationscode auf Ihr Projekt verteilt.
-- Es ist schwierig, Komponententests, da der Controller für die Datenbank abzufragen hartcodiert ist. Für einen Komponententest sollten Sie ein Mock oder Stub-Repository, verwenden, die nicht mit dem Entwurf Benutzerverzeichnis möglich ist.
+- Es ist schwierig, Komponententests, da der Controller für die Datenbank abzufragen hartcodiert ist. Für einen Komponententest sollten Sie ein Mock oder Stub-Repository verwenden, die nicht mit den aktuellen Entwurf möglich ist.
 
 Wir können diese Probleme durch adressieren *einfügen* das Repository in den Controller. Gestalten Sie zunächst die `ProductRepository` Klasse in eine Schnittstelle:
 

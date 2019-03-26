@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 121a3a35c8255f1423d7008930315f76bbb8e8f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b361470c769b61a7b407797158eb695fe5084eda
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053097"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423493"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (VB)
 ====================
@@ -72,7 +72,7 @@ Eine einfachere Möglichkeit zum Nutzen von Ersetzungen nach dem Zwischenspeiche
 
 Programmausdruck 4 enthält ein Visual Basic-Modul, das zwei Methoden zur Verfügung stellt: RenderBanner() und RenderBannerInternal(). Die RenderBanner()-Methode stellt die tatsächliche Hilfsmethode dar. Diese Methode erweitert die standardmäßige ASP.NET MVC HtmlHelper-Klasse, sodass Sie Html.RenderBanner() in einer Ansicht wie jede andere Helper-Methode aufrufen können.
 
-Die RenderBanner()-Methode ruft die HttpResponse.WriteSubstitution()-Methode, die die RenderBannerInternal()-Methode der WriteSubsitution()-Methode übergeben.
+Die RenderBanner()-Methode ruft die HttpResponse.WriteSubstitution()-Methode, die die RenderBannerInternal()-Methode der WriteSubstitution()-Methode übergeben.
 
 Die RenderBannerInternal()-Methode ist eine private Methode. Diese Methode wird nicht als eine Hilfsmethode verfügbar gemacht werden. Die RenderBannerInternal()-Methode gibt eine Bannerbild Ankündigungen nach dem Zufallsprinzip aus einer Liste mit drei Images der Banner-Ankündigung.
 

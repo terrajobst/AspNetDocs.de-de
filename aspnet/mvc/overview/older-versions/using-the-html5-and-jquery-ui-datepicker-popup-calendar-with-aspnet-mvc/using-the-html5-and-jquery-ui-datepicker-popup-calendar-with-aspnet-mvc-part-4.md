@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 6768472b0c75757c9f368cfea58d5084c26719e1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e933ca0398d99a41089b4d1e18d21dd657db4b6b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065647"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423350"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>Verwenden des HTML5 und jQuery UI Datepicker-Popupkalenders mit ASP.NET MVC – Teil 4
 ====================
@@ -24,7 +24,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 ### <a name="adding-a-template-for-editing-dates"></a>Hinzufügen einer Vorlage für die Bearbeitung von Daten
 
-In diesem Abschnitt erstellen Sie eine Vorlage für die Bearbeitung von Datumsangaben, die angewendet werden, wenn ASP.NET MVC zeigt die Benutzeroberfläche zum Bearbeiten der Eigenschaften des Modells, die mit markiert sind die **Datum** Enumeration der [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) der Standardtitel. Die Vorlage wird nur das Datum rendern. Zeit wird nicht angezeigt werden. Verwenden Sie in der Vorlage die [jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/) Popupkalenders aus, um eine Möglichkeit zum Bearbeiten von Daten bereitzustellen.
+In diesem Abschnitt erstellen Sie eine Vorlage für die Bearbeitung von Datumsangaben, die angewendet werden, wenn ASP.NET MVC zeigt die Benutzeroberfläche zum Bearbeiten der Eigenschaften des Modells, die mit markiert sind die **Datum** Enumeration der [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) -Attribut. Die Vorlage wird nur das Datum rendern. Zeit wird nicht angezeigt werden. Verwenden Sie in der Vorlage die [jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/) Popupkalenders aus, um eine Möglichkeit zum Bearbeiten von Daten bereitzustellen.
 
 Öffnen Sie zunächst die *Movie.cs* -Datei und fügen die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) -Attribut mit der **Datum** Enumeration, die `ReleaseDate` -Eigenschaft, wie im folgenden Code gezeigt:
 
@@ -86,7 +86,7 @@ Verwenden Sie Visual Studio statt Visual Web Developer aus der **Tools** die Opt
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image4.png)
 
-In der **MVCMovie - NuGet-Pakete verwalten** Dialogfeld klicken Sie auf die **Online** links auf die Registerkarte, und geben Sie dann &quot;jQuery.UI&quot; in das Suchfeld. Wählen Sie j **Abfrage UI-WIdgets: Datepicker**, und wählen Sie dann die **installieren** Schaltfläche.
+In der **MVCMovie - NuGet-Pakete verwalten** Dialogfeld klicken Sie auf die **Online** links auf die Registerkarte, und geben Sie dann &quot;jQuery.UI&quot; in das Suchfeld. Wählen Sie j **Abfrage UI-Widgets: Datepicker**, und wählen Sie dann die **installieren** Schaltfläche.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image5.png)
 

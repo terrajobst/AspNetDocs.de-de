@@ -8,18 +8,18 @@ ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c3557bb2be2807b11874937fcc629b5b773e463
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054567"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422407"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Praktische Übungseinheiten: Erstellen einer Single-Page-Webanwendung (SPA) mit der ASP.NET-Web-API und Angular.js
 ====================
 durch [Web Camps Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](http://aka.ms/webcamps-training-kit)
+[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
 
 > In herkömmlichen Webanwendungen initiiert der Client (Browser) die Kommunikation mit dem Server durch Anfordern einer Seite an. Der Server verarbeitet die Anforderung dann und sendet den HTML-Code der Seite an den Client. In nachfolgenden Interaktionen mit der Seite – z. B. der Benutzer navigiert zu einem Link oder ein Formular mit Daten übermittelt werden – eine neue Anforderung an den Server gesendet wird, und der Flow wird neu gestartet: der Server verarbeitet die Anforderung und sendet Sie eine neue Seite, an den Browser als Reaktion auf die neue aktionsanforderung ED vom Client.
 > 
@@ -29,7 +29,7 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > 
 > In dieser Übungseinheit Hand-on-werden Sie diese Technologien implementieren Meister Quiz, eine Trivia-Website auf der Grundlage der SPA-Konzepts nutzen. Implementieren Sie zuerst die Dienstschicht mit ASP.NET Web-API verfügbar machen die erforderlichen Endpunkte für die Quizfragen abzurufen und die Antworten zu speichern. Anschließend erstellen Sie eine umfassende und reaktionsfähige Benutzeroberfläche, die mithilfe von AngularJS- und CSS3-Transformation-Effekten.
 > 
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
+> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 
 
 ## <a name="overview"></a>Übersicht
@@ -98,7 +98,7 @@ Die Web-API-Framework ist Teil der ASP.NET-Stapel und dient zum Implementieren v
 <a id="Ex1Task1"></a>
 #### <a name="task-1--creating-the-initial-project-for-geek-quiz"></a>Aufgabe 1 – Erstellen des anfänglichen Projekts für die Geek-Quiz
 
-In dieser Aufgabe starten Sie erstellen ein neues ASP.NET MVC-Projekt mit Unterstützung für ASP.NET Web-API auf der Grundlage der **One ASP.NET** Projekttyp, der mit Visual Studio enthalten ist. **Eine ASP.NET** vereinigt alle ASP.NET-Technologien und bietet Ihnen die Möglichkeit zum kombinieren, und passen sie nach Bedarf. Sie werden Entity Framework ViewModel-Klassen und die Datenbank Initializator einzufügende die Quizfragen hinzugefügt.
+In dieser Aufgabe starten Sie erstellen ein neues ASP.NET MVC-Projekt mit Unterstützung für ASP.NET Web-API auf der Grundlage der **One ASP.NET** Projekttyp, der mit Visual Studio enthalten ist. **Eine ASP.NET** vereinigt alle ASP.NET-Technologien und bietet Ihnen die Möglichkeit zum kombinieren, und passen sie nach Bedarf. Sie fügen dann Entity Framework ViewModel-Klassen und den Datenbankinitialisierer, um die Quizfragen einzufügen.
 
 1. Open **Visual Studio Express 2013 für Web** , und wählen Sie **Datei | Neues Projekt...**  um eine neue Projektmappe zu starten.
 

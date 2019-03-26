@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034217"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425521"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: Der Fix It-Beispielanwendung (erstellen realer Cloud-Apps mit Azure)
 ====================
@@ -376,13 +376,13 @@ Als Nächstes erstellen Sie einen neuen Azure-Cloud-Dienst. Die Skripts enthalte
 
 Bevor Sie den Cloud-Dienst bereitstellen können, müssen Sie einige der Konfigurationsdateien zu aktualisieren.
 
-In MyFixIt.WorkerRoler\app.config unter `connectionStrings`, ersetzen Sie den Wert der `appdb` Verbindungszeichenfolge durch die tatsächliche Verbindungszeichenfolge für die SQL-Datenbank. Sie können die Verbindungszeichenfolge aus dem Portal abrufen. Klicken Sie im Portal auf **SQL-Datenbanken** - **Appdb** - **Ansicht SQL-Datenbank-Verbindungszeichenfolgen für ADO .NET, ODBC, PHP und JDBC**. Kopieren Sie die ADO.NET-Verbindungszeichenfolge aus, und fügen Sie den Wert in der Datei "App.config". Ersetzen Sie "{Ihr\_Kennwort\_hier}" mit dem Datenbankkennwort. (Wenn Sie die Skripts verwendet, um die MVC-app bereitzustellen, das Datenbankkennwort angegebene die `SqlDatabasePassword` Skript Parameter.)
+In MyFixIt.WorkerRole\app.config unter `connectionStrings`, ersetzen Sie den Wert der `appdb` Verbindungszeichenfolge durch die tatsächliche Verbindungszeichenfolge für die SQL-Datenbank. Sie können die Verbindungszeichenfolge aus dem Portal abrufen. Klicken Sie im Portal auf **SQL-Datenbanken** - **Appdb** - **Ansicht SQL-Datenbank-Verbindungszeichenfolgen für ADO .NET, ODBC, PHP und JDBC**. Kopieren Sie die ADO.NET-Verbindungszeichenfolge aus, und fügen Sie den Wert in der Datei "App.config". Ersetzen Sie "{Ihr\_Kennwort\_hier}" mit dem Datenbankkennwort. (Wenn Sie die Skripts verwendet, um die MVC-app bereitzustellen, das Datenbankkennwort angegebene die `SqlDatabasePassword` Skript Parameter.)
 
 Das Ergebnis sollte wie folgt aussehen:
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample32.xml)]
 
-In der gleichen Datei MyFixIt.WorkerRoler\app.config unter `appSettings`, ersetzen Sie die beiden Platzhalterwerte für die Azure Storage-Konto.
+In der gleichen Datei MyFixIt.WorkerRole\app.config unter `appSettings`, ersetzen Sie die beiden Platzhalterwerte für die Azure Storage-Konto.
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample33.xml?highlight=2-3)]
 

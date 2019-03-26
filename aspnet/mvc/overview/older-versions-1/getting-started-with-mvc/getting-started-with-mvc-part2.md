@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 9a8ecac5203234c140783bbe3a518d35f6a57675
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b593c6225c05c7405c9d8b78abfd29a087d47b04
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057997"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421258"
 ---
 <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 ====================
@@ -56,7 +56,7 @@ ASP.NET MVC ruft Controllerklassen verschiedene (und darin enthaltene unterschie
 
 / [Controller] / [ActionName] / [Parameter]
 
-Der erste Teil der URL bestimmt die auszuführende Controllerklasse. Also wird die Klasse HelloWorldController /HelloWorld zugeordnet. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse ausgeführt. Daher würde /HelloWorld/Index der Index()-Methode der Klasse HelloWorldcontroller ausgeführt. Beachten Sie, dass nur werden musste, besuchen die oben genannten /HelloWorld und die Methode, die Index impliziert wurde. Das liegt eine Methode namens "Index" die Standardmethode ist, die für einen Controller aufgerufen wird, wenn eine nicht explizit angegeben ist.
+Der erste Teil der URL bestimmt die auszuführende Controllerklasse. Also wird die Klasse HelloWorldController /HelloWorld zugeordnet. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse ausgeführt. Daher würde /HelloWorld/Index der Index()-Methode der Klasse HelloWorldController ausgeführt. Beachten Sie, dass nur werden musste, besuchen die oben genannten /HelloWorld und die Methode, die Index impliziert wurde. Das liegt eine Methode namens "Index" die Standardmethode ist, die für einen Controller aufgerufen wird, wenn eine nicht explizit angegeben ist.
 
 [![Dies ist mein Standardaktion](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 

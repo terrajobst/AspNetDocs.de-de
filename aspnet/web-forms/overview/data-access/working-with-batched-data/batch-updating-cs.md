@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: 4e849bcc-c557-4bc3-937e-f7453ee87265
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c878056273ea821e4dd4481fa1b6f7690f22b285
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 27c043ff64b80dfbe05795c20bb1e71723f93c75
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062477"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421569"
 ---
 <a name="batch-updating-c"></a>Aktualisieren in Batches (C#)
 ====================
@@ -241,7 +241,7 @@ Diese Methode startet indem Sie alle Produkte abrufen in ein `ProductsDataTable`
 
 Für jede Zeile der `ProductID` ist stammt aus der `DataKeys` Sammlung und die entsprechenden `ProductsRow` ausgewählt ist, aus der `ProductsDataTable`. Die vier TemplateField-input-Steuerelemente programmgesteuert auf die verwiesen wird, und ihre Werte zugewiesen, die `ProductsRow` s Instanzeigenschaften. Nach jeder GridView Zeilenwerte s haben wurde zum Aktualisieren der `ProductsDataTable`, es s, die an die BLL s `UpdateWithTransaction` -Methode, die wie im vorherigen Tutorial beschrieben in der DAL s einfach nach unten ruft `UpdateWithTransaction` Methode.
 
-Der Batch-Update-Algorithmus für dieses Tutorial verwendete aktualisiert jede Zeile in der `ProductsDataTable` , entspricht einer Zeile in der GridView, unabhängig davon, ob die Produktinformationen s geändert wurde. Während solche Blind sind t in der Regel ein Leistungsproblem aktualisiert, können sie zu überflüssigen Datensätze führen re-Überwachung in die Datenbanktabelle überschreiten. In der [Durchführen von BatchUpdates](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md) Tutorial wir untersucht einen Batch, die Schnittstelle mit DataList-Steuerelement aktualisiert und Code, der nur die Datensätze aktualisiert wird, die tatsächlich vom Benutzer geändert wurden. Gerne verwenden die Techniken von [Durchführen von BatchUpdates](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md) so aktualisieren ggf. den Code in diesem Tutorial.
+Der Batch-Update-Algorithmus für dieses Tutorial verwendete aktualisiert jede Zeile in der `ProductsDataTable` , entspricht einer Zeile in der GridView, unabhängig davon, ob die Produktinformationen s geändert wurde. Während solche blind Updates in der Regel ein Leistungsproblem nicht, können sie zu überflüssigen Datensätze führen re-Überwachung in die Datenbanktabelle Änderungen. In der [Durchführen von BatchUpdates](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md) Tutorial wir untersucht einen Batch, die Schnittstelle mit DataList-Steuerelement aktualisiert und Code, der nur die Datensätze aktualisiert wird, die tatsächlich vom Benutzer geändert wurden. Gerne verwenden die Techniken von [Durchführen von BatchUpdates](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md) so aktualisieren ggf. den Code in diesem Tutorial.
 
 > [!NOTE]
 > Beim Binden von der Datenquelle an die GridView über sein Smarttag, weist Visual Studio automatisch Werte für die primären Datenquelle s-Key der GridView-s `DataKeyNames` Eigenschaft. Wenn Sie nicht dem ObjectDataSource-Steuerelement an die GridView über das GridView-s-Smarttag binden, wie in Schritt 1 beschrieben, müssen Sie manuell festlegen, die GridView s `DataKeyNames` Eigenschaft "ProductID", um Zugriff auf die `ProductID` Wert für jede Zeile über die `DataKeys` Auflistung.
@@ -269,7 +269,7 @@ Für solche Situationen sollten Sie mit der folgenden `BatchUpdateAlternate` Met
 
 `BatchMethodAlternate` gestartet wird, indem Sie erstellen ein neues leeres `ProductsDataTable` mit dem Namen `products`. Anschließend werden die Schritte der GridView-s `Rows` Auflistung und für jede Zeile der bestimmte Produktinformationen mithilfe der BLL s ruft `GetProductByProductID(productID)` Methode. Der abgerufene `ProductsRow` Instanz verfügt über Eigenschaften, die auf dieselbe Weise wie aktualisiert `BatchUpdate`, jedoch erst nach dem Aktualisieren der Zeile, die dem Import in die `products``ProductsDataTable` über die DataTable s [ `ImportRow(DataRow)` Methode](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
-Nach der `foreach` Schleife abgeschlossen ist, `products` enthält mindestens ein `ProductsRow` Instanz für jede Zeile in der GridView-Ansicht. Da jede von der `ProductsRow` Instanzen hinzugefügt wurden die `products` (anstelle von aktualisiert), wenn wir damit Blind übergeben der `UpdateWithTransaction` Methode der `ProductsTableAdatper` versucht, jede der Datensätze in der Datenbank eingefügt. Stattdessen müssen wir angeben, dass jede dieser Zeilen (keine hinzugefügt) geändert wurde.
+Nach der `foreach` Schleife abgeschlossen ist, `products` enthält mindestens ein `ProductsRow` Instanz für jede Zeile in der GridView-Ansicht. Da jede von der `ProductsRow` Instanzen hinzugefügt wurden die `products` (anstelle von aktualisiert), wenn wir damit Blind übergeben der `UpdateWithTransaction` Methode der `ProductsTableAdapter` versucht, jede der Datensätze in der Datenbank eingefügt. Stattdessen müssen wir angeben, dass jede dieser Zeilen (keine hinzugefügt) geändert wurde.
 
 Dies geschieht durch Hinzufügen einer neuen Methode an die BLL, die mit dem Namen `UpdateProductsWithTransaction`. `UpdateProductsWithTransaction`, unten dargestellt, legt die `RowState` aller der `ProductsRow` -Instanzen in der `ProductsDataTable` zu `Modified` und übergibt dann die `ProductsDataTable` der DAL-s `UpdateWithTransaction` Methode.
 

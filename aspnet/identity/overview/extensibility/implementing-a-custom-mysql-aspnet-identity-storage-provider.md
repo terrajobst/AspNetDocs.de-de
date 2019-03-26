@@ -8,12 +8,12 @@ ms.date: 05/22/2015
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 358b1a3b7277f21c63a1d395f2a5fce79bbe0d56
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4f9803f0717245ede73466f4c54c2aa3b7ae3882
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025947"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425950"
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>Implementieren eines benutzerdefinierten MySQL ASP.NET Identity-Speicheranbieters
 ====================
@@ -123,7 +123,7 @@ Installieren Sie bei Bedarf entweder [Visual Studio Express 2013 für Web](https
     `using Microsoft.AspNet.Identity.EntityFramework;`  
    durch  
      `using AspNet.Identity.MySQL;`
-7. Legen Sie im IdentityModels.cs, **ApplicationDbContext** abgeleitet **MySqlDatabase** und fügen Sie einen Konstruktor, der einen einzelnen Parameter mit dem Namen der Verbindung.  
+7. Legen Sie im IdentityModels.cs, **ApplicationDbContext** für die Ableitung **MySqlDatabase** und fügen Sie einen Konstruktor, der einen einzelnen Parameter mit dem Namen der Verbindung.  
 
     [!code-csharp[Main](implementing-a-custom-mysql-aspnet-identity-storage-provider/samples/sample1.cs)]
 8. Öffnen Sie die IdentityConfig.cs-Datei. In der **ApplicationUserManager.Create** -Methode, instanziieren die UserManager durch den folgenden Code ersetzen:  

@@ -8,19 +8,19 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: cbd72233fb5688c27d3675e2621eab58a64db80c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f57ce4236abe71de3f6f60cb2d7930f7ae9a8d7a
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047087"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423909"
 ---
-<a name="mvc-recommended-resources"></a>MVC – Empfohlene Ressourcen
-====================
+# <a name="mvc-recommended-resources"></a>MVC – Empfohlene Ressourcen
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Dieses Thema enthält Links zu Dokumentationsressourcen zur ASP.NET MVC 5. Wenn Sie wissen, dass ein tolles Blog Posten, [Stackoverflow](http://stackoverflow.com/) Thread oder einen beliebigen anderen Link, der nützlich sein, senden Sie würde [mich](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) eine e-Mail mit dem Link. Die hier bereitgestellten Links werden in regelmäßigen Abständen aktualisiert. Sie können ältere suchen (jedoch in vielen Fällen immer noch relevant) ASP.NET MVC-links auf die [MSDN-inhaltszuordnung](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx).
-> 
+>
 > Ein guter Ausgangspunkt, um Antworten auf Ihre Fragen zu erhalten oder um Lösungen für auftretende Probleme zu finden ist, in der [ASP.NET MVC-Forum](https://forums.asp.net/1146.aspx/1?MVC) oder [Stackoverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc).
 > <a id="gettingstarted"></a>
 
@@ -63,8 +63,8 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
     - [Tipps und Tricks in Visual Studio 2013](https://channel9.msdn.com/Events/Build/2014/2-582) von Cathy Sullivan
     - [Automatisierung überall mit der neuen SDKs, Tools und Diensten in Azure](https://channel9.msdn.com/Events/Build/2014/3-621) von Brady Gaster, Joe Levy
     - [Neuerungen in Azure-Websites Chris Compy, Nir Mashkowski](https://channel9.msdn.com/Events/Build/2014/3-625)
-    - [Erstellen von großen: Erfahrungen von Azure-Kunden](https://channel9.msdn.com/Events/Build/2014/3-633) von Chris Clayton, Mark Simms   
-        [Erstellen einer einseitigen Anwendung mit ASP.NET und AngularJS](https://channel9.msdn.com/Events/Build/2014/3-644) von David Catuhe, Jon Galloway
+    - [Erstellen von großen: Erfahrungen von Azure-Kunden](https://channel9.msdn.com/Events/Build/2014/3-633) von Chris Clayton, Mark Simms
+    - [Erstellen einer einseitigen Anwendung mit ASP.NET und AngularJS](https://channel9.msdn.com/Events/Build/2014/3-644) von David Catuhe, Jon Galloway
     - [Entwerfen und Implementieren von Hybrid Cloud-Lösungen für Architekten](https://channel9.msdn.com/Events/Build/2014/3-632)
     - [Azure-Ressourcengruppen-Modell: Moderne Verwaltung für moderne Cloud](https://channel9.msdn.com/Events/Build/2014/2-607) von!href(/vstudio/centers/scale/doculabsresults.ASP) zur Thapar, Nathan Totten
     - [Erstellen von Web-APIs für Mobile Apps mit ASP.NET Web-API 2.1](https://channel9.msdn.com/Events/Build/2014/3-603) von Daniel Roth
@@ -168,8 +168,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Ringdiagramm zur Zwischenspeicherung und Donut Hole Zwischenspeichern mit Asp.Net MVC 4](http://www.dotnet-tricks.com/Tutorial/mvc/ODJa210113-Donut-Caching-and-Donut-Hole-Caching-with-Asp.Net-MVC-4.html)
 - [Grundlegendes zur Zwischenspeicherung in Asp.Net MVC mit Beispiel](http://www.dotnet-tricks.com/Tutorial/mvc/4R5c050113-Understanding-Caching-in-Asp.Net-MVC-with-example.html)
 - [http://webdevchecklist.com/asp.net/performance/](http://webdevchecklist.com/asp.net/performance/)
-- [ASP.NET MVC-Ansichtsmodell: Entitätsframework &amp; JSON-Serialisierung](http://www.dotnetexpertguide.com/2013/06/aspnet-mvc-view-model-entity-framework-json-serialization.html)  
- Nandip Makwana zeigt nützliche Tipps und Tricks Erhöhung Leistung (und geringere CPU-Auslastung) durch Eliminierung unnötiger Serialisierung von untergeordneten Entitäten
+- [ASP.NET MVC-Ansichtsmodell: Entitätsframework &amp; JSON-Serialisierung](http://www.dotnetexpertguide.com/2013/06/aspnet-mvc-view-model-entity-framework-json-serialization.html) Nandip Makwana zeigt nützliche Tipps und Tricks Erhöhung Leistung (und geringere CPU-Auslastung) durch Eliminierung unnötiger Serialisierung von untergeordneten Entitäten
 - [Async und Await](http://blog.stephencleary.com/2012/02/async-and-await.html) in ASP.NET von Stephen Cleary
 - [Debuggen und Leistung mit Glimpse](http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx)
 - [Verbessern der wahrnehmbaren Leistung von ASP.NET MVC-Websites mit asynchronen Teilansichten](http://blog.michaelckennedy.net/2012/11/13/improve-perceived-performance-of-asp-net-mvc-websites-with-async-partialviews/)
@@ -365,7 +364,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Verarbeitet das WebP-Bilder mit ASP.NET MVC](http://friism.com/serving-webp-images-with-asp-net-mvc)
 - [Ausführliche ASP.NET MVC-Pipeline](http://www.dotnet-tricks.com/Tutorial/mvc/LYHK270114-Detailed-ASP.NET-MVC-Pipeline.html)
 - [Schachtelung von Layouts in MVC](http://astutelogic.com/nesting-layouts-in-mvc/) von Russell Waite
-- Ich[Mplementing RichTextEditor oder WYSIWYG (TinyMCE) in ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2657/implementing-richtexteditor-or-wysiwyg-tinymce-in-aspnet-mvc) von Sheo Narayan
+- [Implementieren von RichTextEditor oder WYSIWYG (TinyMCE) in ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2657/implementing-richtexteditor-or-wysiwyg-tinymce-in-aspnet-mvc) von Sheo Narayan
 - [Binden von Ansichten mit anonymen Typs Auflistung in ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2655/binding-views-with-anonymous-type-collection-in-aspnet-mvc) von Sheo Narayan
 - [Speichern von HTML5-Canvas als Bild in ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2665/saving-html-5-canvas-as-image-in-aspnet-mvc) von Sheo Narayan
 - [Verwalten von Größe und Position auf der Seite in Datenbank mithilfe von ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2783/maintaining-image-size-and-position-on-the-page-in-database-using-aspn) von Sheo Narayan

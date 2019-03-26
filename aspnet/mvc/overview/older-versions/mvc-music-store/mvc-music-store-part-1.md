@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d84a525221e40b79853be55069367134d17fb5ec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f252fd5c0e5962353720e47ba888d2b6b325a1c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035957"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421907"
 ---
 <a name="part-1-overview-and-file-new-project"></a>Teil 1: Übersicht und „Datei“ > „Neues Projekt“
 ====================
@@ -60,7 +60,7 @@ Nach dem Sortieren, sehen sie ein einfaches Bestätigungsbildschirm angezeigt:
 
 ![](mvc-music-store-part-1/_static/image6.jpg)
 
-Zusätzlich zu den Seiten der Kunden-Faceing wir außerdem erstellen eine Administrator-Bereich, der eine Liste der Alben aus denen Administratoren erstellen können, bearbeiten, angezeigt und Alben zu löschen:
+Zusätzlich zu den Seiten für Kunden wir außerdem erstellen eine Administrator-Bereich, der eine Liste der Alben aus denen Administratoren erstellen können, bearbeiten, angezeigt und Alben zu löschen:
 
 ![](mvc-music-store-part-1/_static/image7.jpg)
 

@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 49545652-98af-46ba-9dbc-9ab529805d9b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ae27b25a0a7f37cc273d88d7165c8be33ce2f6cc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3524983e347cc5ca0d34b2abe463477244a1129e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052527"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425456"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-c"></a>Einfügen eines neuen Datensatzes in den GridView-Fuß (C#)
 ====================
@@ -207,7 +207,7 @@ Aus diesem Grund, um auf der Benutzer auf die Schaltfläche "hinzufügen" reagie
 [!code-csharp[Main](inserting-a-new-record-from-the-gridview-s-footer-cs/samples/sample6.cs)]
 
 > [!NOTE]
-> Vielleicht warum der Ereignishandler draußen überprüfen die `Page.IsValid` Eigenschaft. Schließlich gewonnenem t das Postback unterdrückt werden, wenn ungültige Daten in die einfügende-Schnittstelle bereitgestellt werden? Diese Annahme ist richtig, solange der Benutzer nicht, JavaScript deaktiviert wurde oder verfügt über Schritte unternommen, um die clientseitige Validierungslogik zu umgehen. Kurz gesagt, sollte eine niemals ausschließlich auf die clientseitige Validierung verlassen; eine serverseitige Überprüfung auf Gültigkeit sollte immer ausgeführt werden, bevor Sie mit den Daten arbeiten.
+> Vielleicht warum der Ereignishandler draußen überprüfen die `Page.IsValid` Eigenschaft. Schließlich werden wird nicht das Postback unterdrückt, wenn ungültige Daten in die einfügende-Schnittstelle bereitgestellt werden? Diese Annahme ist richtig, solange der Benutzer nicht, JavaScript deaktiviert wurde oder verfügt über Schritte unternommen, um die clientseitige Validierungslogik zu umgehen. Kurz gesagt, sollte eine niemals ausschließlich auf die clientseitige Validierung verlassen; eine serverseitige Überprüfung auf Gültigkeit sollte immer ausgeführt werden, bevor Sie mit den Daten arbeiten.
 
 
 In Schritt 1 erstellten wir die `ProductsDataSource` "ObjectDataSource" so, dass die `Insert()` Methode zugeordnet ist die `ProductsBLL` Klasse s `AddProduct` Methode. Zum Einfügen des neuen Datensatzes in die `Products` Tabelle rufen wir einfach das "ObjectDataSource"-s `Insert()` Methode:

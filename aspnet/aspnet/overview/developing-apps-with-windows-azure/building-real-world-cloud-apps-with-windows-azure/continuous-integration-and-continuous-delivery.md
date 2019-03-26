@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: f701488025ec84a17651f9abff43f84531d35689
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b384fe08ebd6a106b9469debfb13014e87534b8f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046937"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425924"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Continuous Integration und Continuous Delivery (erstellen realer Cloud-Apps mit Azure)
 ====================
@@ -32,7 +32,7 @@ Die Cloud können Sie die Kosten für die Verwaltung einer testumgebung, da Sie 
 
 Im Allgemeinen wird empfohlen, dass Sie continuous Delivery für Ihre Entwicklungs- und Stagingumgebungen ausführen. Die meisten Teams, auch bei Microsoft und erfordern einen manuellen Prozess der Überprüfung und Genehmigung für die produktionsbereitstellung. Für einen in der produktionsumgebung erfolgt die Bereitstellung, Sie möchten sicherstellen, dass es möglicherweise, wenn entscheidende Personen auf das Entwicklungsteam für die Unterstützung oder Zeiten mit geringer Auslastung verfügbar sind. Es gibt jedoch, dass nichts zu verhindern, dass Sie Ihre Entwicklungs- und testumgebungen vollständig automatisieren, sodass alles, was ein Entwickler hat zu tun ist, überprüfen Sie in einer Umgebung und eine Änderung für Tests auf Akzeptanz eingerichtet ist.
 
-Im folgenden Diagramm aus [ein Microsoft Patterns and Practices e-Book Informationen zu continuous Delivery](http://aka.ms/ReleasePipeline) veranschaulicht einen typischen Workflow. Klicken Sie auf das Bild, das er finden Sie unter voller Größe in seinem ursprünglichen Kontext.
+Im folgenden Diagramm aus [ein Microsoft Patterns and Practices e-Book Informationen zu continuous Delivery](https://aka.ms/ReleasePipeline) veranschaulicht einen typischen Workflow. Klicken Sie auf das Bild, das er finden Sie unter voller Größe in seinem ursprünglichen Kontext.
 
 [![Continuous Delivery-workflow](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
@@ -66,7 +66,7 @@ Weitere Informationen finden Sie unter [bereitstellen eine Web-app in Azure App 
 
 Siehe auch die folgenden Ressourcen:
 
-- [Erstellung einer Versionspipeline mit Team Foundation Server 2012](http://aka.ms/ReleasePipeline). E-Book, praktische Übungseinheiten und Beispielcode von Microsoft Patterns and Practices, bietet eine detaillierte Einführung in continuous Delivery. Behandelt die Verwendung von Visual Studio Lab Management und Release Management für Visual Studio.
+- [Erstellung einer Versionspipeline mit Team Foundation Server 2012](https://aka.ms/ReleasePipeline). E-Book, praktische Übungseinheiten und Beispielcode von Microsoft Patterns and Practices, bietet eine detaillierte Einführung in continuous Delivery. Behandelt die Verwendung von Visual Studio Lab Management und Release Management für Visual Studio.
 - [ALM Rangers-DevOps-Tools und Anleitungen](https://aka.ms/vsarsolutions/). ALM Rangers eingeführt, die DevOps-Workbench Beispiel begleitende Lösung und praktische Anleitungen in Zusammenarbeit mit den Mustern &amp; Methoden Buch *Erstellung einer Versionspipeline mit TFS 2012*, als eine hervorragende Möglichkeit zum Starten lernen die Konzepte von DevOps &amp; Release Management für TFS 2012 und austesten. Die Anleitung wird gezeigt, wie in Umgebungen mit mehreren einmal erstellen und bereitstellen.
 - [Tests für fortlaufende Übermittlung mit Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx). E-Book von Microsoft Patterns and Practices, erläutert integrieren Sie automatisierte Tests mit continuous Delivery.
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker). Der Quellcode für ein Tool zum Erfassen eines Builds aus TFS (basierend auf einer Bezeichnung), erstellen Sie sie, es gepackt werden, können Personen in der DevOps-Rolle so konfigurieren Sie bestimmte Aspekte des Clouddiensts und per Push in Azure übertragen. Das Tool verfolgt während des Bereitstellungsvorgangs, um Vorgänge auf "zurück auf eine zuvor bereitgestellte Version zurücksetzen" zu aktivieren. Das Tool weist keine externen Abhängigkeiten und kann eigenständige mithilfe der TFS-APIs und das Azure SDK-Funktion.

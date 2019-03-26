@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d951fab4fea59226e5d34bbf468377d436df944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 106f7498a70339556d0662a986d71a01a21074ab
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046197"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424533"
 ---
 <a name="debugging-stored-procedures-vb"></a>Definieren von gespeicherten Prozeduren (VB)
 ====================
@@ -48,7 +48,7 @@ Die [Übersicht über die von T-SQL und CLR-Debuggen in SQL Server 2005](https:/
 
 Visual Studio kann gespeicherte Prozeduren für SQL Server-Instanzen für lokale und remote Debuggen. Eine lokale SQL Server-Instanz ist eine, die auf dem gleichen Computer wie Visual Studio installiert ist. Wenn SQL Server-Datenbank, die Sie verwenden nicht auf dem Entwicklungscomputer befindet, wird er eine remote-Instanz behandelt. Für diese Tutorials haben wir lokale SQL Server-Instanzen verwendet wurden. Debuggen von gespeicherten Prozeduren in SQL Server-Remoteinstanz erfordert weitere Konfigurationsschritte erforderlich als beim Debuggen von gespeicherten Prozeduren in einer lokalen Instanz.
 
-Wenn Sie eine lokale SQL Server-Instanz verwenden, können Sie beginnen Sie mit Schritt 1 und am Ende dieses Tutorials durcharbeiten. Bei Verwendung eine Remoteinstanz von SQL Server werden jedoch, Sie müssen zunächst, um sicherzustellen, dass beim Debuggen auf Ihren Entwicklungscomputer mit einem Windows-Benutzerkonto an, die eine SQL Server-Anmeldung auf der Remoteinstanz angemeldet sind. Moveover, sowohl für diese datenbankanmeldung als auch für die datenbankanmeldung, die von der ausgeführten ASP.NET-Anwendung eine Verbindung mit der Datenbank verwendet, muss Mitglied der `sysadmin` Rolle. Finden Sie das Debuggen von T-SQL-Datenbankobjekte auf Remoteinstanzen im Abschnitt am Ende dieses Tutorials für Weitere Informationen zum Konfigurieren von Visual Studio und SQL Server, um eine remote-Instanz zu debuggen.
+Wenn Sie eine lokale SQL Server-Instanz verwenden, können Sie beginnen Sie mit Schritt 1 und am Ende dieses Tutorials durcharbeiten. Bei Verwendung eine Remoteinstanz von SQL Server werden jedoch, Sie müssen zunächst, um sicherzustellen, dass beim Debuggen auf Ihren Entwicklungscomputer mit einem Windows-Benutzerkonto an, die eine SQL Server-Anmeldung auf der Remoteinstanz angemeldet sind. Darüber hinaus sowohl für diese datenbankanmeldung als auch für die datenbankanmeldung, die von der ausgeführten ASP.NET-Anwendung eine Verbindung mit der Datenbank verwendet müssen Mitglied der `sysadmin` Rolle. Finden Sie das Debuggen von T-SQL-Datenbankobjekte auf Remoteinstanzen im Abschnitt am Ende dieses Tutorials für Weitere Informationen zum Konfigurieren von Visual Studio und SQL Server, um eine remote-Instanz zu debuggen.
 
 Verstehen Sie schließlich, dass debugging-Unterstützung für T-SQL-Datenbankobjekte nicht als Features wie debugging-Unterstützung für .NET-Anwendungen bietet. Z. B. haltepunktbedingungen und-Filter werden nicht unterstützt, nur eine Teilmenge der Debugfenster verfügbar, Sie können nicht verwenden, bearbeiten und fortfahren, das "Direktfenster" nutzlos usw. gerendert wird. Finden Sie unter [Einschränkungen von Debuggerbefehlen und Funktionen](https://msdn.microsoft.com/library/ms165035(VS.80).aspx) für Weitere Informationen.
 

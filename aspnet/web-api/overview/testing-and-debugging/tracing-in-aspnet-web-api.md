@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: e0d525e497cf41a79820417a9c832fa6b5cd7f8a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 59bce8c511167e8ba8a8db6f1842e352c90f3039
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031537"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424897"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Ablaufverfolgung in ASP.NET Web-API 2
 ====================
@@ -89,7 +89,7 @@ Um eine Ablaufverfolgung zu schreiben, können Sie rufen die **ITraceWriter.Trac
 
 Dieser Abschnitt beschreibt, wie Sie einen benutzerdefinierten Ablaufverfolgungs-Writer für Web-API schreiben.
 
-Das Paket Microsoft.AspNet.WebApi.Tracing basiert auf einer allgemeineren Ablaufverfolgungsinfrastruktur in Web-API. Anstatt Microsoft.AspNet.WebApi.Tracing, Sie können auch einbinden in eine andere Ablaufverfolgung/Protokollierung-Bibliothek, z. B. [NLog](http://nlog-project.org/) oder [log4net](http://logging.apache.org/log4net/).
+Das Paket Microsoft.AspNet.WebApi.Tracing basiert auf einer allgemeineren Ablaufverfolgungsinfrastruktur in Web-API. Anstatt Microsoft.AspNet.WebApi.Tracing, Sie können auch einbinden in eine andere Bibliothek Ablaufverfolgung/Protokollieren von Befehlen, wie z. B. [NLog](http://nlog-project.org/) oder [log4net](http://logging.apache.org/log4net/).
 
 Um ablaufverfolgungen zu erfassen, implementieren die **ITraceWriter** Schnittstelle. Hier ist ein einfaches Beispiel:
 
@@ -113,7 +113,7 @@ Nur eine Ablaufverfolgungs-Writer kann aktiv sein. Web-API legt standardmäßig 
 
 Die Ablaufverfolgung in Web-API verwendet einen *Fassade* Muster: Wenn die Ablaufverfolgung aktiviert ist, umschließt Web-API verschiedene Teile der Pipeline mit Klassen, die Trace-Aufrufe ausführen.
 
-Z. B. Wenn Sie einen Controller auswählen, die die Pipeline verwendet die **IHttpControllerSelector** Schnittstelle. Mit aktivierter Ablaufverfolgung, fügt die Pipleline eine Klasse, die implementiert **IHttpControllerSelector** aber Eigenschaftenaufrufe an die tatsächliche Implementierung:
+Z. B. Wenn Sie einen Controller auswählen, die die Pipeline verwendet die **IHttpControllerSelector** Schnittstelle. Mit aktivierter Ablaufverfolgung, fügt die Pipeline eine Klasse, die implementiert **IHttpControllerSelector** aber Eigenschaftenaufrufe an die tatsächliche Implementierung:
 
 ![Web-API-Ablaufverfolgung verwendet die Fassade-Muster.](tracing-in-aspnet-web-api/_static/image8.png)
 

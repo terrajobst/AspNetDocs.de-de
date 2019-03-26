@@ -7,12 +7,12 @@ ms.date: 10/04/2018
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 462583a42f20126ef8f8b5927268c20ec1ceab89
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4d8483d46bc79459db36d9006fef5ab71dddcfde
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027297"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424728"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>Erste Schritte mit ASP.NET MVC 5
 ====================
@@ -20,7 +20,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-Dieses Lernprogramm zeigt Ihnen die Grundlagen zum Erstellen einer ASP.NET MVC 5 Web-app mit [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Der endgültige Quellcode für das Tutorial befindet sich auf [GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie).
+Dieses Lernprogramm zeigt Ihnen die Grundlagen zum Erstellen einer ASP.NET MVC 5 Web-app mit [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Der endgültige Quellcode für das Tutorial befindet sich auf [GitHub](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie).
 
 In diesem Tutorial wurde von geschrieben [Scott Guthrie](https://weblogs.asp.net/scottgu/) (twitter-[ @scottgu ](https://twitter.com/scottgu) ), [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](https://twitter.com/shanselman) ) , und [Rick Anderson](https://twitter.com/RickAndMSFT) ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )
 
@@ -67,7 +67,7 @@ Eine Liste der aktuellen Lernprogramme, finden Sie unter [MVC Artikel empfohlen]
 
 Möchten Sie die fertige Website als live-Web-app ausgeführt wird, finden Sie unter? Sie können eine vollständige Version der app beim Azure-Konto bereitstellen, indem Sie einfach die folgende Schaltfläche.
 
-[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
+[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
 
 Sie benötigen ein Azure-Konto zum Bereitstellen dieser Lösung in Azure. Wenn Sie noch nicht über ein Konto verfügen, verwenden Sie eine der folgenden Optionen erstellen:
 

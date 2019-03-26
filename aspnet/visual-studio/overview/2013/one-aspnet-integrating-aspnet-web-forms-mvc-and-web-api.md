@@ -8,24 +8,24 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 85e4369ee458043eec59fb27e317d18466f61f32
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044127"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422531"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Praktische Übungseinheiten: One ASP.NET: Integrieren von ASP.NET Web Forms, MVC und Web-API
 ====================
 durch [Web Camps Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](http://aka.ms/webcamps-training-kit)
+[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
 
 > ASP.NET ist ein Framework zum Erstellen von Websites, apps und Dienste, die spezielle Technologien wie z. B. MVC, Web-API und andere. Aufgrund der steigenden ASP.NET gesehen hat, seit ihrer Erstellung und die ausgedrückt müssen diese Technologien integriert, es gab aktuellen bemühungen in funktionierenden für **One ASP.NET**.
 > 
 > Visual Studio 2013 bietet es sich um ein neues einheitliches Projektsystem können Sie eine Anwendung erstellen und verwenden die ASP.NET-Technologien in einem Projekt. Diese Funktion entfällt die Notwendigkeit, eine Technologie zu Beginn eines Projekts und mit der sie auswählen, und stattdessen empfiehlt die Verwendung von mehreren ASP.NET Frameworks in einem Projekt.
 > 
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
+> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7ad0ec27021514b447e569e479a9e9127e3f75fa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fc533fb3673639769ecdfa8b3d02ff40133cb27
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037647"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421622"
 ---
 <a name="part-3-creating-an-admin-controller"></a>Teil 3: Erstellen eines Administratorcontrollers
 ====================
@@ -95,7 +95,7 @@ Diese Funktion ist gut für Tests geeignet, aber verwenden Sie nicht die **DropC
 
 An diesem Punkt nicht getan haben wir keinen Clientcode geschrieben, aber Sie können die Web-API mit einem Webbrowser oder eine HTTP-debugging-wie Tool aufrufen [Fiddler](http://www.fiddler2.com/fiddler2/). Drücken Sie in Visual Studio F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird geöffnet, um `http://localhost:*portnum*/`, wobei *Portnum* ist eine Portnummer.
 
-Senden von HTTP-Anforderung an "`http://localhost:*portnum*/api/admin`. Die erste Anforderung nur langsam abgeschlossen ist, möglicherweise Entify-Framework zum Erstellen und das Seeding für die Datenbank benötigt. Die Antwort sollte etwa wie Folgendes:
+Senden von HTTP-Anforderung an "`http://localhost:*portnum*/api/admin`. Die erste Anforderung nur langsam abgeschlossen ist, möglicherweise benötigt Entity Framework zum Erstellen und das Seeding für die Datenbank. Die Antwort sollte etwa wie Folgendes:
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 

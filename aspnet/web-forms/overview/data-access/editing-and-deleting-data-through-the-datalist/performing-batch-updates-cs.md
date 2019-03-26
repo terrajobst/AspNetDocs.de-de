@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2ca91baa87d5bb748695b56bb8bf19698b0858f2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2de7cdbfc37140a4b60c3123524974c4f0ffa42f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051387"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425872"
 ---
 <a name="performing-batch-updates-c"></a>Durchführen von Batchupdates (C#)
 ====================
@@ -126,7 +126,7 @@ Eine der Schaltflächen Alle aktualisieren, klickt der Benutzer die `UpdateAllSu
 
 ## <a name="updating-only-those-addresses-that-have-been-modified"></a>Aktualisieren nur die Adressen, die geändert wurde.
 
-Der Batch-Update-Algorithmus für dieses Lernprogramm ruft verwendet die `UpdateSupplierAddress` -Methode für *jeder* Lieferanten im DataList-Steuerelement, unabhängig davon, ob ihre Adressinformationen geändert wurde. Während solche Blind sind t in der Regel ein Leistungsproblem aktualisiert, können sie zu überflüssigen Datensätze führen re-Überwachung in die Datenbanktabelle überschreiten. Angenommen, Sie Trigger verwenden, um alle aufzuzeichnen `UPDATE` s, um die `Suppliers` Tabelle in die auf eine Überwachung, jedes Mal, wenn ein Benutzer die Schaltfläche "Alle aktualisieren" klickt, ein neuen Überwachungsdatensatz für jeden Lieferanten werden, im System erstellt wird, unabhängig davon, ob der Benutzer Änderungen vorgenommen, ändert.
+Der Batch-Update-Algorithmus für dieses Lernprogramm ruft verwendet die `UpdateSupplierAddress` -Methode für *jeder* Lieferanten im DataList-Steuerelement, unabhängig davon, ob ihre Adressinformationen geändert wurde. Während solche blind Updates in der Regel ein Leistungsproblem nicht, können sie zu überflüssigen Datensätze führen re-Überwachung in die Datenbanktabelle Änderungen. Angenommen, Sie Trigger verwenden, um alle aufzuzeichnen `UPDATE` s, um die `Suppliers` Tabelle in die auf eine Überwachung, jedes Mal, wenn ein Benutzer die Schaltfläche "Alle aktualisieren" klickt, ein neuen Überwachungsdatensatz für jeden Lieferanten werden, im System erstellt wird, unabhängig davon, ob der Benutzer Änderungen vorgenommen, ändert.
 
 Die ADO.NET DataTable und DataAdapter-Klassen dienen zur Unterstützung von Batchaktualisierungen, in denen eine Datenbankkommunikation nur geändert, gelöscht und neue Datensätze zu. Jede Zeile in der Datentabelle verfügt über eine [ `RowState` Eigenschaft](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) , der angibt, ob die Zeile der Datentabelle, die von ihm, die geändert wurde, gelöscht oder unverändert bleibt. Wenn es sich bei eine "DataTable" Anfangs aufgefüllt wird, werden alle Zeilen nicht geändert markiert. Ändern des Werts auf die Zeile s-Spalten wird die Zeile als geändert gekennzeichnet.
 

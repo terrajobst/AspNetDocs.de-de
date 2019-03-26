@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: c120187e-963e-4439-bb85-32771bc7f1f4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9392b1bab2289d886baf308d05644afbdc42a13a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c76e488f36690acd1a6c48b87335a8e6f892f2a8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032757"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421154"
 ---
 <a name="adding-animation-to-a-control-vb"></a>Hinzufügen von Animationen zu einem Steuerelement (VB)
 ====================
@@ -65,7 +65,7 @@ Das Framework bietet einen Satz von Animationen, jeweils durch eine eigene XML-E
 - `<Resize>` (Ändern der Größe)
 - `<Scale>` (proportional die Größe ändern)
 
-In diesem Beispiel wird der Bereich ausblenden. Die Animation treffen 1,5 Sekunden (`Duration` Attribut), Anzeige (Animationsschritte) zur 24 Bildern pro Sekunde (`Fps` Attributs). Hier ist das vollständige Markup für die `AnimationExtender` Steuerelement:
+In diesem Beispiel wird der Bereich ausblenden. Die Animation treffen 1,5 Sekunden (`Duration` Attribut), Anzeige (Animationsschritte) zur 24 Bildern pro Sekunde (`Fps` Attribut). Hier ist das vollständige Markup für die `AnimationExtender` Steuerelement:
 
 [!code-aspx[Main](adding-animation-to-a-control-vb/samples/sample5.aspx)]
 

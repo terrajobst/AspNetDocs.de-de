@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ebef919deeda409cfa6805b603f67ef96ff003e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 15e23b09df13f11c69a2fd6c721981e632a25434
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064957"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422115"
 ---
 <a name="paging-and-sorting-report-data-c"></a>Auslagern und Sortieren von Berichtsdaten (C#)
 ====================
@@ -194,7 +194,7 @@ Als Nächstes zurück zu den `DataBound` -Ereignishandler, und fügen Sie den fo
 
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample6.cs)]
 
-Dieser Code beginnt, durch die Elemente im beseitigen der `PageList` DropDownList. Dies mag überflüssig, da eine ausreichen t erwarten, dass die Anzahl der Seiten ändern, aber anderen Benutzern können das System gleichzeitig zu verwenden, hinzufügen oder entfernen Datensätze aus der `Products` Tabelle. Die Anzahl der Seiten mit Daten können geändert werden solche einfügungen oder löschungen.
+Dieser Code beginnt, durch die Elemente im beseitigen der `PageList` DropDownList. Dies mag überflüssig, da man wäre nicht erwarten, die Anzahl der Seiten dass ändern, aber anderen Benutzern können das System gleichzeitig zu verwenden, hinzufügen oder entfernen Datensätze aus der `Products` Tabelle. Die Anzahl der Seiten mit Daten können geändert werden solche einfügungen oder löschungen.
 
 Als Nächstes müssen wir erneut, die Seitenzahlen zu erstellen und verwenden diejenige, die an die aktuelle GridView ordnet `PageIndex` standardmäßig ausgewählt. Wir erreichen dies mit einer Schleife von 0 bis `PageCount - 1`, Hinzufügen eines neuen `ListItem` in jeder Iteration und die Einstellung der `Selected` Eigenschaft auf "true", der aktuellen Iterationsindex GridView s gleich `PageIndex` Eigenschaft.
 
@@ -253,7 +253,7 @@ Beim Binden von einem ObjectDataSource-Steuerelement an die GridView in der Drop
 
 [!code-aspx[Main](paging-and-sorting-report-data-cs/samples/sample9.aspx)]
 
-Ein Feld kann so konfiguriert werden, damit sie s nicht sortierbar durch Beseitigen der `SortExpression` Eigenschaft (eine leere Zeichenfolge zuweisen). Um dies zu veranschaulichen, stellen Sie sich vor, die wir nihnen t können unsere Kunden, unsere Produkte nach Preis sortiert werden soll. Die `UnitPrice` BoundField-s `SortExpression` Eigenschaft entfernt werden kann, oder aus dem deklarativen Markup als auch über die Felder (Dialogfeld) (das durch Klicken auf den Link "Spalten bearbeiten" in das GridView-s-Smarttag).
+Ein Feld kann so konfiguriert werden, damit sie s nicht sortierbar durch Beseitigen der `SortExpression` Eigenschaft (eine leere Zeichenfolge zuweisen). Um dies zu veranschaulichen, stellen Sie sich vor, dass nicht können unsere Kunden, unsere Produkte nach Preis sortiert werden soll. Die `UnitPrice` BoundField-s `SortExpression` Eigenschaft entfernt werden kann, oder aus dem deklarativen Markup als auch über die Felder (Dialogfeld) (das durch Klicken auf den Link "Spalten bearbeiten" in das GridView-s-Smarttag).
 
 
 ![Die Ergebnisse sind nach UnitPrice in aufsteigender Reihenfolge sortiert wurden](paging-and-sorting-report-data-cs/_static/image27.png)

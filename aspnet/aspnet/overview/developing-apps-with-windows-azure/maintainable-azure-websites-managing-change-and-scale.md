@@ -8,18 +8,18 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: bc6de2f0c8b2cd958c198abb90fc4ad97613e973
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 315e89c81782edf0875c65afd27153102d733050
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054537"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424247"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
 ====================
 durch [Web Camps Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](http://aka.ms/webcamps-training-kit)
+[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
 
 > Microsoft Azure vereinfacht das Erstellen und Bereitstellen von Websites für die Produktion. Aber wenn Ihre Anwendung live ist noch nicht fertig, Sie fangen gerade erst! Sie müssen sich ändernden Anforderungen, datenbankaktualisierungen, Skalierung und mehr zu behandeln. Glücklicherweise bietet Azure App Service Ihnen, viele Features, damit Sie Ihre störungsfrei ausgeführte Sites halten können.
 >
@@ -31,7 +31,7 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 >
 > Mit SQL-Datenbanken ist es wichtig, Ihre Produktivität Datenbank aktuell zu halten, wenn neue Versionen Ihrer Anwendung bereitstellen. Vielen Dank an **Entity Framework Code First-Migrationen**, wurde die Entwicklung und Bereitstellung Ihres Datenmodells zum Aktualisieren Ihrer Umgebungen in wenigen Minuten vereinfacht. Dieser praktischen Übungseinheit zeigt Ihnen die verschiedenen Themen, die auftreten können, wenn Ihre Web-app in produktionsumgebungen in Microsoft Azure bereitstellen.
 >
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
+> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 >
 > Weitere detaillierte dieses Themas finden Sie unter den [Building Real-World Cloud-Apps mit Azure-e-Book](building-real-world-cloud-apps-with-windows-azure/introduction.md).
 
@@ -62,10 +62,10 @@ Folgendes ist erforderlich, um diese praktische Übungseinheit auszuführen:
 - [GIT-System zur Versionskontrolle](http://git-scm.com/download)
 - Microsoft Azure-Abonnement
 
-    - Melden Sie sich für eine [kostenlose Testversion](http://aka.ms/watk-freetrial)
-    - Wenn Sie einer eine Visual Studio Professional, Test Professional, Premium oder Ultimate mit MSDN oder MSDN Platforms-Abonnent sind, aktivieren Sie Ihre [MSDN-Vorteil](http://aka.ms/watk-msdn) jetzt zum Entwickeln und Testen in Azure
-    - [BizSpark](http://aka.ms/watk-bizspark) -Mitglieder erhalten automatisch das Angebot in ihr Visual Studio Ultimate mit MSDN-Abonnements
-    - Mitglieder der [Microsoft Partner Network](http://aka.ms/watk-mpn) Cloud Essentials-Programm erhalten monatliche Azure-Gutschriften kostenlos
+    - Melden Sie sich für eine [kostenlose Testversion](https://aka.ms/watk-freetrial)
+    - Wenn Sie einer eine Visual Studio Professional, Test Professional, Premium oder Ultimate mit MSDN oder MSDN Platforms-Abonnent sind, aktivieren Sie Ihre [MSDN-Vorteil](https://aka.ms/watk-msdn) jetzt zum Entwickeln und Testen in Azure
+    - [BizSpark](https://aka.ms/watk-bizspark) -Mitglieder erhalten automatisch das Angebot in ihr Visual Studio Ultimate mit MSDN-Abonnements
+    - Mitglieder der [Microsoft Partner Network](https://aka.ms/watk-mpn) Cloud Essentials-Programm erhalten monatliche Azure-Gutschriften kostenlos
 
 <a id="Setup"></a>
 ### <a name="setup"></a>Setup

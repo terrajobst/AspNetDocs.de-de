@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: d4998c8b739b4b1a06699a17464a7399a87a8595
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db54a134e8f842cab1d3471c69f5a8e2039d83d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039487"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423610"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Praktische Übungseinheiten: Echtzeit-Webanwendungen mit SignalR
 ====================
@@ -22,7 +22,7 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-[Herunterladen Sie Web Camps Training Kit](http://aka.ms/webcamps-training-kit)
+[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
 
 > Echtzeit-Webanwendungen bieten die Möglichkeit, serverseitige an verbundene Clients Inhalte, während es geschieht, können Sie in Echtzeit mithilfe von push. Für ASP.NET-Entwickler **ASP.NET SignalR** ist eine Bibliothek in ihren Anwendungen echtzeitwebfunktionalität hinzu. Es nutzt verschiedene Transporte, das automatische auswählen von den am besten verfügbaren Transport erhält der Client und am besten verfügbaren Transport-Servers. Es nutzt **WebSocket**, eine HTML5-API, die bidirektionale Kommunikation zwischen Browser und Server ermöglicht.
 > 
@@ -34,7 +34,7 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > 
 > ![SignalR-Architektur](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
+> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 
 
 <a id="Overview"></a>

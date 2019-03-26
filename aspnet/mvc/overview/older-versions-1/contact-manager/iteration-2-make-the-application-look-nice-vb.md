@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f65cb436-e493-46fd-9608-384b27385aa1
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7f27cbab17effc3b44649e06409893e6be09b011
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9cda4153c4e4883586a83ac7f89b2f369f8157e5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050917"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422265"
 ---
 <a name="iteration-2--make-the-application-look-nice-vb"></a>Iteration #2 – Optimieren der Anwendung gut (VB)
 ====================
@@ -112,7 +112,7 @@ Die ASP.NET MVC-Design-Katalog verfügt über eine gute Auswahl von verschiedene
 
 Allerdings müssen Sie ein völlig Design für Ihre Website erstellen. In diesem Fall Sie es sinnvoll, ein Website-Entwurfs-Unternehmen gearbeitet. Ich beschloss, diesen Ansatz für den Entwurf für die Kontakt-Manager-Anwendung verwenden.
 
-Ich ZIP Einrichten der Contact Manager aus Iteration 1 und der designbüros des Projekts an. Visual Studio (schade darauf!), deren Besitzer sie nicht, aber hat t ein Problem darstellen. Sie konnten für den kostenlosen download von Microsoft Visual Web Developer aus der [ https://www.asp.net ](https://www.asp.net) -Website und öffnen Sie die Kontakt-Manager-Anwendung in Visual Web Developer. In einigen Tagen mussten sie den Entwurf in Abbildung 7 erstellt.
+Ich ZIP Einrichten der Contact Manager aus Iteration 1 und der designbüros des Projekts an. Sie Visual Studio (schade darauf!) nicht besitzt, aber nicht, die ein Problem darstellen. Sie konnten für den kostenlosen download von Microsoft Visual Web Developer aus der [ https://www.asp.net ](https://www.asp.net) -Website und öffnen Sie die Kontakt-Manager-Anwendung in Visual Web Developer. In einigen Tagen mussten sie den Entwurf in Abbildung 7 erstellt.
 
 
 [![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)

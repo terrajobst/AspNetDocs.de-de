@@ -8,12 +8,12 @@ ms.date: 01/17/2019
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 266c808e3525787181038d2de473194989039e02
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d96f2bef5fff6fbee8e0767b0fa735cbd68e2779
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038017"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421543"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>Verwendung von Web-API 2 mit Entity Framework 6
 ====================
@@ -91,7 +91,7 @@ Nachdem Sie das Projekt erstellt haben, können Sie jederzeit auf Azure App Serv
 
    [![](part-1/_static/image16.png)](part-1/_static/image16.png)
 
-   Akzeptieren Sie die Standardeinstellungen, oder geben Sie andere Werte ein. Geben Sie eine **Adminstrator Username** und **Administratorkennwort** für Ihre neue Datenbank. Wählen Sie **OK** Wenn Sie fertig sind. Die **App Service erstellen** Seite wird erneut angezeigt.
+   Akzeptieren Sie die Standardeinstellungen, oder geben Sie andere Werte ein. Geben Sie eine **Administratorbenutzernamen** und **Administratorkennwort** für Ihre neue Datenbank. Wählen Sie **OK** Wenn Sie fertig sind. Die **App Service erstellen** Seite wird erneut angezeigt.
 
 5. Wählen Sie **erstellen** auf Ihr Profil zu erstellen. In der unteren rechten Ecke, der angibt, dass die Bereitstellung ausgeführt wird, wird eine Meldung angezeigt. Nach einer kurzen Zeit die **veröffentlichen** Fenster wird erneut angezeigt.
 

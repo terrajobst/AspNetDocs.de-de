@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b12baa5075b4e67018d8a98a92e807d1778737c8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63e31d719991dddec2168524187c304256d1b4e0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054697"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426106"
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (VB)
 ====================
@@ -79,7 +79,7 @@ Wenn die GridView mit einer Datenquelle gebunden ist, erstellt es einen `GridVie
 **Abbildung 3**: Eine Technik wird das Hinzufügen von Trennzeichen für Zeilen mit der Datenquelle
 
 
-Ich verwende Begriff Trennzeichen Datensätze in Anführungszeichen, da es keine spezielle Trennzeichen für Datensatz; Stattdessen müssen wir irgendwie flag, die ein bestimmter Datensatz in der Datenquelle als Trennzeichen und nicht als eine Zeile für normale Daten dient. Für unseren Beispielen wir re-Bindung eine `ProductsDataTable` Instanz an die GridView, das aus besteht `ProductRows`. Wir können einen Datensatz als eine Trennzeichenzeile kennzeichnen, durch Festlegen der `CategoryID` Eigenschaft `-1` (da es sich um eine solche eine Wert konnte t normalerweise vorhanden ist).
+Ich verwende Begriff Trennzeichen Datensätze in Anführungszeichen, da es keine spezielle Trennzeichen für Datensatz; Stattdessen müssen wir irgendwie flag, die ein bestimmter Datensatz in der Datenquelle als Trennzeichen und nicht als eine Zeile für normale Daten dient. Für unseren Beispielen wir re-Bindung eine `ProductsDataTable` Instanz an die GridView, das aus besteht `ProductRows`. Wir können einen Datensatz als eine Trennzeichenzeile kennzeichnen, durch Festlegen seiner `CategoryID` Eigenschaft `-1` (da es sich um eine solche Werte normalerweise vorhanden konnte nicht).
 
 Um dieses Verfahren nutzen zu können, müssen wir d die folgenden Schritte ausführen:
 

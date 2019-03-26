@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8159693adced7f102f6fe1457d7b103f8596d231
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6bfe11a40bbdf0cd9dfe4d81d9c7436a5adb9491
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025547"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420685"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>Überprüfung der Validierungssteuerelemente für Datenanmerkungen (VB)
 ====================
@@ -55,7 +55,7 @@ Diese Codezeile wird der DataAnnotationsModelBinder als der Standardmodellbinder
 Wenn Sie die Daten Anmerkungen Modellbindung verwenden, verwenden Sie die Validierungssteuerelement-Attribute für die Validierung. System.ComponentModel.DataAnnotations-Namespace enthält die folgenden Attribute für den systemintegritätsprüfungspunkt:
 
 - Bereich – können Sie überprüfen, ob der Wert einer Eigenschaft zwischen einem angegebenen Bereich von Werten liegt.
-- ReqularExpression – können Sie überprüfen, ob der Wert einer Eigenschaft mit einem angegebenen regulären Ausdruck-Muster übereinstimmt.
+- RegularExpression – können Sie überprüfen, ob der Wert einer Eigenschaft mit einem angegebenen regulären Ausdruck-Muster übereinstimmt.
 - Erforderlich: ermöglicht es Ihnen, eine Eigenschaft als erforderlich markieren.
 - StringLength – können Sie eine maximale Länge für eine Zeichenfolgeneigenschaft angeben.
 - Überprüfung: die Basisklasse für alle Validierungssteuerelement-Attribute.

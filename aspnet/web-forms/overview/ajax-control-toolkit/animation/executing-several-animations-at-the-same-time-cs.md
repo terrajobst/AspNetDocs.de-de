@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d70f7b9170cbd3307dae4cdb4f9ee735e3c5bee8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f228ca600691ea4820ecdb79dea5e70054975f32
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032767"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422947"
 ---
 <a name="executing-several-animations-at-the-same-time-c"></a>Ausführen mehrerer Animationen zur gleichen Zeit (c#)
 ====================
@@ -52,7 +52,7 @@ Hier ist die einem möglichen Markup für die `AnimationExtender` Steuerelement 
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample5.aspx)]
 
-Und tatsächlich: Wenn Sie dieses Skript ausführen, im Bereich angezeigt wird, und dann ändert die Größe (mehr als Threefolding die Breite und Halfing seine Höhe) und zur gleichen Zeit ausgeblendet wird.
+Und tatsächlich: Wenn Sie dieses Skript ausführen, wird im Bereich angezeigt wird, klicken Sie dann die Größe (mehr als verdreifacht Sie seine Breite sich und seine Höhe halbiert) und zur gleichen Zeit ausgeblendet wird.
 
 
 [![Der Bereich ausgeblendet wird, und Ändern der Größe (einschließlich seines Inhalts Dank des Browsers Rendering-Engine)](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)

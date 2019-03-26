@@ -8,12 +8,12 @@ ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: e7461098f93bf64d6ff0d0e4ecdb64338f96be8b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064057"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422206"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity
 ====================
@@ -82,7 +82,7 @@ In diesem Thema wird davon ausgegangen, dass Sie mit der persistenzmechanismus, 
 
 Sie haben nur wenige freiheiten beim Entwerfen der Repositorys für eine benutzerdefinierte Anbieter zu speichern. Sie müssen nur die Repositorys für Funktionen zu erstellen, die Sie in Ihrer Anwendung verwenden möchten. Z. B. Wenn Sie keine Rollen in Ihrer Anwendung verwenden, müssen nicht Sie Speicher für Rollen oder Benutzerrollen zu erstellen. Ihre Technologie und die vorhandene Infrastruktur möglicherweise eine Struktur, die sehr stark von der Standardimplementierung von ASP.NET Identity ist. In der Datenzugriffsebene Geben Sie die Logik zum Arbeiten mit der Struktur Ihrer Repositorys.
 
-Einen MySQL-gesammelte Daten Repositorys für ASP.NET Identity 2.0, finden Sie unter [MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql).
+Eine MySQL-Implementierung des Datenrepositorys für ASP.NET Identity 2.0, finden Sie unter [MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql).
 
 In der Datenzugriffsebene Geben Sie die Logik, um die Daten von ASP.NET Identity in Ihrer Datenquelle zu speichern. Die Datenzugriffsebene für Ihre benutzerdefinierte Speicheranbieter sind zum Beispiel die folgenden Klassen zum Speichern von Informationen für Benutzer und die Rolle.
 

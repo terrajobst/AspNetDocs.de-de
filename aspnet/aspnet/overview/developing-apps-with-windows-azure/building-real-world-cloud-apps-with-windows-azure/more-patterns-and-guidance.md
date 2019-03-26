@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 3de929ff7253928f2f9cd9b033ef6c643744e91c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 87dbbc0b598a6592b511383a5487a04b302b0994
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050797"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425664"
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Weitere Muster und Anleitungen (erstellen realer Cloud-Apps mit Azure)
 ====================
@@ -61,7 +61,7 @@ Videos
 Codebeispiel
 
 - [Der Fix It-Anwendung, die mit diesem e-Book](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002).
-- [Clouddienstgrundlagen in Azure in c# für Visual Studio 2012](http://aka.ms/csf). Herunterladbaren Projekt in der Microsoft Code Gallery-Website enthält sowohl Code als auch Dokumentation, die von der Microsoft Customer Advisory Teams (CAT) entwickelt. Veranschaulicht viele der bewährten Methoden in der FailSafe-Whitepaper und die Videoreihe FailSafe und Erstellen von Big propagiert. Die Code Gallery-Seite zudem einen Link zu umfangreichen Dokumentation von den Autoren des Projekts – finden Sie insbesondere die [Clouddienstgrundlagen Wiki Auflistung](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) -Link in das blaue Feld oben auf der die Beschreibung für das Projekt. Dieses Projekt, und die Dokumentation für diese immer noch aktiv entwickelt, die somit einer besseren Wahl für Informationen zu vielen Themen als ähnlich, aber frühere Whitepapers.
+- [Clouddienstgrundlagen in Azure in c# für Visual Studio 2012](https://aka.ms/csf). Herunterladbaren Projekt in der Microsoft Code Gallery-Website enthält sowohl Code als auch Dokumentation, die von der Microsoft Customer Advisory Teams (CAT) entwickelt. Veranschaulicht viele der bewährten Methoden in der FailSafe-Whitepaper und die Videoreihe FailSafe und Erstellen von Big propagiert. Die Code Gallery-Seite zudem einen Link zu umfangreichen Dokumentation von den Autoren des Projekts – finden Sie insbesondere die [Clouddienstgrundlagen Wiki Auflistung](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) -Link in das blaue Feld oben auf der die Beschreibung für das Projekt. Dieses Projekt, und die Dokumentation für diese immer noch aktiv entwickelt, die somit einer besseren Wahl für Informationen zu vielen Themen als ähnlich, aber frühere Whitepapers.
 
 Kopieren der VHD-Bücher
 
@@ -101,7 +101,7 @@ Viele andere Kollegen bei Microsoft überprüft und Entwürfe und Code kommentie
 - Edward Wu - Beispielcode für das SSO-Kapitel bereitgestellt.
 - Guang Yang - schrieb die Automation-PowerShell-Skripts.
 
-Mitglieder der [Microsoft Entwickler Anleitungen Advisory Council](http://aka.ms/DGAC) (DGAC) auch überprüft und kommentiert Entwürfe:
+Mitglieder der [Microsoft Entwickler Anleitungen Advisory Council](https://aka.ms/DGAC) (DGAC) auch überprüft und kommentiert Entwürfe:
 
 - Jean-Luc Boucho
 - Catalin Gheorghiu

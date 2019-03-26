@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: f40eb338a1b6b8eebb6578dd7938e96a05b1617f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 644beb37bf893a590be03dd0929c5870af6fbe87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055117"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425768"
 ---
 <a name="master-pages"></a>Masterseiten
 ====================
@@ -94,7 +94,7 @@ In dieser Übungseinheit erhalten Sie eine neue Masterseite zu erstellen und def
 
 1. Platzieren Sie den Cursor in die einzelnen Zellen der Tabelle, und legen Sie die *Valign* Eigenschaft *oben*.
 2. Fügen Sie aus der Toolbox ein ContentPlaceHolder-Steuerelement in der obersten Zelle der Tabelle (die Headerzelle.)
-3. Wenn Sie dieses ContentPlaceHolder-Steuerelement einfügen, werden Sie feststellen, dass die Zeilenhöhe fast die gesamte Seite gelangen, wie in Abbildung 4 dargestellt. Werden überlegen zu müssen, die an diesem Punkt.
+3. Wenn Sie dieses ContentPlaceHolder-Steuerelement einfügen, werden Sie feststellen, dass die Zeilenhöhe fast die gesamte Seite gelangen, wie in Abbildung 4 dargestellt. Seien Sie nicht beunruhigt zu, die an diesem Punkt.
 
 
 ![Der freie Speicherplatz wird in der gleichen Zelle als ContentPlaceHolder](master-pages/_static/image1.gif)
@@ -127,7 +127,7 @@ In dieser Übungseinheit erhalten Sie eine neue Masterseite zu erstellen und def
 2. Wählen Sie Dialogfeld aus "" exercise1.master in die SELECT-Anweisung eine Masterseite wie in Abbildung 7 dargestellt.
 3. Klicken Sie auf OK, um die neue Seite hinzuzufügen.
 
-Die neue Seite, die mit einem Content-Steuerelement für die einzelnen ContentPlaceHolder-Steuerelemente auf der Masterseite in Visual Studio angezeigt werden. Standardmäßig sind die Inhaltssteuerelemente leer, damit Sie Ihre eigene Inhalte hinzufügen können. Wenn Sie den Inhalt aus dem ContentPlaceHolder-Steuerelement auf der Masterseite verwenden eine zufrieden sind, einfach klicken Sie auf das Smarttag-Symbol (den kleinen schwarzen Pfeil in der oberen rechten Ecke des Steuerelements), und wählen Sie *Master-Inhalt standardmäßig* aus dem Smarttag Siehe **Abbildung 8:**. Wenn Sie dies tun, ändert sich das Menüelement in *erstellen benutzerdefinierte Content*. An diesem Punkt klicken, wird der Inhalt der Masterseite, sodass Sie zum Definieren von benutzerdefinierten Inhalts für diese bestimmte Inhaltssteuerelement.
+Die neue Seite, die mit einem Content-Steuerelement für die einzelnen ContentPlaceHolder-Steuerelemente auf der Masterseite in Visual Studio angezeigt werden. Standardmäßig sind die Inhaltssteuerelemente leer, damit Sie Ihre eigene Inhalte hinzufügen können. Wenn Sie für den Inhalt aus dem ContentPlaceHolder-Steuerelement auf der Masterseite verwenden möchten, einfach klicken Sie auf das Smarttag-Symbol (den kleinen schwarzen Pfeil in der oberen rechten Ecke des Steuerelements), und wählen Sie *Master-Inhalt standardmäßig* aus dem Smarttag Siehe **Abbildung 8:**. Wenn Sie dies tun, ändert sich das Menüelement in *erstellen benutzerdefinierte Content*. An diesem Punkt klicken, wird der Inhalt der Masterseite, sodass Sie zum Definieren von benutzerdefinierten Inhalts für diese bestimmte Inhaltssteuerelement.
 
 
 ![Der Inhalt der Master-Seiten standardmäßig ein ContentControl-Element festlegen](master-pages/_static/image4.gif)

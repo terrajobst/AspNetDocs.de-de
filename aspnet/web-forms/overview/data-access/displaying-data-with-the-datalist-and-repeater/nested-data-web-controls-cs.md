@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 032321b5cf5323058c114e652512854f9866d447
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2fda8883a1cd45a7018c639efcce94cf0e59974c
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062607"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440299"
 ---
 <a name="nested-data-web-controls-c"></a>Geschachtelte Datenwebsteuerelemente (C#)
 ====================
@@ -140,7 +140,7 @@ Diese Methode erstellt einfach eine Instanz von der `ProductsBLL` Methode und gi
 Nach diesen Änderungen zum Verwenden dieses neuen Verfahrens nehmen einen Moment Zeit, um die Seite über einen Browser anzuzeigen. Die Ausgabe sollte in die Ausgabe identisch sein, wenn mit dem ObjectDataSource-Steuerelement und `ItemDataBound` Event Handler Ansatz (siehe Abbildung 5, um einen Screenshot finden Sie unter).
 
 > [!NOTE]
-> Es mag nichtproduktive Beschäftigung, zum Erstellen der `GetProductsInCategory(categoryID)` -Methode in der ASP.NET Page s-Code-Behind-Klasse. Schließlich erstellt diese Methode einfach eine Instanz von der `ProductsBLL` -Klasse und gibt die Ergebnisse der seine `GetProductsByCategoryID(categoryID)` Methode. Warum also nicht direkt über die Databinding-Syntax in der inneren Repeater, wie diese Methode nur aufrufen: `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`? Obwohl diese Syntax t-arbeiten mit unseren aktuellen Implementierung von gewonnen hat die `ProductsBLL` Klasse (da die `GetProductsByCategoryID(categoryID)` Methode ist eine Instanzmethode), können Sie ändern `ProductsBLL` zum Einschließen der eines statisches `GetProductsByCategoryID(categoryID)` Methode oder über die Klasse, die statisch `Instance()` Methode, um eine neue Instanz der zurückzugeben. die `ProductsBLL` Klasse.
+> Es mag nichtproduktive Beschäftigung, zum Erstellen der `GetProductsInCategory(categoryID)` -Methode in der ASP.NET Page s-Code-Behind-Klasse. Schließlich erstellt diese Methode einfach eine Instanz von der `ProductsBLL` -Klasse und gibt die Ergebnisse der seine `GetProductsByCategoryID(categoryID)` Methode. Warum also nicht direkt über die Databinding-Syntax in der inneren Repeater, wie diese Methode nur aufrufen: `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`? Obwohl diese Syntax nicht mit unseren aktuellen Implementierung funktioniert der `ProductsBLL` Klasse (da die `GetProductsByCategoryID(categoryID)` Methode ist eine Instanzmethode), können Sie ändern `ProductsBLL` zum Einschließen der eines statisches `GetProductsByCategoryID(categoryID)` Methode oder über die Klasse, die statisch `Instance()` Methode, um eine neue Instanz der zurückzugeben. die `ProductsBLL` Klasse.
 
 
 Während Sie solche Änderungen die Notwendigkeit beseitigen, würde die `GetProductsInCategory(categoryID)` -Methode in der ASP.NET Page s-Code-Behind-Klasse, die Code-Behind-Klassenmethode ergibt mehr Flexibilität bei der Arbeit mit den Daten abgerufen, wie wir gleich sehen werden.
@@ -151,7 +151,7 @@ Die beiden früheren Techniken wir untersucht haben diese Produkte für die aktu
 
 Erhält *N* Kategorien im System, die diesen Ansatz Nettoermittlung *N* + 1 Aufrufe an die Datenbank eine Datenbank-Abfrage zum Abrufen aller Kategorien und dann *N* aufrufen, um die Produkte zu erhalten. für jede Kategorie. Wir können jedoch alle erforderlichen Daten in nur zwei Datenbank-Aufrufe ein Aufruf zum Abrufen aller Kategorien und eine zum Abrufen aller Produkte abrufen. Nachdem wir alle Produkte haben, können wir diese Produkte also filtern, dass nur die Produkte, die die aktuelle Übereinstimmung `CategoryID` gebunden sind, auf diese Kategorie s innere Repeater.
 
-Um diese Funktionalität zu gewährleisten, müssen wir nur eine kleine Änderung an Stellen die `GetProductsInCategory(categoryID)` -Methode in unserer ASP.NET Page s-Code-Behind-Klasse. Anstatt Sie wahllos Zurückgeben der Ergebnisse von der `ProductsBLL` s-Klasse `GetProductsByCategoryID(categoryID)` -Methode, können wir stattdessen ersten Zugriff auf *alle* der Produkte (Wenn sie t wurde wurde bereits zugegriffen) und wieder nur die gefilterte Ansicht der der Produkte basierend auf der übergebenen `CategoryID`.
+Um diese Funktionalität zu gewährleisten, müssen wir nur eine kleine Änderung an Stellen die `GetProductsInCategory(categoryID)` -Methode in unserer ASP.NET Page s-Code-Behind-Klasse. Anstatt Sie wahllos Zurückgeben der Ergebnisse von der `ProductsBLL` s-Klasse `GetProductsByCategoryID(categoryID)` -Methode, können wir stattdessen ersten Zugriff auf *alle* der Produkte (Wenn sie sich bereits zugegriffen wurde, nicht) und dann nur die gefilterte Ansicht der Zurückgeben der Produkte basierend auf der übergebenen `CategoryID`.
 
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample8.cs)]

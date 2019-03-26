@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 32377145-ec25-4715-8370-a1c590a331d5
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1ac64a3c5023d83259f6e2d6facd8e248768c2d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4b2e50a4ede0dfa97df6fa73dbd5b16bfde59745
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046647"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421674"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-c"></a>Hinzufügen einer GridView-Spalte mit Optionsfeldern (C#)
 ====================
@@ -179,7 +179,7 @@ Es gibt zwei Ansätze, die ausgeführt werden können, um Low-Level-Markup in ei
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-cs/samples/sample5.aspx)]
 
-Hier `GetUniqueRadioButton` und `GetRadioButtonValue` wäre in der CodeBehind-Klasse, die die entsprechende zurückgegeben definierten Methoden `id` und `value` Attributwerte für jedes Optionsfeld. Dieser Ansatz eignet sich gut für die Zuweisung der `id` und `value` Attribute, jedoch unzureichend, wenn erforderlich, dass angeben der `checked` Attributwert, da die Datenbindungssyntax nur ausgeführt wird, wenn Daten zunächst an die GridView gebunden werden. Daher verfügt die GridView Ansichtszustand aktiviert, Formatierungsmethoden werden nur ausgelöst, wenn zuerst die Seite geladen wird (oder wenn die GridView ist explizit erneut gebunden an die Datenquelle), und daher die Funktion, die festlegt der `checked` Attribut gewonnen t aufgerufen werden Postback. Es s ein ziemlich spitzfindig Problem und sprengt den Rahmen in diesem Artikel, sodass ich diese beibehalten werden. Ich funktionieren, allerdings wird empfohlen, versuchen Sie es mit der oben beschriebene Ansatz und über zu dem Punkt, in dem Sie hängen bleiben müssen. Während solche ein Übung gewonnen t erhalten Sie auf eine funktionierende Version näher, hilft es, ein tieferes Verständnis der GridView und die Databinding-Lebenszyklus zu fördern.
+Hier `GetUniqueRadioButton` und `GetRadioButtonValue` wäre in der CodeBehind-Klasse, die die entsprechende zurückgegeben definierten Methoden `id` und `value` Attributwerte für jedes Optionsfeld. Dieser Ansatz eignet sich gut für die Zuweisung der `id` und `value` Attribute, jedoch unzureichend, wenn erforderlich, dass angeben der `checked` Attributwert, da die Datenbindungssyntax nur ausgeführt wird, wenn Daten zunächst an die GridView gebunden werden. Daher verfügt die GridView Ansichtszustand aktiviert, Formatierungsmethoden werden nur ausgelöst, wenn zuerst die Seite geladen wird (oder wenn die GridView ist explizit erneut gebunden an die Datenquelle), und daher die Funktion, die festlegt der `checked` Attribut wird nicht aufgerufen werden Postback. Es s ein ziemlich spitzfindig Problem und sprengt den Rahmen in diesem Artikel, sodass ich diese beibehalten werden. Ich funktionieren, allerdings wird empfohlen, versuchen Sie es mit der oben beschriebene Ansatz und über zu dem Punkt, in dem Sie hängen bleiben müssen. Während dieser Übung Sie näher auf eine funktionierende Version erhalten, ist es hilfreich, ein tieferes Verständnis der GridView und die Databinding-Lebenszyklus zu fördern.
 
 Die andere Methode zum Einfügen von benutzerdefinierten Low-Level Markup in einer Vorlage und der Ansatz, den wir für dieses Tutorial verwenden ist, Hinzufügen einer [Literalsteuerelement](https://msdn.microsoft.com/library/sz4949ks(VS.80).aspx) zur Vorlage. Klicken Sie dann in den GridView-s `RowCreated` oder `RowDataBound` -Ereignishandler das literale Steuerelement programmgesteuert zugegriffen werden kann und die zugehörige `Text` Eigenschaftensatz an das Markup zum ausgeben.
 

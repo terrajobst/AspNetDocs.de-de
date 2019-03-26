@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e2f3781623af5a32149e1db1c17b67ce43b7da0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030647"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423967"
 ---
 # <a name="configuration-builders-for-aspnet"></a>Konfigurations-Generatoren für ASP.NET
 
@@ -191,7 +191,7 @@ Die [EnvironmentConfigBuilder](https://www.nuget.org/packages/Microsoft.Configur
 
 Diese Konfigurations-Generator bietet eine Funktion, die ähnlich wie [Geheimnis-Manager für ASP.NET Core](/aspnet/core/security/app-secrets).
 
-Die [UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/) in .NET Framework-Projekten verwendet werden kann, aber eine Datei mit Geheimnissen muss angegeben werden. Alternativ können Sie definieren die `UserSecretsId` Eigenschaft im Projekt Datei und erstellt die unformatierten geheimnisdatei am richtigen Speicherort für das Lesen. Um externe Abhängigkeiten aus Ihrem Projekt zu halten, ist die geheimnisdatei XML-Format. Die XML-Formatierung ist ein Implementierungsdetail, und das Format sollte nicht als zuverlässig betrachtet werden. Wenn Sie zum Freigeben benötigen eine *secrets.json* mit .NET Core-Projekte, erwägen Sie die Verwendung der [SimpleJsonConfigBuilder](#simplejsonconfig). Die `SimpleJsonConfigBuilder` format für .NET Core ein Implementierungsdetail unterliegen ebenfalls berücksichtigt werden sollten.
+Die [UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/) in .NET Framework-Projekten verwendet werden kann, aber eine Datei mit Geheimnissen muss angegeben werden. Alternativ können Sie definieren die `UserSecretsId` Eigenschaft im Projekt Datei und erstellt die unformatierten geheimnisdatei am richtigen Speicherort für das Lesen. Um externe Abhängigkeiten aus Ihrem Projekt zu halten, ist die geheimnisdatei XML-Format. Die XML-Formatierung ist ein Implementierungsdetail, und das Format sollte nicht als zuverlässig betrachtet werden. Wenn Sie zum Freigeben benötigen eine *secrets.json* mit .NET Core-Projekte, erwägen Sie die Verwendung der [SimpleJsonConfigBuilder](#simplejsonconfigbuilder). Die `SimpleJsonConfigBuilder` format für .NET Core ein Implementierungsdetail unterliegen ebenfalls berücksichtigt werden sollten.
 
 Konfiguration für Attribute `UserSecretsConfigBuilder`:
 
@@ -278,7 +278,7 @@ Attributdetails:
 
 * `jsonFile` – Erforderlich. Gibt an, die JSON-Datei gelesen werden. Die `~` Zeichen kann zu Beginn verwendet werden, auf das um Stammverzeichnis der app zu verweisen.
 * `optional` – Boolesch, Standardwert ist `true`. Verhindert, dass Ausnahmen auslösen, wenn die JSON-Datei nicht gefunden werden kann.
-* `jsonMode` - `[Flat|Sectional]`. Standardmäßig ist `Flat` festgelegt. Wenn `jsonMode` ist `Flat`, die JSON-Datei ist eine einzelne einfache Schlüssel/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne einfache Schlüssel/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` erfolgt `Sectional` Modus:
+* `jsonMode` - `[Flat|Sectional]`. `Flat` Der Standardwert ist. Wenn `jsonMode` ist `Flat`, die JSON-Datei ist eine einzelne einfache Schlüssel/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne einfache Schlüssel/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` erfolgt `Sectional` Modus:
 
   * Die JSON-Datei ist im Prinzip nur auf der obersten Ebene in mehreren Wörterbüchern unterteilt.
   * Jede der Wörterbücher wird nur auf den Konfigurationsabschnitt angewendet, die die Eigenschaft der obersten Ebene Namens auf diese entspricht. Zum Beispiel:

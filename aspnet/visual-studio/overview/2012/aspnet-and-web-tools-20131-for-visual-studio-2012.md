@@ -8,12 +8,12 @@ ms.date: 11/13/2013
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: a0b3d52910ac33c403ecbe2340c12b202c25147b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 008891b72e1fb72458aee00bbf83839d0fbed263
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053027"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423545"
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>Anmerkungen zu dieser Version – ASP.NET and Web Tools 2013.1 für Visual Studio 2012
 ====================
@@ -163,7 +163,7 @@ Um dieses Problem zu beheben, konfigurieren Sie die Visual Studio Express die MS
 ### <a name="aspnet-razor-3"></a>ASP.NET Razor-3
 
 <a id="browseissue"></a>
-#### <a name="viewing-cshtml-file-withbrowse-withorf5causes-a-server-error"></a>Anzeigen von Cshtml-Datei WithBrowse WithorF5causes ein Serverfehler
+#### <a name="viewing-cshtml-file-with-browse-with-or-f5-causes-a-server-error"></a>Anzeigen von Cshtml-Datei öffnen oder F5 bewirkt, dass einen Serverfehler
 
 Beim Erstellen einer MVC 5-Projekt in Visual Studio 2012 (oder öffnen Sie in Visual Studio 2012 ein MVC 5-Projekt, das in Visual Studio 2013 erstellt wurde) und versucht, eine Cshtml-Datei mit Browserauswahl oder F5 anzeigen, erhalten Sie eine Fehlermeldung mit - **in Server-Fehlers Anwendung '/'**. Der Server versucht, das Navigieren zu `http://localhost:XXXX/Views/../XXXX.cshtml`
 

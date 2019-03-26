@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: f555c531-bf33-4699-9987-42dbfef23c1f
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7a23e8897e4fbdf84c4d6916c22bad9687fa5ee6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e8b5493694b24e4187ecb69ca8d2eff6a8507985
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046497"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421218"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (VB)
 ====================
@@ -66,7 +66,7 @@ Nehmen Sie einen Moment Zeit, Ihre Seite in einem Browser besuchen. Wie in Abbil
 
 Während das Standardverhalten für DataList-Steuerelement ist, um das Layout der Elemente vertikal in einer Tabelle eine Spalte, die mehrzeilige dieses Verhalten kann leicht geändert werden über DataList s [ `RepeatDirection` Eigenschaft](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). Die `RepeatDirection` Eigenschaft kann einen von zwei möglichen Werten annehmen: `Horizontal` oder `Vertical` (Standard).
 
-Durch Ändern der `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`, DataList-Steuerelement rendert der Datensätze in einer einzelnen Zeile, erstellen eine Spalte pro Datenquellenelement. Um diesen Effekt zu veranschaulichen, klicken Sie auf das DataList-Steuerelement im Designer, und ändern Sie dann im Eigenschaftenfenster die `RepeatDirection` Eigenschaft `Vertical` zu `Horiztonal`. Sofort auf diese Weise der Designer passt das DataList s Layout, erstellen eine einzelne Zeile, die mit mehreren Spalte Schnittstelle (siehe Abbildung 3).
+Durch Ändern der `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`, DataList-Steuerelement rendert der Datensätze in einer einzelnen Zeile, erstellen eine Spalte pro Datenquellenelement. Um diesen Effekt zu veranschaulichen, klicken Sie auf das DataList-Steuerelement im Designer, und ändern Sie dann im Eigenschaftenfenster die `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`. Sofort auf diese Weise der Designer passt das DataList s Layout, erstellen eine einzelne Zeile, die mit mehreren Spalte Schnittstelle (siehe Abbildung 3).
 
 
 [![Die RepeatDirection-Eigenschaft bestimmt, wie die Richtung der DataList-s-Elemente werden angeordnet](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)

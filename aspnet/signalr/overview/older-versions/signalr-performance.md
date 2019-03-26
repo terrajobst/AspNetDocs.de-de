@@ -8,12 +8,12 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 4158cb055088f3da752020e577007ffe80856b60
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 55e38762dbc7caf31989d65ebf70516a458cfb00
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055957"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425534"
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR-Leistung (SignalR 1.x)
 ====================
@@ -119,7 +119,7 @@ In diesem Abschnitt wird beschrieben, wie aktivieren und Verwenden von SignalR-L
 
 ### <a name="installing-signalrexe"></a>Installieren von signalr.exe
 
-Performance-Leistungsindikatoren können mit dem Server mithilfe eines Dienstprogramms namens SignalR.exe hinzugefügt werden. Um dieses Hilfsprogramm zu installieren, gehen Sie folgendermaßen vor:
+Leistungsindikatoren können mit dem Server mithilfe eines Dienstprogramms namens SignalR.exe hinzugefügt werden. Um dieses Hilfsprogramm zu installieren, gehen Sie folgendermaßen vor:
 
 1. Wählen Sie in Visual Studio **Tools** > **NuGet Paket-Manager** > **NuGet-Pakete verwalten Lösung**
 2. Suchen Sie nach **signalr.utils**, und wählen Sie installieren.
@@ -140,7 +140,7 @@ Führen Sie zum Entfernen von SignalR-Leistungsindikatoren SignalR.exe in einer 
 
 ### <a name="signalr-performance-counters"></a>SignalR-Leistungsindikatoren
 
-Das Dienstprogramme-Paket installiert die folgenden Leistungsindikatoren. Die "Gesamt" Indikatoren messen die Anzahl der Ereignisse, seit der letzten Anwendungspool oder die Server neu starten.
+Die Hilfsprogramme-Paket installiert die folgenden Leistungsindikatoren. Die "Gesamt" Indikatoren messen die Anzahl der Ereignisse, seit der letzten Anwendungspool oder die Server neu starten.
 
 **Verbindungsmetriken**
 
@@ -148,7 +148,7 @@ Die folgenden Metriken messen Sie die Verbindung Objektlebensdauer-Ereignisse, d
 
 - **Verbindungen mit verbunden**
 - **Verbindungen, die die Verbindung wiederhergestellt**
-- **Verbindungen Disonnected**
+- **Verbindungen, die die Verbindung getrennt**
 - **Aktuelle für Verbindungen**
 
 **Nachrichtenmetrik**

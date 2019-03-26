@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: b8451d2d9e346bd5e2f51ba45e48030a5221b549
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5c8262d48c79616ca3069c37077ba99ffafb650
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059747"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426046"
 ---
 # <a name="owin-oauth-20-authorization-server"></a>OWIN-OAuth 2.0-Autorisierungsserver
 
@@ -238,7 +238,7 @@ Finden Sie unter *AuthorizationServer\ResourceServer\App\_Start\Startup.WebApi.c
 
 - `UseCors` Methode können CORS für alle Domänen.
 - `UseOAuthBearerAuthentication` Methode können OAuth Bearer-token-Authentifizierung-Middleware empfangen und Überprüfen von bearertoken aus der "Authorization"-Header in der Anforderung.
-- `Config.SuppressDefaultHostAuthenticaiton` Unterdrückt die standardmäßige authentifizierten Prinzipal aus der app zu hosten, daher alle Anforderungen werden anonyme nach diesem Aufruf.
+- `Config.SuppressDefaultHostAuthentication` Unterdrückt die standardmäßige authentifizierten Prinzipal aus der app zu hosten, daher alle Anforderungen werden anonyme nach diesem Aufruf.
 - `HostAuthenticationFilter` ermöglicht die Authentifizierung nur für den angegebenen Authentifizierungstyp. In diesem Fall ist es an der bearerauthentifizierungstyp.
 
 Um die authentifizierte Identität zu veranschaulichen, erstellen wir ein ApiController-Element des aktuellen Benutzers Ansprüche ausgeben.

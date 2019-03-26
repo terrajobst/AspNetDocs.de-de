@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 26896e6ee3c02e8f939296ecbfb8b7d500940765
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061027"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425092"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 – Modelle und Datenzugriff
 
@@ -148,7 +148,7 @@ In dieser Aufgabe erstellen Sie ein Datenmodell für die Interaktion mit der Dat
     ![Hinzufügen von StoreDB ADO.NET Entity Data Model](aspnet-mvc-4-models-and-data-access/_static/image6.png "StoreDB ADO.NET Entity Data Model hinzufügen")
 
     *Hinzufügen von StoreDB ADO.NET Entity Data Model*
-2. Die **Entity Data Model-Assistenten** wird angezeigt. Dieser Assistent führt Sie durch die Erstellung der Modellschicht. Da das Modell basierend auf der vorhandenen Datenbank Recentyl hinzugefügt erstellt werden soll, wählen Sie **aus Datenbank generieren** , und klicken Sie auf **Weiter**.
+2. Die **Entity Data Model-Assistenten** wird angezeigt. Dieser Assistent führt Sie durch die Erstellung der Modellschicht. Da das Modell basierend auf der vorhandenen Datenbank, die kürzlich hinzugefügte erstellt werden soll, wählen Sie **aus Datenbank generieren** , und klicken Sie auf **Weiter**.
 
     ![Auswählen des Modellinhalts](aspnet-mvc-4-models-and-data-access/_static/image7.png "Modellinhalt auswählen")
 
@@ -280,7 +280,7 @@ Nachdem das Modell generiert wird, ändern Sie die StoreController, um die ansic
 <a id="Task_1_-_Populating_Sample_Data"></a>
 #### <a name="task-1---populating-sample-data"></a>Aufgabe 1: Auffüllen der Beispieldaten
 
-In dieser Aufgabe füllen Sie die Datenbank mit Beispieldaten bei der gestufte mit Code First-Erstellung.
+In dieser Aufgabe füllen Sie die Datenbank mit Beispieldaten bei der es anfänglichen Erstellung mithilfe von Code First.
 
 1. Öffnen der **beginnen** Lösung controllerarbeitsverzeichnis **Quelle/Ex2-CreatingADatabaseCodeFirst/Anfang/** Ordner. Andernfalls können Sie weiterhin, verwenden die **End** Lösung abgerufen wird, indem Sie der vorherige Übung abschließen können.
 
@@ -580,7 +580,7 @@ In diesem Anhang wird veranschaulicht, wie erstellen eine neue Website aus dem W
 1. Wechseln Sie zu der [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet.
 
     > [!NOTE]
-    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](http://aka.ms/aspnet-hol-azure).
+    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](https://aka.ms/aspnet-hol-azure).
 
     ![Melden Sie sich bei Windows Azure-Portal](aspnet-mvc-4-models-and-data-access/_static/image31.png "melden Sie sich bei Windows Azure-Portal")
 

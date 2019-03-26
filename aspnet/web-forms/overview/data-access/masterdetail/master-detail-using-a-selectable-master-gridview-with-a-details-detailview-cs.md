@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 0f982827-f8f9-420d-b36b-57b23f5aa519
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9d75c80b4c1bac5011acc896d91ff2fcd5a19298
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5623c34ad7f8c9b5effed318a04b204ab66ecaa
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064797"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425196"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>Master-/Detailbericht unter Verwendung eines auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (C#)
 ====================
@@ -153,7 +153,7 @@ Sobald die `productDetailsDataSource` "ObjectDataSource" ordnungsgemäß konfigu
 
 In diesem und den drei vorherigen Tutorials haben wir gesehen, dass eine Reihe von Techniken für die Anzeige von Master/Detail-Berichte. Verwenden in diesem Lernprogramm aus, die wir untersucht ein auswählbares GridView, um die Masterdatensätze und einem DetailsView zum Anzeigen von Details zum ausgewählten master Datensatz auf derselben Seite befinden. In den vorherigen Tutorials erläutert, wie Sie zum Anzeigen von Master-/Detail-Berichten mithilfe von DropDownList-Steuerelementen und Anzeigen von Masterdatensätze in eine Webseite und die Detaildatensätze auf einer anderen.
 
-Dieses Lernprogramm schließt unserer Untersuchung von Master/Detail-Berichte. Beginnend mit dem nächsten Tutorialwe beginnen unserem Seminar benutzerdefinierte Formatierung mit der GridView, DetailsView und FormView-Steuerelement. Wir sehen, Anpassen der Darstellung dieser Steuerelemente basierend auf den Daten, die an diese gebunden, wie Sie Daten in den GridView Fuß zusammenfassen und wie Sie Vorlagen verwenden, um ein höheres Maß an Kontrolle über das Layout zu erhalten.
+Dieses Lernprogramm schließt unserer Untersuchung von Master/Detail-Berichte. Beginnend mit dem nächsten Tutorial beginnen wir unsere Untersuchung der benutzerdefinierte Formatierung mit der GridView, DetailsView und FormView-Steuerelement. Wir sehen, Anpassen der Darstellung dieser Steuerelemente basierend auf den Daten, die an diese gebunden, wie Sie Daten in den GridView Fuß zusammenfassen und wie Sie Vorlagen verwenden, um ein höheres Maß an Kontrolle über das Layout zu erhalten.
 
 Viel Spaß beim Programmieren!
 

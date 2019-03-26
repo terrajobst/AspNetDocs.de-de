@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 2646968c-2826-4418-b1d0-62610ed177e3
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e33e4b401d957f4aa5560193dd8af0e53ca3b631
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 06ee6f8ea415ddde4e47acacaa74a29cbf9a0478
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032697"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425586"
 ---
 <a name="implementing-optimistic-concurrency-vb"></a>Implementieren von optimistischer Parallelität (VB)
 ====================
@@ -60,7 +60,7 @@ Steuerung für optimistische Parallelität funktioniert, indem Sie sicherstellen
 **Abbildung 2**: Für die Update- oder Delete, hergestellt wird, die ursprünglichen Werte müssen werden gleich die aktuellen Datenbankwerte ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image6.png))
 
 
-Es gibt verschiedene Ansätze zum Implementieren von optimistischer Parallelität (finden Sie unter [Peter A. Bromberg](http://peterbromberg.net/)des [Optmistic Parallelität aktualisieren Logik](http://www.eggheadcafe.com/articles/20050719.asp) für einen kurzen Blick auf eine Reihe von Optionen). Die ADO.NET typisierte DataSet enthält eine Implementierung, die nur die Teilstriche eines Kontrollkästchens konfiguriert werden kann. Aktivieren der optimistischen Parallelität für ein TableAdapter im typisierten DataSet der TableAdapters erweitert `UPDATE` und `DELETE` -Anweisungen enthalten einen Vergleich aller von den ursprünglichen Werten in der `WHERE` Klausel. Die folgenden `UPDATE` -Anweisung aktualisiert z. B. den Namen und den Preis eines Produkts nur dann, wenn die aktuellen Datenbankwerte die Werte gleich sind, die ursprünglich, beim Aktualisieren des Datensatzes in den GridView-Ansicht abgerufen wurden. Die `@ProductName` und `@UnitPrice` Parameter enthalten die neuen Werten, die vom Benutzer eingegeben haben, während `@original_ProductName` und `@original_UnitPrice` enthalten die Werte, die ursprünglich in der GridView geladen wurden, als auf die Schaltfläche "Bearbeiten" geklickt wurde:
+Es gibt verschiedene Ansätze zum Implementieren von optimistischer Parallelität (finden Sie unter [Peter A. Bromberg](http://peterbromberg.net/)des [optimistische Parallelität aktualisieren Logik](http://www.eggheadcafe.com/articles/20050719.asp) für einen kurzen Blick auf eine Reihe von Optionen). Die ADO.NET typisierte DataSet enthält eine Implementierung, die nur die Teilstriche eines Kontrollkästchens konfiguriert werden kann. Aktivieren der optimistischen Parallelität für ein TableAdapter im typisierten DataSet der TableAdapters erweitert `UPDATE` und `DELETE` -Anweisungen enthalten einen Vergleich aller von den ursprünglichen Werten in der `WHERE` Klausel. Die folgenden `UPDATE` -Anweisung aktualisiert z. B. den Namen und den Preis eines Produkts nur dann, wenn die aktuellen Datenbankwerte die Werte gleich sind, die ursprünglich, beim Aktualisieren des Datensatzes in den GridView-Ansicht abgerufen wurden. Die `@ProductName` und `@UnitPrice` Parameter enthalten die neuen Werten, die vom Benutzer eingegeben haben, während `@original_ProductName` und `@original_UnitPrice` enthalten die Werte, die ursprünglich in der GridView geladen wurden, als auf die Schaltfläche "Bearbeiten" geklickt wurde:
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-vb/samples/sample1.sql)]

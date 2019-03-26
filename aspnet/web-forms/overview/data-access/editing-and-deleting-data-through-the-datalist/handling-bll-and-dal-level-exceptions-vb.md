@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: ca665073-b379-4239-9404-f597663ca65e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e71ad365ecbfc1bb33117a6c93e7108a4b3866a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d52fadc1ddcc101d5815df6f1c1bc5eeba95d9b8
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053017"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440364"
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (VB)
 ====================
@@ -30,7 +30,7 @@ In der [Übersicht von bearbeiten und Löschen von Daten im DataList-Steuereleme
 
 Wie wir, in gesehen der [behandeln BLL- und DAL-Ebene von Ausnahmen in einer ASP.NET-Seite](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md) Tutorial, wenn die Tiefe der Geschäftslogik oder Datenzugriffsschichten, eine Ausnahme ausgelöst wird die Details der Ausnahme werden zurückgegeben, dem ObjectDataSource-Steuerelement und Klicken Sie dann an die GridView. Erläutert, wie diese Ausnahmen ordnungsgemäß durch das Erstellen behandeln `Updated` oder `RowUpdated` -Ereignishandler für das ObjectDataSource-Steuerelement oder eine GridView, überprüfen für eine Ausnahme aus, und gibt dann an, dass die Ausnahme behandelt wurde.
 
-Unsere DataList Tutorials, allerdings sind t, die mit dem ObjectDataSource-Steuerelement für das Aktualisieren und Löschen von Daten. Stattdessen arbeiten wir direkt an die BLL. Um die Ausnahmen, die von der BLL oder DAL erkennen zu können, müssen wir Code im Code-Behind unsere ASP.NET-Seite zur Ausnahmebehandlung implementieren. In diesem Tutorial sehen wir, wie Sie mehr tactfully Behandlung von Ausnahmen, die ausgelöst wird, während ein bearbeitbaren DataList s Workflow aktualisieren.
+Unsere DataList-Tutorials, verwendet nicht jedoch dem ObjectDataSource-Steuerelement, für das Aktualisieren und Löschen von Daten. Stattdessen arbeiten wir direkt an die BLL. Um die Ausnahmen, die von der BLL oder DAL erkennen zu können, müssen wir Code im Code-Behind unsere ASP.NET-Seite zur Ausnahmebehandlung implementieren. In diesem Tutorial sehen wir, wie Sie mehr tactfully Behandlung von Ausnahmen, die ausgelöst wird, während ein bearbeitbaren DataList s Workflow aktualisieren.
 
 > [!NOTE]
 > In der *eine Übersicht über die von bearbeiten und Löschen von Daten im DataList-Steuerelement* Tutorial erläutert verschiedene Techniken zum Bearbeiten und Löschen von Daten über DataList-Steuerelement einige Techniken beteiligten Nutzung einer ObjectDataSource gegeben, für die Aktualisierung und wird gelöscht. Wenn Sie diese Techniken einsetzen, können Sie behandeln von Ausnahmen von der BLL oder DAL über das ObjectDataSource-s `Updated` oder `Deleted` -Ereignishandler.
@@ -131,7 +131,7 @@ Geben Sie auf beitragsebene Ereignishandler, die Informationen über alle Ausnah
 
 In diesem Tutorial erläutert, wie Ausnahmebehandlung zum Aktualisieren von Workflows durch das Hinzufügen ein bearbeitet werden DataList-s-Hinzufügen einer `Try ... Catch` Blockieren der `UpdateCommand` -Ereignishandler. Wenn eine Ausnahme, während der Workflow für die Aktualisierung ausgelöst wird, die `Catch` -s-Block-Code ausgeführt wird, Anzeigen von nützliche Informationen in den `ExceptionDetails` Bezeichnung.
 
-An diesem Punkt prüft DataList-Steuerelement nicht zu verhindern, dass Ausnahmen im vornherein passiert. Obwohl wir wissen, dass ein negativer Preis führt zu einer Ausnahme, die wir wurde hinzugefügt t noch keine Funktionen zur proaktiv verhindern einen Benutzer in eine solche ungültige Eingabe. In unserem nächsten Tutorial erfahren Sie, wie zu reduzieren, dass die Ausnahmen, die durch ungültige Benutzereingaben verursacht werden, durch das Hinzufügen von Steuerelementen zur gültigkeitsprüfung in die `EditItemTemplate`.
+An diesem Punkt prüft DataList-Steuerelement nicht zu verhindern, dass Ausnahmen im vornherein passiert. Obwohl wir wissen, dass es sich bei ein negativer Preis eine Ausnahme ausgelöst wird, nicht getan haben wir noch keine Funktionen zur proaktiv verhindern einen Benutzer in eine solche ungültige Eingabe hinzugefügt. In unserem nächsten Tutorial erfahren Sie, wie zu reduzieren, dass die Ausnahmen, die durch ungültige Benutzereingaben verursacht werden, durch das Hinzufügen von Steuerelementen zur gültigkeitsprüfung in die `EditItemTemplate`.
 
 Viel Spaß beim Programmieren!
 

@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 6df35a420a0733003808a12d065b03f08ef56dd9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 60fffd7cd5139b2be34968c1f33474be867f0962
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048047"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422882"
 ---
 <a name="high-frequency-realtime-with-signalr-1x"></a>Häufiges Senden von Echtzeitnachrichten mit SignalR 1.x
 ====================
@@ -136,7 +136,7 @@ In diesem Abschnitt erstellen wir eine Browser-Anwendung, die den Speicherort de
 
 ## <a name="add-the-client-loop"></a>Die Client-Schleife hinzufügen
 
-Da ein ist ggf. unnötig Umfang des Netzwerkverkehrs, senden den Speicherort der Form auf jede MouseMove-Ereignis erstellt werden wird, müssen die Nachrichten vom Client gedrosselt werden. Wir verwenden den JavaScript-Code `setInterval` Funktion, um eine Schleife einrichten, die Informationen zur neuen Position an den Server mit einer festen Rate sendet. Diese Schleife ist eine einfache Darstellung einer "spielschleife" eine wiederholt aufgerufene Funktion, die die Funktionalität eines Spiels oder einer anderen Simulation steuert.
+Da eine unnötige Umfang des Netzwerkverkehrs, senden den Speicherort der Form auf jede MouseMove-Ereignis erstellt werden wird, müssen die Nachrichten vom Client gedrosselt werden. Wir verwenden den JavaScript-Code `setInterval` Funktion, um eine Schleife einrichten, die Informationen zur neuen Position an den Server mit einer festen Rate sendet. Diese Schleife ist eine einfache Darstellung einer "spielschleife" eine wiederholt aufgerufene Funktion, die die Funktionalität eines Spiels oder einer anderen Simulation steuert.
 
 1. Aktualisieren Sie den Clientcode in der HTML-Seite entsprechend den folgenden Codeausschnitt ein.
 

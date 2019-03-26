@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 955991c148d48020c66cbc63ec6da45e3a9cc282
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 389627e610eebcdabee9b4db524e5915186db099
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045307"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440351"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iteration #4 – Optimieren der Anwendung, die lose verknüpft wird (c#)
 ====================
@@ -61,7 +61,7 @@ Angenommen Sie, Sie ändern, wie Sie der Datenzugriffsebene implementieren könn
 
 Bei eine Anwendung lose gekoppelt ist, können auf der anderen Seite Sie Änderungen an einem Teil einer Anwendung vornehmen ohne direkten Zugriff auf andere Teile einer Anwendung. Beispielsweise können Sie Technologien für den Datenzugriff wechseln, ohne die Überprüfung oder Controller Logik zu ändern.
 
-In dieser Iteration nutzen wir einige Entwurfsmuster für Software, mit die wir unsere Contact Manager-Anwendung in einer zunehmend lockerer verkoppelt Anwendung Umgestalten können. Wenn wir fertig sind, Contact Manager gewonnen t nichts, die es hat t zu tun, bevor Sie. Allerdings werden wir die Anwendung leichter in der Zukunft ändern können.
+In dieser Iteration nutzen wir einige Entwurfsmuster für Software, mit die wir unsere Contact Manager-Anwendung in einer zunehmend lockerer verkoppelt Anwendung Umgestalten können. Wenn wir fertig sind, gewonnen Contact Manager t führen alle Elemente, die vor dem keine Überprüfung durchgeführt haben. Allerdings werden wir die Anwendung leichter in der Zukunft ändern können.
 
 > [!NOTE] 
 > 
@@ -79,7 +79,7 @@ Implementieren das Repository-Muster muss die folgenden zwei Schritte ausführen
 
 Zunächst müssen wir eine Schnittstelle zu erstellen, die alle die Methoden für den Datenzugriff beschreiben, die wir ausführen müssen. Die IContactManagerRepository-Schnittstelle, die in Codebeispiel 1 enthalten ist. Diese Schnittstelle werden fünf Methoden beschrieben: CreateContact(), DeleteContact(), EditContact(), GetContact und ListContacts().
 
-**1 – Models\IContactManagerRepositiory.cs auflisten**
+**1 – Models\IContactManagerRepository.cs auflisten**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample1.cs)]
 
@@ -165,7 +165,7 @@ Wir möchten unsere Dienstebene aus unserem Controller Ebene vollständig zu ent
 
 Allerdings muss unser Dienstschicht Validierung Fehlermeldungen an die Controller-Ebene können. Wie können wir die Dienstschicht Kommunikation Überprüfungsfehlermeldungen ohne Kopplung der Controller und der Dienstschicht aktivieren? Wir nutzen ein Software-Entwurfsmuster, mit dem Namen der [Decorator-Musters](http://en.wikipedia.org/wiki/Decorator_pattern).
 
-Ein Controller verwendet ein mit dem Namen ModelState ModelStateDictionary Validierungsfehler darstellen. Aus diesem Grund können Sie ModelState aus der Ebene der Controller an die Dienstebene übergeben Versuchung sein. Jedoch wäre ModelState auf der Dienstebene mithilfe Ihrer Dienstebene ein Feature von ASP.NET MVC-Framework abhängig machen. Ungültige wäre dies daran, dass Sie die Dienstschicht mit einer WPF-Anwendung statt einer ASP.NET MVC-Anwendung verwenden möchten. In diesem Fall Sie ausreichen t ASP.NET MVC-Framework zur Verwendung der ModelStateDictionary-Klasse verweisen möchten.
+Ein Controller verwendet ein mit dem Namen ModelState ModelStateDictionary Validierungsfehler darstellen. Aus diesem Grund können Sie ModelState aus der Ebene der Controller an die Dienstebene übergeben Versuchung sein. Jedoch wäre ModelState auf der Dienstebene mithilfe Ihrer Dienstebene ein Feature von ASP.NET MVC-Framework abhängig machen. Ungültige wäre dies daran, dass Sie die Dienstschicht mit einer WPF-Anwendung statt einer ASP.NET MVC-Anwendung verwenden möchten. In diesem Fall der wäre nicht, wenn Sie ASP.NET MVC-Framework zur Verwendung der ModelStateDictionary-Klasse verweisen möchten.
 
 Das Decorator-Musters können Sie eine vorhandene Klasse in eine neue Klasse zu umschließen, um eine Schnittstelle zu implementieren. Unser Projekt Contact Manager umfasst die ModelStateWrapper-Klasse, die in Codebeispiel 7 enthalten. Die ModelStateWrapper-Klasse implementiert die Schnittstelle im Codebeispiel 8.
 

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: e902881d3dab6a902cb747a197a32f317d199723
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025987"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421036"
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>Bereitstellen von dynamischen Updates mithilfe von AJAX
 ====================
@@ -78,7 +78,7 @@ Wir verwenden AJAX, die Register-Aktion-Methode aus unserer Ansicht aufrufen. Im
 
 Die erste Bibliothek verweist auf die ASP.NET AJAX Clientskript-Kernbibliothek. Diese Datei ist ca. 24 KB Größe (komprimiert) und Core clientseitigen AJAX-Funktionen enthält. Die zweite-Bibliothek enthält Hilfsfunktionen, die Integration in integrierten ASP.NETs AJAX-Hilfsmethoden (, verwenden wir in Kürze).
 
-Wir können, und klicken Sie dann Update Vorlagencode anzeigen, die wir zuvor hinzugefügt haben, sodass statt beim Ausgeben einer Meldung "Sie sind nicht für dieses Ereignis registriert", wir stattdessen einem Link, der gerendert werden, wenn mithilfe von Push übertragen soll einen AJAX-Aufruf ausführt, der unsere RSVPForEvent Aktionsmethode auf unsere RSVP Controller aufruft und den Benutzer RSVPs:
+Wir können, und klicken Sie dann Update Vorlagencode anzeigen, die wir zuvor hinzugefügt haben, sodass statt Ausgeben einer Meldung "Sie sind nicht für dieses Ereignis registriert", wir stattdessen einem Link, der gerendert werden, wenn mithilfe von Push übertragen soll einen AJAX-Aufruf ausführt, der unsere RSVPForEvent Aktionsmethode auf unsere RSVP Controller aufruft und den Benutzer RSVPs:
 
 [!code-aspx[Main](use-ajax-to-deliver-dynamic-updates/samples/sample6.aspx)]
 

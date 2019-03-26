@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4212b7bff41d76eaef18d638cf28441b50061159
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd66affc6ceab864ca753287f484a37c7671f20f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024627"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423051"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)
 ====================
@@ -127,7 +127,7 @@ Da die `GetProductsAsPagedDataSource` Methode erwartet zwei Parameter, die der A
 
 Der Seitenindex und Seitengrößenwert müssen postbackübergreifend gespeichert werden. Sie können im Ansichtszustand gespeichert werden, in der Abfragezeichenfolge beibehalten, in der Sitzungsvariablen gespeichert oder gespeichert wird, verwenden ein anderes Verfahren. In diesem Tutorial verwenden wir die Abfragezeichenfolge, die hat den Vorteil, dass eine bestimmte Seite der Daten, die mit einem Lesezeichen versehen werden.
 
-Insbesondere verwenden das Querystring-Felder PageIndex und die Seitengröße für die `pageIndex` und `pageSize` Parameter bzw. (siehe Abbildung 7). Nehmen Sie einen Moment Zeit, um die Standardwerte für diese Parameter können festgelegt, wie die Querystring-Werte, die gewonnen haben t vorhanden sein, wenn ein Benutzer zunächst auf dieser Seite besucht. Für `pageIndex`, standardmäßig ist der Wert auf 0 festgelegt (was die erste Seite der Daten angezeigt werden) und `pageSize` s Standardwert 4.
+Insbesondere verwenden das Querystring-Felder PageIndex und die Seitengröße für die `pageIndex` und `pageSize` Parameter bzw. (siehe Abbildung 7). Nehmen Sie einen Moment Zeit, um die Standardwerte für diese Parameter können festgelegt, da die Querystring-Werte nicht vorhanden ist, wenn ein Benutzer zunächst auf dieser Seite besucht. Für `pageIndex`, standardmäßig ist der Wert auf 0 festgelegt (was die erste Seite der Daten angezeigt werden) und `pageSize` s Standardwert 4.
 
 
 [![Verwenden Sie für die PageIndex und PageSize-Parameter der Abfragezeichenfolge als Quelle](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
