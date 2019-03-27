@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d7fa3cb61608ea089141931cb9362359cdc92619
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031467"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421517"
 ---
 <a name="membership"></a>Mitgliedschaft
 ====================
@@ -42,7 +42,7 @@ Mitgliedschaft wird implementiert, indem Sie die folgenden vier Schritte erforde
 
 ## <a name="creating-the-membership-database"></a>Erstellen der Mitgliedschaftsdatenbank
 
-Wenn Sie verwenden SQL Server 7.0 oder höher ist als Ihre Mitgliedschaftsspeicher, können Sie das Aspnet\_Regsql-Dienstprogramm (am einfachsten aus der Visual Studio .NET 2005-Eingabeaufforderung verfügbar) so konfigurieren Sie Ihre Datenbank. Das Aspnet\_Regsql Hilfsprogramm kann verwendet werden, als eine eingabeaufforderungs-Hilfsprogramm oder über einen Assistenten mit grafischer Benutzeroberfläche. Diese Methode ist die einfachste Möglichkeit zum Konfigurieren der Datenbank. Um den Assistenten zuzugreifen, müssen Sie einfach führen Sie den folgenden Befehl aus:
+Wenn Sie SQL Server 7.0 oder höher ist als Ihre Mitgliedschaftsspeicher, Sie das Aspnet können\_Regsql-Dienstprogramm (am einfachsten aus der Visual Studio .NET 2005-Eingabeaufforderung verfügbar) so konfigurieren Sie Ihre Datenbank. Das Aspnet\_Regsql Hilfsprogramm kann verwendet werden, als eine eingabeaufforderungs-Hilfsprogramm oder über einen Assistenten mit grafischer Benutzeroberfläche. Diese Methode ist die einfachste Möglichkeit zum Konfigurieren der Datenbank. Um den Assistenten zuzugreifen, müssen Sie einfach führen Sie den folgenden Befehl aus:
 
 `aspnet_regsql W`
 
@@ -107,7 +107,7 @@ Die folgenden Steuerelemente für die Anmeldung sind in ASP.NET 2.0 verfügbar:
 
 ## <a name="login-control"></a>Login-Steuerelement
 
-Die Login-Steuerelement stellt eine Schnittstelle für eine Person im Mitgliedschaftssystem anmelden bereit. Es bietet Ihnen eine Textboxt Benutzernamen und das Kennwort und eine Schaltfläche "Anmelden". Viele andere allgemeinen Funktionen wie z. B. einen Link für die Benutzer zu registrieren, die noch nicht abgeschlossen haben, damit ein Kontrollkästchen, die den Benutzer die automatisch die Anmeldung bei nachfolgenden Besuchen können, einen Link für eine kennworterinnerung usw. Alle Funktionen der Login-Steuerelement sind anpassbare über die Eigenschaften des Steuerelements.
+Die Login-Steuerelement stellt eine Schnittstelle für eine Person im Mitgliedschaftssystem anmelden bereit. Sie erhalten mit einem Benutzernamen und das Kennwort-Textfeld und eine Schaltfläche "Anmelden". Viele andere allgemeinen Funktionen wie z. B. einen Link für die Benutzer zu registrieren, die noch nicht abgeschlossen haben, damit ein Kontrollkästchen, die den Benutzer die automatisch die Anmeldung bei nachfolgenden Besuchen können, einen Link für eine kennworterinnerung usw. Alle Funktionen der Login-Steuerelement sind anpassbare über die Eigenschaften des Steuerelements.
 
 In ASP.NET 1.x mussten Entwickler viel Code für eine Suche ausführen, wenn es sich bei Verwendung der Formularauthentifizierung zu schreiben. Mit ASP.NET 2.0-Mitgliedschaft können Sie Benutzer überprüfen, ohne überhaupt Code schreiben. ASP.NET wird die Suche des Benutzers automatisch für Sie übernimmt. (Wenn Sie das Steuerelement für die Anmeldung ohne Verwendung von ASP.NET-Mitgliedschaft verwenden, können Sie mithilfe der **OnAuthenticate** Methode, um den Benutzer zu überprüfen.)
 

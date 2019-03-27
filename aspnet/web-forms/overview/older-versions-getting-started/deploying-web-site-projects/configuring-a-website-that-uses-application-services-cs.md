@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4cec939795c2b3abfd51c894f985dfd2eb7bc361
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2cfe18b99af7b04d18a52e64b77e1b9a6b204f75
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058337"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423437"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>Konfigurieren einer Website mit Anwendungsdiensten (C#)
 ====================
@@ -138,7 +138,7 @@ Um sicherzustellen, dass die Anwendung Dienste Datenbankobjekte in der Produktio
 **Abbildung 4**: Vergewissern Sie sich, dass Datenbankobjekte in der Produktionsdatenbank hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image12.jpg))
 
 
-Sie müssen nur mit der `aspnet_regsql.exe` tool bei der Bereitstellung Ihrer Webanwendung zum ersten Mal oder zum ersten Mal, nachdem Sie gestartet haben, mit der die Anwendungsdienste. Sobald diese Datenbankobjekte für die Produktionsdatenbank sind gewonnen sie t muss erneut hinzugefügt oder geändert werden.
+Sie müssen nur mit der `aspnet_regsql.exe` tool bei der Bereitstellung Ihrer Webanwendung zum ersten Mal oder zum ersten Mal, nachdem Sie gestartet haben, mit der die Anwendungsdienste. Sobald diese Datenbankobjekte für die Produktionsdatenbank, die sie nicht erneut hinzugefügt oder geändert werden müssen sind.
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>Kopieren von Benutzerkonten von der Entwicklung zur Produktion
 
@@ -148,7 +148,7 @@ Die `SqlMembershipProvider` und `SqlRoleProvider` Anbieterklassen wurden so entw
 
 Zusätzlich zu den `ApplicationId` Spalte, die `aspnet_Applications` Tabelle enthält auch eine `ApplicationName` Spalte, die einen mehr Benutzerfreundlicher Namen für die Anwendung bereitstellt. Wenn eine Website versucht, arbeiten mit einem Benutzerkonto an, z. B. Überprüfen einer Benutzeranmeldeinformationen s über die Anmeldeseite, er muss erkennen die `SqlMembershipProvider` welche Anwendung zur Zusammenarbeit mit Klasse. Dies ist in der Regel der Fall ist dies durch den Namen der Anwendung bereitstellen und dieser Wert stammt aus der Anbieterkonfiguration s in `Web.config` – insbesondere über die `applicationName` Attribut.
 
-Aber was geschieht, wenn die `applicationName` -Attribut nicht angegeben ist, im `Web.config`? In diesem Fall die Mitgliedschaft System verwendet den Stammpfad der Anwendung als der `applicationName` Wert. Wenn die `applicationName` Attribut nicht ausdrücklich festgelegt ist im `Web.config`, dann ist die Möglichkeit, dass die Entwicklungsumgebung und die produktionsumgebung Stammverzeichnis einer anderen Anwendung verwendet und daher anderen Anwendung zugeordnet die Namen in der die Anwendungsdienste. Wenn eine derartige fehlende Übereinstimmung tritt ein, und klicken Sie dann die Benutzer in der Entwicklungsumgebung erstellt haben, werden ein `ApplicationId` -Wert, der mit nicht entspricht der `ApplicationId` Wert für die produktionsumgebung. Das Ergebnis ist, dass t gewonnen Benutzer sich anmelden.
+Aber was geschieht, wenn die `applicationName` -Attribut nicht angegeben ist, im `Web.config`? In diesem Fall die Mitgliedschaft System verwendet den Stammpfad der Anwendung als der `applicationName` Wert. Wenn die `applicationName` Attribut nicht ausdrücklich festgelegt ist im `Web.config`, dann ist die Möglichkeit, dass die Entwicklungsumgebung und die produktionsumgebung Stammverzeichnis einer anderen Anwendung verwendet und daher anderen Anwendung zugeordnet die Namen in der die Anwendungsdienste. Wenn eine derartige fehlende Übereinstimmung tritt ein, und klicken Sie dann die Benutzer in der Entwicklungsumgebung erstellt haben, werden ein `ApplicationId` -Wert, der mit nicht entspricht der `ApplicationId` Wert für die produktionsumgebung. Das Ergebnis ist, dass diese Benutzer nicht anmelden können.
 
 > [!NOTE]
 > Wenn Sie sich in diesem Fall – mit Benutzerkonten, die in die produktionsumgebung eine nicht übereinstimmende kopiert `ApplicationId` -Wert: Sie könnten eine Abfrage, um diese falsche aktualisieren `ApplicationId` -Werte in der `ApplicationId` für Produktion verwendet. Nach der Aktualisierung, wäre die Benutzer, deren Konten in der Entwicklungsumgebung erstellt wurden, nun in der Webanwendung auf Produktions-anmelden können.

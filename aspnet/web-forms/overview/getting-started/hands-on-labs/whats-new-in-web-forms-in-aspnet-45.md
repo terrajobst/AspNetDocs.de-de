@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 54e0234d6f13ce62803dbe55a836414a93a207b2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 78cb6dec71e6b4974fdea4f205d1a36ebdfc3104
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026477"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424443"
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Neue Funktionen in Web Forms in ASP.NET 4.5
 ====================
@@ -51,7 +51,7 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 - Verwenden Sie neue Features der Modell-Bindung in Web Forms
 - Verwenden von Wertanbietern für die Zuordnung von Daten der Seite auf Code-Behind-Methoden
 - Verwenden von Datenanmerkungen für die Validierung von Benutzereingaben
-- Nutzen Sie Advange Unobstrusive die clientseitige Validierung mit jQuery in Web Forms
+- Profitieren Sie von unauffällige clientseitige Validierung mit jQuery in Web Forms
 - Differenzierte Anforderungsvalidierung implementieren
 - Implementieren der asynchronen seitenverarbeitung in Web Forms
 
@@ -407,13 +407,13 @@ ASP.NET 4.5 führt Anmerkungen der datenüberprüfung für Web Forms. Anstatt ei
     > [EmailAddress(ErrorMessage=&quot;Invalid Email&quot;), MaxLength(56)]: Two annotations in the same line.
     > 
     > Sie können auch Ihre eigenen Fehlermeldungen innerhalb jedes Attribut definieren.
-3. Open **CustomerDetails.aspx** und entfernen Sie alle RequiredFieldvalidators für die vor-und Nachnamen Felder in den in EditItemTemplate InsertItemTemplate Abschnitten und das FormView-Steuerelement.
+3. Open **CustomerDetails.aspx** und entfernen Sie alle RequiredFieldValidators für die vor-und Nachnamen Felder in den in EditItemTemplate InsertItemTemplate Abschnitten und das FormView-Steuerelement.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample24.aspx)]
 
     > [!NOTE]
     > Ein Vorteil der Verwendung von datenanmerkungen ist, dass die Validierungslogik in Ihren Anwendungsseiten nicht dupliziert werden kann. Sie einmal im Modell definieren und verwenden Sie es auf alle Anwendungsseiten, die Daten bearbeiten können.
-4. Open **CustomerDetails.aspx** Code-Behind, und suchen Sie die SaveCustomer-Methode. Diese Methode wird aufgerufen, wenn einen neuen Kunde einfügen und empfängt den Customer-Parameter aus den Werten der FormView-Steuerelement. Bei der Zuordnung zwischen der Steuerelemente der Seite und die verbindungsherstellung der Parameter-Objekt, auf ASP.NET ausgeführt wird, die modellvalidierung für die datenanmerkung Attribute und füllen Sie die ModelState-Wörterbuchs, mit dem aufgetretenen Fehler, ggf.
+4. Open **CustomerDetails.aspx** Code-Behind, und suchen Sie die SaveCustomer-Methode. Diese Methode wird aufgerufen, wenn einen neuen Kunde einfügen und empfängt den Customer-Parameter aus den Werten der FormView-Steuerelement. Wenn steuert die Zuordnung der Seite und auftritt, ASP.NET die modellvalidierung für alle die datenanmerkungsattribute ausgeführt und die ModelState-Wörterbuchs, die Fehler auftreten, geben Sie ggf. das Parameterobjekt.
 
     Die ModelState.IsValid gibt nur true, wenn alle Felder für das Modell gültig sind, nach dem Ausführen der Validierung zurück.
 
@@ -623,7 +623,7 @@ In dieser praktischen Übungseinheit haben die folgenden Konzepte behandelt vera
 - Verwenden Sie neue Features der Modell-Bindung in Web Forms
 - Verwenden von Wertanbietern für die Zuordnung von Daten der Seite auf Code-Behind-Methoden
 - Verwenden von Datenanmerkungen für die Validierung von Benutzereingaben
-- Nutzen Sie Advange Unobstrusive die clientseitige Validierung mit jQuery in Web Forms
+- Profitieren Sie von unauffällige clientseitige Validierung mit jQuery in Web Forms
 - Differenzierte Anforderungsvalidierung implementieren
 - Implementieren der asynchronen seitenverarbeitung in Web Forms
 
@@ -678,7 +678,7 @@ In diesem Anhang erfahren Sie, wie eine neue Website aus dem Azure-Portal erstel
 1. Wechseln Sie zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet.
 
     > [!NOTE]
-    > Mit Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](http://aka.ms/aspnet-hol-azure).
+    > Mit Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](https://aka.ms/aspnet-hol-azure).
 
     ![Melden Sie sich bei Windows Azure-Portal](whats-new-in-web-forms-in-aspnet-45/_static/image30.png "melden Sie sich bei Windows Azure-Portal")
 

@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 17e11c33d6bf2a75e99e3bda4d6ab89c5b1631f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042857"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425391"
 ---
-<a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Datenspeicheroptionen (erstellen realer Cloud-Apps mit Azure)
-====================
+# <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Datenspeicheroptionen (erstellen realer Cloud-Apps mit Azure)
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -62,13 +62,13 @@ Die große Mengen von Daten, die in der NoSQL-Datenbanken gespeichert werden kö
 
 In Azure [HDInsight](https://azure.microsoft.com/services/hdinsight/) ermöglicht es Ihnen, zu verarbeiten, analysieren und Gewinnen neuer Erkenntnisse aus big Data, die mit der Leistungsfähigkeit von Hadoop. Beispielsweise können Sie es verwenden, um Webserverprotokolle zu analysieren:
 
-- Aktivieren Sie die webserverprotokollierung in Ihr Speicherkonto. Azure zum Schreiben von Protokollen in den Blob-Dienst für jede HTTP-Anforderung für Ihre Anwendung eingerichtet. Der Blob-Dienst ist im Grunde clouddateispeicher, und alles ist perfekt mit HDInsight. 
+- Aktivieren Sie die webserverprotokollierung in Ihr Speicherkonto. Azure zum Schreiben von Protokollen in den Blob-Dienst für jede HTTP-Anforderung für Ihre Anwendung eingerichtet. Der Blob-Dienst ist im Grunde clouddateispeicher, und alles ist perfekt mit HDInsight.
 
     ![Protokolle, um Blob-Speicher](data-storage-options/_static/image2.png)
-- Wie die app den Datenverkehr empfängt, werden die Web-Server-IIS-Protokolle in Blob Storage geschrieben. 
+- Wie die app den Datenverkehr empfängt, werden die Web-Server-IIS-Protokolle in Blob Storage geschrieben.
 
     ![Webserverprotokolle](data-storage-options/_static/image3.png)
-- Klicken Sie im Portal auf **neu** - **Datendienste** - **HDInsight** - **Schnellerfassung**, und geben Sie den Namen eines HDInsight-Clusters, Clustergröße (Anzahl der Datenknoten für HDInsight-Cluster), und einen Benutzernamen und Kennwort für den HDInsight-Cluster. 
+- Klicken Sie im Portal auf **neu** - **Datendienste** - **HDInsight** - **Schnellerfassung**, und geben Sie den Namen eines HDInsight-Clusters, Clustergröße (Anzahl der Datenknoten für HDInsight-Cluster), und einen Benutzernamen und Kennwort für den HDInsight-Cluster.
 
     ![HDInsight](data-storage-options/_static/image4.png)
 
@@ -175,7 +175,7 @@ Warten Sie einige Sekunden, und Sie verfügen über eine Datenbank in Azure für
 
 ![Neu erstellte SQL-Datenbank](data-storage-options/_static/image10.png)
 
-Damit Azure in einigen Sekunden, was es Sie einen Tag dauern kann, oder eine Woche oder länger in der lokalen Umgebung umgesetzt werden können. Und da Sie ganz einfach Datenbanken automatisch in einem Skript oder mithilfe einer Verwaltungs-API erstellen können, können Sie dynamisch horizontal hochskalieren durch Ihre Daten über mehrere < O:p > Datenbanken verteilen, solange die Anwendung dafür programmgemäß. </o : p >
+Damit Azure in einigen Sekunden, was es Sie einen Tag dauern kann, oder eine Woche oder länger in der lokalen Umgebung umgesetzt werden können. Und da Sie ganz einfach Datenbanken automatisch in einem Skript oder mithilfe einer Verwaltungs-API erstellen können, können Sie dynamisch horizontal hochskalieren durch Ihre Daten über mehrere Datenbanken verteilen, solange die Anwendung dafür programmgemäß.
 
 Dies ist ein Beispiel für unsere Plattform-as-a-Service-Modell. Sie müssen keine Server verwalten, wir übernehmen. Sie müssen keine Sicherungen kümmern, wir übernehmen. Es läuft in hohe Verfügbarkeit – die Daten in der Datenbank werden automatisch auf drei Servern repliziert. Wenn ein Computer ausfällt, wir automatisch ein Failover aus, und Sie keine Daten verloren gehen. Der Server regelmäßig gepatcht wird, ist keine Gedanken.
 
@@ -267,7 +267,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 
 Auswählen einer Datenbankplattform:
 
-- [Der Datenzugriff für hoch skalierbare Lösungen: Mithilfe von SQL, NoSQL und Polyglot Persistence](http://aka.ms/dag-doc). E-Book von Microsoft Patterns and Practices, die ausführlich die verschiedenen Arten von Daten zu Gunsten speichert für Cloud-Anwendungen verfügbar.
+- [Der Datenzugriff für hoch skalierbare Lösungen: Mithilfe von SQL, NoSQL und Polyglot Persistence](https://aka.ms/dag-doc). E-Book von Microsoft Patterns and Practices, die ausführlich die verschiedenen Arten von Daten zu Gunsten speichert für Cloud-Anwendungen verfügbar.
 - [Microsoft Patterns and Practices - Leitfaden zur Azure](https://msdn.microsoft.com/library/ff898430.aspx). Data Consistency Primer, Datenreplikation und Synchronisierung Leitfaden, Muster "Indextabelle", das Muster für materialisierte Sichten angezeigt.
 - [BASE: Alternative Acid](http://queue.acm.org/detail.cfm?id=1394128). Der Artikel über die Kompromisse zwischen Konsistenz der Daten und Skalierbarkeit.
 - [Sieben Datenbanken innerhalb von sieben Wochen: Eine Anleitung für moderne Datenbanken und NoSQL-Bewegung](https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1934356921). Buch von Eric Redmond und Jim R. Wilson. Dringend empfohlen, für die Einführung von sich selbst auf den Bereich von Data-Speicher-Plattformen erhältlich.

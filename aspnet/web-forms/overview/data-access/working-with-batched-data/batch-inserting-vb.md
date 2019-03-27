@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: 48e2a4ae-77ca-4208-a204-c38c690ffb59
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 58338d8bfdd782167aafaa440f2d549d6eeb838e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1078087e9ff2564e94a5b1df1efb6c96928524c7
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034227"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424923"
 ---
 <a name="batch-inserting-vb"></a>Einfügen in Batches (VB)
 ====================
@@ -195,7 +195,7 @@ Dieser Code einfach Blendet die `DisplayInterface` Bereich und zeigt die `Insert
 Als Nächstes erstellen Sie Ereignishandler für die Produkte hinzufügen von Steuerelementen von Lieferung und die Schaltfläche "Abbrechen" in der einfügen-Schnittstelle. Wenn eine dieser Schaltflächen geklickt wird, muss die Anzeigenschnittstelle wiederherstellen. Erstellen Sie `Click` -Ereignishandlern für beide Schaltflächen-Steuerelemente, damit sie aufgerufen werden `ReturnToDisplayInterface`, eine Methode, die wir werden vorübergehend hinzufügen. Zusätzlich zum Ausblenden der `InsertingInterface` klicken und mit der `DisplayInterface` Bereich der `ReturnToDisplayInterface` Methode muss die Web-Steuerelemente auf den Zustand vor der Bearbeitung zurückgeben. Dies umfasst das Festlegen der DropDownList-Steuerelementen `SelectedIndex` Eigenschaften auf 0 und Beseitigen der `Text` Eigenschaften der TextBox-Steuerelemente.
 
 > [!NOTE]
-> Beachten Sie, was passieren kann Wenn wir nihnen t Zurückgeben der Steuerelemente auf den Zustand vor der Bearbeitung vor der Rückgabe auf die Anzeigenschnittstelle. Ein Benutzer möglicherweise klicken Sie auf die Schaltfläche mit den Prozess mit dem Produktversand, geben Sie die Produkte aus der Lieferung und klicken Sie dann auf Produkte aus Lieferung hinzufügen. Dies würde die Produkte hinzufügen und den Benutzer auf die Anzeigenschnittstelle zurückzugeben. An diesem Punkt kann der Benutzer einer anderen Sendung hinzufügen möchten. Nach dem Klicken auf die Schaltfläche "Prozess mit dem Produktversand", die sie die einfügen-Schnittstelle, aber die DropDownList zurückgeben würde würde Auswahl und TextBox-Werte immer noch mit ihren vorherigen Wert aufgefüllt werden.
+> Beachten Sie, was passieren kann, wenn wir die Steuerelemente auf den Zustand vor der Bearbeitung zurückgegeben wurden, vor der Rückgabe auf die Anzeigenschnittstelle. Ein Benutzer möglicherweise klicken Sie auf die Schaltfläche mit den Prozess mit dem Produktversand, geben Sie die Produkte aus der Lieferung und klicken Sie dann auf Produkte aus Lieferung hinzufügen. Dies würde die Produkte hinzufügen und den Benutzer auf die Anzeigenschnittstelle zurückzugeben. An diesem Punkt kann der Benutzer einer anderen Sendung hinzufügen möchten. Nach dem Klicken auf die Schaltfläche "Prozess mit dem Produktversand", die sie die einfügen-Schnittstelle, aber die DropDownList zurückgeben würde würde Auswahl und TextBox-Werte immer noch mit ihren vorherigen Wert aufgefüllt werden.
 
 
 [!code-vb[Main](batch-inserting-vb/samples/sample5.vb)]
@@ -215,7 +215,7 @@ Nehmen Sie einen Moment Zeit, um diese Seite in einem Browser zu testen. Wenn di
 
 ## <a name="step-4-adding-the-products"></a>Schritt 4: Die Produkte hinzufügen
 
-Alle, die verbleibt, für dieses Tutorial ist auf die Produkte in der Datenbank in den Produkten Hinzufügen von Schaltfläche "Lieferung" s zu speichern, `Click` -Ereignishandler. Dies kann erreicht werden, indem Sie erstellen eine `ProductsDataTable` und das Hinzufügen einer `ProductsRow` Instanz für jedes der angegebenen Produktnamen. Einmal diese `ProductsRow` s wurden hinzugefügt, werden wir einen Aufruf von stellen die `ProductsBLL` s-Klasse `UpdateWithTransaction` -Methode übergeben die `ProductsDataTable`. Bedenken Sie, dass die `UpdateWithTransaction` -Methode, die in erstellt wurde die [Umschließen von Datenbankänderungen innerhalb einer Transaktion](wrapping-database-modifications-within-a-transaction-vb.md) Tutorial, übergibt die `ProductsDataTable` auf die `ProductsTableAdapter` s `UpdateWithTransaction` Methode. Von dort aus eine ADO.NET-Transaktion gestartet wird und die Probleme TableAdatper ein `INSERT` Anweisung an die Datenbank für jede hinzugefügte `ProductsRow` in der Datentabelle. Vorausgesetzt, dass alle Produkte ohne Fehler hinzugefügt werden, die Transaktion ein Commit ausgeführt wird, wird andernfalls ein Rollback.
+Alle, die verbleibt, für dieses Tutorial ist auf die Produkte in der Datenbank in den Produkten Hinzufügen von Schaltfläche "Lieferung" s zu speichern, `Click` -Ereignishandler. Dies kann erreicht werden, indem Sie erstellen eine `ProductsDataTable` und das Hinzufügen einer `ProductsRow` Instanz für jedes der angegebenen Produktnamen. Einmal diese `ProductsRow` s wurden hinzugefügt, werden wir einen Aufruf von stellen die `ProductsBLL` s-Klasse `UpdateWithTransaction` -Methode übergeben die `ProductsDataTable`. Bedenken Sie, dass die `UpdateWithTransaction` -Methode, die in erstellt wurde die [Umschließen von Datenbankänderungen innerhalb einer Transaktion](wrapping-database-modifications-within-a-transaction-vb.md) Tutorial, übergibt die `ProductsDataTable` auf die `ProductsTableAdapter`des `UpdateWithTransaction` Methode. Von dort aus eine ADO.NET-Transaktion gestartet wird und die Probleme der TableAdapter eine `INSERT` Anweisung an die Datenbank für jede hinzugefügte `ProductsRow` in der Datentabelle. Vorausgesetzt, dass alle Produkte ohne Fehler hinzugefügt werden, die Transaktion ein Commit ausgeführt wird, wird andernfalls ein Rollback.
 
 Der Code für die Produkte hinzufügen, über die Schaltfläche "Lieferung" s `Click` -Ereignishandler auch etwas fehlerprüfung durchführen muss. Da es sich um keine RequiredFieldValidators in der einfügen-Schnittstelle verwendet, kann ein Benutzer einen Preis für ein Produkt beim Auslassen von seinen Namens eingeben. Da der Name des Produkts s erforderlich ist, wenn eine solche Bedingung erweitert müssen wir den Benutzer zu warnen und die einfügungen nicht fortgesetzt. Die vollständige `Click` Ereignishandlercode folgt:
 

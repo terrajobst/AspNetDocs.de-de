@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 362ade25-3965-4fb2-88d2-835c4786244f
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c3887f920126d70b300de5a0d6e09474fd33c332
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8b7f839f16150b93645a9fe868642fa5f36248a9
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061477"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424975"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>Einschließen einer Dateiuploadoption beim Hinzufügen eines neuen Datensatzes (C#)
 ====================
@@ -73,7 +73,7 @@ Da übersprungen, es direkt an die Datenzugriffsebene gesendet werden, müssen w
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample2.cs)]
 
 > [!NOTE]
-> Stellen Sie sicher, dass Sie das typisierte DataSet, vor dem Hinzufügen gespeichert haben der `InsertWithPicture` Methode, um die BLL. Da die `CategoriesTableAdapter` Klassencode basierend auf dem typisierten DataSet wird automatisch generiert, wenn Sie Ich möchte zuerst die Änderungen auf das typisierte DataSet speichern die `Adapter` gewonnen t Eigenschaft kennen die `InsertWithPicture` Methode.
+> Stellen Sie sicher, dass Sie das typisierte DataSet, vor dem Hinzufügen gespeichert haben der `InsertWithPicture` Methode, um die BLL. Da die `CategoriesTableAdapter` Klassencode basierend auf dem typisierten DataSet wird automatisch generiert, wenn Sie Ich möchte zuerst die Änderungen auf das typisierte DataSet speichern die `Adapter` Eigenschaft wird nicht kennen die `InsertWithPicture` Methode.
 
 
 ## <a name="step-3-listing-the-existing-categories-and-their-binary-data"></a>Schritt 3: Auflisten der vorhandenen Kategorien und deren Binärdaten
@@ -231,7 +231,7 @@ Let-s in Ruhe, die die einfügende Schnittstelle zu testen und `ItemInserting` -
 **Abbildung 9**: Eine Warnmeldung wird angezeigt, wenn ein ungültiger Typ für die Datei wird hochgeladen ([klicken Sie, um das Bild in voller Größe anzeigen](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image16.png))
 
 
-Wenn Sie überprüft haben, dass die Seite erfordert ein Bild hochgeladen werden und gewonnenem t akzeptiert nicht im PDF-Format oder nicht-JPG-Dateien, Hinzufügen einer neuen Kategorie mit einem gültigen JPG-Bild, das Broschüre-Feld leer bleibt. Nach dem Klicken auf die Schaltfläche "Insert", wird die Seite postback und wird ein neuer Datensatz hinzugefügt werden die `Categories` Tabelle mit den binären hochgeladenen Image s-Inhalt direkt in der Datenbank gespeichert. GridView wird aktualisiert und zeigt eine Zeile für die neu hinzugefügte Kategorie, jedoch, wie in Abbildung 10 gezeigt, das die neue Kategorie s Grafik ist nicht korrekt dargestellt.
+Wenn Sie überprüft haben, dass die Seite erforderlich, ein Bild hochgeladen werden ist und wird nicht akzeptiert nicht im PDF-Format oder nicht-JPG-Dateien, fügen eine neue Kategorie mit einem gültigen JPG-Bild, das Broschüre-Feld leer bleibt. Nach dem Klicken auf die Schaltfläche "Insert", wird die Seite postback und wird ein neuer Datensatz hinzugefügt werden die `Categories` Tabelle mit den binären hochgeladenen Image s-Inhalt direkt in der Datenbank gespeichert. GridView wird aktualisiert und zeigt eine Zeile für die neu hinzugefügte Kategorie, jedoch, wie in Abbildung 10 gezeigt, das die neue Kategorie s Grafik ist nicht korrekt dargestellt.
 
 
 [![Die neue Kategorie s, die Bild nicht angezeigt wird](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)

@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 55fab6bb7a1041a14f8734a0d2ae1238b3801149
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 719999f47dea7172f32a5040c79e569d0ec41ab0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042957"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425903"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>Eine Übersicht über einfügen, aktualisieren und Löschen von Daten (VB)
 ====================
@@ -179,7 +179,7 @@ Das GridView-Steuerelement bietet integrierte Unterstützung für auf Zeileneben
 Die Werte für die `DeleteParameters` sind die Werte der der `DataKeyNames` Felder für die Zeile, deren löschen-Schaltfläche geklickt wurde. Es ist daher wichtig, das einer GridView `DataKeyNames` Eigenschaft richtig festgelegt sein. Wenn sie nicht vorhanden ist, ist die `DeleteParameters` wird einen Wert zugewiesen werden `Nothing` in Schritt 1, die wiederum führen keine gelöschten Datensätze in Schritt2.
 
 > [!NOTE]
-> Die `DataKeys` Sammlung befindet sich in den GridView-s-Steuerelementzustand, was bedeutet, dass die `DataKeys` Werte werden während des Zurücksendens gespeichert werden, auch wenn der Ansichtszustand der GridView-s deaktiviert wurde. Allerdings ist es sehr wichtig, dass der Ansichtszustand für GridViews, die unterstützt werden, bearbeiten oder löschen (das Standardverhalten) aktiviert bleibt. Wenn Sie festlegen, dass das GridView-s `EnableViewState` Eigenschaft `false`, das Bearbeiten und Löschen von Verhalten werden problemlos für einen einzelnen Benutzer funktionieren, aber wenn gleichzeitige Benutzer, die Löschen von Daten vorhanden sind, besteht die Möglichkeit, dass diese gleichzeitige Benutzer versehentlich können Löschen oder bearbeiten, dass sie nihnen t aufgezeichnet werden soll. Finden Sie in meinem Blog, [Warnung: Parallelität ausgeben mit ASP.NET 2.0 GridViews/DetailsView/FormViews, Unterstützung bearbeiten bzw. löschen und, deren Ansichtszustand deaktiviert ist](http://scottonwriting.net/sowblog/posts/10054.aspx), Weitere Informationen.
+> Die `DataKeys` Sammlung befindet sich in den GridView-s-Steuerelementzustand, was bedeutet, dass die `DataKeys` Werte werden während des Zurücksendens gespeichert werden, auch wenn der Ansichtszustand der GridView-s deaktiviert wurde. Allerdings ist es sehr wichtig, dass der Ansichtszustand für GridViews, die unterstützt werden, bearbeiten oder löschen (das Standardverhalten) aktiviert bleibt. Wenn Sie festlegen, dass das GridView-s `EnableViewState` Eigenschaft `false`, das Bearbeiten und Löschen von Verhalten werden problemlos für einen einzelnen Benutzer funktionieren, aber wenn gleichzeitige Benutzer, die Löschen von Daten vorhanden sind, besteht die Möglichkeit, dass diese gleichzeitige Benutzer versehentlich können Löschen oder Bearbeiten von Datensätzen, die sie nicht beabsichtigt. Finden Sie in meinem Blog, [Warnung: Parallelität ausgeben mit ASP.NET 2.0 GridViews/DetailsView/FormViews, Unterstützung bearbeiten bzw. löschen und, deren Ansichtszustand deaktiviert ist](http://scottonwriting.net/sowblog/posts/10054.aspx), Weitere Informationen.
 
 
 Diese gleichen Warnung gilt auch für DetailsViews und FormViews verwendet werden.

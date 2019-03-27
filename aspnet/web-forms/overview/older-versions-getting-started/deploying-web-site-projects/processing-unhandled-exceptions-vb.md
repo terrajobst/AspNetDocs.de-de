@@ -8,18 +8,18 @@ ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 29ea7f376f61c242ab93cfb71e1a7b435c575482
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0783d59fe70ebed9f1f074d35a9f2e063720d27a
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051327"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424741"
 ---
 <a name="processing-unhandled-exceptions-vb"></a>Verarbeiten von Ausnahmefehlern (VB)
 ====================
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Anzeigen oder Herunterladen von Beispielcode](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples) ([Vorgehensweise zum Herunterladen](/aspnet/core/tutorials/index#how-to-download-a-sample))
+[Anzeigen oder Herunterladen von Beispielcode](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples) ([Vorgehensweise zum Herunterladen](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > Tritt ein Laufzeitfehler auf eine Webanwendung in der Produktion ist es wichtig, die einen Entwickler zu benachrichtigen und den Fehler protokollieren, damit es zu einem späteren Zeitpunkt rechtzeitig diagnostiziert werden kann. Dieses Lernprogramm bietet einen Überblick darüber, wie ASP.NET Laufzeitfehler verarbeitet und untersucht eine Möglichkeit, benutzerdefinierten Code, wenn eine nicht behandelte Ausnahme Blasen bis zu der ASP.NET-Laufzeit ausgeführt haben.
 

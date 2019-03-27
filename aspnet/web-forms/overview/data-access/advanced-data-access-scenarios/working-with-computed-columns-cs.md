@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 57459065-ed7c-4dfe-ac9c-54c093abc261
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ef548c627cd40159bb3961f479401657a2ac394
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 097d68bdcde7de713ce2e7c829c0611d4c82d64d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041937"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424750"
 ---
 <a name="working-with-computed-columns-c"></a>Arbeiten mit berechneten Spalten (C#)
 ====================
@@ -32,7 +32,7 @@ Da ein berechnete Spalte s-Wert durch einen Ausdruck bestimmt wird, diese Spalte
 
 Eine Schwierigkeit der Verwendung von berechneten Spalten mit einem TableAdapter, die Ad-hoc-SQL-Anweisungen verwendet wird, die die TableAdapter `INSERT` und `UPDATE` Abfragen werden automatisch neu generiert jedes Mal der TableAdapter-Konfigurations-Assistenten abgeschlossen ist. Aus diesem Grund manuell die berechneten Spalten daraus die `INSERT` und `UPDATE` Abfragen werden erneut angezeigt, wenn der Assistent erneut ausgeführt wird. Obwohl die TableAdapters, die gespeicherte Prozeduren verwenden keine Nachteile für Ihr diese Fehleranfälligkeit leiden, besitzen ihre eigenen Eigenarten, die wir in Schritt 3 gerecht werden.
 
-In diesem Tutorial fügen wir eine berechnete Spalte, die `Suppliers` -Tabelle in der Northwind-Datenbank und erstellen Sie einen entsprechenden TableAdapter zum Arbeiten mit dieser Tabelle und die berechnete Spalte. Wir haben unsere TableAdapter gespeicherte Prozeduren anstelle von Ad-hoc-SQL-Anweisungen zu verwenden, damit unsere Anpassungen sind t verloren, wenn der TableAdapter-Konfigurations-Assistent verwendet wird.
+In diesem Tutorial fügen wir eine berechnete Spalte, die `Suppliers` -Tabelle in der Northwind-Datenbank und erstellen Sie einen entsprechenden TableAdapter zum Arbeiten mit dieser Tabelle und die berechnete Spalte. Wir haben unsere TableAdapter gespeicherte Prozeduren anstelle von Ad-hoc-SQL-Anweisungen zu verwenden, damit unsere Anpassungen verloren sind nicht, wenn der TableAdapter-Konfigurations-Assistent verwendet wird.
 
 Lassen Sie s beginnen!
 

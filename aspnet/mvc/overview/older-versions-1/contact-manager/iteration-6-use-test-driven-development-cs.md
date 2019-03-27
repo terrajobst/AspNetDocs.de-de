@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c4358a1b979ab95d8ac25551e21ee95d75e5eae
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d456952bea9a1933247382f4786809b0b2f32034
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026197"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440325"
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>Iteration #6 – Verwenden der testgesteuerten Entwicklung (c#)
 ====================
@@ -80,9 +80,9 @@ Wir werden unsere Anwendung folgt ein Vorgang der testgesteuerten Entwicklung di
 
 ## <a name="what-gets-tested"></a>Ruft ab, was getestet
 
-Wie in vorherigen Iterationen erläutert, in der Regel nicht Schreiben von Komponententests für die Logik für den Datenzugriff oder Logik anzeigen. Da beim Zugriff auf eine Datenbank als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für Datenzugriffslogik zusätzlichen. Da der Zugriff auf eine Ansicht bedeutet das Einrichten eines Webservers erforderlich ist, die als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für ansichtslogik zusätzlichen. Sie treten normalerweise t einen Komponententest schreiben, es sei denn, der Test immer wieder sehr schnell ausgeführt werden kann
+Wie in vorherigen Iterationen erläutert, in der Regel nicht Schreiben von Komponententests für die Logik für den Datenzugriff oder Logik anzeigen. Da beim Zugriff auf eine Datenbank als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für Datenzugriffslogik zusätzlichen. Da der Zugriff auf eine Ansicht bedeutet das Einrichten eines Webservers erforderlich ist, die als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für ansichtslogik zusätzlichen. Sie sollten keinen Komponententest schreiben, es sei denn, der Test immer wieder sehr schnell ausgeführt werden kann
 
-Da die testgesteuerte Entwicklung von Komponententests gesteuert wird, konzentrieren wir uns zunächst auf Controller und Geschäftslogik zu schreiben. Wir vermeiden, verändern die Datenbank oder Sichten. Wir haben t ändern die Datenbank oder erstellen Sie die Ansichten, bis das Ende des in diesem Tutorial. Wir beginnen mit, was getestet werden kann.
+Da die testgesteuerte Entwicklung von Komponententests gesteuert wird, konzentrieren wir uns zunächst auf Controller und Geschäftslogik zu schreiben. Wir vermeiden, verändern die Datenbank oder Sichten. Wir nicht die Datenbank ändern oder die Ansichten zu erstellen, bis das Ende des in diesem Tutorial. Wir beginnen mit, was getestet werden kann.
 
 ## <a name="creating-user-stories"></a>Erstellung von User Storys
 
@@ -246,10 +246,10 @@ Wir müssen eine neue Datenbanktabelle für die Gruppe zu erstellen. Führen Sie
 | **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | int | False |
-| name | nvarchar(50) | False |
+| Name | nvarchar(50) | False |
 
 
-Als Nächstes müssen wir alle Daten aus der Contacts-Tabelle löschen (andernfalls, wir haben gewonnen t Lage, eine Beziehung zwischen den Tabellen Kontakte und Gruppen zu erstellen). Führen Sie folgende Schritte aus:
+Als Nächstes müssen wir alle Daten aus der Contacts-Tabelle löschen (andernfalls wir nicht möglich, eine Beziehung zwischen den Tabellen Kontakte und Gruppen zu erstellen). Führen Sie folgende Schritte aus:
 
 1. Mit der rechten Maustaste der Contacts-Tabelle, und wählen Sie die Menüoption **Tabellendaten anzeigen**.
 2. Löschen Sie alle Zeilen aus.
@@ -309,7 +309,7 @@ Als Nächstes müssen wir unsere "Repository"-Klasse zu implementieren. Im Verla
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-Wir kopieraktivitäten t einer der Methoden für die Arbeit mit wenden Sie sich an Gruppen, tatsächlich implementiert. Derzeit enthält die EntityContactManagerRepository-Klasse Stubmethoden für jede Gruppe von Kontakten Methoden aufgeführt, die in der IContactManagerRepository-Schnittstelle. Beispielsweise sieht die Methode ListGroups() derzeit folgendermaßen aus:
+Einer der Methoden für die Arbeit mit wenden Sie sich an Gruppen nicht getan haben wir tatsächlich implementiert. Derzeit enthält die EntityContactManagerRepository-Klasse Stubmethoden für jede Gruppe von Kontakten Methoden aufgeführt, die in der IContactManagerRepository-Schnittstelle. Beispielsweise sieht die Methode ListGroups() derzeit folgendermaßen aus:
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 

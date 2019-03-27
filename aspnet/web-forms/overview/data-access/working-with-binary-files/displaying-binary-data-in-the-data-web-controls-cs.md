@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50d7f8eceb4772c628f7f6ef71f110de03dd9348
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 026fce7544f40ff333a5c0a500bc53c7fd434080
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047167"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422089"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>Anzeigen von Binärdaten in den Datenwebsteuerelementen (C#)
 ====================
@@ -183,7 +183,7 @@ Der obige Code geht davon aus, gibt es einige image-Datei mit dem Namen s `NoPic
 Diese Ausnahme kann auch verursacht werden, wenn die `CategoriesTableAdapter` s `GetCategoryWithBinaryDataByCategoryID` s-Methode `SELECT` Anweisung auf der Liste der Hauptabfrage s-Spalte, dies passieren kann, wenn Sie Ad-hoc-SQL-Anweisungen verwenden und Sie haben, erneut des Assistenten für die TableAdapter ausführen zurückgesetzt wurde die Hauptabfrage. Kontrollkästchen, um sicherzustellen, dass `GetCategoryWithBinaryDataByCategoryID` s-Methode `SELECT` Anweisung umfasst immer noch die `Picture` Spalte.
 
 > [!NOTE]
-> Jedes Mal, wenn die `DisplayCategoryPicture.aspx` wird aufgerufen, der die Datenbank zugegriffen wird und die Daten der angegebenen Kategorie s-Grafik werden zurückgegeben. Wenn die Kategorie s Bild hat t geändert, da der Benutzer es zuletzt angezeigt wurde, ist dies jedoch unnötigen Aufwand. Glücklicherweise können Sie HTTP für *bedingte ruft*. Mit bedingten GET, sendet der Client, der die HTTP-Anforderung an eine [ `If-Modified-Since` HTTP-Header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) , der das Datum und Uhrzeit der letzten der Client diese Ressource vom Webserver abrufen bereitstellt. Wenn der Inhalt nicht geändert hat, da dies das Datum angegeben, kann der Webserver mit folgendem Antworten einer [Statuscode nicht geändert (304)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) und verzichten, senden den Inhalt der angeforderten Ressource s zurück. Kurz gesagt, muss diese Methode den Webserver von Inhalten für eine Ressource senden, wenn er nicht geändert wurde, seit der Client sie zuletzt verwendet haben.
+> Jedes Mal, wenn die `DisplayCategoryPicture.aspx` wird aufgerufen, der die Datenbank zugegriffen wird und die Daten der angegebenen Kategorie s-Grafik werden zurückgegeben. Wenn die Kategorie-s-Grafik nicht geändert hat, da der Benutzer es zuletzt angezeigt wurde, ist dies jedoch unnötigen Aufwand. Glücklicherweise können Sie HTTP für *bedingte ruft*. Mit bedingten GET, sendet der Client, der die HTTP-Anforderung an eine [ `If-Modified-Since` HTTP-Header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) , der das Datum und Uhrzeit der letzten der Client diese Ressource vom Webserver abrufen bereitstellt. Wenn der Inhalt nicht geändert hat, da dies das Datum angegeben, kann der Webserver mit folgendem Antworten einer [Statuscode nicht geändert (304)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) und verzichten, senden den Inhalt der angeforderten Ressource s zurück. Kurz gesagt, muss diese Methode den Webserver von Inhalten für eine Ressource senden, wenn er nicht geändert wurde, seit der Client sie zuletzt verwendet haben.
 
 
 Um dieses Verhalten zu implementieren allerdings erfordert das Hinzufügen einer `PictureLastModified` Spalte die `Categories` Tabelle beim Erfassen der `Picture` Spalte zuletzt aktualisiert wurde, sowie Code zum Überprüfen der `If-Modified-Since` Header. Weitere Informationen zu den `If-Modified-Since` Header und den bedingten GET-Workflow finden Sie unter [HTTP für RSS-Hacker bedingte GET](http://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers) und [ein ausführlicher betrachten, Ausführen von HTTP-Anforderungen in einer ASP.NET-Seite](http://aspnet.4guysfromrolla.com/articles/122204-1.aspx).

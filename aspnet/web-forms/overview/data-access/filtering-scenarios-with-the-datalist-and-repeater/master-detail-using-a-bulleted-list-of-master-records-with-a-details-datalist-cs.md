@@ -8,12 +8,12 @@ ms.date: 10/17/2006
 ms.assetid: c727bb73-7b59-41a1-8dc3-623c6d69e7c2
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a7c7494a58fa7941924145805f32aa67164fac3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 57854d1df3686e81ee2e368495b7c051d7f1b37b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024787"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422505"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>Master-/Detailbericht mit einer Aufzählung der Masterdatensätze und einem DataList-Steuerelement für die Details (C#)
 ====================
@@ -100,7 +100,7 @@ Das folgende Markup zeigt die deklarative Syntax des Repeaters und dem ObjectDat
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample4.aspx)]
 
 > [!NOTE]
-> Für dieses Tutorial benötigen Repeater Ansichtszustand aktiviert (Beachten Sie die Auslassung der `EnableViewState="False"` aus die deklarative Syntax des Repeater-s). In Schritt 3 wir erstellen einen Ereignishandler für das Repeater s `ItemCommand` Ereignis in dem aktualisiert, um den DataList-Steuerelement "ObjectDataSource"-s-s `SelectParameters` Auflistung. Der Repeater s `ItemCommand`jedoch gewonnen t ausgelöst, wenn der Ansichtszustand deaktiviert ist. Finden Sie unter [ein Stumper eine Frage ASP.NET](http://scottonwriting.net/sowblog/posts/1263.aspx) und [seine Lösung](http://scottonwriting.net/sowBlog/posts/1268.aspx) für Weitere Informationen darüber, warum Ansichtszustand für ein Repeater s aktiviert werden `ItemCommand` Ereignis ausgelöst.
+> Für dieses Tutorial benötigen Repeater Ansichtszustand aktiviert (Beachten Sie die Auslassung der `EnableViewState="False"` aus die deklarative Syntax des Repeater-s). In Schritt 3 wir erstellen einen Ereignishandler für das Repeater s `ItemCommand` Ereignis in dem aktualisiert, um den DataList-Steuerelement "ObjectDataSource"-s-s `SelectParameters` Auflistung. Der Repeater s `ItemCommand`, jedoch wird nicht ausgelöst, wenn der Ansichtszustand deaktiviert ist. Finden Sie unter [ein Stumper eine Frage ASP.NET](http://scottonwriting.net/sowblog/posts/1263.aspx) und [seine Lösung](http://scottonwriting.net/sowBlog/posts/1268.aspx) für Weitere Informationen darüber, warum Ansichtszustand für ein Repeater s aktiviert werden `ItemCommand` Ereignis ausgelöst.
 
 
 ImageButton mit dem die `ID` Eigenschaftswert `ViewCategory` verfügt nicht über die `Text` Eigenschaftensatz. Wenn wir nur den Namen der Kategorie angezeigt möchten haben, würden festgelegt haben die Texteigenschaft deklarativ über Databinding-Syntax, wie folgt:
