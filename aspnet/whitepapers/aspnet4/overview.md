@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 775286df610df9040cbf04125b1742b6befa055b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043157"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424299"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
 ====================
@@ -945,7 +945,7 @@ Der Wert für *ControlRenderingCompatibility* ist eine Zeichenfolge, wodurch mö
 
 In ASP.NET 3.5 SP1 und früheren Versionen rendert das Framework die *deaktiviert* -Attribut im HTML-Markup für, deren Steuerelemente *aktiviert* -Eigenschaftensatz auf *"false"*. Jedoch gemäß der HTML 4.01-Spezifikation nur *Eingabe* Elemente sollte dieses Attribut aufweisen.
 
-In ASP.NET 4, legen Sie die *ControlRenderingCompatabilityVersion* Eigenschaft auf "3.5", wie im folgenden Beispiel gezeigt:
+In ASP.NET 4, legen Sie die *ControlRenderingCompatibilityVersion* Eigenschaft auf "3.5", wie im folgenden Beispiel gezeigt:
 
 [!code-xml[Main](overview/samples/sample70.xml)]
 
@@ -957,7 +957,7 @@ Die *Bezeichnung* Steuerelement würde folgenden HTML-Code gerendert:
 
 [!code-html[Main](overview/samples/sample72.html)]
 
-Sie können in ASP.NET 4 Festlegen der *ControlRenderingCompatabilityVersion* den Wert "4.0". In diesem Fall wird nur festgelegt, der Rendering *Eingabe* Elemente rendert eine *deaktiviert* -Attribut festlegen, wenn des Steuerelements *aktiviert* -Eigenschaftensatz auf *"false"* . Steuerelemente, die nicht HTML gerendert werden *Eingabe* Elemente gerendert, stattdessen eine *Klasse* Attribut, das eine CSS-Klasse, die Sie verwenden können verweist, um einiges "deaktiviert" für das Steuerelement zu definieren. Z. B. die *Bezeichnung* Steuerelement, dargestellt in das vorherige Beispiel erzeugt das folgende Markup:
+Sie können in ASP.NET 4 Festlegen der *ControlRenderingCompatibilityVersion* den Wert "4.0". In diesem Fall wird nur festgelegt, der Rendering *Eingabe* Elemente rendert eine *deaktiviert* -Attribut festlegen, wenn des Steuerelements *aktiviert* -Eigenschaftensatz auf *"false"* . Steuerelemente, die nicht HTML gerendert werden *Eingabe* Elemente gerendert, stattdessen eine *Klasse* Attribut, das eine CSS-Klasse, die Sie verwenden können verweist, um einiges "deaktiviert" für das Steuerelement zu definieren. Z. B. die *Bezeichnung* Steuerelement, dargestellt in das vorherige Beispiel erzeugt das folgende Markup:
 
 [!code-html[Main](overview/samples/sample73.html)]
 

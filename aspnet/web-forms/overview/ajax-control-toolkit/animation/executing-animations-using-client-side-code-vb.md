@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: f7073f50-d765-456d-9957-926ce60f35f6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 08cba7fa04249da4f0c7baa8e730ac75489e0efc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d9933af3f1be20177c958413173746fe087dec43
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048377"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425807"
 ---
 <a name="executing-animations-using-client-side-code-vb"></a>Ausführen von Animationen mit clientseitigem Code (VB)
 ====================
@@ -46,7 +46,7 @@ Fügen Sie dann die `AnimationExtender` auf der Seite Bereitstellen einer `ID`, 
 
 [!code-aspx[Main](executing-animations-using-client-side-code-vb/samples/sample4.aspx)]
 
-In der `<Animations>` Knoten verwenden `<OnClick>` klickt Sie auf den Animationen nach dem Benutzer ausgeführt werden im Bereich. Fügen Sie zwei Animationen parallelly ausgeführt werden:
+In der `<Animations>` Knoten verwenden `<OnClick>` klickt Sie auf den Animationen nach dem Benutzer ausgeführt werden im Bereich. Fügen Sie zwei Animationen, die parallel ausgeführt werden:
 
 [!code-xml[Main](executing-animations-using-client-side-code-vb/samples/sample5.xml)]
 

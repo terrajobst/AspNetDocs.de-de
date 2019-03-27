@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 512d2e2b39467635390fa175546f79d8c9f89f4a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a09169327d8eed45a83b232354af74a14aa89817
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038147"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425040"
 ---
 # <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>Häufige Fehler bei ASP.NET und empfohlene Vorgehensweisen
 
@@ -151,7 +151,7 @@ Das folgende Beispiel zeigt, wie Sie in der Datei "Web.config" angeben, dass die
 
 Empfehlung: Nie auf "false" festgelegt.
 
-In der Standardeinstellung EnbableViewStateMac festgelegt ist auf "true". Auch wenn Ihre Anwendung nicht Ansichtszustand verwendet wird, legen Sie EnableViewStateMac nicht auf "false". Dieser Wert auf "false" festlegen, wird die Anwendung anfällig für Cross-Site-scripting machen.
+EnableViewStateMac ist standardmäßig, festgelegt auf "true". Auch wenn Ihre Anwendung nicht Ansichtszustand verwendet wird, legen Sie EnableViewStateMac nicht auf "false". Dieser Wert auf "false" festlegen, wird die Anwendung anfällig für Cross-Site-scripting machen.
 
 ASP.NET 4.5.2 ab, die Laufzeit erzwingt **EnableViewStateMac = True**. Auch wenn Sie es auf "false" festlegen, wird die Laufzeit ignoriert diesen Wert und wird mit dem Wert "true". Weitere Informationen finden Sie unter [ASP.NET 4.5.2 und EnableViewStateMac](https://blogs.msdn.com/b/webdev/archive/2014/05/07/asp-net-4-5-2-and-enableviewstatemac.aspx).
 
