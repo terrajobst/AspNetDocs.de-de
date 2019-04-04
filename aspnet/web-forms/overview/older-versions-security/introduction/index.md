@@ -2,12 +2,18 @@
 uid: web-forms/overview/older-versions-security/introduction/index
 title: ASP.NET 3.5 – Einführung zur Sicherheit | Microsoft-Dokumentation
 author: rick-anderson
-description: 'In dieser tutorialreihe untersucht die Methoden zum Authentifizieren von Benutzern, die für einzelne Seiten in ein Anmeldeformular (formularbasierte Authentifizierung) verwenden, und Autorisieren von Zugriff...'
+description: In dieser tutorialreihe untersucht die Methoden zum Authentifizieren von Benutzern, die für einzelne Seiten in ein Anmeldeformular (formularbasierte Authentifizierung) verwenden, und Autorisieren von Zugriff...
 ms.author: riande
 ms.date: 11/04/2011
 ms.assetid: ac5fcd71-317a-41ba-91ac-95121fc68126
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction
 msc.type: chapter
+ms.openlocfilehash: 9c75c62ab5276a193bf0c9d998ce3b877f9c06ff
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022767"
 ---
 <a name="aspnet-35---introduction-to-security"></a><span data-ttu-id="29484-103">ASP.NET 3.5 – Einführung zur Sicherheit</span><span class="sxs-lookup"><span data-stu-id="29484-103">ASP.NET 3.5 - Introduction to Security</span></span>
 ====================

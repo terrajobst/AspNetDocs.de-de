@@ -2,12 +2,18 @@
 uid: web-api/overview/data/index
 title: Arbeiten mit Daten in ASP.NET Web-API | Microsoft-Dokumentation
 author: rick-anderson
-description: 'CRUD-Programmierung (erstellen, lesen, aktualisieren und löschen) Vorgängen in Web-API.'
+description: CRUD-Programmierung (erstellen, lesen, aktualisieren und löschen) Vorgängen in Web-API.
 ms.author: riande
 ms.date: 10/23/2014
 ms.assetid: 995cbe38-7dbd-4c36-a5d0-a761944c7636
 msc.legacyurl: /web-api/overview/data
 msc.type: chapter
+ms.openlocfilehash: e926c82e84b7cac2ba69a8baa62d2719647523d2
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020427"
 ---
 <a name="working-with-data-in-aspnet-web-api"></a><span data-ttu-id="355e9-103">Arbeiten mit Daten in ASP.NET Web-API</span><span class="sxs-lookup"><span data-stu-id="355e9-103">Working with Data in ASP.NET Web API</span></span>
 ====================

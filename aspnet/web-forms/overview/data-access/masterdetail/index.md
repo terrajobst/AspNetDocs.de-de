@@ -2,12 +2,18 @@
 uid: web-forms/overview/data-access/masterdetail/index
 title: Master/Detail | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Diese Tutorials zeigen, wie Masterdatensätze in einem Dropdown-Liste und Details in ein GridView-Steuerelement angezeigt wird.'
+description: Diese Tutorials zeigen, wie Masterdatensätze in einem Dropdown-Liste und Details in ein GridView-Steuerelement angezeigt wird.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 104e4d22-22cf-44a4-aefe-f604f62e0cf8
 msc.legacyurl: /web-forms/overview/data-access/masterdetail
 msc.type: chapter
+ms.openlocfilehash: 756cc2082338a13888fb146734dc75a5fbbf777f
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022167"
 ---
 <a name="masterdetail"></a><span data-ttu-id="9a0d3-103">Master/Detail</span><span class="sxs-lookup"><span data-stu-id="9a0d3-103">Master/Detail</span></span>
 ====================

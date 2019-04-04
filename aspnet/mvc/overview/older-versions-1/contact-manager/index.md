@@ -8,6 +8,12 @@ ms.date: 09/28/2011
 ms.assetid: 6b0f1fd7-6768-4549-ae9c-be9131103c4d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager
 msc.type: chapter
+ms.openlocfilehash: 164aeba48e0cf9af036d5e2c1146060f3ae3879f
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021547"
 ---
 <a name="contact-manager"></a><span data-ttu-id="2b2d0-103">Kontakt-Manager</span><span class="sxs-lookup"><span data-stu-id="2b2d0-103">Contact Manager</span></span>
 ====================

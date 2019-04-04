@@ -1,13 +1,19 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/accordion/index
-title: ''' Accordion '' | Microsoft-Dokumentation'
+title: "' Accordion ' | Microsoft-Dokumentation"
 author: rick-anderson
-description: 'Dieses Tutorial veranschaulicht, wie die '' Accordion '' Steuerung verwenden, die mehrere Bereiche enthält, und ermöglicht Benutzern, die eine von ihnen zu einem Zeitpunkt angezeigt.'
+description: Dieses Tutorial veranschaulicht, wie die ' Accordion ' Steuerung verwenden, die mehrere Bereiche enthält, und ermöglicht Benutzern, die eine von ihnen zu einem Zeitpunkt angezeigt.
 ms.author: riande
 ms.date: 11/11/2011
 ms.assetid: afd41278-b4c5-43ee-9845-2b665932dcff
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion
 msc.type: chapter
+ms.openlocfilehash: 86e1e368165d40b8d0fc1e2c24dde862c1691822
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020547"
 ---
 <a name="accordion"></a><span data-ttu-id="b9f3d-103">Accordion</span><span class="sxs-lookup"><span data-stu-id="b9f3d-103">Accordion</span></span>
 ====================

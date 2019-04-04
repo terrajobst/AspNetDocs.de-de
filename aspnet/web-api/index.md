@@ -2,12 +2,18 @@
 uid: web-api/index
 title: ASP.NET Web-API | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Laden Sie ASP.NET MVC 4, und erstellen Sie HTTP-Dienste, die eine Breite Palette von Clients zu erreichen.'
+description: Laden Sie ASP.NET MVC 4, und erstellen Sie HTTP-Dienste, die eine Breite Palette von Clients zu erreichen.
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: f571ca7a-c06b-400d-8051-f62f9f0bcc9b
 msc.legacyurl: /web-api
 msc.type: categoryindex
+ms.openlocfilehash: 3246478c9d159afce7e265af0a471d639ce202bf
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022367"
 ---
 <a name="aspnet-web-api"></a><span data-ttu-id="b4e7f-103">ASP.NET-Web-API</span><span class="sxs-lookup"><span data-stu-id="b4e7f-103">ASP.NET Web API</span></span>
 ====================

@@ -2,12 +2,18 @@
 uid: web-forms/overview/data-access/introduction/index
 title: Einführung | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Dieser einführenden Satz von Tutorials wird erläutert, wie (Data Access Layer, DAL), eine Geschäftslogikschicht (Business Logic Layer, BLL) und ein einheitliches Aussehen für Ihre Website zu erstellen.'
+description: Dieser einführenden Satz von Tutorials wird erläutert, wie (Data Access Layer, DAL), eine Geschäftslogikschicht (Business Logic Layer, BLL) und ein einheitliches Aussehen für Ihre Website zu erstellen.
 ms.author: riande
 ms.date: 11/11/2011
 ms.assetid: 74f3a86b-81fa-4d64-820a-304613f72caa
 msc.legacyurl: /web-forms/overview/data-access/introduction
 msc.type: chapter
+ms.openlocfilehash: 7f161727e5ad1dd509e308de939a11da4e061b70
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57019527"
 ---
 <a name="introduction"></a><span data-ttu-id="56c21-103">Einführung</span><span class="sxs-lookup"><span data-stu-id="56c21-103">Introduction</span></span>
 ====================

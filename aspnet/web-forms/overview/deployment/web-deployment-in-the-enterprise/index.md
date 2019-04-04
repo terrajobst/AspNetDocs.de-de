@@ -2,12 +2,18 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/index
 title: ASP.NET 4 – Unternehmensbereitstellung Serie 1 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'In diesem Tutorial wird beschrieben, wie viele der Herausforderungen beim erfüllen, die Sie bei der Verwaltung der Bereitstellung von unternehmensweite Webanwendungen Entwicklungskomponenten begegnen...'
+description: In diesem Tutorial wird beschrieben, wie viele der Herausforderungen beim erfüllen, die Sie bei der Verwaltung der Bereitstellung von unternehmensweite Webanwendungen Entwicklungskomponenten begegnen...
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 83e0a572-428f-4bea-9638-1a031c6901c0
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise
 msc.type: chapter
+ms.openlocfilehash: 92bc3d18c417e73e198d0f7663489fd931bf75b5
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020607"
 ---
 <a name="aspnet-4---enterprise-deployment-series-1"></a><span data-ttu-id="27aab-103">ASP.NET 4 – Unternehmensbereitstellung Serie 1</span><span class="sxs-lookup"><span data-stu-id="27aab-103">ASP.NET 4 - Enterprise Deployment Series 1</span></span>
 ====================

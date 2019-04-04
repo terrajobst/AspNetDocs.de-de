@@ -2,12 +2,18 @@
 uid: web-forms/overview/ajax-control-toolkit/getting-started/index
 title: Erste Schritte | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Diese Seite beschreibt, wie das Ajax Control Toolkit herunterladen und die Steuerelemente der Visual Studio oder Visual Web Developer-Toolbox hinzufügen.'
+description: Diese Seite beschreibt, wie das Ajax Control Toolkit herunterladen und die Steuerelemente der Visual Studio oder Visual Web Developer-Toolbox hinzufügen.
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: e87dbaaf-fcbe-4e42-87ee-e60e25856e8c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started
 msc.type: chapter
+ms.openlocfilehash: 20e41a1fb79a5b8c81952fb84f131f3a97da2aa3
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57023247"
 ---
 <a name="getting-started"></a><span data-ttu-id="7e546-103">Erste Schritte</span><span class="sxs-lookup"><span data-stu-id="7e546-103">Getting Started</span></span>
 ====================

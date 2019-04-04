@@ -2,12 +2,18 @@
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/index
 title: ASP.NET 4 – Unternehmensbereitstellung Serie 4 Weiterführende Themen | Microsoft-Dokumentation
 author: rick-anderson
-description: 'In diesem Tutorial erfahren Sie, wie Sie verschiedene Aufgaben ausführen, die erforderlich oder wünschenswert ist, eine Vielzahl von Bereitstellungsszenarios.'
+description: In diesem Tutorial erfahren Sie, wie Sie verschiedene Aufgaben ausführen, die erforderlich oder wünschenswert ist, eine Vielzahl von Bereitstellungsszenarios.
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: eacf0e3a-c2e9-4f77-a676-249146f393e8
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment
 msc.type: chapter
+ms.openlocfilehash: b042faf38fe0269508895f1b7826908cf086222d
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57018807"
 ---
 <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="e7155-103">ASP.NET 4 – Unternehmensbereitstellung Serie 4: Weiterführende Themen</span><span class="sxs-lookup"><span data-stu-id="e7155-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
 ====================

@@ -2,12 +2,18 @@
 uid: web-forms/overview/ajax-control-toolkit/index
 title: Ältere Versionen – Ajax Control Toolkit | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Wie Sie mit dem Ajax Control Toolkit beginnen, und wie Sie einige der am häufigsten verwendeten Steuerelemente verwenden. DevExpress verwaltet, dass der freien und open Source Ajax Vertr....'
+description: Wie Sie mit dem Ajax Control Toolkit beginnen, und wie Sie einige der am häufigsten verwendeten Steuerelemente verwenden. DevExpress verwaltet, dass der freien und open Source Ajax Vertr....
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
+ms.openlocfilehash: ad68d8f074bc3c453e991abf7f8d393fbe9740ba
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020307"
 ---
 <a name="older-versions---ajax-control-toolkit"></a><span data-ttu-id="64847-104">Ältere Versionen – AJAX Control Toolkit</span><span class="sxs-lookup"><span data-stu-id="64847-104">Older Versions - Ajax Control Toolkit</span></span>
 ====================
