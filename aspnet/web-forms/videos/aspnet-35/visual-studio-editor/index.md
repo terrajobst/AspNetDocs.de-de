@@ -2,12 +2,18 @@
 uid: web-forms/videos/aspnet-35/visual-studio-editor/index
 title: Visual Studio-Editor | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Diese Reihe erfahren Sie, neuen Features von Visual Studio 2008 Editor, einschließlich der erweiterte Support für JavaScript und CSS.'
+description: Diese Reihe erfahren Sie, neuen Features von Visual Studio 2008 Editor, einschließlich der erweiterte Support für JavaScript und CSS.
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 8d424d7b-5206-4790-a068-36d01c05ceb0
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
+ms.openlocfilehash: f28695d13a8fee29816955813bbf34739ebc936b
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57023787"
 ---
 <a name="visual-studio-editor"></a>Visual Studio-Editor
 ====================

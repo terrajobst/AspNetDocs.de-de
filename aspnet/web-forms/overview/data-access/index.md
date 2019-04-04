@@ -2,12 +2,18 @@
 uid: web-forms/overview/data-access/index
 title: Ältere Versionen – Datenzugriff | Microsoft-Dokumentation
 author: rick-anderson
-description: 'So führen Sie eine Vielzahl von datenbezogene Aufgaben, die mit ASP.NET Web Forms-Datensteuerelemente aus.'
+description: So führen Sie eine Vielzahl von datenbezogene Aufgaben, die mit ASP.NET Web Forms-Datensteuerelemente aus.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cf54a6fb-a362-4481-b967-c158b98092f7
 msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
+ms.openlocfilehash: 0060650de35a8693a9c1432876df1d4902bb1ade
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57023077"
 ---
 <a name="older-versions---data-access"></a>Ältere Versionen – Datenzugriff
 ====================

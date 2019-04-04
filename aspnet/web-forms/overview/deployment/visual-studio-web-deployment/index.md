@@ -2,12 +2,18 @@
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
 title: ASP.NET-webbereitstellung mithilfe von Visual Studio | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET Web-Anwendung, die SQL Server (nicht SQL Server Compact) verfügbar über das Internet verwendet werden, indem Sie sie bereitstellen, t...'
+description: Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET Web-Anwendung, die SQL Server (nicht SQL Server Compact) verfügbar über das Internet verwendet werden, indem Sie sie bereitstellen, t...
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: e733027a-525f-47ae-b1c0-2e5ecf6677aa
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
+ms.openlocfilehash: a91de204f821cd8301485330518170e458f5da4d
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57024247"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a>ASP.NET-Webbereitstellung mithilfe von Visual Studio
 ====================

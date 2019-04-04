@@ -2,12 +2,18 @@
 uid: identity/overview/getting-started/index
 title: Erste Schritte mit ASP.NET Identity | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration...'
+description: Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration...
 ms.author: riande
 ms.date: 10/02/2013
 ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
+ms.openlocfilehash: 5e124c3ae59cabcdb90872bbf5470964aed148c8
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022517"
 ---
 <a name="getting-started-with-aspnet-identity"></a>Erste Schritte mit ASP.NET Identity
 ====================

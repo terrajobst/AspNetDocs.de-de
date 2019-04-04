@@ -1,13 +1,19 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/index
-title: 'Bearbeiten, einfügen und Löschen von Daten | Microsoft-Dokumentation'
+title: Bearbeiten, einfügen und Löschen von Daten | Microsoft-Dokumentation
 author: rick-anderson
-description: 'In diesen Lernprogrammen sehen Sie sich zum Zuordnen von Methoden des ObjectDataSource-Steuerelement zu Methoden der Geschäftslogikschicht und der GridView, DetailsView und FormView co konfigurieren...'
+description: In diesen Lernprogrammen sehen Sie sich zum Zuordnen von Methoden des ObjectDataSource-Steuerelement zu Methoden der Geschäftslogikschicht und der GridView, DetailsView und FormView co konfigurieren...
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
+ms.openlocfilehash: e1eeed7541ad9c088cb87784ac33cc2f53fb8ed2
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020877"
 ---
 <a name="editing-inserting-and-deleting-data"></a>Sortieren, Einfügen und Löschen von Daten
 ====================

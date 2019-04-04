@@ -2,12 +2,18 @@
 uid: web-forms/overview/presenting-and-managing-data/model-binding/index
 title: Modellbindung und Web Forms in Visual Studio 2013 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Informationen zum Arbeiten mit Daten, die mithilfe von Modellbindung und Web Forms.'
+description: Informationen zum Arbeiten mit Daten, die mithilfe von Modellbindung und Web Forms.
 ms.author: riande
 ms.date: 02/13/2013
 ms.assetid: b94c8eca-9cde-417e-a8bd-e0ff53600984
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding
 msc.type: chapter
+ms.openlocfilehash: 0eb6c82ba3fdf3e89edde819297d5b443cc4c252
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021667"
 ---
 <a name="model-binding-and-web-forms-in-visual-studio-2013"></a>Modellbindung und Web Forms in Visual Studio 2013
 ====================

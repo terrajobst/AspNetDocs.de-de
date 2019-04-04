@@ -2,12 +2,18 @@
 uid: web-forms/videos/data-access/how-do-i-with-linq/index
 title: Wie kann ich mit LINQ | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Diese Videoreihe führt Sie durch die alles, was Sie wissen also unter Verwendung von LINQ als Webentwickler werden müssen.'
+description: Diese Videoreihe führt Sie durch die alles, was Sie wissen also unter Verwendung von LINQ als Webentwickler werden müssen.
 ms.author: riande
 ms.date: 02/24/2012
 ms.assetid: 11b3547a-7c4f-4849-8e27-3cfbe255034e
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq
 msc.type: chapter
+ms.openlocfilehash: a0dcc4a6a067dbba7dce7f2cea0015272b409ab2
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57019407"
 ---
 <a name="how-do-i-with-linq"></a>Gewusst wie: LINQ
 ====================

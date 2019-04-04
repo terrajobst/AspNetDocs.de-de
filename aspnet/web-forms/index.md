@@ -2,12 +2,18 @@
 uid: web-forms/index
 title: ASP.NET Web Forms | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Herunterladen von Visual Web Developer Express, und erfahren Sie, wie schnell erstellen, die apps mithilfe von leicht verständliche Steuerelemente in ASP.NET Web Forms in einem visual Design environ-Web...'
+description: Herunterladen von Visual Web Developer Express, und erfahren Sie, wie schnell erstellen, die apps mithilfe von leicht verständliche Steuerelemente in ASP.NET Web Forms in einem visual Design environ-Web...
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: 7e4ce5d2-ab22-44f0-9825-c12eed7b8fcb
 msc.legacyurl: /web-forms
 msc.type: categoryindex
+ms.openlocfilehash: 88c12f74c3fa086a90b9999d6a4887be106c1e98
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022907"
 ---
 <a name="aspnet-web-forms"></a>ASP.NET-Web Forms
 ====================

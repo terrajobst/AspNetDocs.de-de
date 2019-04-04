@@ -2,12 +2,18 @@
 uid: signalr/index
 title: SignalR | Microsoft-Dokumentation
 author: bradygaster
-description: 'Microsoft ASP.NET SignalR ist eine Bibliothek für ASP.NET-Entwickler,, die den Prozess des Hinzufügens von Echtzeit-Webfunktionen zu Ihren Anwendungen vereinfacht.'
+description: Microsoft ASP.NET SignalR ist eine Bibliothek für ASP.NET-Entwickler,, die den Prozess des Hinzufügens von Echtzeit-Webfunktionen zu Ihren Anwendungen vereinfacht.
 ms.author: bradyg
 ms.date: 10/24/2012
 ms.assetid: 282a521f-2b86-4fac-bcf6-b6d5e0fe969c
 msc.legacyurl: /signalr
 msc.type: categoryindex
+ms.openlocfilehash: 52a36a2790de31e82d7ec7bae9f4c24439749009
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57019107"
 ---
 <a name="signalr"></a>SignalR
 ====================

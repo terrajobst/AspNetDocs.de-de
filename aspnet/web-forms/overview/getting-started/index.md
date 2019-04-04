@@ -2,12 +2,18 @@
 uid: web-forms/overview/getting-started/index
 title: Erste Schritte mit ASP.NET Web Forms | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Erfahren Sie mehr über ASP.NET Web Forms ASP.NET Web Forms können Sie erstellen dynamischer Websites mit einem vertrauten Drag & Drop, ereignisgesteuertes Modell. Eine Entwurfsoberfläche und Hund...'
+description: Erfahren Sie mehr über ASP.NET Web Forms ASP.NET Web Forms können Sie erstellen dynamischer Websites mit einem vertrauten Drag & Drop, ereignisgesteuertes Modell. Eine Entwurfsoberfläche und Hund...
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: f645d3b1-1092-43c6-a28a-074b413924b4
 msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
+ms.openlocfilehash: de5f8df4a6247ae41971867cafda15835b4944e4
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020327"
 ---
 <a name="getting-started-with-aspnet-web-forms"></a>Erste Schritte mit ASP.NET Web Forms
 ====================

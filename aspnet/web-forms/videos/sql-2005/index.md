@@ -2,12 +2,18 @@
 uid: web-forms/videos/sql-2005/index
 title: SQL 2005 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Das Arbeiten mit SQL Server Express, die Datenbankfunktionen Ihrer ASP.NET-Anwendungen hinzu.'
+description: Das Arbeiten mit SQL Server Express, die Datenbankfunktionen Ihrer ASP.NET-Anwendungen hinzu.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cf0b487c-f387-46dd-b3bc-6b3c4af17c9c
 msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
+ms.openlocfilehash: 4c64bfdd331d248cbb2cb930d151bb42b787c413
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57023997"
 ---
 <a name="sql-2005"></a>SQL 2005
 ====================

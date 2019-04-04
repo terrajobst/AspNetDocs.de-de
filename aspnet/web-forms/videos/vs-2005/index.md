@@ -2,12 +2,18 @@
 uid: web-forms/videos/vs-2005/index
 title: Visual Studio 2005 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Wie Sie mit Visual Studio 2005 Team System und -add-ins zum Ausführen von Tests, Bereitstellung und andere Aufgaben zu arbeiten.'
+description: Wie Sie mit Visual Studio 2005 Team System und -add-ins zum Ausführen von Tests, Bereitstellung und andere Aufgaben zu arbeiten.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 1bcf9a1c-ed34-4ed0-ab91-253df08fc6ff
 msc.legacyurl: /web-forms/videos/vs-2005
 msc.type: chapter
+ms.openlocfilehash: 0085424743ad2592dd06c58adba801bd676f2c0f
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022057"
 ---
 <a name="visual-studio-2005"></a>Visual Studio 2005
 ====================

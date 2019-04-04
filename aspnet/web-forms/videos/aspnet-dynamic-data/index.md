@@ -2,12 +2,18 @@
 uid: web-forms/videos/aspnet-dynamic-data/index
 title: ASP.NET Dynamic Data | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Gewusst wie ASP.NET Dynamic Data zu verwenden, um die erstellte Anwendungen erstellen, die automatisch weiß, wie auf Daten zugreift.'
+description: Gewusst wie ASP.NET Dynamic Data zu verwenden, um die erstellte Anwendungen erstellen, die automatisch weiß, wie auf Daten zugreift.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
+ms.openlocfilehash: 2b9bf121e9eced28a91616a8d7515e1fb563f304
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021877"
 ---
 <a name="aspnet-dynamic-data"></a>ASP.NET Dynamic Data
 ====================

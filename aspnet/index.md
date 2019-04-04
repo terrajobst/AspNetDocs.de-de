@@ -6,7 +6,13 @@ author: Rick-Anderson
 ms.author: riande
 title: ASP.NET Core-Dokumentation
 ms.date: 08/24/2018
-description: 'Erfahren Sie, wie Sie ASP.NET-Anwendungen und -Webanwendungen erstellen. Rufen Sie die Dokumentation, den Beispielcode, Tutorial und noch viel mehr ab.'
+description: Erfahren Sie, wie Sie ASP.NET-Anwendungen und -Webanwendungen erstellen. Rufen Sie die Dokumentation, den Beispielcode, Tutorial und noch viel mehr ab.
+ms.openlocfilehash: d46c4b3f39a540244905be3e6cb9a48373613190
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423745"
 ---
 <div id="main" class="v2">
     <div class="container">

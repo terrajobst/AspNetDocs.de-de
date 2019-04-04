@@ -2,12 +2,18 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/index
 title: Erste Schritte mit ASP.NET MVC 3 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Die Grundlagen der Erstellung einer ASP.NET MVC-Web-Anwendung, die mit Microsoft Visual Web Developer 2010 Express.'
+description: Die Grundlagen der Erstellung einer ASP.NET MVC-Web-Anwendung, die mit Microsoft Visual Web Developer 2010 Express.
 ms.author: riande
 ms.date: 09/28/2011
 ms.assetid: 67bdeec1-5301-4756-8615-cd9e8c5749e0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3
 msc.type: chapter
+ms.openlocfilehash: 6540ddc8ac9938236461dbf09380495ab5324a20
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021507"
 ---
 <a name="getting-started-with-aspnet-mvc3"></a>Erste Schritte mit ASP.NET MVC 3
 ====================

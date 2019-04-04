@@ -2,12 +2,18 @@
 uid: mvc/overview/older-versions/index
 title: Ältere Versionen – MVC 3 und 4 | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Enthält Links zu Ressourcen für lernen, wie Sie frühere Versionen von ASP.NET MVC verwenden.'
+description: Enthält Links zu Ressourcen für lernen, wie Sie frühere Versionen von ASP.NET MVC verwenden.
 ms.author: riande
 ms.date: 10/09/2014
 ms.assetid: 151cd274-3daa-4f88-ad3b-bffb99a9d545
 msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
+ms.openlocfilehash: 25057283e20e437027f4b89c3c5972bca1312093
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021947"
 ---
 <a name="older-versions---mvc-3-and-4"></a>Ältere Versionen – MVC 3 und 4
 ====================
