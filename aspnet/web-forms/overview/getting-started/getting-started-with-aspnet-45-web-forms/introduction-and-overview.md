@@ -18,7 +18,7 @@ ms.locfileid: "58425716"
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2017
 ====================
 
-[Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[Herunterladen der Wingtip Toys-Beispielprojekts (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 Dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET Web Forms-Anwendung mit ASP.NET 4.5 und Microsoft Visual Studio 2017 erstellen. 
 
@@ -39,7 +39,7 @@ Sie benötigen Grundkenntnisse in den folgenden Bereichen:
 
 Um diese Bereiche zu überprüfen, sollten Sie in der Untersuchung von des folgenden Inhalts:
 
-- [Erste Schritte mit Visual c#](https://msdn.microsoft.com/library/a72418yk.aspx)
+- [Erste Schritte mit Visual C#](https://msdn.microsoft.com/library/a72418yk.aspx)
 - [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
 - [Relationale Datenbank](http://en.wikipedia.org/wiki/Relational_database)
 - [Multi-Tier-Architektur](http://en.wikipedia.org/wiki/Multitier_architecture)
@@ -160,7 +160,7 @@ Nach der Installation der erforderlichen Komponenten können Sie damit beginnen,
 
  Sie können die vollständige Beispiel-Anwendung auf jederzeit auf der MSDN Samples-Website herunterladen:
 
-[Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (c#) 
+[Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 
 
  Dieser Download umfasst die folgenden Elemente:
 
@@ -171,10 +171,10 @@ Der Download ist eine *ZIP* Datei. Anzeigen des abgeschlossenen Projekts, das di
 
 <strong>C:\Users&#92;</strong><strong><em>&lt;Benutzername&gt;</em></strong><strong>\source\repos</strong>
 
-Benennen Sie die ***c#*** Ordner ***WingtipToys***.
+Benennen Sie die ***C#*** Ordner ***WingtipToys***.
 
 > [!NOTE]
-> Wenn Sie bereits einen Ordner namens haben *WingtipToys* im Projektordner, bevor Sie Sie umbenennen, vorhandenen Ordner vorübergehend Umbenennen der *c#* Ordner *WingtipToys*.
+> Wenn Sie bereits einen Ordner namens haben *WingtipToys* im Projektordner, bevor Sie Sie umbenennen, vorhandenen Ordner vorübergehend Umbenennen der *C#* Ordner *WingtipToys*.
 
 Öffnen Sie zum Ausführen des abgeschlossenen Projekts der *WingtipToys* Ordner und doppelklicken Sie auf die *WingtipToys.sln* Datei. Visual Studio 2017 wird das Projekt geöffnet. Als Nächstes mit der rechten Maustaste die *"default.aspx"* Datei **Projektmappen-Explorer** , und wählen Sie **In Browser anzeigen**.
 

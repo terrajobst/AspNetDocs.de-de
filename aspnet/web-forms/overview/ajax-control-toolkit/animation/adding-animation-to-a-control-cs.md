@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
-title: Hinzufügen von Animationen zu einem Steuerelement (c#) | Microsoft-Dokumentation
+title: Hinzufügen von Animationen zu einem Steuerelement (C#) | Microsoft-Dokumentation
 author: wenz
 description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Dieses Tutorial zeigt, wie...
 ms.author: riande

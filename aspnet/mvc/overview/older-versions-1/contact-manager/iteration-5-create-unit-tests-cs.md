@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: 'Iteration #5 – die Komponententests erstellen (c#) | Microsoft-Dokumentation'
+title: 'Iteration #5 – die Komponententests erstellen (C#) | Microsoft-Dokumentation'
 author: microsoft
 description: In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und Erstellen von Komponententests für o...
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58422167"
 ---
-<a name="iteration-5--create-unit-tests-c"></a>Iteration #5 – Erstellen von Komponententests (c#)
+<a name="iteration-5--create-unit-tests-c"></a>Iteration #5 – Erstellen von Komponententests (C#)
 ====================
 by [Microsoft](https://github.com/microsoft)
 
@@ -24,7 +24,7 @@ by [Microsoft](https://github.com/microsoft)
 > In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
 
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (C#)
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
 

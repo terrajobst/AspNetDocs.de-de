@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
-title: Hinzufügen von Validierungssteuerelementen zu DataList-Steuerelement des bearbeiten-Schnittstelle (c#) | Microsoft-Dokumentation
+title: Hinzufügen von Validierungssteuerelementen zu DataList-Steuerelement des bearbeiten-Schnittstelle (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Tutorial sehen wir, wie einfach es ist, die Steuerelemente zur gültigkeitsprüfung des DataList-Steuerelement EditItemTemplate hinzufügen, um eine weitere narrensicher Bearbeitung Benutzer "int". Geben Sie...
 ms.author: riande

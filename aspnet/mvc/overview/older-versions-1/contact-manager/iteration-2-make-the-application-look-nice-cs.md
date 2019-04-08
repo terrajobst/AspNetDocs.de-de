@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
-title: 'Iteration #2 – Optimieren der Anwendung gut (c#) | Microsoft-Dokumentation'
+title: 'Iteration #2 – Optimieren der Anwendung gut (C#) | Microsoft-Dokumentation'
 author: microsoft
 description: In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58422261"
 ---
-<a name="iteration-2--make-the-application-look-nice-c"></a>Iteration #2 – Optimieren der Anwendung gut (c#)
+<a name="iteration-2--make-the-application-look-nice-c"></a>Iteration #2 – Optimieren der Anwendung gut (C#)
 ====================
 by [Microsoft](https://github.com/microsoft)
 
@@ -24,7 +24,7 @@ by [Microsoft](https://github.com/microsoft)
 > In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
 
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (C#)
   
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.

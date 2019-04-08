@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
-title: Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (c#) | Microsoft-Dokumentation
+title: Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Lernprogramm lernen wir des DataList-Steuerelement-Layout über seine RepeatColumns und RepeatDirection Eigenschaften anpassen.
 ms.author: riande

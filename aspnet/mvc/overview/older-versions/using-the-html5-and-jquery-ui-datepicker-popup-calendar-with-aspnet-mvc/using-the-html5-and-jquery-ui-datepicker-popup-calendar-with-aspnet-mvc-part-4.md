@@ -54,7 +54,7 @@ Die erste Zeile deklariert werden das Modell eine `DateTime` Typ. Obwohl Sie mü
 
 Die zweite Zeile ist nur literalen HTML-Markup, das zeigt &quot;Datum mithilfe einer Vorlage&quot; vor ein Datumsfeld. Sie werden diese Zeile vorübergehend verwenden, um sicherzustellen, dass diese Datumsvorlage verwendet wird.
 
-Die nächste Zeile ist ein ["HTML.TextBox"](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx) Hilfsprogramm, das rendert eine `input` Feld, das ein Textfeld ist. Der dritte Parameter für das Hilfsprogramm verwendet einen anonymen Typ, um die Klasse für das Textfeld festzulegen `datefield` und den Typ auf `date`. (Da `class` ist ein reservierter in c# müssen Sie verwenden die `@` escape-Zeichen die `class` -Attribut in der C#-Parser.)
+Die nächste Zeile ist ein ["HTML.TextBox"](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx) Hilfsprogramm, das rendert eine `input` Feld, das ein Textfeld ist. Der dritte Parameter für das Hilfsprogramm verwendet einen anonymen Typ, um die Klasse für das Textfeld festzulegen `datefield` und den Typ auf `date`. (Da `class` ist ein reservierter in C# müssen Sie verwenden die `@` escape-Zeichen die `class` -Attribut in der C#-Parser.)
 
 Die `date` Typ ist ein HTML5-Eingabe-Typ, der HTML5-fähigen Browser zum Rendern eines HTML5-Kalender-Steuerelements ermöglicht. Später fügen Sie JavaScript-Code zum Einbinden von "DatePicker" jQuery auf die `Html.TextBox` Element mit dem `datefield` Klasse.
 

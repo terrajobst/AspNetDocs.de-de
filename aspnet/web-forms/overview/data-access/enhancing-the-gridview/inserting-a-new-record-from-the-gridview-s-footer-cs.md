@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
-title: Einfügen eines neuen Datensatzes in den GridView Fuß (c#) | Microsoft-Dokumentation
+title: Einfügen eines neuen Datensatzes in den GridView Fuß (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Das GridView-Steuerelement bietet zwar keine integrierten Unterstützung für das Einfügen eines neuen Datensatzes von Daten, handelt es sich bei diesem Lernprogramm wird erläutert, die zum Verbessern der GridView sollen eine...
 ms.author: riande

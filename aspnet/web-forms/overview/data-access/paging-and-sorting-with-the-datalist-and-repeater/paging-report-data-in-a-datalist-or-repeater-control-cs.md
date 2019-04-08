@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
-title: Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (c#) | Microsoft-Dokumentation
+title: Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Während weder DataList-Steuerelement noch Repeater Angebot automatische Paging und Unterstützung der datenquellensortierung zeigt in diesem Tutorial Hinzufügen von Paging-Unterstützung zu dem DataList- oder Repeater...
 ms.author: riande

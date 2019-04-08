@@ -86,7 +86,7 @@ Wir beginnen, indem Sie "Neues Projekt" auswählen, über das Menü "Datei" in V
 
 ![](mvc-music-store-part-1/_static/image5.png)
 
-Ich wähle Visual c# -&gt; Webvorlagen Gruppe auf der linken Seite, und wählen Sie dann die Vorlage "ASP.NET MVC 3-Webanwendung" in der mittleren Spalte. Benennen Sie Ihr Projekt MvcMusicStore aus, und drücken Sie die Schaltfläche "OK".
+Ich wähle Visual C# -&gt; Webvorlagen Gruppe auf der linken Seite, und wählen Sie dann die Vorlage "ASP.NET MVC 3-Webanwendung" in der mittleren Spalte. Benennen Sie Ihr Projekt MvcMusicStore aus, und drücken Sie die Schaltfläche "OK".
 
 ![](mvc-music-store-part-1/_static/image8.jpg)
 

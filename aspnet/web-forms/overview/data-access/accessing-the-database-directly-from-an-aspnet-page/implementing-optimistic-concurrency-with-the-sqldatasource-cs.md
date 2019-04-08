@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
-title: Implementieren von Optimistischer Parallelität mit dem SqlDataSource-Steuerelement (c#) | Microsoft-Dokumentation
+title: Implementieren von Optimistischer Parallelität mit dem SqlDataSource-Steuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Tutorial haben wir überprüfen Sie die Grundlagen der Steuerung durch vollständige Parallelität und untersuchen Sie anschließend, wie Sie mit dem SqlDataSource-Steuerelement zu implementieren.
 ms.author: riande

@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
-title: Erstellen einer angepassten Benutzeroberfläche zum Sortieren (c#) | Microsoft-Dokumentation
+title: Erstellen einer angepassten Benutzeroberfläche zum Sortieren (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Wenn Daten mit einer langen Liste sortiert werden, es kann sehr hilfreich sein, gruppieren Sie verknüpfte Daten durch die Einführung von Trennzeichen für Zeilen. In diesem Tutorial sehen, dass wie ASK erstellen...
 ms.author: riande

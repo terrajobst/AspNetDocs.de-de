@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
-title: Ausführen mehrerer Animationen zur gleichen Zeit (c#) | Microsoft-Dokumentation
+title: Ausführen mehrerer Animationen zur gleichen Zeit (C#) | Microsoft-Dokumentation
 author: wenz
 description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Er ermöglicht es, durch Fallenlassen ausführen...
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58422947"
 ---
-<a name="executing-several-animations-at-the-same-time-c"></a>Ausführen mehrerer Animationen zur gleichen Zeit (c#)
+<a name="executing-several-animations-at-the-same-time-c"></a>Ausführen mehrerer Animationen zur gleichen Zeit (C#)
 ====================
 durch [Christian Wenz](https://github.com/wenz)
 

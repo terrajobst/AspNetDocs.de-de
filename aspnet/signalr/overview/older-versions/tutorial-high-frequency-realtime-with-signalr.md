@@ -70,7 +70,7 @@ Wenn Sie Visual Studio 2010 haben, stellen sicher, dass [NuGet](https://visualst
 In diesem Abschnitt erstellen wir das Projekt in Visual Studio.
 
 1. Von der **Datei** klicken Sie im Menü **neues Projekt**.
-2. In der **neues Projekt** Dialogfeld erweitern Sie **c#** unter **Vorlagen** , und wählen Sie **Web**.
+2. In der **neues Projekt** Dialogfeld erweitern Sie **C#** unter **Vorlagen** , und wählen Sie **Web**.
 3. Wählen Sie die **leere ASP.NET-Webanwendung** Vorlage, nennen Sie das Projekt *MoveShapeDemo*, und klicken Sie auf **OK**.
 
     ![Erstellen des neuen Projekts](tutorial-high-frequency-realtime-with-signalr/_static/image2.png)

@@ -177,7 +177,7 @@ In dieser Aufgabe Sie SignalR zu Projektmappe hinzufügen und Updates für die C
     ![Neues Element hinzufügen](real-time-web-applications-with-signalr/_static/image11.png "neues Element hinzufügen")
 
     *Neues Element hinzufügen*
-6. In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **Visual c# | Web | SignalR** Knoten in den linken Bereich die Option **SignalR-Hubklasse (v2)** im mittleren Bereich aus, nennen Sie die Datei **StatisticsHub.cs** , und klicken Sie auf **hinzufügen**.
+6. In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **Visual C# | Web | SignalR** Knoten in den linken Bereich die Option **SignalR-Hubklasse (v2)** im mittleren Bereich aus, nennen Sie die Datei **StatisticsHub.cs** , und klicken Sie auf **hinzufügen**.
 
     ![Im Dialogfeld für neues Element hinzufügen](real-time-web-applications-with-signalr/_static/image12.png "im Dialogfeld für neues Element hinzufügen")
 

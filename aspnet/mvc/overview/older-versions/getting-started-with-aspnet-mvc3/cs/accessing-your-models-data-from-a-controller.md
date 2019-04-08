@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
-title: Zugreifen auf Modelldaten anhand eines Controllers (c#) | Microsoft-Dokumentation
+title: Zugreifen auf Modelldaten anhand eines Controllers (C#) | Microsoft-Dokumentation
 author: Rick-Anderson
 description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, d.h....
 ms.author: riande

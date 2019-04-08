@@ -101,7 +101,7 @@ Klicken Sie im Projektmappen-Explorer mit der Maustaste der **Modelle** Ordner. 
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image4.png)
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie den C#-Knoten. Wählen Sie unter c#, **Code**. Wählen Sie in der Liste der Codevorlagen, **Schnittstelle**. Benennen Sie die Schnittstelle &quot;IProductRepository&quot;.
+In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie den C#-Knoten. Wählen Sie unter C#, **Code**. Wählen Sie in der Liste der Codevorlagen, **Schnittstelle**. Benennen Sie die Schnittstelle &quot;IProductRepository&quot;.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image5.png)
 

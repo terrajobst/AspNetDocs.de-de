@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
-title: Durchführen von BatchUpdates (c#) | Microsoft-Dokumentation
+title: Durchführen von BatchUpdates (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Erfahren Sie, wie erstellen Sie eine vollständig bearbeitbare DataList-Steuerelement, in dem alle Elemente sind im, Bearbeitungsmodus wird, deren Werte gespeichert werden können, indem Sie auf eine Schaltfläche "Alle aktualisieren" auf die...
 ms.author: riande

@@ -276,7 +276,7 @@ Weitere Informationen zu anderen Themen im Zusammenhang mit MVC, wie z. B. Authe
 
 ## <a name="vb"></a>VB
 
-Wenn Sie das Tutorial ursprünglich erstellt wurde, bereitgestellt wurde c# und VB-Versionen des Projekts Abgeschlossene Downloads. Mit diesem Update werden wir ein C#-herunterladbaren Projekt für die einzelnen Kapitel, um ihn leichter in der Reihe, aber aufgrund der Zeit-Einschränkungen und andere Dinge, die nicht für VB erfolgt an einer beliebigen Stelle Einstieg bereit Wenn Sie beim Erstellen eines VB-Projekts mithilfe dieser Lernprogramme und wäre, die für andere Benutzer freigeben, geben Sie uns möchte.
+Wenn Sie das Tutorial ursprünglich erstellt wurde, bereitgestellt wurde C# und VB-Versionen des Projekts Abgeschlossene Downloads. Mit diesem Update werden wir ein C#-herunterladbaren Projekt für die einzelnen Kapitel, um ihn leichter in der Reihe, aber aufgrund der Zeit-Einschränkungen und andere Dinge, die nicht für VB erfolgt an einer beliebigen Stelle Einstieg bereit Wenn Sie beim Erstellen eines VB-Projekts mithilfe dieser Lernprogramme und wäre, die für andere Benutzer freigeben, geben Sie uns möchte.
 
 <a id="errors"></a>
 

@@ -57,7 +57,7 @@ Sie können Hilfeseiten zu einem vorhandenen Web-API-Projekt mithilfe von NuGet-
 
 Aus der **Tools** die Option **NuGet Paket-Manager**, und wählen Sie dann **Paket-Manager Konsole**. In der [-Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) Fenster, geben Sie einen der folgenden Befehle aus:
 
-Für eine **c#** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
+Für eine **C#** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
 Für eine **Visual Basic** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 

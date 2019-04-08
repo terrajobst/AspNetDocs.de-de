@@ -84,7 +84,7 @@ In dieser Übung implementieren Sie die ReadOnly-GET-Methoden für den Kontakt-M
 In dieser Aufgabe verwenden Sie die neuen ASP.NET Web-Projektvorlagen zum Erstellen einer Web-API-Web-Anwendung.
 
 1. Führen Sie **Visual Studio-2012 Express für Web**, Sie gehen Sie dazu zur **starten** , und geben **Visual Studio Express für Web** drücken Sie dann die **EINGABETASTE**.
-2. Von der **Datei** , wählen Sie im Menü **neues Projekt**. Wählen Sie die **Visual c# | Web** Projekttyp aus der Strukturansicht des Projekt-Typ aus, und wählen Sie dann die **ASP.NET MVC 4-Webanwendung** Projekttyp. Legen Sie die **Namen** zu *ContactManager* und **Projektmappenname** zu *beginnen*, klicken Sie dann auf **OK**.
+2. Von der **Datei** , wählen Sie im Menü **neues Projekt**. Wählen Sie die **Visual C# | Web** Projekttyp aus der Strukturansicht des Projekt-Typ aus, und wählen Sie dann die **ASP.NET MVC 4-Webanwendung** Projekttyp. Legen Sie die **Namen** zu *ContactManager* und **Projektmappenname** zu *beginnen*, klicken Sie dann auf **OK**.
 
     ![Erstellen einer neuen ASP.NET MVC 4.0-Webanwendungsprojekt](build-restful-apis-with-aspnet-web-api/_static/image1.png "erstellen eine neue ASP.NET MVC 4.0-Webanwendungsprojekt")
 
@@ -440,7 +440,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 <a id="CodeSnippetUsingKeyBoard"></a>
 
 <a id="To_add_a_code_snippet_using_the_keyboard_C_only"></a>
-### <a name="to-add-a-code-snippet-using-the-keyboard-c-only"></a>Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)
+### <a name="to-add-a-code-snippet-using-the-keyboard-c-only"></a>Hinzufügen ein Codeausschnitts, die über die Tastatur (nur C#)
 
 1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
 2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
@@ -463,7 +463,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 <a id="CodeSnippetUsingMouse"></a>
 
 <a id="To_add_a_code_snippet_using_the_mouse_C_Visual_Basic_and_XML"></a>
-### <a name="to-add-a-code-snippet-using-the-mouse-c-visual-basic-and-xml"></a>Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)
+### <a name="to-add-a-code-snippet-using-the-mouse-c-visual-basic-and-xml"></a>Hinzufügen ein Codeausschnitts, die mit der Maus (C#, Visual Basic und XML)
 
 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
 2. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.

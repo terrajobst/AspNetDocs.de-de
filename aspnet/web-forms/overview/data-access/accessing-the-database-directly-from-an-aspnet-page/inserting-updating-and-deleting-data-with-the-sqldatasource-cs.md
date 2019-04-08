@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
-title: Einfügen, aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (c#) | Microsoft-Dokumentation
+title: Einfügen, aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In vorherigen Tutorials haben Sie erfahren, wie das ObjectDataSource-Steuerelement, die für das Einfügen, aktualisieren und Löschen von Daten zulässig. Das SqlDataSource-Steuerelement unterstützt t...
 ms.author: riande

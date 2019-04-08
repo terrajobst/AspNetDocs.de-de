@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
-title: Auslagern und Sortieren von Berichtsdaten (c#) | Microsoft-Dokumentation
+title: Auslagern und Sortieren von Berichtsdaten (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Paginierung und Sortierung sind zwei sehr allgemeine Funktionen zum Anzeigen von Daten in einer online-Anwendung. In diesem Tutorial werden wir einen ersten Blick auf das Hinzufügen einer Sortierung dauern und...
 ms.author: riande

@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
-title: Master-/Detailbericht mit einer auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (c#) | Microsoft-Dokumentation
+title: Master-/Detailbericht mit einer auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Tutorial müssen einer GridView-Ansicht, deren Zeilen, die Namen und den Preis jedes Produkts zusammen mit einer Schaltfläche auswählen enthalten. Durch Klicken auf die Schaltfläche auswählen für ein Particu...
 ms.author: riande

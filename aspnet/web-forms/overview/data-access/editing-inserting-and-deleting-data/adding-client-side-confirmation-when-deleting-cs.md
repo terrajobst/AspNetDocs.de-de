@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: Hinzufügen von clientseitiger Bestätigung beim Löschen von (c#) | Microsoft-Dokumentation
+title: Hinzufügen von clientseitiger Bestätigung beim Löschen von (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In den Schnittstellen, die wir bisher erstellt haben, kann ein Benutzer versehentlich löschen von Daten durch Klicken auf die Schaltfläche "löschen", wenn sie auf die Schaltfläche "Bearbeiten" klicken, bestimmt. In diesen Typ t...
 ms.author: riande

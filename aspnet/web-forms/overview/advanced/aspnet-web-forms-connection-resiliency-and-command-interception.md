@@ -39,7 +39,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgende Software auf Ihrem
 - [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) oder [Microsoft Visual Studio Express 2013 für Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). .NET Framework wird automatisch installiert.
 - Die Wingtip Toys Beispielprojekt, damit Sie die Funktionalität, die in diesem Lernprogramm, in das Wingtip Toys-Projekt genannten implementieren können. Den folgenden Link werden die Details herunterladen:
 
-    - [Erste Schritte mit ASP.NET 4.5.1 Web Forms - Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (c#)
+    - [Erste Schritte mit ASP.NET 4.5.1 Web Forms - Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (C#)
 - Vor dem Abschluss dieses Lernprogramms sollten Sie die entsprechenden Reihe von Tutorials, [erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013](../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md). Der Tutorial-Reihe hilft Ihnen, sich mit vertraut machen die **WingtipToys** Projekt- und Code.
 
 ## <a name="connection-resiliency"></a>Verbindungsresilienz

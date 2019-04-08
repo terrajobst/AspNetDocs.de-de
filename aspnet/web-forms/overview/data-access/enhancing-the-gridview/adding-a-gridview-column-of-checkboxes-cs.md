@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
-title: Hinzufügen einer GridView-Spalte mit Kontrollkästchen (c#) | Microsoft-Dokumentation
+title: Hinzufügen einer GridView-Spalte mit Kontrollkästchen (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Tutorial dargestellt, wie ein GridView-Steuerelement, um Benutzern eine intuitive Möglichkeit der Auswählen mehrerer Zeilen mit g eine Spalte mit Kontrollkästchen hinzu...
 ms.author: riande

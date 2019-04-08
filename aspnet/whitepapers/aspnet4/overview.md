@@ -1279,7 +1279,7 @@ Visual Web Developer-Designer in Visual Studio 2010 wurde aktualisiert, um die E
 
 ### <a name="html-and-javascript-snippets"></a>HTML und JavaScript-Ausschnitte
 
-In der HTML-Editor werden automatisch vervollständigt IntelliSense Tag-Namen. Das Feature für die IntelliSense-Codeausschnitte werden automatisch vervollständigt ganze Tags und vieles mehr. In Visual Studio 2010 werden IntelliSense-Codeausschnitte für JavaScript, zusammen mit c# und Visual Basic, die in früheren Versionen von Visual Studio unterstützt wurden.
+In der HTML-Editor werden automatisch vervollständigt IntelliSense Tag-Namen. Das Feature für die IntelliSense-Codeausschnitte werden automatisch vervollständigt ganze Tags und vieles mehr. In Visual Studio 2010 werden IntelliSense-Codeausschnitte für JavaScript, zusammen mit C# und Visual Basic, die in früheren Versionen von Visual Studio unterstützt wurden.
 
 Visual Studio 2010 umfasst mehr als 200 Codeausschnitte, mit denen Sie die automatische Vervollständigung allgemeine ASP.NET- und HTML-Tags, einschließlich der erforderlichen Attribute (z. B. Runat = "Server") und allgemeine Attribute, die spezifisch für ein Tag (z. B. *ID*,  *DataSourceID*, *ControlToValidate*, und *Text*).
 

@@ -772,7 +772,7 @@ Nachdem **für die automatische Skalierung** wurde konfiguriert haben, erstellen
     ![Erstellen eines neuen Projekts](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "Erstellen eines neuen Projekts")
 
     *Erstellen eines neuen Projekts*
-2. In der **neues Projekt** wählen Sie im Dialogfeld **Webleistungs- und Auslastungstestprojekt** unter der **Visual c# | Test** Registerkarte. Stellen Sie sicher, dass **.NET Framework 4.5** wird ausgewählt, nennen Sie das Projekt *WebAndLoadTestProject*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
+2. In der **neues Projekt** wählen Sie im Dialogfeld **Webleistungs- und Auslastungstestprojekt** unter der **Visual C# | Test** Registerkarte. Stellen Sie sicher, dass **.NET Framework 4.5** wird ausgewählt, nennen Sie das Projekt *WebAndLoadTestProject*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
 
     ![Erstellen eines neuen Projekts für Web- und Auslastungstests](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "Erstellen eines neuen Projekts für Web- und Auslastungstests")
 

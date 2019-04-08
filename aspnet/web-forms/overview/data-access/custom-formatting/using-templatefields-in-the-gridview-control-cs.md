@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
-title: Verwenden von TemplateFields im GridView-Steuerelement (c#) | Microsoft-Dokumentation
+title: Verwenden von TemplateFields im GridView-Steuerelement (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Um die Flexibilität zu gewährleisten, bietet die GridView das TemplateField, das gerendert wird, mithilfe einer Vorlage. Eine Vorlage kann eine Mischung aus statischen HTML-Daten, Websteuerelemente enthalten, und...
 ms.author: riande

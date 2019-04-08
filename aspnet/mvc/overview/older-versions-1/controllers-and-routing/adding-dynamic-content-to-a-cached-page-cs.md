@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
-title: Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (c#) | Microsoft-Dokumentation
+title: Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (C#) | Microsoft-Dokumentation
 author: microsoft
 description: Erfahren Sie, wie dynamische und zwischengespeicherte Inhalte auf der gleichen Seite zu kombinieren. Ersetzung nach dem Zwischenspeichern können Sie dynamischen Inhalt, z. B. Banner Ankündigungen o anzuzeigen...
 ms.author: riande

@@ -1,6 +1,6 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity (c#) | Microsoft-Dokumentation
+title: Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity (C#) | Microsoft-Dokumentation
 author: HaoK
 description: Vor der Durchführung dieses Tutorials sollten Sie zuerst erstellen Sie eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung abschließen. In diesem Tutorial...
 ms.author: riande

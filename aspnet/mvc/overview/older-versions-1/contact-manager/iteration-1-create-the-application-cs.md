@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: 'Iteration #1 – Erstellen der Anwendung (c#) | Microsoft-Dokumentation'
+title: 'Iteration #1 – Erstellen der Anwendung (C#) | Microsoft-Dokumentation'
 author: microsoft
 description: 'In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen, aktualisieren und d...'
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58422674"
 ---
-<a name="iteration-1--create-the-application-c"></a>Iteration #1 – Erstellen der Anwendung (c#)
+<a name="iteration-1--create-the-application-c"></a>Iteration #1 – Erstellen der Anwendung (C#)
 ====================
 by [Microsoft](https://github.com/microsoft)
 

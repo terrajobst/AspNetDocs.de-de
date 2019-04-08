@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
-title: Debuggen von gespeicherten Prozeduren (c#) | Microsoft-Dokumentation
+title: Debuggen von gespeicherten Prozeduren (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Visual Studio Professional und Team System-Editionen können Sie Haltepunkte setzen und springen, um gespeicherte Prozeduren in SQL Server, zu debuggen gespeichert...
 ms.author: riande
