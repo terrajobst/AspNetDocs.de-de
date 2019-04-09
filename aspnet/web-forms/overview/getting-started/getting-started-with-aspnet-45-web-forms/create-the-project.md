@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 754f085e3e43f7efa155f410d02a0d29d3349612
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9e2cd1beca03b81140b9d58c5e43dbf7c6b8808b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055977"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393053"
 ---
-<a name="create-the-project"></a>Erstellen des Projekts
-====================
+# <a name="create-the-project"></a>Erstellen des Projekts
+
 by [Erik Reitan](https://github.com/Erikre)
 
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -70,11 +70,11 @@ Sie können zwischen wechseln **Entwurf** anzeigen und **Quelle** Ansicht eine O
 > 
 > ASP.NET bietet vier primäre Webentwicklungs-Frameworks:
 > 
-> - [ASP.NET-Web Forms](../../../index.md)  
+> - [ASP.NET-Web Forms](../../../index.md)  
 >  Die Web Forms-Framework richtet sich an Entwickler, die deklarative und Steuerelementen basierenden Programmierung, z. B. Microsoft Windows Forms (WinForms) "und" WPF/XAML/Silverlight bevorzugen. Es bietet ein Modell WYSIWYG-Designer-driven Development, daher ist die beliebt sind, mit der Entwickler, die für eine Umgebung rapid Application Development (RAD), für die Webentwicklung. Wenn Sie noch keine Erfahrungen Webprogrammierung und mit der herkömmlichen Microsoft RAD-Entwicklung Clienttools (z. B. für Visual Basic und Visual c#) vertraut sind, können Sie schnell eine Webanwendung erstellen, ohne Benutzeroberfläche in HTML und JavaScript.
 > - [ASP.NET MVC](../../../../mvc/index.md)  
 >  ASP.NET MVC richtet sich an Entwickler, die Muster und Prinzipien wie die testgesteuerte Entwicklung, Trennung von Belangen, IoC Inversion of Control (IoC) und Abhängigkeitsinjektion (Dependency Injection) interessiert sind. Dieses Framework fördert die Trennung des Geschäftslogikebene einer Webanwendung auf der Darstellungsschicht.
-> - [ASP.NET-Webseiten 2](../../../../web-pages/index.md)  
+> - [ASP.NET Web Pages](../../../../web-pages/index.md)  
 >  ASP.NET Web Pages richtet sich an Entwickler, die eine einfache Web-Entwicklung Story, wie PHP wünschen. Im Webseiten-Modell HTML-Seiten erstellen und die Seite anschließend serverbasierten Code hinzugefügt werden, um dynamisch zu steuern, wie dieses Markup gerendert wird. Webseiten wurde speziell für ein schlankes Framework werden, und es ist der einfachste Einstiegspunkt in ASP.NET für Personen, die wissen, HTML, aber möglicherweise keine umfassende Programmierfunktionen – z. B., Schüler/Studenten oder Hobbyprogrammierer. Es ist auch eine gute Möglichkeit für Webentwickler, die wissen, PHP oder ähnliche Frameworks, um mithilfe von ASP.NET zu starten.
 > - [ASP.NET-Single-Page-Anwendung](../../../../single-page-application/index.md)  
 >  ASP.NET Single Page Application (SPA) können Sie die Anwendungen zu erstellen, die signifikante clientseitigen Interaktionen mit HTML 5, CSS 3 und JavaScript enthalten. Die ASP.NET und Web Tools 2012.2-Update umfasst eine neue Vorlage zum Erstellen von einseitigen Anwendungen mithilfe von knockout.js und ASP.NET Web-API. Zusätzlich zu der neuen SPA-Vorlage werden neue Community erstellte SPA-Vorlagen auch zum Download zur Verfügung.
@@ -150,7 +150,7 @@ Wenn ein Webserver eine Anforderung für eine Seite erhält, sucht nach der Seit
 > 
 > Für Browser, die kein HTML5 unterstützen, können Sie [Modernizr](http://www.modernizr.com/). Modernizr ist eine Open Source-JavaScript-Bibliothek, die erkennt, ob ein Browser HTML5-Features unterstützt, und aktivieren, wenn dies nicht der Fall. In der Vorlage ASP.NET Web Forms-Anwendung ist Modernizr als NuGet-Paket installiert.
 > 
-> **Bootstrap**
+> **Bootstrap-Stil**
 > 
 > Verwenden Sie die Projektvorlagen für Visual Studio 2013 [Bootstrap](http://getbootstrap.com/), ein Layout und Design-Framework erstellt die Lösung durch Twitter. Bootstrap verwendet CSS3 reaktionsfähiges Design bereitstellen, was bedeutet, dass Layouts an anderen Browser Fenstergrößen dynamisch anpassen können. Sie können auch die Bootstrap Design-Funktion verwenden, auf einfache Weise eine Änderung in der Anwendung aussehen und Verhalten wirksam. Standardmäßig enthält die ASP.NET Web Application-Vorlage in Visual Studio 2013 Bootstrap als NuGet-Paket.
 > 
@@ -190,8 +190,8 @@ In diesem Tutorial haben Sie erstellt haben, führen Sie die Standard-Web Forms-
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Auswählen des richtigen Programmiermodells](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[Von Webanwendungsprojekten und Websiteprojekten](https://msdn.microsoft.com/library/dd547590.aspx)   
+[Auswahl des richtigen Programmiermodells](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
+[Vergleich von Webanwendungsprojekten und Websiteprojekten](https://msdn.microsoft.com/library/dd547590.aspx)   
 [ASP.NET Web Forms-Seiten-Übersicht](https://msdn.microsoft.com/library/428509ah.aspx)
 
 > [!div class="step-by-step"]

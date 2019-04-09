@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5e59077373b68b907391eff5349e1925222792a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e576e11d63f940f1683ed26d217ff255a31b007c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028107"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388412"
 ---
-<a name="understanding-aspnet-ajax-web-services"></a>Grundlegendes zu Webdiensten von ASP.NET AJAX
-====================
+# <a name="understanding-aspnet-ajax-web-services"></a>Grundlegendes zu Webdiensten von ASP.NET AJAX
+
 durch [Scott Cate](https://github.com/scottcate)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial05_Web_Services_with_MS_Ajax_cs.pdf)
@@ -48,7 +48,8 @@ Diese Ersetzung HttpHandler wird vorgenommen, damit JavaScript Object Notation (
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *> [!NOTE] der Name des Vorgangs wird als Teil der URL an den Webdienst definiert. Darüber hinaus werden Request-Meldungen nicht immer über JSON gesendet. Webdienste können das ScriptMethod-Attribut verwenden, mit dem UseHttpGet-Parameter auf True festgelegt, wodurch über übergeben von Parametern an eine die Abfragezeichenfolgen-Parameter.*
+> *> [!NOTE]
+> der Name des Vorgangs wird als Teil der URL an den Webdienst definiert. Darüber hinaus werden Request-Meldungen nicht immer über JSON gesendet. Webdienste können das ScriptMethod-Attribut verwenden, mit dem UseHttpGet-Parameter auf True festgelegt, wodurch über übergeben von Parametern an eine die Abfragezeichenfolgen-Parameter.*
 
 
 **Codebeispiel 3. Webdienst-Antwortnachricht in JSON serialisiert**
@@ -157,7 +158,8 @@ Hinzufügen eines Verweises auf die CustomersService.asmx über das ScriptManage
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *> [!NOTE] Wenn Sie möchten, um den tatsächlichen JavaScript-Proxy-Code anzuzeigen, die generiert wird, Sie geben die URL der gewünschten .NET Webdienst in Internet Explorer Adressfeld und/js an Ende anfügen können.*
+> *> [!NOTE]
+> Wenn Sie möchten, um den tatsächlichen JavaScript-Proxy-Code anzuzeigen, die generiert wird, Sie geben die URL der gewünschten .NET Webdienst in Internet Explorer Adressfeld und/js an Ende anfügen können.*
 
 
 Wenn das Debuggen in "Web.config" aktiviert ist, die auf der Seite als eine Debugversion des JavaScript-Proxys eingebettet werden dargestellten:
@@ -181,7 +183,7 @@ Ein Beispiel für ein JavaScript-Proxy zum Aufrufen einer Web-Methode, die mit d
 Dieser Aufruf verweist auf den Namespace InterfaceTraining, CustomersService-Klasse und GetCustomersByCountry Webmethode in den Dienst definiert. Sie übergibt einen Wert für Land aus einem Textfeld abgerufen als auch eine Rückruffunktion, die mit dem Namen OnWSRequestComplete, die bei Rückgabe des Aufrufs der asynchronen Webdienst aufgerufen werden soll. OnWSRequestComplete verarbeitet das Array von Customer-Objekten, die vom Dienst zurückgegebenen und wandelt sie in einer Tabelle, die auf der Seite angezeigt wird. Die Ausgabe aus dem Aufruf generiert wird, wird in Abbildung 1 dargestellt.
 
 
-[![Binden von Daten, die abgerufen, indem Sie einen asynchronen AJAX-Aufruf an einen Webdienst erstellen.](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
+[![Bindung Daten abgerufen, indem Sie einen asynchronen AJAX-Aufruf an einen Webdienst vornehmen.](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
 
 **Abbildung 1**: Binden von Daten, die abgerufen, indem Sie einen asynchronen AJAX-Aufruf an einen Webdienst erstellen.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-web-services/_static/image3.png))
 
@@ -199,7 +201,7 @@ Asynchrone Rückrufe mit Webdiensten können auftreten, verschiedene Arten von F
 Fehler, die auftreten, wenn der Webdienst aufgerufen wird, löst die OnWSRequestFailed() Callback-Funktion, um aufgerufen werden akzeptiert ein Objekt, das den Fehler als einen Parameter darstellt. Die Error-Objekt macht mehrere verschiedene Funktionen, um die Ursache des Fehlers zu bestimmen, sowie davon, ob für das Timeout des Aufrufs. Codebeispiel 14 zeigt ein Beispiel mit den anderen Fehlerfunktionen und Abbildung 2 zeigt ein Beispiel der Ausgabe von den Funktionen generiert.
 
 
-[![Die Ausgabe von Aufrufen von Funktionen für ASP.NET AJAX-Fehler generiert.](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
+[![Ousgabe durch Aufrufen von Funktionen für ASP.NET AJAX-Fehler generiert.](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
 
 **Abbildung 2**: Die Ausgabe von Aufrufen von Funktionen für ASP.NET AJAX-Fehler generiert.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-web-services/_static/image6.png))
 
@@ -225,7 +227,7 @@ Komplexe Typen akzeptiert oder von einem Webdienst zurückgegeben werden automat
 Um diese Frage zu beantworten, wird davon ausgegangen Sie, dass eine ASP.NET AJAX-Seite zeigt die Daten der Kunden an und ermöglicht Endbenutzern die Adresse eines Kunden zu aktualisieren. Wenn der Webdienst gibt an, dass der Adresstyp (einem komplexen Typ innerhalb einer Klasse CustomerDetails definiert) an den Client gesendet werden kann, kann der Update-Vorgang in separate Funktionen für eine bessere Wiederverwendungsrate für Code unterteilt werden.
 
 
-[![Ausgabe erstellen, die von Aufrufen eines Webdiensts, die RSS-Daten zurückgibt.](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
+[![OZeigen die Erstellung von Aufrufen eines Webdiensts, die RSS-Daten zurückgibt.](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
 
 **Abbildung 3**: Ausgabe erstellen, die von Aufrufen eines Webdiensts, die RSS-Daten zurückgibt.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-web-services/_static/image9.png))
 
@@ -273,7 +275,7 @@ In Fällen, in dem lediglich die Verwendung des Steuerelements in einer bestimmt
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample25.aspx)]
 
 
-[![Verwenden des AutoCompleteExtender-Steuerelements.](understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
+[![UMelden Sie sich das Steuerelement AutoCompleteExtender.](understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
 
 **Abbildung 4**: Verwenden des AutoCompleteExtender-Steuerelements.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-web-services/_static/image12.png))
 

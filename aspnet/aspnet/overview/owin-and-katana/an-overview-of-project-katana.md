@@ -8,15 +8,15 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 52007eba109de28c6d178505b82b1d5ff2883b47
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040737"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392572"
 ---
-<a name="an-overview-of-project-katana"></a>Übersicht über das Katana-Projekt
-====================
+# <a name="an-overview-of-project-katana"></a>Übersicht über das Katana-Projekt
+
 durch [Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework schon seit über zehn Jahren, und die Plattform die Entwicklung von unzähligen Websites und Dienste aktiviert hat. Wie webentwicklungsstrategien für die Anwendung entwickelt haben, wurde das Framework in Schritt mit Technologien wie ASP.NET MVC und ASP.NET Web API weiterentwickeln können. Während der Entwicklung von Webanwendungen der nächsten evolutionären Schritt in die Welt des Cloudcomputings dauert, Projekt [Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET) stellt die zugrunde liegende Reihe von Komponenten für ASP.NET-Anwendungen, sodass sie flexibel, portable, einfache, und geben Sie eine bessere Leistung – anders ausgedrückt, Projekt- [Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET) Cloud optimiert Ihre ASP.NET-Anwendungen.

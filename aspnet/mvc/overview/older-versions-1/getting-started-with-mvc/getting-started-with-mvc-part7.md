@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 4c7867587ba0610f0f1c23d9a0b9fbdc4040de7c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392351"
 ---
-<a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
-====================
+# <a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
@@ -61,11 +61,11 @@ Darüber hinaus fügen Sie dieser einzelnen Zeile oberhalb der Html.BeginForm hi
 
 Hier ist der Code in der IDE angezeigt.
 
-[![Filme – Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![MOvies – Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 Führen Sie die Anwendung und besuchen Sie /Movies/Create erneut, und klicken Sie auf erstellen, ohne Eingabe von Daten. Die Fehlermeldungen werden sofort ohne die Seite flash, ordnen wir Senden von Daten zurück an den Server. Dies ist, da ASP.NET MVC jetzt die Eingabe der sowohl der Client (JavaScript) eine Überprüfung durchgeführt wird und auf dem Server.
 
-[![Erstellen Sie – Windows InternetExplorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![CErstellen – Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 Dies ist gut suchen! Nun fügen Sie eine zusätzliche Spalte in der Datenbank.
 

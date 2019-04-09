@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8ee1d892cd58534c2b64455efed01aa8c2dfdcce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388503"
 ---
-<a name="performing-simple-validation-c"></a>Ausführen einer einfachen Überprüfung (C#)
-====================
+# <a name="performing-simple-validation-c"></a>Ausführen einer einfachen Überprüfung (C#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Erfahren Sie, wie die Validierung in ASP.NET MVC-Anwendungen. In diesem Tutorial führt Stephen Walther Sie Modellzustand sowie die Validierung, HTML-Hilfsprogramme.
@@ -56,12 +56,12 @@ Die Hilfsprogramme Html.ValidationMessage() und Html.ValidationSummary() werden 
 Stellen Sie sicher, dass Sie Ihre Anwendung vor dem Hinzufügen einer Ansicht zu erstellen. Andernfalls nicht die Liste der Klassen angezeigt, der **Datenklasse anzeigen** Dropdown-Liste.
 
 
-[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image2.png))
 
 
-[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
+[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **Abbildung 02**: Erstellen einer stark typisierten Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image4.png))
 
@@ -79,7 +79,7 @@ Das Hilfsprogramm Html.ValidationMessage() wird neben jeder HTML-Formular Felder
 Die Seite in Abbildung 3 zeigt die Fehlermeldungen, die durch die Überprüfung-Hilfsprogramme gerendert wird, wenn das Formular, fehlende Felder mit ungültigen Werten übermittelt wird.
 
 
-[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
+[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **Abbildung 03**: Ansicht "erstellen" mit Problemen übermittelt ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image6.png))
 
@@ -104,7 +104,7 @@ Sie können diese Klassen für cascading Stylesheet ändern und die Darstellung 
 Wenn Sie das HTML-Formular zum Erstellen eines Produkts senden und Sie einen ungültigen Wert für Feld für den Preis und keinen Wert für das UnitsInStock-Feld eingeben, klicken Sie dann die validierungsmeldungen werden angezeigt, die in Abbildung 4 erhalten Sie. Woher kommen diese Überprüfungsfehlermeldungen?
 
 
-[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
+[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **Abbildung 04**: Validierungsfehler Prebinding ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image8.png))
 
