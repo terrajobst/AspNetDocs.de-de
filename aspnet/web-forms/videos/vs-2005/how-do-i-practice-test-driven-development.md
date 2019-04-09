@@ -8,15 +8,15 @@ ms.date: 06/21/2007
 ms.assetid: 60b10049-ca02-4830-b3ce-83e9584511d0
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-practice-test-driven-development
 msc.type: video
-ms.openlocfilehash: 3006b4d61844753dc36c5005dfbf1f66f928dbb5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: debb6c1bf20684149ca259b25bc3df92d12dcd34
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038497"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395419"
 ---
-<a name="how-do-i-practice-test-driven-development"></a>[Gewusst wie:] Praxis testgesteuerte Entwicklung?
-====================
+# <a name="how-do-i-practice-test-driven-development"></a>[Gewusst wie:] Praxis testgesteuerte Entwicklung?
+
 durch [Chris Menegay](https://twitter.com/CMenegay)
 
 Visual Studio Team System bietet die erforderlichen Tools zum Üben Sie die testgesteuerte Entwicklung und in diesem Video erfahren Sie, wie Team System den Testfunktionen von Code zu testen und Tests zu Code wechseln kann. Wir sehen, wie Sie einen Test schreiben und dann mithilfe von Visual Studio Team System, den Zielcode, der der TDD-Grundideen des Schreibens von den Test zuerst entspricht und den Code zu generieren, Zweitens können.

@@ -8,15 +8,15 @@ ms.date: 07/09/2007
 ms.assetid: a5e33a7d-ccb2-483f-a955-3d39f72ba4ec
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-updates
 msc.type: video
-ms.openlocfilehash: 9f146c36ab2225e732a2a35d84bc4e6a616b22d5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 56e3ebfbe0b5af4234791136725de79e38171cc1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044797"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395458"
 ---
-<a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[Gewusst wie:] Wählen Sie zwischen den Methoden für AJAX Seitenupdates?
-====================
+# <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[Gewusst wie:] Wählen Sie zwischen den Methoden für AJAX Seitenupdates?
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem Video vergleicht Joe Stagner die beiden Hauptmethoden der Aktualisierungen leistungsfähige AJAX-Seite in einer ASP.NET-Anwendung. Die erste Methode ist einem UpdatePanel verwenden, in denen kein zusätzlicher Code auf der Clientseite oder die Serverseite geschrieben werden muss. Der Vorteil der Verwendung von UpdatePanel ist, dass alles automatisch funktioniert. Der Nachteil ist, die auf dem Client, der eine große Datenmenge in der AJAX-Anforderung und Antwort eingeschlossen werden muss, und klicken Sie auf dem Server muss einen vollständiger Seitenlebenszyklus ausgeführt werden. Die zweite Methode ist die Verwendung netzwerkrückrufen, zusätzlicher Code, in denen auf der Clientseite und der Serverseite geschrieben werden muss. Der Vorteil der Verwendung von Netzwerk-Rückrufe ist, dass auf dem Client, die es erfordert nur sehr wenig Daten in der AJAX-Anforderung und Antwort einbezogen werden und auf dem Server erfordert nur die aufgerufenen Dienst-Methode, die ausgeführt werden. Die Objekts ist der Aufwand an Zeit und den erforderlichen Code schreiben. Joe schließt das Video mit einer Diskussion über, was Sie bei der Auswahl zwischen die beiden Hauptmethoden der leistungsfähige AJAX-Seitenupdates berücksichtigen sollten. (In diesem Video wird verwendet, den Code aus der [wie beginne ich mit ASP.NET AJAX](how-do-i-get-started-with-aspnet-ajax.md) video und die [‑ Anleitungen stellen von clientseitigen Netzwerkrückrufen mit ASP.NET AJAX](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md) video.)
