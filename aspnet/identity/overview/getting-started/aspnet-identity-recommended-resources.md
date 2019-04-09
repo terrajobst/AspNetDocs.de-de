@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-recommended-resources
-title: ASP.NET Identity – empfohlene Ressourcen | Microsoft-Dokumentation
+title: ASP.NET Identity – empfohlene Ressourcen – ASP.NET 4.x
 author: Rick-Anderson
 description: Dieses Thema enthält Links zu Dokumentationsressourcen zur Verwendung von ASP.NET Identity. Wenn Sie einen hervorragenden Blogbeitrag, Stack Overflow-Thread oder jede andere Lin wissen...
 ms.author: riande
 ms.date: 04/09/2015
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 14a8ec16fe741d87a23bfa45046386a2c08d2f27
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424338"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381899"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity – Empfohlene Ressourcen
 
@@ -39,7 +40,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) in diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 5-app mit Facebook und Google OAuth 2-Autorisierung zu schreiben. Außerdem wird veranschaulicht, mit der Identity-Datenbank zusätzliche Daten hinzuzufügen.
 - [Bereitstellen eine sicheren ASP.NET MVC-app mit Mitgliedschaft, OAuth und SQL-Datenbank in eine Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). In diesem Tutorial wird Azure-Bereitstellung hinzugefügt. So sichern Sie Ihre app mit Rollen, wie Sie die Mitgliedschafts-API zu verwenden, um zusätzliche Sicherheitsfeatures, Benutzer und Rollen hinzuzufügen.
-- [Einführung zu ASP.NET Identity](introduction-to-aspnet-identity.md)
+- [Einführung in ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [Erstellen einer sicheren ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
 - [ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
@@ -59,7 +60,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 - [Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [Zweistufige Authentifizierung mithilfe von SMS und E-Mails mit ASP.NET Identity](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter nach ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [Hinzufügen von ASP.NET Identity zu einem leeren oder vorhandenen Web Forms-Projekt](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - MSDN-Magazin [externe Authentifizierung mit ASP.NET Identity](https://msdn.microsoft.com/magazine/dn745860.aspx) von Dino Esposito
 - MSDN-Magazin[ein erster Blick auf ASP.NET Identity](https://msdn.microsoft.com/magazine/dn605872.aspx) von Dino Esposito

@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 60259ceb99de536410aa5f53db64fb2dca68bf66
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379767"
 ---
-<a name="improvements-in-visual-studio-2005"></a>Verbesserungen in Visual Studio 2005
-====================
+# <a name="improvements-in-visual-studio-2005"></a>Verbesserungen in Visual Studio 2005
+
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 bietet Entwickler eine lange Liste der Verbesserungen und Erweiterungen für Webprojekte.
@@ -438,7 +438,7 @@ Sie sollten beim Haltepunkt ankommen, wie erwartet.
 
 ## <a name="aspnet-development-server"></a>ASP.NET Development Server
 
-Als sechsteilige bereits erläutert ist Visual Studio 2005 mit einem Webserver, der Namen der ASP.NET Development Server enthalten. (ASP.NET Development Server wird manchmal als Cassini bezeichnet.) Dieser Webserver ist eine praktische Möglichkeit zum Durchsuchen und zu Debuggen von Webanwendungen, die im Dateisystem ausgeführt werden.
+Wie bereits erläutert habe, wird Visual Studio 2005 mit einem Webserver, der Namen der ASP.NET Development Server ausgeliefert. (ASP.NET Development Server wird manchmal als Cassini bezeichnet.) Dieser Webserver ist eine praktische Möglichkeit zum Durchsuchen und zu Debuggen von Webanwendungen, die im Dateisystem ausgeführt werden.
 
 Der ASP.NET Development Server ist ein Webserver beschränkt. Remoteverbindungen ist nicht zulässig, Anforderungen von Benutzern als der Benutzer, die der Webserver gestartet ist nicht zulässig. Es muss auch nicht die Möglichkeit, ASP-Seiten bereitstellt. Nur ASP.NET-Ressourcen und HTML-Ressourcen (einschließlich der Bilder, CSS-Dateien usw.) verarbeitet werden.
 

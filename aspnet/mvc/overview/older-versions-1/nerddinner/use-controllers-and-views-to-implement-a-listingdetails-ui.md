@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 64116e56-1c9a-4f07-8097-bb36cbb6e57f
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 203a12473f79f38f7162d360d2179ca7c4a30303
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: abff97e5cc2663465fdf61f41ff69d17104fe8b6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063667"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379468"
 ---
-<a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementieren einer Auflistungs-/Detailbenutzeroberfläche mit Controllern und Ansichten
-====================
+# <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementieren einer Auflistungs-/Detailbenutzeroberfläche mit Controllern und Ansichten
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -94,10 +94,10 @@ Im folgenden finden Sie eine Tabelle, die veranschaulicht, wie eine Vielzahl von
 | **URL** | **Controller-Klasse** | **Action-Methode** | **Übergebene Parameter** |
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
-| */Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
+| */ Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
 | */Dinners/Create* | DinnersController | Create() | Nicht zutreffend |
-| */Dinners* | DinnersController | Index() | Nicht zutreffend |
-| */Home* | HomeController | Index() | Nicht zutreffend |
+| */ Dinners* | DinnersController | Index() | Nicht zutreffend |
+| */ Home* | HomeController | Index() | Nicht zutreffend |
 | */* | HomeController | Index() | Nicht zutreffend |
 
 Die letzten drei Zeilen angezeigt, die Standardwerte (Controller = Home, Aktion = der Index, Id = "") verwendet wird. Da die Methode "Index" als den Standardnamen für die Aktion registriert ist, wenn eine nicht angegeben ist, die "/ Dinners" und "/ Home" URLs Grund der Aktionsmethode Index() für ihre Controllerklassen aufgerufen werden soll. Da der Controller "Home" als den Standardcontroller registriert ist, wenn eine nicht angegeben ist, wird die URL "/" HomeController erstellt werden soll, und die Aktionsmethode Index() darauf aufgerufen werden.

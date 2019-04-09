@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: bd6611a03ee4940f5d4176ce23464f313b9ec884
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382099"
 ---
-<a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Einführung in ASP.NET Web Pages - Veröffentlichen einer Website mit WebMatrix
-====================
+# <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Einführung in ASP.NET Web Pages - Veröffentlichen einer Website mit WebMatrix
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieses Tutorial ist die letzte Folge der tutorialreihe, die ASP.NET Web Pages und Microsoft WebMatrix eingeführt werden. Es wird erläutert, wie Ihre Website mit dem Internet zu veröffentlichen, damit andere Benutzer damit arbeiten können. Es wird vorausgesetzt, Sie haben die Reihe über [für ASP.NET Web Pages-Websites Erstellen einer konsistenten aussehen](https://go.microsoft.com/fwlink/?LinkId=251585).
@@ -45,7 +45,7 @@ Dieses Lernprogramm enthält vier Abschnitte:
 2. Veröffentlichen (Wählen Sie eine der folgenden)  
  a. [Veröffentlichen Sie Ihre Website in Microsoft Azure](#azure)  
  b. [Veröffentlichen Sie Ihre Website in ein Webhostingunternehmen](#host)
-3. [Aktualisieren der Live-Websites: Republishing](#update)
+3. [Aktualisieren der Live-Websites: Erneutes Veröffentlichen](#update)
 
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Die Standardseite einrichten
@@ -217,4 +217,4 @@ Wechseln Sie zu der live-Website (Sie können den Link in der Success-Nachricht 
 - [ASP.NET WebMatrix ASP.NET Web Pages-Forum](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), Fragen, die hervorragend zum Posten und Antworten.
 
 > [!div class="step-by-step"]
-> [Vorherige](layouts.md)
+> [Vorheriges](layouts.md)

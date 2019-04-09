@@ -8,15 +8,15 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 60fffd7cd5139b2be34968c1f33474be867f0962
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 179f6dd3a60f8c49770ee34af93d54defad0adc4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422882"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379409"
 ---
-<a name="high-frequency-realtime-with-signalr-1x"></a>Häufiges Senden von Echtzeitnachrichten mit SignalR 1.x
-====================
+# <a name="high-frequency-realtime-with-signalr-1x"></a>Häufiges Senden von Echtzeitnachrichten mit SignalR 1.x
+
 durch [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -44,8 +44,8 @@ Während die Anwendung mit dieser Methode verwendet werden kann, ist dies keine 
 
 In diesem Tutorial enthält die folgenden Abschnitte:
 
-- [Erforderliche Komponenten](#prerequisites)
-- [Erstellen des Projekts](#createtheproject)
+- [Vorraussetzungen](#prerequisites)
+- [Erstellen eines Projekts](#createtheproject)
 - [Fügen Sie die ASP.NET SignalR und JQuery.UI-NuGet-Pakete](#nugetpackages)
 - [Erstellen Sie die grundlegende Anwendung](#baseapp)
 - [Die Client-Schleife hinzufügen](#clientloop)
@@ -70,7 +70,7 @@ Wenn Sie Visual Studio 2010 haben, stellen sicher, dass [NuGet](https://visualst
 In diesem Abschnitt erstellen wir das Projekt in Visual Studio.
 
 1. Von der **Datei** klicken Sie im Menü **neues Projekt**.
-2. In der **neues Projekt** Dialogfeld erweitern Sie **C#** unter **Vorlagen** , und wählen Sie **Web**.
+2. In der **neues Projekt** Dialogfeld erweitern Sie **c#** unter **Vorlagen** , und wählen Sie **Web**.
 3. Wählen Sie die **leere ASP.NET-Webanwendung** Vorlage, nennen Sie das Projekt *MoveShapeDemo*, und klicken Sie auf **OK**.
 
     ![Erstellen des neuen Projekts](tutorial-high-frequency-realtime-with-signalr/_static/image2.png)

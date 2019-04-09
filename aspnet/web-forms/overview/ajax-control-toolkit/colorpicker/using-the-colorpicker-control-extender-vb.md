@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: 577ae07b-a872-4818-a804-bca489b40ad0
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2fa3804411cb553de242a503f57e247efc990156
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 311cd61ae971dd6b902411eca87f75f87f5868ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384058"
 ---
-<a name="using-the-colorpicker-control-extender-vb"></a>Verwendung des ColorPicker-Steuerelement-Extenders (VB)
-====================
+# <a name="using-the-colorpicker-control-extender-vb"></a>Verwendung des ColorPicker-Steuerelement-Extenders (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > ColorPicker ist ein ASP.NET AJAX-Extender, der clientseitige Farbe auswählen Funktionalität mit Benutzeroberfläche in einem Popupsteuerelement enthält. Sie können auf jedes ASP.NET TextBox-Steuerelement angefügt werden. It.
@@ -29,7 +29,7 @@ Das Ziel in diesem Tutorial wird beschrieben, wie Sie den AJAX Control Toolkit C
 Stellen Sie sich vor, z. B., dass eine Website zu erstellen, die Besucher zum Erstellen von benutzerdefinierten Visitenkarten ermöglicht werden soll. Besucher können Geben Sie den Text für eine Visitenkarte und die Farbe auswählen. Die ASP.NET-Seite in Codebeispiel 1 enthält zwei TextBox-Steuerelemente, die mit dem Namen TxtCardText und TxtCardColor. Wenn Sie das Formular übermitteln, werden die ausgewählten Werte angezeigt (siehe Abbildung 1).
 
 
-[![Einfaches Formular zum Erstellen einer Visitenkarte](using-the-colorpicker-control-extender-vb/_static/image1.jpg)](using-the-colorpicker-control-extender-vb/_static/image1.png)
+[![Sinfache Form zum Erstellen einer Visitenkarte](using-the-colorpicker-control-extender-vb/_static/image1.jpg)](using-the-colorpicker-control-extender-vb/_static/image1.png)
 
 **Abbildung 01**: Einfaches Formular zum Erstellen einer Visitenkarte ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-vb/_static/image2.png))
 
@@ -43,7 +43,7 @@ Das Formular in Codebeispiel 1 funktioniert, aber es bietet eine hervorragende b
 Sie können die ColorPicker-Steuerelement-Extender verwenden, um eine bessere benutzererfahrung zu erstellen. Farbwähler zeigt ein Dialogfeld Farbe aus, wenn auf ein Textfeldsteuerelement den Fokus zu verschieben (siehe Abbildung 2).
 
 
-[![Der ColorPicker-Steuerelement-Extender](using-the-colorpicker-control-extender-vb/_static/image2.jpg)](using-the-colorpicker-control-extender-vb/_static/image3.png)
+[![Ter ColorPicker-Steuerelement-Extender](using-the-colorpicker-control-extender-vb/_static/image2.jpg)](using-the-colorpicker-control-extender-vb/_static/image3.png)
 
 **Abbildung 02**: ColorPicker-Steuerelement-Extender ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-vb/_static/image4.png))
 
@@ -60,12 +60,12 @@ Bevor Sie die ColorPicker-Komponente verwenden können, müssen Sie ein ScriptMa
 Die einfachste Möglichkeit zum Hinzufügen des ColorPicker-Extenders-Steuerelements auf der Seite ist in der Entwurfsansicht. Wenn Sie den Mauszeiger auf das Textfeld TxtCardColor zeigen, eine Smarttask Option wird angezeigt, der ermöglicht es Ihnen, einen Extender hinzuzufügen (siehe Abbildung 3). Wenn Sie diese Option auswählen, die Extender-Assistent (siehe Abbildung 4) wird angezeigt.
 
 
-[![Hinzufügen eines Extenders](using-the-colorpicker-control-extender-vb/_static/image3.jpg)](using-the-colorpicker-control-extender-vb/_static/image5.png)
+[![AHinzufügen eines Extenders](using-the-colorpicker-control-extender-vb/_static/image3.jpg)](using-the-colorpicker-control-extender-vb/_static/image5.png)
 
 **Abbildung 03**: Hinzufügen eines Extenders ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-vb/_static/image6.png))
 
 
-[![Einen Extender-Steuerelements mit dem Assistenten für Extender auswählen](using-the-colorpicker-control-extender-vb/_static/image4.jpg)](using-the-colorpicker-control-extender-vb/_static/image7.png)
+[![SWahl einen Extender-Steuerelements mit Extender-Assistent](using-the-colorpicker-control-extender-vb/_static/image4.jpg)](using-the-colorpicker-control-extender-vb/_static/image7.png)
 
 **Abbildung 04**: Wählen einen Extender-Steuerelements mit dem Assistenten für Extender ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-vb/_static/image8.png))
 
@@ -102,7 +102,7 @@ Die ColorPicker PopupButtonID-Eigenschaft wird verwendet, der ColorPicker-Extend
 Die SampleControlID-Eigenschaft wird verwendet, um ein Steuerelement zuzuordnen, die die ausgewählte Farbe mit der ColorPicker anzeigt. Die ColorPicker ändert die Hintergrundfarbe des Steuerelements, die zurzeit ausgewählte Farbe an.
 
 
-[![Das Dialogfeld für die Farbauswahl mit einer Schaltfläche anzeigen](using-the-colorpicker-control-extender-vb/_static/image5.jpg)](using-the-colorpicker-control-extender-vb/_static/image9.png)
+[![DDas Dialogfeld für die Farbauswahl mit einer Schaltfläche IsPlaying den Wert](using-the-colorpicker-control-extender-vb/_static/image5.jpg)](using-the-colorpicker-control-extender-vb/_static/image9.png)
 
 **Abbildung 05**: Das Dialogfeld mit einer Schaltfläche für die Farbauswahl angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-vb/_static/image10.png))
 
@@ -112,4 +112,4 @@ Die SampleControlID-Eigenschaft wird verwendet, um ein Steuerelement zuzuordnen,
 In diesem Tutorial haben Sie gelernt, wie die ColorPicker-Steuerelement-Extender zu verwenden, um ein Dialogfeld für die Farbauswahl Popup anzuzeigen. Zunächst können wir untersucht, wie Sie das Dialogfeld anzeigen können, wenn der Fokus in einem TextBox-Steuerelement verschoben wird. Als Nächstes, wie Sie eine Schaltfläche zu erstellen, in dem das Dialogfeld für die Farbauswahl angezeigt, wenn die Schaltfläche geklickt wird.
 
 > [!div class="step-by-step"]
-> [Vorherige](using-the-colorpicker-control-extender-cs.md)
+> [Vorheriges](using-the-colorpicker-control-extender-cs.md)

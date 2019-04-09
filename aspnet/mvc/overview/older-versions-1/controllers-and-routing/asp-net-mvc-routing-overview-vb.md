@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: 4bc8d19a-80f1-44b4-adbf-95ed22d691ca
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c20626b24e43031fc4103365396fc26b6a6daf93
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c135bacd7f9f87fac87a3c8cf41bad359bb3c0a2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038057"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379182"
 ---
-<a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC-Routing – Übersicht (VB)
-====================
+# <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC-Routing – Übersicht (VB)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial zeigt, wie ASP.NET MVC-Framework Controlleraktionen Browseranforderungen zugeordnet.
@@ -34,7 +34,7 @@ Wichtiger ist, und Zweitens wird eine Routingtabelle, in der Datei Global.asax d
 
 Die Datei in Codebeispiel 1 enthält die Standarddatei "Global.asax" für eine ASP.NET MVC-Anwendung.
 
-**Listing 1 - Global.asax.vb**
+**1 – Global.asax.vb auflisten**
 
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample1.vb)]
 
@@ -95,7 +95,7 @@ Zum Schluss Aufrufen der Methode Index() in Listing 5 mit der URL gibt führt da
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample5.vb)]
 
 
-[![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
+[![INvoking eine Controlleraktion, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
 
 **Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-routing-overview-vb/_static/image2.png))
 

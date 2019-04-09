@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 63e31d719991dddec2168524187c304256d1b4e0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 571e34a8c87bf54b8dd71c912f16ebcdab3c87a7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426106"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383446"
 ---
-<a name="creating-a-customized-sorting-user-interface-vb"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (VB)
-====================
+# <a name="creating-a-customized-sorting-user-interface-vb"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_VB.exe) oder [PDF-Datei herunterladen](creating-a-customized-sorting-user-interface-vb/_static/datatutorial27vb1.pdf)
@@ -31,7 +31,7 @@ Wenn mit einer langen Liste sortierter Daten vorhanden sind nur wenige unterschi
 Damit können die Grenzen zwischen sortierte Gruppen markieren, nutzen viele Websites eine Benutzeroberfläche, die ein Trennzeichen zwischen Gruppen hinzugefügt. Trennzeichen, wie in Abbildung 1 dargestellten ermöglicht Benutzern schneller eine bestimmte Gruppe suchen und identifizieren die Grenzen, als auch ermitteln, welche unterschiedlichen Gruppen in den Daten vorhanden sind.
 
 
-[![Jede Kategoriegruppe ist eindeutig identifiziert](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
+[![EACH Kategoriegruppe ist eindeutig identifiziert.](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
 
 **Abbildung 1**: Jede Kategoriegruppe ist eindeutig identifiziert ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
 
@@ -50,7 +50,7 @@ Konfigurieren Sie anschließend die GridView, nur enthält die `ProductName`, `C
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt bisher in einem Browser anzuzeigen. Abbildung 2 zeigt das sortierbare GridView, wenn die Daten nach Kategorie in alphabetischer Reihenfolge sortiert ist.
 
 
-[![Der sortierbare GridView-s werden Daten nach Kategorie sortiert.](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
+[![Ter sortierbar GridView s Daten ist nach Kategorie sortiert wird](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
 
 **Abbildung 2**: Die sortierbar GridView-Zuordnungsvorgänge, die Daten nach Kategorie sortiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
 
@@ -100,7 +100,7 @@ Anstatt die Daten vor dem Binden an die GridView-messaging, wir können die Tren
 Um Trennzeichen für Zeilen zwischen den einzelnen sortieren Gruppen hinzuzufügen, können wir diese Steuerelementhierarchie direkt bearbeiten, nachdem es erstellt wurde. Wir können sicher sein, dass die Hierarchie der GridView-s-Steuerelemente zum letzten Mal mit der Zeit erstellt wurde, die die Seite gerendert wird. Dieser Ansatz aus diesem Grund überschreibt die `Page` Klasse s `Render` Methode, die an diesem Punkt-die Steuerelementhierarchie GridView s endgültige aktualisiert wird, um die erforderlichen Trennzeichen für Zeilen enthalten. Dieser Prozess wird in Abbildung 4 dargestellt.
 
 
-[![Eine alternative Methode bearbeitet die Hierarchie der GridView-s-Steuerelemente](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
+[![An alternative Methode bearbeitet die Hierarchie der GridView-s-Steuerelemente](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
 
 **Abbildung 4**: Eine alternative Methode ändert das GridView-s-Serversteuerelement-Hierarchie ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
 
@@ -156,12 +156,12 @@ Die CSS-Klasse, die zum Formatieren der Sortierung Gruppenkopfzeile verwendet `S
 Durch den aktuellen Code aus, die Sortierung-Schnittstelle fügt Kopfzeilen von Gruppen sortieren, beim Sortieren nach jeder BoundField (siehe Abbildung 5, die einen Screenshot beim Sortieren von Lieferant zeigt). Allerdings sind beim Sortieren von jedem anderen Feldtyp (z. B. eine CheckBoxField oder TemplateField) der Sort-Gruppenheader an keiner Stelle (siehe Abbildung 6) gefunden werden.
 
 
-[![Die Sortierung Schnittstelle enthält Header, Gruppe sortieren, beim Sortieren nach BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
+[![Ter Sortierung Schnittstelle umfasst sortieren Gruppenkopfzeilen beim Sortieren nach BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
 
 **Abbildung 5**: Das Sortieren-Schnittstelle enthält sortieren Header beim Sortieren von Gruppen von BoundFields ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
 
 
-[![Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
+[![Tseine Sortierung Gruppenkopfzeilen sind fehlende beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
 
 **Abbildung 6**: Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
 
@@ -178,7 +178,7 @@ Dieser Code überprüft die sortierte Spalte `TableCell` für die aktuelle Zeile
 Mit dem obigen Code außerdem der Sort-Gruppenheader vorhanden sind beim Sortieren nach CheckBoxField nicht mehr unterstützt (siehe Abbildung 7).
 
 
-[![Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
+[![Tseine Sortierung Gruppenkopfzeilen sind jetzt vorhanden beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
 
 **Abbildung 7**: Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
 
@@ -198,4 +198,4 @@ Viel Spaß beim Programmieren!
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Vorherige](sorting-custom-paged-data-vb.md)
+> [Vorheriges](sorting-custom-paged-data-vb.md)

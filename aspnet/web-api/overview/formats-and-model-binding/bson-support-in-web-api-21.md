@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
-title: BSON-Unterstützung in ASP.NET Web-API 2.1 | Microsoft-Dokumentation
+title: BSON-Unterstützung in ASP.NET Web-API 2.1 – ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: Zeigt, wie BSON in einem Web-API-Controller (serverseitig) und in einer .NET Client-app für ASP.NET 4.x.
 ms.author: riande
 ms.date: 01/20/2014
+ms.custom: seoapril2019
 ms.assetid: ce11b017-0ca6-4376-aa9d-a7f3288101de
 msc.legacyurl: /web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
 msc.type: authoredcontent
-ms.openlocfilehash: 709fb0266c0725176358a1bd0d08b3e07fa6e2a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 911e2abcfd277075b3cba71e624ec6390b99a15e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382227"
 ---
-<a name="bson-support-in-aspnet-web-api-21"></a>BSON-Unterstützung in ASP.NET Web-API 2.1
-====================
+# <a name="bson-support-in-aspnet-web-api-21"></a>BSON-Unterstützung in ASP.NET Web-API 2.1
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-Web-API 2.1 führt die Unterstützung für BSON. In diesem Thema veranschaulicht, wie BSON in Ihren Web-API-Controller (serverseitig) und einer .NET Client-app verwenden.
+In diesem Thema veranschaulicht, wie BSON in Ihren Web-API-Controller (serverseitig) und einer .NET Client-app verwenden. Web-API 2.1 führt die Unterstützung für BSON. 
 
 ## <a name="what-is-bson"></a>Was ist BSON?
 

@@ -8,15 +8,15 @@ ms.date: 09/19/2014
 ms.assetid: 607f4617-380f-41fa-bf46-147e82bb8124
 msc.legacyurl: /signalr/overview/older-versions
 msc.type: chapter
-ms.openlocfilehash: 160c3b2f0d255314bdf9fef3eda22cb578de476e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 67ca6b1dc68dc2dde4e24d4d6c6ddae04fc4bb6d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022387"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383473"
 ---
-<a name="signalr-older-versions"></a>Ältere Versionen von SignalR
-====================
+# <a name="signalr-older-versions"></a>Ältere Versionen von SignalR
+
 > Dokumentation, die sich auf frühere Versionen von SignalR beziehen.
 
 
@@ -30,13 +30,13 @@ ms.locfileid: "57022387"
 - [Überblick und Behandeln von Ereignissen im Zusammenhang mit der Verbindungslebensdauer in SignalR](handling-connection-lifetime-events.md)
 - [Arbeiten mit Gruppen in SignalR 1.x](working-with-groups.md)
 - [Zuordnen von SignalR-Benutzern zu Verbindungen in SignalR 1.x](mapping-users-to-connections.md)
-- [Einführung zur Sicherheit von SignalR-Anwendungen (SignalR 1.x)](introduction-to-security.md)
+- [Einführung in die Sicherheit von SignalR-Anwendungen (SignalR 1.x)](introduction-to-security.md)
 - [Authentifizierung und Autorisierung für SignalR-Hubs (SignalR 1.x)](hub-authorization.md)
 - [Authentifizierung und Autorisierung für permanente SignalR-Verbindungen (SignalR 1.x)](persistent-connection-authorization.md)
 - [SignalR-Leistung (SignalR 1.x)](signalr-performance.md)
-- [Einführung zur horizontalen Skalierung in SignalR 1.x](scaleout-in-signalr.md)
-- [Horizontale Skalierung in SignalR mit dem Azure Service Bus (SignalR 1.x)](scaleout-with-windows-azure-service-bus.md)
+- [Einführung in die horizontale Skalierung in SignalR 1.x](scaleout-in-signalr.md)
+- [Horizontale Skalierung in SignalR mit Azure Service Bus (SignalR 1.x)](scaleout-with-windows-azure-service-bus.md)
 - [Horizontale Skalierung in SignalR mit Redis (SignalR 1.x)](scaleout-with-redis.md)
 - [Horizontale Skalierung in SignalR mit SQL Server (SignalR 1.x)](scaleout-with-sql-server.md)
-- [Behandlung von Problemen bei SignalR (SignalR 1.x)](troubleshooting.md)
+- [Problembehandlung für SignalR (SignalR 1.x)](troubleshooting.md)
 - [Abhängigkeitsinjektion in SignalR 1.x](dependency-injection.md)

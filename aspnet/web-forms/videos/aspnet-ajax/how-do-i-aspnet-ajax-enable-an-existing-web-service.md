@@ -8,15 +8,15 @@ ms.date: 01/26/2007
 ms.assetid: 15a8d767-a99e-4459-8466-7746b5f29362
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-aspnet-ajax-enable-an-existing-web-service
 msc.type: video
-ms.openlocfilehash: b17013fd2393756e62e36b74a3bbbb202d754d32
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3d4a6008ca8668b18599ccbff625df33f9ce7504
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379130"
 ---
-<a name="how-do-i-aspnet-ajax-enable-an-existing-web-service"></a>[Gewusst wie:] Aktivieren ein vorhandenen Webdiensts mit ASP.NET-AJAX?
-====================
+# <a name="how-do-i-aspnet-ajax-enable-an-existing-web-service"></a>[Gewusst wie:] Aktivieren ein vorhandenen Webdiensts mit ASP.NET-AJAX?
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Dieses Video zeigt, wie einfach es ist, Microsoft ASP.NET AJAX-Funktionen eines vorhandenen Webdiensts in ASP.NET hinzufügen. Dadurch wird den Webdienst einen JavaScript-Proxy zu generieren, mit denen der Clientbrowser Aufrufen des Webdiensts.

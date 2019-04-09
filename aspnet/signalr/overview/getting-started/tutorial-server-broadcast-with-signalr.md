@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a243c78c7d552f1c82a88c6083871fcd16538618
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aa8c0be6e4a758da34fc6eed902e31049d0a9a9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379728"
 ---
 # <a name="tutorial-server-broadcast-with-signalr-2"></a>Tutorial: Server senden, die mit SignalR 2
 
@@ -43,7 +43,7 @@ In diesem Tutorial:
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
- * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der **ASP.NET und Webentwicklung** arbeitsauslastung.
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der **ASP.NET und Webentwicklung** arbeitsauslastung.
 
 ## <a name="create-the-project"></a>Erstellen eines Projekts
 
@@ -75,7 +75,7 @@ Zunächst erstellen Sie die *Stock* Modellklasse, die Sie verwenden zum Speicher
 
 ### <a name="create-the-stocktickerhub-and-stockticker-classes"></a>Erstellen Sie die StockTickerHub und StockTicker-Klasse
 
-Sie verwenden die SignalR-Hub-API, um die Server-zu-Client-Interaktion. Ein `StockTickerHub` abgeleitete Klasse die `SignalRHub` Klasse übernimmt die Verbindungen und Methodenaufrufen von Clients empfangen. Sie müssen auch vordefinierte Daten beizubehalten, und führen Sie eine `Timer` Objekt. Die `Timer` Objekt löst in regelmäßigen Abständen preisaktualisierungen unabhängig von Clientverbindungen. Diese Funktionen können nicht eingefügt werden, einem `Hub` Klasse, da Hubs vorübergehend sind. Die app erstellt ein `Hub` Klasseninstanz für jeden Vorgang im Hub wie Verbindungen und Aufrufe vom Client an den Server. Daher ist der Mechanismus, der aktualisiert Preise, bleiben die vorhandene Daten und überträgt die preisaktualisierungen in einer separaten Klasse ausführen. Sie werden benennen Sie die Klasse `StockTicker`.
+Sie verwenden die SignalR-Hub-API, um die Server-zu-Client-Interaktion. Ein `StockTickerHub` von SignalR abgeleitete Klasse `Hub` Klasse übernimmt die Verbindungen und Methodenaufrufen von Clients empfangen. Sie müssen auch vordefinierte Daten beizubehalten, und führen Sie eine `Timer` Objekt. Die `Timer` Objekt löst in regelmäßigen Abständen preisaktualisierungen unabhängig von Clientverbindungen. Diese Funktionen können nicht eingefügt werden, einem `Hub` Klasse, da Hubs vorübergehend sind. Die app erstellt ein `Hub` Klasseninstanz für jeden Vorgang im Hub wie Verbindungen und Aufrufe vom Client an den Server. Daher ist der Mechanismus, der aktualisiert Preise, bleiben die vorhandene Daten und überträgt die preisaktualisierungen in einer separaten Klasse ausführen. Sie werden benennen Sie die Klasse `StockTicker`.
 
 ![Übertragungen von StockTicker](tutorial-server-broadcast-with-signalr/_static/image3.png)
 

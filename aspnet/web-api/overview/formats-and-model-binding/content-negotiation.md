@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: Inhaltsaushandlung in ASP.NET Web-API | Microsoft-Dokumentation
+title: Inhaltsaushandlung in der ASP.NET Web-API – ASP.NET 4.x
 author: MikeWasson
-description: Beschreibt, wie HTTP-Aushandlung von Inhalten von ASP.NET Web-API implementiert.
+description: Beschreibt, wie HTTP-Aushandlung von Inhalten für ASP.NET von ASP.NET Web-API implementiert 4.x.
 ms.author: riande
 ms.date: 05/20/2012
+ms.custom: seoapril2019
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfbed49c1022fbf26160e89aed3ab474f5e0fdc
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: cb6668ff6de276d3778ce11f27ce597d8bf1f9c7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425690"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380158"
 ---
-<a name="content-negotiation-in-aspnet-web-api"></a>Aushandlung von Inhalten in ASP.NET Web-API
-====================
+# <a name="content-negotiation-in-aspnet-web-api"></a>Aushandlung von Inhalten in ASP.NET Web-API
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Artikel wird beschrieben, wie ASP.NET Web-API die Aushandlung von Inhalten implementiert.
+In diesem Artikel wird beschrieben, wie die Aushandlung von Inhalten für ASP.NET von ASP.NET Web-API implementiert 4.x.
 
 Die HTTP-Spezifikation (RFC 2616) definiert die Aushandlung von Inhalten als "der Vorgang der Auswahl der besten Darstellung für eine bestimmte Antwort, wenn mehrere Darstellungen verfügbar sind." Der primäre Mechanismus für die Content Negotiation in HTTP gibt, dass diese Header anfordern:
 

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: f7073f50-d765-456d-9957-926ce60f35f6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d9933af3f1be20177c958413173746fe087dec43
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ff143aa102973279c53fe4ba052c4766f099c77d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425807"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382211"
 ---
-<a name="executing-animations-using-client-side-code-vb"></a>Ausführen von Animationen mit clientseitigem Code (VB)
-====================
+# <a name="executing-animations-using-client-side-code-vb"></a>Ausführen von Animationen mit clientseitigem Code (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10VB.pdf)
@@ -63,7 +63,7 @@ Hier ist der vollständige clientseitige JavaScript-Code, der dem Klicken auf de
 [!code-html[Main](executing-animations-using-client-side-code-vb/samples/sample8.html)]
 
 
-[![Die Animation wird sofort ohne ein Mausklick ausgeführt.](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)
+[![TIE-Animation sofort ausgeführt, ohne ein Mausklick](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)
 
 Die Animation wird sofort ausgeführt, ohne ein Mausklick ([klicken Sie, um das Bild in voller Größe anzeigen](executing-animations-using-client-side-code-vb/_static/image3.png))
 

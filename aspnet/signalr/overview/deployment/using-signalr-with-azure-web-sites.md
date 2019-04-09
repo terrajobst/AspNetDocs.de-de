@@ -8,15 +8,15 @@ ms.date: 07/01/2015
 ms.assetid: 2a7517a0-b88c-4162-ade3-9bf6ca7062fd
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 13eb5d29a2c40f52aed4b569ec8695f014a05f03
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 531aba3753bf97b8bf1763a22615fb811b375286
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379143"
 ---
-<a name="using-signalr-with-web-apps-in-azure-app-service"></a>Verwenden von SignalR mit Web-Apps in Azure App Service
-====================
+# <a name="using-signalr-with-web-apps-in-azure-app-service"></a>Verwenden von SignalR mit Web-Apps in Azure App Service
+
 durch [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -40,7 +40,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 
 ## <a name="table-of-contents"></a>Inhaltsverzeichnis
 
-- [Introduction (Einführung)](#introduction)
+- [Einführung](#introduction)
 - [Bereitstellen einer SignalR-Web-App in Azure App Service](#deploying)
 - [Aktivieren WebSockets in Azure App Service](#websocket)
 - [Mithilfe der Azure Redis Cache-Rückwandplatine](#backplane)
@@ -56,7 +56,7 @@ ASP.NET SignalR kann verwendet werden, um eine neue Ebene der Interaktivität zw
 
 SignalR hinzufügen keine bestimmten schwierigkeiten für die Bereitstellung von einer Anwendung in Azure und der Bereitstellung mit einem lokalen Server. Eine Anwendung, die SignalR verwendet in Azure gehostet werden kann, ohne Änderungen an der Konfiguration oder sonstige Einstellungen (über WebSockets-Unterstützung finden Sie unter [Aktivieren von WebSockets in Azure App Service](#websocket) unten.) In diesem Tutorial stellen Sie die Anwendung erstellt, der [Getting Started Tutorial](../getting-started/tutorial-getting-started-with-signalr.md) in Azure.
 
-**Erforderliche Komponenten**
+**Vorraussetzungen**
 
 - Visual Studio 2013. Wenn Sie Visual Studio nicht haben, ist Visual Studio-2013 Express für Web in der Installation des Azure SDK enthalten.
 - [Azure SDK 2.3 für Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) oder [Azure SDK 2.3 für Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=323511).

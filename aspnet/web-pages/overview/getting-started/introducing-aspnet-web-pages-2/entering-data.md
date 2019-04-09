@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: e40d2962ccac56eaaf4812819aa42168e69295bc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029797"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380118"
 ---
-<a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Einführung in ASP.NET Web Pages - eingeben von Datenbankdaten mithilfe von Formularen
-====================
+# <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Einführung in ASP.NET Web Pages - eingeben von Datenbankdaten mithilfe von Formularen
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Tutorial erfahren Sie, wie ein Anmeldeformular erstellen, und geben dann auf die Daten, die aus dem Formular in eine Datenbanktabelle bei Verwendung von ASP.NET Web Pages (Razor). Es wird vorausgesetzt, Sie haben die Reihe über [Grundlagen von HTML-Formularen in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581).
@@ -98,7 +98,7 @@ Das heißt, geben Sie die Tabelle einzufügen, führen Sie dann die Spalten zum 
 
 Die Spalten, die Sie in einfügen bereits im Befehl angegeben werden – `(Title, Genre, Year)`. Der interessante Teil befindet, wie Sie die Werte aus den Textfeldern in Abrufen der `VALUES` Teil des Befehls. Anstelle der tatsächlichen Werte angezeigt `@0`, `@1`, und `@2`, das sind natürlich Platzhalter. Wenn Sie den Befehl ausführen (auf der `db.Execute` Zeile), übergeben Sie die Werte, die Sie aus den Textfeldern erhalten haben.
 
-**Wichtig** Beachten Sie, dass die einzige Möglichkeit, Sie sollte jemals enthalten Daten, die online von einem Benutzer in einer SQL-Anweisung eingegeben ist die Verwendung von Platzhaltern, wie Sie hier sehen (`VALUES(@0, @1, @2)`). Wenn Sie auf der Benutzereingabe in eine SQL-Anweisung verketten, Sie öffnen, selbst für eine SQL-Injection-Angriff, wie unter [Form-Grundlagen in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) (das vorherige Lernprogramm).
+**Wichtig!** Beachten Sie, dass die einzige Möglichkeit, Sie sollte jemals enthalten Daten, die online von einem Benutzer in einer SQL-Anweisung eingegeben ist die Verwendung von Platzhaltern, wie Sie hier sehen (`VALUES(@0, @1, @2)`). Wenn Sie auf der Benutzereingabe in eine SQL-Anweisung verketten, Sie öffnen, selbst für eine SQL-Injection-Angriff, wie unter [Form-Grundlagen in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) (das vorherige Lernprogramm).
 
 Immer noch innerhalb der `if` blockieren, die folgende Zeile nach dem Hinzufügen der `db.Execute` Zeile:
 
@@ -253,7 +253,7 @@ Im nächsten Tutorial erfahren Sie, wie, damit Benutzer Daten zu bearbeiten, die
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Einführung in die ASP.NET-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL INSERT INTO-Anweisung](http://www.w3schools.com/sql/sql_insert.asp) auf der Website W3Schools
 - [Überprüfen der Benutzereingabe in der ASP.NET Web Pages-Websites](https://go.microsoft.com/fwlink/?LinkId=253002). Weitere Informationen zum Arbeiten mit der `Validation` Helper.
 

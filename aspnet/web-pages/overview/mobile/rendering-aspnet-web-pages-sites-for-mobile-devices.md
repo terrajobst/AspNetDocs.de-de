@@ -8,15 +8,15 @@ ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: dd06a54d396bd85eeef7c004ee115828d541a2c1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dbcd25331387f8606343e551302bc3ed1f9b2c25
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031107"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379507"
 ---
-<a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>Rendern von ASP.NET Web Pages (Razor)-Websites für Mobilgeräte
-====================
+# <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>Rendern von ASP.NET Web Pages (Razor)-Websites für Mobilgeräte
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieser Artikel beschreibt, wie Sie Seiten in einer ASP.NET Web Pages (Razor)-Website zu erstellen, die auf mobilen Geräten ordnungsgemäß gerendert wird.
@@ -37,7 +37,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 ASP.NET Web Pages ermöglicht das Erstellen benutzerdefinierter angezeigt, die zum Rendern von Inhalt auf Mobilgeräten und anderen Geräten.
 
-Die einfachste Möglichkeit zum Erstellen von gerätespezifischen-Seite in einer ASP.NET Web Pages-Website wird mithilfe eines Musters Dateibenennung wie folgt: <em>FileName.</em><em>Mobile</em><em>.cshtml</em>. Sie können zwei Versionen einer Seite erstellen (z. B. einen benannten <em>MyFile.cshtml</em> und eine mit dem Namen <em>MyFile.Mobile.cshtml</em>). Zur Laufzeit, wenn ein mobiles Gerät fordert <em>MyFile.cshtml</em>, rendert den Inhalt von ASP.NET <em>MyFile.Mobile.cshtml</em>. Andernfalls <em>MyFile.cshtml</em> gerendert wird.
+Die einfachste Möglichkeit zum Erstellen von gerätespezifischen-Seite in einer ASP.NET Web Pages-Website wird mithilfe eines Musters Dateibenennung wie folgt: *FileName.Mobile.cshtml*. Sie können zwei Versionen einer Seite erstellen (z. B. einen benannten *MyFile.cshtml* und eine mit dem Namen *MyFile.Mobile.cshtml*). Zur Laufzeit, wenn ein mobiles Gerät fordert *MyFile.cshtml*, rendert den Inhalt von ASP.NET *MyFile.Mobile.cshtml*. Andernfalls *MyFile.cshtml* gerendert wird.
 
 Das folgende Beispiel zeigt, wie mobile renderingaufträge durch Hinzufügen einer Inhaltsseite für mobile Geräte. *Page1.cshtml* enthält Inhalte sowie eine navigationsrandleiste. *Page1.Mobile.cshtml* den gleichen Inhalt enthält, lässt aber die Randleiste.
 
@@ -60,4 +60,4 @@ Das folgende Beispiel zeigt, wie mobile renderingaufträge durch Hinzufügen ein
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 
-[Windows Phone Emulator](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)
+[Windows Phone-Emulator](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)

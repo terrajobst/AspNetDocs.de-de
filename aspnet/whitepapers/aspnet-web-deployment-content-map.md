@@ -8,15 +8,15 @@ ms.date: 03/14/2014
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: 6df0c9d2f38ad1d39abd62787c600ef80da8e8e0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3f36f0c504678e1e8b40aef99db81ab99101568b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040537"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383914"
 ---
-<a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET: Webbereitstellung – Empfohlene Ressourcen
-====================
+# <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET: Webbereitstellung – Empfohlene Ressourcen
+
 > Dieses Thema enthält Links zu Dokumentationen, die Ressourcen zum Bereitstellen (veröffentlichen) von ASP.NET web-Anwendungen zu IIS mithilfe von Visual Studio 2010, Visual Web Developer 2010 und höheren Versionen.
 > 
 > Wenn Sie wissen, dass ein tolles Blog Posten, [Stackoverflow](http://stackoverflow.com) Thread oder einen anderen Link, die nützlich wären [senden Sie uns eine e-Mail](mailto:aspnetue@microsoft.com?subject=Deployment%20Content%20Map) mit dem Link.
@@ -46,7 +46,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Konfigurieren von Servern für einen Hostinganbieter](#hostingprovider)
 - [Behandlung von Bereitstellungsproblemen](#troubleshooting)
 - [Abrufen von Hilfe mit einer bestimmten Bereitstellung Frage](#gettinghelp)
-- [Additional Resources](#additional) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#additional)
 
 
 <a id="understanding"></a>

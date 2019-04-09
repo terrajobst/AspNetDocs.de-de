@@ -8,15 +8,15 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: a688761c87376aa93463c13eaa07858d3acb9dc2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064587"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379780"
 ---
-<a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites
-====================
+# <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Artikel wird beschrieben, wie auf Microsoft WebMatrix-Tools verwenden, um eine Datenbank in einer ASP.NET Web Pages (Razor)-Website erstellen und wie Sie die Seiten zu erstellen, mit denen Sie die anzeigen, hinzufügen, bearbeiten und Löschen von Daten.
@@ -51,7 +51,7 @@ Angenommen Sie, ein typisches Adressbuch. Für jeden Eintrag im Adressbuch (d. h
 
 Eine typische Herangehensweise an die Daten wie folgt Grafik ist als eine Tabelle mit Zeilen und Spalten. In der Datenbanksprache wird jede Zeile häufig als Datensatz bezeichnet. Jede Spalte (auch als Felder bezeichnet) enthält einen Wert für jede Art von Daten: Vorname, letzte Name und So weiter.
 
-| **ID** | **FirstName** | **LastName** | **Address** | **E-Mail** | **Phone** |
+| **ID** | **FirstName** | **LastName** | **Adresse** | **E-Mail** | **Phone** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Oliver | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
@@ -151,7 +151,7 @@ Nachdem Sie eine Datenbank mit Daten darin haben, können Sie die Daten in einer
 
 > [!TIP] 
 > 
-> **Strukturierte Abfragesprache (SQL)**
+> **Strukturierte Abfragesprache (Structured Query Language; SQL)**
 > 
 > SQL ist eine Sprache, die in den meisten relationalen Datenbanken für die Verwaltung von Daten in einer Datenbank verwendet wird. Es enthält Befehle, mit denen Sie Daten abrufen und aktualisieren und, mit denen Sie erstellen, ändern und Verwalten von Datenbanktabellen. SQL unterscheidet sich von einer Programmiersprache (z. B. die Version, die Sie in WebMatrix verwenden), da mit SQL die Idee ist, dass Sie der Datenbank mitteilen, was Sie möchten, und es Aufgabe der Datenbank ist, um zu ermitteln, wie Sie die Daten abzurufen, oder führen Sie die Aufgabe. Hier sind Beispiele für einige SQL-Befehle und was sie tun:
 > 

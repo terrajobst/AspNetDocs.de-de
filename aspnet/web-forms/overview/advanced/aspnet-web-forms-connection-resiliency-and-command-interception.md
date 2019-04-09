@@ -8,15 +8,15 @@ ms.date: 03/31/2014
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 067542e8b8aa9909bbb2147f8e11e34604986d87
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2b8cae61347f00712aba18fe6a2e91bc207cb9f3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424026"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380040"
 ---
-<a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>Verbindungsresilienz von ASP.NET Web Forms und Abfangen von Befehlen
-====================
+# <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>Verbindungsresilienz von ASP.NET Web Forms und Abfangen von Befehlen
+
 by [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial ändern Sie die Wingtip Toys-beispielanwendung verbindungsresilienz und Abfangen von Befehlen zu unterstützen. Aktivieren Sie die resilienz von Verbindungen, wiederholt die Wingtip Toys-beispielanwendung automatisch Daten aufrufen, beim Auftreten von vorübergehender Fehlern, die typisch für eine Cloud-Umgebung. Darüber hinaus implementieren Sie Abfangen von Befehlen, die Wingtip Toys-beispielanwendung fängt alle SQL-Abfragen an die Datenbank aus, um zu melden oder geändert werden gesendet.
@@ -39,7 +39,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgende Software auf Ihrem
 - [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) oder [Microsoft Visual Studio Express 2013 für Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). .NET Framework wird automatisch installiert.
 - Die Wingtip Toys Beispielprojekt, damit Sie die Funktionalität, die in diesem Lernprogramm, in das Wingtip Toys-Projekt genannten implementieren können. Den folgenden Link werden die Details herunterladen:
 
-    - [Erste Schritte mit ASP.NET 4.5.1 Web Forms - Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (C#)
+    - [Erste Schritte mit ASP.NET 4.5.1 Web Forms - Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (c#)
 - Vor dem Abschluss dieses Lernprogramms sollten Sie die entsprechenden Reihe von Tutorials, [erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013](../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md). Der Tutorial-Reihe hilft Ihnen, sich mit vertraut machen die **WingtipToys** Projekt- und Code.
 
 ## <a name="connection-resiliency"></a>Verbindungsresilienz

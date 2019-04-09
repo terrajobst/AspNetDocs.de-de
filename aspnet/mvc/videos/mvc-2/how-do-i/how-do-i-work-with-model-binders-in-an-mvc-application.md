@@ -8,15 +8,15 @@ ms.date: 12/30/2009
 ms.assetid: 55c2fa76-d5b9-43e7-921e-51a9b57dba30
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 889506be05c617d64a7e1f7b9b70a7a1ed52ae0a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c81057a065e00834928eebe4bd129f3a4a8581f6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053547"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379013"
 ---
-<a name="how-do-i-work-with-model-binders-in-an-mvc-application"></a>Gewusst wie: Arbeiten mit Modellbindungen in einer MVC-Anwendung?
-====================
+# <a name="how-do-i-work-with-model-binders-in-an-mvc-application"></a>Gewusst wie: Arbeiten mit Modellbindungen in einer MVC-Anwendung?
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem video Chris Pels veranschaulicht modellbindungen verwenden, um Formulardaten an komplexen Geschäftsobjekte in Modellen in einer MVC-Anwendung zu binden. Zuerst wird eine MVC-Anwendung zusammen mit einem einfachen Modell für eine Customer-Klasse zusammen mit einem Controller und Ansicht zum Bearbeiten von Kundendaten erstellt. Anschließend wird die automatische modellbindung von MVC mit der Customer-Klasse veranschaulicht. Die Bind-Attribut ist als Nächstes erläutert und veranschaulicht, die als Mechanismus für die um die Details des Bindungsvorgangs ein-und Ausschließen von bestimmte Eigenschaften eines komplexen Objekts zu steuern. Schließlich wird die Verwendung von Namespace-Präfixe für die Segmentierung von Formulardaten auf einer Seite erläutert.

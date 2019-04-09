@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
-ms.openlocfilehash: e1eeed7541ad9c088cb87784ac33cc2f53fb8ed2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 206b0537b0c4355f919694bc05b3f7d6922f8272
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020877"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378389"
 ---
-<a name="editing-inserting-and-deleting-data"></a>Sortieren, Einfügen und Löschen von Daten
-====================
+# <a name="editing-inserting-and-deleting-data"></a>Sortieren, Einfügen und Löschen von Daten
+
 > In diesen Tutorials wird daraufhin das Zuordnen von Methoden des ObjectDataSource-Steuerelement zu Methoden der Geschäftslogikschicht und die GridView, DetailsView, konfigurieren und FormView-Steuerelement die Steuerelemente, um Benutzern das Ändern von Daten zu ermöglichen.
 
 

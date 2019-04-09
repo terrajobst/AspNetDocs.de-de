@@ -8,15 +8,15 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9b627a66007aec09a404147698e2bef06c7e7794
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383836"
 ---
-<a name="bundling-and-minification"></a>Bündelung und Minimierung
-====================
+# <a name="bundling-and-minification"></a>Bündelung und Minimierung
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Bündelung und Minimierung sind zwei Techniken können Sie in ASP.NET 4.5 zur Verbesserung der Ladezeit der Anforderung. Bündelung und Minimierung verbessert die Ladezeit von reduziert die Anzahl der Anforderungen an den Server und Verringern der Größe des angeforderten Assets (z. B. CSS- und JavaScript.)
@@ -52,7 +52,7 @@ Nach Minimierung wird die Funktion folgt verringert:
 
 Zusätzlich zu entfernen, die Kommentare und unnötiger Leerraum, wurden die folgenden Parameter und die Namen von Variablen (gekürzt) folgendermaßen umbenannt:
 
-| **Original** | **Umbenannt** |
+| **Ursprünglich** | **Umbenannt** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -65,7 +65,7 @@ Die folgende Tabelle zeigt einige wichtige Unterschiede zwischen alle Objekte ei
 |  | **Mithilfe von B/Min.** | **Ohne B/Min.** | **Änderung** |
 | --- | --- | --- | --- |
 | **Dateianforderungen** | 9 | 34 | 256% |
-| **KB Sent** | 3.26 | 11.92 | 266% |
+| **Gesendete KB** | 3.26 | 11.92 | 266% |
 | **KB empfangen** | 388.51 | 530 | 36% |
 | **Ladezeit** | 510 MS | 780 MS | 53% |
 

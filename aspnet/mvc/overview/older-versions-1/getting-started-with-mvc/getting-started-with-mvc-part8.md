@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: 7ae696b9-348f-4993-8ebb-a838acbe0c28
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: a014690078f113e5090f4867c2f384751f16b9f6
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 029234cf9a28a80c487504e4e0980c214e45f53a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425352"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381964"
 ---
-<a name="adding-a-column-to-the-model"></a>Hinzufügen der Spalte zum Modell
-====================
+# <a name="adding-a-column-to-the-model"></a>Hinzufügen der Spalte zum Modell
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
@@ -28,11 +28,11 @@ Fügen Sie eine Spalte "Rating", auf die Tabelle "Movie". Wechseln Sie zurück z
 
 Fügen Sie eine Spalte "Rating" hinzu, wie unten dargestellt. Da wir jetzt nicht über alle Bewertungen verfügen, kann die Spalte NULL-Werte zulassen. Klicken Sie auf Speichern.
 
-[![Filme Tabelle bearbeiten](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
+[![EBearbeitung einschränken Filme Tabelle](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
 
 Klicken Sie dann zurück zum Projektmappen-Explorer, und öffnen Sie die Movies.edmx-Datei (die im Ordner "\Models"). Klicken Sie mit der rechten Maustaste auf die Entwurfsoberfläche (der weiße Fläche), und wählen Sie Modell aktualisieren, aus der Datenbank.
 
-[![Filme – Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
+[![MOvies – Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
 
 Hierdurch wird der Assistent"Update". Klicken Sie auf der Registerkarte "Aktualisieren", darin, und klicken Sie auf "Fertig stellen". Unsere Movie-Modell-Klasse wird dann mit der neuen Spalte aktualisiert werden.
 
@@ -40,7 +40,7 @@ Hierdurch wird der Assistent"Update". Klicken Sie auf der Registerkarte "Aktuali
 
 Nach dem Klicken auf "Fertig stellen", sehen Sie sich, dass die Entität "Movie" in unserem Modell der neuen Spalte für die Bewertung hinzugefügt wurde.
 
-[![Film-Entität](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
+[![MILM-Entität](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
 
 Wir haben eine Spalte hinzugefügt, in das Datenbankmodell, aber die Ansichten nicht darüber zu informieren.
 
@@ -66,11 +66,11 @@ Unsere Vorlage für endgültige Create.aspx wird wie folgt aussehen, und lassen 
 
 Führen Sie die app, und Sie haben jetzt ein neues Feld in der Datenbank, die auf der Seite "erstellen" hinzugefügt wurden, ist. Fügen Sie einen neuen Film - diesmal mit einer Bewertung –, und klicken Sie auf erstellen.
 
-[![Erstellen Sie einen Film - Windows InternetExplorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
+[![CErstellen einen Film - Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
 
 Nachdem Sie auf "erstellen" klicken, werden Sie zur Indexseite gesendet, wo Sie mit neuen Film aufgeführt ist die neue Bewertung-Spalte in der Datenbank
 
-[![Filmliste – Windows InternetExplorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
+[![MILM Liste – Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
 
 Dieses Lernprogramm haben Sie die Schritte der Controller mit Ansichten verknüpft werden, und übergeben hartcodierte Daten vornehmen. Anschließend wurde erstellt und eine Datenbank entwickelt und einige Daten legt in. Wir die Daten aus der Datenbank abgerufen und diese in eine HTML-Tabelle angezeigt. Dann haben wir ein Erstellungsformular, mit denen der Benutzer, die Daten in der Datenbank selbst aus der Web-Anwendung hinzufügen hinzugefügt. Wir Überprüfung hinzugefügt, und klicken Sie dann die Überprüfung mithilfe von JavaScript auf der Clientseite vorgenommen. Abschließend wir die Datenbank enthält eine neue Spalte mit Daten geändert und unsere zwei Seiten zum Erstellen und zum Anzeigen dieser neuen Daten aktualisiert.
 
@@ -81,4 +81,4 @@ Viel Erfolg!
 - Scott Hanselman – [ http://hanselman.com ](http://hanselman.com) und [ @shanselman ](http://twitter.com/shanselman) auf Twitter.
 
 > [!div class="step-by-step"]
-> [Vorherige](getting-started-with-mvc-part7.md)
+> [Vorheriges](getting-started-with-mvc-part7.md)
