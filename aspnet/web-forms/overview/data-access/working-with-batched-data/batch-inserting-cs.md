@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
-title: Batch einfügen (c#) | Microsoft-Dokumentation
+title: Batch einfügen (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Erfahren Sie, wie Sie mehrere Datenbankdatensätze in einem einzigen Vorgang einfügen. In der Benutzeroberflächenebene erweitern wir die GridView, damit der Benutzer zur Eingabe von mehreren n kann...
 ms.author: riande

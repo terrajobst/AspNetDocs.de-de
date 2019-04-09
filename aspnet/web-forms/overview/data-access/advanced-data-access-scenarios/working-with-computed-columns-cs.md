@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
-title: Arbeiten mit berechneten Spalten (c#) | Microsoft-Dokumentation
+title: Arbeiten mit berechneten Spalten (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Wenn Sie eine Datenbanktabelle zu erstellen, Microsoft SQL Server ermöglicht es Ihnen, eine berechnete Spalte zu definieren, dessen Wert aus einem Ausdruck berechnet wird, in der Regel verw...
 ms.author: riande

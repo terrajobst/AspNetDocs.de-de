@@ -233,7 +233,7 @@ Wenn Sie auf der anderen Seite Sie Ihren eigenen Anbieter (zum Speichern von Inf
 
 ## <a name="creating-your-own-membership-provider"></a>Erstellen einen eigenen Mitgliedschaftsanbieter
 
-Um einen eigenen Mitgliedschaftsanbieter erstellen zu können, müssen Sie zuerst eine Klasse erstellen, die die MembershipProvider-Klasse erbt. Wenn Sie VB.NET verwenden, wird Visual Studio 2005 die Stubs für alle Methoden hinzufügen, die Sie überschreiben müssen. Wenn Sie c#, nun ist es an die Stubs hinzufügen verwenden.
+Um einen eigenen Mitgliedschaftsanbieter erstellen zu können, müssen Sie zuerst eine Klasse erstellen, die die MembershipProvider-Klasse erbt. Wenn Sie VB.NET verwenden, wird Visual Studio 2005 die Stubs für alle Methoden hinzufügen, die Sie überschreiben müssen. Wenn Sie C#, nun ist es an die Stubs hinzufügen verwenden.
 
 Sie müssen die folgenden überschreiben:
 
@@ -264,7 +264,7 @@ Sie müssen die folgenden überschreiben:
 - UpdateUser-Funktion
 - ValidateUser-Funktion
 
-Thats eine Liste aus, um als c#-Entwickler zu implementieren. Möglicherweise ist es einfacher erstellen Sie die Klasse in VB.NET ohne jegliche Implementierung, und klicken Sie dann mithilfe von .NET Reflector oder ein ähnliches Tool, um den Code in c# zu konvertieren.
+Thats eine Liste aus, um als C#-Entwickler zu implementieren. Möglicherweise ist es einfacher erstellen Sie die Klasse in VB.NET ohne jegliche Implementierung, und klicken Sie dann mithilfe von .NET Reflector oder ein ähnliches Tool, um den Code in C# zu konvertieren.
 
 Die Verbindungszeichenfolge und andere Eigenschaften müssen die Standardwerte in der Initialize-Methode festgelegt werden. (Die Initialize-Methode wird ausgelöst, wenn der Anbieter zur Laufzeit geladen wird.) Der zweite Parameter für die Initialize-Methode ist vom Typ System.Collections.Specialized.NameValueCollection und ist ein Verweis auf die &lt;hinzufügen&gt; -Element, das den benutzerdefinierten Anbieter in der Datei "Web.config" zugeordnet ist. Dieser Eintrag sieht folgendermaßen aus:
 

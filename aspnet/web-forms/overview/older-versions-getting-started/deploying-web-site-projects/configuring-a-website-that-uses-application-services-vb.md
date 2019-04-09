@@ -177,7 +177,7 @@ Beachten Sie, dass es sich bei einem früheren Tutorial die Book Reviews-Webanwe
 **Abbildung 5**: Administratoren können erstellen Sie neue Benutzerkonten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image15.jpg))
 
 
-Bei Bedarf den vollen Funktionsumfang des Auschecken WSAT [ *parallelen Ihrer eigenen Web Site Administration Tool*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), in dem Dan Clem führt Sie durch den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools. Dan teilt seine s Quellcode der Anwendung (in c#) und bietet eine schrittweise Anleitung für Ihre gehostete Website hinzugefügt.
+Bei Bedarf den vollen Funktionsumfang des Auschecken WSAT [ *parallelen Ihrer eigenen Web Site Administration Tool*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), in dem Dan Clem führt Sie durch den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools. Dan teilt seine s Quellcode der Anwendung (in C#) und bietet eine schrittweise Anleitung für Ihre gehostete Website hinzugefügt.
 
 ## <a name="summary"></a>Zusammenfassung
 

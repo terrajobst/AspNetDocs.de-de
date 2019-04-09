@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
-title: Verarbeiten von Ausnahmefehlern (c#) | Microsoft-Dokumentation
+title: Verarbeiten von Ausnahmefehlern (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Tritt ein Laufzeitfehler auf eine Webanwendung in der Produktion ist es wichtig, die einen Entwickler zu benachrichtigen und den Fehler protokollieren, damit es auf eine la diagnostiziert werden kann...
 ms.author: riande

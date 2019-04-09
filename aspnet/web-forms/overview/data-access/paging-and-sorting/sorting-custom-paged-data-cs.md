@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
-title: Sortieren von benutzerdefinierten ausgelagerten Daten (c#) | Microsoft-Dokumentation
+title: Sortieren von benutzerdefinierten ausgelagerten Daten (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Im vorherigen Tutorial haben wir gelernt benutzerdefiniertes Paging zu implementieren, wenn Daten auf einer Webseite dargestellt werden. In diesem Tutorial erfahren Sie wie der vorherigen erweitern...
 ms.author: riande

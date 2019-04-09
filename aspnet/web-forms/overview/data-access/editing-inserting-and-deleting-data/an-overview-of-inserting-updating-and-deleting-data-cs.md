@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
-title: Eine Übersicht über einfügen, aktualisieren und Löschen von Daten (c#) | Microsoft-Dokumentation
+title: Eine Übersicht über einfügen, aktualisieren und Löschen von Daten (C#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Tutorial erfahren Sie, wie ein "ObjectDataSource" Insert(), Update(), zuordnen und Delete()-Methoden, um die Methoden der Geschäftslogikschicht-Klassen sowie wie Sie konfigu...
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58424569"
 ---
-<a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>Eine Übersicht über einfügen, aktualisieren und Löschen von Daten (c#)
+<a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>Eine Übersicht über einfügen, aktualisieren und Löschen von Daten (C#)
 ====================
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
