@@ -8,23 +8,23 @@ ms.date: 11/14/2011
 ms.assetid: db4eca5d-b625-4e67-8e5b-a844639d4354
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup
 msc.type: chapter
-ms.openlocfilehash: 3b859ce51df5b55b236fb8fbafa94ab2530558b1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c797e6556282ef6570d50d8a3e77587ac30dbbea
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022067"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415231"
 ---
-<a name="modalpopup"></a><span data-ttu-id="b45b2-103">ModalPopup</span><span class="sxs-lookup"><span data-stu-id="b45b2-103">ModalPopup</span></span>
-====================
-> <span data-ttu-id="b45b2-104">In diesem Tutorial wird gezeigt, wie Sie mit dem ModalPopup-Steuerelement, das Sie die Darstellung eines modalen Dialogfelds erstellen können.</span><span class="sxs-lookup"><span data-stu-id="b45b2-104">This tutorial shows how to use the ModalPopup control, which lets you create the equivalent of a modal dialog box.</span></span>
+# <a name="modalpopup"></a><span data-ttu-id="f3e16-103">ModalPopup</span><span class="sxs-lookup"><span data-stu-id="f3e16-103">ModalPopup</span></span>
+
+> <span data-ttu-id="f3e16-104">In diesem Tutorial wird gezeigt, wie Sie mit dem ModalPopup-Steuerelement, das Sie die Darstellung eines modalen Dialogfelds erstellen können.</span><span class="sxs-lookup"><span data-stu-id="f3e16-104">This tutorial shows how to use the ModalPopup control, which lets you create the equivalent of a modal dialog box.</span></span>
 
 
-- [<span data-ttu-id="b45b2-105">Starten eines modalen Popupfensters über den Servercode (C#)</span><span class="sxs-lookup"><span data-stu-id="b45b2-105">Launching a Modal Popup Window from Server Code (C#)</span></span>](launching-a-modal-popup-window-from-server-code-cs.md)
-- [<span data-ttu-id="b45b2-106">Verwenden von ModalPopup mit einem Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="b45b2-106">Using ModalPopup with a Repeater Control (C#)</span></span>](using-modalpopup-with-a-repeater-control-cs.md)
-- [<span data-ttu-id="b45b2-107">Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="b45b2-107">Handling Postbacks from a ModalPopup (C#)</span></span>](handling-postbacks-from-a-modalpopup-cs.md)
-- [<span data-ttu-id="b45b2-108">Positionieren eines ModalPopup-Steuerelements (C#)</span><span class="sxs-lookup"><span data-stu-id="b45b2-108">Positioning a ModalPopup (C#)</span></span>](positioning-a-modalpopup-cs.md)
-- [<span data-ttu-id="b45b2-109">Starten eines modalen Popupfensters über den Servercode (VB)</span><span class="sxs-lookup"><span data-stu-id="b45b2-109">Launching a Modal Popup Window from Server Code (VB)</span></span>](launching-a-modal-popup-window-from-server-code-vb.md)
-- [<span data-ttu-id="b45b2-110">Verwenden von ModalPopup mit einem Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="b45b2-110">Using ModalPopup with a Repeater Control (VB)</span></span>](using-modalpopup-with-a-repeater-control-vb.md)
-- [<span data-ttu-id="b45b2-111">Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="b45b2-111">Handling Postbacks from a ModalPopup (VB)</span></span>](handling-postbacks-from-a-modalpopup-vb.md)
-- [<span data-ttu-id="b45b2-112">Positionieren eines ModalPopup-Steuerelements (VB)</span><span class="sxs-lookup"><span data-stu-id="b45b2-112">Positioning a ModalPopup (VB)</span></span>](positioning-a-modalpopup-vb.md)
+- [<span data-ttu-id="f3e16-105">Starten eines modalen Popupfensters über den Servercode (C#)</span><span class="sxs-lookup"><span data-stu-id="f3e16-105">Launching a Modal Popup Window from Server Code (C#)</span></span>](launching-a-modal-popup-window-from-server-code-cs.md)
+- [<span data-ttu-id="f3e16-106">Verwenden von ModalPopup mit einem Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="f3e16-106">Using ModalPopup with a Repeater Control (C#)</span></span>](using-modalpopup-with-a-repeater-control-cs.md)
+- [<span data-ttu-id="f3e16-107">Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="f3e16-107">Handling Postbacks from a ModalPopup (C#)</span></span>](handling-postbacks-from-a-modalpopup-cs.md)
+- [<span data-ttu-id="f3e16-108">Positionieren eines ModalPopup-Steuerelements (C#)</span><span class="sxs-lookup"><span data-stu-id="f3e16-108">Positioning a ModalPopup (C#)</span></span>](positioning-a-modalpopup-cs.md)
+- [<span data-ttu-id="f3e16-109">Starten eines modalen Popupfensters über den Servercode (VB)</span><span class="sxs-lookup"><span data-stu-id="f3e16-109">Launching a Modal Popup Window from Server Code (VB)</span></span>](launching-a-modal-popup-window-from-server-code-vb.md)
+- [<span data-ttu-id="f3e16-110">Verwenden von ModalPopup mit einem Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="f3e16-110">Using ModalPopup with a Repeater Control (VB)</span></span>](using-modalpopup-with-a-repeater-control-vb.md)
+- [<span data-ttu-id="f3e16-111">Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="f3e16-111">Handling Postbacks from a ModalPopup (VB)</span></span>](handling-postbacks-from-a-modalpopup-vb.md)
+- [<span data-ttu-id="f3e16-112">Positionieren eines ModalPopup-Steuerelements (VB)</span><span class="sxs-lookup"><span data-stu-id="f3e16-112">Positioning a ModalPopup (VB)</span></span>](positioning-a-modalpopup-vb.md)

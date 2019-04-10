@@ -8,23 +8,23 @@ ms.date: 10/05/2011
 ms.assetid: baa03541-3f84-4e46-8a2c-2395e64f484d
 msc.legacyurl: /web-forms/videos/migrating
 msc.type: chapter
-ms.openlocfilehash: 9daf2ad20dee8b544cf9874d345d9879955d75bc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c2a5b3ae768012156b0f46eda8caeb43451af258
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022197"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413749"
 ---
-<a name="migrating"></a><span data-ttu-id="5d91c-103">Migrieren</span><span class="sxs-lookup"><span data-stu-id="5d91c-103">Migrating</span></span>
-====================
-> <span data-ttu-id="5d91c-104">Migrieren zu ASP.NET</span><span class="sxs-lookup"><span data-stu-id="5d91c-104">Migrating to ASP.NET</span></span>
+# <a name="migrating"></a><span data-ttu-id="ade12-103">Migrieren</span><span class="sxs-lookup"><span data-stu-id="ade12-103">Migrating</span></span>
+
+> <span data-ttu-id="ade12-104">Migrieren zu ASP.NET</span><span class="sxs-lookup"><span data-stu-id="ade12-104">Migrating to ASP.NET</span></span>
 
 
-- <span data-ttu-id="5d91c-105">[[Einführung zu ASP.NET 2.0:] Grundlagen zu ASP.NET 2.0](intro-to-aspnet-20-aspnet-20-fundamentals.md)</span><span class="sxs-lookup"><span data-stu-id="5d91c-105">[[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals](intro-to-aspnet-20-aspnet-20-fundamentals.md)</span></span>
-- <span data-ttu-id="5d91c-106">[[Einführung zu ASP.NET 2.0:] Benutzeroberflächenelemente](intro-to-aspnet-20-user-interface-elements.md)</span><span class="sxs-lookup"><span data-stu-id="5d91c-106">[[Intro to ASP.NET 2.0:] User Interface Elements](intro-to-aspnet-20-user-interface-elements.md)</span></span>
-- <span data-ttu-id="5d91c-107">[[Migration von] Classic ASP nach ASP.NET](migrating-from-classic-asp-to-aspnet.md)</span><span class="sxs-lookup"><span data-stu-id="5d91c-107">[[Migrating from] Classic ASP to ASP.NET](migrating-from-classic-asp-to-aspnet.md)</span></span>
-- [<span data-ttu-id="5d91c-108">Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="5d91c-108">Intro to ASP.NET for JSP Developers: Welcome to ASP.NET 2.0</span></span>](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
-- [<span data-ttu-id="5d91c-109">Einführung in ASP.NET für JSP-Entwickler: Erstellen von Anwendungen</span><span class="sxs-lookup"><span data-stu-id="5d91c-109">Intro to ASP.NET for JSP Developers: Building Applications</span></span>](intro-to-aspnet-for-jsp-developers-building-applications.md)
-- [<span data-ttu-id="5d91c-110">Einführung in ASP.NET für ColdFusion-Entwickler: Hinzufügen von ASP.NET in ein Repertoire</span><span class="sxs-lookup"><span data-stu-id="5d91c-110">Intro to ASP.NET for ColdFusion Developers: Adding ASP.NET to Your Repertoire</span></span>](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-- [<span data-ttu-id="5d91c-111">Einführung in ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung</span><span class="sxs-lookup"><span data-stu-id="5d91c-111">Intro to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
-- [<span data-ttu-id="5d91c-112">Interoperabilität zwischen PHP und der Windows-Plattform</span><span class="sxs-lookup"><span data-stu-id="5d91c-112">Interop between PHP and the Windows Platform</span></span>](interop-between-php-and-the-windows-platform.md)
+- [<span data-ttu-id="ade12-105">[Einführung in ASP.NET 2.0:] Grundlagen von ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="ade12-105">[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals</span></span>](intro-to-aspnet-20-aspnet-20-fundamentals.md)
+- [<span data-ttu-id="ade12-106">[Einführung in ASP.NET 2.0:] Benutzeroberflächenelemente</span><span class="sxs-lookup"><span data-stu-id="ade12-106">[Intro to ASP.NET 2.0:] User Interface Elements</span></span>](intro-to-aspnet-20-user-interface-elements.md)
+- [<span data-ttu-id="ade12-107">[Migration von] Classic ASP zu ASP.NET</span><span class="sxs-lookup"><span data-stu-id="ade12-107">[Migrating from] Classic ASP to ASP.NET</span></span>](migrating-from-classic-asp-to-aspnet.md)
+- [<span data-ttu-id="ade12-108">Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="ade12-108">Intro to ASP.NET for JSP Developers: Welcome to ASP.NET 2.0</span></span>](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+- [<span data-ttu-id="ade12-109">Einführung in ASP.NET für JSP-Entwickler: Erstellen von Anwendungen</span><span class="sxs-lookup"><span data-stu-id="ade12-109">Intro to ASP.NET for JSP Developers: Building Applications</span></span>](intro-to-aspnet-for-jsp-developers-building-applications.md)
+- [<span data-ttu-id="ade12-110">Einführung in ASP.NET für ColdFusion-Entwickler: Eingliedern von ASP.NET in ein Repertoire</span><span class="sxs-lookup"><span data-stu-id="ade12-110">Intro to ASP.NET for ColdFusion Developers: Adding ASP.NET to Your Repertoire</span></span>](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+- [<span data-ttu-id="ade12-111">Einführung in ASP.NET für ColdFusion-Entwickler: Aufbau von ASP.NET-Anwendungen</span><span class="sxs-lookup"><span data-stu-id="ade12-111">Intro to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+- [<span data-ttu-id="ade12-112">Interoperabilität zwischen PHP und der Windows-Plattform</span><span class="sxs-lookup"><span data-stu-id="ade12-112">Interop between PHP and the Windows Platform</span></span>](interop-between-php-and-the-windows-platform.md)
