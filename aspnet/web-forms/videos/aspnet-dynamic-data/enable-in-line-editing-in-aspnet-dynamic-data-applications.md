@@ -8,15 +8,15 @@ ms.date: 10/23/2008
 ms.assetid: a22201df-c031-4505-b3bf-9a0a9667d62b
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/enable-in-line-editing-in-aspnet-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: 28a90a3c5726743a2a8412d508b5d8a4cf1886e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6bf91d546341eefc401149d47d6fa70b2c8522d4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421523"
 ---
-<a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a>Aktivieren der Inlinebearbeitung in ASP.NET Dynamic Data-Anwendungen
-====================
+# <a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a>Aktivieren der Inlinebearbeitung in ASP.NET Dynamic Data-Anwendungen
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem Video wird gezeigt, Inline-Bearbeitung in Ihrer ASP.NET-Anwendung für dynamische Daten aktivieren mit URL-Routing.

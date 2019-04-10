@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: 8b7fcf7b-722b-498d-a4e4-7c93701e0c95
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5e0807f6db3ad4ef9377843d60824e6cd43dd245
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 0d0aa2c52df284bae48907d0c0c1e5d4587c1b9e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440377"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421419"
 ---
-<a name="nested-data-web-controls-vb"></a>Geschachtelte Datenwebsteuerelemente (VB)
-====================
+# <a name="nested-data-web-controls-vb"></a>Geschachtelte Datenwebsteuerelemente (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_32_VB.exe) oder [PDF-Datei herunterladen](nested-data-web-controls-vb/_static/datatutorial32vb1.pdf)
@@ -35,7 +35,7 @@ Vorlagen können auch andere Daten Websteuerelemente enthalten. Wir haben, also 
 In diesem Lernprogramm aus, die wir untersuchen werden mit einem Wiederholungssteuerelement in einer anderen Repeater geschachtelt. Der äußere Repeater enthält ein Element für jede Kategorie in der Datenbank anzeigen, Kategorie-s-Name und Beschreibung. Jedes Kategorieelement s in inneren Repeater zeigt Informationen zu jedem Produkt, die zu dieser Kategorie gehören (siehe Abbildung 1) in eine Liste mit Aufzählungszeichen. Unseren Beispielen werden den inneren Repeater sowohl deklaratives und Programmgesteuertes Auffüllen veranschaulicht.
 
 
-[![Jede Kategorie sowie die Produkte, werden aufgeführt.](nested-data-web-controls-vb/_static/image2.png)](nested-data-web-controls-vb/_static/image1.png)
+[![Ean (Kategorie), sowie die Produkte, finden Sie](nested-data-web-controls-vb/_static/image2.png)](nested-data-web-controls-vb/_static/image1.png)
 
 **Abbildung 1**: Jede Kategorie sowie die Produkte, aufgeführt sind ([klicken Sie, um das Bild in voller Größe anzeigen](nested-data-web-controls-vb/_static/image3.png))
 
@@ -47,7 +47,7 @@ Wenn datenwebsteuerelemente erstellen eine Seite, die verwendet geschachtelt wer
 Öffnen Sie zunächst die `NestedControls.aspx` auf der Seite die `DataListRepeaterBasics` Ordner und fügen Sie ein Repeater-Steuerelement auf der Seite festlegen seiner `ID` Eigenschaft `CategoryList`. Wählen Sie aus dem Smarttag Repeater s, zum Erstellen einer neuen, mit dem Namen "ObjectDataSource" `CategoriesDataSource`.
 
 
-[![Name der neuen CategoriesDataSource "ObjectDataSource"](nested-data-web-controls-vb/_static/image5.png)](nested-data-web-controls-vb/_static/image4.png)
+[![NAme der neuen "ObjectDataSource" CategoriesDataSource](nested-data-web-controls-vb/_static/image5.png)](nested-data-web-controls-vb/_static/image4.png)
 
 **Abbildung 2**: Benennen Sie die neue "ObjectDataSource" `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](nested-data-web-controls-vb/_static/image6.png))
 
@@ -55,7 +55,7 @@ Wenn datenwebsteuerelemente erstellen eine Seite, die verwendet geschachtelt wer
 Dem ObjectDataSource-Steuerelement so konfigurieren, dass er die Daten aus der zieht die `CategoriesBLL` Klasse s `GetCategories` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL Klasse s GetCategories-Methode](nested-data-web-controls-vb/_static/image8.png)](nested-data-web-controls-vb/_static/image7.png)
+[![CKonfigurieren der "ObjectDataSource" die CategoriesBLL Klasse s GetCategories-Methode verwendet](nested-data-web-controls-vb/_static/image8.png)](nested-data-web-controls-vb/_static/image7.png)
 
 **Abbildung 3**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` s-Klasse `GetCategories` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](nested-data-web-controls-vb/_static/image9.png))
 
@@ -68,7 +68,7 @@ Zum Angeben der Repeater-s-Vorlage muss Inhalt wechseln zur Quellansicht, und ge
 Abbildung 4 zeigt unseren Fortschritt, wenn Sie über einen Browser angezeigt.
 
 
-[![Jede Kategorie s Name und Beschreibung aufgelistet ist getrennt durch eine horizontale Trennlinie](nested-data-web-controls-vb/_static/image11.png)](nested-data-web-controls-vb/_static/image10.png)
+[![EACH-Kategorie s Name und Beschreibung aufgelistet ist, getrennt durch eine horizontale Trennlinie](nested-data-web-controls-vb/_static/image11.png)](nested-data-web-controls-vb/_static/image10.png)
 
 **Abbildung 4**: Jede Kategorie s Name und Beschreibung aufgelistet ist, getrennt durch eine horizontale Trennlinie ([klicken Sie, um das Bild in voller Größe anzeigen](nested-data-web-controls-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ Dieser Ereignishandler startet, indem Sie sicherstellen, dass wir erneut Umgang 
 Mit diesem Ereignishandler die `ProductsByCategoryList` Repeater in den einzelnen `RepeaterItem` gebunden ist, um diese Produkte in der `RepeaterItem` s-Kategorie. Abbildung 5 zeigt einen Screenshot, der die resultierende Ausgabe.
 
 
-[![Der äußere Repeater sind jeder Kategorie aufgeführt. das Innere einer Listet die Produkte für diese Kategorie](nested-data-web-controls-vb/_static/image14.png)](nested-data-web-controls-vb/_static/image13.png)
+[![Tin der äußeren Repeater werden die einzelnen Kategorien aufgelistet; das Innere einer Listet die Produkte, für die Kategorie](nested-data-web-controls-vb/_static/image14.png)](nested-data-web-controls-vb/_static/image13.png)
 
 **Abbildung 5**: Der äußere Repeater sind jeder Kategorie aufgeführt. die innere eine Listen die Produkte für die Kategorie ([klicken Sie, um das Bild in voller Größe anzeigen](nested-data-web-controls-vb/_static/image15.png))
 
@@ -183,4 +183,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Zack Jones und Liz Shulok. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
+> [Vorheriges](showing-multiple-records-per-row-with-the-datalist-control-vb.md)

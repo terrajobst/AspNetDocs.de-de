@@ -8,15 +8,15 @@ ms.date: 07/24/2008
 ms.assetid: b883989d-4735-478e-ab56-411a2ed98f73
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-command-buttons-for-individual-items
 msc.type: video
-ms.openlocfilehash: e52345ff182b9e042d4cb174b6237c92d6258755
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: efbc7477832664b6efa5798c9a8cc63bfd148d04
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028167"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403115"
 ---
-<a name="how-do-i-implement-command-buttons-for-individual-items"></a>[Gewusst wie:] Implementieren von Befehlsschaltflächen für einzelne Elemente
-====================
+# <a name="how-do-i-implement-command-buttons-for-individual-items"></a>[Gewusst wie:] Implementieren von Befehlsschaltflächen für einzelne Elemente
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem Video zeigt Chris Pels, wie Ereignisse im Zusammenhang mit der ein Schaltflächen-Steuerelement in den einzelnen Elementen eines datengebundenen Steuerelements, wie ein ListView-Steuerelement behandelt. Zuerst angezeigt, wie diese von datengebundenen Steuerelementen Standardschaltfläche-Ereignishandler für standard-Vorgänge, z.B. bearbeiten oder löschen müssen. Als Nächstes erfahren Sie, wie Sie eine Schaltfläche hinzufügen, die eine benutzerdefinierte Aktion ausführt und zum Behandeln von Ereignissen für diese Aktion für die benutzerdefinierte Schaltfläche. Schließlich finden Sie unter Gewusst wie: Übergeben von Daten an den benutzerdefinierten Ereignishandler für die Identifikation des Elements, in denen auf die Schaltfläche klicken stammt.

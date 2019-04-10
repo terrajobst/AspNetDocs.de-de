@@ -8,15 +8,15 @@ ms.date: 05/22/2012
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 00529355476e88c47ab790121ae77202aa5e7b76
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061097"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422459"
 ---
-<a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>Anzeigen von Daten in einem Diagramm mit ASP.NET Web Pages (Razor)
-====================
+# <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>Anzeigen von Daten in einem Diagramm mit ASP.NET Web Pages (Razor)
+
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Artikel wird erläutert, wie Sie ein Diagramm zu verwenden, zum Anzeigen von Daten in einer ASP.NET Web Pages (Razor)-Website mithilfe der `Chart` Helper.
@@ -40,10 +40,10 @@ by [Microsoft](https://github.com/microsoft)
 
 Wenn Sie Ihre Daten in grafischer Form anzeigen möchten, können Sie `Chart` Helper. Die `Chart` Hilfsprogramm kann ein Bild, das Daten, in einer Vielzahl von Diagrammtypen anzeigt rendern. Er unterstützt viele Optionen zum Formatieren und beschriften. Die `Chart` Hilfsprogramm kann mehr als 30 Arten von Diagrammen, einschließlich aller Typen von Diagrammen, die Sie von Microsoft Excel oder anderen Tools möglicherweise Rendern &#8212; Flächendiagramme, Balkendiagramme, Säulendiagrammen, Linien- und Diagrammen als Kreisdiagrammen sowie weitere spezialisierter Diagramme wie Kursdiagramme.
 
-| **Flächendiagramm** ![Beschreibung: Bild des flächendiagrammtyps](7-displaying-data-in-a-chart/_static/image1.jpg) | **Balkendiagramm** ![Beschreibung: Bild des balkendiagrammtyps](7-displaying-data-in-a-chart/_static/image2.jpg) |
+| **Flächendiagramm** ![Beschreibung: Bild des Flächendiagrammtyps](7-displaying-data-in-a-chart/_static/image1.jpg) | **Balkendiagramm** ![Beschreibung: Bild des Balkendiagrammtyps](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
-| **Säulendiagramm** ![Beschreibung: Bild des säulendiagrammtyps](7-displaying-data-in-a-chart/_static/image3.jpg) | **Liniendiagramm** ![Beschreibung: Bild des liniendiagrammtyps](7-displaying-data-in-a-chart/_static/image4.jpg) |
-| **Kreisdiagramm** ![Beschreibung: Bild des kreisdiagrammtyps](7-displaying-data-in-a-chart/_static/image5.jpg) | **Kursdiagramm** ![Beschreibung: Bild des kursdiagrammtyps](7-displaying-data-in-a-chart/_static/image6.jpg) |
+| **Säulendiagramm** ![Beschreibung: Bild des Säulendiagrammtyps](7-displaying-data-in-a-chart/_static/image3.jpg) | **Liniendiagramm** ![Beschreibung: Bild des Liniendiagrammtyps](7-displaying-data-in-a-chart/_static/image4.jpg) |
+| **Kreisdiagramm** ![Beschreibung: Bild des Kreisdiagrammtyps](7-displaying-data-in-a-chart/_static/image5.jpg) | **Kursdiagramm** ![Beschreibung: Bild des Kursdiagrammtyps](7-displaying-data-in-a-chart/_static/image6.jpg) |
 
 ### <a name="chart-elements"></a>Diagrammelemente
 

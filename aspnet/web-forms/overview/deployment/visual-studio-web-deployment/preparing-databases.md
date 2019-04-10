@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 67f44d9f23a2fe83c48e68328b1dee739056e32f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 786be61d48f26e5765eac0c8d6fad7551897f711
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029777"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387684"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Vorbereiten für die Datenbankbereitstellung
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Vorbereiten für die Datenbankbereitstellung
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -63,7 +63,7 @@ Bei der Bereitstellung einer Datenbank bereitzustellen nicht in der Regel Sie ei
 
 Um diesem häufigen Szenario zu simulieren, konfigurieren Sie einen Code-First-Migrationen `Seed` -Methode, die nur die Daten in die Datenbank einfügt, die in der produktionsumgebung vorhanden sein sollen. Dies `Seed` Methode sollte nicht Testdaten nicht eingefügt werden, da sie in der Produktion ausgeführt werden soll, nachdem der Code First die Datenbank in der produktionsumgebung erstellt.
 
-In früheren Versionen von Code First, bevor Migrationen kam, war es üblich `Seed` Methoden zum Einfügen Testdaten auch, weil bei jeder modelländerung während der Entwicklung verwendet die Datenbank vollständig löschen und von Grund auf neu erstellt haben. Code First-Migrationen, Test, der Daten, nachdem Änderungen in der Datenbank beibehalten werden, also mit den Testdaten in die `Seed` Methode ist nicht erforderlich. Das Projekt, das Sie heruntergeladen haben verwendet die Methode der einschließlich aller Daten in die `Seed` Methode einer Klasse Initialisierer. In diesem Tutorial werden Sie diese Initialisiererklasse deaktivieren und `enable Migrations. Then you'll update the `Seed "-Methode in der Konfiguration von Migrationen Klasse, sodass nur Daten, die eingefügt, der in der Produktion eingefügt werden soll.
+In früheren Versionen von Code First, bevor Migrationen kam, war es üblich `Seed` Methoden zum Einfügen Testdaten auch, weil bei jeder modelländerung während der Entwicklung verwendet die Datenbank vollständig löschen und von Grund auf neu erstellt haben. Code First-Migrationen, Test, der Daten, nachdem Änderungen in der Datenbank beibehalten werden, also mit den Testdaten in die `Seed` Methode ist nicht erforderlich. Das Projekt, das Sie heruntergeladen haben verwendet die Methode der einschließlich aller Daten in die `Seed` Methode einer Klasse Initialisierer. In diesem Tutorial Sie Initialisiererklasse zu deaktivieren und Aktivieren von Migrationen. Sie aktualisieren, werden die `Seed` -Methode in der Konfiguration von Migrationen Klasse, sodass nur Daten, die eingefügt, der in der Produktion eingefügt werden soll.
 
 Das folgende Diagramm zeigt das Schema der Datenbank der dienstanwendung:
 
@@ -130,7 +130,7 @@ Das Projekt ist jetzt bereit für die Bereitstellung der *ContosoUniversity* Dat
 > [!NOTE]
 > Hinzufügen von Code, der `Seed` Methode ist eine von vielen Möglichkeiten, die Sie in die Datenbank "Festplattenlaufwerk" einfügen können. Eine Alternative zum Hinzufügen von Code ist die `Up` und `Down` Methoden jede Migration-Klasse. Die `Up` und `Down` Methoden enthalten Code, der Änderungen in der Datenbank implementiert. Sehen Sie Beispiele für die sie in der [Bereitstellen eines Datenbankupdates](deploying-a-database-update.md) Tutorial.
 > 
-> Sie können auch Schreiben Code, der SQL-Anweisungen, mithilfe ausführt der `Sql` Methode. Sie z. B., wenn Sie die Department-Tabelle eine Budgetspalte hinzugefügt wurden und alle Abteilung Budgets zu 1.000,00 $ als Teil einer Migration initialisieren möchten, können Hinzufügen der folgenden Codezeile den `Up` Methode für diese Migration:
+> Sie können auch Schreiben Code, der SQL-Anweisungen, mithilfe ausführt der `Sql` Methode. Sie z. B., wenn Sie die Department-Tabelle eine Budgetspalte hinzugefügt wurden und alle Abteilung Budgets zu 1.000,00 $ als Teil einer Migration initialisieren möchten, können hinzufügen die folgende Codezeile, die `Up` Methode für diese Migration:
 > 
 > `Sql("UPDATE Department SET Budget = 1000");`
 

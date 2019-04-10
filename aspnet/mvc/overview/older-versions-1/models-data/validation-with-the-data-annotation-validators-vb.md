@@ -8,15 +8,15 @@ ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6bfe11a40bbdf0cd9dfe4d81d9c7436a5adb9491
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6893d1f2445452b1d802b89027b09d8294bdc5b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422836"
 ---
-<a name="validation-with-the-data-annotation-validators-vb"></a>Überprüfung der Validierungssteuerelemente für Datenanmerkungen (VB)
-====================
+# <a name="validation-with-the-data-annotation-validators-vb"></a>Überprüfung der Validierungssteuerelemente für Datenanmerkungen (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > Die Modellbindung des Daten-Anmerkung für die Validierung in ASP.NET MVC-Anwendungen nutzen. Erfahren Sie, wie die verschiedenen Typen von Validierungssteuerelement-Attribute und mit ihnen im Microsoft Entity Framework arbeiten.
@@ -151,4 +151,4 @@ Die Seite im **Abbildung 6** veranschaulicht die Fehlermeldungen zurückgegeben,
 In diesem Tutorial haben Sie gelernt, wie die Modellbindung des Daten-Anmerkung für die Validierung in ASP.NET MVC-Anwendungen nutzen. Sie haben gelernt, wie die verschiedenen Typen von Validierungssteuerelement-Attribute wie z. B. die erforderlichen und StringLength-Attribute verwendet. Sie haben zudem, wie Sie diese Attribute verwenden, bei der Arbeit mit Microsoft Entity Framework.
 
 > [!div class="step-by-step"]
-> [Vorherige](validating-with-a-service-layer-vb.md)
+> [Vorheriges](validating-with-a-service-layer-vb.md)

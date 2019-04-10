@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 4341f5b1-6fe5-44c5-8b8a-18fa84f80177
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: af91ae24cae505125dc237adfaa11b0ea4d60922
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0a4e8dc3ce5764c6b2ec59c7e3f507064f8a8cb5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051847"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422160"
 ---
-<a name="authenticating-users-with-forms-authentication-vb"></a>Authentifizieren von Benutzern bei der Formularauthentifizierung (VB)
-====================
+# <a name="authenticating-users-with-forms-authentication-vb"></a>Authentifizieren von Benutzern bei der Formularauthentifizierung (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie Sie mit dem [Authorize]-Attribut mit einem Kennwort geschützt bestimmte Seiten in der MVC-Anwendung. Erfahren Sie, wie Sie mit der Web Site Administration Tool zum Erstellen und Verwalten von Benutzern und Rollen. Außerdem erfahren Sie, wie so konfigurieren, in dem Konto und die entsprechende Benutzerinformationen gespeichert ist.

@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: e2f401ae-37bb-4b19-aa97-d6b385d40f88
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8d16f808101475b66b347e0e464800f247b3a611
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8955e37aa084f339665bbd4dc0475f7be74f3b26
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029067"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421601"
 ---
-<a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>Formatieren des DataList- und Wiederholungssteuerelements auf Datenbasis (VB)
-====================
+# <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>Formatieren des DataList- und Wiederholungssteuerelements auf Datenbasis (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_30_VB.exe) oder [PDF-Datei herunterladen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/datatutorial30vb1.pdf)
@@ -74,7 +74,7 @@ Bevor wir die Formatierung kümmern, Let s zunächst erstellen eine Seite, die e
 Nachdem Sie die Funktionalität DataList-Steuerelement und "ObjectDataSource" repliziert haben `Basics.aspx` in `Formatting.aspx`, DataList-Steuerelement s ändern in Ruhe `ID` Eigenschaft aus `DataList1` um einen aussagekräftigeren `ItemDataBoundFormattingExample`. Als Nächstes werden DataList-Steuerelement in einem Browser anzeigen. Wie in Abbildung 1 gezeigt, ist der einzige Formatierung Unterschied zwischen jedes Produkt, die Farbe des Hintergrunds wechselt.
 
 
-[![Die Produkte sind in dem DataList-Steuerelement aufgeführt.](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image1.png)
+[![Tseine Produkte finden Sie in das DataList-Steuerelement](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image1.png)
 
 **Abbildung 1**: Die Produkte finden Sie in das DataList-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image3.png))
 
@@ -117,7 +117,7 @@ Wenn die Formatierung angewendet werden soll, legen Sie einfach die zwei Label-W
 Mit der `ItemDataBound` -Ereignishandler ausgeführt, rufen Sie erneut die `Formatting.aspx` Seite in einem Browser. Wie Abbildung 2 veranschaulicht, müssen diese Produkte mit einem Preis unter 20,00 $pro, ihren Namen und den Preis hervorgehoben.
 
 
-[![Diese Produkte kleiner als 20,00 $pro hervorgehoben sind](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image4.png)
+[![THost-Produkten weniger als 20,00 $pro werden hervorgehoben.](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image4.png)
 
 **Abbildung 2**: Diese Produkte kleiner als 20,00 $pro werden hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image6.png))
 
@@ -129,7 +129,7 @@ Mit der `ItemDataBound` -Ereignishandler ausgeführt, rufen Sie erneut die `Form
 Die `RepeaterItem` s, aus denen das Repeater-Steuerelement, allerdings Don t bieten solche Eigenschaften Format auf. Daher erfordert die benutzerdefinierte Formatierung auf das Repeater das Anwenden von Stileigenschaften auf die Web-Steuerelemente in den Vorlagen Repeater s nur wie in Abbildung 2.
 
 
-[![Das gesamte Produkt-Element ist für Produkte unter 20,00 $pro hervorgehoben.](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image7.png)
+[![Ter die gesamte Produktelement hervorgehoben ist für Produkte unter 20,00 $pro](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image7.png)
 
 **Abbildung 3**: Das gesamte Produkt-Element wird für Produkte unter 20,00 $pro hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image9.png))
 
@@ -141,7 +141,7 @@ In der *Verwenden von TemplateFields, im GridView-Steuerelement* Tutorial erläu
 Um die Formatierungsoptionen zu demonstrieren, haben können s die Produktinformationen, die den Text [DISCONTINUED] neben dem Produktnamen s enthalten, wenn es s nicht mehr unterstützt. Darüber hinaus können s hervorgehobenen gelben Preis If haben es kleiner als 20,00 $pro (wie der `ItemDataBound` Beispiel für einen Ereignishandler); Wenn der Preis 20,00 $pro ist oder höher, Let s nicht den tatsächlichen Preis angezeigt, aber stattdessen rufen Sie der Text ein, geben Sie für eine Preisinformationen. Abbildung 4 zeigt einen Screenshot, der die Produkte, die Liste, die mit diesen Regeln für die Formatierung angewendet.
 
 
-[![Für die teuersten Produkte wird der Preis mit dem Text, rufen Sie für eine Preisinformationen ersetzt.](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image10.png)
+[![Foder teuersten Produkte, der Preis wird durch den Text ein, rufen Sie für eine Preisinformationen ersetzt](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image10.png)
 
 **Abbildung 4**: Der Preis wird für teuersten Produkte, mit dem Text, rufen Sie für eine Preisinformationen ersetzt ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image12.png))
 
@@ -182,7 +182,7 @@ Wir können einfach festlegen, um den Preis anzuzeigen, die `UnitPriceLabel` Bez
 Können Sie mit den Aufrufen für die Formatierungen Funktionen vorhanden unseren Fortschritt in einem Browser anzeigen. Ihr Bildschirm sollte ähnlich wie in Abbildung 5 aussehen, die nicht mehr unterstützte Produkte, die auch den Text [DISCONTINUED] und dieser Produkte, die mehr als 20,00 $pro müssen ihren Preis Kosten durch den Text ersetzt Aufruf für eine Preisinformationen.
 
 
-[![Für die teuersten Produkte wird der Preis mit dem Text, rufen Sie für eine Preisinformationen ersetzt.](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image13.png)
+[![Foder teuersten Produkte, der Preis wird durch den Text ein, rufen Sie für eine Preisinformationen ersetzt](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image13.png)
 
 **Abbildung 5**: Der Preis wird für teuersten Produkte, mit dem Text, rufen Sie für eine Preisinformationen ersetzt ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image15.png))
 

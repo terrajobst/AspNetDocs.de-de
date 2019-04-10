@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 07fa47ae-e491-4a2f-b265-d342b9ddef46
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 13627c502d00ee67aeb873a6a4a58e3d74377fba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d6b5c234c8d0da5500ecf554c5e23cb52e94f411
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421848"
 ---
-<a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Filtern von Master-/Detailberichten mit einem DropDownList-Steuerelement (C#)
-====================
+# <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Filtern von Master-/Detailberichten mit einem DropDownList-Steuerelement (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_33_CS.exe) oder [PDF-Datei herunterladen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/datatutorial33cs1.pdf)
@@ -49,7 +49,7 @@ Bevor wir in diesem Tutorial beginnen, zuerst werfen wir einen Moment Zeit, füg
 Öffnen Sie als Nächstes die `Default.aspx` Seite, und ziehen Sie die `SectionLevelTutorialListing.ascx` Benutzersteuerelement aus der `UserControls` Ordner auf die Entwurfsoberfläche. Dieses Benutzersteuerelement, die wir in den erstellt die [Masterseiten und Sitenavigation](../introduction/master-pages-and-site-navigation-cs.md) Tutorial, listet die Sitemap und zeigt Sie in den Tutorials aus dem aktuellen Abschnitt in einer Liste mit Aufzählungszeichen.
 
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
+[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image4.png))
 
@@ -69,7 +69,7 @@ Um die Anzeige der Liste mit Aufzählungszeichen müssen wir die Master-/Detail-
 Unsere Master/Detail-Berichts Listet die Kategorien in einem DropDownList-Steuerelement, mit dem ausgewählten Listenelement Produkte angezeigt weiter unten auf der Seite in einem DataList-Steuerelement. Anschließend werden die erste Aufgabe vor uns, haben die Kategorien, die in einem DropDownList-Steuerelement angezeigt. Öffnen Sie zunächst die `FilterByDropDownList.aspx` auf der Seite die `DataListRepeaterFiltering` Ordner, und ziehen Sie einem DropDownList-Steuerelement aus der Toolbox auf der Seite Designer. Legen Sie als Nächstes die DropDownList `ID` Eigenschaft `Categories`. Klicken Sie auf den Link "Datenquelle auswählen" aus der Dropdownlistes Smarttag, und erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `CategoriesDataSource`.
 
 
-[![Fügen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
+[![ADd einen neuen "ObjectDataSource" mit dem Namen CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
 
 **Abbildung 4**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image8.png))
 
@@ -77,7 +77,7 @@ Unsere Master/Detail-Berichts Listet die Kategorien in einem DropDownList-Steuer
 Die neue "ObjectDataSource" So konfigurieren, dass sie ruft die `CategoriesBLL` Klasse `GetCategories()` Methode. Nach dem Konfigurieren der müssen noch angeben, welches Feld der Datenquelle in der Dropdownliste angezeigt werden soll und welche "ObjectDataSource" sollte eine zugeordnet ist, als der Wert für jedes Listenelement. Haben die `CategoryName` -Feld als die Anzeige und `CategoryID` als Wert für jedes Listenelement.
 
 
-[![Haben Sie die DropDownList-Anzeige "CategoryName" Feld aus, und verwenden CategoryID als Wert](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
+[![HSpeichern Sie die DropDownList-Anzeige CategoryName Field und Verwendung CategoryID als Wert](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
 
 **Abbildung 5**: Haben Sie die DropDownList-Anzeige der `CategoryName` Feld und die Verwendung `CategoryID` als Wert ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image11.png))
 
@@ -85,7 +85,7 @@ Die neue "ObjectDataSource" So konfigurieren, dass sie ruft die `CategoriesBLL` 
 An diesem Punkt haben wir ein DropDownList-Steuerelement, das die Datensätze aus enthält die `Categories` Tabelle (alle erreicht, etwa sechs Sekunden). Abbildung 6 zeigt unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt.
 
 
-[![Eine Dropdown-Liste sind die aktuellen Kategorien aufgeführt.](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
+[![A Dropdownlisten der aktuellen Kategorien](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
 
 **Abbildung 6**: Ein Dropdownlisten der aktuellen Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image14.png))
 
@@ -95,7 +95,7 @@ An diesem Punkt haben wir ein DropDownList-Steuerelement, das die Datensätze au
 Der letzte Schritt in unserer Master/Detail-Berichts wird die ausgewählte Kategorie zugeordneten Produkte aufgeführt. Um dies zu erreichen, fügen Sie einem DataList-Steuerelement auf der Seite, und erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `ProductsByCategoryDataSource`. Haben die `ProductsByCategoryDataSource` Steuerelement abzurufen, die Daten aus der die `ProductsBLL` Klasse `GetProductsByCategoryID(categoryID)` Methode. Da diese Master/Detail-Berichts schreibgeschützt ist, wählen Sie, dass die (None) auf den Registerkarten INSERT-, Update- und DELETE-option.
 
 
-[![Wählen Sie die GetProductsByCategoryID(categoryID)-Methode](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image15.png)
+[![SWählen Sie die Methode GetProductsByCategoryID(categoryID)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image15.png)
 
 **Abbildung 7**: Wählen Sie die `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
@@ -103,7 +103,7 @@ Der letzte Schritt in unserer Master/Detail-Berichts wird die ausgewählte Kateg
 Nach dem Klicken auf "Weiter" des Assistenten "ObjectDataSource" fragt uns nach der Quelle des Werts für die `GetProductsByCategoryID(categoryID)` Methode *`categoryID`* Parameter. Der Wert des ausgewählten `categories` DropDownList-Element legen Sie die Quelle für die Parameter zum Steuern und die ControlID zu `Categories`.
 
 
-[![Legen Sie die CategoryID-Parameter auf den Wert von DropDownList Kategorien](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
+[![Su. a. die CategoryID-Parameter, um den Wert von DropDownList Kategorien](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
 **Abbildung 8**: Legen Sie die *`categoryID`* Parameter, um den Wert des der `Categories` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
@@ -119,12 +119,12 @@ Nehmen Sie einen Moment Zeit, unseren Fortschritt in einem Browser ausprobieren.
 Abbildung 9 und 10 veranschaulichen die Master/Detail-Berichts in Aktion.
 
 
-[![Wenn die Seite zuerst besuchen zu können, werden die trinken Produkte angezeigt.](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
+[![Wein "hen" ersten Besuch der Seite, die trinken Produkte angezeigt werden](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
 
 **Abbildung 9**: Die trinken-Produkte werden angezeigt, wenn die Seite zuerst besuchen zu können, ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image23.png))
 
 
-[![Beim Auswählen eines neuen Produkts (erstellen) automatisch bewirkt, dass ein PostBack, DataList-Steuerelement wird aktualisiert.](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
+[![SWahl einer neuen Produkts (erstellen) automatisch bewirkt, dass ein PostBack, DataList-Steuerelement wird aktualisiert.](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
 
 **Abbildung 10**: Beim Auswählen eines neuen Produkts (erstellen) automatisch bewirkt, dass ein PostBack, DataList-Steuerelement wird aktualisiert ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image26.png))
 
@@ -156,7 +156,7 @@ Darüber hinaus müssen wir die DropDownList-Steuerelement festgelegt `AppendDat
 Der Grund wählen wir den Wert `0` Element für die Liste "– eine Kategorie auswählen:" ist, da keine Kategorien vorhanden, in das System mit einem Wert von sind `0`, daher keine Produktdatensätze werden zurückgegeben, wenn das Listenelement "– eine Kategorie auswählen:" ausgewählt ist. Nehmen Sie einen Moment Zeit, um die Seite über einen Browser besuchen, um dies zu bestätigen. Wie in Abbildung 13 dargestellt, wenn zunächst Anzeige der Seite das Listenelement "– eine Kategorie auswählen:" ausgewählt ist, und keine Produkte angezeigt werden.
 
 
-[![Wenn die](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image29.png)
+[![W"hen" die](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image29.png)
 
 **Abbildung 13**: Keine Produkte werden angezeigt, wenn das Listenelement "– eine Kategorie auswählen:" aktiviert ist, ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
@@ -180,4 +180,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Randy Schmidt. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [Weiter](master-detail-filtering-acess-two-pages-datalist-cs.md)

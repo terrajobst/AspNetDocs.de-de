@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 0e23ff32-646d-43f3-8bec-6b2313d3abd6
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-bound-controls
 msc.type: authoredcontent
-ms.openlocfilehash: b115109c7307d05dc9e620378a51a71407204740
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 016dfa2a5a5fb9aaed0e1c60194e53ac9ccb8b36
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056367"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419586"
 ---
-<a name="data-bound-controls"></a>Datengebundene Steuerelemente
-====================
+# <a name="data-bound-controls"></a>Datengebundene Steuerelemente
+
 by [Microsoft](https://github.com/microsoft)
 
 > Die meisten ASP.NET-Anwendungen basieren auf einem gewissen Grad der Darstellung von Daten aus einer Back-End-Datenquelle. Datengebundene Steuerelemente wurden pivotal Teil der Interaktion mit Daten in dynamischer Webanwendungen. ASP.NET 2.0 bietet einige erheblichen Verbesserungen von datengebundenen Steuerelementen, einschließlich einer neuen BaseDataBoundControl-Klasse und die deklarative Syntax.
@@ -86,7 +86,7 @@ Klicken Sie zum Anzeigen von Werbung von der obigen XML-Datei, ein AdRotator-Ste
 
 Wenn Sie eine Datenbanktabelle als Datenquelle für das Steuerelement AdRotator verwenden möchten, müssen Sie zunächst eine Datenbank mithilfe des folgenden Schemas:
 
-| **Name der Spalte** | **Datentyp** | **Beschreibung** |
+| **Spaltenname** | **Datentyp** | **Beschreibung** |
 | --- | --- | --- |
 | ID | int | Primärschlüssel. Diese Spalte kann einen beliebigen Namen besitzen. |
 | ImageUrl | Nvarchar (*Länge*) | Der relative oder absolute URL des Bilds, das für die werbeeinblendung angezeigt wird. |
@@ -109,7 +109,7 @@ Listensteuerelemente enthalten die ListBox, DropDownList, "CheckBoxList", RadioB
 
 Klicken Sie auf Daten binden ein Listensteuerelement, ein Datenquellen-Steuerelement auf der Seite hinzufügen. Geben Sie einen SELECT-Befehl für das Datenquellen-Steuerelement, und legen Sie dann auf die ID des Datenquellen-Steuerelement die Eigenschaft "DataSourceID" des Steuerelements. Verwenden der **DataTextField** und **DataValueField** Eigenschaften, die den anzuzeigenden Text und der Wert für das Steuerelement zu definieren. Darüber hinaus können Sie mithilfe der **DataTextFormatString** Eigenschaft, um die Darstellung des Anzeigetexts wie folgt steuern:
 
-| **Expression (Ausdruck)** | **Beschreibung** |
+| **Ausdruck** | **Beschreibung** |
 | --- | --- |
 | Preis: {0:C} | Für Daten, die numerische/Dezimalzahl. Zeigt das Literal "Preis:" gefolgt von Zahlen im Währungsformat an. Das Währungsformat hängt von der kultureinstellung, die in das Culture-Attribut angegeben wird, auf die **Seite** -Direktive oder in der Datei "Web.config". |
 | {0:D4} | Für ganzzahlige Daten. Kann nicht bei Dezimalzahlen verwendet werden. Ganze Zahlen werden in einem Feld Nullen angezeigt, die vier Zeichen breit ist. |
@@ -195,7 +195,7 @@ Sie können die Darstellung des GridView-Steuerelements anpassen, indem Sie die 
 
 Sie können auch ein- oder Ausblenden von verschiedenen Teilen des Steuerelements. Die folgende Tabelle enthält die Eigenschaften, die steuern, welche Teile angezeigt oder ausgeblendet werden.
 
-| **Property** | **Beschreibung** |
+| **Eigenschaft** | **Beschreibung** |
 | --- | --- |
 | ShowFooter | Anzeigen oder Ausblenden den Fußzeilenbereich des GridView-Steuerelement. |
 | ShowHeader | Anzeigen oder Ausblenden der Headerbereich des GridView-Steuerelements. |
@@ -204,7 +204,7 @@ Sie können auch ein- oder Ausblenden von verschiedenen Teilen des Steuerelement
 
 Das GridView-Steuerelement bietet mehrere Ereignisse, denen Sie programmieren können. Dadurch können Sie eine benutzerdefinierte Routine ausgeführt wird, sobald ein Ereignis eintritt. Die folgende Tabelle enthält die Ereignisse, die von der GridView-Steuerelement unterstützt werden.
 
-| **Event** | **Beschreibung** |
+| **event** | **Beschreibung** |
 | --- | --- |
 | PageIndexChanged | Tritt auf, wenn eine der Pagerschaltflächen geklickt wird, allerdings nachdem das GridView-Steuerelement den Pagingvorgang behandelt. Dieses Ereignis wird häufig verwendet, wenn eine Aufgabe auszuführen, nachdem der Benutzer auf eine andere Seite im Steuerelement navigiert werden muss. |
 | PageIndexChanging | Tritt auf, wenn eine der Pagerschaltflächen geklickt wird, aber vor der GridView-Steuerelement den Pagingvorgang behandelt. Dieses Ereignis wird häufig verwendet, um den Pagingvorgang abzubrechen. |
@@ -262,7 +262,7 @@ Das FormView-Steuerelement bietet zahlreiche integrierte Funktionen, mit denen d
 
 Da Vorlagen von FormView-Steuerelement verwendet wird, stellt es eine Möglichkeit zum automatischen Generieren von Befehlsschaltflächen zum Ausführen, aktualisieren, löschen oder Einfügen von Vorgängen keine bereit. Sie müssen diese Befehlsschaltflächen manuell in die entsprechende Vorlage einschließen. Das FormView-Steuerelement erkennt bestimmte Schaltflächen, die ihre **CommandName** Eigenschaften, die auf bestimmte Werte festgelegt sind. Die folgende Tabelle enthält die Befehlsschaltfläche, die das FormView-Steuerelement erkennt.
 
-| **Button** (Schaltfläche) | **CommandName-Wert** | **Beschreibung** |
+| **Schaltfläche** | **CommandName-Wert** | **Beschreibung** |
 | --- | --- | --- |
 | Abbrechen | "Abbrechen" | Verwendet, aktualisieren oder Einfügen von Vorgängen, den Vorgang abzubrechen und um die vom Benutzer eingegebenen Werte zu verwerfen. Gibt zurück, klicken Sie dann das FormView-Steuerelement in den Modus durch die Eigenschaft "DefaultMode" angegeben. |
 | Löschen | "Löschen" | Zum Löschen der Vorgänge um angezeigten Datensatzes aus der Datenquelle zu löschen. Löst die Ereignisse ItemDeleting und ItemDeleted. |
@@ -296,7 +296,7 @@ Sie können die Darstellung des das FormView-Steuerelement anpassen, indem Sie d
 
 Das FormView-Steuerelement bietet mehrere Ereignisse, denen Sie programmieren können. Dadurch können Sie eine benutzerdefinierte Routine ausgeführt wird, sobald ein Ereignis eintritt. Die folgende Tabelle enthält die Ereignisse, die durch das FormView-Steuerelement unterstützt.
 
-| **Event** | **Beschreibung** |
+| **event** | **Beschreibung** |
 | --- | --- |
 | ItemCommand | Tritt auf, wenn eine Schaltfläche in einem FormView-Steuerelement geklickt wird. Dieses Ereignis wird häufig verwendet, um eine Aufgabe auszuführen, wenn eine Schaltfläche in das Steuerelement geklickt wird. |
 | ItemCreated | Tritt auf, nachdem alle FormViewRow-Objekte in das FormView-Steuerelement erstellt werden. Dieses Ereignis wird häufig verwendet, um die Werte eines Datensatzes zu ändern, bevor er angezeigt wird. |
@@ -388,7 +388,7 @@ Sie können die Darstellung der DetailsView-Steuerelement anpassen, indem Sie di
 
 Das DetailsView-Steuerelement bietet mehrere Ereignisse, denen Sie programmieren können. Dadurch können Sie eine benutzerdefinierte Routine ausgeführt wird, sobald ein Ereignis eintritt. Die folgende Tabelle enthält die Ereignisse, die von DetailsView-Steuerelement unterstützt werden. Das DetailsView-Steuerelement erbt auch diese Ereignisse von ihrer Basisklassen: Datenbindung, Datenbindung, verworfen, Init, Load, PreRender und rendern.
 
-| **Event** | **Beschreibung** |
+| **event** | **Beschreibung** |
 | --- | --- |
 | ItemCommand | Tritt auf, wenn eine Schaltfläche im DetailsView-Steuerelement geklickt wird. |
 | ItemCreated | Tritt auf, nachdem alle DetailsViewRow-Objekte im DetailsView-Steuerelement erstellt werden. Dieses Ereignis wird häufig verwendet, um die Werte eines Datensatzes zu ändern, bevor er angezeigt wird. |
@@ -508,9 +508,9 @@ Das TreeView-Steuerelement verfügt über mehrere Eigenschaften, die den Betrieb
 
 Die **ShowCheckBoxes** Eigenschaft wirkt sich auf, und zwar unabhängig davon, ob Knoten ein Kontrollkästchen, die beim Rendern angezeigt. Die gültigen Werte für diese Eigenschaft sind **keine**, **Stamm**, **übergeordneten**, **Blattebene**, und **alle**. Diese wirken sich auf das TreeView-Steuerelement wie folgt:
 
-| **Eigenschaftswert** | **Effect class (Effect-Klasse)** |
+| **Eigenschaftswert** | **Effekt** |
 | --- | --- |
-| Keine | Kontrollkästchen werden nicht auf den Knoten angezeigt. Dies ist die Standardeinstellung. |
+| Keiner | Kontrollkästchen werden nicht auf den Knoten angezeigt. Dies ist die Standardeinstellung. |
 | Stammverzeichnis | Ein Kontrollkästchen wird nur für den Stammknoten angezeigt. |
 | Übergeordnetes Element | Ein Kontrollkästchen wird nur auf diesen Knoten angezeigt, die untergeordnete Knoten besitzen. Diese untergeordneten Knoten möglich übergeordneten Knoten oder Blattknoten. |
 | Leaf | Ein Kontrollkästchen wird nur auf diesen Knoten angezeigt, die keine untergeordneten Knoten besitzen. |
@@ -587,7 +587,7 @@ Ein SiteMapPath-Steuerelement besteht aus SiteMapNodeItem-Objekte. Es gibt drei 
 
 Die Eigenschaften, die die Ausführung des SiteMapPath-Kontrolle steuern sind wie folgt aus:
 
-| **Property** | **Beschreibung der Eigenschaft** |
+| **Eigenschaft** | **Beschreibung der Eigenschaft** |
 | --- | --- |
 | ParentLevelsDisplayed | Steuert, wie vielen übergeordneten Knoten angezeigt werden. Der Standardwert ist-1 keine Einschränkung hinsichtlich der Anzahl der übergeordneten Knoten angezeigt erzwingt. |
 | PathDirection | Steuert die Richtung des SiteMapPath. Gültige Werte sind RootToCurrent (Standard) und CurrentToRoot. |

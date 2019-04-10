@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b80535db32c4567135407aeb99967bb40c279ddb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3e1399d17840a2f5301349cb91deb07b0cc34363
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025337"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421978"
 ---
-<a name="validating-with-the-idataerrorinfo-interface-c"></a>Überprüfen mit der IDataErrorInfo-Schnittstelle (C#)
-====================
+# <a name="validating-with-the-idataerrorinfo-interface-c"></a>Überprüfen mit der IDataErrorInfo-Schnittstelle (C#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther erfahren Sie, wie benutzerdefinierte Überprüfungsfehlermeldungen durch Implementieren der IDataErrorInfo-Schnittstelle in einer Modellklasse angezeigt.
@@ -31,7 +31,7 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 <a id="0.5_table01"></a>
 
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
 | Titel | nvarchar(100) | False |
@@ -42,7 +42,7 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 In diesem Tutorial verwende ich das Microsoft Entity Framework, meine Datenbank Modellklassen generiert werden. In Abbildung 1 ist die Movie-Klasse, die vom Entity Framework generiert wird.
 
 
-[![Die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
+[![Ter Film Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
 **Abbildung 01**: Die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
@@ -73,7 +73,7 @@ Die Eigenschaft "IsValid" gibt false zurück, wenn ein Überprüfungsfehler vorl
 Die Movie-Klasse wird vom Entity Framework generiert. Sie können den Code für die Movie-Klasse sehen, wenn Sie die MoviesDBModel.edmx-Datei im Projektmappen-Explorer-Fenster zu erweitern, und öffnen Sie die MoviesDBModel.Designer.cs-Datei im Code-Editor (siehe Abbildung 2).
 
 
-[![Der Code für die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
+[![TIE-Code für die Entität Movie](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
 **Abbildung 02**: Der Code für die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
 
@@ -147,7 +147,7 @@ In Listing 4, die Indexereigenschaft überprüft die \_Errors-Auflistung, um fes
 Sie müssen nicht den Home-Controller in keiner Weise verwenden Sie die geänderte Movie-Klasse zu ändern. Die Seite angezeigt, die in Abbildung 3 wird veranschaulicht, was geschieht, wenn kein Wert für die Felder für Titel oder Director Formular eingegeben wird.
 
 
-[![Aktionsmethoden erstellen automatisch](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
+[![CAktionsmethoden e rstellen automatisch](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
 **Abbildung 03**: Ein Formular mit fehlenden Werten ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
 

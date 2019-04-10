@@ -8,15 +8,15 @@ ms.date: 11/14/2011
 ms.assetid: 5cc304e2-0013-4c26-8fe6-e897a533809f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown
 msc.type: chapter
-ms.openlocfilehash: 1bda628940da180288875c43ade92aad45101596
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4e8dfe9deaf8ee4196d327d94d9b99f568bd11d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022477"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405767"
 ---
-<a name="cascadingdropdown"></a>CascadingDropdown
-====================
+# <a name="cascadingdropdown"></a>CascadingDropdown
+
 > Dieses Tutorial veranschaulicht, wie das CascadingDropDown-Steuerelement zu verwenden, um die entsprechenden Dropdown-Listen erstellen, die aktualisiert werden, wenn der Benutzer eine Auswahl treffen.
 
 

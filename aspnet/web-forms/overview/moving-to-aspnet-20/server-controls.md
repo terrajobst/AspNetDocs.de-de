@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: ecf99fa894c1f662542aa8a613195b828bf2c67b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061437"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420756"
 ---
-<a name="server-controls"></a>Serversteuerelemente
-====================
+# <a name="server-controls"></a>Serversteuerelemente
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 wird die Serversteuerelemente in vielerlei Hinsicht verbessert. Klicken Sie in diesem Modul erläutert einige der architektonischen Änderungen wie ASP.NET 2.0, und Visual Studio 2005-Steuerelemente behandelt.
@@ -99,7 +99,7 @@ In ASP.NET 2.0 lautet die DOCTYPE-Default-Definition:
 
 [!code-html[Main](server-controls/samples/sample7.html)]
 
-Wenn Sie auswählen, können Sie die standardmäßige XHML Kompatibilität über den XhtmlConformance-Knoten in der Konfigurationsdatei ändern. Beispielsweise ändert der folgende Knoten in der Datei "Web.config" XHTML-Kompatibilität in XHTML 1.0 Strict:
+Wenn Sie auswählen, können Sie die Standard-XHTML-Kompatibilität, über den XhtmlConformance-Knoten in der Konfigurationsdatei ändern. Beispielsweise ändert der folgende Knoten in der Datei "Web.config" XHTML-Kompatibilität in XHTML 1.0 Strict:
 
 [!code-xml[Main](server-controls/samples/sample8.xml)]
 
@@ -193,7 +193,7 @@ In ASP.NET 2.0 das RequestLengthDiskThreshold-Attribut des HttpRuntime-Elements 
 
 Es ist recht häufig Probleme mit der beim Abrufen von Informationen in einer Reihe von "Seiten" Verwenden von Bereichen oder durch die Übertragung von Seite zu Seite ASP.NET-Entwickler auftreten. Meistens, die Unterfangen ist ein frustrierend und Zeit in Anspruch nehmen. Das neue Assistenten-Steuerelement löst die Probleme durch die Funktionen für lineare und nicht linearen Schritte in eine Assistentenschnittstelle, der Benutzer mit vertraut sind. Die Assistenten-Steuerelement bietet Eingabeformulare in eine Reihe von Schritten an. Jeder Schritt ist eines bestimmten Typs, die von der StepType-Eigenschaft des Steuerelements angegeben. Die verfügbaren Typen lauten wie folgt aus:
 
-| **Schritttyp** | **Erläuterung** |
+| **Schritttyp** | **Erklärung** |
 | --- | --- |
 | Auto | Der Assistent bestimmt automatisch den Typ des Schritts auf Grundlage seiner Position innerhalb der Hierarchie Schritt. |
 | Starten | Der erste Schritt, häufig verwendet, um eine einführende Anweisung darzustellen. |
@@ -218,7 +218,7 @@ Dieses Video ist eine exemplarische Vorgehensweise für die Assistenten-Steuerel
 
 Das Localize-Steuerelement ist ein literales Steuerelement ähnelt. Das Localize-Steuerelement hat jedoch einen **Modus** Eigenschaft, die steuert, wie das Markup, das hinzugefügt wird gerendert wird. Die Mode-Eigenschaft unterstützt die folgenden Werte:
 
-| **Modus** | **Erläuterung** |
+| **Modus** | **Erklärung** |
 | --- | --- |
 | Transformation | Markup wird nach dem Protokoll des Browsers die Anforderung umgewandelt. |
 | PassThrough | Als Markup gerendert – ist. |

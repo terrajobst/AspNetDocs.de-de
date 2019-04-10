@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
-title: Auslagern und Sortieren von Berichtsdaten (C#) | Microsoft-Dokumentation
+title: Auslagern und Sortieren von Berichtsdaten (c#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Paginierung und Sortierung sind zwei sehr allgemeine Funktionen zum Anzeigen von Daten in einer online-Anwendung. In diesem Tutorial werden wir einen ersten Blick auf das Hinzufügen einer Sortierung dauern und...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15e23b09df13f11c69a2fd6c721981e632a25434
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: dc5b2a2888eebb4b812caf3fc11bf109d54bb73d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420691"
 ---
-<a name="paging-and-sorting-report-data-c"></a>Auslagern und Sortieren von Berichtsdaten (C#)
-====================
+# <a name="paging-and-sorting-report-data-c"></a>Auslagern und Sortieren von Berichtsdaten (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_24_CS.exe) oder [PDF-Datei herunterladen](paging-and-sorting-report-data-cs/_static/datatutorial24cs1.pdf)
@@ -67,7 +67,7 @@ Um die Liste mit Aufzählungszeichen angezeigt, die Paginierung und Sortierung v
 
 ## <a name="step-2-displaying-product-information-in-a-gridview"></a>Schritt 2: Anzeigen von Produktinformationen in einer GridView-Ansicht
 
-Bevor wir tatsächlich implementieren Auslagern und Sortieren von Funktionen, können Sie s, erstellen Sie zunächst eine standardmäßige nicht-Srotable, nicht auslagerbaren GridView, die die Produktinformationen enthält. Diese Aufgabe ist es häufig vor der in dieser tutorialreihe also diese Schritte ausgeführt haben vertraut sein. Öffnen Sie zunächst die `SimplePagingSorting.aspx` Seite, und ziehen Sie ein GridView-Steuerelement aus der Toolbox auf den Designer, Festlegen der `ID` Eigenschaft `Products`. Als Nächstes erstellen Sie eine neue "ObjectDataSource", die die Klasse ProductsBLL s verwendet `GetProducts()` Methode, um alle Produktinformationen, zurückzugeben.
+Bevor wir tatsächlich implementieren Auslagern und Sortieren von Funktionen, können Sie die s-standard nicht sortierbar, nicht auslagerbaren GridView zuerst zu erstellen, die die Produktinformationen enthält. Diese Aufgabe ist es häufig vor der in dieser tutorialreihe also diese Schritte ausgeführt haben vertraut sein. Öffnen Sie zunächst die `SimplePagingSorting.aspx` Seite, und ziehen Sie ein GridView-Steuerelement aus der Toolbox auf den Designer, Festlegen der `ID` Eigenschaft `Products`. Als Nächstes erstellen Sie eine neue "ObjectDataSource", die die Klasse ProductsBLL s verwendet `GetProducts()` Methode, um alle Produktinformationen, zurückzugeben.
 
 
 ![Abrufen von Informationen zu allen Produkten mithilfe der GetProducts()-Methode](paging-and-sorting-report-data-cs/_static/image4.png)
@@ -91,7 +91,7 @@ Als Nächstes können Sie s GridView s Felder anpassen, sodass nur die Produktna
 Abbildung 6 zeigt unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt. Beachten Sie, dass die Seite zeigt eine Liste aller Produkte in einem Bildschirm mit einer jeden Produktname s, Kategorie, Lieferanten, Preis, und nicht mehr Status unterstützte.
 
 
-[![Jedes der Produkte werden aufgelistet](paging-and-sorting-report-data-cs/_static/image7.png)](paging-and-sorting-report-data-cs/_static/image6.png)
+[![Ean der Produkte aufgelisteten](paging-and-sorting-report-data-cs/_static/image7.png)](paging-and-sorting-report-data-cs/_static/image6.png)
 
 **Abbildung 6**: Jedes der Produkte aufgeführt sind ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image8.png))
 
@@ -101,7 +101,7 @@ Abbildung 6 zeigt unseren Fortschritt bisher ein, wenn Sie über einen Browser a
 Auflisten von *alle* Produkte auf einem Bildschirm Informationsflut für den Benutzer zum Durchlesen der das führen kann. Damit werden die Ergebnisse übersichtlicher zu machen, können wir teilen Sie die Daten in kleinere Seiten mit Daten und ermöglicht dem Benutzer, die eine Seite mit Daten zu einem Zeitpunkt durchlaufen. Zum Ausführen dieser einfach das Kontrollkästchen Paging aktivieren aus dem GridView-s-Smarttag (Dadurch wird das GridView-s [ `AllowPaging` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) zu `true`).
 
 
-[![Aktivieren Sie das Kontrollkästchen aktivieren Paging, zum Hinzufügen von Paging-Unterstützung](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
+[![Czum Teufel ist das Aktivieren der Auslagerungsdatei Kontrollkästchen, um Paging-Unterstützung hinzufügen](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
 
 **Abbildung 7**: Überprüfen Sie das Aktivieren der Auslagerungsdatei Kontrollkästchen, um Paging-Unterstützung hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image11.png))
 
@@ -137,7 +137,7 @@ Lassen Sie s, die die standarddarstellung der unsere GridView-s-Auslagerungsschn
 Abbildung 8 zeigt die Webseite, wenn über einen Browser aufgerufen werden soll, nachdem die GridView s Paging aktivieren das Kontrollkästchen markiert ist und die `PagerStyle` und `PagerSettings` Konfigurationen wurden durch die `GridView.skin` Datei. Hinweis wie nur zehn Datensätze werden angezeigt, und die Paging-Schnittstelle gibt an, dass wir die erste Seite der Daten angezeigt werden.
 
 
-[![Mit Paging aktiviert ist werden nur eine Teilmenge der Datensätze zu einem Zeitpunkt angezeigt](paging-and-sorting-report-data-cs/_static/image13.png)](paging-and-sorting-report-data-cs/_static/image12.png)
+[![Wmit Paging aktiviert ist, nur eine Teilmenge der Datensätze werden angezeigt, zu einem Zeitpunkt](paging-and-sorting-report-data-cs/_static/image13.png)](paging-and-sorting-report-data-cs/_static/image12.png)
 
 **Abbildung 8**: Mit Paging aktiviert ist, werden nur eine Teilmenge der Datensätze zu einem Zeitpunkt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image14.png))
 
@@ -145,7 +145,7 @@ Abbildung 8 zeigt die Webseite, wenn über einen Browser aufgerufen werden soll,
 Klickt der Benutzer auf eine Seite Zahlen in den Paging-Schnittstelle, erfolgt ein Postback aus, und die Seite lädt angezeigt, die Datensätze der Seite "s" angefordert. Abbildung 9 zeigt die Ergebnisse nach der Aktivierung, um die letzte Seite der Daten anzuzeigen. Beachten Sie, dass die letzte Seite nur einem Datensatz; Dies ist da 81 Datensätze vorhanden sind, insgesamt acht Seiten der 10 Datensätze pro Seite plus eine Seite mit einem Datensatz einzelne führt.
 
 
-[![Durch Klicken auf eine Seitenzahl ein Postback auslöst, und zeigt einen entsprechenden Teil der Datensätze](paging-and-sorting-report-data-cs/_static/image16.png)](paging-and-sorting-report-data-cs/_static/image15.png)
+[![CLicking auf eine Seitenzahl ein Postback auslöst und zeigt die entsprechenden Teilmenge der Einträge](paging-and-sorting-report-data-cs/_static/image16.png)](paging-and-sorting-report-data-cs/_static/image15.png)
 
 **Abbildung 9**: Durch Klicken auf eine Seitenzahl ein Postback auslöst, und zeigt die entsprechenden Teilmenge der Datensätze ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image17.png))
 
@@ -182,7 +182,7 @@ Dieser Ereignishandler weist die `PagingInformation` Bezeichnung s `Text` Eigens
 Durch diese hinzufügen wird der Benutzer jetzt eine Meldung angezeigt, der angibt, welcher Seite, die sie besuchen und wie viele Gesamtseitenzahl Daten vorhanden sind.
 
 
-[![Die aktuelle Seitenzahl und die Anzahl der Seiten gesamt werden angezeigt.](paging-and-sorting-report-data-cs/_static/image19.png)](paging-and-sorting-report-data-cs/_static/image18.png)
+[![Ter die aktuelle Seitenzahl und die Anzahl der Seiten gesamt werden angezeigt](paging-and-sorting-report-data-cs/_static/image19.png)](paging-and-sorting-report-data-cs/_static/image18.png)
 
 **Abbildung 10**: Die aktuelle Seitenzahl und die Anzahl der Seiten gesamt werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image20.png))
 
@@ -206,7 +206,7 @@ Abschließend müssen wir erstellen einen Ereignishandler für das DropDownList-
 Wie in Abbildung 11 gezeigt, ändern Sie lediglich die GridView s `PageIndex` -Eigenschaft bewirkt, dass die Daten erneut an die GridView gebunden werden. In den GridView-s `DataBound` -Ereignishandler der entsprechenden Dropdownliste `ListItem` ausgewählt ist.
 
 
-[![Der Benutzer ist die sechste Seite beim Auswählen der Element "Page" 6 Dropdown-Liste automatisch ausgeführt.](paging-and-sorting-report-data-cs/_static/image22.png)](paging-and-sorting-report-data-cs/_static/image21.png)
+[![Ter Benutzer ist die sechste Seite beim Auswählen der Element "Page" 6 Dropdown-Liste automatisch ausgeführt.](paging-and-sorting-report-data-cs/_static/image22.png)](paging-and-sorting-report-data-cs/_static/image21.png)
 
 **Abbildung 11**: Der Benutzer ist die sechste Seite beim Auswählen der Element "Page" 6 Dropdown-Liste automatisch ausgeführt ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image23.png))
 
@@ -231,7 +231,7 @@ Diese Syntax gibt an, um die weißen Text verwenden, wenn diese Hyperlinks in ei
 Nach dem Hinzufügen dieses CSS beim Besuch der Seite über einen Browser sollte am Bildschirm ähnelt Abbildung 12. Abbildung 12 zeigt insbesondere, die Ergebnisse nach dem Preis s-Header auf den Link geklickt wurde.
 
 
-[![Die Ergebnisse sind nach UnitPrice in aufsteigender Reihenfolge sortiert wurden](paging-and-sorting-report-data-cs/_static/image25.png)](paging-and-sorting-report-data-cs/_static/image24.png)
+[![Ter Ergebnisse haben UnitPrice in aufsteigender Reihenfolge sortiert wurden](paging-and-sorting-report-data-cs/_static/image25.png)](paging-and-sorting-report-data-cs/_static/image24.png)
 
 **Abbildung 12**: Die Ergebnisse sortierten von UnitPrice in aufsteigender Reihenfolge ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image26.png))
 
@@ -264,7 +264,7 @@ Ein Feld kann so konfiguriert werden, damit sie s nicht sortierbar durch Beseiti
 Nach der `SortExpression` Eigenschaft wurde für entfernt die `UnitPrice` BoundField, als Text und nicht als einen Link an, wodurch verhindert, dass Benutzer die Daten nach Preis sortiert, wird der Header gerendert.
 
 
-[![Entfernen Sie die SortExpression-Eigenschaft, können Benutzer nicht mehr die Produkte nach Preis sortieren](paging-and-sorting-report-data-cs/_static/image29.png)](paging-and-sorting-report-data-cs/_static/image28.png)
+[![BEntfernen Sie die Eigenschaft SortExpression, Benutzer können nicht mehr y sortieren die Produkte nach Preis](paging-and-sorting-report-data-cs/_static/image29.png)](paging-and-sorting-report-data-cs/_static/image28.png)
 
 **Abbildung 14**: Durch das Entfernen der SortExpression-Eigenschaft, können Benutzer nicht mehr der Produkte von Preis sortieren ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image30.png))
 
@@ -283,7 +283,7 @@ Erreichen dies hinzufügen ein Websteuerelements von Schaltfläche auf der Seite
 Auf diese Schaltfläche klicken, gibt den Benutzer auf die erste Seite mit den Produkten, sortiert nach Preis, teuersten am günstigsten ist (siehe Abbildung 15) zurück.
 
 
-[![Klicken auf die Schaltfläche ordnet die Produkte aus dem die teuersten zur ältesten](paging-and-sorting-report-data-cs/_static/image32.png)](paging-and-sorting-report-data-cs/_static/image31.png)
+[![Clicking die Schaltfläche Aufträge die Produkte aus der teuerste zur ältesten](paging-and-sorting-report-data-cs/_static/image32.png)](paging-and-sorting-report-data-cs/_static/image31.png)
 
 **Abbildung 15**: Klicken auf die Schaltfläche die Produkte aus der teuerste zur ältesten Aufträge ([klicken Sie, um das Bild in voller Größe anzeigen](paging-and-sorting-report-data-cs/_static/image33.png))
 
@@ -306,4 +306,4 @@ Viel Spaß beim Programmieren!
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Nächste](efficiently-paging-through-large-amounts-of-data-cs.md)
+> [Weiter](efficiently-paging-through-large-amounts-of-data-cs.md)

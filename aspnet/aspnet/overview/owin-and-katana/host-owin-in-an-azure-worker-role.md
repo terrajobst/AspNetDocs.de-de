@@ -8,15 +8,15 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 129b6a8f411d482de75e7e5edc5cc919b4d2de52
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058037"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419521"
 ---
-<a name="host-owin-in-an-azure-worker-role"></a>Hosten von OWIN in einer Azure-Workerrolle
-====================
+# <a name="host-owin-in-an-azure-worker-role"></a>Hosten von OWIN in einer Azure-Workerrolle
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 > In diesem Tutorial wird gezeigt, wie OWIN selbst in einer Microsoft Azure-workerrolle gehostet wird.
@@ -28,7 +28,7 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - [Azure SDK für .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
@@ -116,7 +116,7 @@ Der Serveremulator weist eine lokale IP-Adresse an den Endpunkt an. Sie finden d
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-Suchen Sie die IP-Adresse unter Dienstbereitstellungen, die Bereitstellung [Id], Dienstdetails. Öffnen Sie einen Webbrowser, und navigieren Sie zu http://<em>Adresse</em>, wobei <em>Adresse</em> ist die IP-Adresse vom Serveremulator; z. B. `http://127.0.0.1:80`. Der OWIN-Startseite sollte angezeigt werden:
+Suchen Sie die IP-Adresse unter Dienstbereitstellungen, die Bereitstellung [Id], Dienstdetails. Öffnen Sie einen Webbrowser, und navigieren Sie zu http:\/\/*Adresse*, wobei *Adresse* ist die IP-Adresse vom Serveremulator; z. B. `http://127.0.0.1:80`. Der OWIN-Startseite sollte angezeigt werden:
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 

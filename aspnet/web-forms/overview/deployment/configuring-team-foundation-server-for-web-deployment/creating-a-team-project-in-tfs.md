@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 9218a22ff221dc7067662c58ccd3e758fca493b7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e727e8124e1f045f8ef25ab7a3d4efbafd4290a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411214"
 ---
-<a name="creating-a-team-project-in-tfs"></a>Erstellen eines Teamprojekts in TFS
-====================
+# <a name="creating-a-team-project-in-tfs"></a>Erstellen eines Teamprojekts in TFS
+
 durch [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -106,7 +106,8 @@ Als Nächstes müssen Sie neue Teamwebsites in der SharePoint-Websitesammlung zu
 
    > [!NOTE]
    > Erhalten Sie möglicherweise eine <strong>HTTP 404 Not Found</strong> Fehler aufgrund eines doppelten Codierung HTTP-Fehlers. In diesem Fall ersetzen Sie dabei die URL:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx` Zum Beispiel:  
+   > `[site_collection_URL]/_layouts/permsetup.aspx`
+   > Zum Beispiel:  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. Auf der **Gruppen einrichten für diesen Standort** Seite fügen Sie den Benutzer, die Teamprojekte zu erstellen, wird die **Besitzer** gruppieren, und klicken Sie dann auf **OK**.
 

@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 6d5af6563bdf3872110497f4b142dd7353c8d64c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426119"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420210"
 ---
-<a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Neue Funktionen für die Webentwicklung mit ASP.NET und Visual Studio 2012
-====================
+# <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Neue Funktionen für die Webentwicklung mit ASP.NET und Visual Studio 2012
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
 > Die neue Version von Visual Studio führt eine Reihe von Verbesserungen, die auf die Leistung und die Leistung verbessern, bei der Arbeit mit Web-Technologien konzentrieren. Visual Studio-Editoren für CSS, JavaScript und HTML-haben vollständig überarbeitet, um viele der Code die am häufigsten geforderte Hilfsmittel, wie IntelliSense und automatischer Einzug enthalten. In Bezug auf die Leistung zu erzielen sind Bündelung und Minimierung jetzt integriert, wie der Ladevorgang der integrierter Funktionen, um ganz einfach die Seite zu reduzieren.
@@ -47,7 +47,7 @@ In diesem praktische Übungen, erfahren Sie, wie Sie:
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 - [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder sogar eine höhere (Lesen [Anhang A](#AppendixA) Anleitungen zur Installation).
 - [Windows PowerShell](https://support.microsoft.com/kb/968930/) (für den Setupskripts: installiert unter Windows 8 und Windows Server 2008 R2)
@@ -720,7 +720,7 @@ Sie installieren können **Microsoft Visual Studio Express 2012 für Web** oder 
 
     *Visual Studio Express für Web-Kachel*
 
-* * *
+---
 
 <a id="AppendixB"></a>
 

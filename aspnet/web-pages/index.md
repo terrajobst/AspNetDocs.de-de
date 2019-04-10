@@ -8,15 +8,15 @@ ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
-ms.openlocfilehash: 967c5687013cac75b5ec8dd665269026bd46601c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 832f89dfdecb71f2664431a4880978f7355246f4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023367"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420223"
 ---
-<a name="aspnet-web-pages"></a>ASP.NET Web Pages
-====================
+# <a name="aspnet-web-pages"></a>ASP.NET Web Pages
+
 
 > [!NOTE] 
 > WebMatrix wird nicht mehr als eine integrierte Entwicklungsumgebung für ASP.NET Web Pages empfohlen. Verwendung [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio-Code](https://code.visualstudio.com/).
@@ -26,12 +26,12 @@ ms.locfileid: "57023367"
     - [Erste Schritte](overview/getting-started/index.md)
 
         - [Programmieren von ASP.NET-Webseiten in Visual Studio](overview/getting-started/program-asp-net-web-pages-in-visual-studio.md)
-        - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](overview/getting-started/introducing-razor-syntax-c.md)
+        - [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](overview/getting-started/introducing-razor-syntax-c.md)
         - [ASP.NET-Webseiten (Visual Basic)](overview/getting-started/introducing-razor-syntax-vb.md)
         - [ASP.NET-Webseiten (Razor) – FAQs](overview/getting-started/aspnet-web-pages-razor-faq.md)
-        - [Senden von E-Mails von Ihrer Website](overview/getting-started/11-adding-email-to-your-web-site.md)
+        - [Senden von E-Mail-Nachrichten von Ihrer Website](overview/getting-started/11-adding-email-to-your-web-site.md)
         - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](overview/getting-started/13-adding-social-networking-to-your-web-site.md)
-        - [Einführung zu ASP.NET-Webseiten](overview/getting-started/introducing-aspnet-web-pages-2/index.md)
+        - [Einführung in ASP.NET-Webseiten](overview/getting-started/introducing-aspnet-web-pages-2/index.md)
 
             - [Erste Schritte](overview/getting-started/introducing-aspnet-web-pages-2/getting-started.md)
             - [Grundlagen der Programmierung](overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
@@ -64,10 +64,10 @@ ms.locfileid: "57023367"
 
         - [Arbeiten mit Daten](overview/data/5-working-with-data.md)
         - [Anzeigen von Daten in einem Diagramm](overview/data/7-displaying-data-in-a-chart.md)
-        - [Working with Files (Arbeiten mit Dateien)](overview/data/working-with-files.md)
+        - [Arbeiten mit Dateien](overview/data/working-with-files.md)
     - [Testen und Debuggen](overview/testing-and-debugging/index.md)
 
-        - [Einführung zum Debugging](overview/testing-and-debugging/introduction-to-debugging.md)
+        - [Einführung in das Debuggen](overview/testing-and-debugging/introduction-to-debugging.md)
         - [Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)](overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide.md)
     - [Sicherheit](overview/security/index.md)
 
@@ -82,18 +82,18 @@ ms.locfileid: "57023367"
     - [API-Referenz](overview/api-reference/index.md)
 
         - [ASP.NET-API-Kurzübersicht](overview/api-reference/asp-net-web-pages-api-reference.md)
-    - [Freigaben](overview/releases/index.md)
+    - [Versionen](overview/releases/index.md)
 
         - [Neue Funktionen in ASP.NET Web Pages 3.2](overview/releases/whats-new-in-aspnet-web-pages-32.md)
         - [Neue Funktionen in ASP.NET Web Pages 3.1](overview/releases/whats-new-aspnet-web-pages-31.md)
         - [Die wichtigsten Funktionen in ASP.NET Web Pages 2](overview/releases/top-features-in-web-pages-2.md)
-        - [ASP.NET Web Pages 2 Developer Preview – Infodatei](overview/releases/aspnet-web-pages-2-developer-preview-readme.md)
+        - [ASP.NET Web Pages 2 Developer Vorschau – Infodatei](overview/releases/aspnet-web-pages-2-developer-preview-readme.md)
         - [Paralleles Ausführen verschiedener ASP.NET Web Pages-Versionen](overview/releases/running-v1-and-v2-sites-side-by-side.md)
 - [Videos](videos/index.md)
 
-    - [Introduction (Einführung)](videos/introduction/index.md)
+    - [Einführung](videos/introduction/index.md)
 
-        - [5-minütige Einführung zu ASP.NET Web Pages](videos/introduction/5-minute-introduction-to-aspnet-web-pages.md)
+        - [5-minütige Einführung in ASP.NET Web Pages](videos/introduction/5-minute-introduction-to-aspnet-web-pages.md)
         - [Installieren und Verwenden des Microsoft WebMatrix-Tools](videos/introduction/install-and-use-the-microsoft-webmatrix-tool.md)
         - [Erstellen einer Website mit WebMatrix](videos/introduction/create-a-website-using-webmatrix.md)
         - [Ändern des visuellen Stils einer Webseite](videos/introduction/change-the-visual-style-of-a-web-page.md)
@@ -106,7 +106,7 @@ ms.locfileid: "57023367"
     - [ASP.NET Razor-Seiten](videos/aspnet-razor-pages/index.md)
 
         - [Erste Schritte mit WebMatrix und ASP.NET Web Pages](videos/aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
-        - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
+        - [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
         - [Erstellen einer konsistenten Gestaltung (Teil 1)](videos/aspnet-razor-pages/creating-a-consistent-look-part-1.md)
         - [Erstellen einer konsistenten Gestaltung (Teil 2)](videos/aspnet-razor-pages/creating-a-consistent-look-part-2.md)
         - [Arbeiten mit Formularen (Teil 1)](videos/aspnet-razor-pages/working-with-forms-part-1.md)
@@ -116,10 +116,10 @@ ms.locfileid: "57023367"
         - [Anzeigen von Daten in einem Raster](videos/aspnet-razor-pages/displaying-data-in-a-grid.md)
         - [Anzeigen von Daten in einem Diagramm (Teil 1)](videos/aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
         - [Anzeigen von Daten in einem Diagramm (Teil 2)](videos/aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
-        - [Working with Files (Arbeiten mit Dateien)](videos/aspnet-razor-pages/working-with-files.md)
+        - [Arbeiten mit Dateien](videos/aspnet-razor-pages/working-with-files.md)
         - [Working with Images (Arbeiten mit Bildern)](videos/aspnet-razor-pages/working-with-images.md)
         - [Arbeiten mit Videos](videos/aspnet-razor-pages/working-with-video.md)
-        - [Hinzufügen der Funktion zum Senden von E-Mails zu Ihrer Website](videos/aspnet-razor-pages/adding-email-to-your-web-site.md)
+        - [Hinzufügen der Funktion zum Senden von E-Mails an Ihre Website](videos/aspnet-razor-pages/adding-email-to-your-web-site.md)
         - [Hinzufügen der Suchfunktion zu Ihrer Website](videos/aspnet-razor-pages/adding-search-to-your-web-site.md)
         - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](videos/aspnet-razor-pages/adding-social-networking-to-your-website.md)
 - [Schulungsvideos zu WebMatrix und Web Pages von Pluralsight](pluralsight.md)

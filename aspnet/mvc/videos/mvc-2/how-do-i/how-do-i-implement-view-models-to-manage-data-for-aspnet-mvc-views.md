@@ -8,15 +8,15 @@ ms.date: 12/11/2009
 ms.assetid: 22f55d63-78f7-44fd-9107-f74cbe16022b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
 msc.type: video
-ms.openlocfilehash: 32e10e038e7effbe7cddba0f64db9b8bb8bd4c31
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5f883c4ab42e71fc76df221c2b282e124a3d97bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59423018"
 ---
-<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>Gewusst wie: Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten?
-====================
+# <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>Gewusst wie: Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten?
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem video Chris Pels zeigt, wie das Konzept der "View Model" verwendet für die Verwaltung von Daten für ASP.NET MVC-Ansichten. Zunächst wird ein MVC-Beispielprojekt erstellt, eine ViewDataDictionary zum Verpacken, und übergeben von Daten von einem Controller zu einer Ansicht verwendet. Als Nächstes wird eine Klasse erstellt, der einem View Model für eine Sicht in der Beispiel-MVC-Projekt darstellt. Im Rahmen dieser Implementierung werden die Vorteile von der ViewModel-Ansatz beschrieben. Es gibt eine Beschreibung der, die Anwendungslogik zu partitionieren, wenn Sie eine Implementierung des Modells verwenden.

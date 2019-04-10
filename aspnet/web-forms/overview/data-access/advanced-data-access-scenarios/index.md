@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 00d198ed-fddc-4fd3-a86e-3f29c5f707cc
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios
 msc.type: chapter
-ms.openlocfilehash: 6c0abbe94f743a24541a79c6dd4144d8992cd224
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 735832675b48427d866612817ce7c8ef0290374b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020587"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421302"
 ---
-<a name="advanced-data-access-scenarios"></a>Erweiterte Datenzugriffsszenarien
-====================
+# <a name="advanced-data-access-scenarios"></a>Erweiterte Datenzugriffsszenarien
+
 > In diesen Tutorials werden zum Arbeiten mit gespeicherten Prozeduren und berechnete Spalten, wie mit Joins mit Datenbanktabellen und Vorgehensweise beim Verschlüsseln von Informationen zur Datenverbindung.
 
 

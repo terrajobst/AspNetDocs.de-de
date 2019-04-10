@@ -8,15 +8,15 @@ ms.date: 05/08/2008
 ms.assetid: 026e7932-aea4-42c9-8661-c1392407dc4f
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-enable-inline-gridview-editing
 msc.type: video
-ms.openlocfilehash: e5dcd16a3f2e6a209ad343cf86ef3542d12f1b7d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 18070636b96683efdf96f8c3e8eb7d2fd12cc067
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044787"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422108"
 ---
-<a name="how-do-i-enable-inline-gridview-editing"></a>Wie aktiviere ich die GridView-Inlinebearbeitung?
-====================
+# <a name="how-do-i-enable-inline-gridview-editing"></a>Wie aktiviere ich die GridView-Inlinebearbeitung?
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 Nun, dass Sie eine Website mit bearbeiten und der Detailansicht erstellt haben, wie Sie aktiviere Inlinebearbeitung einem **GridView** Steuerelement? Dieses Video veranschaulicht, wie, und auch Workflows für das routing.

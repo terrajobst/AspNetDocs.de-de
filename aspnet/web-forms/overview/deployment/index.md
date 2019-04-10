@@ -8,21 +8,21 @@ ms.date: 08/18/2011
 ms.assetid: 05e4c88f-5101-4277-a323-b6774d98f69e
 msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
-ms.openlocfilehash: 660987c11fe57a858d5fa552a10e38e65a3d5555
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8536c771e5e343bd545b6824bec6f8b85489a7d4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416531"
 ---
-<a name="deployment"></a>Bereitstellung
-====================
+# <a name="deployment"></a>Bereitstellung
+
 > Informationen zum ASP.NET Web Forms-Projekte auf einem Server bereitstellen.
 
 
 - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](visual-studio-web-deployment/index.md)
 
-    - [Introduction (Einführung)](visual-studio-web-deployment/introduction.md)
+    - [Einführung](visual-studio-web-deployment/introduction.md)
     - [Vorbereiten für die Datenbankbereitstellung](visual-studio-web-deployment/preparing-databases.md)
     - [Umwandlungen für die Datei „Web.config“](visual-studio-web-deployment/web-config-transformations.md)
     - [Projekteigenschaften](visual-studio-web-deployment/project-properties.md)
@@ -37,7 +37,7 @@ ms.locfileid: "57023407"
 - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](deploying-web-applications-in-enterprise-scenarios/index.md)
 
     - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-    - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+    - [Erweiterte webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
     - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
 - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](web-deployment-in-the-enterprise/index.md)
 

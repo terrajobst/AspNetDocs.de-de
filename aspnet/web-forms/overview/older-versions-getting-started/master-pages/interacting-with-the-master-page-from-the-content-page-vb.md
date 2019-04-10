@@ -8,15 +8,15 @@ ms.date: 07/11/2008
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 59a00305cdcaf41ac0b37649382b9c3dc9ce1b0c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1326d5453f205201af850a30c17f509645e15cb9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047647"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422199"
 ---
-<a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interaktion mit der Inhaltsseite über die Masterseite (VB)
-====================
+# <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interaktion mit der Inhaltsseite über die Masterseite (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_VB.pdf)
@@ -61,7 +61,7 @@ Schritt 1 führt über die fünf zuletzt angezeigt haben Produkte in einer GridV
 Öffnen Sie die Stammwebsite und fügen Sie eine Bezeichnung und ein GridView-Steuerelement, um die `leftContent` `<div>`. Löschen Sie der Bezeichnung des `Text` Eigenschaftensatz, dessen `EnableViewState` Eigenschaft, um `False`, und die zugehörige `ID` Eigenschaft, um `GridMessage`; legen Sie des GridView `ID` Eigenschaft, um `RecentProducts`. Klicken Sie dann aus dem Designer, erweitern Sie den GridView Smarttag und mit einer neuen Datenquelle bindet, bindet es auch. Dadurch wird der Assistent zum Konfigurieren von Datenquellen gestartet. Da der Northwind-Datenbank der `App_Data` Ordner ist eine Microsoft SQL Server-Datenbank, um ein SqlDataSource-Steuerelement zu erstellen, indem Sie auswählen (siehe Abbildung 1) wählen, geben Sie dem SqlDataSource-Steuerelement Namen `RecentProductsDataSource`.
 
 
-[![GridView zu binden, um ein SqlDataSource-Steuerelement, das mit dem Namen RecentProductsDataSource](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
+[![BSuchen mit dem Namen der GridView zu einem SqlDataSource-Steuerelement RecentProductsDataSource](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
 
 **Abbildung 01**: GridView zu binden, um ein SqlDataSource-Steuerelement namens `RecentProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png))
 
@@ -69,7 +69,7 @@ Schritt 1 führt über die fünf zuletzt angezeigt haben Produkte in einer GridV
 Im nächste Schritt fordert uns an, welche Datenbank eine Verbindung hergestellt. Wählen Sie die `NORTHWIND.MDF` -Datenbankdatei aus der Dropdown-Liste, und klicken Sie auf Weiter. Da dies beim ersten ist, haben wir diese Datenbank verwendet, bietet der Assistent zum Speichern der Verbindungszeichenfolge in `Web.config`. Lassen Sie sie speichern die Verbindungszeichenfolge, die mit dem Namen `NorthwindConnectionString`.
 
 
-[![Verbinden Sie mit der Northwind-Datenbank](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
+[![CVerbinden mit der Northwind-Datenbank](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
 
 **Abbildung 02**: Verbinden mit der Northwind-Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png))
 
@@ -87,7 +87,7 @@ Da zurückgegeben, dass nur die fünf zuletzt Produkten hinzugefügt werden soll
 Die `TOP 5` Schlüsselwort gibt nur die ersten fünf Datensätze aus der Abfrage. Die `Products` Primärschlüssel der Tabelle, `ProductID`, ist ein `IDENTITY` Spalte, die uns wird sichergestellt, dass jeder neuen Produkts in der Tabelle hinzugefügt, einen höheren Wert als den vorherigen Eintrag hat. Aus diesem Grund Sortieren der Ergebnisse von `ProductID` gibt zurück, die Produkte an, wobei die zuletzt erstellte diejenigen in absteigender Reihenfolge.
 
 
-[![Die fünf zuletzt hinzugefügte Produkte zurückgeben](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
+[![Rurück die fünf am häufigsten vor kurzem hinzugefügt Produkte](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
 
 **Abbildung 03**: Die fünf am häufigsten vor kurzem hinzugefügt Produkte zurückzugeben ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png))
 
@@ -102,7 +102,7 @@ Wie Sie sehen können, die das Markup enthält: das Label-Steuerelement (`GridMe
 Mit diesem GridView, die erstellt und dessen SqlDataSource-Steuerelement konfiguriert haben, besuchen Sie die Website über einen Browser. Wie in Abbildung 4 gezeigt, sehen Sie sich, dass ein Raster in der unteren linken Ecke, die die fünf zuletzt listet Produkte hinzugefügt.
 
 
-[![Das GridView zeigt die fünf zuletzt hinzugefügte Produkte](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
+[![Ter GridView zeigt die fünf am häufigsten vor kurzem hinzugefügt Produkte](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
 
 **Abbildung 04**: Das GridView zeigt die fünf am häufigsten vor kurzem hinzugefügt Produkte ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ Mit diesem GridView, die erstellt und dessen SqlDataSource-Steuerelement konfigu
 Unsere nächste Aufgabe besteht darin, eine Inhaltsseite erstellen, von dem ein Benutzer kann auf ein neues Produkt hinzufügen, der `Products` Tabelle. Fügen Sie eine neue Seite auf die `Admin` Ordner mit dem Namen `AddProduct.aspx`, und bindet, bindet es an der `Site.master` Masterseite. Abbildung 5 zeigt den Projektmappen-Explorer, nachdem auf dieser Seite auf der Website hinzugefügt wurde.
 
 
-[![Fügen Sie eine neue ASP.NET-Seite, um den Ordner Admin](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
+[![ADd eine neue ASP.NET-Seite auf den Ordner Admin](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
 
 **Abbildung 05**: Hinzufügen einer neuen ASP.NET-Seite zu den `Admin` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png))
 
@@ -145,7 +145,7 @@ Finden Sie nach Abschluss des Assistenten unter DetailsViews-Smarttag, und aktiv
 Das ist schon alles! Testen Sie nun auf dieser Seite. Besuchen Sie `AddProduct.aspx` über einen Webbrowser, geben Sie einen Namen und den Preis (siehe Abbildung 6).
 
 
-[![Hinzufügen eines neuen Produkts in der Datenbank](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
+[![ATT ein neues Produkt in der Datenbank](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
 
 **Abbildung 06**: Hinzufügen eines neuen Produkts in die Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png))
 
@@ -199,7 +199,7 @@ Die `Master` -Eigenschaft gibt ein Objekt des Typs [ `MasterPage` ](https://msdn
 Nun, da wir umgewandelt haben die lose typisierte `Page.Master` Eigenschaft auf den Typ des Standorts können wir die Eigenschaften und Methoden, die Website zu verweisen. Wie in Abbildung 7 dargestellt, das die öffentliche Eigenschaft `GridMessageText` wird in der IntelliSense-Dropdownliste angezeigt.
 
 
-[![IntelliSense zeigt unsere Masterseite öffentliche Eigenschaften und Methoden](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
+[![IIntelliSense zeigt unsere Masterseite öffentliche Eigenschaften und Methoden](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
 
 **Abbildung 07**: IntelliSense zeigt unsere Masterseite öffentliche Eigenschaften und Methoden ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png))
 
@@ -237,7 +237,7 @@ Der obige Code wird sowohl die lose typisierte `Page.Master` Eigenschaft und die
 Abbildung 8 zeigt die `AddProduct.aspx` Seite sofort nach der ein neues Produkt - Scotts Soda - Datenbank hinzugefügt wurde. Beachten Sie, dass der Name des gerade hinzugefügten Produkts in die Masterseite Bezeichnung angegeben ist und die GridView aktualisiert worden sind, um das Produkt und seinem Preis enthalten.
 
 
-[![Bezeichnung und GridView anzeigen, das gerade hinzugefügte Produkt der Masterseite](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
+[![TIE-Masterseite Bezeichnung und GridView Anzeigen des Produkts Just-Added](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
 
 **Abbildung 08**: Die Masterseite Bezeichnung und GridView wird gezeigt, das Produkt Just-Added ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
 

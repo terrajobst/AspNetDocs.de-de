@@ -8,15 +8,15 @@ ms.date: 03/06/2014
 ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: bbb38ddde49cdeea4255e0e05bd559ddd9e5f692
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 22d4d4afd6963f23d6cfef1745a859c20b69d599
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425989"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422992"
 ---
-<a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools 2013.2 für Visual Studio 2013 – Anmerkungen zu dieser Version
-====================
+# <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools 2013.2 für Visual Studio 2013 – Anmerkungen zu dieser Version
+
 by [Microsoft](https://github.com/microsoft)
 
 ## <a name="installation-notes"></a>Installationshinweise
@@ -44,7 +44,7 @@ Die folgenden Abschnitte beschreiben die Funktionen, die in der Version eingefü
 - [Webveröffentlichung mit Erweiterungen](#webpublish)
 - [ASP.NET-Gerüstbau](#scaffolding)
 - [NuGet 2.8.1](#nuget)
-- [ASP.NET-Web Forms](#webforms)
+- [ASP.NET-Web Forms](#webforms)
 - [ASP.NET MVC 5.1.2](#mvc)
 - [ASP.NET Web-API 2.1.2](#webapi)
 - [ASP.NET Web Pages 3.1.2](#webpages)

@@ -8,15 +8,15 @@ ms.date: 05/22/2009
 ms.assetid: dacc2d88-5768-4721-8624-c603e2088670
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/create-a-new-custom-extender
 msc.type: video
-ms.openlocfilehash: 2fbb725b8d8a40bf08b61e657b54d9f3b75c3590
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1daffa462700c0c1603c67b853d1afecfc5a2001
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032747"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420184"
 ---
-<a name="create-a-new-custom-extender"></a>Erstellen eines neuen benutzerdefinierten Extenders
-====================
+# <a name="create-a-new-custom-extender"></a>Erstellen eines neuen benutzerdefinierten Extenders
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem video Joe veranschaulicht, wie das AJAX Control Toolkit zum Erstellen einer neuen benutzerdefinierten AJAX-Extender-Steuerelements.
@@ -24,4 +24,4 @@ In diesem video Joe veranschaulicht, wie das AJAX Control Toolkit zum Erstellen 
 [&#9654;Sehen Sie sich Video (26 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-new-custom-extender)
 
 > [!div class="step-by-step"]
-> [Vorherige](editor-control-custom.md)
+> [Vorheriges](editor-control-custom.md)

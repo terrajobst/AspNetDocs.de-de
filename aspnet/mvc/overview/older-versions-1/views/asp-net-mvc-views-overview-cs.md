@@ -8,15 +8,15 @@ ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a8e64a99549584f150d64d909ac97210257b1147
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4c35761f9cd44c866242cfe6f4f2d924e81d754
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042967"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421328"
 ---
-<a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC-Ansichten – Übersicht (C#)
-====================
+# <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC-Ansichten – Übersicht (C#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet es sich von einem HTML-Seite? In diesem Tutorial Stephen Walther bietet eine Einführung zu Ansichten und veranschaulicht, wie Sie Daten anzeigen und HTML-Hilfsprogramme in einer Ansicht nutzen können.
@@ -104,7 +104,7 @@ Bilden beispielsweise die Ansicht in Listing 4 nutzt drei HTML-Hilfsprogrammen �
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
 
-[![Das Dialogfeld "Neues Projekt"](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
 **Abbildung 01**: Ein standard Anmeldeformular ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-views-overview-cs/_static/image2.png))
 
@@ -150,4 +150,4 @@ Sie können auch die stark typisierte Ansichtsdaten anhand eines Controllers zu 
 In diesem Tutorial bereitgestellt, eine kurze Einführung in ASP.NET MVC-Ansichten, Anzeigen von Daten und HTML-Hilfsprogramme. Im ersten Abschnitt haben Sie gelernt, wie neue Ansichten zu Ihrem Projekt hinzufügen. Sie haben gelernt, dass Sie eine Ansicht und den richtigen Ordner hinzufügen, um über einen bestimmten Controller aufrufen. Als Nächstes erläutert das Thema des HTML-Hilfsprogramme. Sie erfahren, wie HTML-Hilfsprogramme standard-HTML-Inhalt einfach erstellen können. Schließlich haben Sie Gewusst wie: Anzeigen von Daten zur Datenübergabe von einem Controller zu einer Ansicht nutzen.
 
 > [!div class="step-by-step"]
-> [Nächste](creating-custom-html-helpers-cs.md)
+> [Weiter](creating-custom-html-helpers-cs.md)

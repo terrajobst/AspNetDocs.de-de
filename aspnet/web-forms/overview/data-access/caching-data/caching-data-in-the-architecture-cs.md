@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3971140aa7a6c829287e74df804694c19e34adcf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7637e23678af80ae037292fd3f89ef74167c8242
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028047"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419248"
 ---
-<a name="caching-data-in-the-architecture-c"></a>Zwischenspeichern von Daten in der Architektur (C#)
-====================
+# <a name="caching-data-in-the-architecture-c"></a>Zwischenspeichern von Daten in der Architektur (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_59_CS.exe) oder [PDF-Datei herunterladen](caching-data-in-the-architecture-cs/_static/datatutorial59cs1.pdf)
@@ -159,7 +159,7 @@ Dank dieser Änderung auf `AddCacheItem(key, value)`, invaliding der Cache ist s
 Die Caching-Schicht-s-Klassen und Methoden können verwendet werden, mit Daten arbeiten mit den Verfahren wir in diesen Tutorials untersucht haben. Um die Arbeit mit zwischengespeicherten Daten zu veranschaulichen, speichern Sie die Änderungen an der `ProductsCL` Klasse, und öffnen Sie dann die `FromTheArchitecture.aspx` auf der Seite die `Caching` Ordner und Hinzufügen einer GridView-Ansicht. Erstellen Sie von GridView s Smarttags eine neue "ObjectDataSource". Im ersten Schritt Assistenten s sollte die `ProductsCL` Klasse als eine der Optionen aus der Dropdown-Liste.
 
 
-[![Die ProductsCL-Klasse ist in der Dropdown-Liste Business enthalten.](caching-data-in-the-architecture-cs/_static/image5.png)](caching-data-in-the-architecture-cs/_static/image4.png)
+[![Ter ProductsCL-Klasse befindet sich in der Dropdown-Liste Business](caching-data-in-the-architecture-cs/_static/image5.png)](caching-data-in-the-architecture-cs/_static/image4.png)
 
 **Abbildung 4**: Die `ProductsCL` Klasse befindet sich in der Dropdown-Liste Business ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-cs/_static/image6.png))
 
@@ -167,7 +167,7 @@ Die Caching-Schicht-s-Klassen und Methoden können verwendet werden, mit Daten a
 Nach der Auswahl `ProductsCL`, klicken Sie auf Weiter. Die Dropdown-Liste in der Registerkarte "SELECT" verfügt über zwei Elemente - `GetProducts()` und `GetProductsByCategoryID(categoryID)` und die Registerkarte "Updates" ist der einzige `UpdateProduct` überladen. Wählen Sie die `GetProducts()` Methode aus der Registerkarte "SELECT" und die `UpdateProducts` Methode aus der Registerkarte "Updates" und klicken Sie auf Fertig stellen.
 
 
-[![Die s-Klasse für die ProductsCL-Methoden sind in den Dropdownlisten aufgelistet.](caching-data-in-the-architecture-cs/_static/image8.png)](caching-data-in-the-architecture-cs/_static/image7.png)
+[![Ter aufgelistet ProductsCL Klassenmethoden s in den Dropdownlisten](caching-data-in-the-architecture-cs/_static/image8.png)](caching-data-in-the-architecture-cs/_static/image7.png)
 
 **Abbildung 5**: Die `ProductsCL` s-Klassenmethoden finden Sie in den Dropdownlisten ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-cs/_static/image9.png))
 

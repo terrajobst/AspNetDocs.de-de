@@ -8,15 +8,15 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: ea149b6450cf02c993c7690752a05396802336be
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 078382191595d1f65b5ebe9d0de8d41cd70e376d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425053"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419885"
 ---
-<a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse
-====================
+# <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Glimpse ist erfolgreich sein und wachsenden Familie von open-Source-NuGet-Pakete, die ausführliche Leistung bietet, Debuggen und Diagnoseinformationen für ASP.NET-Apps. Dabei handelt es sich sehr einfach zu installieren, einfache, extrem schnellen, wichtige Leistungsmetriken am unteren Rand jeder Seite angezeigt. Sie können einen Drilldown in Ihre app ausführen beim müssen Sie herausfinden, was auf dem Server vor sich geht. Glimpse bietet so viel wertvolle Informationen, die es wird, dass Sie es während des gesamten Entwicklungszyklus empfohlen, einschließlich Ihrer Azure-Test-Umgebung verwenden. Während [Fiddler](http://www.telerik.com/fiddler) und [F-12 Entwicklungstools](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) eine clientseitige Sicht Glimpse bietet eine detaillierte Übersicht vom Server. Dieses Tutorial konzentriert sich auf die mit dem Blick auf ASP.NET MVC und EF-Pakete, aber viele andere Pakete verfügbar sind. Nach Möglichkeit werden ich auf die entsprechenden verknüpfen [Glimpse-Docs](http://getglimpse.com/Docs/) die ich dabei helfen, verwalten. Glimpse ist ein open-Source-Projekt, Sie zu seinen möglichen Beitrag zu den Quellcode und Dokumentation.
@@ -28,7 +28,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Modellbindung](#mb)
 - [Routen](#route)
 - [Verwenden von Glimpse in Azure](#da)
-- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#addRes)
 
 <a id="ig"></a>
 ## <a name="installing-glimpse"></a>Installieren von Glimpse

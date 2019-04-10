@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2bce5456d9c5465156daf511d0f75a68b35cf7d9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 47d42b8017837f15e0d56dfb3565257164c97bbe
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033347"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421029"
 ---
-<a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>Erstellen von Komponententests für ASP.NET MVC-Anwendungen (VB)
-====================
+# <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>Erstellen von Komponententests für ASP.NET MVC-Anwendungen (VB)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 [PDF herunterladen](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_07_VB.pdf)
@@ -59,12 +59,12 @@ Diese Controlleraktion gibt auch eine Ansicht namens `Details`. Allerdings wird 
 Sie können den Komponententest in Liste 2 ausführen, indem Sie die Tastenkombination eingeben **STRG + R, A** oder durch Klicken auf die **Ausführen aller Tests in der Projektmappe** Schaltfläche (siehe Abbildung 1). Wenn der Test erfolgreich ist, sehen Sie im Fenster Testergebnisse in Abbildung 2.
 
 
-[![Führen Sie aller Tests in der Lösung aus](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image1.png)
+[![RHeben Sie allen Tests in der Lösung](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image1.png)
 
 **Abbildung 01**: Ausführen aller Tests in der Projektmappe ([klicken Sie, um das Bild in voller Größe anzeigen](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image3.png))
 
 
-[![Success!](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image4.png)
+[![SUccess!](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image4.png)
 
 **Abbildung 02**: Erfolgreich! ([Klicken Sie, um das Bild in voller Größe anzeigen](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image6.png))
 
@@ -116,4 +116,4 @@ Als Nächstes, wir untersucht, wie Sie den Inhalt der testen können `View Data`
 Abschließend wird erläutert, wie Sie testen können, ob verschiedene Arten von Aktionsergebnissen aus eine Controlleraktion zurückgegeben werden. Sie erfahren, wie zu prüfen, ob ein Controller gibt eine `ViewResult` oder `RedirectToRouteResult`.
 
 > [!div class="step-by-step"]
-> [Vorherige](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
+> [Vorheriges](creating-unit-tests-for-asp-net-mvc-applications-cs.md)

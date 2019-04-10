@@ -8,15 +8,15 @@ ms.date: 07/16/2008
 ms.assetid: 0427dd22-7836-4b69-b2c2-66c765ace34f
 msc.legacyurl: /web-forms/videos/authentication/asp-forms-login-relocation
 msc.type: video
-ms.openlocfilehash: 57887785537664c4984bd3b7817c6c288d8d324a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9aa31566f383b20d3c1ea8a637ce8a93107871c6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036807"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418390"
 ---
-<a name="asp-forms-login-relocation"></a>Verschieben der ASP-Formularanmeldung
-====================
+# <a name="asp-forms-login-relocation"></a>Verschieben der ASP-Formularanmeldung
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner verwendet im vorherigen Codebeispiel, um den Vorgang fortzusetzen, Anpassen der Authentifizierung in ASP.NET durch das Verschieben und Umbenennen von der ASP.NET-Anwendung die Anmeldefunktionalität ermöglichen. Weitere Informationen zu dieser Demo, ein Tutorial befindet sich [hier](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).

@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: Hinzufügen von clientseitiger Bestätigung beim Löschen von (C#) | Microsoft-Dokumentation
+title: Hinzufügen von clientseitiger Bestätigung beim Löschen von (c#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In den Schnittstellen, die wir bisher erstellt haben, kann ein Benutzer versehentlich löschen von Daten durch Klicken auf die Schaltfläche "löschen", wenn sie auf die Schaltfläche "Bearbeiten" klicken, bestimmt. In diesen Typ t...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a3e35e7b27d646569692a2eb715dcf40b7967473
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d7a6f29dc660cff2bfa9db8f9790d73e51a2cc1c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423194"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420132"
 ---
-<a name="adding-client-side-confirmation-when-deleting-c"></a>Hinzufügen von clientseitiger Bestätigung beim Löschen (C#)
-====================
+# <a name="adding-client-side-confirmation-when-deleting-c"></a>Hinzufügen von clientseitiger Bestätigung beim Löschen (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_22_CS.exe) oder [PDF-Datei herunterladen](adding-client-side-confirmation-when-deleting-cs/_static/datatutorial22cs1.pdf)
@@ -65,7 +65,7 @@ Da es an ein ObjectDataSource-Steuerelement, das nur löschen gebunden wurde unt
 Mit diesen Änderungen haben wir eine voll funktionsfähige Webseite, die einem Benutzer ermöglicht, über die Produkte einer gleichzeitig die Möglichkeit, ein Produkt zu löschen, indem Sie einfach die Schaltfläche "löschen" umschalten. Abbildung 2 zeigt einen Screenshot des unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt.
 
 
-[![Die FormView-Steuerelement zeigt Informationen zu einem einzigen Produkt](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
+[![Ter FormView-Steuerelement zeigt Informationen über ein einzelnes Produkt](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
 
 **Abbildung 2**: Die FormView-Steuerelement zeigt Informationen über ein einzelnes Produkt ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image4.png))
 
@@ -85,7 +85,7 @@ Alles, was, s wird es! Abbildung 3 zeigt einen Screenshot des dieser Bestätigun
 > Die übergebene Zeichenfolge in die `confirm(string)` JavaScript-Funktion mit Apostrophe (und nicht mit Anführungszeichen) als Trennzeichen dient. In JavaScript können Zeichenfolgen mithilfe der beiden Zeichen getrennt werden. Wir verwenden Apostrophe hier, sodass die Trennzeichen für die Zeichenfolge übergeben `confirm(string)` führen eine Mehrdeutigkeit mit Trennzeichen verwendet werden, für die `OnClientClick` Eigenschaftswert.
 
 
-[![Eine Bestätigung wird jetzt angezeigt, wenn durch Klicken auf die Schaltfläche "löschen"](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
+[![A Die Bestätigung ist jetzt angezeigt, wenn durch Klicken auf die Schaltfläche "Delete"](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
 
 **Abbildung 3**: Eine Bestätigung wird jetzt angezeigt, wenn durch Klicken auf die Schaltfläche "löschen" ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image7.png))
 
@@ -127,7 +127,7 @@ Abgeschlossen Sie mit diesen Änderungen haben, klicken auf eine Schaltfläche "
 > Diese Technik kann auch verwendet werden, programmgesteuert auf die Schaltfläche "löschen" in der CommandField in einem DetailsView zugreifen. Für die DetailsView, Sie jedoch d erstellen einen Ereignishandler für die `DataBound` Ereignisses, weil die DetailsView keine `RowDataBound` Ereignis.
 
 
-[![Klicken Sie auf die Schaltfläche zum Löschen von GridView-s zeigt ein benutzerdefiniertes Bestätigungsdialogfeld](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
+[![Clicking GridView s löschen Schaltfläche zeigt ein Bestätigungsdialogfeld angepasst](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
 
 **Abbildung 4**: Das GridView-s-Schaltfläche "löschen" klicken, zeigt ein Bestätigungsdialogfeld angepasst ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image10.png))
 

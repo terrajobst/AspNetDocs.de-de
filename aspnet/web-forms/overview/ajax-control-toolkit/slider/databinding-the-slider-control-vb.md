@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 4f3ba53f-d166-422d-b29c-403348057836
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 284a650d1b63ceed887deb3ddd639fe9fd27019f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a60e09b7cdda7f924a4287aab8cda32fef5a53ac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025437"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419768"
 ---
-<a name="databinding-the-slider-control-vb"></a>Datenbindung des Schieberegler-Steuerelements (VB)
-====================
+# <a name="databinding-the-slider-control-vb"></a>Datenbindung des Schieberegler-Steuerelements (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0VB.pdf)
@@ -45,9 +45,9 @@ Der nächste Schritt ist bereits im letzten Schritt. Die `SliderExtender` Steuer
 Wie Sie im Browser sehen können, funktioniert die Datenbindung in beide Richtungen: einen neuen Wert in das Textfeld eingeben, aktualisiert die Position der des Schiebereglers. Wenn Sie das zweite Textfeld schreibgeschützt machen, können Sie einen unzureichenden Schutz auf das Textfeld hinzufügen, sodass es schwieriger für den Benutzer manuell auf den Wert hier aktualisieren.
 
 
-[![Schieberegler und Textfeld werden synchronisiert.](databinding-the-slider-control-vb/_static/image2.png)](databinding-the-slider-control-vb/_static/image1.png)
+[![SLider und Textfeldern sind synchron.](databinding-the-slider-control-vb/_static/image2.png)](databinding-the-slider-control-vb/_static/image1.png)
 
 Schieberegler und Textfeld synchronisiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](databinding-the-slider-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](using-the-slider-control-with-auto-postback-vb.md)
+> [Vorheriges](using-the-slider-control-with-auto-postback-vb.md)
