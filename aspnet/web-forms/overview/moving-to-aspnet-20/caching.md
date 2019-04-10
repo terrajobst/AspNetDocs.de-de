@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 5c97464ee50291338a80120a86b1b86b07bc672d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032927"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400203"
 ---
-<a name="caching"></a>Zwischenspeicherung
-====================
+# <a name="caching"></a>Zwischenspeicherung
+
 by [Microsoft](https://github.com/microsoft)
 
 > Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. Zwischenspeichern der Ausgabe, Fragment-caching und der Cache-API.
@@ -56,7 +56,7 @@ Um das Element für ungültig zu erklären, das oben eingefügt wurden, entferne
 
 Beachten Sie, dass der Schlüssel des Elements, das als Cacheschlüssel fungiert in das Array von Cacheschlüsseln hinzugefügten Wert identisch sein muss.
 
-## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>SQL-Cacheabhängigkeiten Abrufbasierten<em>(auch als tabellenbasierte Abhängigkeiten)</em>
+## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>SQL-Cache-Dependencies(Also called Table-Based Dependencies) Abrufbasierten
 
 SQL Server 7 und 2000 verwenden das Abrufintervall-basierte Modell für die SQL-cacheabhängigkeiten. Das Abrufintervall-basierte Modell wird ein Trigger verwendet, in einer Datenbanktabelle, die ausgelöst wird, wenn Daten in der Tabelle ändern. Auslösen von Updates, die eine **ChangeId** der Benachrichtigung-Tabelle, die ASP.NET regelmäßig überprüft. Wenn die **ChangeId** Feld wurde aktualisiert, ASP.NET weiß, dass die Daten wurden geändert, und sie macht die zwischengespeicherten Daten ungültig.
 
@@ -213,7 +213,7 @@ Es gibt mehrere Änderungen in ASP.NET 2.0 Cachekonfiguration. Die &lt;zwischens
 
 | **Element** | **Beschreibung** |
 | --- | --- |
-| **cache** | Optionales Element. Definiert die cacheeinstellungen für globale Anwendungen. |
+| **Cache** | Optionales Element. Definiert die cacheeinstellungen für globale Anwendungen. |
 | **outputCache** | Optionales Element. Gibt eine anwendungsweite Ausgabecache-Einstellungen. |
 | **outputCacheSettings** | Optionales Element. Gibt die Ausgabe-Cache-Einstellungen, die auf Seiten in der Anwendung angewendet werden können. |
 | **sqlCacheDependency** | Optionales Element. Konfiguriert die SQL-cacheabhängigkeiten für eine ASP.NET-Anwendung. |

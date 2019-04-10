@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
-title: Hinzufügen von Animationen zu einem Steuerelement (C#) | Microsoft-Dokumentation
+title: Hinzufügen von Animationen zu einem Steuerelement (c#) | Microsoft-Dokumentation
 author: wenz
 description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Dieses Tutorial zeigt, wie...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aac6e97ae5d3d777c3644515628d2669076a88c4
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e4c6bfe1884d3e066c7b27e07e3a069943793bdd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421920"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392286"
 ---
-<a name="adding-animation-to-a-control-c"></a>Hinzufügen von Animationen zu einem Steuerelement (C#)
-====================
+# <a name="adding-animation-to-a-control-c"></a>Hinzufügen von Animationen zu einem Steuerelement (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation1CS.pdf)
@@ -72,9 +72,9 @@ In diesem Beispiel wird der Bereich ausblenden. Die Animation treffen 1,5 Sekund
 Wenn Sie dieses Skript ausführen, wird der Bereich wird angezeigt, und in 1,5 Sekunden ausgeblendet wird.
 
 
-[![Der Bereich wird ausgeblendet wird](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
+[![TIE-Bereich wird eingeblendet,](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
 
 Der Bereich wird ausgeblendet wird, ([klicken Sie, um das Bild in voller Größe anzeigen](adding-animation-to-a-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](executing-several-animations-at-the-same-time-cs.md)
+> [Weiter](executing-several-animations-at-the-same-time-cs.md)

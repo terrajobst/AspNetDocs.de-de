@@ -8,15 +8,15 @@ ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 86cbf150708f1db711b40ccbc25345afeb3e542a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 11e70493478d6810d63ba6b3ac813e32f03052eb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031437"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381327"
 ---
-<a name="understanding-aspnet-ajax-localization"></a>Grundlegendes zur Lokalisierung in ASP.NET AJAX
-====================
+# <a name="understanding-aspnet-ajax-localization"></a>Grundlegendes zur Lokalisierung in ASP.NET AJAX
+
 durch [Scott Cate](https://github.com/scottcate)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
@@ -32,13 +32,13 @@ In diesem Whitepaper untersucht die Lokalisierungsfunktionen, die in der Microso
 
 In diesem Whitepaper basiert in der Beta 2-Version von Microsoft Visual Studio 2008. In diesem Whitepaper wird vorausgesetzt, dass Sie mit Visual Studio 2008 nicht Visual Web Developer Express arbeiten, und exemplarische Vorgehensweisen, gemäß der Benutzeroberfläche von Visual Studio stellt. Einige Codebeispiele werden in Projektvorlagen verwendet, die in Visual Web Developer Express nicht verfügbar sein können.
 
-## <a name="the-need-for-localization"></a>*Die Notwendigkeit für die Lokalisierung*
+## *<a name="the-need-for-localization"></a>Die Notwendigkeit für die Lokalisierung*
 
 Insbesondere für Darstellung des Entwicklern von unternehmensanwendungen und Komponentenentwickler ist die Fähigkeit zum Erstellen von Tools, die über die Unterschiede zwischen Kulturen und Sprachen können zunehmend erforderlich geworden. Entwerfen von Komponenten mit der Möglichkeit zur Anpassung an das Gebietsschema des Clients erhöht die Produktivität von Entwicklern und verringert die Menge der Arbeitsaufwand für die Anpassung einer Komponente Global funktionieren.
 
 Lokalisierung ist der Prozess für das Entwerfen und Unterstützung für eine bestimmte Sprache und Kultur in einer Anwendung oder eine Anwendungskomponente integrieren. Die Plattform von Microsoft ASP.NET bietet umfangreiche Unterstützung für Lokalisierung für ASP.NET-Anwendungen standard, durch die Integration von den standardmäßigen .NET Lokalisierungsmodell; Das Microsoft AJAX-Framework nutzen, die integrierte Modell zur Unterstützung der unterschiedlichen Szenarien, in der Lokalisierung ausgeführt werden kann. Mit dem Microsoft-AJAX-Framework können Skripts entweder in Satellitenassemblys bereitgestellt wird oder durch die Verwendung einer statischen Struktur des Dateisystems lokalisiert werden.
 
-## <a name="embedding-scripts-with-satellite-assemblies"></a>*Einbetten von Skripts mit Satellitenassemblys*
+## *<a name="embedding-scripts-with-satellite-assemblies"></a>Einbetten von Skripts mit Satellitenassemblys*
 
 Mit der standardmäßigen .NET Framework-Lokalisierungsstrategie konsistent ist, können Ressourcen in Satellitenassemblys enthalten sein. Satellitenassemblys bieten verschiedene Vorteile über die Tatsache herkömmlichen Binärdateien - kann keine bestimmten Lokalisierung ohne Aktualisierung des größeren Bilds aktualisiert werden, können zusätzliche lokalisierungen bereitgestellt werden, einfach durch die Installation von Satellitenassemblys in Der Projektordner, und Satellitenassemblys können bereitgestellt werden, ohne dass ein erneutes Laden der Assembly Hauptprojekt. Insbesondere in ASP.NET-Projekten Dies ist nützlich, da die Menge an Systemressourcen verwendet, die für inkrementelle Updates deutlich reduziert werden kann und minimal unterbricht die Nutzung der Produktions-Website.
 
@@ -118,7 +118,7 @@ Für diejenigen, die mit JavaScript-Regex-Syntax, Text in einzelne Schrägstrich
 
 Beachten Sie, dass es mehrere Variationen für diese exemplarische Vorgehensweise gibt. Beispielsweise können Skripts beim ScriptManager-Steuerelement programmgesteuert beim Laden der Seite registriert werden.
 
-## <a name="including-a-static-script-file-structure"></a>*Einschließlich einer statischen Datei-Struktur*
+## *<a name="including-a-static-script-file-structure"></a>Einschließlich einer statischen Datei-Struktur*
 
 Wenn Sie statischen Skriptdateien für die Bereitstellung zu verwenden, verlieren Sie zu den Vorteilen der Verwendung der inhärenten .NET Lokalisierung Schemas. In erster Linie sichtbar ist, dass Sie die automatische, einschließlich Ressourcendateien Skript generierten Typ verlieren; in der obigen exemplarischen Vorgehensweise wurden z. B. Ressourcen durch einen automatisch generierten Typ, der Nachricht vom ScriptManager-Steuerelement namens verfügbar gemacht.
 
@@ -128,7 +128,7 @@ Microsoft empfiehlt, vermeiden ein Problem mit Steuerelement mittels automatisch
 
 Da keine Ressourcen deklarativ einschließen, statische Skripts, die Dateien muss auf die verwiesen wird entweder durch Hinzufügen von `<asp:ScriptElement>` Elemente als untergeordnetes Element der `<Scripts>` Tag des ScriptManager-Steuerelements, oder indem Sie programmgesteuert `ScriptReference` Objekte um die `Scripts` Eigenschaft der `ScriptManager` Steuerelement auf der Seite zur Laufzeit.
 
-## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager und seiner Rolle in der Lokalisierung*
+## *<a name="the-scriptmanager-and-its-role-in-localization"></a>ScriptManager und seiner Rolle in der Lokalisierung*
 
 ScriptManager aktiviert mehrere automatische Verhalten bei lokalisierten Anwendungen:
 
@@ -146,7 +146,7 @@ Webanwendungen wachsen, um eine größere Zielgruppe zu erreichen, wird muss bre
 
 .NET Framework unterstützt systemintern ein Framework, das umfangreiche Lokalisierung mithilfe von Satellitenassemblys und XML-Ressourcendateien (.resx), um eine einheitliche Methode zur Suche nach Ressourcen-Strings und Bilder zu präsentieren. Die ASP.NET AJAX-Erweiterungen, einschließlich der Microsoft AJAX-Framework und das Microsoft AJAX-Skriptbibliothek, bieten Unterstützung für dieses Programmiermodell in der clientseitigen Code einfach Zeichenfolge Ressourcensuchen aktivieren. Satellitenassemblys unterstützt die automatische Einbindung von Skriptressourcen (tatsächliche JS-Dateien) über ScriptResource.axd, solange die Dateinamen einem bestimmten Benennungsschema folgen. Vereinfachen Sie ASP.NET AJAX Extensions mit der entsprechenden Unterstützung der Lokalisierung von Skripts und die Globalisierung von Anwendungen.
 
-## <a name="bio"></a>*Bio*
+## *<a name="bio"></a>Bio*
 
 Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
 

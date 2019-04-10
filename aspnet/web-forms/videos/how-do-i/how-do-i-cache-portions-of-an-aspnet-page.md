@@ -8,15 +8,15 @@ ms.date: 02/12/2009
 ms.assetid: b20b2b30-a557-4567-8e27-56f1e04235e2
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: 9446109178ee4be61f19559b47f5cecff8cc9483
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f7ca1b9adc781bbca4bc9fb9637f61660cdbf0a5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396869"
 ---
-<a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Gewusst wie:] Zwischenspeichern von Teilen einer ASP.NET-Seite
-====================
+# <a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Gewusst wie:] Zwischenspeichern von Teilen einer ASP.NET-Seite
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem video Chris Pels zeigt, wie eine oder mehrere Teile einer ASP.NET-Seite durch die Implementierung der OutputCache für Steuerelemente auf der Seite zwischengespeichert. Zunächst wird eine ASP.NET-Seite wird erstellt und zwischengespeichert, verwenden die OutputCache-Direktive. Mehrere Benutzersteuerelemente dann erstellt und für verschiedene Zeiträume zwischengespeichert. Die Beziehung zwischen der Seite zwischengespeichert, Dauer und Steuerelement Cachedauer wird überprüft. Die verschiedenen Kriterien für die Zwischenspeicherung der Steuerelemente werden überprüft, einschließlich eines Beispiels für VaryByControl verschachtelte Benutzersteuerelemente Zwischenspeichern von ihren übergeordneten Steuerelementen mit dem steuern.

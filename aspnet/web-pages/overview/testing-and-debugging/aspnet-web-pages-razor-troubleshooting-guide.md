@@ -8,15 +8,15 @@ ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: ec8cdda5c5b298736a650f82cd6b52d73b6dfe3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389205"
 ---
-<a name="aspnet-web-pages-razor-troubleshooting-guide"></a>Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)
-====================
+# <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieser Artikel beschreibt Probleme, die möglicherweise bei der Arbeit mit ASP.NET Web Pages (Razor) und einige Lösungsvorschläge.
@@ -36,7 +36,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Probleme mit Razor-Code](#IssuesWithRazorCode)
 - [Probleme mit der Sicherheits- und Mitgliedschaftsberechtigungen](#membership)
 - [Probleme beim Senden von e-Mail-Adresse](#email)
-- [Additional Resources](#AdditionalResources) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#AdditionalResources)
 
 Allgemeine Fragen, finden Sie unter [ASP.NET Web Pages (Razor) – häufig gestellte Fragen](https://go.microsoft.com/fwlink/?LinkId=253000).
 
@@ -141,7 +141,7 @@ Ersetzen Sie die entsprechenden Werte für `your-SMTP-server-name`und so weiter.
     *Ein Verbindungsversuch ist fehlgeschlagen, da die Gegenstelle nach einer Zeitspanne nicht ordnungsgemäß reagiert hat, oder die hergestellte Verbindung war fehlerhaft, da der verbundene Host reagiert nicht*
 
     Dieser Fehler bedeutet normalerweise, dass die Anwendung nicht an den SMTP-Server verbinden kann. Überprüfen Sie den Namen des Servers und die Portnummer.
-- <em>Postfach nicht verfügbar. Die Serverantwort war: 5.1.0 &lt; someuser@invaliddomain &gt; Absender abgelehnt: Ungültige Absender-Domäne</em>
+- *Postfach nicht verfügbar. Die Serverantwort war: 5.1.0 &lt; someuser@invaliddomain &gt; Absender abgelehnt: Ungültige Absender-Domäne*
 
     Diese Meldung kann darauf hinweisen, die die `From` Adresse ist nicht korrekt, oder ist nicht vorhanden.
 - *Die angegebene Zeichenfolge ist nicht in der Form, die eine e-Mail-Adresse erforderlich.*

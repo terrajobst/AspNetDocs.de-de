@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15368ea543702eeda1b6a63f53acdc6c336b49e7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420789"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395641"
 ---
-<a name="filling-a-list-using-cascadingdropdown-c"></a>Ausfüllen einer Liste mit CascadingDropDown (C#)
-====================
+# <a name="filling-a-list-using-cascadingdropdown-c"></a>Ausfüllen einer Liste mit CascadingDropDown (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
@@ -61,9 +61,9 @@ Damit der wichtigste Aspekt ist, dass die Methode ein Array vom Typ zurückgeben
 Die Seite im Browser laden, löst die Liste mit drei Anbietern gefüllt werden soll.
 
 
-[![Die Liste wird automatisch ausgefüllt.](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
+[![Tseine Liste wird automatisch ausgefüllt](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
 Die Liste wird automatisch übernommen ([klicken Sie, um das Bild in voller Größe anzeigen](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](using-cascadingdropdown-with-a-database-cs.md)
+> [Weiter](using-cascadingdropdown-with-a-database-cs.md)

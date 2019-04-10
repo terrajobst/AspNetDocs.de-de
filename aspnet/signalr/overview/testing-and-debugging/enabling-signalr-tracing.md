@@ -8,15 +8,15 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: c6515e3653798ef50e2d2dcb7354ffed407a190e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034107"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399358"
 ---
-<a name="enabling-signalr-tracing"></a>Aktivieren der Ablaufverfolgung für SignalR
-====================
+# <a name="enabling-signalr-tracing"></a>Aktivieren der Ablaufverfolgung für SignalR
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -28,7 +28,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET Framework 4.5
 > - SignalR-Version 2
 >

@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 47c486737a3320bea631605621baac54dc6d257a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8a6239f716aa0f63caaae84e34807ee007005f16
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045707"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395396"
 ---
-<a name="using-templatefields-in-the-detailsview-control-c"></a>Verwenden von TemplateFields im DetailsView-Steuerelement (C#)
-====================
+# <a name="using-templatefields-in-the-detailsview-control-c"></a>Verwenden von TemplateFields im DetailsView-Steuerelement (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_13_CS.exe) oder [PDF-Datei herunterladen](using-templatefields-in-the-detailsview-control-cs/_static/datatutorial13cs1.pdf)
@@ -35,7 +35,7 @@ Das TemplateField bietet ein höheres Maß an Flexibilität bei der Rendering-Da
 Außerdem stehen die gleichen von TemplateFields-Funktionen zur Verfügung, mit der GridView mit DetailsView-Steuerelement zur Verfügung. In diesem Tutorial zeigen wir ein Produkt mit einem DetailsView, die zwei von TemplateFields enthält. Die erste TemplateField fasst die `UnitPrice`, `UnitsInStock`, und `UnitsOnOrder` Datenfelder in einem DetailsView-Zeile. Die zweite TemplateField zeigt den Wert von der `Discontinued` Feld eine Formatierungsmethode anzeigen, wenn "Ja" verwenden, jedoch `Discontinued` ist `true`, und andernfalls "NO".
 
 
-[![Zwei von TemplateFields werden verwendet, um die Anzeige anpassen](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
+[![Twei von TemplateFields werden verwendet, um die Anzeige anpassen](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
 
 **Abbildung 1**: Zwei von TemplateFields werden verwendet, um die Anzeige anpassen ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ Wie im vorherigen Tutorial erwähnt, bei der Verwendung von von TemplateFields, 
 Öffnen der `DetailsViewTemplateField.aspx` Seite und eine DetailsView aus der Toolbox in den Designer ziehen. Smarttag des DetailsView auswählen, um ein neues ObjectDataSource-Steuerelement hinzuzufügen, die aufruft, die `ProductsBLL` Klasse `GetProducts()` Methode.
 
 
-[![Fügen Sie ein neues ObjectDataSource-Steuerelement, das die GetProducts()-Methode aufruft](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
+[![ATT ein neues ObjectDataSource-Steuerelement, das die GetProducts()-Methode aufruft](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
 
 **Abbildung 2**: Fügen Sie ein neues ObjectDataSource-Steuerelement, Invokes der `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image6.png))
 
@@ -64,7 +64,7 @@ Nach diesen Änderungen sollte Ihre DetailsView-Steuerelement deklaratives Marku
 Nehmen Sie einen Moment Zeit, um die Seite über einen Browser anzuzeigen. An diesem Punkt sollte ein einzelnes Produkt aufgeführt (Chai) mit Zeilen, die mit den Namen des Produkts, Kategorie, Lieferanten, Preis, im Lager vorrätigen Stückzahl, Einheiten auf Reihenfolge und der nicht mehr unterstützte Status angezeigt werden.
 
 
-[![Details zu den Produktanforderungen werden mithilfe einer Reihe von BoundFields angezeigt.](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
+[![THE Produktdetails werden angezeigt, mit einer Reihe von BoundFields](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
 
 **Abbildung 3**: Details zu des Produkts werden mithilfe einer Reihe von BoundFields angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image9.png))
 
@@ -76,7 +76,7 @@ Die DetailsView weist eine Zeile für die `UnitPrice`, `UnitsInStock`, und `Unit
 Starten Sie durch Klicken auf die Felder bearbeiten-Link in DetailsViews Smarttag, um das Dialogfeld Felder anzuzeigen. Als Nächstes fügen Sie ein neues TemplateField hinzu und legen Sie dessen `HeaderText` Eigenschaft auf "Preis und Inventory" und verschieben Sie die neue TemplateField so, dass die It über positioniert ist die `UnitPrice` BoundField.
 
 
-[![Hinzufügen einer neuen TemplateField DetailsView-Steuerelement](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
+[![Att, DetailsView-Steuerelement ein neues TemplateField](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
 
 **Abbildung 4**: Hinzufügen einer neuen TemplateField DetailsView-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image12.png))
 
@@ -88,7 +88,7 @@ Die letzte Aufgabe für diesen Schritt wird zum Definieren der `ItemTemplate` Ma
 In diesem Tutorial hinzufügen ein Label-Steuerelement zum Preis und zur Inventur TemplateField des zunächst `ItemTemplate`. Klicken Sie dann auf den Link "DataBindings bearbeiten" aus der Bezeichnung Websteuerelement Smarttag und Binden der `Text` Eigenschaft, um die `UnitPrice` Feld.
 
 
-[![Binden Sie die Texteigenschaft der Bezeichnung auf das Datenfeld für UnitPrice](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
+[![BSuchen des Bezeichnungsfelds-Text-Eigenschaft auf die Daten UnitPrice Feld](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
 
 **Abbildung 5**: Binden des Bezeichnungsfelds `Text` Eigenschaft, um die `UnitPrice` Feld "Daten" ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image15.png))
 
@@ -98,7 +98,7 @@ In diesem Tutorial hinzufügen ein Label-Steuerelement zum Preis und zur Inventu
 Mit folgender Ergänzung werden die Bezeichnung Websteuerelement Preis und die Hardwareinventur TemplateField jetzt nur den Preis für das ausgewählte Produkt angezeigt. Abbildung 6 zeigt einen Screenshot des unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt.
 
 
-[![Das Preis- und Inventar TemplateField zeigt die Kosten](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
+[![Ter Preis und Inventar TemplateField zeigt die Kosten](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
 
 **Abbildung 6**: Das Preis- und Inventar TemplateField zeigt die Kosten ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image18.png))
 
@@ -110,7 +110,7 @@ Um anzugeben, die Formatierung für die Databinding-Syntax in das Label-Steuerel
 Für die `UnitPrice` Feld mit der währungsformatierung angegeben, entweder durch Auswählen des entsprechenden Dropdownliste-Wertes oder durch Eingabe in `{0:C}` manuell.
 
 
-[![Den Preis als Währung zu formatieren.](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
+[![FFormatieren Sie den Preis als Währung](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
 
 **Abbildung 7**: Den Preis als Währung zu formatieren ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image21.png))
 
@@ -137,7 +137,7 @@ Nach dem Ausführen dieser Aufgabe sollte Ihre DetailsView deklarative Markup et
 Mit diesen Änderungen haben wir den Preis und Informationen in einer einzigen Zeile der DetailsView konsolidiert.
 
 
-[![Den Preis und die Inventurinformationen wird in einer einzelnen Zeile angezeigt](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
+[![Ter Preis und Inventarinformationen wird angezeigt, in einer einzelnen Zeile](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
 
 **Abbildung 8**: Der Preis und die Inventurinformationen in einer einzelnen Zeile angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image24.png))
 
@@ -149,7 +149,7 @@ Die `Products` tabellenspezifischen `Discontinued` Spalte ist ein Bit-Wert, der 
 Anstelle der Anzeige der CheckBoxField sollten wir, der angibt, der Text zeigt stattdessen, und zwar unabhängig davon, ob das Produkt nicht mehr unterstützt wird. Um dies zu erreichen wir CheckBoxField von DetailsView entfernen und fügen Sie dann eine BoundField hinzu, deren `DataField` -Eigenschaft wurde festgelegt, um `Discontinued`. Nehmen Sie einen Moment Zeit, dies zu tun. Nach dieser Änderung werden DetailsView den Text "True" für nicht mehr unterstützte Produkte und "False" für Produkte, die noch aktiv sind.
 
 
-[![Die Zeichenfolgen werden "true" und "false" verwendet, um den nicht mehr unterstützte Status anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
+[![Ter Zeichenfolgen "true" und "false" werden verwendet, um den Status Discontinued anzuzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
 
 **Abbildung 9**: Die Zeichenfolgen "true" und "false" werden verwendet, um den Status Discontinued anzuzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image27.png))
 
@@ -175,7 +175,7 @@ Mit dieser Methode zur Formatierung abgeschlossen, übrig bleibt, über das Temp
 Dies bewirkt, dass die `DisplayDiscontinuedAsYESorNO` Methode aufgerufen wird, beim Rendern von DetailsView, übergeben die `ProductRow` Instanz `Discontinued` Wert. Da die `Eval` Methode gibt einen Wert vom Typ `object`, aber die `DisplayDiscontinuedAsYESorNO` Methode erwartet einen Eingabeparameter vom Typ `bool`, wir wandeln die `Eval` Methoden Rückgabewert auf `bool`. Die `DisplayDiscontinuedAsYESorNO` Methode gibt dann "YES" oder je nach Wert empfängt sie "Nein". Der zurückgegebene Wert ist die Anzeige auf dieser DetailsView Zeile (siehe Abbildung 10).
 
 
-[![Ja oder Nein-Werte sind jetzt in der Zeile Discontinued angezeigt.](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
+[![YES oder Nein-Werte sind jetzt in der Zeile Discontinued angezeigt.](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
 
 **Abbildung 10**: Ja oder Nein-Werte sind jetzt in der Zeile Discontinued angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
 

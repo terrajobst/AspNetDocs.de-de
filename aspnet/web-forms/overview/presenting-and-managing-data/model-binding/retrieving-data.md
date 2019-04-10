@@ -8,26 +8,26 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: c53c27f4852eab9813bd917315111e7cd3b04953
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056597"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398474"
 ---
-<a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit modellbindung und Web forms
-====================
+# <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit modellbindung und Web forms
+
 
 > Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung, wird die dateninteraktion mehr geradlinigere als Umgang mit Data Source-Objekte (z. B. "ObjectDataSource" oder SqlDataSource-Steuerelement). Diese Serie beginnt mit einführendes Material und verschiebt in späteren Tutorials zu erweiterten Konzepten übergegangen.
 > 
->  Der Modell-bindungsmuster funktioniert mit jedem datenzugriffstechnologie. In diesem Tutorial verwenden Sie Entity Framework, jedoch können Sie die neue datenzugriffstechnologie, die Sie bereits bekannt ist. Von einem datengebundenen Serversteuerelement, z. B. eine GridView, ListView, DetailsView oder FormView-Steuerelement geben Sie den Namen der Methoden zum auswählen, aktualisieren, löschen und Erstellen von Daten verwendet. In diesem Tutorial werden Sie einen Wert für die SelectMethod angeben. 
+> Der Modell-bindungsmuster funktioniert mit jedem datenzugriffstechnologie. In diesem Tutorial verwenden Sie Entity Framework, jedoch können Sie die neue datenzugriffstechnologie, die Sie bereits bekannt ist. Von einem datengebundenen Serversteuerelement, z. B. eine GridView, ListView, DetailsView oder FormView-Steuerelement geben Sie den Namen der Methoden zum auswählen, aktualisieren, löschen und Erstellen von Daten verwendet. In diesem Tutorial werden Sie einen Wert für die SelectMethod angeben. 
 > 
 > In dieser Methode geben Sie die Logik zum Abrufen der Daten. Im nächsten Tutorial legen Sie Werte für UpdateMethod, DeleteMethod und InsertMethod fest.
 >
 > Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) in das vollständige Projekt C# oder Visual Basic. Der herunterladbare Code funktioniert mit Visual Studio 2012 und höher. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2017-Vorlage, die in diesem Tutorial gezeigt wird.
 > 
 > In diesem Tutorial führen Sie die Anwendung in Visual Studio. Sie können auch Bereitstellen der Anwendung bei einem Hostinganbieter und über das Internet verfügbar machen. Microsoft bietet kostenloses Webhosting für bis zu 10 Websites in einem  
->  [Kostenloses Azure-Testkonto](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informationen dazu, wie Sie ein Visual Studio-Webprojekt für Azure App Service-Web-Apps bereitstellen, finden Sie unter den [ASP.NET-webbereitstellung mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) Reihe. In diesem Tutorial wird gezeigt, wie Entity Framework Code First-Migrationen zu verwenden, um Ihre SQL Server-Datenbank in Azure SQL-Datenbank bereitzustellen.
+> [Kostenloses Azure-Testkonto](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informationen dazu, wie Sie ein Visual Studio-Webprojekt für Azure App Service-Web-Apps bereitstellen, finden Sie unter den [ASP.NET-webbereitstellung mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) Reihe. In diesem Tutorial wird gezeigt, wie Entity Framework Code First-Migrationen zu verwenden, um Ihre SQL Server-Datenbank in Azure SQL-Datenbank bereitzustellen.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 > 
@@ -217,4 +217,4 @@ In diesem Tutorial erstellten Data Model-Klassen und eine Datenbank aus den Klas
 In den nächsten [Tutorial](updating-deleting-and-creating-data.md) in dieser Reihe werde Sie aktivieren, aktualisieren, löschen und Erstellen von Daten.
 
 > [!div class="step-by-step"]
-> [Nächste](updating-deleting-and-creating-data.md)
+> [Weiter](updating-deleting-and-creating-data.md)

@@ -8,15 +8,15 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 65e2268418501f89a77a0ba20f7960a618c2e9b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034277"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405455"
 ---
-<a name="attribute-routing-in-aspnet-web-api-2"></a>Attribut-Routing in ASP.NET Web-API 2
-====================
+# <a name="attribute-routing-in-aspnet-web-api-2"></a>Attribut-Routing in ASP.NET Web-API 2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 *Routing* ist wie Web-API einen URI zu einer Aktion entspricht. Web-API 2 unterstützt einen neuen Typ Namens des Routings, *attributrouting*. Wie der Name schon sagt, wird das attributrouting Attribute zum Definieren von Routen verwendet. Attribut-routing bietet Ihnen mehr Kontrolle über die URIs in Ihrer Web-API. Beispielsweise können Sie ganz einfach erstellen URIs, die Hierarchien von Ressourcen beschreiben.
@@ -228,8 +228,8 @@ Alternativ können Sie einen Standardwert in die routenvorlage, wie folgt angebe
 
 Dies ist fast identisch mit dem vorherigen Beispiel, aber es wird ein geringfügigen Unterschied des Verhaltens, wenn der Standardwert angewendet wird.
 
-- Im ersten Beispiel ("{Lcid?}") wird standardmäßig den Wert 1033 direkt der Methodenparameter, zugewiesen hat also der Parameter dieses genauen Wert.
-- Im zweiten Beispiel ("{Lcid = 1033}"), der Standardwert von "1033" durchläuft die modellbindung. Der Standardmodellbinder werden auf den numerischen Wert 1033 "1033" konvertiert. Allerdings können Sie in einen benutzerdefinierten Modellbinder, einfügen, die etwas anderes erledigen kann.
+- Im ersten Beispiel ("{Lcid:int?}") wird standardmäßig den Wert 1033 direkt der Methodenparameter, zugewiesen hat also der Parameter dieses genauen Wert.
+- Im zweiten Beispiel ("{Lcid:int = 1033}"), der Standardwert von "1033" durchläuft die modellbindung. Der Standardmodellbinder werden auf den numerischen Wert 1033 "1033" konvertiert. Allerdings können Sie in einen benutzerdefinierten Modellbinder, einfügen, die etwas anderes erledigen kann.
 
 (In den meisten Fällen, es sei denn, Sie benutzerdefinierte modellbindungen in Ihrer Pipeline, werden die beiden Formen entsprechen.)
 

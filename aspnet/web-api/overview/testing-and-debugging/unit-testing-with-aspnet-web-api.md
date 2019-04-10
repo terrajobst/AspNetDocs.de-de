@@ -8,15 +8,15 @@ ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 915610e6646ebe86dd8f16f290ecabd36bf7f48d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f2d60b977475e048a3a74aabff4adc768ee22baf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402647"
 ---
-<a name="unit-testing-aspnet-web-api-2"></a>Komponententests für ASP.NET Web API 2
-====================
+# <a name="unit-testing-aspnet-web-api-2"></a>Komponententests für ASP.NET Web API 2
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 [Abgeschlossenes Projekt herunterladen](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
@@ -36,15 +36,15 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 Dieses Thema enthält folgende Abschnitte:
 
-- [Erforderliche Komponenten](#prereqs)
+- [Vorraussetzungen](#prereqs)
 - [Code herunterladen](#download)
 - [Erstellen Sie Anwendung mit Komponententestprojekt](#appwithunittest)
     - [Fügen Sie beim Erstellen der Anwendung Komponententestprojekt hinzu](#whencreate)
     - [Datenbankkomponententest-Projekt zu einer vorhandenen Anwendung hinzufügen](#addtoexisting)
 - [Einrichten der Web-API 2-Anwendung](#setupproject)
 - [Installieren von NuGet-Pakete im Test-Projekt](#testpackages)
-- [Erstellen von tests](#tests)
-- [Ausführen von tests](#runtests)
+- [Tests erstellen](#tests)
+- [Tests durchführen](#runtests)
 
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>Vorraussetzungen

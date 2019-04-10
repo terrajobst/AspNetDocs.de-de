@@ -8,15 +8,15 @@ ms.date: 08/20/2015
 ms.assetid: f50a5cdb-c06a-46ed-aa14-fc5b049dc8dc
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: a422988f681273b153725d32bb8337deb25b12f1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 25d21efaf2f01ee1c162408a3caf699ac818aaa7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027767"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384955"
 ---
-<a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail
-====================
+# <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 5-Web-app mit einer zweistufigen Authentifizierung zu erstellen. Führen Sie [erstellen eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) bevor Sie fortfahren. Sie können die fertige Anwendung herunterladen [hier](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). Der Download enthält Debuggen-Hilfsprogramme, mit denen Sie die Bestätigung per e-Mail und SMS zu testen, ohne das Einrichten einer e-Mail oder SMS-Anbieter.
@@ -27,7 +27,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Erstellen einer ASP.NET MVC-app](#createMvc)
 - [SMS für die zweistufige Authentifizierung einrichten](#SMS)
 - [Zwei-Faktor-Authentifizierung aktivieren](#enable2)
-- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#addRes)
 
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>Erstellen einer ASP.NET MVC-app

@@ -8,15 +8,15 @@ ms.date: 04/09/2012
 ms.assetid: dc6aa59a-9cb0-4a81-b5f3-ec545a0e958d
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 msc.type: chapter
-ms.openlocfilehash: 9440bca12585ddbb97c362384c9cafdc9f156ae4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4bbda0aa56dd23a1e05e7681f88eefc4d9aa35a3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022647"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403544"
 ---
-<a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013
-====================
+# <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013
+
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Ein Visual Studio 2013-Projekt mit C#-Quellcode ist verfügbar, die dieser tutorialreihe begleitet.
 
 

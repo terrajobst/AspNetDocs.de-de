@@ -1,25 +1,30 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: Erstellen von RESTful-APIs mit ASP.NET Web-API | Microsoft-Dokumentation
+title: Erstellen von RESTful-APIs, mit der ASP.NET Web-API – ASP.NET 4.x
 author: rick-anderson
-description: In den letzten Jahren hat er deutlich werden, dass HTTP nicht ist nur für HTML-Seiten bereitstellt. Es ist auch eine leistungsstarke Plattform zum Erstellen von Web-APIs, die über eine Handvoll o...
+description: 'Praxisnahe Übung: Verwenden von Web-API in ASP.NET 4.x, um eine einfache REST-API für eine Kontakt-Manager-Anwendung zu erstellen.'
 ms.author: riande
 ms.date: 02/18/2013
+ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f1f5ebbf5170f205be331b6402951fb429196046
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391480"
 ---
-<a name="build-restful-apis-with-aspnet-web-api"></a>Erstellen von RESTful-APIs mit ASP.NET Web-API
-====================
+# <a name="build-restful-apis-with-aspnet-web-api"></a>Erstellen von RESTful-APIs mit ASP.NET Web-API
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
-> In den letzten Jahren hat er deutlich werden, dass HTTP nicht ist nur für HTML-Seiten bereitstellt. Es ist auch eine leistungsstarke Plattform zum Erstellen von Web-APIs, mit ein paar Verben (GET, POST usw.) sowie einige einfache Konzepte wie *URIs* und *Header*. ASP.NET Web-API ist eine Reihe von Komponenten, die HTTP-Programmiermodell zu vereinfachen. Da es auf die ASP.NET MVC-Laufzeit aufgebaut ist, verarbeitet Web-API automatisch die Low-Level Transportdetails von HTTP. Zur gleichen Zeit stellt Web-API auf natürliche Weise das HTTP-Programmiermodell. Ein Ziel der Web-API in der Tat ist es, *nicht* abstrahieren der Verwendung von HTTP. Daher ist Web-API, flexibel und einfach zu erweitern. In dieser praktischen Übungseinheit verwenden Sie die Web-API, um eine einfache REST-API für eine Kontakt-Manager-Anwendung zu erstellen. Erstellen Sie auch einen Client für die API verwenden. Architektonische REST-Stil erwiesenermaßen eine effektive Methode zur HTTP - Nutzen sein, obwohl es sicherlich nicht der einzige gültige Ansatz für HTTP ist. Der Kontakte-Manager wird die RESTful zum Auflisten, hinzufügen und Entfernen von Kontakten, unter anderem verfügbar machen. Dieses erfordert ein grundlegendes Verständnis von HTTP, REST, und setzt voraus, dass Sie über grundlegende Kenntnisse von HTML, JavaScript und jQuery verfügen.
+> Praxisnahe Übung: Verwenden von Web-API in ASP.NET 4.x, um eine einfache REST-API für eine Kontakt-Manager-Anwendung zu erstellen. Erstellen Sie auch einen Client für die API verwenden.
+
+In den letzten Jahren hat er deutlich werden, dass HTTP nicht ist nur für HTML-Seiten bereitstellt. Es ist auch eine leistungsstarke Plattform zum Erstellen von Web-APIs, mit ein paar Verben (GET, POST usw.) sowie einige einfache Konzepte wie *URIs* und *Header*. ASP.NET Web-API ist eine Reihe von Komponenten, die HTTP-Programmiermodell zu vereinfachen. Da es auf die ASP.NET MVC-Laufzeit aufgebaut ist, verarbeitet Web-API automatisch die Low-Level Transportdetails von HTTP. Zur gleichen Zeit stellt Web-API auf natürliche Weise das HTTP-Programmiermodell. Ein Ziel der Web-API in der Tat ist es, *nicht* abstrahieren der Verwendung von HTTP. Daher ist Web-API, flexibel und einfach zu erweitern.  Architektonische REST-Stil erwiesenermaßen eine effektive Methode zur HTTP - Nutzen sein, obwohl es sicherlich nicht der einzige gültige Ansatz für HTTP ist. Der Kontakte-Manager wird die RESTful zum Auflisten, hinzufügen und Entfernen von Kontakten, unter anderem verfügbar machen. 
+
+Dieses erfordert ein grundlegendes Verständnis von HTTP, REST, und setzt voraus, dass Sie über grundlegende Kenntnisse von HTML, JavaScript und jQuery verfügen.
 > 
 > > [!NOTE]
 > > Die ASP.NET-Website verfügt über einen speziellen Bereich für die ASP.NET Web-API-Framework unter [ https://asp.net/web-api ](https://asp.net/web-api). Dieser Standort wird weiterhin bieten aktuelle Informationen, Beispiele und Nachrichten, die im Zusammenhang mit der Web-API so überprüfen Sie sie häufig, wenn Sie tiefer in die Kunst gerne der benutzerdefinierten Web-APIs auf praktisch jedem Gerät oder Entwicklung Framework erstellen.
@@ -84,7 +89,7 @@ In dieser Übung implementieren Sie die ReadOnly-GET-Methoden für den Kontakt-M
 In dieser Aufgabe verwenden Sie die neuen ASP.NET Web-Projektvorlagen zum Erstellen einer Web-API-Web-Anwendung.
 
 1. Führen Sie **Visual Studio-2012 Express für Web**, Sie gehen Sie dazu zur **starten** , und geben **Visual Studio Express für Web** drücken Sie dann die **EINGABETASTE**.
-2. Von der **Datei** , wählen Sie im Menü **neues Projekt**. Wählen Sie die **Visual C# | Web** Projekttyp aus der Strukturansicht des Projekt-Typ aus, und wählen Sie dann die **ASP.NET MVC 4-Webanwendung** Projekttyp. Legen Sie die **Namen** zu *ContactManager* und **Projektmappenname** zu *beginnen*, klicken Sie dann auf **OK**.
+2. Von der **Datei** , wählen Sie im Menü **neues Projekt**. Wählen Sie die **Visual c# | Web** Projekttyp aus der Strukturansicht des Projekt-Typ aus, und wählen Sie dann die **ASP.NET MVC 4-Webanwendung** Projekttyp. Legen Sie die **Namen** zu *ContactManager* und **Projektmappenname** zu *beginnen*, klicken Sie dann auf **OK**.
 
     ![Erstellen einer neuen ASP.NET MVC 4.0-Webanwendungsprojekt](build-restful-apis-with-aspnet-web-api/_static/image1.png "erstellen eine neue ASP.NET MVC 4.0-Webanwendungsprojekt")
 
@@ -417,7 +422,7 @@ In dieser Aufgabe werden Sie weiterhin so ändern Sie die Ansicht "Index", von d
 > Darüber hinaus können Sie diese Anwendung in Azure Folgendes bereitstellen [Anhang C: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixC).
 
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
@@ -440,7 +445,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 <a id="CodeSnippetUsingKeyBoard"></a>
 
 <a id="To_add_a_code_snippet_using_the_keyboard_C_only"></a>
-### <a name="to-add-a-code-snippet-using-the-keyboard-c-only"></a>Hinzufügen ein Codeausschnitts, die über die Tastatur (nur C#)
+### <a name="to-add-a-code-snippet-using-the-keyboard-c-only"></a>Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)
 
 1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
 2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
@@ -463,7 +468,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 <a id="CodeSnippetUsingMouse"></a>
 
 <a id="To_add_a_code_snippet_using_the_mouse_C_Visual_Basic_and_XML"></a>
-### <a name="to-add-a-code-snippet-using-the-mouse-c-visual-basic-and-xml"></a>Hinzufügen ein Codeausschnitts, die mit der Maus (C#, Visual Basic und XML)
+### <a name="to-add-a-code-snippet-using-the-mouse-c-visual-basic-and-xml"></a>Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)
 
 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
 2. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.

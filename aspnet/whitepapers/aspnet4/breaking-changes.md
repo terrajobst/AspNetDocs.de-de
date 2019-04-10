@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: 112483abdd920649fb530959a538b1d5ed6064d7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062657"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385539"
 ---
-<a name="aspnet-4-breaking-changes"></a>ASP.NET 4: Bedeutende Änderungen
-====================
+# <a name="aspnet-4-breaking-changes"></a>ASP.NET 4: Bedeutende Änderungen
+
 > Dieses Dokument beschreibt die Änderungen, die für .NET Framework, Version 4 Version vorgenommen wurden, die möglicherweise Anwendungen auswirken können, die mit früheren Versionen, einschließlich der ASP.NET 4 Beta 1 und Beta 2-Versionen erstellt wurden.
 > 
 > [In diesem Whitepaper herunterladen](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_Breaking_Changes.pdf)
@@ -167,7 +167,7 @@ In den nächsten beiden Abschnitten beschreiben die Änderungen, die Sie möglic
 
 Jedoch manuell auf Anwendungsebene geändert `Web.config` -Dateieinträge, die nicht genau der ursprünglichen Codebausteine Abschnitt Konfigurationsdefinitionen entsprechen, die mit Visual Studio 2008 eingeführten führt dazu, dass ASP.NET-Konfigurationsfehler. (Die Standardeinträge für die Konfiguration von den Visual Studio 2008 erstellten ordnungsgemäß funktionieren.) Ein häufiges Problem ist, die manuell geändert `Web.config` Dateien auslassen der **AllowDefinition** und **RequirePermission** Konfigurationsattribute, die auf verschiedenen Konfigurationsabschnitt gefunden werden Definitionen. Dies bewirkt, dass einen Konflikt zwischen den abgekürzten Konfigurationsabschnitt in auf Anwendungsebene `Web.config` Dateien und die vollständige Definition in ASP.NET 4 `machine.config` Datei. Daher löst das ASP.NET 4-Konfigurationssystem zur Laufzeit ein Fehler bei der Konfiguration aus.
 
-**Windows Vista SP2, Windows Server 2008 SP2, Windows 7, Windows Server 2008 R2, and also Windows Vista SP1 and Windows Server 2008 SP1 where hotfix KB958854 is installed.**
+**Windows Vista SP2, Windows Server 2008 SP2, Windows 7, Windows Server 2008 R2, und auch Windows Vista SP1 und Windows Server 2008 SP1, in dem Hotfix KB958854 installiert ist.**
 
 In diesem Szenario IIS 7 und IIS 7.5 native Konfiguration gibt das System zurück ein Konfigurationsfehler aufgetreten, da er auf einen Textvergleich führt die **Typ** -Attribut, das für einen verwalteten Konfigurationsabschnittshandler definiert ist. Da alle `Web.config` Dateien, die von Visual Studio 2008 und Visual Studio 2008 SP1 generiert werden, haben "3.5", in die Typzeichenfolge für die **"System.Web.Extensions"** (und Verwandte) konfigurationsabschnitthandler, da ASP.NET 4 `machine.config` Datei ist "4.0" in der **Typ** -Attribut für die gleiche konfigurationsabschnitthandler, Anwendungen, die in Visual Studio 2008 oder Visual Studio 2008 SP1, immer generiert werden Konfiguration in IIS 7 Validierungsfehler und IIS 7.5.
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 53ca3bc4e550f488f3ae4c41f02a636e747107cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425092"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384889"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 – Modelle und Datenzugriff
 
@@ -57,7 +57,7 @@ Die Vorteile der Verwendung dieses Ansatzes ist, dass das Modell unabhängig von
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -74,7 +74,7 @@ Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinhei
 
 Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang C: Verwenden von Codeausschnitten](#AppendixC)&quot;.
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -514,7 +514,7 @@ In dieser Aufgabe wird die Anwendung in einem Webbrowser ausführen und erfragen
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
 
-* * *
+---
 
 <a id="Summary"></a>
 

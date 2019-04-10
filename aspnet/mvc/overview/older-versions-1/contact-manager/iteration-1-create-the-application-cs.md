@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: 'Iteration #1 – Erstellen der Anwendung (C#) | Microsoft-Dokumentation'
+title: 'Iteration #1 – Erstellen der Anwendung (c#) | Microsoft-Dokumentation'
 author: microsoft
 description: 'In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen, aktualisieren und d...'
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8fb2481342fa309941257feae792d9aa3c7bf721
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5b3883d8a73d50039dfe6f11f757a0f1cb7ece3a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422674"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400970"
 ---
-<a name="iteration-1--create-the-application-c"></a>Iteration #1 – Erstellen der Anwendung (C#)
-====================
+# <a name="iteration-1--create-the-application-c"></a>Iteration #1 – Erstellen der Anwendung (c#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-1-create-the-application-cs/_static/contactmanager_1_cs1.zip)
@@ -91,7 +91,7 @@ ASP.NET MVC-Webanwendungsprojekt. Starten Sie Visual Studio, und wählen Sie die
 Stellen Sie sicher, dass Sie .NET Framework 3.5 in der Dropdownliste oben ausgewählt haben rechts von der **neues Projekt** Dialogfeld. Andernfalls wird nicht die ASP.NET MVC-Web-Application-Vorlage angezeigt.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
 
 **Abbildung 01**: Das Dialogfeld "Neues Projekt" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image2.png))
 
@@ -103,7 +103,7 @@ ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** Dialogfeld wird 
 > Da Projekte in Visual Web Developer nicht unterstützt wird, erhalten Sie bei Verwendung von Visual Web Developer nicht das Dialogfeld "Komponententestprojekt erstellen".
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image2.jpg)](iteration-1-create-the-application-cs/_static/image3.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image2.jpg)](iteration-1-create-the-application-cs/_static/image3.png)
 
 **Abbildung 02**: Das Dialogfeld "Komponententestprojekt erstellen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image4.png))
 
@@ -111,7 +111,7 @@ ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** Dialogfeld wird 
 ASP.NET MVC-Anwendung, die im Projektmappen-Explorer von Visual Studio-Fenster angezeigt wird (siehe Abbildung 3). Wenn Sie Ich möchte das Projektmappen-Explorer-Fenster angezeigt, und Sie dieses Fenster öffnen können, im Menü die Option **anzeigen, Projektmappen-Explorer**. Beachten Sie, dass die Projektmappe zwei Projekte enthält: die ASP.NET MVC-Projekt und das Testprojekt. Das ASP.NET MVC-Projekt, ist ContactManager ", und das Testprojekt" ContactManager.Tests.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image3.jpg)](iteration-1-create-the-application-cs/_static/image5.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image3.jpg)](iteration-1-create-the-application-cs/_static/image5.png)
 
 **Abbildung 03**: Das Fenster des Projektmappen-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image6.png))
 
@@ -141,7 +141,7 @@ ASP.NET MVC-Framework mit einer beliebigen modernen Datenbank, einschließlich M
 Erstellen einer neuen Datenbank mit der rechten Maustaste in die App\_Ordner im Projektmappen-Explorer, und wählen die Menüoption **hinzufügen, neue Element**. In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **Daten** Kategorie und die **SQL Server-Datenbank** Vorlage (siehe Abbildung 4). Benennen Sie die neue Datenbank ContactManagerDB.mdf, und klicken Sie auf die Schaltfläche "OK".
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image4.jpg)](iteration-1-create-the-application-cs/_static/image7.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image4.jpg)](iteration-1-create-the-application-cs/_static/image7.png)
 
 **Abbildung 04**: Erstellen einer neuen Microsoft SQL Server Express-Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image8.png))
 
@@ -156,7 +156,7 @@ Nachdem Sie die neue Datenbank erstellt haben, wird die Datenbank in der App\_Or
 Das Server-Explorer-Fenster können zum Erstellen neuer Datenbankobjekte, z. B. Datenbanktabellen, Sichten, Trigger und gespeicherte Prozeduren. Mit der rechten Maustaste in den Ordner "Tabellen", und wählen Sie die Menüoption **neue Tabelle hinzufügen**. Die Datenbank-Tabellen-Designer wird angezeigt (siehe Abbildung 5).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image5.jpg)](iteration-1-create-the-application-cs/_static/image9.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image5.jpg)](iteration-1-create-the-application-cs/_static/image9.png)
 
 **Abbildung 05**: Die Datenbank-Tabellen-Designer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image10.png))
 
@@ -166,7 +166,7 @@ Wir müssen eine Tabelle erstellen, die folgenden Spalten enthält:
 <a id="0.1_table01"></a>
 
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL zulassen** |
 | --- | --- | --- |
 | Id | int | False |
 | FirstName | nvarchar(50) | False |
@@ -203,22 +203,22 @@ Um den datenmodellklassen erstellen, gehen Sie wie folgt vor:
 5. In der **Datenbankobjekte auswählen** Schritt, wählen Sie das Kontrollkästchen für Tabellen (siehe Abbildung 9). Das Datenmodell enthält alle Tabellen in der Datenbank (es ist nur ein einziges, der Contacts-Tabelle vorhanden). Geben Sie den Namespace *Modelle*. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image6.jpg)](iteration-1-create-the-application-cs/_static/image11.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image6.jpg)](iteration-1-create-the-application-cs/_static/image11.png)
 
 **Abbildung 06**: Das Dialogfeld "Neues Element hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image12.png))
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image7.jpg)](iteration-1-create-the-application-cs/_static/image13.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image7.jpg)](iteration-1-create-the-application-cs/_static/image13.png)
 
 **Abbildung 07**: Auswählen des Modellinhalts ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image14.png))
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image8.jpg)](iteration-1-create-the-application-cs/_static/image15.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image8.jpg)](iteration-1-create-the-application-cs/_static/image15.png)
 
 **Abbildung 08**: Wählen Sie Ihre Datenverbindung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image16.png))
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image9.jpg)](iteration-1-create-the-application-cs/_static/image17.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image9.jpg)](iteration-1-create-the-application-cs/_static/image17.png)
 
 **Abbildung 09**: Wählen Sie Ihre Datenbankobjekte ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image18.png))
 
@@ -228,7 +228,7 @@ Nach Abschluss des Assistenten für Entity Data Model wird dem Entity Data Model
 Der Entity Data Model-Assistent generiert basierte auf Datenbanknamen Klassennamen. Sie müssen fast immer den Namen der vom Assistenten generierte Klasse zu ändern. Mit der rechten Maustaste im Designer auf der Kontakte-Klasse, und wählen Sie die Menüoption **umbenennen**. Ändern Sie den Namen der Klasse von Kontakten (plural), Kontakt (Singular). Nachdem Sie den Namen der Klasse ändern, sollte die Klasse wie Abbildung 10 angezeigt werden.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image10.jpg)](iteration-1-create-the-application-cs/_static/image19.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image10.jpg)](iteration-1-create-the-application-cs/_static/image19.png)
 
 **Abbildung 10**: Der Contact-Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image20.png))
 
@@ -242,7 +242,7 @@ Der nächste Schritt besteht darin den Home-Controller zu erstellen. Die Home-Co
 Erstellen die Home-Controller-Klasse mit der rechten Maustaste im Fenster Projektmappen-Explorer den Ordner "Controllers", und wählen die Menüoption **hinzufügen, Controller** (siehe Abbildung 11). Beachten Sie, dass das Kontrollkästchen **Hinzufügen von Aktionsmethoden für Create, Update und Details Szenarien**. Stellen Sie sicher, dass dieses Kontrollkästchen aktiviert ist, bevor Sie auf die **hinzufügen** Schaltfläche.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image11.jpg)](iteration-1-create-the-application-cs/_static/image21.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image11.jpg)](iteration-1-create-the-application-cs/_static/image21.png)
 
 **Abbildung 11**: Hinzufügen von den Home-Controller ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image22.png))
 
@@ -272,7 +272,7 @@ Nun, wir haben erstellt den Index-Controller, müssen wir als Nächstes erstelle
 Sie erstellen die Ansicht "Index", indem mit der rechten Maustaste der Index()-Methode, und wählen die Menüoption **Ansicht hinzufügen** (siehe Abbildung 12). Durch Auswählen dieser Menüoption wird das **Ansicht hinzufügen** Dialogfeld (siehe Abbildung 13).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image12.jpg)](iteration-1-create-the-application-cs/_static/image23.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image12.jpg)](iteration-1-create-the-application-cs/_static/image23.png)
 
 **Abbildung 12**: Hinzufügen der Ansicht "Index" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image24.png))
 
@@ -280,7 +280,7 @@ Sie erstellen die Ansicht "Index", indem mit der rechten Maustaste der Index()-M
 In der **Ansicht hinzufügen** Dialogfeld aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie die Datenklasse anzeigen ContactManager.Models.Contact und die Inhaltsliste anzeigen. Wählen diese Optionen generiert eine Ansicht, die eine Liste der Kontakt-Datensätze werden angezeigt.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image13.jpg)](iteration-1-create-the-application-cs/_static/image25.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image13.jpg)](iteration-1-create-the-application-cs/_static/image25.png)
 
 **Abbildung 13**: Das Dialogfeld "Ansicht hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image26.png))
 
@@ -300,7 +300,7 @@ Wir müssen eine Änderung an den Index. Da wir keine Detailansicht erstellen, k
 Nachdem Sie die Ansicht "Index" geändert haben, können Sie die Kontakt-Manager-Anwendung ausführen. Die Option im Menü Debuggen, Debugging starten, oder drücken Sie einfach F5. Beim ersten der Anwendung ausführen erhalten Sie im Dialogfeld in Abbildung 14. Wählen Sie die Option **ändern Sie die Datei "Web.config" zum Aktivieren von debugging** , und klicken Sie auf die Schaltfläche "OK".
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image14.jpg)](iteration-1-create-the-application-cs/_static/image27.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image14.jpg)](iteration-1-create-the-application-cs/_static/image27.png)
 
 **Abbildung 14**: Aktivieren des Debuggens ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image28.png))
 
@@ -308,7 +308,7 @@ Nachdem Sie die Ansicht "Index" geändert haben, können Sie die Kontakt-Manager
 Standardmäßig wird die Ansicht "Index" zurückgegeben. In dieser Ansicht werden alle Daten aus der Contacts-Datenbanktabelle (siehe Abbildung 15).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image15.jpg)](iteration-1-create-the-application-cs/_static/image29.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image15.jpg)](iteration-1-create-the-application-cs/_static/image29.png)
 
 **Abbildung 15**: Ansicht "Index" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image30.png))
 
@@ -336,7 +336,7 @@ In den Text der Methode Create() Entity Framework verwendet, um den neuen Kontak
 Sie können ein HTML-Formular für neue Kontakte erstellen, indem Sie mit der rechten Maustaste eine der beiden Create() Methoden und durch Auswählen der Menüoption generieren **Ansicht hinzufügen** (siehe Abbildung 16).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image16.jpg)](iteration-1-create-the-application-cs/_static/image31.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image16.jpg)](iteration-1-create-the-application-cs/_static/image31.png)
 
 **Abbildung 16**: Hinzufügen der Ansicht "erstellen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image32.png))
 
@@ -344,7 +344,7 @@ Sie können ein HTML-Formular für neue Kontakte erstellen, indem Sie mit der re
 In der **Ansicht hinzufügen** wählen Sie im Dialogfeld die **ContactManager.Models.Contact** Klasse und die **erstellen** Option zum Anzeigen von Inhalten (siehe Abbildung 17). Beim Klicken auf die **hinzufügen** Schaltfläche Ansicht wird automatisch generiert, erstellen.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image17.jpg)](iteration-1-create-the-application-cs/_static/image33.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image17.jpg)](iteration-1-create-the-application-cs/_static/image33.png)
 
 **Abbildung 17**: Eine Seite explode angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image34.png))
 
@@ -358,7 +358,7 @@ Ansicht "erstellen" enthält Felder für jede der Eigenschaften der Klasse wende
 Nachdem Sie die Create() Methoden ändern, und fügen Sie die Erstellungsansicht hinzu, können Sie die Kontakt-Manager-Anwendung ausführen und erstellen neue Kontakte. Klicken Sie auf die **neu erstellen** Link, der in der Ansicht "Index", um zur Ansicht "erstellen" zu navigieren. Die Ansicht in Abbildung 18 sollte angezeigt werden.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image18.jpg)](iteration-1-create-the-application-cs/_static/image35.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image18.jpg)](iteration-1-create-the-application-cs/_static/image35.png)
 
 **Abbildung 18**: Die Create View ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image36.png))
 
@@ -380,7 +380,7 @@ Das Entity Framework wird verwendet, um den geänderten Kontakt mit der Datenban
 Sie können die Sicht zu generieren, die das Bearbeitungsformular enthält, indem Sie mit der rechten Maustaste der Edit()-Methode, und wählen die Menüoption "" Add View. Wählen Sie in das Dialogfeld "Ansicht hinzufügen" die **ContactManager.Models.Contact** Klasse und die **bearbeiten** Inhalt anzeigen (siehe Abbildung 19).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image19.jpg)](iteration-1-create-the-application-cs/_static/image37.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image19.jpg)](iteration-1-create-the-application-cs/_static/image37.png)
 
 **Abbildung 19**: Hinzufügen einer Ansicht bearbeiten ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image38.png))
 
@@ -409,7 +409,7 @@ Die zwei neuen Delete()-Methoden sind in Codebeispiel 8 enthalten.
 Gibt die erste Delete()-Methode ein Bestätigungsformular zum Löschen von einem Datensatz aus der Datenbank (Siehe Figure20). Die zweite Delete()-Methode führt den tatsächlichen Löschvorgang für die Datenbank. Nach der ursprüngliche Kontakt aus der Datenbank abgerufen wurde, werden die Entity Framework DeleteObject() und SaveChanges() Methoden aufgerufen, um das Löschen der Datenbank auszuführen.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image20.jpg)](iteration-1-create-the-application-cs/_static/image39.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image20.jpg)](iteration-1-create-the-application-cs/_static/image39.png)
 
 **Abbildung 20**: Die Ansicht für das Löschen bestätigen ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image40.png))
 
@@ -419,7 +419,7 @@ Wir müssen die Ansicht "Index" zu ändern, sodass sie einen Link zum Löschen v
 Html.ActionLink( { id=item.Id }) %&gt;
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
 
 **Abbildung 21**: Indexansicht mit dem Link "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image42.png))
 
@@ -429,7 +429,7 @@ Als Nächstes müssen wir die Ansicht für das Löschen bestätigen zu erstellen
 Im Gegensatz zu bei der Ansichten auflisten, erstellen und Bearbeiten enthält das Dialogfeld "Ansicht hinzufügen" eine Option zum Erstellen einer Delete-Ansicht nicht. Wählen Sie stattdessen die **ContactManager.Models.Contact** Datenklasse und **leere** Inhalt anzeigen. Wählen die leere Ansicht, dass die Content-Option erfordern, die Ansicht selbst zu erstellen.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image22.jpg)](iteration-1-create-the-application-cs/_static/image43.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image22.jpg)](iteration-1-create-the-application-cs/_static/image43.png)
 
 **Abbildung 22**: Hinzufügen der Ansicht für das Löschen bestätigen ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image44.png))
 
@@ -447,12 +447,12 @@ Es kann darauf hingewiesen werden, dass der Name der unser Controllerklasse für
 Dieses Problem ist recht einfach beheben. Zunächst müssen wir den Namen des dem Home-Controller zu gestalten. Öffnen Sie die HomeController-Klasse im Visual Studio Code-Editor, klicken Sie mit der rechten Maustaste auf den Namen der Klasse, und wählen Sie die Menüoption **Refactoring des Umbenennens**. Durch Auswählen dieser Menüoption wird das Dialogfeld "Umbenennen" geöffnet.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image23.jpg)](iteration-1-create-the-application-cs/_static/image45.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image23.jpg)](iteration-1-create-the-application-cs/_static/image45.png)
 
 **Abbildung 23**: Umgestalten eines Controllernamens ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image46.png))
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image24.jpg)](iteration-1-create-the-application-cs/_static/image47.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image24.jpg)](iteration-1-create-the-application-cs/_static/image47.png)
 
 **Abbildung 24**: Verwenden das Dialogfeld "Umbenennen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image48.png))
 
@@ -462,7 +462,7 @@ Wenn Sie Ihre Controller-Klasse umbenennen, aktualisiert Visual Studio den Namen
 Nachdem Sie diese Änderung vorgenommen haben, wird die Anwendung nicht mehr einen Home-Controller verfügen. Wenn Sie Ihre Anwendung ausführen, erhalten Sie die Seite "Fehler" in Abbildung 25.
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-1-create-the-application-cs/_static/image25.jpg)](iteration-1-create-the-application-cs/_static/image49.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-1-create-the-application-cs/_static/image25.jpg)](iteration-1-create-the-application-cs/_static/image49.png)
 
 **Abbildung 25**: Kein Standardcontroller ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-1-create-the-application-cs/_static/image50.png))
 
@@ -488,4 +488,4 @@ Zweitens haben wir alle formularüberprüfung nicht implementiert. Angenommen, g
 Wichtiger ist, und schließlich kann nicht die aktuelle Iteration der Contact Manager-Anwendung leicht geändert oder beibehalten werden. Beispielsweise ist die Datenbank-Zugriffslogik rechts in Controlleraktionen integriert. Dies bedeutet, dass wir unsere Datenzugriffscode nicht ändern können, ohne zu unserem Controller ändern. In späteren Iterationen untersuchen wir die Software-Entwurfsmuster, die wir implementieren können, um Contact Manager so ändern Sie stabiler zu machen.
 
 > [!div class="step-by-step"]
-> [Nächste](iteration-2-make-the-application-look-nice-cs.md)
+> [Weiter](iteration-2-make-the-application-look-nice-cs.md)

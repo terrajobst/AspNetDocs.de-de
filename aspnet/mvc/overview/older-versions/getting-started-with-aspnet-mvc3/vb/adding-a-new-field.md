@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 28970e1b-1845-4015-86ef-121e52a6c397
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 8fb0fb5c1db24f1961bba08f7b1c2182caca39ca
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 387c0ab407df2badfd8ff848b6a13c68769fbba7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063537"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379858"
 ---
-<a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Hinzufügen eines neuen Felds zum Modell und zur Datenbanktabelle eines Films (VB)
-====================
+# <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Hinzufügen eines neuen Felds zum Modell und zur Datenbanktabelle eines Films (VB)
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:

@@ -1,33 +1,37 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: 'Praktische Übungseinheiten: Erstellen eine Einzelseitenanwendung (SPA) mit ASP.NET-Web-API und Angular.js | Microsoft-Dokumentation'
+title: 'Praktische Übungseinheiten: Erstellen Sie eine einseitige Anwendung (SPA) mit ASP.NET-Web-API und Angular.js - ASP.NET 4.x'
 author: rick-anderson
-description: In herkömmlichen Webanwendungen initiiert der Client (Browser) die Kommunikation mit dem Server durch Anfordern einer Seite an. Der Server, klicken Sie dann die Anforderung verarbeitet...
+description: 'Schritt für Schritt code: Erstellen eine Einzelseitenanwendung (SPA) mit ASP.NET-Web-API und Angular.js für ASP.NET 4.x.'
 ms.author: riande
 ms.date: 09/30/2015
+ms.custom: seoapril2019
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1f093e348216750cbadb6e52f524e5edd4d6c498
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390271"
 ---
-<a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Praktische Übungseinheiten: Erstellen einer Single-Page-Webanwendung (SPA) mit der ASP.NET-Web-API und Angular.js
-====================
+# <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Praktische Übungseinheiten: Erstellen einer Single-Page-Webanwendung (SPA) mit der ASP.NET-Web-API und Angular.js
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
 [Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
 
-> In herkömmlichen Webanwendungen initiiert der Client (Browser) die Kommunikation mit dem Server durch Anfordern einer Seite an. Der Server verarbeitet die Anforderung dann und sendet den HTML-Code der Seite an den Client. In nachfolgenden Interaktionen mit der Seite – z. B. der Benutzer navigiert zu einem Link oder ein Formular mit Daten übermittelt werden – eine neue Anforderung an den Server gesendet wird, und der Flow wird neu gestartet: der Server verarbeitet die Anforderung und sendet Sie eine neue Seite, an den Browser als Reaktion auf die neue aktionsanforderung ED vom Client.
+Diese praktische Übungseinheit erfahren Sie, wie zum Erstellen einer Single-Page Application (SPA) mit ASP.NET-Web-API und Angular.js für ASP.NET 4.x.
+
+In dieser Übungseinheit Hand-on-werden Sie diese Technologien implementieren Meister Quiz, eine Trivia-Website auf der Grundlage der SPA-Konzepts nutzen. Implementieren Sie zuerst die Dienstschicht mit ASP.NET Web-API verfügbar machen die erforderlichen Endpunkte für die Quizfragen abzurufen und die Antworten zu speichern. Anschließend erstellen Sie eine umfassende und reaktionsfähige Benutzeroberfläche, die mithilfe von AngularJS- und CSS3-Transformation-Effekten.
+
+In herkömmlichen Webanwendungen initiiert der Client (Browser) die Kommunikation mit dem Server durch Anfordern einer Seite an. Der Server verarbeitet die Anforderung dann und sendet den HTML-Code der Seite an den Client. In nachfolgenden Interaktionen mit der Seite – z. B. der Benutzer navigiert zu einem Link oder ein Formular mit Daten übermittelt werden – eine neue Anforderung an den Server gesendet wird, und der Flow wird neu gestartet: der Server verarbeitet die Anforderung und sendet Sie eine neue Seite, an den Browser als Reaktion auf die neue aktionsanforderung ED vom Client.
 > 
 > In Single-Page-Webanwendungen (SPAs) die gesamte Seite im Browser nach der ersten Anforderung geladen wird, aber die nachfolgende Interaktionen aufrechterhalten erfolgen über Ajax-Anforderungen. Dies bedeutet, dass der Browser nur den Teil der Seite zu aktualisieren, die geändert wurden; besteht keine Notwendigkeit, die gesamte Seite neu zu laden. Der SPA-Ansatz reduziert die Zeit, die von der Anwendung auf Benutzeraktionen, wodurch eine flexiblere Benutzeroberfläche reagiert.
 > 
 > Die Architektur einer SPA umfasst bestimmte Probleme bestehen, die nicht in herkömmliche Webanwendungen vorhanden sind. Allerdings Erweitern von Technologien wie ASP.NET Web-API, JavaScript-Frameworks wie AngularJS, und neue Stile Funktionen von CSS3 realisieren einer wirklich einfachen entwerfen und Erstellen von SPAs.
 > 
-> In dieser Übungseinheit Hand-on-werden Sie diese Technologien implementieren Meister Quiz, eine Trivia-Website auf der Grundlage der SPA-Konzepts nutzen. Implementieren Sie zuerst die Dienstschicht mit ASP.NET Web-API verfügbar machen die erforderlichen Endpunkte für die Quizfragen abzurufen und die Antworten zu speichern. Anschließend erstellen Sie eine umfassende und reaktionsfähige Benutzeroberfläche, die mithilfe von AngularJS- und CSS3-Transformation-Effekten.
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 
@@ -72,7 +76,7 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>Übungen
@@ -433,7 +437,7 @@ In dieser Aufgabe verwenden Sie CSS3-Eigenschaften zum Ausführen von umfangreic
 
     *Die folgende Frage mit dem Flip-Effekt abrufen*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung

@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 4883046aa16d5e67b7f0c92e15c897ef1a933b67
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d2d7982a4e0175824ffede965dc8206219485df2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396472"
 ---
-<a name="understanding-partial-page-updates-with-aspnet-ajax"></a>Grundlegendes zu Teilupdates für Seiten mit ASP.NET AJAX
-====================
+# <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>Grundlegendes zu Teilupdates für Seiten mit ASP.NET AJAX
+
 durch [Scott Cate](https://github.com/scottcate)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial01_Partial_Page_Updates_cs.pdf)
@@ -111,7 +111,7 @@ Visual Studio 2008 wird nicht angezeigt, mit einer vordefinierten Vorlage für e
 
 Markup-fähigen Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | AllowCustomErrors-Redirect | Bool | Gibt an, ob der benutzerdefinierte Fehlerabschnitt der Datei "Web.config" zu verwenden, um Fehler zu behandeln. |
 | AsyncPostBackError-Message | Zeichenfolge | Übernimmt oder bestimmt die Fehlermeldung, die an den Client gesendet werden, wenn ein Fehler ausgelöst wird. |
@@ -124,7 +124,7 @@ Markup-fähigen Eigenschaften:
 
 Nur Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | AuthenticationService | AuthenticationService-Manager | Ruft Details zu den ASP.NET-Authentifizierungsdienst-Proxy, der an den Client gesendet wird. |
 | IsDebuggingEnabled | Bool | Ruft ab, ob Skripts aus, und Debuggen von Code aktiviert ist. |
@@ -136,7 +136,7 @@ Nur Eigenschaften:
 
 Öffentliche Methoden:
 
-| **Methodenname** | **Type** | **Beschreibung** |
+| **Methodenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | SetFocus(string) | Void | Legt den Fokus des Clients zu einem bestimmten Steuerelement fest, wenn die Anforderung abgeschlossen wurde. |
 
@@ -185,7 +185,7 @@ Das ScriptManager-Steuerelement bietet umfangreiche Unterstützung für die Loka
 
 Markup-fähigen Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | ChildrenAsTriggers | bool | Gibt an, ob untergeordnete Steuerelemente automatisch aktualisieren beim Postback aufrufen. |
 | RenderMode | Enum ("Block", "Inline") | Gibt an, wie der Inhalt visuell dargestellt wird. |
@@ -193,7 +193,7 @@ Markup-fähigen Eigenschaften:
 
 Nur Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | IsInPartialRendering | bool | Ruft ab, ob das UpdatePanel partielles Rendering für die aktuelle Anforderung unterstützt werden. |
 | ContentTemplate | ITemplate | Ruft das markupvorlage für die updateanforderung ab. |
@@ -202,7 +202,7 @@ Nur Eigenschaften:
 
 Öffentliche Methoden:
 
-| **Methodenname** | **Type** | **Beschreibung** |
+| **Methodenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | Update() | Void | Der angegebene UpdatePanel aktualisiert programmgesteuert. Ermöglicht es eine Anforderung einer partiellen Rendering von UpdatePanel andernfalls ohne Trigger auslösen. |
 
@@ -280,7 +280,7 @@ Wenn eine Anwendung erfordert, dass UpdatePanels verwendet werden, sollte schlie
 
 Markup-fähigen Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | AssociatedUpdate-PanelID | Zeichenfolge | Gibt die ID von UpdatePanel, die auf diesem UpdateProgress gemeldet werden sollen. |
 | DisplayAfter | Int | Gibt das Timeout in Millisekunden, bevor dieses Steuerelement angezeigt wird, nach dem Beginn der asynchronen Anforderung. |
@@ -315,4 +315,4 @@ Diese Tools zusammen unterstützen, erstellen eine umfassende und nahtlose benut
 Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
 
 > [!div class="step-by-step"]
-> [Nächste](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [Weiter](understanding-asp-net-ajax-updatepanel-triggers.md)

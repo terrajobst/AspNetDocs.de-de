@@ -8,15 +8,15 @@ ms.date: 03/24/2008
 ms.assetid: 83af9f5f-9a00-4f83-8afc-e98bdd49014e
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e51fa6de3d2fe7b5c9cd84900d154070eb1960b9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ef00ae5ddac44f17aed040db7df04a5c0f896caf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049167"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386332"
 ---
-<a name="creating-and-managing-roles-vb"></a>Erstellen und Verwalten von Rollen (VB)
-====================
+# <a name="creating-and-managing-roles-vb"></a>Erstellen und Verwalten von Rollen (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.09.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial09_CreatingRoles_vb.pdf)
@@ -48,7 +48,7 @@ Zunächst erstellen Sie einen neuen Ordner im Projekt mit dem Namen `Roles`. Fü
 An diesem Punkt sollte Ihr Projekts des Projektmappen-Explorer im Screenshot dargestellt in Abbildung 1 ähneln.
 
 
-[![Vier neue Seiten wurden in den Ordner Rollen hinzugefügt](creating-and-managing-roles-vb/_static/image2.png)](creating-and-managing-roles-vb/_static/image1.png)
+[![FUnsere neuen Seiten wurden in den Ordner Rollen hinzugefügt](creating-and-managing-roles-vb/_static/image2.png)](creating-and-managing-roles-vb/_static/image1.png)
 
 **Abbildung 1**: Vier neue Seiten hinzugefügt wurden, die `Roles` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image3.png))
 
@@ -68,7 +68,7 @@ Zum Schluss aktualisieren wir die Sitemap (`Web.sitemap`) sollen diese neue Webs
 Besuchen Sie die Website über einen Browser, mit der sitezuordnung aktualisiert. Wie in Abbildung 2 gezeigt, enthält die Navigation auf der linken Seite nun Elemente für die Rollen-Lernprogramme.
 
 
-[![Vier neue Seiten wurden in den Ordner Rollen hinzugefügt](creating-and-managing-roles-vb/_static/image5.png)](creating-and-managing-roles-vb/_static/image4.png)
+[![FUnsere neuen Seiten wurden in den Ordner Rollen hinzugefügt](creating-and-managing-roles-vb/_static/image5.png)](creating-and-managing-roles-vb/_static/image4.png)
 
 **Abbildung 2**: Vier neue Seiten hinzugefügt wurden, die `Roles` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image6.png))
 
@@ -149,7 +149,7 @@ Der obige Code beginnt durch Zuweisen der verkürzten Rollenname eingegeben habe
 Wir erstellen eine Rolle mit dem Namen Administrators ein. Besuchen Sie die `ManageRoles.aspx` Seite über einen Browser, und geben Sie in der Administratoren, in das Textfeld ein (siehe Abbildung 3), und klicken Sie dann auf die Schaltfläche "Create Role".
 
 
-[![Erstellen Sie eine Rolle "Administratoren"](creating-and-managing-roles-vb/_static/image8.png)](creating-and-managing-roles-vb/_static/image7.png)
+[![CErstellen eine Rolle "Administratoren"](creating-and-managing-roles-vb/_static/image8.png)](creating-and-managing-roles-vb/_static/image7.png)
 
 **Abbildung 3**: Erstellen Sie eine Rolle "Administratoren" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image9.png))
 
@@ -157,7 +157,7 @@ Wir erstellen eine Rolle mit dem Namen Administrators ein. Besuchen Sie die `Man
 Was ist los? Ein Postback auftritt, aber es gibt keinen visuellen Hinweis, der die Rolle tatsächlich wurde dem System hinzugefügt. Wir aktualisieren diese Seite in Schritt 5 visuelles Feedback einschließen. Im Moment jedoch überprüfen, ob die Rolle erstellt wurde, indem Sie auf die `SecurityTutorials.mdf` -Datenbank und zum Anzeigen der Daten aus der `aspnet_Roles` Tabelle. Wie in Abbildung 4 gezeigt, die `aspnet_Roles` Tabelle enthält einen Datensatz für den gerade hinzugefügten Administratorrollen.
 
 
-[![Die Aspnet_Roles Tabelle enthält eine Zeile für Administratoren](creating-and-managing-roles-vb/_static/image11.png)](creating-and-managing-roles-vb/_static/image10.png)
+[![Ter Aspnet_Roles Tabelle enthält eine Zeile für die Administratoren](creating-and-managing-roles-vb/_static/image11.png)](creating-and-managing-roles-vb/_static/image10.png)
 
 **Abbildung 4**: Die `aspnet_Roles` Tabelle enthält eine Zeile für die Administratoren ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image12.png))
 
@@ -175,7 +175,7 @@ Die `Roles` Klasse `GetAllRoles` Methodenrückgabe aller Rollen im System als ei
 Finden Sie mit diesem Code werden auf der Seite über einen Browser. Wie in Abbildung 5 gezeigt, sehen Sie ein Raster mit einer einzelnen Spalte mit der Bezeichnung Element. Das Raster enthält eine Zeile für die Rolle "Administratoren", die in Schritt 4 hinzugefügt wurden.
 
 
-[![GridView zeigt die Rollen in einer einzelnen Spalte an.](creating-and-managing-roles-vb/_static/image14.png)](creating-and-managing-roles-vb/_static/image13.png)
+[![Ter GridView zeigt die Rollen in einer einzelnen Spalte](creating-and-managing-roles-vb/_static/image14.png)](creating-and-managing-roles-vb/_static/image13.png)
 
 **Abbildung 5**: Die GridView zeigt die Rollen in einer einzelnen Spalte ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image15.png))
 
@@ -203,7 +203,7 @@ Derzeit den `RoleList` GridView ist nur an die Liste der Rollen gebunden, wenn z
 Jetzt bei der Benutzer fügt eine neue Rolle der `RoleList` GridView zeigt die gerade hinzugefügte Rolle beim Postback, Bereitstellen von visuellem Feedback, dass die Rolle erfolgreich erstellt wurde. Um dies zu veranschaulichen, finden Sie auf die `ManageRoles.aspx` Seite über einen Browser, und fügen Sie eine Rolle mit dem Namen Vorgesetzte. Nach dem Klicken auf die Schaltfläche "Create Role", wird ein Postback zur Folge haben, und das Raster wird aktualisiert, und Administratoren als auch für die neue Rolle, Supervisor gehören.
 
 
-[![Der Supervisor-Rolle zugewiesen wurde, wurde hinzugefügt](creating-and-managing-roles-vb/_static/image17.png)](creating-and-managing-roles-vb/_static/image16.png)
+[![Ter Supervisor-Rolle wurde hinzugefügt](creating-and-managing-roles-vb/_static/image17.png)](creating-and-managing-roles-vb/_static/image16.png)
 
 **Abbildung 6**: Der Supervisor-Rolle zugewiesen wurde, wurde hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image18.png))
 
@@ -220,7 +220,7 @@ Die `DeleteRole` Methode löst außerdem eine Ausnahme aus, wenn *RoleName* ist 
 Wir erweitern die GridView in `ManageRoles.aspx` sollen eine Löschen-Schaltfläche geklickt wird, löscht die ausgewählte Rolle. Starten Sie, indem eine Löschen-Schaltfläche an die GridView hinzufügen, indem Sie die Felder (Dialogfeld) und Hinzufügen einer Schaltfläche "löschen", der sich unter der Option "CommandField" befindet. Stellen Sie das Löschen die Spalte ganz linke Schaltfläche, und legen Sie dessen `DeleteText` Eigenschaft, um die Rolle zu löschen.
 
 
-[![Hinzufügen einer Schaltfläche "löschen" an die RoleList GridView](creating-and-managing-roles-vb/_static/image20.png)](creating-and-managing-roles-vb/_static/image19.png)
+[![ADd eine Löschen-Schaltfläche an die RoleList GridView](creating-and-managing-roles-vb/_static/image20.png)](creating-and-managing-roles-vb/_static/image19.png)
 
 **Abbildung 7**: Hinzufügen einer Schaltfläche löschen, um die `RoleList` GridView ([klicken Sie, um das Bild in voller Größe anzeigen](creating-and-managing-roles-vb/_static/image21.png))
 
@@ -252,7 +252,7 @@ Viel Spaß beim Programmieren!
 Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
 
 - [Untersuchen von ASP.NET 2.0 Mitgliedschaft, Rollen und Profile](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [How To: Verwenden Sie Rollen-Manager in ASP.NET 2.0](https://msdn.microsoft.com/library/ms998314.aspx)
+- [Vorgehensweise: Verwenden Sie Rollen-Manager in ASP.NET 2.0](https://msdn.microsoft.com/library/ms998314.aspx)
 - [Rollenanbieter](https://msdn.microsoft.com/library/aa478950.aspx)
 - [Paralleles eigene Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [Technische Dokumentation für die `<roleManager>` Element](https://msdn.microsoft.com/library/ms164660.aspx)

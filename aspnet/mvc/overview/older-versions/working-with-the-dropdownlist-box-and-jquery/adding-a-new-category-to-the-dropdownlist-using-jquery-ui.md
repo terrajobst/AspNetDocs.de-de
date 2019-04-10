@@ -8,15 +8,15 @@ ms.date: 01/12/2012
 ms.assetid: 44aa1ac4-6ea2-48a2-972d-52710c48eae5
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 9fb95d22be473a4318520a391fa424106246a054
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 99bb37f95ddbad775c9c50ff5faf985b631473d0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386748"
 ---
-<a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Hinzufügen einer neuen Kategorie zu DropDownList mithilfe der jQuery-Benutzeroberfläche
-====================
+# <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Hinzufügen einer neuen Kategorie zu DropDownList mithilfe der jQuery-Benutzeroberfläche
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Der HTML-Code `Select` Tag eignet sich ideal für eine geordnete Liste der festen Kategoriedaten, aber häufig müssen Sie eine neue Kategorie hinzufügen. Nehmen wir an, dass das Genre "Opera", die Kategorien in der Datenbank hinzugefügt werden soll? In diesem Abschnitt verwenden wir die jQuery-Benutzeroberfläche auf ein Dialogfeld hinzufügen, mit denen wir eine neue Kategorie hinzuzufügen. Die folgende Abbildung zeigt, wie die Benutzeroberfläche im Browser darstellen wird.
@@ -139,4 +139,4 @@ Rick.Anderson[at]Microsoft.com
 - Tom Dykstra
 
 > [!div class="step-by-step"]
-> [Vorherige](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [Vorheriges](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

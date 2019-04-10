@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 90582e54-3e90-432a-9da5-689fb39ed56b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d1c3b59896b8c509e9c62738ccd1b37c250a840
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 668815d58f2dc9a67cce441dfa267fa043a35091
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387203"
 ---
-<a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Dynamisches Auffüllen eines Steuerelements über den JavaScript-Code (VB)
-====================
+# <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Dynamisches Auffüllen eines Steuerelements über den JavaScript-Code (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1VB.pdf)
@@ -55,7 +55,7 @@ Um das Beispiel etwas flexibler zu machen, kann der Benutzer nun verschiedene Da
 Beachten Sie, dass innerhalb des Kontexts eines Optionsfelds, der JavaScript-Ausdruck `this.value` verweist auf den Wert der aktuellen Schaltfläche, die genau die gleichen Informationen werden die `getDate()` Methode mit arbeiten kann.
 
 
-[![Ein Klick auf die Schaltfläche mit den Ruft das Datum vom Server ab, in dem angegebenen Format ab.](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
+[![A Klicken Sie auf die Schaltfläche mit den Ruft das Datum ab, von dem Server in das angegebene Format](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
 
 Ein Klick auf die Schaltfläche mit den Ruft das Datum ab, von dem Server in das angegebene Format ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
 

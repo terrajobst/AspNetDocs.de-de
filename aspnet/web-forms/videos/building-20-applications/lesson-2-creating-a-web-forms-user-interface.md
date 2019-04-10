@@ -8,15 +8,15 @@ ms.date: 11/25/2005
 ms.assetid: 7eac8f6b-6911-4585-87e8-ba662c1578fb
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface
 msc.type: video
-ms.openlocfilehash: ebb2d6af770a9191030fac06691c28772cc3013d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bc4a4aeb6311c67e465068f507492bffd22c2b37
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047667"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386780"
 ---
-<a name="lesson-2-creating-a-web-forms-user-interface"></a>[Lektion 2:] Erstellen einer Web Forms-Benutzeroberfläche
-====================
+# <a name="lesson-2-creating-a-web-forms-user-interface"></a>[Lektion 2:] Erstellen einer Web Forms-Benutzeroberfläche
+
 by [Microsoft](https://github.com/microsoft)
 
 In dieser Lektion untersuchen Sie die verschiedenen ASP.NET2.0 Serversteuerelemente in Visual Web Developer Express Edition verfügbar. Darüber hinaus beginnen Sie mit den Fenstern in Visual Web Developer vertraut machen.

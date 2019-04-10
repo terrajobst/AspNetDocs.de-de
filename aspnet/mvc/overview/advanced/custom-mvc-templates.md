@@ -8,15 +8,15 @@ ms.date: 12/10/2012
 ms.assetid: b0a214c7-2f38-4dbc-b47f-bd7bd9df97bd
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: 3c14bc6feb144a52773bf7bd4c23df24966a9ebb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0603bc24e070e223551813f66a75889a2e46fd35
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033867"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379546"
 ---
-<a name="custom-mvc-template"></a>Benutzerdefinierte MVC-Vorlage
-====================
+# <a name="custom-mvc-template"></a>Benutzerdefinierte MVC-Vorlage
+
 durch [; Jacques Eloff](https://github.com/joeloff)
 
 Die Version von MVC 3 Tools Update für Visual Studio 2010 eingeführt, ein separates Projekt-Assistent für MVC-Projekte. Die Änderung wurde durch zwei Faktoren gesteuert. Die Einführung der neuen Vorlagen in MVC 3 und Unterstützung für zusätzliche Ansichts-Engines wie z. B. Razor zu overcrowding das Dialogfeld "Neues Projekt" in Visual Studio zunächst führen. Zweitens Kunden für Erweiterungspunkte gebeten hatten, und der Assistent für neue MVC würde es sich leisten, uns die Möglichkeit, die auf diese Anforderungen zu reagieren.

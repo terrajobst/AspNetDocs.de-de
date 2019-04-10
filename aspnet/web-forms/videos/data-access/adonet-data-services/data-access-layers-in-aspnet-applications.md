@@ -8,15 +8,15 @@ ms.date: 08/07/2008
 ms.assetid: 536aa7a6-84fb-487c-a14f-6ca3eb8a4a33
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
 msc.type: video
-ms.openlocfilehash: f084f54c32cb31c5787b073751764efbe1643fbc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7a16533fd7265253d10a22dc5cc7c855250f8fe4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052567"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399566"
 ---
-<a name="data-access-layers-in-aspnet-applications"></a>Datenzugriffsschichten in ASP.NET-Anwendungen
-====================
+# <a name="data-access-layers-in-aspnet-applications"></a>Datenzugriffsschichten in ASP.NET-Anwendungen
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem Video, Teil 1 von 3, wird Joe Stagner eine Datenzugriffsschicht, die mit einem typisierten DataSet für eine einfache ASP.NET-Anwendung erstellt. Finden Sie weitere Informationen zu diesem Video, das [Erstellen einer Datenzugriffsschicht](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) Data Access-Lernprogramm.
@@ -24,4 +24,4 @@ In diesem Video, Teil 1 von 3, wird Joe Stagner eine Datenzugriffsschicht, die m
 [&#9654;Sehen Sie sich Video (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/data-access-layers-in-aspnet-applications)
 
 > [!div class="step-by-step"]
-> [Nächste](how-to-manually-bind-a-dataset-to-a-datagrid.md)
+> [Weiter](how-to-manually-bind-a-dataset-to-a-datagrid.md)

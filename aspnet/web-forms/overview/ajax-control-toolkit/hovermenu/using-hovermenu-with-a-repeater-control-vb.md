@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 7f07c112-cd4f-4427-9699-57cfab2791fd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ef2481b93a8bbe16b79edb8c93c02e24fc9890f3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 963850e1048d4fde573f28244fd32d0c4232fda4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046457"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399189"
 ---
-<a name="using-hovermenu-with-a-repeater-control-vb"></a>Verwenden von HoverMenu mit einem Wiederholungssteuerelement (VB)
-====================
+# <a name="using-hovermenu-with-a-repeater-control-vb"></a>Verwenden von HoverMenu mit einem Wiederholungssteuerelement (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/b/0/6/b06fe835-5b8f-4c00-aef8-062c19d75b95/HoverMenu1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/hovermenu1VB.pdf)
@@ -53,9 +53,9 @@ Jetzt die `HoverMenuExtender` ins Spiel. Damit, dass jedes Element in der Datenq
 Jetzt jedes Element in der Datenquelle ein Popups auf der rechten Seite zeigt (`PopupPosition` Attribut) nach einer Verzögerung von 50 Millisekunden (`PopDelay` Attribut).
 
 
-[![Neben jedem Element im wiederholungsmodul wird im Menü angezeigt.](using-hovermenu-with-a-repeater-control-vb/_static/image2.png)](using-hovermenu-with-a-repeater-control-vb/_static/image1.png)
+[![THE Hovermenü angezeigt wird, neben jedem Element im wiederholungsmodul](using-hovermenu-with-a-repeater-control-vb/_static/image2.png)](using-hovermenu-with-a-repeater-control-vb/_static/image1.png)
 
 Das Hovermenü angezeigt wird, neben jedem Element im wiederholungsmodul ([klicken Sie, um das Bild in voller Größe anzeigen](using-hovermenu-with-a-repeater-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](using-hovermenu-with-a-repeater-control-cs.md)
+> [Vorheriges](using-hovermenu-with-a-repeater-control-cs.md)

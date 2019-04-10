@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: adea836d-dbc2-4005-94ea-53aef09e9e34
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 msc.type: authoredcontent
-ms.openlocfilehash: 9a0b3357ef4ac9c884877474454089cc71692b7d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ff12bc43ad68fdc4bbcd478624f47ea0d2774c2d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426093"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399306"
 ---
-<a name="implement-efficient-data-paging"></a>Implementieren einer effizienten Datenauslagerung
-====================
+# <a name="implement-efficient-data-paging"></a>Implementieren einer effizienten Datenauslagerung
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)

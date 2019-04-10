@@ -8,15 +8,15 @@ ms.date: 03/13/2008
 ms.assetid: 55439d0f-e555-4537-97f3-0a7bc0a4bf5b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-javascript-to-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: b4a3ab073c410155e0fcdd7e118b6238895eeb48
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 23f1544e500424cbd3437deab15e9b9c1c68b21e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029597"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405338"
 ---
-<a name="how-do-i-add-javascript-to-an-aspnet-page"></a>[Gewusst wie:] Hinzufügen von JavaScript zu einer ASP.NET-Seite
-====================
+# <a name="how-do-i-add-javascript-to-an-aspnet-page"></a>[Gewusst wie:] Hinzufügen von JavaScript zu einer ASP.NET-Seite
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem Video zeigt Chris Pels, wie JavaScript zu einer ASP.NET-Seite für die Verwendung auf der Clientseite, die eine umfangreichere und robuster Benutzeroberfläche bereitzustellen. Zuerst erfahren Sie, wie JavaScript direkt in eine ASP.NET-Seite und das Skript nicht in HTML-Seitenelementen verweisen. Als Nächstes erfahren Sie, wie JavaScript in eine externe JavaScript-Datei zu abstrahieren die bietet den Vorteil, die vom Browser zwischengespeichert wird und von mehreren Seiten verwendet werden kann. Schließlich erfahren Sie, wie JavaScript zu einer Seite dynamisch zur Laufzeit hinzufügen, das hat den Vorteil einschließlich Skript für eine bestimmte Situation oder, in dem Informationen wie z. B. eine Steuerelement-ID nicht bis zur Laufzeit bekannt. Als Teil des dynamische Skripts Beispiel finden Sie unter Gewusst wie: Hinzufügen von JavaScript, die automatisch ausgeführt werden kann, wenn die Seite geladen wird, sowie das Click-Ereignis für Button-Steuerelemente ("Schaltfläche", "LinkButton, und" ImageButton ").

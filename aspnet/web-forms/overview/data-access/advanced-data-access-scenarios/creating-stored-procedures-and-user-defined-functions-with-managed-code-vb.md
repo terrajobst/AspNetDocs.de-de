@@ -10,7 +10,7 @@ msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/cr
 msc.type: authoredcontent
 ms.openlocfilehash: 1596e1c8c1b96fd41c842169b95914c7b02cf196
 ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 03/25/2019
 ms.locfileid: "58424624"
@@ -484,7 +484,7 @@ Diese Aufgaben zu veranschaulichen, lassen Sie die s-Erstellen eines neuen verwa
 
 Dieser Code ist nahezu identisch mit der `GetProductsWithPriceLessThan` Methode, die in Schritt 5 erstellt haben. Die einzigen Unterschiede sind die Methodennamen die `WHERE` -Klausel und den Namen des Parameters in der Abfrage verwendet. In der `GetProductsWithPriceLessThan` -Methode, die `WHERE` Klausel lesen: `WHERE UnitPrice < @MaxPrice`. Hier im `GetProductsWithPriceGreaterThan`, wir verwenden: `WHERE UnitPrice > @MinPrice` .
 
-Nun müssen wir diese Klasse in eine Assembly zu kompilieren. In der Befehlszeile aus, navigieren Sie zu dem Verzeichnis, in dem Sie gespeichert haben, die `GetProductsWithPriceGreaterThan.vb` Datei und Verwenden von c#-Compiler (`csc.exe`) die Klassendatei in eine Assembly zu kompilieren:
+Nun müssen wir diese Klasse in eine Assembly zu kompilieren. In der Befehlszeile aus, navigieren Sie zu dem Verzeichnis, in dem Sie gespeichert haben, die `GetProductsWithPriceGreaterThan.vb` Datei und Verwenden von C#-Compiler (`csc.exe`) die Klassendatei in eine Assembly zu kompilieren:
 
 
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample18.cmd)]
@@ -570,7 +570,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 
 ## <a name="special-thanks-to"></a>Besonderen Dank an
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde S Ren Jacob Lauritsen. Neben diesen Artikel, S Ren auch erstellt, das Visual c# Express Edition-Projekt, das in diesem Artikel s Download manuell kompilieren die verwalteten Datenbankobjekte enthalten. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde S Ren Jacob Lauritsen. Neben diesen Artikel, S Ren auch erstellt, das Visual C# Express Edition-Projekt, das in diesem Artikel s Download manuell kompilieren die verwalteten Datenbankobjekte enthalten. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Vorherige](debugging-stored-procedures-vb.md)

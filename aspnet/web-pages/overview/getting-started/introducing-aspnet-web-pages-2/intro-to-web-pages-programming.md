@@ -8,15 +8,15 @@ ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: ec1c055d1b3f6ca5c6374a18840c2595bb368e0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034557"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387346"
 ---
-<a name="introducing-aspnet-web-pages---programming-basics"></a>Einführung in ASP.NET Web Pages - Grundlagen der Programmierung
-====================
+# <a name="introducing-aspnet-web-pages---programming-basics"></a>Einführung in ASP.NET Web Pages - Grundlagen der Programmierung
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Tutorial enthält eine Übersicht der Programmierung in ASP.NET Web Pages mit Razor-Syntax.
@@ -162,7 +162,7 @@ Hier sind einige Beispiele der Bedingungen, die Sie, in einer If testen können 
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-Sie können Variablen mit Werten oder Ausdrücken testen, indem Sie mit einem <em>logischer Operator</em> oder <em>Vergleichsoperator</em>: gleich (==), größer als (&gt;), kleiner als (&lt;), größer als oder gleich (&gt;=), und kleiner als oder gleich (&lt;=). Die! =-Operator bedeutet ungleich – z. B. wenn (eine! = 0) bedeutet, dass <em>Wenn</em> <em>eine</em><em>ist nicht gleich 0</em>.
+Sie können Variablen mit Werten oder Ausdrücken testen, indem Sie mit einem *logischer Operator* oder *Vergleichsoperator*: gleich (==), größer als (&gt;), kleiner als (&lt;), größer als oder gleich (&gt;=), und kleiner als oder gleich (&lt;=). Die! =-Operator bedeutet ungleich – z. B. wenn (eine! = 0) bedeutet, dass *Wenn ein ist nicht gleich 0*.
 
 > [!NOTE]
 > Stellen Sie sicher, dass Sie feststellen, dass der Vergleichsoperator für gleich (==) nicht das gleiche wie = ist. Die = Operator wird verwendet, nur zum Zuweisen von Werten (Var eine = 2). Wenn Sie diese Operatoren sich kombinieren, erhalten Sie entweder einen Fehler, oder Sie unerwartete Ergebnissen erhalten.
@@ -220,7 +220,7 @@ Der neue Code im Block Initialisiert eine Variable namens ShowMessage auf "false
 
 Im Code wird ermittelt, ob die URL eine Variablen namens angezeigt, in der Abfragezeichenfolge an, wie diese Version der URL enthält:
 
-`http://localhost:43097/TestRazorPart2.cshtml`?show=true
+`http://localhost:43097/TestRazorPart2.cshtml`? Anzeigen = True
 
 Der Test selbst untersucht die QueryString-Eigenschaft des Objekts ab. Wenn die Abfragezeichenfolge ein Element mit dem Namen anzeigen enthält und das Element auf true festgelegt ist, die bei Block ausgeführt wird und die ShowMessage-Variable auf "true" festgelegt.
 
@@ -354,7 +354,7 @@ Im nächste Tutorial führt Sie in die Arbeit mit einer Datenbank. In diesem Tut
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Einführung in die ASP.NET-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter-Hilfsprogramm](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

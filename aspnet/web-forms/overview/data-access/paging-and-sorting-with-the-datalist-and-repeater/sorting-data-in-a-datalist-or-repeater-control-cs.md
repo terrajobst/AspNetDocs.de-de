@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ec5124cb0b449db703988bdadbaa244ff72cf363
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d45e5cb1efd5f67acc94f4118d96c62ea08dc617
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425599"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387151"
 ---
-<a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Sortieren von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)
-====================
+# <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Sortieren von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe) oder [PDF-Datei herunterladen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
@@ -51,12 +51,12 @@ Wir werden diese drei Aufgaben in den Schritten 3 und 4 in Angriff nehmen. Danac
 Bevor wir sortieren-bezogenen Funktionen implementieren fürchten, können Sie s zunächst wird aufgelistet, die Produkte in ein Repeater-Steuerelement. Öffnen Sie zunächst die `Sorting.aspx` auf der Seite die `PagingSortingDataListRepeater` Ordner. Fügen Sie ein Repeater-Steuerelement auf der Webseite festlegen die `ID` Eigenschaft `SortableProducts`. Erstellen Sie eine neue, mit dem Namen "ObjectDataSource" aus dem Repeater-s-Smarttag `ProductsDataSource` und konfigurieren Sie ihn zum Abrufen von Daten aus der `ProductsBLL` Klasse s `GetProducts()` Methode. Wählen Sie die option (keine) aus den Dropdown-Listen auf den Registerkarten INSERT-, Update- und DELETE.
 
 
-[![Erstellen Sie ein ObjectDataSource-Steuerelement, und konfigurieren Sie, dass die GetProductsAsPagedDataSource()-Methode verwendet](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
+[![CErstellen eine ObjectDataSource gegeben, und konfigurieren, dass die Methode GetProductsAsPagedDataSource() verwendet](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
 
 **Abbildung 1**: Erstellen Sie ein ObjectDataSource-Steuerelement und konfigurieren Sie sie verwenden die `GetProductsAsPagedDataSource()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png))
 
 
-[![Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten (keine)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
+[![Su. a. die Dropdownlisten auf den Registerkarten Update-, INSERT- und DELETE auf ("None")](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
 
 **Abbildung 2**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png))
 
@@ -71,7 +71,7 @@ Nach dem Hinzufügen der `ItemTemplate`, Repeater- und das "ObjectDataSource" s 
 Abbildung 3 zeigt diese Seite, wenn Sie über einen Browser angezeigt.
 
 
-[![Jedes Produkt s Name, Hersteller und Kategorie wird angezeigt.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
+[![EACH Produkt s Name, Hersteller und Kategorie angezeigt](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
 
 **Abbildung 3**: Jedes Produkt s Name, Lieferanten und Kategorie angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
 
@@ -90,7 +90,7 @@ Die *SortExpression* Wert den Namen des Felds zum Sortieren der Daten durch (z. 
 Fahren Sie fort, und versuchen Sie es einige andere hartcodierte Werte für *SortExpression* und die Ergebnisse in einem Browser zu testen. Wie Abbildung 4 zeigt die Verwendung von ProductName DESC als, die *SortExpression*, werden die Produkte anhand ihres Namens in umgekehrter alphabetischer Reihenfolge sortiert.
 
 
-[![Die Produkte werden anhand ihres Namens in die umgekehrte alphabetische Reihenfolge sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
+[![Ter Produkte sind sortiert, anhand ihres Namens in alphabetischer Reihenfolge umkehren](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
 
 **Abbildung 4**: Die Produkte werden anhand ihres Namens in die umgekehrte alphabetische Reihenfolge sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
 
@@ -124,12 +124,12 @@ Mit der Sortierung DropDownList-Steuerelement abgeschlossen, wir als Nächstes m
 An diesem Punkt aus, wenn die Seite zuerst besuchen werden die Produkte zunächst nach sortiert werden die `ProductName` Feld "Daten", wie sie s der `SortBy` `ListItem` standardmäßig aktiviert (siehe Abbildung 6). Auswählen eines anderen Option wie z. B. Kategorie sortieren und auf Aktualisieren klicken, wird dazu führen, dass einen Postback und neu sortieren der Daten durch den Namen der Kategorie, wie in Abbildung 7 dargestellt.
 
 
-[![Die Produkte sind zunächst nach dem Namen sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
+[![Tseine Produkte sind zunächst nach dem Namen sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
 
 **Abbildung 6**: Die Produkte sind zunächst anhand ihres Namens sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png))
 
 
-[![Die Produkte sind jetzt nach Kategorie sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
+[![Tseine Produkte sind jetzt nach Kategorie sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
 
 **Abbildung 7**: Die Produkte sind jetzt nach Kategorie sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png))
 
@@ -151,7 +151,7 @@ Zukünftige Beispiele in diesem Tutorial erfahren Sie, wie die Sortierung Detail
 In der [vorherigen Lernprogramm](paging-report-data-in-a-datalist-or-repeater-control-cs.md) wurde beschrieben, wie das Standardpaging und einem DataList-Steuerelement zu implementieren. Lassen Sie s, die diese vorherigen Beispiel um die Möglichkeit zum Sortieren der ausgelagerten Daten zu erweitern. Öffnen Sie zunächst die `SortingWithDefaultPaging.aspx` und `Paging.aspx` Seiten in der `PagingSortingDataListRepeater` Ordner. Von der `Paging.aspx` Seite, klicken Sie auf die Schaltfläche "Quelle" im deklarativen Markup der Seite s anzeigen. Kopieren Sie den ausgewählten Text (siehe Abbildung 8), und fügen Sie ihn in deklarativen Markup `SortingWithDefaultPaging.aspx` zwischen der `<asp:Content>` Tags.
 
 
-[![Replizieren von deklarativen Markup in der &lt;Asp: Content&gt; Tags aus Paging.aspx SortingWithDefaultPaging.aspx](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
+[![RReplizieren von deklarativen Markup in der &lt;Asp: Content&gt; Tags aus Paging.aspx SortingWithDefaultPaging.aspx](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
 
 **Abbildung 8**: Replizieren von deklarativen Markup in der `<asp:Content>` von Tags `Paging.aspx` zu `SortingWithDefaultPaging.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png))
 
@@ -185,7 +185,7 @@ Nach diesen Änderungen sollte das deklarative "ObjectDataSource"-s-Markup ähne
 An diesem Punkt die `SortingWithDefaultPaging.aspx` Seite werden die Ergebnisse alphabetisch sortieren nach dem Produktnamen (siehe Abbildung 9). Dies liegt daran, die standardmäßig ein Wert von ProductName in übergeben wird, als die `GetProductsSortedAsPagedDataSource` s-Methode *SortExpression* Parameter.
 
 
-[![Standardmäßig werden die Ergebnisse nach Produktname sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
+[![By-Standard, die Ergebnisse werden nach Produktname sortiert](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
 
 **Abbildung 9**: Standardmäßig werden die Ergebnisse sortiert nach `ProductName` ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png))
 
@@ -214,12 +214,12 @@ Als Nächstes erstellen Sie eine `Click` -Ereignishandler für die einzelnen. Di
 Wenn die Seite zuerst besuchen zu können, die Daten nach dem Produktnamen alphabetisch sortiert (siehe Abbildung 9). Klicken Sie auf die Schaltfläche "Weiter", fahren Sie mit der zweiten Seite der Daten fort, und klicken Sie dann auf die Sortierung von kategorieschaltfläche. Dies gibt uns zur ersten Seite der Daten, sortiert nach Kategorienamen (siehe Abbildung 10). Ebenso sortiert die Sortierung von Lieferanten-Schaltfläche auf die Daten vom Lieferanten, die von der ersten Seite der Daten ab. Die Sortierungsoption wird gespeichert, wie die Daten über ausgelagert werden. Abbildung 11 zeigt die Seite nach dem Sortieren nach Kategorie, und klicken Sie dann das dreizehnte Datenseite gelangt sind.
 
 
-[![Die Produkte sind nach Kategorien sortiert.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
+[![Tseine Produkte sind nach Kategorien sortiert](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
 
 **Abbildung 10**: Werden die Produkte nach Kategorie sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png))
 
 
-[![Der Sortierausdruck wird gespeichert, wenn Paging durch die Daten](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
+[![Ter Sortierausdruck wird gespeichert, wenn Paging durch die Daten](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
 
 **Abbildung 11**: Der Sortierausdruck wird gespeichert, wenn Paging durch die Daten ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png))
 
@@ -237,7 +237,7 @@ Diese Methoden können verwendet werden, effizient Seite und Sortieren von Daten
 Öffnen der `SortingWithCustomPaging.aspx` auf der Seite der `PagingSortingDataListRepeater` Ordner und fügen Sie einem Wiederholungssteuerelement auf der Seite festlegen seiner `ID` Eigenschaft `Products`. Erstellen Sie eine neue, mit dem Namen "ObjectDataSource" aus dem Repeater-s-Smarttag `ProductsDataSource`. So konfigurieren, dass die Daten aus der wählen die `ProductsBLL` Klasse s `GetProductsPaged` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL Klasse s GetProductsPaged-Methode](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
+[![CKonfigurieren der "ObjectDataSource" die ProductsBLL Klasse s GetProductsPaged-Methode verwendet](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
 
 **Abbildung 12**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` s-Klasse `GetProductsPaged` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png))
 
@@ -245,7 +245,7 @@ Diese Methoden können verwendet werden, effizient Seite und Sortieren von Daten
 Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten (keine), und klicken Sie dann auf die Schaltfläche "Weiter". Der Konfigurieren von Datenquellen-Assistenten jetzt aufgefordert, für die Datenquellen der `GetProductsPaged` s-Methode *StartRowIndex* und *MaximumRows* Eingabeparameter. In Wirklichkeit werden diese Parameter ignoriert. Stattdessen die *StartRowIndex* und *MaximumRows* Werte durch Übergeben der `Arguments` -Eigenschaft in der "ObjectDataSource"-s `Selecting` -Ereignishandler, wie wir angegeben wie die *SortExpression* in dieser ersten Tutorial s-Demo. Aus diesem Grund lassen Sie die Parameterquelle Dropdownlisten im Assistenten auf None festgelegt.
 
 
-[![Lassen Sie den Parametersatz für die Datenquellen auf "None"](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
+[![LEave, die die Parameter Quellen auf None festgelegt](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
 
 **Abbildung 13**: Lassen Sie die Quellen Parametersatz auf "None" ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png))
 
@@ -267,7 +267,7 @@ Nehmen Sie einen Moment Zeit, besuchen die Seite über einen Browser, und beacht
 Durch diese Änderung zeigt die Seite, wenn Sie über einen Webbrowser angezeigt. die ersten fünf Produkte.
 
 
-[![Die ersten fünf Datensätze werden angezeigt.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
+[![Tseine ersten fünf Datensätze werden angezeigt](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
 
 **Abbildung 14**: Die ersten fünf Datensätze werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png))
 
@@ -313,17 +313,17 @@ Abschließend müssen wir die erste ' und ' Vorheriger Schaltflächen in den Pag
 Nach dem Hinzufügen dieser `Click` -Ereignishandler und den Code zum Aktivieren oder deaktivieren die Elemente der Benutzeroberfläche für Paging wird basierend auf der aktuellen Zeile startIndex, testen Sie die Seite in einem Browser. Abbildung 15 veranschaulicht, wenn die erste Seite zuerst besuchen und werden der zurück-Schaltflächen sind deaktiviert. Klicken Sie auf Weiter die zweite Seite der Daten zeigt, während die letzte Seite auf der letzten angezeigt werden (siehe Abbildung 16 und 17). Beim Anzeigen von Daten der letzten Seite werden die Schaltflächen "Weiter" und "letzte deaktiviert.
 
 
-[![Die Schaltflächen zurück und letzten sind deaktiviert, wenn die erste Seite der Produkte anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
+[![Ter zurück und letzten Schaltflächen sind deaktiviert, wenn Sie die erste Seite der Produkte anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
 
 **Abbildung 15**: Die Schaltflächen zurück und letzten sind deaktiviert, wenn die erste Seite der Produkte anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
 
 
-[![Die zweite Seite des Produkte sind fest](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
+[![Ter mit der zweiten Seite des Produkte werden angezeigt](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
 
-**Abbildung 16**: Die zweite Seite des Produkte sind fest ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
+**Abbildung 16**: Die zweite Seite des Produkte angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
 
 
-[![Klicken Sie auf letzte zeigt die letzte Seite der Daten](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
+[![Clicking letzten zeigt die letzte Seite der Daten](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
 
 **Abbildung 17**: Klicken Sie auf letzte zeigt die letzte Seite der Daten ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png))
 
@@ -366,7 +366,7 @@ Erstellen Sie `Click` -Ereignishandlern für diese drei Schaltflächen-Steuerele
 Alles, was, s wird es! Zwar gab es eine Reihe von Schritten zum Abrufen von benutzerdefiniertem Paging und Sortierung implementiert, wurden die Schritte für das Standardpaging sehr ähnlich. Abbildung 18 zeigt die Produkte an, beim Anzeigen der letzten Seite der Daten nach Kategorie sortiert.
 
 
-[![Die letzte Seite der Daten, sortiert nach Kategorie wird angezeigt.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
+[![Ter letzte Seite der Daten, sortiert nach Kategorie wird angezeigt.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
 
 **Abbildung 18**: Die letzte Seite der Daten, sortiert nach Kategorie angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png))
 

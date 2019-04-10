@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 2990bd10-590d-43d5-9529-6b503ce5455d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering
 msc.type: authoredcontent
-ms.openlocfilehash: 71e26dc9a63131842daf4aa1549d761690b723ea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19726a728fc6d94552c315b38315a29c269d97db
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047237"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380417"
 ---
-<a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern
-====================
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
@@ -28,7 +28,7 @@ Im vorherigen Tutorial, die Sie implementiert des Repository-Musters in einer n-
 - Eine Liste der Kurse jeder Abteilung, die im Raster angezeigt wird.
 - Die Fähigkeit, indem Sie auf Spaltenüberschriften sortieren.
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
 
 ## <a name="adding-the-ability-to-sort-gridview-columns"></a>Hinzufügen der Funktion zum Sortieren von GridView-Spalten
 
@@ -147,7 +147,7 @@ Dieser Code Ruft die `Department` Entität aus den Ereignisargumenten, konvertie
 
 Führen Sie die Seite. Neben den sortieren und Filtern die Funktion, die Sie zuvor hinzugefügt haben, zeigt das GridView-Steuerelement jetzt geschachtelte Kursdetails für jede Abteilung.
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
 
 Dies schließt die Einführung zu sortieren, Filtern und Master / Detail-Szenarien ab. Im nächsten Tutorial sehen Sie, wie Parallelität behandelt werden.
 

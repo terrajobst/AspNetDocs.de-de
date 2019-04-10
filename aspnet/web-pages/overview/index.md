@@ -8,24 +8,24 @@ ms.date: 05/18/2012
 ms.assetid: 1a2ed0e8-63da-4110-9896-e2731d86f7c4
 msc.legacyurl: /web-pages/overview
 msc.type: book
-ms.openlocfilehash: f95d998b838e262dd1843c882dae466a88c23ad5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4c9e9eb85f6ba9a1e2b2d0a1bbaf027ee25bc0d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381847"
 ---
-<a name="web-pages-guidance"></a>Webseiten-Leitfaden
-====================
+# <a name="web-pages-guidance"></a>Webseiten-Leitfaden
+
 - [Erste Schritte](getting-started/index.md)
 
     - [Programmieren von ASP.NET-Webseiten in Visual Studio](getting-started/program-asp-net-web-pages-in-visual-studio.md)
-    - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](getting-started/introducing-razor-syntax-c.md)
+    - [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](getting-started/introducing-razor-syntax-c.md)
     - [ASP.NET-Webseiten (Visual Basic)](getting-started/introducing-razor-syntax-vb.md)
     - [ASP.NET-Webseiten (Razor) – FAQs](getting-started/aspnet-web-pages-razor-faq.md)
-    - [Senden von E-Mails von Ihrer Website](getting-started/11-adding-email-to-your-web-site.md)
+    - [Senden von E-Mail-Nachrichten von Ihrer Website](getting-started/11-adding-email-to-your-web-site.md)
     - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](getting-started/13-adding-social-networking-to-your-web-site.md)
-    - [Einführung zu ASP.NET-Webseiten](getting-started/introducing-aspnet-web-pages-2/index.md)
+    - [Einführung in ASP.NET-Webseiten](getting-started/introducing-aspnet-web-pages-2/index.md)
 
         - [Erste Schritte](getting-started/introducing-aspnet-web-pages-2/getting-started.md)
         - [Grundlagen der Programmierung](getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
@@ -58,10 +58,10 @@ ms.locfileid: "57023987"
 
     - [Arbeiten mit Daten](data/5-working-with-data.md)
     - [Anzeigen von Daten in einem Diagramm](data/7-displaying-data-in-a-chart.md)
-    - [Working with Files (Arbeiten mit Dateien)](data/working-with-files.md)
+    - [Arbeiten mit Dateien](data/working-with-files.md)
 - [Testen und Debuggen](testing-and-debugging/index.md)
 
-    - [Einführung zum Debugging](testing-and-debugging/introduction-to-debugging.md)
+    - [Einführung in das Debuggen](testing-and-debugging/introduction-to-debugging.md)
     - [Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)](testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide.md)
 - [Sicherheit](security/index.md)
 
@@ -76,10 +76,10 @@ ms.locfileid: "57023987"
 - [API-Referenz](api-reference/index.md)
 
     - [ASP.NET-API-Kurzübersicht](api-reference/asp-net-web-pages-api-reference.md)
-- [Freigaben](releases/index.md)
+- [Versionen](releases/index.md)
 
     - [Neue Funktionen in ASP.NET Web Pages 3.2](releases/whats-new-in-aspnet-web-pages-32.md)
     - [Neue Funktionen in ASP.NET Web Pages 3.1](releases/whats-new-aspnet-web-pages-31.md)
     - [Die wichtigsten Funktionen in ASP.NET Web Pages 2](releases/top-features-in-web-pages-2.md)
-    - [ASP.NET Web Pages 2 Developer Preview – Infodatei](releases/aspnet-web-pages-2-developer-preview-readme.md)
+    - [ASP.NET Web Pages 2 Developer Vorschau – Infodatei](releases/aspnet-web-pages-2-developer-preview-readme.md)
     - [Paralleles Ausführen verschiedener ASP.NET Web Pages-Versionen](releases/running-v1-and-v2-sites-side-by-side.md)

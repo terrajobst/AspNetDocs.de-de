@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b0ac0919e64fb6494bd9c7c5f00a5f69274799ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 27823e6b65dda80391d494af6f8d8da539bc3334
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041397"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393209"
 ---
-<a name="dynamically-adding-an-accordion-pane-vb"></a>Dynamisches Hinzufügen von einem des Accordion-Bereichs (VB)
-====================
+# <a name="dynamically-adding-an-accordion-pane-vb"></a>Dynamisches Hinzufügen von einem des Accordion-Bereichs (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2VB.pdf)
@@ -55,9 +55,9 @@ Um das Beispiel abgeschlossen haben, geben Sie die beiden CSS-Klassen, die im St
 [!code-css[Main](dynamically-adding-an-accordion-pane-vb/samples/sample6.css)]
 
 
-[![Die Daten in der ' Accordion ' wurde von serverseitigem Code dynamisch hinzugefügt.](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
+[![Ter Daten in der ' Accordion ' wurde vom serverseitigen Code dynamisch hinzugefügt](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
 
 Die Daten in der ' Accordion ' wurde vom serverseitigen Code dynamisch hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-adding-an-accordion-pane-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](databinding-to-an-accordion-vb.md)
+> [Vorheriges](databinding-to-an-accordion-vb.md)

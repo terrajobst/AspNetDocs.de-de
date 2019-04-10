@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: 96b56eca-a892-45a4-96b4-67e61178650a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b9a3b9a8d5c86cc7aac6aeb8b4bac48af2e2edc7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4428ef0a6cec4c348bc48d069b990798508c21d4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026917"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391662"
 ---
-<a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>Erstellen eines benutzerdefinierten AJAX Control Toolkit-Steuerelement-Extender (C#)
-====================
+# <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>Erstellen eines benutzerdefinierten AJAX Control Toolkit-Steuerelement-Extender (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > Benutzerdefiniertes Extender können Sie anpassen und erweitern die Funktionen von ASP.NET-Steuerelementen, ohne neue Klassen zu erstellen.
@@ -79,7 +79,7 @@ Als Nächstes müssen wir das Klassenbibliotheksprojekt zu erstellen, das den Co
 Nachdem Sie diese Schritte abgeschlossen haben, sieht das Fenster des Projektmappen-Explorer wie in Abbildung 1.
 
 
-[![Lösung mit Website "und"-Klasse-Steuerelementbibliothek-Projekt](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
+[![SProjektmappen-Website und Klasse-Bibliotheksprojekt](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
 
 **Abbildung 01**: Lösung mit Website "und"-Klasse-Bibliotheksprojekt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image9.png))
 
@@ -100,7 +100,7 @@ Als Nächstes müssen Sie die notwendigen Assemblyverweise, um das Klassenbiblio
 Nachdem Sie diese Schritte abgeschlossen haben, sollte Ihr Ordner Klassenbibliothekprojekts Verweise wie in Abbildung 2 aussehen.
 
 
-[![Ordner "Verweise" mit der erforderlichen Verweise](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
+[![RVorhandene Verweise Ordner mit den erforderlichen Verweise](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
 
 **Abbildung 02**: Ordner "Verweise" mit allen erforderlichen Referenzen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image12.png))
 
@@ -155,7 +155,7 @@ Die Initialize()-Methode Target-Elements für das Verhalten einen Keyup-Ereignis
 Denken Sie daran, dass Sie die JavaScript-Datei in Programmausdruck 3 als eingebettete Ressource kompilieren müssen. Wählen Sie die Datei im Projektmappen-Explorer-Fenster, öffnen Sie das Eigenschaftenblatt, und weisen Sie den Wert *eingebettete Ressource* auf die **Buildvorgang** Eigenschaft (siehe Abbildung 3). Diese Option ist in Visual Studio und Visual Web Developer verfügbar.
 
 
-[![Hinzufügen einer JavaScript-Datei als eingebettete Ressource](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
+[![AHinzufügen einer JavaScript-Datei als eingebettete Ressource](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
 
 **Abbildung 03**: Hinzufügen einer JavaScript-Datei als eingebettete Ressource ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image15.png))
 
@@ -184,7 +184,7 @@ Nun, dass wir mit dem Erstellen des DisabledButton-Extenders-Steuerelements abge
 Nachdem Sie diese Schritte abgeschlossen haben, sollte die DisabledButton-Extender-Steuerelements in der Toolbox angezeigt (siehe Abbildung 4).
 
 
-[![DisabledButton in der toolbox](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
+[![DIsabledButton in der Toolbox](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
 
 **Abbildung 04**: DisabledButton in der Toolbox ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image18.png))
 
@@ -206,7 +206,7 @@ Als Nächstes müssen wir das TextBox-Steuerelement mit dem DisabledButton-Exten
 2. Wählen Sie den Extender DisabledButton aus, und klicken Sie auf die **OK** Schaltfläche.
 
 
-[![Die Extender-Assistent-Dialogfeld](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
+[![TDialogfeld für seine-Extender-Assistent](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
 
 **Abbildung 05**: Die Extender-Assistent-Dialogfeld ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image21.png))
 
@@ -218,7 +218,7 @@ Schließlich können wir die Eigenschaften des Extenders DisabledButton festlege
 3. Weisen Sie den Wert *speichern* die DisabledText-Eigenschaft und der Wert *BtnSave* der TargetButtonID-Eigenschaft.
 
 
-[![Festlegen von Eigenschaften des Extenders](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
+[![SSkala-Einstellung Extendereigenschaften](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
 
 **Abbildung 06**: Festlegen von Eigenschaften des Extenders ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image24.png))
 
@@ -226,7 +226,7 @@ Schließlich können wir die Eigenschaften des Extenders DisabledButton festlege
 Wenn Sie die Seite (durch Drücken von F5) ausführen, ist das Schaltflächen-Steuerelement ursprünglich deaktiviert. Sobald Sie beginnen das Eingeben von Text in das Textfeld ein, aktiviert die Schaltfläche "Steuerelement" (siehe Abbildung 7).
 
 
-[![Die DisabledButton-Extender in Aktion](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
+[![THE DisabledButton-Extender in Aktion](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
 
 **Abbildung 07**: Die DisabledButton-Extender in Aktion ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image27.png))
 

@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 692b2a13664a9a5153a85a230dd513b022518316
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 7e858fe4c1f8e93f6e6fa30b33f5682945d03c32
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423986"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403076"
 ---
-<a name="caching-data-at-application-startup-c"></a>Zwischenspeichern von Daten beim Anwendungsstart (C#)
-====================
+# <a name="caching-data-at-application-startup-c"></a>Zwischenspeichern von Daten beim Anwendungsstart (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [PDF herunterladen](caching-data-at-application-startup-cs/_static/datatutorial60cs1.pdf)
@@ -119,7 +119,7 @@ Hinzufügen der `Global.asax` Datei zum Stammverzeichnis Ihrer Webanwendung, ind
 > Wenn Sie bereits haben eine `Global.asax` Datei in Ihrem Projekt, das globale Anwendungsklasse work Item Type wird nicht in das Dialogfeld "Neues Element hinzufügen" aufgeführt.
 
 
-[![Fügen Sie der Datei "Global.asax" zum Stammverzeichnis Ihrer Webanwendung](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
+[![ADd der Datei "Global.asax" zum Stammverzeichnis der Webanwendung](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
 
 **Abbildung 3**: Hinzufügen der `Global.asax` Datei zum Stammverzeichnis der Webanwendung ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-cs/_static/image5.png))
 
@@ -142,7 +142,7 @@ Für diese Tutorials müssen wir nur zum Hinzufügen von Code die `Application_S
 Das ist schon alles! Beim Start der Anwendung die `LoadStaticCache()` -Methode die Lieferanteninformationen der BLL erfassen und speichern Sie es in eine statische Membervariable (oder den Cache zu speichern, Sie beendet werden, verwenden Sie der `StaticCache` Klasse). Um dieses Verhalten zu überprüfen, legen Sie einen Haltepunkt in der `Application_Start` Methode, und führen Sie Ihre Anwendung. Beachten Sie, dass der Haltepunkt beim Starten Anwendung erreicht wird. Nachfolgende Anforderungen führen jedoch nicht die `Application_Start` auszuführende Methode.
 
 
-[![Verwenden Sie einen Haltepunkt, stellen Sie sicher, dass der Application_Start-Ereignishandler ausgeführt wird ist](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
+[![USE einen Haltepunkt, stellen Sie sicher, dass es sich bei den Application_Start-Ereignishandler wird ausgeführt wird.](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
 
 **Abbildung 4**: Verwenden Sie einen Haltepunkt zu überprüfen, die die `Application_Start` -Ereignishandler ist ausgeführt wird ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-cs/_static/image8.png))
 
@@ -158,12 +158,12 @@ An diesem Punkt die `StaticCache` -Klasse verfügt über eine Version von Liefer
 Öffnen Sie zunächst die `AtApplicationStartup.aspx` auf der Seite die `Caching` Ordner. Ziehen Sie aus der Toolbox in den Designer und einer GridView-Ansicht der `ID` Eigenschaft `Suppliers`. In den GridView Smarttag wählen Sie als Nächstes erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `SuppliersCachedDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse `GetSuppliers()` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der StaticCache-Klasse](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
+[![CKonfigurieren der StaticCache-Klasse mit dem ObjectDataSource-Steuerelement](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
 
 **Abbildung 5**: Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-cs/_static/image11.png))
 
 
-[![Verwenden Sie die GetSuppliers()-Methode zum Abrufen der zwischengespeicherten Lieferantendaten](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
+[![USE die GetSuppliers()-Methode zum Abrufen der Daten für die Zwischenspeicherung Lieferanten](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
 
 **Abbildung 6**: Verwenden der `GetSuppliers()` Methode, um die Lieferantendaten zwischengespeichert abzurufen ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-cs/_static/image14.png))
 
@@ -176,7 +176,7 @@ Nach dem Fertigstellen des Assistenten für Visual Studio automatisch hinzugefü
 Abbildung 7 zeigt die Seite, wenn Sie über einen Browser angezeigt. Die Ausgabe ist gleich hatten wir Daten abgerufen, die der BLL des `SuppliersBLL` -Klasse, aber mit der `StaticCache` -Klasse gibt die Lieferantendaten als zwischengespeicherte beim Start der Anwendung zurück. Sie können Haltepunkte festlegen, in der `StaticCache` Klasse `GetSuppliers()` Methode, um dieses Verhalten zu überprüfen.
 
 
-[![Die Lieferantendaten zwischengespeichert wird in einer GridView-Ansicht angezeigt.](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
+[![Ter zwischengespeicherte Supplier Data wird in einer GridView-Ansicht angezeigt werden](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
 
 **Abbildung 7**: Die Lieferantendaten zwischengespeichert wird angezeigt, in einer GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-cs/_static/image17.png))
 

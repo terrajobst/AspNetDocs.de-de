@@ -8,15 +8,15 @@ ms.date: 02/16/2009
 ms.assetid: 0bfd06b1-12d3-4fbb-9779-a82e5eb7fe7d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 51d76248a59968e1d6befd5d5404f7bf6c2878e4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42c0ce5e158e2fe9387ac218ac0762b6362094f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049617"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389570"
 ---
-<a name="creating-a-route-constraint-c"></a>Erstellen einer Routeneinschränkung (C#)
-====================
+# <a name="creating-a-route-constraint-c"></a>Erstellen einer Routeneinschränkung (C#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial veranschaulicht, wie Sie steuern können, wie Browser Übereinstimmung Routen anfordert, durch das Erstellen von Einschränkungen mit regulären Ausdrücken.
@@ -51,7 +51,7 @@ Leider wird die Route auch die folgenden URLs übereinstimmen:
 Da die Details() Aktion einen ganzzahligen Parameter erwartet, verursacht der eine Anforderung, die etwas anderes als ein ganzzahliger Wert enthält einen Fehler aus. Z. B. Wenn Sie die URL-/Product/apple in Ihren Browser eingeben erhalten die Fehlerseite in Abbildung 1 Sie.
 
 
-[![Das Dialogfeld "Neues Projekt"](creating-a-route-constraint-cs/_static/image1.jpg)](creating-a-route-constraint-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](creating-a-route-constraint-cs/_static/image1.jpg)](creating-a-route-constraint-cs/_static/image1.png)
 
 **Abbildung 01**: Eine Seite explode angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-route-constraint-cs/_static/image2.png))
 

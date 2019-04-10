@@ -8,15 +8,15 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 258a55bf72c4b3425d001f478620fa9651952b3f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a63bca69f137a4d4765db6a4925ff027c9d8bf7d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058117"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403583"
 ---
-<a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Serverübertragung mit ASP.NET SignalR 1.x
-====================
+# <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Serverübertragung mit ASP.NET SignalR 1.x
+
 durch [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -42,13 +42,13 @@ Der Server wird in regelmäßigen Abständen nach dem Zufallsprinzip Aktienkurse
 
 In diesem Tutorial enthält die folgenden Abschnitte:
 
-- [Erforderliche Komponenten](#prerequisites)
-- [Erstellen des Projekts](#createproject)
+- [Vorraussetzungen](#prerequisites)
+- [Erstellen eines Projekts](#createproject)
 - [Fügen Sie die SignalR-NuGet-Pakete hinzu.](#nugetpackages)
 - [Richten Sie den Server-code](#server)
 - [Richten Sie den Clientcode](#client)
 - [Testen der Anwendung](#test)
-- [Aktivieren der Protokollierung](#enablelogging)
+- [Protokollierung aktivieren](#enablelogging)
 - [Installieren Sie und überprüfen Sie das vollständige StockTicker-Beispiel](#fullsample)
 - [Nächste Schritte](#nextsteps)
 

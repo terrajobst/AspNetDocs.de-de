@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: cb4afbae-9b8f-483d-9729-476d4b9f85fc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b71744df46f8b8d20efafa333a10370397c37d2f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d8ac50874d0325ed9583a16e1b4e19b3becabb99
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391514"
 ---
-<a name="testing-the-strength-of-a-password-c"></a>Testen der Sicherheit eines Kennworts (C#)
-====================
+# <a name="testing-the-strength-of-a-password-c"></a>Testen der Sicherheit eines Kennworts (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0CS.pdf)
@@ -44,9 +44,9 @@ Die `StrengthIndicatorType` stellt die Informationen bereit, wie Sie die Stärke
 Führen Sie die Seite aus, und geben Sie den Weg: Nur, nachdem Sie Kleinbuchstaben, Großbuchstaben, Ziffern und Symbole eingegeben haben, wird das Kennwort als unbreakable angesehen.
 
 
-[![Nachdem das Kennwort (Recht) gut ist.](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
+[![NWie gebe eignet sich das Kennwort (Recht)](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
 
 Nachdem das Kennwort (Recht) gut ist ([klicken Sie, um das Bild in voller Größe anzeigen](testing-the-strength-of-a-password-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](testing-the-strength-of-a-password-vb.md)
+> [Weiter](testing-the-strength-of-a-password-vb.md)

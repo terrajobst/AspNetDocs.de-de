@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
-title: Entwickeln von ASP.NET-Apps mit Azure Active Directory | Microsoft-Dokumentation
+title: Entwickeln von ASP.NET-Apps mit Azure Active Directory – ASP.NET 4.x
 author: Rick-Anderson
 description: Microsoft ASP.NET-Tools für Azure Active Directory vereinfacht die zum Aktivieren der Authentifizierung für Webanwendungen, die in Azure gehostet. Sie können Azure-ne...
 ms.author: riande
 ms.date: 08/14/2014
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 7f0e569458c9a294cc281b86e731c2fda48768be
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6f8b926c78097b68e6a159f2fdd30e7b8a6477a0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027847"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395172"
 ---
-<a name="developing-aspnet-apps-with-azure-active-directory"></a>Entwickeln von ASP.NET-Apps mit Azure Active Directory
-====================
+# <a name="developing-aspnet-apps-with-azure-active-directory"></a>Entwickeln von ASP.NET-Apps mit Azure Active Directory
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Microsoft ASP.NET-tools für Azure Active Directory durch Aktivieren der Authentifizierung für Web-apps, die auf gehosteten vereinfacht [Azure](https://www.windowsazure.com/home/features/web-sites/). Sie können Azure-Authentifizierung verwenden, um Office 365-Benutzer aus Ihrer Organisation, Unternehmenskonten, die von Ihrem lokalen Active Directory synchronisiert oder in einer eigenen benutzerdefinierten Azure Active Directory-Domäne erstellten Benutzer zu authentifizieren. Aktivieren der Windows Azure-Authentifizierung konfiguriert die Anwendung zum Authentifizieren von Benutzern, die mit einem einzigen [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) Mandanten.
@@ -141,7 +142,7 @@ Ein ausgezeichnetes Tutorial folgen ist die Rick Rainey [Deep Dive: Azure Websit
 
 ## <a name="more-information"></a>Weitere Informationen
 
-- [Vertiefung: Azure Websites und Organisation mithilfe von Azure AD-Authentifizierung](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
+- [Ausführliche Betrachtung: Azure Websites und Organisation mithilfe von Azure AD-Authentifizierung](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
 - [Übersicht über die Azure AD Graph-API](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [Szenarien mit Authentifizierung in Azure AD](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [Azure AD-Codebeispiele auf GitHub](https://github.com/AzureADSamples)

@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 78cb6dec71e6b4974fdea4f205d1a36ebdfc3104
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424443"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401737"
 ---
-<a name="whats-new-in-web-forms-in-aspnet-45"></a>Neue Funktionen in Web Forms in ASP.NET 4.5
-====================
+# <a name="whats-new-in-web-forms-in-aspnet-45"></a>Neue Funktionen in Web Forms in ASP.NET 4.5
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
 > Die neue Version von ASP.NET Web Forms führt eine Reihe von Verbesserungen umfassen hauptsächlich die Verbesserung der benutzerfreundlichkeit beim Arbeiten mit Daten.
@@ -77,7 +77,7 @@ Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie dere
 Dieser praktischen Übungseinheit enthält die folgenden Übungen:
 
 1. [Übung 1: Die Modellbindung in ASP.NET Web Forms](#Exercise1)
-2. [Übung 2: Datenüberprüfung](#Exercise2)
+2. [Übung 2: Datenvalidierung](#Exercise2)
 3. [Übung 3: Asynchrone Seitenverarbeitung in der ASP.NET Web Forms](#Exercise3)
 
 > [!NOTE]
@@ -396,7 +396,7 @@ ASP.NET 4.5 führt Anmerkungen der datenüberprüfung für Web Forms. Anstatt ei
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample23.cs)]
 
     > [!NOTE]
-    > .NET Framework 4.5 wurde erweitert, dass die vorhandenen Daten anmerkungsauflistung. Dies sind einige der die datenanmerkungen, die Sie verwenden können: [CreditCard], [Phone], [EmailAddress], [Bereich], [vergleichen], [Url], [FileExtensions], [Required], [Key], [RegularExpression].
+    > .NET Framework 4.5 wurde erweitert, dass die vorhandenen Daten anmerkungsauflistung. Dies sind einige der die datenanmerkungen, die Sie verwenden können: [CreditCard], [Phone], [EmailAddress], [Bereich], [vergleichen], [Url], [FileExtensions], [Required], [Schlüssel], [RegularExpression].
     > 
     > Einige Beispiele zur Verwendung:
     > 
@@ -612,7 +612,7 @@ Zeitaufwändige Operationen auf Ihrer Website sind gute Kandidaten für asynchro
 > Darüber hinaus können Sie diese Anwendung in Azure Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
 
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
@@ -814,7 +814,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur C#)***
+***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
 
 1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
 2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
@@ -834,7 +834,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (C#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
 
 1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
 2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.

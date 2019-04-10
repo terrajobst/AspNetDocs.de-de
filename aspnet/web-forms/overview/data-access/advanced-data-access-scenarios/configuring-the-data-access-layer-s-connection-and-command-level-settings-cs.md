@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 91a1c967fbe74dbda8f8ac9635fdccbe05b0b6cc
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423896"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389595"
 ---
-<a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (C#)
-====================
+# <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip) oder [PDF-Datei herunterladen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
@@ -51,7 +51,7 @@ Mit Ausnahme der [Umschließen von Datenbankänderungen innerhalb einer Transakt
 Jede TableAdapter-Klasse verfügt über eine `Connection` Eigenschaft, die Datenbank-Verbindungsinformationen angibt. Diese Eigenschaft s-Datentyp und `ConnectionString` Wert werden durch die Auswahl im TableAdapter-Konfigurations-Assistenten bestimmt. Denken Sie daran, dass wenn wir einen TableAdapter zum ersten Mal mit einem typisierten DataSet hinzufügen dieser Assistent uns für die Datenbank erwartet, Quelle (siehe Abbildung 1). In diesem ersten Schritt die Dropdown-Liste enthält diese Datenbanken, die in der Konfigurationsdatei als auch für alle anderen Datenbanken im Server-Explorer s Datenverbindungen angegeben. Wenn die Datenbank, die verwendet werden soll, in der Dropdown-Liste nicht vorhanden ist, kann eine neue datenbankverbindung angegeben werden, indem Sie auf die Schaltfläche "neue Verbindung", und die erforderlichen Verbindungsinformationen bereitgestellt.
 
 
-[![Der erste Schritt des TableAdapter-Konfigurations-Assistenten](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
+[![Ter zunächst den TableAdapter-Konfigurations-Assistenten](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **Abbildung 1**: Der erste Schritt des TableAdapter-Konfigurations-Assistenten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
 
@@ -109,7 +109,7 @@ Diese partielle Klasse macht nur eine der Eigenschaften des zugrunde liegenden V
 Öffnen der `Northwind` DataSet, klicken Sie auf die `ProductsTableAdapter` im Designer, und navigieren Sie zu dem Fenster "Eigenschaften". Es wird Ihnen die `ConnectionModifier` legen Sie auf den Standardwert `Assembly`. Zu den `Connection` Eigenschaft außerhalb der typisierte DataSet-s-Assembly, Änderung zur Verfügung steht die `ConnectionModifier` Eigenschaft `Public`.
 
 
-[![Die Verbindung Eigenschaft s Zugriffsebene kann über die ConnectionModifier-Eigenschaft konfiguriert werden](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
+[![Ter Verbindungseigenschaft s Zugriffsebene kann über die ConnectionModifier-Eigenschaft konfiguriert werden](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **Abbildung 4**: Die `Connection` Eigenschaft s Barrierefreiheit Ebene kann so konfiguriert werden, über die `ConnectionModifier` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
 

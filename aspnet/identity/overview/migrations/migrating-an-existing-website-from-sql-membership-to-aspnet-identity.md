@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: Migrieren einer vorhandenen Website aus SQL-Mitgliedschaftsanbieter nach ASP.NET Identity | Microsoft-Dokumentation
+title: Migrieren einer vorhandenen Website aus SQL-Mitgliedschaftsanbieter nach ASP.NET Identity - ASP.NET 4.x
 author: Rick-Anderson
 description: In diesem Tutorial werden die Schritte zum Migrieren einer vorhandenen Webanwendung mit Benutzer- und Rolle mithilfe von SQL-Mitgliedschaft in der neuen ASP.NET Identity s erstellt...
 ms.author: riande
 ms.date: 12/19/2014
+ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f205dfd8692bc946ca2124655bf8bcefbdbd1779
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426080"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394527"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity
 
@@ -82,10 +83,10 @@ Diese Skriptdatei ist spezifisch für dieses Beispiel. Wenn das Schema für die 
 
 Für ASP.NET Identity-Klassen, die im Lieferumfang der Daten mit den vorhandenen Benutzern arbeiten müssen wir das Schema der Datenbank, die von ASP.NET Identity benötigt zu migrieren. Dies ist möglich durch Hinzufügen neuer Tabellen und kopieren die vorhandene Informationen in diesen Tabellen. Standardmäßig verwendet ASP.NET Identity EntityFramework die Modellklassen Identität in der Datenbank zum Speichern/Abrufen von Informationen zuordnen. Diese Modellklassen implementieren die Core Identity-Schnittstellen definieren von Benutzer- und Role-Objekte. Auf diese Modellklassen basieren die Tabellen und Spalten in der Datenbank. Die EntityFramework-Modellklassen in Identity 2.1.0 und deren Eigenschaften werden wie unten definiert.
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **Typ** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | Zeichenfolge | Id | RoleId | ProviderKey | Id |
-| Benutzername | Zeichenfolge | Name | UserId | UserId | ClaimType |
+| Benutzername | Zeichenfolge | name | UserId | UserId | ClaimType |
 | PasswordHash | Zeichenfolge |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | Zeichenfolge |  |  |  | Benutzer\_Id |
 | E-Mail | Zeichenfolge |  |  |  |  |
@@ -98,7 +99,7 @@ Für ASP.NET Identity-Klassen, die im Lieferumfang der Daten mit den vorhandenen
 
 Tabellen mit Spalten, die Eigenschaften für jedes dieser Modelle aufweisen müssen. Die Zuordnung zwischen Klassen und Tabellen wird definiert, der `OnModelCreating` Methode der `IdentityDBContext`. Dies bezeichnet man als die fluent-API-Methode der Konfiguration und Weitere Informationen finden Sie [hier](https://msdn.microsoft.com/data/jj591617.aspx). Die Konfiguration für die Klassen ist, wie unten beschrieben.
 
-| **Klasse** | **Table** | **Primärschlüssel** | **Fremdschlüssel** |
+| **Klasse** | **Tabelle** | **Primärschlüssel** | **Fremdschlüssel** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |

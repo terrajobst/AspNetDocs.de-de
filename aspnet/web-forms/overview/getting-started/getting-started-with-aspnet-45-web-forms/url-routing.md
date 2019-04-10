@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: d9f0779d560d6ec7796a16dc2996b959dd171c80
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 992cea256302231ee7031a21c798117b73eaa01c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384318"
 ---
-<a name="url-routing"></a>URL-Routing
-====================
+# <a name="url-routing"></a>URL-Routing
+
 by [Erik Reitan](https://github.com/Erikre)
 
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)

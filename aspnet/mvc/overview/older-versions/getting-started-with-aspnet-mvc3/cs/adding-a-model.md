@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 42355b95-5f1f-413e-8d16-14cdfaaefcd8
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: f35e1fec7b3b2a1fc53cf8beb3781a2e2f6c8740
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c9fb4b65605d07421872c051eedcf667101316ef
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396758"
 ---
-<a name="adding-a-model-c"></a>Hinzufügen eines Modells (C#)
-====================
+# <a name="adding-a-model-c"></a>Hinzufügen eines Modells (C#)
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
@@ -73,8 +73,6 @@ Die `MovieDBContext` erstellten Klasse übernimmt die Aufgabe der Verbindung zur
 Öffnen Sie den Stammordner der Anwendung *"Web.config"* Datei. (Nicht die *"Web.config"* Datei die *Ansichten* Ordner.) Die folgende Abbildung beides anzeigen *"Web.config"* Dateien; öffnen die *"Web.config"* Datei rot markiert.
 
 ![](adding-a-model/_static/image4.png)
-
-### 
 
 Fügen Sie die folgende Verbindungszeichenfolge für die `<connectionStrings>` Element in der *"Web.config"* Datei.
 

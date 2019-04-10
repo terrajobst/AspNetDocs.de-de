@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: ce654eb5abd54613987f2375cc973febc9dc2ad5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041957"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396556"
 ---
-<a name="using-page-inspector-in-visual-studio-2012"></a>Verwenden der Seitenprüfung in Visual Studio 2012
-====================
+# <a name="using-page-inspector-in-visual-studio-2012"></a>Verwenden der Seitenprüfung in Visual Studio 2012
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
 > In dieser praktischen Übungseinheit werden Sie feststellen, ein neues Tool zum Suchen und Beheben von Problemen der Webseite in Visual Studio – die Seitenprüfung.
@@ -59,7 +59,7 @@ Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 - [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder sogar eine höhere (Lesen [Anhang A](#AppendixA) Anleitungen zur Installation).
 - InternetExplorer 9 oder höher
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -106,7 +106,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Seitenprüfung im Kontext eines ASP.NE
     *Auswählen einer Datei, die in der Seitenprüfung (Vorschau)*
 3. Zeigt das Fenster für die Seitenprüfung die */Home/Index* URL zugeordnet, die Quelle anzeigen, die Sie ausgewählt haben.
 
-    ![ThefirstcontactwithPageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
+    ![Den ersten Kontakt mit PageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
 
     *Den ersten Kontakt mit der Seitenprüfung*
 
@@ -130,7 +130,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Seitenprüfung im Kontext eines ASP.NE
     *Überprüfungsmodus Umschaltfläche*
 6. Bewegen Sie im Browser der Seitenprüfung den Mauszeiger über die Seitenelemente. Während Sie den Mauszeiger über einen beliebigen Teil der gerenderten Seite bewegen, wird der Elementtyp wird angezeigt, und die entsprechende Quellmarkup oder den Code in Visual Studio-Editor hervorgehoben ist.
 
-    ![Inspectionmodeinaction](using-page-inspector-in-visual-studio-2012/_static/image5.png)
+    ![Überprüfungsmodus in Aktion](using-page-inspector-in-visual-studio-2012/_static/image5.png)
 
     *Überprüfungsmodus in Aktion*
 
@@ -139,7 +139,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Seitenprüfung im Kontext eines ASP.NE
 
     Wenn Sie besondere Aufmerksamkeit schenken der **"Index.cshtml"** -Datei, werden Sie feststellen, dass der Teil des Quellcodes, die das ausgewählte Element generiert hervorgehoben ist. Dieses Feature erleichtert die Bearbeitung von langen Quelldateien, die eine direkte und schnelle Möglichkeit zum Zugriff auf den Code bereitstellen.
 
-    ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
+    ![Untersuchen von Elementen](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *Untersuchen von Elementen*
 7. Klicken Sie auf die **ein-/ausschalten Überprüfungsmodus** Schaltfläche (![wählen Sie die Registerkarte "HTML", um den HTML-Code im Browser Seitenprüfung gerendert anzuzeigen.](using-page-inspector-in-visual-studio-2012/_static/image7.png "Wählen Sie die Registerkarte \"HTML\", um den HTML-Code im Browser Seitenprüfung gerendert anzuzeigen.") ), deaktivieren Sie den Cursor.
@@ -156,7 +156,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Seitenprüfung im Kontext eines ASP.NE
     > [!NOTE]
     > Da der Header einen Teil des Layouts Standort ist, wird auch der Seitenprüfung geöffnet \_Layout.cshtml-Datei und markieren Sie das Segment des Codes beeinträchtigt.
 
-    ![Discoveringstyles](using-page-inspector-in-visual-studio-2012/_static/image9.png)
+    ![Ermittlung von Formatvorlagen](using-page-inspector-in-visual-studio-2012/_static/image9.png)
 
     *Ermittlung von Formatvorlagen und die Quelldateien eines ausgewählten Elements*
 11. Zeigen Sie mit dem Mauszeiger von Toggle-Prüfung aktiviert auf nachfolgend der blauen Leiste für die ausgewählte, und klicken Sie auf die halbe Kreis.
@@ -180,7 +180,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Seitenprüfung im Kontext eines ASP.NE
     *Ändern von CSS-Werten in der Seitenprüfung*
 15. Klicken Sie auf die **Formatvorlagen verfolgen** Registerkarte im rechten Bereich der Seitenprüfung. Dies ist eine alternative Möglichkeit zum finden in alle Stile an, die auf die Auswahl, sortiert nach dem Attributnamen angewendet.
 
-    ![CSSstylestracing](using-page-inspector-in-visual-studio-2012/_static/image13.png)
+    ![CSS-Formatvorlagen, die Ablaufverfolgung](using-page-inspector-in-visual-studio-2012/_static/image13.png)
 
     *Ablaufverfolgung von CSS-Stilen des ausgewählten Elements*
 16. Ein weiteres Feature von der Seitenprüfung ist im Layoutbereich. Verwenden den Überprüfungsmodus, wählen Sie die Navigationsleiste, und klicken Sie dann auf die **Layout** Registerkarte im rechten Bereich. Es wird die genaue Größe des ausgewählten Elements sowie seine Größe Offset, Rand, Auffüllung und Rahmen angezeigt. Beachten Sie, dass Sie auch die Werte aus dieser Sicht ändern können.
@@ -218,7 +218,7 @@ In dieser Aufgabe Sie verwenden die seitenprüfung und beheben Sie einige Proble
 2. Ein/aus-Überprüfungsmodus ausgewählt haben klicken Sie auf Nähe, aber nicht auf den Link "Register", um den Code zu öffnen.
 
     Beachten Sie, die der Quellcode der Links sich in befindet der  **\_LoginPartial.cshtml** Datei nicht mit der Datei "Index.cshtml" noch die \_Layout.cshtml, die das platziert sind, können Sie zunächst den Artikel. Sie haben direkt in der Quelldatei platziert wurde.
-3. In der **Stile** Registerkarte, zu suchen, und klicken Sie auf die **<section> #login</section>** Element, das den HTML--Container, damit diese Links ist.
+3. In der **Stile** Registerkarte, zu suchen, und klicken Sie auf die  **\<Abschnitt > #login** Element, das den HTML--Container, damit diese Links ist.
 
     Beachten Sie, dass die **#login** Stil befindet sich automatisch im **"Site.CSS"** nach anklicken. Darüber hinaus ist der Code nun markiert.
 
@@ -261,12 +261,12 @@ In dieser Aufgabe Sie verwenden die seitenprüfung und beheben Sie einige Proble
 
     *Zuweisen eines neuen Titels*
 
-    ![PhotoGallerypage](using-page-inspector-in-visual-studio-2012/_static/image23.png)
+    ![Fotogalerie-Seite](using-page-inspector-in-visual-studio-2012/_static/image23.png)
 
     *Seite "Photo Gallery" aktualisiert*
-11. Abschließend wählen Sie zum Abschluss der **Registerseite** -Projekt, und drücken Sie **F5** zum Ausführen der app. Sehen Sie sich alles, was die Änderungen wie erwartet funktionieren.
+11. Wählen Sie abschließend die **Registerseite** -Projekt, und drücken Sie **F5** zum Ausführen der app. Sehen Sie sich alles, was die Änderungen wie erwartet funktionieren.
 
-* * *
+---
 
 <a id="Exercise2"></a>
 
@@ -347,7 +347,7 @@ In dieser Aufgabe lernen Sie, wie Sie die Funktionen der Seitenprüfung im Konte
     > [!NOTE]
     > Da der Header das Layout der Website gehört, der Seitenprüfung außerdem Site.Master-Datei zu öffnen und markieren Sie das Segment des Codes beeinträchtigt.
 
-    ![DiscoveringstylesWebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "Ermitteln von Formatvorlagen und die Quelldateien eines ausgewählten Elements")
+    ![Ermitteln von Stilen WebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "Ermitteln von Formatvorlagen und die Quelldateien eines ausgewählten Elements")
 
     *Ermittlung von Formatvorlagen und die Quelldateien eines ausgewählten Elements*
 11. Bewegen Sie mit dem Mauszeiger von Toggle-Prüfung aktiviert den Mauszeiger unterhalb der Menüleiste, und klicken Sie auf die leere Halbkreis.
@@ -421,7 +421,7 @@ In dieser Aufgabe verwenden Sie die seitenprüfung zum Beheben der Probleme der 
     Page Inspector ist über alle anderen Dateien, aus denen die aktuelle Seite, und es kann erkennen, wenn eine dieser Dateien ändern. Sie benachrichtigt, wenn die aktuelle Seite im Browser nicht mit Quelldateien synchronisiert ist.
 5. Klicken Sie im Browser der Seitenprüfung auf der Leiste befindet sich unter der Adressleiste ein, um die Änderungen zu speichern und Laden Sie die Seite.
 
-    ![Reloadingthepage](using-page-inspector-in-visual-studio-2012/_static/image40.png)
+    ![Die Seite erneut zu laden](using-page-inspector-in-visual-studio-2012/_static/image40.png)
 
     *Die Seite erneut zu laden*
 
@@ -457,7 +457,7 @@ In dieser Aufgabe verwenden Sie die seitenprüfung zum Beheben der Probleme der 
     *Seite "Photo Gallery" aktualisiert*
 11. Aktivieren Sie schließlich **F5** zum Ausführen der app der Überprüfung alle Änderungen wie erwartet funktionieren.
 
-* * *
+---
 
 <a id="Summary"></a>
 

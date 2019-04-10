@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: cd17dbe1-c5e1-4be8-ad3d-57233d52cef1
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9713bbd983c4e922273a23356cbbb3848a8b7c50
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cc5f283a6f97a83fdb157f54e5b3b020254f5203
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404844"
 ---
-<a name="protecting-connection-strings-and-other-configuration-information-vb"></a>Schützen von Verbindungszeichenfolgen und anderen Konfigurationsinformationen (VB)
-====================
+# <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>Schützen von Verbindungszeichenfolgen und anderen Konfigurationsinformationen (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_73_VB.zip) oder [PDF-Datei herunterladen](protecting-connection-strings-and-other-configuration-information-vb/_static/datatutorial73vb1.pdf)
@@ -31,7 +31,7 @@ Konfigurationsinformationen für ASP.NET-Anwendungen befindet sich im Allgemeine
 Da `Web.config` kann vertrauliche Daten wie Verbindungszeichenfolgen enthalten es ist wichtig, die den Inhalt der `Web.config` gehalten werden, sicher und nicht autorisierte Viewer ausgeblendet. In der Standardeinstellung alle HTTP-Anforderung an eine Datei mit der `.config` Erweiterung erfolgt durch die Engine für ASP.NET, wodurch die *dieser Seite wird nicht verarbeitet* Nachricht, die in Abbildung 1 dargestellt. Dies bedeutet, dass Besucher nicht einsehen dürfen Ihre `Web.config` s Dateiinhalt einfach durch Eingabe der http://www.YourServer.com/Web.config in die Adressleiste des Browsers s.
 
 
-[![Besuchen die Datei "Web.config" durch ein Browser gibt einen Typ der Seite wird keine Nachricht bereitgestellt](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
+[![VIsiting "Web.config" durch ein Browser gibt einen Typ der Seite ist nicht verarbeitet Nachrichten](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
 
 **Abbildung 1**: Zugriff auf `Web.config` über ein Browser gibt einen Typ der Seite wird die Nachricht nicht verarbeitet ([klicken Sie, um das Bild in voller Größe anzeigen](protecting-connection-strings-and-other-configuration-information-vb/_static/image3.png))
 
@@ -83,7 +83,7 @@ Fügen Sie unterhalb im Textfeld für die zwei Schaltflächen-Steuerelemente, di
 An diesem Punkt werden Ihr Bildschirm sollte ähnlich wie in Abbildung 2 aussehen.
 
 
-[![Fügen Sie einem Textfeld und zwei Schaltflächen-Web-Steuerelemente auf der Seite](protecting-connection-strings-and-other-configuration-information-vb/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image4.png)
+[![ATT ein Textfeld und zwei Web-Schaltflächen-Steuerelemente auf der Seite "](protecting-connection-strings-and-other-configuration-information-vb/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image4.png)
 
 **Abbildung 2**: Fügen Sie ein Textfeld und zwei Schaltflächen-Web-Steuerelemente auf der Seite ([klicken Sie, um das Bild in voller Größe anzeigen](protecting-connection-strings-and-other-configuration-information-vb/_static/image6.png))
 
@@ -111,7 +111,7 @@ Nach dem Aufruf der `ProtectSection(provider)` oder `UnprotectSection` -Methode,
 Wenn Sie den obigen Code eingegeben haben, testen, indem Sie auf die `EncryptingConfigSections.aspx` Seite über einen Browser. Zunächst sollte eine Seite, die der Inhalt des aufgelistet `Web.config` mit der `<connectionStrings>` Abschnitt im nur-Text angezeigt (siehe Abbildung 3).
 
 
-[![Fügen Sie einem Textfeld und zwei Schaltflächen-Web-Steuerelemente auf der Seite](protecting-connection-strings-and-other-configuration-information-vb/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image7.png)
+[![ATT ein Textfeld und zwei Web-Schaltflächen-Steuerelemente auf der Seite "](protecting-connection-strings-and-other-configuration-information-vb/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image7.png)
 
 **Abbildung 3**: Fügen Sie ein Textfeld und zwei Schaltflächen-Web-Steuerelemente auf der Seite ([klicken Sie, um das Bild in voller Größe anzeigen](protecting-connection-strings-and-other-configuration-information-vb/_static/image9.png))
 
@@ -126,7 +126,7 @@ Weitere Informationen zur Anforderungsvalidierung, den Zweck, zum Deaktivieren a
 Versuchen Sie nach der Deaktivierung Anforderungsvalidierung für die Seite erneut auf die Schaltfläche "Verschlüsseln von Verbindungszeichenfolgen" klicken. Beim Postback die Konfigurationsdatei zugegriffen wird und die zugehörige `<connectionStrings>` Abschnitt mit der DPAPI-Anbieter verschlüsselt. Das Textfeld wird dann aktualisiert, um die neue anzuzeigen `Web.config` Inhalt. Wie in Abbildung 4 gezeigt, die `<connectionStrings>` Informationen werden jetzt verschlüsselt.
 
 
-[![Klicken Sie auf die verschlüsseln Verbindung Zeichenfolgen Schaltfläche verschlüsselt die &lt;"ConnectionString"&gt; Abschnitt](protecting-connection-strings-and-other-configuration-information-vb/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image10.png)
+[![Clicking der verschlüsseln Verbindung Zeichenfolgen Schaltfläche verschlüsselt die &lt;"ConnectionString"&gt; Abschnitt](protecting-connection-strings-and-other-configuration-information-vb/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image10.png)
 
 **Abbildung 4**: Klicken Sie auf die verschlüsseln Verbindung Zeichenfolgen Schaltfläche verschlüsselt die `<connectionString>` Abschnitt ([klicken Sie, um das Bild in voller Größe anzeigen](protecting-connection-strings-and-other-configuration-information-vb/_static/image12.png))
 
@@ -143,7 +143,7 @@ Die verschlüsselten `<connectionStrings>` auf meinem Computer generiert Abschni
 Wenn die Informationen zur Verbindungszeichenfolge aus erfolgt `Web.config` – entweder durch Code, die wir schreiben, von einem SqlDataSource-Steuerelement, oder die automatisch generierten Code von den TableAdaptern getrennt in unserer typisierte DataSets - werden automatisch entschlüsselt. Kurz gesagt: Wir müssen keine zusätzlichen Code oder Logik, um die verschlüsselten entschlüsseln hinzufügen `<connectionString>` Abschnitt. Um dies zu veranschaulichen, finden Sie auf den früheren Tutorials zu diesem Zeitpunkt an, wie z. B. das einfache Tutorial das Kapitel zur grundlegenden Berichterstellung (`~/BasicReporting/SimpleDisplay.aspx`). Wie in Abbildung 5 gezeigt, funktioniert das Lernprogramm, wie wir erwarten, gibt an, dass die verschlüsselten Verbindungsinformationen für die Zeichenfolge mit der ASP.NET-Seite automatisch entschlüsselt wird.
 
 
-[![Die Datenzugriffsebene entschlüsselt automatisch Informationen zur Verbindungszeichenfolge](protecting-connection-strings-and-other-configuration-information-vb/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image13.png)
+[![TAutomatisch entschlüsselt er die Datenzugriffsebene die Verbindungszeichenfolgeninformationen](protecting-connection-strings-and-other-configuration-information-vb/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image13.png)
 
 **Abbildung 5**: Die Datenzugriffsebene automatisch entschlüsselt, die Informationen zur Verbindungszeichenfolge ([klicken Sie, um das Bild in voller Größe anzeigen](protecting-connection-strings-and-other-configuration-information-vb/_static/image15.png))
 
@@ -218,10 +218,10 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Erstellen von sicheren ASP.NET-Anwendung: Authentifizierung, Autorisierung und sichere Kommunikation](https://msdn.microsoft.com/library/aa302392.aspx)
 - [Verschlüsseln von Konfigurationsinformationen in ASP.NET 2.0 Applications](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
 - [Verschlüsseln von `Web.config` Werte in ASP.NET 2.0](https://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx)
-- [How To: Verschlüsseln von Konfigurationsabschnitten in ASP.NET 2.0 mithilfe von DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
-- [How To: Verschlüsseln von Konfigurationsabschnitten in ASP.NET 2.0 mithilfe von RSA](https://msdn.microsoft.com/library/ms998283.aspx)
+- [Vorgehensweise: Verschlüsseln von Konfigurationsabschnitten in ASP.NET 2.0 mithilfe von DPAPI](https://msdn.microsoft.com/library/ms998280.aspx)
+- [Vorgehensweise: Verschlüsseln von Konfigurationsabschnitten in ASP.NET 2.0 mithilfe von RSA](https://msdn.microsoft.com/library/ms998283.aspx)
 - [Der Konfigurations-API in .NET 2.0](http://www.odetocode.com/Articles/418.aspx)
-- [Windows Data Protection](https://msdn.microsoft.com/library/ms995355.aspx)
+- [Windows-Datenschutz](https://msdn.microsoft.com/library/ms995355.aspx)
 
 ## <a name="about-the-author"></a>Der Autor
 

@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: 'Tutorial: Erstellen Sie die der Webanwendung und Datenmodelle für EF Database First mit ASP.NET MVC'
+title: 'Tutorial: Erstellen Sie die Webanwendung und Datenmodelle für EF Database First mit ASP.NET MVC'
 description: Dieses Tutorial konzentriert sich auf die Webanwendung erstellen und das Generieren von Datenmodelle auf Grundlage von Datenbanktabellen.
 author: Rick-Anderson
 ms.author: riande
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 481a0ee9b19e5d35d736b2cc937a124900bce446
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 30fd42be5677df6fa6ee0630914098c30d21385b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426132"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404519"
 ---
-# <a name="tutorial-create-the-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>Tutorial: Erstellen Sie die der Webanwendung und Datenmodelle für EF Database First mit ASP.NET MVC
+# <a name="tutorial-create-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>Tutorial: Erstellen Sie die Webanwendung und Datenmodelle für EF Database First mit ASP.NET MVC
 
  Verwenden MVC, Entity Framework und ASP.NET-Gerüstbau, können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. Dieser tutorialreihe erfahren Sie, wie Sie automatisch generierter Code, der ermöglicht Benutzern das anzeigen, bearbeiten, erstellen und Löschen von Daten, die in einer Datenbanktabelle gespeichert. Der generierte Code entspricht die Spalten in der Datenbanktabelle.
 

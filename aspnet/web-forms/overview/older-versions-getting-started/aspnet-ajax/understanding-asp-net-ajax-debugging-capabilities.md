@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 13fd8f05cd994ff1c902bd067fb4ed425010d64e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1203825a1fb6b2034d9180fcf416aba7d0012fb7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064697"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383213"
 ---
-<a name="understanding-aspnet-ajax-debugging-capabilities"></a>Grundlegendes zu Debuggingfunktionen von ASP.NET AJAX
-====================
+# <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Grundlegendes zu Debuggingfunktionen von ASP.NET AJAX
+
 durch [Scott Cate](https://github.com/scottcate)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial06_Debugging_MS_Ajax_Applications_cs.pdf)
@@ -48,7 +48,7 @@ Obwohl nicht erforderlich, wenn versuchen Sie, die Debuggen einer Anwendung, die
 Abbildung 1 zeigt, welche im erweiterten Dialogfeld Internet Explorer sollte aussehen, nachdem es für das Debuggen ordnungsgemäß konfiguriert wurde.
 
 
-[![Konfigurieren von Internet Explorer für das Debuggen.](understanding-asp-net-ajax-debugging-capabilities/_static/image2.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image1.png)
+[![CKonfigurieren von Internet Explorer für das Debuggen.](understanding-asp-net-ajax-debugging-capabilities/_static/image2.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image1.png)
 
 **Abbildung 1**: Konfigurieren von Internet Explorer für das Debuggen.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image3.png))
 
@@ -91,7 +91,7 @@ Nachdem der Debugger-Anweisung erreicht wird, die Sie werden aufgefordert, die S
 Nach eine Debugsitzung gestartet wird und Sie beginnen mit der F11-Taste standardmäßig Code durchlaufen, treten ggf. das Fehlerdialogfeld in finden Sie unter Abbildung 2, es sei denn, alle Skriptdateien, die verwendet werden, auf der Seite geöffnet und für das Debuggen verfügbar sind.
 
 
-[![Das Fehlerdialogfeld angezeigt, wenn kein Quellcode für das Debuggen verfügbar ist.](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
+[![EFehler Dialogfeld angezeigt, wenn kein Quellcode für das Debuggen verfügbar ist.](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
 
 **Abbildung 2**: Das Fehlerdialogfeld angezeigt, wenn kein Quellcode für das Debuggen verfügbar ist.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image6.png))
 
@@ -104,7 +104,7 @@ Dieses Dialogfeld wird angezeigt, da Sie sicher, dass Visual Studio .NET-Gewusst
 Die Skript-Explorer kann verwendet werden, zeigen Sie alle Skripts, die auf einer Seite verwendet, und sie im Code-Editor zu öffnen. Doppelklicken Sie auf der ASPX-Seite, die gerade gedebuggt werden, um sie im Code-Editor-Fenster zu öffnen, nach dem Skript-Explorer öffnen. Führen Sie die gleiche Aktion für alle anderen Skripts in den Skript-Explorer angezeigt. Nachdem alle Skripts im Code-Fenster geöffnet sind Sie können drücken Sie F11 (und verwenden Sie die anderen Debug-Hotkeys), um den Code schrittweise. Abbildung 3 zeigt ein Beispiel für die Skript-Explorer. Die aktuelle Datei im Debugmodus befindlichen (Demo.aspx) aufgeführt sowie zwei benutzerdefinierte Skripts und zwei Skripts, die dynamisch vom ASP.NET AJAX ScriptManager auf der Seite eingefügt.
 
 
-[![Die Skript-Explorer bietet einfachen Zugriff auf Skripts, die auf einer Seite verwendet.](understanding-asp-net-ajax-debugging-capabilities/_static/image8.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image7.png)
+[![Ter Skript-Explorer bietet einfachen Zugriff auf Skripts, die auf einer Seite verwendet.](understanding-asp-net-ajax-debugging-capabilities/_static/image8.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image7.png)
 
 **Abbildung 3**. Die Skript-Explorer bietet einfachen Zugriff auf Skripts, die auf einer Seite verwendet.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image9.png))
 
@@ -122,7 +122,7 @@ Obwohl Visual Studio 2008 (und Visual Web Developer Express 2008) sehr leistungs
 Web Development Helper kann direkt in Internet Explorer verwendet werden, dadurch wird es praktisch, zu verwenden. Es wird durch Auswählen von Tools Web Development Helper im Internet Explorer-Menü gestartet. Dadurch wird das Tool im unteren Bereich des Browsers geöffnet, die eine gute Sache, da Sie den Browser, um verschiedene Aufgaben wie z. B. HTTP-Anforderung und Antwort nachrichtenprotokollierung lassen keine. Abbildung 4 zeigt, wie Web Development Helper in Aktion aussieht.
 
 
-[![Web Development Helper](understanding-asp-net-ajax-debugging-capabilities/_static/image11.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image10.png)
+[![WDevelopment Helper "EB"](understanding-asp-net-ajax-debugging-capabilities/_static/image11.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image10.png)
 
 **Abbildung 4**: Web Development Helper ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image12.png))
 
@@ -163,7 +163,7 @@ Die GetPerson()-Funktion aufrufen, auf der Seite oder über das "Direktfenster" 
 Zusätzlich zum Zulassen der Ablaufverfolgung und JSON-Objekte, die angezeigt werden, kann Web Development Helper auch dabei helfen, Debuggen von Fehlern in einer Seite. Wenn ein Fehler auftritt, werden Sie aufgefordert, weiterhin die nächste Zeile des Codes oder das Skript debuggen (siehe Abbildung 6). Das Skriptfehler Dialogfeld Fenster zeigt die vollständige Aufrufliste sowie Zeilennummern, sodass Sie problemlos erkennen können, in denen sich Probleme innerhalb eines Skripts sind.
 
 
-[![Mithilfe von Objekt-Inspektor-Fenster an ein JSON-Objekt.](understanding-asp-net-ajax-debugging-capabilities/_static/image14.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image13.png)
+[![UMelden Sie sich die Objekt-Inspektor-Fenster zum Anzeigen von JSON-Objekt.](understanding-asp-net-ajax-debugging-capabilities/_static/image14.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image13.png)
 
 **Abbildung 5**: Mithilfe von Objekt-Inspektor-Fenster an ein JSON-Objekt.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image15.png))
 
@@ -171,7 +171,7 @@ Zusätzlich zum Zulassen der Ablaufverfolgung und JSON-Objekte, die angezeigt we
 Die debuggingoption auswählen, können Sie Ausführen von skriptanweisungen direkt im Web Development Helper "Direktfenster" den Wert der Variablen anzeigen, sowie weitere JSON-Objekte zu schreiben. Wenn die gleiche Aktion, die den Fehler ausgelöst wird erneut ausgeführt, und Visual Studio 2008 auf dem Computer verfügbar ist, werden Sie aufgefordert, eine Debugsitzung starten, sodass Sie den Code zeilenweise, wie im vorherigen Abschnitt erläutert schrittweise durchlaufen können.
 
 
-[![Web Development Helper Skript-Fehlerdialogfeld](understanding-asp-net-ajax-debugging-capabilities/_static/image17.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image16.png)
+[![WFehlerdialogfeld "EB" Development Helper-Skript](understanding-asp-net-ajax-debugging-capabilities/_static/image17.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image16.png)
 
 **Abbildung 6**: Web Development Helper Skript-Fehlerdialogfeld ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image18.png))
 
@@ -185,7 +185,7 @@ Um ASP.NET AJAX-Anforderung und Antwort-Nachrichten anzuzeigen, muss die HTTP-Pr
 Obwohl sicherlich nützlich Anzeigen des unformatierten Texts in den einzelnen Anforderung/Antwort-Nachrichten gesendet ist (und eine Option im Web Development Helper), ist es oft einfacher, um Nachrichtendaten in einer grafisch angezeigt. Nachdem die HTTP-Protokollierung aktiviert wurde und die Nachrichten wurden angemeldet, können die Nachrichtendaten durch Doppelklicken auf die Nachricht in der HTTP-Protokoll-Viewer angezeigt werden. Dies ermöglicht es Ihnen an alle Header, die eine Nachricht als auch die eigentliche Nachricht zugeordnete Inhalt. Abbildung 7 zeigt ein Beispiel für eine Anforderungsnachricht und die Antwortnachricht, die im HTTP-Protokoll-Viewer-Fenster angezeigt.
 
 
-[![Verwenden die HTTP-Protokoll-Viewer zum Anzeigen von Daten von Anforderungs- und Antwortnachrichten Nachricht.](understanding-asp-net-ajax-debugging-capabilities/_static/image20.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image19.png)
+[![UMelden Sie sich die HTTP-Protokoll-Viewer zum Anzeigen der Anforderungs- und Antwortnachrichten Nachrichtendaten.](understanding-asp-net-ajax-debugging-capabilities/_static/image20.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image19.png)
 
 **Abbildung 7**: Verwenden die HTTP-Protokoll-Viewer zum Anzeigen von Daten von Anforderungs- und Antwortnachrichten Nachricht.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image21.png))
 
@@ -193,7 +193,7 @@ Obwohl sicherlich nützlich Anzeigen des unformatierten Texts in den einzelnen A
 Die HTTP-Protokoll-Viewer wird automatisch analysiert JSON-Objekten und zeigt sie die mit einer Strukturansicht somit schnell und einfach die Daten des Objekts anzeigen. Bei einem UpdatePanel-Steuerelement in einer ASP.NET AJAX-Seite verwendet wird, bricht der Viewer jeder Teil der Nachricht in einzelne Teile wie in Abbildung 8 gezeigt. Dies ist eine großartige Funktion, die es anzeigen und verstehen, was in der Nachricht im Vergleich zum Anzeigen der Daten für die unformatierte Nachricht ist wesentlich einfacher macht.
 
 
-[![Ein UpdatePanel-Antwortnachricht mit dem HTTP-Protokoll-Viewer angezeigt werden soll.](understanding-asp-net-ajax-debugging-capabilities/_static/image23.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image22.png)
+[![An UpdatePanel Response-Nachricht mit dem HTTP-Protokoll-Viewer angezeigt.](understanding-asp-net-ajax-debugging-capabilities/_static/image23.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image22.png)
 
 **Abbildung 8**: Ein UpdatePanel-Antwortnachricht mit dem HTTP-Protokoll-Viewer angezeigt werden soll.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
@@ -211,7 +211,7 @@ Sobald Firebug ausgeführt wird, können Haltepunkte auf beliebige Zeile in eine
 Sobald ein Haltepunkt in Firebug festgelegt wurde, können Sie die Aktion erforderlich, um das Skript auszuführen, das debuggt werden, z. B. auf eine Schaltfläche oder aktualisieren den Browser, um das OnLoad-Ereignis auslösen muss ausführen. Ausführung unterbrochen automatisch in der Zeile mit dem Haltepunkt. Abbildung 9 zeigt ein Beispiel für einen Haltepunkt an, der ausgelöst wurde, in Firebug.
 
 
-[![Behandeln Haltepunkte in Firebug.](understanding-asp-net-ajax-debugging-capabilities/_static/image26.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image25.png)
+[![HAusnahmebehandlung Haltepunkte in Firebug.](understanding-asp-net-ajax-debugging-capabilities/_static/image26.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image25.png)
 
 **Abbildung 9**: Behandeln Haltepunkte in Firebug.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image27.png))
 
@@ -223,7 +223,7 @@ Firebug enthält außerdem ein Konsolenfenster, das zum Testen der verschiedenen
 Abbildung 10 zeigt ein Beispiel für das DOM-Inspektor zu verwenden, um ein Textfeld mit dem Namen TxtCountry auf der Seite zu suchen. Der Inspektor Firebug kann auch verwendet werden, an CSS-Formatvorlagen, die in einer Seite sowie Ereignisse, die auftreten, z.B. für die nachverfolgung von mausbewegungen, Mausklicks und mehr verwendet.
 
 
-[![Verwenden Firebug des DOM-Inspektors.](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
+[![UMelden Sie sich die Firebug DOM-Inspektor.](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
 
 **Abbildung 10**: Verwenden Firebug des DOM-Inspektors.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image30.png))
 
@@ -278,7 +278,7 @@ Zusätzlich zur Ablaufverfolgung werden Sys.Debug-Klasse auch zum Ausführen von
 Codebeispiel 7 zeigt ein Beispiel der Verwendung der Sys.Debug.assert-Funktion zum Testen einer Bedingung. Der Code überprüft, ob das Adressobjekt null ist, bevor Sie ein Person-Objekt zu aktualisieren.
 
 
-[![Die Ausgabe der Funktion Sys.Debug.traceDump.](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
+[![OZeigen der Sys.Debug.traceDump-Funktion.](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
 
 **Abbildung 11**: Die Ausgabe der Funktion Sys.Debug.traceDump.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image33.png))
 
@@ -296,7 +296,7 @@ Die letzte Funktion abgedeckt ist Sys.Debug.fail. Wenn Sie Code in einer bestimm
 [!code-css[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample10.css)]
 
 
-[![Eine Sys.Debug.assert-Fehlermeldung.](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
+[![A Sys.Debug.assert Fehlermeldung.](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
 
 **Abbildung 12**: Eine Sys.Debug.assert-Fehlermeldung.  ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-debugging-capabilities/_static/image36.png))
 
@@ -353,4 +353,4 @@ Dan Wahlin (Microsoft Most Valuable Professional für ASP.NET und XML Web Servic
 Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](understanding-asp-net-ajax-web-services.md)
+> [Vorheriges](understanding-asp-net-ajax-web-services.md)

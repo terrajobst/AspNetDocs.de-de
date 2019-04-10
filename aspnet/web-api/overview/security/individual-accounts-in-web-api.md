@@ -8,15 +8,15 @@ ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 01d117260ef458453bee79285a37a8977221998c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396226"
 ---
-<a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Schützen einer Webs-API mit einzelnen Konten und lokale Anmeldung in ASP.NET-Web-API 2.2
-====================
+# <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Schützen einer Webs-API mit einzelnen Konten und lokale Anmeldung in ASP.NET-Web-API 2.2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Beispiel-App herunter](https://github.com/MikeWasson/LocalAccountsApp)
@@ -199,10 +199,10 @@ Bei der Auswahl **Einzelkonten** in der ASP.NET Web Application-Projektvorlage, 
 
 Hier sind die hauptanwendung-Klassen, die diese Funktionen zu implementieren:
 
-- `AccountController`. Stellt einen Web-API-Endpunkt für die Verwaltung von Benutzerkonten bereit. Die `Register` Aktion ist die einzige, die wir in diesem Tutorial verwendet. Andere Methoden für die Klasse unterstützt das Zurücksetzen von Kennwörtern, Anmeldungen per sozialem Netzwerk und andere Funktionen.
+- `AccountController`sein. Stellt einen Web-API-Endpunkt für die Verwaltung von Benutzerkonten bereit. Die `Register` Aktion ist die einzige, die wir in diesem Tutorial verwendet. Andere Methoden für die Klasse unterstützt das Zurücksetzen von Kennwörtern, Anmeldungen per sozialem Netzwerk und andere Funktionen.
 - `ApplicationUser`, in /Models/IdentityModels.cs definiert. Diese Klasse ist das EF-Modell für Benutzerkonten in der Mitgliedschaftsdatenbank.
 - `ApplicationUserManager`, definiert in/app\_Start/IdentityConfig.cs, die diese Klasse von wird [UserManager](https://msdn.microsoft.com/library/dn613290.aspx) führt Vorgänge für Benutzerkonten, z. B. Erstellen eines neuen Benutzers, und Überprüfen von Kennwörtern und So weiter, und automatisch beibehalten. Änderungen an der Datenbank.
-- `ApplicationOAuthProvider`. Dieses Objekt wird in die OWIN-Middleware integriert und von der Middleware ausgelösten Ereignisse verarbeitet. Es leitet sich von [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
+- `ApplicationOAuthProvider`sein. Dieses Objekt wird in die OWIN-Middleware integriert und von der Middleware ausgelösten Ereignisse verarbeitet. Es leitet sich von [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

@@ -8,15 +8,15 @@ ms.date: 02/22/2019
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 69c0d217f605096d968435c062ee9931f8dff75f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 31589b3713b1f1a9b98d12906bfef81f8bf5e3f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048797"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386151"
 ---
-<a name="working-with-ssl-in-web-api"></a>Arbeiten mit SSL in Web-API
-====================
+# <a name="working-with-ssl-in-web-api"></a>Arbeiten mit SSL in Web-API
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 Verschiedene häufig verwendete Authentifizierungsschemas sind über einfaches HTTP nicht sicher. Insbesondere senden die einfache Authentifizierung und Formularauthentifizierung unverschlüsselte Anmeldeinformationen. Sicher, diese Authentifizierungsschemas *müssen* SSL verwenden. Darüber hinaus können der SSL-Clientzertifikate verwendet werden, um Clients zu authentifizieren.

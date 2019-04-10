@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: 1f42e332-78dc-438b-9e35-0c97aa0ad929
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a10acd00dd8243f92c1b255acb8328e2b76e87cc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5819dc3d62161fc4f31cf30c6c739654a64d86b3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060897"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400411"
 ---
-<a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Benutzerdefinierte Schaltflächen im DataList- oder Wiederholungssteuerelement (C#)
-====================
+# <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Benutzerdefinierte Schaltflächen im DataList- oder Wiederholungssteuerelement (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_46_CS.exe) oder [PDF-Datei herunterladen](custom-buttons-in-the-datalist-and-repeater-cs/_static/datatutorial46cs1.pdf)
@@ -31,7 +31,7 @@ In den letzten siebzehn DataList- oder Wiederholungssteuerelement Tutorials wir 
 Darüber hinaus zum Bearbeiten und Löschen von Schaltflächen, die DataList- oder Repeater-Steuerelemente können auch enthalten Schaltflächen, LinkButtons oder ImageButtons, führen Sie durch Klicken auf eine benutzerdefinierte serverseitige Logik. In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater verwendet wird, um die Liste der Kategorien im System. Für jede Kategorie umfasst der Repeater eine Schaltfläche, um die Kategorie verknüpft sind Produkte, die über ein BulletedList-Steuerelement angezeigt werden (siehe Abbildung 1).
 
 
-[![Produkte Link zeigt die Kategorie-s-Produkte in einer Liste mit Aufzählungszeichen der anzeigen klicken](custom-buttons-in-the-datalist-and-repeater-cs/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image1.png)
+[![Clicking Link zeigt für die Produkte zeigen die Kategorie-s-Produkte in einer Aufzählung](custom-buttons-in-the-datalist-and-repeater-cs/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image1.png)
 
 **Abbildung 1**: Klicken Sie auf Link zeigt für die Produkte zeigen die Kategorie-s-Produkte in einer Liste mit Aufzählungszeichen ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image3.png))
 
@@ -52,7 +52,7 @@ Bevor Sie an, wie eine benutzerdefinierte Schaltfläche hinzufügen befassen, k�
 Wie in den anderen Ordnern `Default.aspx` in die `CustomButtonsDataListRepeater` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Fügen Sie dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](custom-buttons-in-the-datalist-and-repeater-cs/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image5.png)
+[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](custom-buttons-in-the-datalist-and-repeater-cs/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image5.png)
 
 **Abbildung 3**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image7.png))
 
@@ -75,7 +75,7 @@ Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website üb
 Für dieses Tutorial benötigen wir einen Repeater zu erstellen, die alle Kategorien zusammen mit LinkButton-Produkte anzeigen aufgeführt, die beim Klicken auf die zugeordnete Kategorie s-Produkte in einer Aufzählung angezeigt. Lassen Sie s, erstellen Sie zunächst ein einfaches Repeater, die im System die Kategorien aufgeführt. Öffnen Sie zunächst die `CustomButtons.aspx` auf der Seite die `CustomButtonsDataListRepeater` Ordner. Ziehen Sie einen Repeater aus der Toolbox in den Designer und den Satz der `ID` Eigenschaft `Categories`. Als Nächstes erstellen Sie ein neues Datenquellen-Steuerelement, aus dem Repeater-s-Smarttag. Insbesondere erstellen Sie ein neues ObjectDataSource-Steuerelement, das mit dem Namen `CategoriesDataSource` auswählt, die Daten aus der die `CategoriesBLL` Klasse s `GetCategories()` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL Klasse s GetCategories()-Methode](custom-buttons-in-the-datalist-and-repeater-cs/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image9.png)
+[![CKonfigurieren der "ObjectDataSource" die CategoriesBLL Klasse s GetCategories()-Methode verwendet](custom-buttons-in-the-datalist-and-repeater-cs/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image9.png)
 
 **Abbildung 5**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` s-Klasse `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image11.png))
 
@@ -90,7 +90,7 @@ Klicken Sie auf der Registerkarte "Datenquelle" in der unteren linken Ecke, und 
 Abbildung 6 zeigt die Seite, wenn Sie über einen Browser angezeigt. Jeder Name und die Beschreibung wird aufgeführt. Die Produkte anzeigen wird beim Klicken auf ein Postback auslöst aber eine Aktion noch nicht ausgeführt wird.
 
 
-[![Jede Kategorie s Name und die Beschreibung wird zusammen mit LinkButton-Produkte anzeigen angezeigt](custom-buttons-in-the-datalist-and-repeater-cs/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image12.png)
+[![EACH-Kategorie s Name und Beschreibung wird angezeigt, zusammen mit LinkButton-Produkte anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image12.png)
 
 **Abbildung 6**: Jede Kategorie s Name und die Beschreibung wird angezeigt, zusammen mit LinkButton-Produkte anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image14.png))
 
@@ -146,7 +146,7 @@ Nach Abschluss der `ItemCommand` -Ereignishandler können Sie diese Seite in ein
 > Wenn Sie das Verhalten dieses Berichts, ändern möchten, die nur eine Kategorie s-Produkte zu einem Zeitpunkt aufgeführt sind, legen Sie einfach das Steuerelement BulletedList s `EnableViewState` Eigenschaft `False`.
 
 
-[![Eine BulletedList wird verwendet, um die Produkte der ausgewählten Kategorie angezeigt.](custom-buttons-in-the-datalist-and-repeater-cs/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image15.png)
+[![A BulletedList wird verwendet, um die Produkte der ausgewählten Kategorie anzuzeigen.](custom-buttons-in-the-datalist-and-repeater-cs/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image15.png)
 
 **Abbildung 7**: Eine BulletedList wird verwendet, um die Produkte der ausgewählten Kategorie angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-cs/_static/image17.png))
 
@@ -166,4 +166,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Dennis Patterson. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](custom-buttons-in-the-datalist-and-repeater-vb.md)
+> [Weiter](custom-buttons-in-the-datalist-and-repeater-vb.md)

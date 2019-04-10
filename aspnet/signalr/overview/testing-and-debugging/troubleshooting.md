@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: c9ccfa00d768f767cee7705372c157199572d2ed
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3e3ba353184f94621ffc0fb1c50647caf1a89514
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422583"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402764"
 ---
-<a name="signalr-troubleshooting"></a>Problembehandlung für SignalR
-====================
+# <a name="signalr-troubleshooting"></a>Problembehandlung für SignalR
+
 durch [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -26,7 +26,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >

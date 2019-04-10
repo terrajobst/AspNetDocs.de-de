@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 684f0c28-a490-4e5b-b5e5-5dfb77464b49
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ed5057ee942ce57503b038cbd856fefaa3d287ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ef40d71828237a3d086c7c1bb05de56e0770f588
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042567"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391272"
 ---
-<a name="using-cascadingdropdown-with-a-database-c"></a>Verwenden von CascadingDropDown mit einer Datenbank (C#)
-====================
+# <a name="using-cascadingdropdown-with-a-database-c"></a>Verwenden von CascadingDropDown mit einer Datenbank (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1CS.pdf)
@@ -86,12 +86,12 @@ Der Rest der Methode ist ziemlich selbsterklärend, klicken Sie dann auf. Des Li
 Laden die ASP.NET-Seite und nach einer kurzen Zeit wird die Liste der Anbieter mit 25 Einträgen gefüllt. Wählen Sie einen Eintrag, und beachten Sie, wie der zweiten Dropdownliste mit Daten gefüllt ist.
 
 
-[![Die erste Liste wird automatisch ausgefüllt.](using-cascadingdropdown-with-a-database-cs/_static/image2.png)](using-cascadingdropdown-with-a-database-cs/_static/image1.png)
+[![Tseine erste Liste wird automatisch ausgefüllt](using-cascadingdropdown-with-a-database-cs/_static/image2.png)](using-cascadingdropdown-with-a-database-cs/_static/image1.png)
 
 Die erste Liste wird automatisch übernommen ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-cs/_static/image3.png))
 
 
-[![Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt.](using-cascadingdropdown-with-a-database-cs/_static/image5.png)](using-cascadingdropdown-with-a-database-cs/_static/image4.png)
+[![Tseine zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt](using-cascadingdropdown-with-a-database-cs/_static/image5.png)](using-cascadingdropdown-with-a-database-cs/_static/image4.png)
 
 Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-cs/_static/image6.png))
 

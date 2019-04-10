@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: 48e2a4ae-77ca-4208-a204-c38c690ffb59
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1078087e9ff2564e94a5b1df1efb6c96928524c7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 78192156bd9a3117d8cf75808f1de493a0d52a17
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424923"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387042"
 ---
-<a name="batch-inserting-vb"></a>Einfügen in Batches (VB)
-====================
+# <a name="batch-inserting-vb"></a>Einfügen in Batches (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_66_VB.zip) oder [PDF-Datei herunterladen](batch-inserting-vb/_static/datatutorial66vb1.pdf)
@@ -33,7 +33,7 @@ Dieses Konzept kann auch angewendet werden, wenn Sie Datensätze hinzufügen. St
 Mit ein wenig Aufwand können wir einen Batch, die einfügen-Schnittstelle, den Benutzer den Lieferanten und die Kategorie, geben Sie eine Reihe von Produktnamen und einem Stückpreis ermöglicht, und klicken Sie dann auf eine Schaltfläche zum Hinzufügen von neuen Produkte in der Datenbank, erstellen (siehe Abbildung 1). Jedes Produkt hinzugefügt wird, dessen `ProductName` und `UnitPrice` Datenfelder werden in die Textfelder eingegebenen Werte zugewiesen während seiner `CategoryID` und `SupplierID` Werte werden die Werte aus der DropDownList-Steuerelementen auf der obersten fo Form zugewiesen. Die `Discontinued` und `UnitsOnOrder` Werte werden festgelegt, auf die hartcodierten Werte der `False` und 0 (null) bzw.
 
 
-[![Die Batch-einfügen-Schnittstelle](batch-inserting-vb/_static/image2.png)](batch-inserting-vb/_static/image1.png)
+[![Ter Einfügen von Batch-Schnittstelle](batch-inserting-vb/_static/image2.png)](batch-inserting-vb/_static/image1.png)
 
 **Abbildung 1**: Die Batch-einfügen-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image3.png))
 
@@ -49,7 +49,7 @@ Beim Erstellen einer Seite mit zwei Schnittstellen, von denen nur eine zu einem 
 Öffnen Sie zunächst die `BatchInsert.aspx` auf der Seite die `BatchData` Ordner, und ziehen Sie ein Panel aus der Toolbox in den Designer (siehe Abbildung 2). Legen Sie den Zugriffsbereich s `ID` Eigenschaft `DisplayInterface`. Wenn Sie im Bereich in den Designer, Hinzufügen der `Height` und `Width` Eigenschaften auf 50px 125px, bzw. festgelegt werden. Löschen Sie die Werte dieser Eigenschaften im Eigenschaftenfenster.
 
 
-[![Ziehen Sie ein Panel aus der Toolbox in den Designer](batch-inserting-vb/_static/image5.png)](batch-inserting-vb/_static/image4.png)
+[![DDrop einen Bereich aus der Toolbox in den Designer](batch-inserting-vb/_static/image5.png)](batch-inserting-vb/_static/image4.png)
 
 **Abbildung 2**: Ziehen Sie ein Panel aus der Toolbox in den Designer ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image6.png))
 
@@ -57,12 +57,12 @@ Beim Erstellen einer Seite mit zwei Schnittstellen, von denen nur eine zu einem 
 Als Nächstes ziehen Sie eine Schaltfläche und GridView-Steuerelement in den Bereich ein. Legen Sie die s `ID` Eigenschaft `ProcessShipment` und die zugehörige `Text` Eigenschaft, um den Prozess mit dem Produktversand. Legen Sie die GridView s `ID` Eigenschaft `ProductsGrid` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie zum Abrufen der Daten aus dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts` Methode. Da diese GridView nur zum Anzeigen von Daten verwendet wird, legen Sie die Dropdownlisten in der Update-, INSERT-, und Löschen von Registerkarten (keine) aus. Klicken Sie auf "Fertig stellen", um das Konfigurieren von Datenquellen-Assistenten zu beenden.
 
 
-[![Anzeigen der Daten, die von der ProductsBLL Klasse s GetProducts-Methode zurückgegeben](batch-inserting-vb/_static/image8.png)](batch-inserting-vb/_static/image7.png)
+[![Digename der von der Klasse ProductsBLL s GetProducts-Methode zurückgegebenen Daten](batch-inserting-vb/_static/image8.png)](batch-inserting-vb/_static/image7.png)
 
 **Abbildung 3**: Anzeigen der Daten, die von zurückgegeben der `ProductsBLL` Klasse s `GetProducts` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image9.png))
 
 
-[![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](batch-inserting-vb/_static/image11.png)](batch-inserting-vb/_static/image10.png)
+[![Su. a. die Dropdownlisten in der Update-, INSERT- und DELETE Registerkarten (keine)](batch-inserting-vb/_static/image11.png)](batch-inserting-vb/_static/image10.png)
 
 **Abbildung 4**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image12.png))
 
@@ -79,7 +79,7 @@ Beachten Sie, die das Markup für die Schaltfläche und ein GridView angezeigt w
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzeigen. Wie in Abbildung 5 gezeigt, sehen Sie eine Prozess mit dem Produktversand oberhalb einer GridView-Ansicht auf die Schaltfläche, die die zehn Produkte zu einem Zeitpunkt auflistet.
 
 
-[![GridView Listet die Produkte und bietet, Sortieren und Paging-Funktionen](batch-inserting-vb/_static/image14.png)](batch-inserting-vb/_static/image13.png)
+[![Tin der GridView werden aufgelistet, die Produkte und bietet sortieren und Paging Funktionen](batch-inserting-vb/_static/image14.png)](batch-inserting-vb/_static/image13.png)
 
 **Abbildung 5**: GridView Listet die Produkte und bietet sortieren und Paging-Funktionen ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image15.png))
 
@@ -109,7 +109,7 @@ Dies `<table>` Markup umfasst keine Steuerelemente des Web- noch, diese werden v
 Mit diesem Markup eingegeben haben zurück zur Entwurfsansicht. Dies `<table>` sollte als Tabelle vier Spalten, die sieben Zeilen im Designer angezeigt, wie in Abbildung 6 gezeigt.
 
 
-[![Die einfügen-Schnittstelle besteht aus einer vier-Spalte, Tabelle mit sieben Zeilen](batch-inserting-vb/_static/image17.png)](batch-inserting-vb/_static/image16.png)
+[![TIE-einfügen-Schnittstelle besteht aus einer vier-Spalte, Tabelle mit sieben Zeilen](batch-inserting-vb/_static/image17.png)](batch-inserting-vb/_static/image16.png)
 
 **Abbildung 6**: Die einfügen-Schnittstelle besteht aus einer vier-Spalte, Tabelle mit sieben Zeilen ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image18.png))
 
@@ -119,7 +119,7 @@ Wir erneut jetzt bereit, das Einfügen von Schnittstelle Websteuerelemente hinzu
 Legen Sie den Lieferanten DropDownList s `ID` Eigenschaft `Suppliers` und binden sie an eine neue, mit dem Namen "ObjectDataSource" `SuppliersDataSource`. Konfigurieren Sie die neue "ObjectDataSource" zum Abrufen der Daten aus der `SuppliersBLL` Klasse s `GetSuppliers` Methode, und legen Sie das UPDATE Registerkarte s Dropdown-Liste (keine). Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der SuppliersBLL Klasse s GetSuppliers-Methode](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
+[![CKonfigurieren der "ObjectDataSource" die SuppliersBLL Klasse s GetSuppliers-Methode verwendet](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
 
 **Abbildung 7**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `SuppliersBLL` s-Klasse `GetSuppliers` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image21.png))
 
@@ -127,7 +127,7 @@ Legen Sie den Lieferanten DropDownList s `ID` Eigenschaft `Suppliers` und binden
 Haben die `Suppliers` DropDownList-Anzeige der `CompanyName` Feld "Daten" und die Verwendung der `SupplierID` Datenfeld als seine `ListItem` s Werte.
 
 
-[![Das Feld CompanyName-Daten anzeigen und SupplierID als Wert verwenden](batch-inserting-vb/_static/image23.png)](batch-inserting-vb/_static/image22.png)
+[![Digename das Datenfeld CompanyName und Verwendung SupplierID als Wert](batch-inserting-vb/_static/image23.png)](batch-inserting-vb/_static/image22.png)
 
 **Abbildung 8**: Anzeigen der `CompanyName` Datenfeld und Verwendung `SupplierID` als Wert ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image24.png))
 
@@ -137,7 +137,7 @@ Namen der zweiten Dropdownliste `Categories` und binden sie an eine neue, mit de
 Nachdem diese zwei DropDownList-Steuerelementen hinzugefügt und entsprechend konfigurierten ObjectDataSources gebunden wurden, sollte Ihr Bildschirm Abbildung 9 ähneln.
 
 
-[![Die Kopfzeile enthält jetzt den Lieferanten und Kategorien DropDownList-Steuerelementen](batch-inserting-vb/_static/image26.png)](batch-inserting-vb/_static/image25.png)
+[![Ter Kopfzeile enthält jetzt den Lieferanten und Kategorien DropDownLists](batch-inserting-vb/_static/image26.png)](batch-inserting-vb/_static/image25.png)
 
 **Abbildung 9**: Der Header Zeile enthält jetzt die `Suppliers` und `Categories` DropDownList-Steuerelementen ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image27.png))
 
@@ -157,7 +157,7 @@ Abschließend fügen Sie ein ValidationSummary-Steuerelement in der `InsertingIn
 Ihr Bildschirm sollte an diesem Punkt ähnelt Abbildung 10 aussehen.
 
 
-[![Die Einfügen von-Schnittstelle enthält jetzt die Textfelder für die Produkte Namen und Preise](batch-inserting-vb/_static/image29.png)](batch-inserting-vb/_static/image28.png)
+[![Ter einfügen Schnittstelle nun enthält Textfelder für die Namen der Produkte und Preise](batch-inserting-vb/_static/image29.png)](batch-inserting-vb/_static/image28.png)
 
 **Abbildung 10**: Die einfügen-Schnittstelle nun enthält Textfelder für die Namen der Produkte und Preise ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image30.png))
 
@@ -171,7 +171,7 @@ Ziehen Sie ein Label-Steuerelement aus der Toolbox auf den oberen Rand der Seite
 Abbildung 11 zeigt Visual Studio-Designer aus, nachdem die Bezeichnung hinzugefügt und konfiguriert wurde.
 
 
-[![Platzieren Sie das Steuerelement StatusLabel über die zwei Panel-Steuerelemente](batch-inserting-vb/_static/image32.png)](batch-inserting-vb/_static/image31.png)
+[![Peingestellt der StatusLabel Steuerelement über die zwei Panel-Steuerelemente](batch-inserting-vb/_static/image32.png)](batch-inserting-vb/_static/image31.png)
 
 **Abbildung 11**: Ort der `StatusLabel` Steuerelement über die zwei Panel-Steuerelemente ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image33.png))
 
@@ -208,7 +208,7 @@ Nehmen Sie einen Moment Zeit, um diese Seite in einem Browser zu testen. Wenn di
 > Können Sie während der Anzeige der einfügen-Schnittstelle, die CompareValidators auf den Einzelpreis Textfelder zu testen. Daraufhin sollte eine clientseitige Messagebox Warnung, wenn Sie die Produkte hinzufügen, Schaltfläche "Lieferung" mit ungültigen Currency-Werte oder Preise mit dem ein Wert kleiner als 0 (null) klicken.
 
 
-[![Die einfügen-Schnittstelle wird angezeigt, nach dem Klicken auf die Schaltfläche "Prozess Produkt Lieferung"](batch-inserting-vb/_static/image35.png)](batch-inserting-vb/_static/image34.png)
+[![Ter einfügen-Schnittstelle wird angezeigt, nach dem Klicken auf die Schaltfläche "Prozess Produkt Lieferung"](batch-inserting-vb/_static/image35.png)](batch-inserting-vb/_static/image34.png)
 
 **Abbildung 12**: Die einfügen-Schnittstelle wird angezeigt, nach dem Klicken auf die Schaltfläche "Prozess Produkt Lieferung" ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image36.png))
 
@@ -237,17 +237,17 @@ Wenn keine Produkte eingegeben wurden, bleibt die einfügende Schnittstelle ange
 Abbildung s 13, 14 und 15 anzeigen, das Einfügen und Schnittstellen in Aktion anzuzeigen. In Abbildung 13 wird der Benutzer hat eine Einheit Preis ohne einen entsprechenden Produktnamen eingegeben. Abbildung 14 zeigt der Anzeigenschnittstelle nach drei neue, dass Produkte während Abbildung 15 zwei neu hinzugefügten Produkten in den GridView-Ansicht zeigt (der dritte Parameter ist auf der vorherigen Seite) erfolgreich hinzugefügt wurden.
 
 
-[![Ein Produktname ist erforderlich, bei einem Preis je Einheit eingeben](batch-inserting-vb/_static/image38.png)](batch-inserting-vb/_static/image37.png)
+[![A Produktname ist erforderlich, bei einem Preis je Einheit eingeben](batch-inserting-vb/_static/image38.png)](batch-inserting-vb/_static/image37.png)
 
 **Abbildung 13**: Ein Produktname ist erforderlich, bei einem Preis je Einheit eingeben ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image39.png))
 
 
-[![Drei neue Teil des Gartens mein wurde für den Lieferanten Mayumi s](batch-inserting-vb/_static/image41.png)](batch-inserting-vb/_static/image40.png)
+[![Tdrei neue Teil des Gartens mein wurden hinzugefügt, für den Lieferanten Mayumi s](batch-inserting-vb/_static/image41.png)](batch-inserting-vb/_static/image40.png)
 
 **Abbildung 14**: Drei neue Teil des Gartens mein wurde für den Lieferanten Mayumi s ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image42.png))
 
 
-[![Die neuen Produkte finden Sie in der letzten Seite des GridView](batch-inserting-vb/_static/image44.png)](batch-inserting-vb/_static/image43.png)
+[![Ter neue Produkte finden Sie in der letzten Seite des GridView](batch-inserting-vb/_static/image44.png)](batch-inserting-vb/_static/image43.png)
 
 **Abbildung 15**: Die neue Produkte finden Sie in der letzten Seite des GridView ([klicken Sie, um das Bild in voller Größe anzeigen](batch-inserting-vb/_static/image45.png))
 
@@ -273,4 +273,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führen Sie Prüfer für dieses Tutorial Hilton Giesenow und S Ren Jacob Lauritsen wurden. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](batch-deleting-vb.md)
+> [Vorheriges](batch-deleting-vb.md)

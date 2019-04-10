@@ -8,15 +8,15 @@ ms.date: 1/04/2019
 ms.assetid: 64a491a8-0ed6-4c2f-9c1c-412962eb6006
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: acc2f8e78375ef0455d467e2af750ecbee623224
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54896da5565c9383f13fc352da26bbdc3cb63a76
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044637"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405364"
 ---
-<a name="display-data-items-and-details"></a>Anzeigen von Datenelementen und details
-====================
+# <a name="display-data-items-and-details"></a>Anzeigen von Datenelementen und details
+
 by [Erik Reitan](https://github.com/Erikre)
 
 > Dieser tutorialreihe erfahren Sie, die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mit ASP.NET 4.7 und Microsoft Visual Studio 2017.
@@ -39,9 +39,9 @@ In diesem Tutorial erfahren Sie, wie Sie zum Anzeigen von Datenelementen und Det
 
 Sie können eine Reihe von Optionen verwenden, Daten an ein Steuerelement gebunden. Die am häufigsten verwendeten gehören:
 
- * Hinzufügen von Datenquellen-Steuerelement
- * Hinzufügen von Code von hand
- * Mit der modellbindung
+* Hinzufügen von Datenquellen-Steuerelement
+* Hinzufügen von Code von hand
+* Mit der modellbindung
 
 ### <a name="use-a-data-source-control-to-bind-data"></a>Verwenden Sie ein Datenquellen-Steuerelement zum Binden von Daten
 

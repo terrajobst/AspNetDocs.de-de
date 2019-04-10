@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: c3b0c86e-fe98-41ee-b26f-ca38cddaa75e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e9268a2ca805bfae2f77e72a131968e09a92b31
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7e29ae36b81b08df2b6f52e0f6d9e1a10d9b6f19
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384928"
 ---
-<a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>Eine Übersicht über bearbeiten und Löschen von Daten im DataList-Steuerelement (c#)
-====================
+# <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>Eine Übersicht über bearbeiten und Löschen von Daten im DataList-Steuerelement (c#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_36_CS.exe) oder [PDF-Datei herunterladen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/datatutorial36cs1.pdf)
@@ -59,7 +59,7 @@ Bevor wir beginnen, untersuchen zum Aktualisieren und Löschen von Daten aus ein
 Wie in den anderen Ordnern `Default.aspx` in die `EditDeleteDataList` Ordner werden in den Tutorials im Abschnitt aufgeführt. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image2.png)
+[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image2.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image4.png))
 
@@ -107,12 +107,12 @@ In diesem Tutorial erstellen wir einem DataList-Steuerelement, die Produktinform
 Öffnen Sie zunächst die `Basics.aspx` auf der Seite die `EditDeleteDataList` Ordner und in die Entwurfsansicht zu sehen, fügen Sie einem DataList-Steuerelement auf der Seite. Als Nächstes aus DataList s Smarttags, erstellen Sie eine neue "ObjectDataSource" an. Da wir mit Product-Daten arbeiten, so konfigurieren, verwenden Sie die `ProductsBLL` Klasse. Zum Abrufen *alle* Produkte, wählen Sie die `GetProducts()` -Methode in der Registerkarte "SELECT".
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image6.png)
+[![CKonfigurieren der ProductsBLL-Klasse mit dem ObjectDataSource-Steuerelement](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image6.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image8.png))
 
 
-[![Zurückgeben der Produktinformationen mithilfe der GetProducts()-Methode](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image9.png)
+[![Rurück die Produktinformationen mithilfe der Methode GetProducts()](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image9.png)
 
 **Abbildung 5**: Zurückgeben von Informationen für das Produkt verwenden die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image11.png))
 
@@ -120,7 +120,7 @@ In diesem Tutorial erstellen wir einem DataList-Steuerelement, die Produktinform
 DataList-Steuerelement, z. B. GridView ist nicht vorgesehen, für neue Daten eingefügt werden. Wählen Sie aus diesem Grund die (None) aus der Dropdown-Liste in der Registerkarte "Einfügen"-option. Nach Wunsch (keine) für die Update- und DELETE-Registerkarten, da die Updates und löschungen programmgesteuert über die BLL ausgeführt werden.
 
 
-[![Vergewissern Sie sich, dass die Dropdownlisten in der "ObjectDataSource"-s-INSERT, UPDATE und Löschen von Registerkarten auf (keine) festgelegt sind](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image12.png)
+[![Cstätigen, die das Dropdown-Listen in das "ObjectDataSource"-s einfügen, aktualisieren und löschen Registerkarten werden auf (keine) festgelegt](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image12.png)
 
 **Abbildung 6**: Vergewissern Sie sich, dass das Dropdown-Listen in den "ObjectDataSource" s INSERT, UPDATE, und Löschen von Registerkarten auf (keine) festgelegt sind ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image14.png))
 
@@ -139,7 +139,7 @@ Nach dem Ersetzen der standardmäßigen DataList `ItemTemplate` durch eine benut
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzeigen. Wie in Abbildung 7 dargestellt, zeigt DataList-Steuerelement den Produktpreis, Name und Unit für jedes Produkt in zwei Spalten an.
 
 
-[![Die Namen der Produkte und Preise werden in einem zweispaltigen DataList-Steuerelement angezeigt.](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image15.png)
+[![TNamen für seine Produkte und Preise werden in einem zweispaltigen DataList-Steuerelement angezeigt](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image15.png)
 
 **Abbildung 7**: Die Namen der Produkte und Preise werden in einem DataList-Steuerelement zwei Spalten angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image17.png))
 
@@ -147,7 +147,7 @@ Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzei
 > [!NOTE]
 > DataList-Steuerelement verfügt über eine Reihe von Eigenschaften, die für den Prozess aktualisieren und Löschen von erforderlich sind, und diese Werte im Ansichtszustand gespeichert werden. Wenn einem DataList-Steuerelement zu erstellen, bearbeiten oder Löschen von Daten unterstützt wird, ist es daher wichtig, dass der Ansichtszustand für DataList s aktiviert werden.  
 >   
->  Der aufmerksame Leser möglicherweise Denken Sie daran, dass der Ansichtszustand deaktiviert beim Erstellen von bearbeitbaren GridViews DetailsViews und FormViews konnten wir. Dies ist, da ASP.NET 2.0-Webanwendung-Steuerelemente enthalten können *Steuerelementzustand*, persistenten Zustand wie der Ansichtszustand jedoch die angenommene Essential postbackübergreifend ist.
+> Der aufmerksame Leser möglicherweise Denken Sie daran, dass der Ansichtszustand deaktiviert beim Erstellen von bearbeitbaren GridViews DetailsViews und FormViews konnten wir. Dies ist, da ASP.NET 2.0-Webanwendung-Steuerelemente enthalten können *Steuerelementzustand*, persistenten Zustand wie der Ansichtszustand jedoch die angenommene Essential postbackübergreifend ist.
 
 
 Deaktivieren die Ansicht in der GridView lediglich trivial Zustandsinformationen lässt, sondern behält den Zustand des Steuerelements (enthält den Status, die zum Bearbeiten und Löschen erforderlich). DataList-Steuerelement, in der ASP.NET 1.x Zeitrahmens erstellt worden muss Steuerelementzustand wird nicht verwendet und aus diesem Grund der Ansichtszustand aktiviert. Finden Sie unter [Steuerelementzustand Visual Studio. Ansichtszustand](https://msdn.microsoft.com/library/1whwt1k7.aspx) für Weitere Informationen zu den Zweck des Steuerelementzustands und wie es aus dem Ansichtszustand unterscheidet.
@@ -161,7 +161,7 @@ DataList-Steuerelement, rendert andererseits, dessen Elemente, die mithilfe von 
 Die `EditItemTemplate` kann entweder deklarativ oder mithilfe des Designers erstellt werden, (durch Auswählen der Option Vorlagen bearbeiten aus dem Smarttag DataList s). Um die Vorlagen bearbeiten-Option verwenden zu können, klicken Sie zuerst auf den Link Vorlagen bearbeiten, in das Smarttag, und wählen Sie dann die `EditItemTemplate` Element aus der Dropdown-Liste.
 
 
-[![Für die Arbeit mit dem DataList-s-EditItemTemplate deaktivieren](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image18.png)
+[![Opt für die Arbeit mit dem DataList s EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image18.png)
 
 **Abbildung 8**: Arbeiten mit dem DataList-Steuerelement s OPT `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image20.png))
 
@@ -169,7 +169,7 @@ Die `EditItemTemplate` kann entweder deklarativ oder mithilfe des Designers erst
 Geben Sie als Nächstes Produktname: und den Preis: und ziehen Sie dann zwei TextBox-Steuerelemente aus der Toolbox in die `EditItemTemplate` Schnittstelle für den Designer. Legen Sie die Textfelder ein `ID` Eigenschaften `ProductName` und `UnitPrice`.
 
 
-[![Fügen Sie ein Textfeld für die Product-s-Namen und Preise](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image21.png)
+[![ATT ein Textfeld für das Produkt s Namen und den Preis](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image21.png)
 
 **Abbildung 9**: Fügen Sie ein Textfeld für das Produkt s Name und Preis ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image23.png))
 
@@ -198,7 +198,7 @@ Beachten Sie, dass diese Ereignisse ausgelöst werden *zusätzlich zu* der `Item
 Hinzufügen der `EditItemTemplate` zwei Schaltfläche Websteuerelemente, eine, deren `CommandName` festgelegt ist, aktualisieren und die anderen s, legen Sie auf "Abbrechen". Nach dem Hinzufügen dieser zwei Schaltfläche Websteuerelemente sollte der Designer etwa wie folgt aussehen:
 
 
-[![Hinzufügen von Updates und in das EditItemTemplate die Schaltflächen Abbrechen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image25.png)
+[![ADd aktualisieren und die Schaltflächen Abbrechen, um das EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image25.png)
 
 **Abbildung 11**: Hinzufügen, aktualisieren und die Schaltflächen Abbrechen, um die `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image27.png))
 
@@ -215,7 +215,7 @@ An diesem Punkt hat unsere DataList-Steuerelement eine bearbeitende-Schnittstell
 Nachdem Sie diese Schaltfläche "Bearbeiten" hinzugefügt haben, können Sie die Seite über einen Browser anzuzeigen. Mit folgender Ergänzung sollte jedes aufgelistete Produkt eine Bearbeiten-Schaltfläche enthalten.
 
 
-[![Hinzufügen von Updates und in das EditItemTemplate die Schaltflächen Abbrechen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image28.png)
+[![ADd aktualisieren und die Schaltflächen Abbrechen, um das EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image28.png)
 
 **Abbildung 12**: Hinzufügen, aktualisieren und die Schaltflächen Abbrechen, um die `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image30.png))
 
@@ -235,7 +235,7 @@ Die `EditCommand` -Ereignishandler wird in ein Objekt des Typs übergeben `DataL
 Rufen Sie nachdem dieser Ereignishandler hinzugefügt haben die Seite in einem Browser. Klicken Sie nun auf die Schaltfläche "Bearbeiten" wird die angeklickte Produkt bearbeitet werden (siehe Abbildung 13).
 
 
-[![Klicken Sie auf die Schaltfläche klicken bearbeiten, werden das Produkt, das bearbeitet werden](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image31.png)
+[![Clicking der Bearbeiten Schaltfläche wird die bearbeitbare Produkt](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image31.png)
 
 **Abbildung 13**: Klicken Sie auf die Schaltfläche "Bearbeiten" wird die Produkt-bearbeitbare ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image33.png))
 
@@ -283,17 +283,17 @@ Nach dem Lesen der Werte, die `ProductsBLL` Klasse s `UpdateProduct` Methode auf
 Mit der `EditCommand`, `CancelCommand`, und `UpdateCommand` Ereignishandler abgeschlossen ist, ein Besucher kann die Namen und den Preis eines Produkts bearbeiten. Abbildung 14 bis 16 zeigen diese Bearbeitung Workflow in Aktion.
 
 
-[![Werden beim ersten Besuch der Seite, die alle Produkte im schreibgeschützten Modus.](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image34.png)
+[![W"hen" ersten Besuch der Seite alle Produkte sind im schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image34.png)
 
 **Abbildung 14**: Wenn die Seite zuerst besuchen zu können, werden alle Produkte im schreibgeschützten Modus ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image36.png))
 
 
-[![Um ein Produkt s Namen oder den Preis zu aktualisieren, klicken Sie auf die Schaltfläche "Bearbeiten"](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image37.png)
+[![To-Update einer s Produktnamen oder Preis, klicken Sie auf die Schaltfläche "Bearbeiten"](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image37.png)
 
 **Abbildung 15**: Um ein Produkt s Namen oder den Preis zu aktualisieren, klicken Sie auf die Schaltfläche "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image39.png))
 
 
-[![Nach dem Ändern des Werts, klicken Sie auf Aktualisieren auf die Rückgabe in den schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image40.png)
+[![Azufügen nach Änderung des Werts, klicken Sie auf Updates auf die Rückgabe in den schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image40.png)
 
 **Abbildung 16**: Nach dem Ändern des Werts, klicken Sie auf Updates auf die Rückgabe in den schreibgeschützten Modus ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-cs/_static/image42.png))
 
@@ -343,4 +343,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Zack Jones, Ken Pespisa und Randy Schmidt. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](performing-batch-updates-cs.md)
+> [Weiter](performing-batch-updates-cs.md)

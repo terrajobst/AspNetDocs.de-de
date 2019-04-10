@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1cf97a7f1dc9bae2774518cdfc13da48fc7ada2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388906"
 ---
-<a name="creating-model-classes-with-the-entity-framework-c"></a>Erstellen von Modellklassen mit Entity Framework (C#)
-====================
+# <a name="creating-model-classes-with-the-entity-framework-c"></a>Erstellen von Modellklassen mit Entity Framework (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework zu verwenden. Erfahren Sie, wie der Assistent für Entity verwenden, um ein ADO.NET Entity Data Model zu erstellen. Im Verlauf dieses Tutorials erstellen wir eine Anwendung, die veranschaulicht, wie Sie auswählen, einfügen, aktualisieren und Löschen von Datenbankdaten mithilfe von Entity Framework.
@@ -219,4 +219,4 @@ Der Zweck dieses Lernprogramms wurde veranschaulicht, wie Sie einen datenbankges
 Zunächst wird erläutert, wie Sie Entity Data Model-Assistenten verwenden können, um ein Entity Data Model aus Visual Studio zu generieren. Als Nächstes erfahren Sie, wie Sie LINQ to Entities verwenden, um einen Satz von Datenbank-Datensätzen aus einer Datenbanktabelle zu abzurufen. Schließlich können wir das Entity Framework verwendet, um einfügen, aktualisieren und Löschen von Datenbankdatensätzen.
 
 > [!div class="step-by-step"]
-> [Nächste](creating-model-classes-with-linq-to-sql-cs.md)
+> [Weiter](creating-model-classes-with-linq-to-sql-cs.md)

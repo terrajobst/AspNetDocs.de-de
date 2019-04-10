@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425248"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380222"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 Fundamentals
 
@@ -73,7 +73,7 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -947,7 +947,7 @@ In dieser Übung untersuchen Sie die Verbesserungen in den ASP.NET MVC 4-Projekt
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
 
 
-* * *
+---
 
 <a id="Summary"></a>
 

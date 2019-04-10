@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 6755d8d9-14be-4a1d-86e5-1a6110f3dea8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c84951691935d9976f961f65f96fa70633ecbce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 50bba1b798ddfaf69dd23098e31d446a7e7b9a1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394613"
 ---
-<a name="using-auto-postback-with-cascadingdropdown-c"></a>Verwenden von automatischem Postback mit CascadingDropDown (C#)
-====================
+# <a name="using-auto-postback-with-cascadingdropdown-c"></a>Verwenden von automatischem Postback mit CascadingDropDown (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3CS.pdf)
@@ -57,7 +57,7 @@ Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zus
 Auf diese Weise wird ein Postback nur ausgeführt, wenn in der Liste tatsächlich Elemente vorhanden sind und der Benutzer einen Eintrag wählt.
 
 
-[![Wählen ein Listenelement auslöst ein postback](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
+[![Sein Listenelement Wahl bewirkt, dass einen Postback](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
 
 Wenn Sie ein Listenelement wird einen Postback ([klicken Sie, um das Bild in voller Größe anzeigen](using-auto-postback-with-cascadingdropdown-cs/_static/image3.png))
 

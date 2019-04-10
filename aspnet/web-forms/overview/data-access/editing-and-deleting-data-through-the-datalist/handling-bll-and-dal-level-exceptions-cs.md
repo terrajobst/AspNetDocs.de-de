@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 43a43c95e049acab734fa7d9fdcf2b96f12e78d9
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 5714b118a5894731820d8e9775c8f5c8a375856c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440273"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390128"
 ---
-<a name="handling-bll--and-dal-level-exceptions-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)
-====================
+# <a name="handling-bll--and-dal-level-exceptions-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_38_CS.exe) oder [PDF-Datei herunterladen](handling-bll-and-dal-level-exceptions-cs/_static/datatutorial38cs1.pdf)
@@ -41,7 +41,7 @@ Unsere DataList-Tutorials, verwendet nicht jedoch dem ObjectDataSource-Steuerele
 Bevor wir zur Behandlung von Ausnahmen, die während der Workflow für die Aktualisierung auftreten fürchten, können Sie s, erstellen Sie zunächst eine bearbeitbare DataList-Steuerelement. Öffnen der `ErrorHandling.aspx` auf der Seite die `EditDeleteDataList` Ordner hinzufügen, einem DataList-Steuerelement in den Designer, legen Sie dessen `ID` Eigenschaft `Products`, und fügen Sie eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts()` Methode für die Auswahl erfasst; legen Sie die Dropdownlisten in der INSERT-, Update- und Löschen von Registerkarten (keine).
 
 
-[![Zurückgeben der Produktinformationen mithilfe der GetProducts()-Methode](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
+[![Rurück die Produktinformationen mithilfe der Methode GetProducts()](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
 
 **Abbildung 1**: Zurückgeben von Informationen für das Produkt verwenden die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image3.png))
 
@@ -60,7 +60,7 @@ Nach diesen Änderungen sollte Ihre Seite s deklarativen Markup etwa wie folgt a
 Können Sie unseren Fortschritt über einen Browser anzeigen (siehe Abbildung 2).
 
 
-[![Jedes Produkt enthält eine Schaltfläche "Bearbeiten"](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
+[![EACH Produkt umfasst eine Schaltfläche "Bearbeiten"](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
 
 **Abbildung 2**: Jedes Produkt enthält eine Schaltfläche "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image6.png))
 
@@ -115,12 +115,12 @@ Um dieses Tutorial abgeschlossen haben, rufen Sie einfach die `DisplayExceptionD
 Mit der `Try ... Catch` block vorhanden, die Benutzer eine informativere Fehlermeldung wie die Abbildungen 4 und 5 anzeigen angezeigt werden. Beachten Sie, die bei einer Ausnahme DataList-Steuerelement verbleibt im Bearbeitungsmodus befindet. Dies ist, da nach dem Auftreten der Ausnahme, die ablaufsteuerung sofort an umgeleitet wird die `Catch` Block unter Umgehung des Codes, der DataList-Steuerelement in den Zustand vor der Bearbeitung gibt.
 
 
-[![Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
+[![An Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
 
 **Abbildung 4**: Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image10.png))
 
 
-[![Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
+[![An Fehlermeldung wird angezeigt, wenn einen Preis Negative](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
 
 **Abbildung 5**: Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 

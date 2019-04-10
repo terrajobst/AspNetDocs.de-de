@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 59c01998-9326-4ecb-9392-cb9615962140
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: feebee845a19a7cb462127a893a30ac7e0761965
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 21f37dc1ffbcb7e8e15e4bed261b68ffc0388c21
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388425"
 ---
-<a name="efficiently-paging-through-large-amounts-of-data-c"></a>Effizientes Auslagern von großen Datenmengen (C#)
-====================
+# <a name="efficiently-paging-through-large-amounts-of-data-c"></a>Effizientes Auslagern von großen Datenmengen (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_25_CS.exe) oder [PDF-Datei herunterladen](efficiently-paging-through-large-amounts-of-data-cs/_static/datatutorial25cs1.pdf)
@@ -191,7 +191,7 @@ Nach dem Erstellen der gespeicherten Prozedur an, nehmen Sie einen Moment Zeit, 
 Nach dem Auswählen dieser Parameterwerte eingeben, das Fenster "Ausgabe" zeigt die Ergebnisse. Abbildung 8 zeigt die Ergebnisse beim Übergeben von 10 für beide die `@startRowIndex` und `@maximumRows` Parameter.
 
 
-[![Der Datensätze, würde werden in der zweiten Seite der Daten werden zurückgegeben.](efficiently-paging-through-large-amounts-of-data-cs/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image8.png)
+[![Ter Datensätze, würde werden in der zweiten Seite der Daten zurückgegeben werden](efficiently-paging-through-large-amounts-of-data-cs/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image8.png)
 
 **Abbildung 8**: Der Datensätze, würde werden in der zweiten Seite der Daten zurückgegeben werden ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-cs/_static/image10.png))
 
@@ -293,7 +293,7 @@ Beachten Sie, dass die `EnablePaging` und `SelectCountMethod` festgelegt wurde u
 Finden Sie nach diesen Änderungen auf dieser Seite über einen Browser. Daraufhin sollte die 10 Produkte aufgeführt, alphabetisch angeordnet sind. Nehmen Sie einen Moment Zeit, die eine Seite mit Daten zu einem Zeitpunkt durchlaufen. Es gibt zwar keine visuellen Unterschied aus der Perspektive des Endbenutzers s zwischen Standard und benutzerdefiniertes Paging, Seiten benutzerdefinierte paging effizienter über große Mengen von Daten als nur die Datensätze abgerufen, die für eine bestimmte Seite angezeigt werden soll.
 
 
-[![Die Daten, die sortiert vom Produkt s Namen ist ausgelagerten verwenden benutzerdefinierte Paging.](efficiently-paging-through-large-amounts-of-data-cs/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image19.png)
+[![Tseine Daten, mit dem Produkt-s-Name sortiert, ist ausgelagerten benutzerdefinierte mithilfe von Paging](efficiently-paging-through-large-amounts-of-data-cs/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image19.png)
 
 **Abbildung 17**: Die Daten, die sortiert vom Produkt s Namen wird ausgelagerten benutzerdefinierte mithilfe von Paging ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-cs/_static/image21.png))
 
@@ -309,7 +309,7 @@ Bewirkt, dass einen Postback und weist die GridView aktualisieren Sie auf den Se
 Unsere aktuelle benutzerdefiniertes Paging-Implementierung muss die Reihenfolge, die mit dem die Daten werden über ausgelagert statisch angegeben werden, beim Erstellen der `GetProductsPaged` gespeicherte Prozedur. Allerdings haben Sie möglicherweise notiert haben, dass das GridView-s-Smarttag ein Kontrollkästchen Sortieren aktivieren die Option zum Aktivieren der Auslagerungsdatei enthält. Leider wird das Hinzufügen von Unterstützung der datenquellensortierung an die GridView mit unserer aktuellen benutzerdefiniertes Paging-Implementierung nur die Datensätze auf die aktuell angezeigten Seite der Daten sortiert. Z. B. Wenn Sie die GridView auch unterstützen Paginierung, und klicken Sie dann beim Anzeigen der ersten Seite der Daten konfigurieren in absteigender Reihenfolge nach Produktnamen sortiert wird die Reihenfolge der Produkte auf der Seite "1" rückgängig gemacht. Wie in Abbildung 18 dargestellt wird, zeigt eine solche Carnarvon-Tiger als das erste Produkt in umgekehrter alphabetischer Reihenfolge sortieren die 71 anderen Produkten ignoriert, die Carnarvon-Tiger, alphabetisch folgen; nur die Datensätze auf der ersten Seite werden in der Sortierung berücksichtigt.
 
 
-[![Nur die Daten angezeigt, auf der aktuellen Seite wird sortiert.](efficiently-paging-through-large-amounts-of-data-cs/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image22.png)
+[![Oibgeschützt, die die Daten, die auf der aktuellen Seite angezeigt wird sortiert](efficiently-paging-through-large-amounts-of-data-cs/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image22.png)
 
 **Abbildung 18**: Nur die Daten angezeigt, auf der aktuellen Seite sortiert wird ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-cs/_static/image24.png))
 
@@ -356,8 +356,8 @@ Einen Artikel, [benutzerdefiniertes Paging in ASP.NET 2.0 mit SQL Server 2005](h
 | --- | --- | --- |
 | **Standardmäßig Paging SQL Profiler** | 1.411 | 383 |
 | **Benutzerdefiniertes Paging SQL Profiler** | 0.002 | 29 |
-| **Paging ASP.NET-Standardablaufverfolgung** | 2.379 | *N/V* |
-| **Benutzerdefinierte Paginierung ASP.NET-Ablaufverfolgung** | 0.029 | *N/V* |
+| **Paging ASP.NET-Standardablaufverfolgung** | 2.379 | *Nicht zutreffend* |
+| **Benutzerdefinierte Paginierung ASP.NET-Ablaufverfolgung** | 0.029 | *Nicht zutreffend* |
 
 
 Wie Sie sehen können, Abrufen von Daten eine bestimmte Seite 354 weniger Lesevorgänge durchschnittlich erforderlich und in einem Bruchteil der Zeit abgeschlossen. Auf der ASP.NET-Seite benutzerdefinierte Seite konnte in nahe bei 1/100 Rendern<sup>th</sup> der Zeit sie vorgenommen haben, wenn das Standardpaging verwenden. Finden Sie unter [meinen Artikel](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx) für Weitere Informationen zu dieser Ergebnisse und Code und eine Datenbank, die Sie zum Reproduzieren dieser Tests in Ihrer eigenen Umgebung herunterladen können.

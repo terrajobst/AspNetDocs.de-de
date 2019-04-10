@@ -8,15 +8,15 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 472770477e83fc0bbe24995e5558d0e8624082ae
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b8ec246c2f35f3d7fa5bcf67aa6f157195028176
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426002"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379520"
 ---
-<a name="configuring-a-website-that-uses-application-services-vb"></a>Konfigurieren einer Website mit Anwendungsdiensten (VB)
-====================
+# <a name="configuring-a-website-that-uses-application-services-vb"></a>Konfigurieren einer Website mit Anwendungsdiensten (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_09_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial09_AppServicesConfig_vb.pdf)
@@ -106,7 +106,7 @@ S wie die Produktions-Datenbank mithilfe von Datenbankobjekten hinzugefügt betr
 Das Tool startet durch Anzeigen eines Begrüßungsbildschirms erläutert den Zweck. Klicken Sie auf Weiter, um zum Fenster "Wählen Sie ein Setup-Option" wählen, das in Abbildung 1 dargestellt ist. Von hier aus können Sie auswählen, der die Anwendungsdienste Datenbankobjekte oder entfernen sie aus einer Datenbank hinzugefügt wird. Da diese Objekte in der Produktionsdatenbank hinzugefügt werden soll, wählen Sie die Option "Konfigurieren von SQLServer für Anwendungsdienste", und klicken Sie auf Weiter.
 
 
-[![Wählen Sie SQLServer für Anwendungsdienste konfigurieren](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
+[![CWählen Sie aus, Konfigurieren von SQL Server für Anwendungsdienste](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
 
 **Abbildung 1**: Wählen Sie zum Konfigurieren von SQL Server für Anwendungsdienste ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image3.jpg))
 
@@ -117,7 +117,7 @@ In "Wählen Sie die Server und Datenbank" fordert Bildschirm Informationen zur V
 > Nach der Eingabe den Datenbankserver und die Anmeldeinformationen erhalten Sie einen Fehler beim Erweitern der Datenbank-Dropdown-Liste. Die `aspnet_regsql.exe` tool Abfragen die `sysdatabases` Systemtabelle zum Abrufen einer Liste der Datenbanken auf dem Server, aber einige Web-hosting-Unternehmen Sperren auf ihren Datenbankserver, damit diese Informationen nicht öffentlich verfügbar sind. Wenn Sie diese Fehlermeldung erhalten, können Sie den Datenbanknamen direkt in der Dropdown Liste eingeben.
 
 
-[![Geben Sie das Tool mit Ihrer Datenbank-s-Verbindungsinformationen](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
+[![SUpply die s-Tool mit der Datenbank-Verbindungsinformationen](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
 
 **Abbildung 2**: Geben Sie das Tool mit der Datenbank-s-Verbindungsinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image6.jpg))
 
@@ -125,7 +125,7 @@ In "Wählen Sie die Server und Datenbank" fordert Bildschirm Informationen zur V
 Im folgenden Bildschirm werden die Aktionen, die sind im Begriff, nämlich stattfinden, zusammengefasst, die die Datenbankobjekte der Anwendung Dienste in der angegebenen Datenbank hinzugefügt werden sollen. Klicken Sie neben der vollständigen diese Aktion aus. Nach einigen Augenblicken wird der letzten Seite angezeigt, beachten Sie, dass die Datenbankobjekte hinzugefügt wurden (siehe Abbildung 3).
 
 
-[![Success! Die Anwendung Dienste Datenbankobjekte wurden in der Produktionsdatenbank hinzugefügt.](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
+[![SUccess! Die Anwendung Dienste Datenbankobjekte wurden in der Produktionsdatenbank hinzugefügt](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
 
 **Abbildung 3**: Erfolgreich! Die Anwendung Dienste Datenbank Objekte hinzugefügt wurden in der Produktionsdatenbank ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image9.jpg))
 
@@ -133,7 +133,7 @@ Im folgenden Bildschirm werden die Aktionen, die sind im Begriff, nämlich statt
 Um sicherzustellen, dass die Anwendung Dienste Datenbankobjekte in der Produktionsdatenbank erfolgreich hinzugefügt wurden, öffnen Sie SQL Server Management Studio und eine Verbindung mit der Produktionsdatenbank. Wie in Abbildung 4 gezeigt, Sie sollten jetzt sehen die Tabellen der Anwendung Dienste in Ihrer Datenbank `aspnet_Applications`, `aspnet_Membership`, `aspnet_Users`und so weiter.
 
 
-[![Vergewissern Sie sich, dass Datenbankobjekte in der Produktionsdatenbank hinzugefügt wurden](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
+[![Cbestätigen, dass die Datenbankobjekte hinzugefügt wurden, in der Produktionsdatenbank](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
 
 **Abbildung 4**: Vergewissern Sie sich, dass Datenbankobjekte in der Produktionsdatenbank hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
 
@@ -172,12 +172,12 @@ Beachten Sie, dass es sich bei einem früheren Tutorial die Book Reviews-Webanwe
 > Für Weitere Informationen zur Verwendung der Mitgliedschaft und Rollen APIs zusammen mit der ASP.NET Web anmeldebezogene Steuerelemente, achten Sie darauf, lesen Sie meine [ *Website-Lernprogramme zur ASP.NET-Sicherheit*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md). Informationen zum Anpassen des Steuerelements CreateUserWizard finden Sie in der [ *Erstellen von Benutzerkonten* ](../../older-versions-security/membership/creating-user-accounts-vb.md) und [ *Speichern von zusätzlichen Benutzerinformationen* ](../../older-versions-security/membership/storing-additional-user-information-vb.md) Lernprogramme, oder sehen Sie sich [ *Erich Peterson* ](http://www.erichpeterson.com/) Artikel, [ *Anpassen des Steuerelements CreateUserWizard* ](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx).
 
 
-[![Administratoren können neue Benutzerkonten erstellen.](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
+[![ADministrators können erstellen Sie neue Benutzerkonten](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
 
 **Abbildung 5**: Administratoren können erstellen Sie neue Benutzerkonten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-vb/_static/image15.jpg))
 
 
-Bei Bedarf den vollen Funktionsumfang des Auschecken WSAT [ *parallelen Ihrer eigenen Web Site Administration Tool*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), in dem Dan Clem führt Sie durch den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools. Dan teilt seine s Quellcode der Anwendung (in C#) und bietet eine schrittweise Anleitung für Ihre gehostete Website hinzugefügt.
+Bei Bedarf den vollen Funktionsumfang des Auschecken WSAT [ *parallelen Ihrer eigenen Web Site Administration Tool*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), in dem Dan Clem führt Sie durch den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools. Dan teilt seine s Quellcode der Anwendung (in c#) und bietet eine schrittweise Anleitung für Ihre gehostete Website hinzugefügt.
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -1,26 +1,27 @@
 ---
 uid: identity/overview/getting-started/index
-title: Erste Schritte mit ASP.NET Identity | Microsoft-Dokumentation
+title: Erste Schritte mit ASP.NET Identity – ASP.NET 4.x
 author: rick-anderson
 description: Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration...
 ms.author: riande
 ms.date: 10/02/2013
 ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: 5e124c3ae59cabcdb90872bbf5470964aed148c8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 36933f42806b82437f0ba8e59ad1c90024ed6b9e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401230"
 ---
-<a name="getting-started-with-aspnet-identity"></a>Erste Schritte mit ASP.NET Identity
-====================
+# <a name="getting-started-with-aspnet-identity"></a>Erste Schritte mit ASP.NET Identity
+
 > Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration funktioniert mit OWIN und mit den Vorlagen von ASP.NET im Lieferumfang von Visual Studio 2013 enthalten ist.
 
 
-- [Einführung zu ASP.NET Identity](introduction-to-aspnet-identity.md)
+- [Einführung in ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [ASP.NET Identity – Empfohlene Ressourcen](aspnet-identity-recommended-resources.md)
 - [Hinzufügen von ASP.NET Identity zu einem leeren oder vorhandenen Web Forms-Projekt](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - [Entwickeln von ASP.NET-Apps mit Azure Active Directory](developing-aspnet-apps-with-windows-azure-active-directory.md)

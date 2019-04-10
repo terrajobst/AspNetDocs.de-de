@@ -8,15 +8,15 @@ ms.date: 01/31/2007
 ms.assetid: 919b509c-37e8-4765-92a4-70277bd87269
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-filteredtextbox-extender
 msc.type: video
-ms.openlocfilehash: 6af94a10456868c69c6977962e90876bbdd40621
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fb59f9b4f4ac61c15874673f0121350ba05fdb84
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038157"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400060"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-filteredtextbox-extender"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-Steuerelements "FilteredTextbox"?
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-filteredtextbox-extender"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-Steuerelements "FilteredTextbox"?
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Erfahren Sie, wie Sie die praktische ASP.NET AJAX FilteredTextbox-Extender kann Entwickler die Zeichen definiert, der Benutzer in einem Textfeld-Steuerelement eingeben kann.

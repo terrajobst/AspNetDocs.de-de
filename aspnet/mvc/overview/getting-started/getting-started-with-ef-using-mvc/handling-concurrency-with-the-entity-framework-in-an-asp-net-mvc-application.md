@@ -9,16 +9,13 @@ ms.date: 01/15/2019
 ms.assetid: be0c098a-1fb2-457e-b815-ddca601afc65
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: b513d7d86d382068bc1a8f1bcc61289ee946d38b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 11b1bc316f730e31b4a01924765db3c982783652
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383017"
 ---
-<a name="handling-concurrency-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-10-of-12"></a>Verarbeiten von Parallelität bei Entitätsframework 6 in ASP.NET MVC 5-Anwendungen (10 von 12)
-====================
-
 # <a name="tutorial-handle-concurrency-with-ef-in-an-aspnet-mvc-5-app"></a>Tutorial: Behandeln der Parallelität in EF in einer ASP.NET MVC 5-app
 
 In den vorherigen Tutorials haben Sie gelernt, wie Daten zu aktualisieren. In diesem Tutorial veranschaulicht das vollständigen Parallelität verwendet, um Konflikte zu behandeln, wenn mehrere Benutzer dieselbe Entität gleichzeitig aktualisieren. Sie ändern die Webseiten, die Arbeit mit der `Department` Entität, damit sie Parallelitätsfehler behandeln. In der nachfolgenden Abbildung sehen Sie die Seiten „Bearbeiten“ und „Löschen“, einschließlich einiger Meldungen, die angezeigt werden, wenn ein Parallelitätskonflikt auftritt.

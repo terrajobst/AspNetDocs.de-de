@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: d3633f64-5d3c-45c9-ae4b-cb1563e3739f
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 0d6311cac4fe01b2e21b300ff3841b3f2ca6fcf5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eebf36af01b27f2931fa8720b399b85edfd8c2a0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048157"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390960"
 ---
-<a name="adding-a-view-vb"></a>Hinzufügen einer Ansicht (VB)
-====================
+# <a name="adding-a-view-vb"></a>Hinzufügen einer Ansicht (VB)
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
@@ -38,7 +38,7 @@ Beginnen wir mit einer Vorlage anzeigen, mit der `Index` -Methode in der die `He
 
 Nun fügen Sie eine ansichtsvorlage auf das Projekt, das wir mit aufrufen kann die `Index` Methode. Klicken Sie dazu auf, auf die `Index` -Methode, und klicken Sie auf **Ansicht hinzufügen**.
 
-[![IndexAddView](adding-a-view/_static/image2.png "IndexAddView")](adding-a-view/_static/image1.png)
+[![INdexAddView](adding-a-view/_static/image2.png "IndexAddView")](adding-a-view/_static/image1.png)
 
 Die **Ansicht hinzufügen** Dialogfeld wird angezeigt. Lassen Sie die Standardeinträge, und klicken Sie auf die **hinzufügen** Schaltfläche.
 

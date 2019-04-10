@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 74abf391bb4aab3ff0d5079e0a24ba20287e18fb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049457"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387905"
 ---
-<a name="enable-automated-unit-testing"></a>Aktivieren von automatisierten Komponententests
-====================
+# <a name="enable-automated-unit-testing"></a>Aktivieren von automatisierten Komponententests
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -98,7 +98,7 @@ Lassen Sie uns position der Cursor innerhalb der DinnerTest-Klasse, und geben Si
 
 *Hinweis: Visual Studio im Testergebnisfenster wird nicht die Class Name-Spalte wird standardmäßig angezeigt. Sie können dies hinzufügen, indem Sie mit der rechten Maustaste im Fenster Testergebnisse und des Menübefehls für die Spalten hinzufügen/entfernen.*
 
-Unsere zwei Tests dauerten nur einen Bruchteil einer Sekunde ausgeführt – und finden beide übergeben. Wir können jetzt auf und erweitern diese, indem Sie zusätzliche Tests, die spezielle Regel Überprüfungen zu überprüfen, und behandelt die zwei Hilfsmethoden - IsUserHost() und IsUserRegisterd() –, die wir hinzugefügt, dass die Dinner-Klasse zu erstellen. Wenn alle diese Tests vorhanden, für die Dinner-Klasse wird es viel einfacher und sicherer zu neue Geschäftsregeln und Validierungen in der Zukunft hinzufügen machen. Wir können Dinner unsere neue Regellogik hinzu, und Sie können innerhalb von Sekunden stellen Sie sicher, dass sie eine der vorherigen Logik Funktionalität beeinträchtigt noch nicht.
+Unsere zwei Tests dauerten nur einen Bruchteil einer Sekunde ausgeführt – und finden beide übergeben. Wir können jetzt auf und erweitern diese, indem Sie zusätzliche Tests, die spezielle Regel Überprüfungen zu überprüfen, und behandelt die zwei Hilfsmethoden - IsUserHost() und IsUserRegistered() –, die wir hinzugefügt, dass die Dinner-Klasse zu erstellen. Wenn alle diese Tests vorhanden, für die Dinner-Klasse wird es viel einfacher und sicherer zu neue Geschäftsregeln und Validierungen in der Zukunft hinzufügen machen. Wir können Dinner unsere neue Regellogik hinzu, und Sie können innerhalb von Sekunden stellen Sie sicher, dass sie eine der vorherigen Logik Funktionalität beeinträchtigt noch nicht.
 
 Beachten Sie, wie mit einer beschreibenden Testnamen erleichtert Ihnen schnell verstehen, was jeder Test wird überprüft wird. Ich empfehle die Verwendung der **Tools -&gt;Optionen** Menübefehl, öffnen den Test Tools -&gt;Test Execution-Konfigurationsbildschirm, und überprüfen den "durch Doppelklicken auf eine fehlerhafte oder nicht eindeutig Komponententestergebnis zeigt Zeitpunkt des Fehlers im Test"-Kontrollkästchen. Dadurch können Sie doppelklicken auf einen Fehler im Testergebnisfenster, und fahren Sie direkt mit der Assertionsfehler.
 
@@ -211,7 +211,7 @@ Das beste daran, sie nur einen Bruchteil einer Sekunde ausgeführt werden und ko
 
 | **Seite-Thema: Abhängigkeitsinjektionsframeworks** |
 | --- |
-| Ausführen von manuellen Abhängigkeitsinjektion (wie wir oben) funktioniert, jedoch wird schwieriger zu verwalten als die Anzahl der Abhängigkeiten, und Komponenten in einer Anwendung steigt. Mehrere abhängigkeitsinjektionsframeworks sind für .NET, die bieten größere Flexibilität bei der Verwaltung von Abhängigkeiten vorhanden. Diesen Frameworks können die manchmal auch genannt "Inversion of Control" (IoC) Container, bieten Mechanismen, die eine zusätzliche Ebene der Unterstützung für angeben, und übergeben Abhängigkeiten für Objekte zur Laufzeit (mit den meisten Fällen Konstruktorinjektion die Konfiguration zu aktivieren. ). Einige der gängigen OSS Dependency Injection / IOC-Frameworks in .NET umfassen: AutoFac, Ninject, Spring.NET, StructureMap und Windsor. ASP.NET MVC macht Erweiterbarkeits-APIs, mit denen Entwickler zur Teilnahme an der Auflösung und Instanziierung von Controllern und dem Dependency Injection ermöglicht / IoC-Frameworks, die innerhalb dieses Prozesses ordnungsgemäß integriert werden. Mit einem DI/IOC-Framework würde auch können wir den Standardkonstruktor aus unserer "dinnerscontroller" – zu entfernen, wodurch die Kopplung zwischen ihnen und dem DinnerRepositorys vollständig zu entfernen, würde. Wir verwenden nicht die eine Abhängigkeitsinjektion / IOC-Framework mit unserer NerdDinner-Anwendung. Aber es ist etwas, das wir für die Zukunft verwenden können, wenn die NerdDinner-Codebasis und Funktionen vergrößert wurde. |
+| Ausführen von manuellen Abhängigkeitsinjektion (wie wir oben) funktioniert, jedoch wird schwieriger zu verwalten als die Anzahl der Abhängigkeiten, und Komponenten in einer Anwendung steigt. Mehrere abhängigkeitsinjektionsframeworks sind für .NET, die bieten größere Flexibilität bei der Verwaltung von Abhängigkeiten vorhanden. Diesen Frameworks können die manchmal auch genannt "Inversion of Control" (IoC) Container, bieten Mechanismen, die eine zusätzliche Ebene der Unterstützung für angeben, und übergeben Abhängigkeiten für Objekte zur Laufzeit (mit den meisten Fällen Konstruktorinjektion die Konfiguration zu aktivieren. ). Einige der gängigen OSS Dependency Injection / IOC-Frameworks in .NET umfassen: AutoFac, Ninject, Spring.NET, StructureMap und Windsor. ASP.NET MVC macht Erweiterbarkeits-APIs, mit denen Entwickler zur Teilnahme an der Auflösung und Instanziierung von Controllern und dem Dependency Injection ermöglicht / IoC-Frameworks, die innerhalb dieses Prozesses ordnungsgemäß integriert werden. Mit einem DI/IOC-Framework würde auch können wir den Standardkonstruktor aus unserer "dinnerscontroller" – zu entfernen, wodurch die Kopplung zwischen ihnen und dem "dinnerrepository" vollständig zu entfernen, würde. Wir verwenden nicht die eine Abhängigkeitsinjektion / IOC-Framework mit unserer NerdDinner-Anwendung. Aber es ist etwas, das wir für die Zukunft verwenden können, wenn die NerdDinner-Codebasis und Funktionen vergrößert wurde. |
 
 ### <a name="creating-edit-action-unit-tests"></a>Erstellen von Komponententests für Edit-Aktion
 

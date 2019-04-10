@@ -8,15 +8,15 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 3d96d796d22c3511fedc45c024274300143b119b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034777"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398098"
 ---
-<a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Erstellen von ASP.NET-Webprojekten in Visual Studio 2013
-====================
+# <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Erstellen von ASP.NET-Webprojekten in Visual Studio 2013
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > In diesem Thema wird erläutert, die Optionen zum Erstellen von ASP.NET-Webprojekten in Visual Studio 2013 mit Update 3
@@ -81,7 +81,7 @@ Visual Studio enthält Funktionen, die Arbeit mit Azure-Dienste zum Hosten von W
 - Erstellen und Verwalten von Web-apps oder virtuelle Computer, die Ihre Anwendung über das Internet verfügbar zu machen.
 - Anzeigen von Protokollen, die von der Anwendung erstellt wird, wie sie in der Cloud ausgeführt wird.
 - Im Debugmodus Remote führen Sie aus, während die Anwendung in der Cloud ausgeführt wird.
-- Viiew und anderen Azure-Diensten wie SQL-Datenbanken verwalten.
+- Anzeigen und Verwalten von anderen Azure-Diensten wie SQL-Datenbanken.
 
 Sie können [erstellen Sie ein Azure-Konto](https://www.windowsazure.com/pricing/free-trial/) , umfasst grundlegende Dienste wie Web-apps kostenlos, und wenn Sie ein MSDN-Abonnent sind können Sie [Vorteile aktivieren](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) , die von einer Gutschrift für zusätzliche Azure bieten Dienste. 
 

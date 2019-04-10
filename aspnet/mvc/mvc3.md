@@ -8,15 +8,15 @@ ms.date: 10/05/2010
 ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 82d18865815568c5df9768fd9dd403f11ebd1714
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42c28bb7082781ffdf8f2f0fb46f14387e614043
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045427"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389530"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
 > *(April 2011 umfasst Tools Update)*
 > 
 > ASP.NET MVC 3 ist ein Framework zum Erstellen von skalierbaren, auf Standards basierende Webanwendungen mit bewährte Entwurfsmuster und die Leistung von ASP.NET und .NET Framework.
@@ -99,7 +99,7 @@ Weitere Informationen zu den Gerüstbau in ASP.NET MVC 3 finden Sie unter den fo
 
     1. [Einführung: Erstellen des Gerüsts für des ASP.NET MVC 3-Projekts mit dem MvcScaffolding-Paket](http://blog.stevensanderson.com/2011/01/13/scaffold-your-aspnet-mvc-3-project-with-the-mvcscaffolding-package/)
     2. [Standard-Syntax: Typische Anwendungsfälle und Optionen](http://blog.stevensanderson.com/2011/01/13/mvcscaffolding-standard-usage/)
-    3. [1: N Beziehungen](http://blog.stevensanderson.com/2011/01/28/mvcscaffolding-one-to-many-relationships/)
+    3. [1:n-Beziehungen](http://blog.stevensanderson.com/2011/01/28/mvcscaffolding-one-to-many-relationships/)
     4. [Gerüstbau Gerüstbauaktionen und Komponententests](http://blog.stevensanderson.com/2011/03/28/scaffolding-actions-and-unit-tests-with-mvcscaffolding/)
     5. [Überschreiben die T4-Vorlagen](http://blog.stevensanderson.com/2011/04/06/mvcscaffolding-overriding-the-t4-templates/)
     6. [Dieser Beitrag: Erstellen benutzerdefinierter gerüstbauer](http://blog.stevensanderson.com/2011/04/07/mvcscaffolding-creating-custom-scaffolders/)
@@ -133,11 +133,11 @@ Einige der neuen Razor-Features umfassen Folgendes:
 
 Razor enthält auch neue HTML-Hilfsprogramme, z. B. Folgendes an:
 
-- `Chart`. Rendert ein Diagramm bietet die gleichen Funktionen wie das Diagrammsteuerelement in ASP.NET 4.
-- `WebGrid`. Rendert ein Datenraster, paging und Sortierung Funktionen an.
-- `Crypto`. Verwendet, die Hashalgorithmen, um ordnungsgemäß zu erstellen, mit Salt-Wert und Kennwörter gehasht.
-- `WebImage`. Rendert ein Bild an.
-- `WebMail`. Sendet eine E-Mail.
+- `Chart`sein. Rendert ein Diagramm bietet die gleichen Funktionen wie das Diagrammsteuerelement in ASP.NET 4.
+- `WebGrid`sein. Rendert ein Datenraster, paging und Sortierung Funktionen an.
+- `Crypto`sein. Verwendet, die Hashalgorithmen, um ordnungsgemäß zu erstellen, mit Salt-Wert und Kennwörter gehasht.
+- `WebImage`sein. Rendert ein Bild an.
+- `WebMail`sein. Sendet eine E-Mail.
 
 Weitere Informationen zu Razor finden Sie unter den folgenden Ressourcen:
 

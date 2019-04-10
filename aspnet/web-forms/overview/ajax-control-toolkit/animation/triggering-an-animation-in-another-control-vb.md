@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b390ebfaec695a1c2565a91acaa38dbcc10a8959
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c74e829c85ae3b57d54a62aeb79388f1131e7184
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425794"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398201"
 ---
-<a name="triggering-an-animation-in-another-control-vb"></a>Auslösen einer Animation in einem anderen Steuerelement (VB)
-====================
+# <a name="triggering-an-animation-in-another-control-vb"></a>Auslösen einer Animation in einem anderen Steuerelement (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)
@@ -57,7 +57,7 @@ In der `<Animations>` Knoten Ort Animationen wie gewohnt. Damit sie im Bereich g
 Beachten Sie die spezielle Reihenfolge, in der die einzelnen Animationen angezeigt werden. Als Erstes ruft die Schaltfläche deaktiviert, nachdem die Animation ausgeführt wird. Da gibt es keine `AnimationTarget` -Attribut in der `<EnableAction>` Element dieser Animation wird angewendet, auf das ursprüngliche Steuerelement: die Schaltfläche. Die nächsten beiden Animationsschritte parallel durchgeführt werden müssen (`<Parallel>` Element). Beide verfügen über ihre `AnimationTarget` Attribute festgelegt werden, um `"Panel1"`, animieren daher im Bereich nicht auf die Schaltfläche.
 
 
-[![Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)
+[![A Klicken mit der Maus auf die Schaltfläche startet die Animation, Panel](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)
 
 Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](triggering-an-animation-in-another-control-vb/_static/image3.png))
 

@@ -8,15 +8,15 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424364"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385797"
 ---
-<a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
-====================
+# <a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
+
 von Tim Ammann
 
 > Der Seitenprüfung in Visual Studio 2012 ist ein Webentwicklungstool mit einem integrierten Browser. Auswählen eines Elements in der integrierten Browser und der Seitenprüfung sofort hervorgehoben, Quell- und CSS-des-Elements. Sie können eine MVC-Ansicht navigieren, finden die Quellen der gerenderten Markup, und schnell Browsertools direkt in Visual Studio-Umgebung verwenden.
@@ -27,14 +27,14 @@ von Tim Ammann
 > 
 > Das Tutorial enthält die folgenden Abschnitte:
 > 
-> - [Erforderliche Komponenten](#_1_prerequisites)
+> - [Vorraussetzungen](#_1_prerequisites)
 > - [Erstellen einer Webanwendung](#_2_creating_a)
 > - [Verwenden der Seitenprüfung, navigieren Sie zu einer Ansicht](#_3_using_page)
 > - [Überprüfungsmodus zu aktivieren](#_4_inspection_mode)
 > - [Verwenden der Seitenprüfung Markup ändern](#_5_using_page)
 > - [Überprüfungsmodus und HTML-Fenster](#_6_inspection_mode)
 > - [Vorschau der CSS-Änderungen im Fenster Stile](#_7_previewing_css)
-> - [CSS Auto Sync](#css_auto_sync)
+> - [Automatische CSS-Synchronisierung](#css_auto_sync)
 > - [Mithilfe der CSS-Farbauswahl](#css_color_picker)
 > - [Zuordnen von dynamische Seitenelemente zu JavaScript](#map_dynamic_elements)
 

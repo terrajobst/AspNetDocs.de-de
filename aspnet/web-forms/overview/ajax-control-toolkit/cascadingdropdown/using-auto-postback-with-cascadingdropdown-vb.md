@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 31f24374714371f102a1e6bc7e8977713876b228
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383157"
 ---
-<a name="using-auto-postback-with-cascadingdropdown-vb"></a>Verwenden von automatischem Postback mit CascadingDropDown (VB)
-====================
+# <a name="using-auto-postback-with-cascadingdropdown-vb"></a>Verwenden von automatischem Postback mit CascadingDropDown (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3VB.pdf)
@@ -57,9 +57,9 @@ Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zus
 Auf diese Weise wird ein Postback nur ausgeführt, wenn in der Liste tatsächlich Elemente vorhanden sind und der Benutzer einen Eintrag wählt.
 
 
-[![Wählen ein Listenelement auslöst ein postback](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
+[![Sein Listenelement Wahl bewirkt, dass einen Postback](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 
 Wenn Sie ein Listenelement wird einen Postback ([klicken Sie, um das Bild in voller Größe anzeigen](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [Vorheriges](presetting-list-entries-with-cascadingdropdown-vb.md)

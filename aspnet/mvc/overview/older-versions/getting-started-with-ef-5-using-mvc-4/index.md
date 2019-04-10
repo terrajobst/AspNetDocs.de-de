@@ -8,15 +8,15 @@ ms.date: 10/26/2013
 ms.assetid: 5bd2e5db-8053-459e-9246-08731a4c8036
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4
 msc.type: chapter
-ms.openlocfilehash: 57c79d599b35e98bbb7372db90d128b7e1295f87
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fcab9f2ff0be9c43d2aae1825ef2666ad011c9e4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399462"
 ---
-<a name="getting-started-with-ef-5-using-mvc-4"></a>Erste Schritte mit EF 5 anhand von MVC 4
-====================
+# <a name="getting-started-with-ef-5-using-mvc-4"></a>Erste Schritte mit EF 5 anhand von MVC 4
+
 > Die Grundlagen der Verwendung von Entity Framework 5 zum Anzeigen und Bearbeiten von Daten in einer ASP.NET MVC 4-Anwendung.
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "57021687"
 - [Erstellen eines komplexeren Datenmodells](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
 - [Lesen von relevanten Daten](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Aktualisieren von relevanten Daten](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-- [Verarbeiten von Parallelitätsfehlern](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+- [Behandeln von Parallelität](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Implementieren von Vererbung](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Implementieren der Muster „Repository“ und „Arbeitseinheit“](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
 - [Erweiterte Entity Framework-Szenarien](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

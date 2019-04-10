@@ -8,15 +8,15 @@ ms.date: 11/11/2011
 ms.assetid: 74f3a86b-81fa-4d64-820a-304613f72caa
 msc.legacyurl: /web-forms/overview/data-access/introduction
 msc.type: chapter
-ms.openlocfilehash: 7f161727e5ad1dd509e308de939a11da4e061b70
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7ab0f76e0892e5c4fbabc71b6fa1ec71e00fcaf9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387606"
 ---
-<a name="introduction"></a>Einführung
-====================
+# <a name="introduction"></a>Einführung
+
 > Dieser einführenden Satz von Tutorials wird erläutert, wie (Data Access Layer, DAL), eine Geschäftslogikschicht (Business Logic Layer, BLL) und ein einheitliches Aussehen für Ihre Website zu erstellen.
 
 

@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
-title: Verwenden $select, $expand, und $value in OData der ASP.NET Web API 2 | Microsoft-Dokumentation
+title: Verwenden $select, $expand, und $value in OData der ASP.NET Web API 2 - ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: Übersicht über und Codebeispiele für die $expand, $select, und $value "Optionen" in der OData-Web-API 2 für ASP.NET 4.x.
 ms.author: riande
 ms.date: 10/11/2013
+ms.custom: seoapril2019
 ms.assetid: 43279a80-a96c-4564-b6ea-ad992a2d6828
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
 msc.type: authoredcontent
-ms.openlocfilehash: d198ecf40155cba36204bc0810f4735aae6b100b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8b5d3e87c679a31f1908aa648219ae5c6b701a1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033927"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400697"
 ---
-<a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>Verwenden $select, $expand, und $value in OData der ASP.NET Web API 2
-====================
+# <a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>Verwenden $select, $expand, und $value in OData der ASP.NET Web API 2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-Web-API 2 bietet Unterstützung für die $expand, $select und Optionen für $value in OData. Mit diesen Optionen können einen Client, um die Darstellung zu steuern, die sie wieder vom Server abruft.
+Übersicht über und Codebeispiele für die $expand, $select, und $value "Optionen" in der OData-Web-API 2 für ASP.NET 4.x. Mit diesen Optionen können einen Client, um die Darstellung zu steuern, die sie wieder vom Server abruft.
 
 - **der $expand-** bewirkt, dass verknüpfte Entitäten Inlineschemainformationen enthält, in der Antwort zu sein.
 - **$select** wählt eine Teilmenge der Eigenschaften in der Antwort eingeschlossen werden sollen.

@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: 5b39d2d5-4bf9-4d04-94c7-81b84dfeeb31
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 188490c5ca075710dcbdcd1c325808f7c1d383bc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e2f2246e2126bd6e648f861bcb296fab62a748bb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050977"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380105"
 ---
-<a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC-Routing – Übersicht (C#)
-====================
+# <a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC-Routing – Übersicht (C#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial zeigt, wie ASP.NET MVC-Framework Controlleraktionen Browseranforderungen zugeordnet.
@@ -95,7 +95,7 @@ Zum Schluss Aufrufen der Methode Index() in Listing 5 mit der URL gibt führt da
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample5.cs)]
 
 
-[![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
+[![INvoking eine Controlleraktion, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
 
 **Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-routing-overview-cs/_static/image2.png))
 
@@ -107,4 +107,4 @@ Die URL/Home/Index/3, problemlos auf der anderen Seite mit die Index-Controllera
 Das Ziel in diesem Tutorial wurde eine kurze Einführung in das ASP.NET-Routing bereit. Wir untersucht die Standardroutingtabelle, die Sie durch eine neue ASP.NET MVC-Anwendung zu erhalten. Sie erfahren, wie die Standardroute Controlleraktionen URLs zugeordnet.
 
 > [!div class="step-by-step"]
-> [Nächste](understanding-action-filters-cs.md)
+> [Weiter](understanding-action-filters-cs.md)

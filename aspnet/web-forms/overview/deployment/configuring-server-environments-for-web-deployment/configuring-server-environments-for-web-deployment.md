@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4f6433f0b8a9ad3b3634c9bcd8d95015eebaa865
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 86ea4a2e17ec44a3716e1570e51a224144f1369c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386969"
 ---
-<a name="configuring-server-environments-for-web-deployment"></a>Konfigurieren von Serverumgebungen für die Webbereitstellung
-====================
+# <a name="configuring-server-environments-for-web-deployment"></a>Konfigurieren von Serverumgebungen für die Webbereitstellung
+
 durch [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -66,4 +66,4 @@ Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webber
 - [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
 
 > [!div class="step-by-step"]
-> [Nächste](choosing-the-right-approach-to-web-deployment.md)
+> [Weiter](choosing-the-right-approach-to-web-deployment.md)

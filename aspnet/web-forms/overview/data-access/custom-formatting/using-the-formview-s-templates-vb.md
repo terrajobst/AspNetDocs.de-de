@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 67b25f4c-2823-42b6-b07d-1d650b3fd711
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d16ef7ef8a3d5fce10e0d0b88421be294e9fc8d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 268403a7b832596421120a24c64580f63eb987c3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055107"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383881"
 ---
-<a name="using-the-formviews-templates-vb"></a>Mithilfe der FormView Vorlagen (VB)
-====================
+# <a name="using-the-formviews-templates-vb"></a>Mithilfe der FormView Vorlagen (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_14_VB.exe) oder [PDF-Datei herunterladen](using-the-formview-s-templates-vb/_static/datatutorial14vb1.pdf)
@@ -40,7 +40,7 @@ Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Sie
 In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um eine weniger strenge Anzeige von Produkten zu präsentieren. Statt später durch die Felder für die Name, Kategorie, Lieferanten und So weiter, das FormView `ItemTemplate` zeigt, dass diese Werte mit einer Kombination aus einem Header-Element und ein `<table>` (siehe Abbildung 1).
 
 
-[![Das Raster-ähnliches Layout im DetailsView betrachtet, bricht das FormView-Steuerelement](using-the-formview-s-templates-vb/_static/image2.png)](using-the-formview-s-templates-vb/_static/image1.png)
+[![THE, die von der Grid-Like Layout finden Sie in der DetailsView bricht FormView](using-the-formview-s-templates-vb/_static/image2.png)](using-the-formview-s-templates-vb/_static/image1.png)
 
 **Abbildung 1**: FormView, die aus der Grid-Like Layout dargestellt im DetailsView Zeilenumbrüche ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image3.png))
 
@@ -50,7 +50,7 @@ In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um e
 Öffnen der `FormView.aspx` Seite und einem FormView-Steuerelement aus der Toolbox in den Designer ziehen. Beim erstmaligen FormView hinzufügen wird es als ein graues Feld, das uns angewiesen, eine `ItemTemplate` ist erforderlich.
 
 
-[![Die FormView-Steuerelement kann im Designer nicht gerendert werden, bis eine Elementvorlage bereitgestellt wird](using-the-formview-s-templates-vb/_static/image5.png)](using-the-formview-s-templates-vb/_static/image4.png)
+[![Ter FormView-Steuerelement kann nicht im Designer gerendert werden, bis eine Elementvorlage angegeben ist](using-the-formview-s-templates-vb/_static/image5.png)](using-the-formview-s-templates-vb/_static/image4.png)
 
 **Abbildung 2**: Das FormView-Steuerelement kann nicht gerendert werden in den Designer an, bis ein `ItemTemplate` dient ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image6.png))
 
@@ -88,12 +88,12 @@ Da es sich um keine CheckBoxFields zur Verfügung, mit der FormView-Steuerelemen
 Mit der `ItemTemplate` abgeschlossen ist, wird die Produktinformationen auf deutlich flexiblere Weise angezeigt. Vergleichen Sie die DetailsView-Ausgabe aus dem letzten Tutorial (Abbildung 3), mit der Ausgabe von FormView generiert werden, in diesem Tutorial (Abbildung 4).
 
 
-[![Die starren DetailsView-Ausgabe](using-the-formview-s-templates-vb/_static/image8.png)](using-the-formview-s-templates-vb/_static/image7.png)
+[![Ter starre DetailsView Output](using-the-formview-s-templates-vb/_static/image8.png)](using-the-formview-s-templates-vb/_static/image7.png)
 
 **Abbildung 3**: Die starren DetailsView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image9.png))
 
 
-[![Die fließende FormView-Ausgabe](using-the-formview-s-templates-vb/_static/image11.png)](using-the-formview-s-templates-vb/_static/image10.png)
+[![Ter Fluid FormView Output](using-the-formview-s-templates-vb/_static/image11.png)](using-the-formview-s-templates-vb/_static/image10.png)
 
 **Abbildung 4**: Die fließende FormView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image12.png))
 

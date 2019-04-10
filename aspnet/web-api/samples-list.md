@@ -1,22 +1,23 @@
 ---
 uid: web-api/samples-list
-title: Liste der Web-API-Beispiele | Microsoft-Dokumentation
+title: Beispiele für Web-API-Liste – ASP.NET 4.x
 author: rick-anderson
-description: ''
+description: Beispiele für ASP.NET Web-API-Liste für ASP.NET 4.x
 ms.author: riande
 ms.date: 09/18/2012
+ms.custom: seoapril2019
 ms.assetid: 8cbd9d7f-7027-4390-b098-cb81a63ecd6f
 msc.legacyurl: /web-api/samples-list
 msc.type: content
-ms.openlocfilehash: d25e0890a1b8d42cc638117f7bef9cf6457f3d75
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 673ed803f65ece1f3cd7181a48f6c9debf88bf9e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047207"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390154"
 ---
-<a name="web-api-samples-list"></a>Liste der Web-API-Beispiele
-====================
+# <a name="web-api-samples-list"></a>Liste der Web-API-Beispiele
+
 ## <a name="httpclient-samples"></a>HttpClient-Beispiele
 
 **Beispiel für Bing übersetzen** | [VS 2012-Quelle](https://github.com/aspnet/samples/blob/master/samples/aspnet/HttpClient/BingTranslateSample)

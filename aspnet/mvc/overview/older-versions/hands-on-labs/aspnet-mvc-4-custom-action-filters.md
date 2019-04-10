@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423415"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381132"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 – Benutzerdefinierte Aktionsfilter
 
@@ -59,7 +59,7 @@ Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinhei
 
 Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang C: Verwenden von Codeausschnitten](#AppendixC)&quot;.
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -354,7 +354,7 @@ In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu reg
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
 
 
-* * *
+---
 
 <a id="Summary"></a>
 
@@ -555,7 +555,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur C#)***
+***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
 
 1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
 2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
@@ -575,7 +575,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (C#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
 
 1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
 2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.

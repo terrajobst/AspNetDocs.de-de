@@ -8,15 +8,15 @@ ms.date: 06/21/2007
 ms.assetid: 4618499e-1925-414e-a432-16952bb967f4
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
 msc.type: video
-ms.openlocfilehash: d0950ec711e85435c5a25028e357d9519817f7b9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f92fa38a42fe73d22085e5a88b66ea6df0d68191
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062947"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403765"
 ---
-<a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[Gewusst wie:] Schreiben Sie Code schneller und mit Komponententests?
-====================
+# <a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[Gewusst wie:] Schreiben Sie Code schneller und mit Komponententests?
+
 durch [Chris Menegay](https://twitter.com/CMenegay)
 
 In diesem Video wird erläutert, wie Komponententests für Ihre Produktivität zu steigern können durch Vereinfachen des Debugvorgangs zur Verfügung. Wir sehen, wie Visual Studio Team System einen Komponententest zum Automatisieren von Ausführung von Code, der debuggt wird, sodass Sie die Zeit, die es dauert, Ihre Web-Anwendung und führen Sie alle Schritte manuell ausführen, den gleichen Code zum generieren können. Das Ergebnis von Unit Testing ist, dass Sie schneller robusteren Code schreiben können.

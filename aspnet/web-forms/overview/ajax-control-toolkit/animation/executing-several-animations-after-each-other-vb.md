@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 21ece509-79cc-4d9d-892d-7b6e9c4d3502
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 89412c078bbe40f06d31327d0a17bf3ea8bc8314
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 53984f03cf01caab859f44fdc018b1598ed62def
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052577"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383043"
 ---
-<a name="executing-several-animations-after-each-other-vb"></a>Sequenzielles Ausführen mehrerer Animationen (VB)
-====================
+# <a name="executing-several-animations-after-each-other-vb"></a>Sequenzielles Ausführen mehrerer Animationen (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3VB.pdf)
@@ -53,12 +53,12 @@ In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt we
 Wenn Sie dieses Skript im Bereich erste ruft breiter und dann kleinere ausführen.
 
 
-[![Zuerst wird die Breite erhöht.](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
+[![FErster Kalendertag die Breite wird erhöht](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
 
 Zuerst wird die Breite erhöht ([klicken Sie, um das Bild in voller Größe anzeigen](executing-several-animations-after-each-other-vb/_static/image3.png))
 
 
-[![Anschließend wird die Höhe verringert.](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)
+[![T"hen" die Höhe wird verringert](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)
 
 Und dann die Höhe verringert wird ([klicken Sie, um das Bild in voller Größe anzeigen](executing-several-animations-after-each-other-vb/_static/image6.png))
 

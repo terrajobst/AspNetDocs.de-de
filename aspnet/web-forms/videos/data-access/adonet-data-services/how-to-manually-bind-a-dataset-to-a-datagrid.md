@@ -8,15 +8,15 @@ ms.date: 08/07/2008
 ms.assetid: 1e339f8a-72ea-463a-b186-c09dd7b12993
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid
 msc.type: video
-ms.openlocfilehash: 36ca3880a95ebe9dd4823891a2ce1de1ef62a871
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5ce22e24160269c225d8497f31b64809ede93c71
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035707"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389296"
 ---
-<a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a>Gewusst wie: Binden Sie ein Dataset manuell an ein Datenraster
-====================
+# <a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a>Gewusst wie: Binden Sie ein Dataset manuell an ein Datenraster
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem Video, Teil 2 von 3 verwendet Joe Stagner die ASP-beispielanwendung, die in Teil eins, erstellt, veranschaulicht, wie Sie ein Dataset manuell an ein DataGrid-Steuerelement zu binden. Finden Sie weitere Informationen zu diesem Video, das [Erstellen einer Datenzugriffsschicht](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) Data Access-Lernprogramm.

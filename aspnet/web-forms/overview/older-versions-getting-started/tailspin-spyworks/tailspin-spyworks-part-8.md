@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 3b49ee53e82933de9b50960779c28ca6ab7441e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059837"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398682"
 ---
-<a name="part-8-final-pages-exception-handling-and-conclusion"></a>Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung
-====================
+# <a name="part-8-final-pages-exception-handling-and-conclusion"></a>Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
@@ -28,7 +28,7 @@ durch [Joe Stagner](https://github.com/JoeStagner)
 
 Erstellen Sie eine neue Seite mit dem Namen ContactUs.aspx
 
-Mithilfe des Designers, erstellen Sie das folgende Format, die spezielle notieren, bestehend aus dem ToolkitScriptManager und der Editor-Steuerelement aus der AjaxdControlToolkit. sein.
+Mithilfe des Designers, erstellen Sie das folgende Format, die spezielle notieren, bestehend aus dem ToolkitScriptManager und der Editor-Steuerelement aus der AjaxControlToolkit. sein.
 
 ![](tailspin-spyworks-part-8/_static/image1.jpg)
 
@@ -79,4 +79,4 @@ Wir haben gesehen, dass ASP.NET WebForms erleichtert usw. mit Zugriff auf die Da
 Hoffentlich hat in diesem Tutorial Ihnen die Tools gegeben, die Sie Ihren eigenen ASP.NET WebForms-Anwendungen zu entwickeln müssen!
 
 > [!div class="step-by-step"]
-> [Vorherige](tailspin-spyworks-part-7.md)
+> [Vorheriges](tailspin-spyworks-part-7.md)

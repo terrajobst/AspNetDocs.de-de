@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
-title: Ausführen von Animationen mit clientseitigen Code (C#) | Microsoft-Dokumentation
+title: Ausführen von Animationen mit clientseitigen Code (c#) | Microsoft-Dokumentation
 author: wenz
 description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Ausführung der Animation...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a8812b3b9f9a34b34a579d6f5595b9ffc175caa4
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 45a3d42d9e58469c789acfdc8cdaaf88b7920892
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387090"
 ---
-<a name="executing-animations-using-client-side-code-c"></a>Ausführen von Animationen mit clientseitigem Code (C#)
-====================
+# <a name="executing-animations-using-client-side-code-c"></a>Ausführen von Animationen mit clientseitigem Code (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10CS.pdf)
@@ -63,7 +63,7 @@ Hier ist der vollständige clientseitige JavaScript-Code, der dem Klicken auf de
 [!code-html[Main](executing-animations-using-client-side-code-cs/samples/sample8.html)]
 
 
-[![Die Animation wird sofort ohne ein Mausklick ausgeführt.](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
+[![TIE-Animation sofort ausgeführt, ohne ein Mausklick](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
 
 Die Animation wird sofort ausgeführt, ohne ein Mausklick ([klicken Sie, um das Bild in voller Größe anzeigen](executing-animations-using-client-side-code-cs/_static/image3.png))
 

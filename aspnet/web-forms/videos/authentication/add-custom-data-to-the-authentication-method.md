@@ -8,15 +8,15 @@ ms.date: 07/16/2008
 ms.assetid: 940bdecc-ae0f-448f-a189-405efa614049
 msc.legacyurl: /web-forms/videos/authentication/add-custom-data-to-the-authentication-method
 msc.type: video
-ms.openlocfilehash: 3c79a25b9b57311c8c5b941f1c6ab23cb1ebee42
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29326c8d6831456b15ba9485be40f8beb441b125
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381509"
 ---
-<a name="add-custom-data-to-the-authentication-method"></a>Hinzufügen von benutzerdefinierten Daten zur Authentifizierungsmethode
-====================
+# <a name="add-custom-data-to-the-authentication-method"></a>Hinzufügen von benutzerdefinierten Daten zur Authentifizierungsmethode
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner weiterhin die Auswertung der ASP.NET-Authentifizierung konfigurieren Sie die Authentifizierungsmethode aus, um benutzerdefinierte Daten zum Authentifizierungsticket hinzufügen, die von ASP.NET verwendet wird. Weitere Informationen zu dieser Demo, ein Tutorial befindet sich [hier](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).

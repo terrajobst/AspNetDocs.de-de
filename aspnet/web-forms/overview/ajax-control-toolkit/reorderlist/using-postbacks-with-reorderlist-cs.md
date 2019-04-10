@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 426e31bc9804c97b551b9c36679d2b821700b915
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393352"
 ---
-<a name="using-postbacks-with-reorderlist-c"></a>Verwenden von Postbacks mit dem ReorderList-Steuerelement (C#)
-====================
+# <a name="using-postbacks-with-reorderlist-c"></a>Verwenden von Postbacks mit dem ReorderList-Steuerelement (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList4.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist4CS.pdf)
@@ -62,9 +62,9 @@ Zum Schluss, um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolk
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![Jede Neuordnung auslöst einen postback](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![EACH-neuanordnung löst einen Postback](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 Jede Neuordnung einen Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](using-postbacks-with-reorderlist-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](drag-and-drop-via-reorderlist-cs.md)
+> [Weiter](drag-and-drop-via-reorderlist-cs.md)

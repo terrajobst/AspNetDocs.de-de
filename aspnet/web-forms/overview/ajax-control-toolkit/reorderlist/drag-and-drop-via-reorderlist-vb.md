@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 848e6bcf-4c3f-4d14-974d-e45b9444ab79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 12c5aa60aa6bb71c99e267a1a71b40ed718df8cf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1b955c43a0fc95bda87843fc4a5c9e56aef3dfc6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400996"
 ---
-<a name="drag-and-drop-via-reorderlist-vb"></a>Drag & Drop über ReorderList (VB)
-====================
+# <a name="drag-and-drop-via-reorderlist-vb"></a>Drag & Drop über ReorderList (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList5.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist5VB.pdf)
@@ -41,10 +41,10 @@ In dieser Datenbank, erstellen Sie eine neue Tabelle namens `AJAX` mit den folge
 - `id` (primärer Schlüssel, Integer, Identität, nicht NULL)
 - `char` (char(1), NULL)
 - `description` (varchar(50)-Spalte, NULL)
-- `position` (Int, NULL)
+- `position` (int, NULL)
 
 
-[![Das Layout der AJAX-Tabelle](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
+[![TIE-Layout der Tabelle AJAX](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
 
 Das Layout der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-vb/_static/image3.png))
 
@@ -52,7 +52,7 @@ Das Layout der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeige
 Füllen Sie dann die Tabelle mit ein Paar von Werten. Beachten Sie, dass die `position` -Spalte enthält die Sortierreihenfolge der Elemente.
 
 
-[![Die ersten Daten in der AJAX-Tabelle](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
+[![Tseine ursprünglichen Daten in der AJAX-Tabelle](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
 
 Die ersten Daten in der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-vb/_static/image6.png))
 
@@ -83,9 +83,9 @@ Zum Schluss eine `ScriptManager` Steuerelement initialisiert ASP.NET AJAX für d
 Führen Sie in diesem Beispiel wird im Browser aus, und ordnen Sie die Listenelemente etwas. Anschließend laden Sie die Seite bzw. verfügen Sie einen Blick auf die Datenbank. Die geänderten Positionen noch gültig und werden auch übernommen, nach den Werten in der `position` -Spalte in die Datenbank ohne Code, nur mithilfe von Markup.
 
 
-[![Das Datenelement in der Datenbank ändert sich gemäß der neuen Liste Reihenfolge](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
+[![Ter Daten in der Datenbank ändert sich entsprechend die neue Reihenfolge der Liste Elemente](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
 
 Das Datenelement in der Datenbank ändert sich gemäß der neuen Liste Reihenfolge ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-vb/_static/image9.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](using-postbacks-with-reorderlist-vb.md)
+> [Vorheriges](using-postbacks-with-reorderlist-vb.md)

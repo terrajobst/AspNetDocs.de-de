@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: b691f718258f98e03513a089ca26b286f284765e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eeed594e785b99146140dcd2833a95bf6e467823
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048227"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390440"
 ---
-<a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Erstellen ein Entity Framework-Datenmodells für eine ASP.NET MVC-Anwendung (1 von 10)
-====================
+# <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Erstellen ein Entity Framework-Datenmodells für eine ASP.NET MVC-Anwendung (1 von 10)
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -349,4 +349,4 @@ Sie haben nun eine einfache Anwendung erstellt, die das Entity Framework und SQL
 Links zu anderen Ressourcen des Entity Framework finden Sie in der [ASP.NET Data Access Content Map](../../../../whitepapers/aspnet-data-access-content-map.md).
 
 > [!div class="step-by-step"]
-> [Nächste](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [Weiter](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

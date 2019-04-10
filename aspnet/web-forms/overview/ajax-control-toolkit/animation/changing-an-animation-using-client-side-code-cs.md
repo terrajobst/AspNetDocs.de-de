@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 253377ef6019a672680c6e819349357627ef111b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8bdee58aa04e1c8217c2a727b96aa8b239fe1aca
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395602"
 ---
-<a name="changing-an-animation-using-client-side-code-c"></a>Ändern von Animationen mit clientseitigem Code (C#)
-====================
+# <a name="changing-an-animation-using-client-side-code-c"></a>Ändern von Animationen mit clientseitigem Code (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11CS.pdf)
@@ -71,7 +71,7 @@ Die folgende JavaScript-Code weist diese JSON-descripting auf die `OnClick` Anim
 [!code-html[Main](changing-an-animation-using-client-side-code-cs/samples/sample7.html)]
 
 
-[![Die Animation wird sofort ausgeführt, ohne einen Mausklick (und mit sehr geringem Markup)](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
+[![TIE-Animation sofort ausgeführt, ohne ein Mausklick (und mit sehr geringem Markup)](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
 
 Die Animation wird sofort ausgeführt, ohne ein Mausklick (und mit sehr geringem Markup) ([klicken Sie, um das Bild in voller Größe anzeigen](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 

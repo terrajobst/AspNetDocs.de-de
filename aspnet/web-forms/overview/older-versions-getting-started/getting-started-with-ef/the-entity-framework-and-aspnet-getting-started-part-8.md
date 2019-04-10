@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: aaadd9bb-5508-448c-ad57-5497dff90e13
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 249677c9e0eca248710bf730e57a7aeca5a9b5ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fd943eba4c6d80bba5ca6c4d69cbd3a8927513d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391506"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 8
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 8
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -32,7 +32,7 @@ Im vorherigen Tutorial implementiert Sie gespeicherte Prozeduren. In diesem Tuto
 
 Um anzuzeigen, wie dies funktioniert, ändern Sie die Steuerelemente, die Sie verwenden, um das Anzeigen und Bearbeiten von Feldern in der vorhandenen *Students.aspx* Seite, und Sie fügen Formatierung und Validierung von Metadaten auf die Felder Name und Datum der `Student` Entitätstyp.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
 
 ## <a name="using-dynamicfield-and-dynamiccontrol-controls"></a>Verwenden von DynamicField- und DynamicControl-Steuerelemente
 
@@ -120,7 +120,7 @@ Nun, da Sie diese Regeln für Formatierung und Validierung in den Metadaten des 
 
 Dies schließt diese tutorialreihe zu den ersten Schritten mit dem Entity Framework. Weitere Ressourcen können Sie erfahren, wie Sie das Entity Framework verwenden, fahren Sie mit [im ersten Tutorial, in den nächsten Tutorials Entity Framework](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md) , oder besuchen Sie den folgenden Websites:
 
-- [Entitätsframework – häufig gestellte Fragen](http://www.ef-faq.org/introduction.html)
+- [Entity Framework FAQ](http://www.ef-faq.org/introduction.html)
 - [Im Entity Framework-Team-Blog](https://blogs.msdn.com/b/adonet/)
 - [Entitätsframework in der MSDN Library](https://msdn.microsoft.com/library/bb399572.aspx)
 - [Entitätsframework in der MSDN-Datenentwicklercenter](https://msdn.microsoft.com/data/ef.aspx)
@@ -130,4 +130,4 @@ Dies schließt diese tutorialreihe zu den ersten Schritten mit dem Entity Framew
 - [Julie lermans blog](http://thedatafarm.com/blog/)
 
 > [!div class="step-by-step"]
-> [Vorherige](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [Vorheriges](the-entity-framework-and-aspnet-getting-started-part-7.md)

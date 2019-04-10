@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: dd6bf5d8eb8a05dad1d230ef40c9b863e2af7094
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1f25a9afdf379d725496bd88f6ac192ab19930ca
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036987"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384512"
 ---
 # <a name="tutorial-use-ef-migrations-in-an-aspnet-mvc-app-and-deploy-to-azure"></a>Tutorial: Verwenden von EF-Migrationen in einer ASP.NET MVC-app und Bereitstellen in Azure
 
@@ -168,8 +168,8 @@ Sie stellen die Datenbank in Azure SQL-Datenbank bereit. SQL-Datenbank ist eine 
 10. Ändern Sie [Sortierreihenfolge](/sql/relational-databases/collations/collation-and-unicode-support) je nach Bedarf.
 11. Geben Sie einen Administrator **SQL-Administratorname** und **SQL-Administratorkennwort**.
 
-   - Wenn Sie ausgewählt haben **neue SQL-Datenbankserver**, definieren Sie einen neuen Namen und das Kennwort, das Sie später verwenden werden, wenn Sie die Datenbank zugreifen.
-   - Wenn Sie einen Server, den Sie zuvor erstellt haben ausgewählt, geben Sie Anmeldeinformationen für diesen Server.
+    - Wenn Sie ausgewählt haben **neue SQL-Datenbankserver**, definieren Sie einen neuen Namen und das Kennwort, das Sie später verwenden werden, wenn Sie die Datenbank zugreifen.
+    - Wenn Sie einen Server, den Sie zuvor erstellt haben ausgewählt, geben Sie Anmeldeinformationen für diesen Server.
 
 12. Erfassung von Telemetriedaten kann für App Service mithilfe von Application Insights aktiviert werden. Mit wenig Konfiguration erfasst Application Insights wertvolle-Ereignis, Ausnahme, Abhängigkeit, Anforderung und Ablaufverfolgungsinformationen. Weitere Informationen zu Application Insights finden Sie unter [Azure Monitor](https://azure.microsoft.com/services/monitor/).
 13. Klicken Sie auf **erstellen** unten, um anzugeben, dass Sie fertig sind.

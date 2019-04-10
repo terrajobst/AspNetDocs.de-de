@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: ceb9e60f-957c-4d25-9331-cc527de96a33
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: f4a8e7f1cafd169f392485ff4ecb260073209210
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 94318068e0fb550f5c6a4250e369000a23507a91
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050027"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394353"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-4"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 4
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-4"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 4
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -30,7 +30,7 @@ Erstellen Sie die dozentenseite, die eine Liste der Dozenten zeigt. Wenn Sie ein
 
 Sie können Masterdaten Detaildaten in Markup oder Code verknüpfen. In diesem Teil des Tutorials verwenden Sie beide Methoden.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-4/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image1.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-4/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image1.png)
 
 ## <a name="displaying-and-updating-related-entities-in-a-gridview-control"></a>Anzeigen und aktualisieren verknüpfte Entitäten in einem GridView-Steuerelement
 

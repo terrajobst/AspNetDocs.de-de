@@ -8,15 +8,15 @@ ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: d7985fcd48e1282437cc3a7d3c1b528af2e44ae0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425781"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381886"
 ---
-<a name="using-asynchronous-methods-in-aspnet-45"></a>Verwenden asynchroner Methoden in ASP.NET 4.5
-====================
+# <a name="using-asynchronous-methods-in-aspnet-45"></a>Verwenden asynchroner Methoden in ASP.NET 4.5
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Dieses Tutorial vermittelt Ihnen die Grundlagen der Erstellung einer asynchronen ASP.NET Web Forms-Anwendung, mit [Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/11), dies ist eine kostenlose Version von Microsoft Visual Studio. Sie können auch [Visual Studio 2012](https://www.microsoft.com/visualstudio/11). In den folgenden Abschnitten sind in diesem Tutorial enthalten.
@@ -31,7 +31,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > - [Server-Konfiguration für hohe Parallelität/hohe Wartezeit für Aufrufe des Webdiensts](#ServerConfig)
 > 
 > Ein vollständiges Beispiel wird für dieses Tutorial auf bereitgestellt.  
->  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) auf der [GitHub](https://github.com/) Standort.
+> [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) auf der [GitHub](https://github.com/) Standort.
 
 
 ASP.NET 4.5 Web Pages kombiniert [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx) können Sie asynchrone Methoden zu registrieren, die ein Objekt des Typs zurückgeben [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). .NET Framework 4 eingeführt wurde, eine asynchrone Programmierkonzept, das als ein [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) und ASP.NET 4.5 unterstützt [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx). Aufgaben werden durch dargestellt die **Aufgabe** Typ und verwandte Typen in der [System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx) Namespace. .NET Framework 4.5 basiert diese asynchrone Unterstützung mit der ["await"](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) und [Async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) Schlüsselwörter, die Arbeit mit stellen [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) Objekte, die wesentlich komplexer als die vorherige Version asynchrone Methoden. Die ["await"](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) -Schlüsselwort ist syntaktische Kurzform zum angeben, die ein Stück Code asynchron auf den anderen Teil des Codes warten soll. Die [Async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) Schlüsselwort stellt einen Hinweis, mit denen Sie kennzeichnen Methoden als aufgabenbasierte asynchrone Methoden dar. Die Kombination von **"await"**, **Async**, und die **Aufgabe** -Objekts macht es viel einfacher Schreiben von asynchronem Code in .NET 4.5. Das neue Modell für asynchrone Methoden wird aufgerufen, die *aufgabenbasierte asynchrone Muster* (**Tippen Sie auf**). In diesem Tutorial wird vorausgesetzt, dass einige Kenntnisse im Umgang mit asynchronen Programmieren ["await"](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) und [Async](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) Schlüsselwörter und [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) Namespace.
@@ -192,7 +192,7 @@ Um die Vorteile einer asynchronen Webanwendung nutzen zu können, müssen Sie ei
 
     - Öffnen Sie IIS-Manager, und navigieren Sie in den Bereich des Anwendungspools.
     - Klicken Sie mit der rechten Maustaste auf den Zielanwendungspool, und wählen Sie **Erweiterte Einstellungen**.  
-        ![advanced](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
+        ![Erweitert](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
     - In der **Erweiterte Einstellungen** im Dialogfeld *Warteschlangenlänge* von 1.000 auf 5.000.  
         ![Warteschlangenlänge](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   

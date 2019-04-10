@@ -8,15 +8,15 @@ ms.date: 06/10/2008
 ms.assetid: 43d1e83c-0092-4dcf-977c-e709c4dce7c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 881debeeaa98a7f2be7ccadb501c019e698b22f2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 35fcf02c20e3d20f9cb75f6a25aeb1ddac016b4e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035557"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393768"
 ---
-<a name="urls-in-master-pages-vb"></a>URLs auf Masterseiten (VB)
-====================
+# <a name="urls-in-master-pages-vb"></a>URLs auf Masterseiten (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_VB.pdf)
@@ -75,7 +75,7 @@ Die `~/Admin/Default.aspx` Inhaltsseite erhält jedes Mal den gleichen HTML-Code
 Da die `<img>` des Elements `src` -Attribut ist eine relative URL, die der Browser versucht, suchen Sie nach einer `Images` Ordner relativ zum Ordner für die Webseite. Das heißt, sucht der Browser für die Abbilddatei `Admin/Images/PoweredByASPNET.gif`.
 
 
-[![Die PoweredByASPNET.gif Image-Datei wurde nicht gefunden](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
+[![Ter PoweredByASPNET.gif Image-Datei kann nicht gefunden werden](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
 
 **Abbildung 02**: Die `PoweredByASPNET.gif` Image-Datei wurde nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-vb/_static/image4.png))
 
@@ -92,7 +92,7 @@ Um die beschädigte Bilder, die in Abbildung 2 dargestellten zu beheben, müssen
 Aktualisieren Sie in Ruhe die `<img>` des Elements `src` -Attribut auf eine absolute URL mithilfe eines der oben gezeigten Formate ein, und rufen Sie die `~/Admin/Default.aspx` Seite über einen Browser. Dieses Mal der Browser wird ordnungsgemäß suchen und Anzeigen der `PoweredByASPNET.gif` Image-Datei (siehe Abbildung 3).
 
 
-[![Das PoweredByASPNET.gif-Image ist jetzt angezeigt.](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
+[![Ter PoweredByASPNET.gif Bild wird jetzt angezeigt.](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
 
 **Abbildung 03**: Die `PoweredByASPNET.gif` Bild wird jetzt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-vb/_static/image7.png))
 

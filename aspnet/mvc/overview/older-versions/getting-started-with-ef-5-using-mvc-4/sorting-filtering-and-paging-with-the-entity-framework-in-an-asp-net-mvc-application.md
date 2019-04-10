@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: afd1551d72fa3a5b925d7499c86731db4b6f0b61
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 4220327388703b773011921bb206976b04b07e34
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422011"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397902"
 ---
-<a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Sortieren, Filtern und Paging mit Entitätsframework in einer ASP.NET MVC-Anwendung (3 von 10)
-====================
+# <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Sortieren, Filtern und Paging mit Entitätsframework in einer ASP.NET MVC-Anwendung (3 von 10)
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)

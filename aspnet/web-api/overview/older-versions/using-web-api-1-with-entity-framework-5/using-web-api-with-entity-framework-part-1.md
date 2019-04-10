@@ -8,15 +8,15 @@ ms.date: 07/03/2012
 ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 0e4021402e8deccd2395f23b6b512679b5e9d281
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384213"
 ---
-<a name="part-1-overview-and-creating-the-project"></a>Teil 1: Übersicht und Erstellen des Projekts
-====================
+# <a name="part-1-overview-and-creating-the-project"></a>Teil 1: Übersicht und Erstellen des Projekts
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
@@ -92,4 +92,4 @@ Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Content", und ö
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [Nächste](using-web-api-with-entity-framework-part-2.md)
+> [Weiter](using-web-api-with-entity-framework-part-2.md)

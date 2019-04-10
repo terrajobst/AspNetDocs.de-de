@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: b59a395e255823a732aef1b899612063e09b2424
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a0895c2246bc08f50645a865ce2dfffecfbb56a6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391155"
 ---
-<a name="checkout-and-payment-with-paypal"></a>Bezahlvorgang und Zahlung mit PayPal
-====================
+# <a name="checkout-and-payment-with-paypal"></a>Bezahlvorgang und Zahlung mit PayPal
+
 by [Erik Reitan](https://github.com/Erikre)
 
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -250,7 +250,7 @@ Wenn Sie dieses Tutorial auch mit der **vorgefertigte** Wingtip Toys-beispielanw
 
 PayPal ist eine webbasierte Abrechnung-Plattform, die Zahlungen von online-Händlern akzeptiert. In diesem Tutorial erläutert als Nächstes das PayPal Express-Checkout-Funktionalität in Ihre Anwendung integrieren. Express Auschecken kann Ihre Kunden PayPal zu verwenden, um die Elemente bezahlen, die sie zu ihrem Einkaufswagen hinzugefügt haben.
 
-### <a name="create-paylpal-test-accounts"></a>Erstellen von PaylPal Testkonten
+### <a name="create-paypal-test-accounts"></a>Erstellen von PayPal-Testkonten
 
 Um das PayPal-testumgebung zu verwenden, müssen Sie erstellen und überprüfen Sie ein Entwicklerkonto für den Test. Sie werden die Developer-Testkonto verwenden, um ein Käufer Testen der Konten- und ein Verkäufer-Testkonto zu erstellen. Die Anmeldeinformationen des Testkontos Entwickler ermöglichen außerdem die Wingtip Toys-beispielanwendung auf die PayPal-Test-Umgebung zuzugreifen.
 
@@ -277,7 +277,7 @@ Um das PayPal-testumgebung zu verwenden, müssen Sie erstellen und überprüfen 
 7. Käufer Testkonto erstellen, indem Sie auf die **Kontoerstellung** Schaltfläche.  
  Die **Sandbox Testkonten** angezeigt wird. 
 
-    ![Bezahlvorgang und Zahlung mit PayPal - PaylPal Konten](checkout-and-payment-with-paypal/_static/image17.png)
+    ![Bezahlvorgang und Zahlung mit PayPal - PayPal-Konten](checkout-and-payment-with-paypal/_static/image17.png)
 8. Auf der **Test sandboxkonten** klicken Sie auf die **vermittlermitglied** e-Mail-Konto.  
     **Profil** und **Benachrichtigung** Optionen angezeigt.
 9. Wählen Sie die **Profil** option, und klicken Sie dann **-API-Anmeldeinformationen** Ihre API-Anmeldeinformationen für die Händler Testkonto an.

@@ -8,15 +8,15 @@ ms.date: 03/06/2007
 ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e56c46d1f2574b9f228190e0e0c8205240015ed
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 251cd769672f1610ac7c51772882b0c166184372
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423949"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397434"
 ---
-<a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>Einfügen eines neuen Datensatzes in den GridView-Fuß (VB)
-====================
+# <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>Einfügen eines neuen Datensatzes in den GridView-Fuß (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_53_VB.exe) oder [PDF-Datei herunterladen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/datatutorial53vb1.pdf)
@@ -31,7 +31,7 @@ Siehe die [eine Übersicht der einfügen, aktualisieren und Löschen von Daten](
 In der GridView Einfügen von Funktionen hinzugefügt haben, können wir dafür entscheiden, wie neue Datensätze hinzugefügt werden, erstellen die einfügende-Schnittstelle und den Code zum Einfügen des neuen Datensatzes zu schreiben. Die Zeile in diesem Lernprogramm aus, die wir uns wird, an die GridView-Fuß s die einfügende-Schnittstelle hinzugefügt (siehe Abbildung 1). Die Zelle für jede Spalte enthält die entsprechenden Daten Auflistung Benutzeroberflächenelement (ein Textfeld für den Produktnamen s, einer DropDownList für Lieferanten und So weiter). Wir benötigen auch eine Spalte ein "Add"-Schaltfläche geklickt haben, wird ein Postback auslösen, und fügen Sie einen neuen Datensatz in die `Products` Tabelle mit den Werten in der Fußzeile angegeben.
 
 
-[![Die Footerzeile stellt eine Schnittstelle für das Hinzufügen neuer Produkte](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
+[![Ter Fußzeile stellt eine Schnittstelle für neue Produkte hinzufügen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
 
 **Abbildung 1**: Die Footerzeile stellt eine Schnittstelle für neue Produkte hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ In der GridView Einfügen von Funktionen hinzugefügt haben, können wir dafür 
 Bevor wir uns darum kümmern, die einfügende-Schnittstelle in der GridView-Fuß s erstellen, können Sie zuerst darauf konzentrieren s zum Hinzufügen einer GridView-Ansicht auf der Seite, die die Produkte in der Datenbank aufgelistet werden. Öffnen Sie zunächst die `InsertThroughFooter.aspx` auf der Seite die `EnhancedGridView` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox auf den Designer, Festlegen der GridView-s `ID` Eigenschaft `Products`. Als Nächstes das GridView-s-Smarttag verwenden, um die Bindung an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`.
 
 
-[![Erstellen Sie eine neue, mit dem Namen ProductsDataSource "ObjectDataSource"](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
+[![CErstellen eine neue "ObjectDataSource" mit dem Namen ProductsDataSource](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
 
 **Abbildung 2**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `ProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.png))
 
@@ -49,12 +49,12 @@ Bevor wir uns darum kümmern, die einfügende-Schnittstelle in der GridView-Fuß
 Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts()` Methode, um Produktinformationen abzurufen. Für dieses Tutorial s Fokus ausschließlich auf das Einfügen von Funktionen hinzufügen können, und sich keine Gedanken über bearbeiten und löschen. Stellen Sie daher sicher, dass die Dropdown-Liste in der Registerkarte "Einfügen", um festgelegt ist `AddProduct()` und die Dropdownlisten auf den Registerkarten Update- und DELETE auf (keine) festgelegt sind.
 
 
-[![Zuordnung der AddProduct-Methode, mit der "ObjectDataSource"-s-Insert()-Methode](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
+[![MAP die AddProduct-Methode, die die Insert()-Methode von "ObjectDataSource" s](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
 
 **Abbildung 3**: Zuordnung der `AddProduct` Methode, um das "ObjectDataSource"-s `Insert()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![Legen Sie das UPDATE und DELETE-Registerkarten in den Dropdownlisten auf (keine)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
+[![Su. a. die Update- und DELETE-Registerkarten Dropdownlisten auf ("None")](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
 
 **Abbildung 4**: Aktualisieren und Löschen von Registerkarten Dropdownlisten auf (keine) festgelegt ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ An diesem Punkt sollte die GridView und "ObjectDataSource" s deklarative Markup 
 [!code-aspx[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample1.aspx)]
 
 
-[![Alle Felder der Product-Daten werden in einem ausgelagerten GridView angezeigt.](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
+[![ALL, die Produkt von Datenfeldern in einem ausgelagerten GridView-Ansicht angezeigt werden](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
 
 **Abbildung 5**: Alle Felder der Product-Daten in einem ausgelagerten GridView angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.png))
 
@@ -79,7 +79,7 @@ An diesem Punkt sollte die GridView und "ObjectDataSource" s deklarative Markup 
 Zusammen mit den Header als auch die Datenzeilen enthält die GridView eine Fußzeile. Die Kopf- und Fußzeile Zeilen werden angezeigt, abhängig von den Werten der GridView Zuordnungsvorgänge [ `ShowHeader` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showheader.aspx) und [ `ShowFooter` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showfooter.aspx) Eigenschaften. Um die Footerzeile anzuzeigen, legen Sie einfach die `ShowFooter` Eigenschaft `True`. Wie in Abbildung 6 gezeigt, Festlegen der `ShowFooter` Eigenschaft `True` dem Raster eine Fußzeile hinzugefügt.
 
 
-[![Zum Anzeigen der Fußzeile ShowFooter auf "true" festgelegt](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
+[![To Anzeigen der Fußzeile festgelegt ShowFooter auf True](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
 
 **Abbildung 6**: Legen Sie zum Anzeigen der Fußzeile `ShowFooter` zu `True` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -96,7 +96,7 @@ Beachten Sie, dass die Footerzeile eine dunkelroten Hintergrund-Farbe. Dies lieg
 Nach dem Festlegen der `ShowFooter` Eigenschaft `True`, können Sie die Ausgabe in einem Browser anzuzeigen. Derzeit die Fußzeile Zeile t einem beliebigen Text- oder Websteuerelemente enthalten. In Schritt 3 ändern wir die Fußzeile für jedes Feld GridView, damit sie die entsprechende Einfügen von Schnittstelle enthält.
 
 
-[![Der leere Fußzeile wird angezeigt, über das Paging Steuerelemente der Benutzeroberfläche](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
+[![Ter leer Fußzeile wird angezeigt, über das Paging Benutzeroberflächen-Steuerelemente](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
 
 **Abbildung 7**: Der leere Fußzeile wird angezeigt, über das Paging Steuerelemente der Benutzeroberfläche ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image14.png))
 
@@ -130,7 +130,7 @@ Nun, da jedes GridView-Feld in ein TemplateField konvertiert wurde, können wir 
 Um die Bearbeitungsschnittstelle zu erstellen, wählen Sie den Vorlagen bearbeiten-Link aus dem GridView-s-Smarttag. Wählen Sie dann aus der Dropdown-Liste das entsprechende Feld s `FooterTemplate` und das entsprechende Steuerelement aus der Toolbox in den Designer ziehen.
 
 
-[![Fügen Sie die entsprechende einfügende-Schnittstelle auf jedes Feld s FooterTemplate](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
+[![ADd eine Schnittstelle für den entsprechenden einfügen auf jedes Feld s FooterTemplate](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
 
 **Abbildung 9**: Fügen Sie die entsprechende einfügen-Schnittstelle auf jedes Feld s `FooterTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image16.png))
 
@@ -166,7 +166,7 @@ Nach dem Erstellen der Menge nach dem Einfügen von Schnittstellen in den `Foote
 Wenn Sie über einen Browser angezeigt wird, der GridView-s-Fußzeile enthält jetzt die abgeschlossene einfügen Schnittstelle (siehe Abbildung 10). An diesem Punkt das Einfügen von Schnittstelle t ein Mittel für den Benutzer an, dass die Daten für das neue Produkt eingegeben und einen neuen Datensatz in die Datenbank einfügen möchte, Julie enthalten. Darüber hinaus wir haben noch zu behandeln, wie in der Fußzeile eingegebenen Daten in einen neuen Eintrag in übersetzt werden die `Products` Datenbank. In Schritt 4, die wir auf eine Schaltfläche "hinzufügen", auf die einfügen-Schnittstelle eingeschlossen und zum Ausführen von Code auf postback, wenn es s geklickt haben. Schritt 5 zeigt, wie Sie einen neuen Datensatz mit den Daten aus der Fußzeile einzufügen.
 
 
-[![Das GridView-Fuß stellt eine Schnittstelle für das Hinzufügen eines neuen Datensatzes bereit.](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
+[![Ter GridView-Fuß stellt eine Schnittstelle zum Hinzufügen eines neuen Eintrags](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
 
 **Abbildung 10**: Das GridView-Fuß stellt eine Schnittstelle für das Hinzufügen eines neuen Datensatzes ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -178,7 +178,7 @@ Wir müssen eine Schaltfläche "hinzufügen" an einer beliebigen Stelle in der e
 Aus dem Designer, klicken Sie auf den Link Vorlagen bearbeiten, in das GridView-s-Smarttag, und wählen Sie dann die `ProductID` Feld s `FooterTemplate` aus der Dropdown-Liste. Hinzufügen einer Schaltfläche-Websteuerelement (oder ein LinkButton oder ImageButton, falls gewünscht) für die Vorlage festlegen seiner ID auf `AddProduct`, dessen `CommandName` zum Einfügen, und die zugehörige `Text` Eigenschaft hinzufügen, wie in Abbildung 11 dargestellt.
 
 
-[![Platzieren Sie die Schaltfläche "hinzufügen" in "ProductID" TemplateField s FooterTemplate](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
+[![PLace die Schaltfläche "hinzufügen" in die ProductID TemplateField s FooterTemplate](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
 
 **Abbildung 11**: Platzieren Sie die Schaltfläche "hinzufügen" in der `ProductID` TemplateField s `FooterTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image20.png))
 
@@ -186,7 +186,7 @@ Aus dem Designer, klicken Sie auf den Link Vorlagen bearbeiten, in das GridView-
 Nachdem Sie speichern die Schaltfläche "hinzufügen" enthalten, testen Sie Sie auf der Seite in einem Browser. Beachten Sie, dass beim Klicken auf die Schaltfläche "hinzufügen" mit ungültigen Daten, die die einfügende-Benutzeroberfläche, die das Postback kurz circuited ist, und die ValidationSummary-Steuerelement gibt an, die ungültigen Daten (siehe Abbildung 12). Mit der entsprechenden Daten eingegeben haben auslöst ein Postback klicken Sie auf die Schaltfläche "hinzufügen". Jedoch wird kein Datensatz in der Datenbank hinzugefügt. Wir benötigen, schreiben ein paar Codezeilen tatsächlich die Einfügung ausführen.
 
 
-[![Die Schaltfläche "hinzufügen"-s ist Postback kurze Circuited bei ungültige Daten in der Schnittstelle einfügen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
+[![Ter die Schaltfläche "hinzufügen"-s ist Postback kurze Circuited bei ungültige Daten in der Schnittstelle einfügen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
 
 **Abbildung 12**: Die Schaltfläche "hinzufügen"-s-Postback ist kurz Circuited, wenn ungültige Daten vorhanden, in der einfügen-Schnittstelle sind ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image22.png))
 
@@ -266,4 +266,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Bernadette Leigh. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](adding-a-gridview-column-of-checkboxes-vb.md)
+> [Vorheriges](adding-a-gridview-column-of-checkboxes-vb.md)

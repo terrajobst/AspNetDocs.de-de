@@ -8,15 +8,15 @@ ms.date: 01/12/2012
 ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: ef83ef22e17ab7bda035d0f11ab936fe56d58800
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 20de66ab773a9172fd8ae8ea713c361c289b944c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423025"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398539"
 ---
-<a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Überprüfen des Gerüstbaus durch ASP.NET MVC für das DropDownList-Hilfsprogramm
-====================
+# <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Überprüfen des Gerüstbaus durch ASP.NET MVC für das DropDownList-Hilfsprogramm
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 In **Projektmappen-Explorer**, mit der rechten Maustaste die *Controller* Ordner, und wählen Sie dann **Controller hinzufügen**. Nennen Sie den Controller **StoreManagerController**. Festlegen der Optionen für die **Controller hinzufügen** Dialogfeld wie in der folgenden Abbildung dargestellt.
@@ -99,7 +99,7 @@ Diese Überladung von der `Create` -Methode übernimmt eine `album` Objekt, das 
 
 Sie können die [Fiddler-Tool](http://www.fiddler2.com/fiddler2/) untersuchen Sie die bereitgestellten Formularwerte, ASP.NET MVC-modellbindung verwendet werden, um das Album-Objekt zu erstellen.
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png).
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)sein.
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>Refactoring "ViewBag" SelectList erstellen
 

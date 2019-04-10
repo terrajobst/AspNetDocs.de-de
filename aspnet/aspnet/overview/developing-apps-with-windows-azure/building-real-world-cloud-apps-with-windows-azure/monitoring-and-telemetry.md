@@ -8,15 +8,15 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: f4dae827627103e5cfb9981b6c3b9342cdc34c13
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043217"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403908"
 ---
-<a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Überwachung und Telemetrie (erstellen realer Cloud-Apps mit Azure)
-====================
+# <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Überwachung und Telemetrie (erstellen realer Cloud-Apps mit Azure)
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -72,7 +72,7 @@ Bereitstellen der app in Azure, und es verwenden. Erstellen Sie ein paar Fix It-
 
 Navigieren Sie zurück zu den **New Relic** auf der Seite die **-Add-Ons** das Portal und klicken Sie auf der Registerkarte **verwalten**. Das Portal sendet Sie an das New Relic-Verwaltungsportal, die einmaliges Anmelden für die Authentifizierung verwenden, müssen Sie nicht Ihre Anmeldeinformationen erneut einzugeben. Die Seite "Übersicht" bietet eine Vielzahl von Leistungsstatistiken. (Klicken Sie auf das Bild, um die vollständige Übersicht über die Seitengröße anzuzeigen.)
 
-[![Neue Relic-Überwachung-Registerkarte](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
+[![NNeues Relic Registerkarte "Überwachung"](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
 
 Hier sind nur einige der Statistiken, die Sie sehen können:
 

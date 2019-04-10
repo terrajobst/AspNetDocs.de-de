@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b840e0a5cc325a043ae88c10f52cca418589119
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7de5a1545ee59e671058f09789ce69d5062d3655
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055797"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380976"
 ---
-<a name="passing-data-to-view-master-pages-vb"></a>Übergeben von Daten an Ansichtsmasterseiten (VB)
-====================
+# <a name="passing-data-to-view-master-pages-vb"></a>Übergeben von Daten an Ansichtsmasterseiten (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_VB.pdf)
@@ -33,7 +33,7 @@ Das Ziel in diesem Tutorial wird beschrieben, wie Sie Daten von einem Controller
 Stellen Sie sich vor, dass Sie beim Erstellen einer filmdatenbankanwendung und Sie die Liste der Kategorien des Films auf jeder Seite in Ihrer Anwendung anzeigen möchten (siehe Abbildung 1). Stellen Sie sich vor, darüber hinaus, dass die Liste der Movie-Kategorien in einer Datenbanktabelle gespeichert werden. In diesem Fall wäre es sinnvoll, die Kategorien aus der Datenbank abgerufen und die Liste der Film Kategorien in einer Masterseite für die Ansicht zu rendern.
 
 
-[![Anzeigen von Film-Kategorien in einer Masterseite anzeigen](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
+[![DFilm-Kategorien in einer Ansicht Masterseite IsPlaying den Wert](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
 
 **Abbildung 01**: Anzeigen von Film-Kategorien in einer Masterseite anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ Beachten Sie, dass sowohl die `Index()` und `Details()` Aktionen hinzufügen, zw
 Die `Details()` Aktion fügt außerdem zwei Schlüssel namens "Kategorien" und "Filme hinzu. Der Schlüssel Kategorien darstellt wieder die Liste der Movie-Kategorien, die von der Masterseite Ansicht angezeigt. Die Filme-Schlüssel darstellt, die Liste von Filmen in einer bestimmten Kategorie angezeigt, die von der Seite Details anzeigen (siehe Abbildung 2).
 
 
-[![Die Detailansicht](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
+[![TIE-Detailansicht](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
 
 **Abbildung 02**: Die Detailansicht ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-vb/_static/image6.png))
 
@@ -115,4 +115,4 @@ In diesem Tutorial erläutert zwei Ansätze zum Anzeigen von Daten von einem Con
 Als Nächstes untersucht wir eine viel bessere Strategie zum Hinzufügen von Daten, die von einer Masterseite Ansicht zum Anzeigen von Daten erforderlich. Anstatt die Ansichtsdaten in jede Controlleraktion hinzugefügt haben, haben wir die Ansichtsdaten nur einmal in einem Application Controller hinzugefügt. Auf diese Weise können Sie doppelt vorhandenem Code vermeiden, für das Übergeben von Daten an eine Ansicht Masterseite in ASP.NET MVC-Anwendungen.
 
 > [!div class="step-by-step"]
-> [Vorherige](creating-page-layouts-with-view-master-pages-vb.md)
+> [Vorheriges](creating-page-layouts-with-view-master-pages-vb.md)

@@ -8,15 +8,15 @@ ms.date: 05/16/2012
 ms.assetid: b71d1611-5f26-40dd-8315-b65b9d69b198
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 3b86454aed230ee5dcb65454c92842bf83f3cff0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3226039ad399fb43c82c98331be41450f6f679bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023697"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405205"
 ---
-<a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 – Unternehmensbereitstellung Serie 3: Konfigurieren von TFS
-====================
+# <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 – Unternehmensbereitstellung Serie 3: Konfigurieren von TFS
+
 > In diesem Tutorial erfahren Sie, wie Team Foundation Server (TFS) 2010 zum Erstellen von Lösungen und Bereitstellen von Web-Inhalte in verschiedenen zielumgebungen zu konfigurieren.
 
 

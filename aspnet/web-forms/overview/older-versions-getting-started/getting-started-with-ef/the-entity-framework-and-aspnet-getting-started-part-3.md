@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: ccdc3f8c-2568-40a7-8f8b-3c23d2e05388
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 162f93c0249d8fa11d67ea10c68bc2ca8bae7259
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8f3eced3c482291203383c53aa97b97101839cce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045557"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392819"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 3
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 3
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -42,7 +42,7 @@ Im vorherigen Tutorial verwendet Sie die `EntityDataSource` -Steuerelement zum A
 
 Wechseln Sie zur **Entwurf** anzeigen und Auswählen der `EntityDataSource` Steuerelement. Legen Sie im Fenster **Eigenschaften** die Eigenschaft `Where` auf `it.EnrollmentDate is not null`fest.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
 
 Die Syntax, in der `Where` Eigenschaft der `EntityDataSource` Steuerelement ist Entity SQL. Entity SQL ist Transact-SQL ähnelt, aber er ist für die Verwendung mit Entitäten anstelle von Datenbankobjekten angepasst. Im Ausdruck `it.EnrollmentDate is not null`, das Wort `it` stellt einen Verweis auf die von der Abfrage zurückgegebenen Entität dar. Aus diesem Grund `it.EnrollmentDate` bezieht sich auf die `EnrollmentDate` Eigenschaft der `Person` Entität, die die `EntityDataSource` gibt steuern.
 

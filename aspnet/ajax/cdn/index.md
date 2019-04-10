@@ -8,15 +8,15 @@ ms.date: 10/14/2017
 ms.assetid: fc98bde7-484a-4191-bba2-04d29551cb8f
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: a9b1c8122109075bf54678a1d4172b83dc34960a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10ee617ff5653bcc478364b7bea75bac4f4770f6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57018757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388854"
 ---
-<a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
-====================
+# <a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
+
 - [Microsoft AJAX Content Delivery Network](overview.md)
 - [jQuery UI](jquery-ui/index.md)
 
@@ -112,6 +112,6 @@ ms.locfileid: "57018757"
     - [jQuery DataTables 1.10.4](jquery-datatables/cdnjquerydatatables104.md)
     - [jQuery DataTables 1.10.5](jquery-datatables/cdnjquerydatatables105.md)
 - [ASP.NET Web Forms und AJAX 4](cdnajax4.md)
-- [ASP.NET AJAX 3.5](cdnajax35.md)
+- [ASP.NET Ajax 3.5](cdnajax35.md)
 - [ASP.NET Web Forms und AJAX 4.5.2](cdnajax452.md)
 - [ASP.NET Web Forms und AJAX 4.5.1](cdnajax451.md)

@@ -8,15 +8,15 @@ ms.date: 07/29/2010
 ms.assetid: fc0f145a-ba00-495e-b8aa-a6e8ad4e80f5
 msc.legacyurl: /web-forms/videos/authentication/adding-users-to-your-membership-system
 msc.type: video
-ms.openlocfilehash: 2b92c58f4fddf1362972fa3b1e8e2a56a6a15eb0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0d27ffba7746800e1cc034e75a964ab48bf87b33
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059207"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393950"
 ---
-<a name="adding-users-to-your-membership-system"></a>Hinzufügen von Benutzern zum Mitgliedschaftssystem
-====================
+# <a name="adding-users-to-your-membership-system"></a>Hinzufügen von Benutzern zum Mitgliedschaftssystem
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In diesem Video zeigt Joe Stagner wie neue Benutzer in das Repository für Mitgliedschaft hinzufügen.

@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 15d4e7d7b6a2662296b8e3647cd60187de580789
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 879a771c3b85c85d35d470f056173f230a36e906
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029177"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388948"
 ---
-<a name="understanding-models-views-and-controllers-vb"></a>Grundlegendes zu Modellen, Ansichten und Controllern (VB)
-====================
+# <a name="understanding-models-views-and-controllers-vb"></a>Grundlegendes zu Modellen, Ansichten und Controllern (VB)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Fragen Sie sich zu Modellen, Ansichten und Controllern? In diesem Tutorial erläutert Stephen Walther die verschiedenen Teile einer ASP.NET MVC-Anwendung.
@@ -33,7 +33,7 @@ Die Standard-Visual Studio-Vorlage zum Erstellen von ASP.NET MVC-Webanwendungen 
 Erstellen Sie eine neue ASP.NET MVC-Anwendung mit der MVC-Vorlage durch Starten von Visual Studio 2008 und Auswahl der Menüoption im Datei neu Projekt (siehe Abbildung 1). Klicken Sie im Dialogfeld "Neues Projekt" Wählen Sie Ihre bevorzugte Programmiersprache unter Projekttypen (Visual Basic oder c#), und wählen Sie **ASP.NET MVC-Webanwendung** unter Vorlagen. Klicken Sie auf die Schaltfläche "OK".
 
 
-[![Dialogfeld "Neues Projekt"](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
+[![NDialogfeld "Neues Projekt"](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
 
 **Abbildung 01**: Dialogfeld "Neues Projekt" ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ Erstellen Sie eine neue ASP.NET MVC-Anwendung mit der MVC-Vorlage durch Starten 
 Bei der Erstellung einer ASP.NET MVC-Anwendung, die **Komponententestprojekt erstellen** angezeigt (siehe Abbildung 2). In diesem Dialogfeld können Sie ein separates Projekt in der Projektmappe für das Testen Ihrer ASP.NET MVC-Anwendung zu erstellen. Wählen Sie die Option **Nein, kein Komponententestprojekt erstellen** , und klicken Sie auf die **OK** Schaltfläche.
 
 
-[![Unit Test-Dialogfeld "erstellen"](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
+[![CErstellen Komponententests Testdialogfeld](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
 
 **Abbildung 02**: Unit Test-Dialogfeld "erstellen" ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-vb/_static/image4.png))
 
@@ -51,7 +51,7 @@ Nach der neuen ASP.NET MVC wird die Anwendung erstellt. Mehrere Ordner und Datei
 Wenn Sie den Ordner "Controllers" erweitern, sehen Sie eine Datei namens AccountController.vb und eine Datei namens HomeController.vb. Wenn Sie den Ordner "Views" erweitern, sehen Sie drei Unterordner namens "Konto", "Home" und "freigegeben. Wenn Sie den Ordner "Home" erweitern, sehen Sie zwei zusätzliche Dateien, die mit dem Namen About.aspx und Index.aspx (siehe Abbildung 3). Diese Dateien bilden zusammen die beispielanwendung, die mit der standardmäßigen ASP.NET MVC-Vorlage enthalten.
 
 
-[![Das Fenster des Projektmappen-Explorer](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
+[![Ter Fenster des Projektmappen-Explorer](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
 
 **Abbildung 03**: Das Fenster des Projektmappen-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-vb/_static/image6.png))
 
@@ -61,7 +61,7 @@ Sie können die beispielanwendung ausführen, indem Sie durch Auswählen der Men
 Beim ersten eine ASP.NET-Anwendung ausführen wird das Dialogfeld in Abbildung 4, die empfohlen, dass Sie den Debugmodus aktivieren angezeigt. Klicken Sie auf die Schaltfläche "OK", und die Anwendung ausgeführt wird.
 
 
-[![Debuggen von Dialogfeld nicht aktiviert](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
+[![DDialogfeld des Beenden nicht aktiviert](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
 
 **Abbildung 04**: Debuggen von Dialogfeld nicht aktiviert ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ Beim ersten eine ASP.NET-Anwendung ausführen wird das Dialogfeld in Abbildung 4
 Wenn Sie eine ASP.NET MVC-Anwendung ausführen, startet Visual Studio die Anwendung in Ihrem Webbrowser. Die beispielanwendung umfasst nur zwei Seiten: die Seite "Index" und die Seite "Info". Beim ersten Start die Anwendung wird auf der Indexseite angezeigt, die (siehe Abbildung 5). Sie können auf der Seite "Info" navigieren, auf den Link im Menü oben rechts auf der die Anwendung.
 
 
-[![Die Indexseite](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
+[![Ter Indexseite](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
 
 **Abbildung 05**: Die Indexseite ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-models-views-and-controllers-vb/_static/image10.png))
 

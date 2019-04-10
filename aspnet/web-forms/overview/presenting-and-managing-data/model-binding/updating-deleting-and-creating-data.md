@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 127543b0696b01f136b340d07f6f806b6a6fb1eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0ac1982a9476ea324f2faea0bf06f9406f9af1cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389322"
 ---
-<a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualisieren, löschen und Erstellen von Daten mit modellbindung und Web forms
-====================
+# <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualisieren, löschen und Erstellen von Daten mit modellbindung und Web forms
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung, wird die dateninteraktion mehr geradlinigere als Umgang mit Data Source-Objekte (z. B. "ObjectDataSource" oder SqlDataSource-Steuerelement). Diese Serie beginnt mit einführendes Material und verschiebt in späteren Tutorials zu erweiterten Konzepten übergegangen.

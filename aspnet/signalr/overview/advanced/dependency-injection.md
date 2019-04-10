@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 957facaf2988fedb6615e95701af5155cbcb23d2
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423090"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405377"
 ---
-<a name="dependency-injection-in-signalr"></a>Abhängigkeitsinjektion in SignalR
-====================
+# <a name="dependency-injection-in-signalr"></a>Abhängigkeitsinjektion in SignalR
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -24,7 +24,7 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://g
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >

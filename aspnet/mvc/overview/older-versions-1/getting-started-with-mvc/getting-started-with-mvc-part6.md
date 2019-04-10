@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: a3a90963-0286-4fa0-9b3d-c230cc18b0a3
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: 546c3e0a24ecd0d916c79e9ad12f62b926c760c5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f648e0cb53dd410105adc22401f19a5a15f9e8c1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380807"
 ---
-<a name="adding-a-create-method-and-create-view"></a>Hinzufügen einer Create-Methode und -Ansicht
-====================
+# <a name="adding-a-create-method-and-create-view"></a>Hinzufügen einer Create-Methode und -Ansicht
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
@@ -38,7 +38,7 @@ Nun implementieren wir die Create View-Vorlage, mit denen ein Formular für den 
 
 Ich wähle, die der ansichtsvorlage eine "Movie" übergeben als die Datenklasse anzeigen soll, und wir anzugeben, dass "Vorlage"Erstellen"erstellen" werden soll.
 
-[![Ansicht hinzufügen](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
+[![Ansicht.](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
 
 Nachdem Sie auf die Schaltfläche "hinzufügen" klicken, wird für Sie \Movies\Create.aspx ansichtsvorlage erstellt. Da wir in der Dropdownliste "Inhalt anzeigen" "Erstellen" ausgewählt haben, "Gerüst erstellt das Dialogfeld" Ansicht hinzufügen"automatisch" einige Standardinhalt für uns. Das Gerüst erstellt eine HTML &lt;Formular&gt;, ein Ort für Validierungsfehler zu Nachrichten und da Filme Gerüstbau kennt, Erstellung Bezeichnung und Felder für jede Eigenschaft unserer Klasse.
 
@@ -48,7 +48,7 @@ Da unsere Datenbank automatisch einem Film ID erhalten, wir entfernen diese Feld
 
 Lassen Sie uns nun erstellen Sie einen neuen Film und der Datenbank hinzugefügt. Wir zu diesem Zweck die Anwendung erneut ausführen und finden Sie auf der "/ Movies"-URL, und klicken Sie auf "Erstellen" verknüpfen, um einen neuen Film hinzuzufügen.
 
-[![Erstellen Sie – Windows InternetExplorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
+[![CErstellen – Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
 
 Wenn wir auf die Schaltfläche "erstellen" klicken, werden wir (per HTTP POST) die Daten in diesem Formular an die Methode /Movies/Create veröffentlicht werden, die wir gerade erstellt haben. Genau wie das System wird bei automatisch hat den Parameter "NumTimes" und "Name" nicht in der URL, und der Parameter für eine Methode zuvor zugewiesen das System automatisch die Formularfelder aus einem Beitrag nehmen und ordnen sie ein Objekt. In diesem Fall werden die Werte aus Feldern in HTML, z. B. "ReleaseDate" und "Title" automatisch in die richtigen Eigenschaften einer neuen Instanz eines Films platziert.
 
@@ -58,7 +58,7 @@ Sehen wir uns die zweite Create-Methode aus unserer MoviesController erneut aus.
 
 Diese Movie-Objekt klicken Sie dann auf die Version [HttpPost] unsere Create-Aktion-Methode übergeben wurde, und wir in der Datenbank gespeichert ist, und klicken Sie dann den Benutzer wieder an die Index() Aktionsmethode das gespeicherte Ergebnis in der Movie-Liste aufgeführt werden umgeleitet:
 
-[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
+[![MILM Liste – Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
 
 Wir werden nicht überprüft, ob unsere Filme jedoch richtig ist sind, und die Datenbank wird nicht erlauben, einen Film mit kein Titel zu speichern. Es wäre schön, wenn wir den Benutzer mitteilen könnten, der vor der Datenbank einen Fehler ausgelöst hat. Dies als Nächstes machen wir durch Hinzufügen von validierungsunterstützung unserer Anwendung.
 

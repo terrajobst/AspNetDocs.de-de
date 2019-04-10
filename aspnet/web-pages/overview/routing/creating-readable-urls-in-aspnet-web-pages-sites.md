@@ -8,15 +8,15 @@ ms.date: 02/17/2014
 ms.assetid: a8aac1ac-89de-4415-afe0-97a41c6423d2
 msc.legacyurl: /web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 26d8f94b2e38fe5205a37e3d37b4e3bd509a3874
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfce6120b76d68a3f212639eafa6aa091d7e345d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381782"
 ---
-<a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>Erstellen von lesbaren URLs in ASP.NET Web Pages (Razor)-Websites
-====================
+# <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>Erstellen von lesbaren URLs in ASP.NET Web Pages (Razor)-Websites
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieser Artikel beschreibt die in einer Website für ASP.NET Web Pages (Razor), und wie diese können Sie URLs verwenden, die besser lesbar und besser für SEO-routing.

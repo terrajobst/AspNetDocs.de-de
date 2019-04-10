@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: Erstellen von Hilfeseiten für ASP.NET Web-API | Microsoft-Dokumentation
+title: Erstellen von Hilfeseiten für ASP.NET Web-API – ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: Dieses Tutorial mit Code wird gezeigt, wie zum Erstellen von Hilfeseiten für ASP.NET Web-API in ASP.NET 4.x.
 ms.author: riande
 ms.date: 04/01/2013
+ms.custom: seoapril2019
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: fba368e4017fea65ff96e2540d486662cc6b45f8
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e3f6a9b8a6835b034a075d580cd9a33136969990
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395014"
 ---
-<a name="creating-help-pages-for-aspnet-web-api"></a>Erstellen von Hilfeseiten für ASP.NET Web-API
-====================
+# <a name="creating-help-pages-for-aspnet-web-api"></a>Erstellen von Hilfeseiten für ASP.NET Web-API
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-Bei der Erstellung einer Webs-API ist es oft sinnvoll, eine Seite zu erstellen, sodass andere Entwickler zum Aufrufen Ihrer API veranschaulicht werden. Konnten Sie gesamte Dokumentation manuell erstellen, aber es ist besser, automatisch so weit wie möglich.
+Dieses Tutorial mit Code wird gezeigt, wie zum Erstellen von Hilfeseiten für ASP.NET Web-API in ASP.NET 4.x.
 
-Um diese Aufgabe erleichtern, bietet ASP.NET Web-API für die automatische Generierung von Hilfeseiten eine Bibliothek zur Laufzeit an.
+Bei der Erstellung einer Webs-API ist es oft sinnvoll, eine Seite zu erstellen, sodass andere Entwickler zum Aufrufen Ihrer API veranschaulicht werden. Konnten Sie gesamte Dokumentation manuell erstellen, aber es ist besser, automatisch so weit wie möglich. Um diese Aufgabe erleichtern, bietet ASP.NET Web-API für die automatische Generierung von Hilfeseiten eine Bibliothek zur Laufzeit an.
 
 ![](creating-api-help-pages/_static/image1.png)
 
@@ -57,7 +58,7 @@ Sie können Hilfeseiten zu einem vorhandenen Web-API-Projekt mithilfe von NuGet-
 
 Aus der **Tools** die Option **NuGet Paket-Manager**, und wählen Sie dann **Paket-Manager Konsole**. In der [-Paket-Manager-Konsole](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) Fenster, geben Sie einen der folgenden Befehle aus:
 
-Für eine **C#** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
+Für eine **c#** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
 Für eine **Visual Basic** Anwendung: `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 

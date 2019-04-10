@@ -8,15 +8,15 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 2e0d3b45fd51192d227d852dc2f05b45ca42944c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fa0573738fee8f1decc13c9797f644002931e09d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031197"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381496"
 ---
-<a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eine OData v3-Endpunkts mit Web-API 2
-====================
+# <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eine OData v3-Endpunkts mit Web-API 2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
@@ -28,7 +28,7 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web-API 2
 > - OData v3
 > - Entity Framework 6

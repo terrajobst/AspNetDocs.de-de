@@ -8,15 +8,15 @@ ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: ce54181996376cb5dde3b91c10c16f33b3c6a570
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058917"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385877"
 ---
-<a name="routing-and-action-selection-in-aspnet-web-api"></a>Routing- und Aktionsauswahl in ASP.NET Web-API
-====================
+# <a name="routing-and-action-selection-in-aspnet-web-api"></a>Routing- und Aktionsauswahl in ASP.NET Web-API
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 In diesem Artikel wird beschrieben, wie ASP.NET Web-API eine HTTP-Anforderung an eine bestimmte Aktion für einen Controller weitergeleitet.

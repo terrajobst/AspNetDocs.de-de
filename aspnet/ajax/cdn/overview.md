@@ -8,15 +8,15 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 6fd91f8c05462b603d6911e16bd48ec618d635d9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6cea53021ce92e3936b06481008a86dd0590a117
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425729"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387437"
 ---
-<a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
-====================
+# <a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
+
 > [!WARNING]
 > Produktionsanwendungen dauert eine harte Abhängigkeit nicht auf den CDN-Assets. Anwendungen sollten Testen des CDN-Assets, die auf die verwiesen wird, und verwenden ein fallback-Medienobjekt aus, wenn das CDN nicht verfügbar ist.
 >

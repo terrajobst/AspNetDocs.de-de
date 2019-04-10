@@ -2,26 +2,26 @@
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 title: Steuern der-IDs auf Inhaltsseiten (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Veranschaulicht, wie ContentPlaceHolder-Steuerelemente als Benennungscontainer dienen, und stellen Sie daher programmgesteuert arbeiten mit einem Steuerelement (über FindConrol) schwierig...
+description: Veranschaulicht, wie ContentPlaceHolder-Steuerelemente als Benennungscontainer dienen, und stellen Sie daher programmgesteuert arbeiten mit einem Steuerelement (über FindControl) schwierig...
 ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e9a751538ca28250e4e776ff2c6c3f0185ffbe6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dd60d02c2c3840edd4c0e1244623fcea0cb2db0b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059307"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386319"
 ---
-<a name="control-id-naming-in-content-pages-vb"></a>Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)
-====================
+# <a name="control-id-naming-in-content-pages-vb"></a>Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_VB.pdf)
 
-> Veranschaulicht, wie ContentPlaceHolder-Steuerelemente als Benennungscontainer dienen, und stellen Sie daher programmgesteuert ein Steuerelement, die schwierig (über FindConrol) verwenden. Prüft, ob dieses Problem und problemumgehungen. Außerdem wird erläutert, wie den sich ergebenden ClientID-Wert programmgesteuert zugreifen.
+> Veranschaulicht, wie ContentPlaceHolder-Steuerelemente als Benennungscontainer dienen, und stellen Sie daher programmgesteuert ein Steuerelement, die schwierig (über FindControl) verwenden. Prüft, ob dieses Problem und problemumgehungen. Außerdem wird erläutert, wie den sich ergebenden ClientID-Wert programmgesteuert zugreifen.
 
 
 ## <a name="introduction"></a>Einführung
@@ -83,7 +83,7 @@ An diesem Punkt sollte Ihre Inhaltssteuerelement deklaratives Markup etwa wie fo
 Abbildung 3 zeigt die Seite, wenn Sie über Visual Studio-Designer angezeigt.
 
 
-[![Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche, und Bezeichnung](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
+[![Tseine Seite enthält drei Web Controls: ein Textfeld, einer Schaltfläche und einer Bezeichnung](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
 
 **Abbildung 03**: Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche und Label ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image5.png))
 
@@ -133,7 +133,7 @@ Während Sie die Syntax zum Aufrufen der `FindControl` Methode unterscheidet sic
 Geben Sie diesen Code, besuchen Sie die `IDIssues.aspx` Seite über einen Webbrowser, geben Sie Ihr Alter, und klicken Sie auf die Schaltfläche "Absenden". Nach dem Klicken auf die Schaltfläche "Absenden" eine `NullReferenceException` ausgelöst wird (siehe Abbildung 5).
 
 
-[![Es wird eine "NullReferenceException" ausgelöst.](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
+[![A NullReferenceException wird ausgelöst](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
 
 **Abbildung 05**: Ein `NullReferenceException` ausgelöst ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image9.png))
 
@@ -173,7 +173,7 @@ Glücklicherweise ist ein Verweis auf die Masterseite über die `Page` Klasse `M
 Dieses Mal auf der Seite über einen Browser, Ihr Alter eingeben, und klicken auf die Schaltfläche "Absenden" zeigt die Meldung in die `Results` bezeichnen, wie erwartet.
 
 
-[![Das Alter des Benutzers wird in der Bezeichnung angezeigt.](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
+[![THE des Alters des Benutzers wird in der Bezeichnung angezeigt](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
 
 **Abbildung 06**: Das Alter des Benutzers wird angezeigt, in der Bezeichnung ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image12.png))
 
@@ -200,7 +200,7 @@ Fügen Sie den folgenden Code der `PageExtensionMethods.vb` Datei, um diese defi
 Mit diesem Code vorhanden, zurück zu den `IDIssues.aspx` , Code-Behind-Klasse und kommentieren Sie die aktuelle Seite `FindControl` Methodenaufrufe. Ersetzen Sie sie durch Aufrufen von `Page.FindControlRecursive("controlID")`. Zu Erweiterungsmethoden praktisch ist, dass sie direkt in der Dropdown-Listen von IntelliSense angezeigt werden. Wie in Abbildung 7 dargestellt, bei der Eingabe `Page` und drücken Sie dann den Zeitraum, der `FindControlRecursive` Methode befindet sich in der IntelliSense-Dropdownliste zusammen mit anderen `Control` -Klassenmethoden.
 
 
-[![Erweiterungsmethoden sind in der IntelliSense-Dropdown-Elemente enthalten.](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
+[![EExtension-Methoden befinden sich in der IntelliSense-Dropdown-Elemente](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
 
 **Abbildung 07**: Erweiterungsmethoden befinden sich in der IntelliSense-Dropdown-Elemente ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image15.png))
 
@@ -256,7 +256,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [ASP.NET-Masterseiten und `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
 - [Erstellen von Benutzeroberflächen zur Dateneingabe dynamische Daten](https://msdn.microsoft.com/library/aa479330.aspx)
 - [Erweitern der Funktionalität der Basisklasse mit Erweiterungsmethoden](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
-- [How To: Inhalt des Referenz ASP.NET Master-Seite](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
+- [Vorgehensweise: Inhalt des Referenz ASP.NET Master-Seite](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
 - [Unabhängig davon Seiten: Tipps, Tricks und fallen](http://www.odetocode.com/articles/450.aspx)
 - [Arbeiten mit clientseitigen Skripts](https://msdn.microsoft.com/library/aa479302.aspx)
 

@@ -8,15 +8,15 @@ ms.date: 08/22/2007
 ms.assetid: e90defdb-b6b1-4f38-8f6a-7adccbb426ef
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
 msc.type: video
-ms.openlocfilehash: 21dedc5a8d934e9284cf13b2075dbff637a130de
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d8b74b0fb2061477c1d2ff66e394d0bb1e22baf3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035237"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402049"
 ---
-<a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[Gewusst wie:] Auslösen einer UpdatePanel-Aktualisierung mit einem DropDownList-Steuerelement?
-====================
+# <a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[Gewusst wie:] Auslösen einer UpdatePanel-Aktualisierung mit einem DropDownList-Steuerelement?
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In den meisten unsere Videos an, auf das UpdatePanel von ASP.NET AJAX haben wir ein Schaltflächen-Steuerelement verwendet, ein UpdatePanel aktualisiert den Inhalt zu verursachen. Wir können noch von anderen ASP.NET-Serversteuerelement ausgelöste Ereignis verwenden. In diesem Video wird das SelectedIndexChanged-Ereignis aus, der das DropDownList-Steuerelement als Trigger für das Aktualisieren von einem UpdatePanel-Steuerelement verwendet. Wir sehen auch, wie wir die Stylesheet-Klasse, die der in das UpdatePanel-Steuerelement enthaltenen Steuerelemente dynamisch ändern können.

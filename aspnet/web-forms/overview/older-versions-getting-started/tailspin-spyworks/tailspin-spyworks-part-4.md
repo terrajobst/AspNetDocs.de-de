@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: ca7eccd684473d9a1ec4a8adfd8690b291fe702f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63afd25e2ccf22d3c7ae5c5048c80a8cf060d4cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043267"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382822"
 ---
-<a name="part-4-listing-products"></a>Teil 4: Auflisten von Produkten
-====================
+# <a name="part-4-listing-products"></a>Teil 4: Auflisten von Produkten
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
@@ -50,7 +50,7 @@ Nach der Erstellung unserer Seite verwenden wir erneut eine Datenquelle für die
 
 Um dies zu erreichen wir verraten EntityDataSource zum automatischen Generieren der WHERE-Klausel aus, und wir legen die WhereParameter.
 
-Sie erinnern sich, dass beim Erstellen der Menüelemente in unsere "Product Category-Menü" Wir dynamisch die Verknüpfung erstellt die Abfragezeichenfolge für jeden Link der CatagoryID hinzugefügt. Es informiert, dass der Entity-Datenquelle, QueryString-Parameter den WHERE-Parameter abgeleitet.
+Sie erinnern sich, dass beim Erstellen der Menüelemente in unsere "Product Category-Menü" Wir dynamisch die Verknüpfung erstellt die Abfragezeichenfolge für jeden Link die CategoryID hinzugefügt. Es informiert, dass der Entity-Datenquelle, QueryString-Parameter den WHERE-Parameter abgeleitet.
 
 [!code-aspx[Main](tailspin-spyworks-part-4/samples/sample1.aspx)]
 
@@ -79,7 +79,7 @@ Klicken Sie auf einen der Links die Kategorie-Liste, auf der Startseite der Webs
 
 ![](tailspin-spyworks-part-4/_static/image6.jpg)
 
-Jetzt müssen wir die ProductDetials.apsx-Seite und die AddToCart-Funktionalität zu implementieren.
+Jetzt müssen wir die ProductDetails.aspx-Seite und die AddToCart-Funktionalität zu implementieren.
 
 Verwenden Sie Datei -&gt;neu, um einen Seitennamen ProductDetails.aspx mithilfe der Website-Masterseite, wie schon zuvor zu erstellen.
 
@@ -93,7 +93,7 @@ Der Warenkorb stellt die komplexere Logik in unserer Anwendung dar. Verwenden Si
 
 Beachten Sie, dass wir nicht den Namen ShoppingCart.aspx auswählen.
 
-Unsere Datenbank enthält eine Tabelle namens "ShoppingCart". Wenn wir ein Entity Data Model generiert wurde eine Klasse für jede Tabelle in der Datenbank erstellt. Aus diesem Grund generiert der Entity Data Model eine Entitätsklasse, die mit dem Namen "ShoppingCart". Es konnte das Modell bearbeitet werden, damit wir verwenden Sie diesen Namen für die shopping Cart-Implementierung oder für unsere Anforderungen erweitern können, aber entscheiden wir uns wird stattdessen, wählen Sie einfach einen Namen, der den Konflikt vermieden wird.
+Unsere Datenbank enthält eine Tabelle namens "ShoppingCart". Wenn wir ein Entity Data Model generiert wurde eine Klasse für jede Tabelle in der Datenbank erstellt. Aus diesem Grund generiert der Entity Data Model eine Entitätsklasse, die mit dem Namen "ShoppingCart". Es konnte das Modell bearbeitet werden, damit wir verwenden Sie diesen Namen für die shopping Cart-Implementierung oder für unsere Anforderungen erweitern können, aber wir werden stattdessen angeben, dass Sie einfach einen Namen auswählen, der den Konflikt zu vermeiden, wird.
 
 Es ist auch zu beachten Sie, dass wir einen einfachen Warenkorb erstellen und betten die shopping Cart-Logik, mit der shopping Cart-Anzeige. Wir können auch auswählen, unsere warenkorbsoftware in einer vollständig separaten Business-Ebene zu implementieren.
 

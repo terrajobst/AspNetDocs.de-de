@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: 09279194-bcf9-4b59-a09d-c68e5926a758
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ea6d2deaaad1112f4a5ce4e4ea5534c6eab35a8d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 70640ac12b52d50c92d1d7f65c1116b2ec36d883
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058657"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381769"
 ---
-<a name="deploying-your-site-using-an-ftp-client-vb"></a>Bereitstellen einer Website mithilfe eines FTP-Clients (VB)
-====================
+# <a name="deploying-your-site-using-an-ftp-client-vb"></a>Bereitstellen einer Website mithilfe eines FTP-Clients (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_03_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial03_DeployingViaFTP_vb.pdf)
@@ -69,7 +69,7 @@ Abbildung 1 zeigt die FileZilla, nachdem die erforderlichen Dateien kopiert wurd
 > Es gibt keinen Schaden an, dass die Quellcodedateien auf dem Produktionsserver, wie sie ignoriert werden. ASP.NET verbietet die HTTP-Anforderungen an die Quellcodedateien standardmäßig so, dass auch wenn die Quellcodedateien auf dem Produktionsserver vorhanden sind die Besucher Ihrer Website zugegriffen werden. (D. h., wenn ein Benutzer versucht, besuchen `http://www.yoursite.com/Default.aspx.vb` sie erhalten einer Fehlerseite angezeigt, aus der hervorgeht, die diese Arten von Dateien – `.vb` Dateien – sind unzulässig.)
 
 
-[![Verwenden Sie einen FTP-Client, um die erforderlichen Dateien auf dem Desktop an den Webserver, auf dem Webhostinganbieter zu kopieren.](deploying-your-site-using-an-ftp-client-vb/_static/image2.png)](deploying-your-site-using-an-ftp-client-vb/_static/image1.png)
+[![USE einen FTP-Client die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter kopiert.](deploying-your-site-using-an-ftp-client-vb/_static/image2.png)](deploying-your-site-using-an-ftp-client-vb/_static/image1.png)
 
 **Abbildung 1**: Verwenden Sie einen FTP-Client die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter zu kopieren ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-vb/_static/image3.png))
 
@@ -82,7 +82,7 @@ Abbildung 2 zeigt die bereitgestellte Book Reviews-Website. Beachten Sie, dass i
 > Wenn Sie beim Anzeigen der Anwendung können Sie sicherstellen, dass ein Fehler auftreten, haben Sie den richtigen Satz von Dateien bereitgestellt. Als Nächstes überprüfen Sie die Fehlermeldung, um festzustellen, ob es keine Anhaltspunkte über das Problem zeigt. Danach können Sie Ihre Web-Host des Unternehmens Helpdesk aktivieren oder Ihre Frage im Forum geeigneten, unter dem [ASP.NET-Foren](https://forums.asp.net/).
 
 
-[![Die Book Reviews-Website ist für alle Benutzer mit einer Internetverbindung nun zugegriffen werden kann.](deploying-your-site-using-an-ftp-client-vb/_static/image5.png)](deploying-your-site-using-an-ftp-client-vb/_static/image4.png)
+[![Ter Book Reviews-Website kann nun zugegriffen werden für alle Benutzer mit Internetzugang.](deploying-your-site-using-an-ftp-client-vb/_static/image5.png)](deploying-your-site-using-an-ftp-client-vb/_static/image4.png)
 
 **Abbildung 2**: Der Book Reviews-Website kann nun zugegriffen werden, für alle Benutzer mit Internetzugang ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-vb/_static/image6.png))
 
@@ -124,7 +124,7 @@ Sobald Sie das Projekt erfolgreich erstellt haben, verwenden Sie FTP-Client, kop
 Abbildung 3 zeigt FileZilla, nachdem Sie die benötigten Dateien kopiert haben. Wie Sie sehen können, die ASP.NET Quellcodedateien, z. B. `About.aspx.vb`, auf dem lokalen Computer (Entwicklungsumgebung) und dem Webhostinganbieter (in der produktionsumgebung) vorhanden sind, da Codedateien werden, wenn automatische bereitgestellt müssen Kompilierung.
 
 
-[![Verwenden Sie einen FTP-Client die notwendigen Dateien auf dem Desktop an den Webserver, auf dem Webhostinganbieter zu kopieren.](deploying-your-site-using-an-ftp-client-vb/_static/image8.png)](deploying-your-site-using-an-ftp-client-vb/_static/image7.png)
+[![USE einen FTP-Client, um die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter zu kopieren.](deploying-your-site-using-an-ftp-client-vb/_static/image8.png)](deploying-your-site-using-an-ftp-client-vb/_static/image7.png)
 
 **Abbildung 3**: Verwenden Sie einen FTP-Client die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter zu kopieren ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-vb/_static/image9.png))
 

@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 783c5f73709de37f79c472e10c79e284cf25f8fd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4fe34858aadb705ffb59e06ba805493d89aa4028
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049397"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403206"
 ---
-<a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Verwenden der TagBuilder-Klasse zum Erstellen von HTML-Hilfsprogrammen (VB)
-====================
+# <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Verwenden der TagBuilder-Klasse zum Erstellen von HTML-Hilfsprogrammen (VB)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther stellt ein hilfreiches Dienstprogramm-Klasse in ASP.NET MVC-Framework mit dem Namen der TagBuilder-Klasse. Sie können die TagBuilder-Klasse verwenden, auf einfache Weise HTML-Tags erstellen.
@@ -60,12 +60,12 @@ Beachten Sie, wie die TagBuilder.MergeAttribute()-Methode verwendet wird, die Ta
 
 Nach der Erstellung der Image-Hilfe können Sie das Hilfsprogramm in Ihren ASP.NET MVC-Ansichten, genau wie die standardmäßigen HTML-Hilfsprogramme verwenden. Die Ansicht im Codebeispiel 2 verwendet das Image-Hilfsprogramm, um dem gleichen Image von einer Xbox zweimal anzuzeigen (siehe Abbildung 1). Das Hilfsprogramm Image() heißt mit und ohne eine Auflistung der HTML-Attribute.
 
-**Listing 2 – Home\Index.aspx**
+**Codebeispiel 2 – Home\Index.aspx**
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
 
-[![Das Dialogfeld "Neues Projekt"](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
 **Abbildung 01**: Mit dem Image-Hilfsprogramm ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
 

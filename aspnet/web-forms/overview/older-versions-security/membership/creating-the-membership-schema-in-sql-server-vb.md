@@ -8,15 +8,15 @@ ms.date: 01/18/2008
 ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 62a6113c9ddad1722160c7092308939cf7883588
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 17fbc85ab1be16e2b4a5c179db3c24645a6a0a64
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055467"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404168"
 ---
-<a name="creating-the-membership-schema-in-sql-server-vb"></a>Erstellen des Mitgliedschaftsschemas unter SQL Server (VB)
-====================
+# <a name="creating-the-membership-schema-in-sql-server-vb"></a>Erstellen des Mitgliedschaftsschemas unter SQL Server (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_04_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial04_MembershipSetup_vb.pdf)
@@ -57,7 +57,7 @@ Die Anwendung, die wir erstellen müssen, da das zweite Tutorial eine Datenbank 
 Im Projektmappen-Explorer mit der Maustaste auf die `App_Data` Ordner, und wählen Sie auf Neues Element hinzufügen. (Wenn Sie nicht sehen ein `App_Data` Ordner in Ihrem Projekt mit der rechten Maustaste auf das Projekt im Projektmappen-Explorer, wählen Sie ASP.NET-Ordner hinzufügen und auswählen `App_Data`.) Wählen Sie im Dialogfeld "Neues Element hinzufügen" zum Hinzufügen einer neuen SQL-Datenbank, die mit dem Namen `SecurityTutorials.mdf`. In diesem Tutorial fügen wir die `SqlMembershipProvider` Schema auf diese Datenbank, in den nachfolgenden Tutorials wir zusätzliche erstellen Tabellen, um die Anwendungsdaten zu erfassen.
 
 
-[![Hinzufügen einer neuen SQL-Datenbank, die mit dem Namen SecurityTutorials.mdf-Datenbank, in dem Ordner "App_Data"](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
+[![ADd neue SQL-Datenbank mit dem Namen SecurityTutorials.mdf-Datenbank auf den Ordner "App_Data"](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
 
 **Abbildung 1**: Hinzufügen einer neuen SQL-Datenbank mit dem Namen `SecurityTutorials.mdf` -Datenbank in die `App_Data` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image3.png))
 
@@ -65,7 +65,7 @@ Im Projektmappen-Explorer mit der Maustaste auf die `App_Data` Ordner, und wähl
 Hinzufügen einer Datenbank, die `App_Data` Ordner enthält es automatisch in der Datenbank-Explorer-Ansicht. (In der nicht - Express Edition-Version von Visual Studio wird die Datenbank-Explorer den Server-Explorer bezeichnet.) Wechseln Sie zu der Datenbank-Explorer, und erweitern Sie den gerade hinzugefügten `SecurityTutorials` Datenbank. Wenn Sie Datenbank-Explorer nicht auf dem Bildschirm angezeigt werden, finden Sie unter dem Menü "Ansicht" und Datenbank-Explorer auswählen oder Strg + Alt + S drücken. Wie in Abbildung 2 gezeigt, die `SecurityTutorials` -Datenbank ist leer: er enthält keine Tabellen keine Ansichten und keine gespeicherten Prozeduren.
 
 
-[![Die SecurityTutorials-Datenbank ist derzeit leer.](creating-the-membership-schema-in-sql-server-vb/_static/image5.png)](creating-the-membership-schema-in-sql-server-vb/_static/image4.png)
+[![Ter SecurityTutorials-Datenbank ist derzeit leer](creating-the-membership-schema-in-sql-server-vb/_static/image5.png)](creating-the-membership-schema-in-sql-server-vb/_static/image4.png)
 
 **Abbildung 2**: Die `SecurityTutorials` Datenbank ist derzeit leer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image6.png))
 
@@ -100,7 +100,7 @@ Die einfachste Möglichkeit zum Ermitteln der Name der Datenbank werden über SQ
 Beginnen Sie, indem das Schließen von Visual Studio, um sicherzustellen, dass alle Sperren, die von Visual Studio auf die Datenbankdatei auferlegt werden geschlossen. Als Nächstes starten Sie SQL Server Management Studio und Herstellen einer Verbindung mit der `localhost\InstanceName` -Datenbank für SQL Server 2005 Express Edition. Wie bereits erwähnt, wahrscheinlich werden der Instanzname ist `SQLExpress`. Wählen Sie für die Authentifizierungsoption Windows-Authentifizierung.
 
 
-[![Verbinden Sie mit SQL Server 2005 Express Edition-Instanz](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
+[![CVerbinden, die SQL Server 2005 Express Edition-Instanz](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
 
 **Abbildung 3**: Verbinden mit der SQL Server 2005 Express Edition-Instanz ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image9.png))
 
@@ -110,12 +110,12 @@ Nach dem Herstellen einer Verbindung mit der SQL Server 2005 Express Edition-Ins
 Mit der rechten Maustaste auf den Ordner "Datenbanken" aus, und wählen Sie im Kontextmenü anfügen. Dadurch wird das Dialogfeld Anfügen von Datenbanken angezeigt. Von hier aus, klicken Sie auf die Schaltfläche "hinzufügen", navigieren Sie zu der `SecurityTutorials.mdf` Datenbank, und klicken Sie auf OK. Abbildung 4 zeigt das Dialogfeld Datenbanken anfügen, nachdem die `SecurityTutorials.mdf` Datenbank ausgewählt wurde. Abbildung 5 zeigt die Objekt-Explorer von Management Studio, nachdem die Datenbank wurde erfolgreich angefügt wurde.
 
 
-[![Fügen Sie die Datenbank SecurityTutorials.mdf](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
+[![ADatei anfügen der Datenbank SecurityTutorials.mdf](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
 
 **Abbildung 4**: Fügen Sie der `SecurityTutorials.mdf` Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image12.png))
 
 
-[![Die SecurityTutorials.mdf-Datenbank wird im Ordner "Datenbanken" angezeigt.](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
+[![Ter SecurityTutorials.mdf Datenbank wird angezeigt, in dem Ordner "Datenbanken"](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
 
 **Abbildung 5**: Die `SecurityTutorials.mdf` Datenbank wird in den Ordner "Datenbanken" angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image15.png))
 
@@ -123,7 +123,7 @@ Mit der rechten Maustaste auf den Ordner "Datenbanken" aus, und wählen Sie im K
 Wie in Abbildung 5 gezeigt, die `SecurityTutorials.mdf` Datenbank verfügt über einen eher abstruse Namen. Ändern Sie es in einen einprägsameren (und lässt sich einfacher eingeben) Namen. Mit der rechten Maustaste auf die Datenbank, wählen Sie im Kontextmenü der Umbenennung, und benennen Sie sie `SecurityTutorialsDatabase`. Dadurch wird der Dateiname nicht geändert, nur der Namen der Datenbank verwendet, um sich mit SQL Server zu identifizieren.
 
 
-[![Die Datenbank in SecurityTutorialsDatabase umbenennen](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
+[![Rdie Datenbank SecurityTutorialsDatabase zu eName](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
 
 **Abbildung 6**: Benennen Sie die Datenbank in `SecurityTutorialsDatabase`([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image18.png))
 
@@ -137,7 +137,7 @@ Zum Starten der `aspnet_regsql.exe` tool, wechseln Sie im Startmenü, und wähle
 Ausführen der `aspnet_regsql.exe` Tool ohne Befehlszeilenargumente wird die grafische Benutzeroberfläche für die ASP.NET SQL Server-Setup-Assistent gestartet. Der Assistent erleichtert das Hinzufügen oder entfernen die ASP.NET-Anwendungsdienste für eine angegebene Datenbank. Im erste Bildschirm des Assistenten dargestellt in Abbildung 7: Beschreibt den Zweck des Tools.
 
 
-[![Verwenden Sie die ASP.NET SQL Server-Setup-Assistent erleichtert des Mitgliedschaftsschemas hinzufügen](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
+[![USE die ASP.NET SQL Server-Setup-Assistent nimmt des Mitgliedschaftsschemas hinzufügen](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
 
 **Abbildung 7**: Verwenden Sie die ASP.NET SQL Server-Setup-Assistent macht des Mitgliedschaftsschemas hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image21.png))
 
@@ -145,7 +145,7 @@ Ausführen der `aspnet_regsql.exe` Tool ohne Befehlszeilenargumente wird die gra
 Der zweite Schritt im Assistenten werden wir gefragt, gibt an, ob wir die Anwendungsdienste hinzufügen oder entfernen möchten. Da wir die Tabellen, Sichten und gespeicherte Prozeduren, die für möchten die `SqlMembershipProvider`, konfigurieren Sie SQL Server-Dienste-Option "Anwendung" auswählen. Später, wenn Sie dieses Schema aus der Datenbank entfernen möchten, führen Sie diesen Assistenten erneut aus, aber stattdessen wählen Sie Anwendungsinformationen Services entfernen aus einer vorhandenen Datenbankoption aus.
 
 
-[![Wählen Sie die Konfiguration von SQLServer für die Anwendung der Option "Services"](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
+[![CWählen Sie aus der SQLServer konfigurieren, für die Anwendung der Option "Services"](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
 
 **Abbildung 8**: Wählen Sie das Konfigurieren von SQL Server für die Anwendung der Option "Services" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image24.png))
 
@@ -157,7 +157,7 @@ Der dritte Schritt aufgefordert, die Datenbankinformationen: den Namen des Serve
 - Datenbank: `SecurityTutorialsDatabase`
 
 
-[![Geben Sie die Datenbankinformationen](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
+[![EGeben Sie die Datenbankinformationen](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
 
 **Abbildung 9**: Geben Sie die Datenbankinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image27.png))
 
@@ -170,7 +170,7 @@ Nach dem Eingeben der Informationen zur Datenbank, klicken Sie auf "Weiter". Der
 Nach Abschluss des Assistenten zu Visual Studio zurück, und navigieren Sie zu der Datenbank-Explorer. Erweitern Sie den Ordner "Tabellen". Daraufhin sollte eine Reihe von Tabellen, deren Namen mit dem Präfix beginnen `aspnet_`. Ebenso kann eine Vielzahl von Ansichten und gespeicherte Prozeduren in den Ansichten und gespeicherte Prozeduren Ordnern gefunden werden. Diese Datenbankobjekte bilden zusammen das Dienstschema für die Anwendung. Untersuchen wir die Mitgliedschaft und Rollen-spezifischer Datenbankobjekte in Schritt 3.
 
 
-[![Eine Vielzahl von Tabellen, Sichten und gespeicherten Prozeduren der Datenbank hinzugefügt wurden](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
+[![A Vielzahl von Tabellen, Sichten und gespeicherten Prozeduren wurden hinzugefügt, mit der Datenbank](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
 
 **Abbildung 10**: Eine Vielzahl von Tabellen, Sichten und gespeicherten Prozeduren wurden hinzugefügt, die Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image30.png))
 
@@ -191,7 +191,7 @@ Angesichts konnte wir zuverlässig die Mitgliedschaft und Rollen Frameworks verw
 Die Mitgliedschaft und Rollen Frameworks sind so entworfen, dass viele verschiedene Anwendungen ein einzelnen Benutzer und die Rolle der Speicher freigegeben werden kann. Eine ASP.NET-Anwendung, die die Mitgliedschaft oder Rollen-Frameworks verwendet, muss zu verwenden, welche Anwendungspartition angeben. Kurz gesagt, können sich mehrere Webanwendungen auf den gleichen Speicher für Benutzer und die Rolle aus. Abbildung 11 zeigt Benutzer und die Rolle speichert, die in drei Anwendungen partitioniert sind: HRSite CustomerSite und SalesSite. Diese drei Webanwendungen, jeweils ihre eigenen eindeutigen Benutzer und Rollen haben, aber physisch speichern sie alle ihre Benutzer-Konto und die entsprechende Informationen in den gleichen Datenbanktabellen.
 
 
-[![Benutzerkonten können über mehrere Anwendungen hinweg partitioniert werden](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
+[![USer Konten möglicherweise werden partitioniert, über mehrere Anwendungen](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
 
 **Abbildung 11**: Benutzer Konten möglicherweise werden partitioniert, über mehrere Anwendungen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
 
@@ -342,7 +342,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Herunterladen von SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 - [Untersuchen von ASP.NET 2.0 s Mitgliedschaft, Rollen und Profile](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Die `<add>` -Element für Providers für Membership](https://msdn.microsoft.com/library/whae3t94.aspx)
-- [Die `<membership>` Element](https://msdn.microsoft.com/library/1b9hw62f.aspx)
+- [Das `<membership>`-Element](https://msdn.microsoft.com/library/1b9hw62f.aspx)
 - [Die `<providers>` -Element für Mitgliedschaft](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [Mithilfe von `<clear />` beim Hinzufügen von Anbietern](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
 - [Direktes Arbeiten mit der `SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)

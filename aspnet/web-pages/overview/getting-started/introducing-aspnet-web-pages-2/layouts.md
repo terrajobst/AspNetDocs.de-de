@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: a6a007678d58547e9987ebda46bd08ae8aea66f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046177"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390414"
 ---
-<a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Einführung in ASP.NET Web Pages - Erstellen eines konsistenten Layouts
-====================
+# <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Einführung in ASP.NET Web Pages - Erstellen eines konsistenten Layouts
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Tutorial erfahren Sie, wie Sie mit *Layouts* ein einheitliches Aussehen für die Seiten auf einer Website zu erstellen, die ASP.NET Web Pages verwendet. Es wird vorausgesetzt, Sie haben die Reihe über [Löschen von Daten in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251584).
@@ -146,7 +146,7 @@ Diese Informationen zu Softwaretiteln ist generisch. Nehmen wir an, dass das Tit
 
 Die `Page` Objekt steht für alle *.cshtml* Seiten und ist für diesen Zweck, d. h. zum Freigeben von Informationen zwischen einer Seite und des Layouts.
 
-Öffnen der<em>\_Layout.cshtml</em> Seite. Ändern der `<title>` Element so, dass die It wie dieses Markup hinzu:
+Öffnen der  *\_Layout.cshtml* Seite. Ändern der `<title>` Element so, dass die It wie dieses Markup hinzu:
 
 [!code-html[Main](layouts/samples/sample9.html)]
 

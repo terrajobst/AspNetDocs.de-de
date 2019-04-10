@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ee9cdf19769ea63388fd9dd18a82bb2b4dcdef87
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd5433b724dcafe8e816254523cb4b38c3be1104
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027347"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403167"
 ---
-<a name="custom-formatting-based-upon-data-c"></a>Benutzerdefinierte Formatierung auf Datenbasis (C#)
-====================
+# <a name="custom-formatting-based-upon-data-c"></a>Benutzerdefinierte Formatierung auf Datenbasis (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_11_CS.exe) oder [PDF-Datei herunterladen](custom-formatting-based-upon-data-cs/_static/datatutorial11cs1.pdf)
@@ -49,7 +49,7 @@ Benutzerdefinierter Logik kann unmittelbar auf die Schritte 1 und 3 über einen 
 Nachdem Sie dem ObjectDataSource-Steuerelement zur DetailsView gebunden haben, können Sie die Feldliste zu ändern. Ich habe mich entschieden habe, zum Entfernen der `ProductID`, `SupplierID`, `CategoryID`, `UnitsInStock`, `UnitsOnOrder`, `ReorderLevel`, und `Discontinued` BoundFields umbenannt, und die verbleibenden BoundFields umformatiert. Ich ebenfalls deaktiviert die `Width` und `Height` Einstellungen. Da DetailsView nur einen einzelnen Datensatz angezeigt wird, müssen wir Paging zu aktivieren, damit dem Benutzer alle Produkte anzeigen können. Klicken Sie dazu das Kontrollkästchen Paging aktivieren im DetailsView Smarttag.
 
 
-[![Überprüfen Sie das Aktivieren von Paging im DetailsView Smarttag](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
+[![Czum Teufel ist das Aktivieren der Auslagerungsdatei Kontrollkästchen in DetailsView Smarttag](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
 
 **Abbildung 1**: Das Kontrollkästchen aktivieren Sie Paging im DetailsView Smarttag ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ Nach diesen Änderungen werden das DetailsView-Markup:
 Nehmen Sie einen Moment Zeit, um diese Seite in Ihrem Browser zu testen.
 
 
-[![DetailsView-Steuerelement wird ein Produkt zu einem Zeitpunkt angezeigt.](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
+[![Ter ein Produkt im DetailsView-Steuerelement zeigt jeweils](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
 
 **Abbildung 2**: Das DetailsView-Steuerelement zeigt ein Produkt zu einem Zeitpunkt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image6.png))
 
@@ -120,12 +120,12 @@ Klicken Sie auf die `DataBound` -Ereignishandler festgelegt, der Zelle `CssClass
 Beim Anzeigen von Chai entspricht, die weniger als $75,00 kostet, ist der Preis in normaler Schriftart angezeigt (siehe Abbildung 4). Allerdings beim Anzeigen von Mishi Kobe Niku, die einen Preis von $97.00 verfügt, der Preis wird in einer Schriftart fett, kursiv (siehe Abbildung 5).
 
 
-[![Weniger als $75,00 Preise werden in normaler Schrift angezeigt](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
+[![Prices weniger als $75,00 werden in normaler Schrift angezeigt.](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
 
 **Abbildung 4**: Weniger als $75,00 Preise werden in normaler Schriftart angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image10.png))
 
 
-[![Teuersten Produkte Preise werden in einem fett, kursiv Schriftart angezeigt.](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
+[![EXpensive Produkte Preise werden in einem fett, kursiv Schriftart angezeigt](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
 
 **Abbildung 5**: Teuersten Produkte Preise werden in einem fett, kursiv Schriftart angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image13.png))
 
@@ -192,12 +192,12 @@ Nachdem wir einen programmgesteuerten Verweis auf das Websteuerelement haben, k�
 Abbildung 7 zeigt FormView beim Anzeigen eines Produkts, dessen `UnitsInStock` Wert ist größer als 10 ist, während das Produkt in Abbildung 8 die kleiner als 10 ist.
 
 
-[![Für Produkte mit einer ausreichend großen Units In Stock ist keine benutzerdefinierte Formatierung angewendet](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
+[![Foder Produkte mit einer ausreichend großen Units In Stock, die keine benutzerdefinierte Formatierung wird angewendet.](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
 
 **Abbildung 7**: Für Produkte mit einer ausreichend großen Units In Stock, ohne benutzerdefinierte Formatierung angewendet wird ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image17.png))
 
 
-[![Die Einheiten im Lager Anzahl wird für diese Produkte mit Werten von 10 oder weniger in Rot angezeigt](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
+[![Ter Units in Stock-Anzahl ist für diese Produkte mit Werte von 10 oder weniger in Rot angezeigt](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
 
 **Abbildung 8**: Die Einheiten im Lager Anzahl wird für diese Produkte mit Werten von 10 oder weniger in Rot angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image20.png))
 
@@ -243,7 +243,7 @@ Hinzufügen einer GridView-Ansicht unterhalb der FormView-Steuerelement aus dem 
 Abbildung 9 zeigt unseren Fortschritt bis zum angegebenen Zeitpunkt aus, wenn Sie über einen Browser angezeigt.
 
 
-[![Das GridView enthält der Name, Kategorie und Preis für jedes Produkt](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
+[![Tin der GridView werden aufgelistet, der Name, Kategorie und Preis für jedes Produkt](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
 
 **Abbildung 9**: GridView enthält der Name, Kategorie und Preis für jedes Produkt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image23.png))
 
@@ -260,7 +260,7 @@ Dieser Ereignishandler kann mit der gleichen Reihe von Schritten wie FormView un
 **Abbildung 10**: Erstellen Sie einen Ereignishandler für der GridView `RowDataBound` Ereignis
 
 
-Erstellen auf diese Weise die-Ereignishandler führt dazu, dass den folgenden Code Codeteil der ASP.NET-Seite automatisch hinzugefügt werden:
+Erstellen den Ereignishandler auf diese Weise führt dazu, dass den folgenden Code Codeteil der ASP.NET-Seite automatisch hinzugefügt werden:
 
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample14.cs)]
@@ -299,7 +299,7 @@ Anstatt die `GridViewRow`des `BackColor` Eigenschaft direkt wir bleiben zunächs
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample18.cs)]
 
 
-[![Die meisten kostengünstige Produkte sind gelb hervorgehoben](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
+[![Tseine am häufigsten kostengünstige Produkte sind gelb hervorgehoben.](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
 
 **Abbildung 11**: Die meisten kostengünstige Produkte sind gelb hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-cs/_static/image27.png))
 
@@ -323,4 +323,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führen Sie Prüfer für dieses Tutorial wurden E.R. Gärtner ein, Dennis Patterson und Dan Jagers. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](using-templatefields-in-the-gridview-control-cs.md)
+> [Weiter](using-templatefields-in-the-gridview-control-cs.md)

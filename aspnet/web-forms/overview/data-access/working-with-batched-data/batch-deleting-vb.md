@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ec3560f31f2def1801f9d09b3b583de6cdabc834
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b6a2450dd824396e1540b52395022f48e41aab70
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403050"
 ---
-<a name="batch-deleting-vb"></a>Löschen in Batches (VB)
-====================
+# <a name="batch-deleting-vb"></a>Löschen in Batches (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_65_VB.zip) oder [PDF-Datei herunterladen](batch-deleting-vb/_static/datatutorial65vb1.pdf)
@@ -31,7 +31,7 @@ Die [vorherigen Lernprogramm](batch-updating-vb.md) haben, wie Sie einen Batch b
 Jeder Benutzer, der einen online-e Mailclient verwendet hat ist bereits mit einer der am häufigsten verwendeten Batches löschen Schnittstellen vertraut sind: ein Kontrollkästchen in den einzelnen Zeilen in einem Raster mit einer entsprechenden alle markierte Elemente löschen Schaltfläche (siehe Abbildung 1). In diesem Tutorial ist recht kurz da wir haben bereits erfolgt alle aufwändigen arbeiten in vorherigen Tutorials zum Erstellen sowohl die webbasierte Schnittstelle und eine Methode, um eine Reihe von Datensätzen als einzelnen atomaren Vorgang zu löschen. In der [Hinzufügen einer GridView-Spalte mit Kontrollkästchen](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb.md) Tutorial wir einer GridView-Ansicht, mit einer Spalte mit Kontrollkästchen und in erstellt der [Umschließen von Datenbankänderungen innerhalb einer Transaktion](wrapping-database-modifications-within-a-transaction-vb.md) Tutorial, die wir erstellt, eine Methode in haben die BLL, die eine Transaktion, zum Löschen verwenden würden einer `List<T>` von `ProductID` Werte. In diesem Tutorial haben wir bauen auf und merge unserer früheren Erfahrungen bei der um einen funktionierenden Batch löschen Beispiel zu erstellen.
 
 
-[![Jede Zeile enthält ein Kontrollkästchen](batch-deleting-vb/_static/image1.gif)](batch-deleting-vb/_static/image1.png)
+[![Ean-Zeile enthält ein Kontrollkästchen](batch-deleting-vb/_static/image1.gif)](batch-deleting-vb/_static/image1.png)
 
 **Abbildung 1**: Jede Zeile enthält ein Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](batch-deleting-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ Jeder Benutzer, der einen online-e Mailclient verwendet hat ist bereits mit eine
 Da wir bereits den löschen-Schnittstelle in Batch erstellt den [Hinzufügen einer GridView-Spalte mit Kontrollkästchen](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb.md) Tutorial, wir können einfach kopieren, damit `BatchDelete.aspx` anstelle von Grund auf neu erstellen. Öffnen Sie zunächst die `BatchDelete.aspx` auf der Seite die `BatchData` Ordner und die `CheckBoxField.aspx` auf der Seite die `EnhancedGridView` Ordner. Von der `CheckBoxField.aspx` Seite, wechseln Sie zur Quellansicht, und kopieren Sie das Markup zwischen den `<asp:Content>` tags wie in Abbildung 2 dargestellt.
 
 
-[![Kopieren Sie CheckBoxField.aspx deklarative Markup in die Zwischenablage](batch-deleting-vb/_static/image2.gif)](batch-deleting-vb/_static/image3.png)
+[![Copieren deklaratives Markup CheckBoxField.aspx in die Zwischenablage](batch-deleting-vb/_static/image2.gif)](batch-deleting-vb/_static/image3.png)
 
 **Abbildung 2**: Kopieren Sie deklarativen Markup `CheckBoxField.aspx` in die Zwischenablage ([klicken Sie, um das Bild in voller Größe anzeigen](batch-deleting-vb/_static/image4.png))
 
@@ -54,7 +54,7 @@ Navigieren Sie anschließend auf die Datenquellensicht `BatchDelete.aspx` , und 
 Nach dem Kopieren über die deklarativen Markup und Quellcode in Ruhe testen `BatchDelete.aspx` es über einen Browser anzeigen. Daraufhin sollte eine GridView, die die ersten zehn Produkte in einer GridView-Ansicht, in dem jede Zeile mit dem Auflisten der Produktname s, Kategorie und Preis sowie ein Kontrollkästchen auflisten. Es sollten drei Schaltflächen vorhanden sein: Überprüft alle, alle deaktivieren und löschen Sie die ausgewählten Produkte. Alle Kontrollkästchen, auf die Schaltfläche "alle" ausgewählt werden, während alle deaktivieren Sie alle Kontrollkästchen löscht. Löschen ausgewählter Produkte auf wird eine Meldung angezeigt, die auflistet der `ProductID` Werte der ausgewählten Produkte, aber nicht tatsächlich die Produkte gelöscht werden.
 
 
-[![Die Schnittstelle aus CheckBoxField.aspx wurde auf BatchDeleting.aspx verschoben](batch-deleting-vb/_static/image3.gif)](batch-deleting-vb/_static/image5.png)
+[![Ter Schnittstelle vom CheckBoxField.aspx wurde auf BatchDeleting.aspx verschoben](batch-deleting-vb/_static/image3.gif)](batch-deleting-vb/_static/image5.png)
 
 **Abbildung 3**: Die Schnittstelle aus `CheckBoxField.aspx` wurde in `BatchDeleting.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](batch-deleting-vb/_static/image6.png))
 
@@ -82,12 +82,12 @@ Der aktualisierte Code erstellt eine `List(Of T)` des Typs `Integer` (`productID
 Abbildung 4 zeigt die GridView, nachdem eine Anzahl von Zeilen zum Löschen ausgewählt wurden. Abbildung 5 zeigt den Bildschirm sofort, nachdem die ausgewählten Produkte löschen-Schaltfläche geklickt wurde. Beachten Sie, dass in Abbildung 5 die `ProductID` Werte von der gelöschten Datensätze werden angezeigt, in der Beschriftung unter GridView und die Zeilen sind nicht mehr in den GridView-Ansicht.
 
 
-[![Die ausgewählten Produkte werden gelöscht](batch-deleting-vb/_static/image4.gif)](batch-deleting-vb/_static/image7.png)
+[![Ter ausgewählte Projekte werden gelöscht](batch-deleting-vb/_static/image4.gif)](batch-deleting-vb/_static/image7.png)
 
 **Abbildung 4**: Die ausgewählten Produkte gelöscht werden ([klicken Sie, um das Bild in voller Größe anzeigen](batch-deleting-vb/_static/image8.png))
 
 
-[![Gelöschte Werte Produkte "ProductID" unterhalb der GridView aufgeführt](batch-deleting-vb/_static/image5.gif)](batch-deleting-vb/_static/image9.png)
+[![THE Werte gelöscht Produkte "ProductID" unterhalb der GridView aufgeführten](batch-deleting-vb/_static/image5.gif)](batch-deleting-vb/_static/image9.png)
 
 **Abbildung 5**: Die Produkte gelöscht `ProductID` Werte sind unter der GridView aufgeführt ([klicken Sie, um das Bild in voller Größe anzeigen](batch-deleting-vb/_static/image10.png))
 

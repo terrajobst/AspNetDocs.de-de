@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 4a365e58-9b18-4bd2-bfd5-6981e7f2e179
 msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
-ms.openlocfilehash: 00a91f03e05a56a3ebbe75f113b1330cffc57a99
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 68c1acdaaf1e6674f4dc3bcca0557382407ca147
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021597"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400112"
 ---
-<a name="authentication"></a>Authentifizierung
-====================
+# <a name="authentication"></a>Authentifizierung
+
 > Informationen zum Implementieren und Verwalten der Sicherheit (Authentifizierung) in einer ASP.NET-Anwendung.
 
 
@@ -33,7 +33,7 @@ ms.locfileid: "57021597"
 - [Erstellen von Benutzerkonten mit dem Assistenten zum Erstellen von Benutzern](creating-user-accounts-with-the-create-user-wizard.md)
 - [Programmgesteuertes Erstellen von Benutzerkonten](creating-user-accounts-programmatically.md)
 - [Manuelles Überprüfen von Benutzern](validating-users-manually.md)
-- [Überprüfen von Benutzern mit dem login-Steuerelement](validating-users-with-the-login-control.md)
+- [Überprüfen von Benutzern mit dem Login-Steuerelement](validating-users-with-the-login-control.md)
 - [Hinzufügen von Benutzern zum Mitgliedschaftssystem](adding-users-to-your-membership-system.md)
 - [Protokollieren von Benutzern im Mitgliedschaftssystem](logging-users-into-your-membership-system.md)
 - [Implementieren des Musters zur Überprüfung der Registrierung](implement-the-registration-verification-pattern.md)

@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 393df4a8-b1db-44c4-9db7-2b533ca887d0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 402e7ace1abad899d32ed179d6b68de4e5a129f5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045717"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387450"
 ---
-<a name="whats-new-in-the-entity-framework-40"></a>Neue Funktionen in Entity Framework 4.0
-====================
+# <a name="whats-new-in-the-entity-framework-40"></a>Neue Funktionen in Entity Framework 4.0
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
@@ -37,7 +37,7 @@ Um das Lernprogramm zu starten, starten Sie Visual Studio, und öffnen Sie die C
 
 Entity Framework, Version 3.5 enthalten Navigationseigenschaften, aber es nicht Fremdschlüssel-Eigenschaften im Datenmodell enthalten. Z. B. die `CourseID` und `StudentID` Spalten der `StudentGrade` Tabelle würde weggelassen werden die `StudentGrade` Entität.
 
-[![Image01 abgerufen wird](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
+[![Image01](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
 
 Der Grund für diesen Ansatz war, dass, genau genommen Fremdschlüssel einer physischen Implementierungsdetail und nicht in einem konzeptionellen Datenmodell gehören. Ein praktischer Tipp ist es jedoch oft einfacher, mit Entitäten im Code zu arbeiten, wenn Sie über direkten Zugriff auf die Fremdschlüssel verfügen.
 
@@ -135,7 +135,7 @@ In der **wählen Sie Ihre Datenverbindung** auf **neue Verbindung**.
 
 [![Image14](what-s-new-in-the-entity-framework-4/_static/image26.png)](what-s-new-in-the-entity-framework-4/_static/image25.png)
 
-In der **Verbindungseigenschaften** Dialogfeld Feld, wählen Sie die lokale SQL Server Express-Instanz aus, und nennen Sie die Datenbank `AlumniAsssociation`.
+In der **Verbindungseigenschaften** Dialogfeld Feld, wählen Sie die lokale SQL Server Express-Instanz aus, und nennen Sie die Datenbank `AlumniAssociation`.
 
 [![Image15](what-s-new-in-the-entity-framework-4/_static/image28.png)](what-s-new-in-the-entity-framework-4/_static/image27.png)
 
@@ -210,4 +210,4 @@ Dadurch wird die Übersicht, was neu im Entity Framework und dieser Vorgang wird
 - [Ankündigung der Version von Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) des Entwicklungsteams Entity Framework-Blogbeitrag zu neuen Funktionen in Version 4.
 
 > [!div class="step-by-step"]
-> [Vorherige](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [Vorheriges](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

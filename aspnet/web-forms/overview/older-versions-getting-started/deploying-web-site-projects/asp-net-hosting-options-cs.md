@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3adad579c5893fb4f40e7043b9ece78740080f65
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 90285eac8e45d542c4ccca3e3db00493546aac57
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061387"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398448"
 ---
-<a name="aspnet-hosting-options-c"></a>Optionen zum Hosten von ASP.NET (C#)
-====================
+# <a name="aspnet-hosting-options-c"></a>Optionen zum Hosten von ASP.NET (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [PDF herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial01_Basics_cs.pdf)
@@ -93,4 +93,4 @@ Viel Spaß beim Programmieren!
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Teresa Murphy. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
 > [!div class="step-by-step"]
-> [Nächste](determining-what-files-need-to-be-deployed-cs.md)
+> [Weiter](determining-what-files-need-to-be-deployed-cs.md)

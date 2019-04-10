@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 98c78dad-22bf-45cd-807e-c2f3f59011b9
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext
 msc.type: chapter
-ms.openlocfilehash: acf0e31e487733a99b1c7b02a1a773c61ffc12b9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3b3efb3d5356d6009b86b93405de2cd8d8cddd43
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024067"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404233"
 ---
-<a name="aspnet-45"></a>ASP.NET 4.5
-====================
+# <a name="aspnet-45"></a>ASP.NET 4.5
+
 > Informationen zu neuen Web Forms-Funktionen in ASP.NET 4.5 eingeführt.
 
 

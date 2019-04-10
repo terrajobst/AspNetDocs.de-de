@@ -8,15 +8,15 @@ ms.date: 03/13/2008
 ms.assetid: b041ea07-a174-4a57-b2a8-4ce64232bdae
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures
 msc.type: video
-ms.openlocfilehash: ab88bf56d3f63a562a121dc7523ad221dc5c68cf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b91234b1e0c163a2f6350e93e775864e32218cc0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048857"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390323"
 ---
-<a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a>Gewusst wie: LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren
-====================
+# <a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a>Gewusst wie: LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren
+
 durch [Scott Stanfield](https://github.com/scottstanfield)
 
 Überschreiben Sie die generierte ORM-Update/Delete/Insert-Logik durch Ihre eigenen mithilfe von gespeicherten Prozeduren. Das Video zeigt auch im Detail wie der SQL Profiler verwenden, um die Änderungen in der ORM aus generierte SQL, unsere benutzerdefinierte gespeicherte SQL-Prozeduren zu überwachen. Da wir nur SQL schreiben, gelten die gleichen Techniken, mit c# und VB-Entwickler.

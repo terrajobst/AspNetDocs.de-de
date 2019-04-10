@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: Zwei-Faktor-Authentifizierung, die mithilfe von SMS und e-Mail-Adresse mit ASP.NET Identity | Microsoft-Dokumentation
+title: Zweistufige Authentifizierung mithilfe von SMS und e-Mails mit ASP.NET Identity - ASP.NET 4.x
 author: HaoK
 description: Dieses Tutorial zeigt Ihnen, wie Sie die zweistufige Authentifizierung (2FA) mithilfe von SMS und e-Mail-Adresse einrichten. Dieser Artikel von Rick Anderson geschrieben wurde ( @RickAndMSFT ), Pr...
 ms.author: riande
 ms.date: 09/15/2015
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4b253923696e35e59c196578a232f53c11671d16
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043167"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395289"
 ---
-<a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>Zwei-Faktor-Authentifizierung, die mithilfe von SMS und e-Mail-Adresse mit ASP.NET Identity
-====================
+# <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>Zwei-Faktor-Authentifizierung, die mithilfe von SMS und e-Mail-Adresse mit ASP.NET Identity
+
 by [Hao Kung](https://github.com/HaoK), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
 
 > Dieses Tutorial zeigt Ihnen, wie Sie die zweistufige Authentifizierung (2FA) mithilfe von SMS und e-Mail-Adresse einrichten.
@@ -52,8 +53,8 @@ In diesem Abschnitt verwenden Sie NuGet das Herunterladen eines Beispiels, mit d
    In diesem Tutorial verwenden wir [SendGrid](http://sendgrid.com/) zum Senden von e-Mails und [Twilio](https://www.twilio.com/) oder [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) für Sms Hilfsmittel. Die `Identity.Samples` Paket wird installiert, den wir arbeiten mit Code.
 3. Legen Sie die [Projekt für die Verwendung von SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 4. *Optional:* Befolgen Sie die Anweisungen in Mein [e-Mail-Bestätigung Tutorial](account-confirmation-and-password-recovery-with-aspnet-identity.md) SendGrid einbinden und führen Sie die app, und ein e-Mail-Konto zu registrieren.
-5. * Optional: * den Link zur Bestätigungscode der Demo-e-Mail aus dem Beispiel zu entfernen (die `ViewBag.Link` Code im Kontocontroller. Finden Sie unter den `DisplayEmail` und `ForgotPasswordConfirmation` Aktionsmethoden und Razor-Ansichten).
-6. <em>Optional: * Entfernen der `ViewBag.Status` Code aus die Controller verwalten und das Konto und die *Views\Account\VerifyCode.cshtml</em> und <em>Views\Manage\VerifyPhoneNumber.cshtml</em> Razor-Ansichten. Alternativ können Sie halten die `ViewBag.Status` So testen die Funktionsweise dieser app lokal ohne zu verknüpfen und Senden von e-Mail und SMS-Nachrichten an.
+5. *Optional:* Entfernen Sie den Democode e-Mail-Link zur Bestätigung aus dem Beispiel (das `ViewBag.Link` Code im Kontocontroller. Finden Sie unter den `DisplayEmail` und `ForgotPasswordConfirmation` Aktionsmethoden und Razor-Ansichten).
+6. *Optional:* Entfernen Sie die `ViewBag.Status` Code aus die Controller verwalten und das Konto und die *Views\Account\VerifyCode.cshtml* und *Views\Manage\VerifyPhoneNumber.cshtml* Razor-Ansichten. Alternativ können Sie halten die `ViewBag.Status` So testen die Funktionsweise dieser app lokal ohne zu verknüpfen und Senden von e-Mail und SMS-Nachrichten an.
 
 > [!NOTE]
 > Warnung: Wenn Sie die Sicherheitseinstellungen in diesem Beispiel ändern, müssen Produktionen apps eine sicherheitsüberprüfung unterzogen werden, die explizit, die Änderungen vorgenommen aufruft.
@@ -281,6 +282,6 @@ Obwohl Sie die kontosperrung auf Anmeldefehler in Verbindung mit Kennwort Versuc
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) außerdem gezeigt, wie der Tabelle Informationen zum Profil hinzufügen.
 - [ASP.NET MVC und Identität 2.0: Die Grundlagen](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) von John Atten.
 - [Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [Einführung zu ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
+- [Einführung in ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
 - [Ankündigung der RTM-Version von ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) von Pranav Rastogi.
 - [ASP.NET Identity 2.0: Einrichten der Kontoüberprüfung und zwei-Faktor-Autorisierung](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) von John Atten.

@@ -8,15 +8,15 @@ ms.date: 11/17/2011
 ms.assetid: b83ab819-2b05-4776-b7b4-79ef78d457a5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ca7aa9070da98b8790ed8791dd009580fc6a4191
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ce49baeca3fd5fe13476ea538e88f3e19dbb6c7b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041007"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382562"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellung in der Produktionsumgebung - 7 von 12
-====================
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellung in der Produktionsumgebung - 7 von 12
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 [Startprojekt herunterladen](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
@@ -57,7 +57,7 @@ Nachdem das Konto erstellt wurde, erhalten Sie in der Regel eine e-Mail zur Begr
     [![Welcome_Email_Temporary_URL](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image6.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image5.png)
 - Informationen zum Einrichten von Datenbanken und die Verbindungszeichenfolgen, die Sie benötigen, um darauf zugreifen:
 
-    [![Welcome_Email_Database_Info](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image7.png)
+    [![WElcome_Email_Database_Info](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image7.png)
 - Informationen zu Tools und Einstellungen für das Bereitstellen einer Website. (Die e-Mail in Cytanium erwähnt auch WebMatrix, das hier ausgelassen wird).
 
     [![Welcome_Email_Deploy_info](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image10.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image9.png)
@@ -68,7 +68,7 @@ E-Mail zur Begrüßung Cytanium enthält einen Link zu Anweisungen zum Ändern d
 
 Wechseln Sie zu der die systemsteuerungs-URL. Nach der Anmeldung mit Ihrem Benutzernamen und Kennwort sehen Sie die Systemsteuerung.
 
-[![Cytanium_Control_Panel](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image12.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image11.png)
+[![CYtanium_Control_Panel](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image12.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image11.png)
 
 In der **Hosting Leerzeichen** , halten Sie den Zeiger über das Symbol "Web" und wählen Sie **Websites** aus dem Menü.
 
@@ -177,9 +177,9 @@ Sie können Berechtigungen für Ordner in der Systemsteuerung Cytanium festlegen
 
 [![Cytanium_Control_Panel_with_File_Manager_selected](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image35.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image34.png)
 
-In der **Manager für Dateiserver** Kontrollkästchen **contosouniversity.com** und dann **Wwwrooot** zum Stammordner der Anwendung finden Sie unter. Klicken Sie auf das Schlosssymbol neben **Elmah**.
+In der **Manager für Dateiserver** Kontrollkästchen **contosouniversity.com** und dann **"Wwwroot"** zum Stammordner der Anwendung finden Sie unter. Klicken Sie auf das Schlosssymbol neben **Elmah**.
 
-[![Cytanium_Control_Panel_File_Manager_at_root_folder](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image37.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image36.png)
+[![CYtanium_Control_Panel_File_Manager_at_root_folder](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image37.png)](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image36.png)
 
 In der **Datei**/**Ordnerberechtigungen** wählen Sie im Fenster der **lesen** und **schreiben** Kontrollkästchen für  **contosouniversity.com** , und klicken Sie auf **Festlegen von Berechtigungen**.
 

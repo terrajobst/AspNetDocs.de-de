@@ -8,15 +8,15 @@ ms.date: 07/24/2008
 ms.assetid: e332a1e0-226d-40ad-be99-96f13ecaec24
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility
 msc.type: video
-ms.openlocfilehash: 07fa077f75034e5bb52e85e202b26b32e3822b77
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1b58f217716ecbc037aae736fd323bb7da8afbdd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055437"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398142"
 ---
-<a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[Gewusst wie:] Verwenden der Fixednames-Option mit dem Hilfsprogramm für Compiler für maximale Flexibilität
-====================
+# <a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[Gewusst wie:] Verwenden der Fixednames-Option mit dem Hilfsprogramm für Compiler für maximale Flexibilität
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem Video erfahren Chris Pels, wie zum Verwenden der Fixednames-Option mit dem Aspnet\_compiler.exe-Hilfsprogramm, um eine konsistente Datei erzeugen Namen in der Kompilierungsausgabe. Zunächst sehen wie die Kompilierung von der Aspnet Ausgabe\_compiler.exe-Hilfsprogramm generiert für eine ASP.NET-Website Ausgabedateien, die die verschiedenen Komponenten, einschließlich Seiten, Designs und der Ordner am Standort darstellen. Finden Sie, wie die Komponenten benannt werden und was sie in Bezug auf die ursprüngliche Website enthalten. Klicken Sie dann, finden Sie unter der Fixednames-Option verwenden, um die Standardisierung der Ausgabedateinamen basierend auf die Quelldateien auf denen sie basieren. Als Nächstes lernen Sie Überlegungen zur Verwendung aller die Kompilierungsoptionen, bei der Bereitstellung von Updates für kompilierte Website konzentrieren, welche Komponenten am ehesten aktualisiert werden.

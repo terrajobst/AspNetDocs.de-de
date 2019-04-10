@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: c99bbc72-d4de-41ed-92a4-9a4632368363
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ffefed61e259994990315d17a545ef74074092a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b8160c6f5ac090e120e86f4273749b756857967e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385708"
 ---
-<a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>Erstellen einen numerischen UpAndDown-Steuerelements mit einem Webdienst-Back-End (C#)
-====================
+# <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>Erstellen einen numerischen UpAndDown-Steuerelements mit einem Webdienst-Back-End (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/numericupdown1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/numericupdown1CS.pdf)
@@ -54,9 +54,9 @@ Hier ist das vollständige Markup für die Seite:
 Wenn Sie auf die Seite ausführen, beachten Sie, wie der Wert in das Textfeld immer verdoppelt sich, beim Klicken Sie auf die Schaltfläche "oben", und wird beim Klicken auf die untere Schaltfläche halbiert.
 
 
-[![Nur Zahlen, die eine Potenz von 2 angezeigt werden.](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
+[![Our-Zahlen, die eine Potenz von 2 angezeigt werden](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
 
 Nur Zahlen, die eine Potenz von 2 angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)
+> [Weiter](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)

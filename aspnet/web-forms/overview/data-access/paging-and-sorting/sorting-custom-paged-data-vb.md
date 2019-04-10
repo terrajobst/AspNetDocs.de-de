@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 4823a186-caaf-4116-a318-c7ff4d955ddc
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f40c2632e98dd8c64c985e44478a9739df473ca
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ca1bf281130bf2c726b6147f90733c8a83754563
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423131"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399581"
 ---
-<a name="sorting-custom-paged-data-vb"></a>Sortieren von benutzerdefinierten ausgelagerten Daten (VB)
-====================
+# <a name="sorting-custom-paged-data-vb"></a>Sortieren von benutzerdefinierten ausgelagerten Daten (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_VB.exe) oder [PDF-Datei herunterladen](sorting-custom-paged-data-vb/_static/datatutorial26vb1.pdf)
@@ -71,7 +71,7 @@ Testen mit unterschiedlichen Werten für diese gespeicherte Prozedur in Ruhe die
 **Abbildung 1**: Testen Sie verschiedene Werte für die gespeicherte Prozedur s drei Eingabeparameter
 
 
-[![Die gespeicherte Prozedur s werden Ergebnisse im Ausgabefenster angezeigt.](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
+[![Tdie gespeicherte Prozedur s HE werden die Ergebnisse im Ausgabefenster angezeigt](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
 
 **Abbildung 2**: Die gespeicherte Prozedur s Ergebnisse werden im Ausgabefenster angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-vb/_static/image4.png))
 
@@ -145,7 +145,7 @@ Zum Aktivieren der Sortierung in den GridView-Ansicht aktivieren Sie einfach die
 Abbildung 7 zeigt die erste Seite der Ergebnisse sortiert nach der `UnitPrice` in aufsteigender Reihenfolge.
 
 
-[![Die Ergebnisse sind nach den Einzelpreis sortiert.](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
+[![TIE-Ergebnisse werden nach den Einzelpreis sortiert](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
 
 **Abbildung 7**: Die Ergebnisse werden nach den Einzelpreis sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-vb/_static/image11.png))
 
@@ -166,7 +166,7 @@ Diese Ausnahme tritt auf, weil die `SortExpression` der GridView Zuordnungsvorg�
 **Abbildung 9**: Ändern Sie die Lieferantenname BoundField-s SortExpression CompanyName
 
 
-[![Die Ergebnisse können jetzt Lieferant sortiert werden](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
+[![Ter Ergebnisse können jetzt Lieferant sortiert werden](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
 
 **Abbildung 10**: Die Ergebnisse können jetzt sortiert werden vom Lieferanten ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-vb/_static/image16.png))
 

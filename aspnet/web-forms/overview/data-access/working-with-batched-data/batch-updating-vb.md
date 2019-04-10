@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dc40c056aa951b94ca0af2af339d9c7987ffd987
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d1809c869253ecb454e427a5092015a69009da5c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426028"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386943"
 ---
-<a name="batch-updating-vb"></a>Aktualisieren in Batches (VB)
-====================
+# <a name="batch-updating-vb"></a>Aktualisieren in Batches (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_64_VB.zip) oder [PDF-Datei herunterladen](batch-updating-vb/_static/datatutorial64vb1.pdf)
@@ -31,7 +31,7 @@ In der [vorherigen Lernprogramm](wrapping-database-modifications-within-a-transa
 In diesem Tutorial Erstellen einer GridView-Ansicht wir, in dem jede Zeile bearbeitet werden (siehe Abbildung 1) ist. Da jede Zeile in der Bearbeitung Oberfläche, dort s keine Notwendigkeit für eine Spalte mit der Bearbeitung gerendert wird, aktualisieren Sie und Abbrechen Sie (Schaltflächen). Stattdessen, es gibt zwei Produkte aktualisieren Schaltflächen auf der Seite, die beim Klicken auf die GridView Zeilen aufgelistet, und Aktualisieren der Datenbank.
 
 
-[![Jede Zeile in der GridView-Ansicht ist bearbeitbar](batch-updating-vb/_static/image1.gif)](batch-updating-vb/_static/image1.png)
+[![Ean-Zeile in der GridView-Ansicht ist bearbeitbar](batch-updating-vb/_static/image1.gif)](batch-updating-vb/_static/image1.png)
 
 **Abbildung 1**: Jede Zeile in der GridView-Ansicht ist bearbeitbar ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image2.png))
 
@@ -57,12 +57,12 @@ In den nächsten Schritten vollständig bearbeitbare GridView erstellen wir. In 
 Bevor wir fürchten, zum Erstellen einer GridView-Ansicht, in denen Zeilen sind, können bearbeitet werden, können zunächst einfach die Produktinformationen s. Öffnen der `BatchUpdate.aspx` auf der Seite die `BatchData` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox in den Designer. Legen Sie die GridView s `ID` zu `ProductsGrid` und sein Smarttag, auswählen, um die Bindung an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie das "ObjectDataSource" zum Abrufen der Daten aus der `ProductsBLL` Klasse s `GetProducts` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](batch-updating-vb/_static/image2.gif)](batch-updating-vb/_static/image3.png)
+[![CKonfigurieren der ProductsBLL-Klasse mit dem ObjectDataSource-Steuerelement](batch-updating-vb/_static/image2.gif)](batch-updating-vb/_static/image3.png)
 
 **Abbildung 2**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image4.png))
 
 
-[![Abrufen der Produktdaten mithilfe der GetProducts-Methode](batch-updating-vb/_static/image3.gif)](batch-updating-vb/_static/image5.png)
+[![REtrieve die Produktdaten an, mit der GetProducts-Methode](batch-updating-vb/_static/image3.gif)](batch-updating-vb/_static/image5.png)
 
 **Abbildung 3**: Rufen Sie die Product-Daten mithilfe der `GetProducts` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image6.png))
 
@@ -70,7 +70,7 @@ Bevor wir fürchten, zum Erstellen einer GridView-Ansicht, in denen Zeilen sind,
 Wie GridView dienen die Funktionen zur pfadänderung von "ObjectDataSource" s auf einer Basis pro Zeile. Um eine Gruppe von Datensätzen zu aktualisieren, müssen wir ein paar Codezeilen in der CodeBehind-Klasse in ASP.NET Seite "s" zu schreiben, der batches von Daten und übergibt sie an die BLL. Legen Sie daher die Dropdownlisten in der "ObjectDataSource"-s Update-, INSERT- und DELETE Registerkarten (keine). Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
+[![Su. a. die Dropdownlisten in der Update-, INSERT- und DELETE Registerkarten (keine)](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
 
 **Abbildung 4**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image8.png))
 
@@ -107,7 +107,7 @@ S Einstieg ermöglichen die `ProductName` TemplateField. Klicken Sie auf den Lin
 Fügen Sie als Nächstes einen RequiredFieldValidator auf die `ItemTemplate` um sicherzustellen, dass der Benutzer einen Wert für jeden Produktnamen s bereitstellt. Legen Sie die `ControlToValidate` Eigenschaft ProductName, die `ErrorMessage` Eigenschaft, um Sie müssen den Namen des Produkts bereitstellen. und die `Text` Eigenschaft \*. Nach dem Herstellen dieser Ergänzungen zu den `ItemTemplate`, Ihr Bildschirm sollte ähnlich wie in Abbildung 6 aussehen.
 
 
-[![Die ProductName TemplateField jetzt enthält ein Textfeld und einer RequiredFieldValidator](batch-updating-vb/_static/image6.gif)](batch-updating-vb/_static/image9.png)
+[![Ter ProductName TemplateField enthält jetzt ein TextBox-Element und ein RequiredFieldValidator](batch-updating-vb/_static/image6.gif)](batch-updating-vb/_static/image9.png)
 
 **Abbildung 6**: Die `ProductName` TemplateField enthält nun ein Textfeld und einen RequiredFieldValidator ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image10.png))
 
@@ -117,7 +117,7 @@ Für die `UnitPrice` bearbeiten-Schnittstelle, starten Sie durch Kopieren der im
 Auch eine CompareValidator zum Hinzufügen der `UnitPrice` s `ItemTemplate` um sicherzustellen, dass der vom Benutzer eingegebene Wert eine gültige Currency-Wert größer als oder gleich 0,00 US-Dollar. Legen Sie das Validierungssteuerelement s `ControlToValidate` Eigenschaft UnitPrice, dessen `ErrorMessage` Eigenschaft, um Sie müssen einen gültigen Currency-Wert eingeben. Sie lassen Währung Symbole., seine `Text` Eigenschaft, um \*, dessen `Type` Eigenschaft `Currency`, dessen `Operator` Eigenschaft, um `GreaterThanEqual`, und die zugehörige `ValueToCompare` Eigenschaft auf 0.
 
 
-[![Hinzufügen einer CompareValidator, um sicherzustellen, dass der Preis eingegeben haben ein nicht negativer Currency-Wert ist](batch-updating-vb/_static/image7.gif)](batch-updating-vb/_static/image11.png)
+[![Aeine CompareValidator, um sicherzustellen, dass der Preis eingegeben bei Dd handelt es sich um ein nicht negativer Währungswert](batch-updating-vb/_static/image7.gif)](batch-updating-vb/_static/image11.png)
 
 **Abbildung 7**: Hinzufügen einer CompareValidator, um sicherzustellen, dass der Preis eingegeben ist ein nicht negativer Währungswert ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image12.png))
 
@@ -135,12 +135,12 @@ Die Bearbeitungsschnittstelle in die `CategoryName` TemplateField s `EditItemTem
 Ziehen Sie von einem DropDownList-Steuerelement aus der Toolbox auf die `CategoryName` TemplateField s `ItemTemplate`wird durch das Festlegen der `ID` zu `Categories`. An diesem Punkt würde in der Regel die DropDownList-Steuerelementen-s-Datenquelle über sein Smarttag, definieren wir erstellen eine neue "ObjectDataSource". Dadurch wird jedoch hinzugefügt, dem ObjectDataSource-Steuerelement innerhalb der `ItemTemplate`, die führt zu einer "ObjectDataSource"-Instanz, die für jede GridView-Zeile erstellt. Stattdessen können Sie s, die außerhalb der GridView-s von TemplateFields dem ObjectDataSource-Steuerelement zu erstellen. Beendet die vorlagenbearbeitung, und ziehen Sie ein ObjectDataSource-Steuerelement aus der Toolbox in den Designer unter der `ProductsDataSource` "ObjectDataSource". Benennen Sie die neue "ObjectDataSource" `CategoriesDataSource` und konfigurieren Sie ihn zur Verwendung der `CategoriesBLL` Klasse s `GetCategories` Methode.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL-Klasse](batch-updating-vb/_static/image8.gif)](batch-updating-vb/_static/image13.png)
+[![CKonfigurieren der CategoriesBLL-Klasse mit dem ObjectDataSource-Steuerelement](batch-updating-vb/_static/image8.gif)](batch-updating-vb/_static/image13.png)
 
 **Abbildung 8**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image14.png))
 
 
-[![Rufen Sie die Kategoriedaten mithilfe der Methode GetCategories ab](batch-updating-vb/_static/image9.gif)](batch-updating-vb/_static/image15.png)
+[![REtrieve-die Kategoriedaten mithilfe der Methode GetCategories](batch-updating-vb/_static/image9.gif)](batch-updating-vb/_static/image15.png)
 
 **Abbildung 9**: Rufen Sie die Kategorie Daten mithilfe der `GetCategories` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image16.png))
 
@@ -148,7 +148,7 @@ Ziehen Sie von einem DropDownList-Steuerelement aus der Toolbox auf die `Categor
 Da diese "ObjectDataSource" nur zum Abrufen von Daten verwendet wird, legen Sie die Dropdown-Listen in die Update- und DELETE-Registerkarten, um (keine) aus. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![Gruppe der Dropdownlisten in der UPDATE und DELETE-Registerkarten, um (keine)](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
+[![Su. a. die Dropdownlisten im UPDATE und DELETE-Registerkarten, um (keine)](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
 
 **Abbildung 10**: Legen Sie die Dropdownlisten im aktualisieren und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image18.png))
 
@@ -161,7 +161,7 @@ Nach Abschluss des Assistenten, der `CategoriesDataSource` s deklaratives Markup
 Mit der `CategoriesDataSource` erstellt und konfiguriert haben, zurück zu den `CategoryName` TemplateField s `ItemTemplate` und DropDownList s Smarttags, klicken Sie auf den Link für die Datenquelle auswählen. Wählen Sie im Assistenten zum Konfigurieren von Datenquellen die `CategoriesDataSource` option in der ersten Dropdown-Liste, und entscheiden, dass `CategoryName` verwendet für die Anzeige und `CategoryID` als Wert.
 
 
-[![Die DropDownList an die CategoriesDataSource binden](batch-updating-vb/_static/image11.gif)](batch-updating-vb/_static/image19.png)
+[![BSuchen der Dropdownliste aus, um die CategoriesDataSource](batch-updating-vb/_static/image11.gif)](batch-updating-vb/_static/image19.png)
 
 **Abbildung 11**: Binden der Dropdownliste aus, um die `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image20.png))
 
@@ -190,7 +190,7 @@ Hinweis wie die `<asp:ListItem Value="">` – wählen Sie eine – verfügt übe
 Wir haben eine Reihe von Änderungen an den GridView-s-Vorlagen ohne Anhalten und unseren Fortschritt anzeigen hergestellt. Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzeigen. Wie in Abbildung 13 gezeigt, jede Zeile mit dargestellt wird seine `ItemTemplate`, die die Zelle s bearbeiten-Schnittstelle enthält.
 
 
-[![Jede GridView-Zeile ist bearbeitbar](batch-updating-vb/_static/image13.gif)](batch-updating-vb/_static/image21.png)
+[![Ean GridView-Zeile ist bearbeitbar](batch-updating-vb/_static/image13.gif)](batch-updating-vb/_static/image21.png)
 
 **Abbildung 13**: Jede GridView-Zeile ist bearbeitbar ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image22.png))
 
@@ -223,7 +223,7 @@ Nachdem Formatänderungen machen oben bereits erwähnt, die Schaltflächen-Steue
 Abbildung 16 zeigt diese Seite, wenn Sie über einen Browser angezeigt werden soll, nachdem die Schaltfläche "-Web-Steuerelemente hinzugefügt wurden und die Formatierungen vorgenommenen Änderungen.
 
 
-[![Die Seite jetzt enthält zwei Schaltflächen der Update-Produkte](batch-updating-vb/_static/image16.gif)](batch-updating-vb/_static/image23.png)
+[![Ter jetzt umfasst zwei Update-Produkte Seitenschaltflächen](batch-updating-vb/_static/image16.gif)](batch-updating-vb/_static/image23.png)
 
 **Abbildung 16**: Die Seite jetzt umfasst zwei Update-Produkte Schaltflächen ([klicken Sie, um das Bild in voller Größe anzeigen](batch-updating-vb/_static/image24.png))
 

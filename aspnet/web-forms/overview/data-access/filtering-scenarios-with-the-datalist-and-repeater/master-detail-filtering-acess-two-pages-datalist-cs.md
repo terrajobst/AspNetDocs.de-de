@@ -8,15 +8,15 @@ ms.date: 10/30/2010
 ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6d4f38201eaa25097dcba589f35506204d3f73a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4fbb165f8ce80d560589a43c60920a6e68893d46
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390505"
 ---
-<a name="masterdetail-filtering-across-two-pages-c"></a>Filtern von Master-/Detailberichten über zwei Seiten (C#)
-====================
+# <a name="masterdetail-filtering-across-two-pages-c"></a>Filtern von Master-/Detailberichten über zwei Seiten (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_34_CS.exe) oder [PDF-Datei herunterladen](master-detail-filtering-acess-two-pages-datalist-cs/_static/datatutorial34cs1.pdf)
@@ -37,7 +37,7 @@ In diesem Tutorial werden wir ein Beispiel für untersuchen, die in einer Aufzä
 Der erste Schritt beim Erstellen Master/Detail-Berichts wird zunächst die "master" Datensätze anzeigen. Daher ist unsere erste Aufgabe, um die Kategorien auf der Seite "master" anzuzeigen. Öffnen der `CategoryListMaster.aspx` auf der Seite die `DataListRepeaterFiltering` Ordner hinzufügen ein Repeater-Steuerelement und, aus dem Smarttag, zu entscheiden, um eine neue "ObjectDataSource" hinzuzufügen. Die neue "ObjectDataSource" so konfigurieren, dass sie die Daten aus der greift auf die `CategoriesBLL` Klasse `GetCategories` Methode (siehe Abbildung 1).
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der Klasse CategoriesBLL GetCategories-Methode](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
+[![Configurieren GetCategories-Methode der CategoriesBLL-Klasse mit dem ObjectDataSource-Steuerelement](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
 
 **Abbildung 1**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` -Klasse `GetCategories` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ Als Nächstes definieren des Repeaters Vorlagen so, dass jeder Name und die Besc
 Können Sie mit diesem Markup ist abgeschlossen unseren Fortschritt über einen Browser anzeigen. Wie in Abbildung 2 gezeigt, wird Sie als eine Liste mit Aufzählungszeichen mit Namen und eine Beschreibung der einzelnen Kategorien des Repeaters gerendert.
 
 
-[![Jede Kategorie wird als eine Liste mit Aufzählungszeichen Listenelement angezeigt.](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
+[![Ean, die Kategorie einer Aufzählung der Liste angezeigt werden](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
 
 **Abbildung 2**: Jede Kategorie als eine Liste mit Aufzählungszeichen Listenelement angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image6.png))
 
@@ -73,7 +73,7 @@ Ein Vorteil der Verwendung des Linksteuerelements ist, dass sie programmgesteuer
 Wenn Sie befolgt werden, können Sie das Ankerelement oder HyperLink-Steuerelement-Ansatz auf der Seite verwenden. Unabhängig vom Ansatz, wenn Sie die Seite über einen Browser anzeigen jeder Kategoriename soll, als Link zum gerendert werden `ProductsForCategoryDetails.aspx`, und übergeben Sie in der jeweiligen `CategoryID` Wert (siehe Abbildung 3).
 
 
-[![Die Kategorienamen jetzt Verknüpfen mit ProductsForCategoryDetails.aspx.](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
+[![Ter Namen jetzt Kategorielink zu ProductsForCategoryDetails.aspx](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
 
 **Abbildung 3**: Den Namen jetzt Kategorielink zu `ProductsForCategoryDetails.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image9.png))
 
@@ -83,7 +83,7 @@ Wenn Sie befolgt werden, können Sie das Ankerelement oder HyperLink-Steuereleme
 Mit der `CategoryListMaster.aspx` Seite abgeschlossen, wir können unsere Aufmerksamkeit für die Implementierung der Seite "Details" zu aktivieren `ProductsForCategoryDetails.aspx`. Öffnen Sie diese Seite, einem DataList-Steuerelement aus der Toolbox in den Designer ziehen und legen Sie dessen `ID` Eigenschaft `ProductsInCategory`. Wählen Sie dann aus der DataList-Steuerelement-Smarttag zum Hinzufügen einer neuen "ObjectDataSource" auf der Seite, und nennen Sie es `ProductsInCategoryDataSource`. Konfigurieren sie so, dass sie ruft die `ProductsBLL` -Klasse `GetProductsByCategoryID(categoryID)` Methode, die Gruppe, die die Dropdownlisten auf den Registerkarten INSERT-, Update- und DELETE auf (keine).
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der Klasse ProductsBLL GetProductsByCategoryID(categoryID)-Methode](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
+[![Configurieren GetProductsByCategoryID(categoryID)-Methode der ProductsBLL-Klasse mit dem ObjectDataSource-Steuerelement](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` -Klasse `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ Mit der `CategoryListMaster.aspx` Seite abgeschlossen, wir können unsere Aufmer
 Da die `GetProductsByCategoryID(categoryID)` -Methode akzeptiert einen Eingabeparameter (*`categoryID`*), der Datenquelle auswählen-Assistent bietet uns die Gelegenheit zum Angeben des Parameters-Quelle. Legen Sie die Parameterquelle mit der QueryStringField QueryString `CategoryID`.
 
 
-[![Verwenden Sie die CategoryID Querystring-Feld als Quelle für den Parameter des](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
+[![USE die Querystring-Feld-CategoryID als Quelle für den Parameter des](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
 
 **Abbildung 5**: Verwenden Sie das Querystring-Field `CategoryID` als Quelle für des Parameters ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image15.png))
 
@@ -103,7 +103,7 @@ Wie wir in vorherigen Tutorials gesehen haben, nach Abschluss des Assistenten Da
 Um diese Seite in Aktion anzuzeigen, starten Sie über die `CategoryListMaster.aspx` Seite; klicken Sie anschließend auf einen Link in der Aufzählung der Kategorien. Auf diese Weise gelangen Sie zur `ProductsForCategoryDetails.aspx`, und übergeben Sie entlang der `CategoryID` über die Abfragezeichenfolge. Die `ProductsInCategoryDataSource` zu "ObjectDataSource" `ProductsForCategoryDetails.aspx` klicken Sie dann nur die Produkte für die angegebene Kategorie abrufen und anzeigen im DataList-Steuerelement, das zwei Produkte pro Zeile gerendert wird. Abbildung 6 zeigt einen Screenshot der `ProductsForCategoryDetails.aspx` beim Anzeigen der Getränke.
 
 
-[![Die Getränke werden angezeigt, zwei pro Zeile](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
+[![THE Getränke angezeigt werden, zwei pro Zeile](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
 
 **Abbildung 6**: Die Getränke werden angezeigt, zwei pro Zeile ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image18.png))
 
@@ -115,7 +115,7 @@ Wenn ein Benutzer klickt auf eine Kategorie in `CategoryListMaster.aspx`, die ve
 Um dies zu erreichen, fügen Sie einem FormView-Steuerelement über dem Repeater-Steuerelement im `ProductsForCategoryDetails.aspx`. Fügen Sie eine neue "ObjectDataSource" auf der Seite über das FormView smart Tag mit dem Namen `CategoryDataSource` und konfigurieren Sie ihn zur Verwendung der `CategoriesBLL` Klasse `GetCategoryByCategoryID(categoryID)` Methode.
 
 
-[![Zugriff auf Informationen über die Kategorie der CategoriesBLL Klasse GetCategoryByCategoryID(categoryID)-Methode](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
+[![AZugriff Informationen zur Kategorie durch die CategoriesBLL Klassenmethode GetCategoryByCategoryID(categoryID)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
 
 **Abbildung 7**: Zugriff auf Informationen über die Kategorie über die `CategoriesBLL` Klasse `GetCategoryByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ Abbildung 8 zeigt einen Screenshot, wenn Sie diese Seite über einen Browser anz
 > Zusätzlich zu den FormView-Steuerelement, habe ich auch ein HyperLink-Steuerelement über das FormView-Steuerelement, mit denen den Benutzer zurück zur Liste der Kategorien gelangen hinzugefügt (`CategoryListMaster.aspx`). Können Sie diesen Link an anderer Stelle zu platzieren oder ihn vollständig auslassen.
 
 
-[![Informationen zu Auftragskategorien ist jetzt am oberen Rand der Seite angezeigt.](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
+[![Cenachsenbeschriftung Informationen ist jetzt am oberen Rand der Seite angezeigt.](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
 
 **Abbildung 8**: Informationen zu Auftragskategorien ist jetzt am oberen Rand der Seite angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image24.png))
 
@@ -158,7 +158,7 @@ Alle Kategorien in der Northwind-Datenbank sind mit einem oder mehreren Produkte
 Nach dem die Datenbank entsprechend zu aktualisieren, zurück zu den `CategoryListMaster.aspx` Seite, und klicken Sie auf den Link erstellen. Da es sich nicht mehr alle Produkte in der Kategorie erstellen, sollte die Meldung "Es gibt keine Produkte für die ausgewählte Kategorie..." angezeigt werden, wie in Abbildung 9 gezeigt.
 
 
-[![Es wird eine Meldung angezeigt, wenn es keine Produkte gehören zur Kategorie ausgewählt sind](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
+[![A Meldung wird angezeigt, wenn es keine Produkte gehören zur Kategorie ausgewählt sind](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
 
 **Abbildung 9**: Es wird eine Meldung angezeigt, wenn es keine Produkte gehören zur Kategorie ausgewählt sind ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-acess-two-pages-datalist-cs/_static/image27.png))
 

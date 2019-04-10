@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1 | Microsoft-Dokumentation
+title: 'Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1: ASP.NET 4.x'
 author: MikeWasson
-description: In diesem Tutorial wird gezeigt, wie CRUD-Vorgänge in einen HTTP-Dienst über ASP.NET Web-API unterstützt. Die Softwareversionen, die in den Tutorials Visual Studio 2012 Web Zugriffspunkt verwendet...
+description: Tutorial wird gezeigt, wie zur Unterstützung von CRUD-Vorgänge in einem HTTP-Dienst mithilfe von ASP.NET Web-API für ASP.NET 4.x.
 ms.author: riande
 ms.date: 01/28/2012
+ms.custom: seoapril2019
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 855c3fa35d82173c87d13adb51e10fd13698ade5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423746"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381353"
 ---
-<a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1
-====================
+# <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-Tutorial-c4761894)
 
-> In diesem Tutorial wird gezeigt, wie CRUD-Vorgänge in einen HTTP-Dienst über ASP.NET Web-API unterstützt.
+> In diesem Tutorial wird gezeigt, wie zur Unterstützung von CRUD-Vorgänge in einem HTTP-Dienst mithilfe von ASP.NET Web-API für ASP.NET 4.x.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 > 
@@ -85,7 +86,7 @@ Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. In ASP.
 
 Für die API ProductStore, besteht unsere Daten von Produkten, daher wir eine neue Klasse namens erstellen `Product`.
 
-Wenn der Projektmappen-Explorer nicht angezeigt wird, klicken Sie auf die **Ansicht** Menü **Projektmappen-Explorer**. Klicken Sie im Projektmappen-Explorer mit der Maustaste der **Modelle** Ordner. Wählen Sie die Kontext-Meny **hinzufügen**, und wählen Sie dann **Klasse**. Nennen Sie die Klasse &quot;Produkt&quot;.
+Wenn der Projektmappen-Explorer nicht angezeigt wird, klicken Sie auf die **Ansicht** Menü **Projektmappen-Explorer**. Klicken Sie im Projektmappen-Explorer mit der Maustaste der **Modelle** Ordner. Wählen Sie im Kontextmenü des **hinzufügen**, und wählen Sie dann **Klasse**. Nennen Sie die Klasse &quot;Produkt&quot;.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image3.png)
 
@@ -101,7 +102,7 @@ Klicken Sie im Projektmappen-Explorer mit der Maustaste der **Modelle** Ordner. 
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image4.png)
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie den C#-Knoten. Wählen Sie unter C#, **Code**. Wählen Sie in der Liste der Codevorlagen, **Schnittstelle**. Benennen Sie die Schnittstelle &quot;IProductRepository&quot;.
+In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie den C#-Knoten. Wählen Sie unter c#, **Code**. Wählen Sie in der Liste der Codevorlagen, **Schnittstelle**. Benennen Sie die Schnittstelle &quot;IProductRepository&quot;.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image5.png)
 

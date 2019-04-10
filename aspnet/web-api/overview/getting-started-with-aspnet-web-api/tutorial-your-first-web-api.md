@@ -1,28 +1,31 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: Erste Schritte mit ASP.NET-Web-API 2 (c#)
+title: Erste Schritte mit ASP.NET-Web-API 2 (C#) – ASP.NET 4.x
 author: MikeWasson
-description: HTTP ist nicht nur für Webseiten bereitstellt. Es ist auch eine leistungsstarke Plattform zum Erstellen von APIs, Dienste und Daten verfügbar machen. HTTP ist einfach, flexibel und Ubiq...
+description: In diesem Tutorial mit Code. Verwenden Sie ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
 ms.author: riande
 ms.date: 11/28/2017
+ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 7bec95af4532535f0d620bfe6862958907466874
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e3c049ba4349301c3c2d173d4311b3d0883bf68
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401747"
 ---
-<a name="get-started-with-aspnet-web-api-2-c"></a>Erste Schritte mit ASP.NET-Web-API 2 (c#)
-====================
+# <a name="get-started-with-aspnet-web-api-2-c"></a>Erste Schritte mit ASP.NET-Web-API 2 (c#)
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Abgeschlossenes Projekt herunterladen](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
+In diesem Tutorial verwenden Sie die ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
+
 HTTP ist nicht nur für Webseiten bereitstellt. HTTP ist auch eine leistungsstarke Plattform zum Erstellen von APIs, Dienste und Daten verfügbar machen. HTTP ist einfach, flexibel und allgegenwärtig. Nahezu jede Plattform, der Sie sich vorstellen können hat eine HTTP-Bibliothek, damit die HTTP-Dienste eine breit gefächerte Palette von Clients, einschließlich Browsern, mobilen Geräten und herkömmliche desktopanwendungen können.
 
-ASP.NET Web-API ist ein Framework zum Erstellen von Web-APIs auf .NET Framework. In diesem Tutorial verwenden Sie die ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
+ASP.NET Web-API ist ein Framework zum Erstellen von Web-APIs auf .NET Framework. 
 
 ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 

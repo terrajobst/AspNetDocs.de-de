@@ -8,15 +8,15 @@ ms.date: 02/15/2012
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
-ms.openlocfilehash: 73b01c8f2cd1d36ff5f4dc2020df2e14f6a0f290
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0cce120be702ffa4c21e56cbbbe472aebf7f1889
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022867"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402257"
 ---
-<a name="getting-started-with-aspnet-mvc-4"></a>Erste Schritte mit ASP.NET MVC 4
-====================
+# <a name="getting-started-with-aspnet-mvc-4"></a>Erste Schritte mit ASP.NET MVC 4
+
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio.
 
 

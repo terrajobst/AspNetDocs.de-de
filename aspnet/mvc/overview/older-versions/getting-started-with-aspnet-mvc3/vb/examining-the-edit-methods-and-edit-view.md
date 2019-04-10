@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 5cb3c59b-1e96-464b-b3a8-c55607201872
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 509f362a15990486cc5fa4f2f666c3d0de2434dc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ebb526a51755df3cb439eedbf567d0d3dbd95a92
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055967"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399449"
 ---
-<a name="examining-the-edit-methods-and-edit-view-vb"></a>Überprüfen der Edit-Methoden und -Ansicht (VB)
-====================
+# <a name="examining-the-edit-methods-and-edit-view-vb"></a>Überprüfen der Edit-Methoden und -Ansicht (VB)
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:

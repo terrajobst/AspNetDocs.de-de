@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: 4009c18d-cde6-4bbb-b1a4-ae0c6b3f8091
 msc.legacyurl: /mvc/videos/mvc-1/conference-presentations/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc
 msc.type: video
-ms.openlocfilehash: 2e9a14f5dbdcb8520939f9590c343bf26715478c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 238061172fafeb59a46349b6f82c2ea11afb0919
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031817"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404493"
 ---
-<a name="creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc"></a>Erstellen von NerdDinner.com mit Microsoft ASP.NET Model View Controller (MVC)
-====================
+# <a name="creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc"></a>Erstellen von NerdDinner.com mit Microsoft ASP.NET Model View Controller (MVC)
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 Keine Folien. Nur Code. Beginnen Sie mit der neuen Datei und erstellen Sie echte Websites mit ASP.NET, ASP.NET AJAX, Authentifizierung, Autorisierung, MVC, Microsoft SQL Server und jQuery in sechzig 5 Minuten oder weniger.

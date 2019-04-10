@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 644beb37bf893a590be03dd0929c5870af6fbe87
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 348e28778e0e7d96230534df1d61386ed39f8f11
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425768"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381145"
 ---
-<a name="master-pages"></a>Masterseiten
-====================
+# <a name="master-pages"></a>Masterseiten
+
 by [Microsoft](https://github.com/microsoft)
 
 > Eine der Hauptkomponenten für eine erfolgreiche Website ist ein einheitliches Erscheinungsbild. In ASP.NET 1.x, Entwickler verwendet Steuerelemente, um allgemeine Elemente der Seite über eine Webanwendung zu replizieren. Sicherlich eine praktikable Lösung ist, muss die Benutzersteuerelemente mit, dass einige Nachteile. Eine Änderung an der Position eines Steuerelements erfordert beispielsweise eine Änderung an mehrere Seiten auf einer Website an. Benutzersteuerelemente werden auch nicht in der Entwurfsansicht nach eingefügt wird, auf einer Seite gerendert.
@@ -71,7 +71,7 @@ So erstellen Sie eine neue Masterseite
 **Abbildung 2**: Erstellen einer neuen Master-Seite
 
 
-Beachten Sie, dass die Dateierweiterung für eine Masterseite <em>.master</em>. Dies ist eine der Methoden, mit denen eine normale Seite eine Masterseite unterscheidet. Der andere Hauptunterschied besteht darin, die statt einer @Page Direktive, die Masterseite enthält eine @Master Richtlinie. Wechseln Sie zur Quellansicht für den Master Seite, die Sie soeben erstellt haben, und überprüfen Sie den Code.
+Beachten Sie, dass die Dateierweiterung für eine Masterseite *.master*. Dies ist eine der Methoden, mit denen eine normale Seite eine Masterseite unterscheidet. Der andere Hauptunterschied besteht darin, die statt einer @Page Direktive, die Masterseite enthält eine @Master Richtlinie. Wechseln Sie zur Quellansicht für den Master Seite, die Sie soeben erstellt haben, und überprüfen Sie den Code.
 
 Standardmäßig müssen eine neue Masterseite ein ContentPlaceHolder-Steuerelement. In den meisten Fällen ist es sinnvoller, erstellen zuerst die allgemeine Elemente der Seite, und klicken Sie dann einfügen ContentPlaceHolder-Steuerelemente, benutzerdefinierter Inhalte erwünscht ist. In diesen Fällen sollten Entwickler das standardmäßige ContentPlaceHolder-Steuerelement löschen und Einfügen neuer Datensätze, wie Sie die Seite entwickelt wird. ContentPlaceHolder-Steuerelemente sind nicht in der Größe veränderbaren trotz der Tatsache, dass sie die Ziehpunkte angezeigt werden. Die Größen von ContentPlaceHolder-Steuerelement automatisch basierend auf den Inhalt, den sie mit einer Ausnahme enthält; Wenn Sie z. B. einer Tabellenzelle ein ContentPlaceHolder-Steuerelement in einem Blockelement ablegen, wird sie gemäß der Größe des Elements Größe.
 
@@ -154,7 +154,7 @@ Wenn Sie die MasterPageFile-Eigenschaft im Code festlegen, können Sie eine best
 
 ## <a name="using-the-ltpagesgt-element"></a>Mithilfe der &lt;Seiten&gt; Element
 
-Sie können eine Masterseite für Ihre Seiten konfigurieren, indem Sie die MasterPageFile-Attribut der &lt;Seiten&gt; -Element der Datei "Web.config". Wenn Sie diese Methode verwenden zu können, Bedenken Sie, dass die web.config-Dateien in der Anwendungsstruktur für diese Einstellung außer Kraft setzen können. Legen Sie in jedem MasterPageFile-Attribut eine @Page Richtlinie wird diese Einstellung auch überschreiben. Mithilfe der &lt;Seiten&gt; Element können sie ganz einfach erstellen eine <em>master</em> Masterseite, die ggf. in bestimmten Ordnern oder Dateien überschrieben werden kann.
+Sie können eine Masterseite für Ihre Seiten konfigurieren, indem Sie die MasterPageFile-Attribut der &lt;Seiten&gt; -Element der Datei "Web.config". Wenn Sie diese Methode verwenden zu können, Bedenken Sie, dass die web.config-Dateien in der Anwendungsstruktur für diese Einstellung außer Kraft setzen können. Legen Sie in jedem MasterPageFile-Attribut eine @Page Richtlinie wird diese Einstellung auch überschreiben. Mithilfe der &lt;Seiten&gt; Element können sie ganz einfach erstellen eine *master* Masterseite, die ggf. in bestimmten Ordnern oder Dateien überschrieben werden kann.
 
 ## <a name="properties-in-master-pages"></a>Eigenschaften in der Master-Seiten
 

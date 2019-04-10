@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 2d08658a-16c4-4877-9f43-c6503adda7bf
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files
 msc.type: chapter
-ms.openlocfilehash: 2fa205c4c77d01661017daf53e12d71234cf22f6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2382e37a0ce02d318840cf29266075bbb30cae4d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022747"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391168"
 ---
-<a name="working-with-binary-files"></a>Arbeiten mit Binärdaten
-====================
+# <a name="working-with-binary-files"></a>Arbeiten mit Binärdaten
+
 > Diese Tutorials veranschaulichen, damit Benutzer, die Binärdateien (z. B. Word oder PDF-Dokumente) an den Server hochladen, in denen sie in den Ordner oder in der Datenbank gespeichert werden können.
 
 

@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 56ebc40aa500b62811bac0a5041fa9aa4f91f4ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421036"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391051"
 ---
-<a name="use-ajax-to-deliver-dynamic-updates"></a>Bereitstellen von dynamischen Updates mithilfe von AJAX
-====================
+# <a name="use-ajax-to-deliver-dynamic-updates"></a>Bereitstellen von dynamischen Updates mithilfe von AJAX
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -114,7 +114,7 @@ Verwendung von jQuery fügen wir zuerst einen Skriptverweis auf sie. Da wir hier
 
 *Tipp: Stellen Sie sicher, dass Sie den JavaScript-Intellisense-Hotfix für Visual Studio 2008 SP1 installiert haben, die es umfangreichere Intellisense-Unterstützung für JavaScript-Dateien ermöglicht (einschließlich jQuery). Sie können es aus: http://tinyurl.com/vs2008javascripthotfix*
 
-Geschrieben, häufig mit der JQuery-Code verwendet einen globalen "$ ()" JavaScript-Methode, die eine oder mehrere HTML-Elemente, die mit einem CSS-Selektor abruft. Z. B. <em>$("#rsvpmsg")</em> wählt alle HTML-Element mit der Id der Rsvpmsg, während <em>$(".something")</em> wählen alle Elemente mit CSS "etwas" Klassenname. Sie können auch komplexere Abfragen wie "alle aktivierten Optionsfelds return" schreiben mithilfe einer Abfrage Selektor wie: <em>$("Input [@type= Radio] [@checked]")</em>.
+Geschrieben, häufig mit der JQuery-Code verwendet einen globalen "$ ()" JavaScript-Methode, die eine oder mehrere HTML-Elemente, die mit einem CSS-Selektor abruft. Z. B. *$("#rsvpmsg")* wählt alle HTML-Element mit der Id der Rsvpmsg, während *$(".something")* wählen alle Elemente mit CSS "etwas" Klassenname. Sie können auch komplexere Abfragen wie "alle aktivierten Optionsfelds return" schreiben mithilfe einer Abfrage Selektor wie: *$("Input [@type= Radio] [@checked]")*.
 
 Wenn Sie Elemente ausgewählt haben, können Sie Methoden aufrufen, darauf zu ergreifen, wie sie verbergen: *$("#rsvpmsg").hide();*
 

@@ -8,15 +8,15 @@ ms.date: 10/04/2013
 ms.assetid: 46cbfe20-b4dc-449b-9016-80657dd44fbe
 msc.legacyurl: /visual-studio/overview/2013/using-browser-link
 msc.type: authoredcontent
-ms.openlocfilehash: f470aa7e425d16aec3f67d2a0ebb664a3e7eac41
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 723a38de4569b0bb58817c70aabb84fef8e19591
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055037"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395094"
 ---
-<a name="using-browser-link-in-visual-studio-2013"></a>Verwenden einer Browserverknüpfung in Visual Studio 2013
-====================
+# <a name="using-browser-link-in-visual-studio-2013"></a>Verwenden einer Browserverknüpfung in Visual Studio 2013
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 Browserverknüpfung ist ein neues Feature in Visual Studio 2013, der einen Kommunikationskanal zwischen der Entwicklungs- und eine oder mehrere Webbrowser erstellt. Sie können Browser Link, um Ihre Webanwendung in mehreren Browsern gleichzeitig zu aktualisieren, dies ist hilfreich für browserübergreifende Tests verwenden.
@@ -64,7 +64,7 @@ Ich beim Klicken auf die **aktualisieren** Schaltfläche, die Änderung in beide
 
 ![](using-browser-link/_static/image8.png)
 
-**Notizen**
+**Hinweise**
 
 - Legen Sie zum Aktivieren des Browserlinks `debug=true` in die [ &lt;Kompilierung&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) Element in der Datei Web.config des Projekts.
 - Die Anwendung muss auf "localhost" ausgeführt werden.

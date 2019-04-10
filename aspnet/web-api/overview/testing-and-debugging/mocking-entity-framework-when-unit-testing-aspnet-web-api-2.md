@@ -8,15 +8,15 @@ ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7ed2d543ca019e926a87e6897aa0d8a0784f4796
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3dddc1fd38a5384e40f9fa109da9d8c1424ef01a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422622"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387255"
 ---
-<a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Simulieren des Entitätsframework bei Komponententests für ASP.NET Web API 2
-====================
+# <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Simulieren des Entitätsframework bei Komponententests für ASP.NET Web API 2
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 [Abgeschlossenes Projekt herunterladen](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
@@ -36,7 +36,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 Dieses Thema enthält folgende Abschnitte:
 
-- [Erforderliche Komponenten](#prereqs)
+- [Vorraussetzungen](#prereqs)
 - [Code herunterladen](#download)
 - [Erstellen Sie Anwendung mit Komponententestprojekt](#appwithunittest)
 - [Erstellen Sie die Model-Klasse](#modelclass)
@@ -44,8 +44,8 @@ Dieses Thema enthält folgende Abschnitte:
 - [Hinzufügen von Abhängigkeitsinjektion](#dependency)
 - [Installieren von NuGet-Pakete im Test-Projekt](#testpackages)
 - [Test erstellen](#testcontext)
-- [Erstellen von tests](#tests)
-- [Ausführen von tests](#runtests)
+- [Tests erstellen](#tests)
+- [Tests durchführen](#runtests)
 
 Wenn Sie bereits, dass die Schritte im haben [Komponententests mit ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md), können Sie mit Abschnitt fortfahren [Hinzufügen des Controllers](#controller).
 

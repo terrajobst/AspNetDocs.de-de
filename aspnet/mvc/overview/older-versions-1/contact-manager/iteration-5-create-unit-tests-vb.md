@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8b34a9f7690777cfcc79d87a5e19586646d5b0d9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425703"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380664"
 ---
-<a name="iteration-5--create-unit-tests-vb"></a>Iteration #5 – Erstellen von Komponententests (VB)
-====================
+# <a name="iteration-5--create-unit-tests-vb"></a>Iteration #5 – Erstellen von Komponententests (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
@@ -116,12 +116,12 @@ Bevor Sie Moq verwenden können, müssen Sie die folgenden Schritte ausführen:
 4. Fügen Sie einen Verweis auf die Assembly Moq dem Testprojekt, indem Sie durch Auswählen der Menüoption **-Projekt "," Verweis hinzufügen** zum Öffnen der **Verweis hinzufügen** Dialogfeld. Navigieren Sie zum Ordner, in dem Sie Moq entpackt haben, und wählen Sie die Moq.dll-Assembly, unter der Registerkarte Durchsuchen. Klicken Sie auf die **OK** Schaltfläche (siehe Abbildung 2).
 
 
-[![Das Aufheben der Blockierung Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+[![UNblocking Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **Abbildung 01**: Das Aufheben der Blockierung Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image2.png))
 
 
-[![Verweise, die nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[![RVorhandene Verweise nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **Abbildung 02**: Verweise, die nach dem Hinzufügen von Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image4.png))
 
@@ -184,7 +184,7 @@ Die verbleibenden Tests stellen Sie sicher, dass, wenn die CreateContact()-Metho
 Sie können die Komponententests in Codebeispiel 1 ausführen, indem Sie durch Auswählen der Menüoption **Test ausführen, alle Tests in der Projektmappe (STRG + R, A)**. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
 
 
-[![Testergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
+[![TEST Ergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **Abbildung 04**: Testergebnisse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image8.png))
 

@@ -8,21 +8,21 @@ ms.date: 04/20/2010
 ms.assetid: 69a8d6f8-4b10-4602-8822-2d6c05fc432b
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: 82a3fd4fe74202ed9a23298390322458cfc029f8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7f846e807309f3123db52b3053b9aa8d6aca81e6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030997"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394834"
 ---
-<a name="whats-new-in-aspnet-mvc-2"></a>Neue Funktionen in ASP.NET MVC 2
-====================
+# <a name="whats-new-in-aspnet-mvc-2"></a>Neue Funktionen in ASP.NET MVC 2
+
 > Dieses Dokument beschreibt die neuen Features und Verbesserungen in ASP.NET MVC 2 eingeführt wurden. In diesem Dokument finden Sie auch für [herunterladen](https://download.microsoft.com/download/F/1/6/F16F9AF9-8EF4-4845-BC97-639791D5699C/WhatIsNewInMVC_2.pdf)
 
 
-[Einführung in](#_TOC1)   
+[Einführung](#_TOC1)   
 [Aktualisieren eines ASP.NET MVC 1.0-Projekts zu ASP.NET MVC 2](#_TOC2)   
-[Neue Features](#_TOC3)   
+[Neue Funktionen](#_TOC3)   
 [Vorlagenhelfer](#_TOC3_1)   
 [Bereiche](#_TOC3_2)   
 [Unterstützung für asynchrone Controller](#_TOC3_3)   
@@ -38,7 +38,7 @@ ms.locfileid: "57030997"
 [Neue HiddenInputAttribute-Klasse für Vorlagenhelfer](#_TOC3_13)   
 [Html.ValidationSummary Hilfsmethode kann Fehler auf Modellebene angezeigt.](#_TOC3_14)   
 [T4-Vorlagen in Visual Studio Code generieren, die spezifisch auf die Zielversion von .NET Framework](#_TOC3_15)[API-Verbesserungen](#_TOC4)  
-[Wichtige Änderungen](#_TOC5)  
+[Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen](#_TOC5)  
 [Haftungsausschluss](#_TOC6)  
 
 ## <a id="_TOC1"></a>  Einführung in

@@ -8,15 +8,15 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: bde40f609db25f590108bfc2396071c0033a1326
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3235fc58fbf93cb87946f8ebd4a478eff7ce80e3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423337"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386137"
 ---
-<a name="dynamic-v-strongly-typed-views"></a>Dynamische im Vergleich zu Stark typisierten Ansichten
-====================
+# <a name="dynamic-v-strongly-typed-views"></a>Dynamische im Vergleich zu Stark typisierten Ansichten
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Es gibt drei Möglichkeiten zum Übergeben von Informationen von einem Controller an eine Ansicht in ASP.NET MVC 3:

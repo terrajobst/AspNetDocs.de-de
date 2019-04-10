@@ -8,35 +8,35 @@ ms.date: 10/05/2011
 ms.assetid: bac10aee-6731-4a0f-84d7-9eef5e560ae5
 msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
-ms.openlocfilehash: e8565bc2914570eef982bbcc63a8497c2d38386a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ea11b464329a755d5625797327f5a0a3ccb0f426
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019807"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400581"
 ---
-<a name="net-4"></a>.NET 4
-====================
+# <a name="net-4"></a>.NET 4
+
 > Die neuen Features von ASP.NET und die Funktionen von .NET Framework 4.
 
 
-- [AJAX](ajax/index.md)
+- [Ajax](ajax/index.md)
 
     - [Imperative JavaScript-Syntax für Microsoft Client-seitige Steuerelemente](ajax/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
     - [ScriptLoader](ajax/aspnet-4-quick-hit-the-scriptloader.md)
     - [jQuery-Syntax für Microsoft AJAX](ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
     - [AJAX-Datenvorlagen](ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-- [Chart](chart/index.md)
+- [Diagramm](chart/index.md)
 
     - [Chart Control](chart/aspnet-4-quick-hit-chart-control.md)
     - [Einführung zum neuen Chart-Steuerelement in Visual Studio 2010](chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
 - [Kernspeicher](core/index.md)
 
     - [Automatischer Start](core/aspnet-4-quick-hit-auto-start.md)
-    - [Bereinigen von „Web.config“-Dateien](core/aspnet-4-quick-hit-clean-webconfig-files.md)
+    - [Clean Web.Config Files](core/aspnet-4-quick-hit-clean-webconfig-files.md)
     - [Vorhersagbare Client-IDs](core/aspnet-4-quick-hit-predictable-client-ids.md)
     - [HtmlEncoder-Hilfsprogrammmethode](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-- [Data](data/index.md)
+- [Daten](data/index.md)
 
     - [Persistente GridView-Zeilenauswahl](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
 - [Markup-Steuerelement](markup-control/index.md)
@@ -61,4 +61,4 @@ ms.locfileid: "57019807"
     - [Arbeiten mit URLs beim ASP.NET-Routing](routing/how-do-i-work-with-urls-in-aspnet-routing.md)
 - [SEO](seo/index.md)
 
-    - [Dynamische Metadaten](seo/aspnet-4-quick-hit-dynamic-metadata.md)
+    - [Dynamic Metadata](seo/aspnet-4-quick-hit-dynamic-metadata.md)

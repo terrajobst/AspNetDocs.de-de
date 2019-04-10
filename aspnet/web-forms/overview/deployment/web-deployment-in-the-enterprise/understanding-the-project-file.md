@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 114dd21002ef41627f3a101c0197a85fd5208887
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d774a8e13e108d1be4c39e1e909d3d9683968a0d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053967"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404922"
 ---
-<a name="understanding-the-project-file"></a>Grundlegendes zur Projektdatei
-====================
+# <a name="understanding-the-project-file"></a>Grundlegendes zur Projektdatei
+
 durch [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -90,7 +90,7 @@ Eine Projektdatei muss in der Regel bieten viele unterschiedliche Arten von Info
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-Um einen Eigenschaftswert abzurufen, verwenden Sie das Format <strong>$(</strong><em>PropertyName</em><strong>)</strong><em>.</em> Beispielsweise, um das Abrufen des Werts der <strong>ServerName</strong> -Eigenschaft, geben Sie Folgendes ein:
+Um einen Eigenschaftswert abzurufen, verwenden Sie das Format **$(***PropertyName***) ***.* Beispielsweise, um das Abrufen des Werts der **ServerName** -Eigenschaft, geben Sie Folgendes ein:
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -192,8 +192,8 @@ Ziele und die Aufgaben zählen **Bedingung** Attribute. Daher können Sie auswä
 
 Wenn Sie nützliche Aufgaben und Ziele erstellen, müssen Sie im Allgemeinen finden in die Eigenschaften und Elemente, die Sie an anderer Stelle in der Projektdatei definiert haben:
 
-- Um einen Eigenschaftswert zu verwenden, geben <strong>$(</strong><em>PropertyName</em><strong>)</strong>, wobei <em>PropertyName</em> ist der Name des der <strong>-Eigenschaft</strong> Element oder den Namen des Parameters.
-- Um ein Element zu verwenden, geben <strong>@(</strong><em>ItemName</em><strong>)</strong>, wobei <em>ItemName</em> ist der Name des der <strong>Element</strong> Element.
+- Um einen Eigenschaftswert zu verwenden, geben **$(***PropertyName***)**, wobei *PropertyName* ist der Name des der **Eigenschaft** Element oder den Namen der der Parameter.
+- Um ein Element zu verwenden, geben **@(***ItemName***)**, wobei *ItemName* ist der Name des der **Element** Element.
 
 > [!NOTE]
 > Denken Sie daran, dass wenn Sie mehrere Elemente mit dem gleichen Namen erstellen, Sie eine Liste erstellen. Im Gegensatz dazu, wenn Sie mehrere Eigenschaften mit dem gleichen Namen erstellen, der letzte Eigenschaftenwert, die Sie bereitstellen, überschreibt alle vorherigen Eigenschaften mit dem gleichen Namen&#x2014;eine Eigenschaft kann nur einen einzelnen Wert enthalten.

@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
-title: Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (C#) | Microsoft-Dokumentation
+title: Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (c#) | Microsoft-Dokumentation
 author: rick-anderson
 description: In diesem Lernprogramm lernen wir des DataList-Steuerelement-Layout über seine RepeatColumns und RepeatDirection Eigenschaften anpassen.
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8dd23b960df6511f65882820cb26d4af4ccf5c58
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 22203d44935e3b0ed0fed5aa2ba42c2897c38241
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421530"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391948"
 ---
-<a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (C#)
-====================
+# <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_CS.exe) oder [PDF-Datei herunterladen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/datatutorial31cs1.pdf)
@@ -31,7 +31,7 @@ In den Beispielen DataList wir haben gesehen, in den letzten beiden Tutorials ha
 Wir können das Layout DataList s durch Anpassen der `RepeatColumns` und `RepeatDirection` Eigenschaften, die jeweils angeben, wie viele Spalten gerendert werden, und gibt an, ob die Elemente vertikal oder horizontal angeordnet werden. Abbildung 1 zeigt z. B. einem DataList-Steuerelement, in dem Produktinformationen in einer Tabelle mit drei Spalten angezeigt.
 
 
-[![DataList-Steuerelement zeigt die drei Produkte pro Zeile](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image1.png)
+[![Ter DataList-Steuerelement zeigt drei Produkte pro Zeile](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image1.png)
 
 **Abbildung 1**: DataList-Steuerelement zeigt drei Produkte pro Zeile ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image3.png))
 
@@ -57,7 +57,7 @@ Beachten Sie, dass Ve enthalten einen Formatbezeichner in der `Eval` Databinding
 Nehmen Sie einen Moment Zeit, Ihre Seite in einem Browser besuchen. Wie in Abbildung 2 gezeigt, wird Sie als einspaltiges, mehrzeilige Tabelle Produkte DataList-Steuerelement gerendert.
 
 
-[![Standardmäßig wird das DataList-Steuerelement gerendert als einspaltiges, mehrzeilige Tabelle](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image4.png)
+[![By-Standard, DataList-Steuerelement gerendert wird, als einspaltiges, mehrzeilige Tabelle](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image4.png)
 
 **Abbildung 2**: Standardmäßig wird als eine einspaltige, Tabelle mit mehreren Zeilen DataList-Steuerelement gerendert ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image6.png))
 
@@ -69,7 +69,7 @@ Während das Standardverhalten für DataList-Steuerelement ist, um das Layout de
 Durch Ändern der `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`, DataList-Steuerelement rendert der Datensätze in einer einzelnen Zeile, erstellen eine Spalte pro Datenquellenelement. Um diesen Effekt zu veranschaulichen, klicken Sie auf das DataList-Steuerelement im Designer, und ändern Sie dann im Eigenschaftenfenster die `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`. Sofort auf diese Weise der Designer passt das DataList s Layout, erstellen eine einzelne Zeile, die mit mehreren Spalte Schnittstelle (siehe Abbildung 3).
 
 
-[![Die RepeatDirection-Eigenschaft bestimmt, wie die Richtung der DataList-s-Elemente werden angeordnet](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)
+[![Ter RepeatDirection-Eigenschaft bestimmt, wie die Richtung der DataList-s-Elemente sind Laid Out](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)
 
 **Abbildung 3**: Die `RepeatDirection` Eigenschaft gibt vor, wie die Richtung der DataList-s-Elemente Laid Out werden ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image9.png))
 
@@ -77,7 +77,7 @@ Durch Ändern der `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`, Data
 Kleine Mengen von Daten, die eine einzelne Zeile und Anzeigen von möglicherweise mehrspaltige Tabellen eine ideale Möglichkeit, um die Bildschirmfläche zu maximieren. Für größere Datenmengen wird eine einzelne Zeile erfordern jedoch zahlreiche Spalten, die die Push-Vorgänge diese Elemente, kann nicht auf dem Bildschirm ausschalten nach rechts anpassen. Abbildung 4 zeigt die Produkte aus, wenn in einem einzeiligen DataList-Steuerelement gerendert wird. Da es sich viele Produkte (mehr als 80), verfügt der Benutzer weit nach rechts, um Informationen zu den einzelnen Produkte anzeigen einen Bildlauf durchführen.
 
 
-[![Bei ausreichend großen Datenquellen wird eine einzelne Spalte DataList erfordert horizontalen Bildlauf](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image10.png)
+[![Foder ausreichend große Datenquellen eine einzelne Spalte DataList erfordert horizontalen Bildlauf](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image10.png)
 
 **Abbildung 4**: Bei ausreichend großen Datenquellen eine einzelne Spalte DataList-Steuerelement wird erfordert horizontalen Bildlauf ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image12.png))
 
@@ -89,7 +89,7 @@ Um einem mehrspaltigen und mehrzeilige DataList-Steuerelement zu erstellen, müs
 In unserem Beispiel können Sie s, die drei Produkte pro Zeile der Tabelle angezeigt. Legen Sie daher die `RepeatColumns` -Eigenschaft auf 3 fest. Nehmen Sie einen Moment Zeit, um die Ergebnisse in einem Browser anzuzeigen, nach dieser Änderung. Wie in Abbildung 5 gezeigt, werden die Produkte in einer Tabelle drei Spalten und mehreren Zeilen jetzt aufgeführt.
 
 
-[![Es werden drei Produkte pro Zeile angezeigt.](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image13.png)
+[![TEs werden drei Produkte pro Zeile angezeigt](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image13.png)
 
 **Abbildung 5**: Drei Produkte pro Zeile angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image15.png))
 
@@ -97,7 +97,7 @@ In unserem Beispiel können Sie s, die drei Produkte pro Zeile der Tabelle angez
 Die `RepeatDirection` Eigenschaft wirkt sich auf wie die Elemente im DataList-Steuerelement angeordnet werden. Abbildung 5 zeigt die Ergebnisse mit den `RepeatDirection` -Eigenschaftensatz auf `Horizontal`. Beachten Sie, dass die ersten drei Produkte Chai Chang und Anissirup von links nach rechts und von oben nach unten angeordnet werden. Die nächsten drei Produkte (beginnend mit Chef Anton s Cajun Seasoning) werden in einer Zeile unterhalb der ersten drei angezeigt. Ändern der `RepeatDirection` -Eigenschaft zurück auf `Vertical`, aber diese Produkte von oben nach unten angeordnet, von links nach rechts, wie in Abbildung 6 gezeigt.
 
 
-[![Hier werden die Produkte vertikal angeordnet](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image16.png)
+[![Here sind die Produkte vertikal angeordnet.](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image16.png)
 
 **Abbildung 6**: Hier werden die Produkte vertikal angeordnet ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image18.png))
 

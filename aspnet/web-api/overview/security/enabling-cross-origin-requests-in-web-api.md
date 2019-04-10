@@ -8,15 +8,15 @@ ms.date: 01/29/2019
 ms.assetid: 9b265a5a-6a70-4a82-adce-2d7c56ae8bdd
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: c9d3e4b05103d270ad95908177bb2981338a4ae1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9d3016d98fa6c3a55359c6dab0737407b29925f1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425287"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403830"
 ---
-<a name="enable-cross-origin-requests-in-aspnet-web-api-2"></a>Aktivieren Sie ursprungsübergreifender Anforderungen in ASP.NET Web API 2
-====================
+# <a name="enable-cross-origin-requests-in-aspnet-web-api-2"></a>Aktivieren Sie ursprungsübergreifender Anforderungen in ASP.NET Web API 2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 > Browsersicherheit verhindert, dass eine Webseite AJAX-Anforderungen in eine andere Domäne. Diese Einschränkung wird aufgerufen, die *Richtlinie desselben Ursprungs*, und verhindert, dass eine schädliche Website sensible Daten von einer anderen Website liest. Jedoch sollten Sie manchmal auf andere Standorte Ihrer Web-API aufrufen können.
@@ -197,7 +197,7 @@ Setzen Sie **[EnableCors]** auf die Controllerklasse, gilt für alle Aktionen au
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample11.cs)]
 
-**Globally**
+**Global**
 
 Übergeben Sie zum Aktivieren von CORS für alle Web-API-Controller in Ihrer Anwendung eine **EnableCorsAttribute** -Instanz, auf die **EnableCors** Methode:
 

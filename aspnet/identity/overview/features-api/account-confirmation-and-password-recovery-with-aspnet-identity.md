@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity (C#) | Microsoft-Dokumentation
+title: Konto zur Bestätigung und Kennwortwiederherstellung - ASP.NET-Identität (C#) – ASP.NET 4.x
 author: HaoK
 description: Vor der Durchführung dieses Tutorials sollten Sie zuerst erstellen Sie eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung abschließen. In diesem Tutorial...
 ms.author: riande
 ms.date: 01/23/2019
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 04e4bbc8b6405dc60b8335191d88920028eef599
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424845"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396420"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Bestätigung und Wiederherstellung mit ASP.NET Identity-Konto (C#)
 
@@ -232,5 +233,5 @@ Der folgende Code zeigt die e-Mail-Bestätigung-Methode:
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) außerdem gezeigt, wie der Tabelle Informationen zum Profil hinzufügen.
 - [ASP.NET MVC und Identität 2.0: Die Grundlagen](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) von John Atten.
-- [Einführung zu ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
+- [Einführung in ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
 - [Ankündigung der RTM-Version von ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) von Pranav Rastogi.

@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: Modellvalidierung in ASP.NET Web-API | Microsoft-Dokumentation
+title: Modellvalidierung in ASP.NET Web-API – ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: Übersicht über die modellvalidierung in ASP.NET Web-API für ASP.NET 4.x.
 ms.author: riande
 ms.date: 07/20/2012
+ms.custom: seoapril2019
 ms.assetid: 7d061207-22b8-4883-bafa-e89b1e7749ca
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 611a6466e160387592df678b3b8556625ff8e234
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e792f8cc2f79c2ab82c5a74fd50f49475fac4f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404571"
 ---
-<a name="model-validation-in-aspnet-web-api"></a>Modellvalidierung in ASP.NET Web-API
-====================
+# <a name="model-validation-in-aspnet-web-api"></a>Modellvalidierung in ASP.NET Web-API
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-Wenn ein Client Daten an Ihre Web-API sendet, möchten Sie häufig die Daten vor der Verarbeitung zu überprüfen. In diesem Artikel zeigt, wie Ihre Modelle kommentieren, verwenden Sie die Anmerkungen für die datenvalidierung und Behandeln von Validierungsfehlern in Ihrer Web-API wird.
+In diesem Artikel zeigt, wie Ihre Modelle kommentieren, verwenden Sie die Anmerkungen für die datenvalidierung und Behandeln von Validierungsfehlern in Ihrer Web-API wird. Wenn ein Client Daten an Ihre Web-API sendet, möchten Sie häufig die Daten vor der Verarbeitung zu überprüfen. 
 
 ## <a name="data-annotations"></a>Datenanmerkungen
 

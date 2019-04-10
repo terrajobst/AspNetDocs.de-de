@@ -8,15 +8,15 @@ ms.date: 02/20/2014
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 8f4b7186ae5c7b7b384ebcb23f7c9ad65caeb0bd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034147"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399852"
 ---
-<a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Video in einer ASP.NET Web Pages (Razor)-Website
-====================
+# <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Video in einer ASP.NET Web Pages (Razor)-Website
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Artikel wird erläutert, Gewusst wie: Verwenden Sie einen Video (Medien)-Player auf einer Website für ASP.NET Web Pages (Razor), damit Benutzer Videos ansehen, die auf der Website gespeichert sind. ASP.NET Web Pages mit Razor-Syntax können Sie die Wiedergabe Flash (*. SWF*), Media Player (*.wmv*), und Silverlight (*XAP*) Videos.
@@ -123,9 +123,9 @@ Sie können festlegen, die `quality` -Parameter für ein Video mit einer Flash `
 
 Sie können ändern, die Flash-Video zur Wiedergabe auf eine bestimmte Größe mithilfe der `scale` -Parameter, der Sie die folgenden festlegen können:
 
-- `showall`. Dadurch werden das gesamte Video unter Beibehaltung der ursprünglichen Seitenverhältnisses sichtbar. Allerdings können Sie Rahmen auf jeder Seite erhalten.
-- `noorder`. Hiermit skalieren Sie das Video, während das Originalseitenverhältnis beibehalten, aber es zugeschnitten werden kann.
-- `exactfit`. Dadurch werden das gesamte Video sichtbar ohne gleichzeitig die ursprünglichen Seitenverhältnisse beizubehalten, aber Verzerrung auftreten.
+- `showall`sein. Dadurch werden das gesamte Video unter Beibehaltung der ursprünglichen Seitenverhältnisses sichtbar. Allerdings können Sie Rahmen auf jeder Seite erhalten.
+- `noorder`sein. Hiermit skalieren Sie das Video, während das Originalseitenverhältnis beibehalten, aber es zugeschnitten werden kann.
+- `exactfit`sein. Dadurch werden das gesamte Video sichtbar ohne gleichzeitig die ursprünglichen Seitenverhältnisse beizubehalten, aber Verzerrung auftreten.
 
 Wenn Sie nicht angeben einer `scale` Parameter das gesamte Video werden angezeigt und das ursprüngliche Seitenverhältnis wird beibehalten werden, ohne zu sämtlichen Zuschneidevorgängen aussieht. Das folgende Beispiel zeigt, wie Sie mit der `scale` Parameter:
 
