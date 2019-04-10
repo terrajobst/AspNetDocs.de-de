@@ -8,15 +8,15 @@ ms.date: 06/26/2008
 ms.assetid: 2bfd5353-2a35-449e-aeff-0fb94cf10030
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 msc.type: video
-ms.openlocfilehash: b68c8f582452c1293e8555ea1e18b407c520cbec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7e768c508441bc08ff53c04e3d9982179fdfc88f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034367"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410382"
 ---
-<a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[Gewusst wie:] Verwenden Sie das Dienstprogramm "aspnet_merge.exe" zum Zusammenführen von Assemblys
-====================
+# <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[Gewusst wie:] Verwenden Sie das Dienstprogramm "aspnet_merge.exe" zum Zusammenführen von Assemblys
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 In diesem Video zeigt Chris Pels Gewusst wie: Verwenden Sie das Aspnet\_merge.exe-Dienstprogramm zum Kombinieren der Assemblys, die über das Aspnet kompiliert wurden\_compiler.exe-Hilfsprogramm. Zeigen Sie die Ausgabe des Kompilierungsprozesses ASP.NET, um zu erfahren, welche Assemblys erstellt werden zuerst an. Erfahren Sie als Nächstes verwenden Sie das Aspnet\_merge.exe-Hilfsprogramm zum Zusammenführen von Assemblys bei der Kompilierung einer Website mit dem – Option "Prefix" benennt ersten angezeigt, wie Sie die kompilierte Assembly zu steuern. Feststellen Sie, wie Sie alle Assemblys für eine kompilierte-Website mit einer einzelnen Assembly zusammenführen. Schließlich erfahren Sie, wie nur die Assemblys, die im Zusammenhang mit der der Inhalt (Aspx, Ascs usw.) in eine einzelne Assembly, die Assemblys auf oberster Ebene, z. B. die app verlassen merge\_code.dll, die die/App darstellt\_Ordner "Code". Während der einzelnen Optionen werden die vor- und Nachteile dieser Option behandelt.

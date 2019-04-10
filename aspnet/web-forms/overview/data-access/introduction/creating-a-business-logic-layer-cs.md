@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0db90f1e87bcaac51ca08ef1a8b258c93be8f613
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fd3bf46394f562462c561bf06370d2f372e47d0a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027877"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415262"
 ---
-<a name="creating-a-business-logic-layer-c"></a>Erstellen einer Geschäftslogikebene (C#)
-====================
+# <a name="creating-a-business-logic-layer-c"></a>Erstellen einer Geschäftslogikebene (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_2_CS.exe) oder [PDF-Datei herunterladen](creating-a-business-logic-layer-cs/_static/datatutorial02cs1.pdf)
@@ -127,7 +127,7 @@ Verwenden Sie die neue BLL Klassen, das geändert werden muss, ist einfach die e
 Die BLL-Klassen können auch mit dem ObjectDataSource-Steuerelement deklarativ (da die typisierte DataSet) zugegriffen werden. Wir werden ausführlicher zu "ObjectDataSource" in den folgenden Tutorials erläutern.
 
 
-[![Die Liste der Produkte wird in einer GridView-Ansicht angezeigt.](creating-a-business-logic-layer-cs/_static/image4.png)](creating-a-business-logic-layer-cs/_static/image3.png)
+[![Ter die Liste der Produkte wird in einer GridView-Ansicht angezeigt werden](creating-a-business-logic-layer-cs/_static/image4.png)](creating-a-business-logic-layer-cs/_static/image3.png)
 
 **Abbildung 3**: Die Liste der Produkte in einer GridView-Ansicht angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-cs/_static/image5.png))
 
@@ -146,7 +146,7 @@ Diese Regeln können und auf Datenbankebene ausgedrückt werden. Die Zeichenlän
 Zusätzlich zum Erzwingen dieser Regeln in der Datenbank sollten sie auch auf Datensatzebene erzwungen werden. In der Tat werden die Feldlänge und gibt an, ob ein Wert erforderlich oder optional ist bereits für jede DataTable-Satz von DataColumns erfasst. Um die vorhandenen feldebenenvalidierung automatisch anzuzeigen, wechseln Sie zur DataSet-Designer, wählen Sie ein Feld aus einem der vorhandenen DataTables, und fahren Sie mit dem Fenster "Eigenschaften". Wie in Abbildung 4 gezeigt, die `QuantityPerUnit` DataColumn in die `ProductsDataTable` hat eine maximale Länge von 20 Zeichen und lässt `NULL` Werte. Wenn wir versuchen, legen Sie die `ProductsDataRow`des `QuantityPerUnit` Eigenschaft in einen Zeichenfolgenwert, der mehr als 20 Zeichen ein `ArgumentException` ausgelöst.
 
 
-[![Die Datenspalte stellt grundlegende Feldebenenvalidierung](creating-a-business-logic-layer-cs/_static/image7.png)](creating-a-business-logic-layer-cs/_static/image6.png)
+[![Ter DataColumn bietet grundlegende Feldebenenvalidierung](creating-a-business-logic-layer-cs/_static/image7.png)](creating-a-business-logic-layer-cs/_static/image6.png)
 
 **Abbildung 4**: Der DataColumn bietet grundlegende Feldebenenvalidierung ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-cs/_static/image8.png))
 
@@ -154,7 +154,7 @@ Zusätzlich zum Erzwingen dieser Regeln in der Datenbank sollten sie auch auf Da
 Leider kann nicht angegeben Grenzen Überprüfungen, z. B. die `UnitPrice` Wert muss größer als oder gleich 0 (null), über das Eigenschaftenfenster. Um diese Art von feldebenenvalidierung bereitstellen müssen wir einen Ereignishandler für die der DataTable erstellen [ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx) Ereignis. Siehe die [vorherigen Lernprogramm](creating-a-data-access-layer-cs.md), die Datasets, DataTables und DataRow-Objekte, die durch das typisierte DataSet erstellt, die durch die Verwendung von partiellen Klassen erweitert werden können. Mithilfe dieser Technik können wir erstellen eine `ColumnChanging` -Ereignishandler für die `ProductsDataTable` Klasse. Zunächst erstellen Sie eine Klasse in der `App_Code` Ordner mit dem Namen `ProductsDataTable.ColumnChanging.cs`.
 
 
-[![Fügen Sie eine neue Klasse, zu dem Ordner "App_Code"](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
+[![ADd eine neue Klasse zu dem Ordner "App_Code"](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
 
 **Abbildung 5**: Fügen Sie eine neue Klasse, die `App_Code` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-cs/_static/image11.png))
 

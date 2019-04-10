@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: fd2a1c52-d717-44af-8a61-67c8279bb26e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d8a1e792c9cd854591fc434f28afe98e4d91dfbe
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 020f7bbe797a2c04f1ff97ea2056345028f700fb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407613"
 ---
-<a name="allowing-only-certain-characters-in-a-text-box-c"></a>Zulassen von nur bestimmten Zeichen in einem Textfeld (C#)
-====================
+# <a name="allowing-only-certain-characters-in-a-text-box-c"></a>Zulassen von nur bestimmten Zeichen in einem Textfeld (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/4/c/2/4c2def7a-0d23-4055-91f9-1f18504167d7/FilteredTextBox0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/filteredtextbox0CS.pdf)
@@ -56,9 +56,9 @@ Dies ist das Markup für die `FilteredTextBoxExtender` -Steuerelement, das nur d
 Führen die Seite, und es wurde versucht, einen Buchstaben eingeben, falls JavaScript aktiviert ist, funktioniert es nicht. Ziffern werden jedoch auf der Seite angezeigt. Beachten Sie jedoch, dass der Schutz `FilteredTextBox` bietet ist nicht hundertprozentig: Falls JavaScript aktiviert ist, können alle Daten in das Textfeld eingegeben werden, müssen Sie zusätzliche Überprüfungen, z. B. ASP Verwendung. NET Steuerelementen zur gültigkeitsprüfung.
 
 
-[![Es können nur Ziffern eingegeben werden](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
+[![Oibgeschützt Ziffern unter Umständen eingegeben werden](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
 
 Es können nur Ziffern eingegeben werden ([klicken Sie, um das Bild in voller Größe anzeigen](allowing-only-certain-characters-in-a-text-box-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](allowing-only-certain-characters-in-a-text-box-vb.md)
+> [Weiter](allowing-only-certain-characters-in-a-text-box-vb.md)

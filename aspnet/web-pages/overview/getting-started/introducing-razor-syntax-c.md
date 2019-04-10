@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: b5eb98dfdf3fc013920f45080d4a20e1fa507725
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032667"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407353"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (c#)
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (c#)
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieser Artikel bietet Ihnen einen Überblick über die Programmierung mit ASP.NET Web Pages mit Razor-Syntax. ASP.NET ist die Technologie von Microsoft für die Ausführung von dynamischen Webseiten auf Webservern. Dieser Artikel konzentriert sich auf die mit der Programmiersprache c#.
@@ -351,7 +351,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
     <strong>Beispiel</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -363,7 +365,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -375,7 +379,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -387,7 +393,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -399,7 +407,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -411,7 +421,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -440,7 +452,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
     <strong>Beispiele</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+` `-` `*` `/`
@@ -452,7 +466,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -464,7 +480,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `==`
@@ -476,7 +494,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!=`
@@ -488,7 +508,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -500,7 +522,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+`
@@ -512,7 +536,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+=` `-=`
@@ -524,7 +550,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -536,7 +564,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -548,7 +578,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `[]`
@@ -560,7 +592,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!`
@@ -572,10 +606,12 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
-        `&&` <code>&#124;&#124;</code>
+        `&&` `||`
     :::column-end:::
     :::column:::
     Logisches AND und zusammen Bedingungen, die verwendet werden, um zu verknüpfen.
@@ -715,8 +751,8 @@ Um es zu machen klar, dass Sie auf Eigenschaften und Methoden für das Seitenobj
 
 Können Sie Eigenschaften der `Page` Objekt um eine Vielzahl von Informationen, wie z. B. zu erhalten:
 
-- `Request`. Wie Sie bereits gesehen haben, ist dies eine Auflistung von Informationen über die aktuelle Anforderung, einschließlich welche Art von Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. vorgenommen.
-- `Response`. Dies ist eine Auflistung von Informationen über die Antwort (Seite), die an den Browser gesendet wird, wenn der Code ausgeführt wurde. Beispielsweise können Sie diese Eigenschaft, um Informationen in die Antwort zu schreiben. 
+- `Request`sein. Wie Sie bereits gesehen haben, ist dies eine Auflistung von Informationen über die aktuelle Anforderung, einschließlich welche Art von Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. vorgenommen.
+- `Response`sein. Dies ist eine Auflistung von Informationen über die Antwort (Seite), die an den Browser gesendet wird, wenn der Code ausgeführt wurde. Beispielsweise können Sie diese Eigenschaft, um Informationen in die Antwort zu schreiben. 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -816,4 +852,4 @@ Wenn Ihr Code die Ausnahme behandelt hat nicht, sehen Sie eine Fehlerseite angez
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[C#-Sprache](https://msdn.microsoft.com/library/kx37x362.aspx)
+[Die Programmiersprache C#](https://msdn.microsoft.com/library/kx37x362.aspx)

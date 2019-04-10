@@ -8,15 +8,15 @@ ms.date: 08/31/2011
 ms.assetid: d916dbe0-1895-491b-8bb6-93f4594ce757
 msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: a2b96388cb7408d3c5fa548d0f43cfb2287661bf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f588af70f3928285274ef6bf14f58697190943ff
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405819"
 ---
-<a name="aspnet-mvc-getting-started"></a>ASP.NET MVC, erste Schritte
-====================
+# <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC, erste Schritte
+
 > Die folgende Anleitung wird erläutert, wie ASP.NET MVC ist, und zeigt, wie Sie beginnen.
 
 
@@ -44,7 +44,7 @@ ms.locfileid: "57021757"
     - [Lesen von relevanten Daten](getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Aktualisieren von relevanten Daten](getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Asynchrone und gespeicherte Prozeduren](getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-    - [Verarbeiten von Parallelitätsfehlern](getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+    - [Behandeln von Parallelität](getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Implementieren von Vererbung](getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Erweiterte Entity Framework-Szenarien](getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
 - [EF Database First mit ASP.NET MVC](database-first-development/index.md)

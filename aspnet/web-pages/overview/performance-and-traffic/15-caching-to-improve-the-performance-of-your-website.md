@@ -8,15 +8,15 @@ ms.date: 02/14/2014
 ms.assetid: 961e525b-7700-469e-8a68-d7010b6fb68c
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
-ms.openlocfilehash: ede341e02869a9c81cbe2fa7ef97345dc87519a1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10b853966ba80b673e1a6786987893f919369e7a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412904"
 ---
-<a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Zwischenspeichern von Daten in einer ASP.NET Web Pages (Razor)-Website für eine bessere Leistung
-====================
+# <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Zwischenspeichern von Daten in einer ASP.NET Web Pages (Razor)-Website für eine bessere Leistung
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Artikel wird erläutert, wie eine Hilfsprogramm, mit dem Cache-Informationen für eine bessere Leistung auf einer Website für ASP.NET Web Pages (Razor) verwendet wird. Sie können Ihre Website, dass speichern beschleunigen &#8212; zwischenspeichern, d. h. &#8212; die Ergebnisse der Daten, die normalerweise würde erhebliche Zeit in Anspruch nehmen abrufen oder verarbeiten, die nicht häufig ändern.

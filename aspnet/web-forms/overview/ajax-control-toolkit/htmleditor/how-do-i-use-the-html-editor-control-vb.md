@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 11d9251644f1daf4257e1bfa3c9405fc0c46a5d3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5fa19ef52c4538f0db427eaa9a79b074c85001ac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034137"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415868"
 ---
-<a name="how-do-i-use-the-html-editor-control-vb"></a>Wie verwende ich das HTML-Editor-Steuerelement? (VB)
-====================
+# <a name="how-do-i-use-the-html-editor-control-vb"></a>Wie verwende ich das HTML-Editor-Steuerelement? (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor ist ein ASP.NET AJAX-Steuerelement mit dem Sie ganz einfach erstellen und Bearbeiten von HTML-Inhalte über Schaltflächen in einer Symbolleiste an.
@@ -25,7 +25,7 @@ by [Microsoft](https://github.com/microsoft)
 Das Ziel dieses Lernprogramms ist eine Übersicht über das HTML-Editor-Steuerelement, das mit dem AJAX Control Toolkit enthalten bereit. Der HTML-Editor enthält Optionen zum Ändern der Größe der Schriftart, Auswählen einer Schriftart, Hintergrundfarbe ändern, ändern die die Vordergrundfarbe darstellt, Hinzufügen von Links, Bilder, hinzufügen, ändern die textausrichtung und Ausführen Ausschneiden, kopieren und einfügen (siehe Abbildung 1).
 
 
-[![Der HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
+[![Ter HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
 **Abbildung 01**: Der HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
@@ -33,7 +33,7 @@ Das Ziel dieses Lernprogramms ist eine Übersicht über das HTML-Editor-Steuerel
 Der HTML-Editor können Sie Inhalte mithilfe von Entwurfsmodus eingeben, oder Sie HTML direkt eingeben. Sie auch erhalten die Möglichkeit, Ihren HTML-Inhalt (Vorschau) (siehe Abbildung 2).
 
 
-[![Entwurf, HTML und Vorschau Schaltflächen](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
+[![Dent, HTML, und die Schaltflächen Vorschau](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
 **Abbildung 02**: Entwurf, HTML und Vorschau Schaltflächen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
 
@@ -49,7 +49,7 @@ Sie sollten das ScriptManager-Steuerelement am oberen Rand der Seite vor allen a
 Das HTML-Editor-Steuerelement befindet sich in der Toolbox mit dem Rest der Steuerelemente des AJAX Control Toolkit. Sie heißt das Editorsteuerelement (siehe Abbildung 3).
 
 
-[![Das HTML-Editor-Steuerelement](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
+[![Ter Steuerelement der HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
 **Abbildung 03**: Das HTML-Editor-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
 
@@ -63,7 +63,7 @@ Nachdem Sie auf eine Seite der HTML-Editor ziehen, können Sie seine Eigenschaft
 Die Seite in Codebeispiel 1 enthält ein HTML-Editor-Steuerelement, ein Schaltflächen-Steuerelement und ein literales Steuerelement. Wenn Sie die Schaltfläche klicken, den Inhalt des HTML-Editors angezeigt werden, im Literalsteuerelement (siehe Abbildung 4).
 
 
-[![Senden eines Formulars mit einem HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
+[![SAbsenden ein Formular mit einem HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
 **Abbildung 04**: Senden eines Formulars mit einem HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
 
@@ -75,7 +75,7 @@ Die HTML-Editor-Content-Eigenschaft wird verwendet, zum Abrufen des HTML-Inhalts
 Sie können anpassen, dass genau welche Schaltflächen im Editor dargestellt. Beispielsweise empfiehlt es sich um die Registerkarte "HTML", um zu verhindern, dass Benutzer der HTML-Editor in HTML-Modus wechseln zu entfernen. Oder, entfernen Sie die Schriftart Größe Dropdown-Liste aus, um zu verhindern, dass Benutzer übermäßig großen Text in einem Forum erstellen möchten (siehe Abbildung 5) nach Nachrichten.
 
 
-[![Einen benutzerdefinierten HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
+[![A benutzerdefinierte HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
 **Abbildung 05**: Eine angepasste HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
 
@@ -109,4 +109,4 @@ Stellen Sie sich vor, z. B., dass Sie eine Bloganwendung erstellen. In diesem Fa
 In diesem Tutorial wurden eine kurze Übersicht über das HTML-Editor-Steuerelement enthalten, die im AJAX Control Toolkit bereitgestellt. Sie haben gelernt, wie umfangreiche Inhalte von einem Benutzer akzeptieren und übermitteln den Inhalt an den Server mit der HTML-Editor. Es wird auch erläutert, wie Sie die Schaltflächen der Symbolleiste anpassen können, die von der HTML-Editor angezeigt werden. Schließlich haben Sie Gewusst, Cross-Site Scripting-Angriffe zu vermeiden, wenn es sich bei der HTML-Editor mit potenziell schädlichen Eingaben akzeptieren.
 
 > [!div class="step-by-step"]
-> [Vorherige](how-do-i-use-the-html-editor-control-cs.md)
+> [Vorheriges](how-do-i-use-the-html-editor-control-cs.md)

@@ -8,15 +8,15 @@ ms.date: 08/28/2012
 ms.assetid: dde851d7-882e-4d99-9b96-cf96daed81cc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 7b55a55db6207b8ff18b2dd207e919cee45f6973
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1ab1ea8b277b48b3b72edb9dd45aa4cc2937ffa8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030377"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418052"
 ---
-<a name="adding-a-view"></a>Hinzufügen einer Ansicht
-====================
+# <a name="adding-a-view"></a>Hinzufügen einer Ansicht
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
@@ -75,7 +75,7 @@ Zunächst, den Sie ändern möchten die &quot;Ihr Logo hier.&quot; Titel am ober
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-Layoutvorlagen können Sie die HTML-Containerlayout Ihrer Website zentral anzugeben und wenden Sie es über mehrere Seiten auf Ihrer Website. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, bei dem alle ansichtsspezifischen Seiten, die Sie erstellen, von der Layoutseite &quot;umschlossen&quot; angezeigt werden. Wenn Sie auswählen, auf den Link Info, z. B. der *Views\Home\About.cshtml* Ansicht gerendert wird, in der `RenderBody` Methode.
+Layoutvorlagen können Sie die HTML-Containerlayout Ihrer Website zentral anzugeben und wenden Sie es über mehrere Seiten auf Ihrer Website. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, in dem alle ansichtsspezifischen Seiten Sie, anzeigen, erstellen &quot;umschlossen&quot; der Layoutseite. Wenn Sie auswählen, auf den Link Info, z. B. der *Views\Home\About.cshtml* Ansicht gerendert wird, in der `RenderBody` Methode.
 
 Ändern Sie die Titel der Site Überschrift in der Layoutvorlage aus &quot;Ihr Logo hier einfügen&quot; zu &quot;MVC Movie&quot;.
 

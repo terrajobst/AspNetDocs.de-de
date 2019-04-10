@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
-ms.openlocfilehash: ad68d8f074bc3c453e991abf7f8d393fbe9740ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 795283c33d63272b29b91fd7037c3463bc71abad
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020307"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410746"
 ---
-<a name="older-versions---ajax-control-toolkit"></a>Ältere Versionen – AJAX Control Toolkit
-====================
+# <a name="older-versions---ajax-control-toolkit"></a>Ältere Versionen – AJAX Control Toolkit
+
 > Wie Sie mit dem Ajax Control Toolkit beginnen, und wie Sie einige der am häufigsten verwendeten Steuerelemente verwenden. DevExpress verwaltet, dass der freien und open Source Ajax Control Toolkit.
 > 
 > 
@@ -151,7 +151,7 @@ ms.locfileid: "57020307"
     - [Verwenden von mehreren Popupsteuerelementen (VB)](popup/using-multiple-popup-controls-vb.md)
     - [Verarbeiten von Postbacks über ein Popupsteuerelement mit einem UpdatePanel-Steuerelement (VB)](popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
     - [Verarbeiten von Postbacks über ein Popupsteuerelement ohne ein UpdatePanel-Steuerelement (VB)](popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-- [Rating](rating/index.md)
+- [Bewertung](rating/index.md)
 
     - [Erstellen eines Bewertungssteuerelements (C#)](rating/creating-a-rating-control-cs.md)
     - [Erstellen eines Bewertungssteuerelements (VB)](rating/creating-a-rating-control-vb.md)
@@ -161,10 +161,10 @@ ms.locfileid: "57020307"
     - [Drag & Drop über ReorderList (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [Drag & Drop über ReorderList (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [Schieberegler](slider/index.md)
+- [Slider](slider/index.md)
 
     - [Schieberegler-Steuerelement mit automatischem Postback (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
-    - [Datenbindung des Schieberegler-Steuerelements](slider/databinding-the-slider-control-cs.md)
+    - [Datenbindung des Schieberegler-Steuerelements (C#)](slider/databinding-the-slider-control-cs.md)
     - [Schieberegler-Steuerelement mit automatischem Postback (VB)](slider/using-the-slider-control-with-auto-postback-vb.md)
     - [Datenbindung des Schieberegler-Steuerelements (VB)](slider/databinding-the-slider-control-vb.md)
 - [TextBoxWatermark](textboxwatermark/index.md)

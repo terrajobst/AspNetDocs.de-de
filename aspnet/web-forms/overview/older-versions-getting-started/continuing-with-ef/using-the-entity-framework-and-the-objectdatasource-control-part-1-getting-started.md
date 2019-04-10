@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 5eaeaa0aa474e1aed86954e6c10dd1703b938944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065407"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407197"
 ---
-<a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 1: Erste Schritte
-====================
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 1: Erste Schritte
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird.
@@ -69,7 +69,7 @@ Sie beginnen, Erstellen von Webseiten in der die `ObjectDataSource` -Steuereleme
 
 Arbeiten Sie die Seiten, die in diesem Tutorial erstellen Sie mit der `Departments` Entitätenmenge des Datenmodells, die Sie in erstellt die [erste Schritte-Tutorial-Reihe](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md).
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image3.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image3.png)
 
 [![Image02](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image5.png)
 
@@ -189,7 +189,7 @@ Dieser Code fügt die Metadaten des Datenmodells. Es gibt an, dass die `Budget` 
 
 Führen Sie die *Departments.aspx* Seite.
 
-[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image26.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image25.png)
+[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image26.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image25.png)
 
 Beachten Sie, dass, obwohl Sie keine Formatzeichenfolge in angegeben haben die *Departments.aspx* Markup der Seite für die **Budget** oder **Startdatum** Spalten, Standard, währungs- und Formatierung auf angewendet wurde, indem sie die `DynamicField` gesteuert wird, mithilfe der Metadaten, die Sie, in angegeben der *Department.cs* Datei.
 
@@ -322,4 +322,4 @@ Wert eines Felds ändern, oder wählen Sie einen anderen Administrator, und klic
 Dies schließt die Einführung in die Verwendung der `ObjectDataSource` -Steuerelement für grundlegende CRUD (erstellen, lesen, aktualisieren und löschen) Vorgänge mit dem Entity Framework. Sie haben eine einfache Anwendung mit n-Ebenen erstellt, aber die Geschäftslogik-Ebene ist immer noch eng gekoppelt, auf die Datenzugriffsebene, die automatisierte Komponententests erschwert. Im folgenden Tutorial sehen Sie, wie implementiert das Repository-Muster, um Komponententests zu ermöglichen.
 
 > [!div class="step-by-step"]
-> [Nächste](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [Weiter](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

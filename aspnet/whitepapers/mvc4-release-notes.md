@@ -8,21 +8,21 @@ ms.date: 09/09/2011
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: a4f78061850ef5ad8c3381daafdb5ea6bca4cb2f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f9b4e2ba0514df4c017a192f3c2136a7eec60c7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054287"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413255"
 ---
-<a name="aspnet-mvc-4"></a>ASP.NET MVC 4
-====================
+# <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
+
 > Dieses Dokument beschreibt die Version von ASP.NET MVC 4.
 
 
 - [Installationshinweise](#_Toc303253802)
 - [Dokumentation](#_Toc303253803)
-- [Support](#_Toc303253804)
+- [Unterstützung](#_Toc303253804)
 - [Softwareanforderungen](#_Toc303253805)
 - [Neue Features in ASP.NET MVC 4](#_Toc303253807)
 

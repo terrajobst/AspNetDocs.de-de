@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: af5e5a9c8d211b07b57aa50238b02cabe249aef8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e4b8f059974dec33d6305e7b84919550713bf4e4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409882"
 ---
-<a name="aspnet-error-handling"></a>ASP.NET – Fehlerbehandlung
-====================
+# <a name="aspnet-error-handling"></a>ASP.NET – Fehlerbehandlung
+
 by [Erik Reitan](https://github.com/Erikre)
 
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -338,7 +338,7 @@ Ich möchte die vielen Dank, dass die folgenden Personen, die wichtige Beiträge
 - Apurva Joshi, Microsoft
 - [Bojan Vrhovnik, Slowenien](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brasilien](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
-- [Carlos dos Santos, Brazil](http://www.carloscds.net/)
+- [Carlos Dos Santos, Brasilien](http://www.carloscds.net/)
 - [Dave Campbell, USA](http://www.wynapse.com/) (twitter: [ @windowsdevnews ](http://twitter.com/windowsdevnews))
 - [Jon Galloway, Microsoft](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
 - [Michael Sharps, USA](http://www.930solutions.com/) (twitter: [@mrsharps](http://twitter.com/mrsharps))
@@ -360,4 +360,4 @@ Ich möchte die vielen Dank, dass die folgenden Personen, die wichtige Beiträge
   Visual Studio 2012-Übersetzung: [Iniciando com-ASP.NET-Web Forms 4.5 - Parte 1 - Introdução e Visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
 > [!div class="step-by-step"]
-> [Vorherige](url-routing.md)
+> [Vorheriges](url-routing.md)

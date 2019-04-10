@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: 1c1283b2-6956-4937-b568-d30de432ce23
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e83a5f8e5d1726dc2f39a9aee6515995ce0ed157
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0446a125845134d2fad869094a540c960f6b0a25
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406469"
 ---
-<a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>Verwendung von ASP.NET MVC mit verschiedenen IIS-Versionen (VB)
-====================
+# <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>Verwendung von ASP.NET MVC mit verschiedenen IIS-Versionen (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC und URL-Routing, mit verschiedenen Versionen von Internet Information Services verwenden. Erfahren Sie, verschiedene Strategien für die Verwendung von ASP.NET MVC mit IIS 7.0 (klassischer Modus), IIS 6.0 und früheren Versionen von IIS.
@@ -54,7 +54,7 @@ Der Verarbeitungsmodus für die Anforderung richtet sich nach den Anwendungspool
 Standardmäßig ist IIS so konfiguriert, um zwei Anwendungspools zu unterstützen: **DefaultAppPool** und **Klassischer .NET AppPool**. Wenn DefaultAppPool ausgewählt ist, wird Ihre Anwendung im integrierten anforderungsverarbeitung-Modus ausgeführt. Wenn Classic .NET AppPool ausgewählt ist, wird Ihre Anwendung im klassischen anforderungsverarbeitung-Modus ausgeführt.
 
 
-[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.png)
 
 **Abbildung 1**: Erkennen den Verarbeitungsmodus für die Anforderung ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.png))
 
@@ -97,7 +97,7 @@ Die Standardroute konfiguriert, die in Codebeispiel 1 können Sie auf der Route-
 Leider wird nicht in ältere Versionen von IIS diese Anforderungen an das ASP.NET-Framework übergeben werden. Aus diesem Grund, diese Anforderungen wird nicht auf einen Controller weitergeleitet werden. Z. B. Wenn Sie eine Browseranforderung für den URL/Home/Index erhalten klicken Sie dann die Seite "Fehler" in Abbildung 2 Sie.
 
 
-[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.png)
+[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.png)
 
 **Abbildung 2**: Empfängt einen Fehler 404 nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.png))
 
@@ -173,7 +173,7 @@ Hier ist, wie Sie eine Skriptzuordnung mit Platzhalter für IIS 7.0 aktivieren:
 7. Klicken Sie auf die **OK** Schaltfläche
 
 
-[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.png)
+[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.png)
 
 **Abbildung 3**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 7.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image6.png))
 
@@ -190,7 +190,7 @@ Um eine Skriptzuordnung mit Platzhalter mit IIS 6.0 zu erstellen, gehen Sie wie 
 8. Klicken Sie auf die **OK** Schaltfläche
 
 
-[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image7.png)
+[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image7.png)
 
 **Abbildung 4**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 6.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image8.png))
 
@@ -198,7 +198,7 @@ Um eine Skriptzuordnung mit Platzhalter mit IIS 6.0 zu erstellen, gehen Sie wie 
 Nach der Aktivierung von Platzhalter-Skriptzuordnungen müssen Sie die Routingtabelle, in der Datei "Global.asax" zu ändern, sodass es sich um eine stammroute enthält. Andernfalls erhalten Sie die Fehlerseite in Abbildung 5, wenn Sie eine Anforderung für die Stammseite der Anwendung vornehmen. Sie können die geänderte Datei "Global.asax" in Listing 4 verwenden.
 
 
-[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image9.png)
+[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image9.png)
 
 **Abbildung 5**: Fehlende Route stammfehler ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image10.png))
 
@@ -226,4 +226,4 @@ Die erste Option müssen Sie die URLs in Ihrer ASP.NET MVC-Anwendung zu ändern.
 Die zweite Option ist die Erstellung eine Skriptzuordnung mit Platzhalter. Der Vorteil dieser zweite Option ist, dass Sie nicht benötigen, um die URLs zu ändern. Der Nachteil dieser zweite Option ist, dass sie die Leistung Ihrer ASP.NET MVC-Anwendung auswirken kann.
 
 > [!div class="step-by-step"]
-> [Vorherige](using-asp-net-mvc-with-different-versions-of-iis-cs.md)
+> [Vorheriges](using-asp-net-mvc-with-different-versions-of-iis-cs.md)

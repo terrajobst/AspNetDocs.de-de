@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: Einführung zu ASP.NET Identity | Microsoft-Dokumentation
+title: Einführung in ASP.NET Identity – ASP.NET 4.x
 author: jongalloway
 description: Das ASP.NET-Mitgliedschaftssystem wurde mit ASP.NET 2.0 zurück und seit 2005 eingeführt und dann gab es viele Änderungen in die Möglichkeiten Web-Applikationen Neustarts...
 ms.author: riande
 ms.date: 01/22/2019
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4a545e52d2d9ea04a10c37c116fd326c60de9f8f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061377"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413047"
 ---
-<a name="introduction-to-aspnet-identity"></a>Einführung in ASP.NET Identity
-====================
+# <a name="introduction-to-aspnet-identity"></a>Einführung in ASP.NET Identity
+
 
 > Das ASP.NET-Mitgliedschaftssystem wurde mit ASP.NET 2.0 zurück und seit 2005 eingeführt und dann gab es viele Änderungen in die Möglichkeiten, Webanwendungen in der Regel Authentifizierung und Autorisierung behandeln. ASP.NET Identity ist ein neuer Blickwinkel auf, was das Mitgliedschaftssystem werden soll, wenn Sie moderne Anwendungen für das Web, Telefon oder Tablet erstellen.
 

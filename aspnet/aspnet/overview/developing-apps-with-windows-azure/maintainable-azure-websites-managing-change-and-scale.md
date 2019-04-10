@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 315e89c81782edf0875c65afd27153102d733050
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424247"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409732"
 ---
-<a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
-====================
+# <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
+
 durch [Web Camps Team](https://twitter.com/webcamps)
 
 [Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
@@ -89,7 +89,7 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>Übungen
@@ -549,7 +549,7 @@ Sie werden jetzt die Änderungen mithilfe von Push übertragen, die Sie in der v
     *Protokolliert Fehler*
 8. Suchen Sie nach dem Detailabschnitt des Fehlers. Dieser Fehler wird natürlich durch die coderefactoring Sie ein Commit in den vorherigen Schritten verursacht.
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
+    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`sein.
 9. Schließen Sie den Browser nicht.
 10. Wechseln Sie in einer neuen Browserinstanz zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com) und melden Sie sich mit dem Microsoft-Konto, das Ihrem Abonnement zugeordnet.
 11. Wählen Sie **Websites** , und klicken Sie auf die Web-app, die Sie in der Übung 2 erstellt haben.
@@ -677,7 +677,7 @@ In dieser Aufgabe verwenden Sie das Server-Explorer-Fenster aus Visual Studio zu
 
     ![Logo-big.png-Image aus dem Windows-Blobspeicher](maintainable-azure-websites-managing-change-and-scale/_static/image72.png "-Logo-big.png Bilds aus dem Speicher")
 
-    *Logo-big.png-Image aus Azure Blob Storage*
+    *logo-big.png image from Azure Blob Storage*
 
 <a id="Ex4Task3"></a>
 #### <a name="task-3--updating-the-solution-to-consume-static-content-from-azure-blob-storage"></a>Aufgabe 3: die Aktualisierung der Lösung zum Nutzen von statischen Inhalten aus Azure Blob Storage
@@ -772,7 +772,7 @@ Nachdem **für die automatische Skalierung** wurde konfiguriert haben, erstellen
     ![Erstellen eines neuen Projekts](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "Erstellen eines neuen Projekts")
 
     *Erstellen eines neuen Projekts*
-2. In der **neues Projekt** wählen Sie im Dialogfeld **Webleistungs- und Auslastungstestprojekt** unter der **Visual C# | Test** Registerkarte. Stellen Sie sicher, dass **.NET Framework 4.5** wird ausgewählt, nennen Sie das Projekt *WebAndLoadTestProject*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
+2. In der **neues Projekt** wählen Sie im Dialogfeld **Webleistungs- und Auslastungstestprojekt** unter der **Visual c# | Test** Registerkarte. Stellen Sie sicher, dass **.NET Framework 4.5** wird ausgewählt, nennen Sie das Projekt *WebAndLoadTestProject*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
 
     ![Erstellen eines neuen Projekts für Web- und Auslastungstests](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "Erstellen eines neuen Projekts für Web- und Auslastungstests")
 
@@ -909,7 +909,7 @@ Sie werden nun Ausführen des Auslastungstests, die Sie in der vorherigen Aufgab
     > - Reduzieren Sie die maximalen und minimalen Werte, der die **Ziel-CPU** Bereich in der Konfiguration der automatischen Skalierung Ihrer Web-App
     > - Ausführen des Auslastungstests in der Cloud mit **Azure Testplänen**. Weitere Informationen [hier](/azure/devops/test/load-test/index?view=vsts)
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung

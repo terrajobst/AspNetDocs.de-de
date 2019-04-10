@@ -8,15 +8,15 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: 1693838a74f0564e38e11a2827cceb3d6474677b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038857"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415985"
 ---
-<a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Vorgehensweise: Hinzufügen von für Mobilgeräte optimierten Seiten zur ASP.NET Web Forms-/MVC-Anwendung
-====================
+# <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Vorgehensweise: Hinzufügen von für Mobilgeräte optimierten Seiten zur ASP.NET Web Forms-/MVC-Anwendung
+
 > **Gilt für**
 > 
 > - ASP.NET Web Forms-Version 4.0
@@ -240,7 +240,7 @@ Beachten Sie als Nächstes, dass durch das Hinzufügen eines zweiten HomeControl
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-Jetzt der Fehler wird entfernt, und die URL http://<em>Yoursite</em>/ erreichen, die desktop-Startseite, und http://<em>Yoursite</em>/mobile/ erreichen die mobile-Homepage.
+Nachdem der Fehler entfernt, und die URL http übertragen werden:\/\/*Yoursite*/ erreichen, die desktop-Homepage und http:\/\/*Yoursite*/mobile/ wird die mobile-Startseite zu erreichen.
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>Umleiten von mobilen Besucher auf Ihren mobilen Bereich
 

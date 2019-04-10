@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
-title: Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity | Microsoft-Dokumentation
+title: Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity – ASP.NET 4.x
 author: Rick-Anderson
 description: ASP.NET Identity ist ein erweiterbares System auf das diese Weise können Sie Ihren eigenen Anbieter erstellen und es in Ihre Anwendung einbinden, ohne die anwendungse erneut verarbeitet werden...
 ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 71201e9d91080855350349b966fe7916ce21a909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422206"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411266"
 ---
-<a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity
-====================
+# <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > ASP.NET Identity ist ein erweiterbares System auf das diese Weise können Sie Ihren eigenen Anbieter erstellen und es in Ihre Anwendung einbinden, ohne die Anwendung erneut verarbeitet werden muss. Dieses Thema beschreibt, wie Sie einen benutzerdefinierte Speicheranbieter für ASP.NET Identity zu erstellen. Hierin sind die entscheidenden Konzepte für Ihren eigenen Anbieter erstellen, aber es ist nicht schrittweise Anleitungen zum Implementieren eines benutzerdefinierten Speicheranbieters.

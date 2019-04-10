@@ -8,15 +8,15 @@ ms.date: 11/15/2007
 ms.assetid: 18637656-3733-4549-b365-94652c596a7b
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
 msc.type: video
-ms.openlocfilehash: e83603f8708c8e8f976874c9f9c54aa80270dc3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8f841fb02677c12930a0298a5a99a3556bcf50ef
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035227"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412241"
 ---
-<a name="visual-studio-2008-and-nested-masterpages"></a>Visual Studio 2008 und geschachtelte Masterseiten
-====================
+# <a name="visual-studio-2008-and-nested-masterpages"></a>Visual Studio 2008 und geschachtelte Masterseiten
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Ich werden können, dass eine Webvorlage aus oswd.org veranschaulichen die Verwendung der Masterseiten und wie sie in Visual Studio 2008 unterstützt werden. Insbesondere zeige ich die Vererbungsfeatures mithilfe von zwei Masterseiten.

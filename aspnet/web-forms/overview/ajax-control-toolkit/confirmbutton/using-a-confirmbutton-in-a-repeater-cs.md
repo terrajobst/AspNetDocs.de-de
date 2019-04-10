@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 614b5b1edaa164cca30b2142d1e0c02771153403
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1ab979f220c06d22f51931c7c00fc4d273731f85
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413944"
 ---
-<a name="using-a-confirmbutton-in-a-repeater-c"></a>Verwenden eines ConfirmButton-Steuerelements in einem Wiederholungssteuerelement (C#)
-====================
+# <a name="using-a-confirmbutton-in-a-repeater-c"></a>Verwenden eines ConfirmButton-Steuerelements in einem Wiederholungssteuerelement (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
@@ -47,9 +47,9 @@ Diese Datenquelle kann dann in einem wiederholungssteuerelement verwendet werden
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample3.aspx)]
 
 
-[![Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt.](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
+[![Ter bestätigen Sie, dass die Schaltfläche neben jeder Eintrag aus der Datenquelle angezeigt wird.](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
 
 Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](using-a-confirmbutton-in-a-repeater-vb.md)
+> [Weiter](using-a-confirmbutton-in-a-repeater-vb.md)

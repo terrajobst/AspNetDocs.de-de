@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 879f0f491461ec49c4eef9dc8add747ac2b22f90
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: da0df163d7c3b68246a84ff490471e64c142a8f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422102"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416518"
 ---
-<a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementieren von optimistischer Parallelität mit dem SqlDataSource-Steuerelement (VB)
-====================
+# <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>Implementieren von optimistischer Parallelität mit dem SqlDataSource-Steuerelement (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_50_VB.exe) oder [PDF-Datei herunterladen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/datatutorial50vb1.pdf)
@@ -47,7 +47,7 @@ Stellen Sie sich, dass zwei Benutzer, Jisun und Sam, sowohl eine Seite in einer 
 Abbildung 2 zeigt dies.
 
 
-[![Wenn zwei Benutzer gleichzeitig einen Datensatz zu aktualisieren ändert es s Potenzial für einen Benutzer s zum Überschreiben der anderen s](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
+[![W"hen" zwei Benutzer gleichzeitig Update ändert ein Datensatz gibt es s Potenzial für einen Benutzer s überschreiben die anderen s](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
 
 **Abbildung 2**: Wenn zwei Benutzer gleichzeitig aktualisieren einen Datensatz vorhanden s Potenzial für einen Benutzer s an überschreiben die anderen s ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
 
@@ -61,7 +61,7 @@ Um zu verhindern, dass dieses Szenario Herausklappen, eine Form der [parallelit�
 Steuerung für optimistische Parallelität funktioniert, indem Sie sicherstellen, dass der Datensatz aktualisieren oder löschen die gleichen Werte verfügt, wie zuvor beim Aktualisieren oder Löschen von Prozess starten. Z. B. beim Klicken auf die Schaltfläche "Bearbeiten" in einem bearbeitbaren GridView-Ansicht, die-s-Datensatzwerte aus der Datenbank gelesen und in die Textfelder und anderen Websteuerelementen angezeigt. Diese ursprünglichen Werte werden durch die GridView gespeichert. Später, nachdem der Benutzer nimmt ihre Änderungen vor, und klickt auf die Schaltfläche "Aktualisieren", die `UPDATE` -Anweisung verwendet muss berücksichtigen Sie die ursprünglichen Werte sowie die neuen Werte und den zugrunde liegenden Datenbankdatensatz nur aktualisieren, wenn die ursprünglichen Werte, dass der Benutzer bearbeiten sind identisch mit den Werten noch in der Datenbank. Abbildung 3 zeigt diese Abfolge von Ereignissen.
 
 
-[![Für die Update- oder Delete erfolgreich ausgeführt werden soll müssen die ursprünglichen Werte der aktuellen Datenbankwerte gleich sein.](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
+[![Foder die Update- oder Delete erfolgreich ausgeführt werden soll, müssen die ursprünglichen Werte gleich den Datenbankwerten der aktuellen werden](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
 
 **Abbildung 3**: Für die Update- oder Delete, hergestellt wird, die ursprünglichen Werte müssen werden gleich die aktuellen Datenbankwerte ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
 
@@ -78,7 +78,7 @@ In diesem Tutorial sehen, ist das Aktivieren der Steuerung durch vollständige P
 Öffnen Sie zunächst die `OptimisticConcurrency.aspx` Seite die `SqlDataSource` Ordner. Ziehen Sie ein SqlDataSource-Steuerelement aus der Toolbox auf den Designer, Einstellungen der `ID` Eigenschaft `ProductsDataSourceWithOptimisticConcurrency`. Klicken Sie anschließend auf den Link "Datenquelle konfigurieren" aus dem Steuerelement-s-Smarttag. Wählen Sie aus dem ersten Bildschirm des Assistenten, arbeiten Sie mit der `NORTHWINDConnectionString` , und klicken Sie auf Weiter.
 
 
-[![Wählen Sie für die Arbeit mit der NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
+[![CWählen Sie aus, für die Arbeit mit der NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
 
 **Abbildung 4**: Wählen Sie für die Arbeit mit der `NORTHWINDConnectionString` ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.png))
 
@@ -86,7 +86,7 @@ In diesem Tutorial sehen, ist das Aktivieren der Steuerung durch vollständige P
 In diesem Beispiel, das wir Hinzufügen einer GridView-Ansicht, die es ermöglicht Benutzern das Bearbeiten der `Products` Tabelle. Wählen Sie daher aus dem Bildschirm für die Select-Anweisung konfigurieren, die `Products` Tabelle aus der Dropdown-Liste, und wählen Sie die `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten, wie in Abbildung 5 dargestellt.
 
 
-[![Aus der Produkttabelle zurück, die ProductID, ProductName, UnitPrice und nicht mehr unterstützte Spalten](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
+[![FROM Produkttabelle zurück, die ProductID, ProductName, UnitPrice und nicht mehr unterstützte Spalten](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
 
 **Abbildung 5**: Aus der `Products` Tabelle, zum Zurückgeben der `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.png))
 
@@ -152,7 +152,7 @@ Anwenden dieses zu unserem Beispiel führt die folgende geänderte `UpdateComman
 Mit dem SqlDataSource-Steuerelement so konfiguriert, dass das unterstützen der optimistischen Parallelität übrig bleibt ein Daten-Websteuerelement zur Seite hinzufügen, der diese parallelitätssteuerung verwendet. In diesem Tutorial können Sie s Hinzufügen einer GridView-Ansicht, die beide bearbeiten bereitstellt und die Löschfunktionen. Um dies zu erreichen, ziehen Sie in einer GridView-Ansicht aus der Toolbox in den Designer und den Satz der `ID` zu `Products`. Von GridView s Smarttags, binden Sie es an der `ProductsDataSourceWithOptimisticConcurrency` SqlDataSource-Steuerelement, die in Schritt 1 hinzugefügt. Überprüfen Sie abschließend die Optionen für die Bearbeitung aktivieren und löschen aktivieren aus dem Smarttag.
 
 
-[![Binden Sie GridView zu, auf dem SqlDataSource-Steuerelement, und aktivieren Sie, bearbeiten und löschen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
+[![BSuchen der GridView mit dem SqlDataSource-Steuerelement und aktivieren, bearbeiten und Löschen von](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
 
 **Abbildung 6**: GridView zu binden, SqlDataSource-Steuerelement und Bearbeitung aktivieren und löschen ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image10.png))
 
@@ -173,7 +173,7 @@ Um die Steuerung für optimistische Parallelität in Aktion zu sehen, öffnen Si
 Im zweiten Browserfenster ändern Sie den Preis (aber lassen Sie den Produktnamen als den ursprünglichen Wert), und klicken Sie auf aktualisieren. Beim Postback im Raster auf den vorab Bearbeitungsmodus gibt, aber die Änderung der Preis wird nicht aufgezeichnet. Der zweite Browser zeigt dem gleichen Wert wie die erste Bedingung der neue Produktname mit dem alten Preis. Die Änderungen in der zweiten Browserfenster sind verloren gegangen. Darüber hinaus sind die Änderungen verloren gegangen stattdessen automatisch, wie es war keine Ausnahme oder eine Meldung, dass eine parallelitätsverletzung soeben aufgetreten ist.
 
 
-[![Die Änderungen in der zweiten Browserfenster sind im Hintergrund verloren gegangen.](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
+[![TEr ändert sich in der zweiten Browser-Fenster im Hintergrund gingen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
 
 **Abbildung 7**: Die Änderungen in der zweiten Browser-Fenster im Hintergrund gingen ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image12.png))
 
@@ -196,7 +196,7 @@ Aus Sicht der Endbenutzer-s in der zweiten Browserfenster nach dem Klicken auf d
 Da eine parallelitätsverletzung die Änderungen zurückgewiesen wird, die eine vorgenommen hat, wäre es schön, die den Benutzer zu warnen, wenn eine parallelitätsverletzung aufgetreten ist. Um den Benutzer darauf aufmerksam, Let s, fügen Sie ein Label-Steuerelement an den Anfang der Seite mit dem Namen `ConcurrencyViolationMessage` , deren `Text` Eigenschaft wird die folgende Meldung angezeigt: Sie haben versucht, zu aktualisieren oder Löschen eines Datensatzes, das gleichzeitig von einem anderen Benutzer aktualisiert wurde. Bitte überprüfen Sie die Änderungen des anderen Benutzers, und klicken Sie dann wiederholen Sie das Update oder löschen. Legen Sie das Label-Steuerelement s `CssClass` -Eigenschaft in "Warnung", ist eine CSS-Klasse definiert, `Styles.css` , Text in Rot, kursiv, fett und große Schriftart anzeigt. Legen Sie schließlich die Bezeichnung s `Visible` und `EnableViewState` Eigenschaften `False`. Dadurch wird ausgeblendet, die Bezeichnung mit Ausnahme von nur diese Postbacks, in dem wir explizit festlegen, seiner `Visible` Eigenschaft `True`.
 
 
-[![Fügen Sie ein Label-Steuerelement auf der Seite zum Anzeigen der Warnung](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
+[![ATT ein Bezeichnungssteuerelement zum Anzeigen der Warnung auf der Seite](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
 
 **Abbildung 8**: Fügen Sie ein Label-Steuerelement auf der Seite zum Anzeigen der Warnung ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image14.png))
 
@@ -213,7 +213,7 @@ In beiden Ereignishandler überprüfen wir die `e.AffectedRows` Eigenschaft und,
 Wie in Abbildung 9 gezeigt, bei diesen zwei Ereignishandlern, wird eine äußerst bemerkenswerten Meldung angezeigt, wenn eine parallelitätsverletzung liegt vor.
 
 
-[![Bei einer Verletzung der Parallelität wird eine Meldung angezeigt.](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
+[![A Meldung bei eine Parallelitätsverletzung](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
 
 **Abbildung 9**: Wird eine Meldung angezeigt, bei dem eine Parallelitätsverletzung ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png))
 
@@ -231,4 +231,4 @@ Viel Spaß beim Programmieren!
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Vorherige](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [Vorheriges](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

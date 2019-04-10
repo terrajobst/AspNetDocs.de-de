@@ -8,15 +8,15 @@ ms.date: 02/16/2009
 ms.assetid: b7cce113-c82c-45bf-b97b-357e5d9f7f56
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a8e540a00d852d5b710bfdbf63a68f6e6d280ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8c7b2274ff396f222382488ed877599e86ae5b99
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032187"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412683"
 ---
-<a name="creating-a-route-constraint-vb"></a>Erstellen einer Routeneinschränkung (VB)
-====================
+# <a name="creating-a-route-constraint-vb"></a>Erstellen einer Routeneinschränkung (VB)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial veranschaulicht, wie Sie steuern können, wie Browser Übereinstimmung Routen anfordert, durch das Erstellen von Einschränkungen mit regulären Ausdrücken.
@@ -26,7 +26,7 @@ Sie verwenden die routeneinschränkungen, um die Browseranforderungen zu beschr�
 
 Angenommen Sie, dass Sie die Route in Codebeispiel 1 in der Datei "Global.asax" definiert haben.
 
-**Listing 1 - Global.asax.vb**
+**1 – Global.asax.vb auflisten**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample1.vb)]
 
@@ -51,7 +51,7 @@ Leider wird die Route auch die folgenden URLs übereinstimmen:
 Da die Details() Aktion einen ganzzahligen Parameter erwartet, verursacht der eine Anforderung, die etwas anderes als ein ganzzahliger Wert enthält einen Fehler aus. Z. B. Wenn Sie die URL-/Product/apple in Ihren Browser eingeben erhalten die Fehlerseite in Abbildung 1 Sie.
 
 
-[![Das Dialogfeld "Neues Projekt"](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
 
 **Abbildung 01**: Eine Seite explode angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-route-constraint-vb/_static/image2.png))
 

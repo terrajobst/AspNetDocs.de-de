@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 45aab00140f63cd84ea1b7ba22f655b0e4373f97
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 639a8e0e5fd9557221c95aee1bef0294df047ae8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406313"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 – Hilfsprogramme, Formulare und Überprüfung
 
@@ -70,7 +70,7 @@ Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinhei
 
 Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang B: Verwenden von Codeausschnitten](#AppendixB)&quot;.
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -755,7 +755,7 @@ In dieser Aufgabe testen Sie, die die **StoreManager** Vorlage führt die Validi
    > 
    > [!code-html[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample25.html)]
 
-* * *
+---
 
 <a id="Summary"></a>
 
@@ -820,7 +820,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur C#)***
+***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
 
 1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
 2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
@@ -840,7 +840,7 @@ Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument
 
 *Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (C#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
 
 1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
 2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.

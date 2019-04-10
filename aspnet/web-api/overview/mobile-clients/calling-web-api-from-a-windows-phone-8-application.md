@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
-title: Aufrufen von Web-API aus einer Windows Phone 8-Anwendung (c#) | Microsoft-Dokumentation
+title: Aufrufen von Web-API aus einer Windows Phone 8-Anwendung (C#) – ASP.NET 4.x
 author: rmcmurray
-description: Erstellen Sie eine vollständige End-to-End-Szenario bestehend aus einer ASP.NET Web-API-Anwendung, die einen Katalog mit Büchern, die eine Windows Phone 8-Anwendung bereitstellt.
+description: 'Tutorial mit Code: Erstellen einer ASP.NET Web-API-Anwendung in ASP.NET 4.x, die einen Katalog mit Büchern, die eine Windows Phone 8-Anwendung bereitstellt.'
 ms.author: riande
 ms.date: 10/09/2013
+ms.custom: seoapril2019
 ms.assetid: b9775f41-352a-4f82-baa6-23e95b342e20
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: ca2b5f41f6c3bd38faacd1e15c4dee6f6210aff7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5c7804c2336e91dc171b5da52819436472e81cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044617"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412449"
 ---
-<a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)
-====================
+# <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)
+
 durch [Robert McMurray](https://github.com/rmcmurray)
 
 In diesem Tutorial erfahren Sie, wie erstellen Sie eine vollständige End-to-End-Szenario bestehend aus einer ASP.NET Web-API-Anwendung, die einen Katalog mit Büchern, die eine Windows Phone 8-Anwendung bereitstellt.

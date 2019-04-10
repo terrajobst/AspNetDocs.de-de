@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 94ea1a70-a9bc-4241-8f36-08366d64bab9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: f55b29a271dbdb72d3e2249ed74517b77d78cf5e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: badae58d5b43fb2674f4918f54f999ff48d0b5b0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034847"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418013"
 ---
-<a name="part-3-layout-and-category-menu"></a>Teil 3: Layout- und Kategoriemenü
-====================
+# <a name="part-3-layout-and-category-menu"></a>Teil 3: Layout- und Kategoriemenü
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
@@ -66,7 +66,7 @@ Bitte beachten Sie die Anweisung "Eval": &lt;% # Eval("CategoryName") %&gt;
 
 Der ASP.NET-Syntax &lt;% # %&gt; ist eine Kurzform-Konvention, die weist die Laufzeit ausgeführt wird, was in enthalten ist, und die Ergebnisse "in Zeile".
 
-Rufen Sie Eval("CategoryName") angewiesen, die für den aktuellen Eintrag in der gebundenen Auflistung von Datenelementen, den Wert der Elementnamen Entity Model "CatagoryName". Dies ist die kürzere Syntax für ein sehr leistungsfähiges Feature.
+Rufen Sie Eval("CategoryName") angewiesen, die für den aktuellen Eintrag in der gebundenen Auflistung von Datenelementen, den Wert der Elementnamen Entity Model "CategoryName". Dies ist die kürzere Syntax für ein sehr leistungsfähiges Feature.
 
 Können die Anwendung nun ausführen.
 

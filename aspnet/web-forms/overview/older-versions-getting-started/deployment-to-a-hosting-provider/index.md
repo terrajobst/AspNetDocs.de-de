@@ -8,15 +8,15 @@ ms.date: 11/29/2011
 ms.assetid: 6798c7e4-f08e-4802-9fa5-443f67d5df62
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider
 msc.type: chapter
-ms.openlocfilehash: 4fd9e95fbb5c73f7bae1b9d47228eb56a6976125
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 87de6c92375594ab6ee726f1b66a94a0db793fd2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021427"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417051"
 ---
-<a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - Webbereitstellung mit SQL Server Compact unter Verwendung von Visual Studio
-====================
+# <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - Webbereitstellung mit SQL Server Compact unter Verwendung von Visual Studio
+
 > Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET-Webanwendung, die über das Internet SQL Server Compact verfügbar, verwendet durch die Bereitstellung mit einem Drittanbieter-Hostinganbieter. Erfordert Visual Studio 2012 RC oder Visual Studio 2010. Weitere aktuelle Informationen zu Funktionen zur Bereitstellung und Informationen zum Bereitstellen von SQL Server-Editionen als SQL Server Compact finden Sie [ASP.NET-webbereitstellung mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
@@ -29,6 +29,6 @@ ms.locfileid: "57021427"
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen in der Produktionsumgebung](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines ausschließlich codebasierten Updates](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines Datenbankupdates](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-- [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren nach SQL Server](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
+- [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren zu SQL Server](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines SQL Server-Datenbankupdates](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Problembehandlung](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)

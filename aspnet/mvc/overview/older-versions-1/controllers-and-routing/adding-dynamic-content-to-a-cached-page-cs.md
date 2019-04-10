@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
-title: Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (C#) | Microsoft-Dokumentation
+title: Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (c#) | Microsoft-Dokumentation
 author: microsoft
 description: Erfahren Sie, wie dynamische und zwischengespeicherte Inhalte auf der gleichen Seite zu kombinieren. Ersetzung nach dem Zwischenspeichern können Sie dynamischen Inhalt, z. B. Banner Ankündigungen o anzuzeigen...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 26e40ff9659a4b8552b2a087c7c948c9f1f1554c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c126270304178d178f4b8f9739fa5c51e5dd0551
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424169"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415361"
 ---
-<a name="adding-dynamic-content-to-a-cached-page-c"></a>Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (C#)
-====================
+# <a name="adding-dynamic-content-to-a-cached-page-c"></a>Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie dynamische und zwischengespeicherte Inhalte auf der gleichen Seite zu kombinieren. Ersetzung nach dem Zwischenspeichern können Sie zum Anzeigen dynamischen Inhalts, z. B. Banner Ankündigungen oder neuen Elementen auf einer Seite, die Ausgabe wurden zwischengespeichert.
@@ -93,10 +93,6 @@ Wenn Sie die Seite der Sicht in Listing 5 anfordern, wird bei jeder Anforderung 
 In diesem Tutorial wird erläutert, wie Sie Inhalte in einer zwischengespeicherten Seite dynamisch aktualisieren können. Sie haben gelernt, wie Sie die HttpResponse.WriteSubstitution()-Methode verwenden, um dynamische Inhalte in einer zwischengespeicherten Seite eingefügt werden zu ermöglichen. Außerdem haben Sie gelernt, den Aufruf der Methode WriteSubstitution() innerhalb einer HTML-Hilfsprogramm-Methode zu kapseln.
 
 Nutzen Sie die Vorteile des Zwischenspeicherns an, wann immer möglich ist – er kann drastische Auswirkungen auf die Leistung Ihrer Webanwendungen haben. Wie in diesem Tutorial erläutert wird, können Sie nutzen zwischenspeichern, auch wenn dynamischen Inhalte auf Ihren Seiten angezeigt werden müssen.
-
-## 
-
-## 
 
 > [!div class="step-by-step"]
 > [Zurück](improving-performance-with-output-caching-cs.md)

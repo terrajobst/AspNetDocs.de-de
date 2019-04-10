@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: f8d78a88-cc91-40d8-bce3-3d7954f6033b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ad759cefc372f6276ce1b16beea7282d9685ef82
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029917"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408965"
 ---
-<a name="determining-what-files-need-to-be-deployed-c"></a>Festlegen der bereitzustellenden Dateien (C#)
-====================
+# <a name="determining-what-files-need-to-be-deployed-c"></a>Festlegen der bereitzustellenden Dateien (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_cs.pdf)
@@ -93,7 +93,7 @@ Der Download für dieses Lernprogramm enthält eine ASP.NET-Anwendung namens Boo
 Abbildung 1 zeigt einen Screenshot der Book Reviews-Website über einen Browser angezeigt. Hier sehen Sie die Seite "~ /`Tech/TYASP35.aspx`, die überprüft, dass des Buchs *bringen Sie sich ASP.NET 3.5 in 24 Stunden*. Die Breadcrumb-Leiste, die am oberen Rand der Seite, und klicken Sie im Menü in der linken Spalte umfasst basieren auf der Site Map-Struktur, die in definierten `Web.sitemap`. Das Bild in der rechten oberen Ecke eines Images an den Buch wird erläutert, ist die `Images` Ordner. Die Website Aussehen und Verhalten definiert sind, über das cascading Stylesheet-Stilregeln wie folgt buchstabiert die CSS-Dateien im Ordner "Stile", während das übergreifende Seitenlayout in die Masterseite definiert ist `Site.master`.
 
 
-[![Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
+[![TEr überprüft die Buch-Website bietet eine Sammlung von Titeln-Bewertungen](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **Abbildung 1:** Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen ([klicken Sie, um das Bild in voller Größe anzeigen](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
 
@@ -116,7 +116,7 @@ Das Webanwendungsprojekt-Modell verwendet explizite Kompilierung - Quellcode des
 Abbildung 2 zeigt die Dateien, aus denen das Book Reviews-Webanwendungsprojekt.
 
 
-[![Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
+[![Tin der Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfasst, aufgelistet](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **Abbildung 2**: Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.
 
@@ -143,7 +143,7 @@ Die Menüoption "Build" in Visual Studio ist sowohl für Webanwendungsprojekte a
 Abbildung 3 zeigt die Dateien, aus denen das Book Reviews-Websiteprojekt besteht.
 
 
- [![Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
+ [![Tin der Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfasst, aufgelistet](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
 **Abbildung 3**: Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.
 

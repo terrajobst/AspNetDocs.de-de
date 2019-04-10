@@ -8,15 +8,15 @@ ms.date: 01/28/2019
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 0b34cca8b48383dbb028106651758dff889ed614
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e4d9424d691f92aacf078faed09689daa40a44fd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039777"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418338"
 ---
-<a name="owin-startup-class-detection"></a>Erkennung der OWIN-Startup-Klasse
-====================
+# <a name="owin-startup-class-detection"></a>Erkennung der OWIN-Startup-Klasse
+
 
 > Dieses Tutorial veranschaulicht das Konfigurieren der OWIN-Startup-Klasse geladen wird. Weitere Informationen zu OWIN, finden Sie unter [eine Übersicht des Katana-Projekt](an-overview-of-project-katana.md). In diesem Tutorial wurde von Rick Anderson geschrieben ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ), Praburaj Thiagarajan und Howard Dierking ( [ @howard \_Dierking](https://twitter.com/howard_dierking) ).
 >
@@ -79,7 +79,8 @@ ms.locfileid: "57039777"
      > [!NOTE]
      > Im obigen Code haben wir eine auskommentiert ist die `OwinStartup` -Attribut, und wir haben die Konvention der Ausführung der Klasse, die mit dem Namen der vertrauenden Seite `Startup` . – drücken Sie ***F5*** zum Ausführen der Anwendung. Drücken Sie mehrmals aktualisieren.
 
-    ![](owin-startup-class-detection/_static/image4.png) Hinweis: Die Anzahl, die in den Abbildungen in diesem Tutorial gezeigt entspricht nicht die Anzahl der verfügbaren. Die Millisekunden-Zeichenfolge wird verwendet, um eine neue Antwort anzuzeigen, wenn Sie die Seite aktualisieren.
+    ![](owin-startup-class-detection/_static/image4.png)
+  Hinweis: Die Anzahl, die in den Abbildungen in diesem Tutorial gezeigt entspricht nicht die Anzahl der verfügbaren. Die Millisekunden-Zeichenfolge wird verwendet, um eine neue Antwort anzuzeigen, wenn Sie die Seite aktualisieren.
   Sehen Sie die Ablaufverfolgungsinformationen in die **Ausgabe** Fenster.
 
     ![](owin-startup-class-detection/_static/image5.png)

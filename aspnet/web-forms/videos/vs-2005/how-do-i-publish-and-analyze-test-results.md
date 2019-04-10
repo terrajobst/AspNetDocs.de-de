@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 9fb155e0-1379-482c-963d-af7dc0397d76
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
 msc.type: video
-ms.openlocfilehash: a575dd0af20bb1565606c93e5a189b7a3e35ff3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 80289680e4d40ec903524d9f4752b71d13db790e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053877"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413502"
 ---
-<a name="how-do-i-publish-and-analyze-test-results"></a>[Gewusst wie:] Veröffentlichen und Analysieren der Testergebnisse?
-====================
+# <a name="how-do-i-publish-and-analyze-test-results"></a>[Gewusst wie:] Veröffentlichen und Analysieren der Testergebnisse?
+
 durch [Chris Menegay](https://twitter.com/CMenegay)
 
 Visual Studio Team System ermöglicht Diagramm Änderungen Codequalität eines Projekts während des Projekts. Dieses Video enthält eine Anleitung zum Veröffentlichen von Testergebnissen mit der Team Foundation Server-Datenbank-Projekt, und ordnen Sie die Ergebnisse einer Buildnummer. Sehen Sie, dass wir nach dem die Ergebnisse veröffentlicht werden der Berichts-Manager verwenden können, um eine grafische Darstellung der Änderungen in unsere Testergebnisse des Builds anzuzeigen.

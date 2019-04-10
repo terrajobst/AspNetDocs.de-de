@@ -8,15 +8,15 @@ ms.date: 01/23/2007
 ms.assetid: 0ab311fc-154b-4e38-86ce-c6351ff5cabb
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit
 msc.type: video
-ms.openlocfilehash: 01f49ba72b6a6d748157ab153e56a8467895c95b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a9c9de7347dd24046d081a5e9ebbcf91a10fe634
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039207"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408263"
 ---
-<a name="how-do-i-get-started-with-the-aspnet-ajax-control-toolkit"></a>[Gewusst wie:] Erste Schritte mit ASP.NET AJAX Control Toolkit
-====================
+# <a name="how-do-i-get-started-with-the-aspnet-ajax-control-toolkit"></a>[Gewusst wie:] Erste Schritte mit ASP.NET AJAX Control Toolkit
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Erfahren Sie, wie Sie mithilfe von ASP.NET AJAX Control Toolkit ASP.NET AJAX-Anwendungen zu erweitern. In diesem Video beginnt mit den elementaren Grundlagen, einschließlich herunterladen und Installieren des Toolkits und eine einfache ASP.NET AJAX-aktivierten Webseite nur einige der Steuerelemente hinzugefügt.
@@ -24,4 +24,4 @@ Erfahren Sie, wie Sie mithilfe von ASP.NET AJAX Control Toolkit ASP.NET AJAX-Anw
 [&#9654;Sehen Sie sich Video (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit)
 
 > [!div class="step-by-step"]
-> [Nächste](how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender.md)
+> [Weiter](how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender.md)

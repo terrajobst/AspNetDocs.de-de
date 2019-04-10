@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: f55e558dd056e86bdd2310894959aef02a9d8de2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046877"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411981"
 ---
-<a name="adding-a-view"></a>Hinzufügen einer Ansicht
-====================
+# <a name="adding-a-view"></a>Hinzufügen einer Ansicht
+
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
@@ -38,7 +38,7 @@ Nun fügen Sie eine ansichtsvorlage unser Projekt, das wir für unsere Index()-M
 
 Dadurch wird das Dialogfeld "Ansicht hinzufügen" angezeigt, bietet uns einige Optionen für die wie wir möchten eine ansichtsvorlage zu erstellen, die durch die Index-Methode verwendet werden können. Vorerst keine Änderungen Sie aus, und klicken Sie einfach auf die Schaltfläche "hinzufügen".
 
-[![Ansicht-Dialogfeld "hinzufügen"](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
+[![ADd Ansicht Dialogfeld](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
 
 Nachdem Sie auf "hinzufügen" klicken, werden ein neuer Ordner und eine neue Datei im Projektmappenordner, angezeigt, wie hier zu sehen. Ich habe jetzt einen HelloWorld-Ordner unter Ansichten, und eine Index.aspx-Datei in diesem Ordner.
 
@@ -50,7 +50,7 @@ Der neue Index-Datei ist auch bereits geöffnet ist und für die Bearbeitung. Hi
 
 Führen Sie die Anwendung, und besuchen Sie [ `http://localhost:xx/HelloWorld` ](http://localhostxx) erneut in Ihrem Browser. Die Index-Methode im Controller in diesem Beispiel keinen arbeiten durchführen, aber aufgerufen haben, "return View()" Dies wird angegeben, dass wir eine ansichtsvorlagendatei zum Rendern einer Antwort zurück an den Client verwenden möchten. Da wir den Namen der ansichtsvorlagendatei mit nicht explizit angegeben hat, standardmäßig ASP.NET MVC die Ansichtsdatei Index.aspx im Ordner "\Views\HelloWorld". Sie sehen, ist die Zeichenfolge, die wir in der Ansicht hartcodiert.
 
-[![Index – Windows InternetExplorer](getting-started-with-mvc-part3/_static/image7.png)](getting-started-with-mvc-part3/_static/image6.png)
+[![Indextyp: Windows Internet Explorer](getting-started-with-mvc-part3/_static/image7.png)](getting-started-with-mvc-part3/_static/image6.png)
 
 Das sieht recht gut. Beachten Sie jedoch, dass im Browser auf die Titel sagt, "Index" und der große Titel auf der Seite "Meine MVC-Anwendung.", sagt Diese ändern.
 
@@ -80,7 +80,7 @@ Jetzt ändern wir den Titel der Indexseite.
 
 Führen Sie die app aus, und besuchen Sie /Movies. Beachten Sie, dass der Titel des Browsers, der die primäre Überschrift und die sekundären Überschriften geändert haben. Es ist einfach, umfassende Änderungen in Ihrer app mit kleinen Änderungen in Ihrer Ansicht anzeigen.
 
-[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
+[![MILM Liste – Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
 
 Unsere wenig "Daten" (in diesem Fall die "Hello World!" Nachricht) war einfach schwierig jedoch codiert. Wir haben V (Ansichten), und wir C (Controller), aber noch keine M (Modell). In Kürze begleiten wir erläutert, wie eine Datenbank erstellen und Modellieren von Daten daraus abrufen.
 
@@ -109,11 +109,11 @@ Fügen Sie diesen Code unter der &lt;h2&gt; in Ihre neue Welcome.aspx. Wir stell
 
 Beachten Sie außerdem, während Sie, die Eingaben sind, da wir diese Ansicht zu den WelcomeViewModel mitgeteilt (sie sind verheiratet, denken Sie daran?), dass wir nützliche Intellisense erhalten jedes Mal verweisen wir auf unsere Model-Objekts, wie im Screenshot unten:
 
-[![NumTime-Quellcode](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NUmTime Quellcode](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 Führen Sie die Anwendung, und besuchen Sie `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` erneut aus. Nachdem wir Daten aus der URL nimmt er automatisch den Controller übergeben wird, der Controller die Daten in ein "ViewModel" verpackt und wird das Objekt auf unsere Ansicht übergeben. Die Ansicht als die Daten im HTML-Format dem Benutzer angezeigt.
 
-[![Willkommen – Windows InternetExplorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
+[![Willkommen – Windows Internet Explorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
 
 Das war also eine Art von einem "M" für Modell, aber nicht der Art Datenbank. Sehen wir uns, was wir gelernt haben, und erstellen Sie eine Datenbank von Filmen.
 

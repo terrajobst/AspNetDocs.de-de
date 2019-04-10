@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: 3751f5e7-59db-4be0-a290-50abc24e5c84
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 3326c2e600854fc7a4435d96c45b04a6188d3937
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0da3032e22123f415bf9865e264832739c29f61
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046737"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409017"
 ---
-<a name="signalr-performance"></a>SignalR-Leistung
-====================
+# <a name="signalr-performance"></a>SignalR-Leistung
+
 durch [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -26,7 +26,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >
@@ -279,6 +279,6 @@ Die folgenden Leistungsindikatoren können auch bei der Überwachung der Leistun
 
 Weitere Informationen zu ASP.NET zur Leistungsüberwachung und-Optimierung finden Sie unter den folgenden Themen:
 
-- [ASP.NET Performance Overview (Die Leistung von ASP.NET im Überblick)](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
+- [Übersicht über die Leistung von ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [ASP.NET-Thread Usage on IIS 7.5, IIS 7.0 und IIS 6.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
 - [&lt;ApplicationPool&gt; -Element (Webeinstellungen)](https://msdn.microsoft.com/library/dd560842.aspx)

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2599b5015f288b2e8d02577a0865252a862574a4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 188f98d013707178e50858f8ea26d8cf2af06bea
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049997"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406014"
 ---
-<a name="presetting-list-entries-with-cascadingdropdown-c"></a>Vorheriges Festlegen von Listeneinträgen mit CascadingDropDown (C#)
-====================
+# <a name="presetting-list-entries-with-cascadingdropdown-c"></a>Vorheriges Festlegen von Listeneinträgen mit CascadingDropDown (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingDropDown2CS.pdf)
@@ -53,7 +53,7 @@ Die Methode gibt ein Array vom Typ CascadingDropDown-Wert zurück. Der Konstrukt
 Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zusammen, das zweite Argument wird standardmäßig ausgewählt.
 
 
-[![Die Liste gefüllt ist, und standardmäßig automatisch ausgewählt.](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
+[![Tseine Liste gefüllt und standardmäßig automatisch ausgewählt.](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
 
 Die Liste gefüllt und standardmäßig automatisch ausgewählt wird ([klicken Sie, um das Bild in voller Größe anzeigen](presetting-list-entries-with-cascadingdropdown-cs/_static/image3.png))
 

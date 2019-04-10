@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 27591afa-3c14-47e6-8323-573f8f7aa862
 msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
-ms.openlocfilehash: d53304d60888de55ad474f5be8c0cfe6f8b122bb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7d300a1f29c7712408d17c6629da6cefb67b3cdb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020247"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410317"
 ---
-<a name="how-do-i"></a>Gewusst wie
-====================
+# <a name="how-do-i"></a>Gewusst wie
+
 > So führen Sie eine Vielzahl gängiger Aufgaben aus.
 
 

@@ -8,15 +8,15 @@ ms.date: 10/07/2008
 ms.assetid: d6e758b6-6571-484d-a132-34ee6c47747a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d0d3f6a574a4b923d5da73ccb2ab3bfbd6f305ef
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 99b18de33e266adb626f4ab53ff20b1f52102900
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054827"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417584"
 ---
-<a name="displaying-a-table-of-database-data-c"></a>Anzeigen einer Tabelle von Datenbankdaten (C#)
-====================
+# <a name="displaying-a-table-of-database-data-c"></a>Anzeigen einer Tabelle von Datenbankdaten (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_CS.pdf)
@@ -33,7 +33,7 @@ Wir werden eine Reihe von Datensätzen aus der Tabelle der Datenbank Filme angez
 <a id="0.3_table01"></a>
 
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
 | Titel | Nvarchar(200)-Datentyp gepackt ist | False |
@@ -61,7 +61,7 @@ Nachdem Sie die Schaltfläche "hinzufügen", klicken Sie auf Assistent für Enti
 3. In der **Datenbankobjekte auswählen** Schritt, erweitern Sie den Knoten "Tabellen", wählen Sie die Tabelle für Filme. Geben Sie den Namespace *Modelle* , und klicken Sie auf die **Fertig stellen** Schaltfläche.
 
 
-[![Erstellen von LINQ to SQL-Klassen](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
+[![Ce rstellen LINQ to SQL-Klassen](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
 
 **Abbildung 01**: Erstellen von LINQ to SQL-Klassen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image2.png))
 
@@ -69,7 +69,7 @@ Nachdem Sie die Schaltfläche "hinzufügen", klicken Sie auf Assistent für Enti
 Nach Abschluss des Assistenten für Entity Data Model wird dem Entity Data Model-Designer geöffnet. Der Designer sollte die Filme-Entität angezeigt (siehe Abbildung 2).
 
 
-[![Der Entity Data Model-Designer](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
+[![Ter Entity Data Model-Designer](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
 
 **Abbildung 02**: Das Entity Data Model Designer ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image4.png))
 
@@ -83,7 +83,7 @@ Doppelklicken Sie auf den Namen der Klasse auf der Designeroberfläche, und änd
 Nun, da wir eine Methode zur Darstellung von unseren Unterlagen Datenbank haben, können wir einen Controller erstellen, der die Auflistung von Filmen zurückgibt. Klicken Sie im Fenster Projektmappen-Explorer von Visual Studio mit der rechten Maustaste in den Ordner "Controllers", und wählen Sie die Menüoption **hinzufügen, Controller** (siehe Abbildung 3).
 
 
-[![Die Controller-Menü "hinzufügen"](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
+[![Ter Menü "Controller hinzufügen"](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
 
 **Abbildung 03**: Im Controller hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image6.png))
 
@@ -91,7 +91,7 @@ Nun, da wir eine Methode zur Darstellung von unseren Unterlagen Datenbank haben,
 Wenn die **Controller hinzufügen** Dialogfeld angezeigt wird, geben Sie den Namen des Controllers MovieController (siehe Abbildung 4). Klicken Sie auf die **hinzufügen** , um den neuen Controller hinzuzufügen.
 
 
-[![Das Dialogfeld "Controller hinzufügen"](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
+[![TDialogfeld für seine-Controller hinzufügen](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
 
 **Abbildung 04**: Das Dialogfeld "Controller hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image8.png))
 
@@ -117,7 +117,7 @@ Erstellen Sie Ihre Anwendung durch Auswählen der Menüoption **erstellen "," Pr
 Mit der rechten Maustaste der Index()-Aktion, und wählen Sie die Menüoption **Ansicht hinzufügen** (siehe Abbildung 5).
 
 
-[![Hinzufügen einer Ansicht](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
+[![AHinzufügen einer Ansicht](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
 
 **Abbildung 05**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image10.png))
 
@@ -125,7 +125,7 @@ Mit der rechten Maustaste der Index()-Aktion, und wählen Sie die Menüoption **
 In der **Ansicht hinzufügen** Dialogfeld aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie die Movie-Klasse als die **Datenklasse anzeigen**. Wählen Sie *Liste* als die **Inhalt anzeigen** (siehe Abbildung 6). Wählen diese Optionen generiert eine stark typisierte Ansicht, in dem eine Liste von Filmen angezeigt.
 
 
-[![Das Dialogfeld "Ansicht hinzufügen"](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
+[![TDialogfeld für seine Ansicht hinzufügen](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
 
 **Abbildung 06**: Das Dialogfeld "Ansicht hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image12.png))
 
@@ -139,7 +139,7 @@ Nachdem Sie auf die **hinzufügen** Schaltfläche, die Ansicht im Codebeispiel 2
 Sie können die Anwendung ausführen, indem Sie durch Auswählen der Menüoption **Debuggen, Debugging starten** (oder F5 drücken). Internet Explorer wird gestartet, wenn Sie die Anwendung ausführen. Wenn Sie an die /Movie URL navigieren, und klicken Sie dann die Seite in Abbildung 7 angezeigt werden.
 
 
-[![Eine Tabelle mit den Filmen](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
+[![A Tabelle mit den Filmen](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
 
 **Abbildung 07**: Eine Tabelle mit den Filmen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image14.png))
 

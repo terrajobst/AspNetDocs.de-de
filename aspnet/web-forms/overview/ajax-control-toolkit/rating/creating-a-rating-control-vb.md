@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b229d0155fbab0437c644b41424164e4c655f5e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91523180501f1d1eb67586bf97649ad6226ec565
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049947"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413229"
 ---
-<a name="creating-a-rating-control-vb"></a>Erstellen eines Bewertungssteuerelements (VB)
-====================
+# <a name="creating-a-rating-control-vb"></a>Erstellen eines Bewertungssteuerelements (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)
@@ -66,9 +66,9 @@ Zugriff auf das Steuerelement für Bewertungen über, in den serverseitigen Code
 Speichern Sie die Seite, und Laden Sie sie in Ihrem Browser. Wenn Sie auf die Elemente (anfänglich leer) Bewertung zeigen, tritt ein JavaScript-Effekt: Die Bewertung ändert. Wenn Sie auf den Satz von Sternen klicken, wird die aktuelle Bewertung beibehalten. Wenn Sie das Formular übermitteln, gibt der serverseitige Code schließlich ausgewählte Bewertung aus.
 
 
-[![Erstellen ein Bewertungssystem mit minimalem code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
+[![Ce rstellen ein Bewertungssystem mit minimalem Code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
 
 Erstellen ein Bewertungssystem mit minimalem Code ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-rating-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](creating-a-rating-control-cs.md)
+> [Vorheriges](creating-a-rating-control-cs.md)

@@ -8,25 +8,25 @@ ms.date: 05/18/2012
 ms.assetid: 99253c4e-a125-4c21-85e7-a6dd74d93892
 msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: d46c4100bf169caa5dfd0f265e16d00d519ac847
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3e5b9d1a3bac0cf1ab042f473f8fd508069000a5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022237"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408575"
 ---
-<a name="getting-started-with-aspnet-web-pages"></a>Erste Schritte mit ASP.NET Web Pages
-====================
+# <a name="getting-started-with-aspnet-web-pages"></a>Erste Schritte mit ASP.NET Web Pages
+
 > Welche Web Pages- und WebMatrix-sind, sowie das alles zu installieren, erste Schritte und Bereitstellen von Websites.
 
 
 - [Programmieren von ASP.NET-Webseiten in Visual Studio](program-asp-net-web-pages-in-visual-studio.md)
-- [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](introducing-razor-syntax-c.md)
+- [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](introducing-razor-syntax-c.md)
 - [ASP.NET-Webseiten (Visual Basic)](introducing-razor-syntax-vb.md)
 - [ASP.NET-Webseiten (Razor) – FAQs](aspnet-web-pages-razor-faq.md)
-- [Senden von E-Mails von Ihrer Website](11-adding-email-to-your-web-site.md)
+- [Senden von E-Mail-Nachrichten von Ihrer Website](11-adding-email-to-your-web-site.md)
 - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](13-adding-social-networking-to-your-web-site.md)
-- [Einführung zu ASP.NET-Webseiten](introducing-aspnet-web-pages-2/index.md)
+- [Einführung in ASP.NET-Webseiten](introducing-aspnet-web-pages-2/index.md)
 
     - [Erste Schritte](introducing-aspnet-web-pages-2/getting-started.md)
     - [Grundlagen der Programmierung](introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)

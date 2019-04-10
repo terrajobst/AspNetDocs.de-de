@@ -8,15 +8,15 @@ ms.date: 08/22/2007
 ms.assetid: 424c06cd-6d61-43cd-a1f2-d1a6b62e47b1
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
-ms.openlocfilehash: e8508fa445d412be8358d6a9a40b6e1c249eacd0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: de2eb281cd4bab46635af480ac2e8f07f60f1591
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036967"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408107"
 ---
-<a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[Gewusst wie:] Implementieren des Musters für persistente Kommunikation mithilfe von Webdiensten?
-====================
+# <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[Gewusst wie:] Implementieren des Musters für persistente Kommunikation mithilfe von Webdiensten?
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 In einer herkömmlichen-Website im Browser und dem Server eine laufende Kommunikation nicht beibehalten, aber nur in der Antwort an den Benutzer, die eine Aktion die Kommunikation. In eine moderne Website, in dem die Seite einen Anwendungscontainer wird, kann es vorteilhaft sein für Browser und dem Server eine laufende Kommunikation verwaltet werden, sodass Seitenupdates auftreten können, ohne dass der Benutzer eine Aktion. Dies wird als des Musters für persistente Kommunikation für AJAX bezeichnet. ASP.NET AJAX bietet zwei Arten für Webentwickler zum Implementieren des Musters für persistente Kommunikation. In einem früheren Video wurde erläutert, wie das UpdatePanel von ASP.NET AJAX als Grundlage für die Implementierung zu verwenden. In diesem Video erfahren wir, wie zum Implementieren von des gleichen Musters, die über einen JavaScrpt-Aufruf an einen Webdienst, der wodurch die Notwendigkeit, eine UpdatePanel von ASP.NET AJAX entfernt.

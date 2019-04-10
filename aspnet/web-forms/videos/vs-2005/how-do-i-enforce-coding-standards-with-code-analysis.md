@@ -8,15 +8,15 @@ ms.date: 07/09/2007
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: 609f91090520cc36f312a68d63ba6d7356bb008d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1a9cf8ac7e8618dd3733080ba6a065e14f1cb68c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417142"
 ---
-<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Gewusst wie:] Erzwingen von Codierungsstandards durch die Codeanalyse?
-====================
+# <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Gewusst wie:] Erzwingen von Codierungsstandards durch die Codeanalyse?
+
 durch [Chris Menegay](https://twitter.com/CMenegay)
 
 Mit Visual Studio Team System müssen Sie die genaue Kontrolle über den die Codeanalyseregeln, die für Klassenbibliotheksprojekte Websiteprojekte und quellcodeverwaltung gelten. In diesem Video erfahren Sie, wie Sie angeben, die Fehler und Warnungen, die während des Projekts angewendet werden Builds und Code einchecken, und erfahren Sie, wie eine bestimmte Regel aus der Anwendung auf einem bestimmten Klassenmembers unterdrückt werden sollen. Mit diesem Aktualisierungsmechanismen, die Sie erzwingen können kommen Codierungsstandards, um die Qualität Ihres Codes zu verbessern und gleichzeitig sicherstellen passende Regeln niemals auf Ihre Weise.

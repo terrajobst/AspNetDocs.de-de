@@ -1,23 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: Unterstützung von OData-in ASP.NET-Web-API 2 Abfrageoptionen | Microsoft-Dokumentation
+title: Unterstützung von OData-in der ASP.NET Web API 2 - ASP.NET Abfrageoptionen 4.x
 author: MikeWasson
-description: ''
+description: Übersicht über die mit Codebeispielen zeigt unterstützenden OData-Abfrageoptionen in ASP.NET Web API 2 für ASP.NET 4.x.
 ms.author: riande
 ms.date: 02/04/2013
+ms.custom: seoapril2019
 ms.assetid: 50e6e62b-e72e-4a29-8293-4b67377bd21f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
 msc.type: authoredcontent
-ms.openlocfilehash: 8745183125c9dd1dcc7cb0e146367a893bdb0170
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 428e4942e42436585049c1e84cd7b07a4a79c0d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050877"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411565"
 ---
-<a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>Unterstützung von OData-Abfrageoptionen in der ASP.NET Web API 2
-====================
+# <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>Unterstützung von OData-Abfrageoptionen in der ASP.NET Web API 2
+
 durch [Mike Wasson](https://github.com/MikeWasson)
+
+In dieser Übersicht mit Codebeispielen veranschaulicht unterstützenden OData-Abfrageoptionen in ASP.NET Web API 2 für ASP.NET 4.x. 
 
 OData definiert die Parameter, die zum Ändern einer OData-Abfrage verwendet werden können. Der Client sendet diese Parameter in der Abfragezeichenfolge der Anforderungs-URI. Um die Ergebnisse zu sortieren, verwendet z. B. ein Client den $orderby-Parameter an:
 
@@ -78,7 +81,7 @@ $Top können die maximale Anzahl von Einträgen zurückgegeben, und die Option $
 
 Die $filter-Option ermöglicht einen Client, der die Ergebnisse zu filtern, indem Sie einen booleschen Ausdruck anwenden. Die Filterausdrücke sind sehr leistungsstark; Sie enthalten, logische und arithmetische Operatoren, Zeichenfolgenfunktionen und Date-Funktionen.
 
-| Zurückgeben Sie aller Produkte, mit der Kategorie "Toys" gleich. | `http://localhost/Products?$filter=Category` eq 'Toys' |
+| Zurückgeben Sie aller Produkte, mit der Kategorie "Toys" gleich. | `http://localhost/Products?$filter=Category` EQ "Toys" |
 | --- | --- |
 | Geben Sie alle Produkte mit weniger als 10 Preis zurück. | `http://localhost/Products?$filter=Price` Lt 10 |
 | Logische Operatoren: Alle Produkte zurück, in dem Preis > = 5 und Preis < = 15. | `http://localhost/Products?$filter=Price` ge 5 und Preis le 15 |

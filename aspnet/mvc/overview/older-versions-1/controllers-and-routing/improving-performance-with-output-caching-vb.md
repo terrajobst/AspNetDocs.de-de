@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9402d7e053ef11eeefa92d112b05ec255d5ec6f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033667"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405624"
 ---
-<a name="improving-performance-with-output-caching-vb"></a>Verbessern der Leistung mit Ausgabezwischenspeicherung (VB)
-====================
+# <a name="improving-performance-with-output-caching-vb"></a>Verbessern der Leistung mit Ausgabezwischenspeicherung (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie die Leistung Ihrer ASP.NET MVC-Webanwendungen erheblich verbessern können, durch die Nutzung der ausgabezwischenspeicherung. Erfahren Sie, wie Sie die Zwischenspeicherung des Ergebnisses über eine Controlleraktion zurückgegeben werden, sodass derselbe Inhalt muss nicht jedes Mal erstellt werden, das ein neuer Benutzer die Aktion aufruft.

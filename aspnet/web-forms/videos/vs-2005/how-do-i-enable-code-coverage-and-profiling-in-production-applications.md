@@ -8,15 +8,15 @@ ms.date: 08/22/2007
 ms.assetid: a0437314-e310-425a-b67b-0dc06878dbe2
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enable-code-coverage-and-profiling-in-production-applications
 msc.type: video
-ms.openlocfilehash: d7937ecd85054621665077186a5c67287f260311
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eb886aac6c0a5d9e65719a0dc359acbad3b85659
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052267"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408783"
 ---
-<a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[Gewusst wie:] Aktivieren Sie die Code Coverage und Profilerstellung in Produktionsanwendungen?
-====================
+# <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[Gewusst wie:] Aktivieren Sie die Code Coverage und Profilerstellung in Produktionsanwendungen?
+
 durch [Chris Menegay](https://twitter.com/CMenegay)
 
 Erfahren Sie, wie Sie die Instrumentierung für Code Coverage und profilerstellung in einer Anwendung, die Visual Studio ausgeführt wird, anstatt eine bereitgestellte ASP.NET-Anwendung einrichten. In diesem Video finden Sie die Schritte, die in den die [Profiling ASP.NET im Instrumentationsmodus über die Befehlszeile](https://msdn.microsoft.com/teamsystem/aa718860.aspx) TechNote auf der Microsoft MSDN-Website.

@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service | Microsoft-Dokumentation
+title: Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service – ASP.NET 4.x
 author: Rick-Anderson
 description: In diesem Tutorial wird gezeigt, wie der Code sicher zu speichern und auf sichere Informationen zugreifen. Der wichtigste Punkt ist, dass Sie niemals Kennwörter oder andere Sen speichern sollten...
 ms.author: riande
 ms.date: 05/21/2015
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 8b5d6bf9fad72218341e4e0b90144da01abea3aa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046887"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419443"
 ---
-<a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen sensiblen Daten für ASP.NET und Azure App Service
-====================
+# <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen sensiblen Daten für ASP.NET und Azure App Service
+
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > In diesem Tutorial wird gezeigt, wie der Code sicher zu speichern und auf sichere Informationen zugreifen. Der wichtigste Punkt ist, sollten Sie niemals Kennwörter oder andere sensiblen Daten im Quellcode speichern, und Sie sollte nicht produktionsgeheimnisse in Entwicklungs- und Test-Modus verwenden.
@@ -31,7 +32,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [WebJobs-Konsolen-apps](#wj)
 - [Bereitstellen von Geheimnissen in Azure](#da)
 - [Hinweise für die lokale und PHP](#not)
-- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#addRes)
 
 <a id="pwd"></a>
 ## <a name="working-with-passwords-in-the-development-environment"></a>Arbeiten mit Kennwörtern in der Entwicklungsumgebung

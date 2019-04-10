@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0116306afdf21cb24a374013bb54ada54e5699ea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bbedc11b9b1225b1047350c1c84a116ecef0c380
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407405"
 ---
-<a name="understanding-action-filters-vb"></a>Grundlegendes zu Aktionsfiltern (VB)
-====================
+# <a name="understanding-action-filters-vb"></a>Grundlegendes zu Aktionsfiltern (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
@@ -49,7 +49,7 @@ Die Verantwortlichen in Codebeispiel 1 stellt beispielsweise eine Aktion, die mi
 Wenn Sie wiederholt Aufrufen der `Index()` Aktionen durch Eingabe der URL/Data/Index in die Adressleiste Ihres Browsers, und drücken die Aktualisierung Schaltfläche mehrmals gleichzeitig für 10 Sekunden angezeigt wird. Die Ausgabe der `Index()` Aktion für 10 Sekunden (siehe Abbildung 1) zwischengespeichert wird.
 
 
-[![Cachezeit](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
+[![C-Header Time](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
 **Abbildung 01**: Zeit zwischengespeichert ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-action-filters-vb/_static/image3.png))
 
@@ -107,7 +107,7 @@ Um zu veranschaulichen, wie Sie einen benutzerdefinierte Aktionsfilter erstellen
 Programmausdruck 2 die `OnActionExecuting()`, `OnActionExecuted()`, `OnResultExecuting()`, und `OnResultExecuted()` alle Methoden aufrufen, die `Log()` Methode. Der Name der Methode und die aktuelle Routendaten übergeben wird, um die `Log()` Methode. Die `Log()` -Methode schreibt eine Meldung an das Ausgabefenster von Visual Studio-Fenster (siehe Abbildung 2).
 
 
-[![Das Schreiben in das Ausgabefenster von Visual Studio](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
+[![WRiting zum Ausgabefenster von Visual Studio](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
 **Abbildung 02**: Schreiben in das Ausgabefenster von Visual Studio-Fenster ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-action-filters-vb/_static/image6.png))
 

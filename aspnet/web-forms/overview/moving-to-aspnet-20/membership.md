@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408185"
 ---
-<a name="membership"></a>Mitgliedschaft
-====================
+# <a name="membership"></a>Mitgliedschaft
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET-Mitgliedschaft baut auf den Erfolg der Forms-Authentifizierungsmodell von ASP.NET 1.x. ASP.NET-Formularauthentifizierung bietet eine bequeme Möglichkeit, Ihre ASP.NET-Anwendung ein Anmeldeformular integrieren, und Überprüfen von Benutzern für eine Datenbank oder einem anderen Datenspeicher.
@@ -74,7 +74,7 @@ Sie können die Weboberfläche starten, mit der ASP.NET-Konfiguration-Schaltflä
 
 Dadurch wird die ASP.NET Websiteverwaltungs-Tool unten angezeigt. Die ASP.NET Web Site Administration ist eine vier-Registerkarte-Schnittstelle, die zum Verwalten von Anwendungseinstellungen vereinfacht. Die folgenden Registerkarten sind verfügbar:
 
-- **Home**
+- **Startseite**
 - **Sicherheit** Benutzer, Rollen und den Zugriff zu konfigurieren.
 - **Anwendung** konfigurieren Sie die Anwendungseinstellungen.
 - **Anbieter** konfigurieren und Testen Sie Ihre Anwendungen Membership-Provider.
@@ -233,7 +233,7 @@ Wenn Sie auf der anderen Seite Sie Ihren eigenen Anbieter (zum Speichern von Inf
 
 ## <a name="creating-your-own-membership-provider"></a>Erstellen einen eigenen Mitgliedschaftsanbieter
 
-Um einen eigenen Mitgliedschaftsanbieter erstellen zu können, müssen Sie zuerst eine Klasse erstellen, die die MembershipProvider-Klasse erbt. Wenn Sie VB.NET verwenden, wird Visual Studio 2005 die Stubs für alle Methoden hinzufügen, die Sie überschreiben müssen. Wenn Sie C#, nun ist es an die Stubs hinzufügen verwenden.
+Um einen eigenen Mitgliedschaftsanbieter erstellen zu können, müssen Sie zuerst eine Klasse erstellen, die die MembershipProvider-Klasse erbt. Wenn Sie VB.NET verwenden, wird Visual Studio 2005 die Stubs für alle Methoden hinzufügen, die Sie überschreiben müssen. Wenn Sie c#, nun ist es an die Stubs hinzufügen verwenden.
 
 Sie müssen die folgenden überschreiben:
 
@@ -264,7 +264,7 @@ Sie müssen die folgenden überschreiben:
 - UpdateUser-Funktion
 - ValidateUser-Funktion
 
-Thats eine Liste aus, um als C#-Entwickler zu implementieren. Möglicherweise ist es einfacher erstellen Sie die Klasse in VB.NET ohne jegliche Implementierung, und klicken Sie dann mithilfe von .NET Reflector oder ein ähnliches Tool, um den Code in C# zu konvertieren.
+Thats eine Liste aus, um als c#-Entwickler zu implementieren. Möglicherweise ist es einfacher erstellen Sie die Klasse in VB.NET ohne jegliche Implementierung, und klicken Sie dann mithilfe von .NET Reflector oder ein ähnliches Tool, um den Code in c# zu konvertieren.
 
 Die Verbindungszeichenfolge und andere Eigenschaften müssen die Standardwerte in der Initialize-Methode festgelegt werden. (Die Initialize-Methode wird ausgelöst, wenn der Anbieter zur Laufzeit geladen wird.) Der zweite Parameter für die Initialize-Methode ist vom Typ System.Collections.Specialized.NameValueCollection und ist ein Verweis auf die &lt;hinzufügen&gt; -Element, das den benutzerdefinierten Anbieter in der Datei "Web.config" zugeordnet ist. Dieser Eintrag sieht folgendermaßen aus:
 

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8b2a2d2d72bfcf3ce8b3b345fda0bad5a37818ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6baf5447d31d00b89cb7ddf526553456fecbbf6e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026467"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409472"
 ---
-<a name="fighting-bots-vb"></a>Abwehren von Bots (VB)
-====================
+# <a name="fighting-bots-vb"></a>Abwehren von Bots (VB)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/NoBot0.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/nobot0VB.pdf)
@@ -65,9 +65,9 @@ Schließlich benötigen Sie ein Formular zum Senden und ein Label-Element die Me
 Wenn Sie dieses Skript ausführen und Deaktivieren von JavaScript oder senden Sie das Formular in den ersten zwei Sekunden oder senden Sie das Formular sieben Mal innerhalb von 30 Sekunden, erhalten Sie eine Fehlermeldung angezeigt. Verwenden Sie dieses Steuerelement jedoch bedacht, da nur ungefähr 90 bis 95 % der Benutzer über die JavaScript-aktivierte verfügen, daher 5 bis 10 % der Benutzer nicht `NoBot`des testen.
 
 
-[![Diese Fehlermeldung kann durch einen Bot verursacht werden](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
+[![Tseine Fehlermeldung von einem Bot wurde möglicherweise verursacht](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
 
 Diese Fehlermeldung kann auftreten, durch einen Bot ([klicken Sie, um das Bild in voller Größe anzeigen](fighting-bots-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorherige](fighting-bots-cs.md)
+> [Vorheriges](fighting-bots-cs.md)

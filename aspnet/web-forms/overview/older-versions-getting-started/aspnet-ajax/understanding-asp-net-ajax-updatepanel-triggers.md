@@ -8,15 +8,15 @@ ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 9501a2e855bdffe8c9d85c0dd0d836f50935b306
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025297"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406261"
 ---
-<a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX
-====================
+# <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX
+
 durch [Scott Cate](https://github.com/scottcate)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
@@ -32,7 +32,7 @@ In diesem Whitepaper werden die XML-Trigger-Funktionalität von ASP.NET AJAX unt
 
 In diesem Whitepaper basiert auf der Version von .NET Framework 3.5 Beta 2 und Visual Studio 2008. ASP.NET AJAX Extensions, zuvor eine Add-on-Assembly, die auf ASP.NET 2.0 ausgerichtet sind, sind jetzt in der .NET Framework-Basisklassenbibliothek integriert. In diesem Whitepaper wird vorausgesetzt, dass Sie mit Visual Studio 2008 nicht Visual Web Developer Express arbeiten werden und bieten Exemplarische Vorgehensweisen, gemäß der Benutzeroberfläche von Visual Studio (obwohl codeauflistungen vollständig unabhängig von kompatibel sind Entwicklungsumgebung).
 
-## <a name="triggers"></a>*Trigger*
+## *<a name="triggers"></a>Trigger*
 
 Trigger für eine bestimmte UpdatePanel standardmäßig enthalten automatisch alle untergeordneten Steuerelemente, die ein Postback handeln, einschließlich der TextBox-Steuerelemente, die (z. B.) aufrufen ihre `AutoPostBack` -Eigenschaftensatz auf **"true"**. Trigger können jedoch auch deklarativ mithilfe von Markup enthalten sein. Dies erfolgt im der `<triggers>` Teil der Deklaration des UpdatePanel-Steuerelement. Obwohl Trigger über zugegriffen werden können die `Triggers` Auflistungseigenschaft, es wird empfohlen, dass keine partiellen Rendering Trigger zur Laufzeit registriert werden (z. B. wenn ein Steuerelement zur Entwurfszeit nicht verfügbar ist) mit der `RegisterAsyncPostBackControl(Control)` -Methode der der ScriptManager Objekt für die Seite in der `Page_Load` Ereignis. Denken Sie daran, dass die Seiten sind zustandslos und daher sollte erneut registrieren dieser Steuerelemente jedes Mal, wenn sie erstellt werden.
 
@@ -40,7 +40,7 @@ Automatische untergeordneten Trigger einschließen kann auch deaktiviert werden 
 
 Beachten Sie, dass wenn UpdatePanel-Steuerelemente geschachtelt sind, wenn die UpdateMode auf festgelegt ist **bedingte**, wenn das untergeordnete Element UpdatePanel wird ausgelöst, aber das übergeordnete Element ist nicht der Fall, klicken Sie dann nur die untergeordneten UpdatePanel aktualisiert wird. Jedoch, wenn das übergeordnete Element UpdatePanel aktualisiert wird, klicken Sie dann das untergeordnete Element UpdatePanel auch aktualisiert werden.
 
-## <a name="the-lttriggersgt-element"></a>*Die &lt;Trigger&gt; Element*
+## *<a name="the-lttriggersgt-element"></a>Die &lt;Trigger&gt; Element*
 
 Wenn Sie in den Markup-Editor in Visual Studio arbeiten, Sie bemerken (von IntelliSense), dass es zwei untergeordnete Elemente gibt von einer `UpdatePanel` Steuerelement. Das am häufigsten verwendeten angezeigte Element ist die `<ContentTemplate>` -Element, das im Wesentlichen auf den Inhalt kapselt, die mit dem Update-Bereich gespeichert werden (der Inhalt für das werden wir partielles Rendering aktivieren). Das andere Element ist die `<Triggers>` Element, das die Steuerelemente auf der Seite (oder das Benutzersteuerelement, wenn Sie einen verwenden) angibt, der eine partielle Rendering des UpdatePanel-Steuerelements in der auslöst der &lt;Trigger&gt; Element befindet.
 
@@ -50,7 +50,7 @@ Die `<asp:AsyncPostBackTrigger>` Element ist besonders nützlich, ein Ereignis v
 
 Auf ähnliche Weise die `<asp:PostBackTrigger>` Element kann verwendet werden, um den Trigger, die eine partielle Seite zu rendern, aber eine, die einen vollständige Roundtrip zum Server erforderlich sind. Dieser Trigger-Element kann auch verwendet werden, um eine gesamte Seite rendern zu erzwingen, wenn ein Steuerelement ein renderobjekt Teilseite andernfalls normalerweise auslösen würde (z. B. wenn ein `Button` Steuerelement vorhanden ist, der `<ContentTemplate>` Element von einem UpdatePanel-Steuerelement). In diesem Fall kann das PostBackTrigger Element jedes Steuerelement angeben, die ein untergeordnetes Element eines beliebigen UpdatePanel-Steuerelements in der aktuellen Einheit der Kapselung ist.
 
-## <a name="lttriggersgt-element-reference"></a>*&lt;Trigger&gt; -Elementverweis*
+## *<a name="lttriggersgt-element-reference"></a>&lt;Trigger&gt; -Elementverweis*
 
 *Nachfolger von Markup:*
 
@@ -59,7 +59,7 @@ Auf ähnliche Weise die `<asp:PostBackTrigger>` Element kann verwendet werden, u
 | &lt;asp:AsyncPostBackTrigger&gt; | Gibt an, ein Steuerelement und ein Ereignis, das einer partiellen seitenaktualisierung UpdatePanel verursachen kann, die diese Trigger-Verweis enthält. |
 | &lt;asp:PostBackTrigger&gt; | Gibt an, ein Steuerelement und ein Ereignis, das einer vollständigen seitenaktualisierung (einer vollständigen seitenaktualisierung) führt. Dieses Tag kann verwendet werden, um eine vollständige Aktualisierung zu erzwingen, wenn ein Steuerelement andernfalls partielles Rendering auslösen würde. |
 
-## <a name="walkthrough-cross-updatepanel-triggers"></a>*Exemplarische Vorgehensweise: Cross-UpdatePanel-Triggern*
+## *<a name="walkthrough-cross-updatepanel-triggers"></a>Exemplarische Vorgehensweise: Cross-UpdatePanel-Triggern*
 
 1. Erstellen Sie eine neue ASP.NET-Seite mit einem ScriptManager-Objekt, das zum Aktivieren des partiellen Renderings festlegen. Zwei UpdatePanels zu dieser Seite – in der ersten hinzugefügt werden, enthalten ein Label-Steuerelement (Label1) und zwei Schaltflächen-Steuerelemente (Button1 und Button2). "Button1" besser gesagt, klicken Sie auf, um beide zu aktualisieren und Button2 besser gesagt, klicken Sie auf, um diese oder eine ähnliche Funktion wie diese Zeilen zu aktualisieren. Enthalten Sie in der zweiten UpdatePanel nur ein Label-Steuerelement "Label2 ("), aber legen Sie die ForeColor-Eigenschaft auf einen anderen Wert als den Standardwert zur Kennzeichnung.
 2. Legen Sie die UpdateMode-Eigenschaft der beiden Tags UpdatePanel **bedingte**.
@@ -82,7 +82,7 @@ Auf ähnliche Weise die `<asp:PostBackTrigger>` Element kann verwendet werden, u
 ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
 
 
-## <a name="under-the-hood"></a>*Einblick in die Hintergründe*
+## *<a name="under-the-hood"></a>Im Hintergrund*
 
 Verwenden das Beispiel, die, das wir soeben erstellt, können wir sehen Sie sich Was macht ASP.NET AJAX und die Funktionsweise von unserem UpdatePanel-Triggern in Cross-Bereich. Zu diesem Zweck arbeiten wir mit der generierten Seitenprofilklasse HTML-Quelle als auch die FireBug - wird aufgerufen, damit, Mozilla Firefox-Erweiterung können wir einfach die AJAX-Postbacks untersuchen. Wir verwenden auch das Tool .NET Reflector von Lutz Roeder. Beide Tools sind kostenlos online, und Sie können mit einer Internetsuche gefunden werden.
 

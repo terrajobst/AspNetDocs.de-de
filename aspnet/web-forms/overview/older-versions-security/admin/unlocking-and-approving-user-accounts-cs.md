@@ -8,15 +8,15 @@ ms.date: 04/01/2008
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1a8373f62833c3a76d2e7f96193e5ecbe2d9c593
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e8591f3090de8f931ffd8eb1dd0a1138674842
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410044"
 ---
-<a name="unlocking-and-approving-user-accounts-c"></a>Entsperren und Genehmigen von Benutzerkonten (C#)
-====================
+# <a name="unlocking-and-approving-user-accounts-c"></a>Entsperren und Genehmigen von Benutzerkonten (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.14.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial14_UnlockAndApprove_cs.pdf)
@@ -49,7 +49,7 @@ In diesem Tutorial verwenden wir zwei ASP.NET-Seiten: `ManageUsers.aspx` und `Us
 Nehmen Sie nach dem Hinzufügen der HyperLinkField an die GridView, einen Moment Zeit, an die `ManageUsers.aspx` Seite über einen Browser. Wie in Abbildung 1 gezeigt, enthält jede GridView-Zeile jetzt einen Link "Verwalten" aus. Der Link "Verwalten" für Bruce verweist auf `UserInformation.aspx?user=Bruce`, während auf der Link "Verwalten" Dave zeigt `UserInformation.aspx?user=Dave`.
 
 
-[![Fügt der HyperLinkField ein](unlocking-and-approving-user-accounts-cs/_static/image2.png)](unlocking-and-approving-user-accounts-cs/_static/image1.png)
+[![THE HyperLinkField Fügt eine](unlocking-and-approving-user-accounts-cs/_static/image2.png)](unlocking-and-approving-user-accounts-cs/_static/image1.png)
 
 **Abbildung 1**: Die HyperLinkField Fügt einen Link "Verwalten" für jedes Benutzerkonto ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image3.png))
 
@@ -72,7 +72,7 @@ Wir können nun zum Implementieren der Benutzeroberfläche in `UserInformation.a
 Nach dem Hinzufügen dieser Steuerelemente, sollte die Entwurfsansicht in Visual Studio ähnlich wie im Screenshot in Abbildung 2 aussehen.
 
 
-[![Erstellen der Benutzeroberfläche für UserInformation.aspx](unlocking-and-approving-user-accounts-cs/_static/image5.png)](unlocking-and-approving-user-accounts-cs/_static/image4.png)
+[![CErstellen die Benutzeroberfläche für UserInformation.aspx](unlocking-and-approving-user-accounts-cs/_static/image5.png)](unlocking-and-approving-user-accounts-cs/_static/image4.png)
 
 **Abbildung 2**: Erstellen der Benutzeroberfläche für `UserInformation.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image6.png))
 
@@ -98,7 +98,7 @@ Zurück zu Visual Studio, und Erstellen von Ereignishandlern für die `IsApprove
 Bei diesen Ereignishandlern vorhanden, noch einmal auf die Seite und nicht genehmigte Benutzer. Wie in Abbildung 3 gezeigt wird, sollte eine kurze, die auf der Seite zeigt an, dass des Benutzers die Meldung `IsApproved` Eigenschaft wurde erfolgreich geändert.
 
 
-[![Chris hat nicht genehmigt wurde.](unlocking-and-approving-user-accounts-cs/_static/image8.png)](unlocking-and-approving-user-accounts-cs/_static/image7.png)
+[![CHRIS wurde nicht genehmigt](unlocking-and-approving-user-accounts-cs/_static/image8.png)](unlocking-and-approving-user-accounts-cs/_static/image7.png)
 
 **Abbildung 3**: Chris wurde nicht genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image9.png))
 
@@ -106,7 +106,7 @@ Bei diesen Ereignishandlern vorhanden, noch einmal auf die Seite und nicht geneh
 Abmelden und versuchen Sie es, als der Benutzer, dessen Konto anmelden, wurde als Nächstes einfach nicht genehmigt. Da der Benutzer nicht genehmigt wird, kann nicht bei der Anmeldung. Standardmäßig zeigt das Login-Steuerelement dieselbe Nachricht, wenn der Benutzer, unabhängig von der Ursache für die Anmeldung kann nicht. Aber in der <a id="Tutorial6"> </a> [ *Überprüfen von Benutzer-Anmeldeinformationen für die Mitgliedschaft Benutzer Store* ](../membership/validating-user-credentials-against-the-membership-user-store-cs.md) Tutorial erläutert, auf die Verbesserung der Login-Steuerelement, um einen besser geeigneten Nachricht anzuzeigen. Wie in Abbildung 4 gezeigt, wird Chris eine Meldung darüber informiert, dass er anmelden kann nicht, da es sich bei seinem Konto noch nicht genehmigt wird angezeigt.
 
 
-[![Chris kann nicht da His Anmeldekonto ist nicht genehmigt](unlocking-and-approving-user-accounts-cs/_static/image11.png)](unlocking-and-approving-user-accounts-cs/_static/image10.png)
+[![CHRIS Anmelden nicht, da sein Konto nicht genehmigt ist](unlocking-and-approving-user-accounts-cs/_static/image11.png)](unlocking-and-approving-user-accounts-cs/_static/image10.png)
 
 **Abbildung 4**: Chris kann nicht da His Anmeldekonto ist nicht genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image12.png))
 
@@ -116,7 +116,7 @@ Versuch der um die Sperre auch Funktionalität zu testen, melden Sie sich als ei
 Wechseln Sie zurück zur der `ManageUsers.aspx` Seite, und klicken Sie auf den Link "verwalten" für den Benutzer gesperrt. Wie in Abbildung 5 gezeigt, sehen Sie einen Wert in der `LastLockedOutDateLabel` die Schaltfläche "Benutzer entsperren" aktiviert werden soll. Klicken Sie auf die Schaltfläche "Benutzer entsperren", um das Benutzerkonto zu entsperren. Nachdem Sie die Benutzer nicht entsperrt haben, werden sie sich erneut anmelden.
 
 
-[![Dave wurde aus dem System gebunden.](unlocking-and-approving-user-accounts-cs/_static/image14.png)](unlocking-and-approving-user-accounts-cs/_static/image13.png)
+[![DDurchschn. wurde aus dem System gebunden.](unlocking-and-approving-user-accounts-cs/_static/image14.png)](unlocking-and-approving-user-accounts-cs/_static/image13.png)
 
 **Abbildung 5**: Dave hat wurde gesperrt, des Systems ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image15.png))
 
@@ -166,7 +166,7 @@ Die `SendingMail` Ereignis wird ausgelöst, nachdem die `CreatedUser` -Ereignis,
 Das Endergebnis ist, dass neue Benutzer nicht genehmigt, was bedeutet, dass sie an der Website anmelden darf nicht. Darüber hinaus werden sie automatisch eine e-Mail mit einem Link gesendet, um die überprüfungs-URL (siehe Abbildung 6).
 
 
-[![Der neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL](unlocking-and-approving-user-accounts-cs/_static/image17.png)](unlocking-and-approving-user-accounts-cs/_static/image16.png)
+[![Ter neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL](unlocking-and-approving-user-accounts-cs/_static/image17.png)](unlocking-and-approving-user-accounts-cs/_static/image16.png)
 
 **Abbildung 6**: Der neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image18.png))
 
@@ -188,7 +188,7 @@ Der größte Teil der obige Code überprüft, ob die `UserId` angegebenen über 
 Abbildung 7 zeigt die `Verification.aspx` Seite, wenn über einen Browser aufgerufen.
 
 
-[![Das neue Benutzerkonto wird nun genehmigt](unlocking-and-approving-user-accounts-cs/_static/image20.png)](unlocking-and-approving-user-accounts-cs/_static/image19.png)
+[![Tseine neue Benutzerkonto wird nun genehmigt](unlocking-and-approving-user-accounts-cs/_static/image20.png)](unlocking-and-approving-user-accounts-cs/_static/image19.png)
 
 **Abbildung 7**: Das neue Benutzerkonto wird nun genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-cs/_static/image21.png))
 

@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424299"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409719"
 ---
-<a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
-====================
+# <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
+
 > Dieses Dokument enthält eine Übersicht über viele der neuen Features für ASP.NET, die in.NET Framework 4 und in Visual Studio 2010 enthalten sind.
 > 
 > [In diesem Whitepaper herunterladen](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
@@ -202,7 +202,7 @@ ASP.NET 4 können auch so konfigurieren Sie die Zeichen, die von der Überprüfu
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-In der Standardeinstellung die <em>RequestPathInvalidChars</em> Attribut definiert acht Zeichen als ungültig. (In der Zeichenfolge, die zugewiesen ist <em>RequestPathInvalidChars</em> standardmäßig<em>,</em>der kleiner als (&lt;), größer als (&gt;), und das kaufmännische und-Zeichen (&amp;) Zeichen sind codiert werden, da die `Web.config` Datei ist eine XML-Datei.) Sie können die Menge der ungültigen Zeichen anpassen, je nach Bedarf.
+In der Standardeinstellung die *RequestPathInvalidChars* Attribut definiert acht Zeichen als ungültig. (In der Zeichenfolge, die zugewiesen ist *RequestPathInvalidChars* standardmäßig die kleiner als (&lt;), größer als (&gt;), und das kaufmännische und-Zeichen (&amp;) Zeichen codiert werden, da die `Web.config` Datei ist eine XML-Datei.) Sie können die Menge der ungültigen Zeichen anpassen, je nach Bedarf.
 
 > [!NOTE]
 > Beachten Sie ASP.NET 4 lehnt URL-Pfade, die Zeichen im ASCII-Bereich von 0 x 00 bis 0x1F, enthalten immer ab, da die ungültige URL-Zeichen sind, wie in RFC 2396 der IETF definiert ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt)). In Versionen von Windows Server mit IIS 6 oder höher wird der Gerätetreiber von http.sys Protokoll weist automatisch URLs mit diesen Zeichen.
@@ -444,15 +444,15 @@ Die *HttpBrowserCapabilities* Objekt wird durch eine Reihe von Browserdefinition
 Die folgende Liste enthält die neuen Browser Definitionsdateien:
 
 - *blackberry.browser*
-- *chrome.browser*
-- *Default.browser*
-- *firefox.browser*
-- *gateway.browser*
-- *generic.browser*
-- *ie.browser*
+- *Chrome.Browser*
+- *Default.Browser*
+- *Firefox.Browser*
+- *Gateway.Browser*
+- *Generic.Browser*
+- *IE.Browser*
 - *iemobile.browser*
 - *iphone.browser*
-- *opera.browser*
+- *Opera.Browser*
 - *safari.browser*
 
 #### <a name="using-browser-capabilities-providers"></a>Mithilfe von Anbietern für Browser-Funktionen
@@ -578,7 +578,7 @@ Die *MapPageRoute* -Methode unterstützt die folgenden Überladungen:
 
 - *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess)*
 - *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, RouteValueDictionary defaults)*
-- *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, RouteValueDictionary defaults, RouteValueDictionary constraints)*
+- *MapPageRoute (Zeichenfolge RouteName, RouteUrl der Zeichenfolge, Zeichenfolge PhysicalFile, "bool" CheckPhysicalUrlAccess, RouteValueDictionary Standardwerte, RouteValueDictionary Einschränkungen)*
 
 Die *CheckPhysicalUrlAccess* Parameter gibt an, ob die Route die Sicherheitsberechtigungen für die physische Seite, die weitergeleitet werden überprüft werden soll (in diesem Fall search.aspx) und die Berechtigungen für die eingehende URL (in diesem Fall suchen / {Searchterm}). Wenn der Wert des *CheckPhysicalUrlAccess* ist *"false"*, nur die Berechtigungen der eingehenden URL werden überprüft. Diese Berechtigungen werden definiert, der `Web.config` mithilfe von Einstellungen wie z. B. die folgende Datei:
 
@@ -628,7 +628,7 @@ Die *RouteParameter* Klasse ermöglicht die Angabe Routendaten als Parameterwert
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-In diesem Fall wird der Wert des Searchterm der Route-Parameter verwendet werden, für die @companyname Parameter in der <em>wählen</em> Anweisung.
+In diesem Fall wird der Wert des Searchterm der Route-Parameter verwendet werden, für die @companyname Parameter in der *wählen* Anweisung.
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -982,10 +982,10 @@ Können Sie definieren eine CSS-Klasse, die gilt nur für die *ausgeblendeten* E
 Standardmäßig werden die folgenden ASP.NET Web-Server-Steuerelemente, die Vorlagen unterstützen automatisch in der äußeren Tabelle umschlossen, die verwendet wird, um Inlinestile zu übernehmen:
 
 - *FormView*
-- *Login*
+- *Anmelden*
 - *PasswordRecovery*
 - *ChangePassword*
-- *Wizard*
+- *Assistent*
 - *CreateUserWizard*
 
 Eine neue Eigenschaft namens *RenderOuterTable* wurde hinzugefügt, um diesen Steuerelementen, mit der äußere Tabelle aus dem Markup entfernt werden können. Betrachten Sie beispielsweise das folgende Beispiel einer *FormView* Steuerelement:
@@ -1279,7 +1279,7 @@ Visual Web Developer-Designer in Visual Studio 2010 wurde aktualisiert, um die E
 
 ### <a name="html-and-javascript-snippets"></a>HTML und JavaScript-Ausschnitte
 
-In der HTML-Editor werden automatisch vervollständigt IntelliSense Tag-Namen. Das Feature für die IntelliSense-Codeausschnitte werden automatisch vervollständigt ganze Tags und vieles mehr. In Visual Studio 2010 werden IntelliSense-Codeausschnitte für JavaScript, zusammen mit C# und Visual Basic, die in früheren Versionen von Visual Studio unterstützt wurden.
+In der HTML-Editor werden automatisch vervollständigt IntelliSense Tag-Namen. Das Feature für die IntelliSense-Codeausschnitte werden automatisch vervollständigt ganze Tags und vieles mehr. In Visual Studio 2010 werden IntelliSense-Codeausschnitte für JavaScript, zusammen mit c# und Visual Basic, die in früheren Versionen von Visual Studio unterstützt wurden.
 
 Visual Studio 2010 umfasst mehr als 200 Codeausschnitte, mit denen Sie die automatische Vervollständigung allgemeine ASP.NET- und HTML-Tags, einschließlich der erforderlichen Attribute (z. B. Runat = "Server") und allgemeine Attribute, die spezifisch für ein Tag (z. B. *ID*,  *DataSourceID*, *ControlToValidate*, und *Text*).
 

@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d3a965ccf7ca001d3178819f88836b59f2893bb0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425521"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406417"
 ---
-<a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: Der Fix It-Beispielanwendung (erstellen realer Cloud-Apps mit Azure)
-====================
+# <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: Der Fix It-Beispielanwendung (erstellen realer Cloud-Apps mit Azure)
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Laden Sie das Update, das es Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
@@ -395,4 +395,4 @@ Ersetzen Sie in MyFixItCloudService\ServiceConfiguration.Cloud.cscfg die gleiche
 Jetzt können Sie den Cloud-Dienst bereitstellen. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in des MyFixItCloudService-Projekts, und wählen **veröffentlichen**. Weitere Informationen finden Sie unter "[Bereitstellen der Anwendung in Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", d.h. in Teil 2 des [in diesem Tutorial](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
 > [!div class="step-by-step"]
-> [Vorherige](more-patterns-and-guidance.md)
+> [Vorheriges](more-patterns-and-guidance.md)

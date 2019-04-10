@@ -8,15 +8,15 @@ ms.date: 10/05/2007
 ms.assetid: a250a97d-e04d-403a-816e-cd6efda396cd
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-a-custom-membership-provider
 msc.type: video
-ms.openlocfilehash: efff72fe7d59a15d1d1229bfd745fff506aa9840
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 92adf4ece68c64d5f2aba32b23faf04fc5dfe031
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026787"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413736"
 ---
-<a name="how-do-i-create-a-custom-membership-provider"></a>[Gewusst wie:] Erstellen Sie einen benutzerdefinierten Mitgliedschaftsanbieter?
-====================
+# <a name="how-do-i-create-a-custom-membership-provider"></a>[Gewusst wie:] Erstellen Sie einen benutzerdefinierten Mitgliedschaftsanbieter?
+
 durch [Chris Pels](https://twitter.com/chrispels)
 
 Einen Mitgliedschaftsanbieter für Web-Apps speichern und Abrufen von Daten der Benutzergruppenmitgliedschaft für einen Benutzer, und des standardmäßigen ASP.NET-Mitgliedschaftsanbieters mithilfe vordefinierte SQL Server-Tabellen. In diesem Video erfahren wir, wie einen benutzerdefinierter Mitgliedschaftsanbieter zu erstellen, der benutzerdefinierte SQL Server-Tabellen, die getrennt von den vordefinierten Tabellen, die von den Standardanbieter verwendet verwendet. Die Prinzipien, finden Sie im Video gilt für das Erstellen benutzerdefinierter Mitgliedschaftsanbieter, mit anderen Datenbanken wie Access oder Oracle. Nachdem Sie gelernt haben, erstellen Sie den benutzerdefinierten Mitgliedschaftsanbieter verwendet, lernen wir so konfigurieren Sie den Anbieter in einer Webanwendung, und eine Demonstration der Erstellen eines neuen Benutzers ein, und authentifizieren den neuen Benutzer mit den benutzerdefinierten Mitgliedschaftsanbieter verwendet.

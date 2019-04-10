@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 45d74249a34fc7e37e9776a398615d2f613a7582
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031737"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410863"
 ---
-<a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Bereitstellen von CRUD-Unterstützung (Create, Read, Update, Delete) für Datenformulareinträge
-====================
+# <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Bereitstellen von CRUD-Unterstützung (Create, Read, Update, Delete) für Datenformulareinträge
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -41,7 +41,7 @@ Zuvor hinzugefügten Aktionsmethoden zu "dinnerscontroller", die Unterstützung 
 | */Dinners/* | GET | Eine HTML-Liste mit anstehenden Dinner angezeigt. |
 | */Dinners/Details/[id]* | GET | Anzeigen von Details zu einem bestimmten Dinner. |
 
-Fügen wir jetzt Aktionsmethoden zur Implementierung von drei zusätzliche URLs: <em>"/ dinners" / Edit / [Id] "," / Dinners/erstellen,</em>und<em>"/ dinners" / Delete / [Id]</em>. Diese URLs werden Unterstützung für die Bearbeitung vorhandener Dinner, neue Dinner erstellen und Löschen von Dinner aktiviert.
+Fügen wir jetzt Aktionsmethoden zur Implementierung von drei zusätzliche URLs: *"/ dinners" / Edit / [Id]*, */Dinners/erstellen*, und *"/ dinners" / Delete / [Id]*. Diese URLs werden Unterstützung für die Bearbeitung vorhandener Dinner, neue Dinner erstellen und Löschen von Dinner aktiviert.
 
 Wir unterstützen HTTP GET- und HTTP POST-Verb-Interaktionen mit diesen neuen URLs. HTTP GET-Anforderungen an diese URLs werden die erste HTML-Ansicht der Daten (ein Formular mit den Dinner-Daten im Fall von "Bearbeiten" aufgefüllt, ein leeres Formular im Fall von "erstellen" und ein Bestätigungsfenster "löschen" im Fall von "Delete") angezeigt. HTTP-POST-Anforderungen an diese URLs werden Speichern/aktualisieren/löschen die Dinner-Daten in unsere "dinnerrepository" (und von dort aus in der Datenbank).
 
@@ -51,7 +51,7 @@ Wir unterstützen HTTP GET- und HTTP POST-Verb-Interaktionen mit diesen neuen UR
 | POST | Speichern Sie die formularänderungen für ein bestimmtes Essen, auf die Datenbank an. |
 | */Dinners/Create* | GET | Zeigen Sie ein leeres HTML-Formular, das Benutzern ermöglicht, neue Dinner zu definieren. |
 | POST | Erstellen Sie eine neue Dinner, und speichern Sie sie in der Datenbank. |
-| */Dinners/Delete/[id]* | GET | Anzeige löschen Bestätigungsbildschirm angezeigt. |
+| *"/ Dinners" / Delete / [Id]* | GET | Anzeige löschen Bestätigungsbildschirm angezeigt. |
 | POST | Löscht das angegebene Dinner aus der Datenbank an. |
 
 ### <a name="edit-support"></a>Bearbeiten-Unterstützung
@@ -138,7 +138,7 @@ Zunächst müssen wir unsere "dinnerscontroller", die ein Attribut "AcceptVerbs"
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-Wenn das Attribut [AcceptVerbs] für überladene Aktionsmethoden angewendet wird, verarbeitet ASP.NET MVC automatisch die Verteilung von Anforderungen an die entsprechende Aktionsmethode abhängig von der eingehenden HTTP-Verb. HTTP-POST-Anforderungen an <em>"/ dinners" / Edit / [Id]</em> URLs werden gesendet, während alle anderen HTTP-Verb-Anforderungen an die oben dargestellte bearbeiten-Methode <em>"/ dinners" / Edit / [Id]</em>URLs geht die erste bearbeiten-Methode implementiert (das war keine, ein Attribut [AcceptVerbs]).
+Wenn das Attribut [AcceptVerbs] für überladene Aktionsmethoden angewendet wird, verarbeitet ASP.NET MVC automatisch die Verteilung von Anforderungen an die entsprechende Aktionsmethode abhängig von der eingehenden HTTP-Verb. HTTP-POST-Anforderungen an *"/ dinners" / Edit / [Id]* URLs werden gesendet, während alle anderen HTTP-Verb-Anforderungen an die oben dargestellte bearbeiten-Methode *"/ dinners" / Edit / [Id]* URLs geht die erste bearbeiten-Methode implementiert (das war kein `[AcceptVerbs]` Attribut).
 
 | **Seite-Thema: Warum über HTTP-Verben unterscheiden?** |
 | --- |
@@ -228,7 +228,7 @@ Die Hilfsmethode Html.ValidationMessage() unterstützt auch einen zweiten Parame
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-Der obige Code gibt:  <em>&lt;span-Klasse = "Feld-Validation-Error"&gt;\*&lt;/span&gt;</em>anstelle der Fehler Standardtext, wenn ein Fehler vorhanden ist. die EventDate-Eigenschaft.
+Der obige Code gibt: *&lt;span-Klasse = "Feld-Validation-Error"&gt;\*&lt;/span&gt;* anstelle der Fehler Standardtext, wenn ein Fehler vorhanden ist. die EventDate-Eigenschaft.
 
 ##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary()-Hilfsmethode
 

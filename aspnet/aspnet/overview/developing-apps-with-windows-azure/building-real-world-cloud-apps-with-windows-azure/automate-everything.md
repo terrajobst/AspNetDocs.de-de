@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: 18e988279b56e479b0bb27de2f01ab22a2e70301
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422609"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418364"
 ---
-<a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (erstellen realer Cloud-Apps mit Azure)
-====================
+# <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (erstellen realer Cloud-Apps mit Azure)
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -125,7 +125,7 @@ Das erste, was das Skript wird die Web-app zu erstellen, indem die `New-AzureWeb
 
 ### <a name="create-the-storage-account"></a>Erstellen des Speicherkontos
 
-Wird, das Hauptskript ausgeführt der <em>New-AzureStorage.ps1</em> Skript zu erstellen, angeben "<em>&lt;Websitename&gt;</em>Speicher" für den Namen des Speicherkontos, und den gleichen Standort des Rechenzentrums als die Web-app.
+Wird, das Hauptskript ausgeführt der *New-AzureStorage.ps1* Skript zu erstellen, angeben "*&lt;Websitename&gt;* Speicher" für den Namen des Speicherkontos, und den gleichen Standort des Rechenzentrums als die Web-app.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 

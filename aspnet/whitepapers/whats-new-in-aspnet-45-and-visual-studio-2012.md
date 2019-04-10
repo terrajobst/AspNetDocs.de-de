@@ -8,15 +8,15 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 6bbfb4aa7f29e4c189da4dfdca6f2113c7550b68
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045047"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410590"
 ---
-<a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>Neue Funktionen in ASP.NET 4.5 und Visual Studio 2012
-====================
+# <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>Neue Funktionen in ASP.NET 4.5 und Visual Studio 2012
+
 > Dieses Dokument beschreibt die neuen Features und Verbesserungen, die in ASP.NET 4.5 eingeführt wird. Darüber hinaus werden die Verbesserungen für die Webentwicklung in Visual Studio 2012 beschrieben. In diesem Dokument wurde ursprünglich auf dem 29. Februar 2012 veröffentlicht.
 
 
@@ -42,7 +42,7 @@ ms.locfileid: "57045047"
         - [Verwenden von Mehrkern-JIT-Kompilierung für schnellere Starts](#_Toc_perf_4)
         - [Optimieren der Garbagecollection für den Arbeitsspeicher zu optimieren.](#_Toc_perf_5)
         - [Der Vorabruf für Webanwendungen](#_Toc_perf_6)
-- [ASP.NET-Web Forms](#_Toc318097385)
+- [ASP.NET-Web Forms](#_Toc318097385)
 
     - [Stark typisierte Datensteuerelemente](#_Toc318097386)
     - [Modellbindung](#_Toc318097387)
@@ -54,7 +54,7 @@ ms.locfileid: "57045047"
     - [Unaufdringliche Validierung](#_Toc318097392)
     - [HTML5 Updates](#_Toc318097393)
 - [ASP.NET MVC 4](#_Toc318097394)
-- [ASP.NET Web Pages 2](#_Toc318097395)
+- [ASP.NET-Webseiten 2](#_Toc318097395)
 - [Visual Studio 2012 Release Candidate](#_Toc318097396)
 
     - [Projektfreigabe, die zwischen Visual Studio 2010 und Visual Studio 2012 Release Candidate (Projektkompatibilität)](#project-compatibility)
@@ -73,11 +73,11 @@ ms.locfileid: "57045047"
         - [Automatisch eingrenzende Anweisungsvervollständigung](#_Toc318097406)
     - [JavaScript-Editor](#_Toc318097407)
 
-        - [Codegliederung](#_Toc318097408)
+        - [Code outlining](#_Toc318097408)
         - [Überprüfung des Klammergleichgewichts](#_Toc318097409)
-        - [Gehe zu Definition](#_Toc318097410)
+        - [Zur Definition wechseln](#_Toc318097410)
         - [Unterstützung von ECMAScript5](#_Toc318097411)
-        - [DOM IntelliSense](#_Toc318097412)
+        - [DOM-IntelliSense](#_Toc318097412)
         - [Überladungen der VSDOC-Signatur](#_Toc318097413)
         - [Implizite Verweise](#_Toc318097414)
     - [CSS-Editor](#_Toc318097415)
@@ -88,7 +88,7 @@ ms.locfileid: "57045047"
         - [Hersteller bestimmte Schemas (- Moz-, - Webkit)](#_Toc318097419)
         - [Auskommentieren und Aufheben der auskommentierung-Unterstützung](#_Toc318097420)
         - [Farbauswahl](#_Toc318097421)
-        - [Snippets (Ausschnitte)](#_Toc318097422)
+        - [Codeausschnitte](#_Toc318097422)
         - [Benutzerdefinierte Bereiche](#_Toc318097423)
     - [Seitenprüfung](#_Toc318097424)
     - [Veröffentlichen](#_Toc318097425)

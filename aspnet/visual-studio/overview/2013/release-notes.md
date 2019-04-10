@@ -8,15 +8,15 @@ ms.date: 10/17/2013
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: cd6197a9cbed822ba874a19823521a3711be9201
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8234bd1b7eb74d9b03e507f00d9ad937314288be
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422713"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411279"
 ---
-<a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools für Visual Studio 2013 – Anmerkungen zu dieser Version
-====================
+# <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools für Visual Studio 2013 – Anmerkungen zu dieser Version
+
 by [Microsoft](https://github.com/microsoft)
 
 > Dieses Dokument beschreibt die Version von ASP.NET und Webtools für Visual Studio 2013.
@@ -38,9 +38,9 @@ by [Microsoft](https://github.com/microsoft)
 - [Azure App Service-Web-Apps-Unterstützung in Visual Studio](#waws)
 - [Webveröffentlichung mit Erweiterungen](#publish)
 - [NuGet 2.7](#nuget)
-- [ASP.NET-Web Forms](#TOC9)
+- [ASP.NET-Web Forms](#TOC9)
 - [ASP.NET MVC 5](#TOC10)
-- [ASP.NET Web-API 2](#TOC11)
+- [ASP.NET-Web-API 2](#TOC11)
 - [ASP.NET SignalR](#TOC13)
 - [ASP.NET Identity](#TOC8)
 - [Microsoft OWIN-Komponenten](#TOC7)
@@ -135,7 +135,7 @@ In Visual Studio 2013 mit dem Azure SDK für .NET 2.2 können Sie **Server-Explo
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 - [Erstellen einer ASP.NET-Web-Apps in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
-- [Problembehandlung in einer Web-App in Azure App Service mithilfe von Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Problembehandlung bei Web-Apps in Azure App Service mithilfe von Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Webveröffentlichung mit Erweiterungen
@@ -627,7 +627,7 @@ Dieser Abschnitt beschreibt bekannte Probleme und wichtige Änderungen in der AS
 
     **Fehler**:
 
-    *Serverfehler in Anwendung '/'.*
+    *Serverfehler in "/" Anwendung.*
 
     <em>Ein Anspruch des Typs "<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'oder'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>" war nicht vorhanden ist, auf die angegebene "ClaimsIdentity". Um Unterstützung für fälschungssicherheitstoken token mit Ansprüchen basierende Authentifizierung zu aktivieren, stellen Sie sicher, dass konfigurierten Anspruchsanbieter-Vertrauensstellung beide dieser Ansprüche auf der "ClaimsIdentity"-Instanzen bereitstellt, die sie generiert. Wenn die konfigurierten Anspruchsanbieter-Vertrauensstellung stattdessen einen anderen Anspruchstyp als eindeutiger Bezeichner verwendet, kann es durch Festlegen der statischen Eigenschaft AntiForgeryConfig.UniqueClaimTypeIdentifier konfiguriert werden.</em>
 

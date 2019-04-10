@@ -8,15 +8,15 @@ ms.date: 04/23/2009
 ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4ea1713541c30623c0f7c8387318549dd36a125f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3951ab4562e2c172f418c74136d511f0f9f50454
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423584"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415842"
 ---
-<a name="strategies-for-database-development-and-deployment-c"></a>Strategien zur Datenbankentwicklung und -bereitstellung (C#)
-====================
+# <a name="strategies-for-database-development-and-deployment-c"></a>Strategien zur Datenbankentwicklung und -bereitstellung (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [PDF herunterladen](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial10_DBDevel_cs.pdf)
@@ -55,7 +55,7 @@ Die einfachste Möglichkeit, ein Protokoll der Änderungen in das Datenmodell w�
 <a id="0.4_table01"></a>
 
 
-| **Datum der Änderung** | **Änderungsdetails** |
+| **Datum ändern** | **Änderungsdetails** |
 | --- | --- |
 | 2009-02-03: | Hinzugefügte Spalte `DepartmentID` (`int`, NOT NULL), die `Employees` Tabelle. Eine foreign Key-Einschränkung von hinzugefügt `Departments.DepartmentID` zu `Employees.DepartmentID`. |
 | 2009-02-05: | Entfernte Spalte `TotalWeight` aus der `Orders` Tabelle. Zugeordnete Daten, die bereits erfasst `OrderDetails` Datensätze. |
@@ -99,7 +99,7 @@ Es gibt eine Vielzahl von Drittanbieter-Datenbank-Vergleichstools von vielen unt
 Beim Starten von SQL Compare Öffnet das Dialogfeld Vergleich-Projekte, die mit der gespeicherten SQL Compare-Projekte. Erstellen Sie ein neues Projekt. Dadurch wird es sich um den Projekt-Assistenten, der Informationen zu den Datenbanken dazu aufgefordert werden, verglichen werden soll (siehe Abbildung 1). Geben Sie die Informationen für die Datenbanken für Entwicklungs- und produktionsumgebungen Umgebung aus.
 
 
-[![Vergleichen Sie die Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image2.jpg)](strategies-for-database-development-and-deployment-cs/_static/image1.jpg)
+[![COmpare die Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image2.jpg)](strategies-for-database-development-and-deployment-cs/_static/image1.jpg)
 
 **Abbildung 1**: Vergleichen Sie die Entwicklung und Produktion von Datenbanken ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image3.jpg))
 
@@ -116,7 +116,7 @@ Nach der Auswahl der Datenbanken vergleichen (und überprüfen die Vergleichsopt
 > Die Änderungen des Datenmodells, die in diesem Tutorial vorgenommen wurden vorgenommen, um mit einem Datenbank-Vergleichs-Tool zu veranschaulichen. Sie werden diese Änderungen nicht in zukünftigen Lernprogrammen in der Datenbank gefunden.
 
 
-[![SQL-Vergleich werden die Unterschiede zwischen der Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image5.jpg)](strategies-for-database-development-and-deployment-cs/_static/image4.jpg)
+[![SSQL Compare Listet die Unterschiede zwischen der Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image5.jpg)](strategies-for-database-development-and-deployment-cs/_static/image4.jpg)
 
 **Abbildung 2**: SQL Compare aufgeführt, die Unterschiede zwischen der Entwicklung und Produktion von Datenbanken ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image6.jpg))
 
@@ -128,7 +128,7 @@ Ein Datenbankobjekt auswählen, zeigt die SQL-Unterschiede-Fenster, in dem zeigt
 Im nächste Schritt werden nach dem die Unterschiede überprüfen und Auswählen der Objekte, die Sie synchronisieren möchten, generieren die SQL-Befehle erforderlich, um die Produktion s Datenbankschema zu aktualisieren, mit die Entwicklungsdatenbank übereinstimmen. Dies erfolgt mithilfe des Assistenten für die Synchronisierung. Der Assistent für die Synchronisierung bestätigt werden soll, welche Objekte, die zum Synchronisieren, und fasst die Aktion planen (siehe Abbildung 3). Sie können die Datenbanken sofort zu synchronisieren oder generieren ein Skript mit der SQL-Befehle, die in aller Ruhe ausgeführt werden können.
 
 
-[![Mithilfe des Assistenten für die Synchronisierung Ihrer Datenbankschemas synchronisieren](strategies-for-database-development-and-deployment-cs/_static/image8.jpg)](strategies-for-database-development-and-deployment-cs/_static/image7.jpg)
+[![USE-Synchronisierung-Assistenten, um zu synchronisieren der Datenbankschemas](strategies-for-database-development-and-deployment-cs/_static/image8.jpg)](strategies-for-database-development-and-deployment-cs/_static/image7.jpg)
 
 **Abbildung 3**: Verwenden Sie den Assistenten "Synchronisierung" zu synchronisieren der Datenbankschemas ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image9.jpg))
 

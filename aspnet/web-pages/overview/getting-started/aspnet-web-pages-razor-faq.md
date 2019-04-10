@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: b137bd04-25e1-47cb-9d96-ef2e179ecf1f
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 27bfbe782455a5f8cf5096953c91712988b8dcab
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0e51b2fb73370164af1a38af5e5e15e24608843
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049097"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418650"
 ---
-<a name="aspnet-web-pages-razor-faq"></a>ASP.NET-Webseiten (Razor) – FAQs
-====================
+# <a name="aspnet-web-pages-razor-faq"></a>ASP.NET-Webseiten (Razor) – FAQs
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > > [!NOTE] 
@@ -42,7 +42,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 - [Habe ich, um die WebSecurity-Hilfsprogramm verwenden, um Anmeldungen zu unterstützen?](#Do_I_have_to_use_the_WebSecurity_helper_to_support_logins)
 - [Unterstützt die ASP.NET Web Pages HTML5?](#Does_ASP.NET_Web_Pages_support_HTML5)
 - [Kann ich JavaScript und jQuery mit Webseiten verwenden?](#Can_I_use_JavaScript_and_jQuery_with_Web_Pages)
-- [Additional Resources](#AdditionalResources) (Zusätzliche MSBuild-Ressourcen)
+- [Zusätzliche Ressourcen](#AdditionalResources)
 
 Fragen zu Fehlern und anderen Problemen finden Sie auf die [ASP.NET Web Pages (Razor) – Handbuch zur Problembehandlung](https://go.microsoft.com/fwlink/?LinkId=253001).
 

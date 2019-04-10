@@ -8,15 +8,15 @@ ms.date: 12/18/2012
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 13dead421abf7ded73cbb2e5f87e54b1a869b5d4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ce845eb6c914321736d77e989f10344eb7596eba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063707"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416830"
 ---
-<a name="integrated-windows-authentication"></a>Integrierte Windows-Authentifizierung
-====================
+# <a name="integrated-windows-authentication"></a>Integrierte Windows-Authentifizierung
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 Integrierte Windows-Authentifizierung kann Benutzer melden Sie sich mit ihren Windows-Anmeldeinformationen, die mit Kerberos oder NTLM. Der Client sendet die Anmeldeinformationen in der Authorization-Header. Windows-Authentifizierung ist für Intranetumgebungen am besten geeignet. Weitere Informationen finden Sie unter [Windows-Authentifizierung](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication).

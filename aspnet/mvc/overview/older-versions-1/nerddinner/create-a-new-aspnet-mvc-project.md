@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 7e0e9928-8fdc-4b74-9882-55fac0976628
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
-ms.openlocfilehash: 3f34f17aa35dbfed2d52daf615c8dc81be6e7847
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c85db4289698988ead44afd452da17054bab9f07
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065807"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417207"
 ---
-<a name="create-a-new-aspnet-mvc-project"></a>Erstellen eines neuen ASP.NET MVC-Projekts
-====================
+# <a name="create-a-new-aspnet-mvc-project"></a>Erstellen eines neuen ASP.NET MVC-Projekts
+
 by [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -63,10 +63,10 @@ ASP.NET MVC-Projekte in der Standardeinstellung haben sechs Verzeichnisse der ob
 | **Verzeichnis** | **Zweck** |
 | --- | --- |
 | **/ Controller** | Ordnen Sie Controller-Klassen, die URL-Anforderungen verarbeiten. |
-| **/Models** | Ordnen Sie Klassen, die darstellen, und Bearbeiten von Daten |
-| **/Views** | Ordnen Sie UI-Vorlagendateien, die für die renderingausgabe verantwortlich sind |
-| **/Scripts** | Fügen Sie JavaScript-Bibliothek-Dateien und Skripts (. js) hinzu |
-| **/Content** | Fügen Sie CSS- und Bilddateien und andere nicht-dynamisch/nicht-JavaScript-Inhalte hinzu |
+| **/ Modelle** | Ordnen Sie Klassen, die darstellen, und Bearbeiten von Daten |
+| **/ Views** | Ordnen Sie UI-Vorlagendateien, die für die renderingausgabe verantwortlich sind |
+| **/ Skripts** | Fügen Sie JavaScript-Bibliothek-Dateien und Skripts (. js) hinzu |
+| **/ Inhalte** | Fügen Sie CSS- und Bilddateien und andere nicht-dynamisch/nicht-JavaScript-Inhalte hinzu |
 | **/ App\_Daten** | Wenn Sie die Datendateien gespeichert, die Lese-/Schreibzugriff werden soll. |
 
 ASP.NET MVC ist diese Struktur nicht erforderlich. In der Tat Entwickler, die auf große Anwendungen arbeiten in der Regel partitioniert die Anwendung sich über mehrere Projekte, um es leichter zu machen (z. B.: Data Model-Klassen in einem separaten Klassenbibliothekprojekt häufig von der Webanwendung wechseln). Die Standardprojektstruktur, stellt jedoch gute Standardkonvention Verzeichnis bereit, mit denen wir unsere anwendungsaspekten zu halten.

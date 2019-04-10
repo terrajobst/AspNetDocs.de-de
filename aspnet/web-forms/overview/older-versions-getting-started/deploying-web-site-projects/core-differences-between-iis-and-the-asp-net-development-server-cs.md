@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: 13a5a423-9235-4dde-b408-2fd10f791d63
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 19ca40374f97d59cac4f1677f886f3e48eab7b67
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ec59b63050a9d561c4f3da5a8eaaffbefef48454
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035857"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410525"
 ---
-<a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Wichtige Unterschiede zwischen den IIS und dem ASP.NET Development Server (C#)
-====================
+# <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Wichtige Unterschiede zwischen den IIS und dem ASP.NET Development Server (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_06_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial06_WebServerDiff_cs.pdf)
@@ -50,7 +50,7 @@ Auf diese Art von Fehler in Aktion zeigen, habe ich der Book Reviews-Website, di
 Als Nächstes finden Sie auf die *bringen Sie sich ASP.NET 3.5 in 24 Stunden* Buch Seite "Überprüfen" in der Entwicklungsumgebung, die mithilfe von ASP.NET Development Server. Vorausgesetzt, dass Sie angemeldet sind auf Ihrem Computer mit einem Konto mit ausreichenden Berechtigungen zum Erstellen und ändern eine Textdatei, in der Web-Stammverzeichnis der Anwendung der buchbewertung angezeigt wird der gleiche wie zuvor, aber jedes Mal, wenn die Seite wird besucht, das Datum und Uhrzeit und des Benutzers  IP-Adresse befindet sich in der `LastTYASP35Access.txt` Datei. Zeigen Sie Ihren Browser zu dieser Datei; Daraufhin sollte eine Meldung wie in Abbildung 1 dargestellt.
 
 
-[![Die Textdatei enthält, das letzte Datum und die Uhrzeit, die der Buchbewertung besucht](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image1.png)
+[![Ter-Text-Datei enthält das Datum der letzten und die Uhrzeit der Buchbewertung besucht](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image1.png)
 
 **Abbildung 1**: Die Textdatei enthält, das Datum der letzten und die Uhrzeit der Buchbewertung war aufgerufen ([klicken Sie, um das Bild in voller Größe anzeigen](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
@@ -58,7 +58,7 @@ Als Nächstes finden Sie auf die *bringen Sie sich ASP.NET 3.5 in 24 Stunden* Bu
 Bereitstellen der Webanwendung für die Produktion, und besuchen Sie das gehostete *bringen Sie sich ASP.NET 3.5 in 24 Stunden* Buch Seite "Überprüfen". An diesem Punkt sollte die Seite "Überprüfen Buch" entweder als Normal oder die Fehlermeldung, die in Abbildung 2 dargestellt angezeigt werden. Einige Anbieter von Host erteilen Sie Schreibberechtigungen für das anonyme ASP.NET-Computerkonto, in dem Fall die Seite ohne Fehler funktionieren. Wenn Sie jedoch Ihre Webhostinganbieter Schreibzugriff für das anonyme Konto verhindert, dass ein [ `UnauthorizedAccessException` Ausnahme](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx) ausgelöst wird, wenn die `TYASP35.aspx` Seite versucht, auf das aktuelle Datum und Zeit für Schreiben der `LastTYASP35Access.txt` Datei.
 
 
-[![Das von IIS verwendete Standard-Computerkonto ist nicht berechtigt, auf das Dateisystem schreiben](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
+[![Ter die Standard-Computer-Konto von IIS verwendete besitzt keine Berechtigungen zum Schreiben in das Dateisystem](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
 
 **Abbildung 2**: Die Standard-Computer Konto verwendet von IIS wird nicht haben Berechtigungen zum Schreiben in das Dateisystem ([klicken Sie, um das Bild in voller Größe anzeigen](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image6.png))
 
@@ -96,7 +96,7 @@ Mithilfe von ASP.NET Development Server, von der Website, und geben Sie die dire
 Diese URL in die Adressleiste eingeben bewirkt, dass den Browser eine Anforderung an den ASP.NET Development Server für die Datei senden. Der ASP.NET Development Server die Anforderung an die ASP.NET-Laufzeitumgebung zur Verarbeitung übergibt. Da wir noch nicht angemeldet haben und die `Web.config` in die `PrivateDocs` Ordner ist so konfiguriert, dass Sie um den anonymen Zugriff zu verweigern, die ASP.NET-Laufzeit leitet uns automatisch an die Anmeldeseite, `Login.aspx` (siehe Abbildung 3). Wenn den Benutzer auf der Anmeldeseite umleiten, enthält ASP.NET eine `ReturnUrl` Querystring-Parameter, der die Seite angibt. der Benutzer hat versucht, anzeigen. Nach der erfolgreichen Anmeldung der Benutzer kann auf diese Seite zurückgegeben werden.
 
 
-[![Nicht autorisierte Benutzer werden automatisch zur Anmeldeseite umgeleitet.](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image7.png)
+[![UNauthorized Benutzer werden automatisch an die Anmeldeseite umgeleitet](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image7.png)
 
 **Abbildung 3**: Nicht autorisierte Benutzer werden automatisch zur Anmeldeseite weitergeleitet ([klicken Sie, um das Bild in voller Größe anzeigen](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image9.png))
 
@@ -104,7 +104,7 @@ Diese URL in die Adressleiste eingeben bewirkt, dass den Browser eine Anforderun
 Jetzt sehen wir uns an, wie sich dies auf Produktions-verhält. Bereitstellen Ihrer Anwendung, und geben Sie die direkte URL einer PDF-Dateien in die `PrivateDocs` Ordner in der Produktion. Dadurch wird Ihr Browser zum Senden einer Anforderung IIS für die Datei. Da eine statische Datei angefordert wird, wird IIS abgerufen und gibt die Datei zurück, ohne die ASP.NET-Laufzeit aufzurufen. Daher wurde keine URL-Autorisierung-Überprüfung ausgeführt. die Inhalte der angeblich private PDF-Datei sind für alle Benutzer, die weiß, die direkte URL in die Datei zugegriffen werden kann.
 
 
-[![Anonyme Benutzer können die Private PDF-Dateien herunterladen, indem Sie die direkte URL und die Datei eingeben](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image10.png)
+[![Anonymen Benutzer können die Private PDF-Dateien durch Eingabe der direkte URL in die Datei herunterladen](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image10.png)
 
 **Abbildung 4**: Anonyme Benutzer können die privaten PDF-Dateien durch Eingabe der direkte URL in die Datei ([klicken Sie, um das Bild in voller Größe anzeigen](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image12.png))
 

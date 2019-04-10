@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 087f30428602137e01f574825f3ebcd4db9285ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d721bb14b9907ae594d1d5207b6f802e84326c9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063937"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414724"
 ---
-<a name="request-validation---preventing-script-attacks"></a>Anforderungsvalidierung – Schutz vor Angriffen durch Skripteinschleusung
-====================
+# <a name="request-validation---preventing-script-attacks"></a>Anforderungsvalidierung – Schutz vor Angriffen durch Skripteinschleusung
+
 > Dieser Artikel beschreibt die Anforderung Überprüfungsfunktion von ASP.NET, wird standardmäßig die Anwendung verhindert wird von der Verarbeitung nicht codierte HTML-Inhalt an den Server gesendet. Diese Anforderung Überprüfung-Funktion kann deaktiviert werden, wenn die Anwendung entwickelt wurde, um HTML-Daten sicher zu verarbeiten.
 > 
 > Gilt für ASP.NET 1.1 und ASP.NET 2.0.

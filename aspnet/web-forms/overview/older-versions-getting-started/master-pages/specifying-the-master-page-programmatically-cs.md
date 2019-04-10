@@ -8,15 +8,15 @@ ms.date: 07/28/2008
 ms.assetid: 7c4a3445-2440-4aee-b9fd-779c05e6abb2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58ecd01a8a18cd7dcf9eba96313e40d881d90af5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0d56a600b1b97d9d044fa90b678c942f0dc6fc00
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065667"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413827"
 ---
-<a name="specifying-the-master-page-programmatically-c"></a>Programmgesteuertes Festlegen der Masterseite (C#)
-====================
+# <a name="specifying-the-master-page-programmatically-c"></a>Programmgesteuertes Festlegen der Masterseite (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_09_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_09_CS.pdf)
@@ -42,7 +42,7 @@ Wenn eine Anforderung auf dem Webserver für eine ASP.NET-Seite, die eine Inhalt
 Abbildung 1 zeigt diese Fusion. Schritt 1 in Abbildung 1 zeigt die ursprünglichen Inhalt und die Hierarchien der Masterseite-Steuerelement. Steuerelemente auf der Seite werden am Ende des Protokollfragments der PreInit-Phase der Inhalt der entsprechenden ContentPlaceHolder-Steuerelemente auf der Masterseite (Schritt2) hinzugefügt. Nach diesem Fusion dient die Masterseite als Stamm der Steuerelementhierarchie fused. Dieses Steuerelement fused Hierarchie wird dann hinzugefügt, um die Seite, um die abgeschlossene Steuerelementhierarchie (Schritt 3) zu erstellen. Das Ergebnis ist die Steuerelementhierarchie der Seite die fused Steuerelementhierarchie enthält.
 
 
-[![Der Masterseite und der Inhaltsseite Steuerelement Hierarchien werden zusammen mit Sicherung während der PreInit-Phase](specifying-the-master-page-programmatically-cs/_static/image2.png)](specifying-the-master-page-programmatically-cs/_static/image1.png)
+[![TMasterseite und er der Inhaltsseite Steuerelement Hierarchien werden zusammen mit Sicherung während der PreInit-Phase](specifying-the-master-page-programmatically-cs/_static/image2.png)](specifying-the-master-page-programmatically-cs/_static/image1.png)
 
 **Abbildung 01**: Der Masterseite und der Inhaltsseite Steuerelement Hierarchien werden zusammen mit Sicherung während der PreInit-Phase ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image3.png))
 
@@ -83,7 +83,7 @@ Ob die `MasterPageFile` Eigenschaft wird festgelegt, über die `@Page` Richtlini
 Kurz gesagt, Sie behalten möchten die `MasterPageFile` -Attribut in der `@Page` Richtlinie, um eine umfassende während der Entwurfszeit-Funktionen in Visual Studio nutzen zu können.
 
 
-[![Visual Studio nutzt die @Page MasterPageFile-Attribut für die Richtlinie zum Rendern der Entwurfsansicht](specifying-the-master-page-programmatically-cs/_static/image5.png)](specifying-the-master-page-programmatically-cs/_static/image4.png)
+[![VIsual Studio verwendet die @Page MasterPageFile-Attribut für die Richtlinie zum Rendern der Ansicht Entwurf](specifying-the-master-page-programmatically-cs/_static/image5.png)](specifying-the-master-page-programmatically-cs/_static/image4.png)
 
 **Abbildung 02**: Visual Studio verwendet die `@Page` -Direktive `MasterPageFile` Attribut zum Rendern der Entwurfsansicht ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image6.png))
 
@@ -97,7 +97,7 @@ Betrachten wir eine Gestaltungsvorlage zur Laufzeit basierend auf einigen extern
 Erstellen Sie eine neue Masterseite in den Stammordner, der mit dem Namen `Alternate.master`. Fügen Sie ein neues Stylesheet auch auf der Website mit dem Namen `AlternateStyles.css`.
 
 
-[![Fügen Sie ein weiteres Masterseite und CSS-Datei in der Website](specifying-the-master-page-programmatically-cs/_static/image8.png)](specifying-the-master-page-programmatically-cs/_static/image7.png)
+[![ADd einer anderen Masterseite und CSS-Datei auf der Website](specifying-the-master-page-programmatically-cs/_static/image8.png)](specifying-the-master-page-programmatically-cs/_static/image7.png)
 
 **Abbildung 03**: Fügen Sie auf der Website einer anderen Masterseite und CSS-Datei ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image9.png))
 
@@ -108,7 +108,7 @@ Ich entwarf haben die `Alternate.master` Masterseite haben den Titel oben auf de
 > ASP.NET bietet die Möglichkeit, definieren Sie *Designs*. Ein Design ist eine Sammlung von Bildern, CSS-Dateien und Formatvorlagen bezogenen Web Control eigenschaftseinstellungen, die auf einer Seite zur Laufzeit angewendet werden können. Designs sind die beste Wahl, wenn Ihre Website Layouts nur im angezeigten Bilder und durch ihre CSS-Regeln unterscheiden. Wenn die Layouts unterscheiden sich mehr erheblich an, wie die Verwendung von anderen Websteuerelemente oder müssen ein völlig anderes Layout, Sie separate Masterseiten verwenden müssen. Prüfen Sie im Abschnitt Weitere nützliche Informationen am Ende dieses Tutorials für Weitere Informationen zu Designs.
 
 
-[![Unsere Inhaltsseiten können jetzt ein neues Aussehen und Verhalten verwenden.](specifying-the-master-page-programmatically-cs/_static/image11.png)](specifying-the-master-page-programmatically-cs/_static/image10.png)
+[![OInhaltsseiten für die können Sie jetzt ein neues Aussehen und Verhalten](specifying-the-master-page-programmatically-cs/_static/image11.png)](specifying-the-master-page-programmatically-cs/_static/image10.png)
 
 **Abbildung 04**: Unsere Inhaltsseiten können Sie jetzt ein neues Aussehen und Verhalten ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image12.png))
 
@@ -206,7 +206,7 @@ Erstellen Sie eine Webseite, die dem Benutzer ermöglicht, wählen Sie die Maste
 > Da `Site.master` und `Alternate.master` haben den gleichen Satz ContentPlaceHolder-Steuerelemente es spielt keine welche Masterseite Rolle Sie auswählen, wenn die neue Seite zu erstellen. Aus Gründen der Konsistenz würde ich empfehlen, mit `Site.master`.
 
 
-[![Fügen Sie auf der Website eine neue Seite hinzu](specifying-the-master-page-programmatically-cs/_static/image14.png)](specifying-the-master-page-programmatically-cs/_static/image13.png)
+[![ADd eine neue Seite auf der Website](specifying-the-master-page-programmatically-cs/_static/image14.png)](specifying-the-master-page-programmatically-cs/_static/image13.png)
 
 **Abbildung 05**: Fügen Sie auf der Website eine neue Seite hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image15.png))
 
@@ -251,12 +251,12 @@ Mit der `ChooseMasterPage.aspx` Seite vollständige unsere letzte Aufgabe ist, d
 Mit diesem Code werden, finden Sie auf die `ChooseMasterPage.aspx` Seite. Zunächst die `Site.master` master Seite ausgewählt ist (siehe Abbildung 6), aber der Benutzer kann eine andere Masterseite aus der Dropdown-Liste auswählen.
 
 
-[![Inhaltsseiten werden mithilfe der Site.master-Masterseite angezeigt.](specifying-the-master-page-programmatically-cs/_static/image17.png)](specifying-the-master-page-programmatically-cs/_static/image16.png)
+[![CInhaltstypen Seiten werden angezeigt, die mit der Masterseite von Site.master](specifying-the-master-page-programmatically-cs/_static/image17.png)](specifying-the-master-page-programmatically-cs/_static/image16.png)
 
 **Abbildung 06**: Inhalt Seiten werden angezeigt, unter Verwendung der `Site.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image18.png))
 
 
-[![Inhaltsseiten werden mithilfe der Alternate.master Masterseite jetzt angezeigt.](specifying-the-master-page-programmatically-cs/_static/image20.png)](specifying-the-master-page-programmatically-cs/_static/image19.png)
+[![Cinhaltsorte Seiten werden jetzt angezeigt, der Gestaltungsvorlage verwendet Alternate.master](specifying-the-master-page-programmatically-cs/_static/image20.png)](specifying-the-master-page-programmatically-cs/_static/image19.png)
 
 **Abbildung 07**: Content-Seiten sind jetzt angezeigt, unter Verwendung der `Alternate.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-master-page-programmatically-cs/_static/image21.png))
 

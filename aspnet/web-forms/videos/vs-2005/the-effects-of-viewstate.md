@@ -8,15 +8,15 @@ ms.date: 02/26/2007
 ms.assetid: 112e3efc-6865-4296-80a0-35910c4b3b12
 msc.legacyurl: /web-forms/videos/vs-2005/the-effects-of-viewstate
 msc.type: video
-ms.openlocfilehash: fcca0f533a77bf794644adb8879966f26a452ff8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7ec8719a25452efed9a0d46afa05b36f3cb07ce1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048897"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414802"
 ---
-<a name="the-effects-of-viewstate"></a>Die Auswirkungen von ViewState
-====================
+# <a name="the-effects-of-viewstate"></a>Die Auswirkungen von ViewState
+
 von Eric Lee
 
 ASP.NET-Framework bietet den ViewState-Mechanismus zum Anwendungsstatus automatisch zu verwalten, indem Sie die Daten vorwärts und rückwärts zwischen Browseranforderungen an. In diesem Video erfahren Sie, wie einige der ASP.NET wie DropDownList-Steuerelemente aus, und TextBox verwalten Zustandsbasierte postback Formularwerte anstatt von ViewState unterstützt, und der intelligenten Entwickler die unnötige Ansichtszustand zu deaktivieren. Mit Visual Studio Team System können Sie, wie dies erheblich reduziert die Größe der Anforderungs-und Antwortdaten, und verbessert die Leistung und Skalierbarkeit der Anwendung.

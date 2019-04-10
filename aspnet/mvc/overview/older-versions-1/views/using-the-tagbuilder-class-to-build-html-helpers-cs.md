@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 3975a52f-bd15-4edd-8f3d-1df93672515b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9759ea9b05ba5eba268901d3d2d1a15b2afe6202
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3227560c1d0c48f7738e26c87a0dbb140c410eee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055927"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410096"
 ---
-<a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>Verwenden der TagBuilder-Klasse zum Erstellen von HTML-Hilfsprogrammen (c#)
-====================
+# <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>Verwenden der TagBuilder-Klasse zum Erstellen von HTML-Hilfsprogrammen (c#)
+
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther stellt ein hilfreiches Dienstprogramm-Klasse in ASP.NET MVC-Framework mit dem Namen der TagBuilder-Klasse. Sie können die TagBuilder-Klasse verwenden, auf einfache Weise HTML-Tags erstellen.
@@ -65,7 +65,7 @@ Nach der Erstellung der Image-Hilfe können Sie das Hilfsprogramm in Ihren ASP.N
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 
 
-[![Das Dialogfeld "Neues Projekt"](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
 
 **Abbildung 01**: Mit dem Image-Hilfsprogramm ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image2.png))
 

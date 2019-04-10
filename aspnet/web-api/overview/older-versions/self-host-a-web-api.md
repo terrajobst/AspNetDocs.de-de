@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/older-versions/self-host-a-web-api
-title: Selbst gehostete ASP.NET Web-API 1 (c#) | Microsoft-Dokumentation
+title: Selbst gehostete ASP.NET Web-API 1 (C#) – ASP.NET 4.x
 author: MikeWasson
-description: ASP.NET Web-API ist IIS nicht erforderlich. Sie können eine Web-API selbst in Ihrem eigenen Hostprozess hosten. In diesem Tutorial wird gezeigt, wie eine Web-API in einer Anwendung auf dem Konsole gehostet wird...
+description: Tutorial mit Code wird gezeigt, wie eine Web-API in einer Konsolenanwendung gehostet wird.
 ms.author: riande
 ms.date: 01/26/2012
+ms.custom: seoapril2019
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 63d192a6fa2aafef3770d5b0b97ec32e001b69db
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7c73bf4734f8ed8a1bf93595c0847f611ad9cc15
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040757"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409602"
 ---
-<a name="self-host-aspnet-web-api-1-c"></a>Selbst gehostete ASP.NET Web-API 1 (c#)
-====================
+# <a name="self-host-aspnet-web-api-1-c"></a>Selbst gehostete ASP.NET Web-API 1 (c#)
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
-> ASP.NET Web-API ist IIS nicht erforderlich. Sie können eine Web-API selbst in Ihrem eigenen Hostprozess hosten. In diesem Tutorial wird gezeigt, wie eine Web-API in einer Konsolenanwendung gehostet wird.
+> In diesem Tutorial wird gezeigt, wie eine Web-API in einer Konsolenanwendung gehostet wird. ASP.NET Web-API ist IIS nicht erforderlich. Sie können eine Web-API selbst in Ihrem eigenen Hostprozess hosten. 
 > 
 > **Neue Anwendungen sollten OWIN zum selfhosten der Web-API verwenden.** Finden Sie unter [verwenden Sie OWIN zum Selfhosten von ASP.NET-Web-API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md).
 > 

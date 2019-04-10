@@ -8,15 +8,15 @@ ms.date: 08/21/2009
 ms.assetid: a9f317b0-28c3-4838-bae0-cfa5ed5b3110
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner
 msc.type: video
-ms.openlocfilehash: 9a09b51ae86ee635a682ce5a2d90f2e7485a7edf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bcaf596af8c78cf0765eb407c5a06854d2031b2d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056287"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405637"
 ---
-<a name="what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner"></a>Was ist ASP.NET MVC? 80 Minuten technisches Video für Entwickler, die NerdDinner arbeiten
-====================
+# <a name="what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner"></a>Was ist ASP.NET MVC? 80 Minuten technisches Video für Entwickler, die NerdDinner arbeiten
+
 durch [Rob Conery](https://github.com/robconery)
 
 Ein ausführliches Tutorial zum Erstellen einer Anwendung mit ASP.NET MVC. In diesem Video erstellen wir die Grundlagen von Nerddinner.com zu erwähnen Probleme wie Komponententests, Javascript, die (unter Verwendung von jQuery) und wie Sie die neuen Toolfeatures für Visual Studio 2008 verwenden, die mit den ASP.NET MVC-Projektvorlagen installiert sind.

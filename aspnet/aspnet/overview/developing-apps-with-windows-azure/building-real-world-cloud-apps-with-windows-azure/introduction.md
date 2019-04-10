@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: c496e93d7517bc187514d5fa2dfa90d29c5f47f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033117"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412410"
 ---
-<a name="building-real-world-cloud-apps-with-azure"></a>Erstellen realer Cloud-Apps mit Azure
-====================
+# <a name="building-real-world-cloud-apps-with-azure"></a>Erstellen realer Cloud-Apps mit Azure
+
 durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -100,7 +100,7 @@ Dieses e-Book wird erläutert, dreizehn Muster für die Cloudentwicklung empfohl
     - Hohen Verfügbarkeit und verbessern Sie Skalierbarkeit zu, indem Sie die lose Kopplung von Web-und workerebenen.
     - Demo: Azure Storage-Warteschlangen in der app zu beheben.
 - [Mehr cloud-app-Muster und Anleitungen](more-patterns-and-guidance.md).
-- [Anhang: Der Fix It-Beispielanwendung](the-fix-it-sample-application.md)
+- [Anhang: Anhang: Fix It-Beispielanwendung](the-fix-it-sample-application.md)
 
     - Bekannte Probleme
     - Bewährte Methoden
@@ -175,4 +175,4 @@ Videos:
 - [Azure-Web Sites-Interna mit Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 > [!div class="step-by-step"]
-> [Nächste](automate-everything.md)
+> [Weiter](automate-everything.md)

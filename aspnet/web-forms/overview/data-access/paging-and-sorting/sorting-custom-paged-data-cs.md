@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
-title: Sortieren von benutzerdefinierten ausgelagerten Daten (C#) | Microsoft-Dokumentation
+title: Sortieren von benutzerdefinierten ausgelagerten Daten (c#) | Microsoft-Dokumentation
 author: rick-anderson
 description: Im vorherigen Tutorial haben wir gelernt benutzerdefiniertes Paging zu implementieren, wenn Daten auf einer Webseite dargestellt werden. In diesem Tutorial erfahren Sie wie der vorherigen erweitern...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ebc6be8c41251190a0124fe5f3d2c154f1ad4450
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a65fe60dc44eb40591733ba9371e409f690fea52
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425647"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409238"
 ---
-<a name="sorting-custom-paged-data-c"></a>Sortieren von benutzerdefinierten ausgelagerten Daten (C#)
-====================
+# <a name="sorting-custom-paged-data-c"></a>Sortieren von benutzerdefinierten ausgelagerten Daten (C#)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_CS.exe) oder [PDF-Datei herunterladen](sorting-custom-paged-data-cs/_static/datatutorial26cs1.pdf)
@@ -71,7 +71,7 @@ Testen mit unterschiedlichen Werten für diese gespeicherte Prozedur in Ruhe die
 **Abbildung 1**: Testen Sie verschiedene Werte für die gespeicherte Prozedur s drei Eingabeparameter
 
 
-[![Die gespeicherte Prozedur s werden Ergebnisse im Ausgabefenster angezeigt.](sorting-custom-paged-data-cs/_static/image3.png)](sorting-custom-paged-data-cs/_static/image2.png)
+[![Tdie gespeicherte Prozedur s HE werden die Ergebnisse im Ausgabefenster angezeigt](sorting-custom-paged-data-cs/_static/image3.png)](sorting-custom-paged-data-cs/_static/image2.png)
 
 **Abbildung 2**: Die gespeicherte Prozedur s Ergebnisse werden im Ausgabefenster angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-cs/_static/image4.png))
 
@@ -145,7 +145,7 @@ Zum Aktivieren der Sortierung in den GridView-Ansicht aktivieren Sie einfach die
 Abbildung 7 zeigt die erste Seite der Ergebnisse sortiert nach der `UnitPrice` in aufsteigender Reihenfolge.
 
 
-[![Die Ergebnisse sind nach den Einzelpreis sortiert.](sorting-custom-paged-data-cs/_static/image10.png)](sorting-custom-paged-data-cs/_static/image9.png)
+[![TIE-Ergebnisse werden nach den Einzelpreis sortiert](sorting-custom-paged-data-cs/_static/image10.png)](sorting-custom-paged-data-cs/_static/image9.png)
 
 **Abbildung 7**: Die Ergebnisse werden nach den Einzelpreis sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-cs/_static/image11.png))
 
@@ -166,7 +166,7 @@ Diese Ausnahme tritt auf, weil die `SortExpression` der GridView Zuordnungsvorg�
 **Abbildung 9**: Ändern Sie die Lieferantenname BoundField-s SortExpression CompanyName
 
 
-[![Die Ergebnisse können jetzt Lieferant sortiert werden](sorting-custom-paged-data-cs/_static/image15.png)](sorting-custom-paged-data-cs/_static/image14.png)
+[![Ter Ergebnisse können jetzt Lieferant sortiert werden](sorting-custom-paged-data-cs/_static/image15.png)](sorting-custom-paged-data-cs/_static/image14.png)
 
 **Abbildung 10**: Die Ergebnisse können jetzt sortiert werden vom Lieferanten ([klicken Sie, um das Bild in voller Größe anzeigen](sorting-custom-paged-data-cs/_static/image16.png))
 

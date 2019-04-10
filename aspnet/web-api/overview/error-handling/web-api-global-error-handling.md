@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/error-handling/web-api-global-error-handling
-title: Globale Fehlerbehandlung in ASP.NET Web-API 2 | Microsoft-Dokumentation
+title: Globale Fehlerbehandlung in ASP.NET Web-API 2 - ASP.NET 4.x
 author: davidmatson
-description: ''
+description: Einen Überblick über die globale Fehlerbehandlung in ASP.NET Web API 2 für ASP.NET 4.x.
 ms.author: riande
 ms.date: 02/03/2014
+ms.custom: seoapril2019
 ms.assetid: bffd7863-f63b-4b23-a13c-372b5492e9fb
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3e371760d2b34eb2be492e6ebbb33a5f9f7eff10
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7d9f4fb9909671d7c4c8ee2aa9285b0186c4b125
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058977"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414373"
 ---
-<a name="global-error-handling-in-aspnet-web-api-2"></a>Globale Fehlerbehandlung in ASP.NET Web-API 2
-====================
+# <a name="global-error-handling-in-aspnet-web-api-2"></a>Globale Fehlerbehandlung in ASP.NET Web-API 2
+
 by [David Matson](https://github.com/davidmatson), [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-Heute ist gibt es keine einfache Möglichkeit in Web-API, um zu protokollieren oder Behandeln von Fehlern Global. Eine nicht behandelten Ausnahmen verarbeitet werden können, über [Ausnahmefilter](exception-handling.md), aber es gibt eine Anzahl von Fällen, in denen Ausnahmefilter nicht verarbeiten können. Zum Beispiel:
+Dieses Thema bietet einen Überblick über die globale Fehlerbehandlung in ASP.NET Web API 2 für ASP.NET 4.x. Heute ist gibt es keine einfache Möglichkeit in Web-API, um zu protokollieren oder Behandeln von Fehlern Global. Eine nicht behandelten Ausnahmen verarbeitet werden können, über [Ausnahmefilter](exception-handling.md), aber es gibt eine Anzahl von Fällen, in denen Ausnahmefilter nicht verarbeiten können. Zum Beispiel:
 
 1. Von controllerkonstruktoren ausgelöste Ausnahmen.
 2. Von meldungshandlern ausgelöste Ausnahmen.

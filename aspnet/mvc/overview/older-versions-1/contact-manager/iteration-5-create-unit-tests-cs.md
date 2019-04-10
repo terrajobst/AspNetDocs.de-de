@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: 'Iteration #5 – die Komponententests erstellen (C#) | Microsoft-Dokumentation'
+title: 'Iteration #5 – die Komponententests erstellen (c#) | Microsoft-Dokumentation'
 author: microsoft
 description: In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und Erstellen von Komponententests für o...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b2e96c996905bc73698d1c0b11df97d1dd366172
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 68080859e205283f56d8f543bfa06b76bb22a39d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422167"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408861"
 ---
-<a name="iteration-5--create-unit-tests-c"></a>Iteration #5 – Erstellen von Komponententests (C#)
-====================
+# <a name="iteration-5--create-unit-tests-c"></a>Iteration #5 – Erstellen von Komponententests (c#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
@@ -24,7 +24,7 @@ by [Microsoft](https://github.com/microsoft)
 > In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
 
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (C#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
 
@@ -117,12 +117,12 @@ Bevor Sie Moq verwenden können, müssen Sie die folgenden Schritte ausführen:
 5. Nachdem Sie diese Schritte abgeschlossen haben, sollte Ihr Ordner "Verweise", wie in Abbildung 2 aussehen.
 
 
-[![Das Aufheben der Blockierung Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
+[![UNblocking Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
 **Abbildung 01**: Das Aufheben der Blockierung Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-cs/_static/image2.png))
 
 
-[![Verweise, die nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
+[![RVorhandene Verweise nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
 **Abbildung 02**: Verweise, die nach dem Hinzufügen von Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-cs/_static/image4.png))
 
@@ -185,7 +185,7 @@ Die verbleibenden Tests stellen Sie sicher, dass, wenn die CreateContact()-Metho
 Sie können die Komponententests in Codebeispiel 1 ausführen, indem Sie durch Auswählen der Menüoption **Test ausführen, alle Tests in der Projektmappe (STRG + R, A)**. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
 
 
-[![Testergebnisse](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
+[![TEST Ergebnisse](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
 **Abbildung 04**: Testergebnisse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-cs/_static/image8.png))
 

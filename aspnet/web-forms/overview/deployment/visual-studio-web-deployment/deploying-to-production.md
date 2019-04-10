@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: f71d8311cbb1131d9c30c0bd9071a1c6c90f9976
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045847"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409797"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen in der Produktionsumgebung
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen in der Produktionsumgebung
+
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -276,7 +276,7 @@ Ein *pubxml* -Datei enthält die Einstellungen, die zu einem bestimmten Veröffe
 
     ![Vorschau der Dateien, die in der produktionsumgebung veröffentlicht werden](deploying-to-production/_static/image14.png)
 
-    Überprüfen Sie die Liste der Dateien, die kopiert werden. Sie sehen, dass alle der *cs* -Dateien, einschließlich *. aspx.cs*, *. aspx.designer.cs*, *Master.cs*, und  *Master.Designer.cs* Dateien werden ausgelassen. All dieser Code kompiliert wurde in der *ContosoUniversity.dll* und *ContosUniversity.pdb* Dateien, die finden Sie in der *Bin* Ordner. Da nur die *DLL* ist erforderlich, um ausführen, die die Anwendung, und Sie zuvor angegeben, dass nur Dateien, die zum Ausführen der Anwendung bereitgestellt werden sollen, ohne *cs* Dateien auf dem Zielserver kopiert wurden Umgebung. Die *Obj* Ordner und die *"contosouniversity.csproj"* und *. csproj.user* Dateien aus demselben Grund ausgelassen werden.
+    Überprüfen Sie die Liste der Dateien, die kopiert werden. Sie sehen, dass alle der *cs* -Dateien, einschließlich *. aspx.cs*, *. aspx.designer.cs*, *Master.cs*, und  *Master.Designer.cs* Dateien werden ausgelassen. All dieser Code kompiliert wurde in der *ContosoUniversity.dll* und *ContosoUniversity.pdb* Dateien, die finden Sie in der *Bin* Ordner. Da nur die *DLL* ist erforderlich, um ausführen, die die Anwendung, und Sie zuvor angegeben, dass nur Dateien, die zum Ausführen der Anwendung bereitgestellt werden sollen, ohne *cs* Dateien auf dem Zielserver kopiert wurden Umgebung. Die *Obj* Ordner und die *"contosouniversity.csproj"* und *. csproj.user* Dateien aus demselben Grund ausgelassen werden.
 
     Klicken Sie auf **veröffentlichen** in der produktionsumgebung bereitstellen.
 2. Testen Sie in der produktionsumgebung dieselben Schritten anwenden, die Sie für das Staging verwendet.

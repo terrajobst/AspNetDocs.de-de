@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 51a0d175-913b-43d8-95e3-840fb96ad1a9
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4115b3898415d63ffb122f3d0fea93022f2baa02
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 973878ef0afd62035b3fc840371e6c6223c8951c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030417"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413788"
 ---
-<a name="iteration-3--add-form-validation-c"></a>Iteration #3 – Hinzufügen der formularüberprüfung (c#)
-====================
+# <a name="iteration-3--add-form-validation-c"></a>Iteration #3 – Hinzufügen der formularüberprüfung (c#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-3-add-form-validation-cs/_static/contactmanager_3_cs1.zip)
@@ -51,7 +51,7 @@ Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbe
 In dieser zweiten Iteration der Contact Manager-Anwendung fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Benutzer einen Kontakt ohne Eingabe von Werten für die erforderlichen Felder des Formulars zu senden. Wir überprüfen auch die Telefonnummern und e-Mail-Adressen (siehe Abbildung 1).
 
 
-[![Das Dialogfeld "Neues Projekt"](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
+[![TDialogfeld für neues Projekt mit HE](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
 
 **Abbildung 01**: Ein Formular mit Überprüfung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-3-add-form-validation-cs/_static/image2.png))
 

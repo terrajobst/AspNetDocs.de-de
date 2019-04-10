@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17a3a4925766b74446955a8e3a6fddbf9d29a721
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406768"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (Visual Basic)
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (Visual Basic)
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Dieser Artikel bietet Ihnen einen Überblick über die Programmierung mit ASP.NET Web Pages mit der Razor-Syntax und Visual Basic. ASP.NET ist die Technologie von Microsoft für die Ausführung von dynamischen Webseiten auf Webservern.
@@ -284,7 +284,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         <strong>Example</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -296,7 +298,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -308,7 +312,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -320,7 +326,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -332,7 +340,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -344,7 +354,9 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -374,7 +386,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+ - * /`
@@ -386,7 +400,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -398,7 +414,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `<>`
@@ -410,7 +428,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -422,7 +442,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `&`
@@ -434,7 +456,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+= -=`
@@ -446,7 +470,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -458,7 +484,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -470,7 +498,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `Not`
@@ -482,7 +512,9 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AndAlso OrElse`
@@ -624,8 +656,8 @@ Die meisten grundlegenden Objekts in ASP.NET ist die Seite. Sie können die Eige
 
 Können Sie Eigenschaften der `Page` Objekt um eine Vielzahl von Informationen, wie z. B. zu erhalten:
 
-- `Request`. Wie Sie bereits gesehen haben, ist dies eine Auflistung von Informationen über die aktuelle Anforderung, einschließlich welche Art von Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. vorgenommen.
-- `Response`. Dies ist eine Auflistung von Informationen über die Antwort (Seite), die an den Browser gesendet wird, wenn der Code ausgeführt wurde. Beispielsweise können Sie diese Eigenschaft, um Informationen in die Antwort zu schreiben.
+- `Request`sein. Wie Sie bereits gesehen haben, ist dies eine Auflistung von Informationen über die aktuelle Anforderung, einschließlich welche Art von Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. vorgenommen.
+- `Response`sein. Dies ist eine Auflistung von Informationen über die Antwort (Seite), die an den Browser gesendet wird, wenn der Code ausgeführt wurde. Beispielsweise können Sie diese Eigenschaft, um Informationen in die Antwort zu schreiben.
 
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample51.vbhtml)]
 

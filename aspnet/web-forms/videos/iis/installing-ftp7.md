@@ -8,15 +8,15 @@ ms.date: 03/09/2009
 ms.assetid: 92348a5c-10a3-4cad-b3cf-5e8669f987ab
 msc.legacyurl: /web-forms/videos/iis/installing-ftp7
 msc.type: video
-ms.openlocfilehash: 8eb32f05bd41f32c00a4bdc431f6bea250f942fa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7bf4d99754dbc5c7a5d7e5ef1ea7f0063b512780
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056027"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412215"
 ---
-<a name="installing-ftp7"></a>Installieren von FTP7
-====================
+# <a name="installing-ftp7"></a>Installieren von FTP7
+
 durch [Joe Stagner](https://github.com/JoeStagner)
 
 Von FTP7 ist neu und leistungsstarke. Dieses Video zeigt Ihnen, wie Sie es in Gang zu bringen.

@@ -8,15 +8,15 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 55e38762dbc7caf31989d65ebf70516a458cfb00
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5f7415d0a4275a3864dc9eefb9588f17698147cd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425534"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412696"
 ---
-<a name="signalr-performance-signalr-1x"></a>SignalR-Leistung (SignalR 1.x)
-====================
+# <a name="signalr-performance-signalr-1x"></a>SignalR-Leistung (SignalR 1.x)
+
 durch [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -243,6 +243,6 @@ Die folgenden Leistungsindikatoren können auch bei der Überwachung der Leistun
 
 Weitere Informationen zu ASP.NET zur Leistungsüberwachung und-Optimierung finden Sie unter den folgenden Themen:
 
-- [ASP.NET Performance Overview (Die Leistung von ASP.NET im Überblick)](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
+- [Übersicht über die Leistung von ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [ASP.NET-Thread Usage on IIS 7.5, IIS 7.0 und IIS 6.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
 - [&lt;ApplicationPool&gt; -Element (Webeinstellungen)](https://msdn.microsoft.com/library/dd560842.aspx)

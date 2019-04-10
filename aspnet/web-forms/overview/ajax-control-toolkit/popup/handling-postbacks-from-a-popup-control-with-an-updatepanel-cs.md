@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0f886ba0f3e79bc6d5daf193eaedfd627bc9b937
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dff813f0f3e4da26a32fd6305e476d24484e0e7c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064607"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415088"
 ---
-<a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>Verarbeiten von Postbacks über ein Popupsteuerelement mit einem UpdatePanel-Steuerelement (C#)
-====================
+# <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>Verarbeiten von Postbacks über ein Popupsteuerelement mit einem UpdatePanel-Steuerelement (C#)
+
 durch [Christian Wenz](https://github.com/wenz)
 
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)
@@ -49,12 +49,12 @@ Die Syntax dafür lautet wie folgt aus: -Objekt als erstes einen Proxy für die 
 Jetzt, wenn Sie in einem Kalenderdatum klicken Sie auf das ausgewählte Datum angezeigt wird, in der zugeordneten Textfeld ein Datumsauswahl-Steuerelement zu erstellen, die derzeit auf vielen Websites finden.
 
 
-[![Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt.](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)
+[![Ter Kalender wird angezeigt, in das Textfeld klickt der Benutzer](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)
 
 Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png))
 
 
-[![Durch Klicken auf ein Datum in das Textfeld eingefügt](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)
+[![CLicking an einem Datum in das Textfeld eingefügt](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)
 
 Durch Klicken auf ein Datum in das Textfeld eingefügt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image6.png))
 

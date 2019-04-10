@@ -8,15 +8,15 @@ ms.date: 11/14/2011
 ms.assetid: 6a25069b-c80f-45f3-a901-4548442c37b6
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i
 msc.type: chapter
-ms.openlocfilehash: 45026082904fb8c740f34e1e9ae31153c1e551a5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8a7251971410ef2539e3957039de33af6e74371c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019847"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415452"
 ---
-<a name="how-do-i"></a>Gewusst wie
-====================
+# <a name="how-do-i"></a>Gewusst wie
+
 > Diese mehrteilige Videoreihe erfahren Sie, wie Sie der neuen Features in ASP.NET 3.5 und Visual Studio 2008 nutzen können.
 
 

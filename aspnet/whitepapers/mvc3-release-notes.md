@@ -8,20 +8,20 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 7342b5f4a7e2327f3f3850941510a6e46ec30842
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063867"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407106"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
 - [Übersicht](#overview)
 - [Installationshinweise](#installation-notes)
 - [Softwareanforderungen](#software-requirements)
 - [Dokumentation](#documentation)
-- [Support](#support)
+- [Unterstützung](#support)
 - [Aktualisieren eines ASP.NET MVC 2-Projekts zu ASP.NET MVC Update 3 Tools](#upgrading)
 - [ASP.NET MVC 3 Toolsupdate (12. April 2011)](#tu-changes)
 
@@ -39,7 +39,7 @@ ms.locfileid: "57063867"
     - [Fest: Teil einer Razor-Ausdruck einfügen, die Leerzeichen Ergebnisse darin wird umgekehrt enthält](#RTM-3)
     - [Fest: Umbenennen einer Razor-Datei, die im Editor geöffnet wird deaktiviert, farbige syntaxhervorhebung und IntelliSense](#RTM-4)
     - [Bekannte Probleme](#RTM-KI)
-    - [Wichtige Änderungen](#RTM-BC)
+    - [Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen](#RTM-BC)
 - [ASP.NET MVC 3 Release Candidate 2 (10. Dezember 2010)](#_Toc2)
 
     - [Projekt-Vorlagen geändert, jQuery 1.4.4, jQuery-Validierung 1.7 und jQuery UI 1.8.6y UI 1.8.6 einschließen](#_Toc2_1)
@@ -55,7 +55,7 @@ ms.locfileid: "57063867"
     - [Hinzugefügte "FileExtensions"-Eigenschaft, um den Ansichts-Engines zur Unterstützung der Engine-spezifische Dateinamen](#_Toc2_10)
     - [Feste "LabelFor"-Hilfsprogramm, den richtigen Wert für das Attribut "For" auszugeben.](#_Toc2_11)
     - [Feste "RenderAction"-Methode, um explizite Werte Vorrang vor, während der Modellbindung zu gewähren.](#_Toc2_12)
-    - [Wichtige Änderungen](#_Toc2_BC)
+    - [Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen](#_Toc2_BC)
     - [Bekannte Probleme](#_Toc2_KI)
 - [ASP.NET MVC 3 Release Candidate (9. November 2010)](#TOC_ASP_NET_3_RC)
 
@@ -68,7 +68,7 @@ ms.locfileid: "57063867"
     - [Untergeordnete Aktion Zwischenspeichern der Ausgabe](#_Toc276711791)
     - ["Add View" Dialogfeld Verbesserungen an](#_Toc276711792)
     - [Differenzierte Anforderungsvalidierung](#_Toc276711793)
-    - [Wichtige Änderungen](#_Toc276711794)
+    - [Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen](#_Toc276711794)
     - [Bekannte Probleme](#_Toc276711795)
 - [ASP. MVC 3 – Anmerkungen dieser Betaversion (6. Oktober 2010)](#TOC_ASP_NET_3_Beta)
 
@@ -85,8 +85,8 @@ ms.locfileid: "57063867"
     - [Neue Unterstützung für die VBHTML-Razor-Syntax](#0.1__Toc274034225)
     - [Mehr Kontrolle über ValidateInputAttribute](#0.1__Toc274034226)
     - [Hilfsprogramme und konvertieren Unterstriche zu Bindestrichen für HTML-Attributnamen, die mit der anonyme Objekte angegeben](#0.1__Toc274034227)
-    - [Fehlerbehebungen](#0.1__Toc274034228)
-    - [Wichtige Änderungen](#0.1__Toc274034229)
+    - [Fehlerkorrekturen](#0.1__Toc274034228)
+    - [Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen](#0.1__Toc274034229)
     - [Bekannte Probleme](#0.1__Toc274034230)
 - [Haftungsausschluss](#0.1__Toc274034231)
 
@@ -435,7 +435,7 @@ Wenn die *Html.ValidationMessage* Methode zeigt eine validierungsmeldung an, die
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>Feste @model Deklaration Leerzeichen nicht auf das Dokument hinzufügen
 
-In früheren Versionen der <em>@model</em> Deklaration am oberen Rand einer Ansicht der gerenderten HTML-Ausgabe eine leere Zeile hinzugefügt. Dies wurde behoben, damit die Deklaration kein Leerraum einleitet.
+In früheren Versionen der *@model* Deklaration am oberen Rand einer Ansicht der gerenderten HTML-Ausgabe eine leere Zeile hinzugefügt. Dies wurde behoben, damit die Deklaration kein Leerraum einleitet.
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>Hinzugefügte "FileExtensions"-Eigenschaft, um den Ansichts-Engines zur Unterstützung der Engine-spezifische Dateinamen
@@ -462,7 +462,7 @@ In früheren Versionen, explizite Werte, die übergeben wurden, die *RenderActio
 - In früheren Versionen von ASP.NET MVC wurden Aktionsfilter pro Anforderung außer in einigen Fällen erstellt. Dieses Verhalten wurde nie eine garantierte Verhalten jedoch lediglich ein Implementierungsdetail, und der Vertrag für Filter sie zustandslose berücksichtigt wurde. In ASP.NET MVC 3 werden die Filter aggressiver zwischengespeichert. Aus diesem Grund können benutzerdefinierten Aktionsfiltern, die von nicht ordnungsgemäß Instanzstatus gespeichert unterbrochen werden.
 - Die Ausführungsreihenfolge für Ausnahmefilter wurde geändert, für Ausnahmefilter mit dem gleichen *Reihenfolge* Wert. In ASP.NET MVC 2 und früher Ausnahmefilter auf dem Controller an, die die gleiche *Reihenfolge* -Wert, wie diese in einer Aktionsmethode vor den Ausnahmefiltern der Aktionsmethode ausgeführt wurden. Dies würde i. d. r. der Fall sein, wenn Ausnahmefilter angewendet wurden ohne einen angegebenen *Reihenfolge* Wert. In ASP.NET MVC 3 wurde diese Reihenfolge umgekehrt, damit der spezifischste Ausnahmehandler zuerst ausgeführt wird. Wie in früheren Versionen Wenn die *Reihenfolge* explizit angegeben wird, werden die Filter in der angegebenen Reihenfolge ausgeführt werden.
 - Eine neue Eigenschaft namens *FileExtensions* wurde hinzugefügt, um die *VirtualPathProviderViewEngine* Basisklasse. Wenn ASP.NET eine Ansicht anhand des Pfads (nicht nach Namen) sucht, werden nur Ansichten, mit der Erweiterung in der Liste, die durch diese neue Eigenschaft angegebene enthaltenen berücksichtigt. Dies ist eine wichtige Änderung in Anwendungen, in denen ein benutzerdefinierte Build-Anbieter registriert ist, um eine benutzerdefinierte Dateierweiterung für Web Form-Ansichten zu aktivieren und der Anbieter über einen vollständigen Pfad und nicht über einen Namen auf diese Sichten verweisen. Die problemumgehung besteht darin, das Ändern des Werts der *FileExtensions* Eigenschaft, um die benutzerdefinierte Erweiterung einschließen.
-- Benutzerdefinierte Controller Factory-Implementierungen, die direkt implementieren die <em>IControllerFactory</em> Schnittstelle muss eine Implementierung der neuen bereitstellen <em>GetControllerSessionBehavior</em>  <em>Methode, die die Schnittstelle in dieser Version hinzugefügte</em>. Im Allgemeinen wird empfohlen, dass Sie nicht diese Schnittstelle direkt implementieren und stattdessen Ableiten der Klasse aus <em>DefaultControllerFactory</em>.
+- Benutzerdefinierte Controller Factory-Implementierungen, die direkt implementieren die *IControllerFactory* Schnittstelle muss eine Implementierung der neuen bereitstellen *GetControllerSessionBehavior* Methode, der Schnittstelle in dieser Version hinzugefügt. Im Allgemeinen wird empfohlen, dass Sie nicht diese Schnittstelle direkt implementieren und stattdessen Ableiten der Klasse aus *DefaultControllerFactory*.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>Bekannte Probleme
@@ -666,7 +666,7 @@ In dieser Version können Sie die folgende Syntax:
 
 Die neue ASP.NET Web Pages-Technologie umfasst einen Satz von Hilfsmethoden bereit, die für das Hinzufügen von häufig verwendeten Funktionen zu Ansichten und Controller hilfreich sind. ASP.NET MVC 3 unterstützt diese Hilfsmethoden in Controllern und Ansichten (wenn geeignet). Diese Methoden sind in der Assembly System.Web.Helpers enthalten. In der folgende Tabelle sind einige der ASP.NET Web Pages-Hilfsmethoden.
 
-| **Helper** | **Beschreibung** |
+| **Hilfsprogramm** | **Beschreibung** |
 | --- | --- |
 | Diagramm | Rendert ein Diagramm innerhalb einer Ansicht an. Enthält Methoden, z. B. Chart.ToWebImage Chart.Save und Chart.Write an. |
 | Crypto | Verwendet, die Hashalgorithmen, um ordnungsgemäß zu erstellen, mit Salt-Wert und Kennwörter gehasht. |

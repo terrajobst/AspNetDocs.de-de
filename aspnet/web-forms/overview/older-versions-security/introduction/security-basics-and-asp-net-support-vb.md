@@ -8,15 +8,15 @@ ms.date: 01/13/2008
 ms.assetid: ab68a92b-fc81-40a4-a7dc-406625d2c5d4
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c293f4946001d0940c7e12b67f4fbc63cf5ca18c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1b6675a933f04b3eb7f5111b2ccd16c44baab7ba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043627"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414347"
 ---
-<a name="security-basics-and-aspnet-support-vb"></a>Grundlagen der Sicherheit und Unterstützung für ASP.NET (VB)
-====================
+# <a name="security-basics-and-aspnet-support-vb"></a>Grundlagen der Sicherheit und Unterstützung für ASP.NET (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [PDF herunterladen](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial01_Basics_vb.pdf)
@@ -139,7 +139,7 @@ Microsoft liefert zwei Membership-Provider-Klassen in .NET Framework:
 Diese tutorialreihe konzentriert sich ausschließlich auf die SqlMembershipProvider.
 
 
-[![Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework](security-basics-and-asp-net-support-vb/_static/image4.png)](security-basics-and-asp-net-support-vb/_static/image3.png)
+[![Ter Anbieter Modell können verschiedene Implementierungen werden nahtlos integriert in das Framework](security-basics-and-asp-net-support-vb/_static/image4.png)](security-basics-and-asp-net-support-vb/_static/image3.png)
 
 **Abbildung 03**: Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework ([klicken Sie, um das Bild in voller Größe anzeigen](security-basics-and-asp-net-support-vb/_static/image5.png))
 

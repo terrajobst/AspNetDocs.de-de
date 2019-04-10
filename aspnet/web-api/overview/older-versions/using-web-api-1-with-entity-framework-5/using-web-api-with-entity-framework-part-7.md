@@ -8,15 +8,15 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 91a6496e2640668c58ec0493d47d909e2de67367
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 028631f8855e4d94bebb0e965de75c4025e22859
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421349"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409264"
 ---
-<a name="part-7-creating-the-main-page"></a>Teil 7: Erstellen der Hauptseite
-====================
+# <a name="part-7-creating-the-main-page"></a>Teil 7: Erstellen der Hauptseite
+
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 [Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
@@ -73,7 +73,7 @@ Zum Schluss initialisieren Sie das Ansichtsmodell, die AJAX-Anforderungen für d
 
 OK, das ist viel Code, aber wir integrierter Sie Schritt für Schritt, hoffen wir der Entwurf ist klar. Jetzt können wir den HTML-Code einige Bindungen "Knockout.js" hinzufügen.
 
-**Produkte**
+**Products**
 
 Hier sind die Bindungen für die Produktliste:
 
@@ -91,7 +91,7 @@ Hier sind die Bindungen für den Warenkorb:
 
 Dies das Cart-Array durchläuft und zeigt den Namen, den Preis und die Menge. Beachten Sie, dass der Link "Entfernen" und die Schaltfläche "Create Order" Anzeigemodell Funktionen gebunden sind.
 
-**Aufträge**
+**Orders**
 
 Hier sind die Bindungen für die Liste der Bestellungen:
 
@@ -117,4 +117,4 @@ Zusätzliche Ressourcen:
 - [Entity Framework Developer Center](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]
-> [Vorherige](using-web-api-with-entity-framework-part-6.md)
+> [Vorheriges](using-web-api-with-entity-framework-part-6.md)

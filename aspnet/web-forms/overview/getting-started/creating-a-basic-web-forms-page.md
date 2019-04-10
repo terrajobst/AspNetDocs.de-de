@@ -8,16 +8,17 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: eb1a4632caf00097012bd1757da44016a076630f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026227"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410603"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>Mithilfe von Visual Studio 2013 zum Erstellen einer einfachen ASP.NET 4.5 Web Forms-Seite
+# 
 
-==================== by [Erik Reitan](https://github.com/Erikre)
+by [Erik Reitan](https://github.com/Erikre)
 
 [!INCLUDE[](~/includes/rp.md)]
 
@@ -61,7 +62,7 @@ In diesem Teil der exemplarischen Vorgehensweise werden Sie ein Webanwendungspro
 3. Wählen Sie die **Vorlagen**  - &gt; **Visual C#-**  - &gt; **Web** Gruppe "Vorlagen" auf der linken Seite.
 4. Wählen Sie die **ASP.NET-Webanwendung** Vorlage in der mittleren Spalte.
 5. Benennen Sie Ihr Projekt ***BasicWebApp*** , und klicken Sie auf die **OK** Schaltfläche.   
-![Neues Projekt (Dialogfeld)](creating-a-basic-web-forms-page/_static/image2.png)
+![Dialogfeld "Neues Projekt"](creating-a-basic-web-forms-page/_static/image2.png)
 6. Wählen Sie als Nächstes die **Web Forms** Vorlage, und klicken Sie auf die **OK** klicken, um das Projekt zu erstellen.  
 ![Neues ASP.NET-Projekt (Dialogfeld)](creating-a-basic-web-forms-page/_static/image3.png)  
 
@@ -108,7 +109,7 @@ Beim Erstellen eine neue Web Forms-Anwendung, mit der **ASP.NET-Webanwendung** -
 2. In **Projektmappen-Explorer**, mit der rechten Maustaste in den Namen der Web-Anwendung (in diesem Tutorial der Anwendungsname wird **BasicWebSite**), und klicken Sie dann auf **hinzufügen**  - &gt; **Neues Element**.   
 Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 3. Wählen Sie die **Visual C#-**  - &gt; **Web** Gruppe "Vorlagen" auf der linken Seite. Wählen Sie dann **Webformular** aus der Mitte aus, und nennen Sie sie *FirstWebPage.aspx*.   
-    ![Fügen Sie im Dialogfeld Neues Element hinzu.](creating-a-basic-web-forms-page/_static/image6.png)
+    ![Dialogfeld "Neues Element hinzufügen"](creating-a-basic-web-forms-page/_static/image6.png)
 4. Klicken Sie auf **hinzufügen** der Webseite zu Ihrem Projekt hinzufügen.  
 Visual Studio erstellt die neue Seite, und öffnet sie.
 

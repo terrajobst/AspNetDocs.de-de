@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 69fb02e0-f5b7-4c35-878c-fa87164fc785
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 767f9c85527fbcdf34e700eb32fe0c6cad30bf0c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1d83ede97ec37166d8dec32ff9e21c65423f3fc5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027397"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408484"
 ---
-<a name="preventing-open-redirection-attacks-c"></a>Verhindern von Angriffen durch offene Umleitungen (C#)
-====================
+# <a name="preventing-open-redirection-attacks-c"></a>Verhindern von Angriffen durch offene Umleitungen (C#)
+
 durch [Jon Galloway](https://github.com/jongalloway)
 
 > In diesem Tutorial wird erläutert, wie Sie offene umleitungen-Angriffen in ASP.NET MVC-Anwendungen verhindern können. Dieses Tutorial erläutert die Änderungen an, die in der AccountController-Komponente in ASP.NET MVC 3 vorgenommen wurden, und es wird veranschaulicht, wie Sie diese Änderungen in Ihrer vorhandenen ASP.NET MVC 1.0 und 2-Anwendungen anwenden können.

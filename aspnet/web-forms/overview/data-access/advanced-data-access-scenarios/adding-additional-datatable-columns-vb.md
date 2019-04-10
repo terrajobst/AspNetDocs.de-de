@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 75b5a1e1d6beb00079d754601860d0c25bc8a23e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 985e052abbe1065ba2d6816911f686cb61c85a6d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062747"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416466"
 ---
-<a name="adding-additional-datatable-columns-vb"></a>Hinzufügen von zusätzlichen DataTable-Spalten (VB)
-====================
+# <a name="adding-additional-datatable-columns-vb"></a>Hinzufügen von zusätzlichen DataTable-Spalten (VB)
+
 durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_70_VB.zip) oder [PDF-Datei herunterladen](adding-additional-datatable-columns-vb/_static/datatutorial70vb1.pdf)
@@ -49,7 +49,7 @@ In diesem Tutorial können s eine Methode zum Hinzufügen der `ProductsTableAdap
 Öffnen der `NorthwindWithSprocs` DataSet mit der rechten Maustaste auf die `ProductsDataTable`. Wählen Sie aus dem Kontextmenü hinzufügen, und wählen Sie dann die Spalte.
 
 
-[![Fügen Sie eine neue Spalte hinzu, um die ProductsDataTable](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
+[![ADd eine neue Spalte für die ProductsDataTable](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
 
 **Abbildung 1**: Hinzufügen einer neuen Spalte, die `ProductsDataTable` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ In diesem Tutorial können s eine Methode zum Hinzufügen der `ProductsTableAdap
 Dadurch wird eine neue Spalte hinzugefügt, zu der mit dem Namen Column1 vom Typ "DataTable" `System.String`. Wir müssen dieser Spaltenname s PriceQuartile und dessen Typ zu aktualisieren `System.Int32` , da er verwendet wird, die eine Zahl zwischen 1 und 4 enthalten soll. Wählen Sie die neu hinzugefügte Spalte in der `ProductsDataTable` , und legen Sie im Eigenschaftenfenster die `Name` PriceQuartile Eigenschaft und die `DataType` Eigenschaft `System.Int32`.
 
 
-[![Legen Sie die s-Name der neuen Spalte und die Eigenschaften für Datentypen](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
+[![Su. a. der Name der neuen Spalte s und die Datentypeigenschaften für die](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
 
 **Abbildung 2**: Legen Sie die neue Spalte s `Name` und `DataType` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image6.png))
 
@@ -69,7 +69,7 @@ Wie in Abbildung 2 gezeigt, gibt es zusätzliche Eigenschaften, die festgelegt w
 Nun, dass die `ProductsDataTable` wurde aktualisiert und enthalten die `PriceQuartile` Spalte sind wir bereit, erstellen die `GetProductsWithPriceQuartile` Methode. Zunächst mit der rechten Maustaste auf den TableAdapter und Abfrage hinzufügen im Kontextmenü auswählen. Dadurch wird der TableAdapter-Abfrage-Konfigurations-Assistenten, in der werden uns zuerst gefragt, ob Ad-hoc-SQL-Anweisungen oder einer neuen oder vorhandenen gespeicherten Prozedur verwendet werden soll. Da wir Einbau t zusätzlichen noch einer gespeicherten Prozedur, der Preis Quartil Daten zurückgibt, können Sie die s den TableAdapter zum Erstellen von dieser gespeicherten Prozedur für uns zu ermöglichen. Wählen Sie die Option neue gespeicherte Prozedur erstellen, und klicken Sie auf Weiter.
 
 
-[![Weisen Sie die TableAdapter-Assistenten, um die gespeicherte Prozedur für uns erstellen](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
+[![INStruct ist die TableAdapter-Assistenten, um die gespeicherte Prozedur für uns erstellen](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
 
 **Abbildung 3**: Weisen Sie den TableAdapter-Assistenten, um die gespeicherte Prozedur für uns erstellen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image9.png))
 
@@ -77,7 +77,7 @@ Nun, dass die `ProductsDataTable` wurde aktualisiert und enthalten die `PriceQua
 Im folgenden Bildschirm dargestellt in Abbildung 4 des Assistenten werden wir gefragt, welche Art von Abfrage hinzufügen. Da die `GetProductsWithPriceQuartile` Methode gibt alle Spalten und Datensätzen aus der `Products` Tabelle, wählen Sie die Auswahl, welche die gibt Zeilen aus, und klicken Sie auf Weiter.
 
 
-[![Die Abfrage wird eine SELECT-Anweisung, gibt mehrere Zeilen werden.](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
+[![Odie Abfrage wird eine SELECT-Anweisung, gibt mehrere Zeilen werden](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
 
 **Abbildung 4**: Die Abfrage werden eine `SELECT` Anweisung, gibt mehrere Zeilen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image12.png))
 
@@ -98,7 +98,7 @@ Leider den Abfrage-Generator ist nicht bekannt, wie beim Analysieren der `OVER` 
 Nach dem Eingeben der `SELECT` Abfrage ein, und klicken Sie auf Weiter, fragt der Assistent auf der einen Namen für die gespeicherte Prozedur angegeben wird. Benennen Sie die neue gespeicherte Prozedur `Products_SelectWithPriceQuartile` , und klicken Sie auf Weiter.
 
 
-[![Name der gespeicherten Prozedur Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
+[![NAme der gespeicherten Prozedur Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
 
 **Abbildung 5**: Benennen Sie die gespeicherte Prozedur `Products_SelectWithPriceQuartile` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image15.png))
 
@@ -106,7 +106,7 @@ Nach dem Eingeben der `SELECT` Abfrage ein, und klicken Sie auf Weiter, fragt de
 Schließlich sind wir aufgefordert, benennen Sie die TableAdapter-Methoden. Lassen Sie beide der Füllung eine "DataTable" und einem DataTable-Kontrollkästchen aktiviert und die Namen die Methoden zurückzugeben `FillWithPriceQuartile` und `GetProductsWithPriceQuartile`.
 
 
-[![Methoden für die TableAdapter-Namen, und klicken Sie auf Fertig stellen](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
+[![NAme die TableAdapter-Methoden ein, und klicken Sie auf Fertig stellen](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
 
 **Abbildung 6**: Benennen Sie das s-Methoden des TableAdapter, und klicken Sie auf Fertig stellen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image18.png))
 
@@ -121,7 +121,7 @@ Nach Abschluss des Assistenten sollte der TableAdapter enthalten die `FillWithPr
 **Abbildung 7**: Stellen Sie sicher, dass eine neue Methode des TableAdapter hinzugefügt wurde
 
 
-[![Stellen Sie sicher, dass die Datenbank die Products_SelectWithPriceQuartile enthält gespeicherte Prozedur](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
+[![Edarüber, dass die Datenbank die Products_SelectWithPriceQuartile gespeicherte Prozedur enthält.](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
 
 **Abbildung 8**: Sicherstellen, dass die Datenbank enthält die `Products_SelectWithPriceQuartile` Stored Procedure ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image22.png))
 
@@ -150,12 +150,12 @@ Wie andere Datenabrufmethoden in `ProductsBLLWithSprocs`, `GetProductsWithPriceQ
 Führen wir außerdem mit der BLL erneut bereit, um eine ASP.NET-Seite zu erstellen, die Quartile Preis für jedes Produkt anzeigt. Öffnen der `AddingColumns.aspx` auf der Seite die `AdvancedDAL` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox auf den Designer, Festlegen der `ID` Eigenschaft `Products`. Von GridView s Smarttags, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLLWithSprocs` Klasse s `GetProductsWithPriceQuartile` Methode. Da dies ein nur-Lese Raster sein wird, legen Sie die Dropdownlisten in der Update-, INSERT-, und Löschen von Registerkarten (keine) aus.
 
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLLWithSprocs-Klasse](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
+[![CKonfigurieren der ProductsBLLWithSprocs-Klasse mit dem ObjectDataSource-Steuerelement](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
 
 **Abbildung 9**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image25.png))
 
 
-[![Abrufen von Produktinformationen aus der GetProductsWithPriceQuartile-Methode](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
+[![REtrieve Produktinformationen aus der Methode GetProductsWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
 
 **Abbildung 10**: Abrufen von Produktinformationen aus der `GetProductsWithPriceQuartile` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image28.png))
 
@@ -172,12 +172,12 @@ Nachdem diese Änderungen sollten GridView und "ObjectDataSource" s deklarative 
 Abbildung 11 zeigt diese Seite, wenn über einen Browser aufgerufen. Beachten Sie, dass zunächst die Produkte nach Preis in absteigender Reihenfolge mit den einzelnen Produkten, die eine entsprechende zugewiesen sortiert werden `PriceQuartile` Wert. Natürlich können diese Daten nach anderen Kriterien sortiert werden, mit dem Preis Quartil-Spaltenwert weiterhin reflektieren die Rangfolge Produkt s in Bezug auf den Preis (siehe Abbildung 12).
 
 
-[![Die Produkte werden nach deren Preise sortiert.](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
+[![Tseine Produkte sind nach deren Preise sortiert](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
 
 **Abbildung 11**: Die Produkte werden nach deren Preise sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image31.png))
 
 
-[![Die Produkte werden nach Namen sortiert.](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
+[![Tseine Produkte werden nach Namen sortiert](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
 
 **Abbildung 12**: Die Produkte werden nach Namen sortiert ([klicken Sie, um das Bild in voller Größe anzeigen](adding-additional-datatable-columns-vb/_static/image34.png))
 
