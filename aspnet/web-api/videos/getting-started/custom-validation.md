@@ -8,18 +8,18 @@ ms.date: 02/15/2012
 ms.assetid: f8eadb72-fa15-4537-8c6d-1b120e6d3aab
 msc.legacyurl: /web-api/videos/getting-started/custom-validation
 msc.type: video
-ms.openlocfilehash: 3c5b3c3d7f985a78806c49db3203152d8b746e10
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e941830f741c4d21b9320561a4b10b0fa729c1d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054197"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390050"
 ---
-<a name="aspnet-web-api-part-5-custom-validation"></a><span data-ttu-id="ee0cd-103">ASP.NET-Web-API, Teil 5: Benutzerdefinierte Validierung</span><span class="sxs-lookup"><span data-stu-id="ee0cd-103">ASP.NET Web API, Part 5: Custom Validation</span></span>
-====================
-<span data-ttu-id="ee0cd-104">durch [Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="ee0cd-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+# <a name="aspnet-web-api-part-5-custom-validation"></a><span data-ttu-id="217c3-103">ASP.NET-Web-API, Teil 5: Benutzerdefinierte Validierung</span><span class="sxs-lookup"><span data-stu-id="217c3-103">ASP.NET Web API, Part 5: Custom Validation</span></span>
+
+<span data-ttu-id="217c3-104">durch [Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="217c3-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ee0cd-105">Dieses Video enthält Informationen, die von einer Vorabversion von ASP.NET Web-API.</span><span class="sxs-lookup"><span data-stu-id="ee0cd-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="ee0cd-106">Informationen dazu, was sich geändert finden Sie unter den aktualisierten Beispielcode an [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="ee0cd-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
+> <span data-ttu-id="217c3-105">Dieses Video enthält Informationen, die von einer Vorabversion von ASP.NET Web-API.</span><span class="sxs-lookup"><span data-stu-id="217c3-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="217c3-106">Informationen dazu, was sich geändert finden Sie unter den aktualisierten Beispielcode an [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="217c3-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
 
-[<span data-ttu-id="ee0cd-107">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ee0cd-107">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/custom-validation)
+[<span data-ttu-id="217c3-107">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="217c3-107">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/custom-validation)
