@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: c1e6b51c-3bc3-4bf7-9916-9991197af3dd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 18ee6dd71fe0e84ec7628eba63aabeee0690d0b3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 82fae91e40ec2f1508fe5c82992eeef4abc4e19a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056507"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419222"
 ---
-<a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>Verwenden von AJAX Control Toolkit-Steuerelementen und -Steuerelement-Extendern (C#)
-====================
+# <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>Verwenden von AJAX Control Toolkit-Steuerelementen und -Steuerelement-Extendern (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie ASP.NET-Seiten AJAX Control Toolkit-Steuerelemente und Extender hinzugefügt.
@@ -44,17 +44,17 @@ Die Registerkarte "AJAX Control Toolkit" enthält beispielsweise ein Steuereleme
 5. Die Seite in Abbildung 3 sollte angezeigt werden.
 
 
-[![Wählen das HTML-Editor-Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
+[![SWahl das Steuerelement der HTML-Editor](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
 
 **Abbildung 01**: Auswählen des HTML-Editor-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.png))
 
 
-[![Visual Studio-Designer mit ScriptManager "und" Bearbeiten-Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
+[![VIsual Studio-Designer mit ScriptManager "und" Bearbeiten-Steuerelement](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
 
 **Abbildung 02**: Visual Studio-Designer mit ScriptManager "und" Bearbeiten-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.png))
 
 
-[![Die Seite "DisplayEditor.aspx"](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
+[![THE DisplayEditor.aspx Page](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
 
 **Abbildung 03**: Die Seite "DisplayEditor.aspx" ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.png))
 
@@ -76,17 +76,17 @@ Um einen ConfirmButton-Extender-Steuerelement verwenden, gehen Sie wie folgt vor
 7. Führen Sie die Seite im Menü die Option **Debuggen, Debugging starten** oder die F5-Taste drücken.
 
 
-[![Die registerkartenoption Extender hinzufügen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
+[![Ter registerkartenoption Extender hinzufügen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
 
 **Abbildung 04**: Die registerkartenoption Extender hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image8.png))
 
 
-[![Auswählen des ConfirmButton-Extenders-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
+[![SWahl des ConfirmButton-Extenders-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
 
 **Abbildung 05**: Auswählen des ConfirmButton-Extenders-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image10.png))
 
 
-[![Festlegen einer Eigenschaft ConfirmButton-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
+[![SSkala-Einstellung einer Eigenschaft ConfirmButton-Steuerelements](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
 
 **Abbildung 06**: Festlegen einer Eigenschaft ConfirmButton-Steuerelements ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image12.png))
 
@@ -94,7 +94,7 @@ Um einen ConfirmButton-Extender-Steuerelement verwenden, gehen Sie wie folgt vor
 Wenn die Seite geöffnet wird, sollte eine Schaltfläche angezeigt werden. Wenn Sie die Schaltfläche klicken, erhalten Sie im Bestätigungsdialogfeld in Abbildung 7.
 
 
-[![Das Dialogfeld "Bestätigung" anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
+[![DDas Dialogfeld "Bestätigung" IsPlaying den Wert](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
 
 **Abbildung 07**: Das Dialogfeld "Bestätigung" angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image14.png))
 
