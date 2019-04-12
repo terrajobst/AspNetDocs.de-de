@@ -8,15 +8,15 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: d0203b62c911056fc56ed103c1c42f67816cbbf0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065727"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396980"
 ---
-<a name="using-oauth-providers-with-mvc-4"></a>Verwenden von OAuth-Anbietern mit MVC 4
-====================
+# <a name="using-oauth-providers-with-mvc-4"></a>Verwenden von OAuth-Anbietern mit MVC 4
+
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 > In diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 4-Webanwendung zu erstellen, können die Benutzer melden Sie sich mit Anmeldeinformationen aus einem externen Anbieter, z. B. Facebook, Twitter, Microsoft oder Google, und integrieren anschließend einige der Funktionen von diesen Anbietern in, Ihre Web-Anwendung. Der Einfachheit halber konzentriert sich in diesem Tutorial zum Arbeiten mit Anmeldeinformationen von Facebook.
@@ -83,7 +83,7 @@ In diesem Tutorial werden nicht alle Schritte angezeigt, die Sie ausführen müs
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-Wenn Sie Ihre Website mit Facebook zu registrieren, können Sie angeben &quot;"localhost"&quot; für die Domäne der Website und `&quot; http://localhost/&quot;` für die URL, wie in der folgenden Abbildung dargestellt. Verwenden "localhost" arbeitet mit den meisten Anbietern zusammen, aber derzeit funktioniert nicht mit dem Microsoft-Anbieter. Für den Microsoft-Anbieter müssen Sie eine gültige Website-URL einschließen.
+Wenn Sie Ihre Website mit Facebook zu registrieren, können Sie angeben &quot;"localhost"&quot; für die Domäne der Website und `&quot;http://localhost/&quot;` für die URL, wie in der folgenden Abbildung dargestellt. Verwenden "localhost" arbeitet mit den meisten Anbietern zusammen, aber derzeit funktioniert nicht mit dem Microsoft-Anbieter. Für den Microsoft-Anbieter müssen Sie eine gültige Website-URL einschließen.
 
 ![Registrieren der site](using-oauth-providers-with-mvc/_static/image4.png)
 
