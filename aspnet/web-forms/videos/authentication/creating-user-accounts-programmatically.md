@@ -12,18 +12,18 @@ ms.openlocfilehash: c2a17ad54aebe1fff9b4ee5067afd41eedc5e05d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391116"
 ---
-# <a name="creating-user-accounts-programmatically"></a><span data-ttu-id="45d2e-104">Programmgesteuertes Erstellen von Benutzerkonten</span><span class="sxs-lookup"><span data-stu-id="45d2e-104">Creating User Accounts Programmatically</span></span>
+# <a name="creating-user-accounts-programmatically"></a><span data-ttu-id="09644-104">Programmgesteuertes Erstellen von Benutzerkonten</span><span class="sxs-lookup"><span data-stu-id="09644-104">Creating User Accounts Programmatically</span></span>
 
-<span data-ttu-id="45d2e-105">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="45d2e-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="09644-105">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="09644-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="45d2e-106">In diesem Video Joe Stagner veranschaulicht, wie ein benutzerdefiniertes Webformular Benutzer programmgesteuert erstellen, während die nicht mithilfe des Assistenten zum Erstellen von Benutzern.</span><span class="sxs-lookup"><span data-stu-id="45d2e-106">In this video, Joe Stagner demonstrates how to create a custom create user web form programmatically while not using the Create User wizard.</span></span> <span data-ttu-id="45d2e-107">Finden Sie weitere Informationen zu diesem Video, das Tutorial "Erstellen von Benutzerkonten" Security ([c#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span><span class="sxs-lookup"><span data-stu-id="45d2e-107">For additional information about this video, read the "Creating User Accounts" security tutorial ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span></span>
+<span data-ttu-id="09644-106">In diesem Video Joe Stagner veranschaulicht, wie ein benutzerdefiniertes Webformular Benutzer programmgesteuert erstellen, während die nicht mithilfe des Assistenten zum Erstellen von Benutzern.</span><span class="sxs-lookup"><span data-stu-id="09644-106">In this video, Joe Stagner demonstrates how to create a custom create user web form programmatically while not using the Create User wizard.</span></span> <span data-ttu-id="09644-107">Finden Sie weitere Informationen zu diesem Video, das Tutorial "Erstellen von Benutzerkonten" Security ([c#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span><span class="sxs-lookup"><span data-stu-id="09644-107">For additional information about this video, read the "Creating User Accounts" security tutorial ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span></span>
 
-[<span data-ttu-id="45d2e-108">&#9654;Sehen Sie sich Video (19 Minuten)</span><span class="sxs-lookup"><span data-stu-id="45d2e-108">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-user-accounts-programmatically)
+[<span data-ttu-id="09644-108">&#9654;Sehen Sie sich Video (19 Minuten)</span><span class="sxs-lookup"><span data-stu-id="09644-108">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-user-accounts-programmatically)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="45d2e-109">[Zurück](creating-user-accounts-with-the-create-user-wizard.md)
-> [Weiter](validating-users-manually.md)</span><span class="sxs-lookup"><span data-stu-id="45d2e-109">[Previous](creating-user-accounts-with-the-create-user-wizard.md)
+> <span data-ttu-id="09644-109">[Zurück](creating-user-accounts-with-the-create-user-wizard.md)
+> [Weiter](validating-users-manually.md)</span><span class="sxs-lookup"><span data-stu-id="09644-109">[Previous](creating-user-accounts-with-the-create-user-wizard.md)
 [Next](validating-users-manually.md)</span></span>

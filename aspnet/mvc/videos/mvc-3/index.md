@@ -12,13 +12,13 @@ ms.openlocfilehash: 590b5c23a7a8a4b2ac20976743fd19d0ab70a070
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393378"
 ---
-# <a name="aspnet-mvc-3"></a><span data-ttu-id="68f0b-103">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="68f0b-103">ASP.NET MVC 3</span></span>
+# <a name="aspnet-mvc-3"></a><span data-ttu-id="a006a-103">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="a006a-103">ASP.NET MVC 3</span></span>
 
-> <span data-ttu-id="68f0b-104">ASP.NET MVC 3-Einzelhandelsbereich</span><span class="sxs-lookup"><span data-stu-id="68f0b-104">ASP.NET MVC 3 Quick Hits</span></span>
+> <span data-ttu-id="a006a-104">ASP.NET MVC 3-Einzelhandelsbereich</span><span class="sxs-lookup"><span data-stu-id="a006a-104">ASP.NET MVC 3 Quick Hits</span></span>
 
 
-- [<span data-ttu-id="68f0b-105">MVC 3 – Razor-Anzeige-Engine</span><span class="sxs-lookup"><span data-stu-id="68f0b-105">MVC 3 - Razor View Engine</span></span>](mvc-3-razor-view-engine.md)
-- [<span data-ttu-id="68f0b-106">MVC 3 – Razor-Hilfsprogramme</span><span class="sxs-lookup"><span data-stu-id="68f0b-106">MVC 3 - Razor Helpers</span></span>](mvc-3-razor-helpers.md)
+- [<span data-ttu-id="a006a-105">MVC 3 – Razor-Anzeige-Engine</span><span class="sxs-lookup"><span data-stu-id="a006a-105">MVC 3 - Razor View Engine</span></span>](mvc-3-razor-view-engine.md)
+- [<span data-ttu-id="a006a-106">MVC 3 – Razor-Hilfsprogramme</span><span class="sxs-lookup"><span data-stu-id="a006a-106">MVC 3 - Razor Helpers</span></span>](mvc-3-razor-helpers.md)

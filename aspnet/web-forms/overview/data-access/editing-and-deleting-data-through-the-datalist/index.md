@@ -12,21 +12,21 @@ ms.openlocfilehash: b242803a1f5d7db519314dc9349f8b4f6b1d0c6a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393176"
 ---
-# <a name="editing-and-deleting-data-through-the-datalist"></a><span data-ttu-id="4ced0-103">Bearbeiten und Löschen von Daten über DataList</span><span class="sxs-lookup"><span data-stu-id="4ced0-103">Editing and Deleting Data Through the DataList</span></span>
+# <a name="editing-and-deleting-data-through-the-datalist"></a><span data-ttu-id="d86bb-103">Bearbeiten und Löschen von Daten über DataList</span><span class="sxs-lookup"><span data-stu-id="d86bb-103">Editing and Deleting Data Through the DataList</span></span>
 
-> <span data-ttu-id="4ced0-104">Diese Tutorials zeigen, wie das DataList-Steuerelement so optimieren, dass sie verwendet, die Daten ändern können.</span><span class="sxs-lookup"><span data-stu-id="4ced0-104">These tutorials show how to tweak the DataList control so that it lets uses modify data.</span></span>
+> <span data-ttu-id="d86bb-104">Diese Tutorials zeigen, wie das DataList-Steuerelement so optimieren, dass sie verwendet, die Daten ändern können.</span><span class="sxs-lookup"><span data-stu-id="d86bb-104">These tutorials show how to tweak the DataList control so that it lets uses modify data.</span></span>
 
 
-- [<span data-ttu-id="4ced0-105">Bearbeiten und Löschen von Daten im DataList-Steuerelement – Übersicht (C#)</span><span class="sxs-lookup"><span data-stu-id="4ced0-105">Overview of Editing and Deleting Data in the DataList (C#)</span></span>](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
-- [<span data-ttu-id="4ced0-106">Durchführen von Batchupdates (C#)</span><span class="sxs-lookup"><span data-stu-id="4ced0-106">Performing Batch Updates (C#)</span></span>](performing-batch-updates-cs.md)
-- [<span data-ttu-id="4ced0-107">Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)</span><span class="sxs-lookup"><span data-stu-id="4ced0-107">Handling BLL- and DAL-Level Exceptions (C#)</span></span>](handling-bll-and-dal-level-exceptions-cs.md)
-- [<span data-ttu-id="4ced0-108">Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="4ced0-108">Adding Validation Controls to the DataList's Editing Interface (C#)</span></span>](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
-- [<span data-ttu-id="4ced0-109">Anpassen der Oberfläche für die Bearbeitung von DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="4ced0-109">Customizing the DataList's Editing Interface (C#)</span></span>](customizing-the-datalist-s-editing-interface-cs.md)
-- [<span data-ttu-id="4ced0-110">Bearbeiten und Löschen von Daten im DataList-Steuerelement – Übersicht (VB)</span><span class="sxs-lookup"><span data-stu-id="4ced0-110">Overview of Editing and Deleting Data in the DataList (VB)</span></span>](an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md)
-- [<span data-ttu-id="4ced0-111">Durchführen von Batchupdates (VB)</span><span class="sxs-lookup"><span data-stu-id="4ced0-111">Performing Batch Updates (VB)</span></span>](performing-batch-updates-vb.md)
-- [<span data-ttu-id="4ced0-112">Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (VB)</span><span class="sxs-lookup"><span data-stu-id="4ced0-112">Handling BLL- and DAL-Level Exceptions (VB)</span></span>](handling-bll-and-dal-level-exceptions-vb.md)
-- [<span data-ttu-id="4ced0-113">Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (VB)</span><span class="sxs-lookup"><span data-stu-id="4ced0-113">Adding Validation Controls to the DataList's Editing Interface (VB)</span></span>](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)
-- [<span data-ttu-id="4ced0-114">Anpassen der Oberfläche für die Bearbeitung von DataList (VB)</span><span class="sxs-lookup"><span data-stu-id="4ced0-114">Customizing the DataList's Editing Interface (VB)</span></span>](customizing-the-datalist-s-editing-interface-vb.md)
+- [<span data-ttu-id="d86bb-105">Bearbeiten und Löschen von Daten im DataList-Steuerelement – Übersicht (C#)</span><span class="sxs-lookup"><span data-stu-id="d86bb-105">Overview of Editing and Deleting Data in the DataList (C#)</span></span>](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
+- [<span data-ttu-id="d86bb-106">Durchführen von Batchupdates (C#)</span><span class="sxs-lookup"><span data-stu-id="d86bb-106">Performing Batch Updates (C#)</span></span>](performing-batch-updates-cs.md)
+- [<span data-ttu-id="d86bb-107">Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)</span><span class="sxs-lookup"><span data-stu-id="d86bb-107">Handling BLL- and DAL-Level Exceptions (C#)</span></span>](handling-bll-and-dal-level-exceptions-cs.md)
+- [<span data-ttu-id="d86bb-108">Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="d86bb-108">Adding Validation Controls to the DataList's Editing Interface (C#)</span></span>](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
+- [<span data-ttu-id="d86bb-109">Anpassen der Oberfläche für die Bearbeitung von DataList (C#)</span><span class="sxs-lookup"><span data-stu-id="d86bb-109">Customizing the DataList's Editing Interface (C#)</span></span>](customizing-the-datalist-s-editing-interface-cs.md)
+- [<span data-ttu-id="d86bb-110">Bearbeiten und Löschen von Daten im DataList-Steuerelement – Übersicht (VB)</span><span class="sxs-lookup"><span data-stu-id="d86bb-110">Overview of Editing and Deleting Data in the DataList (VB)</span></span>](an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md)
+- [<span data-ttu-id="d86bb-111">Durchführen von Batchupdates (VB)</span><span class="sxs-lookup"><span data-stu-id="d86bb-111">Performing Batch Updates (VB)</span></span>](performing-batch-updates-vb.md)
+- [<span data-ttu-id="d86bb-112">Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (VB)</span><span class="sxs-lookup"><span data-stu-id="d86bb-112">Handling BLL- and DAL-Level Exceptions (VB)</span></span>](handling-bll-and-dal-level-exceptions-vb.md)
+- [<span data-ttu-id="d86bb-113">Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (VB)</span><span class="sxs-lookup"><span data-stu-id="d86bb-113">Adding Validation Controls to the DataList's Editing Interface (VB)</span></span>](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)
+- [<span data-ttu-id="d86bb-114">Anpassen der Oberfläche für die Bearbeitung von DataList (VB)</span><span class="sxs-lookup"><span data-stu-id="d86bb-114">Customizing the DataList's Editing Interface (VB)</span></span>](customizing-the-datalist-s-editing-interface-vb.md)

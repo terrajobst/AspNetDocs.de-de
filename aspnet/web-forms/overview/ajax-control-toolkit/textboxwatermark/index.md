@@ -12,15 +12,15 @@ ms.openlocfilehash: 958861f2a7df0beacf80cf9f2aa78a7c67db1532
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395432"
 ---
-# <a name="textboxwatermark"></a><span data-ttu-id="73924-103">TextBoxWatermark</span><span class="sxs-lookup"><span data-stu-id="73924-103">TextBoxWatermark</span></span>
+# <a name="textboxwatermark"></a><span data-ttu-id="c4ba8-103">TextBoxWatermark</span><span class="sxs-lookup"><span data-stu-id="c4ba8-103">TextBoxWatermark</span></span>
 
-> <span data-ttu-id="73924-104">Dieses Tutorial veranschaulicht, wie die TextBoxWatermark-Steuerelement verwenden, um ein Textfeld mit einer Meldung angezeigt, der verschwindet, wenn Benutzer beginnen, es einzugeben.</span><span class="sxs-lookup"><span data-stu-id="73924-104">This tutorial shows how to use the TextBoxWatermark control to display a text box with a message that disappears when users start typing in it.</span></span>
+> <span data-ttu-id="c4ba8-104">Dieses Tutorial veranschaulicht, wie die TextBoxWatermark-Steuerelement verwenden, um ein Textfeld mit einer Meldung angezeigt, der verschwindet, wenn Benutzer beginnen, es einzugeben.</span><span class="sxs-lookup"><span data-stu-id="c4ba8-104">This tutorial shows how to use the TextBoxWatermark control to display a text box with a message that disappears when users start typing in it.</span></span>
 
 
-- [<span data-ttu-id="73924-105">Verwenden von TextBoxWatermark in einem FormView-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="73924-105">Using TextBoxWatermark in a FormView (C#)</span></span>](using-textboxwatermark-in-a-formview-cs.md)
-- [<span data-ttu-id="73924-106">Verwenden von TextBoxWatermark mit Validierungssteuerelementen (C#)</span><span class="sxs-lookup"><span data-stu-id="73924-106">Using TextBoxWatermark With Validation Controls (C#)</span></span>](using-textboxwatermark-with-validation-controls-cs.md)
-- [<span data-ttu-id="73924-107">Verwenden von TextBoxWatermark in einem FormView-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="73924-107">Using TextBoxWatermark in a FormView (VB)</span></span>](using-textboxwatermark-in-a-formview-vb.md)
-- [<span data-ttu-id="73924-108">Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)</span><span class="sxs-lookup"><span data-stu-id="73924-108">Using TextBoxWatermark With Validation Controls (VB)</span></span>](using-textboxwatermark-with-validation-controls-vb.md)
+- [<span data-ttu-id="c4ba8-105">Verwenden von TextBoxWatermark in einem FormView-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="c4ba8-105">Using TextBoxWatermark in a FormView (C#)</span></span>](using-textboxwatermark-in-a-formview-cs.md)
+- [<span data-ttu-id="c4ba8-106">Verwenden von TextBoxWatermark mit Validierungssteuerelementen (C#)</span><span class="sxs-lookup"><span data-stu-id="c4ba8-106">Using TextBoxWatermark With Validation Controls (C#)</span></span>](using-textboxwatermark-with-validation-controls-cs.md)
+- [<span data-ttu-id="c4ba8-107">Verwenden von TextBoxWatermark in einem FormView-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="c4ba8-107">Using TextBoxWatermark in a FormView (VB)</span></span>](using-textboxwatermark-in-a-formview-vb.md)
+- [<span data-ttu-id="c4ba8-108">Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)</span><span class="sxs-lookup"><span data-stu-id="c4ba8-108">Using TextBoxWatermark With Validation Controls (VB)</span></span>](using-textboxwatermark-with-validation-controls-vb.md)

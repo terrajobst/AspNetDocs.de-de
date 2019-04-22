@@ -12,17 +12,17 @@ ms.openlocfilehash: b0099e82a6b49d37eb8151ab727da0260e423faf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384200"
 ---
-# <a name="basic-reporting"></a><span data-ttu-id="5b1af-103">Basisberichterstellung</span><span class="sxs-lookup"><span data-stu-id="5b1af-103">Basic Reporting</span></span>
+# <a name="basic-reporting"></a><span data-ttu-id="2a3ed-103">Basisberichterstellung</span><span class="sxs-lookup"><span data-stu-id="2a3ed-103">Basic Reporting</span></span>
 
-> <span data-ttu-id="5b1af-104">Diese Reihe von Lernprogrammen untersucht, wie Sie das ObjectDataSource-Steuerelement mit Daten aus der BLL, ganz ohne Code verwenden.</span><span class="sxs-lookup"><span data-stu-id="5b1af-104">This set of tutorials looks at how to use the ObjectDataSource control to work with data retrieved from the BLL, all without code.</span></span>
+> <span data-ttu-id="2a3ed-104">Diese Reihe von Lernprogrammen untersucht, wie Sie das ObjectDataSource-Steuerelement mit Daten aus der BLL, ganz ohne Code verwenden.</span><span class="sxs-lookup"><span data-stu-id="2a3ed-104">This set of tutorials looks at how to use the ObjectDataSource control to work with data retrieved from the BLL, all without code.</span></span>
 
 
-- [<span data-ttu-id="5b1af-105">Anzeigen von Daten mit dem ObjectDataSource-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="5b1af-105">Displaying Data With the ObjectDataSource (C#)</span></span>](displaying-data-with-the-objectdatasource-cs.md)
-- [<span data-ttu-id="5b1af-106">Deklarative Parameter (C#)</span><span class="sxs-lookup"><span data-stu-id="5b1af-106">Declarative Parameters (C#)</span></span>](declarative-parameters-cs.md)
-- [<span data-ttu-id="5b1af-107">Programmgesteuertes Festlegen der Parameterwerte des ObjectDataSource-Steuerelements (C#)</span><span class="sxs-lookup"><span data-stu-id="5b1af-107">Programmatically Setting the ObjectDataSource's Parameter Values (C#)</span></span>](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
-- [<span data-ttu-id="5b1af-108">Anzeigen von Daten mit dem ObjectDataSource-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="5b1af-108">Displaying Data With the ObjectDataSource (VB)</span></span>](displaying-data-with-the-objectdatasource-vb.md)
-- [<span data-ttu-id="5b1af-109">Deklarative Parameter (VB)</span><span class="sxs-lookup"><span data-stu-id="5b1af-109">Declarative Parameters (VB)</span></span>](declarative-parameters-vb.md)
-- [<span data-ttu-id="5b1af-110">Programmgesteuertes Festlegen der Parameterwerte des ObjectDataSource-Steuerelements (VB)</span><span class="sxs-lookup"><span data-stu-id="5b1af-110">Programmatically Setting the ObjectDataSource's Parameter Values (VB)</span></span>](programmatically-setting-the-objectdatasource-s-parameter-values-vb.md)
+- [<span data-ttu-id="2a3ed-105">Anzeigen von Daten mit dem ObjectDataSource-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-105">Displaying Data With the ObjectDataSource (C#)</span></span>](displaying-data-with-the-objectdatasource-cs.md)
+- [<span data-ttu-id="2a3ed-106">Deklarative Parameter (C#)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-106">Declarative Parameters (C#)</span></span>](declarative-parameters-cs.md)
+- [<span data-ttu-id="2a3ed-107">Programmgesteuertes Festlegen der Parameterwerte des ObjectDataSource-Steuerelements (C#)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-107">Programmatically Setting the ObjectDataSource's Parameter Values (C#)</span></span>](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
+- [<span data-ttu-id="2a3ed-108">Anzeigen von Daten mit dem ObjectDataSource-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-108">Displaying Data With the ObjectDataSource (VB)</span></span>](displaying-data-with-the-objectdatasource-vb.md)
+- [<span data-ttu-id="2a3ed-109">Deklarative Parameter (VB)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-109">Declarative Parameters (VB)</span></span>](declarative-parameters-vb.md)
+- [<span data-ttu-id="2a3ed-110">Programmgesteuertes Festlegen der Parameterwerte des ObjectDataSource-Steuerelements (VB)</span><span class="sxs-lookup"><span data-stu-id="2a3ed-110">Programmatically Setting the ObjectDataSource's Parameter Values (VB)</span></span>](programmatically-setting-the-objectdatasource-s-parameter-values-vb.md)

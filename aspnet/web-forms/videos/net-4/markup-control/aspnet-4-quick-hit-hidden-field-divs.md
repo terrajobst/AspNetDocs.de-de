@@ -12,18 +12,18 @@ ms.openlocfilehash: 5f90f718ed267db90c95995c02c63872b497a005
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393794"
 ---
-# <a name="aspnet-4-quick-hit---hidden-field-divs"></a><span data-ttu-id="c5df9-103">ASP.NET 4 "Quick Hit" - Hidden Field Divs</span><span class="sxs-lookup"><span data-stu-id="c5df9-103">ASP.NET 4 "Quick Hit" - Hidden Field Divs</span></span>
+# <a name="aspnet-4-quick-hit---hidden-field-divs"></a><span data-ttu-id="445ae-103">ASP.NET 4 "Quick Hit" - Hidden Field Divs</span><span class="sxs-lookup"><span data-stu-id="445ae-103">ASP.NET 4 "Quick Hit" - Hidden Field Divs</span></span>
 
-<span data-ttu-id="c5df9-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="c5df9-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="445ae-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="445ae-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="c5df9-105">In diesem Video erfahren Sie, wie Div-Elemente für verborgene Felder jetzt formatiert werden, damit sie von Benutzern erstellten CSS-Regeln nicht stören.</span><span class="sxs-lookup"><span data-stu-id="c5df9-105">In this video you will learn how div elements around hidden fields are now styled so they do not interfere with user-created CSS rules.</span></span>
+<span data-ttu-id="445ae-105">In diesem Video erfahren Sie, wie Div-Elemente für verborgene Felder jetzt formatiert werden, damit sie von Benutzern erstellten CSS-Regeln nicht stören.</span><span class="sxs-lookup"><span data-stu-id="445ae-105">In this video you will learn how div elements around hidden fields are now styled so they do not interfere with user-created CSS rules.</span></span>
 
-[<span data-ttu-id="c5df9-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="c5df9-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-hidden-field-divs)
+[<span data-ttu-id="445ae-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="445ae-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-hidden-field-divs)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="c5df9-107">[Zurück](aspnet-4-quick-hit-tableless-menu-control.md)
-> [Weiter](aspnet-4-quick-hit-disabled-control-styling.md)</span><span class="sxs-lookup"><span data-stu-id="c5df9-107">[Previous](aspnet-4-quick-hit-tableless-menu-control.md)
+> <span data-ttu-id="445ae-107">[Zurück](aspnet-4-quick-hit-tableless-menu-control.md)
+> [Weiter](aspnet-4-quick-hit-disabled-control-styling.md)</span><span class="sxs-lookup"><span data-stu-id="445ae-107">[Previous](aspnet-4-quick-hit-tableless-menu-control.md)
 [Next](aspnet-4-quick-hit-disabled-control-styling.md)</span></span>

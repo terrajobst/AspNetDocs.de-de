@@ -12,18 +12,18 @@ ms.openlocfilehash: 52d3c4814a4896c3aa0134ea87c8fac2f5995017
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396303"
 ---
-# <a name="migrating-from-classic-asp-to-aspnet"></a><span data-ttu-id="4f24e-104">[Migration von] Classic ASP zu ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4f24e-104">[Migrating from] Classic ASP to ASP.NET</span></span>
+# <a name="migrating-from-classic-asp-to-aspnet"></a><span data-ttu-id="ca337-104">[Migration von] Classic ASP zu ASP.NET</span><span class="sxs-lookup"><span data-stu-id="ca337-104">[Migrating from] Classic ASP to ASP.NET</span></span>
 
-<span data-ttu-id="4f24e-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="4f24e-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="ca337-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="ca337-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="4f24e-106">Planen Sie die Migration von klassischem ASP zu Microsoft ASP.NET 2.0?</span><span class="sxs-lookup"><span data-stu-id="4f24e-106">Are you planning to migrate from classic ASP to Microsoft ASP.NET 2.0?</span></span> <span data-ttu-id="4f24e-107">Diese Webcastreihe führt Sie durch die wichtiger Aspekt des Architekturentwurfs Aspekte zu bedenken, bei der Planung Ihrer Migrationsstrategie.</span><span class="sxs-lookup"><span data-stu-id="4f24e-107">This webcast series walks you through the important architectural design considerations to keep in mind when you plan your migration strategy.</span></span>
+<span data-ttu-id="ca337-106">Planen Sie die Migration von klassischem ASP zu Microsoft ASP.NET 2.0?</span><span class="sxs-lookup"><span data-stu-id="ca337-106">Are you planning to migrate from classic ASP to Microsoft ASP.NET 2.0?</span></span> <span data-ttu-id="ca337-107">Diese Webcastreihe führt Sie durch die wichtiger Aspekt des Architekturentwurfs Aspekte zu bedenken, bei der Planung Ihrer Migrationsstrategie.</span><span class="sxs-lookup"><span data-stu-id="ca337-107">This webcast series walks you through the important architectural design considerations to keep in mind when you plan your migration strategy.</span></span>
 
-[<span data-ttu-id="4f24e-108">&#9654;Sehen Sie sich Video (78 Minuten)</span><span class="sxs-lookup"><span data-stu-id="4f24e-108">&#9654; Watch video (78 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/migrating-from-classic-asp-to-aspnet)
+[<span data-ttu-id="ca337-108">&#9654;Sehen Sie sich Video (78 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ca337-108">&#9654; Watch video (78 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/migrating-from-classic-asp-to-aspnet)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="4f24e-109">[Zurück](intro-to-aspnet-20-user-interface-elements.md)
-> [Weiter](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)</span><span class="sxs-lookup"><span data-stu-id="4f24e-109">[Previous](intro-to-aspnet-20-user-interface-elements.md)
+> <span data-ttu-id="ca337-109">[Zurück](intro-to-aspnet-20-user-interface-elements.md)
+> [Weiter](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)</span><span class="sxs-lookup"><span data-stu-id="ca337-109">[Previous](intro-to-aspnet-20-user-interface-elements.md)
 [Next](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)</span></span>

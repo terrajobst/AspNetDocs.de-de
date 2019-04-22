@@ -12,18 +12,18 @@ ms.openlocfilehash: 8ebbd7a8e8fa4adb9835cea9560797beee2b86fa
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383880"
 ---
-# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a><span data-ttu-id="06018-103">Einführung in ASP.NET für ColdFusion-Entwickler: Aufbau von ASP.NET-Anwendungen</span><span class="sxs-lookup"><span data-stu-id="06018-103">Introduction to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>
+# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a><span data-ttu-id="15c85-103">Einführung in ASP.NET für ColdFusion-Entwickler: Aufbau von ASP.NET-Anwendungen</span><span class="sxs-lookup"><span data-stu-id="15c85-103">Introduction to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>
 
-<span data-ttu-id="06018-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="06018-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="15c85-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="15c85-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="06018-105">In diesem Webcast wird das Erstellen einer ASP.NET-Anwendung beginnend mit einem leeren Formular, auf erfahrenen ColdFusion-Entwickler erhalten eine klare Vorstellung davon, was genau geht veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="06018-105">This webcast shows how to build an ASP.NET application starting from a blank form, to give the experienced ColdFusion developer a clear idea of exactly what is involved.</span></span>
+<span data-ttu-id="15c85-105">In diesem Webcast wird das Erstellen einer ASP.NET-Anwendung beginnend mit einem leeren Formular, auf erfahrenen ColdFusion-Entwickler erhalten eine klare Vorstellung davon, was genau geht veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="15c85-105">This webcast shows how to build an ASP.NET application starting from a blank form, to give the experienced ColdFusion developer a clear idea of exactly what is involved.</span></span>
 
-[<span data-ttu-id="06018-106">&#9654;Sehen Sie sich Video (77 Minuten)</span><span class="sxs-lookup"><span data-stu-id="06018-106">&#9654; Watch video (77 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
+[<span data-ttu-id="15c85-106">&#9654;Sehen Sie sich Video (77 Minuten)</span><span class="sxs-lookup"><span data-stu-id="15c85-106">&#9654; Watch video (77 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="06018-107">[Zurück](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-> [Weiter](interop-between-php-and-the-windows-platform.md)</span><span class="sxs-lookup"><span data-stu-id="06018-107">[Previous](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+> <span data-ttu-id="15c85-107">[Zurück](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+> [Weiter](interop-between-php-and-the-windows-platform.md)</span><span class="sxs-lookup"><span data-stu-id="15c85-107">[Previous](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
 [Next](interop-between-php-and-the-windows-platform.md)</span></span>
