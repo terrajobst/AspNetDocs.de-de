@@ -12,13 +12,13 @@ ms.openlocfilehash: 0605c2e18af11414a0958859e0249c4b4246ea7c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410187"
 ---
-# <a name="page-layout"></a><span data-ttu-id="a5d9b-105">Seitenlayout</span><span class="sxs-lookup"><span data-stu-id="a5d9b-105">Page Layout</span></span>
+# <a name="page-layout"></a><span data-ttu-id="54a3e-105">Seitenlayout</span><span class="sxs-lookup"><span data-stu-id="54a3e-105">Page Layout</span></span>
 
-<span data-ttu-id="a5d9b-106">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="a5d9b-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="54a3e-106">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="54a3e-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="a5d9b-107">Tabellen oder StyleSheets?</span><span class="sxs-lookup"><span data-stu-id="a5d9b-107">Tables or StyleSheets?</span></span> <span data-ttu-id="a5d9b-108">Relative Positionierung, oder klicken Sie mit der absoluten?</span><span class="sxs-lookup"><span data-stu-id="a5d9b-108">Relative Positioning or Absolute?</span></span> <span data-ttu-id="a5d9b-109">In diesem Video zeige die Features von Visual Web Developer, die Unterstützung der Entwicklung mit der Seite Layout bevorzugen.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-109">This video will demonstrate the features of Visual Web developer that support the developing with your page layout preference.</span></span>
+<span data-ttu-id="54a3e-107">Tabellen oder StyleSheets?</span><span class="sxs-lookup"><span data-stu-id="54a3e-107">Tables or StyleSheets?</span></span> <span data-ttu-id="54a3e-108">Relative Positionierung, oder klicken Sie mit der absoluten?</span><span class="sxs-lookup"><span data-stu-id="54a3e-108">Relative Positioning or Absolute?</span></span> <span data-ttu-id="54a3e-109">In diesem Video zeige die Features von Visual Web Developer, die Unterstützung der Entwicklung mit der Seite Layout bevorzugen.</span><span class="sxs-lookup"><span data-stu-id="54a3e-109">This video will demonstrate the features of Visual Web developer that support the developing with your page layout preference.</span></span>
 
-[<span data-ttu-id="a5d9b-110">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="a5d9b-110">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-layout)
+[<span data-ttu-id="54a3e-110">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="54a3e-110">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-layout)

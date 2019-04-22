@@ -12,19 +12,19 @@ ms.openlocfilehash: cdd26f05aef75d1511482ae357f62258fbffce25
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422316"
 ---
-# <a name="aspnet-4---tailspin-spyworks"></a><span data-ttu-id="ba418-103">ASP.NET 4 – Tailspin Spyworks</span><span class="sxs-lookup"><span data-stu-id="ba418-103">ASP.NET 4 - Tailspin Spyworks</span></span>
+# <a name="aspnet-4---tailspin-spyworks"></a><span data-ttu-id="013e3-103">ASP.NET 4 – Tailspin Spyworks</span><span class="sxs-lookup"><span data-stu-id="013e3-103">ASP.NET 4 - Tailspin Spyworks</span></span>
 
-> <span data-ttu-id="ba418-104">Informationen zu neuen Features in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="ba418-104">How to use new features in ASP.NET 4 to build an online store, including shopping, checkout, and administration.</span></span>
+> <span data-ttu-id="013e3-104">Informationen zu neuen Features in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="013e3-104">How to use new features in ASP.NET 4 to build an online store, including shopping, checkout, and administration.</span></span>
 
 
-- [<span data-ttu-id="ba418-105">Teil 1: Datei > Neues Projekt</span><span class="sxs-lookup"><span data-stu-id="ba418-105">Part 1: File-> New Project</span></span>](tailspin-spyworks-part-1.md)
-- [<span data-ttu-id="ba418-106">Teil 2: Datenzugriffsebene</span><span class="sxs-lookup"><span data-stu-id="ba418-106">Part 2: Data Access Layer</span></span>](tailspin-spyworks-part-2.md)
-- [<span data-ttu-id="ba418-107">Teil 3: Layout- und Kategoriemenü</span><span class="sxs-lookup"><span data-stu-id="ba418-107">Part 3: Layout and Category Menu</span></span>](tailspin-spyworks-part-3.md)
-- [<span data-ttu-id="ba418-108">Teil 4: Auflisten von Produkten</span><span class="sxs-lookup"><span data-stu-id="ba418-108">Part 4: Listing Products</span></span>](tailspin-spyworks-part-4.md)
-- [<span data-ttu-id="ba418-109">Teil 5: Geschäftslogik</span><span class="sxs-lookup"><span data-stu-id="ba418-109">Part 5: Business Logic</span></span>](tailspin-spyworks-part-5.md)
-- [<span data-ttu-id="ba418-110">Teil 6: ASP.NET-Mitgliedschaft</span><span class="sxs-lookup"><span data-stu-id="ba418-110">Part 6: ASP.NET Membership</span></span>](tailspin-spyworks-part-6.md)
-- [<span data-ttu-id="ba418-111">Teil 7: Hinzufügen von Funktionen</span><span class="sxs-lookup"><span data-stu-id="ba418-111">Part 7: Adding Features</span></span>](tailspin-spyworks-part-7.md)
-- [<span data-ttu-id="ba418-112">Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ba418-112">Part 8: Final Pages, Exception Handling, and Conclusion</span></span>](tailspin-spyworks-part-8.md)
+- [<span data-ttu-id="013e3-105">Teil 1: Datei -> Neues Projekt</span><span class="sxs-lookup"><span data-stu-id="013e3-105">Part 1: File-> New Project</span></span>](tailspin-spyworks-part-1.md)
+- [<span data-ttu-id="013e3-106">Teil 2: Datenzugriffsebene</span><span class="sxs-lookup"><span data-stu-id="013e3-106">Part 2: Data Access Layer</span></span>](tailspin-spyworks-part-2.md)
+- [<span data-ttu-id="013e3-107">Teil 3: Layout- und Kategoriemenü</span><span class="sxs-lookup"><span data-stu-id="013e3-107">Part 3: Layout and Category Menu</span></span>](tailspin-spyworks-part-3.md)
+- [<span data-ttu-id="013e3-108">Teil 4: Auflistung von Produkten</span><span class="sxs-lookup"><span data-stu-id="013e3-108">Part 4: Listing Products</span></span>](tailspin-spyworks-part-4.md)
+- [<span data-ttu-id="013e3-109">Teil 5: Geschäftslogik</span><span class="sxs-lookup"><span data-stu-id="013e3-109">Part 5: Business Logic</span></span>](tailspin-spyworks-part-5.md)
+- [<span data-ttu-id="013e3-110">Teil 6: ASP.NET-Mitgliedschaft</span><span class="sxs-lookup"><span data-stu-id="013e3-110">Part 6: ASP.NET Membership</span></span>](tailspin-spyworks-part-6.md)
+- [<span data-ttu-id="013e3-111">Teil 7: Hinzufügen von Funktionen</span><span class="sxs-lookup"><span data-stu-id="013e3-111">Part 7: Adding Features</span></span>](tailspin-spyworks-part-7.md)
+- [<span data-ttu-id="013e3-112">Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="013e3-112">Part 8: Final Pages, Exception Handling, and Conclusion</span></span>](tailspin-spyworks-part-8.md)

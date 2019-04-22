@@ -12,18 +12,18 @@ ms.openlocfilehash: 007c20834aed2de1d7584fd593b9e4580e0bba78
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386202"
 ---
-# <a name="understanding-aspnet-memberships"></a><span data-ttu-id="44e8e-104">Grundlegendes zu ASP.NET-Mitgliedschaften</span><span class="sxs-lookup"><span data-stu-id="44e8e-104">Understanding ASP.NET Memberships</span></span>
+# <a name="understanding-aspnet-memberships"></a><span data-ttu-id="d0c89-104">Grundlegendes zu ASP.NET-Mitgliedschaften</span><span class="sxs-lookup"><span data-stu-id="d0c89-104">Understanding ASP.NET Memberships</span></span>
 
-<span data-ttu-id="44e8e-105">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="44e8e-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="d0c89-105">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="d0c89-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="44e8e-106">Joe Stagner untersucht, in diesem Video arbeiten mit den integrierten Anbietern, die ASP.NET-Entwicklern, für die Mitgliedschaft zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="44e8e-106">In this video Joe Stagner looks at working with the built-in providers, available to ASP.NET developers, for membership.</span></span> <span data-ttu-id="44e8e-107">Weitere Informationen über dieses Video finden Sie in der [Erstellen des Mitgliedschaftsschemas in SQL Server](../../overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md) Security Tutorial.</span><span class="sxs-lookup"><span data-stu-id="44e8e-107">For additional information about this video, read the [Creating the Membership Schema in SQL Server](../../overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md) security tutorial.</span></span>
+<span data-ttu-id="d0c89-106">Joe Stagner untersucht, in diesem Video arbeiten mit den integrierten Anbietern, die ASP.NET-Entwicklern, für die Mitgliedschaft zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="d0c89-106">In this video Joe Stagner looks at working with the built-in providers, available to ASP.NET developers, for membership.</span></span> <span data-ttu-id="d0c89-107">Weitere Informationen über dieses Video finden Sie in der [Erstellen des Mitgliedschaftsschemas in SQL Server](../../overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md) Security Tutorial.</span><span class="sxs-lookup"><span data-stu-id="d0c89-107">For additional information about this video, read the [Creating the Membership Schema in SQL Server](../../overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md) security tutorial.</span></span>
 
-[<span data-ttu-id="44e8e-108">&#9654;Sehen Sie sich Video (22 Minuten)</span><span class="sxs-lookup"><span data-stu-id="44e8e-108">&#9654; Watch video (22 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-aspnet-memberships)
+[<span data-ttu-id="d0c89-108">&#9654;Sehen Sie sich Video (22 Minuten)</span><span class="sxs-lookup"><span data-stu-id="d0c89-108">&#9654; Watch video (22 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-aspnet-memberships)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="44e8e-109">[Zurück](use-custom-principal-objects.md)
-> [Weiter](configuring-sql-to-work-with-membership-schemas.md)</span><span class="sxs-lookup"><span data-stu-id="44e8e-109">[Previous](use-custom-principal-objects.md)
+> <span data-ttu-id="d0c89-109">[Zurück](use-custom-principal-objects.md)
+> [Weiter](configuring-sql-to-work-with-membership-schemas.md)</span><span class="sxs-lookup"><span data-stu-id="d0c89-109">[Previous](use-custom-principal-objects.md)
 [Next](configuring-sql-to-work-with-membership-schemas.md)</span></span>

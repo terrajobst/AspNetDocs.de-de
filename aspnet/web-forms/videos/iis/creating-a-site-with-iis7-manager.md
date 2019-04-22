@@ -12,18 +12,18 @@ ms.openlocfilehash: cead55311660a630ca5fe906e1afe8767c75aa7f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394528"
 ---
-# <a name="creating-a-site-with-iis7-manager"></a><span data-ttu-id="dd072-103">Erstellen eine Website mit dem IIS7 Manager</span><span class="sxs-lookup"><span data-stu-id="dd072-103">Creating a Site with IIS7 Manager</span></span>
+# <a name="creating-a-site-with-iis7-manager"></a><span data-ttu-id="e4e3d-103">Erstellen eine Website mit dem IIS7 Manager</span><span class="sxs-lookup"><span data-stu-id="e4e3d-103">Creating a Site with IIS7 Manager</span></span>
 
-<span data-ttu-id="dd072-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="dd072-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="e4e3d-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e4e3d-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="dd072-105">Dieses Video zeigt den Bereitstellungsprozess für neue Websites mit IIS 7.</span><span class="sxs-lookup"><span data-stu-id="dd072-105">This video demonstrates the provisioning process for new web sites with IIS7.</span></span>
+<span data-ttu-id="e4e3d-105">Dieses Video zeigt den Bereitstellungsprozess für neue Websites mit IIS 7.</span><span class="sxs-lookup"><span data-stu-id="e4e3d-105">This video demonstrates the provisioning process for new web sites with IIS7.</span></span>
 
-[<span data-ttu-id="dd072-106">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="dd072-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-site-with-iis7-manager)
+[<span data-ttu-id="e4e3d-106">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="e4e3d-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-site-with-iis7-manager)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="dd072-107">[Zurück](troubleshooting-production-aspnet-apps.md)
-> [Weiter](installing-ftp7.md)</span><span class="sxs-lookup"><span data-stu-id="dd072-107">[Previous](troubleshooting-production-aspnet-apps.md)
+> <span data-ttu-id="e4e3d-107">[Zurück](troubleshooting-production-aspnet-apps.md)
+> [Weiter](installing-ftp7.md)</span><span class="sxs-lookup"><span data-stu-id="e4e3d-107">[Previous](troubleshooting-production-aspnet-apps.md)
 [Next](installing-ftp7.md)</span></span>

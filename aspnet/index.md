@@ -11,7 +11,7 @@ ms.openlocfilehash: c907f2ba66ba6ff197ced0c67243a963ffab17e3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384720"
 ---
 <!-- markdownlint-disable MD033 -->
@@ -148,7 +148,7 @@ ms.locfileid: "59384720"
                             <li class="fullSpan">
                                 <div class="container footer">
                                     <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Zu ASP.NET Core-Dokumentation und -Beispielen beitragen</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Suchen der Visual Studio 2015/project.json-Version der Dokumentation</a></p>
+                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Find Visual Studio 2015/project.json version of the documentation (Suchen der Visual Studio 2015/project.json-Version der Dokumentation)</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -280,7 +280,7 @@ ms.locfileid: "59384720"
                             <li class="fullSpan">
                                 <div class="container footer">
                                     <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Zu ASP.NET Core-Dokumentation und -Beispielen beitragen</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Suchen der Visual Studio 2015/project.json-Version der Dokumentation</a></p>
+                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Find Visual Studio 2015/project.json version of the documentation (Suchen der Visual Studio 2015/project.json-Version der Dokumentation)</a></p>
                                 </div>
                             </li>
                         </ul>

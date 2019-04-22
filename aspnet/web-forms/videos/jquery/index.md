@@ -12,12 +12,12 @@ ms.openlocfilehash: 575efe383deb8c75ba2714ff543fdcb13043fe66
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384824"
 ---
-# <a name="jquery"></a><span data-ttu-id="dce8f-103">jQuery</span><span class="sxs-lookup"><span data-stu-id="dce8f-103">jQuery</span></span>
+# <a name="jquery"></a><span data-ttu-id="53dbf-103">jQuery</span><span class="sxs-lookup"><span data-stu-id="53dbf-103">jQuery</span></span>
 
-> <span data-ttu-id="dce8f-104">So verwenden Sie jQuery-Funktionen in ASP.NET-Seiten.</span><span class="sxs-lookup"><span data-stu-id="dce8f-104">How to use jQuery features in ASP.NET pages.</span></span>
+> <span data-ttu-id="53dbf-104">So verwenden Sie jQuery-Funktionen in ASP.NET-Seiten.</span><span class="sxs-lookup"><span data-stu-id="53dbf-104">How to use jQuery features in ASP.NET pages.</span></span>
 
 
-- [<span data-ttu-id="dce8f-105">Erstellen von AJAX-Aufrufen mithilfe von jQuery</span><span class="sxs-lookup"><span data-stu-id="dce8f-105">Make Ajax Calls Using jQuery</span></span>](how-do-i-make-ajax-calls-using-jquery.md)
+- [<span data-ttu-id="53dbf-105">Erstellen von AJAX-Aufrufen mithilfe von jQuery</span><span class="sxs-lookup"><span data-stu-id="53dbf-105">Make Ajax Calls Using jQuery</span></span>](how-do-i-make-ajax-calls-using-jquery.md)

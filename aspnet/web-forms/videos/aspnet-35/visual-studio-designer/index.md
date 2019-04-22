@@ -12,12 +12,12 @@ ms.openlocfilehash: d1c99b0362d2ff8f00f28af20e4324698b66681c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381080"
 ---
-# <a name="visual-studio-designer"></a><span data-ttu-id="379bb-103">Visual Studio-Designer</span><span class="sxs-lookup"><span data-stu-id="379bb-103">Visual Studio Designer</span></span>
+# <a name="visual-studio-designer"></a><span data-ttu-id="3e929-103">Visual Studio-Designer</span><span class="sxs-lookup"><span data-stu-id="3e929-103">Visual Studio Designer</span></span>
 
-> <span data-ttu-id="379bb-104">Dieses Video veranschaulicht die verbesserten Features in Visual Studio 2008 für das Arbeiten mit Masterseiten.</span><span class="sxs-lookup"><span data-stu-id="379bb-104">This video illustrates enhanced features in Visual Studio 2008 for working with master pages.</span></span>
+> <span data-ttu-id="3e929-104">Dieses Video veranschaulicht die verbesserten Features in Visual Studio 2008 für das Arbeiten mit Masterseiten.</span><span class="sxs-lookup"><span data-stu-id="3e929-104">This video illustrates enhanced features in Visual Studio 2008 for working with master pages.</span></span>
 
 
-- [<span data-ttu-id="379bb-105">Visual Studio 2008 und geschachtelte Masterseiten</span><span class="sxs-lookup"><span data-stu-id="379bb-105">Visual Studio 2008 and Nested Masterpages</span></span>](visual-studio-2008-and-nested-masterpages.md)
+- [<span data-ttu-id="3e929-105">Visual Studio 2008 und geschachtelte Masterseiten</span><span class="sxs-lookup"><span data-stu-id="3e929-105">Visual Studio 2008 and Nested Masterpages</span></span>](visual-studio-2008-and-nested-masterpages.md)

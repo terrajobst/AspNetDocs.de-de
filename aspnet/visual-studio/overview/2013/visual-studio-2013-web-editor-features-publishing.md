@@ -12,13 +12,13 @@ ms.openlocfilehash: 4a7db29869ceb08faaaa132da7ff8eed1a1336f4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418858"
 ---
-# <a name="visual-studio-2013-web-editor-features---publishing"></a><span data-ttu-id="9a810-103">Visual Studio 2013-Web-Editor-Funktionen – Veröffentlichen</span><span class="sxs-lookup"><span data-stu-id="9a810-103">Visual Studio 2013 Web Editor Features - Publishing</span></span>
+# <a name="visual-studio-2013-web-editor-features---publishing"></a><span data-ttu-id="a3655-103">Visual Studio 2013-Web-Editor-Funktionen – Veröffentlichen</span><span class="sxs-lookup"><span data-stu-id="a3655-103">Visual Studio 2013 Web Editor Features - Publishing</span></span>
 
-<span data-ttu-id="9a810-104">durch [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="9a810-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="a3655-104">durch [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="a3655-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="9a810-105">Scott Hanselman Übersichten der Features zum Veröffentlichen von Web in Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="9a810-105">Scott Hanselman overviews the web publishing features in Visual Studio 2013.</span></span>
+<span data-ttu-id="a3655-105">Scott Hanselman Übersichten der Features zum Veröffentlichen von Web in Visual Studio 2013.</span><span class="sxs-lookup"><span data-stu-id="a3655-105">Scott Hanselman overviews the web publishing features in Visual Studio 2013.</span></span>
 
-[<span data-ttu-id="9a810-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="9a810-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2013-web-editor-features-publishing)
+[<span data-ttu-id="a3655-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="a3655-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2013-web-editor-features-publishing)

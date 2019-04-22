@@ -12,18 +12,18 @@ ms.openlocfilehash: 5deccb253b2e8e6b853f615413da3b9b161239b9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380519"
 ---
-# <a name="the-effects-of-caching"></a><span data-ttu-id="c7dbb-103">Die Auswirkungen der Zwischenspeicherung</span><span class="sxs-lookup"><span data-stu-id="c7dbb-103">The Effects of Caching</span></span>
+# <a name="the-effects-of-caching"></a><span data-ttu-id="583ae-103">Die Auswirkungen der Zwischenspeicherung</span><span class="sxs-lookup"><span data-stu-id="583ae-103">The Effects of Caching</span></span>
 
-<span data-ttu-id="c7dbb-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="c7dbb-104">by Eric Lee</span></span>
+<span data-ttu-id="583ae-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="583ae-104">by Eric Lee</span></span>
 
-<span data-ttu-id="c7dbb-105">Noch heute für fast jede Webanwendung, die auf Daten aus einer Datenbank zugreifen muss, aber diese allgemeine Vorgang haben einen tatsächlichen Auswirkungen auf die gesamtleistung der Anwendung.</span><span class="sxs-lookup"><span data-stu-id="c7dbb-105">Nearly every Web application today needs to access data from a database, but this common operation can have a real impact on the overall performance of the application.</span></span> <span data-ttu-id="c7dbb-106">In diesem Video wird veranschaulicht, wie mit Visual Studio Team System können Sie feststellen, ob Ihre Anwendung redundanter Aufrufe der Datenbank vornimmt, und anschließend wird veranschaulicht, wie Sie ASP.NET 2.0 DataSource Funktionalität zum Zwischenspeichern, die redundante Aufrufe zu beseitigen einsetzen können.</span><span class="sxs-lookup"><span data-stu-id="c7dbb-106">This video illustrates how Visual Studio Team System can help you identify whether your application is making redundant calls to the database, and then demonstrates how you can employ ASP.NET 2.0 DataSource caching functionality to eliminate the redundant calls.</span></span>
+<span data-ttu-id="583ae-105">Noch heute für fast jede Webanwendung, die auf Daten aus einer Datenbank zugreifen muss, aber diese allgemeine Vorgang haben einen tatsächlichen Auswirkungen auf die gesamtleistung der Anwendung.</span><span class="sxs-lookup"><span data-stu-id="583ae-105">Nearly every Web application today needs to access data from a database, but this common operation can have a real impact on the overall performance of the application.</span></span> <span data-ttu-id="583ae-106">In diesem Video wird veranschaulicht, wie mit Visual Studio Team System können Sie feststellen, ob Ihre Anwendung redundanter Aufrufe der Datenbank vornimmt, und anschließend wird veranschaulicht, wie Sie ASP.NET 2.0 DataSource Funktionalität zum Zwischenspeichern, die redundante Aufrufe zu beseitigen einsetzen können.</span><span class="sxs-lookup"><span data-stu-id="583ae-106">This video illustrates how Visual Studio Team System can help you identify whether your application is making redundant calls to the database, and then demonstrates how you can employ ASP.NET 2.0 DataSource caching functionality to eliminate the redundant calls.</span></span>
 
-[<span data-ttu-id="c7dbb-107">&#9654;Sehen Sie sich Video (15 Minuten)</span><span class="sxs-lookup"><span data-stu-id="c7dbb-107">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-effects-of-caching)
+[<span data-ttu-id="583ae-107">&#9654;Sehen Sie sich Video (15 Minuten)</span><span class="sxs-lookup"><span data-stu-id="583ae-107">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-effects-of-caching)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="c7dbb-108">[Zurück](custom-extraction-rules-and-coded-web-tests.md)
-> [Weiter](using-the-load-test-agent.md)</span><span class="sxs-lookup"><span data-stu-id="c7dbb-108">[Previous](custom-extraction-rules-and-coded-web-tests.md)
+> <span data-ttu-id="583ae-108">[Zurück](custom-extraction-rules-and-coded-web-tests.md)
+> [Weiter](using-the-load-test-agent.md)</span><span class="sxs-lookup"><span data-stu-id="583ae-108">[Previous](custom-extraction-rules-and-coded-web-tests.md)
 [Next](using-the-load-test-agent.md)</span></span>
