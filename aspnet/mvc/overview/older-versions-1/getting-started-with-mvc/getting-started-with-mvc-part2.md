@@ -12,7 +12,7 @@ ms.openlocfilehash: 84f9c822f041808184b2c586ce933ba3b24615dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419833"
 ---
 # <a name="adding-a-controller"></a>Hinzufügen eines Controllers
@@ -40,7 +40,7 @@ Erstellen wir einen neuen Domänencontroller, indem Sie mit der rechten Maustast
 
 Benennen Sie dem neuen Controller "HelloWorldController", und klicken Sie auf Hinzufügen.
 
-[![ADd Controller Dialogfeld](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
+[![Controller-Dialogfeld "hinzufügen"](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
 
 Beachten Sie, dass im Projektmappen-Explorer auf der rechten Seite, die eine neue Datei namens HelloWorldController.cs erstellt wurde und diese Datei ist jetzt geöffnet, der **IDE**.
 
@@ -58,13 +58,13 @@ ASP.NET MVC ruft Controllerklassen verschiedene (und darin enthaltene unterschie
 
 Der erste Teil der URL bestimmt die auszuführende Controllerklasse. Also wird die Klasse HelloWorldController /HelloWorld zugeordnet. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse ausgeführt. Daher würde /HelloWorld/Index der Index()-Methode der Klasse HelloWorldController ausgeführt. Beachten Sie, dass nur werden musste, besuchen die oben genannten /HelloWorld und die Methode, die Index impliziert wurde. Das liegt eine Methode namens "Index" die Standardmethode ist, die für einen Controller aufgerufen wird, wenn eine nicht explizit angegeben ist.
 
-[![TIEs ist meine Standardaktion](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
+[![Dies ist mein Standardaktion](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 
 Nun sehen wir uns `http://localhost:xx/HelloWorld/Welcome.` nun unsere Willkommen-Methode ausgeführt und die HTML-Zeichenfolge zurückgegeben wurde.
 
 In diesem Fall / [Controller] / [ActionName] / [Parameter], damit der Controller "HelloWorld", und Willkommen bei der in diesem Fall ist die Methode. Wir dies nicht getan haben Parameter noch nicht fertig.
 
-[![TIEs ist der Welcome Action-Methode](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
+[![Dies ist die Welcome Action-Methode](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
 
 Wir unser Beispiel etwas so ändern, dass einige Informationen in von der URL zum Controller, z. B. wie folgt übergeben werden können: / HelloWorld/Welcome? Name = Scott&amp;Numtimes = 4. Ändern Sie die Willkommensseite enthält zwei Parameter und aktualisieren sie wie unten. Beachten Sie, dass wir die C#-optionalen Parameter-Funktion verwendet haben, um anzugeben, dass der Parameter NumTimes auf 1 standardmäßig sollte, wenn sie nicht übergeben wird.
 

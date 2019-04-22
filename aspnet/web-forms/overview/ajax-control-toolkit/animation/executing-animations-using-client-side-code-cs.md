@@ -12,7 +12,7 @@ ms.openlocfilehash: 45a3d42d9e58469c789acfdc8cdaaf88b7920892
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387090"
 ---
 # <a name="executing-animations-using-client-side-code-c"></a>Ausführen von Animationen mit clientseitigem Code (C#)
@@ -63,7 +63,7 @@ Hier ist der vollständige clientseitige JavaScript-Code, der dem Klicken auf de
 [!code-html[Main](executing-animations-using-client-side-code-cs/samples/sample8.html)]
 
 
-[![TIE-Animation sofort ausgeführt, ohne ein Mausklick](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
+[![Die Animation wird sofort ohne ein Mausklick ausgeführt.](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
 
 Die Animation wird sofort ausgeführt, ohne ein Mausklick ([klicken Sie, um das Bild in voller Größe anzeigen](executing-animations-using-client-side-code-cs/_static/image3.png))
 

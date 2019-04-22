@@ -12,7 +12,7 @@ ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387450"
 ---
 # <a name="whats-new-in-the-entity-framework-40"></a>Neue Funktionen in Entity Framework 4.0
@@ -37,7 +37,7 @@ Um das Lernprogramm zu starten, starten Sie Visual Studio, und öffnen Sie die C
 
 Entity Framework, Version 3.5 enthalten Navigationseigenschaften, aber es nicht Fremdschlüssel-Eigenschaften im Datenmodell enthalten. Z. B. die `CourseID` und `StudentID` Spalten der `StudentGrade` Tabelle würde weggelassen werden die `StudentGrade` Entität.
 
-[![Image01](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
+[![Image01 abgerufen wird](what-s-new-in-the-entity-framework-4/_static/image2.png)](what-s-new-in-the-entity-framework-4/_static/image1.png)
 
 Der Grund für diesen Ansatz war, dass, genau genommen Fremdschlüssel einer physischen Implementierungsdetail und nicht in einem konzeptionellen Datenmodell gehören. Ein praktischer Tipp ist es jedoch oft einfacher, mit Entitäten im Code zu arbeiten, wenn Sie über direkten Zugriff auf die Fremdschlüssel verfügen.
 
@@ -210,4 +210,4 @@ Dadurch wird die Übersicht, was neu im Entity Framework und dieser Vorgang wird
 - [Ankündigung der Version von Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) des Entwicklungsteams Entity Framework-Blogbeitrag zu neuen Funktionen in Version 4.
 
 > [!div class="step-by-step"]
-> [Vorheriges](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [Vorherige](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

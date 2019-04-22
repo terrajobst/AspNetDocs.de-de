@@ -12,7 +12,7 @@ ms.openlocfilehash: 0bbb6dd95196e46b00c35b269eacfc1b53e75c86
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379650"
 ---
 # <a name="customizing-the-datalists-editing-interface-c"></a>Anpassen der Oberfläche für die Bearbeitung von DataList (C#)
@@ -37,7 +37,7 @@ Die `EditItemTemplate` Weiter um Websteuerelemente als das Textfeld ein, z. B. D
 In diesem Tutorial erstellen wir eine umfangreichere Benutzeroberfläche für die Bearbeitung für DataList-Steuerelement, eine, die DropDownList-Steuerelementen und ein Kontrollkästchen enthält. Wir erstellen vor allem einem DataList-Steuerelement, die Produktinformationen enthält, und ermöglicht die s Produktname, Lieferanten, Kategorie, und nicht mehr unterstützte Status aktualisiert werden (siehe Abbildung 1).
 
 
-[![Ter Editing-Schnittstelle enthält ein Textfeld, zwei DropDownList-Steuerelementen und ein Kontrollkästchen](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
+[![Die Bearbeitungsschnittstelle enthält ein Textfeld, zwei DropDownList-Steuerelementen und ein Kontrollkästchen](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
 
 **Abbildung 1**: Die bearbeiten-Schnittstelle enthält ein Textfeld, zwei DropDownList-Steuerelementen und ein Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image3.png))
 
@@ -47,7 +47,7 @@ In diesem Tutorial erstellen wir eine umfangreichere Benutzeroberfläche für di
 Bevor wir den bearbeitbaren DataList-s-Schnittstelle erstellen können, müssen wir zuerst die schreibgeschützte Schnittstelle zu erstellen. Öffnen Sie zunächst die `CustomizedUI.aspx` Seite die `EditDeleteDataList` Ordner und Designer fügen Sie einem DataList-Steuerelement auf der Seite festlegen seiner `ID` Eigenschaft `Products`. Erstellen Sie über DataList s Smarttags eine neue "ObjectDataSource". Nennen Sie diese neue "ObjectDataSource" `ProductsDataSource` und konfigurieren Sie ihn zum Abrufen von Daten aus der `ProductsBLL` Klasse s `GetProducts` Methode. Als mit den vorherigen bearbeitbaren DataList-Tutorials aktualisieren die bearbeitete s Produktinformationen wir dazu direkt auf der Geschäftslogikebene. Entsprechend, legen Sie die Dropdownlisten in der Update-, INSERT-, ein, und löschen Sie die Registerkarten (keine).
 
 
-[![Set der Update-, INSERT- und DELETE-Registerkarten Dropdownlisten auf ("None")](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
+[![Legen Sie die Update-, INSERT- und DELETE-Registerkarten Dropdownlisten auf (keine)](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
 
 **Abbildung 2**: Update-, INSERT- und DELETE Registerkarten Dropdownlisten auf (keine) festgelegt ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image6.png))
 
@@ -60,7 +60,7 @@ Nach der Konfiguration dem ObjectDataSource-Steuerelement, erstellt Visual Studi
 Das obenstehende Markup zeigt die Produkt-Informationen mithilfe einer &lt;h4&gt; Überschrift für den Namen des Produkts s und eine vierspaltige `<table>` für die verbleibenden Felder. Die `ProductPropertyLabel` und `ProductPropertyValue` CSS-Klassen, die in definierten `Styles.css`, wurde in vorherigen Tutorials erläutert wurde. Abbildung 3 zeigt unseren Fortschritt, wenn Sie über einen Browser angezeigt.
 
 
-[![Ter Namen, Lieferanten, Kategorie, Status nicht mehr unterstützt und Preis jedes Produkt angezeigt](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
+[![Der Name, Lieferanten, Kategorie, Status nicht mehr unterstützt und Preis jedes Produkt wird angezeigt.](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
 
 **Abbildung 3**: Der Name, Lieferanten, Kategorie, Status nicht mehr unterstützt und Preis jedes Produkt angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image9.png))
 
@@ -72,7 +72,7 @@ Der erste Schritt bei der Erstellung von benutzerdefinierten DataList-Steuerelem
 Wenn die Bearbeitungsschnittstelle anpassen möchten, klicken Sie auf den Link "Vorlagen bearbeiten" aus dem DataList-s-Smarttag, und wählen Sie die `EditItemTemplate` Option in der Dropdown-Liste. Fügen Sie einem DropDownList-Steuerelement, das `EditItemTemplate` und legen Sie seine `ID` zu `Categories`.
 
 
-[![ADd einer DropDownList für die Kategorien](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
+[![Fügen Sie einer DropDownList für die Kategorien hinzu.](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
 
 **Abbildung 4**: Hinzufügen eine DropDownList für die Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image12.png))
 
@@ -80,12 +80,12 @@ Wenn die Bearbeitungsschnittstelle anpassen möchten, klicken Sie auf den Link "
 Als nächstes wählen Sie aus DropDownList s Smarttags, die Option für die Datenquelle auswählen und erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `CategoriesDataSource`. Konfigurieren Sie diese "ObjectDataSource" Verwenden der `CategoriesBLL` Klasse s `GetCategories()` Methode (siehe Abbildung 5). Im nächsten Schritt die DropDownList-s für die Datenfelder für jeden Assistenten zur Datenquellenkonfiguration fordert `ListItem` s `Text` und `Value` Eigenschaften. Haben Sie die DropDownList-Anzeige der `CategoryName` Feld "Daten" und die Verwendung der `CategoryID` als der Wert, wie in Abbildung 6 dargestellt.
 
 
-[![CErstellen eine neue "ObjectDataSource" mit dem Namen CategoriesDataSource](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
+[![Erstellen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
 
 **Abbildung 5**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image15.png))
 
 
-[![CKonfigurieren der DropDownList-s-Anzeige und Wertfelder](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
+[![Konfigurieren der DropDownList-s-Anzeige und der Wert der Felder](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
 
 **Abbildung 6**: Konfigurieren Sie die DropDownList s anzeigen und den Feldern ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image18.png))
 
@@ -102,7 +102,7 @@ Können Sie die Bearbeitungsschnittstelle Layout beliebig. Ich haben sich entsch
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample2.aspx)]
 
 
-[![Ter Editing-Schnittstelle ist das Layout, z. B. die Read-Only-Benutzeroberfläche](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
+[![Die bearbeiten-Schnittstelle ist, das Layout, wie die Read-Only-Schnittstelle](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
 
 **Abbildung 7**: Die bearbeiten-Schnittstelle ist, das Layout, wie die Read-Only-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image21.png))
 
@@ -119,7 +119,7 @@ Erstellen Sie diese zwei Ereignishandler, und Sie den folgenden Code verwenden:
 Mit diesen zwei Ereignishandler vorhanden, die Sie auf die Schaltfläche "Bearbeiten" die Benutzeroberfläche der Bearbeitung angezeigt werden, und klicken auf die Schaltfläche "Abbrechen", die nur-Lese Modus gibt das bearbeitete Element zurück. Abbildung 8 zeigt DataList-Steuerelement aus, nachdem auf die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix geklickt wurde. Seit wir Ve noch hinzuzufügende jede Databinding-Syntax die bearbeiten-Schnittstelle, die `ProductName` Textfeld leer ist, ist der `Discontinued` deaktiviert und die ersten Elemente ausgewählt werden, aus der `Categories` und `Suppliers` DropDownList-Steuerelementen.
 
 
-[![Clicking zeigt die Bearbeiten-Schaltfläche der Schnittstelle bearbeiten](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
+[![Klicken Sie auf das Bearbeiten-Schaltfläche zeigt die Bearbeitungsschnittstelle](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
 
 **Abbildung 8**: Klicken Sie auf die Schaltfläche "Bearbeiten" zeigt die bearbeiten-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image24.png))
 
@@ -131,7 +131,7 @@ Um die Bearbeitungsschnittstelle Anzeigen der aktuellen Produkt-s-Werte zu erhal
 Zuweisen der `ProductName` Datenfeld Wert, der die `ProductName` Textfeld s `Text` -Eigenschaft, die `CategoryID` und `SupplierID` -Datenfeldwerte, um die `Categories` und `Suppliers` DropDownList-Steuerelementen `SelectedValue` Eigenschaften, und die `Discontinued` Datenfeld Wert, der die `Discontinued` Kontrollkästchen s `Checked` Eigenschaft. Nach dem vornehmen dieser Änderungen werden entweder mithilfe des Designers oder direkt über die deklaratives Markup, die Seite über einen Browser, und klicken Sie auf die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo kombinieren. Wie in Abbildung 9 gezeigt, wurde die Datenbindungssyntax die aktuellen Werte in das Textfeld, DropDownList-Steuerelementen, und das Kontrollkästchen hinzugefügt.
 
 
-[![Clicking zeigt die Bearbeiten-Schaltfläche der Schnittstelle bearbeiten](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
+[![Klicken Sie auf das Bearbeiten-Schaltfläche zeigt die Bearbeitungsschnittstelle](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
 
 **Abbildung 9**: Klicken Sie auf die Schaltfläche "Bearbeiten" zeigt die bearbeiten-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image27.png))
 
@@ -167,7 +167,7 @@ Nach diesen Änderungen, die DropDownList-Steuerelementen Markup im DataList-Ste
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzeigen. Wenn Sie ein Produkt bearbeiten zu können, beachten Sie, dass die `Categories` und `Suppliers` DropDownList-Steuerelementen beide haben einen (keine) Option am Anfang der DropDownList.
 
 
-[![TIE-Kategorien und Lieferanten DropDownList-Steuerelementen sind eine (None) Option](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
+[![Die Kategorien und Lieferanten DropDownList-Steuerelementen sind eine (None) Option](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
 
 **Abbildung 10**: Die `Categories` und `Suppliers` DropDownList-Steuerelementen sind eine (None) Option ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-datalist-s-editing-interface-cs/_static/image30.png))
 

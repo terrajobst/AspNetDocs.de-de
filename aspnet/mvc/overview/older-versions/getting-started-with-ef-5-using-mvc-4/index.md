@@ -12,7 +12,7 @@ ms.openlocfilehash: fcab9f2ff0be9c43d2aae1825ef2666ad011c9e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399462"
 ---
 # <a name="getting-started-with-ef-5-using-mvc-4"></a>Erste Schritte mit EF 5 anhand von MVC 4
@@ -26,7 +26,7 @@ ms.locfileid: "59399462"
 - [Erstellen eines komplexeren Datenmodells](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
 - [Lesen von relevanten Daten](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Aktualisieren von relevanten Daten](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-- [Behandeln von Parallelität](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+- [Verarbeiten von Parallelitätsfehlern](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Implementieren von Vererbung](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Implementieren der Muster „Repository“ und „Arbeitseinheit“](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
 - [Erweiterte Entity Framework-Szenarien](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

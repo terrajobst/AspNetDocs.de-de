@@ -12,7 +12,7 @@ ms.openlocfilehash: 9c5ac1aeff427c78030f789fcb67736020ce3367
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391798"
 ---
 # <a name="caching-data-in-the-architecture-vb"></a>Zwischenspeichern von Daten in der Architektur (VB)
@@ -159,7 +159,7 @@ Dank dieser Änderung auf `AddCacheItem(key, value)`, invaliding der Cache ist s
 Die Caching-Schicht-s-Klassen und Methoden können verwendet werden, mit Daten arbeiten mit den Verfahren wir in diesen Tutorials untersucht haben. Um die Arbeit mit zwischengespeicherten Daten zu veranschaulichen, speichern Sie die Änderungen an der `ProductsCL` Klasse, und öffnen Sie dann die `FromTheArchitecture.aspx` auf der Seite die `Caching` Ordner und Hinzufügen einer GridView-Ansicht. Erstellen Sie von GridView s Smarttags eine neue "ObjectDataSource". Im ersten Schritt Assistenten s sollte die `ProductsCL` Klasse als eine der Optionen aus der Dropdown-Liste.
 
 
-[![Ter ProductsCL-Klasse befindet sich in der Dropdown-Liste Business](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
+[![Die ProductsCL-Klasse ist in der Dropdown-Liste Business enthalten.](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
 
 **Abbildung 4**: Die `ProductsCL` Klasse befindet sich in der Dropdown-Liste Business ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-vb/_static/image6.png))
 
@@ -167,7 +167,7 @@ Die Caching-Schicht-s-Klassen und Methoden können verwendet werden, mit Daten a
 Nach der Auswahl `ProductsCL`, klicken Sie auf Weiter. Die Dropdown-Liste in der Registerkarte "SELECT" verfügt über zwei Elemente - `GetProducts()` und `GetProductsByCategoryID(categoryID)` und die Registerkarte "Updates" ist der einzige `UpdateProduct` überladen. Wählen Sie die `GetProducts()` Methode aus der Registerkarte "SELECT" und die `UpdateProducts` Methode aus der Registerkarte "Updates" und klicken Sie auf Fertig stellen.
 
 
-[![Ter aufgelistet ProductsCL Klassenmethoden s in den Dropdownlisten](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)
+[![Die s-Klasse für die ProductsCL-Methoden sind in den Dropdownlisten aufgelistet.](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)
 
 **Abbildung 5**: Die `ProductsCL` s-Klassenmethoden finden Sie in den Dropdownlisten ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-vb/_static/image9.png))
 

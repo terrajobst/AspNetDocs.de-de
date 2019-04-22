@@ -12,7 +12,7 @@ ms.openlocfilehash: 8f3eced3c482291203383c53aa97b97101839cce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392819"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 3
@@ -42,7 +42,7 @@ Im vorherigen Tutorial verwendet Sie die `EntityDataSource` -Steuerelement zum A
 
 Wechseln Sie zur **Entwurf** anzeigen und Auswählen der `EntityDataSource` Steuerelement. Legen Sie im Fenster **Eigenschaften** die Eigenschaft `Where` auf `it.EnrollmentDate is not null`fest.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
 
 Die Syntax, in der `Where` Eigenschaft der `EntityDataSource` Steuerelement ist Entity SQL. Entity SQL ist Transact-SQL ähnelt, aber er ist für die Verwendung mit Entitäten anstelle von Datenbankobjekten angepasst. Im Ausdruck `it.EnrollmentDate is not null`, das Wort `it` stellt einen Verweis auf die von der Abfrage zurückgegebenen Entität dar. Aus diesem Grund `it.EnrollmentDate` bezieht sich auf die `EnrollmentDate` Eigenschaft der `Person` Entität, die die `EntityDataSource` gibt steuern.
 

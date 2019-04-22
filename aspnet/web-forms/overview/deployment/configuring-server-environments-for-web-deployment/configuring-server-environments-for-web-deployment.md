@@ -12,7 +12,7 @@ ms.openlocfilehash: 86ea4a2e17ec44a3716e1570e51a224144f1369c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386969"
 ---
 # <a name="configuring-server-environments-for-web-deployment"></a>Konfigurieren von Serverumgebungen für die Webbereitstellung
@@ -66,4 +66,4 @@ Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webber
 - [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
 
 > [!div class="step-by-step"]
-> [Weiter](choosing-the-right-approach-to-web-deployment.md)
+> [Nächste](choosing-the-right-approach-to-web-deployment.md)

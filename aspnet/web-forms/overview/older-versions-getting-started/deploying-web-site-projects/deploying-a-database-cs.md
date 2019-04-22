@@ -12,7 +12,7 @@ ms.openlocfilehash: da63b39fcad58580dd1f9c86b811b1a2dcc1cf7e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416648"
 ---
 # <a name="deploying-a-database-c"></a>Bereitstellen einer Datenbank (C#)
@@ -47,7 +47,7 @@ Die `Reviews.mdf` Datenbank enthält vier Tabellen:
 Abbildung 1 zeigt ein ER-Diagramm dieser vier Tabellen.
 
 
-[![Ter Book Reviews-Webanwendung-s-Datenbank ist eine von vier Tabellen umfassen](deploying-a-database-cs/_static/image2.jpg)](deploying-a-database-cs/_static/image1.jpg) 
+[![Die Book Reviews-Webanwendung-s-Datenbank ist, besteht aus den vier Tabellen](deploying-a-database-cs/_static/image2.jpg)](deploying-a-database-cs/_static/image1.jpg) 
 
 **Abbildung 1**: Die Book Reviews-Webanwendung-s-Datenbank ist, besteht aus den vier Tabellen ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image3.jpg))
 
@@ -57,12 +57,12 @@ Die vorherige Version der Website Book Reviews hatte eine separate ASP.NET-Seite
 Abbildung 2 und 3 zeigt die `Genre.aspx` und `Review.aspx` Seiten in Aktion. Beachten Sie die URL in der Adressleiste für jede Seite. In Abbildung 2 It s Genre.aspx? ID = C 47-82a0-c8ec75de7e0e der 85d164ba-1123-4. Da 85d164ba-1123-4c47-82a0-c8ec75de7e0e ist die `GenreId` Wert für "Genre" der Technologie, die Seite "s" Überschrift-Lesevorgänge "Überprüft die Technologie" und der Aufzählung listet diese Bewertungen auf der Website, die unter diesem "Genre" fallen.
 
 
-[![Ter "Genre" Technologieseite](deploying-a-database-cs/_static/image5.jpg)](deploying-a-database-cs/_static/image4.jpg) 
+[![Das Genre-Technologieseite](deploying-a-database-cs/_static/image5.jpg)](deploying-a-database-cs/_static/image4.jpg) 
 
 **Abbildung 2**: Die Technologie "Genre"-Seite ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image6.jpg))
 
 
-[![Ter überprüfen für bringen Sie sich ASP.NET 3.5 in 24 Stunden](deploying-a-database-cs/_static/image8.jpg)](deploying-a-database-cs/_static/image7.jpg) 
+[![Die Überprüfung für bringen Sie sich selbst ASP.NET 3.5 in 24 Stunden](deploying-a-database-cs/_static/image8.jpg)](deploying-a-database-cs/_static/image7.jpg) 
 
 **Abbildung 3**: Die Überprüfung für *bringen Sie sich ASP.NET 3.5 in 24 Stunden* ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image9.jpg))
 
@@ -96,7 +96,7 @@ Lassen Sie s, die durch die Verwendung der Datenbankveröffentlichungs-Assistent
 Öffnen Sie Visual Studio, und navigieren Sie zu der `Reviews.mdf` Datenbank. Wenn Sie Visual Web Developer verwenden, wechseln Sie zum Datenbank-Explorer; Wenn Sie Visual Studio verwenden, verwenden Sie den Server-Explorer. Abbildung 4 zeigt die `Reviews.mdf` Datenbank in der Datenbank-Explorer in Visual Web Developer. Wie in Abbildung 4 gezeigt, die `Reviews.mdf` Datenbank besteht aus vier Tabellen, drei gespeicherten Prozeduren und eine benutzerdefinierte Funktion.
 
 
-[![LSuchen der Datenbank in der Datenbank-Explorer oder Server-Explorer](deploying-a-database-cs/_static/image11.jpg)](deploying-a-database-cs/_static/image10.jpg) 
+[![Suchen Sie die Datenbank in der Datenbank-Explorer oder Server-Explorer](deploying-a-database-cs/_static/image11.jpg)](deploying-a-database-cs/_static/image10.jpg) 
 
 **Abbildung 4**: Suchen Sie die Datenbank in der Datenbank-Explorer oder Server-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image12.jpg))
 
@@ -104,7 +104,7 @@ Lassen Sie s, die durch die Verwendung der Datenbankveröffentlichungs-Assistent
 Mit der rechten Maustaste auf den Datenbanknamen aus, und wählen Sie im Kontextmenü die Option "Für Anbieter veröffentlichen". Dadurch wird der Datenbankveröffentlichungs-Assistent gestartet (siehe Abbildung 5). Klicken Sie auf Weiter, um nach dem Begrüßungsbildschirm angezeigt.
 
 
-[![Ter Publishing-Assistent-Splash-Bildschirm-Datenbank](deploying-a-database-cs/_static/image14.jpg)](deploying-a-database-cs/_static/image13.jpg) 
+[![Der Datenbankveröffentlichungs-Assistenten-Begrüßungsbildschirm](deploying-a-database-cs/_static/image14.jpg)](deploying-a-database-cs/_static/image13.jpg) 
 
 **Abbildung 5**: Der Begrüßungsbildschirm der Datenbank veröffentlichen-Assistent ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image15.jpg))
 
@@ -115,7 +115,7 @@ Der zweite Bildschirm des Assistenten führt die Datenbanken, die für den Daten
 > Wenn Sie die Fehlermeldung "in der Datenbank keine Objekte vorhanden sind *DatabaseName* der Typen, die von diesem Assistenten skriptfähige" Wenn weiter auf dem Bildschirm in Abbildung 6 dargestellten klicken, stellen Sie sicher, dass der Pfad zu Ihrer Datenbankdatei nicht übermäßig lang ist. Es wurde festgestellt, dass dieser Fehler auftreten kann, wenn der Pfad zur Datenbankdatei zu lang ist.
 
 
-[![Ter Publishing-Assistent-Splash-Bildschirm-Datenbank](deploying-a-database-cs/_static/image17.jpg)](deploying-a-database-cs/_static/image16.jpg) 
+[![Der Datenbankveröffentlichungs-Assistenten-Begrüßungsbildschirm](deploying-a-database-cs/_static/image17.jpg)](deploying-a-database-cs/_static/image16.jpg) 
 
 **Abbildung 6**: Der Begrüßungsbildschirm der Datenbank veröffentlichen-Assistent ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image18.jpg))
 
@@ -123,7 +123,7 @@ Der zweite Bildschirm des Assistenten führt die Datenbanken, die für den Daten
 Auf dem nächsten Bildschirm können Skriptdatei generieren oder, wenn Ihre Web-Host dies unterstützt, veröffentlichen die Datenbank direkt in Ihrem Web-Host-Anbieter-s-Datenbank-Server. Wie in Abbildung 7 dargestellt, habe ich das Skript in die Datei geschrieben `C:\REVIEWS.MDF.sql`.
 
 
-[![SSkrip der Datenbank in eine Datei oder direkt in Ihre Webhostinganbieter veröffentlichen](deploying-a-database-cs/_static/image20.jpg)](deploying-a-database-cs/_static/image19.jpg) 
+[![Skripterstellung für die Datenbank in eine Datei oder direkt in Ihre Webhostinganbieter veröffentlichen](deploying-a-database-cs/_static/image20.jpg)](deploying-a-database-cs/_static/image19.jpg) 
 
 **Abbildung 7**: Skripterstellung für die Datenbank in eine Datei oder direkt in Ihre Webhostinganbieter veröffentlichen ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image21.jpg))
 
@@ -133,7 +133,7 @@ Im folgenden Bildschirm aufgefordert, für eine Vielzahl von Skriptoptionen. Sie
 Wie in Abbildung 8 dargestellt, ich gibt es den Assistenten so konfiguriert, dass das Löschen vorhandener Datenbankobjekte, die zum Skript für eine SQL Server 2008-Datenbank zu generieren und veröffentlichen sowohl das Schema und Daten.
 
 
-[![SAngeben von Optionen für die Veröffentlichung](deploying-a-database-cs/_static/image23.jpg)](deploying-a-database-cs/_static/image22.jpg) 
+[![Geben Sie die Veröffentlichung Optionen](deploying-a-database-cs/_static/image23.jpg)](deploying-a-database-cs/_static/image22.jpg) 
 
 **Abbildung 8**: Geben Sie Optionen für die Veröffentlichung ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image24.jpg))
 
@@ -149,7 +149,7 @@ Ein besserer Ansatz ist zur direkten Verbindung mit der Produktions-Datenbankser
 Starten Sie SSMS, und Verbinden mit Ihrer Web-Host s-Datenbankserver mithilfe der Informationen von Ihrem Web-Host-Anbieter.
 
 
-[![CVerbinden Ihrer Webhostinganbieter-s-Datenbank-Server](deploying-a-database-cs/_static/image26.jpg)](deploying-a-database-cs/_static/image25.jpg) 
+[![Verbinden Sie mit Ihrem Web-Host-Anbieter-s-Datenbank-Server](deploying-a-database-cs/_static/image26.jpg)](deploying-a-database-cs/_static/image25.jpg) 
 
 **Abbildung 9**: Eine Verbindung mit Ihrer Webhostinganbieter-s-Datenbank-Server herstellen ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image27.jpg))
 
@@ -157,7 +157,7 @@ Starten Sie SSMS, und Verbinden mit Ihrer Web-Host s-Datenbankserver mithilfe de
 Erweitern Sie die Registerkarte "Datenbanken" aus, und suchen Sie Ihre Datenbank. Klicken Sie auf die Schaltfläche "neue Abfrage" in der oberen linken Ecke der Symbolleiste, fügen Sie in der SQL-Befehle aus der Skriptdatei, die von der Datenbankveröffentlichungs-Assistent erstellt, und klicken Sie auf die Schaltfläche "ausführen", um diese Befehle auf dem Produktionsserver für die Datenbank auszuführen. Wenn Ihre Skriptdatei besonders groß ist, dauert es einige Minuten, um die Befehle auszuführen.
 
 
-[![CVerbinden Ihrer Webhostinganbieter-s-Datenbank-Server](deploying-a-database-cs/_static/image29.jpg)](deploying-a-database-cs/_static/image28.jpg) 
+[![Verbinden Sie mit Ihrem Web-Host-Anbieter-s-Datenbank-Server](deploying-a-database-cs/_static/image29.jpg)](deploying-a-database-cs/_static/image28.jpg) 
 
 **Abbildung 10**: Eine Verbindung mit Ihrer Webhostinganbieter-s-Datenbank-Server herstellen ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image30.jpg))
 
@@ -165,12 +165,12 @@ Erweitern Sie die Registerkarte "Datenbanken" aus, und suchen Sie Ihre Datenbank
 Alles, was, s wird es! An diesem Punkt wurde in der Produktion die Entwicklungsdatenbank dupliziert. Wenn Sie die Datenbank in SSMS aktualisieren sollte die neue Datenbankobjekte angezeigt werden. Abbildung 11 zeigt die Produktionstabellen-s-Datenbank gespeicherten Prozeduren und benutzerdefinierte Funktionen, die auf der Entwicklungsdatenbank spiegeln. Und da wir den Datenbankveröffentlichungs-Assistent zum Veröffentlichen der das angewiesen, s die Produktionstabellen-Datenbank die gleichen Daten wie die Entwicklung-s-Datenbanktabellen zu dem Zeitpunkt, die der Assistent ausgeführt wurde. Abbildung 12 zeigt die Daten in die `Books` Tabelle auf die Produktionsdatenbank.
 
 
-[![Ter Datenbank Objekte haben dupliziert wurde für die Produktion-Datenbank](deploying-a-database-cs/_static/image32.jpg)](deploying-a-database-cs/_static/image31.jpg) 
+[![Die Datenbankobjekte haben in der Produktionsdatenbank dupliziert](deploying-a-database-cs/_static/image32.jpg)](deploying-a-database-cs/_static/image31.jpg) 
 
 **Abbildung 11**: Die Datenbank Objekte haben dupliziert wurde in der Produktionsdatenbank ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image33.jpg))
 
 
-[![Ter Produktionsdatenbank enthält die gleichen Daten wie in der Entwicklungsdatenbank](deploying-a-database-cs/_static/image35.jpg)](deploying-a-database-cs/_static/image34.jpg) 
+[![Die Produktionsdatenbank enthält die gleichen Daten wie in der Entwicklungsdatenbank](deploying-a-database-cs/_static/image35.jpg)](deploying-a-database-cs/_static/image34.jpg) 
 
 **Abbildung 12**: Die Produktionsdatenbank enthält die gleichen Daten wie in der Entwicklungsdatenbank ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-a-database-cs/_static/image36.jpg))
 

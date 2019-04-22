@@ -12,7 +12,7 @@ ms.openlocfilehash: fa0573738fee8f1decc13c9797f644002931e09d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381496"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eine OData v3-Endpunkts mit Web-API 2
@@ -28,7 +28,7 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web-API 2
 > - OData v3
 > - Entity Framework 6

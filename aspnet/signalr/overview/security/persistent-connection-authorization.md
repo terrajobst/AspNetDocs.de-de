@@ -12,7 +12,7 @@ ms.openlocfilehash: 9399addc76b7ba0844efe5b935d16edfdd9ec9f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384981"
 ---
 # <a name="authentication-and-authorization-for-signalr-persistent-connections"></a>Authentifizierung und Autorisierung für permanente SignalR-Verbindungen
@@ -26,7 +26,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https:/
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >

@@ -12,7 +12,7 @@ ms.openlocfilehash: fc9ce539005bce1790c726dfb859305f4ff78a6b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422563"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Verarbeiten von Parallelität bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
@@ -26,7 +26,7 @@ Im vorherigen Tutorial haben Sie gelernt, wie Sortieren und Filtern Daten mit de
 
 [![Image06](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-[![Image01](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
+[![Image01 abgerufen wird](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
 ## <a name="concurrency-conflicts"></a>Parallelitätskonflikte
 

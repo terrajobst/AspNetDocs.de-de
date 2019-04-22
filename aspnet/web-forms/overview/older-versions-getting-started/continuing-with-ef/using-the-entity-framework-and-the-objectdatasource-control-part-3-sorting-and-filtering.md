@@ -12,7 +12,7 @@ ms.openlocfilehash: 19726a728fc6d94552c315b38315a29c269d97db
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380417"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern
@@ -28,7 +28,7 @@ Im vorherigen Tutorial, die Sie implementiert des Repository-Musters in einer n-
 - Eine Liste der Kurse jeder Abteilung, die im Raster angezeigt wird.
 - Die Fähigkeit, indem Sie auf Spaltenüberschriften sortieren.
 
-[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
+[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image1.png)
 
 ## <a name="adding-the-ability-to-sort-gridview-columns"></a>Hinzufügen der Funktion zum Sortieren von GridView-Spalten
 
@@ -147,7 +147,7 @@ Dieser Code Ruft die `Department` Entität aus den Ereignisargumenten, konvertie
 
 Führen Sie die Seite. Neben den sortieren und Filtern die Funktion, die Sie zuvor hinzugefügt haben, zeigt das GridView-Steuerelement jetzt geschachtelte Kursdetails für jede Abteilung.
 
-[![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
+[![Image01 abgerufen wird](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering/_static/image7.png)
 
 Dies schließt die Einführung zu sortieren, Filtern und Master / Detail-Szenarien ab. Im nächsten Tutorial sehen Sie, wie Parallelität behandelt werden.
 

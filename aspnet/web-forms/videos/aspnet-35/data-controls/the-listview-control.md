@@ -12,7 +12,7 @@ ms.openlocfilehash: 4a4daf851f3b8f69a70409d00ef7cd624437f57a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383871"
 ---
 # <a name="the-listview-control"></a>Das ListView-Steuerelement
@@ -24,4 +24,4 @@ Erstellen Sie eine neue Website, zeige ich ihnen das neue ListView-Steuerelement
 [&#9654;Sehen Sie sich Video (10 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-listview-control)
 
 > [!div class="step-by-step"]
-> [Weiter](the-datapager-control.md)
+> [Nächste](the-datapager-control.md)

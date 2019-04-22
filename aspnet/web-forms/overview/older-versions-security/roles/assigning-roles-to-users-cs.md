@@ -12,7 +12,7 @@ ms.openlocfilehash: 93a0af00d9e32e044f408a1ca8a2cea73e906d66
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380280"
 ---
 # <a name="assigning-roles-to-users-c"></a>Zuweisen von Rollen an Benutzer (C#)
@@ -57,7 +57,7 @@ Fügen Sie die folgende CSS-Klassendefinition, um die `Styles.css` Stylesheet:
 Diese CSS-Definition weist den Browser an die Bezeichnung, die umfangreiche und rote Schrift angezeigt. Abbildung 1 zeigt diesen Effekt über Visual Studio-Designer.
 
 
-[![THE Bezeichnungsfelds CssClass führt zu einer großen, Rot Schriftart](assigning-roles-to-users-cs/_static/image2.png)](assigning-roles-to-users-cs/_static/image1.png)
+[![CssClass--Eigenschaft der Bezeichnung ergibt ein großes, rotes Schriftart](assigning-roles-to-users-cs/_static/image2.png)](assigning-roles-to-users-cs/_static/image1.png)
 
 **Abbildung 1**: Der Bezeichnung des `CssClass` führt zu einer großen, Red-Schriftart ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image3.png))
 
@@ -93,7 +93,7 @@ Abschließend müssen wir diese beiden Methoden aufrufen, beim ersten die Seite 
 Können Sie mit diesem Code werden die Seite über einen Browser besuchen; Ihr Bildschirm sollte ähnlich wie in Abbildung 2 aussehen. Alle Benutzerkonten werden in der Dropdown Liste und darunter, aufgefüllt jede Rolle wird als ein Kontrollkästchen angezeigt. Da wir legen die `AutoPostBack` Eigenschaften der DropDownList und Kontrollkästchen auf "true", ändern den ausgewählten Benutzer oder das Überprüfen und Deaktivieren einer Rolle bewirkt, dass einen Postback. Keine Aktion wird jedoch ausgeführt, da wir noch Code schreiben, um diese Aktionen zu behandeln müssen. Wir werden diese Aufgaben in den nächsten beiden Abschnitten in Angriff nehmen.
 
 
-[![Ter Seite zeigt die Benutzer und Rollen](assigning-roles-to-users-cs/_static/image5.png)](assigning-roles-to-users-cs/_static/image4.png)
+[![Die Seite zeigt die Benutzer und Rollen](assigning-roles-to-users-cs/_static/image5.png)](assigning-roles-to-users-cs/_static/image4.png)
 
 **Abbildung 2**: Die Seite zeigt die Benutzer und Rollen ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image6.png))
 
@@ -135,7 +135,7 @@ Der obige Code beginnt, durch Programmgesteuertes Verweisen auf das Kontrollkäs
 Nehmen Sie einen Moment Zeit, um diese Seite über einen Browser zu testen. Wählen Sie Benutzer Tito, und fügen Sie Tito für Administratoren und Supervisor-Rollen.
 
 
-[![Tdie Administratoren und Rollen für Vorgesetzte wurde Zischka hinzugefügt](assigning-roles-to-users-cs/_static/image8.png)](assigning-roles-to-users-cs/_static/image7.png)
+[![Tito wurde die Administratoren und Rollen für Vorgesetzte hinzugefügt](assigning-roles-to-users-cs/_static/image8.png)](assigning-roles-to-users-cs/_static/image7.png)
 
 **Abbildung 3**: Tito wurde hinzugefügt, die Administratoren und Supervisor-Rollen ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image9.png))
 
@@ -143,7 +143,7 @@ Nehmen Sie einen Moment Zeit, um diese Seite über einen Browser zu testen. Wäh
 Wählen Sie anschließend Benutzer Bruce aus der Dropdown-Liste ein. Es wird ein Postback und des Repeaters Kontrollkästchen werden aktualisiert, über die `CheckRolesForSelectedUser`. Da Rollen noch nicht Bruce gehört, werden die beiden Kontrollkästchen deaktiviert. Fügen Sie anschließend Bruce zur Rolle "Supervisor" ein.
 
 
-[![Bdie Rolle "Supervisor" wurden Ruce](assigning-roles-to-users-cs/_static/image11.png)](assigning-roles-to-users-cs/_static/image10.png)
+[![Bruce wurde die Rolle "Supervisor" hinzugefügt](assigning-roles-to-users-cs/_static/image11.png)](assigning-roles-to-users-cs/_static/image10.png)
 
 **Abbildung 4**: Bruce Funktion wurde in die Rolle "Supervisor" ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image12.png))
 
@@ -167,7 +167,7 @@ Wir müssen zum Auffüllen der `RoleList` DropDownList für den Satz von Rollen 
 Die letzten beiden Zeilen in der `BindRolesToList` Methode wurden hinzugefügt, um den Satz von Rollen zum Binden der `RoleList` DropDownList-Steuerelement. Abbildung 5 zeigt das Ergebnis bei der Anzeige über einen Browser – ein Dropdown-Liste, die mit dem System-Rollen aufgefüllt.
 
 
-[![TIE-Rollen werden in der Dropdownliste RoleList angezeigt](assigning-roles-to-users-cs/_static/image14.png)](assigning-roles-to-users-cs/_static/image13.png)
+[![Die Rollen werden in der RoleList-Dropdownliste angezeigt.](assigning-roles-to-users-cs/_static/image14.png)](assigning-roles-to-users-cs/_static/image13.png)
 
 **Abbildung 5**: Die Rollen werden angezeigt, der `RoleList` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image15.png))
 
@@ -187,7 +187,7 @@ Diese Methode muss in zwei Situationen aufgerufen werden: beim erstmaligen die S
 Mit diesem Code werden die `RolesUserList` GridView diese Benutzer, die die ausgewählte Rolle angehören, sollte angezeigt werden. Wie in Abbildung 6 gezeigt, besteht die Rolle "Supervisor" zwei Elemente aus: Bruce und Tito.
 
 
-[![Tin der GridView werden aufgelistet, die Benutzer, die der ausgewählten Rolle gehören](assigning-roles-to-users-cs/_static/image17.png)](assigning-roles-to-users-cs/_static/image16.png)
+[![GridView zeigt die Benutzer, die der ausgewählten Rolle gehören.](assigning-roles-to-users-cs/_static/image17.png)](assigning-roles-to-users-cs/_static/image16.png)
 
 **Abbildung 6**: Die GridView Listet die Benutzer, gehören die Rolle "ausgewählt" ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image18.png))
 
@@ -199,7 +199,7 @@ Wir erweitern die `RolesUserList` GridView, enthalten eine Spalte mit "Remove"-S
 Starten Sie durch das Hinzufügen eines Felds der löschen-Schaltfläche an die GridView. Stellen Sie dieses Feld als die meisten archivierten links angezeigt, und ändern Sie seine `DeleteText` Eigenschaft von "Delete" (Standard) auf "Entfernen".
 
 
-[![ADd den](assigning-roles-to-users-cs/_static/image20.png)](assigning-roles-to-users-cs/_static/image19.png)
+[![Hinzufügen der](assigning-roles-to-users-cs/_static/image20.png)](assigning-roles-to-users-cs/_static/image19.png)
 
 **Abbildung 7**: Fügen Sie die Schaltfläche "Entfernen" an die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image21.png))
 
@@ -217,7 +217,7 @@ Der Code beginnt, durch den Namen der ausgewählten Rolle bestimmen. Es wird dan
 Abbildung 8 zeigt die Seite, nachdem Benutzer Tito aus der Supervisor-Gruppe entfernt wurde.
 
 
-[![ALas, Tito ist nicht mehr einen Vorgesetzten](assigning-roles-to-users-cs/_static/image23.png)](assigning-roles-to-users-cs/_static/image22.png)
+[![Leider ist Tito nicht mehr Supervisor](assigning-roles-to-users-cs/_static/image23.png)](assigning-roles-to-users-cs/_static/image22.png)
 
 **Abbildung 8**: Leider Tito ist nicht mehr einen Vorgesetzten ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image24.png))
 
@@ -245,7 +245,7 @@ Der Großteil des Codes in der `Click` -Ereignishandler führt verschiedene Übe
 Finden Sie auf der Seite über einen Browser, und wählen Sie die Rolle der Vorgesetzte aus dem `RoleList` DropDownList. Versuchen Sie, einen ungültigen Benutzernamen einzugeben – Daraufhin sollte eine Meldung angezeigt, dass der Benutzer im System nicht vorhanden ist.
 
 
-[![YOrganisationseinheit kann kein nicht vorhandener Benutzer zu einer Rolle hinzufügen](assigning-roles-to-users-cs/_static/image26.png)](assigning-roles-to-users-cs/_static/image25.png)
+[![Sie können nicht zu einer Rolle einen nicht existierende Benutzer hinzufügen.](assigning-roles-to-users-cs/_static/image26.png)](assigning-roles-to-users-cs/_static/image25.png)
 
 **Abbildung 9**: Sie können nicht vorhandener Benutzer nicht zu einer Rolle hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image27.png))
 
@@ -253,7 +253,7 @@ Finden Sie auf der Seite über einen Browser, und wählen Sie die Rolle der Vorg
 Versuchen Sie nun das Hinzufügen eines gültigen Benutzers aus. Fahren Sie fort, und wieder Tito hinzu, der Supervisor-Rolle.
 
 
-[![TZischka ist wieder einen Vorgesetzten!](assigning-roles-to-users-cs/_static/image29.png)](assigning-roles-to-users-cs/_static/image28.png)
+[![Hier ist der Tito Supervisor!](assigning-roles-to-users-cs/_static/image29.png)](assigning-roles-to-users-cs/_static/image28.png)
 
 **Abbildung 10**: Hier ist der Tito Supervisor!  ([Klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image30.png))
 
@@ -290,7 +290,7 @@ Wenn Sie ein Konto von einem Administrator für eine andere Person erstellt wird
 Wählen Sie als Nächstes die "hinzufügen/entfernen `WizardSteps`..." option die CreateUserWizards Smarttag, und fügen Sie einen neuen `WizardStep`wird durch das Festlegen der `ID` zu `SpecifyRolesStep`. Verschieben der `SpecifyRolesStep WizardStep` , damit es nach dem Schritt "SSO für Ihr neues Konto", aber vor dem Schritt "Abschließen" geht. Festlegen der `WizardStep`des `Title` Eigenschaft auf "Geben Sie Roles", die `StepType` Eigenschaft, um `Step`, und die zugehörige `AllowReturn` Eigenschaft auf "false".
 
 
-[![ADd den](assigning-roles-to-users-cs/_static/image32.png)](assigning-roles-to-users-cs/_static/image31.png)
+[![Hinzufügen der](assigning-roles-to-users-cs/_static/image32.png)](assigning-roles-to-users-cs/_static/image31.png)
 
 **Abbildung 11**: Fügen Sie die "Geben Sie Rollen" `WizardStep` auf die CreateUserWizard ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image33.png))
 
@@ -318,7 +318,7 @@ Wenn der Benutzer nur den Schritt "Abgeschlossen" erreicht hat, wird der Ereigni
 Besuchen Sie diese Seite über einen Browser ein. Der erste Schritt bei der CreateUserWizard ist der standard "SSO für Ihr neues Konto" Schritt, der für den neuen Benutzernamen, Kennwort, e-Mail- und anderen wichtigen Informationen aufgefordert werden. Geben Sie die Informationen zum Erstellen eines neuen Benutzers mit dem Namen Wanda aus.
 
 
-[![CErstellen einen neuen Benutzer mit dem Namen Wanda](assigning-roles-to-users-cs/_static/image35.png)](assigning-roles-to-users-cs/_static/image34.png)
+[![Erstellen eines neuen Benutzers mit dem Namen Wanda](assigning-roles-to-users-cs/_static/image35.png)](assigning-roles-to-users-cs/_static/image34.png)
 
 **Abbildung 12**: Erstellen Sie einen neuen Benutzer mit dem Namen Wanda ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image36.png))
 
@@ -326,7 +326,7 @@ Besuchen Sie diese Seite über einen Browser ein. Der erste Schritt bei der Crea
 Klicken Sie auf die Schaltfläche "Benutzer erstellen". Ruft die CreateUserWizard intern die `Membership.CreateUser` -Methode, erstellen das neue Benutzerkonto ein, und klicken Sie dann im Verlauf mit dem nächsten Schritt, "Rollen angeben." Hier werden die Standortsystemrollen aufgeführt. Aktivieren Sie das Kontrollkästchen der Supervisor aus, und klicken Sie auf Weiter.
 
 
-[![MSeitennamen Wanda Mitglied der Rolle "Supervisor"](assigning-roles-to-users-cs/_static/image38.png)](assigning-roles-to-users-cs/_static/image37.png)
+[![Stellen Sie Wanda Mitglied der Rolle "Supervisor"](assigning-roles-to-users-cs/_static/image38.png)](assigning-roles-to-users-cs/_static/image37.png)
 
 **Abbildung 13**: Stellen Sie Wanda Mitglied der Rolle "Supervisor" ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image39.png))
 
@@ -334,7 +334,7 @@ Klicken Sie auf die Schaltfläche "Benutzer erstellen". Ruft die CreateUserWizar
 Klicken Sie auf Weiter bewirkt, dass ein Postback und Updates der `ActiveStep` mit dem Schritt "Abschließen". In der `ActiveStepChanged` -Ereignishandler das zuletzt erstellte Benutzerkonto wird der Vorgesetzte-Rolle zugewiesen. Um dies zu überprüfen, zurück zu den `UsersAndRoles.aspx` Seite und wählen Sie Vorgesetzte aus der `RoleList` DropDownList. Wie in Abbildung 14 gezeigt, der Supervisor jetzt drei Benutzer bestehen: Bruce, Tito und Wanda.
 
 
-[![BRuce, Tito und Wanda sind alle Vorgesetzte](assigning-roles-to-users-cs/_static/image41.png)](assigning-roles-to-users-cs/_static/image40.png)
+[![Bruce, Tito und Wanda sind alle Supervisor](assigning-roles-to-users-cs/_static/image41.png)](assigning-roles-to-users-cs/_static/image40.png)
 
 **Abbildung 14**: Bruce, Tito und Wanda sind alle Vorgesetzte ([klicken Sie, um das Bild in voller Größe anzeigen](assigning-roles-to-users-cs/_static/image42.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 866aea01488cee26a7419fe12b7ffa7a0655e9ce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385045"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Erstellen eines websiteweiten Layouts mit Masterseiten (C#)
@@ -29,7 +29,7 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 Ein Attribut einer gut entworfenen Website ist ein einheitliches standortweite Seitenlayout. Nehmen Sie beispielsweise die www.asp.net-Website. Zum Zeitpunkt der Erstellung dieses Dokuments hat jede Seite derselben Inhalt oben und unten auf der Seite. Wie in Abbildung 1 gezeigt, zeigt der Anfang jeder Seite ein graues Balkens mit einer Liste von Microsoft Communities. Ist das Websitelogo, die Liste der Sprachen, in denen die Website übersetzt wurde, und die Core-Abschnitte: Home, erste Schritte, Informationen, Downloads und So weiter. Ebenso enthält den unteren Rand der Seite Informationen zu Werbezwecken auf www.asp.net, eine urheberrechtserklärung und einen Link zu den Datenschutzbestimmungen.
 
 
-[![THE www.asp.net Website setzt ein konsistentes Aussehen und können für alle Seiten](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
+[![Die Website www.asp.net setzt eines konsistenten Aussehens und Verhaltens für alle Seiten](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
 <strong>Abbildung 01</strong>: Die www.asp.net Website verwendet wird, ein konsistentes Aussehen und können für alle Seiten ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
 
@@ -76,7 +76,7 @@ Abbildung 2 zeigt, wie die Masterseite für www.asp.net aussehen könnte. Beacht
 Nachdem eine Masterseite definiert wurde kann es zu ASP.NET-Seiten durch die Teilstriche eines Kontrollkästchens gebunden werden. Diese - wird aufgerufen, Inhaltsseiten - ASP.NET-Seiten enthalten ein ContentControl-Element für jede der Masterseite ContentPlaceHolder-Steuerelemente. Bei die Inhaltsseite über einen Browser zugegriffen wird ist das ASP.NET-Modul erstellt die Steuerelementhierarchie der Masterseite und Steuerelementhierarchie der Seite Inhalt in den entsprechenden Stellen einfügt. Dieser kombinierte Steuerelementhierarchie gerendert wird, und die resultierende HTML an den Browser des Benutzers zurückgegeben. Daher gibt die Seite Inhalte auf, die allgemeine Markup in die Masterseite außerhalb der ContentPlaceHolder-Steuerelemente definiert und das seitenspezifische-Markup, das in eine eigene ContentControl-Elemente definiert. Abbildung 3 veranschaulicht dieses Konzept.
 
 
-[![Tim Markup HE angeforderte Seite ist in der Masterseite Fused](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
+[![Die angeforderte Seite Markup wird in die Masterseite Fused.](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
 
 **Abbildung 03**: Die angeforderte Seite Markup wird in die Masterseite Fused ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image7.png))
 
@@ -95,7 +95,7 @@ Wir erstellen und Verwenden von Master- und Inhaltsseiten untersuchen können, b
 > Visual Studio unterstützt zwei Modi des Projektmanagements: Von Websiteprojekten und Webanwendungsprojekten. Web Site Projects fehlt eine Projektdatei, während Web Application Projects die Projektarchitektur in Visual Studio .NET 2002/2003 imitieren-sie enthalten eine Projektdatei, und Kompilieren von Quellcode des Projekts in eine einzelne Assembly, die in platziert ist die `/bin` Ordner. Visual Studio 2005 anfangs nur unterstützte-Website-Projekten, obwohl die [Webanwendungsprojekt-Modell](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) wurde wieder eingeführt, mit Service Pack 1; Visual Studio 2008 bietet beide Projektmodelle. Die Visual Web Developer 2005 und 2008-Editionen unterstützen jedoch nur von Websiteprojekten. Für meinen Demos in diesem Tutorial verwende ich das Websiteprojekt-Modell. Wenn Sie eine nicht-Express-Edition verwenden und das Webanwendungsprojekt-Modell verwenden möchten, können Sie tun, aber beachten Sie, dass es möglicherweise einige Diskrepanzen zwischen der Anzeige auf Ihrem Bildschirm und die Schritte, die Sie, im Vergleich zu den dargestellten bildschirmabbildungen und Instructio ausführen müssen NS, die in diesen Tutorials bereitgestellt.
 
 
-[![CErstellen eine Website New File System-Based](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
+[![Erstellen einer neuen System-basierte-Website](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
 
 **Abbildung 04**: Erstellen einer Website New File System-Based ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image10.png))
 
@@ -103,7 +103,7 @@ Wir erstellen und Verwenden von Master- und Inhaltsseiten untersuchen können, b
 Fügen Sie eine Masterseite an die Website in das Stammverzeichnis von mit der rechten Maustaste auf den Projektnamen, wählen neues Element hinzufügen und Auswählen der Masterseitenvorlage. Beachten Sie, dass mit der Erweiterung Masterseiten enden `.master`. Nennen Sie diese neue Masterseite `Site.master` , und klicken Sie auf Hinzufügen.
 
 
-[![ATT ein Master Seite mit dem Namen "Site.Master" auf der Website](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
+[![Fügen Sie eine Master-Seite mit dem Namen "Site.Master" auf der Website](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
 
 **Abbildung 05**: Fügen Sie eine Master-Seite mit dem Namen `Site.master` auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image13.png))
 
@@ -132,7 +132,7 @@ Diese deklarativen Masterseite Standardmarkup dient als Ausgangspunkt für eigen
 Erweitern wir nun `Site.master`des standardmäßigen deklaratives Markup zum Erstellen eines Standort-Layouts, in dem alle Seiten teilen: einen allgemeinen Header, eine linke Spalte mit Navigation, Nachrichten und andere websiteweite Inhalte; und eine Fußzeile, in dem das Symbol "Unterstützt von Microsoft ASP.NET" angezeigt. Abbildung 6 zeigt das Ergebnis der Masterseite, wenn eine der Seiten, auf die Inhalte über einen Browser angezeigt wird. Der rote Eingekreiste Bereich in Abbildung 6 bezieht sich auf der Seite aufgerufen wird (`Default.aspx`); der andere Inhalt sind auf der Masterseite definierte und aus diesem Grund konsistent alle Inhaltsseiten.
 
 
-[![Ter Masterseite definiert das Markup für die oben, linken und unteren Teile](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
+[![Die Masterseite definiert das Markup für die oben, linken und unteren Teile](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
 
 **Abbildung 06**: Die Master-Seite definiert das Markup für die oben, linken und unteren Teile ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image16.png))
 
@@ -173,12 +173,12 @@ Wir fügen Sie eine neue ASP.NET-Seite auf das Projekt, und binden Sie es an der
 > Wenn Sie Ihre ASP.NET-Website das Webanwendungsprojekt-Modell verwenden, anstatt das Websiteprojekt-Modell erstellt haben, sehen Sie nicht das Kontrollkästchen "Masterseite auswählen", in das Dialogfeld "Neues Element hinzufügen" in Abbildung 7 dargestellt. Seite mithilfe des Webanwendungsprojekts Modellieren Sie müssen die Inhalte Webformularvorlage anstelle der Web Form-Vorlage auswählen, um einen Inhalt zu erstellen. Nach dem Auswählen der Vorlage Webinhaltsformular, und klicken Sie auf Hinzufügen, wählen Sie den gleichen eine Masterseite, die in Abbildung 8 dargestellte Dialogfeld angezeigt wird.
 
 
-[![ADd eine neue Seite](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
+[![Fügen Sie eine neue Seite hinzu.](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
 
 **Abbildung 07**: Fügen Sie eine neue Seite hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image19.png))
 
 
-[![SWählen Sie die Site.master-Masterseite](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
+[![Wählen Sie die Site.master-Masterseite](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
 
 **Abbildung 08**: Wählen Sie die `Site.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image22.png))
 
@@ -198,7 +198,7 @@ Da die Masterseite zwei ContentPlaceHolder-Steuerelemente - verfügt über `head
 Masterseiten, in denen über vorherige standortweite Vorlage Techniken bringen ist ihre Unterstützung während der Entwurfszeit. Abbildung 9 zeigt die `About.aspx` Inhaltsseite, wenn Sie über Visual Web Developer-Entwurfsansicht angezeigt. Beachten Sie, dass während der Inhalt der Masterseite angezeigt wird, abgeblendet ist und kann nicht geändert werden. Die Inhaltssteuerelemente, die für die Masterseite ContentPlaceHolder-Steuerelemente können, jedoch bearbeitet werden. Und nur verwendet werden, wie Sie mit einer beliebigen anderen ASP.NET-Seite durch Hinzufügen von Web-Steuerelementen über die Ansichten Quelltext- oder Entwurfssicht der Inhaltsseite Schnittstelle erstellen können.
 
 
-[![THE der Inhaltsseite Design View zeigt sowohl die seitenspezifische und Inhalt der Master-Seite](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
+[![Die Inhaltsseite die Entwurfsansicht zeigt sowohl den Seiteninhalt der seitenspezifische und Master](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
 
 **Abbildung 09**: Die Inhaltsseite Design View zeigt sowohl die seitenspezifische und Inhalt der Master-Seite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image25.png))
 
@@ -208,7 +208,7 @@ Masterseiten, in denen über vorherige standortweite Vorlage Techniken bringen i
 Einige Inhalte für erstellen in Ruhe die `About.aspx` Seite. Sie können finden Sie in Abbildung 10: ich eine Überschrift "Über die Author" und eine Reihe von Absätze mit Text eingegeben, aber gerne Websteuerelemente hinzuzufügen. Besuchen Sie nach dem Erstellen dieser Schnittstelle, die `About.aspx` Seite über einen Browser.
 
 
-[![VBesuchen Sie die About.aspx Seite über ein Browser](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
+[![Besuchen Sie die Seite About.aspx über einen Browser](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
 
 **Abbildung 10**: Besuchen Sie die `About.aspx` Seite über ein Browser ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image28.png))
 
@@ -248,7 +248,7 @@ Als Nächstes erstellen Sie eine `Page_Load` -Ereignishandler für den Master Se
 Der Code oben legt fest, der Bezeichnung `Text` Eigenschaft, um das aktuelle Datum und die Uhrzeit formatiert, als der Tag der Woche, die den Namen des Monats, und die zweistellige Tagesangabe (siehe Abbildung 11). Rufen Sie eine der Inhaltsseiten für die durch diese Änderung. Wie in Abbildung 11 gezeigt, wird das daraus resultierende Markup wird sofort aktualisiert, um die Änderung auf die Masterseite einschließen.
 
 
-[![Tdie Änderungen auf der Masterseite werden berücksichtigt beim Anzeigen der Inhaltsseite](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
+[![Die Änderungen an der Masterseite werden berücksichtigt beim Anzeigen der Inhaltsseite](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
 
 **Abbildung 11**: Die Änderungen an der Masterseite werden berücksichtigt beim Anzeigen der Inhaltsseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-cs/_static/image31.png))
 
@@ -285,4 +285,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
 
 > [!div class="step-by-step"]
-> [Weiter](multiple-contentplaceholders-and-default-content-cs.md)
+> [Nächste](multiple-contentplaceholders-and-default-content-cs.md)

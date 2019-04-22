@@ -12,7 +12,7 @@ ms.openlocfilehash: 7ec80056a845429d5971bb174f6348b4b7a9587d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379591"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen von zusätzlichen Dateien

@@ -12,7 +12,7 @@ ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380664"
 ---
 # <a name="iteration-5--create-unit-tests-vb"></a>Iteration #5 – Erstellen von Komponententests (VB)
@@ -116,12 +116,12 @@ Bevor Sie Moq verwenden können, müssen Sie die folgenden Schritte ausführen:
 4. Fügen Sie einen Verweis auf die Assembly Moq dem Testprojekt, indem Sie durch Auswählen der Menüoption **-Projekt "," Verweis hinzufügen** zum Öffnen der **Verweis hinzufügen** Dialogfeld. Navigieren Sie zum Ordner, in dem Sie Moq entpackt haben, und wählen Sie die Moq.dll-Assembly, unter der Registerkarte Durchsuchen. Klicken Sie auf die **OK** Schaltfläche (siehe Abbildung 2).
 
 
-[![UNblocking Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+[![Das Aufheben der Blockierung Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **Abbildung 01**: Das Aufheben der Blockierung Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image2.png))
 
 
-[![RVorhandene Verweise nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[![Verweise, die nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **Abbildung 02**: Verweise, die nach dem Hinzufügen von Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image4.png))
 
@@ -184,7 +184,7 @@ Die verbleibenden Tests stellen Sie sicher, dass, wenn die CreateContact()-Metho
 Sie können die Komponententests in Codebeispiel 1 ausführen, indem Sie durch Auswählen der Menüoption **Test ausführen, alle Tests in der Projektmappe (STRG + R, A)**. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
 
 
-[![TEST Ergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
+[![Testergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **Abbildung 04**: Testergebnisse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image8.png))
 

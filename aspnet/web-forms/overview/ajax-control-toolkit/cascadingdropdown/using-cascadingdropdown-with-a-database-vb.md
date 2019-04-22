@@ -12,7 +12,7 @@ ms.openlocfilehash: d0b6f8651e327cf9ad2a3051edd323efba4f64fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418728"
 ---
 # <a name="using-cascadingdropdown-with-a-database-vb"></a>Verwenden von CascadingDropDown mit einer Datenbank (VB)
@@ -86,12 +86,12 @@ Der Rest der Methode ist ziemlich selbsterklärend, klicken Sie dann auf. Des Li
 Laden die ASP.NET-Seite und nach einer kurzen Zeit wird die Liste der Anbieter mit 25 Einträgen gefüllt. Wählen Sie einen Eintrag, und beachten Sie, wie der zweiten Dropdownliste mit Daten gefüllt ist.
 
 
-[![Tseine erste Liste wird automatisch ausgefüllt](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
+[![Die erste Liste wird automatisch ausgefüllt.](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
 
 Die erste Liste wird automatisch übernommen ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-vb/_static/image3.png))
 
 
-[![Tseine zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
+[![Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt.](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
 
 Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-vb/_static/image6.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e410ac0c6d3430c00e171775d842ee30eeab021
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383158"
 ---
 # <a name="webmatrix-content-guide"></a>Inhalt von WebMatrix-Leitfäden
@@ -23,7 +23,7 @@ ms.locfileid: "59383158"
 
 WebMatrix ist ein Satz von Tools, der eine einfache Möglichkeit zum Erstellen von Websites für Microsoft Windows bereitstellt. Es umfasst IIS Express (ein Entwicklungswebserver), ASP.NET (eine Web-Framework-Programmierung) und SQL Server Compact (eine eingebettete Datenbank). Einen kurzen Überblick über WebMatrix finden Sie unter [WebMatrix-Übersicht](https://www.microsoft.com/web/webmatrix/). Die wichtigsten WebMatrix-Funktionen finden Sie unter [WebMatrix-Funktionen](https://www.microsoft.com/web/webmatrix/features/).
 
-| **Szenario** | **Content** |
+| **Szenario** | **Inhalt** |
 | --- | --- |
 | Erste Schritte mit WebMatrix | [Einführung in WebMatrix](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/intro.mp4) (video) [erste Schritte mit WebMatrix und ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202889) [von Grund auf neu starten](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough1b.mp4) (video) erfahren Sie, wie ASP.NET Razor-Code verwenden, um eine benutzerdefinierte Website zu schreiben. [Ihre erste Website mithilfe von WebMatrix](https://go.microsoft.com/fwlink/?LinkId=208553) [beginnen Sie mit der Web-Apps](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough2b.mp4) (video) verwenden eine kostenlose Open-Source-Anwendung, um Ihre eigene Website erstellen. |
 | Installieren der Komponenten (einschließlich WebMatrix) | [Mithilfe von Microsoft Web Platform Installer](https://www.iis.net/learn/install/web-platform-installer/using-the-microsoft-web-platform-installer) [Web Platform Installer 2.0 Exemplarische Vorgehensweise](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-20-walkthrough) [Web Platform Installer-Ressourcen](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-resources) |
@@ -50,7 +50,7 @@ WebMatrix ist ein Satz von Tools, der eine einfache Möglichkeit zum Erstellen v
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-**Lesen**
+**Read**
 
 - [Microsoft Web Camps-trainingskit für WebMatrix](http://trainingkit.webcamps.ms/WebMatrix.htm)
 - [Fehler oder Vorschlag senden](https://go.microsoft.com/fwlink/?LinkId=195940)
@@ -68,7 +68,7 @@ WebMatrix ist ein Satz von Tools, der eine einfache Möglichkeit zum Erstellen v
 - [Beginnen Sie mit der Web-Apps](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough2b.mp4)
 - [Kleines, aber vollständige Paket](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-compact.mp4)
 - [Mit Ihnen wächst](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-extend.mp4)
-- [Open Source](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-webapps-b.mp4)
+- [Open-Source](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-webapps-b.mp4)
 - [Datenbank, die leicht gemacht](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-databases.mp4)
 - [Elegante Schnittstelle, einfache Oberfläche](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-ux.mp4)
 - [Einfach, code](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-aspnetpages.mp4)

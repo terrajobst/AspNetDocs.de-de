@@ -12,7 +12,7 @@ ms.openlocfilehash: 81a708b5badecbb5bd134078d079a0fe3a63bb5f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380677"
 ---
 # <a name="introduction-to-aspnet-single-page-application"></a>Einführung in ASP.NET Single-Page-Anwendung
@@ -20,5 +20,5 @@ ms.locfileid: "59380677"
 > Der Inhalt für die Verwendung der neuen SPA-Vorlage und Knockoutjs.
 
 
-- [Single-Page-Webanwendung: KnockoutJS-Vorlage](knockoutjs-template.md)
+- [Einzelseitenanwendung: Knockout.js-Vorlage](knockoutjs-template.md)
 - [Andere Bibliotheken als Knockout](other-libraries.md)

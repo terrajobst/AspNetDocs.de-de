@@ -12,7 +12,7 @@ ms.openlocfilehash: c55bbeb383b15f4dc9cb95d25905cade1e8c5c29
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418897"
 ---
 # <a name="adding-animation-to-a-control-vb"></a>Hinzufügen von Animationen zu einem Steuerelement (VB)
@@ -72,7 +72,7 @@ In diesem Beispiel wird der Bereich ausblenden. Die Animation treffen 1,5 Sekund
 Wenn Sie dieses Skript ausführen, wird der Bereich wird angezeigt, und in 1,5 Sekunden ausgeblendet wird.
 
 
-[![TIE-Bereich wird eingeblendet,](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
+[![Der Bereich wird ausgeblendet wird](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
 
 Der Bereich wird ausgeblendet wird, ([klicken Sie, um das Bild in voller Größe anzeigen](adding-animation-to-a-control-vb/_static/image3.png))
 

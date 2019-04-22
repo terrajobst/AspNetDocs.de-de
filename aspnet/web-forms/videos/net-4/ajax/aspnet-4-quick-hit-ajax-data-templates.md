@@ -12,7 +12,7 @@ ms.openlocfilehash: 44219c97cfcb1a17acbe22a7413a33eb8b8c52b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388516"
 ---
 # <a name="aspnet-4-quick-hit---ajax-data-templates"></a>ASP.NET 4 "Schnelle Hit" - AJAX-Datenvorlagen
@@ -24,4 +24,4 @@ In diesem Video lernen Sie, wie Sie die Client-Vorlagen zu verwenden, um Datenba
 [&#9654;Sehen Sie sich Video (12 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
 
 > [!div class="step-by-step"]
-> [Vorheriges](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
+> [Vorherige](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)

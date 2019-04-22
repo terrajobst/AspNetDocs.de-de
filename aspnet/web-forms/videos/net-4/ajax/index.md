@@ -12,7 +12,7 @@ ms.openlocfilehash: 3f090f46b5e7c7f9b046f2cdbef7162cc6f364cb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386813"
 ---
 # <a name="ajax"></a>Ajax

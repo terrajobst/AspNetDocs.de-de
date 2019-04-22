@@ -12,7 +12,7 @@ ms.openlocfilehash: 1f6ade517bda60ac0f44811853ee9b9d06070091
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384174"
 ---
 # <a name="unlocking-and-approving-user-accounts-vb"></a>Entsperren und Genehmigen von Benutzerkonten (VB)
@@ -49,7 +49,7 @@ In diesem Tutorial verwenden wir zwei ASP.NET-Seiten: `ManageUsers.aspx` und `Us
 Nehmen Sie nach dem Hinzufügen der HyperLinkField an die GridView, einen Moment Zeit, an die `ManageUsers.aspx` Seite über einen Browser. Wie in Abbildung 1 gezeigt, enthält jede GridView-Zeile jetzt einen Link "Verwalten" aus. Der Link "Verwalten" für Bruce verweist auf `UserInformation.aspx?user=Bruce`, während auf der Link "Verwalten" Dave zeigt `UserInformation.aspx?user=Dave`.
 
 
-[![THE HyperLinkField Fügt eine](unlocking-and-approving-user-accounts-vb/_static/image2.png)](unlocking-and-approving-user-accounts-vb/_static/image1.png)
+[![Fügt der HyperLinkField ein](unlocking-and-approving-user-accounts-vb/_static/image2.png)](unlocking-and-approving-user-accounts-vb/_static/image1.png)
 
 **Abbildung 1**: Die HyperLinkField Fügt einen Link "Verwalten" für jedes Benutzerkonto ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image3.png))
 
@@ -72,7 +72,7 @@ Wir können nun zum Implementieren der Benutzeroberfläche in `UserInformation.a
 Nach dem Hinzufügen dieser Steuerelemente, sollte die Entwurfsansicht in Visual Studio ähnlich wie im Screenshot in Abbildung 2 aussehen.
 
 
-[![CErstellen die Benutzeroberfläche für UserInformation.aspx](unlocking-and-approving-user-accounts-vb/_static/image5.png)](unlocking-and-approving-user-accounts-vb/_static/image4.png)
+[![Erstellen der Benutzeroberfläche für UserInformation.aspx](unlocking-and-approving-user-accounts-vb/_static/image5.png)](unlocking-and-approving-user-accounts-vb/_static/image4.png)
 
 **Abbildung 2**: Erstellen der Benutzeroberfläche für `UserInformation.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image6.png))
 
@@ -98,7 +98,7 @@ Zurück zu Visual Studio, und Erstellen von Ereignishandlern für die `IsApprove
 Bei diesen Ereignishandlern vorhanden, noch einmal auf die Seite und nicht genehmigte Benutzer. Wie in Abbildung 3 gezeigt wird, sollte eine kurze, die auf der Seite zeigt an, dass des Benutzers die Meldung `IsApproved` Eigenschaft wurde erfolgreich geändert.
 
 
-[![CHRIS wurde nicht genehmigt](unlocking-and-approving-user-accounts-vb/_static/image8.png)](unlocking-and-approving-user-accounts-vb/_static/image7.png)
+[![Chris hat nicht genehmigt wurde.](unlocking-and-approving-user-accounts-vb/_static/image8.png)](unlocking-and-approving-user-accounts-vb/_static/image7.png)
 
 **Abbildung 3**: Chris wurde nicht genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image9.png))
 
@@ -106,7 +106,7 @@ Bei diesen Ereignishandlern vorhanden, noch einmal auf die Seite und nicht geneh
 Abmelden und versuchen Sie es, als der Benutzer, dessen Konto anmelden, wurde als Nächstes einfach nicht genehmigt. Da der Benutzer nicht genehmigt wird, kann nicht bei der Anmeldung. Standardmäßig zeigt das Login-Steuerelement dieselbe Nachricht, wenn der Benutzer, unabhängig von der Ursache für die Anmeldung kann nicht. Aber in der <a id="Tutorial6"> </a> [ *Überprüfen von Benutzer-Anmeldeinformationen für die Mitgliedschaft Benutzer Store* ](../membership/validating-user-credentials-against-the-membership-user-store-vb.md) Tutorial erläutert, auf die Verbesserung der Login-Steuerelement, um einen besser geeigneten Nachricht anzuzeigen. Wie in Abbildung 4 gezeigt, wird Chris eine Meldung darüber informiert, dass er anmelden kann nicht, da es sich bei seinem Konto noch nicht genehmigt wird angezeigt.
 
 
-[![CHRIS Anmelden nicht, da sein Konto nicht genehmigt ist](unlocking-and-approving-user-accounts-vb/_static/image11.png)](unlocking-and-approving-user-accounts-vb/_static/image10.png)
+[![Chris kann nicht da His Anmeldekonto ist nicht genehmigt](unlocking-and-approving-user-accounts-vb/_static/image11.png)](unlocking-and-approving-user-accounts-vb/_static/image10.png)
 
 **Abbildung 4**: Chris kann nicht da His Anmeldekonto ist nicht genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ Versuch der um die Sperre auch Funktionalität zu testen, melden Sie sich als ei
 Wechseln Sie zurück zur der `ManageUsers.aspx` Seite, und klicken Sie auf den Link "verwalten" für den Benutzer gesperrt. Wie in Abbildung 5 gezeigt, sehen Sie einen Wert in der `LastLockedOutDateLabel` die Schaltfläche "Benutzer entsperren" aktiviert werden soll. Klicken Sie auf die Schaltfläche "Benutzer entsperren", um das Benutzerkonto zu entsperren. Nachdem Sie die Benutzer nicht entsperrt haben, werden sie sich erneut anmelden.
 
 
-[![DDurchschn. wurde aus dem System gebunden.](unlocking-and-approving-user-accounts-vb/_static/image14.png)](unlocking-and-approving-user-accounts-vb/_static/image13.png)
+[![Dave wurde aus dem System gebunden.](unlocking-and-approving-user-accounts-vb/_static/image14.png)](unlocking-and-approving-user-accounts-vb/_static/image13.png)
 
 **Abbildung 5**: Dave hat wurde gesperrt, des Systems ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image15.png))
 
@@ -166,7 +166,7 @@ Die `SendingMail` Ereignis wird ausgelöst, nachdem die `CreatedUser` -Ereignis,
 Das Endergebnis ist, dass neue Benutzer nicht genehmigt, was bedeutet, dass sie an der Website anmelden darf nicht. Darüber hinaus werden sie automatisch eine e-Mail mit einem Link gesendet, um die überprüfungs-URL (siehe Abbildung 6).
 
 
-[![Ter neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL](unlocking-and-approving-user-accounts-vb/_static/image17.png)](unlocking-and-approving-user-accounts-vb/_static/image16.png)
+[![Der neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL](unlocking-and-approving-user-accounts-vb/_static/image17.png)](unlocking-and-approving-user-accounts-vb/_static/image16.png)
 
 **Abbildung 6**: Der neue Benutzer erhält eine E-Mail mit einem Link zu die Überprüfungs-URL ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image18.png))
 
@@ -188,7 +188,7 @@ Der größte Teil der obige Code stellt sicher, dass die Benutzer-ID angegeben w
 Abbildung 7 zeigt die `Verification.aspx` Seite, wenn über einen Browser aufgerufen.
 
 
-[![Tseine neue Benutzerkonto wird nun genehmigt](unlocking-and-approving-user-accounts-vb/_static/image20.png)](unlocking-and-approving-user-accounts-vb/_static/image19.png)
+[![Das neue Benutzerkonto wird nun genehmigt](unlocking-and-approving-user-accounts-vb/_static/image20.png)](unlocking-and-approving-user-accounts-vb/_static/image19.png)
 
 **Abbildung 7**: Das neue Benutzerkonto wird nun genehmigt ([klicken Sie, um das Bild in voller Größe anzeigen](unlocking-and-approving-user-accounts-vb/_static/image21.png))
 
@@ -212,4 +212,4 @@ Scott Mitchell, Autor von mehreren Büchern zu ASP/ASP.NET und Gründer von 4Guy
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](recovering-and-changing-passwords-vb.md)
+> [Vorherige](recovering-and-changing-passwords-vb.md)

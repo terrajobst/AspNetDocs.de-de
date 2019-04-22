@@ -12,7 +12,7 @@ ms.openlocfilehash: 6e66c03a4521f339f0ee9c7c0e7b8129f241113c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379408"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Codeupdates

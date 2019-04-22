@@ -13,7 +13,7 @@ ms.openlocfilehash: 9d5b58871147b84cb4d8bde73d3139655e4cd3e6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388737"
 ---
 # <a name="serialization-and-model-binding-in-aspnet-web-api"></a>Serialisierung und Modellbindung in ASP.NET Web-API
@@ -21,9 +21,9 @@ ms.locfileid: "59388737"
 > Wie ASP.NET Web-API-HTTP-Nachrichten an Domänenmodelle bindet und Arbeiten mit Medien in Web-API formatiert.
 
 
-- [Medienformatierer in Web-API 2](media-formatters.md)
+- [Medienformatierer in der Web-API 2](media-formatters.md)
 - [JSON- und XML-Serialisierung in der Web-API](json-and-xml-serialization.md)
-- [BSON-Unterstützung in Web-API 2.1](bson-support-in-web-api-21.md)
+- [BSON-Unterstützung in der Web-API 2.1](bson-support-in-web-api-21.md)
 - [Inhaltsaushandlung in der Web-API](content-negotiation.md)
 - [Modellvalidierung in der Web-API](model-validation-in-aspnet-web-api.md)
 - [Parameterbindung in der Web-API](parameter-binding-in-aspnet-web-api.md)

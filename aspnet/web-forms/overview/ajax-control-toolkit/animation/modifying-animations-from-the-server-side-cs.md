@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d4c786ca10e77353ac8b4746138cb1e314585ae
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383784"
 ---
 # <a name="modifying-animations-from-the-server-side-c"></a>Ändern von Animationen von Serverseite (c#)
@@ -55,7 +55,7 @@ Fügen Sie abschließend die `AnimationExtender` die Steuerung an die aktuelle S
 [!code-html[Main](modifying-animations-from-the-server-side-cs/samples/sample6.html)]
 
 
-[![TIE-Animation wird mithilfe von serverseitigen erstellt C#/VB-Code](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
+[![Die Animation wird mithilfe von serverseitiger C#/VB-Code erstellt.](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
 
 Die Animation wird erstellt, mit serverseitiger C#/VB-Code ([klicken Sie, um das Bild in voller Größe anzeigen](modifying-animations-from-the-server-side-cs/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420756"
 ---
 # <a name="server-controls"></a>Serversteuerelemente
@@ -193,7 +193,7 @@ In ASP.NET 2.0 das RequestLengthDiskThreshold-Attribut des HttpRuntime-Elements 
 
 Es ist recht häufig Probleme mit der beim Abrufen von Informationen in einer Reihe von "Seiten" Verwenden von Bereichen oder durch die Übertragung von Seite zu Seite ASP.NET-Entwickler auftreten. Meistens, die Unterfangen ist ein frustrierend und Zeit in Anspruch nehmen. Das neue Assistenten-Steuerelement löst die Probleme durch die Funktionen für lineare und nicht linearen Schritte in eine Assistentenschnittstelle, der Benutzer mit vertraut sind. Die Assistenten-Steuerelement bietet Eingabeformulare in eine Reihe von Schritten an. Jeder Schritt ist eines bestimmten Typs, die von der StepType-Eigenschaft des Steuerelements angegeben. Die verfügbaren Typen lauten wie folgt aus:
 
-| **Schritttyp** | **Erklärung** |
+| **Schritttyp** | **Erläuterung** |
 | --- | --- |
 | Auto | Der Assistent bestimmt automatisch den Typ des Schritts auf Grundlage seiner Position innerhalb der Hierarchie Schritt. |
 | Starten | Der erste Schritt, häufig verwendet, um eine einführende Anweisung darzustellen. |
@@ -218,7 +218,7 @@ Dieses Video ist eine exemplarische Vorgehensweise für die Assistenten-Steuerel
 
 Das Localize-Steuerelement ist ein literales Steuerelement ähnelt. Das Localize-Steuerelement hat jedoch einen **Modus** Eigenschaft, die steuert, wie das Markup, das hinzugefügt wird gerendert wird. Die Mode-Eigenschaft unterstützt die folgenden Werte:
 
-| **Modus** | **Erklärung** |
+| **Modus** | **Erläuterung** |
 | --- | --- |
 | Transformation | Markup wird nach dem Protokoll des Browsers die Anforderung umgewandelt. |
 | PassThrough | Als Markup gerendert – ist. |

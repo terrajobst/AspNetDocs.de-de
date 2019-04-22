@@ -12,7 +12,7 @@ ms.openlocfilehash: 78140f56184e88fb4dbe29f234aebd5732b69ad9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418871"
 ---
 # <a name="animation-depending-on-a-condition-vb"></a>Von einer Bedingung abhängige Animation (VB)
@@ -53,7 +53,7 @@ In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt we
 Beachten Sie, dass das kleiner-als-Zeichen (`<`) in der `ConditionScript` -Attribut muss mit Escapezeichen (-) sein. Wenn Sie führen dieses Skript entweder keine Animation ausgeführt wird, ist einer der beiden oder beides.
 
 
-[![TIE-Bereich wird ohne Änderung der Größe, ausgeblendet wird, damit die zweite Animation-ausgeführt wird, die erste Bedingung nicht](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
+[![Der Bereich wird ohne Änderung der Größe, ausgeblendet wird, damit nicht die zweite Animation-ausgeführt wird, die erste Bedingung](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 
 Der Bereich wird ausgeblendet wird, ohne Änderung der Größe, damit die zweite Animation-ausgeführt wird, die erste Bedingung nicht ([klicken Sie, um das Bild in voller Größe anzeigen](animation-depending-on-a-condition-vb/_static/image3.png))
 

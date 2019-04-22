@@ -12,7 +12,7 @@ ms.openlocfilehash: abff97e5cc2663465fdf61f41ff69d17104fe8b6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379468"
 ---
 # <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementieren einer Auflistungs-/Detailbenutzeroberfläche mit Controllern und Ansichten
@@ -94,10 +94,10 @@ Im folgenden finden Sie eine Tabelle, die veranschaulicht, wie eine Vielzahl von
 | **URL** | **Controller-Klasse** | **Action-Methode** | **Übergebene Parameter** |
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
-| */ Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
+| */Dinners/Edit/5* | DinnersController | Edit(ID) | id=5 |
 | */Dinners/Create* | DinnersController | Create() | Nicht zutreffend |
-| */ Dinners* | DinnersController | Index() | Nicht zutreffend |
-| */ Home* | HomeController | Index() | Nicht zutreffend |
+| */Dinners* | DinnersController | Index() | Nicht zutreffend |
+| */Home* | HomeController | Index() | Nicht zutreffend |
 | */* | HomeController | Index() | Nicht zutreffend |
 
 Die letzten drei Zeilen angezeigt, die Standardwerte (Controller = Home, Aktion = der Index, Id = "") verwendet wird. Da die Methode "Index" als den Standardnamen für die Aktion registriert ist, wenn eine nicht angegeben ist, die "/ Dinners" und "/ Home" URLs Grund der Aktionsmethode Index() für ihre Controllerklassen aufgerufen werden soll. Da der Controller "Home" als den Standardcontroller registriert ist, wenn eine nicht angegeben ist, wird die URL "/" HomeController erstellt werden soll, und die Aktionsmethode Index() darauf aufgerufen werden.

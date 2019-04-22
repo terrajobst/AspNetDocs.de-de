@@ -12,7 +12,7 @@ ms.openlocfilehash: e4e8368cb03422c79c1911419fe6895a1d89c3e5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386735"
 ---
 # <a name="templates"></a>Vorlagen
@@ -20,8 +20,8 @@ ms.locfileid: "59386735"
 > Einführung in die Verwendung der einzelseitenanwendungsvorlagen
 
 
-- [Backbone-Vorlage](backbonejs-template.md)
-- [Breeze-/Angular-Vorlage](breezeangular-template.md)
-- [Breeze-/Knockout-Vorlage](breezeknockout-template.md)
-- [EmberJS-Vorlage](emberjs-template.md)
+- [Backbone.js-Vorlage](backbonejs-template.md)
+- [Breeze.js-/Angular.js-Vorlage](breezeangular-template.md)
+- [Breeze.js-/Knockout.js-Vorlage](breezeknockout-template.md)
+- [Ember.js-Vorlage](emberjs-template.md)
 - [Hot Towel-Vorlage](hottowel-template.md)

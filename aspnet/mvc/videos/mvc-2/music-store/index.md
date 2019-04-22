@@ -12,7 +12,7 @@ ms.openlocfilehash: 1fdf6d7ab19354b0079add99c3e6930c60f772cf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381977"
 ---
 # <a name="music-store"></a>Music Store
@@ -22,4 +22,4 @@ ms.locfileid: "59381977"
 
 - [MVC Music Store, Teil 1: Einführung, Tools und Projektstruktur](mvc-music-store-part-1-intro-tools-and-project-structure.md)
 - [MVC Music Store, Teil 2: Controller](mvc-music-store-part-2-controllers.md)
-- [MVC Music Store, Teil 3: Ansichten und ViewModels](mvc-music-store-part-3-views-and-viewmodels.md)
+- [MVC Music Store, Teil 3: Views und ViewModels](mvc-music-store-part-3-views-and-viewmodels.md)

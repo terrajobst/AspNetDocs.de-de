@@ -12,7 +12,7 @@ ms.openlocfilehash: c7348463689f3607b3e0d8f3e830cf634a44e3b2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385617"
 ---
 # <a name="how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object"></a>[Gewusst wie:] Verwenden von ObjectDataSource mit einer Datenzugriffsklasse und einem Geschäftsobjekt

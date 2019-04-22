@@ -12,7 +12,7 @@ ms.openlocfilehash: 17204583d986f7938c38dc373cb296df01f16424
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386852"
 ---
 # <a name="how-do-i--use-validation-controls-in-aspnet"></a>[Gewusst wie:]  Verwenden von Validierungssteuerelementen in ASP.NET?

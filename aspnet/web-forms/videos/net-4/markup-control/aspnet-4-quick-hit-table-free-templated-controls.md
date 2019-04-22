@@ -12,7 +12,7 @@ ms.openlocfilehash: ad6ac3e88f0e619a254d03ca61e97adfbce5a90d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394392"
 ---
 # <a name="aspnet-4-quick-hit--table-free-templated-controls"></a>ASP.NET 4 "Schnelles drücken" – Tabelle Tabellenlose Steuerelemente mit Vorlagen

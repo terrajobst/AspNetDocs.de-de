@@ -12,7 +12,7 @@ ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385797"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
@@ -27,14 +27,14 @@ von Tim Ammann
 > 
 > Das Tutorial enthält die folgenden Abschnitte:
 > 
-> - [Vorraussetzungen](#_1_prerequisites)
+> - [Erforderliche Komponenten](#_1_prerequisites)
 > - [Erstellen einer Webanwendung](#_2_creating_a)
 > - [Verwenden der Seitenprüfung, navigieren Sie zu einer Ansicht](#_3_using_page)
 > - [Überprüfungsmodus zu aktivieren](#_4_inspection_mode)
 > - [Verwenden der Seitenprüfung Markup ändern](#_5_using_page)
 > - [Überprüfungsmodus und HTML-Fenster](#_6_inspection_mode)
 > - [Vorschau der CSS-Änderungen im Fenster Stile](#_7_previewing_css)
-> - [Automatische CSS-Synchronisierung](#css_auto_sync)
+> - [CSS Auto Sync](#css_auto_sync)
 > - [Mithilfe der CSS-Farbauswahl](#css_color_picker)
 > - [Zuordnen von dynamische Seitenelemente zu JavaScript](#map_dynamic_elements)
 

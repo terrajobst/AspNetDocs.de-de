@@ -12,7 +12,7 @@ ms.openlocfilehash: 27139782772aa00ffc556f89908449a87f1a1ea5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386709"
 ---
 # <a name="developing-and-deploying-in-a-shared-hosting"></a>Entwickeln und Bereitstellen in einem freigegebenen Hosting
@@ -24,4 +24,4 @@ In diesem Video wird Entwickeln von ASP.NET-Anwendungen in einer freigegebenen H
 [&#9654;Sehen Sie sich Video (46 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/developing-and-deploying-in-a-shared-hosting)
 
 > [!div class="step-by-step"]
-> [Weiter](working-with-iis7-deligated-admin.md)
+> [Nächste](working-with-iis7-deligated-admin.md)

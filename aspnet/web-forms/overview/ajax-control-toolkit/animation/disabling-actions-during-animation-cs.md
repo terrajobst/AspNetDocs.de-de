@@ -12,7 +12,7 @@ ms.openlocfilehash: 1cce2b05f125902ab05d493bebe753b2060b4d95
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384278"
 ---
 # <a name="disabling-actions-during-animation-c"></a>Deaktivieren von Aktionen während einer Animation (C#)
@@ -55,7 +55,7 @@ Es wäre auch möglich, auf die Schaltfläche nach der Animation, verwenden das 
 Aber im vorliegenden Szenario dies nutzlos seit der Schaltfläche wäre ausgeblendet wird, und ist nicht sichtbar ist, am Ende der Animation.
 
 
-[![THE-Schaltfläche ist deaktiviert, sobald die Ausführung der Animation](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)
+[![Die Schaltfläche ist deaktiviert, sobald die Animation ausgeführt wird](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)
 
 Die Schaltfläche ist deaktiviert, sobald die Animation ausgeführt wird ([klicken Sie, um das Bild in voller Größe anzeigen](disabling-actions-during-animation-cs/_static/image3.png))
 

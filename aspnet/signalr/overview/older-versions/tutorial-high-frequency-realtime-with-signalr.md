@@ -12,7 +12,7 @@ ms.openlocfilehash: 179f6dd3a60f8c49770ee34af93d54defad0adc4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379409"
 ---
 # <a name="high-frequency-realtime-with-signalr-1x"></a>Häufiges Senden von Echtzeitnachrichten mit SignalR 1.x
@@ -44,8 +44,8 @@ Während die Anwendung mit dieser Methode verwendet werden kann, ist dies keine 
 
 In diesem Tutorial enthält die folgenden Abschnitte:
 
-- [Vorraussetzungen](#prerequisites)
-- [Erstellen eines Projekts](#createtheproject)
+- [Erforderliche Komponenten](#prerequisites)
+- [Erstellen des Projekts](#createtheproject)
 - [Fügen Sie die ASP.NET SignalR und JQuery.UI-NuGet-Pakete](#nugetpackages)
 - [Erstellen Sie die grundlegende Anwendung](#baseapp)
 - [Die Client-Schleife hinzufügen](#clientloop)

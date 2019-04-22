@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f64e90eb2f8f87e2f382cb7897793e7071d305d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384499"
 ---
 # <a name="using-hovermenu-with-a-repeater-control-c"></a>Verwenden von HoverMenu mit einem Wiederholungssteuerelement (C#)
@@ -53,9 +53,9 @@ Jetzt die `HoverMenuExtender` ins Spiel. Damit, dass jedes Element in der Datenq
 Jetzt jedes Element in der Datenquelle ein Popups auf der rechten Seite zeigt (`PopupPosition` Attribut) nach einer Verzögerung von 50 Millisekunden (`PopDelay` Attribut).
 
 
-[![THE Hovermenü angezeigt wird, neben jedem Element im wiederholungsmodul](using-hovermenu-with-a-repeater-control-cs/_static/image2.png)](using-hovermenu-with-a-repeater-control-cs/_static/image1.png)
+[![Neben jedem Element im wiederholungsmodul wird im Menü angezeigt.](using-hovermenu-with-a-repeater-control-cs/_static/image2.png)](using-hovermenu-with-a-repeater-control-cs/_static/image1.png)
 
 Das Hovermenü angezeigt wird, neben jedem Element im wiederholungsmodul ([klicken Sie, um das Bild in voller Größe anzeigen](using-hovermenu-with-a-repeater-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](using-hovermenu-with-a-repeater-control-vb.md)
+> [Nächste](using-hovermenu-with-a-repeater-control-vb.md)

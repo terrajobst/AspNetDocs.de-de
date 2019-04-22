@@ -12,7 +12,7 @@ ms.openlocfilehash: e2f2246e2126bd6e648f861bcb296fab62a748bb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380105"
 ---
 # <a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC-Routing – Übersicht (C#)
@@ -95,7 +95,7 @@ Zum Schluss Aufrufen der Methode Index() in Listing 5 mit der URL gibt führt da
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample5.cs)]
 
 
-[![INvoking eine Controlleraktion, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
+[![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
 
 **Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-routing-overview-cs/_static/image2.png))
 
@@ -107,4 +107,4 @@ Die URL/Home/Index/3, problemlos auf der anderen Seite mit die Index-Controllera
 Das Ziel in diesem Tutorial wurde eine kurze Einführung in das ASP.NET-Routing bereit. Wir untersucht die Standardroutingtabelle, die Sie durch eine neue ASP.NET MVC-Anwendung zu erhalten. Sie erfahren, wie die Standardroute Controlleraktionen URLs zugeordnet.
 
 > [!div class="step-by-step"]
-> [Weiter](understanding-action-filters-cs.md)
+> [Nächste](understanding-action-filters-cs.md)

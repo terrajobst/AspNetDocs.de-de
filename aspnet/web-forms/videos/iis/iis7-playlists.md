@@ -12,7 +12,7 @@ ms.openlocfilehash: 41b7c5daa3638eaab25379cdb9bd13fa807823ca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398422"
 ---
 # <a name="iis7-playlists"></a>IIS7-Wiedergabelisten
@@ -24,4 +24,4 @@ Wenn Mediendateien in Ihre Website gehostet werden, können Wiedergabelisten Sie
 [&#9654;Sehen Sie sich Video (8 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/iis7-playlists)
 
 > [!div class="step-by-step"]
-> [Vorheriges](bit-rate-throttling.md)
+> [Vorherige](bit-rate-throttling.md)

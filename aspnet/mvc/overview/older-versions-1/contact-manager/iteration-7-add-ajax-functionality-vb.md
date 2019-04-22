@@ -12,7 +12,7 @@ ms.openlocfilehash: 3df4258b2de309aed5a3a598caeb1e7332c321f6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383958"
 ---
 # <a name="iteration-7--add-ajax-functionality-vb"></a>Iteration #7 – Hinzufügen von Ajax-Funktionen (VB)
@@ -94,7 +94,7 @@ Fügen Sie der folgende JavaScript-Code enthält, in der &lt;Head&gt; Tag der Ma
 Lassen Sie s zunächst, ändern unsere Ansicht "Index", sodass Sie auf eine Gruppe von Kontakten nur die Region der Sicht aktualisiert, die Kontakte angezeigt. Das rote Kästchen in Abbildung 1 enthält die Region, die aktualisiert werden sollen.
 
 
-[![UVorgangsstatus nur Kontakte](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
+[![Nur Kontakte aktualisieren](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
 
 **Abbildung 01**: Nur Kontakte aktualisieren ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-vb/_static/image2.png))
 
@@ -194,7 +194,7 @@ Wenn ein Benutzer die Browserschaltfläche zurück oder die Schaltfläche "Weite
 Aktuell, um einen Kontakt zu löschen, müssen Sie klicken auf den Link "löschen", und klicken Sie dann auf die Schaltfläche "löschen" in die Bestätigungsseite "löschen" angezeigt (siehe Abbildung 2). Dies scheint sehr viel Seitenanforderungen möchten einfach nur einen Datenbankdatensatz zu löschen.
 
 
-[![Ter Bestätigungsseite "löschen"](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
+[![Die Bestätigungsseite "löschen"](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
 
 **Abbildung 02**: Die Bestätigungsseite "löschen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-vb/_static/image4.png))
 
@@ -241,4 +241,4 @@ Wir werden auch browserverlaufsunterstützung, die Ajax-Anwendung hinzugefügt. 
 Schließlich haben wir einen Link "löschen", die HTTP-DELETE-Operationen unterstützt. Durch Ausführen von Ajax löscht, können wir Benutzer Datenbankdatensätze zu löschen, ohne dass der Benutzer eine zusätzliche Delete-Seite "Bestätigung" anfordern.
 
 > [!div class="step-by-step"]
-> [Vorheriges](iteration-6-use-test-driven-development-vb.md)
+> [Vorherige](iteration-6-use-test-driven-development-vb.md)

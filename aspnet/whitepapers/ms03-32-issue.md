@@ -12,7 +12,7 @@ ms.openlocfilehash: faad1530a499fd3f46a6a6c6e7c194ba6c55fa6c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386293"
 ---
 # <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>Fehlerbehebung für den Fehler „Die Serveranwendung ist nicht verfügbar“ nach Anwendung des Sicherheitsupdates für IE

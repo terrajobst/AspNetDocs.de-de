@@ -12,7 +12,7 @@ ms.openlocfilehash: 3b3efb3d5356d6009b86b93405de2cd8d8cddd43
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404233"
 ---
 # <a name="aspnet-45"></a>ASP.NET 4.5

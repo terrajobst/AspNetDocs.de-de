@@ -12,7 +12,7 @@ ms.openlocfilehash: 078382191595d1f65b5ebe9d0de8d41cd70e376d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419885"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse
@@ -28,7 +28,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Modellbindung](#mb)
 - [Routen](#route)
 - [Verwenden von Glimpse in Azure](#da)
-- [Zusätzliche Ressourcen](#addRes)
+- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="ig"></a>
 ## <a name="installing-glimpse"></a>Installieren von Glimpse

@@ -12,7 +12,7 @@ ms.openlocfilehash: d1b0a8bb4cd9758af4f77526584e3b1198c70e01
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399046"
 ---
 # <a name="ui-layouts-and-themes"></a>Benutzeroberflächen, Layouts und Designs

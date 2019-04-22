@@ -12,7 +12,7 @@ ms.openlocfilehash: 63efa46410e821947c6b0ee4ecd0c790fbf793e3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380092"
 ---
 # <a name="creating-a-business-logic-layer-vb"></a>Erstellen einer Geschäftslogikebene (VB)
@@ -129,7 +129,7 @@ Verwenden Sie die neue BLL Klassen, das geändert werden muss, ist einfach die e
 Die BLL-Klassen können auch mit dem ObjectDataSource-Steuerelement deklarativ (da die typisierte DataSet) zugegriffen werden. Wir werden ausführlicher zu "ObjectDataSource" in den folgenden Tutorials erläutern.
 
 
-[![Ter die Liste der Produkte wird in einer GridView-Ansicht angezeigt werden](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
+[![Die Liste der Produkte wird in einer GridView-Ansicht angezeigt.](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
 
 **Abbildung 3**: Die Liste der Produkte in einer GridView-Ansicht angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-vb/_static/image5.png))
 
@@ -148,7 +148,7 @@ Diese Regeln können und auf Datenbankebene ausgedrückt werden. Die Zeichenlän
 Zusätzlich zum Erzwingen dieser Regeln in der Datenbank sollten sie auch auf Datensatzebene erzwungen werden. In der Tat werden die Feldlänge und gibt an, ob ein Wert erforderlich oder optional ist bereits für jede DataTable-Satz von DataColumns erfasst. Um die vorhandenen feldebenenvalidierung automatisch anzuzeigen, wechseln Sie zur DataSet-Designer, wählen Sie ein Feld aus einem der vorhandenen DataTables, und fahren Sie mit dem Fenster "Eigenschaften". Wie in Abbildung 4 gezeigt, die `QuantityPerUnit` DataColumn in die `ProductsDataTable` hat eine maximale Länge von 20 Zeichen und lässt `NULL` Werte. Wenn wir versuchen, legen Sie die `ProductsDataRow`des `QuantityPerUnit` Eigenschaft in einen Zeichenfolgenwert, der mehr als 20 Zeichen ein `ArgumentException` ausgelöst.
 
 
-[![Ter DataColumn bietet grundlegende Feldebenenvalidierung](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
+[![Die Datenspalte stellt grundlegende Feldebenenvalidierung](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
 
 **Abbildung 4**: Der DataColumn bietet grundlegende Feldebenenvalidierung ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-vb/_static/image8.png))
 
@@ -156,7 +156,7 @@ Zusätzlich zum Erzwingen dieser Regeln in der Datenbank sollten sie auch auf Da
 Leider kann nicht angegeben Grenzen Überprüfungen, z. B. die `UnitPrice` Wert muss größer als oder gleich 0 (null), über das Eigenschaftenfenster. Um diese Art von feldebenenvalidierung bereitstellen müssen wir einen Ereignishandler für die der DataTable erstellen [ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx) Ereignis. Siehe die [vorherigen Lernprogramm](creating-a-data-access-layer-vb.md), die Datasets, DataTables und DataRow-Objekte, die durch das typisierte DataSet erstellt, die durch die Verwendung von partiellen Klassen erweitert werden können. Mithilfe dieser Technik können wir erstellen eine `ColumnChanging` -Ereignishandler für die `ProductsDataTable` Klasse. Zunächst erstellen Sie eine Klasse in der `App_Code` Ordner mit dem Namen `ProductsDataTable.ColumnChanging.vb`.
 
 
-[![ADd eine neue Klasse zu dem Ordner "App_Code"](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
+[![Fügen Sie eine neue Klasse, zu dem Ordner "App_Code"](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
 
 **Abbildung 5**: Fügen Sie eine neue Klasse, die `App_Code` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-business-logic-layer-vb/_static/image11.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385539"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4: Bedeutende Änderungen
@@ -167,7 +167,7 @@ In den nächsten beiden Abschnitten beschreiben die Änderungen, die Sie möglic
 
 Jedoch manuell auf Anwendungsebene geändert `Web.config` -Dateieinträge, die nicht genau der ursprünglichen Codebausteine Abschnitt Konfigurationsdefinitionen entsprechen, die mit Visual Studio 2008 eingeführten führt dazu, dass ASP.NET-Konfigurationsfehler. (Die Standardeinträge für die Konfiguration von den Visual Studio 2008 erstellten ordnungsgemäß funktionieren.) Ein häufiges Problem ist, die manuell geändert `Web.config` Dateien auslassen der **AllowDefinition** und **RequirePermission** Konfigurationsattribute, die auf verschiedenen Konfigurationsabschnitt gefunden werden Definitionen. Dies bewirkt, dass einen Konflikt zwischen den abgekürzten Konfigurationsabschnitt in auf Anwendungsebene `Web.config` Dateien und die vollständige Definition in ASP.NET 4 `machine.config` Datei. Daher löst das ASP.NET 4-Konfigurationssystem zur Laufzeit ein Fehler bei der Konfiguration aus.
 
-**Windows Vista SP2, Windows Server 2008 SP2, Windows 7, Windows Server 2008 R2, und auch Windows Vista SP1 und Windows Server 2008 SP1, in dem Hotfix KB958854 installiert ist.**
+**Windows Vista SP2, Windows Server 2008 SP2, Windows 7, Windows Server 2008 R2, and also Windows Vista SP1 and Windows Server 2008 SP1 where hotfix KB958854 is installed.**
 
 In diesem Szenario IIS 7 und IIS 7.5 native Konfiguration gibt das System zurück ein Konfigurationsfehler aufgetreten, da er auf einen Textvergleich führt die **Typ** -Attribut, das für einen verwalteten Konfigurationsabschnittshandler definiert ist. Da alle `Web.config` Dateien, die von Visual Studio 2008 und Visual Studio 2008 SP1 generiert werden, haben "3.5", in die Typzeichenfolge für die **"System.Web.Extensions"** (und Verwandte) konfigurationsabschnitthandler, da ASP.NET 4 `machine.config` Datei ist "4.0" in der **Typ** -Attribut für die gleiche konfigurationsabschnitthandler, Anwendungen, die in Visual Studio 2008 oder Visual Studio 2008 SP1, immer generiert werden Konfiguration in IIS 7 Validierungsfehler und IIS 7.5.
 
@@ -283,7 +283,7 @@ In ASP.NET 4 **HttpRequest** Eigenschaften stattdessen die folgenden Werte aufwe
 
 ## <a name="aspnet-20-applications-might-generate-httpexception-errors-that-reference-eurlaxd"></a>ASP.NET 2.0 Applications möglicherweise HttpException-Fehler, die auf eurl.axd verweisen generieren
 
-Nachdem ASP.NET 4 für IIS 6 aktiviert wurde, können ASP.NET 2.0-Anwendungen, die auf IIS 6 (in Windows Server 2003 oder Windows Server 2003 R2) ausgeführt, Fehler wie den folgenden generiert:
+Nachdem ASP.NET 4 für IIS 6 aktiviert wurde, generieren ASP.NET 2.0-Anwendungen, die auf IIS 6 (entweder unter Windows Server 2003 oder Windows Server 2003 R2) ausgeführt werden, möglicherweise Fehler wie den folgenden:
 
 `System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.`
 

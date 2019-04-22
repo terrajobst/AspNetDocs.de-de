@@ -12,7 +12,7 @@ ms.openlocfilehash: cc9407ba15474f58437817c9536d6040e0ea2e84
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381441"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>Anpassen des Z-Index eines DropShadow-Steuerelements (C#)
@@ -56,14 +56,14 @@ Wenn Sie dieses Skript ausführen, werden die Menüeinträge im unter dem Bereic
 Anschließend wird die `DropShadowExtender` Steuerelement keine Konflikte mehr mit den Menu-Steuerelement.
 
 
-[![Beses: Der Eintrag ist nicht sichtbar](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
+[![Vorher: Der Eintrag ist nicht sichtbar](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
 
 Vorher: Der Eintrag ist nicht sichtbar ([klicken Sie, um das Bild in voller Größe anzeigen](adjusting-the-z-index-of-a-dropshadow-cs/_static/image3.png))
 
 
-[![Azufügen nach: Wird angezeigt, den Menüeintrag](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
+[![Nachher: Der Eintrag im Menü angezeigt wird.](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
 
 Nachher: Der Menüeintrag im angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png))
 
 > [!div class="step-by-step"]
-> [Weiter](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [Nächste](manipulating-dropshadow-properties-from-client-code-cs.md)

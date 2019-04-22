@@ -12,7 +12,7 @@ ms.openlocfilehash: b8160c6f5ac090e120e86f4273749b756857967e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385708"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>Erstellen einen numerischen UpAndDown-Steuerelements mit einem Webdienst-Back-End (C#)
@@ -54,9 +54,9 @@ Hier ist das vollständige Markup für die Seite:
 Wenn Sie auf die Seite ausführen, beachten Sie, wie der Wert in das Textfeld immer verdoppelt sich, beim Klicken Sie auf die Schaltfläche "oben", und wird beim Klicken auf die untere Schaltfläche halbiert.
 
 
-[![Our-Zahlen, die eine Potenz von 2 angezeigt werden](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
+[![Nur Zahlen, die eine Potenz von 2 angezeigt werden.](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
 
 Nur Zahlen, die eine Potenz von 2 angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)
+> [Nächste](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)

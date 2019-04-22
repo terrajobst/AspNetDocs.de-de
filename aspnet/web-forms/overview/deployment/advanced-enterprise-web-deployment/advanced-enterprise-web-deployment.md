@@ -12,7 +12,7 @@ ms.openlocfilehash: 2f27e9436f246e3da2fbb129bbcd2d80e39b5f28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385318"
 ---
 # <a name="advanced-enterprise-web-deployment"></a>Erweiterte webbasierte Unternehmensbereitstellung
@@ -67,4 +67,4 @@ Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webber
 - [Konfigurieren von Team Foundation Server für die Webbereitstellung](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie zum Konfigurieren von TFS zur Unterstützung verschiedener Bereitstellungsszenarien, einschließlich der automatisierten Bereitstellung im Rahmen eines CI-Prozesses und bestimmte Builds Bereitstellungen manuell ausgelöst wird.
 
 > [!div class="step-by-step"]
-> [Weiter](performing-a-what-if-deployment.md)
+> [Nächste](performing-a-what-if-deployment.md)

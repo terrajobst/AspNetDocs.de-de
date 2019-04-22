@@ -12,7 +12,7 @@ ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382099"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Einführung in ASP.NET Web Pages - Veröffentlichen einer Website mit WebMatrix
@@ -45,7 +45,7 @@ Dieses Lernprogramm enthält vier Abschnitte:
 2. Veröffentlichen (Wählen Sie eine der folgenden)  
  a. [Veröffentlichen Sie Ihre Website in Microsoft Azure](#azure)  
  b. [Veröffentlichen Sie Ihre Website in ein Webhostingunternehmen](#host)
-3. [Aktualisieren der Live-Websites: Erneutes Veröffentlichen](#update)
+3. [Aktualisieren der Live-Websites: Republishing](#update)
 
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>Die Standardseite einrichten
@@ -217,4 +217,4 @@ Wechseln Sie zu der live-Website (Sie können den Link in der Success-Nachricht 
 - [ASP.NET WebMatrix ASP.NET Web Pages-Forum](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), Fragen, die hervorragend zum Posten und Antworten.
 
 > [!div class="step-by-step"]
-> [Vorheriges](layouts.md)
+> [Vorherige](layouts.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381808"
 ---
 # <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Infodatei für das Release WebMatrix und ASP.NET Web Pages (Razor) Beta 3
@@ -28,7 +28,7 @@ ms.locfileid: "59381808"
 - [Neue Features, Änderungen und bekannte Probleme in der Beta 3-Version](#Known_Issues)
 
     - [Probleme bei der Installation von WebMatrix](#Known_Issues_Installation)
-    - [ASP.NET Web Pages](#Known_Issues_ASPNET)
+    - [ASP.NET-Webseiten 2](#Known_Issues_ASPNET)
     - [SQL Server Compact](#Known_Issues_SQL_Server_Compact)
     - [Installieren von Anwendungen](#Known_Issues_Installing_Applications)
     - [Veröffentlichen von Anwendungen](#Known_Issues_Publishing_Applications)
@@ -70,7 +70,7 @@ ms.locfileid: "59381808"
 
 > .NET Framework, Version 4 ist erforderlich, für die Betaversion von WebMatrix. In bestimmten Fällen kann können der WebMatrix-Beta-Installer Sie versuchen, auf einer Plattform zu installieren, die nicht Teil der unterstützte Konfiguration ist. Insbesondere Windows Vista ohne das SP1-Update können Sie die Installation von WebMatrix Beta zu starten, aber die .NET Framework 4-Komponente fehl und die Installation blockieren.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Installieren Sie auf eine unterstützte Plattform, einschließlich:
 > 
 > - Windows 7
@@ -83,7 +83,7 @@ ms.locfileid: "59381808"
 
 #### <a name="issue-cannot-install-webmatrix-beta-3-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>Problem: WebMatrix Beta 3 kann nicht installiert werden, wenn Microsoft Visual Studio 2008 ohne Microsoft Visual Studio 2008 SP1 installiert ist
 
-> **Problemumgehung**  
+> **Workaround**  
 > Installieren Sie [Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en) aus dem Microsoft Download Center.
 
 
@@ -94,7 +94,7 @@ ms.locfileid: "59381808"
 > - *System.Data.SqlServerCe.dll* (ADO.NET-Anbieter)
 > - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Deinstallieren von SQLServer Compact 4.0. Herunterladen Sie und installieren Sie die Vollversion von .NET Framework 3.5 SP1 von folgendem Speicherort:  
 >   
 > [Microsoft .NET Framework 3.5 Service Pack 1 (vollständiges Paket)](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -106,7 +106,7 @@ ms.locfileid: "59381808"
 
 > Deinstallation von SQL Server Compact mithilfe von Befehlszeilenoptionen funktioniert nicht in dieser Version.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Verwendung *Programme und Funktionen* in der Windows-Systemsteuerung zum Deinstallieren von Microsoft SQL Server Compact 4.0.
 
 
@@ -116,7 +116,7 @@ ms.locfileid: "59381808"
 
 Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannte Probleme bei der Beta 3-Version von ASP.NET Web Pages mit Razor-Syntax.
 
-- [Neue Funktionen](#NewFeatures)
+- [Neue Features](#NewFeatures)
 - [Änderungen](#Changes)
 - [Probleme](#Issues)
 
@@ -209,7 +209,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 > 
 > Dies kann ein Problem sein, wenn Sie beabsichtigen, übergeben den falschen Tabellennamen an aber verwenden eine benutzerdefinierte Tabelle, für die Mitgliedschaft der `WebSecurity.InitializeDatabaseConnection` Methode. Da die Methode nicht standardmäßig einen Fehler ausgelöst wird, wenn die Tabelle, die Sie angeben, nicht vorhanden ist und sie stattdessen eine neue Tabelle erstellt, kann die Anwendung zu funktionieren scheinen. Allerdings kann Anwendungscode, der für die benutzerdefinierte Tabelle (und darin enthaltenen Felder) stützt sich schließlich unerwartete Fehlern auftreten.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Stellen Sie sicher, dass der Name in übergeben die `InitializeDatabaseConnection` Methode entspricht, das Benutzerprofil in der Mitgliedschaftsdatenbank Tabelle, oder stellen Sie sicher, dass, die `autoCreateTables` Parameter auf "false" festgelegt ist.
 
 
@@ -224,7 +224,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Wenn Sie benutzerdefinierte Assemblys in einem Projekt in Visual Studio verwenden, werden die Namespaces deklariert, die in diesen Assemblys zur Entwurfszeit nicht automatisch importiert. Verweise auf benutzerdefinierte Typen wird daher möglicherweise nicht zur Entwurfszeit erkannt werden und als nicht erkannt, in Visual Studio (unter Verwendung einer "Wellenlinie") gekennzeichnet sind. Dieses Problem tritt nur zur Entwurfszeit in Visual Studio; die Anwendung selbst ordnungsgemäß ausgeführt.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Einschließen einer `using` Anweisung (`imports` in Visual Basic), die auf die Entitäten, die zur Entwurfszeit nicht erkannt werden.
 
 
@@ -239,7 +239,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Nach dem upgrade auf Beta 3 können Sie möglicherweise ein Fehler angezeigt, die eine Hilfsklasse (z. B. die `Facebook` Klasse) kann nicht gefunden werden. In Beta 2 wird gestartet und Weiter geht es im Beta 3 wurden Hilfsprogramme zu Paketen verschoben, die Sie explizit installieren müssen. Vorhandene Websites werden nicht aktualisiert, um diese Pakete enthalten; Dies schließt die Standorte in der *\My Documents\IISExpress* oder *\My Documents\My Websites* Ordner. Insbesondere werden Ihnen dieser Fehler angezeigt, wenn Sie die Standardwebsite in verwenden *My Sites* (WebSite1), enthält einen Verweis auf die `Twitter` Helper.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Kommentieren Sie Aufrufe an alle Hilfsprogramme in der Website, und führen Sie die  *\_Admin* Seite, und installieren Sie das Paket oder Pakete, die die Hilfsprogramme enthalten, die Sie verwenden möchten. Nachdem Sie das Paket installiert haben, können Sie die auskommentierung der Zeilen, die Hilfsmethoden zu verweisen.
 
 
@@ -271,7 +271,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 > 
 > Dieses Problem tritt nicht auf, wenn Sie die Beta-3-Version auf einem Computer ohne geladen.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > In der Systemsteuerung Deinstallieren von ASP.NET Web Pages. Installieren Sie Beta 3-Version erneut.
 
 
@@ -292,7 +292,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Während der Bereitstellung, Kopien der ASP.NET Web Pages-Assemblys (z. B. *Microsoft.WebPages.dll*) auf die *Bin* Ordner der Website auf dem Server. (Dies könnte bei der Bereitstellung automatisch stattgefunden haben, oder weil der Entwickler explizit auf die Assemblys kopiert.) Wenn die Beta-3-Version installiert ist, Fehler erfolgt jedoch, wie z. B. Fehler, die bestimmte Typen nicht gefunden. Dies tritt auf, da eine Anzahl von ASP.NET Web Pages-Typen in verschiedene Namespaces für Beta 3-Version verschoben wurden.
 > 
-> **Problemumgehung**   
+> **Workaround**   
 > Deaktivieren der *Bin* Ordner der bereitgestellten Anwendung, kopieren Sie die neuen Assemblys in den Ordner (oder erneute Bereitstellung der Anwendung), und klicken Sie dann die Anwendung neu zu starten.
 
 
@@ -304,7 +304,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 > 
 > Das Problem tritt auf, weil der URL-Umschreibung nicht standardmäßig für IIS 7 oder IIS 7.5 aktiviert ist. Das likeliest Szenario ist, dass das Problem nicht angezeigt werden, wird wenn Tests lokal mithilfe von IIS Express, aber Sie entdecken Sie es beim Bereitstellen Ihrer Websites auf einer hosting-Website.
 > 
-> **Problemumgehung**
+> **Workaround**
 > 
 > - Wenn Sie die Kontrolle über den Server-Computer verfügen, installieren Sie auf dem Computer das Update, das beschrieben ist [ein Update ist verfügbar, können Sie bestimmte IIS 7.0 oder IIS 7.5-Handler behandelt Anforderungen, deren URLs nicht mit einem Punkt enden](https://support.microsoft.com/kb/980368).
 > - Wenn Sie keine Kontrolle über den Server-Computer verfügen (z. B. Sie bereitstellen auf einer hosting-Website), fügen Sie Folgendes auf der Website *"Web.config"* Datei:
@@ -317,7 +317,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Wenn Sie ASP.NET Web Pages in einem Webanwendungsprojekt oder ASP.NET MVC-Anwendung verwendet haben, können Sie möglicherweise ein Fehler angezeigt, die *WebPageHttpApplication* wurde nicht gefunden.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Wenn Sie diesen Fehler erhalten, ändern Sie die Basisklasse, von der die Anwendung abgeleitet wird. In der *"Global.asax"* Datei, die folgende Zeile ändern:
 > 
 > [!code-csharp[Main](beta3/samples/sample8.cs)]
@@ -351,7 +351,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Bei Verwendung von Visual Basic (Erstellen von *vbhtml* Dateien), wird die `Database` und `WebGrid` Hilfsprogramme funktioniert nicht, wenn die Anwendung festgelegt wurde, auf die mittlere Vertrauenswürdigkeit verwenden.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Legen Sie vorübergehend die Anwendung volle Vertrauenswürdigkeit verwenden.
 
 <a id="Known_Issues_SQL_Server_Compact"></a>
@@ -361,7 +361,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > SQL Server Compact 4.0 nicht erkennt die `Encrypt` Eigenschaft der `SqlCeConnection` Klasse. Sie sollten diese Eigenschaft nicht verwenden, um Datenbankdateien zu verschlüsseln. Die `Encrypt` Eigenschaft wurde in SQLServer Compact 3.5-Version als veraltet markiert und nur für die Abwärtskompatibilität beibehalten wurde. 
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Verwenden der `Encryption Mode` Eigenschaft der `SqlCeConnection` Klasse, um SQL Server Compact 4.0-Datenbankdateien zu verschlüsseln. Das folgende Beispiel zeigt die Vorgehensweise: Erstellen einer verschlüsselten SQL Server Compact 4.0-Datenbank, mithilfe der `Encryption Mode` Eigenschaft:
 > 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
@@ -385,7 +385,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Die systemeigene DLLs von SQL Server Compact 4.0 benötigen, die Microsoft Visual C++ 2008-Laufzeitbibliotheken (x 86, IA64 und x 64), Servicepack 1.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Installieren Sie .NET Framework 3.5 SP1. Dadurch wird auch die Visual C++ 2008-Runtime-Bibliotheken SP1 installiert. Sie können die Bibliotheken von folgendem Speicherort herunterladen:   
 >   
 > [Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package ATL Security Update](https://go.microsoft.com/fwlink/?LinkId=194827)
@@ -400,7 +400,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 > 
 > [!code-xml[Main](beta3/samples/sample17.xml)]
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Deinstallieren Sie SQL Server Compact 4.0-CTP1. Herunterladen Sie und installieren Sie den Vollversionen von .NET Framework von folgendem Speicherort:
 > 
 > [Microsoft .NET Framework 3.5 Service Pack 1 (vollständiges Paket)](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -415,7 +415,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problem: Installieren einer Anwendung kann eine lange dauern, wenn Ordner "Eigene Dateien" des Benutzers auf einer Netzwerkfreigabe umgeleitet wird
 
-> **Problemumgehung**  
+> **Workaround**  
 > Keine Die Anwendung möglicherweise einige Zeit dauern installieren, jedoch ordnungsgemäß installiert wird.
 
 
@@ -427,7 +427,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > In der **Veröffentlichungseinstellungen** Dialogfeld, wenn die Ziel-URL nicht mit beginnt `http://` oder `https://`, die Website funktioniert möglicherweise nicht nach der Bereitstellung.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Stellen Sie sicher, dass vor dem Veröffentlichen einer Website, die Ziel-URL in die **Veröffentlichungseinstellungen** Dialogfeld beginnt mit `http://` oder `https://`.
 
 
@@ -435,7 +435,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Der Fehler kann aus verschiedenen Gründen auftreten. Ein möglicher Grund kann dieser Fehler angezeigt wird, wenn das Datenbankskript enthält eine einfache Anführungszeichen (') und der Ziel-MySQL-Datenbank der Standard-Zeichensatz nicht in UTF-8.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Legen Sie den Standardzeichensatz für die MySQL-Remotedatenbank in UTF-8.
 
 
@@ -454,7 +454,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Navigieren zu einer WCF-Anwendung tritt ein Fehler wie den folgenden Ausdruck:
 > 
-> *Konnte nicht geladen werden, Datei oder Assembly ' "Microsoft.Web.Administration", Version = 7.0.0.0, Kultur = Neutral, PublicKeyToken = 31bf3856ad364e35' oder eine ihrer Abhängigkeiten. Die angegebene Datei wurde nicht gefunden.“*
+> *Konnte nicht geladen werden, Datei oder Assembly ' "Microsoft.Web.Administration", Version = 7.0.0.0, Kultur = Neutral, PublicKeyToken = 31bf3856ad364e35' oder eine ihrer Abhängigkeiten. Das System konnte die angegebene Datei nicht finden.*
 > 
 > Dies tritt auf, da IIS Express-Betaversion WCF standardmäßig nicht unterstützt.
 > 
@@ -477,7 +477,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 > - Klicken Sie auf Windows Vista oder Windows 7 Sie angemeldet sind, sich mit einem Konto an, die nicht über Administratorberechtigungen verfügt, und (User Account Control, UAC) ist deaktiviert.
 > - Verwenden Sie Microsoft Windows XP oder Microsoft Windows Server 2003.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Die meisten Aufgaben in WebMatrix Beta 3 sind keine Administratorberechtigungen erforderlich. Für diejenigen, die ausführen, können Sie den Vorgang als Administrator ausführen, oder gehen Sie folgendermaßen vor:
 > 
 > - Auf Windows Vista oder Windows 7 aktiviert.
@@ -488,7 +488,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Die **Standort Web Gallery** Option ist deaktiviert, wenn der Webplattform-Installer 3.0 nicht installiert ist.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Installieren Sie die [Microsoft Webplattform-Installer 3.0](https://go.microsoft.com/fwlink/?LinkID=194638).
 
 
@@ -496,7 +496,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Unter Windows Server 2003 beim Starten von einer Seite oder starten IIS Express wird IIS Express nicht gestartet. Für Webseiten wird eine Fehlermeldung angezeigt, der angibt, dass die Anwendung von einem Benutzer ohne Administratorrechte gestartet wurde.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Starten Sie WebMatrix Beta 3 als Administrator an. Weitere Informationen finden Sie unter den folgenden Knowledge Base-Artikel:  
 >   
 > [Eine Anwendung, die von einem Benutzer ohne Administratorrechte gestartet wird kann den HTTP-Datenverkehr des Computers nicht Lauschen auf dem die Anwendung in Windows Vista, Windows Server 2003 oder Windows XP ausgeführt wird.](https://support.microsoft.com/kb/939786)
@@ -506,7 +506,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Google Chrome wird nicht angezeigt, in der Liste der Browser unter **ausführen** auf die **Startseite** Registerkarte.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Einige Versionen von Google Chrome ist nicht selbst ordnungsgemäß mit dem Default Programs-Feature in Windows registriert werden. Dieses Problem zu umgehen, starten Sie Google Chrome, klicken Sie auf die *anpassen und Google Chrome-Steuerelement* Menü klicken Sie auf *Optionen*, und klicken Sie dann auf *stellen Google Chrome mein Standardbrowser*.
 
 
@@ -514,7 +514,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Die **Fremdschlüssel** Dialogfeld lässt nicht zu der Primärschlüsselname geben an der Primärschlüsseltabelle.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Dies ist beabsichtigt. Sie müssen nicht den Namen des primären Schlüssels auf der Primärschlüsseltabelle eingeben.
 
 
@@ -522,7 +522,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > Die **Beziehungen** Schaltfläche der **Tabelle** Registerkarte die **Datenbanken** Arbeitsbereich ist für SQL Server Compact-Datenbanken deaktiviert.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Keine SQL Server Compact unterstützt keine Beziehungen zwischen Tabellen.
 
 
@@ -530,7 +530,7 @@ Dieser Abschnitt des Dokuments Beschreibt neue Features, Änderungen und bekannt
 
 > In SQL Server Compact 4.0, wenn Sie einen Datentyp nicht wie z. B. angeben `SqlDbType` oder `DbType` für Parameter in parametrisierten Abfragen, wird eine Ausnahme ausgelöst, wenn die Abfrage ausgeführt wird.
 > 
-> **Problemumgehung**  
+> **Workaround**  
 > Legen Sie den Datentyp für Parameter explizit z.B. `SqlDbType` oder `DbType`. Dies ist besonders wichtig, im Fall von BLOB-Datentypen (`image` und `ntext`). Verwenden Sie Code wie folgt:
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]

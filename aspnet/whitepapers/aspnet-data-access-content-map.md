@@ -12,7 +12,7 @@ ms.openlocfilehash: d120c184f6cf7dd0db075bbfac17214d7467664a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383719"
 ---
 # <a name="aspnet-data-access---recommended-resources"></a>ASP.NET: Datenzugriff – Empfohlene Ressourcen
@@ -55,7 +55,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Optimieren von Datenzugriffsleistung](#optimizingdataaccess)
 - [Bereitstellen einer Datenbank](#deploying)
 - [Zugreifen auf Daten über einen Webdienst](#webservice)
-- [Zusätzliche Ressourcen](#additional)
+- [Additional Resources](#additional) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="gettingstarted"></a>
 

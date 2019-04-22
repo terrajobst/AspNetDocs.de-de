@@ -12,7 +12,7 @@ ms.openlocfilehash: 6e685d599e3dbc095631e3c28a603ac9c38f799c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385890"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>Vorheriges Festlegen von Listeneinträgen mit CascadingDropDown (VB)
@@ -53,7 +53,7 @@ Die Methode gibt ein Array vom Typ CascadingDropDown-Wert zurück. Der Konstrukt
 Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zusammen, das zweite Argument wird standardmäßig ausgewählt.
 
 
-[![Tseine Liste gefüllt und standardmäßig automatisch ausgewählt.](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
+[![Die Liste gefüllt ist, und standardmäßig automatisch ausgewählt.](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
 
 Die Liste gefüllt und standardmäßig automatisch ausgewählt wird ([klicken Sie, um das Bild in voller Größe anzeigen](presetting-list-entries-with-cascadingdropdown-vb/_static/image3.png))
 

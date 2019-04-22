@@ -12,7 +12,7 @@ ms.openlocfilehash: 723a38de4569b0bb58817c70aabb84fef8e19591
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395094"
 ---
 # <a name="using-browser-link-in-visual-studio-2013"></a>Verwenden einer Browserverknüpfung in Visual Studio 2013
@@ -64,7 +64,7 @@ Ich beim Klicken auf die **aktualisieren** Schaltfläche, die Änderung in beide
 
 ![](using-browser-link/_static/image8.png)
 
-**Hinweise**
+**Notizen**
 
 - Legen Sie zum Aktivieren des Browserlinks `debug=true` in die [ &lt;Kompilierung&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) Element in der Datei Web.config des Projekts.
 - Die Anwendung muss auf "localhost" ausgeführt werden.

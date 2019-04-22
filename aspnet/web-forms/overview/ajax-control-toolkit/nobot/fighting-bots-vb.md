@@ -12,7 +12,7 @@ ms.openlocfilehash: 6baf5447d31d00b89cb7ddf526553456fecbbf6e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409472"
 ---
 # <a name="fighting-bots-vb"></a>Abwehren von Bots (VB)
@@ -65,9 +65,9 @@ Schließlich benötigen Sie ein Formular zum Senden und ein Label-Element die Me
 Wenn Sie dieses Skript ausführen und Deaktivieren von JavaScript oder senden Sie das Formular in den ersten zwei Sekunden oder senden Sie das Formular sieben Mal innerhalb von 30 Sekunden, erhalten Sie eine Fehlermeldung angezeigt. Verwenden Sie dieses Steuerelement jedoch bedacht, da nur ungefähr 90 bis 95 % der Benutzer über die JavaScript-aktivierte verfügen, daher 5 bis 10 % der Benutzer nicht `NoBot`des testen.
 
 
-[![Tseine Fehlermeldung von einem Bot wurde möglicherweise verursacht](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
+[![Diese Fehlermeldung kann durch einen Bot verursacht werden](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
 
 Diese Fehlermeldung kann auftreten, durch einen Bot ([klicken Sie, um das Bild in voller Größe anzeigen](fighting-bots-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](fighting-bots-cs.md)
+> [Vorherige](fighting-bots-cs.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 6e86626c2949543c0a36a210d52ee8297156a017
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382165"
 ---
 # <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (VB)
@@ -169,7 +169,7 @@ Nach dem auf diese Weise finden Sie auf der Website über einen Browser. Wenn Si
 Abbildung 5 zeigt die `MultipleContentPlaceHolders.aspx` Seite, wenn Sie über einen Browser angezeigt. Beachten Sie, dass der Titel genau der Seite Dateinamen (nicht die Erweiterung), "MultipleContentPlaceHolders".
 
 
-[![If einen Titel nicht explizit angegeben ist, der Seite Dateinamen automatisch verwendet](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
+[![Ein Titel nicht explizit angegeben ist, ist der Seite Filename automatisch verwendet.](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
 
 **Abbildung 05**: Wenn ein Titel nicht explizit angegeben ist, auf der Seite-Dateiname ist automatisch verwendet ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image7.png))
 
@@ -191,7 +191,7 @@ Das Standortsystem für die Zuordnung basiert auf der [Anbietermodell](http://as
 Zunächst erstellen Sie eine Siteübersichtsdatei im mit dem Namen der Website-Stammordner `Web.sitemap`. Zu diesem Zweck mit der rechten Maustaste auf den Namen der Website im Projektmappen-Explorer, neues Element hinzufügen, und wählen Sie die Vorlage für die Siteübersicht. Stellen Sie sicher, dass die Datei heißt `Web.sitemap` , und klicken Sie auf Hinzufügen.
 
 
-[![ATT-Datei mit dem Namen Web.sitemap zum Stammordner der Website](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
+[![Fügen Sie die Datei Web.sitemap zum Stammordner der Website](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
 
 **Abbildung 06**: Hinzufügen einer Datei mit dem Namen `Web.sitemap` zum Stammordner der Website ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image10.png))
 
@@ -224,7 +224,7 @@ Zunächst entfernen das vorhandene Markup für unsortierte Liste, aus dem Abschn
 Wählen Sie aus dem Konfigurations-Assistenten so binden Sie die ListView an ein neues SiteMapDataSource-Steuerelement, das mit dem Namen `LessonsDataSource`. Das Steuerelement SiteMapDataSource gibt die hierarchische Struktur vom Standortsystem Zuordnung zurück.
 
 
-[![BSuchen Sie das LessonsList ListView-Steuerelement ein Steuerelement SiteMapDataSource](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
+[![Binden eines SiteMapDataSource-Steuerelements an das LessonsList ListView-Steuerelement](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
 
 **Abbildung 08**: Binden eines SiteMapDataSource-Steuerelements an das LessonsList ListView-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image14.png))
 
@@ -239,7 +239,7 @@ Die `LayoutTemplate` generiert das Markup für eine ungeordnete Liste (`<ul>...<
 Besuchen Sie nach dem Konfigurieren der ListView Vorlagen, die Website aus. Wie in Abbildung 9 gezeigt, enthält der Abschnitt Lektionen ein einzelnes Element mit Aufzählungszeichen, Home. Wo befinden sich die Info "und" mehrere ContentPlaceHolder-Steuerelemente Lektionen verwenden? Die SiteMapDataSource soll einen hierarchischen Satz von Daten zurückgeben, aber das ListView-Steuerelement kann nur eine einzelne Ebene der Hierarchie angezeigt. Daher wird nur die erste Ebene der Siteübersichtsknoten, die von der SiteMapDataSource zurückgegeben.
 
 
-[![Ter Lektionen Abschnitt enthält eine einzelne Listenelement](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
+[![Die Lektionen-Abschnitt enthält ein einziges Listenelement](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
 
 **Abbildung 09**: Die Lektionen-Abschnitt enthält ein einzelnes Element der Liste ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image17.png))
 
@@ -254,7 +254,7 @@ Durch diese Änderung die ListView Zeigt Elemente an Aufzählungszeichen für Ab
 Konfigurieren die SiteMapDataSource, um dem Startknoten auszulassen und explizite hinzufügen eine Startseite Aufzählungspunkt zeigt die Lektionen im Abschnitt nun die beabsichtigte Ausgabe.
 
 
-[![Ter Lektionen Abschnitt enthält ein Aufzählungszeichen-Element für Privatanwender und jeder untergeordnete Knoten](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
+[![Der Lektionen-Abschnitt enthält eine Aufzählungspunkt für Privatanwender und jeden untergeordneten Knoten](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
 
 **Abbildung 10**: Der Lektionen-Abschnitt enthält eine Aufzählungspunkt für Privatanwender und jeder untergeordnete Knoten ([klicken Sie, um das Bild in voller Größe anzeigen](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image20.png))
 

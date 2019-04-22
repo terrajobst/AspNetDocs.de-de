@@ -13,7 +13,7 @@ ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381899"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity – Empfohlene Ressourcen
@@ -40,7 +40,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) in diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 5-app mit Facebook und Google OAuth 2-Autorisierung zu schreiben. Außerdem wird veranschaulicht, mit der Identity-Datenbank zusätzliche Daten hinzuzufügen.
 - [Bereitstellen eine sicheren ASP.NET MVC-app mit Mitgliedschaft, OAuth und SQL-Datenbank in eine Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). In diesem Tutorial wird Azure-Bereitstellung hinzugefügt. So sichern Sie Ihre app mit Rollen, wie Sie die Mitgliedschafts-API zu verwenden, um zusätzliche Sicherheitsfeatures, Benutzer und Rollen hinzuzufügen.
-- [Einführung in ASP.NET Identity](introduction-to-aspnet-identity.md)
+- [Einführung zu ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [Erstellen einer sicheren ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
 - [ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
@@ -60,7 +60,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 - [Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [Zweistufige Authentifizierung mithilfe von SMS und E-Mails mit ASP.NET Identity](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter nach ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [Hinzufügen von ASP.NET Identity zu einem leeren oder vorhandenen Web Forms-Projekt](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - MSDN-Magazin [externe Authentifizierung mit ASP.NET Identity](https://msdn.microsoft.com/magazine/dn745860.aspx) von Dino Esposito
 - MSDN-Magazin[ein erster Blick auf ASP.NET Identity](https://msdn.microsoft.com/magazine/dn605872.aspx) von Dino Esposito

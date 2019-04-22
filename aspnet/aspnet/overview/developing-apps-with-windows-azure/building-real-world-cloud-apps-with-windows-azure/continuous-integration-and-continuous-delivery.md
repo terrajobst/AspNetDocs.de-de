@@ -12,7 +12,7 @@ ms.openlocfilehash: 0fb0a331a2a6e2af5c5097db8b57942525d24ffc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384304"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Continuous Integration und Continuous Delivery (erstellen realer Cloud-Apps mit Azure)
@@ -34,7 +34,7 @@ Im Allgemeinen wird empfohlen, dass Sie continuous Delivery für Ihre Entwicklun
 
 Im folgenden Diagramm aus [ein Microsoft Patterns and Practices e-Book Informationen zu continuous Delivery](https://aka.ms/ReleasePipeline) veranschaulicht einen typischen Workflow. Klicken Sie auf das Bild, das er finden Sie unter voller Größe in seinem ursprünglichen Kontext.
 
-[![CDelivery-Workflow Ontinuous](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
+[![Continuous Delivery-workflow](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>Wie die Cloud kostengünstige CI- und CD ermöglicht
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d13fbfdb8d2fe66c5ff036060b9289017f79d14
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421536"
 ---
 # <a name="using-multiple-popup-controls-c"></a>Verwenden von mehreren Popupsteuerelementen (C#)
@@ -49,9 +49,9 @@ Jetzt erweitern Sie die beiden Textfelder mit einem `PopupControlExtender`. Die 
 Nun, wenn Sie in einem Textfeld klicken, wird ein Kalender angezeigt unterhalb des Felds, in dem ein Datum ausgewählt. (Beim Abrufen des ausgewählten Datums zurück in die Textfelder wird in einem anderen Tutorial erläutert.)
 
 
-[![Ter Kalender wird angezeigt, in das Textfeld klickt der Benutzer](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
+[![Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt.](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
 
 Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt ([klicken Sie, um das Bild in voller Größe anzeigen](using-multiple-popup-controls-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [Nächste](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

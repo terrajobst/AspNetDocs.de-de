@@ -12,7 +12,7 @@ ms.openlocfilehash: 3c825b61734a7987d919ff40d6641471117a11dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416674"
 ---
 # <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Verwenden von vorhandenen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (C#)
@@ -39,7 +39,7 @@ In diesem Tutorial werden wir konfigurieren den TableAdapter um vorhandene gespe
 Visual Studio erleichtert das Hinzufügen von neuen gespeicherten Prozeduren in einer Datenbank. Let s hinzufügen eine neue gespeicherte Prozedur zur Northwind-Datenbank, die alle Spalten zurückgibt. die `Products` mit einer bestimmten Tabelle `CategoryID` Wert. Erweitern Sie im Server-Explorer-Fenster die Northwind-Datenbank ein, sodass die Ordner - Datenbankdiagramme, Tabellen, Ansichten und So weiter – angezeigt werden. Wie wir im vorherigen Tutorial gesehen haben, enthält der Ordner für gespeicherte Prozeduren der Datenbank s vorhandene gespeicherte Prozeduren. Um eine neue gespeicherte Prozedur hinzuzufügen, mit der rechten Maustaste in des Ordners gespeicherte Prozeduren und wählen Sie im Kontextmenü die Option neue gespeicherte Prozedur hinzufügen.
 
 
-[![RKlicken Sie mit der rechten Maustaste-auf den Ordner für gespeicherte Prozeduren und Hinzufügen einer neuen gespeicherten Prozedur](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image1.png)
+[![Mit der rechten Maustaste in des Ordners gespeicherte Prozeduren, und fügen Sie eine neue gespeicherte Prozedur hinzu.](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image1.png)
 
 **Abbildung 1**: Mit der rechten Maustaste in den Ordner für gespeicherte Prozeduren und Hinzufügen einer neuen gespeicherten Prozedur ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image3.png))
 
@@ -58,7 +58,7 @@ Zum Ausführen dieser `CREATE PROCEDURE` Skript und fügen Sie die gespeicherte 
 Abbildung 2 zeigt Visual Studio, nachdem die `Products_SelectByCategoryID` gespeicherte Prozedur wurde gespeichert.
 
 
-[![Ter gespeicherte Prozedur Products_SelectByCategoryID wurde in der Datenbank hinzugefügt](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image4.png)
+[![Die gespeicherte Prozedur Products_SelectByCategoryID wurde in der Datenbank hinzugefügt](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image4.png)
 
 **Abbildung 2**: Die gespeicherte Prozedur `Products_SelectByCategoryID` wurde in der Datenbank hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image6.png))
 
@@ -70,7 +70,7 @@ Nachdem die `Products_SelectByCategoryID` gespeicherte Prozedur wurde in der Dat
 Öffnen Sie zunächst die `NorthwindWithSprocs` DataSet. Mit der rechten Maustaste auf die `ProductsTableAdapter` , und wählen Sie die Abfrage hinzufügen, um den TableAdapter-Abfrage-Konfigurations-Assistenten zu starten. In der [vorherigen Lernprogramm](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md) ausgewählt, um den TableAdapter, erstellen Sie eine neue gespeicherte Prozedur für uns zu haben. In diesem Tutorial allerdings möchten wir, die neue Methode des TableAdapter zu verknüpfen, mit dem vorhandenen `Products_SelectByCategoryID` gespeicherte Prozedur. Daher wählen Sie die Option vorhandene gespeicherte Prozedur verwenden, aus dem ersten Schritt des Assistenten-s, und klicken Sie dann auf Weiter.
 
 
-[![CWählen Sie aus der vorhandene gespeicherte Prozedur Option](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)
+[![Wählen Sie die vorhandene gespeicherte Prozedur-Option verwenden](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)
 
 **Abbildung 3**: Wählen Sie die vorhandene gespeicherte Prozedur Option ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image9.png))
 
@@ -78,7 +78,7 @@ Nachdem die `Products_SelectByCategoryID` gespeicherte Prozedur wurde in der Dat
 Der folgende Bildschirm bietet eine Dropdown-Liste mit der s-Datenbank gespeicherte Prozeduren aufgefüllt. Eine gespeicherte Prozedur auswählen, sind seine Eingabeparameter auf der linken Seite und die Datenfelder zurückgegeben (sofern vorhanden) auf der rechten Seite aufgeführt. Wählen Sie die `Products_SelectByCategoryID` gespeicherte Prozedur aus der Liste aus, und klicken Sie auf Weiter.
 
 
-[![PTabellenebenen die Products_SelectByCategoryID gespeicherte Prozedur](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)
+[![Wählen Sie die Products_SelectByCategoryID gespeicherten Prozedur](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)
 
 **Abbildung 4**: Wählen Sie die `Products_SelectByCategoryID` Stored Procedure ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image12.png))
 
@@ -88,7 +88,7 @@ Im nächste Bildschirm werden wir gefragt, welche Art von Daten von der gespeich
 Da die `Products_SelectByCategoryID` gespeicherte Prozedur gibt alle Produkte, die einer bestimmten Kategorie gehören, wählen Sie die erste Antwort - Tabellendaten - aus, und klicken Sie auf Weiter.
 
 
-[![INdicate, dass die gespeicherte Prozedur zurückgibt, tabellarische Daten](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)
+[![Anzugeben Sie, dass die gespeicherte Prozedur Tabellendaten zurück.](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)
 
 **Abbildung 5**: Um anzugeben, dass die gespeicherte Prozedur tabellarische Daten zurückgibt ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image15.png))
 
@@ -96,7 +96,7 @@ Da die `Products_SelectByCategoryID` gespeicherte Prozedur gibt alle Produkte, d
 Übrig bleibt, um anzugeben, welche Methode-Muster verwenden die Namen für diese Methoden folgen. Lassen Sie eine DataTable und die Rückgabe, eine DataTable-Optionen aktiviert, aber benennen Sie die Methoden, die, beide der Füllung `FillByCategoryID` und `GetProductsByCategoryID`. Klicken Sie dann auf Weiter, um eine Zusammenfassung der Aufgaben zu überprüfen, die der Assistent ausführt. Wenn alles korrekt aussieht, klicken Sie auf "Fertig stellen".
 
 
-[![NAme der Methoden FillByCategoryID und GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
+[![Namen der Methoden FillByCategoryID und GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
 
 **Abbildung 6**: Benennen Sie die Methoden `FillByCategoryID` und `GetProductsByCategoryID` ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image18.png))
 
@@ -125,12 +125,12 @@ So testen Sie die neu hinzugefügte `Products_SelectByCategoryID` gespeicherte P
 Öffnen der `ExistingSprocs.aspx` auf der Seite die `AdvancedDAL` Ordner, und ziehen Sie einem DropDownList-Steuerelement aus der Toolbox in den Designer. Legen Sie die DropDownList-Zuordnungsvorgänge `ID` Eigenschaft `Categories` und die zugehörige `AutoPostBack` Eigenschaft `true`. Binden Sie als Nächstes aus sein Smarttag, DropDownList an eine neue, mit dem Namen "ObjectDataSource" `CategoriesDataSource`. Dem ObjectDataSource-Steuerelement so konfigurieren, dass, die Daten aus der abgerufen die `CategoriesBLL` Klasse s `GetCategories` Methode. Legen Sie die Dropdownlisten in der Update-, INSERT-, und löschen Sie die Registerkarten auf (keine).
 
 
-[![REtrieve Daten aus der Klasse CategoriesBLL s GetCategories Methode](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image19.png)
+[![Abrufen von Daten aus der CategoriesBLL Klasse s GetCategories-Methode](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image19.png)
 
 **Abbildung 7**: Abrufen von Daten aus der `CategoriesBLL` Klasse s `GetCategories` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image21.png))
 
 
-[![Su. a. die Dropdownlisten in der Update-, INSERT- und DELETE Registerkarten (keine)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image22.png)
+[![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image22.png)
 
 **Abbildung 8**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image24.png))
 
@@ -145,12 +145,12 @@ An diesem Punkt sollten die DropDownList und "ObjectDataSource" s deklarative Ma
 Ziehen Sie anschließend einer GridView-Ansicht auf den Designer, und platzieren es unterhalb der Dropdownliste aus. Legen Sie die GridView s `ID` zu `ProductsByCategory` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `ProductsByCategoryDataSource`. Konfigurieren der `ProductsByCategoryDataSource` "ObjectDataSource" Verwenden der `ProductsBLLWithSprocs` -Klasse, dass rufen Sie die Daten mithilfe der `GetProductsByCategoryID(categoryID)` Methode. Da diese GridView nur zum Anzeigen von Daten verwendet werden wird, legen Sie die Dropdownlisten in der Update-, INSERT-, löschen Sie Registerkarten (keine) und klicken Sie auf Weiter.
 
 
-[![CKonfigurieren der ProductsBLLWithSprocs-Klasse mit dem ObjectDataSource-Steuerelement](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image25.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLLWithSprocs-Klasse](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image25.png)
 
 **Abbildung 9**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image27.png))
 
 
-[![REtrieve Daten von der Methode GetProductsByCategoryID(categoryID)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)
+[![Abrufen von Daten aus der GetProductsByCategoryID(categoryID)-Methode](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)
 
 **Abbildung 10**: Abrufen von Daten aus der `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image30.png))
 
@@ -158,7 +158,7 @@ Ziehen Sie anschließend einer GridView-Ansicht auf den Designer, und platzieren
 Die Methode, die in der Registerkarte "SELECT" ausgewählt erwartet einen Parameter, damit der letzte Schritt des Assistenten uns für die Parameter-s-Quelle fordert. Der Parameter-Quellliste Dropdown-Steuerelement festgelegt, und wählen Sie die `Categories` Steuerelement aus der ControlID Dropdown-Liste. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![USE die Categories DropDownList als Quelle für die CategoryID Parameter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
+[![Verwenden Sie die Categories DropDownList als Quelle für die CategoryID-Parameter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
 
 **Abbildung 11**: Verwenden der `Categories` DropDownList als Quelle für die `categoryID` Parameter ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image33.png))
 
@@ -168,7 +168,7 @@ Nach Abschluss des ObjectDataSource-Steuerelement-Assistenten, wird Visual Studi
 Besuchen Sie die Seite über einen Browser ein. Beim Zugriff auf die Seite, die die Kategorie "Getränke" ausgewählt ist und die entsprechenden Produkte, die im Raster aufgelistet. Ändern die Dropdown-Liste in eine andere Kategorie als Abbildung 12 zeigt ein Postback auslöst und lädt das Raster mit den Produkten, die neu ausgewählte Kategorie.
 
 
-[![THE-Produkte in der Kategorie zu erstellen, werden angezeigt](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image34.png)
+[![Die Produkte in der Kategorie "erstellen" werden angezeigt.](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image34.png)
 
 **Abbildung 12**: Die Produkte in der Kategorie "erstellen" werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image36.png))
 
@@ -206,12 +206,12 @@ Wenn keine Fehler auftreten, Zusammensetzung der Transaktion für die SQL-Anweis
 Lassen Sie s ein konkretes Beispiel betrachten. Eine foreign Key-Einschränkung vorhanden ist, zwischen der `Categories` und `Products` Tabellen, was bedeutet, dass jedes `CategoryID` Feld der `Products` Tabelle muss zugeordnet eine `CategoryID` Wert in der `Categories` Tabelle. Alle Aktionen, die gegen verstoßen würde, diese Einschränkung, wie z. B. versuchen, eine Kategorie löschen, die Produkte verknüpft ist, führt zu einer Verletzung der foreign Key-Einschränkung. Um dies zu überprüfen, rufen Sie erneut das Beispiel aktualisieren und Löschen von vorhandenen Binärdaten in das Arbeiten mit Binärdaten Abschnitt (`~/BinaryData/UpdatingAndDeleting.aspx`). Diese Seite listet jede Kategorie im System sowie Schaltflächen zum Bearbeiten und löschen (siehe Abbildung 13), aber wenn Sie versuchen, eine Kategorie löschen, die Produkte – z. B. Getränke - verknüpft ist der Löschvorgang schlägt fehl, aufgrund einer Verletzung der foreign Key-Einschränkung (siehe Abbildung 14).
 
 
-[![Ean die Kategorie werden in einer GridView-Ansicht mit bearbeiten und Löschen von Schaltflächen angezeigt werden](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image37.png)
+[![Jede Kategorie wird in einer GridView-Ansicht mit bearbeiten und Löschen von Schaltflächen angezeigt.](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image37.png)
 
 **Abbildung 13**: Jede Kategorie wird in einer GridView-Ansicht mit bearbeiten und Löschen von Schaltflächen angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image39.png))
 
 
-[![Yeine Kategorie aus, das vorhandene Produkte kann nicht Organisationseinheit gelöscht werden](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image41.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image40.png)
+[![Sie können keine Kategorie löschen, das vorhandene Produkte](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image41.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image40.png)
 
 **Abbildung 14**: Eine Kategorie aus, das vorhandene Produkte kann nicht gelöscht werden ([klicken Sie, um das Bild in voller Größe anzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image42.png))
 

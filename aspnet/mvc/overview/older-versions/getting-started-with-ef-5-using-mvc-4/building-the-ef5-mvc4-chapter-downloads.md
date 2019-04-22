@@ -12,7 +12,7 @@ ms.openlocfilehash: e90eebaba3645802f318dbf449c3ec734265a092
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381944"
 ---
 # <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>Im Kapitel über das Erstellen von Downloads für die EF 5 MVC 4-Lernprogramme
@@ -55,4 +55,4 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
 > [!div class="step-by-step"]
-> [Vorheriges](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [Vorherige](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 27823e6b65dda80391d494af6f8d8da539bc3334
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393209"
 ---
 # <a name="dynamically-adding-an-accordion-pane-vb"></a>Dynamisches Hinzufügen von einem des Accordion-Bereichs (VB)
@@ -55,9 +55,9 @@ Um das Beispiel abgeschlossen haben, geben Sie die beiden CSS-Klassen, die im St
 [!code-css[Main](dynamically-adding-an-accordion-pane-vb/samples/sample6.css)]
 
 
-[![Ter Daten in der ' Accordion ' wurde vom serverseitigen Code dynamisch hinzugefügt](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
+[![Die Daten in der ' Accordion ' wurde von serverseitigem Code dynamisch hinzugefügt.](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
 
 Die Daten in der ' Accordion ' wurde vom serverseitigen Code dynamisch hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-adding-an-accordion-pane-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](databinding-to-an-accordion-vb.md)
+> [Vorherige](databinding-to-an-accordion-vb.md)

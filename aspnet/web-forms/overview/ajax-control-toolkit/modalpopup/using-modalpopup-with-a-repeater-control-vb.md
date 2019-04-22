@@ -12,7 +12,7 @@ ms.openlocfilehash: f1875ae95d79ec2a6762a547aabfbd03e0930b2c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386501"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-vb"></a>Verwenden von ModalPopup mit einem Wiederholungssteuerelement (VB)
@@ -49,7 +49,7 @@ Um das Popup arbeiten innerhalb des Repeaters, machen die `ModalPopupExtender` S
 Anschließend wird jedes Element in der Datenquelle mit einer Schaltfläche daneben angezeigt, die das modale Popup auslöst.
 
 
-[![THE modales Fenster kann ausgelöst werden, für jede Quelle Dateneingabe](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
+[![Modale Fenster kann ausgelöst werden, für jede Quelle Dateneingabe](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
 
 Modale Fenster kann ausgelöst werden, für jede Quelle Dateneingabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-modalpopup-with-a-repeater-control-vb/_static/image3.png))
 

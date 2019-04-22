@@ -12,7 +12,7 @@ ms.openlocfilehash: a06def9c434bd79d63bb74d105c1788e993e231a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383876"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films (C#)

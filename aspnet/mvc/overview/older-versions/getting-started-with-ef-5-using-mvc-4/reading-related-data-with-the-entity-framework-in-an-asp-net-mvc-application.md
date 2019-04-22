@@ -12,7 +12,7 @@ ms.openlocfilehash: f86212c1cb559c164342997fb0e4208339b5e3cc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421120"
 ---
 # <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Lesen verwandter Daten mit dem Entitätsframework in einer ASP.NET MVC-Anwendung (5 von 10)
@@ -148,7 +148,7 @@ Die Methode akzeptiert optionale Routendaten (`id`) und einen Abfragezeichenfolg
 
 > [!TIP]
 > 
-> **Routendaten**
+> **Weiterleiten von Daten**
 > 
 > Routendaten sind Daten, die die modellbindung in ein URL-Segment, das in der Routingtabelle angegebene gefunden. Die Standardroute gibt z. B. `controller`, `action`, und `id` Segmente:
 > 

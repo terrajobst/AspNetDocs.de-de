@@ -12,7 +12,7 @@ ms.openlocfilehash: 5a968bbbe5bdb6f8daad2c11c18c2b704c3bed8b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385500"
 ---
 # <a name="master-pages-and-aspnet-ajax-vb"></a>Masterseiten und ASP.NET AJAX (VB)
@@ -71,7 +71,7 @@ Jede Webseite, die ASP.NET AJAX-Framework verwendet, muss genau ein ScriptManage
 Ändern Sie nach dem Hinzufügen von ScriptManager auf der Seite, die `ID` aus `ScriptManager1` zu `MyManager`.
 
 
-[![ADD im ScriptManager auf der Masterseite](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
+[![Hinzufügen von ScriptManager auf der Masterseite](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen von ScriptManager auf der Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image3.png))
 
@@ -83,7 +83,7 @@ Beim ScriptManager-Steuerelement hinzugefügt, die Masterseite können wir jetzt
 Zunächst erstellen Sie eine neue Seite in das Stammverzeichnis, das mit dem Namen `ShowRandomProduct.aspx`. Vergessen Sie nicht, binden Sie diese neue Seite, um die `Site.master` Masterseite.
 
 
-[![ADd auf der Website eine neue ASP.NET-Seite](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
+[![Fügen Sie eine neue ASP.NET-Seite auf der Website](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
 
 **Abbildung 02**: Fügen Sie eine neue ASP.NET-Seite auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image6.png))
 
@@ -104,7 +104,7 @@ Wechseln Sie zurück zur `ShowRandomProduct.aspx`. Ziehen Sie aus dem Designer, 
 Unsere erste Aufgabe ist zum Anzeigen von Informationen zu einem zufällig ausgewählten Produkt innerhalb von UpdatePanel. Starten Sie von einem DetailsView-Steuerelement in UpdatePanel ziehen. Legen Sie das DetailsView-Steuerelement `ID` Eigenschaft `ProductInfo` und lösche die `Height` und `Width` Eigenschaften. Erweitern Sie DetailsViews-Smarttag und, wählen Sie aus der Dropdownliste wählen Sie die Datenquelle zum Binden von DetailsView an ein neues SqlDataSource-Steuerelement, das mit dem Namen `RandomProductDataSource`.
 
 
-[![BSuchen der DetailsView zu einem neuen SqlDataSource-Steuerelement](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
+[![Binden von DetailsView an ein neues SqlDataSource-Steuerelement](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
 
 **Abbildung 03**: DetailsView an ein neues SqlDataSource-Steuerelement zu binden ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image9.png))
 
@@ -117,7 +117,7 @@ Konfigurieren Sie die SqlDataSource-Steuerelement für die Verbindung zur Northw
 Die `TOP 1` -Schlüsselwort in der `SELECT` die Klausel gibt nur den ersten von der Abfrage zurückgegebenen Datensatz zurück. Die `NEWID()` -Funktion generiert einen neuen Wert für den globally unique Identifier (GUID) und kann verwendet werden, eine `ORDER BY` -Klausel, um der Tabelle Datensätze in zufälliger Reihenfolge zurückgegeben.
 
 
-[![CKonfigurieren der SqlDataSource-Steuerelement zur Rückgabe eines einzelnen, nach dem Zufallsprinzip ausgewählten Datensatz](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
+[![Konfigurieren von dem SqlDataSource-Steuerelement um einen einzelnen, zufällig ausgewählten Datensatz zurückgeben](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
 
 **Abbildung 04**: Konfigurieren von dem SqlDataSource-Steuerelement zum Zurückgeben einer einzelnes, nach dem Zufallsprinzip ausgewählten Datensatz ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image12.png))
 
@@ -130,7 +130,7 @@ Nach Abschluss des Assistenten, erstellt Visual Studio eine BoundField für die 
 Abbildung 5 zeigt die `ShowRandomProduct.aspx` Seite, wenn Sie über einen Browser angezeigt. Klicken Sie auf die Aktualisierungsschaltfläche Ihres Browsers, um die Seite erneut zu laden. Daraufhin sollte die `ProductName` und `UnitPrice` Werte für einen neuen, zufällig ausgewählten Datensatz.
 
 
-[![A Name und der Preis des Produkts für den zufälligen angezeigt](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
+[![Name und Preis des Produkts, auf eine zufällige wird angezeigt.](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
 
 **Abbildung 05**: Name und der Preis des Produkts auf eine zufällige angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image15.png))
 
@@ -159,12 +159,12 @@ Um besser zu sehen, was hier passiert ist, fügen Sie ein Label-Steuerelement, d
 Durch diese Änderung abgeschlossen ist enthält die Seite für die Zeit, die das aktuell angezeigte Produkt geladen wurde. Abbildung 6 zeigt die Seite beim ersten Mal besucht hat. Abbildung 7 zeigt die Seite 15 Sekunden später, nachdem das Timer-Steuerelement verfügt über "Perform" und UpdatePanel aktualisiert wurden, um Informationen über ein neues Produkt anzuzeigen.
 
 
-[![A Ausgewähltes Produkt wird nach dem Zufallsprinzip beim Laden der Seite angezeigt](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
+[![Ein zufällig ausgewähltes Produkt wird beim Laden der Seite angezeigt.](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
 
 **Abbildung 06**: Ein zufällig ausgewähltes Produkt wird beim Laden der Seite angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image18.png))
 
 
-[![Esehr 15 Sekunden, die angezeigt wird, dass Sie ein neues nach dem Zufallsprinzip ausgewählte Produkt](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
+[![Alle 15 Sekunden, die ein neues nach dem Zufallsprinzip ausgewählten Produkt angezeigt wird](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
 
 **Abbildung 07**: Alle 15 Sekunden wird ein neues nach dem Zufallsprinzip ausgewählten Produkt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image21.png))
 
@@ -190,12 +190,12 @@ Erstellen wir eine JavaScript-Datei mit einer Variablen namens `timerEnabled` un
 Zunächst erstellen Sie einen neuen Ordner auf der Website mit dem Namen `Scripts`. Fügen Sie eine neue Datei zum Ordner "Scripts" mit dem Namen `TimerScript.js` JScript-Datei.
 
 
-[![ADd eine neue JavaScript-Datei zum Ordner "Scripts"](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
+[![Fügen Sie eine neue JavaScript-Datei zum Ordner "Scripts"](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
 
 **Abbildung 08**: Hinzufügen einer neuen JavaScript-Datei, die `Scripts` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image24.png))
 
 
-[![A Neue JavaScript-Datei wurde auf der Website hinzugefügt](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
+[![Eine neue JavaScript-Datei wurde auf der Website hinzugefügt](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
 
 **Abbildung 09**: Die Website eine neue JavaScript-Datei hinzugefügt wurde ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image27.png))
 
@@ -208,7 +208,7 @@ Fügen Sie als Nächstes mit dem folgenden Skript auf die `TimerScript.js` Datei
 Jetzt müssen wir diese benutzerdefinierten JavaScript-Datei in registrieren `ShowRandomProduct.aspx`. Wechseln Sie zurück zur `ShowRandomProduct.aspx` und ein ScriptManagerProxy-Steuerelement auf der Seite hinzufügen, legen Sie dessen `ID` zu `MyManagerProxy`. Registrieren Sie ein benutzerdefiniertes JavaScript Datei wählen Sie im Designer des Steuerelements "ScriptManagerProxy", und fahren Sie mit dem Fenster "Eigenschaften". Eine der Eigenschaften wird mit der Bezeichnung Skripts. Durch Aktivieren dieser Eigenschaft zeigt den ScriptReference-Auflistungs-Editor, die in Abbildung 10 dargestellt. Klicken Sie auf die Schaltfläche "hinzufügen", um einen neuen Skriptverweis und geben dann den Pfad zur Skriptdatei in die Path-Eigenschaft: `~/Scripts/TimerScript.js`.
 
 
-[![ADd einen Skriptverweis auf das Steuerelement "ScriptManagerProxy"](master-pages-and-asp-net-ajax-vb/_static/image29.png)](master-pages-and-asp-net-ajax-vb/_static/image28.png)
+[![Fügen Sie einen Skriptverweis auf das Steuerelement "ScriptManagerProxy"](master-pages-and-asp-net-ajax-vb/_static/image29.png)](master-pages-and-asp-net-ajax-vb/_static/image28.png)
 
 **Abbildung 10**: Fügen Sie einen Skriptverweis auf das Steuerelement "ScriptManagerProxy" hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image30.png))
 
@@ -230,12 +230,12 @@ Dadurch werden eine Schaltfläche mit dem Text "Pause" angezeigt. Jedes Mal, wen
 Abbildung 11 zeigt diese Seite, wenn zunächst über einen Browser aufgerufen. Der Zeitgeber wird derzeit ausgeführt und aktualisiert die angezeigten Produktinformationen alle 15 Sekunden. Abbildung 12 zeigt den Bildschirm, nachdem auf die Schaltfläche "Anhalten" geklickt wurde. Klicken Sie auf die Schaltfläche "Pause" hält den Timer und der Text der Schaltfläche zum "Resume" aktualisiert. Die Produktinformationen aktualisieren (und und werden alle 15 Sekunden aktualisieren), sobald der Benutzer auf Fortsetzen klickt.
 
 
-[![Clicken Sie auf die Schaltfläche "Pause" um das Timer-Steuerelement zu beenden.](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
+[![Klicken Sie auf die Schaltfläche "Pause" um das Timer-Steuerelement zu beenden.](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
 
 **Abbildung 11**: Klicken Sie auf die Schaltfläche "Pause" um das Timer-Steuerelement zu beenden ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image33.png))
 
 
-[![Clicken Sie auf die Schaltfläche "fortsetzen", um den Timer neu zu starten.](master-pages-and-asp-net-ajax-vb/_static/image35.png)](master-pages-and-asp-net-ajax-vb/_static/image34.png)
+[![Klicken Sie auf die Schaltfläche "fortsetzen", um den Timer neu zu starten.](master-pages-and-asp-net-ajax-vb/_static/image35.png)](master-pages-and-asp-net-ajax-vb/_static/image34.png)
 
 **Abbildung 12**: Klicken Sie auf die Schaltfläche "fortsetzen", um den Timer neu zu starten ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-vb/_static/image36.png))
 
@@ -252,7 +252,7 @@ Viel Spaß beim Programmieren!
 
 Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
 
-- [ASP.NET AJAX Framework](../../../../ajax/index.md)
+- [ASP.NET AJAX-Frameworks](../../../../ajax/index.md)
 - [ASP.NET AJAX-Lernprogramme](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)
 - [ASP.NET AJAX-Videos](../../../videos/aspnet-ajax/index.md)
 - [Erstellen von interaktiven Benutzeroberfläche mit Microsoft ASP.NET AJAX](http://aspnet.4guysfromrolla.com/articles/101007-1.aspx)

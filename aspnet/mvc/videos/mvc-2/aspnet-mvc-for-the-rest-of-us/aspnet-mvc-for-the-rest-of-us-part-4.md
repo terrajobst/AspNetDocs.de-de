@@ -12,7 +12,7 @@ ms.openlocfilehash: 919a28e221ed87aef6cc05d95ab95264026180e6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421445"
 ---
 # <a name="aspnet-mvc-for-the-rest-of-us-part-4"></a>ASP.NET MVC für alle: Teil 4
@@ -24,4 +24,4 @@ In diesem Video wird eine ASP.NET MVC-Anwendung mit Microsofts Joe Stagner einen
 [&#9654;Sehen Sie sich Video (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-for-the-rest-of-us-part-4)
 
 > [!div class="step-by-step"]
-> [Vorheriges](aspnet-mvc-for-the-rest-of-us-part-3.md)
+> [Vorherige](aspnet-mvc-for-the-rest-of-us-part-3.md)

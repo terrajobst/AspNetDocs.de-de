@@ -12,7 +12,7 @@ ms.openlocfilehash: 9817a7b2fcb3cd5b4f8524d182baeaaf33c39fda
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383394"
 ---
 # <a name="displaying-data-with-the-objectdatasource-vb"></a>Anzeigen von Daten mit dem ObjectDataSource-Steuerelement (VB)
@@ -39,7 +39,7 @@ ASP.NET 2.0 im Lieferumfang von fünf integrierten Datenquellen-Steuerelemente [
 Dem ObjectDataSource-Steuerelement dient als Proxy für die Arbeit mit einem anderen Objekt. So konfigurieren Sie das "ObjectDataSource" geben wir diese zugrunde liegenden Objekt und seine Methoden wie dem ObjectDataSource-Steuerelement zugeordnet `Select`, `Insert`, `Update`, und `Delete` Methoden. Sobald diese zugrunde liegenden Objekts angegeben wurde, und seine Methoden, die dem ObjectDataSource-Steuerelement zugeordnet, können wir dann dem ObjectDataSource-Steuerelement in einen Daten-Websteuerelement binden. Im Lieferumfang von ASP.NET sind viele Daten Websteuerelemente, einschließlich der GridView, DetailsView, RadioButtonList und DropDownList, u. a. Die Daten-Websteuerelement möglicherweise während des Lebenszyklus der Seite, auf die Daten, die es gebunden ist, die sie für die Ausführung wird durch den Aufruf der "ObjectDataSource" `Select` Methode; Wenn die Daten-Websteuerelement einfügen unterstützen, aktualisieren oder löschen, aufgerufen werden können die Der ObjectDataSource `Insert`, `Update`, oder `Delete` Methoden. Diese Aufrufe werden dann von dem ObjectDataSource-Steuerelement an das entsprechende zugrunde liegende Objekt Methoden weitergeleitet, wie das folgende Diagramm veranschaulicht.
 
 
-[![Ter "ObjectDataSource" fungiert als Proxy](displaying-data-with-the-objectdatasource-vb/_static/image3.png)](displaying-data-with-the-objectdatasource-vb/_static/image2.png)
+[![Dem ObjectDataSource-Steuerelement dient als Proxy](displaying-data-with-the-objectdatasource-vb/_static/image3.png)](displaying-data-with-the-objectdatasource-vb/_static/image2.png)
 
 **Abbildung 2**: Das "ObjectDataSource" fungiert als Proxy ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image4.png))
 
@@ -57,7 +57,7 @@ Während dem ObjectDataSource-Steuerelement kann, zum Aufrufen von Methoden zum 
 Um anzugeben, dem ObjectDataSource-Steuerelement zugrunde liegende Objekt und wie die Methoden dieses Objekts dem ObjectDataSource-Steuerelement zugeordnet werden, klicken Sie auf auf den Link "Datenquelle konfigurieren" aus dem ObjectDataSource-Steuerelement Smarttag.
 
 
-[![Ca das Konfigurieren von Datenquellenlink aus dem Smarttag](displaying-data-with-the-objectdatasource-vb/_static/image6.png)](displaying-data-with-the-objectdatasource-vb/_static/image5.png)
+[![Klicken Sie auf den Link "Quelle" Daten aus dem Smarttag konfigurieren](displaying-data-with-the-objectdatasource-vb/_static/image6.png)](displaying-data-with-the-objectdatasource-vb/_static/image5.png)
 
 **Abbildung 3**: Klicken Sie auf den nach unten konfigurieren Datenquellenlink aus dem Smarttag ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image7.png))
 
@@ -67,7 +67,7 @@ Daraufhin wird das Konfigurieren von Datenquellen-Assistent aufgerufen. Zuerst m
 Wählen Sie aus dem ersten Bildschirm die `ProductsBLL` -Klasse aus der Dropdown Liste, und klicken Sie auf Weiter.
 
 
-[![Sangeben Sie, das Objekt, das Verwendung mit dem ObjectDataSource-Steuerelement](displaying-data-with-the-objectdatasource-vb/_static/image9.png)](displaying-data-with-the-objectdatasource-vb/_static/image8.png)
+[![Geben Sie das Objekt zu verwenden, mit dem ObjectDataSource-Steuerelement](displaying-data-with-the-objectdatasource-vb/_static/image9.png)](displaying-data-with-the-objectdatasource-vb/_static/image8.png)
 
 **Abbildung 4**: Geben Sie das Objekt zu verwenden, mit dem ObjectDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image10.png))
 
@@ -75,7 +75,7 @@ Wählen Sie aus dem ersten Bildschirm die `ProductsBLL` -Klasse aus der Dropdown
 Der nächste Bildschirm des Assistenten fordert Sie auf auswählen, welche Methode dem ObjectDataSource-Steuerelement aufgerufen werden soll. Die Dropdownlisten der Methoden, die Daten in das Objekt aus dem vorherigen Bildschirm ausgewählt zurückzugeben. Hier sehen wir `GetProductByProductID`, `GetProducts`, `GetProductsByCategoryID`, und `GetProductsBySupplierID`. Wählen Sie die `GetProducts` Methode aus der Dropdown-Liste und klicken Sie auf Fertig stellen (Wenn Sie hinzugefügt haben die `DataObjectMethodAttribute` zu der `ProductBLL`Methoden wie gezeigt im vorherigen Tutorial, diese Option werden standardmäßig ausgewählt).
 
 
-[![CWählen Sie aus der Methode zum Zurückgeben von Daten aus der Registerkarte "Wählen Sie"](displaying-data-with-the-objectdatasource-vb/_static/image12.png)](displaying-data-with-the-objectdatasource-vb/_static/image11.png)
+[![Wählen Sie die Methode zum Zurückgeben von Daten aus der Registerkarte "SELECT"](displaying-data-with-the-objectdatasource-vb/_static/image12.png)](displaying-data-with-the-objectdatasource-vb/_static/image11.png)
 
 **Abbildung 5**: Wählen Sie die Methode für das Zurückgeben von Daten aus der Registerkarte "auswählen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image13.png))
 
@@ -98,7 +98,7 @@ Nach dem ObjectDataSource-Steuerelement der Seite hinzugefügt und konfiguriert 
 Hinzufügen einer GridView-Steuerelement aus der Toolbox an `SimpleDisplay.aspx`Entwurfsoberfläche. Wählen Sie aus den GridView Smarttag das ObjectDataSource-Steuerelement, die in Schritt 1 hinzugefügt wurde. Dadurch wird eine BoundField automatisch erstellt, in den GridView-Ansicht für jede Eigenschaft, die von den Daten zurückgegeben werden, von dem ObjectDataSource-Steuerelement `Select` Methode (nämlich die Eigenschaften, durch die DataTable Produkte definiert).
 
 
-[![A GridView wurde auf der Seite hinzugefügt und an dem ObjectDataSource-Steuerelement gebunden](displaying-data-with-the-objectdatasource-vb/_static/image15.png)](displaying-data-with-the-objectdatasource-vb/_static/image14.png)
+[![Die Seite einer GridView-Ansicht hinzugefügt wurde und an dem ObjectDataSource-Steuerelement gebunden](displaying-data-with-the-objectdatasource-vb/_static/image15.png)](displaying-data-with-the-objectdatasource-vb/_static/image14.png)
 
 **Abbildung 6**: Eine GridView wurde auf der Seite und dem ObjectDataSource-Steuerelement gebunden ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image16.png))
 
@@ -106,7 +106,7 @@ Hinzufügen einer GridView-Steuerelement aus der Toolbox an `SimpleDisplay.aspx`
 Sie können dann anpassen, neu anordnen oder entfernen den GridView BoundFields, indem Sie auf die Option "Spalten bearbeiten" das Smarttag.
 
 
-[![MVerwalten der GridView BoundFields durch das Bearbeiten Sie im Dialogfeld Spalten](displaying-data-with-the-objectdatasource-vb/_static/image18.png)](displaying-data-with-the-objectdatasource-vb/_static/image17.png)
+[![Verwalten von GridView BoundFields über das Dialogfeld "Spalten bearbeiten"](displaying-data-with-the-objectdatasource-vb/_static/image18.png)](displaying-data-with-the-objectdatasource-vb/_static/image17.png)
 
 **Abbildung 7**: Verwalten der GridView BoundFields durch das Bearbeiten Spalten (Dialogfeld) ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image19.png))
 
@@ -117,7 +117,7 @@ So ändern Sie den GridView BoundFields, entfernen in Ruhe die `ProductID`, `Sup
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-vb/samples/sample2.aspx)]
 
 
-[![THE GridView BoundFields angepasst haben, wurden](displaying-data-with-the-objectdatasource-vb/_static/image21.png)](displaying-data-with-the-objectdatasource-vb/_static/image20.png)
+[![GridView BoundFields angepasst haben, wurden](displaying-data-with-the-objectdatasource-vb/_static/image21.png)](displaying-data-with-the-objectdatasource-vb/_static/image20.png)
 
 **Abbildung 8**: GridView BoundFields angepasst worden ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image22.png))
 
@@ -133,7 +133,7 @@ Unser Design keine Bilder oder CSS-Dateien enthalten (lassen wir das Stylesheet 
 Starten Sie durch das Hinzufügen einer neuen Skindatei zu Ihrem Projekt mit dem Namen `GridView.skin` indem mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer und neues Element hinzufügen.
 
 
-[![ADd eine Skin-Datei mit dem Namen GridView.skin](displaying-data-with-the-objectdatasource-vb/_static/image24.png)](displaying-data-with-the-objectdatasource-vb/_static/image23.png)
+[![Fügen Sie die Skindatei eine für GridView.skin](displaying-data-with-the-objectdatasource-vb/_static/image24.png)](displaying-data-with-the-objectdatasource-vb/_static/image23.png)
 
 **Abbildung 9**: Hinzufügen einer Skin-Datei namens `GridView.skin` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image25.png))
 
@@ -141,7 +141,7 @@ Starten Sie durch das Hinzufügen einer neuen Skindatei zu Ihrem Projekt mit dem
 Skin-Dateien müssen in ein Design befinden die befinden sich in der `App_Themes` Ordner. Da wir noch nicht über einen solchen Ordner verfügen, bietet Visual Studio Bitte um einen für uns erstellen, wenn Sie eine Skin für unseren ersten hinzufügen. Klicken Sie auf Ja, zum Erstellen der `App_Theme` Ordner, und platzieren Sie die neue `GridView.skin` -Datei.
 
 
-[![Lu. a. Visual Studio erstellen Sie den Ordner App_Theme](displaying-data-with-the-objectdatasource-vb/_static/image27.png)](displaying-data-with-the-objectdatasource-vb/_static/image26.png)
+[![Lassen Sie Visual Studio den Ordner App_Theme erstellen](displaying-data-with-the-objectdatasource-vb/_static/image27.png)](displaying-data-with-the-objectdatasource-vb/_static/image26.png)
 
 **Abbildung 10**: Lassen Sie Visual Studio erstellt die `App_Theme` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image28.png))
 
@@ -172,7 +172,7 @@ Im letzte Schritt werden mit unserer Design definiert das Design auf unserer Sei
 Das ist schon alles! Die `styleSheetTheme` Einstellung gibt an, dass die im Design angegebenen Eigenschaften sollten *nicht* überschreiben die Eigenschaften, die auf der Steuerelementebene angegeben. Verwenden, um anzugeben, dass die designeinstellungen Einstellungen neu erstellt werden soll, die `theme` -Attribut anstelle von `styleSheetTheme`; leider designeinstellungen werden nicht in der Entwurfsansicht für Visual Studio angezeigt. Finden Sie unter [ASP.NET-Designs und Skins Overview](https://msdn.microsoft.com/library/ykzx33wh.aspx) und [serverseitige Stile mithilfe von Designs](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) finden Sie weitere Informationen zu Designs und Skins; [so wird's gemacht: Übernehmen von ASP.NET-Designs](https://msdn.microsoft.com/library/0yy5hxdk%28VS.80%29.aspx) Weitere Informationen zum Konfigurieren einer Seite zum Design.
 
 
-[![Ter GridView zeigt Name, Kategorie, Lieferanten, Preis und nicht mehr unterstützte Informationen des Produkts](displaying-data-with-the-objectdatasource-vb/_static/image31.png)](displaying-data-with-the-objectdatasource-vb/_static/image30.png)
+[![Die GridView zeigt die Name, Kategorie, Lieferanten, Preis und nicht mehr unterstützte Informationen des Produkts](displaying-data-with-the-objectdatasource-vb/_static/image31.png)](displaying-data-with-the-objectdatasource-vb/_static/image30.png)
 
 **Abbildung 12**: Die GridView zeigt die Name, Kategorie, Lieferanten, Preis und nicht mehr unterstützte Informationen des Produkts ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image32.png))
 
@@ -184,7 +184,7 @@ Das GridView zeigt eine Zeile für jeden Datensatz zurückgegeben wird, mit dem 
 Starten, indem einem DetailsView-Steuerelement hinzufügen *oben* GridView in `SimpleDisplay.aspx`. Als Nächstes binden Sie es an der gleichen ObjectDataSource-Steuerelement wie GridView. Wie Sie mit der GridView, DetailsView für jede Eigenschaft im Objekt zurückgegeben, von dem ObjectDataSource-Steuerelement eine BoundField hinzugefügt werden `Select` Methode. Der einzige besteht Unterschied darin, dass DetailsViews BoundFields horizontal statt vertikal angeordnet werden.
 
 
-[![ATT ein DetailsView auf der Seite und ihn mit dem ObjectDataSource-Steuerelement](displaying-data-with-the-objectdatasource-vb/_static/image34.png)](displaying-data-with-the-objectdatasource-vb/_static/image33.png)
+[![Die Seite ein DetailsView hinzu, und ihn mit dem ObjectDataSource-Steuerelement](displaying-data-with-the-objectdatasource-vb/_static/image34.png)](displaying-data-with-the-objectdatasource-vb/_static/image33.png)
 
 **Abbildung 13**: Die Seite ein DetailsView hinzu, und ihn mit dem ObjectDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image35.png))
 
@@ -192,7 +192,7 @@ Starten, indem einem DetailsView-Steuerelement hinzufügen *oben* GridView in `S
 Wie GridView kann DetailsViews BoundFields weiter optimiert werden, um eine individuellere Anzeige der von dem ObjectDataSource-Steuerelement zurückgegebenen Daten zu ermöglichen. Abbildung 14 zeigt DetailsView nach dessen BoundFields und `CssClass` Eigenschaften so konfiguriert wurden, um seine Darstellung wie im Beispiel GridView zu machen.
 
 
-[![Ter DetailsView zeigt einen einzelnen Datensatz](displaying-data-with-the-objectdatasource-vb/_static/image37.png)](displaying-data-with-the-objectdatasource-vb/_static/image36.png)
+[![Die DetailsView zeigt einen einzelnen Datensatz](displaying-data-with-the-objectdatasource-vb/_static/image37.png)](displaying-data-with-the-objectdatasource-vb/_static/image36.png)
 
 **Abbildung 14**: Die DetailsView zeigt einen einzelnen Datensatz ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image38.png))
 
@@ -200,12 +200,12 @@ Wie GridView kann DetailsViews BoundFields weiter optimiert werden, um eine indi
 Beachten Sie, dass die DetailsView nur den ersten Datensatz, der von der Datenquelle zurückgegeben zeigt. Wir müssen die Paging für DetailsView aktivieren, damit der Benutzer schrittweise Durchlaufen aller Datensätze, einzeln nacheinander, kann. Zu diesem Zweck zu Visual Studio zurück, und aktivieren Sie das Kontrollkästchen Paging aktivieren, in DetailsViews-Smarttag.
 
 
-[![EAktivieren im DetailsView-Steuerelement Paging](displaying-data-with-the-objectdatasource-vb/_static/image40.png)](displaying-data-with-the-objectdatasource-vb/_static/image39.png)
+[![Aktivieren von Paging im DetailsView-Steuerelement](displaying-data-with-the-objectdatasource-vb/_static/image40.png)](displaying-data-with-the-objectdatasource-vb/_static/image39.png)
 
 **Abbildung 15**: Aktivieren von Paging im DetailsView-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image41.png))
 
 
-[![Wmit Paging aktiviert ist, DetailsView ermöglicht dem Benutzer eines der Produkte anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image43.png)](displaying-data-with-the-objectdatasource-vb/_static/image42.png)
+[![Mit der Auslagerung ist aktiviert, können DetailsView-den Benutzer eines der Produkte anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image43.png)](displaying-data-with-the-objectdatasource-vb/_static/image42.png)
 
 **Abbildung 16**: Mit Paging aktiviert ist, DetailsView ermöglicht dem Benutzer eines der Produkte anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image44.png))
 
@@ -221,7 +221,7 @@ Die [FormView-Steuerelement](https://msdn.microsoft.com/library/fyf1dk77.aspx) b
 Fügen Sie einem FormView-Steuerelement, um die `SimpleDisplay.aspx` Seite der Entwurfsoberfläche. Das FormView-Steuerelement zeigt zu Beginn als einen grauen Block, in der uns darüber informiert werden, dass ich benötige, zumindest des Steuerelements `ItemTemplate`.
 
 
-[![Ter FormView-Steuerelement muss eine Elementvorlage Include](displaying-data-with-the-objectdatasource-vb/_static/image46.png)](displaying-data-with-the-objectdatasource-vb/_static/image45.png)
+[![Die FormView-Steuerelement muss enthalten eine Elementvorlage](displaying-data-with-the-objectdatasource-vb/_static/image46.png)](displaying-data-with-the-objectdatasource-vb/_static/image45.png)
 
 **Abbildung 17**: Die FormView-Steuerelement muss enthalten eine `ItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image47.png))
 
@@ -232,7 +232,7 @@ Sie können das FormView-Steuerelement binden, direkt an ein Datenquellen-Steuer
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-vb/samples/sample6.aspx)]
 
 
-[![Ter erste Produkt (Chai) wird in einem benutzerdefinierten Format](displaying-data-with-the-objectdatasource-vb/_static/image49.png)](displaying-data-with-the-objectdatasource-vb/_static/image48.png)
+[![Das erste Produkt (Chai) wird in einem benutzerdefinierten Format angezeigt.](displaying-data-with-the-objectdatasource-vb/_static/image49.png)](displaying-data-with-the-objectdatasource-vb/_static/image48.png)
 
 **Abbildung 18**: Das erste Produkt (Chai) wird angezeigt, in einem benutzerdefinierten Format ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-objectdatasource-vb/_static/image50.png))
 
@@ -258,7 +258,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Vereinfacht und die erweiterte Syntax-Datenbindung in ASP.NET 2.0](http://www.15seconds.com/issue/040630.htm)
 - [Designs in ASP.NET 2.0](http://www.odetocode.com/Articles/423.aspx)
 - [Serverseitige-Stilen mithilfe von Designs](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)
-- [Vorgehensweise: Programmgesteuertes Anwenden von ASP.NET-Designs](https://msdn.microsoft.com/library/tx35bd89.aspx)
+- [How To: Programmgesteuertes Anwenden von ASP.NET-Designs](https://msdn.microsoft.com/library/tx35bd89.aspx)
 
 ## <a name="about-the-author"></a>Der Autor
 

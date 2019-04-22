@@ -12,7 +12,7 @@ ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383836"
 ---
 # <a name="bundling-and-minification"></a>Bündelung und Minimierung
@@ -52,7 +52,7 @@ Nach Minimierung wird die Funktion folgt verringert:
 
 Zusätzlich zu entfernen, die Kommentare und unnötiger Leerraum, wurden die folgenden Parameter und die Namen von Variablen (gekürzt) folgendermaßen umbenannt:
 
-| **Ursprünglich** | **Umbenannt** |
+| **Original** | **Umbenannt** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -65,7 +65,7 @@ Die folgende Tabelle zeigt einige wichtige Unterschiede zwischen alle Objekte ei
 |  | **Mithilfe von B/Min.** | **Ohne B/Min.** | **Änderung** |
 | --- | --- | --- | --- |
 | **Dateianforderungen** | 9 | 34 | 256% |
-| **Gesendete KB** | 3.26 | 11.92 | 266% |
+| **KB Sent** | 3.26 | 11.92 | 266% |
 | **KB empfangen** | 388.51 | 530 | 36% |
 | **Ladezeit** | 510 MS | 780 MS | 53% |
 
