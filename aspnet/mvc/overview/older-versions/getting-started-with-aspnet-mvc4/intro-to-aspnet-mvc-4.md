@@ -12,7 +12,7 @@ ms.openlocfilehash: ecc0733c2850bc157c7ee5b251787152393481fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385249"
 ---
 # <a name="intro-to-aspnet-mvc-4"></a>Einführung zu ASP.NET MVC 4
@@ -86,4 +86,4 @@ F5 bewirkt, dass Visual Studio zum Starten von IIS Express und die Webanwendung 
 Anwendungstelemetriedaten bietet dieser Standardvorlage Seiten "Home", "Wenden Sie sich an" und "über. Außerdem unterstützt die Registrierung und Anmeldung, und enthält links zu Facebook und Twitter. Der nächste Schritt besteht, zu ändern, wie diese Anwendung funktioniert, und erfahren etwas zu ASP.NET MVC. Schließen Sie Ihren Browser, und Ändern von Code.
 
 > [!div class="step-by-step"]
-> [Weiter](adding-a-controller.md)
+> [Nächste](adding-a-controller.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 3f966869c106416886dfa4e9e3c2cf67ee5fe337
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385812"
 ---
 # <a name="databinding-the-slider-control-c"></a>Datenbindung des Schieberegler-Steuerelements (C#)
@@ -45,7 +45,7 @@ Der nächste Schritt ist bereits im letzten Schritt. Die `SliderExtender` Steuer
 Wie Sie im Browser sehen können, funktioniert die Datenbindung in beide Richtungen: einen neuen Wert in das Textfeld eingeben, aktualisiert die Position der des Schiebereglers. Wenn Sie das zweite Textfeld schreibgeschützt machen, können Sie einen unzureichenden Schutz auf das Textfeld hinzufügen, sodass es schwieriger für den Benutzer manuell auf den Wert hier aktualisieren.
 
 
-[![SLider und Textfeldern sind synchron.](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
+[![Schieberegler und Textfeld werden synchronisiert.](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
 
 Schieberegler und Textfeld synchronisiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](databinding-the-slider-control-cs/_static/image3.png))
 

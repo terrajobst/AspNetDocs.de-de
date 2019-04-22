@@ -12,7 +12,7 @@ ms.openlocfilehash: 644af2485c1a51f2de209e968ba1b3475350fa47
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394067"
 ---
 # <a name="executing-several-animations-after-each-other-c"></a>Sequenzielles Ausführen mehrerer Animationen (C#)
@@ -51,12 +51,12 @@ In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt we
 Wenn Sie dieses Skript im Bereich erste ruft breiter und dann kleinere ausführen.
 
 
-[![FErster Kalendertag die Breite wird erhöht](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
+[![Zuerst wird die Breite erhöht.](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
 
 Zuerst wird die Breite erhöht ([klicken Sie, um das Bild in voller Größe anzeigen](executing-several-animations-after-each-other-cs/_static/image3.png))
 
 
-[![T"hen" die Höhe wird verringert](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
+[![Anschließend wird die Höhe verringert.](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
 
 Und dann die Höhe verringert wird ([klicken Sie, um das Bild in voller Größe anzeigen](executing-several-animations-after-each-other-cs/_static/image6.png))
 

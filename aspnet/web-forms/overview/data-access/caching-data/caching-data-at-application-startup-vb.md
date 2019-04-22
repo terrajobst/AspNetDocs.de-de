@@ -12,7 +12,7 @@ ms.openlocfilehash: 58c4654691084b9574283c03c77398cb43f6751a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393469"
 ---
 # <a name="caching-data-at-application-startup-vb"></a>Zwischenspeichern von Daten beim Anwendungsstart (VB)
@@ -119,7 +119,7 @@ Hinzufügen der `Global.asax` Datei in Ihrer Web-Anwendung s Root-Verzeichnis au
 > Wenn Sie bereits haben eine `Global.asax` Datei in Ihrem Projekt, das globale Anwendungsklasse work Item Type wird nicht in das Dialogfeld "Neues Element hinzufügen" aufgeführt.
 
 
-[![ADd der Datei "Global.asax" in der Webanwendung s Stammverzeichnis](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
+[![Die Datei "Global.asax" s-Stammverzeichnis Ihrer Web-Anwendung hinzufügen](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
 
 **Abbildung 3**: Hinzufügen der `Global.asax` Datei auf Ihre Webanwendung s Stammverzeichnis ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image5.png))
 
@@ -142,7 +142,7 @@ Für diese Tutorials müssen wir nur zum Hinzufügen von Code die `Application_S
 Alles, was, s wird es! Beim Start der Anwendung die `LoadStaticCache()` -Methode die Lieferanteninformationen der BLL erfassen und speichern Sie es in eine statische Membervariable (oder den Cache zu speichern, Sie beendet werden, verwenden Sie der `StaticCache` Klasse). Um dieses Verhalten zu überprüfen, legen Sie einen Haltepunkt in der `Application_Start` Methode, und führen Sie Ihre Anwendung. Beachten Sie, dass der Haltepunkt beim Starten Anwendung erreicht wird. Nachfolgende Anforderungen führen jedoch nicht die `Application_Start` auszuführende Methode.
 
 
-[![USE einen Haltepunkt, stellen Sie sicher, dass es sich bei den Application_Start-Ereignishandler wird ausgeführt wird.](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
+[![Verwenden Sie einen Haltepunkt, stellen Sie sicher, dass der Application_Start-Ereignishandler ausgeführt wird ist](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
 
 **Abbildung 4**: Verwenden Sie einen Haltepunkt zu überprüfen, die die `Application_Start` -Ereignishandler ist ausgeführt wird ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image8.png))
 
@@ -158,12 +158,12 @@ An diesem Punkt die `StaticCache` -Klasse verfügt über eine Version von Liefer
 Öffnen Sie zunächst die `AtApplicationStartup.aspx` auf der Seite die `Caching` Ordner. Ziehen Sie aus der Toolbox in den Designer und einer GridView-Ansicht der `ID` Eigenschaft `Suppliers`. Aus der GridView Smarttag s wählen Sie als Nächstes erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `SuppliersCachedDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse s `GetSuppliers()` Methode.
 
 
-[![CKonfigurieren der StaticCache-Klasse mit dem ObjectDataSource-Steuerelement](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der StaticCache-Klasse](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
 
 **Abbildung 5**: Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image11.png))
 
 
-[![USE die GetSuppliers()-Methode zum Abrufen der Daten für die Zwischenspeicherung Lieferanten](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
+[![Verwenden Sie die GetSuppliers()-Methode zum Abrufen der zwischengespeicherten Lieferantendaten](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
 
 **Abbildung 6**: Verwenden der `GetSuppliers()` Methode, um die Lieferantendaten zwischengespeichert abzurufen ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image14.png))
 
@@ -176,7 +176,7 @@ Nach dem Fertigstellen des Assistenten für Visual Studio automatisch hinzugefü
 Abbildung 7 zeigt die Seite, wenn Sie über einen Browser angezeigt. Die Ausgabe ist gleich hatten wir Daten abgerufen, die von der BLL s `SuppliersBLL` -Klasse, aber mit der `StaticCache` -Klasse gibt die Lieferantendaten als zwischengespeicherte beim Start der Anwendung zurück. Sie können Haltepunkte festlegen, in der `StaticCache` Klasse s `GetSuppliers()` Methode, um dieses Verhalten zu überprüfen.
 
 
-[![Ter zwischengespeicherte Supplier Data wird in einer GridView-Ansicht angezeigt werden](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
+[![Die Lieferantendaten zwischengespeichert wird in einer GridView-Ansicht angezeigt.](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
 
 **Abbildung 7**: Die Lieferantendaten zwischengespeichert wird angezeigt, in einer GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image17.png))
 

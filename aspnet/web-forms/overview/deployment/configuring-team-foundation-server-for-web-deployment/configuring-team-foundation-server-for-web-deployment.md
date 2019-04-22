@@ -12,7 +12,7 @@ ms.openlocfilehash: 188ab63dd84be5559d5a3646eb95caa77ab01bd1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392000"
 ---
 # <a name="configuring-team-foundation-server-for-web-deployment"></a>Konfigurieren von Team Foundation Server für die Webbereitstellung
@@ -75,4 +75,4 @@ Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webber
 - [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
 
 > [!div class="step-by-step"]
-> [Weiter](creating-a-team-project-in-tfs.md)
+> [Nächste](creating-a-team-project-in-tfs.md)

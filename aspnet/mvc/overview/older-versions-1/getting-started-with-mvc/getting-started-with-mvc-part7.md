@@ -12,7 +12,7 @@ ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392351"
 ---
 # <a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
@@ -61,11 +61,11 @@ Darüber hinaus fügen Sie dieser einzelnen Zeile oberhalb der Html.BeginForm hi
 
 Hier ist der Code in der IDE angezeigt.
 
-[![MOvies – Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![Filme – Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 Führen Sie die Anwendung und besuchen Sie /Movies/Create erneut, und klicken Sie auf erstellen, ohne Eingabe von Daten. Die Fehlermeldungen werden sofort ohne die Seite flash, ordnen wir Senden von Daten zurück an den Server. Dies ist, da ASP.NET MVC jetzt die Eingabe der sowohl der Client (JavaScript) eine Überprüfung durchgeführt wird und auf dem Server.
 
-[![CErstellen – Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![Erstellen Sie – Windows InternetExplorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 Dies ist gut suchen! Nun fügen Sie eine zusätzliche Spalte in der Datenbank.
 

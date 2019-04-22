@@ -12,7 +12,7 @@ ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388503"
 ---
 # <a name="performing-simple-validation-c"></a>Ausführen einer einfachen Überprüfung (C#)
@@ -56,12 +56,12 @@ Die Hilfsprogramme Html.ValidationMessage() und Html.ValidationSummary() werden 
 Stellen Sie sicher, dass Sie Ihre Anwendung vor dem Hinzufügen einer Ansicht zu erstellen. Andernfalls nicht die Liste der Klassen angezeigt, der **Datenklasse anzeigen** Dropdown-Liste.
 
 
-[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image2.png))
 
 
-[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
+[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **Abbildung 02**: Erstellen einer stark typisierten Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image4.png))
 
@@ -79,7 +79,7 @@ Das Hilfsprogramm Html.ValidationMessage() wird neben jeder HTML-Formular Felder
 Die Seite in Abbildung 3 zeigt die Fehlermeldungen, die durch die Überprüfung-Hilfsprogramme gerendert wird, wenn das Formular, fehlende Felder mit ungültigen Werten übermittelt wird.
 
 
-[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
+[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **Abbildung 03**: Ansicht "erstellen" mit Problemen übermittelt ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image6.png))
 
@@ -104,7 +104,7 @@ Sie können diese Klassen für cascading Stylesheet ändern und die Darstellung 
 Wenn Sie das HTML-Formular zum Erstellen eines Produkts senden und Sie einen ungültigen Wert für Feld für den Preis und keinen Wert für das UnitsInStock-Feld eingeben, klicken Sie dann die validierungsmeldungen werden angezeigt, die in Abbildung 4 erhalten Sie. Woher kommen diese Überprüfungsfehlermeldungen?
 
 
-[![TDialogfeld für neues Projekt mit HE](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
+[![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **Abbildung 04**: Validierungsfehler Prebinding ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image8.png))
 

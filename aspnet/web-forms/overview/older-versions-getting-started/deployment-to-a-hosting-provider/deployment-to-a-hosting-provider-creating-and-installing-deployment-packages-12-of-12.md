@@ -12,7 +12,7 @@ ms.openlocfilehash: 7e3c8b2adbe8d5248bed7299fb5e784a753f3851
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382162"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Problembehandlung (12 von 12)
@@ -318,4 +318,4 @@ Der Server unterstützt nicht ASP.NET 4.5. Wenden Sie sich an den Hostinganbiete
 Das Projekt **Eigenschaften** Windows enthält die Dropdownliste für eine Ziel-Framework, aber dieses Problem kann nicht aufgelöst werden, indem Sie einfach, die von **.NET Framework 4.5** zu **.NET Framework 4**. Wenn Sie das Zielframework in einer früheren Frameworkversion ändern, wird das Projekt wird immer noch Verweise auf die neuere Frameworkversion-Assemblys und wird nicht ausgeführt. Sie müssen manuell ändern Sie diese Verweise, oder Erstellen eines neuen Projekts, das auf .NET Framework 4 oder früher abzielt. Weitere Informationen finden Sie unter [.NET Framework als Ziel für Websites](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
 > [!div class="step-by-step"]
-> [Vorheriges](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [Vorherige](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

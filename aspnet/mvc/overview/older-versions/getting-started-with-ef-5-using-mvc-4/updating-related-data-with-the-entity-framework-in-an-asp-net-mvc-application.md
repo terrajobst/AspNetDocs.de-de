@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394158"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Lesen verwandter Daten mit dem Entitätsframework in einer ASP.NET MVC-Anwendung (6 von 10)

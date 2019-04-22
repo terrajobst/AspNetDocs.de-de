@@ -12,7 +12,7 @@ ms.openlocfilehash: 1e974d7ff259952d7dba0e968d43180f32a83d23
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387983"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 6
@@ -56,7 +56,7 @@ TPH-vererbungsmustern in der Regel eine bessere Leistung im Entity Framework als
 
 Öffnen der <em>SchoolModel.edmx</em> Datei der rechten Maustaste auf einen freien Bereich im Designer auf <strong>hinzufügen</strong>, und wählen Sie dann <strong>Entität</strong><em>.</em>
 
-[![image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
 
 In der **Entität hinzufügen** klicken Sie im Dialogfeld die Namen der Entität `Instructor` und legen Sie dessen **Basistyp** option `Person`.
 
@@ -80,7 +80,7 @@ Wiederholen Sie das Verfahren zum Verschieben der `EnrollmentDate` Eigenschaft a
 
 Nachdem eine `Person` Entität hat nur die Eigenschaften, die für `Instructor` und `Student` Entitäten (abgesehen von Navigationseigenschaften, die Sie nicht verschieben), kann die Entität nur als Basisentität in die Vererbungsstruktur verwendet werden. Aus diesem Grund müssen Sie sicherstellen, dass es nie als unabhängige Einheit behandelt wird. Mit der rechten Maustaste die `Person` Entität, auf **Eigenschaften**, und klicken Sie dann im der **Eigenschaften** Fenster ändern Sie den Wert von der **abstrakte** Eigenschaft, um  **"True"**.
 
-[![image06](the-entity-framework-and-aspnet-getting-started-part-6/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image15.png)
+[![Image06](the-entity-framework-and-aspnet-getting-started-part-6/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image15.png)
 
 ## <a name="mapping-instructor-and-student-entities-to-the-person-table"></a>Zuordnen von Instructor und Student-Entitäten zu der Person-Tabelle
 
@@ -88,7 +88,7 @@ Nun Sie das Entity Framework, wie unterscheiden soll müssen `Instructor` und `S
 
 Mit der rechten Maustaste die `Instructor` Entität, und wählen **Tabellenzuordnung**. In der **Mappingdetails** Fenster, klicken Sie auf **Hinzufügen einer Tabelle oder Sicht** , und wählen Sie **Person**.
 
-[![image07](the-entity-framework-and-aspnet-getting-started-part-6/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image17.png)
+[![Image07](the-entity-framework-and-aspnet-getting-started-part-6/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image17.png)
 
 Klicken Sie auf **Hinzufügen einer Bedingung**, und wählen Sie dann **HireDate**.
 
@@ -141,7 +141,7 @@ Aktualisieren Sie die folgenden Seiten, die Sie in den vorherigen Tutorials erst
 
     [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-6/samples/sample4.aspx)]
 
-    [![image17](the-entity-framework-and-aspnet-getting-started-part-6/_static/image32.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image31.png)
+    [![Image17](the-entity-framework-and-aspnet-getting-started-part-6/_static/image32.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image31.png)
 - In *Instructors.aspx* und *InstructorsCourses.aspx*, hinzufügen `EntityTypeFilter="Instructor"` auf die `InstructorsEntityDataSource` steuern und Entfernen von `Where="it.HireDate is not null"`. Das Markup in *Instructors.aspx* jetzt etwa wie folgt: 
 
     [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-6/samples/sample5.aspx)]

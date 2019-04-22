@@ -12,7 +12,7 @@ ms.openlocfilehash: 3e8fa3fe62ee2f58cd5cfbd32d17a3613cf80c12
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382495"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>Zwischenspeichern von Daten mit dem ObjectDataSource-Steuerelement (C#)
@@ -66,7 +66,7 @@ Bevor wir unsere Erkundung der s caching-Funktionen "ObjectDataSource" beginnen,
 Wie in den anderen Ordnern `Default.aspx` in die `Caching` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![FIgure 2: Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
+[![Abbildung 2: Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **Abbildung 2**: Abbildung 2: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image4.png))
 
@@ -91,7 +91,7 @@ In diesem Tutorial erfahren Sie, wie die ObjectDataSource-Steuerelement s integr
 Öffnen Sie zunächst die `ObjectDataSource.aspx` auf der Seite die `Caching` Ordner. Einer GridView-Ansicht aus der Toolbox in den Designer ziehen, legen Sie dessen `ID` Eigenschaft `Products`, und sein Smarttag, auswählen, um es an ein neues ObjectDataSource-Steuerelement, das mit dem Namen binden `ProductsDataSource`. Konfigurieren Sie zum Arbeiten mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse.
 
 
-[![CKonfigurieren der ProductsBLL-Klasse mit dem ObjectDataSource-Steuerelement](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image8.png))
 
@@ -99,7 +99,7 @@ In diesem Tutorial erfahren Sie, wie die ObjectDataSource-Steuerelement s integr
 Lassen Sie für diese Seite s, die eine bearbeitbare GridView zu erstellen, damit wir prüfen können, was geschieht, wenn die Daten, die zwischengespeichert werden, in dem ObjectDataSource-Steuerelement über die GridView-s-Schnittstelle geändert werden. Lassen Sie die Dropdownliste in der Registerkarte mit der Option auswählen, die auf seine Standardwerte zurückgesetzt `GetProducts()`, aber ändern Sie das ausgewählte Element in der Registerkarte "Updates", um die `UpdateProduct` Überladung verwenden, akzeptiert `productName`, `unitPrice`, und `productID` als Eingabeparameter.
 
 
-[![Su. a. die UPDATE-Registerkarte "s" Dropdown-Liste an die entsprechenden UpdateProduct-Überladung](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
+[![Legen Sie das UPDATE Registerkarte s Dropdown-Liste an die entsprechenden UpdateProduct-Überladung](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
 
 **Abbildung 5**: Legen Sie die Registerkarte "UPDATE"-s-Dropdown-Listenfeld auf der angemessen `UpdateProduct` überladen ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image11.png))
 
@@ -114,7 +114,7 @@ Stellen Sie die GridView durch Aktivieren des Kontrollkästchens Bearbeiten akti
 > Benötigen Sie eine Übersicht über die GridView-s-Bearbeitungsschnittstelle anpassen? Wenn dies der Fall ist, verweisen zurück auf die [Anpassen der Benutzeroberfläche für die Änderung der Daten](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md) Tutorial.
 
 
-[![EAktivieren Sie GridView-Unterstützung für bearbeiten, Sortieren und Paging](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
+[![Aktivieren Sie GridView-Unterstützung zum Bearbeiten, Sortieren und Paging](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
 
 **Abbildung 6**: Aktivieren der GridView-Unterstützung für bearbeiten, Sortieren und Paging ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image14.png))
 
@@ -127,7 +127,7 @@ Nachdem diese GridView-Änderungen vorgenommen wurden, sollte GridView und "Obje
 Wie in Abbildung 7 dargestellt, listet die bearbeitbaren GridView Name, Kategorie und Preis für jedes der Produkte in der Datenbank. Können Sie die Ergebnisse durchlaufen, die Sortierung der Seite "s"-Funktionalität zu testen und Bearbeiten eines Datensatzes.
 
 
-[![EACH-Produkt-s-Name, Kategorie und Preise finden Sie in sortierbar, navigierbaren, bearbeitbaren GridView](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
+[![Jedes Produkt s Name, Kategorie und Preise finden Sie in sortierbar, navigierbaren, bearbeitbaren GridView](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
 
 **Abbildung 7**: Jedes Produkt s Name, Kategorie und Preise finden Sie in sortierbar, navigierbaren, bearbeitbaren GridView ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image17.png))
 
@@ -141,7 +141,7 @@ Diese Abfolge von Ereignissen tritt jedes Mal, die, das die GridView zu der zugr
 Um die Häufigkeit ehesten mit der die Daten aus der Datenbank abgerufen wurden, können Sie s Anzeige eine Meldung angezeigt, wenn die Daten erneut abgerufen werden. Fügen Sie ein Label-Steuerelement über die GridView, die mit dem Namen `ODSEvents`. Löschen Sie die `Text` Eigenschaft, und legen dessen `EnableViewState` Eigenschaft `false`. Unter der Bezeichnung, fügen Sie ein Steuerelement Schaltfläche hinzu, und legen Sie dessen `Text` Eigenschaft Postbacks.
 
 
-[![ADd eine Bezeichnung und die Schaltfläche, um die Seite über die GridView](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
+[![Hinzufügen einer Bezeichnung und eine Schaltfläche auf der Seite über GridView](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
 
 **Abbildung 8**: Hinzufügen einer Bezeichnung und eine Schaltfläche auf der Seite über die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image20.png))
 
@@ -156,12 +156,12 @@ Jedes Mal, wenn dem ObjectDataSource-Steuerelement eine Anforderung an der Archi
 Besuchen Sie diese Seite in einem Browser aus. Wenn die Seite zuerst aufgerufen wird, wird das Ereignis auswählen des Texts wird ausgelöst, angezeigt. Klicken Sie auf die Schaltfläche mit den Postback, und beachten Sie, dass der Text verschwindet (vorausgesetzt, dass die GridView s `EnableViewState` -Eigenschaftensatz auf `true`, der Standardwert). Dies liegt daran, beim Postback GridView wird aus dem Ansichtszustand wiederhergestellt und auf dem ObjectDataSource-Steuerelement für die Daten aus diesem Grund t zu aktivieren. Sortieren, paging oder das Bearbeiten der Daten, bewirkt jedoch, dass der GridView, sich erneut an seine Datenquelle bindet und aus diesem Grund wird die auswählen-Ereignis ausgelöst, Text wird erneut angezeigt.
 
 
-[![WHenever, die mit der Datenquelle, die auswählen-Ereignis ausgelöst wird, neu GridView gebunden wird, wird angezeigt](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
+[![Wenn mit der Datenquelle erneut die GridView gebunden ist, wird die auswählen-Ereignis ausgelöst angezeigt.](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
 
 **Abbildung 9**: Auswahl-Ereignis ausgelöst wird angezeigt, wenn mit der Datenquelle erneut die GridView gebunden ist, ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image23.png))
 
 
-[![Clicking das Postback-Schaltfläche bewirkt, dass der GridView, die aus dem Ansichtszustand wiederhergestellt werden](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
+[![Durch Klicken auf das Postback-Schaltfläche bewirkt, dass der GridView, die aus dem Ansichtszustand wiederhergestellt werden](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
 
 **Abbildung 10**: Klicken Sie auf die Schaltfläche mit den Postback bewirkt, dass die GridView, die aus dem Ansichtszustand wiederhergestellt werden ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image26.png))
 
@@ -180,7 +180,7 @@ Wenn Sie einfach einige Eigenschaften festlegen, kann dem ObjectDataSource-Steue
 S konfigurieren lassen die `ProductsDataSource` ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden für absoluten Skala. Legen Sie das "ObjectDataSource"-s `EnableCaching` Eigenschaft `true` und die zugehörige `CacheDuration` Eigenschaft auf 30. Lassen Sie die `CacheExpirationPolicy` -Eigenschaft auf die Standardeinstellung verwenden, `Absolute`.
 
 
-[![CKonfigurieren der "ObjectDataSource" zum Zwischenspeichern von Daten für 30 Sekunden](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
 
 **Abbildung 11**: Konfigurieren von dem ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image29.png))
 
@@ -240,4 +240,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Teresa Murphy. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Weiter](caching-data-in-the-architecture-cs.md)
+> [Nächste](caching-data-in-the-architecture-cs.md)

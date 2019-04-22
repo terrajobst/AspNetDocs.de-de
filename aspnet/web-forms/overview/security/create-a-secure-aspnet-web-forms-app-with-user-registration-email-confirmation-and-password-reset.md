@@ -12,7 +12,7 @@ ms.openlocfilehash: 3df728891103de9c8e461ab9507237c9b14e8251
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390687"
 ---
 # <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>Erstellen einer sicheren ASP.NET Web Forms-App mit Benutzerregistrierung, E-Mail-Bestätigung und Kennwortzurücksetzung (C#)
@@ -34,7 +34,7 @@ Dieses Tutorial führt Sie durch die erforderlichen Schritte zum Erstellen einer
 - [Das Wiederherstellen und Zurücksetzen](#reset)
 - [Bestätigungslink erneut-e-Mail](#rsend)
 - [Problembehandlung bei der App](#dbg)
-- [Zusätzliche Ressourcen](#addRes)
+- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="createWebForms"></a>
 ## <a name="create-an-aspnet-web-forms-app"></a>Erstellen einer ASP.NET Web Forms-App

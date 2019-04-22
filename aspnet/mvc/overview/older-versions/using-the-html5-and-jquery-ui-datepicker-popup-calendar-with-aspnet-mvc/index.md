@@ -12,7 +12,7 @@ ms.openlocfilehash: 2bb0fb5677911c520f8fd1d96ac8f6fb2be7b77f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395120"
 ---
 # <a name="mvc-3---the-html5-and-jquery-ui-datepicker-popup-calendar"></a>MVC 3 – Popupkalender mit Datumsauswahl der HTML5- und jQuery-Benutzeroberfläche

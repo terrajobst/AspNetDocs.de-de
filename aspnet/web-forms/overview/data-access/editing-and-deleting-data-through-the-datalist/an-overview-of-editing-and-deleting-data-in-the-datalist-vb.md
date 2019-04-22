@@ -12,7 +12,7 @@ ms.openlocfilehash: 4bea4e70dd0c06fbcb0374d1c6a869c06d7e68b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387944"
 ---
 # <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>Eine Übersicht über bearbeiten und Löschen von Daten im DataList-Steuerelement (VB)
@@ -59,7 +59,7 @@ Bevor wir beginnen, untersuchen zum Aktualisieren und Löschen von Daten aus ein
 Wie in den anderen Ordnern `Default.aspx` in die `EditDeleteDataList` Ordner werden in den Tutorials im Abschnitt aufgeführt. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image2.png)
+[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image2.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image4.png))
 
@@ -107,12 +107,12 @@ In diesem Tutorial erstellen wir einem DataList-Steuerelement, die Produktinform
 Öffnen Sie zunächst die `Basics.aspx` auf der Seite die `EditDeleteDataList` Ordner und in die Entwurfsansicht zu sehen, fügen Sie einem DataList-Steuerelement auf der Seite. Als Nächstes aus DataList s Smarttags, erstellen Sie eine neue "ObjectDataSource" an. Da wir mit Product-Daten arbeiten, so konfigurieren, verwenden Sie die `ProductsBLL` Klasse. Zum Abrufen *alle* Produkte, wählen Sie die `GetProducts()` -Methode in der Registerkarte "SELECT".
 
 
-[![CKonfigurieren der ProductsBLL-Klasse mit dem ObjectDataSource-Steuerelement](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image6.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image6.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image8.png))
 
 
-[![Rurück die Produktinformationen mithilfe der Methode GetProducts()](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image9.png)
+[![Zurückgeben der Produktinformationen mithilfe der GetProducts()-Methode](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image9.png)
 
 **Abbildung 5**: Zurückgeben von Informationen für das Produkt verwenden die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image11.png))
 
@@ -120,7 +120,7 @@ In diesem Tutorial erstellen wir einem DataList-Steuerelement, die Produktinform
 DataList-Steuerelement, z. B. GridView ist nicht vorgesehen, für neue Daten eingefügt werden. Wählen Sie aus diesem Grund die (None) aus der Dropdown-Liste in der Registerkarte "Einfügen"-option. Nach Wunsch (keine) für die Update- und DELETE-Registerkarten, da die Updates und löschungen programmgesteuert über die BLL ausgeführt werden.
 
 
-[![Cstätigen, die das Dropdown-Listen in das "ObjectDataSource"-s einfügen, aktualisieren und löschen Registerkarten werden auf (keine) festgelegt](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image12.png)
+[![Vergewissern Sie sich, dass die Dropdownlisten in der "ObjectDataSource"-s-INSERT, UPDATE und Löschen von Registerkarten auf (keine) festgelegt sind](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image12.png)
 
 **Abbildung 6**: Vergewissern Sie sich, dass das Dropdown-Listen in den "ObjectDataSource" s INSERT, UPDATE, und Löschen von Registerkarten auf (keine) festgelegt sind ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image14.png))
 
@@ -139,7 +139,7 @@ Nach dem Ersetzen der standardmäßigen DataList `ItemTemplate` durch eine benut
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt über einen Browser anzuzeigen. Wie in Abbildung 7 dargestellt, zeigt DataList-Steuerelement den Produktpreis, Name und Unit für jedes Produkt in zwei Spalten an.
 
 
-[![TNamen für seine Produkte und Preise werden in einem zweispaltigen DataList-Steuerelement angezeigt](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image15.png)
+[![Die Namen der Produkte und Preise werden in einem zweispaltigen DataList-Steuerelement angezeigt.](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image15.png)
 
 **Abbildung 7**: Die Namen der Produkte und Preise werden in einem DataList-Steuerelement zwei Spalten angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image17.png))
 
@@ -161,7 +161,7 @@ DataList-Steuerelement, rendert andererseits, dessen Elemente, die mithilfe von 
 Die `EditItemTemplate` kann entweder deklarativ oder mithilfe des Designers erstellt werden, (durch Auswählen der Option Vorlagen bearbeiten aus dem Smarttag DataList s). Um die Vorlagen bearbeiten-Option verwenden zu können, klicken Sie zuerst auf den Link Vorlagen bearbeiten, in das Smarttag, und wählen Sie dann die `EditItemTemplate` Element aus der Dropdown-Liste.
 
 
-[![Opt für die Arbeit mit dem DataList s EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image18.png)
+[![Für die Arbeit mit dem DataList-s-EditItemTemplate deaktivieren](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image18.png)
 
 **Abbildung 8**: Arbeiten mit dem DataList-Steuerelement s OPT `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image20.png))
 
@@ -169,7 +169,7 @@ Die `EditItemTemplate` kann entweder deklarativ oder mithilfe des Designers erst
 Geben Sie als Nächstes Produktname: und den Preis: und ziehen Sie dann zwei TextBox-Steuerelemente aus der Toolbox in die `EditItemTemplate` Schnittstelle für den Designer. Legen Sie die Textfelder ein `ID` Eigenschaften `ProductName` und `UnitPrice`.
 
 
-[![ATT ein Textfeld für das Produkt s Namen und den Preis](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image21.png)
+[![Fügen Sie ein Textfeld für die Product-s-Namen und Preise](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image21.png)
 
 **Abbildung 9**: Fügen Sie ein Textfeld für das Produkt s Name und Preis ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image23.png))
 
@@ -198,7 +198,7 @@ Beachten Sie, dass diese Ereignisse ausgelöst werden *zusätzlich zu* der `Item
 Hinzufügen der `EditItemTemplate` zwei Schaltfläche Websteuerelemente, eine, deren `CommandName` festgelegt ist, aktualisieren und die anderen s, legen Sie auf "Abbrechen". Nach dem Hinzufügen dieser zwei Schaltfläche Websteuerelemente sollte der Designer etwa wie folgt aussehen:
 
 
-[![ADd aktualisieren und die Schaltflächen Abbrechen, um das EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image25.png)
+[![Hinzufügen von Updates und in das EditItemTemplate die Schaltflächen Abbrechen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image25.png)
 
 **Abbildung 11**: Hinzufügen, aktualisieren und die Schaltflächen Abbrechen, um die `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image27.png))
 
@@ -215,7 +215,7 @@ An diesem Punkt hat unsere DataList-Steuerelement eine bearbeitende-Schnittstell
 Nachdem Sie diese Schaltfläche "Bearbeiten" hinzugefügt haben, können Sie die Seite über einen Browser anzuzeigen. Mit folgender Ergänzung sollte jedes aufgelistete Produkt eine Bearbeiten-Schaltfläche enthalten.
 
 
-[![ADd aktualisieren und die Schaltflächen Abbrechen, um das EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image28.png)
+[![Hinzufügen von Updates und in das EditItemTemplate die Schaltflächen Abbrechen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image28.png)
 
 **Abbildung 12**: Hinzufügen, aktualisieren und die Schaltflächen Abbrechen, um die `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image30.png))
 
@@ -235,7 +235,7 @@ Die `EditCommand` -Ereignishandler wird in ein Objekt des Typs übergeben `DataL
 Rufen Sie nachdem dieser Ereignishandler hinzugefügt haben die Seite in einem Browser. Klicken Sie nun auf die Schaltfläche "Bearbeiten" wird die angeklickte Produkt bearbeitet werden (siehe Abbildung 13).
 
 
-[![Clicking der Bearbeiten Schaltfläche wird die bearbeitbare Produkt](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image31.png)
+[![Klicken Sie auf die Schaltfläche klicken bearbeiten, werden das Produkt, das bearbeitet werden](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image31.png)
 
 **Abbildung 13**: Klicken Sie auf die Schaltfläche "Bearbeiten" wird die Produkt-bearbeitbare ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image33.png))
 
@@ -283,17 +283,17 @@ Nach dem Lesen der Werte, die `ProductsBLL` Klasse s `UpdateProduct` Methode auf
 Mit der `EditCommand`, `CancelCommand`, und `UpdateCommand` Ereignishandler abgeschlossen ist, ein Besucher kann die Namen und den Preis eines Produkts bearbeiten. Abbildung 14 bis 16 zeigen diese Bearbeitung Workflow in Aktion.
 
 
-[![W"hen" ersten Besuch der Seite alle Produkte sind im schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image34.png)
+[![Werden beim ersten Besuch der Seite, die alle Produkte im schreibgeschützten Modus.](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image34.png)
 
 **Abbildung 14**: Wenn die Seite zuerst besuchen zu können, werden alle Produkte im schreibgeschützten Modus ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image36.png))
 
 
-[![To-Update einer s Produktnamen oder Preis, klicken Sie auf die Schaltfläche "Bearbeiten"](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image37.png)
+[![Um ein Produkt s Namen oder den Preis zu aktualisieren, klicken Sie auf die Schaltfläche "Bearbeiten"](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image37.png)
 
 **Abbildung 15**: Um ein Produkt s Namen oder den Preis zu aktualisieren, klicken Sie auf die Schaltfläche "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image39.png))
 
 
-[![Azufügen nach Änderung des Werts, klicken Sie auf Updates auf die Rückgabe in den schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image40.png)
+[![Nach dem Ändern des Werts, klicken Sie auf Aktualisieren auf die Rückgabe in den schreibgeschützten Modus](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image40.png)
 
 **Abbildung 16**: Nach dem Ändern des Werts, klicken Sie auf Updates auf die Rückgabe in den schreibgeschützten Modus ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image42.png))
 

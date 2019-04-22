@@ -12,7 +12,7 @@ ms.openlocfilehash: a408134b4e26e8ad1f7c22c9d2005a7c551b00c6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392858"
 ---
 # <a name="custom-formatting-based-upon-data-vb"></a>Benutzerdefinierte Formatierung auf Datenbasis (VB)
@@ -49,7 +49,7 @@ Benutzerdefinierter Logik kann unmittelbar auf die Schritte 1 und 3 über einen 
 Nachdem Sie dem ObjectDataSource-Steuerelement zur DetailsView gebunden haben, können Sie die Feldliste zu ändern. Ich habe mich entschieden habe, zum Entfernen der `ProductID`, `SupplierID`, `CategoryID`, `UnitsInStock`, `UnitsOnOrder`, `ReorderLevel`, und `Discontinued` BoundFields umbenannt, und die verbleibenden BoundFields umformatiert. Ich ebenfalls deaktiviert die `Width` und `Height` Einstellungen. Da DetailsView nur einen einzelnen Datensatz angezeigt wird, müssen wir Paging zu aktivieren, damit dem Benutzer alle Produkte anzeigen können. Klicken Sie dazu das Kontrollkästchen Paging aktivieren im DetailsView Smarttag.
 
 
-[![FIgure 1: Überprüfen Sie das Aktivieren von Paging im DetailsView Smarttag](custom-formatting-based-upon-data-vb/_static/image2.png)](custom-formatting-based-upon-data-vb/_static/image1.png)
+[![Abbildung 1: Überprüfen Sie das Aktivieren von Paging im DetailsView Smarttag](custom-formatting-based-upon-data-vb/_static/image2.png)](custom-formatting-based-upon-data-vb/_static/image1.png)
 
 **Abbildung 1**: Abbildung 1: Das Kontrollkästchen aktivieren Sie Paging im DetailsView Smarttag ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image3.png))
 
@@ -62,7 +62,7 @@ Nach diesen Änderungen werden das DetailsView-Markup:
 Nehmen Sie einen Moment Zeit, um diese Seite in Ihrem Browser zu testen.
 
 
-[![Ter ein Produkt im DetailsView-Steuerelement zeigt jeweils](custom-formatting-based-upon-data-vb/_static/image5.png)](custom-formatting-based-upon-data-vb/_static/image4.png)
+[![DetailsView-Steuerelement wird ein Produkt zu einem Zeitpunkt angezeigt.](custom-formatting-based-upon-data-vb/_static/image5.png)](custom-formatting-based-upon-data-vb/_static/image4.png)
 
 **Abbildung 2**: Das DetailsView-Steuerelement zeigt ein Produkt zu einem Zeitpunkt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image6.png))
 
@@ -124,12 +124,12 @@ Klicken Sie auf die `DataBound` -Ereignishandler festgelegt, der Zelle `CssClass
 Beim Anzeigen von Chai entspricht, die weniger als $75,00 kostet, ist der Preis in normaler Schriftart angezeigt (siehe Abbildung 4). Allerdings beim Anzeigen von Mishi Kobe Niku, die einen Preis von $97.00 verfügt, der Preis wird in einer Schriftart fett, kursiv (siehe Abbildung 5).
 
 
-[![Prices weniger als $75,00 werden in normaler Schrift angezeigt.](custom-formatting-based-upon-data-vb/_static/image9.png)](custom-formatting-based-upon-data-vb/_static/image8.png)
+[![Weniger als $75,00 Preise werden in normaler Schrift angezeigt](custom-formatting-based-upon-data-vb/_static/image9.png)](custom-formatting-based-upon-data-vb/_static/image8.png)
 
 **Abbildung 4**: Weniger als $75,00 Preise werden in normaler Schriftart angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image10.png))
 
 
-[![EXpensive Produkte Preise werden in einem fett, kursiv Schriftart angezeigt](custom-formatting-based-upon-data-vb/_static/image12.png)](custom-formatting-based-upon-data-vb/_static/image11.png)
+[![Teuersten Produkte Preise werden in einem fett, kursiv Schriftart angezeigt.](custom-formatting-based-upon-data-vb/_static/image12.png)](custom-formatting-based-upon-data-vb/_static/image11.png)
 
 **Abbildung 5**: Teuersten Produkte Preise werden in einem fett, kursiv Schriftart angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image13.png))
 
@@ -196,12 +196,12 @@ Nachdem wir einen programmgesteuerten Verweis auf das Websteuerelement haben, k�
 Abbildung 7 zeigt FormView beim Anzeigen eines Produkts, dessen `UnitsInStock` Wert ist größer als 10 ist, während das Produkt in Abbildung 8 die kleiner als 10 ist.
 
 
-[![Foder Produkte mit einer ausreichend großen Units In Stock, die keine benutzerdefinierte Formatierung wird angewendet.](custom-formatting-based-upon-data-vb/_static/image16.png)](custom-formatting-based-upon-data-vb/_static/image15.png)
+[![Für Produkte mit einer ausreichend großen Units In Stock ist keine benutzerdefinierte Formatierung angewendet](custom-formatting-based-upon-data-vb/_static/image16.png)](custom-formatting-based-upon-data-vb/_static/image15.png)
 
 **Abbildung 7**: Für Produkte mit einer ausreichend großen Units In Stock, ohne benutzerdefinierte Formatierung angewendet wird ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image17.png))
 
 
-[![Ter Units in Stock-Anzahl ist für diese Produkte mit Werte von 10 oder weniger in Rot angezeigt](custom-formatting-based-upon-data-vb/_static/image19.png)](custom-formatting-based-upon-data-vb/_static/image18.png)
+[![Die Einheiten im Lager Anzahl wird für diese Produkte mit Werten von 10 oder weniger in Rot angezeigt](custom-formatting-based-upon-data-vb/_static/image19.png)](custom-formatting-based-upon-data-vb/_static/image18.png)
 
 **Abbildung 8**: Die Einheiten im Lager Anzahl wird für diese Produkte mit Werten von 10 oder weniger in Rot angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image20.png))
 
@@ -247,7 +247,7 @@ Hinzufügen einer GridView-Ansicht unterhalb der FormView-Steuerelement aus dem 
 Abbildung 9 zeigt unseren Fortschritt bis zum angegebenen Zeitpunkt aus, wenn Sie über einen Browser angezeigt.
 
 
-[![Tin der GridView werden aufgelistet, der Name, Kategorie und Preis für jedes Produkt](custom-formatting-based-upon-data-vb/_static/image22.png)](custom-formatting-based-upon-data-vb/_static/image21.png)
+[![Das GridView enthält der Name, Kategorie und Preis für jedes Produkt](custom-formatting-based-upon-data-vb/_static/image22.png)](custom-formatting-based-upon-data-vb/_static/image21.png)
 
 **Abbildung 9**: GridView enthält der Name, Kategorie und Preis für jedes Produkt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image23.png))
 
@@ -303,7 +303,7 @@ Anstatt die `GridViewRow`des `BackColor` Eigenschaft direkt wir bleiben zunächs
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample18.vb)]
 
 
-[![Tseine am häufigsten kostengünstige Produkte sind gelb hervorgehoben.](custom-formatting-based-upon-data-vb/_static/image26.png)](custom-formatting-based-upon-data-vb/_static/image25.png)
+[![Die meisten kostengünstige Produkte sind gelb hervorgehoben](custom-formatting-based-upon-data-vb/_static/image26.png)](custom-formatting-based-upon-data-vb/_static/image25.png)
 
 **Abbildung 11**: Die meisten kostengünstige Produkte sind gelb hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](custom-formatting-based-upon-data-vb/_static/image27.png))
 

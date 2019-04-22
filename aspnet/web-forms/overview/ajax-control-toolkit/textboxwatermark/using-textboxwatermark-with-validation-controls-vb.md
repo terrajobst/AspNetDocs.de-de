@@ -12,7 +12,7 @@ ms.openlocfilehash: d83fb53ddb40a31013bc724909fa149ce2e4c713
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387369"
 ---
 # <a name="using-textboxwatermark-with-validation-controls-vb"></a>Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)
@@ -49,9 +49,9 @@ Abschließend fügen Sie serverseitigen Code, um den Text im Feld ausgeben, wenn
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample4.aspx)]
 
 
-[![THE-Validierungssteuerelement meldet, dass kein Text vorhanden ist, in das Feld ""](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
+[![Das Validierungssteuerelement meldet, dass es in das Feld kein Text ist](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
 
 Das Validierungssteuerelement meldet, dass kein Text vorhanden, in das Feld ist ([klicken Sie, um das Bild in voller Größe anzeigen](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-textboxwatermark-in-a-formview-vb.md)
+> [Vorherige](using-textboxwatermark-in-a-formview-vb.md)

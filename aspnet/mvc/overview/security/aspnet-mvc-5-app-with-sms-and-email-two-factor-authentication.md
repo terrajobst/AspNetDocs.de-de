@@ -12,7 +12,7 @@ ms.openlocfilehash: 25d21efaf2f01ee1c162408a3caf699ac818aaa7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384955"
 ---
 # <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail
@@ -27,7 +27,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Erstellen einer ASP.NET MVC-app](#createMvc)
 - [SMS für die zweistufige Authentifizierung einrichten](#SMS)
 - [Zwei-Faktor-Authentifizierung aktivieren](#enable2)
-- [Zusätzliche Ressourcen](#addRes)
+- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>Erstellen einer ASP.NET MVC-app

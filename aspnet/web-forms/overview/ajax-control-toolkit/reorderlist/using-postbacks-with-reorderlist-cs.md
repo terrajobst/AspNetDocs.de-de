@@ -12,7 +12,7 @@ ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393352"
 ---
 # <a name="using-postbacks-with-reorderlist-c"></a>Verwenden von Postbacks mit dem ReorderList-Steuerelement (C#)
@@ -62,9 +62,9 @@ Zum Schluss, um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolk
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![EACH-neuanordnung löst einen Postback](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![Jede Neuordnung auslöst einen postback](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 Jede Neuordnung einen Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](using-postbacks-with-reorderlist-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](drag-and-drop-via-reorderlist-cs.md)
+> [Nächste](drag-and-drop-via-reorderlist-cs.md)

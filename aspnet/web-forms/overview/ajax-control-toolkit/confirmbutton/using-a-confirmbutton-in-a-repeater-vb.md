@@ -12,7 +12,7 @@ ms.openlocfilehash: 4850493e7a16aa9364396d1bbd3fe3e0db0f47db
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388100"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-vb"></a>Verwenden eines ConfirmButton-Steuerelements in einem Wiederholungssteuerelement (VB)
@@ -47,9 +47,9 @@ Diese Datenquelle kann dann in einem wiederholungssteuerelement verwendet werden
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-vb/samples/sample3.aspx)]
 
 
-[![Ter bestätigen Sie, dass die Schaltfläche neben jeder Eintrag aus der Datenquelle angezeigt wird.](using-a-confirmbutton-in-a-repeater-vb/_static/image2.png)](using-a-confirmbutton-in-a-repeater-vb/_static/image1.png)
+[![Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt.](using-a-confirmbutton-in-a-repeater-vb/_static/image2.png)](using-a-confirmbutton-in-a-repeater-vb/_static/image1.png)
 
 Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-a-confirmbutton-in-a-repeater-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-a-confirmbutton-in-a-repeater-cs.md)
+> [Vorherige](using-a-confirmbutton-in-a-repeater-cs.md)

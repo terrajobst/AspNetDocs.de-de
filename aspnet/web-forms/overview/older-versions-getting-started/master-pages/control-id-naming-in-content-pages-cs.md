@@ -12,7 +12,7 @@ ms.openlocfilehash: a398494df0ed2bf749620b717350b21669a1ae5c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395650"
 ---
 # <a name="control-id-naming-in-content-pages-c"></a>Benennung von Steuerelement-IDs auf Inhaltsseiten (C#)
@@ -83,7 +83,7 @@ An diesem Punkt sollte Ihre Inhaltssteuerelement deklaratives Markup etwa wie fo
 Abbildung 3 zeigt die Seite, wenn Sie über Visual Studio-Designer angezeigt.
 
 
-[![Tseine Seite enthält drei Web Controls: ein Textfeld, einer Schaltfläche und einer Bezeichnung](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
+[![Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche, und Bezeichnung](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
 
 **Abbildung 03**: Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche und Label ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-cs/_static/image5.png))
 
@@ -133,7 +133,7 @@ Während Sie die Syntax zum Aufrufen der `FindControl` Methode unterscheidet sic
 Geben Sie diesen Code, besuchen Sie die `IDIssues.aspx` Seite über einen Webbrowser, geben Sie Ihr Alter, und klicken Sie auf die Schaltfläche "Absenden". Nach dem Klicken auf die Schaltfläche "Absenden" eine `NullReferenceException` ausgelöst wird (siehe Abbildung 5).
 
 
-[![A NullReferenceException wird ausgelöst](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
+[![Es wird eine "NullReferenceException" ausgelöst.](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
 
 **Abbildung 05**: Ein `NullReferenceException` ausgelöst ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-cs/_static/image9.png))
 
@@ -173,7 +173,7 @@ Glücklicherweise ist ein Verweis auf die Masterseite über die `Page` Klasse `M
 Dieses Mal auf der Seite über einen Browser, Ihr Alter eingeben, und klicken auf die Schaltfläche "Absenden" zeigt die Meldung in die `Results` bezeichnen, wie erwartet.
 
 
-[![THE des Alters des Benutzers wird in der Bezeichnung angezeigt](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
+[![Das Alter des Benutzers wird in der Bezeichnung angezeigt.](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
 
 **Abbildung 06**: Das Alter des Benutzers wird angezeigt, in der Bezeichnung ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-cs/_static/image12.png))
 
@@ -200,7 +200,7 @@ Fügen Sie den folgenden Code der `PageExtensionMethods.cs` Klassendatei mit die
 Mit diesem Code vorhanden, zurück zu den `IDIssues.aspx` , Code-Behind-Klasse und kommentieren Sie die aktuelle Seite `FindControl` Methodenaufrufe. Ersetzen Sie sie durch Aufrufen von `Page.FindControlRecursive("controlID")`. Zu Erweiterungsmethoden praktisch ist, dass sie direkt in der Dropdown-Listen von IntelliSense angezeigt werden. Wie in Abbildung 7 dargestellt, wenn Sie Seite und drücken Sie dann den Zeitraum, der `FindControlRecursive` Methode befindet sich in der IntelliSense-Dropdownliste zusammen mit anderen `Control` -Klassenmethoden.
 
 
-[![EExtension-Methoden befinden sich in der IntelliSense-Dropdown-Elemente](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
+[![Erweiterungsmethoden sind in der IntelliSense-Dropdown-Elemente enthalten.](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
 
 **Abbildung 07**: Erweiterungsmethoden befinden sich in der IntelliSense-Dropdown-Elemente ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-cs/_static/image15.png))
 
@@ -256,7 +256,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [ASP.NET-Masterseiten und `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
 - [Erstellen von Benutzeroberflächen zur Dateneingabe dynamische Daten](https://msdn.microsoft.com/library/aa479330.aspx)
 - [Erweitern der Funktionalität der Basisklasse mit Erweiterungsmethoden](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
-- [Vorgehensweise: Inhalt des Referenz ASP.NET Master-Seite](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
+- [How To: Inhalt des Referenz ASP.NET Master-Seite](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
 - [Unabhängig davon Seiten: Tipps, Tricks und fallen](http://www.odetocode.com/articles/450.aspx)
 - [Arbeiten mit clientseitigen Skripts](https://msdn.microsoft.com/library/aa479302.aspx)
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391064"
 ---
 # <a name="deploying-web-packages"></a>Bereitstellen von Webpaketen
@@ -61,7 +61,7 @@ Geben Sie einen **/t /** Flag oder **/y** Flag, um anzugeben, ob Sie eine Testve
 | Flag | Beschreibung |
 | --- | --- |
 | **/T** | Ruft die MSDeploy.exe mit der **– Whatif** Flag, das ein Testlaufs angibt. Anstatt die Bereitstellung des Pakets an, erstellt ein Bericht von Was geschieht, wenn Sie das Paket bereitgestellt wurde. |
-| **/ Y** | Ruft die MSDeploy.exe ohne die **– Whatif** Flag. Dadurch wird das Paket auf dem lokalen Computer oder der angegebene Zielserver bereitgestellt. |
+| **/Y** | Ruft die MSDeploy.exe ohne die **– Whatif** Flag. Dadurch wird das Paket auf dem lokalen Computer oder der angegebene Zielserver bereitgestellt. |
 | **/M** | Gibt den Zielserver name oder die Dienst-URL. Weitere Informationen zu den Werten, die Sie hier angeben können, finden Sie unter den **Endpunkt Überlegungen** in diesem Thema. Wenn Sie weglassen der **/m** Flag, das Paket wird auf dem lokalen Computer bereitgestellt werden. |
 | **/A** | Gibt den Authentifizierungstyp an, dem MSDeploy.exe zur Durchführung der Bereitstellung verwenden soll. Mögliche Werte sind **NTLM** und **grundlegende**. Wenn Sie weglassen der **/a** Flag der Authentifizierungstyp standardmäßig **NTLM** für die Bereitstellung auf den Dienst für die Web Deploy Remote-Agents und zu **grundlegende** für die Bereitstellung in der Web Deploy -Handler. |
 | **/U** | Gibt den Benutzernamen an. Dies gilt nur, wenn Sie die Standardauthentifizierung verwenden. |

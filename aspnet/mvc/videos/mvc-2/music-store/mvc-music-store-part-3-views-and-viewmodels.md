@@ -12,7 +12,7 @@ ms.openlocfilehash: 6d278b226ac8388222f32e9dfb8311b05b26a5cd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390557"
 ---
 # <a name="mvc-music-store-part-3-views-and-viewmodels"></a>MVC Music Store, Teil 3: Ansichten und ViewModels
@@ -24,4 +24,4 @@ Jon weiterhin das MVC Music Store-Tutorial mit eine Einführung in die Mastersei
 [&#9654;Sehen Sie sich Video (13 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-3-views-and-viewmodels)
 
 > [!div class="step-by-step"]
-> [Vorheriges](mvc-music-store-part-2-controllers.md)
+> [Vorherige](mvc-music-store-part-2-controllers.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: c33812ab9d758c3155a2f75f59bfb63c55487dc7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396407"
 ---
 # <a name="displaying-a-table-of-database-data-vb"></a>Anzeigen einer Tabelle von Datenbankdaten (VB)
@@ -33,7 +33,7 @@ Wir werden eine Reihe von Datensätzen aus der Tabelle der Datenbank Filme angez
 <a id="0.4_table01"></a>
 
 
-| **Spaltenname** | **Datentyp** | **NULL zulassen** |
+| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
 | Titel | Nvarchar(200)-Datentyp gepackt ist | False |
@@ -61,7 +61,7 @@ Nachdem Sie die Schaltfläche "hinzufügen", klicken Sie auf Assistent für Enti
 3. In der **Datenbankobjekte auswählen** Schritt, erweitern Sie den Knoten "Tabellen", wählen Sie die Tabelle für Filme. Geben Sie den Namespace *Modelle* , und klicken Sie auf die **Fertig stellen** Schaltfläche.
 
 
-[![Ce rstellen LINQ to SQL-Klassen](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)
+[![Erstellen von LINQ to SQL-Klassen](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)
 
 **Abbildung 01**: Erstellen von LINQ to SQL-Klassen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image2.png))
 
@@ -69,7 +69,7 @@ Nachdem Sie die Schaltfläche "hinzufügen", klicken Sie auf Assistent für Enti
 Nach Abschluss des Assistenten für Entity Data Model wird dem Entity Data Model-Designer geöffnet. Der Designer sollte die Filme-Entität angezeigt (siehe Abbildung 2).
 
 
-[![Ter Entity Data Model-Designer](displaying-a-table-of-database-data-vb/_static/image2.jpg)](displaying-a-table-of-database-data-vb/_static/image3.png)
+[![Der Entity Data Model-Designer](displaying-a-table-of-database-data-vb/_static/image2.jpg)](displaying-a-table-of-database-data-vb/_static/image3.png)
 
 **Abbildung 02**: Das Entity Data Model Designer ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image4.png))
 
@@ -83,7 +83,7 @@ Doppelklicken Sie auf den Namen der Klasse auf der Designeroberfläche, und änd
 Nun, da wir eine Methode zur Darstellung von unseren Unterlagen Datenbank haben, können wir einen Controller erstellen, der die Auflistung von Filmen zurückgibt. Klicken Sie im Fenster Projektmappen-Explorer von Visual Studio mit der rechten Maustaste in den Ordner "Controllers", und wählen Sie die Menüoption **hinzufügen, Controller** (siehe Abbildung 3).
 
 
-[![Ter Menü "Controller hinzufügen"](displaying-a-table-of-database-data-vb/_static/image3.jpg)](displaying-a-table-of-database-data-vb/_static/image5.png)
+[![Die Controller-Menü "hinzufügen"](displaying-a-table-of-database-data-vb/_static/image3.jpg)](displaying-a-table-of-database-data-vb/_static/image5.png)
 
 **Abbildung 03**: Im Controller hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image6.png))
 
@@ -91,7 +91,7 @@ Nun, da wir eine Methode zur Darstellung von unseren Unterlagen Datenbank haben,
 Wenn die **Controller hinzufügen** Dialogfeld angezeigt wird, geben Sie den Namen des Controllers MovieController (siehe Abbildung 4). Klicken Sie auf die **hinzufügen** , um den neuen Controller hinzuzufügen.
 
 
-[![TDialogfeld für seine-Controller hinzufügen](displaying-a-table-of-database-data-vb/_static/image4.jpg)](displaying-a-table-of-database-data-vb/_static/image7.png)
+[![Das Dialogfeld "Controller hinzufügen"](displaying-a-table-of-database-data-vb/_static/image4.jpg)](displaying-a-table-of-database-data-vb/_static/image7.png)
 
 **Abbildung 04**: Das Dialogfeld "Controller hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image8.png))
 
@@ -113,7 +113,7 @@ Erstellen Sie Ihre Anwendung durch Auswählen der Menüoption **erstellen "," Pr
 Mit der rechten Maustaste der Index()-Aktion, und wählen Sie die Menüoption **Ansicht hinzufügen** (siehe Abbildung 5).
 
 
-[![AHinzufügen einer Ansicht](displaying-a-table-of-database-data-vb/_static/image5.jpg)](displaying-a-table-of-database-data-vb/_static/image9.png)
+[![Hinzufügen einer Ansicht](displaying-a-table-of-database-data-vb/_static/image5.jpg)](displaying-a-table-of-database-data-vb/_static/image9.png)
 
 **Abbildung 05**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image10.png))
 
@@ -121,7 +121,7 @@ Mit der rechten Maustaste der Index()-Aktion, und wählen Sie die Menüoption **
 In der **Ansicht hinzufügen** Dialogfeld aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie die Movie-Klasse als die **Datenklasse anzeigen**. Wählen Sie *Liste* als die **Inhalt anzeigen** (siehe Abbildung 6). Wählen diese Optionen generiert eine stark typisierte Ansicht, in dem eine Liste von Filmen angezeigt.
 
 
-[![TDialogfeld für seine Ansicht hinzufügen](displaying-a-table-of-database-data-vb/_static/image6.jpg)](displaying-a-table-of-database-data-vb/_static/image11.png)
+[![Das Dialogfeld "Ansicht hinzufügen"](displaying-a-table-of-database-data-vb/_static/image6.jpg)](displaying-a-table-of-database-data-vb/_static/image11.png)
 
 **Abbildung 06**: Das Dialogfeld "Ansicht hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image12.png))
 
@@ -135,7 +135,7 @@ Nachdem Sie auf die **hinzufügen** Schaltfläche, die Ansicht im Codebeispiel 2
 Sie können die Anwendung ausführen, indem Sie durch Auswählen der Menüoption **Debuggen, Debugging starten** (oder F5 drücken). Internet Explorer wird gestartet, wenn Sie die Anwendung ausführen. Wenn Sie an die /Movie URL navigieren, und klicken Sie dann die Seite in Abbildung 7 angezeigt werden.
 
 
-[![A Tabelle mit den Filmen](displaying-a-table-of-database-data-vb/_static/image7.jpg)](displaying-a-table-of-database-data-vb/_static/image13.png)
+[![Eine Tabelle mit den Filmen](displaying-a-table-of-database-data-vb/_static/image7.jpg)](displaying-a-table-of-database-data-vb/_static/image13.png)
 
 **Abbildung 07**: Eine Tabelle mit den Filmen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-vb/_static/image14.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 35fcf02c20e3d20f9cb75f6a25aeb1ddac016b4e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393768"
 ---
 # <a name="urls-in-master-pages-vb"></a>URLs auf Masterseiten (VB)
@@ -75,7 +75,7 @@ Die `~/Admin/Default.aspx` Inhaltsseite erhält jedes Mal den gleichen HTML-Code
 Da die `<img>` des Elements `src` -Attribut ist eine relative URL, die der Browser versucht, suchen Sie nach einer `Images` Ordner relativ zum Ordner für die Webseite. Das heißt, sucht der Browser für die Abbilddatei `Admin/Images/PoweredByASPNET.gif`.
 
 
-[![Ter PoweredByASPNET.gif Image-Datei kann nicht gefunden werden](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
+[![Die PoweredByASPNET.gif Image-Datei wurde nicht gefunden](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
 
 **Abbildung 02**: Die `PoweredByASPNET.gif` Image-Datei wurde nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-vb/_static/image4.png))
 
@@ -92,7 +92,7 @@ Um die beschädigte Bilder, die in Abbildung 2 dargestellten zu beheben, müssen
 Aktualisieren Sie in Ruhe die `<img>` des Elements `src` -Attribut auf eine absolute URL mithilfe eines der oben gezeigten Formate ein, und rufen Sie die `~/Admin/Default.aspx` Seite über einen Browser. Dieses Mal der Browser wird ordnungsgemäß suchen und Anzeigen der `PoweredByASPNET.gif` Image-Datei (siehe Abbildung 3).
 
 
-[![Ter PoweredByASPNET.gif Bild wird jetzt angezeigt.](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
+[![Das PoweredByASPNET.gif-Image ist jetzt angezeigt.](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
 
 **Abbildung 03**: Die `PoweredByASPNET.gif` Bild wird jetzt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-vb/_static/image7.png))
 

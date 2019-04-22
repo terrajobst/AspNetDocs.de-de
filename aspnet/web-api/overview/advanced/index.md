@@ -13,7 +13,7 @@ ms.openlocfilehash: 2cec6138ffcd6019eae23c82abda2b96d7b0b625
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383459"
 ---
 # <a name="advanced-topics-for-aspnet-web-api"></a>Weiterführende Themen für ASP.NET Web-API
@@ -21,11 +21,11 @@ ms.locfileid: "59383459"
 > Erweiterte Themen für die Entwicklung von ASP.NET Web-API, haben Sie nach den Grundlagen vertraut.
 
 
-- [Konfigurieren von Web-API 2](configuring-aspnet-web-api.md)
-- [Abhängigkeitsinjektion in Web-API 2](dependency-injection.md)
+- [Konfigurieren der Web-API 2](configuring-aspnet-web-api.md)
+- [Abhängigkeitsinjektion in der Web-API 2](dependency-injection.md)
 - [Aufrufen einer Web-API über einen .NET-Client (C#)](calling-a-web-api-from-a-net-client.md)
 - [HTTP-Meldungshandler in der Web-API](http-message-handlers.md)
 - [HttpClient-Meldungshandler in der Web-API](httpclient-message-handlers.md)
-- [Senden von HTML-Formulardaten in der Web-API: Form-urlencoded-Daten](sending-html-form-data-part-1.md)
-- [Senden von HTML-Formulardaten in der Web-API: Dateiupload und mehrteilige MIME-Nachrichten](sending-html-form-data-part-2.md)
+- [Senden von HTML-Formulardaten in Web-API: Form-Urlencoded-Daten](sending-html-form-data-part-1.md)
+- [Senden von HTML-Formulardaten in Web-API: Dateiupload und mehrteiligen MIME-Nachrichten](sending-html-form-data-part-2.md)
 - [HTTP-Cookies in der ASP.NET-Web-API](http-cookies.md)

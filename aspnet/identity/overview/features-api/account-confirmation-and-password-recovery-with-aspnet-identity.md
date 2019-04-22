@@ -13,7 +13,7 @@ ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396420"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Bestätigung und Wiederherstellung mit ASP.NET Identity-Konto (C#)
@@ -233,5 +233,5 @@ Der folgende Code zeigt die e-Mail-Bestätigung-Methode:
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) außerdem gezeigt, wie der Tabelle Informationen zum Profil hinzufügen.
 - [ASP.NET MVC und Identität 2.0: Die Grundlagen](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) von John Atten.
-- [Einführung in ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
+- [Einführung zu ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
 - [Ankündigung der RTM-Version von ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) von Pranav Rastogi.

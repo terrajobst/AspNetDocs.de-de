@@ -12,7 +12,7 @@ ms.openlocfilehash: 079a43a72e24460c37a185764f82625068116757
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390843"
 ---
 # <a name="aspnet-4-quick-hit--new-rendering-option-for-check-box-lists-and-radio-button-lists"></a>ASP.NET 4 "Schnelles drücken" – neue Renderingoption für Kontrollkästchen- und Optionsfeldlisten
@@ -24,4 +24,4 @@ In diesem Video lernen Sie die RepeatLayout-Rendering-Option für das Kontrollk�
 [&#9654;Sehen Sie sich Video (4 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists)
 
 > [!div class="step-by-step"]
-> [Weiter](aspnet-4-quick-hit-table-free-templated-controls.md)
+> [Nächste](aspnet-4-quick-hit-table-free-templated-controls.md)

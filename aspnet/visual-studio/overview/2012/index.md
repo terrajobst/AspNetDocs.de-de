@@ -12,7 +12,7 @@ ms.openlocfilehash: 9b057f68e90a985c4e6950a94e49d84f8a6d5a07
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393365"
 ---
 # <a name="aspnet-and-visual-studio-2012"></a>ASP.NET und Visual Studio 2012
@@ -28,8 +28,8 @@ ms.locfileid: "59393365"
 - [Anmerkungen zu dieser Version – ASP.NET and Web Tools 2013.1 für Visual Studio 2012](aspnet-and-web-tools-20131-for-visual-studio-2012.md)
 - [HTML-Editor-Smarttasks und Generieren von Ereignishandlern](visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation.md)
 - [CSS-Editor – Hierarchischer Einzug](visual-studio-vnext-videos-css-editor-hierarchical-indentation.md)
-- [CSS-Editor – Codeausschnitte](visual-studio-vnext-videos-css-editor-snippets.md)
-- [CSS-Editor – Farbauswahl](visual-studio-vnext-videos-css-editor-color-picker.md)
+- [CSS-Editor – Ausschnitte](visual-studio-vnext-videos-css-editor-snippets.md)
+- [CSS-Editor – Farbwähler](visual-studio-vnext-videos-css-editor-color-picker.md)
 - [Seitenprüfung – Einführung](visual-studio-vnext-videos-page-inspector-introduction.md)
 - [Seitenprüfung – Zerlegen der Webanwendung](visual-studio-vnext-videos-page-inspector-decomposing-your-web-application.md)
 - [Microsoft Azure-Authentifizierung](windows-azure-authentication.md)

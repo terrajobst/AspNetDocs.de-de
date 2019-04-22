@@ -12,7 +12,7 @@ ms.openlocfilehash: 34a182278cfa57369643ab151492532bc92bd623
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393495"
 ---
 # <a name="creating-a-customized-sorting-user-interface-c"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (C#)
@@ -31,7 +31,7 @@ Wenn mit einer langen Liste sortierter Daten vorhanden sind nur wenige unterschi
 Damit können die Grenzen zwischen sortierte Gruppen markieren, nutzen viele Websites eine Benutzeroberfläche, die ein Trennzeichen zwischen Gruppen hinzugefügt. Trennzeichen, wie in Abbildung 1 dargestellten ermöglicht Benutzern schneller eine bestimmte Gruppe suchen und identifizieren die Grenzen, als auch ermitteln, welche unterschiedlichen Gruppen in den Daten vorhanden sind.
 
 
-[![EACH Kategoriegruppe ist eindeutig identifiziert.](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
+[![Jede Kategoriegruppe ist eindeutig identifiziert](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
 
 **Abbildung 1**: Jede Kategoriegruppe ist eindeutig identifiziert ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ Konfigurieren Sie anschließend die GridView, nur enthält die `ProductName`, `C
 Nehmen Sie einen Moment Zeit, um unseren Fortschritt bisher in einem Browser anzuzeigen. Abbildung 2 zeigt das sortierbare GridView, wenn die Daten nach Kategorie in alphabetischer Reihenfolge sortiert ist.
 
 
-[![Ter sortierbar GridView s Daten ist nach Kategorie sortiert wird](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
+[![Der sortierbare GridView-s werden Daten nach Kategorie sortiert.](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
 
 **Abbildung 2**: Die sortierbar GridView-Zuordnungsvorgänge, die Daten nach Kategorie sortiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image6.png))
 
@@ -100,7 +100,7 @@ Anstatt die Daten vor dem Binden an die GridView-messaging, wir können die Tren
 Um Trennzeichen für Zeilen zwischen den einzelnen sortieren Gruppen hinzuzufügen, können wir diese Steuerelementhierarchie direkt bearbeiten, nachdem es erstellt wurde. Wir können sicher sein, dass die Hierarchie der GridView-s-Steuerelemente zum letzten Mal mit der Zeit erstellt wurde, die die Seite gerendert wird. Dieser Ansatz aus diesem Grund überschreibt die `Page` Klasse s `Render` Methode, die an diesem Punkt-die Steuerelementhierarchie GridView s endgültige aktualisiert wird, um die erforderlichen Trennzeichen für Zeilen enthalten. Dieser Prozess wird in Abbildung 4 dargestellt.
 
 
-[![An alternative Methode bearbeitet die Hierarchie der GridView-s-Steuerelemente](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
+[![Eine alternative Methode bearbeitet die Hierarchie der GridView-s-Steuerelemente](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
 
 **Abbildung 4**: Eine alternative Methode ändert das GridView-s-Serversteuerelement-Hierarchie ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image10.png))
 
@@ -156,12 +156,12 @@ Die CSS-Klasse, die zum Formatieren der Sortierung Gruppenkopfzeile verwendet `S
 Durch den aktuellen Code aus, die Sortierung-Schnittstelle fügt Kopfzeilen von Gruppen sortieren, beim Sortieren nach jeder BoundField (siehe Abbildung 5, die einen Screenshot beim Sortieren von Lieferant zeigt). Allerdings sind beim Sortieren von jedem anderen Feldtyp (z. B. eine CheckBoxField oder TemplateField) der Sort-Gruppenheader an keiner Stelle (siehe Abbildung 6) gefunden werden.
 
 
-[![Ter Sortierung Schnittstelle umfasst sortieren Gruppenkopfzeilen beim Sortieren nach BoundFields](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
+[![Die Sortierung Schnittstelle enthält Header, Gruppe sortieren, beim Sortieren nach BoundFields](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
 
 **Abbildung 5**: Das Sortieren-Schnittstelle enthält sortieren Header beim Sortieren von Gruppen von BoundFields ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image13.png))
 
 
-[![Tseine Sortierung Gruppenkopfzeilen sind fehlende beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
+[![Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
 
 **Abbildung 6**: Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image16.png))
 
@@ -178,7 +178,7 @@ Dieser Code überprüft die sortierte Spalte `TableCell` für die aktuelle Zeile
 Mit dem obigen Code außerdem der Sort-Gruppenheader vorhanden sind beim Sortieren nach CheckBoxField nicht mehr unterstützt (siehe Abbildung 7).
 
 
-[![Tseine Sortierung Gruppenkopfzeilen sind jetzt vorhanden beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
+[![Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
 
 **Abbildung 7**: Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-cs/_static/image19.png))
 

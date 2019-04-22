@@ -12,7 +12,7 @@ ms.openlocfilehash: 157a71c7b8a7b5e8e34c08957d0520dfb8da8db9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391259"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>Hinzufügen von Validierungssteuerelementen zu Schnittstellen zum Bearbeiten und Einfügen (C#)
@@ -39,7 +39,7 @@ In diesem Tutorial werden wir sehen, wie einfach es ist das TemplateField Steuer
 In der [Untersuchen der Ereignisse zugeordnet einfügen, aktualisieren und löschen](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md) Tutorial, die wir erstellt haben, eine Seite, die die Namen und Preise der Produkte in einem bearbeitbaren GridView aufgeführt. Darüber hinaus enthalten die Seite eine DetailsView, deren `DefaultMode` -Eigenschaft wurde festgelegt, um `Insert`, wodurch immer Rendering im Einfügemodus befindet. Aus diesem DetailsView, der Benutzer konnte Geben Sie den Namen und den Preis für ein neues Produkt auf Einfügen, und es dem System hinzugefügt (siehe Abbildung 1).
 
 
-[![Ter vorherigen Beispiel ermöglicht es Benutzern, neue Produkte hinzufügen und vorhandene bearbeiten](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image1.png)
+[![Im vorherige Beispiel ermöglicht Benutzern das Hinzufügen eines neuen Produkts, und vorhandene bearbeiten](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image1.png)
 
 **Abbildung 1**: Das vorherige Beispiel ermöglicht es Benutzern auf neue Produkte hinzufügen und vorhandene bearbeiten ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image3.png))
 
@@ -57,7 +57,7 @@ Bevor wir weiter erweitern im vorherige Beispiel um regulierte sehen können, m�
 3. Kopieren Sie den Text innerhalb der `<asp:Content>` und `</asp:Content>` Tags (Zeilen 3 bis 44), dargestellt in Abbildung 2.
 
 
-[![Copieren der Text innerhalb der &lt;Asp: Content&gt; Steuerelement](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image4.png)
+[![Kopieren Sie den Text innerhalb der &lt;Asp: Content&gt; Steuerelement](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image4.png)
 
 **Abbildung 2**: Kopieren Sie den Text innerhalb der `<asp:Content>` Control ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image6.png))
 
@@ -75,7 +75,7 @@ Nach der Umstellung auf den Inhalt und Code aus `DataModificationEvents.aspx` zu
 Um die Schnittstellen zum Bearbeiten und Einfügen von Steuerelementen zur gültigkeitsprüfung hinzugefügt haben, müssen die BoundFields ein, die die DetailsView und GridView-Steuerelemente in von TemplateFields konvertiert werden soll. Um dies zu erreichen, klicken Sie jeweils auf die Links "Bearbeiten von Spalten und Felder bearbeiten" in der GridView und DetailsView des Smarttags. Wählen Sie dort jeweils von den BoundFields, und klicken Sie auf den Link "Dieses Feld in ein TemplateField konvertieren".
 
 
-[![Convertieren aller die DetailsView und GridView BoundFields in von TemplateFields](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image7.png)
+[![Konvertieren Sie jede der DetailsView und GridView BoundFields in von TemplateFields](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image7.png)
 
 **Abbildung 3**: Konvertieren Sie jede der DetailsView und GridView BoundFields in von TemplateFields ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image9.png))
 
@@ -117,7 +117,7 @@ Für unser Tutorial müssen wir verwenden einen RequiredFieldValidator in den De
 Zunächst fügen die erforderlichen Validierungssteuerelemente auf der `EditItemTemplate` s in den GridView von TemplateFields. Um dies zu erreichen, klicken Sie auf die Vorlagen bearbeiten aus den GridView Smarttag, um die Vorlage Bearbeitungsschnittstelle anzuzeigen. Von hier aus können Sie die Vorlage so bearbeiten Sie in der Dropdown-Liste auswählen. Da wir die Bearbeitungsschnittstelle erweitern möchten, müssen Sie Steuerelemente zur gültigkeitsprüfung zum Hinzufügen der `ProductName` und `UnitPrice`des `EditItemTemplate` s.
 
 
-[![We müssen zum Erweitern der ProductName und die UnitPrice EditItemTemplates](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image10.png)
+[![Wir müssen die ProductName "und" der UnitPrice EditItemTemplates erweitern](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image10.png)
 
 **Abbildung 4**: Möchten wir erweitern die `ProductName` und `UnitPrice`des `EditItemTemplate` s ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image12.png))
 
@@ -125,7 +125,7 @@ Zunächst fügen die erforderlichen Validierungssteuerelemente auf der `EditItem
 In der `ProductName` `EditItemTemplate`, fügen Sie einen RequiredFieldValidator durch Ziehen aus der Toolbox in die Vorlage bearbeiten-Oberfläche, nachdem das Textfeld platzieren.
 
 
-[![ATT ein RequiredFieldValidator auf die ProductName EditItemTemplate](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image13.png)
+[![Das ProductName EditItemTemplate einen RequiredFieldValidator hinzugefügt](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image13.png)
 
 **Abbildung 5**: Einen RequiredFieldValidator zum Hinzufügen der `ProductName` `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image15.png))
 
@@ -133,7 +133,7 @@ In der `ProductName` `EditItemTemplate`, fügen Sie einen RequiredFieldValidator
 Alle Validierungssteuerelemente funktionieren durch Überprüfen der Eingabe eines einzelnen ASP.NET Web-Steuerelements. Aus diesem Grund müssen wir angeben, dass für das Textfeld auf das soeben hinzugefügte RequiredFieldValidator-Steuerelement überprüfen soll die `EditItemTemplate`; dies geschieht durch Festlegen des Validierungssteuerelements [ControlToValidate-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) auf der `ID` des entsprechenden Websteuerelements. Das Textfeld verfügt derzeit über das Recht unbestimmter `ID` von `TextBox1`, aber ändern Sie es in eine passendere. Klicken Sie auf das Textfeld in der Vorlage, und ändern Sie dann im Eigenschaftenfenster die `ID` aus `TextBox1` zu `EditProductName`.
 
 
-[![CÄndern der Textfeld EditProductName-ID](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image16.png)
+[![Ändern Sie den Text des Textfelds-ID in EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image16.png)
 
 **Abbildung 6**: Ändern des Textfelds `ID` zu `EditProductName` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image18.png))
 
@@ -143,7 +143,7 @@ Legen Sie als Nächstes des RequiredFieldValidator-Steuerelement `ControlToValid
 Nachdem diese drei Eigenschaften, der das RequiredFieldValidator-Steuerelement festlegen, sollte Ihr Bildschirm Abbildung 7 ähneln.
 
 
-[![Su. a. des RequiredFieldValidator-Steuerelement ControlToValidate ErrorMessage und Texteigenschaften](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image19.png)
+[![Legen Sie des RequiredFieldValidator-Steuerelement ControlToValidate, ErrorMessage und Eigenschaften von Text](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image19.png)
 
 **Abbildung 7**: Legen Sie des RequiredFieldValidator-Steuerelement `ControlToValidate`, `ErrorMessage`, und `Text` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image21.png))
 
@@ -162,7 +162,7 @@ Gibt an, dass die `UnitPrice` Wert muss größer als oder gleich 0, Festlegen de
 > Denken Sie daran, dass in der *einfügen, aktualisieren und Löschen von Ereignissen zu zugeordneten* Tutorial legen wir die BoundField des `DataFormatString` Eigenschaft `{0:c}` um es als Währung zu formatieren. Darüber hinaus legen wir die `ApplyFormatInEditMode` -Eigenschaft auf "true", verursacht der GridView des bearbeiten-Schnittstelle zum Formatieren der `UnitPrice` als Währung. Wenn Sie die BoundField in ein TemplateField konvertieren, wird Visual Studio diese Einstellungen angegeben und formatiert des Text des Textfelds `Text` Eigenschaft als eine Währung, die mit der Datenbindungssyntax `<%# Bind("UnitPrice", "{0:c}") %>`.
 
 
-[![An Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe angezeigt](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image22.png)
+[![Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe angezeigt.](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image22.png)
 
 **Abbildung 8**: Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image24.png))
 
@@ -176,12 +176,12 @@ Während der Überprüfung funktioniert als-ist, muss der Benutzer das Währungs
 Kehren Sie mit der Option #1 für diese Übung. Derzeit den `UnitPrice` als eine Währung aufgrund der Datenbindungsausdruck für das Textfeld in die `EditItemTemplate`: `<%# Bind("UnitPrice", "{0:c}") %>`. Ändern Sie die Bind-Anweisung, um `Bind("UnitPrice", "{0:n2}")`, formatiert das Ergebnis als Zahl mit zwei Ziffern für die Genauigkeit. Dies kann erfolgen direkt über die deklarative Syntax oder durch Klicken auf den Link "DataBindings bearbeiten" aus der `EditUnitPrice` im Textfeld die `UnitPrice` TemplateFields `EditItemTemplate` (Siehe Abbildungen 9 und 10).
 
 
-[![Ca auf das Textfelds DataBindings bearbeiten-Link](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image25.png)
+[![Klicken Sie auf das Textfelds DataBindings bearbeiten link](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image25.png)
 
 **Abbildung 9**: Klicken Sie auf das Textfelds DataBindings bearbeiten Link ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image27.png))
 
 
-[![SAngeben der Formatbezeichner in der Bindung-Anweisung](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image28.png)
+[![Geben Sie den Formatbezeichner in der Bind-Anweisung](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image28.png)
 
 **Abbildung 10**: Geben Sie den Formatbezeichner in der `Bind` Anweisung ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image30.png))
 
@@ -199,7 +199,7 @@ Zusätzlich zu den fünf Validation-Steuerelementen, enthält ASP.NET die [Valid
 Ziehen Sie zu diesem Zweck ein ValidationSummary-Steuerelement aus der Toolbox in den Designer. Der Speicherort des Validierungssteuerelements ist unerheblich, da wir konfigurieren jetzt, um die Zusammenfassung nur als eine Messagebox anzeigt. Nach Hinzufügen des Steuerelements, legen Sie seine [ShowSummary-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) zu `false` und die zugehörige [ShowMessageBox Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) zu `true`. Durch diese hinzufügen werden Validierungsfehler in einer clientseitigen Messagebox zusammengefasst.
 
 
-[![TIE-Validierungsfehler werden in einer Client-Side-Messagebox zusammengefasst](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image31.png)
+[![Fehler bei der Validierung werden in einer Client-Side-Messagebox zusammengefasst.](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image31.png)
 
 **Abbildung 11**: Fehler bei der Validierung werden zusammengefasst, in einer Client-Side-Messagebox ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image33.png))
 
@@ -215,7 +215,7 @@ Da die `UnitPrice` ist für diese Seite erforderlich, wenn Sie einen neuen Daten
 Ein neues Produkt kann nicht zum System hinzugefügt werden, wenn der Name nicht angegeben ist, oder wenn der Preis berechnet eine negative Zahl ist oder illegal formatiert werden, nach dem Hinzufügen von diesen Steuerelementen zur gültigkeitsprüfung.
 
 
-[![VAlidation, die Logik DetailsViews-einfügen-Schnittstelle hinzugefügt wurde](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image34.png)
+[![Validierungslogik wurde Einfügen DetailsViews-Schnittstelle hinzugefügt](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image34.png)
 
 **Abbildung 12**: Einfügen DetailsViews-Schnittstelle Validierungslogik hinzugefügt wurde ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image36.png))
 
@@ -225,7 +225,7 @@ Ein neues Produkt kann nicht zum System hinzugefügt werden, wenn der Name nicht
 Die Seite besteht aus zwei logisch unterschiedlichen Gruppen von Steuerelementen zur gültigkeitsprüfung: an die GridView entsprechen den bearbeiten-Schnittstelle und, DetailsView entsprechen der Schnittstelle einfügen. Wenn ein Postback auftritt, wird standardmäßig *alle* Validierungssteuerelemente auf der Seite überprüft werden. Allerdings sollten nicht beim Bearbeiten eines Datensatzes Einfügen von Schnittstelle DetailsView Steuerelementen zur gültigkeitsprüfung überprüfen. Abbildung 13 zeigt unseren aktuellen Dilemma aus, wenn ein Benutzer ein Produkt mit durchaus zulässige Werte bearbeitet, wird durch Klicken auf Aktualisieren tritt ein Validierungsfehler verursacht, da die Werte für Name und Preis in der Schnittstelle einfügen leer sind.
 
 
-[![UVorgangsstatus eines Produkts führt dazu, dass die einfügen-Schnittstelle von Validierungssteuerelementen auszulösende](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image37.png)
+[![Aktualisieren eines Produkts führt dazu, dass Validierungssteuerelementen für die einfügende Schnittstelle zum Auslösen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image37.png)
 
 **Abbildung 13**: Aktualisieren eines Produkts führt dazu, dass die einfügen-Schnittstelle von Validierungssteuerelementen auszulösende ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image39.png))
 
@@ -235,7 +235,7 @@ Die Validierungssteuerelemente in ASP.NET 2.0 können partitioniert werden, in V
 Neben der Überprüfung Steuerelemente, die Schaltfläche und schaltflächenbezogene Steuerelemente in ASP.NET 2.0 auch enthalten eine `ValidationGroup` Eigenschaft. Einer Validierungsgruppe Validierungssteuerelemente auf Gültigkeit überprüft nur wenn ein Postback über eine Schaltfläche ausgelöst wird mit dem gleichen `ValidationGroup` Einstellung der Eigenschaft. Z. B. in der Reihenfolge für DetailsViews-Einfügen-Schaltfläche zum Auslösen der `InsertValidationControls` Validierungsgruppe wir die CommandFields festlegen müssen `ValidationGroup` Eigenschaft `InsertValidationControls` (siehe Abbildung 14). Legen Sie zudem des GridView CommandFields `ValidationGroup` Eigenschaft `EditValidationControls`.
 
 
-[![Sugegeben DetailsView CommandField ValidationGroup-Eigenschaft, um InsertValidationControls](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image40.png)
+[![Set DetailsView ist CommandFields ValidationGroup-Eigenschaft, um InsertValidationControls](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image40.png)
 
 **Abbildung 14**: Legen Sie die DetailsView CommandFields `ValidationGroup` Eigenschaft `InsertValidationControls` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image42.png))
 

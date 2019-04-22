@@ -12,7 +12,7 @@ ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392988"
 ---
 # <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Überprüfen der Benutzereingabe in ASP.NET Web Pages (Razor)-Websites
@@ -141,12 +141,12 @@ In diesem Beispiel funktioniert nicht der Test für ein gültiges Datum im Clien
 
 Sie können steuern, wie Validierungsfehler angezeigt werden, durch Definieren von CSS-Klassen, die die folgenden reservierten Namen aufweisen:
 
-- `field-validation-error`sein. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn es einen Fehler angezeigt wird.
-- `field-validation-valid`sein. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn kein Fehler vorliegt.
-- `input-validation-error`sein. Definiert, wie `<input>` Elemente werden gerendert, wenn ein Fehler auftritt. (Z. B. können diese Klasse, legen Sie die Farbe des Hintergrunds einer &lt;Eingabe&gt; Element in einer anderen Farbe, wenn der Wert ungültig ist.) Diese CSS-Klasse wird nur während der Validierung (in ASP.NET Web Pages 2) verwendet.
-- `input-validation-valid`sein. Definiert die Darstellung der `<input>` Elemente, wenn kein Fehler vorliegt.
-- `validation-summary-errors`sein. Definiert die Ausgabe der `Html.ValidationSummary` Methode, die sie eine Liste der Fehler anzeigt.
-- `validation-summary-valid`sein. Definiert die Ausgabe der `Html.ValidationSummary` Methode, wenn kein Fehler vorliegt.
+- `field-validation-error`. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn es einen Fehler angezeigt wird.
+- `field-validation-valid`. Definiert die Ausgabe der `Html.ValidationMessage` Methode, wenn kein Fehler vorliegt.
+- `input-validation-error`. Definiert, wie `<input>` Elemente werden gerendert, wenn ein Fehler auftritt. (Z. B. können diese Klasse, legen Sie die Farbe des Hintergrunds einer &lt;Eingabe&gt; Element in einer anderen Farbe, wenn der Wert ungültig ist.) Diese CSS-Klasse wird nur während der Validierung (in ASP.NET Web Pages 2) verwendet.
+- `input-validation-valid`. Definiert die Darstellung der `<input>` Elemente, wenn kein Fehler vorliegt.
+- `validation-summary-errors`. Definiert die Ausgabe der `Html.ValidationSummary` Methode, die sie eine Liste der Fehler anzeigt.
+- `validation-summary-valid`. Definiert die Ausgabe der `Html.ValidationSummary` Methode, wenn kein Fehler vorliegt.
 
 Die folgenden `<style>` Block Regeln für fehlerbedingungen angezeigt.
 

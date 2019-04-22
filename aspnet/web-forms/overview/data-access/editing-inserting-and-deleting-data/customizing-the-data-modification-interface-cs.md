@@ -12,7 +12,7 @@ ms.openlocfilehash: 727ef89069d3f1ddf22e993e1e3dceb144a43389
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390616"
 ---
 # <a name="customizing-the-data-modification-interface-c"></a>Anpassen der Oberfläche zum Ändern von Daten (C#)
@@ -31,7 +31,7 @@ Die BoundFields und CheckBoxFields, die von der GridView und DetailsView-Steuere
 In der [vorherigen Lernprogramm](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md) erläutert, wie die Schnittstellen für Änderungen durch das Hinzufügen von Steuerelementen zur gültigkeitsprüfung Web anpassen. In diesem Tutorial betrachten wir die tatsächlichen Daten Auflistung Websteuerelemente, ersetzen Sie dabei die BoundField- und CheckBoxFields standard-TextBox und Kontrollkästchen-Steuerelemente mit alternativen Web Eingabesteuerelemente anpassen. Insbesondere erstellen wir eine bearbeitbare GridView, die eines Produkts Name, Kategorie, Lieferanten und nicht mehr unterstützte Status aktualisiert werden können. Bei der Bearbeitung einer bestimmten Zeile rendert die Kategorie und Lieferant Felder als DropDownList-Steuerelementen, mit dem Satz der verfügbaren Kategorien und Lieferanten zur Auswahl. Darüber hinaus werden wir CheckBoxFields standardmäßig das Kontrollkästchen mit ein RadioButtonList-Steuerelement ersetzen, die bietet zwei Optionen zur Verfügung: "Aktiv" und "Nicht mehr unterstützt".
 
 
-[![THE GridView Bearbeitung Schnittstelle enthält DropDownList-Steuerelementen und RadioButtons](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
+[![Bearbeiten des GridView-Schnittstelle enthält, DropDownList-Steuerelementen und RadioButtons](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
 
 **Abbildung 1**: GridView Bearbeitung Schnittstelle enthält DropDownList-Steuerelementen und RadioButtons ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image3.png))
 
@@ -56,7 +56,7 @@ Der folgende Code zeigt die neue `UpdateProduct` überladen, der `ProductsBLL` K
 Mit der `UpdateProduct` Überladung hinzugefügt haben, wir können unsere bearbeitbaren GridView zu erstellen. Öffnen der `CustomizedUI.aspx` auf der Seite die `EditInsertDelete` Ordner, und fügen Sie in den Designer ein GridView-Steuerelement hinzu. Als Nächstes erstellen Sie eine neue "ObjectDataSource" in den GridView Smarttag. Konfigurieren Sie das "ObjectDataSource" zum Abrufen von Produktinformationen über der `ProductBLL` -Klasse `GetProducts()` Methode und Aktualisieren von Produkt Daten mithilfe der `UpdateProduct` Überladung, die wir gerade erstellt haben. Wählen Sie aus den Registerkarten INSERT- und DELETE (keine) aus den Dropdown-Listen.
 
 
-[![CKonfigurieren Sie das "ObjectDataSource" Verwenden der UpdateProduct überladen erstellte](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
+[![Konfigurieren Sie die "ObjectDataSource", um die soeben erstellte UpdateProduct-Überladung verwenden](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
 
 **Abbildung 2**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `UpdateProduct` überladen gerade erstellt haben ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image6.png))
 
@@ -80,7 +80,7 @@ Während dem ObjectDataSource-Steuerelement konfiguriert ist, um nur eine Teilme
 Nach diesen Änderungen sieht der Designer ähnlich aus wie in Abbildung 3, mit GridView deklarative Syntax des unten.
 
 
-[![REntfernen Sie nicht benötigte Felder aus der GridView](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
+[![Entfernen Sie nicht benötigte Felder aus der GridView](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
 
 **Abbildung 3**: Entfernen Sie nicht benötigte Felder aus der GridView ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image9.png))
 
@@ -90,7 +90,7 @@ Nach diesen Änderungen sieht der Designer ähnlich aus wie in Abbildung 3, mit 
 GridView schreibgeschütztes Verhalten ist an diesem Punkt abgeschlossen. Wenn Sie die Daten anzeigen zu können, wird jedes Produkt als eine Zeile in der GridView, die mit den Namen des Produkts, Kategorie, Lieferanten, gerendert wird und nicht mehr unterstützte Status.
 
 
-[![THE GridView Read-Only-Schnittstelle ist abgeschlossen.](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
+[![GridView Read-Only-Schnittstelle ist abgeschlossen.](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
 
 **Abbildung 4**: GridView Read-Only-Schnittstelle ist abgeschlossen. ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image12.png))
 
@@ -124,7 +124,7 @@ Da die BoundField als schreibgeschützt markiert wurde sowohl die `ItemTemplate`
 Wie wir in vorherigen Tutorials gesehen haben, kann die Vorlage mithilfe des Designers oder direkt über die deklarative Syntax bearbeitet werden. Um sie über den Designer zu bearbeiten, klicken auf den Link "Vorlagen bearbeiten" aus den GridView Smarttag, und wählen Sie des Kategoriefeld gearbeitet `EditItemTemplate`. Entfernen Sie das Label-Steuerelement, und Ersetzen Sie ihn mit einem DropDownList-Steuerelement, Festlegen von ID-Eigenschaft der DropDownList auf `Categories`.
 
 
-[![REntfernen Sie das Textfeld und Hinzufügen einer DropDownList, das EditItemTemplate](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
+[![Entfernen Sie das Textfeld und fügen Sie einem DropDownList-Steuerelement das EditItemTemplate](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
 
 **Abbildung 5**: Entfernen Sie das Textfeld, und fügen Sie einem DropDownList-Steuerelement, das `EditItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image15.png))
 
@@ -132,7 +132,7 @@ Wie wir in vorherigen Tutorials gesehen haben, kann die Vorlage mithilfe des Des
 Als Nächstes müssen wir der Dropdownliste mit den verfügbaren Kategorien auffüllen. Klicken Sie auf den Link "Datenquelle auswählen" aus der Dropdownlistes Smarttag, und aktivieren Sie zum Erstellen einer neuen, mit dem Namen "ObjectDataSource" `CategoriesDataSource`.
 
 
-[![CErstellen eine neue ObjectDataSource-Steuerelement mit dem Namen CategoriesDataSource](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
+[![Erstellen Sie ein neues ObjectDataSource-Steuerelement, das mit dem Namen CategoriesDataSource](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
 
 **Abbildung 6**: Erstellen Sie eine neue ObjectDataSource-Steuerelement mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image18.png))
 
@@ -140,7 +140,7 @@ Als Nächstes müssen wir der Dropdownliste mit den verfügbaren Kategorien auff
 Um diese "ObjectDataSource" alle Kategorien zurückgegeben haben, binden Sie es an der `CategoriesBLL` Klasse `GetCategories()` Methode.
 
 
-[![BSuchen Sie dem ObjectDataSource-Steuerelement an die CategoriesBLL des GetCategories() Methode](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
+[![Binden Sie dem ObjectDataSource-Steuerelement an die CategoriesBLL des GetCategories()-Methode](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
 
 **Abbildung 7**: Dem ObjectDataSource-Steuerelement zu binden der `CategoriesBLL`des `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image21.png))
 
@@ -148,7 +148,7 @@ Um diese "ObjectDataSource" alle Kategorien zurückgegeben haben, binden Sie es 
 Konfigurieren Sie abschließend DropDownLists-Einstellungen so, dass die `CategoryName` Feld wird angezeigt, in jeder DropDownList `ListItem` mit der `CategoryID` Feld als Wert verwendet.
 
 
-[![HSpeichern der "CategoryName"-Feld angezeigt, und die Kategorie-ID, die als Wert verwendet](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
+[![Das Feld "CategoryName" angezeigt, und die CategoryID als Wert verwendet.](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
 
 **Abbildung 8**: Haben die `CategoryName` Feld angezeigt, und die `CategoryID` als Wert verwendet ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image24.png))
 
@@ -167,7 +167,7 @@ Wiederholen Sie diese Schritte zum Hinzufügen einer DropDownList mit dem Namen 
 Nach dem Hinzufügen der DropDownList-Steuerelementen, die beiden `EditItemTemplate` s, laden Sie die Seite in einem Browser, und klicken Sie auf die Schaltfläche "Bearbeiten" für die Chef-Anton Cajun Seasoning Produkt. Wie in Abbildung 9 gezeigt, werden die Spalten des Produkts "Kategorie" und "Supplier als Dropdownlisten mit den verfügbaren Kategorien und Lieferanten zur Auswahl gerendert. Beachten Sie jedoch, dass die *erste* Elemente in beiden Dropdownlisten sind standardmäßig ausgewählt, (für die Kategorie Getränke) und außergewöhnlichen fluessiger Form als Lieferant, obwohl der Chef-Anton Cajun Seasoning eine Condiment von New Orleans Cajun bereitgestellt wird Lerne.
 
 
-[![Ter erste Element in den Dropdownlisten ist standardmäßig ausgewählt](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
+[![Standardmäßig ist das erste Element in den Dropdownlisten ausgewählt.](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
 
 **Abbildung 9**: Das erste Element in den Dropdownlisten ist standardmäßig aktiviert ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image27.png))
 
@@ -181,7 +181,7 @@ Damit Kategorie und Lieferanten des Produkts, auf die bearbeitete Dropdownlisten
 Alternativ können Sie DropDownLists-Databindings festlegen, durch Bearbeiten der Vorlage mithilfe des Designers, und klicken auf den Link "DataBindings bearbeiten" aus der Dropdownlistes Smarttag. Als Nächstes angeben, die die `SelectedValue` Eigenschaft gebunden werden soll die `CategoryID` Feld mithilfe von bidirektionalen Datenbindung (siehe Abbildung 10). Wiederholen Sie den deklarativen oder Designer-Prozess binden die `SupplierID` Datenfeld der `Suppliers` DropDownList.
 
 
-[![BSuchen Sie die CategoryID auf des DropDownList SelectedValue-Eigenschaft, die mithilfe von bidirektionalen Datenbindung](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
+[![Binden Sie die CategoryID an bidirektionale Datenbindung Verwenden des DropDownList SelectedValue-Eigenschaft](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
 
 **Abbildung 10**: Binden der `CategoryID` zu DropDownList `SelectedValue` Eigenschaft mithilfe von bidirektionalen Datenbindung ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image30.png))
 
@@ -189,7 +189,7 @@ Alternativ können Sie DropDownLists-Databindings festlegen, durch Bearbeiten de
 Sobald die Bindungen angewendet wurden, die `SelectedValue` Eigenschaften von zwei DropDownList-Steuerelementen, Kategorie und Lieferanten des Produkts, auf die bearbeitete-Spalten werden standardmäßig das aktuelle Produkt Werte. Nach dem Klicken auf aktualisieren, die `CategoryID` und `SupplierID` Werte des Elements ausgewählten Dropdown-Listenfeld zum Übergeben der `UpdateProduct` Methode. Abbildung 11 zeigt das Lernprogramm aus, nachdem die Databinding-Anweisungen hinzugefügt wurden; Beachten Sie, wie die ausgewählten Dropdown-Listenfeld-Elemente für Chef Anton's Cajun Seasoning ordnungsgemäß Condiment "und" New Orleans Cajun lerne werden.
 
 
-[![THE bearbeitet und des Produkts aktuelle Kategorie Lieferanten Werte sind standardmäßig ausgewählt](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
+[![Die bearbeitet und des Produkts aktuelle Kategorie Lieferanten Werte sind standardmäßig ausgewählt.](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
 
 **Abbildung 11**: Die bearbeitet und des Produkts aktuelle Kategorie Lieferanten Werte sind standardmäßig ausgewählt ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image33.png))
 
@@ -219,7 +219,7 @@ Wiederholen Sie diese Schritte für die Lieferanten DropDownList.
 Mit dieser zusätzlichen `ListItem`, können Sie jetzt die Bearbeitungsschnittstelle zuweisen `NULL` Werte eines Produkts `CategoryID` und `SupplierID` Felder, wie in Abbildung 12 dargestellt.
 
 
-[![CWählen Sie aus (keine), weisen Sie einen NULL-Wert für die Kategorie- bzw. Lieferanteninformationen eines Produkts](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
+[![Wählen Sie (keine), weisen Sie einen NULL-Wert für die Kategorie- bzw. Lieferanteninformationen eines Produkts](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
 
 **Abbildung 12**: (Keine) weisen auch eine `NULL` Wert für die Kategorie- bzw. Lieferanteninformationen eines Produkts ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image36.png))
 
@@ -250,7 +250,7 @@ Nach dem Hinzufügen der zwei RadioButtonList und konfigurieren sie die `Discont
 Mit diesen Änderungen die `Discontinued` Spalte aus einer Liste mit Kontrollkästchen umgewandelt wurde, um eine Liste von Optionsfeld-Schaltfläche-Paaren (siehe Abbildung 14). Wenn Sie ein Produkt zu bearbeiten, das entsprechende Optionsfeld ausgewählt ist, und des Produkts nicht mehr unterstützte Status kann aktualisiert werden, indem Sie das Optionsfeld "andere" auswählen und durch Klicken auf aktualisieren.
 
 
-[![Ter Discontinued Kontrollkästchen wurden durch ersetzt Radio Schaltfläche Paare](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
+[![Die nicht mehr unterstützte Kontrollkästchen wurden durch Radio Schaltfläche Paare ersetzt](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
 
 **Abbildung 14**: Die nicht mehr unterstützte Kontrollkästchen wurden durch ersetzt Radio Schaltfläche Paare ([klicken Sie, um das Bild in voller Größe anzeigen](customizing-the-data-modification-interface-cs/_static/image42.png))
 

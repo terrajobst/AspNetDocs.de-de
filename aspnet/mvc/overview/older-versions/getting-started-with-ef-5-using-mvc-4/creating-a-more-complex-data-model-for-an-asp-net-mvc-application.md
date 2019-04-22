@@ -12,7 +12,7 @@ ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382230"
 ---
 # <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Erstellen ein komplexeres Datenmodell für eine ASP.NET MVC-Anwendung (4 von 10)
@@ -48,7 +48,7 @@ In *Models\Student.cs*, Hinzufügen einer `using` -Anweisung für die `System.Co
 
 Die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) Attribut wird verwendet, um einen Datentyp anzugeben, der spezifischer als der datenbankinterne Typ ist. In diesem Fall soll nur das Datum verfolgt werden, nicht das Datum und die Zeit. Die [DataType-Enumeration](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) stellt viele Datentypen, z. B. *Datum "," Uhrzeit "," PhoneNumber "," Währung "," EmailAddress* und vieles mehr. Das `DataType`-Attribut kann der Anwendung auch ermöglichen, typspezifische Features bereitzustellen. Z. B. eine `mailto:` Link erstellt werden kann, für die [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), und eine Datumsauswahl kann angegeben werden, für die [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) in Browsern mit Unterstützung [HTML5](http://html5.org/). Die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) Attribute gibt HTML 5 [Data -](http://ejohn.org/blog/html-5-data-attributes/) (ausgesprochen als *Daten Dash*) Attribute, die HTML5-Browsern genutzt werden können. Die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) Attribute bieten keine Validierung.
 
-`DataType.Date` Gibt nicht das Format des Datums, der angezeigt wird. Standardmäßig wird das Datenfeld gemäß den Standardformaten basierend auf dem Server des [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` gibt nicht das Format des Datums an, das angezeigt wird. Standardmäßig wird das Datenfeld gemäß den Standardformaten basierend auf dem Server des [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
 Das `DisplayFormat`-Attribut dient zum expliziten Angeben des Datumsformats:
 
@@ -152,7 +152,7 @@ Deshalb können Sie auch die Klasse "Instructor" wie folgt schreiben können, k�
 
 ### <a name="the-fullname-calculated-property"></a>Der FullName berechnete Eigenschaften
 
-`FullName` ist eine berechnete Eigenschaft, die einen Wert zurückgibt, der durch die Verkettung von zwei weiteren Eigenschaften erstellt wird. Aus diesem Grund ist es nur eine `get` Accessor, und keine `FullName` Spalte in der Datenbank generiert werden.
+Bei `FullName` handelt es sich um eine berechnete Eigenschaft, die einen Wert zurückgibt, der durch das Verketten von zwei weiteren Eigenschaften erstellt wird. Aus diesem Grund ist es nur eine `get` Accessor, und keine `FullName` Spalte in der Datenbank generiert werden.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
@@ -358,7 +358,7 @@ Geben Sie in der PMC die `add-migration` Befehl:
 
 Wenn Sie versuchen, die Datenbank an diesem Punkt zu aktualisieren, erhalten Sie den folgenden Fehler:
 
-*Die ALTER TABLE-Anweisung steht in Konflikt mit der FOREIGN KEY-Einschränkung "FK\_Dbo. Kurs\_Dbo. Abteilung\_"DepartmentID" ". Der Konflikt trat in der „ContosoUniversity“-Datenbank, Tabelle „dbo.Department“, Spalte „DepartmentID“ auf.*
+*Die ALTER TABLE-Anweisung steht in Konflikt mit der FOREIGN KEY-Einschränkung "FK\_Dbo. Kurs\_Dbo. Abteilung\_"DepartmentID" ". Der Konflikt trat in der Datenbank "ContosoUniversity", Tabelle "Dbo. Abteilung", Spalte"DepartmentID".*
 
 Bearbeiten der &lt; *Zeitstempel&gt;\_Chap4.cs* Datei, und stellen Sie die folgenden codeänderungen (Sie eine SQL-Anweisung hinzufügen und Ändern einer `AddColumn` Anweisung):
 

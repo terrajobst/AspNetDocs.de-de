@@ -12,7 +12,7 @@ ms.openlocfilehash: c9b0946568063b9e5cf1454bd7a57c43304c3543
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390310"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>Bearbeiten von DropShadow-Eigenschaften über den Clientcode (VB)
@@ -55,9 +55,9 @@ Die JavaScript-Funktion `changeOpacity()` suchen müssen Sie dann zuerst die `Dr
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample6.html)]
 
 
-[![THE Deckkraft wird auf der Clientseite geändert.](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
+[![Die Deckkraft wird auf der Clientseite geändert.](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
 
 Die Deckkraft wird auf der Clientseite geändert ([klicken Sie, um das Bild in voller Größe anzeigen](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [Vorherige](adjusting-the-z-index-of-a-dropshadow-vb.md)

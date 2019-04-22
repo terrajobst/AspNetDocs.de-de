@@ -12,7 +12,7 @@ ms.openlocfilehash: 2a4d991205351531129480bee221651021483967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396251"
 ---
 # <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Verwenden des DropDownList-Hilfsprogramms mit ASP.NET MVC
@@ -190,7 +190,7 @@ Das ausgewählte Plug-in ist enthalten, in der Starter und das vollständige Bei
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-Es wird im obigen Code hinzugefügt, die HTML-Attribut und Attributwert `class = "chzn-select"`. Die \@ vorherigen-Klasse verfügt über keinerlei Bezug zur Razor-ansichtsengine Zeichen. `class` ist eine [ C# Schlüsselwort](https://msdn.microsoft.com/library/x53a06bb.aspx). C#-Schlüsselwörter nicht als Bezeichner verwendet werden, es sei denn, sie enthalten \@ als Präfix. Im obigen Beispiel `@class` ist ein gültiger Bezeichner jedoch **Klasse** ist nicht, da **Klasse** ist ein Schlüsselwort.
+Es wird im obigen Code hinzugefügt, die HTML-Attribut und Attributwert `class = "chzn-select"`. Die \@ vorherigen-Klasse verfügt über keinerlei Bezug zur Razor-ansichtsengine Zeichen. `class` ist eine [c#-Schlüsselwort](https://msdn.microsoft.com/library/x53a06bb.aspx). C#-Schlüsselwörter nicht als Bezeichner verwendet werden, es sei denn, sie enthalten \@ als Präfix. Im obigen Beispiel `@class` ist ein gültiger Bezeichner jedoch **Klasse** ist nicht, da **Klasse** ist ein Schlüsselwort.
 
 Fügen Sie Verweise auf die *Chosen/chosen.jquery.js* und *Chosen/chosen.css* Dateien. Die *Chosen/chosen.jquery.js* und implementiert die Funktionalität des Plug-Ins ausgewählt. Die *Chosen/chosen.css* Datei enthält die Stile. Fügen Sie diese Verweise auf das Ende der *Views\Home\MultiSelectCountry.cshtml* Datei. Der folgende Code zeigt, wie Sie auf das ausgewählte Plug-in zu verweisen.
 
@@ -215,4 +215,4 @@ Führen Sie die Anwendung, und navigieren Sie zu der `MultiSelectCountry` anzeig
 Im nächsten Abschnitt sehen Sie die Funktionsweise der ASP.NET MVC-Gerüstbau mit der **DropDownList** Helper.
 
 > [!div class="step-by-step"]
-> [Weiter](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [Nächste](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: e3e097663568b21ee3f84c7006a0bd89718ac6c2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380274"
 ---
 # <a name="recovering-and-changing-passwords-c"></a>Wiederherstellen und Ändern von Kennwörtern (C#)
@@ -63,7 +63,7 @@ Nachdem der Benutzer seinen Benutzernamen- oder seine Username und Security-Antw
 Abbildung 1 zeigt, wie die PasswordRecovery Schnittstelle und das Verhalten durch die Konfiguration der Mitgliedschaft beeinflusst wird.
 
 
-[![Ter RequiresQuestionAndAnswer EnablePasswordRetrieval und EnablePasswordReset beeinflussen die PasswordRecovery Darstellung des Steuerelements und das Verhalten](recovering-and-changing-passwords-cs/_static/image2.png)](recovering-and-changing-passwords-cs/_static/image1.png)
+[![Die RequiresQuestionAndAnswer EnablePasswordRetrieval und EnablePasswordReset beeinflussen, Darstellung und das Verhalten des PasswordRecovery-Steuerelements](recovering-and-changing-passwords-cs/_static/image2.png)](recovering-and-changing-passwords-cs/_static/image1.png)
 
 **Abbildung 1**: Die `RequiresQuestionAndAnswer`, `EnablePasswordRetrieval`, und `EnablePasswordReset` beeinflussen, Darstellung und das Verhalten des Steuerelements PasswordRecovery ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image3.png))
 
@@ -93,7 +93,7 @@ Zusätzlich zur Verwendung eines SMTP-Servers im Netzwerk, können Sie auch ein 
 Nachdem Sie die SMTP-Einstellungen konfiguriert haben, besuchen Sie die `RecoverPassword.aspx` Seite über einen Browser. Versuchen Sie zunächst die Eingabe eines Benutzernamens, das nicht in den Speicher des Benutzers vorhanden ist. Wie in Abbildung 2 gezeigt, zeigt das Steuerelement PasswordRecovery eine Meldung gibt an, dass die Benutzerinformationen konnte nicht zugegriffen werden. Der Text der Nachricht kann angepasst werden, mithilfe des Steuerelements [ `UserNameFailureText` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx).
 
 
-[![An Fehlermeldung wird angezeigt, wenn Sie einen ungültigen Benutzernamen eingeben](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
+[![Eine Fehlermeldung wird angezeigt, wenn ein ungültiger Benutzername eingegeben wird](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
 
 **Abbildung 2**: Eine Fehlermeldung wird angezeigt, wenn ein ungültiger Benutzername eingegeben wird ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image6.png))
 
@@ -101,7 +101,7 @@ Nachdem Sie die SMTP-Einstellungen konfiguriert haben, besuchen Sie die `Recover
 Jetzt geben Sie einen Benutzernamen ein. Verwenden Sie der Benutzernamen eines Kontos in das System mit einer e-Mail-Adresse, die Sie zugreifen können und zu beantworten, deren Sicherheit Sie kennen. Nach dem Eingeben des Benutzernamens und Benutzer auf Absenden klickt, zeigt das PasswordRecovery-Steuerelement die Frageansicht. Als mit UserName-Ansicht bei Eingabe eines falschen beantworten zeigt das PasswordRecovery-Steuerelement, das eine Fehlermeldung angezeigt (siehe Abbildung 3). Verwenden der [ `QuestionFailureText` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx) zum Anpassen dieser Fehlermeldung.
 
 
-[![An Fehlermeldung wird angezeigt, wenn der Benutzer ein ungültiges Sicherheitsantwort eingibt](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
+[![Eine Fehlermeldung wird angezeigt, wenn der Benutzer ein ungültiges Sicherheitsantwort eingibt.](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
 
 **Abbildung 3**: Eine Fehlermeldung wird angezeigt, wenn der Benutzer ein ungültiges Sicherheitsantwort eingibt ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image9.png))
 
@@ -109,7 +109,7 @@ Jetzt geben Sie einen Benutzernamen ein. Verwenden Sie der Benutzernamen eines K
 Abschließend geben Sie die richtige Sicherheits-Antwort, und klicken Sie auf Absenden. Hinter den Kulissen wird das Steuerelement PasswordRecovery ein zufälliges Kennwort generiert, weist sie dem Benutzerkonto, sendet eine e-Mail darüber informiert den Benutzer, der dem neuen Kennwort (siehe Abbildung 4), und anschließend die Ansicht erfolgreich angezeigt.
 
 
-[![Ter Benutzer erhält eine E-Mail mit neuen His-Kennwort](recovering-and-changing-passwords-cs/_static/image11.png)](recovering-and-changing-passwords-cs/_static/image10.png)
+[![Der Benutzer wird eine E-Mail mit neuen His-Kennwort gesendet.](recovering-and-changing-passwords-cs/_static/image11.png)](recovering-and-changing-passwords-cs/_static/image10.png)
 
 **Abbildung 4**: Der Benutzer erhält eine E-Mail mit neuen His-Kennwort ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image12.png))
 
@@ -145,7 +145,7 @@ Zeigen Sie abschließend die `MailDefinition`des [ `BodyFileName` Eigenschaft](h
 Nach dem vornehmen, diese erneut ändert die `RecoverPassword.aspx` Seite, und geben Sie Ihre Benutzernamen und Security-Antwort. Sie erhalten eine e-Mail, die wie in Abbildung 5 aussehen sollte. Beachten Sie, dass `webmaster@example.com` wurde, CC und würde, dass der Betreff und Text aktualisiert wurden.
 
 
-[![Ter Betreff, Nachrichtentext und CC Liste wurden aktualisiert](recovering-and-changing-passwords-cs/_static/image14.png)](recovering-and-changing-passwords-cs/_static/image13.png)
+[![Der Betreff, Nachrichtentext und CC-Liste wurden aktualisiert](recovering-and-changing-passwords-cs/_static/image14.png)](recovering-and-changing-passwords-cs/_static/image13.png)
 
 **Abbildung 5**: Der Betreff, Nachrichtentext und CC Liste aktualisiert wurden ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image15.png))
 
@@ -197,7 +197,7 @@ Verwenden Sie die ChangePassword-Steuerelement, um eine Schnittstelle für einen
 Öffnen der `ChangePassword.aspx` Seite, und fügen Sie ein ChangePassword-Steuerelement auf der Seite, und nennen Sie es `ChangePwd`. An diesem Punkt sollte die Entwurfsansicht das Ändern von Kennwörtern anzeigen angezeigt werden (siehe Abbildung 6). Wie können mit dem Steuerelement PasswordRecovery Sie zwischen den Ansichten über Smart Tag des Steuerelements wechseln. Darüber hinaus sind diese Sichten Darstellungen anpassbar, über die verschiedene Eigenschaften oder diese in eine Vorlage konvertieren.
 
 
-[![ATT ein ChangePassword-Steuerelement auf der Seite "](recovering-and-changing-passwords-cs/_static/image17.png)](recovering-and-changing-passwords-cs/_static/image16.png)
+[![Ein ChangePassword-Steuerelement auf der Seite hinzufügen](recovering-and-changing-passwords-cs/_static/image17.png)](recovering-and-changing-passwords-cs/_static/image16.png)
 
 **Abbildung 6**: Fügen Sie ein ChangePassword-Steuerelement auf der Seite ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image18.png))
 
@@ -215,7 +215,7 @@ Festlegen von `DisplayUserName` auf "true" ist nützlich, wenn Sie einen out pro
 Besuchen Sie die `ChangePassword.aspx` Seite über einen Browser, und Ihr Kennwort ändern. Beachten Sie, dass eine Fehlermeldung angezeigt wird, wenn Sie ein neues Kennwort eingeben, die nicht dem Kennwortlänge und nicht-alphanumerische Zeichen in der Konfiguration der Mitgliedschaft angegeben erfüllen (siehe Abbildung 7).
 
 
-[![ATT ein ChangePassword-Steuerelement auf der Seite "](recovering-and-changing-passwords-cs/_static/image20.png)](recovering-and-changing-passwords-cs/_static/image19.png)
+[![Ein ChangePassword-Steuerelement auf der Seite hinzufügen](recovering-and-changing-passwords-cs/_static/image20.png)](recovering-and-changing-passwords-cs/_static/image19.png)
 
 **Abbildung 7**: Fügen Sie ein ChangePassword-Steuerelement auf der Seite ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image21.png))
 
@@ -235,7 +235,7 @@ Legen Sie als Nächstes die ChangePassword-Steuerelement `MailDefinition` Eigens
 Nach diesen Änderungen, die Seite, und Ihr Kennwort erneut ändern. Dieses Mal sendet die ChangePassword-Steuerelement ein benutzerdefiniertes HTML-formatierte e-Mail-an-e-Mail-Adresse des Benutzers auf die Datei (siehe Abbildung 8).
 
 
-[![An-e-Mail-Nachricht informiert wurde das, dass deren Kennwort des Benutzers geändert.](recovering-and-changing-passwords-cs/_static/image23.png)](recovering-and-changing-passwords-cs/_static/image22.png)
+[![Eine e-Mail-Nachricht informiert das, dass deren Kennwort des Benutzers wurde geändert](recovering-and-changing-passwords-cs/_static/image23.png)](recovering-and-changing-passwords-cs/_static/image22.png)
 
 **Abbildung 8**: Eine e-Mail-Nachricht informiert darüber, dass deren Kennwort der Benutzer hat sich geändert ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image24.png))
 
@@ -273,7 +273,7 @@ Der Code hat einige unschöne Bits und ist ziemlich umfassend. Aus diesem Grund 
 Nachdem das neue Kennwort eingegeben, bestätigen es in das zweite Textfeld ein und klicken Sie auf die Schaltfläche "Benutzer aktualisieren", ein Postback erfolgt und die `aspnet_Membership_SetPassword` gespeicherte Prozedur aufgerufen wird, aktualisieren das Kennwort des Benutzers. Ich empfehle diese Funktionalität interessiert Leser, die mit dem Code vertraut, und versuchen Sie es zum Erweitern der Funktionalität enthält, das Senden einer e-Mail an den Benutzer, dessen Kennwort geändert wurde.
 
 
-[![An-Administrator kann das Kennwort eines Benutzers ändern](recovering-and-changing-passwords-cs/_static/image26.png)](recovering-and-changing-passwords-cs/_static/image25.png)
+[![Ein Administrator kann das Kennwort eines Benutzers ändern.](recovering-and-changing-passwords-cs/_static/image26.png)](recovering-and-changing-passwords-cs/_static/image25.png)
 
 **Abbildung 9**: Ein Administrator kann das Kennwort eines Benutzers ändern ([klicken Sie, um das Bild in voller Größe anzeigen](recovering-and-changing-passwords-cs/_static/image27.png))
 
@@ -297,7 +297,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [ChangePassword-Steuerelement-Schnellstarts](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/changepassword.aspx)
 - [PasswordRecovery-Steuerelement-Schnellstarts](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/passwordrecovery.aspx)
 - [Senden von E-Mails in ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
-- [`System.Net.Mail` Häufig gestellte Fragen (FAQs)](http://www.systemnetmail.com/)
+- [`System.Net.Mail` Häufig gestellte Fragen](http://www.systemnetmail.com/)
 
 ### <a name="about-the-author"></a>Der Autor
 

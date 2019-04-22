@@ -12,7 +12,7 @@ ms.openlocfilehash: 36d1166e1bd2b4c97b3cf3dd0bc3a7e8010a9443
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393690"
 ---
 # <a name="animating-an-updatepanel-control-c"></a>Animieren eines UpdatePanel-Steuerelements (C#)
@@ -50,7 +50,7 @@ In diesem Szenario wird der neue Inhalt, der die `UpdatePanel` (nach dem Postbac
 Nun, wenn ein Postback in UpdatePanel, was erfolgt, den neuen Inhalt des Bereichs reibungslos eingeblendet.
 
 
-[![THE Nächstes-Assistent wird eingeblendet,](animating-an-updatepanel-control-cs/_static/image2.png)](animating-an-updatepanel-control-cs/_static/image1.png)
+[![Der nächste Assistentenschritt wird eingeblendet,](animating-an-updatepanel-control-cs/_static/image2.png)](animating-an-updatepanel-control-cs/_static/image1.png)
 
 Der nächste Assistentenschritt wird eingeblendet, ([klicken Sie, um das Bild in voller Größe anzeigen](animating-an-updatepanel-control-cs/_static/image3.png))
 

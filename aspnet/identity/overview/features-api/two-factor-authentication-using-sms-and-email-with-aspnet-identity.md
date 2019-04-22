@@ -13,7 +13,7 @@ ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395289"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>Zwei-Faktor-Authentifizierung, die mithilfe von SMS und e-Mail-Adresse mit ASP.NET Identity
@@ -282,6 +282,6 @@ Obwohl Sie die kontosperrung auf Anmeldefehler in Verbindung mit Kennwort Versuc
 - [MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) außerdem gezeigt, wie der Tabelle Informationen zum Profil hinzufügen.
 - [ASP.NET MVC und Identität 2.0: Die Grundlagen](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) von John Atten.
 - [Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [Einführung in ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
+- [Einführung zu ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
 - [Ankündigung der RTM-Version von ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) von Pranav Rastogi.
 - [ASP.NET Identity 2.0: Einrichten der Kontoüberprüfung und zwei-Faktor-Autorisierung](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) von John Atten.

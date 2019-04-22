@@ -12,7 +12,7 @@ ms.openlocfilehash: a78f0cbc9d361d42d54cd73f952a37caae91b9f4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388178"
 ---
 # <a name="working-with-data"></a>Arbeiten mit Daten
@@ -22,4 +22,4 @@ ms.locfileid: "59388178"
 
 - [Arbeiten mit Daten](5-working-with-data.md)
 - [Anzeigen von Daten in einem Diagramm](7-displaying-data-in-a-chart.md)
-- [Arbeiten mit Dateien](working-with-files.md)
+- [Working with Files (Arbeiten mit Dateien)](working-with-files.md)

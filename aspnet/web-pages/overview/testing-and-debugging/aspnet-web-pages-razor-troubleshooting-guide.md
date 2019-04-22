@@ -12,7 +12,7 @@ ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389205"
 ---
 # <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)
@@ -36,7 +36,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Probleme mit Razor-Code](#IssuesWithRazorCode)
 - [Probleme mit der Sicherheits- und Mitgliedschaftsberechtigungen](#membership)
 - [Probleme beim Senden von e-Mail-Adresse](#email)
-- [Zusätzliche Ressourcen](#AdditionalResources)
+- [Additional Resources](#AdditionalResources) (Zusätzliche MSBuild-Ressourcen)
 
 Allgemeine Fragen, finden Sie unter [ASP.NET Web Pages (Razor) – häufig gestellte Fragen](https://go.microsoft.com/fwlink/?LinkId=253000).
 

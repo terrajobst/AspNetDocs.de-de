@@ -12,7 +12,7 @@ ms.openlocfilehash: bbc54a39ba6ca3771acd7c4da37795a23e8ee2df
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383381"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>Umschließen von Datenbankänderungen innerhalb einer Transaktion (C#)
@@ -83,7 +83,7 @@ Bevor wir beginnen, Gewusst wie: Erweitern Sie die DAL zur Unterstützung von Tr
 Wie bei den anderen Ordnern `Default.aspx` verwendet die `SectionLevelTutorialListing.ascx` Benutzersteuerelement in den Tutorials in einen Abschnitt aufgelistet. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
+[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image2.png))
 
@@ -168,12 +168,12 @@ Um die Auswirkungen zu veranschaulichen, die die Transaktion wurde beim Aktualis
 Öffnen Sie zunächst die `Transactions.aspx` auf der Seite die `BatchData` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox in den Designer. Legen Sie dessen `ID` zu `Products` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie zum Abrufen der Daten aus dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts` Methode. Einer GridView-Ansicht schreibgeschützt sein wird, also legen Sie die Dropdownlisten in der Update-, INSERT- und Registerkarten (keine) löschen und klicken Sie auf "Fertig stellen".
 
 
-[![FIgure 5: Konfigurieren Sie das "ObjectDataSource" zur Verwendung der ProductsBLL Klasse s GetProducts-Methode](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
+[![Abbildung 5: Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL Klasse s GetProducts-Methode](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
 
 **Abbildung 5**: Abbildung 5: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` s-Klasse `GetProducts` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image4.png))
 
 
-[![Su. a. die Dropdownlisten in der Update-, INSERT- und DELETE Registerkarten (keine)](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
+[![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
 
 **Abbildung 6**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image6.png))
 
@@ -191,7 +191,7 @@ Als Nächstes fügen Sie drei Schaltfläche Websteuerelemente über GridView hin
 An diesem Punkt sollte die Entwurfsansicht in Visual Studio ähnlich wie im Screenshot in Abbildung 7 dargestellt aussehen.
 
 
-[![Ter Seite enthält eine GridView und drei Web-Steuerelemente](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
+[![Die Seite enthält eine GridView und drei Web-Steuerelemente](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
 
 **Abbildung 7**: Die Seite enthält eine GridView und drei Web-Steuerelemente ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image8.png))
 
@@ -210,12 +210,12 @@ Die dritte `Click` -Ereignishandler aktualisiert die Produkte `CategoryID` s auf
 Um dieses Verhalten zu veranschaulichen, finden Sie auf dieser Seite über einen Browser. Zunächst sehen Sie die erste Seite der Daten, wie in Abbildung 8 gezeigt. Klicken Sie anschließend die Schaltfläche ändern Kategorien (mit der Transaktion). Dies dazu führen, dass einen Postback und versucht, alle Produkte aktualisieren `CategoryID` Werte annehmen, aber führt zu einer Verletzung der foreign Key-Einschränkung (siehe Abbildung 9).
 
 
-[![TIE-Produkte werden in einer navigierbaren GridView-Ansicht angezeigt werden](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
+[![Die Produkte werden in einer navigierbaren GridView-Ansicht angezeigt.](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
 
 **Abbildung 8**: Die Produkte in einer navigierbaren GridView-Ansicht angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image10.png))
 
 
-[![Rdie Kategorien Ergebnisse zu einer Verletzung der Foreign Key-Einschränkung zu Eassigning](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
+[![Erneutes Zuweisen von den Ergebnissen Kategorien zu einer Verletzung der Foreign Key-Einschränkung](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
 
 **Abbildung 9**: Erneutes Zuweisen von den Ergebnissen der Kategorien in der Verletzung einer Foreign Key-Einschränkung ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image12.png))
 
@@ -225,7 +225,7 @@ Drücken Sie jetzt Ihre Browser-s-zurück-Taste, und klicken Sie dann auf die Sc
 Versuchen Sie nun auf die Schaltfläche ändern Kategorien (ohne Transaktion). Dies führt zu dem Fehler aufgrund einer einschränkungsverletzung gleichen foreign Key-Einschränkung (siehe Abbildung 9), aber dieses Mal dieser Produkte, deren `CategoryID` Werte wurden geändert, um die zulässigen Wert wird nicht zurückgesetzt werden. Drücken Sie Ihre Browser-s-zurück-Taste und dann auf die Schaltfläche mit den Raster zu aktualisieren. Wie in Abbildung 10 gezeigt, die `CategoryID` s der ersten acht Produkte haben, wurde neu zugewiesen. In Abbildung 8 mussten Chang z. B. eine `CategoryID` von 1, aber in Abbildung 10 It s, 2 zugewiesen wurde.
 
 
-[![SOme Produkte CategoryID Werte wurden aktualisiert, während andere Benutzer wurden keine](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
+[![Einige Produkte CategoryID Werte wurden aktualisiert, während andere wurden nicht](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
 
 **Abbildung 10**: Einige Produkte `CategoryID` Werte wurden aktualisiert, während andere Benutzer wurden keine ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-cs/_static/image14.png))
 
@@ -257,4 +257,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Hilton Giesenow, Dave Gardner und Teresa Murphy. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Weiter](batch-updating-cs.md)
+> [Nächste](batch-updating-cs.md)

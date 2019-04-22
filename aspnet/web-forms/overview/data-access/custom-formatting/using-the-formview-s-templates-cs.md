@@ -12,7 +12,7 @@ ms.openlocfilehash: d275e3b154ca3397294d6cd0924cb6a50bbcef9a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395536"
 ---
 # <a name="using-the-formviews-templates-c"></a>Mithilfe der FormView Vorlagen (c#)
@@ -40,7 +40,7 @@ Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Sie
 In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um eine weniger strenge Anzeige von Produkten zu präsentieren. Statt später durch die Felder für die Name, Kategorie, Lieferanten und So weiter, das FormView `ItemTemplate` zeigt, dass diese Werte mit einer Kombination aus einem Header-Element und ein `<table>` (siehe Abbildung 1).
 
 
-[![THE, die von der Grid-Like Layout finden Sie in der DetailsView bricht FormView](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
+[![Das Raster-ähnliches Layout im DetailsView betrachtet, bricht das FormView-Steuerelement](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
 **Abbildung 1**: FormView, die aus der Grid-Like Layout dargestellt im DetailsView Zeilenumbrüche ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um e
 Öffnen der `FormView.aspx` Seite und einem FormView-Steuerelement aus der Toolbox in den Designer ziehen. Beim erstmaligen FormView hinzufügen wird es als ein graues Feld, das uns angewiesen, eine `ItemTemplate` ist erforderlich.
 
 
-[![Ter FormView-Steuerelement kann nicht im Designer gerendert werden, bis eine Elementvorlage angegeben ist](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
+[![Die FormView-Steuerelement kann im Designer nicht gerendert werden, bis eine Elementvorlage bereitgestellt wird](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
 **Abbildung 2**: Das FormView-Steuerelement kann nicht gerendert werden in den Designer an, bis ein `ItemTemplate` dient ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image6.png))
 
@@ -88,12 +88,12 @@ Da es sich um keine CheckBoxFields zur Verfügung, mit der FormView-Steuerelemen
 Mit der `ItemTemplate` abgeschlossen ist, wird die Produktinformationen auf deutlich flexiblere Weise angezeigt. Vergleichen Sie die DetailsView-Ausgabe aus dem letzten Tutorial (Abbildung 3), mit der Ausgabe von FormView generiert werden, in diesem Tutorial (Abbildung 4).
 
 
-[![Ter starre DetailsView Output](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
+[![Die starren DetailsView-Ausgabe](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
 **Abbildung 3**: Die starren DetailsView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image9.png))
 
 
-[![Ter Fluid FormView Output](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
+[![Die fließende FormView-Ausgabe](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
 **Abbildung 4**: Die fließende FormView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image12.png))
 

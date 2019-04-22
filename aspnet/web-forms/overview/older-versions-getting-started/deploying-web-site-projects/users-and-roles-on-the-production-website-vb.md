@@ -12,7 +12,7 @@ ms.openlocfilehash: e97b66aed789cf6f2b2b503ae86e773ac03d74e0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392936"
 ---
 # <a name="users-and-roles-on-the-production-website-vb"></a>Benutzer und Rollen auf der Produktionswebsite (VB)
@@ -117,4 +117,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Website-Lernprogramme zur ASP.NET-Sicherheit](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 > [!div class="step-by-step"]
-> [Vorheriges](precompiling-your-website-vb.md)
+> [Vorherige](precompiling-your-website-vb.md)

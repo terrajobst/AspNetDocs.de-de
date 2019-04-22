@@ -12,7 +12,7 @@ ms.openlocfilehash: ca383b7a82b754c7556dcea3bcdb8e28e5c7a45d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384850"
 ---
 # <a name="triggering-an-animation-in-another-control-c"></a>Auslösen einer Animation in einem anderen Steuerelement (C#)
@@ -57,7 +57,7 @@ In der `<Animations>` Knoten Ort Animationen wie gewohnt. Damit sie im Bereich g
 Beachten Sie die spezielle Reihenfolge, in der die einzelnen Animationen angezeigt werden. Als Erstes ruft die Schaltfläche deaktiviert, nachdem die Animation ausgeführt wird. Da gibt es keine `AnimationTarget` -Attribut in der `<EnableAction>` Element dieser Animation wird angewendet, auf das ursprüngliche Steuerelement: die Schaltfläche. Die nächsten beiden Animationsschritte parallel durchgeführt werden müssen (`<Parallel>` Element). Beide verfügen über ihre `AnimationTarget` Attribute festgelegt werden, um `"Panel1"`, animieren daher im Bereich nicht auf die Schaltfläche.
 
 
-[![A Klicken mit der Maus auf die Schaltfläche startet die Animation, Panel](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
+[![Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
 
 Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](triggering-an-animation-in-another-control-cs/_static/image3.png))
 

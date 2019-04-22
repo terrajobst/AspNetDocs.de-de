@@ -12,7 +12,7 @@ ms.openlocfilehash: b75057f3128662a9bbdd641dc0a7c1ba09fbbe87
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388191"
 ---
 # <a name="creating-a-database"></a>Erstellen einer Datenbank
@@ -32,11 +32,11 @@ Klicken Sie im Dialogfeld "Datenquelle auswählen" Wählen Sie Microsoft SQL Ser
 
 Geben Sie im Dialogfeld Verbindung hinzufügen ". \SQLEXPRESS" für den Servernamen, und geben Sie "Movies" als Namen für Ihre neue Datenbank.
 
-[![ADialogfeld "Verbindung" Dd](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
+[![Dialogfeld "Verbindung" hinzufügen](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
 
 Klicken Sie auf OK, und Sie werden aufgefordert, wenn die Datenbank erstellt werden soll. Wählen Sie Ja.
 
-[![Crstellen von Filmen?](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
+[![Erstellen von Filmen?](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
 
 Jetzt haben Sie eine leere Datenbank im Server-Explorer.
 
@@ -44,7 +44,7 @@ Jetzt haben Sie eine leere Datenbank im Server-Explorer.
 
 Klicken Sie mit der rechten Maustaste auf Tabellen, und klicken Sie auf die Tabelle hinzufügen. Tabellen-Designer wird angezeigt. Hinzufügen von Spalten für Id, Titel, ReleaseDate, "Genre" und Preis. Klicken Sie mit der rechten Maustaste auf die ID-Spalte, und klicken Sie auf den Primärschlüssel festlegen. Hier ist welche mein Entwurf Bereiche wie folgt aussieht.
 
-[![DDatenbank werden die Tabellen-Editor](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
+[![Datenbank-Editor](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
 
 Wählen Sie die Id-Spalte, und ändern Sie unter den unten aufgeführten Eigenschaften der Spalte "Die Spezifikation der Spaltenidentität" auf "Ja".
 
@@ -52,11 +52,11 @@ Wählen Sie die Id-Spalte, und ändern Sie unter den unten aufgeführten Eigensc
 
 Wenn Sie abgeschlossen haben, klicken Sie auf das Symbol "Speichern" in der Symbolleiste, oder wählen Sie Datei | Speichern Sie im Menü, und nennen Sie die Tabelle "**Film**" (im singular). Wir haben eine Datenbank und eine Tabelle.
 
-[![CWählen Sie aus Name](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
+[![Wählen Sie Namen](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
 
 Wechseln Sie zurück zum Server-Explorer, und klicken Sie mit der rechten Maustaste auf die Tabelle "Movie", und wählen Sie dann "Tabellendaten anzeigen". Geben Sie einige Filme, damit unsere Datenbank einige Daten haben.
 
-[![Ddie Datenbank werden Tabellenbearbeitung](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
+[![Datenbank-Tabellenbearbeitung](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
 
 ## <a name="creating-a-model"></a>Erstellen eines Modells
 
@@ -72,11 +72,11 @@ Klicken Sie auf die Schaltfläche "Hinzufügen". Dadurch wird dann "Entity Data 
 
 Wählen Sie in der neue Dialog, der angezeigt wird, generieren aus Datenbank ein. Da wir nur eine Datenbank vorgenommen haben, müssen wir nur das Entity Framework über unsere neue Datenbank und die Tabelle zu informieren. Klicken Sie auf "neben", speichern Sie die datenbankverbindung in unserer Webanwendung-Konfiguration. Prüfen Sie jetzt die Tabellen und Film Kontrollkästchen und klicken Sie auf Fertig stellen.
 
-[![Emehr Data Model-Assistent](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
+[![Assistent für Entity Data Model](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
 
 Nun können wir unsere neue Tabelle "Movie" im Entity Framework Designer angezeigt und in Code darauf zugreifen.
 
-[![MOvies – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
+[![Filme – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
 
 Auf der Entwurfsoberfläche können Sie eine "Movie"-Klasse sehen. Diese Klasse wird der Tabelle "Movie" in der Datenbank, und jede Eigenschaft darin ordnet einer Spalte mit der Tabelle. Jede Instanz einer Klasse "Movie" wird eine Zeile in der Tabelle "Movie" entsprechen.
 

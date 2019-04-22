@@ -12,7 +12,7 @@ ms.openlocfilehash: 0ca34f670202a35c627a514d3394fa430f5d8f26
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396342"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>Verwendung von ASP.NET MVC mit verschiedenen IIS-Versionen (C#)
@@ -53,7 +53,7 @@ Der Verarbeitungsmodus für die Anforderung richtet sich nach den Anwendungspool
 
 Standardmäßig ist IIS so konfiguriert, um zwei Anwendungspools zu unterstützen: **DefaultAppPool** und **Klassischer .NET AppPool**. Wenn DefaultAppPool ausgewählt ist, wird Ihre Anwendung im integrierten anforderungsverarbeitung-Modus ausgeführt. Wenn Classic .NET AppPool ausgewählt ist, wird Ihre Anwendung im klassischen anforderungsverarbeitung-Modus ausgeführt.
 
-[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
 
 **Abbildung 1**: Erkennen den Verarbeitungsmodus für die Anforderung ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.png))
 
@@ -92,7 +92,7 @@ Die Standardroute konfiguriert, die in Codebeispiel 1 können Sie auf der Route-
 
 Leider wird nicht in ältere Versionen von IIS diese Anforderungen an das ASP.NET-Framework übergeben werden. Aus diesem Grund, diese Anforderungen wird nicht auf einen Controller weitergeleitet werden. Z. B. Wenn Sie eine Browseranforderung für den URL/Home/Index erhalten klicken Sie dann die Seite "Fehler" in Abbildung 2 Sie.
 
-[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
+[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
 
 **Abbildung 2**: Empfängt einen Fehler 404 nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.png))
 
@@ -162,7 +162,7 @@ Hier ist, wie Sie eine Skriptzuordnung mit Platzhalter für IIS 7.0 aktivieren:
 6. Geben Sie den Namen MVC
 7. Klicken Sie auf die **OK** Schaltfläche
 
-[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
+[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
 
 **Abbildung 3**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 7.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image6.png))
 
@@ -177,13 +177,13 @@ Um eine Skriptzuordnung mit Platzhalter mit IIS 6.0 zu erstellen, gehen Sie wie 
 7. Deaktivieren Sie das Kontrollkästchen mit der Bezeichnung **überprüfen, ob die Datei vorhanden ist**
 8. Klicken Sie auf die **OK** Schaltfläche
 
-[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
+[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
 
 **Abbildung 4**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 6.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image8.png))
 
 Nach der Aktivierung von Platzhalter-Skriptzuordnungen müssen Sie die Routingtabelle, in der Datei "Global.asax" zu ändern, sodass es sich um eine stammroute enthält. Andernfalls erhalten Sie die Fehlerseite in Abbildung 5, wenn Sie eine Anforderung für die Stammseite der Anwendung vornehmen. Sie können die geänderte Datei "Global.asax" in Listing 4 verwenden.
 
-[![TDialogfeld für neues Projekt mit HE](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
+[![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
 
 **Abbildung 5**: Fehlende Route stammfehler ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image10.png))
 
@@ -210,4 +210,4 @@ Die erste Option müssen Sie die URLs in Ihrer ASP.NET MVC-Anwendung zu ändern.
 Die zweite Option ist die Erstellung eine Skriptzuordnung mit Platzhalter. Der Vorteil dieser zweite Option ist, dass Sie nicht benötigen, um die URLs zu ändern. Der Nachteil dieser zweite Option ist, dass sie die Leistung Ihrer ASP.NET MVC-Anwendung auswirken kann.
 
 > [!div class="step-by-step"]
-> [Weiter](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [Nächste](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

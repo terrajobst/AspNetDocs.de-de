@@ -12,7 +12,7 @@ ms.openlocfilehash: aa713d30ad09152155e0834d40d5d757b1fecf78
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386020"
 ---
 # <a name="aspnet-mvc-2"></a>ASP.NET MVC 2
@@ -26,17 +26,17 @@ ms.locfileid: "59386020"
     - [Erstellen einer Filmdatenbankanwendung mit ASP.NET MVC in 15 Minuten](how-do-i/creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
     - [Grundlegendes zu Modellen, Ansichten und Controllern](how-do-i/understanding-models-views-and-controllers.md)
     - [ASP.NET MVC-Controller – Übersicht](how-do-i/aspnet-mvc-controller-overview.md)
-    - [Grundlegendes zu Controllern, Controlleraktionen und Aktionsergebnissen](how-do-i/understanding-controllers-controller-actions-and-action-results.md)
+    - [Grundlegendes zu Controllern, Controlleraktionen und Aktionsergebnisse](how-do-i/understanding-controllers-controller-actions-and-action-results.md)
     - [Grundlegendes zu Ansichten, Anzeigedaten und HTML-Hilfsprogrammen](how-do-i/understanding-views-view-data-and-html-helpers.md)
-    - [Einführung in URL-Routing](how-do-i/an-introduction-to-url-routing.md)
-    - [Verhindern von Angriffen durch Einschleusung von JavaScript-Code](how-do-i/preventing-javascript-injection-attacks.md)
+    - [Einführung zum URL-Routing](how-do-i/an-introduction-to-url-routing.md)
+    - [Verhindern von Angriffen durch Einschleusung von JavaScript-Codes](how-do-i/preventing-javascript-injection-attacks.md)
     - [Erstellen von Komponententests für ASP.NET MVC-Anwendungen](how-do-i/creating-unit-tests-for-aspnet-mvc-applications.md)
     - [Erstellen von benutzerdefinierten HTML-Hilfsprogrammen](how-do-i/creating-custom-html-helpers.md)
     - [Erstellen von Modellklassen mit LINQ to SQL](how-do-i/creating-model-classes-with-linq-to-sql.md)
     - [Anzeigen einer Tabelle von Datenbankdaten](how-do-i/displaying-a-table-of-database-data.md)
     - [Was ist ASP.NET MVC? (80-minütiges technisches Video für Entwickler, die mit NerdDinner arbeiten)](how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
     - [Gründe für ASP.NET MVC (3-minütiges Übersichtsvideo für Entscheidungsträger)](how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-    - [ASP.NET MVC: Vorgehensweise (10-minütiges technisches Video für Entwickler)](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+    - [ASP.NET MVC: Wie 10-minütiges technisches Video für Entwickler](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
     - [Zurückgeben von formatierten JSON-Daten für einen AJAX-Aufruf in einer ASP.NET MVC-Webanwendung](how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
     - [Arbeiten mit Daten in ASP.NET MVC-Teilansichten](how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
     - [Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten.](how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
@@ -53,12 +53,12 @@ ms.locfileid: "59386020"
     - [Best Practices zu ASP.NET MVC](how-do-i/how-to-best-learn-asp-net-mvc.md)
 - [ASP.NET MVC für alle](aspnet-mvc-for-the-rest-of-us/index.md)
 
-    - [ASP.NET MVC für alle: Teil 1](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-    - [ASP.NET MVC für alle: Teil 2](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-    - [ASP.NET MVC für alle: Teil 3](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-    - [ASP.NET MVC für alle: Teil 4](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+    - [ASP.NET MVC für den Rest von uns: Teil 1](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+    - [ASP.NET MVC für den Rest von uns: Teil 2](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+    - [ASP.NET MVC für den Rest von uns: Teil 3](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+    - [ASP.NET MVC für den Rest von uns: Teil 4](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
 - [Music Store](music-store/index.md)
 
     - [MVC Music Store, Teil 1: Einführung, Tools und Projektstruktur](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
     - [MVC Music Store, Teil 2: Controller](music-store/mvc-music-store-part-2-controllers.md)
-    - [MVC Music Store, Teil 3: Ansichten und ViewModels](music-store/mvc-music-store-part-3-views-and-viewmodels.md)
+    - [MVC Music Store, Teil 3: Views und ViewModels](music-store/mvc-music-store-part-3-views-and-viewmodels.md)

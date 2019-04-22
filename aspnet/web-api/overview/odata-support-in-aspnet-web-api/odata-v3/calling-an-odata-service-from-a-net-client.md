@@ -12,7 +12,7 @@ ms.openlocfilehash: d35c0057f5c29e399e45d0a58467de7f106d9994
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389972"
 ---
 # <a name="calling-an-odata-service-from-a-net-client-c"></a>Zugreifen auf einen OData-Dienst über einen .NET-Client (C#)

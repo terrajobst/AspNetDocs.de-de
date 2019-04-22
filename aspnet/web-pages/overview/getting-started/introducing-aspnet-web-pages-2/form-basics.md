@@ -12,7 +12,7 @@ ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385955"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>Einführung in ASP.NET Web Pages - HTML-Formular-Grundlagen
@@ -69,8 +69,8 @@ Die `<form>` Element einschließt, HTML-Elemente übermittelt werden. (Eine einf
 > 
 > HTTP, das Protokoll, Browser und Server zu verwenden, um Informationen auszutauschen, ist die grundlegende Vorgänge überraschend einfach. Browser verwenden nur ein paar Verben, um Anforderungen an Server senden. Beim Schreiben von Code für das Web, ist es hilfreich zu verstehen, diese Verben und wie Browser und Server sie verwenden. Bei weitem sind die am häufigsten verwendeten Verben dies die:
 > 
-> - `GET`sein. Der Browser verwendet dieses Verb etwas vom Server abgerufen. Z. B. Wenn Sie eine URL in Ihren Browser eingeben, die der Browser führt eine `GET` Vorgang auf die Seite "anfordern, werden sollen. Wenn die Seite Grafiken enthält, führt der Browser zusätzliche `GET` Vorgänge, um die Bilder zu erhalten. Wenn die `GET` -Vorgang bleibt, Informationen an den Server übergeben, die Informationen als Teil der URL in der Abfragezeichenfolge übergeben wird.
-> - `POST`sein. Der Browser sendet eine `POST` Anforderung zum Senden von Daten hinzugefügt oder auf dem Server geändert werden. Z. B. die `POST` Verb wird verwendet, um Datensätze in einer Datenbank erstellen oder vorhandene ändern. In den meisten Fällen, wenn Sie ein Formular auszufüllen, und klicken Sie auf die Schaltfläche "Senden", die der Browser führt eine `POST` Vorgang. In einem `POST` -Vorgang an den Server übergebenen Daten werden im Text der Seite.
+> - `GET`. Der Browser verwendet dieses Verb etwas vom Server abgerufen. Z. B. Wenn Sie eine URL in Ihren Browser eingeben, die der Browser führt eine `GET` Vorgang auf die Seite "anfordern, werden sollen. Wenn die Seite Grafiken enthält, führt der Browser zusätzliche `GET` Vorgänge, um die Bilder zu erhalten. Wenn die `GET` -Vorgang bleibt, Informationen an den Server übergeben, die Informationen als Teil der URL in der Abfragezeichenfolge übergeben wird.
+> - `POST`. Der Browser sendet eine `POST` Anforderung zum Senden von Daten hinzugefügt oder auf dem Server geändert werden. Z. B. die `POST` Verb wird verwendet, um Datensätze in einer Datenbank erstellen oder vorhandene ändern. In den meisten Fällen, wenn Sie ein Formular auszufüllen, und klicken Sie auf die Schaltfläche "Senden", die der Browser führt eine `POST` Vorgang. In einem `POST` -Vorgang an den Server übergebenen Daten werden im Text der Seite.
 > 
 > Ein wichtiger Unterschied zwischen dieser Verben ist, eine `GET` Vorgang darf nicht mehr ändern, Elemente auf dem Server – oder auf etwas abstraktere Weise ausgedrückt eine `GET` Vorgang führt nicht zu einer Änderung in den Zustand auf dem Server. Durchführen können eine `GET` -Vorgang für die gleichen Ressourcen wie oft und solange aus, und ändern Sie diese Ressourcen nicht. (Ein `GET` Vorgang wird oft betont, "sicher", oder um einen technischen Begriff, zu verwenden ist *Idempotent*.) Im Gegensatz dazu sind natürlich eine `POST` Anforderung ändert sich etwas auf dem Server jedes Mal, die Sie den Vorgang ausführen.
 > 
@@ -88,7 +88,7 @@ Die meisten benutzereingabeelemente sind HTML- `<input>` Elemente. Sie sehen, wi
 - Textfeld: `<input type="text">`
 - Aktivieren Sie das Kontrollkästchen: `<input type="check">`
 - Optionsfeld ":". `<input type="radio">`
-- Schaltfläche: `<input type="button">`
+- Button: `<input type="button">`
 - Senden Sie Schaltfläche "": `<input type="submit">`
 
 Können Sie auch die `<textarea>` Element um ein mehrzeiliges Textfeld zu erstellen und die `<select>` Element zum Erstellen einer Dropdown-Liste oder einer bildlauffähigen Liste. (Weitere Informationen zu HTML Elemente bilden, finden Sie unter [HTML-Formularen und Eingabe](http://www.w3schools.com/html/html_forms.asp) auf der Website W3Schools.)
@@ -215,7 +215,7 @@ Wenn Sie all diese Elemente zusammengestellt, erhalten Sie den folgenden Code:
 
 > [!NOTE] 
 > 
-> **Wichtig!** Mithilfe von Platzhaltern (z. B. `@0`) Werte an einen SQL-Befehl übergeben wird *äußerst wichtig* für die Sicherheit. Die Möglichkeit, die Sie es hier mit Platzhaltern für Variable Daten sehen, ist die einzige Möglichkeit, die Sie die SQL-Befehlen erstellen soll.
+> **Wichtig** Mithilfe von Platzhaltern (z. B. `@0`) Werte an einen SQL-Befehl übergeben wird *äußerst wichtig* für die Sicherheit. Die Möglichkeit, die Sie es hier mit Platzhaltern für Variable Daten sehen, ist die einzige Möglichkeit, die Sie die SQL-Befehlen erstellen soll.
 > 
 > Erstellen Sie eine SQL-Anweisung nie durch das Erstellen (verketten) Literaltext und Werte, die Sie vom Benutzer zu erhalten. Verkettung von Benutzereingaben in einer SQL-Anweisung öffnet die Website eine *SQL Injection-Angriff* , in denen ein böswilliger Benutzer Werte auf der Seite, die Ihre Datenbank hack übermittelt. (Erfahren Sie mehr in diesem Artikel [SQL Injection](https://msdn.microsoft.com/library/ms161953.aspx) der MSDN-Website.)
 
@@ -356,7 +356,7 @@ Im nächsten Tutorial erstellen Sie eine Seite, die einem Formular verwendet wir
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in die ASP.NET-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL-WHERE-Klausel](http://www.w3schools.com/sql/sql_where.asp) auf der Website W3Schools
 - [Methodendefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) Artikel auf der W3C-Website
 

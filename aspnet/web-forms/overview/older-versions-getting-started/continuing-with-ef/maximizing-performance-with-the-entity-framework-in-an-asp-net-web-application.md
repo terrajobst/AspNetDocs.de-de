@@ -12,7 +12,7 @@ ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379587"
 ---
 # <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Maximieren der Leistung bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
@@ -242,7 +242,7 @@ Speichern Sie die Datei, und klicken Sie dann mit der rechten Maustaste in der D
 
 Visual Studio generiert eine Codedatei, die die Sicht erstellt mit dem Namen *SchoolModel.Views.cs* basierend auf der Vorlage. (Sie haben vielleicht bemerkt, dass die Codedatei generiert wird, noch bevor Sie auswählen, **benutzerdefiniertes Tool ausführen**, sobald Sie die Vorlagendatei speichern.)
 
-[![Image01](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
+[![Image01 abgerufen wird](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
 
 Sie können jetzt die Anwendung auszuführen und stellen Sie sicher, dass sie funktioniert wie vorher.
 

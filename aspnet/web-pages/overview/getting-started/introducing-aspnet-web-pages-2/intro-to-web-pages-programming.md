@@ -12,7 +12,7 @@ ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387346"
 ---
 # <a name="introducing-aspnet-web-pages---programming-basics"></a>Einführung in ASP.NET Web Pages - Grundlagen der Programmierung
@@ -220,7 +220,7 @@ Der neue Code im Block Initialisiert eine Variable namens ShowMessage auf "false
 
 Im Code wird ermittelt, ob die URL eine Variablen namens angezeigt, in der Abfragezeichenfolge an, wie diese Version der URL enthält:
 
-`http://localhost:43097/TestRazorPart2.cshtml`? Anzeigen = True
+`http://localhost:43097/TestRazorPart2.cshtml`?show=true
 
 Der Test selbst untersucht die QueryString-Eigenschaft des Objekts ab. Wenn die Abfragezeichenfolge ein Element mit dem Namen anzeigen enthält und das Element auf true festgelegt ist, die bei Block ausgeführt wird und die ShowMessage-Variable auf "true" festgelegt.
 
@@ -354,7 +354,7 @@ Im nächste Tutorial führt Sie in die Arbeit mit einer Datenbank. In diesem Tut
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in die ASP.NET-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter-Hilfsprogramm](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

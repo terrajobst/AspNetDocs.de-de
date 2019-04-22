@@ -12,7 +12,7 @@ ms.openlocfilehash: a2e2957ffe766282f127b6fb537af00673aa440f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389842"
 ---
 # <a name="accessing-your-models-data-from-a-controller-c"></a>Zugreifen auf Modelldaten anhand eines Controllers (C#)
@@ -103,7 +103,7 @@ Dies `@model` -Direktive ermöglicht Ihnen Zugriff auf die Liste von Filmen, die
 
 Da die `Model` -Objekt stark typisiert ist (als ein `IEnumerable<Movie>` Objekt), die jeweils `item` Objekt in der Schleife wird als eingegeben `Movie`. Neben anderen Vorteilen bedeutet dies, dass Sie während der Kompilierung des Codes überprüfen und vollständige IntelliSense-Unterstützung im Code-Editor:
 
-[![MOdelIntelliSense](accessing-your-models-data-from-a-controller/_static/image10.png "ModelIntelliSense")](accessing-your-models-data-from-a-controller/_static/image9.png)
+[![ModelIntelliSense](accessing-your-models-data-from-a-controller/_static/image10.png "ModelIntelliSense")](accessing-your-models-data-from-a-controller/_static/image9.png)
 
 ## <a name="working-with-sql-server-compact"></a>Arbeiten mit SQL Server Compact
 
@@ -123,7 +123,7 @@ Es gibt zwei Tabellen: eine für die `Movie` Entitätenmenge und dann die `EdmMe
 
 Mit der rechten Maustaste die `Movies` Tabelle, und wählen Sie **Tabellendaten anzeigen** zu ermitteln, die Daten erstellt wurde.
 
-[![MOviesTable](accessing-your-models-data-from-a-controller/_static/image16.png "MoviesTable")](accessing-your-models-data-from-a-controller/_static/image15.png)
+[![MoviesTable](accessing-your-models-data-from-a-controller/_static/image16.png "MoviesTable")](accessing-your-models-data-from-a-controller/_static/image15.png)
 
 Mit der rechten Maustaste die `Movies` Tabelle, und wählen Sie **Tabellenschema bearbeiten**.
 

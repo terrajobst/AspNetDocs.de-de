@@ -12,7 +12,7 @@ ms.openlocfilehash: 369ed343921f2b26fb5da2c69c42913ad8cb3b41
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379442"
 ---
 # <a name="aspnet-45-web-forms-strong-typed-data-controls"></a>ASP.NET 4.5 Web Forms – Stark typisierte Datensteuerelemente

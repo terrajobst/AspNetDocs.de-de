@@ -12,7 +12,7 @@ ms.openlocfilehash: 78efe409ab59df17ae71c26d4e280cc9971a64d2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393248"
 ---
 # <a name="signalr-scaleout-with-redis"></a>Horizontale Skalierung in SignalR mit Redis
@@ -24,7 +24,7 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2.4
 >

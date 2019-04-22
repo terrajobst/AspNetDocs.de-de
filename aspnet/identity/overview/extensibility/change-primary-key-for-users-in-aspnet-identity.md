@@ -13,7 +13,7 @@ ms.openlocfilehash: 212b07494381d13f6ded96a41b846dcdf7e8ff16
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393742"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>Ändern des Primärschlüssels für Benutzer in ASP.NET Identity
@@ -210,7 +210,7 @@ Sie können jetzt [führen Sie die Anwendung](#run) und einen neuen Benutzer reg
 
 Für Webformulare mit Update 2 müssen Sie die folgenden Seiten ändern.
 
-**Confirm.aspx.CX**
+**Confirm.aspx.cx**
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample30.cs?highlight=8)]
 
@@ -229,7 +229,7 @@ Sie können jetzt [führen Sie die Anwendung](#run) und einen neuen Benutzer reg
 
 Für Webformulare mit Update 3 müssen Sie die folgenden Seiten ändern.
 
-**Confirm.aspx.CX**
+**Confirm.aspx.cx**
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample33.cs?highlight=8)]
 
@@ -274,6 +274,6 @@ Wenn Sie zuvor die ASP.NET Identity Tabellen mit einem anderen primären Schlüs
 ## <a name="other-resources"></a>Weitere Ressourcen
 
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter nach ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [Migrieren von Daten eines universellen Anbieters für Mitgliedschaften und Benutzerprofilen nach ASP.NET Identity](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [Beispielanwendung](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) mit geänderten Primärschlüssel

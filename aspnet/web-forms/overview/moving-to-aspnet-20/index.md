@@ -12,7 +12,7 @@ ms.openlocfilehash: 651ac82196b29d0f90c5dff41c9ce42b4bdcf627
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395497"
 ---
 # <a name="older-versions---aspnet-20"></a>Ältere Versionen – ASP.NET 2.0
@@ -26,7 +26,7 @@ ms.locfileid: "59395497"
 - [Masterseiten](master-pages.md)
 - [Datenquellen-Steuerelemente](data-source-controls.md)
 - [Datengebundene Steuerelemente](data-bound-controls.md)
-- [Zwischenspeicherung](caching.md)
+- [Zwischenspeichern](caching.md)
 - [Mitgliedschaft](membership.md)
 - [Konfiguration und Instrumentierung](configuration-and-instrumentation.md)
 - [Profile, Designs und Webparts](profiles-themes-and-web-parts.md)

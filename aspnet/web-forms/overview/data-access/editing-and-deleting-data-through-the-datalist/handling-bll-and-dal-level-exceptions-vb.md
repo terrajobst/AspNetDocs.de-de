@@ -12,7 +12,7 @@ ms.openlocfilehash: 358d8605ed602720c7dd1687c8bdbb4275753529
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386098"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-vb"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (VB)
@@ -41,7 +41,7 @@ Unsere DataList-Tutorials, verwendet nicht jedoch dem ObjectDataSource-Steuerele
 Bevor wir zur Behandlung von Ausnahmen, die während der Workflow für die Aktualisierung auftreten fürchten, können Sie s, erstellen Sie zunächst eine bearbeitbare DataList-Steuerelement. Öffnen der `ErrorHandling.aspx` auf der Seite die `EditDeleteDataList` Ordner hinzufügen, einem DataList-Steuerelement in den Designer, legen Sie dessen `ID` Eigenschaft `Products`, und fügen Sie eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts()` Methode für die Auswahl erfasst; legen Sie die Dropdownlisten in der INSERT-, Update- und Löschen von Registerkarten (keine).
 
 
-[![Rurück die Produktinformationen mithilfe der Methode GetProducts()](handling-bll-and-dal-level-exceptions-vb/_static/image2.png)](handling-bll-and-dal-level-exceptions-vb/_static/image1.png)
+[![Zurückgeben der Produktinformationen mithilfe der GetProducts()-Methode](handling-bll-and-dal-level-exceptions-vb/_static/image2.png)](handling-bll-and-dal-level-exceptions-vb/_static/image1.png)
 
 **Abbildung 1**: Zurückgeben von Informationen für das Produkt verwenden die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-vb/_static/image3.png))
 
@@ -60,7 +60,7 @@ Nach diesen Änderungen sollte Ihre Seite s deklarativen Markup etwa wie folgt a
 Können Sie unseren Fortschritt über einen Browser anzeigen (siehe Abbildung 2).
 
 
-[![EACH Produkt umfasst eine Schaltfläche "Bearbeiten"](handling-bll-and-dal-level-exceptions-vb/_static/image5.png)](handling-bll-and-dal-level-exceptions-vb/_static/image4.png)
+[![Jedes Produkt enthält eine Schaltfläche "Bearbeiten"](handling-bll-and-dal-level-exceptions-vb/_static/image5.png)](handling-bll-and-dal-level-exceptions-vb/_static/image4.png)
 
 **Abbildung 2**: Jedes Produkt enthält eine Schaltfläche "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-vb/_static/image6.png))
 
@@ -115,12 +115,12 @@ Um dieses Tutorial abgeschlossen haben, rufen Sie einfach die `DisplayExceptionD
 Mit der `Try ... Catch` block vorhanden, die Benutzer eine informativere Fehlermeldung wie die Abbildungen 4 und 5 anzeigen angezeigt werden. Beachten Sie, die bei einer Ausnahme DataList-Steuerelement verbleibt im Bearbeitungsmodus befindet. Dies ist, da nach dem Auftreten der Ausnahme, die ablaufsteuerung sofort an umgeleitet wird die `Catch` Block unter Umgehung des Codes, der DataList-Steuerelement in den Zustand vor der Bearbeitung gibt.
 
 
-[![An Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt](handling-bll-and-dal-level-exceptions-vb/_static/image9.png)](handling-bll-and-dal-level-exceptions-vb/_static/image8.png)
+[![Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt](handling-bll-and-dal-level-exceptions-vb/_static/image9.png)](handling-bll-and-dal-level-exceptions-vb/_static/image8.png)
 
 **Abbildung 4**: Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-vb/_static/image10.png))
 
 
-[![An Fehlermeldung wird angezeigt, wenn einen Preis Negative](handling-bll-and-dal-level-exceptions-vb/_static/image12.png)](handling-bll-and-dal-level-exceptions-vb/_static/image11.png)
+[![Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ](handling-bll-and-dal-level-exceptions-vb/_static/image12.png)](handling-bll-and-dal-level-exceptions-vb/_static/image11.png)
 
 **Abbildung 5**: Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-vb/_static/image13.png))
 

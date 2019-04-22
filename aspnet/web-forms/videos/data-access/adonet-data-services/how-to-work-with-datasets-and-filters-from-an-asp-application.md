@@ -12,7 +12,7 @@ ms.openlocfilehash: 0884e561d4ff49f62503e662243f13ad52717c24
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390570"
 ---
 # <a name="how-to-work-with-datasets-and-filters-from-an-asp-application"></a>Wie für die Arbeit mit Datasets und Filtern aus einer ASP-Anwendung
@@ -24,4 +24,4 @@ In diesem Video, Teil 3 von 3 veranschaulicht Joe Stagner einen gefilterten Satz
 [&#9654;Sehen Sie sich Video (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-work-with-datasets-and-filters-from-an-asp-application)
 
 > [!div class="step-by-step"]
-> [Vorheriges](how-to-manually-bind-a-dataset-to-a-datagrid.md)
+> [Vorherige](how-to-manually-bind-a-dataset-to-a-datagrid.md)

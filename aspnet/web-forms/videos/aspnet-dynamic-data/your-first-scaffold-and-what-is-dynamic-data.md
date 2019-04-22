@@ -12,7 +12,7 @@ ms.openlocfilehash: e677707018375debd0f1542037a43e525498b247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389309"
 ---
 # <a name="your-first-scaffold-and-what-is-dynamic-data"></a>Informationen zum ersten Gerüst und wie Dynamic Data?
@@ -24,4 +24,4 @@ In dieser kurzen Einführung erstellen Sie eine vollständige dynamische Daten, 
 [&#9654;Sehen Sie sich Video (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/your-first-scaffold-and-what-is-dynamic-data)
 
 > [!div class="step-by-step"]
-> [Weiter](how-do-i-enable-inline-gridview-editing.md)
+> [Nächste](how-do-i-enable-inline-gridview-editing.md)

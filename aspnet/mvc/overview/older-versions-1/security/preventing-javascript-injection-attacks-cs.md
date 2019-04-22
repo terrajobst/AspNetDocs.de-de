@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d954cbc001a62f021f942f1ff44522a2769f516
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389575"
 ---
 # <a name="preventing-javascript-injection-attacks-c"></a>Verhindern von Angriffen durch Einschleusung von JavaScript-Codes (C#)
@@ -33,7 +33,7 @@ Wenn Sie Benutzereingaben akzeptieren und das erneute die Benutzereingabe anzeig
 Stellen Sie sich vor, dass Sie eine Kunden-Feedback-Website erstellt haben (siehe Abbildung 1). Kunden können finden Sie auf der Website, und geben Sie Feedback an den Erfahrungen, die Ihre Produkte verwenden. Wenn ein Kunde ihr Feedback übermittelt, wird das Feedback auf der Seite "Feedback" erneut angezeigt.
 
 
-[![CDebitoren-Feedback-Website](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
+[![Kunden-Feedback-Website](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
 
 **Abbildung 01**: Kunden-Feedback-Website ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-cs/_static/image3.png))
 
@@ -65,7 +65,7 @@ Stellen Sie sich, dass Sie den folgenden Text in das Kunden-Feedback-Formular ei
 Dieser Text stellt ein JavaScript-Skript, das eine Warnmeldung angezeigt. Nachdem ein Benutzer dieses Skript an das Feedback übermittelt zu bilden, die Nachricht <em>Boo!</em> wird angezeigt, wenn jeder Benutzer, die Kunden-Feedback-Website in der Zukunft besucht (siehe Abbildung 2).
 
 
-[![JAvaScript Injection](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
+[![Einschleusung von JavaScript](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
 
 **Abbildung 02**: Einschleusung von JavaScript-Befehlen ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-cs/_static/image6.png))
 
@@ -93,7 +93,7 @@ Beachten Sie, dass der Wert des `feedback.Message` ist HTML-codiert werden, bevo
 Funktionsweise Mittelwert in HTML codieren eine Zeichenfolge? Wenn Sie HTML eine Zeichenfolge zu codieren, gefährliche Zeichen wie z. B. `<` und `>` durch Verweise auf HTML-Entitäten wie z. B. ersetzt werden `&lt;` und `&gt;`. Dies der Fall bei der Zeichenfolge `<script>alert("Boo!")</script>` HTML-codiert, es konvertiert `&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`. Die codierte Zeichenfolge führt nicht mehr als einem JavaScript-Skript, wenn von einem Browser interpretiert. Stattdessen erhalten Sie in Abbildung 3 die harmlose Seite an.
 
 
-[![DEfeated JavaScript-Angriff](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
+[![JavaScript-Angriff](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
 
 **Abbildung 03**: Abwehren von JavaScript-Angriff ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-cs/_static/image9.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 94c995ee1e636f1250efb3a90887d8d73badeca7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393638"
 ---
 # <a name="older-versions---web-forms-getting-started"></a>Ältere Versionen – Web Forms, erste Schritte
@@ -21,10 +21,10 @@ ms.locfileid: "59393638"
 
 - [ASP.NET 4 – Tailspin Spyworks](tailspin-spyworks/index.md)
 
-    - [Teil 1: Datei > Neues Projekt](tailspin-spyworks/tailspin-spyworks-part-1.md)
+    - [Teil 1: Datei -> Neues Projekt](tailspin-spyworks/tailspin-spyworks-part-1.md)
     - [Teil 2: Datenzugriffsebene](tailspin-spyworks/tailspin-spyworks-part-2.md)
     - [Teil 3: Layout- und Kategoriemenü](tailspin-spyworks/tailspin-spyworks-part-3.md)
-    - [Teil 4: Auflisten von Produkten](tailspin-spyworks/tailspin-spyworks-part-4.md)
+    - [Teil 4: Auflistung von Produkten](tailspin-spyworks/tailspin-spyworks-part-4.md)
     - [Teil 5: Geschäftslogik](tailspin-spyworks/tailspin-spyworks-part-5.md)
     - [Teil 6: ASP.NET-Mitgliedschaft](tailspin-spyworks/tailspin-spyworks-part-6.md)
     - [Teil 7: Hinzufügen von Funktionen](tailspin-spyworks/tailspin-spyworks-part-7.md)
@@ -41,9 +41,9 @@ ms.locfileid: "59393638"
     - [Erste Schritte mit Entity Framework 4.0 Database First – Teil 8](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
 - [ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)](continuing-with-ef/index.md)
 
-    - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-    - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikschicht und von Komponententests](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-    - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+    - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+    - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und Komponententests](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+    - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
     - [Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4](continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4](continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [Neue Funktionen in Entity Framework 4.0](continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -58,7 +58,7 @@ ms.locfileid: "59393638"
     - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen in der Produktionsumgebung](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
     - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines ausschließlich codebasierten Updates](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
     - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines Datenbankupdates](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-    - [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren zu SQL Server](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
+    - [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren nach SQL Server](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
     - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines SQL Server-Datenbankupdates](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
     - [Visual Studio-Webbereitstellung mit SQL Server Compact – Problembehandlung](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)
 - [ASP.NET 3.5 – AJAX](aspnet-ajax/index.md)
@@ -76,7 +76,7 @@ ms.locfileid: "59393638"
     - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (C#)](master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
     - [URLs auf Masterseiten (C#)](master-pages/urls-in-master-pages-cs.md)
     - [Benennung von Steuerelement-IDs auf Inhaltsseiten (C#)](master-pages/control-id-naming-in-content-pages-cs.md)
-    - [Interaktion mit der Inhaltsseite von der Masterseite (C#)](master-pages/interacting-with-the-master-page-from-the-content-page-cs.md)
+    - [Interaktion mit der Masterseite von der Inhaltsseite (C#)](master-pages/interacting-with-the-master-page-from-the-content-page-cs.md)
     - [Interaktion mit der Inhaltsseite von der Masterseite (C#)](master-pages/interacting-with-the-content-page-from-the-master-page-cs.md)
     - [Masterseiten und ASP.NET AJAX (C#)](master-pages/master-pages-and-asp-net-ajax-cs.md)
     - [Programmgesteuertes Festlegen der Masterseite (C#)](master-pages/specifying-the-master-page-programmatically-cs.md)
@@ -86,7 +86,7 @@ ms.locfileid: "59393638"
     - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (VB)](master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)
     - [URLs auf Masterseiten (VB)](master-pages/urls-in-master-pages-vb.md)
     - [Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)](master-pages/control-id-naming-in-content-pages-vb.md)
-    - [Interaktion mit der Inhaltsseite über die Masterseite (VB)](master-pages/interacting-with-the-master-page-from-the-content-page-vb.md)
+    - [Interaktion mit der Masterseite über die Inhaltsseite (VB)](master-pages/interacting-with-the-master-page-from-the-content-page-vb.md)
     - [Interaktion mit der Inhaltsseite über die Masterseite (VB)](master-pages/interacting-with-the-content-page-from-the-master-page-vb.md)
     - [Masterseiten und ASP.NET AJAX (VB)](master-pages/master-pages-and-asp-net-ajax-vb.md)
     - [Programmgesteuertes Festlegen der Masterseite (VB)](master-pages/specifying-the-master-page-programmatically-vb.md)

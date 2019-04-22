@@ -12,7 +12,7 @@ ms.openlocfilehash: 31a01f250e4f5473e954f040e1a506dbaf61be76
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393579"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Verwenden des HTML5 und jQuery UI Datepicker-Popupkalenders mit ASP.NET MVC – Teil 1
@@ -89,4 +89,4 @@ Führen Sie die Anwendung aus. Jetzt werden das Veröffentlichungsdatum und Prei
 Im nächsten Abschnitt sehen Sie, wie Sie benutzerdefinierte Vorlagen, die Datumsfelder angezeigt werden.
 
 > [!div class="step-by-step"]
-> [Weiter](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+> [Nächste](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

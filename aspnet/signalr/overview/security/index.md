@@ -12,7 +12,7 @@ ms.openlocfilehash: 36589215f7676b34c8372afeb7ad11ab5736861c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389959"
 ---
 # <a name="signalr-security"></a>SignalR-Sicherheit
@@ -20,6 +20,6 @@ ms.locfileid: "59389959"
 > Verstehen und Behandeln von Sicherheitsproblemen in SignalR-Anwendungen.
 
 
-- [Einführung in die Sicherheit von SignalR-Anwendungen](introduction-to-security.md)
+- [Einführung zur Sicherheit von SignalR-Anwendungen](introduction-to-security.md)
 - [Authentifizierung und Autorisierung für SignalR-Hubs](hub-authorization.md)
 - [Authentifizierung und Autorisierung für permanente SignalR-Verbindungen](persistent-connection-authorization.md)

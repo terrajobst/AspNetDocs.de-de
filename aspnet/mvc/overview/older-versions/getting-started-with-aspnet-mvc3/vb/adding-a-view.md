@@ -12,7 +12,7 @@ ms.openlocfilehash: eebf36af01b27f2931fa8720b399b85edfd8c2a0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390960"
 ---
 # <a name="adding-a-view-vb"></a>Hinzufügen einer Ansicht (VB)
@@ -38,7 +38,7 @@ Beginnen wir mit einer Vorlage anzeigen, mit der `Index` -Methode in der die `He
 
 Nun fügen Sie eine ansichtsvorlage auf das Projekt, das wir mit aufrufen kann die `Index` Methode. Klicken Sie dazu auf, auf die `Index` -Methode, und klicken Sie auf **Ansicht hinzufügen**.
 
-[![INdexAddView](adding-a-view/_static/image2.png "IndexAddView")](adding-a-view/_static/image1.png)
+[![IndexAddView](adding-a-view/_static/image2.png "IndexAddView")](adding-a-view/_static/image1.png)
 
 Die **Ansicht hinzufügen** Dialogfeld wird angezeigt. Lassen Sie die Standardeinträge, und klicken Sie auf die **hinzufügen** Schaltfläche.
 

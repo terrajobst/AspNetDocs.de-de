@@ -12,7 +12,7 @@ ms.openlocfilehash: c9fb4b65605d07421872c051eedcf667101316ef
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396758"
 ---
 # <a name="adding-a-model-c"></a>Hinzufügen eines Modells (C#)

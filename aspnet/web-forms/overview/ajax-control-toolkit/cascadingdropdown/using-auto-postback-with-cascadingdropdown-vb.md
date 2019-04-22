@@ -12,7 +12,7 @@ ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383157"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>Verwenden von automatischem Postback mit CascadingDropDown (VB)
@@ -57,9 +57,9 @@ Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zus
 Auf diese Weise wird ein Postback nur ausgeführt, wenn in der Liste tatsächlich Elemente vorhanden sind und der Benutzer einen Eintrag wählt.
 
 
-[![Sein Listenelement Wahl bewirkt, dass einen Postback](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
+[![Wählen ein Listenelement auslöst ein postback](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 
 Wenn Sie ein Listenelement wird einen Postback ([klicken Sie, um das Bild in voller Größe anzeigen](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [Vorherige](presetting-list-entries-with-cascadingdropdown-vb.md)

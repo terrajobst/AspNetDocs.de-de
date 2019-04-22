@@ -12,7 +12,7 @@ ms.openlocfilehash: 689606291575ef0a324ab64f4f34758fff0fde5a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388490"
 ---
 # <a name="aspnet-and-web-tools-20122"></a>ASP.NET and Web Tools 2012.2
@@ -24,4 +24,4 @@ Erfüllen Sie die neue Version von ASP.NET und Web Tools 2012.2! Diese Version e
 [&#9654;Sehen Sie sich Video (26 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-web-tools-20122)
 
 > [!div class="step-by-step"]
-> [Vorheriges](getting-started-with-the-next-version-of-aspnet.md)
+> [Vorherige](getting-started-with-the-next-version-of-aspnet.md)

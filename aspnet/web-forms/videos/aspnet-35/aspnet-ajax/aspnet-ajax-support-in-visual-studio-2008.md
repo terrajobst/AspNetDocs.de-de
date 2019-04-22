@@ -12,7 +12,7 @@ ms.openlocfilehash: d90d69b7b03de4cb6fedffab83d4f82fd4f9d0b1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395607"
 ---
 # <a name="aspnet-ajax-support-in-visual-studio-2008"></a>ASP.NET AJAX-Unterstützung in Visual Studio 2008
@@ -24,4 +24,4 @@ Sie erhalten einen kurzen Überblick über die Einbindung von ASP.NET AJAX in Vi
 [&#9654;Sehen Sie sich Video (9 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-ajax-support-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> [Weiter](adding-ajax-functionality-to-an-existing-aspnet-page.md)
+> [Nächste](adding-ajax-functionality-to-an-existing-aspnet-page.md)

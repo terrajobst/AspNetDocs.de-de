@@ -12,7 +12,7 @@ ms.openlocfilehash: 608eb755b00e1e5c9ff4323732ca39c629bc6e30
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390024"
 ---
 # <a name="aspnet-mvc-guidance"></a>ASP.NET MVC-Leitfaden
@@ -23,6 +23,6 @@ ms.locfileid: "59390024"
 - [Bereitstellung](deployment/index.md)
 - [Leistung](performance/index.md)
 - [Internationalisierung und weiterführende Themen](advanced/index.md)
-- [Versionen](releases/index.md)
+- [Freigaben](releases/index.md)
 - [Ältere Versionen – MVC 3 und 4](older-versions/index.md)
 - [Ältere Versionen – MVC 1 und 2](older-versions-1/index.md)

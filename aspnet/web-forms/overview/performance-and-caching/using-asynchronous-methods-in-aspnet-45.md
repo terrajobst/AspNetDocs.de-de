@@ -12,7 +12,7 @@ ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381886"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>Verwenden asynchroner Methoden in ASP.NET 4.5
@@ -192,7 +192,7 @@ Um die Vorteile einer asynchronen Webanwendung nutzen zu können, müssen Sie ei
 
     - Öffnen Sie IIS-Manager, und navigieren Sie in den Bereich des Anwendungspools.
     - Klicken Sie mit der rechten Maustaste auf den Zielanwendungspool, und wählen Sie **Erweiterte Einstellungen**.  
-        ![Erweitert](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
+        ![advanced](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
     - In der **Erweiterte Einstellungen** im Dialogfeld *Warteschlangenlänge* von 1.000 auf 5.000.  
         ![Warteschlangenlänge](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   

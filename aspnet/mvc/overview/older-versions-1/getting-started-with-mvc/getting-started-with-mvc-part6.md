@@ -12,7 +12,7 @@ ms.openlocfilehash: f648e0cb53dd410105adc22401f19a5a15f9e8c1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380807"
 ---
 # <a name="adding-a-create-method-and-create-view"></a>Hinzufügen einer Create-Methode und -Ansicht
@@ -38,7 +38,7 @@ Nun implementieren wir die Create View-Vorlage, mit denen ein Formular für den 
 
 Ich wähle, die der ansichtsvorlage eine "Movie" übergeben als die Datenklasse anzeigen soll, und wir anzugeben, dass "Vorlage"Erstellen"erstellen" werden soll.
 
-[![Ansicht.](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
+[![Ansicht hinzufügen](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
 
 Nachdem Sie auf die Schaltfläche "hinzufügen" klicken, wird für Sie \Movies\Create.aspx ansichtsvorlage erstellt. Da wir in der Dropdownliste "Inhalt anzeigen" "Erstellen" ausgewählt haben, "Gerüst erstellt das Dialogfeld" Ansicht hinzufügen"automatisch" einige Standardinhalt für uns. Das Gerüst erstellt eine HTML &lt;Formular&gt;, ein Ort für Validierungsfehler zu Nachrichten und da Filme Gerüstbau kennt, Erstellung Bezeichnung und Felder für jede Eigenschaft unserer Klasse.
 
@@ -48,7 +48,7 @@ Da unsere Datenbank automatisch einem Film ID erhalten, wir entfernen diese Feld
 
 Lassen Sie uns nun erstellen Sie einen neuen Film und der Datenbank hinzugefügt. Wir zu diesem Zweck die Anwendung erneut ausführen und finden Sie auf der "/ Movies"-URL, und klicken Sie auf "Erstellen" verknüpfen, um einen neuen Film hinzuzufügen.
 
-[![CErstellen – Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
+[![Erstellen Sie – Windows InternetExplorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
 
 Wenn wir auf die Schaltfläche "erstellen" klicken, werden wir (per HTTP POST) die Daten in diesem Formular an die Methode /Movies/Create veröffentlicht werden, die wir gerade erstellt haben. Genau wie das System wird bei automatisch hat den Parameter "NumTimes" und "Name" nicht in der URL, und der Parameter für eine Methode zuvor zugewiesen das System automatisch die Formularfelder aus einem Beitrag nehmen und ordnen sie ein Objekt. In diesem Fall werden die Werte aus Feldern in HTML, z. B. "ReleaseDate" und "Title" automatisch in die richtigen Eigenschaften einer neuen Instanz eines Films platziert.
 
@@ -58,7 +58,7 @@ Sehen wir uns die zweite Create-Methode aus unserer MoviesController erneut aus.
 
 Diese Movie-Objekt klicken Sie dann auf die Version [HttpPost] unsere Create-Aktion-Methode übergeben wurde, und wir in der Datenbank gespeichert ist, und klicken Sie dann den Benutzer wieder an die Index() Aktionsmethode das gespeicherte Ergebnis in der Movie-Liste aufgeführt werden umgeleitet:
 
-[![MILM Liste – Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
+[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
 
 Wir werden nicht überprüft, ob unsere Filme jedoch richtig ist sind, und die Datenbank wird nicht erlauben, einen Film mit kein Titel zu speichern. Es wäre schön, wenn wir den Benutzer mitteilen könnten, der vor der Datenbank einen Fehler ausgelöst hat. Dies als Nächstes machen wir durch Hinzufügen von validierungsunterstützung unserer Anwendung.
 

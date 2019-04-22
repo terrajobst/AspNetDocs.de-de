@@ -12,7 +12,7 @@ ms.openlocfilehash: 0fd943eba4c6d80bba5ca6c4d69cbd3a8927513d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391506"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 8
@@ -32,7 +32,7 @@ Im vorherigen Tutorial implementiert Sie gespeicherte Prozeduren. In diesem Tuto
 
 Um anzuzeigen, wie dies funktioniert, ändern Sie die Steuerelemente, die Sie verwenden, um das Anzeigen und Bearbeiten von Feldern in der vorhandenen *Students.aspx* Seite, und Sie fügen Formatierung und Validierung von Metadaten auf die Felder Name und Datum der `Student` Entitätstyp.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-8/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-8/_static/image1.png)
 
 ## <a name="using-dynamicfield-and-dynamiccontrol-controls"></a>Verwenden von DynamicField- und DynamicControl-Steuerelemente
 
@@ -120,7 +120,7 @@ Nun, da Sie diese Regeln für Formatierung und Validierung in den Metadaten des 
 
 Dies schließt diese tutorialreihe zu den ersten Schritten mit dem Entity Framework. Weitere Ressourcen können Sie erfahren, wie Sie das Entity Framework verwenden, fahren Sie mit [im ersten Tutorial, in den nächsten Tutorials Entity Framework](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md) , oder besuchen Sie den folgenden Websites:
 
-- [Entity Framework FAQ](http://www.ef-faq.org/introduction.html)
+- [Entitätsframework – häufig gestellte Fragen](http://www.ef-faq.org/introduction.html)
 - [Im Entity Framework-Team-Blog](https://blogs.msdn.com/b/adonet/)
 - [Entitätsframework in der MSDN Library](https://msdn.microsoft.com/library/bb399572.aspx)
 - [Entitätsframework in der MSDN-Datenentwicklercenter](https://msdn.microsoft.com/data/ef.aspx)
@@ -130,4 +130,4 @@ Dies schließt diese tutorialreihe zu den ersten Schritten mit dem Entity Framew
 - [Julie lermans blog](http://thedatafarm.com/blog/)
 
 > [!div class="step-by-step"]
-> [Vorheriges](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [Vorherige](the-entity-framework-and-aspnet-getting-started-part-7.md)

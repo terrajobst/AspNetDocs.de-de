@@ -12,7 +12,7 @@ ms.openlocfilehash: 5f8eeeaa9bd77c0259f680198e57ade8d49cd06b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382616"
 ---
 # <a name="creating-an-action-vb"></a>Erstellen einer Aktion (VB)
@@ -57,7 +57,7 @@ Wenn Sie eine öffentliche Methode in einer Controllerklasse zu erstellen müsse
 Wenn Sie versuchen, die Controlleraktion CompanySecrets() aufrufen, indem Sie die Eingabe /Work/CompanySecrets in die Adressleiste des Browsers klicken Sie dann erhalten die Fehlermeldung in Abbildung 1 Sie.
 
 
-[![INvoking eine NonAction-Methode](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
+[![Aufrufen einer NonAction-Methode](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
 
 **Abbildung 01**: Aufrufen einer Methode NonAction ([klicken Sie, um das Bild in voller Größe anzeigen](creating-an-action-vb/_static/image2.png))
 

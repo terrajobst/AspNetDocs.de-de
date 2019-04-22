@@ -12,7 +12,7 @@ ms.openlocfilehash: e4715862d7bc89f37a74ef63ee09e69e6e2d2665
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396888"
 ---
 # <a name="creating-a-data-access-layer-vb"></a>Erstellen einer Datenzugriffsschicht (VB)
@@ -37,7 +37,7 @@ In diesem Tutorial wir ganz von vorn beginnen und Erstellen der Data Access Laye
 Bevor wir unsere Data Access Layer (DAL) erstellen können, müssen wir eine Website erstellen und Einrichten der Datenbank. Zunächst erstellen eine neue Datei systembasierte ASP.NET-Website. Um dies zu erreichen, finden Sie unter dem Menü "Datei" aus, und wählen Sie die neue Website, die das Dialogfeld Neue Website anzuzeigen. Wählen Sie die Vorlage für ASP.NET Web Site, legen Sie die Dropdownliste den Speicherort auf File System, wählen Sie einen Ordner aus, um die Website zu platzieren und Festlegen der Sprache Visual Basic.
 
 
-[![CErstellen eine Website New File System-Based](creating-a-data-access-layer-vb/_static/image2.png)](creating-a-data-access-layer-vb/_static/image1.png)
+[![Erstellen einer neuen System-basierte-Website](creating-a-data-access-layer-vb/_static/image2.png)](creating-a-data-access-layer-vb/_static/image1.png)
 
 **Abbildung 1**: Erstellen einer Website New File System-Based ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image3.png))
 
@@ -92,7 +92,7 @@ Um stark typisierte Objekte zurückzugeben, können Entwickler eigene benutzerde
 Wir verwenden die stark typisierte DataSets für diese Tutorials Architektur. Abbildung 3 zeigt den Workflow zwischen den verschiedenen Ebenen einer Anwendung, die typisierte DataSets verwendet.
 
 
-[![ALL, die den Datenzugriffscode, an die DAL verwiesen wird](creating-a-data-access-layer-vb/_static/image6.png)](creating-a-data-access-layer-vb/_static/image5.png)
+[![Alle Data Access Code wird an die DAL verwiesen.](creating-a-data-access-layer-vb/_static/image6.png)](creating-a-data-access-layer-vb/_static/image5.png)
 
 **Abbildung 3**: Alle Data Access Code verwiesen wird, an die DAL ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image7.png))
 
@@ -102,7 +102,7 @@ Wir verwenden die stark typisierte DataSets für diese Tutorials Architektur. Ab
 Um zu beginnen, erstellen die DAL, zunächst das Projekt ein typisiertes DataSet hinzugefügt. Zu diesem Zweck mit der rechten Maustaste auf den Projektknoten im Projektmappen-Explorer, und wählen Sie ein neues Element hinzufügen. Wählen Sie die Option für die Datasets aus der Liste der Vorlagen, und nennen Sie sie `Northwind.xsd`.
 
 
-[![CWählen Sie aus, um Ihr Projekt ein neues DataSet hinzufügen](creating-a-data-access-layer-vb/_static/image9.png)](creating-a-data-access-layer-vb/_static/image8.png)
+[![Wählen Sie Ihr Projekt ein neues DataSet hinzu](creating-a-data-access-layer-vb/_static/image9.png)](creating-a-data-access-layer-vb/_static/image8.png)
 
 **Abbildung 4**: Wählen Sie Ihr Projekt ein neues DataSet hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image10.png))
 
@@ -116,7 +116,7 @@ Bedenken Sie, dass stark typisierte DataTable keine Informationen zum Zugriff au
 Zunächst, dass den TableAdapter-Konfigurations-Assistenten dazu aufgefordert, nach welcher Datenbank Sie arbeiten mit auswählen. Die Dropdown-Liste zeigt die Datenbanken im Server-Explorer. Wenn Sie den Server-Explorer nicht die Datenbank Northwind hinzugefügt haben, können Sie die Schaltfläche neue Verbindung zu diesem Zeitpunkt zu diesem Zweck klicken.
 
 
-[![CWählen Sie aus der Northwind-Datenbank aus der Dropdown-Liste](creating-a-data-access-layer-vb/_static/image12.png)](creating-a-data-access-layer-vb/_static/image11.png)
+[![Wählen Sie die Northwind-Datenbank aus der Dropdown-Liste](creating-a-data-access-layer-vb/_static/image12.png)](creating-a-data-access-layer-vb/_static/image11.png)
 
 **Abbildung 5**: Wählen Sie die Northwind-Datenbank aus der Dropdown-Liste ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image13.png))
 
@@ -124,7 +124,7 @@ Zunächst, dass den TableAdapter-Konfigurations-Assistenten dazu aufgefordert, n
 Nachdem Sie die Datenbank auswählen und auf Weiter klicken, werden Sie aufgefordert, wenn Sie die Verbindungszeichenfolge in speichern möchten die `Web.config` Datei. Durch Speichern der Verbindungszeichenfolge müssen Sie vermeiden, dass es schwer codiert in den TableAdapter-Klassen, die Dinge vereinfacht, wenn die Informationen zur Verbindungszeichenfolge in der Zukunft ändern. Wenn Sie sich entscheiden, um die Verbindungszeichenfolge in der Konfigurationsdatei zu speichern. es befindet sich der `<connectionStrings>` Abschnitt, die möglicherweise [optional verschlüsselte](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx) für Sicherheit verbesserte oder später über die neuen ASP.NET 2.0-Eigenschaftenseite innerhalb geändert die IIS GUI-Verwaltungstool, handelt es sich besser für Administratoren ist.
 
 
-[![SSpeichern Sie die Verbindungszeichenfolge für die Datei "Web.config"](creating-a-data-access-layer-vb/_static/image15.png)](creating-a-data-access-layer-vb/_static/image14.png)
+[![Speichern Sie die Verbindungszeichenfolge in "Web.config"](creating-a-data-access-layer-vb/_static/image15.png)](creating-a-data-access-layer-vb/_static/image14.png)
 
 **Abbildung 6**: Speichern Sie die Verbindungszeichenfolge für `Web.config` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image16.png))
 
@@ -134,7 +134,7 @@ Als Nächstes müssen wir das Schema für die erste stark typisierte DataTable z
 Informationen zum Einstieg in die Definition der SQL-Abfrage müssen wir zuerst angeben, wie soll den TableAdapter zum Ausstellen von der Abfrage. Wir können eine Ad-hoc-SQL-Anweisung verwenden, erstellen eine neue gespeicherte Prozedur oder eine vorhandene gespeicherte Prozedur verwenden. Für diese Tutorials verwenden wir die Ad-hoc-SQL-Anweisungen. Finden Sie unter [Brian Noyes](http://briannoyes.net/)des Artikel [Erstellen einer Datenzugriffsschicht mit der DataSet-Designer von Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner) ein Beispiel für die Verwendung von gespeicherten Prozeduren.
 
 
-[![QDirectQuery die Daten mit einer Ad-hoc-SQL-Anweisung](creating-a-data-access-layer-vb/_static/image18.png)](creating-a-data-access-layer-vb/_static/image17.png)
+[![Daten Sie die mithilfe einer Ad-hoc-SQL-Anweisung](creating-a-data-access-layer-vb/_static/image18.png)](creating-a-data-access-layer-vb/_static/image17.png)
 
 **Abbildung 7**: Abfragen der Daten, die mit Ad-hoc-SQL-Anweisungen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image19.png))
 
@@ -142,7 +142,7 @@ Informationen zum Einstieg in die Definition der SQL-Abfrage müssen wir zuerst 
 An diesem Punkt können wir in der SQL-Abfrage von hand eingeben. Wenn Sie die erste Methode in der TableAdapter erstellen sollen in der Regel, die Abfrage diese Spalten zurück, die in die entsprechende DataTable ausgedrückt werden müssen. Wir erreichen dies durch Erstellen einer Abfrage, die alle Spalten und alle Zeilen aus, gibt die `Products` Tabelle:
 
 
-[![EGeben Sie die SQL-Abfrage in das Textfeld](creating-a-data-access-layer-vb/_static/image21.png)](creating-a-data-access-layer-vb/_static/image20.png)
+[![Geben Sie die SQL-Abfrage in das Textfeld ein](creating-a-data-access-layer-vb/_static/image21.png)](creating-a-data-access-layer-vb/_static/image20.png)
 
 **Abbildung 8**: Geben Sie die SQL-Abfrage in das Textfeld ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image22.png))
 
@@ -150,7 +150,7 @@ An diesem Punkt können wir in der SQL-Abfrage von hand eingeben. Wenn Sie die e
 Klicken Sie alternativ verwenden Sie den Abfrage-Generator, und erstellen Sie die Abfrage grafisch zu, wie in Abbildung 9 gezeigt.
 
 
-[![CErstellen die Abfrage grafisch dargestellt, über den Abfrage-Editor](creating-a-data-access-layer-vb/_static/image24.png)](creating-a-data-access-layer-vb/_static/image23.png)
+[![Erstellen Sie die Abfrage grafisch dargestellt, über den Abfrage-Editor](creating-a-data-access-layer-vb/_static/image24.png)](creating-a-data-access-layer-vb/_static/image23.png)
 
 **Abbildung 9**: Erstellen Sie die Abfrage grafisch dargestellt, über den Abfrage-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image25.png))
 
@@ -158,7 +158,7 @@ Klicken Sie alternativ verwenden Sie den Abfrage-Generator, und erstellen Sie di
 Nach dem Erstellen der Abfrage, aber bevor Sie fortfahren mit dem nächsten Bildschirm klicken Sie auf die Schaltfläche "Erweiterte Optionen". In Projekten auf Website ist "Generate INSERT-, Update- und Delete-Anweisungen die einzige erweiterte Optionen, die standardmäßig aktiviert; Wenn Sie diesen Assistenten aus einer Klassenbibliothek oder ein Windows-Projekt ausführen wird auch die Option "Vollständigen Parallelität verwenden" ausgewählt werden. Lassen Sie die Option "Verwenden von optimistischer Parallelität" jetzt deaktiviert. In zukünftigen Lernprogrammen untersuchen wir die vollständigen Parallelität.
 
 
-[![SWählen Sie nur die generieren Insert, Update und Delete-Anweisungen Option](creating-a-data-access-layer-vb/_static/image27.png)](creating-a-data-access-layer-vb/_static/image26.png)
+[![Wählen Sie nur die generieren Insert, Update und Delete-Anweisungen Option](creating-a-data-access-layer-vb/_static/image27.png)](creating-a-data-access-layer-vb/_static/image26.png)
 
 **Abbildung 10**: Wählen Sie nur die generieren Insert, Update und Delete-Anweisungen Option ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image28.png))
 
@@ -173,7 +173,7 @@ Sie können den TableAdapter, implementieren Sie eine oder beide dieser Muster v
 Wenn dieses Kontrollkästchen aktiviert, erstellt das letzte Kontrollkästchen "GenerateDBDirectMethods," `Insert()`, `Update()`, und `Delete()` Methoden für den TableAdapter. Wenn Sie diese Option deaktiviert lassen, müssen alle Updates über die TableAdapter Sole `Update()` Methode, die in typisierten Datasets, einer "DataTable", einer einzelnen DataRow oder ein Array von DataRows verwendet. (Haben deaktiviert die "Generate INSERT-, Update- und Delete-Anweisungen" option die erweiterten Eigenschaften in Abbildung 9 dieses Kontrollkästchen, die Einstellung hat keine Auswirkungen.) Wir lassen Sie dieses Kontrollkästchen aktiviert ist.
 
 
-[![CÄndern der Methodenname von GetData auf GetProducts](creating-a-data-access-layer-vb/_static/image30.png)](creating-a-data-access-layer-vb/_static/image29.png)
+[![Ändern Sie den Methodennamen von GetData auf GetProducts](creating-a-data-access-layer-vb/_static/image30.png)](creating-a-data-access-layer-vb/_static/image29.png)
 
 **Abbildung 11**: Ändern Sie den Methodennamen aus `GetData` zu `GetProducts` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image31.png))
 
@@ -181,7 +181,7 @@ Wenn dieses Kontrollkästchen aktiviert, erstellt das letzte Kontrollkästchen "
 Schließen Sie den Assistenten, indem Sie auf "Fertig stellen". Nach dem Schließen des Assistenten werden wir dem DataSet-Designer zurückgegeben, die DataTable anzeigt, dass wir gerade erstellt haben. Sehen Sie die Liste der Spalten in der `Products` DataTable (`ProductID`, `ProductName`und so weiter), sowie die Methoden von der `ProductsTableAdapter` (`Fill()` und `GetProducts()`).
 
 
-[![Ter Produkte DataTable und ProductsTableAdapter wurden für das typisierte DataSet hinzugefügt](creating-a-data-access-layer-vb/_static/image33.png)](creating-a-data-access-layer-vb/_static/image32.png)
+[![Die Produkte DataTable und ProductsTableAdapter wurden für das typisierte DataSet hinzugefügt](creating-a-data-access-layer-vb/_static/image33.png)](creating-a-data-access-layer-vb/_static/image32.png)
 
 **Abbildung 12**: Die `Products` DataTable und `ProductsTableAdapter` das typisierte DataSet hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image34.png))
 
@@ -203,7 +203,7 @@ AllProducts.aspx.vb
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample3.vb)]
 
 
-[![Ter die Liste der Produkte wird in einer GridView-Ansicht angezeigt werden](creating-a-data-access-layer-vb/_static/image36.png)](creating-a-data-access-layer-vb/_static/image35.png)
+[![Die Liste der Produkte wird in einer GridView-Ansicht angezeigt.](creating-a-data-access-layer-vb/_static/image36.png)](creating-a-data-access-layer-vb/_static/image35.png)
 
 **Abbildung 13**: Die Liste der Produkte in einer GridView-Ansicht angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image37.png))
 
@@ -225,7 +225,7 @@ Fügen Sie der `GetProductsByCategoryID(categoryID)` Methode. Zum Hinzufügen ei
 Wir werden zunächst dazu aufgefordert, zu der gibt an, ob der Zugriff auf die Datenbank mit einer Ad-hoc-SQL-Anweisung oder einer neuen oder vorhandenen gespeicherten Prozedur werden sollten. Wählen wir eine Ad-hoc-SQL-Anweisung erneut aus. Als Nächstes werden wir gefragt, welche Art von SQL-Abfrage wir gerne verwenden würden. Da wir alle Produkte zurückzugeben, die eine angegebene Kategorie angehören, möchten, möchten wir Schreiben einer `SELECT` -Anweisung die Zeilen zurückgibt.
 
 
-[![CWählen Sie aus, erstellen Sie eine Anweisung die gibt Zeilen auswählen](creating-a-data-access-layer-vb/_static/image40.png)](creating-a-data-access-layer-vb/_static/image39.png)
+[![Wählen Sie eine SELECT-Anweisung zu erstellen, die Zeilen zurückgibt](creating-a-data-access-layer-vb/_static/image40.png)](creating-a-data-access-layer-vb/_static/image39.png)
 
 **Abbildung 15**: Wählen Sie zum Erstellen einer `SELECT` -Anweisung die Zeilen zurück ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image41.png))
 
@@ -233,7 +233,7 @@ Wir werden zunächst dazu aufgefordert, zu der gibt an, ob der Zugriff auf die D
 Der nächste Schritt ist die SQL-Abfrage verwendet, um Zugriff auf die Daten zu definieren. Da wir nur solche Produkte zurück, die zu einer bestimmten Kategorie gehören möchten, verwenden ich die gleiche `SELECT` -Anweisung vom `GetProducts()`, aber fügen Sie die folgenden `WHERE` Klausel: `WHERE CategoryID = @CategoryID`. Die `@CategoryID` Parameter gibt an, die dem TableAdapter-Assistenten, dass die Methode, die wir erstellen einen Eingabeparameter des entsprechenden Typs (d. h., ein NULL-Werte zulässt Integer) erforderlich sind.
 
 
-[![EGeben Sie eine Abfrage, um nur zurückzukehren Produkte in einer angegebenen Kategorie](creating-a-data-access-layer-vb/_static/image43.png)](creating-a-data-access-layer-vb/_static/image42.png)
+[![Geben Sie eine Abfrage aus, um nur die Produkte in einer angegebenen Kategorie zurückzugeben](creating-a-data-access-layer-vb/_static/image43.png)](creating-a-data-access-layer-vb/_static/image42.png)
 
 **Abbildung 16**: Geben Sie eine Abfrage nur Zurückgeben von Produkten in eine angegebene Kategorie ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image44.png))
 
@@ -241,7 +241,7 @@ Der nächste Schritt ist die SQL-Abfrage verwendet, um Zugriff auf die Daten zu 
 Im letzten Schritt, denen wir wählen können, die auf Daten, Muster zugreifen zu verwenden, sowie die Namen der generierten Methoden anpassen. Für das Muster Füllung ändern wir den Namen in `FillByCategoryID` und für die Rückgabe eine "DataTable" Muster zurückgeben (der `GetX` Methoden), verwenden wir `GetProductsByCategoryID`.
 
 
-[![CWählen Sie die Namen für die TableAdapter-Methoden aus](creating-a-data-access-layer-vb/_static/image46.png)](creating-a-data-access-layer-vb/_static/image45.png)
+[![Wählen Sie die Namen für die TableAdapter-Methoden](creating-a-data-access-layer-vb/_static/image46.png)](creating-a-data-access-layer-vb/_static/image45.png)
 
 **Abbildung 17**: Wählen Sie die Namen für die TableAdapter-Methoden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image47.png))
 
@@ -259,7 +259,7 @@ Ruhe Hinzufügen einer `GetProductByProductID(productID)` Methode, die mit derse
 Diese parametrisierten Abfragen können direkt aus dem DataSet-Designer getestet werden. Mit der rechten Maustaste auf die Methode in der TableAdapter aus, und wählen Sie die Vorschaudaten. Geben Sie anschließend die Werte für die Parameter verwenden, und klicken Sie auf Vorschau.
 
 
-[![Ttypkonvertierungsverarbeitung Produkte, die die Kategorie "Getränke" angehören, werden angezeigt](creating-a-data-access-layer-vb/_static/image50.png)](creating-a-data-access-layer-vb/_static/image49.png)
+[![Diese Produkte gehören zur Kategorie Getränke werden angezeigt.](creating-a-data-access-layer-vb/_static/image50.png)](creating-a-data-access-layer-vb/_static/image49.png)
 
 **Abbildung 19**: Diese Produkte gehören zur Kategorie Getränke werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image51.png))
 
@@ -275,7 +275,7 @@ Beverages.aspx.vb
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample5.vb)]
 
 
-[![Ttypkonvertierungsverarbeitung Produkte in der Kategorie "Getränke" werden angezeigt](creating-a-data-access-layer-vb/_static/image53.png)](creating-a-data-access-layer-vb/_static/image52.png)
+[![Diese Produkte in der Kategorie "Getränke" werden angezeigt.](creating-a-data-access-layer-vb/_static/image53.png)](creating-a-data-access-layer-vb/_static/image52.png)
 
 **Abbildung 20**: Diese Produkte in der Kategorie "Getränke" werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image54.png))
 
@@ -285,7 +285,7 @@ Beverages.aspx.vb
 Es gibt zwei Muster, die häufig zum Einfügen, aktualisieren und Löschen von Daten verwendet. Das erste Muster für die die direkte datenbankmuster aufgerufen werden, wenn aufgerufen, umfasst das Erstellen von Methoden, das Problem ein `INSERT`, `UPDATE`, oder `DELETE` Befehl, um die Datenbank, die für ein einzelner Datensatz ausgeführt wird. Solche Methoden werden in der Regel in einer Reihe von skalaren Werten (ganze Zahlen, Zeichenfolgen, boolesche Werte, Datums-/Uhrzeitangaben und So weiter), die entsprechen den Werten, einfügen, aktualisieren oder Löschen von übergeben. Z. B. mit diesem Muster für die `Products` Tabelle, die die Delete-Methode in einen ganzzahligen Parameter an, dauern würde, der angibt, die `ProductID` des Datensatzes zu löschen, während die Insert-Methode in einer Zeichenfolge für dauern würde, die `ProductName`, einen Dezimalwert für den `UnitPrice`, eine ganze Zahl für die `UnitsOnStock`und so weiter.
 
 
-[![EACH-Insert, Update und Löschanforderung wird gesendet, um die Datenbank sofort](creating-a-data-access-layer-vb/_static/image56.png)](creating-a-data-access-layer-vb/_static/image55.png)
+[![Jede INSERT-, Update- und Delete-Anforderung wird die Datenbank sofort gesendet.](creating-a-data-access-layer-vb/_static/image56.png)](creating-a-data-access-layer-vb/_static/image55.png)
 
 **Abbildung 21**: Jede INSERT-, Update- und Delete-Anforderung an die Datenbank sofort gesendet ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image57.png))
 
@@ -293,7 +293,7 @@ Es gibt zwei Muster, die häufig zum Einfügen, aktualisieren und Löschen von D
 Das andere Muster, bezeichnet als Batch Muster aktualisieren, besteht darin, einen gesamten Datasets, DataTable oder Sammlung von DataRows in einem Methodenaufruf zu aktualisieren. Mit diesem Muster Entwickler löscht, einfügt, und ändert die DataRows in einer "DataTable" und übergibt dann diese DataRows oder DataTable in eine Updatemethode. Klicken Sie dann diese Methode listet DataRows übergeben, die bestimmt, ob sie geändert, hinzugefügt, gelöscht oder wurde haben (über die DataRow [RowState-Eigenschaft](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) Wert), und gibt die entsprechende Datenbank-Anforderung für jeden Datensatz.
 
 
-[![AAlle Änderungen synchronisiert wurden, mit der Datenbank bei der Update-Methode wird aufgerufen](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
+[![Alle Änderungen werden mit der Datenbank synchronisiert, wenn die Update-Methode aufgerufen wird](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
 
 **Abbildung 22**: Alle Änderungen werden mit der Datenbank synchronisiert, wenn die Update-Methode aufgerufen wird ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image60.png))
 
@@ -303,7 +303,7 @@ Der TableAdapter updatemusters Batch wird standardmäßig verwendet, unterstütz
 Beide Änderungen Datenmustern Verwenden des TableAdapter `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften zum Ausgeben ihrer `INSERT`, `UPDATE`, und `DELETE` Befehle aus, um die Datenbank. Können Sie überprüfen und Ändern der `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften durch Klicken auf den TableAdapter im DataSet-Designer und dann das Fenster "Eigenschaften". (Stellen Sie sicher, dass Sie ausgewählt haben, den TableAdapter, und dass die `ProductsTableAdapter` Objekt wird in der Dropdown-Liste im Fenster Eigenschaften ausgewählt.)
 
 
-[![Ter TableAdapter hat InsertCommand, UpdateCommand und DeleteCommand Eigenschaften](creating-a-data-access-layer-vb/_static/image62.png)](creating-a-data-access-layer-vb/_static/image61.png)
+[![Der TableAdapter hat InsertCommand, UpdateCommand und DeleteCommand-Eigenschaften](creating-a-data-access-layer-vb/_static/image62.png)](creating-a-data-access-layer-vb/_static/image61.png)
 
 **Abbildung 23**: Der TableAdapter hat `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image63.png))
 
@@ -311,7 +311,7 @@ Beide Änderungen Datenmustern Verwenden des TableAdapter `InsertCommand`, `Upda
 Klicken Sie auf, um zu überprüfen oder ändern Sie diesen Befehl Datenbankeigenschaften, die `CommandText` untergeordnete Eigenschaft, die in den Abfrage-Generator angezeigt wird.
 
 
-[![CKonfigurieren Sie die INSERT, UPDATE und DELETE-Anweisungen im Abfrage-Generator](creating-a-data-access-layer-vb/_static/image65.png)](creating-a-data-access-layer-vb/_static/image64.png)
+[![Konfigurieren Sie die INSERT-, Update- und DELETE-Anweisungen im Abfrage-Generator](creating-a-data-access-layer-vb/_static/image65.png)](creating-a-data-access-layer-vb/_static/image64.png)
 
 **Abbildung 24**: Konfigurieren der `INSERT`, `UPDATE`, und `DELETE` Anweisungen im Abfrage-Generator ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image66.png))
 
@@ -331,7 +331,7 @@ Die `Insert()`, `Update()`, und `Delete()` Methoden, die von der DB-direct-Metho
 Um eine solche benutzerdefinierte Methode erstellen, geben Sie an der DataSet-Designer zurück. Mit der rechten Maustaste auf den TableAdapter, und wählen Sie die Abfrage hinzufügen, Rückgabe an den TableAdapter-Assistenten aus. Geben wir den Typ der Abfrage zu erstellen, auf dem zweiten Bildschirm. Erstellen wir eine Methode, ein neues Produkt hinzugefügt und gibt anschließend den Wert von des neu hinzugefügten Datensatzes `ProductID`. Aus diesem Grund erstellen Sie wahlweise eine `INSERT` Abfrage.
 
 
-[![CErstellen eine Methode, um die Products-Tabelle eine neue Zeile hinzufügen](creating-a-data-access-layer-vb/_static/image68.png)](creating-a-data-access-layer-vb/_static/image67.png)
+[![Erstellen Sie eine Methode, um die Products-Tabelle eine neue Zeile hinzuzufügen](creating-a-data-access-layer-vb/_static/image68.png)](creating-a-data-access-layer-vb/_static/image67.png)
 
 **Abbildung 25**: Erstellen Sie eine Methode, um eine neue Zeile hinzuzufügen der `Products` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image69.png))
 
@@ -339,7 +339,7 @@ Um eine solche benutzerdefinierte Methode erstellen, geben Sie an der DataSet-De
 Auf dem nächsten Bildschirm die `InsertCommand`des `CommandText` angezeigt wird. Erweitern Sie diese Abfrage durch Hinzufügen von `SELECT SCOPE_IDENTITY()` am Ende der Abfrage, wodurch den letzten Identitätswert eingefügte ein `IDENTITY` Spalte im selben Bereich. (Finden Sie unter den [technische Dokumentation](https://msdn.microsoft.com/library/ms190315.aspx) für Weitere Informationen zu `SCOPE_IDENTITY()` und aus welchem Grund Sie wahrscheinlich möchten [verwenden Bereich\_IDENTITY() statt @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Stellen Sie sicher, dass Sie am Ende der `INSERT` -Anweisung mit einem Semikolon vor dem Hinzufügen der `SELECT` Anweisung.
 
 
-[![AUgment der Abfrage der SCOPE_IDENTITY()-Wert zurückgegeben.](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
+[![Erweitern Sie die Abfrage, um die SCOPE_IDENTITY()-Funktion-Wert zurückgeben](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
 
 **Abbildung 26**: Erweitern Sie die Abfrage auf die Rückgabe der `SCOPE_IDENTITY()` Wert ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image72.png))
 
@@ -347,7 +347,7 @@ Auf dem nächsten Bildschirm die `InsertCommand`des `CommandText` angezeigt wird
 Benennen Sie abschließend die neue Methode `InsertProduct`.
 
 
-[![Set den neuen Methodennamen um InsertProduct](creating-a-data-access-layer-vb/_static/image74.png)](creating-a-data-access-layer-vb/_static/image73.png)
+[![Legen Sie den neuen Methodennamen InsertProduct](creating-a-data-access-layer-vb/_static/image74.png)](creating-a-data-access-layer-vb/_static/image73.png)
 
 **Abbildung 27**: Legen Sie den Namen der neuen Methode `InsertProduct` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image75.png))
 
@@ -357,7 +357,7 @@ Wenn Sie zurück zu DataSet-Designer sehen Sie, dass die `ProductsTableAdapter` 
 Fügen Sie in der Standardeinstellung Methoden Problem keine Methoden, was bedeutet, dass sie die Anzahl der betroffenen Zeilen zurück. Allerdings möchten wir die `InsertProduct` Methode, um den Rückgabewert von der Abfrage nicht die Anzahl der betroffenen Zeilen zurückzugeben. Passen Sie zu diesem Zweck die `InsertProduct` Methode `ExecuteMode` Eigenschaft `Scalar`.
 
 
-[![CÄndern Sie die ExecuteMode-Eigenschaft, die skalare](creating-a-data-access-layer-vb/_static/image77.png)](creating-a-data-access-layer-vb/_static/image76.png)
+[![Ändern Sie die ExecuteMode-Eigenschaft an skalaren](creating-a-data-access-layer-vb/_static/image77.png)](creating-a-data-access-layer-vb/_static/image76.png)
 
 **Abbildung 28**: Ändern der `ExecuteMode` Eigenschaft `Scalar` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image78.png))
 
@@ -375,7 +375,7 @@ Dies kann ein Problem darstellen, jedoch als dem TableAdapter-Methoden zum Einf�
 [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample9.sql)]
 
 
-[![UAktualisieren Sie die SELECT-Anweisung für die Methode GetProducts()](creating-a-data-access-layer-vb/_static/image80.png)](creating-a-data-access-layer-vb/_static/image79.png)
+[![Aktualisieren Sie die SELECT-Anweisung für die GetProducts()-Methode](creating-a-data-access-layer-vb/_static/image80.png)](creating-a-data-access-layer-vb/_static/image79.png)
 
 **Abbildung 29**: Update der `SELECT` -Anweisung für die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image81.png))
 
@@ -444,7 +444,7 @@ Erstellen Sie die folgenden Methoden, die mithilfe der folgenden Abfragen und Ta
       [!code-sql[Main](creating-a-data-access-layer-vb/samples/sample21.sql)]
 
 
-[![Ter DataSet-Designer nach der vier TableAdapters wurden hinzugefügt](creating-a-data-access-layer-vb/_static/image84.png)](creating-a-data-access-layer-vb/_static/image83.png)
+[![Der DataSet-Designer, nachdem die vier TableAdapter hinzugefügt wurden](creating-a-data-access-layer-vb/_static/image84.png)](creating-a-data-access-layer-vb/_static/image83.png)
 
 **Abbildung 31**: Die DataSet-Designer nach der vier TableAdapters wurden hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image85.png))
 
@@ -454,7 +454,7 @@ Erstellen Sie die folgenden Methoden, die mithilfe der folgenden Abfragen und Ta
 Die TableAdapters und Datentabellen, die das typisierte DataSet hinzugefügt wird als eine XML-Schemadefinitionsdatei (`Northwind.xsd`). Sie können diese Schemainformationen anzeigen, indem Sie mit der rechten Maustaste auf die `Northwind.xsd` Datei im Projektmappen-Explorer, und wählen Sie Code anzeigen.
 
 
-[![Ter XML Schema Definition (XSD)-Datei für das typisierte DataSet Employees](creating-a-data-access-layer-vb/_static/image87.png)](creating-a-data-access-layer-vb/_static/image86.png)
+[![Die XML-Schema (XSD-Datei) für die Employees typisiertes DataSet](creating-a-data-access-layer-vb/_static/image87.png)](creating-a-data-access-layer-vb/_static/image86.png)
 
 **Abbildung 32**: Der XML Schema Definition (XSD)-Datei für das Employees typisierten DataSet ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image88.png))
 
@@ -501,7 +501,7 @@ SuppliersAndProducts.aspx.vb
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample25.vb)]
 
 
-[![TFirmenname HE Lieferanten finden Sie in der linken Spalte, deren Produkte in der rechten Seite](creating-a-data-access-layer-vb/_static/image92.png)](creating-a-data-access-layer-vb/_static/image91.png)
+[![Unternehmensname des Lieferanten ist in der linken Spalte, deren Produkte in der rechten Seite aufgeführt.](creating-a-data-access-layer-vb/_static/image92.png)](creating-a-data-access-layer-vb/_static/image91.png)
 
 **Abbildung 35**: Unternehmensname des Lieferanten finden Sie in der linken Spalte, deren Produkte in der rechten Seite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-data-access-layer-vb/_static/image93.png))
 

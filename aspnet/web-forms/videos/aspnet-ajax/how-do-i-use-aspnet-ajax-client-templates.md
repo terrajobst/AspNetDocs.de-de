@@ -12,7 +12,7 @@ ms.openlocfilehash: 8d9079d75f20bc85a5b4babfb45dfdfcff696a50
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380495"
 ---
 # <a name="how-do-i-use-aspnet-ajax-client-templates"></a>Gewusst wie: Verwenden von ASP.NET AJAX-Clientvorlagen
@@ -24,4 +24,4 @@ Es gibt zwei wichtige Schritte zum Erstellen von AJAX-Interaktionen, asynchrones
 [&#9654;Sehen Sie sich Video (33 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-aspnet-ajax-client-templates)
 
 > [!div class="step-by-step"]
-> [Vorheriges](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)
+> [Vorherige](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)

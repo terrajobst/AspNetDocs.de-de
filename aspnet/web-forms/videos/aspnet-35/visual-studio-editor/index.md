@@ -12,7 +12,7 @@ ms.openlocfilehash: fda6eaf86f3822bce0ca0dd834cd187897bce69d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392845"
 ---
 # <a name="visual-studio-editor"></a>Visual Studio-Editor
@@ -20,7 +20,7 @@ ms.locfileid: "59392845"
 > Diese Reihe erfahren Sie, neuen Features von Visual Studio 2008 Editor, einschließlich der erweiterte Support für JavaScript und CSS.
 
 
-- [Neue Designer-Unterstützung in Visual Studio 2008](new-designer-support-in-visual-studio-2008.md)
+- [Neue Designerunterstützung in Visual Studio 2008](new-designer-support-in-visual-studio-2008.md)
 - [JavaScript IntelliSense-Unterstützung in Visual Studio 2008](javascript-intellisense-support-in-visual-studio-2008.md)
 - [JavaScript-Debugging in Visual Studio 2008](javascript-debugging-in-visual-studio-2008.md)
 - [Unterstützung für die Festlegung von Zielversionen in Visual Studio 2008](multi-targeting-support-in-visual-studio-2008.md)

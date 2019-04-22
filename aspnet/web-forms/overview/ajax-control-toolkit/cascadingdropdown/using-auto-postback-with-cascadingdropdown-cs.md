@@ -12,7 +12,7 @@ ms.openlocfilehash: 50bba1b798ddfaf69dd23098e31d446a7e7b9a1f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394613"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-c"></a>Verwenden von automatischem Postback mit CascadingDropDown (C#)
@@ -57,7 +57,7 @@ Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zus
 Auf diese Weise wird ein Postback nur ausgeführt, wenn in der Liste tatsächlich Elemente vorhanden sind und der Benutzer einen Eintrag wählt.
 
 
-[![Sein Listenelement Wahl bewirkt, dass einen Postback](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
+[![Wählen ein Listenelement auslöst ein postback](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
 
 Wenn Sie ein Listenelement wird einen Postback ([klicken Sie, um das Bild in voller Größe anzeigen](using-auto-postback-with-cascadingdropdown-cs/_static/image3.png))
 

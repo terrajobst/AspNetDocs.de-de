@@ -12,7 +12,7 @@ ms.openlocfilehash: 45ea3c3dbcf7816f67081a61230c4b055a90fcf5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393625"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-vb"></a>Erstellen von sich gegenseitig ausschließenden Kontrollkästchen (VB)
@@ -47,9 +47,9 @@ Darüber hinaus enthalten die ASP.NET AJAX `ScriptManager` die alle Elemente des
 Speichern Sie, und führen Sie die Seite: Sie aktivieren und deaktivieren Sie beide Kontrollkästchen, können jedoch zu keinem Zeitpunkt beide Kontrollkästchen geprüft werden kann.
 
 
-[![Oein Kontrollkästchen ibgeschützt kann zu einem Zeitpunkt überprüft werden](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)
+[![Nur ein Kontrollkästchen kann zu einem Zeitpunkt überprüft werden](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)
 
 Nur ein Kontrollkästchen kann zu einem Zeitpunkt überprüft werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-mutually-exclusive-checkboxes-cs.md)
+> [Vorherige](creating-mutually-exclusive-checkboxes-cs.md)

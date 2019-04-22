@@ -12,7 +12,7 @@ ms.openlocfilehash: febba98be86f0151724af6d6c00fb14760ce1b91
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378948"
 ---
 # <a name="creating-a-custom-route-constraint-vb"></a>Erstellen einer benutzerdefinierten Routeneinschränkung (VB)
@@ -51,4 +51,4 @@ Die Einschränkung "localhost" wird in der Definition der Admin-Route verwendet.
 Beachten Sie, dass die Standardroute aus der Datei "Global.asax" in Liste 2 auskommentiert worden ist. Wenn Sie die Standardroute einschließen, entsprechen die Standardroute Anforderungen für den Admin-Controller. In diesem Fall können Remotebenutzer weiterhin Aktionen des Controllers Admin aufrufen, obwohl ihre Anforderungen die Admin-Route übereinstimmen würde nicht.
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-a-route-constraint-vb.md)
+> [Vorherige](creating-a-route-constraint-vb.md)

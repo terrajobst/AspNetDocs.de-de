@@ -12,7 +12,7 @@ ms.openlocfilehash: 6d1251da10705867ad25b53afd69bb70c647fc18
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388659"
 ---
 # <a name="whitepapers"></a>Whitepaper
@@ -28,8 +28,8 @@ ms.locfileid: "59388659"
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [Ausführen von ASP.NET 1.1 mit IIS 6.0](aspnet-and-iis6.md)
-- [Vorgehensweise: Hinzufügen von für Mobilgeräte optimierten Seiten zur ASP.NET Web Forms-/MVC-Anwendung](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
-- [Fehlerbehebung für den Fehler „Die Serveranwendung ist nicht verfügbar“ nach Anwendung des Sicherheitsupdates für IE](ms03-32-issue.md)
+- [How To: Hinzufügen mobiler Seiten zu Ihren ASP.NET Web Forms-/ MVC-Anwendung](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
+- [Fehlerbehebung für den Fehler „Die Serveranwendung ist nicht verfügbar.“ nach Anwendung des Sicherheitsupdates für IE](ms03-32-issue.md)
 - [ASP.NET – Parallele Ausführung von .NET Framework 1.0 und 1.1](side-by-side-with-10.md)
 - [ASP.NET MVC 4](mvc4-release-notes.md)
 - [Anforderungsvalidierung – Schutz vor Angriffen durch Skripteinschleusung](request-validation.md)

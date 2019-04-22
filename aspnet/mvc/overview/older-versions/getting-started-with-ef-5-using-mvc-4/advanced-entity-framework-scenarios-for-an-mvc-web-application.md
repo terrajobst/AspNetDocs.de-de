@@ -12,7 +12,7 @@ ms.openlocfilehash: a1218b1fb5a8ee28ea6ee3d3c5af979e86821ed7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391194"
 ---
 # <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Erweiterte Entity Framework-Szenarios für eine MVC-Webanwendung (10 von 10)
@@ -316,8 +316,7 @@ Eine Ursache für dieses Problem sind Überprüfungsfehler bei den `Seed` Method
 
 Fehlermeldung:
 
-*HTTP-Fehler 500.19: Interner Serverfehler  
-Die angeforderte Seite kann nicht zugegriffen werden, weil die zugehörigen Konfigurationsdaten für die Seite ungültig ist.*
+*HTTP-Fehler 500.19 - Interner Serverfehler, die die angeforderte Seite kann nicht zugegriffen werden, weil die zugehörigen Konfigurationsdaten für die Seite ungültig ist.*
 
 Projektmappe:
 
@@ -327,7 +326,7 @@ Eine Möglichkeit, die Sie diese Fehlermeldung ist über das Vorhandensein mehre
 
 Fehlermeldung:
 
-*Ein netzwerkbezogener oder instanzspezifischer Fehler beim Herstellen einer Verbindung mit SQL Server. Der Server wurde nicht gefunden oder es konnte nicht auf ihn zugegriffen werden. Stellen Sie sicher, dass der Instanzname richtig und SQL Server so konfiguriert ist, das Remoteverbindungen zulässig sind. (Anbieter: SQL-Netzwerkschnittstellen, Fehler: 26: Fehler beim Suchen des angegebenen Servers/der angegebenen Instanz)*
+*Ein netzwerkbezogener oder Instanzspezifischer Fehler beim Herstellen einer Verbindung mit SQL Server. Der Server wurde nicht gefunden oder es konnte nicht auf ihn zugegriffen werden. Stellen Sie sicher, dass der Instanzname richtig ist und SQL Server für Remoteverbindungen konfiguriert ist. (Anbieter: SQL-Netzwerkschnittstellen, Fehler: 26 – Fehler beim Suchen des angegebenen Servers oder der angegebenen Instanz)*
 
 Projektmappe:
 

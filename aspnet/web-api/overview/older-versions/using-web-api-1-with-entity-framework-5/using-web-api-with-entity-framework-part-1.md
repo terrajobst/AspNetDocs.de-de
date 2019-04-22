@@ -12,7 +12,7 @@ ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384213"
 ---
 # <a name="part-1-overview-and-creating-the-project"></a>Teil 1: Übersicht und Erstellen des Projekts
@@ -92,4 +92,4 @@ Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Content", und ö
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [Weiter](using-web-api-with-entity-framework-part-2.md)
+> [Nächste](using-web-api-with-entity-framework-part-2.md)

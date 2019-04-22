@@ -12,7 +12,7 @@ ms.openlocfilehash: 737c15b4657ce8a67224c116bcad196020c45710
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388243"
 ---
 # <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC Benutzeroberflächen, Layouts und Designs
@@ -21,4 +21,4 @@ ms.locfileid: "59388243"
 
 
 - [Verwenden der Seitenprüfung in ASP.NET MVC](using-page-inspector-in-aspnet-mvc.md)
-- [Dynamische im Vergleich zu Stark typisierten Ansichten](dynamic-v-strongly-typed-views.md)
+- [Dynamische vs. stark typisierte Ansichten](dynamic-v-strongly-typed-views.md)

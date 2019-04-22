@@ -12,7 +12,7 @@ ms.openlocfilehash: faa0daa2ffe71e58cd18bb8bed4e476ffcb1852e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379052"
 ---
 # <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[Gewusst wie:] Implementieren der Fehlerbehandlung beim Senden von E-Mails mit ASP.NET

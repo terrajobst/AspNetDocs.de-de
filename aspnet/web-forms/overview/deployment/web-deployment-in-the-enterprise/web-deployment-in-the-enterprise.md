@@ -12,7 +12,7 @@ ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396316"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>Webbereitstellung im Unternehmen
@@ -102,4 +102,4 @@ Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webber
 - [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
 
 > [!div class="step-by-step"]
-> [Weiter](the-contact-manager-solution.md)
+> [Nächste](the-contact-manager-solution.md)

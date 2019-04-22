@@ -12,7 +12,7 @@ ms.openlocfilehash: ebd49295ea165ba4ef1a25398cff7dddcfa54f11
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392195"
 ---
 # <a name="introducing-the-nerddinner-tutorial"></a>Einführung zum NerdDinner-Tutorial
@@ -86,4 +86,4 @@ Nun, da wir die neuerungen NerdDinner behandelt habe, wir unsere Ärmel, und Sch
 Wir beginnen mit Datei -&gt;neues Projekt in Visual Studio die NerdDinner-Anwendung zu erstellen.
 
 > [!div class="step-by-step"]
-> [Weiter](create-a-new-aspnet-mvc-project.md)
+> [Nächste](create-a-new-aspnet-mvc-project.md)

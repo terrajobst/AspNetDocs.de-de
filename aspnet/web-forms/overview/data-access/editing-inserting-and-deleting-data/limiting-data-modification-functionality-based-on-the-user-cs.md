@@ -12,7 +12,7 @@ ms.openlocfilehash: 786d7923d745bfb26ce0759bbe60bc472a63ea5c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390427"
 ---
 # <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>Benutzerabhängiges Beschränken von Datenänderungsfunktionen (C#)
@@ -31,12 +31,12 @@ Eine Anzahl von Webanwendungen unterstützen Benutzerkonten und bieten verschied
 In diesem Tutorial betrachten wir, wie Sie die Möglichkeiten zur Datenänderung basierend auf der Website besucht Benutzer dynamisch anpassen. Insbesondere erstellen wir eine Seite an, in dem die Lieferanten-Informationen in einem bearbeitbaren DetailsView zusammen mit einer GridView-Ansicht angezeigt, die Produkte von Lieferanten auflistet. Wenn der Benutzer auf der Seite über unser Unternehmen ist, können sie: Zeigen Sie alle Lieferanteninformationen s; Bearbeiten Sie ihre Adresse; Anzeigen und bearbeiten Sie die Informationen für jedes Produkt, die von den Lieferanten bereitgestellt. Wenn der Benutzer jedoch von einem bestimmten Unternehmen ist, können sie nur anzeigen und bearbeiten Sie ihre eigene Adressinformationen und können nur bearbeiten, ihre Produkte, die nicht als nicht mehr unterstützt markiert wurden.
 
 
-[![A Kann bearbeiten Sie Benutzer unser Unternehmen für alle Lieferanten s Informationen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
+[![Alle Lieferanten-s-Informationen können von einem Benutzer in unserem Unternehmen bearbeitet.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
 
 **Abbildung 1**: Ein Benutzer über unser Unternehmen können beliebige Zulieferer bearbeiten s Informationen ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image3.png))
 
 
-[![A Benutzer von einem bestimmten Lieferanten kann nur anzeigen und bearbeiten Sie ihre Informationen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
+[![Ein Benutzer von einem bestimmten Lieferanten kann nur anzeigen und Bearbeiten ihrer Informationen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
 
 **Abbildung 2**: Ein Benutzer einen bestimmten Anbieter können nur anzeigen und Bearbeiten ihrer Informationen ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image6.png))
 
@@ -56,7 +56,7 @@ Da das Ziel in diesem Tutorial veranschaulicht die Möglichkeiten zur Datenände
 Im ersten Schritt in diesem Tutorial werden dann diese DropDownList erstellen und füllen Sie es mit Lieferanten, im System. Öffnen der `UserLevelAccess.aspx` auf der Seite die `EditInsertDelete` Ordner einem DropDownList-Steuerelement hinzufügen, deren `ID` -Eigenschaftensatz auf `Suppliers`, und binden Sie diese DropDownList an eine neue, mit dem Namen "ObjectDataSource" `AllSuppliersDataSource`.
 
 
-[![CErstellen eine neue "ObjectDataSource" mit dem Namen AllSuppliersDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
+[![Erstellen Sie eine neue, mit dem Namen AllSuppliersDataSource "ObjectDataSource"](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
 
 **Abbildung 3**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `AllSuppliersDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image9.png))
 
@@ -66,7 +66,7 @@ Da dieser Dropdownliste alle Lieferanten eingeschlossen werden soll, konfigurier
 Nach Abschluss des ObjectDataSource-Steuerelement-Assistenten, führen Sie die Schritte, durch Konfigurieren der `Suppliers` DropDownList so, dass es zeigt die `CompanyName` Datenfeld und der `SupplierID` Feld "Daten" als Wert für die einzelnen `ListItem`.
 
 
-[![Configurieren DropDownList Lieferanten und mit dem CompanyName SupplierID Datenfelder](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
+[![Konfigurieren von Lieferanten DropDownList CompanyName und SupplierID Datenfelder verwenden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
 
 **Abbildung 4**: Konfigurieren der `Suppliers` DropDownList verwenden die `CompanyName` und `SupplierID` von Datenfeldern ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image12.png))
 
@@ -85,7 +85,7 @@ Nach der `AppendDataBoundItems` -Eigenschaft festgelegt wurde und die `ListItem`
 Abbildung 5 zeigt einen Screenshot des unseren aktuellen Status, wenn Sie über einen Browser angezeigt.
 
 
-[![Ter Lieferanten DropDownList enthält ein Anzeigen aller ListItem, Plus 1 für jede Lieferanten](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
+[![Lieferanten DropDownList enthält ein Anzeigen aller ListItem Plus 1 für jeden Lieferanten](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
 
 **Abbildung 5**: Die `Suppliers` DropDownList enthält alle anzeigen `ListItem`, Plus 1 für jede Lieferanten ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image15.png))
 
@@ -112,7 +112,7 @@ Nach dem Konfigurieren der `SupplierDetails` DetailsView und `AllSuppliersDataSo
 An diesem Punkt DetailsView über ausgelagert werden kann und die Adressinformationen für die ausgewählte Lieferanten s aktualisiert werden kann, unabhängig von der Auswahl getroffen wurde, der `Suppliers` DropDownList (siehe Abbildung 6).
 
 
-[![A"NY" Lieferanten Informationen kann angezeigt werden, und aktualisiert seine Adresse](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
+[![Alle Lieferanten Informationen kann angezeigt werden, und seine Adresse aktualisiert.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
 
 **Abbildung 6**: Alle Lieferanten Informationen kann angezeigt werden, und seine Adresse aktualisiert ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image18.png))
 
@@ -124,7 +124,7 @@ Die Seite derzeit zeigt die Informationen für alle Lieferanten, unabhängig dav
 Hinzufügen einer neuen "ObjectDataSource" zur Seite, nennen Sie es `SingleSupplierDataSource`. Klicken Sie auf die Datenquelle konfigurieren-Link sein Smarttag, und lassen Sie sie verwenden die `SuppliersBLL` Klasse s `GetSupplierBySupplierID(supplierID)` Methode. Wie bei der `AllSuppliersDataSource` "ObjectDataSource", haben die `SingleSupplierDataSource` "ObjectDataSource" s `Update()` Methode zugeordnet wird, um die `SuppliersBLL` s-Klasse `UpdateSupplierAddress` Methode.
 
 
-[![Configurieren SingleSupplierDataSource ObjectDataSource der GetSupplierBySupplierID(supplierID) Methode](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
+[![Konfigurieren Sie die SingleSupplierDataSource "ObjectDataSource" zur Verwendung der GetSupplierBySupplierID(supplierID)-Methode](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
 
 **Abbildung 7**: Konfigurieren der `SingleSupplierDataSource` "ObjectDataSource" Verwenden der `GetSupplierBySupplierID(supplierID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ Hinzufügen einer neuen "ObjectDataSource" zur Seite, nennen Sie es `SingleSuppl
 Als Nächstes wir erneut einzugeben, geben Sie die Parameterquelle für die `GetSupplierBySupplierID(supplierID)` s-Methode `supplierID` input-Parameters. Da wir die Informationen für den Lieferanten, die aus der Dropdownliste, verwenden ausgewählt anzeigen möchten die `Suppliers` DropDownList s `SelectedValue` -Eigenschaft der Parameterquelle.
 
 
-[![USE Lieferanten DropDownList als die SupplierID Parameterquelle](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
+[![Verwenden von Lieferanten DropDownList als die SupplierID Parameterquelle](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
 
 **Abbildung 8**: Verwenden der `Suppliers` DropDownList, als die `supplierID` Parameterquelle ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image24.png))
 
@@ -147,12 +147,12 @@ Der Ereignishandler beginnt mit der bestimmt, ob die Option "Alle Lieferanten de
 Mit diesem Ereignishandler vorhanden zeigt DetailsView-Steuerelement, wenn die Option "Alle Lieferanten der anzeigen/bearbeiten" ausgewählt wurde, in diesem Fall können alle Lieferanten über die Schnittstelle zur Paging angezeigt werden, nun den ausgewählten Lieferanten. Abbildung 9 zeigt die Seite die Option "Aller-Lieferanten anzeigen/bearbeiten" ausgewählt ist; Beachten Sie, dass die Paging-Schnittstelle vorhanden ist, damit der Benutzer besuchen und beliebige Zulieferer aktualisieren. Abbildung 10 zeigt die Seite mit den Ma Maison Lieferanten ausgewählt. Nur Informationen von Ma Maison, s ist in diesem Fall angezeigt und bearbeitet werden.
 
 
-[![AAlle Lieferanten Informationen kann angezeigt und bearbeitet werden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
+[![Alle Lieferanten Informationen kann angezeigt und bearbeitet werden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
 
 **Abbildung 9**: Alle Lieferanten Informationen kann angezeigt werden und bearbeiteter ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image27.png))
 
 
-[![Oibgeschützt s ausgewählt Lieferanten Informationen kann es sich um Ansicht "und" bearbeiteter werden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
+[![Nur die ausgewählten s von Lieferanteninformationen kann angezeigt und bearbeitet werden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
 
 **Abbildung 10**: Nur die ausgewählten Lieferanten s Informationen Ansicht "und" bearbeiteter kann ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image30.png))
 
@@ -171,7 +171,7 @@ Mit der DetailsView abgeschlossen ist wird im nächsten Schritt, um eine bearbei
 Mit dieser Überladung erstellt, es erneut bereit, das GridView-Steuerelement und seine zugehörigen "ObjectDataSource" hinzufügen. Fügen Sie einer neuen GridView-Ansicht auf der Seite hinzu, legen die `ID` Eigenschaft `ProductsBySupplier`, und konfigurieren sie eine neue, mit dem Namen "ObjectDataSource" Verwendung `ProductsBySupplierDataSource`. Da wir diese GridView diese Produkte von den ausgewählten Lieferanten auflisten möchten, verwenden die `ProductsBLL` Klasse s `GetProductsBySupplierID(supplierID)` Methode. Ordnen Sie auch die `Update()` Methode, um die neue `UpdateProduct` Überladung, die wir gerade erstellt haben.
 
 
-[![CKonfigurieren Sie das "ObjectDataSource" Verwenden der UpdateProduct überladen erstellte](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
+[![Konfigurieren Sie die "ObjectDataSource", um die soeben erstellte UpdateProduct-Überladung verwenden](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
 
 **Abbildung 11**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `UpdateProduct` überladen gerade erstellt haben ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image33.png))
 
@@ -179,7 +179,7 @@ Mit dieser Überladung erstellt, es erneut bereit, das GridView-Steuerelement un
 Wir erneut aufgefordert, auszuwählen, die Parameterquelle für die `GetProductsBySupplierID(supplierID)` s-Methode `supplierID` input-Parameters. Da die Produkte angezeigt, für den Lieferanten in DetailsView, Verwendung ausgewählt werden sollen die `SuppliersDetails` DetailsView-Steuerelement s `SelectedValue` -Eigenschaft der Parameterquelle.
 
 
-[![USE SelectedValue-Eigenschaft als Quelle-Parameter der SuppliersDetails DetailsView-s](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
+[![Verwenden Sie die SuppliersDetails DetailsView s SelectedValue-Eigenschaft, wie die Parameterquelle](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
 
 **Abbildung 12**: Verwenden der `SuppliersDetails` DetailsView s `SelectedValue` -Eigenschaft der Quelle-Parameter ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image36.png))
 
@@ -194,7 +194,7 @@ Wie bei unseren vorherigen ObjectDataSources, diese einem s `OldValuesParameterF
 Mit dieser Konfiguration abgeschlossen ist, enthält unsere Seite jetzt Produkte von den Lieferanten, die in den GridView-Ansicht ausgewählt (siehe Abbildung 13). Derzeit *alle* Produktnamen s oder Menge pro Einheit kann aktualisiert werden. Allerdings müssen wir unsere Seitenlogik zu aktualisieren, sodass eine solche Funktionalität für ausgelaufene Produkte für Benutzer, die ein bestimmter Lieferant nicht zulässig ist. Wir werden diese letzte Information in Schritt 5 in Angriff nehmen.
 
 
-[![Ter Produkte von Lieferanten ausgewählt werden angezeigt](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
+[![Produkte von Lieferanten ausgewählt werden angezeigt.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
 
 **Abbildung 13**: Produkte von Lieferanten ausgewählt werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image39.png))
 
@@ -217,12 +217,12 @@ Erstellen Sie einen Ereignishandler für das GridView-s `RowDataBound` Ereignis.
 Mit diesem Ereignis Handler vorhanden, wenn auf dieser Seite als Benutzer von einem bestimmten Lieferanten dieser Produkte, die nicht mehr unterstützt werden können nicht bearbeitet werden, wie die Schaltfläche "Bearbeiten" ist für diese Produkte ausgeblendet. Chef Anton s Gumbo Mix ist z. B. einem ausgelaufenen Produkt für den New Orleans Cajun lerne Lieferanten. Wenn die Seite für diesen bestimmten Lieferanten zu besuchen, wird die Schaltfläche "Bearbeiten" für dieses Produkt aus der Sicht ausgeblendet (siehe Abbildung 14). Allerdings ist die Schaltfläche "Bearbeiten" beim Zugriff auf "Anzeigen/bearbeiten alle Lieferanten" verwenden, zur Verfügung (siehe Abbildung 15).
 
 
-[![Foder Lieferanten-spezifische Benutzer die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix ausgeblendet](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
+[![Für Anbieter-spezifischen Benutzer wird die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix ausgeblendet.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
 
 **Abbildung 14**: Für Lieferanten-spezifische Benutzer die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix ausgeblendet ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image42.png))
 
 
-[![Foder Anzeigen/Bearbeiten aller-Lieferanten-Benutzer, die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mischung wird angezeigt.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
+[![Für alle Lieferanten Benutzer anzeigen/bearbeiten wird die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix angezeigt.](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
 
 **Abbildung 15**: Für alle Lieferanten Benutzer anzeigen/bearbeiten, wird die Schaltfläche "Bearbeiten" für Chef Anton s Gumbo Mix ([klicken Sie, um das Bild in voller Größe anzeigen](limiting-data-modification-functionality-based-on-the-user-cs/_static/image45.png))
 

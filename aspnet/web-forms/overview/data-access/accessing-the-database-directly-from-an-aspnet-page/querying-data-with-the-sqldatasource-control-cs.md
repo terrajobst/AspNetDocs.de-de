@@ -12,7 +12,7 @@ ms.openlocfilehash: f6aa0e4535f88a04419695114d07ea2cf6ac7036
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381158"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-c"></a>Abfragen von Daten mit dem SqlDataSource-Steuerelement (C#)
@@ -79,7 +79,7 @@ Bevor wir beginnen, arbeiten Sie direkt mit dem SqlDataSource-Steuerelement mit 
 Wie in den anderen Ordnern `Default.aspx` in die `SqlDataSource` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](querying-data-with-the-sqldatasource-control-cs/_static/image5.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image4.gif)
+[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](querying-data-with-the-sqldatasource-control-cs/_static/image5.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image4.gif)
 
 **Abbildung 4**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-cs/_static/image6.gif))
 
@@ -155,7 +155,7 @@ Die `SelectCommand` Eigenschaft gibt an, die Ad-hoc-SQL-Anweisung oder gespeiche
 Nach dem SqlDataSource-Steuerelement konfiguriert wurde, kann es in einen Daten-Web-Steuerelement, z. B. einem GridView- oder DetailsView gebunden werden. In diesem Tutorial können Sie s, die die Daten in einer GridView anzeigen. Ziehen Sie aus der Toolbox einer GridView-Ansicht auf der Seite, und binden Sie es an der `ProductsDataSource` SqlDataSource-Steuerelement durch Auswählen der Datenquelle aus der Dropdown-Liste in den GridView-s-Smarttag.
 
 
-[![ADd einer GridView-Ansicht und ihn mit dem SqlDataSource-Steuerelement](querying-data-with-the-sqldatasource-control-cs/_static/image13.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image12.gif)
+[![Hinzufügen einer GridView-Ansicht, und ihn mit dem SqlDataSource-Steuerelement](querying-data-with-the-sqldatasource-control-cs/_static/image13.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image12.gif)
 
 **Abbildung 10**: Hinzufügen einer GridView-Ansicht, und ihn mit dem SqlDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-cs/_static/image14.gif))
 
@@ -170,7 +170,7 @@ So konfigurieren Sie die GridView-Zuordnungsvorgänge drei in Ruhe BoundFields. 
 Besuchen Sie diese Seite über einen Browser ein. Wie in Abbildung 11 gezeigt, enthält die GridView jedes Produkt s `ProductID`, `ProductName`, und `UnitPrice` Werte.
 
 
-[![Ter GridView zeigt jedes Produkt s ProductID, ProductName, und Werte für UnitPrice](querying-data-with-the-sqldatasource-control-cs/_static/image16.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image15.gif)
+[![Die GridView zeigt die einzelnen Produkt s ProductID, ProductName und UnitPrice-Werte](querying-data-with-the-sqldatasource-control-cs/_static/image16.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image15.gif)
 
 **Abbildung 11**: Das GridView zeigt jedes Produkt s `ProductID`, `ProductName`, und `UnitPrice` Werte ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-cs/_static/image17.gif))
 
@@ -228,7 +228,7 @@ Nach Abschluss des Assistenten an, die GridView müssen drei BoundFields hinzuge
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-cs/samples/sample5.aspx)]
 
 
-[![Ter GridView zeigt jedes Produkt s ID, den Namen und den Kategorienamen verknüpften](querying-data-with-the-sqldatasource-control-cs/_static/image22.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image21.gif)
+[![Das GridView zeigt jedes Produkt s-ID, Name und die zugeordnete Kategoriename](querying-data-with-the-sqldatasource-control-cs/_static/image22.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image21.gif)
 
 **Abbildung 15**: Die GridView zeigt jede Produkt-s-ID, den Namen und den Kategorienamen verknüpft ist ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-cs/_static/image23.gif))
 
@@ -260,4 +260,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Susan Connery Bernadette Leigh und David Suru. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Weiter](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [Nächste](using-parameterized-queries-with-the-sqldatasource-cs.md)
