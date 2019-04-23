@@ -12,17 +12,17 @@ ms.openlocfilehash: 5d03432a19366c255a52622ad64805b3a633c4dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397505"
 ---
-# <a name="aspnet-35---roles"></a><span data-ttu-id="a3bcb-103">ASP.NET 3.5 – Rollen</span><span class="sxs-lookup"><span data-stu-id="a3bcb-103">ASP.NET 3.5 - Roles</span></span>
+# <a name="aspnet-35---roles"></a><span data-ttu-id="c0d14-103">ASP.NET 3.5 – Rollen</span><span class="sxs-lookup"><span data-stu-id="c0d14-103">ASP.NET 3.5 - Roles</span></span>
 
-> <span data-ttu-id="a3bcb-104">Diese lernprogrammreihe wird beschrieben, wie zum Erstellen und Löschen von Rollen, Benutzern Rollen zuweisen und nach Rolle autorisieren.</span><span class="sxs-lookup"><span data-stu-id="a3bcb-104">This tutorial series describes how to create and delete roles, how to assign users to roles, and how to authorize by role.</span></span>
+> <span data-ttu-id="c0d14-104">Diese lernprogrammreihe wird beschrieben, wie zum Erstellen und Löschen von Rollen, Benutzern Rollen zuweisen und nach Rolle autorisieren.</span><span class="sxs-lookup"><span data-stu-id="c0d14-104">This tutorial series describes how to create and delete roles, how to assign users to roles, and how to authorize by role.</span></span>
 
 
-- [<span data-ttu-id="a3bcb-105">Erstellen und Verwalten von Rollen (C#)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-105">Creating and Managing Roles (C#)</span></span>](creating-and-managing-roles-cs.md)
-- [<span data-ttu-id="a3bcb-106">Zuweisen von Rollen an Benutzer (C#)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-106">Assigning Roles to Users (C#)</span></span>](assigning-roles-to-users-cs.md)
-- [<span data-ttu-id="a3bcb-107">Rollenbasierte Autorisierung (C#)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-107">Role-Based Authorization (C#)</span></span>](role-based-authorization-cs.md)
-- [<span data-ttu-id="a3bcb-108">Erstellen und Verwalten von Rollen (VB)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-108">Creating and Managing Roles (VB)</span></span>](creating-and-managing-roles-vb.md)
-- [<span data-ttu-id="a3bcb-109">Zuweisen von Rollen an Benutzer (VB)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-109">Assigning Roles to Users (VB)</span></span>](assigning-roles-to-users-vb.md)
-- [<span data-ttu-id="a3bcb-110">Rollenbasierte Autorisierung (VB)</span><span class="sxs-lookup"><span data-stu-id="a3bcb-110">Role-Based Authorization (VB)</span></span>](role-based-authorization-vb.md)
+- [<span data-ttu-id="c0d14-105">Erstellen und Verwalten von Rollen (C#)</span><span class="sxs-lookup"><span data-stu-id="c0d14-105">Creating and Managing Roles (C#)</span></span>](creating-and-managing-roles-cs.md)
+- [<span data-ttu-id="c0d14-106">Zuweisen von Rollen an Benutzer (C#)</span><span class="sxs-lookup"><span data-stu-id="c0d14-106">Assigning Roles to Users (C#)</span></span>](assigning-roles-to-users-cs.md)
+- [<span data-ttu-id="c0d14-107">Rollenbasierte Autorisierung (C#)</span><span class="sxs-lookup"><span data-stu-id="c0d14-107">Role-Based Authorization (C#)</span></span>](role-based-authorization-cs.md)
+- [<span data-ttu-id="c0d14-108">Erstellen und Verwalten von Rollen (VB)</span><span class="sxs-lookup"><span data-stu-id="c0d14-108">Creating and Managing Roles (VB)</span></span>](creating-and-managing-roles-vb.md)
+- [<span data-ttu-id="c0d14-109">Zuweisen von Rollen an Benutzer (VB)</span><span class="sxs-lookup"><span data-stu-id="c0d14-109">Assigning Roles to Users (VB)</span></span>](assigning-roles-to-users-vb.md)
+- [<span data-ttu-id="c0d14-110">Rollenbasierte Autorisierung (VB)</span><span class="sxs-lookup"><span data-stu-id="c0d14-110">Role-Based Authorization (VB)</span></span>](role-based-authorization-vb.md)

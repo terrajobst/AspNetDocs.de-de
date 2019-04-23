@@ -12,13 +12,13 @@ ms.openlocfilehash: 846f34ae104f4b69dce18f6dace4fd341365f7a5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397889"
 ---
-# <a name="combobox"></a><span data-ttu-id="d0dbe-103">ComboBox</span><span class="sxs-lookup"><span data-stu-id="d0dbe-103">ComboBox</span></span>
+# <a name="combobox"></a><span data-ttu-id="d30a1-103">ComboBox</span><span class="sxs-lookup"><span data-stu-id="d30a1-103">ComboBox</span></span>
 
-> <span data-ttu-id="d0dbe-104">Dieses Tutorial veranschaulicht, wie das ComboBox-Steuerelement, verwenden Sie die Flexibilität, ein Textfeld mit einer Liste von Optionen kombiniert werden, aus denen Benutzer auswählen können.</span><span class="sxs-lookup"><span data-stu-id="d0dbe-104">This tutorial shows how to use the ComboBox control, which combines the flexibility of a text box with a list of options that users can choose from.</span></span>
+> <span data-ttu-id="d30a1-104">Dieses Tutorial veranschaulicht, wie das ComboBox-Steuerelement, verwenden Sie die Flexibilität, ein Textfeld mit einer Liste von Optionen kombiniert werden, aus denen Benutzer auswählen können.</span><span class="sxs-lookup"><span data-stu-id="d30a1-104">This tutorial shows how to use the ComboBox control, which combines the flexibility of a text box with a list of options that users can choose from.</span></span>
 
 
-- [<span data-ttu-id="d0dbe-105">ComboBox-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="d0dbe-105">ComboBox Control (C#)</span></span>](how-do-i-use-the-combobox-control-cs.md)
-- [<span data-ttu-id="d0dbe-106">ComboBox-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="d0dbe-106">ComboBox Control (VB)</span></span>](how-do-i-use-the-combobox-control-vb.md)
+- [<span data-ttu-id="d30a1-105">ComboBox-Steuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="d30a1-105">ComboBox Control (C#)</span></span>](how-do-i-use-the-combobox-control-cs.md)
+- [<span data-ttu-id="d30a1-106">ComboBox-Steuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="d30a1-106">ComboBox Control (VB)</span></span>](how-do-i-use-the-combobox-control-vb.md)

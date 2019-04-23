@@ -12,18 +12,18 @@ ms.openlocfilehash: d6fe8324ef580c2ad811e5db5cf62e514e170aa3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401945"
 ---
-# <a name="tailspin-spyworks---display-the-product-list"></a><span data-ttu-id="411ff-103">Tailspin Spyworks – Anzeigen der Produktliste</span><span class="sxs-lookup"><span data-stu-id="411ff-103">Tailspin Spyworks - Display the Product List</span></span>
+# <a name="tailspin-spyworks---display-the-product-list"></a><span data-ttu-id="f1a7c-103">Tailspin Spyworks – Anzeigen der Produktliste</span><span class="sxs-lookup"><span data-stu-id="f1a7c-103">Tailspin Spyworks - Display the Product List</span></span>
 
-<span data-ttu-id="411ff-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="411ff-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="f1a7c-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f1a7c-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="411ff-105">Joe Stagner zeigt die Vorgehensweise beim Anzeigen der Liste der Produkte in der Tailspin Spyworks Web Forms-beispielanwendung.</span><span class="sxs-lookup"><span data-stu-id="411ff-105">Joe Stagner shows how to display the product list in the Tailspin Spyworks sample Web Forms application.</span></span>
+<span data-ttu-id="f1a7c-105">Joe Stagner zeigt die Vorgehensweise beim Anzeigen der Liste der Produkte in der Tailspin Spyworks Web Forms-beispielanwendung.</span><span class="sxs-lookup"><span data-stu-id="f1a7c-105">Joe Stagner shows how to display the product list in the Tailspin Spyworks sample Web Forms application.</span></span>
 
-[<span data-ttu-id="411ff-106">&#9654;Sehen Sie sich Video (9 Minuten)</span><span class="sxs-lookup"><span data-stu-id="411ff-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
+[<span data-ttu-id="f1a7c-106">&#9654;Sehen Sie sich Video (9 Minuten)</span><span class="sxs-lookup"><span data-stu-id="f1a7c-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="411ff-107">[Zurück](tailspin-spyworks-category-menu.md)
-> [Weiter](tailspin-spyworks-display-per-product-details.md)</span><span class="sxs-lookup"><span data-stu-id="411ff-107">[Previous](tailspin-spyworks-category-menu.md)
+> <span data-ttu-id="f1a7c-107">[Zurück](tailspin-spyworks-category-menu.md)
+> [Weiter](tailspin-spyworks-display-per-product-details.md)</span><span class="sxs-lookup"><span data-stu-id="f1a7c-107">[Previous](tailspin-spyworks-category-menu.md)
 [Next](tailspin-spyworks-display-per-product-details.md)</span></span>

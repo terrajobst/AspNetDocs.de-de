@@ -12,15 +12,15 @@ ms.openlocfilehash: 59c0a820e30f302ac56dd000837f40f7c13fe183
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401126"
 ---
-# <a name="paging-and-sorting-with-the-datalist-and-repeater"></a><span data-ttu-id="de4f8-103">Auslagern und Sortieren mit dem DataList- und Wiederholungssteuerelement</span><span class="sxs-lookup"><span data-stu-id="de4f8-103">Paging and Sorting with the DataList and Repeater</span></span>
+# <a name="paging-and-sorting-with-the-datalist-and-repeater"></a><span data-ttu-id="f62ad-103">Auslagern und Sortieren mit dem DataList- und Wiederholungssteuerelement</span><span class="sxs-lookup"><span data-stu-id="f62ad-103">Paging and Sorting with the DataList and Repeater</span></span>
 
-> <span data-ttu-id="de4f8-104">Diese Tutorials zeigen, wie das DataList- oder Repeater-Steuerelement, um eine sehr flexible Benutzeroberfläche zu erstellen, für die Paginierung und Sortierung pagingunterstützung hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="de4f8-104">These tutorials show how to add paging support to the DataList or Repeater control to create a very flexible UI for paging and sorting.</span></span>
+> <span data-ttu-id="f62ad-104">Diese Tutorials zeigen, wie das DataList- oder Repeater-Steuerelement, um eine sehr flexible Benutzeroberfläche zu erstellen, für die Paginierung und Sortierung pagingunterstützung hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="f62ad-104">These tutorials show how to add paging support to the DataList or Repeater control to create a very flexible UI for paging and sorting.</span></span>
 
 
-- [<span data-ttu-id="de4f8-105">Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="de4f8-105">Paging Report Data in a DataList or Repeater Control (C#)</span></span>](paging-report-data-in-a-datalist-or-repeater-control-cs.md)
-- [<span data-ttu-id="de4f8-106">Sortieren von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="de4f8-106">Sorting Data in a DataList or Repeater Control (C#)</span></span>](sorting-data-in-a-datalist-or-repeater-control-cs.md)
-- [<span data-ttu-id="de4f8-107">Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="de4f8-107">Paging Report Data in a DataList or Repeater Control (VB)</span></span>](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
-- [<span data-ttu-id="de4f8-108">Sortieren von Daten in einem DataList- oder Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="de4f8-108">Sorting Data in a DataList or Repeater Control (VB)</span></span>](sorting-data-in-a-datalist-or-repeater-control-vb.md)
+- [<span data-ttu-id="f62ad-105">Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="f62ad-105">Paging Report Data in a DataList or Repeater Control (C#)</span></span>](paging-report-data-in-a-datalist-or-repeater-control-cs.md)
+- [<span data-ttu-id="f62ad-106">Sortieren von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)</span><span class="sxs-lookup"><span data-stu-id="f62ad-106">Sorting Data in a DataList or Repeater Control (C#)</span></span>](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+- [<span data-ttu-id="f62ad-107">Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="f62ad-107">Paging Report Data in a DataList or Repeater Control (VB)</span></span>](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+- [<span data-ttu-id="f62ad-108">Sortieren von Daten in einem DataList- oder Wiederholungssteuerelement (VB)</span><span class="sxs-lookup"><span data-stu-id="f62ad-108">Sorting Data in a DataList or Repeater Control (VB)</span></span>](sorting-data-in-a-datalist-or-repeater-control-vb.md)

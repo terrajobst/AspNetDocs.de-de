@@ -12,18 +12,18 @@ ms.openlocfilehash: 5b723e97a0faac1c2b1dffb634f530d9a3cfc59c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404246"
 ---
-# <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a><span data-ttu-id="26e19-103">Grundlegende ASP.NET-Authentifizierung in einer AJAX-fähigen Anwendung</span><span class="sxs-lookup"><span data-stu-id="26e19-103">Basic ASP.NET Authentication in an AJAX Enabled Application</span></span>
+# <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a><span data-ttu-id="947bd-103">Grundlegende ASP.NET-Authentifizierung in einer AJAX-fähigen Anwendung</span><span class="sxs-lookup"><span data-stu-id="947bd-103">Basic ASP.NET Authentication in an AJAX Enabled Application</span></span>
 
-<span data-ttu-id="26e19-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="26e19-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="947bd-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="947bd-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="26e19-105">In diesem Video zeige ich ihnen, dass die Authentifizierung in Ihrer AJAX aktivieren-Webanwendung mithilfe von einfache ASP.NET-Formulare-basierte Authentifizierung.</span><span class="sxs-lookup"><span data-stu-id="26e19-105">In this video I will demonstrate authentication in your AJAX enable web application using basic ASP.NET forms based authentication.</span></span>
+<span data-ttu-id="947bd-105">In diesem Video zeige ich ihnen, dass die Authentifizierung in Ihrer AJAX aktivieren-Webanwendung mithilfe von einfache ASP.NET-Formulare-basierte Authentifizierung.</span><span class="sxs-lookup"><span data-stu-id="947bd-105">In this video I will demonstrate authentication in your AJAX enable web application using basic ASP.NET forms based authentication.</span></span>
 
-[<span data-ttu-id="26e19-106">&#9654;Sehen Sie sich Video (31 Minuten)</span><span class="sxs-lookup"><span data-stu-id="26e19-106">&#9654; Watch video (31 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/basic-aspnet-authentication-in-an-ajax-enabled-application)
+[<span data-ttu-id="947bd-106">&#9654;Sehen Sie sich Video (31 Minuten)</span><span class="sxs-lookup"><span data-stu-id="947bd-106">&#9654; Watch video (31 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/basic-aspnet-authentication-in-an-ajax-enabled-application)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="26e19-107">[Zurück](implement-infinite-data-patterns-in-ajax.md)
-> [Weiter](how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel.md)</span><span class="sxs-lookup"><span data-stu-id="26e19-107">[Previous](implement-infinite-data-patterns-in-ajax.md)
+> <span data-ttu-id="947bd-107">[Zurück](implement-infinite-data-patterns-in-ajax.md)
+> [Weiter](how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel.md)</span><span class="sxs-lookup"><span data-stu-id="947bd-107">[Previous](implement-infinite-data-patterns-in-ajax.md)
 [Next](how-to-dynamically-change-css-using-the-aspnet-ajax-updatepanel.md)</span></span>

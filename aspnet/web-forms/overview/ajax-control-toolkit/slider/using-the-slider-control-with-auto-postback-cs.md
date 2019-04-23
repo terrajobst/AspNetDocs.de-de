@@ -12,53 +12,53 @@ ms.openlocfilehash: a5b858a05470caa244902afbb404adbb2e4761b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402725"
 ---
-# <a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="09772-104">Verwenden das Schieberegler-Steuerelement mit automatischem Postback (c#)</span><span class="sxs-lookup"><span data-stu-id="09772-104">Using the Slider Control With Auto-Postback (C#)</span></span>
+# <a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="08db5-104">Verwenden das Schieberegler-Steuerelement mit automatischem Postback (c#)</span><span class="sxs-lookup"><span data-stu-id="08db5-104">Using the Slider Control With Auto-Postback (C#)</span></span>
 
-<span data-ttu-id="09772-105">durch [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="09772-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="08db5-105">durch [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="08db5-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="09772-106">[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="09772-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
+<span data-ttu-id="08db5-106">[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="08db5-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
 
-> <span data-ttu-id="09772-107">Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können.</span><span class="sxs-lookup"><span data-stu-id="09772-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="09772-108">Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.</span><span class="sxs-lookup"><span data-stu-id="09772-108">It is possible to make the slider autopostback once its value changes.</span></span>
+> <span data-ttu-id="08db5-107">Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können.</span><span class="sxs-lookup"><span data-stu-id="08db5-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="08db5-108">Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.</span><span class="sxs-lookup"><span data-stu-id="08db5-108">It is possible to make the slider autopostback once its value changes.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="09772-109">Übersicht</span><span class="sxs-lookup"><span data-stu-id="09772-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="08db5-109">Übersicht</span><span class="sxs-lookup"><span data-stu-id="08db5-109">Overview</span></span>
 
-<span data-ttu-id="09772-110">Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können.</span><span class="sxs-lookup"><span data-stu-id="09772-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="09772-111">Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.</span><span class="sxs-lookup"><span data-stu-id="09772-111">It is possible to make the slider autopostback once its value changes.</span></span>
+<span data-ttu-id="08db5-110">Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können.</span><span class="sxs-lookup"><span data-stu-id="08db5-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="08db5-111">Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.</span><span class="sxs-lookup"><span data-stu-id="08db5-111">It is possible to make the slider autopostback once its value changes.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="09772-112">Schritte</span><span class="sxs-lookup"><span data-stu-id="09772-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="08db5-112">Schritte</span><span class="sxs-lookup"><span data-stu-id="08db5-112">Steps</span></span>
 
-<span data-ttu-id="09772-113">Um den Schieberegler automatisch postback auf eine Änderung vornehmen, benötigen beide Felder das Attribut `AutoPostBack="true"`: Das Textfeld, das den Schieberegler selbst werden soll, und das Textfeld, das den Schieberegler auf die Position enthält.</span><span class="sxs-lookup"><span data-stu-id="09772-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="09772-114">Hier ist das erforderliche Markup für diese:</span><span class="sxs-lookup"><span data-stu-id="09772-114">Here is the required markup for that:</span></span>
+<span data-ttu-id="08db5-113">Um den Schieberegler automatisch postback auf eine Änderung vornehmen, benötigen beide Felder das Attribut `AutoPostBack="true"`: Das Textfeld, das den Schieberegler selbst werden soll, und das Textfeld, das den Schieberegler auf die Position enthält.</span><span class="sxs-lookup"><span data-stu-id="08db5-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="08db5-114">Hier ist das erforderliche Markup für diese:</span><span class="sxs-lookup"><span data-stu-id="08db5-114">Here is the required markup for that:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="09772-115">Die `SliderExtender` Steuerelement von ASP.NET AJAX Control Toolkit weist die beiden Textfelder die Schieberegler-Funktionalität:</span><span class="sxs-lookup"><span data-stu-id="09772-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
+<span data-ttu-id="08db5-115">Die `SliderExtender` Steuerelement von ASP.NET AJAX Control Toolkit weist die beiden Textfelder die Schieberegler-Funktionalität:</span><span class="sxs-lookup"><span data-stu-id="08db5-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="09772-116">Zusätzliche Label-Element wird später verwendet werden, um die Benutzer eines Postbacks zu informieren:</span><span class="sxs-lookup"><span data-stu-id="09772-116">An additional label element will later be used to inform the user of a postback:</span></span>
+<span data-ttu-id="08db5-116">Zusätzliche Label-Element wird später verwendet werden, um die Benutzer eines Postbacks zu informieren:</span><span class="sxs-lookup"><span data-stu-id="08db5-116">An additional label element will later be used to inform the user of a postback:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="09772-117">Zum Schluss die `ScriptManager` Steuerelement von ASP.NET AJAX lädt die erforderliche JavaScript für das Steuerelement-Toolkit funktioniert:</span><span class="sxs-lookup"><span data-stu-id="09772-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
+<span data-ttu-id="08db5-117">Zum Schluss die `ScriptManager` Steuerelement von ASP.NET AJAX lädt die erforderliche JavaScript für das Steuerelement-Toolkit funktioniert:</span><span class="sxs-lookup"><span data-stu-id="08db5-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="09772-118">Nachdem Sie der Schieberegler wieder veröffentlicht; Dieses Ereignis kann abgefangen und eine Aktion ausgeführt werden, auf der Serverseite:</span><span class="sxs-lookup"><span data-stu-id="09772-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
+<span data-ttu-id="08db5-118">Nachdem Sie der Schieberegler wieder veröffentlicht; Dieses Ereignis kann abgefangen und eine Aktion ausgeführt werden, auf der Serverseite:</span><span class="sxs-lookup"><span data-stu-id="08db5-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample5.aspx)]
 
 
-[![M<span data-ttu-id="09772-119">Oving des Schiebereglers löst einen Postback]</span><span class="sxs-lookup"><span data-stu-id="09772-119">oving the slider triggers a postback]</span></span>(using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
+<span data-ttu-id="08db5-119">[![Verschieben des Schiebereglers wird einen Postback ausgelöst.](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="08db5-119">[![Moving the slider triggers a postback](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="09772-120">Verschieben des Schiebereglers einen Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="09772-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
+<span data-ttu-id="08db5-120">Verschieben des Schiebereglers einen Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="08db5-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
 
 
-[![A<span data-ttu-id="09772-121">Fterwards, ist das Datum der Änderung in die Bezeichnung geschrieben]</span><span class="sxs-lookup"><span data-stu-id="09772-121">fterwards, the date of this change is written in the label]</span></span>(using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
+<span data-ttu-id="08db5-121">[![Das Datum dieser Änderung wird anschließend in die Bezeichnung geschrieben.](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="08db5-121">[![Afterwards, the date of this change is written in the label](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span></span>
 
-<span data-ttu-id="09772-122">Anschließend wird das Datum der Änderung in die Bezeichnung geschrieben ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="09772-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
+<span data-ttu-id="08db5-122">Anschließend wird das Datum der Änderung in die Bezeichnung geschrieben ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="08db5-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="09772-123">Weiter</span><span class="sxs-lookup"><span data-stu-id="09772-123">Next</span></span>](databinding-the-slider-control-cs.md)
+> [<span data-ttu-id="08db5-123">Nächste</span><span class="sxs-lookup"><span data-stu-id="08db5-123">Next</span></span>](databinding-the-slider-control-cs.md)

@@ -12,21 +12,21 @@ ms.openlocfilehash: 74ebdc39a81d31fb3c1ef3e5bab1857915cdc247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400936"
 ---
-# <a name="aspnet-single-page-application"></a><span data-ttu-id="f4472-103">ASP.NET-Single-Page-Anwendung</span><span class="sxs-lookup"><span data-stu-id="f4472-103">ASP.NET Single Page Application</span></span>
+# <a name="aspnet-single-page-application"></a><span data-ttu-id="1a65b-103">ASP.NET-Single-Page-Anwendung</span><span class="sxs-lookup"><span data-stu-id="1a65b-103">ASP.NET Single Page Application</span></span>
 
-- [<span data-ttu-id="f4472-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="f4472-104">Overview</span></span>](overview/index.md)
+- [<span data-ttu-id="1a65b-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="1a65b-104">Overview</span></span>](overview/index.md)
 
-    - [<span data-ttu-id="f4472-105">Einführung</span><span class="sxs-lookup"><span data-stu-id="f4472-105">Introduction</span></span>](overview/introduction/index.md)
+    - [<span data-ttu-id="1a65b-105">Introduction (Einführung)</span><span class="sxs-lookup"><span data-stu-id="1a65b-105">Introduction</span></span>](overview/introduction/index.md)
 
-        - [<span data-ttu-id="f4472-106">Single-Page-Webanwendung: KnockoutJS-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-106">Single Page Application: KnockoutJS template</span></span>](overview/introduction/knockoutjs-template.md)
-        - [<span data-ttu-id="f4472-107">Andere Bibliotheken als Knockout</span><span class="sxs-lookup"><span data-stu-id="f4472-107">Know a library other than Knockout?</span></span>](overview/introduction/other-libraries.md)
-    - [<span data-ttu-id="f4472-108">Vorlagen</span><span class="sxs-lookup"><span data-stu-id="f4472-108">Templates</span></span>](overview/templates/index.md)
+        - [<span data-ttu-id="1a65b-106">Einzelseitenanwendung: Knockout.js-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-106">Single Page Application: KnockoutJS template</span></span>](overview/introduction/knockoutjs-template.md)
+        - [<span data-ttu-id="1a65b-107">Andere Bibliotheken als Knockout</span><span class="sxs-lookup"><span data-stu-id="1a65b-107">Know a library other than Knockout?</span></span>](overview/introduction/other-libraries.md)
+    - [<span data-ttu-id="1a65b-108">Vorlagen</span><span class="sxs-lookup"><span data-stu-id="1a65b-108">Templates</span></span>](overview/templates/index.md)
 
-        - [<span data-ttu-id="f4472-109">Backbone-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-109">Backbone Template</span></span>](overview/templates/backbonejs-template.md)
-        - [<span data-ttu-id="f4472-110">Breeze-/Angular-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-110">Breeze/Angular template</span></span>](overview/templates/breezeangular-template.md)
-        - [<span data-ttu-id="f4472-111">Breeze-/Knockout-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-111">Breeze/Knockout template</span></span>](overview/templates/breezeknockout-template.md)
-        - [<span data-ttu-id="f4472-112">EmberJS-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-112">EmberJS template</span></span>](overview/templates/emberjs-template.md)
-        - [<span data-ttu-id="f4472-113">Hot Towel-Vorlage</span><span class="sxs-lookup"><span data-stu-id="f4472-113">Hot Towel template</span></span>](overview/templates/hottowel-template.md)
+        - [<span data-ttu-id="1a65b-109">Backbone.js-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-109">Backbone Template</span></span>](overview/templates/backbonejs-template.md)
+        - [<span data-ttu-id="1a65b-110">Breeze.js-/Angular.js-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-110">Breeze/Angular template</span></span>](overview/templates/breezeangular-template.md)
+        - [<span data-ttu-id="1a65b-111">Breeze.js-/Knockout.js-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-111">Breeze/Knockout template</span></span>](overview/templates/breezeknockout-template.md)
+        - [<span data-ttu-id="1a65b-112">Ember.js-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-112">EmberJS template</span></span>](overview/templates/emberjs-template.md)
+        - [<span data-ttu-id="1a65b-113">Hot Towel-Vorlage</span><span class="sxs-lookup"><span data-stu-id="1a65b-113">Hot Towel template</span></span>](overview/templates/hottowel-template.md)

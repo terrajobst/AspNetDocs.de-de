@@ -12,13 +12,13 @@ ms.openlocfilehash: cddf4c754ab2c8e8ad2671819cf61d0a7f336bf0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407483"
 ---
-# <a name="aspnet-mvc-4"></a><span data-ttu-id="c8859-103">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="c8859-103">ASP.NET MVC 4</span></span>
+# <a name="aspnet-mvc-4"></a><span data-ttu-id="2eb03-103">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="2eb03-103">ASP.NET MVC 4</span></span>
 
-> <span data-ttu-id="c8859-104">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="c8859-104">ASP.NET MVC 4</span></span>
+> <span data-ttu-id="2eb03-104">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="2eb03-104">ASP.NET MVC 4</span></span>
 
 
-- [<span data-ttu-id="c8859-105">Verwenden der Seitenprüfung in ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="c8859-105">Using Page Inspector in ASP.NET MVC</span></span>](using-page-inspector-in-aspnet-mvc.md)
-- [<span data-ttu-id="c8859-106">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="c8859-106">ASP.NET MVC 4</span></span>](aspnet-mvc-4.md)
+- [<span data-ttu-id="2eb03-105">Verwenden der Seitenprüfung in ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="2eb03-105">Using Page Inspector in ASP.NET MVC</span></span>](using-page-inspector-in-aspnet-mvc.md)
+- [<span data-ttu-id="2eb03-106">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="2eb03-106">ASP.NET MVC 4</span></span>](aspnet-mvc-4.md)

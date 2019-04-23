@@ -12,14 +12,14 @@ ms.openlocfilehash: f1f1e78a3b8d631d9a78c5aad8dc8c3b00c883fe
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404376"
 ---
-# <a name="aspnet-4---enterprise-deployment-introduction"></a><span data-ttu-id="b8175-103">ASP.NET 4 – Einführung zur Unternehmensbereitstellung</span><span class="sxs-lookup"><span data-stu-id="b8175-103">ASP.NET 4 - Enterprise Deployment Introduction</span></span>
+# <a name="aspnet-4---enterprise-deployment-introduction"></a><span data-ttu-id="7241a-103">ASP.NET 4 – Einführung zur Unternehmensbereitstellung</span><span class="sxs-lookup"><span data-stu-id="7241a-103">ASP.NET 4 - Enterprise Deployment Introduction</span></span>
 
-> <span data-ttu-id="b8175-104">Diese Reihe von Tutorials beschreibt Tools und Techniken, die Sie zum Bereitstellen von Webanwendungen in verschiedenen Unternehmensszenarien verwenden können.</span><span class="sxs-lookup"><span data-stu-id="b8175-104">This set of tutorials describes tools and techniques you can use to deploy web applications in various enterprise scenarios.</span></span>
+> <span data-ttu-id="7241a-104">Diese Reihe von Tutorials beschreibt Tools und Techniken, die Sie zum Bereitstellen von Webanwendungen in verschiedenen Unternehmensszenarien verwenden können.</span><span class="sxs-lookup"><span data-stu-id="7241a-104">This set of tutorials describes tools and techniques you can use to deploy web applications in various enterprise scenarios.</span></span>
 
 
-- [<span data-ttu-id="b8175-105">Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010</span><span class="sxs-lookup"><span data-stu-id="b8175-105">Deploying Web Applications in Enterprise Scenarios using Visual Studio 2010</span></span>](deploying-web-applications-in-enterprise-scenarios.md)
-- [<span data-ttu-id="b8175-106">Erweiterte webbasierte Unternehmensbereitstellung: Übersicht über das Szenario</span><span class="sxs-lookup"><span data-stu-id="b8175-106">Enterprise Web Deployment: Scenario Overview</span></span>](enterprise-web-deployment-scenario-overview.md)
-- [<span data-ttu-id="b8175-107">Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion</span><span class="sxs-lookup"><span data-stu-id="b8175-107">Application Lifecycle Management: From Development to Production</span></span>](application-lifecycle-management-from-development-to-production.md)
+- [<span data-ttu-id="7241a-105">Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010</span><span class="sxs-lookup"><span data-stu-id="7241a-105">Deploying Web Applications in Enterprise Scenarios using Visual Studio 2010</span></span>](deploying-web-applications-in-enterprise-scenarios.md)
+- [<span data-ttu-id="7241a-106">Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario</span><span class="sxs-lookup"><span data-stu-id="7241a-106">Enterprise Web Deployment: Scenario Overview</span></span>](enterprise-web-deployment-scenario-overview.md)
+- [<span data-ttu-id="7241a-107">Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion</span><span class="sxs-lookup"><span data-stu-id="7241a-107">Application Lifecycle Management: From Development to Production</span></span>](application-lifecycle-management-from-development-to-production.md)

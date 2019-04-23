@@ -12,10 +12,10 @@ ms.openlocfilehash: 197aadb65bb68d8cdb9d32ff5f98104de366447d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407795"
 ---
-# <a name="webmatrix-readme"></a><span data-ttu-id="8cbe3-103">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="8cbe3-103">WebMatrix Readme</span></span>
+# <a name="webmatrix-readme"></a><span data-ttu-id="b6133-103">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="b6133-103">WebMatrix Readme</span></span>
 
-- [<span data-ttu-id="8cbe3-104">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="8cbe3-104">WebMatrix Readme</span></span>](overview.md)
-- [<span data-ttu-id="8cbe3-105">Infodatei für das Release WebMatrix und ASP.NET Web Pages (Razor) Beta 3</span><span class="sxs-lookup"><span data-stu-id="8cbe3-105">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>](beta3.md)
+- [<span data-ttu-id="b6133-104">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="b6133-104">WebMatrix Readme</span></span>](overview.md)
+- [<span data-ttu-id="b6133-105">Infodatei für das Release WebMatrix und ASP.NET Web Pages (Razor) Beta 3</span><span class="sxs-lookup"><span data-stu-id="b6133-105">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>](beta3.md)
