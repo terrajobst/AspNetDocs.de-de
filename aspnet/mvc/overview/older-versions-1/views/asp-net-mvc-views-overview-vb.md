@@ -12,7 +12,7 @@ ms.openlocfilehash: 84af745d338e38ece438fa58d51d0929c7b92967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408458"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC-Ansichten – Übersicht (VB)
@@ -104,7 +104,7 @@ Bilden beispielsweise die Ansicht in Listing 4 nutzt drei HTML-Hilfsprogrammen �
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
 
-[![TDialogfeld für neues Projekt mit HE](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **Abbildung 01**: Ein standard Anmeldeformular ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-views-overview-vb/_static/image2.png))
 

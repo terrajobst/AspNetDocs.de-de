@@ -12,7 +12,7 @@ ms.openlocfilehash: d7dd82ed4140b5ac6993483fb16af6a1b249be51
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383879"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>Erstellen eine Schnittstelle zum Auswählen eines Benutzerkontos aus vielen (VB)
@@ -56,7 +56,7 @@ Der ASP-Seiten in der `Administration` Ordner sind ausschließlich für Administ
 An diesem Punkt sollte Ihr Projekts des Projektmappen-Explorer im Screenshot dargestellt in Abbildung 1 ähneln.
 
 
-[![FUnsere neuen Seiten und eine Web.config-Datei wurden auf der Website hinzugefügt](building-an-interface-to-select-one-user-account-from-many-vb/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image1.png)
+[![Vier neue Seiten und eine Web.config-Datei wurden auf der Website hinzugefügt](building-an-interface-to-select-one-user-account-from-many-vb/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image1.png)
 
 **Abbildung 1**: Vier neue Seiten und ein `Web.config` Datei wurde auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image3.png))
 
@@ -68,7 +68,7 @@ Zum Schluss aktualisieren die Sitemap (`Web.sitemap`) auf einen Eintrag enthalte
 Besuchen Sie die Website über einen Browser, mit der sitezuordnung aktualisiert. Wie in Abbildung 2 gezeigt, enthält die Navigation auf der linken Seite nun Elemente für die Verwaltung Lernprogramme.
 
 
-[![Ter Sitemap enthält einen Knoten mit dem Titel Benutzerverwaltung](building-an-interface-to-select-one-user-account-from-many-vb/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image4.png)
+[![Die Sitemap enthält einen Knoten mit dem Titel Benutzerverwaltung](building-an-interface-to-select-one-user-account-from-many-vb/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image4.png)
 
 **Abbildung 2**: Die Sitemap enthält einen Knoten mit dem Titel Benutzerverwaltung ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image6.png))
 
@@ -82,7 +82,7 @@ Unser Ziel für dieses Tutorial ist die Erstellung ein Rasters ausgelagertes, fi
 Um die gewünschten Informationen zum Benutzerkonto in der GridView anzuzeigen, legen Sie des GridView `AutoGenerateColumns` Eigenschaft auf "false" und fügen Sie BoundFields für die `UserName`, `Email`, und `Comment` Eigenschaften und CheckBoxFields für die `IsApproved`, `IsLockedOut`, und `IsOnline` Eigenschaften. Diese Konfiguration kann über deklaratives Markup des Steuerelements oder über das Dialogfeld Felder angewendet werden. Abbildung 3 zeigt einen Screenshot der Felder (Dialogfeld), nachdem die Felder automatisch generieren Kontrollkästchen deaktiviert wurde, und die BoundFields und CheckBoxFields hinzugefügt und konfiguriert wurden.
 
 
-[![ADd drei BoundFields und drei CheckBoxFields an die GridView](building-an-interface-to-select-one-user-account-from-many-vb/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image7.png)
+[![Hinzufügen von drei BoundFields und drei CheckBoxFields an die GridView](building-an-interface-to-select-one-user-account-from-many-vb/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image7.png)
 
 **Abbildung 3**: Hinzufügen von drei BoundFields und drei CheckBoxFields an die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image9.png))
 
@@ -98,7 +98,7 @@ Als Nächstes müssen wir Code schreiben, die die Benutzerkonten an die GridView
 Nehmen Sie einen Moment Zeit, um die Seite über einen Browser zu testen. Wie in Abbildung 4 gezeigt, die `UserAccounts` GridView Listet den Benutzernamen, e-Mail-Adresse und andere relevante Kontoinformationen für alle Benutzer im System.
 
 
-[![TIE-Benutzerkonten finden Sie in den GridView-Ansicht](building-an-interface-to-select-one-user-account-from-many-vb/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image10.png)
+[![In den GridView-Ansicht werden die Benutzerkonten aufgeführt.](building-an-interface-to-select-one-user-account-from-many-vb/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image10.png)
 
 **Abbildung 4**: Die Benutzerkonten finden Sie in den GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image12.png))
 
@@ -122,7 +122,7 @@ Diese Methode gibt die Filteroptionen als Elemente in der `String` Array `filter
 Abbildung 5 zeigt die `ManageUsers.aspx` Seite, wenn Sie über einen Browser angezeigt.
 
 
-[![Ter Repeater listet 27 Filtern LinkButtons](building-an-interface-to-select-one-user-account-from-many-vb/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image13.png)
+[![Repeater sind 27 Filtern LinkButtons aufgeführt.](building-an-interface-to-select-one-user-account-from-many-vb/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image13.png)
 
 **Abbildung 5**: Der Repeater listet 27 Filtern LinkButtons ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image15.png))
 
@@ -152,7 +152,7 @@ Erstellen Sie einen Ereignishandler für das Repeater `ItemCommand` Ereignis. Di
 Testen Sie mit diesem Code werden die Funktion zum Filtern. Wenn die Seite zuerst aufgerufen wird, werden alle Benutzerkonten angezeigt (siehe Abbildung 5). Klicken auf LinkButton ein ein Postback auslöst und filtert die Ergebnisse, die Anzeige nur der Benutzerkonten, die mit A zu starten.
 
 
-[![USE die LinkButtons Filtern zum Anzeigen dieser Benutzer, deren Benutzername mit einem bestimmte Buchstaben beginnt](building-an-interface-to-select-one-user-account-from-many-vb/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image16.png)
+[![Verwenden Sie die Filterung LinkButtons, um die Benutzer anzuzeigen, deren Benutzernamen mit einem bestimmten Buchstaben](building-an-interface-to-select-one-user-account-from-many-vb/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image16.png)
 
 **Abbildung 6**: Verwenden Sie die LinkButtons filtern, um diese Benutzer, deren Benutzername mit einem bestimmte Buchstaben beginnt anzuzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image18.png))
 
@@ -197,7 +197,7 @@ Als Nächstes erstellen Sie einen Ereignishandler für die einzelnen des LinkBut
 Abbildung 7 zeigt die vier LinkButtons, wenn Sie über die Visual Web Developer-Design-Sicht angezeigt.
 
 
-[![ADd zuerst, zurück, nächsten und letzten LinkButtons unterhalb der GridView](building-an-interface-to-select-one-user-account-from-many-vb/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image19.png)
+[![Fügen Sie der ersten, vorherigen hinzu, weiter, und der letzten Sie LinkButtons unterhalb der GridView](building-an-interface-to-select-one-user-account-from-many-vb/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image19.png)
 
 **Abbildung 7**: Fügen Sie zuerst zurück, nächsten und letzten LinkButtons unterhalb der GridView ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image21.png))
 
@@ -227,12 +227,12 @@ Der letzte Schritt ist, Code zu schreiben, für die vier LinkButtons' `Click` -E
 Abbildungen 8 und 9 zeigen die benutzerdefinierte Paginierung-Schnittstelle in Aktion. Abbildung 8 zeigt die `ManageUsers.aspx` Seite, wenn Sie die erste Seite der Daten für alle Benutzerkonten anzeigen. Beachten Sie, dass nur 10 13 Konten angezeigt werden. Klicken auf den Link weiter oder letzte bewirkt, dass ein Postback, Updates der `PageIndex` 1 und Bindungen, die in das Raster die zweite Seite des Benutzer-Konten (siehe Abbildung 9).
 
 
-[![Tseine erste 10 Benutzerkonten werden angezeigt](building-an-interface-to-select-one-user-account-from-many-vb/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image22.png)
+[![Die ersten 10 Benutzerkonten werden angezeigt.](building-an-interface-to-select-one-user-account-from-many-vb/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image22.png)
 
 **Abbildung 8**: Die ersten 10 Benutzerkonten werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image24.png))
 
 
-[![Clicking den nächsten Link zeigt die zweite Seite des Benutzerkonten](building-an-interface-to-select-one-user-account-from-many-vb/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image25.png)
+[![Klicken Sie auf den nächsten Link zeigt die zweite Seite des Benutzerkonten](building-an-interface-to-select-one-user-account-from-many-vb/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-vb/_static/image25.png)
 
 **Abbildung 9**: Klicken Sie auf den nächsten Link zeigt die zweite Seite von Benutzerkonten ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-vb/_static/image27.png))
 
