@@ -12,7 +12,7 @@ ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408965"
 ---
 # <a name="determining-what-files-need-to-be-deployed-c"></a>Festlegen der bereitzustellenden Dateien (C#)
@@ -93,7 +93,7 @@ Der Download für dieses Lernprogramm enthält eine ASP.NET-Anwendung namens Boo
 Abbildung 1 zeigt einen Screenshot der Book Reviews-Website über einen Browser angezeigt. Hier sehen Sie die Seite "~ /`Tech/TYASP35.aspx`, die überprüft, dass des Buchs *bringen Sie sich ASP.NET 3.5 in 24 Stunden*. Die Breadcrumb-Leiste, die am oberen Rand der Seite, und klicken Sie im Menü in der linken Spalte umfasst basieren auf der Site Map-Struktur, die in definierten `Web.sitemap`. Das Bild in der rechten oberen Ecke eines Images an den Buch wird erläutert, ist die `Images` Ordner. Die Website Aussehen und Verhalten definiert sind, über das cascading Stylesheet-Stilregeln wie folgt buchstabiert die CSS-Dateien im Ordner "Stile", während das übergreifende Seitenlayout in die Masterseite definiert ist `Site.master`.
 
 
-[![TEr überprüft die Buch-Website bietet eine Sammlung von Titeln-Bewertungen](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
+[![Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **Abbildung 1:** Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen ([klicken Sie, um das Bild in voller Größe anzeigen](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
 
@@ -116,7 +116,7 @@ Das Webanwendungsprojekt-Modell verwendet explizite Kompilierung - Quellcode des
 Abbildung 2 zeigt die Dateien, aus denen das Book Reviews-Webanwendungsprojekt.
 
 
-[![Tin der Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfasst, aufgelistet](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
+[![Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **Abbildung 2**: Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.
 
@@ -143,7 +143,7 @@ Die Menüoption "Build" in Visual Studio ist sowohl für Webanwendungsprojekte a
 Abbildung 3 zeigt die Dateien, aus denen das Book Reviews-Websiteprojekt besteht.
 
 
- [![Tin der Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfasst, aufgelistet](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
+ [![Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
 **Abbildung 3**: Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.
 

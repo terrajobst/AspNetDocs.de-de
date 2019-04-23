@@ -12,7 +12,7 @@ ms.openlocfilehash: 2ba52c94737dfc165831ef094d04a333c4fcf133
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414113"
 ---
 # <a name="sql-injection-defense"></a>Schutz vor Angriffen durch Skripteinschleusung in SQL
@@ -24,4 +24,4 @@ Eine SQL-Injection-Schwachstelle in Ihrer Anwendung kann den ganzen Tag auflöst
 [&#9654;Sehen Sie sich Video (25 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/sql-injection-defense)
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-inactive-users.md)
+> [Vorherige](creating-inactive-users.md)

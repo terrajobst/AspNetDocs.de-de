@@ -12,7 +12,7 @@ ms.openlocfilehash: a2b6d3a5ceb66c14a78b02182f49d76c72becbd4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413645"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-c"></a>Interaktion mit der Inhaltsseite von der Masterseite (C#)
@@ -51,7 +51,7 @@ Diese weiteren Verlauf dieses Tutorials implementiert das Beispiel in der Einfü
 Unsere erste Tagesordnung ist eine Inhaltsseite erstellen, die die Produkte aus der Northwind-Datenbank aufgeführt sind. (Wir die Northwind-Datenbank zum Projekt hinzugefügt haben, im vorherigen Tutorial [ *Interaktion mit der Masterseite der Inhaltsseite*](interacting-with-the-master-page-from-the-content-page-cs.md).) Starten, indem Sie eine neue ASP.NET-Seite zum Hinzufügen der `~/Admin` Ordner mit dem Namen `Products.aspx`, und bindet, bindet es an der `Site.master` Masterseite. Abbildung 1 zeigt den Projektmappen-Explorer, nachdem dieser Seite auf der Website hinzugefügt wurde.
 
 
-[![ADd eine neue ASP.NET-Seite auf den Ordner Admin](interacting-with-the-content-page-from-the-master-page-cs/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image1.png)
+[![Fügen Sie eine neue ASP.NET-Seite, um den Ordner Admin](interacting-with-the-content-page-from-the-master-page-cs/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer neuen ASP.NET-Seite zu den `Admin` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image3.png))
 
@@ -68,7 +68,7 @@ Das Hinzufügen dieses `<siteMapNode>` Elements in den Lektionen wiedergegeben w
 Wechseln Sie zurück zur `Products.aspx`. Im Inhaltssteuerelement für `MainContent`, fügen Sie ein GridView-Steuerelement hinzu, und nennen Sie sie `ProductsGrid`. Die GridView zu binden, um ein neues SqlDataSource-Steuerelement, das mit dem Namen `ProductsDataSource`.
 
 
-[![BSuchen Sie die GridView zu einem neuen SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image4.png)
+[![GridView zu binden, um ein neues SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image4.png)
 
 **Abbildung 02**: GridView zu binden, um ein neues SqlDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image6.png))
 
@@ -76,7 +76,7 @@ Wechseln Sie zurück zur `Products.aspx`. Im Inhaltssteuerelement für `MainCont
 Konfigurieren Sie den Assistenten aus, sodass sie die Northwind-Datenbank verwendet. Wenn Sie das vorherige Tutorial durchgearbeitet haben Sie sollten bereits eine Verbindungszeichenfolge, die mit dem Namen `NorthwindConnectionString` in `Web.config`. Wählen Sie diese Verbindungszeichenfolge aus der Dropdown-Liste ein, wie in Abbildung 3 dargestellt.
 
 
-[![CKonfigurieren der SqlDataSource-Steuerelement mit der Northwind-Datenbank](interacting-with-the-content-page-from-the-master-page-cs/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image7.png)
+[![Konfigurieren Sie die Verwendung der Northwind-Datenbank dem SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image7.png)
 
 **Abbildung 03**: Konfigurieren Sie die Verwendung der Northwind-Datenbank dem SqlDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image9.png))
 
@@ -84,7 +84,7 @@ Konfigurieren Sie den Assistenten aus, sodass sie die Northwind-Datenbank verwen
 Geben Sie als Nächstes des Datenquellensteuerelements `SELECT` Anweisung durch die Products-Tabelle aus der Dropdown-Liste auswählen und Zurückgeben der `ProductName` und `UnitPrice` Spalten (siehe Abbildung 4). Klicken Sie auf Weiter, und schließen Sie zum Abschließen des Assistenten für die Datenquelle konfigurieren.
 
 
-[![Rurück ProductName und UnitPrice Fields aus der Tabelle Products](interacting-with-the-content-page-from-the-master-page-cs/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image10.png)
+[![Zurückzugeben Sie die UnitPrice-Felder "und" ProductName, in der Tabelle Products](interacting-with-the-content-page-from-the-master-page-cs/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image10.png)
 
 **Abbildung 04**: Zurückgeben der `ProductName` und `UnitPrice` Felder aus der `Products` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image12.png))
 
@@ -95,7 +95,7 @@ Das ist schon alles! Nach Abschluss des Assistenten fügt Visual Studio zwei Bou
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample2.aspx)]
 
 
-[![EACH-Produkt und seinem Preis finden Sie in den GridView-Ansicht](interacting-with-the-content-page-from-the-master-page-cs/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image13.png)
+[![Jedes Produkt und seinem Preis finden Sie in den GridView-Ansicht](interacting-with-the-content-page-from-the-master-page-cs/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image13.png)
 
 **Abbildung 05**: Jedes Produkt und seinem Preis finden Sie in den GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image15.png))
 
@@ -111,7 +111,7 @@ Unsere nächste Aufgabe ist, hinzufügen ein Websteuerelements der Schaltfläche
 Fügen Sie ein SqlDataSource-Steuerelement auf die Masterseite, nennen Sie es `DoublePricesDataSource`. Diese SqlDataSource-Steuerelement wird verwendet, um das Ausführen der `UPDATE` Anweisung, um alle Preise doppelklicken. Insbesondere müssen wir legen Sie dessen `ConnectionString` und `UpdateCommand` Eigenschaften auf die entsprechende Verbindungszeichenfolge und `UPDATE` Anweisung. Dann wir diese SqlDataSource-Steuerelement aufrufen müssen `Update` Methode bei der `DoublePrice` geklickt wird. Festlegen der `ConnectionString` und `UpdateCommand` Eigenschaften, wählen Sie das SqlDataSource-Steuerelement, und fahren Sie mit dem Fenster "Eigenschaften". Die `ConnectionString` Eigenschaftenlisten diese Verbindungszeichenfolgen, die bereits im gespeicherten `Web.config` wählen Sie in einem Dropdown-Liste; die `NorthwindConnectionString` wie in Abbildung 6 gezeigt.
 
 
-[![CKonfigurieren der NorthwindConnectionString mit dem SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image16.png)
+[![Konfigurieren Sie die Verwendung der NorthwindConnectionString SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image16.png)
 
 **Abbildung 06**: Konfigurieren, mit dem SqlDataSource-Steuerelement die `NorthwindConnectionString` ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image18.png))
 
@@ -124,7 +124,7 @@ Festlegen der `UpdateCommand` -Eigenschaft finden Sie im Fenster Eigenschaften d
 Diese Anweisung ausgeführt wird, verdoppelt sich die `UnitPrice` Wert für jeden Datensatz in die `Products` Tabelle.
 
 
-[![Set SqlDataSource die UpdateCommand-Eigenschaft](interacting-with-the-content-page-from-the-master-page-cs/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image19.png)
+[![Legen Sie die UpdateCommand-Eigenschaft des SqlDataSource-Steuerelement](interacting-with-the-content-page-from-the-master-page-cs/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image19.png)
 
 **Abbildung 07**: Legen Sie die SqlDataSource `UpdateCommand` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image21.png))
 
@@ -225,12 +225,12 @@ Mit diesem Code werden, auf der Inhaltsseite GridView aktualisiert wird immer di
 Abbildungen 8 und 9 veranschaulichen dieses Verhalten auf. Abbildung 8 zeigt die Seite beim ersten Mal besucht hat. Beachten Sie, die Werte in beiden Preis der `RecentProducts` GridView (in der linken Spalte der Masterseite) und die `ProductsGrid` GridView (in der Seite Inhalt). Abbildung 9 zeigt die gleiche Seite unmittelbar nach der `DoublePrice` Schaltfläche geklickt wurde. Wie Sie sehen können, werden die neuen Preise sofort in beiden GridViews wiedergegeben.
 
 
-[![Ter Anfangswerte Preis](interacting-with-the-content-page-from-the-master-page-cs/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image22.png)
+[![Die erste preiswerten](interacting-with-the-content-page-from-the-master-page-cs/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image22.png)
 
 **Abbildung 08**: Die Anfangswerte der Preis ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image24.png))
 
 
-[![THE Just-Doubled Preise werden in der GridViews angezeigt](interacting-with-the-content-page-from-the-master-page-cs/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image25.png)
+[![Die Just-Doubled Preise werden in der GridViews angezeigt.](interacting-with-the-content-page-from-the-master-page-cs/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image25.png)
 
 **Abbildung 09**: Die Just-Doubled Preise werden in der GridViews angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-content-page-from-the-master-page-cs/_static/image27.png))
 

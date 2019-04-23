@@ -12,7 +12,7 @@ ms.openlocfilehash: 5415913626eb063a4cb1013ba03857c130487f42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412176"
 ---
 # <a name="introducing-aspnet-web-pages---displaying-data"></a>Einführung in ASP.NET Web Pages - Anzeige von Daten
@@ -214,7 +214,7 @@ In dieser Phase wird die Datenbank geöffnet worden ist, haben Sie die Daten abg
 
 > [!TIP] 
 > 
-> **Strukturierte Abfragesprache (Structured Query Language; SQL)**
+> **Strukturierte Abfragesprache (SQL)**
 > 
 > SQL ist eine Sprache, die in den meisten relationalen Datenbanken für die Verwaltung von Daten in einer Datenbank verwendet wird. Es enthält Befehle, mit denen Sie Daten abrufen und aktualisieren und, mit denen Sie erstellen, ändern und Verwalten von Daten in Datenbanktabellen. SQL ist eine Programmiersprache (z. B. C#)) unterscheidet. Mit SQL Sie legen fest, die Datenbank Was soll, und es ist Aufgabe der Datenbank, um zu ermitteln, wie Sie die Daten abzurufen, oder führen Sie die Aufgabe. Hier sind Beispiele für einige SQL-Befehle und was sie tun:
 > 
@@ -333,7 +333,7 @@ Im nächsten Tutorial erfahren Sie, wie Razor und c#-Code verwenden, um Benutzer
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in die ASP.NET-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
 
 > [!div class="step-by-step"]
 > [Zurück](intro-to-web-pages-programming.md)

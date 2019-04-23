@@ -12,7 +12,7 @@ ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412410"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>Erstellen realer Cloud-Apps mit Azure
@@ -100,7 +100,7 @@ Dieses e-Book wird erläutert, dreizehn Muster für die Cloudentwicklung empfohl
     - Hohen Verfügbarkeit und verbessern Sie Skalierbarkeit zu, indem Sie die lose Kopplung von Web-und workerebenen.
     - Demo: Azure Storage-Warteschlangen in der app zu beheben.
 - [Mehr cloud-app-Muster und Anleitungen](more-patterns-and-guidance.md).
-- [Anhang: Anhang: Fix It-Beispielanwendung](the-fix-it-sample-application.md)
+- [Anhang: Der Fix It-Beispielanwendung](the-fix-it-sample-application.md)
 
     - Bekannte Probleme
     - Bewährte Methoden
@@ -175,4 +175,4 @@ Videos:
 - [Azure-Web Sites-Interna mit Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 > [!div class="step-by-step"]
-> [Weiter](automate-everything.md)
+> [Nächste](automate-everything.md)

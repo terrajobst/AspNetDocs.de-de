@@ -12,7 +12,7 @@ ms.openlocfilehash: cc52592bbb377e9f04e56f6cc1f02d16a271d158
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416999"
 ---
 # <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a>[Gewusst wie:] Übergeben Sie Informationen von einer Seite in eine andere mithilfe einer Abfragezeichenfolge.

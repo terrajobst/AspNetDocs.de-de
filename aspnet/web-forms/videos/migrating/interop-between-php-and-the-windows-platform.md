@@ -12,7 +12,7 @@ ms.openlocfilehash: 72ff6228e9a4983c701c101cf3ced7a816363017
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415699"
 ---
 # <a name="interop-between-php-and-the-windows-platform"></a>Interoperabilität zwischen PHP und der Windows-Plattform
@@ -24,4 +24,4 @@ In diesem Webcast lernen Sie die zum Erstellen und Ausführen von PHP-Anwendunge
 [&#9654;Sehen Sie sich Video (64 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/interop-between-php-and-the-windows-platform)
 
 > [!div class="step-by-step"]
-> [Vorheriges](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+> [Vorherige](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)

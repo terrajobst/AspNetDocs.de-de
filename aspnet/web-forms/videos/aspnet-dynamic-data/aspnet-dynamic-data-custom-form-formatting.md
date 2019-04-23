@@ -12,7 +12,7 @@ ms.openlocfilehash: 957107636a68a2636d9a1d0c965ea55d074e92c8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420093"
 ---
 # <a name="aspnet-dynamic-data-custom-form-formatting"></a>ASP.NET Dynamic Data Custom Form Formatting
@@ -24,4 +24,4 @@ In diesem Video lernen Sie, einen Einblick in das visual Ästhetik des Dynamic D
 [&#9654;Sehen Sie sich Video (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-dynamic-data-custom-form-formatting)
 
 > [!div class="step-by-step"]
-> [Vorheriges](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)
+> [Vorherige](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)

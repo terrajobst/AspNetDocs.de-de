@@ -12,7 +12,7 @@ ms.openlocfilehash: 7b50c7944a3e0b01c81fb80f8665ba7a7fe4a6f5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420327"
 ---
 # <a name="implement-the-registration-verification-pattern"></a>Implementieren des Musters zur Überprüfung der Registrierung

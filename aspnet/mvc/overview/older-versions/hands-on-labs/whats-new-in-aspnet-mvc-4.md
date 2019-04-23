@@ -12,7 +12,7 @@ ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411123"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>Neue Funktionen in ASP.NET MVC 4
@@ -547,7 +547,7 @@ In dieser Aufgabe aktualisieren Sie die desktop-Layout-ansichtumschaltung enthä
 
     ![Zu den Seiten](whats-new-in-aspnet-mvc-4/_static/image33.png "zu Seite")
 
-    *Seite „Info“*
+    *Zu den Seiten*
 8. Öffnen Sie schließlich die Website in einem desktop-Webbrowser. Beachten Sie, dass keine der vorherigen Updates Desktopansicht betroffen ist.
 
     ![Desktopansicht Registerseite](whats-new-in-aspnet-mvc-4/_static/image34.png "Registerseite Desktopansicht")

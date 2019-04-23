@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e3c5682ced82ad42aaa0b28a7f5a6b67e43338f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416557"
 ---
 # <a name="watch-aspnet-development-in-action"></a>Überwachen von ASP.NET Development in Aktion
@@ -24,4 +24,4 @@ Sehen Sie sich, wie einfach es ist zum Erstellen einer "Sie" task-listenanwendun
 [&#9654;Sehen Sie sich Video (20 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/watch-aspnet-development-in-action)
 
 > [!div class="step-by-step"]
-> [Vorheriges](lesson-8-working-with-the-gridview-and-formview.md)
+> [Vorherige](lesson-8-working-with-the-gridview-and-formview.md)

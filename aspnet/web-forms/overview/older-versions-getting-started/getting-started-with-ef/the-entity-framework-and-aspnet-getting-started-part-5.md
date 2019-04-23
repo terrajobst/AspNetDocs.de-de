@@ -12,7 +12,7 @@ ms.openlocfilehash: af0c67532a5398628e7ab518c825360bfbd5a70a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414698"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 5
@@ -32,7 +32,7 @@ Erstellen Sie eine Seite, die Kurse hinzufügt, die Abteilungen zugewiesen sind.
 
 Sie erstellen auch eine Seite, die funktioniert mit einer m: n Beziehung durch ein Dozent einem Kurs (Hinzufügen einer Beziehung zwischen zwei Entitäten, die Sie auswählen) zuweisen oder entfernen einen Dozenten aus einem (durch das Entfernen einer Beziehung zwischen zwei Entitäten, die Sie Wählen Sie). Hinzufügen einer Beziehung zwischen einem Dozenten sowie einen Kurs führt in der Datenbank in eine neue Zeile hinzugefügt wird die `CourseInstructor` Zuordnungstabelle: entfernen eine Beziehung umfasst das Löschen einer Zeile aus der `CourseInstructor` Zuordnungstabelle. Aber Sie hierzu im Entity Framework festlegen Navigationseigenschaften, ohne auf die `CourseInstructor` Tabelle explizit.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image3.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-5/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image3.png)
 
 ## <a name="adding-an-entity-with-a-relationship-to-an-existing-entity"></a>Beim Hinzufügen einer Entität mit einer Beziehung zu einer vorhandenen Entität
 
@@ -118,7 +118,7 @@ Fügen Sie Code in die `Page_Load` -Methode, die sicherstellt, dass die Fehlerme
 
 Führen Sie die Seite.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
 Wählen Sie einen Dozenten. Die <strong>weisen Sie einen Kurs</strong> Dropdown-Liste zeigt die Kurse, die der Dozenten zu unterrichten, nicht, und die <strong>entfernen Sie einen Kurs</strong> Dropdown-Liste zeigt die Kurse, die bereits der Dozenten zugewiesen ist. In der <strong>weisen Sie einen Kurs</strong> Abschnitt, wählen Sie einen Kurs aus, und klicken Sie dann auf <strong>weisen</strong>. Der Kurs verschiebt, in der <strong>entfernen Sie einen Kurs</strong> Dropdown-Liste. Wählen Sie einen Kurs in der <strong>entfernen Sie einen Kurs</strong> aus, und klicken Sie auf <strong>entfernen</strong><em>.</em> Der Kurs verschiebt, in der <strong>weisen Sie einen Kurs</strong> Dropdown-Liste.
 

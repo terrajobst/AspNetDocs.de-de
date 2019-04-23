@@ -13,7 +13,7 @@ ms.openlocfilehash: 428e4942e42436585049c1e84cd7b07a4a79c0d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411565"
 ---
 # <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>Unterstützung von OData-Abfrageoptionen in der ASP.NET Web API 2
@@ -81,7 +81,7 @@ $Top können die maximale Anzahl von Einträgen zurückgegeben, und die Option $
 
 Die $filter-Option ermöglicht einen Client, der die Ergebnisse zu filtern, indem Sie einen booleschen Ausdruck anwenden. Die Filterausdrücke sind sehr leistungsstark; Sie enthalten, logische und arithmetische Operatoren, Zeichenfolgenfunktionen und Date-Funktionen.
 
-| Zurückgeben Sie aller Produkte, mit der Kategorie "Toys" gleich. | `http://localhost/Products?$filter=Category` EQ "Toys" |
+| Zurückgeben Sie aller Produkte, mit der Kategorie "Toys" gleich. | `http://localhost/Products?$filter=Category` eq 'Toys' |
 | --- | --- |
 | Geben Sie alle Produkte mit weniger als 10 Preis zurück. | `http://localhost/Products?$filter=Price` Lt 10 |
 | Logische Operatoren: Alle Produkte zurück, in dem Preis > = 5 und Preis < = 15. | `http://localhost/Products?$filter=Price` ge 5 und Preis le 15 |

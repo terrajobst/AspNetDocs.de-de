@@ -12,7 +12,7 @@ ms.openlocfilehash: d4e5ef19044a265f48d51586062fb7d2dc024b4c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413671"
 ---
 # <a name="introduction-to-web-pages-videos"></a>Einführung in Web Pages-Videos
@@ -23,7 +23,7 @@ ms.locfileid: "59413671"
 > WebMatrix wird nicht mehr als eine integrierte Entwicklungsumgebung für ASP.NET Web Pages empfohlen. Verwendung [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio-Code](https://code.visualstudio.com/).
 
 
-- [5-minütige Einführung in ASP.NET Web Pages](5-minute-introduction-to-aspnet-web-pages.md)
+- [5-minütige Einführung zu ASP.NET Web Pages](5-minute-introduction-to-aspnet-web-pages.md)
 - [Installieren und Verwenden des Microsoft WebMatrix-Tools](install-and-use-the-microsoft-webmatrix-tool.md)
 - [Erstellen einer Website mit WebMatrix](create-a-website-using-webmatrix.md)
 - [Ändern des visuellen Stils einer Webseite](change-the-visual-style-of-a-web-page.md)

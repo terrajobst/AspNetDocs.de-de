@@ -13,7 +13,7 @@ ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419443"
 ---
 # <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen sensiblen Daten für ASP.NET und Azure App Service
@@ -32,7 +32,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [WebJobs-Konsolen-apps](#wj)
 - [Bereitstellen von Geheimnissen in Azure](#da)
 - [Hinweise für die lokale und PHP](#not)
-- [Zusätzliche Ressourcen](#addRes)
+- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="pwd"></a>
 ## <a name="working-with-passwords-in-the-development-environment"></a>Arbeiten mit Kennwörtern in der Entwicklungsumgebung

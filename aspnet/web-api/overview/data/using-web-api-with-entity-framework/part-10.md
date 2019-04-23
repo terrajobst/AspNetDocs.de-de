@@ -12,7 +12,7 @@ ms.openlocfilehash: a9a7b74a07c71b47253c0af304c7a26ffa4eaae5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417363"
 ---
 # <a name="publish-the-app-to-azure-azure-app-service"></a>Veröffentlichen Sie die App in Azure, Azure App Service
@@ -55,4 +55,4 @@ Geben Sie einen Standortnamen an. Wählen Sie Ihr Azure-Abonnement und die Regio
 Klicken Sie auf die **Einstellungen** Registerkarte, und überprüfen Sie &quot;Execute Code First Migrations&quot;. Klicken Sie dann auf **veröffentlichen**.
 
 > [!div class="step-by-step"]
-> [Vorheriges](part-9.md)
+> [Vorherige](part-9.md)

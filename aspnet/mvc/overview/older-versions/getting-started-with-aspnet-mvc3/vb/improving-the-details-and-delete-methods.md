@@ -12,7 +12,7 @@ ms.openlocfilehash: 63930ebe35e4c37e0cc7c0882582c48348cf201a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417662"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>Optimieren der Methoden „Details“ und „Delete“ (VB)
@@ -70,7 +70,7 @@ Dieses Lernprogramm haben Sie die Schritte der Controller mit Ansichten verknüp
 
 Wenn Sie Ihre Anwendung bereitstellen möchten, ist es hilfreich, zunächst die Anwendung auf dem lokalen IIS 7-Server zu testen. Sie können dies verwenden [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;) Link zur IIS-Einstellung für ASP.NET-Anwendungen aktivieren. Finden Sie unter den folgenden Links für die Bereitstellung:
 
-- [Einstieg in die ASP.NET-Bereitstellung](https://msdn.microsoft.com/library/dd394698.aspx)
+- [Einstieg in ASP.NET](https://msdn.microsoft.com/library/dd394698.aspx)
 - [Aktivieren von IIS 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
 - [Bereitstellung von Webanwendungen-Projekte](https://msdn.microsoft.com/library/dd394698.aspx)
 
@@ -81,4 +81,4 @@ Viel Erfolg!
 — Scott Hanselman ([http://hanselman.com](http://hanselman.com) and [@shanselman](http://twitter.com/shanselman) on Twitter) and Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [Vorheriges](adding-validation-to-the-model.md)
+> [Vorherige](adding-validation-to-the-model.md)

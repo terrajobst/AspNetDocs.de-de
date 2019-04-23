@@ -12,7 +12,7 @@ ms.openlocfilehash: 988aa9252cfd93067888734006e6003347f1fb5e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414750"
 ---
 # <a name="drag-and-drop-via-reorderlist-c"></a>Drag & Drop über ReorderList (C#)
@@ -41,10 +41,10 @@ In dieser Datenbank, erstellen Sie eine neue Tabelle namens `AJAX` mit den folge
 - `id` (primärer Schlüssel, Integer, Identität, nicht NULL)
 - `char` (char(1), NULL)
 - `description` (varchar(50)-Spalte, NULL)
-- `position` (int, NULL)
+- `position` (Int, NULL)
 
 
-[![TIE-Layout der Tabelle AJAX](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
+[![Das Layout der AJAX-Tabelle](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
 
 Das Layout der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-cs/_static/image3.png))
 
@@ -52,7 +52,7 @@ Das Layout der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeige
 Füllen Sie dann die Tabelle mit ein Paar von Werten. Beachten Sie, dass die `position` -Spalte enthält die Sortierreihenfolge der Elemente.
 
 
-[![Tseine ursprünglichen Daten in der AJAX-Tabelle](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
+[![Die ersten Daten in der AJAX-Tabelle](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
 
 Die ersten Daten in der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-cs/_static/image6.png))
 
@@ -83,7 +83,7 @@ Zum Schluss eine `ScriptManager` Steuerelement initialisiert ASP.NET AJAX für d
 Führen Sie in diesem Beispiel wird im Browser aus, und ordnen Sie die Listenelemente etwas. Anschließend laden Sie die Seite bzw. verfügen Sie einen Blick auf die Datenbank. Die geänderten Positionen noch gültig und werden auch übernommen, nach den Werten in der `position` -Spalte in die Datenbank ohne Code, nur mithilfe von Markup.
 
 
-[![Ter Daten in der Datenbank ändert sich entsprechend die neue Reihenfolge der Liste Elemente](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
+[![Das Datenelement in der Datenbank ändert sich gemäß der neuen Liste Reihenfolge](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
 
 Das Datenelement in der Datenbank ändert sich gemäß der neuen Liste Reihenfolge ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-cs/_static/image9.png))
 

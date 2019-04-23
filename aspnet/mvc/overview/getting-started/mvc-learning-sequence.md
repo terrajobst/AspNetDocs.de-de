@@ -12,7 +12,7 @@ ms.openlocfilehash: e78ad67187b2da96ca3766e6914e396508aa180e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417545"
 ---
 # <a name="mvc-recommended-tutorials-and-articles"></a>MVC – Empfohlene Tutorials und Artikel
@@ -39,7 +39,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 - [Erstellen einer ASP.NET MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2 Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) in diesem Tutorial erfahren Sie, wie zum Erstellen einer ASP.NET MVC 5-Webanwendung, die Benutzern ermöglicht, melden Sie sich mithilfe von OAuth 2.0 mit den Anmeldeinformationen eine externe Authentifizierung Anbieter, z. B. Facebook, Twitter, LinkedIn, Microsoft oder Google.
 - [Erstellen eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) zuerst in einer Reihe von Identität, enthält Code zum [einen Bestätigungslink](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md#rsend).
 - [ASP.NET MVC 5-app mit SMS und e-Mail-Adresse einer zweistufigen Authentifizierung](../security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md) zweite Identity-Reihe.
-- [Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen sensiblen Daten für ASP.NET und Azure App Service](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
+- [Best Practices für die Bereitstellung von Kennwörtern und anderer sensibler Daten für ASP.NET und Azure App Service](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
 - [Zwei-Faktor-Authentifizierung, die mithilfe von SMS und e-Mail-Adresse mit ASP.NET Identity](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md) `isPersistent` und das Sicherheitscookie, den Code so, dass einen Benutzer um ein überprüftes e-Mail-Konto zu erhalten, vor der Anmeldung auf, wie SignInManager 2FA-Anforderung und vieles mehr überprüft.
 - [Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md) enthält Details zu Identität wurde nicht gefunden, im [erstellen eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](../security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) wie lassen Benutzer zurücksetzen, ihr Kennwort vergessen haben.
 

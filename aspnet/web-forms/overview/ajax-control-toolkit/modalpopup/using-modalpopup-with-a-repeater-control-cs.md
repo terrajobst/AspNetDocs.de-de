@@ -12,7 +12,7 @@ ms.openlocfilehash: 91758b7c329b78bcb3a3ab301650d6da6164d1a3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411188"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-c"></a>Verwenden von ModalPopup mit einem Wiederholungssteuerelement (C#)
@@ -49,7 +49,7 @@ Um das Popup arbeiten innerhalb des Repeaters, machen die `ModalPopupExtender` S
 Anschließend wird jedes Element in der Datenquelle mit einer Schaltfläche daneben angezeigt, die das modale Popup auslöst.
 
 
-[![THE modales Fenster kann ausgelöst werden, für jede Quelle Dateneingabe](using-modalpopup-with-a-repeater-control-cs/_static/image2.png)](using-modalpopup-with-a-repeater-control-cs/_static/image1.png)
+[![Modale Fenster kann ausgelöst werden, für jede Quelle Dateneingabe](using-modalpopup-with-a-repeater-control-cs/_static/image2.png)](using-modalpopup-with-a-repeater-control-cs/_static/image1.png)
 
 Modale Fenster kann ausgelöst werden, für jede Quelle Dateneingabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-modalpopup-with-a-repeater-control-cs/_static/image3.png))
 

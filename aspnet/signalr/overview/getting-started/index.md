@@ -12,7 +12,7 @@ ms.openlocfilehash: 3e720dd895c609d5b35848dbc4d4a6989028ff7d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418754"
 ---
 # <a name="signalr-getting-started"></a>Erste Schritte SignalR
@@ -20,10 +20,10 @@ ms.locfileid: "59418754"
 > Was SignalR, Plattformen ist, ausgeführt, werden soll, und klicken Sie mit der Vorgehensweise zum Einstieg.
 
 
-- [Einführung in SignalR](introduction-to-signalr.md)
+- [Einführung zu SignalR](introduction-to-signalr.md)
 - [Unterstützte Plattformen](supported-platforms.md)
 - [Tutorial: Erste Schritte mit SignalR 2](tutorial-getting-started-with-signalr.md)
 - [Tutorial: Erste Schritte mit SignalR 2 und MVC 5](tutorial-getting-started-with-signalr-and-mvc.md)
 - [Tutorial: Echtzeitnachrichten mit SignalR 2](tutorial-high-frequency-realtime-with-signalr.md)
 - [Tutorial: Serverübertragung mit SignalR 2](tutorial-server-broadcast-with-signalr.md)
-- [Praktische Übungseinheiten: Echtzeit-Webanwendungen mit SignalR](real-time-web-applications-with-signalr.md)
+- [Praxisnahe Übung: Echtzeit-Webanwendungen mit SignalR](real-time-web-applications-with-signalr.md)

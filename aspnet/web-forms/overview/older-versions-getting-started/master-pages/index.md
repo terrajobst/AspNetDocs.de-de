@@ -12,7 +12,7 @@ ms.openlocfilehash: 9119e16fbd6ac872cfcdf5497c5ca3d8d0b5d5e2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413619"
 ---
 # <a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 – Web Forms-Masterseiten
@@ -25,7 +25,7 @@ ms.locfileid: "59413619"
 - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (C#)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
 - [URLs auf Masterseiten (C#)](urls-in-master-pages-cs.md)
 - [Benennung von Steuerelement-IDs auf Inhaltsseiten (C#)](control-id-naming-in-content-pages-cs.md)
-- [Interaktion mit der Inhaltsseite von der Masterseite (C#)](interacting-with-the-master-page-from-the-content-page-cs.md)
+- [Interaktion mit der Masterseite von der Inhaltsseite (C#)](interacting-with-the-master-page-from-the-content-page-cs.md)
 - [Interaktion mit der Inhaltsseite von der Masterseite (C#)](interacting-with-the-content-page-from-the-master-page-cs.md)
 - [Masterseiten und ASP.NET AJAX (C#)](master-pages-and-asp-net-ajax-cs.md)
 - [Programmgesteuertes Festlegen der Masterseite (C#)](specifying-the-master-page-programmatically-cs.md)
@@ -35,7 +35,7 @@ ms.locfileid: "59413619"
 - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (VB)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)
 - [URLs auf Masterseiten (VB)](urls-in-master-pages-vb.md)
 - [Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)](control-id-naming-in-content-pages-vb.md)
-- [Interaktion mit der Inhaltsseite über die Masterseite (VB)](interacting-with-the-master-page-from-the-content-page-vb.md)
+- [Interaktion mit der Masterseite über die Inhaltsseite (VB)](interacting-with-the-master-page-from-the-content-page-vb.md)
 - [Interaktion mit der Inhaltsseite über die Masterseite (VB)](interacting-with-the-content-page-from-the-master-page-vb.md)
 - [Masterseiten und ASP.NET AJAX (VB)](master-pages-and-asp-net-ajax-vb.md)
 - [Programmgesteuertes Festlegen der Masterseite (VB)](specifying-the-master-page-programmatically-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409732"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
@@ -549,7 +549,7 @@ Sie werden jetzt die Änderungen mithilfe von Push übertragen, die Sie in der v
     *Protokolliert Fehler*
 8. Suchen Sie nach dem Detailabschnitt des Fehlers. Dieser Fehler wird natürlich durch die coderefactoring Sie ein Commit in den vorherigen Schritten verursacht.
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`sein.
+    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
 9. Schließen Sie den Browser nicht.
 10. Wechseln Sie in einer neuen Browserinstanz zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com) und melden Sie sich mit dem Microsoft-Konto, das Ihrem Abonnement zugeordnet.
 11. Wählen Sie **Websites** , und klicken Sie auf die Web-app, die Sie in der Übung 2 erstellt haben.
@@ -677,7 +677,7 @@ In dieser Aufgabe verwenden Sie das Server-Explorer-Fenster aus Visual Studio zu
 
     ![Logo-big.png-Image aus dem Windows-Blobspeicher](maintainable-azure-websites-managing-change-and-scale/_static/image72.png "-Logo-big.png Bilds aus dem Speicher")
 
-    *logo-big.png image from Azure Blob Storage*
+    *Logo-big.png-Image aus Azure Blob Storage*
 
 <a id="Ex4Task3"></a>
 #### <a name="task-3--updating-the-solution-to-consume-static-content-from-azure-blob-storage"></a>Aufgabe 3: die Aktualisierung der Lösung zum Nutzen von statischen Inhalten aus Azure Blob Storage

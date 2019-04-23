@@ -12,7 +12,7 @@ ms.openlocfilehash: b0e51b2fb73370164af1a38af5e5e15e24608843
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418650"
 ---
 # <a name="aspnet-web-pages-razor-faq"></a>ASP.NET-Webseiten (Razor) – FAQs
@@ -42,7 +42,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 - [Habe ich, um die WebSecurity-Hilfsprogramm verwenden, um Anmeldungen zu unterstützen?](#Do_I_have_to_use_the_WebSecurity_helper_to_support_logins)
 - [Unterstützt die ASP.NET Web Pages HTML5?](#Does_ASP.NET_Web_Pages_support_HTML5)
 - [Kann ich JavaScript und jQuery mit Webseiten verwenden?](#Can_I_use_JavaScript_and_jQuery_with_Web_Pages)
-- [Zusätzliche Ressourcen](#AdditionalResources)
+- [Additional Resources](#AdditionalResources) (Zusätzliche MSBuild-Ressourcen)
 
 Fragen zu Fehlern und anderen Problemen finden Sie auf die [ASP.NET Web Pages (Razor) – Handbuch zur Problembehandlung](https://go.microsoft.com/fwlink/?LinkId=253001).
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 4745e68053fae38019b6121295382a170fd2d858
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412930"
 ---
 # <a name="whitepapers"></a>Whitepaper
@@ -20,7 +20,7 @@ ms.locfileid: "59412930"
 > Auf dieser Seite finden Sie Whitepapers zur installieren und Konfigurieren von ASP.NET und sichere, schnelle und flexible ASP.NET-Anwendungen zu schreiben.
 > 
 > - [ASP.NET 4](#aspnet4)
-> - [ASP.NET Security Whitepapers](#security)
+> - [ASP.NET-Sicherheit](#security)
 > - [Installation und Setup-Whitepaper](#setup)
 > - [Whitepapers des SQL Server](#sql)
 > - [Allgemeine-Whitepaper](#general)

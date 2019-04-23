@@ -12,7 +12,7 @@ ms.openlocfilehash: 7bccf52ccf0aacffa90d3c6db541cec5e20582e3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414230"
 ---
 # <a name="aspnet-4-quick-hit---chart-control"></a>ASP.NET 4 "Schnelles drücken" - Diagramm-Steuerelement
@@ -24,4 +24,4 @@ In diesem Video lernen Sie, wie Sie mit, dass das Diagrammsteuerelement für ASP
 [&#9654;Sehen Sie sich Video (2 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-chart-control)
 
 > [!div class="step-by-step"]
-> [Weiter](aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
+> [Nächste](aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)

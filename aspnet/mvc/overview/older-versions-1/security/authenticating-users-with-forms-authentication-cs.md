@@ -12,7 +12,7 @@ ms.openlocfilehash: b52abab12503918603419c9ccfabefcffdfd7e06
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418273"
 ---
 # <a name="authenticating-users-with-forms-authentication-c"></a>Authentifizieren von Benutzern bei der Formularauthentifizierung (C#)
@@ -150,4 +150,4 @@ Nachdem Sie die erforderliche Anmeldung zu erstellen, müssen Sie die Anmeldung 
 In diesem Tutorial haben Sie gelernt, wie die Formularauthentifizierung verwenden, beim Erstellen einer ASP.NET MVC-Anwendung. Zuerst, wie Sie neue Benutzer und Rollen erstellen, durch das Websiteverwaltungs-Tool nutzen. Als Nächstes, wie Sie die [Authorize]-Attribut zu verwenden, um zu verhindern, dass nicht autorisierte Benutzer Controlleraktionen aufgerufen. Schließlich haben Sie Ihre MVC-Anwendung zum Speichern von Rolleninformationen zu Benutzern und in einer Produktionsdatenbank zu konfigurieren.
 
 > [!div class="step-by-step"]
-> [Weiter](authenticating-users-with-windows-authentication-cs.md)
+> [Nächste](authenticating-users-with-windows-authentication-cs.md)

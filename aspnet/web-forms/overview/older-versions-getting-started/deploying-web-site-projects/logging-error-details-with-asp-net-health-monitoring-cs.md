@@ -12,7 +12,7 @@ ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416258"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Protokollieren von Fehlerdetails mit der ASP.NET-Systemüberwachung (C#)
@@ -147,8 +147,8 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Übersicht über die ASP.NET-Systemüberwachung](https://msdn.microsoft.com/library/bb398933.aspx)
 - [Konfigurieren und Anpassen von System von ASP.NET für die Systemüberwachung](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [Häufig gestellte Fragen – ASP.NET 2.0 für die Systemüberwachung](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [Vorgehensweise: Senden von e-Mail-Einstellungen für Benachrichtigungen für die Systemüberwachung](https://msdn.microsoft.com/library/ms227553.aspx)
-- [Vorgehensweise: Verwenden Sie die Integritätsüberwachung in ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
+- [How To: Senden von e-Mail-Einstellungen für Benachrichtigungen für die Systemüberwachung](https://msdn.microsoft.com/library/ms227553.aspx)
+- [How To: Verwenden Sie die Integritätsüberwachung in ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
 - [Systemüberwachung in ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 > [!div class="step-by-step"]

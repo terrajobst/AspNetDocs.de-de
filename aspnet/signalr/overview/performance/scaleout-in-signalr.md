@@ -12,7 +12,7 @@ ms.openlocfilehash: 0d17308d1e97279c0870ea02933a42400ef338c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411552"
 ---
 # <a name="introduction-to-scaleout-in-signalr"></a>Einführung zur horizontalen Skalierung in SignalR
@@ -24,7 +24,7 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://g
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >
@@ -62,7 +62,7 @@ Wenn Sie Ihre Anwendung in Azure bereitstellen, sollten Sie die Redis-Rückwandp
 
 Die folgenden Themen enthalten schrittweise aufgebaute Lernprogramme für jede-Rückwandplatine:
 
-- [Horizontale Skalierung in SignalR mit Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
+- [Horizontale Skalierung in SignalR mit dem Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
 - [Horizontale Skalierung in SignalR mit Redis](scaleout-with-redis.md)
 - [Horizontale Skalierung in SignalR mit SQL Server](scaleout-with-sql-server.md)
 

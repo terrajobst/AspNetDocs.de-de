@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f6d58b8bf72c6b9d6909a8a05efe4f61ebd551a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416739"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>Verwenden des HTML5 und jQuery UI Datepicker-Popupkalenders mit ASP.NET MVC – Teil 4
@@ -176,4 +176,4 @@ In diesem Lernprogramm wurden die Grundlagen von Hilfsvorlagen von ASP.NET behan
 - Weitere Informationen zu den ASP.NET MVC-Vorlagen finden Sie in Brad Wilsons Blog-Reihe auf [ASP.NET MVC 2-Vorlagen](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). Obwohl der Reihe für ASP.NET MVC 2 geschrieben wurde wurde, gilt immer noch das Material aus, für die aktuelle Version von ASP.NET MVC.
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [Vorherige](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

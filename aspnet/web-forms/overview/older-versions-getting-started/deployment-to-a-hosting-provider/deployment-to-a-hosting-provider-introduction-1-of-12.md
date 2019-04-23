@@ -12,7 +12,7 @@ ms.openlocfilehash: ae53e23dda3ac63e26590edab692188bb44e9f65
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413203"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio: Einführung in – 1 von 12
@@ -82,7 +82,7 @@ Kommentare zu den Lernprogrammen sind Willkommen, und bei der Aktualisierung des
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie Windows 7 oder höher und eine der folgenden Produkte auf Ihrem Computer installiert:
 
-- [Visual Studio 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
+- [Visual Studio 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
 - [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VWD2010SP1Pack)
 - [Visual Studio 2012 RC oder Visual Studio Express 2012 RC für Web](https://go.microsoft.com/fwlink/?LinkId=240162)
 
@@ -119,9 +119,9 @@ Die Websiteseiten stehen in der Menüleiste, und können Sie die folgenden Funkt
 
 Folgenden finden Sie Screenshots der einige repräsentative Seiten.
 
-[![STudents_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image4.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image3.png)
+[![Students_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image4.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image3.png)
 
-[![ADd_Students_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image6.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image5.png)
+[![Add_Students_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image6.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image5.png)
 
 ## <a name="reviewing-application-features-that-affect-deployment"></a>Überprüfen von Anwendungsfunktionen, die Bereitstellung auswirken.
 
@@ -140,4 +140,4 @@ Die folgenden Funktionen von der Anwendung beeinträchtigen, zur Bereitstellung 
 In diesem ersten Tutorial der Reihe, die Sie das Visual Studio-Beispielprojekt heruntergeladen haben und überprüft die Websitefunktionen, die beeinflussen, wie Sie die Anwendung bereitstellen. In den folgenden Tutorials vorbereitet Sie für die Bereitstellung durch einrichten, dass einige dieser Dinge automatisch behandelt werden. Andere kümmert Sie manuell.
 
 > [!div class="step-by-step"]
-> [Weiter](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [Nächste](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

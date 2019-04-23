@@ -12,7 +12,7 @@ ms.openlocfilehash: b0da3032e22123f415bf9865e264832739c29f61
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409017"
 ---
 # <a name="signalr-performance"></a>SignalR-Leistung
@@ -26,7 +26,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 > ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >
@@ -279,6 +279,6 @@ Die folgenden Leistungsindikatoren können auch bei der Überwachung der Leistun
 
 Weitere Informationen zu ASP.NET zur Leistungsüberwachung und-Optimierung finden Sie unter den folgenden Themen:
 
-- [Übersicht über die Leistung von ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
+- [ASP.NET Performance Overview (Die Leistung von ASP.NET im Überblick)](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [ASP.NET-Thread Usage on IIS 7.5, IIS 7.0 und IIS 6.0](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
 - [&lt;ApplicationPool&gt; -Element (Webeinstellungen)](https://msdn.microsoft.com/library/dd560842.aspx)

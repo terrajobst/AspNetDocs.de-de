@@ -12,7 +12,7 @@ ms.openlocfilehash: 1daffa462700c0c1603c67b853d1afecfc5a2001
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420184"
 ---
 # <a name="create-a-new-custom-extender"></a>Erstellen eines neuen benutzerdefinierten Extenders
@@ -24,4 +24,4 @@ In diesem video Joe veranschaulicht, wie das AJAX Control Toolkit zum Erstellen 
 [&#9654;Sehen Sie sich Video (26 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-new-custom-extender)
 
 > [!div class="step-by-step"]
-> [Vorheriges](editor-control-custom.md)
+> [Vorherige](editor-control-custom.md)

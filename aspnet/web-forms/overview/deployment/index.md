@@ -12,7 +12,7 @@ ms.openlocfilehash: 8536c771e5e343bd545b6824bec6f8b85489a7d4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416531"
 ---
 # <a name="deployment"></a>Bereitstellung
@@ -22,7 +22,7 @@ ms.locfileid: "59416531"
 
 - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](visual-studio-web-deployment/index.md)
 
-    - [Einführung](visual-studio-web-deployment/introduction.md)
+    - [Introduction (Einführung)](visual-studio-web-deployment/introduction.md)
     - [Vorbereiten für die Datenbankbereitstellung](visual-studio-web-deployment/preparing-databases.md)
     - [Umwandlungen für die Datei „Web.config“](visual-studio-web-deployment/web-config-transformations.md)
     - [Projekteigenschaften](visual-studio-web-deployment/project-properties.md)
@@ -37,7 +37,7 @@ ms.locfileid: "59416531"
 - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](deploying-web-applications-in-enterprise-scenarios/index.md)
 
     - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-    - [Erweiterte webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+    - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
     - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
 - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](web-deployment-in-the-enterprise/index.md)
 

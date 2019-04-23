@@ -12,7 +12,7 @@ ms.openlocfilehash: 3e5b9d1a3bac0cf1ab042f473f8fd508069000a5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408575"
 ---
 # <a name="getting-started-with-aspnet-web-pages"></a>Erste Schritte mit ASP.NET Web Pages
@@ -21,12 +21,12 @@ ms.locfileid: "59408575"
 
 
 - [Programmieren von ASP.NET-Webseiten in Visual Studio](program-asp-net-web-pages-in-visual-studio.md)
-- [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](introducing-razor-syntax-c.md)
+- [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](introducing-razor-syntax-c.md)
 - [ASP.NET-Webseiten (Visual Basic)](introducing-razor-syntax-vb.md)
 - [ASP.NET-Webseiten (Razor) – FAQs](aspnet-web-pages-razor-faq.md)
-- [Senden von E-Mail-Nachrichten von Ihrer Website](11-adding-email-to-your-web-site.md)
+- [Senden von E-Mails von Ihrer Website](11-adding-email-to-your-web-site.md)
 - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](13-adding-social-networking-to-your-web-site.md)
-- [Einführung in ASP.NET-Webseiten](introducing-aspnet-web-pages-2/index.md)
+- [Einführung zu ASP.NET-Webseiten](introducing-aspnet-web-pages-2/index.md)
 
     - [Erste Schritte](introducing-aspnet-web-pages-2/getting-started.md)
     - [Grundlagen der Programmierung](introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)

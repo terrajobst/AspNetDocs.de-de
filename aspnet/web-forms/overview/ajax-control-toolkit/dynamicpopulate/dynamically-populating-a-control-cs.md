@@ -12,7 +12,7 @@ ms.openlocfilehash: 42c1cd684196c026f1435cba289fc2535187087c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417298"
 ---
 # <a name="dynamically-populating-a-control-c"></a>Dynamisches Auffüllen eines Steuerelements (C#)
@@ -66,9 +66,9 @@ Wie Sie sehen können, wird das Steuerelement erfordert einige Informationen, ab
 Führen Sie die ASP.NET-Seite in den Browser, und klicken Sie auf die Schaltfläche; Sie erhalten das aktuelle Datum im Format Monat-Tag-Jahr.
 
 
-[![A Klicken Sie auf die Schaltfläche mit den Ruft das Datum ab, auf dem Server](dynamically-populating-a-control-cs/_static/image2.png)](dynamically-populating-a-control-cs/_static/image1.png)
+[![Ein Klick auf die Schaltfläche mit den Ruft das Datum vom Server ab.](dynamically-populating-a-control-cs/_static/image2.png)](dynamically-populating-a-control-cs/_static/image1.png)
 
 Ein Klick auf die Schaltfläche mit den Ruft das Datum ab, auf dem Server ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-populating-a-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [Nächste](dynamically-populating-a-control-using-javascript-code-cs.md)

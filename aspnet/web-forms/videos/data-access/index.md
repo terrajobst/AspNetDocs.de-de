@@ -12,7 +12,7 @@ ms.openlocfilehash: b41843143dfbd957ef242c67e67101af79d9efba
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419404"
 ---
 # <a name="data-access"></a>Datenzugriff
@@ -35,7 +35,7 @@ ms.locfileid: "59419404"
     - [LINQ to SQL: Benutzerdefinierte LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
     - [LINQ to SQL: Verwenden von gespeicherten Prozeduren](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
     - [LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-    - [LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+    - [LINQ to SQL: Ausführen einer beliebigem SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
 - [Videos zu LINQ vom VB-Team](linq-videos-from-the-vb-team/index.md)
 
     - [Erste Schritte mit LINQ](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)

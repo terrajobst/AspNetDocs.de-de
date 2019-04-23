@@ -12,7 +12,7 @@ ms.openlocfilehash: 3b7f154936222c85bd7897ea10cbb5ae9d1aa670
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408939"
 ---
 # <a name="application-lifecycle-management-from-development-to-production"></a>Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion
@@ -225,4 +225,4 @@ In diesem Thema ist Teil einer Reihe von Tutorials, die Anleitungen zu verschied
 - [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial enthält Anleitungen zum Teil der komplexen Herausforderungen bei der Bereitstellung entsprechen denen Unternehmen konfrontiert.
 
 > [!div class="step-by-step"]
-> [Vorheriges](enterprise-web-deployment-scenario-overview.md)
+> [Vorherige](enterprise-web-deployment-scenario-overview.md)

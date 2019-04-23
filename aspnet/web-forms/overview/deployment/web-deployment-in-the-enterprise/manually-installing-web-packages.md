@@ -12,7 +12,7 @@ ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408796"
 ---
 # <a name="manually-installing-web-packages"></a>Manuelles Installieren von Webpaketen
@@ -131,4 +131,4 @@ In diesem Thema beschrieben, wie ein Webbereitstellungspakets in einer IIS-Websi
 Anleitungen zum Konfigurieren eines IIS-Webservers zum manuellen Importieren einer Web-Paket zu unterstützen, finden Sie unter [Konfigurieren eines Webservers für Bereitstellen von Webpublishing (Offline-Bereitstellung)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Weitere allgemeine Anleitungen zum Bereitstellen von Webpaketen finden Sie [Exemplarische Vorgehensweise: Bereitstellen eines Webanwendungsprojekts mit einem Webbereitstellungspaket (Teil 1 von 4)](https://msdn.microsoft.com/library/dd483479.aspx).
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-and-running-a-deployment-command-file.md)
+> [Vorherige](creating-and-running-a-deployment-command-file.md)

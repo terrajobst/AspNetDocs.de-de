@@ -12,7 +12,7 @@ ms.openlocfilehash: e4e96810cd1dabb0cf2ab1d49ca1f6a3b019a45f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417454"
 ---
 # <a name="enabling-full-text-search-in-your-text-data"></a>Aktivieren der Volltextsuche in Textdaten
@@ -24,4 +24,4 @@ Volltextsuche können Sie große Teile des Texts – sogar Microsoft Word-Dokume
 [&#9654;Sehen Sie sich Video (38 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/enabling-full-text-search-in-your-text-data)
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-and-using-stored-procedures.md)
+> [Vorherige](creating-and-using-stored-procedures.md)

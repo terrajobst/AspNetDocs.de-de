@@ -12,7 +12,7 @@ ms.openlocfilehash: 63d85ec5f1f2fbadd92fd0210e67332df30aab5a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419599"
 ---
 # <a name="part-1-overview-and-file-new-project"></a>Teil 1: Übersicht und „Datei“ > „Neues Projekt“
@@ -115,12 +115,12 @@ ASP.NET MVC verwendet einige einfachen Benennungskonventionen für Ordnernamen:
 | **Ordner** | **Zweck** |
 | --- | --- |
 | **/ Controller** | Domänencontroller reagieren, geben Sie im Browser entscheiden, was es, und die Antwort an den Benutzer zurück. |
-| **/ Views** | Sichten enthalten unsere UI-Vorlagen |
-| **/ Modelle** | Modelle enthalten, und Bearbeiten von Daten |
-| **/ Inhalte** | Dieser Ordner enthält unsere Images, CSS und alle anderen statischen Inhalten |
-| **/ Skripts** | Dieser Ordner enthält unsere JavaScript-Dateien |
+| **/Views** | Sichten enthalten unsere UI-Vorlagen |
+| **/Models** | Modelle enthalten, und Bearbeiten von Daten |
+| **/Content** | Dieser Ordner enthält unsere Images, CSS und alle anderen statischen Inhalten |
+| **/Scripts** | Dieser Ordner enthält unsere JavaScript-Dateien |
 
 Diese Ordner werden auch in einer leeren ASP.NET MVC-Anwendung enthalten, da ASP.NET MVC-Framework standardmäßig einen Ansatz "Konvention geht vor Konfiguration verwendet", und einige Annahmen standardmäßig basierend auf den Ordner Benennungskonventionen zur Verfügung. Suchen z. B. Controller für Ansichten im Ordner "Views" standardmäßig ohne dass Sie dies in Ihrem Code explizit anzugeben. Mit den Standardkonventionen festhalten reduziert die Menge an Code zu schreiben, Sie müssen und kann auch problemlos für andere Entwickler zu Ihrem Projekt. Wir erläutern diesen Konventionen Weitere, wie wir unsere Anwendung zu erstellen.
 
 > [!div class="step-by-step"]
-> [Weiter](mvc-music-store-part-2.md)
+> [Nächste](mvc-music-store-part-2.md)

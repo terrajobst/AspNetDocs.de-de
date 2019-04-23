@@ -12,7 +12,7 @@ ms.openlocfilehash: d09a38c2bea9e8beb91e322ed7e4a9d337fa0843
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412631"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-c"></a>Erstellen von Seitenlayouts mit Ansichtsmasterseiten (C#)
@@ -37,7 +37,7 @@ In diesem Tutorial erfahren Sie, wie eine neue Ansicht Masterseite und erstellt 
 Wir erstellen zunächst eine Masterseite anzeigen, die einem zweispalten Layout definiert. Sie fügen eine neue Ansicht master Seite mit einer MVC-Projekt durch Rechtsklick auf den Ordner "Views\Shared", durch Auswählen der Menüoption **hinzufügen "," Neues Element**, und wählen die **MVC-Ansicht-Masterseite** Vorlage (siehe Abbildung 1).
 
 
-[![AHinzufügen einer Masterseite anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image2.png)](creating-page-layouts-with-view-master-pages-cs/_static/image1.png)
+[![Hinzufügen einer Masterseite anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image2.png)](creating-page-layouts-with-view-master-pages-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer Ansicht Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image3.png))
 
@@ -55,7 +55,7 @@ Die Ansicht Masterseite in Codebeispiel 1 wird z. B. einem zweispalten Layout de
 Der Inhalt der Masterseite in Codebeispiel 1 enthält zwei Sicht `<div>` Tags, die die beiden Spalten entsprechen. Die Cascading Style Sheet-Spaltenklasse gilt für beide `<div>` Tags. Diese Klasse wird im Stylesheet am oberen Rand der Masterseite deklariert definiert. Sie können anzeigen, wie die Masterseite für die Ansicht gerendert wird, durch den Wechsel zur Entwurfsansicht. Klicken Sie auf der Registerkarte "Entwurf", unter der unteren linken Ecke des der Quellcode-Editor (siehe Abbildung 2).
 
 
-[![PÜberprüfen eine Masterseite im Designer](creating-page-layouts-with-view-master-pages-cs/_static/image5.png)](creating-page-layouts-with-view-master-pages-cs/_static/image4.png)
+[![Anzeigen einer Vorschau eine Masterseite im designer](creating-page-layouts-with-view-master-pages-cs/_static/image5.png)](creating-page-layouts-with-view-master-pages-cs/_static/image4.png)
 
 **Abbildung 02**: Anzeigen einer Vorschau einer Masterseite in den Designer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image6.png))
 
@@ -65,7 +65,7 @@ Der Inhalt der Masterseite in Codebeispiel 1 enthält zwei Sicht `<div>` Tags, d
 Nach der Erstellung einer Masterseite Ansicht können Sie mindestens eine Ansicht Inhaltsseiten basierend auf der Masterseite Ansicht erstellen. Sie können z. B. eine Index der Inhaltsseite anzeigen, für den Home-Controller erstellen, indem Sie mit der rechten Maustaste in den Ordner Views\Home den Ordner auswählen **hinzufügen, neue Element**, wählen die **Inhalt von MVC-Ansichtsseite** Vorlage eingeben der Name Index.aspx, und klicken Sie auf die **hinzufügen** Schaltfläche (siehe Abbildung 3).
 
 
-[![AHinzufügen einer Inhaltsseite anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image8.png)](creating-page-layouts-with-view-master-pages-cs/_static/image7.png)
+[![Hinzufügen einer Inhaltsseite anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image8.png)](creating-page-layouts-with-view-master-pages-cs/_static/image7.png)
 
 **Abbildung 03**: Hinzufügen einer ansichtsinhaltsseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image9.png))
 
@@ -73,7 +73,7 @@ Nach der Erstellung einer Masterseite Ansicht können Sie mindestens eine Ansich
 Nachdem Sie auf die Schaltfläche "hinzufügen" klicken, ein neues Dialogfeld wird angezeigt, die es Ihnen die ermöglicht Auswahl eine Ansicht Masterseite der Inhaltsseite Ansicht zugeordnet werden soll (siehe Abbildung 4). Sie können auf die Ansicht Site.master-Masterseite navigieren, die wir im vorherigen Abschnitt erstellt haben.
 
 
-[![SWahl einer Masterseite](creating-page-layouts-with-view-master-pages-cs/_static/image11.png)](creating-page-layouts-with-view-master-pages-cs/_static/image10.png)
+[![Eine Masterseite auswählen](creating-page-layouts-with-view-master-pages-cs/_static/image11.png)](creating-page-layouts-with-view-master-pages-cs/_static/image10.png)
 
 **Abbildung 04**: Auswählen einer Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image12.png))
 
@@ -101,7 +101,7 @@ Beispielsweise geänderte Ansicht "Index" in Programmausdruck 3 enthält nur zwe
 Wenn die Ansicht in Programmausdruck 3 angefordert wird, rendert sie die Seite in Abbildung 5. Beachten Sie, dass die Ansicht eine Seite mit zwei Spalten gerendert wird. Beachten Sie außerdem, dass der Inhalt der Inhaltsseite anzeigen mit dem Inhalt der Ansicht-Masterseite zusammengeführt wird
 
 
-[![THE Index-ansichtsinhaltsseite](creating-page-layouts-with-view-master-pages-cs/_static/image14.png)](creating-page-layouts-with-view-master-pages-cs/_static/image13.png)
+[![Der Seite für den Inhalt zum Anzeigen des Index](creating-page-layouts-with-view-master-pages-cs/_static/image14.png)](creating-page-layouts-with-view-master-pages-cs/_static/image13.png)
 
 **Abbildung 05**: Die Content View Indexseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-cs/_static/image15.png))
 
@@ -117,7 +117,7 @@ Es gibt zwei Möglichkeiten, die Sie, den von einer ansichtsinhaltsseite angezei
 Wenn die Ansicht "Index" an den Browser gerendert wird, wird der gewünschte Titel in der Titelleiste des Browsers angezeigt:
 
 
-[![Bwser Titelleiste](creating-page-layouts-with-view-master-pages-cs/_static/image17.png)](creating-page-layouts-with-view-master-pages-cs/_static/image16.png)
+[![Konfigurationsbrowser, Startseite](creating-page-layouts-with-view-master-pages-cs/_static/image17.png)](creating-page-layouts-with-view-master-pages-cs/_static/image16.png)
 
 
 Es ist eine wichtige Anforderung, die in der Reihenfolge für das Title-Attribut, funktioniert eine Masteransichtsseite erfüllen müssen. Die Masterseite für die Sicht darf eine `<head runat="server">` Tag anstelle einer normalen `<head>` Tag für Header. Wenn die `<head>` Tag enthält keine Runat = "Server"-Attribut aus, und klicken Sie dann der Titel nicht angezeigt werden. Die Standardansicht, die Masterseite enthält die erforderlichen `<head runat="server">` Tag.

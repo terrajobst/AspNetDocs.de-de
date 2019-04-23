@@ -12,7 +12,7 @@ ms.openlocfilehash: be9719fa00f381b76236b964eb14f070c7b0f2bc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409862"
 ---
 # <a name="intellisense-for-jscript-and-aspnet-ajax"></a>IntelliSense für JScript und ASP.NET AJAX

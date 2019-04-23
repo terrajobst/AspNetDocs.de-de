@@ -12,7 +12,7 @@ ms.openlocfilehash: c2a5b3ae768012156b0f46eda8caeb43451af258
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413749"
 ---
 # <a name="migrating"></a>Migrieren
@@ -20,11 +20,11 @@ ms.locfileid: "59413749"
 > Migrieren zu ASP.NET
 
 
-- [[Einführung in ASP.NET 2.0:] Grundlagen von ASP.NET 2.0](intro-to-aspnet-20-aspnet-20-fundamentals.md)
-- [[Einführung in ASP.NET 2.0:] Benutzeroberflächenelemente](intro-to-aspnet-20-user-interface-elements.md)
-- [[Migration von] Classic ASP zu ASP.NET](migrating-from-classic-asp-to-aspnet.md)
+- [[Einführung zu ASP.NET 2.0:] Grundlagen zu ASP.NET 2.0](intro-to-aspnet-20-aspnet-20-fundamentals.md)
+- [[Einführung zu ASP.NET 2.0:] Benutzeroberflächenelemente](intro-to-aspnet-20-user-interface-elements.md)
+- [[Migration von] Classic ASP nach ASP.NET](migrating-from-classic-asp-to-aspnet.md)
 - [Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
 - [Einführung in ASP.NET für JSP-Entwickler: Erstellen von Anwendungen](intro-to-aspnet-for-jsp-developers-building-applications.md)
-- [Einführung in ASP.NET für ColdFusion-Entwickler: Eingliedern von ASP.NET in ein Repertoire](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-- [Einführung in ASP.NET für ColdFusion-Entwickler: Aufbau von ASP.NET-Anwendungen](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+- [Einführung in ASP.NET für ColdFusion-Entwickler: Hinzufügen von ASP.NET in ein Repertoire](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+- [Einführung in ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
 - [Interoperabilität zwischen PHP und der Windows-Plattform](interop-between-php-and-the-windows-platform.md)

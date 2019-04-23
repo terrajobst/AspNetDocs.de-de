@@ -12,7 +12,7 @@ ms.openlocfilehash: 6d3286a0ec2b03f6efdc56fd9816029482a879a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415426"
 ---
 # <a name="iteration-2--make-the-application-look-nice-c"></a>Iteration #2 – Optimieren der Anwendung gut (c#)
@@ -50,7 +50,7 @@ Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbe
 Das Ziel dieser Iteration ist, um die Darstellung der Contact Manager-Anwendung zu verbessern. Contact Manager wird derzeit verwendet, die standardmäßige ASP.NET MVC-Ansichtsseite master und cascading Stylesheet (siehe Abbildung 1). Diese Don ' t ist nach dem, aber ich nicht t möchten Contact Manager, genau wie jede andere ASP.NET MVC-Website zu suchen. Ich möchte diese Dateien mit benutzerdefinierten Dateien zu ersetzen.
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image1.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image1.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image1.png)
 
 **Abbildung 01**: Die standarddarstellung der einer ASP.NET MVC-Anwendung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image2.png))
 
@@ -68,7 +68,7 @@ Die ASP.NET MVC-Design-Katalog ist eine kostenlose Ressource, die von Microsoft 
 Die ASP.NET MVC-Design-Katalog hostet eine Sammlung von kostenlose Website-Entwürfe, die speziell für die Verwendung in einem ASP.NET MVC-Projekt erstellt wurden. Designs werden von Mitgliedern der Community hochgeladen. Besucher im Katalog für ihre bevorzugten Entwürfe darüber abstimmen können (siehe Abbildung 2).
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image2.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image3.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image2.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image3.png)
 
 **Abbildung 02**: Der ASP.NET MVC-Design-Gallery ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image4.png))
 
@@ -83,17 +83,17 @@ Wie ich in diesem Tutorial schreiben, ist der am häufigsten verwendete Entwurf 
 6. Wählen Sie die Visual Studio-Menüoption **bearbeiten, suchen und ersetzen, Schnellersetzung** , und Ersetzen Sie *[MyProjectName]* mit *ContactManager* (siehe Abbildung 5).
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)
 
 **Abbildung 03**: Aufhebung der Blockierung einer Datei aus dem Internet heruntergeladene ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image6.png))
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image4.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image7.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image4.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image7.png)
 
 **Abbildung 04**: Überschreiben von Dateien im Projektmappen-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image8.png))
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image5.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image9.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image5.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image9.png)
 
 **Abbildung 05**: Ersetzen [Projektname] durch ContactManager ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image10.png))
 
@@ -101,7 +101,7 @@ Wie ich in diesem Tutorial schreiben, ist der am häufigsten verwendete Entwurf 
 Nachdem Sie diese Schritte abgeschlossen haben, wird Ihre Webanwendung das neue Design verwenden. Die Seite in Abbildung 6 zeigt die Darstellung der Contact Manager-Anwendung mit der Oktober-Entwurf.
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image6.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image11.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image6.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image11.png)
 
 **Abbildung 06**: ContactManager mit der Oktober-Vorlage ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image12.png))
 
@@ -115,7 +115,7 @@ Allerdings müssen Sie ein völlig Design für Ihre Website erstellen. In diesem
 Ich ZIP Einrichten der Contact Manager aus Iteration 1 und der designbüros des Projekts an. Sie Visual Studio (schade darauf!) nicht besitzt, aber nicht, die ein Problem darstellen. Sie konnten für den kostenlosen download von Microsoft Visual Web Developer aus der [ https://www.asp.net ](https://www.asp.net) -Website und öffnen Sie die Kontakt-Manager-Anwendung in Visual Web Developer. In einigen Tagen mussten sie den Entwurf in Abbildung 7 erstellt.
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
 
 **Abbildung 07**: Der Kontakt-Manager für ASP.NET MVC-Entwurf ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image14.png))
 
@@ -139,7 +139,7 @@ Die Html.ActionLink()-Methode rendert eines gesamten HTML-Links. Rendert die Url
 Beachten Sie außerdem, dass das neue Design ausgewählte und nicht ausgewählte Registerkarten enthält. Zum Beispiel in Abbildung 8: die **neuen Kontakt erstellen** Registerkarte ausgewählt ist und die **Meine Kontakte** Registerkarte nicht ausgewählt ist.
 
 
-[![TDialogfeld für neues Projekt mit HE](iteration-2-make-the-application-look-nice-cs/_static/image8.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image15.png)
+[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-cs/_static/image8.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image15.png)
 
 **Abbildung 08**: Aktiviert und deaktiviert Sie Registerkarten ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-cs/_static/image16.png))
 

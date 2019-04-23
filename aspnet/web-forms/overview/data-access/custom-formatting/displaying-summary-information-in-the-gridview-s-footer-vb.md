@@ -12,7 +12,7 @@ ms.openlocfilehash: 69548e637a35c4fd5d0f3356e279f1f0370fad39
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409446"
 ---
 # <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>Anzeigen von Zusammenfassungsinformationen im GridView-Fuß (VB)
@@ -37,7 +37,7 @@ Diese Aufgabe zeigt drei Herausforderungen:
 In diesem Tutorial sehen wir, wie Sie diese Herausforderungen zu bewältigen. Insbesondere erstellen wir eine Seite, die die Kategorien in einer Dropdownliste mit der ausgewählten Kategorie-Produkten, die in einer GridView-Ansicht angezeigt werden aufgelistet. Das GridView wird eine Fußzeile enthalten, die den Durchschnittspreis und die Gesamtzahl der Einheiten im Lager und Reihenfolge für Produkte in dieser Kategorie angezeigt.
 
 
-[![SFassung, die Informationen in des GridView Footerzeile angezeigt werden](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
+[![Zusammenfassende Informationen wird in des GridView Fußzeile angezeigt.](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
 
 **Abbildung 1**: Zusammenfassende Informationen wird angezeigt, in des GridView Fußzeile ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image3.png))
 
@@ -51,12 +51,12 @@ Bevor betreffen selbst, mit dem Hinzufügen von Zusammenfassungsinformationen zu
 Öffnen Sie zunächst die `SummaryDataInFooter.aspx` auf der Seite die `CustomFormatting` Ordner. Fügen Sie einem DropDownList-Steuerelement hinzu, und legen Sie dessen `ID` zu `Categories`. Klicken Sie dann auf den Link "Datenquelle auswählen" aus der Dropdownlistes Smarttag und zum Hinzufügen einer neuen, mit dem Namen "ObjectDataSource" opt `CategoriesDataSource` aufruft, die die `CategoriesBLL` Klasse `GetCategories()` Methode.
 
 
-[![ADd einen neuen "ObjectDataSource" mit dem Namen CategoriesDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
+[![Fügen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
 
 **Abbildung 2**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![HDurchschn. dem ObjectDataSource-Steuerelement aufrufen CategoriesBLL die Methode der Klasse GetCategories()](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
+[![Haben Sie dem ObjectDataSource-Steuerelement GetCategories()-Methode der CategoriesBLL-Klasse aufrufen.](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
 
 **Abbildung 3**: Haben Sie die "ObjectDataSource" Aufrufen der `CategoriesBLL` -Klasse `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image9.png))
 
@@ -64,7 +64,7 @@ Bevor betreffen selbst, mit dem Hinzufügen von Zusammenfassungsinformationen zu
 Nach der Konfiguration dem ObjectDataSource-Steuerelement, gibt der Assistent, wir DropDownLists-Datenquellen, die aus dem müssen wir angeben welche Datenfeldwert Assistenten angezeigt werden sollen und welche auf den Wert des der DropDownList entsprechenmuss`ListItem` s. Haben die `CategoryName` angezeigte Feld und die Verwendung der `CategoryID` als Wert.
 
 
-[![USE CategoryName und CategoryID Felder als Text und Wert für die ListItems](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
+[![Verwenden Sie die CategoryID-Felder und "CategoryName" als Wert für die ListItems und Text](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
 
 **Abbildung 4**: Verwenden der `CategoryName` und `CategoryID` von Feldern nach der `Text` und `Value` für die `ListItem` s, bzw. ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -72,7 +72,7 @@ Nach der Konfiguration dem ObjectDataSource-Steuerelement, gibt der Assistent, w
 An diesem Punkt haben wir einem DropDownList-Steuerelement (`Categories`), die im System sind die Kategorien aufgeführt. Nun müssen wir einer GridView-Ansicht hinzufügen, die diese Produkte aufgeführt sind, die der ausgewählten Kategorie gehören. Bevor wir, allerdings tun können Sie das AutoPostBack aktivieren Kontrollkästchen in der Dropdownlistes Smarttag. Siehe die *Master/Detail-Filtern mit einer DropDownList* Tutorial durch Festlegen des DropDownList `AutoPostBack` Eigenschaft, um `True` die Seite wird bereitgestellt werden, wieder jedes Mal die DropDownList-Wert geändert wird. Dies bewirkt die GridView aktualisiert werden, zeigt dieser Produkte für die neu ausgewählte Kategorie. Wenn die `AutoPostBack` -Eigenschaftensatz auf `False` (Standardeinstellung), ändern die Kategorie wird nicht dazu führen, dass einen Postback und daher nicht die aufgeführten Produkte aktualisiert.
 
 
-[![CPrüfen Sie das Kontrollkästchen zum Aktivieren des AutoPostBack in DropDownLists-Smarttag](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
+[![Aktivieren Sie das AutoPostBack Kontrollkästchen aktivieren, in der Dropdownliste des Smarttag](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
 
 **Abbildung 5**: Aktivieren Sie das Aktivieren AutoPostBack-Kontrollkästchen in der Dropdownlistes Smarttag ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image15.png))
 
@@ -80,7 +80,7 @@ An diesem Punkt haben wir einem DropDownList-Steuerelement (`Categories`), die i
 Fügen Sie ein GridView-Steuerelement auf der Seite hinzu, um die Produkte für die ausgewählte Kategorie anzuzeigen. Legen Sie des GridView `ID` zu `ProductsInCategory` und binden sie an eine neue, mit dem Namen "ObjectDataSource" `ProductsInCategoryDataSource`.
 
 
-[![ADd einen neuen "ObjectDataSource" mit dem Namen ProductsInCategoryDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
+[![Fügen Sie eine neue, mit dem Namen ProductsInCategoryDataSource "ObjectDataSource"](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
 
 **Abbildung 6**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `ProductsInCategoryDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -88,7 +88,7 @@ Fügen Sie ein GridView-Steuerelement auf der Seite hinzu, um die Produkte für 
 Dem ObjectDataSource-Steuerelement so konfigurieren, dass sie ruft die `ProductsBLL` Klasse `GetProductsByCategoryID(categoryID)` Methode.
 
 
-[![HDurchschn. "ObjectDataSource" Invoke-Methode der GetProductsByCategoryID(categoryID)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
+[![Haben Sie dem Aufrufen der Methode GetProductsByCategoryID(categoryID) ObjectDataSource-Steuerelement](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
 
 **Abbildung 7**: Haben Sie die "ObjectDataSource" Aufrufen der `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image21.png))
 
@@ -96,7 +96,7 @@ Dem ObjectDataSource-Steuerelement so konfigurieren, dass sie ruft die `Products
 Da die `GetProductsByCategoryID(categoryID)` Methode nimmt einen Eingabeparameter, im letzten Schritt des Assistenten können wir die Quelle der Wert des Parameters angeben. Um diese Produkte aus der ausgewählten Kategorie anzuzeigen, müssen Sie den Parameter, die mithilfe von Pull aus der `Categories` DropDownList.
 
 
-[![Gu. a. die CategoryID Parameterwert aus der Dropdownliste für die ausgewählten Kategorien](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
+[![Rufen Sie die CategoryID Parameterwert aus DropDownList Kategorien ausgewählt](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
 **Abbildung 8**: Abrufen der *`categoryID`* Parameterwert aus der Dropdownliste für die ausgewählten Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
@@ -109,7 +109,7 @@ Nach Abschluss des Assistenten wird die GridView ein BoundField für jedes der P
 An diesem Punkt haben wir einen voll funktionsfähigen Master/Detail-Bericht mit der Name, Preis, im Lager vorrätigen Stückzahl und Einheiten modelladministratorberechtigung für diese Produkte, die der ausgewählten Kategorie gehören.
 
 
-[![Gu. a. die CategoryID Parameterwert aus der Dropdownliste für die ausgewählten Kategorien](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
+[![Rufen Sie die CategoryID Parameterwert aus DropDownList Kategorien ausgewählt](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
 **Abbildung 9**: Abrufen der *`categoryID`* Parameterwert aus der Dropdownliste für die ausgewählten Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
@@ -119,7 +119,7 @@ An diesem Punkt haben wir einen voll funktionsfähigen Master/Detail-Bericht mit
 Das GridView-Steuerelement kann sowohl eine Kopf- und Fußzeile Zeile anzeigen. Diese Zeilen werden angezeigt, abhängig von den Werten der der `ShowHeader` und `ShowFooter` Eigenschaften mit `ShowHeader` Standardwert `True` und `ShowFooter` zu `False`. Legen Sie die GridView einfach eine Fußzeile einschließt seine `ShowFooter` Eigenschaft `True`.
 
 
-[![Set GridView ShowFooter-Eigenschaft auf ' true '](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
+[![GridView ShowFooter-Eigenschaft auf True festgelegt.](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
 
 **Abbildung 10**: Legen Sie des GridView `ShowFooter` Eigenschaft `True` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image30.png))
 
@@ -127,7 +127,7 @@ Das GridView-Steuerelement kann sowohl eine Kopf- und Fußzeile Zeile anzeigen. 
 Der Fußzeile verfügt eine Zelle, für jedes der Felder in den GridView-Ansicht definiert; Diese Zellen sind jedoch standardmäßig leer. Nehmen Sie einen Moment Zeit, um unseren Fortschritt in einem Browser anzuzeigen. Mit der `ShowFooter` jetzt-eigenschaftseinstellung `True`, GridView enthält eine leere Fußzeile.
 
 
-[![Ter GridView enthält jetzt eine Fußzeile](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
+[![Das GridView-jetzt umfasst eine Fußzeile](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
 
 **Abbildung 11**: Das GridView enthält jetzt eine Fußzeile ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image33.png))
 
@@ -149,7 +149,7 @@ Um diese CSS-Klasse alle GridView Fuß zuzuordnen, öffnen Sie als Nächstes die
 Wie der Screenshot unten zeigt, wird diese Änderung ermöglicht die Fußzeile noch besser eindeutig.
 
 
-[![THE GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
+[![GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
 
 **Abbildung 12**: GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image36.png))
 
@@ -203,7 +203,7 @@ Verwenden Sie zum Anzeigen von Text in einem bestimmten Fußzeilenzelle `e.Row.C
 Abbildung 13 zeigt den Bericht aus, nachdem dieser Code hinzugefügt wurde. Beachten Sie die `ToString("c")` bewirkt, dass der Durchschnittspreis zusammenfassende Informationen, z. B. eine Währung formatiert werden.
 
 
-[![THE GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
+[![GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
 
 **Abbildung 13**: GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
 
@@ -221,4 +221,4 @@ Viel Spaß beim Programmieren!
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-the-formview-s-templates-vb.md)
+> [Vorherige](using-the-formview-s-templates-vb.md)

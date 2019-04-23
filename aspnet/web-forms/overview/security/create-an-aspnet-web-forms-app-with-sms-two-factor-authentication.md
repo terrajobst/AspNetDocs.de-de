@@ -12,7 +12,7 @@ ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411357"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>Erstellen einer ASP.NET Web Forms-Anwendung mit zweistufiger Authentifizierung per SMS (C#)
@@ -33,7 +33,7 @@ Dieses Tutorial führt Sie durch die Schritte zum Erstellen einer ASP.NET Web Fo
 - [Erstellen einer ASP.NET Web Forms-App](#createWebForms)
 - [Einrichten von SMS und zwei-Faktor-Authentifizierung](#SMS)
 - [Aktivieren Sie die zweistufige Authentifizierung für registrierte Benutzer](#use2FA)
-- [Zusätzliche Ressourcen](#addRes)
+- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
 
 <a id="createWebForms"></a>
 ## <a name="create-an-aspnet-web-forms-app"></a>Erstellen einer ASP.NET Web Forms-App

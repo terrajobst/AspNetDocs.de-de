@@ -12,7 +12,7 @@ ms.openlocfilehash: 79774c6a1a1d05d5a7bcd82a5d7aa888933cf089
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420106"
 ---
 # <a name="troubleshooting-the-packaging-process"></a>Behandeln von Problemen mit dem Paketerstellungsprozess
@@ -113,4 +113,4 @@ In diesem Thema beschriebenen Informationen zur Verwendung der **EnablePackagePr
 Weitere Informationen zu benutzerdefinierte MSBuild-Projektdateien verwenden, um den Bereitstellungsprozess zu steuern, finden Sie unter [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Weitere Informationen zu WPP und wie des Verpackungsprozesses verwaltet, finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md). Anleitungen dazu, wie Sie bestimmte Dateien und Ordner von Web-Bereitstellungspakete ausschließen, finden Sie unter [Ausschließen von Dateien und Ordner von der Bereitstellung](excluding-files-and-folders-from-deployment.md).
 
 > [!div class="step-by-step"]
-> [Vorheriges](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [Vorherige](running-windows-powershell-scripts-from-msbuild-project-files.md)

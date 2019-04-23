@@ -12,7 +12,7 @@ ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409719"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
@@ -444,15 +444,15 @@ Die *HttpBrowserCapabilities* Objekt wird durch eine Reihe von Browserdefinition
 Die folgende Liste enthält die neuen Browser Definitionsdateien:
 
 - *blackberry.browser*
-- *Chrome.Browser*
-- *Default.Browser*
-- *Firefox.Browser*
-- *Gateway.Browser*
-- *Generic.Browser*
-- *IE.Browser*
+- *chrome.browser*
+- *Default.browser*
+- *firefox.browser*
+- *gateway.browser*
+- *generic.browser*
+- *ie.browser*
 - *iemobile.browser*
 - *iphone.browser*
-- *Opera.Browser*
+- *opera.browser*
 - *safari.browser*
 
 #### <a name="using-browser-capabilities-providers"></a>Mithilfe von Anbietern für Browser-Funktionen
@@ -578,7 +578,7 @@ Die *MapPageRoute* -Methode unterstützt die folgenden Überladungen:
 
 - *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess)*
 - *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, RouteValueDictionary defaults)*
-- *MapPageRoute (Zeichenfolge RouteName, RouteUrl der Zeichenfolge, Zeichenfolge PhysicalFile, "bool" CheckPhysicalUrlAccess, RouteValueDictionary Standardwerte, RouteValueDictionary Einschränkungen)*
+- *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess, RouteValueDictionary defaults, RouteValueDictionary constraints)*
 
 Die *CheckPhysicalUrlAccess* Parameter gibt an, ob die Route die Sicherheitsberechtigungen für die physische Seite, die weitergeleitet werden überprüft werden soll (in diesem Fall search.aspx) und die Berechtigungen für die eingehende URL (in diesem Fall suchen / {Searchterm}). Wenn der Wert des *CheckPhysicalUrlAccess* ist *"false"*, nur die Berechtigungen der eingehenden URL werden überprüft. Diese Berechtigungen werden definiert, der `Web.config` mithilfe von Einstellungen wie z. B. die folgende Datei:
 
@@ -982,10 +982,10 @@ Können Sie definieren eine CSS-Klasse, die gilt nur für die *ausgeblendeten* E
 Standardmäßig werden die folgenden ASP.NET Web-Server-Steuerelemente, die Vorlagen unterstützen automatisch in der äußeren Tabelle umschlossen, die verwendet wird, um Inlinestile zu übernehmen:
 
 - *FormView*
-- *Anmelden*
+- *Login*
 - *PasswordRecovery*
 - *ChangePassword*
-- *Assistent*
+- *Wizard*
 - *CreateUserWizard*
 
 Eine neue Eigenschaft namens *RenderOuterTable* wurde hinzugefügt, um diesen Steuerelementen, mit der äußere Tabelle aus dem Markup entfernt werden können. Betrachten Sie beispielsweise das folgende Beispiel einer *FormView* Steuerelement:

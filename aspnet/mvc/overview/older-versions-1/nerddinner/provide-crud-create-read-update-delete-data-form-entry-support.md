@@ -12,7 +12,7 @@ ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410863"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Bereitstellen von CRUD-Unterstützung (Create, Read, Update, Delete) für Datenformulareinträge
@@ -51,7 +51,7 @@ Wir unterstützen HTTP GET- und HTTP POST-Verb-Interaktionen mit diesen neuen UR
 | POST | Speichern Sie die formularänderungen für ein bestimmtes Essen, auf die Datenbank an. |
 | */Dinners/Create* | GET | Zeigen Sie ein leeres HTML-Formular, das Benutzern ermöglicht, neue Dinner zu definieren. |
 | POST | Erstellen Sie eine neue Dinner, und speichern Sie sie in der Datenbank. |
-| *"/ Dinners" / Delete / [Id]* | GET | Anzeige löschen Bestätigungsbildschirm angezeigt. |
+| */Dinners/Delete/[id]* | GET | Anzeige löschen Bestätigungsbildschirm angezeigt. |
 | POST | Löscht das angegebene Dinner aus der Datenbank an. |
 
 ### <a name="edit-support"></a>Bearbeiten-Unterstützung

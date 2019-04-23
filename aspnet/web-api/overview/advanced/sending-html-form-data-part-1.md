@@ -13,7 +13,7 @@ ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418299"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>Senden von HTML-Formulardaten in ASP.NET Web-API: Form-urlencoded-Daten
@@ -134,4 +134,4 @@ Sie können den gleichen Ansatz verwenden, um ein Array von einfachen Typen zu s
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Teil 2: Dateiupload und mehrteilige MIME-Nachrichten](sending-html-form-data-part-2.md)
+[Teil 2: Dateiupload und mehrteiligen MIME-Nachrichten](sending-html-form-data-part-2.md)

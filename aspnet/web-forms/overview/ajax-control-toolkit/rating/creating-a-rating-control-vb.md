@@ -12,7 +12,7 @@ ms.openlocfilehash: 91523180501f1d1eb67586bf97649ad6226ec565
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413229"
 ---
 # <a name="creating-a-rating-control-vb"></a>Erstellen eines Bewertungssteuerelements (VB)
@@ -66,9 +66,9 @@ Zugriff auf das Steuerelement für Bewertungen über, in den serverseitigen Code
 Speichern Sie die Seite, und Laden Sie sie in Ihrem Browser. Wenn Sie auf die Elemente (anfänglich leer) Bewertung zeigen, tritt ein JavaScript-Effekt: Die Bewertung ändert. Wenn Sie auf den Satz von Sternen klicken, wird die aktuelle Bewertung beibehalten. Wenn Sie das Formular übermitteln, gibt der serverseitige Code schließlich ausgewählte Bewertung aus.
 
 
-[![Ce rstellen ein Bewertungssystem mit minimalem Code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
+[![Erstellen ein Bewertungssystem mit minimalem code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
 
 Erstellen ein Bewertungssystem mit minimalem Code ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-rating-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-a-rating-control-cs.md)
+> [Vorherige](creating-a-rating-control-cs.md)

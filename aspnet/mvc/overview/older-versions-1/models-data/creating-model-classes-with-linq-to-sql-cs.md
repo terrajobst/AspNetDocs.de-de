@@ -12,7 +12,7 @@ ms.openlocfilehash: d1895b03a2aa877bfd279995dc5647c5efefade6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414204"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-c"></a>Erstellen von Modellklassen mit LINQ to SQL (C#)
@@ -43,7 +43,7 @@ In diesem Tutorial verwende ich LINQ to SQL zum Abfragen und aktualisieren Sie d
 In diesem Tutorial – um zu veranschaulichen, wie Sie Modellklassen – entwickeln erstellen wir eine einfache filmdatenbankanwendung. Der erste Schritt ist die Erstellung eine neue Datenbank. Mit der rechten Maustaste in der App\_Ordner im Projektmappen-Explorer-Fenster, und wählen Sie die Menüoption **hinzufügen, neue Element**. Wählen Sie die **SQL Server-Datenbank** -Vorlage aus, geben Sie ihm den Namen MoviesDB.mdf, und klicken Sie auf die **hinzufügen** Schaltfläche (siehe Abbildung 1).
 
 
-[![AHinzufügen einer neuen SQL Server-Datenbank](creating-model-classes-with-linq-to-sql-cs/_static/image2.png)](creating-model-classes-with-linq-to-sql-cs/_static/image1.png)
+[![Hinzufügen einer neuen SQL Server-Datenbank](creating-model-classes-with-linq-to-sql-cs/_static/image2.png)](creating-model-classes-with-linq-to-sql-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer neuen SQL Server-Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image3.png))
 
@@ -53,7 +53,7 @@ Nachdem Sie die neue Datenbank erstellt haben, können Sie die Datenbank durch D
 Das Server-Explorer-Fenster wird das Datenbank-Explorer-Fenster aufgerufen, wenn Sie Visual Web Developer verwenden.
 
 
-[![UMelden Sie sich das Server-Explorer-Fenster](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
+[![Verwenden des Server-Explorer-Fensters](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
 
 **Abbildung 02**: Verwenden des Server-Explorer-Fensters ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image6.png))
 
@@ -61,14 +61,14 @@ Das Server-Explorer-Fenster wird das Datenbank-Explorer-Fenster aufgerufen, wenn
 Wir müssen unsere Datenbank eine Tabelle hinzufügen, die unsere Filme darstellt. Mit der rechten Maustaste in den Ordner "Tabellen", und wählen Sie die Menüoption **neue Tabelle hinzufügen**. Durch Auswählen dieser Menüoption wird der Tabellen-Designer geöffnet (siehe Abbildung 3).
 
 
-[![UMelden Sie sich das Server-Explorer-Fenster](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
+[![Verwenden des Server-Explorer-Fensters](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
 
 **Abbildung 03**: Tabellen-Designer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image9.png))
 
 
 Wir müssen unsere Datenbanktabelle die folgenden Spalten hinzugefügt:
 
-| **Spaltenname** | **Datentyp** | **NULL zulassen** |
+| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
 | Titel | Nvarchar(200)-Datentyp gepackt ist | False |
@@ -83,7 +83,7 @@ Als Nächstes müssen Sie die Id-Spalte als eine Identity-Spalte zu markieren, i
 Unsere MVC-Modell enthält LINQ to SQL-Klassen, die die TblMovie Datenbank darstellen. Die einfachste Möglichkeit zum Erstellen dieser LINQ to SQL-Klassen ist, mit der rechten Maustaste in den Ordner "Models", wählen Sie **hinzufügen, neue Element**, wählen Sie die LINQ to SQL-Klassen-Vorlage, nennen Sie den Klassen Movie.dbml, und klicken Sie auf die **hinzufügen**Schaltfläche (siehe Abbildung 4).
 
 
-[![Ce rstellen LINQ to SQL-Klassen](creating-model-classes-with-linq-to-sql-cs/_static/image11.png)](creating-model-classes-with-linq-to-sql-cs/_static/image10.png)
+[![Erstellen von LINQ to SQL-Klassen](creating-model-classes-with-linq-to-sql-cs/_static/image11.png)](creating-model-classes-with-linq-to-sql-cs/_static/image10.png)
 
 **Abbildung 04**: Erstellen von LINQ to SQL-Klassen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ Unsere MVC-Modell enthält LINQ to SQL-Klassen, die die TblMovie Datenbank darst
 Sofort, nachdem Sie die Movie-LINQ to SQL-Klassen erstellt haben, wird der Object Relational Designer angezeigt. Sie können Datenbanktabellen ziehen, aus dem Server-Explorer-Fenster auf den Object Relational Designer zum Erstellen von LINQ to SQL-Klassen, die bestimmten Datenbanktabellen darstellen. Wir müssen die TblMovie-Datenbanktabelle auf den Object Relational Designer (siehe Abbildung 5).
 
 
-[![UMelden Sie sich den Object Relational Designer](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
+[![Verwenden den Object Relational Designer](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
 
 **Abbildung 05**: Verwenden den Object Relational Designer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image15.png))
 
@@ -131,7 +131,7 @@ Wenn das Ausführen der Anwendung nach dem Ändern der `HomeController` -Klasse 
 Zum Hinzufügen von Datensätzen, die die `tblMovies` Datenbanktabelle der rechten Maustaste auf die `tblMovies` Datenbanktabelle im Server-Explorer-Fenster (Datenbank-Explorer-Fenster in Visual Web Developer), und wählen Sie die Menüoption "-" Tabellendaten anzeigen. Sie können einfügen `movie` Datensätze mithilfe des Rasters, das angezeigt wird (siehe Abbildung 6).
 
 
-[![INserting Filme](creating-model-classes-with-linq-to-sql-cs/_static/image17.png)](creating-model-classes-with-linq-to-sql-cs/_static/image16.png)
+[![Einfügen von Filmen](creating-model-classes-with-linq-to-sql-cs/_static/image17.png)](creating-model-classes-with-linq-to-sql-cs/_static/image16.png)
 
 **Abbildung 06**: Einfügen von Filmen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image18.png))
 
@@ -139,7 +139,7 @@ Zum Hinzufügen von Datensätzen, die die `tblMovies` Datenbanktabelle der recht
 Nach dem Hinzufügen von einigen Datenbank-Datensätzen, die `tblMovies` Tabelle, und Sie die Anwendung ausführen, sehen Sie die Seite in Abbildung 7. Alle von der Movie-Datenbank-Datensätzen werden in einer Aufzählung angezeigt.
 
 
-[![DFilme IsPlaying den Wert, mit dem Index anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
+[![Anzeigen von Videos mit Ansicht "Index"](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
 
 **Abbildung 07**: Anzeigen von Videos mit Ansicht "Index" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-model-classes-with-linq-to-sql-cs/_static/image21.png))
 

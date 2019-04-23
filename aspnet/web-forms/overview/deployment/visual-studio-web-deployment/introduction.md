@@ -12,7 +12,7 @@ ms.openlocfilehash: 0edab77cd973af129e54c7867265f86b47c349a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410135"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Einführung
@@ -200,4 +200,4 @@ Die folgenden Funktionen von der Anwendung beeinträchtigen, zur Bereitstellung 
 In diesem ersten Tutorial der Reihe, die Sie das Visual Studio-Beispielprojekt heruntergeladen haben und überprüft die Websitefunktionen, die beeinflussen, wie Sie die Anwendung bereitstellen. In den folgenden Tutorials vorbereitet Sie für die Bereitstellung durch einrichten, dass einige dieser Dinge automatisch behandelt werden. Andere kümmert Sie manuell.
 
 > [!div class="step-by-step"]
-> [Weiter](preparing-databases.md)
+> [Nächste](preparing-databases.md)

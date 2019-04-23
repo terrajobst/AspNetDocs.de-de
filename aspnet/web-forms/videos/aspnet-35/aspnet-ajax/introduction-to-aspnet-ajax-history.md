@@ -12,7 +12,7 @@ ms.openlocfilehash: 25e3d707d31d238d8a237d9bfefcfea5ea736c44
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410564"
 ---
 # <a name="introduction-to-aspnet-ajax-history"></a>Einführung in ASP.NET Ajax-Verlauf

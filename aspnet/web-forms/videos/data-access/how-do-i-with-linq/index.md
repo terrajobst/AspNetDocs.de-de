@@ -12,7 +12,7 @@ ms.openlocfilehash: 2ab3cbb14cf3e7398db995458090bf532fc643d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412098"
 ---
 # <a name="how-do-i-with-linq"></a>Gewusst wie: LINQ
@@ -28,4 +28,4 @@ ms.locfileid: "59412098"
 - [LINQ to SQL: Benutzerdefinierte LinqDataSource](how-do-i-linq-to-sql-custom-linqdatasource.md)
 - [LINQ to SQL: Verwenden von gespeicherten Prozeduren](how-do-i-linq-to-sql-using-stored-procedures.md)
 - [LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren](how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-- [LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage](how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+- [LINQ to SQL: Ausführen einer beliebigem SQL](how-do-i-linq-to-sql-executing-arbitrary-sql.md)

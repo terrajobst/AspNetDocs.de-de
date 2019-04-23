@@ -12,7 +12,7 @@ ms.openlocfilehash: b976e8d611596f2cb58661a2e91b7a640ac04b9f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416076"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms – Teil 7
@@ -90,7 +90,7 @@ Legen Sie die **einfügen** -Funktion **InsertStudent**. Das Fenster zeigt eine 
 
 In der gleichen **Mappingdetails** Fenster, Zuordnung der `Update` -Funktion der `UpdateStudent` gespeicherte Prozedur (Geben Sie unbedingt `FirstMidName` als Parameterwert für `FirstName`, ebenso wie für die `Insert` gespeicherte Prozedur) und die `Delete` Funktion, um die `DeletePerson` gespeicherte Prozedur.
 
-[![image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
 
 Führen Sie dasselbe Verfahren zum Zuordnen von den INSERT-, Update- und Delete gespeicherten Prozeduren für Dozenten zu der `Instructor` Entität.
 

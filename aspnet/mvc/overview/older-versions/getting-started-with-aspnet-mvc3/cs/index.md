@@ -12,7 +12,7 @@ ms.openlocfilehash: b476e9010e47043f12ce00c222382786c66f5c4e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414308"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-c"></a>Erste Schritte mit ASP.NET MVC 3 (C#)
@@ -27,5 +27,5 @@ ms.locfileid: "59414308"
 - [Zugreifen auf Modelldaten anhand eines Controllers (C#)](accessing-your-models-data-from-a-controller.md)
 - [Überprüfen der Edit-Methoden und -Ansicht (C#)](examining-the-edit-methods-and-edit-view.md)
 - [Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films (C#)](adding-a-new-field.md)
-- [Hinzufügen von Überprüfung zum Modell (C#)](adding-validation-to-the-model.md)
-- [Optimieren der Methoden „Details“ und „Delete“ (C#)](improving-the-details-and-delete-methods.md)
+- [Hinzufügen der Überprüfung zum Modell (C#)](adding-validation-to-the-model.md)
+- [Optimieren der Methoden „Details“ und „Delete“](improving-the-details-and-delete-methods.md)

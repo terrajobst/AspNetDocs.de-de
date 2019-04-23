@@ -12,7 +12,7 @@ ms.openlocfilehash: 6d25eb99f87c4c3d2c96e021e79a13c90da4a035
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414490"
 ---
 # <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programmieren von ASP.NET-Webseiten (Razor) mithilfe von Visual Studio
@@ -58,7 +58,7 @@ Die folgende Tabelle enthält die Unterstützung für ASP.NET Web Pages in versc
 
 |  | Visual Studio 2010 | Visual Studio 2012 | Visual Studio 2013 |
 | --- | --- | --- | --- |
-| **ASP.NET-Webseiten 2** | Installieren Sie ASP.NET MVC 4 | (Enthalten) | (Enthalten) |
+| **ASP.NET Web Pages 2** | Installieren Sie ASP.NET MVC 4 | (Enthalten) | (Enthalten) |
 | **ASP.NET-Webseiten 3** |  | Update für ASP.NET Web Pages 3 über NuGet | (Enthalten) |
 
 Um mit Visual Studio 2010 arbeiten, finden Sie unter [Installieren der Datenbankunterstützung für ASP.NET Web Pages in Visual Studio 2010](#vs2010support).

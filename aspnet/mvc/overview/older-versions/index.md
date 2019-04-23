@@ -12,7 +12,7 @@ ms.openlocfilehash: a0aa547ee9c8fa29e9863c540046d2f8dbfdd45f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417818"
 ---
 # <a name="older-versions---mvc-3-and-4"></a>Ältere Versionen – MVC 3 und 4
@@ -39,7 +39,7 @@ ms.locfileid: "59417818"
     - [Erstellen eines komplexeren Datenmodells](getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
     - [Lesen von relevanten Daten](getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Aktualisieren von relevanten Daten](getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-    - [Behandeln von Parallelität](getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+    - [Verarbeiten von Parallelitätsfehlern](getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Implementieren von Vererbung](getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Implementieren der Muster „Repository“ und „Arbeitseinheit“](getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
     - [Erweiterte Entity Framework-Szenarien](getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
@@ -47,13 +47,13 @@ ms.locfileid: "59417818"
 - [MVC 4 – Praktische Übungen](hands-on-labs/index.md)
 
     - [Neue Funktionen in ASP.NET MVC 4](hands-on-labs/whats-new-in-aspnet-mvc-4.md)
-    - [ASP.NET MVC 4 Fundamentals](hands-on-labs/aspnet-mvc-4-fundamentals.md)
+    - [ASP.NET MVC 4 – Grundlagen](hands-on-labs/aspnet-mvc-4-fundamentals.md)
     - [ASP.NET MVC 4 – Modelle und Datenzugriff](hands-on-labs/aspnet-mvc-4-models-and-data-access.md)
     - [ASP.NET MVC 4 – Benutzerdefinierte Aktionsfilter](hands-on-labs/aspnet-mvc-4-custom-action-filters.md)
     - [ASP.NET MVC 4 – Gerüstbau und Migrationen mit dem Entity Framework](hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations.md)
     - [ASP.NET MVC 4 – Abhängigkeitsinjektion](hands-on-labs/aspnet-mvc-4-dependency-injection.md)
     - [ASP.NET MVC 4 – Hilfsprogramme, Formulare und Überprüfung](hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation.md)
-- [ASP.NET MVC 4-Funktionen für mobile Geräte](aspnet-mvc-4-mobile-features.md)
+- [ASP.NET MVC 4 – Funktionen für Mobilgeräte](aspnet-mvc-4-mobile-features.md)
 - [Verwenden von OAuth-Anbietern mit MVC 4](using-oauth-providers-with-mvc.md)
 - [Erste Schritte mit ASP.NET MVC 3](getting-started-with-aspnet-mvc3/index.md)
 
@@ -66,8 +66,8 @@ ms.locfileid: "59417818"
         - [Zugreifen auf Modelldaten anhand eines Controllers (C#)](getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller.md)
         - [Überprüfen der Edit-Methoden und -Ansicht (C#)](getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view.md)
         - [Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films (C#)](getting-started-with-aspnet-mvc3/cs/adding-a-new-field.md)
-        - [Hinzufügen von Überprüfung zum Modell (C#)](getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model.md)
-        - [Optimieren der Methoden „Details“ und „Delete“ (C#)](getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods.md)
+        - [Hinzufügen der Überprüfung zum Modell (C#)](getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model.md)
+        - [Optimieren der Methoden „Details“ und „Delete“](getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods.md)
     - [Erste Schritte mit ASP.NET MVC 3 (VB.NET)](getting-started-with-aspnet-mvc3/vb/index.md)
 
         - [Einführung zu ASP.NET MVC 3 (VB)](getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3.md)
@@ -77,19 +77,19 @@ ms.locfileid: "59417818"
         - [Zugreifen auf Modelldaten anhand eines Controllers (VB)](getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller.md)
         - [Überprüfen der Edit-Methoden und -Ansicht (VB)](getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view.md)
         - [Hinzufügen eines neuen Felds zum Modell und zur Datenbanktabelle eines Films (VB)](getting-started-with-aspnet-mvc3/vb/adding-a-new-field.md)
-        - [Adding Validation to the Model (VB)](getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model.md)
+        - [Hinzufügen der Überprüfung zum Modell (VB)](getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model.md)
         - [Optimieren der Methoden „Details“ und „Delete“ (VB)](getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods.md)
 - [Erstellen einer MVC 3-Anwendung mit Razor und unaufdringlichem JavaScript](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript.md)
 - [MVC 3 Music Store](mvc-music-store/index.md)
 
-    - [Teil 1: Übersicht und „Datei“ > „Neues Projekt“](mvc-music-store/mvc-music-store-part-1.md)
+    - [Teil 1: Übersicht und Datei -> Neues Projekt](mvc-music-store/mvc-music-store-part-1.md)
     - [Teil 2: Controller](mvc-music-store/mvc-music-store-part-2.md)
-    - [Teil 3: Ansichten und ViewModels](mvc-music-store/mvc-music-store-part-3.md)
+    - [Teil 3: Views und ViewModels](mvc-music-store/mvc-music-store-part-3.md)
     - [Teil 4: Modelle und Datenzugriff](mvc-music-store/mvc-music-store-part-4.md)
     - [Teil 5: Bearbeiten von Formularen und Vorlagen](mvc-music-store/mvc-music-store-part-5.md)
-    - [Teil 6: Modellüberprüfung mithilfe von Datenanmerkungen](mvc-music-store/mvc-music-store-part-6.md)
+    - [Teil 6: Mithilfe von Datenanmerkungen zur Modellvalidierung](mvc-music-store/mvc-music-store-part-6.md)
     - [Teil 7: Mitgliedschaft und Autorisierung](mvc-music-store/mvc-music-store-part-7.md)
-    - [Teil 8: Einkaufswagen mit AJAX-Updates](mvc-music-store/mvc-music-store-part-8.md)
+    - [Teil 8: Einkaufswagen mit Ajax-Updates](mvc-music-store/mvc-music-store-part-8.md)
     - [Teil 9: Registrierung und Bezahlvorgang](mvc-music-store/mvc-music-store-part-9.md)
     - [Teil 10: Abschließende Updates für die Navigation und das Websitedesign – Zusammenfassung](mvc-music-store/mvc-music-store-part-10.md)
 - [MVC 3 – Popupkalender mit Datumsauswahl der HTML5- und jQuery-Benutzeroberfläche](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/index.md)

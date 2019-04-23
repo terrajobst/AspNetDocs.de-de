@@ -12,7 +12,7 @@ ms.openlocfilehash: dde3d60f82bb5f32fdd8b6b5cf8a0e1accebd1a7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408926"
 ---
 # <a name="databinding-to-an-accordion-vb"></a>Datenbindung an Accordion (VB)
@@ -59,7 +59,7 @@ Um dieses Beispiel zu beenden, müssen Sie die beiden CSS-Klassen, auf die verwi
 [!code-css[Main](databinding-to-an-accordion-vb/samples/sample6.css)]
 
 
-[![Ter Daten in der ' Accordion ' stammen direkt von der Datenquelle](databinding-to-an-accordion-vb/_static/image2.png)](databinding-to-an-accordion-vb/_static/image1.png)
+[![Die Daten in der ' Accordion ' stammt direkt aus der Datenquelle](databinding-to-an-accordion-vb/_static/image2.png)](databinding-to-an-accordion-vb/_static/image1.png)
 
 Die Daten in der ' Accordion ' stammt direkt aus der Datenquelle ([klicken Sie, um das Bild in voller Größe anzeigen](databinding-to-an-accordion-vb/_static/image3.png))
 

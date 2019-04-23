@@ -12,7 +12,7 @@ ms.openlocfilehash: 042077cb2c0a284556a35e960177f9fd9ad508a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413450"
 ---
 # <a name="how-do-i-get-started-with-linq"></a>[Gewusst wie:] Erste Schritte mit LINQ
@@ -24,4 +24,4 @@ Visual Basic-Programmierer erfahren, wie einfache LINQ-Abfragen auf Objekte von 
 [&#9654;Sehen Sie sich Video (9 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-get-started-with-linq)
 
 > [!div class="step-by-step"]
-> [Weiter](how-do-i-perform-group-and-aggregate-queries.md)
+> [Nächste](how-do-i-perform-group-and-aggregate-queries.md)

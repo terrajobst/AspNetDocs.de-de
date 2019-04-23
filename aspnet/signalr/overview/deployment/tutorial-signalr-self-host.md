@@ -12,7 +12,7 @@ ms.openlocfilehash: c3fe4a08a30aa2ed116dfa36ce6206dc9cbd07f8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415075"
 ---
 # <a name="tutorial-signalr-self-host"></a>Tutorial: Selfhosten von SignalR
@@ -28,7 +28,7 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR-Version 2
 >

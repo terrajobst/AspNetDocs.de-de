@@ -12,7 +12,7 @@ ms.openlocfilehash: 3162db9b0b3e8c057201d96e08133a086c384fe6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416986"
 ---
 # <a name="how-do-i-linq-to-sql-executing-arbitrary-sql"></a>Gewusst wie: LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage
@@ -24,4 +24,4 @@ Dieses Video zeigt, wie Sie jede beliebige SQL über die ExecuteCommand-Syntax u
 [&#9654;Sehen Sie sich Video (4 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-executing-arbitrary-sql)
 
 > [!div class="step-by-step"]
-> [Vorheriges](how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+> [Vorherige](how-do-i-linq-to-sql-updating-with-stored-procedures.md)

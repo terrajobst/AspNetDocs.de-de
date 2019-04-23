@@ -12,7 +12,7 @@ ms.openlocfilehash: 795283c33d63272b29b91fd7037c3463bc71abad
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410746"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>Ältere Versionen – AJAX Control Toolkit
@@ -151,7 +151,7 @@ ms.locfileid: "59410746"
     - [Verwenden von mehreren Popupsteuerelementen (VB)](popup/using-multiple-popup-controls-vb.md)
     - [Verarbeiten von Postbacks über ein Popupsteuerelement mit einem UpdatePanel-Steuerelement (VB)](popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
     - [Verarbeiten von Postbacks über ein Popupsteuerelement ohne ein UpdatePanel-Steuerelement (VB)](popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-- [Bewertung](rating/index.md)
+- [Rating](rating/index.md)
 
     - [Erstellen eines Bewertungssteuerelements (C#)](rating/creating-a-rating-control-cs.md)
     - [Erstellen eines Bewertungssteuerelements (VB)](rating/creating-a-rating-control-vb.md)
@@ -161,10 +161,10 @@ ms.locfileid: "59410746"
     - [Drag & Drop über ReorderList (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [Drag & Drop über ReorderList (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [Slider](slider/index.md)
+- [Schieberegler](slider/index.md)
 
     - [Schieberegler-Steuerelement mit automatischem Postback (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
-    - [Datenbindung des Schieberegler-Steuerelements (C#)](slider/databinding-the-slider-control-cs.md)
+    - [Datenbindung des Schieberegler-Steuerelements](slider/databinding-the-slider-control-cs.md)
     - [Schieberegler-Steuerelement mit automatischem Postback (VB)](slider/using-the-slider-control-with-auto-postback-vb.md)
     - [Datenbindung des Schieberegler-Steuerelements (VB)](slider/databinding-the-slider-control-vb.md)
 - [TextBoxWatermark](textboxwatermark/index.md)
