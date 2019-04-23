@@ -12,18 +12,18 @@ ms.openlocfilehash: c708f0746cf0360e4241ebd29fa4cf61f6b0b8bb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409030"
 ---
-# <a name="tailspin-spyworks---category-menu"></a><span data-ttu-id="0fa14-103">Tailspin Spyworks – Kategoriemenü</span><span class="sxs-lookup"><span data-stu-id="0fa14-103">Tailspin Spyworks - Category Menu</span></span>
+# <a name="tailspin-spyworks---category-menu"></a><span data-ttu-id="ed35a-103">Tailspin Spyworks – Kategoriemenü</span><span class="sxs-lookup"><span data-stu-id="ed35a-103">Tailspin Spyworks - Category Menu</span></span>
 
-<span data-ttu-id="0fa14-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="0fa14-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="ed35a-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ed35a-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="0fa14-105">Joe Stagner erstellt, klicken Sie im kategoriemenü "für die Tailspin Spyworks Web Forms-beispielanwendung.</span><span class="sxs-lookup"><span data-stu-id="0fa14-105">Joe Stagner builds the category menu for the Tailspin Spyworks sample Web Forms application.</span></span>
+<span data-ttu-id="ed35a-105">Joe Stagner erstellt, klicken Sie im kategoriemenü "für die Tailspin Spyworks Web Forms-beispielanwendung.</span><span class="sxs-lookup"><span data-stu-id="ed35a-105">Joe Stagner builds the category menu for the Tailspin Spyworks sample Web Forms application.</span></span>
 
-[<span data-ttu-id="0fa14-106">&#9654;Sehen Sie sich Video (7 Minuten)</span><span class="sxs-lookup"><span data-stu-id="0fa14-106">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-category-menu)
+[<span data-ttu-id="ed35a-106">&#9654;Sehen Sie sich Video (7 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ed35a-106">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-category-menu)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="0fa14-107">[Zurück](tailspin-spyworks-directory-organization.md)
-> [Weiter](tailspin-spyworks-display-the-product-list.md)</span><span class="sxs-lookup"><span data-stu-id="0fa14-107">[Previous](tailspin-spyworks-directory-organization.md)
+> <span data-ttu-id="ed35a-107">[Zurück](tailspin-spyworks-directory-organization.md)
+> [Weiter](tailspin-spyworks-display-the-product-list.md)</span><span class="sxs-lookup"><span data-stu-id="ed35a-107">[Previous](tailspin-spyworks-directory-organization.md)
 [Next](tailspin-spyworks-display-the-product-list.md)</span></span>

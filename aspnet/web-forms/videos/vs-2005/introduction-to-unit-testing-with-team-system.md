@@ -12,16 +12,16 @@ ms.openlocfilehash: d89fbb14e74fb148eabf0fc0153b3fb1ad0dab15
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411721"
 ---
-# <a name="introduction-to-unit-testing-with-team-system"></a><span data-ttu-id="04b09-103">Einführung in Komponententests mit TeamSystem</span><span class="sxs-lookup"><span data-stu-id="04b09-103">Introduction to Unit Testing with Team System</span></span>
+# <a name="introduction-to-unit-testing-with-team-system"></a><span data-ttu-id="391b9-103">Einführung in Komponententests mit TeamSystem</span><span class="sxs-lookup"><span data-stu-id="391b9-103">Introduction to Unit Testing with Team System</span></span>
 
-<span data-ttu-id="04b09-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="04b09-104">by Eric Lee</span></span>
+<span data-ttu-id="391b9-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="391b9-104">by Eric Lee</span></span>
 
-<span data-ttu-id="04b09-105">In diesem Video sehen wir, wie die Unit Tests-Features von Visual Studio Team System Komponententests direkt in Visual Studio-IDE integrieren.</span><span class="sxs-lookup"><span data-stu-id="04b09-105">In this video we see how the unit testing features of Visual Studio Team System integrate unit testing directly into the Visual Studio IDE.</span></span>
+<span data-ttu-id="391b9-105">In diesem Video sehen wir, wie die Unit Tests-Features von Visual Studio Team System Komponententests direkt in Visual Studio-IDE integrieren.</span><span class="sxs-lookup"><span data-stu-id="391b9-105">In this video we see how the unit testing features of Visual Studio Team System integrate unit testing directly into the Visual Studio IDE.</span></span>
 
-[<span data-ttu-id="04b09-106">&#9654;Sehen Sie sich Video (10 Minuten)</span><span class="sxs-lookup"><span data-stu-id="04b09-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-unit-testing-with-team-system)
+[<span data-ttu-id="391b9-106">&#9654;Sehen Sie sich Video (10 Minuten)</span><span class="sxs-lookup"><span data-stu-id="391b9-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-unit-testing-with-team-system)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="04b09-107">Weiter</span><span class="sxs-lookup"><span data-stu-id="04b09-107">Next</span></span>](introduction-to-testing-web-applications-with-team-system.md)
+> [<span data-ttu-id="391b9-107">Nächste</span><span class="sxs-lookup"><span data-stu-id="391b9-107">Next</span></span>](introduction-to-testing-web-applications-with-team-system.md)

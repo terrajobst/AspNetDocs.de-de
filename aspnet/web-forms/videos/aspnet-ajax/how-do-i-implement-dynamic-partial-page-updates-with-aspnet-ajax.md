@@ -12,18 +12,18 @@ ms.openlocfilehash: c032609a440ea8cb0d6e11759994581011daf70c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410200"
 ---
-# <a name="how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax"></a><span data-ttu-id="80306-105">[Gewusst wie:] Implementieren dynamische Updates von Teilseiten mit ASP.NET-AJAX zu?</span><span class="sxs-lookup"><span data-stu-id="80306-105">[How Do I:] Implement Dynamic Partial-Page Updates with ASP.NET AJAX?</span></span>
+# <a name="how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax"></a><span data-ttu-id="89cc5-105">[Gewusst wie:] Implementieren dynamische Updates von Teilseiten mit ASP.NET-AJAX zu?</span><span class="sxs-lookup"><span data-stu-id="89cc5-105">[How Do I:] Implement Dynamic Partial-Page Updates with ASP.NET AJAX?</span></span>
 
-<span data-ttu-id="80306-106">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="80306-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="89cc5-106">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="89cc5-106">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="80306-107">In diesem Video lernen Sie, wie Sie Ihre ASP.NET-Anwendung mithilfe von Microsoft ASP.NET AJAX dynamische Aktualisierungen von Teilseiten hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="80306-107">In this video you will learn how to add dynamic partial-page updates to your ASP.NET application using Microsoft ASP.NET AJAX.</span></span> <span data-ttu-id="80306-108">Insbesondere sehen Sie, wie Sie die TimerControl verwenden, um die Häufigkeit der AJAX-Rückrufe zu verwalten.</span><span class="sxs-lookup"><span data-stu-id="80306-108">In particular, you will see how to use the TimerControl to manage the frequency of the AJAX callbacks.</span></span>
+<span data-ttu-id="89cc5-107">In diesem Video lernen Sie, wie Sie Ihre ASP.NET-Anwendung mithilfe von Microsoft ASP.NET AJAX dynamische Aktualisierungen von Teilseiten hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="89cc5-107">In this video you will learn how to add dynamic partial-page updates to your ASP.NET application using Microsoft ASP.NET AJAX.</span></span> <span data-ttu-id="89cc5-108">Insbesondere sehen Sie, wie Sie die TimerControl verwenden, um die Häufigkeit der AJAX-Rückrufe zu verwalten.</span><span class="sxs-lookup"><span data-stu-id="89cc5-108">In particular, you will see how to use the TimerControl to manage the frequency of the AJAX callbacks.</span></span>
 
-[<span data-ttu-id="80306-109">&#9654;Sehen Sie sich Video (12 Minuten)</span><span class="sxs-lookup"><span data-stu-id="80306-109">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax)
+[<span data-ttu-id="89cc5-109">&#9654;Sehen Sie sich Video (12 Minuten)</span><span class="sxs-lookup"><span data-stu-id="89cc5-109">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="80306-110">[Zurück](how-do-i-get-started-with-aspnet-ajax.md)
-> [Weiter](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="80306-110">[Previous](how-do-i-get-started-with-aspnet-ajax.md)
+> <span data-ttu-id="89cc5-110">[Zurück](how-do-i-get-started-with-aspnet-ajax.md)
+> [Weiter](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="89cc5-110">[Previous](how-do-i-get-started-with-aspnet-ajax.md)
 [Next](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md)</span></span>

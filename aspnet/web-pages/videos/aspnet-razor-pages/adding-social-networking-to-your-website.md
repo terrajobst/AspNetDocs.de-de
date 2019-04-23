@@ -12,16 +12,16 @@ ms.openlocfilehash: 2b70b49e6af449222cb67e64ed9026091646e6a4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408874"
 ---
-# <a name="adding-social-networking-to-your-website"></a><span data-ttu-id="3f3b5-103">Hinzufügen von Links sozialer Netzwerke zu Ihrer Website</span><span class="sxs-lookup"><span data-stu-id="3f3b5-103">Adding Social Networking to Your Website</span></span>
+# <a name="adding-social-networking-to-your-website"></a><span data-ttu-id="6ff41-103">Hinzufügen von Links sozialer Netzwerke zu Ihrer Website</span><span class="sxs-lookup"><span data-stu-id="6ff41-103">Adding Social Networking to Your Website</span></span>
 
-<span data-ttu-id="3f3b5-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="3f3b5-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="6ff41-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="6ff41-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="3f3b5-105">Video sinnvoll ergänzen das Hinzufügen von Social Networking mit Ihrer Website-tutorial</span><span class="sxs-lookup"><span data-stu-id="3f3b5-105">Video accompaniment to the Adding Social Networking to Your Website tutorial</span></span>
+<span data-ttu-id="6ff41-105">Video sinnvoll ergänzen das Hinzufügen von Social Networking mit Ihrer Website-tutorial</span><span class="sxs-lookup"><span data-stu-id="6ff41-105">Video accompaniment to the Adding Social Networking to Your Website tutorial</span></span>
 
-[<span data-ttu-id="3f3b5-106">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="3f3b5-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-social-networking-to-your-website)
+[<span data-ttu-id="6ff41-106">&#9654;Sehen Sie sich Video (8 Minuten)</span><span class="sxs-lookup"><span data-stu-id="6ff41-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-social-networking-to-your-website)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="3f3b5-107">Vorheriges</span><span class="sxs-lookup"><span data-stu-id="3f3b5-107">Previous</span></span>](adding-search-to-your-web-site.md)
+> [<span data-ttu-id="6ff41-107">Vorherige</span><span class="sxs-lookup"><span data-stu-id="6ff41-107">Previous</span></span>](adding-search-to-your-web-site.md)

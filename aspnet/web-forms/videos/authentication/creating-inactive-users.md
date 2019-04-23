@@ -12,18 +12,18 @@ ms.openlocfilehash: d0d9bb0f6471acd996530eab76a97cda2667dabd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413385"
 ---
-# <a name="creating-inactive-users"></a><span data-ttu-id="ff9a3-103">Erstellen von inaktiven Benutzern</span><span class="sxs-lookup"><span data-stu-id="ff9a3-103">Creating Inactive Users</span></span>
+# <a name="creating-inactive-users"></a><span data-ttu-id="ed2cd-103">Erstellen von inaktiven Benutzern</span><span class="sxs-lookup"><span data-stu-id="ed2cd-103">Creating Inactive Users</span></span>
 
-<span data-ttu-id="ff9a3-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ff9a3-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="ed2cd-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ed2cd-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="ff9a3-105">In diesem Video führt Joe Stagner durch Erstellen von inaktiven Benutzern im Mitgliedschaftssystem von ASP.NET und dann eine administrative Schnittstelle mit dem um die Benutzer eine zu einem Zeitpunkt zu aktivieren.</span><span class="sxs-lookup"><span data-stu-id="ff9a3-105">In this video Joe Stagner walks through creating inactive users in the ASP.NET membership system, and then using an administrative interface to activate the users one at a time.</span></span>
+<span data-ttu-id="ed2cd-105">In diesem Video führt Joe Stagner durch Erstellen von inaktiven Benutzern im Mitgliedschaftssystem von ASP.NET und dann eine administrative Schnittstelle mit dem um die Benutzer eine zu einem Zeitpunkt zu aktivieren.</span><span class="sxs-lookup"><span data-stu-id="ed2cd-105">In this video Joe Stagner walks through creating inactive users in the ASP.NET membership system, and then using an administrative interface to activate the users one at a time.</span></span>
 
-[<span data-ttu-id="ff9a3-106">&#9654;Sehen Sie sich Video (23 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ff9a3-106">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-inactive-users)
+[<span data-ttu-id="ed2cd-106">&#9654;Sehen Sie sich Video (23 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ed2cd-106">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-inactive-users)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="ff9a3-107">[Zurück](simple-web-service-authentication.md)
-> [Weiter](sql-injection-defense.md)</span><span class="sxs-lookup"><span data-stu-id="ff9a3-107">[Previous](simple-web-service-authentication.md)
+> <span data-ttu-id="ed2cd-107">[Zurück](simple-web-service-authentication.md)
+> [Weiter](sql-injection-defense.md)</span><span class="sxs-lookup"><span data-stu-id="ed2cd-107">[Previous](simple-web-service-authentication.md)
 [Next](sql-injection-defense.md)</span></span>

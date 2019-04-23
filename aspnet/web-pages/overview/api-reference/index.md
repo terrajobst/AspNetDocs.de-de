@@ -12,12 +12,12 @@ ms.openlocfilehash: 87eee84da3d696d7294632a490b1a13c65794b26
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410005"
 ---
-# <a name="api-reference"></a><span data-ttu-id="ca2b0-103">API-Referenz</span><span class="sxs-lookup"><span data-stu-id="ca2b0-103">API Reference</span></span>
+# <a name="api-reference"></a><span data-ttu-id="38b3a-103">API-Referenz</span><span class="sxs-lookup"><span data-stu-id="38b3a-103">API Reference</span></span>
 
-> <span data-ttu-id="ca2b0-104">API-Referenzdokumentation für ASP.NET Web Pages.</span><span class="sxs-lookup"><span data-stu-id="ca2b0-104">API Reference documentation for ASP.NET Web Pages.</span></span>
+> <span data-ttu-id="38b3a-104">API-Referenzdokumentation für ASP.NET Web Pages.</span><span class="sxs-lookup"><span data-stu-id="38b3a-104">API Reference documentation for ASP.NET Web Pages.</span></span>
 
 
-- [<span data-ttu-id="ca2b0-105">ASP.NET-API-Kurzübersicht</span><span class="sxs-lookup"><span data-stu-id="ca2b0-105">ASP.NET API Quick Reference</span></span>](asp-net-web-pages-api-reference.md)
+- [<span data-ttu-id="38b3a-105">ASP.NET-API-Kurzübersicht</span><span class="sxs-lookup"><span data-stu-id="38b3a-105">ASP.NET API Quick Reference</span></span>](asp-net-web-pages-api-reference.md)

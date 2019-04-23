@@ -12,18 +12,18 @@ ms.openlocfilehash: a25e98a3486a443f878c1b721e748d13a9d5ad90
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413593"
 ---
-# <a name="introduction-to-load-testing-web-applications-with-team-system"></a><span data-ttu-id="00695-103">Laden Auslastungstests für Webanwendungen mit TeamSystem – Einführung</span><span class="sxs-lookup"><span data-stu-id="00695-103">Introduction to Load Testing Web Applications with Team System</span></span>
+# <a name="introduction-to-load-testing-web-applications-with-team-system"></a><span data-ttu-id="e6cc8-103">Laden Auslastungstests für Webanwendungen mit TeamSystem – Einführung</span><span class="sxs-lookup"><span data-stu-id="e6cc8-103">Introduction to Load Testing Web Applications with Team System</span></span>
 
-<span data-ttu-id="00695-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="00695-104">by Eric Lee</span></span>
+<span data-ttu-id="e6cc8-104">von Eric Lee</span><span class="sxs-lookup"><span data-stu-id="e6cc8-104">by Eric Lee</span></span>
 
-<span data-ttu-id="00695-105">In diesem Video sehen wir, wie Sie zum Testen Ihrer Webanwendungen, die Verwendung der auslastungstestfunktionen von Visual Studio Team System laden können.</span><span class="sxs-lookup"><span data-stu-id="00695-105">In this video we see how you can load test your web applications using the load testing features of Visual Studio Team System.</span></span>
+<span data-ttu-id="e6cc8-105">In diesem Video sehen wir, wie Sie zum Testen Ihrer Webanwendungen, die Verwendung der auslastungstestfunktionen von Visual Studio Team System laden können.</span><span class="sxs-lookup"><span data-stu-id="e6cc8-105">In this video we see how you can load test your web applications using the load testing features of Visual Studio Team System.</span></span>
 
-[<span data-ttu-id="00695-106">&#9654;Sehen Sie sich Video (9 Minuten)</span><span class="sxs-lookup"><span data-stu-id="00695-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-load-testing-web-applications-with-team-system)
+[<span data-ttu-id="e6cc8-106">&#9654;Sehen Sie sich Video (9 Minuten)</span><span class="sxs-lookup"><span data-stu-id="e6cc8-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-load-testing-web-applications-with-team-system)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="00695-107">[Zurück](introduction-to-testing-web-applications-with-team-system.md)
-> [Weiter](introduction-to-manual-testing-with-team-system.md)</span><span class="sxs-lookup"><span data-stu-id="00695-107">[Previous](introduction-to-testing-web-applications-with-team-system.md)
+> <span data-ttu-id="e6cc8-107">[Zurück](introduction-to-testing-web-applications-with-team-system.md)
+> [Weiter](introduction-to-manual-testing-with-team-system.md)</span><span class="sxs-lookup"><span data-stu-id="e6cc8-107">[Previous](introduction-to-testing-web-applications-with-team-system.md)
 [Next](introduction-to-manual-testing-with-team-system.md)</span></span>
