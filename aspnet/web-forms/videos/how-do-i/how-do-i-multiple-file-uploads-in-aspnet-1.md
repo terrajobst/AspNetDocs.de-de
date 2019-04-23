@@ -12,13 +12,13 @@ ms.openlocfilehash: 4bd192e76d07d1ab7b7fd000f2bf90d96cc91b1c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420587"
 ---
-# <a name="how-do-i--multiple-file-uploads-in-aspnet1"></a><span data-ttu-id="ec2cf-103">[Gewusst wie:]  Mehrere Dateiuploads in ASP.NET 1</span><span class="sxs-lookup"><span data-stu-id="ec2cf-103">[How Do I:]  Multiple File Uploads in ASP.NET 1</span></span>
+# <a name="how-do-i--multiple-file-uploads-in-aspnet1"></a><span data-ttu-id="8883c-103">[Gewusst wie:]  Mehrere Dateiuploads in ASP.NET 1</span><span class="sxs-lookup"><span data-stu-id="8883c-103">[How Do I:]  Multiple File Uploads in ASP.NET 1</span></span>
 
-<span data-ttu-id="ec2cf-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ec2cf-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="8883c-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="8883c-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="ec2cf-105">In diesem Video erläutert ich wird beim Hochladen mehrerer Dateien an eine ASP.NET-Anwendung.</span><span class="sxs-lookup"><span data-stu-id="ec2cf-105">In this video I will elaborate on uploading multiple files to an ASP.NET application.</span></span>
+<span data-ttu-id="8883c-105">In diesem Video erläutert ich wird beim Hochladen mehrerer Dateien an eine ASP.NET-Anwendung.</span><span class="sxs-lookup"><span data-stu-id="8883c-105">In this video I will elaborate on uploading multiple files to an ASP.NET application.</span></span>
 
-[<span data-ttu-id="ec2cf-106">&#9654;Sehen Sie sich Video (15 Minuten)</span><span class="sxs-lookup"><span data-stu-id="ec2cf-106">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-multiple-file-uploads-in-aspnet-1)
+[<span data-ttu-id="8883c-106">&#9654;Sehen Sie sich Video (15 Minuten)</span><span class="sxs-lookup"><span data-stu-id="8883c-106">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-multiple-file-uploads-in-aspnet-1)
