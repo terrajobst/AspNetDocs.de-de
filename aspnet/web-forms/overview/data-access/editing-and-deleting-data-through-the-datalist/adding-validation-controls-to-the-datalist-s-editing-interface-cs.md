@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dc2421f6c3fa88a9373e7ac1b7ad51be6e65b82
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422212"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (C#)
@@ -45,7 +45,7 @@ Bevor wir weiter erweitern im vorherige Beispiel um regulierte sehen können, m�
 3. Kopieren Sie den Text innerhalb der `<asp:Content>` und `</asp:Content>` Tags (Zeilen 3 bis 32), wie in Abbildung 1 dargestellt.
 
 
-[![Copieren der Text innerhalb der &lt;Asp: Content&gt; Steuerelement](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image1.png)
+[![Kopieren Sie den Text innerhalb der &lt;Asp: Content&gt; Steuerelement](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image1.png)
 
 **Abbildung 1**: Kopieren Sie den Text innerhalb der `<asp:Content>` Control ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image3.png))
 
@@ -59,7 +59,7 @@ Bevor wir weiter erweitern im vorherige Beispiel um regulierte sehen können, m�
 Nach der Umstellung auf den Inhalt und Code aus `ErrorHandling.aspx` zu `UIValidation.aspx`, können Sie die Seiten in einem Browser zu testen. Sie sollten die Ausgabe sowie die gleiche Funktionalität in jede dieser zwei Seiten (siehe Abbildung 2).
 
 
-[![Ter UIValidation.aspx Seite imitiert die Funktionalität in ErrorHandling.aspx](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image4.png)
+[![Die Seite UIValidation.aspx imitiert die Funktionalität in ErrorHandling.aspx](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image4.png)
 
 **Abbildung 2**: Die `UIValidation.aspx` Seite imitiert die Funktionalität in `ErrorHandling.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image6.png))
 
@@ -85,7 +85,7 @@ Für unser Tutorial müssen wir verwenden ein RequiredFieldValidator, um sicherz
 S durch Hinzufügen der erforderlichen Überprüfungssteuerelemente an die Datenliste s beginnen können `EditItemTemplate`. Diese Aufgabe kann mithilfe des Designers durch Klicken auf den Link "Vorlagen bearbeiten" aus dem DataList-s-Smarttag oder mithilfe der deklarativen Syntax erfolgen. Lassen Sie s durchlaufen Sie den Prozess über die Option "Vorlagen bearbeiten" die Entwurfsansicht zu sehen. Nach dem Auswählen der Bearbeitung von DataList-Steuerelement s `EditItemTemplate`, fügen Sie einen RequiredFieldValidator durch Ziehen aus der Toolbox in die Vorlage bearbeiten-Schnittstelle, platzieren sie nach der `ProductName` Textfeld.
 
 
-[![ATT ein RequiredFieldValidator an das EditItemTemplate nach der ProductName-Textfeld](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image7.png)
+[![Fügen Sie einen RequiredFieldValidator das EditItemTemplate nach ProductName Textfeld](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image7.png)
 
 **Abbildung 3**: Einen RequiredFieldValidator zum Hinzufügen der `EditItemTemplate After` der `ProductName` Textfeld ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image9.png))
 
@@ -95,7 +95,7 @@ Alle Validierungssteuerelemente funktionieren durch Überprüfen der Eingabe ein
 Nach dem Festlegen dieser drei Eigenschaften des das RequiredFieldValidator-Steuerelement, sollte Ihr Bildschirm dem Beispiel in Abbildung 4 aussehen.
 
 
-[![Su. a. das RequiredFieldValidator-s-ControlToValidate ErrorMessage und Texteigenschaften](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image10.png)
+[![Legen Sie die RequiredFieldValidator s ControlToValidate, ErrorMessage und Eigenschaften von Text](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image10.png)
 
 **Abbildung 4**: Legen Sie das RequiredFieldValidator-s `ControlToValidate`, `ErrorMessage`, und `Text` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image12.png))
 
@@ -112,7 +112,7 @@ Nach dem Hinzufügen dieser beiden Validierungssteuerelemente, DataList-Steuerel
 Öffnen Sie nachdem Sie diese Änderungen haben die Seite in einem Browser aus. Wenn Sie versuchen, den Namen des weglassen, oder geben einen ungültigen preiswert, wenn Sie ein Produkt zu bearbeiten, wird ein Sternchen neben dem Textfeld angezeigt. Wie in Abbildung 5 gezeigt, wird ein preiswert, der das Währungssymbol wie z. B. 19,95 $ enthält als ungültig angesehen. CompareValidator s `Currency` `Type` ermöglicht das Trennzeichen für Ziffern (z. B. Kommas oder Punkte, je nach den kultureinstellungen) und eine führende Plus- oder Minuszeichen (-), funktioniert jedoch *nicht* ein Währungssymbol zulassen. Dieses Verhalten kann Benutzer perplex, während die Bearbeitungsschnittstelle derzeit rendert die `UnitPrice` verwenden das Währungsformat.
 
 
-[![An Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe angezeigt](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image13.png)
+[![Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe angezeigt.](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image13.png)
 
 **Abbildung 5**: Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image15.png))
 
@@ -169,7 +169,7 @@ Zusätzlich zu den fünf Validation-Steuerelementen, enthält ASP.NET die [Valid
 Ziehen Sie zu diesem Zweck ein ValidationSummary-Steuerelement aus der Toolbox in den Designer. Der Speicherort der ValidationSummary-Steuerelement t unerheblich, da wir erneut zu konfigurieren, um die Zusammenfassung nur als eine Messagebox anzeigt. Nach Hinzufügen des Steuerelements, legen Sie dessen [ `ShowSummary` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) zu `False` und die zugehörige [ `ShowMessageBox` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) zu `True`. Mit folgender Ergänzung, Fehler bei der Validierung in einer clientseitigen Messagebox zusammengefasst sind (siehe Abbildung 6).
 
 
-[![TIE-Validierungsfehler werden in einer Client-Side-Messagebox zusammengefasst](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)
+[![Fehler bei der Validierung werden in einer Client-Side-Messagebox zusammengefasst.](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)
 
 **Abbildung 6**: Fehler bei der Validierung werden zusammengefasst, in einer Client-Side-Messagebox ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image18.png))
 

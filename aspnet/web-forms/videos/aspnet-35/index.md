@@ -12,7 +12,7 @@ ms.openlocfilehash: b858dfc24a14e182319122320d8bb6af3b8fcb3c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422693"
 ---
 # <a name="aspnet-35"></a>ASP.NET 3.5
@@ -38,7 +38,7 @@ ms.locfileid: "59422693"
     - [ASP.NET AJAX-Unterstützung in Visual Studio 2008](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
     - [Erweitern der AJAX-Funktionalität für eine vorhandene ASP.NET-Seite](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
     - [Erstellen und Verwenden eines AJAX-fähigen Webdiensts bei einer Website](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-    - [ASP.NET AJAX: ASP.NET-AJAX: Demo zu ASP.NET AJAX](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+    - [ASP.NET-AJAX: Eine Demonstration von ASP.NET AJAX](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
     - [ADO.NET Data Services mit ASP.NET AJAX-Unterstützung](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
     - [Einführung zum ASP.NET AJAX-Steuerelement „History“](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
     - [Verbessern der AJAX-Leistung mithilfe von Skriptkombination](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -51,7 +51,7 @@ ms.locfileid: "59422693"
     - [Visual Studio 2008 und geschachtelte Masterseiten](visual-studio-designer/visual-studio-2008-and-nested-masterpages.md)
 - [Visual Studio-Editor](visual-studio-editor/index.md)
 
-    - [Neue Designer-Unterstützung in Visual Studio 2008](visual-studio-editor/new-designer-support-in-visual-studio-2008.md)
+    - [Neue Designerunterstützung in Visual Studio 2008](visual-studio-editor/new-designer-support-in-visual-studio-2008.md)
     - [JavaScript IntelliSense-Unterstützung in Visual Studio 2008](visual-studio-editor/javascript-intellisense-support-in-visual-studio-2008.md)
     - [JavaScript-Debugging in Visual Studio 2008](visual-studio-editor/javascript-debugging-in-visual-studio-2008.md)
     - [Unterstützung für die Festlegung von Zielversionen in Visual Studio 2008](visual-studio-editor/multi-targeting-support-in-visual-studio-2008.md)

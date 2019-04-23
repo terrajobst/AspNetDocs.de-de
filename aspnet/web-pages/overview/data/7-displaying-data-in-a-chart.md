@@ -12,7 +12,7 @@ ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422459"
 ---
 # <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>Anzeigen von Daten in einem Diagramm mit ASP.NET Web Pages (Razor)
@@ -40,10 +40,10 @@ by [Microsoft](https://github.com/microsoft)
 
 Wenn Sie Ihre Daten in grafischer Form anzeigen möchten, können Sie `Chart` Helper. Die `Chart` Hilfsprogramm kann ein Bild, das Daten, in einer Vielzahl von Diagrammtypen anzeigt rendern. Er unterstützt viele Optionen zum Formatieren und beschriften. Die `Chart` Hilfsprogramm kann mehr als 30 Arten von Diagrammen, einschließlich aller Typen von Diagrammen, die Sie von Microsoft Excel oder anderen Tools möglicherweise Rendern &#8212; Flächendiagramme, Balkendiagramme, Säulendiagrammen, Linien- und Diagrammen als Kreisdiagrammen sowie weitere spezialisierter Diagramme wie Kursdiagramme.
 
-| **Flächendiagramm** ![Beschreibung: Bild des Flächendiagrammtyps](7-displaying-data-in-a-chart/_static/image1.jpg) | **Balkendiagramm** ![Beschreibung: Bild des Balkendiagrammtyps](7-displaying-data-in-a-chart/_static/image2.jpg) |
+| **Flächendiagramm** ![Beschreibung: Bild des flächendiagrammtyps](7-displaying-data-in-a-chart/_static/image1.jpg) | **Balkendiagramm** ![Beschreibung: Bild des balkendiagrammtyps](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
-| **Säulendiagramm** ![Beschreibung: Bild des Säulendiagrammtyps](7-displaying-data-in-a-chart/_static/image3.jpg) | **Liniendiagramm** ![Beschreibung: Bild des Liniendiagrammtyps](7-displaying-data-in-a-chart/_static/image4.jpg) |
-| **Kreisdiagramm** ![Beschreibung: Bild des Kreisdiagrammtyps](7-displaying-data-in-a-chart/_static/image5.jpg) | **Kursdiagramm** ![Beschreibung: Bild des Kursdiagrammtyps](7-displaying-data-in-a-chart/_static/image6.jpg) |
+| **Säulendiagramm** ![Beschreibung: Bild des säulendiagrammtyps](7-displaying-data-in-a-chart/_static/image3.jpg) | **Liniendiagramm** ![Beschreibung: Bild des liniendiagrammtyps](7-displaying-data-in-a-chart/_static/image4.jpg) |
+| **Kreisdiagramm** ![Beschreibung: Bild des kreisdiagrammtyps](7-displaying-data-in-a-chart/_static/image5.jpg) | **Kursdiagramm** ![Beschreibung: Bild des kursdiagrammtyps](7-displaying-data-in-a-chart/_static/image6.jpg) |
 
 ### <a name="chart-elements"></a>Diagrammelemente
 

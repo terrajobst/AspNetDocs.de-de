@@ -12,7 +12,7 @@ ms.openlocfilehash: bab4dd5180f0064a4fa8b0c50045f97100ce7d10
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422966"
 ---
 # <a name="implementing-optimistic-concurrency-vb"></a>Implementieren von optimistischer Parallelität (VB)
@@ -31,7 +31,7 @@ Für Webanwendungen, die nur Benutzer Daten anzeigen können, oder für Benutzer
 Angenommen Sie, dass zwei Benutzer, Jisun und Sam, sowohl eine Seite in unserer Anwendung, für die Besucher besuchen wurden, aktualisieren und löschen die Produkte über ein GridView-Steuerelement zulässig. Beide klicken Sie auf die Schaltfläche "Bearbeiten" in der GridView ungefähr zur selben Zeit aus. Jisun ändert sich der Name des Produkts zu "Chai Tee" und klickt auf die Schaltfläche "Aktualisieren". Das Ergebnis ist ein `UPDATE` -Anweisung, die für die Datenbank gesendet wird, die festlegt *alle* des Produkts aktualisierbaren Felder (obwohl Jisun nur für ein Feld aktualisiert `ProductName`). Zu diesem Zeitpunkt besitzt die Datenbank die Werte "Chai Tee," die Kategorie Getränke, Lieferanten außergewöhnlichen fluessiger Form, und so weiter für dieses bestimmte Produkt. Allerdings zeigt GridView auf Sams-Bildschirm als "Chai" immer noch den Namen des Produkts in der bearbeitbaren GridView-Zeile. Einige Sekunden nach Jisuns Änderungen übernommen wurden Sam-die Kategorie "Gewürze" updates und Update klickt. Dies führt zu einer `UPDATE` Anweisung gesendet, um die Datenbank, die Namen des Produkts zu "Chai," festlegt der `CategoryID` zu den entsprechenden Getränke Kategorie-ID, und So weiter. Die Jisun-Änderungen an den Namen des Produkts wurde überschrieben. Abbildung 1 zeigt grafisch dieser Serie von Ereignissen.
 
 
-[![Wfür Änderungen eines Benutzers zum Überschreiben des anderen Computers zu aktualisieren "hen" zwei Benutzer gleichzeitig einen Datensatz gibt es potenzielle s](implementing-optimistic-concurrency-vb/_static/image2.png)](implementing-optimistic-concurrency-vb/_static/image1.png)
+[![Wenn zwei Benutzer gleichzeitig Datensatz gibt es s Möglichkeit, dass ein Benutzer Änderungen der anderen Person überschrieben aktualisieren](implementing-optimistic-concurrency-vb/_static/image2.png)](implementing-optimistic-concurrency-vb/_static/image1.png)
 
 **Abbildung 1**: Wenn zwei Benutzer gleichzeitig aktualisieren einen Datensatz vorhanden s Potenzial für Änderungen eines Benutzers zum Überschreiben der anderen Person ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image3.png))
 
@@ -55,7 +55,7 @@ Alle unsere Tutorials verwendet bisher haben die standardmäßige Parallelität-
 Steuerung für optimistische Parallelität funktioniert, indem Sie sicherstellen, dass der Datensatz aktualisieren oder löschen die gleichen Werte verfügt, wie zuvor beim Aktualisieren oder Löschen von Prozess starten. Z. B. beim Klicken auf die Schaltfläche "Bearbeiten" in einem bearbeitbaren GridView-Ansicht, die Werte des Datensatzes aus der Datenbank gelesen und in die Textfelder und anderen Websteuerelementen angezeigt. Diese ursprünglichen Werte werden durch die GridView gespeichert. Später, nachdem der Benutzer nimmt ihre Änderungen vor, und klickt auf die Schaltfläche "Aktualisieren", werden die ursprünglichen Werte sowie die neuen Werte in der Geschäftslogikebene und dann auf der Datenzugriffsebene gesendet. Die Datenzugriffsebene muss es sich um eine SQL-Anweisung ausgeben, die nur den Datensatz aktualisiert wird, wenn die ursprünglichen Werte, die der Benutzer bearbeiten gestartet, die Werte noch in der Datenbank identisch sind. Abbildung 2 zeigt diese Abfolge von Ereignissen.
 
 
-[![Foder die Update- oder Delete erfolgreich ausgeführt werden soll, müssen die ursprünglichen Werte gleich den Datenbankwerten der aktuellen werden](implementing-optimistic-concurrency-vb/_static/image5.png)](implementing-optimistic-concurrency-vb/_static/image4.png)
+[![Für die Update- oder Delete erfolgreich ausgeführt werden soll müssen die ursprünglichen Werte der aktuellen Datenbankwerte gleich sein.](implementing-optimistic-concurrency-vb/_static/image5.png)](implementing-optimistic-concurrency-vb/_static/image4.png)
 
 **Abbildung 2**: Für die Update- oder Delete, hergestellt wird, die ursprünglichen Werte müssen werden gleich die aktuellen Datenbankwerte ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image6.png))
 
@@ -78,7 +78,7 @@ Stattdessen als Erweitern unsere vorhandenen TableAdapters von der DAL verwenden
 Um einen neuen typisierte DataSet zu erstellen, mit der Maustaste auf die `DAL` Ordner innerhalb der `App_Code` Ordner, und fügen Sie ein neues DataSet mit dem Namen `NorthwindOptimisticConcurrency`. Wie wir im ersten Tutorial gesehen haben, wird dadurch das typisierte DataSet, starten den TableAdapter-Konfigurations-Assistenten automatisch so einen neuen TableAdapter hinzugefügt. Im ersten Bildschirm werden wir eine aufgefordert, geben Sie die Datenbank zum Herstellen einer Verbindung mit – Verbindung mit der gleichen Datenbank Northwind mithilfe der `NORTHWNDConnectionString` aus `Web.config`.
 
 
-[![CVerbinden mit der gleichen Northwind-Datenbank](implementing-optimistic-concurrency-vb/_static/image8.png)](implementing-optimistic-concurrency-vb/_static/image7.png)
+[![Verbinden Sie mit der gleichen Northwind-Datenbank](implementing-optimistic-concurrency-vb/_static/image8.png)](implementing-optimistic-concurrency-vb/_static/image7.png)
 
 **Abbildung 3**: Verbinden mit der gleichen Northwind-Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image9.png))
 
@@ -86,7 +86,7 @@ Um einen neuen typisierte DataSet zu erstellen, mit der Maustaste auf die `DAL` 
 Wir werden dann aufgefordert, wie die Daten abzufragen: über eine Ad-hoc-SQL-Anweisung eine neue gespeicherte Prozedur oder eine vorhandene gespeicherte Prozedur. Da wir in unserem ursprünglichen DAL Ad-hoc-SQL-Abfragen verwendet, verwenden Sie diese Option hier ebenfalls.
 
 
-[![SAngeben der Daten in abrufen mithilfe einer Ad-hoc-SQL-Anweisung](implementing-optimistic-concurrency-vb/_static/image11.png)](implementing-optimistic-concurrency-vb/_static/image10.png)
+[![Geben Sie die Daten abgerufen, mit Ad-hoc-SQL-Anweisungen](implementing-optimistic-concurrency-vb/_static/image11.png)](implementing-optimistic-concurrency-vb/_static/image10.png)
 
 **Abbildung 4**: Geben Sie die Daten zum Abrufen, die mit Ad-hoc-SQL-Anweisungen ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image12.png))
 
@@ -97,7 +97,7 @@ Geben Sie auf dem folgenden Bildschirm die SQL-Abfrage zu verwenden, um die Prod
 [!code-sql[Main](implementing-optimistic-concurrency-vb/samples/sample2.sql)]
 
 
-[![USE die gleiche SQL-Abfrage von TableAdapter-Produkte in der ursprünglichen DAL](implementing-optimistic-concurrency-vb/_static/image14.png)](implementing-optimistic-concurrency-vb/_static/image13.png)
+[![Verwenden Sie die gleiche SQL-Abfrage aus der ProductsTableAdapter in der ursprünglichen DAL](implementing-optimistic-concurrency-vb/_static/image14.png)](implementing-optimistic-concurrency-vb/_static/image13.png)
 
 **Abbildung 5**: Verwenden Sie die gleiche SQL-Abfrage aus der `Products` TableAdapter in der ursprünglichen DAL ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image15.png))
 
@@ -105,7 +105,7 @@ Geben Sie auf dem folgenden Bildschirm die SQL-Abfrage zu verwenden, um die Prod
 Klicken Sie bevor Sie fortfahren, auf dem nächsten Bildschirm auf die Schaltfläche "Erweiterte Optionen". Damit diese TableAdapter einsetzen-Steuerung für optimistische Parallelität, einfach das Kontrollkästchen Sie "Verwenden von optimistischer Parallelität".
 
 
-[![EAktivieren-Steuerung für optimistische Parallelität durch Überprüfen der &quot;Verwenden von optimistischer Parallelität&quot; Kontrollkästchen](implementing-optimistic-concurrency-vb/_static/image17.png)](implementing-optimistic-concurrency-vb/_static/image16.png)
+[![Aktivieren der Steuerung für optimistische Parallelität durch Überprüfen der &quot;Verwenden von optimistischer Parallelität&quot; Kontrollkästchen](implementing-optimistic-concurrency-vb/_static/image17.png)](implementing-optimistic-concurrency-vb/_static/image16.png)
 
 **Abbildung 6**: Aktivieren der Steuerung für optimistische Parallelität durch Aktivieren des Kontrollkästchens "Verwenden von optimistischer Parallelität" ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image18.png))
 
@@ -113,7 +113,7 @@ Klicken Sie bevor Sie fortfahren, auf dem nächsten Bildschirm auf die Schaltfl�
 Geben Sie schließlich, dass der TableAdapter-Datenzugriffsmuster verwenden soll, die DataTable füllen und DataTable zurückgeben; Geben Sie außerdem, dass die DB direkten Methoden erstellt werden soll. Ändern Sie dem Methodennamen für die Rückgabe einer DataTable-Muster von GetData in GetProducts, um spiegeln die Benennungskonventionen, die wir in unserem ursprünglichen DAL verwendet.
 
 
-[![HSpeichern des TableAdapter verwenden alle Datenzugriffsmusters](implementing-optimistic-concurrency-vb/_static/image20.png)](implementing-optimistic-concurrency-vb/_static/image19.png)
+[![Haben Sie den TableAdapter verwenden alle Datenzugriffsmuster](implementing-optimistic-concurrency-vb/_static/image20.png)](implementing-optimistic-concurrency-vb/_static/image19.png)
 
 **Abbildung 7**: Der TableAdapter verwenden alle Datenzugriffsmuster haben ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image21.png))
 
@@ -121,7 +121,7 @@ Geben Sie schließlich, dass der TableAdapter-Datenzugriffsmuster verwenden soll
 Nach Abschluss des Assistenten, der DataSet-Designer umfasst einen stark typisierten `Products` DataTable und TableAdapter-Klasse. Benennen Sie die DataTable aus in Ruhe `Products` zu `ProductsOptimisticConcurrency`, dies können Sie mit der rechten Maustaste in der DataTable Titelleiste des Fensters, und benennen Sie im Kontextmenü auswählen.
 
 
-[![A "DataTable" und TableAdapter wurden mit dem typisierten DataSet hinzugefügt](implementing-optimistic-concurrency-vb/_static/image23.png)](implementing-optimistic-concurrency-vb/_static/image22.png)
+[![Eine DataTable und TableAdapter wurden mit dem typisierten DataSet hinzugefügt](implementing-optimistic-concurrency-vb/_static/image23.png)](implementing-optimistic-concurrency-vb/_static/image22.png)
 
 **Abbildung 8**: Eine DataTable und TableAdapter hinzugefügt wurden, die typisierte DataSet ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image24.png))
 
@@ -143,7 +143,7 @@ Wir wird keine zusätzliche DataTables auf das vollständige nebenläufigkeitsf�
 Zu diesem Zweck mit der Maustaste, auf dem TableAdapter-Titelleiste (Bereich rechts oben die `Fill` und `GetProducts` Methodennamen), und wählen Sie im Kontextmenü der Abfrage hinzufügen. Hierdurch wird die Konfigurations-Assistent die TableAdapter-Abfragen. Wie entscheiden Sie sich mit der Erstkonfiguration des TableAdapter zum Erstellen der `GetProductByProductID(productID)` Methode, die mit Ad-hoc-SQL-Anweisungen (siehe Abbildung 4). Da die `GetProductByProductID(productID)` Methode gibt Informationen zu einem bestimmten Produkt zurück, um anzugeben, dass diese Abfrage ist eine `SELECT` Abfragetyp, die Zeilen zurückgibt.
 
 
-[![MGeben Sie die Abfrage als Ark eine &quot;wählen Sie die Zeilen zurückgibt&quot;](implementing-optimistic-concurrency-vb/_static/image26.png)](implementing-optimistic-concurrency-vb/_static/image25.png)
+[![Markieren Sie den Typ der Abfrage als ein &quot;wählen Sie die Zeilen zurückgibt&quot;](implementing-optimistic-concurrency-vb/_static/image26.png)](implementing-optimistic-concurrency-vb/_static/image25.png)
 
 **Abbildung 9**: Markieren Sie den Typ der Abfrage als ein "`SELECT` Zeilen zurückgegeben" ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image27.png))
 
@@ -151,7 +151,7 @@ Zu diesem Zweck mit der Maustaste, auf dem TableAdapter-Titelleiste (Bereich rec
 Auf dem nächsten Bildschirm werden wir für die SQL-Abfrage verwenden, mit dem TableAdapter-Standardabfrage vorab geladenen aufgefordert. Erweitern Sie die vorhandene Abfrage aus, um die Klausel erweitert `WHERE ProductID = @ProductID`, wie in Abbildung 10 dargestellt.
 
 
-[![ADd einer WHERE-Klausel für die Pre-Loaded-Abfrage an einem bestimmten Produktdatensatz zurückgeben](implementing-optimistic-concurrency-vb/_static/image29.png)](implementing-optimistic-concurrency-vb/_static/image28.png)
+[![Hinzufügen eine WHERE-Klausel, um die vorab geladenen Abfrage einen bestimmtes Produktdatensatz zurückgeben](implementing-optimistic-concurrency-vb/_static/image29.png)](implementing-optimistic-concurrency-vb/_static/image28.png)
 
 **Abbildung 10**: Hinzufügen einer `WHERE` -Klausel, um die Pre-Loaded Abfrage einem bestimmten Produktdatensatz zurückgeben ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image30.png))
 
@@ -159,7 +159,7 @@ Auf dem nächsten Bildschirm werden wir für die SQL-Abfrage verwenden, mit dem 
 Abschließend ändern Sie die generierte Methode Objektnamen `FillByProductID` und `GetProductByProductID`.
 
 
-[![Rdie Methoden, die FillByProductID und GetProductByProductID zu eName](implementing-optimistic-concurrency-vb/_static/image32.png)](implementing-optimistic-concurrency-vb/_static/image31.png)
+[![Benennen Sie die Methoden FillByProductID und GetProductByProductID](implementing-optimistic-concurrency-vb/_static/image32.png)](implementing-optimistic-concurrency-vb/_static/image31.png)
 
 **Abbildung 11**: Benennen Sie die Methoden zum `FillByProductID` und `GetProductByProductID` ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image33.png))
 
@@ -232,7 +232,7 @@ Der DAL und vollständige BLL übrig bleibt eine ASP.NET-Seite erstellen, die di
 Öffnen Sie zunächst die `OptimisticConcurrency.aspx` auf der Seite die `EditInsertDelete` Ordner und Hinzufügen einer GridView-Ansicht im Designer festlegen seiner `ID` Eigenschaft `ProductsGrid`. Aus den GridView Smarttag, deaktivieren Sie zum Erstellen einer neuen, mit dem Namen "ObjectDataSource" `ProductsOptimisticConcurrencyDataSource`. Da diese "ObjectDataSource" die DAL verwenden, die vollständige Parallelität unterstützt werden soll, konfigurieren Sie ihn zur Verwendung der `ProductsOptimisticConcurrencyBLL` Objekt.
 
 
-[![HSpeichern Sie die Verwendung der "ObjectDataSource" das Objekt ProductsOptimisticConcurrencyBLL](implementing-optimistic-concurrency-vb/_static/image36.png)](implementing-optimistic-concurrency-vb/_static/image35.png)
+[![Haben Sie die Verwendung von "ObjectDataSource" das ProductsOptimisticConcurrencyBLL-Objekt](implementing-optimistic-concurrency-vb/_static/image36.png)](implementing-optimistic-concurrency-vb/_static/image35.png)
 
 **Abbildung 13**: Die Verwendung von "ObjectDataSource" haben die `ProductsOptimisticConcurrencyBLL` Objekt ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image37.png))
 
@@ -294,7 +294,7 @@ GridView ursprünglichen Werte werden insbesondere die Werte in den Anweisungen 
 Um festzustellen, warum dies wichtig ist, nehmen Sie einen Moment Zeit, besuchen unsere Seite in einem Browser. Erwartungsgemäß funktioniert, sind die GridView jedes Produkt mit einer Schaltfläche Bearbeiten und Löschen in der linken Spalte aufgeführt.
 
 
-[![Tseine Produkte finden Sie in einer GridView-Ansicht](implementing-optimistic-concurrency-vb/_static/image39.png)](implementing-optimistic-concurrency-vb/_static/image38.png)
+[![Die Produkte sind in einer GridView-Ansicht aufgeführt.](implementing-optimistic-concurrency-vb/_static/image39.png)](implementing-optimistic-concurrency-vb/_static/image38.png)
 
 **Abbildung 14**: Die Produkte finden Sie in einer GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image40.png))
 
@@ -302,7 +302,7 @@ Um festzustellen, warum dies wichtig ist, nehmen Sie einen Moment Zeit, besuchen
 Wenn Sie die Schaltfläche "löschen" für jedes Produkt, klicken Sie auf eine `FormatException` ausgelöst.
 
 
-[![ATtempting, Any Produktergebnisse in FormatException löschen](implementing-optimistic-concurrency-vb/_static/image42.png)](implementing-optimistic-concurrency-vb/_static/image41.png)
+[![Versucht, alle Produktergebnisse in FormatException zu löschen.](implementing-optimistic-concurrency-vb/_static/image42.png)](implementing-optimistic-concurrency-vb/_static/image41.png)
 
 **Abbildung 15**: Es wird versucht, Any Produktergebnisse löschen, in einem `FormatException` ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image43.png))
 
@@ -323,7 +323,7 @@ Für mein Beispiel habe ich entschieden, die im Zusammenhang mit der zweiten Met
 Versuchen Sie nach der Lösung dieses Problems, klicken Sie erneut auf die Schaltfläche "löschen" für jedes Produkt aus. Dieses Mal Sie erhalten eine `InvalidOperationException` Wenn dem ObjectDataSource-Steuerelement versucht, rufen Sie der BLL des `UpdateProduct` Methode.
 
 
-[![Ter "ObjectDataSource" kann nicht auf eine Methode mit der Eingabeparameter, die sie senden möchte gefunden](implementing-optimistic-concurrency-vb/_static/image45.png)](implementing-optimistic-concurrency-vb/_static/image44.png)
+[![Dem ObjectDataSource-Steuerelement kann eine Methode mit den Eingabeparametern finden, die sie senden möchte](implementing-optimistic-concurrency-vb/_static/image45.png)](implementing-optimistic-concurrency-vb/_static/image44.png)
 
 **Abbildung 16**: Dem ObjectDataSource-Steuerelement wurde eine Methode mit der Eingabeparameter, die sie senden möchte nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image46.png))
 
@@ -342,7 +342,7 @@ Um sicherzustellen, dass parallelitätsverletzungen erkannte (statt sich ergeben
 In der anderen Fenster Browserinstanz zeigt jedoch der Name des Produkts Textfeld immer noch "Chai". In diesem zweiten Browserfenster aktualisieren die `UnitPrice` zu `25.00`. Ohne Unterstützung von optimistischer Parallelität würden Update in der zweiten Browserinstanz auf den Namen des Produkts zurück in "Chai", und die Änderungen durch die erste Instanz eines Webbrowsers überschrieb ändern. Mit vollständiger Parallelität, die verwendet werden, klicken Sie auf die Schaltfläche "Aktualisieren" in der zweiten Browserinstanz führt jedoch zu einem [DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx).
 
 
-[![Wwird ausgelöst, "hen", die eine Parallelitätsverletzung erkannt wird, eine DBConcurrencyException](implementing-optimistic-concurrency-vb/_static/image48.png)](implementing-optimistic-concurrency-vb/_static/image47.png)
+[![Wenn eine Parallelitätsverletzung erkannt wird, wird eine DBConcurrencyException ausgelöst.](implementing-optimistic-concurrency-vb/_static/image48.png)](implementing-optimistic-concurrency-vb/_static/image47.png)
 
 **Abbildung 17**: Wenn eine Parallelitätsverletzung erkannt wird, eine `DBConcurrencyException` ausgelöst ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image49.png))
 
@@ -369,7 +369,7 @@ Zusätzlich zum Festlegen ihrer `Visible`, `EnabledViewState`, und `Text` Eigens
 Nach dem Hinzufügen dieser Bezeichnungen, sollte der Designer in Visual Studio Abbildung 18 ähneln.
 
 
-[![Twei Label-Steuerelemente wurden auf der Seite hinzugefügt](implementing-optimistic-concurrency-vb/_static/image51.png)](implementing-optimistic-concurrency-vb/_static/image50.png)
+[![Zwei Label-Steuerelemente wurden auf der Seite hinzugefügt](implementing-optimistic-concurrency-vb/_static/image51.png)](implementing-optimistic-concurrency-vb/_static/image50.png)
 
 **Abbildung 18**: Zwei Label-Steuerelemente hinzugefügt wurden die Seite ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image52.png))
 
@@ -388,7 +388,7 @@ Wie wir, in gesehen der *behandeln BLL- und DAL-Ebene von Ausnahmen in einer ASP
 Im face von einem `DBConcurrencyException` Ausnahme dieser Ereignishandler zeigt die `UpdateConflictMessage` Beschriftungs-Steuerelement und gibt an, dass die Ausnahme verarbeitet wurde. Mit diesem Code werden tritt eine parallelitätsverletzung beim Aktualisieren eines Datensatzes, sind die Änderungen des Benutzers verloren geht, da sie einen anderen Benutzer Änderungen zur gleichen Zeit überschrieben haben, würden. Insbesondere wird die GridView zurückgegeben, die in den Zustand vor der Bearbeitung und an Daten in der aktuellen Datenbank gebunden. Dadurch wird die GridView-Zeile mit Änderungen des anderen Benutzers aktualisiert, die zuvor nicht sichtbar waren. Darüber hinaus die `UpdateConflictMessage` Label-Steuerelement wird erläutert, für den Benutzer was gerade geschehen ist. Diese Abfolge von Ereignissen wird in Abbildung 19 beschrieben.
 
 
-[![A S-Benutzer bei das Gesicht von eine Parallelitätsverletzung verloren Updates](implementing-optimistic-concurrency-vb/_static/image54.png)](implementing-optimistic-concurrency-vb/_static/image53.png)
+[![Ein Benutzer s werden Updates in das Gesicht von eine Parallelitätsverletzung verloren gehen.](implementing-optimistic-concurrency-vb/_static/image54.png)](implementing-optimistic-concurrency-vb/_static/image53.png)
 
 **Abbildung 19**: Ein Benutzer s Updates sind verlorene Bestätigungen in das Gesicht von eine Parallelitätsverletzung ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image55.png))
 
@@ -409,7 +409,7 @@ Der Rückgabewert für eine Methode für die BLL untersucht werden kann, in dem 
 Bei einer Verletzung der Parallelität wird die Delete-Anforderung des Benutzers abgebrochen. Das GridView wird angezeigt, dass die vorgenommenen Änderungen für den entsprechenden Datensatz in der die Zeit zwischen den Benutzer geladen wird, auf der Seite, und wenn er auf die Schaltfläche "löschen" geklickt, aktualisiert. Wenn Sie ein Verstoß gegen herausstellt, die `DeleteConflictMessage` Bezeichnung angezeigt wird, wird erläutert, was gerade geschehen ist (siehe Abbildung 20).
 
 
-[![A S löschen ist bei eine Parallelitätsverletzung Benutzerabbruch](implementing-optimistic-concurrency-vb/_static/image57.png)](implementing-optimistic-concurrency-vb/_static/image56.png)
+[![Ein Benutzer s löschen, wird bei eine Parallelitätsverletzung abgebrochen.](implementing-optimistic-concurrency-vb/_static/image57.png)](implementing-optimistic-concurrency-vb/_static/image56.png)
 
 **Abbildung 20**: Ein Benutzer s löschen wird abgebrochen, bei dem eine Parallelitätsverletzung ([klicken Sie, um das Bild in voller Größe anzeigen](implementing-optimistic-concurrency-vb/_static/image58.png))
 

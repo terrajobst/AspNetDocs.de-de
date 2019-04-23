@@ -12,7 +12,7 @@ ms.openlocfilehash: 6893d1f2445452b1d802b89027b09d8294bdc5b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422836"
 ---
 # <a name="validation-with-the-data-annotation-validators-vb"></a>Überprüfung der Validierungssteuerelemente für Datenanmerkungen (VB)
@@ -151,4 +151,4 @@ Die Seite im **Abbildung 6** veranschaulicht die Fehlermeldungen zurückgegeben,
 In diesem Tutorial haben Sie gelernt, wie die Modellbindung des Daten-Anmerkung für die Validierung in ASP.NET MVC-Anwendungen nutzen. Sie haben gelernt, wie die verschiedenen Typen von Validierungssteuerelement-Attribute wie z. B. die erforderlichen und StringLength-Attribute verwendet. Sie haben zudem, wie Sie diese Attribute verwenden, bei der Arbeit mit Microsoft Entity Framework.
 
 > [!div class="step-by-step"]
-> [Vorheriges](validating-with-a-service-layer-vb.md)
+> [Vorherige](validating-with-a-service-layer-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5f883c4ab42e71fc76df221c2b282e124a3d97bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59423018"
 ---
 # <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>Gewusst wie: Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten?

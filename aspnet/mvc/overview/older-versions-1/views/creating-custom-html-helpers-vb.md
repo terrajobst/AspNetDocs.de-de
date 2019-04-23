@@ -12,7 +12,7 @@ ms.openlocfilehash: 1f36bffeda49c1777e964dc5330cbb473b01c1a9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421562"
 ---
 # <a name="creating-custom-html-helpers-vb"></a>Erstellen von benutzerdefinierten HTML-Hilfsprogrammen (VB)
@@ -49,7 +49,7 @@ ASP.NET MVC-Framework enthält den folgenden Satz von standardmäßigen HTML-Hil
 Betrachten Sie beispielsweise das Formular in Codebeispiel 1. Dieses Formular wird mit der Hilfe von zwei der standardmäßigen HTML-Hilfsprogramme gerendert (siehe Abbildung 1). Dieses Formular verwendet die `Html.BeginForm()` und `Html.TextBox()` Helper-Methoden.
 
 
-[![PAlter für HTML-Hilfsprogramme gerendert](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
+[![Rendern der Seite mit HTML-Hilfsprogramme](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
 
 **Abbildung 01**: Rendern der Seite mit HTML-Hilfsprogramme ([klicken Sie, um das Bild in voller Größe anzeigen](creating-custom-html-helpers-vb/_static/image3.png))
 
@@ -104,7 +104,7 @@ Zweitens: Beachten Sie, dass der erste Parameter der `Label()` Methode stellt de
 Nachdem Sie eine Erweiterungsmethode erstellen, und erstellen Sie Ihre Anwendung erfolgreich, wird die Erweiterungsmethode in Visual Studio Intellisense wie alle anderen Methoden einer Klasse (siehe Abbildung 2). Der einzige Unterschied ist diese Erweiterung, die Methoden mit einem speziellen Symbol neben dem Namen (ein Symbol nach unten weisenden Pfeil) angezeigt werden.
 
 
-[![UMelden Sie sich die Erweiterungsmethode Html.Label()](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
+[![Mithilfe der Erweiterungsmethode Html.Label()](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
 
 **Abbildung 02**: Mithilfe der Erweiterungsmethode Html.Label() ([klicken Sie, um das Bild in voller Größe anzeigen](creating-custom-html-helpers-vb/_static/image6.png))
 

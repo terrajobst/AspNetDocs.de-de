@@ -12,7 +12,7 @@ ms.openlocfilehash: 0a9181f741452e4abe256c9eab04615ce9819ff1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421692"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Festlegen von Ordnerberechtigungen

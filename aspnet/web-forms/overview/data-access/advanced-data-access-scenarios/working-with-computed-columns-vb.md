@@ -12,7 +12,7 @@ ms.openlocfilehash: 9ded6526a2c4f1063843f3448ba3a2023686f529
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421172"
 ---
 # <a name="working-with-computed-columns-vb"></a>Arbeiten mit berechneten Spalten (VB)
@@ -54,7 +54,7 @@ Beachten Sie, dass Zeichenfolgen können, in SQL verkettet werden mit der `+` Op
 Nach dem Hinzufügen diese berechnete Spalte sollte Ihr Bildschirm wie im Screenshot in Abbildung 1 aussehen.
 
 
-[![ADd eine berechnete Spalte mit dem Namen FullContactName zu der Tabelle "Suppliers"](working-with-computed-columns-vb/_static/image2.png)](working-with-computed-columns-vb/_static/image1.png)
+[![Hinzufügen einer berechneten Spalteninhalts, die mit dem Namen FullContactName in die Tabelle ' Suppliers '](working-with-computed-columns-vb/_static/image2.png)](working-with-computed-columns-vb/_static/image1.png)
 
 **Abbildung 1**: Hinzufügen einer berechneten Spalte mit dem Namen `FullContactName` auf die `Suppliers` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image3.png))
 
@@ -79,7 +79,7 @@ Bevor wir die Arbeit auf der Datenzugriffsebene beginnen, können Sie s eine Min
 Wie in Abbildung 2 gezeigt, enthalten die Ergebnisse `FullContactName`, die Listen der `CompanyName`, `ContactName`, und `ContactTitle` Spalten, die mit dem Format `ContactName` (`ContactTitle`, `CompanyName`).
 
 
-[![Ter FullContactName verwendet es sich um das ContactName-Format (ContactTitle, CompanyName)](working-with-computed-columns-vb/_static/image5.png)](working-with-computed-columns-vb/_static/image4.png)
+[![Die FullContactName verwendet Format ContactName (ContactTitle, CompanyName)](working-with-computed-columns-vb/_static/image5.png)](working-with-computed-columns-vb/_static/image4.png)
 
 **Abbildung 2**: Die `FullContactName` verwendet das Format `ContactName` (`ContactTitle`, `CompanyName`) ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image6.png))
 
@@ -97,7 +97,7 @@ In diesem Tutorial können Sie s fügen Sie einen neuen TableAdapter und automat
 Öffnen Sie zunächst die `NorthwindWithSprocs` DataSet in den `~/App_Code/DAL` Ordner. Mit der rechten Maustaste im Designer, und wählen Sie aus dem Kontextmenü, um einen neuen TableAdapter hinzuzufügen. Hierdurch wird der TableAdapter-Konfigurations-Assistenten. Geben Sie die Datenbank zum Abfragen von Daten aus (`NORTHWNDConnectionString` aus `Web.config`), und klicken Sie auf Weiter. Da wir alle gespeicherten Prozeduren für Abfragen oder Ändern der noch nicht erstellt haben die `Suppliers` Tabelle, aktivieren Sie das Erstellen, die neue gespeicherte Prozeduren option, damit der Assistent für uns erstellen und klicken Sie auf Weiter.
 
 
-[![CWählen Sie aus der Create gespeicherte neue Procedures (Option)](working-with-computed-columns-vb/_static/image8.png)](working-with-computed-columns-vb/_static/image7.png)
+[![Wählen Sie die neuen gespeicherten Prozeduren Option für das Erstellen](working-with-computed-columns-vb/_static/image8.png)](working-with-computed-columns-vb/_static/image7.png)
 
 **Abbildung 3**: Wählen Sie die neuen gespeicherten Prozeduren Option für das Erstellen ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image9.png))
 
@@ -110,7 +110,7 @@ Der nachfolgende Schritt verlangt für die Hauptabfrage. Geben Sie die folgende 
 Nach dem Eingeben der Hauptabfrage und anschließend auf klicken, kann der Assistenten wir vier gespeicherten Prozeduren, die er generiert einen Namen. Nennen Sie diese gespeicherten Prozeduren `Suppliers_Select`, `Suppliers_Insert`, `Suppliers_Update`, und `Suppliers_Delete`, wie in Abbildung 4 gezeigt.
 
 
-[![CAnpassen der Namen der Auto-Generated gespeicherte Prozeduren](working-with-computed-columns-vb/_static/image11.png)](working-with-computed-columns-vb/_static/image10.png)
+[![Die Namen der automatisch generierten gespeicherten Prozeduren](working-with-computed-columns-vb/_static/image11.png)](working-with-computed-columns-vb/_static/image10.png)
 
 **Abbildung 4**: Die Namen von Auto-Generated gespeicherte Prozeduren ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image12.png))
 
@@ -118,7 +118,7 @@ Nach dem Eingeben der Hauptabfrage und anschließend auf klicken, kann der Assis
 Der nächste Assistentenschritt kann Wir nennen Sie die TableAdapter-s-Methoden, und geben Sie die Muster verwendet, um Daten von und zu aktualisieren. Lassen Sie alle drei Kontrollkästchen aktiviert, aber Umbenennen der `GetData` Methode, um `GetSuppliers`. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![Rdie GetData-Methode, die GetSuppliers zu eName](working-with-computed-columns-vb/_static/image14.png)](working-with-computed-columns-vb/_static/image13.png)
+[![Benennen Sie die GetData-Methode in GetSuppliers](working-with-computed-columns-vb/_static/image14.png)](working-with-computed-columns-vb/_static/image13.png)
 
 **Abbildung 5**: Benennen Sie die `GetData` Methode, um `GetSuppliers` ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image15.png))
 
@@ -142,7 +142,7 @@ Speichern Sie die Änderungen an die gespeicherte Prozedur, indem Sie auf das Sy
 Als Nächstes kehren Sie zur DataSet-Designer zurück, mit der rechten Maustaste auf die `SuppliersTableAdapter`, und wählen Sie aus dem Kontextmenü konfigurieren. Beachten Sie, dass die `Suppliers_Select` Spalte enthält jetzt die `FullContactName` Spalte in der Data Columns-Auflistung.
 
 
-[![RHeben Sie den TableAdapter-s-Konfigurations-Assistenten zum Aktualisieren der DataTable-s-Spalten](working-with-computed-columns-vb/_static/image17.png)](working-with-computed-columns-vb/_static/image16.png)
+[![Führen Sie den TableAdapter-s-Konfigurations-Assistenten zum Aktualisieren der DataTable-s-Spalten](working-with-computed-columns-vb/_static/image17.png)](working-with-computed-columns-vb/_static/image16.png)
 
 **Abbildung 6**: Führen Sie die TableAdapter-Konfigurations-Assistenten zum Aktualisieren der DataTable-s-Spalten ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image18.png))
 
@@ -150,7 +150,7 @@ Als Nächstes kehren Sie zur DataSet-Designer zurück, mit der rechten Maustaste
 Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen. Hiermit wird automatisch eine entsprechende Spalte der `SuppliersDataTable`. Der TableAdapter-Assistent ist intelligent genug, um zu ermitteln, die `FullContactName` Spalte ist eine berechnete Spalte und daher schreibgeschützt. Daher wird die Spalte s `ReadOnly` Eigenschaft `true`. Um dies zu überprüfen, wählen Sie die Spalte in der `SuppliersDataTable` und fahren Sie mit dem Fenster "Eigenschaften" (siehe Abbildung 7). Beachten Sie, dass die `FullContactName` s'-Spalte `DataType` und `MaxLength` Eigenschaften werden auch entsprechend festgelegt.
 
 
-[![Ter FullContactName-Spalte ist als schreibgeschützt markiert](working-with-computed-columns-vb/_static/image20.png)](working-with-computed-columns-vb/_static/image19.png)
+[![Die FullContactName-Spalte ist als schreibgeschützt gekennzeichnet.](working-with-computed-columns-vb/_static/image20.png)](working-with-computed-columns-vb/_static/image19.png)
 
 **Abbildung 7**: Die `FullContactName` Spalte ist als schreibgeschützt gekennzeichnet ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image21.png))
 
@@ -162,7 +162,7 @@ In diesem Tutorial erstellen wir eine ASP.NET-Seite, die die Lieferanten in eine
 Mit der rechten Maustaste auf die `SuppliersTableAdapter` DataSet entwerfen, und wählen Sie aus dem Kontextmenü die Option "hinzufügen". Wie in Schritt 3 können Sie den Assistenten eine neue gespeicherte Prozedur für uns zu generieren, indem die Erstellungsoption neue gespeicherte Prozedur (siehe Abbildung 3 einen Screenshot der dieser Schritt des Assistenten). Da diese Methode einen Datensatz mit mehreren Spalten zurückgibt, anzugeben Sie, dass wir verwenden möchten, verwenden Sie eine SQL-Abfrage, die eine SELECT-Anweisung ist die Zeilen zurückgibt, und klicken Sie auf Weiter.
 
 
-[![CWählen Sie aus der wählen Sie die Zeilen Option zurückgibt](working-with-computed-columns-vb/_static/image23.png)](working-with-computed-columns-vb/_static/image22.png)
+[![Wählen Sie die wählen die Option-Zeilen zurückgibt](working-with-computed-columns-vb/_static/image23.png)](working-with-computed-columns-vb/_static/image22.png)
 
 **Abbildung 8**: Wählen Sie die Auswahl, welche die Zeilen Option zurückgibt ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image24.png))
 
@@ -175,7 +175,7 @@ Der nachfolgende Schritt fordert uns für die Abfrage, die für diese Methode ve
 Im nächste Bildschirm fordert uns, die Namen der gespeicherten Prozedur, die automatisch generiert werden. Nennen Sie diese gespeicherte Prozedur `Suppliers_SelectBySupplierID` , und klicken Sie auf Weiter.
 
 
-[![NAme der gespeicherten Prozedur Suppliers_SelectBySupplierID](working-with-computed-columns-vb/_static/image26.png)](working-with-computed-columns-vb/_static/image25.png)
+[![Name der gespeicherten Prozedur Suppliers_SelectBySupplierID](working-with-computed-columns-vb/_static/image26.png)](working-with-computed-columns-vb/_static/image25.png)
 
 **Abbildung 9**: Benennen Sie die gespeicherte Prozedur `Suppliers_SelectBySupplierID` ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image27.png))
 
@@ -183,7 +183,7 @@ Im nächste Bildschirm fordert uns, die Namen der gespeicherten Prozedur, die au
 Abschließend Anweisungen des Assistenten "us" für die Daten Zugriff auf Muster und Methodennamen, der für den TableAdapter verwendet. Lassen Sie beide Kontrollkästchen aktiviert, aber Umbenennen der `FillBy` und `GetDataBy` Methoden `FillBySupplierID` und `GetSupplierBySupplierID`bzw.
 
 
-[![NAme FillBySupplierID der TableAdapter-Methoden und GetSupplierBySupplierID](working-with-computed-columns-vb/_static/image29.png)](working-with-computed-columns-vb/_static/image28.png)
+[![Name der TableAdapter-Methoden-FillBySupplierID und GetSupplierBySupplierID](working-with-computed-columns-vb/_static/image29.png)](working-with-computed-columns-vb/_static/image28.png)
 
 **Abbildung 10**: Benennen Sie den TableAdapter-Methoden `FillBySupplierID` und `GetSupplierBySupplierID` ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image30.png))
 
@@ -210,7 +210,7 @@ Wie die anderen Klassen BLL, `SuppliersBLLWithSprocs` verfügt über eine `Prote
 Mit der berechneten Spalte hinzugefügt, die `Suppliers` Tabelle und der DAL und BLL entsprechend aktualisiert, wir können eine ASP.NET-Seite erstellen, die mit der `FullContactName` berechnete Spalte. Öffnen Sie zunächst die `ComputedColumns.aspx` auf der Seite die `AdvancedDAL` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox in den Designer. Legen Sie die GridView s `ID` Eigenschaft `Suppliers` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `SuppliersDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `SuppliersBLLWithSprocs` Klasse, die wir hinzugefügt, in Schritt 6 zurück, und klicken Sie auf Weiter.
 
 
-[![CKonfigurieren der SuppliersBLLWithSprocs-Klasse mit dem ObjectDataSource-Steuerelement](working-with-computed-columns-vb/_static/image32.png)](working-with-computed-columns-vb/_static/image31.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der SuppliersBLLWithSprocs-Klasse](working-with-computed-columns-vb/_static/image32.png)](working-with-computed-columns-vb/_static/image31.png)
 
 **Abbildung 11**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `SuppliersBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image33.png))
 
@@ -229,7 +229,7 @@ Nachdem Sie diese Änderungen an die GridView und "ObjectDataSource" vornehmen, 
 Dann besuchen Sie diese Seite über einen Browser ein. Wie in Abbildung 12 gezeigt, enthält der einzelnen Lieferanten in einem Raster an, die enthält die `FullContactName` Spalte, deren Wert einfach die Verkettung von den anderen drei Spalten ist formatiert als `ContactName` (`ContactTitle`, `CompanyName`).
 
 
-[![Ean die Lieferanten, die im Raster aufgeführt ist](working-with-computed-columns-vb/_static/image35.png)](working-with-computed-columns-vb/_static/image34.png)
+[![Jeder Anbieter wird im Raster aufgeführt.](working-with-computed-columns-vb/_static/image35.png)](working-with-computed-columns-vb/_static/image34.png)
 
 **Abbildung 12**: Jeder Lieferant finden Sie im Raster ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image36.png))
 
@@ -237,7 +237,7 @@ Dann besuchen Sie diese Seite über einen Browser ein. Wie in Abbildung 12 gezei
 Auf die Schaltfläche "Bearbeiten", für die ein bestimmter Lieferant ein Postback auslöst und diese Zeile wurde gerendert werden, dessen Bearbeitung Schnittstelle (siehe Abbildung 13). Die ersten drei Spalten in den Standardwert bearbeiten-Schnittstelle zu rendern: ein TextBox-Steuerelement, dessen `Text` -Eigenschaftensatz auf den Wert des Felds. Die `FullContactName` Spalte bleibt jedoch als Text. Bei der BoundFields an die GridView nach dem Abschluss des Assistenten zum Konfigurieren von Datenquellen hinzugefügt wurden die `FullContactName` BoundField-s `ReadOnly` -Eigenschaft wurde festgelegt, um `True` da das entsprechende `FullContactName` -Spalte in der `SuppliersDataTable` verfügt über seine `ReadOnly` -Eigenschaftensatz auf `True`. Wie in Schritt 4 erwähnt die `FullContactName` s `ReadOnly` -Eigenschaft wurde festgelegt, um `True` da TableAdapter erkannt, dass die Spalte eine berechnete Spalte ist.
 
 
-[![Ter FullContactName-Spalte kann nicht bearbeitet werden.](working-with-computed-columns-vb/_static/image38.png)](working-with-computed-columns-vb/_static/image37.png)
+[![Die FullContactName-Spalte kann nicht bearbeitet werden.](working-with-computed-columns-vb/_static/image38.png)](working-with-computed-columns-vb/_static/image37.png)
 
 **Abbildung 13**: Die `FullContactName` Spalte kann nicht bearbeitet werden ([klicken Sie, um das Bild in voller Größe anzeigen](working-with-computed-columns-vb/_static/image39.png))
 

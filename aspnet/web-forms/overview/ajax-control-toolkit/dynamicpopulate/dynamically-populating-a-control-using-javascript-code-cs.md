@@ -12,7 +12,7 @@ ms.openlocfilehash: a6b433f187495b8dcd874bcab8ddc607e6de61c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422524"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-c"></a>Dynamisches Auffüllen eines Steuerelements über den JavaScript-Code (C#)
@@ -55,7 +55,7 @@ Um das Beispiel etwas flexibler zu machen, kann der Benutzer nun verschiedene Da
 Beachten Sie, dass innerhalb des Kontexts eines Optionsfelds, der JavaScript-Ausdruck `this.value` verweist auf den Wert der aktuellen Schaltfläche, die genau die gleichen Informationen werden die `getDate()` Methode mit arbeiten kann.
 
 
-[![A Klicken Sie auf die Schaltfläche mit den Ruft das Datum ab, von dem Server in das angegebene Format](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
+[![Ein Klick auf die Schaltfläche mit den Ruft das Datum vom Server ab, in dem angegebenen Format ab.](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
 
 Ein Klick auf die Schaltfläche mit den Ruft das Datum ab, von dem Server in das angegebene Format ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-populating-a-control-using-javascript-code-cs/_static/image3.png))
 

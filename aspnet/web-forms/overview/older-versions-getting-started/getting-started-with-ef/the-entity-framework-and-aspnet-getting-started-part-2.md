@@ -12,7 +12,7 @@ ms.openlocfilehash: f436044b0887d6b092ab18a6128019aa87747566
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422303"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 2
@@ -46,7 +46,7 @@ Erstellen einer neuen Webseite mit den **Webformular mit Gestaltungsvorlage** Vo
 
 Geben Sie *Site.Master* als Masterseite. Alle Seiten, die Sie für diese Tutorials erstellen werden diese Masterseite verwenden.
 
-[![Image24](the-entity-framework-and-aspnet-getting-started-part-2/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image9.png)
+[![image24](the-entity-framework-and-aspnet-getting-started-part-2/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image9.png)
 
 In **Quelle** anzeigen, Hinzufügen einer `h2` Spaltenüberschrift, um die `Content` Steuerelement mit dem Namen `Content2`, wie im folgenden Beispiel gezeigt:
 
@@ -58,7 +58,7 @@ Von der **Daten** Registerkarte die **Toolbox**, ziehen Sie ein `EntityDataSourc
 
 Wechseln Sie zur **Entwurf** anzuzeigen, klicken Sie auf das Datenquellensteuerelement Smarttag, und klicken Sie dann auf **Konfigurieren von Datenquellen** zum Starten der **Konfigurieren von Datenquellen** Assistenten.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-2/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image11.png)
 
 In der **ObjectContext konfigurieren** Assistentenschritt, select **SchoolEntities** als Wert für **Verbindung mit dem Namen**, und wählen Sie **SchoolEntities**als die **DefaultContainerName** Wert. Klicken Sie dann auf **Weiter**.
 
@@ -66,7 +66,7 @@ In der **ObjectContext konfigurieren** Assistentenschritt, select **SchoolEntiti
 
 Hinweis: Wenn Sie das folgende Dialogfeld an diesem Punkt erhalten, müssen Sie zum Erstellen des Projekts, bevor Sie fortfahren.
 
-[![Image25](the-entity-framework-and-aspnet-getting-started-part-2/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image15.png)
+[![image25](the-entity-framework-and-aspnet-getting-started-part-2/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image15.png)
 
 In der **Datenauswahl konfigurieren** Schritt select **Personen** als Wert für **EntitySetName**. Unter **wählen**, stellen Sie sicher, dass die **wählen Sie ein** alle Kontrollkästchen aktiviert ist. Wählen Sie dann die Optionen zum Aktivieren von aktualisieren und löschen. Wenn Sie fertig sind, klicken Sie auf **Fertig stellen**.
 
