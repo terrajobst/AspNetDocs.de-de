@@ -12,7 +12,7 @@ ms.openlocfilehash: d59358f99a71d9583df1cc3cfee37303b625e95a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406976"
 ---
 # <a name="the-datapager-control"></a>Das DataPager-Steuerelement
@@ -24,4 +24,4 @@ Im Allgemeinen wird das DataPager-Steuerelement mit dem ListView-Steuerelement v
 [&#9654;Sehen Sie sich Video (8 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-datapager-control)
 
 > [!div class="step-by-step"]
-> [Vorheriges](the-listview-control.md)
+> [Vorherige](the-listview-control.md)

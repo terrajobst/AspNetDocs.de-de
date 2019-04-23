@@ -12,7 +12,7 @@ ms.openlocfilehash: c681415920bb0bfb4bc1c012e42fb5a528db93ca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406833"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>Verwendung von Web-API 2 mit Entity Framework 6
@@ -101,4 +101,4 @@ Nachdem Sie das Projekt erstellt haben, können Sie jederzeit auf Azure App Serv
 
 
 > [!div class="step-by-step"]
-> [Weiter](part-2.md)
+> [Nächste](part-2.md)

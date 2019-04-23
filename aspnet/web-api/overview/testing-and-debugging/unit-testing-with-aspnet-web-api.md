@@ -12,7 +12,7 @@ ms.openlocfilehash: f2d60b977475e048a3a74aabff4adc768ee22baf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402647"
 ---
 # <a name="unit-testing-aspnet-web-api-2"></a>Komponententests für ASP.NET Web API 2
@@ -36,15 +36,15 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 
 Dieses Thema enthält folgende Abschnitte:
 
-- [Vorraussetzungen](#prereqs)
+- [Erforderliche Komponenten](#prereqs)
 - [Code herunterladen](#download)
 - [Erstellen Sie Anwendung mit Komponententestprojekt](#appwithunittest)
     - [Fügen Sie beim Erstellen der Anwendung Komponententestprojekt hinzu](#whencreate)
     - [Datenbankkomponententest-Projekt zu einer vorhandenen Anwendung hinzufügen](#addtoexisting)
 - [Einrichten der Web-API 2-Anwendung](#setupproject)
 - [Installieren von NuGet-Pakete im Test-Projekt](#testpackages)
-- [Tests erstellen](#tests)
-- [Tests durchführen](#runtests)
+- [Erstellen von tests](#tests)
+- [Ausführen von tests](#runtests)
 
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>Vorraussetzungen

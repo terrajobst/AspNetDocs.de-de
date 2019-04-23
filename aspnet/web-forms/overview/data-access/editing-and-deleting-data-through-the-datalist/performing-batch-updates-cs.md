@@ -12,7 +12,7 @@ ms.openlocfilehash: 388637d67594d6431a134673cf85b3b18098136e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402751"
 ---
 # <a name="performing-batch-updates-c"></a>Durchführen von Batchupdates (C#)
@@ -29,7 +29,7 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 In der [vorherigen Lernprogramm](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md) wurde beschrieben, wie ein DataList auf Elementebene zu erstellen. Wie standard bearbeitbaren GridView jedes Element im DataList-Steuerelement enthalten eine Bearbeitung-Schaltfläche geklickt wird, würde das Element bearbeitet werden machen. Während dies auf Elementebene Bearbeitung eignet sich gut für Daten, die nur gelegentlich aktualisiert werden, erfordern bestimmte Szenarien zu Anwendungsfällen die Benutzer viele Datensätze zu bearbeiten. Wenn ein Benutzer so bearbeiten Sie Dutzende von Datensätzen muss und gezwungen, klicken Sie auf Bearbeiten, stellen ihre Änderungen und Updates für jeden einzelnen auf, kann die Menge des auf ihre Produktivität behindern. In solchen Situationen eine bessere Option darstellt, zu einem vollständig bearbeitbare DataList-Steuerelement, eine Where *alle* Elemente werden im Bearbeitungsmodus befindet und deren Werte bearbeitet werden können, indem Sie auf eine Schaltfläche "Alle aktualisieren", auf der Seite (siehe Abbildung 1).
 
 
-[![Ean Element in einem vollständig bearbeitbare DataList-Steuerelement kann geändert werden](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
+[![Jedes Element in einem vollständig bearbeitbare DataList-Steuerelement kann geändert werden](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
 
 **Abbildung 1**: Jedes Element in einem vollständig bearbeitbare DataList-Steuerelement kann geändert werden ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ Für eine vollständig bearbeitbare DataList, möchten wir *alle* von der `DataL
 Öffnen Sie zunächst die `BatchUpdate.aspx` Seite, fügen Sie ein DataList-Steuerelement hinzu, und legen dessen `ID` Eigenschaft `Suppliers`. Deaktivieren Sie aus dem Smarttag DataList s, um ein neues ObjectDataSource-Steuerelement, das mit dem Namen hinzuzufügen `SuppliersDataSource`.
 
 
-[![CErstellen eine neue "ObjectDataSource" mit dem Namen SuppliersDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
+[![Erstellen Sie eine neue, mit dem Namen SuppliersDataSource "ObjectDataSource"](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
 
 **Abbildung 2**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `SuppliersDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image6.png))
 
@@ -58,12 +58,12 @@ Für eine vollständig bearbeitbare DataList, möchten wir *alle* von der `DataL
 Konfigurieren Sie zum Abrufen von Daten, die mit dem ObjectDataSource-Steuerelement die `SuppliersBLL` Klasse s `GetSuppliers()` Methode (siehe Abbildung 3). Wie bei dem vorherigen Lernprogramm, anstatt die Lieferanteninformationen über das ObjectDataSource-Steuerelement wird aktualisiert, arbeiten wir direkt mit der Geschäftslogikebene. Legen Sie daher die Dropdown-Liste (keine) auf der Registerkarte "UPDATE" (siehe Abbildung 4).
 
 
-[![REtrieve Lieferanteninformationen mithilfe der Methode GetSuppliers()](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
+[![Abrufen von Lieferanteninformationen mithilfe der GetSuppliers()-Methode](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
 
 **Abbildung 3**: Abrufen von Lieferanten Informationen mithilfe der `GetSuppliers()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image9.png))
 
 
-[![Su. a. die Dropdown-Liste auf (keine) auf der Registerkarte "UPDATE"](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
+[![Legen Sie die Dropdown-Liste (keine) in der Registerkarte "Updates"](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
 
 **Abbildung 4**: Legen Sie die Dropdown-Liste (keine) auf der Registerkarte "UPDATE" ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image12.png))
 
@@ -87,7 +87,7 @@ In der `ItemTemplate` ich m mithilfe von zwei neuen CSS-Klassen `SupplierPropert
 Finden Sie nach diesen Änderungen auf dieser Seite über einen Browser. Wie in Abbildung 5 gezeigt, wird jedes DataList-Element zeigt den Lieferantennamen als Text und Textfelder zum Anzeigen der Adresse, Stadt und Land verwendet.
 
 
-[![Ean Lieferanten im DataList-Steuerelement ist bearbeitbar](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
+[![Jeder Lieferant im DataList-Steuerelement ist bearbeitbar](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
 
 **Abbildung 5**: Jeder Lieferant im DataList-Steuerelement ist bearbeitbar ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image15.png))
 
@@ -104,7 +104,7 @@ Hinzufügen eines Steuerelements Schaltfläche Web über das DataList-Steuerelem
 Abbildung 6 zeigt die Seite, nachdem die Aktualisierung alle Schaltflächen hinzugefügt wurden.
 
 
-[![Twei Update alle Schaltflächen wurden auf der Seite hinzugefügt](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
+[![Zwei Update alle Schaltflächen wurden auf der Seite hinzugefügt](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
 
 **Abbildung 6**: Wurden zwei Update alle Schaltflächen auf der Seite hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image18.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 9dbaf1cbf7eb89a47c1e7e388c4dc35b9900b97d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399111"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-vbnet"></a>Erste Schritte mit ASP.NET MVC 3 (VB.NET)
@@ -27,5 +27,5 @@ ms.locfileid: "59399111"
 - [Zugreifen auf Modelldaten anhand eines Controllers (VB)](accessing-your-models-data-from-a-controller.md)
 - [Überprüfen der Edit-Methoden und -Ansicht (VB)](examining-the-edit-methods-and-edit-view.md)
 - [Hinzufügen eines neuen Felds zum Modell und zur Datenbanktabelle eines Films (VB)](adding-a-new-field.md)
-- [Adding Validation to the Model (VB)](adding-validation-to-the-model.md)
+- [Hinzufügen der Überprüfung zum Modell (VB)](adding-validation-to-the-model.md)
 - [Optimieren der Methoden „Details“ und „Delete“ (VB)](improving-the-details-and-delete-methods.md)

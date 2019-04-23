@@ -12,7 +12,7 @@ ms.openlocfilehash: e0b540c030bf600def9b9efad4c73f055a343851
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402829"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>Zugreifen auf Modelldaten anhand eines Controllers
@@ -26,7 +26,7 @@ In diesem Abschnitt werden wir erstellen eine neue MoviesController-Klasse, und 
 
 Klicken Sie mit der rechten Maustaste auf den Ordner "Controllers", und stellen Sie eine neue MoviesController.
 
-[![ADd Controller](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
+[![Controller hinzufügen](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
 
 Dadurch wird eine neue "MoviesController.cs"-Datei unterhalb unserer \Controllers-Ordner, in unserem Projekt erstellt. Aktualisieren wir die MovieController Abrufen einer Liste von Filmen aus unserer Datenbank neu aufgefüllt.
 
@@ -42,11 +42,11 @@ Denken Sie daran: Wenn Sie ein erstelltes haben eine neue Klasse Sie Kompilieren
 
 Klicken Sie auf Hinzufügen und das System generiert automatisch Code für eine Ansicht für uns, in dem unsere Liste von Filmen angezeigt. Dies ist ein guter Zeitpunkt zum Ändern der &lt;h2&gt; Überschrift z. B. "Meine Movie List", wie zuvor mit der "Hello World" angezeigt.
 
-[![MOvies – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
+[![Filme – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
 
 Führen Sie die Anwendung, und finden Sie in der Adressleiste auf /Movies. Jetzt haben wir die Daten mit der eine einfache Abfrage in den Controller aus der Datenbank abgerufen und zurückgegeben, die Daten an eine Ansicht, die über Filme bekannt sind. Diese Ansicht, und klicken Sie dann führt Spin-Vorgänge über die Liste der Filme und wird eine Tabelle mit Daten für uns erstellt.
 
-[![MILM Liste – Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
+[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
 Es wird nicht implementiert bearbeiten "," Details "und" Delete-Funktionen mit dieser Anwendung -, sodass wir nicht die Standardlinks benötigen, die die Vorlage Gerüst für uns erstellt. Öffnen Sie die /Movies/Index.aspx-Datei, und entfernen Sie sie.
 
@@ -56,7 +56,7 @@ Hier ist der Quellcode für die wie unsere aktuellen ansichtsvorlage aussehen so
 
 Es ist die Links, die wir nicht brauchen, Erstellung, daher wird sie für dieses Beispiel entfernt werden. Wir bleiben unseren neu erstellen Link jedoch, wie das nächste ist! So sieht unsere app wie mit dieser Spalte entfernt.
 
-[![MILM Liste – Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
+[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
 Wir haben jetzt eine einfache Liste von unserem Movie-Daten. Jedoch, wenn wir auf den Link "Neu erstellen" klicken, wir erhalten eine Fehlermeldung, da es nicht verknüpft ist! Lassen Sie uns eine Create Action-Methode implementieren, und ermöglichen einem Benutzer zur Eingabe neuer Filme in der Datenbank.
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 67b2b6da28b474835020031f957da058eedca7a7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397408"
 ---
 # <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a>[Gewusst wie:] Fahren Sie fort, Cascading Stylesheet-Features und Verwaltung

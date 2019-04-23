@@ -12,7 +12,7 @@ ms.openlocfilehash: db69c0cf4fc3e5d39d88d8a6478a529309020d3d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398032"
 ---
 # <a name="positioning-a-modalpopup-c"></a>Positionieren eines ModalPopup-Steuerelements (C#)
@@ -55,7 +55,7 @@ Und die `stopMoving()` Funktion ins Spiel, wenn das Popup kann geschlossen wird 
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample6.aspx)]
 
 
-[![THE modales Fenster angezeigt wird, an der angegebenen Position](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
+[![Die modales Fenster angezeigt wird, an der angegebenen position](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
 
 Die modales Fenster angezeigt wird, an der angegebenen Position ([klicken Sie, um das Bild in voller Größe anzeigen](positioning-a-modalpopup-cs/_static/image3.png))
 

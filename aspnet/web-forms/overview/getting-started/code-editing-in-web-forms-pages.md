@@ -12,7 +12,7 @@ ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397369"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Codebearbeitung in ASP.NET Web Forms in Visual Studio 2013
@@ -59,7 +59,7 @@ In diesem Teil der exemplarischen Vorgehensweise werden Sie ein Webanwendungspro
 3. Wählen Sie die **Vorlagen**  - &gt; **Visual C#-**  - &gt; **Web** Gruppe "Vorlagen" auf der linken Seite.
 4. Wählen Sie die **ASP.NET-Webanwendung** Vorlage in der mittleren Spalte.
 5. Benennen Sie Ihr Projekt ***BasicWebApp*** , und klicken Sie auf die **OK** Schaltfläche.   
-![Dialogfeld "Neues Projekt"](code-editing-in-web-forms-pages/_static/image2.png)
+![Neues Projekt (Dialogfeld)](code-editing-in-web-forms-pages/_static/image2.png)
 6. Wählen Sie als Nächstes die **Web Forms** Vorlage, und klicken Sie auf die **OK** klicken, um das Projekt zu erstellen.  
 ![Neues ASP.NET-Projekt (Dialogfeld)](code-editing-in-web-forms-pages/_static/image3.png)  
 
@@ -77,7 +77,7 @@ Beim Erstellen eine neue Web Forms-Anwendung, mit der **ASP.NET-Webanwendung** -
 1. In **Projektmappen-Explorer**, mit der rechten Maustaste in den Namen der Web-Anwendung (in diesem Tutorial der Anwendungsname wird **BasicWebSite**), und klicken Sie dann auf **hinzufügen**  - &gt; **Neues Element**.   
 Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 2. Wählen Sie die **Visual C#-**  - &gt; **Web** Gruppe "Vorlagen" auf der linken Seite. Wählen Sie dann **Webformular** aus der Mitte aus, und nennen Sie sie *FirstWebPage.aspx*.   
-    ![Dialogfeld "Neues Element hinzufügen"](code-editing-in-web-forms-pages/_static/image4.png)
+    ![Fügen Sie im Dialogfeld Neues Element hinzu.](code-editing-in-web-forms-pages/_static/image4.png)
 3. Klicken Sie auf **hinzufügen** Web Forms-Seite zu Ihrem Projekt hinzufügen.  
  Visual Studio erstellt die neue Seite, und öffnet sie.
 4. Anschließend legen Sie diese neue Seite, wie die Standardseite für den Start. In **Projektmappen-Explorer**, mit der rechten Maustaste in der neuen Seite mit dem Namen *FirstWebPage.aspx* , und wählen Sie **als Startseite festlegen**. Das nächste Mal ausführen dieser Anwendung so testen Sie unsere ausgeführt wird, werden Sie automatisch diese neue Seite im Browser angezeigt.

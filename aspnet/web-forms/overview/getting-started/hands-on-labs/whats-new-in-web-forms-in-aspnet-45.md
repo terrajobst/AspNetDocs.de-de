@@ -12,7 +12,7 @@ ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401737"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>Neue Funktionen in Web Forms in ASP.NET 4.5
@@ -77,7 +77,7 @@ Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie dere
 Dieser praktischen Übungseinheit enthält die folgenden Übungen:
 
 1. [Übung 1: Die Modellbindung in ASP.NET Web Forms](#Exercise1)
-2. [Übung 2: Datenvalidierung](#Exercise2)
+2. [Übung 2: Datenüberprüfung](#Exercise2)
 3. [Übung 3: Asynchrone Seitenverarbeitung in der ASP.NET Web Forms](#Exercise3)
 
 > [!NOTE]
@@ -396,7 +396,7 @@ ASP.NET 4.5 führt Anmerkungen der datenüberprüfung für Web Forms. Anstatt ei
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample23.cs)]
 
     > [!NOTE]
-    > .NET Framework 4.5 wurde erweitert, dass die vorhandenen Daten anmerkungsauflistung. Dies sind einige der die datenanmerkungen, die Sie verwenden können: [CreditCard], [Phone], [EmailAddress], [Bereich], [vergleichen], [Url], [FileExtensions], [Required], [Schlüssel], [RegularExpression].
+    > .NET Framework 4.5 wurde erweitert, dass die vorhandenen Daten anmerkungsauflistung. Dies sind einige der die datenanmerkungen, die Sie verwenden können: [CreditCard], [Phone], [EmailAddress], [Bereich], [vergleichen], [Url], [FileExtensions], [Required], [Key], [RegularExpression].
     > 
     > Einige Beispiele zur Verwendung:
     > 

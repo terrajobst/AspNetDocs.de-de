@@ -12,7 +12,7 @@ ms.openlocfilehash: 51e3010f6e01434c495201af4af3bbdcde993da7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398435"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms
@@ -65,7 +65,7 @@ Benutzer können Informationen zu den Studenten, Kursen und Dozenten abrufen. Nu
 
 Um das Lernprogramm zu starten, öffnen Sie Visual Studio, und klicken Sie dann erstellen Sie ein neues ASP.NET-Webanwendungsprojekt mit der **ASP.NET-Webanwendung** Vorlage:
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-1/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image11.png)
+[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-1/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image11.png)
 
 Mit dieser Vorlage erstellt ein Webanwendungsprojekt, die bereits eines Stylesheets und Masterseiten enthält:
 
@@ -212,4 +212,4 @@ Das Entity Framework verwendet XML zum Speichern von Informationen über die Dat
 Sie haben nun eine Website, eine Datenbank und einem Datenmodell erstellt. In der nächsten exemplarischen Vorgehensweise beginnen Sie mit Daten, die das Datenmodell mit ASP.NET `EntityDataSource` Steuerelement.
 
 > [!div class="step-by-step"]
-> [Weiter](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [Nächste](the-entity-framework-and-aspnet-getting-started-part-2.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: c8c7864a6825db99db9c942102fc6afb41b0e655
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405195"
 ---
 # <a name="tailspin-spyworks---displaying-user-reviews"></a>Tailspin Spyworks – Anzeigen von Benutzerbeurteilungen
@@ -24,4 +24,4 @@ Joe Stagner Zeigt Berichte von Kunden in der Tailspin Spyworks Web Forms-beispie
 [&#9654;Sehen Sie sich Video (13 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-displaying-user-reviews)
 
 > [!div class="step-by-step"]
-> [Vorheriges](tailspin-spyworks-adding-user-product-reviews.md)
+> [Vorherige](tailspin-spyworks-adding-user-product-reviews.md)

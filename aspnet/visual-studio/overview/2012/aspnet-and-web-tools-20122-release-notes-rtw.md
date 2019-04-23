@@ -12,7 +12,7 @@ ms.openlocfilehash: e4545f36d5a2668bc6a21249a89a94ece9bb2ca2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397980"
 ---
 # <a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET and Web Tools 2012.2 – Anmerkungen zu dieser Version
@@ -22,7 +22,7 @@ ms.locfileid: "59397980"
 
 - [Installationshinweise](#_Installation)
 - [Dokumentation](#_Documentation)
-- [Unterstützung](#_Support)
+- [Support](#_Support)
 - [Softwareanforderungen](#_Software_Requirements)
 - [Neue Features in ASP.NET und Webtools 2012.2](#_New_Features_in)
 

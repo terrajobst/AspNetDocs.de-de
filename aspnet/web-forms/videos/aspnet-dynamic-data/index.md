@@ -12,7 +12,7 @@ ms.openlocfilehash: 11fca6096a1ada5df95971f2c77c8e72660ad864
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400151"
 ---
 # <a name="aspnet-dynamic-data"></a>ASP.NET Dynamic Data
@@ -31,9 +31,9 @@ ms.locfileid: "59400151"
 - [Erste Schritte mit der Bearbeitung von Vorlagen in ASP.NET Dynamic Data-Anwendungen](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
 - [Erste Schritte mit der Änderung von Dynamic Data-Anwendungen durch URL-Routing](begin-modifying-dynamic-data-applications-with-url-routing.md)
 - [Aktivieren der Inlinebearbeitung in ASP.NET Dynamic Data-Anwendungen](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)
-- [Enable Table Specific Routing in Dynamic Data Applications](how-to-enable-table-specific-routing-in-dynamic-data-applications.md)
-- [Use Attribute Validation in ASP.NET Dynamic Data Applications](how-to-use-attribute-validation-in-aspnet-dynamic-data-applications.md)
+- [Aktivieren des tabellenspezifischen Routings in Dynamic Data-Anwendungen](how-to-enable-table-specific-routing-in-dynamic-data-applications.md)
+- [Durchführung von Attributüberprüfungen in ASP.NET Dynamic Data-Anwendungen](how-to-use-attribute-validation-in-aspnet-dynamic-data-applications.md)
 - [Implementieren der Überprüfung von benutzerdefinierten Feldern mit imperativer Logik in VB oder C#](how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md)
 - [Entfernen von Spalten aus DynamicData-Datenrastern](how-to-remove-columns-from-your-dynamicdata-data-grids.md)
 - [Erstellen von tabellenspezifischen benutzerdefinierten Formularen in einer ASP.NET Dynamic Data-Anwendung](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)
-- [ASP.NET Dynamic Data Custom Form Formatting](aspnet-dynamic-data-custom-form-formatting.md)
+- [Formatierung von benutzerdefinierten ASP.NET Dynamic Data-Formularen](aspnet-dynamic-data-custom-form-formatting.md)

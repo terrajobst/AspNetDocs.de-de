@@ -12,7 +12,7 @@ ms.openlocfilehash: 180b34e45ae97c64c82906c93aa647c4924d8539
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398103"
 ---
 # <a name="creating-a-controller-vb"></a>Erstellen eines Controllers (VB)
@@ -29,12 +29,12 @@ Das Ziel in diesem Tutorial wird beschrieben, wie Sie die neue ASP.NET MVC Contr
 Die einfachste Möglichkeit zum Erstellen eines neuen Controllers ist mit der rechten Maustaste in den Ordner "Controllers" im Projektmappen-Explorer von Visual Studio-Fenster, und wählen Sie die **hinzufügen, Controller** Menüoption (siehe Abbildung 1). Durch Auswählen dieser Menüoption wird das **Controller hinzufügen** Dialogfeld (siehe Abbildung 2).
 
 
-[![TDialogfeld für neues Projekt mit HE](creating-a-controller-vb/_static/image1.jpg)](creating-a-controller-vb/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](creating-a-controller-vb/_static/image1.jpg)](creating-a-controller-vb/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen eines neuen Controllers ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image2.png))
 
 
-[![TDialogfeld für neues Projekt mit HE](creating-a-controller-vb/_static/image2.jpg)](creating-a-controller-vb/_static/image3.png)
+[![Das Dialogfeld "Neues Projekt"](creating-a-controller-vb/_static/image2.jpg)](creating-a-controller-vb/_static/image3.png)
 
 **Abbildung 02**: Das Dialogfeld "Controller hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image4.png))
 
@@ -56,7 +56,7 @@ Sie sollten immer im Ordner "Controllers" Controller erstellen. Andernfalls Sie 
 Wenn Sie einen Controller erstellen, haben Sie die Option zum automatischen Generieren von Aktionsmethoden für Create, Update und Details (siehe Abbildung 3). Bei Auswahl dieser Option wird die Controller-Klasse im Codebeispiel 2 generiert.
 
 
-[![CAktionsmethoden e rstellen automatisch](creating-a-controller-vb/_static/image3.jpg)](creating-a-controller-vb/_static/image5.png)
+[![Aktionsmethoden erstellen automatisch](creating-a-controller-vb/_static/image3.jpg)](creating-a-controller-vb/_static/image5.png)
 
 **Abbildung 03**: Erstellen die Aktionsmethoden automatisch ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image6.png))
 
@@ -76,7 +76,7 @@ Die ASP.NET MVC-Controller ist nur eine Klasse. Falls gewünscht, können Sie ig
 3. Ändern Sie die resultierende Klassendatei, sodass die Klasse von der Basisklasse für den System.Web.Mvc.Controller (siehe Codebeispiel 3) erbt.
 
 
-[![Ce rstellen eine neue Klasse](creating-a-controller-vb/_static/image4.jpg)](creating-a-controller-vb/_static/image7.png)
+[![Erstellen einer neuen Klasse](creating-a-controller-vb/_static/image4.jpg)](creating-a-controller-vb/_static/image7.png)
 
 **Abbildung 04**: Erstellen einer neuen Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image8.png))
 

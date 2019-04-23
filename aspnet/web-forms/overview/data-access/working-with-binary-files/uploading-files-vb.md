@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f342a7749ac175c3335f260324d69a0cce30202
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399748"
 ---
 # <a name="uploading-files-vb"></a>Hochladen von Dateien (VB)
@@ -53,7 +53,7 @@ Bevor wir beginnen, um die Herausforderungen beim Hinzufügen von Unterstützung
 Wie in den anderen Ordnern `Default.aspx` in die `BinaryData` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
 
 
-[![ADd SectionLevelTutorialListing.ascx Benutzersteuerelements in "default.aspx"](uploading-files-vb/_static/image2.gif)](uploading-files-vb/_static/image1.png)
+[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](uploading-files-vb/_static/image2.gif)](uploading-files-vb/_static/image1.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image2.png))
 
@@ -76,7 +76,7 @@ Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website üb
 Binäre Daten, die das Anwendungsmodell für s Daten zugeordnet ist, können in einer von zwei Stellen gespeichert werden: auf das Dateisystem der Web-s-Server mit einem Verweis auf die Datei, die in der Datenbank gespeichert oder direkt in der Datenbank selbst (siehe Abbildung 4). Jeder Ansatz verfügt über einen eigenen Satz von vor- und Nachteile und benötigt eine ausführlichere Erläuterung.
 
 
-[![Binär Daten kann im Dateisystem oder direkt in der Datenbank gespeichert werden](uploading-files-vb/_static/image4.gif)](uploading-files-vb/_static/image3.png)
+[![Binäre Daten können im Dateisystem oder direkt in der Datenbank gespeichert werden](uploading-files-vb/_static/image4.gif)](uploading-files-vb/_static/image3.png)
 
 **Abbildung 4**: Binäre Daten können im Dateisystem oder direkt in der Datenbank gespeichert werden ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image4.png))
 
@@ -110,7 +110,7 @@ Die Categories-Tabelle ist derzeit nur vier Spalten: `CategoryID`, `CategoryName
 Fügen Sie einen neuen `varchar(200)` Spalte, um die `Categories` Tabelle mit der Bezeichnung `BrochurePath` und ermöglicht `NULL` s, und klicken Sie auf das Symbol "Speichern" (oder drücken Sie STRG + S).
 
 
-[![ADd der Categories-Tabelle eine Spalte BrochurePath](uploading-files-vb/_static/image5.gif)](uploading-files-vb/_static/image5.png)
+[![Der Categories-Tabelle eine BrochurePath Spalte hinzufügen](uploading-files-vb/_static/image5.gif)](uploading-files-vb/_static/image5.png)
 
 **Abbildung 5**: Hinzufügen einer `BrochurePath` Spalte, um die `Categories` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image6.png))
 
@@ -132,7 +132,7 @@ Beachten Sie, dass keine dieser Abfragen zurückgeben der `Categories` s'-Tabell
 Starten, indem diese beiden Spalten zum Hinzufügen der `CategoriesDataTable`. Mit der rechten Maustaste auf die `CategoriesDataTable` s-Header, wählen Sie aus dem Kontextmenü hinzufügen, und wählen Sie dann die Option Spalte. Hiermit wird ein neues `DataColumn` in der Datentabelle, die mit dem Namen `Column1`. Benennen Sie diese Spalte in `Picture`. Legen Sie im Eigenschaftenfenster die `DataColumn` s `DataType` Eigenschaft `System.Byte[]` (Dies ist dabei nicht um eine Option in der Dropdown-Liste, müssen Sie sie eingeben).
 
 
-[![CErstellen Sie eine DataColumn mit dem Namen Bild ist, deren Datentyp System.Byte []](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
+[![Erstellen Sie eine DataColumn mit dem Namen Bild ist, deren Datentyp System.Byte](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
 
 **Abbildung 6**: Erstellen einer `DataColumn` benannte `Picture` , deren `DataType` ist `System.Byte[]` ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image8.png))
 
@@ -146,7 +146,7 @@ Mit diesen beiden `DataColumn` s hinzugefügt, die `CategoriesDataTable`, wir er
 Um die Hauptabfrage des TableAdapter zu aktualisieren, mit der Maustaste auf die `CategoriesTableAdapter` s-Header, und wählen Sie im Kontextmenü die Option konfigurieren. Dadurch wird die Tabelle Konfigurations-Assistenten, die wir in einer Reihe von früheren Tutorials gesehen haben. Aktualisieren Sie die Abfrage rüstet die `BrochurePath` , und klicken Sie auf "Fertig stellen".
 
 
-[![UAktualisieren der Liste der Spalten in der SELECT-Anweisung auch zurückgeben BrochurePath](uploading-files-vb/_static/image7.gif)](uploading-files-vb/_static/image9.png)
+[![Aktualisieren der Liste der Spalten in der SELECT-Anweisung auch BrochurePath zurückgeben](uploading-files-vb/_static/image7.gif)](uploading-files-vb/_static/image9.png)
 
 **Abbildung 7**: Aktualisieren der Liste der Spalten in der `SELECT` Anweisung, um auch zurückzugeben `BrochurePath` ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image10.png))
 
@@ -159,12 +159,12 @@ Wenn Sie Ad-hoc-SQL-Anweisungen für den TableAdapter verwenden, Aktualisieren d
 Als Nächstes erstellen Sie eine neue TableAdapter-Methode, die eine bestimmte Kategorie s zurückgibt `Picture` Spaltenwert. Mit der rechten Maustaste auf die `CategoriesTableAdapter` s-Header, und wählen Sie die Option "Abfrage hinzufügen" zum TableAdapter-Konfigurations-Assistenten zu starten. Der erste Schritt des Assistenten werden wir gefragt, wenn Sie möchten zum Abfragen von Daten mit Ad-hoc-SQL-Anweisungen, eine neue, gespeicherte Prozedur bzw. eine vorhandene Ressourcengruppe. Wählen Sie die SQL-Anweisungen, und klicken Sie auf Weiter. Da wir eine Zeile zurückgegeben wird, wählen Sie die wählen die Option der Zeilen im zweiten Schritt zurückgibt.
 
 
-[![SWählen Sie die SQL-Anweisungen Option](uploading-files-vb/_static/image8.gif)](uploading-files-vb/_static/image11.png)
+[![Wählen Sie die SQL-Anweisungen-Option](uploading-files-vb/_static/image8.gif)](uploading-files-vb/_static/image11.png)
 
 **Abbildung 8**: Wählen Sie die SQL-Anweisungen-Option ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image12.png))
 
 
-[![SInce die Abfrage gibt einen Datensatz aus der Tabelle "Categories", wählen Sie die Zeilen zurückgibt auswählen](uploading-files-vb/_static/image9.gif)](uploading-files-vb/_static/image13.png)
+[![Da der Abfrage einen Datensatz aus der Categories-Tabelle zurückgegeben wird, wählen Sie wählen Sie die Zeilen zurückgibt](uploading-files-vb/_static/image9.gif)](uploading-files-vb/_static/image13.png)
 
 **Abbildung 9**: Da die Abfrage einen Datensatz aus der Tabelle "Categories", wählen Sie die Option zurückgeben wird, die Zeilen zurückgibt ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image14.png))
 
@@ -177,7 +177,7 @@ Klicken Sie im dritten Schritt geben Sie folgende SQL-Abfrage, und klicken Sie a
 Der letzte Schritt ist, um den Namen für die neue Methode auszuwählen. Verwendung `FillCategoryWithBinaryDataByCategoryID` und `GetCategoryWithBinaryDataByCategoryID` für die Füllung einer DataTable und Rückgabe eine "DataTable"-Mustern bzw. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
 
-[![CWählen Sie die Namen für die TableAdapter-Methoden aus](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
+[![Wählen Sie die Namen für die TableAdapter-s-Methoden](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
 
 **Abbildung 10**: Wählen Sie die Namen für die TableAdapter-Methoden ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image16.png))
 
@@ -212,7 +212,7 @@ ASP.NET 2.0 neues [FileUpload-Websteuerelement](https://msdn.microsoft.com/libra
 Öffnen Sie zum Hochladen von Dateien zu veranschaulichen, die `FileUpload.aspx` auf der Seite die `BinaryData` , ein "FileUpload"-Steuerelement aus der Toolbox in den Designer ziehen, und legen Sie das Steuerelement s `ID` Eigenschaft `UploadTest`. Fügen Sie eine Schaltfläche Websteuerelement Festlegen seiner `ID` und `Text` Eigenschaften `UploadButton` und Laden Sie die ausgewählte Datei bzw. hoch. Setzen Sie ein Label-Steuerelement unterhalb der Schaltfläche, löschen Sie schließlich die `Text` Eigenschaft, und legen seine `ID` Eigenschaft `UploadDetails`.
 
 
-[![ATT ein "FileUpload"-Steuerelement in die ASP.NET-Seite](uploading-files-vb/_static/image12.gif)](uploading-files-vb/_static/image17.png)
+[![Hinzufügen einer FileUpload-Serversteuerelements in die ASP.NET-Seite](uploading-files-vb/_static/image12.gif)](uploading-files-vb/_static/image17.png)
 
 **Abbildung 12**: Hinzufügen einer FileUpload-Serversteuerelements in die ASP.NET-Seite ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image18.png))
 
@@ -220,7 +220,7 @@ ASP.NET 2.0 neues [FileUpload-Websteuerelement](https://msdn.microsoft.com/libra
 Abbildung 13 zeigt diese Seite, wenn Sie über einen Browser angezeigt. Beachten Sie, dass Sie auf die Schaltfläche zum Durchsuchen ein Dialogfeld zur Dateiauswahl, öffnet der Benutzer zum Auswählen einer Datei von ihrem Computer. Nachdem eine Datei ausgewählt wurde, führt dazu, dass Sie auf die Schaltfläche für die ausgewählte Datei hochladen einen Postback aus, der die ausgewählte Datei s binären Inhalt an den Webserver sendet.
 
 
-[![Ter Benutzer kann eine Datei zum Hochladen von ihrem Computer an den Server auswählen](uploading-files-vb/_static/image13.gif)](uploading-files-vb/_static/image19.png)
+[![Der Benutzer kann eine Datei zum Hochladen von ihrem Computer an den Server auswählen.](uploading-files-vb/_static/image13.gif)](uploading-files-vb/_static/image19.png)
 
 **Abbildung 13**: Der Benutzer kann eine Datei zum Hochladen auswählen, von dem Computer, auf dem Server ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image20.png))
 
@@ -241,7 +241,7 @@ Die "FileUpload" s `SaveAs(filePath)` speichert die hochgeladene Datei im angege
 Nach Abschluss der `Click` -Ereignishandler können Sie die Seite in einem Browser zu testen. Klicken Sie auf die Schaltfläche zum Durchsuchen, und wählen Sie eine Datei auf Ihrer Festplatte, und klicken Sie dann auf die Schaltfläche "ausgewählten Datei hochladen". Das Postback sendet den Inhalt der ausgewählten Datei an den Webserver, der anschließend Informationen über die Datei vor dem Speichern auf angezeigt wird der `~/Brochures` Ordner. Klicken Sie nach dem Hochladen der das zurück zu Visual Studio, und klicken Sie auf die Schaltfläche "Aktualisieren" im Projektmappen-Explorer. Daraufhin sollte die Datei, die Sie gerade hochgeladen, im Ordner "~/Brochures haben"!
 
 
-[![Ter Datei EvolutionValley.jpg hochgeladen wurde an den Webserver](uploading-files-vb/_static/image14.gif)](uploading-files-vb/_static/image21.png)
+[![Die Datei EvolutionValley.jpg wurde an den Webserver hochgeladen](uploading-files-vb/_static/image14.gif)](uploading-files-vb/_static/image21.png)
 
 **Abbildung 14**: Die Datei `EvolutionValley.jpg` hochgeladen wurde an den Webserver ([klicken Sie, um das Bild in voller Größe anzeigen](uploading-files-vb/_static/image22.png))
 

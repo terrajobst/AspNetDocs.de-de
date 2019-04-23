@@ -9,7 +9,7 @@ ms.openlocfilehash: 42469611f94b374d6692a1c2017aced77a0a414c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403856"
 ---
 # <a name="adding-a-view"></a>Hinzufügen einer Ansicht
@@ -68,7 +68,7 @@ Zunächst, den Sie ändern möchten die &quot;Anwendungsname&quot; Link am obere
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-Layoutvorlagen können Sie die HTML-Containerlayout Ihrer Website zentral anzugeben und wenden Sie es über mehrere Seiten auf Ihrer Website. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, in dem alle ansichtsspezifischen Seiten Sie, anzeigen, erstellen &quot;umschlossen&quot; der Layoutseite. Angenommen, Sie wählen die **zu** Link die *Views\Home\About.cshtml* Ansicht gerendert wird, in der `RenderBody` Methode.
+Layoutvorlagen können Sie die HTML-Containerlayout Ihrer Website zentral anzugeben und wenden Sie es über mehrere Seiten auf Ihrer Website. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, bei dem alle ansichtsspezifischen Seiten, die Sie erstellen, von der Layoutseite &quot;umschlossen&quot; angezeigt werden. Angenommen, Sie wählen die **zu** Link die *Views\Home\About.cshtml* Ansicht gerendert wird, in der `RenderBody` Methode.
 
 Ändern Sie den Inhalt des Elements „title“. Ändern der [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) in der Layoutvorlage aus &quot;Anwendungsname&quot; zu &quot;MVC Movie&quot; und den Controller von `Home` zu `Movies`. Die vollständige Layoutdatei ist unten dargestellt:
 

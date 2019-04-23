@@ -12,7 +12,7 @@ ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398682"
 ---
 # <a name="part-8-final-pages-exception-handling-and-conclusion"></a>Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung
@@ -79,4 +79,4 @@ Wir haben gesehen, dass ASP.NET WebForms erleichtert usw. mit Zugriff auf die Da
 Hoffentlich hat in diesem Tutorial Ihnen die Tools gegeben, die Sie Ihren eigenen ASP.NET WebForms-Anwendungen zu entwickeln müssen!
 
 > [!div class="step-by-step"]
-> [Vorheriges](tailspin-spyworks-part-7.md)
+> [Vorherige](tailspin-spyworks-part-7.md)

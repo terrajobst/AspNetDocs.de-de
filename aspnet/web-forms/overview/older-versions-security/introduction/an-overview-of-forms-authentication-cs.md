@@ -12,7 +12,7 @@ ms.openlocfilehash: 5bb3cf45e50e480d81a441280842c1eec58f4877
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406872"
 ---
 # <a name="an-overview-of-forms-authentication-c"></a>Einen Überblick über die Formularauthentifizierung (c#)
@@ -85,7 +85,7 @@ Bevor wir die Formularauthentifizierung konfigurieren können, benötigen wir zu
 > Visual Studio unterstützt zwei Modi des Projektmanagements: Von Websiteprojekten und Webanwendungsprojekten. Web Site Projects fehlt eine Projektdatei, während Web Application Projects die Projektarchitektur in Visual Studio .NET 2002/2003 imitieren – sie enthalten eine Projektdatei, und Kompilieren von Quellcode des Projekts in eine einzelne Assembly, die im Ordner "/ bin" gespeichert ist. Visual Studio 2005 Projekt anfangs nur unterstützte Website, obwohl das Webanwendungsprojekt-Modell mit Service Pack 1 wieder eingeführt wurde. Visual Studio 2008 bietet beide Projektmodelle. Die Visual Web Developer 2005 und 2008-Editionen unterstützen jedoch nur von Websiteprojekten. Ich werden das Websiteprojekt-Modell verwenden. Wenn Sie eine nicht-Express-Edition verwenden und, verwenden Sie möchten die [Webanwendungsprojekt-Modell](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx) stattdessen gerne tun, aber beachten Sie, dass es möglicherweise einige Diskrepanzen zwischen der Anzeige auf Ihrem Bildschirm und welche Schritte Sie müssen im Vergleich zu den dargestellten bildschirmabbildungen und Anweisungen, die in diesen Tutorials.
 
 
-[![CErstellen eine Website New File System-Based](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
+[![Erstellen einer neuen System-basierte-Website](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
 
 **Abbildung 2**: Erstellen einer Website New File System-Based ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image4.png))
 
@@ -95,7 +95,7 @@ Bevor wir die Formularauthentifizierung konfigurieren können, benötigen wir zu
 Als Nächstes fügen Sie eine neue Master-Seite, an die Website in das Stammverzeichnis, das mit dem Namen "Site.Master". [Masterseiten](https://msdn.microsoft.com/library/wtxbf3hh.aspx) kann ein Seitenentwickler, um eine standortweite Vorlage definieren, die auf ASP.NET-Seiten angewendet werden können. Der wichtigste Vorteil von Masterseiten ist, dass die Gesamtdarstellung der Website definiert werden kann an einem zentralen Ort, sodass es einfach zu aktualisieren oder Ändern des Standorts Layout.
 
 
-[![ATT ein Master Seite mit dem Namen "Site.Master" auf der Website](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
+[![Fügen Sie eine Master-Seite mit dem Namen "Site.Master" auf der Website](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
 
 **Abbildung 3**: Fügen Sie eine Master Seite mit dem Namen "Site.Master" auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image7.png))
 
@@ -109,7 +109,7 @@ Eine Masterseite definiert sowohl statische Seitenlayouts und Bereiche, die durc
 Mit dem Markup oben eingegebenen zeigt das Umschalten zur Entwurfsansicht der Masterseite Layout aus. Alle ASP.NET-Seiten, die diese Masterseite verwenden, müssen diese einheitliche Layout, mit der Möglichkeit, geben Sie das Markup für die `MainContent` Region.
 
 
-[![Ter Masterseite, wenn anzeigen über die Entwurfsansicht](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
+[![Die Masterseite, wenn Sie über die Entwurfsansicht angezeigt](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
 
 **Abbildung 4**: Die Masterseite, die beim Anzeigen durch die Entwurfsansicht ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image10.png))
 
@@ -121,7 +121,7 @@ An diesem Punkt haben wir eine Default.aspx-Seite in unsere Website, aber es ver
 Klicken Sie dann mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie ein neues Webformular mit dem Namen "default.aspx" hinzufügen. Aktivieren Sie diesmal, das Kontrollkästchen "Masterseite auswählen", und wählen Sie aus der Liste der Site.master-Masterseite.
 
 
-[![Att, die eine neue "default.aspx" Seite auswählen einer Masterseite auswählen](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
+[![Hinzufügen einer neuen Default.aspx-Seite, die auf einer Masterseite auswählen](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
 
 **Abbildung 5**: Hinzufügen einer neuen "default.aspx" Seite auswählen einer Masterseite auswählen ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image13.png))
 
@@ -158,7 +158,7 @@ ASP.NET-Anwendungen verwenden standardmäßig die Windows-Authentifizierung. Um 
 Wenn Ihr Projekt noch nicht über eine Web.config-Datei enthält, fügen Sie eine jetzt durch mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, neues Element hinzufügen auswählen und dann eine Webkonfigurationsdatei hinzufügen.
 
 
-[![If, die Ihr Projekt noch nicht enthalten "Web.config", jetzt hinzufügen](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
+[![Wenn das Projekt "Web.config" noch nicht enthalten ist, fügen Sie ihn jetzt](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
 
 **Abbildung 7**: Wenn Ihr Projekt wird nicht noch enthalten "Web.config", jetzt hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image17.png))
 
@@ -190,7 +190,7 @@ Die Anmeldeseite hat drei Aufgaben:
 Erste Schritte mit der ersten Aufgabe. Fügen Sie eine neue ASP.NET-Seite in der Website-Root-Verzeichnis mit dem Namen "Login.aspx", und ordnen sie die Masterseite Site.master.
 
 
-[![ADd eine neue ASP.NET Seite mit dem Namen "Login.aspx"](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
+[![Hinzufügen einer neuen ASP.NET Seite mit dem Namen "Login.aspx"](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
 
 **Abbildung 8**: Hinzufügen einer neuen ASP.NET Seite mit dem Namen "Login.aspx" ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image20.png))
 
@@ -204,7 +204,7 @@ An diesem Punkt Ihr Bildschirm sollte ähnlich wie im Screenshot in Abbildung 9 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample4.aspx)]
 
 
-[![Ter Anmeldung enthält zwei Textfelder der Seite, ein Kontrollkästchen, eine Schaltfläche und einer Bezeichnung](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
+[![Die Anmeldeseite enthält, zwei Textfelder, Kontrollkästchen, eine Schaltfläche und einer Bezeichnung](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
 
 **Abbildung 9**: Die Anmeldung enthält zwei Textfelder der Seite, ein Kontrollkästchen, eine Schaltfläche und einer Bezeichnung ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image23.png))
 
@@ -250,7 +250,7 @@ Authentifizierungsticket für die Erstellung der Forms verwenden wir die UserNam
 Um die Anmeldeseite testen möchten, besuchen Sie es in einem Browser aus. Starten Sie durch Eingabe von ungültigen Anmeldeinformationen wie Benutzername von "Nope" und dem Kennwort "falsch". Nach dem Klicken auf die Schaltfläche "Anmelden" erfolgt ein Postback aus, und die InvalidCredentialsMessage Bezeichnung angezeigt.
 
 
-[![Ter InvalidCredentialsMessage Bezeichnung ist eine ungültige Anmeldeinformationen angezeigt, wenn eingeben](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
+[![Die Bezeichnung InvalidCredentialsMessage ist ungültiger Anmeldeinformationen angezeigt, wenn eingeben](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
 
 **Abbildung 10**: Die Bezeichnung InvalidCredentialsMessage ist ungültiger Anmeldeinformationen angezeigt, bei der Eingabe ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image26.png))
 
@@ -379,7 +379,7 @@ Mit folgender Ergänzung der Masterseite Site.master zeigt jede Seite in unsere 
 Da wir die Masterseite der LoginView hinzugefügt haben, können sie in jeder Seite auf unserer Website angezeigt. Allerdings gibt es möglicherweise Webseiten, in denen wir nicht diese Meldung angezeigt möchten. Eine solche Seite ist die Anmeldeseite, da Sie ein Link zur Anmeldeseite nicht zur es scheint. Da wir das LoginView-Steuerelement in ein ContentPlaceHolder-Objekt auf der Masterseite eingefügt haben, können wir diese Standard-Markup in unserer Seite mit überschreiben. Öffnen Sie "Login.aspx", und wechseln Sie in den Designer. Da wir nicht explizit ein ContentControl-Element definiert haben in "Login.aspx" für die LoginContent ContentPlaceHolder auf der Masterseite, wird die Anmeldeseite der Masterseite Standardmarkup für diese ContentPlaceHolder angezeigt. Sie können dies mithilfe des Designers – finden Sie unter den LoginContent ContentPlaceHolder zeigt das Standardmarkup (das LoginView-Steuerelement).
 
 
-[![Ter Anmeldeseite zeigt the Master Page's LoginContent ContentPlaceHolder der Standard-Editor](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
+[![Die Anmeldeseite zeigt die Standardeinstellung für die Masterseite LoginContent ContentPlaceHolder Inhalt](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
 
 **Abbildung 16**: Die Anmeldeseite der Standard-Editor zeigt, für the Master Page's LoginContent ContentPlaceHolder ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image34.png))
 
@@ -393,7 +393,7 @@ Um das Standardmarkup für das LoginContent ContentPlaceHolder zu überschreiben
 Abbildung 17 zeigt die Seite "Login.aspx", wenn in einem Browser aufgerufen, nachdem diese Änderung vorgenommen. Beachten Sie, dass es keine "Hello, stranger" oder "Willkommen zurück, *Benutzername*" Nachricht in der linken Navigationsleiste &lt;Div&gt; wie beim Zugriff auf "default.aspx".
 
 
-[![Ter Anmeldeseite wird die standardmäßige LoginContent ContentPlaceHolder Markup ausgeblendet](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
+[![Die Anmeldeseite wird die Standard-LoginContent ContentPlaceHolder Markup ausgeblendet.](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
 
 **Abbildung 17**: Die Anmeldeseite wird ausgeblendet, die standardmäßige LoginContent ContentPlaceHolder Markup ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image37.png))
 
@@ -424,12 +424,12 @@ Da das LoginStatus außerhalb der LoginView-Steuerelement ist, für sowohl anony
 Abbildung 18 zeigt "default.aspx" auf, wenn Jisun besucht. Beachten Sie, dass die linke Spalte die Meldung "Willkommen zurück, Jisun" zusammen mit einem Link zum Abmelden angezeigt. Klicken Sie auf die Abmeldung LinkButton ein Postback auslöst, Jisun aus dem System registriert und leitet sie dann auf Logout.aspx. Wie in Abbildung 19, mit der Zeit dargestellt, die Jisun Logout.aspx erreicht, er hat bereits abgemeldet und ist deshalb anonym. Daher die linke Spalte zeigt den Text "Willkommen, stranger" und einen Link zur Anmeldeseite.
 
 
-[![Ddefault.aspx zeigt](an-overview-of-forms-authentication-cs/_static/image39.png)](an-overview-of-forms-authentication-cs/_static/image38.png)
+[!["Default.aspx" zeigt](an-overview-of-forms-authentication-cs/_static/image39.png)](an-overview-of-forms-authentication-cs/_static/image38.png)
 
 **Abbildung 18**: "Default.aspx" zeigt "Willkommen zurück, Jisun" zusammen mit "Logout" LinkButton ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image40.png))
 
 
-[![Logout.aspx zeigt](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
+[![Logout.aspx Shows](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
 
 **Abbildung 19**: Logout.aspx zeigt "Willkommen, stranger" zusammen mit einem LinkButton "Login" ([klicken Sie, um das Bild in voller Größe anzeigen](an-overview-of-forms-authentication-cs/_static/image43.png))
 
@@ -455,7 +455,7 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 - [Änderungen zwischen IIS 6 und IIS 7-Sicherheit](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [Anmeldung von ASP.NET-Steuerelementen](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [Professional ASP.NET 2.0 Security, Mitgliedschafts- und Rollenverwaltung](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN-Nummer: 978-0-7645-9698-8)
-- [Das `<authentication>`-Element](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [Die `<authentication>` Element](https://msdn.microsoft.com/library/532aee0e.aspx)
 - [Die `<forms>` -Element für `<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>In den Themen in diesem Tutorial-Videotraining

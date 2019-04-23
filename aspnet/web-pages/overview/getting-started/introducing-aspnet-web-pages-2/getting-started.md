@@ -12,7 +12,7 @@ ms.openlocfilehash: 796e0c5e605d1103a4b9937b4e698c5c9412c013
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402296"
 ---
 # <a name="getting-started"></a>Erste Schritte
@@ -289,4 +289,4 @@ Im nächsten Tutorial dieser Reihe untersuchen Sie die ASP.NET Web Pages Program
 [Erstellen eine ASP.NET-Website von Grund auf Neu](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch). Dies ist ein Tutorial, das speziell zur Verwendung von WebMatrix (nicht ASP.NET Web Pages). Danach wird in ein wenig genauer Informationen zu den zusätzlichen Features des WebMatrix, die wir nicht in diesen Tutorials erläutert.
 
 > [!div class="step-by-step"]
-> [Weiter](intro-to-web-pages-programming.md)
+> [Nächste](intro-to-web-pages-programming.md)

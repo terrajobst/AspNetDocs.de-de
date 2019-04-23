@@ -12,7 +12,7 @@ ms.openlocfilehash: 960cd6f82909919d07e976a90691c4a7d7fb3686
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406430"
 ---
 # <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-Bildschirmpräsentation?

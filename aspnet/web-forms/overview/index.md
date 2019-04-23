@@ -12,7 +12,7 @@ ms.openlocfilehash: 4b38d6b54f53508f7b568207fe7f1a624a7af5f3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402270"
 ---
 # <a name="aspnet-web-forms-guidance"></a>ASP.NET Web Forms-Leitfaden
@@ -60,7 +60,7 @@ ms.locfileid: "59402270"
 
     - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](deployment/visual-studio-web-deployment/index.md)
 
-        - [Einführung](deployment/visual-studio-web-deployment/introduction.md)
+        - [Introduction (Einführung)](deployment/visual-studio-web-deployment/introduction.md)
         - [Vorbereiten für die Datenbankbereitstellung](deployment/visual-studio-web-deployment/preparing-databases.md)
         - [Umwandlungen für die Datei „Web.config“](deployment/visual-studio-web-deployment/web-config-transformations.md)
         - [Projekteigenschaften](deployment/visual-studio-web-deployment/project-properties.md)
@@ -75,7 +75,7 @@ ms.locfileid: "59402270"
     - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](deployment/deploying-web-applications-in-enterprise-scenarios/index.md)
 
         - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-        - [Erweiterte webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+        - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
         - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
     - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](deployment/web-deployment-in-the-enterprise/index.md)
 
@@ -130,10 +130,10 @@ ms.locfileid: "59402270"
 
     - [ASP.NET 4 – Tailspin Spyworks](older-versions-getting-started/tailspin-spyworks/index.md)
 
-        - [Teil 1: Datei > Neues Projekt](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+        - [Teil 1: Datei -> Neues Projekt](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
         - [Teil 2: Datenzugriffsebene](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
         - [Teil 3: Layout- und Kategoriemenü](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
-        - [Teil 4: Auflisten von Produkten](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
+        - [Teil 4: Auflistung von Produkten](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
         - [Teil 5: Geschäftslogik](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
         - [Teil 6: ASP.NET-Mitgliedschaft](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
         - [Teil 7: Hinzufügen von Funktionen](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
@@ -150,9 +150,9 @@ ms.locfileid: "59402270"
         - [Erste Schritte mit Entity Framework 4.0 Database First – Teil 8](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
     - [ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)](older-versions-getting-started/continuing-with-ef/index.md)
 
-        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikschicht und von Komponententests](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-        - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und Komponententests](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+        - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
         - [Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4](older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4](older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Neue Funktionen in Entity Framework 4.0](older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -167,7 +167,7 @@ ms.locfileid: "59402270"
         - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen in der Produktionsumgebung](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
         - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines ausschließlich codebasierten Updates](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
         - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines Datenbankupdates](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-        - [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren zu SQL Server](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
+        - [Visual Studio-Webbereitstellung mit SQL Server Compact – Migrieren nach SQL Server](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
         - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen eines SQL Server-Datenbankupdates](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
         - [Visual Studio-Webbereitstellung mit SQL Server Compact – Problembehandlung](older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)
     - [ASP.NET 3.5 – AJAX](older-versions-getting-started/aspnet-ajax/index.md)
@@ -185,7 +185,7 @@ ms.locfileid: "59402270"
         - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (C#)](older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
         - [URLs auf Masterseiten (C#)](older-versions-getting-started/master-pages/urls-in-master-pages-cs.md)
         - [Benennung von Steuerelement-IDs auf Inhaltsseiten (C#)](older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs.md)
-        - [Interaktion mit der Inhaltsseite von der Masterseite (C#)](older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs.md)
+        - [Interaktion mit der Masterseite von der Inhaltsseite (C#)](older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs.md)
         - [Interaktion mit der Inhaltsseite von der Masterseite (C#)](older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs.md)
         - [Masterseiten und ASP.NET AJAX (C#)](older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs.md)
         - [Programmgesteuertes Festlegen der Masterseite (C#)](older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs.md)
@@ -195,7 +195,7 @@ ms.locfileid: "59402270"
         - [Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (VB)](older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)
         - [URLs auf Masterseiten (VB)](older-versions-getting-started/master-pages/urls-in-master-pages-vb.md)
         - [Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)](older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb.md)
-        - [Interaktion mit der Inhaltsseite über die Masterseite (VB)](older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb.md)
+        - [Interaktion mit der Masterseite über die Inhaltsseite (VB)](older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb.md)
         - [Interaktion mit der Inhaltsseite über die Masterseite (VB)](older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb.md)
         - [Masterseiten und ASP.NET AJAX (VB)](older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb.md)
         - [Programmgesteuertes Festlegen der Masterseite (VB)](older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb.md)
@@ -364,7 +364,7 @@ ms.locfileid: "59402270"
         - [Verwenden von mehreren Popupsteuerelementen (VB)](ajax-control-toolkit/popup/using-multiple-popup-controls-vb.md)
         - [Verarbeiten von Postbacks über ein Popupsteuerelement mit einem UpdatePanel-Steuerelement (VB)](ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
         - [Verarbeiten von Postbacks über ein Popupsteuerelement ohne ein UpdatePanel-Steuerelement (VB)](ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-    - [Bewertung](ajax-control-toolkit/rating/index.md)
+    - [Rating](ajax-control-toolkit/rating/index.md)
 
         - [Erstellen eines Bewertungssteuerelements (C#)](ajax-control-toolkit/rating/creating-a-rating-control-cs.md)
         - [Erstellen eines Bewertungssteuerelements (VB)](ajax-control-toolkit/rating/creating-a-rating-control-vb.md)
@@ -374,10 +374,10 @@ ms.locfileid: "59402270"
         - [Drag & Drop über ReorderList (C#)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md)
         - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md)
         - [Drag & Drop über ReorderList (VB)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb.md)
-    - [Slider](ajax-control-toolkit/slider/index.md)
+    - [Schieberegler](ajax-control-toolkit/slider/index.md)
 
         - [Schieberegler-Steuerelement mit automatischem Postback (C#)](ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md)
-        - [Datenbindung des Schieberegler-Steuerelements (C#)](ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)
+        - [Datenbindung des Schieberegler-Steuerelements](ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)
         - [Schieberegler-Steuerelement mit automatischem Postback (VB)](ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-vb.md)
         - [Datenbindung des Schieberegler-Steuerelements (VB)](ajax-control-toolkit/slider/databinding-the-slider-control-vb.md)
     - [TextBoxWatermark](ajax-control-toolkit/textboxwatermark/index.md)
@@ -388,7 +388,7 @@ ms.locfileid: "59402270"
         - [Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)](ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb.md)
 - [Ältere Versionen – Datenzugriff](data-access/index.md)
 
-    - [Einführung](data-access/introduction/index.md)
+    - [Introduction (Einführung)](data-access/introduction/index.md)
 
         - [Erstellen einer Datenzugriffsschicht (C#)](data-access/introduction/creating-a-data-access-layer-cs.md)
         - [Erstellen einer Geschäftslogikebene (C#)](data-access/introduction/creating-a-business-logic-layer-cs.md)
@@ -616,7 +616,7 @@ ms.locfileid: "59402270"
     - [Masterseiten](moving-to-aspnet-20/master-pages.md)
     - [Datenquellen-Steuerelemente](moving-to-aspnet-20/data-source-controls.md)
     - [Datengebundene Steuerelemente](moving-to-aspnet-20/data-bound-controls.md)
-    - [Zwischenspeicherung](moving-to-aspnet-20/caching.md)
+    - [Zwischenspeichern](moving-to-aspnet-20/caching.md)
     - [Mitgliedschaft](moving-to-aspnet-20/membership.md)
     - [Konfiguration und Instrumentierung](moving-to-aspnet-20/configuration-and-instrumentation.md)
     - [Profile, Designs und Webparts](moving-to-aspnet-20/profiles-themes-and-web-parts.md)

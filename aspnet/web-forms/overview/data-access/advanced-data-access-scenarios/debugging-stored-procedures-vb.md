@@ -12,7 +12,7 @@ ms.openlocfilehash: 6dda18eb27d45f8dfdb4803cf3aca3ffe96bf11e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406560"
 ---
 # <a name="debugging-stored-procedures-vb"></a>Definieren von gespeicherten Prozeduren (VB)
@@ -67,7 +67,7 @@ Da die `Products_SelectByCategoryID` gespeicherte Prozedur erwartet, dass eine `
 Nach dem Bereitstellen des Werts für die `@CategoryID` Parameter der gespeicherten Prozedur ausgeführt wird. Anstatt bis zum Abschluss ausgeführt, jedoch hält der Debugger die Ausführung bei der ersten Anweisung. Beachten Sie den gelben Pfeil in den Rand, der angibt, der aktuellen Position in der gespeicherten Prozedur. Sie können anzeigen und Bearbeiten von Parameterwerten, die über das Fenster "überwachen" oder mit dem Mauszeiger auf den Parameternamen in der gespeicherten Prozedur.
 
 
-[![Ter Debugger wurde für die erste Anweisung der gespeicherten Prozedur angehalten](debugging-stored-procedures-vb/_static/image3.png)](debugging-stored-procedures-vb/_static/image2.png)
+[![Der Debugger wurde für die erste Anweisung der gespeicherten Prozedur angehalten.](debugging-stored-procedures-vb/_static/image3.png)](debugging-stored-procedures-vb/_static/image2.png)
 
 **Abbildung 2**: Der Debugger wurde angehalten, für die erste Anweisung der gespeicherten Prozedur ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image4.png))
 
@@ -85,7 +85,7 @@ Beim Debuggen einer gespeicherten Prozedur direkt über den Server-Explorer ist,
 Bevor wir mit dem Debuggen von gespeicherten Prozeduren, die aufgerufen wird, von der Anwendung beginnen können, müssen wir die ASP.NET-Webanwendung für die Integration von SQL Server-Debugger anweisen. Starten, indem Sie mit der rechten Maustaste auf den Namen der Website im Projektmappen-Explorer (`ASPNET_Data_Tutorial_74_VB`). Wählen Sie die Eigenschaftenseiten-Option im Kontextmenü, wählen Sie das Element "Startoptionen" auf der linken Seite und aktivieren Sie das SQL Server-Kontrollkästchen im Abschnitt Debugger (siehe Abbildung 3).
 
 
-[![CPrüfen Sie das SQL Server-Kontrollkästchen in der Anwendung-s-Eigenschaftenseiten](debugging-stored-procedures-vb/_static/image6.png)](debugging-stored-procedures-vb/_static/image5.png)
+[![Aktivieren Sie das SQL Server-Kontrollkästchen in der Anwendung s-Eigenschaftenseiten](debugging-stored-procedures-vb/_static/image6.png)](debugging-stored-procedures-vb/_static/image5.png)
 
 **Abbildung 3**: Aktivieren Sie das SQL Server-Kontrollkästchen in der Anwendung-s-Eigenschaftenseiten ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image7.png))
 
@@ -108,7 +108,7 @@ An diesem Punkt wurde die ASP.NET-Anwendung konfiguriert, um Visual Studio zum D
 Öffnen der `Products_SelectByCategoryID` gespeicherte Prozedur, und legen Sie einen Haltepunkt am Anfang der `SELECT` Anweisung durch Klicken auf den Rand bei der entsprechenden Stelle platzieren den Cursor am Anfang oder das `SELECT` -Anweisung und drücken F9. Wie in Abbildung 4 dargestellt, wird der Haltepunkt als roter Kreis im Rand angezeigt.
 
 
-[![Set ein Haltepunkt in der Products_SelectByCategoryID gespeicherte Prozedur](debugging-stored-procedures-vb/_static/image9.png)](debugging-stored-procedures-vb/_static/image8.png)
+[![Festlegen eines Haltepunkts in der Products_SelectByCategoryID gespeicherten Prozedur](debugging-stored-procedures-vb/_static/image9.png)](debugging-stored-procedures-vb/_static/image8.png)
 
 **Abbildung 4**: Festlegen eines Haltepunkts in der `Products_SelectByCategoryID` Stored Procedure ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image10.png))
 
@@ -126,12 +126,12 @@ Mit dem gesetzten Haltepunkt und die Anwendungsdebuggen-Option aktiviert sind wi
 Die `Products_SelectByCategoryID` gespeicherte Prozedur wurde erstellt, der [vorhandene gespeicherte Prozeduren verwenden, für die typisierte DataSet-s TableAdapters](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) Tutorial. Die entsprechende Webseite (`~/AdvancedDAL/ExistingSprocs.aspx`) enthält eine GridView, die von dieser gespeicherten Prozedur zurückgegebenen Ergebnisse werden angezeigt. Besuchen Sie diese Seite über den Browser aus. Beim Erreichen der Seite, die den Haltepunkt in der `Products_SelectByCategoryID` gespeicherte Prozedur wird erreicht, und Visual Studio die Steuerung zurückgegeben. Genau wie in Schritt 1, können Sie schrittweise Durchlaufen der gespeicherten Prozedur s-Anweisungen und die Ansicht und die Parameterwerte ändern.
 
 
-[![Ter ExistingSprocs.aspx Seite werden zuerst angezeigt. die Getränke](debugging-stored-procedures-vb/_static/image13.png)](debugging-stored-procedures-vb/_static/image12.png)
+[![Die Seite ExistingSprocs.aspx werden zuerst die Getränke angezeigt.](debugging-stored-procedures-vb/_static/image13.png)](debugging-stored-procedures-vb/_static/image12.png)
 
 **Abbildung 6**: Die `ExistingSprocs.aspx` Seite zeigt zu Beginn der Getränke ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image14.png))
 
 
-[![Ter gespeicherte Prozedur s Haltepunkt wurde erreicht](debugging-stored-procedures-vb/_static/image16.png)](debugging-stored-procedures-vb/_static/image15.png)
+[![Die gespeicherte Prozedur s Haltepunkt wurde erreicht](debugging-stored-procedures-vb/_static/image16.png)](debugging-stored-procedures-vb/_static/image15.png)
 
 **Abbildung 7**: Die gespeicherte Prozedur s Haltepunkt erreicht wurde ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image17.png))
 
@@ -139,12 +139,12 @@ Die `Products_SelectByCategoryID` gespeicherte Prozedur wurde erstellt, der [vor
 Als das Fenster "überwachen" in Abbildung 7 zeigt, der Wert des der `@CategoryID` -Parameter ist 1. Grund hierfür ist die `ExistingSprocs.aspx` Seite zeigt anfänglich Produkte in der Kategorie "Getränke", die eine `CategoryID` Wert 1. Wählen Sie eine andere Kategorie aus der Dropdown Liste ein. Dies führt dazu, dass einen Postback und führt erneut die `Products_SelectByCategoryID` gespeicherte Prozedur. Der Haltepunkt erreicht wird, erneut aus, aber dieses Mal die `@CategoryID` s-Parameterwert entspricht dem ausgewählten Dropdown-Listenfeld-Element s `CategoryID`.
 
 
-[![CWählen Sie eine andere Kategorie aus der Dropdown-Liste aus](debugging-stored-procedures-vb/_static/image19.png)](debugging-stored-procedures-vb/_static/image18.png)
+[![Wählen Sie eine andere Kategorie aus der Dropdown Liste](debugging-stored-procedures-vb/_static/image19.png)](debugging-stored-procedures-vb/_static/image18.png)
 
 **Abbildung 8**: Wählen Sie eine andere Kategorie aus der Dropdown Liste ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image20.png))
 
 
-[![Ter @CategoryID Parameter gibt die Kategorie, die von der Webseite ausgewählt](debugging-stored-procedures-vb/_static/image22.png)](debugging-stored-procedures-vb/_static/image21.png)
+[![Die @CategoryID Parameter gibt die Kategorie, die von der Webseite ausgewählt](debugging-stored-procedures-vb/_static/image22.png)](debugging-stored-procedures-vb/_static/image21.png)
 
 **Abbildung 9**: Die `@CategoryID` Parameter gibt die Kategorie, die von der Webseite ausgewählt ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image23.png))
 

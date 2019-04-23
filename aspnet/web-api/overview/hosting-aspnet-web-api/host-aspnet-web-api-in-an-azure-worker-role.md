@@ -13,7 +13,7 @@ ms.openlocfilehash: bfb23aafb814010e8651965dad91ca20a37fd786
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404623"
 ---
 # <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Hosten von ASP.NET Web-API 2 in ein Azure-Workerrolle
@@ -29,7 +29,7 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
 >
 >
-> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web-API 2
 > - [Azure SDK für .NET 2.3](https://azure.microsoft.com/downloads/)
 

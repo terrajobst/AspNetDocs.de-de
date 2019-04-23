@@ -12,7 +12,7 @@ ms.openlocfilehash: fa489c79e175753635d89913aaaa15a832aa16f7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407587"
 ---
 # <a name="signalr"></a>SignalR
@@ -21,13 +21,13 @@ ms.locfileid: "59407587"
 
     - [Erste Schritte](overview/getting-started/index.md)
 
-        - [Einführung in SignalR](overview/getting-started/introduction-to-signalr.md)
+        - [Einführung zu SignalR](overview/getting-started/introduction-to-signalr.md)
         - [Unterstützte Plattformen](overview/getting-started/supported-platforms.md)
         - [Tutorial: Erste Schritte mit SignalR 2](overview/getting-started/tutorial-getting-started-with-signalr.md)
         - [Tutorial: Erste Schritte mit SignalR 2 und MVC 5](overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
         - [Tutorial: Echtzeitnachrichten mit SignalR 2](overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
         - [Tutorial: Serverübertragung mit SignalR 2](overview/getting-started/tutorial-server-broadcast-with-signalr.md)
-        - [Praktische Übungseinheiten: Echtzeit-Webanwendungen mit SignalR](overview/getting-started/real-time-web-applications-with-signalr.md)
+        - [Praxisnahe Übung: Echtzeit-Webanwendungen mit SignalR](overview/getting-started/real-time-web-applications-with-signalr.md)
     - [Leitfaden für die API](overview/guide-to-the-api/index.md)
 
         - [Leitfaden für die Hubs-API – Server (C#)](overview/guide-to-the-api/hubs-api-guide-server.md)
@@ -38,19 +38,19 @@ ms.locfileid: "59407587"
         - [Zuordnen von SignalR-Benutzern zu Verbindungen](overview/guide-to-the-api/mapping-users-to-connections.md)
     - [Testen und Debuggen](overview/testing-and-debugging/index.md)
 
-        - [Problembehandlung für SignalR](overview/testing-and-debugging/troubleshooting.md)
+        - [Behandlung von Problemen bei SignalR](overview/testing-and-debugging/troubleshooting.md)
         - [Komponententests für SignalR-Anwendungen](overview/testing-and-debugging/unit-testing-signalr-applications.md)
         - [Aktivieren der Ablaufverfolgung für SignalR](overview/testing-and-debugging/enabling-signalr-tracing.md)
     - [Sicherheit](overview/security/index.md)
 
-        - [Einführung in die Sicherheit von SignalR-Anwendungen](overview/security/introduction-to-security.md)
+        - [Einführung zur Sicherheit von SignalR-Anwendungen](overview/security/introduction-to-security.md)
         - [Authentifizierung und Autorisierung für SignalR-Hubs](overview/security/hub-authorization.md)
         - [Authentifizierung und Autorisierung für permanente SignalR-Verbindungen](overview/security/persistent-connection-authorization.md)
     - [Leistung](overview/performance/index.md)
 
         - [SignalR-Leistung](overview/performance/signalr-performance.md)
         - [Einführung zur horizontalen Skalierung in SignalR](overview/performance/scaleout-in-signalr.md)
-        - [Horizontale Skalierung in SignalR mit Azure Service Bus](overview/performance/scaleout-with-windows-azure-service-bus.md)
+        - [Horizontale Skalierung in SignalR mit dem Azure Service Bus](overview/performance/scaleout-with-windows-azure-service-bus.md)
         - [Horizontale Skalierung in SignalR mit Redis](overview/performance/scaleout-with-redis.md)
         - [Horizontale Skalierung in SignalR mit SQL Server](overview/performance/scaleout-with-sql-server.md)
         - [Testen der Verbindungsdichte in SignalR mit Crank](overview/performance/signalr-connection-density-testing-with-crank.md)
@@ -62,7 +62,7 @@ ms.locfileid: "59407587"
     - [Erweitert](overview/advanced/index.md)
 
         - [Abhängigkeitsinjektion in SignalR](overview/advanced/dependency-injection.md)
-    - [Versionen](overview/releases/index.md)
+    - [Freigaben](overview/releases/index.md)
 
         - [Durchführen eines Upgrades für SignalR 1.x-Projekte auf Version 2](overview/releases/upgrading-signalr-1x-projects-to-20.md)
     - [Ältere Versionen](overview/older-versions/index.md)
@@ -77,15 +77,15 @@ ms.locfileid: "59407587"
         - [Überblick und Behandeln von Ereignissen im Zusammenhang mit der Verbindungslebensdauer in SignalR](overview/older-versions/handling-connection-lifetime-events.md)
         - [Arbeiten mit Gruppen in SignalR 1.x](overview/older-versions/working-with-groups.md)
         - [Zuordnen von SignalR-Benutzern zu Verbindungen in SignalR 1.x](overview/older-versions/mapping-users-to-connections.md)
-        - [Einführung in die Sicherheit von SignalR-Anwendungen (SignalR 1.x)](overview/older-versions/introduction-to-security.md)
+        - [Einführung zur Sicherheit von SignalR-Anwendungen (SignalR 1.x)](overview/older-versions/introduction-to-security.md)
         - [Authentifizierung und Autorisierung für SignalR-Hubs (SignalR 1.x)](overview/older-versions/hub-authorization.md)
         - [Authentifizierung und Autorisierung für permanente SignalR-Verbindungen (SignalR 1.x)](overview/older-versions/persistent-connection-authorization.md)
         - [SignalR-Leistung (SignalR 1.x)](overview/older-versions/signalr-performance.md)
-        - [Einführung in die horizontale Skalierung in SignalR 1.x](overview/older-versions/scaleout-in-signalr.md)
-        - [Horizontale Skalierung in SignalR mit Azure Service Bus (SignalR 1.x)](overview/older-versions/scaleout-with-windows-azure-service-bus.md)
+        - [Einführung zur horizontalen Skalierung in SignalR 1.x](overview/older-versions/scaleout-in-signalr.md)
+        - [Horizontale Skalierung in SignalR mit dem Azure Service Bus (SignalR 1.x)](overview/older-versions/scaleout-with-windows-azure-service-bus.md)
         - [Horizontale Skalierung in SignalR mit Redis (SignalR 1.x)](overview/older-versions/scaleout-with-redis.md)
         - [Horizontale Skalierung in SignalR mit SQL Server (SignalR 1.x)](overview/older-versions/scaleout-with-sql-server.md)
-        - [Problembehandlung für SignalR (SignalR 1.x)](overview/older-versions/troubleshooting.md)
+        - [Behandlung von Problemen bei SignalR (SignalR 1.x)](overview/older-versions/troubleshooting.md)
         - [Abhängigkeitsinjektion in SignalR 1.x](overview/older-versions/dependency-injection.md)
 - [Videos](videos/index.md)
 

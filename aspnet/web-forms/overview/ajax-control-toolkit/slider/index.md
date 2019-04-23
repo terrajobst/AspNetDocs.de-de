@@ -12,7 +12,7 @@ ms.openlocfilehash: 176fd901a927d85cc048b5af07afb120d15c70e9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399247"
 ---
 # <a name="slider"></a>Slider
@@ -21,6 +21,6 @@ ms.locfileid: "59399247"
 
 
 - [Schieberegler-Steuerelement mit automatischem Postback (C#)](using-the-slider-control-with-auto-postback-cs.md)
-- [Datenbindung des Schieberegler-Steuerelements (C#)](databinding-the-slider-control-cs.md)
+- [Datenbindung des Schieberegler-Steuerelements](databinding-the-slider-control-cs.md)
 - [Schieberegler-Steuerelement mit automatischem Postback (VB)](using-the-slider-control-with-auto-postback-vb.md)
 - [Datenbindung des Schieberegler-Steuerelements (VB)](databinding-the-slider-control-vb.md)

@@ -12,21 +12,21 @@ ms.openlocfilehash: 74ebdc39a81d31fb3c1ef3e5bab1857915cdc247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400936"
 ---
 # <a name="aspnet-single-page-application"></a>ASP.NET-Single-Page-Anwendung
 
 - [Übersicht](overview/index.md)
 
-    - [Einführung](overview/introduction/index.md)
+    - [Introduction (Einführung)](overview/introduction/index.md)
 
-        - [Single-Page-Webanwendung: KnockoutJS-Vorlage](overview/introduction/knockoutjs-template.md)
+        - [Einzelseitenanwendung: Knockout.js-Vorlage](overview/introduction/knockoutjs-template.md)
         - [Andere Bibliotheken als Knockout](overview/introduction/other-libraries.md)
     - [Vorlagen](overview/templates/index.md)
 
-        - [Backbone-Vorlage](overview/templates/backbonejs-template.md)
-        - [Breeze-/Angular-Vorlage](overview/templates/breezeangular-template.md)
-        - [Breeze-/Knockout-Vorlage](overview/templates/breezeknockout-template.md)
-        - [EmberJS-Vorlage](overview/templates/emberjs-template.md)
+        - [Backbone.js-Vorlage](overview/templates/backbonejs-template.md)
+        - [Breeze.js-/Angular.js-Vorlage](overview/templates/breezeangular-template.md)
+        - [Breeze.js-/Knockout.js-Vorlage](overview/templates/breezeknockout-template.md)
+        - [Ember.js-Vorlage](overview/templates/emberjs-template.md)
         - [Hot Towel-Vorlage](overview/templates/hottowel-template.md)

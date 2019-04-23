@@ -12,7 +12,7 @@ ms.openlocfilehash: 8a1f0f929e2e2ee01a4567cb502e5fd908d8c90b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402790"
 ---
 # <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>Einfügen, Aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (C#)
@@ -50,7 +50,7 @@ Sobald ein `InsertCommand`, `UpdateCommand`, oder `DeleteCommand` Wert angegeben
 Öffnen Sie zunächst die `InsertUpdateDelete.aspx` und `Querying.aspx` Seiten aus der `SqlDataSource` Ordner. Im Designer auf die `Querying.aspx` Seite, wählen Sie aus dem ersten Beispiel SqlDataSource-Steuerelement und GridView (die `ProductsDataSource` und `GridView1` Steuerelemente). Finden Sie nachdem Sie die beiden Steuerelemente haben unter dem Menü "Bearbeiten" und wählen Sie kopieren (oder drücken Sie STRG + C nur). Navigieren Sie anschließend auf den Designer der `InsertUpdateDelete.aspx` , und fügen Sie in den Steuerelementen. Nachdem Sie auf die beiden Steuerelemente, über verschoben haben `InsertUpdateDelete.aspx`, testen Sie die Seite in einem Browser. Daraufhin sollte die Werte der `ProductID`, `ProductName`, und `UnitPrice` Spalten für alle Datensätze in der `Products` Datenbanktabelle.
 
 
-[![AAlle Produkte aufgeführt sind, sortiert nach "ProductID"](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.png)
+[![Alle Produkte aufgeführt sind, sortiert nach "ProductID",](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.png)
 
 **Abbildung 1**: Alle Produkte aufgeführt sind, sortiert nach `ProductID` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image2.png))
 
@@ -87,7 +87,7 @@ Klicken Sie auf die Auslassungspunkte in der DeleteQuery-Eigenschaft, um das Dia
 Klicken Sie dann auf die Schaltfläche "Parameter aktualisieren", Hinzufügen der `@ProductID` Parameter, um die Liste der folgenden Parameter.
 
 
-[![SWählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.png)
+[![Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.png)
 
 **Abbildung 3**: Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.png))
 
@@ -111,7 +111,7 @@ Beachten Sie das Hinzufügen der `DeleteCommand` Eigenschaft als auch die `<Dele
 Mit der `DeleteCommand` Eigenschaft hinzugefügt, das GridView-s-Smarttag enthält jetzt die Option löschen aktivieren. Fahren Sie fort, und aktivieren Sie dieses Kontrollkästchen. Siehe [eine Übersicht der einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md), dies bewirkt, dass die GridView eine CommandField mit Hinzufügen der `ShowDeleteButton` -Eigenschaft auf festgelegt `true`. Abbildung 4 zeigt, wenn die Seite über einen Browser zugegriffen wird, an denen eine Löschen-Schaltfläche enthalten ist. Testen Sie diese Seite, löschen Sie einige Produkte.
 
 
-[![Ean GridView-Zeile enthält jetzt eine Schaltfläche Löschen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.png)
+[![Jede Zeile GridView enthält jetzt eine Schaltfläche "löschen"](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.png)
 
 **Abbildung 4**: Jede GridView-Zeile enthält jetzt eine Löschen-Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.png))
 
@@ -137,7 +137,7 @@ Schritt 1 untersucht `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen können ü
 Lassen Sie s, die diese Option für die automatische Generierung nutzen. Hinzufügen des Designers in einem DetailsView `InsertUpdateDelete.aspx` und legen Sie seine `ID` Eigenschaft `ManageProducts`. Von DetailsView s Smarttags, wählen Sie als Nächstes erstellen eine neue Datenquelle, und erstellen ein SqlDataSource-Steuerelement mit dem Namen `ManageProductsDataSource`.
 
 
-[![CErstellen eine neue SqlDataSource-Steuerelement mit dem Namen ManageProductsDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.png)
+[![Erstellen Sie eine neue SqlDataSource-Steuerelement mit dem Namen ManageProductsDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.png)
 
 **Abbildung 6**: Erstellen Sie eine neue SqlDataSource-Steuerelement mit dem Namen `ManageProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image8.png))
 
@@ -145,7 +145,7 @@ Lassen Sie s, die diese Option für die automatische Generierung nutzen. Hinzuf�
 Deaktivieren Sie im Konfigurieren von Datenquellen-Assistenten werden Sie zum Verwenden der `NORTHWINDConnectionString` Verbindung Zeichenfolge ein, und klicken Sie auf Weiter. Aus dem Bildschirm für die Select-Anweisung konfigurieren, lassen Sie die Spalten angeben, aus einer Tabelle oder Sicht Optionsfeld ausgewählt, und wählen Sie die `Products` Tabelle aus der Dropdown-Liste. Wählen Sie die `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten aus der Liste das Kontrollkästchen.
 
 
-[![UMelden Sie sich die Products-Tabelle, die zurückgegeben werden, die ProductID, ProductName, UnitPrice und Spalten nicht mehr unterstützte](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.png)
+[![Verwenden die Products-Tabelle, die ProductID, ProductName, UnitPrice und nicht mehr unterstützte Spalten zurückgeben](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.png)
 
 **Abbildung 7**: Mithilfe der `Products` Table, Zurückgeben der `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image10.png))
 
@@ -173,7 +173,7 @@ Beachten Sie, wie das SqlDataSource-Steuerelement automatisch für die festgeleg
 Besuchen Sie die Seite in einem Browser, und notieren Sie sich, das Bearbeiten, löschen und neue Schaltflächen in DetailsView enthalten. Klicken Sie auf die Schaltfläche "Bearbeiten" DetailsView in den Bearbeitungsmodus, in dem jede BoundField angezeigt wird, dessen `ReadOnly` -Eigenschaftensatz auf `false` (Standard) als ein Textfeld, und die CheckBoxField als Kontrollkästchen.
 
 
-[![Ter DetailsView-s-Standard bearbeiten Schnittstelle](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image11.png)
+[![Das DetailsView-s-Standard Bearbeitungsschnittstelle](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image11.png)
 
 **Abbildung 9**: Das DetailsView-s-Standard bearbeiten-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image12.png))
 

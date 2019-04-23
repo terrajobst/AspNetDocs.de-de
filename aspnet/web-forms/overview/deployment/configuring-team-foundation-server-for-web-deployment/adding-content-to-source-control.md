@@ -12,7 +12,7 @@ ms.openlocfilehash: a609b761543e4994aa4a7f86636bd16e9cd74683
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396719"
 ---
 # <a name="adding-content-to-source-control"></a>Hinzufügen von Inhalten zur Quellcodeverwaltung

@@ -12,7 +12,7 @@ ms.openlocfilehash: 66b6df78a8ffed3ea7c586a995b8df8563d908bb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407210"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Konfigurieren der Produktionswebanwendung mithilfe der Produktionsdatenbank (VB)
@@ -53,7 +53,7 @@ Sie können manuell mit einer Website wie die Datenbank-Verbindungszeichenfolge 
 Öffnen Sie Visual Studio, und navigieren Sie zum Server Explorer-Fensters (in Visual Web Developer dieses Fenster genannt Datenbank-Explorer angezeigt). Mit der rechten Maustaste auf die Option Data Connections, und wählen Sie im Kontextmenü die Option Verbindung hinzufügen. Dadurch wird der Assistent, der in Abbildung 1 dargestellt. Wählen Sie die entsprechende Datenquelle aus, und klicken Sie auf Weiter.
 
 
-[![CWählen Sie aus, um eine neue Datenbank hinzufügen, um den Server-Explorer](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
+[![Wählen Sie eine neue Datenbank im Server-Explorer hinzu](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
 
 **Abbildung 1**: Wählen Sie im Server-Explorer eine neue Datenbank hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image3.jpg))
 
@@ -61,7 +61,7 @@ Sie können manuell mit einer Website wie die Datenbank-Verbindungszeichenfolge 
 Geben Sie als Nächstes die verschiedenen Datenbank-Verbindungsinformationen (siehe Abbildung 2). Wenn Sie sich mit Ihrem Webhosting registriert, haben sollte sie bereitgestellt haben Informationen zum Verbinden mit der Datenbank – den Namen des Datenbankservers, den Datenbanknamen, den Benutzernamen und ein Kennwort zum Verbinden mit der Datenbank, und so weiter. Klicken Sie nach Eingabe dieser Informationen auf OK, um diesen Assistenten abzuschließen und um die Datenbank auf dem Server-Explorer hinzuzufügen.
 
 
-[![SAngeben der Informationen zur Datenbankverbindung](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
+[![Geben Sie die Datenbank-Verbindungsinformationen](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
 
 **Abbildung 2**: Geben Sie die Datenbank-Verbindungsinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image6.jpg))
 
@@ -91,7 +91,7 @@ Es sei denn, Sie haben einen mehr formalisierten Deployment-Workflow entweder ma
 Nachdem der Standort in der produktionsumgebung bereitgestellt wurde, finden Sie auf der Produktionswebsite über Ihren Browser. Sie finden Sie unter, und die gleiche benutzerfreundlichkeit wie profitieren, wenn die datengesteuerte Anwendung lokal ausgeführt. Natürlich beim Besuch der Website auf Produktions-wird die Website von den Produktions-Datenbankserver unterstützt während die Datenbank in der Entwicklung Besuchen der Website in der Entwicklungsumgebung verwendet werden. Abbildung 3 zeigt die *bringen Sie sich ASP.NET 3.5 in 24 Stunden* überprüfen Sie die Seite von der Website in der produktionsumgebung (Beachten Sie die URL in die Adressleiste des Browsers s).
 
 
-[![Ter Data-Driven-Anwendung ist jetzt verfügbar in Produktion!](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
+[![Die Data-Driven-Anwendung ist jetzt verfügbar in Produktion!](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
 
 **Abbildung 3**: Die Data-Driven-Anwendung ist jetzt verfügbar in Produktion! ([Klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image9.jpg))
 

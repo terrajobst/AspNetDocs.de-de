@@ -12,7 +12,7 @@ ms.openlocfilehash: 48404f449ce2641bdff55b9ad75aa5eec1aee46b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403297"
 ---
 # <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>Teil 10: Abschließende Updates für die Navigation und das Websitedesign – Zusammenfassung
@@ -136,4 +136,4 @@ Wir haben gesehen, dass ASP.NET MVC erleichtert usw. mit Zugriff auf die Datenba
 
 
 > [!div class="step-by-step"]
-> [Vorheriges](mvc-music-store-part-9.md)
+> [Vorherige](mvc-music-store-part-9.md)

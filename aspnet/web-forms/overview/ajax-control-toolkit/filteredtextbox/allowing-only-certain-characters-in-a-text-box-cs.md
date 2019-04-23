@@ -12,7 +12,7 @@ ms.openlocfilehash: 020f7bbe797a2c04f1ff97ea2056345028f700fb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407613"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-c"></a>Zulassen von nur bestimmten Zeichen in einem Textfeld (C#)
@@ -56,9 +56,9 @@ Dies ist das Markup für die `FilteredTextBoxExtender` -Steuerelement, das nur d
 Führen die Seite, und es wurde versucht, einen Buchstaben eingeben, falls JavaScript aktiviert ist, funktioniert es nicht. Ziffern werden jedoch auf der Seite angezeigt. Beachten Sie jedoch, dass der Schutz `FilteredTextBox` bietet ist nicht hundertprozentig: Falls JavaScript aktiviert ist, können alle Daten in das Textfeld eingegeben werden, müssen Sie zusätzliche Überprüfungen, z. B. ASP Verwendung. NET Steuerelementen zur gültigkeitsprüfung.
 
 
-[![Oibgeschützt Ziffern unter Umständen eingegeben werden](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
+[![Es können nur Ziffern eingegeben werden](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
 
 Es können nur Ziffern eingegeben werden ([klicken Sie, um das Bild in voller Größe anzeigen](allowing-only-certain-characters-in-a-text-box-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Weiter](allowing-only-certain-characters-in-a-text-box-vb.md)
+> [Nächste](allowing-only-certain-characters-in-a-text-box-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: a63bca69f137a4d4765db6a4925ff027c9d8bf7d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403583"
 ---
 # <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Serverübertragung mit ASP.NET SignalR 1.x
@@ -42,13 +42,13 @@ Der Server wird in regelmäßigen Abständen nach dem Zufallsprinzip Aktienkurse
 
 In diesem Tutorial enthält die folgenden Abschnitte:
 
-- [Vorraussetzungen](#prerequisites)
-- [Erstellen eines Projekts](#createproject)
+- [Erforderliche Komponenten](#prerequisites)
+- [Erstellen des Projekts](#createproject)
 - [Fügen Sie die SignalR-NuGet-Pakete hinzu.](#nugetpackages)
 - [Richten Sie den Server-code](#server)
 - [Richten Sie den Clientcode](#client)
 - [Testen der Anwendung](#test)
-- [Protokollierung aktivieren](#enablelogging)
+- [Aktivieren der Protokollierung](#enablelogging)
 - [Installieren Sie und überprüfen Sie das vollständige StockTicker-Beispiel](#fullsample)
 - [Nächste Schritte](#nextsteps)
 

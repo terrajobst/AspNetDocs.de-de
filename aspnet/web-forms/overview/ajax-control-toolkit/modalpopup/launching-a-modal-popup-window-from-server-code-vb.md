@@ -12,7 +12,7 @@ ms.openlocfilehash: 55ee67150d1567a0334988a06ff0fcca8a89bbd4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404051"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-vb"></a>Starten eines modalen Popupfensters über den Servercode (VB)
@@ -65,7 +65,7 @@ Die `pageLoad()` JavaScript-Funktion ist eine spezielle Sigmoidfunktion, die aus
 Die `$find()` -Funktion sucht nach einem benannten Element auf der Seite und die serverseitige-ID als Parameter erwartet. Aus diesem Grund `$find("mpe")` gibt die Clientdarstellung des Steuerelements "ModalPopup" zurück, dessen `show()` -Methode können Sie das Popup angezeigt werden.
 
 
-[![THE modales Fenster wird angezeigt, wenn einer der Schaltflächen geklickt wird](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
+[![Modale Fenster wird angezeigt, wenn einer der Schaltflächen geklickt wird](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
 
 Modale Fenster wird angezeigt, wenn einer der Schaltflächen geklickt wird ([klicken Sie, um das Bild in voller Größe anzeigen](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: c64e1ea1562c3a0cfe4fb33f1c3033bb9c31bd2c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402738"
 ---
 # <a name="validating-with-the-idataerrorinfo-interface-vb"></a>Überprüfen mit der IDataErrorInfo-Schnittstelle (VB)
@@ -31,7 +31,7 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 <a id="0.6_table01"></a>
 
 
-| **Spaltenname** | **Datentyp** | **NULL zulassen** |
+| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
 | Titel | nvarchar(100) | False |
@@ -42,7 +42,7 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 In diesem Tutorial verwende ich das Microsoft Entity Framework, meine Datenbank Modellklassen generiert werden. In Abbildung 1 ist die Movie-Klasse, die vom Entity Framework generiert wird.
 
 
-[![Ter Film Entität](validating-with-the-idataerrorinfo-interface-vb/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image1.png)
+[![Die Movie-Entität](validating-with-the-idataerrorinfo-interface-vb/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image1.png)
 
 **Abbildung 01**: Die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-vb/_static/image2.png))
 
@@ -73,7 +73,7 @@ Die Eigenschaft "IsValid" gibt false zurück, wenn ein Überprüfungsfehler vorl
 Die Movie-Klasse wird vom Entity Framework generiert. Sie können den Code für die Movie-Klasse sehen, wenn Sie die MoviesDBModel.edmx-Datei im Projektmappen-Explorer-Fenster zu erweitern, und öffnen Sie die MoviesDBModel.Designer.vb-Datei im Code-Editor (siehe Abbildung 2).
 
 
-[![TIE-Code für die Entität Movie](validating-with-the-idataerrorinfo-interface-vb/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image3.png)
+[![Der Code für die Movie-Entität](validating-with-the-idataerrorinfo-interface-vb/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image3.png)
 
 **Abbildung 02**: Der Code für die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-vb/_static/image4.png))
 
@@ -147,7 +147,7 @@ In Listing 4, die Indexereigenschaft überprüft die \_Errors-Auflistung, um fes
 Sie müssen nicht den Home-Controller in keiner Weise verwenden Sie die geänderte Movie-Klasse zu ändern. Die Seite angezeigt, die in Abbildung 3 wird veranschaulicht, was geschieht, wenn kein Wert für die Felder für Titel oder Director Formular eingegeben wird.
 
 
-[![CAktionsmethoden e rstellen automatisch](validating-with-the-idataerrorinfo-interface-vb/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image5.png)
+[![Aktionsmethoden erstellen automatisch](validating-with-the-idataerrorinfo-interface-vb/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image5.png)
 
 **Abbildung 03**: Ein Formular mit fehlenden Werten ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-vb/_static/image6.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: cce8770eb0f60c4306d4560e9a4e72fa1a59f618
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406508"
 ---
 # <a name="creating-user-accounts-c"></a>Hinzufügen von Benutzerkonten (C#)
@@ -57,7 +57,7 @@ Zunächst erstellen Sie einen neuen Ordner im Projekt mit dem Namen `Membership`
 An diesem Punkt sollte Ihr Projekts des Projektmappen-Explorer im Screenshot dargestellt in Abbildung 1 ähneln.
 
 
-[![FIVE neue Seiten hinzugefügt wurden in den Ordner Mitgliedschaft](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
+[![Fünf neue Seiten wurden in den Ordner Mitgliedschaft hinzugefügt](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
 
 **Abbildung 1**: Fünf neue Seiten hinzugefügt wurden, die `Membership` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image3.png))
 
@@ -81,7 +81,7 @@ Das Site Map-Framework basiert wie die Mitgliedschaft und Rollen-Frameworks, auf
 Die Standard-Siteübersichtsanbieter erwartet, dass eine richtig formatierte XML-Datei mit dem Namen `Web.sitemap` Stammverzeichnis vorhanden sein. Da wir diese Standardanbieter verwenden, müssen wir eine solche Datei hinzufügen und definieren die Sitemap-Struktur, in das entsprechende XML-Format. Fügen Sie die Datei, mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen. Aktivieren Sie im Dialogfeld zum Hinzufügen einer Datei vom Typ mit dem Namen Sitemap `Web.sitemap`.
 
 
-[![ATT-Datei mit dem Namen Web.sitemap zum Stammverzeichnis des Projekts](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
+[![Fügen Sie die Datei Web.sitemap zum Stammverzeichnis des Projekts](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
 
 **Abbildung 2**: Hinzufügen einer Datei mit dem Namen `Web.sitemap` zum Stammverzeichnis des Projekts ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image6.png))
 
@@ -95,7 +95,7 @@ Geben Sie den folgenden XML-Code in die `Web.sitemap` Datei:
 Das obenstehende Markup der Site-Zuordnung definiert die Hierarchie, die in Abbildung 3 dargestellt.
 
 
-[![Ter Sitemap stellt eine hierarchische Navigationsstruktur](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
+[![Die Siteübersicht darstellt, eine hierarchische Navigationsstruktur](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
 
 **Abbildung 3**: Die Siteübersicht darstellt, einer hierarchischen Navigationsstruktur ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image9.png))
 
@@ -117,7 +117,7 @@ Das obenstehende Markup bindet ein Repeater-Steuerelement, das mit dem Namen `me
 Abbildung 4 zeigt die gerenderte Ausgabe das obenstehende Markup, mit der Site Map-Struktur, die wir in Schritt2 erstellt haben. Der Repeater gibt einfaches ungeordnete Liste Markup wieder. der cascading Stylesheet-Regeln, die in definierten `Styles.css` sind verantwortlich für das Layout ästhetisch ansprechendste. Eine ausführlichere Beschreibung der Funktionsweise von des obenstehende Markups, finden Sie in der [Masterseiten und Sitenavigation](https://asp.net/learn/data-access/tutorial-03-cs.aspx) Tutorial.
 
 
-[![TStandardnavigations-Benutzeroberfläche ist er gerendert listet unter Verwendung von geschachtelten ungeordnete](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
+[![Die Standardnavigations-Benutzeroberfläche wird gerendert listet unter Verwendung von geschachtelten ungeordnete](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
 
 **Abbildung 4**: Die Standardnavigations-Benutzeroberfläche wird gerendert listet unter Verwendung von geschachtelten ungeordnete ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image12.png))
 
@@ -133,7 +133,7 @@ Insbesondere eine `<span>` Element auf der Masterseite Header `<div>` -Element, 
 Abbildung 5 zeigt die Ausgabe des SiteMapPath aus, wenn das Unternehmen besuchen `~/Membership/CreatingUserAccounts.aspx`.
 
 
-[![Ter Breadcrumb zeigt die aktuelle Seite und dessen Vorgänger in der Siteübersicht](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
+[![Die Breadcrumb-Leiste zeigt die aktuelle Seite, und ordnen Sie dessen Vorgänger auf der Website](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
 
 **Abbildung 5**: Die Breadcrumb-Leiste zeigt die aktuelle Seite und dessen Vorgänger in der Siteübersicht ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image15.png))
 
@@ -174,7 +174,7 @@ Zur Veranschaulichung der Verwendung der `CreateUser` -Methode, erstellen wir ei
 An diesem Punkt sollte Ihr Bildschirm im Screenshot dargestellt in Abbildung 6 ähneln.
 
 
-[![ADd die verschiedenen Web-Steuerelemente auf der Seite "CreatingUserAccounts.aspx"](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
+[![Die verschiedenen Websteuerelemente auf der Seite "CreatingUserAccounts.aspx" hinzufügen](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
 
 **Abbildung 6**: Fügen Sie die verschiedenen Web-Steuerelemente, die `CreatingUserAccounts.aspx` Seite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image18.png))
 
@@ -194,17 +194,17 @@ Die `Click` Ereignishandler startet, durch die Definition einer Variablen namens
 Nach dem Aufruf `CreateUser`, und übergeben Sie `createStatus`, `switch` -Anweisung verwendet, um die Ausgabe von einer entsprechenden Meldung angezeigt, abhängig von den zugewiesenen Wert `createStatus`. Abbildung 7 zeigt die Ausgabe, wenn ein neuer Benutzer erfolgreich erstellt wurde. Abbildungen 8 und 9 wird die Ausgabe auf, wenn das Benutzerkonto, das nicht erstellt wird. In Abbildung 8 eingegeben der Besucher einer fünf Buchstaben ein Kennwort nicht in den Konfigurationseinstellungen für den Mitgliedschaftsanbieter ausgeschrieben die Kennwort-sicherheitsanforderungen erfüllt. In Abbildung 9 versucht der Besucher, erstellen Sie ein Benutzerkonto mit einem vorhandenen Benutzernamen (den Knoten erstellt, die in Abbildung 7).
 
 
-[![A Neues Benutzerkonto ist, wurde erfolgreich erstellt.](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
+[![Ein neues Benutzerkonto wurde erfolgreich erstellt](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
 
 **Abbildung 7**: Ein neues Benutzerkonto wurde erfolgreich erstellt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image21.png))
 
 
-[![Ter Benutzerkonto wird nicht erstellt, weil das angegebene Kennwort zu schwach ist](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
+[![Das Benutzerkonto wird nicht erstellt werden, weil das angegebene Kennwort zu schwach ist](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
 
 **Abbildung 8**: Das Benutzerkonto wird nicht erstellt werden, weil das angegebene Kennwort zu schwach ist ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image24.png))
 
 
-[![Ter Benutzerkonto wird nicht erstellt, da der Benutzername bereits in Verwendung ist](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
+[![Das Benutzerkonto ist, dass nicht erstellt, weil der Benutzername wird bereits verwendet](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
 
 **Abbildung 9**: Das Benutzerkonto ist nicht erstellt, weil der Benutzername wird bereits verwendet ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image27.png))
 
@@ -216,7 +216,7 @@ Nach dem Aufruf `CreateUser`, und übergeben Sie `createStatus`, `switch` -Anwei
 Nach dem Erstellen einigen Benutzerkonten, stellen Sie sicher, dass die Konten erstellt wurden, indem Sie den Inhalt der Auflistung der `aspnet_Users` und `aspnet_Membership` Tabellen in der `SecurityTutorials.mdf` Datenbank. Wie in Abbildung 10 gezeigt, wurden ich hinzugefügt, dass zwei Benutzer über die `CreatingUserAccounts.aspx` Seite: Tito und Bruce.
 
 
-[![THier sind zwei Benutzer in die Mitgliedschaft Benutzer Store: Tito und Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
+[![Es gibt zwei Benutzer in die Mitgliedschaft Benutzer Store: Tito und Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
 
 **Abbildung 10**: Es gibt zwei Benutzer in die Mitgliedschaft Benutzer Store: Tito und Bruce ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image30.png))
 
@@ -246,7 +246,7 @@ Beginnen wir mit einem Blick auf die Verwendung von Standard-Schnittstelle und d
 Wechseln Sie zurück zur der `CreatingUserAccounts.aspx` auf der Seite die `Membership` Ordner, in den Entwurf oder auf einer Trennschaltfläche-Modus wechseln, und fügen Sie dann auf den oberen Rand der Seite ein Steuerelement CreateUserWizard hinzu. Das Steuerelement CreateUserWizard ist der Toolbox für die Anmeldung im Abschnitt "Steuerelemente" abgelegt. Legen Sie nach dem Hinzufügen des Steuerelements, dessen `ID` Eigenschaft `RegisterUser`. Wie der Screenshot in Abbildung 11 zeigt, rendert die CreateUserWizard eine Schnittstelle mit der Textfelder für des neuen Benutzers Benutzername, Kennwort, e-Mail-Adresse, und die Sicherheitsfrage und Antwort.
 
 
-[![Ter Steuerelement CreateUserWizard rendert eine generische Benutzeroberfläche erstellen](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
+[![Rendert das Steuerelement CreateUserWizard eine generische erstellen Benutzeroberfläche.](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
 
 **Abbildung 11**: Das Steuerelement CreateUserWizard rendert eine generische Benutzeroberfläche zu erstellen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image33.png))
 
@@ -267,7 +267,7 @@ Die CreateUserWizards Aussehen und Verhalten können geändert werden, durch ein
 Sehen Sie das Steuerelement CreateUserWizard in Aktion an. Besuchen Sie die `CreatingUserAccounts.aspx` Seite über einen Browser. Starten Sie durch den Wechsel von einigen ungültigen Werten in der CreateUserWizard Schnittstelle. Versuchen Sie, ein Kennwort, das entsprechen nicht auf die Anforderungen an Stärke des Kennworts oder Textfeld verlassen der "User Name" leer. Die CreateUserWizard wird eine entsprechende Fehlermeldung angezeigt. Abbildung 12 zeigt die Ausgabe, bei dem Versuch, einen Benutzer mit einem unzureichend sicheres Kennwort zu erstellen.
 
 
-[![Ter CreateUserWizard automatisch Fügt Steuerelemente zur gültigkeitsprüfung](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
+[![Die CreateUserWizard fügt automatisch die Steuerelemente zur gültigkeitsprüfung](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
 
 **Abbildung 12**: CreateUserWizard automatisch Fügt Steuerelemente zur gültigkeitsprüfung ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image36.png))
 
@@ -275,7 +275,7 @@ Sehen Sie das Steuerelement CreateUserWizard in Aktion an. Besuchen Sie die `Cre
 Als Nächstes geben Sie die entsprechenden Werte in der CreateUserWizard, und klicken Sie auf die Schaltfläche "Benutzer erstellen". Wenn die erforderlichen Felder eingegeben wurden, und die kennwortsicherheit der ist ausreichend, die CreateUserWizard erstellt ein neues Benutzerkonto durch das mitgliedschaftsframework und klicken Sie dann zeigt die `CompleteWizardStep`der Benutzeroberfläche (siehe Abbildung 13). Hinter den Kulissen der CreateUserWizard Ruft die `Membership.CreateUser` -Methode, wie wir in Schritt 5.
 
 
-[![A Neues Benutzerkonto wurde erfolgreich erstellt wurde](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
+[![Ein neues Benutzerkonto wurde erfolgreich erstellt wurde](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
 
 **Abbildung 13**: Ein neues Benutzerkonto wurde erfolgreich erstellt wurde ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image39.png))
 
@@ -299,7 +299,7 @@ Zusätzlich zu den Darstellungseigenschaften gibt es eine Reihe von Eigenschafte
 Aktualisieren wir die `RegisterUser` Steuerelement CreateUserWizard, auf die Schaltfläche "Abbrechen" anzeigen und zum Senden des Besuchers `Default.aspx` Wenn auf die Schaltflächen Abbrechen oder fortsetzen geklickt werden. Zu diesem Zweck legen Sie die `DisplayCancelButton` -Eigenschaft auf "true", und sowohl die `CancelDestinationPageUrl` und `ContinueDestinationPageUrl` Eigenschaften, die "~ /" default.aspx "". Abbildung 14 zeigt die aktualisierte CreateUserWizard, wenn Sie über einen Browser angezeigt.
 
 
-[![Ter CreateUserWizardStep enthält eine Schaltfläche "Abbrechen"](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
+[![Die CreateUserWizardStep enthält eine Schaltfläche "Abbrechen"](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
 
 **Abbildung 14**: Die `CreateUserWizardStep` enthält eine Abbrechen-Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image42.png))
 
@@ -337,7 +337,7 @@ Beachten Sie, dass Benutzername und Kennwort eingegeben werden, in das Steuerele
 Abbildung 15 zeigt einen Screenshot des `CreatingUserAccounts.aspx` bei der Eingabe eines Benutzernamens mit führenden Leerzeichen.
 
 
-[![USernames mit führende oder nachfolgende Leerzeichen sind nicht zulässig](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
+[![Benutzernamen bei führende oder nachfolgende Leerzeichen sind nicht zulässig.](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
 
 **Abbildung 15**: Benutzernamen bei führende oder nachfolgende Leerzeichen sind nicht zulässig ([klicken Sie, um das Bild in voller Größe anzeigen](creating-user-accounts-cs/_static/image45.png))
 

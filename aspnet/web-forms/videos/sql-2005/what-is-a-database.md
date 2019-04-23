@@ -12,7 +12,7 @@ ms.openlocfilehash: 019383897daeb7d8885ea4b9c3609e7f8ef9f827
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396667"
 ---
 # <a name="what-is-a-database"></a>Was ist eine Datenbank?
@@ -24,4 +24,4 @@ In dieser Einführung werden die Fragen behandelt, und Terminologie von SQL Serv
 [&#9654;Sehen Sie sich Video (28 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-a-database)
 
 > [!div class="step-by-step"]
-> [Weiter](understanding-database-tables-and-records.md)
+> [Nächste](understanding-database-tables-and-records.md)

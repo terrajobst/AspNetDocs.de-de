@@ -12,7 +12,7 @@ ms.openlocfilehash: 3eef7934fac8c16dc7517ca16cab67c0ae55907f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398019"
 ---
 # <a name="adding-validation-to-the-model-vb"></a>Adding Validation to the Model (VB)

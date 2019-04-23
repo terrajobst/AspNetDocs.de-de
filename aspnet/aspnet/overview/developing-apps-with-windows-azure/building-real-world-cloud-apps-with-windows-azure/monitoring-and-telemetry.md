@@ -12,7 +12,7 @@ ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403908"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Überwachung und Telemetrie (erstellen realer Cloud-Apps mit Azure)
@@ -72,7 +72,7 @@ Bereitstellen der app in Azure, und es verwenden. Erstellen Sie ein paar Fix It-
 
 Navigieren Sie zurück zu den **New Relic** auf der Seite die **-Add-Ons** das Portal und klicken Sie auf der Registerkarte **verwalten**. Das Portal sendet Sie an das New Relic-Verwaltungsportal, die einmaliges Anmelden für die Authentifizierung verwenden, müssen Sie nicht Ihre Anmeldeinformationen erneut einzugeben. Die Seite "Übersicht" bietet eine Vielzahl von Leistungsstatistiken. (Klicken Sie auf das Bild, um die vollständige Übersicht über die Seitengröße anzuzeigen.)
 
-[![NNeues Relic Registerkarte "Überwachung"](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
+[![Neue Relic-Überwachung-Registerkarte](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
 
 Hier sind nur einige der Statistiken, die Sie sehen können:
 

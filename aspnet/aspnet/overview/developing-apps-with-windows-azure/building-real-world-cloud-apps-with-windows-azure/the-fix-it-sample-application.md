@@ -12,7 +12,7 @@ ms.openlocfilehash: d3a965ccf7ca001d3178819f88836b59f2893bb0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406417"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: Der Fix It-Beispielanwendung (erstellen realer Cloud-Apps mit Azure)
@@ -395,4 +395,4 @@ Ersetzen Sie in MyFixItCloudService\ServiceConfiguration.Cloud.cscfg die gleiche
 Jetzt können Sie den Cloud-Dienst bereitstellen. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in des MyFixItCloudService-Projekts, und wählen **veröffentlichen**. Weitere Informationen finden Sie unter "[Bereitstellen der Anwendung in Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", d.h. in Teil 2 des [in diesem Tutorial](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
 > [!div class="step-by-step"]
-> [Vorheriges](more-patterns-and-guidance.md)
+> [Vorherige](more-patterns-and-guidance.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 863fe772a1d79201b83da8498bf7e981acf7fd0e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401074"
 ---
 # <a name="passing-data-to-view-master-pages-c"></a>Übergeben von Daten an Ansichtsmasterseiten (C#)
@@ -33,7 +33,7 @@ Das Ziel in diesem Tutorial wird beschrieben, wie Sie Daten von einem Controller
 Stellen Sie sich vor, dass Sie beim Erstellen einer filmdatenbankanwendung und Sie die Liste der Kategorien des Films auf jeder Seite in Ihrer Anwendung anzeigen möchten (siehe Abbildung 1). Stellen Sie sich vor, darüber hinaus, dass die Liste der Movie-Kategorien in einer Datenbanktabelle gespeichert werden. In diesem Fall wäre es sinnvoll, die Kategorien aus der Datenbank abgerufen und die Liste der Film Kategorien in einer Masterseite für die Ansicht zu rendern.
 
 
-[![DFilm-Kategorien in einer Ansicht Masterseite IsPlaying den Wert](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
+[![Anzeigen von Film-Kategorien in einer Masterseite anzeigen](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
 
 **Abbildung 01**: Anzeigen von Film-Kategorien in einer Masterseite anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-cs/_static/image3.png))
 
@@ -59,7 +59,7 @@ Beachten Sie, dass sowohl die Details() Aktionen als auch die Index() zwei Eleme
 Die Aktion Details() fügt auch zwei Schlüssel namens "Kategorien" und "Filme hinzu. Der Schlüssel Kategorien darstellt wieder die Liste der Movie-Kategorien, die von der Masterseite Ansicht angezeigt. Die Filme-Schlüssel darstellt, die Liste von Filmen in einer bestimmten Kategorie angezeigt, die von der Seite Details anzeigen (siehe Abbildung 2).
 
 
-[![TIE-Detailansicht](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
+[![Die Detailansicht](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
 
 **Abbildung 02**: Die Detailansicht ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-cs/_static/image6.png))
 

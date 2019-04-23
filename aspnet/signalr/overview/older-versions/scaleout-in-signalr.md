@@ -12,7 +12,7 @@ ms.openlocfilehash: 9bad72d31a0ebc491910ebb128b3b3a7fb537958
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402686"
 ---
 # <a name="introduction-to-scaleout-in-signalr-1x"></a>Einführung in die horizontale Skalierung in SignalR 1.x
@@ -44,7 +44,7 @@ Wenn Sie Ihre Anwendung in Azure bereitstellen, sollten erwägen Sie, die Azure 
 
 Die folgenden Themen enthalten schrittweise aufgebaute Lernprogramme für jede-Rückwandplatine:
 
-- [Horizontale Skalierung in SignalR mit Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
+- [Horizontale Skalierung in SignalR mit dem Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
 - [Horizontale Skalierung in SignalR mit Redis](scaleout-with-redis.md)
 - [Horizontale Skalierung in SignalR mit SQL Server](scaleout-with-sql-server.md)
 

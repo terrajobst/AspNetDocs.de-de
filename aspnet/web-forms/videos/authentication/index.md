@@ -12,7 +12,7 @@ ms.openlocfilehash: 68c1acdaaf1e6674f4dc3bcca0557382407ca147
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400112"
 ---
 # <a name="authentication"></a>Authentifizierung
@@ -33,7 +33,7 @@ ms.locfileid: "59400112"
 - [Erstellen von Benutzerkonten mit dem Assistenten zum Erstellen von Benutzern](creating-user-accounts-with-the-create-user-wizard.md)
 - [Programmgesteuertes Erstellen von Benutzerkonten](creating-user-accounts-programmatically.md)
 - [Manuelles Überprüfen von Benutzern](validating-users-manually.md)
-- [Überprüfen von Benutzern mit dem Login-Steuerelement](validating-users-with-the-login-control.md)
+- [Überprüfen von Benutzern mit dem login-Steuerelement](validating-users-with-the-login-control.md)
 - [Hinzufügen von Benutzern zum Mitgliedschaftssystem](adding-users-to-your-membership-system.md)
 - [Protokollieren von Benutzern im Mitgliedschaftssystem](logging-users-into-your-membership-system.md)
 - [Implementieren des Musters zur Überprüfung der Registrierung](implement-the-registration-verification-pattern.md)

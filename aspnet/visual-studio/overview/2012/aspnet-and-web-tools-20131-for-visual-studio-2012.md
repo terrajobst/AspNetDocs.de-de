@@ -12,7 +12,7 @@ ms.openlocfilehash: 17315dbbbdc08412e4e928256783c221a8a2cb20
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406807"
 ---
 # <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>Anmerkungen zu dieser Version – ASP.NET and Web Tools 2013.1 für Visual Studio 2012
@@ -28,7 +28,7 @@ by [Microsoft](https://github.com/microsoft)
 - [Softwareanforderungen](#requirements)
 - Neue Features in ASP.NET und Webtools 2013.1 für Visual Studio 2012
 
-    - [Bootstrap-Stil](#bootstrap)
+    - [Bootstrap](#bootstrap)
     - [Vorlagen](#templates)
 
         - [ASP.NET MVC 5-Vorlage](#mvc5template)

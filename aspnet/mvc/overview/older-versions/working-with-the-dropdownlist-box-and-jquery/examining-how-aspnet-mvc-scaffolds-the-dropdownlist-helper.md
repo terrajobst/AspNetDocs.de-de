@@ -12,7 +12,7 @@ ms.openlocfilehash: 20de66ab773a9172fd8ae8ea713c361c289b944c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398539"
 ---
 # <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Überprüfen des Gerüstbaus durch ASP.NET MVC für das DropDownList-Hilfsprogramm
@@ -99,7 +99,7 @@ Diese Überladung von der `Create` -Methode übernimmt eine `album` Objekt, das 
 
 Sie können die [Fiddler-Tool](http://www.fiddler2.com/fiddler2/) untersuchen Sie die bereitgestellten Formularwerte, ASP.NET MVC-modellbindung verwendet werden, um das Album-Objekt zu erstellen.
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)sein.
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png).
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>Refactoring "ViewBag" SelectList erstellen
 

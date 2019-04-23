@@ -12,7 +12,7 @@ ms.openlocfilehash: 3fd252b94e55f02215a2733f218e68b26486691f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397109"
 ---
 # <a name="iteration-6--use-test-driven-development-vb"></a>Iteration #6 – Verwenden der testgesteuerten Entwicklung (VB)
@@ -113,7 +113,7 @@ Unsere erste Benutzertextabschnitt ist, dass ein Benutzer eine Liste der Kontakt
 Erstellen ein neuen Komponententests durch Rechtsklick auf den Ordner "Controllers" im Projekt ContactManager.Tests auswählen **hinzufügen "," Neuer Test**, und wählen die **Komponententest** Vorlage (siehe Abbildung 1). Name die neue Einheit GroupControllerTest.vb zu testen, und klicken Sie auf die **OK** Schaltfläche.
 
 
-[![AHinzufügen der Komponententest GroupControllerTest](iteration-6-use-test-driven-development-vb/_static/image1.jpg)](iteration-6-use-test-driven-development-vb/_static/image1.png)
+[![Hinzufügen der GroupControllerTest-Komponententests](iteration-6-use-test-driven-development-vb/_static/image1.jpg)](iteration-6-use-test-driven-development-vb/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen des Komponententests GroupControllerTest ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image2.png))
 
@@ -141,7 +141,7 @@ Die Gruppe Controllerklasse in Liste 2 enthält das absolute Minimum von Code er
 Nachdem wir unser Projekt Klassen GroupController und -Gruppe hinzugefügt haben, wird der erste Komponententest erfolgreich abgeschlossen (siehe Abbildung 2). Wir haben die Arbeitsschritte, die mindestens erforderlich, um der Test erfolgreich durchgeführt. Es ist Zeit zu feiern.
 
 
-[![SUccess!](iteration-6-use-test-driven-development-vb/_static/image2.jpg)](iteration-6-use-test-driven-development-vb/_static/image3.png)
+[![Success!](iteration-6-use-test-driven-development-vb/_static/image2.jpg)](iteration-6-use-test-driven-development-vb/_static/image3.png)
 
 **Abbildung 02**: Success! ([Klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image4.png))
 
@@ -244,7 +244,7 @@ Wir müssen eine neue Datenbanktabelle für die Gruppe zu erstellen. Führen Sie
 <a id="0.12_table01"></a>
 
 
-| **Spaltenname** | **Datentyp** | **NULL zulassen** |
+| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | int | False |
 | name | nvarchar(50) | False |
@@ -268,12 +268,12 @@ Als Nächstes müssen wir eine Beziehung zwischen der Tabelle der Datenbank Grup
 9. Klicken Sie auf die Schaltfläche "Speichern", um die Änderungen an der Contacts-Tabelle speichern.
 
 
-[![Ce rstellen einer tabellenbeziehung Datenbank](iteration-6-use-test-driven-development-vb/_static/image3.jpg)](iteration-6-use-test-driven-development-vb/_static/image5.png)
+[![Erstellen einer Beziehung der Datenbank-Tabelle](iteration-6-use-test-driven-development-vb/_static/image3.jpg)](iteration-6-use-test-driven-development-vb/_static/image5.png)
 
 **Abbildung 03**: Erstellen einer Datenbank-Tabelle-Beziehung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image6.png))
 
 
-[![Specifying tabellenbeziehungen](iteration-6-use-test-driven-development-vb/_static/image4.jpg)](iteration-6-use-test-driven-development-vb/_static/image7.png)
+[![Angeben von tabellenbeziehungen](iteration-6-use-test-driven-development-vb/_static/image4.jpg)](iteration-6-use-test-driven-development-vb/_static/image7.png)
 
 **Abbildung 04**: Angeben von tabellenbeziehungen ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image8.png))
 
@@ -289,7 +289,7 @@ Als Nächstes müssen wir aktualisieren unsere Datenmodell, um die neue Datenban
 5. Mit der rechten Maustaste in der Gruppen-Navigationseigenschaft, die am unteren Rand der Entität "Contact" angezeigt wird. Ändern des Namens der *Gruppen* Navigationseigenschaft *Gruppe* (im singular).
 
 
-[![UVorgangsstatus ein Entity Framework-Datenmodell aus der Datenbank](iteration-6-use-test-driven-development-vb/_static/image5.jpg)](iteration-6-use-test-driven-development-vb/_static/image9.png)
+[![Aktualisieren eines Entity Framework-Modells aus der Datenbank](iteration-6-use-test-driven-development-vb/_static/image5.jpg)](iteration-6-use-test-driven-development-vb/_static/image9.png)
 
 **Abbildung 05**: Aktualisieren eines Entity Framework-Modells aus der Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image10.png))
 
@@ -297,7 +297,7 @@ Als Nächstes müssen wir aktualisieren unsere Datenmodell, um die neue Datenban
 Nachdem Sie diese Schritte abgeschlossen haben, wird Ihr Datenmodell der Kontakte und Gruppen darstellen. Der Entity Designer sollten beide Entitäten angezeigt (siehe Abbildung 6).
 
 
-[![Emehr Designer anzeigen, gruppieren und wenden Sie sich an](iteration-6-use-test-driven-development-vb/_static/image6.jpg)](iteration-6-use-test-driven-development-vb/_static/image11.png)
+[![Entity-Designer zum Anzeigen von Gruppe, und wenden Sie sich an](iteration-6-use-test-driven-development-vb/_static/image6.jpg)](iteration-6-use-test-driven-development-vb/_static/image11.png)
 
 **Abbildung 06**: Anzeigen von Gruppen- und wenden Sie sich an Entity-Designer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image12.png))
 
@@ -330,7 +330,7 @@ Wir müssen die folgenden neuen Ansichten zum Verwalten von Gruppen von wenden S
 - Views\Group\Delete.aspx - zeigt Bestätigungsformular für das Löschen einer Gruppenstatus von Kontakten
 
 
-[![Ter Gruppenindex anzeigen](iteration-6-use-test-driven-development-vb/_static/image7.jpg)](iteration-6-use-test-driven-development-vb/_static/image13.png)
+[![Die Gruppe Indexansicht](iteration-6-use-test-driven-development-vb/_static/image7.jpg)](iteration-6-use-test-driven-development-vb/_static/image13.png)
 
 **Abbildung 07**: Die Gruppe Indexansicht ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image14.png))
 
@@ -344,7 +344,7 @@ Wir müssen die folgenden vorhandenen Ansichten zu ändern, sodass sie wenden Si
 Sie sehen die geänderten Ansichten anhand der Visual Studio-Anwendung, die in diesem Lernprogramm begleitet. Abbildung 8 veranschaulicht beispielsweise die Ansicht "Wenden Sie sich an Index".
 
 
-[![Ter Kontakt Indexansicht](iteration-6-use-test-driven-development-vb/_static/image8.jpg)](iteration-6-use-test-driven-development-vb/_static/image15.png)
+[![Ansicht "Wenden Sie sich an Index"](iteration-6-use-test-driven-development-vb/_static/image8.jpg)](iteration-6-use-test-driven-development-vb/_static/image15.png)
 
 **Abbildung 08**: Ansicht "Wenden Sie sich an Index" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-vb/_static/image16.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 978236ae72ec0908b09901d8a8d4d3fd27770b86
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401633"
 ---
 # <a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a>Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0

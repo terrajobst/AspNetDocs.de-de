@@ -12,7 +12,7 @@ ms.openlocfilehash: 38bc21c1a7809c235a85638cbb40183f2d0b422d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398513"
 ---
 # <a name="master-pages-and-site-navigation-vb"></a>Masterseiten und Sitenavigation (VB)
@@ -33,7 +33,7 @@ Die [Navigation Standortsystem](http://aspnet.4guysfromrolla.com/articles/111605
 Um diese Konzepte zu veranschaulichen, und unsere Tutorials Website besser verwendbar zu machen, werfen wir kurz in dieser Lektion definieren ein Layout für die gesamte Website, implementieren eine Sitemap und Navigationsbenutzeroberfläche hinzufügen. Nach Abschluss dieses Lernprogramms müssen einen ansprechenden Website-Entwurf für unsere Tutorials Webseiten erstellen.
 
 
-[![Ter End-Ergebnis von diesem Lernprogramm](master-pages-and-site-navigation-vb/_static/image2.png)](master-pages-and-site-navigation-vb/_static/image1.png)
+[![Das Endergebnis dieses Tutorials](master-pages-and-site-navigation-vb/_static/image2.png)](master-pages-and-site-navigation-vb/_static/image1.png)
 
 **Abbildung 1**: Das End-Ergebnis von diesem Lernprogramm ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image3.png))
 
@@ -51,7 +51,7 @@ Der erste Schritt ist die Masterseite für die Website zu erstellen. Derzeit nur
 Klicken Sie zum Erstellen einer Masterseite mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen. Klicken Sie dann wählen Sie die Masterseite aus der Liste der Vorlagen, und nennen Sie sie `Site.master`.
 
 
-[![ADd einer neuen Masterseite der Website](master-pages-and-site-navigation-vb/_static/image6.png)](master-pages-and-site-navigation-vb/_static/image5.png)
+[![Fügen Sie eine neue Master-Seite auf der Website](master-pages-and-site-navigation-vb/_static/image6.png)](master-pages-and-site-navigation-vb/_static/image5.png)
 
 **Abbildung 3**: Fügen Sie eine neue Master-Seite auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image7.png))
 
@@ -68,7 +68,7 @@ Eine Masterseite definiert sowohl statische Seitenlayouts und Bereiche, die durc
 Mit dem Markup oben eingegebenen zeigt das Umschalten zur Entwurfsansicht der Masterseite Layout aus. Alle ASP.NET-Seiten, die diese Masterseite verwenden, müssen diese einheitliche Layout, mit der Möglichkeit, geben Sie das Markup für die `MainContent` Region.
 
 
-[![Ter Masterseite, wenn anzeigen über die Entwurfsansicht](master-pages-and-site-navigation-vb/_static/image9.png)](master-pages-and-site-navigation-vb/_static/image8.png)
+[![Die Masterseite, wenn Sie über die Entwurfsansicht angezeigt](master-pages-and-site-navigation-vb/_static/image9.png)](master-pages-and-site-navigation-vb/_static/image8.png)
 
 **Abbildung 4**: Die Masterseite, die beim Anzeigen durch die Entwurfsansicht ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image10.png))
 
@@ -78,7 +78,7 @@ Mit dem Markup oben eingegebenen zeigt das Umschalten zur Entwurfsansicht der Ma
 Mit der Masterseite, die definiert sind wir bereit sind, die ASP.NET-Seiten für die Website hinzuzufügen. Wir fügen zunächst `Default.aspx`, unsere Website-Homepage. Mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen. Wählen Sie die Option "Webformular" aus der Vorlagenliste und den Namen die Datei `Default.aspx`. Überprüfen Sie außerdem das Kontrollkästchen "Masterseite auswählen".
 
 
-[![ATT ein neues Webformular, überprüfen die Masterseite auswählen das Kontrollkästchen](master-pages-and-site-navigation-vb/_static/image12.png)](master-pages-and-site-navigation-vb/_static/image11.png)
+[![Fügen Sie ein neues Webformular, überprüfen die Masterseite auswählen das Kontrollkästchen hinzu.](master-pages-and-site-navigation-vb/_static/image12.png)](master-pages-and-site-navigation-vb/_static/image11.png)
 
 **Abbildung 5**: Fügen Sie ein neues Webformular, überprüfen die Masterseite auswählen das Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image13.png))
 
@@ -86,7 +86,7 @@ Mit der Masterseite, die definiert sind wir bereit sind, die ASP.NET-Seiten für
 Nach dem Klicken auf die Schaltfläche "OK", werden wir aufgefordert, auf welche Masterseite, diese neue Seite mit ASP.NET verwenden soll. Während Sie mehrere Masterseiten in Ihrem Projekt verwenden können, müssen wir nur ein.
 
 
-[![CWählen Sie aus der Masterseite ASP.NET Seite sollte verwendet](master-pages-and-site-navigation-vb/_static/image15.png)](master-pages-and-site-navigation-vb/_static/image14.png)
+[![Wählen Sie die Master-Seite, die diese ASP.NET-Seite verwendet werden soll](master-pages-and-site-navigation-vb/_static/image15.png)](master-pages-and-site-navigation-vb/_static/image14.png)
 
 **Abbildung 6**: Wählen Sie auf der Masterseite diese ASP.NET Seite sollte Verwendung ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image16.png))
 
@@ -110,7 +110,7 @@ Die `Title` -Attribut in der `@Page` -Direktive ermöglicht uns, legen Sie den T
 Wechseln zur Entwurfsansicht, dass wir sehen können, wie die Seite in einem Browser aussehen wird. Beachten Sie, dass der Entwurf anzeigen für die ASP.NET-Seite, dass nur die bearbeitbaren Inhaltsbereiche bearbeitet werden, das nicht ContentPlaceHolder-Markup, das in der Masterseite definierte ist abgeblendet.
 
 
-[![Ter Entwurfsansicht für die ASP.NET Seite zeigt sowohl den Bearbeitbarer und nicht-Editable-Regionen](master-pages-and-site-navigation-vb/_static/image18.png)](master-pages-and-site-navigation-vb/_static/image17.png)
+[![Die Entwurfsansicht für die ASP.NET-Seite zeigt der bearbeitbare und nicht bearbeitbare Bereiche](master-pages-and-site-navigation-vb/_static/image18.png)](master-pages-and-site-navigation-vb/_static/image17.png)
 
 **Abbildung 7**: Die Entwurfsansicht für die ASP.NET Seite zeigt sowohl den Bearbeitbarer und nicht-Editable-Regionen ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image19.png))
 
@@ -142,7 +142,7 @@ Des Sitenavigationssystems in ASP.NET 2.0 bietet eine Möglichkeit für einen En
 In diesem Tutorial jedoch verwenden wir die standardmäßigen SiteMapProvider, die bereitgestellt wird mit ASP.NET 2.0. Um die Sitemap zu erstellen, einfach mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, neues Element hinzufügen, und wählen Sie die Option für die Siteübersicht. Lassen Sie den Namen als `Web.sitemap` , und klicken Sie auf die Schaltfläche "hinzufügen".
 
 
-[![ADd einer Siteübersicht auf Ihr Projekt](master-pages-and-site-navigation-vb/_static/image22.png)](master-pages-and-site-navigation-vb/_static/image21.png)
+[![Hinzufügen einer Sitezuordnung zu Ihrem Projekt](master-pages-and-site-navigation-vb/_static/image22.png)](master-pages-and-site-navigation-vb/_static/image21.png)
 
 **Abbildung 9**: Hinzufügen einer Site-Zuordnung zu Ihres Projekts ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image23.png))
 
@@ -159,7 +159,7 @@ Web.sitemap
 Die Sitemap definiert der Website Navigationsstruktur, die eine Hierarchie ist, die die verschiedenen Abschnitte der Website beschreibt. Jede `<siteMapNode>` Element im `Web.sitemap` stellt einen Abschnitt in der Navigationsstruktur der Website dar.
 
 
-[![Ter Sitemap stellt eine hierarchische Navigationsstruktur](master-pages-and-site-navigation-vb/_static/image25.png)](master-pages-and-site-navigation-vb/_static/image24.png)
+[![Die Siteübersicht darstellt, eine hierarchische Navigationsstruktur](master-pages-and-site-navigation-vb/_static/image25.png)](master-pages-and-site-navigation-vb/_static/image24.png)
 
 **Abbildung 10**: Die Siteübersicht darstellt, einer hierarchischen Navigationsstruktur ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image26.png))
 
@@ -252,7 +252,7 @@ Die Lernprogramme in unserer Website werden in verschiedene Kategorien Basisberi
 Wir zeigen eine ungeordnete Liste mit einem Wiederholungssteuerelement, erneut aus, aber dieses Mal mit dem wir den Titel und Beschreibung der Lernprogramme wird angezeigt. Da Markup und Code zum Ausführen dieser wird für jede ausgeführt werden müssen `Default.aspx` Seite können wir diese UI-Logik in Kapseln einer [Benutzersteuerelement](https://msdn.microsoft.com/library/y6wb1a0e.aspx). Erstellen Sie einen Ordner auf der Website namens `UserControls` und hinzufügen, die ein neues Element vom Typ mit dem Namen der Web-Benutzersteuerelement `SectionLevelTutorialListing.ascx`, und fügen Sie das folgende Markup hinzu:
 
 
-[![ATT ein neues Web-Benutzersteuerelement in den Ordner UserControls](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
+[![Hinzufügen eines neuen Web-Benutzersteuerelements in den Ordner UserControls](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
 
 **Abbildung 13**: Hinzufügen einer neuen Web-Benutzersteuerelement, das `UserControls` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image31.png))
 
@@ -272,12 +272,12 @@ Im vorherigen Beispiel Repeater wir gebunden der `SiteMap` Daten des Repeaters d
 Nachdem Sie diesen Repeater erstellt wurde, öffnen Sie die `Default.aspx` Seiten in jedem Ordner, wechseln Sie zur Entwurfsansicht, und ziehen Sie einfach das Benutzersteuerelement aus dem Projektmappen-Explorer auf die Entwurfsoberfläche, in denen die tutorialliste angezeigt werden sollen.
 
 
-[![Ter Benutzersteuerelement hat, wurde an "default.aspx"](master-pages-and-site-navigation-vb/_static/image33.png)](master-pages-and-site-navigation-vb/_static/image32.png)
+[![Das Benutzersteuerelement wurde an "default.aspx" hinzugefügt wurde](master-pages-and-site-navigation-vb/_static/image33.png)](master-pages-and-site-navigation-vb/_static/image32.png)
 
 **Abbildung 14**: Das Benutzersteuerelement wurde hinzugefügt `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image34.png))
 
 
-[![TFinden Sie seine grundlegenden Reporting Tutorials](master-pages-and-site-navigation-vb/_static/image36.png)](master-pages-and-site-navigation-vb/_static/image35.png)
+[![Die grundlegenden Reporting-Tutorials werden aufgeführt.](master-pages-and-site-navigation-vb/_static/image36.png)](master-pages-and-site-navigation-vb/_static/image35.png)
 
 **Abbildung 15**: Finden Sie die grundlegenden Reporting-Tutorials ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-vb/_static/image37.png))
 
@@ -313,4 +313,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Liz Shulok, Dennis Patterson und Hilton Giesenow. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-a-business-logic-layer-vb.md)
+> [Vorherige](creating-a-business-logic-layer-vb.md)

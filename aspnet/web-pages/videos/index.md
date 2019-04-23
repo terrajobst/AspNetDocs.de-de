@@ -12,7 +12,7 @@ ms.openlocfilehash: 86b90a21f59ee0ad52a3e6f7db19d4714282105c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401139"
 ---
 # <a name="videos"></a>Videos
@@ -21,9 +21,9 @@ ms.locfileid: "59401139"
 > [!NOTE] 
 > WebMatrix wird nicht mehr als eine integrierte Entwicklungsumgebung für ASP.NET Web Pages empfohlen. Verwendung [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) oder [Visual Studio-Code](https://code.visualstudio.com/).
 
-- [Einführung](introduction/index.md)
+- [Introduction (Einführung)](introduction/index.md)
 
-    - [5-minütige Einführung in ASP.NET Web Pages](introduction/5-minute-introduction-to-aspnet-web-pages.md)
+    - [5-minütige Einführung zu ASP.NET Web Pages](introduction/5-minute-introduction-to-aspnet-web-pages.md)
     - [Installieren und Verwenden des Microsoft WebMatrix-Tools](introduction/install-and-use-the-microsoft-webmatrix-tool.md)
     - [Erstellen einer Website mit WebMatrix](introduction/create-a-website-using-webmatrix.md)
     - [Ändern des visuellen Stils einer Webseite](introduction/change-the-visual-style-of-a-web-page.md)
@@ -36,7 +36,7 @@ ms.locfileid: "59401139"
 - [ASP.NET Razor-Seiten](aspnet-razor-pages/index.md)
 
     - [Erste Schritte mit WebMatrix und ASP.NET Web Pages](aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
-    - [Einführung in die Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
+    - [Einführung zur Programmierung von ASP.NET-Webseiten mit der Razor-Syntax](aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
     - [Erstellen einer konsistenten Gestaltung (Teil 1)](aspnet-razor-pages/creating-a-consistent-look-part-1.md)
     - [Erstellen einer konsistenten Gestaltung (Teil 2)](aspnet-razor-pages/creating-a-consistent-look-part-2.md)
     - [Arbeiten mit Formularen (Teil 1)](aspnet-razor-pages/working-with-forms-part-1.md)
@@ -46,9 +46,9 @@ ms.locfileid: "59401139"
     - [Anzeigen von Daten in einem Raster](aspnet-razor-pages/displaying-data-in-a-grid.md)
     - [Anzeigen von Daten in einem Diagramm (Teil 1)](aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
     - [Anzeigen von Daten in einem Diagramm (Teil 2)](aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
-    - [Arbeiten mit Dateien](aspnet-razor-pages/working-with-files.md)
+    - [Working with Files (Arbeiten mit Dateien)](aspnet-razor-pages/working-with-files.md)
     - [Working with Images (Arbeiten mit Bildern)](aspnet-razor-pages/working-with-images.md)
     - [Arbeiten mit Videos](aspnet-razor-pages/working-with-video.md)
-    - [Hinzufügen der Funktion zum Senden von E-Mails an Ihre Website](aspnet-razor-pages/adding-email-to-your-web-site.md)
+    - [Hinzufügen der Funktion zum Senden von E-Mails zu Ihrer Website](aspnet-razor-pages/adding-email-to-your-web-site.md)
     - [Hinzufügen der Suchfunktion zu Ihrer Website](aspnet-razor-pages/adding-search-to-your-web-site.md)
     - [Hinzufügen von Links sozialer Netzwerke zu Ihrer Website](aspnet-razor-pages/adding-social-networking-to-your-website.md)

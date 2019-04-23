@@ -12,7 +12,7 @@ ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399852"
 ---
 # <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Video in einer ASP.NET Web Pages (Razor)-Website
@@ -123,9 +123,9 @@ Sie können festlegen, die `quality` -Parameter für ein Video mit einer Flash `
 
 Sie können ändern, die Flash-Video zur Wiedergabe auf eine bestimmte Größe mithilfe der `scale` -Parameter, der Sie die folgenden festlegen können:
 
-- `showall`sein. Dadurch werden das gesamte Video unter Beibehaltung der ursprünglichen Seitenverhältnisses sichtbar. Allerdings können Sie Rahmen auf jeder Seite erhalten.
-- `noorder`sein. Hiermit skalieren Sie das Video, während das Originalseitenverhältnis beibehalten, aber es zugeschnitten werden kann.
-- `exactfit`sein. Dadurch werden das gesamte Video sichtbar ohne gleichzeitig die ursprünglichen Seitenverhältnisse beizubehalten, aber Verzerrung auftreten.
+- `showall`. Dadurch werden das gesamte Video unter Beibehaltung der ursprünglichen Seitenverhältnisses sichtbar. Allerdings können Sie Rahmen auf jeder Seite erhalten.
+- `noorder`. Hiermit skalieren Sie das Video, während das Originalseitenverhältnis beibehalten, aber es zugeschnitten werden kann.
+- `exactfit`. Dadurch werden das gesamte Video sichtbar ohne gleichzeitig die ursprünglichen Seitenverhältnisse beizubehalten, aber Verzerrung auftreten.
 
 Wenn Sie nicht angeben einer `scale` Parameter das gesamte Video werden angezeigt und das ursprüngliche Seitenverhältnis wird beibehalten werden, ohne zu sämtlichen Zuschneidevorgängen aussieht. Das folgende Beispiel zeigt, wie Sie mit der `scale` Parameter:
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 64d13293ba4575c035965ce173e233f1ed612b72
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403492"
 ---
 # <a name="displaying-data-in-a-grid"></a>Anzeigen von Daten in einem Raster

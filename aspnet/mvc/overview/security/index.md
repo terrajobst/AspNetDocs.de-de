@@ -12,7 +12,7 @@ ms.openlocfilehash: 0e060fe9cff63558d371a19bcfb7cadad21e7f9d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401685"
 ---
 # <a name="security-authentication-and-authorization-with-aspnet-mvc"></a>Sicherheit, Authentifizierung und Autorisierung mit ASP.NET MVC

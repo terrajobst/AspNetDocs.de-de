@@ -12,7 +12,7 @@ ms.openlocfilehash: 34fd3fb357c7a6c33b3a551b0cda7029e807da2c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399059"
 ---
 # <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>Erste Schritte mit Entity Framework 6 Code First unter Verwendung von MVC 5
@@ -29,6 +29,6 @@ ms.locfileid: "59399059"
 - [Lesen von relevanten Daten](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Aktualisieren von relevanten Daten](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Asynchrone und gespeicherte Prozeduren](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-- [Behandeln von Parallelität](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+- [Verarbeiten von Parallelitätsfehlern](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Implementieren von Vererbung](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 - [Erweiterte Entity Framework-Szenarien](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

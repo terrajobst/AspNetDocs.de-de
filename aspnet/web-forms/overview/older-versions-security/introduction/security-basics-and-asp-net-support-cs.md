@@ -12,7 +12,7 @@ ms.openlocfilehash: 8f6fb4348e6ff703d329331b908e41763f24bb1f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402946"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>Grundlagen der Sicherheit und Unterstützung für ASP.NET (C#)
@@ -140,7 +140,7 @@ Microsoft liefert zwei Membership-Provider-Klassen in .NET Framework:
 Diese tutorialreihe konzentriert sich ausschließlich auf die SqlMembershipProvider.
 
 
-[![TIE-Provider-Modell können verschiedene Implementierungen nahtlos integriert in die Anwendungsframework&lt;/ strong&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
+[![Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework&lt;/ strong&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
 
 **Abbildung 03**: Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework ([klicken Sie, um das Bild in voller Größe anzeigen](security-basics-and-asp-net-support-cs/_static/image5.png))
 
@@ -192,4 +192,4 @@ Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in 
 Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde dieses Tutorial, in die Reihe von viele hilfreiche Reviewer überprüft wurde. Führendes Prüfer für dieses Tutorial sind Alicja Maziarz, John Suru und Teresa Murphy. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Weiter](an-overview-of-forms-authentication-cs.md)
+> [Nächste](an-overview-of-forms-authentication-cs.md)

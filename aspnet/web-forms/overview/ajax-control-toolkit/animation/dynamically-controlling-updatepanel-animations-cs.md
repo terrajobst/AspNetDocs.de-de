@@ -12,7 +12,7 @@ ms.openlocfilehash: 0767b66a035069629c15e658c1e75ea78a7bd07b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407652"
 ---
 # <a name="dynamically-controlling-updatepanel-animations-c"></a>Dynamisches Steuern von UpdatePanel-Animationen (C#)
@@ -58,7 +58,7 @@ Zum Schluss die `UpdatePanelAnimationExtender` muss so konfiguriert werden: Lege
 Führen Sie die Datei im Browser. Wenn Sie auf die Schaltfläche klicken, wird die aktuelle Uhrzeit im Bereich immer für die Dauer von einer Sekunde mit im Verlauf angezeigt.
 
 
-[![TEr ist die aktuelle Uhrzeit eingeblendet,](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
+[![Die aktuelle Uhrzeit ist mit im Verlauf.](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
 
 Die aktuelle Uhrzeit wird eingeblendet, ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-controlling-updatepanel-animations-cs/_static/image3.png))
 

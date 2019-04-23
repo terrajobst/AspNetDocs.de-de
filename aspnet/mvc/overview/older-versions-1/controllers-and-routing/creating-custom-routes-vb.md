@@ -12,7 +12,7 @@ ms.openlocfilehash: a7b8b85ba1cf5c18e605eb8114a305272baf41a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404870"
 ---
 # <a name="creating-custom-routes-vb"></a>Erstellen von benutzerdefinierten Routen (VB)
@@ -61,7 +61,7 @@ Beachten Sie, dass die Methode Entry() Programmausdruck 2 einen Parameter vom Ty
 **Abbildung 1: Fehler in Parameter konvertieren**
 
 
-[![TDialogfeld für neues Projekt mit HE](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
+[![Das Dialogfeld "Neues Projekt"](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
 
 **Abbildung 01**: Fehler durch Konvertieren der Parameter ([klicken Sie, um das Bild in voller Größe anzeigen](creating-custom-routes-vb/_static/image2.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400203"
 ---
 # <a name="caching"></a>Zwischenspeicherung
@@ -213,7 +213,7 @@ Es gibt mehrere Änderungen in ASP.NET 2.0 Cachekonfiguration. Die &lt;zwischens
 
 | **Element** | **Beschreibung** |
 | --- | --- |
-| **Cache** | Optionales Element. Definiert die cacheeinstellungen für globale Anwendungen. |
+| **cache** | Optionales Element. Definiert die cacheeinstellungen für globale Anwendungen. |
 | **outputCache** | Optionales Element. Gibt eine anwendungsweite Ausgabecache-Einstellungen. |
 | **outputCacheSettings** | Optionales Element. Gibt die Ausgabe-Cache-Einstellungen, die auf Seiten in der Anwendung angewendet werden können. |
 | **sqlCacheDependency** | Optionales Element. Konfiguriert die SQL-cacheabhängigkeiten für eine ASP.NET-Anwendung. |

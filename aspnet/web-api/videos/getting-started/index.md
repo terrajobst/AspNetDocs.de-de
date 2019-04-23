@@ -12,7 +12,7 @@ ms.openlocfilehash: 5cec547993722e587fc0f54486f7f2ca388db64d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404103"
 ---
 # <a name="aspnet-web-api-overview-and-getting-started-videos"></a>Übersicht über die ASP.NET Web-API und erste Schritte – Videos
@@ -23,7 +23,7 @@ ms.locfileid: "59404103"
 - [ASP.NET-Web-API](aspnet-web-api.md)
 - [ASP.NET-Web-API, Teil 1: Ihre erste Web-API](your-first-web-api.md)
 - [ASP.NET-Web-API, Teil 2: Abrufen von Daten](getting-data.md)
-- [ASP.NET-Web-API, Teil 3: Löschen und aktualisieren](delete-and-update.md)
+- [ASP.NET-Web-API, Teil 3: Delete- und Update](delete-and-update.md)
 - [ASP.NET-Web-API, Teil 4: Auslagern und Abfragen](paging-and-querying.md)
 - [ASP.NET-Web-API, Teil 5: Benutzerdefinierte Validierung](custom-validation.md)
-- [ASP.NET-Web-API, Teil 6: Autorisierung](authorization.md)
+- [ASP.NET-Web-API, Teil 6: Authorization](authorization.md)

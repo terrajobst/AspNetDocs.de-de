@@ -12,7 +12,7 @@ ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398474"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit modellbindung und Web forms
@@ -217,4 +217,4 @@ In diesem Tutorial erstellten Data Model-Klassen und eine Datenbank aus den Klas
 In den nächsten [Tutorial](updating-deleting-and-creating-data.md) in dieser Reihe werde Sie aktivieren, aktualisieren, löschen und Erstellen von Daten.
 
 > [!div class="step-by-step"]
-> [Weiter](updating-deleting-and-creating-data.md)
+> [Nächste](updating-deleting-and-creating-data.md)

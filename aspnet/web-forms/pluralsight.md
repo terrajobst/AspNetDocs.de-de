@@ -12,7 +12,7 @@ ms.openlocfilehash: ae41660d96260991defc23c75d2dda5b9183585e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400281"
 ---
 # <a name="web-forms-video-training-from-pluralsight"></a>Web Forms-Schulungsvideo von Pluralsight

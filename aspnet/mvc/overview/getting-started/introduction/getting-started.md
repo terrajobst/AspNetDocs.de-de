@@ -11,7 +11,7 @@ ms.openlocfilehash: c2f7ca2e7fb8d7831f21e3ba2f4713211657e1b3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402231"
 ---
 # <a name="getting-started-with-aspnet-mvc-5"></a>Erste Schritte mit ASP.NET MVC 5
@@ -75,4 +75,4 @@ Sie benötigen ein Azure-Konto zum Bereitstellen dieser Lösung in Azure. Wenn S
 - [Visual Studio-abonnentenvorteile aktivieren](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers) -Ihr Visual Studio-Abonnement ein monatliches Guthaben, die Sie für zahlungspflichtige Azure-Dienste verwenden können.
 
 > [!div class="step-by-step"]
-> [Weiter](adding-a-controller.md)
+> [Nächste](adding-a-controller.md)

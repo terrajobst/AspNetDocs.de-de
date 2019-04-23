@@ -12,7 +12,7 @@ ms.openlocfilehash: 8148974eacd1db05947ba54fe40776df69f92290
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404116"
 ---
 # <a name="backbone-template"></a>Backbone-Vorlage
@@ -56,7 +56,7 @@ Durch Klicken auf "Mein Konto" wird die Anmeldeseite:
 
 Lassen Sie uns beginnt bei der Clientseite. Die Client-Anwendung-Skripts befinden sich im Ordner "~/Scripts/application". Die Anwendung hat [TypeScript](http://www.typescriptlang.org/) (TS-Dateien) die in JavaScript (.js-Dateien) kompiliert werden.
 
-**Application**
+**Anwendung**
 
 `Application` wird in application.ts definiert. Dieses Objekt initialisiert die Anwendung und fungiert als Root-Namespace. Es verwaltet die Konfiguration und Status-Informationen, die der Anwendung gemeinsam verwendet wird, wie z. B., ob der Benutzer angemeldet ist.
 

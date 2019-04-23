@@ -12,7 +12,7 @@ ms.openlocfilehash: f588af70f3928285274ef6bf14f58697190943ff
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405819"
 ---
 # <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC, erste Schritte
@@ -44,7 +44,7 @@ ms.locfileid: "59405819"
     - [Lesen von relevanten Daten](getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Aktualisieren von relevanten Daten](getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Asynchrone und gespeicherte Prozeduren](getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-    - [Behandeln von Parallelität](getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+    - [Verarbeiten von Parallelitätsfehlern](getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Implementieren von Vererbung](getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [Erweiterte Entity Framework-Szenarien](getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
 - [EF Database First mit ASP.NET MVC](database-first-development/index.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 49458c6d498b492b138247cb9257cd934e472ba6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399540"
 ---
 # <a name="creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc"></a>Erstellen einer Filmdatenbankanwendung mit ASP.NET MVC in 15 Minuten

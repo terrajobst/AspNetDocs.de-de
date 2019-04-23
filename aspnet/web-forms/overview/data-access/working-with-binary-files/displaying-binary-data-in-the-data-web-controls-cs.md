@@ -12,7 +12,7 @@ ms.openlocfilehash: c6c41ba5b5414da689e63ef521f1cf22e0b55701
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404285"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-c"></a>Anzeigen von Binärdaten in den Datenwebsteuerelementen (C#)
@@ -41,7 +41,7 @@ Im vorherigen Tutorial wurde erläutert, wie das Steuerelement "FileUpload" verw
 In diesem Tutorial s Download finden Sie sieben PDF-Broschüre-Dateien in die `~/Brochures` Ordner, eine für jede Kategorie außer Seafood. Ich absichtlich ausgelassen wird, Hinzufügen einer Seafood Broschüre zur Veranschaulichung der Umgang mit Szenarien, in denen nicht alle Datensätze Binärdaten verknüpft haben. Beim Aktualisieren der `Categories` Tabelle mit den folgenden Werten, mit der rechten Maustaste auf die `Categories` Knoten im Server-Explorer, und wählen Sie die Tabellendaten anzeigen. Geben Sie dann die virtuellen Pfade zu den Broschüre-Dateien für jede Kategorie, die eine Broschüre, wie in Abbildung 1 dargestellt. Da keine Broschüre für die Kategorie "Seafood" ist, lassen Sie die `BrochurePath` s Spaltenwert als `NULL`.
 
 
-[![Manuell Geben Sie die Werte für die Tabelle mit Produktkategorien s BrochurePath Spalte](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
+[![Geben Sie die Werte manuell für die Kategorien s BrochurePath Tabellenspalte](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
 
 **Abbildung 1**: Geben Sie manuell die Werte für die `Categories` Tabelle s `BrochurePath` Spalte ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.png))
 
@@ -53,17 +53,17 @@ Mit der `BrochurePath` Werte für die `Categories` Tabelle wir erneut bereit, um
 Durch Ziehen einer GridView-Ansicht aus der Toolbox in den Designer der Start der `DisplayOrDownloadData.aspx` auf der Seite die `BinaryData` Ordner. Legen Sie die GridView-s `ID` zu `Categories` und über GridView s Smarttags, wählen Sie sie an eine neue Datenquelle zu binden. Binden Sie es insbesondere um ein mit dem Namen "ObjectDataSource" `CategoriesDataSource` , abruft, Daten mithilfe der `CategoriesBLL` s-Objekt `GetCategories()` Methode.
 
 
-[![CErstellen eine neue "ObjectDataSource" mit dem Namen CategoriesDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
+[![Erstellen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
 
 **Abbildung 2**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.png))
 
 
-[![CKonfigurieren der CategoriesBLL-Klasse mit dem ObjectDataSource-Steuerelement](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
+[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL-Klasse](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
 
 **Abbildung 3**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.png))
 
 
-[![REtrieve der Liste der Kategorien mithilfe der Methode GetCategories()](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
+[![Abrufen der Liste der Kategorien, die mit der GetCategories()-Methode](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
 
 **Abbildung 4**: Rufen Sie die Liste der Kategorien mithilfe der `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.png))
 
@@ -76,7 +76,7 @@ Nach dem Fertigstellen des Assistenten für die Datenquelle konfigurieren Visual
 Diese Seite über einen Browser anzuzeigen (siehe Abbildung 5). Jede der acht Kategorien wird angezeigt. Der sieben Kategorien `BrochurePath` Werte haben die `BrochurePath` Wert in der jeweiligen BoundField angezeigt. Seafood, die eine `NULL` Wert für die `BrochurePath`, zeigt eine leere Zelle.
 
 
-[![EEs ist an Kategorie s Name, Beschreibung und BrochurePath-Wert aufgeführt](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
+[![Jede Kategorie s Name, Beschreibung und BrochurePath Wert enthält.](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
 
 **Abbildung 5**: Jede Kategorie s Name, Beschreibung und `BrochurePath` Wert aufgeführt wird ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.png))
 
@@ -92,12 +92,12 @@ Anstatt den Text der anzuzeigen die `BrochurePath` Spalte, die wir einen Link zu
 Dadurch wird eine Spalte von Links an die GridView, hinzugefügt, wie in Abbildung 7 dargestellt. Klicken auf einen Link Broschüre anzeigen wird entweder die PDF-Datei direkt im Browser angezeigt oder fordert den Benutzer zum Herunterladen der Datei, je nachdem, ob ein PDF-Reader installiert ist und der Browsereinstellungen s.
 
 
-[![A Kategorie s Broschüre kann angezeigt werden, indem Sie auf den Link zum Anzeigen von Broschüre](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
+[![Eine Kategorie-s-Broschüre kann angezeigt werden, indem Sie auf den Link zum Anzeigen von Broschüre](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
 
 **Abbildung 7**: Eine Kategorie s Broschüre angezeigt werden können, indem Sie auf den Link zum Anzeigen von Broschüre ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image12.png))
 
 
-[![Ter Kategorie s Broschüre PDF angezeigt](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
+[![Die Kategorie s Broschüre PDF-Datei wird angezeigt.](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
 
 **Abbildung 8**: Die Kategorie s Broschüre PDF-Datei wird angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image14.png))
 
@@ -131,7 +131,7 @@ Diese Methode bestimmt, ob der übergegebenen `object` Wert ist eine Datenbank `
 Abbildung 10 zeigt die Seite, nachdem diese Änderungen angewendet wurden. Beachten Sie, dass der Kategorie "Seafood" s `BrochurePath` Feld zeigt jetzt den Text, der keine Broschüre verfügbar.
 
 
-[![Ter Text keine Broschüre verfügbar wird für diese Kategorien ohne ein Broschüre](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
+[![Der Text ohne Broschüre verfügbar ist für diese Kategorien ohne ein Broschüre angezeigt](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
 
 **Abbildung 10**: Der Text ohne Broschüre verfügbaren wird angezeigt, für die Kategorien ohne ein Broschüre ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image16.png))
 
@@ -168,7 +168,7 @@ Die `Response.ContentType` Eigenschaft gibt an, die [MIME-Typ](http://en.wikiped
 Mit dieser Seite, die erstellt wird, kann eine bestimmte Kategorie s Bild angezeigt werden finden Sie unter `DisplayCategoryPicture.aspx?CategoryID=categoryID`. Abbildung 11 zeigt das Bild der Getränke-Kategorie s, die aus angezeigt werden kann `DisplayCategoryPicture.aspx?CategoryID=1`.
 
 
-[![Ter die Kategorie "Getränke"-s-Bild wird angezeigt](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
+[![Die Kategorie "Getränke"-s, die Bild angezeigt wird](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
 
 **Abbildung 11**: Die Kategorie "Getränke" s-Bild wird angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image18.png))
 
@@ -208,7 +208,7 @@ Nach dem Hinzufügen der ImageField an, die GridView s deklarative Syntax sieht 
 Nehmen Sie einen Moment Zeit, zum Anzeigen dieser Seite über einen Browser ein. Beachten Sie, wie jeder Datensatz jetzt ein Bild für die Kategorie enthält.
 
 
-[![Ter Kategorie s Bild wird für jede Zeile](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
+[![Die Kategorie s Bild wird für jede Zeile angezeigt.](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
 
 **Abbildung 13**: Die Kategorie s Bild für jede Zeile angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png))
 

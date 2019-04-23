@@ -12,7 +12,7 @@ ms.openlocfilehash: b06f105b16087f97788e0ab360af41f538d2c1ac
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400801"
 ---
 # <a name="configuration-and-instrumentation"></a>Konfiguration und Instrumentierung
@@ -145,11 +145,11 @@ Die &lt;HealthMonitoring&gt; Teil der globalen Datei "Web.config" stellt Konfigu
 
 Die &lt;HealthMonitoring&gt; Teil der globalen Datei "Web.config" enthält die folgenden Elemente:
 
-| **Anbieter** | Enthält Anbieter für die Ereignisanzeige, WMI und SQL Server einrichten. |
+| **providers** | Enthält Anbieter für die Ereignisanzeige, WMI und SQL Server einrichten. |
 | --- | --- |
 | **eventMappings** | Enthält die Zuordnungen für die verschiedenen WebBase-Klassen. Sie können diese Liste erweitern, wenn Sie Ihre eigenen Event-Klasse generieren. Generieren Ihren eigenen Event-Klasse bietet Ihnen Feinerer Granularität über die Anbieter, die, denen Sie Informationen zu senden. Sie können z. B. nicht behandelte Ausnahmen für SQL Server gesendet werden, und senden Ihre eigenen benutzerdefinierten Ereignisse an e-Mail-Adresse konfigurieren. |
 | **Regeln** | EventMappings verknüpft mit dem Anbieter. |
-| **Puffern** | Mit SQL Server- und e-Mail-Anbieter verwendet, um zu bestimmen, wie oft die Ereignisse an den Anbieter zu leeren. |
+| **buffering** | Mit SQL Server- und e-Mail-Anbieter verwendet, um zu bestimmen, wie oft die Ereignisse an den Anbieter zu leeren. |
 
 Im folgenden finden Sie ein Codebeispiel, aus der globalen Datei "Web.config".
 
@@ -241,7 +241,7 @@ Es gibt mehrere Befehlszeilentools zur Unterstützung bei der Konfiguration von 
 
 Die folgenden Befehlszeilentools sind verfügbar:
 
-| **Tool** | **Mit** |
+| **Tool** | **Verwendung** |
 | --- | --- |
 | **aspnet\_regiis.exe** | Ermöglicht die Registrierung von ASP.NET mit IIS. Es gibt zwei Versionen dieses Tools, die ASP.NET 2.0 im Lieferumfang enthalten, von denen eine für 32-Bit-Systeme (im Ordner "Framework") und eine für 64-Bit-Systeme (im Ordner Framework64.) Die 64-Bit-Version wird nicht auf einem 32-Bit-Betriebssystem installiert werden. |
 | **aspnet\_regsql.exe** | Das Registrierungstool für ASP.NET SQL Server wird verwendet, um eine Microsoft SQL Server-Datenbank für die Verwendung durch SQL Server-Anbieter in ASP.NET zu erstellen oder zum Hinzufügen oder Entfernen von Optionen aus einer vorhandenen Datenbank. Das Aspnet\_regsql.exe-Datei befindet sich in der [drive:]\WINDOWS\Microsoft.NET\Framework\versionNumber Ordner auf Ihrem Webserver. |
@@ -298,7 +298,7 @@ Die folgenden Optionen sind verfügbar, bei der Ausführung von Aspnet\_regbrows
 
 Die ASP.NET-Kompilierung-Tool kann auf zwei allgemeine Arten verwendet werden: für die Kompilierung des direktes und Kompilierung für die Bereitstellung, in denen ein Zielverzeichnis für die Ausgabe angegeben ist.
 
-### [<a name="compiling-an-application-in-place"></a>Kompilieren einer Anwendung vorhanden](https://msdn.microsoft.com/library/ms229863.aspx)
+### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilieren einer Anwendung vorhanden](https://msdn.microsoft.com/library/ms229863.aspx)
 
 Die können Kompilieren einer Anwendung vorhanden, d. h. er das Verhalten von mehreren Anfragen an die Anwendung, wodurch die Kompilierung von regulären imitiert. Benutzer einer vorkompilierten Website treten nicht auf eine Verzögerung, die durch das Kompilieren der Seite bei der ersten Anforderung verursacht werden.
 
@@ -314,7 +314,7 @@ Sie können auch eine Anwendung direkt nach dem Hinzufügen von neuen Quelldatei
 > Kompilierung einer Anwendung, die eine geschachtelte Anwendung enthält wird die geschachtelte Anwendung nicht kompiliert werden. Die geschachtelte Anwendung muss separat kompiliert werden.
 
 
-### [<a name="compiling-an-application-for-deployment"></a>Kompilieren einer Anwendung für die Bereitstellung](https://msdn.microsoft.com/library/ms229863.aspx)
+### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilieren einer Anwendung für die Bereitstellung](https://msdn.microsoft.com/library/ms229863.aspx)
 
 Sie kompilieren eine Anwendung für die Bereitstellung (Kompilierung zu einer Zielposition) durch Festlegen des TargetDir-Parameters. TargetDir kann den endgültigen Speicherort für die Webanwendung, oder die kompilierte Anwendung kann weiter bereitgestellt werden. Mithilfe der **-u** Option kompiliert die Anwendung so, dass Sie auf bestimmte Dateien in der kompilierten Anwendung Änderungen vornehmen können, ohne Neukompilieren. ASPNET\_compiler.exe wird unterschieden zwischen statischen und dynamischen Dateitypen, und sie unterschiedlich behandelt, wenn Sie die Anwendung zu erstellen.
 
@@ -351,11 +351,11 @@ In der folgende Tabelle wird beschrieben, wie die ASP.NET-Kompilierung verschied
 | Skin-Dateien in der App\_Designs Unterverzeichnis | Designs sind in Assemblys kompiliert und im Verzeichnis "bin" gespeichert. Stub-Dateien für die Skin-Dateien erstellt und in das entsprechende Verzeichnis platziert. Statische Dateien (z. B. CSS) werden in den Ausgabeverzeichnisse kopiert. |
 | .Browser-Datei "Web.config" statischen Typen von Assemblys im Bin-Verzeichnis bereits vorhanden. | Diese Dateien werden kopiert, da in das Ausgabeverzeichnis ist. |
 
-### [<a name="fixed-assembly-names"></a>Festgelegten Assemblynamen](https://msdn.microsoft.com/library/ms229863.aspx##)
+### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Festgelegten Assemblynamen](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 Einige Szenarien, z. B. das Bereitstellen einer Webanwendung mithilfe der Windows Installer MSI-Datei erfordern die Verwendung von konsistenten Dateinamen und Inhalte sowie konsistente Verzeichnisstrukturen zum Identifizieren von Assemblys oder von Konfigurationseinstellungen für Updates. In diesen Fällen können Sie die **- Fixednames** Option aus, um anzugeben, dass die ASP.NET eine Assembly kompilieren soll für jede Quelldatei anstelle von Where mit mehreren Seiten in Assemblys kompiliert werden. Dies kann für eine große Anzahl von Assemblys führen, also wenn Sie sich mit der Skalierbarkeit sollten Sie diese Option mit Vorsicht verwenden.
 
-### [<a name="strong-name-compilation"></a>Kompilierung mit starkem Namen](https://msdn.microsoft.com/library/ms229863.aspx##)
+### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilierung mit starkem Namen](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 Die **- Aptca**, **- Delaysign**, **- Keycontainer** und **- Keyfile** Optionen werden bereitgestellt, sodass Sie, Aspnet verwenden können\_ Compiler.exe stark erstellen mit dem Namen Assemblys ohne Verwendung der [Strong Name-Tool (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) getrennt. Diese Optionen entsprechen jeweils zu **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**, und  **AssemblyKeyFileAttribute**.
 

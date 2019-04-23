@@ -12,7 +12,7 @@ ms.openlocfilehash: 056e89b20ccab0e56b1fab422c817d842beff446
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400840"
 ---
 # <a name="using-textboxwatermark-in-a-formview-vb"></a>Verwenden von TextBoxWatermark in einem FormView-Steuerelement (VB)
@@ -49,7 +49,7 @@ Notieren Sie sich den Namen (`ID`) der Datenquelle, da es in verwendet werden di
 Jetzt bei der Benutzer ändert, in den Modus der EINFG der `FormView` zu steuern, das Textfeld für den neuen Anbieter vorausgefüllt ist, vielen Dank an die `TextBoxWatermarkExtender` Steuerelement. Ein Klicken Sie im Textfeld können den füllzeichentext nicht mehr angezeigt.
 
 
-[![TIE-Wasserzeichen in das Feld stammt aus der Extender](using-textboxwatermark-in-a-formview-vb/_static/image2.png)](using-textboxwatermark-in-a-formview-vb/_static/image1.png)
+[![Das Wasserzeichen in das Feld stammt der extender](using-textboxwatermark-in-a-formview-vb/_static/image2.png)](using-textboxwatermark-in-a-formview-vb/_static/image1.png)
 
 Das Wasserzeichen in das Feld stammt der Extender ([klicken Sie, um das Bild in voller Größe anzeigen](using-textboxwatermark-in-a-formview-vb/_static/image3.png))
 
