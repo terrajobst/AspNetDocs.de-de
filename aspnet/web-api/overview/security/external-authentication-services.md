@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: Externe Authentifizierungsdienste mit ASP.NET-Web-API (c#) | Microsoft-Dokumentation
+title: Externe Authentifizierungsdienste mit ASP.NET-Web-API (C#) | Microsoft-Dokumentation
 author: rmcmurray
 description: Beschreibt die Verwendung von externen Authentifizierungsdienste in ASP.NET Web-API.
 ms.author: riande
@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 03/01/2019
 ms.locfileid: "57064917"
 ---
-# <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externe Authentifizierungsdienste mit ASP.NET-Web-API (c#)
+# <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externe Authentifizierungsdienste mit ASP.NET-Web-API (C#)
 
 Visual Studio 2017 und ASP.NET 4.7.2 Erweitern Sie die Sicherheitsoptionen für [Single Page Applications](../../../single-page-application/index.md) (SPA) und [Web-API-](../../index.md) Dienste zur Integration in externe Authentifizierung-Dienste, die mehrere enthalten OAuth-/OpenID und Dienste für soziale Authentifizierung: Microsoft-Konten, Twitter, Facebook und Google.  
 
