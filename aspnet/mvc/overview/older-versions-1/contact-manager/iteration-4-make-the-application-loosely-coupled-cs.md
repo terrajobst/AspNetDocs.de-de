@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8caa88d928517e1c71210cbe55e3961d4baf461a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ce8e3c4ff8a59be9f2f572813db599604216119d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381275"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117793"
 ---
 # <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iteration #4 – Optimieren der Anwendung, die lose verknüpft wird (c#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [Code herunterladen](iteration-4-make-the-application-loosely-coupled-cs/_static/contactmanager_4_cs1.zip)
 
 > In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
 
@@ -54,7 +53,6 @@ Derzeit alle Daten zugreifen und Validierung Logik wird von der Contact Manager-
 > 
 > (SRP), sollte eine Klasse nicht mehr als einen Grund zur Änderung haben. Das Kombinieren von Controller, Validierung und Datenbanklogik ist eine umfangreiche Verstoß gegen das Prinzip der einzigen Verantwortung.
 
-
 Es gibt mehrere Gründe, die Sie benötigen Ihre Anwendung ändern. Müssen Sie möglicherweise ein neues Feature für Ihre Anwendung hinzufügen, müssen Sie möglicherweise einen Fehler in Ihrer Anwendung zu beheben, oder müssen Sie möglicherweise ändern, wie eine Funktion der Anwendung implementiert wird. Anwendungen sind selten statisch. Neigen dazu, vergrößern und im Laufe der Zeit verändern.
 
 Angenommen Sie, Sie ändern, wie Sie der Datenzugriffsebene implementieren können. Rechts wird nun die Kontakt-Manager-Anwendung Microsoft Entity Framework für den Datenbankzugriff. Möglicherweise möchten jedoch auf eine neue oder alternative datenzugriffstechnologie z. B. ADO.NET Data Services oder NHibernate migrieren. Da der Datenzugriffscode nicht von der Überprüfung und Controller Code isoliert ist, besteht jedoch keine Möglichkeit zum Ändern der Datenzugriffscode in Ihrer Anwendung ohne Änderung von anderem Code, der nicht direkt auf den Datenzugriff verknüpft ist.
@@ -66,7 +64,6 @@ In dieser Iteration nutzen wir einige Entwurfsmuster für Software, mit die wir 
 > [!NOTE] 
 > 
 > Refactoring, ist der Prozess für das erneute Schreiben eine Anwendung so, dass es keine vorhandene Funktionalität verloren ist.
-
 
 ## <a name="using-the-repository-software-design-pattern"></a>Verwenden das Repository-Software-Entwurfsmuster
 
@@ -105,7 +102,6 @@ Programmieren mit Schnittstellen (Abstraktionen) anstelle der konkreten Klassen 
 > 
 > Sie können eine Schnittstelle schnell von einer konkreten Klasse in Visual Studio erstellen, durch Auswählen der Menüoption Umgestaltung Schnittstelle extrahieren. Beispielsweise können Sie erstellen Sie zunächst die EntityContactManagerRepository-Klasse, und klicken Sie dann mit der Schnittstelle extrahieren die IContactManagerRepository-Schnittstelle automatisch generiert.
 
-
 ## <a name="using-the-dependency-injection-software-design-pattern"></a>Mithilfe des Software-Entwurfsmusters für Dependency Injection
 
 Nun, da wir unsere Datenzugriffscode in eine separate repositoryklasse migriert haben, müssen wir unser wenden Sie sich an Controller zur Verwendung dieser Klasse zu ändern. Es wird ein Software-Entwurfsmuster wird aufgerufen, Dependency Injection zur Verwendung der Repository-Klasse in unserem Controller nutzen.
@@ -127,7 +123,6 @@ Konstruktorbasierte Dependency Injection ist auch die Contact-Controller-Klasse 
 > [!NOTE] 
 > 
 > Sollten Sie die Controllerklasse wenden Sie sich an, über eine bestimmte Implementierung der Schnittstelle IContactManagerRepository vollständig zu entkoppeln können dann Sie ein Framework nutzen, die Dependency Injection, z. B. StructureMap oder Microsoft unterstützt Entitätsframework (MEF). Von einem Dependency Injection-Framework nutzen, müssen Sie nie auf eine konkrete Klasse in Ihrem Code verweisen.
-
 
 ## <a name="creating-a-service-layer"></a>Erstellen eine Dienstschicht
 

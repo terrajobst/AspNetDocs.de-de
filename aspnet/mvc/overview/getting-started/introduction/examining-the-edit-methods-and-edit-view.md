@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4a4627bdce8b8f2085150aa08cdc4c1271e09e09
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c42ec77b5d5107f3ef70e13b779fc1bebef70a14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422004"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120704"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>Überprüfen der Edit-Methoden und -Ansicht
 
@@ -98,7 +98,6 @@ Alle der `HttpGet` Methoden folgen einem ähnlichen Muster. Sie erhalten ein Mov
 ## <a name="jquery-validation-for-non-english-locales"></a>jQuery-Validierung für nicht englischen Gebietsschemas
 
 Wenn Sie einen Computer für Englisch (USA) verwenden, können Sie diesen Abschnitt überspringen und fahren Sie mit dem nächsten Tutorial. Sie können die Version dieses Tutorials Globalize [hier](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475). Ein ausgezeichnetes zweiteiligen-Tutorial, das an der Internationalisierung, finden Sie unter [Nadeems ASP.NET MVC 5-Internationalisierung](http://afana.me/post/aspnet-mvc-internationalization.aspx).
-
 
 > [!NOTE]
 > zur Unterstützung von jQuery-Validierung für nicht englische Gebietsschemas, in denen ein Komma (&quot;,&quot;) für ein Dezimaltrennzeichen und einem nicht-US-englischen Datums-und Uhrzeitformate, müssen Sie enthalten *globalize.js* und Ihren speziellen  *Cultures/globalize.Cultures.js* Datei (aus [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) und JavaScript verwenden `Globalize.parseFloat`. Sie können die jQuery-Validierung nicht englischen von NuGet abrufen. (Installieren Sie nicht Globalize bei Verwendung von einem englischen Gebietsschema.)

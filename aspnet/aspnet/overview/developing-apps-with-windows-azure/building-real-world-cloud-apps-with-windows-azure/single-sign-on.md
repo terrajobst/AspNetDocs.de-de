@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: da1136e085776c63886b6ac25533521fa1479d4f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f6c23eb71ea323b6ab06943097f927f717a8099
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59406287"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118745"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Einmaliges Anmelden (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Es gibt viele Sicherheitsprobleme zu bedenken, wenn Sie eine Cloud-app entwickeln, aber für diese Reihe konzentrieren wir uns nur auf einem: einmaliges Anmelden. Eine Frage, die häufig die Frage gestellt, ist dies: "Ich bin in erster Linie für die Mitarbeiter meines Unternehmens; Erstellen von apps Wie kann ich diese apps in der Cloud zu hosten und trotzdem aktivieren sie das gleiche Sicherheitsmodell verwenden, das meiner Mitarbeiter kennen und in der lokalen Umgebung verwenden, wenn sie apps, die ausgeführt werden gehostet werden innerhalb der Firewall?" Einer der Methoden, die wir dieses Szenarios aktivieren wird Azure Active Directory (Azure AD) aufgerufen. Azure AD ermöglicht Ihnen, die Enterprise-Line-of-Business-apps (LOB) über das Internet verfügbar machen, und sie können diese apps auch Geschäftspartner zur Verfügung stellen.
 

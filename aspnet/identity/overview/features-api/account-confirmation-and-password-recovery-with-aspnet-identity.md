@@ -9,12 +9,12 @@ ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ded3a9d931cc4cd4b99c1cb5012469fe66209f76
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396420"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118023"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>Bestätigung und Wiederherstellung mit ASP.NET Identity-Konto (C#)
 
@@ -66,7 +66,6 @@ Auswählen der **zurücksetzen** Schaltfläche wird bestätigt das Kennwort wurd
 ## <a name="create-an-aspnet-web-app"></a>Erstellen einer ASP.NET-Web-App
 
 Zunächst installieren und Ausführen von [Visual Studio 2017](https://visualstudio.microsoft.com/).
-
 
 1. Erstellen Sie ein neues ASP.NET Web-Projekt, und wählen Sie die MVC-Vorlage. Web Forms unterstützen auch ASP.NET Identity, sodass Sie ähnliche Schritte in einer Web Forms-app ausführen konnte.
 2. Ändern Sie die Authentifizierung auf **einzelne Benutzerkonten**.
@@ -153,7 +152,6 @@ In diesem Abschnitt werden Sie NuGet verwenden, um ein ausführlicheres Beispiel
 > [!WARNING]
 > Wenn Sie die Sicherheitseinstellungen in diesem Beispiel ändern, müssen Produktionen apps eine sicherheitsüberprüfung unterzogen werden, die die Änderungen explizit aufruft.
 
-
 ## <a name="examine-the-code-in-appstartidentityconfigcs"></a>Überprüfen Sie den Code in App\_Start\IdentityConfig.cs
 
 Das Beispiel zeigt, wie Sie ein Konto erstellen und Hinzufügen der *Admin* Rolle. Ersetzen Sie die e-Mail-Adresse in das Beispiel mit der e-Mail-Adresse, die Sie für das Administratorkonto verwenden möchten. Die einfachste Möglichkeit jetzt zum Erstellen eines Administratorkontos wird programmgesteuert in die `Seed` Methode. Wir hoffen, haben in der Zukunft ein Tool, mit denen Sie zum Erstellen und Verwalten von Benutzern und Rollen. Der Beispielcode ist möglich, Sie erstellen und Verwalten von Benutzern und Rollen, jedoch benötigen Sie ein Administratorkonto zum Ausführen von Rollen und Verwaltungsseiten für Benutzer. In diesem Beispiel wird das Administratorkonto erstellt, wenn die Datenbank ein Seeding durchgeführt wird.
@@ -184,14 +182,12 @@ Wechseln Sie zu der [Anmeldeseite von Azure-SendGrid](https://azure.microsoft.co
 > [!NOTE]
 > E-Mail-Clients akzeptieren häufig nur SMS-Nachrichten (HTML). Sie sollten die Nachricht in Text und HTML bereitstellen. Im obigen SendGrid-Beispiel ist dies mit der `myMessage.Text` und `myMessage.Html` oben gezeigte Code.
 
-
 Der folgende Code zeigt, wie zum Senden von e-Mails unter Verwendung der [MailMessage](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) Klasse Where `message.Body` gibt nur die Verknüpfung.
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
 > Sicherheit: vertrauliche Daten niemals in Ihrem Quellcode speichern. Das Konto und die Anmeldeinformationen werden in der AppSetting gespeichert. In Azure können sicher gespeichert werden diese Werte auf die **[konfigurieren](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** Registerkarte im Azure-Portal. Finden Sie unter [bewährte Methoden für die Bereitstellung von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
-
 
 Geben Sie Ihre SendGrid-Anmeldeinformationen, die app ausführen, kann registrieren Sie sich mit einem e-Mail-Alias den Confirm-Link in Ihre e-Mail-Adresse auswählen. Informationen zu diesem Zweck Ihre [Outlook.com](http://outlook.com) e-Mail-Konto, finden Sie unter der John Atten [ C# SMTP-Konfiguration für die SMTP-Host Outlook.Com](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx) sowie seine[ASP.NET Identity 2.0: Festlegen der Kontovalidierung und zwei-Faktor-Autorisierung](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) sendet.
 

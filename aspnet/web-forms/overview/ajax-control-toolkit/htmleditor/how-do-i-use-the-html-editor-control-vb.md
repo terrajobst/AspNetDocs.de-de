@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa19ef52c4538f0db427eaa9a79b074c85001ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20f8a2f8148bc658370ba1a939ebf1b62d376bc0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415868"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115474"
 ---
 # <a name="how-do-i-use-the-html-editor-control-vb"></a>Wie verwende ich das HTML-Editor-Steuerelement? (VB)
 
@@ -21,22 +21,17 @@ by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor ist ein ASP.NET AJAX-Steuerelement mit dem Sie ganz einfach erstellen und Bearbeiten von HTML-Inhalte über Schaltflächen in einer Symbolleiste an.
 
-
 Das Ziel dieses Lernprogramms ist eine Übersicht über das HTML-Editor-Steuerelement, das mit dem AJAX Control Toolkit enthalten bereit. Der HTML-Editor enthält Optionen zum Ändern der Größe der Schriftart, Auswählen einer Schriftart, Hintergrundfarbe ändern, ändern die die Vordergrundfarbe darstellt, Hinzufügen von Links, Bilder, hinzufügen, ändern die textausrichtung und Ausführen Ausschneiden, kopieren und einfügen (siehe Abbildung 1).
-
 
 [![Der HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
 **Abbildung 01**: Der HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
-
 Der HTML-Editor können Sie Inhalte mithilfe von Entwurfsmodus eingeben, oder Sie HTML direkt eingeben. Sie auch erhalten die Möglichkeit, Ihren HTML-Inhalt (Vorschau) (siehe Abbildung 2).
-
 
 [![Entwurf, HTML und Vorschau Schaltflächen](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
 **Abbildung 02**: Entwurf, HTML und Vorschau Schaltflächen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
-
 
 In diesem Tutorial erfahren Sie, wie der HTML-Editor angezeigt, wie Sie die Schaltflächen der Symbolleiste anpassen, die in der HTML-Editor angezeigt werden und Cross-Site Scripting-Angriffe zu vermeiden.
 
@@ -48,11 +43,9 @@ Sie sollten das ScriptManager-Steuerelement am oberen Rand der Seite vor allen a
 
 Das HTML-Editor-Steuerelement befindet sich in der Toolbox mit dem Rest der Steuerelemente des AJAX Control Toolkit. Sie heißt das Editorsteuerelement (siehe Abbildung 3).
 
-
 [![Das HTML-Editor-Steuerelement](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
 **Abbildung 03**: Das HTML-Editor-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
-
 
 Nachdem Sie auf eine Seite der HTML-Editor ziehen, können Sie seine Eigenschaften im Eigenschaftenfenster festlegen. Sie möchten z. B. normalerweise zum Festlegen der Eigenschaften von Breite und Höhe. Codebeispiel 1 enthält die Quelle für eine ASP.NET-Seite, die einen HTML-Editor enthält.
 
@@ -62,11 +55,9 @@ Nachdem Sie auf eine Seite der HTML-Editor ziehen, können Sie seine Eigenschaft
 
 Die Seite in Codebeispiel 1 enthält ein HTML-Editor-Steuerelement, ein Schaltflächen-Steuerelement und ein literales Steuerelement. Wenn Sie die Schaltfläche klicken, den Inhalt des HTML-Editors angezeigt werden, im Literalsteuerelement (siehe Abbildung 4).
 
-
 [![Senden eines Formulars mit einem HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
 **Abbildung 04**: Senden eines Formulars mit einem HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
-
 
 Die HTML-Editor-Content-Eigenschaft wird verwendet, zum Abrufen des HTML-Inhalts in der HTML-Editor eingegeben werden. Denken Sie daran, dass diese HTML-Inhalt JavaScript enthalten kann. Im nächsten Abschnitt wird erläutert, wie JavaScript-Injection-Angriffe verhindern können.
 
@@ -74,11 +65,9 @@ Die HTML-Editor-Content-Eigenschaft wird verwendet, zum Abrufen des HTML-Inhalts
 
 Sie können anpassen, dass genau welche Schaltflächen im Editor dargestellt. Beispielsweise empfiehlt es sich um die Registerkarte "HTML", um zu verhindern, dass Benutzer der HTML-Editor in HTML-Modus wechseln zu entfernen. Oder, entfernen Sie die Schriftart Größe Dropdown-Liste aus, um zu verhindern, dass Benutzer übermäßig großen Text in einem Forum erstellen möchten (siehe Abbildung 5) nach Nachrichten.
 
-
 [![Einen benutzerdefinierten HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
 **Abbildung 05**: Eine angepasste HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
-
 
 Durch Ableiten einer neuen HTML-Editor von der Basisklasse-Editor können Sie die Schaltflächen der Symbolleiste anpassen. Beispielsweise enthält der benutzerdefinierte Editor Programmausdruck 2 nur Symbolleisten-Schaltflächen für fett- und kursivformatierung. Alle anderen Symbolleisten-Schaltflächen wurden entfernt. Darüber hinaus wurde zwischen dem unteren Rand der Editor die Registerkarte "HTML" entfernt (jedoch die Entwurf und Vorschau-Registerkarten sind weiterhin vorhanden).
 

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: fbe618acfc70711933996f97657a4326d389b3dd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 54bfa40a7d853e29c42512ba375271587fb6f565
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59411240"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118829"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Ausrichtung des Entwurfs auf das überstehen von Ausfällen (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Eines der Dinge denken Sie beim Erstellen jeder Art von Anwendung, aber vor allem eine, die in der Cloud ausgeführt wird, in denen viele Leute verwenden, müssen Sie die app entwerfen, damit es ordnungsgemäß Behandeln von Fehlern und auszahlen kann ist wie möglich ist. Wenn genügend Zeit, sind der Stand der Dinge, die in jeder Umgebung oder anderen Softwaresystemen schief gehen. Behandlung von Situationen verwendet, in der app bestimmt, wie verärgert Ihre Kunden erhalten und wie viel Zeit verbringen, analysieren und Beheben von Problemen mit Ihnen.
 

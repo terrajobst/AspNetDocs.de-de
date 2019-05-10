@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 639a8e0e5fd9557221c95aee1bef0294df047ae8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e2605a4188eaf814f6ab0ebfeaabed4457bcfa3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406313"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112504"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 – Hilfsprogramme, Formulare und Überprüfung
 
@@ -53,7 +53,7 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -90,13 +90,12 @@ Die folgenden Übungen besteht aus diesem Hands-On Lab:
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_the_Store_Manager_controller_and_its_Index_view"></a>
-### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>Übung 1: Erstellen der Store Manager-Controller und die Ansicht "Index"
+### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>Übung 1: Erstellen der Store Manager-Controller und die Ansicht "Index"
 
 In dieser Übung erfahren Sie, wie zum Erstellen eines neuen Controllers CRUD-Vorgänge zu unterstützen, passen die Index-Aktionsmethode, um eine Liste der Alben aus der Datenbank und generiert schließlich eine Ansicht "Index"-Vorlage nutzen ASP.NETs Gerüstbau zurückzugeben die Funktion Alben Eigenschaften in einer HTML-Tabelle angezeigt.
 
@@ -177,7 +176,6 @@ In dieser Aufgabe wird angepasst, die einfache ansichtsvorlage erstellt, die mit
 > [!NOTE]
 > Die **Gerüstbau** Unterstützung in ASP.NET MVC generiert eine einfache Vorlage Anzeigen der alle Felder im Modell Album aufgeführt sind. **Gerüstbau** bietet eine schnelle Möglichkeit zum Einstieg in eine stark typisierte Ansicht: anstatt die ansichtsvorlage manuell schreiben, schnell Gerüstbau eine Standardvorlage generiert und dann können Sie den generierten Code ändern.
 
-
 1. Überprüfen Sie den Code erstellt wird. Die generierte Liste der Felder werden Teil des folgenden HTML Tabelle, die **Gerüstbau** zum Anzeigen von Tabellendaten verwendet.
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
@@ -205,7 +203,7 @@ In dieser Aufgabe testen Sie, die die **StoreManager** **Index** ansichtsvorlage
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Adding_an_HTML_Helper"></a>
-### <a name="exercise-2-adding-an-html-helper"></a>Übung 2: Ein HTML-Hilfsobjekt hinzufügen
+### <a name="exercise-2-adding-an-html-helper"></a>Übung 2: Ein HTML-Hilfsobjekt hinzufügen
 
 Die Indexseite mit StoreManager verfügt über ein potenzielles Problem: Titel und die Namen der Interpreten Eigenschaften können sowohl lang genug ist, deaktivieren Sie die Formatierung der Tabelle ausgelöst werden. In dieser Übung lernen Sie, wie Sie eine benutzerdefinierte HTML-Hilfsfunktion, um das Abschneiden von Text hinzufügen.
 
@@ -224,7 +222,6 @@ In dieser Aufgabe fügen Sie eine neue Methode **Truncate** auf die **HTML** in 
 
 > [!NOTE]
 > Weitere Informationen zu **Erweiterungsmethoden**, finden Sie unter diesem Msdn-Artikel. [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
-
 
 1. Öffnen der **beginnen** Lösung controllerarbeitsverzeichnis **Quelle/Ex2-AddingAnHTMLHelper/Anfang/** Ordner. Andernfalls können Sie weiterhin, verwenden die **End** Lösung abgerufen wird, indem Sie der vorherige Übung abschließen können.
 
@@ -404,7 +401,7 @@ In dieser Aufgabe testen Sie, die die **StoreManager bearbeiten** Ansichtsseite 
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Adding_a_Create_View"></a>
-### <a name="exercise-4-adding-a-create-view"></a>Übung 4: Hinzufügen einer Ansicht erstellen
+### <a name="exercise-4-adding-a-create-view"></a>Übung 4: Hinzufügen einer Ansicht erstellen
 
 Nun, dass die **StoreManagerController** unterstützt die **bearbeiten** Möglichkeit, die in dieser Übung Sie erfahren, wie zum Hinzufügen einer Create View-Vorlage, damit Sie das Speichern von Manager neue Alben zur Anwendung hinzufügen.
 
@@ -505,7 +502,7 @@ In dieser Aufgabe testen Sie, die die **StoreManager erstellen** Ansichtsseite k
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Handling_Deletion"></a>
-### <a name="exercise-5-handling-deletion"></a>Schritt 5: Löschung verarbeiten
+### <a name="exercise-5-handling-deletion"></a>Übung 5: Löschung verarbeiten
 
 Die Möglichkeit, Alben löschen wurde noch nicht implementiert. Dies wird in dieser Übung zu. Wie zuvor implementieren Sie die löschen-Szenario mit zwei separate Methoden innerhalb der **StoreManagerController** Klasse:
 
@@ -665,7 +662,6 @@ In dieser Übung lernen Sie, wie Sie MVC 4 unaufdringliche jQuery-Validierung au
 
 > [!NOTE]
 > Die unaufdringliche jQuery verwendet Data-Ajax-Präfix JavaScript zum Aufrufen der Aktionsmethoden, auf dem Server statt auf intrusively Ausgeben von Inline-Clientskripts.
-
 
 <a id="Ex7Task1"></a>
 

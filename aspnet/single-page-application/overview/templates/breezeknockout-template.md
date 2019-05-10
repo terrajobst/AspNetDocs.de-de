@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
-ms.openlocfilehash: 482119a97f30e24472231897e8db31685c451a0f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bb9ee8f758a25afa6baf3ccbaf7d5864754c7df
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400788"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113355"
 ---
 # <a name="breezeknockout-template"></a>Breeze-/Knockout-Vorlage
 
@@ -22,7 +22,6 @@ durch [Mads Kristensen](https://github.com/madskristensen)
 > Die Breeze/Knockout-MVC-Vorlage wurde von Ward Bell geschrieben.
 > 
 > [Die Breeze/Knockout-MVC-Vorlage herunterladen](https://go.microsoft.com/fwlink/?LinkId=282649)
-
 
 Sie haben gehört, von "single Page Application" (SPA) und gefragt, was es ist. Während Sie zu lesen können, würden Sie es stattdessen für sich selbst kommen. Aber wer hat die Zeit, ein Beispiel herunterladen? Wenn Sie Visual Studio haben, müssen Sie Sie ein Beispiel für SPA und ausgeführt wird, in weniger als 60 Sekunden mit ASP.NET-MVC 4 "Breeze/Knockout Single Page Application"-Vorlage.
 

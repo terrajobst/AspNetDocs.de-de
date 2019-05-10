@@ -8,19 +8,18 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f28db822930cdfd2ebf4cf9bb27d173f4aa4201
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392572"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118284"
 ---
 # <a name="an-overview-of-project-katana"></a>Übersicht über das Katana-Projekt
 
 durch [Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework schon seit über zehn Jahren, und die Plattform die Entwicklung von unzähligen Websites und Dienste aktiviert hat. Wie webentwicklungsstrategien für die Anwendung entwickelt haben, wurde das Framework in Schritt mit Technologien wie ASP.NET MVC und ASP.NET Web API weiterentwickeln können. Während der Entwicklung von Webanwendungen der nächsten evolutionären Schritt in die Welt des Cloudcomputings dauert, Projekt [Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET) stellt die zugrunde liegende Reihe von Komponenten für ASP.NET-Anwendungen, sodass sie flexibel, portable, einfache, und geben Sie eine bessere Leistung – anders ausgedrückt, Projekt- [Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET) Cloud optimiert Ihre ASP.NET-Anwendungen.
-
 
 ## <a name="why-katana--why-now"></a>Warum Katana – Warum jetzt?
 
@@ -214,7 +213,6 @@ Für Katana 2.0 sind middlewarekomponenten Schwerpunkt auf die Bereitstellung ve
 ## <a name="conclusion"></a>Schlussbemerkung
 
  Von Anfang wurde das Katana-Projekt-Ziel nicht zu erstellen und erzwingen, dass Entwickler noch eine andere Web-Framework zu erfahren. Das Ziel wurde stattdessen erstellen Sie eine Abstraktion, sodass .NET Entwickler mehr Auswahl als zuvor möglich war. Durch die logische Schichten ein typischer webanwendungsstapel in einen Satz von austauschbaren Komponenten werden aufteilen, ermöglicht das Katana-Projekt Komponenten im ganzen Stapel zur Verbesserung der am jeweils Satz für diese Komponenten sinnvoll ist. Erstellen Sie alle Komponenten, die einfache OWIN-Abstraktion, können Katana-Frameworks und die Anwendungen baut auf den sie für eine Vielzahl von verschiedenen Servern und -Hosts portiert werden. Den Entwickler Kontrolle über den Stapel, einfügen, Katana wird sichergestellt, dass es sich bei der Entwickler die ultimate Wahl zu wie einfache macht oder wie funktionsreiche ihr Webstapel werden soll.  
-  
 
 ## <a name="for-more-information-about-katana"></a>Weitere Informationen zu Katana
 

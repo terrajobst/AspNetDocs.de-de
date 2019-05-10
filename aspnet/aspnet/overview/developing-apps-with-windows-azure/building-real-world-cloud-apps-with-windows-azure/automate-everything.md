@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fd78385e563b7204b29beb4180b7bc932266bdec
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418364"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119020"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Eine Einführung in das e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Die ersten drei Muster, denen wir betrachten werde wenden nämlich für alle Software-Entwicklungsprojekt, sondern vor allem für Cloud-Projekte. Dieses Muster eignet sich zur Automatisierung von Aufgaben bei der Anwendungsentwicklung. Es ist ein wichtiges Thema, da der manuelle Prozesse langsame und fehleranfällige sind; Automatisieren beliebig viele wie möglich einen schnellen, zuverlässigen und agilen Workflow einrichten können. Es ist eindeutig wichtig ist, für die Cloudentwicklung, da Sie viele Aufgaben leicht, die schwierig oder unmöglich automatisieren können, die in einer lokalen Umgebung zu automatisieren. Sie können z. B. festlegen, um den gesamten Test Umgebungen, einschließlich der neuen Webserver und Back-End-VMs, Datenbanken, blob-Speicher (Datei), Warteschlangen usw.
 
@@ -58,10 +57,8 @@ Das erste Skript, wir betrachten, den Namen *New-AzureWebsiteEnv.ps1*. Erstellt 
 
 ### <a name="run-the-script"></a>Ausführen des Skripts
 
-
 > [!NOTE]
 > Dieser Teil des Kapitels zeigt Beispiele für Skripts und Befehle, die Sie eingeben, um sie auszuführen. Diese Demo auch nicht alles, was Sie brauchen kennen, um die Skripts ausgeführt werden. How-to--It-Anleitung finden Sie [Anhang: Der Fix It-Beispielanwendung](the-fix-it-sample-application.md#deploybase).
-
 
 Führen Sie ein PowerShell-Skript, das Azure-Dienste verwaltet, müssen Sie die Azure PowerShell-Konsole installieren und konfigurieren sie für die Arbeit mit Ihrem Azure-Abonnement. Nachdem Sie eingerichtet haben, können Sie das Fix It-Umgebung-Erstellungsskript mit einem Befehl wie diesen ausführen:
 

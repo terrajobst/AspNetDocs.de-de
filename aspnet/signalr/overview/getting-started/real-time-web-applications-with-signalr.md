@@ -8,15 +8,14 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e39fd3f2fc9d4e791002450085215096c222fcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412007"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120003"
 ---
 # <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Praktische Übungseinheiten: Echtzeit-Webanwendungen mit SignalR
-
 
 durch [Web Camps Team](https://twitter.com/webcamps)
 
@@ -66,7 +65,6 @@ Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie z
 > [!NOTE]
 > Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
 
@@ -74,7 +72,6 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 
 > [!NOTE]
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
-
 
 ---
 
@@ -91,9 +88,8 @@ Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**
 > [!NOTE]
 > Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>Übung 1: Arbeiten mit Daten in Echtzeit mit SignalR
+### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>Übung 1: Arbeiten mit Daten in Echtzeit mit SignalR
 
 Beim Chat häufig als Beispiel verwendet wird, erreichen Sie insgesamt noch viel mehr mit Echtzeit-Webfunktionen. Jedes Mal ein Benutzer eine Webseite, um neue Daten oder die Seite implementiert Ajax langer Abruf, um neue Daten abzurufen, finden Sie unter aktualisiert wird, können Sie SignalR verwenden.
 
@@ -250,7 +246,7 @@ In dieser Aufgabe führen Sie die Projektmappe, um sicherzustellen, dass die Sta
     *Seite Statistiken, die nach der Antwort aktualisiert.*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-scaling-out-using-sql-server"></a>Übung 2: Horizontales Skalieren mithilfe von SQLServer
+### <a name="exercise-2-scaling-out-using-sql-server"></a>Übung 2: Horizontales Skalieren mithilfe von SQLServer
 
 Beim Skalieren einer Web-Anwendung in der Regel können Sie zwischen *hochskalieren* und *horizontales hochskalieren* Optionen. *Zentrales hochskalieren* bedeutet einen größeren Server, mit mehr Ressourcen (CPU, Arbeitsspeicher usw.) während *horizontal hochskalieren* bedeutet, dass weitere Server zur Bewältigung der Arbeitslast hinzufügen. Das Problem mit dem zweiten ist, dass die Clients auf verschiedenen Servern weitergeleitet werden können. Ein Client, der mit einem Server verbunden ist, erhalten keine Nachrichten von einem anderen Server gesendet.
 
@@ -274,7 +270,6 @@ Weitere Informationen zur Funktionsweise der SignalR-Backplane finden Sie in die
 > - [Serverübertragung](tutorial-server-broadcast-with-signalr.md) (beispielsweise Börsenticker): Backplanes eignen sich gut für dieses Szenario, da der Server die Rate kontrolliert, an der Nachrichten gesendet werden.
 > - [Client-zu-Client](tutorial-getting-started-with-signalr.md) (z. B. chat): In diesem Szenario wird möglicherweise der Rückwand einen Engpass, wenn die Anzahl der Nachrichten mit der Anzahl der Clients skaliert werden kann; d. h., wenn die Anzahl der Nachrichten wird verknüpfen proportional mehr Clients.
 > - [Echtzeitnachrichten](tutorial-high-frequency-realtime-with-signalr.md) (z. B. in Echtzeit Spiele): Eine Rückwandplatine wird für dieses Szenario nicht empfohlen.
-
 
 In dieser Übung verwenden Sie **SQL Server** zum Verteilen von Nachrichten über die **Meister Quiz** Anwendung. Führen Sie diese Aufgaben auf einem einzelnen Testcomputer zu erfahren, wie die Konfiguration einzurichten, sondern um den vollen Effekt zu erzielen, benötigen Sie zum Bereitstellen der SignalR-Anwendung mit zwei oder mehr Servern. Sie müssen auch SQL Server auf einem der Server oder auf einem separaten dedizierten Server installieren.
 

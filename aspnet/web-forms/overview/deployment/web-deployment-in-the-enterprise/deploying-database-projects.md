@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 832f226a-1aa3-4093-8c29-ce4196793259
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: f5b7cecdd1a8dbd9be1bd781cec31c53c9096546
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 221808758492aedb8e8329364e511df28fd11105
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383218"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119316"
 ---
 # <a name="deploying-database-projects"></a>Bereitstellen von Datenbankprojekten
 
@@ -23,7 +23,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 
 > [!NOTE]
 > In vielen Bereitstellungsszenarios benötigen Sie die Möglichkeit, inkrementelle Updates an einer bereitgestellten Datenbank zu veröffentlichen. Die Alternative ist die Datenbank bei jeder Bereitstellung, neu erstellen, was bedeutet, dass Sie alle Daten in der vorhandenen Datenbank verloren gehen. Wenn Sie mit Visual Studio 2010 arbeiten, ist das mit VSDBCMD die empfohlene Vorgehensweise für inkrementelle datenbankveröffentlichung aus. Allerdings wird die nächste Version von Visual Studio und das Web Publishing-Pipeline (WPP) Tools enthalten, die unterstützt inkrementelle direkt zu veröffentlichen.
-
 
 Wenn Sie die beispiellösung Contact Manager in Visual Studio 2010 öffnen, sehen Sie sich, dass das Projekt einen Ordner "Properties" enthält, die vier Dateien enthält.
 
@@ -81,9 +80,7 @@ Im weiteren Verlauf dieses Themas wird die Verwendung von VSDBCMD mit MSBuild zu
 
 Die VSDBCMD-Dienstprogramm können Sie eine Datenbank mit dem Datenbankschema (die DBSCHEMA-Datei) oder das Bereitstellungsmanifest (die DEPLOYMANIFEST-Datei) bereitstellen. In der Praxis ist verwenden fast immer das Bereitstellungsmanifest, Sie, wie das Bereitstellungsmanifest können Sie die Standardwerte für die verschiedenen Eigenschaften der Bereitstellung zur Verfügung gestellt, und identifizieren alle vor oder nach der Bereitstellung SQL­Skripts, die Sie ausführen möchten. Mit diesem Befehl VSDBCMD dient beispielsweise zum Bereitstellen der **ContactManager** Datenbank mit einem Datenbankserver in einer testumgebung:
 
-
 [!code-console[Main](deploying-database-projects/samples/sample1.cmd)]
-
 
 In diesem Fall gilt Folgendes:
 
@@ -107,21 +104,17 @@ Das Verhalten der **dd /** oder **/DeployToDatabase** Switch, hängt davon ab, o
 
 Wenn Sie eine Datei DeployManifest verwenden, ist das Verhalten wesentlich komplizierter. Dies ist, da die DEPLOYMANIFEST-Datei in einen Eigenschaftsnamen **DeployToDatabase** , wird auch bestimmt, ob die Datenbank bereitgestellt wird.
 
-
 [!code-xml[Main](deploying-database-projects/samples/sample2.xml)]
-
 
 Der Wert dieser Eigenschaft wird gemäß den Eigenschaften des Datenbankprojekts festgelegt. Setzen Sie die **bereitstellen-Aktion** zu **erstellen Sie ein Skript für die Bereitstellung (. SQL)**, der Wert **"false"**. Setzen Sie die **bereitstellen-Aktion** zu **Bereitstellungsskript (. SQL) erstellen und Bereitstellen von in die Datenbank**, der Wert **"true"**.
 
 > [!NOTE]
 > Diese Einstellungen sind mit einem bestimmten Build-Konfiguration und Plattform zugeordnet. Angenommen, Sie konfigurieren, dass die Einstellungen für die **Debuggen** Konfiguration, und klicken Sie dann veröffentlichen Sie mithilfe der **Version** Konfiguration Ihre Einstellungen nicht verwendet werden.
 
-
 ![](deploying-database-projects/_static/image3.png)
 
 > [!NOTE]
 > In diesem Szenario die **bereitstellen-Aktion** sollte immer festgelegt werden, um **erstellen Sie ein Skript für die Bereitstellung (. SQL)**, da Sie nicht, dass Visual Studio 2010 zum Bereitstellen Ihrer Datenbank möchten. Das heißt, die **DeployToDatabase** Eigenschaft muss immer **"false"**.
-
 
 Wenn eine **DeployToDatabase** -Eigenschaft angegeben ist, die **dd /** Switch wird die Eigenschaft nur überschreiben, wenn der Eigenschaftswert ist **"false"**:
 

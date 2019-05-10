@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 3005174a-ba3d-4937-8b3e-b913ee4172ac
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: 46c56eb012f08900ba8f3d10ce92868d0d4d02e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fc166515eea28a4ee3e9f3ec20f80ebd1976120a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390258"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115033"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater"></a>Anzeigen von Daten mit dem DataList- und Wiederholungssteuerelement
 
 > Diese Tutorials zeigen alternative Methoden zum Anzeigen von Daten mithilfe der DataList- oder Repeater-Steuerelemente.
-
 
 - [Anzeigen von Daten mit dem DataList- und Wiederholungssteuerelement (C#)](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
 - [Formatieren des DataList- und Wiederholungssteuerelements auf Datenbasis (C#)](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

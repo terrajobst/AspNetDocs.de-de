@@ -8,17 +8,16 @@ ms.date: 09/28/2011
 ms.assetid: 9086d8a8-7952-4a7e-82a7-724d48178555
 msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
-ms.openlocfilehash: bdd63889eacea1ef03686a65fc1144d16cd41353
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e4e4cce840d46ceceeb3ea77db91ad99d73ef483
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420626"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117586"
 ---
 # <a name="models-data"></a>Modelle (Daten)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework zu verwenden. Im Verlauf dieses Tutorials erstellen Sie eine Anwendung, die veranschaulicht, wie Sie auswählen, einfügen, aktualisieren und Löschen von Datenbankdaten mithilfe von Entity Framework.
-
 
 - [Erstellen von Modellklassen mit dem Entity Framework (C#)](creating-model-classes-with-the-entity-framework-cs.md)
 - [Erstellen von Modellklassen mit LINQ to SQL (C#)](creating-model-classes-with-linq-to-sql-cs.md)

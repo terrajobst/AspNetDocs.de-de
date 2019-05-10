@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 84afe4ac-cc53-4f2e-a867-27eaf692c2df
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 58c4654691084b9574283c03c77398cb43f6751a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6c07b565329ab17496d2436f4c35bc4507694ed8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393469"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119669"
 ---
 # <a name="caching-data-at-application-startup-vb"></a>Zwischenspeichern von Daten beim Anwendungsstart (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [PDF herunterladen](caching-data-at-application-startup-vb/_static/datatutorial60vb1.pdf)
 
 > In einer beliebigen Webanwendung einige Daten häufig verwendet werden, und einige Daten nur selten verwendet werden. Wir können die Leistung der Anwendung ASP.NET verbessern, indem Sie laden im voraus die häufig verwendete Daten, eine Technik, die als bekannt. Dieses Tutorial veranschaulicht einen Ansatz für proaktives laden, die zum Laden von Daten in den Cache beim Start der Anwendung ist.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -35,18 +34,15 @@ Eine Abwandlung des proaktives laden und der Typ, den wir in diesem Tutorial unt
 > [!NOTE]
 > Ausführlichere Informationen zu den Unterschieden zwischen proaktive und reaktive laden sowie Listen von vor- und Nachteile Empfehlungen für Implementierung, finden Sie in der [Verwalten des Inhalts eines Caches](https://msdn.microsoft.com/library/ms978503.aspx) Teil der [ Handbuch zur Architektur der .NET Framework-Anwendungen für die Zwischenspeicherung](https://msdn.microsoft.com/library/ms978498.aspx).
 
-
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>Schritt 1: Bestimmen, welche Daten in Cache beim Start der Anwendung
 
 Die Zwischenspeicherung Beispiele zur Verwendung von reaktive lädt, die wir in die vorherigen beiden Tutorials Arbeit mit Daten, die in regelmäßigen Abständen geändert und nimmt keine exorbitantly lange zum Generieren untersucht werden. Aber wenn sich die zwischengespeicherten Daten nie ändert, ist der Ablauf von reaktive Laden verwendet überflüssig. Auch wenn die Daten der Zwischenspeicherung eine unglaublich lange Zeit zum Generieren akzeptiert, klicken Sie dann diese Benutzer, deren Anforderungen finden Sie der Cache leeren muss Sender eine lange Wartezeit während der zugrunde liegenden Daten, werden abgerufen. Erwägen Sie die Zwischenspeicherung von statischen Daten sowie Daten, die eine außergewöhnlich lange dauert, um beim Start der Anwendung zu generieren.
 
 Während Datenbanken viele dynamische haben, haben häufig ändern von Werten, die meisten auch eine viel von statischen Daten. Praktisch alle Datenmodelle haben z. B. eine oder mehrere Spalten, die einen bestimmten Wert aus einem festen Satz von Optionen enthalten. Ein `Patients` Datenbanktabelle möglicherweise eine `PrimaryLanguage` Spalte, die Menge von Werten, Englisch, Spanisch, Französisch, Russisch, Japanisch und So weiter sein kann. Häufig werden diese Arten von Spalten mithilfe von implementiert *Nachschlagetabellen*. Statt zu speichern die Zeichenfolge, die Englisch oder Französisch in der `Patients` Tabelle, eine zweite Tabelle wird erstellt, die in der Regel zwei Spalten – ein eindeutiger Bezeichner und eine zeichenfolgenbeschreibung – mit einem Eintrag für jeden möglichen Wert verfügt. Die `PrimaryLanguage` -Spalte in der `Patients` Tabelle speichert den entsprechenden Bezeichner in der Nachschlagetabelle. In Abbildung 1 ist Patienten John Doe s primäre Sprache Englisch sowie während Ed Johnson s Russisch.
 
-
 ![Die Sprachen-Tabelle ist eine Suche Tabelle verwendet, durch die Patienten-Tabelle](caching-data-at-application-startup-vb/_static/image1.png)
 
 **Abbildung 1**: Die `Languages` Tabelle ist eine Suche Tabelle verwendet, durch die `Patients` Tabelle
-
 
 Die Benutzeroberfläche zum Bearbeiten oder erstellen einen neuen Patienten zählen eine Dropdown-Liste der zulässigen Sprachen, die aufgefüllt wird, durch die Datensätze in der `Languages` Tabelle. Ohne Zwischenspeicherung, besucht jedes Mal, die diese Schnittstelle ist das System muss eine Abfrage der `Languages` Tabelle. Dies ist Vergeudung und unnötige da ändern Sie die Werte für Nachschlagetabellen sehr selten, wenn überhaupt.
 
@@ -60,13 +56,11 @@ Informationen kann programmgesteuert in einer ASP.NET-Anwendung mithilfe einer V
 
 Bei der Arbeit mit einer Klasse muss in der Regel zunächst die Klasse instanziiert werden, bevor ihre Mitglieder zugegriffen werden können. Zum Aufrufen einer Methode von einer der Klassen in unserer Business Logic Layer, müssen wir beispielsweise zuerst eine Instanz der Klasse erstellen:
 
-
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample1.vb)]
 
 Bevor wir aktivieren können *SomeMethod* oder Arbeiten mit *SomeProperty*, erstellen wir zunächst eine Instanz der Klasse mit dem `New` Schlüsselwort. *SomeMethod* und *SomeProperty* sind mit einer bestimmten Instanz verknüpft. Die Lebensdauer dieser Member ist auf die Lebensdauer der ihr zugeordnete-Objekt gebunden. *Statische Member*, auf der anderen Seite sind Variablen, Eigenschaften und Methoden, die von gemeinsam genutzt werden *alle* Instanzen der Klasse und daher über eine Lebensdauer, die so lange wie die Klasse. Statische Member sind gekennzeichnet durch das Schlüsselwort `Shared`.
 
 Zusätzlich zum statischen Elementen können Daten mithilfe von Anwendungsstatus zwischengespeichert werden. Jede ASP.NET-Anwendung verwaltet eine Name/Wert-Auflistung, s, die für alle Benutzer und die Seiten der Anwendung gemeinsam verwendet. Diese Auflistung kann zugegriffen werden, mithilfe der [ `HttpContext` Klasse](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) s [ `Application` Eigenschaft](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx), und verwendet eine ASP.NET Seite s Code-Behind-Klasse wie folgt:
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample2.vb)]
 
@@ -78,14 +72,11 @@ Der Datenbanktabellen wir Ve implementiert, um Datum Northwind enthalten keine h
 
 Erstellen Sie zunächst eine neue Klasse namens `StaticCache.cs` in die `CL` Ordner.
 
-
 ![Erstellen Sie die StaticCache.vb-Klasse im Ordner "CL"](caching-data-at-application-startup-vb/_static/image2.png)
 
 **Abbildung 2**: Erstellen der `StaticCache.vb` -Klasse in der `CL` Ordner
 
-
 Wir müssen eine Methode, die lädt die Daten beim Start in den entsprechenden Cachespeicher, als auch Methoden, die Daten aus diesem Cache zurückgeben.
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample3.vb)]
 
@@ -93,13 +84,11 @@ Der obige Code verwendet eine statische Membervariable, `suppliers`, um die Erge
 
 Statt eine statische Membervariable wie des Cachespeicher zu verwenden, können wir auch Anwendungszustand oder in Datencache verwendet worden sein. Der folgende Code zeigt die Verwendung von Anwendungsstatus retooled-Klasse:
 
-
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample4.vb)]
 
 In `LoadStaticCache()`, die Lieferanteninformationen werden gespeichert, auf die Anwendungsvariable *Schlüssel*. Diese e zurückgegeben wird, den entsprechenden Typ (`Northwind.SuppliersDataTable`) von `GetSuppliers()`. Während der Anwendungsstatus zugegriffen werden kann, in die CodeBehind-Klassen von ASP.NET-Seiten aus aufzurufen `Application("key")`, in der Architektur muss `HttpContext.Current.Application("key")` zum Abrufen des aktuellen `HttpContext`.
 
 Ebenso kann das Datencache als Cachespeicher, wie im folgenden Code gezeigt verwendet werden:
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample5.vb)]
 
@@ -107,7 +96,6 @@ Verwenden Sie zum Hinzufügen eines Elements, das dem Datencache ohne Ablaufdatu
 
 > [!NOTE]
 > Dieser Download Tutorial s implementiert die `StaticCache` -Klasse unter Verwendung des statischen Member-Variable-Ansatzes. Der Code für die Anwendung Anwendungszustands und der Cache-Techniken ist verfügbar in den Kommentaren in der Klassendatei.
-
 
 ## <a name="step-4-executing-code-at-application-startup"></a>Schritt 4: Ausführen von Code beim Start der Anwendung
 
@@ -118,11 +106,9 @@ Hinzufügen der `Global.asax` Datei in Ihrer Web-Anwendung s Root-Verzeichnis au
 > [!NOTE]
 > Wenn Sie bereits haben eine `Global.asax` Datei in Ihrem Projekt, das globale Anwendungsklasse work Item Type wird nicht in das Dialogfeld "Neues Element hinzufügen" aufgeführt.
 
-
 [![Die Datei "Global.asax" s-Stammverzeichnis Ihrer Web-Anwendung hinzufügen](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
 
 **Abbildung 3**: Hinzufügen der `Global.asax` Datei auf Ihre Webanwendung s Stammverzeichnis ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image5.png))
-
 
 Der Standardwert `Global.asax` Dateivorlage enthält fünf Methoden in einer serverseitigen `<script>` Tag:
 
@@ -136,20 +122,16 @@ Die `Application_Start` Ereignishandler nur einmal während des Lebenszyklus ein
 
 Für diese Tutorials müssen wir nur zum Hinzufügen von Code die `Application_Start` -Methode, die so gerne anderen entfernen. In `Application_Start`, rufen Sie einfach die `StaticCache` Klasse s `LoadStaticCache()` -Methode, die laden und die Lieferanteninformationen zwischengespeichert wird:
 
-
 [!code-aspx[Main](caching-data-at-application-startup-vb/samples/sample6.aspx)]
 
 Alles, was, s wird es! Beim Start der Anwendung die `LoadStaticCache()` -Methode die Lieferanteninformationen der BLL erfassen und speichern Sie es in eine statische Membervariable (oder den Cache zu speichern, Sie beendet werden, verwenden Sie der `StaticCache` Klasse). Um dieses Verhalten zu überprüfen, legen Sie einen Haltepunkt in der `Application_Start` Methode, und führen Sie Ihre Anwendung. Beachten Sie, dass der Haltepunkt beim Starten Anwendung erreicht wird. Nachfolgende Anforderungen führen jedoch nicht die `Application_Start` auszuführende Methode.
-
 
 [![Verwenden Sie einen Haltepunkt, stellen Sie sicher, dass der Application_Start-Ereignishandler ausgeführt wird ist](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
 
 **Abbildung 4**: Verwenden Sie einen Haltepunkt zu überprüfen, die die `Application_Start` -Ereignishandler ist ausgeführt wird ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image8.png))
 
-
 > [!NOTE]
 > Wenn Sie nicht erreichen, führen Sie die `Application_Start` Haltepunkt beim ersten Starten des Debuggens, es ist, da es sich bei Ihrer Anwendung bereits gestartet wurde. Erzwingen, dass die Anwendung neu starten, indem das Ändern Ihrer `Global.asax` oder `Web.config` Dateien, und versuchen Sie es dann erneut. Sie können einfach hinzufügen (eine leere Zeile am Ende eine dieser Dateien können Sie die Anwendung schnell neu starten oder entfernen).
-
 
 ## <a name="step-5-displaying-the-cached-data"></a>Schritt 5: Die zwischengespeicherten Daten anzeigen
 
@@ -157,29 +139,23 @@ An diesem Punkt die `StaticCache` -Klasse verfügt über eine Version von Liefer
 
 Öffnen Sie zunächst die `AtApplicationStartup.aspx` auf der Seite die `Caching` Ordner. Ziehen Sie aus der Toolbox in den Designer und einer GridView-Ansicht der `ID` Eigenschaft `Suppliers`. Aus der GridView Smarttag s wählen Sie als Nächstes erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `SuppliersCachedDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse s `GetSuppliers()` Methode.
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der StaticCache-Klasse](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
 
 **Abbildung 5**: Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `StaticCache` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image11.png))
-
 
 [![Verwenden Sie die GetSuppliers()-Methode zum Abrufen der zwischengespeicherten Lieferantendaten](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
 
 **Abbildung 6**: Verwenden der `GetSuppliers()` Methode, um die Lieferantendaten zwischengespeichert abzurufen ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image14.png))
 
-
 Nach dem Fertigstellen des Assistenten für Visual Studio automatisch hinzugefügt BoundFields für die einzelnen Datenfelder in `SuppliersDataTable`. GridView und "ObjectDataSource" s deklarative Markup sollte in etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](caching-data-at-application-startup-vb/samples/sample7.aspx)]
 
 Abbildung 7 zeigt die Seite, wenn Sie über einen Browser angezeigt. Die Ausgabe ist gleich hatten wir Daten abgerufen, die von der BLL s `SuppliersBLL` -Klasse, aber mit der `StaticCache` -Klasse gibt die Lieferantendaten als zwischengespeicherte beim Start der Anwendung zurück. Sie können Haltepunkte festlegen, in der `StaticCache` Klasse s `GetSuppliers()` Methode, um dieses Verhalten zu überprüfen.
 
-
 [![Die Lieferantendaten zwischengespeichert wird in einer GridView-Ansicht angezeigt.](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
 
 **Abbildung 7**: Die Lieferantendaten zwischengespeichert wird angezeigt, in einer GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-at-application-startup-vb/_static/image17.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

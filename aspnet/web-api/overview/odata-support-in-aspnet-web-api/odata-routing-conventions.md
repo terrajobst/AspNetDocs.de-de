@@ -9,19 +9,18 @@ ms.custom: seoapril2019
 ms.assetid: adbc175a-14eb-4ab2-a441-d056ffa8266f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
-ms.openlocfilehash: 8916f8b7a024636be1be055457081487f46a7936
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63df4a82cd8df92631485b2544117844cfd0ca56
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421627"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130465"
 ---
 # <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>Routingkonventionen in der ASP.NET Web-API 2-Odata
 
 durch [Mike Wasson](https://github.com/MikeWasson)
 
 > Dieser Artikel beschreibt den routingkonventionen, Web-API 2 in ASP.NET 4.x verwendet für OData-Endpunkte.
-
 
 Wenn Web-API eine OData-Anforderung erhält, ordnet es die Anforderung zum Controllernamen und einen Aktionsnamen. Die Zuordnung basiert auf der HTTP-Methode und den URI. Z. B. `GET /odata/Products(1)` ordnet `ProductsController.GetProduct`.
 
@@ -53,7 +52,6 @@ Dieser Pfad übernimmt also den Lieferanten des Produkts 1.
 
 > [!NOTE]
 > OData-Pfadsegmente entsprechen nicht immer URI-Segmente. "1" wird z. B. ein Pfadsegment betrachtet.
-
 
 **Namen der Domänencontroller.** Der Namen des Controllers wird immer aus der Entitätssammlung am Stamm der Pfad der Ressource abgeleitet. Wenn der Pfad der Ressource ist z. B. `/Products(1)/Supplier`, Web-API sieht für einen Controller namens `ProductsController`.
 

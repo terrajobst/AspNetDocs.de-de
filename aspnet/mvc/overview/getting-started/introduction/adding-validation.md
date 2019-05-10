@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 2b5d2a355a27bfe9a3aa8b2fa4a2de79c7f74314
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6894d01af7cd142a5579f73ae5209ca13756ca52
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387125"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120748"
 ---
 # <a name="adding-validation"></a>Hinzufügen der Validierung
 
@@ -84,7 +84,6 @@ Klicken Sie auf die **neu erstellen** Link, um einen neuen Film hinzuzufügen. F
 > [!NOTE]
 > zur Unterstützung von jQuery-Validierung für nicht englische Gebietsschemas, in denen ein Komma (",") für ein Dezimaltrennzeichen, müssen Sie die NuGet einschließen Globalisieren wie zuvor in diesem Tutorial beschrieben.
 
-
 Beachten Sie, wie das Formular automatisch eine roten Rahmenfarbe verwendet wurde um den Inhalt der Textfelder hervorzuheben, die ungültige Daten enthalten, und verfügt über eine entsprechende Validierungsfehlermeldung neben jeder ausgegeben. Die Fehlermeldungen werden sowohl auf Clientseite (mithilfe von JavaScript und jQuery) als auch auf Serverseite erzwungen (wenn ein Benutzer JavaScript deaktiviert hat).
 
 Ein echter Vorteil ist, dass Sie nicht in eine einzige Codezeile ändern müssen die `MoviesController` Klasse oder in der *Create.cshtml* anzeigen, um diese Benutzeroberfläche für die Validierung zu aktivieren. Die Controller und Ansichten, die Sie zuvor in diesem Tutorial erstellt haben, haben die angegebenen Validierungsregeln automatisch übernommen (mithilfe der Validierungsattribute für die Eigenschaften der Modellklasse `Movie`). Testen Sie die Validierung mithilfe der Aktionsmethode `Edit`, und es folgt die gleiche Validierung.
@@ -135,9 +134,7 @@ Die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataanno
 
 Das `DisplayFormat`-Attribut dient zum expliziten Angeben des Datumsformats:
 
-
 [!code-csharp[Main](adding-validation/samples/sample8.cs)]
-
 
 Die `ApplyFormatInEditMode` Einstellung gibt an, dass die angegebene Formatierung auch angewendet werden soll, wenn der Wert in einem Textfeld zur Bearbeitung angezeigt wird. (Möchten Sie vielleicht nicht, die für einige Felder, z. B. für Währungsangaben nicht empfiehlt das Währungssymbol im Textfeld für die Bearbeitung.)
 
@@ -155,7 +152,6 @@ Bei Verwendung der `DataType` Attribut mit einem Datumsfeld müssen Sie angeben 
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
 > Sie müssen mit jQuery-datumsvalidierung Deaktivieren der [Bereich](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) -Attribut mit ["DateTime"](https://msdn.microsoft.com/library/system.datetime.aspx). Es ist im Allgemeinen nicht empfohlen, feste Datumsangaben in Ihren Modellen, also Kompilieren der [Bereich](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) Attribut und ["DateTime"](https://msdn.microsoft.com/library/system.datetime.aspx) wird davon abgeraten.
-
 
 Der folgende Code zeigt die Kombination von Attributen in einer Zeile:
 

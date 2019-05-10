@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 983f3ffa-08b8-4868-b8c9-aa34593fc683
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: 6299e5d306ce59687d91658e36685cc6b3255269
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b0aa7c8cdf741f44e09ed18e2b2f73fe6bf786ae
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415062"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117472"
 ---
 # <a name="create-a-database"></a>Erstellen einer Datenbank
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > Schritt 2 zeigt die Schritte zum Erstellen der Datenbank enthält alle von der Dinner und Antworten Sie Daten für die NerdDinner-Anwendung.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-step-2-creating-the-database"></a>NerdDinner, Schritt 2: Erstellen der Datenbank
 

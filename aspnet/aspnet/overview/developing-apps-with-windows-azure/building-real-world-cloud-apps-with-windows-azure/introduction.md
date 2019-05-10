@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7daf08a88c614288170d676e665403cda244218a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412410"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118671"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>Erstellen realer Cloud-Apps mit Azure
 
@@ -24,7 +24,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 > Dieses e-Book führt Sie durch einen musterbasierten Ansatz zum Erstellen von realitätsgetreuen Cloud-Lösungen. Die Muster gelten sowohl für den Entwicklungsprozess als auch für die Architektur und Praktiken zur codeerstellung.
 > 
 > Der Inhalt basiert auf einer Präsentation von Scott Guthrie entwickelt und bereitgestellt durch ihn an die Norwegische Entwickler Conference (NDC) im Juni 2013 ([Teil 1](http://vimeo.com/68215538), [Teil 2](http://vimeo.com/68215602)), und klicken Sie auf der Microsoft Tech Ed Australia in September 2013 ([Teil 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)). [Viele andere](more-patterns-and-guidance.md#acknowledgments) aktualisiert und ergänzt die Inhalte bei der Umsetzung von Video in die Schriftform.
-
 
 ## <a name="intended-audience"></a>Zielgruppe
 

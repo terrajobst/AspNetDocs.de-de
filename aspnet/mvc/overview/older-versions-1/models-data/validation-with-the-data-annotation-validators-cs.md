@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 7ca8013e-9dfc-4e33-8336-cdccfd5f9414
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 300fc9f7e82fe8201b083de9e740e1620f5d09b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e154384c08adf0c14920afff85e983a67b41707c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411812"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122291"
 ---
 # <a name="validation-with-the-data-annotation-validators-c"></a>Überprüfung der Validierungssteuerelemente für Datenanmerkungen (C#)
 
@@ -21,14 +21,11 @@ by [Microsoft](https://github.com/microsoft)
 
 > Die Modellbindung des Daten-Anmerkung für die Validierung in ASP.NET MVC-Anwendungen nutzen. Erfahren Sie, wie die verschiedenen Typen von Validierungssteuerelement-Attribute und mit ihnen im Microsoft Entity Framework arbeiten.
 
-
 In diesem Tutorial erfahren Sie, wie die Validierungssteuerelemente für die Datenanmerkung verwenden, für die Validierung in ASP.NET MVC-Anwendungen. Der Vorteil der Verwendung der Validierungssteuerelemente für die Datenanmerkung ist, dass Sie eine Überprüfung durchführen, indem Sie einfach ein oder mehrere Attribute – z. B. die erforderliche oder StringLength-Attribut hinzufügen – einer Klasseneigenschaft bieten.
 
 Bevor Sie die Validierungssteuerelemente für die Datenanmerkung verwenden können, müssen Sie die Daten Anmerkungen Modellbindung herunterladen. Sie können Anmerkungen Modell Binder Datenbeispiel, das von der CodePlex-Website herunterladen, indem Sie auf [hier](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24471).
 
-
 Es ist wichtig zu verstehen, dass die Modellbindung für Daten Anmerkungen keine offizielle Microsoft ASP.NET MVC-Framework gehört. Obwohl die Modellbindung für Daten Anmerkungen von den Microsoft ASP.NET MVC-Team erstellt wurde, bietet Microsoft keine offizielle Microsoft-Support für die Modellbindung des Daten-Anmerkungen beschrieben und in diesem Tutorial verwendet.
-
 
 ## <a name="using-the-data-annotation-model-binder"></a>Mithilfe der Modellbindung für Daten-Anmerkung
 
@@ -40,9 +37,7 @@ Um die Daten Anmerkungen Modellbindung in ASP.NET MVC-Anwendungen zu verwenden, 
 
 Wählen Sie zuerst die Microsoft.Web.Mvc.DataAnnotations.dll-Assembly und die System.ComponentModel.DataAnnotations.dll-Assembly, und klicken Sie auf die **OK** Schaltfläche.
 
-
 Sie können keine die System.ComponentModel.DataAnnotations.dll-Assembly, die in .NET Framework Service Pack 1 mit der Modellbindung für Daten-Anmerkungen enthalten. Sie müssen die Version der im Beispiel für Daten Anmerkungen Binder-Download enthalten System.ComponentModel.DataAnnotations.dll Assembly verwenden.
-
 
 Abschließend müssen Sie die Modellbindung "DataAnnotations" in der Datei "Global.asax" zu registrieren. Fügen Sie die folgende Zeile des Codes der Anwendung\_Start()-Ereignishandler so, dass die Anwendung\_Start()-Methode sieht wie folgt aus:
 
@@ -64,7 +59,6 @@ Wenn Sie die Daten Anmerkungen Modellbindung verwenden, verwenden Sie die Validi
 > 
 > Wenn bedarfsgerechte Überprüfung von einem standard-Validierungssteuerelemente nicht erfüllt werden müssen Sie immer die Möglichkeit, erstellen ein benutzerdefiniertes Validierungssteuerelement-Attribut durch ein neues Validierungssteuerelement-Attribut aus der Überprüfung Basisattribut erben.
 
-
 Die Product-Klasse in **Codebeispiel 1** wird veranschaulicht, wie diese Attribute Validierungssteuerelement verwenden. Die Eigenschaften Name, Beschreibung und UnitPrice markiert werden nach Bedarf. Die Name-Eigenschaft müssen eine Länge der Zeichenfolge, die weniger als 10 Zeichen ist. Die UnitPrice-Eigenschaft muss schließlich Muster eines regulären Ausdrucks übereinstimmen, das einen Währungsbetrag darstellt.
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample2.cs)]
@@ -76,7 +70,6 @@ Die Product-Klasse veranschaulicht, wie ein zusätzliches Attribut: das DisplayN
 > [!NOTE] 
 > 
 > Wenn Sie die Fehlermeldung wird angezeigt, die durch ein Validierungssteuerelement vollständig anpassen möchten, können Sie eine benutzerdefinierte Fehlermeldung, des Validierungssteuerelements "ErrorMessage"-Eigenschaft wie folgt zuweisen: `<Required(ErrorMessage:="This field needs a value!")>`
-
 
 Können Sie die Product-Klasse in **Codebeispiel 1** mit Create() Controlleraktion in **Codebeispiel 2**. Diese Controlleraktion Ansicht "erstellen" wird erneut angezeigt, wenn Modellstatus alle Fehler enthält.
 
@@ -97,7 +90,6 @@ Schließlich können Sie die Ansicht erstellen **Codebeispiel 3** durch einen Re
 > [!NOTE] 
 > 
 > Entfernen Sie das Id-Feld von der erstellen-Form von generiert die **Ansicht hinzufügen** Option des Menüs. Da das Id-Feld eine Identity-Spalte entspricht, möchten keine Benutzer einen Wert für dieses Feld eingeben können.
-
 
 Wenn Sie das Formular zum Erstellen eines Produkts senden und Sie werden keine Werte für die erforderlichen Felder eingeben, die Überprüfung von Fehlermeldungen, in **Abbildung 3** werden angezeigt.
 
@@ -138,7 +130,6 @@ Die Validierungssteuerelement-Attribute gelten für die Eigenschaften der Klasse
 > [!NOTE] 
 > 
 > Beachten Sie, dass die Proxyeigenschaften in der Klasse MovieMetaData aus nicht dieselben Typen wie die entsprechenden Eigenschaften in die Movie-Klasse darstellen müssen. Beispielsweise ist die Director-Eigenschaft einer Zeichenfolgeneigenschaft in die Movie-Klasse und eine Eigenschaft des Objekts in der Klasse MovieMetaData aus.
-
 
 Die Seite im **Abbildung 6** veranschaulicht die Fehlermeldungen zurückgegeben, wenn Sie ungültige Werte für die Movie-Eigenschaften eingeben.
 

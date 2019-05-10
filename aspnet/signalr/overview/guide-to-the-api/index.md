@@ -8,17 +8,16 @@ ms.date: 09/19/2014
 ms.assetid: af69e8d2-efdd-4d0b-9bbc-95353a65c0db
 msc.legacyurl: /signalr/overview/guide-to-the-api
 msc.type: chapter
-ms.openlocfilehash: 442d8349e0b4d8f57923625533cebecac53c586a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0109298a92ae7e1ea96d1020d4345b5618852efb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394847"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117111"
 ---
 # <a name="signalr-guide-to-the-api"></a>SignalR-Leitfaden für die API
 
 > Dokumentation zur Verwendung der SignalR-Hubs-API. API-Autorisierung finden Sie unter der Registerkarte "Sicherheit".
-
 
 - [Leitfaden für die Hubs-API – Server (C#)](hubs-api-guide-server.md)
 - [Leitfaden für die Hubs-API – JavaScript-Client](hubs-api-guide-javascript-client.md)

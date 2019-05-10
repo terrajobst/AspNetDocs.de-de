@@ -8,15 +8,14 @@ ms.date: 01/15/2019
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: b4c6d850062e1b65eacd97ffc4f34c80fedea503
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8befe133c3627dac1f7d011959c68e2054d345da
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404311"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119656"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR-Hubs-API-Leitfaden – JavaScript-Client
-
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -124,7 +123,6 @@ Im vorherigen Beispiel wird der Verweis auf den generierten SignalR-Proxy für d
 > [!NOTE]
 > Verwenden Sie für Windows 8 (Windows Store) JavaScript-Clients die physischen Proxydatei statt der dynamisch generierten aus. Weitere Informationen finden Sie unter [Vorgehensweise: erstellen eine physische Datei für SignalR generierter Proxy](#manualproxy) weiter unten in diesem Thema.
 
-
 Verwenden Sie in ASP.NET MVC 4 oder 5 Razor-Ansicht die Tilde zum Verweisen auf das Stammverzeichnis der Anwendung in Ihrem Proxy Dateiverweis aus:
 
 [!code-html[Main](hubs-api-guide-javascript-client/samples/sample5.html)]
@@ -193,7 +191,6 @@ Standardmäßig ist der Hub-Speicherort dem aktuellen Server; Wenn Sie auf einen
 > [!NOTE]
 > Normalerweise der Registrierung von Ereignishandlern vor dem Aufruf der `start` Methode zum Herstellen der Verbindung. Wenn einige Ereignishandler zu registrieren, nachdem die Verbindung hergestellt werden soll, können Sie dies, aber Sie müssen mindestens eines Ihrer einen oder mehrere Ereignishandler vor dem Aufruf Registrieren der `start` Methode. Ein Grund hierfür ist, dass in einer Anwendung kann viele Hubs vorhanden sein, aber nicht empfehlenswert Auslösen der `OnConnected` Ereignis für jede Hub-Instanz, wenn Sie nur einen der Verträge verwenden möchten. Wenn die Verbindung hergestellt ist, das Vorhandensein einer Clientmethode auf einem Hub-Proxy ist, was SignalR auslösen soll die `OnConnected` Ereignis. Wenn Sie sich nicht die Ereignishandler vor dem Aufruf Registrieren der `start` -Methode, Sie werden zum Aufrufen von Methoden in den Hub, aber der Hub `OnConnected` Methode nicht aufgerufen und keine Clientmethoden werden vom Server aufgerufen werden.
 
-
 <a id="connequivalence"></a>
 
 ### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$. connection.hub ist das gleiche Objekt erstellt, $.hubConnection()
@@ -251,7 +248,6 @@ Der folgende Code veranschaulicht, wie CORS oder JSONP in einem SignalR-2-Projek
 > - Weitere Informationen zur Verwendung von domänenübergreifende Verbindungen mit Internet Explorer 9, finden Sie unter [dieser Stack Overflow-Thread](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work).
 > - Weitere Informationen zur Verwendung von domänenübergreifende Verbindungen mit Chrome finden Sie unter [dieser Stack Overflow-Thread](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome).
 > - Der Beispielcode verwendet die Standardeinstellung "/ Signalr" die URL für die Verbindung mit Ihrem SignalR Service. WPF-Clientcode für die Methode wird vom Server ohne Parameter aufgerufen. [ASP.NET SignalR Hubs API Guide - Server - The /signalr URL](hubs-api-guide-server.md#signalrurl).
-
 
 <a id="configureconnection"></a>
 

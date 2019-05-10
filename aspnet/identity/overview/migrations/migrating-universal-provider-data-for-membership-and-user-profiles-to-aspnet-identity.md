@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1043dce4cdd62f94ae9d2344a9301c1b03426f3d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: de154dde122886976054159ad745982669ca9315
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422264"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121387"
 ---
 # <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migrieren von Daten eines universellen Anbieters in Bezug auf Mitgliedschaften und Benutzerprofilen zu ASP.NET Identity (C#)
 
@@ -22,14 +22,12 @@ by [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.
 
 > In diesem Tutorial wird beschrieben, die erforderlichen Schritte zum Migrieren von Benutzer und Daten der Rolle und Benutzerprofildaten, die mit der Universal Providers einer vorhandenen Anwendung für das ASP.NET Identity-Modell erstellt wird. Der Ansatz wird hier erwähnt, zum Migrieren von Benutzerprofildaten, die in einer Anwendung mit einer SQL-Mitgliedschaft auch verwendet werden können.
 
-
 Mit der Veröffentlichung von Visual Studio 2013, das ASP.NET-Team ein neues ASP.NET Identity-System eingeführt, und erfahren Sie mehr über diese Version [hier](../../index.md). Anschluss an die im Artikel zum Migrieren von Webanwendungen vor [SQL-Mitgliedschaft in der neuen Identitätssystem](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md), dieser Artikel beschreibt die Schritte zur Migration vorhandener Anwendungen, die Folgen des Anbieter-Modells für Benutzer-und Rollenverwaltung das neue Identitätsmodell. Der Schwerpunkt in diesem Tutorial werden in erster Linie auf die Migration von der Benutzerprofildaten, um nahtlos in das neue System zu verknüpfen. Migrieren von Informationen für Benutzer und Rollen ist ähnlich für die SQL-Mitgliedschaft. Der Ansatz befolgt, um die Profildaten zu migrieren, kann in einer Anwendung mit SQL-Mitgliedschaft auch verwendet werden.
 
 Als Beispiel beginnen wir mit einer Web-app erstellt haben, mithilfe von Visual Studio 2012 die das Anbieter-Modell verwendet. Wir werden dann fügen Sie Code für die Verwaltung von Profilen, registrieren Sie einen Benutzer, Profildaten für den Benutzer hinzufügen, migrieren das Datenbankschema und ändern Sie dann die Anwendung das Identitätssystem für Benutzer-und Rollenverwaltung zu verwenden. Zum Testen der Migration erstellt, mit der Universal Providers Benutzer sollten in der Lage, melden Sie sich, und neue Benutzer sollten in der Lage, zu registrieren.
 
 > [!NOTE]
 > Sie finden das vollständige Beispiel am [ https://github.com/suhasj/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations).
-
 
 ## <a name="profile-data-migration-summary"></a>Data Migration-Zusammenfassung
 

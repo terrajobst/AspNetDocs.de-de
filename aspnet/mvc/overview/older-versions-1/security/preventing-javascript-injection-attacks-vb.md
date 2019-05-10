@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d988b2ed6b7d1760557cbfbb543afa85b320c984
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 844d7209d3efbe0acf92fbc25e9b06c25c4d269a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402439"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125431"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>Verhindern von Angriffen durch Einschleusung von JavaScript-Codes (VB)
 
@@ -23,7 +23,6 @@ durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Verhindern Sie, dass JavaScript-Injection-Angriffe und Cross-Site Scripting-Angriffe informieren möchten. In diesem Tutorial erläutert Stephen Walther an, wie Sie einfach diese Arten von Angriffen durch HTML-Codierung Ihrer Inhalte zunichte machen können.
 
-
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie JavaScript-Injection-Angriffen in ASP.NET MVC-Anwendungen verhindern können. In diesem Tutorial werden zwei Ansätze zur Verteidigung Ihrer Website für einen JavaScript-Injection-Angriff erläutert. Erfahren Sie, wie Sie JavaScript-Injection-Angriffe zu verhindern, indem Sie die Codierung der Daten, die angezeigt werden. Außerdem erfahren Sie, wie Sie JavaScript-Injection-Angriffe zu verhindern, indem Sie die Codierung der Daten, die Sie akzeptieren.
 
 ## <a name="what-is-a-javascript-injection-attack"></a>Was ist ein JavaScript-Injection-Angriff?
@@ -32,11 +31,9 @@ Wenn Sie Benutzereingaben akzeptieren und das erneute die Benutzereingabe anzeig
 
 Stellen Sie sich vor, dass Sie eine Kunden-Feedback-Website erstellt haben (siehe Abbildung 1). Kunden können finden Sie auf der Website, und geben Sie Feedback an den Erfahrungen, die Ihre Produkte verwenden. Wenn ein Kunde ihr Feedback übermittelt, wird das Feedback auf der Seite "Feedback" erneut angezeigt.
 
-
 [![Kunden-Feedback-Website](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
 
 **Abbildung 01**: Kunden-Feedback-Website ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-vb/_static/image3.png))
-
 
 Die Kunden-Feedback-Website verwendet die `controller` in Codebeispiel 1. Dies `controller` enthält zwei Aktionen, die mit dem Namen `Index()` und `Create()`.
 
@@ -64,11 +61,9 @@ Stellen Sie sich, dass Sie den folgenden Text in das Kunden-Feedback-Formular ei
 
 Dieser Text stellt ein JavaScript-Skript, das eine Warnmeldung angezeigt. Nachdem ein Benutzer dieses Skript an das Feedback übermittelt zu bilden, die Nachricht <em>Boo!</em> wird angezeigt, wenn jeder Benutzer, die Kunden-Feedback-Website in der Zukunft besucht (siehe Abbildung 2).
 
-
 [![Einschleusung von JavaScript](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
 
 **Abbildung 02**: Einschleusung von JavaScript-Befehlen ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-vb/_static/image6.png))
-
 
 Nun kann Ihre erste Reaktion auf JavaScript-Injection-Angriffen kann das zu apathie sein. Zunächst vermuten, dass die JavaScript-Injection-Angriffe einfach eine Art von sind *Verunstaltung* Angriff. Sie gehen davon aus, dass niemand alles wirklich böse ausführen können, indem ein Commit für einen JavaScript-Injection-Angriff.
 
@@ -92,11 +87,9 @@ Beachten Sie, dass der Wert des `feedback.Message` ist HTML-codiert werden, bevo
 
 Funktionsweise Mittelwert in HTML codieren eine Zeichenfolge? Wenn Sie HTML eine Zeichenfolge zu codieren, gefährliche Zeichen wie z. B. `<` und `>` durch Verweise auf HTML-Entitäten wie z. B. ersetzt werden `&lt;` und `&gt;`. Dies der Fall bei der Zeichenfolge `<script>alert("Boo!")</script>` HTML-codiert, es konvertiert `&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`. Die codierte Zeichenfolge führt nicht mehr als einem JavaScript-Skript, wenn von einem Browser interpretiert. Stattdessen erhalten Sie in Abbildung 3 die harmlose Seite an.
 
-
 [![JavaScript-Angriff](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
 
 **Abbildung 03**: Abwehren von JavaScript-Angriff ([klicken Sie, um das Bild in voller Größe anzeigen](preventing-javascript-injection-attacks-vb/_static/image9.png))
-
 
 Beachten Sie, dass in der `Index` anzeigen in Programmausdruck 3 nur den Wert der `feedback.Message` codiert ist. Der Wert des `feedback.EntryDate` ist nicht codiert. Sie müssen nur von einem Benutzer eingegeben Daten codieren. Da der Wert des EntryDate im Controller generiert wurde, müssen Sie nicht in HTML dieses Werts codieren.
 

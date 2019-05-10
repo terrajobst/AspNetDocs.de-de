@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 988aa9252cfd93067888734006e6003347f1fb5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8adeceba0d43d6baf1af944a910750ca0682b097
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414750"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124929"
 ---
 # <a name="drag-and-drop-via-reorderlist-c"></a>Drag & Drop über ReorderList (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList5.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist5CS.pdf)
 
 > Die ReorderList-Steuerelement im AJAX Control Toolkit enthält eine Liste, die durch den Benutzer über Drag & Drop neu angeordnet werden kann. Die Liste der aktuellen Taskreihenfolge muss auf dem Server beibehalten werden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -43,19 +42,15 @@ In dieser Datenbank, erstellen Sie eine neue Tabelle namens `AJAX` mit den folge
 - `description` (varchar(50)-Spalte, NULL)
 - `position` (Int, NULL)
 
-
 [![Das Layout der AJAX-Tabelle](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
 
 Das Layout der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-cs/_static/image3.png))
 
-
 Füllen Sie dann die Tabelle mit ein Paar von Werten. Beachten Sie, dass die `position` -Spalte enthält die Sortierreihenfolge der Elemente.
-
 
 [![Die ersten Daten in der AJAX-Tabelle](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
 
 Die ersten Daten in der AJAX-Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](drag-and-drop-via-reorderlist-cs/_static/image6.png))
-
 
 Der nächste Schritt ist erforderlich, zum Generieren einer `SqlDataSource` Steuerelement für die Kommunikation mit der neuen Datenbank und die Tabelle. Die Datenquelle muss unterstützen die `SELECT` und `UPDATE` SQL-Befehle. Wenn die Reihenfolge der Listenelemente später geändert wird, die `ReorderList` Steuerelement werden automatisch zwei Werte an der Datenquelle sendet `Update` Befehl: die neue Position und die ID des Elements. Aus diesem Grund die Datenquelle muss ein `<UpdateParameters>` Abschnitt für diese beiden Werte:
 
@@ -81,7 +76,6 @@ Zum Schluss eine `ScriptManager` Steuerelement initialisiert ASP.NET AJAX für d
 [!code-aspx[Main](drag-and-drop-via-reorderlist-cs/samples/sample4.aspx)]
 
 Führen Sie in diesem Beispiel wird im Browser aus, und ordnen Sie die Listenelemente etwas. Anschließend laden Sie die Seite bzw. verfügen Sie einen Blick auf die Datenbank. Die geänderten Positionen noch gültig und werden auch übernommen, nach den Werten in der `position` -Spalte in die Datenbank ohne Code, nur mithilfe von Markup.
-
 
 [![Das Datenelement in der Datenbank ändert sich gemäß der neuen Liste Reihenfolge](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
 

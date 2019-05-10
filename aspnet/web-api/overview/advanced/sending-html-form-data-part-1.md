@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7243069dbd8051b1374ed6e0112c273b8fe26f61
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418299"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115472"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>Senden von HTML-Formulardaten in ASP.NET Web-API: Form-urlencoded-Daten
 
@@ -31,7 +31,6 @@ In diesem Artikel veranschaulicht das Form-Urlencoded-Daten an einen Web-API-Con
 
 > [!NOTE]
 > [Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASPNET-Web-API-Sending-a6f9d007).
-
 
 <a id="overview_of_html_forms"></a>
 ## <a name="overview-of-html-forms"></a>Übersicht über die HTML-Formularen
@@ -62,7 +61,6 @@ Hier ist ein Web-API-Controller, die akzeptiert eine `Update` Objekt über POST.
 
 > [!NOTE]
 > Dieser Controller verwendet [Aktion-basiertes routing](../web-api-routing-and-actions/routing-in-aspnet-web-api.md#routing_by_action_name), sodass die routenvorlage &quot;api / {Controller} / {Action} / {Id}&quot;. Der Client wird die Daten zu buchen &quot;/api/updates/complex&quot;.
-
 
 Jetzt schreiben wir nun ein HTML-Formular für Benutzer, eine statusaktualisierung zu übermitteln.
 
@@ -101,7 +99,6 @@ In den vorherigen Abschnitten haben wir einen komplexen Typ, der Web-API mit ein
 > [!NOTE]
 > Senden einen einfachen Typ, berücksichtigen Sie stattdessen den Wert in einem komplexen Typ umschließt. Dies bietet Ihnen die Vorteile der modellvalidierung auf der Serverseite und erleichtert es, Ihr Modell zu erweitern, wenn erforderlich.
 
-
 Die grundlegenden Schritte zum Senden von eines einfachen Typs sind identisch, aber es gibt zwei feine Unterschiede. Zunächst im Controller muss, ergänzen Sie den Namen des Parameters mit dem **FromBody** Attribut.
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample7.cs?highlight=3)]
@@ -110,7 +107,6 @@ Web-API versucht standardmäßig einfache Typen aus der Anforderungs-URI abrufen
 
 > [!NOTE]
 > Web-API liest den Antworttext nur einen Parameter einer Aktion aus dem Anforderungstext stammen kann wird höchstens einmal zurückgegeben. Wenn Sie mehrere Werte aus dem Anforderungstext abrufen müssen, definieren Sie einen komplexen Typ.
-
 
 Zweitens muss der Client zum Senden von des Wert mit dem folgenden Format ein:
 

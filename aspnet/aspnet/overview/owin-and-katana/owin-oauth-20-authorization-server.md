@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: d5c8262d48c79616ca3069c37077ba99ffafb650
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6523d09e41fe10475d1bcb7fca06b2e0e2d3182c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426046"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118200"
 ---
 # <a name="owin-oauth-20-authorization-server"></a>OWIN-OAuth 2.0-Autorisierungsserver
 
@@ -34,7 +34,6 @@ ms.locfileid: "58426046"
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
 > Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie diese unter buchen [Katana-Projekt auf GitHub](https://github.com/aspnet/AspNetKatana/). Finden Sie für Fragen und Kommentare in Bezug auf das Tutorial selbst im Kommentarabschnitt "am unteren Rand der Seite.
-
 
 Die [OAuth 2.0-Framework](http://tools.ietf.org/html/rfc6749) können Sie eine Drittanbieter-app zum eingeschränkten Zugriff auf einen HTTP-Dienst abrufen. Nicht der Besitzer der Ressource der Anmeldeinformationen auf eine geschützte Ressource zuzugreifen, ruft der Client ein Zugriffstoken ab (Dies ist eine Zeichenfolge, die einen bestimmten Bereich, Lebensdauer und andere Zugriffsattribute bezeichnet). Zugriffstoken werden mit der Genehmigung des ressourcenbesitzers für Drittanbieter-Clients von einem autorisierungsserver ausgegeben.
 
@@ -175,7 +174,6 @@ Hier ist die Implementierung des Beispiels für `Provider.GrantResourceOwnerCred
 > [!NOTE]
 > Der obige Code sollte in diesem Abschnitt des Tutorials erläutert und sollte nicht verwendet werden, in der sicheren oder Produktions-apps. Es wird nicht der Besitzer ressourcenanmeldeinformationen überprüft. Es wird vorausgesetzt, alle Anmeldeinformationen gültig ist und erstellt eine neue Identität für diese. Die neue Identität wird generieren das Zugriffstoken und Aktualisierungstoken verwendet werden. Ersetzen Sie den Code mit Ihrem eigenen sicheren Account Management-Code ein.
 
-
 ### <a name="client-credentials-grant"></a>Gewährung von Clientanmeldeinformationen
 
 Finden Sie in der IETF OAuth 2 [Gewährung von Clientanmeldeinformationen](http://tools.ietf.org/html/rfc6749#section-4.4) jetzt Abschnitt.
@@ -195,7 +193,6 @@ Hier ist die Implementierung des Beispiels für `Provider.GrantClientCredentials
 
 > [!NOTE]
 > Der obige Code sollte in diesem Abschnitt des Tutorials erläutert und sollte nicht verwendet werden, in der sicheren oder Produktions-apps. Ersetzen Sie den Code mit Ihrem eigenen sichere Client-Management-Code ein.
-
 
 ### <a name="refresh-token"></a>Aktualisierungstoken
 
@@ -274,7 +271,6 @@ Hier ist der Beispielcode die `HomeController` des Clients.
 > [!WARNING]
 > Sicherheit – nie deaktivieren SSL in einer Produktions-app. Ihre Anmeldeinformationen werden jetzt im Klartext über das Netzwerk gesendet wird. Der obige Code ist nur für lokale Beispiel zu debuggen und durchsuchen.
 
-
 ### <a name="implicit-grant-client"></a>Implizite Gewährung-Client
 
 Dieser Client verwendet JavaScript:
@@ -296,7 +292,6 @@ Hier ist der Rückruf, der Verarbeitung von Code in *SignIn.cshtml* Datei:
 
 > [!NOTE]
 > Eine bewährte Methode ist, verschieben den JavaScript-Code in eine externe Datei, und diese nicht mit dem Razor-Markup einzubetten. Um dieses Beispiel einfach zu halten, wurden sie kombiniert.
-
 
 ### <a name="resource-owner-password-credentials-grant-client"></a>Kennwort des Ressourcenbesitzers Credentials Grant-Client
 

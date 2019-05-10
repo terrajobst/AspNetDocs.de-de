@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: fa0573738fee8f1decc13c9797f644002931e09d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e31bf3215155b4b45bcf2eb90dd6947caf99b7f8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381496"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125261"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eine OData v3-Endpunkts mit Web-API 2
 
@@ -35,7 +35,6 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > - [Fiddler Web Debugging Proxy (Optional)](http://www.fiddler2.com)
 >
 > Web-API-OData-Unterstützung wurde hinzugefügt, [ASP.NET und Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=282650). In diesem Lernprogramm verwendet jedoch Gerüst, das in Visual Studio 2013 hinzugefügt wurde.
-
 
 In diesem Tutorial erstellen Sie einen einfachen OData-Endpunkt, den von Clients abgefragt werden können. Außerdem erstellen Sie einen C#-Client für den Endpunkt. Nachdem Sie dieses Tutorial abgeschlossen haben, der nächste Satz von Tutorials zeigen, wie Sie weitere Funktionen, einschließlich von entitätsbeziehungen, Aktionen hinzufügen, und wählen Sie die $erweitern / $.
 
@@ -77,7 +76,6 @@ In der **Add New** Element Dialogfeld, nennen Sie die Klasse &quot;Produkt&quot;
 
 > [!NOTE]
 > Gemäß der Konvention werden ViewModel-Klassen im Ordner "Models" abgelegt. Sie müssen keine dieser Konvention in Ihren eigenen Projekten folgen, aber wir verwenden sie für dieses Tutorial.
-
 
 Fügen Sie in der Datei "Product.cs" die folgende Klassendefinition hinzu:
 

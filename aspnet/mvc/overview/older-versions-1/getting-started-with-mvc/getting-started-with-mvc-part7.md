@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9403be574324c34edf93bef1e0e4fd7ba68a3a9d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392351"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122773"
 ---
 # <a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
 
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
-
 
 In diesem Abschnitt werden wir implementieren Sie die notwendige Unterstützung für die Validierung von Benutzereingaben in unserer Anwendung zu aktivieren. Wir stellen sicher, dass unsere Datenbankinhalte immer richtig ist und hilfreiche Fehlermeldungen für Endbenutzer bereit, wenn sie versuchen, und geben Sie die Daten ungültig ist. Wir beginnen, indem die Movie-Klasse ein wenig Validierungslogik hinzugefügt.
 

@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b4c35761f9cd44c866242cfe6f4f2d924e81d754
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3f44aa9654a2a718381eaf9c856ca3e15ed1e27
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421328"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117318"
 ---
 # <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC-Ansichten – Übersicht (C#)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Was ist eine ASP.NET MVC-Ansicht, und wie unterscheidet es sich von einem HTML-Seite? In diesem Tutorial Stephen Walther bietet eine Einführung zu Ansichten und veranschaulicht, wie Sie Daten anzeigen und HTML-Hilfsprogramme in einer Ansicht nutzen können.
-
 
 Der Zweck dieses Lernprogramms ist eine kurze Einführung in ASP.NET MVC-Ansichten, Anzeigen von Daten und HTML-Hilfsprogramme bereit. Am Ende dieses Tutorials sollten Sie verstehen, wie Sie neue Ansichten erstellen, Daten von einem Controller an eine Ansicht übergeben und HTML-Hilfsprogramme verwenden, um Inhalte in einer Ansicht zu generieren.
 
@@ -68,7 +67,6 @@ Wenn diese Codezeile ausgeführt wird, wird eine Ansicht aus dem folgenden Pfad 
 > 
 > Wenn Sie planen, Erstellen von Komponententests für Ihre ASP.NET MVC-Anwendung ist es eine gute Idee, die explizit über den Sichtnamen sein. Auf diese Weise können Sie einen Komponententest, um sicherzustellen, dass die erwarteten Ansicht durch eine Controlleraktion zurückgegeben wurde erstellen.
 
-
 ## <a name="adding-content-to-a-view"></a>Hinzufügen von Inhalten zu einer Ansicht
 
 Eine Sicht ist ein Standard (HTML-Dokument, das Skripts enthalten kann X). Sie können Skripts verwenden, um dynamischen Inhalt an eine Ansicht hinzuzufügen.
@@ -103,11 +101,9 @@ Bilden beispielsweise die Ansicht in Listing 4 nutzt drei HTML-Hilfsprogrammen �
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
-
 [![Das Dialogfeld "Neues Projekt"](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
 **Abbildung 01**: Ein standard Anmeldeformular ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-views-overview-cs/_static/image2.png))
-
 
 Alle HTML-Hilfsprogramme Methoden werden in der Eigenschaft Html der Ansicht aufgerufen. Rendern Sie z. B. ein Textfeld durch Aufrufen der Html.TextBox()-Methode.
 

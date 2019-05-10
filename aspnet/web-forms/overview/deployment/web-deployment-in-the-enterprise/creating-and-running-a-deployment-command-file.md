@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c61560e9-9f6c-4985-834a-08a3eabf9c3c
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: cbad35c9ef83b41e9d3f9a48ff37672d22338e7e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f1477ff423e4898385066a35b42503f3c70dcc68
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395224"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119460"
 ---
 # <a name="creating-and-running-a-deployment-command-file"></a>Erstellen und Ausführen einer Befehlsdatei für die Bereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, wie eine Befehlsdatei erstellen, mit denen Sie eine Bereitstellung mithilfe von Microsoft Build Engine (MSBuild) Projektdateien als Schritt für Schritt, wiederholbaren Prozess ausgeführt wird.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager](the-contact-manager-solution.md) Lösung&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -41,9 +40,7 @@ Siehe [Verständnis des Prozesses erstellen](understanding-the-build-process.md)
 
 Die *Publish.proj* Datei verwendet ein **importieren** Element, um die umgebungsspezifischen-Projektdatei importieren.
 
-
 [!code-xml[Main](creating-and-running-a-deployment-command-file/samples/sample1.xml)]
-
 
 Wenn Sie MSBuild.exe zum Erstellen und Bereitstellen von Contact Manager-Lösung verwenden, müssen Sie:
 
@@ -52,19 +49,14 @@ Wenn Sie MSBuild.exe zum Erstellen und Bereitstellen von Contact Manager-Lösung
 
 Zu diesem Zweck sieht der MSBuild-Befehl folgendermaßen aus:
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample2.cmd)]
-
 
 Hier ist es eine einfache Schritt, in einer Bereitstellung für wiederholbare, Schritt für Schritt zu verschieben. Müssen Sie lediglich Ihre MSBuild-Befehl eine CMD-Datei hinzu. In der Projektmappe Contact Manager-Ordner "Publish" umfasst eine Datei namens *veröffentlichen-Dev.cmd* , die dies ist genau.
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample3.cmd)]
-
 
 > [!NOTE]
 > Die **/fl** -Schalter weist MSBuild zum Erstellen einer Protokolldatei mit dem Namen *msbuild.log* in das Arbeitsverzeichnis, in denen MSBuild.exe aufgerufen wurde.
-
 
 Zum Bereitstellen oder die Kontakt-Manager-Lösung erneut bereitzustellen, müssen Sie lediglich ausgeführt wird die *veröffentlichen-Dev.cmd* Datei. Wenn Sie die Datei ausführen, wird MSBuild:
 
@@ -99,19 +91,14 @@ Wenn Sie eine Befehlsdatei für Ihre zielumgebung erstellt haben, sollten Sie di
 
 Erstellen eine Befehlsdatei, die die MSBuild-Anweisungen enthält, bietet Ihnen eine schnelle und einfache Möglichkeit, erstellen und Bereitstellen von Projektmappen mit mehreren Projekten für ein bestimmtes Ziel-Umgebung. Wenn Sie wiederholte Bereitstellen Ihrer Lösung in mehreren zielumgebungen müssen, können Sie mehrere Befehlsdateien erstellen. Klicken Sie in jeder Befehlsdatei MSBuild-Befehl wird die gleiche universal-Projekt-Datei erstellen, aber es wird eine andere Umgebung spezifischen Projektdatei angeben. Beispielsweise kann eine Befehlsdatei für Entwickler veröffentlichen oder testumgebung dieses MSBuild-Befehl enthalten:
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample4.cmd)]
-
 
 Eine Befehlsdatei in einer Stagingumgebung zu veröffentlichen, könnte dieses MSBuild-Befehl enthalten:
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample5.cmd)]
-
 
 > [!NOTE]
 > Anleitungen zum Anpassen der umgebungsspezifischen Projektdateien für Ihre eigenen serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
-
 
 Sie können den Buildprozess für jede Umgebung auch anpassen, durch Überschreiben von Eigenschaften oder Festlegen von verschiedenen anderen Schaltern in Ihrem MSBuild-Befehl. Weitere Informationen finden Sie unter [MSBuild-Befehlszeilenreferenz](https://msdn.microsoft.com/library/ms164311.aspx).
 

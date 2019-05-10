@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: dcc2e703829cfa0b77575870feff451fd0738f56
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8f0014776ba1313119e8c39c63a216b0fc864e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416492"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123125"
 ---
 # <a name="intro-to-aspnet-mvc"></a>Einführung in ASP.NET MVC
 
@@ -24,7 +24,6 @@ durch [Scott Hanselman](https://github.com/shanselman)
 >
 >
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
-
 
 Lassen Sie uns unsere erste ASP.NET MVC-Webanwendung mit [Visual Web Developer 2010 Express](https://www.microsoft.com/express/Web/). Wir erstellen eine kleine Anwendung "Movie List", die wir erstellen und Liste von Filmen.
 

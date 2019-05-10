@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc7bb676a71af4ec3451aa3adf3c03ce3b5200d5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396316"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114770"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>Webbereitstellung im Unternehmen
 
@@ -24,7 +24,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > In diesem Tutorial wird beschrieben, wie viele der Herausforderungen beim erfüllen, die auftreten müssen, wenn Sie die Bereitstellung von Webanwendungen für Unternehmen angemessenen in Umgebungen für Entwicklungs-, Test-, Staging- und produktionsumgebungen verwalten. Das Lernprogramm enthält eine referenzlösung zusammen mit einer Mischung aus konzeptionelle und aufgabenbezogene Inhalte, die Sie über die verschiedenen Aufgaben und Verfahren zu führen.
 > 
 > Ein italienischen Übersetzung mit diesen Lernprogrammen finden Sie unter [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
-
 
 ## <a name="enterprise-deployment-challenges"></a>Herausforderungen bei der Bereitstellung von Enterprise
 

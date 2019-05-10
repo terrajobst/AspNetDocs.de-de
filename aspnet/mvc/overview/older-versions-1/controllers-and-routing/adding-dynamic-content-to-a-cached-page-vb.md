@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0dae280dfa3028df5fda95c4366132c99a0dc3b7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f2f4372498e5a38bbfcb96d6e9f6338b0ef4df1f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409199"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123670"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-vb"></a>Hinzufügen von dynamischen Inhalten zu einer zwischengespeicherten Seite (VB)
 
@@ -21,16 +21,13 @@ by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie dynamische und zwischengespeicherte Inhalte auf der gleichen Seite zu kombinieren. Ersetzung nach dem Zwischenspeichern können Sie zum Anzeigen dynamischen Inhalts, z. B. Banner Ankündigungen oder neuen Elementen auf einer Seite, die Ausgabe wurden zwischengespeichert.
 
-
 Durch Zwischenspeichern der Ausgabe nutzen, können Sie die Leistung von ASP.NET MVC-Anwendungen erheblich verbessern. Anstelle eine Seite wird jedes Mal, wenn, das die Seite angefordert wird, erneut generiert, kann die Seite einmal generiert und im Speicher für mehrere Benutzer zwischengespeichert werden.
 
 Aber es liegt ein Problem. Was geschieht, wenn Sie dynamischen Inhalt auf der Seite anzeigen müssen? Angenommen Sie, dass Sie eine Ankündigung Banner auf der Seite angezeigt werden soll. Sie sollten nicht die Ankündigung Banner zwischengespeichert werden, damit jeder Benutzer, die diese Ankündigung erkennt. Sie wäre nicht auf diese Weise Geld verdienen!
 
 Glücklicherweise ist gibt es eine einfache Lösung. Profitieren Sie ein Feature von ASP.NET-Framework namens *nach dem Zwischenspeichern Ersetzung*. Ersetzung nach dem Zwischenspeichern können Sie dynamischen Inhalt auf einer Seite zu ersetzen, die im Arbeitsspeicher zwischengespeichert wurde.
 
-
 In der Regel bei der Ausgabe Zwischenspeichern eine Seite mit den &lt;OutputCache&gt; -Attribut, die Seite wird auf dem Server und der Client (dem Webbrowser) zwischengespeichert. Wenn Sie Ersetzungen nach dem Zwischenspeichern verwenden, wird eine Seite nur auf dem Server zwischengespeichert.
-
 
 #### <a name="using-post-cache-substitution"></a>Verwenden von Ersetzungen nach dem Zwischenspeichern
 

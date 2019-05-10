@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c02a633013f061c09141d4f98871848c011a799e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420756"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116715"
 ---
 # <a name="server-controls"></a>Serversteuerelemente
 
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 wird die Serversteuerelemente in vielerlei Hinsicht verbessert. Klicken Sie in diesem Modul erläutert einige der architektonischen Änderungen wie ASP.NET 2.0, und Visual Studio 2005-Steuerelemente behandelt.
-
 
 ASP.NET 2.0 wird die Serversteuerelemente in vielerlei Hinsicht verbessert. Klicken Sie in diesem Modul erläutert einige der architektonischen Änderungen wie ASP.NET 2.0, und Visual Studio 2005-Steuerelemente behandelt.
 
@@ -59,15 +58,11 @@ In ASP.NET 2.0 Problem problemlos über die Einführung des Steuerelementzustand
 > [!NOTE]
 > Steuerelementzustand wird beibehalten, zusammen mit den Ansichtszustand in das \_ \_VIEWSTATE ausgeblendeten Formularfelds.
 
-
 Dieses Video ist eine exemplarische Vorgehensweise für die Ansichts- und Steuerelementzustand.
-
 
 ![](server-controls/_static/image1.png)
 
-
 [Open Vollbild-Video](server-controls/_static/state1.wmv)
-
 
 In der Reihenfolge nach einem Serversteuerelement zu lesen und Schreiben in den Status zu steuern müssen Sie drei Schritte ausführen.
 
@@ -114,7 +109,6 @@ In ASP.NET 1.x, die Konfigurationsdatei enthalten eine &lt;BrowserCaps&gt; -Absc
 > [!NOTE]
 > Die ControlAdapter-Klasse ist eine abstrakte Klasse.
 
-
 Ähnlich wie die &lt;BrowserCaps&gt; Abschnitt in der Browserdefinitionsdatei 1.x verwendet einen regulären Ausdruck, um die Benutzeragentzeichenfolge zu analysieren, um den anfordernden Browser zu identifizieren. Es werden bestimmte Funktionen für diesen Benutzeragent definiert. Die ControlAdapter rendert das Steuerelement über die Render-Methode. Aus diesem Grund, wenn Sie die Render-Methode überschreiben, dürfen Sie nicht Rendern in der Basisklasse aufrufen. Auf diese Weise kann dazu führen, dass Rendern und einmal für den Adapter und einmal für das Steuerelement selbst erfolgen.
 
 ## <a name="developing-a-custom-adapter"></a>Entwickeln eines benutzerdefinierten Adapters
@@ -157,21 +151,17 @@ Es folgen neue Steuerelemente in ASP.NET 2.0. Wir werden die ausführlicher auf 
 
 Die ImageMap-Steuerelement ermöglicht es Ihnen um Hotspots zu einem Bild hinzuzufügen, die ein Postback-Ereignis zu initiieren oder zu einer URL navigieren können. Es gibt drei Arten von Hotspots verfügbar; CircleHotSpot RectangleHotSpot und polygonförmigen. Hotspots werden über ein auflistungs-Editor in Visual Studio oder programmgesteuert in Code hinzugefügt. Steht keine Benutzeroberfläche für das Zeichnen von Hotspots in einem Bild zur Verfügung. Die Koordinaten und Größe oder RADIUS-des-Hotspots muss deklarativ angegeben werden. Es ist auch keine visuelle Darstellung eines Hotspots im Designer. Wenn Sie ein Hotspot für die Navigation zu einer URL konfiguriert ist, wird die URL über die NavigateUrl-Eigenschaft des Hotspots angegeben. Sichern Sie bei einer Post-Hotspot, der PostBackValue Eigenschaft können Sie serverseitigen Code übergeben eine Zeichenfolge in der POST-Anforderung zurück, die abgerufen werden kann.
 
-
 ![HotSpot-Auflistungs-Editor in Visual Studio](server-controls/_static/image1.jpg)
 
 **Abbildung 1**: HotSpot-Auflistungs-Editor in Visual Studio
-
 
 ## <a name="bulletedlist-control"></a>BulletedList-Steuerelement
 
 Der BulletedList-Steuerelement ist eine Aufzählung, die ganz einfach Daten gebunden werden können. Die Liste (nummerierte) sortiert werden kann oder nicht über die BulletStyle-Eigenschaft sortiert. Jedes Element in der Liste wird durch ein ListItem-Objekt dargestellt.
 
-
 ![BulletedList-Steuerelement in Visual Studio](server-controls/_static/image1.gif)
 
 **Abbildung 2**: BulletedList-Steuerelement in Visual Studio
-
 
 ## <a name="hiddenfield-control"></a>HiddenField-Steuerelement
 
@@ -204,15 +194,11 @@ Es ist recht häufig Probleme mit der beim Abrufen von Informationen in einer Re
 > [!NOTE]
 > Die Assistenten-Steuerelement verfolgt des seinen Zustand mithilfe von ASP.NET Steuerelementzustand. Aus diesem Grund kann die EnableViewState-Eigenschaft auf "false", ohne alle Nachteil festgelegt werden.
 
-
 Dieses Video ist eine exemplarische Vorgehensweise für die Assistenten-Steuerelement.
-
 
 ![](server-controls/_static/image2.png)
 
-
 [Open Vollbild-Video](server-controls/_static/wizard1.wmv)
-
 
 ## <a name="localize-control"></a>Localize-Steuerelement
 

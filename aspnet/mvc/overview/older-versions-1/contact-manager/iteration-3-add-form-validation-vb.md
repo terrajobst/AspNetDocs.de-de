@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 4805e75a-7911-46e3-b11b-229a6eed245e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e031417f2ee22533e7b5a606fc40526d7d911efc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73b307f53875abe84b592c75b1ff614ffd9d8b82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413333"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123984"
 ---
 # <a name="iteration-3--add-form-validation-vb"></a>Iteration #3 – Hinzufügen der formularüberprüfung (VB)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (VB)
-  
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
 
@@ -45,16 +43,13 @@ Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbe
 
 - Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
 
-
 ## <a name="this-iteration"></a>Diese Iteration
 
 In dieser zweiten Iteration der Contact Manager-Anwendung fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Benutzer einen Kontakt ohne Eingabe von Werten für die erforderlichen Felder des Formulars zu senden. Wir überprüfen auch die Telefonnummern und e-Mail-Adressen (siehe Abbildung 1).
 
-
 [![Das Dialogfeld "Neues Projekt"](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
 
 **Abbildung 01**: Ein Formular mit Überprüfung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-3-add-form-validation-vb/_static/image2.png))
-
 
 In dieser Iteration fügen wir die Validierungslogik, direkt auf die Controlleraktionen. Im Allgemeinen ist dies nicht die empfohlene Methode zum Hinzufügen der Validierung zu einer ASP.NET MVC-Anwendung. Ein besserer Ansatz besteht darin die Validierungslogik einer Anwendung s in einem separaten [Dienstschicht](http://martinfowler.com/eaaCatalog/serviceLayer.html). In der nächsten Iteration gestalten wir die Contact Manager-Anwendung, um die Anwendung besser verwaltbar zu machen.
 
@@ -76,7 +71,6 @@ Die Feld-Überprüfungsfehlern-Klasse wird verwendet, zum Formatieren der Ausgab
 > 
 > Sie können Stylesheet-Klassen in diesem Abschnitt anpassen die Darstellung von Validierungsfehlermeldungen beschrieben ändern.
 
-
 ## <a name="adding-validation-logic-to-the-create-action"></a>Hinzufügen von Validierungslogik auf die Aktion erstellen
 
 Moment, Ansicht "erstellen" niemals Überprüfungsfehlermeldungen angezeigt, weil wir die Logik, um alle Nachrichten generieren, die nicht geschrieben haben. Um Überprüfungsfehlermeldungen anzuzeigen, müssen Sie die Fehlermeldungen ModelState hinzufügen.
@@ -84,7 +78,6 @@ Moment, Ansicht "erstellen" niemals Überprüfungsfehlermeldungen angezeigt, wei
 > [!NOTE] 
 > 
 > Die UpdateModel() Methode hinzufügt, Fehlermeldungen ModelState automatisch Wenn Fehler beim Zuweisen einer Eigenschaft eines Formularfelds. Z. B., wenn Sie versuchen, eine BirthDate-Eigenschaft die Zeichenfolge "Apple" zuweisen, die DateTime-Werte akzeptiert, fügt dann die UpdateModel()-Methode einen Fehler hinzu ModelState.
-
 
 Die geänderte Create()-Methode in Liste 2 enthält einen neuen Abschnitt, der die Eigenschaften der Contact-Klasse überprüft, bevor die neue Kontakt in die Datenbank eingefügt wird.
 
@@ -106,7 +99,6 @@ Nachdem die Validierungsregeln ausgeführt werden, wird die Eigenschaft "IsValid
 > [!NOTE] 
 > 
 > Ich habe die regulären Ausdrücke für die Überprüfung der Telefonnummer und e-Mail-Adresse aus dem Repository der reguläre Ausdruck unter [*http://regexlib.com*](http://regexlib.com)
-
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>Die Bearbeitungsaktion Validierungslogik hinzugefügt
 

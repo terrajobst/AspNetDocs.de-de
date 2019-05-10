@@ -8,12 +8,12 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: abedf2dbf6fbc632b1857bf447f70aeb8f826d81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9186915df6d5de6bc20dfc0adabc54056d2f3a8c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410824"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113856"
 ---
 # <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Tutorial: Erste Schritte mit SignalR 1.x und MVC 4
 
@@ -22,7 +22,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://gi
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > In diesem Tutorial wird gezeigt, wie mit ASP.NET SignalR eine chatanwendung mit Echtzeitfunktionalität erstellen. Sie SignalR eine MVC 4-Anwendung hinzufügen und erstellen Sie eine Chat-Ansicht zum Senden und Meldungen angezeigt werden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -76,7 +75,6 @@ In diesem Abschnitt veranschaulicht das Erstellen einer ASP.NET MVC 4-Anwendung,
 
 > [!NOTE]
 > Wenn Sie Visual Studio 2012 und installiert die [Update für ASP.NET und Web Tools 2012.2](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation), können Sie die neue SignalR-Elementvorlage, um die hubklasse zu erstellen. Zu diesem Zweck Maustaste der **Hubs** Ordner, klicken Sie auf **hinzufügen | Neues Element**Option **SignalR-Hubklasse (v1)**, und nennen Sie die Klasse **ChatHub.cs**.
-
 
 1. Ersetzen Sie den Code in die **ChatHub** Klasse durch den folgenden Code.
 
@@ -151,7 +149,6 @@ Der folgende Code deklariert einen Proxy für einen Hub.
 > [!NOTE]
 > In jQuery wird der Verweis auf die Server-Klasse und ihre Member in Camel-Case. Das Codebeispiel verweist auf die C#- **ChatHub** Klasse in jQuery als **ChatHub**. Wenn Sie verweisen möchten die `ChatHub` Klasse in jQuery mit herkömmlichen Pascal Groß-/Kleinschreibung wie in c#-Datei der ChatHub.cs bearbeiten. Hinzufügen einer `using` Anweisung auf die `Microsoft.AspNet.SignalR.Hubs` Namespace. Fügen Sie dann die `HubName` -Attribut auf die `ChatHub` Klasse, zum Beispiel `[HubName("ChatHub")]`. Zum Schluss aktualisieren Sie den jQuery-Verweis auf die `ChatHub` Klasse.
 
-
 Der folgende Code zeigt, wie Sie eine Callback-Funktion im Skript zu erstellen. Die hubklasse auf dem Server ruft diese Funktion, um Inhaltsupdates per Pushvorgang an jeden Client übertragen. Der Aufruf optional die `htmlEncode` Funktion zeigt die Möglichkeit, HTML codieren von Inhalt der Nachricht vor der Anzeige auf der Seite als eine Möglichkeit zum Skript-Injection verhindern.
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample7.html)]
@@ -160,7 +157,6 @@ Der folgende Code zeigt, wie Sie eine Verbindung mit dem Hub zu öffnen. Der Cod
 
 > [!NOTE]
 > Dieser Ansatz wird sichergestellt, dass die Verbindung hergestellt wurde, bevor der Ereignishandler ausgeführt wird.
-
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample8.js)]
 

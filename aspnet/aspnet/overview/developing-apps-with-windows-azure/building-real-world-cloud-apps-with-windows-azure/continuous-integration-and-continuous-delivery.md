@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0fb0a331a2a6e2af5c5097db8b57942525d24ffc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 25767303e3a8a3bfd9fc6c7c10cda32d73e9994d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384304"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118862"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Continuous Integration und Continuous Delivery (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Die ersten beiden empfohlen Development-Process-Muster wurden [automatisieren alles](automate-everything.md) und [Quellcodeverwaltung](source-control.md), und das dritte Prozess-Muster kombiniert. Continuous Integration (CI) bedeutet, dass wenn ein Entwickler im Code, um das Quell-Repository eincheckt, automatisch ein Build ausgelöst wird. Continuous Delivery (CD) geht noch einen Schritt weiter: Nachdem ein Build und automatisierte Komponententests erfolgreich sind, Sie automatisch die Anwendung in einer Umgebung, in denen erreichen Sie weitere ausführliche Tests, bereitstellen.
 
@@ -50,7 +49,6 @@ Azure DevOps-Dienste bietet eine Reihe von Funktionen, die Ihnen bei der Anwendu
 - Es unterstützt die automatisierte Auslastungstests. Auslastungstests ist entscheidend für eine Cloud-app jedoch häufig vernachlässigt wird, bis es zu spät ist. Auslastungstests simuliert intensiven Gebrauch von einer app durch Tausende von Benutzern, sodass Sie Engpässe ermitteln und den Durchsatz verbessern, bevor Sie die app in der produktionsumgebung veröffentlichen.
 - Teamraumzusammenarbeit, die Echtzeit-Kommunikation und Zusammenarbeit für kleine Teams der agilen erleichtert unterstützt.
 - Agile-projektverwaltung unterstützt.
-
 
 Weitere Informationen zu continuous Integration und Continuous Delivery-Funktionen von Azure DevOps-Dienste zu erhalten, finden Sie unter [der Dokumentation zu Azure DevOps](/azure/devops/index).
 

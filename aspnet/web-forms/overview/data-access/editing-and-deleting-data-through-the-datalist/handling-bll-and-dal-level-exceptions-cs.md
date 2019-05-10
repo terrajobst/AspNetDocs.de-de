@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5714b118a5894731820d8e9775c8f5c8a375856c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3edd37259a3624757dd5bc69ffba7159c9b85ad1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390128"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113740"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_38_CS.exe) oder [PDF-Datei herunterladen](handling-bll-and-dal-level-exceptions-cs/_static/datatutorial38cs1.pdf)
 
 > In diesem Tutorial sehen wir, wie Ausnahmen, die während der Workflow für die Aktualisierung einer bearbeitbaren DataList tactfully behandelt werden.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -35,38 +34,30 @@ Unsere DataList-Tutorials, verwendet nicht jedoch dem ObjectDataSource-Steuerele
 > [!NOTE]
 > In der *eine Übersicht über die von bearbeiten und Löschen von Daten im DataList-Steuerelement* Tutorial erläutert verschiedene Techniken zum Bearbeiten und Löschen von Daten über DataList-Steuerelement einige Techniken beteiligten Nutzung einer ObjectDataSource gegeben, für die Aktualisierung und wird gelöscht. Wenn Sie diese Techniken einsetzen, können Sie behandeln von Ausnahmen von der BLL oder DAL über das ObjectDataSource-s `Updated` oder `Deleted` -Ereignishandler.
 
-
 ## <a name="step-1-creating-an-editable-datalist"></a>Schritt 1: Erstellen eine bearbeitbare DataList-Steuerelement
 
 Bevor wir zur Behandlung von Ausnahmen, die während der Workflow für die Aktualisierung auftreten fürchten, können Sie s, erstellen Sie zunächst eine bearbeitbare DataList-Steuerelement. Öffnen der `ErrorHandling.aspx` auf der Seite die `EditDeleteDataList` Ordner hinzufügen, einem DataList-Steuerelement in den Designer, legen Sie dessen `ID` Eigenschaft `Products`, und fügen Sie eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts()` Methode für die Auswahl erfasst; legen Sie die Dropdownlisten in der INSERT-, Update- und Löschen von Registerkarten (keine).
-
 
 [![Zurückgeben der Produktinformationen mithilfe der GetProducts()-Methode](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
 
 **Abbildung 1**: Zurückgeben von Informationen für das Produkt verwenden die `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image3.png))
 
-
 Nach Abschluss des Assistenten "ObjectDataSource" Visual Studio erstellt automatisch eine `ItemTemplate` für DataList-Steuerelement. Ersetzen Sie dies mit einer `ItemTemplate` , werden alle Produktnamen s und den Preis angezeigt und enthält eine Schaltfläche "Bearbeiten". Als Nächstes erstellen Sie eine `EditItemTemplate` mit ein TextBox-Steuerelement für den Namen "und" Price "und" Schaltflächen "Update" und "Abbrechen". Legen Sie schließlich DataList-Steuerelement s `RepeatColumns` Eigenschaft auf 2.
 
 Nach diesen Änderungen sollte Ihre Seite s deklarativen Markup etwa wie folgt aussehen. Noch einmal überprüfen, um sicherzustellen, dass von der Bearbeitung, "Abbrechen", und Update-Schaltflächen sind ihre `CommandName` Eigenschaften festgelegt werden, zu bearbeiten, Abbrechen und entsprechend zu aktualisieren.
-
 
 [!code-aspx[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample1.aspx)]
 
 > [!NOTE]
 > Für dieses Tutorial DataList-Steuerelement muss Ansichtszustand s aktiviert werden.
 
-
 Können Sie unseren Fortschritt über einen Browser anzeigen (siehe Abbildung 2).
-
 
 [![Jedes Produkt enthält eine Schaltfläche "Bearbeiten"](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
 
 **Abbildung 2**: Jedes Produkt enthält eine Schaltfläche "Bearbeiten" ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image6.png))
 
-
 Die Schaltfläche "Bearbeiten" wird derzeit nur einen Postback es t dennoch gestalten des Produkts bearbeitet werden. Um die Bearbeitung zu aktivieren, müssen wir für das Erstellen von Ereignishandlern für DataList-Steuerelement s `EditCommand`, `CancelCommand`, und `UpdateCommand` Ereignisse. Die `EditCommand` und `CancelCommand` Ereignisse nicht einfach aktualisieren, DataList-Steuerelement s `EditItemIndex` -Eigenschaft und Binden der Daten an die Datenliste:
-
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample2.cs)]
 
@@ -74,16 +65,13 @@ Die `UpdateCommand` -Ereignishandler ist etwas komplizierter. Muss innerhalb des
 
 Let s nur verwenden Sie vorerst genauen den gleichen Code aus der `UpdateCommand` -Ereignishandler in der *Übersicht von bearbeiten und Löschen von Daten im DataList-Steuerelement* Tutorial. Wir fügen den Code, um Ausnahmen in Schritt 2 ordnungsgemäß zu behandeln.
 
-
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample3.cs)]
 
 Bei ungültiger Eingabe kann die werden in Form einer falsch formatierten Einzelpreis, eine ungültige Einheit Preis wie "-" $5.00 oder die Auslassung der Product-s-Name, die eine Ausnahme ausgelöst wird. Da die `UpdateCommand` -Ereignishandler enthält keine Code zur Ausnahmebehandlung an diesem Punkt, bis zu der ASP.NET-Laufzeit die Ausnahme übergeben wird, wo es für den Endbenutzer angezeigt werden (siehe Abbildung 3).
 
-
 ![Wenn eine nicht behandelte Ausnahme auftritt, sieht der Endbenutzer eine Fehlerseite angezeigt.](handling-bll-and-dal-level-exceptions-cs/_static/image7.png)
 
 **Abbildung 3**: Wenn eine nicht behandelte Ausnahme auftritt, sieht der Endbenutzer eine Fehlerseite angezeigt.
-
 
 ## <a name="step-2-gracefully-handling-exceptions-in-the-updatecommand-event-handler"></a>Schritt 2: Ordnungsgemäße Behandlung von Ausnahmen in der UpdateCommand-Ereignishandler
 
@@ -93,13 +81,11 @@ Wenn eine Ausnahme auftritt, möchten wir eine informationsmeldung auf der Seite
 
 Wenn ein Fehler auftritt, möchten wir nur die Bezeichnung auf einmal angezeigt werden. D. h. bei nachfolgenden Postbacks ist die Warnmeldung Bezeichnung s nicht mehr angezeigt. Dies kann erreicht werden, indem Sie entweder gelöscht wird, die Bezeichnung s `Text` Eigenschaft oder die Einstellungen der `Visible` Eigenschaft `False` in die `Page_Load` -Ereignishandler (wie in der [behandeln BLL- und DAL-Ebene-Ausnahmen in einer ASP Seite .NET](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md) Tutorial) oder durch Deaktivieren der Unterstützung für den Bezeichnung s anzeigen. Lassen Sie letztere Option verwenden, s an.
 
-
 [!code-aspx[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample4.aspx)]
 
 Wenn eine Ausnahme ausgelöst wird, weisen wir werden die Details der Ausnahme, um die `ExceptionDetails` Beschriftungs-Steuerelement s `Text` Eigenschaft. Da der Ansichtszustand deaktiviert ist, bei nachfolgenden Postbacks der `Text` programmgesteuerte s eigenschaftsänderungen verloren, Zurücksetzen auf den Standardtext (eine leere Zeichenfolge), ausblenden und die Warnmeldung.
 
 Um zu bestimmen, wenn ein Fehler ausgelöst wurde um eine hilfreiche Meldung auf der Seite anzuzeigen, wir müssen eine `Try ... Catch` -block, um die `UpdateCommand` -Ereignishandler. Die `Try` Teil enthält Code, der zu einer Ausnahme führen kann, während die `Catch` -Block enthält Code, der bei einer Ausnahme ausgeführt wird. Sehen Sie sich die [Exception Handling Fundamentals](https://msdn.microsoft.com/library/2w8f0bss.aspx) auf .NET Framework-Dokumentation für Weitere Informationen im Abschnitt der `Try ... Catch` Block.
-
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample5.cs)]
 
@@ -107,23 +93,19 @@ Wenn eine Ausnahme eines beliebigen Typs ausgelöst wird, durch den Code der `Tr
 
 Wir können den Meldungstext, basiert auf dem Typ der Ausnahme eine weitere nützliche Erläuterung für den Endbenutzer bereitstellen. Der folgende Code, der in einem Formular fast identisch verwendet wurde in der [behandeln BLL- und DAL-Ebene von Ausnahmen in einer ASP.NET-Seite](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md) Tutorial enthält diese Detailebene:
 
-
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample6.cs)]
 
 Um dieses Tutorial abgeschlossen haben, rufen Sie einfach die `DisplayExceptionDetails` Methode aus der `Catch` Block übergeben wird, in das aufgefangene `Exception` Instanz (`ex`).
 
 Mit der `Try ... Catch` block vorhanden, die Benutzer eine informativere Fehlermeldung wie die Abbildungen 4 und 5 anzeigen angezeigt werden. Beachten Sie, die bei einer Ausnahme DataList-Steuerelement verbleibt im Bearbeitungsmodus befindet. Dies ist, da nach dem Auftreten der Ausnahme, die ablaufsteuerung sofort an umgeleitet wird die `Catch` Block unter Umgehung des Codes, der DataList-Steuerelement in den Zustand vor der Bearbeitung gibt.
 
-
 [![Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
 
 **Abbildung 4**: Eine Fehlermeldung wird angezeigt, wenn ein Benutzer ein Feld erforderlich lässt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image10.png))
 
-
 [![Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
 
 **Abbildung 5**: Eine Fehlermeldung wird angezeigt, wenn einen Preis negativ ([klicken Sie, um das Bild in voller Größe anzeigen](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 39f4eb7b0859cf52fe3ed2531e9c349b465b9327
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400203"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116852"
 ---
 # <a name="caching"></a>Zwischenspeicherung
 
 by [Microsoft](https://github.com/microsoft)
 
 > Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. Zwischenspeichern der Ausgabe, Fragment-caching und der Cache-API.
-
 
 Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. Zwischenspeichern der Ausgabe, Fragment-caching und der Cache-API. ASP.NET 2.0 bietet alle drei der folgenden Methoden, aber einige wichtigen zusätzlichen Funktionen hinzugefügt. Es gibt mehrere neue cacheabhängigkeiten und Entwickler haben jetzt die Möglichkeit zum Erstellen von benutzerdefinierten cacheabhängigkeiten. Die Konfiguration des Zwischenspeicherns wurde in ASP.NET 2.0 auch erheblich verbessert.
 
@@ -63,7 +62,6 @@ SQL Server 7 und 2000 verwenden das Abrufintervall-basierte Modell für die SQL-
 > [!NOTE]
 > SQL Server 2005 können Sie auch das Abrufintervall-basierte Modell, aber da das Modell abrufbasierten nicht das effizienteste Modell ist, ist es ratsam, eine abfragebasierte-Modell (weiter unten erläutert) mit SQL Server 2005 zu verwenden.
 
-
 In der Reihenfolge für eine SQL-Cacheabhängigkeit mithilfe des Modells abrufbasierten ordnungsgemäß funktioniert müssen die Tabellen Benachrichtigungen aktiviert haben. Dies kann programmgesteuert mithilfe der Klasse SqlCacheDependencyAdmin erreicht werden oder indem Sie das Aspnet\_regsql.exe-Hilfsprogramm.
 
 Die folgende Befehlszeile registriert die Products-Tabelle in der Northwind-Datenbank befindet sich auf eine SQL Server-Instanz, die mit dem Namen *Dbase* für SQL-cache-Abhängigkeit.
@@ -84,12 +82,10 @@ Im folgenden finden eine Erläuterung der Befehlszeilen-Switches, die im obigen 
 > [!NOTE]
 > Es stehen anderen Schaltern für Aspnet\_regsql.exe. Führen Sie für eine vollständige Liste Aspnet\_regsql.exe-? über die Befehlszeile.
 
-
 Beim Ausführen dieses Befehls werden die folgenden Änderungen mit der SQL Server-Datenbank vorgenommen:
 
 - Ein **AspNet\_SqlCacheTablesForChangeNotification** -Tabelle hinzugefügt wird. Diese Tabelle enthält eine Zeile für jede Tabelle in der Datenbank, die für die eine SQL-Cacheabhängigkeit aktiviert wurde.
 - Die folgenden gespeicherten Prozeduren werden in der Datenbank erstellt:
-
 
 | AspNet\_SqlCachePollingStoredProcedure | Fragt das AspNet\_SqlCacheTablesForChangeNotification-Tabelle und gibt alle Tabellen, die für die SQL-Cacheabhängigkeit und den Wert der ChangeId für jede Tabelle aktiviert sind. Diese gespeicherte Prozedur wird für das Abrufen verwendet, um festzustellen, ob Daten geändert haben. |
 | --- | --- |
@@ -97,7 +93,6 @@ Beim Ausführen dieses Befehls werden die folgenden Änderungen mit der SQL Serv
 | AspNet\_SqlCacheRegisterTableStoredProcedure | Eine Tabelle für die SQL-Cacheabhängigkeit durch Hinzufügen von den entsprechenden Eintrag in der Benachrichtigungstabelle registriert, und fügt den Trigger. |
 | AspNet\_SqlCacheUnRegisterTableStoredProcedure | Hebt die Registrierung für einer Tabelle für die SQL-Cacheabhängigkeit durch das Entfernen des Eintrags in der Benachrichtigungstabelle aus, und entfernt den Trigger. |
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | Aktualisiert die Benachrichtigungstabelle durch Erhöhen der ChangeId für die geänderte Tabelle. ASP.NET verwendet diesen Wert um zu bestimmen, ob die Daten geändert haben. Wie unten angegeben, wird diese gespeicherte Prozedur ausgeführt, durch den Trigger erstellt, wenn die Tabelle aktiviert ist. |
-
 
 - Ein SQL Server-Trigger aufgerufen ***Tabelle\_Name *\_AspNet\_SqlCacheNotification\_Trigger** wird für die Tabelle erstellt. Dieser Trigger ausgeführt wird, das AspNet\_SqlCacheUpdateChangeIdStoredProcedure, wenn eine INSERT-, Update- oder DELETE für die Tabelle ausgeführt wird.
 - SQL Server-Rolle namens **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** wird in der Datenbank hinzugefügt.
@@ -161,7 +156,6 @@ Sie können auch angeben, dass alle Datenquellen für SQL-cacheabhängigkeiten a
 
 > [!NOTE]
 > Weitere Informationen zu abfragebenachrichtigungen in SQL Server 2005 finden Sie in der SQL Server-Onlinedokumentation.
-
 
 Eine andere Methode zum Konfigurieren von einer Abfrage basierenden SQL-Cacheabhängigkeit ist dazu programmgesteuert mithilfe der SqlCacheDependency-Klasse. Im folgenden Codebeispiel wird veranschaulicht, wie dies erreicht wird.
 
@@ -233,7 +227,6 @@ Die folgenden Attribute stehen zur Verfügung, in der &lt;Cache&gt; Element:
 ### <a name="the-ltoutputcachegt-element"></a>Die &lt;OutputCache&gt; Element
 
 Die folgenden Attribute stehen für die &lt;OutputCache&gt; Element.
-
 
 |       <strong>Attribut</strong>        |                                                                                                                                                                                                                                                       <strong>Beschreibung</strong>                                                                                                                                                                                                                                                       |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

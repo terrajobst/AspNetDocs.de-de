@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: 204b7e86-f560-4611-8adb-785b33e777b9
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 180b34e45ae97c64c82906c93aa647c4924d8539
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 60636b79ab5fc06ca904dee90ce74f256e046d12
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398103"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123630"
 ---
 # <a name="creating-a-controller-vb"></a>Erstellen eines Controllers (VB)
 
@@ -21,29 +21,23 @@ durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial veranschaulicht, wie Sie einen Controller zu einer ASP.NET MVC-Anwendung hinzufügen können.
 
-
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie die neue ASP.NET MVC Controllers erstellen können. Erfahren Sie, wie Controller nach mithilfe der Visual Studio, Controller hinzufügen "-" und erstellen eine Datei manuell zu erstellen.
 
 ### <a name="using-the-add-controller-menu-option"></a>Mithilfe der Menüoption Controller hinzufügen
 
 Die einfachste Möglichkeit zum Erstellen eines neuen Controllers ist mit der rechten Maustaste in den Ordner "Controllers" im Projektmappen-Explorer von Visual Studio-Fenster, und wählen Sie die **hinzufügen, Controller** Menüoption (siehe Abbildung 1). Durch Auswählen dieser Menüoption wird das **Controller hinzufügen** Dialogfeld (siehe Abbildung 2).
 
-
 [![Das Dialogfeld "Neues Projekt"](creating-a-controller-vb/_static/image1.jpg)](creating-a-controller-vb/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen eines neuen Controllers ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image2.png))
-
 
 [![Das Dialogfeld "Neues Projekt"](creating-a-controller-vb/_static/image2.jpg)](creating-a-controller-vb/_static/image3.png)
 
 **Abbildung 02**: Das Dialogfeld "Controller hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image4.png))
 
-
 Beachten Sie, das der erste Teil des Controllernamens, in ausgewählt ist der **Controller hinzufügen** Dialogfeld. Jeder Controllername muss mit der Endung *Controller*. Sie können z. B. einen Controller namens erstellen *ProductController* jedoch nicht auf einen Controller, mit dem Namen *Produkt*.
 
-
 Wenn Sie einen Controller erstellen, die fehlen die *Controller* suffix, und klicken Sie dann Sie nicht den Controller aufrufen können. Davon wird abgeraten, denn ich haben sich zahllose Stunden für mein Leben, nachdem Sie diesen Fehler, verschwendet.
-
 
 **1 – Controllers\ProductController.vb auflisten**
 
@@ -55,11 +49,9 @@ Sie sollten immer im Ordner "Controllers" Controller erstellen. Andernfalls Sie 
 
 Wenn Sie einen Controller erstellen, haben Sie die Option zum automatischen Generieren von Aktionsmethoden für Create, Update und Details (siehe Abbildung 3). Bei Auswahl dieser Option wird die Controller-Klasse im Codebeispiel 2 generiert.
 
-
 [![Aktionsmethoden erstellen automatisch](creating-a-controller-vb/_static/image3.jpg)](creating-a-controller-vb/_static/image5.png)
 
 **Abbildung 03**: Erstellen die Aktionsmethoden automatisch ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image6.png))
-
 
 **Codebeispiel 2 - Controllers\CustomerController.vb**
 
@@ -75,11 +67,9 @@ Die ASP.NET MVC-Controller ist nur eine Klasse. Falls gewünscht, können Sie ig
 2. Nennen Sie die neue Klasse PersonController.vb, und klicken Sie auf die **hinzufügen** Schaltfläche.
 3. Ändern Sie die resultierende Klassendatei, sodass die Klasse von der Basisklasse für den System.Web.Mvc.Controller (siehe Codebeispiel 3) erbt.
 
-
 [![Erstellen einer neuen Klasse](creating-a-controller-vb/_static/image4.jpg)](creating-a-controller-vb/_static/image7.png)
 
 **Abbildung 04**: Erstellen einer neuen Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-controller-vb/_static/image8.png))
-
 
 **Codebeispiel 3 - Controllers\PersonController.vb**
 

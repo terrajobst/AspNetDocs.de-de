@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 7a56c0f9197a99427bcde6103ebc69d245e8ce63
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e71e13e22d8a72e1699cfc70d4d93af603edba5b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025757"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121228"
 ---
 # <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Generieren von Ansichten für EF Database First mit ASP.NET MVC-app
 
@@ -51,7 +51,6 @@ Klicken Sie auf **Hinzufügen**.
 Wenn Sie eine Fehlermeldung erhalten, kann es sein, da Sie nicht auf das Projekt im vorherigen Abschnitt erstellt haben. Wenn dies der Fall ist, versuchen Sie es beim Erstellen des Projekts, und klicken Sie dann das erstellte Element erneut hinzufügen.
 
 Nachdem der Prozess der codegenerierung abgeschlossen ist, sehen Sie einen neuen Controller und Ansichten in Ihrem Projekts die **Controller** und **Ansichten** > **Schüler/Studenten** Ordner .
-
 
 Führen Sie die gleichen Schritte erneut aus, aber fügen Sie ein Gerüst für die **Registrierung** Klasse. Wenn Sie fertig sind, müssen Sie eine **EnrollmentsController.cs** Datei sowie einen Ordner unter **Ansichten** mit dem Namen **Registrierungen** mit den Ansichten erstellen "," Delete "," Details "," Bearbeiten "und" Index.
 
