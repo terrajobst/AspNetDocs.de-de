@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4f76728fa5e4602e35e1b7cb2d41b2245093cad8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411942"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115964"
 ---
 # <a name="configuring-aspnet-web-api-2"></a>Konfigurieren von ASP.NET Web-API 2
 
@@ -45,7 +45,6 @@ Web-API-Konfigurationseinstellungen werden definiert, der [HttpConfiguration](ht
 | **Eigenschaften** | Eine generische Eigenschaftensammlung. |
 | **Routen** | Die Auflistung der Routen. Finden Sie unter [Routing in ASP.NET Web-API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md). |
 | **Dienste** | Die Auflistung von Diensten. Finden Sie unter [Services](#services). |
-
 
 ## <a name="prerequisites"></a>Vorraussetzungen
 
@@ -91,11 +90,9 @@ Die **HttpConfiguration.Services** Auflistung enthält einen Satz von globalen D
 > [!NOTE]
 > Die **Services** Auflistung ist keinen allgemeinen Mechanismus für Service Discovery oder Dependency Injection. Es speichert nur Diensttypen, die für das Web-API-Framework bezeichnet werden.
 
-
 Die **Services** Auflistung wird mit einer Reihe von Diensten initialisiert, und Sie können eigene benutzerdefinierten Implementierungen bereitstellen. Einige Dienste unterstützen mehrere Instanzen, aus, während andere nur eine Instanz aufweisen können. (Allerdings können Sie auch Dienste auf der Controllerebene bereitstellen, finden Sie unter [pro Controller-Konfiguration](#percontrollerconfig).
 
 Einzelinstanz-Dienste
-
 
 | Dienst | Beschreibung |
 | --- | --- |
@@ -116,7 +113,6 @@ Einzelinstanz-Dienste
 | **IModelValidatorCache** | Stellt einen Cache der Modellvalidierungssteuerelemente bereit. |
 
 Dienste mit mehreren Instanzen
-
 
 |                 Dienst                 |                                                                                                              Beschreibung                                                                                                               |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

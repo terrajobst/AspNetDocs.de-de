@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: ecb004b5-82c0-44fb-bcaf-233fffac6195
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b01913b3ad3291d90bdf9455c3d35bb7b36b3f28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f56087b1e94653d2a6a06f915191db6ec5e358a2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415244"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116963"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>Anpassen des Z-Index eines DropShadow-Steuerelements (VB)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)
 
 > DropShadow-Steuerelements im AJAX Control Toolkit erweitert, einen Bereich mit einem Schlagschatteneffekt. Aber diese Schatten manchmal mit anderen Steuerelementen, z. B. das ASP.NET Menüsteuerelement in Konflikt steht. Wenn ein Menüeintrag, holt es hinter dem Schlagschatten angezeigt wird.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -55,11 +54,9 @@ Wenn Sie dieses Skript ausführen, werden die Menüeinträge im unter dem Bereic
 
 Anschließend wird die `DropShadowExtender` Steuerelement keine Konflikte mehr mit den Menu-Steuerelement.
 
-
 [![Vorher: Der Eintrag ist nicht sichtbar](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
 
 Vorher: Der Eintrag ist nicht sichtbar ([klicken Sie, um das Bild in voller Größe anzeigen](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))
-
 
 [![Nachher: Der Eintrag im Menü angezeigt wird.](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
 

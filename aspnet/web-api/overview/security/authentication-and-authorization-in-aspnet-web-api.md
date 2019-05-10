@@ -8,12 +8,12 @@ ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc4471039938a429a85c891594c3a6651c6ef9d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 368d2b9456d12b2bb4063a23333e5c8837faa3b8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59388529"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134715"
 ---
 # <a name="authentication-and-authorization-in-aspnet-web-api"></a>Authentifizierung und Autorisierung in ASP.NET Web-API
 
@@ -28,7 +28,6 @@ Der erste Artikel in der Reihe bietet eine allgemeine Übersicht über Authentif
 
 > [!NOTE]
 > Nochmals vielen Dank an die Personen, die dieser Serie überprüft und wertvolles Feedback bereitgestellt: Rick Anderson, Levi Broderick, Barry Dorrans, Tom Dykstra, Hongmei Ge, David Matson, Daniel Roth, Tim Teebken.
-
 
 ## <a name="authentication"></a>Authentifizierung
 
@@ -101,7 +100,6 @@ In den vorherigen Beispielen kann der Filter allen authentifizierten Benutzern d
 
 > [!NOTE]
 > Die **AuthorizeAttribute** Filter für Web-API-Controller befindet sich in der **"System.Web.http"** Namespace. Es ist ein ähnlicher Filter für MVC-Controller im der **System.Web.Mvc** -Namespace, der mit der Web-API-Controller nicht kompatibel ist.
-
 
 ### <a name="custom-authorization-filters"></a>Benutzerdefinierte Autorisierungsfilter
 

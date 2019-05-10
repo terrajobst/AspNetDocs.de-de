@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 3ebabd626e0b862e09f19552648406aab959f882
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6a410c2e818ed87bbcac588063eb4eeaf3d2b9ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423311"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120888"
 ---
 # <a name="template-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>Vorlage: Implementieren von Vererbung mit EF in einer ASP.NET MVC 5-app
 
@@ -100,7 +100,6 @@ Geben Sie in der Paket-Manager-Konsole (PMC) den folgenden Befehl ein:
 Führen Sie die `Update-Database` Befehl in der PMC. An diesem Punkt schlägt der Befehl fehl, da haben wir die vorhandene Daten, die Migrationen nicht, wie behandeln. Sie erhalten eine Fehlermeldung wie folgt:
 
 > *Objekt konnte nicht gelöscht werden "Dbo. "Instructor" ", da es durch eine FOREIGN KEY-Einschränkung verwiesen wird.*
-
 
 Open *Migrationen\&Lt; Zeitstempel&gt;\_Inheritance.cs* , und Ersetzen Sie die `Up` Methode durch den folgenden Code:
 

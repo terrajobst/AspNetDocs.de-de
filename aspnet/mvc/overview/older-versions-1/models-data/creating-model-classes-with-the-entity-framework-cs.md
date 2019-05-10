@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2e0e365c287fc455015d237ea466301335805d14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388906"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122453"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-c"></a>Erstellen von Modellklassen mit Entity Framework (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework zu verwenden. Erfahren Sie, wie der Assistent für Entity verwenden, um ein ADO.NET Entity Data Model zu erstellen. Im Verlauf dieses Tutorials erstellen wir eine Anwendung, die veranschaulicht, wie Sie auswählen, einfügen, aktualisieren und Löschen von Datenbankdaten mithilfe von Entity Framework.
-
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie Datenzugriffsklassen, die mithilfe von Microsoft Entity Framework beim Erstellen einer ASP.NET MVC-Anwendung erstellen können. In diesem Tutorial wird davon ausgegangen, keine vorherige Kenntnisse von Microsoft Entity Framework. Am Ende dieses Lernprogramms werden Sie verstehen, wie Sie verwenden das Entity Framework auswählen, einfügen, aktualisieren und Löschen von Datenbankdatensätzen.
 
@@ -32,11 +31,9 @@ In diesem Tutorial wird davon ausgegangen, dass Sie Visual Studio 2008 oder Visu
 
 > [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
-
 > [!NOTE] 
 > 
 > Es gibt keine wesentlichen Verbindung zwischen ASP.NET MVC und das Microsoft Entity Framework. Es gibt mehrere Alternativen für das Entity Framework, die Sie mit ASP.NET MVC verwenden können. Beispielsweise können Sie Ihre MVC-Modell-Klassen, die mit anderen O/RM-Tools wie Microsoft-LINQ to SQL, NHibernate und SubSonic erstellen.
-
 
 ## <a name="creating-the-movie-sample-database"></a>Erstellen der Movie-Beispieldatenbank
 
@@ -108,9 +105,7 @@ Wenn Sie eine Entitätsklasse umbenennen möchten, können Sie das Doppelklicken
 
 Denken Sie daran, Ihre Entity Data Model speichern, nach dem vornehmen einer Änderung durch Klicken auf die Schaltfläche "Speichern" (das Symbol der Diskette). Hinter den Kulissen generiert der Entity Designer einen Satz von Klassen in c#. Sie können diese Klassen anzeigen, indem Sie die MoviesDBModel.Designer.cs-Datei aus dem Projektmappen-Explorer-Fenster zu öffnen.
 
-
 Ändern Sie den Code in der Datei "Designer.cs" nicht, da Ihre Änderungen beim nächsten überschrieben werden Sie auf der Entity Designer verwendet. Wenn Sie die Entitätsklassen, die in der Datei "Designer.cs" definiert die Funktionalität erweitern möchten, und klicken Sie dann können Sie erstellen *Teilklassen* in separaten Dateien.
-
 
 #### <a name="selecting-database-records-with-the-entity-framework"></a>Auswählen von Datensätzen einer Datenbank mit Entitätsframework
 
@@ -122,9 +117,7 @@ Beginnen wir erstellen unsere Filmdatenbank-Anwendung durch Erstellen einer Seit
 
 Beachten Sie, dass der Controller in Codebeispiel 1 einen Konstruktor enthält. Der Konstruktor initialisiert das Feld auf Klassenebene \_Db. Die \_Db-Feld darstellt, die Datenbankentitäten, die vom Microsoft Entity Framework generiert. Die \_Db Feld ist eine Instanz der MoviesDBEntities-Klasse, die vom Entity Designer generiert wurde.
 
-
 Um TheMoviesDBEntities-Klasse in den Home-Controller verwenden zu können, müssen Sie den MovieEntityApp.Models-Namespace importieren (*MVCProjectName*. Modelle).
-
 
 Die \_Db-Feld wird innerhalb der Index()-Aktion zum Abrufen der Datensätze aus der Tabelle der Datenbank Filme verwendet. Der Ausdruck \_Db. MovieSet stellt alle Datensätze aus der Tabelle der Datenbank Filme dar. Die ToList()-Methode wird verwendet, um den Satz von Filmen in eine generische Auflistung von Movie-Objekten zu konvertieren (Liste&lt;Film&gt;).
 
@@ -162,9 +155,7 @@ Beachten Sie, dass die zweite Add()-Aktion mit dem AcceptVerbs-Attribut ergänzt
 
 Die zweite Add()-Aktion erstellt eine neue Instanz der Entity Framework Movie-Klasse mithilfe der ASP.NET MVC TryUpdateModel()-Methode. Die TryUpdateModel()-Methode akzeptiert die Felder in der Add()-Methode übergeben FormCollection und weist die Werte dieser Felder der HTML-Formular die Movie-Klasse.
 
-
 Wenn Sie das Entity Framework verwenden, müssen Sie eine "weißen Liste" von Eigenschaften angeben, wenn die TryUpdateModel oder UpdateModel-Methoden verwendet, um die Eigenschaften einer Entitätsklasse zu aktualisieren.
-
 
 Als Nächstes führt die Aktion Add() einige einfache formularvalidierung. Die Aktion stellt sicher, dass die title- und Director Eigenschaften Werte besitzen. Wenn ein Überprüfungsfehler vorliegt, wird eine Validierungsfehlermeldung auf ModelState hinzugefügt.
 

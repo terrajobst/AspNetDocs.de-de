@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 360bc6e1-84c5-4b8e-a84c-ea48ab807aa4
 msc.legacyurl: /web-pages/overview/performance-and-traffic/14-analyzing-traffic
 msc.type: authoredcontent
-ms.openlocfilehash: a99ed5cc8875ef9f39234e3f394b46b5782d0bc1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 095a5572c755446e0661c052ca9de82d636429fd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390219"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134594"
 ---
 # <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>Überwachungsinformationen Besucher (Analytics) für eine ASP.NET Web Pages (Razor)
 
@@ -35,7 +35,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > - ASP.NET Web Pages (Razor) 2
 > - ASP.NET Web Helpers Library (NuGet-Paket)
-
 
 Analytics ist ein allgemeiner Begriff für die Technologie, die Datenverkehr auf Ihrer Website misst, damit Sie nachvollziehen können, wie Benutzer die Site verwenden. Viele Analytics-Dienste sind verfügbar, einschließlich Google, Yahoo, StatCounter und andere Dienste.
 
@@ -60,7 +59,6 @@ In diesem Verfahren erstellen Sie eine Layoutseite, verwendet der `GetGoogleHtml
 
 > [!NOTE]
 > Wenn Sie ein Analytics-Konto erstellen, registrieren Sie die URL der Website, die nachverfolgt werden sollen. Wenn Sie alles, was auf dem lokalen Computer testen, Sie wird nicht nachverfolgt werden tatsächliche Datenverkehr (nur der Datenverkehr ist Sie), damit Sie nicht aufzeichnen und Anzeigen von Websitestatistiken können. Aber dieses Verfahren zeigt, wie Sie eine Analytics-Hilfe zu einer Seite hinzufügen. Wenn Sie Ihre Website veröffentlichen, sendet die live-Website Informationen an Ihren analyseanbieter für die.
-
 
 1. Die ASP.NET Web Helpers Library zu Ihrer Website hinzufügen, wie in beschrieben [Hilfsprogramme installieren, in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=252372), falls Sie bereits hinzugefügt haben.
 2. Erstellen Sie ein Konto mit Google Analytics, und notieren Sie den Kontonamen.

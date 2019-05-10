@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bbedc11b9b1225b1047350c1c84a116ecef0c380
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fb3ed252a9232a2f5a1ad4257156a142bbe5b174
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407405"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123183"
 ---
 # <a name="understanding-action-filters-vb"></a>Grundlegendes zu Aktionsfiltern (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [PDF herunterladen](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
 
 > Das Ziel dieses Lernprogramms wird Aktionsfilter beschrieben. Ein Aktionsfilter ist ein Attribut, das Sie anwenden können, um eine Controlleraktion – oder einen gesamten Controller –, der die Methode ändert, in der die Aktion ausgeführt wird.
-
 
 ## <a name="understanding-action-filters"></a>Grundlegendes zu Aktionsfiltern
 
@@ -48,11 +47,9 @@ Die Verantwortlichen in Codebeispiel 1 stellt beispielsweise eine Aktion, die mi
 
 Wenn Sie wiederholt Aufrufen der `Index()` Aktionen durch Eingabe der URL/Data/Index in die Adressleiste Ihres Browsers, und drücken die Aktualisierung Schaltfläche mehrmals gleichzeitig für 10 Sekunden angezeigt wird. Die Ausgabe der `Index()` Aktion für 10 Sekunden (siehe Abbildung 1) zwischengespeichert wird.
 
-
 [![Cachezeit](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
 **Abbildung 01**: Zeit zwischengespeichert ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-action-filters-vb/_static/image3.png))
-
 
 Im Codebeispiel 1, eine einzelne Aktion-Filter – die `OutputCache` Action-Filter – gilt für die `Index()` Methode. Wenn Sie benötigen, können Sie mehrere Aktionsfilter zur gleichen Aktion anwenden. Angenommen, Sie möchten beide gelten die `OutputCache` und `HandleError` Aktionsfilter zur gleichen Aktion.
 
@@ -106,11 +103,9 @@ Um zu veranschaulichen, wie Sie einen benutzerdefinierte Aktionsfilter erstellen
 
 Programmausdruck 2 die `OnActionExecuting()`, `OnActionExecuted()`, `OnResultExecuting()`, und `OnResultExecuted()` alle Methoden aufrufen, die `Log()` Methode. Der Name der Methode und die aktuelle Routendaten übergeben wird, um die `Log()` Methode. Die `Log()` -Methode schreibt eine Meldung an das Ausgabefenster von Visual Studio-Fenster (siehe Abbildung 2).
 
-
 [![Das Schreiben in das Ausgabefenster von Visual Studio](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
 **Abbildung 02**: Schreiben in das Ausgabefenster von Visual Studio-Fenster ([klicken Sie, um das Bild in voller Größe anzeigen](understanding-action-filters-vb/_static/image6.png))
-
 
 Die Home-Controller in Codebeispiel 3 wird veranschaulicht, wie Sie die Log-Action-Filter auf eine gesamte Controllerklasse anwenden können. Jedes Mal, wenn die von den Home-Controller verfügbar gemachten Aktionen aufgerufen werden – entweder die `Index()` Methode oder der `About()` Methode: die Phasen der Verarbeitung, die die Aktion im Ausgabefenster von Visual Studio angemeldet sind.
 

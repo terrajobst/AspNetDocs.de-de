@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 28e001059cb1853d21175da2a2b1af2c75364485
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d908f89ea1a2b91b9dd7a26d72160e9f38e69c29
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380358"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133698"
 ---
 # <a name="databinding-to-an-accordion-c"></a>Datenbindung an Accordion (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion1CS.pdf)
 
 > Das ' Accordion '-Steuerelement im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht dem Benutzer eine von ihnen zu einem Zeitpunkt angezeigt. Bereiche werden in der Regel auf der Seite selbst deklariert, aber die Bindung an eine Datenquelle bietet mehr Flexibilität.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -57,7 +56,6 @@ Wenn die Seite geladen wird, muss die Datenquelle an das ' Accordion ' durch den
 Um dieses Beispiel zu beenden, müssen Sie die beiden CSS-Klassen, auf die verwiesen wird, werden im Steuerelement ' Accordion ' definieren (in seinen Eigenschaften `HeaderCssClass` und `ContentCssClass`). Fügen Sie das folgende Markup in der `<head>` Abschnitt der Seite:
 
 [!code-css[Main](databinding-to-an-accordion-cs/samples/sample6.css)]
-
 
 [![Die Daten in der ' Accordion ' stammt direkt aus der Datenquelle](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
 

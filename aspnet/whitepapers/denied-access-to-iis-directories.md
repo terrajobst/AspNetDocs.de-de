@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 789bf26df82d275c45e633de50c3cce1d82838b6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a3a53aa88abbe1bcaaea7d691406800c8f9b988b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59406625"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134556"
 ---
 # <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET – Verweigerung des Zugriffs auf IIS-Verzeichnisse
 
 > In diesem Whitepaper wird beschrieben, was Sie tun müssen, wenn eine Anforderung an Ihre ASP.NET-Anwendung den Fehler zurückgibt "verweigert den Zugriff auf *Verzeichnisname* Verzeichnis. Fehler beim Starten der Überwachung von verzeichnisänderungen."
 > 
 > ASP.NET 1.1 zu ASP.NET 1.0 angewendet.
-
 
 ASP.NET V1 RTM lässt sich jetzt mit einem Less privilegiertes Windowskonto – als das Konto "ASPNET" auf einem lokalen Computer registriert ist.
 

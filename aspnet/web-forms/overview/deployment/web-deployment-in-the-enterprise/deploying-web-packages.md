@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: a5c5eed2-8683-40a5-a2e1-35c9f8d17c29
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 91b99e6e250342851aea6860164b6f6af54818d1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391064"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119320"
 ---
 # <a name="deploying-web-packages"></a>Bereitstellen von Webpaketen
 
@@ -37,7 +37,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > - Haben Sie erstellt und verpackt Sie Ihre Webanwendung zu, wie in beschrieben [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md).
 > - Verändert die *"SetParameters.xml"* Datei, um die richtigen Werte für Ihre zielumgebung, bereitzustellen, wie in beschrieben [Konfigurieren von Parametern für die Bereitstellung von Paket](configuring-parameters-for-web-package-deployment.md).
 
-
 Ausführen der [*Projektname*]*. "Deploy.cmd"* Datei ist die einfachste Möglichkeit, ein Webpaket bereitgestellt werden. Insbesondere das Verwenden der *. "Deploy.cmd"* Datei bietet die folgenden Vorteile gegenüber der Verwendung von MSDeploy.exe direkt:
 
 - Sie müssen nicht angeben des Speicherorts der Webbereitstellungspaket&#x2014;der *. "Deploy.cmd"* Datei bereits weiß, wo es ist.
@@ -52,9 +51,7 @@ Vor der Verwendung der *. "Deploy.cmd"* Datei zum Bereitstellen eines Webpakets,
 
 Die *. "Deploy.cmd"* Datei unterstützt verschiedene Befehlszeilenoptionen. Wenn Sie die Datei an einer Eingabeaufforderung ausführen, ist dies die grundlegende Syntax:
 
-
 [!code-console[Main](deploying-web-packages/samples/sample1.cmd)]
-
 
 Geben Sie einen **/t /** Flag oder **/y** Flag, um anzugeben, ob Sie eine Testversion ausführen oder einer aktiven Bereitstellung bzw. ausführen möchten (verwenden Sie nicht beide Flags im selben Befehl). Diese Tabelle erläutert den Zweck der einzelnen dieser Flags.
 
@@ -71,7 +68,6 @@ Geben Sie einen **/t /** Flag oder **/y** Flag, um anzugeben, ob Sie eine Testve
 
 > [!NOTE]
 > Jedes Mal, wenn der Buildprozess ein Webpaket erstellt wird, erstellt er auch eine Datei namens *[Projektname] ".deploy"-"Readme.txt"* , die diese Bereitstellungsoptionen erläutert.
-
 
 Sie können Einstellungen für den Web Deploy zusätzlich zu diesen Flags die, angeben, als zusätzliche *. "Deploy.cmd"* Parameter. Alle zusätzlichen Einstellungen, die Sie angeben, werden einfach an den zugrunde liegenden MSDeploy.exe-Befehl übergeben. Weitere Informationen zu diesen Einstellungen finden Sie unter [Web Deploy-Vorgang Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
@@ -94,9 +90,7 @@ In diesem Beispiel:
 
 Zu veranschaulichen, wie sich durch Verwendung der *. "Deploy.cmd"* Datei vereinfacht den Bereitstellungsprozess, sehen Sie sich den MSDeploy.exe-Befehl, die generiert und ausgeführt, wenn Sie ausführen, ruft *ContactManager.Mvc.deploy.cmd* verwenden die obigen Optionen.
 
-
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
-
 
 Weitere Informationen zur Verwendung der *. "Deploy.cmd"* Datei zum Bereitstellen einer Webpakets finden Sie unter [Vorgehensweise: Installieren eines Bereitstellungspakets mit der Datei "Deploy.cmd"](https://msdn.microsoft.com/library/ff356104.aspx).
 
@@ -152,13 +146,10 @@ In vielen Unternehmen konzipiert sollten Sie Ihre Webpakete als Teil eines grö�
 
 In der Contact Manager-beispiellösung, sehen Sie sich die **PublishWebPackages** im Ziel die *Publish.proj* Datei. Dieses Ziel wird einmal ausgeführt, für die einzelnen *. "Deploy.cmd"* Datei, die eine Liste mit dem Namen identifizierte **PublishPackages**. Das Ziel verwendet Eigenschaften und Elementmetadaten, erstellen Sie eine vollständige Gruppe von Argumentwerten für jedes *. "Deploy.cmd"* -Datei und dann verwendet, die **Exec** Aufgabe zum Ausführen des Befehls.
 
-
 [!code-xml[Main](deploying-web-packages/samples/sample8.xml)]
-
 
 > [!NOTE]
 > Eine umfassendere Übersicht des Projektmodells-Datei in die Projektmappe, und eine Einführung in benutzerdefinierte Projektdateien im Allgemeinen finden Sie unter [Grundlegendes zur Projektdatei](understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](understanding-the-build-process.md).
-
 
 ## <a name="endpoint-considerations"></a>Endpunkt-Überlegungen
 
@@ -166,33 +157,24 @@ Unabhängig davon, ob Sie Ihre Web-Paket bereitstellen, mit der *. "Deploy.cmd"*
 
 Wenn die Ziel-Web-Server für die Bereitstellung, die mit dem Web Bereitstellen von Remote-Agent-Dienst konfiguriert ist, geben Sie die Ziel-URL als Ziel.
 
-
 [!code-console[Main](deploying-web-packages/samples/sample9.cmd)]
-
 
 Alternativ können Sie den Servernamen, die nur als Ziel angeben, und Web Deploy wird die remote-Agent-Dienst-URL abgeleitet.
 
-
 [!code-console[Main](deploying-web-packages/samples/sample10.cmd)]
-
 
 Wenn die Ziel-Web-Server mit der Web-bereitstellen-Handler für die Bereitstellung konfiguriert ist, müssen Sie die Endpunktadresse des den IIS-Web-Verwaltungsdienst (WMSvc) als Ziel angeben. Standardmäßig weist diese der Form auf:
 
-
 [!code-console[Main](deploying-web-packages/samples/sample11.cmd)]
-
 
 Sie können diese Endpunkte, die entweder Ziel der *. "Deploy.cmd"* Datei- oder MSDeploy.exe direkt. Jedoch wenn Sie als Benutzer ohne Administratorrechte auf den Handler für die Web-Bereitstellung bereitstellen, siehe möchten [Konfigurieren eines Webservers für Bereitstellen von Webpublishing (Web bereitstellen Handler)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md), müssen Sie eine Abfragezeichenfolge an die Dienst-Endpunktadresse hinzufügen.
 
-
 [!code-console[Main](deploying-web-packages/samples/sample12.cmd)]
-
 
 Dies ist, da der Benutzer ohne Administratorrechte auf Serverebene IIS keine Zugriffsberechtigung besitzt. Er hat nur Zugriff auf eine bestimmte IIS-Website. Sie können nicht zum Zeitpunkt der geschrieben wird, aufgrund eines Fehlers in der Web Publishing Pipeline (WPP), Ausführen der *. "Deploy.cmd"* mithilfe einer Endpunktadresse, die eine Abfragezeichenfolge enthält die Datei. In diesem Szenario müssen Sie Ihre Webpaket MSDeploy.exe direkt mit bereitstellen.
 
 > [!NOTE]
 > Weitere Informationen zu den Web Deploy Remote-Agents-Dienst und der Handler für die Web-Bereitstellung, finden Sie unter [Entscheidung zur Webbereitstellung rechts](../configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md). Anleitungen zum Konfigurieren Ihrer umgebungsspezifische Projektdateien, die diesen Endpunkten bereitstellen, finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
-
 
 ## <a name="authentication-considerations"></a>Überlegungen zur Authentifizierung
 

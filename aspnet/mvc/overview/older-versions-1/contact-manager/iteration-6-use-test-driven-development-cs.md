@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 94885984ebad90523369dcf5771d0f77a753008f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aee0ff9d8d7f17e8a00dab12467bd3a3457fbe18
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405663"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117752"
 ---
 # <a name="iteration-6--use-test-driven-development-c"></a>Iteration #6 – Verwenden der testgesteuerten Entwicklung (c#)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
-  
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
 
@@ -73,7 +71,6 @@ Schließlich erzwingt testgesteuerte Entwicklung Sie Komponententests im Rahmen 
 > 
 > Weitere Informationen zu Test-driven Development, ich empfehle die Lektüre von Michael Feathers Buch **Working Effectively with Legacy Code**.
 
-
 In dieser Iteration hinzugefügt unsere Contact Manager-Anwendung ein neues Feature. Wir fügen Unterstützung für wenden Sie sich an Gruppen hinzu. Sie können Gruppen von wenden Sie sich an Ihre Kontakte in Kategorien wie Business zu organisieren und Friend verwenden.
 
 Wir werden unsere Anwendung folgt ein Vorgang der testgesteuerten Entwicklung dieser neuen Funktionalität hinzufügen. Wir zuerst unsere Komponententests schreiben, und wir alle unsere Code für diese Tests schreiben.
@@ -112,11 +109,9 @@ Unsere erste Benutzertextabschnitt ist, dass ein Benutzer eine Liste der Kontakt
 
 Erstellen ein neuen Komponententests durch Rechtsklick auf den Ordner "Controllers" im Projekt ContactManager.Tests auswählen **hinzufügen "," Neuer Test**, und wählen die **Komponententest** Vorlage (siehe Abbildung 1). Name die neue Einheit GroupControllerTest.cs zu testen, und klicken Sie auf die **OK** Schaltfläche.
 
-
 [![Hinzufügen der GroupControllerTest-Komponententests](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen des Komponententests GroupControllerTest ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image2.png))
-
 
 Der erste Komponententest ist in Codebeispiel 1 enthalten. Dieser Test überprüft, ob die Index()-Methode des Controllers Gruppe einen Satz von Gruppen zurück. Der Test überprüft, dass die Daten in der Ansicht in eine Auflistung der Gruppen zurückgegeben werden.
 
@@ -140,11 +135,9 @@ Die Gruppe Controllerklasse in Liste 2 enthält das absolute Minimum von Code er
 
 Nachdem wir unser Projekt Klassen GroupController und -Gruppe hinzugefügt haben, wird der erste Komponententest erfolgreich abgeschlossen (siehe Abbildung 2). Wir haben die Arbeitsschritte, die mindestens erforderlich, um der Test erfolgreich durchgeführt. Es ist Zeit zu feiern.
 
-
 [![Success!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
 **Abbildung 02**: Success! ([Klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image4.png))
-
 
 ## <a name="creating-contact-groups"></a>Wenden Sie sich an Gruppen erstellen
 
@@ -220,7 +213,6 @@ Codebeispiel 11 enthält eine neue FakeContactManagerRepository-Klasse, die die 
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample12.cs)]
 
-
 Zum Schluss uns dazu auffordern, diese Änderungen am Entwurf der Anwendung einige Änderungen an unseren Komponententests vornehmen. Nun müssen wir die FakeContactManagerRepository zu verwenden, wenn die Komponententests ausführen. Die aktualisierte GroupControllerTest-Klasse ist im Codebeispiel 12 enthalten.
 
 **Codebeispiel 12 - Controllers\GroupControllerTest.cs**
@@ -242,12 +234,10 @@ Wir müssen eine neue Datenbanktabelle für die Gruppe zu erstellen. Führen Sie
 
 <a id="0.11_table01"></a>
 
-
 | **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | int | False |
 | name | nvarchar(50) | False |
-
 
 Als Nächstes müssen wir alle Daten aus der Contacts-Tabelle löschen (andernfalls wir nicht möglich, eine Beziehung zwischen den Tabellen Kontakte und Gruppen zu erstellen). Führen Sie folgende Schritte aus:
 
@@ -266,16 +256,13 @@ Als Nächstes müssen wir eine Beziehung zwischen der Tabelle der Datenbank Grup
 8. Klicken Sie auf die Schaltfläche "Schließen", um das Dialogfeld "Fremdschlüsselbeziehungen" zu schließen.
 9. Klicken Sie auf die Schaltfläche "Speichern", um die Änderungen an der Contacts-Tabelle speichern.
 
-
 [![Erstellen einer Beziehung der Datenbank-Tabelle](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
 **Abbildung 03**: Erstellen einer Datenbank-Tabelle-Beziehung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
-
 [![Angeben von tabellenbeziehungen](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
 **Abbildung 04**: Angeben von tabellenbeziehungen ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image8.png))
-
 
 ### <a name="updating-our-data-model"></a>Unser Datenmodell aktualisieren
 
@@ -287,19 +274,15 @@ Als Nächstes müssen wir aktualisieren unsere Datenmodell, um die neue Datenban
 4. Mit der rechten Maustaste in der Gruppen-Entität, und wählen Sie die Menüoption **umbenennen**. Ändern des Namens der *Gruppen* Entität *Gruppe* (im singular).
 5. Mit der rechten Maustaste in der Gruppen-Navigationseigenschaft, die am unteren Rand der Entität "Contact" angezeigt wird. Ändern des Namens der *Gruppen* Navigationseigenschaft *Gruppe* (im singular).
 
-
 [![Aktualisieren eines Entity Framework-Modells aus der Datenbank](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
 **Abbildung 05**: Aktualisieren eines Entity Framework-Modells aus der Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
-
 Nachdem Sie diese Schritte abgeschlossen haben, wird Ihr Datenmodell der Kontakte und Gruppen darstellen. Der Entity Designer sollten beide Entitäten angezeigt (siehe Abbildung 6).
-
 
 [![Entity-Designer zum Anzeigen von Gruppe, und wenden Sie sich an](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
 **Abbildung 06**: Anzeigen von Gruppen- und wenden Sie sich an Entity-Designer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image12.png))
-
 
 ### <a name="creating-our-repository-classes"></a>Erstellen die Repositoryklassen
 
@@ -328,11 +311,9 @@ Wir müssen die folgenden neuen Ansichten zum Verwalten von Gruppen von wenden S
 - Views\Group\Index.aspx - zeigt eine Liste der Kontakt-Gruppen
 - Views\Group\Delete.aspx - zeigt Bestätigungsformular für das Löschen einer Gruppenstatus von Kontakten
 
-
 [![Die Gruppe Indexansicht](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
 **Abbildung 07**: Die Gruppe Indexansicht ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image14.png))
-
 
 Wir müssen die folgenden vorhandenen Ansichten zu ändern, sodass sie wenden Sie sich an Gruppen enthalten:
 
@@ -342,11 +323,9 @@ Wir müssen die folgenden vorhandenen Ansichten zu ändern, sodass sie wenden Si
 
 Sie sehen die geänderten Ansichten anhand der Visual Studio-Anwendung, die in diesem Lernprogramm begleitet. Abbildung 8 veranschaulicht beispielsweise die Ansicht "Wenden Sie sich an Index".
 
-
 [![Ansicht "Wenden Sie sich an Index"](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
 **Abbildung 08**: Ansicht "Wenden Sie sich an Index" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image16.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

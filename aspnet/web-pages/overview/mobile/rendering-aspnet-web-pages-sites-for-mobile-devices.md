@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: dbcd25331387f8606343e551302bc3ed1f9b2c25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c012348d65e48a275cb0e4808fef2a7f31e5fb33
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379507"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133518"
 ---
 # <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>Rendern von ASP.NET Web Pages (Razor)-Websites für Mobilgeräte
 
@@ -33,7 +33,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
-
 
 ASP.NET Web Pages ermöglicht das Erstellen benutzerdefinierter angezeigt, die zum Rendern von Inhalt auf Mobilgeräten und anderen Geräten.
 
@@ -55,9 +54,7 @@ Das folgende Beispiel zeigt, wie mobile renderingaufträge durch Hinzufügen ein
 > [!NOTE]
 > Um mobiler Seiten zu testen, können Sie einen Simulator für mobile Geräte, der auf einem Desktopcomputer ausgeführt wird. Mit diesem Tool können Sie Webseiten zu testen, wie sie auf mobilen Geräten aussehen würde (d. h. in der Regel eine viel kleinere anzeigen mit Bereich). Ein Beispiel für einen Simulator ist die [Benutzer-Agent Switcher-Add-On](http://addons.mozilla.org/firefox/addon/user-agent-switcher/) für Mozilla Firefox, sodass Sie verschiedenen mobilen Browsern aus einer desktop-Version von Firefox zu emulieren.
 
-
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Windows Phone Emulator](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)

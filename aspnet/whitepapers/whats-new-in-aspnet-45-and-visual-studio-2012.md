@@ -8,17 +8,16 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 32fbf7c25b00f3f0796c4c3fdd38ca2a86c89199
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410590"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133690"
 ---
 # <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>Neue Funktionen in ASP.NET 4.5 und Visual Studio 2012
 
 > Dieses Dokument beschreibt die neuen Features und Verbesserungen, die in ASP.NET 4.5 eingeführt wird. Darüber hinaus werden die Verbesserungen für die Webentwicklung in Visual Studio 2012 beschrieben. In diesem Dokument wurde ursprünglich auf dem 29. Februar 2012 veröffentlicht.
-
 
 - [ASP.NET Core-Runtime und Framework](#_Toc318097372)
 
@@ -190,10 +189,8 @@ Anschließend können Sie die *HttpRequest.Unvalidated* -Eigenschaft in der nich
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample6.cs)]
 
-
 > [!WARNING]
 > Sicherheit – *nicht überprüfter Anforderungsdaten mit Vorsicht verwenden.* ASP.NET 4.5 hinzugefügt, die nicht überprüfte Anforderungseigenschaften und Sammlungen, um spezifische nicht überprüfter Anforderungsdaten den Zugriff auf erleichtern. Sie müssen jedoch weiterhin benutzerdefinierte Validierung ausführen, für die raw-Anforderungsdaten, um sicherzustellen, dass gefährlicher Text nicht für Benutzer gerendert wird.
-
 
 <a id="_Toc318097382"></a>
 ### <a name="antixss-library"></a>AntiXSS-Bibliothek
@@ -383,11 +380,9 @@ Allerdings unterstützen Datenbindungsausdrücke wie folgt keine Features wie In
 
 Um dieses Problem zu beheben, fügt ASP.NET 4.5 die Möglichkeit, den Datentyp der Daten zu deklarieren, die ein Steuerelement gebunden ist. Erreichen Sie dies mit der neuen *ItemType* Eigenschaft. Wenn Sie diese Eigenschaft festlegen, sind zwei neue typisierte Variablen im Bereich der Datenbindungsausdrücke verfügbar: *Element* und *BindItem*. Da die Variablen stark typisiert sind, erhalten Sie alle Vorteile von Visual Studio-Entwicklung zu erleichtern.
 
-
 Verwenden Sie für die bidirektionale Datenbindungsausdrücke der *BindItem* Variable:
 
 [!code-aspx[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample21.aspx)]
-
 
 Die meisten Steuerelemente in ASP.NET Web Forms-Framework, die die Datenbindung zu unterstützen wurden aktualisiert, um die Unterstützung der *ItemType* Eigenschaft.
 

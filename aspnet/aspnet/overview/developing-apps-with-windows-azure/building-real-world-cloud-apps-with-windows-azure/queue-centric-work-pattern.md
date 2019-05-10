@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 0d6d8375425f3a0cb915c2f7844f6c5191ea4e95
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9081691207a1a8ccd58e1a93a0be06af15c0b2d0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392013"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118711"
 ---
 # <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Warteschlangenorientierte-Muster (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Schon kennen wir, dass mehrere Dienste mithilfe einer "zusammengesetzte" Vereinbarung zum SERVICELEVEL, ergeben kann, in dem die app effektive SLA ist die *Produkt* aus den einzelnen SLAs. Beispielsweise verwendet die app Fix It-Websites, Storage und SQL-Datenbank. Wenn einer dieser Dienste ein Fehler auftritt, wird die app einen Fehler an den Benutzer zurück.
 

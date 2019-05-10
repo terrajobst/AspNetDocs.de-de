@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9c4a4d035c78b4f4c53942219ccfa3048c7a82b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409797"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133816"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen in der Produktionsumgebung
 
@@ -22,7 +22,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -41,7 +40,6 @@ Wenn Sie noch kein Azure-Konto besitzen, können Sie in wenigen Minuten ein kost
 > [!NOTE]
 > Da in diesem Tutorial geschrieben wurde, wird eine neue Funktion um viele der Prozesse zum Erstellen von Staging-und produktionsumgebungen zu automatisieren von Azure App Service hinzugefügt. Finden Sie unter [Einrichten von Stagingumgebungen für Web-apps in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/).
 
-
 Siehe die [bereitstellen, mit dem Tutorial für die Testumgebung,](deploying-to-iis.md), wird die zuverlässigen Test-Umgebung ist eine Website, auf dem Hostinganbieter, die der Produktionswebsite wie hat. Auf viele Hostinganbieter müssen die Vorteile von für erhebliche zusätzliche Kosten abwägen, aber Sie können eine zusätzliche kostenlose Web-app in Azure erstellen, als Ihre staging-app. Sie benötigen auch eine Datenbank, und die zusätzliche Kosten für, die über die Kosten für die Produktionsdatenbank wird entweder keine "oder" minimal. In Azure bezahlen Sie für die Menge an Datenbankspeicher, die Sie verwenden, anstatt für jede Datenbank, und die Menge an zusätzlichem Speicher, den Sie in der Stagingumgebung verwenden wird minimal sein.
 
 Siehe die [bereitstellen, mit dem Test-Umgebung Tutorial](deploying-to-iis.md), Staging und Produktion, die Sie nun die beiden Datenbanken in einer Datenbank bereitstellen. Falls gewünscht, können sie getrennt zu halten, wird der Prozess identisch sein, außer dass Sie eine zusätzliche Datenbank für jede Umgebung erstellen, und Sie die richtige Ziel-Zeichenfolge für jede Datenbank Wählen bei der Erstellung des Veröffentlichungsprofils wird.
@@ -50,7 +48,6 @@ In diesem Abschnitt des Tutorials erstellen Sie eine Web-app und die Datenbank, 
 
 > [!NOTE]
 > Die folgenden Schritte zeigen, wie Sie eine Web-app in Azure App Service zu erstellen, indem Sie mithilfe des Azure-Verwaltungsportals. In der neuesten Version des Azure SDK können Sie auch dazu Visual Studio mithilfe des Server-Explorer heraus. In Visual Studio 2013 können Sie auch eine Web-app direkt aus dem Dialogfeld "Veröffentlichen" erstellen. Weitere Informationen finden Sie unter [ASP.NET Web-app in Azure App Service erstellen.](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)
-
 
 1. In der [Azure-Verwaltungsportal](https://manage.windowsazure.com/), klicken Sie auf **Websites**, und klicken Sie dann auf **neu**.
 2. Klicken Sie auf **Website**, und klicken Sie dann auf **Benutzerdefiniert erstellen**.
@@ -97,7 +94,6 @@ Nun, dass Sie eine WebApp und Datenbank für die Stagingumgebung erstellt haben,
 
 > [!NOTE]
 > Diese Anweisungen zeigen, wie Sie ein Veröffentlichungsprofil herunterladen erstellen eine *.publishsettings* -Datei, die nicht nur für Azure, sondern auch für Drittanbieter-Hostinganbieter funktioniert. Die neueste Version können Azure SDK Sie auch direkt in Azure aus Visual Studio verbinden, und wählen Sie aus einer Liste von Web-apps, die Sie in Ihrem Azure-Konto verfügen. In Visual Studio 2013, Sie können sich bei Azure anzumelden aus der **Webveröffentlichung** Dialogfeld oder über die **Server-Explorer** Fenster. Weitere Informationen finden Sie unter [ASP.NET Web-app in Azure App Service erstellen](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet).
-
 
 ### <a name="download-the-publishsettings-file"></a>Herunterladen der PUBLISHSETTINGS-Datei
 
@@ -165,7 +161,6 @@ Nun, dass Sie eine WebApp und Datenbank für die Stagingumgebung erstellt haben,
 
 > [!NOTE]
 > In diesem Abschnitt wird gezeigt, wie Sie eine Transformation der Datei "Web.config" für den Indikator für die Umgebung einrichten. Da der Indikator wird der `<appSettings>` -Element, Sie haben eine weitere Alternative für die Transformation angeben, wenn Sie in Azure App Service bereitstellen. Weitere Informationen finden Sie unter [Einstellungen für die Angabe von "Web.config" in Azure](web-config-transformations.md#watransforms).
-
 
 1. In **Projektmappen-Explorer**, erweitern Sie **Eigenschaften**, und erweitern Sie dann **PublishProfiles**.
 2. Mit der rechten Maustaste *Staging.pubxml*, und klicken Sie dann auf **Config Transformation hinzufügen**.

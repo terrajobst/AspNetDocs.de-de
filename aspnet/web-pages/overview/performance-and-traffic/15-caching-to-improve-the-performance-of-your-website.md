@@ -8,12 +8,12 @@ ms.date: 02/14/2014
 ms.assetid: 961e525b-7700-469e-8a68-d7010b6fb68c
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
-ms.openlocfilehash: 10b853966ba80b673e1a6786987893f919369e7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 01796d3ca699a6af5d9162b22a926551435c2040
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412904"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134581"
 ---
 # <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Zwischenspeichern von Daten in einer ASP.NET Web Pages (Razor)-Website für eine bessere Leistung
 
@@ -38,7 +38,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
 
-
 Jedes Mal, wenn ein Benutzer auf Ihrer Website eine Seite anfordert, muss der Webserver einiges zu tun, um die Anforderung zu erfüllen. Der Server möglicherweise für einige Ihrer Seiten Aufgaben, die ein (relativ) wie das Abrufen von Daten aus einer Datenbank dauern. Auch wenn diese Aufgaben lange in absoluten Ausdrücken erfordern, wenn Ihre Website viel Datenverkehr auftritt, kann eine ganze Reihe von einzelnen Anforderungen, die dazu führen, den Webserver dass für die langsam oder komplizierte Aufgabe bis zu sehr viel Arbeit hinzufügen. Dies kann letztlich die Leistung der Website beeinträchtigen.
 
 Eine Möglichkeit zur Verbesserung der Leistung Ihrer Website unter Umständen wie folgt, ist zum Zwischenspeichern von Daten. Wenn Ihre Website wiederholte Anforderungen für dieselben Informationen angezeigt Ruft, die Informationen muss nicht für jede Person, die geändert werden und kann nicht Zeit vertraulich, anstatt erneut abgerufen oder neu zu berechnen, können die Daten einmal abrufen und speichern Sie die Ergebnisse. Das nächste Mal, das eine Anforderung für diesen eingeht, machen Informationen Sie sich einfach sie aus dem Cache.
@@ -47,7 +46,6 @@ Im Allgemeinen Zwischenspeichern Sie Informationen, die nicht häufig ändern. W
 
 > [!NOTE]
 > Einträge im Cache möglicherweise Gründen außer entfernt, die abgelaufen sind. Beispielsweise der Webserver kann vorübergehend führen mit niedriger Arbeitsspeicher, und eine Möglichkeit, die er Speicher freigeben kann, ist durch das Auslösen von Einträgen aus dem Cache. Sie sehen auch, wenn Sie die Informationen in den Cache eingefügt haben, müssen Sie sicherstellen, dass sie immer noch vorhanden ist, wenn Sie sie benötigen.
-
 
 Angenommen Sie, Ihre Website eine Seite enthält, die die aktuelle Temperatur und die Wettervorhersage anzeigt. Um diese Art von Informationen zu erhalten, können Sie eine Anforderung an einen externen Dienst senden. Da diese Informationen nicht viel (innerhalb eines zweistündigen Zeitraums, z. B.) ändert, und da externer Aufrufe Zeit und Bandbreite erforderlich ist, ist es ein guter Kandidat für die Zwischenspeicherung.
 
@@ -77,7 +75,6 @@ ASP.NET umfasst eine `WebCache` Hilfsmethode, die Zwischenspeicherung auf Ihrer 
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 - [Anzeigen von Daten in einem Diagramm](https://go.microsoft.com/fwlink/?LinkId=202895)
 - [WebCache-API-Referenz](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)

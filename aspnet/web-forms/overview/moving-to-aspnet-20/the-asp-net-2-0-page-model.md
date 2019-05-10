@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 09f8389a04c5600ca9ee8365a9dc5a0d607c0a4d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bcb71b2b5a484e8756406867e08e8aa699a9024d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403921"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127922"
 ---
 # <a name="the-aspnet-20-page-model"></a>Die ASP.NET 2.0-Seitenmodell
 
 by [Microsoft](https://github.com/microsoft)
 
 > In ASP.NET 1.x, Entwickler hatten eine Wahl zwischen einer Inline-Codemodell und ein Code-Behind-Codemodell. CodeBehind kann implementiert werden, verwenden entweder das Src-Attribut oder das CodeBehind-Attribut von der @Page Richtlinie. In ASP.NET 2.0 Entwickler haben immer noch die Wahl zwischen Inline-Code und Code-Behind, es gibt aber deutliche Verbesserungen bei der Code-Behind-Modells.
-
 
 In ASP.NET 1.x, Entwickler hatten eine Wahl zwischen einer Inline-Codemodell und ein Code-Behind-Codemodell. CodeBehind kann implementiert werden, verwenden entweder das Src-Attribut oder das CodeBehind-Attribut von der @Page Richtlinie. In ASP.NET 2.0 Entwickler haben immer noch die Wahl zwischen Inline-Code und Code-Behind, es gibt aber deutliche Verbesserungen bei der Code-Behind-Modells.
 
@@ -47,12 +46,10 @@ Eine typische Klassendefinition in einer ASP.NET 2.0-Code-Behind-Datei kann wie 
 > [!NOTE]
 > C# und Visual Basic sind nur verwalteten Sprachen, die derzeit von partiellen Klassen. Aus diesem Grund werden verwenden j# Entwickler kann nicht der Code-Behind-Modells in ASP.NET 2.0 verwendet.
 
-
 Das neue Modell verbessert die Code-Behind-Modells aus, da Entwickler haben nun die Codedateien werden, die nur den Code enthalten, den sie erstellt haben. Darüber hinaus eine "true" Trennung von Code und Inhalt da keine Instanz-Variablendeklarationen im Code-Behind-Datei vorhanden sind.
 
 > [!NOTE]
 > Da die partielle Klasse für die ASPX-Seite ist, in denen ereignisbindung stattfindet, können Visual Basic-Entwicklern eine leichte Leistungssteigerung umsetzen können mithilfe der Handles-Schlüsselwort im Code-Behind-um Ereignisse zu binden. C# verfügt über keine entsprechende Schlüsselwort ein.
-
 
 ## <a name="new--page-directive-attributes"></a>Neue Attribute der @ Page-Direktive
 
@@ -128,12 +125,9 @@ Eine weitere neue Funktion der @ Page-Direktive in ASP.NET 2.0 ist die Möglichk
 
 Die **Irgendein_text** Attribut der @ Page-Direktive wird der Anfangswert der Irgendein_text-Eigenschaft in der Basisklasse zu *Hello!*. Im folgenden Video wird eine exemplarische Vorgehensweise für das Festlegen des Anfangswert einer öffentlichen Eigenschaft in einer Basisklasse, die mit der @ Page-Direktive.
 
-
 ![](the-asp-net-2-0-page-model/_static/image1.png)
 
-
 [Open Vollbild-Video](the-asp-net-2-0-page-model/_static/setprop1.wmv)
-
 
 ## <a name="new-public-properties-of-the-page-class"></a>Neue öffentliche Eigenschaften der Page-Klasse
 
@@ -365,12 +359,9 @@ Wenn die Seite zurückgesendet wird, ist die Seite, die das Postback initiiert �
 
 Im folgenden Video wird eine exemplarische Vorgehensweise eines seitenübergreifenden Postbacks.
 
-
 ![](the-asp-net-2-0-page-model/_static/image2.png)
 
-
 [Open Vollbild-Video](the-asp-net-2-0-page-model/_static/xpage1.wmv)
-
 
 ## <a name="more-details-on-cross-page-postbacks"></a>Weitere Informationen zu seitenübergreifende Postbacks
 
@@ -423,16 +414,12 @@ Im nächste Schritt wird die AddOnPreRenderCompleteAsync-Methode zu einem Zeitpu
 
 Das Video unten ist eine exemplarische Vorgehensweise für einer asynchronen Seitenanforderung.
 
-
 ![](the-asp-net-2-0-page-model/_static/image3.png)
-
 
 [Open Vollbild-Video](the-asp-net-2-0-page-model/_static/async1.wmv)
 
-
 > [!NOTE]
 > Eine asynchrone Seite rendert nicht an den Browser bis zum Abschluss der EndEventHandler. Keine Zweifel daran bestehen, die aber werden einige Entwickler asynchrone Anforderungen weitgehend für asynchrone Rückrufe vorstellen. Es ist wichtig zu wissen, dass dies nicht der Fall. Der Vorteil für asynchrone Anforderungen ist, dass der erste Thread an den Threadpool neue Anforderungen verarbeiten, wodurch Konflikte aufgrund von e/a-gebunden, usw. zurückgegeben werden kann.
-
 
 ## <a name="script-callbacks-in-aspnet-20"></a>Skriptrückrufe in ASP.NET 2.0
 
@@ -459,14 +446,12 @@ Wie bereits erwähnt, ist der XMLHttp-Aufruf in der WebResource.axd-Handler geka
 > [!NOTE]
 > \_\_DoPostBack wird immer noch auf der Seite in einem Clientskriptrückruf gerendert. Es wird jedoch nicht für den Rückruf verwendet.
 
-
 Die Argumente für die WebForm\_DoCallback clientseitige Funktion werden bereitgestellt, über die serverseitige Funktion GetCallbackEventReference, die normalerweise in der Seite aufgerufen werden, würde\_laden. Ein typischer Aufruf zum GetCallbackEventReference könnte folgendermaßen aussehen:
 
 [!code-csharp[Main](the-asp-net-2-0-page-model/samples/sample12.cs)]
 
 > [!NOTE]
 > Cm ist in diesem Fall eine Instanz von ClientScriptManager. Die ClientScriptManager-Klasse wird später in diesem Modul behandelt werden.
-
 
 Es gibt mehrere überlastete Versionen der GetCallbackEventReference. In diesem Fall sind die Argumente wie folgt ein:
 
@@ -522,12 +507,9 @@ Die ICallbackEventHandler enthält zwei Methoden, die Sie in Ihrem Code implemen
 
 Nachdem Sie die oben genannten Schritte abgeschlossen haben, können Sie einen Rückruf an Skript in ASP.NET 2.0 ausführen.
 
-
 ![](the-asp-net-2-0-page-model/_static/image4.png)
 
-
 [Open Vollbild-Video](the-asp-net-2-0-page-model/_static/callback1.wmv)
-
 
 Skriptrückrufe in ASP.NET sind in allen Browsern unterstützt, die Sie dabei XMLHttp-Aufrufe unterstützt. Die allen modernen Browsern verwendet den heutigen Tag einschließt. Internet Explorer verwendet das XMLHttp ActiveX-Objekt an, während andere moderne Browser (einschließlich der anstehenden IE 7) ein systeminternes XMLHttp-Objekt verwenden. Um programmgesteuert zu ermitteln, wenn ein Browser Rückrufe unterstützt, können Sie mithilfe der **Request.Browser.SupportCallback** Eigenschaft. Diese Eigenschaft gibt **"true"** , wenn der anfordernde Client Skriptrückrufe unterstützt.
 
@@ -537,7 +519,6 @@ Clientskripts in ASP.NET 2.0 werden über die Verwendung der ClientScriptManager
 
 > [!NOTE]
 > Nachdem ein Skript auf einer Seite erfolgreich registriert wurde, führt ein anschließenden Versuch, registrieren Sie das gleiche Skript einfach in das Skript kein zweites Mal registriert wird. Keine doppelten Skripts hinzugefügt werden, und keine Ausnahme auftritt. Um unnötige Berechnung zu vermeiden, gibt es Methoden, die Sie verwenden können, um festzustellen, ob ein Skript bereits registriert ist, sodass Sie nicht versuchen, mehr als einmal registrieren.
-
 
 Die Methoden des ClientScriptManager sollten alle aktuellen ASP.NET-Entwickler vertraut sein:
 
@@ -580,7 +561,6 @@ Dieser Code erzeugt den folgenden Code in der gerenderten Seite:
 > [!NOTE]
 > Der Skriptblock wird am unteren Rand der Seite gerendert.
 
-
 Verwenden Sie die IsClientScriptIncludeRegistered-Methode, um festzustellen, ob ein Skript bereits registriert wurde. Dadurch können Sie einen Versuch zum erneuten Registrieren eines Skripts zu vermeiden.
 
 ## <a name="registerstartupscript"></a>RegisterStartupScript
@@ -590,13 +570,11 @@ Die RegisterStartupScript-Methode akzeptiert die gleichen Argumente wie die Regi
 > [!NOTE]
 > Wenn Sie eine Funktion mit RegisterStartupScript registrieren, wird diese Funktion nicht ausgeführt, bis Sie explizit im clientseitigen Code aufrufen.
 
-
 Verwenden Sie die IsStartupScriptRegistered-Methode, um zu bestimmen, ob ein Skript bereits registriert wurde, und vermeiden Versuch, ein Skript erneut zu registrieren.
 
 ## <a name="other-clientscriptmanager-methods"></a>Andere Methoden des ClientScriptManager
 
 Hier sind einige andere nützliche Methoden der ClientScriptManager-Klasse.
-
 
 |  <strong>GetCallbackEventReference</strong>   |                                                 Skript-Rückrufe weiter oben in diesem Modul wird angezeigt.                                                 |
 |-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -606,4 +584,3 @@ Hier sind einige andere nützliche Methoden der ClientScriptManager-Klasse.
 | <strong>RegisterClientScriptResource</strong> |     Registriert eine Webressource mit der Seite. Hierbei handelt es sich um Ressourcen in eine Assembly eingebettet und von der neuen WebResource.axd-Handler behandelt.      |
 |     <strong>RegisterHiddenField</strong>      |                                                 Registriert ein ausgeblendetes Formularfeld mit der Seite.                                                 |
 |  <strong>RegisterOnSubmitStatement</strong>   |                                  Registriert clientseitige-Code, der ausgeführt wird, wenn das HTML-Formular übermittelt wird.                                   |
-

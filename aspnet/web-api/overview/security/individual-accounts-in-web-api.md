@@ -8,12 +8,12 @@ ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7492c4aa4c2a0a8aeed64c3462bda8fc51f35a6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396226"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134312"
 ---
 # <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Schützen einer Webs-API mit einzelnen Konten und lokale Anmeldung in ASP.NET-Web-API 2.2
 
@@ -29,7 +29,6 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > - [Visual Studio 2013 Update 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - [Web-API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
 > - [ASP.NET Identity 2.1](../../../identity/index.md)
-
 
 In Visual Studio 2013 bietet die Web-API-Projektvorlage aus drei Optionen für die Authentifizierung:
 
@@ -239,7 +238,6 @@ Die **SuppressDefaultHostAuthentication** Methode weist die Web-API-Authentifizi
 
 > [!NOTE]
 > Insbesondere kann der MVC-Teil der app Formularauthentifizierung verwendet die Anmeldeinformationen in einem Cookie gespeichert. Cookiebasierte Authentifizierung erfordert die Verwendung von fälschungssicherheitstoken, um CSRF-Angriffe zu verhindern. Das ist ein Problem für Web-APIs, da es gibt keine praktische Möglichkeit für die Web-API das fälschungssicherheitstoken an den Client zu senden. (Weitere Informationen zu diesem Problem finden Sie unter [verhindern von CSRF-Angriffen in Web-API-](preventing-cross-site-request-forgery-csrf-attacks.md).) Aufrufen von **SuppressDefaultHostAuthentication** wird sichergestellt, dass die Web-API nicht von den Anmeldeinformationen in Cookies gespeicherten CSRF-Angriffe anfällig ist.
-
 
 Wenn der Client eine geschützte Ressource anfordert, hier geschieht in der Web-API-Pipeline:
 

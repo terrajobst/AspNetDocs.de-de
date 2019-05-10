@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 52978b10b6c131ac8eff4535216cc60b43fdf3de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405377"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120107"
 ---
 # <a name="dependency-injection-in-signalr"></a>Abhängigkeitsinjektion in SignalR
 
@@ -37,7 +37,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://g
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
 > Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
-
 
 Abhängigkeitsinjektion ist eine Möglichkeit zum Entfernen von hartcodierten Abhängigkeiten zwischen Objekten, erleichtert Ihnen die Abhängigkeiten eines Objekts entweder zu Testzwecken (mithilfe von Mockobjekten) zu ersetzen oder Laufzeitverhalten zu ändern. In diesem Tutorial wird gezeigt, wie Abhängigkeitsinjektion in SignalR-Hubs. Es wird gezeigt, wie IoC-Container mit SignalR verwenden. Ein IoC-Container ist ein allgemeines Rahmenwerk für Dependency Injection.
 
@@ -93,7 +92,6 @@ Eine Lösung ist einen IoC-Container verwenden. Ein IoC-Container ist eine Softw
 
 > [!NOTE]
 > "IoC" steht für "Inversion of Control", dies ist ein allgemeines Muster, in denen ein Framework in Anwendungscode aufruft. Ein IoC-Container erstellt die Objekte, die "die übliche ablaufsteuerung kehrt".
-
 
 ## <a name="using-ioc-containers-in-signalr"></a>Verwenden von IoC-Container in SignalR
 

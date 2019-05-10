@@ -9,12 +9,12 @@ ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e02df967df8acf346b9fcd1c75dbe304cc5407b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419443"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121538"
 ---
 # <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Bewährte Methoden für die Bereitstellung von Kennwörtern und anderen sensiblen Daten für ASP.NET und Azure App Service
 
@@ -25,7 +25,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > Der Beispielcode ist eine einfache WebJob-Konsolen-app und einer ASP.NET MVC-Anwendung, die Zugriff auf eine Datenbank Zeichenfolge Kennwort, Twilio, Google und SendGrid sicher Verbindungsschlüssel benötigt.
 > 
 > Lokale wird Einstellungen und PHP ebenfalls erwähnt.
-
 
 - [Arbeiten mit Kennwörtern in der Entwicklungsumgebung](#pwd)
 - [Arbeiten mit Verbindungszeichenfolgen in der Entwicklungsumgebung](#con)
@@ -54,7 +53,6 @@ Die ASP.NET-Laufzeit führt den Inhalt der externen Datei mit dem Markup im &lt;
 > [!WARNING]
 > Sicherheit – fügen Sie keine Ihrer *Geheimnisse config* Datei zu Ihrem Projekt, oder checken Sie es in die quellcodeverwaltung. Standardmäßig legt Visual Studio die `Build Action` zu `Content`, was bedeutet, dass die Datei bereitgestellt wird. Weitere Informationen finden Sie unter [Warum nicht alle Dateien im Projektordner bereitgestellt?](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) Sie können zwar eine beliebige Erweiterung für verwenden die *Geheimnisse config* -Datei, es wird empfohlen, die sie behalten *config*, wie die Konfigurationsdateien von IIS nicht verarbeitet werden. Beachten Sie auch, dass die *AppSettingsSecrets.config* Datei ist zwei Directory Ebenen oberhalb von der *"Web.config"* Datei, sodass sie vollständig aus dem Projektmappenverzeichnis ist. Durch das Verschieben der Datei aus dem Projektmappenverzeichnis &quot;Git hinzufügen \* &quot; wird nicht in Ihrem Repository hinzufügen.
 
-
 <a id="con"></a>
 ## <a name="working-with-connection-strings-in-the-development-environment"></a>Arbeiten mit Verbindungszeichenfolgen in der Entwicklungsumgebung
 
@@ -67,14 +65,11 @@ Sie können die `configSource` Attribut, um die gesamte ersetzen `<connectionStr
 > [!NOTE]
 > Bei Verwendung der `configSource` -Attribut an, wie oben gezeigt, um die Verbindungszeichenfolgen in eine externe Datei zu verschieben und Visual Studio eine neue Website erstellen, sie nicht erkennen, verwenden Sie eine Datenbank, und Sie erhalten nicht die Möglichkeit, konfigurieren die Datenbank bei der Sie Pu Veröffentlichen in Azure aus Visual Studio. Bei Verwendung der `configSource` -Attribut, Sie können PowerShell verwenden, erstellen und Bereitstellen Ihrer Website und die Datenbank, oder Sie können erstellen die Website und die Datenbank im Portal vor der Veröffentlichung. Die [New-AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3) Skript erstellt eine neue Website und die Datenbank.
 
-
 > [!WARNING]
 > Sicherheit – im Gegensatz zu den *AppSettingsSecrets.config* -Datei muss die externe Verbindung für Zeichenfolgen-Datei im gleichen Verzeichnis als Stamm *"Web.config"* -Datei, müssen Sie Vorsichtsmaßnahmen ergreifen, um Sie sicherstellen, dass Überprüfen Sie nicht in Ihrem Quellrepository.
 
-
 > [!NOTE]
 > **Der Sicherheitswarnung auf die Datei mit Geheimnissen:** Eine bewährte Methode ist keine produktionsgeheimnisse in Test- und entwicklungsumgebungen verwendet. Produktions-Kennwörtern in Test- oder Entwicklungsumgebung mit Speicherverlusten dieser geheimen Schlüssel.
-
 
 <a id="wj"></a>
 ## <a name="webjobs-console-apps"></a>WebJobs-Konsolen-apps
@@ -105,7 +100,6 @@ Eine bewährte Methode ist, führen eine [DevOps-Workflow](../../../aspnet/overv
 > [!WARNING]
 > Sicherheit – keine Kennwörter oder andere geheime Schlüssel im PowerShell-Skript, tun dies der Fall ist widerlegen den Zweck der Verwendung eines PowerShell-Skripts zur Bereitstellung von sensiblen Daten enthalten. Die [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) Cmdlet bietet einen sicheren Mechanismus, um ein Kennwort zu erhalten. Benutzeroberflächen-Eingabeaufforderung verwenden, kann die Speicherverluste verursachen, ein Kennwort verhindern.
 
-
 ### <a name="deploying-db-connection-strings"></a>Bereitstellung von DB-Verbindungszeichenfolgen
 
 DB-Verbindungszeichenfolgen werden auf app-Einstellungen auf ähnliche Weise behandelt. Wenn Sie Ihre Web-app aus Visual Studio bereitstellen, wird die Verbindungszeichenfolge für Sie konfiguriert werden. Sie können dies im Portal überprüfen. Die empfohlene Methode zum Festlegen der Verbindungszeichenfolge wird mit PowerShell. Ein Beispiel für ein PowerShell-Skript den erstellt eine Website und die Datenbank und legt die Verbindungszeichenfolge fest auf der Website herunterladen [New-AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3) aus der [Azure Skriptbibliothek](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure).
@@ -125,6 +119,5 @@ Wenn Sie an einem lokalen Webserver bereitstellen, können Sie Schutz für Gehei
 Ein Beispiel für ein PowerShell-Skript, erstellt eine Web-app und Datenbank, legt fest, die Verbindungszeichenfolge + app-Einstellungen, Downloads [New-AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3) aus der [Azure Skriptbibliothek](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure). 
 
 Finden Sie unter der Stefan Schackow [Windows Azure-Websites: Funktionsweise von Anwendungszeichenfolgen und Verbindungszeichenfolgen](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)
-
 
 Besonderer Dank gilt Barry Dorrans ( [ @blowdart ](https://twitter.com/blowdart) ) und Carlos Farre geprüft.

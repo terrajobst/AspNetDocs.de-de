@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: ad5f32a08270ce318c03e1b29acd74d12bbb3d3b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da914986ff020879dfe634967b39b32250cbf43b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394054"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120848"
 ---
 # <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
@@ -34,13 +34,11 @@ Wir werden all diese Konzepte in dieser tutorialreihe abdecken und gezeigt, wie 
 
 Wir erstellen zunächst eine Controller-Klasse. In **Projektmappen-Explorer**, mit der rechten Maustaste die *Controller* Ordner, und klicken Sie dann auf **hinzufügen**, klicken Sie dann **Controller**.
 
-
 ![](adding-a-controller/_static/image1.png)
 
 In der **Gerüst hinzufügen** Dialogfeld klicken Sie auf **MVC 5 Controller - leer**, und klicken Sie dann auf **hinzufügen**.
 
 ![](adding-a-controller/_static/image2.png)  
- 
 
 Geben Sie Ihre neuen Controller den Namen "HelloWorldController", und klicken Sie auf **hinzufügen**.
 
@@ -80,7 +78,6 @@ Lassen Sie uns das Beispiel etwas so ändern, dass Parameterinformationen aus de
 
 > [!NOTE]
 > Sicherheitshinweis: Der Code oben verwendet [HttpUtility.HtmlEncode durchführen](https://msdn.microsoft.com/library/ee360286(v=vs.110).aspx) zum Schützen der Anwendung vor schädlicher Eingaben (über JavaScript). Weitere Informationen finden Sie unter [Vorgehensweise: Schutz vor Skriptangriffen in einer Webanwendung durch Anwenden von HTML-Codierung in Zeichenfolgen](https://msdn.microsoft.com/library/a2a4yykt(v=vs.100).aspx).
-
 
  Führen Sie die Anwendung, und navigieren Sie zu der Beispiel-URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4`). Sie können für `name` und `numtimes` in der URL verschiedene Werte ausprobieren. Die [ASP.NET MVC-modellbindungssystem](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) ordnet automatisch die benannten Parameter aus der Abfragezeichenfolge in der Adressleiste den Parametern der Methode.
 

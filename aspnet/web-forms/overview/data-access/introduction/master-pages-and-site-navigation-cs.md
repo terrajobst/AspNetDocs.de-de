@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 5aee8202-a4e3-4aa9-8a95-cd5d156cea4c
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2001378588db72103292be963af6c26277147c44
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 13bf64919e8068f44b20120400f62eecbd3cace9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409641"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134679"
 ---
 # <a name="master-pages-and-site-navigation-c"></a>Masterseiten und Sitenavigation (C#)
 
@@ -23,7 +23,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Eine gemeinsame Merkmale von benutzerfreundlichen Websites ist, dass sie eine konsistente, standortweite Layout und das Navigationsschema. In diesem Tutorial untersucht davon ab, wie Sie einen konsistenten Aussehens und Verhaltens für alle Seiten erstellen, die problemlos aktualisiert werden können.
 
-
 ## <a name="introduction"></a>Einführung
 
 Eine gemeinsame Merkmale von benutzerfreundlichen Websites ist, dass sie eine konsistente, standortweite Layout und das Navigationsschema. ASP.NET 2.0 werden zwei neue Features, die erheblich vereinfachen, implementieren beide eine standortweite Layout und das Navigationsschema: Masterseiten und Sitenavigation. Masterseiten ermöglichen Entwicklern das Erstellen einer Vorlage für die gesamte Website mit der angegebenen bearbeitbare Bereiche. Mit dieser Vorlage können Sie dann auf ASP.NET-Seiten in der Website angewendet werden. Solche ASP.NET-Seiten müssen nur die Inhalte bereitstellen, für die Masterseite bearbeitbare Bereiche angegeben, die alle anderen Markup auf der Masterseite ist identisch für alle ASP.NET-Seiten, die die Masterseite verwenden. Dieses Modell ermöglicht Entwicklern das Definieren und zu zentralisieren ein standortweite Seitenlayout, wodurch erleichtert Ihnen die Erstellung ein konsistentes Aussehens und Verhaltens für alle Seiten, die problemlos aktualisiert werden können.
@@ -32,34 +31,27 @@ Die [Navigation Standortsystem](http://aspnet.4guysfromrolla.com/articles/111605
 
 Um diese Konzepte zu veranschaulichen, und unsere Tutorials Website besser verwendbar zu machen, werfen wir kurz in dieser Lektion definieren ein Layout für die gesamte Website, implementieren eine Sitemap und Navigationsbenutzeroberfläche hinzufügen. Nach Abschluss dieses Lernprogramms müssen einen ansprechenden Website-Entwurf für unsere Tutorials Webseiten erstellen.
 
-
 [![Das Endergebnis dieses Tutorials](master-pages-and-site-navigation-cs/_static/image2.png)](master-pages-and-site-navigation-cs/_static/image1.png)
 
 **Abbildung 1**: Das End-Ergebnis von diesem Lernprogramm ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image3.png))
-
 
 ## <a name="step-1-creating-the-master-page"></a>Schritt 1: Erstellen der Masterseite
 
 Der erste Schritt ist die Masterseite für die Website zu erstellen. Derzeit nur das typisierte DataSet unserer Website besteht (`Northwind.xsd`in die `App_Code` Ordner), die BLL-Klassen (`ProductsBLL.cs`, `CategoriesBLL.cs`, und so weiter, alle in der `App_Code` Ordner), der Datenbank (`NORTHWND.MDF`in die `App_Data` Ordner ""), die Konfigurationsdatei (`Web.config`), und eine CSS-Stylesheet-Datei (`Styles.css`). Ich bereinigt diese Seiten und Dateien, die veranschaulichen, mit der DAL und der BLL aus den ersten beiden Tutorials, da wir diesen Beispielen ausführlich in zukünftigen Lernprogrammen überprüfen.
 
-
 ![Die Dateien in Ihrem Projekt](master-pages-and-site-navigation-cs/_static/image4.png)
 
 **Abbildung 2**: Die Dateien in Ihrem Projekt
 
-
 Klicken Sie zum Erstellen einer Masterseite mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen. Klicken Sie dann wählen Sie die Masterseite aus der Liste der Vorlagen, und nennen Sie sie `Site.master`.
-
 
 [![Fügen Sie eine neue Master-Seite auf der Website](master-pages-and-site-navigation-cs/_static/image6.png)](master-pages-and-site-navigation-cs/_static/image5.png)
 
 **Abbildung 3**: Fügen Sie eine neue Master-Seite auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image7.png))
 
-
 Definieren Sie die standortweite Seitenlayout hier auf der Masterseite. Sie verwenden Sie die Entwurfsansicht zu sehen und beliebige Layout oder Web-Steuerelemente, die benötigten hinzufügen können, oder Sie können das Markup manuell hinzufügen, die manuell in der Datenquellensicht. In Meine Masterseite verwende ich [cascading Stylesheets](http://www.w3schools.com/css/default.asp) zum Positionieren und Stile, die mit den CSS-Einstellungen, die in der externen Datei definiert `Style.css`. Während Sie aus dem unten gezeigten Markup nicht erkennen können, werden die CSS-Regeln definiert, dass die Navigation `<div>`Inhalt ist absolut positioniert, damit sie auf der linken Seite angezeigt wird und eine feste von 200 Pixel Breite.
 
 Site.master
-
 
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample1.aspx)]
 
@@ -67,34 +59,27 @@ Eine Masterseite definiert sowohl statische Seitenlayouts und Bereiche, die durc
 
 Mit dem Markup oben eingegebenen zeigt das Umschalten zur Entwurfsansicht der Masterseite Layout aus. Alle ASP.NET-Seiten, die diese Masterseite verwenden, müssen diese einheitliche Layout, mit der Möglichkeit, geben Sie das Markup für die `MainContent` Region.
 
-
 [![Die Masterseite, wenn Sie über die Entwurfsansicht angezeigt](master-pages-and-site-navigation-cs/_static/image9.png)](master-pages-and-site-navigation-cs/_static/image8.png)
 
 **Abbildung 4**: Die Masterseite, die beim Anzeigen durch die Entwurfsansicht ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image10.png))
-
 
 ## <a name="step-2-adding-a-homepage-to-the-website"></a>Schritt 2: Eine Homepage hinzufügen der Website
 
 Mit der Masterseite, die definiert sind wir bereit sind, die ASP.NET-Seiten für die Website hinzuzufügen. Wir fügen zunächst `Default.aspx`, unsere Website-Homepage. Mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und wählen Sie Neues Element hinzufügen. Wählen Sie die Option "Webformular" aus der Vorlagenliste und den Namen die Datei `Default.aspx`. Überprüfen Sie außerdem das Kontrollkästchen "Masterseite auswählen".
 
-
 [![Fügen Sie ein neues Webformular, überprüfen die Masterseite auswählen das Kontrollkästchen hinzu.](master-pages-and-site-navigation-cs/_static/image12.png)](master-pages-and-site-navigation-cs/_static/image11.png)
 
 **Abbildung 5**: Fügen Sie ein neues Webformular, überprüfen die Masterseite auswählen das Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image13.png))
 
-
 Nach dem Klicken auf die Schaltfläche "OK", werden wir aufgefordert, auf welche Masterseite, diese neue Seite mit ASP.NET verwenden soll. Während Sie mehrere Masterseiten in Ihrem Projekt verwenden können, müssen wir nur ein.
-
 
 [![Wählen Sie die Master-Seite, die diese ASP.NET-Seite verwendet werden soll](master-pages-and-site-navigation-cs/_static/image15.png)](master-pages-and-site-navigation-cs/_static/image14.png)
 
 **Abbildung 6**: Wählen Sie auf der Masterseite diese ASP.NET Seite sollte Verwendung ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image16.png))
 
-
 Wählen Sie die Masterseite, enthält die ASP.NET-Seiten das folgende Markup:
 
 Default.aspx
-
 
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample2.aspx)]
 
@@ -102,18 +87,15 @@ In der `@Page` Direktive vorhanden ist, einen Verweis auf die Masterseite-Datei 
 
 Default.aspx
 
-
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample3.aspx)]
 
 Die `Title` -Attribut in der `@Page` -Direktive ermöglicht uns, legen Sie den Titel der Seite von der ASP.NET-Seite, obwohl die `<title>` Element auf der Masterseite definiert ist. Wir können auch den Titel programmgesteuert festlegen, mit `Page.Title`. Beachten Sie, dass die Masterseite-Verweise auf Stylesheets (z. B. `Style.css`) automatisch aktualisiert, damit Sie funktionieren in einer ASP.NET-Seite, unabhängig davon, welchem Verzeichnis die ASP.NET-Seite Bezug auf die Masterseite ist.
 
 Wechseln zur Entwurfsansicht, dass wir sehen können, wie die Seite in einem Browser aussehen wird. Beachten Sie, dass der Entwurf anzeigen für die ASP.NET-Seite, dass nur die bearbeitbaren Inhaltsbereiche bearbeitet werden, das nicht ContentPlaceHolder-Markup, das in der Masterseite definierte ist abgeblendet.
 
-
 [![Die Entwurfsansicht für die ASP.NET-Seite zeigt der bearbeitbare und nicht bearbeitbare Bereiche](master-pages-and-site-navigation-cs/_static/image18.png)](master-pages-and-site-navigation-cs/_static/image17.png)
 
 **Abbildung 7**: Die Entwurfsansicht für die ASP.NET Seite zeigt sowohl den Bearbeitbarer und nicht-Editable-Regionen ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image19.png))
-
 
 Wenn die `Default.aspx` Seite wird besucht, von einem Browser, die ASP.NET-Engine automatisch zusammengeführt, den Inhalt der Seite Masterseite und ASP. NET den Inhalt, und stellt den zusammengeführten Inhalt in der endgültigen HTML-Code, der an den anfordernden Browser, nach unten gesendet wird. Wenn die Masterseite Inhalt aktualisiert wird, müssen alle ASP.NET-Seiten, die diese Masterseite verwenden ihre Inhalte wieder das nächste Mal, die, das Sie angefordert werden, mit der neue Inhalt Masterseite zusammengeführt. Kurz gesagt, die Masterseite Modell können für eine einzelne Seite in der Layoutvorlage sein definiert (Masterseite), deren Änderungen werden sofort übernommen, für die gesamte Website.
 
@@ -127,11 +109,9 @@ Werfen Sie einen Moment Zeit, die zusätzliche ASP.NET Seite Stubs des Standorts
 
 Abschließend fügen Sie neue Dateien hinzu, wie im Projektmappen-Explorer in Abbildung 8 gezeigt. Denken Sie daran, jede Datei hinzufügen, überprüfen Sie das Kontrollkästchen "Masterseite auswählen".
 
-
 ![Fügen Sie die folgenden Dateien hinzu.](master-pages-and-site-navigation-cs/_static/image20.png)
 
 **Abbildung 8**: Fügen Sie die folgenden Dateien hinzu.
-
 
 ## <a name="step-2-creating-a-site-map"></a>Schritt 2: Erstellen einer Sitezuordnung
 
@@ -141,11 +121,9 @@ Des Sitenavigationssystems in ASP.NET 2.0 bietet eine Möglichkeit für einen En
 
 In diesem Tutorial jedoch verwenden wir die standardmäßigen SiteMapProvider, die bereitgestellt wird mit ASP.NET 2.0. Um die Sitemap zu erstellen, einfach mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, neues Element hinzufügen, und wählen Sie die Option für die Siteübersicht. Lassen Sie den Namen als `Web.sitemap` , und klicken Sie auf die Schaltfläche "hinzufügen".
 
-
 [![Hinzufügen einer Sitezuordnung zu Ihrem Projekt](master-pages-and-site-navigation-cs/_static/image22.png)](master-pages-and-site-navigation-cs/_static/image21.png)
 
 **Abbildung 9**: Hinzufügen einer Site-Zuordnung zu Ihres Projekts ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image23.png))
-
 
 Der Sitezuordnungsdatei ist eine XML-Datei. Beachten Sie, dass Visual Studio IntelliSense für die Siteübersichtsstruktur bereitstellt. Der Sitezuordnungsdatei müssen die `<siteMap>` Knoten wie der Stammknoten, genau einen enthalten muss `<siteMapNode>` untergeordnetes Element. Diese als erstes `<siteMapNode>` Element kann dann eine beliebige Anzahl von untergeordneten enthalten `<siteMapNode>` Elemente.
 
@@ -153,16 +131,13 @@ Definieren Sie die Website-Karte, um die Struktur des Dateisystems zu imitieren.
 
 Web.sitemap
 
-
 [!code-xml[Main](master-pages-and-site-navigation-cs/samples/sample4.xml)]
 
 Die Sitemap definiert der Website Navigationsstruktur, die eine Hierarchie ist, die die verschiedenen Abschnitte der Website beschreibt. Jede `<siteMapNode>` Element im `Web.sitemap` stellt einen Abschnitt in der Navigationsstruktur der Website dar.
 
-
 [![Die Siteübersicht darstellt, eine hierarchische Navigationsstruktur](master-pages-and-site-navigation-cs/_static/image25.png)](master-pages-and-site-navigation-cs/_static/image24.png)
 
 **Abbildung 10**: Die Siteübersicht darstellt, einer hierarchischen Navigationsstruktur ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image26.png))
-
 
 ASP.NET stellt die Sitemap-Struktur durch die .NET Framework [SiteMap-Klasse](https://msdn.microsoft.com/library/system.web.sitemap.aspx). Diese Klasse verfügt über eine `CurrentNode` -Eigenschaft, die Informationen über den Abschnitt der Benutzer wird gerade besuchen; gibt die `RootNode` Eigenschaft gibt den Stamm der Siteübersicht zurück (Home, unsere sitezuordnung). Sowohl die `CurrentNode` und `RootNode` Eigenschaften zurückgeben [SiteMapNode](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) -Instanzen, die Eigenschaften wie `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`und so weiter, die für die Siteübersicht zulassen die Hierarchie an, die durchlaufen werden.
 
@@ -174,11 +149,9 @@ Die Datenquellen-Steuerelemente dienen als Proxy zwischen Ihrer ASP.NET-Seite un
 
 Um bei der Arbeit mit der Sitemap-Daten zu unterstützen, bietet ASP.NET die SiteMapDataSource-Steuerelement, das Bezeichnung ermöglicht uns ein Websteuerelement für unsere Website, die Sitemap zu binden. Zwei Web-Steuerelemente, die TreeView- und Menu werden häufig verwendet, um eine Benutzeroberfläche für die Navigation bereitzustellen. Um die Sitemap-Daten an eine dieser zwei Steuerelemente zu binden, einfach zur Seite zusammen mit einem TreeView-Steuerelement hinzufügen einer SiteMapDataSource verbunden ist, oder im Menü-Steuerelement, dessen `DataSourceID` -Eigenschaft entsprechend festgelegt ist. Wir können beispielsweise ein Menüsteuerelement der Masterseite, die mit dem folgenden Markup hinzufügen:
 
-
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample5.aspx)]
 
 Für eine feiner abgestufte Kontrolle über die ausgegebene HTML, können wir die SiteMapDataSource-Steuerelement an das Repeater-Steuerelement binden wie folgt:
-
 
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample6.aspx)]
 
@@ -186,28 +159,23 @@ Das SiteMapDataSource-Steuerelement gibt die Site Map Hierarchieebene eine zu ei
 
 Das obige Repeater-Beispiel wird das folgende Markup Rendern:
 
-
 [!code-html[Main](master-pages-and-site-navigation-cs/samples/sample7.html)]
 
 Diese Siteübersichtsknoten (grundlegende Berichterstellung, Berichte filtern und angepasste Formatierung) bilden die *zweite* der Siteübersicht gerendert wird, wird nicht die erste Ebene. Grund hierfür ist SiteMapDataSources `ShowStartingNode` -Eigenschaftensatz auf "false", verursacht die SiteMapDataSource den Stamm der Siteübersichtsknoten zu umgehen und stattdessen durch Rückgabe der zweiten Ebene in der Map-Standorthierarchie beginnen.
 
 Die untergeordneten Elemente für die grundlegende Berichterstellung, Berichte filtern und angepasste Formatierung anzuzeigende `SiteMapNode` s, wir können einen anderen Repeater hinzufügen, auf des ersten Repeaters `ItemTemplate`. Diese zweite Repeater wird gebunden werden, um die `SiteMapNode` Instanz `ChildNodes` -Eigenschaft wie folgt:
 
-
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample8.aspx)]
 
 Diese zwei Repeater führen das folgende Markup (Markup wurde aus Gründen der Übersichtlichkeit entfernt):
-
 
 [!code-html[Main](master-pages-and-site-navigation-cs/samples/sample9.html)]
 
 Mithilfe von CSS Formatvorlagen, ausgewählt aus [Rachel Andrew](http://www.rachelandrew.co.uk/)des buchen [der CSS-Anthologie: 101 wichtige Tipps, Tricks, &amp; Hacks](https://www.amazon.com/gp/product/0957921888/qid=1137565739/sr=8-1/ref=pd_bbs_1/103-0562306-3386214?n=507846&amp;s=books&amp;v=glance), `<ul>` und `<li>` Elemente haben ein Format, sodass das Markup die folgende visual Ausgabe erzeugt:
 
-
 ![Ein Menü besteht aus zwei Repeater und etwas CSS](master-pages-and-site-navigation-cs/_static/image27.png)
 
 **Abbildung 11**: Ein Menü besteht aus zwei Repeater und etwas CSS
-
 
 Dieses Menü auf der Masterseite ist und an die Sitemap definiert gebunden `Web.sitemap`, das bedeutet, dass jede Änderung an der Sitemap auf allen sofort wiedergegeben werden Seiten, die die `Site.master` Masterseite.
 
@@ -223,7 +191,6 @@ Ansichtszustand kann auf der Seite oder das Steuerelement deaktiviert werden, du
 
 Legen Sie auf den Ansichtszustand der Seite reduzieren wir des Repeater-Steuerelements `EnableViewState` Eigenschaft `false`. Dies kann über das Eigenschaftenfenster im Designer oder deklarativ in der Datenquellensicht erfolgen. Nach dieser Änderung sollte des Repeaters deklarative Markup aussehen:
 
-
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample10.aspx)]
 
 Nach dieser Änderung wird die Seite des gerenderten Ansicht, dass die Größe des Benutzerzustands auf eine reine verkleinert wurde Zustandsgröße 52 Bytes, die eine Einsparung von 97 % in der Ansicht! In den Tutorials in dieser Reihe werden wir den Ansichtszustand des Daten-Websteuerelemente standardmäßig deaktivieren, um die Größe des gerenderten Markups zu reduzieren. In den meisten der Beispiele die `EnableViewState` Eigenschaft auf festgelegt `false` und ohne Erwähnung getan. Nur dann anzeigen, dass der Zustand erläutert wird ist in Szenarien, in denen sie in der Reihenfolge für die Daten aktiviert werden muss, Web steuern, um dessen zu erwartender Funktionalität bereitzustellen.
@@ -234,16 +201,13 @@ Um die Masterseite abgeschlossen haben, fügen Sie ein Benutzeroberflächeneleme
 
 Fügen Sie dieses Steuerelement für unsere Website, auf den Header `<div>`:
 
-
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample11.aspx)]
 
 Die Breadcrumb-Leiste zeigt der aktuellen Seite des Benutzers wird in der Standorthierarchie-Zuordnung als auch für diesen Standort Zuordnung des Knotens "Vorgängerelemente," besuchen, ganz bis zum Stamm (Home, unsere sitezuordnung).
 
-
 ![Die Breadcrumb-Leiste zeigt die aktuelle Seite und dessen Vorgänger auf der Website Sitezuordnungshierarchie](master-pages-and-site-navigation-cs/_static/image28.png)
 
 **Abbildung 12**: Die Breadcrumb-Leiste zeigt die aktuelle Seite und dessen Vorgänger auf der Website Sitezuordnungshierarchie
-
 
 ## <a name="step-5-adding-the-default-page-for-each-section"></a>Schritt 5: Die Standardseite für die einzelnen Abschnitte hinzufügen
 
@@ -251,19 +215,15 @@ Die Lernprogramme in unserer Website werden in verschiedene Kategorien Basisberi
 
 Wir zeigen eine ungeordnete Liste mit einem Wiederholungssteuerelement, erneut aus, aber dieses Mal mit dem wir den Titel und Beschreibung der Lernprogramme wird angezeigt. Da Markup und Code zum Ausführen dieser wird für jede ausgeführt werden müssen `Default.aspx` Seite können wir diese UI-Logik in Kapseln einer [Benutzersteuerelement](https://msdn.microsoft.com/library/y6wb1a0e.aspx). Erstellen Sie einen Ordner auf der Website namens `UserControls` und hinzufügen, die ein neues Element vom Typ mit dem Namen der Web-Benutzersteuerelement `SectionLevelTutorialListing.ascx`, und fügen Sie das folgende Markup hinzu:
 
-
 [![Hinzufügen eines neuen Web-Benutzersteuerelements in den Ordner UserControls](master-pages-and-site-navigation-cs/_static/image30.png)](master-pages-and-site-navigation-cs/_static/image29.png)
 
 **Abbildung 13**: Hinzufügen einer neuen Web-Benutzersteuerelement, das `UserControls` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image31.png))
 
-
 SectionLevelTutorialListing.ascx
-
 
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample12.aspx)]
 
 SectionLevelTutorialListing.ascx.cs
-
 
 [!code-csharp[Main](master-pages-and-site-navigation-cs/samples/sample13.cs)]
 
@@ -271,16 +231,13 @@ Im vorherigen Beispiel Repeater wir gebunden der `SiteMap` Daten des Repeaters d
 
 Nachdem Sie diesen Repeater erstellt wurde, öffnen Sie die `Default.aspx` Seiten in jedem Ordner, wechseln Sie zur Entwurfsansicht, und ziehen Sie einfach das Benutzersteuerelement aus dem Projektmappen-Explorer auf die Entwurfsoberfläche, in denen die tutorialliste angezeigt werden sollen.
 
-
 [![Das Benutzersteuerelement wurde an "default.aspx" hinzugefügt wurde](master-pages-and-site-navigation-cs/_static/image33.png)](master-pages-and-site-navigation-cs/_static/image32.png)
 
 **Abbildung 14**: Das Benutzersteuerelement wurde hinzugefügt `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image34.png))
 
-
 [![Die grundlegenden Reporting-Tutorials werden aufgeführt.](master-pages-and-site-navigation-cs/_static/image36.png)](master-pages-and-site-navigation-cs/_static/image35.png)
 
 **Abbildung 15**: Finden Sie die grundlegenden Reporting-Tutorials ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-site-navigation-cs/_static/image37.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80254135d2d363ea151e2ea70aeca988b33b0d4d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410603"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134664"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>Mithilfe von Visual Studio 2013 zum Erstellen einer einfachen ASP.NET 4.5 Web Forms-Seite
 # 
@@ -45,7 +45,6 @@ Für die Durchführung dieser exemplarischen Vorgehensweise benötigen Sie Folge
     >   
     > Wenn Sie Visual Studio verwenden, in dieser exemplarischen Vorgehensweise setzt voraus, dass Sie die **Webentwicklung** Sammlung von Einstellungen der erstmaligen Start von Visual Studio. Weitere Informationen finden Sie unter [Vorgehensweise: Wählen Sie die Umgebungseinstellungen für die Webentwicklung](https://msdn.microsoft.com/library/ff521558.aspx).
 
-
 ## <a name="creating-a-web-application-project-and-a-page"></a>Erstellen eines Webanwendungsprojekts und einer Seite
 
 <a id="sectionToggle0"></a>
@@ -69,16 +68,13 @@ In diesem Teil der exemplarischen Vorgehensweise werden Sie ein Webanwendungspro
     Visual Studio erstellt ein neues Projekt, das vordefinierte Funktionen, die basierend auf der Web Forms-Vorlage enthält. Es stellt nicht nur mit einem *Home.aspx* Seite eine *About.aspx* Seite eine *Contact.aspx* Seite, enthält jedoch auch Mitgliedschaftsfunktion, die Benutzer registriert, und speichert die Anmeldeinformationen, damit sie zu Ihrer Website anmelden können. Wenn eine neue Seite erstellt wird, in der Standardeinstellung zeigt Visual Studio die Seite im **Quelle** anzeigen, hier Sie die HTML-Elemente sehen. Die folgende Abbildung zeigt, was Sie sehen würden, in **Quelle** anzeigen, bei der Erstellung einer neuen Webseite mit dem Namen *BasicWebApp.aspx*.  
     ![Quellansicht](creating-a-basic-web-forms-page/_static/image4.png)
 
-
 ### <a name="a-tour-of-the-visual-studio-web-development-environment"></a>Einen Überblick über die Visual Studio-Webentwicklungsumgebung
-
 
 Bevor Sie fortfahren, indem Sie die Seite ändern, ist es hilfreich, sich mit der Visual Studio-Entwicklungsumgebung vertraut zu machen. Die folgende Abbildung zeigt Sie die Fenster und Tools, die in Visual Studio und Visual Studio Express für Web verfügbar sind.
 
 > [!NOTE] 
 > 
 > Dieses Diagramm zeigt das Fenster und den Fensterpositionen. Die **Ansicht** Menü können Sie zusätzliche Fenster anzeigen und neu anordnen und Ändern der Größe Windows Ihre Einstellungen anpassen. Wenn die Anordnung der Fenster bereits Änderungen vorgenommen wurden, stimmen sehen Sie in der Abbildung nicht überein.
-
 
  Visual Studio-Umgebung
 
@@ -96,14 +92,11 @@ Bevor Sie fortfahren, indem Sie die Seite ändern, ist es hilfreich, sich mit de
 - **ToolBox**. Stellt Steuerelemente und HTML-Elemente, die Sie auf der Seite ziehen können. **Toolbox** Elemente sind nach Funktionen gruppiert.
 - S **Erver Explorer**. Zeigt die Verbindungen mit der Datenbank. Wenn der Server-Explorer nicht angezeigt wird, klicken Sie auf das Menü "Ansicht" auf Server-Explorer.
 
-
 ### <a name="creating-a-new-aspnet-web-forms-page"></a>Erstellen eine neue ASP.NET Web Forms-Seite
-
 
 Beim Erstellen eine neue Web Forms-Anwendung, mit der **ASP.NET-Webanwendung** -Projektvorlage, die Visual Studio fügt einer ASP.NET-Seite (Web Forms-Seite), die mit dem Namen *"default.aspx"* sowie wie verschiedene andere Dateien und Ordner. Sie können die *"default.aspx"* Seite als Startseite für Ihre Webanwendung. Allerdings werden Sie in dieser exemplarischen Vorgehensweise erstellen und Arbeiten mit einer neuen Seite.
 
 ### <a name="to-add-a-page-to-the-web-application"></a>Hinzufügen eine Seite an die Webanwendung
-
 
 1. Schließen der *"default.aspx"* Seite. Zu diesem Zweck klicken Sie auf die Registerkarte, die den Dateinamen zeigt an, und klicken Sie dann auf die Option "Schließen".
 2. In **Projektmappen-Explorer**, mit der rechten Maustaste in den Namen der Web-Anwendung (in diesem Tutorial der Anwendungsname wird **BasicWebSite**), und klicken Sie dann auf **hinzufügen**  - &gt; **Neues Element**.   
@@ -113,14 +106,11 @@ Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 4. Klicken Sie auf **hinzufügen** der Webseite zu Ihrem Projekt hinzufügen.  
 Visual Studio erstellt die neue Seite, und öffnet sie.
 
-
 ### <a name="adding-html-to-the-page"></a>Hinzufügen von HTML auf der Seite
-
 
 In diesem Teil der exemplarischen Vorgehensweise fügen Sie statischen Text auf der Seite hinzu.
 
 ### <a name="to-add-text-to-the-page"></a>Hinzufügen von Text auf der Seite
-
 
 1. Klicken Sie am unteren Rand des Dokumentfensters angezeigt, auf die **Entwurf** Registerkarte zu wechseln **Entwurf** anzeigen.
 
@@ -136,14 +126,11 @@ In diesem Teil der exemplarischen Vorgehensweise fügen Sie statischen Text auf 
     Sehen Sie den HTML-Code in **Quelle** anzeigen, die Sie erstellt, wenn die Eingabe im **Entwurf** anzeigen.  
     ![Webseite mit statischem Text](creating-a-basic-web-forms-page/_static/image8.png)
 
-
 ### <a name="running-the-page"></a>Ausführen der Seite
-
 
 Bevor Sie fortfahren, indem Sie das Hinzufügen von Steuerelementen auf der Seite, können Sie ihn ausführen.
 
 ### <a name="to-run-the-page"></a>Um die Seite auszuführen
-
 
 1. In **Projektmappen-Explorer**, mit der rechten Maustaste *FirstWebPage.aspx* , und wählen Sie **als Startseite festlegen**.
 2. Drücken Sie **STRG + F5** um die Seite auszuführen.
@@ -153,9 +140,7 @@ Bevor Sie fortfahren, indem Sie das Hinzufügen von Steuerelementen auf der Seit
     Auf eine Seite im Browser anzuzeigen. Sie können auch mit der rechten Maustaste der Seite im **Projektmappen-Explorer** , und wählen Sie **in Browser anzeigen**.
 3. Schließen Sie den Browser, um die Web-Anwendung zu beenden.
 
-
 ## <a name="adding-and-programming-controls"></a>Hinzufügen und Programmieren von Steuerelementen
-
 
 <a id="sectionToggle1"></a>
 
@@ -164,7 +149,6 @@ Sie werden jetzt Serversteuerelemente der Seite hinzufügen. Steuerelemente, z. 
 Fügen Sie eine [Schaltfläche](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) -Steuerelement, ein [Textfeld](https://msdn.microsoft.com/library/system.web.ui.webcontrols.textbox.aspx) -Steuerelement, und ein [Bezeichnung](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) die Steuerung an die Seite, und Schreiben von Code zum Behandeln von der [klicken Sie auf](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) -Ereignis für die [Schaltfläche](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) Steuerelement.
 
 ### <a name="to-add-controls-to-the-page"></a>Zum Hinzufügen von Steuerelementen auf der Seite
-
 
 1. Klicken Sie auf die **Entwurf** Registerkarte zu wechseln **Entwurf** anzeigen.
 2. Fügen die Einfügemarke am Ende der **Willkommen bei Visual Web Developer** Text, und drücken Sie **EINGABETASTE** mindestens fünf Mal etwas Platz im vornehmen der **Div** im Element.
@@ -179,14 +163,11 @@ Beachten Sie, dass Sie möglicherweise zum Erweitern der **Toolbox** Fenster auf
 
     ![Drei Steuerelemente in der Entwurfsansicht](creating-a-basic-web-forms-page/_static/image9.png "drei Steuerelemente in der Entwurfsansicht")
 
-
 ### <a name="setting-control-properties"></a>Festlegen von Steuerelementeigenschaften
-
 
 Visual Studio bietet Ihnen verschiedene Möglichkeiten zum Festlegen der Eigenschaften von Steuerelementen auf der Seite. In diesem Teil der exemplarischen Vorgehensweise legen Sie Eigenschaften in beiden **Entwurf** anzeigen und **Quelle** anzeigen.
 
 ### <a name="to-set-control-properties"></a>Festlegen von Steuerelementeigenschaften
-
 
 1. Zeigen Sie zunächst die **Eigenschaften** Windows durch Auswahl aus der **Ansicht** Menü -&gt; **Other Windows**  - &gt; **Fenster "Eigenschaften"**. Wählen Sie beispielsweise auch **F4** zum Anzeigen der **Eigenschaften** Fenster.
 2. Wählen Sie die [Schaltfläche](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) -Steuerelement, und klicken Sie dann im der **Eigenschaften** legen den Wert der **Text** zu **Anzeigenamen**. Der eingegebene Text wird auf die Schaltfläche im Designer angezeigt, wie in der folgenden Abbildung dargestellt.
@@ -217,14 +198,11 @@ Visual Studio bietet Ihnen verschiedene Möglichkeiten zum Festlegen der Eigensc
 
     Die **ForeColor** Attribut mit der Farbe, die Sie ausgewählt haben, einschließlich der schließenden Klammer, die abgeschlossen wurde.
 
-
 ### <a name="programming-the-button-control"></a>Programmieren das Schaltflächen-Steuerelement
-
 
 In dieser exemplarischen Vorgehensweise schreiben Sie Code, der den Namen gelesen werden, die der Benutzer, in das Textfeld eingibt, und klicken Sie dann zeigt den Namen in der [Bezeichnung](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) Steuerelement.
 
 ### <a name="add-a-default-button-event-handler"></a>Fügen Sie ein Standard-Ereignishandler hinzu.
-
 
 1. Wechseln Sie zur **Entwurf** anzeigen.
 2. Doppelklicken Sie auf die [Schaltfläche](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) Steuerelement.
@@ -252,14 +230,11 @@ In dieser exemplarischen Vorgehensweise schreiben Sie Code, der den Namen gelese
 
     Ereignishandlermethoden können beliebig benannt werden. der Name, den Sie sehen, ist die Standardnamen von Visual Studio erstellt. Der wichtigste Punkt ist, dass der Name verwendet wird, für die **OnClick** -Attribut in der HTML-Code muss dem Namen einer Methode im Code-Behind definiert entsprechen.
 
-
 ### <a name="running-the-page"></a>Ausführen der Seite
-
 
 Sie können nun die Steuerelemente auf der Seite testen.
 
 ### <a name="to-run-the-page"></a>Um die Seite auszuführen
-
 
 1. Drücken Sie **STRG + F5** um die Seite im Browser auszuführen. Wenn ein Fehler auftritt, überprüfen Sie die obigen Schritte ausgeführt.
 2. Geben Sie einen Namen in das Textfeld ein, und klicken Sie auf die **Anzeigenamen** Schaltfläche.
@@ -270,7 +245,6 @@ Sie können nun die Steuerelemente auf der Seite testen.
     In der Quellcode der Seite sehen Sie HTML, ohne Servercode. Insbesondere nicht angezeigt. die **&lt;Asp:&gt;** Elemente, die Sie, im gearbeitet haben **Quelle** anzeigen. Wenn die Seite ausgeführt wird, wird von ASP.NET verarbeitet die Serversteuerelemente und rendert die HTML-Elemente auf der Seite, die Funktionen ausführen, die die Darstellung des Steuerelements. Z. B. die **&lt;Asp: Button&gt;** Steuerelement wird als HTML gerendert **&lt;Eingabetyp =&quot;übermitteln&quot; &gt;** Element.
 4. Schließen Sie den Browser.
 
-
 ## <a name="working-with-additional-controls"></a>Arbeiten mit zusätzlichen Steuerelemente
 
 <a id="sectionToggle2"></a>
@@ -280,7 +254,6 @@ In diesem Teil der exemplarischen Vorgehensweise arbeiten Sie mit der [Kalender]
 In diesem Abschnitt fügen Sie eine [System.Web.UI.WebControls.Calendar](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) die Steuerung an die Seite, und formatieren Sie ihn.
 
 ### <a name="to-add-a-calendar-control"></a>Ein Kalender-Steuerelement hinzufügen
-
 
 1. Wechseln Sie in Visual Studio zum **Entwurf** anzeigen.
 2. Aus der **Standard** Teil der **Toolbox**, ziehen Sie eine [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) steuern, auf die Seite, und legen Sie sie unterhalb der **Div** Element, die anderen Steuerelemente enthält.
@@ -300,14 +273,11 @@ In diesem Abschnitt fügen Sie eine [System.Web.UI.WebControls.Calendar](https:/
 
     ![Monatskalender-Steuerelement in der Quellansicht](creating-a-basic-web-forms-page/_static/image15.png "Monatskalender-Steuerelement in der Quellansicht")
 
-
 ### <a name="programming-the-calendar-control"></a>Programmieren das Kalender-Steuerelement
-
 
 Programmieren Sie in diesem Abschnitt die [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) -Steuerelement das aktuell ausgewählte Datum angezeigt.
 
 ### <a name="to-program-the-calendar-control"></a>Das Kalender-Steuerelement zu programmieren
-
 
 1. In **Entwurf** anzuzeigen, doppelklicken Sie auf die [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) Steuerelement.
 
@@ -316,19 +286,15 @@ Programmieren Sie in diesem Abschnitt die [Kalender](https://msdn.microsoft.com/
 
     [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
-
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
 
     Der obige Code wird der Text des Label-Steuerelements auf das ausgewählte Datum des Kalender-Steuerelements.
 
-
 ### <a name="running-the-page"></a>Ausführen der Seite
-
 
 Sie können jetzt auf den Kalender testen.
 
 ### <a name="to-run-the-page"></a>Um die Seite auszuführen
-
 
 1. Drücken Sie **STRG + F5** um die Seite im Browser auszuführen.
 2. Klicken Sie auf ein Datum im Kalender.
@@ -339,9 +305,7 @@ Sie können jetzt auf den Kalender testen.
     Beachten Sie, dass die [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) Steuerelement auf der Seite gerendert wurde eine **Tabelle**, mit jeder Tag als eine **td** Element.
 4. Schließen Sie den Browser.
 
-
 ## <a name="next-steps"></a>Nächste Schritte
-
 
 <a id="nextStepsToggle"></a>
 

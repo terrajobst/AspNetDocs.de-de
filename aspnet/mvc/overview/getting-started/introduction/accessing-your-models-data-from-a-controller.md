@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91948b1b997b083606a53e6e02bc00d2c58cb791
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 17a176b8bf3b1de8a0ff9145ab6f5f26cf210503
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59418143"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120862"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>Zugreifen auf Modelldaten anhand eines Controllers
 
@@ -57,12 +57,10 @@ Führen Sie die Anwendung, und klicken Sie auf die **MVC Movie** Link (oder navi
 
 Klicken Sie auf den Link **Neu erstellen**. Geben Sie einige Details zu einem Film, und klicken Sie dann auf die **erstellen** Schaltfläche.
 
-
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
 > Sie können im Feld für den Preis Dezimaltrennzeichen oder Kommas eingeben möglicherweise nicht. zur Unterstützung von jQuery-Validierung für nicht englische Gebietsschemas, in denen ein Komma (&quot;,&quot;) für ein Dezimaltrennzeichen und einem nicht-US-englischen Datums-und Uhrzeitformate, müssen Sie enthalten *globalize.js* und Ihren speziellen  *Cultures/globalize.Cultures.js* Datei (aus [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) und JavaScript verwenden `Globalize.parseFloat`. Ich zeige, wie Sie dazu im nächsten Tutorial. Geben Sie einstweilen ganze Zahlen wie 10 ein.
-
 
 Klicken auf die **erstellen** -Schaltfläche bewirkt, dass das Formular an den Server gesendet werden, in dem die Filminformationen in der Datenbank gespeichert. Sie werden dann auf umgeleitet, die */Movies* URL hier Sie den neu erstellten Film in der Auflistung sehen.
 

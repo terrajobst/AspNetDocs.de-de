@@ -8,15 +8,14 @@ ms.date: 01/15/2019
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 9e6b0b3b86839efa393659531d8b74770226f383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bdf20549fccab5d644e35fdf4ce351540c8620d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401464"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119887"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>Überblick und Behandeln von Ereignissen im Zusammenhang mit der Verbindungslebensdauer in SignalR
-
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -148,7 +147,6 @@ Einige netzwerkumgebungen schließen absichtlich Verbindungen im Leerlauf, und e
 >
 > **Wichtig:** Die Abfolge der Ereignisse, die hier beschriebenen ist nicht garantiert. SignalR versucht jede Verbindung Objektlebensdauer-Ereignisse in einer vorhersagbaren Weise nach diesem Schema heraufstufen, aber es gibt viele Varianten der Netzwerkereignisse und viele Möglichkeiten, die in denen zugrunde liegenden Communications-Frameworks wie Transport APIs diese behandeln. Z. B. die `Reconnected` -Ereignis kann nicht ausgelöst werden, wenn der Client die Verbindung wiederherstellt, oder die `OnConnected` Handler auf dem Server kann ausgeführt werden, wenn der Versuch zum Herstellen einer Verbindung nicht erfolgreich ist. Dieses Thema beschreibt nur die Effekte, die normalerweise durch bestimmte normalen Betrieb erstellt werden würde.
 
-
 <a id="clientdisconnect"></a>
 
 ### <a name="client-disconnection-scenarios"></a>Trennung von Clientszenarien
@@ -247,7 +245,6 @@ Eine integrierte Server-API für die Trennung der Clientverbindungen keinen für
 
 > [!WARNING]
 > Sicherheit – weder diese Methode zum Trennen der Clientverbindungen noch die vorgeschlagene integrierte-API geht es um das Szenario der gehackte Clients, die bösartigen Code ausgeführt werden, da die Clients können herzustellen, oder der gehackte Code möglicherweise entfernt. die `stopClient` -Methode, oder ändern welcher Overhead entsteht. Die entsprechende Stelle zum Implementieren von zustandsbehafteten Denial-of-Service (DOS) Protection ist nicht in das Framework oder der Server-Ebene, sondern im Front-End-Infrastruktur.
-
 
 <a id="detectingreasonfordisconnection"></a>
 ## <a name="detecting-the-reason-for-a-disconnection"></a>Den Grund für eine Trennung der Verbindung ermitteln

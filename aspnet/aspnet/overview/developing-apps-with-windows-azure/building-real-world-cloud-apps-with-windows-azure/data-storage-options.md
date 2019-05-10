@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8656f4a4211c2e97d71d76dd2f799412539896ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425391"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118850"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>Datenspeicheroptionen (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Die meisten Benutzer werden verwendet, um relationale Datenbanken, und sie neigen dazu, andere Optionen für die datenspeicherung übergangen, wenn sie eine Cloud-app entwerfen. Das Ergebnis kann suboptimaler Leistung, hohe Ausgaben oder noch schlimmer, sein, da [NoSQL](http://en.wikipedia.org/wiki/NoSQL) (nicht relationale) Datenbanken können einige Aufgaben effizienter als relationale Datenbanken verarbeiten. Wenn Kunden uns Hilfe lösen von Problemen Speicher wichtiger Daten anfordern, ist es häufig, da sie eine relationale Datenbank haben, in denen eine der Optionen NoSQL würde besser gearbeitet haben. In solchen Situationen hätten Kunden besser, wenn sie die NoSQL-Lösung implementiert hat, bevor Sie die app in einer produktionsumgebung bereitstellen.
 

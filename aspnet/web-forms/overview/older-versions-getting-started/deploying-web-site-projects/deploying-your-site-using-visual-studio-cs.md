@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: cde4ee53-a5d0-4937-a54b-67877e8266c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9512685672e42091e7be11c5710a2434ca8b0488
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f669e86ceeb53469f99fa3ea4619b4666c4019a0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392416"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133461"
 ---
 # <a name="deploying-your-site-using-visual-studio-c"></a>Bereitstellen einer Website mithilfe von Visual Studio (C#)
 
@@ -23,15 +23,12 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Visual Studio enthält Tools zum Bereitstellen einer Websites. Weitere Informationen zu diesen Tools in diesem Tutorial.
 
-
 ## <a name="introduction"></a>Einführung
 
 Im vorherige Tutorial wurde erläutert, wie zum Bereitstellen einer einfachen ASP.NET Web-Anwendung auf einen Webhostinganbieter. Insbesondere das Lernprogramm wurde gezeigt, wie z. B. FileZilla FTP-Client verwenden, um die erforderlichen Dateien aus der Entwicklungsumgebung in die produktionsumgebung zu übertragen. Visual Studio bietet auch integrierte Tools, um die Bereitstellung in einem Webhostinganbieter zu erleichtern. In diesem Tutorial werden zwei dieser Tools: das Tool "Website kopieren", in dem Sie Dateien verschieben in und aus einem Remotewebserver installiert, die über FTP oder FrontPage-Servererweiterungen; und das Tool "Veröffentlichen", das die gesamte Website zu einem bestimmten Ort kopiert.
 
-
 > [!NOTE]
 > Andere Bereitstellung in Zusammenhang stehen Tools von Visual Studio bereitgestellten sind [Projekten](https://msdn.microsoft.com/library/wx3b589t.aspx) und [Web-Bereitstellungsprojekte](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) -Add-In. Web-Setup-Projekte Verpacken einer Website Inhalte und Informationen zur Konfiguration in eine einzelne MSI-Datei. Diese Option ist besonders nützlich für Websites, die in einem Intranet bereitgestellt werden oder für Unternehmen, die eine vorkonfigurierte Webanwendung zu verkaufen, die Kunden auf ihre eigenen Webserver installieren. Das Web Deployment Projects-Add-In ist, dass für eine Visual Studio-Add-In, das erleichtert die Angabe Konfigurationsunterschiede zwischen für entwicklungsumgebungen sowie produktionsumgebungen erstellen. Web-Setup-Projekte werden in dieser tutorialreihe nicht behandelt; Web-Bereitstellungsprojekte werden zusammengefasst, der [ *Common Configuration Unterschiede zwischen Entwicklungs- und Produktionsumgebungen* ](common-configuration-differences-between-development-and-production-cs.md) Tutorial.
-
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>Bereitstellen einer Website mithilfe des Tools zum Kopieren von Website
 
@@ -44,11 +41,9 @@ Werfen wir einen Blick auf die mit dem Kopieren von Websites-Tool zum Veröffent
 
 Starten Sie das Kopieren von Websites-Tool-Projekt, indem Sie auf das Symbol "Website kopieren" im Projektmappen-Explorer (in Abbildung 1 ist dieses Symbol markiert); Alternativ können Sie die Option "Website kopieren" aus dem Menü für die Website auswählen. Beide Vorgehensweisen startet die Website kopieren-Benutzeroberfläche in Abbildung 1 dargestellt; nur im linken Bereich in Abbildung 1 wird angezeigt, da wir noch für die Verbindung mit einem Remoteserver verfügen.
 
-
 [![Der Website Tools zum Kopieren der Benutzeroberfläche ist in zwei Bereiche unterteilt](deploying-your-site-using-visual-studio-cs/_static/image2.png)](deploying-your-site-using-visual-studio-cs/_static/image1.png)
 
 **Abbildung 1**: Der Website Tools zum Kopieren der Benutzeroberfläche ist in zwei Bereiche unterteilt ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image3.png))
-
 
 Zum Bereitstellen von unserer Website müssen wir zuerst mit dem Webhostinganbieter verbinden. Klicken Sie auf die Schaltfläche "Verbinden", am oberen Rand der Benutzeroberfläche für die Website kopieren. Dies zeigt das Dialogfeld "Website öffnen" in Abbildung 2 dargestellt.
 
@@ -61,39 +56,31 @@ Sie können an die Zielwebsite verbinden, indem Sie eine der vier Optionen aus d
 
 Die meisten Web-Host-Anbieter unterstützen, FTP, aber weniger FrontPage-Servererweiterung Unterstützung bieten. Aus diesem Grund habe ich die FTP-Site-Option ausgewählt und dann die Verbindungsinformationen eingegeben, wie in Abbildung 2 dargestellt.
 
-
 [![Geben Sie die Zielwebsite](deploying-your-site-using-visual-studio-cs/_static/image5.png)](deploying-your-site-using-visual-studio-cs/_static/image4.png)
 
 **Abbildung 2**: Geben Sie die Zielwebsite ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image6.png))
-
 
 Nachdem Sie eine Verbindung herstellen, wird das Kopieren von Websites-Tool lädt die Dateien am Remotestandort im rechten Bereich und gibt den Status der einzelnen Dateien: Neue, gelöschte, geänderte oder unverändert. Sie können eine Datei vom lokalen Standort zum remote-standortsystemserver oder eine-umgekehrt kopieren.
 
 Fügen Sie eine neue Seite auf das Projekt BookReviewsWSP und diese dann bereitstellen, damit wir das Tool "Website kopieren" in Aktion sehen können. Erstellen Sie eine neue ASP.NET-Seite in Visual Studio, in das Stammverzeichnis, das mit dem Namen `Privacy.aspx`. Haben Sie die Seite, die die Masterseite verwenden `Site.master` und die Datenschutzrichtlinie Ihres Standorts zu dieser Seite hinzufügen. Abbildung 3 zeigt Visual Studio, nachdem dieser Seite erstellt wurde.
 
-
 [![Fügen Sie eine neue Seite mit dem Namen &lt;Code&gt;Privacy.aspx&lt;/code&gt; zum Stammordner der Website](deploying-your-site-using-visual-studio-cs/_static/image8.png)](deploying-your-site-using-visual-studio-cs/_static/image7.png)
 
 **Abbildung 3**: Fügen Sie eine neue Seite mit dem Namen `Privacy.aspx` zum Stammordner der Website ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image9.png))
 
-
 Als Nächstes geben Sie an der Benutzeroberfläche für die Website kopieren zurück. Wie in Abbildung 4 gezeigt, enthält im linke Bereich nun die neuen Dateien - `Policy.aspx` und `Policy.aspx.cs`. Diese Dateien sind, markiert, mit einem Pfeilsymbol und einen Status der neuen, gibt an, dass sie am lokalen Standort, aber nicht auf der Remotewebsite vorhanden sind.
-
 
 [![Das Tool für die Copy-Website enthält neue &lt;Code&gt;Privacy.aspx&lt;/code&gt; Seite im linken Bereich](deploying-your-site-using-visual-studio-cs/_static/image11.png)](deploying-your-site-using-visual-studio-cs/_static/image10.png)
 
 **Abbildung 4**: Das Tool für die Copy-Website enthält neue `Privacy.aspx` Seite im linken Bereich ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image12.png))
 
-
 Zum Bereitstellen von neuen Dateien, wählen Sie sie aus, und klicken Sie dann auf das Pfeilsymbol, um sie mit dem Remotestandort zu übertragen. Nach Abschluss die Übertragung der `Policy.aspx` und `Policy.aspx.cs` Dateien vorhanden sind, auf der lokalen und remote-Website mit dem Status unverändert.
 
 Zusammen mit der neue Dateien auflisten, werden die Tools zum Kopieren alle Dateien, die sich zwischen den lokalen und remote-Standorten unterscheiden. Um dies in Aktion zu sehen, zurück zu den `Privacy.aspx` Seite, und fügen Sie ein paar mehr Wörter zur Datenschutzrichtlinie. Speichern Sie die Seite, und klicken Sie dann zurück an das Tool für die Website kopieren. Wie in Abbildung 5 gezeigt, die `Privacy.aspx` Seite im linken Bereich weist den Status geändert, der angibt, dass sie mit dem Remotestandort nicht mehr synchron ist.
 
-
 [![Das Tool zum Kopieren von Website gibt an, dass die &lt;Code&gt;Privacy.aspx&lt;/code&gt; Seite geändert wurde](deploying-your-site-using-visual-studio-cs/_static/image14.png)](deploying-your-site-using-visual-studio-cs/_static/image13.png)
 
 **Abbildung 5**: Das Tool zum Kopieren von Website gibt an, dass die `Privacy.aspx` Seite geändert wurde ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image15.png))
-
 
 Die Tools zum Kopieren gibt auch an, wenn eine Datei seit letztem Kopiervorgang gelöscht wurde. Löschen der `Privacy.aspx` aus den lokalen Projekt, und aktualisieren Sie das Tool für die Website kopieren. Die `Privacy.aspx` und `Privacy.aspx.cs` verbleiben im linken Bereich aufgelisteten, jedoch haben Sie den Status gelöscht, der angibt, dass sie seit letztem Kopiervorgang entfernt wurden.
 
@@ -101,12 +88,10 @@ Die Tools zum Kopieren gibt auch an, wenn eine Datei seit letztem Kopiervorgang 
 
 Eine weitere Möglichkeit zum Bereitstellen Ihrer Web-Anwendung aus Visual Studio ist die Verwendung der Option "Veröffentlichen", über das Menü "Build" zugegriffen werden kann. Die Option "Veröffentlichen" explizit kompiliert die Anwendung und kopiert dann alle erforderlichen Dateien bis zur angegebenen Remotestandort. Wie wir in Kürze sehen werden, ist die Option "Veröffentlichen" mehr als das Tool für die Website kopieren wir. Während das Kopieren von Websites-Tool Sie die Dateien auf dem lokalen Standorten und Remotestandorten können und ermöglicht das Hochladen oder einzelne Dateien bei Bedarf heruntergeladen werden, wird die Option "Veröffentlichen" die gesamte Webanwendung bereitgestellt.
 
-
 Zusätzlich zum Kopieren alle erforderlichen Dateien an, mit dem angegebenen Remotestandort, wird die Anwendung auch explizit von der Option "Veröffentlichen" kompiliert. Angesichts der Tatsache, dass die Web Application Projects müssen muss explizit kompiliert Es überrascht nicht stammen, dass die Option "Veröffentlichen" für die Web Application Projects verfügbar ist. Was etwas überraschend sein mag, ist, dass die Option "Veröffentlichen" auch für Websiteprojekte verfügbar ist. Wie erwähnt in der [ *bestimmen was Dateien müssen bereitgestellt werden* ](determining-what-files-need-to-be-deployed-cs.md) Tutorial Websiteprojekte explizit durch einen Prozess aus, um genannte kompiliert werden kann *Vorkompilierung*. Dieses Tutorial konzentriert sich auf die Web Application Projects mit der Option "Veröffentlichen"; eine zukünftige Tutorial wird die Vorkompilierung, an welchem Punkt wir um Blick auf die Verwendung der Option "Veröffentlichen" mit Websiteprojekten zurückgeben.
 
 > [!NOTE]
 > Obwohl die Option "Veröffentlichen" in Visual Studio für Websiteprojekten und Webanwendungsprojekten verfügbar ist, bietet Visual Web Developer nur die Option "Veröffentlichen" für Webanwendungsprojekte.
-
 
 Sehen wir uns, die mit der Option "Veröffentlichen" Book Reviews-Anwendung bereitstellen. Zunächst öffnen in Visual Studio BookReviewsWAP (das Webanwendungsprojekt). Wählen Sie das BookReviewsWAP Build-Projekt, aus dem Menü "Veröffentlichen". Daraufhin wird ein Dialogfeld, das Ziel, neben anderen Konfigurationsoptionen dazu aufgefordert werden (siehe Abbildung 6). Viel können z. B. mit dem Tool für die Website kopieren Sie einen Speicherort eingeben, der auf einem lokalen Ordner, eine lokale Website in IIS, eine remote-Website, die FrontPage-Servererweiterungen oder ein FTP-Serveradresse unterstützt verweist. Sie können auswählen, ob die Dateien auf dem remote-Web-Server mit den bereitgestellten Dateien zu ersetzen oder der gesamte Inhalt auf der Remotewebsite vor der Veröffentlichung zu löschen. Sie können auch angeben, ob kopiert:
 
@@ -116,21 +101,17 @@ Sehen wir uns, die mit der Option "Veröffentlichen" Book Reviews-Anwendung bere
 
 Es gibt auch eine Option zum Hochladen von den Inhalt der `App_Data` Ordner.
 
-
 [![Geben Sie die Zielwebsite](deploying-your-site-using-visual-studio-cs/_static/image17.png)](deploying-your-site-using-visual-studio-cs/_static/image16.png)
 
 **Abbildung 6**: Geben Sie die Zielwebsite ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image18.png))
-
 
 Für die Anwendung Buchbewertung enthält die remote-standortsystemserver bereitgestellten beim Kopieren der BookReviewsWSP Projekts über die Tools zum Kopieren die Dateien. Daher müssen wir die Option "Veröffentlichen" starten, indem alle vorhandenen Inhalte löschen. Lassen Sie uns einfach kopieren Sie außerdem viele Realisierungslinks enthalten die produktionsumgebung nicht benötigte Quelldateien und die Projektdateien, anstatt die erforderlichen Dateien. Klicken Sie nachdem Sie diese Optionen angegeben haben auf die Schaltfläche "Veröffentlichen". Den nächsten Sekunden wird Visual Studio die erforderlichen Dateien an den Zielstandort Bereitstellen über den Fortschritt im Ausgabefenster anzeigen.
 
 Abbildung 7 zeigt die Dateien auf der FTP-Site nach Abschluss des Veröffentlichungsvorgangs. Beachten Sie, dass nur die Markupseiten und die erforderlichen Server - und Client-Side Supportdateien hochgeladen wurden.
 
-
 [![Nur die benötigten Dateien wurden in der Produktionsumgebung veröffentlicht werden.](deploying-your-site-using-visual-studio-cs/_static/image20.png)](deploying-your-site-using-visual-studio-cs/_static/image19.png)
 
 **Abbildung 7**: Nur die erforderlichen Dateien wurden veröffentlicht in der Produktionsumgebung ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-visual-studio-cs/_static/image21.png))
-
 
 Die Option "Veröffentlichen" ist ein weniger facettenreichen Tool als das Tool für die Website kopieren. Während die Website kopieren-Tool können Sie überprüfen die Dateien auf dem lokalen Standorten und Remotestandorten und Unterschiede festzustellen, bietet die Option "Veröffentlichen" Schnittstelle nicht. Darüber hinaus ermöglicht das Kopieren von Websites-Tool einmalige Änderungen, hochladen oder einzelne Dateien werden gelöscht. Die Option "Veröffentlichen" lässt sich nicht auf eine differenzierte Kontrolle aus. Stattdessen veröffentlicht es den *gesamte* Anwendung. Dieses Verhalten hat vor- und Nachteile. Auf der Seite plus wissen Sie, wenn die Option "Veröffentlichen" verwenden, die Sie Sie vergessen wird nicht, um eine wichtige Datei hochzuladen. Aber bedenken, was geschieht, wenn Sie eine kleine Änderung, auf eine große Website vorgenommen haben, klicken Sie mit der Option "Veröffentlichen" kann nicht aktualisiert werden, Seite oder zwei, die geändert wurde, aber stattdessen müssen Sie warten, während Visual Studio den gesamten Standort bereitgestellt.
 

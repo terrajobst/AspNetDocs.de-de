@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: b0abec39-a1c9-422d-ba9a-ef16f6185af8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2d4c786ca10e77353ac8b4746138cb1e314585ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5f9832cb54e7791408fa1a7ece20077c2dfbc25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383784"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133489"
 ---
 # <a name="modifying-animations-from-the-server-side-c"></a>Ändern von Animationen von Serverseite (c#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation9.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation9CS.pdf)
 
 > Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Animationen können auch auf der Serverseite geändert werden
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -53,7 +52,6 @@ Das Steuerelement-Toolkit bietet derzeit jedoch keine API-Zugriff, um die einzel
 Fügen Sie abschließend die `AnimationExtender` die Steuerung an die aktuelle Seite innerhalb der `<form runat="server">` -Element, um sicherzustellen, dass die Animation enthalten ist und ausgeführt wird:
 
 [!code-html[Main](modifying-animations-from-the-server-side-cs/samples/sample6.html)]
-
 
 [![Die Animation wird mithilfe von serverseitiger C#/VB-Code erstellt.](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
 

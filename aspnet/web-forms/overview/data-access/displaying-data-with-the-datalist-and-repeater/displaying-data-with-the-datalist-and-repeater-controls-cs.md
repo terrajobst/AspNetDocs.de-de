@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 0591cacc-b34b-4cf6-885e-2c9953bb0946
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bf9930a3704d4ae6f0cb012a1512e23b29435f76
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a8930b9c5c25b40f667817a254a4ec4b6a19928a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400190"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134545"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>Anzeigen von Daten mit dem DataList- und Wiederholungssteuerelement (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_29_CS.exe) oder [PDF-Datei herunterladen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/datatutorial29cs1.pdf)
 
 > In den vorherigen Tutorials haben wir das GridView-Steuerelement verwendet, um Daten anzuzeigen. In diesem Tutorial beginnen, sehen wir uns erstellen allgemeine reporting Muster mit dem DataList- und Wiederholungssteuerelement-Steuerelementen, beginnend mit den Grundlagen von Daten mit diesen Steuerelementen anzeigt.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -42,88 +41,69 @@ Bevor wir in diesem Tutorial beginnen, können Sie zuerst nehmen einen Moment Ze
 - `RepeatColumnAndDirection.aspx`
 - `NestedControls.aspx`
 
-
 ![Erstellen Sie einen Ordner DataListRepeaterBasics, und fügen Sie die Tutorial ASP.NET-Seiten](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image1.png)
 
 **Abbildung 1**: Erstellen Sie eine `DataListRepeaterBasics` Ordner, und fügen Sie dem Tutorial ASP.NET-Seiten hinzu
 
-
 Öffnen der `Default.aspx` Seite, und ziehen Sie die `SectionLevelTutorialListing.ascx` Benutzersteuerelement aus der `UserControls` Ordner auf die Entwurfsoberfläche. Dieses Benutzersteuerelement, die wir in den erstellt die [Masterseiten und Sitenavigation](../introduction/master-pages-and-site-navigation-cs.md) Tutorial, listet die Sitemap und zeigt Sie in den Tutorials aus dem aktuellen Abschnitt in einer Liste mit Aufzählungszeichen.
-
 
 [![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image2.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image4.png))
 
-
 Um die Anzeige der Liste mit Aufzählungszeichen müssen wir die DataList- oder Wiederholungssteuerelement Lernprogramme, die wir erstellen, die um sie der Sitemap hinzuzufügen. Öffnen der `Web.sitemap` Datei, und fügen Sie das folgende Markup nach dem Hinzufügen von benutzerdefinierten Schaltflächen Site Map Knoten Markup hinzu:
 
-
 [!code-xml[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample1.xml)]
-
 
 ![Aktualisieren Sie die Website-Karte, um die neuen ASP.NET-Seiten enthalten](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image5.png)
 
 **Abbildung 3**: Aktualisieren Sie die Website-Karte, um die neuen ASP.NET-Seiten enthalten
 
-
 ## <a name="step-2-displaying-product-information-with-the-datalist"></a>Schritt 2: Anzeigen von Produktinformationen und das DataList-Steuerelement
 
 Ähnlich wie das FormView-Steuerelement, hängt von das DataList-Steuerelement s, die gerenderte Ausgabe Vorlagen statt BoundFields CheckBoxFields und So weiter. Im Gegensatz zu FormView DataList-Steuerelement soll einen Satz von Datensätzen anstelle einer einzelne anzuzeigen. Lassen Sie s, die mit diesem Tutorial mit einem Blick auf die Product-Bindungsinformationen in einem DataList-Steuerelement beginnen. Öffnen Sie zunächst die `Basics.aspx` auf der Seite die `DataListRepeaterBasics` Ordner. Ziehen Sie jetzt einem DataList-Steuerelement aus der Toolbox in den Designer. Wie Abbildung 4 zeigt, bevor Sie die Vorlagen DataList s angeben, wird der Designer als ein graues Feld.
-
 
 [![Ziehen Sie DataList-Steuerelement wird aus der Toolbox in den Designer.](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image6.png)
 
 **Abbildung 4**: Ziehen Sie das DataList-Steuerelement aus der Toolbox auf die Designer ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image8.png))
 
-
 Aus DataList-Steuerelement s Smarttag, fügen Sie eine neue "ObjectDataSource" hinzu und konfigurieren Sie ihn zur Verwendung der `ProductsBLL` Klasse s `GetProducts` Methode. Da wir erneut einem nur-Lese DataList-Steuerelement in diesem Tutorial erstellen Festlegen der Dropdown-Liste (keine), in den Assistenten s einfügen, aktualisieren und Löschen von Registerkarten.
-
 
 [![Aktivieren Sie zum Erstellen einer neuen "ObjectDataSource"](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image10.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image9.png)
 
 **Abbildung 5**: Deaktivieren Sie zum Erstellen einer neuen "ObjectDataSource" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image11.png))
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image13.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image12.png)
 
 **Abbildung 6**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image14.png))
-
 
 [![Abrufen von Informationen zu allen Produkten mithilfe der GetProducts-Methode](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image16.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image15.png)
 
 **Abbildung 7**: Abrufen von Informationen über alle der Produkte mithilfe der `GetProducts` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image17.png))
 
-
 Nach dem Konfigurieren von dem ObjectDataSource-Steuerelement aus, und es DataList-Steuerelement über die Smarttags zugeordnet, Visual Studio erstellt automatisch eine `ItemTemplate` im DataList-Steuerelement, das den Namen und Wert der einzelnen Datenfelder, die von der Datenquelle zurückgegebenen anzeigt (finden Sie unter der unten stehende Markup). Diese Standardeinstellung `ItemTemplate` Darstellung ist identisch mit den Vorlagen, die automatisch erstellt, wenn eine Datenquelle an das FormView-Steuerelement mithilfe des Designers zu binden.
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample2.aspx)]
 
 > [!NOTE]
 > Denken Sie daran, dass beim Binden einer Datenquelle an einem FormView-Steuerelement über das FormView-s-Smarttag Visual Studio erstellt eine `ItemTemplate`, `InsertItemTemplate`, und `EditItemTemplate`. Mit dem DataList, jedoch nur eine `ItemTemplate` erstellt wird. Dies ist da DataList-Steuerelement nicht die gleiche integrierte bearbeiten und Einfügen von FormView bereitgestellte Unterstützung verfügt. DataList-Steuerelement enthält bearbeiten und löschen-bezogene Ereignisse, und bearbeiten und Löschen von Unterstützung können hinzugefügt werden mit ein wenig Code, aber es s keine einfachen Out-of-the-Box-Unterstützung als mit der FormView-Steuerelement. Gewusst wie: Einschließen von bearbeiten und Löschen von Unterstützung und das DataList-Steuerelement in einem späteren Tutorial sehen.
 
-
 Lassen Sie s, die die Darstellung dieser Vorlage verbessert werden. Können Sie anstelle der Anzeige aller Datenfelder, s, die nur angezeigt, die s-Produktname, Lieferanten, Kategorie, Anzahl pro Einheit und Preis pro Einheit. Darüber hinaus können s zeigen Sie die Bezeichnung in ein `<h4>` Überschrift, und Erstellen des Layouts für die verbleibenden Felder, die mit einem `<table>` unter der Überschrift.
 
 Um diese Änderungen vorzunehmen, die Sie können, verwenden entweder die Vorlage, die Bearbeitungsfunktionen in den Designer DataList-Steuerelement s smart Tag klicken, auf den Link für die Vorlagen bearbeiten oder ändern Sie die Vorlage manuell über die Seite s deklarative Syntax. Wenn Sie die Vorlagen bearbeiten-Option im Designer verwenden, das daraus resultierende Markup möglicherweise nicht exakt das folgende Markup, aber bei der Anzeige über ein Browser sieht sehr ähnlich wie im Screenshot dargestellt in Abbildung 8.
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample3.aspx)]
 
 > [!NOTE]
 > Im Beispiel oben wird Bezeichnung Web Steuerelemente, deren `Text` Eigenschaft erhält den Wert des die Datenbindungssyntax. Sie können auch konnte wir die Bezeichnungen vollständig zu entfernen und weggelassen haben nur die Databinding-Syntax eingeben. Das heißt, anstelle von `<asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />` wir stattdessen hätte die deklarative Syntax `<%# Eval("CategoryName") %>`.
 
-
 In der Bezeichnung Websteuerelementen verlassen, Sie allerdings zwei Vorteile bietet. Zum einen bietet sie eine einfachere Möglichkeit zum Formatieren von Daten basierend auf den Daten, wie wir im nächsten Tutorial sehen werden. Zweitens wird die Option Vorlagen bearbeiten, in der Designer t Display deklarative Datenbindung-Syntax, die außerhalb von einigen Websteuerelement. Stattdessen die Vorlagen bearbeiten-Schnittstelle wurde entwickelt, um die Arbeit mit statischen Markup zu vereinfachen und Web-Steuerelemente sowie wird davon ausgegangen, dass Datenbindung über das Dialogfeld DataBindings bearbeiten, erfolgt, der von die Smarttags für die Web-Steuerelemente aus zugänglich ist.
 
 Aus diesem Grund bei der Verwendung von DataList-Steuerelement, bietet die Möglichkeit, Bearbeitung von Vorlagen mithilfe des Designers, ich Bezeichnung Websteuerelemente verwenden möchten, damit die Inhalte über die Vorlagen bearbeiten-Schnittstelle zugegriffen werden kann. Wie wir in Kürze sehen werden, erfordert der Repeater, aus der Datenquellensicht an den Inhalt der Vorlage s bearbeitet werden. Daher beim Erstellen der Repeater s Vorlagen, die ich häufig die Bezeichnung Web weglassen, wird gesteuert, es sei denn, ich weiß, dass ich benötige, zum Formatieren gebunden die Darstellung der Daten, Text basierend auf programmgesteuerte Logik.
 
-
 [![Jedes Produkt s Ausgabe ist gerendert DataList-Steuerelement s ItemTemplate-Element](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image18.png)
 
 **Abbildung 8**: Jedes Produkt s Ausgabe ist die Verwendung von gerendert DataList-Steuerelement s `ItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image20.png))
-
 
 ## <a name="step-3-improving-the-appearance-of-the-datalist"></a>Schritt 3: Verbessern der Darstellung eines DataList-Steuerelement
 
@@ -133,14 +113,11 @@ Siehe die [Anzeigen von Daten mit dem ObjectDataSource-Steuerelement](../basic-r
 
 Um eine Skin-Datei hinzuzufügen, mit der Maustaste auf die `App_Themes/DataWebControls` , wählen Sie ein neues Element hinzufügen, und wählen Sie aus der Liste die Skin-File-Option. Nennen Sie die Datei `DataList.skin`.
 
-
 [![Erstellen Sie eine neue Skindatei mit dem Namen DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image21.png)
 
 **Abbildung 9**: Erstellen Sie eine neue Skin-Datei mit dem Namen `DataList.skin` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image23.png))
 
-
 Verwenden Sie das folgende Markup für die `DataList.skin` Datei:
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample4.aspx)]
 
@@ -148,11 +125,9 @@ Diese Einstellungen weisen die gleichen CSS-Klassen die entsprechenden DataList-
 
 Durch das Hinzufügen dieser Datei Skin wird die Darstellung der DataList-Steuerelement im Designer aktualisiert (möglicherweise müssen zum Aktualisieren der Ansicht-Designer, um die Auswirkungen der neuen Skin-Datei, aus dem Menü "Ansicht", wählen die Aktualisierung). Wie in Abbildung 10 gezeigt, hat jedes Produkt abwechselnde ein helles rosa Hintergrundfarbe an.
 
-
 [![Erstellen Sie eine neue Skindatei mit dem Namen DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image24.png)
 
 **Abbildung 10**: Erstellen Sie eine neue Skin-Datei mit dem Namen `DataList.skin` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image26.png))
-
 
 ## <a name="step-4-exploring-the-datalist-s-other-templates"></a>Schritt 4: Untersuchen die DataList s anderen Vorlagen
 
@@ -170,36 +145,28 @@ Beim Angeben der `HeaderTemplate` oder `FooterTemplate`, DataList-Steuerelement 
 > [!NOTE]
 > Wie in beschrieben der [Zusammenfassungsinformationen anzeigen, in den GridView-s-Fußzeile](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md) Tutorial, während die Kopf- und Fußzeile Zeilen mit t-Syntax Datenbindung unterstützt, Daten-spezifische Informationen Einbau zusätzlichen injiziert werden kann, direkt in die folgenden Zeilen aus der GridView-s `RowDataBound` -Ereignishandler. Diese Technik nicht verwendet werden kann sowohl die laufende Summen berechnen oder andere Informationen aus den Daten an das Steuerelement gebunden als auch diese Informationen in die Fußzeile zuweisen. Dasselbe Konzept kann auf die DataList- oder Repeater-Steuerelemente angewendet werden. der einzige Unterschied ist, die dem DataList- und Wiederholungssteuerelement erstellt einen Ereignishandler für die `ItemDataBound` Ereignis (anstelle von für die `RowDataBound` Ereignis).
 
-
 In unserem Beispiel können s haben den Titel Produktinformationen angezeigt werden, am oberen Rand der DataList-s-Ergebnisse in eine `<h3>` Überschrift. Um dies zu erreichen, fügen einen `HeaderTemplate` durch das entsprechende Markup. Aus dem Designer, dies kann erreicht werden durch Klicken auf den Link Vorlagen bearbeiten, in das Smarttag DataList s, die Header-Vorlage aus der Dropdown-Liste auswählen und der Eingabe im Text nach dem Auswählen der Überschrift3-Option vom Stil Dropdown-Liste (siehe Abbildung 11).
-
 
 [![Fügen Sie eine Header-Vorlage mit die Text-Produktinformationen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image28.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image27.png)
 
 **Abbildung 11**: Hinzufügen einer `HeaderTemplate` mit die Text-Produktinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image29.png))
 
-
 Auch dies kann hinzugefügt werden deklarativ durch Eingabe von das folgende Markup innerhalb der `<asp:DataList>` Tags:
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample5.html)]
 
 Wenn etwas Abstand zwischen den einzelnen Produktliste hinzufügen möchten, können Sie s Hinzufügen einer `SeparatorTemplate` , eine Linie zwischen jeder Abschnitt enthält. Das horizontale Trennlinie-Tag (`<hr>`), fügt diese einen Unterteiler. Erstellen der `SeparatorTemplate` so, dass sie das folgende Markup:
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample6.html)]
 
 > [!NOTE]
 > Wie die `HeaderTemplate` und `FooterTemplates`, `SeparatorTemplate` nicht zu einem beliebigen Datensatz aus der Datenquelle gebunden ist, und aus diesem Grund kann nicht direkt zugreifen, die die Datenquelle Datensätze, die an die Datenliste gebunden.
 
-
 Treffen Sie diese hinzufügen, wenn Sie die Seite über einen Browser anzeigen. es sollte ungefähr Abbildung 12. Beachten Sie die Kopfzeile und die Linie zwischen den einzelnen Produktliste.
-
 
 [![DataList-Steuerelement enthält eine Kopfzeile und eine horizontale Trennlinie zwischen einzelnen Produktliste](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image30.png)
 
 **Abbildung 12**: DataList-Steuerelement enthält eine Kopfzeile und eine horizontale Regel zwischen jeder Produktliste ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image32.png))
-
 
 ## <a name="step-5-rendering-specific-markup-with-the-repeater-control"></a>Schritt 5: Rendern von bestimmten Markup mit dem Repeater-Steuerelement
 
@@ -221,54 +188,43 @@ In ASP.NET 1.x, die Repeater-Steuerelement häufig verwendet wurde, um eine List
 > [!NOTE]
 > ASP.NET 2.0 werden die neuen [BulletedList-Steuerelement](https://msdn.microsoft.com/library/ms228101.aspx), die an ein Datenquellen-Steuerelement um eine einfache Aufzählung angezeigt gebunden werden kann. Mit dem Steuerelement BulletedList müssen wir nicht zum Angeben des HTML-bezogene Liste; Stattdessen zeigen wir einfach das Datenfeld als Text für jedes Listenelement anzuzeigen.
 
-
 Des Repeaters fungiert als ein Catch alle Daten Websteuerelement. Wird es kein vorhandenes Steuerelement, das das erforderliche Markup generiert, kann das Repeater-Steuerelement verwendet werden. Zur Veranschaulichung des Repeaters verwenden, können Sie s die Liste der Kategorien, die weiter oben in Schritt2 erstellte Produkt Informationen DataList angezeigt haben. Insbesondere können s haben die Kategorien angezeigt, die in einer einzelnen Zeile HTML `<table>` mit jeder Kategorie, die als eine Spalte in der Tabelle angezeigt.
 
 Um dies zu erreichen, ziehen Sie zuerst ein Repeater-Steuerelement aus der Toolbox auf den Designer, oben Produkt Informationen DataList-Steuerelement. Wie bei DataList, Repeater werden zuerst angezeigt wie ein graues Feld bis dessen Vorlagen definiert wurden.
-
 
 [![Fügen Sie in den Designer einen Repeater](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image34.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image33.png)
 
 **Abbildung 13**: Fügen Sie in den Designer einem Wiederholungssteuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image35.png))
 
-
 Gibt es nur eine Option "s" im Wiederholungsmodul s Smarttag: Wählen Sie die Datenquelle. Aktivieren Sie zum Erstellen einer neuen "ObjectDataSource" und konfigurieren ihn zur Verwendung der `CategoriesBLL` Klasse s `GetCategories` Methode.
-
 
 [![Erstellen Sie eine neue "ObjectDataSource"](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image37.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image36.png)
 
 **Abbildung 14**: Erstellen Sie eine neue "ObjectDataSource" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image38.png))
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL-Klasse](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image40.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image39.png)
 
 **Abbildung 15**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image41.png))
-
 
 [![Abrufen von Informationen über alle Kategorien mithilfe der GetCategories-Methode](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image43.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image42.png)
 
 **Abbildung 16**: Abrufen von Informationen über alle die Verwendung von Kategorien der `GetCategories` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image44.png))
 
-
 Im Gegensatz zu DataList-Steuerelement erstellt Visual Studio nicht automatisch eine Elementvorlage für das Repeater nach dem Element an eine Datenquelle gebunden wird. Darüber hinaus wird die Repeater-s-Vorlagen können nicht mithilfe des Designers konfiguriert werden und müssen deklarativ angegeben werden.
 
 Um die Kategorien anzuzeigen, als einzelne Zeile `<table>` mit einer Spalte für jede Kategorie, die wir benötigen die Repeater, ähnlich dem folgenden Markup auszugeben:
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample7.html)]
 
 Da die `<td>Category X</td>` Text ist der Teil, der auftritt, wird dies im Wiederholungsmodul s ItemTemplate angezeigt,. Das Markup, das vor – wird `<table><tr>` -platziert werden, der `HeaderTemplate` beim Endpunkt Markup - `</tr></table>` -in platziert wird die `FooterTemplate`. Um diese Vorlageneinstellungen einzugeben, wechseln Sie zu den deklarativen Teil der ASP.NET-Seite aus, durch Klicken auf die Schaltfläche "Quelle" in der unteren linken Ecke, und geben Sie die folgende Syntax:
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample8.aspx)]
 
 Der Repeater gibt gemäß der Vorlagen, nicht mehr, nichts weniger präzise Markup. Abbildung 17 zeigt die Repeater-s-Ausgabe über einen Browser angezeigt.
 
-
 [![Eine einzelne Zeile HTML &lt;Tabelle&gt; listet jede Kategorie in einer separaten Spalte](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image45.png)
 
 **Abbildung 17**: Eine einzelne Zeile HTML `<table>` listet jede Kategorie in einer separaten Spalte ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image47.png))
-
 
 ## <a name="step-6-improving-the-appearance-of-the-repeater"></a>Schritt 6: Verbessern der Darstellung des Wiederholungsmoduls
 
@@ -276,26 +232,21 @@ Da der Repeater genau das Markup, anhand dessen Vorlagen ausgibt, sollte es als 
 
 In unserem Beispiel können Sie s, die die Kategorie Spalten Hintergrundfarben an, wie mit den abwechselnden Zeilen im DataList-Steuerelement zu wechseln. Zu diesem Zweck müssen wir weisen der `RowStyle` CSS-Klasse, jedes Repeater-Element und die `AlternatingRowStyle` CSS-Klasse, jedes abwechselnde Repeater-Element über die `ItemTemplate` und `AlternatingItemTemplate` Vorlagen wie folgt:
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample9.aspx)]
 
 Lassen Sie s, die die Ausgabe mit dem Text Product Categories auch eine Kopfzeile hinzugefügt. Da wir Raten t wissen, wie viele Spalten unsere resultierende `<table>` wird umfassen, ist die einfachste Möglichkeit, eine Kopfzeile zu generieren, die garantiert ist, um alle Spalten mit *zwei* `<table>` s. Die erste `<table>` enthält zwei Zeilen der Kopfzeile und eine Zeile, die die zweite einzeiliges enthält `<table>` , die eine Spalte für jede Kategorie in das System hat. D. h. möchten wir das folgende Markup auszugeben:
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample10.html)]
 
 Die folgenden `HeaderTemplate` und `FooterTemplate` führen zu der gewünschten Markup:
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-cs/samples/sample11.aspx)]
 
 Abbildung 18 zeigt die Repeater, nachdem diese Änderungen vorgenommen wurden.
 
-
 [![Die Kategorie-Spalten in Hintergrundfarbe alternative und enthält eine Kopfzeile](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image48.png)
 
 **Abbildung 18**: Die Kategorie Spalten alternative Hintergrundfarbe und enthält eine Kopfzeile ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-data-with-the-datalist-and-repeater-controls-cs/_static/image50.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

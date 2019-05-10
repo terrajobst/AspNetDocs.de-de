@@ -9,17 +9,16 @@ ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: 36933f42806b82437f0ba8e59ad1c90024ed6b9e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 78679828dadacc1ba36eeaced9c21b741806ba47
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401230"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121511"
 ---
 # <a name="getting-started-with-aspnet-identity"></a>Erste Schritte mit ASP.NET Identity
 
 > Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration funktioniert mit OWIN und mit den Vorlagen von ASP.NET im Lieferumfang von Visual Studio 2013 enthalten ist.
-
 
 - [Einführung zu ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [ASP.NET Identity – Empfohlene Ressourcen](aspnet-identity-recommended-resources.md)

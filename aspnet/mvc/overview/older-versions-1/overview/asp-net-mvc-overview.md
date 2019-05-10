@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 2dcb44a4-5cbf-4d62-b363-718104082d86
 msc.legacyurl: /mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 149312e2ddf0a5023a4a12f5b05852f7da6b18f8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73965c71f37de13e3813df089a253fde528ea7ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418169"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128224"
 ---
 # <a name="aspnet-mvc-overview"></a>Übersicht über ASP.NET MVC
 
@@ -21,18 +21,15 @@ by [Microsoft](https://github.com/microsoft)
 
 > Informationen Sie zu den Unterschieden zwischen ASP.NET MVC-Anwendung und ASP.NET Web Forms-Anwendungen. Erfahren Sie, wie, wann zum Erstellen einer ASP.NET MVC-Anwendung.
 
-
 Das Architekturmuster Model-View-Controller (MVC) trennt eine Anwendung in drei Hauptkomponenten: das Modell, Ansicht und Controller. ASP.NET MVC-Framework bietet eine Alternative für das ASP.NET Web Forms-Muster zum Erstellen von MVC-basierte Web-Anwendungen. ASP.NET MVC-Framework ist eine einfache und leicht zu testendes Präsentationsframework, (wie bei Web Forms-basierte Anwendungen) ist in vorhandene ASP.NET-Funktionen, z. B. Gestaltungsvorlagen und mitgliedschaftsbasierte Authentifizierung integriert. Das MVC-Framework wird definiert, der **System.Web.Mvc** Namespace und ein grundlegender, unterstützter Teil der **"System.Web"** Namespace.   
   
 MVC ist ein Standardentwurfsschema, die viele Entwickler kennen. Einige Arten von Webanwendungen profitieren vom MVC-Framework. Andere werden weiterhin das herkömmliche ASP.NET-Anwendungsschema verwenden, das auf Web Forms und Postbacks basiert. Andere Arten von Webanwendungen werden beide Ansätze kombinieren; keiner dieser Ansätze, die den anderen ausschließt.   
   
 Das MVC-Framework umfasst die folgenden Komponenten:
 
-
 [![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-overview/_static/image1.jpg)](asp-net-mvc-overview/_static/image1.png)
 
 **Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-overview/_static/image2.png))
-
 
 - **Modelle**. Modellobjekte sind die Teile der Anwendung, die die Logik für die Anwendungsdomäne des s Daten implementieren. Häufig Modellobjekte abgerufen und in einer Datenbank gespeichert. Beispielsweise kann ein Product-Objekt abrufen von Informationen aus einer Datenbank, verarbeiten und anschließend aktualisierten Informationen zurück in eine Produkttabelle in SQL Server schreiben.
 

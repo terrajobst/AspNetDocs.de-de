@@ -8,17 +8,16 @@ ms.date: 01/26/2012
 ms.assetid: 8447679a-2556-4411-b758-bbe55cfa4805
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions
 msc.type: chapter
-ms.openlocfilehash: 41ee7a14c26c10fb693eb3b5bf590f92a4caf3a3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 965fb110e1c42d8e6ebe198da4a904e1601bcf29
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405962"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133670"
 ---
 # <a name="web-api-routing"></a>Routing von Web-API
 
 > Wie leitet ASP.NET Web-API die HTTP-Anforderungen für Controller und Aktionen.
-
 
 - [Routing in der Web-API](routing-in-aspnet-web-api.md)
 - [Routing- und Aktionsauswahl in der Web-API](routing-and-action-selection.md)

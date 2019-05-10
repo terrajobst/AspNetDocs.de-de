@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0ccb1a737fdfc3cf2ffdcc22131650e1b79cd2cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f56241a6a3d1d54f917d366b08edb4a1a43bbce8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407223"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134445"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>Anzeigen einer benutzerdefinierten Fehlerseite (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_11_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial11_CustomErrors_cs.pdf)
 
 > Was sieht der Benutzer, tritt ein Laufzeitfehler in einer ASP.NET-Webanwendung? Die Antwort hängt wie der Website &lt;CustomErrors&gt; Konfiguration. Benutzer werden standardmäßig einen unschöner gelben Bildschirm Advantages, dass ein Laufzeitfehler aufgetreten angezeigt. In diesem Tutorial zeigt, wie Sie diese Einstellungen zur benutzerdefinierten Fehlerseite anzeigen, die eine ästhetisch ansprechendste anpassen, die Ihrer Website Aussehen und Verhalten entspricht.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -47,7 +46,6 @@ Der Seitenentwickler Fehler sind ist am besten vertraut mit der Ausnahme Details
 > [!NOTE]
 > Zum Reproduzieren dieser Fehler in der Demo-Webanwendung zum Download zur Verfügung. Sie können entweder `Genre.aspx?ID=foo` direkt, oder klicken Sie auf den Link "Generieren einer Runtime-Fehler" in `Default.aspx`.
 
-
 Beachten Sie die Ausnahmeinformationen im **Abbildung1**. Die Ausnahmemeldung, "Fehler beim Konvertieren einer Zeichenfolge in ' uniqueidentifier '" ist am oberen Rand der Seite vorhanden. Der Typ der Ausnahme `System.Data.SqlClient.SqlException`, wird ebenfalls aufgeführt. Es gibt auch die stapelüberwachung.
 
 [![](displaying-a-custom-error-page-cs/_static/image2.png)](displaying-a-custom-error-page-cs/_static/image1.png)
@@ -61,7 +59,6 @@ Standardmäßig wird die Common Language Runtime-Fehler YSOD für Benutzer, die 
 
 > [!NOTE]
 > Wenn Sie befolgt werden und DiscountASP.NET wie auf dem Webhost verwenden, werden Sie feststellen, dass die Common Language Runtime-Fehler YSOD nicht angezeigt wird, wenn sich die live-Website besuchen. Dies ist da DiscountASP.NET ihre Server so konfiguriert, dass die Ausnahme Details YSOD anzeigen standardmäßig verfügt. Die gute Nachricht ist, dass Sie dieses Standardverhalten, durch das Hinzufügen überschreiben können einer `<customErrors>` -Abschnitt Ihrer `Web.config` Datei. Im Abschnitt "Konfigurieren der Fehler angezeigt" untersucht die `<customErrors>` Abschnitt ausführlich.
-
 
 [![](displaying-a-custom-error-page-cs/_static/image5.png)](displaying-a-custom-error-page-cs/_static/image4.png)
 
@@ -140,7 +137,6 @@ Mit dieser Änderung vorgenommen wurde, wenn ein Benutzer Zugriff auf Remote ein
 > [!NOTE]
 > Sehen Sie sich [404-Fehlerseiten, mehr einmal](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/) Anleitungen zum Erstellen von Seiten für effektive 404-Fehler.
 
-
 [![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**Abbildung 7**: Die Seite benutzerdefinierte 404-Fehler in einer Meldung besser abgestimmten als `Oops.aspx`  
  ([Klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
@@ -148,7 +144,6 @@ Da Sie wissen, dass die `404.aspx` Seite wird nur erreicht werden, wenn der Benu
 
 > [!NOTE]
 > Die benutzerdefinierte Fehlerseite wird nur angezeigt, wenn eine auf eine Ressource, die von der Engine für ASP.NET behandelt Anforderung. Wie wir unter den [Core Unterschiede zwischen IIS und ASP.NET Development Server](core-differences-between-iis-and-the-asp-net-development-server-cs.md) Tutorial, auf der Webserver unter Umständen bestimmte Anforderungen selbst behandeln. Standardmäßig web der IIS-Prozesse serveranforderungen für statische Inhalte wie Bilder und HTML-Dateien ohne das ASP.NET-Modul aufzurufen. Daher, wenn der Benutzer eine nicht vorhandene Abbilddatei anfordert sie ASP, anstatt IISs-Standardnachricht 404-Fehler erhalten zurück. NET konfiguriert Fehler (Seite).
-
 
 ## <a name="summary"></a>Zusammenfassung
 

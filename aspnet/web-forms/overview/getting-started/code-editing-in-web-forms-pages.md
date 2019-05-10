@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: 5344b74e-b888-479a-92bc-601a33bd61a2
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3473ad476fbbebc58e12586334b4600f57cf17ed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397369"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134241"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Codebearbeitung in ASP.NET Web Forms in Visual Studio 2013
 
@@ -31,7 +31,6 @@ Bei dieser exemplarischen Vorgehensweise lernen Sie Folgendes:
 - Einfügen von Codeausschnitten.
 
 ## <a name="prerequisites"></a>Vorraussetzungen
-
 
 Für die Durchführung dieser exemplarischen Vorgehensweise benötigen Sie Folgendes:
 
@@ -65,14 +64,11 @@ In diesem Teil der exemplarischen Vorgehensweise werden Sie ein Webanwendungspro
 
     Visual Studio erstellt ein neues Projekt, das vordefinierte Funktionen, die basierend auf der Web Forms-Vorlage enthält.
 
-
 ## <a name="creating-a-new-aspnet-web-forms-page"></a>Erstellen eine neue ASP.NET Web Forms-Seite
-
 
 Beim Erstellen eine neue Web Forms-Anwendung, mit der **ASP.NET-Webanwendung** -Projektvorlage, die Visual Studio fügt einer ASP.NET-Seite (Web Forms-Seite), die mit dem Namen *"default.aspx"* sowie wie verschiedene andere Dateien und Ordner. Sie können die *"default.aspx"* Seite als Startseite für Ihre Webanwendung. Allerdings werden Sie in dieser exemplarischen Vorgehensweise erstellen und Arbeiten mit einer neuen Seite.
 
 ### <a name="to-add-a-page-to-the-web-application"></a>Hinzufügen eine Seite an die Webanwendung
-
 
 1. In **Projektmappen-Explorer**, mit der rechten Maustaste in den Namen der Web-Anwendung (in diesem Tutorial der Anwendungsname wird **BasicWebSite**), und klicken Sie dann auf **hinzufügen**  - &gt; **Neues Element**.   
 Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
@@ -82,14 +78,11 @@ Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
  Visual Studio erstellt die neue Seite, und öffnet sie.
 4. Anschließend legen Sie diese neue Seite, wie die Standardseite für den Start. In **Projektmappen-Explorer**, mit der rechten Maustaste in der neuen Seite mit dem Namen *FirstWebPage.aspx* , und wählen Sie **als Startseite festlegen**. Das nächste Mal ausführen dieser Anwendung so testen Sie unsere ausgeführt wird, werden Sie automatisch diese neue Seite im Browser angezeigt.
 
-
 ## <a name="correcting-inline-coding-errors"></a>Beheben Sie Codefehlern Inline
-
 
 Der Code-Editor in Visual Studio können Sie Fehler zu vermeiden, wie Sie Code schreiben, und wenn Sie einen Fehler gemacht haben, wird der Code-Editor Sie den Fehler zu beheben können. In diesem Teil der exemplarischen Vorgehensweise schreiben Sie eine Codezeile, die die Fehlerkorrektur im Editor zu veranschaulichen.
 
 ### <a name="to-correct-simple-coding-errors-in-visual-studio"></a>Um einfache Codefehler in Visual Studio zu beheben.
-
 
 1. In **Entwurf** anzuzeigen, doppelklicken Sie auf die leere Seite zum Erstellen eines Handlers für die **Load** -Ereignis für die Seite.   
    Verwenden Sie den Ereignishandler nur als Ort, um Code zu schreiben.
@@ -109,7 +102,6 @@ Der Code-Editor in Visual Studio können Sie Fehler zu vermeiden, wie Sie Code s
     > [!NOTE] 
     > 
     > Sie zeigen den aktuellen Code-Formatierung von Einstellungen in Visual Studio durch Auswahl **Tools**  - &gt; **Optionen**  - &gt; **Schriftarten und Farben**.
-
 
 ## <a name="refactoring-and-renaming"></a>Refactoring und Umbenennen
 
@@ -156,7 +148,6 @@ Bei der Arbeit mit Variablen als auch Objekte, möchten Sie diese umbenennen, na
 
 ### <a name="to-use-refactoring-to-rename-a-variable"></a>Zum Verwenden der Umgestaltung, eine Variable umzubenennen
 
-
 1. In der **klicken Sie auf** -Ereignishandler die folgende Zeile:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample6.cs)]
@@ -173,7 +164,6 @@ Bei der Arbeit mit Variablen als auch Objekte, möchten Sie diese umbenennen, na
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample7.cs)]
 
     Die Variable `alist` in dieser Zeile ist nicht umbenannt, da sie nicht den gleichen Wert wie die Variable darstellt `alist` , die Sie umbenannt. Die Variable `alist` in die `DisplayArray` Deklaration eine lokale Variable für diese Methode ist. Dies zeigt, dass mit der Umgestaltung Umbenennen von Variablen wie das Ausführen einer Aktion suchen und Ersetzen im Editor unterscheidet; Umgestaltung mit Umbenennen von Variablen mit Kenntnissen der Semantik der Variablen, mit denen er arbeitet.
-
 
 ## <a name="inserting-snippets"></a>Einfügen von Ausschnitten
 

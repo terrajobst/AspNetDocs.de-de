@@ -8,12 +8,12 @@ ms.date: 01/29/2017
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: cf18a8860d34daa23f61e3dde13c2c79c6c0d4a5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51a8fdf44199b5a4735e0e00657639b191f51255
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048117"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125983"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>Konfigurieren eines Webservers für die Web Deploy-Veröffentlichung (Web Deploy-Handler)
 
@@ -28,7 +28,6 @@ ms.locfileid: "57048117"
 > - Verwendung *offlinebereitstellung*. Dieser Ansatz erfordert nur geringfügige Konfigurationen des Webservers, aber ein Server-Administrator muss manuell kopieren des Pakets auf dem Server und importieren Sie es über IIS-Manager.
 > 
 > Weitere Informationen zu den Hauptfunktionen, Vorteile und Nachteile dieser Ansätze zu erhalten, finden Sie unter [Entscheidung zur Webbereitstellung rechts](choosing-the-right-approach-to-web-deployment.md).
-
 
 Ja, wenn Sie nicht-Administratoren zum Bereitstellen von Inhalt auf bestimmte IIS-Websites zulassen möchten. Dieser Ansatz ist häufig wünschenswert, in diesen Szenarien:
 
@@ -64,7 +63,6 @@ In diesem Thema werden Sie zum Durchführen dieser Verfahren erläutert. Die Auf
 > [!NOTE]
 > Weitere Informationen zum Einbinden von Computern in einer Domäne, finden Sie unter [Hinzufügen von Computern zur Domäne und Anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren von statischen IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
 
-
 ## <a name="install-products-and-components"></a>Installieren der Produkte und Komponenten
 
 Dieser Abschnitt führt Sie durch die Installation der erforderlichen Produkte und Komponenten auf dem Webserver. Bevor Sie beginnen, hat sich bewährt, zum Ausführen von Windows Update aus, um sicherzustellen, dass der Server vollständig auf dem neuesten Stand ist.
@@ -80,7 +78,6 @@ In diesem Fall müssen Sie Folgendes installieren:
 
 > [!NOTE]
 > In dieser exemplarischen Vorgehensweise wird die Verwendung des Webplattform-Installers zum Installieren und konfigurieren die verschiedenen Komponenten beschrieben. Zwar Sie nicht mit dem Webplattform-Installer müssen, vereinfacht den Installationsvorgang durch automatisches Erkennen von Abhängigkeiten und sicherstellen, dass Sie immer die aktuellsten Versionen erhalten. Weitere Informationen finden Sie unter [Microsoft Web Platform Installer](https://go.microsoft.com/?linkid=9805118).
-
 
 **Installieren der erforderlichen Produkte und Komponenten**
 
@@ -239,7 +236,6 @@ Der gängigste Ansatz ist das Zuweisen von Berechtigungen für die lokale **IIS\
 > [!NOTE]
 > Weitere Informationen zu den Identitäten der Anwendungspools in IIS 7.5, finden Sie unter [Anwendungspoolidentitäten](https://go.microsoft.com/?linkid=9805123).
 
-
 **So konfigurieren Sie Berechtigungen für eine IIS-website**
 
 1. Navigieren Sie in Windows Explorer auf den Speicherort Ihres lokalen Ordners.
@@ -281,7 +277,6 @@ Standardmäßig wird TCP-Port 8172 den IIS-Web-Management-Dienst lauscht. Wenn S
 | --- | --- | --- | --- |
 | Eingehende | Beliebig | 8172 | TCP |
 | Ausgehende | 8172 | Beliebig | TCP |
-  
 
 Weitere Informationen zum Konfigurieren von Regeln in der Windows-Firewall finden Sie unter [Firewallregeln konfigurieren](https://technet.microsoft.com/library/dd448559(WS.10).aspx). Firewalls von Drittanbietern finden Sie in der Produktdokumentation.
 

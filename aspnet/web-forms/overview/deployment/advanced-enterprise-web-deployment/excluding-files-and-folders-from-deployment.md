@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4da291af4042e6e09c6917703b160ca717eecd15
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a262ce43d7199fb1015d54d0b7c213857c360946
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407990"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133897"
 ---
 # <a name="excluding-files-and-folders-from-deployment"></a>Ausschließen von Dateien und Ordnern von der Bereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, wie auszuschließen, können Sie Dateien und Ordner von einem Webbereitstellungspaket beim Erstellen und Packen ein Webanwendungsprojekt.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -48,7 +47,6 @@ Bei der Auswahl **nur Dateien, die zum Ausführen dieser Anwendung benötigt**, 
 > [!NOTE]
 > Die Logik, die bestimmt, welche Dateien enthalten, ist in dieser Datei enthalten:   
 > *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
-
 
 ## <a name="excluding-specific-files-and-folders"></a>Bestimmte Dateien und Ordner ausschließen
 
@@ -77,9 +75,7 @@ Obwohl Sie Ihre Projektdateien, um bestimmte Dateien und Ordner ausschließen be
 
 Dies ist die grundlegende Struktur dieser *. wpp.targets* Datei:
 
-
 [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample1.xml)]
-
 
 Beachten Sie, dass jedes Element ein Element-Metadatenelement mit dem Namen enthält **FromTarget**. Dies ist ein optionaler Wert, der den Buildprozess nicht beeinträchtigt. Es dient lediglich, um anzugeben, warum bestimmte Dateien oder Ordner weggelassen wurden, wenn jemand die erstellungsprotokolle überprüft.
 

@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b444de67f3bce3d09dd8c3c172895cf07f58df8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416258"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134414"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Protokollieren von Fehlerdetails mit der ASP.NET-Systemüberwachung (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
 > Überwachung von Microsoft Health-System bietet eine einfache und anpassbare Möglichkeit, verschiedene Webereignisse, einschließlich der nicht behandelte Ausnahmen zu protokollieren. Dieses Tutorial führt durch das System für die Systemüberwachung einrichten, um nicht behandelte Ausnahmen in einer Datenbank zu protokollieren und Entwickler über eine e-Mail zu benachrichtigen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -67,7 +66,6 @@ Die `SqlWebEventProvider` -Klasse ist Teil des Systems für die Integritätsübe
 > [!NOTE]
 > Die `aspnet_regsql.exe` Tool wurde erläutert, in der [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-cs.md) bei der Addition ASP-Unterstützung. NET Application-Dienste. Daher der Book Reviews-Website Datenbank enthält bereits die `aspnet_WebEvent_LogEvent` gespeicherte Prozedur, die speichert die Ereignisinformationen in eine Tabelle namens `aspnet_WebEvent_Events`.
 
-
 Nachdem Sie die erforderliche gespeicherte Prozedur und die Tabelle, die mit Ihrer Datenbank hinzugefügt haben, übrig bleibt anweisen Health überwacht werden, um alle nicht behandelten Ausnahmen in der Datenbank zu protokollieren. Dies erreichen, indem Sie das folgende Markup Ihrer Website hinzufügen `Web.config` Datei:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample2.xml)]
@@ -82,7 +80,6 @@ Diese Konfigurationsinformationen weist das System, um alle nicht behandelten Au
 
 > [!NOTE]
 > Die `WebBaseErrorEvent` Ereignis wird nur für Server-Fehler ausgelöst; es wird nicht ausgelöst, für die HTTP-Fehler, z. B. eine Anforderung für eine ASP.NET-Ressource, die nicht gefunden wird. Dies unterscheidet sich vom Verhalten der `HttpApplication` Klasse `Error` -Ereignis, das für sowohl Server-als auch HTTP-Fehler ausgelöst wird.
-
 
 Um das Überwachungssystem in Aktion sehen zu können, finden Sie auf der Website aus, und verursachen einen Laufzeitfehler finden Sie unter `Genre.aspx?ID=foo`. Daraufhin sollte die entsprechende Fehlerseite – entweder die Ausnahme Details gelben Bildschirm of Death (wenn lokal auf) oder die benutzerdefinierte Fehlerseite (wenn besuchen die Website in der Produktion). Hinter den Kulissen System für die Systemüberwachung werden die Fehlerinformationen in der Datenbank protokolliert. Es muss ein Datensatz in die `aspnet_WebEvent_Events` Tabelle (finden Sie unter **Abbildung 1**); dieser Datensatz enthält Informationen über den Common Language Runtime-Fehler, die nur aufgetreten sind.
 
@@ -99,7 +96,6 @@ Wenn Sie eine solche Seite erstellen, stellen Sie sicher, dass Sie Maßnahmen k�
 
 > [!NOTE]
 > Die nachfolgenden Tutorial wird beschrieben, ein alternativer Fehler protokollieren und Benachrichtigung System mit dem Namen ELMAH. ELMAH enthält einen integrierten Mechanismus zum Anzeigen des Fehlerprotokolls von sowohl einer Webseite und als RSS-feed.
-
 
 ## <a name="logging-events-to-email"></a>Protokollierung von Ereignissen an e-Mail-Adresse
 

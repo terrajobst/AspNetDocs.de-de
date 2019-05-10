@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f8400241-4f4b-4bbd-9994-54fb64909e6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 1500415c7ee017776c59acb05a2eaefc6956a41b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3aaf7234706d149a3c784347528923f662c3511
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404700"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133879"
 ---
 # <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Konfigurieren eines TFS-Buildservers für die Webbereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Dieses Thema beschreibt, wie Sie einen Team Foundation Server (TFS)-Build-Server zum Erstellen und Bereitstellen Ihrer Lösungen mithilfe von Team Build und das Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) vorbereiten.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -103,7 +102,6 @@ Die beste Möglichkeit, allgemeine Plattform-Webkomponenten installieren ist die
 
 > [!NOTE]
 > Wenn Ihr Bereitstellungsprozess die Verwendung von Tools wie VSDBCMD.exe oder SQLCMD.exe enthält, müssen Sie sicherstellen, dass diese auf dem Buildserver installiert werden. VSDBCMD.exe ist ein Visual Studio-Tool und wird in der Regel mit dem Server hinzugefügt, bei der Installation von Team Foundation Build. SQLCMD.exe ist ein SQL Server-Tool. Sie können eine eigenständige Version von SQLCMD.exe aus der [Microsoft SQL Server 2008 R2 Feature Pack](https://go.microsoft.com/?linkid=9805134) Seite.
-
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

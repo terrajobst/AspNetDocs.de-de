@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa05645db9d43a836cc75b399153dd2e2c288f7c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1e93a5314129b2a05ede603ae9c01cd57b574f88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388761"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127052"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>Konfigurieren der Produktionswebanwendung mithilfe der Produktionsdatenbank (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_08_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial08_DBConfig_cs.pdf)
 
 > Wie in den vorherigen Tutorials erwähnt, ist es nicht ungewöhnlich, dass Informationen zu den Umgebungen für Entwicklungs- und produktionsumgebungen unterscheiden. Dies gilt insbesondere für datengesteuerte Webanwendungen, wie die Datenbank-Verbindungszeichenfolgen zwischen den Umgebungen für Entwicklungs- und produktionsumgebungen unterscheiden. In diesem Tutorial werden Methoden zum Konfigurieren der produktionsumgebung, um die entsprechende Verbindungszeichenfolge im Detail beinhalten behandelt.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -44,7 +43,6 @@ Die Verbindungszeichenfolge - Datenquelle =. \SQLEXPRESS; AttachDbFilename = | D
 - `AttachDbFilename` -Gibt den Speicherort der Datenbankdatei. Der Wert enthält, den Platzhalter `|DataDirectory|`, d.h. auf den vollständigen Pfad der Anwendung s aufgelöst `App_Data` Ordner zur Laufzeit.
 - `Integrated Security` – Ein boolescher Wert, der angibt, ob eine angegebene Benutzername und Kennwort verwenden, beim Verbinden mit der Datenbank (False) oder die aktuelle Windows Anmeldeinformationen (True).
 - `User Instance` -eine Konfigurationsoption, die spezifisch für die SQL Server Express-Editionen, die angibt, ob nicht-Administratoren auf dem lokalen Computer anfügen, und Verbinden mit einer SQL Server Express Edition-Datenbank. Finden Sie unter [SQL Server Express-Benutzerinstanzen](https://msdn.microsoft.com/library/ms254504.aspx) für Weitere Informationen zu dieser Einstellung.
-  
 
 Die zulässigen Verbindungszeichenfolgenoptionen hängen davon ab, die Datenbank, die Verbindung hergestellt wird und der Datenbank verwendeten ADO.NET-Anbieter ab. Z. B. die Verbindungszeichenfolge für die Verbindung mit einer Microsoft SQL Server Datenbank unterscheidet, die zur Verbindung mit einer Oracle-Datenbank. Ebenso wird beim Herstellen einer Verbindung mit einer Microsoft SQL Server-Datenbank, die mit dem SqlClient-Anbieter eine andere Verbindungszeichenfolge als bei der Verwendung des OLE-DB-Anbieters verwendet.
 
@@ -52,19 +50,15 @@ Sie können manuell mit einer Website wie die Datenbank-Verbindungszeichenfolge 
 
 Öffnen Sie Visual Studio, und navigieren Sie zum Server Explorer-Fensters (in Visual Web Developer dieses Fenster genannt Datenbank-Explorer angezeigt). Mit der rechten Maustaste auf die Option Data Connections, und wählen Sie im Kontextmenü die Option Verbindung hinzufügen. Dadurch wird der Assistent, der in Abbildung 1 dargestellt. Wählen Sie die entsprechende Datenquelle aus, und klicken Sie auf Weiter.
 
-
 [![Wählen Sie eine neue Datenbank im Server-Explorer hinzu](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image1.jpg) 
 
 **Abbildung 1**: Wählen Sie im Server-Explorer eine neue Datenbank hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image3.jpg))
 
-
 Geben Sie als Nächstes die verschiedenen Datenbank-Verbindungsinformationen (siehe Abbildung 2). Wenn Sie sich mit Ihrem Webhosting registriert, haben sollte sie bereitgestellt haben Informationen zum Verbinden mit der Datenbank – den Namen des Datenbankservers, den Datenbanknamen, den Benutzernamen und ein Kennwort zum Verbinden mit der Datenbank, und so weiter. Klicken Sie nach Eingabe dieser Informationen auf OK, um diesen Assistenten abzuschließen und um die Datenbank auf dem Server-Explorer hinzuzufügen.
-
 
 [![Geben Sie die Datenbank-Verbindungsinformationen](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image4.jpg) 
 
 **Abbildung 2**: Geben Sie die Datenbank-Verbindungsinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image6.jpg))
-
 
 Die Datenbank der Produktion Umgebung sollte jetzt im Server-Explorer aufgeführt werden. Wählen Sie die Datenbank im Server-Explorer, und öffnen Sie das Fenster "Eigenschaften" aus. Dort finden Sie eine Eigenschaft, die durch die Verbindungszeichenfolge der Datenbank-s-Verbindungszeichenfolge. Vorausgesetzt, dass Sie Microsoft SQL Server-Datenbank für Produktions- und dem SqlClient-Anbieter verwenden, sollte Ihre Verbindungszeichenfolge etwa wie folgt aussehen:
 
@@ -87,14 +81,11 @@ Es sei denn, Sie haben einen mehr formalisierten Deployment-Workflow entweder ma
 > [!NOTE]
 > Wenn Sie versehentlich Bereitstellen einer `Web.config` Datei, die Verbindungszeichenfolge für die Entwicklung enthält, und es ein Fehler sein wird, wenn die Anwendung auf Produktions-versucht, mit der Datenbank herstellen. Dieser Fehler in Form einer `SqlException` mit einer Meldung, die meldet, dass der Server nicht gefunden wurde oder nicht zugegriffen werden konnte.
 
-
 Nachdem der Standort in der produktionsumgebung bereitgestellt wurde, finden Sie auf der Produktionswebsite über Ihren Browser. Sie finden Sie unter, und die gleiche benutzerfreundlichkeit wie profitieren, wenn die datengesteuerte Anwendung lokal ausgeführt. Natürlich beim Besuch der Website auf Produktions-wird die Website von den Produktions-Datenbankserver unterstützt während die Datenbank in der Entwicklung Besuchen der Website in der Entwicklungsumgebung verwendet werden. Abbildung 3 zeigt die *bringen Sie sich ASP.NET 3.5 in 24 Stunden* überprüfen Sie die Seite von der Website in der produktionsumgebung (Beachten Sie die URL in die Adressleiste des Browsers s).
-
 
 [![Die Data-Driven-Anwendung ist jetzt verfügbar in Produktion!](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image7.jpg) 
 
 **Abbildung 3**: Die Data-Driven-Anwendung ist jetzt verfügbar in Produktion! ([Klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image9.jpg))
-
 
 ### <a name="storing-connection-strings-in-a-separate-configuration-file"></a>Das Speichern von Verbindungszeichenfolgen in einer separaten Konfigurationsdatei
 
@@ -113,14 +104,11 @@ Erstellen Sie eine Kopie der Datei databaseConnectionStrings.dev.config aus, und
 > [!NOTE]
 > Sie können Namen die Konfigurationsdatei einen anderen Wert als databaseConnectionStrings.config, wenn Sie d, wie z. B. `connectionStrings.config` oder `dbInfo.config`. Achten Sie jedoch zum Benennen der Datei mit einem `.config` Erweiterung als `.config` Dateien sind, wird standardmäßig nicht ausgeführt, von der Engine für ASP.NET. Wenn Sie die Datei einen anderen Namen, z. B. `connectionStrings.txt`, ein Benutzer kann verweisen Sie ihren Browser auf [www.yoursite.com/ConfigSettings/connectionStrings.txt](http://www.yoursite.com/ConfigSettings/connectionStrings.txt) und zeigen Sie den Inhalt der Datei.
 
-
 An diesem Punkt die `ConfigSections` Ordner sollte drei Dateien (siehe Abbildung 4) enthalten. Die databaseConnectionStrings.dev.config und databaseConnectionStrings.production.config-Dateien enthalten die Verbindungszeichenfolgen für die Entwicklungs- und produktionsumgebungen, bzw. auf. Die databaseConnectionStrings.config-Datei enthält die Verbindungsinformationen für die Zeichenfolge, die von der Webanwendung zur Laufzeit verwendet werden. Daher muss die databaseConnectionStrings.config-Datei identisch mit der databaseConnectionStrings.dev.config-Datei in der Entwicklungsumgebung sein hingegen auf Produktions-databaseConnectionStrings.config Datei identisch sein databaseConnectionStrings.production.config.
-
 
 [![ConfigSections](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image11.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image10.jpg) 
 
 **Abbildung 4**: ConfigSections ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image12.jpg))
-
 
 Jetzt müssen wir weisen `Web.config` die databaseConnectionStrings.config-Datei für die Verbindung Zeichenfolgenspeicher zu verwenden. Öffnen Sie `Web.config`, und ersetzen Sie das vorhandene `<connectionStrings>`-Element mit folgendem:
 
@@ -132,7 +120,6 @@ Dank dieser Änderung kann die Umgebungen für Entwicklungs- und produktionsumge
 
 > [!NOTE]
 > Sie können angeben, die Informationen für alle `Web.config` Element in einer separaten Datei und Verwenden der `configSource` Attribut auf die Datei aus `Web.config`.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

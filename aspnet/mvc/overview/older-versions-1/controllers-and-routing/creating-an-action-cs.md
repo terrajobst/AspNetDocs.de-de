@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: cb33b28c-3025-4bd1-a1fa-eaa3af7bb56f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c66e066bd3e241e667924dacc114f57151df822a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ebba935383819935ad85c95245666f4eaf6a0dca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389556"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123465"
 ---
 # <a name="creating-an-action-c"></a>Erstellen einer Aktion (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie Sie ASP.NET MVC-Controller eine neue Aktion hinzufügen. Informationen Sie zu den Anforderungen für eine Methode, um eine Aktion werden.
-
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie eine neue Controlleraktion erstellen können. Sie erfahren Sie mehr über die Anforderungen von einer Aktionsmethode. Sie erfahren außerdem, wie Sie verhindern, dass eine Methode als eine Aktion verfügbar gemacht werden.
 
@@ -55,7 +54,6 @@ Wenn Sie eine öffentliche Methode in einer Controllerklasse erstellen müssen u
 [!code-csharp[Main](creating-an-action-cs/samples/sample2.cs)]
 
 Wenn Sie versuchen, die Controlleraktion CompanySecrets() aufrufen, indem Sie die Eingabe /Work/CompanySecrets in die Adressleiste des Browsers klicken Sie dann erhalten die Fehlermeldung in Abbildung 1 Sie.
-
 
 [![Aufrufen einer NonAction-Methode](creating-an-action-cs/_static/image1.jpg)](creating-an-action-cs/_static/image1.png)
 

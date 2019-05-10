@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: b5c268dd-ca6a-4562-b94c-a220fcf01f58
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5c01c3602bd313ebca467b65563b7abfd7ffe2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36f3b753cf312504892872ff54bef49854588990
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400099"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124177"
 ---
 # <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Karten in einer ASP.NET Web Pages (Razor)-Website
 
@@ -40,7 +40,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit WebMatrix 3.
-
 
 In Webseiten können Sie Zuordnungen auf einer Seite anzeigen, indem Sie mithilfe von `Maps` Helper. Sie können Zuordnungen, die basierend auf einer Adresse oder auf einen Satz von Koordinaten für Längen- und Breitengrad generieren. Die `Maps` -Klasse ermöglicht, die Sie beliebte Map-Engines wie Bing, Google, Yahoo und MapQuest aufruft.
 
@@ -109,6 +108,5 @@ Dieses Beispiel zeigt, wie zum Erstellen einer Zuordnung basierend auf Koordinat
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Microsoft.Maps-API-Referenz](https://msdn.microsoft.com/library/gg427611.aspx)

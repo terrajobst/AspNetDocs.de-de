@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: fe47a018-f6d0-4979-80e7-5b1fa75a5865
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 97a60274d9306ea0ee332fcc1ab9e487355dbedb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e11c91a824446572aaf0b3bc6954b9b8ffb4eaff
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384939"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133959"
 ---
 # <a name="creating-a-build-definition-that-supports-deployment"></a>Erstellen einer Builddefinition mit Unterstützung für Bereitstellungen
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Wenn Sie jede Art von Build in Team Foundation Server (TFS) 2010 ausführen möchten, müssen Sie eine Builddefinition innerhalb des Teamprojekts erstellen. In diesem Thema wird beschrieben, wie Sie eine neue Builddefinition in TFS erstellen und wie Sie Web-Bereitstellung im Rahmen des Buildprozesses in Team Build steuern.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -40,7 +39,6 @@ Eine Builddefinition ist ein Mechanismus, der steuert, wie und wann Builds für 
 
 > [!NOTE]
 > Weitere Informationen zum Build-Definitionen, finden Sie unter [definieren Ihres Buildprozesses](https://msdn.microsoft.com/library/ms181715.aspx).
-
 
 In diesem Thema erfahren Sie, wie die Erstellung eine Builddefinition, die Continuous Integration, verwendet, damit ein Build ausgelöst wird, wenn ein Entwickler in neue Inhalte prüft. Wenn der Build erfolgreich ist, führt der Build-Dienst eine benutzerdefinierte Projektdatei, um die Lösung in einer testumgebung bereitzustellen.
 
@@ -60,7 +58,6 @@ Im nächste Abschnitt wird erläutert, wie Sie diesen Prozess zu implementieren,
 
 > [!NOTE]
 > Diese Prozedur&#x2014;in der ein einzelnes automatisierten Prozess erstellt wird, tests, und stellt eine Lösung bereit,&#x2014;ist wahrscheinlich sich am besten für die Bereitstellung in Umgebungen zu testen. Für die Staging-und produktionsumgebungen können Sie viel eher Inhalte aus einem vorherigen Build bereitgestellt, die Sie bereits überprüft haben, und in einer testumgebung überprüft werden soll. Dieser Ansatz wird im nächsten Thema beschrieben [Bereitstellen von einem bestimmten Build](deploying-a-specific-build.md).
-
 
 ### <a name="who-performs-this-procedure"></a>Mit dieser Prozedur werden ausgeführt?
 
@@ -142,7 +139,6 @@ Sie können diese Informationen zu fehlerhaften Builds Probleme zu beheben, bevo
 
 > [!NOTE]
 > Builds, durch die von Bereitstellungslogik ausführen, werden wahrscheinlich erst, wenn Sie dem Build-Server in der zielumgebung erforderlichen Berechtigungen erteilt haben. Weitere Informationen finden Sie unter [Konfigurieren von Berechtigungen für Team Build Deployment](configuring-permissions-for-team-build-deployment.md).
-
 
 ## <a name="monitor-the-build-process"></a>Überwachen des Buildprozesses
 

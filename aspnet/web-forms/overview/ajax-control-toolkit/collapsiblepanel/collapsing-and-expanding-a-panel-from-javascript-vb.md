@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 298789b4-2964-49f5-a0a8-d4dbeb9ff2c2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b41423cb1e587df121828b1e57045cabfede7cb5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f9e279e8700024f28cf589581f09a4bbd95118de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390830"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133547"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>Reduzieren und Erweitern eines Bereichs über JavaScript (VB)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/8/a/a/8aab3c3e-de6f-463f-805c-5fda567eef6e/CollapsiblePanel1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/collapsiblepanel1VB.pdf)
 
 > Das CollapsiblePanel-Steuerelement in ASP.NET AJAX Control Toolkit einen Bereich erweitert und bietet die Möglichkeit, dessen Inhalt reduzieren und erweitern es noch mal. Diese beiden Aktionen können auch mit benutzerdefinierten JavaScript-Code ausgelöst werden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -63,7 +62,6 @@ Zum Schließen, oder reduzieren im Bereich der `_doClose()` -Methode ausgeführt
 Die dritte Schaltfläche Schaltet den Zustand des Bereichs: aus reduziert, um erweitert, und umgekehrt. Die `CollapsiblePanelExtender` macht die `toggle()` -Methode die genau diese Lücke: Kehrt den Zustand des Bereichs. Aber es gibt auch ein anderer Ansatz (wird intern von verwendet die `toggle()` Methode): Die `get_Collapsed()` Methode der `CollapsiblePanelExtender()` gibt an, ob der Bereich reduziert wird oder nicht. Je nach den von dieser Funktion zurückgegebenen Wert, der Bereich ist, und klicken Sie dann entweder erweitert (`_doOpen()` Methode) oder reduziert (`_doClose()`) Methode:
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample8.js)]
-
 
 [![Die dritte Schaltfläche ändert den Zustand des Bereichs: aus reduziert erweiterte und zurück](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
 

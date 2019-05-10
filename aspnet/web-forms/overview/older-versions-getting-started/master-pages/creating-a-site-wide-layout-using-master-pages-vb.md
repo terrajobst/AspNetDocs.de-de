@@ -8,12 +8,12 @@ ms.date: 05/21/2008
 ms.assetid: 30945276-8ed9-4b27-8e50-4309244d3559
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17ec6128d2da94630bfc6014b9eb17922c544dbc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 724663ef1efdbcdf40ed72f9f2ee44d4a4856959
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402816"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134164"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>Erstellen eines websiteweiten Layouts mit Masterseiten (VB)
 
@@ -23,16 +23,13 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > In diesem Tutorial werden die Grundlagen der Masterseite angezeigt. Nämlich, was die Masterseiten sind, wie erstellt eine Masterseite, welche Inhalte Platzhalter sind, wie erstellt eine ASP.NET-Seite, die wird verwendet, eine Masterseite, wie ändern die Masterseite automatisch in der zugeordneten Inhaltsseiten usw. dargestellt wird.
 
-
 ## <a name="introduction"></a>Einführung
 
 Ein Attribut einer gut entworfenen Website ist ein einheitliches standortweite Seitenlayout. Nehmen Sie beispielsweise die www.asp.net-Website. Zum Zeitpunkt der Erstellung dieses Dokuments hat jede Seite derselben Inhalt oben und unten auf der Seite. Wie in Abbildung 1 gezeigt, zeigt der Anfang jeder Seite ein graues Balkens mit einer Liste von Microsoft Communities. Ist das Websitelogo, die Liste der Sprachen, in denen die Website übersetzt wurde, und die Core-Abschnitte: Home, erste Schritte, Informationen, Downloads und So weiter. Ebenso enthält den unteren Rand der Seite Informationen zu Werbezwecken auf www.asp.net, eine urheberrechtserklärung und einen Link zu den Datenschutzbestimmungen.
 
-
 [![Die Website www.asp.net setzt eines konsistenten Aussehens und Verhaltens für alle Seiten](creating-a-site-wide-layout-using-master-pages-vb/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image1.png)
 
 <strong>Abbildung 01</strong>: Die www.asp.net Website verwendet wird, ein konsistentes Aussehen und können für alle Seiten ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image3.png))
-
 
 Ein weiteres Attribut einer gut entworfenen Website ist die Leichtigkeit, mit der des Standorts Darstellung geändert werden kann. Abbildung 1 zeigt die Startseite www.asp.net ab März 2008, aber zwischen jetzt und in diesem Lernprogramm für die Veröffentlichung, das Aussehen und Verhalten möglicherweise geändert. Vielleicht werden die Menüelementen am oberen Rand erweitert, um einen neuen Abschnitt für das MVC-Framework enthalten. Oder vielleicht ein brandneues Design mit verschiedenen Farben, Schriftarten und Layout unveiled. Anwenden von Änderungen auf die gesamte Website sollte eine schnelle und einfache Verfahren, das Ändern von Tausenden von Webseiten, aus denen die Website nicht erfordert.
 
@@ -64,28 +61,22 @@ Die Mängel bei der Verwendung der Steuerelemente in ASP.NET Version 2.0 und Vis
 > [!NOTE]
 > Die grundlegenden Konzepte und Funktionalität von Masterseiten wurde nicht geändert, seit ASP.NET-Version 2.0. Visual Studio 2008 bietet jedoch zur Entwurfszeit Unterstützung für verschachtelte Gestaltungsvorlagen, ein Feature, das in Visual Studio 2005 gefehlt. Betrachten wir mit geschachtelten Masterseiten in einem späteren Tutorial.
 
-
 Abbildung 2 zeigt, wie die Masterseite für www.asp.net aussehen könnte. Beachten Sie, dass die Masterseite der allgemeinen websiteweiten Layouts - Markup an die oberen, unteren und rechten Rand jeder Seite – sowie ein ContentPlaceHolder-Objekt in der Mitte links, definiert, wo sich die Inhalte für jede einzelne Webseite befindet.
-
 
 ![Eine Masterseite definiert das Layout der Website-Ebene sowie der Regionen, die bearbeitet werden pro Seite Inhalt vom Seiteninhalt](creating-a-site-wide-layout-using-master-pages-vb/_static/image4.png)
 
 **Abbildung 02**: Eine Masterseite definiert das Layout der Website-Ebene sowie der Regionen, die bearbeitet werden pro Seite Inhalt vom Seiteninhalt
 
-
 Nachdem eine Masterseite definiert wurde kann es zu ASP.NET-Seiten durch die Teilstriche eines Kontrollkästchens gebunden werden. Diese - wird aufgerufen, Inhaltsseiten - ASP.NET-Seiten enthalten ein ContentControl-Element für jede der Masterseite ContentPlaceHolder-Steuerelemente. Bei die Inhaltsseite über einen Browser zugegriffen wird ist das ASP.NET-Modul erstellt die Steuerelementhierarchie der Masterseite und Steuerelementhierarchie der Seite Inhalt in den entsprechenden Stellen einfügt. Dieser kombinierte Steuerelementhierarchie gerendert wird, und die resultierende HTML an den Browser des Benutzers zurückgegeben. Daher gibt die Seite Inhalte auf, die allgemeine Markup in die Masterseite außerhalb der ContentPlaceHolder-Steuerelemente definiert und das seitenspezifische-Markup, das in eine eigene ContentControl-Elemente definiert. Abbildung 3 veranschaulicht dieses Konzept.
-
 
 [![Die angeforderte Seite Markup wird in die Masterseite Fused.](creating-a-site-wide-layout-using-master-pages-vb/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image5.png)
 
 **Abbildung 03**: Die angeforderte Seite Markup wird in die Masterseite Fused ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image7.png))
 
-
 Nun, da wir die Funktionsweise von Masterseiten erläutert haben, werfen wir einen Blick auf das Erstellen einer Masterseite und zugeordneten Inhaltsseiten, die mit Visual Web Developer.
 
 > [!NOTE]
 > Um die größtmögliche Zielgruppe erreichen, wir, in der gesamten dieser Reihe von Lernprogrammen erstellen, ASP.NET-Website erstellt werden Microsofts kostenlose Version von Visual Studio 2008 mit ASP.NET 3.5 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/). Wenn Sie noch nicht keine, ein Upgrade auf ASP.NET 3.5 Sorge – gut in diesen Tutorials arbeiten vorgestellten Konzepte genauso mit ASP.NET 2.0 und Visual Studio 2005. Einige demoanwendungen möglicherweise jedoch neue Funktionen in .NET Framework, Version 3.5 verwenden. Wenn 3.5-spezifischen Funktionen verwendet werden, enthalten eine Anmerkung, die erläutert, wie Sie ähnliche Funktionalität in Version 2.0 implementieren. Beachten Sie, die die für demoanwendungen verfügbar von jedes Tutorial Ziel .NET Framework, Version 3.5 herunterladen Was führt eine `Web.config` Datei, die 3.5-spezifische Konfigurationselemente enthält. Kurz gesagt, wenn Sie noch so installieren Sie .NET 3.5 auf Ihrem Computer klicken Sie dann die herunterladbare Webanwendung funktioniert nicht ohne Sie zuerst die 3.5-spezifische Markup aus `Web.config`. Finden Sie unter [Analyse ASP.NET Version 3.5 die `Web.config` Datei](http://www.4guysfromrolla.com/articles/121207-1.aspx) für Weitere Informationen zu diesem Thema.
-
 
 ## <a name="step-1-creating-a-master-page"></a>Schritt 1: Erstellen einer Masterseite
 
@@ -94,19 +85,15 @@ Wir erstellen und Verwenden von Master- und Inhaltsseiten untersuchen können, b
 > [!NOTE]
 > Visual Studio unterstützt zwei Modi des Projektmanagements: Von Websiteprojekten und Webanwendungsprojekten. Web Site Projects fehlt eine Projektdatei, während Web Application Projects die Projektarchitektur in Visual Studio .NET 2002/2003 imitieren-sie enthalten eine Projektdatei, und Kompilieren von Quellcode des Projekts in eine einzelne Assembly, die in platziert ist die `/bin` Ordner. Visual Studio 2005 Projekt anfangs nur unterstützte Website, obwohl das Webanwendungsprojekt-Modell mit Service Pack 1 wieder eingeführt wurde. Visual Studio 2008 bietet beide Projektmodelle. Die Visual Web Developer 2005 und 2008-Editionen unterstützen jedoch nur von Websiteprojekten. Für meinen Demos in diesem Tutorial verwende ich das Websiteprojekt-Modell. Wenn Sie eine nicht-Express-Edition verwenden und, verwenden Sie möchten die [Webanwendungsprojekt-Modell](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) stattdessen gerne tun, aber beachten Sie, dass es möglicherweise einige Diskrepanzen zwischen der Anzeige auf Ihrem Bildschirm und welche Schritte Sie müssen im Vergleich zu den dargestellten bildschirmabbildungen und Anweisungen, die in diesen Tutorials.
 
-
 [![Erstellen einer neuen System-basierte-Website](creating-a-site-wide-layout-using-master-pages-vb/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image8.png)
 
 **Abbildung 04**: Erstellen einer Website New File System-Based ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image10.png))
 
-
 Fügen Sie eine Masterseite an die Website in das Stammverzeichnis von mit der rechten Maustaste auf den Projektnamen, wählen neues Element hinzufügen und Auswählen der Masterseitenvorlage. Beachten Sie, dass mit der Erweiterung Masterseiten enden `.master`. Nennen Sie diese neue Masterseite `Site.master` , und klicken Sie auf Hinzufügen.
-
 
 [![Fügen Sie eine Master-Seite mit dem Namen "Site.Master" auf der Website](creating-a-site-wide-layout-using-master-pages-vb/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image11.png)
 
 **Abbildung 05**: Fügen Sie eine Master-Seite mit dem Namen `Site.master` auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image13.png))
-
 
 Hinzufügen einer neuen Masterseitendatei durch Visual Web Developer erstellt eine Masterseite mit den folgenden deklarativem Markup:
 
@@ -126,16 +113,13 @@ Diese deklarativen Masterseite Standardmarkup dient als Ausgangspunkt für eigen
 > [!NOTE]
 > Beim Entwerfen einer Masterseite stellen sicher, dass die Masterseite enthält ein Webformular und, mindestens ein ContentPlaceHolder-Steuerelement wird in diesem Web Form angezeigt.
 
-
 ### <a name="creating-a-simple-site-layout"></a>Erstellen einer einfachen Website Layouts
 
 Erweitern wir nun `Site.master`des standardmäßigen deklaratives Markup zum Erstellen eines Standort-Layouts, in dem alle Seiten teilen: einen allgemeinen Header, eine linke Spalte mit Navigation, Nachrichten und andere websiteweite Inhalte; und eine Fußzeile, in dem das Symbol "Unterstützt von Microsoft ASP.NET" angezeigt. Abbildung 6 zeigt das Ergebnis der Masterseite, wenn eine der Seiten, auf die Inhalte über einen Browser angezeigt wird. Der rote Eingekreiste Bereich in Abbildung 6 bezieht sich auf der Seite aufgerufen wird (`Default.aspx`); der andere Inhalt sind auf der Masterseite definierte und aus diesem Grund konsistent alle Inhaltsseiten.
 
-
 [![Die Masterseite definiert das Markup für die oben, linken und unteren Teile](creating-a-site-wide-layout-using-master-pages-vb/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image14.png)
 
 **Abbildung 06**: Die Master-Seite definiert das Markup für die oben, linken und unteren Teile ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image16.png))
-
 
 Um das Website-Layout in Abbildung 6 dargestellten zu erreichen, starten Sie mit dem Aktualisieren der `Site.master` Masterseite, sodass sie die folgende deklarative Markup enthält:
 
@@ -152,7 +136,6 @@ Wenn Sie auf Ihrem Computer befolgt werden, müssen Sie dieses Tutorial den Code
 > [!NOTE]
 > Eine Erörterung der CSS-Formatierung Webseite sprengen den Rahmen dieses Artikels aus. Weitere Informationen zu CSS, sehen Sie sich die [CSS-Tutorials](http://www.w3schools.com/css/default.asp) am [W3Schools.com](http://www.w3schools.com/). Außerdem sollten Sie dieses Tutorial den Codedownload herunterladen und Testen Sie die CSS-Einstellungen in `Styles.css` die Auswirkungen der verschiedenen Regeln zur Formatierung angezeigt.
 
-
 ### <a name="creating-a-master-page-using-an-existing-design-template"></a>Erstellen einer Masterseite mit einer vorhandenen Entwurfsvorlage für den
 
 Im Laufe der Jahre habe ich eine Anzahl von ASP.NET Web-Anwendungen für kleine-mittelgroße Unternehmen entwickelt. Einige meiner Kunden hatten eines vorhandene Website-Layouts, die, das Sie verwenden möchten; andere eingestellt zuständigen Grafikdesigner. Ein paar wie mich, um das Layout der Website zu entwerfen. Wie Sie von Abbildung 6 erkennen können, empfiehlt Multitaskings auf dem einen Programmierer zum Entwerfen einer Website Layout in der Regel als mit Ihren Steuerberater eine Operation am offenen Herzen ausgeführt werden, während es sich bei Ihrem Arzt besprechen steuern ist.
@@ -161,7 +144,6 @@ Glücklicherweise stehen innumerous Websites mit kostenlosen HTML-Design-Vorlage
 
 > [!NOTE]
 > Microsoft bietet auch eine Reihe von [kostenlose ASP.NET Start Kit Entwurfsvorlagen](https://msdn.microsoft.com/asp.net/aa336613.aspx) , die in Visual Studio im Dialogfeld Neue Website integriert.
-
 
 ## <a name="step-2-creating-associated-content-pages"></a>Schritt 2: Erstellen von verknüpften Inhaltsseiten
 
@@ -172,16 +154,13 @@ Wir fügen Sie eine neue ASP.NET-Seite auf das Projekt, und binden Sie es an der
 > [!NOTE]
 > Wenn Sie Ihre ASP.NET-Website das Webanwendungsprojekt-Modell verwenden, anstatt das Websiteprojekt-Modell erstellt haben, sehen Sie nicht das Kontrollkästchen "Masterseite auswählen", in das Dialogfeld "Neues Element hinzufügen" in Abbildung 7 dargestellt. Seite mithilfe des Webanwendungsprojekts Modellieren Sie müssen die Inhalte Webformularvorlage anstelle der Web Form-Vorlage auswählen, um einen Inhalt zu erstellen. Nach dem Auswählen der Vorlage Webinhaltsformular, und klicken Sie auf Hinzufügen, wählen Sie den gleichen eine Masterseite, die in Abbildung 8 dargestellte Dialogfeld angezeigt wird.
 
-
 [![Fügen Sie eine neue Seite hinzu.](creating-a-site-wide-layout-using-master-pages-vb/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image17.png)
 
 **Abbildung 07**: Fügen Sie eine neue Seite hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image19.png))
 
-
 [![Wählen Sie die Site.master-Masterseite](creating-a-site-wide-layout-using-master-pages-vb/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image20.png)
 
 **Abbildung 08**: Wählen Sie die `Site.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image22.png))
-
 
 Wie in der folgende deklarative Markup wird gezeigt, eine neue Seite enthält eine `@Page` Anweisung, die Punkte in der Master Seite und ein ContentControl-Element für jedes der Masterseite ContentPlaceHolder-Steuerelemente sichern.
 
@@ -190,28 +169,23 @@ Wie in der folgende deklarative Markup wird gezeigt, eine neue Seite enthält ei
 > [!NOTE]
 > Im Abschnitt "Erstellen einer einfachen Website Layout" in Schritt 1 habe ich umbenannt `ContentPlaceHolder1` zu `MainContent`. Wenn Sie nicht diese ContentPlaceHolder-Steuerelement umbenennen, `ID` auf die gleiche Weise, Ihre Inhaltsseite deklaratives Markup wird unterscheiden sich geringfügig aus dem Markup oben. Nämlich des zweite Inhaltssteuerelements des `ContentPlaceHolderID` spiegeln die `ID` des entsprechenden ContentPlaceHolder, die in Ihrer Masterseite steuern.
 
-
 Beim Rendern von einer Inhaltsseite, muss das ASP.NET-Modul der Seite fuse Inhaltssteuerelemente mit der Masterseite ContentPlaceHolder-Steuerelemente. Die ASP.NET-Engine bestimmt die Masterseite der Inhaltsseite, von der `@Page` -Direktive `MasterPageFile` Attribut. Wie das obenstehende Markup zeigt, ist diese Inhaltsseite an gebunden `~/Site.master`.
 
 Da die Masterseite zwei ContentPlaceHolder-Steuerelemente - verfügt über `head` und `MainContent` -Visual Web Developer generiert zwei Inhaltssteuerelemente. Jedes Inhaltssteuerelement verweist auf ein bestimmtes ContentPlaceHolder-Objekt über dessen `ContentPlaceHolderID` Eigenschaft.
 
 Masterseiten, in denen über vorherige standortweite Vorlage Techniken bringen ist ihre Unterstützung während der Entwurfszeit. Abbildung 9 zeigt die `About.aspx` Inhaltsseite, wenn Sie über Visual Web Developer-Entwurfsansicht angezeigt. Beachten Sie, dass während der Inhalt der Masterseite angezeigt wird, abgeblendet ist und kann nicht geändert werden. Die Inhaltssteuerelemente, die für die Masterseite ContentPlaceHolder-Steuerelemente können, jedoch bearbeitet werden. Und nur verwendet werden, wie Sie mit einer beliebigen anderen ASP.NET-Seite durch Hinzufügen von Web-Steuerelementen über die Ansichten Quelltext- oder Entwurfssicht der Inhaltsseite Schnittstelle erstellen können.
 
-
 [![Die Inhaltsseite die Entwurfsansicht zeigt sowohl den Seiteninhalt der seitenspezifische und Master](creating-a-site-wide-layout-using-master-pages-vb/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image23.png)
 
 **Abbildung 09**: Die Inhaltsseite Design View zeigt sowohl die seitenspezifische und Inhalt der Master-Seite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image25.png))
-
 
 ### <a name="adding-markup-and-web-controls-to-the-content-page"></a>Hinzufügen von Markup und Websteuerelemente auf der Seite Inhalt
 
 Einige Inhalte für erstellen in Ruhe die `About.aspx` Seite. Sie können finden Sie in Abbildung 10: ich eine Überschrift "Über die Author" und eine Reihe von Absätze mit Text eingegeben, aber gerne Websteuerelemente hinzuzufügen. Besuchen Sie nach dem Erstellen dieser Schnittstelle, die `About.aspx` Seite über einen Browser.
 
-
 [![Besuchen Sie die Seite About.aspx über einen Browser](creating-a-site-wide-layout-using-master-pages-vb/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image26.png)
 
 **Abbildung 10**: Besuchen Sie die `About.aspx` Seite über ein Browser ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image28.png))
-
 
 Es ist wichtig zu verstehen, dass auf der Seite für den angeforderten Inhalt und der zugeordneten Masterseite mit Sicherung und als Ganzes vollständig auf dem Webserver gerendert. Die vom Browser des Benutzers wird den resultierenden fused HTML-Code gesendet. Um dies zu überprüfen, zeigen Sie den HTML-Code, der vom Browser empfangen werden, indem Sie das Menü "Ansicht" und Quelle auswählen. Beachten Sie, dass keine Rahmen oder eine beliebige andere Techniken für die Anzeige von zwei verschiedenen Webseiten in einem einzelnen Fenster vorhanden sind.
 
@@ -232,7 +206,6 @@ Da es viel einfacher ist, neue Inhaltsseiten zu erstellen, statt vorhandene ASP.
 > [!NOTE]
 > Wenn Sie eine neue ASP.NET-Anwendung erstellen, fügt Visual Web Developer eine `Default.aspx` Seite, die nicht an eine Masterseite gebunden ist. Wenn Sie die Methode konvertieren eine vorhandene ASP.NET-Seite in einer Inhaltsseite möchten, fahren Sie fort, und zu diesem Zweck mit `Default.aspx`. Alternativ können Sie löschen `Default.aspx` , und klicken Sie dann wieder hinzu, aber dieses Mal mit dem Aktivieren des Kontrollkästchens "Masterseite auswählen".
 
-
 ## <a name="step-3-updating-the-master-pages-markup"></a>Schritt 3: Aktualisieren das Markup der Master-Seiten
 
 Einer der Hauptvorteile von Masterseiten ist, dass eine einzige masterdseite definiert das allgemeine Layout für zahlreiche Seiten auf der Website verwendet werden kann. Und benötigt deshalb das Aktualisieren des Standorts Aussehen und Verhalten Aktualisieren einer einzelnen Datei - Masterseite.
@@ -247,15 +220,12 @@ Als Nächstes erstellen Sie eine `Page_Load` -Ereignishandler für den Master Se
 
 Der Code oben legt fest, der Bezeichnung `Text` Eigenschaft, um das aktuelle Datum und die Uhrzeit formatiert, als der Tag der Woche, die den Namen des Monats, und die zweistellige Tagesangabe (siehe Abbildung 11). Rufen Sie eine der Inhaltsseiten für die durch diese Änderung. Wie in Abbildung 11 gezeigt, wird das daraus resultierende Markup wird sofort aktualisiert, um die Änderung auf die Masterseite einschließen.
 
-
 [![Die Änderungen an der Masterseite werden berücksichtigt beim Anzeigen der Inhaltsseite](creating-a-site-wide-layout-using-master-pages-vb/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image29.png)
 
 **Abbildung 11**: Die Änderungen an der Masterseite werden berücksichtigt beim Anzeigen der Inhaltsseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-site-wide-layout-using-master-pages-vb/_static/image31.png))
 
-
 > [!NOTE]
 > Wie in diesem Beispiel wird veranschaulicht, können Masterseiten serverseitige Web-Steuerelemente, Code und Ereignishandler enthalten.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

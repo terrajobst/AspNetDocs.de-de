@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 9e4d5cac-b071-440c-b044-20b6d0c964fb
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/secure-applications-using-authentication-and-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 102e4c2f1fe122669021a159b60f0943fe92fbf2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8d509c5f15bb4d5014e53b8dc2a736454238e72c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396446"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122225"
 ---
 # <a name="secure-applications-using-authentication-and-authorization"></a>Sichern von Anwendungen mithilfe von Authentifizierung und Autorisierung
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > Schritt 9 zeigt, wie Authentifizierung und Autorisierung für die NerdDinner-Anwendung schützen hinzufügen, sodass die Benutzer zum Registrieren müssen und Anmeldung auf der Website zum Erstellen von neuen Dinner und nur der Benutzer, die eine Dinner hostet können sie später bearbeiten.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-step-9-authentication-and-authorization"></a>NerdDinner Schritt 9: Authentifizierung und Autorisierung
 

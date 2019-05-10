@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 397522d5-0402-4b94-b810-a2fb564f869d
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
 msc.type: authoredcontent
-ms.openlocfilehash: ebd49295ea165ba4ef1a25398cff7dddcfa54f11
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 154cfe6694cf723c0a1f8e33bfdb42c97594518f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392195"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122321"
 ---
 # <a name="introducing-the-nerddinner-tutorial"></a>Einführung zum NerdDinner-Tutorial
 
@@ -24,7 +24,6 @@ durch [Scott Hanselman](https://github.com/shanselman)
 > Die beste Möglichkeit, erfahren, ein neues Framework ist etwas damit zu erstellen. Dieses Tutorial führt Sie durch die Schritte zum Erstellen einer kleines, aber abgeschlossen haben, Anwendung, die mithilfe von ASP.NET MVC-1, und eine Einführung in die wichtigsten Konzepte.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-tutorial"></a>NerdDinner Tutorial
 

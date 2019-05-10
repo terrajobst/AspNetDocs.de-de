@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 2ece0bf4-aae5-4ff4-8f62-28e0819d4f86
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: c39e1cf42fde382a9e74d7f865f0dac1aa62ddc8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c165bbea505b4cb8eae1312cdd587f4ed36541a0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384232"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127949"
 ---
 # <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>Verwenden der Seitenprüfung für Visual Studio 2012 in ASP.NET Web Forms
 
@@ -43,7 +43,6 @@ von Tim Ammann
 > 
 > [Mithilfe der CSS-Farbauswahl](#css_color_picker)
 
-
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
 ## <a name="prerequisites"></a>Vorraussetzungen
@@ -52,7 +51,6 @@ von Tim Ammann
 
 > [!NOTE]
 > Rufen Sie die neueste Version der Seitenprüfung mit [Webplattform-Installer](https://go.microsoft.com/fwlink/?LinkId=255386) auf das Azure SDK für .NET 2.0 installiert.
-
 
 Die Seitenprüfung ist Microsoft Web Developer Tools enthalten. Die neueste Version ist 1.3. Um die Version haben Sie, Visual Studio ausführen, und wählen Sie **Info zu Microsoft Visual Studio** aus der **Hilfe** Menü.
 
@@ -190,7 +188,6 @@ Die **Stile** Fenster macht es einfach, test und Vorschau CSS Änderungen erford
 
 > [!NOTE]
 > Dieses Feature erfordert Version 1.3 der Seitenprüfung.
-
 
 Das Feature für die automatische CSS-Synchronisierung können Sie eine CSS-Datei direkt bearbeiten und die Änderungen sofort im Browser Seitenprüfung.
 

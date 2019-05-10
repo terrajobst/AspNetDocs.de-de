@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb987dd9b26ad9f0e8a88fd881bde4505ec4148
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421068"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115901"
 ---
 # <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Praktische Übungseinheiten: Visual Studio 2013 Web Tools
 
@@ -28,7 +28,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > Alle von dieser Leistung steht auch für Erweiterungen, die Editoren mit leistungsfähigen neuen Features entsprechend Ihren Anforderungen erweitern erleichtert. Web Essentials ist eine Auflistung von (hauptsächlich) webbezogene Verbesserungen in Visual Studio. Er enthält viele neue IntelliSense-vervollständigungen (insbesondere bei CSS), neuen Features von Browser Link, automatische JSHint für JavaScript-Dateien, neue Warnungen für HTML, CSS und viele weitere Features, die die moderne Webentwicklung unverzichtbar sind.
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -64,7 +63,6 @@ Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie z
 > [!NOTE]
 > Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
 
@@ -72,7 +70,6 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 
 > [!NOTE]
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
-
 
 ---
 
@@ -87,9 +84,8 @@ Dieser praktischen Übungseinheit enthält die folgenden Übungen:
 > [!NOTE]
 > Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>Übung 1: Verwenden von Browserlink und die Web Essentials
+### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>Übung 1: Verwenden von Browserlink und die Web Essentials
 
 **Web Essentials** ist eine Visual Studio-Erweiterung, die eine Vielzahl von nützlichen Features für die moderne Webentwicklung, vor allem darauf konzentriert, die die webentwicklungserfahrung viel schneller und problemloser hinzufügt. Sie können die Web Essentials aus dem Katalog der Erweiterung in Visual Studio installieren.
 
@@ -338,7 +334,7 @@ In dieser Aufgabe verwenden Sie den Browserlink **Entwurfsmodus** Funktion bearb
 5. Ändern Sie den Wert, der die **Inhalt** Attribut *GeekQuiz* und speichern Sie die Datei.
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>Übung 2: Nutzung von Codeausschnitten und IntelliSense
+### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>Übung 2: Nutzung von Codeausschnitten und IntelliSense
 
 Mit Web Essentials wurde der HTML-Editor mit zusätzlicher Funktionalität erweitert. In dieser Übung sehen Sie einige neue Features, die Sie bei der Entwicklung von Webanwendungen.
 

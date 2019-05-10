@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: b9775f41-352a-4f82-baa6-23e95b342e20
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: a5c7804c2336e91dc171b5da52819436472e81cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c5da14a6856f551343b6fb14f0aedc659e792f6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59412449"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122084"
 ---
 # <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)
 
@@ -31,7 +31,7 @@ In diesem End-to-End-Tutorial lernen Sie, wie Sie Web-API verwenden, um die folg
 - In der [ersten Teil dieses Lernprogramms](#STEP1), erstellen Sie eine ASP.NET Web-API-Anwendung, alle Vorgänge zum Verwalten einer Bücherkatalog Create, Read, Update und Delete (CRUD) unterstützt. Diese Anwendung verwendet die [Beispiel-XML-Datei (books.xml)](https://msdn.microsoft.com/library/windows/desktop/ms762271.aspx) auf MSDN.
 - In der [zweiter Teil dieses Lernprogramms](#STEP2), erstellen Sie eine interaktive Windows Phone 8-Anwendung, die Daten aus Ihrer Web-API-Anwendung abruft.
 
-#### <a name="prerequisites"></a>Vorraussetzungen
+#### <a name="prerequisites"></a>Erforderliche Komponenten
 
 - Visual Studio 2013 mit dem Windows Phone 8 SDK
 - Windows 8 oder höher auf einem 64-Bit-System mit Hyper-V installiert
@@ -39,7 +39,6 @@ In diesem End-to-End-Tutorial lernen Sie, wie Sie Web-API verwenden, um die folg
 
 > [!NOTE]
 > Wenn Sie beabsichtigen, um die Konnektivität zwischen Web-API und Windows Phone 8-Projekte auf dem lokalen System zu testen, müssen Sie die Anweisungen in der *[Web-API-Anwendungen auf einem lokalen mit der Windows Phone 8-Emulator Computer](https://go.microsoft.com/fwlink/?LinkId=324014)* Artikel zum Einrichten Ihrer testumgebung.
-
 
 <a id="STEP1"></a>
 ### <a name="step-1-creating-the-web-api-bookstore-project"></a>Schritt 1: Erstellen das Web-API-Bookstore-Projekt
@@ -50,20 +49,16 @@ Der erste Schritt in diesem End-to-End-Tutorial ist ein Web-API-Projekt zu erste
 2. Klicken Sie auf **Datei**, klicken Sie dann **neue**, und klicken Sie dann **Projekt**.
 3. Wenn die **neues Projekt** Dialogfeld wird angezeigt, erweitern Sie **installiert**, klicken Sie dann **Vorlagen**, klicken Sie dann **Visual C#-**, und klicken Sie dann **Web**.
 
-
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                Klicken Sie auf Bild zu erweitern                                                                |
 
-
 4. Markieren Sie **ASP.NET-Webanwendung**, geben Sie **BookStore** für den Projektnamen ein, und klicken Sie dann auf **OK**.
 5. Wenn die **neues ASP.NET-Projekt** Dialogfeld angezeigt wird, wählen die **Web-API-** Vorlage, und klicken Sie dann auf **OK**.
-
 
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image4.png)](calling-web-api-from-a-windows-phone-8-application/_static/image3.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                Klicken Sie auf Bild zu erweitern                                                                |
-
 
 6. Wenn die Web-API-Projekt geöffnet wird, wird entfernen Sie den Beispielcontroller aus dem Projekt:
 
@@ -195,8 +190,6 @@ Wenn die Anwendung nicht mit Ihrer Web-API kommunizieren kann, wird eine Fehlerm
 
 Wenn Sie auf die Fehlermeldung tippen, werden zusätzliche Details zum Fehler angezeigt:
 
-
 | [![](calling-web-api-from-a-windows-phone-8-application/_static/image16.png)](calling-web-api-from-a-windows-phone-8-application/_static/image15.png) |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                 Klicken Sie auf Bild zu erweitern                                                                 |
-

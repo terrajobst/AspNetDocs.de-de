@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d917982d5bd97bf1fa9d926e761c6fe847bb0574
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c28f520f710f77689548158e88d87d1051235d8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394197"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124230"
 ---
 # <a name="processing-unhandled-exceptions-vb"></a>Verarbeiten von Ausnahmefehlern (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Anzeigen oder Herunterladen von Beispielcode](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples) ([Vorgehensweise zum Herunterladen](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > Tritt ein Laufzeitfehler auf eine Webanwendung in der Produktion ist es wichtig, die einen Entwickler zu benachrichtigen und den Fehler protokollieren, damit es zu einem späteren Zeitpunkt rechtzeitig diagnostiziert werden kann. Dieses Lernprogramm bietet einen Überblick darüber, wie ASP.NET Laufzeitfehler verarbeitet und untersucht eine Möglichkeit, benutzerdefinierten Code, wenn eine nicht behandelte Ausnahme Blasen bis zu der ASP.NET-Laufzeit ausgeführt haben.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -34,7 +33,6 @@ In diesem Tutorial wird gezeigt, wie Sie die Details einer nicht behandelten Aus
 
 > [!NOTE]
 > Die Informationen, die untersucht, die in diesem Tutorial sind besonders hilfreich, wenn nicht behandelte Ausnahmen auf eindeutige oder benutzerdefinierte Weise verarbeitet werden muss. In Fällen, in dem Sie müssen nur die Ausnahme protokollieren und einen Entwickler zu benachrichtigen, ist eine Fehler Protokollierung Bibliotheken die beste Wahl. Die nächsten beiden Lernprogramme bieten einen Überblick über diese Bibliotheken.
-
 
 ## <a name="executing-code-when-theerrorevent-is-raised"></a>Ausführen von Code, wenn die`Error`Ereignis wird ausgelöst.
 
@@ -56,7 +54,6 @@ Die `Global.asax` in einem drahtlosen Zugriffspunkt von Visual Studio globale an
 > [!NOTE]
 > Beim Bereitstellen der ASP.NET-Anwendung müssen Sie kopieren die `Global.asax` Datei in der produktionsumgebung bereit. Die `Global.asax.vb` -Datei, die in der WAP erstellt wird, muss es sich nicht in der Produktion kopiert werden, da dieser Code in der Assembly des Projekts kompiliert wird.
 
-
 Die Ereignishandler, die von Visual Studio Globale Anwendungsklasse Vorlage erstellt wurde, sind nicht vollständig. Sie können einen Ereignishandler hinzufügen, für alle `HttpApplication` Ereignisses durch den Namen des ereignishandlers `Application_EventName`. Beispielsweise können Sie den folgenden Code hinzu Hinzufügen der `Global.asax` Datei zum Erstellen eines ereignishandlers für die [ `AuthorizeRequest` Ereignis](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample1.vb)]
@@ -65,7 +62,6 @@ Ebenso können Sie alle Ereignishandler, die von der Vorlage für die Globale An
 
 > [!NOTE]
 > *HTTP-Module* bieten eine weitere Möglichkeit zum Definieren von Ereignishandlern für `HttpApplication` Ereignisse. HTTP-Module werden in einer separaten Klassenbibliothek erstellt, als eine Klassendatei, die direkt innerhalb des Webanwendungsprojekts platziert oder ausgelagert werden kann. Da sie in eine Klassenbibliothek verteilt werden können, bieten HTTP-Module ein flexibler und wieder verwendbaren Modell zum Erstellen von `HttpApplication` -Ereignishandler. Während der `Global.asax` Datei bezieht sich auf die Webanwendung, in dem er sich befindet, kann HTTP-Module in Assemblys, die an diesem Punkt das HTTP-Modul auf einer Website hinzufügen so einfach ist wie das Löschen der Assemblys in kompiliert werden die `Bin` Ordner und Registrieren der Modul im `Web.config`. In diesem Tutorial scheint sich nicht in die Erstellung und Verwendung von HTTP-Modulen, aber die beiden fehlerprotokollierung-Bibliotheken, die in den folgenden beiden Tutorials verwendet werden als HTTP-Module implementiert. Weitere Hintergrundinformationen zu den Vorteilen der HTTP-Modulen finden Sie unter [mithilfe von HTTP-Module und Handler, um Komponenten von austauschbaren ASP.NET erstellen](https://msdn.microsoft.com/library/aa479332.aspx).
-
 
 ## <a name="retrieving-information-about-the-unhandled-exception"></a>Abrufen von Informationen zu nicht behandelten Ausnahme
 
@@ -92,7 +88,6 @@ Die .NET Framework-Klassen der [ `System.Net.Mail` Namespace](https://msdn.micro
 > [!NOTE]
 > Die `<system.net>` Element enthält, die SMTP-servereinstellungen ein, die die `SmtpClient` -Klasse beim Senden einer e-Mail. Ihre Webhostingunternehmen wahrscheinlich hat es sich um einen SMTP-Server, den Sie zum Senden von e-Mails von Ihrer Anwendung verwenden können. Informationen zu den SMTP-Server-Einstellungen, die Sie in Ihrer Webanwendung verwenden sollten finden Sie in Abschnitt für Ihre Web-Host-Support.
 
-
 Fügen Sie den folgenden Code der `Application_Error` -Ereignishandler einem Entwickler eine e-Mail senden, wenn ein Fehler auftritt:
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample4.vb)]
@@ -105,7 +100,6 @@ Der letzte Schritt ist zum Senden der `MailMessage`. Dies erfolgt durch Erstelle
 
 > [!NOTE]
 > Zur Verwendung dieses Codes in Ihrer Webanwendung sollten Sie so ändern Sie die Werte in der `ToAddress` und `FromAddress` Konstanten aus support@example.com Ihrem e-Mail-Adresse die e-Mail-Benachrichtigung Fehler gesendet werden sollen und stammen. Sie müssen außerdem Geben Sie den SMTP-servereinstellungen in der `<system.net>` im Abschnitt `Web.config`. Wenden Sie sich an Ihre Webhostinganbieter aus, um zu bestimmen, die SMTP-servereinstellungen zu verwenden.
-
 
 Mit diesem Code werden jedes Mal, wenn ein Fehler vorliegt wird der Entwickler eine e-Mail-Nachricht gesendet, die den Fehler zusammenfasst und den YSOD. Im vorherigen Tutorial dargelegt einen Laufzeitfehler durch Genre.aspx besuchen und die Übergabe eines ungültigen `ID` Wert über die Abfragezeichenfolge, wie z. B. `Genre.aspx?ID=foo`. Besuchen die Seite mit den `Global.asax` Datei direkt erzeugt dieselbe benutzererfahrung wie im vorherigen Tutorial – in der Entwicklungsumgebung Sie die Ausnahme Details gelben Bildschirm weiterhin of Death, angezeigt werden soll, während in der produktionsumgebung wird die benutzerdefinierte Fehlerseite angezeigt. Zusätzlich zu diesem vorhandenen Verhalten ist der Entwickler eine e-Mail gesendet.
 

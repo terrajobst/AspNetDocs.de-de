@@ -8,12 +8,12 @@ ms.date: 01/23/2019
 ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: ce5b617cc1032d190cc2450aa554b462ea6f6156
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 336df47dd4bda813839913676f12a51b899c0cf9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025327"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121982"
 ---
 # <a name="troubleshooting-http-405-errors-after-publishing-web-api-applications"></a>Problembehandlung bei HTTP 405-Fehlern, nach der Veröffentlichung von Web-API-Anwendungen
 
@@ -24,7 +24,6 @@ ms.locfileid: "57025327"
 > 
 > - [Internetinformationsdienste (Internet Information Services, IIS)](https://www.iis.net/) (Version 7 oder höher)
 > - [Web-API](../../index.md) 
-
 
 Web-API-Anwendungen verwenden in der Regel mehrere gängige HTTP-Verben: GET, POST, PUT, DELETE, und manchmal PATCH. Nichtsdestotrotz ist Entwickler in Situationen, in denen diese Verben werden durch ein anderes Modul von IIS auf ihrer Produktionsserver, was zu einer Situation führt ein Web-API-Controller, der in Visual Studio oder auf einem Entwicklungsserver ordnungsgemäß funktioniert, in denen zurück implementiert, führen möglicherweise eine HTTP 405 Fehler bei der Bereitstellung auf einem Produktionsserver. Glücklicherweise kann dieses Problem einfach behoben, aber die Lösung erfordert eine Erklärung, warum das Problem auftritt.
 
@@ -58,18 +57,13 @@ Aber wenn eine HTTP-Methode für die Verwendung auf dem Server konfiguriert ist,
 
 Das folgende Beispiel-HTTP-Anforderung und Antwort veranschaulicht eine Situation, in denen ein HTTP-Client versucht, den Wert an eine Web-API-Anwendung auf einem Webserver zu PLATZIEREN, und der Server gibt einen HTTP-Fehler die Zustände, die die PUT-Methode nicht zulässig:
 
-
 HTTP-Anforderung:
-
 
 [!code-console[Main](troubleshooting-http-405-errors-after-publishing-web-api-applications/samples/sample1.cmd)]
 
-
 HTTP-Antwort:
 
-
 [!code-console[Main](troubleshooting-http-405-errors-after-publishing-web-api-applications/samples/sample2.cmd)]
-
 
 In diesem Beispiel ist der HTTP-Client eine gültige JSON-Anforderung an die URL für eine Web-API-Anwendung auf einem Webserver gesendet, aber der Server hat eine HTTP 405-Fehlermeldung gibt an, dass die PUT-Methode für die URL nicht zugelassen wurde zurückgegeben. Im Gegensatz dazu, wenn der Anforderungs-URI eine Route für die Web-API-Anwendung nicht übereinstimmten, der Server würde zurückgeben HTTP 404-Antwort ***wurde nicht gefunden.*** Fehler.
 

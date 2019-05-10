@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3df4258b2de309aed5a3a598caeb1e7332c321f6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cee2b6e7c7517a1e03ae26d5233fc438857a030c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383958"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123883"
 ---
 # <a name="iteration-7--add-ajax-functionality-vb"></a>Iteration #7 – Hinzufügen von Ajax-Funktionen (VB)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (VB)
-  
 
 In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
 
@@ -93,11 +91,9 @@ Fügen Sie der folgende JavaScript-Code enthält, in der &lt;Head&gt; Tag der Ma
 
 Lassen Sie s zunächst, ändern unsere Ansicht "Index", sodass Sie auf eine Gruppe von Kontakten nur die Region der Sicht aktualisiert, die Kontakte angezeigt. Das rote Kästchen in Abbildung 1 enthält die Region, die aktualisiert werden sollen.
 
-
 [![Nur Kontakte aktualisieren](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
 
 **Abbildung 01**: Nur Kontakte aktualisieren ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-vb/_static/image2.png))
-
 
 Der erste Schritt ist der Teil der Ansicht zu trennen, der für die asynchrone Aktualisierung in eine separate partielle (User-Steuerelement) werden soll. Der Teil der Ansicht "Index", die die Tabelle von Kontakten anzeigt, wurde in die partielle in Codebeispiel 1 verschoben.
 
@@ -133,9 +129,7 @@ Beachten Sie, dass die Index()-Aktion nicht so viele Daten, die beim Aufrufen du
 
 Unsere geänderte Ansicht "Index" funktioniert im Fall von sowohl älteren als auch keine komplexe Browser. Wenn Sie auf eine Gruppe von Kontakten und Ihr Browser JavaScript unterstützt, wird nur in die Region der Sicht, die die Liste der Kontakte enthält aktualisiert. Wenn Sie auf der anderen Seite Ihr Browser JavaScript nicht unterstützt, wird die gesamte Ansicht aktualisiert.
 
-
 Unsere aktualisierten Ansicht "Index" hat ein Problem. Wenn Sie eine Gruppe von Kontakte klicken, wird die ausgewählte Gruppe nicht hervorgehoben. Da die Liste der Gruppen außerhalb der Region angezeigt werden, die während einer Ajax-Anforderung aktualisiert wird, wird die richtige Gruppe nicht hervorgehoben. Dieses Problem korrigieren wir im nächsten Abschnitt.
-
 
 ## <a name="adding-jquery-animation-effects"></a>Hinzufügen von jQuery Animationseffekten
 
@@ -193,11 +187,9 @@ Wenn ein Benutzer die Browserschaltfläche zurück oder die Schaltfläche "Weite
 
 Aktuell, um einen Kontakt zu löschen, müssen Sie klicken auf den Link "löschen", und klicken Sie dann auf die Schaltfläche "löschen" in die Bestätigungsseite "löschen" angezeigt (siehe Abbildung 2). Dies scheint sehr viel Seitenanforderungen möchten einfach nur einen Datenbankdatensatz zu löschen.
 
-
 [![Die Bestätigungsseite "löschen"](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
 
 **Abbildung 02**: Die Bestätigungsseite "löschen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-vb/_static/image4.png))
-
 
 Es ist verlockend, überspringen Sie die Bestätigungsseite "löschen", und Löschen eines Kontakts direkt aus der Ansicht "Index". Da bei diesem Ansatz Ihrer Anwendung zu Sicherheitslücken eröffnet, vermeiden Sie Versuchung. Im Allgemeinen Sie Ich möchte einen HTTP GET-Vorgang ausführen, wenn eine Aktion aufrufen, die den Zustand Ihrer Webanwendung ändert möchten. Wenn Sie einen Löschvorgang durchführen zu können, möchten Sie zum Ausführen von HTTP POST oder besser noch, um eine HTTP DELETE-Vorgang.
 
@@ -214,7 +206,6 @@ Der Link "löschen" wird mit dem folgenden Aufruf der Methode Ajax.ImageActionLi
 > [!NOTE] 
 > 
 > Die Ajax.ImageActionLink() ist kein standardmäßigen Bestandteil von ASP.NET MVC-Framework. Die Ajax.ImageActionLink() ist eine benutzerdefinierte Helper-Methoden, die im Contact Manager-Projekt enthalten ist.
-
 
 Der AjaxOptions-Parameter verfügt über zwei Eigenschaften. Zuerst wird die Confirm-Eigenschaft verwendet, um ein Popup-JavaScript-Bestätigungsdialogfeld angezeigt. Zweitens wird die HttpMethod-Eigenschaft verwendet, um eine HTTP DELETE-Vorgang auszuführen.
 

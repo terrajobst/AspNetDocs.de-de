@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: b7f77869-aa1d-4025-924f-622c57112db6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3f966869c106416886dfa4e9e3c2cf67ee5fe337
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9613b96612c2799c17bd5633083bb439913b4dc9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385812"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124847"
 ---
 # <a name="databinding-the-slider-control-c"></a>Datenbindung des Schieberegler-Steuerelements (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
 
 > Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können. Es ist möglich, die die aktuelle Position des Schiebereglers an ein anderes ASP.NET-Steuerelement zu binden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -43,7 +42,6 @@ Der nächste Schritt ist bereits im letzten Schritt. Die `SliderExtender` Steuer
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample3.aspx)]
 
 Wie Sie im Browser sehen können, funktioniert die Datenbindung in beide Richtungen: einen neuen Wert in das Textfeld eingeben, aktualisiert die Position der des Schiebereglers. Wenn Sie das zweite Textfeld schreibgeschützt machen, können Sie einen unzureichenden Schutz auf das Textfeld hinzufügen, sodass es schwieriger für den Benutzer manuell auf den Wert hier aktualisieren.
-
 
 [![Schieberegler und Textfeld werden synchronisiert.](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
 
