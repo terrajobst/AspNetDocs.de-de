@@ -8,12 +8,12 @@ ms.date: 02/13/2014
 ms.assetid: 0acfec5a-48f2-4766-a801-a0f426966f0a
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 6d25eb99f87c4c3d2c96e021e79a13c90da4a035
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1a76098779d05912bf7bdf2de5fdce024770752c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414490"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134612"
 ---
 # <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programmieren von ASP.NET-Webseiten (Razor) mithilfe von Visual Studio
 
@@ -37,7 +37,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >
 >
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2, Visual Studio 2012, Visual Studio 2010 und WebMatrix 2.
-
 
 Sie können ASP.NET Web Pages mit Razor-Syntax, die mithilfe von WebMatrix oder viele andere Code-Editoren programmieren. Sie können auch Microsoft Visual Studio verwenden, eine voll funktionsfähige integrierte Entwicklungsumgebung (IDE), die einen Reihe leistungsstarken Tools bietet für viele Arten von Anwendungen (nicht nur Websites) erstellen. Um mit ASP.NET Razor-Seiten arbeiten, können Sie [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 

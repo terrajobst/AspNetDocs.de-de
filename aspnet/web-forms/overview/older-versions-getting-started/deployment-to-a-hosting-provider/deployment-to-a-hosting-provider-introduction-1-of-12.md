@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: a2d7f33b-8c4a-4b48-9fb1-9139cf9b9878
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ae53e23dda3ac63e26590edab692188bb44e9f65
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 838ee5b3620c50ca5f29ff8cb2c2ac876d3041d8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413203"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133311"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio: Einführung in – 1 von 12
 
@@ -30,7 +30,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > In den Tutorials wird davon ausgegangen, dass Sie wissen, wie mit ASP.NET Core in Visual Studio arbeiten. Falls nicht, ein guter Ausgangspunkt ist ein [ASP.NET Web Forms Lernprogramm](../tailspin-spyworks/tailspin-spyworks-part-1.md) oder [Lernprogramm zu ASP.NET MVC](../../../../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md).
 > 
 > Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET bereitstellungsforum](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -78,7 +77,7 @@ Stellen Sie eine Lösung, wenn ein Fehler, während der Bereitstellung auftritt,
 
 Kommentare zu den Lernprogrammen sind Willkommen, und bei der Aktualisierung des Tutorials wird bemüht versucht, berücksichtigt der Konto-Korrekturen oder Vorschläge für Verbesserungen, die im Tutorial Kommentare bereitgestellt werden.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie Windows 7 oder höher und eine der folgenden Produkte auf Ihrem Computer installiert:
 

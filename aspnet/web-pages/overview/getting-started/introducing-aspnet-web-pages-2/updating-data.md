@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 4542ad3ac3e321629bb4de3cd4df12c22ff6cb20
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f8bcfb7d9d2416a2699776cadbdaae8e12415ba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414620"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131793"
 ---
 # <a name="introducing-aspnet-web-pages---updating-database-data"></a>Einführung in ASP.NET Web Pages: Aktualisieren von DatenbankenDaten
 
@@ -37,7 +37,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - Die SQL-Anweisung `Update` Befehl.
 > - Die `Database.Execute` -Methode.
 > - Ausgeblendete Felder (`<input type="hidden">`).
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -129,7 +128,6 @@ Die Spalte besteht aus *nur* der das Markup, das den Link gerendert wird, sowie 
 > 
 > Wenn benannte Parameter verwenden möchten, müssen Sie natürlich die Namen der Parameter zu kennen. WebMatrix IntelliSense können *anzeigen* Sie die Namen, aber es kann nicht aktuell Geben sie für Sie.
 
-
 ## <a name="creating-the-edit-page"></a>Erstellen die Seite "Bearbeiten"
 
 Nun können Sie erstellen die *EditMovie* Seite. Wenn der Benutzer klicken auf die **bearbeiten** Link sie zum Schluss werden auf dieser Seite.
@@ -206,7 +204,6 @@ Sie können alle Spalten in einer beliebigen Reihenfolge angeben und Sie müssen
 > 
 > **Wichtige** der `Where` -Klausel mit der ID ist sehr wichtig, denn das ist wie die Datenbank bekannt ist, welche Datenbank Datensätze aktualisiert werden soll. Wenn Sie aufgehört haben vorher die `Where` -Klausel, die Datenbank wird aktualisiert *jeder* Datensatz in der Datenbank. In den meisten Fällen wäre, die einem Notfall.
 
-
 Im Code werden die Werte aktualisieren für die SQL-Anweisung übergeben, mit Platzhaltern. Wiederholen, was wir erwähnt habe: aus Sicherheitsgründen *nur* Platzhalter verwenden, um Werte an eine SQL-Anweisung übergeben.
 
 Nachdem der Code verwendet `db.Execute` zum Ausführen der `Update` -Anweisung, die es wieder auf die Angebotsseite, hier Sie die Änderungen sehen leitet.
@@ -222,7 +219,6 @@ Nachdem der Code verwendet `db.Execute` zum Ausführen der `Update` -Anweisung, 
 > Natürlich die `Query` Methode kann nur eine Datenbankzeile zurück. ASP.NET behandelt, jedoch immer die Ergebnisse der `Query` Methode als eine Auflistung. Auch wenn die Methode nur eine Zeile zurückgibt, müssen Sie in dieser Zeile aus der Auflistung zu extrahieren. Aus diesem Grund in Situationen, in dem Sie *wissen* erhalten Sie einige nur eine Zeile ist dies ein angenehmer zu wenig `QuerySingle`.
 > 
 > Es gibt einigen andere Methoden, die bestimmte Typen von Datenbankvorgänge ausführen. Sie finden eine Liste der datenbankmethoden in der [ASP.NET Web Pages-API-Kurzübersicht](../../api-reference/asp-net-web-pages-api-reference.md#Data).
-
 
 ## <a name="making-validation-for-the-id-more-robust"></a>Überprüfung für die ID mehr machen robuster
 
