@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3951ab4562e2c172f418c74136d511f0f9f50454
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7efdb13ae67c8485fc35bf759901fec85c31669c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415842"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109277"
 ---
 # <a name="strategies-for-database-development-and-deployment-c"></a>Strategien zur Datenbankentwicklung und -bereitstellung (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [PDF herunterladen](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial10_DBDevel_cs.pdf)
 
 > Beim Bereitstellen einer datengesteuerten Anwendung zum ersten Mal können Sie die Datenbank Blind in der Entwicklungsumgebung in der produktionsumgebung kopieren. Aber eine Blind ausführen Kopie in nachfolgende Bereitstellungen überschreibt alle Daten, die in der Produktionsdatenbank eingegeben wurden. Stattdessen umfasst das Bereitstellen einer Datenbank anwenden der Änderungen, die in der Entwicklungsdatenbank seit der letzten Bereitstellung auf die Produktionsdatenbank. In diesem Tutorial werden diese Herausforderungen und bietet verschiedene Strategien zur Unterstützung der chronicling und Anwenden der Änderungen an der Datenbank seit der letzten Bereitstellung vorgenommen werden.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -54,13 +53,11 @@ Die einfachste Möglichkeit, ein Protokoll der Änderungen in das Datenmodell w�
 
 <a id="0.4_table01"></a>
 
-
 | **Datum der Änderung** | **Änderungsdetails** |
 | --- | --- |
 | 2009-02-03: | Hinzugefügte Spalte `DepartmentID` (`int`, NOT NULL), die `Employees` Tabelle. Eine foreign Key-Einschränkung von hinzugefügt `Departments.DepartmentID` zu `Employees.DepartmentID`. |
 | 2009-02-05: | Entfernte Spalte `TotalWeight` aus der `Orders` Tabelle. Zugeordnete Daten, die bereits erfasst `OrderDetails` Datensätze. |
 | 2009-02-12: | Erstellt die `ProductCategories` Tabelle. Es gibt drei Spalten: `ProductCategoryID` (`int`, `IDENTITY`, `NOT NULL`), `CategoryName` (`nvarchar(50)`, `NOT NULL`), und `Active` (`bit`, `NOT NULL`). Um eine primary Key-Einschränkung hinzugefügt `ProductCategoryID`, und ein Standardwert von 1 bis `Active`. |
-
 
 Es gibt eine Reihe von Nachteilen dieses Ansatzes. Es ist beispielsweise keine Hoffnung für die Automatisierung. Müssen diese Änderungen jederzeit auf eine Datenbank - angewendet werden, wie z. B. wenn die Anwendung bereitgestellt wird – ein Entwickler muss manuell implementieren. zum Ändern der einzelnen einzeln nacheinander. Darüber hinaus, wenn Sie eine bestimmte Version der Datenbank von der Baseline, die mit dem Änderungsprotokoll wiederherstellen müssen, wird dies so mehr Zeit in Anspruch nehmen wächst die Größe des Protokolls. Ein weiterer Nachteil dieser Methode ist, dass die Übersichtlichkeit und die Details der einzelnen Protokolleinträge für die Änderung bleibt der Person, die Aufzeichnung der Änderung. In einem Team mit mehreren Entwicklern möglicherweise einige ausführlichere, besser lesbar und eine genauere Einträge als andere Stellen. Darüber hinaus sind Rechtschreibfehler korrigiert und andere Menschen bezogene Dateneingabefehler möglich.
 
@@ -70,7 +67,6 @@ Verwalten Ihre Änderungsprotokoll im Text wird nicht ist, zugegeben, nicht sehr
 
 > [!NOTE]
 > Während die Informationen im Änderungsprotokoll, technisch gesehen nur erforderlich, bis zum Zeitpunkt der Bereitstellung ist, empfehle ich einen Verlauf der Änderungen beibehalten. Doch anstatt zu warten, eine einzelne, ständig Log-Änderungsdatei, erwägen Sie, dass eine andere Änderung Protokolldatei für jede Datenbankversion. In der Regel empfiehlt auf Version die Datenbank jedes Mal, die sie bereitgestellt wird. Indem Sie ein Protokoll der Änderungsprotokolle verwalten kann, ausgehend von der Baseline neu erstellt jede Datenbankversion durch Ausführen der Log-Änderungsskripts ab Version 1 und fortsetzen, bis Sie erreichen, dass die Version muss wiederhergestellt werden.
-
 
 ## <a name="recording-the-sql-change-statements"></a>Aufzeichnen der SQL-Anweisungen ändern
 
@@ -95,18 +91,14 @@ Es gibt eine Vielzahl von Drittanbieter-Datenbank-Vergleichstools von vielen unt
 > [!NOTE]
 > Zum Zeitpunkt der Erstellung dieses Dokuments wurde die aktuelle Version von SQL Compare-Version 7.1, mit der Standard Edition 395 $ Kosten. Nachfolgend eine 14-Tage-Testversion herunterladen.
 
-
 Beim Starten von SQL Compare Öffnet das Dialogfeld Vergleich-Projekte, die mit der gespeicherten SQL Compare-Projekte. Erstellen Sie ein neues Projekt. Dadurch wird es sich um den Projekt-Assistenten, der Informationen zu den Datenbanken dazu aufgefordert werden, verglichen werden soll (siehe Abbildung 1). Geben Sie die Informationen für die Datenbanken für Entwicklungs- und produktionsumgebungen Umgebung aus.
-
 
 [![Vergleichen Sie die Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image2.jpg)](strategies-for-database-development-and-deployment-cs/_static/image1.jpg)
 
 **Abbildung 1**: Vergleichen Sie die Entwicklung und Produktion von Datenbanken ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image3.jpg))
 
-
 > [!NOTE]
 > Der Entwicklungsdatenbank für die Umgebung ist eine SQL Express Edition-Datenbankdatei in den `App_Data` Ordner der Website Sie die Datenbank auf dem SQL Server Express-Datenbank-Server zu registrieren, um es aus dem in Abbildung 1 dargestellten Dialogfeld auswählen müssen. Die einfachste Möglichkeit hierzu ist, öffnen Sie SQL Server Management Studio (SSMS), mit dem SQL Server Express-Datenbank-Server verbinden, und fügen Sie die Datenbank. Wenn Sie nicht SSMS-Installation auf Ihrem Computer verfügen können Sie herunterladen und installieren Sie die kostenlose [ *Version von SQL Server 2008 Management Studio Basic*](https://www.microsoft.com/downloads/details.aspx?FamilyId=7522A683-4CB2-454E-B908-E805E9BD4E28&amp;displaylang=en).
-
 
 Zusätzlich zur Auswahl der Datenbanken, verglichen werden soll, können Sie auch eine Vielzahl von Einstellungen für Schwellenwertvergleich aus der Registerkarte "Optionen" angeben. Eine Möglichkeit, die Sie aktivieren möchten, möglicherweise ist die "Ignore-Einschränkung und Index Namen." Denken Sie daran, dass in den vorherigen Tutorials aus, den wir, dass die Anwendung auf Datenbankobjekte, die die Datenbanken für Entwicklungs- und produktionsumgebungen services hinzugefügt. Bei Verwendung der `aspnet_regsql.exe` Tool, um diese Objekte auf die Produktionsdatenbank zu erstellen, und Sie feststellen, dass die Datenbanken für Entwicklungs- und produktionsumgebungen die primary key- und unique-Einschränkungsnamen unterscheiden. Daher wird SQL Compare aller Application Services Tabellen als unterschiedliche flag. Lassen Sie entweder die "ignorieren-Einschränkung und Index-Namen" deaktiviert und synchronisieren Sie die Namen der Einschränkungen oder anweisen, SQL vergleichen, um diese Unterschiede ignoriert werden sollen.
 
@@ -115,11 +107,9 @@ Nach der Auswahl der Datenbanken vergleichen (und überprüfen die Vergleichsopt
 > [!NOTE]
 > Die Änderungen des Datenmodells, die in diesem Tutorial vorgenommen wurden vorgenommen, um mit einem Datenbank-Vergleichs-Tool zu veranschaulichen. Sie werden diese Änderungen nicht in zukünftigen Lernprogrammen in der Datenbank gefunden.
 
-
 [![SQL-Vergleich werden die Unterschiede zwischen der Entwicklung und Produktion von Datenbanken](strategies-for-database-development-and-deployment-cs/_static/image5.jpg)](strategies-for-database-development-and-deployment-cs/_static/image4.jpg)
 
 **Abbildung 2**: SQL Compare aufgeführt, die Unterschiede zwischen der Entwicklung und Produktion von Datenbanken ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image6.jpg))
-
 
 Die Datenbankobjekte in Gruppen unterteilt werden SQL Compare schnell Sie welche Objekte mit in beiden Datenbanken vorhanden sind, aber unterschiedlich sind, die Objekte in einer Datenbank, aber nicht in der anderen vorhanden und welche Objekte identisch sind. Wie Sie sehen können, sind zwei Objekte, die in beiden Datenbanken vorhanden sind, jedoch unterscheiden: das `Authors` -Tabelle, die eine Spalte hinzugefügt haben, und die `Books` -Tabelle, die eine entfernt. Es gibt ein Objekt, das nur in der Entwicklungsdatenbank, d. h. die neu erstellte vorhanden `Ratings` Tabelle. Und es gibt 117 Objekte, die in beiden Datenbanken identisch sind.
 
@@ -127,17 +117,14 @@ Ein Datenbankobjekt auswählen, zeigt die SQL-Unterschiede-Fenster, in dem zeigt
 
 Im nächste Schritt werden nach dem die Unterschiede überprüfen und Auswählen der Objekte, die Sie synchronisieren möchten, generieren die SQL-Befehle erforderlich, um die Produktion s Datenbankschema zu aktualisieren, mit die Entwicklungsdatenbank übereinstimmen. Dies erfolgt mithilfe des Assistenten für die Synchronisierung. Der Assistent für die Synchronisierung bestätigt werden soll, welche Objekte, die zum Synchronisieren, und fasst die Aktion planen (siehe Abbildung 3). Sie können die Datenbanken sofort zu synchronisieren oder generieren ein Skript mit der SQL-Befehle, die in aller Ruhe ausgeführt werden können.
 
-
 [![Mithilfe des Assistenten für die Synchronisierung Ihrer Datenbankschemas synchronisieren](strategies-for-database-development-and-deployment-cs/_static/image8.jpg)](strategies-for-database-development-and-deployment-cs/_static/image7.jpg)
 
 **Abbildung 3**: Verwenden Sie den Assistenten "Synchronisierung" zu synchronisieren der Datenbankschemas ([klicken Sie, um das Bild in voller Größe anzeigen](strategies-for-database-development-and-deployment-cs/_static/image9.jpg))
-
 
 Datenbank-Vergleichstools wie Red Gate Software SQL Compare s stellen Anwenden der Änderungen am Datenbankschema "Entwicklung" in der Produktionsdatenbank, die so einfach wie zeigen und klicken Sie auf.
 
 > [!NOTE]
 > Vergleicht und zwei Datenbanken synchronisiert SQL Compare *Schemas*. Leider es nicht verglichen werden soll, und die Daten in zwei Datenbanken, Tabellen zu synchronisieren. Red Gate Software bietet ein Produkt, mit dem Namen [ *SQL Datenvergleich* ](http://www.red-gate.com/products/SQL_Data_Compare/) , vergleicht und synchronisiert die Daten zwischen zwei Datenbanken, aber ist ein separates Produkt SQL Compare und Kosten für eine andere 395 $.
-
 
 ## <a name="taking-the-application-offline-during-deployment"></a>Nehmen die Anwendung offline schalten, während der Bereitstellung
 

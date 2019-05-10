@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 78fd0e92-f9c6-4e96-a5e9-0375b307a828
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba9fdaaf655f6510d3ebf6ce0930fbf4000add3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a2e2cfbec3e5aebf42a2de30bab7d45b4b610298
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59388867"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109571"
 ---
 # <a name="data-source-controls"></a>Datenquellen-Steuerelemente
 
 by [Microsoft](https://github.com/microsoft)
 
 > Das DataGrid-Steuerelement in ASP.NET 1.x eine große Verbesserung beim Datenzugriff in Webanwendungen gekennzeichnet. Allerdings war es nicht so benutzerfreundlich wie es hätten verwendet werden kann. Es immer noch erforderlich, eine erhebliche Menge an Code, die viele nützliche Funktionen daraus zu gewinnen. Dies ist das Modell in der alle Data Access-Aufgaben in 1.x.
-
 
 Das DataGrid-Steuerelement in ASP.NET 1.x eine große Verbesserung beim Datenzugriff in Webanwendungen gekennzeichnet. Allerdings war es nicht so benutzerfreundlich wie es hätten verwendet werden kann. Es immer noch erforderlich, eine erhebliche Menge an Code, die viele nützliche Funktionen daraus zu gewinnen. Dies ist das Modell in der alle Data Access-Aufgaben in 1.x.
 
@@ -30,7 +29,6 @@ Datenquellen-Steuerelemente haben keine Benutzeroberfläche an. Sie werden imple
 
 > [!NOTE]
 > Wie Sie später sehen werden, Zwischenspeichern gibt es auch Vorteile, die mithilfe des Datenquellen-Steuerelemente abgerufen.
-
 
 ## <a name="storing-connection-strings"></a>Das Speichern von Verbindungszeichenfolgen
 
@@ -42,7 +40,6 @@ Der folgende Codeausschnitt fügt eine neue Verbindungszeichenfolge hinzu.
 
 > [!NOTE]
 > Wie bei der &lt;"appSettings"&gt; Abschnitt der &lt;ConnectionStrings&gt; im angezeigten Abschnitt außerhalb von den &lt;"System.Web"&gt; Abschnitt in der Konfigurationsdatei.
-
 
 Um diese Verbindungszeichenfolge zu verwenden, können Sie die folgende Syntax, beim Festlegen der ConnectionString-Attribut eines Serversteuerelements.
 
@@ -81,7 +78,6 @@ Um dem SqlDataSource-Steuerelement verwenden möchten, und indem Sie einfach Geb
 > [!NOTE]
 > Da die DataSourceControl-Klasse automatisch die Verbindung geschlossen wird, sollten sie die Anzahl der Anrufe von Kunden durch den Verlust von Verbindungen mit der Datenbank generiert reduzieren.
 
-
 Der folgende Codeausschnitt bindet ein DropDownList-Steuerelement an ein SqlDataSource-Steuerelement, das mithilfe der Verbindungszeichenfolge, die in der Konfigurationsdatei wie oben gezeigt gespeichert sind.
 
 [!code-aspx[Main](data-source-controls/samples/sample3.aspx)]
@@ -90,7 +86,6 @@ Wie oben gezeigt wurde, gibt der Datenreader, der dem SqlDataSource-Steuerelemen
 
 > [!NOTE]
 > Beim Zwischenspeichern von einem SqlDataSource-Steuerelement oder einem AccessDataSource, muss der Datenreader DataSet festgelegt werden. Es wird eine Ausnahme ausgelöst, wenn mit einem DataReader DataSourceMode der Zwischenspeicherung aktiviert.
-
 
 ## <a name="sqldatasource-properties"></a>SqlDataSource-Eigenschaften
 
@@ -162,7 +157,6 @@ Die AccessDataSource der "ProviderName", der dem Basis-SqlDataSource-Steuereleme
 
 > [!NOTE]
 > Access-Datenbanken, die innerhalb der Website gespeicherten platziert werden soll, in der App\_Verzeichnis "Data". ASP.NET lässt sich nicht auf Dateien in diesem Verzeichnis zu durchsuchenden aus. Sie müssen das Prozesskonto lesen und Schreiben der App Berechtigungen zu erteilen\_Verzeichnis "Data" bei Verwendung von Access-Datenbanken.
-
 
 ## <a name="the-xmldatasource-control"></a>XmlDataSource-Steuerelement
 

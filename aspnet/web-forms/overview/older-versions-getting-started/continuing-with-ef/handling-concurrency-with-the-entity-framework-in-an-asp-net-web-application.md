@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: a5aa22a6-fb7f-4f41-9c7f-addda151940b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: fc9ce539005bce1790c726dfb859305f4ff78a6b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3df5f7d9c8fb22e1ea34fe16560bdb9a1309bb56
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422563"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131880"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Verarbeiten von Parallelität bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
 
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
-
 
 Im vorherigen Tutorial haben Sie gelernt, wie Sortieren und Filtern Daten mit der `ObjectDataSource` -Steuerelement und das Entity Framework. Dieses Tutorial Zeigt Optionen für die Behandlung von Parallelität in einer ASP.NET-Webanwendung, die das Entity Framework verwendet. Erstellen Sie eine neue Webseite, die speziell für das Aktualisieren von Büroaufgaben "Instructor". Sie müssen behandeln, Parallelitätsprobleme in dieser Seite und in den Abteilungen-Seite, die Sie zuvor erstellt haben.
 

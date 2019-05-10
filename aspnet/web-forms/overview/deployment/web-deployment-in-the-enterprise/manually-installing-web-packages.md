@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f11d22a7-5d32-4ad0-8a9b-276460a61c06
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f778549d3e26989a2e71ef21171adec521842729
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408796"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132140"
 ---
 # <a name="manually-installing-web-packages"></a>Manuelles Installieren von Webpaketen
 
@@ -29,7 +29,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > 
 > In diesen Szenarien kann Ihre einzige Option sein, port des Pakets auf dem Zielserver und manuell in IIS importieren. Obwohl dieser Ansatz, automatisierten Bereitstellung ausschließt, ist es immer noch eine höchst effektive Technik zum Veröffentlichen einer Webanwendung&#x2014;Sie einfach eine einzelne Zip-Datei auf Ihren Webserver kopieren und verwenden Sie einen Assistenten, um Sie bei den Importvorgang zu unterstützen.
 
-
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
 ## <a name="task-overview"></a>Übersicht über den Task
@@ -44,7 +43,6 @@ In diesem Thema zeigt Sie, wie Sie diese Schritte ausführen. Die Aufgaben und e
 
 > [!NOTE]
 > In diesem Thema wird am besten verwendet, in Verbindung mit [Konfigurieren eines Webservers für Bereitstellen von Webpublishing (Offline-Bereitstellung)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md), die erklärt, wie die erforderlichen Komponenten installieren und Vorbereiten einer IIS-Website für den Paketimport.
-
 
 ## <a name="create-a-web-deployment-package"></a>Erstellen eines Webbereitstellungspakets
 
@@ -68,9 +66,7 @@ Sie können einem Webbereitstellungspaket für ein Webprojekt für die Anwendung
 
 Sie können einem Webbereitstellungspaket über die Befehlszeile erstellen, durch den Aufruf der **Paket** Ziel auf das Webanwendungsprojekt mithilfe von MSBuild. Der Befehl sieht folgendermaßen aus:
 
-
 [!code-console[Main](manually-installing-web-packages/samples/sample1.cmd)]
-
 
 Je nachdem, was Sie Ansatz verwenden, das Endergebnis ist identisch. Die WPP wird einem Webbereitstellungspaket als Zipdatei zusammen mit verschiedenen unterstützenden Ressourcen, die in den Ausgabeordner für das Webanwendungsprojekt erstellt.
 

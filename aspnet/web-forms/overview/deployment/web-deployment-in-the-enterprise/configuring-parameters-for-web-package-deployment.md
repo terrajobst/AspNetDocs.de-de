@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 37947d79-ab1e-4ba9-9017-52e7a2757414
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f738d1c0b3cd99bb6df5f8b24dca907fa0b31f4d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f04ace98d81a33053b10cab7e40dbd75a6c0992c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413099"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108728"
 ---
 # <a name="configuring-parameters-for-web-package-deployment"></a>Konfigurieren von Parametern für die Bereitstellung von Webpaketen
 
@@ -23,7 +23,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 
 > Dieses Thema beschreibt das Festlegen von Parameterwerten, wie Internet Information Services (IIS)-Web-Anwendungsnamen, Verbindungszeichenfolgen und Dienstendpunkte, wenn Sie ein Webpaket für einen remote-IIS-Webserver bereitstellen.
 
-
 Wenn Sie ein Webanwendungsprojekt, die Build- und Verpackungsprozess erstellen, wird die drei Schlüsseldateien generiert:
 
 - Ein *[Projektname] ZIP* Datei. Dies ist das Webbereitstellungspaket für Ihr Webprojekt für die Anwendung. Dieses Paket enthält alle Assemblys, Dateien, Datenbankskripts und Ressourcen, die erforderlich sind, um Ihre Webanwendung auf einem remote-IIS-Webserver neu zu erstellen.
@@ -32,7 +31,6 @@ Wenn Sie ein Webanwendungsprojekt, die Build- und Verpackungsprozess erstellen, 
 
 > [!NOTE]
 > Weitere Informationen zu den Build- und Verpackungsprozess, finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md).
-
 
 Die *"SetParameters.xml"* dynamisch aus der Projektdatei der Web-Anwendung und alle Konfigurationsdateien in Ihrem Projekt generiert. Wenn Sie zu erstellen und Packen das Projekt, das Web Publishing Pipeline (WPP) erkennt viele der Variablen automatisch, die wahrscheinlich zwischen bereitstellungsumgebungen, wie die Ziel-IIS-Webanwendung und eine beliebige Datenbank-Verbindungszeichenfolgen ändern. Diese Werte automatisch in das Webbereitstellungspaket parametrisiert und hinzugefügt werden, um die *"SetParameters.xml"* Datei. Z. B., wenn Sie eine Verbindungszeichenfolge zum Hinzufügen der *"Web.config"* Datei in das Webanwendungsprojekt, der Buildprozess erkennt diese Änderung, und fügt einen Eintrag in einen der *"SetParameters.xml"* Datei entsprechend.
 
@@ -48,9 +46,7 @@ Beim Erstellen und Packen Sie eine Webanwendung, wird die WPP automatisch diese 
 
 Beispielsweise würden Sie zum Erstellen und Verpacken der [Contact Manager](the-contact-manager-solution.md) beispiellösung ohne direkten Zugriff auf die Parametrisierung wird in keiner Weise, die WPP erzeugt dies *ContactManager.Mvc.SetParameters.xml* Datei:
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample1.xml)]
-
 
 In diesem Fall gilt Folgendes:
 
@@ -73,15 +69,11 @@ Die einfachste Möglichkeit zum Parametrisieren von Rowseteigenschaften wird zum
 
 Wenn Sie diese Datei öffnen, sehen Sie, dass es sich um ein einzelnes enthält **Parameter** Eintrag. Der Eintrag verwendet eine XML Path Language (XPath)-Abfrage zu suchen und parametrisieren die Endpunkt-URL des Diensts ContactService Windows Communication Foundation (WCF) in der *"Web.config"* Datei.
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample2.xml)]
-
 
 Zusätzlich zu parametrisieren die Endpunkt-URL in das Bereitstellungspaket an, fügt die WPP auch einen entsprechenden Eintrag aus, um die *"SetParameters.xml"* -Datei, die zusammen mit dem Bereitstellungspaket generiert wird.
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample3.xml)]
-
 
 Wenn Sie das Bereitstellungspaket manuell installieren, fordert IIS-Manager Sie zur Adresse Dienstendpunkts zusammen mit den Eigenschaften, die automatisch parametrisiert wurden. Bei der Installation des Bereitstellungspakets mit der *. "Deploy.cmd"* -Datei, die Sie bearbeiten die *"SetParameters.xml"* Datei, geben Sie einen Wert für die Dienst-Endpunktadresse sowie Werte für die Eigenschaften, die automatisch parametrisiert wurden.
 
@@ -96,22 +88,16 @@ Die [Contact Manager-beispiellösung](the-contact-manager-solution.md) veranscha
 > [!NOTE]
 > Eine umfassendere Übersicht des Projektmodells-Datei in die Projektmappe, und eine Einführung in benutzerdefinierte Projektdateien im Allgemeinen finden Sie unter [Grundlegendes zur Projektdatei](understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](understanding-the-build-process.md).
 
-
 Zunächst werden die Parameterwerte von Interesse sind als Eigenschaften in der Umgebung spezifischen Projektdatei definiert (z. B. *Env-Dev.proj*).
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample4.xml)]
-
 
 > [!NOTE]
 > Anleitungen zum Anpassen der umgebungsspezifischen Projektdateien für Ihre eigenen serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
-
 Als Nächstes die *Publish.proj* -Datei importiert, diese Eigenschaften. Da jede *"SetParameters.xml"* Datei zugeordnet ist eine *. "Deploy.cmd"* -Datei, und wir werden die Projektdatei, die jeweils aufrufen soll *. "Deploy.cmd"* Datei des Projekts erstellt die Datei eine MSBuild *Element* für jede *. "Deploy.cmd"* Datei, und definiert die Eigenschaften von Interesse sind, als *Elementmetadaten*.
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample5.xml)]
-
 
 In diesem Fall gilt Folgendes:
 
@@ -122,9 +108,7 @@ In diesem Fall gilt Folgendes:
 
 In der *Publish.proj* -Datei, die **PublishWebPackages** verwendet als Ziel der **XmlPoke** Aufgabe so ändern Sie diese Werte in der *"SetParameters.xml"* Datei.
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample6.xml)]
-
 
 Sie werden feststellen, dass jedes **XmlPoke** Task gibt vier Attributwerte:
 

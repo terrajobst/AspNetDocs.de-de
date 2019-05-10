@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62e5c5622743447e1119141469c894dc905e6b43
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5699f72af6b8d7f18d1a2c631dfdedd63c66e1e6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381054"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133856"
 ---
 # <a name="configuring-permissions-for-team-build-deployment"></a>Konfigurieren von Berechtigungen für Team-Buildbereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Dieses Thema beschreibt, wie Sie Berechtigungen konfigurieren, um Ihre Build-Server zum Bereitstellen von Inhalt auf Webserver und Datenbankserver als Teil einer automatisierten Buildprozess zu aktivieren.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -36,7 +35,6 @@ Alle Bereitstellungsaufgaben, die erfordern Windows-Authentifizierung, und dass 
 
 > [!NOTE]
 > Das Netzwerkdienstkonto verwendet das Computerkonto, andere Computer zu authentifizieren. Computerkonten haben die Form * [Domänenname]\[Machine-Name] ***$**&#x2014;z. B. **FABRIKAM\TFSBUILD$**. Wenn der Builddienst ausgeführt wird, mit der Identität Network Service, sollten Sie daher alle erforderlichen Berechtigungen, der die computerkontoidentität für Ihren Buildserver gewähren.
-
 
 ## <a name="configuring-web-server-permissions"></a>Konfigurieren von Webserver-Berechtigungen
 

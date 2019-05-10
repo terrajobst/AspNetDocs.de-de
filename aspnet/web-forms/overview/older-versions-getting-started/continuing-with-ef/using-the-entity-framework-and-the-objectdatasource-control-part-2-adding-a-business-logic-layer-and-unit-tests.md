@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: efb0e677-10b8-48dc-93d3-9ba3902dd807
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 4d436b0e5d605027cfcf5243f615f9ac167c5888
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24344cc33d7c26d7c408db26c0530ef2c708a7d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388048"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133450"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikschicht und von Komponententests
 
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
-
 
 Im vorherigen Tutorial erstellt Sie eine n-Tier-Webanwendung mithilfe von Entity Framework und die `ObjectDataSource` Steuerelement. In diesem Tutorial wird gezeigt, wie Geschäftslogik hinzufügen, während die Geschäftslogik-Ebene (BLL) und der Datenzugriffsebene (DAL) separaten beibehalten, und es wird gezeigt, wie die BLL automatisierte Komponententests zu erstellen.
 
@@ -72,7 +71,6 @@ Die CRUD-Methoden, die "Repository"-Klasse und die beiden Konstruktoren aufrufen
 
 > [!NOTE]
 > Technisch gesehen die Entitätsobjekte sind noch keine Dauerhaftigkeit, da sie eine Instanziierung von Klassen sind, die von Entity Framework erben `EntityObject` Klasse. Für vollständige ignorieren der Persistenz, können Sie *plain old CLR Objekte*, oder *POCOs*, anstelle von Objekten, die von erben die `EntityObject` Klasse. Die Verwendung von POCOs ist, würde den Rahmen dieses Tutorials. Weitere Informationen finden Sie unter [Prüfbarkeit und Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) auf der MSDN-Website.)
-
 
 Nachdem Sie eine Verbindung herstellen können die `ObjectDataSource` Steuerelemente auf die Geschäftslogik-Klasse anstelle von an das Repository, und stellen Sie sicher, dass alles funktioniert wie vorher.
 

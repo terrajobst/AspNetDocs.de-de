@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fe6097c32e4584fd4c577fb8d2afee9b3483c22f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9488a294de8f23ecd2b22812d728a5904a8ef18
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418416"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106890"
 ---
 # <a name="configuring-a-website-that-uses-application-services-c"></a>Konfigurieren einer Website mit Anwendungsdiensten (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_09_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial09_AppServicesConfig_cs.pdf)
 
 > ASP.NET-Version 2.0 eingeführt, eine Reihe von Anwendungsdiensten, die Teil von .NET Framework und dienen als eine Sammlung von Baustein-Dienste, die Sie verwenden können, um umfangreiche Funktionen zu Ihrer Webanwendung hinzuzufügen. In diesem Tutorial erfahren Sie, wie eine Website in der produktionsumgebung von Anwendungsdiensten konfigurieren und behandelt verbreitete Probleme mit der Verwaltung von Benutzerkonten und Rollen in der produktionsumgebung.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -34,7 +33,6 @@ ASP.NET-Version 2.0 eingeführt, eine Reihe von *Anwendungsdienste*, die Teil vo
 - **Siteübersicht** : eine API zum Definieren einer logischen Standort s-Struktur in Form einer Hierarchie, die über Steuerelemente zur Seitennavigation, z. B. Menüs und der Breadcrumb-Leiste angezeigt werden können.
 - **Personalisierung** : eine API zum Verwalten von Einstellungen von Modifizierern Anpassung, mit den meisten Fällen verwendet [ *WebParts*](https://msdn.microsoft.com/library/e0s9t4ck.aspx).
 - **Systemüberwachung** : eine API für die Überwachung der Leistung, Sicherheit, Fehler und andere System integritätsmetriken für eine ausgeführte Webanwendung.
-  
 
 Die Anwendungsdienste APIs sind nicht auf eine bestimmte Implementierung gebunden werden. Stattdessen weisen Sie den Anwendungsdiensten, um eine bestimmte *Anbieter*, und dieser Anbieter implementiert den Dienst mit einer bestimmten Technologie. Die am häufigsten verwendeten Anbieter für Internet-basierte Webanwendungen, die an ein Webhostingunternehmen gehostet sind diese Anbieter unterstützen, die eine Implementierung von SQL Server-Datenbank verwenden. Z. B. die `SqlMembershipProvider` ist ein Anbieter für die Mitgliedschafts-API, die Benutzerkontoinformationen in einer Microsoft SQL Server-Datenbank speichert.
 
@@ -42,7 +40,6 @@ Mit dem Application-Dienste und SQL Server-Anbieter fügt einige Herausforderung
 
 > [!NOTE]
 > Die Anwendungsdienste APIs entwickelt wurden, mit der [ *Anbietermodell*](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), ein Entwurfsmuster, die für eine API s Implementierungsdetails zur Laufzeit bereitgestellt werden kann. .NET Framework ausgeliefert wird, mit einer Reihe von Application Service Provider, die z. B. verwendet werden können, die `SqlMembershipProvider` und `SqlRoleProvider`, welche Anbieter für die Mitgliedschaft und Rollen-APIs, die eine SQL Server-Datenbank Implementierung. Sie können auch erstellen und -Plug-in einen benutzerdefinierten Anbieter. In der Tat die Book Reviews-Webanwendung bereits enthält einen benutzerdefinierten Anbieter für das Site Map-API (`ReviewSiteMapProvider`), die erstellt der Sitemap aus den Daten in die `Genres` und `Books` Tabellen in der Datenbank.
-
 
 Dieses Tutorial beginnt mit einer Betrachtung darüber, wie ich die Book Reviews-Webanwendung mit der Mitgliedschaft und Rollen APIs erweitert. Sie werden dann durch die Bereitstellung einer Webanwendung, die Dienste der Anwendung mit einer SQL Server-Datenbank-Implementierung verwendet, und endet mit dem adressieren häufige Probleme mit der Verwaltung von Benutzerkonten und Rollen in der produktionsumgebung geführt.
 
@@ -53,7 +50,6 @@ Führen in den letzten paar Tutorials bieten, die die Book Reviews-Webanwendung 
 > [!NOTE]
 > Ich haben drei Benutzerkonten erstellt, in der Webanwendung Book Reviews: Scott Jisun und Alice. Alle drei Benutzer das gleiche Kennwort aufweisen: **Kennwort!** Scott und Jisun befinden sich in der Rolle "Administrator", Alice nicht. Die s nicht-Websiteverwaltungsseiten sind weiterhin zugänglich für anonyme Benutzer. Das heißt, dass Sie nicht müssen melden Sie sich bei der Website besuchen, wenn Sie es, zu verwalten möchten in diesem Fall Sie in der Rolle "Administrator" als Benutzer sich anmelden müssen.
 
-
 Die Masterseite Book Reviews Anwendung s wurde aktualisiert, um eine andere Benutzeroberfläche für authentifizierte und anonyme Benutzer einzuschließen. Wenn ein anonymer Benutzer die Website besucht, sieht sie einen Anmeldelink in der oberen rechten Ecke. Ein authentifizierter Benutzer sieht die Meldung "Willkommen zurück, *Benutzername*!" und einen Link zum Abmelden. Es gibt auch eine Anmeldeseite-s (`~/Login.aspx`), ein Login-Steuerelement, das die Benutzeroberfläche und Logik bereitstellt, für die Authentifizierung eines Besuchers enthält. Nur Administratoren können neue Konten erstellen. (Sind Seiten erstellen und Verwalten von Benutzerkonten in der `~/Admin` Ordner.)
 
 ### <a name="configuring-the-membership-and-roles-apis"></a>Konfigurieren die Mitgliedschaft und Rollen-APIs
@@ -62,7 +58,6 @@ Die Book Reviews-Webanwendung verwendet die Mitgliedschaft und Rollen-APIs, um B
 
 > [!NOTE]
 > Dieses Tutorial dient nicht dazu, eine detaillierte Untersuchung mit der Konfiguration von Web-Apps die Mitgliedschaft und Rollen-APIs unterstützt werden. Umfassende Informationen zu dieser APIs und die erforderlichen Schritte Sie durchführen müssen, um eine Website, um diese zu konfigurieren, lesen Sie meine [ *Website-Lernprogramme zur ASP.NET-Sicherheit*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
-
 
 Um die Anwendungsdienste mit SQL Server-Datenbank verwenden müssen Sie zunächst hinzufügen Datenbankobjekte verwendet von diesen Anbietern in der Datenbank, in dem Sie das Benutzerkonto an sowie die Rolleninformationen gespeichert. Diese erforderlichen Datenbankobjekte enthalten eine Vielzahl von Tabellen, Sichten und gespeicherten Prozeduren. Sofern nicht angegeben, andernfalls der `SqlMembershipProvider` und `SqlRoleProvider` -Anbieterklassen verwenden eine SQL Server Express Edition-Datenbank, die mit dem Namen `ASPNETDB` befindet sich in der Anwendung s `App_Data` Ordner Wenn z.B. eine Datenbank nicht vorhanden ist, wird er automatisch erstellt mit den erforderlichen Datenbankobjekte von diesen Anbietern zur Laufzeit.
 
@@ -73,7 +68,6 @@ Wenn Sie die Anwendung Dienste Datenbankobjekte in einer Datenbank als hinzufüg
 [!code-xml[Main](configuring-a-website-that-uses-application-services-cs/samples/sample1.xml)]
 
 Die `Web.config` Datei s `<authentication>` Element auch zur Unterstützung von formularbasierte Authentifizierung konfiguriert wurde.
-  
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-cs/samples/sample2.xml)]
 
@@ -100,43 +94,34 @@ Die *Bereitstellen einer Datenbank* Tutorial wurde gezeigt, wie Sie Tabellen und
 > [!NOTE]
 > Die `aspnet_regsql.exe` Tool erstellt die Datenbankobjekte in einer angegebenen Datenbank. Es werden Daten in die Datenbankobjekte nicht aus der Entwicklungsdatenbank in der Produktionsdatenbank migriert. Verwenden Sie die Techniken, die in behandelt, wenn die Benutzer-Konto und die entsprechende Informationen in der Entwicklungsdatenbank in der Produktionsdatenbank Kopieren der *Bereitstellen einer Datenbank* Tutorial.
 
-
 S wie die Produktions-Datenbank mithilfe von Datenbankobjekten hinzugefügt betrachten können die `aspnet_regsql.exe` Tool. Starten Sie Windows Explorer öffnen, und navigieren Sie auf das Verzeichnis der .NET Framework Version 2.0 auf Ihrem Computer %WINDIR%\ Microsoft.NET\Framework\v2.0.50727. Dort sollten Sie finden die `aspnet_regsql.exe` Tool. Dieses Tool kann über die Befehlszeile verwendet werden, aber es enthält auch eine grafische Benutzeroberfläche; Doppelklicken Sie auf die `aspnet_regsql.exe` Datei, um die grafische-Komponente zu starten.
 
 Das Tool startet durch Anzeigen eines Begrüßungsbildschirms erläutert den Zweck. Klicken Sie auf Weiter, um zum Fenster "Wählen Sie ein Setup-Option" wählen, das in Abbildung 1 dargestellt ist. Von hier aus können Sie auswählen, der die Anwendungsdienste Datenbankobjekte oder entfernen sie aus einer Datenbank hinzugefügt wird. Da diese Objekte in der Produktionsdatenbank hinzugefügt werden soll, wählen Sie die Option "Konfigurieren von SQLServer für Anwendungsdienste", und klicken Sie auf Weiter.
 
-
 [![Wählen Sie SQLServer für Anwendungsdienste konfigurieren](configuring-a-website-that-uses-application-services-cs/_static/image2.jpg)](configuring-a-website-that-uses-application-services-cs/_static/image1.jpg)
 
 **Abbildung 1**: Wählen Sie zum Konfigurieren von SQL Server für Anwendungsdienste ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image3.jpg))
-
 
 In "Wählen Sie die Server und Datenbank" fordert Bildschirm Informationen zur Verbindung mit der Datenbank. Geben Sie den Datenbankserver, die Anmeldeinformationen und den Datenbanknamen, die Ihnen von Ihrem Webhosting bereitgestellt, und klicken Sie auf Weiter.
 
 > [!NOTE]
 > Nach der Eingabe den Datenbankserver und die Anmeldeinformationen erhalten Sie einen Fehler beim Erweitern der Datenbank-Dropdown-Liste. Die `aspnet_regsql.exe` tool Abfragen die `sysdatabases` Systemtabelle zum Abrufen einer Liste der Datenbanken auf dem Server, aber einige Web-hosting-Unternehmen Sperren auf ihren Datenbankserver, damit diese Informationen nicht öffentlich verfügbar sind. Wenn Sie diese Fehlermeldung erhalten, können Sie den Datenbanknamen direkt in der Dropdown Liste eingeben.
 
-
 [![Geben Sie das Tool mit Ihrer Datenbank-s-Verbindungsinformationen](configuring-a-website-that-uses-application-services-cs/_static/image5.jpg)](configuring-a-website-that-uses-application-services-cs/_static/image4.jpg)
 
 **Abbildung 2**: Geben Sie das Tool mit der Datenbank-s-Verbindungsinformationen ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image6.jpg))
 
-
 Im folgenden Bildschirm werden die Aktionen, die sind im Begriff, nämlich stattfinden, zusammengefasst, die die Datenbankobjekte der Anwendung Dienste in der angegebenen Datenbank hinzugefügt werden sollen. Klicken Sie neben der vollständigen diese Aktion aus. Nach einigen Augenblicken wird der letzten Seite angezeigt, beachten Sie, dass die Datenbankobjekte hinzugefügt wurden (siehe Abbildung 3).
-
 
 [![Success! Die Anwendung Dienste Datenbankobjekte wurden in der Produktionsdatenbank hinzugefügt.](configuring-a-website-that-uses-application-services-cs/_static/image8.jpg)](configuring-a-website-that-uses-application-services-cs/_static/image7.jpg)
 
 **Abbildung 3**: Erfolgreich! Die Anwendung Dienste Datenbank Objekte hinzugefügt wurden in der Produktionsdatenbank ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image9.jpg))
 
-
 Um sicherzustellen, dass die Anwendung Dienste Datenbankobjekte in der Produktionsdatenbank erfolgreich hinzugefügt wurden, öffnen Sie SQL Server Management Studio und eine Verbindung mit der Produktionsdatenbank. Wie in Abbildung 4 gezeigt, Sie sollten jetzt sehen die Tabellen der Anwendung Dienste in Ihrer Datenbank `aspnet_Applications`, `aspnet_Membership`, `aspnet_Users`und so weiter.
-
 
 [![Vergewissern Sie sich, dass Datenbankobjekte in der Produktionsdatenbank hinzugefügt wurden](configuring-a-website-that-uses-application-services-cs/_static/image11.jpg)](configuring-a-website-that-uses-application-services-cs/_static/image10.jpg)
 
 **Abbildung 4**: Vergewissern Sie sich, dass Datenbankobjekte in der Produktionsdatenbank hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image12.jpg))
-
 
 Sie müssen nur mit der `aspnet_regsql.exe` tool bei der Bereitstellung Ihrer Webanwendung zum ersten Mal oder zum ersten Mal, nachdem Sie gestartet haben, mit der die Anwendungsdienste. Sobald diese Datenbankobjekte für die Produktionsdatenbank, die sie nicht erneut hinzugefügt oder geändert werden müssen sind.
 
@@ -152,7 +137,6 @@ Aber was geschieht, wenn die `applicationName` -Attribut nicht angegeben ist, im
 
 > [!NOTE]
 > Wenn Sie sich in diesem Fall – mit Benutzerkonten, die in die produktionsumgebung eine nicht übereinstimmende kopiert `ApplicationId` -Wert: Sie könnten eine Abfrage, um diese falsche aktualisieren `ApplicationId` -Werte in der `ApplicationId` für Produktion verwendet. Nach der Aktualisierung, wäre die Benutzer, deren Konten in der Entwicklungsumgebung erstellt wurden, nun in der Webanwendung auf Produktions-anmelden können.
-
 
 Die gute Nachricht ist, dass es ein einfacher Schritt, Sie ergreifen können, um sicherzustellen, dass die beiden Umgebungen die gleiche verwenden `ApplicationId` – explizit die `applicationName` -Attribut im `Web.config` für alle von Ihrer Anwendung Services-Datenanbietern. Ich explizit festlegen der `applicationName` "BookReviews"-Attribut der `<membership>` und `<roleManager>` Elemente wie dieser Ausschnitt `Web.config` zeigt.
 
@@ -171,11 +155,9 @@ Beachten Sie, dass es sich bei einem früheren Tutorial die Book Reviews-Webanwe
 > [!NOTE]
 > Für Weitere Informationen zur Verwendung der Mitgliedschaft und Rollen APIs zusammen mit der ASP.NET Web anmeldebezogene Steuerelemente, achten Sie darauf, lesen Sie meine [ *Website-Lernprogramme zur ASP.NET-Sicherheit*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md). Informationen zum Anpassen des Steuerelements CreateUserWizard finden Sie in der [ *Erstellen von Benutzerkonten* ](../../older-versions-security/membership/creating-user-accounts-cs.md) und [ *Speichern von zusätzlichen Benutzerinformationen* ](../../older-versions-security/membership/storing-additional-user-information-cs.md) Lernprogramme, oder sehen Sie sich [ *Erich Peterson* ](http://www.erichpeterson.com/) Artikel, [ *Anpassen des Steuerelements CreateUserWizard* ](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx).
 
-
 [![Administratoren können neue Benutzerkonten erstellen.](configuring-a-website-that-uses-application-services-cs/_static/image14.jpg)](configuring-a-website-that-uses-application-services-cs/_static/image13.jpg)
 
 **Abbildung 5**: Administratoren können erstellen Sie neue Benutzerkonten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-a-website-that-uses-application-services-cs/_static/image15.jpg))
-
 
 Bei Bedarf den vollen Funktionsumfang des Auschecken WSAT [ *parallelen Ihrer eigenen Web Site Administration Tool*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), in dem Dan Clem führt Sie durch den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools. Dan teilt seine s Quellcode der Anwendung (in c#) und bietet eine schrittweise Anleitung für Ihre gehostete Website hinzugefügt.
 

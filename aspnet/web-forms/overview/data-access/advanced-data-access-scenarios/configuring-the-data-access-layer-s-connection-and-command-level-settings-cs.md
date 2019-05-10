@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 21b98ef4126c16054829d7183f59207de3e945f3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389595"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133354"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip) oder [PDF-Datei herunterladen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
 
 > Die TableAdapters in einem typisierten DataSet kümmert sich automatisch eine Verbindung mit der Datenbank, Ausgeben von Befehlen und das Auffüllen einer "DataTable" mit den Ergebnissen. Es gibt Situationen, in denen auf, aber wenn wir diese Informationen selbst, und klicken Sie in diesem Tutorial in Ihrer Verantwortung möchten wir die datenbankeinstellungen für die Verbindung und Befehlsebene im TableAdapter zugreifen erfahren, wie Sie.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -50,24 +49,19 @@ Mit Ausnahme der [Umschließen von Datenbankänderungen innerhalb einer Transakt
 
 Jede TableAdapter-Klasse verfügt über eine `Connection` Eigenschaft, die Datenbank-Verbindungsinformationen angibt. Diese Eigenschaft s-Datentyp und `ConnectionString` Wert werden durch die Auswahl im TableAdapter-Konfigurations-Assistenten bestimmt. Denken Sie daran, dass wenn wir einen TableAdapter zum ersten Mal mit einem typisierten DataSet hinzufügen dieser Assistent uns für die Datenbank erwartet, Quelle (siehe Abbildung 1). In diesem ersten Schritt die Dropdown-Liste enthält diese Datenbanken, die in der Konfigurationsdatei als auch für alle anderen Datenbanken im Server-Explorer s Datenverbindungen angegeben. Wenn die Datenbank, die verwendet werden soll, in der Dropdown-Liste nicht vorhanden ist, kann eine neue datenbankverbindung angegeben werden, indem Sie auf die Schaltfläche "neue Verbindung", und die erforderlichen Verbindungsinformationen bereitgestellt.
 
-
 [![Der erste Schritt des TableAdapter-Konfigurations-Assistenten](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **Abbildung 1**: Der erste Schritt des TableAdapter-Konfigurations-Assistenten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
-
 
 Let s können Sie überprüfen den Code für die TableAdapter `Connection` Eigenschaft. Wie erwähnt in der [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-cs.md) Tutorial können wir den automatisch generierten TableAdapter-Code anzeigen, indem Sie das Fenster "Klassenansicht", Drilldown auf die entsprechende Klasse, und doppelklicken Sie dann auf den Namen des Members.
 
 Navigieren Sie zu dem Fenster "Klassenansicht", indem Sie das Menü "Ansicht" und Klassenansicht auswählen (oder durch Eingabe von STRG + UMSCHALT + C). In der oberen Hälfte der das Fenster "Klassenansicht" zeigen die `NorthwindTableAdapters` Namespace, und wählen Sie die `ProductsTableAdapter` Klasse. Dadurch wird angezeigt der `ProductsTableAdapter` s Mitglieder in der unteren Hälfte der Klassenansicht, wie in Abbildung 2 dargestellt. Doppelklicken Sie auf die `Connection` Eigenschaft, um den Code anzuzeigen.
 
-
 ![Doppelklicken Sie auf die-Verbindungseigenschaft in der Klassenansicht den automatisch generierten Code anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image4.png)
 
 **Abbildung 2**: Doppelklicken Sie auf die-Verbindungseigenschaft in der Klassenansicht den automatisch generierten Code anzeigen
 
-
 Die TableAdapter `Connection` -Eigenschaft und die andere Verbindung-bezogenem Code folgt:
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample1.cs)]
 
@@ -84,17 +78,13 @@ S erweitern lassen die `ProductsTableAdapter` in die `Northwind` DataSet sollen 
 > [!NOTE]
 > Ein *Verbindungszeichenfolge* ist eine Zeichenfolge, die Datenbank-Verbindungsinformationen, z. B. den zu verwendenden Anbieter an, den Speicherort der die Datenbank, die Anmeldeinformationen für die Authentifizierung und die andere Datenbank-bezogene Einstellungen angibt. Eine Liste der Verbindung Zeichenfolgenmuster, die von einer Vielzahl von Datenspeichern und der Anbieter verwendet, finden Sie unter [ConnectionStrings.com](http://www.connectionstrings.com/).
 
-
 Siehe die [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-cs.md) Tutorial die typisierte DataSet s automatisch generierte Klassen können erweitert werden, durch die Verwendung von partiellen Klassen. Erstellen Sie zunächst einen neuen Unterordner im Projekt mit dem Namen `ConnectionAndCommandSettings` unterhalb der `~/App_Code/DAL` Ordner.
-
 
 ![Fügen Sie einen Unterordner mit dem Namen ConnectionAndCommandSettings](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image5.png)
 
 **Abbildung 3**: Fügen Sie einen Unterordner mit dem Namen `ConnectionAndCommandSettings`
 
-
 Fügen Sie eine neue Klassendatei mit dem Namen `ProductsTableAdapter.ConnectionAndCommandSettings.cs` , und geben Sie den folgenden Code:
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample2.cs)]
 
@@ -108,11 +98,9 @@ Diese partielle Klasse macht nur eine der Eigenschaften des zugrunde liegenden V
 
 Öffnen der `Northwind` DataSet, klicken Sie auf die `ProductsTableAdapter` im Designer, und navigieren Sie zu dem Fenster "Eigenschaften". Es wird Ihnen die `ConnectionModifier` legen Sie auf den Standardwert `Assembly`. Zu den `Connection` Eigenschaft außerhalb der typisierte DataSet-s-Assembly, Änderung zur Verfügung steht die `ConnectionModifier` Eigenschaft `Public`.
 
-
 [![Die Verbindung Eigenschaft s Zugriffsebene kann über die ConnectionModifier-Eigenschaft konfiguriert werden](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **Abbildung 4**: Die `Connection` Eigenschaft s Barrierefreiheit Ebene kann so konfiguriert werden, über die `ConnectionModifier` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
-
 
 Speichern Sie das DataSet und wieder die `ProductsBLL` Klasse. Wie zuvor, besuchen Sie eine der vorhandenen Methoden aus, und geben Sie in `Adapter` und drücken Sie dann die Punkt-Taste, um IntelliSense aufzurufen. Die Liste sollte enthalten eine `Connection` -Eigenschaft, was bedeutet, dass Sie jetzt programmgesteuert lesen oder können alle Einstellungen auf Verbindungsebene der BLL zuweisen.
 
@@ -132,7 +120,6 @@ Zusätzlich zu der Hauptabfrage des TableAdapter kann eine Variable Anzahl von M
 
 Let s können Sie die vom generierten Code betrachten die `ProductsTableAdapter` in die `Northwind` DataSet für diese beiden Eigenschaften und deren unterstützende Membervariablen und Hilfsmethoden:
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample3.cs)]
 
 Der Code für die `Adapter` und `CommandCollection` Eigenschaften imitiert eng mit der die `Connection` Eigenschaft. Es gibt Membervariablen, die die Objekte, die verwendet werden, durch die Eigenschaften enthalten. Die Eigenschaften `get` Accessoren zu starten, indem überprüft wird, ist die entsprechende Membervariable `null`. Wenn dies der Fall ist, wird eine Initialisierungsmethode aufgerufen, die erstellt eine Instanz der Membervariable und weist den Kern befehlsbezogenen Eigenschaften.
@@ -147,14 +134,12 @@ Angenommen Sie, dass gab es bestimmte Abfragen in den TableAdapter, die eine au�
 
 Zu den `CommandTimeout` Eigenschaft angepasst werden, indem die BLL, fügen Sie die folgenden `public` Methode, um die `ProductsDataTable` mithilfe der partiellen Klasse-Datei in Schritt2 erstellte (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample4.cs)]
 
 Diese Methode konnte von der BLL oder Darstellungsschicht das Befehlstimeout für alle Befehle Probleme Festlegen von dieser Instanz des TableAdapter aufgerufen werden.
 
 > [!NOTE]
 > Die `Adapter` und `CommandCollection` Eigenschaften werden als `private`, d. h., sie können nur von Code in der TableAdapter aus zugegriffen werden. Im Gegensatz zu den `Connection` -Eigenschaft, diese Zugriffsmodifizierer sind nicht konfigurierbar. Aus diesem Grund bei Bedarf auf anderen Ebenen der Architektur Befehlsebene-Eigenschaften verfügbar machen Sie müssen die partielle Klasse Ansatz verwenden erwähnte zu einem `public` Methode oder Eigenschaft, die liest oder schreibt in die `private` Befehlsobjekte.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

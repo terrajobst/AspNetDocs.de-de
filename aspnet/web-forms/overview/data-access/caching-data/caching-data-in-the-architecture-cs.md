@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7637e23678af80ae037292fd3f89ef74167c8242
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: af4936802a97d0ff0e679e701308e24708b15d90
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419248"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115019"
 ---
 # <a name="caching-data-in-the-architecture-c"></a>Zwischenspeichern von Daten in der Architektur (C#)
 
@@ -23,7 +23,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Im vorherigen Tutorial haben wir wie zwischengespeichert werden auf der Darstellungsschicht. In diesem Tutorial erfahren wir, wie unsere mehrstufigen Architektur zum Zwischenspeichern von Daten an die Geschäftslogikschicht nutzen. Dies erfolgt durch Erweitern der Architektur eine Caching-Schicht enthält.
 
-
 ## <a name="introduction"></a>Einführung
 
 Wie wir im vorherigen Tutorial gesehen haben, ist das Zwischenspeichern der "ObjectDataSource"-s-Daten so einfach wie eine Reihe von Eigenschaften festlegen. Leider wendet dem ObjectDataSource-Steuerelement auf der Darstellungsschicht, die Richtlinien für die Zwischenspeicherung eng mit der ASP.NET-Seite koppelt Zwischenspeichern. Einer der Gründe für das Erstellen einer mehrschichtigen Architektur ist, können solche Kopplungen unterbrochen werden. Die Business Logic Layer, entkoppelt die Geschäftslogik von der ASP.NET-Seiten aus aufzurufen, z. B., während der Datenzugriffsschicht der zum Datenzugriff entkoppelt. Dieses Entkoppeln von Business-Logik und Daten Zugriffsdetails wird bevorzugt, Teil, da das System besser lesbar, besser verwaltbar und flexibler zu ändern ist. Außerdem können für domänenwissen und Verteilung der Arbeit, die ein Entwickler die Darstellungsschicht t mit den Datenbank-s-Details vertraut sein, um ihre Arbeit benötigen. Trennen die Richtlinie für die Zwischenspeicherung auf der Darstellungsschicht bietet ähnliche Vorteile.
@@ -32,11 +31,9 @@ In diesem Tutorial werden wir zu unserer Architektur sollen Erweitern einer *Cac
 
 Wie in Abbildung 1 gezeigt, befindet sich die CL zwischen der Präsentations- und Geschäftslogikschichten ein.
 
-
 ![Das Zwischenspeichern von Ebene (CL) wird einer anderen Ebene in unsere-Architektur](caching-data-in-the-architecture-cs/_static/image1.png)
 
 **Abbildung 1**: Das Zwischenspeichern von Ebene (CL) wird einer anderen Ebene in unsere-Architektur
-
 
 ## <a name="step-1-creating-the-caching-layer-classes"></a>Schritt 1: Die zwischenspeichernden Klassen für die Ebene erstellen
 
@@ -44,11 +41,9 @@ In diesem Tutorial erstellen wir eine sehr einfache CL mit einer einzelnen Klass
 
 Auf Weitere sauber Separate CL-Klassen von der DAL und BLL-Klasse, Let s erstellen Sie einen neuen Unterordner in der `App_Code` Ordner. Mit der rechten Maustaste auf die `App_Code` Ordner im Projektmappen-Explorer, wählen Sie die neuen Ordner, und nennen Sie diesen Ordner `CL`. Nach der Erstellung dieses Ordners, hinzufügen, eine neue Klasse namens `ProductsCL.cs`.
 
-
 ![Fügen Sie einen neuen Ordner namens CL und eine Klasse namens ProductsCL.cs hinzu](caching-data-in-the-architecture-cs/_static/image2.png)
 
 **Abbildung 2**: Fügen Sie einen neuen Ordner namens `CL` und eine Klasse, die mit dem Namen `ProductsCL.cs`
-
 
 Die `ProductsCL` -Klasse sollte den gleichen Satz von Daten und Methoden, wie in der entsprechenden Business Logic Layer-Klasse enthalten (`ProductsBLL`). Anstatt alle von diesen Methoden können s bauen Sie einfach einige hier um ein Gefühl für die Muster, die von der CL verwendet. Wir fügen insbesondere die `GetProducts()` und `GetProductsByCategoryID(categoryID)` Methoden in Schritt 3 und ein `UpdateProduct` überladen, die in Schritt 4. Sie können hinzufügen, die verbleibenden `ProductsCL` Methoden und `CategoriesCL`, `EmployeesCL`, und `SuppliersCL` Klassen in aller Ruhe.
 
@@ -56,28 +51,23 @@ Die `ProductsCL` -Klasse sollte den gleichen Satz von Daten und Methoden, wie in
 
 Dem ObjectDataSource-Steuerelement Zwischenspeicherfeature, die in den vorherigen Tutorials behandelt wurde, intern verwendet das Datencache ASP.NET zum Speichern der Daten, die von der BLL abgerufen. Das Datencache kann auch programmgesteuert aus ASP.NET Seiten CodeBehind- oder von den Klassen in die Architektur der Webanwendung s zugegriffen werden. Verwenden Sie zum Lesen und Schreiben in Datencache aus eine ASP.NET Seite s-Code-Behind-Klasse, die folgende Muster ein:
 
-
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample1.cs)]
 
 Die [ `Cache` Klasse](https://msdn.microsoft.com/library/system.web.caching.cache.aspx) s [ `Insert` Methode](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx) verfügt über eine Reihe von Überladungen. `Cache["key"] = value` und `Cache.Insert(key, value)` sind Synonym und sowohl der Cache mit dem angegebenen Schlüssel, ohne eine definierte Ablauf ein Element hinzugefügt. Wir möchten in der Regel eine ablaufangabe angeben, wenn Sie ein Element entweder als eine Abhängigkeit, eine zeitbasierte Ablauf oder beides auf den Cache hinzufügen. Verwenden Sie eine der anderen `Insert` s methodenüberladungen, Abhängigkeit oder zeitbasierte Ablaufinformationen bereitzustellen.
 
 Der Caching-Ebene, die s-Methoden müssen zuerst überprüfen, wenn die angeforderten Daten im Cache befindet, und, wenn dies der Fall ist, wird es von dort aus zurück. Wenn die angeforderten Daten nicht im Cache vorhanden ist, muss die entsprechende BLL-Methode aufgerufen werden. Der Rückgabewert zwischengespeichert und dann zurückgegeben, wie das folgende Sequenzdiagramm veranschaulicht.
 
-
 ![Die Caching-Schicht-s-Methoden Daten aus dem Cache zurückgibt, wenn es s verfügbar](caching-data-in-the-architecture-cs/_static/image3.png)
 
 **Abbildung 3**: Die Caching-Schicht-s-Methoden Daten aus dem Cache zurückgibt, wenn es s verfügbar
 
-
 Die Sequenz, die in Abbildung 3 dargestellten erfolgt in der CL-Klassen, die mithilfe des folgenden Musters:
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample2.cs)]
 
 Hier *Typ* ist der Typ der im Cache gespeicherten Daten `Northwind.ProductsDataTable`, z. B. *Schlüssel* ist der Schlüssel, der das Element im Cache eindeutig identifiziert. Wenn das Element mit dem angegebenen *Schlüssel* ist nicht im Cache *Instanz* werden `null` und die Daten werden aus der entsprechenden BLL-Methode abgerufen und dem Cache hinzugefügt werden. Mit der Zeit `return instance` erreicht wird, *Instanz* enthält einen Verweis auf die Daten entweder aus dem Cache oder der BLL abgerufen.
 
 Achten Sie darauf, dass Sie die oben genannten Muster zu verwenden, beim Zugriff auf Daten aus dem Cache. Das folgende Muster, das, auf den ersten Blick entspricht, sucht enthält einen feinen Unterschied, der eine Racebedingung führt. Racebedingungen sind schwierig zu debuggen, da sie sich selbst sporadisch anzuzeigen, und sind schwer zu reproduzieren.
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample3.cs)]
 
@@ -86,9 +76,7 @@ Der Unterschied in dieser zweiten falschen Codeausschnitt ist, statt einen Verwe
 > [!NOTE]
 > Das Datencache ist threadsicher, sodass Einbau t erforderlich zusätzlichen, Thread-Zugang für einfache Lese- oder Schreibvorgänge zu synchronisieren. Allerdings bei Bedarf auf mehrere Vorgänge für Daten im Cache, die atomar sein müssen, sind Sie verantwortlich für die Implementierung einer Sperre oder eines anderen Mechanismus, um Threadsicherheit zu gewährleisten. Finden Sie unter [Synchronisierung auf dem ASP.NET Cache](http://www.ddj.com/184406369) für Weitere Informationen.
 
-
 Ein Element kann programmgesteuert entfernt werden, aus dem Cache mithilfe der [ `Remove` Methode](https://msdn.microsoft.com/library/system.web.caching.cache.remove.aspx) wie folgt:
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample4.cs)]
 
@@ -98,7 +86,6 @@ Für dieses Tutorial implementieren Sie zwei Methoden zur Rückgabe von Produkti
 
 Der folgende Code zeigt einen Teil der Methoden in der `ProductsCL` Klasse:
 
-
 [!code-vb[Main](caching-data-in-the-architecture-cs/samples/sample5.vb)]
 
 Beachten Sie zunächst die `DataObject` und `DataObjectMethodAttribute` Attribute, die auf die Klasse und die Methoden angewendet. Diese Attribute enthalten Informationen zu "ObjectDataSource"-s-Assistenten, der angibt, welche Klassen und Methoden in den Schritten des Assistenten s angezeigt werden soll. Da die CL-Klassen und Methoden aus einem "ObjectDataSource" in der Darstellungsschicht zugegriffen werden, hinzugefügt habe ich diese Attribute zum Verbessern der Entwurfszeit. Siehe die [Erstellen einer Geschäftslogikebene](../introduction/creating-a-business-logic-layer-cs.md) Tutorial für eine ausführlichere Beschreibung zu diesen Attributen und deren Auswirkungen.
@@ -106,7 +93,6 @@ Beachten Sie zunächst die `DataObject` und `DataObjectMethodAttribute` Attribut
 In der `GetProducts()` und `GetProductsByCategoryID(categoryID)` Methoden, die von zurückgegebenen Daten die `GetCacheItem(key)` -Methode eine lokale Variable zugewiesen wird. Die `GetCacheItem(key)` -Methode, die in Kürze untersucht werden, gibt ein bestimmtes Element aus dem Cache, der auf der Grundlage der angegebenen *Schlüssel*. Wenn keine solchen Daten im Cache gefunden werden, wird er aus der entsprechenden abgerufen `ProductsBLL` -Klassenmethode und dann auf den Cache mit den `AddCacheItem(key, value)` Methode.
 
 Die `GetCacheItem(key)` und `AddCacheItem(key, value)` Methoden Schnittstelle mit dem Datencache, lesen und Schreiben von Werten. Die `GetCacheItem(key)` Methode ist die einfachere der beiden. Wird einfach der Wert aus dem Cache-Klasse, die mit dem übergebenen in *Schlüssel*:
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample6.cs)]
 
@@ -117,9 +103,7 @@ Von einer ASP.NET Seite s Code-Behind-Klasse, das dem Datencache erfolgen kann m
 > [!NOTE]
 > Wenn Ihre Architektur wird mithilfe von Class Library-Projekten implementiert, und klicken Sie dann müssen Sie zum Hinzufügen eines Verweises auf die `System.Web` Assembly um verwenden die [HttpRuntime](https://msdn.microsoft.com/library/system.web.httpruntime.aspx) und ["HttpContext"](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) Klassen.
 
-
 Wenn das Element nicht im Cache gefunden wurde die `ProductsCL` -s-Klasse, Methoden, die Daten der BLL abzurufen, und fügen Sie es mit dem Cache hinzu der `AddCacheItem(key, value)` Methode. Hinzuzufügende *Wert* in den Cache können wir den folgenden Code, die eine Ablaufzeit von 60 Sekunden Zeit verwendet:
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample7.cs)]
 
@@ -128,13 +112,11 @@ Wenn das Element nicht im Cache gefunden wurde die `ProductsCL` -s-Klasse, Metho
 > [!NOTE]
 > Diese Implementierung von der `AddCacheItem(key, value)` Methode verfügt derzeit über einige unzulänglichkeiten vorhanden. Wir behandeln und Beheben von folgenden Problemen in Schritt 4.
 
-
 ## <a name="step-4-invalidating-the-cache-when-the-data-is-modified-through-the-architecture"></a>Schritt 4: Wenn die Daten im Cache für ungültig zu erklären, ist über die Architektur geändert
 
 Zusammen mit Datenabrufmethoden muss der Caching-Schicht bieten dieselben Methoden wie die BLL für das Einfügen, aktualisieren und Löschen von Daten. Die CL s datenänderungsmethoden ändern Sie die zwischengespeicherten Daten, nicht aber eher die BLL s entsprechende Daten-Änderung-Methode aufrufen und dann wird der Cache ungültig. Wie wir im vorherigen Tutorial gesehen haben, ist dies das gleiche Verhalten, die dem ObjectDataSource-Steuerelement angewendet wird, wenn die caching-Funktionen aktiviert sind und die zugehörige `Insert`, `Update`, oder `Delete` Methoden aufgerufen werden.
 
 Die folgenden `UpdateProduct` Überladung wird veranschaulicht, wie die datenänderungsmethoden in der CL zu implementieren:
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample8.cs)]
 
@@ -144,13 +126,11 @@ Wenn den Cache für ungültig zu erklären, müssen wir entfernen *alle* der Ele
 
 Let-s-Update die `AddCacheItem(key, value)` Methode, sodass jedes Element zum Cache, mit dieser Methode hinzugefügt mit einer einzelnen Cacheabhängigkeit zugeordnet ist:
 
-
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample9.cs)]
 
 `MasterCacheKeyArray` ist ein Zeichenfolgenarray, das einen einzelnen Wert, der ProductsCache enthält. Erstens wird ein Cacheelement dem Cache hinzugefügt und zugewiesen werden, das aktuelle Datum und die Uhrzeit. Wenn das Element im Cache bereits vorhanden ist, wird er aktualisiert. Als Nächstes wird eine Cacheabhängigkeit erstellt. Die [ `CacheDependency` Klasse](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) s Konstruktor weist eine Reihe von Überladungen, wird hier verwendet, erwartet jedoch, zwei `string` array-Eingaben. Der erste gibt des Satz von Dateien, die als Abhängigkeiten verwendet werden. Da wir Raten t dateibasierten Abhängigkeiten, den Wert verwenden möchten `null` wird für den ersten Eingabeparameter verwendet. Der zweite Eingabeparameter gibt an, den Satz von Cacheschlüsseln, die als Abhängigkeiten verwendet wird. Hier geben wir unsere einzige Abhängigkeit, `MasterCacheKeyArray`. Die `CacheDependency` wird dann übergeben werden, in der `Insert` Methode.
 
 Dank dieser Änderung auf `AddCacheItem(key, value)`, invaliding der Cache ist so einfach wie das Entfernen der Abhängigkeits.
-
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample10.cs)]
 
@@ -158,24 +138,19 @@ Dank dieser Änderung auf `AddCacheItem(key, value)`, invaliding der Cache ist s
 
 Die Caching-Schicht-s-Klassen und Methoden können verwendet werden, mit Daten arbeiten mit den Verfahren wir in diesen Tutorials untersucht haben. Um die Arbeit mit zwischengespeicherten Daten zu veranschaulichen, speichern Sie die Änderungen an der `ProductsCL` Klasse, und öffnen Sie dann die `FromTheArchitecture.aspx` auf der Seite die `Caching` Ordner und Hinzufügen einer GridView-Ansicht. Erstellen Sie von GridView s Smarttags eine neue "ObjectDataSource". Im ersten Schritt Assistenten s sollte die `ProductsCL` Klasse als eine der Optionen aus der Dropdown-Liste.
 
-
 [![Die ProductsCL-Klasse ist in der Dropdown-Liste Business enthalten.](caching-data-in-the-architecture-cs/_static/image5.png)](caching-data-in-the-architecture-cs/_static/image4.png)
 
 **Abbildung 4**: Die `ProductsCL` Klasse befindet sich in der Dropdown-Liste Business ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-cs/_static/image6.png))
 
-
 Nach der Auswahl `ProductsCL`, klicken Sie auf Weiter. Die Dropdown-Liste in der Registerkarte "SELECT" verfügt über zwei Elemente - `GetProducts()` und `GetProductsByCategoryID(categoryID)` und die Registerkarte "Updates" ist der einzige `UpdateProduct` überladen. Wählen Sie die `GetProducts()` Methode aus der Registerkarte "SELECT" und die `UpdateProducts` Methode aus der Registerkarte "Updates" und klicken Sie auf Fertig stellen.
-
 
 [![Die s-Klasse für die ProductsCL-Methoden sind in den Dropdownlisten aufgelistet.](caching-data-in-the-architecture-cs/_static/image8.png)](caching-data-in-the-architecture-cs/_static/image7.png)
 
 **Abbildung 5**: Die `ProductsCL` s-Klassenmethoden finden Sie in den Dropdownlisten ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-in-the-architecture-cs/_static/image9.png))
 
-
 Nach Abschluss des Assistenten wird Visual Studio festgelegt, das "ObjectDataSource"-s `OldValuesParameterFormatString` Eigenschaft `original_{0}` und fügen Sie den entsprechenden Feldern hinzu, an die GridView. Ändern der `OldValuesParameterFormatString` -Eigenschaft wieder auf den Standardwert `{0}`, und konfigurieren die GridView zur Unterstützung von paging, Sortieren und bearbeiten. Da die `UploadProducts` Überladung, die verwendet werden, von dem CL akzeptiert nur die bearbeitete Produktname s und den Preis, beschränken die GridView, sodass nur diese Felder bearbeitet werden.
 
 Im vorherigen Tutorial definiert es einer GridView-Ansicht enthält Felder für die `ProductName`, `CategoryName`, und `UnitPrice` Felder. Können Sie diese Formatierung und die Struktur zu replizieren, die in diesem Fall, dass Ihre deklarativen GridView und "ObjectDataSource" s-Markup sollte etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](caching-data-in-the-architecture-cs/samples/sample11.aspx)]
 
@@ -183,7 +158,6 @@ An diesem Punkt haben wir eine Seite, die Caching-Schicht verwendet. Um den Cach
 
 > [!NOTE]
 > Der Caching-Schicht bereitgestellt, die im Download zu diesem Artikel ist nicht abgeschlossen. Sie enthält nur eine Klasse `ProductsCL`, die nur eine Handvoll Methoden glänzt. Darüber hinaus nur eine einzelne ASP.NET-Seite verwendet die CL (`~/Caching/FromTheArchitecture.aspx`) alle anderen verweisen weiterhin die BLL direkt. Wenn Sie eine CL in Ihrer Anwendung verwenden möchten, alle Aufrufe von der Darstellungsschicht sollte zum CL, die die müssten die CL s Klassen und Methoden behandelt, diese Klassen und Methoden in der BLL, die derzeit von der Darstellungsschicht verwendet.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

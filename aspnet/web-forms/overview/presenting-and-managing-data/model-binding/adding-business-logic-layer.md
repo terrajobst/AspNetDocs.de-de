@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: a229ebd71c913f3fe086892786988d0b3e42ec88
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a824d06d3781e11706f2a48d44ea3ad89bdb7c8b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411578"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109167"
 ---
 # <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>Hinzufügen der Geschäftslogikebene auf ein Projekt, modellbindung und Web Forms verwendet
 
@@ -26,7 +26,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > Dieses Tutorial baut auf das Projekt erstellt haben, der [früheren](retrieving-data.md) Teilen der Reihe.
 > 
 > Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) das vollständige Projekt in c# oder VB. Der herunterladbare Code funktioniert mit Visual Studio 2012 oder Visual Studio 2013. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2013-Vorlage, die in diesem Tutorial gezeigt wird.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 

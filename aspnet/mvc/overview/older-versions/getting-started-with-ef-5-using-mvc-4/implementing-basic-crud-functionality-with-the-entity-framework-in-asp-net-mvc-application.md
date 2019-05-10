@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: f7bace3f-b85a-47ff-b5fe-49e81441cdf9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: be1fcf2c7a0eec5473b2e3a10f51d7e22656b671
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d42c13b01d798b6c35327826812e853d327eeae9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402205"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112491"
 ---
 # <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>Implementieren von grundlegenden CRUD-Funktionen, mit dem Entitätsframework in ASP.NET MVC-Anwendung (2 von 10)
 
@@ -27,12 +27,10 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
-
 Im vorherigen Tutorial erstellt Sie eine MVC-Anwendung, die Daten, die mit dem Entity Framework und SQL Server LocalDB speichert und anzeigt. In diesem Tutorial überprüfen und anpassen, die CRUD-Vorgänge (erstellen, lesen, aktualisieren und löschen) Code, der der MVC-Gerüstbau automatisch für Sie Controller und Ansichten erstellt.
 
 > [!NOTE]
 > Es ist üblich, dass das Repositorymuster implementiert wird, um eine Abstraktionsebene zwischen Ihrem Controller und der Datenzugriffsebene zu erstellen. Zur Vereinfachung in diesen Tutorials wird nicht implementieren Sie ein Repository bis zu einem späteren Tutorial dieser Reihe.
-
 
 In diesem Tutorial erstellen Sie den folgenden Webseiten:
 

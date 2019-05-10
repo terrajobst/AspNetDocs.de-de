@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: b5b86e03-b8ed-46e6-90fa-e1da88ef34e9
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment
 msc.type: authoredcontent
-ms.openlocfilehash: 74fc0f4cb7d3ed7d1ef091cdb8fa829091af5a7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9742be7d718384c1b108d5f2c0c43e8e8d4fe8a9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388685"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108673"
 ---
 # <a name="configuring-deployment-properties-for-a-target-environment"></a>Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, wie bestimmte Eigenschaften zu konfigurieren, um die Beispiel-Contact Manager-Lösung für eine bestimmte zielumgebung bereitstellen wird.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) Lösung&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -64,7 +63,6 @@ Zum Bereitstellen von Contact Manager-Lösung für Ihre eigenen zielumgebung, k�
 
 Diese Tabelle beschreibt den Zweck der einzelnen Eigenschaften in der Umgebung spezifischen Beispielprojektdatei, *Env-Dev.proj*, und enthält hilfreiche Informationen für die Werte, die Sie bereitstellen sollten.
 
-
 |                                                        Eigenschaftenname                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              <strong>MSDeployComputerName</strong> den Namen der Web-Server oder-Dienst Zielendpunkt.               |                                                                                                                                                                                                                                              Wenn Sie mit dem remote-Agent-Dienst auf dem Zielwebserver bereitstellen, können Sie den Namen des Zielcomputers angeben (z. B. <strong>TESTWEB1</strong> oder <strong>TESTWEB1.fabrikam.net</strong>), oder Sie können die Remote angeben Agent-Endpunkt (z. B. `http://TESTWEB1/MSDEPLOYAGENTSERVICE`). Die Bereitstellung funktioniert auf dieselbe Weise in jedem Fall. Wenn Sie an den Web bereitstellen Handler auf dem Zielserver bereitstellen, sollten Sie geben Sie den Dienstendpunkt und den Namen der IIS-Website als ein Abfragezeichenfolgen-Parameter enthalten (z. B. `https://STAGEWEB1:8172/MSDeploy.axd?site=DemoSite`).                                                                                                                                                                                                                                              |
@@ -87,9 +85,7 @@ In diesem Beispiel:
 - Sie können Web Deploy, um die NTLM-Authentifizierung verwendet angewiesen. Web Deploy wird ausgeführt, mit den Anmeldeinformationen, die Sie zum Aufrufen der Microsoft Build Engine (MSBuild) verwendet.
 - Sie können mithilfe der integrierten Authentifizierung zum Bereitstellen der **ContactManager** Datenbank in der Datenbank "testdb1". Die Datenbank wird mit den Anmeldeinformationen, die Sie zum Aufrufen von MSBuild verwendet bereitgestellt werden.
 
-
 [!code-xml[Main](configuring-deployment-properties-for-a-target-environment/samples/sample1.xml)]
-
 
 ### <a name="example-2x2014deployment-to-the-web-deploy-handler-endpoint"></a>Beispiel 2&#x2014;Bereitstellung im Web Endpunkt des Ereignishandlers
 
@@ -100,9 +96,7 @@ In diesem Beispiel:
 - Geben Sie, dass Web Deploy das FABRIKAM\stagingdeployer-Konto auf dem Remotecomputer Identitätswechsel verwenden soll.
 - Verwenden Sie SQL Server-Authentifizierung zum Bereitstellen der **ContactManager** STAGEDB1 Datenbank.
 
-
 [!code-xml[Main](configuring-deployment-properties-for-a-target-environment/samples/sample2.xml)]
-
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: ea26549d-fbbf-4973-a108-b14cd1d6de26
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c0e2888207e4fa0363fc3b357ae00108ffe817f5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6bf69927c5a73f89d94282937d1d4e21ec75ea53
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415218"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108137"
 ---
 # <a name="animating-in-response-to-user-interaction-c"></a>Animieren als Reaktion auf eine Benutzerinteraktion (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6CS.pdf)
 
 > Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Animationen können automatisch starten, oder es werden möglicherweise ausgelöst durch einen Benutzereingriff, z. B. indem Sie mit der Maus auf.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -57,7 +56,6 @@ In der `<Animations>` Knoten stehen fünf Methoden zum Starten der Animation üb
 In diesem Szenario `<OnClick>` verwendet wird. Klickt der Benutzer im Bereich angepasst wird und zur gleichen Zeit ausgeblendet wird.
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample5.aspx)]
-
 
 [![Startet die Animation, klicken mit der Maus](animating-in-response-to-user-interaction-cs/_static/image2.png)](animating-in-response-to-user-interaction-cs/_static/image1.png)
 

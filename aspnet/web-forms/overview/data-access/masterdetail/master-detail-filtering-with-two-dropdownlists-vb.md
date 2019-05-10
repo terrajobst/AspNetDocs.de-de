@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 11ae4f64-01ba-4823-95f4-a2fe1f84f7d7
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7b7785b756f5a9d204c461c9c858f4306d3ff409
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a9a76a960952b34138424bff1735a4ea93d2bfa2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379572"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109204"
 ---
 # <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>Filtern von Master-/Detailberichten mit zwei DropDownList-Steuerelementen (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_8_VB.exe) oder [PDF-Datei herunterladen](master-detail-filtering-with-two-dropdownlists-vb/_static/datatutorial08vb1.pdf)
 
 > In diesem Tutorial wird die Master/Detail-Beziehung zum Hinzufügen einer dritten Ebene, mit zwei DropDownList-Steuerelementen, wählen Sie die gewünschten Datensätze von übergeordneten und der zweiten übergeordneten Ebene erweitert.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -36,128 +35,99 @@ Unser erstes Ziel ist die DropDownList hinzufügen, die die Kategorien aufgefüh
 
 Öffnen der `MasterDetailsDetails.aspx` auf der Seite die `Filtering` Ordner hinzufügen, einem DropDownList-Steuerelement auf der Seite legen Sie seine `ID` Eigenschaft `Categories`, und klicken Sie dann auf die Datenquelle konfigurieren-Link in der Smarttag. Wählen Sie aus dem Konfigurations-Assistenten eine neue Datenquelle hinzufügen.
 
-
 [![Fügen Sie eine neue Datenquelle für das DropDownList hinzu.](master-detail-filtering-with-two-dropdownlists-vb/_static/image2.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image1.png)
 
 **Abbildung 1**: Fügen Sie eine neue Datenquelle für das DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image3.png))
 
-
 Die neue Datenquelle sollten natürlich einer ObjectDataSource gegeben werden. Nennen Sie diese neue "ObjectDataSource" `CategoriesDataSource` und rufen Sie die `CategoriesBLL` des Objekts `GetCategories()` Methode.
-
 
 [![Wählen Sie die Klasse CategoriesBLL verwendet](master-detail-filtering-with-two-dropdownlists-vb/_static/image5.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image4.png)
 
 **Abbildung 2**: Wählen Sie zum Verwenden der `CategoriesBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image6.png))
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der GetCategories()-Methode](master-detail-filtering-with-two-dropdownlists-vb/_static/image8.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image7.png)
 
 **Abbildung 3**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image9.png))
 
-
 Nach dem Konfigurieren der "ObjectDataSource" müssen noch angeben, welches Feld der Datenquelle angezeigt werden soll, in der `Categories` DropDownList und welche als Wert für das Listenelement konfiguriert werden sollen. Legen Sie die `CategoryName` -Feld als die Anzeige und `CategoryID` als Wert für jedes Listenelement.
-
 
 [![Haben Sie die DropDownList-Anzeige "CategoryName" Feld aus, und verwenden CategoryID als Wert](master-detail-filtering-with-two-dropdownlists-vb/_static/image11.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image10.png)
 
 **Abbildung 4**: Haben Sie die DropDownList-Anzeige der `CategoryName` Feld und die Verwendung `CategoryID` als Wert ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image12.png))
 
-
 An diesem Punkt haben wir ein DropDownList-Steuerelement (`Categories`), wird aufgefüllt, die Datensätze aus der `Categories` Tabelle. Wenn der Benutzer eine neue Kategorie aus der Dropdownliste auswählt, sollten wir einen Postback ausgelöst wird, um das Produkt DropDownList zu aktualisieren, die wir jetzt erstellen Sie in Schritt2. Aus diesem Grund überprüfen Sie die Option "AutoPostBack aktivieren" die `categories` DropDownLists-Smarttag.
-
 
 [![Povolit vlastnost AutoPostBack für Kategorien DropDownList](master-detail-filtering-with-two-dropdownlists-vb/_static/image14.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image13.png)
 
 **Abbildung 5**: Povolit vlastnost AutoPostBack für die `Categories` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image15.png))
 
-
 ## <a name="step-2-displaying-the-selected-categorys-products-in-a-second-dropdownlist"></a>Schritt 2: Anzeigen von Produkte der ausgewählten Kategorie in einem zweiten DropDownList-Steuerelement
 
 Mit der `Categories` DropDownList abgeschlossen wird im nächsten Schritt eine DropDownList von Produkten, die in der ausgewählten Kategorie angezeigt. Um dies zu erreichen, fügen Sie einen anderen DropDownList auf der Seite mit dem Namen `ProductsByCategory`. Wie bei der `Categories` DropDownList, erstellen Sie eine neue "ObjectDataSource" für die `ProductsByCategory` DropDownList, die mit dem Namen `ProductsByCategoryDataSource`.
-
 
 [![Fügen Sie eine neue Datenquelle für die ProductsByCategory DropDownList hinzu.](master-detail-filtering-with-two-dropdownlists-vb/_static/image17.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image16.png)
 
 **Abbildung 6**: Hinzufügen einer neuen Datenquelle für die `ProductsByCategory` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image18.png))
 
-
 [![Erstellen Sie eine neue, mit dem Namen ProductsByCategoryDataSource "ObjectDataSource"](master-detail-filtering-with-two-dropdownlists-vb/_static/image20.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image19.png)
 
 **Abbildung 7**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `ProductsByCategoryDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image21.png))
 
-
 Da die `ProductsByCategory` DropDownList-Anforderungen nur die Produkte der ausgewählten Kategorie angezeigt haben, dem ObjectDataSource-Steuerelement Aufrufen der `GetProductsByCategoryID(categoryID)` Methode aus der `ProductsBLL` Objekt.
-
 
 [![Wählen Sie die Klasse ProductsBLL verwendet](master-detail-filtering-with-two-dropdownlists-vb/_static/image23.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image22.png)
 
 **Abbildung 8**: Wählen Sie zum Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image24.png))
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der GetProductsByCategoryID(categoryID)-Methode](master-detail-filtering-with-two-dropdownlists-vb/_static/image26.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image25.png)
 
 **Abbildung 9**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image27.png))
 
-
 Im letzten Schritt des Assistenten geben Sie den Wert der ich die *`categoryID`* Parameter. Weisen Sie diesen Parameter für das ausgewählte Element aus der `Categories` DropDownList.
-
 
 [![Rufen Sie die CategoryID Parameterwert aus dem Categories DropDownList](master-detail-filtering-with-two-dropdownlists-vb/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image28.png)
 
 **Abbildung 10**: Abrufen der *`categoryID`* Parameterwert aus der `Categories` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
 
-
 Mit dem ObjectDataSource-Steuerelement konfiguriert übrig bleibt angeben, welche Datenfelder für die Quelle für die Anzeige und der Wert für DropDownLists-Elemente verwendet werden. Anzeigen der `ProductName` ein, und verwenden Sie die `ProductID` Feld als Wert.
-
 
 [![Geben Sie die Datenfelder für Text und Werteigenschaften der DropDownList ListItems verwendet](master-detail-filtering-with-two-dropdownlists-vb/_static/image32.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image31.png)
 
 **Abbildung 11**: Angeben der Data Source Felder verwendet, für die DropDownList `ListItem` s' `Text` und `Value` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image33.png))
 
-
 Mit dem ObjectDataSource-Steuerelement und `ProductsByCategory` DropDownList konfiguriert unserer Seite zeigt zwei DropDownList-Steuerelementen: die erste Listet alle Kategorien, während die zweite dieser Produkte, die der ausgewählten Kategorie gehören aufgelistet werden. Wenn der Benutzer eine neue Kategorie aus der ersten Dropdownliste auswählt, wird ein Postback zur Folge haben, und der zweiten Dropdownliste wird werden erneut gebunden, die Produkte, die die neu ausgewählte Kategorie angehören. Abbildung 12 und 13 zeigt `MasterDetailsDetails.aspx` in Aktion, wenn Sie über einen Browser angezeigt.
-
 
 [![Wenn die Seite zuerst besuchen zu können, ist die Kategorie "Getränke" ausgewählt.](master-detail-filtering-with-two-dropdownlists-vb/_static/image35.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image34.png)
 
 **Abbildung 12**: Wenn die Seite zuerst besuchen zu können, der die Kategorie "Getränke" ausgewählt ist ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image36.png))
 
-
 [![Eine andere Kategorie auswählen, zeigt die neue Kategorie-Produkte](master-detail-filtering-with-two-dropdownlists-vb/_static/image38.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image37.png)
 
 **Abbildung 13**: Auswählen einer anderen Kategorie zeigt die neue Kategorie Produkte ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image39.png))
 
-
 Derzeit den `productsByCategory` DropDownList, bei deren Änderung ist *nicht* Postback verursacht. Allerdings möchten wir ein Postback ausgelöst, sobald wir eine DetailsView zum Anzeigen von Details für das ausgewählte Produkt (Schritt 3) hinzufügen. Überprüfen Sie daher das Kontrollkästchen "AutoPostBack aktivieren" aus der `productsByCategory` DropDownLists-Smarttag.
-
 
 [![Die AutoPostBack-Funktion für die ProductsByCategory DropDownList aktivieren](master-detail-filtering-with-two-dropdownlists-vb/_static/image41.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image40.png)
 
 **Abbildung 14**: Aktivieren Sie das AutoPostBack-Funktion für die `productsByCategory` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image42.png))
 
-
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>Schritt 3: Verwenden eine DetailsView zum Anzeigen von Details für das ausgewählte Produkt
 
 Der letzte Schritt ist, um die Details für das ausgewählte Produkt in einem DetailsView anzuzeigen. Legen Sie dazu, die Seite ein DetailsView hinzugefügt, die `ID` Eigenschaft `ProductDetails`, und das Erstellen einer neuen "ObjectDataSource" für. Konfigurieren Sie diese "ObjectDataSource", um die Daten aus der pull die `ProductsBLL` -Klasse `GetProductByProductID(productID)` Methode, die mithilfe des ausgewählten Werts für die `ProductsByCategory` DropDownList für den Wert des der *`productID`* Parameter.
-
 
 [![Wählen Sie die Klasse ProductsBLL verwendet](master-detail-filtering-with-two-dropdownlists-vb/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image43.png)
 
 **Abbildung 15**: Wählen Sie zum Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image45.png))
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der GetProductByProductID(productID)-Methode](master-detail-filtering-with-two-dropdownlists-vb/_static/image47.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image46.png)
 
 **Abbildung 16**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `GetProductByProductID(productID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image48.png))
-
 
 [![Rufen Sie die ProductID-Parameterwert aus ProductsByCategory DropDownList](master-detail-filtering-with-two-dropdownlists-vb/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image49.png)
 
 **Abbildung 17**: Abrufen der *`productID`* Parameterwert aus der `ProductsByCategory` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
 
-
 Sie können auch eine der verfügbaren Felder im Anzeigen der `ProductDetails` DetailsView. Ich habe mich entschieden habe, zum Entfernen der `ProductID`, `SupplierID`, und `CategoryID` Felder neu angeordnet und formatiert die verbleibenden Felder. Darüber hinaus, dass ich DetailsViews geklärt `Height` und `Width` Eigenschaften, sodass der DetailsView, um auf die Breite erforderlich, um die optimale Anzeige zu erweitern, die Daten, anstatt es auf einer angegebenen Größe beschränkt. Das vollständige Markup wird unten angezeigt:
-
 
 [!code-aspx[Main](master-detail-filtering-with-two-dropdownlists-vb/samples/sample1.aspx)]
 
@@ -165,19 +135,15 @@ Testen Sie in Ruhe die `MasterDetailsDetails.aspx` Seite in einem Browser. Auf d
 
 Damit dieses Problem nicht konkretisiert werden können, betrachten wir ein konkretes Beispiel. Wenn Sie die Seite zuerst besuchen Sie die Kategorie "Getränke" ausgewählt ist und die zugehörigen Produkte werden geladen, der `ProductsByCategory` DropDownList. Chai entspricht, wird das ausgewählte Produkt und die Details werden angezeigt, der `ProductDetails` DetailsView, wie in Abbildung 18 dargestellt.
 
-
 [![Das ausgewählte Produkt Details werden in einem DetailsView angezeigt.](master-detail-filtering-with-two-dropdownlists-vb/_static/image53.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image52.png)
 
 **Abbildung 18**: Das ausgewählte Produkt Details werden angezeigt, in einem DetailsView ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image54.png))
 
-
 Wenn Sie die Kategorieauswahl aus Getränke in "Gewürze" ändern, um ein Postback auftritt und die `ProductsByCategory` DropDownList wird entsprechend aktualisiert, aber DetailsView Details weiterhin für Chai angezeigt.
-
 
 [![Des zuvor ausgewählten Produkts Details werden weiterhin angezeigt.](master-detail-filtering-with-two-dropdownlists-vb/_static/image56.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image55.png)
 
 **Abbildung 19**: Der zuvor ausgewählten Produkts Details werden weiterhin angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image57.png))
-
 
 Wählen ein neues Produkt in der Liste aktualisiert DetailsView wie erwartet. Wenn Sie eine neue Kategorie auswählen, nach dem Ändern des Produkts, wird nicht erneut DetailsView aktualisieren. Wenn anstatt auf ein neues Produkt Sie eine neue Kategorie ausgewählt haben, würde jedoch DetailsView aktualisieren. Was in der Welt ist hier passiert?
 
@@ -185,24 +151,19 @@ Das Problem ist ein Problem der zeitlichen Steuerung im Lebenszyklus der Seite. 
 
 Das Problem, das in diesem Fall tritt auf, ist der Punkt im Lebenszyklus Seite, mit denen die ObjectDataSources geänderten Parametern überprüft auftritt, *vor* die erneute Bindung des zugeordneten Websteuerelemente. Aus diesem Grund bei der Auswahl einer neuen Kategorie das `ProductsByCategoryDataSource` "ObjectDataSource" erkennt eine Änderung im Wert des Parameters. Dem ObjectDataSource-Steuerelement ein, die die `ProductDetails` DetailsView, jedoch nicht beachten Sie, solche Änderungen da die `ProductsByCategory` DropDownList ist noch nicht erneut gebunden werden. Weiter unten in den Lebenszyklus der `ProductsByCategory` DropDownList die Bindung an die "ObjectDataSource", die Produkte für die neu ausgewählte Kategorie abrufen. Während der `ProductsByCategory` DropDownList Wert geändert wurde, die `ProductDetails` DetailsViews "ObjectDataSource" wurde bereits die Überprüfung der Parameter-Werts vorgenommen; DetailsView zeigt daher die vorherigen Ergebnisse. Diese Interaktion ist in Abbildung 20 dargestellt.
 
-
 [![Der ProductsByCategory DropDownList-Wert ändert, nachdem die ProductDetails DetailsViews ObjectDataSource-Steuerelement prüft, ob Änderungen](master-detail-filtering-with-two-dropdownlists-vb/_static/image59.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image58.png)
 
 **Abbildung 20**: Die `ProductsByCategory` DropDownList-Wert ändert sich nach der `ProductDetails` DetailsViews "ObjectDataSource" überprüft, ob Änderungen ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image60.png))
 
-
 Zur Umgehung des Problems explizit erneut zu binden muss der `ProductDetails` DetailsView nach der `ProductsByCategory` DropDownList gebunden wurde. Wir erreichen dies durch den Aufruf der `ProductDetails` DetailsView `DataBind()` Methode bei der `ProductsByCategory` DropDownList `DataBound` -Ereignis ausgelöst wird. Fügen Sie den folgenden Ereignishandlercode, der `MasterDetailsDetails.aspx` Seite des Code-Behind-Klasse (finden Sie in der "[Programmgesteuertes Festlegen der Parameterwerte der ObjectDataSource](../basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)" Informationen zum Hinzufügen eines ereignishandlers):
-
 
 [!code-vb[Main](master-detail-filtering-with-two-dropdownlists-vb/samples/sample2.vb)]
 
 Nach diesem expliziter Aufruf an die `ProductDetails` DetailsView `DataBind()` Methode wurde hinzugefügt, das Lernprogramm funktioniert wie erwartet. Abbildung 21 hervorgehoben, wie diese geändert, geschaffen, das Problem weiter oben.
 
-
 [![ProductDetails DetailsView ist explizit aktualisiert bei der ProductsByCategory DropDownList DataBound-Ereignis ausgelöst](master-detail-filtering-with-two-dropdownlists-vb/_static/image62.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image61.png)
 
 **Abbildung 21**: Die `ProductDetails` DetailsView ist explizit aktualisiert, wenn die `ProductsByCategory` DropDownList `DataBound` -Ereignis ausgelöst wird ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-two-dropdownlists-vb/_static/image63.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

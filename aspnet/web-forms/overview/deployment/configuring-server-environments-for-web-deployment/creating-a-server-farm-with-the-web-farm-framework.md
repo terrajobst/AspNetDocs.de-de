@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 656dd06d-806c-467c-863d-9fc45e5ba3ab
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: 19c061e83257e118aee74c9373a627b8c56defe3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 204996514bed336e60ab77f184a923f04e7e2bba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421237"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106905"
 ---
 # <a name="creating-a-server-farm-with-the-web-farm-framework"></a>Erstellen einer Serverfarm mit dem Webfarmframework
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Dieses Thema beschreibt, wie Sie mit der Web Farm Framework (WFF) 2.0 zum Erstellen und Konfigurieren einer Webfarm-Server aus einer Auflistung von Servern.
-
 
 WFF können Sie Web Platform-Produkte und Komponenten, Webanwendungen, Websites und Konfigurationseinstellungen auf mehrere Lastenausgleich-Webserver zu synchronisieren. In Szenarien, in denen man mehr als eine Webserver, wie z.B. Staging-und produktionsumgebungen, kann dies den Prozess für Bereitstellung und Konfiguration-GUIs erheblich vereinfachen. Sie können eine Webanwendung auf einem einzelnen Server bereitstellen&#x2014;der *Primärserver*&#x2014;und WFF werden automatisch repliziert, die dieser Webanwendung auf alle anderen Webservern in der Serverfarm.
 
@@ -63,7 +62,6 @@ Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird davon ausgeg
 
 > [!NOTE]
 > Weitere Informationen zum Einbinden von Computern in einer Domäne, finden Sie unter [Hinzufügen von Computern zur Domäne und Anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren von statischen IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
-
 
 ## <a name="create-the-wff-controller-server"></a>Erstellen Sie den WFF-Controller-Server
 
@@ -185,7 +183,6 @@ WFF dient Sie eng mit IIS ARR. integrieren Um diese Integration nutzen zu könne
 
 > [!NOTE]
 > Sie müssen keine ARR mit WFF verwenden; Sie können WFF zum Arbeiten mit Drittanbieter-Lösungen für den Netzwerklastenausgleich konfigurieren. Weitere Informationen finden Sie unter [Überblick über das Web Farm Framework 2.0 für IIS 7](https://go.microsoft.com/?linkid=9805126).
-
 
 Lastenausgleich mit ARR ist ein komplexes Thema, das meisten der würde den Rahmen dieses Lernprogramms ist. Allerdings können Sie das nächste Verfahren zum Installieren des ARR-Moduls und erste Schritte mit Lastenausgleich.
 

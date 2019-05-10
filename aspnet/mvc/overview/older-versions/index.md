@@ -8,17 +8,16 @@ ms.date: 10/09/2014
 ms.assetid: 151cd274-3daa-4f88-ad3b-bffb99a9d545
 msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
-ms.openlocfilehash: a0aa547ee9c8fa29e9863c540046d2f8dbfdd45f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aa38ea8984f958939261d494f65bfa2108f87068
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417818"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112450"
 ---
 # <a name="older-versions---mvc-3-and-4"></a>Ältere Versionen – MVC 3 und 4
 
 > Enthält Links zu Ressourcen für lernen, wie Sie frühere Versionen von ASP.NET MVC verwenden.
-
 
 - [Erste Schritte mit ASP.NET MVC 4](getting-started-with-aspnet-mvc4/index.md)
 

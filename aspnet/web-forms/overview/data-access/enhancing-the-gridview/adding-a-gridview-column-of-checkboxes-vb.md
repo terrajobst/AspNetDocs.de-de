@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 39253d05-75c0-41c7-b9d4-a6c58ecf69ce
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8defaeb2454a1aa4a3fdd115a7a3e449bf668659
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc16464ab02b9ea5ef329c58bdf51c26d8d1eec9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383478"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108206"
 ---
 # <a name="adding-a-gridview-column-of-checkboxes-vb"></a>Hinzufügen einer GridView-Spalte mit Kontrollkästchen (VB)
 
@@ -23,38 +23,31 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > In diesem Tutorial dargestellt, wie eine Spalte mit Kontrollkästchen ein GridView-Steuerelement, um Benutzern eine intuitive Möglichkeit der Auswählen mehrerer Zeilen mit GridView hinzu.
 
-
 ## <a name="introduction"></a>Einführung
 
 Im vorherigen Tutorial untersucht wir, wie Sie eine Spalte mit Optionsfeldern an die GridView für die Auswahl eines bestimmten Datensatzes hinzufügen. Eine Spalte mit Optionsfeldern ist eine geeignete Benutzeroberfläche auf, wenn der Benutzer beschränkt ist, darf höchstens ein Element aus dem Raster auswählen. In einigen Fällen jedoch, sollten wir dem Benutzer ermöglichen, wählen Sie eine beliebige Anzahl von Elementen aus dem Raster. Webbasierte e-Mail-Clients, angezeigt in der Regel z. B. die Liste der Nachrichten mit einer Spalte mit Kontrollkästchen. Der Benutzer eine beliebige Anzahl von Nachrichten aktivieren und dann eine Aktion ausführen, z. B. die e-Mail-Nachrichten in einen anderen Ordner verschieben oder löschen.
 
 In diesem Tutorial sehen wir, wie hinzufügen eine Spalte mit Kontrollkästchen und um zu bestimmen, welche Kontrollkästchen auf Postback eingecheckt wurden. Insbesondere erstellen wir ein Beispiel an, die genau die Benutzeroberfläche des webbasierten e-Mail-Clients imitiert. In unserem Beispiel enthält eine ausgelagerte GridView Auflisten der Produkte in der `Products` Datenbanktabelle mit einem Kontrollkästchen in jeder Zeile (siehe Abbildung 1). Eine ausgewählter Produkte löschen-Schaltfläche, wenn geklickt, werden diese Produkte ausgewählt gelöscht.
 
-
 [![Jede Zeile des Produkts enthält ein Kontrollkästchen](adding-a-gridview-column-of-checkboxes-vb/_static/image1.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image1.png)
 
 **Abbildung 1**: Jede Produktzeile enthält ein Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image2.png))
-
 
 ## <a name="step-1-adding-a-paged-gridview-that-lists-product-information"></a>Schritt 1: Hinzufügen einer ausgelagerten GridView-Ansicht, die Produktinformationen enthält.
 
 Bevor wir eine Spalte mit Kontrollkästchen hinzufügen fürchten, können Sie zuerst darauf konzentrieren s zum Auflisten der Produkte in einer GridView-Ansicht, die Paging unterstützt. Öffnen Sie zunächst die `CheckBoxField.aspx` auf der Seite die `EnhancedGridView` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox auf den Designer, Festlegen der `ID` zu `Products`. Wählen Sie als Nächstes zum Binden von GridView an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse Aufrufen der `GetProducts()` Methode, um die Daten zurückzugeben. Da diese GridView schreibgeschützt ist, legen Sie die Dropdownlisten in der Update-, INSERT-, und Löschen von Registerkarten (keine) aus.
 
-
 [![Erstellen Sie eine neue, mit dem Namen ProductsDataSource "ObjectDataSource"](adding-a-gridview-column-of-checkboxes-vb/_static/image2.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image3.png)
 
 **Abbildung 2**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `ProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image4.png))
-
 
 [![Konfigurieren Sie das "ObjectDataSource" zum Abrufen von Daten mithilfe der GetProducts()-Methode](adding-a-gridview-column-of-checkboxes-vb/_static/image3.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image5.png)
 
 **Abbildung 3**: Konfigurieren Sie das "ObjectDataSource" zum Abrufen von Daten mithilfe der `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image6.png))
 
-
 [![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](adding-a-gridview-column-of-checkboxes-vb/_static/image4.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image7.png)
 
 **Abbildung 4**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image8.png))
-
 
 Visual Studio wird automatisch nach dem Fertigstellen des Assistenten für die Datenquelle konfigurieren BoundColumns und eine CheckBoxColumn für die Felder produktbezogene Daten erstellt. Wie im vorherigen Tutorial weiter, entfernen Sie alle außer den `ProductName`, `CategoryName`, und `UnitPrice` BoundFields, und ändern Sie die `HeaderText` Eigenschaften, die Produkte, Kategorie und Preis. Konfigurieren der `UnitPrice` BoundField, damit der Wert als Währung formatiert ist. Außerdem konfigurieren Sie die GridView zur Unterstützung von Paging durch Aktivieren des Kontrollkästchens Paging aktivieren, aus dem Smarttag.
 
@@ -62,16 +55,13 @@ Lassen Sie s, die auch die Benutzeroberfläche für das Löschen der ausgewählt
 
 Nach diesen Änderungen durchführen, sollten die GridView, ObjectDataSource-Steuerelement, Schaltfläche und Bezeichnung s deklarative Markup etwa wie folgt:
 
-
 [!code-aspx[Main](adding-a-gridview-column-of-checkboxes-vb/samples/sample1.aspx)]
 
 Nehmen Sie einen Moment Zeit, um die Seite in einem Browser anzuzeigen (siehe Abbildung 5). An diesem Punkt sollte der Name, Kategorie und Preis der ersten zehn Produkte angezeigt werden.
 
-
 [![Der Name, Kategorie und der Preis der ersten zehn Produkte werden aufgeführt.](adding-a-gridview-column-of-checkboxes-vb/_static/image5.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image9.png)
 
 **Abbildung 5**: Der Name, Kategorie und der Preis der ersten zehn Produkte aufgeführt sind ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image10.png))
-
 
 ## <a name="step-2-adding-a-column-of-checkboxes"></a>Schritt 2: Hinzufügen einer Spalte mit Kontrollkästchen
 
@@ -79,19 +69,15 @@ Da ASP.NET 2.0 eine CheckBoxField enthält, eine lässt zunächst vermuten, dass
 
 Stattdessen müssen wir ein TemplateField hinzufügen und fügen Sie ein Kontrollkästchen-Steuerelement, dessen `ItemTemplate`. Fahren Sie fort, und fügen Sie ein TemplateField auf die `Products` GridView und legen Sie ihn mit das erste (linken)-Feld. GridView s Smarttags, klicken Sie auf den Link für die Vorlagen bearbeiten und ziehen Sie dann ein Kontrollkästchen-Steuerelement aus der Toolbox in die `ItemTemplate`. Legen Sie dieses Kontrollkästchen s `ID` Eigenschaft `ProductSelector`.
 
-
 [![Fügen Sie ein Kontrollkästchen-Steuerelement mit dem Namen ProductSelector für ItemTemplate verbleibt TemplateField s hinzu.](adding-a-gridview-column-of-checkboxes-vb/_static/image6.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image11.png)
 
 **Abbildung 6**: Fügen Sie ein Kontrollkästchen Web-Steuerelement mit dem Namen `ProductSelector` der TemplateField s `ItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image12.png))
 
-
 Das TemplateField und Kontrollkästchen-Web-Steuerelement hinzugefügt enthält jede Zeile nun ein Kontrollkästchen. Abbildung 7 zeigt diese Seite, über einen Webbrowser angezeigt werden soll, nachdem das TemplateField und Kontrollkästchen hinzugefügt wurden.
-
 
 [![Jede Zeile des Produkts enthält nun ein Kontrollkästchen](adding-a-gridview-column-of-checkboxes-vb/_static/image7.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image13.png)
 
 **Abbildung 7**: Jede Produktzeile enthält nun ein Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image14.png))
-
 
 ## <a name="step-3-determining-what-checkboxes-were-checked-on-postback"></a>Schritt 3: Welche Kontrollkästchen bestimmen in Postback überprüft wurden.
 
@@ -101,18 +87,15 @@ Das GridView-s [ `Rows` Eigenschaft](https://msdn.microsoft.com/library/system.w
 
 Erstellen Sie einen Ereignishandler für die `DeleteSelectedProducts` Schaltfläche Websteuerelement s `Click` Ereignis und fügen Sie den folgenden Code hinzu:
 
-
 [!code-vb[Main](adding-a-gridview-column-of-checkboxes-vb/samples/sample2.vb)]
 
 Die `Rows` Eigenschaft gibt eine Auflistung von `GridViewRow` Instanzen dieser Zusammensetzung der GridView-s-Datenzeilen. Die `For Each` hier Schleife zählt dieser Auflistung. Für jede `GridViewRow` Objekt ist, wird die Zeile s Kontrollkästchen erfolgt programmgesteuert mithilfe von `row.FindControl("controlID")`. Wenn das Kontrollkästchen aktiviert ist, die Zeile s entsprechende `ProductID` Wert wird abgerufen, von der `DataKeys` Auflistung. In dieser Übung zeigen wir einfach eine informationsmeldung in die `DeleteResults` bezeichnen, die zwar in einer arbeitsanwendung wir d stattdessen einen Aufruf der `ProductsBLL` s-Klasse `DeleteProduct(productID)` Methode.
 
 Durch das Hinzufügen dieses ereignishandlers, klicken Sie nun auf die ausgewählten Produkte löschen-Schaltfläche zeigt den `ProductID` s der ausgewählten Produkte.
 
-
 [![Klicken auf die Schaltfläche zum Löschen ausgewählten Produkte werden die ausgewählten Produkte Produkt-IDs aufgeführt.](adding-a-gridview-column-of-checkboxes-vb/_static/image8.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image15.png)
 
 **Abbildung 8**: Wenn auf der Schaltfläche zum Löschen ausgewählten Produkte die Produkte ausgewählt geklickt wird `ProductID` s werden aufgelistet ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image16.png))
-
 
 ## <a name="step-4-adding-check-all-and-uncheck-all-buttons"></a>Schritt 4: Überprüft alle und deaktivieren Sie alle Schaltflächen hinzufügen
 
@@ -120,30 +103,24 @@ Wenn ein Benutzer alle Produkte auf der aktuellen Seite zu löschen möchte, mü
 
 Fügen Sie zwei Schaltfläche-Web-Steuerelemente auf der Seite, die sie über die GridView zu platzieren. Legen Sie die erste s `ID` zu `CheckAll` und die zugehörige `Text` Eigenschaft, um alle; der Satz das zweite Argument s `ID` zu `UncheckAll` und die zugehörige `Text` Eigenschaft, um alle deaktivieren.
 
-
 [!code-aspx[Main](adding-a-gridview-column-of-checkboxes-vb/samples/sample3.aspx)]
 
 Als Nächstes erstellen Sie eine Methode in der CodeBehind-Klasse, die mit dem Namen `ToggleCheckState(checkState)` , wenn aufgerufen wird, listet die `Products` GridView s `Rows` Auflistung und legt jede Kontrollkästchen s `Checked` -Eigenschaft auf den Wert des übergebenen in *CheckState*  Parameter.
-
 
 [!code-vb[Main](adding-a-gridview-column-of-checkboxes-vb/samples/sample4.vb)]
 
 Erstellen Sie als Nächstes `Click` -Ereignishandlern für die `CheckAll` und `UncheckAll` Schaltflächen. In `CheckAll` s-Ereignishandler rufen einfach `ToggleCheckState(True)`in `UncheckAll`, rufen Sie `ToggleCheckState(False)`.
 
-
 [!code-vb[Main](adding-a-gridview-column-of-checkboxes-vb/samples/sample5.vb)]
 
 Mit diesem Code wird ein Postback auslöst und überprüft alle Kontrollkästchen in den GridView-Ansicht auf die Schaltfläche "alle". Ebenso hebt die auf alle deaktivieren Sie alle Kontrollkästchen Auswahl. Abbildung 9 zeigt den Bildschirm, nachdem die Schaltfläche "alle" eingecheckt wurde.
-
 
 [![Klicken Sie auf die Schaltfläche alle Kontrollkästchen alle Kontrollkästchen ausgewählt](adding-a-gridview-column-of-checkboxes-vb/_static/image9.gif)](adding-a-gridview-column-of-checkboxes-vb/_static/image17.png)
 
 **Abbildung 9**: Klicken Sie auf dem Überprüfen aller Schaltfläche wählt alle Kontrollkästchen ([klicken Sie, um das Bild in voller Größe anzeigen](adding-a-gridview-column-of-checkboxes-vb/_static/image18.png))
 
-
 > [!NOTE]
 > Wenn ist die Anzeige einer Spalteninhalts mit Kontrollkästchen, eine Möglichkeit für das Aktivieren oder deaktivieren alle Kontrollkästchen über ein Kontrollkästchen in der Kopfzeile. Darüber hinaus überprüfen Sie alle aktuellen / deaktivieren Sie jegliche Implementierung ein Postback erfordert. Die Kontrollkästchen möglich aktiviert oder deaktiviert, jedoch ausschließlich mit Client-seitige Skript, wodurch einer forschen benutzerfreundlichkeit. Sehen Sie sich, um die Untersuchung mit einem Header-Zeile-Kontrollkästchen für alle aktivieren und deaktivieren Sie alle im Detail, sowie eine Erläuterung zur Verwendung der clientseitigen Techniken, [überprüfen alle Kontrollkästchen in einem GridView mithilfe des clientseitigen Skripts und überprüfen Sie alle Kontrollkästchen](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx).
-
 
 ## <a name="summary"></a>Zusammenfassung
 

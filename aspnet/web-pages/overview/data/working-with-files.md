@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 4a62cce3af57b507882744f948ce208becdb03ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382302"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108944"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Arbeiten mit Dateien in einer ASP.NET Web Pages (Razor)-Website
 
@@ -48,7 +48,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit WebMatrix 3.
-
 
 <a id="Creating_a_Text_File"></a>
 ## <a name="creating-a-text-file-and-writing-data-to-it"></a>Erstellen einer Textdatei, und Schreiben von Daten
@@ -145,7 +144,6 @@ Dieses Verfahren zeigt, wie zum Lesen und Anzeigen der Daten, die Sie im vorheri
 > 
 > Sie können Microsoft Excel verwenden, um die Daten in einer Tabelle als eine durch Trennzeichen getrennte Datei zu speichern (*CSV* Datei). Wenn Sie dies tun, wird die Datei im nur-Text nicht in Excel-Format gespeichert. Jede Zeile im Arbeitsblatt wird getrennt durch einen Zeilenumbruch in der Textdatei, und jedes Datenelement wird durch ein Komma getrennt. Sie können den Code, der im vorherigen Beispiel gezeigt verwenden, eine durch Trennzeichen getrennten Excel-Datei lesen, indem Sie einfach den Namen der Datendatei in Ihrem Code ändern.
 
-
 <a id="Deleting_Files"></a>
 ## <a name="deleting-files"></a>Löschen von Dateien
 
@@ -154,7 +152,6 @@ Um Dateien auf Ihrer Website zu löschen, können Sie die `File.Delete` Methode.
 > [!NOTE] 
 > 
 > **Wichtige** In eine Produktionswebsite, Sie in der Regel einschränken, wer darf hat, um die Daten zu ändern. Weitere Informationen über das Einrichten der Mitgliedschaft und zu Möglichkeiten, um Benutzern das Ausführen von Aufgaben auf der Website zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202904).
-
 
 1. Erstellen Sie auf der Website einen Unterordner namens *Images*.
 2. Kopieren einer oder mehrerer *jpg* Dateien in die *Images* Ordner.
@@ -255,7 +252,6 @@ Im vorherigen Beispiel können Sie Benutzer, die eine Datei hochladen. Sie könn
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Arbeiten mit Bildern in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202897)
 

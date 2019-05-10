@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 028631f8855e4d94bebb0e965de75c4025e22859
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aaffcecccd138d30355ac0e7ce6c86a67246cc08
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409264"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108936"
 ---
 # <a name="part-7-creating-the-main-page"></a>Teil 7: Erstellen der Hauptseite
 
@@ -63,7 +63,6 @@ Fügen Sie diese Funktionen `AppViewModel`:
 - `resetCart` Entfernt alle Elemente aus dem Warenkorb.
 - `getDetails` Ruft die Details einer Bestellung (durch pushen ein neues `OrderDetailsViewModel` auf die `details` Liste).
 - `createOrder` erstellt eine neue Bestellung und leert den Einkaufswagen.
-
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: f70ac2b3-900f-40fa-858f-ab057904506b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: add305855d876b5033bbd7921ad24b5e840b9acc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3c1951e1ae4f97982d1263dfa9dc29454f7ce55a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386397"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132673"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-vb"></a>Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (VB)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3VB.pdf)
 
 > Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Besondere Sorgfalt muss ausgeführt werden, wenn ein Postback aus in das Popup erstellt wird.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -53,7 +52,6 @@ Jetzt immer die `Save` innerhalb des modalen Popups geklickt wird, die serversei
 Darüber hinaus sollte die Textbox-Steuerelemente innerhalb des modalen Popups mit den aktuellen Namen und e-Mail-Adresse gefüllt werden. Dies ist jedoch nur erforderlich, wenn kein Postback auftritt. Ist es ein Postback, füllt die Viewstate-Funktion von ASP.NET automatisch die Textfelder ein, durch die entsprechenden Werte.
 
 [!code-vb[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample6.vb)]
-
 
 [![Modale Fenster auslöst ein Postback.](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)
 

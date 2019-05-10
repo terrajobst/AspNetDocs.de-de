@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6f8e1051d09d11f1756bfada44a73ba7c2a1db2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392988"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108596"
 ---
 # <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>Überprüfen der Benutzereingabe in ASP.NET Web Pages (Razor)-Websites
 
@@ -42,7 +42,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
 
-
 Dieser Artikel enthält folgende Abschnitte:
 
 - [Übersicht über die Validierung von Benutzereingaben](#Overview_of_User_Input_Validation)
@@ -65,7 +64,6 @@ Sie können auch bestimmte Einschränkungen für die Werte verfügen. Selbst wen
 > [!NOTE] 
 > 
 > **Wichtige** Validieren von Benutzereingaben ist auch wichtig für die Sicherheit. Wenn Sie die Werte, die Benutzer in Formularen eingeben können beschränken, verringern Sie die Wahrscheinlichkeit, dass ein Benutzer einen Wert eingeben kann, der die Sicherheit Ihrer Website gefährden können.
-
 
 <a id="Validating_User_Input"></a>
 ## <a name="validating-user-input"></a>Überprüfen der Benutzereingabe
@@ -114,7 +112,6 @@ Sie können den Support, um die Validierung im Clientskript hinzufügen. In dies
 > [!NOTE]
 > Auch wenn Sie die clientseitige Validierung verwenden, ist die Überprüfung immer auch im Servercode ausgeführt. Ausführen der Überprüfung im Server-Code ist eine Sicherheitsmaßnahme, für den Fall, dass Benutzer, Client-basierten Überprüfung umgehen.
 
-
 1. Registrieren Sie die folgenden JavaScript-Bibliotheken auf der Seite an:  
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
@@ -159,7 +156,6 @@ Wenn Sie auf den Beispielseiten von weiter oben im Artikel dieses Stilblock eins
 > [!NOTE]
 > Wenn Sie nicht die Clientvalidierung in ASP.NET Web Pages 2 verwenden, die CSS-Klassen für die `<input>` Elemente (`input-validation-error` und `input-validation-valid` haben keinerlei Auswirkung.
 
-
 ### <a name="static-and-dynamic-error-display"></a>Statische und dynamische Fehleranzeige
 
 Die CSS-Regeln paarweise, z. B. `validation-summary-errors` und `validation-summary-valid`. Diese Paare können Sie die Regeln für beide Bedingungen definieren: eine fehlerbedingung und eine "normale" (nicht-Fehler)-Bedingung. Es ist wichtig zu verstehen, dass immer das Markup für die Fehleranzeige gerendert wird, auch wenn keine Fehler vorliegen. Wenn eine Seite hat z. B. eine `Html.ValidationSummary` -Methode in das Markup, den Quellcode der Seite enthält das folgende Markup auch, wenn die Seite zum ersten Mal angefordert wird:
@@ -182,7 +178,6 @@ In diesem Fall soll sicherstellen, dass der Wert, der auf der Seite übergeben w
 > [!NOTE] 
 > 
 > **Wichtige** immer überprüfen von Werten, die Sie von erhalten *alle* Quellcode, einschließlich Formularfeld Werte, Abfragezeichenfolgen-Werte und Cookiewerte. Es ist einfach, Personen diese Werte (z. B. für böswillige Zwecke) zu ändern. Daher müssen Sie diese Werte prüfen, um Ihre Anwendung zu schützen.
-
 
 Das folgende Beispiel zeigt, wie Sie einen Wert überprüfen können, der in einer Abfragezeichenfolge übergeben wird. Der Code überprüft, dass der Wert nicht leer ist und es sich um eine ganze Zahl ist.
 

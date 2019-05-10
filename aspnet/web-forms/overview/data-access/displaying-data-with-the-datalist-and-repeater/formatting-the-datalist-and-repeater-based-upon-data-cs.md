@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 83e3d759-82b8-41e6-8d62-f0f4b3edec41
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7ea11f436d8f0455621d22c4d5a5b4d6b6ece68f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00ae512a23b9097d1077ae572b4e4377e322882f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386423"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108409"
 ---
 # <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>Formatieren des DataList- und Wiederholungssteuerelements auf Datenbasis (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_30_CS.exe) oder [PDF-Datei herunterladen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/datatutorial30cs1.pdf)
 
 > In diesem Tutorial werden wir schrittweise Beispiele wie wir die Darstellung der DataList- oder Repeater-Steuerelemente, entweder mithilfe von Formatierungsfunktionen in Vorlagen oder durch Behandlung des Ereignisses für die Datenbindung zu formatieren.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -60,7 +59,6 @@ Beim Binden von Daten an das Repeater-Steuerelement, durchläuft sie genau diese
 > [!NOTE]
 > Der aufmerksame Leser eine leichte Anomalie zwischen die Abfolge der Schritte haben möglicherweise bemerkt, das eintritt, wenn dem DataList- und Wiederholungssteuerelement an Daten im Vergleich zu gebunden sind, wenn die GridView an Daten gebunden ist. Am Ende des Protokollfragments der dem Prozess der Datenbindung, GridView löst die `DataBound` Ereignis jedoch weder die Repeater das DataList-Steuerelement einem solchen haben. Dies ist, weil die DataList- oder Repeater-Steuerelemente wieder in den ASP.NET 1.x-Zeitrahmen erstellt wurden, bevor das vorab und nachträglich auf Ereignis-Muster "Meldungshandler" häufiger eingesetzt werden mussten.
 
-
 Mit GridView ist eine Option für die Formatierung basierend auf den Daten, erstellen Sie einen Ereignishandler für die `ItemDataBound` Ereignis. Dieser Ereignishandler würde überprüfen Sie die Daten, die nur auf gebunden wurde, hatte der `DataListItem` oder `RepeaterItem` und Auswirkungen auf die Formatierung des Steuerelements nach Bedarf.
 
 Formatieren von Änderungen für das DataList-Steuerelement, das gesamte Element implementiert werden kann, mit der `DataListItem` s Formatvorlagen bezogenen Eigenschaften, die den Standard enthalten `Font`, `ForeColor`, `BackColor`, `CssClass`und so weiter. Um die Formatierung von bestimmten Websteuerelementen innerhalb der DataList-s-Vorlage zu beeinflussen, müssen wir programmgesteuerten Zugriff auf und Ändern des Stils von dieser Web-Steuerelemente. Erläutert, wie diese zurück in die *benutzerdefinierte Formatierung basierend auf Daten* Tutorial. Repeater-Steuerelement, wie die `RepeaterItem` -Klasse verfügt über keine Formatvorlagen bezogenen Eigenschaften; aus diesem Grund alle Formatvorlagen bezogenen Änderungen an einer `RepeaterItem` in die `ItemDataBound` Ereignishandler muss erfolgen, indem Sie programmgesteuert zugreifen und diese aktualisieren Websteuerelemente in die Vorlage.
@@ -73,11 +71,9 @@ Bevor wir die Formatierung kümmern, Let s zunächst erstellen eine Seite, die e
 
 Nachdem Sie die Funktionalität DataList-Steuerelement und "ObjectDataSource" repliziert haben `Basics.aspx` in `Formatting.aspx`, DataList-Steuerelement s ändern in Ruhe `ID` Eigenschaft aus `DataList1` um einen aussagekräftigeren `ItemDataBoundFormattingExample`. Als Nächstes werden DataList-Steuerelement in einem Browser anzeigen. Wie in Abbildung 1 gezeigt, ist der einzige Formatierung Unterschied zwischen jedes Produkt, die Farbe des Hintergrunds wechselt.
 
-
 [![Die Produkte sind in dem DataList-Steuerelement aufgeführt.](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
 
 **Abbildung 1**: Die Produkte finden Sie in das DataList-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image3.png))
-
 
 In diesem Tutorial können Sie s DataList-Steuerelement formatieren, sodass alle Produkte mit einem Preis kleiner-als-20,00 $pro sowohl der Name müssen und Unit price gelb hervorgehoben.
 
@@ -86,7 +82,6 @@ In diesem Tutorial können Sie s DataList-Steuerelement formatieren, sodass alle
 Da nur die Produkte mit einem Preis unter 20,00 $pro wird die benutzerdefinierte Formatierung angewendet haben, müssen wir jede s Produktpreis bestimmen können. Beim Binden von Daten an einem DataList-Steuerelement, DataList-Steuerelement zählt die Datensätze in der Datenquelle und für die einzelnen Datensätze erstellt eine `DataListItem` Instanz, die den Datensatz der Datenquelle zum Binden der `DataListItem`. Nach den entsprechenden Datensatz s Daten gebunden wurde mit dem aktuellen `DataListItem` -Objekt, das DataList s `ItemDataBound` Ereignis wird ausgelöst. Erstellen wir einen Ereignishandler für dieses Ereignis, um die Datenwerte für die aktuelle überprüfen `DataListItem` und, basierend auf diesen Werten, Änderungen vornehmen, Formatierungen erforderlich.
 
 Erstellen Sie eine `ItemDataBound` -Ereignis für DataList-Steuerelement und fügen Sie den folgenden Code hinzu:
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample1.cs)]
 
@@ -111,28 +106,22 @@ Sobald wir wissen, dass ein Produktpreis s weniger als 20,00 $ ist, übrig bleib
 
 Wenn die Formatierung angewendet werden soll, legen Sie einfach die zwei Label-Websteuerelemente `CssClass` Eigenschaften `AffordablePriceEmphasis`, wie im folgenden Code gezeigt:
 
-
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample2.cs)]
 
 Mit der `ItemDataBound` -Ereignishandler ausgeführt, rufen Sie erneut die `Formatting.aspx` Seite in einem Browser. Wie Abbildung 2 veranschaulicht, müssen diese Produkte mit einem Preis unter 20,00 $pro, ihren Namen und den Preis hervorgehoben.
-
 
 [![Diese Produkte kleiner als 20,00 $pro hervorgehoben sind](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
 
 **Abbildung 2**: Diese Produkte kleiner als 20,00 $pro werden hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image6.png))
 
-
 > [!NOTE]
 > Da DataList-Steuerelement als HTML gerendert wird `<table>`, dessen `DataListItem` Instanzen verfügen über Formatvorlagen bezogenen Eigenschaften, die festgelegt werden, um ein bestimmtes Format für das gesamte Element gelten. Angenommen, wir wollten, markieren Sie die *gesamte* Element Gelb, wenn der Preis von weniger als 20,00 $ war, wir könnten wurden ersetzt den Code, der die Bezeichnungen auf die verwiesen wird, und legen ihre `CssClass` Eigenschaften mit der folgenden Zeile des Codes: `e.Item.CssClass = "AffordablePriceEmphasis"` (siehe Abbildung 3).
 
-
 Die `RepeaterItem` s, aus denen das Repeater-Steuerelement, allerdings Don t bieten solche Eigenschaften Format auf. Daher erfordert die benutzerdefinierte Formatierung auf das Repeater das Anwenden von Stileigenschaften auf die Web-Steuerelemente in den Vorlagen Repeater s nur wie in Abbildung 2.
-
 
 [![Das gesamte Produkt-Element ist für Produkte unter 20,00 $pro hervorgehoben.](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
 
 **Abbildung 3**: Das gesamte Produkt-Element wird für Produkte unter 20,00 $pro hervorgehoben ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image9.png))
-
 
 ## <a name="using-formatting-functions-from-within-the-template"></a>Verwenden die Formatierungsfunktionen von innerhalb der Vorlage
 
@@ -140,23 +129,19 @@ In der *Verwenden von TemplateFields, im GridView-Steuerelement* Tutorial erläu
 
 Um die Formatierungsoptionen zu demonstrieren, haben können s die Produktinformationen, die den Text [DISCONTINUED] neben dem Produktnamen s enthalten, wenn es s nicht mehr unterstützt. Darüber hinaus können s hervorgehobenen gelben Preis If haben es kleiner als 20,00 $pro (wie der `ItemDataBound` Beispiel für einen Ereignishandler); Wenn der Preis 20,00 $pro ist oder höher, Let s nicht den tatsächlichen Preis angezeigt, aber stattdessen rufen Sie der Text ein, geben Sie für eine Preisinformationen. Abbildung 4 zeigt einen Screenshot, der die Produkte, die Liste, die mit diesen Regeln für die Formatierung angewendet.
 
-
 [![Für die teuersten Produkte wird der Preis mit dem Text, rufen Sie für eine Preisinformationen ersetzt.](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
 
 **Abbildung 4**: Der Preis wird für teuersten Produkte, mit dem Text, rufen Sie für eine Preisinformationen ersetzt ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image12.png))
 
-
 ## <a name="step-1-create-the-formatting-functions"></a>Schritt 1: Erstellen Sie die Formatierungsfunktionen
 
 In diesem Beispiel wir benötigen zwei Formatierungsfunktionen, eine, die den Namen des Produkts zusammen mit dem Text [DISCONTINUED], zeigt an, bei Bedarf und eine, die entweder einen hervorgehobenen Preis angezeigt, wenn es kleiner als 20,00 $pro oder den Text ein, rufen Sie für eine andernfalls Preisinformationen. Lassen Sie s, die diese Funktionen in der ASP.NET Seite s-Code-Behind-Klasse erstellen, und nennen Sie diese `DisplayProductNameAndDiscontinuedStatus` und `DisplayPrice`. Beide Methoden müssen als Zeichenfolge Rendern den HTML-Code zurückgeben, und beide müssen markiert werden `Protected` (oder `Public`) um ab der ASP.NET Seite s deklarative Syntax aufgerufen werden. Der Code für diese beiden Methoden folgt:
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample3.cs)]
 
 Beachten Sie, dass die `DisplayProductNameAndDiscontinuedStatus` Methode akzeptiert die Werte von der `productName` und `discontinued` Daten von Feldern nach Skalarwerte, während die `DisplayPrice` -Methode akzeptiert eine `ProductsRow` Instanz (anstelle eines `unitPrice` Skalarwert). Beide Ansätze funktioniert. allerdings, wenn die Formatierungsfunktion arbeitet mit skalaren Werten, die Datenbank enthalten kann `NULL` Werte (z. B. `UnitPrice`; weder `ProductName` noch `Discontinued` ermöglichen `NULL` Werte), besondere Vorsicht bei der Verarbeitung dieser Skalare Eingaben.
 
 Insbesondere muss der Eingabeparameter des Typs `Object` da der eingehende Wert möglicherweise einen `DBNull` Instanz statt mit den erwarteten Datentyp. Darüber hinaus eine Überprüfung muss erfolgen, zu bestimmen, ob der eingehende Wert einer Datenbank ist `NULL` Wert. D. h. wenn wir wollten die `DisplayPrice` Methode, um den Preis als einen skalaren Wert an, wir d akzeptiert haben, verwenden Sie den folgenden Code:
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample4.cs)]
 
@@ -166,26 +151,21 @@ Beachten Sie, dass die `unitPrice` Eingabeparameter ist vom Typ `Object` und, di
 
 Mit die Formatierungen Funktionen unserer ASP.NET Seite s Code-Behind-Klasse hinzugefügt die, übrig bleibt, rufen diese Funktionen aus DataList-Steuerelement s Formatierung `ItemTemplate`. Um eine Formatierung Funktion aus einer Vorlage zu aufzurufen, platzieren Sie den Aufruf der Funktion in die Databinding-Syntax:
 
-
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample5.aspx)]
 
 Im DataList-Steuerelement s `ItemTemplate` der `ProductNameLabel` Bezeichnung Websteuerelement derzeit zeigt den Namen des Produkts s durch Zuweisen der `Text` Eigenschaft das Ergebnis der `<%# Eval("ProductName") %>`. Damit diese den Namen und den Text [DISCONTINUED], anzeigen, wenn benötigt, aktualisieren Sie die deklarative Syntax, damit er stattdessen weist der `Text` Eigenschaft ist der Wert von der `DisplayProductNameAndDiscontinuedStatus` Methode. Dabei müssen wir übergeben, in der Produktname s und nicht mehr unterstützte Werte, die mit der `Eval("columnName")` Syntax. `Eval` Gibt einen Wert vom Typ `Object`, aber die `DisplayProductNameAndDiscontinuedStatus` Methode erwartet Parameter vom Typ `String` und `Boolean`; aus diesem Grund müssen wir die Rückgabewerte Umwandeln der `Eval` Methode, um die Typen Erwarteter Eingabeparameter wie folgt:
-
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample6.aspx)]
 
 Wir können einfach festlegen, um den Preis anzuzeigen, die `UnitPriceLabel` Bezeichnung s `Text` Eigenschaft, um den Rückgabewert von der `DisplayPrice` -Methode, wie wir für die Anzeige der Name des Produkts s haben und [] Text eingestellt. Allerdings nicht in der `UnitPrice` als skalare Eingabeparameter, wir stattdessen übergeben Sie in der gesamten `ProductsRow` Instanz:
 
-
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample7.aspx)]
 
 Können Sie mit den Aufrufen für die Formatierungen Funktionen vorhanden unseren Fortschritt in einem Browser anzeigen. Ihr Bildschirm sollte ähnlich wie in Abbildung 5 aussehen, die nicht mehr unterstützte Produkte, die auch den Text [DISCONTINUED] und dieser Produkte, die mehr als 20,00 $pro müssen ihren Preis Kosten durch den Text ersetzt Aufruf für eine Preisinformationen.
 
-
 [![Für die teuersten Produkte wird der Preis mit dem Text, rufen Sie für eine Preisinformationen ersetzt.](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
 
 **Abbildung 5**: Der Preis wird für teuersten Produkte, mit dem Text, rufen Sie für eine Preisinformationen ersetzt ([klicken Sie, um das Bild in voller Größe anzeigen](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image15.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 5a8e49b7-5317-4125-b107-7e2466b47bb3
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7e66c6cd8c7296b889dfe6cc1ebd1eb62cda10ea
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eaa61ca850817f8dd98955b59e94be93389bf256
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384324"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106834"
 ---
 # <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>Szenario: Konfigurieren einer Stagingumgebung für die Webbereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, ein typisches Web-Bereitstellungsszenario für einer Stagingumgebung bereit und erläutert, die Aufgaben, die Sie ausführen, um eine ähnliche Umgebung einrichten müssen.
-
 
 Viele Organisationen verwenden Stagingumgebungen, um eine Vorschau der Updates für Webanwendungen und Websites anzuzeigen. Dies gibt Personen innerhalb der Organisation die Gelegenheit, untersuchen und überprüfen die neue Funktionen oder Inhalte, bevor die Website "live geschaltet" oder in anderen Worten: in einer produktionsumgebung bereitgestellt wird. Die Stagingumgebung soll die produktionsumgebung soweit wie möglich zu replizieren, um eine realistische Vorschau bereitzustellen. Diese Art von Stagingumgebung hat in der Regel folgende Eigenschaften:
 
@@ -33,7 +32,6 @@ Viele Organisationen verwenden Stagingumgebungen, um eine Vorschau der Updates f
 
 > [!NOTE]
 > Horizontales Skalieren einer datenbankbereitstellung auf mehreren Servern ist, würde den Rahmen dieses Tutorials. Weitere Informationen zu diesem Bereich, finden Sie in [SQL Server-Onlinedokumentation](https://technet.microsoft.com/library/ms130214.aspx).
-
 
 Z. B. in unserer [lernprogrammszenario](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), Team Foundation Server (TFS) verwaltet die Kontakt-Manager-Lösung. Der TFS-Administrator, Rob Walters, hat es sich um eine bestimmte Builddefinition erstellt, mit dem Entwickler, die eine Bereitstellung in der Stagingumgebung nach Bedarf auszulösen.
 

@@ -8,12 +8,12 @@ ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 1291417755e3fa4fb030bc6ba3089c38c4719c71
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0be3e767a42939a3c343f6d4a730eb1d9a6b367c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389661"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112375"
 ---
 # <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages (Razor)-Website
 
@@ -42,7 +42,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 3
 > - ASP.NET Web Helpers Library
-
 
 Sie können Ihre Website einrichten, damit, dass Benutzer anmelden können &#8212; , also so, dass der Standort unterstützt *Mitgliedschaft*. Dies kann aus vielen Gründen nützlich sein. Ihre Website kann z. B. Seiten haben, die nur für Mitglieder verfügbar sein sollen. In einigen Fällen können Benutzer aufgefordert werden, melden Sie sich, um Feedback senden oder einen Kommentar hinterlassen.
 

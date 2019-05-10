@@ -8,17 +8,16 @@ ms.date: 02/24/2012
 ms.assetid: 257373bb-eab0-47bc-b5a2-37a9e91666d6
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
-ms.openlocfilehash: 3db35464b448727ef3477a90149459a46e0f76d7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fae7bc473ecbc655400220aa158dbd5285ae1ea8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412163"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106821"
 ---
 # <a name="linq-videos-from-the-vb-team"></a>Videos zu LINQ vom VB-Team
 
 > Geben Sie in diesen Videos über eine Stunde und die Hälfte der befasst sich mit den neuen LINQ-Sprachfeatures von Visual Basic 9.0 in Visual Studio 2008 enthalten.
-
 
 - [Erste Schritte mit LINQ](how-do-i-get-started-with-linq.md)
 - [Durchführen von Gruppen- und Aggregatabfragen](how-do-i-perform-group-and-aggregate-queries.md)

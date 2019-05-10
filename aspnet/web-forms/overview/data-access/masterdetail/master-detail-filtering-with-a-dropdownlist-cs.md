@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 53e659cc-eefb-40c1-a1dc-559481c99443
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8edc18968625036964c0120b83f8ebb149dbf87a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 37ef5a31d1715885d06129fc2ef8f7aef7923741
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393430"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131990"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Filtern von Master-/Detailberichten mit einem DropDownList-Steuerelement (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_7_CS.exe) oder [PDF-Datei herunterladen](master-detail-filtering-with-a-dropdownlist-cs/_static/datatutorial07cs1.pdf)
 
 > In diesem Tutorial sehen wir, wie die master-Datensätze in einem DropDownList-Steuerelement und die Details der ausgewählten Listenelements in einer GridView-Ansicht angezeigt werden.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -34,63 +33,49 @@ Es gibt viele Möglichkeiten, die mit denen ein Master/Detail-Berichts implement
 
 Unsere Master/Detail-Berichts Listet die Kategorien in einem DropDownList-Steuerelement, mit dem ausgewählten Listenelement Produkte angezeigt weiter unten auf der Seite in einer GridView-Ansicht. Anschließend werden die erste Aufgabe vor uns, haben die Kategorien, die in einem DropDownList-Steuerelement angezeigt. Öffnen der `FilterByDropDownList.aspx` auf der Seite die `Filtering` Ordner auf einem DropDownList-Steuerelement aus der Toolbox auf der Seite Designer ziehen, und legen Sie dessen `ID` Eigenschaft `Categories`. Klicken Sie anschließend auf den Link "Datenquelle auswählen" aus der Dropdownlistes Smarttag. Dadurch wird der Assistent zum Konfigurieren von Datenquellen angezeigt.
 
-
 [![Geben Sie die DropDownList-Datenquelle](master-detail-filtering-with-a-dropdownlist-cs/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image1.png)
 
 **Abbildung 1**: Geben Sie DropDownLists-Datenquelle ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image3.png))
 
-
 Wählen Sie zum Hinzufügen einer neuen, mit dem Namen "ObjectDataSource" `CategoriesDataSource` aufruft, die die `CategoriesBLL` -Klasse `GetCategories()` Methode.
-
 
 [![Fügen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](master-detail-filtering-with-a-dropdownlist-cs/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image4.png)
 
 **Abbildung 2**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image6.png))
 
-
 [![Wählen Sie die Klasse CategoriesBLL verwendet](master-detail-filtering-with-a-dropdownlist-cs/_static/image8.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image7.png)
 
 **Abbildung 3**: Wählen Sie zum Verwenden der `CategoriesBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image9.png))
-
 
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der GetCategories()-Methode](master-detail-filtering-with-a-dropdownlist-cs/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image10.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image12.png))
 
-
 Nach dem Konfigurieren der müssen noch angeben, welche Datenquellenfeld in DropDownList angezeigt werden soll und welche "ObjectDataSource" sollte eine zugeordnet ist, als der Wert für das Element der Liste sein. Haben die `CategoryName` -Feld als die Anzeige und `CategoryID` als Wert für jedes Listenelement.
-
 
 [![Haben Sie die DropDownList-Anzeige "CategoryName" Feld aus, und verwenden CategoryID als Wert](master-detail-filtering-with-a-dropdownlist-cs/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image13.png)
 
 **Abbildung 5**: Haben Sie die DropDownList-Anzeige der `CategoryName` Feld und die Verwendung `CategoryID` als Wert ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image15.png))
 
-
 An diesem Punkt haben wir ein DropDownList-Steuerelement, das die Datensätze aus enthält die `Categories` Tabelle (alle erreicht, etwa sechs Sekunden). Abbildung 6 zeigt unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt.
-
 
 [![Eine Dropdown-Liste sind die aktuellen Kategorien aufgeführt.](master-detail-filtering-with-a-dropdownlist-cs/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image16.png)
 
 **Abbildung 6**: Ein Dropdownlisten der aktuellen Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image18.png))
 
-
 ## <a name="step-2-adding-the-products-gridview"></a>Schritt 2: Hinzufügen von Produkten GridView
 
 Der letzte Schritt in unserer Master/Detail-Berichts wird die ausgewählte Kategorie zugeordneten Produkte aufgeführt. Um dies zu erreichen, Hinzufügen einer GridView-Ansicht auf der Seite, und erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `productsDataSource`. Haben die `productsDataSource` Steuerelement reduzieren, die Daten aus der die `ProductsBLL` Klasse `GetProductsByCategoryID(categoryID)` Methode.
-
 
 [![Wählen Sie die GetProductsByCategoryID(categoryID)-Methode](master-detail-filtering-with-a-dropdownlist-cs/_static/image20.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image19.png)
 
 **Abbildung 7**: Wählen Sie die `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image21.png))
 
-
 Nach dem Auswählen dieser Methode an, der ObjectDataSource-Steuerelement-Assistent verlangt den Wert für die Methode *`categoryID`* Parameter. Der Wert des ausgewählten `categories` DropDownList-Element legen Sie die Quelle für die Parameter zum Steuern und die ControlID zu `Categories`.
-
 
 [![Legen Sie die CategoryID-Parameter auf den Wert von DropDownList Kategorien](master-detail-filtering-with-a-dropdownlist-cs/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image22.png)
 
 **Abbildung 8**: Legen Sie die *`categoryID`* Parameter, um den Wert des der `Categories` DropDownList ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
-
 
 Nehmen Sie einen Moment Zeit, unseren Fortschritt in einem Browser ausprobieren. Wenn die Seite zuerst besuchen zu können, werden diese Produkte der ausgewählten Kategorie gehören (Getränke) werden angezeigt (siehe Abbildung 9), aber der Dropdownliste ändern nicht die Daten aktualisiert. Dies ist, da ein Postback, damit die GridView auftreten muss zu aktualisieren. Zu diesem Zweck gibt es zwei Optionen zur Verfügung (die nicht erforderlich, Code schreiben zu müssen):
 
@@ -99,16 +84,13 @@ Nehmen Sie einen Moment Zeit, unseren Fortschritt in einem Browser ausprobieren.
 
 Abbildung 9 und 10 veranschaulichen die Master/Detail-Berichts in Aktion.
 
-
 [![Wenn die Seite zuerst besuchen zu können, werden die trinken Produkte angezeigt.](master-detail-filtering-with-a-dropdownlist-cs/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image25.png)
 
 **Abbildung 9**: Die trinken-Produkte werden angezeigt, wenn die Seite zuerst besuchen zu können, ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image27.png))
 
-
 [![Beim Auswählen eines neuen Produkts (erstellen) automatisch bewirkt, dass ein PostBack, und Aktualisieren der GridView](master-detail-filtering-with-a-dropdownlist-cs/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image28.png)
 
 **Abbildung 10**: Beim Auswählen eines neuen Produkts (erstellen) automatisch bewirkt, dass ein PostBack, aktualisieren die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image30.png))
-
 
 ## <a name="adding-a----choose-a-category----list-item"></a>Hinzufügen eines Listenelements "– eine Kategorie auswählen:"
 
@@ -116,11 +98,9 @@ Beim ersten Zugriff auf die `FilterByDropDownList.aspx` Seite die Kategorien Dro
 
 Um ein neues Listenelement DropDownList hinzuzufügen, wechseln Sie zu dem Fenster "Eigenschaften", und klicken Sie auf die Auslassungspunkte in der `Items` Eigenschaft. Hinzufügen ein neuen Listenelements mit dem `Text` "– eine Kategorie auswählen:" und die `Value` `-1`.
 
-
 [![Hinzufügen einer – wählen Sie eine Kategorie – Listenelement](master-detail-filtering-with-a-dropdownlist-cs/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image31.png)
 
 **Abbildung 11**: Hinzufügen einer – wählen Sie eine Kategorie – Listenelement ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image33.png))
-
 
 Alternativ können Sie das Listenelement hinzufügen, indem Sie das folgende Markup DropDownList hinzufügen:
 
@@ -128,19 +108,15 @@ Alternativ können Sie das Listenelement hinzufügen, indem Sie das folgende Mar
 
 Darüber hinaus müssen wir die DropDownList-Steuerelement festgelegt `AppendDataBoundItems` auf "true", da die Kategorien aus dem ObjectDataSource-Steuerelement zu DropDownList gebunden, gibt sie alle manuell hinzugefügten Listenelemente Wenn überschreiben müssen `AppendDataBoundItems` ist nicht "true".
 
-
 ![Legen Sie die AppendDataBoundItems-Eigenschaft auf "true"](master-detail-filtering-with-a-dropdownlist-cs/_static/image34.png)
 
 **Abbildung 12**: Legen Sie die `AppendDataBoundItems` Eigenschaft auf "true"
 
-
 Nach diesen Änderungen, wenn zunächst auf der Seite die Option "--eine Kategorie auswählen:" ausgewählt ist, und keine Produkte angezeigt werden.
-
 
 [![Klicken Sie auf dem ersten Laden einer Seite werden keine Produkte angezeigt.](master-detail-filtering-with-a-dropdownlist-cs/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image35.png)
 
 **Abbildung 13**: Auf der ersten Seite laden keine Produkte angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image37.png))
-
 
 Der Grund, die keine Produkte angezeigt werden, da das Listenelement "– eine Kategorie auswählen:" ausgewählt ist, ist der Wert ist `-1` und sind keine Produkte in der Datenbank mit einem `CategoryID` von `-1`. Wenn dies das Verhalten ist, möchten Sie an diesem Punkt sind Sie bereits fertig! Wenn Sie jedoch, den Sie anzeigen möchten *alle* der Kategorien, wenn das Listenelement "– eine Kategorie auswählen:" ausgewählt ist, zurück zu den `ProductsBLL` Klasse und Anpassen der `GetProductsByCategoryID(categoryID)` Methode, sodass die It Ruft die `GetProducts()` Methode Wenn der übergebene in *`categoryID`* -Parameter ist kleiner als 0 (null):
 
@@ -150,11 +126,9 @@ Die hier verwendete Technik ist ähnlich wie bei der es verwendet, um alle Liefe
 
 Abbildung 14 zeigt einen Screenshot des `FilterByDropDownList.aspx` Wenn die Option "--eine Kategorie auswählen:" ausgewählt ist. Hier werden alle Produkte standardmäßig angezeigt, und die Benutzer kann die Anzeige eingrenzen, indem Sie die Auswahl einer bestimmten Kategorie.
 
-
 [![Alle Produkte sind jetzt aufgeführt werden standardmäßig](master-detail-filtering-with-a-dropdownlist-cs/_static/image39.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image38.png)
 
 **Abbildung 14**: Alle Produkte sind jetzt aufgeführt werden standardmäßig ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-filtering-with-a-dropdownlist-cs/_static/image40.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 0d86a1e7-a910-4ab2-b85c-7a9ea6906c39
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d534984449fd7265872f040e648ccaea3e740ba6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ac510ab353878038c1c7a103bfbf6d32fb1b2686
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391870"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108160"
 ---
 # <a name="using-the-colorpicker-control-extender-c"></a>Mithilfe des ColorPicker-Steuerelement-Extenders (c#)
 
@@ -21,18 +21,15 @@ by [Microsoft](https://github.com/microsoft)
 
 > ColorPicker ist ein ASP.NET AJAX-Extender, der clientseitige Farbe auswählen Funktionalität mit Benutzeroberfläche in einem Popupsteuerelement enthält. Sie können auf jedes ASP.NET TextBox-Steuerelement angefügt werden. It.
 
-
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie den AJAX Control Toolkit ColorPicker-Steuerelement-Extender verwenden können. ColorPicker-Steuerelement-Extender zeigt ein Popupdialogfeld, das Ihnen ermöglicht, eine Farbe auszuwählen. Die ColorPicker ist nützlich, wenn Sie eine intuitive Benutzeroberfläche, damit ein Benutzer eine Farbe auswählen bereitstellen möchten.
 
 ## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>Ein TextBox-Steuerelement mit dem ColorPicker-Steuerelement-Extender erweitern
 
 Stellen Sie sich vor, z. B., dass eine Website zu erstellen, die Besucher zum Erstellen von benutzerdefinierten Visitenkarten ermöglicht werden soll. Besucher können Geben Sie den Text für eine Visitenkarte und die Farbe auswählen. Die ASP.NET-Seite in Codebeispiel 1 enthält zwei TextBox-Steuerelemente, die mit dem Namen TxtCardText und TxtCardColor. Wenn Sie das Formular übermitteln, werden die ausgewählten Werte angezeigt (siehe Abbildung 1).
 
-
 [![Einfaches Formular zum Erstellen einer Visitenkarte](using-the-colorpicker-control-extender-cs/_static/image1.jpg)](using-the-colorpicker-control-extender-cs/_static/image1.png)
 
 **Abbildung 01**: Einfaches Formular zum Erstellen einer Visitenkarte ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-cs/_static/image2.png))
-
 
 **1 – CreateCard.aspx auflisten**
 
@@ -42,11 +39,9 @@ Das Formular in Codebeispiel 1 funktioniert, aber es bietet eine hervorragende b
 
 Sie können die ColorPicker-Steuerelement-Extender verwenden, um eine bessere benutzererfahrung zu erstellen. Farbwähler zeigt ein Dialogfeld Farbe aus, wenn auf ein Textfeldsteuerelement den Fokus zu verschieben (siehe Abbildung 2).
 
-
 [![Der ColorPicker-Steuerelement-Extender](using-the-colorpicker-control-extender-cs/_static/image2.jpg)](using-the-colorpicker-control-extender-cs/_static/image3.png)
 
 **Abbildung 02**: ColorPicker-Steuerelement-Extender ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-cs/_static/image4.png))
-
 
 Sie müssen zwei Schritte ausführen, um die ColorPicker-Steuerelement-Extender verwenden, mit dem Formular in Codebeispiel 1:
 
@@ -59,16 +54,13 @@ Bevor Sie die ColorPicker-Komponente verwenden können, müssen Sie ein ScriptMa
 
 Die einfachste Möglichkeit zum Hinzufügen des ColorPicker-Extenders-Steuerelements auf der Seite ist in der Entwurfsansicht. Wenn Sie den Mauszeiger auf das Textfeld TxtCardColor zeigen, eine Smarttask Option wird angezeigt, der ermöglicht es Ihnen, einen Extender hinzuzufügen (siehe Abbildung 3). Wenn Sie diese Option auswählen, die Extender-Assistent (siehe Abbildung 4) wird angezeigt.
 
-
 [![Hinzufügen eines Extenders](using-the-colorpicker-control-extender-cs/_static/image3.jpg)](using-the-colorpicker-control-extender-cs/_static/image5.png)
 
 **Abbildung 03**: Hinzufügen eines Extenders ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-cs/_static/image6.png))
 
-
 [![Einen Extender-Steuerelements mit dem Assistenten für Extender auswählen](using-the-colorpicker-control-extender-cs/_static/image4.jpg)](using-the-colorpicker-control-extender-cs/_static/image7.png)
 
 **Abbildung 04**: Wählen einen Extender-Steuerelements mit dem Assistenten für Extender ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-cs/_static/image8.png))
-
 
 Sie können den ColorPicker-Extender erweitern die TxtCardColor Textfeld mit dem ColorPicker-Extender auswählen. Klicken Sie auf OK, um das Dialogfeld zu schließen.
 
@@ -101,11 +93,9 @@ Die ColorPicker PopupButtonID-Eigenschaft wird verwendet, der ColorPicker-Extend
 
 Die SampleControlID-Eigenschaft wird verwendet, um ein Steuerelement zuzuordnen, die die ausgewählte Farbe mit der ColorPicker anzeigt. Die ColorPicker ändert die Hintergrundfarbe des Steuerelements, die zurzeit ausgewählte Farbe an.
 
-
 [![Das Dialogfeld für die Farbauswahl mit einer Schaltfläche anzeigen](using-the-colorpicker-control-extender-cs/_static/image5.jpg)](using-the-colorpicker-control-extender-cs/_static/image9.png)
 
 **Abbildung 05**: Das Dialogfeld mit einer Schaltfläche für die Farbauswahl angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-colorpicker-control-extender-cs/_static/image10.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

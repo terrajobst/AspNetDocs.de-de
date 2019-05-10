@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: fd2a1c52-d717-44af-8a61-67c8279bb26e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 020f7bbe797a2c04f1ff97ea2056345028f700fb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4a3a743eef80d74d37be772ea70ac609028090ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407613"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108458"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-c"></a>Zulassen von nur bestimmten Zeichen in einem Textfeld (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/4/c/2/4c2def7a-0d23-4055-91f9-1f18504167d7/FilteredTextBox0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/filteredtextbox0CS.pdf)
 
 > ASP.NET-Steuerelemente zur gültigkeitsprüfung können stellen Sie sicher, dass nur bestimmten Zeichen in einer Benutzereingabe zulässig sind. Aber dies immer noch Benutzer ungültige Zeichen eingeben, und versuchen, die zum Senden des Formulars verhindert nicht.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -54,7 +53,6 @@ Dies ist das Markup für die `FilteredTextBoxExtender` -Steuerelement, das nur d
 [!code-aspx[Main](allowing-only-certain-characters-in-a-text-box-cs/samples/sample3.aspx)]
 
 Führen die Seite, und es wurde versucht, einen Buchstaben eingeben, falls JavaScript aktiviert ist, funktioniert es nicht. Ziffern werden jedoch auf der Seite angezeigt. Beachten Sie jedoch, dass der Schutz `FilteredTextBox` bietet ist nicht hundertprozentig: Falls JavaScript aktiviert ist, können alle Daten in das Textfeld eingegeben werden, müssen Sie zusätzliche Überprüfungen, z. B. ASP Verwendung. NET Steuerelementen zur gültigkeitsprüfung.
-
 
 [![Es können nur Ziffern eingegeben werden](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
 

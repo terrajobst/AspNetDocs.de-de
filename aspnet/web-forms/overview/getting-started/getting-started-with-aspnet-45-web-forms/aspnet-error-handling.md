@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: e4b8f059974dec33d6305e7b84919550713bf4e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3aff277a6e09504d9f7b610478c27af00c1d2d94
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409882"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108514"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET – Fehlerbehandlung
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
-
 
 In diesem Tutorial ändern Sie die Wingtip Toys-beispielanwendung für die Fehlerbehandlung und Protokollierung von Anzeigefehlern enthalten. Fehlerbehandlung ermöglicht, dass die Anwendung ordnungsgemäß Behandeln von Fehlern und Meldungen entsprechend anzuzeigen. Fehlerprotokollierung können Sie zum Suchen und Beheben von Fehlern, die aufgetreten sind. Dieses Tutorial baut auf dem vorherigen Lernprogramm "URL-Routing" und ist Teil der tutorialreihe Wingtip Toys.
 

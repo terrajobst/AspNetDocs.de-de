@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 7dc02b18-2b5d-4844-b7c5-cbd818477163
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 644af2485c1a51f2de209e968ba1b3475350fa47
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a5b11b14458fdf06fb4ee18ae94c4846307e2115
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394067"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108851"
 ---
 # <a name="executing-several-animations-after-each-other-c"></a>Sequenzielles Ausführen mehrerer Animationen (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3CS.pdf)
 
 > Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Sie können zum Ausführen mehrerer Animationen eine nach dem anderen.
-
 
 Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Sie können zum Ausführen mehrerer Animationen eine nach dem anderen.
 
@@ -50,11 +49,9 @@ In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt we
 
 Wenn Sie dieses Skript im Bereich erste ruft breiter und dann kleinere ausführen.
 
-
 [![Zuerst wird die Breite erhöht.](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
 
 Zuerst wird die Breite erhöht ([klicken Sie, um das Bild in voller Größe anzeigen](executing-several-animations-after-each-other-cs/_static/image3.png))
-
 
 [![Anschließend wird die Höhe verringert.](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
 

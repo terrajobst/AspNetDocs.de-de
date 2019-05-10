@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e91ba6a0c4d2f9cad6d88119e7f33931b7ba5772
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cbf0c5f15399e49673f7c77006211ccff953346d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412800"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108795"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>Hinzufügen von Validierungssteuerelementen zu Oberfläche für die Bearbeitung von DataList (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_39_VB.exe) oder [PDF-Datei herunterladen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/datatutorial39vb1.pdf)
 
 > In diesem Tutorial erfahren Sie, wie einfach es ist, die Steuerelemente zur gültigkeitsprüfung des DataList-Steuerelement EditItemTemplate hinzufügen, um eine weitere narrensicher Bearbeitung Benutzeroberfläche bereitzustellen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -44,11 +43,9 @@ Bevor wir weiter erweitern im vorherige Beispiel um regulierte sehen können, m�
 2. Wechseln Sie zur Seite "s" deklarativen Markup (klicken Sie auf die Schaltfläche "Quelle" am unteren Rand der Seite ")
 3. Kopieren Sie den Text innerhalb der `<asp:Content>` und `</asp:Content>` Tags (Zeilen 3 bis 32), wie in Abbildung 1 dargestellt.
 
-
 [![Kopieren Sie den Text innerhalb der &lt;Asp: Content&gt; Steuerelement](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image1.png)
 
 **Abbildung 2**: Kopieren Sie den Text innerhalb der `<asp:Content>` Control ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image3.png))
-
 
 1. Öffnen der `UIValidation.aspx` Seite
 2. Wechseln Sie zur Seite s deklarativen markup
@@ -58,11 +55,9 @@ Bevor wir weiter erweitern im vorherige Beispiel um regulierte sehen können, m�
 
 Nach der Umstellung auf den Inhalt und Code aus `ErrorHandling.aspx` zu `UIValidation.aspx`, können Sie die Seiten in einem Browser zu testen. Sie sollten die Ausgabe sowie die gleiche Funktionalität in jede dieser zwei Seiten (siehe Abbildung 2).
 
-
 [![Die Seite UIValidation.aspx imitiert die Funktionalität in ErrorHandling.aspx](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image4.png)
 
 **Abbildung 2**: Die `UIValidation.aspx` Seite imitiert die Funktionalität in `ErrorHandling.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image6.png))
-
 
 ## <a name="step-2-adding-the-validation-controls-to-the-datalist-s-edititemtemplate"></a>Schritt 2: Das DataList-s-EditItemTemplate hinzugefügt Steuerelemente zur gültigkeitsprüfung
 
@@ -81,24 +76,19 @@ Für unser Tutorial müssen wir verwenden ein RequiredFieldValidator, um sicherz
 > [!NOTE]
 > Während ASP.NET 1.x mussten diese gleichen fünf Validierungssteuerelemente, ASP.NET 2.0 wurde eine Reihe von Verbesserungen hinzugefügt, der Hauptseite für Browser neben dem Internet Explorer und die Möglichkeit, die Validierungssteuerelemente für Partition auf einer Seite in zwei des clientseitigen Skripts zu unterstützen Überprüfung von Gruppen. Weitere Informationen zu den neuen Features der Validierung-Steuerelement in 2.0 finden Sie unter [Analyse der Validierungssteuerelemente in ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/112305-1.aspx).
 
-
 S durch Hinzufügen der erforderlichen Überprüfungssteuerelemente an die Datenliste s beginnen können `EditItemTemplate`. Diese Aufgabe kann mithilfe des Designers durch Klicken auf den Link "Vorlagen bearbeiten" aus dem DataList-s-Smarttag oder mithilfe der deklarativen Syntax erfolgen. Lassen Sie s durchlaufen Sie den Prozess über die Option "Vorlagen bearbeiten" die Entwurfsansicht zu sehen. Nach dem Auswählen der Bearbeitung von DataList-Steuerelement s `EditItemTemplate`, fügen Sie einen RequiredFieldValidator durch Ziehen aus der Toolbox in die Vorlage bearbeiten-Schnittstelle, platzieren sie nach der `ProductName` Textfeld.
-
 
 [![Fügen Sie einen RequiredFieldValidator das EditItemTemplate nach ProductName Textfeld](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image7.png)
 
 **Abbildung 3**: Einen RequiredFieldValidator zum Hinzufügen der `EditItemTemplate After` der `ProductName` Textfeld ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image9.png))
 
-
 Alle Validierungssteuerelemente funktionieren durch Überprüfen der Eingabe eines einzelnen ASP.NET Web-Steuerelements. Aus diesem Grund müssen wir angeben, dass das RequiredFieldValidator-Steuerelement uns hinzugefügten, für überprüfen soll die `ProductName` Textfeld; Dies erfolgt durch das Validierungssteuerelement s festlegen [ `ControlToValidate` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) auf die `ID` von das entsprechende Steuerelement für Web (`ProductName`, in diesem Fall). Legen Sie als Nächstes die [ `ErrorMessage` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) , müssen Sie den Namen des Produkts s bereitstellen und die [ `Text` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) zu \*. Die `Text` Eigenschaftswert, wenn angegeben, wird der Text, der durch das Validierungssteuerelement angezeigt wird, wenn die Validierung fehlschlägt. Die `ErrorMessage` Eigenschaftswert, der erforderlich ist, wird von dem Steuerelement ValidationSummary verwendet, wenn die `Text` -Eigenschaftswert fehlt, die `ErrorMessage` -Eigenschaftswert angezeigt wird, durch das Validierungssteuerelement bei ungültiger Eingabe.
 
 Nach dem Festlegen dieser drei Eigenschaften des das RequiredFieldValidator-Steuerelement, sollte Ihr Bildschirm dem Beispiel in Abbildung 4 aussehen.
 
-
 [![Legen Sie die RequiredFieldValidator s ControlToValidate, ErrorMessage und Eigenschaften von Text](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image10.png)
 
 **Abbildung 4**: Legen Sie das RequiredFieldValidator-s `ControlToValidate`, `ErrorMessage`, und `Text` Eigenschaften ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image12.png))
-
 
 Mit das RequiredFieldValidator-Steuerelement hinzugefügt, die `EditItemTemplate`, bleibt die erforderlichen Validierungen für s Produktpreis Textfeld ist. Da die `UnitPrice` ist optional, wenn einen Datensatz zu bearbeiten, wir Raten t muss einen RequiredFieldValidator hinzugefügt. Müssen wir tun, jedoch eine CompareValidator, um sicherzustellen, dass Hinzufügen der `UnitPrice`, sofern angegeben, wird ordnungsgemäß als Währung formatiert und ist größer als oder gleich 0.
 
@@ -106,16 +96,13 @@ CompareValidator in Hinzufügen der `EditItemTemplate` und legen Sie seine `Cont
 
 Nach dem Hinzufügen dieser beiden Validierungssteuerelemente, DataList-Steuerelement s `EditItemTemplate` deklarative Syntax des s sollte etwa wie folgt aussehen:
 
-
 [!code-aspx[Main](adding-validation-controls-to-the-datalist-s-editing-interface-vb/samples/sample1.aspx)]
 
 Öffnen Sie nachdem Sie diese Änderungen haben die Seite in einem Browser aus. Wenn Sie versuchen, den Namen des weglassen, oder geben einen ungültigen preiswert, wenn Sie ein Produkt zu bearbeiten, wird ein Sternchen neben dem Textfeld angezeigt. Wie in Abbildung 5 gezeigt, wird ein preiswert, der das Währungssymbol wie z. B. 19,95 $ enthält als ungültig angesehen. CompareValidator s `Currency` `Type` ermöglicht das Trennzeichen für Ziffern (z. B. Kommas oder Punkte, je nach den kultureinstellungen) und eine führende Plus- oder Minuszeichen (-), funktioniert jedoch *nicht* ein Währungssymbol zulassen. Dieses Verhalten kann Benutzer perplex, während die Bearbeitungsschnittstelle derzeit rendert die `UnitPrice` verwenden das Währungsformat.
 
-
 [![Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe angezeigt.](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image13.png)
 
 **Abbildung 5**: Ein Sternchen wird neben die Textfelder ein, mit der ungültigen Eingabe ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image15.png))
-
 
 Während der Überprüfung funktioniert als-ist, muss der Benutzer das Währungssymbol manuell zu entfernen, wenn einen Datensatz bearbeiten, die nicht zulässig ist. Darüber hinaus treten ungültige Schnittstelle die Eingaben in die Bearbeitung, weder die Aktualisierung noch "Abbrechen" Schaltflächen einen Postback wird aufgerufen, wenn auf Sie geklickt. Im Idealfall würde die Schaltfläche "Abbrechen" DataList-Steuerelement in den Zustand vor der Bearbeitung, unabhängig von der Gültigkeit der Benutzereingabe s zurück. Darüber hinaus müssen wir sicherstellen, dass Daten auf der Seite s gültig ist, bevor Sie aktualisieren die Produktinformationen im DataList-Steuerelement s `UpdateCommand` Ereignishandler die clientbasierte Logik kann, von Benutzern, deren Browser umgangen werden entweder Einbau zusätzlichen t unterstützt JavaScript oder über die, Steuerelemente zur gültigkeitsprüfung die Unterstützung deaktiviert ist.
 
@@ -133,7 +120,6 @@ Durch diese Änderung der formatierte Preis in die Bearbeitungsschnittstelle ent
 
 > [!NOTE]
 > Wenn Sie das Währungsformat aus der bearbeitbaren Schnittstelle entfernen, finde ich hilfreich sein, die das Währungssymbol als außerhalb der TextBox-Text einfügen. Dies dient als Hinweis für den Benutzer, den sie nicht benötigen, um das Währungssymbol bereitzustellen.
-
 
 ## <a name="fixing-the-cancel-button"></a>Beheben die Schaltfläche "Abbrechen"
 
@@ -153,7 +139,6 @@ Wenn ein Benutzer JavaScript deaktiviert hat, die Seite besucht, bearbeitet ein 
 
 Fügen Sie den folgenden Code am Anfang der `UpdateCommand` -Ereignishandler direkt vor der `Try` blockieren:
 
-
 [!code-vb[Main](adding-validation-controls-to-the-datalist-s-editing-interface-vb/samples/sample2.vb)]
 
 Durch diese hinzufügen versucht das Produkt aktualisiert werden, nur dann, wenn die übermittelten Daten gültig sind. Die meisten Benutzer können auf ungültige Daten aufgrund der Validierung Steuerelemente clientseitige Skripts, postback, aber Benutzer, deren Browser keine Nachteile für Ihr, JavaScript unterstützen oder nicht, die Unterstützung für JavaScript deaktiviert haben, können die clientseitige Überprüfungen umgehen und senden Sie ungültige Daten.
@@ -161,18 +146,15 @@ Durch diese hinzufügen versucht das Produkt aktualisiert werden, nur dann, wenn
 > [!NOTE]
 > Der aufmerksame Leser werden sich erinnern, dass beim Aktualisieren von Daten mit GridView, wir nicht explizit überprüfen müssen die `Page.IsValid` -Eigenschaft in unserer Seite s-Code-Behind-Klasse. Dies ist, da die GridView berät das `Page.IsValid` -Eigenschaft für uns und nur fährt mit dem Update nur, wenn der Wert zurückgegeben `True`.
 
-
 ## <a name="step-3-summarizing-data-entry-problems"></a>Schritt 3: Zusammenfassung der Probleme mit der Dateneingabe
 
 Zusätzlich zu den fünf Validation-Steuerelementen, enthält ASP.NET die [ValidationSummary-Steuerelement](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx), welche zeigt die `ErrorMessage` s von diesen Steuerelementen zur gültigkeitsprüfung, die ungültige Daten erkannt. Diese zusammenfassenden Daten können als Text auf der Webseite oder über ein modales, clientseitige Messagebox angezeigt werden. Lassen Sie s dieses Tutorial enthält eine Zusammenfassung der Überprüfungsprobleme der clientseitigen-Messagebox zu verbessern.
 
 Ziehen Sie zu diesem Zweck ein ValidationSummary-Steuerelement aus der Toolbox in den Designer. Der Speicherort der ValidationSummary-Steuerelement t unerheblich, da wir erneut zu konfigurieren, um die Zusammenfassung nur als eine Messagebox anzeigt. Nach Hinzufügen des Steuerelements, legen Sie dessen [ `ShowSummary` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) zu `False` und die zugehörige [ `ShowMessageBox` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) zu `True`. Mit folgender Ergänzung, Fehler bei der Validierung in einer clientseitigen Messagebox zusammengefasst sind (siehe Abbildung 6).
 
-
 [![Fehler bei der Validierung werden in einer Client-Side-Messagebox zusammengefasst.](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image16.png)
 
 **Abbildung 6**: Fehler bei der Validierung werden zusammengefasst, in einer Client-Side-Messagebox ([klicken Sie, um das Bild in voller Größe anzeigen](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image18.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

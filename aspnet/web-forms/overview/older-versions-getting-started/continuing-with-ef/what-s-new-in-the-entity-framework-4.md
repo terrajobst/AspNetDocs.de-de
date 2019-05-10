@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: 393df4a8-b1db-44c4-9db7-2b533ca887d0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 29d2bd61e8361b130e7b9415dad4fe1d5b847945
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387450"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109309"
 ---
 # <a name="whats-new-in-the-entity-framework-40"></a>Neue Funktionen in Entity Framework 4.0
 
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
-
 
 Im vorherigen Tutorial haben Sie einige Methoden zur Steigerung der Leistung einer Webanwendung, die das Entity Framework verwendet. In diesem Tutorial werden einige der wichtigsten neuen Features in Version 4 von Entity Framework, und es enthält links zu Ressourcen, die eine umfassendere Einführung in alle der neuen Features bereitstellen. Die folgenden: Funktionen in diesem Tutorial hervorgehoben
 

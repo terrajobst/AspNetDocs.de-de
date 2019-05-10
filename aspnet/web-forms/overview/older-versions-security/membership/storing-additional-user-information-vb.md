@@ -8,12 +8,12 @@ ms.date: 01/18/2008
 ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7dad99f2ae7e71cb697426bc97414fd4e4873aa5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8483f6673ff64020c5eb10bd72766c6df91e0438
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400489"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133058"
 ---
 # <a name="storing-additional-user-information-vb"></a>Speichern von zusätzlichen Benutzerinformationen (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_08_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial08_ExtraUserInfo_vb.pdf)
 
 > In diesem Tutorial werden wir diese Frage beantworten, indem Sie eine sehr rudimentäre gästebuchanwendung erstellen. In diesem Fall werden wir sehen Sie sich die verschiedenen Optionen für die Modellierung von Benutzerinformationen in einer Datenbank und feststellen, wie Sie die Benutzerkonten, die durch das mitgliedschaftsframework erstellt diese Daten zuordnen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -44,19 +43,15 @@ Um die Gästebuch-Kommentare zu erfassen, müssen wir eine Datenbanktabelle, die
 
 Um diese Tabelle der Datenbank hinzugefügt haben, fahren Sie mit der Datenbank-Explorer in Visual Studio, und navigieren Sie zu der `SecurityTutorials` Datenbank. Mit der rechten Maustaste auf den Ordner "Tabellen", und wählen Sie die neue Tabelle hinzufügen. Daraufhin wird eine Schnittstelle, die zum Definieren von Spalten für die neue Tabelle ermöglicht.
 
-
 [![Hinzufügen einer neuen Tabelle in der Datenbank SecurityTutorials](storing-additional-user-information-vb/_static/image2.png)](storing-additional-user-information-vb/_static/image1.png)
 
 **Abbildung 1**: Hinzufügen einer neuen Tabelle an der `SecurityTutorials` Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image3.png))
 
-
 Als Nächstes definieren Sie die `GuestbookComments`Spalten. Starten Sie durch Hinzufügen einer Spalte mit dem Namen `CommentId` des Typs `uniqueidentifier`. In dieser Spalte werden einzelnen Kommentare in das Gästebuch eindeutig zu identifizieren, also nicht zulassen `NULL` s und kennzeichnet sie als Primärschlüssel der Tabelle. Anstatt einen Wert für die `CommentId` für jedes Feld `INSERT`, es kann darauf hinweisen, die eine neue `uniqueidentifier` Wert sollte automatisch für dieses Feld generiert werden, auf `INSERT` indem Sie den Wert der Spalte standardmäßig auf `NEWID()`. Nach dem Hinzufügen dieser ersten Feld, markieren sie den Standardwert festgelegt als die primary key- und die Einstellungen, sollte Ihr Bildschirm ähnlich wie im Screenshot in Abbildung 2 dargestellt aussehen.
-
 
 [![Hinzufügen einer primären Spalteninhalts, die mit dem Namen CommentId](storing-additional-user-information-vb/_static/image5.png)](storing-additional-user-information-vb/_static/image4.png)
 
 **Abbildung 2**: Hinzufügen einer primären Spalte mit dem Namen `CommentId` ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image6.png))
-
 
 Fügen Sie eine Spalte namens `Subject` des Typs `nvarchar(50)` und eine Spalte mit dem Namen `Body` des Typs `nvarchar(MAX)`, unterbinden einer `NULL` s in beide Spalten. Danach fügen Sie eine Spalte, die mit dem Namen `CommentDate` des Typs `datetime`. Nicht zulassen `NULL` s, und legen die `CommentDate` Spalte Standardwert, `getdate()`.
 
@@ -65,36 +60,29 @@ Fügen Sie eine Spalte namens `Subject` des Typs `nvarchar(50)` und eine Spalte 
 > [!NOTE]
 > Wie wir unter den [ *Erstellen des Mitgliedschaftsschemas in SQL Server* ](creating-the-membership-schema-in-sql-server-vb.md) Tutorial, das mitgliedschaftsframework ermöglicht mehrere Webanwendungen unter anderen Benutzerkonten, die denselben Speicher des Benutzers. Hierzu werden die Benutzerkonten in verschiedenen Anwendungen zu partitionieren. Und zwar alle Benutzernamen innerhalb einer Anwendung eindeutig ist unbedingt, kann der gleiche Benutzername in verschiedenen Anwendungen, die mit den gleichen Speicher des Benutzers verwendet werden. Es ist eine Zusammensetzung `UNIQUE` -Einschränkung in der `aspnet_Users` -Tabelle über die `UserName` und `ApplicationId` Felder, jedoch nicht auf nur die `UserName` Feld. Daher ist es möglich, dass der Aspnet\_Tabelle haben Sie zwei (oder mehr) Datensätze mit demselben Benutzer `UserName` Wert. Vorhanden ist, jedoch eine `UNIQUE` -Einschränkung für die `aspnet_Users` tabellenspezifischen `UserId` Feld (da es sich um den Primärschlüssel ist). Ein `UNIQUE` Einschränkung ist wichtig, da ohne wir eine fremdschlüsseleinschränkung zwischen herstellen kann die `GuestbookComments` und `aspnet_Users` Tabellen.
 
-
 Nach dem Hinzufügen der `UserId` Spalte speichern in der Tabelle durch Klicken auf das Symbol "Speichern" in der Symbolleiste. Benennen Sie die neue Tabelle `GuestbookComments`.
 
 Wir haben einen letzten Ausgabe mit Aufmerksamkeit schenken müssen die `GuestbookComments` Tabelle: müssen wir erstellen eine [foreign Key-Einschränkung](https://msdn.microsoft.com/library/ms175464.aspx) zwischen der `GuestbookComments.UserId` Spalte und die `aspnet_Users.UserId` Spalte. Um dies zu erreichen, klicken Sie auf das Symbol "Beziehung" in der Symbolleiste, um das Dialogfeld "Fremdschlüsselbeziehungen" aufzurufen. (Alternativ können Sie dieses Dialogfeld starten durch Navigieren zum Menü Tabellen-Designer und Beziehungen auswählen.)
 
 Klicken Sie auf die Schaltfläche "hinzufügen" unten links im Dialogfeld "Fremdschlüsselbeziehungen". Dadurch wird eine neue foreign Key-Einschränkung, hinzugefügt, aber wir müssen trotzdem noch definieren Sie die Tabellen, die beteiligt sind, in der Beziehung.
 
-
 [![Verwenden Sie das Dialogfeld "Fremdschlüsselbeziehungen" zum Verwalten von Foreign Key-Einschränkungen einer Tabelle](storing-additional-user-information-vb/_static/image8.png)](storing-additional-user-information-vb/_static/image7.png)
 
 **Abbildung 3**: Verwenden Sie das Dialogfeld Foreign Key-Beziehungen zum Verwalten von Foreign Key-Einschränkungen einer Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image9.png))
 
-
 Klicken Sie dann auf das Symbol "Auslassungspunkte" in der "Tabelle und Spaltenspezifikation" Zeile auf der rechten Seite. Hierdurch wird das Dialogfeld Tabellen und Spalten, die aus dem können wir angeben, der Primärschlüsseltabelle und die Spalte und die Fremdschlüsselspalte aus der `GuestbookComments` Tabelle. Wählen Sie vor allem `aspnet_Users` und `UserId` als die Primärschlüsseltabelle und die Spalte, und `UserId` aus der `GuestbookComments` Tabelle als Fremdschlüsselspalte (siehe Abbildung 4). Nach dem Definieren der Primär- und Fremdschlüssel wichtige Tabellen und Spalten, klicken Sie auf OK, um das Dialogfeld "Fremdschlüsselbeziehungen" zurückzukehren.
-
 
 [![Richten Sie eine Foreign Key-Einschränkung zwischen der Aspnet_Users und GuesbookComments Tabellen](storing-additional-user-information-vb/_static/image11.png)](storing-additional-user-information-vb/_static/image10.png)
 
 **Abbildung 4**: Einrichten einer Foreign Key-Einschränkung zwischen der `aspnet_Users` und `GuesbookComments` Tabellen ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image12.png))
 
-
 An diesem Punkt wurde der foreign Key-Einschränkung hergestellt. Das Vorhandensein dieser Einschränkung stellt sicher [relationale Integrität](http://en.wikipedia.org/wiki/Referential_integrity) zwischen den beiden Tabellen, indem sichergestellt wird, gibt es nie einen Gästebuch-Eintrag verweist auf eine nicht existierende-Benutzerkonto. Standardmäßig eine foreign Key-Einschränkung nicht zu, wenn einen übergeordneter Datensatz gelöscht werden soll, wenn entsprechende untergeordnete Datensätze. Also wenn ein Benutzer einen oder mehrere Gästebuch-Kommentare macht, und klicken Sie dann wir versuchen, dieses Benutzerkonto zu löschen, fehl der Löschvorgang, wenn seine Gästebuch Kommentare zuerst gelöscht werden.
 
 Foreign Key-Einschränkungen können konfiguriert werden, um die zugehörigen untergeordneten Datensätze automatisch zu löschen, wenn ein übergeordneter Datensatz gelöscht wird. Anders gesagt können wir diese foreign Key-Einschränkung einrichten, sodass Gästebucheinträge eines Benutzers automatisch gelöscht werden, wenn ihr Benutzerkonto gelöscht wird. Um dies zu erreichen, erweitern Sie im Abschnitt "INSERT und UPDATE-Spezifikation", und legen Sie die "Regel löschen"-Eigenschaft auf Cascade.
 
-
 [![Konfigurieren von Foreign Key-Einschränkung auf Löschweitergaben](storing-additional-user-information-vb/_static/image14.png)](storing-additional-user-information-vb/_static/image13.png)
 
 **Abbildung 5**: Konfigurieren Sie die Foreign Key-Einschränkung auf Sie Löschweitergaben ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image15.png))
-
 
 Klicken Sie auf die Schaltfläche "Schließen", um zu den Foreign Key Relationships verlassen, um die foreign Key-Einschränkung zu speichern. Klicken Sie dann auf das Symbol "Speichern" in der Symbolleiste, um das Speichern der Tabelle und dieser Beziehung.
 
@@ -114,11 +102,9 @@ Nun müssen wir ordnen Sie drei Spalten mit jedem Konto zum Speichern des Benutz
 
 Wir erstellen eine neue Tabelle namens `UserProfiles` der home-Stadt, Startseite und Signatur für jeden Benutzer gespeichert. Mit der rechten Maustaste auf den Ordner für Tabellen im Datenbank-Explorer-Fenster, und wählen Sie zum Erstellen einer neuen Tabelle. Den Namen der ersten Spalte `UserId` und legen Sie deren Typ auf `uniqueidentifier`. Nicht zulassen `NULL` Werte ein, und markieren Sie die Spalte als Primärschlüssel. Fügen Sie Spalten mit dem Namen: `HomeTown` des Typs `nvarchar(50)`; `HomepageUrl` des Typs `nvarchar(100)`; und die Signatur des Typs `nvarchar(500)`. Jede dieser drei Spalten lässt eine `NULL` Wert.
 
-
 [![Erstellen Sie in der UserProfiles-Tabelle](storing-additional-user-information-vb/_static/image17.png)](storing-additional-user-information-vb/_static/image16.png)
 
 **Abbildung 6**: Erstellen der `UserProfiles` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image18.png))
-
 
 Speichern Sie die Tabelle, und nennen Sie sie `UserProfiles`. Einrichten und schließlich eine fremdschlüsseleinschränkung zwischen der `UserProfiles` tabellenspezifischen `UserId` Feld und die `aspnet_Users.UserId` Feld. Wie wir mit der foreign Key-Einschränkung zwischen der `GuestbookComments` und `aspnet_Users` Tabellen vorhanden sind, diese Einschränkung kaskadiert werden gelöscht. Da die `UserId` Feld `UserProfiles` ist der primäre Schlüssel, dadurch wird sichergestellt, dass es wird nicht mehr als einem Datensatz in die `UserProfiles` Tabelle für jedes Benutzerkonto. Diese Art von Beziehung wird als 1: 1 bezeichnet.
 
@@ -132,37 +118,29 @@ Da dieser tutorialreihe Formular-Authentifizierung, Autorisierung, Benutzerkonte
 
 Öffnen der `AdditionalUserInfo.aspx` auf der Seite die `Membership` Ordner, und fügen Sie einem DetailsView-Steuerelement zum Festlegen der ID-Eigenschaft auf der Seite `UserProfile` und Beseitigen der `Width` und `Height` Eigenschaften. Erweitern Sie DetailsViews-Smarttag, und an eine neue Datenquellen-Steuerelement bindet, bindet es auch. Dadurch wird der DataSource-Konfigurations-Assistent gestartet (siehe Abbildung 7). Im ersten Schritt aufgefordert, den Typ der Datenquelle an. Da wir beabsichtigen, eine direkte Verbindung mit der `SecurityTutorials` Datenbank, wählen Sie die Datenbank-Symbol, Angeben der `ID` als `UserProfileDataSource`.
 
-
 [![Fügen Sie ein neues SqlDataSource-Steuerelement, das mit dem Namen UserProfileDataSource hinzu.](storing-additional-user-information-vb/_static/image20.png)](storing-additional-user-information-vb/_static/image19.png)
 
 **Abbildung 7**: Hinzufügen einer neuen SqlDataSource-Steuerelement mit dem Namen `UserProfileDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image21.png))
 
-
 Im nächste Bildschirm werden aufgefordert, die zu verwendende Datenbank. Wir haben bereits eine Verbindungszeichenfolge im definiert `Web.config` für die `SecurityTutorials` Datenbank. Diesen Verbindungszeichenfolgennamen – `SecurityTutorialsConnectionString` – sollte sich in der Dropdown-Liste. Wählen Sie diese Option aus, und klicken Sie auf Weiter.
-
 
 [![Wählen Sie aus der Dropdown-Liste SecurityTutorialsConnectionString](storing-additional-user-information-vb/_static/image23.png)](storing-additional-user-information-vb/_static/image22.png)
 
 **Abbildung 8**: Wählen Sie `SecurityTutorialsConnectionString` aus der Dropdown-Liste ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image24.png))
 
-
 Im nachfolgenden Bildschirm wird gefragt, Tabellen und Spalten zu Abfragen angeben. Wählen Sie die `UserProfiles` Tabelle aus der Dropdown-Liste, und überprüfen Sie alle Spalten.
-
 
 [![Schalten Sie alle Spalten aus der UserProfiles-Tabelle zurück](storing-additional-user-information-vb/_static/image26.png)](storing-additional-user-information-vb/_static/image25.png)
 
 **Abbildung 9**: Schalten Sie wieder alle Spalten aus der `UserProfiles` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image27.png))
 
-
 In Abbildung 9: Gibt die aktuelle Abfrage *alle* der Datensätze in `UserProfiles`, aber interessieren wir uns nur des aktuell angemeldeten Benutzers Datensatz. Hinzufügen einer `WHERE` -Klausel, klicken Sie auf die `WHERE` Schaltfläche, um das Hinzufügen `WHERE` Klausel Dialogfeld (siehe Abbildung 10). Hier können Sie die Spalte, nach dem gefiltert, den Operator und die Quelle des Filter-Parameter auswählen. Wählen Sie `UserId` als Spalte und den Operator "=".
 
 Leider besteht keine integrierte Parameter auf diese Datenquelle des aktuell angemeldeten Benutzers zurück `UserId` Wert. Sie müssen diesen Wert programmgesteuert abrufen. Legen Sie daher die Source-Dropdownliste auf "None," klicken Sie hinzufügen, Schaltfläche, um den Parameter hinzuzufügen, und klicken Sie dann auf OK.
 
-
 [![Fügen Sie einen Filterparameter für die Spalte "UserID" hinzu.](storing-additional-user-information-vb/_static/image29.png)](storing-additional-user-information-vb/_static/image28.png)
 
 **Abbildung 10**: Fügen Sie einen Filter-Parameter auf die `UserId` Spalte ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image30.png))
-
 
 Nach dem Klicken auf OK werden Sie auf dem Bildschirm in Abbildung 9 gezeigt zurückgegeben. Dieses Mal jedoch die SQL-Abfrage am unteren Rand des Bildschirms sollte enthalten eine `WHERE` Klausel. Klicken Sie auf "Weiter", um zum Bildschirm "Testabfrage" zu navigieren, auf. Hier können Sie die Abfrage ausführen und die Ergebnisse anzuzeigen. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
 
@@ -181,36 +159,28 @@ Der obige Code startet durch Abrufen der einen Verweis auf den derzeit angemelde
 > [!NOTE]
 > Die `Membership.GetUser()` Methode gibt Informationen zu den derzeit angemeldeten Benutzer zurück. Wenn ein anonymer Benutzer die Seite besucht, wird der Wert zurückgegeben `Nothing`. In diesem Fall führt dies zu einem `NullReferenceException` in der folgenden Zeile des Codes beim Lesen der `ProviderUserKey` Eigenschaft. Natürlich nicht schon kümmern `Membership.GetUser()` zurückgeben "Nothing" in der `AdditionalUserInfo.aspx` Seite, da wir URL-Autorisierung in einem vorherigen Tutorial so konfiguriert, dass nur authentifizierte Benutzer die ASP.NET-Ressourcen in diesem Ordner zugreifen können. Wenn Sie müssen den Zugriff auf Informationen über den derzeit angemeldeten Benutzer auf einer Seite, in denen anonymer Zugriff zulässig ist, müssen Sie überprüfen, ob die `MembershipUser` Objekt, das von der `GetUser()` Methode ist nicht "Nothing" vor dem verweisen auf die Eigenschaften.
 
-
 Wenn Sie besuchen die `AdditionalUserInfo.aspx` Seite über einen Browser werden Sie eine leere Seite angezeigt, da wir noch, der alle Zeilen hinzugefügt haben die `UserProfiles` Tabelle. In Schritt 6 sehen wir uns Gewusst wie: Anpassen des Steuerelements CreateUserWizard, um automatisch eine neue Zeile hinzuzufügen der `UserProfiles` Tabelle, wenn ein neues Benutzerkonto erstellt wird. Jetzt jedoch müssen wir einen Datensatz in der Tabelle manuell zu erstellen.
 
 Navigieren Sie zu der Datenbank-Explorer in Visual Studio, und erweitern Sie den Ordner "Tabellen". Mit der rechten Maustaste auf die `aspnet_Users` Tabelle und wählen Sie "Tabellendaten anzeigen", um die Datensätze in der Tabelle anzuzeigen, führen Sie dieselben Schritte für die `UserProfiles` Tabelle. Abbildung 11 zeigt diese Ergebnisse, wenn vertikal angeordnet. In meiner Datenbank stehen derzeit `aspnet_Users` Datensätze für Bruce, Fred und Tito, jedoch keine Datensätze in der `UserProfiles` Tabelle.
-
 
 [![Der Inhalt der Aspnet_Users und UserProfiles-Tabellen werden angezeigt.](storing-additional-user-information-vb/_static/image32.png)](storing-additional-user-information-vb/_static/image31.png)
 
 **Abbildung 11**: Den Inhalt der `aspnet_Users` und `UserProfiles` Tabellen werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image33.png))
 
-
 Fügen Sie einen neuen Datensatz in die `UserProfiles` Tabelle durch manuelles Eingeben von Werten für die `HomeTown`, `HomepageUrl`, und `Signature` Felder. Die einfachste Möglichkeit, eine gültige erhalten `UserId` Wert in der neuen `UserProfiles` Datensatz ist die Auswahl der `UserId` aus einem bestimmten Benutzerkonto in der `aspnet_Users` Tabelle kopieren und fügen Sie ihn in die `UserId` Feld `UserProfiles`. Abbildung 12 zeigt die `UserProfiles` Tabelle, nachdem Sie ein neuer Datensatz für Bruce hinzugefügt wurde.
-
 
 [![Ein Datensatz wurde auf UserProfiles für Bruce hinzugefügt.](storing-additional-user-information-vb/_static/image35.png)](storing-additional-user-information-vb/_static/image34.png)
 
 **Abbildung 12**: Ein Datensatz wurde hinzugefügt, um `UserProfiles` für Bruce ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image36.png))
 
-
 Wechseln Sie zurück zur der `AdditionalUserInfo.aspx page`, angemeldet als Bruce. Wie in Abbildung 13 gezeigt, werden Bruces Einstellungen angezeigt.
-
 
 [![Die zurzeit Zugriff auf Benutzer ist His Einstellungen angezeigt](storing-additional-user-information-vb/_static/image38.png)](storing-additional-user-information-vb/_static/image37.png)
 
 **Abbildung 13**: Die zurzeit Zugriff auf Benutzer ist His Einstellungen gezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image39.png))
 
-
 > [!NOTE]
 > Wechseln Sie nun auch manuell hinzufügen Datensätze in der `UserProfiles` Tabelle für jeden Benutzer der Mitgliedschaft. In Schritt 6 sehen wir uns Gewusst wie: Anpassen des Steuerelements CreateUserWizard, um automatisch eine neue Zeile hinzuzufügen der `UserProfiles` Tabelle, wenn ein neues Benutzerkonto erstellt wird.
-
 
 ## <a name="step-3-allowing-the-user-to-edit-his-home-town-homepage-and-signature"></a>Schritt 3: Damit der Benutzer seine Homepage Stadt, Startseite und Signatur bearbeiten
 
@@ -222,11 +192,9 @@ Das erste, was erforderlich ist, ist, fügen eine `UpdateCommand` für dem SqlDa
 
 Klicken Sie dann auf die Schaltfläche "Parameter aktualisieren", die einen Parameter in des SqlDataSource-Steuerelements erstellen `UpdateParameters` Auflistung für jeden Parameter in der `UPDATE` Anweisung. Lassen Sie die Quelle für alle festgelegtem Parameter auf "None", und klicken Sie auf die Schaltfläche "OK", um das Dialogfeld zu schließen.
 
-
 [![Geben Sie dem SqlDataSource-Steuerelement UpdateCommand und UpdateParameters](storing-additional-user-information-vb/_static/image41.png)](storing-additional-user-information-vb/_static/image40.png)
 
 **Abbildung 14**: Geben Sie dem SqlDataSource-Steuerelement `UpdateCommand` und `UpdateParameters` ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image42.png))
-
 
 Aufgrund der Ergänzungen, die wir an dem SqlDataSource-Steuerelement, das DetailsView-Steuerelement jetzt bearbeiten unterstützen, kann vorgenommen haben. Aus DetailsViews-Smarttag das Kontrollkästchen Sie "Bearbeiten aktivieren". Dadurch wird eine CommandField des Steuerelements hinzugefügt `Fields` Sammlung mit der `ShowEditButton` -Eigenschaft auf "true" festgelegt. Dies rendert eine Bearbeiten-Schaltfläche, wenn DetailsView in nur-Lese Modus und Update angezeigt wird, und Schaltflächen "Abbrechen", bei der Anzeige im Bearbeitungsmodus befindet. Anstatt dass sich der Benutzer auf "Bearbeiten" klicken, jedoch, wir haben die renderschaltfläche DetailsView "immer" bearbeitbar durch Festlegen der DetailsView-Steuerelement [ `DefaultMode` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode.aspx) zu `Edit`.
 
@@ -238,11 +206,9 @@ Beachten Sie das Hinzufügen der CommandField und `DefaultMode` Eigenschaft.
 
 Fahren Sie fort, und Testen Sie diese Seite über einen Browser. Wenn einem Benutzer Zugriff auf, die einen entsprechenden Datensatz in `UserProfiles`, werden die Einstellungen des Benutzers in einer bearbeitbaren Schnittstelle angezeigt.
 
-
 [![Die DetailsView rendert eine bearbeitbare-Schnittstelle](storing-additional-user-information-vb/_static/image44.png)](storing-additional-user-information-vb/_static/image43.png)
 
 **Abbildung 15**: DetailsView rendert eine bearbeitbare Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image45.png))
-
 
 Wiederholen Sie die Werte ändern, und klicken Sie auf die Schaltfläche "Aktualisieren". Es wird angezeigt, als würde nichts passieren. Wird ein Postback und die Werte in der Datenbank gespeichert sind, aber es existiert keine visuelle Bestätigung, die der Speichervorgang aufgetreten sind.
 
@@ -256,15 +222,12 @@ Wir müssen zum Anzeigen der `SettingsUpdatedMessage` bezeichnen, bei jeder Aktu
 
 Wechseln Sie zurück zur der `AdditionalUserInfo.aspx` Seite über einen Browser, und aktualisieren Sie die Daten. Dieses Mal ist eine hilfreiche Statusmeldung angezeigt.
 
-
 [![Eine kurze Nachricht wird angezeigt, wenn die Einstellungen werden aktualisiert.](storing-additional-user-information-vb/_static/image47.png)](storing-additional-user-information-vb/_static/image46.png)
 
 **Abbildung 16**: Eine kurze Nachricht wird angezeigt, wenn die Einstellungen aktualisiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image48.png))
 
-
 > [!NOTE]
 > Das DetailsView-Steuerelement die Schnittstelle lässt viel zu wünschen übrig bearbeiten. Textfelder Standardformaten verwendet sollten, aber das Signaturfeld wahrscheinlich einem mehrzeiligen Textfeld. Eine RegularExpressionValidator sollte verwendet werden, um sicherzustellen, dass die URL der Startseite, wenn eingegeben haben, mit "http://" oder "https://" beginnt. Darüber hinaus seit der DetailsView-Steuerelement hat seine `DefaultMode` -Eigenschaft auf festgelegt `Edit`, "Abbrechen"-Schaltfläche nicht alles. Sie sollten entweder entfernt oder, wenn geklickt haben, leiten Sie den Benutzer auf eine andere Seite (z. B. `~/Default.aspx`). Ich lassen Sie diese Erweiterungen als Übung für den Leser.
-
 
 ### <a name="adding-a-link-to-theadditionaluserinfoaspxpage-in-the-master-page"></a>Hinzufügen eines Links zu den`AdditionalUserInfo.aspx`Seite auf der Masterseite
 
@@ -293,7 +256,6 @@ Mit der Benutzeroberfläche abgeschlossen ist, ist unser Nächstes zum Einfügen
 > [!NOTE]
 > Die Klassen von ADO.NET verwendet, um programmgesteuert auf Daten aus einer Microsoft SQL Server-Datenbank zugreifen befinden sich in der `System.Data.SqlClient` Namespace. Möglicherweise müssen Sie diesen Namespace in Ihrer Seite Code-Behind-Klasse importieren (d. h. `Imports System.Data.SqlClient`).
 
-
 Erstellen Sie einen Ereignishandler für die `PostCommentButton`des `Click` Ereignis und fügen Sie den folgenden Code hinzu:
 
 [!code-vb[Main](storing-additional-user-information-vb/samples/sample9.vb)]
@@ -308,15 +270,12 @@ Nach dem Klicken auf die `PostCommentButton` Schaltfläche es existiert keine vi
 
 Abbildung 17 zeigt den Inhalt der `GuestbookComments` Tabelle nach wurden zwei Kommentare hinterlassen haben.
 
-
 [![Sie können die Gästebuch-Kommentare in der Tabelle GuestbookComments sehen.](storing-additional-user-information-vb/_static/image50.png)](storing-additional-user-information-vb/_static/image49.png)
 
 **Abbildung 17**: Sie sehen die Gästebuch-Kommentare in der `GuestbookComments` Tabelle ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image51.png))
 
-
 > [!NOTE]
 > Gefährliche Markup – z. B. HTML – ASP.NET wird ausgelöst, wenn ein Benutzer versucht, einen Kommentar Gästebuch einzufügen, die potenziell enthält ein `HttpRequestValidationException`. Weitere Informationen finden Sie über diese Ausnahme an, warum es ausgelöst wird, und übermitteln potenziell gefährlicher Werte durch Benutzer zulassen, finden Sie in der [anfordern Überprüfung Whitepaper](../../../../whitepapers/request-validation.md).
-
 
 ## <a name="step-5-listing-the-existing-guestbook-comments"></a>Schritt 5: Auflisten der vorhandenen Gästebuch-Kommentare
 
@@ -324,7 +283,6 @@ Zusätzlich zu kommentieren, von einem Benutzer Zugriff auf die `Guestbook.aspx`
 
 > [!NOTE]
 > Das ListView-Steuerelement ist neu in ASP.NET Version 3.5. Es dient zum Anzeigen einer Liste von Elementen in einem sehr anpassbar und flexiblen Layout, aber dennoch bieten integrierte bearbeiten, einfügen, löschen, paging und Sortieren von Funktionen wie GridView. Wenn Sie ASP.NET 2.0 verwenden, müssen Sie stattdessen das DataList oder Repeater-Steuerelement. Weitere Informationen zur Verwendung der ListView finden Sie unter [Scott Guthrie](https://weblogs.asp.net/scottgu/)des Blogeintrag [die Asp: ListView-Steuerelement](https://weblogs.asp.net/scottgu/archive/2007/08/10/the-asp-listview-control-part-1-building-a-product-listing-page-with-clean-css-ui.aspx), und in meinem Artikel [Anzeigen von Daten mit dem ListView-Steuerelement](http://aspnet.4guysfromrolla.com/articles/122607-1.aspx).
-
 
 Öffnen Sie das ListView Smarttag und aus der Datenquelle auswählen Dropdown-Liste, die binden Sie das Steuerelement an eine neue Datenquelle. Wie in Schritt2 beschrieben, wird dadurch der Konfigurations-Assistent gestartet. Wählen Sie das Datenbanksymbol, nennen Sie die resultierende SqlDataSource `CommentsDataSource`, und klicken Sie auf OK. Wählen Sie als Nächstes die `SecurityTutorialsConnectionString` Verbindung, die Zeichenfolge, aus der Dropdown Liste, und klicken Sie auf Weiter.
 
@@ -334,11 +292,9 @@ Hierdurch wird der Bildschirm "Definieren Sie benutzerdefinierte Anweisungen ode
 
 Alles, was bleibt dann an die Spalten zurückgegeben. Von der `GuestbookComments` Tabelle die `Subject`, `Body`, und `CommentDate` Spalten; die Rückgabe der `HomeTown`, `HomepageUrl`, und `Signature` Spalten aus der `UserProfiles` Tabelle; und zurückgeben `UserName` aus `aspnet_Users`. Darüber hinaus hinzufügen "`ORDER BY CommentDate DESC`" am Ende der `SELECT` abzufragen, damit die neuesten Beiträge zuerst zurückgegeben werden. Treffen Sie die Auswahl, und sieht Ihre Benutzeroberfläche des Abfragegenerators ähnlich wie im Screenshot in Abbildung 18.
 
-
 [![Verknüpft die Abfrage erstellt, die GuestbookComments, UserProfiles und Aspnet_Users Tabellen](storing-additional-user-information-vb/_static/image53.png)](storing-additional-user-information-vb/_static/image52.png)
 
 **Abbildung 18**: Die erstellte Abfrage `JOIN` s der `GuestbookComments`, `UserProfiles`, und `aspnet_Users` Tabellen ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image54.png))
-
 
 Klicken Sie auf OK, um das Abfrage-Generator-Fenster zu schließen und zurück auf dem Bildschirm "Definieren Sie benutzerdefinierte Anweisungen oder gespeicherte Prozeduren". Klicken Sie auf Weiter, um zum Fenster "Test-Query", in dem Sie die Ergebnisse der Abfrage anzeigen können, indem Sie auf die Schaltfläche "Testen von Abfragen". Wenn Sie bereit sind, klicken Sie auf "Fertig stellen", um das Konfigurieren von Datenquellen-Assistenten zu beenden.
 
@@ -354,11 +310,9 @@ Meine `ItemTemplate` zeigt jede Gästebuch des Kommentars Betreff in einer `<h4>
 
 Nehmen Sie einen Moment Zeit, um die Seite über einen Browser anzuzeigen. Die Kommentare, die das Gästebuch in Schritt 5, die hier angezeigten hinzugefügt wurden, sollte angezeigt werden.
 
-
 [![GuestBook.aspx nun zeigt das Gästebuch des Kommentare an.](storing-additional-user-information-vb/_static/image56.png)](storing-additional-user-information-vb/_static/image55.png)
 
 **Abbildung 19**: `Guestbook.aspx` Zeigt nun die Gästebuch Kommentaren ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image57.png))
-
 
 Versuchen Sie, das Gästebuch einen neuen Kommentar hinzugefügt. Nach dem Klicken auf die `PostCommentButton` Daten zurückgegeben, die Seite-Schaltfläche und der Kommentar wird hinzugefügt, mit der Datenbank, aber das ListView-Steuerelement nicht aktualisiert, um den neuen Kommentar anzuzeigen. Dies kann entweder behoben werden:
 
@@ -369,7 +323,6 @@ Die Tutorial Website, die von diesem Tutorial wird veranschaulicht, beide Verfah
 
 > [!NOTE]
 > Derzeit den `AdditionalUserInfo.aspx` ermöglicht es dem Benutzer zum Anzeigen und bearbeiten Sie die Startseite Stadt, Startseite und Signatur-Einstellungen. Es kann sein, zu aktualisieren `AdditionalUserInfo.aspx` anzuzeigenden des angemeldeten Benutzers Gästebuch Kommentare. D. h. zusätzlich zu untersuchen und seine Daten ändern, ein Benutzer finden das `AdditionalUserInfo.aspx` Seite, um festzustellen, welche Gästebuch Kommentare in der Vergangenheit getroffen wird. Ich lassen Sie dieses als Übung für den interessierten Leser.
-
 
 ## <a name="step-6-customizing-the-createuserwizard-control-to-include-an-interface-for-the-home-town-homepage-and-signature"></a>Schritt 6: Anpassen des Steuerelements CreateUserWizard, um eine Schnittstelle für die Home-Stadt, Startseite und Signatur enthalten.
 
@@ -401,11 +354,9 @@ Als Nächstes wird die Verbindungszeichenfolge abgerufen, von `Web.config` und `
 
 Besuchen Sie die `EnhancedCreateUserWizard.aspx` Seite über einen Browser, und erstellen Sie ein neues Benutzerkonto. Anschließend zurück zu Visual Studio, und Untersuchen des Inhalts der `aspnet_Users` und `UserProfiles` Tabellen (wie in Abbildung 12). Daraufhin sollte das neue Benutzerkonto im `aspnet_Users` und einen entsprechenden `UserProfiles` Zeile (mit `NULL` Werte für `HomeTown`, `HomepageUrl`, und `Signature`).
 
-
 [![Ein neues Benutzerkonto und UserProfiles Datensatz wurden hinzugefügt](storing-additional-user-information-vb/_static/image59.png)](storing-additional-user-information-vb/_static/image58.png)
 
 **Abbildung 20**: Ein neues Benutzerkonto und `UserProfiles` Datensatz hinzugefügt wurden ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image60.png))
-
 
 Nachdem der Besucher seinen neuen Kontoinformationen angegeben und auf die Schaltfläche "Benutzer erstellen" geklickt hat, das Benutzerkonto erstellt wird und eine Zeile hinzugefügt, die `UserProfiles` Tabelle. Die CreateUserWizard zeigt dann die `CompleteWizardStep`, wird eine Erfolgsmeldung und eine Schaltfläche zum Fortfahren angezeigt. Klicken Sie auf die Schaltfläche "Weiter" führt dazu, dass ein Postback handeln, aber keine Aktion ausgeführt, blieb hängen mit den Benutzer bleibt bei der `EnhancedCreateUserWizard.aspx` Seite.
 
@@ -437,19 +388,15 @@ Beim Hinzufügen eines benutzerdefinierten `WizardStep` zum Sammeln weiterer Ben
 
 Abbildung 21 zeigt den Workflow bei der hinzugefügten `WizardStep` steht die `CreateUserWizardStep`. Seit dem Zeitpunkt die weiteren Benutzerinformationen gesammelt wurden die `CreatedUser` -Ereignis ausgelöst wird, müssen wir lediglich ist Update der `CreatedUser` -Ereignishandler zum Abrufen von Eingaben, und verwenden Sie diese für die `INSERT` Parameterwerte-Anweisung (statt `DBNull.Value`).
 
-
 [![Den CreateUserWizard-Workflow, wenn eine zusätzliche WizardStep der CreateUserWizardStep vorangestellt ist.](storing-additional-user-information-vb/_static/image62.png)](storing-additional-user-information-vb/_static/image61.png)
 
 **Abbildung 21**: Die CreateUserWizard Workflow bei der eine zusätzliche `WizardStep` Precedes der `CreateUserWizardStep` ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image63.png))
 
-
 Wenn die benutzerdefinierte `WizardStep` befindet sich *nach* der `CreateUserWizardStep`, tritt jedoch der Prozess zur Benutzer erstellen, bevor der Benutzer die Möglichkeit, ihre Startseite Stadt, Startseite oder Signatur eingeben wurde. In diesem Fall muss diese zusätzlichen Informationen in der Datenbank eingefügt werden soll, nachdem das Benutzerkonto erstellt wurde, wie in Abbildung 22 dargestellt.
-
 
 [![Der CreateUserWizard Workflow nach der CreateUserWizardStep gegebener eine zusätzliche WizardStep](storing-additional-user-information-vb/_static/image65.png)](storing-additional-user-information-vb/_static/image64.png)
 
 **Abbildung 22**: Die CreateUserWizard Workflow bei der eine zusätzliche `WizardStep` ist nach der `CreateUserWizardStep` ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image66.png))
-
 
 Der Workflow, der in Abbildung 22 dargestellt wartet auf den zum Einfügen eines Datensatzes in die `UserProfiles` Tabelle erst nach Abschluss von Schritt2. Wenn ihr Browser nach Schritt 1 von der Besucher geschlossen wird, jedoch wird haben wurde erreicht einen Zustand, in dem ein Benutzerkonto erstellt wurde, aber kein Datensatz wurde hinzugefügt, um `UserProfiles`. Eine problemumgehung besteht darin, einen Datensatz mit `NULL` oder Standardwerte eingefügt `UserProfiles` in die `CreatedUser` Ereignishandler (nach Schritt 1 ausgelöst wird), und diese erfassen, nach dem Abschluss von Schritt 2 aktualisieren. Dadurch wird sichergestellt, dass eine `UserProfiles` Datensatz wird für das Benutzerkonto hinzugefügt werden, auch wenn der Benutzer die Registrierung Prozess während der Ausführung beendet.
 
@@ -457,11 +404,9 @@ In diesem Tutorial erstellen Sie wir ein neues `WizardStep` Vorgang, der nach de
 
 Smart Tag des Steuerelements CreateUserWizard, wählen Sie in der "hinzufügen/entfernen `WizardStep` s", daraufhin wird die `WizardStep` Auflistungs-Editor-Dialogfeld. Fügen Sie einen neuen `WizardStep`wird durch das Festlegen der `ID` zu `UserSettings`, dessen `Title` zu "Einstellungen" und die zugehörige `StepType` zu `Step`. Positionieren Sie es so, dass es nach geht die `CreateUserWizardStep` ("Sign Up für neues Konto") und vor der `CompleteWizardStep` ("abgeschlossen"), wie in Abbildung 23 dargestellt.
 
-
 [![Hinzufügen einer neuen WizardStep des Steuerelements CreateUserWizard](storing-additional-user-information-vb/_static/image68.png)](storing-additional-user-information-vb/_static/image67.png)
 
 **Abbildung 23**: Hinzufügen ein neuen `WizardStep` an das Steuerelement CreateUserWizard ([klicken Sie, um das Bild in voller Größe anzeigen](storing-additional-user-information-vb/_static/image69.png))
-
 
 Klicken Sie auf OK, um schließen die `WizardStep` Auflistungs-Editor-Dialogfeld. Die neue `WizardStep` von des Steuerelements CreateUserWizard aktualisierte deklaratives Markup zu sehen ist:
 
@@ -471,7 +416,6 @@ Beachten Sie das neue `<asp:WizardStep>` Element. Wir müssen die Benutzeroberfl
 
 > [!NOTE]
 > Wählen einen Schritt über das Smarttag-Dropdownlisten-Steuerelement CreateUserWizard aktualisiert [ `ActiveStepIndex` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.activestepindex.aspx), der angibt, dass des Indexes des Schritts ab. Wenn Sie dieses Dropdown-Liste verwenden, um den Schritt "Einstellungen" im Designer bearbeiten, achten Sie daher an "SSO für Ihr neues Konto" festlegen, damit dieser Schritt angezeigt wird, wenn der Benutzer zum ersten Mal besuchen der `EnhancedCreateUserWizard.aspx` Seite.
-
 
 Erstellen einer Benutzeroberfläche, in dem Schritt "Einstellungen", die drei Textfeld-Steuerelemente, die mit dem Namen enthält `HomeTown`, `HomepageUrl`, und `Signature`. Nach dem Erstellen dieser Schnittstelle, sollte die CreateUserWizards deklarative Markup etwa wie folgt aussehen:
 
@@ -493,7 +437,6 @@ Mit dieser Ereignishandler vorhanden ist, finden Sie auf die `EnhancedCreateUser
 
 > [!NOTE]
 > Unsere Website verfügt derzeit über zwei Seiten, die von dem Besucher ein neues Konto erstellen kann: `CreatingUserAccounts.aspx` und `EnhancedCreateUserWizard.aspx`. Die Website-Sitemap und Anmeldeseite zeigen Sie auf die `CreatingUserAccounts.aspx` Seite aber die `CreatingUserAccounts.aspx` Seite ihre Startseite Stadt, Startseite und Signatur-Informationen vom Benutzer nicht aufgefordert, und eine entsprechende Zeile, werden nicht hinzugefügt `UserProfiles`. Aktualisieren Sie daher entweder die `CreatingUserAccounts.aspx` Seite, damit sie diese Funktionalität bietet, oder aktualisieren die Sitemap und melden Sie sich die Seite auf `EnhancedCreateUserWizard.aspx` anstelle von `CreatingUserAccounts.aspx`. Wenn Sie letztere Option auswählen, müssen Sie aktualisieren die `Membership` des Ordners `Web.config` Datei, um anonyme Benutzer Zugriff die `EnhancedCreateUserWizard.aspx` Seite.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

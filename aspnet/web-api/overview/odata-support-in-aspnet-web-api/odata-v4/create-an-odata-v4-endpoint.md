@@ -8,12 +8,12 @@ ms.date: 01/23/2019
 ms.assetid: 1e1927c0-ded1-4752-80fd-a146628d2f09
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: c6a4aa4eb563fd77d5afd9248175d5f5b7984d19
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81d134cbd3231b9a0d5537ccbd1bbfe6419254af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042597"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108717"
 ---
 # <a name="create-an-odata-v4-endpoint-using-aspnet-web-api"></a>Erstellen Sie einen OData v4-Endpunkt mithilfe von ASP.NET Web-API 
 
@@ -45,8 +45,6 @@ Erweitern Sie **installiert** &gt; **Visual C#**  &gt; **Web**, und wählen Sie 
 
 Klicken Sie auf **OK**.
 
-
-
 [![](create-an-odata-v4-endpoint/_static/image8.png)](create-an-odata-v4-endpoint/_static/image8.png)
 
 Wählen Sie die **leere** Vorlage. Klicken Sie unter **fügen Sie Ordner und kernreferenzen für:** Option **Web-API-**. Klicken Sie auf **OK**.
@@ -70,7 +68,6 @@ Klicken Sie im Projektmappen-Explorer den Ordner "Models". Wählen Sie im Kontex
 > [!NOTE]
 > Gemäß der Konvention ViewModel-Klassen befinden sich im Ordner "Models", aber Sie müssen keine dieser Konvention in Ihren eigenen Projekten folgen.
 
-
 Nennen Sie die Klasse `Product`. Ersetzen Sie in der Datei "Product.cs" den Standardcode durch den folgenden:
 
 [!code-csharp[Main](create-an-odata-v4-endpoint/samples/sample2.cs)]
@@ -83,7 +80,6 @@ In diesem Tutorial wird Entity Framework (EF) Code First verwendet, um die Back-
 
 > [!NOTE]
 > Web-API OData ist EF nicht erforderlich. Verwenden Sie Datenzugriffsebene, die Datenbankentitäten in Modellen umsetzen kann.
-
 
 Installieren Sie zuerst das NuGet-Paket für EF. Wählen Sie im Menü **Tools** die Option **NuGet-Paket-Manager** &gt; **Paket-Manager-Konsole** aus. Geben Sie im Fenster Paket-Manager-Konsole:
 
@@ -130,7 +126,6 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in den Ordner "C
 
 > [!NOTE]
 > Die Version dieses Tutorials für OData v3 verwendet die **Controller hinzufügen** Gerüstbau. Es gibt derzeit keine Gerüstbau für OData v4.
-
 
 Ersetzen Sie die Codebausteine in ProductsController.cs durch Folgendes.
 

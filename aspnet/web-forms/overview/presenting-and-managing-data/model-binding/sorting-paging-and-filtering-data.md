@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 1159d75ec5b2f7e5ac94da0a15acf24b5400798b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8e64392af6110f36c6af98c4e4e9481c94a0d82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59387466"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106930"
 ---
 # <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>Sortieren, paging und Filtern von Daten mit modellbindung und Web forms
 
@@ -26,7 +26,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > Dieses Tutorial baut auf das Projekt erstellt haben, in der ersten [Teil](retrieving-data.md) der Reihe.
 > 
 > Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) das vollständige Projekt in c# oder VB. Der herunterladbare Code funktioniert mit Visual Studio 2012 oder Visual Studio 2013. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2013-Vorlage, die in diesem Tutorial gezeigt wird.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 

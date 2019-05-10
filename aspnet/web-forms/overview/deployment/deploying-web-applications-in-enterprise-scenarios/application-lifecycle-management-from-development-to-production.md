@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 3b7f154936222c85bd7897ea10cbb5ae9d1aa670
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 230cf4393db0ee19cfc42ed54359d61e7926a49d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408939"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109286"
 ---
 # <a name="application-lifecycle-management-from-development-to-production"></a>Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion
 
@@ -27,7 +27,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > 
 > > [!NOTE]
 > > Der Einfachheit halber wird erläutert nicht in diesem Thema Aktualisieren der Datenbanken im Rahmen des Bereitstellungsprozesses. Allerdings inkrementelle Updates an Datenbankfunktionen vornehmen, ist eine Voraussetzung für viele Szenarien der Enterprise, und finden Sie Anleitungen dazu, wie weiter unten in dieser tutorialreihe dazu. Weitere Informationen finden Sie unter [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -94,7 +93,6 @@ Führen Sie die Bereitstellung, die ein Benutzer führt die *Publish.proj* Datei
 > Die Arbeitsweise dieser benutzerdefinierten Projektdateien ist unabhängig von den Mechanismus an, die, den Sie verwenden, um den MSBuild aufrufen. Beispielsweise können Sie die MSBuild-Befehlszeile direkt, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Sie können die Projektdateien aus einer Befehlsdatei ausführen, wie in beschrieben [erstellen und Ausführen einer Befehlsdatei Bereitstellung](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md). Alternativ Sie können Ausführen der Projektdateien aus einer Builddefinition in TFS unter [Erstellen einer Builddefinition, dass unterstützt die Bereitstellung](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).  
 > In jedem Fall ist das Endergebnis dasselbe&#x2014;MSBuild führt die zusammengeführte Datei und Ihre Lösung in der zielumgebung bereitgestellt. Dies bietet Ihnen ein hohes Maß an Flexibilität in, wie Sie Ihre Veröffentlichungsprozess auslösen.
 
-
 Nachdem er die benutzerdefinierten Projektdateien erstellt, Matt fügt sie einen Projektmappenordner hinzu, und überprüft diese in die quellcodeverwaltung.
 
 ### <a name="create-build-definitions"></a>Builddefinitionen erstellen
@@ -125,15 +123,12 @@ Das Endergebnis ist, dass die Lösung erfolgreich erstellt und übergibt Kompone
 
 Die **DeployToTest** Definition stellt diese Argumente an MSBuild zu erstellen:
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample1.cmd)]
-
 
 Die **DeployOnBuild = True** und **DeployTarget = Paket** Eigenschaften werden verwendet, wenn die Projekte in der Projektmappe Team Build erstellt werden. Wenn das Projekt ein Webprojekt für die Anwendung ist, weisen Sie diese Eigenschaften MSBuild zum Erstellen eines Webbereitstellungspakets für das Projekt. Die **TargetEnvPropsFile** -Eigenschaft teilt die *Publish.proj* -Datei, in die zu importierende Projektdatei umgebungsspezifische gefunden.
 
 > [!NOTE]
 > Eine ausführliche exemplarische Vorgehensweise zum Erstellen einer Builddefinition wie folgt, finden Sie unter [Erstellen einer Builddefinition, dass unterstützt die Bereitstellung](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md).
-
 
 Die *Publish.proj* -Datei enthält die Ziele, die jedes Projekt in der Projektmappe zu erstellen. Es enthält jedoch auch bedingten Logik, überspringt diese Ziele zu erstellen, wenn Sie die Datei in Team Build ausgeführt werden. Dadurch können Sie die zusätzliche Funktionalität nutzen, die Team Build, sich z.B. die Möglichkeit zum Ausführen von Komponententests bietet. Wenn die Projektmappe erstellen oder die Einheit fehlschlagen Tests, die *Publish.proj* Datei wird nicht ausgeführt, und die Anwendung wird nicht bereitgestellt werden.
 
@@ -164,9 +159,7 @@ Dies ist der grundsätzliche Erstellungsprozess für eine Bereitstellung in der 
 
 Die **DeployToStaging** Definition stellt diese Argumente an MSBuild zu erstellen:
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample2.cmd)]
-
 
 Die **TargetEnvPropsFile** -Eigenschaft teilt die *Publish.proj* -Datei, in die zu importierende Projektdatei umgebungsspezifische gefunden. Die **OutputRoot** Eigenschaft überschreibt die integrierten Wert und gibt den Speicherort der Ordner "Build" mit den Ressourcen bereitgestellt werden soll. Wenn Rob den Build-Warteschlangen, verwendet er die **Parameter** Tab, um einen aktualisierten Wert für die **OutputRoot** Eigenschaft.
 
@@ -175,24 +168,19 @@ Die **TargetEnvPropsFile** -Eigenschaft teilt die *Publish.proj* -Datei, in die 
 > [!NOTE]
 > Weitere Informationen zum Erstellen einer Builddefinition wie folgt finden Sie unter [Bereitstellen von einem bestimmten Build](../configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build.md).
 
-
 Die **DeployToStaging-WhatIf** Builddefinition enthält die gleiche Bereitstellungslogik wie die **DeployToStaging** Definition zu erstellen. Es enthält jedoch das zusätzliche Argument **"WhatIf" = "true"**:
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
-
 
 In der *Publish.proj* -Datei, die **"WhatIf"** Eigenschaft gibt an, dass alle Bereitstellungsressourcen "what if"-Modus veröffentlicht werden soll. Das heißt, werden die Protokolldateien generiert, als ob die Bereitstellung jetzt mehr, aber "nothing" in der zielumgebung tatsächlich geändert wird. Dadurch können Sie ermitteln können, die Auswirkungen der vorgeschlagenen Bereitstellung&#x2014;in bestimmten, was hinzugefügt wird, was aktualisiert wird und welche gelöscht werden&#x2014;, bevor Sie tatsächlich Änderungen vornehmen.
 
 > [!NOTE]
 > Weitere Informationen zum Konfigurieren von "what if"-Bereitstellungen finden Sie unter [Durchführen einer Bereitstellung "Was-wäre-wenn"](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md).
 
-
 Nachdem Sie Ihre Anwendung mit dem primären Webserver in der Stagingumgebung bereitgestellt haben, werden die WFF die Anwendung automatisch auf allen Servern in der Serverfarm synchronisiert.
 
 > [!NOTE]
 > Weitere Informationen zum Konfigurieren der WFF zum Synchronisieren von Webservern finden Sie unter [erstellen Sie eine Serverfarm mit Web Farm Framework](../configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework.md).
-
 
 ## <a name="deployment-to-production"></a>Bereitstellung in der Produktion
 

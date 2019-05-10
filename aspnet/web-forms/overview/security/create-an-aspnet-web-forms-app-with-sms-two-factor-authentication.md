@@ -8,12 +8,12 @@ ms.date: 10/09/2014
 ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 02c511f0e99e306daaf595da5bc618fe738e806c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411357"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106790"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>Erstellen einer ASP.NET Web Forms-Anwendung mit zweistufiger Authentifizierung per SMS (C#)
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen von ASP.NET Web Forms-App mit E-Mail und SMS-zwei-Faktor-Authentifizierung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-App-with-5a0ff94e)
 
 > In diesem Tutorial erfahren Sie, wie zum Erstellen einer ASP.NET Web Forms-app mit einer zweistufigen Authentifizierung. In diesem Tutorial wurde entworfen, um das Tutorial mit dem Titel ergänzen [erstellen eine sichere ASP.NET Web Forms-app mit benutzerregistrierung, e-Mail-Bestätigung und kennwortzurücksetzung](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md). In diesem Tutorial basiert außerdem auf andersons [MVC-Tutorial](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md).
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -42,7 +41,6 @@ Zunächst installieren und Ausführen von [Visual Studio Express 2013 für Web](
 
 > [!NOTE]
 > Wichtig: Sie müssen installieren [Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465) oder höher, um dieses Lernprogramm abzuschließen.
-
 
 1. Erstellen eines neuen Projekts (**Datei**  - &gt; **neues Projekt**), und wählen Sie die **ASP.NET-Webanwendung** Vorlage zusammen mit .NET Framework Version 4.5.2 von der **neues Projekt** Dialogfeld.
 2. Von der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **Web Forms** Vorlage. Lassen Sie die Standardauthentifizierung als **einzelne Benutzerkonten**. Klicken Sie auf **OK** zum Erstellen eines neuen Projekts.  
