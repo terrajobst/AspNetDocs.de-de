@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 787a53fd-9901-4a11-9d58-61e0509cda45
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 65b77b016e02c2d9c8ff2b925b1567f26a6a05cc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 13f784dd8e6404806104d56b026b3c41ca178892
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407912"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128485"
 ---
 # <a name="choosing-the-right-approach-to-web-deployment"></a>Auswählen der richtigen Vorgehensweise zur Webbereitstellung
 
@@ -30,7 +30,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > 
 > Wie Sie Ihre Ziel-Webserver konfigurieren hängt die Ansatz zur Bereitstellung, die Sie verwenden möchten. In diesem Thema helfen Ihnen bei der Entscheidung, welcher Ansatz zur Bereitstellung für Sie geeignet ist.
 
-
 Diese Tabelle zeigt die wichtigsten vor- und Nachteile der einzelnen Bereitstellungsansatz, zusammen mit den Szenarien, die i. d. r. jeder Ansatz entsprechen.
 
 | Ansatz | Vorteile | Nachteile | Typische Szenarien |
@@ -39,35 +38,26 @@ Diese Tabelle zeigt die wichtigsten vor- und Nachteile der einzelnen Bereitstell
 | Temp-Agent | Es ist nicht erforderlich, Web Deploy auf dem Zielcomputer installieren. Die neueste Version von Web Deploy wird automatisch verwendet. | Der Benutzer muss ein Administrator auf dem Zielserver sein. der Benutzer kann nicht auf alternative Anmeldeinformationen angeben. | Entwicklungsumgebungen. Testumgebungen. |
 | Web Deploy-Handler | Benutzer ohne Administratorrechte können Inhalte bereitstellen. Es eignet sich für regelmäßige Updates auf Webanwendungen und Inhalt. | Es ist sehr viel komplizierter eingerichtet wird. | Stagingumgebungen. Intranet-produktionsumgebungen. Gehostete Umgebungen. |
 | Offline-Bereitstellung | Es ist sehr einfach einrichten. Es ist für isolierte Umgebungen geeignet. | Der Serveradministrator muss manuell kopieren und importieren das Webpaket jedes Mal. | Internetzugriff von produktionsumgebungen. Isolierten netzwerkumgebungen. |
-  
 
 ## <a name="using-the-remote-agent"></a>Verwenden den Remote-Agent
 
 Wenn Sie Web Deploy unter Verwendung der Standardeinstellungen auf einem Zielserver installieren, wird der Webbereitstellungs-Agent-Dienst ("remote-Agent") automatisch installiert und gestartet. Standardmäßig stellt der remote-Agent einen HTTP-Endpunkt unter dieser Adresse:
 
-
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample1.cmd)]
-
 
 > [!NOTE]
 > Ersetzen Sie [*Server*] mit den Computernamen des Webservers, eine IP-Adresse für den Webserver oder einen Hostnamen, die aufgelöst wird auf Ihren Webserver.
 
-
 Server-Administratoren können Web-Pakete von einem Remotestandort befindet, wie einem Entwicklungscomputer oder einem Buildserver bereitstellen, durch Angeben dieser Endpunktadresse. Nehmen wir beispielsweise an, dass Matt Hink bei Fabrikam, Inc. das ContactManager.Mvc Webanwendungsprojekt auf seinem Entwicklercomputer erstellt wurde. Während des Buildprozesses werden ein Webpaket, zusammen mit einem *. "Deploy.cmd"* Datei, die die Web Deploy-Befehle enthält, die zum Installieren des Pakets erforderlich sind. Ist Matt ein Serveradministrator auf dem Server TESTWEB1, kann er die Webanwendung mit dem Test-Webserver bereit, durch Ausführen dieses Befehls auf seinem Entwicklercomputer:
-
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample2.cmd)]
 
-
 Tatsächliche tatsächlich kann die Web Deploy-ausführbare Datei die Endpunktadresse des remote-Agent ableiten, wenn Sie den Namen des Computers angeben, damit Matt nur ein solches muss:
-
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample3.cmd)]
 
-
 > [!NOTE]
 > Weitere Informationen zu Web Deploy-Befehlszeilensyntax und *. "Deploy.cmd"* finden Sie unter [Vorgehensweise: Installieren eines Bereitstellungspakets mit der Datei "Deploy.cmd"](https://msdn.microsoft.com/library/ff356104.aspx).
-
 
 Der remote-Agent bietet eine einfache Möglichkeit zum Bereitstellen von Inhalt von einem Remotestandort aus, und dieser Ansatz kann funktionieren gut mit nur einem Klick oder automatisierte Bereitstellung. Allerdings muss der Benutzer, die der Bereitstellungsbefehl führt auch entweder ein Domänenadministrator oder ein Mitglied der lokalen Administratorengruppe auf dem Zielserver. Darüber hinaus unterstützt der remote-Agent über eine Standardauthentifizierung, deshalb Sie alternative Anmeldeinformationen in der Befehlszeile übergeben können.
 
@@ -81,13 +71,10 @@ Der temporäre-Agent-Ansatz für die Bereitstellung ist ähnlich wie bei der rem
 
 Wenn Sie verwenden möchten, verwenden Sie den temporären Agentanbieter, die festlegen, fügen Sie der **/g** Flag, um Ihre Bereitstellungsbefehl:
 
-
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample4.cmd)]
-
 
 > [!NOTE]
 > Sie können nicht den temp-Agent verwenden, wenn der webbereitstellungs-Agent-Dienst auf dem Zielcomputer installiert ist, auch wenn der Dienst nicht ausgeführt wird.
-
 
 Der Vorteil dieses Ansatzes ist, dass Sie nicht warten von Installationen von Web Deploy auf Ihrem Zielserver müssen. Darüber hinaus müssen Sie sicherstellen, dass die Quelle und Ziel-Computer die gleiche Version von Web Deploy ausgeführt werden. Allerdings unterliegt dieser Ansatz principal dieselben Einschränkungen wie bei den Ansatz der remote-Agent, nämlich, dass Sie ein lokaler Administrator auf dem Zielserver sein müssen, um Inhalte bereitzustellen, und nur die NTLM-Authentifizierung wird unterstützt. Der temporäre-Agent-Ansatz erfordert auch viel mehr Erstkonfiguration der zielumgebung.
 
@@ -99,31 +86,23 @@ Für IIS 7 oder höher bietet Web Deploy einen anderer Bereitstellungsansatz üb
 
 Standardmäßig stellt der remote-Agent einen HTTP-Endpunkt unter dieser Adresse:
 
-
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample5.cmd)]
-
 
 > [!NOTE]
 > Ersetzen Sie [*Server*] mit den Computernamen des Webservers, eine IP-Adresse für den Webserver oder einen Hostnamen, die aufgelöst wird auf Ihren Webserver.
-
 
 Der große Vorteil der Handler für die Web-Bereitstellung über den remote-Agent und den temporären-Agent ist, dass Sie IIS so Benutzer ohne Administratorrechte für die Bereitstellung von Anwendungen und Inhalte auf bestimmte IIS-Websites konfigurieren können. Der Handler für die Web-Bereitstellung unterstützt auch Standardauthentifizierung, damit Sie andere Anmeldeinformationen als Parameter in Ihrer Web Deploy-Befehlen bereitstellen können. Die großen Nachteil ist, dass die Web-bereitstellen-Handler anfänglich wesentlich komplizierter einrichten und konfigurieren.
 
 Bei Benutzern ohne Administratorrechte lässt den Webverwaltungsdienst (WMSvc) den Benutzer eine Verbindung zu IIS herstellen nur über eine Verbindung Workflowdokumentbibliothek auf Siteebene, statt über eine Verbindung auf Serverebene. Für den Zugriff auf eine bestimmte Website, können Sie eine standortspezifischen Abfragezeichenfolge in der Endpunktadresse enthält:
 
-
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
-
 
 Nehmen wir beispielsweise an, dass ein Buildprozess konfiguriert ist, um eine Webanwendung in einer Stagingumgebung nach jedem erfolgreichen Build automatisch bereitzustellen. Wenn Sie den remote-Agent-Ansatz verwendet, würde müssen Sie der Build-Prozess-ID einen Administrator auf Ihrem Zielserver. Im Gegensatz dazu mit dem Ansatz WebHandler bereitstellen Sie einen Benutzer ohne Administratorrechte erhalten&#x2014;**FABRIKAM\stagingdeployer** in diesem Fall&#x2014;Berechtigung, eine bestimmte IIS-Website und des Buildprozesses bieten diese Anmeldeinformationen für das Webpaket bereitzustellen.
 
-
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
-
 
 > [!NOTE]
 > Weitere Informationen zu Web Deploy Befehlszeileneingaben und deren Syntax finden Sie unter [Bereitstellen über die Befehlszeile Webverweis](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx). Weitere Informationen zur Verwendung der *. "Deploy.cmd"* finden Sie unter [Vorgehensweise: Installieren eines Bereitstellungspakets mit der Datei "Deploy.cmd"](https://msdn.microsoft.com/library/ff356104.aspx).
-
 
 Die Web-bereitstellen-Handler stellt die hilfreich bei der Bereitstellung in staging-Umgebungen, gehostete Umgebungen und intranetbasierte produktionsumgebungen, in denen Remotezugriff auf dem Server ist verfügbar, aber Administratoranmeldeinformationen sind nicht bereit.
 

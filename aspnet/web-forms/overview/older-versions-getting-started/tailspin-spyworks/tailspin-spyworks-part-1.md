@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 70d2efb789d694a0aaecc046615c7b3622079dc1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05a3ace3d8fef9c1f3593f7948e42b4725d70134
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385357"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130591"
 ---
 # <a name="part-1-file--new-project"></a>Teil 1: Datei > Neues Projekt
 
@@ -23,7 +23,6 @@ durch [Joe Stagner](https://github.com/JoeStagner)
 > 
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 1 enthält die Übersicht über "und" Datei/neu Projekt.
 
-
 ## <a id="_Toc260221666"></a>  Übersicht über die
 
 Dieses Tutorial bietet eine Einführung in ASP.NET WebForms. Wir langsam starten, damit für Anfänger auf Web-Entwicklung ist in Ordnung.
@@ -31,7 +30,6 @@ Dieses Tutorial bietet eine Einführung in ASP.NET WebForms. Wir langsam starten
 Die Anwendung, die wir erstellen, ist es sich um einen einfachen Onlineshop.
 
 ![](tailspin-spyworks-part-1/_static/image1.jpg)
-
 
 Besucher können Produkte nach Kategorie durchsuchen:
 
@@ -54,7 +52,6 @@ Sie zur Kasse gehen werden sie aufgefordert.
 Nach dem Sortieren, sehen sie ein einfaches Bestätigungsbildschirm angezeigt:
 
 ![](tailspin-spyworks-part-1/_static/image7.jpg)
-
 
 Wir beginnen, indem das Erstellen eines neuen ASP.NET WebForms-Projekts in Visual Studio 2010, und wir werden Funktionen zum Erstellen einer vollständigen funktionsfähigen Anwendung inkrementell hinzufügen. Dabei wird die behandelt mit Masterseiten für konsistente Seitenlayout, AJAX, Validierung, Benutzermitgliedschaft und mehr Zugriff auf die Datenbank, Listen und Raster, Update von Datenseiten, datenüberprüfung.
 

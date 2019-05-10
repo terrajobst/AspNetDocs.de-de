@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 71ff3c269c5d1ed43a67d19442eda8e9d4728295
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d0d6c9dd5234c8085b5c1dea5552854486314010
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405702"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129775"
 ---
 # <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implementieren das Repository und Arbeitseinheitsmuster in einer ASP.NET MVC-Anwendung (9 von 10)
 
@@ -26,7 +26,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > [!NOTE] 
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 Im vorherigen Tutorial Sie Vererbung verwendet, um die redundanten Code im Verringern der `Student` und `Instructor` Entitätsklassen. In diesem Tutorial sehen Sie einige Möglichkeiten, um das Repository- und arbeitseinheitsmuster arbeitseinheitenmustern für CRUD-Vorgänge verwenden. Wie im vorherigen Tutorial in diesem ändern wie Sie Ihren Code mit Seiten funktioniert Sie bereits erstellt und nicht als neue Seiten erstellen.
 
@@ -51,7 +50,6 @@ Sie wird nicht in dieser tutorialreihe Komponententests erstellen. Eine Einführ
 
 > [!NOTE]
 > Es gibt viele Möglichkeiten, die Repository- und arbeitseinheitsmuster Muster zu implementieren. Sie können die Repository-Klassen mit oder ohne eine Einheit der Arbeitsaufgaben-Klasse verwenden. Sie können ein zentrales Repository für alle Entitätstypen und eine für jeden Typ implementieren. Wenn Sie eine für jeden Typ implementieren, können Sie separate Klassen eine generische Basisklasse und abgeleitete Klassen oder eine abstrakte Basisklasse und abgeleitete Klassen. Können Sie Geschäftslogik in Ihrem Repository enthalten oder auf die Logik für den Datenzugriff zu beschränken. Sie können auch eine Abstraktionsebene in Ihrem Datenbankkontext-Klasse erstellen, mit [IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx) Schnittstellen es anstelle von ["DbSet"](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx) -Typen für Ihre Entitätenmengen. Der Ansatz für die Implementierung einer Abstraktionsschicht, die in diesem Tutorial gezeigt ist eine Option für berücksichtigt werden, nicht auf eine Empfehlung für alle Szenarien und Umgebungen.
-
 
 ## <a name="creating-the-student-repository-class"></a>Erstellen der Repository-Klasse "Student"
 
@@ -142,7 +140,6 @@ In der ursprünglichen Version des Codes `students` typisiert ist, als ein `IQue
 > [!code-sql[Main](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application/samples/sample16.sql)]
 > 
 > (Im folgende Tutorial wird erläutert, wie Abfragen mit SQL Server gesendet zu untersuchen.)
-
 
 Der folgende Abschnitt veranschaulicht, wie Repository-Methoden implementieren, mit denen Sie angeben, dass diese Arbeit von der Datenbank ausgeführt werden soll.
 

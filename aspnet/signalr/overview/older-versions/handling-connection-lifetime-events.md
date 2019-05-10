@@ -8,12 +8,12 @@ ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: a8121a2d7c4ed14e296dc72c72ca7c25939a2b50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb671e730a1d41c07b350bf1d64ac1d0b1be55c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414009"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128796"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>Überblick und Behandeln von Verbindung Objektlebensdauer-Ereignisse in SignalR 1.x
 
@@ -28,7 +28,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gi
 > - [Gewusst wie: Behandeln der Objektlebensdauer-Ereignisse in der hubklasse Verbindung](index.md)
 > - [Das Durchführen von Verbindung Objektlebensdauer-Ereignisse in JavaScript-clients](index.md)
 > - [Das Durchführen von Verbindung Objektlebensdauer-Ereignisse in .NET-clients](index.md)
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -132,7 +131,6 @@ Einige netzwerkumgebungen schließen absichtlich Verbindungen im Leerlauf, und e
 > 
 > [!IMPORTANT]
 > Die Abfolge der Ereignisse, die hier beschriebenen ist nicht garantiert. SignalR versucht jede Verbindung Objektlebensdauer-Ereignisse in einer vorhersagbaren Weise nach diesem Schema heraufstufen, aber es gibt viele Varianten der Netzwerkereignisse und viele Möglichkeiten, die in denen zugrunde liegenden Communications-Frameworks wie Transport APIs diese behandeln. Z. B. die `Reconnected` -Ereignis kann nicht ausgelöst werden, wenn der Client die Verbindung wiederherstellt, oder die `OnConnected` Handler auf dem Server kann ausgeführt werden, wenn der Versuch zum Herstellen einer Verbindung nicht erfolgreich ist. Dieses Thema beschreibt nur die Effekte, die normalerweise durch bestimmte normalen Betrieb erstellt werden würde.
-
 
 <a id="clientdisconnect"></a>
 

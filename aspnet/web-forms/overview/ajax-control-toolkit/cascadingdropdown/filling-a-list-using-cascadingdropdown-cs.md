@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 31319e0ad15825acead2b7e8b619985272fb8eaa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395641"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131458"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>Ausfüllen einer Liste mit CascadingDropDown (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
 
 > Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. (Z. B. eine Liste enthält eine Liste der US-Staaten und die folgenden Liste wird dann mit der größten Städte in diesem Zustand gefüllt.) Die erste Herausforderung lösen werden tatsächlich eine Dropdownliste mit diesem Steuerelement geben.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -59,7 +58,6 @@ Damit der wichtigste Aspekt ist, dass die Methode ein Array vom Typ zurückgeben
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample5.aspx)]
 
 Die Seite im Browser laden, löst die Liste mit drei Anbietern gefüllt werden soll.
-
 
 [![Die Liste wird automatisch ausgefüllt.](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 

@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385539"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125677"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4: Bedeutende Änderungen
 
 > Dieses Dokument beschreibt die Änderungen, die für .NET Framework, Version 4 Version vorgenommen wurden, die möglicherweise Anwendungen auswirken können, die mit früheren Versionen, einschließlich der ASP.NET 4 Beta 1 und Beta 2-Versionen erstellt wurden.
 > 
 > [In diesem Whitepaper herunterladen](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_Breaking_Changes.pdf)
-
 
 <a id="0.1__Toc256768952"></a><a id="0.1__Toc256770056"></a>
 
@@ -112,7 +111,6 @@ Wenn Ihre Anwendung benutzerdefinierte Browserdefinitionen enthält, die von ein
 > [!NOTE]
 > Die **HttpBrowserCapabilities** Objekt (das wird verfügbar gemacht, von der Seite **Request.Browser** Eigenschaft) wird durch die Browser-Definitionen-Dateien gesteuert. Aus diesem Grund kann Zugriff auf eine Eigenschaft dieses Objekts in ASP.NET 4 zurückgegebene Informationen in einer früheren Version von ASP.NET zurückgegebenen Informationen abweichen.
 
-
 Sie können die alten Browserdefinitionsdateien wiederherstellen, durch die Browserdefinitionsdateien aus dem folgenden Ordner kopieren:
 
 [!code-console[Main](breaking-changes/samples/sample5.cmd)]
@@ -195,7 +193,6 @@ ASP.NET 4-Anwendungen, die als untergeordnete Anwendungen konfiguriert wurden, d
 Die Anwendung in der `childwebapp` Ordner fehl mit IIS 7 oder IIS 7.5 zu beginnen und gibt einen Fehler bei der Konfiguration. Der Fehlertext enthält eine Meldung ähnlich der folgenden:
 
 - `The requested page cannot be accessed because the related configuration data for the page is invalid.`
-  
 
 - `The configuration section 'configSections' cannot be read because it is missing a section declaration.`
 
@@ -227,7 +224,6 @@ Wenn Sie Einfügen der **ConfigSections** Element im Stammverzeichnis `Web.confi
 
 > [!NOTE]
 > Im folgenden Beispiel haben Zeilen wurden zur besseren Lesbarkeit umgebrochen.
-
 
 [!code-xml[Main](breaking-changes/samples/sample8.xml)]
 
@@ -315,7 +311,6 @@ Wenn es nicht möglich, auf der Website für ASP.NET 2.0 neu zuordnen oder zum �
 > [!NOTE]
 > Festlegen von **EnableExtensionlessUrls** 1 können ohne Erweiterung URL-Verhalten. Dies ist die Standardeinstellung, wenn kein Wert angegeben wird.
 
-
 <a id="0.1__Toc252995494"></a><a id="0.1__Toc255587643"></a><a id="0.1__Toc256770154"></a><a id="0.1__Toc245724862"></a>
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>Ereignishandler möglicherweise nicht nicht ausgelöst werden in einem Standarddokument in IIS 7 oder IIS 7.5 integrierten-Modus
@@ -372,7 +367,6 @@ Ein Szenario kann nicht wiederhergestellt werden, in .NET Framework 4: nicht-tei
 > [!NOTE]
 > Die **HtmlEncode** und **HtmlDecode** Funktionalität der **System.Web.HttpUtility** Klasse wurde verschoben, um die neuen .NET Framework 4  **System.Net.WebUtility** Klasse. War, die die einzige ASP.NET-Funktionalität, die verwendet wurde, ändern Sie den Code der Anwendung zur Verwendung der neuen **WebUtility** stattdessen.
 
-
 Im folgenden finden eine Zusammenfassung der Änderungen an der Standard-CAS-Implementierung in ASP.NET 4:
 
 - ASP.NET-Anwendungsdomänen sind jetzt Homogene Anwendungsdomänen. Nur teilweise Vertrauenswürdigkeit und voller Vertrauenswürdigkeit gewähren Mengen sind in einer Anwendungsdomäne verfügbar.
@@ -399,7 +393,6 @@ Kompilierte (binäre) Dateien, die mit früheren Versionen von ASP.NET erstellt 
 Allerdings können Klassenbibliotheken, die bestimmte Mitgliedschaftstypen verwenden, und, die von früheren Versionen von ASP.NET aktualisiert wurden, nicht kompilieren, wenn in einem ASP.NET 4-Projekt verwendet. Beispielsweise kann ein Klassenbibliotheksprojekt passieren kompilieren und meldet einen Fehler wie den folgenden:
 
 - `The type 'System.Web.Security.MembershipUser' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.`
-  
 
 - `The type name 'MembershipUser' could not be found. This type has been forwarded to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. Consider adding a reference to that assembly.`
 

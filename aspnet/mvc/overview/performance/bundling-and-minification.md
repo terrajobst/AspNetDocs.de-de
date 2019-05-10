@@ -8,19 +8,18 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 79d6b38c6464a749db9cd6d35e1f277b0adf2a02
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383836"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129431"
 ---
 # <a name="bundling-and-minification"></a>Bündelung und Minimierung
 
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Bündelung und Minimierung sind zwei Techniken können Sie in ASP.NET 4.5 zur Verbesserung der Ladezeit der Anforderung. Bündelung und Minimierung verbessert die Ladezeit von reduziert die Anzahl der Anforderungen an den Server und Verringern der Größe des angeforderten Assets (z. B. CSS- und JavaScript.)
-
 
 Die meisten aktuellen wichtigen Browser beschränken die Anzahl der [gleichzeitige Verbindungen](http://www.browserscope.org/?category=network) pro jeden Hostnamen auf 6. Das heißt, während die sechs Anforderungen verarbeitet werden, weitere Anforderungen für Ressourcen auf einem Host vom Browser in Warteschlangen gestellt werden. In der folgenden Abbildung den Internet Explorer F12 Developer Tools Netzwerk Registerkarten angezeigt wird die zeitliche Steuerung von der Ansicht "Info", der eine Beispiel-App benötigt Ressourcen.
 
@@ -96,7 +95,6 @@ Legen Sie zum Aktivieren von Bündelung und Minimierung der `debug` Wert auf "Fa
 
 > [!NOTE]
 > Es sei denn, `EnableOptimizations` ist `true` oder das Debug-Attribut in der [Compilation-Element](https://msdn.microsoft.com/library/s10awwz0.aspx) in die *"Web.config"* Datei festgelegt ist `false`, Dateien nicht gebündelt oder minimiert werden. Darüber hinaus die .min-Version der Dateien wird nicht verwendet werden, werden die vollständige Debugversionen ausgewählt werden. `EnableOptimizations` überschreibt das Debug-Attribut in der [Compilation-Element](https://msdn.microsoft.com/library/s10awwz0.aspx) in die *"Web.config"* Datei
-
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>Verwenden die Bündelung und Minimierung mit ASP.NET-Web Forms und Web Pages
 

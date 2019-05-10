@@ -8,12 +8,12 @@ ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2f14707eb058d438495dd2bc4c17b976c471fc97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407197"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131337"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Verwenden von Entitätsframework 4.0 und das ObjectDataSource-Steuerelement, Teil 1: Erste Schritte
 
@@ -45,7 +45,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > ## <a name="questions"></a>Fragen
 > 
 > Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx), [Entity Framework und LINQ to Entities-Forum](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), oder [ StackOverflow.com](http://stackoverflow.com/).
-
 
 Die `EntityDataSource` -Steuerelement können Sie sehr schnell eine Anwendung zu erstellen, aber es in der Regel müssen Sie eine beträchtliche Menge an Geschäftslogik und Datenzugriff Logik zu Ihrem *aspx* Seiten. Wenn Sie Ihre Anwendung immer komplexer und fortlaufende Wartung erfordern erwarten, können Sie weitere Entwicklungszeit voraus investiert, um die erstellen eine *n-schichtige* oder *layered* Anwendungsstruktur Das ist besser verwaltbar. Zum Implementieren dieser Architektur, trennen Sie die Darstellungsschicht, von der Geschäftslogikschicht (BLL) und der Datenzugriffsebene (DAL). Eine Möglichkeit zum Implementieren dieser Struktur ist die Verwendung der `ObjectDataSource` -Steuerelement statt der `EntityDataSource` Steuerelement. Bei Verwendung der `ObjectDataSource` Steuerelement Sie Ihren eigenen Datenzugriffscode zu implementieren, und rufen Sie dann in *aspx* Seiten, die mithilfe eines Steuerelements, die die gleichen Funktionen wie bei anderen Datenquellen-Steuerelementen. Dadurch können Sie die Vorteile einer n-schichtverfahren mit den Vorteilen der Verwendung eines Web Forms-Steuerelements für den Datenzugriff zu kombinieren.
 
@@ -102,7 +101,6 @@ Klicken Sie auf **OK** in die **Tabellen und Spalten** auf **schließen** in die
 > 
 > Nachdem Sie die Änderung zu speichern, Sie ist nicht möglich, löschen Sie eine Zeile aus der `Person` Tabelle, wenn diese Person Administrator der Abteilung ist. In einer produktionsanwendung würden Sie eine spezifische Fehlermeldung bereitstellen, wenn eine Datenbank-Einschränkung wird verhindert, einen Löschvorgang dass aus, oder Sie einen überlappenden Löschvorgang geben. Ein Beispiel für einen überlappenden Löschvorgang angeben, finden Sie unter [Entity Framework und ASP.NET: Erste Schritte-Teil 2](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md).
 
-
 ### <a name="adding-a-view-to-the-database"></a>Hinzufügen einer Ansicht in der Datenbank
 
 In der neuen *Departments.aspx* Seite, die Sie erstellen eine Dropdown-Liste der Dozenten, deren Namen im Format "Nachname, Vorname" bieten, sodass Benutzer abteilungsadministratoren auswählen können sollen. Um dies zu vereinfachen, erstellen Sie eine Ansicht in der Datenbank. Die Ansicht besteht aus nur die Daten, die von der Dropdown Liste benötigt: der vollständige Name (ordnungsgemäß formatiert) und dem Datensatzschlüssel.
@@ -136,7 +134,6 @@ Im Designer angezeigt, dass das Tool erstellt eine `vInstructorName` Entität un
 > [!NOTE]
 > In der **Ausgabe** und **Fehlerliste** Windows, die Sie möglicherweise eine Warnmeldung angezeigt, die Sie darüber informiert, dass das Tool automatisch, einen primären erstellt Schlüssel für das neue `vInstructorName` anzeigen. Dabei handelt es sich um ein erwartetes Verhalten.
 
-
 Bei Verweisen auf die neue `vInstructorName` Entität im Code nicht als Präfix voranstellen lower-case "V", die Datenbank-Konvention verwenden möchten. Aus diesem Grund, benennen Sie die Entität und einer Entität im Modell festzulegen.
 
 Öffnen der **Model Browser**. Sie finden Sie unter `vInstructorName` als Entitätstyp und einer Ansicht aufgeführt.
@@ -159,7 +156,6 @@ Dieser Code stellt ein einzelnes `GetDepartments` Methode, die alle Entitäten i
 
 > [!NOTE]
 > Üblicherweise wird zum Erstellen einer repositoryklasse für jeden Entitätstyp. In diesem Tutorial wird eine repositoryklasse für mehrere Entitätstypen verwendet werden. Weitere Informationen über das Repositorymuster finden Sie unter die Beiträge in [Blogbeitrag des Entity Framework-Teams](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx) und [Julie lermans Blog](http://thedatafarm.com/blog/data-access/agile-ef4-repository-part-3-fine-tuning-the-repository/).
-
 
 Die `GetDepartments` Methode gibt ein `IEnumerable` Objekt anstelle einer `IQueryable` Objekt, um sicherzustellen, dass die zurückgegebene Auflistung verwendet werden kann, auch wenn das Repositoryobjekt selbst verworfen wird. Ein `IQueryable` Objekt kann dazu führen, dass Zugriff auf die Datenbank immer darauf zugegriffen wird, aber das Repositoryobjekt mit der Zeit, die einem datengebundenen Steuerelement zum Rendern der Daten versucht verworfen werden kann. Kann eine andere Auflistungstyp zurückgegeben, wie z. B. eine `IList` Objekt, sondern mit einem `IEnumerable` Objekt. Zurückgeben von jedoch eine `IEnumerable` Objekt wird sichergestellt, dass Sie typische Liste für schreibgeschützten Zugriff Verarbeitungsaufgaben wie z. B. ausführen können `foreach` Schleifen und LINQ-Abfragen, aber Sie können nicht zum Hinzufügen oder Entfernen von Elementen in der Auflistung, die impliziert, dass solche Änderungen ist in der Datenbank gespeichert.
 
@@ -309,7 +305,6 @@ Verwenden der *DepartmentsAdd.aspx* Seite, um eine neue Abteilung hinzuzufügen,
 
 > [!NOTE]
 > Sie werden nicht in der Lage sind, Bearbeiten von Zeilen, die Sie nicht hinzugefügt haben (d. h., die bereits in der Datenbank wurden), aufgrund ungültiger Daten in der Datenbank die Administratoren für die Zeilen, die mit der Datenbank erstellt wurden, sind Schüler/Studenten. Wenn Sie versuchen, eine davon bearbeiten, erhalten eine Fehlerseite Sie, die meldet einen Fehler wie `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
-
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
 

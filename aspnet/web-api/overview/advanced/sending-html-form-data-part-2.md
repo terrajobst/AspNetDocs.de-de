@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: a7f3c1b5-69d9-4261-b082-19ffafa5f16a
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 70e150a32f208cf75086f959d484d86e8501c6bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5aaebb96f631dfb6b0da1fbca96cd93a6a7fe2d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59419924"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126226"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>Senden von HTML-Formulardaten in ASP.NET Web-API: Dateiupload und mehrteilige MIME-Nachrichten
 
@@ -26,7 +26,6 @@ In diesem Tutorial wird das Hochladen von Dateien in einer Web-API veranschaulic
 
 > [!NOTE]
 > [Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASPNET-Web-API-File-Upload-a8c0fb0d).
-
 
 Hier ist ein Beispiel für ein HTML-Formular zum Hochladen einer Datei ein:
 
@@ -44,7 +43,6 @@ Diese Meldung wird in zwei unterteilt *Teile*, eine für die einzelnen Steuerele
 
 > [!NOTE]
 > Die Grenze Teil umfasst eine zufällige-Komponente (&quot;41184676334&quot;) um sicherzustellen, dass die Trennungszeichenfolge nicht versehentlich in einem Teil der Nachricht angezeigt wird.
-
 
 Jeder Teil der Nachricht enthält eine oder mehrere Kopfzeilen, gefolgt von den Inhalts des Nachrichtenteils.
 

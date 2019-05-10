@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f57661077ec3bb13f3d4ec41b130bda4d2fb9070
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385955"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132960"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>Einführung in ASP.NET Web Pages - HTML-Formular-Grundlagen
 
@@ -33,7 +33,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > - Das `Request`-Objekt.
 > - Die SQL-Anweisung `Where` Klausel.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -82,7 +81,6 @@ Die `<form>` Element einschließt, HTML-Elemente übermittelt werden. (Eine einf
 > 
 > (Weitere Informationen zu HTTP-Verben finden Sie unter den [Methodendefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) Artikel auf der W3C-Website.)
 
-
 Die meisten benutzereingabeelemente sind HTML- `<input>` Elemente. Sie sehen, wie `<input type="type" name="name">,` , in denen *Typ* gibt die Art von Steuerelement mit Benutzereingabe werden sollen. Diese Elemente sind die gängigsten Einträge:
 
 - Textfeld: `<input type="text">`
@@ -104,7 +102,6 @@ Der interessante Teil befindet, wie Sie, den Seitenentwickler, die Eingabe des B
 > Wie Sie wissen vielleicht, wird HTML befindet sich im Übergangsstadium, und die neueste Version (HTML5) bietet Unterstützung für intuitiver Möglichkeiten für Benutzer Informationen eingeben. HTML5 können Sie (der Seitenentwickler) z. B. der Seite erkennen, dass der Benutzer ein Datum eingeben soll. Der Browser können Sie automatisch einen Kalender, statt den Benutzer manuell eingeben, ein Datum anzeigen. Allerdings wird HTML5 ist neu und wird noch nicht unterstützt in allen Browsern.
 > 
 > ASP.NET Web Pages unterstützt HTML5 eingeben, wenn der Browser des Benutzers ist. Für einen Überblick über die neuen Attribute für die `<input>` Element HTML5 finden Sie unter [HTML &lt;Eingabe&gt; type-Attribut](http://www.w3schools.com/html/html_form_input_types.asp) auf der Website W3Schools.
-
 
 ## <a name="creating-the-form"></a>Erstellen des Formulars
 
@@ -176,7 +173,6 @@ Dieser Block legt fest, die als Grundlage für das Erstellen einer Abfrage, die 
 > 
 > Es hat sich bewährt, machen Sie genaue Angaben, und verwenden die Teilmenge der `Request` , dass Sie, wie interessieren `Request.Form` oder `Request.QueryString`. Für die einfache Seiten, die Sie in diesem Tutorial erstellen, erleichtern nicht wahrscheinlich wirklich einen Unterschied. Beim Erstellen komplexere Seiten verwenden jedoch die explizite Version `Request.Form` oder `Request.QueryString` ermöglicht Ihnen, Probleme zu vermeiden, die auftreten können, wenn die Seite enthält, ein Formular (oder mehrere Formulare), Cookies, Abfragezeichenfolgen-Werte und So weiter.
 
-
 ## <a name="creating-a-query-by-using-a-search-term"></a>Erstellen einer Abfrage mithilfe eines Suchbegriffs
 
 Nun, dass Sie wissen, wie den Suchbegriff abgerufen, den vom Benutzer eingegebene, können Sie eine Abfrage erstellen, die verwendet wird. Denken Sie daran, dass die um alle Elemente der Film aus der Datenbank zu erhalten, Sie eine SQL-Abfrage verwenden, die diese Anweisung ähnelt:
@@ -218,7 +214,6 @@ Wenn Sie all diese Elemente zusammengestellt, erhalten Sie den folgenden Code:
 > **Wichtig** Mithilfe von Platzhaltern (z. B. `@0`) Werte an einen SQL-Befehl übergeben wird *äußerst wichtig* für die Sicherheit. Die Möglichkeit, die Sie es hier mit Platzhaltern für Variable Daten sehen, ist die einzige Möglichkeit, die Sie die SQL-Befehlen erstellen soll.
 > 
 > Erstellen Sie eine SQL-Anweisung nie durch das Erstellen (verketten) Literaltext und Werte, die Sie vom Benutzer zu erhalten. Verkettung von Benutzereingaben in einer SQL-Anweisung öffnet die Website eine *SQL Injection-Angriff* , in denen ein böswilliger Benutzer Werte auf der Seite, die Ihre Datenbank hack übermittelt. (Erfahren Sie mehr in diesem Artikel [SQL Injection](https://msdn.microsoft.com/library/ms161953.aspx) der MSDN-Website.)
-
 
 ## <a name="updating-the-movies-page-with-search-code"></a>Aktualisieren die Seite "Movies" mit Code durchsuchen
 
@@ -280,7 +275,6 @@ Auf dieser Seite, Sie haben auch Festlegen der `value` -Attribut auf die `search
 
 > [!NOTE]
 > Sie können nicht "den Wert eines Textfelds, die verwendet wird, für die Kennwörter merken". Es wäre eine Sicherheitslücke Personen mithilfe von Code in ein Kennwortfeld zu füllen können.
-
 
 Führen Sie die Seite erneut aus, geben Sie ein Genre, und klicken Sie auf **Search "Genre"**. Dieses Mal nicht nur sehen Sie die Ergebnisse der Suche, aber das Textfeld gespeichert, was letzten Besuch eingegeben haben:
 

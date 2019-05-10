@@ -8,19 +8,18 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: de65e01b888d9ed15da3903f086b40c49b32b9fb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 62050f561440a2c0fbbe91ec49fb1f9e30885e9f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402413"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130350"
 ---
 # <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4-Funktionen für mobile Geräte
 
 durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Es gibt jetzt eine MVC 5-Version dieses Tutorials mit Codebeispielen, unter [Bereitstellen einer ASP.NET MVC 5 Mobile-Webanwendung auf Azure-Websites](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
-
 
 In diesem Tutorial lernen Sie die Grundlagen der Verwendung mobiler Funktionen in einer ASP.NET MVC 4-Web-Anwendung. In diesem Tutorial können Sie [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) oder Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer oder VWD&quot;). Sie können die professional-Version von Visual Studio verwenden, wenn Sie bereits vorhanden.
 
@@ -214,7 +213,6 @@ Der folgende Code zeigt die vollständige *"Global.asax"* Datei.
 > [!NOTE]
 > Wenn Sie Internet Explorer 9 verwenden und nicht angezeigt der `BundleMobileConfig` Zeile oben in der gelbe Hervorhebung, klicken Sie auf die [Schaltfläche](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![Überblick über die Schaltfläche (deaktiviert)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Schaltfläche \"Kompatibilitätsansicht\" (deaktiviert)") in Internet Explorer auf das Symbol, ändern Sie in einer Gliederung vornehmen ![Überblick über die Schaltfläche (deaktiviert)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "Überblick über die Schaltfläche (deaktiviert) ") auf eine Volltonfarbe ![(Anmelden) Schaltfläche "Kompatibilitätsansicht"](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(Anmelden) Schaltfläche \"Kompatibilitätsansicht\""). Alternativ können Sie in diesem Tutorial in FireFox oder Chrome anzeigen.
 
-
 Öffnen der *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* Datei, und fügen Sie das folgende Markup direkt nach der `Html.Partial` aufrufen:
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample12.cshtml)]
@@ -229,7 +227,6 @@ Erstellen Sie die Anwendung, und navigieren Sie in Ihrem Emulator für mobile Br
 
 > [!NOTE]
 > Sie können bestimmten mobilen Code durch Debuggen [Festlegen der Zeichenfolge des Benutzer-Agenten](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/) für Internet Explorer oder Chrome auf iPhone- und klicken Sie dann mit den F-12 Developer-Tools. Wenn es sich bei Ihrem mobilen Browser nicht angezeigt wird der **Startseite**, **Redner**, **Tag**, und **Datum** Links als Schaltflächen, die Verweise auf jQuery Mobile Skripts und CSS-Dateien sind möglicherweise nicht richtig.
-
 
 Zusätzlich zu den Änderungen an Formatvorlagen daraufhin **Anzeige der mobilen Ansicht** und einen Link mit der Sie die von mobile zur Desktopansicht wechseln kann. Wählen Sie die **Desktopansicht** Link und Desktopansicht angezeigt wird.
 
@@ -251,7 +248,6 @@ Aktualisieren Sie die *AllTags* Ansicht im mobilen Browser. Sie können nun zwis
 > und das Hinzufügen des folgenden Abschnitts aus, um die *Views\Shared\\"_Layout.cshtml"* Datei.
 >
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
-
 
 Navigieren Sie zu der *AllTags* Seite in einem Desktopbrowser. Das ansichtumschaltung Widget wird nicht in einem Desktopbrowser angezeigt, da es nur auf die Seite mobiles Layout hinzugefügt wird. Später in diesem Tutorial sehen Sie, wie Sie Desktopansicht ansichtumschaltung Widgets hinzufügen können.
 

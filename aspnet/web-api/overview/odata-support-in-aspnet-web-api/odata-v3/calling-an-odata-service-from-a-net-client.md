@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: d35c0057f5c29e399e45d0a58467de7f106d9994
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b5ab979518615356baaeeb824e0a621eb59a38f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389972"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130781"
 ---
 # <a name="calling-an-odata-service-from-a-net-client-c"></a>Zugreifen auf einen OData-Dienst über einen .NET-Client (C#)
 
@@ -29,7 +29,6 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) (funktioniert mit Visual Studio 2012)
 > - [WCF Data Services-Clientbibliothek](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web-API 2. (Im Beispiel OData-Dienst wird mithilfe von Web-API 2 erstellt, die Client-Anwendung ist jedoch nicht erforderlich für Web-API.)
-
 
 In diesem Tutorial erläutere ich, wie Sie erstellen eine Clientanwendung, die einen OData-Dienst aufruft. Der OData-Dienst stellt die folgenden Entitäten:
 
@@ -57,7 +56,6 @@ Als Nächstes öffnen Sie eine andere Instanz von Visual Studio, und erstellen S
 
 > [!NOTE]
 > Die verbleibenden Schritte finden Sie das Konsolen-Projekt.
-
 
 Klicken Sie im Projektmappen-Explorer mit der Maustaste **Verweise** , und wählen Sie **Hinzufügen eines Dienstverweises**.
 
@@ -201,7 +199,6 @@ Die Aktualisierung wird ausgeführt, wenn Sie aufrufen **"SaveChanges"**. Standa
 
 > [!NOTE]
 > Warum im Vergleich zu MERGE PATCH? Die ursprüngliche HTTP 1.1-Spezifikation ([RCF 2616](http://tools.ietf.org/html/rfc2616)) keiner HTTP-Methode, mit der Semantik von "partielle Aktualisierung" definieren. Die OData-Spezifikation definiert die MERGE-Methode, um teilupdates zu unterstützen. In 2010 [RFC 5789](http://tools.ietf.org/html/rfc5789) definiert die PATCH-Methode für die partielle Aktualisierungen. Finden Sie einige der in diesem Verlauf [Blogbeitrag](https://blogs.msdn.com/b/astoriateam/archive/2008/05/20/merge-vs-replace-semantics-for-update-operations.aspx) auf die WCF Data Services-Blog. PATCH wird heute über MERGE bevorzugt. Die von der Web-API-Gerüstbau erstellten OData-Controller unterstützt beide Methoden.
-
 
 Wenn Sie die gesamte Entität (PUT-Semantik) ersetzen möchten, geben Sie die **ReplaceOnUpdate** Option. Dies bewirkt, dass WCF eine HTTP PUT-Anforderung senden.
 

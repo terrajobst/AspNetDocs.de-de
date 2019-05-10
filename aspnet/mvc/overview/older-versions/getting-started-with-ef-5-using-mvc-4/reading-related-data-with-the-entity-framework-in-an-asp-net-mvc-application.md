@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 0d6fb83b-71f7-425d-8dec-981197d7ec42
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f86212c1cb559c164342997fb0e4208339b5e3cc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc629f84bbf8c271780a8e7deba3d04d23d5fbb1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421120"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129817"
 ---
 # <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Lesen verwandter Daten mit dem Entitätsframework in einer ASP.NET MVC-Anwendung (5 von 10)
 
@@ -26,7 +26,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > [!NOTE] 
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 Im vorherigen Tutorial haben Sie das Datenmodell "School". In diesem Tutorial werden Sie lesen und Anzeigen von verknüpften Daten, d. h. Daten, die Entity Framework in Navigationseigenschaften lädt.
 
@@ -176,7 +175,6 @@ Die Methode akzeptiert optionale Routendaten (`id`) und einen Abfragezeichenfolg
 > 
 > [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cshtml)]
 
-
 Der Code erstellt zuerst eine Instanz des Ansichtsmodells und fügt die Dozentenliste ein. Der Code gibt eager Loading für die `Instructor.OfficeAssignment` und `Instructor.Courses` Navigationseigenschaft.
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs?highlight=3-4)]
@@ -237,7 +235,6 @@ Dieser Code liest die `Courses`-Eigenschaft des Ansichtsmodells, um eine Kurslis
 
 > [!NOTE]
 > Die *CSS* Datei wird vom Browser zwischengespeichert. Wenn die Änderungen nicht angezeigt wird, wenn Sie die Anwendung ausgeführt haben, führen Sie eine Aktualisierung schwierige (halten Sie STRG gedrückt, während Sie auf die **aktualisieren** Schaltfläche oder drücken Sie STRG + F5).
-
 
 Führen Sie die Seite, und wählen Sie einen Dozenten. Jetzt sehen Sie ein Raster, das die dem Dozenten zugewiesenen Kurse anzeigt. Sie sehen auch den Namen der zugewiesenen Abteilung für jeden Kurs.
 

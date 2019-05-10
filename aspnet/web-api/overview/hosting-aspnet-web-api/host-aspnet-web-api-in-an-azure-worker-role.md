@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: bfb23aafb814010e8651965dad91ca20a37fd786
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ec9904e0bff090be0f504036ae73977cfca0cb31
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404623"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130832"
 ---
 # <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Hosten von ASP.NET Web-API 2 in ein Azure-Workerrolle
 
@@ -32,7 +32,6 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web-API 2
 > - [Azure SDK für .NET 2.3](https://azure.microsoft.com/downloads/)
-
 
 ## <a name="create-a-microsoft-azure-project"></a>Erstellen Sie ein Microsoft Azure-Projekt
 
@@ -123,7 +122,6 @@ Erstellen Sie die Projektmappe, und drücken Sie F5, um die Anwendung lokal im A
 
 > [!NOTE]
 > Wenn Sie eine Ausnahme wie die folgende erhalten, finden Sie unter [in diesem Blogbeitrag](https://blogs.msdn.com/b/praburaj/archive/2013/11/20/fileloadexception-on-microsoft-owin-when-running-on-worker-role.aspx) für dieses Problem zu umgehen. "Konnte nicht geladen werden, Datei oder Assembly ' Microsoft.Owin, Version = 2.0.2.0, Kultur = Neutral, PublicKeyToken = 31bf3856ad364e35' oder eine ihrer Abhängigkeiten. Das manifest der sich Assemblydefinition entspricht nicht den der Assemblyverweis verweist. (Ausnahme von HRESULT: 0x80131040)"
-
 
 Der Serveremulator weist eine lokale IP-Adresse an den Endpunkt an. Sie finden die IP-Adresse, indem Sie die Serveremulator-Benutzeroberfläche anzeigen. Mit der rechten Maustaste in des Emulator-Symbols im Infobereich der Taskleiste und, und wählen **Serveremulator-Benutzeroberfläche anzeigen**.
 

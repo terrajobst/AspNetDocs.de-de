@@ -8,12 +8,12 @@ ms.date: 06/26/2014
 ms.assetid: 47202362-3808-4add-9a69-c9d1f91d5e4e
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: 14d4b01a2ea8a4582294053416b626e7f1801b50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a0016cf2cc7bffe6268664395ccb38e140090310
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59411513"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126126"
 ---
 # <a name="create-an-odata-v4-client-app-c"></a>Erstellen einer OData v4-Client-App (C#)
 
@@ -27,7 +27,6 @@ Starten Sie eine neue Instanz von Visual Studio und erstellen Sie ein neues Kons
 
 > [!NOTE]
 > Sie können auch die Konsolen-app hinzufügen, die der gleichen Visual Studio-Projektmappe, die den OData-Dienst enthält.
-
 
 ## <a name="install-the-odata-client-code-generator"></a>Installieren Sie den OData-Client-Code-Generator
 
@@ -43,7 +42,6 @@ Führen Sie das ProductService-Projekt in Visual Studio. Standardmäßig startet
 
 > [!NOTE]
 > Wenn Sie beide Projekte in der gleichen Projektmappe einfügen, stellen Sie sicher, dass die ProductService-Projekt ohne Debuggen auszuführen. Im nächsten Schritt müssen Sie zu der Dienst ausgeführt wird, während Sie das Projekt der Konsolenanwendung ändern.
-
 
 ## <a name="generate-the-service-proxy"></a>Generieren des Webdienstproxys
 

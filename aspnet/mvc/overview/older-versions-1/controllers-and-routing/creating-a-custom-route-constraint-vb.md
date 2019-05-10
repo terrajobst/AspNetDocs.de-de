@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: 892edb27-1cc2-4eaf-8314-dbc2efc6228a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: febba98be86f0151724af6d6c00fb14760ce1b91
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2330708cf4a28180ce8a05f4696bf7a7a32092d6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378948"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123407"
 ---
 # <a name="creating-a-custom-route-constraint-vb"></a>Erstellen einer benutzerdefinierten Routeneinschränkung (VB)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird veranschaulicht, wie Sie eine benutzerdefinierten routeneinschränkung erstellen können. Wir implementieren eine einfache benutzerdefinierte Einschränkung, die verhindert, dass eine Route wird eine Übereinstimmung, wenn der Browser von einem Remotecomputer angefordert werden.
-
 
 Das Ziel in diesem Tutorial wird veranschaulicht, wie Sie eine benutzerdefinierten routeneinschränkung erstellen können. Eine benutzerdefinierte Route-Einschränkung können Sie verhindern, dass eine Route abgeglichen wird, es sei denn, eine benutzerdefinierte Bedingung erfüllt ist.
 

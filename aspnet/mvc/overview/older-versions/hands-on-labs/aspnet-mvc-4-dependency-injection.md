@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 86781a1f46ce0c01a5d70b1f0cf8a81f3f96a032
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 15c9d4dcb9e2c6b9f6adf54d65d15737b32cca3b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405923"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129743"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 – Abhängigkeitsinjektion
 
@@ -57,7 +57,6 @@ Die Vorteile der Verwendung von Dependency Injection-Muster und Inversion of Con
 > [!NOTE]
 > Abhängigkeitsinjektion mit Entwurfsmuster "abstrakte Factory" manchmal verglichen wird, aber es gibt ein geringfügigen Unterschied zwischen den beiden Ansätzen. DI ist ein Framework, hinter arbeiten, um Abhängigkeiten zu lösen, indem die Factorys und die registrierten Dienste aufrufen.
 
-
 Nun, da Sie den Dependency Injection-Muster verstanden haben, werden in dieser Übungseinheit erfahren Sie wie für die anzuwendende in ASP.NET MVC 4. Starten Sie mithilfe der Abhängigkeitsinjektion in die **Controller** eine Datenbank-Access-Dienst umfassen. Als Nächstes Sie Dependency Injection zum Anwenden der **Ansichten** , nutzen einen Dienst und Anzeigen von Informationen. Zum Schluss erweitern die DI auf ASP.NET MVC 4-Filter, Sie Einfügen eines benutzerdefinierten Aktionsfilters in der Projektmappe.
 
 In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
@@ -70,11 +69,10 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 > [!NOTE]
 > Diese Übungseinheit Unity.Mvc3 NuGet-Paket für die Auflösung von Abhängigkeiten verwendet, aber es ist möglich, alle Dependency Injection-Framework mit ASP.NET MVC 4 arbeiten anpassen.
 
-
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -107,13 +105,12 @@ Diese praktische Übungseinheit besteht aus durch die folgenden Übungen:
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Injecting_a_Controller"></a>
-### <a name="exercise-1-injecting-a-controller"></a>Übung 1: Einfügen eines Controllers
+### <a name="exercise-1-injecting-a-controller"></a>Übung 1: Einfügen eines Controllers
 
 In dieser Übung lernen Sie, wie Dependency Injection in ASP.NET MVC-Controller verwendet werden, durch die Integration von Unity unter Verwendung eines NuGet-Pakets. Aus diesem Grund umfasst Sie Dienste in Ihre Controller MvcMusicStore, um die Logik von der Datenzugriff zu trennen. Die Dienste erstellt eine neue Abhängigkeit im controllerkonstruktor, der aufgelöst wird mithilfe der Abhängigkeitsinjektion mit Hilfe der **Unity**.
 
@@ -137,12 +134,10 @@ Finden Sie nachfolgend die **StoreController** Implementierung hat eine Abhängi
 > 
 > Um die Abhängigkeit zu beheben, muss der Controller erstellt werden, indem eine abstrakte Factory (eine Klasse, die jedes Objekt des angegebenen Typs zurückgibt).
 
-
 [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample2.cs)]
 
 > [!NOTE]
 > Sie erhalten einen Fehler, wenn die Klasse versucht, die StoreController zu erstellen, ohne das Dienstobjekt senden, wie es keinen parameterloser Konstruktor deklariert gibt.
-
 
 <a id="Ex1Task1"></a>
 
@@ -181,7 +176,6 @@ In dieser Aufgabe enthält **Unity.Mvc3** NuGet-Paket mit der Lösung.
 > Unity.Mvc3 Paket wurde für ASP.NET MVC 3 entwickelt, aber es ist vollständig kompatibel mit ASP.NET MVC 4.
 > 
 > Unity für die Instanz wird von einer einfachen und erweiterbaren Container für Abhängigkeitsinjektion mit optionalem Support und Abfangen von Typen. Es ist ein universell einsetzbarer Container für die Verwendung in eine beliebige Art von .NET-Anwendung. Es enthält alle allgemeinen Funktionen finden Sie in der Dependency Injection Mechanismen, einschließlich: Erstellen von Objekten, die Abstraktion von Anforderungen durch Angeben von Abhängigkeiten auf der Common Language Runtime und Flexibilität durch verzögern der Konfigurations der Komponente auf den Container.
-
 
 1. Installieren Sie **Unity.Mvc3** NuGet-Paket in der **MvcMusicStore** Projekt. Zu diesem Zweck öffnen Sie die **-Paket-Manager-Konsole** aus **Ansicht** | **Other Windows**.
 2. Führen Sie den folgenden Befehl ein.
@@ -247,7 +241,7 @@ In den folgenden Übungen lernen Sie, wie Sie den Dependency Injection-Bereich f
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Injecting_a_View"></a>
-### <a name="exercise-2-injecting-a-view"></a>Übung 2: Eine Ansicht einfügen
+### <a name="exercise-2-injecting-a-view"></a>Übung 2: Eine Ansicht einfügen
 
 In dieser Übung lernen Sie, wie Sie Dependency Injection in einer Ansicht mit den neuen Features von ASP.NET MVC 4 für Unity-Integration zu verwenden. Zu diesem Zweck wird einen benutzerdefinierten Dienst in der Store durchsuchen Ansicht aufgerufen, die eine Nachricht und eine der folgenden Abbildung angezeigt werden.
 
@@ -310,7 +304,6 @@ In der vorherigen Aufgabe eingefügt Sie eine neue Abhängigkeit in der Ansicht 
 > 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample11.cs)]
-
 
 1. Erstellen Sie die /**Factorys** -Ordner im Stammordner des Projekts.
 2. Umfassen **CustomViewPageActivator.cs** zu Ihrer Lösung von **/Sources/Assets/** zu **Factorys** Ordner. Zu diesem Zweck Maustaste der **/Factories** Ordner **hinzufügen | Vorhandenes Element** und wählen Sie dann **CustomViewPageActivator.cs**. Diese Klasse implementiert die **IViewPageActivator** Schnittstelle, die den Unity-Container enthalten soll.

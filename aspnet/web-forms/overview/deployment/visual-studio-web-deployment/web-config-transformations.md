@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: 15a5984048ba2aca9fedcb7bc4bb77eb440f21ee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 595723d9c6ea9cc40bb0ae896524ee828c4ebce2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379455"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128429"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Umwandlungen für die Datei „Web.config“
 
@@ -22,7 +22,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -106,7 +105,6 @@ Wenn Sie die Website nach der Bereitstellung testen, testen Sie auch, ob die Aut
 > 
 > **Sicherheitshinweis** nie Fehlerdetails für die Öffentlichkeit in einer produktionsanwendung anzuzeigen oder diese Informationen in einem öffentlichen Speicherort speichern. Angreifer können Fehlerinformationen verwenden, um Schwachstellen in einem Standort zu ermitteln. Wenn Sie ELMAH in Ihrer eigenen Anwendung verwenden, konfigurieren Sie ELMAH, um Sicherheitsrisiken zu minimieren. Das ELMAH-Beispiel in diesem Tutorial sollte nicht die empfohlene Konfiguration betrachtet werden. Es ist ein Beispiel, das ausgewählt wurde, um zu veranschaulichen, wie Sie einen Ordner zu behandeln, dass die Anwendung Dateien erstellt werden muss. Weitere Informationen finden Sie unter [Sicherung des Endpunkts ELMAH](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages).
 
-
 ## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>Eine Einstellung, der Sie behandeln werde veröffentlichen Profildateien-transformation
 
 Ein häufiges Szenario ist, damit *"Web.config"* Einstellungen, die in jeder Umgebung unterschiedlich, die Sie zum Bereitstellen sein müssen der Datei. Beispielsweise kann eine Anwendung, die einen WCF-Dienst aufruft, einen anderen Endpunkt in Test-und produktionsumgebungen benötigen. Die Contoso University-Anwendung enthält eine Einstellung dieser Art auch. Diese Einstellung steuert die auf einer Website. einen Indikator angezeigten, der anzeigt, welcher Umgebung Sie, wie z. B. Entwicklung, Test oder Produktion sind. Der Wert der Einstellung bestimmt, ob die Anwendung "(Dev)" angefügt wird oder "(Test)", um die wichtigsten Überschrift in der *Site.Master* Masterseite:
@@ -131,7 +129,6 @@ Diese Transformation gehört die veröffentlichen Profil Transformationsdateien 
 
 > [!NOTE]
 > Da diese Einstellung wird die `<appSettings>` -Element, Sie haben eine weitere Alternative zum Angeben der Transformations, beim Bereitstellen in Web-Apps in Azure App Service finden Sie unter [Einstellungen für die Angabe von "Web.config" in Azure](#watransforms) weiter oben in In diesem Thema.
-
 
 ## <a name="setting-connection-strings"></a>Festlegen von Verbindungszeichenfolgen
 

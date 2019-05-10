@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0462d8357d83115e751a818d3c9feb4b4274e212
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 387cad748428249273cf9708b794dd8864cf982f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402543"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125050"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>Verwenden von DynamicPopulate mit einem Benutzersteuerelement und JavaScript (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate2CS.pdf)
 
 > Das DynamicPopulate-Steuerelement in ASP.NET AJAX Control Toolkit Aufrufe eines Webdiensts (oder eine Seitenmethode) und füllt den resultierenden Wert in einem Zielsteuerelement auf der Seite, ohne eine seitenaktualisierung. Es ist auch möglich, um die Auffüllung mithilfe von benutzerdefinierten JavaScript-Code für die clientseitige auszulösen. Jedoch besondere Sorgfalt ausgeführt werden, wenn der Extender in einem Benutzersteuerelement befinden muss.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -65,7 +64,6 @@ Fügen Sie abschließend das Benutzersteuerelement auf der Seite. Sie müssen nu
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample8.aspx)]
 
 Und das ist schon alles! Die Seite verhält sich wie erwartet: Ein Benutzer klickt auf eines der Optionsfelder, die das Steuerelement im Toolkit den Webdienst aufruft, und das aktuelle Datum im gewünschten Format angezeigt.
-
 
 [![Die Optionsfelder befinden sich in einem Benutzersteuerelement](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
 

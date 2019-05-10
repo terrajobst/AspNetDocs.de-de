@@ -8,15 +8,14 @@ ms.date: 01/17/2019
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: c681415920bb0bfb4bc1c012e42fb5a528db93ca
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0f5dc960f494af5bd4ce87863a510d1892319908
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406833"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126282"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>Verwendung von Web-API 2 mit Entity Framework 6
-
 
 [Abgeschlossenes Projekt herunterladen](https://github.com/MikeWasson/BookService)
 
@@ -68,7 +67,6 @@ In der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **Web-API-** Vorl
 
 [![](part-1/_static/image12.png)](part-1/_static/image12.png)
 
-
 Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 ## <a name="configure-azure-settings-optional"></a>Konfigurieren von Azure-Einstellungen (optional)
@@ -98,7 +96,6 @@ Nachdem Sie das Projekt erstellt haben, können Sie jederzeit auf Azure App Serv
     [![](part-1/_static/image17.png)](part-1/_static/image17.png)
    
     Das Profil, das Sie erstellt haben, zum Bereitstellen der app ist jetzt verfügbar. 
-
 
 > [!div class="step-by-step"]
 > [Nächste](part-2.md)

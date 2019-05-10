@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 49a841dbda183bf1d59153b83f694c9f517e0b94
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382099"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127748"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Einführung in ASP.NET Web Pages - Veröffentlichen einer Website mit WebMatrix
 
@@ -26,7 +26,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - Microsoft Azure
 > - Web-Hosting-Unternehmen
 
-
 ## <a name="about-publishing-your-site"></a>Zum Veröffentlichen Ihrer Website
 
 Bisher haben Sie Ihre Arbeit auf einem lokalen Computer, z. B. Ihre Seiten testen fertig. Zum Ausführen Ihrer<em>.cshtml</em> Seiten Sie verwendet haben, den Webserver, die in WebMatrix, d. h. IIS Express integriert ist. Aber natürlich niemand können finden Sie auf der Website, die Sie außer dass Sie erstellt haben. Damit um andere Benutzer die Arbeit mit Ihrer Website zu können, müssen Sie sie mit dem Internet zu veröffentlichen.
@@ -35,7 +34,6 @@ Wenn Sie bereits Zugriff auf einen öffentlichen Webserver verfügen, Veröffent
 
 > [!NOTE]
 > Möglicherweise haben Sie Zugriff auf einen öffentlichen Webserver über die Internetdienstanbieter (ISP), mit denen Sie zu Hause Internetdienst zu erhalten. Allerdings muss der Hostinganbieter ASP.NET Web Pages unterstützt. Viele ISPs nicht, aber es lohnt sich immer überprüfen.
-
 
 In diesem Tutorial haben erhalten wir einen Überblick über die Informationen zum Veröffentlichen Sie. Es ist nicht praktikabel ist, geben Sie die genauen Details für alle Elemente, da ein wenig unterscheidet sich der Vorgang für alle Hostinganbieter. Aber Sie erhalten einen guten Überblick darüber, wie der Prozess ausgeführt.
 
@@ -142,7 +140,6 @@ Wählen Sie eine, die Ihnen gefallen. Für dieses Tutorial ausgewählt wir Disco
 > [!NOTE]
 > Unsere Wahl eines Hostinganbieters für dieses Tutorial sollten nicht als Empfehlung der jeweiligen Unternehmen über andere interpretiert werden. Aber wir hatten, um eine Abbildung auszuwählen, und DiscountASP.NET ist eines der vielen Unternehmen, die ASP.NET Web Pages und Web Deploy-Protokoll für die Veröffentlichung unterstützt.
 
-
 In der Regel nach dem Sie mit dem hosting-Anbieter registriert haben, sendet des Unternehmens Sie eine e-Mail, die einen Benutzernamen und Kennwort, die URL der Web-Server und So weiter enthält. Wenn der Hostinganbieter Web Deploy-Protokoll unterstützt, können sie senden Sie eine Datei mit veröffentlichungseinstellungen oder können Sie eine herunterladen. Eine Datei mit veröffentlichungseinstellungen vereinfacht den Prozess für Sie.
 
 Wenn Sie sich registriert haben und bereit für die Veröffentlichung, klicken Sie auf die **veröffentlichen** Schaltfläche im Menüband WebMatrix. Die **Veröffentlichungseinstellungen** Dialogfeld wird angezeigt.
@@ -196,7 +193,6 @@ Klicken Sie auf die **veröffentlichen** Schaltfläche im Menüband. WebMatrix w
 > 
 > Standardmäßig veröffentlicht WebMatrix Ihrer Datenbank (*.sdf* Datei) nur beim ersten Verwenden Sie die Website veröffentlichen. Sobald Ihre Website veröffentlicht wird, und Personen mit der Website interagieren, hat die Datenbank auf der live-Website in der Regel echte Daten von der Website. Sie müssen sehr darauf achten, nicht das Überschreiben der live-Datenbank mit der *.sdf* Datei, die auf dem Computer, die in der Regel nur für die Testdaten enthält. Deshalb die Warnung **Veröffentlichung überschreibt alle Remotedatenbanken**, und warum sich das Kontrollkästchen für *WebPagesMovies.sdf* ist standardmäßig deaktiviert.
 
-
 Klicken Sie auf **Weiter**. WebMatrix die geänderten Dateien veröffentlicht, und es wird gezeigt, eine Erfolgsmeldung, wie es beim ersten, die Sie veröffentlicht.
 
 Wechseln Sie zu der live-Website (Sie können den Link in der Success-Nachricht klicken, wenn es immer noch angezeigt werden) und stellen Sie sicher, dass die Änderung veröffentlicht wurde.
@@ -210,7 +206,6 @@ Wechseln Sie zu der live-Website (Sie können den Link in der Success-Nachricht 
 > Remote bearbeiten, ist eine einfache Möglichkeit, um Ihre live-Website zu ändern. Allerdings werden nicht auf diese Weise vorgenommene Änderungen mit den Dateien an Ihrem lokalen Standort synchronisiert. Um die lokalen Dateien mit dem Remotestandort zu synchronisieren, können Sie die Remotedateien herunterzuladen. Dieser Prozess funktioniert ähnlich wie die Veröffentlichung, außer in umgekehrter Reihenfolge.
 > 
 > Es wird nicht mehr über die Remote-Bearbeitung und Remote-Download-Funktionen von WebMatrix hier beschrieben. Sie sind sehr nützlich, wenn mehrere Personen am selben Standort auf verschiedenen Computern zu arbeiten müssen. Weitere Informationen finden Sie unter [veröffentlichen und Bearbeiten von einem Remotestandort mit WebMatrix 2 Beta](https://go.microsoft.com/fwlink/?LinkId=251591).
-
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 

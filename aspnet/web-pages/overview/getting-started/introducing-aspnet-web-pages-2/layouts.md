@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 678eb7089e95e3d221d6b2d82034a62aefa75757
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390414"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131837"
 ---
 # <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Einführung in ASP.NET Web Pages - Erstellen eines konsistenten Layouts
 
@@ -26,7 +26,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - Welche eine Layoutseite ist.
 > - Wie Sie Layoutseiten mit dynamischen Inhalten zu kombinieren.
 > - Informationen zum Übergeben von Werten an eine Layoutseite.
-
 
 ## <a name="about-layouts"></a>Informationen zu Layouts
 
@@ -167,7 +166,6 @@ Sie können den Quellcode der Seite im Browser anzuzeigen. Sie sehen, dass die `
 > Sie können eine beliebige Anzahl von Werten übergeben, mit der `Page` Objekt. Falls gewünscht, können Sie die Informationen auf der Seite "Layout" übergeben, können Sie Werte übergeben, indem Sie etwa `Page.MovieTitle` und `Page.Genre` und `Page.MovieYear`. (Oder jeder anderen Namen, die Sie entwickelt, um die Informationen zu speichern.) Die einzige Anforderung besteht, dies ist wahrscheinlich offensichtlich – besteht darin, dass Sie die gleichen Namen in der Seite Inhalt und die Seite "Layout" verwenden.
 > 
 > Die Informationen, die Sie, indem übergeben die `Page` Objekt ist nicht beschränkt auf nur Text, der auf der Layoutseite angezeigt. Sie können einen Wert übergeben, um die Seite "Layout", und klicken Sie dann Code auf der Layoutseite kann den Wert entscheiden, ob Sie einen Abschnitt der Seite angezeigt wie *CSS* -Datei, um verwenden und so weiter. Die Werte, die Sie übergeben die `Page` Objekt werden wie alle anderen Standardwerten Verwendung im Code. Es ist einfach, dass die Werte aus der Seite Inhalt stammen und die Seite ' Layout ' übergeben werden.
-
 
 Öffnen der *AddMovie.cshtml* Seite, und fügen Sie eine Zeile am Anfang der Code, der einen Titel für die *AddMovie.cshtml* Seite:
 

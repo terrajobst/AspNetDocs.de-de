@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 90285eac8e45d542c4ccca3e3db00493546aac57
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0ec92a3b719116d8ef457156788ac451a300dbfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398448"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130667"
 ---
 # <a name="aspnet-hosting-options-c"></a>Optionen zum Hosten von ASP.NET (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [PDF herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial01_Basics_cs.pdf)
 
 > ASP.NET-Webanwendungen sind in der Regel entworfen, erstellt und getestet werden, in einer lokalen Entwicklungsumgebung und müssen in einer produktionsumgebung bereitgestellt werden, sobald sie für die Veröffentlichung bereit ist. Dieses Lernprogramm bietet einen Überblick über den Bereitstellungsprozess und dient als Einführung in dieser tutorialreihe.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -57,7 +56,6 @@ Die Konfigurationsinformationen für eine Webanwendung befindet sich normalerwei
 
 Zusätzlich zu den konfigurationsänderungen für Web-Anwendung möglicherweise Schritt 1-Konfiguration für den Webserver und die Datenbank auch zur Folge. Z. B. wenn eine ASP.NET-Seite erstellt oder löscht Dateien aus einem Verzeichnis auf dem Webserver muss die Webserver konfiguriert werden, um diese dateisystemänderungen zuzulassen. Auf ähnliche Weise möglicherweise-Berechtigung oder die Authentication-Einstellungen, die in der Datenbank vorgenommen werden müssen.
 
-
 Schritt 2 umfasst den Satz von essential ASP.NET-Seiten und unterstützenden Dateien zwischen den Umgebungen für Entwicklungs- und produktionsumgebungen zu synchronisieren. Der bestimmten Satz von ASP zu gewährleisten. NET-bezogene Dateien, die zwischen den beiden Umgebungen synchronisiert werden müssen, hängt von den Typ des Projekts, die Sie in Visual Studio erstellt und ist der Diskussion im nächsten Tutorial [ *bestimmen was Dateien müssen bereitgestellt werden,*](determining-what-files-need-to-be-deployed-cs.md). Die dritte und vierte Tutorials - [ *Bereitstellen Ihrer Website mithilfe von FTP* ](deploying-your-site-using-an-ftp-client-cs.md) und [ *Bereitstellen Ihrer Website mit Visual Studio* ](deploying-your-site-using-visual-studio-cs.md) -überprüfen verschiedene Tools und Techniken für die Synchronisierung dieser Dateien.
 
 Beim Erstellen von datengesteuerten Anwendungen gibt es in der Regel zwei Datenbanken, die verwendet wird: eine für Entwicklung und eine für die Produktion. Während der Entwicklung das Schema der Entwicklungsdatenbank kann geändert werden, um neue Tabellen, Spalten, gespeicherten Prozeduren und Trigger enthalten und kann zum Entfernen oder Umbenennen vorhandener Datenbankobjekte geändert werden. Zwischen der Zeit, die diese Änderungen vorgenommen werden und die Zeit, die die Anwendung in der produktionsumgebung bereitgestellt wird, sind die Datenbanken für Entwicklungs- und produktionsumgebungen nicht synchronisiert. Dieser Asynchronität muss während des Bereitstellungsprozesses korrigiert werden. Diese Herausforderungen werden in zukünftigen Lernprogrammen untersucht werden.
@@ -69,7 +67,6 @@ ASP.NET-Anwendungen können auf einem beliebigen Webserver bereitgestellt werden
 > [!NOTE]
 > [IIS](https://www.iis.net/) wird von Microsoft für Unternehmen konzipierten Webserver. Es wird mit den nicht-Home-Editionen von Windows, z. B. Windows Server 2008 und bestimmte Versionen von Windows Vista ausgeliefert. Sie müssen sich nicht zum Installieren von IIS zur Bereitstellung von ASP.NET-Anwendungen in einer Entwicklungsumgebung wie Visual Studio den ASP.NET Development Web Server enthält. Allerdings wird der ASP.NET Development Web Server akzeptiert nur lokale Verbindungen und kann daher nicht in einer produktionsumgebung verwendet werden.
 
-
 Bevor Sie Ihre Website in einem Webhostinganbieter bereitstellen können, müssen Sie zuerst was Unternehmen, Geschäfte zu tätigen entscheiden. Es gibt unzählige Webhostingunternehmen im Marketplace. eine Suche nach "Webhostingunternehmen" gibt mehr als fünf Millionen Ergebnisse zurück. Wie finden Sie die, die für Sie geeignet ist? Ihre bevorzugte Suchmaschine ist ein guter Ausgangspunkt, wie z. B. sind [TopHosts](http://www.tophosts.com/) und [HostCritique](http://www.hostcritique.net/), die verglichen werden soll, und vergleichen Sie verschiedene hosting von Diensten. Ich Rate auch Fragen Ihren Kollegen und Kollegen für Empfehlungen; Sie können auch Empfehlungen an Stellen die [Open Forum hosten](https://forums.asp.net/158.aspx) hier bei der [ASP.NET-Foren](https://forums.asp.net/).
 
 Webhostingunternehmen in der Regel freigegebenen hostingpläne und spezielle hostingpläne. Mit gemeinsam eine einzelne Web Server-Hosts Dutzende, wenn nicht gar Hunderte von anderen Websites zu hosten. Dedizierte Hosting leasen Sie einen Computer aus dem Unternehmen, das Ihre Website und Ihre Website ausschließlich dient. Ein freigegebener hostingplan kann es sich um Unterstützung für ASP.NET Webseiten, die Möglichkeit zum Arbeiten mit Microsoft Access-Datenbanken, 5 GB Speicherplatz auf dem Datenträger und 100 GB an Bandbreite monatlich für den Datenverkehr für 9,95 US-Dollar pro Monat enthalten. Einen anderen freigegebenen hosting-Plan möglicherweise Unterstützung für ASP.NET-Seiten, Zugriff auf Microsoft SQL Server 2008-Datenbankserver, 10 GB Speicherplatz und 250 GB monatliche Bandbreite für den Datenverkehr für 19,95 $ pro Monat enthalten. Dedizierte hostingpläne sind in der Regel mehr Aufwand, Kosten mehrere Hundert Dollar pro Monat, aber bieten eine bessere Leistung und mehr Kontrolle als freigegebene Optionen hosten. Welchen Plan, die Sie auswählen, die von Ihr Budget abhängig ist, wie viel Datenverkehr Ihrer Website empfängt und die Funktionen, die Sie erwarten Sie benötigen.
@@ -78,7 +75,6 @@ Zwei wichtige Überlegungen beim Auswählen einer Webhostinganbieter sind Kunden
 
 > [!NOTE]
 > Einige Webhostingunternehmen konzentrieren Sie sich ihr Unternehmen auf eine bestimmte Technologie-Stapel, wie z. B. .NET oder [LAMP](http://en.wikipedia.org/wiki/LAMP_stack) (**L** Inux, **ein** Pache, **M** ySQL, und **P** HP), also stellen Sie sicher, dass das Unternehmen, die Sie auswählen, ASP.NET-Anwendungen hostet. Außerdem stellen Sie sicher, dass sie die Version von ASP.NET, die Sie verwenden unterstützen, um Ihre Anwendung zu erstellen. Und wenn Sie eine datengesteuerte Anwendung erstellen, stellen Sie sicher, dass der Web-Host bietet, den gleichen Datenbankserver und die Version, die Sie verwenden.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

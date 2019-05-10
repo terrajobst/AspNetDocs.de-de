@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eaeb32180f79fabf557cbc38ff067eb26b47fea7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381132"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129748"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 – Benutzerdefinierte Aktionsfilter
 
@@ -76,11 +76,10 @@ Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**.
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Logging_Actions"></a>
-### <a name="exercise-1-logging-actions"></a>Übung 1: Protokollieren von Aktionen
+### <a name="exercise-1-logging-actions"></a>Übung 1: Protokollieren von Aktionen
 
 In dieser Übung lernen Sie, wie ein benutzerdefinierten Aktionsfilters Protokoll erstellt wird, mithilfe von ASP.NET MVC 4-Filteranbieter. Zu diesem Zweck werden Sie einen Protokollierungsfilter auf der Music Store-Website anwenden, die alle Aktivitäten in den ausgewählten Controllern aufgezeichnet werden.
 
@@ -95,7 +94,6 @@ Der Filter wird erweitert **ActionFilterAttributeClass** und überschreiben **On
 > - **Ausnahme** Filter, der ausgeführt wird, wenn es eine nicht behandelte Ausnahme, die an einer beliebigen Stelle in der Aktionsmethode, die mit der Autorisierungsfilter beginnt und endet mit der Ausführung des Ergebnisses ausgelöst werden. Ausnahmefilter können für Aufgaben wie die Protokollierung oder Anzeigen einer Fehlerseite verwendet werden.
 > 
 > Weitere Informationen zu Anbietern für Filter finden Sie unter diesem MSDN-Link: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
-
 
 <a id="AboutLoggingFeature"></a>
 
@@ -132,7 +130,6 @@ In dieser Aufgabe erstellen Sie eine benutzerdefinierten Filter Attributklasse, 
 > - **OnResultExecuted**(ResultExecutedContext filterContext): Nach dem Ausführen des Ergebnisses (nach dem Rendern der Ansicht).
 > 
 > Indem Sie Sie einer dieser Methoden in einer abgeleiteten Klasse überschreiben, können Sie Ihren eigenen Filter Code ausführen.
-
 
 1. Öffnen der **beginnen** Lösung controllerarbeitsverzeichnis **\Source\Ex01-LoggingActions\Begin** Ordner.
 
@@ -219,7 +216,7 @@ In dieser Aufgabe testen Sie, dass der Protokollierungsfilter ausgeführt wird. 
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Managing_Multiple_Action_Filters"></a>
-### <a name="exercise-2-managing-multiple-action-filters"></a>Übung 2: Verwalten mehrerer Aktionsfilter
+### <a name="exercise-2-managing-multiple-action-filters"></a>Übung 2: Verwalten mehrerer Aktionsfilter
 
 In dieser Übung werden Sie eine zweite benutzerdefinierte Aktionsfilter der StoreController-Klasse hinzufügen und Definieren dieser spezifische Reihenfolge, in der beide Filter ausgeführt werden. Klicken Sie dann aktualisieren Sie den Code, um den Filter global zu registrieren.
 
@@ -352,7 +349,6 @@ In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu reg
 
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
-
 
 ---
 

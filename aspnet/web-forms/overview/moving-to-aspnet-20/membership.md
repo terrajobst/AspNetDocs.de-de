@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da6fc205bd852a818d65425586cec38fdb08d310
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408185"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131056"
 ---
 # <a name="membership"></a>Mitgliedschaft
 
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET-Mitgliedschaft baut auf den Erfolg der Forms-Authentifizierungsmodell von ASP.NET 1.x. ASP.NET-Formularauthentifizierung bietet eine bequeme Möglichkeit, Ihre ASP.NET-Anwendung ein Anmeldeformular integrieren, und Überprüfen von Benutzern für eine Datenbank oder einem anderen Datenspeicher.
-
 
 ASP.NET-Mitgliedschaft baut auf den Erfolg der Forms-Authentifizierungsmodell von ASP.NET 1.x. ASP.NET-Formularauthentifizierung bietet eine bequeme Möglichkeit, Ihre ASP.NET-Anwendung ein Anmeldeformular integrieren, und Überprüfen von Benutzern für eine Datenbank oder einem anderen Datenspeicher. Der Member der Klasse FormsAuthentication erleichtern die Cookies für die Authentifizierung herzustellen, überprüfen Sie für eine gültige Anmeldung, melden Sie sich einen Benutzer abzumelden usw. können. Allerdings ist das Implementieren der Formularauthentifizierung in ASP.NET 1.x-Anwendung kann eine beträchtliche Menge Code erforderlich.
 
@@ -48,11 +47,9 @@ Wenn Sie SQL Server 7.0 oder höher ist als Ihre Mitgliedschaftsspeicher, Sie da
 
 Nachdem Sie diesen Befehl ausführen, wird die ASP.NET SQL Server-Setup-Assistenten angezeigt werden wie unten dargestellt.
 
-
 ![](membership/_static/image1.jpg)
 
 **Abbildung 1**
-
 
 Die ASP.NET SQL Server-Setup-Assistenten erstellt die Website in der Instanz, die Sie im Assistenten angeben. ASP.NET wird allerdings die Verbindungszeichenfolge in der Datei machine.config verwenden, für die Verbindung mit Ihrer Datenbank. Standardmäßig verweist diese Verbindungszeichenfolge in eine SQL Server 2005-Instanz, sodass, wenn Sie eine SQL Server 2000 oder SQL Server 7.0-Instanz verwenden, Sie die Verbindungszeichenfolge in der Datei "Machine.config" ändern müssen. Diese Verbindungszeichenfolge kann hier befinden:
 
@@ -66,11 +63,9 @@ Der nächste Schritt im Konfigurieren der Mitgliedschaft werden die erforderlich
 
 Sie können die Weboberfläche starten, mit der ASP.NET-Konfiguration-Schaltfläche auf der Symbolleiste Projektmappen-Explorer, wie unten dargestellt. Sie können auch die Web-Schnittstelle über Popups starten, die angezeigt werden, wenn Steuerelemente für die Anmeldung eingefügt werden.
 
-
 ![](membership/_static/image2.jpg)
 
 **Abbildung 2**
-
 
 Dadurch wird die ASP.NET Websiteverwaltungs-Tool unten angezeigt. Die ASP.NET Web Site Administration ist eine vier-Registerkarte-Schnittstelle, die zum Verwalten von Anwendungseinstellungen vereinfacht. Die folgenden Registerkarten sind verfügbar:
 
@@ -83,21 +78,17 @@ Die Websiteverwaltungs-Tool können Sie problemlos neue Benutzer erstellen, neue
 
 Um die Windows-Benutzeroberfläche zu starten, öffnen Sie das MMC-Snap-in Internet Information Services, mit der rechten Maustaste auf Ihre Anwendung aus, und wählen Sie Eigenschaften. Klicken Sie auf der Registerkarte "ASP.NET", und klicken Sie dann auf die Schaltfläche "-Konfiguration bearbeiten". (Die Anwendung muss unter ASP.NET 2.0 für die Konfiguration bearbeiten-Schaltfläche aktiviert wird, werden ausgeführt werden. Sie können die ASP.NET-Version auch im Dialogfeld für ASP.NET konfigurieren.) Das Dialogfeld "ASP.NET-Einstellungen für die Konfiguration" wird angezeigt, wie unten dargestellt.
 
-
 ![](membership/_static/image3.jpg)
 
 **Abbildung 3**
-
 
 Klicken Sie auf der Registerkarte "Allgemein" werden die Verbindungszeichenfolgen und Anwendungseinstellungen aufgeführt. Alle Einstellungen in Kursivschrift werden in einer übergeordneten Konfigurationsdatei (die "Machine.config" oder eine Web.config-Datei auf einer höheren Ebene) definiert, und Einstellungen nicht in Kursivschrift werden aus der Konfigurationsdatei für die Anwendungen. Wenn eine Einstellung hinzugefügt wird, wird entfernt oder bearbeitet werden, auf der Anwendungsebene ASP.NET hinzufügen, entfernen oder ändern Sie die Einstellung auf die Anwendung Ebenen Datei "Web.config" anstelle von entfernen die Einstellung aus der Konfigurationsdatei, die von der es geerbt ist.
 
 Die Registerkarte "Datenquellenauthentifizierung" ist unten dargestellt. Dies ist, in dem Sie Ihre mitgliedschaftseinstellungen konfigurieren. Authentifizierungseinstellungen Mitgliedschaftsanbieter, bildet und Rollenanbieter hier konfiguriert werden können.
 
-
 ![](membership/_static/image4.jpg)
 
 **Abbildung 4**
-
 
 ## <a name="implementing-membership-in-your-application"></a>Implementieren die Mitgliedschaft in der Anwendung
 
@@ -133,11 +124,9 @@ Das LoginName-Steuerelement zeigt den Benutzernamen des auf der Website angemeld
 
 Das Steuerelement CreateUserWizard bietet Benutzern eine bequeme Möglichkeit, für das Mitgliedschaftssystem zu registrieren. Sie können über die Schnittstelle, die nachfolgend aufgeführten Schritte, die (implementiert als eine Auflistung von WizardSteps) hinzufügen.
 
-
 ![](membership/_static/image5.jpg)
 
 **Abbildung 5**
-
 
 Die CreateUserWizard ist ein Steuerelement mit Vorlagen, das die Assistenten-Klasse abgeleitet und enthält die folgenden Vorlagen:
 
@@ -167,29 +156,23 @@ Stellen Sie zum Aktivieren der Rollenverwaltung in Ihrer Anwendung die folgende 
 
 Wenn die **zurückgibt** -Attributsatz auf "true", ASP.NET die Rollenmitgliedschaft eines Benutzers in einem Cookie auf dem Client zwischenspeichert. Dadurch wird die Rolle Suchvorgänge ohne Aufrufe in die RoleProvider auftreten. Entwicklern wird empfohlen, sicherzustellen, dass, wenn Sie dieses Attribut verwenden, die **CookieProtection** -Attribut für alle festgelegt ist. (Dies ist die Standardeinstellung.) Dadurch wird sichergestellt, dass die Cookiedaten verschlüsselt werden und werden sichergestellt, dass der Inhalt des Cookies nicht verändert wurden. Rollen können mithilfe der Web Site Administration Tool hinzugefügt werden. Sie können problemlos Rollen definieren, konfigurieren den Zugriff auf Teile der Site, die basierend auf diesen Rollen und Zuweisen von Benutzern zu Rollen.
 
-
 ![](membership/_static/image6.jpg)
 
 **Abbildung 6:**
-
 
 Wie oben gezeigt, können neue Rollen hinzugefügt werden, indem einfach den Namen der Rolle eingeben und dann auf Rolle hinzufügen. Vorhandene Rollen verwaltet werden, oder indem Sie auf den entsprechenden Link in der Liste der vorhandenen Rollen gelöscht werden können.
 
 Wenn Sie eine Rolle verwalten, können Sie hinzufügen oder Entfernen Benutzer aus, wie unten dargestellt.
 
-
 ![](membership/_static/image7.jpg)
 
 **Abbildung 7**
 
-
 Überprüfen Sie das Kontrollkästchen für die Benutzerrolle, können Sie problemlos einen Benutzer zu einer bestimmten Rolle hinzufügen. ASP.NET aktualisiert automatisch die Mitgliedschaftsdatenbank mit den entsprechenden Einträgen. Sie sollten auch die Regeln für den Zugriff für Ihre Anwendung zu konfigurieren. ASP.NET 1.x-Entwickler kennen dies über die &lt;Autorisierung&gt; Element in der Datei "Web.config", und diese Option ist in ASP.NET 2.0 noch verfügbar sind. Allerdings Regel einfacher zum Verwalten des Zugriffs mithilfe der Web Site Administration Tool wie unten.
-
 
 ![](membership/_static/image8.jpg)
 
 **Abbildung 8**
-
 
 In diesem Fall wird der Ordner "Verwaltung" hervorgehoben (ist immer schwierig, angezeigt werden, da das Tool hellgrau markiert) und die Rolle "Administratoren" Zugriff gewährt wurde. Alle anderen Benutzer werden abgelehnt. Klicken Sie auf das Symbol "Head", wählen Sie eine Regel, und klicken Sie dann mithilfe der Schaltflächen nach oben und nach unten anordnen von Regeln. Wie bei ASP.NET &lt;Autorisierung&gt; Element Regeln werden verarbeitet, in der Reihenfolge, in der sie angezeigt werden. Das heißt, wenn die Reihenfolge der Regeln in der obigen Screenshot rückgängig gemacht wurden, würde niemand auf den administrationsordner zugreifen, da die erste Regel, die ASP.NET auftreten würde die Regel wäre, die für den Ordner für jeden verweigert.
 
@@ -209,19 +192,15 @@ ASP.NET erstellt auch eine RolePrincipal-Instanz als Member des aktuellen Kontex
 
 Nun, da Sie einen Überblick über die Rollenverwaltung und Mitgliedschaft verfügen, können Erörtern Sie kurz, wie das LoginView-Steuerelement diese Funktion in ASP.NET 2.0 nutzt. Wie bereits erwähnt ist das LoginView-Steuerelement ein Steuerelement mit Vorlagen, die standardmäßig zwei Vorlagen enthält. die AnonymousTemplate und LoggedInTemplate. In der LoginView Aufgaben, die Dialog eine Verknüpfung (siehe unten) ist, die Sie RoleGroups bearbeiten können.
 
-
 ![](membership/_static/image9.jpg)
 
 **Abbildung 9**
 
-
 Jedes Objekt RoleGroup enthält ein Array von Zeichenfolgen, welche Rollen definiert, für die RoleGroup gilt. Um eine neue RoleGroup dem LoginView-Steuerelement hinzuzufügen, klicken Sie auf den Link RoleGroups bearbeiten. In der obigen Abbildung sehen Sie sich, dass ich eine neue RoleGroup für Administratoren hinzugefügt haben. Durch Auswahl dieser RoleGroup (RoleGroup[0]) aus der Dropdownliste "Ansichten", ich kann konfigurieren eine Vorlage, die nur für Mitglieder der Rolle der Administratoren angezeigt werden. In der folgenden Abbildung haben ich eine neue RoleGroup hinzugefügt, die für Mitglieder der Rolle "Sales" und "Verteilungspunkt" gilt. Dadurch wird eine zweite RoleGroup der Ansichten-Dropdownliste im Dialogfeld "LoginView-Aufgaben" hinzugefügt, und nichts hinzugefügt, wird die Vorlage werden von einem Benutzer in der Umsätze oder die Verteilung Rolle.
-
 
 ![](membership/_static/image10.jpg)
 
 **Abbildung 10**
-
 
 ## <a name="overriding-the-existing-membership-provider"></a>Überschreiben des vorhandenen Mitgliedschaftsanbieters
 

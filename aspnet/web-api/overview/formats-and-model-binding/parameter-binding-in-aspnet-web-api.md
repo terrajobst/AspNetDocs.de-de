@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da0b9e12fcbe5cd2bfb5478162b7453d34931edf
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401971"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127524"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>Parameterbindung in der ASP.NET Web-API
 
@@ -173,7 +173,6 @@ Die **ExecuteBindingAsync** Methode führt die Bindung. Fügen Sie innerhalb die
 
 > [!NOTE]
 > Wenn Ihre **ExecuteBindingAsync** Methode liest den Text der Anforderungsnachricht, überschreiben die **WillReadBody** -Eigenschaft "true" zurückgeben. Der Anforderungstext ist möglicherweise, dass ein nicht gepufferten Datenstream, der nur einmal gelesen werden kann, sodass Web-API einer Regel, dass höchstens eine Bindung setzt den Nachrichtentext lesen kann.
-
 
 Anwenden ein benutzerdefinierten **HttpParameterBinding**, Sie können definieren, ein Attribut, das von abgeleitet ist **ParameterBindingAttribute**. Für `ETagParameterBinding`, definieren wir zwei Attribute: eine für `if-match` Header und eine für `if-none-match` Header. Beide werden von einer abstrakten Klasse abgeleitet.
 

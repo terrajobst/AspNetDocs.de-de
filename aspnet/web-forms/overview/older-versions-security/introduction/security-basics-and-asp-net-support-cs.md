@@ -8,12 +8,12 @@ ms.date: 01/13/2008
 ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f6fb4348e6ff703d329331b908e41763f24bb1f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 75ed2e2d0d9e15d186cf39ddd376beae99a06b30
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402946"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132276"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>Grundlagen der Sicherheit und Unterstützung für ASP.NET (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [PDF herunterladen](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial01_Basics_cs.pdf)
 
 > Dies ist im ersten Tutorial einer Reihe von Tutorials, die Techniken für die Besucher über ein Webformular authentifizieren, Autorisieren des Zugriffs auf bestimmte Seiten und Funktionen und Verwalten von Benutzerkonten in einer ASP.NET-Anwendung vorgestellt wird.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -45,7 +44,6 @@ In diesem Tutorial wird erörtert, wichtige Sicherheitskonzepte und welche Funkt
 
 > [!NOTE]
 > Sicherheit ist ein wichtiger Aspekt jeder Anwendung, die umfasst physischer, technologischer und Richtlinien Entscheidungen zu treffen und erfordert ein hohes Maß an Planung und Domänenkenntnisse. Diese tutorialreihe ist nicht als Leitfaden für die Entwicklung von sicheren Webanwendungen vorgesehen. Stattdessen konzentriert Sie sich speziell auf das Formular-Authentifizierung, Autorisierung, Benutzerkonten und Rollen. Während einige Schlüsselbegriffe der Sicherheit drehen, um diese Probleme in dieser Serie behandelt werden, bleiben andere nicht untersuchten.
-
 
 ## <a name="authentication-authorization-user-accounts-and-roles"></a>Authentifizierung, Autorisierung, Benutzerkonten und Rollen
 
@@ -75,11 +73,9 @@ Workflow der Windows-Authentifizierung verwendet einen der folgenden Authentifiz
 
 Alle drei Techniken funktionieren auf ungefähr die gleiche Weise: Wenn eine nicht autorisierte, anonyme Anforderung eingeht, der Webserver sendet eine HTTP-Antwort, der angibt, Autorisierung ist erforderlich, um den Vorgang fortzusetzen. Der Browser zeigt ein modales Dialogfeld an, das der Benutzer Benutzername und Kennwort (siehe Abbildung 1) aufgefordert. Diese Information wird dann zurück an den Webserver über einen HTTP-Header gesendet.
 
-
 ![Ein modales Dialogfeld fordert den Benutzer nach seinen Anmeldeinformationen](security-basics-and-asp-net-support-cs/_static/image1.png)
 
 **Abbildung 1**: Ein modales Dialogfeld fordert den Benutzer nach seinen Anmeldeinformationen
-
 
 Die angegebenen Anmeldeinformationen werden für der Webservers Windows-Benutzer-Store überprüft. Dies bedeutet, dass jeder authentifizierte Benutzer in Ihrer Webanwendung ein Windows-Konto in Ihrer Organisation benötigen. Dies ist üblich, die im Intranetszenarien. Stellt bei Verwendung von integrierten Windows-Authentifizierung in einem Intranet-Einstellung der Browser automatisch den Webserver mit den Anmeldeinformationen zur Anmeldung mit dem Netzwerk und Unterdrücken von dem in Abbildung 1 dargestellten Dialogfeld. Während der Windows-Authentifizierung für Intranetanwendungen ist, ist es normalerweise unmöglich von Internetanwendungen, da Sie nicht möchten, um Windows-Konten für jeden Benutzer zu erstellen, die sich an Ihrem Standort registriert.
 
@@ -93,11 +89,9 @@ Abbildung 2 zeigt den Workflow der Forms-Authentifizierung über einen Aussichts
 
 Sobald der Benutzer erfolgreich angemeldet hat, sind nachfolgende HTTP-Anforderungen das Formularauthentifizierungsticket. Das Authentifizierungssystem Forms identifiziert nur den Benutzer – es ist das Autorisierungssystem, das bestimmt, ob der Benutzer auf die angeforderte Ressource zugreifen kann.
 
-
 ![Workflow der Forms-Authentifizierung](security-basics-and-asp-net-support-cs/_static/image2.png)
 
 **Abbildung 2**: Workflow der Forms-Authentifizierung
-
 
 Wir werden untersuchen Formularauthentifizierung viel ausführlicher in den nächsten beiden Tutorials[eine Übersicht der Formularauthentifizierung](an-overview-of-forms-authentication-cs.md) und [Konfiguration der Formularauthentifizierung und Weiterführende Themen](forms-authentication-configuration-and-advanced-topics-cs.md). Weitere Informationen zu ASP. NET Authentifizierungsoptionen, finden Sie unter [ASP.NET-Authentifizierung](https://msdn.microsoft.com/library/eeyk640h.aspx).
 
@@ -113,7 +107,6 @@ Dateiautorisierung und URL-Autorisierung definieren Autorisierungsregeln für de
 Solche Anpassungen auf Seitenebene können deklarativ oder programmgesteuert erfolgen. Zum Anzeigen anderer Inhalte für anonyme als authentifizierte Benutzer einfach ziehen Sie eine [LoginView-Steuerelement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) auf der Seite, und geben Sie den entsprechenden Inhalt in die AnonymousTemplate und LoggedInTemplate Vorlagen. Alternativ Sie können programmgesteuert zu ermitteln, ob die aktuelle Anforderung authentifiziert wird, die der Benutzer ist und welche Rollen sie gehören zum (sofern vorhanden). Sie können diese Informationen verwenden, um dann ein- oder Ausblenden von Spalten in einem Raster oder Bereiche auf der Seite.
 
 Diese Reihe enthält drei Lernprogramme, die sich auf der Autorisierung zu konzentrieren. ***Benutzerbasierte Autorisierung***untersucht, wie Sie den Zugriff auf eine Seite oder Seiten in ein Verzeichnis für bestimmte Benutzerkonten zu beschränken. ***Role-Based Authorization*** untersucht die Autorisierungsregeln auf die Rolle bereitstellen, Ebene; und schließlich die ***Anzeigen von Inhalt basierend auf dem derzeit protokolliert In Benutzer*** Tutorial wird beschrieben, ein bestimmtes ändern die Seite Inhalt und die Funktionalität, die basierend auf dem Benutzer, die auf der Seite. Weitere Informationen zu ASP. Autorisierungsoptionen, dem die NET finden Sie unter [ASP.NET-Autorisierung](https://msdn.microsoft.com/library/wce3kxhd.aspx).
-
 
 ## <a name="user-accounts-and-roles"></a>Benutzerkonten und Rollen
 
@@ -139,11 +132,9 @@ Microsoft liefert zwei Membership-Provider-Klassen in .NET Framework:
 
 Diese tutorialreihe konzentriert sich ausschließlich auf die SqlMembershipProvider.
 
-
 [![Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework&lt;/ strong&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
 
 **Abbildung 03**: Die Anbieter-Modell ermöglicht es verschiedenen Implementierungen nahtlos integriert in die Anwendungsframework ([klicken Sie, um das Bild in voller Größe anzeigen](security-basics-and-asp-net-support-cs/_static/image5.png))
-
 
 Der Vorteil des Anbieter-Modells ist, dass alternative Implementierungen von Microsoft, Drittanbietern und einzelne Entwickler entwickelt und nahtlos an das mitgliedschaftsframework angeschlossen werden können. Microsoft hat z. B. [eine Membership-Provider für Microsoft Access-Datenbanken](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi). Weitere Informationen zu den Mitgliedschaftsanbieter, finden Sie in der [Anbietertoolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx), der enthält einer Exemplarische Vorgehensweise der Mitgliedschaftsanbieter, benutzerdefinierte Beispielanbieter, mehr als 100 Seiten Dokumentation für das Providermodell, und die Führen Sie Quellcode für die integrierte Mitgliedschaftsanbieter (nämlich ActiveDirectoryMembershipProvider und SqlMembershipProvider) ein.
 

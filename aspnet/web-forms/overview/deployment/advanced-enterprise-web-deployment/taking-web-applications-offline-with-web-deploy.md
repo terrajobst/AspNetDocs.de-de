@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 017eceb8567859fdbe28bb87af844eee20dfa525
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ba54454bcb6f5e4ceb269b128a6b72a4b75f64be
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415478"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131408"
 ---
 # <a name="taking-web-applications-offline-with-web-deploy"></a>Offlineschalten von Webanwendungen mit Web Deploy
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, wie Sie eine Webanwendung für die Dauer einer automatisierten Bereitstellung über das Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) offline nutzen können. Benutzer, die an die Webanwendung durchsuchen werden umgeleitet, um eine *App\_offline.htm* Datei, bis die Bereitstellung abgeschlossen ist.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -70,18 +69,13 @@ Der nächste Schritt ist zum Ändern Ihrer Bereitstellungslogik kopieren Sie die
 > [!NOTE]
 > Im nächste Verfahren wird davon ausgegangen, dass Sie eine benutzerdefinierte MSBuild-Projektdatei verwenden, um den Bereitstellungsprozess steuern, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Wenn Sie direkt von Visual Studio bereitstellen, müssen Sie einen anderen Ansatz zu verwenden. Sayed Ibrahim Hashimi beschreibt einen solchen Ansatz in [Vorgehensweise nehmen Ihre App Offline während der Webveröffentlichung](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx).
 
-
 Bereitstellen einer *App\_offline* Datei mit einer Ziel-IIS-Website, müssen Sie MSDeploy.exe mit Aufrufen der [Web Deploy **ContentPath** Anbieter](https://technet.microsoft.com/library/dd569034(WS.10).aspx). Die **ContentPath** -Anbieter unterstützt sowohl physischen Verzeichnispfade und Pfade in IIS-Website oder Anwendung, wodurch die ideale Wahl für die Synchronisierung von einer Datei zwischen einem Visual Studio-Projektordner und einer IIS-Webanwendung. Um die Datei bereitstellen, sieht der MSDeploy-Befehl folgendermaßen aus:
-
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
 
-
 Um die Datei aus dem Zielstandort am Ende des Bereitstellungsprozesses zu entfernen, sieht der MSDeploy-Befehl folgendermaßen aus:
 
-
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample2.cmd)]
-
 
 Um diese Befehle als Teil von einem Build & Deployment-Prozess zu automatisieren, müssen Sie sie in der benutzerdefinierten MSBuild-Projektdatei zu integrieren. Im nächste Verfahren wird beschrieben, wie zu diesem Zweck wird.
 
@@ -129,9 +123,7 @@ Die Web Publishing Pipeline (WPP) verwendet eine Elementliste mit dem Namen **Fi
 
 Die *. wpp.targets* Datei sollte diesem ähneln:
 
-
 [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample8.xml)]
-
 
 Dies sind die wichtigsten Punkte der Hinweis in diesem Beispiel:
 
@@ -160,7 +152,6 @@ Das nächste Mal Build und das Paket das Webanwendungsprojekt, WPP erkennt autom
 
 > [!NOTE]
 > Wenn die Bereitstellung ein Fehler auftritt, die *App\_offline.htm* bleibt die Datei vorhanden und die Anwendung bleibt offline. Dies ist normalerweise das gewünschte Verhalten. Um Ihre Anwendung zu bringen wieder online, können Sie löschen die *App\_offline.htm* Datei von Ihrem Webserver. Sie können auch, wenn Sie alle Fehler zu beheben, und führen eine erfolgreiche Bereitstellung, die *App\_offline.htm* Datei wird entfernt.
-
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

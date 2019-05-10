@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: ce866a169e69c0d85fe18ddeccf271f1f235d440
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3fcfc816cde22c697a78bab2c9ea7ace1bf68501
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381119"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129681"
 ---
 # <a name="part-3-views-and-viewmodels"></a>Teil 3: Ansichten und ViewModels
 
@@ -24,7 +24,6 @@ durch [Jon Galloway](https://github.com/jongalloway)
 > Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
 >   
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 3 sind die Ansichten und ViewModels.
-
 
 Bisher haben wir nur Zeichenfolgen aus Controlleraktionen Zurückgeben von wurde. Das ist eine gute Möglichkeit, Sie erhalten eine Vorstellung der Funktionsweise von Controllern, aber es ist nicht wie Sie möchten eine echte Webanwendung erstellen. Wir werden eine bessere Möglichkeit zum Generieren von HTML zurück zum Browser besuchen unsere Website möchten – ein, in dem wir Vorlagendateien verwenden können, um den HTML-Inhalt leichter anpassen, zurücksenden. Das ist genau das, was Ansichten tun.
 
@@ -257,7 +256,6 @@ Jetzt Wenn wir führen das Projekt erneut aus, und greifen Sie auf die URL /Stor
 Der HTML-Code für die Liste "Genre" sieht folgendermaßen aus:
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample22.html)]
-
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-2.md)

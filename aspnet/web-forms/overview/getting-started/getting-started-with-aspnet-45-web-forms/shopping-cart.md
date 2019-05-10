@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: e079318b37563b1b7afe0f842f5b463541de0a81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c54449e778eac96133cccdc90d86cbbaf05a70f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405429"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132108"
 ---
 # <a name="shopping-cart"></a>Einkaufswagen
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
-
 
 In diesem Tutorial wird beschrieben, die Geschäftslogik erforderlich, um einen Einkaufswagen gelegt hat der Wingtip Toys-beispielanwendung von ASP.NET Web Forms hinzuzufügen. Dieses Tutorial baut auf dem vorherigen Lernprogramm "Anzeige Elemente und Details zum Data" und ist Teil der tutorialreihe Wingtip Toys-Store. Wenn Sie dieses Tutorial abgeschlossen haben, werden die Benutzer die Beispiel-app hinzufügen, entfernen und ändern die Produkte im Einkaufswagen können.
 
@@ -49,7 +48,6 @@ Weiter oben in dieser tutorialreihe haben Sie Seiten und Code zum Anzeigen von P
 > [!NOTE] 
 > 
 > Der Sitzungszustand von ASP.NET ist eine bequeme Möglichkeit, benutzerspezifische Informationen speichern, die ablaufen wird, nachdem der Benutzer die Site verlässt. Während unsachgemäße Verwendung des Sitzungsstatus für größere Sites die Auswirkungen auf die Leistung haben kann, Licht Ins mithilfe der Sitzung, die Zustand funktioniert auch für Demonstrationszwecke. Die Wingtip Toys-Beispielprojekt veranschaulicht Sie Sitzungszustand ohne einen externen Anbieter, wobei Sitzungszustand gespeicherten in-Process auf dem Webserver, der die Standortdatenbank hostet. Bei größeren Sites, die mehrere Instanzen einer Anwendung bereitstellen oder Standorten, an denen mehrere Instanzen einer Anwendung auf verschiedenen Servern ausführen, sollten Sie **Windows Azure Cache Service**. Dieser Cache-Dienst bietet es sich um ein verteilter Cachedienst, der für die Website extern ist und löst das Problem der Verwendung von in-Process-Sitzungszustand. Weitere Informationen finden Sie unter [verwendet ASP.NET Session State mit Windows Azure-Websites wie](https://docs.microsoft.com/azure/redis-cache/cache-aspnet-session-state-provider).
-
 
 ### <a name="add-cartitem-as-a-model-class"></a>Fügen Sie CartItem als eine Modellklasse hinzu.
 
@@ -128,7 +126,6 @@ Wie bereits erwähnt, erstellen Sie eine Verarbeitung-Seite namens *AddToCart.as
 > [!NOTE] 
 > 
 > Ändern Sie den Code-Behind (*AddToCart.aspx.cs*) für diese Seite, nicht die Seiten-UI (*AddToCart.aspx*).
-
 
 #### <a name="to-create-the-add-to-cart-functionality"></a>Zum Erstellen von Add To Cart Funktionen:
 
@@ -215,7 +212,6 @@ Zunächst wird die `GetTotal` Methode ruft die ID des Warenkorbs für den Benutz
 > [!NOTE] 
 > 
 > Der obige Code verwendet einen nullable-Typ "`int?`". Auf NULL festlegbare Typen können alle Werte eines zugrunde liegenden Typs sowie als null-Wert darstellen. Weitere Informationen finden Sie unter [Using Nullable Types](https://msdn.microsoft.com/library/2cf62fcy(v=vs.110).aspx).
-
 
 ### <a name="modify-the-shopping-cart-display"></a>Ändern Sie die Shopping Cart-Anzeige
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e2374f05fb471c2b35a851eadb8c9f4a98f61e11
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383157"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126077"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>Verwenden von automatischem Postback mit CascadingDropDown (VB)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3VB.pdf)
 
 > Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. Jedoch beim Einsatz des CascadingDropDown-Steuerelements, ASP. NET DropDownList-Steuerelement AutoPostBack-Feature funktioniert nicht, da ein (nicht erforderlich) Postback selbst asynchron laden von Daten in der Liste generiert werden. Dieser Effekt kann vermieden werden, und Javascriptcode.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -55,7 +54,6 @@ Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zus
 [!code-html[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample6.html)]
 
 Auf diese Weise wird ein Postback nur ausgeführt, wenn in der Liste tatsächlich Elemente vorhanden sind und der Benutzer einen Eintrag wählt.
-
 
 [![Wählen ein Listenelement auslöst ein postback](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 

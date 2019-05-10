@@ -8,12 +8,12 @@ ms.date: 11/01/2010
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 91c96cc413e63ad2fc160ffbb473c4f3e1ada3e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fb63493ff22c9261fc5746a998a32f2511141f87
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401061"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130385"
 ---
 # <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Erstellen einer MVC 3-Anwendung mit Razor und unaufdringlichem JavaScript
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 > Die Benutzerliste-Beispielwebanwendung veranschaulicht, wie einfach es ist die Erstellung von ASP.NET MVC 3-Anwendungen, die die Razor-Ansichts-Engine verwenden. Die beispielanwendung veranschaulicht, wie die neue Razor-ansichtsengine mit ASP.NET MVC 3-Version und die Visual Studio 2010 zum Erstellen einer fiktiven Benutzerliste-Websites, die Funktionen wie das Erstellen, anzeigen, bearbeiten und Löschen von Benutzern enthält.
 > 
 > In diesem Tutorial wird beschrieben, die ausgeführt wurden, um die Benutzerliste ASP.NET MVC 3-beispielanwendung zu erstellen. Visual Studio-Projekt mit C# und VB-Quellcode ist zur Ergänzung dieses Themas verfügbar: [Herunterladen](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114). Wenn Sie Fragen zu diesem Tutorial haben, Posten Sie diese auf die [MVC-Forum](https://forums.asp.net/1146.aspx).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -185,7 +184,6 @@ Weitere Informationen zu der unaufdringlichen Validierung, finden Sie im Eintrag
 
 > [!NOTE]
 > In ASP.NET MVC 3-Beta müssen Sie manchmal zum Senden des Formulars, um die clientseitige Validierung zu starten. Dies kann für die endgültige Version geändert werden.
-
 
 ## <a name="creating-the-create-view"></a>Erstellen die Ansicht "erstellen"
 

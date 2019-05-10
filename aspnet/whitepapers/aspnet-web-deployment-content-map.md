@@ -8,12 +8,12 @@ ms.date: 03/14/2014
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: 3f36f0c504678e1e8b40aef99db81ab99101568b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 96873c8f2b0ad2415f371aceb651400c801a3338
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383914"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125660"
 ---
 # <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET: Webbereitstellung – Empfohlene Ressourcen
 
@@ -24,7 +24,6 @@ ms.locfileid: "59383914"
 > > [!NOTE] 
 > > 
 > > Viele dieser Ressourcen beschreiben Bereitstellungsfunktionen, die sind nur verfügbar, wenn Sie eine aktuelle Version der installieren die [Visual Studio Web Publish Update](https://go.microsoft.com/fwlink/?LinkID=208120). Einige Features sind nur in Visual Studio 2012 oder Visual Studio 2013 verfügbar.
-
 
 Dieses Thema enthält folgende Abschnitte:
 
@@ -48,9 +47,7 @@ Dieses Thema enthält folgende Abschnitte:
 - [Abrufen von Hilfe mit einer bestimmten Bereitstellung Frage](#gettinghelp)
 - [Additional Resources](#additional) (Zusätzliche MSBuild-Ressourcen)
 
-
 <a id="understanding"></a>
-
 
 ## <a name="understanding-deployment-options-for-web-projects"></a>Grundlegendes zu Bereitstellungsoptionen für Webprojekte
 
@@ -59,17 +56,13 @@ Dieses Thema enthält folgende Abschnitte:
 - [Verbesserungen von Visual Studio 2012 Web Publishing](../visual-studio/overview/2012/visual-studio-2012-web-publishing-improvements.md) (Video von Scott Hanselman).
 - [Übersicht über Post für die Bereitstellung in Visual Studio 2010](http://vishaljoshi.blogspot.com/2009/09/overview-post-for-web-deployment-in-vs.html) (Vishal Joshi Blog). Einen älteren Blogbeitrag, aber einige der Visual Studio 2010-Ressourcen, die sie verknüpft, um Informationen zu erhalten, die für Visual Studio 2012 weiterhin relevant sind.
 
-
 <a id="findinghosting"></a>
-
 
 ## <a name="finding-hosting-providers-for-an-aspnet-application"></a>Suchen von hosting-Anbieter für eine ASP.NET-Anwendung
 
 - [Hosten von ASP.NET](https://asp.net/hosting)
 
-
 <a id="fromvs"></a>
-
 
 ## <a name="deploying-a-web-application-from-visual-studio"></a>Bereitstellen einer Webanwendung in Visual Studio
 
@@ -78,7 +71,6 @@ Dieses Thema enthält folgende Abschnitte:
 - [Vorgehensweise: Bereitstellen einer Webanwendungsprojekts mit One-Click-Veröffentlichung in Visual Studio](https://msdn.microsoft.com/library/dd465337.aspx) (Referenzinformationen zu den Visual Studio Web Publish-Assistenten)
 - [Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio](../web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md). Dies ist eine frühere Version von **ASP.NET-webbereitstellung mithilfe von Visual Studio** ganz oben in diesem Abschnitt. Vor allem nützlich für jetzt Informationen zum Bereitstellen von SQL Server Compact-Datenbanken und wie Sie von SQL Server Compact auf eine Vollversion von SQL Server zu migrieren.
 - [.NET Multi-Tier-Anwendung mithilfe von Storage-Tabellen, Warteschlangen und Blobs](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36) (Microsoft Azure-Website). 5-Teil der tutorialreihe, veranschaulicht, wie ein MVC-Projekt erstellen und in einem Windows Azure-Cloud-Dienst bereitstellen.
-
 
 <a id="package"></a>
 ## <a name="deploying-a-web-application-by-creating-and-installing-a-web-deployment-package"></a>Bereitstellen einer Web-Anwendung erstellen und Installieren von einem Webbereitstellungspaket
@@ -91,9 +83,7 @@ Dieses Thema enthält folgende Abschnitte:
 
 Siehe auch im folgenden Abschnitt.
 
-
 <a id="ci"></a>
-
 
 ## <a name="deploying-a-web-application-using-a-continuous-integration-ci-process"></a>Bereitstellen einer Webanwendung mit einem Prozess für die fortlaufende Integration (CI)
 
@@ -107,9 +97,7 @@ Siehe auch im folgenden Abschnitt.
 
 Siehe auch [sicherstellen einer Anwendungs offline ist, während der Bereitstellung](aspnet-web-deployment-content-map.md#appoffline) weiter unten in dieser Seite.
 
-
 <a id="transforms"></a>
-
 
 ## <a name="using-webconfig-transformations-to-change-settings-in-the-destination-webconfig-file-or-appconfig-file-during-deployment"></a>Verwenden der Web.config-Transformationen zum Ändern der Einstellungen in der Web.config-Zieldatei oder die Datei "App.config" während der Bereitstellung
 
@@ -121,9 +109,7 @@ Siehe auch [sicherstellen einer Anwendungs offline ist, während der Bereitstell
 - [Mithilfe von XDT (XML Document Transformation) veröffentlicht, auf codeplex.com](https://blogs.msdn.com/b/webdev/archive/2013/04/23/xdt-xml-document-transform-released-on-codeplex-com.aspx) (.NET-Webentwicklung und Tools-Blog). Kündigt die Verfügbarkeit des Quellcodes für die Datei "Web.config" Datei-Transformations-Engine und führt einige Tools, die sie verwenden.
 - [Windows Azure-Websites: Wie Zeichenfolgen und Verbindungszeichenfolgen](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure-Blog). Eine Alternative zur Datei "Web.config" transformiert werden, wenn es sich bei Ihrer zielumgebung ist Windows Azure-Websites, und Sie transformieren möchten `appSettings` oder `connectionStrings`.
 
-
 <a id="webdeployparms"></a>
-
 
 ## <a name="using-web-deploy-parameters-to-change-settings-in-the-destination-web-application-during-deployment"></a>Verwenden von Web Deploy Parametern zum Ändern der Einstellungen in der Ziel-Webanwendung während der Bereitstellung
 
@@ -134,9 +120,7 @@ Siehe auch [sicherstellen einer Anwendungs offline ist, während der Bereitstell
 - [Visual Studio Web-Parametrisierung bereitstellen. Web.config-Transformation](http://vishaljoshi.blogspot.com/2010/06/parameterization-vs-webconfig.html) (Vishal Joshi Blog).
 - [Windows Azure-Websites: Wie Zeichenfolgen und Verbindungszeichenfolgen](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure-Blog). Eine Alternative zu Web deploy-Parametern Ihrer zielumgebung ist Windows Azure-Websites, und Sie parametrisieren möchten `appSettings` oder `connectionStrings`.
 
-
 <a id="appoffline"></a>
-
 
 ## <a name="making-sure-an-application-is-off-line-during-deployment"></a>Sicherstellen einer Anwendungs ist offline, während der Bereitstellung
 
@@ -146,9 +130,7 @@ Siehe auch [sicherstellen einer Anwendungs offline ist, während der Bereitstell
 - [Veröffentlichen von Updates für die app offline und Usechecksum Web](https://blogs.msdn.com/b/webdev/archive/2013/10/30/web-publishing-updates-for-app-offline-and-usechecksum.aspx) (Blog zur Microsoft-Web-Entwicklung). Eine weitere Option für die Verwendung der app Automatisierung\_offline.htm-Datei.
 - [Web bereitstellen 3.5 RTW](https://blogs.iis.net/msdeploy/archive/2013/07/09/webdeploy-3-5-rtw.aspx) (IIS.NET-Website). Neues Feature im Web bereitstellen 3.5 für benutzerdefinierte app\_offline.htm-Dateien.
 
-
 <a id="databasewithweb"></a>
-
 
 ## <a name="deploying-a-database-or-changes-to-a-database-as-part-of-web-application-deployment"></a>Bereitstellen einer Datenbank oder Änderungen in einer Datenbank als Teil der Bereitstellung von Webanwendungen
 
@@ -160,9 +142,7 @@ Siehe auch [sicherstellen einer Anwendungs offline ist, während der Bereitstell
 
 Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket installieren und Bereitstellen einer Webanwendung unter Verwendung eines continuous Integration (CI)-Prozesses zuvor auf dieser Seite bereitstellen.
 
-
 <a id="databaseseparate"></a>
-
 
 ## <a name="deploying-a-database-separately-from-web-application-deployment"></a>Bereitstellen einer Datenbank getrennt von der Bereitstellung von Webanwendungen
 
@@ -174,9 +154,7 @@ Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket inst
 - [Migrieren von datenorientierten Anwendungen zu Windows Azure](https://msdn.microsoft.com/library/jj156154.aspx) (MSDN).
 - [Migrieren von SQL Server-Datenbanken zu Windows Azure SQL-Datenbank](https://msdn.microsoft.com/library/windowsazure/jj156160.aspx) (MSDN).
 
-
 <a id="aspnetmembership"></a>
-
 
 ## <a name="deploying-a-web-application-that-uses-aspnet-application-services-such-as-membership-and-profiling"></a>Bereitstellen einer Webanwendung, die ASP.NET-Anwendung verwendet Dienste, z.B. die Mitgliedschaft und profilerstellung
 
@@ -186,9 +164,7 @@ Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket inst
 - [Konfigurieren einer Website, die Anwendungsdiensten](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs.md). Für die Website Projekte jedoch gilt auch für Webanwendungsprojekte.
 - [Benutzer und Rollen auf der Produktionswebsite](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs.md). Für die Website Projekte jedoch gilt auch für Webanwendungsprojekte.
 
-
 <a id="precompiling"></a>
-
 
 ## <a name="precompiling-for-deployment"></a>Vorkompilieren für die Bereitstellung
 
@@ -196,18 +172,14 @@ Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket inst
 - [Packen/veröffentlichen-Registerkarte "Web", Projekteigenschaften](https://msdn.microsoft.com/library/dd410108.aspx) (MSDN).
 - [Erweiterte Einstellungen (Dialogfeld) Vorkompilieren](https://msdn.microsoft.com/library/hh475319.aspx) (MSDN).
 
-
 <a id="intranet"></a>
-
 
 ## <a name="deploying-an-intranet-web-application"></a>Bereitstellen einer Intranet-Web-Anwendung
 
 - [Verwenden Sie die lokalen Organisationsauthentifizierung-Option (ADFS) mit ASP.NET in Visual Studio 2013](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/) (Blog von Vittorio Bertocci.).
 - [Gewusst wie: Erstellen einer Intranetsite mit ASP.NET MVC](https://msdn.microsoft.com/library/gg703322(VS.98).aspx) (MSDN). Ältere Exemplarische Vorgehensweise geschrieben für Visual Studio 2010 wird nicht angezeigt, größeren Änderungen bei den Intranet-Projektvorlagen in Visual Studio 2013 eingeführt wurden.
 
-
 <a id="automating"></a>
-
 
 ## <a name="automating-common-deployment-tasks-that-are-not-automated-out-of-the-box"></a>Automatisieren häufige Bereitstellungsaufgaben, die standardmäßig nicht automatisiert werden
 
@@ -220,26 +192,20 @@ Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket inst
 - [Wie Sie .NET paketassemblys](https://blogs.msdn.com/webdevtools/archive/2010/02/19/how-to-package-com-component.aspx) (Webentwicklungstools-Blog). Informationen zum Bereitstellen von Assemblys im globalen Assemblycache.
 - [Skript für alles – initialisieren Ihrer Windows Azure-VM für Ihre Web-Server mit IIS, Web Deploy- und andere Dinge](http://www.tugberkugurlu.com/archive/script-out-everything-initialize-your-windows-azure-vm-for-your-web-server-with-iis-web-deploy-and-other-stuff) (Tugberk Ugurlu Blog).
 
-
 <a id="configuringservers"></a>
-
 
 ## <a name="configuring-web-servers-so-that-developers-can-deploy-web-applications-to-them-using-web-deploy"></a>Konfigurieren von Webservern, damit Entwickler Webanwendungen, die Sie mit der Web Deploy bereitstellen können
 
 - [Installieren und Konfigurieren von Web Deploy für Administrator- und nicht-Administrator Bereitstellungen](https://www.iis.net/learn/install/installing-publishing-technologies/installing-and-configuring-web-deploy) (IIS.NET-Website).
 
-
 <a id="hostingprovider"></a>
-
 
 ## <a name="configuring-servers-for-a-hosting-provider"></a>Konfigurieren von Servern für einen Hostinganbieter
 
 - [Bereitstellungshandbuch für Microsoft ASP.NET 4-Hosting](https://go.microsoft.com/fwlink/?LinkId=191365) (Microsoft Download Center).
 - [Generieren einer XML-Datei](https://www.iis.net/learn/web-hosting/joining-the-web-hosting-gallery/generate-a-profile-xml-file) (IIS.NET-Website).
 
-
 <a id="troubleshooting"></a>
-
 
 ## <a name="troubleshooting-deployment-problems"></a>Behandlung von Bereitstellungsproblemen
 
@@ -252,18 +218,14 @@ Finden Sie in Webanwendung auch erstellen und einem Webbereitstellungspaket inst
 - [Allgemeine Konfigurationsunterschiede zwischen Entwicklungs- und Produktionsumgebungen](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs.md).
 - [Hosten von ASP.NET-Anwendungen auf der mittleren Vertrauensebene](http://www.4guysfromrolla.com/articles/100307-1.aspx) (4 Guys von Rolla-Website).
 
-
 <a id="gettinghelp"></a>
-
 
 ## <a name="getting-help-with-a-specific-deployment-question"></a>Abrufen von Hilfe mit einer bestimmten Bereitstellung Frage
 
 - [ASP.NET-Konfiguration und Bereitstellung Forum](https://forums.asp.net/26.aspx/1?Configuration and Deployment).
 - [StackOverflow.com](http://www.StackOverflow.com).
 
-
 <a id="additional"></a>
-
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 

@@ -8,12 +8,12 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5dfd1305376a62f4987caea242ca0f6aac1018e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396980"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129632"
 ---
 # <a name="using-oauth-providers-with-mvc-4"></a>Verwenden von OAuth-Anbietern mit MVC 4
 
@@ -24,7 +24,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > Um die externe Anmeldeinformationen in einer ASP.NET MVC 5-Webanwendung verwenden zu können, finden Sie unter [erstellen Sie eine ASP.NET MVC 5-App mit Facebook und Google OAuth2 und OpenID-Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 > 
 > Aktivieren diese Anmeldeinformationen in Ihrer Web Sites bietet entscheidende Vorteile, da Sie Millionen Benutzer bereits Konten mit dieser externen Anbietern haben. Diese Benutzer möglicherweise eher für Ihre Website registrieren können, wenn sie nicht zum Erstellen und speichern einen neuen Satz von Anmeldeinformationen verfügen. Nachdem ein Benutzer über einen dieser Anbieter angemeldet hat, können Sie auch soziale Vorgänge vom Anbieter integrieren.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 

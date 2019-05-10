@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: Externe Authentifizierungsdienste mit ASP.NET-Web-API (C#) | Microsoft-Dokumentation
+title: Externe Authentifizierungsdienste mit ASP.NET-Web-API (c#) | Microsoft-Dokumentation
 author: rmcmurray
 description: Beschreibt die Verwendung von externen Authentifizierungsdienste in ASP.NET Web-API.
 ms.author: riande
@@ -8,14 +8,14 @@ ms.date: 01/28/2019
 ms.assetid: 3bb8eb15-b518-44f5-a67d-a27e051aedc6
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: de9b64e6c582059ec66ab352f60773f50af7b1ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2571552a3f8040ff42bfa0a9fa48981f71a1e4b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064917"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133568"
 ---
-# <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externe Authentifizierungsdienste mit ASP.NET-Web-API (C#)
+# <a name="external-authentication-services-with-aspnet-web-api-c"></a>Externe Authentifizierungsdienste mit ASP.NET-Web-API (c#)
 
 Visual Studio 2017 und ASP.NET 4.7.2 Erweitern Sie die Sicherheitsoptionen für [Single Page Applications](../../../single-page-application/index.md) (SPA) und [Web-API-](../../index.md) Dienste zur Integration in externe Authentifizierung-Dienste, die mehrere enthalten OAuth-/OpenID und Dienste für soziale Authentifizierung: Microsoft-Konten, Twitter, Facebook und Google.  
 
@@ -72,7 +72,6 @@ In die Beispielen in dieser exemplarischen Vorgehensweise werden veranschaulicht
 
 > [!NOTE]
 > Ggf. müssen Sie möglicherweise Ihren FQDN an den Einstellungen für den Dienst für die externe Authentifizierung hinzufügen. Diese Anforderung basiert auf sicherheitseinschränkungen für einige externe Authentifizierungsdienste erfordern den FQDN in den Anwendungseinstellungen Ihrer, mit dem FQDN übereinstimmen, die von den Clients verwendet wird. (Für diese Schritte variiert stark für jeden Dienst für die externe Authentifizierung, müssen Sie in der Dokumentation für jeden Dienst externe Authentifizierung, um festzustellen, ob dies erforderlich ist und wie Sie diese Einstellungen zu konfigurieren.) Wenn Sie müssen zum Konfigurieren von IIS Express zur Verwendung eines FQDN für das Testen dieser Umgebung finden die [Konfigurieren von IIS Express verwenden einen vollständig qualifizierten Domänennamen](#FQDN) weiter unten in dieser exemplarischen Vorgehensweise.
-
 
 <a id="SAMPLE"></a>
 ## <a name="create-a-sample-web-application"></a>Erstellen einer Beispiel-Webanwendung
@@ -139,7 +138,6 @@ Einmal Anwendungs-ID und geheimen Schlüssel erhalten haben, verwenden die folge
 ## <a name="enabling-google-authentication"></a>Aktivieren von Google-Authentifizierung
 
 Mithilfe von Google Authentication müssen Sie ein Google Developer-Konto zu erstellen, und Ihr Projekt benötigen eine Anwendungs-ID und geheimen Schlüssel von Google um zu funktionieren. Weitere Informationen über ein Google Developer-Konto erstellen und Abrufen von Anwendungs-ID und geheimen Schlüssel, finden Sie unter [ https://developers.google.com ](https://developers.google.com).
-
 
 Verwenden Sie zum Aktivieren der Google-Authentifizierung für Ihre Webanwendung die folgenden Schritte aus:
 

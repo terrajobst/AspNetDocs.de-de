@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
-ms.openlocfilehash: c4a371958d8de72628c037b3568551aaa91e0153
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d03919e8465c28cf00bf057193452396523cb1af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380703"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125617"
 ---
 # <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>ASP.NET – Parallele Ausführung von .NET Framework 1.0 und 1.1
 
 > In diesem Whitepaper wird beschrieben, wie zum Installieren von sowohl .NET 1.0 und 1.1 von .NET auf dem Computer, sodass einer ASP.NET-Webanwendung auf beiden Versionen des Frameworks ausgeführt werden.
 > 
 > ASP.NET 1.1 zu ASP.NET 1.0 angewendet.
-
 
 In ASP.NET Datenändernde Anwendungen nebeneinander ausgeführt werden, wenn sie auf dem gleichen Computer installiert sind, jedoch verschiedene Versionen von .NET Framework verwenden. Das folgende Thema enthält Informationen zum Konfigurieren von ASP.NET-Anwendungen für Seite-an-Seite-Ausführung und bietet eine schrittweise Anleitung:
 

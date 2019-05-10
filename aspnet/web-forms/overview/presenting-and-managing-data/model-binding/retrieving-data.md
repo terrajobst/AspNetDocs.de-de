@@ -8,15 +8,14 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 08cb65f9ef8f5c36070454e011f41554d81f333f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398474"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131537"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit modellbindung und Web forms
-
 
 > Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung, wird die dateninteraktion mehr geradlinigere als Umgang mit Data Source-Objekte (z. B. "ObjectDataSource" oder SqlDataSource-Steuerelement). Diese Serie beginnt mit einführendes Material und verschiebt in späteren Tutorials zu erweiterten Konzepten übergegangen.
 > 
@@ -34,7 +33,6 @@ ms.locfileid: "59398474"
 > - Microsoft Visual Studio 2017 "oder" Microsoft Visual Studio Community 2017
 >   
 > In diesem Tutorial funktioniert auch mit Visual Studio 2012 und Visual Studio 2013, aber es gibt einige Unterschiede in der Vorlage "Benutzer"-Schnittstelle und Projekt.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -96,7 +94,6 @@ In diesem Tutorial müssen Sie folgende Aktionen ausführen:
    4. Wählen Sie für das Web Form die Masterseite **Site.Master**.
    
    5. Klicken Sie auf **OK**.
-   
 
 ## <a name="add-the-data-model"></a>Datenmodell hinzufügen
 

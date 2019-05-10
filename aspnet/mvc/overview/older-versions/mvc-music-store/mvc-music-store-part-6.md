@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b1e7bd0b16190b00e0e78a01ef71475e1c8d048a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59394821"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129666"
 ---
 # <a name="part-6-using-data-annotations-for-model-validation"></a>Teil 6: Modellüberprüfung mithilfe von Datenanmerkungen
 
@@ -24,7 +24,6 @@ durch [Jon Galloway](https://github.com/jongalloway)
 > Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
 >   
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 6 wird die Verwendung von Datenanmerkungen zur Modellvalidierung behandelt.
-
 
 Wir haben ein schwerwiegendes Problem mit unserem erstellen und Bearbeiten von Formularen: sie noch keine Überprüfung nicht möglich. Können wir z. B. für Pflichtfelder leer "und" Typ Buchstaben in das Feld für den Preis zu lassen, und der erste Fehler, die, den wir sehen werden, aus der Datenbank ist.
 
@@ -76,7 +75,6 @@ Sie müssen jedoch die ASP.NET MVC 3-gerüstvorlagen die clientseitige Validieru
 Geben einen einzelnen Buchstaben in das Feld "Titel" erfüllt die überprüfungsanforderungen zu erfüllen, damit der validierungsmeldung sofort entfernt wird.
 
 ![](mvc-music-store-part-6/_static/image3.png)
-
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-5.md)

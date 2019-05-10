@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: b3a006a0-3ea2-4d45-b833-e20e3a3c0a1a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: 5415913626eb063a4cb1013ba03857c130487f42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e665ca8dd064c23a8b8bd3593014969d0c3da48
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412176"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128512"
 ---
 # <a name="introducing-aspnet-web-pages---displaying-data"></a>Einführung in ASP.NET Web Pages - Anzeige von Daten
 
@@ -34,7 +34,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > - WebMatrix-Datenbanktools.
 > - `WebGrid` -Hilfsprogramm.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -96,7 +95,6 @@ Die Registerkarte der **Datentyp** aus, und wählen Sie **Int**. Dieser Wert gib
 
 > [!NOTE]
 > Wird nicht nennen wir jegliche hier (wesentlich), jedoch können Sie standardmäßige Windows-tastaturgesten wechseln in diesem Raster. Beispielsweise können Sie mit der tab zwischen den Feldern, können Sie einfach beginnen mit der Eingabe, um ein Element in einer Liste auswählen und so weiter.
-
 
 Letzte Registerkarte die **Standardwert** Feld (d. h. es leer lassen). TAB-Taste zu der **Primärschlüssel wird** Kontrollkästchen, und wählen Sie ihn. Diese Option wird die Datenbank angewiesen, die die *ID* Spalte enthält die Daten, die einzelne Zeilen zu identifizieren. (D. h. jede Zeile einen eindeutigen Wert in der ID-Spalte, die Sie verwenden können, um diese Zeile zu suchen müssen.)
 
@@ -177,7 +175,6 @@ Um das Raster auszuführen, müssen Sie ein paar Zeilen Code schreiben. Diese Ze
 > [!NOTE]
 > Sie müssen den tatsächlich viele Optionen zum Anzeigen von Daten auf einer Seite; die `WebGrid` Helper ist nur eine. Wir gewählt, der für dieses Tutorial, da es die einfachste Möglichkeit zum Anzeigen von Daten ist und es ausreichend flexibel ist. In den nächsten Tutorial sehen Sie, wie Sie eine weitere "manuell" Möglichkeit zur Verwendung von Daten auf der Seite, wodurch Sie die bessere Kontrolle über die Vorgehensweise beim Anzeigen von Daten verwenden.
 
-
 Klicken Sie im linken Bereich in WebMatrix auf die **Dateien** Arbeitsbereich.
 
 Die neue Datenbank, die Sie erstellt haben, ist in der *App\_Daten* Ordner. Wenn der Ordner nicht vorhanden, von WebMatrix für Ihre neue Datenbank erstellt. (Der Ordner möglicherweise vorhanden waren, wenn Sie die Hilfsprogramme zuvor installiert hatten.)
@@ -241,7 +238,6 @@ In dieser Phase wird die Datenbank geöffnet worden ist, haben Sie die Daten abg
 > Für einige dieser Vorgänge (wie einfügen und Löschen von Datensätzen) wird der Prozess, der den Vorgang angefordert wird, die entsprechenden Berechtigungen verfügen, in der Datenbank aufweist. Dies ist deshalb für Produktionsdatenbanken, die Sie häufig einen Benutzernamen und ein Kennwort angeben, wenn Sie eine Verbindung mit der Datenbank herstellen müssen.
 > 
 > Es gibt Dutzende von SQL-Befehle, aber sie alle folgen einem Muster wie die Befehle, die Sie hier sehen. Sie können SQL-Befehlen erstellen Sie die Datenbanktabellen, die Anzahl der Datensätze in einer Tabelle, Preise berechnen und viele weitere Vorgänge ausführen.
-
 
 ### <a name="adding-markup-to-display-the-data"></a>Hinzufügen von Markup zum Anzeigen der Daten
 

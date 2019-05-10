@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4fe34858aadb705ffb59e06ba805493d89aa4028
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3b0aa9816209cc326d3dea4b8dfb1b13cf697fcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403206"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130362"
 ---
 # <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>Verwenden der TagBuilder-Klasse zum Erstellen von HTML-Hilfsprogrammen (VB)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther stellt ein hilfreiches Dienstprogramm-Klasse in ASP.NET MVC-Framework mit dem Namen der TagBuilder-Klasse. Sie können die TagBuilder-Klasse verwenden, auf einfache Weise HTML-Tags erstellen.
-
 
 ASP.NET MVC-Framework umfasst eine hilfreiches Dienstprogramm-Klasse, die mit dem Namen der TagBuilder-Klasse, die Sie beim Erstellen von HTML-Hilfsprogramme verwenden können. TagBuilder-Klasse, können wie der Name der Klasse bereits vermuten lässt, Sie ganz einfach HTML-Tags erstellen. In diesem kurzen Tutorial finden Sie eine Übersicht über die TagBuilder-Klasse, und erfahren Sie, wie Sie diese Klasse verwenden, beim Rendern von HTML erstellen eine einfache HTML-Hilfsobjekt, &lt;Img&gt; Tags.
 
@@ -33,7 +32,6 @@ TagBuilder-Klasse ist in der System.Web.Mvc-Namespace enthalten. Er hat fünf Me
 - MergeAttribute() – können Sie Attribute, die ein Tag hinzuzufügen. Es gibt mehrere Überladungen dieser Methode.
 - SetInnerText() – können Sie den inneren Text des Tags festlegen. Der innere Text ist HTML-Codierung.
 - ToString() – können Sie das Tag zu rendern. Sie können angeben, ob es sich bei einem normalen Tag, ein Starttag, ein Endtag oder ein selbstschließendes Tag erstellen möchten.
-  
 
 TagBuilder-Klasse verfügt über vier wichtige Eigenschaften:
 
@@ -64,11 +62,9 @@ Nach der Erstellung der Image-Hilfe können Sie das Hilfsprogramm in Ihren ASP.N
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
-
 [![Das Dialogfeld "Neues Projekt"](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
 **Abbildung 01**: Mit dem Image-Hilfsprogramm ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
-
 
 Beachten Sie, dass Sie mit dem Image-Helfer am oberen Rand der Ansicht Index.aspx verbundene Namespaces importieren müssen. Das Hilfsprogramm wird mit der folgenden Anweisung importiert:
 

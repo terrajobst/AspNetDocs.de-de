@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c9aadec642837953dde4cf3e89ec9a7d484b380e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6fc995ca812a461247989204caff580d06e2343
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401334"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134268"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellung der Befehlszeile
 
@@ -22,7 +22,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 

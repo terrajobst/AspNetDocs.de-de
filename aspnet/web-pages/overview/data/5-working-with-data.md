@@ -8,12 +8,12 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ed2a2a1ee3cff7a50e67b6571b85f74d01efab7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379780"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133215"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites
 
@@ -44,7 +44,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > In diesem Tutorial funktioniert auch mit WebMatrix 3. Sie können ASP.NET Web Pages-3 und Visual Studio 2013 (oder Visual Studio Express 2013 für Web) verwenden. die Benutzeroberfläche wird jedoch abweichen.
 
-
 ## <a name="introduction-to-databases"></a>Einführung in Datenbanken
 
 Angenommen Sie, ein typisches Adressbuch. Für jeden Eintrag im Adressbuch (d. h. für jede Person) Sie haben verschiedene Angaben wie z. B. Vorname, Nachname, Adresse, e-Mail-Adresse und Telefonnummer.
@@ -67,7 +66,6 @@ Mit diesem Überblick über Datenbanken können Sie erfahren, wie Sie eine einfa
 > Sie können Daten auf viele weisen, schließt auch Textdateien und Tabellen speichern. Für die meisten Unternehmen verwendet werden Daten dagegen in einer relationalen Datenbank gespeichert.
 > 
 > In diesem Artikel geht nicht sehr tief in Datenbanken. Allerdings finden Sie es möglicherweise hilfreich, ein wenig über diese zu verstehen. In einer relationalen Datenbank ist die Informationen logisch in separaten Tabellen unterteilt. Beispielsweise kann eine Datenbank für eine Schule separate Tabellen für Schüler/Studenten und Klasse-Angebote enthalten. Die Software (z. B. SQL Server) unterstützt leistungsstarke Datenbankbefehle, mit denen Sie dynamisch richten Sie Beziehungen zwischen den Tabellen. Beispielsweise können Sie die relationale Datenbank, um eine logische Beziehung zwischen Klassen und Schüler/Studenten herzustellen, um einen Zeitplan zu erstellen. Speichern von Daten in separaten Tabellen reduziert die Komplexität der Tabellenstruktur und verringert den Bedarf an redundante Daten in Tabellen speichern.
-
 
 ## <a name="creating-a-database"></a>Erstellen einer Datenbank
 
@@ -173,7 +171,6 @@ Nachdem Sie eine Datenbank mit Daten darin haben, können Sie die Daten in einer
 > 
 > Es gibt Dutzende von SQL-Befehle, aber sie alle folgen einem Muster wie folgt. Sie können SQL-Befehlen erstellen Sie die Datenbanktabellen, die Anzahl der Datensätze in einer Tabelle, Preise berechnen und viele weitere Vorgänge ausführen.
 
-
 ## <a name="inserting-data-in-a-database"></a>Einfügen von Daten in einer Datenbank
 
 In diesem Abschnitt wird gezeigt, wie Sie eine Seite erstellen, die Benutzer auf ein neues Produkt hinzufügen können die *Produkt* Datenbanktabelle. Nachdem Sie ein neuen Produktdatensatz eingefügt wird, auf die Seite zeigt die aktualisierte Tabelle mithilfe der *ListProducts.cshtml* Seite, die Sie im vorherigen Abschnitt erstellt haben.
@@ -238,7 +235,6 @@ Nachdem die Daten in eine Tabelle eingegeben wurde, müssen Sie es aktualisieren
 > [!NOTE] 
 > 
 > **Wichtige** In eine Produktionswebsite, Sie in der Regel einschränken, wer darf hat, um die Daten zu ändern. Weitere Informationen über das Einrichten der Mitgliedschaft und zu Möglichkeiten, um Benutzern das Ausführen von Aufgaben auf der Website zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202904).
-
 
 1. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *EditProducts.cshtml*.
 2. Ersetzen Sie das vorhandene Markup in der Datei durch Folgendes:
@@ -321,7 +317,6 @@ In diesem Abschnitt wird gezeigt, wie Benutzer ein Produkt aus löschen lassen d
 > 
 > **Wichtige** In eine Produktionswebsite, Sie in der Regel einschränken, wer darf hat, um die Daten zu ändern. Weitere Informationen über das Einrichten der Mitgliedschaft und zu Möglichkeiten, Benutzer zur Ausführung von Aufgaben auf der Website zu autorisieren, finden Sie unter [Hinzufügen von Sicherheit und die Mitgliedschaft in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202904).
 
-
 1. Erstellen Sie eine neue CSHTML-Datei mit dem Namen der Website *ListProductsForDelete.cshtml*.
 2. Ersetzen Sie das vorhandene Markup durch Folgendes:
 
@@ -384,7 +379,6 @@ In diesem Abschnitt wird gezeigt, wie Benutzer ein Produkt aus löschen lassen d
 > Wie bereits erwähnt, die `Database.Open` Methode können Sie entweder ein Datenbankname oder eine Verbindungszeichenfolge übergeben und es werden ermitteln, was Sie verwenden. Dies ist sehr nützlich, bei der Bereitstellung (veröffentlichen) Ihrer Website. Können Sie eine *.sdf* Datei die *App\_Daten* Ordners beim Entwickeln und Testen Ihrer Website. Wenn Sie Ihre Website auf einem Produktionsserver verschieben, können Sie eine Verbindungszeichenfolge im Verwenden der *"Web.config"* -Datei mit dem gleichen Namen wie Ihre *.sdf* Datei, aber verweist auf des Hostinganbieters &#8212;ohne den Code ändern müssen.
 > 
 > Abschließend sollten Sie direkt mit einer Verbindungszeichenfolge zu arbeiten, können rufen Sie die `Database.OpenConnectionString` Methode und übergeben sie die tatsächliche Verbindungszeichenfolge anstatt nur der Name eines solchen Objekts in der *"Web.config"* Datei. Dies ist möglicherweise hilfreich in Situationen, in dem aus irgendeinem Grund Sie keinen Zugriff auf die Verbindungszeichenfolge (oder Werte, z. B. die *.sdf* Dateiname), bis die Seite ausgeführt wird. Allerdings in den meisten Fällen können Sie `Database.Open` wie in diesem Artikel beschrieben.
-
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 

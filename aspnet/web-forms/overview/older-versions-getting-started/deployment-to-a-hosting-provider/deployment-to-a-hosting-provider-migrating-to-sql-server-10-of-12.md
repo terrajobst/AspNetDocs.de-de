@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 98e521f348cdf1c2bd563f96badbaea6b23f4bcf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc4db5b1fcedca675a18f1b78e28f65e51b6cf09
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398955"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132754"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Migrieren zu SQLServer - 10 12
 
@@ -24,7 +24,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > In dieser tutorialreihe erfahren Sie, wie zum Bereitstellen einer ASP.NET-Anwendung (veröffentlichen) Webanwendungsprojekt, das eine SQL Server Compact-Datenbank mithilfe von Visual Studio 2012 RC oder Visual Studio Express 2012 RC für Web enthält. Sie können auch Visual Studio 2010 verwenden, wenn Sie die Web Publish Update installieren. Eine Einführung in die Reihe, finden Sie unter [im ersten Tutorial der Reihe](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
 > Ein Lernprogramm, das zeigt, Bereitstellungsfunktionen, die nach der RC-Version von Visual Studio 2012 eingeführt wurden, zeigt, wie zum Bereitstellen von SQL Server-Editionen als SQL Server Compact und zeigt, wie Sie in Azure App Service-Web-Apps bereitstellen, finden Sie unter [ASP.NET-webbereitstellung Mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -89,11 +88,9 @@ In der Projektmappe *SolutionFiles* im erstellten Ordner die [in der Produktions
 > [!NOTE]
 > Dieses Skript dient zum Arbeiten mit SQL Server 2008 und die IIS-Einstellungen in Windows 7, wie sie in diesem Tutorial angegeben sind. Wenn Sie eine andere Version von SQL Server oder Windows verwenden, oder wenn Sie IIS auf Ihrem Computer anders festlegen, können Änderungen an diesem Skript erforderlich sein. Weitere Informationen zu SQL Server-Skripts, finden Sie unter [SQL Server-Onlinedokumentation](https://go.microsoft.com/fwlink/?LinkId=132511).
 
-
 > [!NOTE] 
 > 
 > **Sicherheitshinweis** dieses Skript gibt Db\_Owner-Berechtigungen für den Benutzer, die Zugriff auf die Datenbank zur Laufzeit handelt es sich in der produktionsumgebung wiederholen müssen. In einigen Fällen empfiehlt es sich um einen Benutzer mit vollständigen Datenbankschema aktualisieren von Berechtigungen nur für die Bereitstellung, und geben Sie für die Laufzeit einen anderen Benutzer, der berechtigt nur zum Lesen und Schreiben von Daten. Weitere Informationen finden Sie unter **überprüfen die automatischen Änderungen der Datei "Web.config" für Code First-Migrationen** in [Bereitstellen in IIS als Testumgebung](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md).
-
 
 ## <a name="configuring-database-deployment-for-the-test-environment"></a>Konfigurieren von Datenbankbereitstellung für die Testumgebung
 

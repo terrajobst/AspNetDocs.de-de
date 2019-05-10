@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2e861511-450e-4752-a61e-4a01933f9b6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 586508039b9a3d78492aa02a77a1f29c64668b5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2d76e715cdbf6ec484fa0ff98b3b3d1d8dfd3961
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409693"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125836"
 ---
 # <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Szenario: Konfigurieren einer Produktionsumgebung für die Webbereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, einem typischen Bereitstellungsszenario für eine produktionsumgebung und erläutert, die Aufgaben, die Sie ausführen, um eine ähnliche Umgebung einrichten müssen.
-
 
 Die produktionsumgebung ist das endgültige Ziel für eine Webanwendung oder eine Website. Zu diesem Zeitpunkt Ihre Anwendung wurde durch Tests in einer Stagingumgebung bereitgestellt wurde und ist "online geschaltet." Die Merkmale einer produktionsumgebung können gemäß der Art und den Zweck Ihrer Web-Inhalte, die Größe Ihrer Organisation, Ihre Zielgruppe und viele andere Faktoren variieren. In einem Unternehmen-Szenario kann die produktionsumgebung diese Merkmale aufweisen:
 
@@ -33,7 +32,6 @@ Die produktionsumgebung ist das endgültige Ziel für eine Webanwendung oder ein
 
 > [!NOTE]
 > Horizontales Skalieren einer datenbankbereitstellung auf mehreren Servern ist, würde den Rahmen dieses Tutorials. Weitere Informationen zu diesem Bereich, finden Sie in [SQL Server-Onlinedokumentation](https://technet.microsoft.com/library/ms130214.aspx).
-
 
 Z. B. in unserer [lernprogrammszenario](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), ein Team Build-Server enthält die Build-Definitionen, mit denen Benutzer die Projektmappe Contact Manager erstellen und in einer Stagingumgebung in einem einzigen Schritt bereitstellen. Wenn die Anwendung bereit für die Bereitstellung zur Produktion, aufgrund der Einschränkungen von sicherheitsanforderungen und der Netzwerkinfrastruktur, ist muss der Produktion umgebungsadministrator manuell kopieren des Pakets auf einem Produktionswebserver und importieren Es wird über Internet Information Services (IIS) Manager.
 

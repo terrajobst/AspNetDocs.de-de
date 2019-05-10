@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 7834b5c418de9d05ee870641cfd7c7f9956ab210
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 06816f3555a806d41caf562b910a4ec4427b13bd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402998"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134232"
 ---
 # <a name="ui-and-navigation"></a>Benutzeroberfläche und Navigation
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
-
 
 In diesem Tutorial ändern Sie die Benutzeroberfläche von der standardwebanwendung, Funktionen der Wingtip Toys-Speicher-Front-Anwendung zu unterstützen. Außerdem fügen Sie einfach und datengebundene Navigation. Dieses Tutorial baut auf dem vorherigen Lernprogramm "Erstellen der Data Access Layer" und ist Teil der tutorialreihe Wingtip Toys.
 
@@ -75,7 +74,6 @@ Wenn Sie nicht einschließen, ein `@Page` auf der Seite die Richtlinie oder wenn
 > [!NOTE] 
 > 
 > Die *"Machine.config"* enthält auch entsprechende Details zu allen möglichen Konfigurationseinstellungen.
-
 
 ### <a name="web-server-controls"></a>Webserver-Steuerelemente
 
@@ -181,7 +179,6 @@ In diesem Tutorial werden Sie Aussehen und Verhalten der Anwendung Wingtip Toys 
 > 
 > Die ASP.NET Web Application-Vorlage verwendet die *Bundle.config* Datei im Stammverzeichnis des Projekts, das den Pfad der Bootstrap-CSS-Dateien zu speichern.
 
-
 ### <a name="modifying-the-default-navigation"></a>Ändern die Standardnavigation
 
 Die Standardnavigation für jede Seite in der Anwendung kann geändert werden, durch Ändern der unsortierten Liste Navigationselement, die in der *Site.Master* Seite.
@@ -196,7 +193,6 @@ Wie Sie in den oben genannten HTML-Code sehen können, Sie jedes Zeilenelement g
 > [!NOTE] 
 > 
 > Die Tilde (`~`) Zeichen wird verwendet, um anzugeben, dass die `href` Pfad beginnt im Stammverzeichnis des Projekts.
-
 
 ### <a name="adding-a-data-control-to-display-navigation-data"></a>Ein Steuerelement zum Anzeigen von Navigationsdaten hinzufügen
 
@@ -215,7 +211,6 @@ Dieser Code zeigt alle Kategorien aus der Datenbank. Die **ListView** Steuerelem
 > **Tipp**
 > 
 > Wenn Sie Code hinzufügen, indem Sie eingeben, während der Entwicklung, können Sie sicher sein, dass ein gültiger Member eines Objekts gefunden wird, dass Data-Steuerelemente, die verfügbaren Mitglieder basierend auf IntelliSense angezeigt, da stark typisiert. IntelliSense bietet Kontext entsprechenden Auswahlmöglichkeiten, während der Eingabe von Code, z. B. Eigenschaften, Methoden und Objekte.
-
 
 Im nächsten Schritt implementieren Sie die `GetCategories` Methode zum Abrufen von Daten.
 
@@ -253,7 +248,6 @@ Weiter oben in diesem Tutorial können Sie auch eine Initialisiererklasse (mit d
 > [!NOTE] 
 > 
 > Wenn die *App\_Daten* Ordner ist nicht sichtbar, oder wenn der Ordner leer ist, wählen Sie die **aktualisieren** Symbol und klicken Sie dann die **alle Dateien anzeigen** Symbol am oberen Rand der **Projektmappen-Explorer** Fenster. Erweitern die Breite der **Projektmappen-Explorer** Windows möglicherweise erforderlich, um alle verfügbaren Symbole anzuzeigen.
-
 
 Nachdem Sie die in enthaltenen Daten überprüfen können die *wingtiptoys.mdf* Datenbankdatei mit der **Server-Explorer** Fenster.
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 786be61d48f26e5765eac0c8d6fad7551897f711
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 72d69c0690c52c41f899e6cbe7cc656e537fe112
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387684"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131103"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Vorbereiten für die Datenbankbereitstellung
 
@@ -22,7 +22,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -134,7 +133,6 @@ Das Projekt ist jetzt bereit für die Bereitstellung der *ContosoUniversity* Dat
 > 
 > `Sql("UPDATE Department SET Budget = 1000");`
 
-
 ## <a name="create-scripts-for-membership-database-deployment"></a>Erstellen von Skripts für die Bereitstellung der Mitgliedschaft
 
 Die Contoso University-Anwendung verwendet die ASP.NET Membership-System und Forms-Authentifizierung zum Authentifizieren und Autorisieren von Benutzern. Die **Update Gutschriften** Seite nur für Benutzer, die in der Rolle "Administrator" möglich ist.
@@ -160,14 +158,12 @@ Diese Datenbank wird nicht von Entity Framework Code First, verwaltet, sodass Si
 > [!NOTE]
 > Eine neue ASP.NET-Mitgliedschaftssystem (jetzt als ASP.NET Identity) wurde mit Visual Studio 2013 eingeführt. Das neue System können Sie sowohl die Anwendung als auch die Mitgliedertabellen in der gleichen Datenbank zu speichern, und Sie können Code First-Migrationen verwenden, um beide bereitzustellen. Die beispielanwendung verwendet die früheren ASP.NET-Mitgliedschaftssystem, der nicht bereitgestellt werden kann, mithilfe von Code First-Migrationen. Die Verfahren zum Bereitstellen dieser Mitgliedschaftsdatenbank gelten auch für alle anderen Szenarien, in dem Ihre Anwendung, die zum Bereitstellen einer SQL Server-Datenbank, die nicht von Entity Framework Code First erstellt wird, muss, verwendet werden.
 
-
 Hier nicht zu, in der Regel die gleichen Daten in der Produktion werden sollen, die Sie in der Entwicklung haben. Wenn Sie einen Standort zum ersten Mal bereitstellen, ist es üblich, schließen Sie die meisten oder alle der Benutzerkonten, die Sie für Testzwecke zu erstellen. Aus diesem Grund hat das heruntergeladene Projekt zwei Datenbankrollenmitgliedschaften: *Aspnet-ContosoUniversity.mdf* mit-entwicklungsbenutzer und *Aspnet-ContosoUniversity-Prod.mdf* mit aktiver Benutzer. In diesem Tutorial werden die Namen in beiden Datenbanken identisch: *Admin* und *Nonadmin*. Beide Benutzer haben Sie das Kennwort *Devpwd* in der Entwicklungsdatenbank und *Prodpwd* in der Produktionsdatenbank.
 
 Sie müssen die entwicklungsbenutzer in der testumgebung und der Produktionsbenutzer zu Staging und Produktion bereitstellen. Dazu erstellen Sie zwei SQL-Skripts in diesem Tutorial, eine für die Entwicklung und eine für die Produktion, und konfigurieren Sie in späteren Tutorials des Veröffentlichungsprozesses, um sie auszuführen.
 
 > [!NOTE]
 > Die Mitgliedschaftsdatenbank speichert einen Hash der Kennwörter. Zum Bereitstellen von Konten, die von einem Computer zu einem anderen müssen Sie sicherstellen, dass hashing Routinen verschiedenen Hashes auf dem Zielserver kein generieren, als auf dem Quellcomputer. Sie werden die gleichen Hashwerte generieren, bei der Verwendung der ASP.NET Universal Providers, solange Sie nicht, dass den Standard-Algorithmus ändern. Der Standardalgorithmus ist HMACSHA256 und wird angegeben, der **Überprüfung** Attribut der **[MachineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** Element in der Datei "Web.config".
-
 
 Sie können Daten von Bereitstellungsskripts manuell, mithilfe von SQL Server Management Studio (SSMS) oder mithilfe eines Tools von Drittanbietern erstellen. Diese weiteren Verlauf dieses Tutorials erfahren Sie, wie Sie ihn in SSMS, aber wenn Sie nicht möchten, installieren und Verwenden von SSMS können Sie das Abrufen der Skripts aus der abgeschlossenen Version des Projekts und fahren Sie mit Abschnitt, in dem Sie sie in den Projektmappenordner speichern.
 

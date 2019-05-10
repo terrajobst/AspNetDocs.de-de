@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 66d88cfa-f26f-46b1-ad52-1c9e03c04a48
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ea526ce8abdf6f7013e8dd832824c21448878e0b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7134c95845ec7f22b5216e10b50ab8f81cd24806
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416843"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131253"
 ---
 # <a name="dynamically-adding-an-accordion-pane-c"></a>Dynamisches Hinzufügen von einem des Accordion-Bereichs (c#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2CS.pdf)
 
 > Das ' Accordion '-Steuerelement im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht dem Benutzer eine von ihnen zu einem Zeitpunkt angezeigt. Bereiche werden in der Regel auf der Seite selbst deklariert, aber von serverseitigem Code kann verwendet werden, um das gleiche Ergebnis zu erzielen.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -53,7 +52,6 @@ Das einzige Element ist nicht vorhanden ist, die ' Accordion ' selbst, auf die d
 Um das Beispiel abgeschlossen haben, geben Sie die beiden CSS-Klassen, die im Steuerelement ' Accordion ' auf die verwiesen wird. Informationen zum Schriftschnitt für den Browser:
 
 [!code-css[Main](dynamically-adding-an-accordion-pane-cs/samples/sample6.css)]
-
 
 [![Die Daten in der ' Accordion ' wurde von serverseitigem Code dynamisch hinzugefügt.](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
 

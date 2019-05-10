@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d90a327da40ffd6d7956c5fbe019cf9de30c706d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4d5f6447fdccefdcdf9497a9e94f23243302a0e1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407509"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120896"
 ---
 # <a name="tutorial-update-related-data-with-ef-in-an-aspnet-mvc-app"></a>Tutorial: Updates für verwandte Daten mit EF in einer ASP.NET MVC-app
 
@@ -126,7 +126,6 @@ Ersetzen Sie die `HttpPost` `Edit` Methode durch den folgenden Code. Updates fü
 
 Der Verweis auf `RetryLimitExceededException` erfordert eine `using` -Anweisung hinzufügen – den Mauszeiger auf `RetryLimitExceededException`. Die folgende Meldung wird angezeigt: ![ Wiederholen Sie die Ausnahmemeldung](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
 
-
 Wählen Sie **mögliche Korrekturen anzeigen**, klicken Sie dann **System.Data.Entity.Infrastructure verwenden**
 
 ![Lösen Sie Ausnahmen bei Wiederholungsversuchen](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image14.png)
@@ -234,7 +233,6 @@ Dieser Code behandelt nicht das Szenario ein "Instructor" als Administrator für
 ## <a name="add-office-location-and-courses-to-the-create-page"></a>Hinzufügen von einem Bürostandort und von Kursen zu der Seite „Erstellen“
 
 In *InstructorController.cs*, löschen Sie die `HttpGet` und `HttpPost` `Create` Methoden, und fügen Sie dann den folgenden Code an ihrer Stelle:
-
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample25.cs)]
 

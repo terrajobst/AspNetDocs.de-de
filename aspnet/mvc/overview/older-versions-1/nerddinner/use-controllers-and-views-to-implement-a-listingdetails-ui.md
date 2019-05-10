@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 64116e56-1c9a-4f07-8097-bb36cbb6e57f
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: abff97e5cc2663465fdf61f41ff69d17104fe8b6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 74319fe5ea4c79b50140834349e2fdf86420cfbb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379468"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128203"
 ---
 # <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>Implementieren einer Auflistungs-/Detailbenutzeroberfläche mit Controllern und Ansichten
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > Schritt 4 veranschaulicht das Hinzufügen ein Controllers an die Anwendung, die nutzt unseres Modells für ein Data listungsdetails/Navigationserlebnis für Dinner auf unserer Website NerdDinner Benutzer bereit.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-step-4-controllers-and-views"></a>NerdDinner, Schritt 4: Controller und Ansichten
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 5b982451-547b-4a2f-a5dc-79bc64d84d40
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 6f526b9842e02031b54b0a7519486ef8aa69021b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 802d93f7ca987d018967275bae68b8c56d883a25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397395"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130941"
 ---
 # <a name="understanding-the-build-process"></a>Grundlegendes zum Buildprozess
 
@@ -25,7 +25,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > 
 > > [!NOTE]
 > > Im vorherigen Thema [Grundlegendes zur Projektdatei](understanding-the-project-file.md), die wichtigsten Komponenten einer MSBuild-Projektdatei beschrieben und führte das Konzept der Split-Projektdateien Bereitstellung in mehreren zielumgebungen zu unterstützen. Wenn Sie nicht bereits mit diesen Konzepten vertraut sind, überprüfen Sie [Grundlegendes zur Projektdatei](understanding-the-project-file.md) vor dem Durcharbeiten dieses Themas.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -64,54 +63,40 @@ Sie können die beispiellösung verwenden, um diesen Prozess im Detail zu verfol
 > [!NOTE]
 > Anleitungen zum Anpassen der umgebungsspezifischen Projektdateien für Ihre eigenen serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
-
 ## <a name="invoking-the-build-and-deployment-process"></a>Aufrufen von Build- und Bereitstellungsprozess
 
 Um Contact Manager-Lösung in einer testumgebung für die Entwickler bereitzustellen, führt der Entwickler die *veröffentlichen-Dev.cmd* Befehlsdatei. Dies ruft MSBuild.exe, Angeben von *Publish.proj* wie die Projektdatei zum Ausführen und *Env-Dev.proj* als Parameterwert.
 
-
 [!code-console[Main](understanding-the-build-process/samples/sample1.cmd)]
-
 
 > [!NOTE]
 > Die **/fl** wechseln (kurz für **/FileLogger**) protokolliert die Buildausgabe in einer Datei namens *msbuild.log* im aktuellen Verzeichnis. Weitere Informationen finden Sie unter den [MSBuild-Befehlszeilenreferenz](https://msdn.microsoft.com/library/ms164311.aspx).
 
-
 An diesem Punkt MSBuild gestartet wird, lädt die *Publish.proj* -Datei und beginnt die Verarbeitung der Anweisungen in dieser. Die erste Anweisung informiert MSBuild, um das Projekt zu importieren, die Datei der **TargetEnvPropsFile** angegeben wird.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample2.xml)]
-
 
 Die **TargetEnvPropsFile** Parameter gibt an, die *Env-Dev.proj* Datei, sodass Sie MSBuild den Inhalt der führt die *Env-Dev.proj* Eingabedatei in die  *Publish.proj* Datei.
 
 Die nächsten Elemente, die von MSBuild in der zusammengeführten Datei trifft sind Gruppen von Eigenschaften. Eigenschaften werden in der Reihenfolge verarbeitet, in denen sie in der Datei angezeigt werden. MSBuild erstellt ein Schlüssel-Wert-Paar für jede Eigenschaft, vorausgesetzt, dass alle angegebenen Bedingungen erfüllt sind. In der Datei später definierte Eigenschaften überschreibt alle Eigenschaften, die mit dem gleichen Namen, die weiter oben in der Datei definiert. Betrachten Sie beispielsweise die **OutputRoot** Eigenschaften.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample3.xml)]
-
 
 Wenn MSBuild verarbeitet die erste **OutputRoot** -Element, ein ähnlich benannten Parameter wurde nicht angegeben ist, legt er den Wert des der **OutputRoot** Eigenschaft **... \Publish\Out**. Wenn es trifft die zweite **OutputRoot** Element, wenn das Ergebnis der bedingungsauswertung **"true"**, er überschreibt den Wert des der **OutputRoot** Eigenschaft mit dem Wert von der **OutDir** Parameter.
 
 Das nächste Element, das MSBuild feststellt wird ein einzelnes Elementgruppe enthält ein Element mit dem Namen **ProjectsToBuild**.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample4.xml)]
-
 
 MSBuild verarbeitet diese Anweisung durch eine Elementliste erstellen **ProjectsToBuild**. In diesem Fall die Liste enthält einen einzelnen Wert&#x2014;den Pfad und Dateinamen der Projektmappendatei.
 
 An diesem Punkt sind die übrigen Elemente Ziele. Ziele werden aus den Eigenschaften und Elemente unterschiedlich verarbeitet&#x2014;im wesentlichen Ziele werden nicht verarbeitet, es sei denn, sie werden explizit vom Benutzer angegeben wird oder durch ein anderes Konstrukt in der Projektdatei aufgerufen. Bedenken Sie, dass das öffnendes **Projekt** Tag enthält eine **DefaultTargets** Attribut.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample5.xml)]
-
 
 Dies weist MSBuild zum Aufrufen der **FullPublish** Ziel, wenn Ziele nicht angegeben, wenn MSBuild.exe aufgerufen wird. Die **FullPublish** Ziel keine Aufgaben enthalten; stattdessen gibt er einfach eine Liste der Abhängigkeiten.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample6.xml)]
-
 
 Mit dieser Abhängigkeit informiert MSBuild, in Reihenfolge zum Ausführen der **FullPublish** Ziel muss es diese Liste von Zielen in der angegebenen Reihenfolge aufrufen:
 
@@ -125,16 +110,13 @@ Mit dieser Abhängigkeit informiert MSBuild, in Reihenfolge zum Ausführen der *
 
 Die **Bereinigen** Ziel löscht im Grunde das Ausgabeverzeichnis und seinen gesamten Inhalt, als Vorbereitung für einen neuen Build.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample7.xml)]
-
 
 Beachten Sie, die das Ziel enthält eine **ItemGroup** Element. Beim Definieren von Eigenschaften oder Elemente in einem **Ziel** -Element, erstellen Sie *dynamische* Eigenschaften und Elemente. Das heißt, nicht die Eigenschaften oder Elemente verarbeitet, bis das Ziel ausgeführt wird. Das Ausgabeverzeichnis möglicherweise nicht vorhanden oder alle Dateien bis der Buildprozess eingeleitet wurde, enthalten, sodass Sie nicht erstellt werden können die  **\_FilesToDelete** als ein statisches Element aufgeführt; Sie müssen warten, bis die Ausführung ausgeführt wird. Daher erstellen Sie die Liste als dynamische Element innerhalb des Ziels.
 
 > [!NOTE]
 > In diesem Fall, da die **Bereinigen** Ziel ist die erste ausgeführt werden, gibt es keine Notwendigkeit, eine dynamische Gruppe verwenden. Allerdings ist es empfiehlt sich, die dynamischen Eigenschaften und Elemente in dieser Art von Szenario zu verwenden, wie möglicherweise Zielen in einer anderen Reihenfolge zu einem bestimmten Zeitpunkt ausgeführt werden soll.  
 > Sie sollten auch versuchen, um zu vermeiden, deklarieren Elemente, die nie verwendet werden. Wenn Sie Elemente, die nur ein bestimmtes Ziel verwendet werden, sollten Sie in das Ziel, das Entfernen unnötigen Aufwand zum Erstellungsprozess platziert.
-
 
 Dynamischen Elemente, da die **Bereinigen** Ziel ist recht einfach, und verwendet die integrierte **Nachricht**, **löschen**, und **RemoveDir**Aufgaben an:
 
@@ -147,9 +129,7 @@ Dynamischen Elemente, da die **Bereinigen** Ziel ist recht einfach, und verwende
 
 Die **BuildProjects** Ziel im Grunde alle Projekte in der Beispielprojektmappe erstellt.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample8.xml)]
-
 
 Dieses Ziel wurde im vorherigen Thema ausführlich beschrieben [Grundlegendes zur Projektdatei](understanding-the-project-file.md), um zu veranschaulichen, wie Aufgaben und Zielen Eigenschaften und Elemente verweisen. An diesem Punkt sind Sie vor allem interessiert die **MSBuild** Aufgabe. Sie können diese Aufgabe verwenden, um mehrere Projekte zu erstellen. Der Task erstellt eine neue Instanz von MSBuild.exe keine; die derzeit ausgeführte Instanz verwendet, um jedes Projekt erstellt werden. Der wichtige Punkte in diesem Beispiel werden die Eigenschaften der Bereitstellung:
 
@@ -159,14 +139,11 @@ Dieses Ziel wurde im vorherigen Thema ausführlich beschrieben [Grundlegendes zu
 > [!NOTE]
 > Die **Paket** Ziel aufruft, das Web Publishing Pipeline (WPP), die Integration von MSBuild und Web Deploy bereitstellt. Wenn Sie einen Blick auf die integrierten Ziele, die die WPP bereitstellt, lesen Sie möchten die *Microsoft.Web.Publishing.targets* -Datei im Ordner "% PROGRAMFILES (x 86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web".
 
-
 ### <a name="the-gatherpackagesforpublishing-target"></a>Das Ziel GatherPackagesForPublishing
 
 Wenn Sie untersuchen die **GatherPackagesForPublishing** Ziel, werden Sie feststellen, dass es tatsächlich alle Aufgaben, die nicht enthält. Stattdessen enthält sie eine einzelnes Element-Gruppe, die drei dynamische Elemente definiert.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample9.xml)]
-
 
 Diese Elemente beziehen sich auf die Bereitstellungspakete aus, die erstellt wurden die **BuildProjects** Ziel ausgeführt wurde. Sie konnten nicht definieren, dieser Elemente statisch in der Projektdatei, da die Dateien, die auf dem die Elemente verweisen bis vorhanden sind, nicht die **BuildProjects** Ziel ausgeführt wird. Stattdessen die Elemente müssen definiert werden dynamisch in ein Ziel, das nicht, bis aufgerufen wird nach der **BuildProjects** Ziel ausgeführt wird.
 
@@ -177,7 +154,6 @@ Die **DbPublishPackages** Element enthält einen einzelnen Wert, der den Pfad zu
 > [!NOTE]
 > Wenn Sie ein Datenbankprojekt erstellen und dabei wird das gleiche Schema als ein MSBuild-Projektdatei verwendet eine DEPLOYMANIFEST-Datei generiert. Sie enthält alle erforderlichen Informationen zum Bereitstellen einer Datenbank, einschließlich der Speicherort des Datenbankschemas (.dbschema) und Details von Skripts vor und nach der Bereitstellung. Weitere Informationen finden Sie unter [An Overview of Database Build und Bereitstellung](https://msdn.microsoft.com/library/aa833165.aspx).
 
-
 Erfahren Sie mehr darüber, wie Pakete und Bereitstellungsmanifesten für die Datenbank erstellt und verwendet [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md) und [Bereitstellen von Datenbankprojekten](deploying-database-projects.md).
 
 ### <a name="the-publishdbpackages-target"></a>Das Ziel PublishDbPackages
@@ -186,9 +162,7 @@ Kurz gesagt der **PublishDbPackages** Ziel aufruft, das VSDBCMD-Dienstprogramm z
 
 Erstens ist zu beachten, dass das öffnende Tag enthält eine **Ausgaben** Attribut.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
-
 
 Dies ist ein Beispiel der *Zielbatchverarbeitung*. In MSBuild-Projektdateien ist Batchverarbeitung eine Technik zum iterieren durch Sammlungen aus. Der Wert des der **Ausgaben** -Attribut, **"% (DbPublishPackages.Identity)"**, bezieht sich auf die **Identität** Metadata-Eigenschaft von der **DbPublishPackages**  Elementliste. This notation, **Outputs=%***(ItemList.ItemMetadataName)*, is translated as:
 
@@ -198,26 +172,20 @@ Dies ist ein Beispiel der *Zielbatchverarbeitung*. In MSBuild-Projektdateien ist
 > [!NOTE]
 > **Identität** ist eines der der [integrierte Metadatenwerte](https://msdn.microsoft.com/library/ms164313.aspx) , die jedem Element bei der Erstellung zugewiesen ist. Er verweist auf den Wert des der **Include** -Attribut in der **Element** Element&#x2014;in anderen Worten: der Pfad und Dateiname des Elements.
 
-
 In diesem Fall, da es nie mehr als ein Element mit dem gleichen Pfad und Dateinamen vorhanden sein sollte, arbeiten es im Wesentlichen mit Batches mit einer Größe von einem. Das Ziel wird einmal für jedes Datenbankpaket ausgeführt.
 
 Sehen Sie eine ähnliche Notation in der  **\_Cmd** -Eigenschaft, die einen VSDBCMD-Befehl mit den entsprechenden Schaltern erstellt.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
-
 
 In diesem Fall **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, und **%(DbPublishPackages.FullPath)** verweisen alle auf Metadatenwerte, der die **DbPublishPackages** Elementauflistung. Die  **\_Cmd** Eigenschaft wird verwendet, durch die **Exec** Aufgabe, das den Befehl aufruft.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
-
 
 Durch diese Notation die **Exec** aufgabenerstellung Batches, die basierend auf eindeutige Kombinationen aus der **DatabaseConnectionString**, **TargetDatabase**, und **FullPath** Metadatenwerte und die Aufgabe wird einmal für jeden Batch ausgeführt. Dies ist ein Beispiel der *Aufgabenbatchverarbeitung*. Jedoch, da die Zielebene Batchverarbeitung bereits unsere Elementauflistung in einzelnen Element Batches, unterteilt hat die **Exec** Task nur einmal für jede Iteration des Ziels ausgeführt. Das heißt, ruft diese Aufgabe das Dienstprogramm VSDBCMD einmal für jedes Datenbankpaket in der Projektmappe.
 
 > [!NOTE]
 > Weitere Informationen zu Ziel- und Batchverarbeitung von Aufgaben, finden Sie unter MSBuild [Batchverarbeitung](https://msdn.microsoft.com/library/ms171473.aspx), [Elementmetadaten bei der Batchverarbeitung von Zielen](https://msdn.microsoft.com/library/ms228229.aspx), und [Item Metadata in Task-Batchverarbeitung](https://msdn.microsoft.com/library/ms171474.aspx).
-
 
 ### <a name="the-publishwebpackages-target"></a>Das Ziel PublishWebPackages
 
@@ -228,15 +196,11 @@ Von diesem Punkt haben Sie aufgerufen der **BuildProjects** Ziel, die einem Webb
 
 Ebenso wie die **PublishDbPackages** Ziel der **PublishWebPackages** Zielbatchverarbeitung-Ziel verwendet, um sicherzustellen, dass das Ziel einmal für jede Webpaket ausgeführt wird.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample13.xml)]
-
 
 Innerhalb des Ziels das **Exec** Aufgabe dient zum Ausführen der *"Deploy.cmd"* -Datei für jede Webpaket.
 
-
 [!code-xml[Main](understanding-the-build-process/samples/sample14.xml)]
-
 
 Weitere Informationen zum Konfigurieren der Bereitstellung von Webpaketen finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md).
 

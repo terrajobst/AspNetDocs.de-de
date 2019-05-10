@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 0c55eb66-ba44-4d49-98e8-5c87fd9b1111
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8bc435e4b2b1eeedaab424695715e5ec51e116d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0880b2d6666ec3ae618573aa3a884ca4865c317c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381860"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132810"
 ---
 # <a name="master-pages-and-aspnet-ajax-c"></a>Masterseiten und ASP.NET AJAX (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_08_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_08_CS.pdf)
 
 > Erläutert die Optionen für die Verwendung von ASP.NET AJAX und Masterseiten. Untersucht, mit der Klasse "ScriptManagerProxy"; Erläutert, wie die verschiedenen JS-Dateien je nachdem, ob der ScriptManager, in der Masterdatenbank verwendet wird geladen werden, Seite oder die Seite "Inhalt".
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -35,11 +34,9 @@ Wenn Ihre Website verwendet Master-Seiten (wie gewünscht) die, müssen nicht un
 > [!NOTE]
 > In diesem Tutorial wird nicht untersuchen, entwerfen, oder Erstellen von AJAX-aktivierten Webanwendungen mit ASP.NET AJAX-Framework. Weitere Informationen zur Verwendung von AJAX finden Sie in der [ASP.NET AJAX-Videos](../../../videos/aspnet-ajax/index.md) und [Tutorials](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)sowie wie diese Ressourcen, die im Abschnitt Weitere nützliche Informationen am Ende dieses Tutorials aufgeführt.
 
-
 ## <a name="examining-the-markup-emitted-by-the-scriptmanager-control"></a>Untersuchen das Markup ausgegeben, die vom ScriptManager-Steuerelement
 
 Das ScriptManager-Steuerelement gibt Markup, das den Browser zum Herunterladen der JavaScript-Dateien, Zusammensetzung der ASP.NET AJAX-Clientbibliothek anweist. Es fügt auch etwas Inline-JavaScript auf der Seite, die diese Bibliothek initialisiert. Das folgende Markup zeigt den Inhalt, der die gerenderte Ausgabe einer Seite hinzugefügt wird, die ein ScriptManager-Steuerelement enthält:
-
 
 [!code-html[Main](master-pages-and-asp-net-ajax-cs/samples/sample1.html)]
 
@@ -49,7 +46,6 @@ Die externen Skript-Verweise und den Inline-Skript ausgegeben, die von ScriptMan
 
 > [!NOTE]
 > Wenn Sie planen, auch eine AJAX-Funktion in der Benutzeroberfläche der Masterseite, dann haben Sie keine andere Wahl, die innerhalb – müssen Sie den ScriptManager auf der Masterseite einschließen.
-
 
 Ein Nachteil von ScriptManager hinzufügen, auf die Masterseite ist, dass das obige Skript, im ausgegeben wird *jeder* Seite, unabhängig davon, ob er benötigt. Dies führt natürlich zu einer Verschwendung von Bandbreite für diese Seiten haben ScriptManager (über die Masterseite) enthalten, die noch keine Funktionen von ASP.NET AJAX-Framework verwenden. Aber wie viel Bandbreite wird verschwendet?
 
@@ -61,7 +57,6 @@ Im besten Fall wenn die Skriptdateien zwischengespeichert werden, erfolgt, die G
 > [!NOTE]
 > Wenn Sie weiterhin Verlegenheit gebracht, platzieren das ScriptManager-Steuerelement auf der Masterseite glauben, sollten Sie das Web Form (die `<form runat="server">` Markup auf der Masterseite). Jeder ASP.NET-Seite, die das postback Modell verwendet, muss genau ein Web Form enthalten. Ein Web Form hinzufügen, fügt zusätzliche Inhalt hinzu: eine Reihe von ausgeblendeten Formularfeldern die `<form>` selbst markieren und, falls erforderlich, eine JavaScript-Funktion für das Initiieren eines Postbacks aus Skript. Dieses Markup ist für Seiten, die nicht von postback nicht erforderlich. Dieses überflüssige Markup kann ausgeschlossen werden, indem Sie das Web Form der Masterseite manuell es auf jeder Inhaltsseite, die dies erfordert. Die Vorteile der Nutzung der Web Form in die Masterseite überwiegen jedoch die Nachteile müssen sie bestimmte Inhaltsseiten unnötigerweise hinzugefügt.
 
-
 ## <a name="step-1-adding-a-scriptmanager-control-to-the-master-page"></a>Schritt 1: Ein ScriptManager-Steuerelement hinzufügen auf der Masterseite
 
 Jede Webseite, die ASP.NET AJAX-Framework verwendet, muss genau ein ScriptManager-Steuerelement enthalten. Aufgrund dieser Anforderung ist es normalerweise sinnvoll, ein einzelnes ScriptManager-Steuerelement auf der Masterseite zu platzieren, sodass alle Inhaltsseiten über das ScriptManager-Steuerelement, das automatisch einbezogen haben. Darüber hinaus muss ScriptManager vor allen von der ASP.NET AJAX-Steuerelemente, z. B. den UpdatePanel- und UpdateProgress-Steuerelementen stammen. Aus diesem Grund empfiehlt es sich ScriptManager vor alle ContentPlaceHolder-Steuerelemente in das Web Form zu versetzen.
@@ -70,11 +65,9 @@ Jede Webseite, die ASP.NET AJAX-Framework verwendet, muss genau ein ScriptManage
 
 Ändern Sie nach dem Hinzufügen von ScriptManager auf der Seite, die `ID` aus `ScriptManager1` zu `MyManager`.
 
-
 [![Hinzufügen von ScriptManager auf der Masterseite](master-pages-and-asp-net-ajax-cs/_static/image2.png)](master-pages-and-asp-net-ajax-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen von ScriptManager auf der Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image3.png))
-
 
 ## <a name="step-2-using-the-aspnet-ajax-framework-from-a-content-page"></a>Schritt 2: Verwenden das ASP.NET AJAX-Framework von einer Inhaltsseite
 
@@ -82,16 +75,13 @@ Beim ScriptManager-Steuerelement hinzugefügt, die Masterseite können wir jetzt
 
 Zunächst erstellen Sie eine neue Seite in das Stammverzeichnis, das mit dem Namen `ShowRandomProduct.aspx`. Vergessen Sie nicht, binden Sie diese neue Seite, um die `Site.master` Masterseite.
 
-
 [![Fügen Sie eine neue ASP.NET-Seite auf der Website](master-pages-and-asp-net-ajax-cs/_static/image5.png)](master-pages-and-asp-net-ajax-cs/_static/image4.png)
 
 **Abbildung 02**: Fügen Sie eine neue ASP.NET-Seite auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image6.png))
 
-
 Denken Sie daran, dass in der [ *Titel, Meta-Tags und anderer HTML-Header angeben, auf der Masterseite* ](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md) Lernprogramm eine benutzerdefinierten Basisseite-Klasse, die mit dem Namen erstellten `BasePage` , die den Titel der Seite generiert, wenn es war nicht explizit festgelegt wurde. Wechseln Sie zu der `ShowRandomProduct.aspx` Seite des Code-Behind-Klasse und deren abgeleitet `BasePage` (anstelle von aus `System.Web.UI.Page`).
 
 Aktualisieren Sie abschließend die `Web.sitemap` hinzu, um einen Eintrag in dieser Lektion einzubeziehen. Fügen Sie das folgende Markup unterhalb der `<siteMapNode>` für den Master zur Interaktion der Inhalt Seite Lektion:
-
 
 [!code-xml[Main](master-pages-and-asp-net-ajax-cs/samples/sample2.xml)]
 
@@ -103,37 +93,29 @@ Wechseln Sie zurück zur `ShowRandomProduct.aspx`. Ziehen Sie aus dem Designer, 
 
 Unsere erste Aufgabe ist zum Anzeigen von Informationen zu einem zufällig ausgewählten Produkt innerhalb von UpdatePanel. Starten Sie von einem DetailsView-Steuerelement in UpdatePanel ziehen. Legen Sie das DetailsView-Steuerelement `ID` Eigenschaft `ProductInfo` und lösche die `Height` und `Width` Eigenschaften. Erweitern Sie DetailsViews-Smarttag und, wählen Sie aus der Dropdownliste wählen Sie die Datenquelle zum Binden von DetailsView an ein neues SqlDataSource-Steuerelement, das mit dem Namen `RandomProductDataSource`.
 
-
 [![Binden von DetailsView an ein neues SqlDataSource-Steuerelement](master-pages-and-asp-net-ajax-cs/_static/image8.png)](master-pages-and-asp-net-ajax-cs/_static/image7.png)
 
 **Abbildung 03**: DetailsView an ein neues SqlDataSource-Steuerelement zu binden ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image9.png))
 
-
 Konfigurieren Sie die SqlDataSource-Steuerelement für die Verbindung zur Northwind-Datenbank über die `NorthwindConnectionString` (die wir in erstellt die [ *Interaktion mit der Masterseite der Inhaltsseite* ](interacting-with-the-content-page-from-the-master-page-cs.md) Tutorial). Wenn die select-Anweisung konfigurieren wählen Sie eine benutzerdefinierte SQL­Anweisung angeben, und geben die folgende Abfrage:
-
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
 Die `TOP 1` -Schlüsselwort in der `SELECT` die Klausel gibt nur den ersten von der Abfrage zurückgegebenen Datensatz zurück. Die [ `NEWID()` Funktion](https://msdn.microsoft.com/library/ms190348.aspx) generiert einen neuen [Wert globally unique Identifier (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) und kann verwendet werden, eine `ORDER BY` -Klausel, um der Tabelle Datensätze in zufälliger Reihenfolge zurückgegeben.
 
-
 [![Konfigurieren von dem SqlDataSource-Steuerelement um einen einzelnen, zufällig ausgewählten Datensatz zurückgeben](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)
 
 **Abbildung 04**: Konfigurieren von dem SqlDataSource-Steuerelement zum Zurückgeben einer einzelnes, nach dem Zufallsprinzip ausgewählten Datensatz ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image12.png))
 
-
 Nach Abschluss des Assistenten, erstellt Visual Studio eine BoundField für die zwei Spalten, die von der obigen Abfrage zurückgegeben. An diesem Punkt sollte deklaratives Markup Ihrer Seite etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample4.aspx)]
 
 Abbildung 5 zeigt die `ShowRandomProduct.aspx` Seite, wenn Sie über einen Browser angezeigt. Klicken Sie auf die Aktualisierungsschaltfläche Ihres Browsers, um die Seite erneut zu laden. Daraufhin sollte die `ProductName` und `UnitPrice` Werte für einen neuen, zufällig ausgewählten Datensatz.
 
-
 [![Name und Preis des Produkts, auf eine zufällige wird angezeigt.](master-pages-and-asp-net-ajax-cs/_static/image14.png)](master-pages-and-asp-net-ajax-cs/_static/image13.png)
 
 **Abbildung 05**: Name und der Preis des Produkts auf eine zufällige angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image15.png))
-
 
 ### <a name="automatically-displaying-a-new-product-every-15-seconds"></a>Anzeigen von automatisch ein neues Produkt alle 15 Sekunden
 
@@ -141,11 +123,9 @@ ASP.NET AJAX-Framework umfasst ein Zeitgeber-Steuerelement, das zu einem bestimm
 
 Zu diesem Zweck ziehen Sie einen Timer aus der Toolbox, und legen Sie es in UpdatePanel. Ändern des Timers `ID` aus `Timer1` zu `ProductTimer` und die zugehörige `Interval` Eigenschaft aus 60000 und 15000 liegen. Die `Interval` Eigenschaft gibt die Anzahl der Millisekunden zwischen Postbacks; 15000 Einstellung bewirkt, dass des Timers ein teilupdates für Seiten-Postback alle 15 Sekunden ausgelöst wird. An diesem Punkt sollte des Timers deklarative Markup etwa wie folgt aussehen:
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample5.aspx)]
 
 Erstellen Sie einen Ereignishandler für des Timers `Tick` Ereignis. In diesem Ereignishandler müssen wir die Daten zur DetailsView erneut binden, durch den Aufruf des DetailsView `DataBind` Methode. Auf diese Weise weist die DetailsView, um die Daten aus der quellcodeverwaltung die Daten erneut abzurufen wird der auswählen und nach dem Zufallsprinzip einen neuen anzeigen ausgewählten Datensatz (genau wie bei der erneute Laden der Seite, indem Sie auf die im Browser auf die Schaltfläche "Aktualisieren").
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample6.cs)]
 
@@ -153,21 +133,17 @@ Das ist schon alles! Rufen Sie die Seite über einen Browser ein. Zunächst wird
 
 Um besser zu sehen, was hier passiert ist, fügen Sie ein Label-Steuerelement, das UpdatePanel, das anzeigt, die die Anzeige zuletzt aktualisiert wurde. Fügen Sie ein Label-Steuerelement innerhalb von UpdatePanel hinzu, legen Sie dessen `ID` zu `LastUpdateTime`, und deaktivieren Sie die `Text` Eigenschaft. Als Nächstes erstellen Sie einen Ereignishandler für des UpdatePanel `Load` Ereignisses und die aktuelle Uhrzeit in der Bezeichnung. (Des UpdatePanel `Load` Ereignis wird ausgelöst, bei jedem seitenpostback vollständig oder teilweise-.)
 
-
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample7.cs)]
 
 Durch diese Änderung abgeschlossen ist enthält die Seite für die Zeit, die das aktuell angezeigte Produkt geladen wurde. Abbildung 6 zeigt die Seite beim ersten Mal besucht hat. Abbildung 7 zeigt die Seite 15 Sekunden später, nachdem das Timer-Steuerelement verfügt über "Perform" und UpdatePanel aktualisiert wurden, um Informationen über ein neues Produkt anzuzeigen.
-
 
 [![Ein zufällig ausgewähltes Produkt wird beim Laden der Seite angezeigt.](master-pages-and-asp-net-ajax-cs/_static/image17.png)](master-pages-and-asp-net-ajax-cs/_static/image16.png)
 
 **Abbildung 06**: Ein zufällig ausgewähltes Produkt wird beim Laden der Seite angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image18.png))
 
-
 [![Alle 15 Sekunden, die ein neues nach dem Zufallsprinzip ausgewählten Produkt angezeigt wird](master-pages-and-asp-net-ajax-cs/_static/image20.png)](master-pages-and-asp-net-ajax-cs/_static/image19.png)
 
 **Abbildung 07**: Alle 15 Sekunden wird ein neues nach dem Zufallsprinzip ausgewählten Produkt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image21.png))
-
 
 ## <a name="step-3-using-the-scriptmanagerproxy-control"></a>Schritt 3: Verwenden des Steuerelements "ScriptManagerProxy"
 
@@ -177,7 +153,6 @@ Verwenden Sie zum Hinzufügen des Steuerelements "ScriptManagerProxy" ScriptMana
 
 > [!NOTE]
 > Eine ASP.NET-Seite kann nur maximal ein ScriptManager-Steuerelement vorhanden verfügen. Sie können nicht aus diesem Grund ein ScriptManager-Steuerelement an eine Inhaltsseite hinzufügen, wenn das ScriptManager-Steuerelement auf der Masterseite bereits definiert ist. Der einzige Zweck der "ScriptManagerProxy" ist eine Möglichkeit für Entwickler im ScriptManager auf der Masterseite zu definieren, aber immer noch die Möglichkeit zum ScriptManager Anpassungen pro Seite von Seite hinzufügen.
-
 
 Erweitern, um die ScriptManagerProxy-Steuerelement in Aktion sehen zu können, lassen Sie uns UpdatePanel in `ShowRandomProduct.aspx` , eine Schaltfläche aufzunehmen, die Client-seitige Skript zum Anhalten oder Fortsetzen der Timer-Steuerelement verwendet. Das Timer-Steuerelement verfügt über drei clientseitige-Methoden, die wir verwenden können, um diese gewünschte Funktionalität zu erzielen:
 
@@ -189,32 +164,25 @@ Erstellen wir eine JavaScript-Datei mit einer Variablen namens `timerEnabled` un
 
 Zunächst erstellen Sie einen neuen Ordner auf der Website mit dem Namen `Scripts`. Fügen Sie eine neue Datei zum Ordner "Scripts" mit dem Namen `TimerScript.js` JScript-Datei.
 
-
 [![Fügen Sie eine neue JavaScript-Datei zum Ordner "Scripts"](master-pages-and-asp-net-ajax-cs/_static/image23.png)](master-pages-and-asp-net-ajax-cs/_static/image22.png)
 
 **Abbildung 08**: Hinzufügen einer neuen JavaScript-Datei, die `Scripts` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image24.png))
-
 
 [![Eine neue JavaScript-Datei wurde auf der Website hinzugefügt](master-pages-and-asp-net-ajax-cs/_static/image26.png)](master-pages-and-asp-net-ajax-cs/_static/image25.png)
 
 **Abbildung 09**: Die Website eine neue JavaScript-Datei hinzugefügt wurde ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image27.png))
 
-
 Als Nächstes fügen Sie mit dem folgenden Skript der TimerScript.js-Datei hinzu:
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample8.cs)]
 
 Jetzt müssen wir diese benutzerdefinierten JavaScript-Datei in registrieren `ShowRandomProduct.aspx`. Wechseln Sie zurück zur `ShowRandomProduct.aspx` und ein ScriptManagerProxy-Steuerelement auf der Seite hinzufügen, legen Sie dessen `ID` zu `MyManagerProxy`. Registrieren Sie ein benutzerdefiniertes JavaScript Datei wählen Sie im Designer des Steuerelements "ScriptManagerProxy", und fahren Sie mit dem Fenster "Eigenschaften". Eine der Eigenschaften wird mit der Bezeichnung Skripts. Durch Aktivieren dieser Eigenschaft zeigt den ScriptReference-Auflistungs-Editor, die in Abbildung 10 dargestellt. Klicken Sie auf die Schaltfläche "hinzufügen", um einen neuen Skriptverweis und geben dann den Pfad zur Skriptdatei in die Path-Eigenschaft: `~/Scripts/TimerScript.js`.
 
-
 [![Fügen Sie einen Skriptverweis auf das Steuerelement "ScriptManagerProxy"](master-pages-and-asp-net-ajax-cs/_static/image29.png)](master-pages-and-asp-net-ajax-cs/_static/image28.png)
 
 **Abbildung 10**: Fügen Sie einen Skriptverweis auf das Steuerelement "ScriptManagerProxy" hinzu ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image30.png))
 
-
 Nach dem Hinzufügen des Skriptverweis des Steuerelements "ScriptManagerProxy" deklarative ist Markup wird aktualisiert eine `<Scripts>` Auflistung mit einem einzelnen `ScriptReference` Eintrag wie den folgenden Codeausschnitt von Markup veranschaulicht wird:
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample9.aspx)]
 
@@ -222,23 +190,19 @@ Die `ScriptReference` Eintrag weist den "ScriptManagerProxy", um einen Verweis a
 
 Wir können jetzt Aufrufen der `ToggleTimer` in definierte Funktion `TimerScript.js` das vom Clientskript in die `ShowRandomProduct.aspx` Seite. Fügen Sie folgenden HTML-Code innerhalb von UpdatePanel hinzu:
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample10.aspx)]
 
 Dadurch werden eine Schaltfläche mit dem Text "Pause" angezeigt. Jedes Mal, wenn sie angeklickt wird, die JavaScript-Funktion `ToggleTimer` aufgerufen wird, wird die Übergabe eines Verweises auf die Schaltfläche und die Id-Wert, der das Timer-Steuerelement (`ProductTimer`). Beachten Sie die Syntax zum Abrufen der `id` Wert des Timer-Steuerelements. `<%=ProductTimer.ClientID%>` Gibt den Wert des der `ProductTimer` Timer-Steuerelement `ClientID` Eigenschaft. In der [ *Steuerelement-IDs auf Inhaltsseiten* ](control-id-naming-in-content-pages-cs.md) Tutorial erläutert die Unterschiede zwischen der Serverseite `ID` Wert und die resultierende clientseitige `id` Wert, und wie `ClientID` gibt zurück, die die clientseitige `id`.
 
 Abbildung 11 zeigt diese Seite, wenn zunächst über einen Browser aufgerufen. Der Zeitgeber wird derzeit ausgeführt und aktualisiert die angezeigten Produktinformationen alle 15 Sekunden. Abbildung 12 zeigt den Bildschirm, nachdem auf die Schaltfläche "Anhalten" geklickt wurde. Klicken Sie auf die Schaltfläche "Pause" hält den Timer und der Text der Schaltfläche zum "Resume" aktualisiert. Die Produktinformationen aktualisieren (und und werden alle 15 Sekunden aktualisieren), sobald der Benutzer auf Fortsetzen klickt.
 
-
 [![Klicken Sie auf die Schaltfläche "Pause" um das Timer-Steuerelement zu beenden.](master-pages-and-asp-net-ajax-cs/_static/image32.png)](master-pages-and-asp-net-ajax-cs/_static/image31.png)
 
 **Abbildung 11**: Klicken Sie auf die Schaltfläche "Pause" um das Timer-Steuerelement zu beenden ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image33.png))
 
-
 [![Klicken Sie auf die Schaltfläche "fortsetzen", um den Timer neu zu starten.](master-pages-and-asp-net-ajax-cs/_static/image35.png)](master-pages-and-asp-net-ajax-cs/_static/image34.png)
 
 **Abbildung 12**: Klicken Sie auf die Schaltfläche "fortsetzen", um den Timer neu zu starten ([klicken Sie, um das Bild in voller Größe anzeigen](master-pages-and-asp-net-ajax-cs/_static/image36.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 9e2cd1beca03b81140b9d58c5e43dbf7c6b8808b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1819704a4cfd3e6b82de1d8db916e729459d244f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393053"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130912"
 ---
 # <a name="create-the-project"></a>Erstellen des Projekts
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
-
 
 In diesem Tutorial werden Sie zu erstellen, überprüfen Sie, und führen Sie das Standardprojekt in Visual Studio, die Sie mit Funktionen von ASP.NET vertraut machen können. Darüber hinaus überprüfen Sie die Visual Studio-Umgebung.
 
@@ -83,7 +82,6 @@ Sie können zwischen wechseln **Entwurf** anzeigen und **Quelle** Ansicht eine O
 > 
 > - [ASP.NET Web-API](../../../../web-api/index.md) -ein Framework zum Erstellen von HTTP-Dienste, die eine Breite Palette von Clients, einschließlich Browsern und mobilen Geräten zu erreichen.
 > - [ASP.NET SignalR](../../../../signalr/index.md) – eine Bibliothek, die Entwicklung von Echtzeit-Webfunktionen erleichtert.
-
 
 ### <a name="reviewing-the-project"></a>Überprüfen das Projekt
 

@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fbbb9e2ef6ce540f0ab422d2b80e4a5409076c83
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409719"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132925"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>Webentwicklung mit ASP.NET 4 und Visual Studio 2010 – Übersicht
 
 > Dieses Dokument enthält eine Übersicht über viele der neuen Features für ASP.NET, die in.NET Framework 4 und in Visual Studio 2010 enthalten sind.
 > 
 > [In diesem Whitepaper herunterladen](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
-
 
 **Inhalt**
 
@@ -145,7 +144,6 @@ Eine neue Skalierbarkeit-Funktion, die mit dem Namen *Autostart-* , direkt der A
 > 
 > Weitere Informationen finden Sie unter [Application Warm-Up](https://www.iis.net/extensions/applicationwarmup%20on%20the%20IIS.net) auf der Website IIS.net. Eine exemplarische Vorgehensweise, das veranschaulicht, wie Sie die Aufwärmphase-Funktion verwenden, finden Sie unter [Einstieg in das IIS 7.5 Anwendungsmodul Aufwärmphase](https://www.iis.net/learn/manage) auf der Website IIS.net.
 
-
 Um die Funktion für automatischen Start zu verwenden, legt IIS-Administrator ein Anwendungspools in IIS 7.5 automatisch gestartet werden soll, mithilfe der folgenden Konfigurations in der `applicationHost.config` Datei:
 
 [!code-xml[Main](overview/samples/sample5.xml)]
@@ -206,7 +204,6 @@ In der Standardeinstellung die *RequestPathInvalidChars* Attribut definiert acht
 
 > [!NOTE]
 > Beachten Sie ASP.NET 4 lehnt URL-Pfade, die Zeichen im ASCII-Bereich von 0 x 00 bis 0x1F, enthalten immer ab, da die ungültige URL-Zeichen sind, wie in RFC 2396 der IETF definiert ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt)). In Versionen von Windows Server mit IIS 6 oder höher wird der Gerätetreiber von http.sys Protokoll weist automatisch URLs mit diesen Zeichen.
-
 
 <a id="0.2__Toc253429245"></a><a id="0.2__Toc243304619"></a>
 
@@ -270,7 +267,6 @@ ASP.NET 4 nutzt die neue Ressource-monitoring-Funktionen, von der CLR eingeführ
 
 > [!NOTE]
 > Beachten Sie die `aspnet.config` Datei befindet sich in dem Verzeichnis, in denen .NET Framework installiert ist. Es ist nicht die `Web.config` Datei.
-
 
 Wenn die *AppDomainResourceMonitoring* Feature aktiviert wurde, die zwei neuen Leistungsindikatoren sind in der Leistungskategorie "ASP.NET-Anwendungen" verfügbar: *% Prozessorzeit verwaltet* und  *Verwalteter Speicher verwendet*. Beide dieser Leistungsindikatoren verwenden die neue CLR Anwendungsdomäne Resource Management-Funktion zum Nachverfolgen von Geschätzte CPU-Zeit und die verwaltete speicherauslastung der einzelnen ASP.NET-Anwendungen. Mit ASP.NET 4 haben Administratoren daher nun eine genauere Ansicht in den Ressourcenverbrauch der einzelnen Anwendungen, die in einem einzelnen Worker-Prozess ausgeführt.
 
@@ -678,7 +674,6 @@ Die *statische* Einstellung wirkt sich das Zurücksetzen der Namenhierarchie fü
 > [!NOTE]
 > Beachten Sie, dass sie entscheiden, ob Sie sicher, dass das gerenderte Steuerelement-IDs eindeutig sind. Ist dies nicht der Fall ist, können sie Funktionen, die die eindeutigen IDs für einzelne HTML-Elemente, z. B. den Client erfordert unterbrechen *"Document.getElementById"* Funktion.
 
-
 #### <a name="creating-predictable-client-ids-in-data-bound-controls"></a>Vorhersagbare Client-IDs erstellen in datengebundenen Steuerelementen
 
 Die *"ClientID"* Werte, die generiert werden, für die Steuerelemente in einem datengebundenen Listensteuerelement durch den alten Algorithmus werden kann lang sein und sind nicht wirklich vorhersagbar. Die *"ClientIDMode"* Funktionalität können Sie weitere steuern, über die Verwendung dieser IDs generiert werden.
@@ -1004,12 +999,10 @@ Im vorherige Beispiel gerendert wird, die folgende Ausgabe, ohne die *Tabelle*, 
 
 > Content
 
-
 Diese Erweiterung kann auf den Inhalt des Steuerelements im Hinblick auf CSS-Format erleichtern, da keine unerwarteten Tags vom Steuerelement gerendert werden.
 
 > [!NOTE]
 > Beachten Sie diese Änderung deaktiviert die Unterstützung für die AutoFormat-Funktion im Visual Studio 2010-Designer, da es nicht mehr ist eine *Tabelle* -Element, das Stilattribute hosten kann, die durch die automatische Formatierung-Option generiert werden.
-
 
 <a id="0.2__Toc253429270"></a><a id="0.2__Toc243304644"></a>
 
@@ -1057,7 +1050,6 @@ Das vorhergehende Markup generiert folgenden HTML-Code:
 
 > [!NOTE]
 > Beachten Sie, wenn Sie festlegen, *RepeatLayout* zu *OrderedList* oder *UnorderedList*, *RepeatDirection* -Eigenschaft kann nicht mehr verwendet werden und wird Lösen Sie zur Laufzeit eine Ausnahme aus, wenn die Eigenschaft in Ihrem Markup oder Code festgelegt wurde. Die Eigenschaft würde keinen Wert aufweisen, da das visuelle Layout dieser Steuerelemente mithilfe von CSS stattdessen definiert ist.
-
 
 <a id="0.2__Toc253429272"></a><a id="0.2__Toc243304646"></a>
 
@@ -1146,7 +1138,6 @@ Dynamic Data eingeführt wurde in der .NET Framework 3.5 SP1-Version in der Mitt
 
 > [!NOTE]
 > Weitere Informationen zu beachten, finden Sie unter den [Dynamic Data-Dokumentation](https://msdn.microsoft.com/library/cc488545.aspx) in der MSDN Library.
-
 
 Für ASP.NET 4 hat Dynamic Data verbessert, um Entwickler noch mehr Optionen zum schnellen Erstellen von datengesteuerten Websites.
 

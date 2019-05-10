@@ -8,12 +8,12 @@ ms.date: 02/28/2014
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
-ms.openlocfilehash: 952d13fec206bdb8d398cead70d10335731f583d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f4a9b3fb61552b070db11fba617b5627fcd71cd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402218"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124083"
 ---
 # <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>Lebenszyklus einer ASP.NET MVC 5-Anwendung
 
@@ -31,7 +31,6 @@ Hier können Sie eine PDF-Dokument herunterladen, die Diagramme, die der Lebensz
 - Platzierung und Zweck der allen überschreibbaren Methoden auf die [Controller](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx) Objekt in der Pipeline zur anforderungsverarbeitung. Sie können nicht besitzen oder die Notwendigkeit, die alle eine Methode zu überschreiben, aber es ist wichtig, ihre Rolle im Lebenszyklus Anwendung nachvollziehen können, damit Sie in der entsprechenden Life Cycle, Lebenszyklus-Phase für den Effekt Code schreiben können, die Sie möchten.
 - Einfach unglaublich von Diagrammen, die zeigt, wie die Filter-Typen (Authentifizierung, Autorisierung, Aktion und Ergebnis) aufgerufen wird.
 - Verknüpfung zu einer nützlichen Artikel oder Blogs jeder Punkt in der Detailansicht von Interesse.
-
 
 ## <a name="next-steps"></a>Nächste Schritte
 

@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d275e3b154ca3397294d6cd0924cb6a50bbcef9a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 59687ffb4d3319b55cc980b72af1084ca0288793
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395536"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133917"
 ---
 # <a name="using-the-formviews-templates-c"></a>Mithilfe der FormView Vorlagen (c#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe) oder [PDF-Datei herunterladen](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
 
 > Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Stattdessen wird das FormView-Steuerelement gerendert, mithilfe von Vorlagen. Verwenden in diesem Lernprogramm wird untersucht das FormView-Steuerelement, um eine weniger strenge Anzeige von Daten zu präsentieren.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -39,21 +38,17 @@ Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Sie
 
 In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um eine weniger strenge Anzeige von Produkten zu präsentieren. Statt später durch die Felder für die Name, Kategorie, Lieferanten und So weiter, das FormView `ItemTemplate` zeigt, dass diese Werte mit einer Kombination aus einem Header-Element und ein `<table>` (siehe Abbildung 1).
 
-
 [![Das Raster-ähnliches Layout im DetailsView betrachtet, bricht das FormView-Steuerelement](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
 **Abbildung 1**: FormView, die aus der Grid-Like Layout dargestellt im DetailsView Zeilenumbrüche ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image3.png))
-
 
 ## <a name="step-1-binding-the-data-to-the-formview"></a>Schritt 1: Binden der Daten an das FormView-Steuerelement
 
 Öffnen der `FormView.aspx` Seite und einem FormView-Steuerelement aus der Toolbox in den Designer ziehen. Beim erstmaligen FormView hinzufügen wird es als ein graues Feld, das uns angewiesen, eine `ItemTemplate` ist erforderlich.
 
-
 [![Die FormView-Steuerelement kann im Designer nicht gerendert werden, bis eine Elementvorlage bereitgestellt wird](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
 **Abbildung 2**: Das FormView-Steuerelement kann nicht gerendert werden in den Designer an, bis ein `ItemTemplate` dient ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image6.png))
-
 
 Die `ItemTemplate` kann manuell erstellt werden (mithilfe der deklarativen Syntax) oder können durch die Bindung der FormView-Steuerelement an ein Datenquellen-Steuerelement mithilfe des Designers werden automatisch erstellt. Dieser automatisch erstellten `ItemTemplate` enthält HTML-Code enthält der Namen jedes Feld und eine Bezeichnung, deren steuern `Text` Eigenschaft gebunden ist, um den Wert des Felds. Dieser Ansatz auch Auto-erstellt ein `InsertItemTemplate` und `EditItemTemplate`, beide für die einzelnen Datenfelder vom Datenquellen-Steuerelement mit Eingabesteuerelementen aufgefüllt.
 
@@ -62,7 +57,6 @@ Wenn Sie die Vorlage automatisch erstellen möchten, fügen Sie aus der FormView
 Wenn Sie eher, werden erstellen würden die `ItemTemplate` Sie können manuell hinzufügen und dem ObjectDataSource-Steuerelement konfigurieren, indem Sie sie aus der Toolbox in den Designer ziehen. Allerdings festlegen Sie nicht das FormView Datenquelle aus dem Designer. Stattdessen wechseln Sie zur Quellansicht und manuell festlegen, der FormView `DataSourceID` Eigenschaft, um die `ID` Wert, der dem ObjectDataSource-Steuerelement. Fügen Sie als Nächstes die `ItemTemplate`.
 
 Unabhängig davon, welchen Ansatz Sie sich entschieden, in Anspruch nehmen, an diesem Punkt FormViews deklarative Markup aussehen sollte:
-
 
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample1.aspx)]
 
@@ -76,7 +70,6 @@ Dieses Markup kann eingegeben wird, über das FormView Vorlagen bearbeiten-Schni
 
 Das folgende Markup zeigt die FormView deklarative Markup nach dem `ItemTemplate`der Struktur wurde abgeschlossen:
 
-
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample2.aspx)]
 
 Beachten Sie, dass die Datenbindungssyntax - `<%# Eval("ProductName") %>`für Beispiel direkt in die Ausgabe der Vorlage eingefügt werden kann. D. h. sie müssen nicht zugewiesen werden ein Label-Steuerelement `Text` Eigenschaft. Angenommen, wir haben die `ProductName` in der angezeigten Werten ein `<h3>` Element mit `<h3><%# Eval("ProductName") %></h3>`, die für das Produkt als Chai gerendert werden `<h3>Chai</h3>`.
@@ -87,16 +80,13 @@ Da es sich um keine CheckBoxFields zur Verfügung, mit der FormView-Steuerelemen
 
 Mit der `ItemTemplate` abgeschlossen ist, wird die Produktinformationen auf deutlich flexiblere Weise angezeigt. Vergleichen Sie die DetailsView-Ausgabe aus dem letzten Tutorial (Abbildung 3), mit der Ausgabe von FormView generiert werden, in diesem Tutorial (Abbildung 4).
 
-
 [![Die starren DetailsView-Ausgabe](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
 **Abbildung 3**: Die starren DetailsView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image9.png))
 
-
 [![Die fließende FormView-Ausgabe](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
 **Abbildung 4**: Die fließende FormView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-cs/_static/image12.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

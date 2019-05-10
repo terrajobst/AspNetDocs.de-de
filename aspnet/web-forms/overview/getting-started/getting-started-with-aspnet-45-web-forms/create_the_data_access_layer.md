@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: bc91eba17938de15f03ecc1e745aac57c7eac7a1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 61a9dae22efed9cb7e8957a8c131396cbdeea3c9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419495"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131359"
 ---
 # <a name="create-the-data-access-layer"></a>Erstellen der Datenzugriffsschicht
 
@@ -22,7 +22,6 @@ by [Erik Reitan](https://github.com/Erikre)
 [Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
-
 
 Dieses Tutorial beschreibt das Erstellen, Zugriff auf und überprüfen Daten aus einer Datenbank mithilfe von ASP.NET Web Forms und Entity Framework Code First. Dieses Tutorial baut auf dem vorherigen Lernprogramm "Dem Projekt erstellen" und ist Teil der tutorialreihe Wingtip Toys-Store. Wenn Sie dieses Tutorial abgeschlossen haben, Sie erstellt eine Gruppe von Datenzugriffs-Klassen, die in der *Modelle* -Ordner des Projekts.
 
@@ -119,7 +118,6 @@ Wie Sie aus dem obigen Code sehen können, wenn die Datenbank erstellt und initi
 > 
 > Wenn Sie beispielsweise, dass die Datenbank jedes Mal neu erstellt werden, Sie haben die Anwendung ausgeführt, könnten Sie mit der `DropCreateDatabaseAlways` -Klasse anstelle der `DropCreateDatabaseIfModelChanges` Klasse. Verwenden Sie für diese tutorialreihe, jedoch die `DropCreateDatabaseIfModelChanges` Klasse.
 
-
 An diesem Punkt in diesem Tutorial haben Sie haben eine *Modelle* Ordner mit vier neuen Klassen und eine Standardklasse:
 
 ![Erstellen der Datenzugriffsebene - Ordner "Models"](create_the_data_access_layer/_static/image3.png)
@@ -136,7 +134,6 @@ Um die Datenmodelle beim Starten der Anwendung zu initialisieren, aktualisieren 
 > 
 > Im Projektmappen-Explorer können Sie wählen Sie entweder die *"Global.asax"* Datei oder das *"Global.asax.cs"* Datei so bearbeiten Sie die *"Global.asax.cs"* Datei.
 
-
 1. Fügen Sie folgenden Code in Gelb zu markiert die `Application_Start` -Methode in der die *"Global.asax.cs"* Datei.   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample5.cs?highlight=9-10,22-23)]
@@ -144,7 +141,6 @@ Um die Datenmodelle beim Starten der Anwendung zu initialisieren, aktualisieren 
 > [!NOTE] 
 > 
 > Ihr Browser muss HTML5 zum Anzeigen des Codes in gelb hervorgehoben werden, wenn dieser tutorialreihe in einem Browser anzeigen unterstützen.
-
 
 Wie im obigen Code wird angezeigt, wenn die Anwendung gestartet wird, gibt die Anwendung an, dass der Initialisierer, der beim ersten Mal Daten ausgeführt wird, zugegriffen wird. Die beiden zusätzlichen Namespaces sind erforderlich, für den Zugriff auf die `Database` Objekt und die `ProductDatabaseInitializer` Objekt.
 

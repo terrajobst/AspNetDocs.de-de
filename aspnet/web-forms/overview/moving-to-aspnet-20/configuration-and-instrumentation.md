@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 21ebbaee-7ed8-45ae-b6c1-c27c88342e48
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: b06f105b16087f97788e0ab360af41f538d2c1ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cd5bedce5459e8cf8e72df8de69ebd82f2d97789
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400801"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131717"
 ---
 # <a name="configuration-and-instrumentation"></a>Konfiguration und Instrumentierung
 
 by [Microsoft](https://github.com/microsoft)
 
 > Es gibt wesentliche Änderungen in der Konfiguration und Instrumentierung in ASP.NET 2.0. Die neue ASP.NET-Konfigurations-API ermöglicht Änderungen an der Konfiguration programmgesteuert erfolgen. Darüber hinaus viele neue Konfigurationseinstellungen vorhanden ermöglichen neue Konfigurationen und Instrumentation.
-
 
 Es gibt wesentliche Änderungen in der Konfiguration und Instrumentierung in ASP.NET 2.0. Die neue ASP.NET-Konfigurations-API ermöglicht Änderungen an der Konfiguration programmgesteuert erfolgen. Darüber hinaus viele neue Konfigurationseinstellungen vorhanden ermöglichen neue Konfigurationen und Instrumentation.
 
@@ -40,7 +39,6 @@ Der Konfigurations-API von ASP.NET umfasst einen Satz von ASP.NET-Verwaltungsobj
 > [!NOTE]
 > Die Konfigurations-API unterstützt die Erstellung von IIS-Anwendungen nicht.
 
-
 ## <a name="working-with-local-and-remote-configuration-settings"></a>Arbeiten mit lokalen und Remote-Konfigurationseinstellungen
 
 Ein Konfigurationsobjekt darstellt, die Ansicht der Konfigurationseinstellungen, die für eine bestimmte physische Einheit, z. B. ein Computer, oder für eine logische Entität, z. B. eine Anwendung oder eine Website gelten. Die angegebene logische Einheit kann auf dem lokalen Computer oder auf einem Remoteserver vorhanden sein. Wenn keine Konfigurationsdatei für eine angegebene Entität vorhanden ist, stellt das Konfigurationsobjekt die Standardeinstellungen für die Konfiguration dar, wie in der Datei Machine.config definiert.
@@ -58,7 +56,6 @@ Verwenden Sie die GetSection "und" GetSectionGroup-Methode, um Konfigurationsinf
 
 > [!NOTE]
 > Wenn Sie eine statische GetSection-Methode, die Path-Parameter akzeptiert verwenden, muss der Path-Parameter an die Anwendung finden Sie in der der Code ausgeführt wird. Andernfalls der Parameter wird ignoriert, und die Konfigurationsinformationen für den aktuell ausgeführten Anwendung wird zurückgegeben.
-
 
 ### <a name="writing"></a>Schreiben
 
@@ -97,7 +94,6 @@ Die Konfiguration, die Objekt darstellt, stellt keine bestimmten Konfigurationsd
 
 > [!NOTE]
 > Beachten Sie, dass der obige Code ist der /ProductInfo Pfad nicht vorhanden, die Standardkonfiguration, wie angegeben in der Datei "Machine.config" zurückgeben wird.
-
 
 Nachdem Sie das Konfigurationsobjekt haben, klicken Sie dann können die GetSection "und" GetSectionGroup-Methode Sie die Konfigurationseinstellungen anzuzeigen. Im folgenden Beispiel wird einen Verweis auf die identitätswechseleinstellungen für die oben genannten ProductInfo-Anwendung:
 
@@ -199,7 +195,6 @@ Sie können auch Ereignisse an e-Mail-Adresse weiterleiten. Seien Sie vorsichtig
 
 > [!NOTE]
 > Keines dieser e-Mail-Anbieter ist für Sie konfiguriert. Sie müssen sie die Datei "Web.config" hinzufügen.
-
 
 Der Hauptunterschied zwischen diesen zwei e-Mail-Anbieter ist, dass SimpleMailWebEventProvider-e-Mails in einer generischen Vorlage sendet, die nicht geändert werden kann. Die Beispieldatei "Web.config" hinzugefügt der Liste der konfigurierten Anbieter mithilfe der folgenden Regel dieser e-Mail-Anbieter:
 
@@ -313,7 +308,6 @@ Sie können auch eine Anwendung direkt nach dem Hinzufügen von neuen Quelldatei
 > [!NOTE]
 > Kompilierung einer Anwendung, die eine geschachtelte Anwendung enthält wird die geschachtelte Anwendung nicht kompiliert werden. Die geschachtelte Anwendung muss separat kompiliert werden.
 
-
 ### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[Kompilieren einer Anwendung für die Bereitstellung](https://msdn.microsoft.com/library/ms229863.aspx)
 
 Sie kompilieren eine Anwendung für die Bereitstellung (Kompilierung zu einer Zielposition) durch Festlegen des TargetDir-Parameters. TargetDir kann den endgültigen Speicherort für die Webanwendung, oder die kompilierte Anwendung kann weiter bereitgestellt werden. Mithilfe der **-u** Option kompiliert die Anwendung so, dass Sie auf bestimmte Dateien in der kompilierten Anwendung Änderungen vornehmen können, ohne Neukompilieren. ASPNET\_compiler.exe wird unterschieden zwischen statischen und dynamischen Dateitypen, und sie unterschiedlich behandelt, wenn Sie die Anwendung zu erstellen.
@@ -371,7 +365,6 @@ Jede die folgenden Übungen baut auf den vorherigen Übungen. Sie müssen sie in
 2. Fügen Sie eine neue Web-Konfigurationsdatei mit dem Standort hinzu.
 3. Fügen Sie der Datei "Web.config" Folgendes ein:
 
-
 [!code-xml[Main](configuration-and-instrumentation/samples/sample14.xml)]
 
 Dadurch wird sichergestellt, dass Sie berechtigt, die Datei "Web.config" zu speichern.
@@ -381,22 +374,18 @@ Dadurch wird sichergestellt, dass Sie berechtigt, die Datei "Web.config" zu spei
 3. Ändern Sie das Schaltflächen-Steuerelement-ID, **BtnToggleDebug** und der Text, der **Umschaltstatus Debuggen**.
 4. Öffnen Sie die Codeansicht für die Code-Behind-Datei "default.aspx", und fügen eine **mit** -Anweisung für **System.Web.Configuration** wie folgt:
 
-
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample15.cs)]
 
 1. Fügen Sie zwei private Variablen auf die Klasse und eine Seite\_Init-Methode, wie unten dargestellt:
-
 
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample16.cs)]
 
 1. Fügen Sie den folgenden Code zur Seite\_laden:
 
-
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample17.cs)]
 
 1. Speichern Sie und suchen Sie "default.aspx". Beachten Sie, dass das Label-Steuerelement den aktuellen Debugstatus angezeigt.
 2. Doppelklicken Sie auf das Schaltflächen-Steuerelement im Designer, und fügen Sie den folgenden Code zum Click-Ereignis für das Schaltflächen-Steuerelement:
-
 
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample18.cs)]
 
@@ -413,16 +402,13 @@ In dieser Übungseinheit erstellen Sie Code, der Sie die Protokollierung von Anw
 4. Fügen Sie eine neue Bezeichnung an "default.aspx" hinzu. Ändern Sie die ID, **LblLogAppEvents**.
 5. Öffnen Sie die CodeBehind-Ansicht für "default.aspx", und fügen Sie eine neue Deklaration für eine Variable vom Typ HealthMonitoringSection, wie unten dargestellt:
 
-
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample19.cs)]
 
 1. Fügen Sie den folgenden Code am vorhandenen Code auf\_Init:
 
-
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample20.cs)]
 
 1. Doppelklicken Sie auf der Dropdownliste aus, und fügen Sie den folgenden Code, um das SelectedIndexChanged-Ereignis:
-
 
 [!code-csharp[Main](configuration-and-instrumentation/samples/sample21.cs)]
 

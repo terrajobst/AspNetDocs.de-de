@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: eeed594e785b99146140dcd2833a95bf6e467823
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: abb59f16759a7d32c6900baf96fe3a1299170922
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390440"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129787"
 ---
 # <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Erstellen ein Entity Framework-Datenmodells für eine ASP.NET MVC-Anwendung (1 von 10)
 
@@ -57,7 +57,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > ## <a name="original-version-of-the-tutorial"></a>Ursprüngliche Version des Lernprogramms
 > 
 > Die ursprüngliche Version des Lernprogramms finden Sie in der [EF 4.1 / MVC 3-e-Book](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#GettingStartedwiththeEntityFramework4.1usingASP.NETMVC).
-
 
 ## <a name="the-contoso-university-web-application"></a>Der Contoso University-Web-Anwendung
 
@@ -130,7 +129,6 @@ In den folgenden Abschnitten erstellen Sie für jede dieser Entitäten eine Klas
 
 > [!NOTE]
 > Wenn Sie versuchen, das Projekt zu kompilieren, vor dem Erstellen aller dieser Entitätsklassen, erhalten Sie Compilerfehler zu beheben.
-
 
 ### <a name="the-student-entity"></a>Die Entität "Student"
 

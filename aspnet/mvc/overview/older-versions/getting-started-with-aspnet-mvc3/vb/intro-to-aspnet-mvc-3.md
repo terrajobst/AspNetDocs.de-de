@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: a1b3d789-93b4-487f-b90d-80c9c9b4f8fa
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: 47c9d69b9fee4a9e126ef2e889c91fe0bdd479f6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e4fe82ed57e888363f22c84b178b83a07c32c95d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385929"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130092"
 ---
 # <a name="intro-to-aspnet-mvc-3-vb"></a>Einführung zu ASP.NET MVC 3 (VB)
 
@@ -28,7 +28,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
 > Ein Visual Web Developer-Projekt mit Quellcode VB.NET steht zur Ergänzung dieses Themas. [Laden Sie die Version VB.NET](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie C# -Code bevorzugen, wechseln Sie zu der [c#-Version](../cs/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
-
 
 In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
 

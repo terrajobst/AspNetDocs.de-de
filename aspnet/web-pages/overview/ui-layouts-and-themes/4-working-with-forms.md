@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: 680739cbcf54bc9ca7a3bd8167d043ff537eaad5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417532"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128401"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Arbeiten mit HTML-Formularen in ASP.NET Web Pages (Razor)-Websites
 
@@ -42,7 +42,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
-
 
 ## <a name="creating-a-simple-html-form"></a>Erstellen ein einfaches HTML-Formular
 
@@ -89,7 +88,6 @@ Um das Formular zu verarbeiten, fügen Sie Code, der die übermittelten Feldwert
 > Es ist eine gute Idee, die mit HTML-Codierung von einem beliebigen Zeitpunkt, die Sie anzeigen, dass die Zeichenfolgen (Eingabe), Sie von einem Benutzer erstellt. Falls nicht, kann ein Benutzer versuchen, mit Ihrer Webseite ein böswilliges Skript ausführen oder eine andere stellt, die eine Beeinträchtigung der Sicherheit Ihrer Site oder einfach nicht gewünscht ist. (Dies ist besonders wichtig, wenn Sie Benutzereingaben, Stelle speichern, und klicken Sie dann später &#8212; z. B. einen Blogkommentar, Benutzer-Überprüfung oder so was.)
 > 
 > Zur Vermeidung dieser Probleme, die ASP.NET Web Pages automatisch HTML-codiert Text Inhalte, die Sie aus Ihrem Code ausgeben. Wenn Sie z. B. den Inhalt einer Variablen oder einen Ausdruck mit Code wie anzeigen `@MyVar`, ASP.NET Web Pages verschlüsselt automatisch die Ausgabe.
-
 
 ## <a name="validating-user-input"></a>Überprüfen der Benutzereingabe
 

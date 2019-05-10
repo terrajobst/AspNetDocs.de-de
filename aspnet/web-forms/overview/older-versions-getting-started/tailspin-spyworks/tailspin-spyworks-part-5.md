@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: eaef475a-ca91-47ea-a4a7-d074005ed80c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: cf2cee3888228069e59e9e44ffc2bc56fbba10e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c60eece9223c47304786d7b0d0ca4b11ac0572e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415660"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130998"
 ---
 # <a name="part-5-business-logic"></a>Teil 5: Geschäftslogik
 
@@ -22,7 +22,6 @@ durch [Joe Stagner](https://github.com/JoeStagner)
 > Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
 > 
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 5 fügt etwas Geschäftslogik.
-
 
 ## <a id="_Toc260221671"></a>  Hinzufügen von Geschäftslogik
 

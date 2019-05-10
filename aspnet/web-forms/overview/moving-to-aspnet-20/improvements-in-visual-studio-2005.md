@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 64215d556ded0850537a13856fe69b094116ebca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379767"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130328"
 ---
 # <a name="improvements-in-visual-studio-2005"></a>Verbesserungen in Visual Studio 2005
 
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 bietet Entwickler eine lange Liste der Verbesserungen und Erweiterungen für Webprojekte.
-
 
 Visual Studio 2005 bietet Entwickler eine lange Liste der Verbesserungen und Erweiterungen für Webprojekte. So leistungsfähig wie Visual Studio .NET 2002 und 2003 sind, gab es viele Klagen wie Webprojekte verarbeitet wurden. Visual Studio 2005 fügt eine Reihe neuer Features hinzu, um die Adresse diese Beschwerden. Für diejenigen, die die Methode bevorzugen, dass Visual Studio .NET 2003 Kompilierung von Webanwendungen behandelt, finden Sie unter [Web Application Projects](https://go.microsoft.com/fwlink/?LinkId=57870).
 
@@ -36,7 +35,6 @@ Für Entwickler, die FrontPage-Servererweiterungen in ihren Projekten verwenden 
 
 > [!NOTE]
 > FrontPage-Servererweiterungen sind immer noch für remote-Projekt erstellen, öffnen usw. erforderlich.
-
 
 ## <a name="aspnet-development-server"></a>ASP.NET Development Server
 
@@ -64,12 +62,9 @@ Webentwickler haben viele neue Optionen, die für die projekterstellung in Visua
 
 Klicken Sie hier, um ein video zur exemplarischen Vorgehensweise zum Erstellen von Webprojekten in Visual Studio 2005 anzuzeigen.
 
-
 ![](improvements-in-visual-studio-2005/_static/image1.png)
 
-
 [Open Vollbild-Video](improvements-in-visual-studio-2005/_static/creating_projects1.wmv)
-
 
 ### <a name="file-system-projects"></a>File System-Projekte
 
@@ -77,7 +72,6 @@ In den video zur exemplarischen Vorgehensweise haben Sie gesehen, können Sie We
 
 > [!NOTE]
 > Der ASP.NET Development Server kann für Kunden verwirrend. Wenn ein Webprojekt im Dateisystem in IISs Verzeichnisstruktur (z. B. "c:" / Inetpub/Wwwroot) erstellt wird, wird die Website weiterhin über den ASP.NET Development Server beim Start von Visual Studio 2005 durchsucht werden. Aus diesem Grund ist eine IIS-Konfiguration (d. h. Authentifizierungsmethoden) nicht anwendbar.
-
 
 Das Standard-Web-Projekt entfernt auch viele der Aufwand von enthält nur eine Seite "default.aspx" default.cs-Datei und einen Ordner "App/_Data". Die Datei "Web.config" und den Ordner mit Sonderfunktionen (d. h. app/_code) werden hinzugefügt, wenn sie benötigt werden. Das Webprojekt enthält nur die Dateien und Ordner, die Sie benötigen.
 
@@ -90,22 +84,17 @@ Die lokale IIS-Option liest die Standortinformationen aus der Metabasis auf dem 
 > [!NOTE]
 > Die vs###/_tmp.htm-Datei, und get/_aspx/_ver.aspx werden nicht mehr verwendet, um Versionsinformationen zu bestimmen.
 
-
 Die Standardoption für die HTTP-ist die lokale IIS. Diese Option, liest der IIS-Metabasis, um zu bestimmen, welche Websites zur Verfügung stehen und den Speicherort aus, um Inhalte zu erstellen. Sie können einen anderen Ordner oder virtuelle Verzeichnis auswählen, indem Sie ihn in der Strukturansicht auswählen. Sie können auch ein neues virtuelles Verzeichnis erstellen, markieren die Ordner als Anwendungen, sowie Löschen vorhandener virtueller Verzeichnisse in diesem Dialogfeld.
-
 
 ![Der Speicherort-Dialogfeld "auswählen"](improvements-in-visual-studio-2005/_static/image1.gif)
 
 **Abbildung 1**: Der Speicherort-Dialogfeld "auswählen"
 
-
 Anders als in früheren Versionen von Visual Studio, wenn Sie überprüfen die **Secure Sockets Layer verwenden** aktiviert und das SSL-Zertifikat entspricht nicht der URL, die Sie durchsuchen, wird eine Sicherheitswarnung Dialogfeld gefragt werden, ob Sie es tun würden angezeigt Möchten Sie fortfahren. Verwenden Visual Studio .NET 2003 sind, wenn das Zertifikat ein mit einem nicht vorhanden war, würde das Erstellen des Projekts fehlschlagen.
-
 
 ![Security Warnungen in Bezug auf SSL-Zertifikat](improvements-in-visual-studio-2005/_static/image2.gif)
 
 **Abbildung 2**: Security Warnungen in Bezug auf SSL-Zertifikat
-
 
 ### <a name="note-on-host-headers"></a>Hinweis zur Host-Header
 
@@ -113,19 +102,15 @@ Wenn Sie eine Webanwendung auf einer Website, die an eine bestimmte IP-Adresse g
 
 Wenn Sie die Remote-Standortsystemserver-Option auswählen, ändert sich das Dialogfeld um Sie zur Eingabe der Ziel-URL für die neue Website zu ermöglichen. Diese URL muss auf einem Server, die die FrontPage-Servererweiterungen aktiviert wurde. Wenn Sie mit dem lokalen Webserver mit der FrontPage-Servererweiterungen arbeiten möchten, können Sie verwenden Sie die Remote-Standortsystemserver-Option und geben Sie eine lokale URL.
 
-
 ![Erstellen einer Website auf einem Remoteserver](improvements-in-visual-studio-2005/_static/image1.jpg)
 
 **Abbildung 3**: Erstellen einer Website auf einem Remoteserver
 
-
 Beim Erstellen einer Anwendung an einem Remotestandort über SSL an, wenn das SSL-Zertifikat nicht übereinstimmt, wird das Dialogfeld "Bestätigung" etwas anders als in dem Dialogfeld angezeigt, wenn die lokale IIS-Option verwenden.
-
 
 ![Die Remote-Standortsystemserver-Sicherheitswarnung](improvements-in-visual-studio-2005/_static/image3.gif)
 
 **Abbildung 4**: Die Remote-Standortsystemserver-Sicherheitswarnung
-
 
 <a id="_Toc116100243"></a>
 
@@ -136,14 +121,11 @@ Visual Studio 2005 wird die Option zum Erstellen von Websites über FTP eingefü
 > [!NOTE]
 > Speicherort des temporären Ordners ist "c:" / Dokumente und Einstellungen /&lt;Benutzer&gt;/lokale Einstellungen/Temp/VWDWebCache/&lt;Server&gt;/_&lt;Anwendungsname&gt;
 
-
 Wenn Sie die FTP-Option verwenden zu können, wird ein Speicherort auswählen-Dialogfeld angezeigt werden. Sie geben Sie die erforderlichen FTP-Verbindungsinformationen, in diesem Dialogfeld wie unten dargestellt.
-
 
 ![Die Option für FTP-Speicherort-Dialogfeld](improvements-in-visual-studio-2005/_static/image2.jpg)
 
 **Abbildung 5**: Die Option für FTP-Speicherort-Dialogfeld
-
 
 ## <a name="lab-setup-ftp-site-and-create-a-project"></a>Lab: Richten Sie der FTP-Site ein ein, und erstellen Sie ein Projekt
 
@@ -199,7 +181,6 @@ Die folgenden Schritte aus konfigurieren die FTP-Site so, dass ein Benutzer eine
 > [!NOTE]
 > Wenn Sie einen Fehler enthält, die dadurch entstehen, dass der Typ /_Default laden erhalten, stellen Sie sicher, dass Sie ASP.NET 2.0 auf Ihrer Website und nicht auf eine frühere Version ausführen. Sie können dies tun, auf der Registerkarte ASP.NET in IIS.
 
-
 ## <a name="opening-web-projects"></a>Öffnen von Webprojekten
 
 Öffnen von Webprojekten ist ähnlich wie beim Erstellen von Projekten. In den folgenden Abschnitten aufrufen Bereiche, für die bei der Arbeit in der IDE verfolgen. Dazu gehört auch die Arbeit mit Webprojekten, die über HTTP und FTP.
@@ -212,11 +193,9 @@ Wählen Sie zum Öffnen eines Webprojekts Website öffnen, über das Menü Datei
 
 Wie zuvor in diesem Modul angegeben wird, verwendet Visual Studio nicht mehr eine Projektdatei. Wenn Sie eine Website aus dem Dateisystem öffnen möchten, müssen Sie daher tatsächlich einen beliebigen Ordner aus, dem Sie möchten, auswählen, auch wenn der Ordner, den Sie auswählen, nicht als ein Webprojekt in Visual Studio ursprünglich erstellt wurde. Beispielsweise können Sie den Ordner "Eigene Dateien" als eine Website zu öffnen und Visual Studio problemlos öffnen und Anzeigen von Dateien, wie unten dargestellt.
 
-
 ![Eigene Dateien, die als eine Website geöffnet](improvements-in-visual-studio-2005/_static/image3.jpg)
 
 **Abbildung 6**: *Meine Dokumente* als eine Website geöffnet
-
 
 Da Visual Studio nur zusätzliche Dateien und Ordner bei Bedarf erstellt wird, werden keine zusätzlichen Dateien oder Ordner auf den Speicherort hinzugefügt, die Sie öffnen. Ein Nebeneffekt dieser Architektur ist, dass Sie schachteln von Websites auf dem System verhindert. Betrachten Sie beispielsweise die folgende Verzeichnisstruktur.
 
@@ -234,11 +213,9 @@ Beim Öffnen von Websites über HTTP gelesen werden Einstellungen entweder über
 
 Obwohl Visual Studio ein Symbol für Anwendungen angezeigt wird, die unter der Anwendung geschachtelt sind, die derzeit in der IDE geöffnet wird, können sie nicht erweitert werden, um ihren Inhalt anzuzeigen. Sie können jedoch darauf, um sie zu öffnen doppelklicken. Wenn Sie dies tun, wird ein Dialogfeld dazu aufgefordert, entweder die Webanwendung öffnen (und die aktuell geöffnete Projektmappe zu ersetzen) angezeigt werden, oder Sie fügen Sie der Webanwendung in der aktuellen Lösung hinzu.
 
-
 ![Durch Doppelklicken auf eine geschachtelte Anwendungssymbol bietet Ihnen dieses Dialogfeld](improvements-in-visual-studio-2005/_static/image4.jpg)
 
 **Abbildung 7**: Durch Doppelklicken auf eine geschachtelte Anwendungssymbol bietet Ihnen dieses Dialogfeld
-
 
 <a id="_Toc116100247"></a>
 
@@ -250,11 +227,9 @@ C:/Dokumente und Einstellungen /&lt;Benutzer&gt;/lokale Einstellungen/Temp/VWDWe
 
 Wenn Sie FTP verwenden zu können, müssen Visual Studio die base-URL für Ihr Projekt angeben, sodass Sie sie durchsuchen können, wie unten dargestellt. Wenn Sie eine base-URL nicht angeben, fordert Visual Studio Sie es beim ersten Sie versuchen, eine Seite der Website zu durchsuchen.
 
-
 ![Angeben einer Basis-URL für FTP-Sites](improvements-in-visual-studio-2005/_static/image5.jpg)
 
 **Abbildung 8**: Angeben einer Basis-URL für FTP-Sites
-
 
 ## <a name="improvements-in-compilation"></a>Verbesserungen bei der Kompilierung
 
@@ -265,27 +240,21 @@ In Visual Studio 2002 und 2003 kompiliert wurden die Webanwendungen in einer pri
 > [!NOTE]
 > Die MSBuild-Befehlszeilen-Hilfsprogramm kann auch zum Erstellen von ASP.NET Web-Anwendungen verwendet werden. Dieses Tool wird im Modul 9 abgedeckt werden.
 
-
 Eine weitere Verbesserung der Kompilierung wird die neue Seite "erstellen"-Option im Menü erstellen. Dieses Feature kann ein Entwickler nur die aktuelle Seite (zusammen mit, Kursen und Abhängigkeiten) neu zu erstellen, damit Änderungen schneller kompiliert werden können. Weil c# keine Hintergrundkompilierung zum Zweck der Aktualisierung von IntelliSense, usw. anbieten, werden sie unglaublich von dieser Funktion profitieren, da er für IntelliSense schnell aktualisiert werden, indem Sie einfach neu erstellen einer einzelnen Seite kann.
 
 Der Build-Eigenschaften für ein Projekt können Sie den Typ des Builds zu konfigurieren, das auftritt, bevor die Startseite ausgeführt wird. Entwickler können auswählen, um nur die aktuelle Seite zu erstellen, damit Visual Studio Debuggen von Anwendungen nach codeänderungen schneller starten können.
-
 
 ![Der Buildvorgang für die Seite starten](improvements-in-visual-studio-2005/_static/image6.jpg)
 
 **Abbildung 9**: Der Buildvorgang für die Seite starten
 
-
 Eine weitere hervorragende Verbesserung von Visual Studio und die Architektur für ASP.NET befindet sich in den Bereich der Bearbeiten und fortfahren. In Visual Studio 2005 können Entwickler mit dem Debuggen eines Projekts beginnen und nehmen Sie codeänderungen vor auf das Projekt, ohne den Debugger trennen. In der Tat fügen Sie buchstäblich Debuggen können ein Projekt eine neue Klasse hinzu, fügen Sie Code auf diese Klasse hinzu, fügen Sie Code hinzu, um die Seite, die eine neue Instanz dieser Klasse erstellt und führen Sie eine Methode der Klasse, ohne den Debugger trennen. Ausführen des neuen Codes ist wirklich so einfach wie das Aktualisieren des Browsers!
 
 Klicken Sie hier, um ein video zur exemplarischen Vorgehensweise der Bearbeitung und Features in Visual Studio 2005 fortgesetzt.
 
-
 ![](improvements-in-visual-studio-2005/_static/image2.png)
 
-
 [Open Vollbild-Video](improvements-in-visual-studio-2005/_static/editcontinue1.wmv)
-
 
 Die robuste bearbeiten und Fortsetzen von Funktionen in ASP.NET 2.0 und Visual Studio 2005 liegt eine architektonische Änderung für ASP.NET-Anwendungen. In ASP.NET 1.x in Visual Studio 2002/2003 erstellten Anwendungen kompiliert wurden, in einer primären Assembly, die in den Ordner "/ bin" gespeichert wurde. Alle Klassen, Seiten usw. für die Anwendung, eine DLL kompiliert wurden. Klicken Sie dann zur Laufzeit würde ASP.NET Kompilieren aller Steuerelemente, Markup und ASP-Code in Seiten, und kopieren Sie diese DLLs in den temporären ASP.NET-Ordner.
 
@@ -293,28 +262,21 @@ In Visual Studio 2005 mithilfe von ASP.NET 2.0, die Kompilierung von zwei Modell
 
 Klicken Sie hier, um ein video zur exemplarischen Vorgehensweise des Designer-Unterstützung für Benutzersteuerelemente finden Sie unter.
 
-
 ![](improvements-in-visual-studio-2005/_static/image3.png)
 
-
 [Open Vollbild-Video](improvements-in-visual-studio-2005/_static/usercontrols1.wmv)
-
 
 > [!NOTE]
 > Wenn ein Steuerelement aus einer Seite entfernt wird die @Register Richtlinie bleibt im Markup und müssen manuell entfernt werden, um die Parserfehler zu vermeiden, wenn das Benutzersteuerelement auf der Website gelöscht wird.
 
-
 Eine weitere Verbesserung in das Kompilierungsmodell von Visual Studio ist das Feature für die Website veröffentlichen. Da die Funktion "Veröffentlichen" führt die Vorkompilierung der Website, können Entwickler die zusätzliche Leistung ohne Kompilieren bei Bedarf nutzen. Er führt die Vorkompilierung auch sämtlichen Quellcode im Ordner "App/_Code" in eine DLL, damit kein Quellcode bereitgestellt werden kann.
-
 
 ![Das Dialogfeld "Website veröffentlichen"](improvements-in-visual-studio-2005/_static/image7.jpg)
 
 **Abbildung 10**: Das Dialogfeld "Website veröffentlichen"
 
-
 > [!NOTE]
 > Das Hilfsprogramm aspnet/_compile.exe kann auch eine ASP.NET-Webanwendung vorkompiliert verwendet werden. Dieses Tool wird im Modul 9 abgedeckt werden.
-
 
 Wenn Sie Veröffentlichen einer Website, die vorkompilierten Dateien im Ordner "Temporary ASP.NET Files" gespeichert werden wie unten dargestellt. Dateien mit einem *Compiled* Dateierweiterung sind XML-Dateien, die Abhängigkeiten für bestimmte DLLs zu definieren. Alle Webform bzw. Benutzersteuerelementen in zufälligen DLLs, die mit beginnen kompiliert werden *App /_Web /_*.
 
@@ -327,15 +289,12 @@ Die *aktivieren starken Namen für vorkompilierte Assemblys* Kontrollkästchen k
 > [!NOTE]
 > In ASP.NET 1.x, musste, dass Assemblys mit starkem Namen in den globalen Assemblycache (GAC) installiert werden. In ASP.NET 2.0 sind Sie nicht erforderlich, um Assemblys mit starkem Namen im globalen Assemblycache zu installieren.
 
-
 ![Eine vorkompilierte ASP.NET-Dateien für Anwendungen](improvements-in-visual-studio-2005/_static/image8.jpg)
 
 **Abbildung 11**: Eine vorkompilierte ASP.NET-Dateien für Anwendungen
 
-
 > [!NOTE]
 > In der Anwendung, die oben genannten gab es keine Datei "Web.config". Es gab, es würde aufgerufen wurden *"PrecompiledApp.config"* nach "Web veröffentlichen" site verarbeiten.
-
 
 ## <a name="improvements-in-deployment"></a>Verbesserungen bei der Bereitstellung
 
@@ -348,15 +307,11 @@ Wenn Sie ein Projekt in einer Remotewebsite kopieren, müssen diesem Standort di
 > [!NOTE]
 > Wenn Sie versuchen, eine neue Website für die lokale IIS-Instanz zu erstellen, und die FrontPage 2002 Servererweiterungen installiert sind, erhalten Sie eine Fehlermeldung angezeigt, die besagt, dass das Erstellen von Websites auf einem SharePoint-Server nicht unterstützt wird. In diesem Fall müssen Sie die Möglichkeit, die FrontPage 2000 Server-Erweiterungen installieren oder entfernen die FrontPage-Servererweiterungen.
 
-
 Klicken Sie hier, um ein video zur exemplarischen Vorgehensweise der Funktion "Website kopieren".
-
 
 ![](improvements-in-visual-studio-2005/_static/image4.png)
 
-
 [Open Vollbild-Video](improvements-in-visual-studio-2005/_static/copysite1.wmv)
-
 
 ## <a name="improvements-in-debugging"></a>Verbesserungen beim Debuggen
 
@@ -389,19 +344,15 @@ Die Anforderung für das Debuggen in Visual Studio 2005 Remote ist recht einfach
 
 Wenn Sie auf "msvsmon.exe" ausführen, ist es wahrscheinlich, dass es zu Ports, die für das Remotedebugging blockiert beschweren wird. Glücklicherweise können Sie einfach die Ports aus direkt in das Dialogfeld "Warnung" zulassen, wie unten dargestellt.
 
-
 ![Benachrichtigung, dass Windows-Firewall blockiert das Remotedebuggen ist.](improvements-in-visual-studio-2005/_static/image9.jpg)
 
 **Abbildung 12**: Benachrichtigung, dass Windows-Firewall blockiert das Remotedebuggen ist.
 
-
 Nachdem Sie die Ports für das Debuggen Blockierung aufgehoben wurde, sehen Sie den Remotedebugmonitor, wie unten dargestellt. Von dieser Schnittstelle können Verbindungen überwachen und leicht Debuggen von Berechtigungen zu ändern.
-
 
 ![Den Remotedebugmonitor](improvements-in-visual-studio-2005/_static/image10.jpg)
 
 **Abbildung 13**: Den Remotedebugmonitor
-
 
 Es ist auch möglich, eine Webanwendung, die geöffnet wird, über FTP Remote zu debuggen. Die Schritte sind identisch mit denen zuvor beschrieben. Allerdings müssen Sie eine base-URL angeben, für das Durchsuchen des FTP-Projekts, wie weiter oben in diesem Modul erläutert.
 
@@ -413,12 +364,9 @@ Dieses Lab führt Sie durch das Remotedebuggen mit Visual Studio 2005.
 
 Klicken Sie hier, um eine Videodemonstration dieser Anleitung.
 
-
 ![](improvements-in-visual-studio-2005/_static/image5.png)
 
-
 [Open Vollbild-Video](improvements-in-visual-studio-2005/_static/remdebug1.wmv)
-
 
 Diese Übungseinheit benötigen Sie zwei Computer, einen ausgeführten Visual Studio 2005 und die anderen ausgeführten IIS 5 oder höher.
 
@@ -426,7 +374,6 @@ Diese Übungseinheit benötigen Sie zwei Computer, einen ausgeführten Visual St
 
 > [!NOTE]
 > Sie können die Website auf einer Remoteinstanz von IIS oder per FTP erstellen.
-
 
 1. Suchen Sie von der remote-Webserver msvsmon.exe, auf dem Entwicklungscomputer, die über einen UNC-Pfad, und führen Sie es.  
  Der Standardspeicherort für msvsmon.exe ist //server/c$/Program Programme/Microsoft Visual Studio 8/Common7/IDE/Remote Debugger/X86.
@@ -444,11 +391,9 @@ Der ASP.NET Development Server ist ein Webserver beschränkt. Remoteverbindungen
 
 Der ASP.NET Development Server kann über die Befehlszeile gestartet werden, durch Ausführen der Datei WebDev.WebServer.exe c:/Windows/Microsoft.NET/Framework/v2.0./*/* /  */*/*. Das folgende Dialogfeld zeigt die Parameter, die verfügbar sind.
 
-
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)
 
 **Abbildung 14:**
-
 
 > [!NOTE]
 > Der ASP.NET Development Server wird nicht unterstützt, wenn explizit über die Befehlszeile gestartet wird.

@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5e3c049ba4349301c3c2d173d4311b3d0883bf68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401747"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125228"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>Erste Schritte mit ASP.NET-Web-API 2 (c#)
 
@@ -52,7 +52,6 @@ In der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **leere** Vorlage
 
 > [!NOTE]
 > Sie können auch erstellen, ein Web-API-Projekt mit der &quot;Web-API-&quot; Vorlage. Die Web-API-Vorlage verwendet ASP.NET MVC-API-Hilfeseiten bereitstellen. Ich verwende die leere Vorlage für dieses Tutorial verwenden, da ohne MVC-Web-API angezeigt werden soll. Im Allgemeinen müssen Sie nicht wissen, ASP.NET MVC, Web-API verwenden.
-
 
 ## <a name="adding-a-model"></a>Hinzufügen eines Modells
 
@@ -93,7 +92,6 @@ Erstellt eine Datei namens ProductsController.cs im Ordner "Controllers".
 
 > [!NOTE]
 > Sie müssen nicht die Controller in den Ordner Controller zu platzieren. Der Ordnername ist lediglich eine bequeme Möglichkeit, Ihre Quelldateien zu organisieren.
-
 
 Wenn diese Datei noch nicht geöffnet ist, doppelklicken Sie auf die Datei, um ihn zu öffnen. Ersetzen Sie den Code in dieser Datei durch Folgendes ein:
 

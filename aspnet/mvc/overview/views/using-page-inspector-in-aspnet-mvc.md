@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385797"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126351"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
 
@@ -38,7 +38,6 @@ von Tim Ammann
 > - [Mithilfe der CSS-Farbauswahl](#css_color_picker)
 > - [Zuordnen von dynamische Seitenelemente zu JavaScript](#map_dynamic_elements)
 
-
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
 ## <a name="prerequisites"></a>Vorraussetzungen
@@ -47,7 +46,6 @@ von Tim Ammann
 
 > [!NOTE]
 > Rufen Sie die neueste Version der Seitenprüfung mit [Webplattform-Installer](https://go.microsoft.com/fwlink/?LinkId=255386) Windows Azure SDK für .NET 2.0 zu installieren.
-
 
 Die Seitenprüfung ist Microsoft Web Developer Tools enthalten. Die neueste Version ist 1.3. Um die Version haben Sie, Visual Studio ausführen, und wählen Sie **Info zu Microsoft Visual Studio** aus der **Hilfe** Menü.
 
@@ -179,7 +177,6 @@ Die **Stile** Fenster macht es einfach, test und Vorschau CSS Änderungen erford
 > [!NOTE]
 > Dieses Feature erfordert Version 1.3 der Seitenprüfung.
 
-
 Das Feature für die automatische CSS-Synchronisierung können Sie eine CSS-Datei direkt bearbeiten und die Änderungen sofort im Browser Seitenprüfung.
 
 Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren.
@@ -238,7 +235,6 @@ Mit Version 1.3 können die Seitenprüfung Elemente zuordnen, die die Seite wied
 
 > [!NOTE]
 > Die SPA-Vorlage erfordert die [ASP.NET- und Web Tools 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650) aktualisieren.
-
 
 Wählen Sie in Visual Studio **Datei** &gt; **neues Projekt**. Erweitern Sie auf der linken Seite **Visual C#-** Option **Web**, und wählen Sie dann **ASP.NET MVC 4-Webanwendung**. Klicken Sie auf **OK**.
 

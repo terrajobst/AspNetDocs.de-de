@@ -9,17 +9,16 @@ ms.custom: seoapril2019
 ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: 08870e703c88afccd57232cc259e928a08e7a7a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6d84b458a02b63b24334b137afdb5b710d91c5ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417883"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133167"
 ---
 # <a name="odata-in-aspnet-web-api"></a>OData in ASP.NET Web-API
 
 > Vorgehensweise: Erstellen von OData-Endpunkte in ASP.NET Web-API für ASP.NET 4.x. OData ist ein Data Access-Protokoll für das Web. Es bietet eine einheitliche Möglichkeit zum Abfragen und Bearbeiten von Datensätzen. Web-API unterstützt Version 3 und 4 der Version des OData-Protokolls.
-
 
 - [OData v4](odata-v4/index.md)
 

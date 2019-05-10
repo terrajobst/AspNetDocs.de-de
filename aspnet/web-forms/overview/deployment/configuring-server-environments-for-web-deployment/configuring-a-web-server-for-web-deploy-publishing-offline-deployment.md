@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 66a784430de734c8b1387c950382472ce59d5ccc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 873eb9e350d5fadb017b20c4b6d2889e0df00091
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422134"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126043"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>Konfigurieren eines Webservers für die Web Deploy-Veröffentlichung (Offlinebereitstellung)
 
@@ -30,7 +30,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > - Verwendung *offlinebereitstellung*. Dieser Ansatz erfordert nur geringfügige Konfigurationen des Webservers, aber ein Server-Administrator muss manuell kopieren des Pakets auf dem Server und importieren Sie es über IIS-Manager.
 > 
 > Weitere Informationen zu den Hauptfunktionen, Vorteile und Nachteile dieser Ansätze zu erhalten, finden Sie unter [Entscheidung zur Webbereitstellung rechts](choosing-the-right-approach-to-web-deployment.md).
-
 
 Ja, wenn Ihre Infrastruktur oder Sicherheit netzwerkeinschränkungen Remotebereitstellung verhindern. Dies ist wahrscheinlich der Fall in produktionsumgebungen Internetzugriff sein, in denen die Webserver isoliert sind&#x2014;entweder physisch oder durch Firewalls und Subnetze&#x2014;vom restlichen Ihrer Serverinfrastruktur.
 
@@ -59,7 +58,6 @@ In diesem Thema werden Sie zum Durchführen dieser Verfahren erläutert. Die Auf
 > [!NOTE]
 > Weitere Informationen zum Einbinden von Computern in einer Domäne, finden Sie unter [Hinzufügen von Computern zur Domäne und Anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren von statischen IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx).
 
-
 ## <a name="install-products-and-components"></a>Installieren der Produkte und Komponenten
 
 Dieser Abschnitt führt Sie durch die Installation der erforderlichen Produkte und Komponenten auf dem Webserver. Bevor Sie beginnen, hat sich bewährt, zum Ausführen von Windows Update aus, um sicherzustellen, dass der Server vollständig auf dem neuesten Stand ist.
@@ -73,7 +71,6 @@ In diesem Fall müssen Sie Folgendes installieren:
 
 > [!NOTE]
 > In dieser exemplarischen Vorgehensweise wird die Verwendung des Webplattform-Installers zum Installieren und konfigurieren die verschiedenen Komponenten beschrieben. Zwar Sie nicht mit dem Webplattform-Installer müssen, vereinfacht den Installationsvorgang durch automatisches Erkennen von Abhängigkeiten und sicherstellen, dass Sie immer die aktuellsten Versionen erhalten. Weitere Informationen finden Sie unter [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118).
-
 
 **Installieren der erforderlichen Produkte und Komponenten**
 
@@ -180,7 +177,6 @@ Der gängigste Ansatz ist das Zuweisen von Berechtigungen für die lokale **IIS\
 > [!NOTE]
 > Weitere Informationen zu den Identitäten der Anwendungspools in IIS 7.5, finden Sie unter [Anwendungspoolidentitäten](https://go.microsoft.com/?linkid=9805123).
 
-
 **So konfigurieren Sie Berechtigungen für eine IIS-website**
 
 1. Navigieren Sie in Windows Explorer auf den Speicherort Ihres lokalen Ordners.
@@ -199,7 +195,6 @@ Wenn Sie Web Deploy installieren, wird der Webbereitstellungs-Agent-Dienst insta
 
 > [!NOTE]
 > Sie müssen nicht beenden Sie den remote-Agent-Dienst zum Importieren und eine Web-Paket manuell bereitstellen. Allerdings ist es sich bewährt, beenden und deaktivieren Sie den Dienst aus, wenn Sie nicht diese verwenden möchten.
-
 
 Sie können die beenden und deaktivieren Sie einen Dienst auf verschiedene Arten, auf die über verschiedene Befehlszeilen-Hilfsprogramme oder Windows PowerShell-Cmdlets. Dieses Verfahren beschreibt ein einfaches Verfahren zur UI-basierten.
 

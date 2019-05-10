@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 86c14aab-c2dd-4f73-b40c-c6d52fa44950
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a609b761543e4994aa4a7f86636bd16e9cd74683
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 16073dd2fb0ea1cc4ddbc94c843181933dc174c1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396719"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131543"
 ---
 # <a name="adding-content-to-source-control"></a>Hinzufügen von Inhalten zur Quellcodeverwaltung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird erläutert, wie der quellcodeverwaltung in Team Foundation Server (TFS) 2010 Inhalt hinzugefügt wird. Es beschreibt das Hinzufügen von Projektmappen und Projekte zu einem Teamprojekt in TFS, und es wird erläutert, wie externe Abhängigkeiten wie Frameworks oder Assemblys zur quellcodeverwaltung hinzufügen.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -116,7 +115,6 @@ Die Ordnerstruktur für die beispiellösung Contact Manager enthält beispielswe
 
 > [!NOTE]
 > Die Einbeziehung von einem Ordner "Pakete" ist typisch für was geschieht, wenn Sie der Projektmappe mit der NuGet-Erweiterung für Visual Studio 2010 die Entity Framework oder ähnliche Ressourcen hinzufügen.
-
 
 **Inhalt der nicht Teil des Projekts zur quellcodeverwaltung hinzufügen**
 

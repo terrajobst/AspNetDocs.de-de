@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: d1608db3-660d-4079-8c15-f452ff01f1db
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
 msc.type: authoredcontent
-ms.openlocfilehash: 4a47f51b08b66dfe9636b3992786df19d0ad72ad
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 28940947253e0af43886cf1231f8aaf4615526cc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414932"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125481"
 ---
 # <a name="understanding-the-aspnet-mvc-execution-process"></a>Grundlegendes zum ASP.NET MVC-Ausführungsprozess
 
@@ -21,14 +21,12 @@ by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie ASP.NET MVC-Framework eine schrittweise Browseranforderung verarbeitet.
 
-
 Anforderungen an eine ASP.NET-MVC-basierte Webanwendung zunächst pass-through-die **UrlRoutingModule fest** Objekt, das ein HTTP-Modul ist. Dieses Modul analysiert die Anforderung und führt die Routenauswahl aus. Die **UrlRoutingModule fest** -Objekt wählt das erste Routenobjekt aus, das der aktuellen Anforderung übereinstimmt. (Ein Routenobjekt ist eine Klasse, die implementiert **RouteBase**, und ist in der Regel eine Instanz der **Route** Klasse.) Wenn keine übereinstimmende Route gefunden, die **UrlRoutingModule fest** Objekt hat keine Auswirkungen, und gibt die Anforderung, die auf die reguläre ASP.NET- oder IIS-Anforderung verarbeiteten zurückgreifen.
 
 Aus dem ausgewählten **Route** -Objekt, das **UrlRoutingModule fest** -Objekt abruft der **IRouteHandler** -Objekt, das zugeordnet ist die **Route**Objekt. In der Regel in einer MVC-Anwendung, dies wird jeweils eine Instanz des **MvcRouteHandler**. Die **IRouteHandler** Instanz erstellt ein **IHttpHandler** -Objekt und übergibt es die **IHttpContext** Objekt. In der Standardeinstellung die **IHttpHandler** -Instanz für MVC ist die **MvcHandler** Objekt. Die **MvcHandler** -Objekt wählt dann den Controller, der die Anforderung letztlich behandelt.
 
 > [!NOTE]
 > Wenn Sie eine ASP.NET MVC-Web-Anwendung in IIS 7.0 ausgeführt wird, ist keine Dateinamenerweiterung für MVC-Projekten erforderlich. In IIS 6.0 erfordert der Handler jedoch, dass Sie die ISAPI-DLL von ASP.NET die Dateinamenerweiterung .mvc zuordnen.
-
 
 Das Modul und die Ereignishandler sind die Einstiegspunkte für ASP.NET MVC-Framework. Sie können die folgenden Aktionen ausführen:
 

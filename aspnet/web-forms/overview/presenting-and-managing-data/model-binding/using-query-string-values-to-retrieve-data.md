@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 7ba95f24085c403c669bc5d6df4dee7c87fbd90a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 143ddcb40b576a3129e659b90bfc8321c061a547
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414243"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130234"
 ---
 # <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Verwenden von Abfragezeichenfolgen-Werte zum Filtern von Daten mit modellbindung und Web forms
 
@@ -26,7 +26,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > Dieses Tutorial baut auf das Projekt erstellt haben, der [früheren](retrieving-data.md) Teilen der Reihe.
 > 
 > Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) das vollständige Projekt in c# oder VB. Der herunterladbare Code funktioniert mit Visual Studio 2012 oder Visual Studio 2013. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2013-Vorlage, die in diesem Tutorial gezeigt wird.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 

@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9354a7b97a7df9020a681f709e16a92650cfcf0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380118"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132971"
 ---
 # <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Einführung in ASP.NET Web Pages - eingeben von Datenbankdaten mithilfe von Formularen
 
@@ -36,7 +36,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - Die SQL-Anweisung `Insert Into` Anweisung
 > - Die `Validation` Helper.
 > - Die `Response.Redirect` -Methode.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -155,7 +154,6 @@ Natürlich möchten keine Benutzer, die Hälfte leere Filminformationen in die D
 > Und wieder ist es wichtig zu wissen genau, wenn ein Wert null ist und wenn es nur eine leere Zeichenfolge ist. Im Code für die *AddMovie* Seite erhalten Sie die Werte der Textfelder mit `Request.Form["title"]` und so weiter. Wenn die Seite zuerst ausgeführt wird, (bevor Sie die Schaltfläche klicken), wird der Wert des `Request.Form["title"]` ist null. Aber wenn Sie das Formular übermitteln `Request.Form["title"]` Ruft den Wert des der `title` Textfeld. Ist es nicht offensichtlich, aber ein leeres Textfeld ist nicht null; Es enthält nur eine leere Zeichenfolge. Klicken Sie daher beim Ausführen des Codes als Reaktion auf die Schaltfläche auf, `Request.Form["title"]` verfügt über eine leere Zeichenfolge.
 > 
 > Warum ist diese Unterscheidung wichtig? Bei der Erstellung der *Filme* Tabelle Sie explizit angegeben, dass keines der Felder null sein kann. Aber hier haben Sie ein Anmeldeformular für neue Filme, und Sie können Felder leer lassen. Sie erwarten einigermaßen die Datenbank, sich zu beschweren, bei dem Versuch neuer Filme zu speichern, die Werte für "Genre" oder ein Jahr nicht hatten. Aber darum geht es &mdash; , auch wenn Sie diese Textfelder leer lassen, nicht die Werte null sind; sie leere Zeichenfolgen sind. Sie sind daher Speichern neuer Filme auf die Datenbank mit diesen Spalten leer &mdash; jedoch nicht null. &mdash;-Werte sind. Aus diesem Grund müssen Sie sicherstellen, dass Benutzer keine leere Zeichenfolge ist,, dies können Sie senden durch die Eingabe des Benutzers überprüfen.
-
 
 ### <a name="the-validation-helper"></a>Der Überprüfungshelfer
 

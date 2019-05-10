@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: a8d776af-4735-4612-87f6-9f326587f2d3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 3bae4d72c8b653a5cda500b05dde50c6a7201589
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3a5600aff3ba63cb7046e42d0bfd587c4181d99e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413112"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130268"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-database-update---9-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellen eines Datenbankupdates - 9 von 12
 
@@ -24,7 +24,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > In dieser tutorialreihe erfahren Sie, wie zum Bereitstellen einer ASP.NET-Anwendung (veröffentlichen) Webanwendungsprojekt, das eine SQL Server Compact-Datenbank mithilfe von Visual Studio 2012 RC oder Visual Studio Express 2012 RC für Web enthält. Sie können auch Visual Studio 2010 verwenden, wenn Sie die Web Publish Update installieren. Eine Einführung in die Reihe, finden Sie unter [im ersten Tutorial der Reihe](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
 > Ein Lernprogramm, das zeigt, Bereitstellungsfunktionen, die nach der RC-Version von Visual Studio 2012 eingeführt wurden, zeigt, wie zum Bereitstellen von SQL Server-Editionen als SQL Server Compact und zeigt, wie Sie in Azure App Service-Web-Apps bereitstellen, finden Sie unter [ASP.NET-webbereitstellung Mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -88,7 +87,6 @@ Sie können jetzt in der produktionsumgebung bereitstellen. Der einzige Untersch
 
 > [!NOTE]
 > Während der Verwendung Ihrer Anwendung in der produktionsumgebung ist sollten Sie einen Sicherungsplan implementieren. Das heißt, Sie sollten werden in regelmäßigen Abständen Kopieren der *School-Prod.sdf* und *Aspnet-Prod.sdf* Dateien aus der Produktion Standort an einen sicheren Speicherort, und Sie sollten mehrere Generationen solcher beibehalten werden Sicherungen. Wenn Sie die Datenbank aktualisieren, sollten Sie eine Sicherungskopie von unmittelbar vor der Änderung. Klicken Sie dann, wenn Sie ein Fehler unterläuft und nicht erst erkennen, nachdem Sie es in der produktionsumgebung bereitgestellt haben, noch werden Sie die Datenbank in den Zustand wiederherstellen, die er sich befand, bevor er beschädigt.
-
 
 Wenn Visual Studio die URL der Startseite im Browser öffnet die *app\_offline.htm* angezeigt wird. Nach dem Löschen der *app\_offline.htm* -Datei, die Sie durchsuchen können, an Ihre Startseite erneut aus, um sicherzustellen, dass das Update wurde erfolgreich bereitgestellt wurde.
 

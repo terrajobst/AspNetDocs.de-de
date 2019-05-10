@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1cbb60431824ce642625c06cba6b5194aa547b1b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dd22d80775ebe3571fcf9d3225135766669ef85b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419703"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128717"
 ---
 # <a name="picking-one-animation-out-of-a-list-c"></a>Auswählen einer Animation aus einer Liste (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5CS.pdf)
 
 > Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Das Framework ermöglicht es auch den Programmierer, wählen Sie eine Animation aus einer Liste von Animationen, je nach der Auswertung von JavaScript-Code.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -51,7 +50,6 @@ In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt we
 Das folgende Markup definiert drei Subanimation: Ändern der Größe der Breite und ausgeblendet wird, ändern Sie die Höhe der Größe. Der JavaScript-Code (`Math.floor(3 * Math.random())`) wählt anschließend eine Zahl zwischen 0 und 2, sodass einer der drei Animationen ausgeführt wird:
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-cs/samples/sample5.aspx)]
-
 
 [![Eine der drei möglichen Animationen: Ruft der Bereich ab, größere](picking-one-animation-out-of-a-list-cs/_static/image2.png)](picking-one-animation-out-of-a-list-cs/_static/image1.png)
 

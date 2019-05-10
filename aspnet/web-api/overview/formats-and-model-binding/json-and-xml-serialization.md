@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: a9e7ed63a55c146976e0221214e722f3a2292fee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00fa07f00eabf7e6c883c5e9ceaf9a38a8f49605
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408276"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126168"
 ---
 # <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON- und XML-Serialisierung in ASP.NET Web-API
 
@@ -221,7 +221,6 @@ Beachten Sie, die das Serialisierungsprogramm fügt eine &quot;$id&quot; Eigensc
 
 > [!NOTE]
 > Objektverweise sind nicht in JSON-standard. Beachten Sie, ob die Clients die Ergebnisse analysieren können, werden, bevor Sie mit dieser Funktion können. Es möglicherweise besser einfach, Zyklen aus dem Diagramm zu entfernen. In diesem Beispiel ist die Verknüpfung aus der Mitarbeiter zur Abteilung z. B. wirklich nicht erforderlich.
-
 
 Um Objektverweise in XML zu beizubehalten, müssen Sie zwei Optionen zur Verfügung. Die einfachere Option besteht darin hinzufügen `[DataContract(IsReference=true)]` der Model-Klasse. Die *IsReference* Parameter kann Objektverweise. Beachten Sie, dass **DataContract** Serialisierung teilnehmen, macht, sodass Sie auch hinzufügen müssen **DataMember** -Attribute auf die Eigenschaften:
 

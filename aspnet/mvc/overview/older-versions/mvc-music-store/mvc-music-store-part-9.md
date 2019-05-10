@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: c7151351b087439f17457b254cd9e373af21cae3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 040bc0ccef889fb9a7c3d9b5ce88c75b7b754248
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380898"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129626"
 ---
 # <a name="part-9-registration-and-checkout"></a>Teil 9: Registrierung und Bezahlvorgang
 
@@ -24,7 +24,6 @@ durch [Jon Galloway](https://github.com/jongalloway)
 > Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
 >   
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 9 sind die Registrierung und Bezahlvorgang.
-
 
 In diesem Abschnitt werden wir eine CheckoutController erstellen die des Kunden-Adresse und die Zahlungsinformationen gesammelt werden. Wir müssen die Benutzer mit unserer Website vor dem Auschecken, zu registrieren, damit es sich bei diesem Controller Autorisierung erforderlich ist.
 
@@ -158,7 +157,6 @@ Die Standardvorlage enthält eine Fehleransicht im freigegebenen Ordner "Views",
 Da dies eine generische Fehlerseite ist, wird der Inhalt sehr einfach. Wir nehmen eine Nachricht und einen Link, um zur vorherigen Seite im Verlauf zu navigieren, wenn möchte, dass der Benutzer die Aktion erneut versucht.
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
-
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-8.md)

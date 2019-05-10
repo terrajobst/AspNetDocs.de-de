@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 86dcac0b95f07a310bdaaa4e69db0a83f8734744
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 942cc3cbf472f76d2521247df97c856deb19b06b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416635"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131929"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Datenbankupdates
 
@@ -22,7 +22,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 [Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 

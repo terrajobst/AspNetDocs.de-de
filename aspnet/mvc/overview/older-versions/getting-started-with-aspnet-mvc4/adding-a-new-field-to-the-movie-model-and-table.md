@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 307719f30c9efc8001f63f3ab068e50f82e1c5c0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b0a66cf62c34a59ca5c89c2f380093165e765100
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59399618"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129898"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table"></a>Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films
 
@@ -21,7 +21,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
 > > Eine aktualisierte Version dieses Tutorials finden Sie [hier](../../getting-started/introduction/getting-started.md) , ASP.NET MVC 5 und Visual Studio 2013 verwendet. Dabei handelt es sich eine sicherere, einfacher, führen weitere Funktionen veranschaulicht.
-
 
 In diesem Abschnitt verwenden Sie Entity Framework Code First-Migrationen, migrieren einige Änderungen in der ViewModel-Klassen, damit die Änderung auf die Datenbank angewendet wird.
 
@@ -68,7 +67,6 @@ Auf diese Weise fügt die folgenden using-Anweisung:
 > [!NOTE] 
 > 
 > Code First-Migrationen Ruft die `Seed` -Methode auf, nachdem jede Migration (d. h. Aufrufen **Update-Database** in der Paket-Manager-Konsole), und diese Methode aktualisiert die Zeilen, die bereits eingefügt wurde, oder fügt sie an, wenn sie nicht noch vorhanden ist.
-
 
 **Drücken Sie STRG + UMSCHALT + B, um das Projekt erstellen.** (Die folgenden Schritte aus, schlägt fehl, wenn Ihre lassen sich nicht an diesem Punkt erstellen.)
 
@@ -122,13 +120,11 @@ Die Anwendung jetzt ausführen, und navigieren Sie zu der */Movies* URL. Wenn Si
 
 Sie sehen diesen Fehler, da die aktualisierte `Movie` Modellklasse, die in der Anwendung unterscheidet sich von dem Schema der der `Movie` Tabelle der vorhandenen Datenbank. (Die Datenbanktabelle enthält nicht die Spalte `Rating`.)
 
-
 Es gibt mehrere Vorgehensweisen zum Beheben des Fehlers:
 
 1. Lassen Sie die Datenbank von Entity Framework automatisch löschen und basierend auf dem neuen Modellklassenschema neu erstellen. Dieser Ansatz ist sehr praktisch, bei der aktiven Entwicklung in einer Testdatenbank; Sie können das Modell und das Datenbankschema schnell gemeinsam weiterzuentwickeln. Der Nachteil ist jedoch, dass Sie in der Datenbank vorhandene Daten verloren gehen, damit Sie *nicht* dieser Ansatz in einer Produktionsdatenbank verwendet werden soll. Verwenden eines Initialisierers ist zum automatisch Seeding für eine Datenbank mit Testdaten häufig eine produktive Möglichkeit zum Entwickeln einer Anwendung. Weitere Informationen zu Entity Framework-Datenbankinitialisierer, finden Sie unter der Tom Dykstra [ASP.NET MVC/Entity Framework-Tutorial](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 2. Ändern Sie das Schema der vorhandenen Datenbank explizit so, dass es mit den Modellklassen übereinstimmt. Der Vorteil dieses Ansatzes ist, dass Sie Ihre Daten behalten. Sie können diese Änderung entweder manuell oder durch Erstellen eines Änderungsskripts für die Datenbank vornehmen.
 3. Verwenden Sie Code First-Migrationen, um das Datenbankschema zu aktualisieren.
-
 
 Für dieses Tutorial verwenden wir Code First-Migrationen.
 

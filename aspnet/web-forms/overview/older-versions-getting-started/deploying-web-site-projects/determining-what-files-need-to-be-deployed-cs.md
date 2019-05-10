@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: f8d78a88-cc91-40d8-bce3-3d7954f6033b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c4848f230ee0af5ee9d381e7df9cb1456870eb25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408965"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132358"
 ---
 # <a name="determining-what-files-need-to-be-deployed-c"></a>Festlegen der bereitzustellenden Dateien (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_cs.pdf)
 
 > Welche Dateien aus der Entwicklungsumgebung in der produktionsumgebung bereitgestellt werden müssen, richtet sich teilweise auf, ob die ASP.NET-Anwendung erstellt wurde mit dem Modell der Website oder -Modell. Weitere Informationen finden Sie Informationen zu diesen beiden Projektmodellen und wie das Modell auf eine Bereitstellung auswirkt.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -92,20 +91,16 @@ Der Download für dieses Lernprogramm enthält eine ASP.NET-Anwendung namens Boo
 
 Abbildung 1 zeigt einen Screenshot der Book Reviews-Website über einen Browser angezeigt. Hier sehen Sie die Seite "~ /`Tech/TYASP35.aspx`, die überprüft, dass des Buchs *bringen Sie sich ASP.NET 3.5 in 24 Stunden*. Die Breadcrumb-Leiste, die am oberen Rand der Seite, und klicken Sie im Menü in der linken Spalte umfasst basieren auf der Site Map-Struktur, die in definierten `Web.sitemap`. Das Bild in der rechten oberen Ecke eines Images an den Buch wird erläutert, ist die `Images` Ordner. Die Website Aussehen und Verhalten definiert sind, über das cascading Stylesheet-Stilregeln wie folgt buchstabiert die CSS-Dateien im Ordner "Stile", während das übergreifende Seitenlayout in die Masterseite definiert ist `Site.master`.
 
-
 [![Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **Abbildung 1:** Die Book Reviews-Website bietet eine Sammlung von Titeln-Bewertungen ([klicken Sie, um das Bild in voller Größe anzeigen](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
-
 
 Diese Anwendung wird nicht mit eine Datenbank verwendet. Jede Überprüfung wird als separate Webseite in der Anwendung implementiert. In diesem Tutorial (und die nächste mehrere Lernprogramme) führen durch die Bereitstellung einer Webanwendung, die nicht über eine Datenbank verfügt. Allerdings in einem späteren Tutorial wir erhöhen Sie diese Anwendung zum Speichern von Überprüfungen, Leserkommentare und andere Informationen in einer Datenbank und wird untersucht, welche Schritte müssen ausgeführt werden, um eine datengesteuerte Webanwendung ordnungsgemäß bereitgestellt.
 
 > [!NOTE]
 > In diesen Tutorials Hosten von ASP.NET-Anwendungen mit einem Webhostinganbieter konzentrieren, und es werden zusätzliche Themen wie ASP nicht untersuchen. NET Map-Standortsystem oder unter Verwendung eines Basis- `Page` Klasse. Weitere Informationen zu diesen Technologien und Weitere Hintergrundinformationen zu anderen Themen im Lernprogramm behandelt finden Sie am Ende jedes Lernprogramm im Abschnitt Weitere nützliche Informationen.
 
-
 Dieses Tutorial "Download" hat zwei Kopien der Webanwendung, die jeweils als einen anderen Typ von Visual Studio-Projekt implementiert: BookReviewsWAP ein Webanwendungsprojekt und BookReviewsWSP, eines Websiteprojekts. Beide Projekte mit Visual Web Developer 2008 SP1 erstellt wurden, und Verwenden von ASP.NET 3.5 SP1. Starten zum Arbeiten mit diesen Projekten Entzippen Sie den Inhalt auf Ihrem Desktop. Öffnen das Webanwendungsprojekt (BookReviewsWAP), navigieren Sie zum Ordner BookReviewsWAP aus, und doppelklicken Sie auf die Projektmappendatei, `BookReviewsWAP.sln`. Um das Websiteprojekt (BookReviewsWSP) zu öffnen, starten Sie Visual Studio, und klicken Sie dann aus dem Menü "Datei", wählen Sie die Option "Website öffnen", navigieren Sie zu der `BookReviewsWSP` Ordner auf Ihrem Desktop, und klicken Sie auf OK.
-
 
 Die verbleibenden zwei Abschnitte in diesem Tutorial betrachten welche Dateien müssen Sie in der produktionsumgebung zu kopieren, beim Bereitstellen der Anwendung. Die nächsten beiden Lernprogramme - *[Bereitstellen Ihrer Website mithilfe von FTP](deploying-your-site-using-an-ftp-client-cs.md)* und *[Bereitstellen Ihrer Website mit Visual Studio](deploying-your-site-using-visual-studio-cs.md)* -zeigen verschiedene Verwendungsmöglichkeiten Kopieren Sie diese Dateien auf einen Webhostinganbieter.
 
@@ -115,11 +110,9 @@ Das Webanwendungsprojekt-Modell verwendet explizite Kompilierung - Quellcode des
 
 Abbildung 2 zeigt die Dateien, aus denen das Book Reviews-Webanwendungsprojekt.
 
-
 [![Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **Abbildung 2**: Im Projektmappen-Explorer werden die Dateien, die das Webanwendungsprojekt umfassen aufgeführt.
-
 
 Zum Bereitstellen einer ASP.NET-Anwendung entwickelt, mit dem Webanwendungsprojekt-Modell-Start durch Erstellen der Anwendung aus, um die neuesten Quellcode explizit in eine Assembly zu kompilieren. Kopieren Sie als Nächstes die folgenden Dateien in der produktionsumgebung bereit:
 
@@ -131,7 +124,6 @@ Sie müssen sich nicht um die ASP.NET-Seiten Quellcodedateien in der produktions
 > [!NOTE]
 > Wie in Abbildung 2 gezeigt, die `BasePage` -Klasse wird implementiert, als eine Datei im Projekt im Ordner mit dem Namen abgelegt `HelperClasses`. Wenn das Projekt kompiliert wird der Code in die `BasePage.cs` Datei sowie die ASP.NET-Seiten CodeBehind-Klassen in die einzelne Assembly kompiliert wird `BookReviewsWAP.dll.` ASP.NET verfügt über einen speziellen Ordner mit dem Namen `App_Code` , dient zum Speichern von Klassendateien für Web Websiteprojekte. Der Code in die `App_Code` Ordner wird automatisch kompiliert, und sollte daher nicht mit Webanwendungsprojekten verwendet werden. Stattdessen sollten Sie den Dateien Ihrer Anwendung Klasse platzieren, in einem normalen Ordner namens `HelperClasses`, oder `Classes`, oder etwas Ähnliches. Alternativ können Sie Klassendateien in ein separates Klassenbibliotheksprojekt platzieren.
 
-
 Zusätzlich zum Kopieren der ASP.NET bezogene Markup-Dateien und der Assembly in den `Bin` Ordner müssen Sie auch die clientseitige Unterstützung-Dateien – die Images und CSS-Dateien – sowie die anderen serverseitigen Supportdateien kopieren `Web.config` und `Web.sitemap`. Diese Client - und serverseitige Unterstützung Dateien müssen in der produktionsumgebung bereit, unabhängig davon, ob Sie explizite oder automatische Kompilierung kopiert werden soll.
 
 ## <a name="determining-the-files-to-deploy-for-the-web-site-project-files"></a>Bestimmen die Dateien für die Website-Projektdateien bereitstellen
@@ -142,11 +134,9 @@ Die Menüoption "Build" in Visual Studio ist sowohl für Webanwendungsprojekte a
 
 Abbildung 3 zeigt die Dateien, aus denen das Book Reviews-Websiteprojekt besteht.
 
-
  [![Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
 **Abbildung 3**: Im Projektmappen-Explorer werden die Dateien, die das Websiteprojekt umfassen aufgeführt.
-
 
 Bereitstellen eines Projekts für die Website umfasst das Kopieren aller ASP.NET-bezogene Dateien in der produktionsumgebung -, die die Markupseiten für ASP.NET Seiten, Masterseiten und Benutzersteuerelemente, zusammen mit ihren Codedateien enthält. Sie müssen auch alle Klassendateien, z. B. BasePage.cs zu kopieren. Beachten Sie, dass die `BasePage.cs` Datei befindet sich der `App_Code` Ordner, in dem eine spezielle ASP.NET-Ordner in Websiteprojekte für Klassendateien verwendet wird. Der besondere Ordner als dem Klassendateien in Produktion, ebenfalls erstellt werden muss die `App_Code` Ordner in der Entwicklungsumgebung kopiert werden muss, um die `App_Code` Ordner in der Produktion.
 
@@ -154,7 +144,6 @@ Zusätzlich zum Kopieren von Codedateien für das ASP.NET Markup und Quellcode, 
 
 > [!NOTE]
 > Website-Projekten können auch explizite Kompilierung verwenden. Eine zukünftige Tutorial werden explizit einem Websiteprojekt Kompilierung untersucht.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

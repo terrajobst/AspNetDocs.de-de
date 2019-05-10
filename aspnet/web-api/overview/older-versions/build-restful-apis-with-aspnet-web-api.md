@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 35b115d6b4f84084e78e429bbb4842670e57bba4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391480"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132264"
 ---
 # <a name="build-restful-apis-with-aspnet-web-api"></a>Erstellen von RESTful-APIs mit ASP.NET Web-API
 
@@ -33,7 +33,6 @@ Dieses erfordert ein grundlegendes Verständnis von HTTP, REST, und setzt voraus
 > 
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
-
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
@@ -71,13 +70,12 @@ Dieser praktischen Übungseinheit enthält in der folgenden Übung werden:
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Create_a_Read-Only_Web_API"></a>
-### <a name="exercise-1-create-a-read-only-web-api"></a>Übung 1: Erstellen Sie eine nur-Lese Web-API
+### <a name="exercise-1-create-a-read-only-web-api"></a>Übung 1: Erstellen Sie eine nur-Lese Web-API
 
 In dieser Übung implementieren Sie die ReadOnly-GET-Methoden für den Kontakt-Manager.
 
@@ -272,7 +270,7 @@ Diese Aufgabe zeigen, wie Funktionen in einer Dienstschicht erleichtert Entwickl
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Create_a_ReadWrite_Web_API"></a>
-### <a name="exercise-2-create-a-readwrite-web-api"></a>Übung 2: Erstellen Sie eine Lese-/Schreibzugriff-Web-API
+### <a name="exercise-2-create-a-readwrite-web-api"></a>Übung 2: Erstellen Sie eine Lese-/Schreibzugriff-Web-API
 
 In dieser Übung implementieren Sie die POST und PUT-Methoden für die der Kontakt-Manager, um sie mit Features Bearbeiten von Daten zu aktivieren.
 
@@ -420,7 +418,6 @@ In dieser Aufgabe werden Sie weiterhin so ändern Sie die Ansicht "Index", von d
 
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung in Azure Folgendes bereitstellen [Anhang C: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixC).
-
 
 ---
 

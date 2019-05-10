@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 188f98d013707178e50858f8ea26d8cf2af06bea
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 51bbf0d3b15e9107c4388bf12193b488491c8b32
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406014"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132217"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-c"></a>Vorheriges Festlegen von Listeneinträgen mit CascadingDropDown (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingDropDown2CS.pdf)
 
 > Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. Mit ein wenig Code ist es möglich, dass ein Listenelement vorab ausgewählt wird, sobald die Daten dynamisch geladen wurden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -51,7 +50,6 @@ Die Methode gibt ein Array vom Typ CascadingDropDown-Wert zurück. Der Konstrukt
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample5.aspx)]
 
 Beim Laden der Seite im Browser füllt die Dropdown-Liste mit drei Anbietern zusammen, das zweite Argument wird standardmäßig ausgewählt.
-
 
 [![Die Liste gefüllt ist, und standardmäßig automatisch ausgewählt.](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
 
