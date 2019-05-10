@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef796dc61cc65b6ca5205a5f8baf4dcc4ba05ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1d6adbb245ce534c15ac1adac722b8621002ab15
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389166"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127028"
 ---
 # <a name="deploying-your-site-using-an-ftp-client-c"></a>Bereitstellen einer Website mithilfe eines FTP-Clients (C#)
 
@@ -23,17 +23,14 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Die einfachste Möglichkeit zum Bereitstellen einer ASP.NET-Anwendung ist, kopieren die erforderlichen Dateien manuell aus der Entwicklungsumgebung in der produktionsumgebung bereit. In diesem Tutorial veranschaulicht, wie einen FTP-Client zu verwenden, um die Dateien auf dem Desktop auf dem Webhostinganbieter abzurufen.
 
-
 ## <a name="introduction"></a>Einführung
 
 Das vorherige Lernprogramm eingeführt, eine einfache Buch lesen Sie ASP.NET-Webanwendung, die eine Reihe von ASP.NET-Seiten, eine Masterseite, eine benutzerdefinierte Basis besteht `Page` Klasse, durch eine Anzahl von Bildern, und drei CSS-Stylesheets. Wir können nun zum Bereitstellen der Anwendung auf einen Webhostinganbieter an diesem Punkt die Anwendung für alle Benutzer mit einer Verbindung mit dem Internet zugegriffen werden kann kann.
-
 
 In unseren Gesprächen in der [ *bestimmen was Dateien müssen bereitgestellt werden* ](determining-what-files-need-to-be-deployed-cs.md) Tutorial, wir wissen, welche Dateien auf dem Webhostinganbieter kopiert werden müssen. (Denken Sie daran, dass abhängt, welche Dateien kopiert werden, ob die Anwendung explizit oder automatisch kompiliert wird.) Aber wie bekommen wir die Dateien aus der Entwicklungsumgebung (in unserem Desktop) bis zu der produktionsumgebung (dem Webserver, von dem Webhostinganbieter verwaltet werden)? Die [ **F** Ile **T** Ransfer **P** Rotocol (FTP)](http://en.wikipedia.org/wiki/File_Transfer_Protocol) ist ein häufig verwendetes Protokoll zum Kopieren von Dateien von einem Computer auf einen anderen über ein Netzwerk. Eine andere Möglichkeit besteht, FrontPage Server Extensions (FPSE). Dieses Tutorial konzentriert sich zur Verwendung von eigenständigen FTP-Client-Software, die erforderlichen Dateien aus der Entwicklungsumgebung in der produktionsumgebung bereitstellen.
 
 > [!NOTE]
 > Visual Studio enthält Tools zum Veröffentlichen von Websites über FTP; Diese Tools als auch einen Blick auf die Tools, mit denen FPSE, werden im nächsten Tutorial behandelt.
-
 
 Kopieren Sie die Dateien mithilfe von FTP, die wir benötigen eine *FTP-Client* in der Entwicklungsumgebung. FTP-Client ist eine Anwendung, die entwickelt wird, um Dateien vom Computer zu kopieren, es installiert ist, auf einem Computer, auf denen ausgeführt wird, wird, ein *FTP-Server*. (Wenn Ihre Webhostinganbieter Übertragung von Dateien über FTP unterstützt, wie die meisten der Fall ist, dann besteht ein FTP-Server, die auf ihren Webservern ausführen.) Eine Reihe von FTP-Client-Anwendungen stehen zur Verfügung. Webbrowser kann sogar double als FTP-Client. Ist Mein bevorzugtes FTP-Client und die ich in diesem Tutorial verwenden [FileZilla](http://filezilla-project.org/), eine kostenlose, Open-Source-FTP-Client, der für Windows, Linux und Macintosh-Computer verfügbar ist. Alle FTP-Client funktioniert, allerdings also gerne verwenden Sie den Client mit am besten vertraut sind.
 
@@ -68,11 +65,9 @@ Abbildung 1 zeigt die FileZilla, nachdem die erforderlichen Dateien kopiert wurd
 > [!NOTE]
 > Es gibt keinen Schaden an, dass die Quellcodedateien auf dem Produktionsserver, wie sie ignoriert werden. ASP.NET verbietet die HTTP-Anforderungen an die Quellcodedateien standardmäßig so, dass auch wenn die Quellcodedateien auf dem Produktionsserver vorhanden sind die Besucher Ihrer Website zugegriffen werden. (D. h., wenn ein Benutzer versucht, besuchen `http://www.yoursite.com/Default.aspx.cs` sie erhalten einer Fehlerseite angezeigt, aus der hervorgeht, die diese Arten von Dateien – `.cs` Dateien – sind unzulässig.)
 
-
 [![Verwenden Sie einen FTP-Client die notwendigen Dateien auf dem Desktop an den Webserver, auf dem Webhostinganbieter zu kopieren.](deploying-your-site-using-an-ftp-client-cs/_static/image2.png)](deploying-your-site-using-an-ftp-client-cs/_static/image1.png)
 
 **Abbildung 1**: Verwenden Sie einen FTP-Client die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter zu kopieren ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-cs/_static/image3.png))
-
 
 Nach der Bereitstellung Ihrer Website können Sie die Website testen. Wenn Sie einen Domänennamen erworben haben, und die DNS-Einstellungen konfiguriert ordnungsgemäß, können Sie Ihre Website besuchen, durch Ihren Domänennamen eingeben. Sie können auch Ihre Webhostinganbieter sollte haben angegeben Sie mit einer URL zu Ihrer Website, die etwa folgendermaßen aussehen *Accountname*. *Webhostprovider*.com oder *Webhostprovider*.com /*Accountname*. Die URL für mein Konto auf ASP.NET Discount ist z. B.: `http://httpruntime.web703.discountasp.net`.
 
@@ -81,11 +76,9 @@ Abbildung 2 zeigt die bereitgestellte Book Reviews-Website. Beachten Sie, dass i
 > [!NOTE]
 > Wenn Sie beim Anzeigen der Anwendung können Sie sicherstellen, dass ein Fehler auftreten, haben Sie den richtigen Satz von Dateien bereitgestellt. Als Nächstes überprüfen Sie die Fehlermeldung, um festzustellen, ob es keine Anhaltspunkte über das Problem zeigt. Danach können Sie Ihre Web-Host des Unternehmens Helpdesk aktivieren oder Ihre Frage im Forum geeigneten, unter dem [ASP.NET-Foren](https://forums.asp.net/).
 
-
 [![Die Book Reviews-Website kann nun zugegriffen werden, für alle Benutzer mit einer Internetverbindung](deploying-your-site-using-an-ftp-client-cs/_static/image5.png)](deploying-your-site-using-an-ftp-client-cs/_static/image4.png)
 
 **Abbildung 2**: Der Book Reviews-Website kann nun zugegriffen werden, für alle Benutzer mit Internetzugang ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-cs/_static/image6.png))
-
 
 ## <a name="deploying-the-book-review-web-site-project"></a>Das Buch lesen Sie Website-Projekt bereitstellen
 
@@ -97,7 +90,6 @@ Sobald Sie das Projekt erfolgreich erstellt haben, verwenden Sie FTP-Client, kop
 
 > [!NOTE]
 > Wenn Sie das Projekt soll aber dennoch versuchen, beim Bereitstellen des Projekts BookReviewsWSP BookReviewsWAP bereits bereitgestellt, zuerst löschen Sie aller Dateien auf dem Webserver, die bei der Bereitstellung von BookReviewsWAP hochgeladen wurden, und klicken Sie dann bereitstellen Sie die Dateien für BookReviewsWSP.
-
 
 - `~/Default.aspx`
 - `~/Default.aspx.cs`
@@ -123,11 +115,9 @@ Sobald Sie das Projekt erfolgreich erstellt haben, verwenden Sie FTP-Client, kop
 
 Abbildung 3 zeigt FileZilla, nachdem Sie die benötigten Dateien kopiert haben. Wie Sie sehen können, die ASP.NET Quellcodedateien, z. B. `About.aspx.cs`, auf dem lokalen Computer (Entwicklungsumgebung) und dem Webhostinganbieter (in der produktionsumgebung) vorhanden sind, da Codedateien werden, wenn automatische bereitgestellt müssen Kompilierung.
 
-
 [![Verwenden Sie einen FTP-Client die notwendigen Dateien auf dem Desktop an den Webserver, auf dem Webhostinganbieter zu kopieren.](deploying-your-site-using-an-ftp-client-cs/_static/image8.png)](deploying-your-site-using-an-ftp-client-cs/_static/image7.png)
 
 **Abbildung 3**: Verwenden Sie einen FTP-Client die erforderlichen Dateien von Ihrem Desktop aus an den Webserver, auf dem Webhostinganbieter zu kopieren ([klicken Sie, um das Bild in voller Größe anzeigen](deploying-your-site-using-an-ftp-client-cs/_static/image9.png))
-
 
 Die benutzerfreundlichkeit ist von der Anwendung Kompilierungsmodell nicht betroffen. Die gleichen ASP.NET-Seiten zugegriffen werden, und ihr Aussehen und Verhalten sich identisch, ob die Website erstellt wurde, verwenden das Webanwendungsprojekt-Modell oder das Websiteprojekt-Modell.
 
@@ -139,7 +129,6 @@ Wie zu beim erneut bereitstellen einer Webanwendung, die Sie nur neue und geänd
 
 > [!NOTE]
 > Dabei ist zu bedenken, wenn explizite Kompilierung ist, dass jedes Mal, wenn Sie eine neue ASP.NET-Seite zum Projekt hinzufügen oder Code-bezogene Änderungen vornehmen, müssen Sie Ihrem Projekt neu erstellen, in dem die Assembly im aktualisiert die `Bin` Ordner. Daher müssen Sie diese aktualisierte Assembly in der produktionsumgebung kopieren, bei der Aktualisierung von einer Webanwendung auf Produktion (zusammen mit den anderen neuen und aktualisierten Inhalt).
-
 
 Auch verstehen, dass alle Änderungen an der `Web.config` oder Dateien in die `Bin` Directory beendet und neu gestartet wird der Website-Anwendungspools. Wenn des Sitzungszustands gespeichert ist, mit der `InProc` -Modus (Standard) und dann die Besucher der Site verlieren den Sitzungsstatus immer diese wichtigsten Dateien geändert werden. Um dieses Fehlers zu vermeiden, sollten Sie das Speichern der Sitzung mit dem `StateServer` oder `SQLServer` Modi. Weitere Informationen zu diesem Thema lesen [Sitzungszustandsmodus](https://msdn.microsoft.com/library/ms178586.aspx).
 

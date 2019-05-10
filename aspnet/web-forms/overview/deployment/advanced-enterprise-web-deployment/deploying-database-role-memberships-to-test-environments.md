@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 9b2af539-7ad9-47aa-b66e-873bd9906e79
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: fd0914ed62a280fea290b9f1b150fc25c8ed6d40
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a15f5bf5f659d151e91ef9e53c5ad55bcd8e2b01
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385331"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130410"
 ---
 # <a name="deploying-database-role-memberships-to-test-environments"></a>Bereitstellen von Datenbankrollenmitgliedschaften in Testumgebungen
 
@@ -32,7 +32,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > In diesem Szenario ist es oft vorteilhaft, automatisch erstellen von Datenbankbenutzern und Zuweisen von Datenbank-Rollenmitgliedschaften im Rahmen des Bereitstellungsprozesses.
 > 
 > Der wichtigste Faktor ist, dass dieser Vorgang bedingte werden basierend auf der zielumgebung muss. Wenn Sie in ein Staging- oder in einer produktionsumgebung bereitstellen möchten, möchten Sie den Vorgang zu überspringen. Wenn Sie für einen Entwickler bereitstellen oder testumgebung, möchten Sie Rollenmitgliedschaften ohne weiteren Eingriff bereitstellen. Dieses Thema beschreibt eine Möglichkeit, die Sie verwenden können, um diese Herausforderungen zu meistern.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -79,13 +78,10 @@ Können Sie ein Transact-SQL-Skript in viele verschiedene Arten erstellen, und w
 
 Im Idealfall würden Sie alle erforderlichen Transact-SQL-Skripts als Teil eines Skripts nach der Bereitstellung ausführen, wenn Sie das Datenbankprojekt bereitstellen. Skripts nach der Bereitstellung nicht allerdings bedingt auf Grundlage Projektmappenkonfigurationen oder Buildeigenschaften Logik ausgeführt werden können. Die Alternative besteht darin, führen Sie die SQL-Skripts direkt von der MSBuild-Projektdatei, durch das Erstellen einer **Ziel** -Element, das ein sqlcmd.exe-Befehl ausgeführt wird. Sie können diesen Befehl verwenden, um Ihr Skript in der Zieldatenbank:
 
-
 [!code-console[Main](deploying-database-role-memberships-to-test-environments/samples/sample2.cmd)]
-
 
 > [!NOTE]
 > Weitere Informationen zu den Sqlcmd-Befehlszeilenoptionen finden Sie unter [Hilfsprogramms "Sqlcmd"](https://msdn.microsoft.com/library/ms162773.aspx).
-
 
 Bevor Sie mit diesem Befehl in einem MSBuild-Ziel einbetten, müssen Sie berücksichtigen, unter welchen Bedingungen das Skript ausgeführt werden sollen:
 
@@ -100,15 +96,11 @@ Bei Verwendung in beschriebenen Ansatz der geteilten Projekt Datei [Grundlegende
 
 In der Projektdatei umgebungsspezifische müssen Sie definieren den Namen des Datenbankservers, den Namen der Zieldatenbank und eine boolesche Eigenschaft, die dem Benutzer, die angeben, ob Rollenmitgliedschaften bereitstellen kann.
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample3.xml)]
-
 
 In der Datei universal-Projekt müssen Sie angeben, den Speicherort der ausführbaren Datei "Sqlcmd" und den Speicherort des SQL-Skripts, die Sie ausführen möchten. Diese Eigenschaften bleiben unabhängig von der zielumgebung. Sie müssen außerdem erstellen Sie ein MSBuild-Ziel, um den Sqlcmd-Befehl auszuführen.
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample4.xml)]
-
 
 Beachten Sie, dass Sie als statische Eigenschaft, die den Speicherort der ausführbaren Datei "Sqlcmd" hinzufügen, wie dies für andere Ziele nützlich sein könnte. Im Gegensatz dazu definieren Sie den Speicherort der Ihr SQL-Skript und die Syntax der Sqlcmd-Befehl als dynamische Eigenschaften in das Ziel, da sie nicht benötigen, bevor das Ziel ausgeführt wird. In diesem Fall die **DeployTestDBPermissions** Ziel wird nur ausgeführt werden, wenn diese Bedingungen erfüllt sind:
 
@@ -117,9 +109,7 @@ Beachten Sie, dass Sie als statische Eigenschaft, die den Speicherort der ausfü
 
 Vergessen Sie schließlich nicht, das Ziel aufzurufen. In der *Publish.proj* -Datei, Sie können hierzu durch Hinzufügen des Ziels, um die Liste der Abhängigkeiten für den standardmäßigen **FullPublish** Ziel. Sie müssen sicherstellen, dass die **DeployTestDBPermissions** Ziel wird nicht ausgeführt, bis die **PublishDbPackages** Ziel ausgeführt wurde.
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample5.xml)]
-
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

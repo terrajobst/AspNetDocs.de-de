@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: c285dc6f-a1c6-46e6-ac03-3830947f57e3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f6e8fd2c31aa4eaf563edc719bbb8d2b3006866
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 95ca336504d05c4ea82b979dd431a6d90fb2f7b4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386267"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130282"
 ---
 # <a name="precompiling-your-website-vb"></a>Vorkompilieren Ihrer Website (VB)
 
@@ -23,14 +23,12 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Visual Studio bietet ASP.NET-Entwicklern zwei Typen von Projekten: Web Application Projects (WAPs), und Website-Projekte (WSPs). Einer der wichtigsten Unterschiede zwischen den zwei Projekttypen ist, dass WAPs müssen den Code explizit vor der Bereitstellung kompiliert, während der Code in eine WSP-Datei automatisch auf dem Webserver kompiliert werden kann. Allerdings ist es möglich, eine WSP-Datei vor der Bereitstellung vorkompilieren. Dieses Tutorial erläutert die Vorteile der Vorkompilierung und zeigt, wie zum Vorkompilieren einer Website aus Visual Studio und über die Befehlszeile.
 
-
 ## <a name="introduction"></a>Einführung
 
 Visual Studio bietet ASP.NET-Entwicklern zwei verschiedene Projekttypen zur Verfügung: Webanwendungsprojekten (WAP) und Websiteprojekte (WSP). Einer der wichtigsten Unterschiede zwischen dieser Projekttypen ist, dass WAPs erfordern *explizite Kompilierung* während WSPs verwenden *automatische Kompilierung*, in der Standardeinstellung. Mit drahtlosen Zugriffspunkten, Sie Kompilieren der Webanwendung in eine einzelne Assembly, die in der Website erstellt wurde `Bin` Ordner. Bereitstellung umfasst das Kopieren den Inhalt des Markups (die `.aspx.ascx`, und `.master` Dateien) im Projekt zusammen mit der Assembly in der `Bin` Ordner, in der CodeBehind-Klassendateien selbst müssen nicht bereitgestellt werden. Stellen Sie auf der anderen Seite WSPs, indem Sie sowohl die Markupseiten und ihre entsprechenden CodeBehind-Klassen in der produktionsumgebung kopieren. Die CodeBehind-Klassen werden bei Bedarf auf dem Webserver kompiliert.
 
 > [!NOTE]
 > Finden Sie im Abschnitt "Explizite Kompilierung und automatische Kompilierung" in der [ *bestimmen was Dateien müssen bereitgestellt werden* Tutorial](determining-what-files-need-to-be-deployed-vb.md) Weitere Hintergrundinformationen zu den Unterschieden zwischen dem Projekt Modelle, explizit und automatisch Kompilierung und wie das Kompilierungsmodell Bereitstellung auswirkt.
-
 
 Die Option für die automatische Kompilierung ist einfach zu verwenden. Es ist kein expliziter Kompilierungsschritt und nur die Dateien, die wurden geändert, müssen bereitgestellt werden, während die explizite Kompilierung erfordert die geänderten Markupseiten und die gerade kompilierte Assembly bereitstellen. Automatische Bereitstellung hat jedoch zwei mögliche Nachteile:
 
@@ -49,7 +47,6 @@ WSPs und die automatische Kompilierung gibt es keine explizite Kompilierungsschr
 
 > [!NOTE]
 > Wie zu erwarten ist, ist eine geringfügige Verzögerung beim Anfordern einer Seite zum ersten Mal (oder zum ersten Mal seit sie geändert wurde) an einem Standort, die automatische Kompilierung verwendet wird, wie es dauert einen Moment, während der Server zum Kompilieren von Code der Seite, und speichern die resultierende assembly der Datenträger.
-
 
 Kurz gesagt, mit der expliziten Kompilierung müssen Sie zum Kompilieren von Quellcode für die Website vor der Bereitstellung, speichern die Runtime erspart, um diesen Schritt ausführen. Bei der automatischen Kompilierung behandelt die Runtime die Kompilierung von Quellcode für die Seiten, jedoch mit geringfügigen Initialisierung Kosten für den ersten Besuch auf der Seite, da erstellt oder zuletzt aktualisiert wurde.
 
@@ -70,7 +67,6 @@ Das Kompilierungstool verfügt über zwei allgemeine Arten der Kompilierung: dir
 > [!NOTE]
 > Finden Sie weitere Informationen über die direkte Vorkompilierung [so wird's gemacht: Vorkompilieren von ASP.NET-Websites](https://msdn.microsoft.com/library/ms227972.aspx) und [Vorkompilierung in ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
 
-
 Anstatt die Seiten der Website zum Kompilieren der `Temporary ASP.NET Files` Ordner durch die Vorkompilierung zur Bereitstellung kompiliert die Seiten in einem Verzeichnis Ihrer Wahl und in ein Format, das in der produktionsumgebung bereitgestellt werden kann.
 
 Es gibt zwei Arten der Vorkompilierung zur Bereitstellung, die wir in diesem Tutorial untersuchen: mit einer Benutzeroberfläche für aktualisierbare Vorkompilierung und Vorkompilierung mit einer nicht aktualisierbaren-Benutzeroberfläche. Durch die Vorkompilierung einer aktualisierbaren Benutzeroberfläche verlässt deklarative Markup in der `.aspx`, `.ascx`, und `.master` -Dateien, wodurch Entwickler anzuzeigen und, falls gewünscht, ändern Sie das deklarative Markup auf dem Produktionsserver. Durch die Vorkompilierung mit einer nicht aktualisierbaren Benutzeroberfläche generiert `.aspx` Seiten, Inhalte und entfernt "void" sind `.ascx` und `.master` Dateien, wodurch Ausblenden von deklarativen Markup und Änderung von verbietet Entwickler die die produktionsumgebung.
@@ -88,7 +84,6 @@ Die beste Möglichkeit, durch die Vorkompilierung zur Bereitstellung zu verstehe
 
 > [!NOTE]
 > Option "Website veröffentlichen" im Menü "Build" ist nicht verfügbar, in Visual Web Developer. Wenn Sie Visual Web Developer verwenden, müssen Sie die Befehlszeilenversion des Tools zum ASP.NET Kompilierung verwenden, die im Abschnitt "Vorkompilieren über die Befehlszeile" beschrieben wird.
-
 
 Navigieren Sie nach der Vorkompilierung der Websites an an den Zielspeicherort, die, den Sie im Dialogfeld "Website veröffentlichen" eingegeben haben. Nehmen Sie einen Moment Zeit, um den Inhalt dieses Ordners mit dem Inhalt der Website zu vergleichen. **Abbildung 2** zeigt den Ordner an Book Reviews-Website. Beachten Sie, dass sie beide enthält `.aspx` und `.aspx.cs` Dateien. Beachten Sie außerdem, dass die `Bin` enthält nur eine Datei, Verzeichnis `Elmah.dll`, die wir hinzugefügt, in der [vorherigen Tutorials](logging-error-details-with-elmah-vb.md)
 
@@ -108,7 +103,6 @@ Im Gegensatz zu explizite Kompilierung in drahtlosen Zugriffspunkten erstellt di
 
 > [!NOTE]
 > Sie können das Kompilierungstool eine Assembly je Seite, Benutzersteuerelement oder Masterseite ASP.NET zu erstellen, indem Sie das Kontrollkästchen "Wird korrigiert, Benennung und Assemblys mit einzelnen Seiten" im Dialogfeld "Website veröffentlichen" anweisen. Jedes in seiner eigenen Assembly kompiliert ASP.NET-Seite ermöglicht eine präzisere Kontrolle über die Bereitstellung. Z. B. Wenn Sie eine einzelne ASP.NET-Webseite aktualisiert und erforderlich, um die Änderung bereitstellen, Sie müssen nur Bereitstellen dieser Seite des `.aspx` -Datei und die zugehörige Assembly in der produktionsumgebung bereit. Wenden Sie sich an [Vorgehensweise: Generieren von festen Namen mit dem ASP.NET-Kompilierungstool](https://msdn.microsoft.com/library/ms228040.aspx) für Weitere Informationen.
-
 
 Das Zielverzeichnis für den Speicherort enthält außerdem eine Datei, die nicht Teil der vorkompilierten Webprojekt, d. h. `PrecompiledApp.config`. Diese Datei informiert, dass die Anwendung vorkompiliert wurde der ASP.NET-Laufzeit und gibt an, ob es mit einer Benutzeroberfläche aktualisiert werden, oder Mittag aktualisierbar vorkompiliert wurde.
 

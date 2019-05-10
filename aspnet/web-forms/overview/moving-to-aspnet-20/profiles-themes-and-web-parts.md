@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cf5c45781be6d003d28c6aa27efa08032579a6dd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390037"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132785"
 ---
 # <a name="profiles-themes-and-web-parts"></a>Profile, Designs und Webparts
 
 by [Microsoft](https://github.com/microsoft)
 
 > Es gibt wesentliche Änderungen in der Konfiguration und Instrumentierung in ASP.NET 2.0. Die neue ASP.NET-Konfigurations-API ermöglicht Änderungen an der Konfiguration programmgesteuert erfolgen. Darüber hinaus viele neue Konfigurationseinstellungen vorhanden ermöglichen neue Konfigurationen und Instrumentation.
-
 
 ASP.NET 2.0 stellt eine deutliche Verbesserung der im Bereich der personalisierten Websites dar. Zusätzlich zu den Mitgliedschaftsfeatures, die wir bereits behandelt habe, bedeutend erweitert werden ASP.NET-Profile, Designs und Webparts-Personalisierung in Websites.
 
@@ -155,16 +154,13 @@ Die Designdatei ist eine XML-Datei, die Definitionen von Eigenschaften für ASP.
 
 **Abbildung 1** unten zeigt eine kleine ASP.NET-Seite durchsucht, ohne ein Design angewendet. **Abbildung 2** zeigt die gleiche Datei mit zugewiesenem Design. Die Hintergrundfarbe und die Textfarbe werden über eine CSS-Datei konfiguriert. Die Darstellung der Schaltfläche und ein Textfeld werden mithilfe der oben aufgeführten Skindatei konfiguriert.
 
-
 ![Ist kein Design](profiles-themes-and-web-parts/_static/image1.gif)
 
 **Abbildung 1**: Ist kein Design
 
-
 ![Design](profiles-themes-and-web-parts/_static/image2.gif)
 
 **Abbildung 2**: Design
-
 
 Die oben aufgeführten Designdatei definiert eine Skin für einen Standardwert für alle TextBox-Steuerelemente und Schaltflächen-Steuerelemente. Das bedeutet, dass auf diese Darstellung alle TextBox-Steuerelement und ein Button-Steuerelement, die auf einer Seite eingefügt dauert. Sie können auch definieren, ein Design, die auf bestimmte Instanzen dieser Steuerelemente mit angewendet werden, kann die **SkinID** -Eigenschaft des Steuerelements.
 
@@ -329,7 +325,6 @@ In diesem Teil der exemplarischen Vorgehensweise erstellen Sie eine Seite, die W
 > [!NOTE]
 > Sie müssen sich nicht um nichts tun, um die Webparts-Personalisierung aktivieren. Es ist für die Webparts-Steuerelementsatz standardmäßig aktiviert. Wenn Sie zuerst eine Webparts-Seite auf einer Website ausführen, richtet ASP.NET einen Standard-Personalisierungsanbieter um benutzerspezifische personalisierungseinstellungen zu speichern. Weitere Informationen zur Personalisierung finden Sie unter Übersicht über Webserver Webparts-Personalisierung.
 
-
 ### <a name="to-create-a-page-for-containing-web-parts-controls"></a>Zum Erstellen einer Seite, die Webparts-Steuerelemente enthalten.
 
 1. Schließen Sie die Standardseite, und fügen Sie eine neue Seite mit dem Standort, mit dem Namen WebPartsDemo.aspx.
@@ -402,11 +397,9 @@ Jetzt können Sie Ihre Seite testen, indem Sie in Ihrem Browser zu ihr navigiere
 
 **Webparts-Demoseite mit zwei Zonen**
 
-
 ![Screenshot der Web Teile VS exemplarischen Vorgehensweise 1](profiles-themes-and-web-parts/_static/image3.gif)
 
 **Abbildung 3**: Screenshot der Web Teile VS exemplarischen Vorgehensweise 1
-
 
 In der Titelleiste wird jedes Steuerelements ein nach unten weisenden Pfeil, der Zugriff auf einem Verbenmenü der verfügbaren Aktionen bereitstellt, die für ein Steuerelement ausgeführt werden können. Klicken Sie auf das im Verbenmenü für eines der Steuerelemente, und klicken Sie dann die **Minimieren** Verb und beachten Sie, dass das Steuerelement minimiert wird. Klicken Sie auf das im Verbenmenü auf **wiederherstellen**, und die Steuerung zurückgegeben wird, auf die normale Größe.
 
@@ -449,11 +442,9 @@ Sie können jetzt die Möglichkeit, Seiten bearbeiten und ändern Sie das Layout
 
 ### <a name="web-parts-demo-page-with-my-links-control-moved"></a>Webparts-Demoseite mit Meine Links-Steuerelements verschoben wurde
 
-
 ![Exemplarische Vorgehensweise 2-Screenshot für Webparts im Vergleich](profiles-themes-and-web-parts/_static/image4.gif)
 
 **Abbildung 4**: Exemplarische Vorgehensweise 2-Screenshot für Webparts im Vergleich
-
 
 1. Klicken Sie auf die **Anzeigemodus** Dropdown-Menü, und wählen **Durchsuchen**. Die Seite aktualisiert wird, den Zonennamen werden ausgeblendet, und die **Meine Links** steuern, wo Sie positioniert, bleiben.
 2. Um zu veranschaulichen, dass die Personalisierung funktioniert, schließen Sie den Browser, und klicken Sie dann laden Sie die Seite erneut zu. Die vorgenommenen Änderungen werden für zukünftige Browsersitzungen gespeichert.
@@ -467,22 +458,18 @@ Sie können jetzt die Möglichkeit, Seiten bearbeiten und ändern Sie das Layout
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>Webparts-Demoseite im Bearbeitungsmodus
 
-
 ![Exemplarische Vorgehensweise 3-Screenshot für Webparts im Vergleich](profiles-themes-and-web-parts/_static/image5.gif)
 
 **Abbildung 5**: Exemplarische Vorgehensweise 3-Screenshot für Webparts im Vergleich
-
 
 1. Klicken Sie auf die **Anzeigemodus** , und wählen **Durchsuchen** Durchsuchen-Modus zurückgegeben.
 2. Das Steuerelement hat jetzt eine aktualisierte Titel und keinen Rahmen, wie im folgenden Screenshot gezeigt.
 
 ### <a name="edited-web-parts-demo-page"></a>Bearbeiteten Webparts-Demoseite
 
-
 ![Exemplarische Vorgehensweise 4-Screenshot für Web Teile im Vergleich](profiles-themes-and-web-parts/_static/image6.gif)
 
 **Abbildung 4**: Exemplarische Vorgehensweise 4-Screenshot für Web Teile im Vergleich
-
 
 ### <a name="adding-web-parts-at-run-time"></a>Hinzufügen von Webparts zur Laufzeit
 

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3123af9a1477bc496a0d229d628510fc202b6d2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410863"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128339"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>Bereitstellen von CRUD-Unterstützung (Create, Read, Update, Delete) für Datenformulareinträge
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > Schritt 5 zeigt, wie unsere DinnersController-Klasse durch Aktivieren der Unterstützung für das Bearbeiten, erstellen und Löschen von Dinner auch dabei werden wird.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-step-5-create-update-delete-form-scenarios"></a>NerdDinner, Schritt 5: Erstellen, aktualisieren und Löschen von Formularszenarien
 

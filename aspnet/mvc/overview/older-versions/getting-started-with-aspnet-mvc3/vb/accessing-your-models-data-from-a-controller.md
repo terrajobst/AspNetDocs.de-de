@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: cad00de1-3c68-4ff4-a436-54236d449459
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 289dd429081fde12699db678e619a9fd5ed98942
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: beaad3440a9f333ab22f29d0c6683d71e8962fc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403284"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130057"
 ---
 # <a name="accessing-your-models-data-from-a-controller-vb"></a>Zugreifen auf Modelldaten anhand eines Controllers (VB)
 
@@ -28,7 +28,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
 > Ein Visual Web Developer-Projekt mit Quellcode VB.NET steht zur Ergänzung dieses Themas. [Laden Sie die Version VB.NET](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie C# -Code bevorzugen, wechseln Sie zu der [c#-Version](../cs/accessing-your-models-data-from-a-controller.md) in diesem Tutorial.
-
 
 In diesem Abschnitt erstellen Sie ein neues `MoviesController` Klasse, und Schreiben von Code, das die Movie-Daten abgerufen und im Browser eine ansichtsvorlage anzeigt. Achten Sie darauf, dass zum Erstellen der Anwendung, bevor Sie fortfahren.
 
@@ -112,7 +111,6 @@ Doppelklicken Sie auf *Movies.sdf* öffnen **Server-Explorer**. Erweitern Sie da
 
 > [!NOTE]
 > Wenn Sie eine Fehlermeldung erhalten, wenn Sie einen Doppelklick auf *Movies.sdf*, stellen Sie sicher, dass Sie installiert haben **Visual Studio 2010 SP1 Tools für SQL Server Compact 4.0**. (Links zu der Software, finden Sie in der Liste der erforderlichen Komponenten in Teil 1 dieser tutorialreihe.) Wenn Sie die Version jetzt installieren, müssen Sie schließen und öffnen Sie Visual Web Developer.
-
 
 [![DB_explorer](accessing-your-models-data-from-a-controller/_static/image14.png)](accessing-your-models-data-from-a-controller/_static/image13.png)
 

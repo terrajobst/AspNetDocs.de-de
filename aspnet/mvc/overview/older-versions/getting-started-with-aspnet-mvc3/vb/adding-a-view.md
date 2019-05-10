@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: d3633f64-5d3c-45c9-ae4b-cb1563e3739f
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: eebf36af01b27f2931fa8720b399b85edfd8c2a0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cf2e73b4245de6fe702b8c74550e6c7fc701a47f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390960"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129975"
 ---
 # <a name="adding-a-view-vb"></a>Hinzufügen einer Ansicht (VB)
 
@@ -28,7 +28,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
 > Ein Visual Web Developer-Projekt mit Quellcode VB.NET steht zur Ergänzung dieses Themas. [Laden Sie die Version VB.NET](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie C# -Code bevorzugen, wechseln Sie zu der [c#-Version](../cs/adding-a-view.md) in diesem Tutorial.
-
 
 In diesem Abschnitt wir werden so ändern Sie die `HelloWorldController` eine ansichtsvorlagendatei, um ordnungsgemäß zu verwendende Klasse an den Prozess zum Generieren von HTML-Antworten an einen Client zu kapseln.
 

@@ -8,17 +8,16 @@ ms.date: 04/12/2012
 ms.assetid: 807b50ae-2e7c-450c-b559-e04bd56457bd
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs
 msc.type: chapter
-ms.openlocfilehash: b476e9010e47043f12ce00c222382786c66f5c4e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7dcb210dfa5aef51188f2a5dd2dd85c56a475217
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414308"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130121"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-c"></a>Erste Schritte mit ASP.NET MVC 3 (C#)
 
 > Die Grundlagen der Erstellung einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express mithilfe von c#.
-
 
 - [Einführung zu ASP.NET MVC 3 (C#)](intro-to-aspnet-mvc-3.md)
 - [Hinzufügen eines Controllers (C#)](adding-a-controller.md)

@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: 548e75f6-4d6c-4cb4-8da8-417915eb8393
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 48af71fc5ff4dad3371687726660a5d914236df5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5ff344bdff379a72a5fc3d26ab66afb095cd2e0d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379377"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125751"
 ---
 # <a name="common-configuration-differences-between-development-and-production-vb"></a>Allgemeine Konfigurationsunterschiede zwischen Entwicklungs- und Produktionsumgebungen (VB)
 
@@ -23,9 +23,7 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > In den vorherigen Tutorials haben wir unsere Website durch Kopieren aller relevanten Dateien in der Entwicklungsumgebung in der produktionsumgebung bereitgestellt. Allerdings ist es nicht ungewöhnlich, dass es gibt Konfigurationsunterschiede zwischen Umgebungen, das erfordert, dass jede Umgebung über eine eindeutige Datei "Web.config"-Datei verfügen. In diesem Tutorial werden die typische Konfigurationsunterschiede untersucht und untersucht die Strategien für die Verwaltung von separate Konfiguration.
 
-
 ## <a name="introduction"></a>Einführung
-
 
 Die letzten beiden Tutorials wurde erläutert, wie eine einfache Webanwendung bereitstellen. Die [ *Bereitstellen einer Website mithilfe eines FTP-Clients* ](deploying-your-site-using-an-ftp-client-vb.md) Tutorial wurde gezeigt, wie Sie einen eigenständigen FTP-Client verwenden, um die erforderlichen Dateien aus der Entwicklungsumgebung bis zur Produktion zu kopieren. Das vorherige Tutorial [ *Bereitstellen Ihrer Website mit Visual Studio*](deploying-your-site-using-visual-studio-vb.md), bei der Bereitstellung mithilfe von Visual Studio Tools zum Kopieren von Websites und Option "Veröffentlichen" suchenden. In beiden Lernprogramme war jede Datei in der produktionsumgebung eine Kopie einer Datei in der Entwicklungsumgebung. Allerdings ist es nicht ungewöhnlich, dass Konfigurationsdateien in der produktionsumgebung, in der Entwicklungsumgebung unterscheiden. Eine Webanwendung-Konfiguration befindet sich in der `Web.config` Datei, und in der Regel enthält Informationen zu externen Ressourcen, z. B. Datenbank, Web- und e-Mail-Server. Es beschreibt auch das Verhalten der Anwendung in bestimmten Situationen, z. B. welche Aktion soll, wenn eine nicht behandelte Ausnahme auftritt.
 
@@ -40,7 +38,6 @@ Datenbank-Verbindungszeichenfolgen sind ein gutes Beispiel Konfigurationsinforma
 > [!NOTE]
 > Zukünftige Tutorials werden Bereitstellen von datengesteuerten Anwendungen, an welchem, die Punkt wir uns befassen müssen im einzelnen erläutert, wie Datenbank-Verbindungszeichenfolgen in der Konfigurationsdatei gespeichert werden.
 
-
 Das beabsichtigte Verhalten von Entwicklungs- und produktionsumgebungen Umgebungen unterscheidet sich grundlegend. Eine Webanwendung in der Entwicklungsumgebung wird, getestet und gedebuggt durch eine kleine Gruppe von Entwicklern erstellt. In der produktionsumgebung wird die gleiche Anwendung von vielen anderen gleichzeitigen Benutzern zugegriffen wird. ASP.NET umfasst eine Reihe von Features, mit denen Entwickler beim Testen und Debuggen einer Anwendung, aber diese Funktionen sollten für Leistungs- und Sicherheitsgründen in der produktionsumgebung deaktiviert werden. Wir sehen uns ein Paar diese Konfigurationseinstellungen.
 
 ### <a name="configuration-settings-that-impact-performance"></a>Konfigurationseinstellungen, die auf die Leistung auswirken
@@ -51,7 +48,6 @@ Das Debug-Attribut ist eine der wichtigsten Attribute in der `<compilation>` Ele
 
 > [!NOTE]
 > `WebResource.axd` eine integrierte HTTP-Handler wird in ASP.NET 2.0 eingeführt, die Steuerelemente zu verwenden, um eingebettete Ressourcen, z. B. Skriptdateien, Bilder, CSS-Dateien und andere Inhalte abzurufen. Weitere Informationen dazu, wie `WebResource.axd` funktioniert und wie Sie es auf eingebettete Ressourcen aus Ihrem benutzerdefinierten Steuerelementen, verwenden können, finden Sie unter [zugreifen auf eingebettete Ressourcen über eine URL verwenden `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx).
-
 
 Die `<compilation>` des Elements `debug` -Attributsatz ist in der Regel auf "true" in der Entwicklungsumgebung. In der Tat, dass auf dieses Attribut muss auf "true", um eine Webanwendung; Debuggen festgelegt werden kann Wenn Sie versuchen, eine ASP.NET-Anwendung in Visual Studio debuggen und die `debug` -Attribut auf "False" festgelegt ist, zeigt Visual Studio wird eine Meldung angezeigt, dass die Anwendung kann, bis gedebuggt werden die `debug` -Attribut ist auf "true" und wird festgelegt bieten Sie diese Änderung vornehmen.
 
@@ -71,7 +67,6 @@ Beim Entwickeln und Testen einer Anwendung, die ist es hilfreich, jede Ausnahme 
 
 > [!NOTE]
 > Der Standardwert `<customErrors>` Abschnitt-Einstellung zeigt die Details der Ausnahme Nachricht nur, wenn die Seite "durch" localhost "aufgerufen wird und der generischen Fehlermeldung Laufzeitseite andernfalls zeigt. Diese Vorgehensweise nicht optimal, aber es erkennt, dass das Standardverhalten Ausnahmedetails für nicht-lokalen Besucher dadurch nicht gewährleistet. Eine zukünftige Lernprogramm wird untersucht, die `<customErrors>` Abschnitt noch ausführlicher und zeigt, wie Sie eine benutzerdefinierten Fehlerseite angezeigt, wenn ein Fehler in der Produktion auftritt.
-
 
 Ist ein weiteres ASP.NET-Feature, das während der Entwicklung nützlich ist die Ablaufverfolgung. Ablaufverfolgung, wenn aktiviert, zeichnet folgende Informationen für jede eingehende Anforderung und stellt eine spezielle Webseite `Trace.axd`, für die Anzeige von Details zur aktuellen Anforderung. Sie können aktivieren und Konfigurieren der Ablaufverfolgung über die [ `<trace>` Element](https://msdn.microsoft.com/library/6915t83k.aspx) in `Web.config`.
 
@@ -111,7 +106,6 @@ Finden Sie weitere Informationen zur Verwendung der Web-Bereitstellungsprojekt s
 
 > [!NOTE]
 > Sie können nicht der Web-Bereitstellungsprojekt mit Visual Web Developer verwenden, da es sich bei der Web-Bereitstellungsprojekt ist als ein Visual Studio-Add-In implementiert und die Visual Studio Express Edition (einschließlich Visual Web Developer)-Add-Ins nicht unterstützt.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

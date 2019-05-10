@@ -8,12 +8,12 @@ ms.date: 07/28/2008
 ms.assetid: 14d9aa1b-4dca-43a0-aa9d-a6e891fee019
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8ba4bc5dc7ae2478413049ebb2943cbbe52e11e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 10cb11d75b278acc5dfbdf3d7560c3e268ad6e7d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396784"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132042"
 ---
 # <a name="nested-master-pages-vb"></a>Geschachtelte Masterseiten (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_VB.pdf)
 
 > Zeigt, wie eine Masterseite innerhalb einer anderen geschachtelt werden.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -43,14 +42,12 @@ In diesem Lernprogramm beginnt mit der die Vorteile der verschachtelte Gestaltun
 > [!NOTE]
 > Geschachtelte Masterseiten sind seit Version 2.0 von .NET Framework möglich. Visual Studio 2005 jedoch nicht in die entwurfszeitunterstützung für verschachtelte Gestaltungsvorlagen enthalten. Die gute Nachricht ist, dass umfassende Funktionen zur Entwurfszeit für verschachtelte Gestaltungsvorlagen, Visual Studio 2008 bietet. Wenn Sie mit geschachtelten Masterseiten möchten, aber weiterhin Visual Studio 2005 verwenden, sehen Sie sich [Scott Guthrie](https://weblogs.asp.net/scottgu/)Blogeintrag [Tipps für geschachtelte Masterseiten in Visual Studio 2005-Design-Time-](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx).
 
-
 ## <a name="the-benefits-of-nested-master-pages"></a>Die Vorteile der geschachtelte Masterseiten
 
 Viele Websites ist eine übergeordnete Design der Website sowie mehr benutzerdefinierte Designs für bestimmte Arten von Seiten. Unsere Demo-Webanwendung haben wir beispielsweise eine rudimentäre Verwaltungsabschnitt erstellt (die Seiten in der `~/Admin` Ordner). Derzeit den Webseiten in der `~/Admin` Ordner verwenden dieselbe Masterseite als diese Seiten nicht in den Verwaltungsabschnitt (nämlich `Site.master` oder `Alternate.master`, je nachdem, auf die Auswahl des Benutzers).
 
 > [!NOTE]
 > Nehmen Sie jetzt, dass Sie unsere Website nur eine Masterseite verfügt über `Site.master`. Wir behandeln die verschachtelte Gestaltungsvorlagen mit zwei (oder mehr) Masterseiten, beginnend mit "Verwenden einer geschachtelten Master für die Verwaltung Seitenabschnitt" weiter unten in diesem Tutorial verwenden.
-
 
 Angenommen Sie, wir aufgefordert wurden, passen Sie das Layout der Verwaltungsseiten sollen zusätzliche Informationen oder Links, die andernfalls nicht in den anderen Seiten der Website vorhanden wäre. Es gibt vier Verfahren zum Implementieren dieser Anforderung:
 
@@ -73,21 +70,17 @@ Erstellen einem Masterauftrag für den geschachtelten basierend auf einer vorhan
 
 Erstellen Sie einen neuen Ordner namens `NestedMasterPages` und fügen Sie eine neue Masterseitendatei klicken Sie dann zu diesem Ordner mit dem Namen `Simple.master`. (Siehe Abbildung 1 für einen Screenshot des Projektmappen-Explorer nach dem dieser Ordner und die Datei hinzugefügt wurden.) Ziehen Sie die `AlternateStyles.css` Stylesheetdatei Projektmappen-Explorer auf den Designer. Dadurch wird eine `<link>` Element der Stylesheetdatei in der `<head>` Element, nach dem der Masterseite `<head>` der Elementknoten dem Elementmarkup sollte wie folgt aussehen:
 
-
 [!code-aspx[Main](nested-master-pages-vb/samples/sample1.aspx)]
 
 Fügen Sie das folgende Markup im Web Form `Simple.master`:
-
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample2.aspx)]
 
 Dieses Markup zeigt eine Verknüpfung mit dem Titel "Geschachtelte Masterseiten (einfach)" am oberen Rand der Seite in großer Schriftart auf dunkelblaue Hintergrund weiß. Ist die `MainContent` ContentPlaceHolder. Abbildung 1 zeigt die `Simple.master` Masterseite, die beim Laden in Visual Studio-Designer.
 
-
 [![Der geschachtelte Masterseite definiert Content speziell zu den Seiten im Bereich Verwaltung](nested-master-pages-vb/_static/image2.png)](nested-master-pages-vb/_static/image1.png)
 
 **Abbildung 01**: Die geschachtelte Master Seite definiert Inhalt für die Seiten im Bereich Verwaltung ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image3.png))
-
 
 ## <a name="step-2-creating-a-simple-nested-master-page"></a>Schritt 2: Erstellen einer einfachen, geschachtelten Masterseite
 
@@ -100,19 +93,15 @@ Klicken Sie dann auf die Schaltfläche "hinzufügen". Dadurch wird die gleiche S
 > [!NOTE]
 > Wenn Sie Ihre ASP.NET-Website das Webanwendungsprojekt-Modell verwenden, anstatt das Websiteprojekt-Modell erstellt haben, sehen Sie nicht das Kontrollkästchen "Masterseite auswählen", in das Dialogfeld "Neues Element hinzufügen" in Abbildung 2 dargestellt. Um eine geschachtelte Masterseite zu erstellen, wenn Sie das Webanwendungsprojekt-Modell verwenden, müssen Sie die geschachtelte Masterseite-Vorlage (anstelle der Masterseitenvorlage) auswählen. Nach dem Auswählen der Masterseite geschachtelte Vorlage, und klicken Sie auf Hinzufügen, wählen Sie den gleichen eine Masterseite, die in Abbildung 3 dargestellte Dialogfeld angezeigt wird.
 
-
 [![Überprüfen Sie die &quot;Masterseite auswählen&quot; Kontrollkästchen, um eine geschachtelte Masterseite hinzufügen](nested-master-pages-vb/_static/image5.png)](nested-master-pages-vb/_static/image4.png)
 
 **Abbildung 02**: Aktivieren Sie das Kontrollkästchen "Masterseite auswählen" zum Hinzufügen einer geschachtelten Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image6.png))
-
 
 [![Binden Sie die geschachtelte Masterseite zur Simple.master Masterseite](nested-master-pages-vb/_static/image8.png)](nested-master-pages-vb/_static/image7.png)
 
 **Abbildung 03**: Geschachtelte Masterseite binden die `Simple.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image9.png))
 
-
 Die geschachtelte Masterseite deklarativen Markup, wie unten beschrieben, enthält zwei Inhaltssteuerelemente verweisen auf der obersten Ebene der Masterseite zwei ContentPlaceHolder-Steuerelemente.
-
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample3.aspx)]
 
@@ -120,16 +109,13 @@ Mit Ausnahme der `<%@ Master %>` -Anweisung anfängliche deklarativen Markup fü
 
 Aktualisieren Sie diese geschachtelten Masterseite, sodass es den Text "Hello, from SimpleNested!" anzeigt Klicken Sie in das Inhaltssteuerelement, das entspricht, dem `MainContent` ContentPlaceHolder-Steuerelement.
 
-
 [!code-aspx[Main](nested-master-pages-vb/samples/sample4.aspx)]
 
 Treffen Sie diese Erweiterung, und speichern Sie die geschachtelte Masterseite und dann eine neue Seite zum Hinzufügen der `NestedMasterPages` Ordner mit dem Namen `Default.aspx`, und binden Sie es an der `SimpleNested.master` Masterseite. Beim Hinzufügen von dieser Seite ist Sie möglicherweise überrascht, dass sie keine Inhaltssteuerelemente enthält (siehe Abbildung 4). Eine Inhaltsseite kann nur Zugriff auf seine *übergeordneten* master-Seite ContentPlaceHolder-Steuerelemente. `SimpleNested.master` enthält keine ContentPlaceHolder-Steuerelemente. aus diesem Grund kann keiner Inhaltsseite, die an diese Masterseite gebunden ContentControl-Elemente enthalten.
 
-
 [![Die neue Seite enthält keine ContentControl-Elemente](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
 
 **Abbildung 04**: Die neue Seite enthält keine Inhalte Inhaltssteuerelemente ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image12.png))
-
 
 Was wir tun müssen ist, aktualisieren Sie die geschachtelte Masterseite (`SimpleNested.master`) zu ContentPlaceHolder-Steuerelemente enthalten. In der Regel sollten Ihre verschachtelten Gestaltungsvorlagen, die ein ContentPlaceHolder-Objekt für jede ContentPlaceHolder definiert, durch die übergeordnete Masterseite, wodurch dessen untergeordnete Masterseite oder Inhaltsseite auf die mit der obersten Ebene der Masterseite ContentPlaceHolder arbeiten müssen Sie -Steuerelemente.
 
@@ -138,9 +124,7 @@ Update der `SimpleNested.master` Masterseite ein ContentPlaceHolder-Objekt in de
 > [!NOTE]
 > Ich würde Ihnen empfehlen, benennen die ContentPlaceHolder-Steuerelemente in der geschachtelten Masterseite identisch mit der ContentPlaceHolder-Steuerelemente auf der obersten Ebene Masterseite, ist diese Benennungskonvention Symmetrie nicht erforderlich. Sie können die ContentPlaceHolder-Steuerelemente in Ihre geschachtelten Masterseite einen beliebigen Namen geben Sie die gewünschten. Aber ich finde es leichter zu merken, was ContentPlaceHolder-Steuerelemente entsprechen in welchen Regionen Rand der Seite, wenn meine der obersten Ebene der Masterseite und geschachtelte Masterseiten die gleichen Namen verwenden.
 
-
 Nach dem Herstellen dieser Ergänzungen Ihrer `SimpleNested.master` der Masterseite deklaratives Markup sollte etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample5.aspx)]
 
@@ -148,34 +132,27 @@ Löschen der `Default.aspx` Inhaltsseite, die wir gerade erstellt haben, und kli
 
 Abbildung 5 zeigt die drei Entitäten, die zurück - `Simple.master`, `SimpleNested.master`, und `Default.aspx` – und wie diese miteinander in Beziehung stehen. Wie das Diagramm zeigt, implementiert die geschachtelten Masterseite ContentControl-Elemente des übergeordneten Elements ContentPlaceHolder. Wenn diese Bereiche auf der Seite Inhalt zugreifen kann müssen, muss die geschachtelten Masterseite eigene ContentPlaceHolder-Steuerelemente an die Inhaltssteuerelemente hinzufügen.
 
-
 [![Die obersten Ebene und geschachtelte Masterseiten bestimmt den Inhalt des Layouts einer Seite](nested-master-pages-vb/_static/image14.png)](nested-master-pages-vb/_static/image13.png)
 
 **Abbildung 05**: Die obersten Ebene und geschachtelte Masterseiten bestimmen die Inhaltsseite Layout ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image15.png))
 
-
 Dieses Verhalten zeigt, wie eine Seite oder Masterseite nur die übergeordnete Masterseite kennen sollten. Dieses Verhalten wird auch durch Visual Studio-Designer angezeigt. Abbildung 6 zeigt den Designer für `Default.aspx`. Während der Designer deutlich zeigt, in welchen Regionen auf der Seite Inhalt bearbeitet werden und was nicht, dass Teile sind, nicht es unterscheiden, was nicht bearbeitbare Bereiche der geschachtelten Masterseite sind und welche Bereiche der obersten Ebene Masterseite.
-
 
 [![Der Inhalt Seite nun enthält ContentControl-Elemente, für die geschachtelte Masterseite ContentPlaceHolder-Steuerelemente](nested-master-pages-vb/_static/image17.png)](nested-master-pages-vb/_static/image16.png)
 
 **Abbildung 06**: Die Seite jetzt umfasst Inhalte Inhaltssteuerelemente für die geschachtelte Masterseites ContentPlaceHolder-Steuerelemente ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image18.png))
 
-
 ## <a name="step-3-adding-a-second-simple-nested-master-page"></a>Schritt 3: Hinzufügen einer zweiten, einfache, geschachtelte Masterseite
 
 Der Vorteil der verschachtelte Gestaltungsvorlagen ist offensichtlich, wenn es mehrere geschachtelte Masterseiten gibt. Um diesen Vorteil zu veranschaulichen, erstellen Sie einen anderen geschachtelten Masterseite in der `NestedMasterPages` Ordner; die Namen dieser neuen geschachtelten Masterseite `SimpleNestedAlternate.master` und binden Sie es an der `Simple.master` Masterseite. Fügen Sie in der geschachtelten Masterseite zwei Inhaltssteuerelementen ContentPlaceHolder-Steuerelemente hinzu, wie in Schritt2. Steigern Sie den Text "Hello, from SimpleNestedAlternate!" Klicken Sie in das Inhaltssteuerelement, das der obersten Ebene der Masterseite entspricht `MainContent` ContentPlaceHolder. Nach diesen Änderungen sollte die neue geschachtelte Masterseite der deklarativen Markup etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample6.aspx)]
 
 Erstellen Sie eine Inhaltsseite, die mit dem Namen `Alternate.aspx` in die `NestedMasterPages` Ordner und binden Sie es an der `SimpleNestedAlternate.master` geschachtelte Masterseite. Fügen Sie den Text, der "Hello, alternativer!" Klicken Sie in das Inhaltssteuerelement, das entspricht `MainContent`. Abbildung 7 zeigt `Alternate.aspx` über Visual Studio-Designer angezeigt.
 
-
 [![Alternate.aspx ist an der SimpleNestedAlternate.master Masterseite gebunden.](nested-master-pages-vb/_static/image20.png)](nested-master-pages-vb/_static/image19.png)
 
 **Abbildung 07**: `Alternate.aspx` gebunden ist, um die `SimpleNestedAlternate.master` Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image21.png))
-
 
 Vergleichen Sie den Designer in Abbildung 7 in den Designer in Abbildung 6. Beide Inhaltsseiten gemeinsam nutzen, dasselbe Layout auf der obersten Ebene Masterseite definiert (`Simple.master`), und zwar auf den Titel "Nested Master Pages-Tutorial (einfach)". Beide haben noch unterschiedliche Inhalte in ihrer übergeordneten Masterseiten - definiert den Text "Hello, from SimpleNested!" in Abbildung 6 und "Hello, from SimpleNestedAlternate!" in Abbildung 7. Gewährt, diese Unterschiede sind einfach, aber Sie könnten dieses Beispiel, um aussagekräftigere unterschieden zählen erweitern. Z. B. die `SimpleNested.master` Seite sind zum Beispiel ein Menü mit Optionen, die spezifisch für die Inhaltsseiten, wohingegen `SimpleNestedAlternate.master` möglicherweise Informationen zu den Content-Seiten, die an ihn binden müssen.
 
@@ -183,16 +160,13 @@ Stellen Sie sich nun vor, dass wir das Layout der übergeordnete Standort änder
 
 Um die einfache veranschaulichen, mit denen wir das Layout der übergeordnete Standort ändern können, öffnen Sie die `Simple.master` Masterseite, und fügen Sie das folgende Markup zwischen den `topContent` und `mainContent` `<div>` Elemente:
 
-
 [!code-aspx[Main](nested-master-pages-vb/samples/sample7.aspx)]
 
 Dies fügt zwei Links an den Anfang jeder Seite, an die gebunden `Simple.master`, `SimpleNested.master`, oder `SimpleNestedAlternate.master`; diese Änderungen gelten für alle geschachtelten Masterseiten und ihre Inhaltsseiten sofort. Abbildung 8 zeigt `Alternate.aspx` über einen Browser angezeigt. Beachten Sie die Verknüpfungen am oberen Rand der Seite "(im Vergleich mit Abbildung 7).
 
-
 [![In die Masterseite der obersten Ebene geändert werden sofort in den geschachtelten Masterseiten und Inhaltsseiten für deren dargestellt.](nested-master-pages-vb/_static/image23.png)](nested-master-pages-vb/_static/image22.png)
 
 **Abbildung 08**: In der Masterseite von der obersten Ebene geändert werden sofort in den geschachtelten Masterseiten und Inhaltsseiten für deren dargestellt ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image24.png))
-
 
 ## <a name="using-a-nested-master-page-for-the-administration-section"></a>Verwenden einer geschachtelten Masterseite für den Verwaltungsabschnitt
 
@@ -218,19 +192,15 @@ Wie konfigurieren wir unsere geschachtelte Masterseite, dass die entsprechenden 
 
 Wir verwenden die zweite Option. Erstellen Sie eine einzelne geschachtelte Masterseitendatei in die `~/Admin` Ordner mit dem Namen `AdminNested.master`. Da beide `Site.master` und `Alternate.master` den gleichen Satz von ContentPlaceHolder-Steuerelemente haben, ist es unerheblich, welche Masterseite, binden zwar gerne damit binden `Site.master` aus Gründen der Konsistenz.
 
-
 [![Hinzufügen einer geschachtelten Masterseite in den Ordner ~/Admin an.](nested-master-pages-vb/_static/image26.png)](nested-master-pages-vb/_static/image25.png)
 
 **Abbildung 09**: Hinzufügen einer geschachtelten Masterseite, die `~/Admin` Ordner. ([Klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image27.png))
 
-
 Da die geschachtelte Masterseite auf eine Gestaltungsvorlage mit vier ContentPlaceHolder-Steuerelemente gebunden ist, fügt Visual Studio vier Inhaltssteuerelemente zum anfänglichen Markup für die neue geschachtelte Masterseite-Datei. Wie in den Schritten 2 und 3 ein ContentPlaceHolder-Steuerelement in den einzelnen Steuerelementen Inhalt hinzufügen, gewähren sie den gleichen Namen wie der obersten Ebene der Masterseite ContentPlaceHolder-Steuerelement. Fügen Sie auch das folgende Markup an das Inhaltssteuerelement, das entspricht, dem `MainContent` ContentPlaceHolder:
-
 
 [!code-html[Main](nested-master-pages-vb/samples/sample8.html)]
 
 Als Nächstes definieren Sie die `instructions` CSS-Klasse der `Styles.css` und `AlternateStyles.css` CSS-Dateien. Die folgenden CSS-Regeln dazu führen, dass HTML-Elemente erstellt, in denen die `instructions` Klasse mit eine gelbe Hintergrundfarbe und ein schwarzer, durchgezogener Rahmen angezeigt werden:
-
 
 [!code-css[Main](nested-master-pages-vb/samples/sample9.css)]
 
@@ -238,18 +208,15 @@ Da dieses Markup der geschachtelten Masterseite hinzugefügt wurde, wird es nur 
 
 Nach dem Herstellen dieser Ergänzungen an Ihre geschachtelten Masterseite, sollte der deklarative Markup etwa wie folgt aussehen:
 
-
 [!code-aspx[Main](nested-master-pages-vb/samples/sample10.aspx)]
 
 Beachten Sie, dass jedes Inhaltssteuerelement ein ContentPlaceHolder-Steuerelement, und dass die ContentPlaceHolder-Steuerelemente `ID` Eigenschaften werden die gleichen Werte wie die entsprechenden ContentPlaceHolder-Steuerelemente auf der obersten Ebene Masterseite zugewiesen. Darüber hinaus wird die Verwaltung Abschnitt-spezifische Markup in der `MainContent` ContentPlaceHolder.
 
 Abbildung 10 zeigt die `AdminNested.master` geschachtelte Masterseite, wenn Sie über Visual Studio-Designer angezeigt. Sehen Sie die Anweisungen in das gelbe Feld am oberen Rand der `MainContent` Inhaltssteuerelement.
 
-
 [![Der geschachtelte Masterseite erweitert die Masterseite enthält Anweisungen für den Administrator.](nested-master-pages-vb/_static/image29.png)](nested-master-pages-vb/_static/image28.png)
 
 **Abbildung 10**: Der geschachtelte Masterseite erweitert die Masterseite enthält Anweisungen für den Administrator. ([Klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image30.png))
-
 
 ## <a name="step-5-updating-the-existing-content-pages-to-use-the-new-nested-master-page"></a>Schritt 5: Aktualisieren die vorhandenen Inhaltsseiten, um die neue geschachtelte Masterseite verwenden
 
@@ -259,26 +226,21 @@ Um die beste Methode zum erreichen dies gewünscht Verhalten ist zum Erstellen e
 
 Starten, indem eine neue Klassendatei zum Hinzufügen der `App_Code` Ordner mit dem Namen `AdminBasePage.vb`. Haben `AdminBasePage` erweitern `BasePage` und überschreiben Sie dann die `SetMasterPageFile` Methode. Weisen Sie in dieser Methode die `MasterPageFile` den Wert "~ / Admin/AdminNested.master". Nach diesen Änderungen Ihrer Klasse sollte die Datei etwa wie folgt aussehen:
 
-
 [!code-vb[Main](nested-master-pages-vb/samples/sample11.vb)]
 
 Jetzt müssen wir haben bei der Verwaltung Abschnitt leiten Sie von der bestehenden Inhaltsseiten `AdminBasePage` anstelle von `BasePage`. Wechseln Sie zu die CodeBehind-Klassendatei für jede Seite Inhalt in die `~/Admin` Ordner und diese Änderung vornehmen. Z. B. in `~/Admin/Default.aspx` ändern Sie die Deklaration der CodeBehind-Klasse aus:
-
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample12.vb)]
 
 Nach:
 
-
 [!code-vb[Main](nested-master-pages-vb/samples/sample13.vb)]
 
 Abbildung 11 zeigt wie die obersten Ebene Masterseite (`Site.master` oder `Alternate.master`), die geschachtelte Masterseite (`AdminNested.master`), und die Inhaltsseiten für die Verwaltung im Abschnitt miteinander in Beziehung stehen.
 
-
 [![Der geschachtelte Masterseite definiert Content speziell zu den Seiten im Bereich Verwaltung](nested-master-pages-vb/_static/image32.png)](nested-master-pages-vb/_static/image31.png)
 
 **Abbildung 11**: Die geschachtelte Master Seite definiert Inhalt für die Seiten im Bereich Verwaltung ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image33.png))
-
 
 ## <a name="step-6-mirroring-the-master-pages-public-methods-and-properties"></a>Schritt 6: Spiegelung öffentliche Methoden und Eigenschaften der Masterseite
 
@@ -288,11 +250,9 @@ Die `~/Admin/AddProduct.aspx` und `~/Admin/Products.aspx` Seiten wird davon ausg
 
 Um dies zu beheben, wir haben müssen, die `AdminNested.master` Code-Behind-Klasse erweitern `BaseMasterPage`. Aktualisieren Sie die geschachtelte Masterseite Code-Behind-Klassendeklaration aus:
 
-
 [!code-vb[Main](nested-master-pages-vb/samples/sample14.vb)]
 
 Nach:
-
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample15.vb)]
 
@@ -302,21 +262,17 @@ Wir müssen diese Member im implementieren `AdminNested.master`, diese Implement
 
 Um dies zu erreichen, starten Sie durch Hinzufügen des folgenden `@MasterType` -Direktive am Anfang `AdminNested.master`:
 
-
 [!code-aspx[Main](nested-master-pages-vb/samples/sample16.aspx)]
 
 Bedenken Sie, dass die `@MasterType` Richtlinie fügt eine stark typisierte-Eigenschaft für die Code-Behind-Klasse, die mit dem Namen `Master`. Überschreiben Sie dann die `RefreshRecentProductsGrid` und `GridMessageText` Mitglieder und Delegieren Sie einfach den Aufruf der `Master`die entsprechende Methode:
-
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample17.vb)]
 
 Mit diesem Code werden sollten Sie in der Lage zu besuchen und die Inhaltsseiten im Bereich Verwaltung verwenden. Abbildung 12 zeigt die `~/Admin/Products.aspx` Seite, wenn Sie über einen Browser angezeigt. Wie Sie sehen, enthält die Seite das Kontrollkästchen Verwaltung-Anweisungen, die in der geschachtelten Masterseite definiert ist.
 
-
 [![Die Inhaltsseiten im Bereich Verwaltung gehören Anweisungen am oberen Rand jeder Seite](nested-master-pages-vb/_static/image35.png)](nested-master-pages-vb/_static/image34.png)
 
 **Abbildung 12**: Die Inhaltsseiten in die Verwaltung im Abschnitt enthalten Anweisungen an die von jeder Seite der obersten ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image36.png))
-
 
 ## <a name="step-7-using-the-appropriate-top-level-master-page-at-runtime"></a>Schritt 7: Mithilfe der entsprechenden Masterseite zur Laufzeit
 
@@ -326,18 +282,15 @@ Verwenden Sie die Seite die obersten Ebene master ausgewählt, durch den Endbenu
 
 Aus diesem Grund müssen wir legen Sie der geschachtelte Masterseite `MasterPageFile` Eigenschaft aus der Content-Basis. Der einzige Inhalt Seiten, die die `AdminNested.master` Masterseite ableiten `AdminBasePage`. Aus diesem Grund können wir diese Logik dort ablegen. In Schritt 5 wir außer Kraft gesetzt den `SetMasterPageFile` Methode des Seitenobjekts `MasterPageFile` Eigenschaft "~ / Admin/AdminNested.master". Update `SetMasterPageFile` fest, dass auch der Masterseite `MasterPageFile` Eigenschaft, um das Ergebnis in der Sitzung gespeichert:
 
-
 [!code-vb[Main](nested-master-pages-vb/samples/sample18.vb)]
 
 Die `GetMasterPageFileFromSession` -Methode, die wir hinzugefügt haben die `BasePage` Klasse, die im vorherigen Tutorial Pfad der entsprechenden Masterseite auf den Wert der Variable Sitzung basierend gibt.
 
 Mit dieser Änderung vorgenommen wurde führt die Auswahl des Benutzers Masterseite mit dem Abschnitt für die Verwaltung. Abbildung 13 zeigt dieselbe Seite als Abbildung 12, aber erst nachdem der Benutzer die Masterseite Auswahl geändert hat `Alternate.master`.
 
-
 [![Die geschachtelte Verwaltungsseite verwendet die Masterseite, die vom Benutzer ausgewählt](nested-master-pages-vb/_static/image38.png)](nested-master-pages-vb/_static/image37.png)
 
 **Abbildung 13**: Die Verwaltungsseite für geschachtelte verwendet, die obersten Ebene Master Seite vom Benutzer ausgewählten ([klicken Sie, um das Bild in voller Größe anzeigen](nested-master-pages-vb/_static/image39.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2008
 ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dd60d02c2c3840edd4c0e1244623fcea0cb2db0b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 27ceb8b30aaad2ad0ed7af5cd852af4acf599c31
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386319"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131693"
 ---
 # <a name="control-id-naming-in-content-pages-vb"></a>Benennung von Steuerelement-IDs auf Inhaltsseiten (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_VB.pdf)
 
 > Veranschaulicht, wie ContentPlaceHolder-Steuerelemente als Benennungscontainer dienen, und stellen Sie daher programmgesteuert ein Steuerelement, die schwierig (über FindControl) verwenden. Prüft, ob dieses Problem und problemumgehungen. Außerdem wird erläutert, wie den sich ergebenden ClientID-Wert programmgesteuert zugreifen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -33,7 +32,6 @@ Um solche Szenarien zu behandeln, können ASP.NET bestimmte Steuerelemente angez
 > [!NOTE]
 > Die [ `INamingContainer` Schnittstelle](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx) wird verwendet, um anzugeben, dass eine bestimmte ASP.NET-Serversteuerelement als Benennungscontainer funktionieren sollte. Die `INamingContainer` Schnittstelle ausgeschrieben nicht auf alle Methoden, die das Steuerelement implementieren, müssen; stattdessen wird es als Marker verwendet. Beim Generieren der gerenderten Markups, wenn ein Steuerelement diese Schnittstelle implementiert, klicken Sie dann das ASP.NET-Modul automatisch das Präfix der `ID` Wert, der ihm ungeordnete gerendert `id` Attributwerte. Dieser Prozess wird in Schritt2 ausführlicher erläutert.
 
-
 Benennen von Containern ändern nicht nur das gerenderte `id` Attribut wirkt sich jedoch auch wie das Steuerelement programmgesteuert aus der ASP.NET-Seite Code-Behind-Klasse verwiesen werden kann. Die `FindControl("controlID")` Methode wird häufig verwendet, um auf ein Steuerelement programmgesteuert zu verweisen. Allerdings `FindControl` nicht über das Benennen von Containern durchdringen. Infolgedessen können nicht direkt verwenden Sie die `Page.FindControl` Methode, um die Steuerelemente in einer GridView-Ansicht oder andere Benennungscontainer verweisen.
 
 Wie Sie mit Ihrer Vermutung haben können, werden Masterseiten und ContentPlaceHolder-Steuerelemente sowohl implementiert wie das Benennen von Containern. In diesem Tutorial untersuchen wir wie master Pages Auswirkungen-HTML-Element `id` Werte und Methoden zum programmgesteuerten Websteuerelemente in einer Inhaltsseite mit Verweisen auf `FindControl`.
@@ -42,34 +40,27 @@ Wie Sie mit Ihrer Vermutung haben können, werden Masterseiten und ContentPlaceH
 
 Um die in diesem Tutorial beschriebenen Konzepte zu veranschaulichen, fügen Sie eine neue ASP.NET-Seite auf unserer Website. Erstellen Sie eine neue Seite mit dem Namen `IDIssues.aspx` im Stammordner, binden an die `Site.master` Masterseite.
 
-
 ![Fügen Sie den Inhalt Seite IDIssues.aspx in den Stammordner](control-id-naming-in-content-pages-vb/_static/image1.png)
 
 **Abbildung 01**: Fügen Sie die Seite Inhalte `IDIssues.aspx` in den Stammordner
 
-
 Visual Studio erstellt automatisch ein ContentControl-Element für jede der Masterseite vier ContentPlaceHolder-Steuerelemente. Wie erwähnt in der [ *mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt* ](multiple-contentplaceholders-and-default-content-vb.md) Tutorial, wenn ein ContentControl-Element nicht vorhanden ist wird stattdessen die Masterseite ContentPlaceHolder Standardinhalt ausgegeben. Da die `QuickLoginUI` und `LeftColumnContent` ContentPlaceHolder-Steuerelemente enthalten die Standard-Markup für diese Seite, fahren Sie fort, und entfernen Sie die entsprechenden Inhaltssteuerelemente aus `IDIssues.aspx`. An diesem Punkt sollte die Inhaltsseite deklaratives Markup wie folgt aussehen:
-
 
 [!code-aspx[Main](control-id-naming-in-content-pages-vb/samples/sample1.aspx)]
 
 In der [ *Titel, Meta-Tags und anderer HTML-Header angeben, auf der Masterseite* ](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md) Lernprogramm erstellten eine benutzerdefinierten Basisseite-Klasse (`BasePage`) der Titel der Seite, die automatisch konfiguriert, wenn es sich handelt nicht explizit festgelegt wurde. Für die `IDIssues.aspx` Seite, um diese Funktionalität zu nutzen, zu der Seite Code-Behind-Klasse muss leiten Sie von der `BasePage` Klasse (anstelle von `System.Web.UI.Page`). Ändern Sie die Definition für die Code-Behind-Klasse, damit sie wie folgt aussieht:
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample2.vb)]
 
 Aktualisieren Sie abschließend die `Web.sitemap` hinzu, um einen Eintrag für diese neue Lektion einzubeziehen. Hinzufügen einer `<siteMapNode>` Element, und legen dessen `title` und `url` "Steuerelement-ID-Benennungsprobleme" Attribute und `~/IDIssues.aspx`bzw. Treffen Sie diese Ergänzung Ihrer `Web.sitemap` Markup für die Datei sollte etwa wie folgt aussehen:
-
 
 [!code-xml[Main](control-id-naming-in-content-pages-vb/samples/sample3.xml)]
 
 Wie Abbildung 2 veranschaulicht, in den neuen Standort-Zuordnungseintrag `Web.sitemap` sofort in den Lektionen-Abschnitt in der linken Spalte wiedergegeben wird.
 
-
 ![Abschnitt Lektionen enthält nun einen Link zum &quot;Steuerelement-ID, die Benennung von Problemen&quot;](control-id-naming-in-content-pages-vb/_static/image2.png)
 
 **Abbildung 02**: Abschnitt Lektionen enthält nun einen Link zu "Probleme"Steuerelement-IDs "
-
 
 ## <a name="step-2-examining-the-renderedidchanges"></a>Schritt 2: Untersuchen der gerenderten`ID`Änderungen
 
@@ -77,19 +68,15 @@ Um die Änderungen der ASP.NET besser zu verstehen Engine macht, für das gerend
 
 An diesem Punkt sollte Ihre Inhaltssteuerelement deklaratives Markup etwa wie folgt aussehen:
 
-
 [!code-aspx[Main](control-id-naming-in-content-pages-vb/samples/sample4.aspx)]
 
 Abbildung 3 zeigt die Seite, wenn Sie über Visual Studio-Designer angezeigt.
-
 
 [![Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche, und Bezeichnung](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
 
 **Abbildung 03**: Die Seite enthält drei Websteuerelemente: ein Textfeld, Schaltfläche und Label ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image5.png))
 
-
 Besuchen Sie die Seite über einen Browser, und zeigen Sie die HTML-Quelle. Als Markup unten zeigt die `id` Werte der HTML-Elemente für die Textfeld, Schaltfläche und Label-Webserver-Steuerelemente sind eine Kombination der `ID` Werte von Websteuerelementen und der `ID` Werte das Benennen von Containern auf der Seite.
-
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample5.html)]
 
@@ -97,18 +84,14 @@ Wie weiter oben in diesem Tutorial erwähnt, werden sowohl die Masterseite als a
 
 Abbildung 4 zeigt dieses Verhalten. Um zu bestimmen, das gerenderte `id` von der `Age` TextBox, beginnen Sie mit der `ID` Wert des TextBox-Steuerelement, `Age`. Als Nächstes arbeiten der Steuerelementhierarchie nach oben. Auf jede Benennungscontainer (diese Knoten durch eine orangefarbene Farbe), Präfix der aktuellen gerendert `id` mit des Benennungscontainers `id`.
 
-
 ![Die Rendered-Id-Attribute werden basierend auf der ID-Werte der Naming-Container](control-id-naming-in-content-pages-vb/_static/image6.png)
 
 **Abbildung 04**: Die Rendered `id` Attribute werden basierend auf den `ID` Werte Benennen von Containern
 
-
 > [!NOTE]
 > Wie wir erläutert, die `ctl00` Teil des gerenderten `id` Attribut bildet die `ID` Wert der Masterseite, aber Sie vielleicht wie dieser `ID` Wert stammt, zu. Wir ihn nicht in unserer master oder Content-Seite an einer beliebigen Stelle angeben. Die meisten Steuerelemente auf einer ASP.NET-Seite werden explizit über deklaratives Markup der Seite hinzugefügt. Die `MainContent` ContentPlaceHolder-Steuerelement wurde explizit im Markup angegeben `Site.master`; die `Age` Textfeld definiert wurde `IDIssues.aspx`Markup. Wir können angeben, die `ID` Werte für diese Arten von Steuerelementen, die über das Eigenschaftenfenster oder über die deklarative Syntax. Andere Steuerelemente, wie die Masterseite selbst sind nicht im deklarativen Markup definiert. Daher ihre `ID` Werte automatisch für uns generiert werden müssen. Im ASP.NET-Engine wird die `ID` Werte zur Laufzeit für die Steuerelemente, deren IDs nicht explizit festgelegt wurde müssen. Er verwendet das Benennungsmuster `ctlXX`, wobei *XX* ist ein zunehmenden Integer-Wert.
 
-
 Da die Masterseite selbst dient als Benennungscontainer, die Web-Steuerelemente, die in der Masterseite definierte auch wurden geändert gerenderten `id` Attributwerte. Z. B. die `DisplayDate` Bezeichnung, die wir, auf die Masterseite in hinzugefügt der [ *erstellen einen websiteweiten Layouts mit Masterseiten* ](creating-a-site-wide-layout-using-master-pages-vb.md) Tutorial wurde Folgendes Markup Rendern:
-
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample6.html)]
 
@@ -125,18 +108,15 @@ Zur Veranschaulichung der Verwendung der `FindControl` Methode zum Suchen nach S
 > [!NOTE]
 > Natürlich ist es möglich, wir müssen nicht verwenden `FindControl` auf die Bezeichnung und TextBox-Steuerelemente in diesem Beispiel verweisen. Wir könnten verweisen sie direkt über ihre `ID` Eigenschaftswerte. Ich verwende `FindControl` hier, um zu veranschaulichen, was geschieht, wenn mit `FindControl` von einer Inhaltsseite.
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample7.vb)]
 
 Während Sie die Syntax zum Aufrufen der `FindControl` Methode unterscheidet sich geringfügig, in den ersten beiden Zeilen der `SubmitButton_Click`, semantisch gleichwertig. Beachten Sie, die allen ASP.NET-Serversteuerelementen enthalten eine `FindControl` Methode. Dies schließt die `Page` Klasse, die von der alle ASP.NET-STEUERELEMENTE müssen Code-Behind-Klassen von abgeleitet werden. Aus diesem Grund Aufrufen `FindControl("controlID")` entspricht dem Aufruf `Page.FindControl("controlID")`, sofern Sie noch nicht außer Kraft gesetzt den `FindControl` -Methode in der CodeBehind-Klasse oder in einer benutzerdefinierten Basisklasse.
 
 Geben Sie diesen Code, besuchen Sie die `IDIssues.aspx` Seite über einen Webbrowser, geben Sie Ihr Alter, und klicken Sie auf die Schaltfläche "Absenden". Nach dem Klicken auf die Schaltfläche "Absenden" eine `NullReferenceException` ausgelöst wird (siehe Abbildung 5).
 
-
 [![Es wird eine "NullReferenceException" ausgelöst.](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
 
 **Abbildung 05**: Ein `NullReferenceException` ausgelöst ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image9.png))
-
 
 Wenn Sie einen Haltepunkt, in Festlegen der `SubmitButton_Click` -Ereignishandler Sie sehen, dass beide Aufrufe von `FindControl` zurückgeben `Nothing`. Die `NullReferenceException` wird ausgelöst, wenn wir versuchen, den Zugriff auf die `Age` Textfeldss `Text` Eigenschaft.
 
@@ -148,11 +128,9 @@ Es gibt zwei problemumgehungen auf diese Herausforderung: können die diagrammda
 
 Mit `FindControl` zu verweisen die `Results` Bezeichnung oder `Age` Textfeld müssen wir Aufrufen `FindControl` von einem übergeordneten Steuerelement in der gleichen Namenscontainer. Wie Abbildung 4 gezeigt, die `MainContent` ContentPlaceHolder-Steuerelement ist das einzige Vorgängerelement `Results` oder `Age` , der sich im selben Benennungscontainer. Das heißt, Aufrufen der `FindControl` Methode aus der `MainContent` -Steuerelement, wie im folgenden Codeausschnitt gezeigt ordnungsgemäß gibt einen Verweis auf die `Results` oder `Age` Steuerelemente.
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample8.vb)]
 
 Es kann jedoch nicht arbeiten mit der `MainContent` ContentPlaceHolder aus unserer Inhaltsseite Code-Behind-Klasse, die die oben aufgeführten Syntax verwenden, da die ContentPlaceHolder in die Masterseite definiert ist. Stattdessen haben wir mit `FindControl` zum Abrufen eines Verweises auf `MainContent`. Ersetzen Sie den Code in die `SubmitButton_Click` -Ereignishandler durch die folgenden Änderungen:
-
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample9.vb)]
 
@@ -160,23 +138,19 @@ Wenn Sie auf die Seite über einen Browser besuchen, geben Sie Ihr Alter, und kl
 
 Bevor wir verwenden können, `FindControl` zum Abrufen eines Verweises auf `MainContent`, wir zunächst einen Verweis auf die Masterseite-Steuerelement. Nachdem wir einen Verweis auf die Masterseite haben wir können einen Verweis auf die `MainContent` ContentPlaceHolder über `FindControl` und von dort Verweise auf die `Results` Bezeichnung und `Age` Textfeld (in diesem Fall durch die Verwendung von `FindControl`). Aber wie bekommen wir einen Verweis auf die Masterseite? Durch Überprüfen der `id` Attribute in dem gerenderten Markup ist es offensichtlich, die der Masterseite `ID` Wert `ctl00`. Wir könnten aus diesem Grund verwenden `Page.FindControl("ctl00")` rufen Sie einen Verweis auf die Masterseite zum Abrufen eines Verweises auf das Objekt dann mit `MainContent`und so weiter. Der folgende Codeausschnitt zeigt diese Logik:
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample10.vb)]
 
 Dieser Code sicherlich funktionieren, es wird davon ausgegangen, die die Masterseite automatisch generierte `ID` immer `ctl00`. Es ist nie eine gute Idee, Annahmen über die automatisch generierten Werte.
 
 Glücklicherweise ist ein Verweis auf die Masterseite über die `Page` Klasse `Master` Eigenschaft. Aus diesem Grund statt verwenden zu müssen `FindControl("ctl00")` um einen Verweis der Masterseite zu erhalten, um Zugriff auf die `MainContent` ContentPlaceHolder, wir können stattdessen `Page.Master.FindControl("MainContent")`. Update der `SubmitButton_Click` -Ereignishandler durch den folgenden Code:
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample11.vb)]
 
 Dieses Mal auf der Seite über einen Browser, Ihr Alter eingeben, und klicken auf die Schaltfläche "Absenden" zeigt die Meldung in die `Results` bezeichnen, wie erwartet.
 
-
 [![Das Alter des Benutzers wird in der Bezeichnung angezeigt.](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
 
 **Abbildung 06**: Das Alter des Benutzers wird angezeigt, in der Bezeichnung ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image12.png))
-
 
 ### <a name="recursively-searching-through-naming-containers"></a>Rekursiv durchsucht Benennen von Containern
 
@@ -189,35 +163,28 @@ Die gute Nachricht ist, dass wir unseren eigenen erstellen können `FindControl`
 > [!NOTE]
 > Erweiterungsmethoden sind eine Funktion, die sich neu zu c# 3.0 und Visual Basic 9, d. h. die Sprachen, die mit .NET Framework Version 3.5 und Visual Studio 2008 geliefert. Kurz gesagt, ermöglichen Erweiterungsmethoden für einen Entwickler zum Erstellen einer neuen Methode für einen vorhandenen Klassentyp über eine spezielle Syntax. Weitere Informationen zu diesem Feature hilfreich finden Sie in meinem Artikel [Base Typ erweitern-Funktion mit Erweiterungsmethoden](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx).
 
-
 Um die Erweiterungsmethode zu erstellen, fügen Sie eine neue Datei, die `App_Code` Ordner mit dem Namen `PageExtensionMethods.vb`. Fügen Sie eine Erweiterungsmethode namens `FindControlRecursive` , akzeptiert als Eingabe eine `String` Parameter mit dem Namen `controlID`. Für Erweiterungsmethoden ordnungsgemäß funktioniert, ist es wichtig, dass die Klasse als gekennzeichnet werden eine `Module` und die Erweiterungsmethoden werden mit dem Präfix die `<Extension()>` Attribut. Darüber hinaus alle Erweiterungsmethoden müssen akzeptieren als ersten Parameter ein Objekt des Typs, für die die Erweiterungsmethode gilt.
 
 Fügen Sie den folgenden Code der `PageExtensionMethods.vb` Datei, um diese definieren `Module` und `FindControlRecursive` Erweiterungsmethode:
-
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample12.vb)]
 
 Mit diesem Code vorhanden, zurück zu den `IDIssues.aspx` , Code-Behind-Klasse und kommentieren Sie die aktuelle Seite `FindControl` Methodenaufrufe. Ersetzen Sie sie durch Aufrufen von `Page.FindControlRecursive("controlID")`. Zu Erweiterungsmethoden praktisch ist, dass sie direkt in der Dropdown-Listen von IntelliSense angezeigt werden. Wie in Abbildung 7 dargestellt, bei der Eingabe `Page` und drücken Sie dann den Zeitraum, der `FindControlRecursive` Methode befindet sich in der IntelliSense-Dropdownliste zusammen mit anderen `Control` -Klassenmethoden.
 
-
 [![Erweiterungsmethoden sind in der IntelliSense-Dropdown-Elemente enthalten.](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
 
 **Abbildung 07**: Erweiterungsmethoden befinden sich in der IntelliSense-Dropdown-Elemente ([klicken Sie, um das Bild in voller Größe anzeigen](control-id-naming-in-content-pages-vb/_static/image15.png))
 
-
 Geben Sie den folgenden Code in die `SubmitButton_Click` -Ereignishandler und dann testen, indem Sie besuchen die Seite, Ihr Alter eingeben und auf die Schaltfläche "Absenden" klicken. Wie in Abbildung 6 gezeigt, ist die Ausgabe die Nachricht, "Sie sind Alter Jahre!"
-
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample13.vb)]
 
 > [!NOTE]
 > Da Erweiterungsmethoden noch nicht mit c# 3.0 und Visual Basic 9 sind, wenn Sie Visual Studio 2005 verwenden, können nicht Sie Erweiterungsmethoden verwenden. Stattdessen müssen Sie zum Implementieren der `FindControlRecursive` -Methode in eine Hilfsklasse. [Rick Strahl](http://www.west-wind.com/WebLog/default.aspx) verfügt über ein Beispiel dafür in seinem Blogbeitrag von [Maser ASP.NET-Seiten und `FindControl` ](http://www.west-wind.com/WebLog/posts/5127.aspx).
 
-
 ## <a name="step-4-using-the-correctidattribute-value-in-client-side-script"></a>Schritt 4: Mit dem richtigen`id`-Attributwert im Client-seitige Skript
 
 Wie in diesem Tutorial Einführung erwähnt, ein Websteuerelement gerenderten `id` Attribut wird häufig in Client-seitige Skript verwendet, um programmgesteuert auf ein bestimmtes HTML-Element verweisen. Der folgende JavaScript-Code verweist beispielsweise ein HTML-Element, durch die `id` und anschließend den Wert in ein modales Meldungsfeld angezeigt:
-
 
 [!code-csharp[Main](control-id-naming-in-content-pages-vb/samples/sample14.cs)]
 
@@ -227,11 +194,9 @@ Das Problem bei diesem Ansatz ist, die die Verwendung von Masterseiten (oder and
 
 Die gute Nachricht ist, die die `id` Attributwert, der gerendert werden kann zugegriffen werden, im serverseitigen Code über des Websteuerelements [ `ClientID` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx). Sie sollten diese Eigenschaft verwenden, um zu bestimmen, die `id` Attribut in Client-seitige Skript verwendet. Beispielsweise, um eine JavaScript-Funktion auf der Seite hinzufügen, aufgerufen wird, zeigt den Wert der die `Age` im Textfeld ein modales Meldungsfeld, fügen Sie folgenden Code, der `Page_Load` -Ereignishandler:
 
-
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample15.vb)]
 
 Der obige Code fügt den Wert des der `Age` Textfeldss `ClientID` Eigenschaft in der JavaScript-Aufruf `getElementById`. Wenn Sie diese Seite über einen Browser und zeigen Sie die HTML-Quelle, finden Sie den folgenden JavaScript-Code:
-
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample16.html)]
 
@@ -239,7 +204,6 @@ Beachten Sie, dass wie die richtige `id` -Attributwert `ctl00_MainContent_Age`, 
 
 > [!NOTE]
 > Dieser JavaScript-Beispiel veranschaulicht lediglich eine JavaScript-Funktion hinzufügen, die ordnungsgemäß von einem Serversteuerelement gerenderte HTML-Elements verweist. Um diese Funktion verwenden, müssten Sie zum Erstellen von weiteren JavaScript-Code zum Aufrufen der Funktion, wenn das Dokument geladen wird oder eine bestimmte Benutzeraktion herausstellt. Weitere Informationen zu diesen und verwandten Themen, lesen Sie [arbeiten mit Client-seitige Skript](https://msdn.microsoft.com/library/aa479302.aspx).
-
 
 ## <a name="summary"></a>Zusammenfassung
 

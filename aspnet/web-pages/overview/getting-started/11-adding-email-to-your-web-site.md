@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: fc49bcb9-f1a9-4048-8c3f-b60951853200
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 0263f736b96f8e8572536f3783d86c261d7c0512
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 23e9717329525fb5a0ed505c9dc94505d4f9dbbe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411227"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130548"
 ---
 # <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>Senden von E-Mails von einem Standort der ASP.NET Web Pages (Razor)
 
@@ -39,7 +39,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
 
-
 <a id="Sending_Email_Messages"></a>
 ## <a name="sending-email-messages-from-your-website"></a>Senden von e-Mail-Nachrichten von der Website
 
@@ -57,7 +56,6 @@ In diesem Verfahren erstellen Sie zwei Seiten. Die erste Seite enthält ein Form
 
 > [!NOTE]
 > In diesem Beispiel wird der Einfachheit halber der Code initialisiert die `WebMail` Helper rechts auf der Seite, wo Sie es verwenden. Für echte Websites, es ist jedoch eine bessere Vorstellung Initialisierungscode wie folgt in der globalen Datei zu platzieren, damit Sie initialisieren den `WebMail` -Hilfsprogramm für alle Dateien auf Ihrer Website. Weitere Informationen finden Sie unter [anpassen standortweite Verhalten für ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Setting_Values_For_Helpers).
-
 
 1. Erstellen einer neuen Website.
 2. Hinzufügen einer neuen Seite, die mit dem Namen *EmailRequest.cshtml* und fügen Sie das folgende Markup hinzu: 
@@ -133,7 +131,6 @@ Sie können auch Dateien senden, die e-Mail-Nachrichten zugeordnet sind. In dies
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 - [Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)](https://go.microsoft.com/fwlink/?LinkId=253001)
 - [Simple Mail Transfer-Protokoll](https://msdn.microsoft.com/library/aa480435.aspx)

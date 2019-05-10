@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fc03767c16f46c1e282d24ee3a7df2409a7c38bb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389205"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128576"
 ---
 # <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>Leitfaden zur Behandlung von Problemen mit ASP.NET Web Pages (Razor)
 
@@ -28,7 +28,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2 und ASP.NET Web Pages-1.0.
-
 
 Dieses Thema enthält folgende Abschnitte:
 
@@ -150,7 +149,6 @@ Ersetzen Sie die entsprechenden Werte für `your-SMTP-server-name`und so weiter.
 
 > [!NOTE]
 > Entfernen Sie das Markup, das den Fehler anzeigt (`@errorMessage`), bevor Sie die Seite auf einem live-Website veröffentlichen. Es ist nicht ratsam, können Benutzer Fehlermeldungen angezeigt werden, die Sie von einem Server zu erhalten.
-
 
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen

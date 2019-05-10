@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: bea66072-59b6-42b4-98fa-211812f5925f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 223fad7013a53212c0c822a87bd3e2fcc0a5f17f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 136e265f36a49a1d3ed41d2a998c395fd2c4fd32
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408952"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128729"
 ---
 # <a name="dynamically-controlling-updatepanel-animations-vb"></a>Dynamisches Steuern von UpdatePanel-Animationen (VB)
 
@@ -23,7 +23,6 @@ durch [Christian Wenz](https://github.com/wenz)
 
 > Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Für den Inhalt von einem UpdatePanel-Steuerelement vorhanden ist, ein spezieller Extender, der stark auf die Animationsframework basiert: UpdatePanelAnimation. Sie können auch zusammen mit UpdatePanel-Triggern arbeiten.
 
-
 ## <a name="overview"></a>Übersicht
 
 Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Für den Inhalt einer `UpdatePanel`, ein spezieller Extender vorhanden ist, die sehr auf die Animationsframework basiert: `UpdatePanelAnimation`. Sie können auch arbeiten zusammen mit `UpdatePanel` Trigger.
@@ -32,31 +31,25 @@ Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein St
 
 Der erste Schritt ist wie üblich, enthalten die `ScriptManager` auf der Seite, damit die ASP.NET AJAX-Bibliothek geladen wird und das Steuerelement-Toolkit verwendet werden kann:
 
-
 [!code-aspx[Main](dynamically-controlling-updatepanel-animations-vb/samples/sample1.aspx)]
 
 Die Animation in diesem Szenario wird an eine Anzeige der aktuellen Zeit angewendet werden. Diese Informationen kann geschrieben werden, in eine Bezeichnung mit der `Page_Load()` -Methode, oder (aus Gründen der Einfachheit) den folgenden Inlinecode verwendet wird:
-
 
 [!code-aspx[Main](dynamically-controlling-updatepanel-animations-vb/samples/sample2.aspx)]
 
 Darüber hinaus wird eine Schaltfläche ausgelöst wird, aktualisieren die Zeit erstellt:
 
-
 [!code-aspx[Main](dynamically-controlling-updatepanel-animations-vb/samples/sample3.aspx)]
 
 Dieser Code wird dann in eingefügt der `<ContentTemplate>` Teil einer `UpdatePanel` Element. Der Bereich `UpdateMode` Attribut muss festgelegt werden, um `"Conditional"`, da nur Trigger, den Inhalt des Bereichs aktualisieren können. In der `<Triggers>` Teil der `UpdatePanel`, asynchroner Postbacktrigger erstellt und gebunden werden, um die `Click` -Ereignis der Schaltfläche. Also, wenn der Benutzer auf die Schaltfläche klickt der `UpdatePanel` aktualisiert wird. Dies ist das Markup für die `UpdatePanel` Steuerelement:
-
 
 [!code-aspx[Main](dynamically-controlling-updatepanel-animations-vb/samples/sample4.aspx)]
 
 Zum Schluss die `UpdatePanelAnimationExtender` muss so konfiguriert werden: Legen Sie die `TargetControlID` -Attribut auf die ID des Bereichs, und definieren Sie eine Animation innerhalb des Extenders. Überblenden in macht Sinn, die einen gute visual Schwerpunkt auf die aktualisierte Zeit erstellt. Das Extendermarkup kann dann wie folgt aussehen:
 
-
 [!code-aspx[Main](dynamically-controlling-updatepanel-animations-vb/samples/sample5.aspx)]
 
 Führen Sie die Datei im Browser. Wenn Sie auf die Schaltfläche klicken, wird die aktuelle Uhrzeit im Bereich immer für die Dauer von einer Sekunde mit im Verlauf angezeigt.
-
 
 [![Die aktuelle Uhrzeit ist mit im Verlauf.](dynamically-controlling-updatepanel-animations-vb/_static/image2.png)](dynamically-controlling-updatepanel-animations-vb/_static/image1.png)
 

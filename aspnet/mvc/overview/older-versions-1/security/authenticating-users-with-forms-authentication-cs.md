@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 239fd3ca-5630-4b8d-bc4b-2f906b1d3504
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b52abab12503918603419c9ccfabefcffdfd7e06
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bed2eafa47fec25ac04cb07e0037f596494bb7d9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418273"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128197"
 ---
 # <a name="authenticating-users-with-forms-authentication-c"></a>Authentifizieren von Benutzern bei der Formularauthentifizierung (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie Sie mit dem [Authorize]-Attribut mit einem Kennwort geschützt bestimmte Seiten in der MVC-Anwendung. Erfahren Sie, wie Sie mit der Web Site Administration Tool zum Erstellen und Verwalten von Benutzern und Rollen. Außerdem erfahren Sie, wie so konfigurieren, in dem Konto und die entsprechende Benutzerinformationen gespeichert ist.
-
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie Formulare verwenden können Kennwort-Authentifizierung schützen, die Ansichten in ASP.NET MVC-Anwendungen. Erfahren Sie, wie das Websiteverwaltungs-Tool verwenden, um Benutzer und Rollen zu erstellen. Sie erfahren außerdem, wie Sie verhindern, dass nicht autorisierte Benutzer Controlleraktionen aufgerufen. Schließlich erfahren Sie, wie Sie konfigurieren, in dem Benutzernamen und Kennwörter gespeichert werden.
 
@@ -117,7 +116,6 @@ Die ASP.NET SQL Server-Setup-Assistenten können Sie wählen Sie eine SQL Server
 > Wenn Sie nicht die ASP.NET SQL Server-Setup-Assistenten verwenden möchten, finden Sie bei SQL-Skripts zum Hinzufügen von Application Services Datenbankobjekte im folgenden Ordner:
 > 
 > > C:\Windows\Microsoft.NET\Framework\v2.0.50727
-
 
 Nachdem Sie die erforderlichen Datenbankobjekte erstellen, müssen Sie Ihre MVC-Anwendung ein, die Verbindung mit der Datenbank zu ändern. Ändern Sie die ApplicationServices-Verbindungszeichenfolge in Ihrer Web-Konfigurationsdatei (web.config), damit er in der Produktionsdatenbank verweist. Beispielsweise verweist die geänderte Verbindung in Programmausdruck 3 mit einer Datenbank mit dem Namen MyProductionDB (die ursprüngliche ApplicationServices-Verbindungszeichenfolge wurde auskommentiert wurde).
 

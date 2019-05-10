@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 02c4371cccb56f0ef7c0a6244c3dcd8a30d241b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fedf3261fd1c73107575ea94186c6c895a7fd529
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415647"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127906"
 ---
 # <a name="logging-error-details-with-elmah-c"></a>Protokollieren von Fehlerdetails mit ELMAH (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_cs.pdf)
 
 > Fehler beim Protokollieren Module und Handler (ELMAH) bietet ein weiteres Verfahren zum Protokollieren von Laufzeitfehlern in einer produktionsumgebung. ELMAH ist eine kostenlose open Source Fehler protokollierungsbibliothek, die Features wie fehlerfilterung und die Möglichkeit, die an das Fehlerprotokoll von einer Webseite als RSS-feed oder als eine durch Trennzeichen getrennte Datei zum Herunterladen enthält. In diesem Tutorial führt Sie durch das Herunterladen und Konfigurieren von ELMAH.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -36,7 +35,6 @@ In diesem Tutorial erläutert die Schritte zum Hinzufügen von ELMAH an eine ASP
 
 > [!NOTE]
 > Die Systemüberwachung für den System- und ELMAH haben beide ihre eigenen Gruppen von vor- und Nachteile. Sollten Sie versuchen beide Systeme, und entscheiden, ein am besten erfüllt Ihre Anforderungen.
-
 
 ## <a name="adding-elmah-to-an-aspnet-web-application"></a>Hinzufügen von ELMAH an eine ASP.NET-Webanwendung
 
@@ -56,12 +54,10 @@ ELMAH-1.0 BETA 3 (10617 erstellen), die neueste Version zum Zeitpunkt der geschr
 > [!NOTE]
 > Die `Elmah.dll` Datei befindet sich im Download des `Bin` Ordner, in dem Unterordner für die verschiedenen Versionen von .NET Framework und Release- und Debugkonfigurationen Builds besitzt. Verwenden Sie die endgültige Produktversion, für die entsprechende Framework-Version. Kopieren Sie z. B. Wenn Sie eine ASP.NET 3.5-Webanwendung erstellen, die `Elmah.dll` -Datei aus der `Bin\net-3.5\Release` Ordner.
 
-
 Als Nächstes öffnen Sie Visual Studio, und fügen Sie die Assembly dem Projekt, mit der rechten Maustaste auf den Namen der Website im Projektmappen-Explorer und auswählen Verweis aus dem Kontextmenü hinzufügen. Dadurch wird das Dialogfeld "Verweis hinzufügen". Navigieren Sie zur Registerkarte "Durchsuchen", und wählen Sie die `Elmah.dll` Datei. Diese Aktion fügt der `Elmah.dll` Datei an der Webanwendung `Bin` Ordner.
 
 > [!NOTE]
 > Der Typ der Web Application Project (WAP) wird nicht angezeigt. die `Bin` Ordner im Projektmappen-Explorer. Stattdessen werden diese Elemente unter dem Ordner "Verweise" aufgeführt.
-
 
 Die `Elmah.dll` Assembly enthält die Klassen, die durch das ELMAH-System verwendet. Diese Klassen werden in drei Kategorien unterteilt:
 
@@ -100,7 +96,6 @@ ELMAH sucht in der Website auf die Konfigurationsoptionen `Web.config` Datei in 
 > [!NOTE]
 > Wenn Sie ELMAH für eine ASP.NET 1.x-Anwendung konfigurieren und entfernen Sie dann die `requirePermission="false"` -Attribut aus dem `<section>` obigen Elemente.
 
-
 Die oben aufgeführten Syntax registriert die benutzerdefinierte `<elmah>` Abschnitt und die zugehörigen Unterabschnitte: `<security>`, `<errorLog>`, `<errorMail>`, und `<errorFilter>`.
 
 Fügen Sie als Nächstes die `<elmah>` Abschnitt `Web.config`. Dieser Abschnitt sollte angezeigt werden, auf der gleichen Ebene wie die `<system.web>` Element. In der `<elmah>` Abschnitt hinzufügen, die `<security>` und `<errorLog>` Abschnitte wie folgt:
@@ -113,7 +108,6 @@ Die `<errorLog>` Abschnitt definiert die Protokollquelle Fehler, der gibt an, in
 
 > [!NOTE]
 > ELMAH im Lieferumfang von zusätzlichen Fehlerinformationen von Protokollanbietern, die zum Protokollieren von Fehlern, die eine XML-Datei, eine Microsoft Access-Datenbank, eine Oracle-Datenbank und anderen Datenspeichern verwendet werden können. Im Beispiel `Web.config` -Datei, die mit dem ELMAH-Download für Informationen zur Verwendung dieser Alternativen Fehler Protokollanbieter enthalten ist.
-
 
 ### <a name="step-4-creating-the-error-log-source-infrastructure"></a>Schritt 4: Erstellen die Fehler-Log-Source-Infrastruktur
 
@@ -137,7 +131,6 @@ ELMAH hat keine Auswirkungen auf Inhalte, die dem Benutzer angezeigt wird, wenn 
 
 > [!NOTE]
 > Sie können auch die `elmah.axd` Seite anweisen ELMAH, um einen Testfehler zu generieren. Zugriff auf `elmah.axd/test` (als `http://localhost/BookReviews/elmah.axd/test`) bewirkt, dass ELMAH auslösen eine Ausnahme vom Typ `Elmah.TestException`, die die Fehlermeldung enthält: " Dies ist eine testausnahme, die ignoriert werden kann."
-
 
 **Abbildung 3** im Fehlerprotokoll zeigt, wenn das Unternehmen besuchen `elmah.axd` aus der Entwicklungsumgebung.
 
@@ -184,7 +177,6 @@ Die folgende Konfiguration ermöglicht nur Benutzern die Administratorrolle aus,
 > [!NOTE]
 > Die Rolle "Administrator" und die drei Benutzer im System - Scott Jisun und Alice - wurden hinzugefügt, der [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-cs.md). Benutzer Scott und Jisun sind Mitglieder der Rolle "Admin". Weitere Informationen zu Authentifizierung und Autorisierung, finden Sie in meinem [Website-Lernprogramme zur ASP.NET-Sicherheit](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
 
-
 Das Fehlerprotokoll in der produktionsumgebung kann jetzt von remote-Benutzern angezeigt werden; zurückgreifen **Abbildungen 3**, **4**, und **5** Screenshots der der Fehler Log-Webseite. Allerdings, wenn ein anonymer oder nicht-Administrator-Benutzer versucht, auf der Seite "Fehler" anzeigen sie werden automatisch zur Anmeldeseite (`Login.aspx`), als **abbildung7** zeigt.
 
 [![](logging-error-details-with-elmah-cs/_static/image18.png)](logging-error-details-with-elmah-cs/_static/image17.png)
@@ -229,7 +221,6 @@ Das folgende Markup weist ELMAH 404-Fehlern nicht anmelden.
 
 > [!NOTE]
 > Vergessen Sie nicht, um Fehler Filtern müssen Sie registrieren die `ErrorFilterModule` HTTP-Modul.
-
 
 Die `<equal>` Element innerhalb der `<test>` Abschnitt wird als Assertion bezeichnet. Wenn die Assertion auf "true" ausgewertet wird. wird der Fehler aus ELMAH Protokoll gefiltert. Es gibt andere Assertionen zur Verfügung, darunter: `<greater>`, `<greater-or-equal>`, `<not-equal>`, `<lesser>`, `<lesser-or-equal>`und so weiter. Sie können auch mithilfe von Assertionen kombinieren die `<and>` und `<or>` booleschen Operatoren. Sie können auch einen einfachen JavaScript-Ausdruck als Assertion enthalten oder Ihre eigenen Assertionen in c# oder Visual Basic schreiben.
 

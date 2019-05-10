@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: b4e76c1a-f66e-43a0-aa72-f39df79c07c1
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: a06def9c434bd79d63bb74d105c1788e993e231a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: acac3ade54cc51c8004f9ea5f0ee4157d15251e5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383876"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130178"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films (C#)
 
@@ -32,7 +32,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 > Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
 > Ein Visual Web Developer-Projekt mit C#-Quellcode ist verfügbar, zur Ergänzung dieses Themas. [Laden Sie die C#-Version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zu der [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
-
 
 In diesem Abschnitt werden Sie die ViewModel-Klassen ein paar Änderungen vornehmen und erfahren Sie, wie Sie das Datenbankschema entsprechend den Änderungen des Datenmodells aktualisieren können.
 
@@ -84,7 +83,6 @@ Aktualisieren wir die Anwendung, sodass Code First automatisch gelöscht und neu
 > [!NOTE] 
 > 
 > **Warnung** sollten Sie diesen Ansatz, der automatisch löschen und die Datenbank neu zu erstellen, nur, wenn Sie eine Datenbank Entwicklungs- oder testumgebung verwenden, aktivieren und *nie* in einer Produktionsdatenbank, die tatsächlichen Daten enthält. Verwenden es auf einem Produktionsserver kann zu Datenverlust führen.
-
 
 In **Projektmappen-Explorer**, klicken Sie mit der rechten Maustaste auf die *Modelle* Ordner **hinzufügen**, und wählen Sie dann **Klasse**.
 

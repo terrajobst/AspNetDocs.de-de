@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68f8bdeeb85bc66cf790c2005cf0f0ff24b3b653
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394158"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129770"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Lesen verwandter Daten mit dem Entitätsframework in einer ASP.NET MVC-Anwendung (6 von 10)
 
@@ -26,7 +26,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > [!NOTE] 
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 In vorherigen Tutorial in Sie verwandte Daten angezeigt. In diesem Tutorial werden verwandte Daten aktualisiert werden. Für die meisten Beziehungen kann dies erfolgen durch die entsprechenden Felder mit Fremdschlüsseln aktualisieren. Für m: n Beziehungen nicht Entity Framework die verknüpften Tabelle direkt verfügbar machen, daher müssen Sie explizit hinzufügen und Entfernen von Entitäten aus die entsprechenden Navigationseigenschaften.
 
@@ -194,14 +193,12 @@ Klicken Sie auf **bearbeiten** für einen Dozenten auf der Seite "Bearbeiten" fi
 Ändern Sie einige kurszuweisungen, und klicken Sie auf **speichern**. Die Änderungen werden auf der Indexseite angezeigt.
 
  Hinweis: Dieser Ansatz zum Bearbeiten von Dozenten funktioniert gut, wenn eine begrenzte Anzahl von Kursen vorhanden ist. Bei umfangreicheren Auflistungen wären eine andere Benutzeroberfläche und eine andere Aktualisierungsmethode erforderlich.  
- 
 
 ## <a name="update-the-delete-method"></a>Aktualisieren Sie die Delete-Methode
 
 Ändern Sie den Code in der HttpPost-Delete-Methode, damit der Eintrag der Office-Zuweisung (sofern vorhanden) gelöscht wird, wenn der Dozent gelöscht wird:
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs?highlight=6,10)]
-
 
 Wenn Sie versuchen, einen Dozenten zu löschen, eine Abteilung als Administrator zugewiesen ist, erhalten Sie einen Fehler der referenziellen Integrität. Finden Sie unter [die aktuelle Version dieses Tutorials](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) zusätzlichen Code für die automatisch die "Instructor" von jede Abteilung entfernt wird, in denen der Dozent als Administrator zugewiesen ist.
 

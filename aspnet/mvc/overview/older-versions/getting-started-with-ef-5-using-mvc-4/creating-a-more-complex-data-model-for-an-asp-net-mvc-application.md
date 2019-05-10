@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2ba7ca22074fe3c131209482180f8f7706714dd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382230"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129834"
 ---
 # <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Erstellen ein komplexeres Datenmodell für eine ASP.NET MVC-Anwendung (4 von 10)
 
@@ -26,7 +26,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > [!NOTE] 
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 In den vorherigen Tutorials haben Sie mit einem einfachen Datenmodell, das aus drei Entitäten Bestand aus. In diesem Tutorial fügen Sie weitere Entitäten und Beziehungen, und passen das Datenmodell von Formatierung, Validierung und Zuordnungsregeln für die Datenbank angeben. Sehen Sie zwei Möglichkeiten zum Anpassen des Datenmodells: durch Hinzufügen von Attributen, um Entitätsklassen und indem Sie Code hinzufügen, um den Datenbankkontext-Klasse.
 
@@ -52,9 +51,7 @@ Die [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataanno
 
 Das `DisplayFormat`-Attribut dient zum expliziten Angeben des Datumsformats:
 
-
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample2.cs)]
-
 
 Die `ApplyFormatInEditMode` Einstellung gibt an, dass die angegebene Formatierung auch angewendet werden soll, wenn der Wert in einem Textfeld zur Bearbeitung angezeigt wird. (Möchten Sie vielleicht nicht, die für einige Felder, z. B. für Währungsangaben nicht empfiehlt das Währungssymbol im Textfeld für die Bearbeitung.)
 
@@ -124,7 +121,6 @@ Sie können auch Änderungen vornehmen, Datenbank Zuordnung mithilfe der [Fluent
 
 > [!NOTE]
 > Wenn Sie versuchen, die kompiliert werden, bevor Sie alle diese Entitätsklassen erstellt haben, erhalten Sie möglicherweise Compilerfehler angezeigt.
-
 
 ## <a name="create-the-instructor-entity"></a>Erstellen der Instructor-Entität
 
@@ -260,7 +256,6 @@ Die Fremdschlüssel- und Navigationseigenschaften stellen folgende Beziehungen d
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
-
 ## <a name="modifying-the-student-entity"></a>Ändern die Entität "Student"
 
 ![Student_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image10.png)
@@ -378,7 +373,6 @@ Nach dem Bearbeiten der &lt; *Zeitstempel&gt;\_Chap4.cs* Datei, geben Sie die `u
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.xml?highlight=1-2)]
 > 
 > Mit einer neuen Datenbank, sind keine Daten zu migrieren, und die `update-database` Befehl ist sehr wahrscheinlich ohne Fehler abgeschlossen. Anweisungen dazu, wie Sie die Datenbank zu löschen, finden Sie unter [Gewusst wie: Löschen einer Datenbank in Visual Studio 2012](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/).
-
 
 Öffnen Sie die Datenbank in **Server-Explorer** wie zuvor, und erweitern Sie die **Tabellen** Knoten aus, um zu sehen, dass alle Tabellen erstellt wurden. (Falls noch **Server-Explorer** immer zu öffnen, klicken Sie auf die **aktualisieren** Schaltfläche.)
 

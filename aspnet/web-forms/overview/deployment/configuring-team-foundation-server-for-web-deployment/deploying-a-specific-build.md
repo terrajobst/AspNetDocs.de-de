@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab58aee6f1203beaf3990536b059f8209e66547
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6bede6b36c24ade928ab052e14daec1e017bd0b2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393482"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131940"
 ---
 # <a name="deploying-a-specific-build"></a>Bereitstellen eines bestimmten Builds
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > Dieses Thema beschreibt, wie Webpakete und die Datenbankskripts aus einem bestimmten vorherigen Build an ein neues Ziel, z. B. ein Staging- oder produktionsumgebung-Umgebung bereitgestellt wird.
-
 
 In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
 
@@ -47,21 +46,15 @@ In der [Beispielprojektmappe](../web-deployment-in-the-enterprise/the-contact-ma
 > [!NOTE]
 > **OutputRoot** ist eine häufig verwendete Eigenschaftenname. Visual c# und Visual Basic-Projektdateien deklarieren auch diese Eigenschaft zum Speichern des Stammverzeichnis für alle Ausgaben des builddebugvorgangs.
 
-
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
-
 
 Wenn Sie möchten die Projektdatei in Webpakete und Skripts von einem anderen Speicherort Datenbank&#x2014;wie die Ausgaben der eine früheren TFS-Build&#x2014;müssen Sie einfach überschreiben die **OutputRoot** Eigenschaft. Sie sollten den Wert der Eigenschaft in den entsprechenden Buildordner auf dem Team Build-Server festlegen. Wenn Sie MSBuild von der Befehlszeile aus ausgeführt haben, geben Sie einen Wert für **OutputRoot** als Befehlszeilenargument:
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
-
 
 In der Praxis jedoch, Sie würden auch überspringen möchten die **erstellen** Ziel&#x2014;wäre es ziemlich sinnlos, bei der Erstellung Ihrer Lösung, wenn Sie nicht planen, verwenden Sie die Buildausgaben. Hierzu können Sie geben die Ziele, die Sie über die Befehlszeile ausführen möchten:
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
-
 
 Allerdings in den meisten Fällen sollten Sie Ihrer Bereitstellungslogik in einer TFS-Builddefinition zu erstellen. Dadurch können Benutzer mit der **Builds zur Warteschlange** Berechtigung für die Bereitstellung über alle Visual Studio-Installation mit einer Verbindung mit dem TFS-Server ausgelöst.
 

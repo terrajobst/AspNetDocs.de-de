@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: ca47f6fe6d55153354d38fcf1ba5e844215279b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2b26224390af70e19ca0593abe93a6867140f8ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389036"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129725"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 – Gerüstbau und Migrationen mit dem Entity Framework
 
@@ -72,13 +72,12 @@ In der folgenden Übung besteht aus diesem Hands-On Lab:
 > [!NOTE]
 > In dieser Übung wird zusammen mit einem **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übung abrufen soll. Sie können diese Lösung als Leitfaden verwenden, wenn Sie zusätzliche Hilfe bei der Arbeit mit der Aufgabe benötigen.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_ASPNET_MVC_4_Scaffolding_with_Entity_Framework_Migrations"></a>
-### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>Übung 1: Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework-Migrationen
+### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>Übung 1: Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework-Migrationen
 
 ASP.NET MVC-Gerüstbau bietet eine schnelle Möglichkeit zum Generieren der CRUD-Vorgänge auf standardisierte Weise erstellen die erforderliche Logik, mit dem Ihre Anwendung mit der Datenbankschicht zu interagieren.
 

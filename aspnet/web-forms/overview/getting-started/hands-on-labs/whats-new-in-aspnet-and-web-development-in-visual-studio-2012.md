@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80c77ec65ed86b06e417d3f6ba608e404c46768b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420210"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132092"
 ---
 # <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Neue Funktionen für die Webentwicklung mit ASP.NET und Visual Studio 2012
 
@@ -30,7 +30,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > Dieses Lab führt Sie durch die Verbesserungen und neue Funktionen, die zuvor beschriebenen durch Anwenden von geringen Änderungen mit einer Beispiel-Webanwendung, die im Quellordner bereitgestellt.
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
-
 
 <a id="Objectives"></a>
 
@@ -70,7 +69,7 @@ Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**.
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Whats_New_in_the_CSS_Editor"></a>
-### <a name="exercise-1-whats-new-in-the-css-editor"></a>Übung 1: Neuerungen in der CSS-Editor
+### <a name="exercise-1-whats-new-in-the-css-editor"></a>Übung 1: Neuerungen in der CSS-Editor
 
 Webentwickler sollten viele der Probleme im Zusammenhang mit der Bearbeitung von CSS vertraut sein. Einer der größten Probleme von CSS-Stilen ist browserübergreifende Kompatibilität. Es kommt häufig vor, nach dem Anwenden von Stilen auf Ihrer Website, Sie feststellen, dass es anders aussieht, wenn Sie es in einem anderen Browser oder Gerät öffnen. Aus diesem Grund können Sie eine sehr viel Zeit verbringen, an deren Behebung dieser Probleme bei visual um bewusst ist, kann sie Wenn Sie schließlich in einem Browser funktionieren vereinfachen, in den anderen unterteilt ist.
 
@@ -204,7 +203,7 @@ In dieser Aufgabe lernen Sie, wie Sie die browserübergreifende kompatibel CSS3-
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Whats_New_in_the_HTML_Editor"></a>
-### <a name="exercise-2-whats-new-in-the-html-editor"></a>Übung 2: Was ist neu in der HTML-Editor
+### <a name="exercise-2-whats-new-in-the-html-editor"></a>Übung 2: Was ist neu in der HTML-Editor
 
 Visual Studio bietet einen verbesserte HTML-Editor. Zu den Verbesserungen in dieser Version enthalten sind Intelligenter Einzug in HTML-Dokumente, HTML5-Ausschnitte, HTML-Start und Ende-übereinstimmende Tags und HTML-Validierung. In dieser Übung sehen Sie, wie diese Änderungen Ihre zu verbessern, bei der Arbeit in das Markup für die Website.
 
@@ -331,7 +330,6 @@ Eine bewährte Methoden in HTML-Code wird die geschachtelten Elemente um den Cod
 > [!NOTE]
 > In früheren Version von Visual Studio, intelligenten Einzug gab es in der XML-Editor aber nicht in der HTML-Editor.
 
-
 1. Stellen Sie sicher, dass die Indenting-Konfiguration auf der HTML-Editor intelligenten Einzug festgelegt ist. Wählen Sie zu diesem Zweck die **Tools | Optionen** Menüoption, und wählen Sie dann die **Text-Editor | HTML | Registerkarten** Seite im linken Bereich des Bildschirms. Wählen Sie die intelligenten Einzugs-Option.
 
     ![HTML-Editor-Einstellungen](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image33.png "HTML-Editor-Einstellungen")
@@ -433,7 +431,6 @@ In dieser Aufgabe werden Sie die neue JavaScript-Validierung für den Standard E
 > [!NOTE]
 > Visual Studio 2010 implementiert ECMAStript3-Kompatibilität, während Visual Studio 2012 ECMAScript5 Konformität bereitgestellt.
 
-
 1. Open **ECMA5script5.js** befindet sich unter dem **Scripts\custom** Projektordner. Testen Sie jetzt die Überprüfung von ECMAScript5-standard.
 
     [!code-html[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample8.html)]
@@ -494,11 +491,10 @@ In dieser Aufgabe untersuchen Sie Visual Studio-Funktionen für die XML-Dokument
 > [!NOTE]
 > Stellen Sie sicher, dass GotoDefinition.js keine Syntaxfehler aufweist, bevor Sie die Datei speichern.
 
-
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Bundling_and_Minification"></a>
-### <a name="exercise-4-bundling-and-minification"></a>Übung 4: Bündelung und Minimierung
+### <a name="exercise-4-bundling-and-minification"></a>Übung 4: Bündelung und Minimierung
 
 Wie viele Male beinhalten Ihrer Websites mehr als ein JavaScript- oder CSS-Datei? Dies ist ein sehr häufiges Szenario, in denen Bündelung und Minimierung können zum Reduzieren der Dateigröße und die Website schneller ausgeführt. Das neue Bündelung-Feature in ASP.NET 4.5 packs einen Satz von js- oder CSS-Dateien in einem einzelnen Element, und reduziert die Größe durch den Inhalt (z. B. nicht erforderliche Leerzeichen entfernen, Entfernen von Kommentaren, Bezeichnern zu reduzieren) minimieren.
 
@@ -675,7 +671,6 @@ In diesem Beispiel erfahren Sie, wie mit der **DynamicFolderBundle** Klasse, um 
 
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
-
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung

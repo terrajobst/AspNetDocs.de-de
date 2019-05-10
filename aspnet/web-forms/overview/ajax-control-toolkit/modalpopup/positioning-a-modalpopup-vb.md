@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 8a07210c-eb0e-485e-9ee8-82a101520e65
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e37d2f4450c697f963d954c2fbb58e3ed20a1566
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d5cfcd2ff8956b54f241ee7002aa00a0bd47469e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421146"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132654"
 ---
 # <a name="positioning-a-modalpopup-vb"></a>Positionieren eines ModalPopup-Steuerelements (VB)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4VB.pdf)
 
 > Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Das Steuerelement bietet jedoch keine integrierte Funktionen, die das Popup zu positionieren.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -53,7 +52,6 @@ Nun müssen lediglich um den Browser, rufen diese Funktionen an, wo immer mögli
 Und die `stopMoving()` Funktion ins Spiel, wenn das Popup kann geschlossen wird ausgelöst, der `ModalPopupExtender` Steuerelement:
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample6.aspx)]
-
 
 [![Die modales Fenster angezeigt wird, an der angegebenen position](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
 

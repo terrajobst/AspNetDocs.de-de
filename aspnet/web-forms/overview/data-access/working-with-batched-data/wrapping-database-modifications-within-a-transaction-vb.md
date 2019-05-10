@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: 7d821db5-6cbb-4b38-af14-198f9155fc82
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2fc7ba3d62d41685c234756709707ff14f81b316
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c759df39f30b69264187babdb6d3422aff17e99c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380313"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132833"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-vb"></a>Umschließen von Datenbankänderungen innerhalb einer Transaktion (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_63_VB.zip) oder [PDF-Datei herunterladen](wrapping-database-modifications-within-a-transaction-vb/_static/datatutorial63vb1.pdf)
 
 > Dieses Tutorial ist der erste von vier, die untersucht aktualisieren, löschen und Einfügen von Batches von Daten. In diesem Tutorial wird erläutert, wie können Datenbanktransaktionen Änderungen von Batch als atomischen Vorgang, festgelegt Dadurch wird sichergestellt, dass alle Schritte erfolgreich sind oder alle Schritte fehlschlagen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -38,7 +37,6 @@ In diesem Tutorial betrachten wir die DAL zur Verwendung von Transaktionen zu er
 
 > [!NOTE]
 > Beim Ändern von Daten in einer Batchtransaktion ist die Unteilbarkeit nicht immer erforderlich. In einigen Szenarien ist es möglicherweise akzeptabel, Sie haben einige datenänderungen, die erfolgreich ausgeführt werden und andere Benutzer im selben Batch ein Fehler auftritt, z. B. wenn eine Gruppe von e-Mails aus einem webbasierten e-Mail-Client gelöscht. Wenn es s nicht genau eine Datenbank-Fehler durch das Löschen verarbeiten, es s ist möglicherweise akzeptabel, dass dieser Datensätze ohne Fehler verarbeitet gelöschte bleiben. In solchen Fällen muss die DAL nicht geändert werden, um die Datenbanktransaktionen unterstützt. Es gibt andere Batch Vorgang Szenarien, jedoch, in denen Unteilbarkeit unerlässlich ist. Wenn ein Kunde ihr Guthaben von einem Bankkonto auf einen anderen bewegt wird, müssen zwei Vorgänge ausgeführt werden: der Betrag tatsächlich aus dem das erste Konto abgezogen und klicken Sie dann die zweite hinzugefügt werden müssen. Während die Bank kann nicht von Bedeutung der erste Schritt erfolgreich ausgeführt werden müssen, aber der zweite Schritt fehlschlägt, werden seine Kunden verständlicherweise verärgert sein. Sollten Sie dieses Tutorial durcharbeiten und die Verbesserungen an die DAL Datenbanktransaktionen unterstützen, auch wenn Sie nicht beabsichtigen, für deren Verwendung in den Batch einfügen, aktualisieren und Löschen von Schnittstellen, die wir in den folgenden drei Tutorials erstellen, zu implementieren.
-
 
 ## <a name="an-overview-of-transactions"></a>Eine Übersicht über Transaktionen
 
@@ -56,9 +54,7 @@ Die SQL-Anweisungen, die zum Erstellen, einen Commit auszuführen, und ein Rollb
 > [!NOTE]
 > Die [ `TransactionScope` Klasse](https://msdn.microsoft.com/library/system.transactions.transactionscope.aspx) in die `System.Transactions` -Namespace ermöglicht es Entwicklern, programmgesteuert eine Reihe von Anweisungen innerhalb des Bereichs einer Transaktion umschließen und bietet Unterstützung für komplexe Transaktionen, bei denen mehrere Quellen, z. B. zwei verschiedenen Datenbanken oder sogar heterogene Arten von Datenspeichern, z.B. Microsoft SQL Server-Datenbank, eine Oracle-Datenbank und einen Webdienst. Ich haben sich entschieden, zur Verwendung von ADO.NET-Transaktionen für dieses Lernprogramm anstelle von der `TransactionScope` Klasse da ADO.NET spezifischere für Datenbanktransaktionen und in vielen Fällen handelt es sich viel weniger ressourcenintensiv ist. Darüber hinaus werden in bestimmten Szenarien der `TransactionScope` Klasse verwendet den Microsoft Distributed Transaction Coordinator (MSDTC). Die Konfiguration, Implementierung und Leistung Probleme umgebenden MSDTC ist es ein Thema stattdessen spezielle und erweiterte und würde den Rahmen dieser Tutorials.
 
-
 Bei der Arbeit mit dem SqlClient-Anbieter in ADO.NET werden Transaktionen durch einen Aufruf initiiert die [ `SqlConnection` Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx) s [ `BeginTransaction` Methode](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.begintransaction.aspx), gibt eine [ `SqlTransaction` Objekt](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.aspx). Die datenänderungsanweisungen, die Zusammensetzung der Transaktion befinden sich in einem `try...catch` Block. Bei einem in einer Anweisung in Fehler der `try` blockieren, Ausführung Datenübertragungen an den die `catch` Block, in dem Rollback der Transaktion kann werden über, die `SqlTransaction` s-Objekt [ `Rollback` Methode](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.rollback.aspx). Wenn alle Anweisungen, einen Aufruf erfolgreich die `SqlTransaction` s-Objekt [ `Commit` Methode](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.commit.aspx) am Ende der `try` Block ein Commit die Transaktion. Der folgende Codeausschnitt veranschaulicht dieses Muster. Finden Sie unter [Datenbankkonsistenz mit Transaktionen warten](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx) für zusätzliche Syntax und Beispiele für die Verwendung von Transaktionen in ADO.NET.
-
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample1.vb)]
 
@@ -74,32 +70,25 @@ Bevor wir beginnen, Gewusst wie: Erweitern Sie die DAL zur Unterstützung von Tr
 - `BatchDelete.aspx`
 - `BatchInsert.aspx`
 
-
 ![Fügen Sie die ASP.NET-Seiten für die Lernprogramme SqlDataSource-bezogene hinzu.](wrapping-database-modifications-within-a-transaction-vb/_static/image1.gif)
 
 **Abbildung 1**: Fügen Sie die ASP.NET-Seiten für die Lernprogramme SqlDataSource-bezogene hinzu.
 
-
 Wie bei den anderen Ordnern `Default.aspx` verwendet die `SectionLevelTutorialListing.ascx` Benutzersteuerelement in den Tutorials in einen Abschnitt aufgelistet. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
-
 
 [![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](wrapping-database-modifications-within-a-transaction-vb/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image1.png)
 
 **Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image2.png))
 
-
 Abschließend fügen Sie diese vier Seiten als Einträge der `Web.sitemap` Datei. Fügen Sie das folgende Markup insbesondere nach dem Anpassen der Sitemap `<siteMapNode>`:
-
 
 [!code-xml[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample2.xml)]
 
 Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website über einen Browser anzeigen. Klicken Sie im Menü auf der linken Seite enthält jetzt Elemente für das Arbeiten mit batchdaten Tutorials.
 
-
 ![Die Sitemap enthält jetzt die Einträge für das Arbeiten mit Batchdaten-Tutorials](wrapping-database-modifications-within-a-transaction-vb/_static/image3.gif)
 
 **Abbildung 3**: Die Sitemap enthält jetzt die Einträge für das Arbeiten mit Batchdaten-Tutorials
-
 
 ## <a name="step-2-updating-the-data-access-layer-to-support-database-transactions"></a>Schritt 2: Aktualisieren der Datenzugriffsebene, um Transaktionen zu unterstützen.
 
@@ -111,14 +100,11 @@ In bestimmten Szenarien möchten wir über eine Reihe von Änderungen Unteilbark
 
 Das typisierte DataSet `Northwind.xsd` befindet sich in der `App_Code` Ordner s `DAL` Unterordner. Erstellen Sie einen Unterordner in der `DAL` Ordner mit dem Namen `TransactionSupport` und fügen Sie eine neue Klassendatei mit dem Namen `ProductsTableAdapter.TransactionSupport.vb` (siehe Abbildung 4). Diese Datei enthält die partielle Implementierung der `ProductsTableAdapter` , die Funktionen zur Durchführung von datenänderungen, die mithilfe einer Transaktion enthält.
 
-
 ![Fügen Sie einen Ordner namens TransactionSupport und eine Klassendatei mit dem Namen ProductsTableAdapter.TransactionSupport.vb hinzu](wrapping-database-modifications-within-a-transaction-vb/_static/image4.gif)
 
 **Abbildung 4**: Fügen Sie einen Ordner mit dem Namen `TransactionSupport` und eine Klassendatei mit dem Namen `ProductsTableAdapter.TransactionSupport.vb`
 
-
 Geben Sie den folgenden Code in die `ProductsTableAdapter.TransactionSupport.vb` Datei:
-
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample3.vb)]
 
@@ -130,13 +116,11 @@ Diese Methoden geben Sie die Bausteine, die erforderlich sind, Rollback- und com
 
 Mit diesen Methoden abgeschlossen ist, können wir re-Methoden hinzufügen `ProductsDataTable` oder die BLL, die eine Reihe von Befehlen unter dem Dach einer Transaktion ausführen. Die folgende Methode verwendet das Muster im Batch zu aktualisieren, aktualisieren Sie eine `ProductsDataTable` -Instanz mithilfe einer Transaktion. Es startet eine Transaktion, durch den Aufruf der `BeginTransaction` -Methode, und dann verwendet, eine `Try...Catch` Block, um die Anweisungen zur Datenänderung ausgegeben. Wenn der Aufruf der `Adapter` s-Objekt `Update` Methode führt zu einer Ausnahme, die Ausführung wird zum Übertragen der `catch` Block, in dem die Transaktion wird ein Rollback, und die Ausnahme erneut ausgelöst. Bedenken Sie, dass die `Update` Methode implementiert das Muster Batchaktualisierung durch Auflisten der Zeilen der angegebenen `ProductsDataTable` und ausführen, die die erforderlichen `InsertCommand`, `UpdateCommand`, und `DeleteCommand` s. Wenn eine der folgenden Befehle führt zu einem Fehler, wird die Transaktion zurückgesetzt rückgängig machen die vorherigen Änderungen, die während der Lebensdauer von Transaktionen s vorgenommen wurden. Sollte die `Update` Anweisung ohne Fehler abgeschlossen ist, wird die Transaktion ein Commit in seiner Gesamtheit ausgeführt.
 
-
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample4.vb)]
 
 Hinzufügen der `UpdateWithTransaction` Methode, um die `ProductsTableAdapter` Klasse über die partielle Klasse in `ProductsTableAdapter.TransactionSupport.vb`. Alternativ konnte diese Methode hinzugefügt werden, der Business Logic Layer s `ProductsBLL` Klasse mit ein paar kleinen syntaktische Änderungen. Nämlich das Schlüsselwort `Me` in `Me.BeginTransaction()`, `Me.CommitTransaction()`, und `Me.RollbackTransaction()` durch ersetzt werden müsste `Adapter` (zur Erinnerung: `Adapter` ist der Name einer Eigenschaft in `ProductsBLL` des Typs `ProductsTableAdapter`).
 
 Die `UpdateWithTransaction` -Methode verwendet das BatchUpdate-Muster, jedoch eine Reihe von DB-Direct-Aufrufe kann innerhalb des Bereichs einer Transaktion, wie die folgende Methode zeigt auch verwendet werden. Die `DeleteProductsWithTransaction` -Methode akzeptiert als Eingabe eine `List(Of T)` des Typs `Integer`, die die `ProductID` s, die gelöscht. Die Methode startet die Transaktion durch einen Aufruf von `BeginTransaction` und dann auf die `Try` blockieren, iteriert durch die angegebene Liste mit dem Aufrufen des DB-Direct-Musters `Delete` Methode für die einzelnen `ProductID` Wert. Wenn die Aufrufe an `Delete` ein Fehler auftritt, wird die Steuerung an die `Catch` Block, in dem die Transaktion ein Rollback, und die Ausnahme erneut ausgelöst. Wenn alle Aufrufe `Delete` erfolgreich ausgeführt werden, und klicken Sie dann die Transaktion ein Commit ausgeführt wird. Fügen Sie diese Methode, um die `ProductsBLL` Klasse.
-
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample5.vb)]
 
@@ -154,12 +138,10 @@ In Schritt 3, die wir hinzugefügt ein `UpdateWithTransaction` Methode, um die `
 
 Öffnen der `ProductsBLL` Klassendatei, und fügen Sie eine Methode mit dem Namen `UpdateWithTransaction` , ruft einfach auf die entsprechende DAL-Methode. Es sollten jetzt zwei neue Methoden in sein `ProductsBLL`: `UpdateWithTransaction`, die Sie gerade hinzugefügt haben, und `DeleteProductsWithTransaction`, der in Schritt 3 hinzugefügt wurde.
 
-
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample6.vb)]
 
 > [!NOTE]
 > Diese Methoden enthalten nicht die `DataObjectMethodAttribute` Attribut zugewiesen werden, um die meisten anderen Methoden in der `ProductsBLL` Klasse, da wir diese Methoden direkt in die CodeBehind-Klassen in ASP.NET Seiten aufgerufen werden. Zur Erinnerung: `DataObjectMethodAttribute` wird verwendet, um zu kennzeichnen, welche Methoden in der "ObjectDataSource"-s Datenquelle konfigurieren, Assistenten und auf welcher Registerkarte (SELECT, UPDATE, INSERT oder DELETE) angezeigt werden soll. Da die GridView verfügt nicht über keine integrierte Unterstützung für Batch bearbeiten oder löschen, müssen wir diese Methoden programmgesteuert aufrufen, anstatt die codefreie deklarativen Ansatz zu verwenden.
-
 
 ## <a name="step-5-atomically-updating-database-data-from-the-presentation-layer"></a>Schritt 5: Automatisch aktualisieren von DatenbankenDaten auf der Darstellungsschicht
 
@@ -167,37 +149,29 @@ Um die Auswirkungen zu veranschaulichen, die die Transaktion wurde beim Aktualis
 
 Öffnen Sie zunächst die `Transactions.aspx` auf der Seite die `BatchData` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox in den Designer. Legen Sie dessen `ID` zu `Products` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie zum Abrufen der Daten aus dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts` Methode. Einer GridView-Ansicht schreibgeschützt sein wird, also legen Sie die Dropdownlisten in der Update-, INSERT- und Registerkarten (keine) löschen und klicken Sie auf "Fertig stellen".
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL Klasse s GetProducts-Methode](wrapping-database-modifications-within-a-transaction-vb/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image3.png)
 
 **Abbildung 5**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` s-Klasse `GetProducts` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image4.png))
-
 
 [![Legen Sie die Dropdownlisten in der Update-, INSERT- und DELETE werden Registerkarten (keine)](wrapping-database-modifications-within-a-transaction-vb/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image5.png)
 
 **Abbildung 6**: Legen Sie die Dropdownlisten in der Update-, INSERT- und Löschen von Registerkarten auf (keine) ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image6.png))
 
-
 Nach Abschluss der Konfigurieren von Datenquellen-Assistenten erstellt Visual Studio BoundFields und eine CheckBoxField für die Product-Datenfelder. Entfernen Sie alle diese Felder mit Ausnahme von `ProductID`, `ProductName`, `CategoryID`, und `CategoryName` , und benennen Sie die `ProductName` und `CategoryName` BoundFields `HeaderText` Eigenschaften zum Produkt und die Kategorie, bzw. Überprüfen Sie aus dem Smarttag die Option Paging aktivieren. Nachdem diese Änderungen vorgenommen wurden, sollte die GridView und "ObjectDataSource" s deklarative Markup wie folgt aussehen:
-
 
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample7.aspx)]
 
 Als Nächstes fügen Sie drei Schaltfläche Websteuerelemente über GridView hinzu. Legen Sie die Schaltfläche "erste" s-Text-Eigenschaft, auf Raster aktualisieren, die zweite s zu ändern, Kategorien (mit Transaktionen) und die Dritter noch s zu ändern, Kategorien (ohne Transaktion).
 
-
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample8.aspx)]
 
 An diesem Punkt sollte die Entwurfsansicht in Visual Studio ähnlich wie im Screenshot in Abbildung 7 dargestellt aussehen.
-
 
 [![Die Seite enthält eine GridView und drei Web-Steuerelemente](wrapping-database-modifications-within-a-transaction-vb/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image7.png)
 
 **Abbildung 7**: Die Seite enthält eine GridView und drei Web-Steuerelemente ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image8.png))
 
-
 Erstellen von Ereignishandlern für jede Schaltfläche mit den drei s `Click` Ereignisse und verwenden Sie den folgenden Code:
-
 
 [!code-vb[Main](wrapping-database-modifications-within-a-transaction-vb/samples/sample9.vb)]
 
@@ -209,26 +183,21 @@ Die dritte `Click` -Ereignishandler aktualisiert die Produkte `CategoryID` s auf
 
 Um dieses Verhalten zu veranschaulichen, finden Sie auf dieser Seite über einen Browser. Zunächst sehen Sie die erste Seite der Daten, wie in Abbildung 8 gezeigt. Klicken Sie anschließend die Schaltfläche ändern Kategorien (mit der Transaktion). Dies dazu führen, dass einen Postback und versucht, alle Produkte aktualisieren `CategoryID` Werte annehmen, aber führt zu einer Verletzung der foreign Key-Einschränkung (siehe Abbildung 9).
 
-
 [![Die Produkte werden in einer navigierbaren GridView-Ansicht angezeigt.](wrapping-database-modifications-within-a-transaction-vb/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image9.png)
 
 **Abbildung 8**: Die Produkte in einer navigierbaren GridView-Ansicht angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image10.png))
-
 
 [![Erneutes Zuweisen von den Ergebnissen Kategorien zu einer Verletzung der Foreign Key-Einschränkung](wrapping-database-modifications-within-a-transaction-vb/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image11.png)
 
 **Abbildung 9**: Erneutes Zuweisen von den Ergebnissen der Kategorien in der Verletzung einer Foreign Key-Einschränkung ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image12.png))
 
-
 Drücken Sie jetzt Ihre Browser-s-zurück-Taste, und klicken Sie dann auf die Schaltfläche "Raster aktualisieren". Nach dem Aktualisieren der das sehen Sie genaue dieselbe Ausgabe wie in Abbildung 8 gezeigt. Also auch wenn einige der Produkte `CategoryID` s wurden geändert in zulässigen Werte und in der Datenbank aktualisiert, sie wurden zurückgesetzt, wenn die foreign Key-Einschränkung verletzt.
 
 Versuchen Sie nun auf die Schaltfläche ändern Kategorien (ohne Transaktion). Dies führt zu dem Fehler aufgrund einer einschränkungsverletzung gleichen foreign Key-Einschränkung (siehe Abbildung 9), aber dieses Mal dieser Produkte, deren `CategoryID` Werte wurden geändert, um die zulässigen Wert wird nicht zurückgesetzt werden. Drücken Sie Ihre Browser-s-zurück-Taste und dann auf die Schaltfläche mit den Raster zu aktualisieren. Wie in Abbildung 10 gezeigt, die `CategoryID` s der ersten acht Produkte haben, wurde neu zugewiesen. In Abbildung 8 mussten Chang z. B. eine `CategoryID` von 1, aber in Abbildung 10 It s, 2 zugewiesen wurde.
 
-
 [![Einige Produkte CategoryID Werte wurden aktualisiert, während andere wurden nicht](wrapping-database-modifications-within-a-transaction-vb/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image13.png)
 
 **Abbildung 10**: Einige Produkte `CategoryID` Werte wurden aktualisiert, während andere Benutzer wurden keine ([klicken Sie, um das Bild in voller Größe anzeigen](wrapping-database-modifications-within-a-transaction-vb/_static/image14.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

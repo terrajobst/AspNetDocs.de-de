@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d9edcd61e52941c0fd69e645da7e2cf467a632ac
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407353"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131780"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (c#)
 
@@ -36,14 +36,12 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
 
-
 ## <a name="the-top-8-programming-tips"></a>Die besten Tipps für 8 Programmierung
 
 Dieser Abschnitt enthält einige Tipps, die Sie unbedingt benötigen wissen, wie Sie mithilfe der Razor-Syntax ASP.NET-Servercode: schreibe.
 
 > [!NOTE]
 > Die Razor-Syntax basiert auf der C#-Programmiersprache, und das ist die Sprache, die am häufigsten mit ASP.NET Web Pages verwendet wird. Die Razor-Syntax unterstützt jedoch auch Visual Basic-Sprache, und alle Elemente, die Sie sehen, dass Sie auch in Visual Basic durchführen können. Weitere Informationen finden Sie im Anhang [Visual Basic-Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908).
-
 
 Weitere Informationen über die meisten dieser Techniken zur Programmierung finden Sie später in diesem Artikel.
 
@@ -66,7 +64,6 @@ Dies ist, wie diese Anweisungen aussehen, wenn die Seite in einem Browser ausgef
 > Wenn Ihr Ziel ist, um HTML-Markup auszugeben, die Tags als Markup rendert (z. B. `<p></p>` für einen Absatz oder `<em></em>` Text hervorgehoben), finden Sie im Abschnitt [Kombinieren von Text, Markup und Code in Codeblöcken](#BM_CombiningTextMarkupAndCode) weiter unten in diesem Artikel.
 > 
 > Erfahren Sie mehr über die HTML-Codierung [arbeiten mit Formularen](https://go.microsoft.com/fwlink/?LinkId=202892).
-
 
 ### <a name="2-you-enclose-code-blocks-in-braces"></a>2. Schließen Sie Codeblöcke in geschweifte Klammern
 
@@ -116,7 +113,6 @@ So sieht das Ergebnis der Verwendung von diesen beiden Beispielen auf einer Seit
 > [!NOTE]
 > Beachten Sie, dass die `@` Zeichen wird verwendet, markieren Sie wörtliche Zeichenfolgenliterale in C# geschrieben und Markieren von Code in ASP.NET-Seiten.
 
-
 ### <a name="6-code-is-case-sensitive"></a>6. Code wird die Groß-/Kleinschreibung beachten
 
 C#-Schlüsselwörter (z. B. `var`, `true`, und `if`) und Namen wird die Groß-/Kleinschreibung beachtet. Die folgenden Codezeilen erstellt zwei unterschiedliche Variablen `lastName` und `LastName.`
@@ -127,7 +123,6 @@ Wenn Sie eine Variable deklarieren `var lastName = "Smith";` und wenn Sie versuc
 
 > [!NOTE]
 > In Visual Basic-Schlüsselwörter und Variablen werden *nicht* Groß-/Kleinschreibung beachtet.
-
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7. Die Codierung ein Großteil beinhaltet Objekte
 
@@ -161,7 +156,6 @@ Das Ergebnis in einem Browser angezeigt (nach dem Klicken auf **senden**):
 > Das Protokoll für Webseiten (HTTP) unterstützt eine sehr begrenzte Anzahl von Methoden (Verben), die verwendet werden, um Anforderungen an den Server zu senden. Die zwei häufigsten Gründe sind GET, die zum Lesen einer Seite verwendet wird, und POST, das verwendet wird, um eine Seite zu übermitteln. Zum ersten Mal, das ein Benutzer eine Seite anfordert, wird im Allgemeinen unter Verwendung von GET eine Seite angefordert. Wenn der Benutzer in einem Formular ausgefüllt und klickt dann auf eine Schaltfläche "Senden", sendet der Browser eine POST-Anforderung an dem Server an.
 > 
 > In Web-Programmierung ist es oft hilfreich zu wissen, ob eine Seite als GET oder POST angefordert wird, damit Sie wissen, wie auf die Seite zu verarbeiten. In ASP.NET Web Pages, können Sie die `IsPost` Eigenschaft, um festzustellen, ob eine Anforderung eine Get- oder POST ist. Wenn die Anforderung eine POST-ist der `IsPost` Eigenschaft "true" zurück, und Sie können Aktionen wie lesen die Werte von Textfeldern in einem Formular. Viele Beispiele, die Sie sehen, in dem Sie zeigen, wie zum Verarbeiten der Seite hängt der Wert des `IsPost`.
-
 
 ## <a name="a-simple-code-example"></a>Ein einfaches Codebeispiel
 
@@ -217,7 +211,6 @@ Die Razor-Syntax bietet Ihnen die Leistungsfähigkeit der ASP.NET, aber verwende
 > Wenn die Anwendung mit tatsächlichen Kundeninformationen arbeiten muss, erstellt er eine Instanz von (oder *instanziiert*) eine Customer-Objekt. Jeder einzelne Kunde wird eine separate Instanz von der `Customer` Klasse. Jede Instanz unterstützt die gleichen Eigenschaften und Methoden, aber die Eigenschaftswerte für die einzelnen Instanzen unterscheiden sich in der Regel, da jedes Kundenobjekt eindeutig ist. In einer Customer-Objekt das `LastName` Eigenschaft möglicherweise "Smith"; in einer anderen Customer-Objekt, das `LastName` Eigenschaft möglicherweise "Jones" ab.
 > 
 > Jeder einzelne Webseite auf Ihrer Website auf ähnliche Weise wird eine `Page` -Objekt, das eine Instanz von der `Page` Klasse. Eine Schaltfläche auf der Seite ist eine `Button` -Objekt, das eine Instanz von der `Button` -Klasse, und So weiter. Jede Instanz verfügt über eigene Eigenschaften, aber alle basieren auf den in der Definition der Klasse des Objekts angegebenen.
-
 
 ## <a name="basic-syntax"></a>Allgemeine Syntax
 
@@ -439,7 +432,6 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
 ## <a name="operators"></a>Operatoren
 
 Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber informiert, welche Art von Befehl aus, um in einem Ausdruck durchgeführt werden. Der C#-Sprache (und die Razor-Syntax, die darauf basieren) unterstützt viele Operatoren müssen Sie nur ein Paar für den Einstieg zu erkennen. In der folgende Tabelle werden die am häufigsten verwendeten Operatoren zusammengefasst.
-
 
 :::row:::
     :::column:::
@@ -832,7 +824,6 @@ In Situationen, in denen Ihr Code kann Ausnahmen auftreten, und um Fehler Nachri
 > [!NOTE]
 > Es wird empfohlen, dass Sie, verwenden vermeiden die `Response.Redirect` -Methode in der `try/catch` -Anweisungen, da dies eine Ausnahme auf Ihrer Seite führen kann.
 
-
 Das folgende Beispiel zeigt eine Seite, die auf der ersten Anforderung eine Textdatei erstellt und zeigt dann eine Schaltfläche der Benutzer die Datei zu öffnen. Im Beispiel verwendet absichtlich einen ungültigen Dateinamen ein, damit es eine Ausnahme ausgelöst wird. Der Code enthält `catch` -Anweisungen für die zwei möglichen Ausnahmen: `FileNotFoundException`, Dies tritt ein, wenn der Dateiname ungültig, ist und `DirectoryNotFoundException`, Dies tritt ein, wenn ASP.NET nicht den Ordner selbst finden können. (Sie können die auskommentierung Aufheben einer Anweisung im Beispiel um zu sehen, wie sie ausgeführt wird, wenn alles ordnungsgemäß funktioniert.)
 
 Wenn Ihr Code die Ausnahme behandelt hat nicht, sehen Sie eine Fehlerseite angezeigt, wie im vorherigen Screenshot. Allerdings die `try/catch` Abschnitt hilft zu verhindern, dass den Benutzer diese Arten von Fehlern angezeigt.
@@ -843,12 +834,9 @@ Wenn Ihr Code die Ausnahme behandelt hat nicht, sehen Sie eine Fehlerseite angez
 
 **Programmierung mit Visual Basic**
 
-
 [Anhang: Visual Basic-Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-
 **Referenzdokumentation**
-
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 

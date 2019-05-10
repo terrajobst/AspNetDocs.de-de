@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 516d46f38ce8910209f4207c474b0404bf012950
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399852"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130948"
 ---
 # <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Anzeigen von Video in einer ASP.NET Web Pages (Razor)-Website
 
@@ -40,7 +40,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit WebMatrix 3.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -88,7 +87,6 @@ Die `Silverlight` Player, der die `Video` -Hilfsobjekt ermöglicht Ihnen das Win
 > [!NOTE]
 > Für den Fall, dass Sie nicht bereits Silverlight kennen: die *XAP* Datei ist eine komprimierte Datei, die layoutanweisungen in enthält eine *XAML* -Datei, verwalteten Code in Assemblys und optionale Ressourcen. Sie erstellen eine *XAP* -Datei in Visual Studio als ein Silverlight-Anwendungsprojekt.
 
-
 Die `Silverlight` Videoplayer, der verwendet wird, sowohl die Einstellungen, die Sie für den Spieler bereitzustellen und die Einstellungen, die finden Sie in der *XAP* Datei.
 
 > [!TIP] 
@@ -101,7 +99,6 @@ Die `Silverlight` Videoplayer, der verwendet wird, sowohl die Einstellungen, die
 > - `application/x-shockwave-flash`
 > - `application/x-mplayer2`
 > - `application/x-silverlight-2`
-
 
 <a id="Playing_Flash"></a>
 ## <a name="playing-flash-swf-videos"></a>Wiedergabe von Videos mit Flash (. SWF)
@@ -179,7 +176,6 @@ Dieses Verfahren zeigt, wie zur Wiedergabe von Video in Silverlight enthaltenen 
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Übersicht über das Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 

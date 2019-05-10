@@ -8,12 +8,12 @@ ms.date: 01/14/2008
 ms.assetid: 829d2f56-5c48-445b-b826-3418a450c788
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c992c782ce52066452b42bc09052ec1985e13200
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 45e924559a88317950ae9fb8a596d3ee373dd661
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417090"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127839"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>Konfiguration der Formularauthentifizierung und weiterführende Themen (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/ASPNET_Security_Tutorial_03_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial03_AuthAdvanced_vb.pdf)
 
 > In diesem Tutorial werden wir untersuchen Sie die verschiedenen Einstellungen für die Formularauthentifizierung und erfahren Sie, wie sie über das Forms-Element zu ändern. Dadurch wird eine ausführliche Übersicht über das Anpassen der Timeoutwert für das Formularauthentifizierungsticket über eine Anmeldeseite mit einer benutzerdefinierten URL (z. B. SignIn.aspx anstelle von "Login.aspx") und ohne Cookies Formularauthentifizierungstickets gelten.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -37,7 +36,6 @@ Das Authentifizierungssystem "Forms" in ASP.NET bietet es sich um eine Reihe von
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample1.xml)]
 
 In Tabelle 1 sind die Eigenschaften, die mithilfe von angepasst werden, können die &lt;Forms&gt; Element. Da "Web.config" eine XML-Datei ist, sind die Namen der Attribute in der linken Spalte Groß-/Kleinschreibung beachtet.
-
 
 | <strong>Attribut</strong> |                                                                                                                                                                                                                                     <strong>Beschreibung</strong>                                                                                                                                                                                                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,7 +58,6 @@ In ASP.NET 2.0 und jenseits der Standardgrenze sind Forms Authentication Werte a
 > [!NOTE]
 > Verschiedene Einstellungen für die Formularauthentifizierung, z. B. das Timeout, die Domäne und den Pfad, geben Sie Details für die resultierende Ticket Formularauthentifizierungscookies. Weitere Informationen zu Cookies, wie sie funktionieren und die verschiedenen Eigenschaften zu erhalten, lesen [in diesem Tutorial Cookies](http://www.quirksmode.org/js/cookies.html).
 
-
 ### <a name="specifying-the-tickets-timeout-value"></a>Der Tickettimeoutwert angeben
 
 Das Formularauthentifizierungsticket ist ein Token, das eine Identität darstellt. Mit cookiebasierte Authentifizierungstickets wird dieses Token, die in der Form eines Cookies gespeichert und bei jeder Anforderung an den Webserver gesendet. Besitz des Tokens, im Wesentlichen deklariert, ich bin *Benutzername*, ich bereits angemeldet sind, und wird verwendet, damit die Identität eines Benutzers gespeichert werden kann, auf der Seite besuchen.
@@ -72,7 +69,6 @@ Eine solche Bit der Informationen in das Ticket ist eine *Ablauf*, Datum und Uhr
 > [!NOTE]
 > Schritt 3 Details zusätzliche Techniken, die dem Authentifizierungssystem Formulare für das Authentifizierungsticket geschützt.
 
-
 Wenn Sie das Authentifizierungsticket erstellen zu können, bestimmt das Authentifizierungssystem Forms der ablaufzeitperiode von consulting der Timeouteinstellung festgelegt. Dies bedeutet, dass es sich bei Ablauf dieser Frist auf Datum und Uhrzeit in der Zukunft 30 Minuten festgelegt ist, wenn das Formularauthentifizierungsticket erstellt wird, wie in Tabelle 1, das Festlegen von Standardwerten auf 30 Minuten Timeout erwähnt.
 
 Die Ablaufzeit definiert eine absolute Uhrzeit des Ablaufs das Formularauthentifizierungsticket in der Zukunft. Aber in der Regel Entwickler einen gleitenden Ablauf, einer implementieren, die zurückgesetzt wird, jedes Mal, wenn der Benutzer die Website erneut ansehen möchten. Dieses Verhalten wird durch die SlidingExpiration Einstellungen bestimmt. Wenn Sie auf "true" (Standard), jedes Mal die FormsAuthenticationModule einen Benutzer authentifiziert festgelegt, wird das Ticket für den Ablauf aktualisiert. Wenn es sich bei false wird der Ablauf nicht bei jeder Anforderung aktualisiert wird, erstellt, wodurch das Ticket abläuft genau Timeouts Anzahl der Minuten nach, wenn das Ticket wurde.
@@ -80,28 +76,22 @@ Die Ablaufzeit definiert eine absolute Uhrzeit des Ablaufs das Formularauthentif
 > [!NOTE]
 > Der Ablauf des in das Authentifizierungsticket gespeichert ist, ein absolutes Datum und Uhrzeitwert, z. B. 2. August 2008 11:34 Uhr. Darüber hinaus sind das Datum und die Uhrzeit relativ zur Ortszeit des Servers ein. Diese entwurfsentscheidung haben einige interessante Nebenwirkungen auf Sommerzeit (DST), handelt es sich bei der Uhren in den Vereinigten Staaten jetzt eine Stunde (vorausgesetzt, dass der Webserver in einem Gebietsschema gehostet wird, in dem Sommerzeit erkannt wird) verschoben werden. Beachten Sie, was für eine ASP.NET-Website mit einer 30-minütigen Ablauf der Zeitanzeige passieren würde, die Sommerzeit beginnt (Dies ist um 2:00 Uhr). Angenommen Sie, ein Besucher mit dem Standort am 11. März 2008 um 1:55 Uhr anmeldet. Dadurch würde ein Formularauthentifizierungsticket generiert, die am 11. März 2008 um 2:25 Uhr (30 Minuten in der Zukunft) abläuft. Allerdings nach um 02:00 Uhr wird, springt die Uhr auf 3:00 Uhr aufgrund der Sommerzeit. Wenn der Benutzer eine neue Seite sechs Minuten nach der Anmeldung (um 15:01 Uhr) geladen wird, vermerkt die FormsAuthenticationModule an, dass das Ticket ist abgelaufen, und den Benutzer zur Anmeldeseite leitet. Für eine ausführlichere Erläuterung dieser und anderen Authentifizierung Ticket Timeout eigentümlichkeiten, sowie problemumgehungen, wählen Sie eine Kopie des Stefan Schackow *Professional ASP.NET 2.0 Security, Mitgliedschafts- und Rollenverwaltung* (ISBN-Nummer: 978-0-7645-9698-8).
 
-
 Abbildung 1 veranschaulicht den Workflow aus, wenn SlidingExpiration auf "false" festgelegt wird und das Timeout auf 30 festgelegt ist. Beachten Sie, dass das Authentifizierungsticket, die bei der Anmeldung generiert, das Ablaufdatum enthält aus, und dieser Wert wird bei nachfolgenden Anforderungen nicht aktualisiert. Wenn die FormsAuthenticationModule feststellt, dass das Ticket abgelaufen ist, wird diese verworfen und behandelt die Anforderung als anonym.
-
 
 [![Es ist eine Grafische Darstellung der SlidingExpiration für das Formularauthentifizierungsticket Ablauf bei "false"](forms-authentication-configuration-and-advanced-topics-vb/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image1.png)
 
 **Abbildung 01**: Es ist eine Grafische Darstellung der SlidingExpiration für das Formularauthentifizierungsticket Ablauf bei "false" ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image3.png))
 
-
 Abbildung 2 zeigt den Workflow aus, wenn SlidingExpiration festgelegt ist, auf "true" und Timeout auf 30 festgelegt ist. Wenn eine authentifizierte Anforderung, (mit einer Ticket nicht abgelaufene empfangen wird) wird der ablaufzeitperiode Timeouts Anzahl von Minuten in der Zukunft aktualisiert.
-
 
 [![Eine Grafische Darstellung der das Formularauthentifizierungsticket SlidingExpiration wird bei "true"](forms-authentication-configuration-and-advanced-topics-vb/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image4.png)
 
 **Abbildung 02**: Eine Grafische Darstellung der das Formularauthentifizierungsticket SlidingExpiration wird bei "true" ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image6.png))
 
-
 Wenn Sie cookiebasierte Authentifizierungstickets (Standard) zu verwenden, wird hier ein wenig verwirrender, da es sich bei Cookies auch ihre eigenen Cacheobjekte angegeben haben, können. Ein Cookie Ablauf (oder deren Fehlen) weist den Browser auf, wenn das Cookie zerstört werden soll. Wenn das Cookie nicht über ein Ablaufdatum verfügt, wird es zerstört, wenn der Browser geschlossen. Wenn eine ablaufangabe vorhanden ist, jedoch das Cookie auf dem Computer des Benutzers gespeichert bleibt, bis das Datum und die in der Ablauf des angegebenen Zeit vergangen. Wenn vom Browser ein Cookie zerstört wird, wird es nicht mehr an den Webserver gesendet. Aus diesem Grund ist die Zerstörung eines Cookies analog zu den Benutzer, die Abmeldung von der Website.
 
 > [!NOTE]
 > Natürlich kann ein Benutzer proaktiv alle Cookies auf ihrem Computer gespeicherten entfernen. In Internet Explorer 7 würden Sie wechseln Sie zu Extras, Optionen, und klicken Sie auf die Schaltfläche "löschen" im Abschnitt Verlauf durchsuchen. Klicken Sie dort auf die Schaltfläche zum Löschen von Cookies.
-
 
 Das Forms-Authentifizierungssystem erstellt sitzungsbasierte oder Ablauf-basierten Cookies je nach Wert übergeben die *PersistCookie* Parameter. Beachten Sie, mit denen Methoden für das FormsAuthentication-Klasse GetAuthCookie, SetAuthCookie und RedirectFromLoginPage in zwei Eingabeparameter: *Benutzername* und *PersistCookie*. Die Anmeldeseite, die wir im vorherigen Tutorial erstellt haben, enthalten ein Anmeldedaten Kontrollkästchen, die bestimmt, ob ein persistentes Cookie erstellt wurde. Dauerhafte Cookies sind Ablauf-basiert. nicht beständige Cookies sind sitzungsbasiert.
 
@@ -137,7 +127,6 @@ Die Einstellungen automatisch erkennen und UseDeviceProfile basieren auf einer *
 > [!NOTE]
 > Diese Datenbank von Gerätefunktionen befindet sich in einer Reihe von XML-Dateien, die folgen, der [Browserdefinitionsdatei-Schema](https://msdn.microsoft.com/library/ms228122.aspx). Die Standard-Gerät Profildateien befinden sich in % WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG\Browsers. Sie können auch benutzerdefinierte Dateien hinzufügen, Ihrer Anwendung App\_Ordner "Browser". Weitere Informationen finden Sie unter [so wird's gemacht: Erkennen von Browsertypen in ASP.NET Web Pages](https://msdn.microsoft.com/library/3yekbd5b.aspx).
 
-
 Da die Standardeinstellung UseDeviceProfile ist, werden ohne Cookies Formularauthentifizierungstickets verwendet werden, wenn die Website von einem Gerät zugegriffen wird, dessen Profil gibt an, dass es keine Cookies unterstützt.
 
 ### <a name="encoding-the-authentication-ticket-in-the-url"></a>Das Authentifizierungsticket in der URL-Codierung
@@ -169,7 +158,6 @@ Die SomePage.aspx URL, unter dem Link automatisch in eine URL konvertiert wurde,
 > [!NOTE]
 > Ohne Cookies Formularauthentifizierungstickets befolgen die gleichen Timeout-Richtlinien als cookiebasierte Authentifizierungstickets. Allerdings sind die Authentifizierung ohne Cookies Tickets anfälliger für Angriffe wiedergeben, da das Authentifizierungsticket direkt in der URL eingebettet ist. Stellen Sie sich ein Benutzer, der eine Website aufruft, Anmeldung und fügt dann die URL in eine e-Mail an Kollegen. Der Kollegen auf diesen Link klickt, bevor die Ablaufzeit erreicht wird, werden sie als Benutzer angemeldet sein, die die e-Mail-Adresse gesendet.
 
-
 ## <a name="step-3-securing-the-authentication-ticket"></a>Schritt 3: Sichern das Authentifizierungsticket
 
 Das Formularauthentifizierungsticket wird über das Netzwerk übertragen entweder in einem Cookie oder direkt in der URL eingebettet. Zusätzlich zu den Informationen zur Identität kann das Authentifizierungsticket auch Benutzerdaten enthalten, (wie in Schritt 4). Daher ist es wichtig, dass das Ticket für die Daten verschlüsselt werden vor neugierigen Blicken und (noch wichtiger ist), kann das Authentifizierungssystem Forms garantieren, dass das Ticket nicht manipuliert wurde.
@@ -180,11 +168,9 @@ Um ein Ticket für die Authentizität zu gewährleisten, muss das Authentifizier
 
 Beim Erstellen (oder ändern) ist ein Ticket, das Forms-Authentifizierungssystem erstellt einen MAC und auf das Ticket für die Daten angefügt. Wenn eine nachfolgende Anforderung eingeht, vergleicht das Authentifizierungssystem Forms die Mac- und Ticket-Daten, um die Authentizität des Ticketdaten überprüft. Abbildung 3 zeigt diesen Workflow grafisch an.
 
-
 [![Das Ticket für die Authentizität wird über einen MAC sichergestellt.](forms-authentication-configuration-and-advanced-topics-vb/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image7.png)
 
 **Abbildung 03**: Das Ticket für die Authentizität gewährleistet ist, über einen MAC ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image9.png))
-
 
 Welche Sicherheitsmaßnahmen für das Authentifizierungsticket angewendet werden, hängt davon ab, der schutzeinstellung in der &lt;Forms&gt; Element. Die schutzeinstellung kann einen der folgenden drei Werte zugewiesen werden:
 
@@ -226,7 +212,6 @@ Weitere Informationen finden Sie [so wird's gemacht: Konfigurieren von MachineKe
 > [!NOTE]
 > Die Werte für DecryptionKey und ValidationKey entnommen wurden [Steve Gibson](http://www.grc.com/stevegibson.htm)des [perfekte Kennwörter Webseite](https://www.grc.com/passwords.htm), generiert 64 zufällige Hexadezimalzeichen auf jeder Seite finden Sie unter. Um die Wahrscheinlichkeit, dass dieser Schlüssel, sodass ihren Weg in Ihre Produktionsanwendungen zu verringern, sollten Sie sich, die obigen Schlüssel mit zufällig generierten Werten, die auf der perfekte Kennwörter zu ersetzen.
 
-
 ## <a name="step-4-storing-additional-user-data-in-the-ticket"></a>Schritt 4: Zusätzliche Benutzerdaten speichern in das Ticket
 
 Viele Webanwendungen Anzeigen von Informationen zu, oder der Seite anzeigen als Grundlage für den derzeit angemeldeten Benutzer. Beispielsweise kann eine Webseite angezeigt, den Benutzernamen und das Datum, die, das Sie zuletzt in der oberen Ecke von jeder Seite angemeldet haben, auf. Das Formularauthentifizierungsticket gespeichert, den derzeit angemeldeten Benutzernamen des Benutzers muss, wenn alle anderen Informationen benötigt wird, die Seite aber im Benutzerspeicher – in der Regel eine Datenbank – suchen Sie die Informationen, die nicht in das Authentifizierungsticket gespeichert.
@@ -237,11 +222,9 @@ Um die Benutzerdaten in das Authentifizierungsticket speichern zu können, müss
 
 Wenn wir die Daten in das Ticket zugreifen müssen, können wir dazu die aktuelle Anforderung FormsAuthenticationTicket abrufen und Deserialisieren der UserData-Eigenschaft. Bei das Datum der Geburtsdatum und Arbeitgeber Beispielname würden wir die UserData-Zeichenfolge in beiden Teilzeichenfolgen, die auf Grundlage des Trennzeichens (|) aufgeteilt.
 
-
 [![Zusätzliche Informationen kann in das Authentifizierungsticket gespeichert werden](forms-authentication-configuration-and-advanced-topics-vb/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image10.png)
 
 **Abbildung 04**: Zusätzliche Benutzer Daten gespeichert werden können in das Authentifizierungsticket ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image12.png))
-
 
 ### <a name="writing-information-to-userdata"></a>Schreiben von Informationen in UserData
 
@@ -288,7 +271,6 @@ All dieser Code ist erforderlich, da die UserData-Eigenschaft ist schreibgeschü
 > [!NOTE]
 > Der Code, den wir gerade untersucht speichert benutzerspezifische Informationen in einem Ticket Cookies basierende Authentifizierung. Die Klassen, die zum Serialisieren von Formularauthentifizierungstickets an die URL sind für das .NET Framework intern. Lange Rede kurzer, können nicht Sie Benutzerdaten in einer ohne Cookies Formularauthentifizierungsticket speichern.
 
-
 ### <a name="accessing-the-userdata-information"></a>Zugreifen auf die UserData-Informationen
 
 An diesem Punkt Unternehmensname und den Titel jedes Benutzers in das Formularauthentifizierungsticket UserData Eigenschaft gespeichert, wenn er sich anmeldet. Diese Informationen kann über das Authentifizierungsticket auf einer beliebigen Seite zugegriffen werden, ohne dass eine Reise zu den Speicher des Benutzers. Aktualisieren Sie zur Veranschaulichung, wie diese Informationen aus der UserData-Eigenschaft abgerufen werden kann, lassen Sie uns "default.aspx", sodass eine Begrüßung enthält, nicht nur den Namen des Benutzers, aber auch das Unternehmen, die für die Zusammenarbeit und deren Position.
@@ -301,15 +283,12 @@ Wenn Request.IsAuthenticated "true ist", dann die WelcomeBackMessages Text-Eigen
 
 Abbildung 5 zeigt einen Screenshot der diese Anzeige in Aktion. Anmeldung als Scott in einer Meldung Willkommen zurück, die Unternehmen und Titel von Scott enthält.
 
-
 [![Der derzeit angemeldeten Benutzer des Unternehmens und Titel werden angezeigt.](forms-authentication-configuration-and-advanced-topics-vb/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image13.png)
 
 **Abbildung 05**: Der derzeit angemeldeten Benutzer des Unternehmens und Titel angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image15.png))
 
-
 > [!NOTE]
 > Das Authentifizierungsticket UserData-Eigenschaft dient als Cache für den Speicher des Benutzers. Z. B. einen Cache muss sie aktualisiert werden, wenn die zugrunde liegenden Daten geändert werden. Ist eine Webseite, in der Benutzer ihre Profile aktualisieren können, müssen z. B. die Felder, die zwischengespeichert werden, in der UserData-Eigenschaft aktualisiert werden, die vom Benutzer vorgenommene Änderungen widerzuspiegeln.
-
 
 ## <a name="step-5-using-a-custom-principal"></a>Schritt 5: Verwenden eines benutzerdefinierten Prinzipals
 
@@ -322,7 +301,6 @@ GenericPrincipal-Klasse erfüllt die Anforderungen für die meisten Szenarien de
 > [!NOTE]
 > Wie wir in Zukunft Tutorials, sehen beim ASP. NET Rollen-Framework ist aktiviert. er erstellt ein benutzerdefiniertes principal-Objekt des Typs [RolePrincipal](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx) und überschreibt die Forms-Authentifizierung erstellten GenericPrincipal-Objekt. Dies wird zum Anpassen des Prinzipals "IsInRole"-Methode für die Kommunikation mit dem Rollen-Framework-API.
 
-
 Da wir nicht selbst mit Rollen noch befasst haben, wäre der einzige Grund für das Erstellen von einem benutzerdefinierten Prinzipal an diesem Punkt müsste eine benutzerdefinierte IIdentity-Objekte, die dem Prinzipal verknüpfen. In Schritt 4 erläutert Speichern von zusätzlichen Benutzerinformationen in das Authentifizierungsticket UserData-Eigenschaft, insbesondere bei den Namen des Benutzers Unternehmen und deren Position. Die UserData-Informationen ist jedoch nur Zugriff über das Authentifizierungsticket und nur dann als Zeichenfolge serialisiert, was bedeutet, dass jedes Mal, wenn wir die Benutzerinformationen im Ticket gespeichert werden soll, wir beim Analysieren der UserData-Eigenschaft müssen.
 
 Wir verbessern die entwicklererfahrung durch Erstellen einer Klasse, die IIdentity implementiert und CompanyName "und" Title "enthält. Auf diese Weise ein Entwickler kann Unternehmensname des aktuell angemeldeten Benutzers zugreifen und Titel direkt über die Eigenschaften "CompanyName" und "Title" ohne erforderlich sind, wissen, wie Sie die UserData-Eigenschaft zu analysieren.
@@ -334,14 +312,11 @@ In diesem Tutorial erstellen Sie lassen Sie uns die benutzerdefinierten Objekte 
 > [!NOTE]
 > Die App\_Ordner "Code" sollte nur verwendet werden, wenn Sie Ihrem Projekt über das Website-Modell zu verwalten. Bei Verwendung der [Webanwendungsprojekt-Modell](https://msdn.microsoft.com/asp.net/Aa336618.aspx), erstellen Sie einen standard-Ordner, und fügen Sie der Klassen hinzu, die. Sie können z. B. Fügen Sie einen neuen Ordner namens Klassen hinzu und legen Ihren Code dort.
 
-
 Fügen Sie zwei neue Klassendateien für die App\_Ordner "Code", eine benannte CustomIdentity.vb und eine mit dem Namen CustomPrincipal.vb.
-
 
 [![Hinzufügen von der CustomIdentity und CustomPrincipal-Klassen zu Ihrem Projekt](forms-authentication-configuration-and-advanced-topics-vb/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image16.png)
 
 **Abbildung 06**: Hinzufügen von der CustomIdentity und CustomPrincipal-Klassen in Ihr Projekt ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image18.png))
-
 
 Der CustomIdentity-Klasse ist verantwortlich für die Implementierung der IIdentity-Schnittstelle, die die AuthenticationType IsAuthenticated und Name-Eigenschaften definiert. Zusätzlich zu diesen erforderlichen Eigenschaften interessieren uns die zugrunde liegenden Formularauthentifizierungsticket als auch Eigenschaften für Unternehmensname und den Titel des Benutzers verfügbar zu machen. Geben Sie den folgenden Code aus, in der CustomIdentity-Klasse.
 
@@ -361,19 +336,15 @@ Die ASP.NET-Pipeline eine eingehende Anforderung akzeptiert und verarbeitet dies
 
 Nach dem das AuthenticateRequest-Ereignis, löst die ASP.NET-Pipeline die [PostAuthenticateRequest-Ereignis](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx), ist, in dem wir das GenericPrincipal-Objekt, das von der FormsAuthenticationModule mit einer Instanz von erstellt ersetzen können unsere CustomPrincipal-Objekt. Abbildung 7 zeigt diesen Workflow.
 
-
 [![GenericPrincipal wird durch eine CustomPrincipal im Ereignis PostAuthenticationRequest ersetzt.](forms-authentication-configuration-and-advanced-topics-vb/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image19.png)
 
 **Abbildung 07**: GenericPrincipal wird durch eine CustomPrincipal im Ereignis PostAuthenticationRequest ersetzt ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image21.png))
 
-
 Um Code als Reaktion auf eine Pipelineereignis von ASP.NET ausführen, können wir entweder den passenden Ereignishandler in "Global.asax" oder erstellen eigene HTTP-Modul. In diesem Tutorial erstellen Sie den Ereignishandler wir in "Global.asax". Starten Sie durch das Hinzufügen von "Global.asax" zu Ihrer Website. Mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und fügen Sie ein Element vom Typ globale Anwendungsklasse mit dem Namen "Global.asax" hinzu.
-
 
 [![Fügen Sie eine Datei "Global.asax" zu Ihrer Website](forms-authentication-configuration-and-advanced-topics-vb/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image22.png)
 
 **Abbildung 08**: Hinzufügen einer Global.asax-Datei auf Ihrer Website ([klicken Sie, um das Bild in voller Größe anzeigen](forms-authentication-configuration-and-advanced-topics-vb/_static/image24.png))
-
 
 Die Standardvorlage für die "Global.asax" enthält die Ereignishandler für eine Reihe von ASP.NET-Pipelineereignisse, einschließlich der Start, Ende und [Fehlerereignis](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx), u. a. Diese Ereignishandler entfernt werden, da wir nicht für diese Anwendung benötigt werden können. Das Ereignis, dem wir interessiert sind, ist PostAuthenticateRequest. Aktualisieren Sie die Datei "Global.asax" aus, damit dessen Markup sieht etwa wie folgt aus:
 

@@ -8,19 +8,18 @@ ms.date: 05/12/2009
 ms.assetid: 0bbf4134-04df-4226-8930-d5bb99e27128
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2d23e65f817c11e45adab56ea054a7c46a35d4f3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c5fc61300441303b39e348d3eee83b6ee6847b4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386436"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132170"
 ---
 # <a name="how-do-i-use-the-combobox-control-c"></a>Wie verwende ich das ComboBox-Steuerelement? (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > "ComboBox" ist ein ASP.NET AJAX-Steuerelement, das die Flexibilität, ein Textfeld mit einer Liste von Optionen kombiniert, aus denen Benutzer auswählen können.
-
 
 Das Ziel in diesem Tutorial wird das AJAX Control Toolkit ComboBox-Steuerelement beschrieben. Das Kombinationsfeld funktioniert wie eine Verbindung zwischen einem standardmäßigen ASP.NET DropDownList-Steuerelement und ein TextBox-Steuerelement. Sie können entweder aus einer vorhandenen Liste von Elementen oder geben Sie ein neues Element.
 
@@ -36,27 +35,21 @@ Wenn Sie das ComboBox-Steuerelement auf der Seite verwenden möchten, müssen Si
 
 Als Nächstes ziehen Sie das ComboBox-Steuerelement, auf der Seite zu erhalten. Sie finden das ComboBox-Steuerelement in der Toolbox mit anderen AJAX Control Toolkit-Steuerelemente und Extender (siehe Abbildung 1).
 
-
 [![Einfaches Formular zum Erstellen einer Visitenkarte](how-do-i-use-the-combobox-control-cs/_static/image1.jpg)](how-do-i-use-the-combobox-control-cs/_static/image1.png)
 
 **Abbildung 01**: ComboBox-Steuerelement aus der Toolbox auswählen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image2.png))
 
-
 Wir verwenden das ComboBox-Steuerelement eine statische Liste mit Optionen angezeigt. Der Benutzer kann eine bestimmte Ebene des Spiciness für die Nahrungsmittel aus einer Liste von drei Optionen auswählen: In Cartoons ein, mittelgroßen und großen "heiß" (siehe Abbildung 2).
-
 
 [![Auswahl aus einer statischen Liste von Elementen](how-do-i-use-the-combobox-control-cs/_static/image2.jpg)](how-do-i-use-the-combobox-control-cs/_static/image3.png)
 
 **Abbildung 02**: Auswahl aus einer statischen Liste von Elementen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image4.png))
 
-
 Es gibt zwei Möglichkeiten, dass Sie diese Optionen für das ComboBox-Steuerelement hinzufügen können. Zuerst die Option Bearbeitungsoptionen Tasks beim Darüberbewegen des Mauszeigers des Mauszeigers über dem Steuerelement in der Entwurfsansicht, und öffnen Sie den Element-Editor (siehe Abbildung 3).
-
 
 [![Bearbeiten von "ComboBox"-Elementen](how-do-i-use-the-combobox-control-cs/_static/image3.jpg)](how-do-i-use-the-combobox-control-cs/_static/image5.png)
 
 **Abbildung 03**: Bearbeiten von "ComboBox"-Elementen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image6.png))
-
 
 Die zweite Option ist die Liste der Elemente zwischen den öffnenden und schließenden hinzufügen &lt;Asp: "ComboBox"&gt; Tags in der Quellansicht. Diese Seite in Codebeispiel 1 enthält die aktualisierte "ComboBox", die die Liste der Elemente enthält.
 
@@ -70,11 +63,9 @@ Allerdings müssen Sie auch die Möglichkeit, eine neue Wahl (z. B. Super großa
 
 Unabhängig davon, ob Sie eine bereits vorhandene auswählen, geben Sie ein Element oder ein benutzerdefiniertes Element, wenn Sie das Formular übermitteln Ihrer Wahl, die in das Label-Steuerelement angezeigt wird. Wenn Sie das Formular übermittelt, die BtnSubmit\_Klick-Handler ausgeführt wird und aktualisiert die Bezeichnung (siehe Abbildung 4).
 
-
 [![Das ausgewählte Element anzeigen](how-do-i-use-the-combobox-control-cs/_static/image4.jpg)](how-do-i-use-the-combobox-control-cs/_static/image7.png)
 
 **Abbildung 04**: Das ausgewählte Element anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image8.png))
-
 
 Das Kombinationsfeld unterstützt die gleichen Eigenschaften wie das DropDownList-Steuerelement, für das ausgewählte Element abrufen, nachdem ein Formular übermittelt wird:
 
@@ -103,16 +94,13 @@ Stellen Sie sich, dass Sie eine Liste von Filmen in einem Kombinationsfeld angez
 11. In der **Datenquelle auswählen** Schritt wählen die Spalte Titel für das anzuzeigende Feld und die Id-Spalte, für die Daten Feld (siehe Abbildung).
 12. Klicken Sie auf die Schaltfläche "OK", um den Assistenten zu schließen.
 
-
 [![Auswählen einer Datenquelle](how-do-i-use-the-combobox-control-cs/_static/image5.jpg)](how-do-i-use-the-combobox-control-cs/_static/image9.png)
 
 **Abbildung 05**: Auswählen einer Datenquelle ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image10.png))
 
-
 [![Die Datenfelder für Text und Wert auswählen](how-do-i-use-the-combobox-control-cs/_static/image6.jpg)](how-do-i-use-the-combobox-control-cs/_static/image11.png)
 
 **Abbildung 06**: Wählen die Datenfelder für Text und Wert ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image12.png))
-
 
 Nachdem Sie die oben genannten Schritte abgeschlossen haben, ist das Kombinationsfeld zu einem SqlDataSource-Steuerelement gebunden, das die Filme aus der Tabelle der Datenbank Filme darstellt. Die Quelle für die Seite sieht wie Codebeispiel 2 (ich bereinigt, die die Formatierung ein bisschen).
 
@@ -122,11 +110,9 @@ Nachdem Sie die oben genannten Schritte abgeschlossen haben, ist das Kombination
 
 Beachten Sie, dass das Steuerelement "ComboBox" eine Eigenschaft DataSourceID-Wert, die auf dem SqlDataSource-Steuerelement zeigt. Wenn Sie die Seite in einem Browser öffnen, wird die Liste der Filme aus der Datenbank angezeigt (siehe Abbildung 7). Sie können entweder eine Abholung einen Film aus der Liste, oder geben Sie einen neuen Film durch Eingabe des Films in das Kombinationsfeld.
 
-
 [![Zeigt eine Liste von Filmen](how-do-i-use-the-combobox-control-cs/_static/image7.jpg)](how-do-i-use-the-combobox-control-cs/_static/image13.png)
 
 **Abbildung 07**: Zeigt eine Liste von Filmen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image14.png))
-
 
 ## <a name="setting-the-dropdownstyle"></a>Festlegen der DropDownStyle
 
@@ -149,21 +135,17 @@ Sie verwenden die ComboBox AutoCompleteMode-Eigenschaft, um anzugeben, was gesch
 - Fügen Sie - Kombinationsfeld wird die Liste nicht angezeigt, und er fügt das übereinstimmende Element aus der Liste auf, was Sie eingegeben haben (siehe Abbildung 9).
 - SuggestAppend - Kombinationsfeld sowohl die Liste und fügt das entsprechende Element aus der Liste auf, was Sie eingegeben haben (siehe Abbildung 10).
 
-
 [![Das Kombinationsfeld macht einen Vorschlag](how-do-i-use-the-combobox-control-cs/_static/image8.jpg)](how-do-i-use-the-combobox-control-cs/_static/image15.png)
 
 **Abbildung 08**: Das Kombinationsfeld macht einen Vorschlag ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image16.png))
-
 
 [!["ComboBox" fügt die übereinstimmenden text](how-do-i-use-the-combobox-control-cs/_static/image9.jpg)](how-do-i-use-the-combobox-control-cs/_static/image17.png)
 
 **Abbildung 09**: "ComboBox" fügt die übereinstimmenden Text ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image18.png))
 
-
 [![Das Kombinationsfeld schlägt vor, und fügt](how-do-i-use-the-combobox-control-cs/_static/image10.jpg)](how-do-i-use-the-combobox-control-cs/_static/image19.png)
 
 **Abbildung 10**: Das Kombinationsfeld schlägt vor, und fügt ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-combobox-control-cs/_static/image20.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 
