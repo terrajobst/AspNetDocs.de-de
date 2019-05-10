@@ -9,16 +9,15 @@ ms.custom: seoapril2019
 ms.assetid: 36ed9dd2-095b-48dc-8fe5-2de475b4098d
 msc.legacyurl: /web-api/overview/mobile-clients
 msc.type: chapter
-ms.openlocfilehash: 2a8e56ff7f41916b0d499214cd38f2d60cf15c57
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3488e2c43c39cda51443ecab0225b03d707779c3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422940"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131280"
 ---
-# <a name="web-api-and-mobile-clients"></a><span data-ttu-id="5d99d-103">Web-API und mobilen Clients</span><span class="sxs-lookup"><span data-stu-id="5d99d-103">Web API and Mobile Clients</span></span>
+# <a name="web-api-and-mobile-clients"></a><span data-ttu-id="aad36-103">Web-API und mobilen Clients</span><span class="sxs-lookup"><span data-stu-id="aad36-103">Web API and Mobile Clients</span></span>
 
-> <span data-ttu-id="5d99d-104">Verwenden ASP.NET Web-API, um systemeigenen mobilen Clients erreichen.</span><span class="sxs-lookup"><span data-stu-id="5d99d-104">Using ASP.NET Web API to reach native mobile clients.</span></span>
+> <span data-ttu-id="aad36-104">Verwenden ASP.NET Web-API, um systemeigenen mobilen Clients erreichen.</span><span class="sxs-lookup"><span data-stu-id="aad36-104">Using ASP.NET Web API to reach native mobile clients.</span></span>
 
-
-- [<span data-ttu-id="5d99d-105">Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)</span><span class="sxs-lookup"><span data-stu-id="5d99d-105">Calling Web API from a Windows Phone 8 Application (C#)</span></span>](calling-web-api-from-a-windows-phone-8-application.md)
+- [<span data-ttu-id="aad36-105">Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)</span><span class="sxs-lookup"><span data-stu-id="aad36-105">Calling Web API from a Windows Phone 8 Application (C#)</span></span>](calling-web-api-from-a-windows-phone-8-application.md)
