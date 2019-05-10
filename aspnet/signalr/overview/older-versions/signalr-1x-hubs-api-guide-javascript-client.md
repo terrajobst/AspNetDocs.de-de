@@ -8,12 +8,12 @@ ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: a28b6043ac183ceb66e3ef2ad322436901aa50bc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24850fe5229490bf600e09ad4718abb575a845fa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412839"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116978"
 ---
 # <a name="signalr-1x-hubs-api-guide---javascript-client"></a>Leitfaden für die SignalR 1.x-Hubs-API – JavaScript-Client
 
@@ -26,7 +26,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gi
 > Der SignalR-Hubs-API können Sie die Remoteprozeduraufrufe (RPCs) von einem Server verbundene Clients und von den Clients an den Server vornehmen. Im Server-Code Sie Methoden definieren, die von Clients aufgerufen werden können, und rufen Sie Methoden, die auf dem Client ausgeführt. Im Clientcode Sie Methoden definieren, die vom Server aufgerufen werden können, und rufen Sie Methoden, die auf dem Server ausgeführt. SignalR ist für alle Client-zu-Server sich für Sie übernimmt.
 > 
 > SignalR bietet außerdem eine Low-Level-API wird aufgerufen, dauerhafte Verbindungen. Eine Einführung in die SignalR-Hubs und dauerhafte Verbindungen oder für ein Lernprogramm, das zeigt, wie Sie eine vollständige SignalR-Anwendung erstellen, finden Sie unter [SignalR - erste Schritte](../getting-started/index.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -109,7 +108,6 @@ Im vorherigen Beispiel wird der Verweis auf den generierten SignalR-Proxy für d
 > [!NOTE]
 > Verwenden Sie für Windows 8 (Windows Store) JavaScript-Clients die physischen Proxydatei statt der dynamisch generierten aus. Weitere Informationen finden Sie unter [Vorgehensweise: erstellen eine physische Datei für SignalR generierter Proxy](#manualproxy) weiter unten in diesem Thema.
 
-
 Verwenden Sie die Tilde zum Verweisen auf das Stammverzeichnis der Anwendung in Ihrem Proxy Dateiverweis, in einer ASP.NET MVC 4-Razor-Ansicht:
 
 [!code-html[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample5.html)]
@@ -176,7 +174,6 @@ Der Beispielcode verwendet die Standardeinstellung "/ Signalr" die URL für die 
 > [!NOTE]
 > Normalerweise der Registrierung von Ereignishandlern vor dem Aufruf der `start` Methode zum Herstellen der Verbindung. Wenn einige Ereignishandler zu registrieren, nachdem die Verbindung hergestellt werden soll, können Sie dies, aber Sie müssen mindestens eines Ihrer einen oder mehrere Ereignishandler vor dem Aufruf Registrieren der `start` Methode. Ein Grund hierfür ist, dass in einer Anwendung kann viele Hubs vorhanden sein, aber nicht empfehlenswert Auslösen der `OnConnected` Ereignis für jede Hub-Instanz, wenn Sie nur einen der Verträge verwenden möchten. Wenn die Verbindung hergestellt ist, das Vorhandensein einer Clientmethode auf einem Hub-Proxy ist, was SignalR auslösen soll die `OnConnected` Ereignis. Wenn Sie sich nicht die Ereignishandler vor dem Aufruf Registrieren der `start` -Methode, Sie werden zum Aufrufen von Methoden in den Hub, aber der Hub `OnConnected` Methode nicht aufgerufen und keine Clientmethoden werden vom Server aufgerufen werden.
 
-
 <a id="connequivalence"></a>
 
 ### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$. connection.hub ist das gleiche Objekt erstellt, $.hubConnection()
@@ -234,7 +231,6 @@ Sie können mehrere Verbindungen an verschiedene Endpunkte erstellen.
 > - Weitere Informationen zur Verwendung von domänenübergreifende Verbindungen mit Internet Explorer 9, finden Sie unter [dieser Stack Overflow-Thread](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work).
 > - Weitere Informationen zur Verwendung von domänenübergreifende Verbindungen mit Chrome finden Sie unter [dieser Stack Overflow-Thread](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome).
 > - Der Beispielcode verwendet die Standardeinstellung "/ Signalr" die URL für die Verbindung mit Ihrem SignalR Service. WPF-Clientcode für die Methode wird vom Server ohne Parameter aufgerufen. [ASP.NET SignalR Hubs API Guide - Server - The /signalr URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl).
-
 
 <a id="configureconnection"></a>
 

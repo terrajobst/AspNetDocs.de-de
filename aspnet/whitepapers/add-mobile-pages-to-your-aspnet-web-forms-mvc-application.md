@@ -8,12 +8,12 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63c555358d06a9506bb5c8c993800c3307108192
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415985"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114442"
 ---
 # <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Vorgehensweise: Hinzufügen von für Mobilgeräte optimierten Seiten zur ASP.NET Web Forms-/MVC-Anwendung
 
@@ -25,7 +25,6 @@ ms.locfileid: "59415985"
 > **Zusammenfassung**
 > 
 > Diesem Artikel wird beschrieben, verschiedene Möglichkeiten, dienen der Seiten optimiert für mobile Geräte über Ihre ASP.NET Web Forms / MVC-Anwendung und schlägt vor Architektur und Probleme zu berücksichtigen, wenn eine Vielzahl von Geräten entwerfen. In diesem Dokument wird auch erläutert, warum ASP.NET Mobile-Steuerelemente von ASP.NET 2.0 bis 3.5 sind jetzt veraltet, und erläutert einige moderne alternativen.
-
 
 ## <a name="contents"></a>Inhalt
 
@@ -158,7 +157,6 @@ Ihre mobilen Seiten können verwenden gemeinsam freigegebene statische Ressource
 
 > [!NOTE]
 > Da dieser Ansatz in der Regel eine Duplizierung von Code umfasst (mobile Seiten sind wahrscheinlich einige ähnlichkeiten mit desktop Seiten freizugeben), es ist wichtig, die einen Faktor Sie common Business Anwendungslogik oder der Zugriff Code in eine gemeinsame zugrunde liegenden Schicht oder einen Dienst. Andernfalls sind Sie in double der Aufwand für das Erstellen und Verwalten Ihrer Anwendung.
-
 
 #### <a name="redirecting-mobile-visitors-to-your-mobile-pages"></a>Umleiten von mobilen Besucher von mobilen-Seiten
 
@@ -310,7 +308,6 @@ Weitere Informationen finden Sie unter [51degrees.mobi Foundation-Dokumentation]
 
 > [!NOTE]
 > Sie *können* Umleitungsfunktion verwenden 51Degrees.mobi Foundation, ASP.NET MVC-Anwendungen, aber Sie müssen Ihre umleitungskonfiguration im Hinblick auf einfache URLs, die nicht im Hinblick auf die Routingparameter oder platzieren die MVC-Filter definieren für Aktionen. Grund hierfür ist, (zum Zeitpunkt der Verfassung) 51Degrees.mobi Foundation erkennt keine Filter oder routing.
-
 
 ### <a name="disabling-transcoders-and-proxy-servers"></a>Deaktivieren der Transcoder und Webanwendungsproxy-Server
 

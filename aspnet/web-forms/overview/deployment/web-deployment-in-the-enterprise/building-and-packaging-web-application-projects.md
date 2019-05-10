@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 94e92f80-a7e3-4d18-9375-ff8be5d666ac
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 82134b8da7ab5ca49fef8e769128db9010fd231f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1d0ee0264ce6461d7b0159f1a44de4de31e2d079
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396329"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114669"
 ---
 # <a name="building-and-packaging-web-application-projects"></a>Erstellen von Webanwendungsprojekten und Paketerstellung
 
@@ -27,7 +27,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > - Wie das Internet Information Services (IIS)-Webbereitstellungstool (Web Deploy) für Ihre Webanwendung in ein Bereitstellungspaket aktiviert.
 > - Zur des erstellungs- und Packvorgangs-Prozess aus, und welche Dateien erstellt werden.
 
-
 In Visual Studio 2010 wird der Build & Deployment-Prozess für Webanwendungsprojekte von WPP unterstützt. Die WPP stellt einen Satz von Microsoft Build Engine (MSBuild)-Ziele, die erweitern die Funktionalität von MSBuild und ermöglicht die Integration von Web Deploy, bereit. In Visual Studio sehen Sie diese erweiterte Funktionalität für Ihr Webprojekt für die Anwendung auf den Eigenschaftenseiten. Die **Web packen/veröffentlichen** Seite zusammen mit den **SQL packen/veröffentlichen** Seite können Sie konfigurieren, wie das Webanwendungsprojekt für die Bereitstellung verpackt wird, wenn der Buildprozess abgeschlossen ist.
 
 ![](building-and-packaging-web-application-projects/_static/image1.png)
@@ -36,17 +35,13 @@ In Visual Studio 2010 wird der Build & Deployment-Prozess für Webanwendungsproj
 
 Wenn Sie einen Blick auf die Projektdatei für ein C# -Code verwenden-je Webanwendungsprojekt, sehen Sie, dass es sich um zwei TARGETS-Dateien importiert.
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample1.xml)]
-
 
 Die erste **Import** -Anweisung, die alle Visual C#-Projekte gemeinsam ist. Diese Datei *"Microsoft.CSharp.targets"*, Ziele und Aufgaben, die spezifisch zu Visual c# sind enthält. Z. B. der C#-Compiler (**Csc**) Aufgabe hier aufgerufen wird. Die *"Microsoft.CSharp.targets"* Datei wiederum Importe der *"Microsoft.Common.targets"* Datei. Ziele, die für alle Projekte, wie z. B. gelten definiert **erstellen**, **Rebuild**, **ausführen**, **Kompilieren**, und **bereinigen** . Die zweite **Import** Anweisung ist spezifisch für Webanwendungsprojekte. Die *Microsoft.WebApplication.targets* Datei wiederum Importe der *Microsoft.Web.Publishing.targets* Datei. Die *Microsoft.Web.Publishing.targets* Datei im Wesentlichen *ist* WPP. Ziele, z. B. definiert **Paket** und **MSDeployPublish**, Web Deploy, um die verschiedenen Bereitstellungsaufgaben ausführen, das aufrufen.
 
 Um zu verstehen, wie diese zusätzliche Ziele verwendet werden, in der Contact Manager-beispiellösung öffnen die *Publish.proj* Datei, und sehen Sie sich die **BuildProjects** Ziel.
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample2.xml)]
-
 
 Dieses Ziel verwendet die **MSBuild** Task, um verschiedene Projekte zu erstellen. Beachten Sie, dass die **DeployOnBuild** und **DeployTarget** Eigenschaften:
 
@@ -58,7 +53,6 @@ Die **Paket** Ziel ist definiert, der *Microsoft.Web.Publishing.targets* Datei. 
 > [!NOTE]
 > Eine Projektdatei an (z. B. <em>ContactManager.Mvc.csproj</em>) in Visual Studio 2010 müssen Sie zuerst das Projekt aus der Projektmappe entladen. In der <strong>Projektmappen-Explorer</strong> rechten Maustaste auf den Projektknoten, und klicken Sie dann auf <strong>Projekt entladen</strong>. Mit der rechten Maustaste erneut auf des Projektknotens, und klicken Sie dann auf <strong>bearbeiten</strong><em>[Projektdatei]</em>). Die Projektdatei wird im XML-Rohformat geöffnet. Denken Sie daran, auf das Projekt erneut laden, wenn Sie fertig sind.  
 > Weitere Informationen zu MSBuild-Ziele, Aufgaben und <strong>Import</strong> -Anweisungen finden Sie unter [Grundlegendes zur Projektdatei](understanding-the-project-file.md). Eine ausführlichere Einführung in Projektdateien und die Apps, finden Sie unter [innerhalb der Microsoft Build Engine: Mithilfe von MSBuild und Team Foundation-Build](http://amzn.com/0735645248) von Sayed Ibrahim Hashimi und William Bartholomew, ISBN: 978-0-7356-4524-0.
-
 
 ## <a name="what-is-a-web-deployment-package"></a>Was ist ein Webbereitstellungspaket?
 
@@ -87,7 +81,6 @@ Die *"SetParameters.xml"* Datei ist der Schlüssel für die Verwaltung des Berei
 
 > [!NOTE]
 > In Visual Studio 2010 unterstützt die WPP nicht Vorkompilieren der Seiten in einer Webanwendung vor dem Packen. Die nächste Version von Visual Studio und die WPP umfasst die Möglichkeit zum Vorkompilieren einer Webanwendung als paketerstellung-Option.
-
 
 ## <a name="conclusion"></a>Schlussbemerkung
 

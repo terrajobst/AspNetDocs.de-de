@@ -8,12 +8,12 @@ ms.date: 03/30/2015
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: efe432f86b1d65b563efa056c2cb3bc5f2c6d83b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8148891f68ac8417400859540516e44be007dab7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59401308"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118312"
 ---
 # <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Unstrukturiertes Blob Storage (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Im vorherigen Kapitel wir Partitionierungsschemas betrachtet und erläutert, wie die app Fix It Images im Azure Storage-Blob-Dienst und andere taskdaten in Azure SQL-Datenbank speichert. In diesem Kapitel haben wir eine tiefer gehende der Blob-Dienst und zeigen, wie es im Projektcode Fix It implementiert wird.
 

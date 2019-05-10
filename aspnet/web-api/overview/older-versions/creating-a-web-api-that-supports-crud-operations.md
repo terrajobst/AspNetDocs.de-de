@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: 855c3fa35d82173c87d13adb51e10fd13698ade5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3c2a41482b7f9b60a8864b853df23ab5991b6da7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381353"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108749"
 ---
 # <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Aktivieren von CRUD-Vorgänge in ASP.NET Web-API 1
 
@@ -29,7 +29,6 @@ durch [Mike Wasson](https://github.com/MikeWasson)
 > 
 > - Visual Studio 2012
 > - Web-API 1 (Außerdem funktioniert mit Web-API 2)
-
 
 CRUD steht für &quot;erstellen, lesen, aktualisieren und löschen,&quot; die sind die vier grundlegenden Datenbankvorgänge. Viele HTTP-Dienste das Modell auch CRUD-Vorgänge über REST oder die REST-ähnliche APIs.
 
@@ -136,7 +135,6 @@ In der **Controller hinzufügen** Assistenten benennen Sie den Controller &quot;
 > [!NOTE]
 > Es ist nicht erforderlich, die Controller in den Ordner Controller zu platzieren. Der Name des Ordners ist nicht wichtig; Es ist lediglich eine bequeme Möglichkeit, Ihre Quelldateien zu organisieren.
 
-
 Die **Controller hinzufügen** Assistent erstellt eine Datei namens ProductsController.cs im Ordner "Controllers". Wenn diese Datei noch nicht geöffnet ist, doppelklicken Sie auf die Datei, um ihn zu öffnen. Fügen Sie die folgenden **mit** Anweisung:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample4.cs)]
@@ -147,7 +145,6 @@ Hinzufügen eines Felds, das enthält ein **IProductRepository** Instanz.
 
 > [!NOTE]
 > Aufrufen von `new ProductRepository()` im Controller ist nicht der optimale Entwurf, da es den Controller eine bestimmte Implementierung bindet `IProductRepository`. Ein besserer Ansatz ist, finden Sie unter [mithilfe der Web-API-Abhängigkeitskonfliktlöser](../advanced/dependency-injection.md).
-
 
 ## <a name="getting-a-resource"></a>Abrufen einer Ressourcensatzes
 
@@ -205,7 +202,6 @@ Die **CreateResponse** -Methode erstellt eine **HttpResponseMessage** und schrei
 
 > [!NOTE]
 > In diesem Beispiel überprüft nicht die `Product`. Weitere Informationen zur modellvalidierung finden Sie unter [Model Validation in ASP.NET Web-API](../formats-and-model-binding/model-validation-in-aspnet-web-api.md).
-
 
 ## <a name="updating-a-resource"></a>Aktualisieren einer Ressource
 

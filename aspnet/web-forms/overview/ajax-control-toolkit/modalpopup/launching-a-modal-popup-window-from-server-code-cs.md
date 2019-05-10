@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 2f67d8ef-73ca-447d-a0cc-6e3168431e6a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1fd12181e26012c59bde3e6fe153c196d8bf0d31
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc2d9c7a571a8f76e9d935784810280c348b6bb8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413190"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132631"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-c"></a>Starten eines modalen Popupfensters über den Servercode (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1CS.pdf)
 
 > Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Einige Szenarien erfordern jedoch, dass das Öffnen eines modalen Popups auf der Serverseite ausgelöst wird.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -63,7 +62,6 @@ Die `pageLoad()` JavaScript-Funktion ist eine spezielle Sigmoidfunktion, die aus
 [!code-javascript[Main](launching-a-modal-popup-window-from-server-code-cs/samples/sample8.js)]
 
 Die `$find()` -Funktion sucht nach einem benannten Element auf der Seite und die serverseitige-ID als Parameter erwartet. Aus diesem Grund `$find("mpe")` gibt die Clientdarstellung des Steuerelements "ModalPopup" zurück, dessen `show()` -Methode können Sie das Popup angezeigt werden.
-
 
 [![Modale Fenster wird angezeigt, wenn einer der Schaltflächen geklickt wird](launching-a-modal-popup-window-from-server-code-cs/_static/image2.png)](launching-a-modal-popup-window-from-server-code-cs/_static/image1.png)
 

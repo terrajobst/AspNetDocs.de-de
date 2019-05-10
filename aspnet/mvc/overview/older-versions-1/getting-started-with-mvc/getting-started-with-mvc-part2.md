@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 84f9c822f041808184b2c586ce933ba3b24615dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e2a298584473f57c2b14edf507f0f6886d906ea3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419833"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123065"
 ---
 # <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
@@ -24,7 +24,6 @@ durch [Scott Hanselman](https://github.com/shanselman)
 >
 >
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
-
 
 MVC ist die Abkürzung für Modell, Ansicht und Controller. MVC ist ein Muster für die Entwicklung von Anwendungen, sodass jeder Teil verfügt über eine Aufgabe, die sich von einem anderen unterscheidet.
 

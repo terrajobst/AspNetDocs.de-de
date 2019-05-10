@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c88bae40a8aa092037c0b359ee391acaf161cf10
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409732"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118299"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
 
@@ -34,7 +34,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
 >
 > Weitere detaillierte dieses Themas finden Sie unter den [Building Real-World Cloud-Apps mit Azure-e-Book](building-real-world-cloud-apps-with-windows-azure/introduction.md).
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -79,7 +78,6 @@ Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie z
 > [!NOTE]
 > Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
 
@@ -87,7 +85,6 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 
 > [!NOTE]
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
-
 
 ---
 
@@ -107,9 +104,8 @@ Geschätzte Zeit für diese testumgebung abzuschließen: **75 Minuten**
 > [!NOTE]
 > Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-using-entity-framework-migrations"></a>Übung 1: Mithilfe von Entity Framework-Migrationen
+### <a name="exercise-1-using-entity-framework-migrations"></a>Übung 1: Mithilfe von Entity Framework-Migrationen
 
 Wenn Sie eine Anwendung entwickeln, kann Ihr Datenmodell im Laufe der Zeit ändern. Diese Änderungen können das vorhandene Modell in der Datenbank auswirken, (Wenn Sie eine neue Version erstellen), und es ist wichtig, Ihre Datenbank auf dem neuesten Stand, um Fehler zu vermeiden.
 
@@ -241,7 +237,7 @@ In dieser Aufgabe verwenden Sie **Entity Framework Code First-Migrationen** , er
     *Zeigt die neue Einschränkung*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-deploying-a-web-app-to-staging"></a>Übung 2: Bereitstellen einer Web-App in der Stagingumgebung
+### <a name="exercise-2-deploying-a-web-app-to-staging"></a>Übung 2: Bereitstellen einer Web-App in der Stagingumgebung
 
 **Web-Apps in Azure App Service** können Sie die Staging-Veröffentlichung durchführen. Bei der Veröffentlichung ein stagingwebsiteslot für jede standardmäßige Produktionswebsite erstellt und ermöglicht es Ihnen, diese Slots ohne Downtime zu wechseln. Dies ist sehr nützlich ist, überprüfen vor der Freigabe für die Öffentlichkeit Änderungen inkrementell Websiteinhalte zu integrieren und Rollback aus, wenn Änderungen werden nicht wie erwartet funktioniert.
 
@@ -249,7 +245,6 @@ In dieser Übung werden Sie Bereitstellen der **Meister Quiz** Anwendung in die 
 
 > [!NOTE]
 > Um die Veröffentlichung in Stagingumgebung aktivieren zu können, muss die Web-app in **Modus "Standard"**. Beachten Sie, dass zusätzliche Gebühren anfallen, wenn Sie Ihre Web-app in den Standardmodus ändern. Weitere Informationen zu den Preisen finden Sie unter [App Service-Preise](https://azure.microsoft.com/pricing/details/app-service/).
-
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-web-app-in-azure-app-service"></a>Aufgabe 1 – Erstellen einer Web-App in Azure App Service
@@ -576,7 +571,7 @@ Sie werden jetzt die Änderungen mithilfe von Push übertragen, die Sie in der v
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample16.cmd)]
 
 <a id="Exercise4"></a>
-### <a name="exercise-4-scaling-using-azure-storage"></a>Übung 4: Skalierung mit dem Azure-Speicher
+### <a name="exercise-4-scaling-using-azure-storage"></a>Übung 4: Skalierung mit dem Azure-Speicher
 
 **BLOBs** sind die einfachste Methode zum Speichern großer Mengen unstrukturierter Text-oder Binärdaten wie Video-, Audio- und Bilddaten. Verschieben die statische Inhalte von Ihrer Anwendung in den Speicher, hilft Ihrer Anwendung zu skalieren, durch das Speichern von Bildern oder Dokumenten direkt an den Browser.
 
@@ -726,11 +721,10 @@ In dieser Aufgabe verwenden Sie **Internet Explorer** zum Durchsuchen der **Meis
     *Überprüfen die URL-Umleitung*
 
 <a id="Exercise5"></a>
-### <a name="exercise-5-using-autoscale-for-web-apps"></a>Schritt 5: Verwenden für die automatische Skalierung für Web-Apps
+### <a name="exercise-5-using-autoscale-for-web-apps"></a>Übung 5: Verwenden für die automatische Skalierung für Web-Apps
 
 > [!NOTE]
 > In dieser Übung ist optional, da sie Unterstützung für Web-Last erfordert &amp; Leistungstests, die nur zur Verfügung steht **Visual Studio 2013 Ultimate Edition**. Weitere Informationen zu bestimmten Features von Visual Studio 2013, Versionsvergleich [hier](https://www.microsoft.com/visualstudio/eng/products/compare).
-
 
 **Azure App Service-Web-Apps** bietet die Autoscale-Funktion für die Web-apps, die im **Modus "Standard"**. Für die automatische Skalierung ermöglicht Azure die Anzahl der Instanzen der Web-app je nach Auslastung automatisch skaliert. Wenn für die automatische Skalierung aktiviert ist, wird Azure überprüft, einmal alle fünf Minuten die CPU der Web-app und Instanzen nach Bedarf zu diesem Zeitpunkt hinzugefügt. Wenn die CPU-Auslastung gering ist, wird Azure Instanzen einmal alle zwei Stunden entfernt, um sicherzustellen, dass die Leistung der Web-app nicht beeinträchtigt wird.
 

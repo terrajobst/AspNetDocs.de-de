@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 28cb3af081f68c20dd9cd9e0b2578f5656d2d652
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389439"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116038"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>Erstellen und Verwenden eines Hilfsprogramms in einer ASP.NET Web Pages (Razor)-Website
 
@@ -37,7 +37,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
-
 
 ## <a name="overview-of-helpers"></a>Übersicht über die Hilfsprogramme
 
@@ -75,7 +74,6 @@ Dieses Verfahren zeigt, wie Sie das Hilfsprogramm zu erstellen, das die Beachten
     ![Screenshot die Seite im Browser, und wie das Hilfsprogramm Markup generiert, die einen Rahmen um den angegebenen Text wird angezeigt.](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Horizontales Menü als ein Razor-Hilfsprogramm](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2341). In diesem Blogeintrag von Mike Pope veranschaulicht, wie ein horizontales Menü als ein Hilfsprogramm über Markup, CSS und Code zu erstellen.
 

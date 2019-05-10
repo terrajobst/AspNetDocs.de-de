@@ -8,12 +8,12 @@ ms.date: 03/08/2013
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
-ms.openlocfilehash: 1e7103df41e4c355ca6f1291ef0a10269c5c403a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3e4e63d385a56d51d3d08696782b43d6228f6201
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415556"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113402"
 ---
 # <a name="breezeangular-template"></a>Breeze-/Angular-Vorlage
 
@@ -22,7 +22,6 @@ durch [Mads Kristensen](https://github.com/madskristensen)
 > Die Breeze/Angular-MVC-Vorlage wurde von Ward Bell geschrieben.
 > 
 > [Die Breeze/Angular MVC-Vorlage herunterladen](https://go.microsoft.com/fwlink/?LinkId=286437)
-
 
 [AngularJS](http://angularjs.org) ist eine open-Source-Bibliothek von Google für die Erstellung von Single Page Applications (SPAs). Die Datenbindung, Abhängigkeitsinjektion und Bildschirm-Verwaltung bietet. Kombinieren Sie sie mit [BreezeJS](http://www.breezejs.com/?utm_source=ms-spa), einer anderen open-Source-Bibliothek für die datenmodellierung und die datenverwaltung und Sie haben die wesentlichen Zutaten für eine große HTML/JavaScript-Client-app.
 

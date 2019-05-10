@@ -8,19 +8,18 @@ ms.date: 06/27/2014
 ms.assetid: 4064ab14-26ee-4d5c-ae58-1bdda525ad06
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 935448a1f9770e1f11460c95997aa778c4208c9f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 218449c18759b306e425c55f8e7b573d837b4658
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403336"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113128"
 ---
 # <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>Erstellen eines Singletons in OData v4 mithilfe von Web-API 2.2
 
 durch Zoe Luo
 
 > In der Vergangenheit konnte eine Entität nur zugegriffen werden kann, wenn diese nicht in einer Entitätenmenge gekapselt wurden. OData v4 stellt zwei zusätzliche Optionen, Singleton und Kapselung, beide Web-API 2.2 unterstützt jedoch.
-
 
 In diesem Artikel zeigt, wie einen Singleton in einem OData-Endpunkt im Web API 2.2 definiert wird. Informationen dazu, welche ein Singleton ist und wie Sie aus Ihrer Verwendung profitieren können, finden Sie unter [mit, dass ein Singleton spezielle Entität definieren](https://blogs.msdn.com/b/odatateam/archive/2014/03/05/use-singleton-to-define-your-special-entity.aspx). Zum Erstellen eines OData V4-Endpunkts in Web-API finden Sie unter [erstellen Sie eine OData v4-Endpunkt mit ASP.NET-Web API 2.2](create-an-odata-v4-endpoint.md). 
 

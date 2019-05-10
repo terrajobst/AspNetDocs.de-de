@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 89897ad41b217764cbd17317d4bf5d6a5c5d488f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379481"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112910"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>Teil 8: Einkaufswagen mit AJAX-Updates
 
@@ -24,7 +24,6 @@ durch [Jon Galloway](https://github.com/jongalloway)
 > Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
 >   
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 8 behandelt Einkaufswagen mit Ajax-Updates.
-
 
 Lassen wir Benutzern Alben in den Einkaufswagen zu platzieren, ohne zu registrieren, aber sie müssen als Gäste vollständige Auschecken registrieren. Die Einkaufs- und Auschecken wird in zwei Controller getrennt werden: eine ShoppingCart-Controller, der können anonym eine Warenkorb Elemente hinzufügt und ein Auschecken-Controller, der den Kassenvorgang behandelt. Wir beginnen mit den Warenkorb legen in diesem Abschnitt, und anschließend den Kassenvorgang im folgenden Abschnitt zu erstellen.
 
@@ -156,7 +155,6 @@ Nach dem Laden Sie Ihr Warenkorb ist leer, können Sie auf der Warenkorb Link en
 ![](mvc-music-store-part-8/_static/image8.png)
 
 Wir haben das fertige eines funktionsfähiges Einkaufswagen, nicht registrierte Benutzer Elemente Einkaufswagen hinzufügen können. Im folgenden Abschnitt werden wir zu registrieren und Ausführen des Auscheckvorgangs ermöglichen.
-
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-7.md)

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9002018b-3aa3-4358-bb1c-fbb5bc751d01
 msc.legacyurl: /web-api/overview/advanced/http-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 308d2e3dd21917e7656f7ffe889dc965d9275d74
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a8e6f1da8df4802e1acf7779a2fc75bfe8ab876f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392104"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115550"
 ---
 # <a name="http-message-handlers-in-aspnet-web-api"></a>HTTP-Meldungshandler in der ASP.NET Web-API
 
@@ -47,7 +47,6 @@ Dieses Diagramm zeigt zwei benutzerdefinierte Handler, die in der Pipeline einge
 > [!NOTE]
 > Klicken Sie auf der Clientseite verwendet "HttpClient" auch Meldungshandler. Weitere Informationen finden Sie unter [HttpClient-Meldungshandler](httpclient-message-handlers.md).
 
-
 ## <a name="custom-message-handlers"></a>Benutzerdefinierte Meldungshandler
 
 Zum Schreiben von eines benutzerdefinierten Nachrichtenhandler abgeleitet **System.Net.Http.DelegatingHandler** und überschreiben die **SendAsync** Methode. Diese Methode hat die folgende Signatur:
@@ -67,7 +66,6 @@ Hier ist ein sehr einfaches Beispiel:
 
 > [!NOTE]
 > Der Aufruf von `base.SendAsync` ist asynchron. Wenn der Handler für alle Vorgänge nach dem Aufruf ausführt, verwenden Sie die **"await"** -Schlüsselwort, wie gezeigt.
-
 
 Ein delegierender Handler kann den inneren Handler auch überspringen und direkt die Antwort zu erstellen:
 
@@ -131,7 +129,6 @@ Wenn die Anforderung nicht über einen gültigen Schlüssel verfügt, erstellt d
 
 > [!NOTE]
 > Wenn der API-Schlüssel nur für bestimmte Controlleraktionen gilt, erwägen Sie, die einen Aktionsfilter anstelle eines meldungshandlers. Aktionsfilter werden nach dem URI routing ausgeführt wird.
-
 
 ## <a name="per-route-message-handlers"></a>Pro-Route-Meldungshandler
 

@@ -8,12 +8,12 @@ ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 61837d0087a297b6a677eb3503ce3e6c13d5e0ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: de4be20ed81ae356e0aa4e90e2ab61a6e25212a0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59397473"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118821"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Verteilte Zwischenspeicherung (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Im vorherige Kapitel behandeln vorübergehender Fehler betrachtet und erwähnt als Strategie zur Circuit-Breaker Zwischenspeichern. Dieses Kapitel bietet weitere Hintergrundinformationen zur Zwischenspeicherung, einschließlich der Verwendung, allgemeine Muster für die Verwendung von, und wie Sie es in Azure implementieren.
 

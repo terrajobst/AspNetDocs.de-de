@@ -8,12 +8,12 @@ ms.date: 12/16/2011
 ms.assetid: c71bb9b2-7136-4ce6-a40a-cc4d9978cfb7
 msc.legacyurl: /web-forms/pluralsight
 msc.type: content
-ms.openlocfilehash: ae41660d96260991defc23c75d2dda5b9183585e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 57885b3b05b3107bbd678791d38e7166a727e5de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400281"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113096"
 ---
 # <a name="web-forms-video-training-from-pluralsight"></a>Web Forms-Schulungsvideo von Pluralsight
 
@@ -29,11 +29,9 @@ ms.locfileid: "59400281"
 - [Mithilfe von ASP.NET Dynamic Data](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-08&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [Webbereitstellung](https://pluralsight.com/training/Player?author=fritz-onion&name=webforms-09&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 
-
 "Diesem Kurs von Dan Wahlin für Pluralsight, aufgezeichnet ist eine hervorragende Einführung in ASP.NET Web Forms. Seine gründliche Abdeckung beginnt mit einer Einführung in .NET Framework, mit dem Installieren und Verwenden von Visual Studio weiterhin, erläutert, wie zum Erstellen von Anwendungen (einschließlich Serversteuerelemente, Datenzugriff und Ajax) und endet mit Bereitstellungsverfahren. Dan ist ASP.NET-Experte und eine hervorragende Darstellung, damit diesem kostenlosen Kurs nicht entgehen!"
 
 Scott Hanselman, leitender Programm-Manager, Webplattform und Azure-Tools, Microsoft
-
 
 ![pluralsight-logo-playbutton](pluralsight/_static/image1.png)
 

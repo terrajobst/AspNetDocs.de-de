@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ed255b4d5938457e82c1fca4d759b6a5691c3f6c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ede2bf737464fde47e304e23255349599c1ea663
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401763"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116283"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>Erstellen eine Schnittstelle zum Auswählen eines Benutzerkontos aus vielen (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.12.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial12_SelectUser_cs.pdf)
 
 > In diesem Tutorial werden wir eine Benutzeroberfläche mit einem ausgelagerten, filterbar Raster erstellen. Insbesondere wird unserer Benutzeroberfläche aus einer Reihe von LinkButtons bestehen, zum Filtern der Ergebnisse basierend auf den Buchstaben ab, der den Benutzernamen und ein GridView-Steuerelement, um die übereinstimmenden Benutzer anzuzeigen. Wir beginnen, durch die Liste aller der Benutzerkonten in einer GridView-Ansicht. Klicken Sie dann in Schritt 3 Fügen wir den Filter LinkButtons hinzu. Schritt 4 untersucht die gefilterten Ergebnissen paging. Die Schnittstelle, die in den Schritten 2 bis 4 erstellt wird in den nachfolgenden Lernprogrammen verwendet werden, um administrative Aufgaben für ein bestimmtes Benutzerkonto auszuführen.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -55,11 +54,9 @@ Der ASP-Seiten in der `Administration` Ordner sind ausschließlich für Administ
 
 An diesem Punkt sollte Ihr Projekts des Projektmappen-Explorer im Screenshot dargestellt in Abbildung 1 ähneln.
 
-
 [![Vier neue Seiten und eine Web.config-Datei wurden auf der Website hinzugefügt](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
 
 **Abbildung 1**: Vier neue Seiten und ein `Web.config` Datei wurde auf der Website ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image3.png))
-
 
 Zum Schluss aktualisieren die Sitemap (`Web.sitemap`) auf einen Eintrag enthalten die `ManageUsers.aspx` Seite. Die folgenden XML-Code nach dem Hinzufügen der `<siteMapNode>` wir für die Lernprogramme Rollen hinzugefügt.
 
@@ -67,11 +64,9 @@ Zum Schluss aktualisieren die Sitemap (`Web.sitemap`) auf einen Eintrag enthalte
 
 Besuchen Sie die Website über einen Browser, mit der sitezuordnung aktualisiert. Wie in Abbildung 2 gezeigt, enthält die Navigation auf der linken Seite nun Elemente für die Verwaltung Lernprogramme.
 
-
 [![Die Sitemap enthält einen Knoten mit dem Titel Benutzerverwaltung](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
 
 **Abbildung 2**: Die Sitemap enthält einen Knoten mit dem Titel Benutzerverwaltung ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image6.png))
-
 
 ## <a name="step-2-listing-all-user-accounts-in-a-gridview"></a>Schritt 2: Auflisten aller Benutzerkonten in einer GridView-Ansicht
 
@@ -81,11 +76,9 @@ Unser Ziel für dieses Tutorial ist die Erstellung ein Rasters ausgelagertes, fi
 
 Um die gewünschten Informationen zum Benutzerkonto in der GridView anzuzeigen, legen Sie des GridView `AutoGenerateColumns` Eigenschaft auf "false" und fügen Sie BoundFields für die `UserName`, `Email`, und `Comment` Eigenschaften und CheckBoxFields für die `IsApproved`, `IsLockedOut`, und `IsOnline` Eigenschaften. Diese Konfiguration kann über deklaratives Markup des Steuerelements oder über das Dialogfeld Felder angewendet werden. Abbildung 3 zeigt einen Screenshot der Felder (Dialogfeld), nachdem die Felder automatisch generieren Kontrollkästchen deaktiviert wurde, und die BoundFields und CheckBoxFields hinzugefügt und konfiguriert wurden.
 
-
 [![Hinzufügen von drei BoundFields und drei CheckBoxFields an die GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
 
 **Abbildung 3**: Hinzufügen von drei BoundFields und drei CheckBoxFields an die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image9.png))
-
 
 Nach dem Konfigurieren Ihrer GridView, stellen Sie sicher, dass die deklarative Markup der folgenden ähnelt:
 
@@ -97,11 +90,9 @@ Als Nächstes müssen wir Code schreiben, die die Benutzerkonten an die GridView
 
 Nehmen Sie einen Moment Zeit, um die Seite über einen Browser zu testen. Wie in Abbildung 4 gezeigt, die `UserAccounts` GridView Listet den Benutzernamen, e-Mail-Adresse und andere relevante Kontoinformationen für alle Benutzer im System.
 
-
 [![In den GridView-Ansicht werden die Benutzerkonten aufgeführt.](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
 
 **Abbildung 4**: Die Benutzerkonten finden Sie in den GridView-Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image12.png))
-
 
 ## <a name="step-3-filtering-the-results-by-the-first-letter-of-the-username"></a>Schritt 3: Filtern der Ergebnisse nach dem ersten Buchstaben des Benutzernamens
 
@@ -121,15 +112,12 @@ Diese Methode gibt die Filteroptionen als Elemente in der `string` Array `filter
 
 Abbildung 5 zeigt die `ManageUsers.aspx` Seite, wenn Sie über einen Browser angezeigt.
 
-
 [![Repeater sind 27 Filtern LinkButtons aufgeführt.](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
 
 **Abbildung 5**: Der Repeater listet 27 Filtern LinkButtons ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image15.png))
 
-
 > [!NOTE]
 > Benutzernamen können mit einem beliebigen Zeichen, Zahlen und Interpunktionszeichen beginnen. Um diese Konten anzuzeigen, wird der Administrator verfügen, die alle LinkButton-Option verwenden. Alternativ können Sie durch Hinzufügen eine LinkButton, um alle Benutzerkonten zurück, die mit einer Zahl beginnen. Ich lassen Sie dieses als Übung für den Leser.
-
 
 Klicken auf die Filterung LinkButtons ein Postback auslöst, und löst des Repeaters `ItemCommand` -Ereignis, aber es keine Änderung im Raster, gibt da wir noch zum haben Schreiben von Code zum Filtern der Ergebnisse. Die `Membership` Klasse enthält eine [ `FindUsersByName` Methode](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx) , die diese Benutzerkonten, deren Benutzername mit einem angegebenen Suchmuster übereinstimmt, zurückgibt. Wir können diese Methode verwenden, um nur die Benutzerkonten abzurufen, deren Benutzernamen zu, mit dem Buchstaben gemäß starten, der `CommandName` von gefilterten LinkButton, auf die geklickt wurde.
 
@@ -151,11 +139,9 @@ Erstellen Sie einen Ereignishandler für das Repeater `ItemCommand` Ereignis. Di
 
 Testen Sie mit diesem Code werden die Funktion zum Filtern. Wenn die Seite zuerst aufgerufen wird, werden alle Benutzerkonten angezeigt (siehe Abbildung 5). Klicken auf LinkButton ein ein Postback auslöst und filtert die Ergebnisse, die Anzeige nur der Benutzerkonten, die mit A zu starten.
 
-
 [![Verwenden Sie die Filterung LinkButtons, um die Benutzer anzuzeigen, deren Benutzernamen mit einem bestimmten Buchstaben](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
 
 **Abbildung 6**: Verwenden Sie die LinkButtons filtern, um diese Benutzer, deren Benutzername mit einem bestimmte Buchstaben beginnt anzuzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image18.png))
-
 
 ## <a name="step-4-updating-the-gridview-to-use-paging"></a>Schritt 4: Aktualisieren der GridView zur Verwendung von Paging
 
@@ -171,7 +157,6 @@ Der Leistungsunterschied zwischen Standard- und benutzerdefinierte Paginierung k
 > [!NOTE]
 > Eine ausführlichere Erläuterung zu den Unterschieden zwischen der standardmäßige und benutzerdefinierte Paginierung als auch die Herausforderungen beim Implementieren von benutzerdefiniertem Paging, finden Sie unter [effizient Paging durch große Mengen von Daten](https://asp.net/learn/data-access/tutorial-25-cs.aspx). Eine Analyse der Leistungsunterschied zwischen Standard- und benutzerdefinierte Paginierung, finden Sie unter [benutzerdefiniertes Paging in ASP.NET mit SQL Server 2005](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx).
 
-
 Benutzerdefiniertes Paging implementieren, das wir einen Mechanismus zunächst, um die genaue Teilmenge der Datensätze, die vom GridView angezeigten abzurufen. Die gute Nachricht ist, die die `Membership` Klasse `FindUsersByName` Methode verfügt über eine Überladung, die zum Angeben der Seitenindex und "Seitengröße" ermöglicht und gibt nur die Benutzerkonten, die innerhalb dieses Bereichs von Datensätzen.
 
 Insbesondere diese Überladung hat die folgende Signatur: [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx).
@@ -180,7 +165,6 @@ Die *PageIndex* Parameter gibt an, die Seite von Benutzerkonten für zurückgege
 
 > [!NOTE]
 > Vom zurückgegebenen Daten `FindUsersByName` Username; sortiert ist die Sortierkriterien können nicht angepasst werden.
-
 
 GridView kann konfiguriert werden, um benutzerdefiniertes Paging verwendet, aber nur bei der Bindung an ein ObjectDataSource-Steuerelement. Für das ObjectDataSource-Steuerelement benutzerdefinierte Paginierung implementieren, ist es erforderlich, zwei Methoden: eine, die übergeben wird, ein startIndex für die Zeile und die maximale Anzahl von Datensätzen angezeigt werden, und gibt die genaue Teilmenge der Datensätze, die in dieser Spanne liegen und eine Methode, die die Gesamtzahl der Datensätze zurückgibt, wird über ausgelagert. Die `FindUsersByName` Überladung akzeptiert ein Seitenindex "und" Seitengröße und gibt die Gesamtzahl der Datensätze über ein `out` Parameter. Es gibt hier eine Schnittstelle-Konflikt.
 
@@ -196,11 +180,9 @@ Als Nächstes erstellen Sie einen Ereignishandler für die einzelnen des LinkBut
 
 Abbildung 7 zeigt die vier LinkButtons, wenn Sie über die Visual Web Developer-Design-Sicht angezeigt.
 
-
 [![Fügen Sie der ersten, vorherigen hinzu, weiter, und der letzten Sie LinkButtons unterhalb der GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
 
 **Abbildung 7**: Fügen Sie zuerst zurück, nächsten und letzten LinkButtons unterhalb der GridView ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image21.png))
-
 
 ### <a name="keeping-track-of-the-current-page-index"></a>Nachverfolgen der Index der aktuellen Seite
 
@@ -228,16 +210,13 @@ Der letzte Schritt ist, Code zu schreiben, für die vier LinkButtons' `Click` -E
 
 Abbildungen 8 und 9 zeigen die benutzerdefinierte Paginierung-Schnittstelle in Aktion. Abbildung 8 zeigt die `ManageUsers.aspx` Seite, wenn Sie die erste Seite der Daten für alle Benutzerkonten anzeigen. Beachten Sie, dass nur 10 13 Konten angezeigt werden. Klicken auf den Link weiter oder letzte bewirkt, dass ein Postback, Updates der `PageIndex` 1 und Bindungen, die in das Raster die zweite Seite des Benutzer-Konten (siehe Abbildung 9).
 
-
 [![Die ersten 10 Benutzerkonten werden angezeigt.](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
 
 **Abbildung 8**: Die ersten 10 Benutzerkonten werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image24.png))
 
-
 [![Klicken Sie auf den nächsten Link zeigt die zweite Seite des Benutzerkonten](building-an-interface-to-select-one-user-account-from-many-cs/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image25.png)
 
 **Abbildung 9**: Klicken Sie auf den nächsten Link zeigt die zweite Seite von Benutzerkonten ([klicken Sie, um das Bild in voller Größe anzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
-
 
 ## <a name="summary"></a>Zusammenfassung
 

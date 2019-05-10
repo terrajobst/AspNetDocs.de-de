@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: 94c3e5d9-a904-445e-a34e-d92fd1ca108a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 33544825403db67fc3b8f0e9eae5d7671b8d2e67
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f19e7dd7fc025de2e0c387db898d36623e790e6a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402186"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123688"
 ---
 # <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC-Controller – Übersicht (VB)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > In diesem Tutorial führt Sie Stephen Walther in ASP.NET MVC-Controller. Erfahren Sie, wie erstellen neue Domänencontroller und Zurückgeben von verschiedenen Arten von Aktionsergebnissen.
-
 
 Dieses Tutorial wird beschrieben, das Thema der ASP.NET MVC-Controllern, Controlleraktionen und Aktionsergebnisse. Nachdem Sie dieses Tutorial abgeschlossen haben, wissen Sie, wie der Controller verwendet werden, um zu steuern, die ein Besucher mit einer ASP.NET MVC-Website interagiert.
 
@@ -103,7 +102,6 @@ Das Aktionsergebnis ContentResult ist etwas Besonderes. Sie können das Aktionse
 > 
 > 
 > System.Web.Mvc.Controller
-
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample4.vb)]
 

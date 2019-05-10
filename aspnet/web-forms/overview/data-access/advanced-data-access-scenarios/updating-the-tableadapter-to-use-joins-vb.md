@@ -8,12 +8,12 @@ ms.date: 07/18/2007
 ms.assetid: e624a3e0-061b-4efc-8b0e-5877f9ff6714
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 943b8a67e77e4ed449e0b2c887b3cae7cc10f305
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b50b2ea8ca64fc47808752aec9d0a4ecab6fbdc5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383433"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108194"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-vb"></a>Aktualisieren des TableAdapter-Steuerelements für die Verwendung von Verknüpfungen (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_69_VB.zip) oder [PDF-Datei herunterladen](updating-the-tableadapter-to-use-joins-vb/_static/datatutorial69vb1.pdf)
 
 > Bei der Arbeit mit einer Datenbank ist es üblich, das Abrufen von Daten, die auf mehrere Tabellen verteilt werden. Zum Abrufen von Daten aus zwei verschiedenen Tabellen können wir entweder einer korrelierten Unterabfrage oder ein JOIN-Vorgang verwenden. In diesem Tutorial Vergleichen wir korrelierte Unterabfragen und die JOIN-Syntax, bevor Sie an einen TableAdapter zu erstellen, die einen JOIN in der Hauptabfrage enthält.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -38,13 +37,11 @@ In diesem Tutorial, die wir kurz vergleichen und den Kontrast von abhängigen Un
 
 Bedenken Sie, dass die `ProductsTableAdapter` erstellt, die im ersten Lernprogramm, in der `Northwind` DataSet verwendet korrelierte Unterabfragen rüstet s entsprechende Kategorie und Lieferant Produktnamen. Die `ProductsTableAdapter` s Hauptabfrage wird unten angezeigt.
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample1.sql)]
 
 Die beiden korrelierter Unterabfragen – `(SELECT CategoryName FROM Categories WHERE Categories.CategoryID = Products.CategoryID)` und `(SELECT CompanyName FROM Suppliers WHERE Suppliers.SupplierID = Products.SupplierID)` -sind `SELECT` Abfragen, die einen einzelnen Wert pro Produkt als eine zusätzliche Spalte in der äußeren zurückgeben `SELECT` Anweisung s-Spaltenliste.
 
 Sie können auch eine `JOIN` können verwendet werden, um jede s Supplier "und" Kategorie Produktname zurückgegeben. Die folgende Abfrage gibt dieselbe Ausgabe wie die oben genannten, aber verwendet `JOIN` s anstelle von Unterabfragen:
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample2.sql)]
 
@@ -53,45 +50,35 @@ Ein `JOIN` Datensätze aus einer Tabelle mit Datensätzen aus einer anderen Tabe
 > [!NOTE]
 > `JOIN` s werden häufig verwendet, bei der Abfrage von Daten aus relationalen Datenbanken. Wenn Sie neu ist die `JOIN` Syntax oder zur Syntax ein wenig auffrischen müssen, empfehle ich d der [SQL Join Tutorial](http://www.w3schools.com/sql/sql_join.asp) an [W3 Schulen](http://www.w3schools.com/). Auch interessante sind die [ `JOIN` Grundlagen](https://msdn.microsoft.com/library/ms191517.aspx) und [Unterabfrage Grundlagen](https://msdn.microsoft.com/library/ms189575.aspx) Teile der [SQL-Onlinedokumentation](https://msdn.microsoft.com/library/ms130214.aspx).
 
-
 Da `JOIN` s und korrelierte Unterabfragen können beide verwendet werden zum Abrufen von verknüpfter Daten aus anderen Tabellen, bleiben viele Entwickler ihre Mal "Kopf" gestreift und fragen sich, welchen Ansatz verwenden. Alle von der SQL-Experten ich ungefähr die gleiche gaben an, dass gesprochen haben, dass die It t spielt leistungsfähig wie SQL Server ungefähr identische Ausführungspläne erstellt wird. Ihren Rat, besteht darin, das Verfahren zu verwenden, dem Sie und Ihr Team mit am besten vertraut sind. Es benötigt, beachten Sie, dass diese Experten nach diesen Rat imparting sofort ihre Einstellung express `JOIN` s über korrelierte Unterabfragen.
 
 Wenn Sie eine Datenzugriffsschicht, die mit typisierten DataSets zu erstellen, funktionieren die Tools besser bei Verwendung von Unterabfragen. Insbesondere der TableAdapter-s-Assistenten nicht generiert automatisch entsprechende `INSERT`, `UPDATE`, und `DELETE` Anweisungen, wenn die Hauptabfrage enthält `JOIN` s, sondern generiert automatisch diese Anweisungen, wenn die Korrelation Unterabfragen werden verwendet.
 
 Um diese Unzulänglichkeit zu untersuchen, erstellen Sie eine temporäre typisierte DataSet in den `~/App_Code/DAL` Ordner. Während der TableAdapter-Konfigurations-Assistenten die Option mithilfe von Ad-hoc-SQL-Anweisungen, und geben den folgenden `SELECT` Abfrage (siehe Abbildung 1):
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample3.sql)]
-
 
 [![Geben Sie eine Main-Abfrage, die JOINs enthält.](updating-the-tableadapter-to-use-joins-vb/_static/image2.png)](updating-the-tableadapter-to-use-joins-vb/_static/image1.png)
 
 **Abbildung 1**: Geben Sie eine Main-Abfrage, Contains `JOIN` s ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image3.png))
 
-
 In der Standardeinstellung des TableAdapter erstellt automatisch `INSERT`, `UPDATE`, und `DELETE` Anweisungen auf Grundlage der Hauptabfrage. Wenn Sie auf die Schaltfläche "Erweiterte" klicken, sehen Sie, dass dieses Feature aktiviert ist. Trotz dieser Einstellung wird der TableAdapter ist nicht möglich, erstellen Sie die `INSERT`, `UPDATE`, und `DELETE` Anweisungen, da die Hauptabfrage enthält eine `JOIN`.
-
 
 ![Geben Sie eine Main-Abfrage, die JOINs enthält.](updating-the-tableadapter-to-use-joins-vb/_static/image4.png)
 
 **Abbildung 2**: Geben Sie eine Main-Abfrage, die enthält `JOIN` s
 
-
 Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen. An diesem Punkt die DataSet-s-Designer enthält einen einzelnen TableAdapter mit einer "DataTable" mit Spalten für jede der die zurückgegebenen Felder in der `SELECT` Abfrage s Spaltenliste. Dies schließt die `CategoryName` und `SupplierName`, wie in Abbildung 3 dargestellt.
-
 
 ![Die Datentabelle enthält eine Spalte für jedes Feld in der Liste der Spalten zurückgegeben](updating-the-tableadapter-to-use-joins-vb/_static/image5.png)
 
 **Abbildung 3**: Die Datentabelle enthält eine Spalte für jedes Feld in der Liste der Spalten zurückgegeben
 
-
 Während die DataTable, die entsprechenden Spalten verfügt, wird der TableAdapter verfügt nicht über Werte für die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften. Um dies zu bestätigen, klicken Sie auf den TableAdapter im Designer, und fahren Sie mit dem Fenster "Eigenschaften". Es wird angezeigt, die die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften auf (keine) festgelegt werden.
-
 
 [![Die InsertCommand UpdateCommand und DeleteCommand-Eigenschaften werden auf (keine) festgelegt.](updating-the-tableadapter-to-use-joins-vb/_static/image7.png)](updating-the-tableadapter-to-use-joins-vb/_static/image6.png)
 
 **Abbildung 4**: Die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften auf (keine) festgelegt werden ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image8.png))
-
 
 Zur Umgehung dieser Schwierigkeit können wir manuell die SQL-Anweisungen und Parameter zum Angeben der `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften über das Fenster "Eigenschaften". Alternativ kann zunächst durch Konfigurieren der TableAdapter der Hauptabfrage s, um *nicht* enthalten `JOIN` s. Dadurch wird die `INSERT`, `UPDATE`, und `DELETE` Anweisungen, die automatisch für uns generiert werden. Nach Abschluss des Assistenten an, wir könnten aktualisieren Sie anschließend manuell die TableAdapter `SelectCommand` im Eigenschaftenfenster, sodass die It enthält die `JOIN` Syntax.
 
@@ -107,14 +94,11 @@ In diesem Tutorial fügen wir ein TableAdapter und stark typisierte DataTable f�
 
 Öffnen Sie zunächst die `NorthwindWithSprocs` DataSet in den `~/App_Code/DAL` Ordner. Mit der rechten Maustaste auf den Designer, wählen Sie im Kontextmenü die Option hinzufügen, und wählen Sie das Menüelement TableAdapter. Hierdurch wird der TableAdapter-Konfigurations-Assistenten. Wie Abbildung 5 zeigt, müssen Sie den Assistenten neue gespeicherte Prozeduren erstellen, und klicken Sie auf Weiter. Für eine Auffrischung zum Erstellen neuer Prozeduren über den TableAdapter-s-Assistenten gespeicherter finden Sie in der [Erstellen neuer gespeicherter Prozeduren für die typisierte DataSet-s TableAdapters](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) Tutorial.
 
-
 [![Wählen Sie die neuen gespeicherten Prozeduren Option für das Erstellen](updating-the-tableadapter-to-use-joins-vb/_static/image10.png)](updating-the-tableadapter-to-use-joins-vb/_static/image9.png)
 
 **Abbildung 5**: Wählen Sie erstellen neue gespeicherte Procedures (Option) ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image11.png))
 
-
 Verwenden Sie die folgenden `SELECT` -Anweisung für die Hauptabfrage des TableAdapter s:
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample4.sql)]
 
@@ -122,27 +106,21 @@ Da diese Abfrage nicht enthält, führt `JOIN` s, der TableAdapter-Assistenten e
 
 Die folgende Schritte kann wir die TableAdapter s, die gespeicherten Prozeduren nennen. Verwenden Sie die Namen `Employees_Select`, `Employees_Insert`, `Employees_Update`, und `Employees_Delete`, wie in Abbildung 6 dargestellt.
 
-
 [![Name der TableAdapter s gespeicherten Prozeduren](updating-the-tableadapter-to-use-joins-vb/_static/image13.png)](updating-the-tableadapter-to-use-joins-vb/_static/image12.png)
 
 **Abbildung 6**: Benennen Sie den TableAdapter s gespeicherte Prozeduren ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image14.png))
 
-
 Der letzte Schritt verlangt, um den TableAdapter-s-Methoden zu nennen. Verwendung `Fill` und `GetEmployees` den Namen der Methode. Außerdem werden Sie sicher, dass die Create-Methoden, um Updates direkt an das Kontrollkästchen Datenbank (GenerateDBDirectMethods) zu senden.
-
 
 [![Name der TableAdapter-s-Methoden-Füllung und GetEmployees](updating-the-tableadapter-to-use-joins-vb/_static/image16.png)](updating-the-tableadapter-to-use-joins-vb/_static/image15.png)
 
 **Abbildung 7**: Benennen Sie die TableAdapter-Methoden `Fill` und `GetEmployees` ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image17.png))
 
-
 Können Sie nach Abschluss des Assistenten, überprüfen Sie die gespeicherten Prozeduren in der Datenbank. Daraufhin sollte die vier neue: `Employees_Select`, `Employees_Insert`, `Employees_Update`, und `Employees_Delete`. Überprüfen Sie anschließend die `EmployeesDataTable` und `EmployeesTableAdapter` gerade erstellt haben. Die DataTable enthält eine Spalte für jedes Feld, das von der Hauptabfrage zurückgegeben. Klicken Sie auf den TableAdapter, und fahren Sie mit dem Fenster "Eigenschaften". Es wird angezeigt, die die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften ordnungsgemäß konfiguriert sind, um die entsprechenden gespeicherten Prozeduren aufrufen.
-
 
 [![Der TableAdapter enthält INSERT-, Update- und Löschen von Funktionen](updating-the-tableadapter-to-use-joins-vb/_static/image19.png)](updating-the-tableadapter-to-use-joins-vb/_static/image18.png)
 
 **Abbildung 8**: Der TableAdapter enthält einfügen, aktualisieren und Löschen von Funktionen ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image20.png))
-
 
 Nach dem Einfügen, aktualisieren und Löschen von gespeicherten Prozeduren, die automatisch erstellt und die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften ordnungsgemäß konfiguriert, wir können zum Anpassen der `SelectCommand` s gespeicherte Prozedur, um zusätzliche zurückzugeben. Informationen zu jedem Mitarbeiter s-Manager. Insbesondere müssen wir aktualisieren die `Employees_Select` gespeicherte Prozedur verwendet eine `JOIN` und zurückgeben den Manager s `FirstName` und `LastName` Werte. Nachdem die gespeicherte Prozedur aktualisiert wurde, müssen wir die DataTable zu aktualisieren, sodass sie diese zusätzlichen Spalten enthält. Wir werden diese beiden Aufgaben in den Schritten 2 und 3 in Angriff nehmen.
 
@@ -150,16 +128,13 @@ Nach dem Einfügen, aktualisieren und Löschen von gespeicherten Prozeduren, die
 
 Navigieren zum Server-Explorer, Drilldown in den Ordner für Northwind s-Datenbank gespeicherte Prozeduren, und öffnen Sie zunächst die `Employees_Select` gespeicherte Prozedur. Wenn Sie diese gespeicherte Prozedur nicht angezeigt werden, wird mit der rechten Maustaste auf den Ordner gespeicherte Prozeduren, und wählen Sie die Aktualisierung. Aktualisieren Sie die gespeicherte Prozedur, sodass er verwendet eine `LEFT JOIN` den s-Manager zuerst zurückgegeben und Nachname:
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample5.sql)]
 
 Nach der Aktualisierung der `SELECT` -Anweisung, die Änderungen auf das Menü "Datei" und Auswählen von Speichern `Employees_Select`. Sie können Alternativ klicken Sie auf das Symbol "Speichern" in der Symbolleiste oder drücken Sie STRG + S. Nach dem Speichern Ihrer Änderungen an, mit der Maustaste auf die `Employees_Select` gespeicherte Prozedur im Server-Explorer und wählen Sie ausführen. Dies wird die gespeicherte Prozedur auszuführen und zeigen die Ergebnisse im Ausgabefenster angezeigt (siehe Abbildung 9).
 
-
 [![Die Ergebnisse der gespeicherten Prozeduren werden im Ausgabefenster angezeigt.](updating-the-tableadapter-to-use-joins-vb/_static/image22.png)](updating-the-tableadapter-to-use-joins-vb/_static/image21.png)
 
 **Abbildung 9**: Die Ergebnisse der gespeicherten Prozeduren werden im Ausgabefenster angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image23.png))
-
 
 ## <a name="step-3-updating-the-datatable-s-columns"></a>Schritt 3: Aktualisieren der DataTable-s-Spalten
 
@@ -172,26 +147,21 @@ Wir haben manuelle Hinzufügen von DataTable-Spalten in der vorherigen Lernprogr
 
 Starten, indem Sie mit der rechten Maustaste auf die `EmployeesTableAdapter` , und wählen im Kontextmenü der konfigurieren. Dadurch wird der TableAdapter-Konfigurations-Assistent, der die gespeicherten Prozeduren zum auswählen, einfügen, aktualisieren und löschen, sowie deren Rückgabewerte und Parameter (sofern vorhanden) aufgeführt sind. Abbildung 10 zeigt diesen Assistenten. Hier sehen wir, dass die `Employees_Select` gibt die gespeicherte Prozedur die `ManagerFirstName` und `ManagerLastName` Felder.
 
-
 [![Der Assistent zeigt der Liste der aktualisierten Spalten für die Employees_Select gespeicherten Prozedur](updating-the-tableadapter-to-use-joins-vb/_static/image25.png)](updating-the-tableadapter-to-use-joins-vb/_static/image24.png)
 
 **Abbildung 10**: Der Assistent zeigt die Spaltenliste aktualisiert, für die `Employees_Select` Stored Procedure ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image26.png))
 
-
 Schließen Sie den Assistenten, indem Sie auf "Fertig stellen". Bei der Rückkehr zum DataSet-Designer die `EmployeesDataTable` umfasst zwei zusätzliche Spalten: `ManagerFirstName` und `ManagerLastName`.
-
 
 [![Die EmployeesDataTable enthält zwei neue Spalten](updating-the-tableadapter-to-use-joins-vb/_static/image28.png)](updating-the-tableadapter-to-use-joins-vb/_static/image27.png)
 
 **Abbildung 11**: Die `EmployeesDataTable` enthält zwei neue Spalten ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image29.png))
 
-
 Um zu zeigen, dass die aktualisierte `Employees_Select` gespeicherte Prozedur aktiviert ist und einfügen, aktualisieren und löschen die Funktionen des TableAdapter sind zwar noch funktionsfähig, s, die eine Webseite erstellen, mit dem Benutzer anzeigen und Löschen von Mitarbeitern zu ermöglichen. Bevor wir eine solche Seite erstellen, allerdings wir müssen zunächst eine neue Klasse in der Geschäftslogikebene für die Arbeit mit Mitarbeiter erstellen die `NorthwindWithSprocs` DataSet. In Schritt 4 erstellen wir eine `EmployeesBLLWithSprocs` Klasse. In Schritt 5 verwenden wir diese Klasse von einer ASP.NET-Seite.
 
 ## <a name="step-4-implementing-the-business-logic-layer"></a>Schritt 4: Implementieren den Geschäftslogikebene
 
-Erstellen Sie eine neue Klassendatei in der `~/App_Code/BLL` Ordner mit dem Namen `EmployeesBLLWithSprocs.vb`. Diese Klasse imitiert die Semantik des vorhandenen `EmployeesBLL` -Klasse, nur diese neue eine weniger Methoden bietet und verwendet die `NorthwindWithSprocs` DataSet (anstelle von der `Northwind` DataSet). Fügen Sie der `EmployeesBLLWithSprocs` -Klasse folgenden Code hinzu.
-
+Erstellen Sie eine neue Klassendatei in der `~/App_Code/BLL` Ordner mit dem Namen `EmployeesBLLWithSprocs.vb`. Diese Klasse imitiert die Semantik des vorhandenen `EmployeesBLL` -Klasse, nur diese neue eine weniger Methoden bietet und verwendet die `NorthwindWithSprocs` DataSet (anstelle von der `Northwind` DataSet). Fügen Sie der `EmployeesBLLWithSprocs`-Klasse folgenden Code hinzu.
 
 [!code-vb[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample6.vb)]
 
@@ -203,39 +173,31 @@ Mit der `EmployeesBLLWithSprocs` Klasse nun vollständig, es erneut bereit, die 
 
 Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `EmployeesBLLWithSprocs` Klasse und aus den Registerkarten auswählen und löschen, stellen sicher, dass die `GetEmployees` und `DeleteEmployee` Methoden werden aus den Dropdownlisten ausgewählt. Klicken Sie auf "Fertig stellen", um die "ObjectDataSource"-s-Konfiguration abzuschließen.
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der EmployeesBLLWithSprocs-Klasse](updating-the-tableadapter-to-use-joins-vb/_static/image31.png)](updating-the-tableadapter-to-use-joins-vb/_static/image30.png)
 
 **Abbildung 12**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `EmployeesBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image32.png))
-
 
 [![Haben Sie die Verwendung von "ObjectDataSource" aus, die GetEmployees und DeleteEmployee-Methoden](updating-the-tableadapter-to-use-joins-vb/_static/image34.png)](updating-the-tableadapter-to-use-joins-vb/_static/image33.png)
 
 **Abbildung 13**: Die Verwendung von "ObjectDataSource" haben die `GetEmployees` und `DeleteEmployee` Methoden ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image35.png))
 
-
 Visual Studio wird eine BoundField an die GridView hinzufügen, für die einzelnen der `EmployeesDataTable` s-Spalten. Entfernen Sie alle diese BoundFields mit Ausnahme von `Title`, `LastName`, `FirstName`, `ManagerFirstName`, und `ManagerLastName` , und benennen Sie die `HeaderText` Eigenschaften für die letzten vier BoundFields Nachname, Vorname, Manager s Vornamen ein, und Manager s zuletzt bzw. den Namen.
 
 Benutzern gestatten, Mitarbeiter, die auf dieser Seite löschen wir zwei Dinge tun müssen. Weisen Sie zunächst die GridView, um das Löschen von Funktionen bereitzustellen, durch Aktivieren der Option löschen aktivieren, aus der Smarttag. Zweitens: ändern die "ObjectDataSource"-s `OldValuesParameterFormatString` Eigenschaft aus dem Wert festgelegt, indem der ObjectDataSource-Steuerelement-Assistent (`original_{0}`) auf den Standardwert (`{0}`). Nach diesen Änderungen sollte GridView und "ObjectDataSource" s deklarative Markup etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample7.aspx)]
 
 Testen Sie Sie auf der Seite, indem Sie es über einen Browser besuchen. Wie in Abbildung 14 gezeigt, listet die Seite jedes Mitarbeiters und seinen Manager s Namen (sofern vorhanden).
 
-
 [![Der JOIN in der Employees_Select gespeicherte Prozedur gibt den Namen der Manager-s](updating-the-tableadapter-to-use-joins-vb/_static/image37.png)](updating-the-tableadapter-to-use-joins-vb/_static/image36.png)
 
 **Abbildung 14**: Die `JOIN` in die `Employees_Select` gespeicherte Prozedur gibt den Name-s-Manager ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image38.png))
 
-
 Klicken Sie auf die Schaltfläche "löschen" startet das Löschen von Workflows, der bei der Ausführung endet mit dem `Employees_Delete` gespeicherte Prozedur. Allerdings die versuchte `DELETE` Anweisung in der gespeicherten Prozedur, die erzeugt einen Fehler aufgrund einer Verletzung der foreign Key-Einschränkung (siehe Abbildung 15). Insbesondere verfügt jeder Mitarbeiter einen oder mehrere Datensätze der `Orders` Tabelle, verursacht den Löschvorgang fehl.
-
 
 [![Löschen eines Mitarbeiters, die entsprechenden Ergebnisse der Aufträge in der Verletzung einer Foreign Key-Einschränkung aufweist](updating-the-tableadapter-to-use-joins-vb/_static/image40.png)](updating-the-tableadapter-to-use-joins-vb/_static/image39.png)
 
 **Abbildung 15**: Löschen eines Mitarbeiters, die entsprechenden Ergebnisse der Aufträge in der Verletzung einer Foreign Key-Einschränkung aufweist ([klicken Sie, um das Bild in voller Größe anzeigen](updating-the-tableadapter-to-use-joins-vb/_static/image41.png))
-
 
 Zu einem Mitarbeiter werden gelöscht, Sie könnten:
 

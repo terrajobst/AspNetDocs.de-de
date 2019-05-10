@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ce1c6224a7e9203ff62f136f4f3a43e4561a904
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380664"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123832"
 ---
 # <a name="iteration-5--create-unit-tests-vb"></a>Iteration #5 – Erstellen von Komponententests (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [Code herunterladen](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
 
 > In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (VB)
 
@@ -43,7 +42,6 @@ Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbe
 - Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
 
 - Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
-
 
 ## <a name="this-iteration"></a>Diese Iteration
 
@@ -69,7 +67,6 @@ In dieser Iteration hinzugefügt unsere Anwendung Contact Manager Komponententes
 > 
 > Es gibt eine Vielzahl von Komponententest-Frameworks wie NUnit und xUnit.net MbUnit. In diesem Tutorial verwenden wir die Komponententest-Framework in Visual Studio enthalten. Sie können jedoch ganz einfach eines dieser Frameworks alternative verwenden.
 
-
 ## <a name="what-gets-tested"></a>Ruft ab, was getestet
 
 Im besten Fall würde Ihr gesamter Code von Komponententests abgedeckt werden. Im besten Fall müssten Sie die perfekte Sicherheitsnetz Spannen. Sie würden in der Lage, jede Codezeile in Ihrer Anwendung zu ändern und Sie wissen sofort, durch die Komponententests ausführen, ob die Änderung die vorhandene Funktionalität unterbrochen wurde.
@@ -88,11 +85,9 @@ Wenn Ihrer Ansicht komplizierte Logik enthält dann sollten Sie die Logik in Hel
 > 
 > Beim Schreiben von für die Logik für den Datenzugriff Tests oder Anzeigelogik nicht ratsam, ist wenn Komponententests schreiben, können diese Tests sehr wertvoll sein, wenn tests erstellen, die funktionale oder zur Integration.
 
-
 > [!NOTE] 
 > 
 > ASP.NET MVC ist die Web Forms-Ansichts-Engine. Während die Web Forms-Ansichts-Engine auf einem Webserver abhängig ist, möglicherweise andere Ansichts-Engines nicht.
-
 
 ## <a name="using-a-mock-object-framework"></a>Mithilfe eines Pseudoobjektframeworks
 
@@ -115,16 +110,13 @@ Bevor Sie Moq verwenden können, müssen Sie die folgenden Schritte ausführen:
 3. Entzippen Sie den Download aus.
 4. Fügen Sie einen Verweis auf die Assembly Moq dem Testprojekt, indem Sie durch Auswählen der Menüoption **-Projekt "," Verweis hinzufügen** zum Öffnen der **Verweis hinzufügen** Dialogfeld. Navigieren Sie zum Ordner, in dem Sie Moq entpackt haben, und wählen Sie die Moq.dll-Assembly, unter der Registerkarte Durchsuchen. Klicken Sie auf die **OK** Schaltfläche (siehe Abbildung 2).
 
-
 [![Das Aufheben der Blockierung Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **Abbildung 01**: Das Aufheben der Blockierung Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image2.png))
 
-
 [![Verweise, die nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **Abbildung 02**: Verweise, die nach dem Hinzufügen von Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image4.png))
-
 
 ## <a name="creating-unit-tests-for-the-service-layer"></a>Erstellen von Komponententests für die Dienstschicht
 
@@ -136,11 +128,9 @@ Erstellen Sie einen neuen Ordner namens Modelle im Projekt ContactManager.Tests.
 > 
 > Im Allgemeinen sollten Sie die Ordnerstruktur des Projekts Test in der Ordnerstruktur Ihrer ASP.NET MVC-Projekts entsprechen. Sie können z. B. Controller-Tests in einen Ordner "Controllers", Modell-Tests in einem Ordner "Models" platzieren und so weiter.
 
-
 [![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-vb/_static/image3.jpg)](iteration-5-create-unit-tests-vb/_static/image5.png)
 
 **Abbildung 03**: Models\ContactManagerServiceTest.cs ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image6.png))
-
 
 Anfänglich, möchten wir uns die CreateContact()-Methode, die von der ContactManagerService-Klasse verfügbar gemacht werden. Wir erstellen die folgenden fünf Tests:
 
@@ -158,9 +148,7 @@ Der Code für diese Tests ist in Codebeispiel 1 enthalten.
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample1.vb)]
 
-
 Da wir die Contact-Klasse in Codebeispiel 1 verwenden, müssen wir unser Testprojekt einen Verweis auf das Microsoft Entity Framework hinzufügen. Fügen Sie einen Verweis auf die System.Data.Entity-Assembly hinzu.
-
 
 Codebeispiel 1 enthält eine Methode, die mit dem Namen Initialize(), die mit dem [TestInitialize]-Attribut ergänzt wird. Diese Methode wird automatisch aufgerufen, bevor jede der Komponententests ausgeführt wird (es wird 5 Mal direkt vor jedem der Komponententests bezeichnet). Die Initialize()-Methode wird ein pseudorepository mit der folgenden Zeile des Codes erstellt:
 
@@ -172,7 +160,6 @@ Diese Codezeile verwendet das Moq-Framework zum Generieren eines simulierten Rep
 > 
 > Wenn Sie das Moq-Framework verwenden, besteht ein Unterschied zwischen \_MockRepository und \_mockRepository.Object. Die erste bezieht sich auf die Mock (der IContactManagerRepository)-Klasse enthält Methoden zur Angabe, wie sich das pseudorepository verhält. Letztere bezieht sich auf die tatsächliche pseudorepository, das die IContactManagerRepository-Schnittstelle implementiert.
 
-
 Beim Erstellen einer Instanz der Klasse ContactManagerService, wird das pseudorepository in die Initialize()-Methode verwendet. Alle die einzelnen Komponententests verwenden diese Instanz der ContactManagerService-Klasse.
 
 Codebeispiel 1 enthält fünf Methoden, die jeweils die Komponententests entsprechen. Jede dieser Methoden wird mit dem [TestMethod]-Attribut ergänzt. Wenn Sie die Komponententests ausführen, wird jede Methode, die dieses Attribut wurde aufgerufen. Das heißt, ist eine Methode, die mit dem [TestMethod]-Attribut ergänzt wird ein Komponententest.
@@ -183,11 +170,9 @@ Die verbleibenden Tests stellen Sie sicher, dass, wenn die CreateContact()-Metho
 
 Sie können die Komponententests in Codebeispiel 1 ausführen, indem Sie durch Auswählen der Menüoption **Test ausführen, alle Tests in der Projektmappe (STRG + R, A)**. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
 
-
 [![Testergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **Abbildung 04**: Testergebnisse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image8.png))
-
 
 ## <a name="creating-unit-tests-for-controllers"></a>Erstellen von Komponententests für Controller
 
@@ -211,7 +196,6 @@ Der zweite Unit Test stellt sicher, dass die Aktion Create() Ansicht "erstellen"
 
 Wenn die Methode verhält sich wie wir dann erwarten Create() Ansicht "erstellen" zurückgeben soll, wenn die Dienstebene der Wert "false" zurückgegeben. Auf diese Weise kann der Controller Validierungsfehlermeldungen in der Create-Ansicht und der Benutzer hat die Möglichkeit, zu beheben, wenden Sie sich an wurden ungültige Eigenschaften.
 
-
 Wenn Sie planen, erstellen Sie Komponententests für Ihre Controller müssen Sie explizite Ansichtsnamen aus Ihre Controlleraktionen zurückzugeben. Beispielsweise geben eine Ansicht wie folgt zurück:
 
 Zurückgeben von View()
@@ -221,7 +205,6 @@ Stattdessen geben Sie die Ansicht wie folgt zurück:
 Zurückgeben von View("Create")
 
 Wenn Sie nicht explizit sind bei der Rückgabe einer Ansicht klicken Sie dann zurückgegeben die ViewResult.ViewName-Eigenschaft eine leere Zeichenfolge.
-
 
 **Codebeispiel 2 - Controllers\ContactControllerTest.vb**
 

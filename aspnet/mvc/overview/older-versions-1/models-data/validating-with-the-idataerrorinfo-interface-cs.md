@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3e1399d17840a2f5301349cb91deb07b0cc34363
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 938b180da02b1963acffd021d18621d75d1d0447
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421978"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117555"
 ---
 # <a name="validating-with-the-idataerrorinfo-interface-c"></a>Überprüfen mit der IDataErrorInfo-Schnittstelle (C#)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther erfahren Sie, wie benutzerdefinierte Überprüfungsfehlermeldungen durch Implementieren der IDataErrorInfo-Schnittstelle in einer Modellklasse angezeigt.
-
 
 Das Ziel in diesem Tutorial wird ein Ansatz zum Ausführen der Validierung in ASP.NET MVC-Anwendungen beschrieben. Erfahren Sie, wie Sie verhindern, dass eine Person ein HTML-Formular ohne Angabe von Werten für die erforderlichen Felder des Formulars zu senden. In diesem Tutorial erfahren Sie, wie die Validierung mithilfe der IErrorDataInfo-Schnittstelle.
 
@@ -30,7 +29,6 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 
 <a id="0.5_table01"></a>
 
-
 | **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
@@ -38,19 +36,15 @@ In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Daten
 | Director | nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
-
 In diesem Tutorial verwende ich das Microsoft Entity Framework, meine Datenbank Modellklassen generiert werden. In Abbildung 1 ist die Movie-Klasse, die vom Entity Framework generiert wird.
-
 
 [![Die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
 **Abbildung 01**: Die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
-
 > [!NOTE] 
 > 
 > Weitere Informationen zum mithilfe von Entity Framework auf um Ihren Modellklassen für die Datenbank zu generieren, finden Sie meinen Tutorial Erstellen von Modellklassen mit dem Entity Framework.
-
 
 ## <a name="the-controller-class"></a>Der Controller-Klasse
 
@@ -72,11 +66,9 @@ Die Eigenschaft "IsValid" gibt false zurück, wenn ein Überprüfungsfehler vorl
 
 Die Movie-Klasse wird vom Entity Framework generiert. Sie können den Code für die Movie-Klasse sehen, wenn Sie die MoviesDBModel.edmx-Datei im Projektmappen-Explorer-Fenster zu erweitern, und öffnen Sie die MoviesDBModel.Designer.cs-Datei im Code-Editor (siehe Abbildung 2).
 
-
 [![Der Code für die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
 **Abbildung 02**: Der Code für die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
-
 
 Die Movie-Klasse ist eine partielle Klasse. Das bedeutet, dass wir eine andere partielle Klasse mit dem gleichen Namen zum Erweitern der Funktionalität der Movie-Klasse hinzufügen können. Wir fügen unserer Validierungslogik auf die neue partielle Klasse.
 
@@ -110,7 +102,6 @@ Sie können diese partiellen Methoden, um die Movie-Klasse Validierungslogik hin
 > [!NOTE] 
 > 
 > Eine partielle Methode ist eine Methode, die in einer Klasse, die Sie nicht erforderlich, um die Implementierung definiert. Wenn Sie eine partielle Methode implementieren, nicht der Compiler entfernt die Signatur der Methode, und alle Aufrufe an die Methode also es werden keine Laufzeit-Kosten im Zusammenhang mit der partiellen Methode. In Visual Studio Code-Editor können Sie eine partielle Methode hinzufügen, durch das Schlüsselwort *teilweise* gefolgt von einem Leerzeichen zum Anzeigen einer Liste von Teilansichten implementieren.
-
 
 **Codebeispiel 3 - Models\Movie.cs**
 
@@ -146,11 +137,9 @@ In Listing 4, die Indexereigenschaft überprüft die \_Errors-Auflistung, um fes
 
 Sie müssen nicht den Home-Controller in keiner Weise verwenden Sie die geänderte Movie-Klasse zu ändern. Die Seite angezeigt, die in Abbildung 3 wird veranschaulicht, was geschieht, wenn kein Wert für die Felder für Titel oder Director Formular eingegeben wird.
 
-
 [![Aktionsmethoden erstellen automatisch](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
 **Abbildung 03**: Ein Formular mit fehlenden Werten ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
-
 
 Beachten Sie, dass der Wert DateReleased automatisch überprüft wird. Da die DateReleased-Eigenschaft keine NULL-Werte akzeptiert, generiert der DefaultModelBinder ein Überprüfungsfehler für diese Eigenschaft automatisch, wenn sie nicht über einen Wert verfügt. Wenn Sie die Fehlermeldung für die DateReleased-Eigenschaft zu ändern, müssen Sie eine benutzerdefinierte modellbindung erstellen möchten.
 

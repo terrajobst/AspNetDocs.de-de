@@ -8,12 +8,12 @@ ms.date: 02/09/2013
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: 017f550e2caffe1b20823e9b1880cbb4e968005a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f3457840d1597d06c1a1b1ec2a865dd70726446c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379936"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113331"
 ---
 # <a name="hot-towel-template"></a>Hot Towel-Vorlage
 
@@ -30,13 +30,11 @@ durch [Mads Kristensen](https://github.com/madskristensen)
 > 
 > Hot Towel: Da Sie nicht möchten, fahren Sie mit der einseitigen Anwendung ohne eine werden!
 
-
 Erstellen einer SPA möchten, jedoch kann nicht entscheiden, wo Sie anfangen? Hot Towel verwenden und in Sekunden müssen Sie eine SPA und alle Tools, die zum Erstellen von darauf erforderlich!
 
 Hot Towel erstellt einen guter Ausgangspunkt für eine Single-Page Application (SPA) mit ASP.NET erstellen. Standardmäßig bietet es eine modulare Struktur für Code, Navigation in der, die Datenbindung, umfangreiche datenverwaltung und einfache, aber elegante formatieren. Hot Towel bietet alles, was Sie benötigen, um einer einseitigen Anwendung zu erstellen, damit Sie in Ihrer app, die nicht die Infrastruktur konzentrieren können.
 
 > Erfahren Sie mehr über das Erstellen einer SPA aus [John Papa des Videos, Lernprogramme und Pluralsight-Kurse](http://johnpapa.net/spa?vsix).
-
 
 ## <a name="application-structure"></a>Anwendungsstruktur
 

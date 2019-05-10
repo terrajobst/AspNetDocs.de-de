@@ -8,19 +8,18 @@ ms.date: 10/17/2013
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 8234bd1b7eb74d9b03e507f00d9ad937314288be
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4346303967a2446be92910355597feb19c47f338
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411279"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113028"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools für Visual Studio 2013 – Anmerkungen zu dieser Version
 
 by [Microsoft](https://github.com/microsoft)
 
 > Dieses Dokument beschreibt die Version von ASP.NET und Webtools für Visual Studio 2013.
-
 
 ## <a name="contents"></a>Inhalt
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 95e9b9f55b2080c0ed01dc34e3a32f9f1c905644
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380222"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117252"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 Fundamentals
 
@@ -73,7 +73,7 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Erforderliche Komponenten
+### <a name="prerequisites"></a>Vorraussetzungen
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -108,13 +108,12 @@ Diese praktische Übungseinheit besteht aus durch die folgenden Übungen:
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_MusicStore_ASPNET_MVC_Web_Application_Project"></a>
-### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>Übung 1: Music Store ASP.NET MVC-Webanwendungsprojekt erstellen
+### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>Übung 1: Music Store ASP.NET MVC-Webanwendungsprojekt erstellen
 
 In dieser Übung lernen Sie, wie Sie eine ASP.NET MVC-Anwendung in Visual Studio 2012 Express für Web als auch der Ordner "main"-Organisation zu erstellen. Darüber hinaus erfahren Sie, wie zum Hinzufügen eines neuen Controllers, und stellen sie eine einfache Zeichenfolge auf der Startseite der Anwendung angezeigt.
 
@@ -210,7 +209,7 @@ In dieser Aufgabe werden Sie die Anwendung in einem Webbrowser testen.
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Controller"></a>
-### <a name="exercise-2-creating-a-controller"></a>Übung 2: Erstellen eines Controllers
+### <a name="exercise-2-creating-a-controller"></a>Übung 2: Erstellen eines Controllers
 
 In dieser Übung lernen Sie, wie beim Aktualisieren des Controllers zur einfachen Funktionalität die Music Store-Anwendung zu implementieren. Dieser Controller definieren Aktionsmethoden anwenden, um die folgenden spezifischen Anforderungen zu verarbeiten:
 
@@ -359,7 +358,7 @@ In dieser Aufgabe Sie die Anwendung in einem Webbrowser testen und Verwenden der
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Creating_a_View"></a>
-### <a name="exercise-4-creating-a-view"></a>Übung 4: Erstellen einer Ansicht
+### <a name="exercise-4-creating-a-view"></a>Übung 4: Erstellen einer Ansicht
 
 Bisher haben Sie Zeichenfolgen aus Controlleraktionen zurückgegeben wurde. Obwohl dies ist eine gute Möglichkeit für das Verständnis der Funktionsweise von Controllern, ist es nicht, wie Ihre echten Webanwendungen erstellt werden. Ansichten sind Komponenten, die einen besseren Ansatz zum Generieren von HTML zurück an den Browser mit der Verwendung von Vorlagendateien bereitstellen.
 
@@ -471,7 +470,7 @@ Mit der Anwendung, die in einem Browser geöffnet wird sollten Sie Folgendes bea
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Creating_a_View_Model"></a>
-### <a name="exercise-5-creating-a-view-model"></a>Schritt 5: Erstellen von Anzeigemodellen
+### <a name="exercise-5-creating-a-view-model"></a>Übung 5: Erstellen von Anzeigemodellen
 
 Bis jetzt vorgenommenen Ihre Ansichten, die hartcodierte HTML anzeigen, aber zum Erstellen dynamischer Webanwendungen die ansichtsvorlage erhalten Informationen über den Controller. Ein gängiges Verfahren, die für diesen Zweck verwendet werden wird die **"ViewModel"** Muster, das einen Domänencontroller, um alle Informationen, die zum Generieren der entsprechenden HTML-Antwort benötigt Verpacken kann.
 
@@ -945,7 +944,6 @@ In dieser Übung untersuchen Sie die Verbesserungen in den ASP.NET MVC 4-Projekt
 
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
-
 
 ---
 

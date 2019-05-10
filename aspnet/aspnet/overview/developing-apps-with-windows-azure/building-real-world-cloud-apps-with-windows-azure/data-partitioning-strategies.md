@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 1050018794526e12aad43cd473665de5ff575d7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3aecd64bc59ffa961aa97dd30b037f9aeb2acdd8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59403557"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118893"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>Daten, die Partitionierungsstrategien (erstellen realer Cloud-Apps mit Azure)
 
@@ -22,7 +22,6 @@ durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen über die Reihe finden Sie unter [im ersten Kapitel](introduction.md).
-
 
 Zuvor haben wir gesehen, wie einfach es ist die Webebene, einer Cloudanwendung, skalieren durch Hinzufügen und Entfernen von Webservern. Aber wenn sie alle den gleichen Datenspeicher auftreten, Ihrer Anwendung Engpass verschiebt aus dem Front-End an das Back-End und die Datenebene wird am schwersten zu skalieren. In diesem Kapitel erläutert wie Sie Ihre Datenebene skalierbare durch das Partitionieren von Daten auf mehrere relationale Datenbanken oder durch Kombinieren der relationalen Datenbank-Speicher mit anderen Optionen für die datenspeicherung vornehmen können.
 

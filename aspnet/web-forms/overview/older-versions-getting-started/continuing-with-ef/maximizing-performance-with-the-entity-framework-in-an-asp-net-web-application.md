@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5630200a1ad1d30f6d89b38e15179f15b699fa9f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379587"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108585"
 ---
 # <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Maximieren der Leistung bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
 
 durch [Tom Dykstra](https://github.com/tdykstra)
 
 > Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
-
 
 Im vorherigen Tutorial wurde erläutert, wie man nebenläufigkeitskonflikte behandelt. Dieses Tutorial Zeigt Optionen für die Verbesserung der Leistung einer ASP.NET-Webanwendung, die das Entity Framework verwendet. Sie erfahren, dass mehrere Methoden zum Maximieren der Leistung oder für die Diagnose von Leistungsproblemen.
 
@@ -43,7 +42,6 @@ Im folgenden Abschnitt dargelegten Informationen ist möglicherweise nützlich f
 > Leistung der Webanwendung ist von vielen Faktoren ab, einschließlich der Größe der Anforderungs-und Antwortdaten, die Geschwindigkeit von Abfragen, wie viele Anforderungen, dass der Server in die Warteschlange kann und wie schnell sie bedienen kann, und sogar die Effizienz aller betroffen Bibliotheken mit Clientskripts, die Sie verwenden können. Wenn die Leistung in Ihrer Anwendung von entscheidender Bedeutung ist, oder testen oder Erfahrung zeigt, dass die Leistung der Anwendung nicht zufriedenstellend ist, sollten Sie die normalen Protokolls zum Optimieren der Leistung befolgen. Um zu bestimmen, wo Leistungsengpässe auftreten zu messen Sie, und beheben Sie die Bereiche, die die größte Auswirkung auf die gesamtleistung der Anwendung.
 > 
 > Dieses Thema konzentriert sich hauptsächlich auf die Weise, in denen Sie möglicherweise die Leistung von Entity Framework in ASP.NET speziell verbessern können. Hier die Vorschläge sind nützlich, wenn Sie feststellen, dass Zugriff auf Daten der Leistungsengpässe in Ihrer Anwendung ist. Außer wie bereits erwähnt, die hier erläuterten Methoden berücksichtigt werden sollten nicht &quot;bewährte Methoden&quot; im Allgemeinen – viele davon werden nur in Ausnahmefällen oder Adresse sehr spezifische Arten der Leistungsengpässe geeignet.
-
 
 Um das Lernprogramm zu starten, starten Sie Visual Studio, und öffnen Sie die Contoso University-Webanwendung, die Sie im vorherigen Tutorial verwendet wurden.
 
@@ -179,7 +177,6 @@ Als Alternative bietet das IntelliTrace-Feature in Visual Studio Ultimate eine M
 > [!NOTE]
 > Sie können die folgenden Verfahren ausführen, nur, wenn Sie Visual Studio Ultimate verfügen.
 
-
 Wiederherstellen des ursprünglichen Codes aus dem `GetDepartmentsByName` -Methode, und führen Sie die *Departments.aspx* Seite im Debugger.
 
 Wählen Sie in Visual Studio die **Debuggen** Menü **IntelliTrace**, und klicken Sie dann **IntelliTrace-Ereignisse**.
@@ -219,14 +216,12 @@ Die Abfrage von Abteilungen geworden ist eine einfache `Select` Abfragen ohne `J
 > [!NOTE]
 > Wenn Sie verzögerte lassen möglicherweise Lazy Load Laden aktiviert ist, die Muster, das Sie hier mit der gleichen Abfrage wiederholt in vielen Fällen sehen, sein. Ein Muster, das Sie in der Regel vermeiden möchten, ist lazy Loading von verknüpften Daten für jede Zeile der primären Tabelle. Es sei denn, Sie überprüft haben, dass es sich bei eine einzelnen joinabfrage effizient sein zu komplex ist, würden Sie in der Regel in solchen Fällen verbessern, indem Sie die Änderung der primären Abfrage um eager Loading verwenden können.
 
-
 ## <a name="pre-generating-views"></a>Vorab Generieren von Sichten
 
 Wenn ein `ObjectContext` Objekt zuerst in eine neue Anwendungsdomäne erstellt wird, generiert Entity Framework einen Satz von Klassen, die zum Zugriff auf die Datenbank verwendet. Diese Klassen heißen *Ansichten*, und wenn Sie ein Modell sehr großen Datenmengen haben, Generierung dieser Ansichten verzögern der Website die Antwort auf die erste Anforderung für eine Seite nach der Initialisierung einer neuen Anwendungsdomäne. Sie können diese Verzögerung der ersten Anforderung reduzieren, indem Sie die Ansichten erstellen, zur Kompilierzeit statt zur Laufzeit.
 
 > [!NOTE]
 > Wenn Ihre Anwendung verfügt nicht über einen extrem großen Datenmodells, oder wenn es sich bei einem großen Datenmodell verfügt über ein, aber Sie keine Bedenken bezüglich eines Leistungsproblems, das nur die erste Seitenanforderung betroffen sind, nachdem IIS wiederverwendet wird, können Sie diesen Abschnitt überspringen. Anzeigen, die Erstellung nicht ausgeführt werden, wenn Sie instanziieren ein `ObjectContext` Objekt, da die Ansichten in der Anwendungsdomäne zwischengespeichert werden. Aus diesem Grund, es sei denn, Sie häufig Ihre Anwendung in IIS wiederverwendet werden, nur sehr wenige Seitenanforderungen aus vorab generierten Sichten profitieren.
-
 
 Können Sie mithilfe von Ansichten vorab generieren die *EdmGen.exe* Befehlszeilentool oder mithilfe einer *Text Template Transformation Toolkit* (T4)-Vorlage. In diesem Tutorial verwenden Sie eine T4-Vorlage.
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: e264677b-9c01-47ec-94f9-3cd8f08f94af
 msc.legacyurl: /signalr/overview/security/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 9399addc76b7ba0844efe5b935d16edfdd9ec9f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7e69d3c1a18f1239142891734ba58cd2b0078f84
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384981"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113528"
 ---
 # <a name="authentication-and-authorization-for-signalr-persistent-connections"></a>Authentifizierung und Autorisierung für permanente SignalR-Verbindungen
 
@@ -39,7 +39,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https:/
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
 > Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
-
 
 ## <a name="enforce-authorization"></a>Erzwingen der Autorisierung
 

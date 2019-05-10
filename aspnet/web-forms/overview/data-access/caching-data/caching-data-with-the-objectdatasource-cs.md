@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: bd87413c-8160-4520-a8a2-43b555c4183a
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3e8fa3fe62ee2f58cd5cfbd32d17a3613cf80c12
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 596414748365c440ca50453c3e905ba6edb43de8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382495"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114975"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>Zwischenspeichern von Daten mit dem ObjectDataSource-Steuerelement (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_58_CS.exe) oder [PDF-Datei herunterladen](caching-data-with-the-objectdatasource-cs/_static/datatutorial58cs1.pdf)
 
 > Caching kann den Unterschied zwischen einer langsamen und eine schnelle Webanwendung bedeuten. Dieses Tutorial ist der erste von vier, die einen detaillierten Einblick in die ausgabezwischenspeicherung in ASP.NET verwenden. Erfahren Sie, die grundlegenden Konzepte von Zwischenspeicherung und zwischengespeichert werden an die Darstellungsschicht über das ObjectDataSource-Steuerelement.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -57,32 +56,25 @@ Bevor wir unsere Erkundung der s caching-Funktionen "ObjectDataSource" beginnen,
 - `AtApplicationStartup.aspx`
 - `SqlCacheDependencies.aspx`
 
-
 ![Fügen Sie die ASP.NET-Seiten für die Lernprogramme cacherelevanten hinzu.](caching-data-with-the-objectdatasource-cs/_static/image1.png)
 
 **Abbildung 1**: Fügen Sie die ASP.NET-Seiten für die Lernprogramme cacherelevanten hinzu.
 
-
 Wie in den anderen Ordnern `Default.aspx` in die `Caching` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
-
 
 [![Abbildung 2: Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **Abbildung 2**: Abbildung 2: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image4.png))
 
-
 Abschließend fügen Sie diese Seiten als Einträge der `Web.sitemap` Datei. Fügen Sie das folgende Markup insbesondere nach über das Arbeiten mit Binärdaten `<siteMapNode>`:
-
 
 [!code-xml[Main](caching-data-with-the-objectdatasource-cs/samples/sample1.xml)]
 
 Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website über einen Browser anzeigen. Klicken Sie im Menü auf der linken Seite enthält jetzt Elemente für die Zwischenspeicherung Tutorials.
 
-
 ![Die Sitemap enthält jetzt die Einträge für die Caching-Lernprogramme](caching-data-with-the-objectdatasource-cs/_static/image5.png)
 
 **Abbildung 3**: Die Sitemap enthält jetzt die Einträge für die Caching-Lernprogramme
-
 
 ## <a name="step-2-displaying-a-list-of-products-in-a-web-page"></a>Schritt 2: Eine Liste der Produkte anzeigt in einer Webseite
 
@@ -90,19 +82,15 @@ In diesem Tutorial erfahren Sie, wie die ObjectDataSource-Steuerelement s integr
 
 Öffnen Sie zunächst die `ObjectDataSource.aspx` auf der Seite die `Caching` Ordner. Einer GridView-Ansicht aus der Toolbox in den Designer ziehen, legen Sie dessen `ID` Eigenschaft `Products`, und sein Smarttag, auswählen, um es an ein neues ObjectDataSource-Steuerelement, das mit dem Namen binden `ProductsDataSource`. Konfigurieren Sie zum Arbeiten mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse.
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL-Klasse](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
 
 **Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image8.png))
 
-
 Lassen Sie für diese Seite s, die eine bearbeitbare GridView zu erstellen, damit wir prüfen können, was geschieht, wenn die Daten, die zwischengespeichert werden, in dem ObjectDataSource-Steuerelement über die GridView-s-Schnittstelle geändert werden. Lassen Sie die Dropdownliste in der Registerkarte mit der Option auswählen, die auf seine Standardwerte zurückgesetzt `GetProducts()`, aber ändern Sie das ausgewählte Element in der Registerkarte "Updates", um die `UpdateProduct` Überladung verwenden, akzeptiert `productName`, `unitPrice`, und `productID` als Eingabeparameter.
-
 
 [![Legen Sie das UPDATE Registerkarte s Dropdown-Liste an die entsprechenden UpdateProduct-Überladung](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
 
 **Abbildung 5**: Legen Sie die Registerkarte "UPDATE"-s-Dropdown-Listenfeld auf der angemessen `UpdateProduct` überladen ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image11.png))
-
 
 Klicken Sie abschließend die Dropdownlisten auf den Registerkarten für INSERT- und DELETE auf (keine) festgelegt, und klicken Sie auf "Fertig stellen". Nach Abschluss des Konfigurieren von Datenquellen-Assistenten, legt Visual Studio das "ObjectDataSource"-s `OldValuesParameterFormatString` Eigenschaft `original_{0}`. Wie unter der [eine Übersicht der einfügen, aktualisieren und Löschen von Daten](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md) Tutorial, diese Eigenschaft muss aus der deklarativen Syntax entfernt oder wieder auf den Standardwert festgelegt `{0}`, in der Reihenfolge für unseren Workflow aktualisieren ohne Fehler fortgesetzt werden.
 
@@ -113,24 +101,19 @@ Stellen Sie die GridView durch Aktivieren des Kontrollkästchens Bearbeiten akti
 > [!NOTE]
 > Benötigen Sie eine Übersicht über die GridView-s-Bearbeitungsschnittstelle anpassen? Wenn dies der Fall ist, verweisen zurück auf die [Anpassen der Benutzeroberfläche für die Änderung der Daten](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md) Tutorial.
 
-
 [![Aktivieren Sie GridView-Unterstützung zum Bearbeiten, Sortieren und Paging](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
 
 **Abbildung 6**: Aktivieren der GridView-Unterstützung für bearbeiten, Sortieren und Paging ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image14.png))
 
-
 Nachdem diese GridView-Änderungen vorgenommen wurden, sollte GridView und "ObjectDataSource" s deklarative Markup etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](caching-data-with-the-objectdatasource-cs/samples/sample2.aspx)]
 
 Wie in Abbildung 7 dargestellt, listet die bearbeitbaren GridView Name, Kategorie und Preis für jedes der Produkte in der Datenbank. Können Sie die Ergebnisse durchlaufen, die Sortierung der Seite "s"-Funktionalität zu testen und Bearbeiten eines Datensatzes.
 
-
 [![Jedes Produkt s Name, Kategorie und Preise finden Sie in sortierbar, navigierbaren, bearbeitbaren GridView](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
 
 **Abbildung 7**: Jedes Produkt s Name, Kategorie und Preise finden Sie in sortierbar, navigierbaren, bearbeitbaren GridView ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image17.png))
-
 
 ## <a name="step-3-examining-when-the-objectdatasource-is-requesting-data"></a>Schritt 3: Untersuchen bei der "ObjectDataSource" ist Anfordern von Daten
 
@@ -140,14 +123,11 @@ Diese Abfolge von Ereignissen tritt jedes Mal, die, das die GridView zu der zugr
 
 Um die Häufigkeit ehesten mit der die Daten aus der Datenbank abgerufen wurden, können Sie s Anzeige eine Meldung angezeigt, wenn die Daten erneut abgerufen werden. Fügen Sie ein Label-Steuerelement über die GridView, die mit dem Namen `ODSEvents`. Löschen Sie die `Text` Eigenschaft, und legen dessen `EnableViewState` Eigenschaft `false`. Unter der Bezeichnung, fügen Sie ein Steuerelement Schaltfläche hinzu, und legen Sie dessen `Text` Eigenschaft Postbacks.
 
-
 [![Hinzufügen einer Bezeichnung und eine Schaltfläche auf der Seite über GridView](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
 
 **Abbildung 8**: Hinzufügen einer Bezeichnung und eine Schaltfläche auf der Seite über die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image20.png))
 
-
 Während des Data Access-Workflows, das "ObjectDataSource"-s `Selecting` Ereignis wird ausgelöst, bevor das zugrunde liegende Objekt erstellt wird und dessen konfigurierten aufgerufene Methode. Erstellen Sie einen Ereignishandler für dieses Ereignis aus, und fügen Sie den folgenden Code hinzu:
-
 
 [!code-csharp[Main](caching-data-with-the-objectdatasource-cs/samples/sample3.cs)]
 
@@ -155,16 +135,13 @@ Jedes Mal, wenn dem ObjectDataSource-Steuerelement eine Anforderung an der Archi
 
 Besuchen Sie diese Seite in einem Browser aus. Wenn die Seite zuerst aufgerufen wird, wird das Ereignis auswählen des Texts wird ausgelöst, angezeigt. Klicken Sie auf die Schaltfläche mit den Postback, und beachten Sie, dass der Text verschwindet (vorausgesetzt, dass die GridView s `EnableViewState` -Eigenschaftensatz auf `true`, der Standardwert). Dies liegt daran, beim Postback GridView wird aus dem Ansichtszustand wiederhergestellt und auf dem ObjectDataSource-Steuerelement für die Daten aus diesem Grund t zu aktivieren. Sortieren, paging oder das Bearbeiten der Daten, bewirkt jedoch, dass der GridView, sich erneut an seine Datenquelle bindet und aus diesem Grund wird die auswählen-Ereignis ausgelöst, Text wird erneut angezeigt.
 
-
 [![Wenn mit der Datenquelle erneut die GridView gebunden ist, wird die auswählen-Ereignis ausgelöst angezeigt.](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
 
 **Abbildung 9**: Auswahl-Ereignis ausgelöst wird angezeigt, wenn mit der Datenquelle erneut die GridView gebunden ist, ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image23.png))
 
-
 [![Durch Klicken auf das Postback-Schaltfläche bewirkt, dass der GridView, die aus dem Ansichtszustand wiederhergestellt werden](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
 
 **Abbildung 10**: Klicken Sie auf die Schaltfläche mit den Postback bewirkt, dass die GridView, die aus dem Ansichtszustand wiederhergestellt werden ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image26.png))
-
 
 Es mag es ineffizient, die Daten der Datenbank jedes Mal abrufen, die Daten über ausgelagert oder sortiert. Schließlich hat seit wir erneut Standardpaging, dem ObjectDataSource-Steuerelement alle Datensätze abgerufen, wenn die erste Seite anzeigen. Auch wenn die GridView sortieren und paging-Unterstützung nicht bereitstellt, müssen die Daten aus der Datenbank jedes Mal abgerufen werden, die zuerst die Seite besucht wird, von einem Benutzer (und bei jedem Postback, wenn der Ansichtszustand deaktiviert ist). Wenn jedoch die GridView die gleichen Daten für alle Benutzer angezeigt wird, diese zusätzliche datenbankanforderungen überflüssig. Warum nicht Zwischenspeichern von zurückgegebenen Ergebnisse der `GetProducts()` -Methode und die Bindung der GridView, die zwischengespeicherte Ergebnisse?
 
@@ -179,11 +156,9 @@ Wenn Sie einfach einige Eigenschaften festlegen, kann dem ObjectDataSource-Steue
 
 S konfigurieren lassen die `ProductsDataSource` ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden für absoluten Skala. Legen Sie das "ObjectDataSource"-s `EnableCaching` Eigenschaft `true` und die zugehörige `CacheDuration` Eigenschaft auf 30. Lassen Sie die `CacheExpirationPolicy` -Eigenschaft auf die Standardeinstellung verwenden, `Absolute`.
 
-
 [![Konfigurieren von dem ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
 
 **Abbildung 11**: Konfigurieren von dem ObjectDataSource-Steuerelement zum Zwischenspeichern von Daten für 30 Sekunden ([klicken Sie, um das Bild in voller Größe anzeigen](caching-data-with-the-objectdatasource-cs/_static/image29.png))
-
 
 Die Änderungen zu speichern, und rufen Sie diese Seite in einem Browser erneut. Der Markieren von Text ausgelöste Ereignis wird wie ursprünglich die Daten nicht im Cache sind beim ersten die Seite Besuch angezeigt. Jedoch nachfolgenden Postbacks ausgelöst wird, mit der Schaltfläche Postback, sortieren, paging oder das Klicken auf die bearbeiten "oder" Abbrechen " *nicht* erneuten Anzeigen der Auswahl-Ereignis wird ausgelöst, Text. Grund hierfür ist die `Selecting` Ereignis nur ausgelöst wird, wenn es sich bei dem ObjectDataSource-Steuerelement seine Daten aus der zugrunde liegenden Objekts; ruft die `Selecting` Ereignis wird nicht ausgelöst, wenn die Daten aus dem Datencache abgerufen werden.
 
@@ -192,14 +167,11 @@ Nach 30 Sekunden werden die Daten aus dem Cache entfernt werden. Die Daten werde
 > [!NOTE]
 > Wenn Sie den ausgelöste Ereignis Markieren von Text häufig angezeigt wird, selbst wenn Sie erwarten, dass dem ObjectDataSource-Steuerelement funktioniert mit zwischengespeicherten Daten, kann es aufgrund von arbeitsspeicherbeschränkungen sein. Wenn nicht genügend Arbeitsspeicher vorhanden ist, wurde möglicherweise die Daten, die dem Cache hinzugefügt, von dem ObjectDataSource-Steuerelement geleert. Wenn das ObjectDataSource-Steuerelement t scheinbar ordnungsgemäß die Daten oder nur Caches im Cache gespeichert wird die Daten sporadisch, schließen Sie einige Anwendungen, um Arbeitsspeicher freizugeben, und versuchen Sie es erneut.
 
-
 Abbildung 12 wird die Workflow Zwischenspeichern "ObjectDataSource"-s veranschaulicht. Beim Auslösen des Ereignisses auswählen Text auf dem Bildschirm angezeigt wird, da die Daten nicht im Cache wurde und hatte, aus dem zugrunde liegenden Objekt abgerufen werden sollen. Wenn dieser Text nicht angezeigt wird, aber es s, da die Daten aus dem Cache verfügbar waren. Wenn die Daten aus dem Cache zurückgegeben werden dort s kein Aufruf auf die zugrunde liegende Objekt und somit keine Datenbankabfrage ausgeführt.
-
 
 ![Die "ObjectDataSource" speichert und ruft seine Daten aus dem Datencache](caching-data-with-the-objectdatasource-cs/_static/image30.png)
 
 **Abbildung 12**: Die "ObjectDataSource" speichert und ruft seine Daten aus dem Datencache
-
 
 Jede ASP.NET-Anwendung hat seinen eigenen Datencache-Instanz, s, die für alle Seiten und Besucher gemeinsam verwendet. Das bedeutet, dass die Daten im Datencache gespeichert wird, von dem ObjectDataSource-Steuerelement auch für alle Benutzer freigegeben werden, die die Seite zu besuchen. Um dies zu überprüfen, öffnen Sie die `ObjectDataSource.aspx` Seite in einem Browser. Wenn die Seite zuerst besuchen zu können, erscheint der Text der Auswahl-Ereignis ausgelöst, (vorausgesetzt, dass die Daten, die dem Cache hinzugefügt, durch die vorherigen Tests jetzt entfernt wurde,). Öffnen Sie eine zweite Browserinstanz, und kopieren und fügen Sie die URL der ersten Instanz für den Browser an den zweiten. In der zweiten Browserinstanz, der Markieren von Text ausgelöste Ereignis wird nicht angezeigt, da es s, die mit dem gleichen zwischengespeicherten Daten wie die erste.
 

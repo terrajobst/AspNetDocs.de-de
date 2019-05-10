@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: d1983524-e0d5-4ee6-9d87-1f552f7cb964
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 1556e8275da446e285c88d1f850d072725de057b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2cf2e88f141d89971439dc1fc4979849f8dded47
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415673"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113450"
 ---
 # <a name="unit-testing-signalr-applications"></a>Komponententests für SignalR-Anwendungen
 
@@ -35,7 +35,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher)
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
 > Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
-
 
 <a id="unit"></a>
 ## <a name="unit-testing-signalr-applications"></a>Komponententests für SignalR-Anwendungen

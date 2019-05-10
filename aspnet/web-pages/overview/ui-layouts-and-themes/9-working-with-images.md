@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 778c4e58-4372-4d25-bab9-aec4a8d8e38d
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/9-working-with-images
 msc.type: authoredcontent
-ms.openlocfilehash: fedd1013c036ebdb85877a868aaaa172733e5b8a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 53514b3c314fc182a43c82974ffcfa8158a636a1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394704"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114378"
 ---
 # <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>Arbeiten mit Bildern in einer ASP.NET Web Pages (Razor)-Website
 
@@ -44,7 +44,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit WebMatrix 3.
-
 
 <a id="Adding_an_Image"></a>
 ## <a name="adding-an-image-to-a-web-page-dynamically"></a>Hinzufügen eines Bilds zu einer Webseite dynamisch
@@ -133,7 +132,6 @@ Im vorherige Beispiel wurde gezeigt, wie ein Bild dynamisch angezeigt, aber es h
 > 
 > Eine GUID (globally unique ID) ist ein Bezeichner, der in der Regel in einem Format wie folgt gerendert wird: `936DA01F-9ABD-4d9d-80C7-02AF85C822A8`. Die Zahlen und Buchstaben (von A bis F) unterscheiden sich für jede GUID, aber sie folgen diesem Muster mithilfe von Gruppen von 8-4-4-4-12 Zeichen ein. (Eine GUID ist technisch gesehen eine 16-Byte/128-Bit-Zahl.) Wenn Sie eine GUID benötigen, können Sie die speziellen Code aufrufen, die eine GUID generiert. Die Idee hinter GUIDs ist, dass zwischen der beachtliche Größe der Zahl (3,4 x 10<sup>38</sup>) und den Algorithmus zum Generieren von es, die sich ergebende Anzahl wird praktisch garantiert eine von der Art. GUIDs sind daher eine gute Möglichkeit, den Namen für die Dinge zu generieren, wenn Sie sicherstellen müssen, dass Sie den gleichen Namen nicht zweimal verwenden. Der Nachteil ist natürlich, dass GUIDs nicht besonders benutzerfreundlich, damit sie tendenziell eher verwendet werden, wenn der Name nur in Code verwendet wird.
 
-
 <a id="Resizing_an_Image"></a>
 ## <a name="resizing-an-image"></a>Größenänderungen bei Bildern
 
@@ -218,7 +216,6 @@ Anstatt Sie Text für ein Wasserzeichen verwenden, können Sie ein anderes Image
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
 
 [Arbeiten mit Dateien in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202896)
 

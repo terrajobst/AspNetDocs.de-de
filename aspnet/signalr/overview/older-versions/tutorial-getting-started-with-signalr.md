@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 288f5017acde5a103460ace688933609fba0b02c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 87a90b47ae30bee43e0b0c1e078597db54b8e67d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391025"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113869"
 ---
 # <a name="tutorial-getting-started-with-signalr-1x"></a>Tutorial: Erste Schritte mit SignalR 1.x
 
@@ -22,7 +22,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://gi
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > Dieses Tutorial zeigt, wie Sie mithilfe von SignalR eine Chatanwendung mit Echtzeitfunktionalität erstellen. Sie werden eine leere ASP.NET-Webanwendung SignalR hinzu, und erstellen Sie eine HTML-Seite zum Senden und Meldungen angezeigt werden.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -148,7 +147,6 @@ Der folgende Code deklariert einen Proxy für einen Hub.
 > [!NOTE]
 > In jQuery wird der Verweis auf die Server-Klasse und ihre Member in Camel-Case. Das Codebeispiel verweist auf die C#- **ChatHub** Klasse in jQuery als **ChatHub**.
 
-
 Der folgende Code ist, wie Sie eine Callback-Funktion im Skript erstellen. Die hubklasse auf dem Server ruft diese Funktion, um Inhaltsupdates per Pushvorgang an jeden Client übertragen. Die beiden Zeilen an, dass die HTML-Codierung vor der Anzeige des Inhalts sind optional, und zeigen eine einfache Möglichkeit zum Skript-Injection verhindern.
 
 [!code-html[Main](tutorial-getting-started-with-signalr/samples/sample7.html)]
@@ -157,7 +155,6 @@ Der folgende Code zeigt, wie Sie eine Verbindung mit dem Hub zu öffnen. Der Cod
 
 > [!NOTE]
 > Dieser Ansatz wird sichergestellt, dass die Verbindung hergestellt wurde, bevor der Ereignishandler ausgeführt wird.
-
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr/samples/sample8.js)]
 

@@ -8,12 +8,12 @@ ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c61d10c28ba3975cb6fbadc6eda1f7a3c9406dfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406261"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114614"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX
 
@@ -22,7 +22,6 @@ durch [Scott Cate](https://github.com/scottcate)
 [PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
 
 > Bei der Arbeit in den Markup-Editor in Visual Studio können Sie (von IntelliSense) Beachten Sie, dass es zwei untergeordnete Elemente von einem UpdatePanel-Steuerelement gibt. Einer davon ist das Trigger-Element gibt an, die Steuerelemente auf der Seite (oder das Benutzersteuerelement, wenn Sie einen verwenden), der auslöst einer partiellen Rendering des UpdatePanel-Steuerelements in der das Element befindet.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -76,11 +75,9 @@ Auf ähnliche Weise die `<asp:PostBackTrigger>` Element kann verwendet werden, u
 
 1. Drücken Sie F5, um das Projekt erstellen und ausführen. Beachten Sie, dass beide Bezeichnungen Text, wenn Sie Updatebereiche, die sowohl Klicken ändern, Wenn Sie dieses Update-Panels klicken, wird jedoch nur "Label1" aktualisiert.
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image2.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image1.png)
 
 ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
-
 
 ## <a name="under-the-hood"></a>*Einblick in die Hintergründe*
 
@@ -90,11 +87,9 @@ Eine Untersuchung der Quellcode der Seite wird fast nichts Ungewöhnliches angez
 
 Klicken Sie auf die Schaltfläche "Update dieses Panel", und beachten Sie, dass mit dem aktuellen Server Schlüsselzeit obere UpdatePanel aktualisiert wird. Wählen Sie in FireBug die Registerkarte "Console", damit Sie die Anforderung untersuchen können. Überprüfen Sie zuerst die Parameter der POST-Anforderung:
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image5.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image4.png)
 
 ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image6.png))
-
 
 Beachten Sie, dass UpdatePanel auf den serverseitigen AJAX-Code angegeben hat, genau die Steuerelementstruktur über den Parameter ScriptManager1 ausgelöst wurde: `Button1` von der `UpdatePanel1` Steuerelement. Klicken Sie nun auf die Schaltfläche "Updatebereiche, die sowohl" auf. Klicken Sie dann dazu finden Sie untersuchen die Antwort, wir eine durch senkrechte Striche getrennte Reihe von Variablen, die in einer Zeichenfolge festgelegt. insbesondere sehen wir die obere UpdatePanel `UpdatePanel1`, hat die an den Browser gesendeten HTML-Dateien während des gesamten Entwicklungsprozesses. Die AJAX-Clientbibliothek Skript ersetzt das UpdatePanel ursprünglichen HTML-Inhalt mit dem neuen Inhalt über die `.innerHTML` -Eigenschaft, und der Server den geänderten Inhalt auf dem Server im HTML-Format sendet.
 
@@ -104,11 +99,9 @@ Wie wir sehen, da keine spezieller Code zum Ausführen eines AJAX-Postbacks verw
 
 Betrachten Sie beispielsweise ein Kontrollkästchen-Steuerelement ein; Überprüfen Sie die Disassembly Klasse in .NET Reflector. Zu diesem Zweck stellen Sie sicher, dass die Assembly "System.Web" geöffnet ist, und navigieren Sie zu der `System.Web.UI.WebControls.CheckBox` -Klasse, öffnen die `RenderInputTag` Methode. Suchen Sie nach einer Bedingung, die überprüft die `AutoPostBack` Eigenschaft:
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image8.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image7.png)
 
 ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image9.png))
-
 
 Wenn Automatisches Postback aktiviert ist, auf eine `CheckBox` steuern (über die AutoPostBack-Eigenschaft wird "true"), die resultierenden `<input>` Tag gerendert wird daher mit einem ASP.NET-Ereignis, das Behandeln von Skript in die `onclick` Attribut. Das Abfangen der Übermittlung des Formulars, klicken Sie dann, ermöglicht ASP.NET AJAX nonintrusively, auf der Seite eingefügt werden wichtige Änderungen, die auftreten können, durch die Verwendung einer möglicherweise ungenaue zeichenfolgenersetzungen potenzielle vermeiden helfen. Darüber hinaus ermöglicht dies *alle* benutzerdefiniertes ASP.NET-Steuerelement nutzen die Leistungsfähigkeit der ASP.NET AJAX ohne zusätzlichen Code in einem UpdatePanel-Container unterstützen.
 
@@ -128,11 +121,9 @@ Und hier ist das neue Code-Behind:
 
 Die Idee hinter dieser Seite ist, dass die Dropdown Liste, eine von drei Farben wählt, die zweite Bezeichnung angezeigt, dass Sie dieses Kontrollkästchen legt fest, gibt an, ob es fett formatiert ist, und gibt an, ob die Bezeichnungen für das Datum als auch die Zeit anzuzeigen. Das Kontrollkästchen sollte nicht dazu, dass ein AJAX-Update, aber die Dropdown Liste sollten, obwohl es nicht innerhalb eines UpdatePanel befindet.
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image11.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image10.png)
 
 ([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image12.png))
-
 
 Wie im obigen Screenshot ersichtlich ist, wurde die neuesten Schaltfläche geklickt wird mit der rechten Maustaste dieses Aktualisierungsbereich, die unabhängig von oberen Zeit der unteren Zeit aktualisiert. Das Datum wurde auch zwischen den Klicks, deaktiviert, wie das Datum in die untere Bezeichnung angezeigt wird. Schließlich von Interesse ist die untere Bezeichnung die Farbe: aktueller als der Bezeichnungstext, der zeigt, dass Steuerelementzustand wichtig ist, aktualisiert wurde und die Benutzer erwarten, dass sie über AJAX-Postbacks beibehalten werden. *Jedoch*, die Zeit wurde nicht aktualisiert. Die Zeit wurde automatisch durch die Persistenz erneut aufgefüllt. die \_ \_VIEWSTATE-Feld der Seite von der ASP.NET-Laufzeit interpretiert wird, wenn das Steuerelement auf dem Server erneut gerendert wurde. Der ASP.NET AJAX-Servercode erkennt nicht die Methoden der Steuerelemente in dem Zustand ändern; Es füllt einfach aus dem Ansichtszustand und führt dann die Ereignisse, die geeignet sind.
 

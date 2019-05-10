@@ -8,12 +8,12 @@ ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 113600ca1e77ae9667465464da505478fc948c9b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ca3b9424f30f48c7b8c71b850ffeca64244b123b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421107"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112843"
 ---
 # <a name="call-a-web-api-from-a-net-client-c"></a>Aufrufen einer Webs-API aus einem .NET-Client (c#)
 
@@ -165,7 +165,7 @@ Wie GET muss eine DELETE-Anforderung nicht über einen Anforderungstext. Sie mü
 
 So testen Sie die Client-app:
 
-1. [Herunterladen](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) , und führen Sie die Server-app. [Anweisungen zum Download.](/aspnet/core/tutorials/#how-to-download-a-sample) Stellen Sie sicher, dass die Server-app ausgeführt wird. Z. B. `http://localhost:64195/api/products` sollte eine Liste von Produkten zurückgegeben.
+1. [Herunterladen](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) , und führen Sie die Server-app. [Anweisungen zum Download.](/aspnet/core/#how-to-download-a-sample) Stellen Sie sicher, dass die Server-app ausgeführt wird. Z. B. `http://localhost:64195/api/products` sollte eine Liste von Produkten zurückgegeben.
 2. Legen Sie die Basis-URI für HTTP-Anforderungen. Ändern Sie die Nummer des Ports, auf den Port, der in der Server-app verwendet.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

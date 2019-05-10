@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: 004703cd-e0e9-4ba7-9974-1b0475c71222
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: e0b540c030bf600def9b9efad4c73f055a343851
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 207ed880977d794d81efdc1ea458d17a68d501d8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402829"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122893"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>Zugreifen auf Modelldaten anhand eines Controllers
 
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
-
 
 In diesem Abschnitt werden wir erstellen eine neue MoviesController-Klasse, und Schreiben von Code, der unsere Daten abgerufen und wieder an den Browser, die mithilfe einer ansichtsvorlage anzeigt.
 

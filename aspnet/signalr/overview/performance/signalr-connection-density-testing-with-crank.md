@@ -8,12 +8,12 @@ ms.date: 02/22/2015
 ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
-ms.openlocfilehash: bb8a7da1080dc325c0479b337d114b8dcdf6e102
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 901e039fbb81651ed18d560c99745b7e7f716e01
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59390063"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116089"
 ---
 # <a name="signalr-connection-density-testing-with-crank"></a>Testen der Verbindungsdichte in SignalR mit Crank
 
@@ -22,7 +22,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > Dieser Artikel beschreibt, wie das Crank-Tool zum Testen einer Anwendung mit mehreren simulierten Clients.
-
 
 Sobald Ihre Anwendung in der hostumgebung (entweder eine Azure web-Rolle, IIS, oder für selbst gehostete Einsatz von Owin) ausgeführt wird, können Sie die Antwort der Anwendung auf ein hohes Maß an Verbindung Dichte, die mit dem Tool Crank testen. Die Hostingumgebung kann ein Server (Internet Information Services, IIS), einem Owin-Host oder einer Azure-Webrolle sein. (Hinweis: Leistungsindikatoren sind nicht verfügbar auf Azure App Service-Web-Apps, sodass Sie nicht um ein Dichte Verbindungstest Leistungsdaten erhalten.)
 

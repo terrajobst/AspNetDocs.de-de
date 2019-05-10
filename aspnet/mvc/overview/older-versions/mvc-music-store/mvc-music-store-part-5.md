@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e02e15a8955fa42692fac486dadfa426540295f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20b99cbe57b5dfa623205838a5929733a6c2d70d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59387471"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112984"
 ---
 # <a name="part-5-edit-forms-and-templating"></a>Teil 5: Bearbeiten von Formularen und Vorlagen
 
@@ -24,7 +24,6 @@ durch [Jon Galloway](https://github.com/jongalloway)
 > Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.
 > 
 > Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 5 behandelt das von Bearbeitungsformularen und Vorlagen.
-
 
 Im letzten Kapitel waren wir Laden von Daten aus der Datenbank und anzuzeigen. In diesem Kapitel werden wir auch aktivieren, Bearbeiten der Daten.
 
@@ -260,7 +259,6 @@ Jetzt Wenn wir die /StoreManager/ URL navigieren, werden die Alben und Titel unt
 ![](mvc-music-store-part-5/_static/image18.png)
 
 Hinweis: Erstellen und Verwenden eines Hilfsprogramms in einer Ansicht ein einfachen Vorgang angezeigt. Weitere Informationen finden Sie Informationen zum Erstellen von Hilfsprogrammen, die Sie innerhalb der gesamten Website verwenden können, finden Sie in meinem Blogbeitrag: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
-
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-4.md)

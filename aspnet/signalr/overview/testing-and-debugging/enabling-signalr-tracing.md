@@ -8,12 +8,12 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 34fe2cdb10c4b41a6e8cac7fb1741d53c02dfc80
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399358"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114407"
 ---
 # <a name="enabling-signalr-tracing"></a>Aktivieren der Ablaufverfolgung für SignalR
 
@@ -37,7 +37,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
 > Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
-
 
 Wenn die Ablaufverfolgung aktiviert ist, erstellt eine SignalR-Anwendung Protokolleinträge für Ereignisse. Sie können Ereignisse aus dem Client und dem Server protokollieren. Ablaufverfolgung für die Serververbindung für Protokolle, mit horizontaler Skalierung-Anbieter und Message Bus-Ereignisse. Ablaufverfolgung für die Client-Protokolle-Verbindungsereignisse. In SignalR 2.1 und höher, protokolliert der Ablaufverfolgung auf dem Client den vollständigen Inhalt des Hub-Aufruf-Nachrichten.
 

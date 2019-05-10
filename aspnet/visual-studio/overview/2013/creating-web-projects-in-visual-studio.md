@@ -8,12 +8,12 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3a446be8e2dff2ac66e2432c51b2d9f43bcb817d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398098"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113185"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Erstellen von ASP.NET-Webprojekten in Visual Studio 2013
 
@@ -29,7 +29,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > - Neue Features für Web Forms, mit der nur für MVC, angeboten werden, z. B. [automatische Erstellung von Testprojekten](#testproj) und [Intranet-Websitevorlage](#winauth).
 > 
 > Weitere Informationen zum Erstellen von Webprojekten für Azure Cloud Services oder Azure Mobile Services zu erhalten, finden Sie unter [erste Schritte mit Azure Cloud Services und ASP.NET](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) und [beim Erstellen einer Leaderboard-App mit Azure Mobile Services .NET Back-End-](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
-
 
 <a id="prerequisites"></a>
 ## <a name="prerequisites"></a>Vorraussetzungen
@@ -350,7 +349,6 @@ Wenn Sie eine der Azure AD Optionen ausprobieren möchten, jedoch kein Konto ver
 > Wenn Sie eine der Azure AD-Optionen auswählen, Ihr Projekt erfordert eine Datenbank und Konto eines globalen Administrators für Ihren Azure AD-Mandanten anmelden. Geben Sie den Namen und das Kennwort für ein organisationskonto (z. B. admin@contoso.onmicrosoft.com), die Administratorberechtigungen für Azure AD-Mandanten verfügt.
 > 
 > **Geben Sie Anmeldeinformationen nicht für ein Microsoft-Konto (z. B. contoso@hotmail.com) in das Dialogfeld-Anmeldung.**
-
 
 <a id="orgauthsingle"></a>
 ### <a name="cloud---single-organization-authentication"></a>Cloud - einzelne Organisationsauthentifizierung

@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 165d104b5d3ef3281af449cc8673ad96f531d628
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419053"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113071"
 ---
 # <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Praktische Übungseinheiten: One ASP.NET: Integrieren von ASP.NET Web Forms, MVC und Web-API
 
@@ -26,7 +26,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > Visual Studio 2013 bietet es sich um ein neues einheitliches Projektsystem können Sie eine Anwendung erstellen und verwenden die ASP.NET-Technologien in einem Projekt. Diese Funktion entfällt die Notwendigkeit, eine Technologie zu Beginn eines Projekts und mit der sie auswählen, und stattdessen empfiehlt die Verwendung von mehreren ASP.NET Frameworks in einem Projekt.
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -62,7 +61,6 @@ Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie z
 > [!NOTE]
 > Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
 
@@ -70,7 +68,6 @@ In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. 
 
 > [!NOTE]
 > Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
-
 
 ---
 
@@ -88,9 +85,8 @@ Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**
 > [!NOTE]
 > Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-creating-a-new-web-forms-project"></a>Übung 1: Erstellen eines neuen Web Forms-Projekts
+### <a name="exercise-1-creating-a-new-web-forms-project"></a>Übung 1: Erstellen eines neuen Web Forms-Projekts
 
 In dieser Übung erstellen Sie eine neue Web Forms-Website in Visual Studio 2013 verwenden die **One ASP.NET** einheitliche Projekt, sodass Sie die einfache Integration von Web Forms, MVC und Web-API-Komponenten in der gleichen Anwendung. Sie klicken Sie dann die Teile zu identifizieren und untersuchen Sie die so erzeugte Lösung, und schließlich sehen Sie die Website in Aktion.
 
@@ -177,7 +173,7 @@ In dieser Aufgabe Sie führen die so erzeugte Lösung, Erkunden Sie die app und 
 6. Wechseln Sie zurück zu Visual Studio, und drücken Sie **UMSCHALT + F5** debugging beenden.
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>Übung 2: Erstellen eines MVC-Controllers mithilfe von Gerüstbau
+### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>Übung 2: Erstellen eines MVC-Controllers mithilfe von Gerüstbau
 
 In dieser Übung werden Sie nutzen von ASP.NET-Gerüstbau Framework bereitgestellt, die von Visual Studio zum Erstellen eines ASP.NET MVC 5-Controllers mit Aktionen und Razor-Ansichten für CRUD-Vorgänge ausführen, ohne eine einzige Codezeile schreiben zu müssen. Der Gerüstbau-Prozess wird Entity Framework Code First verwenden, um den Datenkontext und das Datenbankschema in der SQL-Datenbank zu generieren.
 
@@ -189,7 +185,6 @@ Der Entity Framework Code First Modellierung Workflow können Sie Ihre eigenen D
 
 > [!NOTE]
 > Weitere Informationen finden Sie Informationen zu Entity Framework [hier](../../../entity-framework.md).
-
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-new-model"></a>Aufgabe 1 – Erstellen eines neuen Modells
@@ -342,7 +337,6 @@ In dieser Aufgabe verwenden Sie den Internet Explorer **F12-Entwicklertools** , 
 > ![Internet Explorer-option](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image27.png)
 > 
 > Die **F12-Entwicklertools** haben Sie eine Breite Palette von Funktionen, die in dieser praktischen Übung nicht behandelt wird. Wenn Sie mehr darüber erfahren möchten, lesen Sie [mit den F12-Entwicklertools](https://msdn.microsoft.com/library/ie/bg182326(v=vs.85)).
-
 
 1. Drücken Sie **F5** um die Projektmappe auszuführen.
 

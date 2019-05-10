@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a63bca69f137a4d4765db6a4925ff027c9d8bf7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68908be34f6b010e512677fe5f5e31bfdefab592
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403583"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116067"
 ---
 # <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Tutorial: Serverübertragung mit ASP.NET SignalR 1.x
 
@@ -26,7 +26,6 @@ durch [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://gi
 > Die Anwendung, die Sie in diesem Tutorial erstellen simuliert einen Börsenticker erstellen, ein typisches Szenario für die Funktion zum Server senden.
 > 
 > Kommentare, die auf dem Lernprogramm sind Willkommen. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -54,7 +53,6 @@ In diesem Tutorial enthält die folgenden Abschnitte:
 
 > [!NOTE]
 > Wenn Sie nicht über die Schritte zum Erstellen der Anwendung arbeiten möchten, können Sie das Paket SignalR.Sample installieren, in einem neuen **leere ASP.NET-Webanwendung** Projekt, und Lesen Sie diese Schritte aus, um erläuterungen des Codes zu erleichtern. Der erste Teil des Lernprogramms umfasst eine Teilmenge des Codes SignalR.Sample aus, und der zweite Teil wird erläutert, die zusätzliche Funktionalität im Paket SignalR.Sample Schlüsselfunktionen.
-
 
 <a id="prerequisites"></a>
 
