@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: a8aac1ac-89de-4415-afe0-97a41c6423d2
 msc.legacyurl: /web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: bfce6120b76d68a3f212639eafa6aa091d7e345d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 832db8e144cab730f16c78f67c12feb9b7c92c7c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59381782"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131770"
 ---
 # <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>Erstellen von lesbaren URLs in ASP.NET Web Pages (Razor)-Websites
 
@@ -33,7 +33,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 >   
 > 
 > In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
-
 
 ## <a name="about-routing"></a>Informationen zum Routing
 
@@ -77,7 +76,6 @@ Wenn für die Suche finden Sie nicht genau übereinstimmt *.cshtml* -Dateien in 
 > [!NOTE]
 > Zur Anforderungen für bestimmte Seiten (d.h. Anforderungen, die enthalten die *.cshtml* Dateierweiterung) funktionieren nur, wie Sie erwarten. Eine Anforderung wie `http://www.contoso.com/a/b.cshtml` führen Sie die Seite *"b.cshtml"* einwandfrei.
 
-
 Innerhalb einer Seite erhalten Sie die Pfadinformationen, mit der `UrlData` -Eigenschaft, die ein Wörterbuch handelt. Angenommen, Sie haben, dass eine Datei namens *ViewCustomers.cshtml* und Ihre Website ruft diese Anforderung ab:
 
 `http://mysite.com/myWebSite/ViewCustomers/1000`
@@ -88,7 +86,6 @@ Wie in der oben genannten Regeln beschrieben, wird die Anforderung zur Ihre Seit
 
 > [!NOTE]
 > Da routing vollständige Dateinamen beinhalten nicht möglich Mehrdeutigkeiten bei Seiten, die den gleichen Namen aber unterschiedliche Dateinamenerweiterungen (z. B. *MyPage.cshtml* und *MyPage.html*) . Um Probleme mit dem routing zu vermeiden, empfiehlt es sich um sicherzustellen, dass Sie Seiten auf Ihrer Website nicht nur in ihrer Erweiterung, deren Namen zu unterscheiden.
-
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen

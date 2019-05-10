@@ -8,12 +8,12 @@ ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 62114e56fb29e80c93b82dcb78ce2bc2a123a83b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385877"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133658"
 ---
 # <a name="routing-and-action-selection-in-aspnet-web-api"></a>Routing- und Aktionsauswahl in ASP.NET Web-API
 
@@ -23,7 +23,6 @@ In diesem Artikel wird beschrieben, wie ASP.NET Web-API eine HTTP-Anforderung an
 
 > [!NOTE]
 > Eine allgemeine Übersicht über routing, finden Sie unter [Routing in ASP.NET Web-API](routing-in-aspnet-web-api.md).
-
 
 Dieser Artikel behandelt die Details der routing-Prozess. Wenn Sie ein Web-API-Projekt erstellen, und suchen, die einige Anforderungen werden nicht weitergeleitet, die Möglichkeit, die Sie erwarten, hilft dieser Artikel hoffentlich.
 
@@ -135,7 +134,6 @@ Einfache Typen umfassen alle der [.NET Framework-primitive Typen](https://msdn.m
 
 > [!NOTE]
 > Es ist möglich, die Regeln für die Bindung zu überschreiben. Finden Sie unter [WebAPI parameterbindung im Hintergrund](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx).
-
 
 Mit diesem Hintergrund sieht der Auswahlalgorithmus für die Aktion aus.
 

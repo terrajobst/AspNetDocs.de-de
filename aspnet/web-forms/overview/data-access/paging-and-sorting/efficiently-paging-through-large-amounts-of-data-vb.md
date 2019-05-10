@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 20ea33efbd1db657a03b20a665a041ecf3a6d248
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dd1fd089bc4faa18fb2e8112b2820788c1f25ceb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399553"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130965"
 ---
 # <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>Effizientes Auslagern von großen Datenmengen (VB)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_25_VB.exe) oder [PDF-Datei herunterladen](efficiently-paging-through-large-amounts-of-data-vb/_static/datatutorial25vb1.pdf)
 
 > Die Standardoption für die Auslagerung des Steuerelements eine Präsentation ist ungeeignet, bei der Arbeit mit großen Mengen von Daten, während die zugrunde liegenden Datenquellen-Steuerelement alle Datensätze abruft, auch wenn nur eine Teilmenge der Daten angezeigt wird. In solchen Fällen müssen wir aktivieren an benutzerdefinierte paging.
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -37,7 +36,6 @@ Die Herausforderung, benutzerdefiniertes Paging wird eine Abfrage schreiben, die
 
 > [!NOTE]
 > Der genaue Leistungsgewinn, die von benutzerdefiniertem Paging hängt von der Gesamtzahl der Datensätze, die über ausgelagert wird und die Last auf dem Datenbankserver platziert wird. Am Ende dieses Tutorials suchen wir auf einige groben Metriken, die die Vorteile in Bezug auf Leistung, die benutzerdefinierte Paginierung abgerufenes vorstellen.
-
 
 ## <a name="step-1-understanding-the-custom-paging-process"></a>Schritt 1: Grundlegendes zu den benutzerdefinierten Paging-Prozess
 
@@ -62,47 +60,37 @@ In den nächsten beiden Schritten untersuchen wir die SQL-Skript erforderlich, u
 
 Bevor wir So rufen Sie die genaue Teilmenge der Datensätze für die Seite angezeigt wird untersuchen, können Sie s, die Einführung an, wie die Gesamtanzahl von Datensätzen, die über ausgelagerte zurückzugeben. Diese Informationen werden benötigt, um die Pagingbenutzeroberfläche ordnungsgemäß zu konfigurieren. Die Gesamtzahl der von einer bestimmten SQL-Abfrage zurückgegebenen Datensätze abgerufen werden kann, mithilfe der [ `COUNT` Aggregatfunktion](https://msdn.microsoft.com/library/ms175997.aspx). Beispielsweise, um das Bestimmen der Gesamtzahl der Datensätze in der `Products` Tabelle können wir die folgende Abfrage verwenden:
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample1.sql)]
 
 Lassen Sie s DAL eine Methode hinzufügen, die diese Informationen zurückgibt. Insbesondere erstellen wir eine DAL-Methode wird aufgerufen, `TotalNumberOfProducts()` ausführt, die die `SELECT` Anweisung oben.
 
 Öffnen Sie zunächst die `Northwind.xsd` typisierte DataSet-Datei in die `App_Code/DAL` Ordner. Als Nächstes mit der rechten Maustaste auf die `ProductsTableAdapter` im Designer, und wählen Sie die Abfrage hinzufügen. Wie wir gesehen, die in vorherigen Tutorials haben diese Weise können wir die DAL eine neue Methode hinzu, wenn aufgerufen, wird eine bestimmte SQL-Anweisung oder gespeicherte Prozedur ausgeführt. Deaktivieren Sie wie bei unserem TableAdapter-Methoden in vorherigen Tutorials, in diesem Beispiel um eine Ad-hoc-SQL-Anweisung zu verwenden.
 
-
 ![Verwenden Sie eine Ad-hoc-SQL-Anweisung](efficiently-paging-through-large-amounts-of-data-vb/_static/image1.png)
 
 **Abbildung 1**: Verwenden Sie eine Ad-hoc-SQL-Anweisung
 
-
 Auf dem nächsten Bildschirm können wir die Art der Abfrage erstellt angeben. Da diese Abfrage die Gesamtanzahl der Datensätze in einem einzelnen, skalaren Wert zurückgibt der `Products` Tabelle wählen Sie die `SELECT` ein einzelnes-Option "Value" zurückgegeben.
-
 
 ![Konfigurieren Sie die Abfrage, um eine SELECT-Anweisung verwenden, die einen einzelnen Wert zurückgibt](efficiently-paging-through-large-amounts-of-data-vb/_static/image2.png)
 
 **Abbildung 2**: Konfigurieren Sie die Abfrage, um eine SELECT-Anweisung verwenden, die einen einzelnen Wert zurückgibt
 
-
 Nach dem, der angibt, in des Typs der Abfrage verwenden, müssen wir als Nächstes die Abfrage angeben.
-
 
 ![Verwenden Sie die SELECT COUNT(*) FROM Produktabfrage](efficiently-paging-through-large-amounts-of-data-vb/_static/image3.png)
 
 **Abbildung 3**: Verwenden Sie die Option (\*) FROM Produktabfrage
 
-
 Abschließend geben Sie den Namen für die Methode an. Verwenden, als zuvor erwähnte, können s `TotalNumberOfProducts`.
-
 
 ![Benennen Sie die TotalNumberOfProducts DAL-Methode](efficiently-paging-through-large-amounts-of-data-vb/_static/image4.png)
 
 **Abbildung 4**: Benennen Sie die TotalNumberOfProducts DAL-Methode
 
-
 Nach dem Klicken auf "Fertig stellen", fügt der Assistent die `TotalNumberOfProducts` Methode, um die DAL. Die skalaren zurückgeben Methoden in der DAL zurück auf NULL festlegbare Typen, für den Fall, dass das Ergebnis aus der SQL-Abfrage ist `NULL`. Unsere `COUNT` Abfragen, jedoch gibt stets einen nicht-`NULL` Wert, unabhängig davon, die DAL-Methode gibt eine auf NULL festlegbare Ganzzahl zurück.
 
 Zusätzlich zur DAL-Methode benötigen wir auch eine Methode in der Geschäftslogikschicht. Öffnen der `ProductsBLL` Klassendatei, und fügen eine `TotalNumberOfProducts` Methode, die Sie einfach der DAL-s aufgerufen `TotalNumberOfProducts` Methode:
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample2.vb)]
 
@@ -127,41 +115,33 @@ Dieses Lernprogramm implementiert nur benutzerdefinierte Paging mithilfe der `RO
 
 Die `ROW_NUMBER()` Schlüsselwort jeden Datensatz zurückgegeben, die über einer bestimmten Reihenfolge mit der folgenden Syntax eine Rangfolge zugeordnet:
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample3.sql)]
 
 `ROW_NUMBER()` Gibt einen numerischen Wert, der angibt, den Rang für jeden Datensatz im Hinblick auf die der angegebenen Reihenfolge zurück. Beispielsweise kann erkundigen, den Rang für jedes Produkt, die von den am stärksten sortiert teuer zu, wir die folgende Abfrage verwenden:
-
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample4.sql)]
 
 Abbildung 5 zeigt diese Abfrage s Ergebnisse angezeigt, wenn Sie über den Abfragefenster in Visual Studio ausführen. Beachten Sie, dass die Produkte nach Preis, zusammen mit dem Rang der Preis für jede Zeile sortiert werden.
 
-
 ![Befindet sich der Preis Rang für jedes zurückgegebene Datensatz](efficiently-paging-through-large-amounts-of-data-vb/_static/image5.png)
 
 **Abbildung 5**: Befindet sich der Preis Rang für jedes zurückgegebene Datensatz
 
-
 > [!NOTE]
 > `ROW_NUMBER()` ist nur eine von den vielen neuen Rangfolgefunktionen in SQL Server 2005 verfügbar. Eine ausführlichere Erläuterung der `ROW_NUMBER()`, lesen Sie zusammen mit den anderen Rangfolgefunktionen [aufgelisteten Ergebnisse zurückgeben, mit Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml).
-
 
 Wenn die Ergebnisse mit der angegebenen Rangfolge `ORDER BY` -Spalte in der `OVER` Klausel (`UnitPrice`, im obigen Beispiel), SQL Server müssen die Ergebnisse zu sortieren. Dies ist ein schneller Vorgang bei ein gruppierter Index über die Spalten, die die Ergebnisse werden, indem sortiert sind oder wenn es ein abdeckender index, aber andernfalls teuer werden können. Zur Verbesserung der Leistung für ausreichend große Abfragen, erwägen Sie einen nicht gruppierter Index für die Spalte mit der die Ergebnisse nach sortiert sind. Finden Sie unter [Rangfolgefunktionen und Leistung in SQL Server 2005](http://www.sql-server-performance.com/ak_ranking_functions.asp) eine ausführlichere Betrachtung der Systemleistung.
 
 Von zurückgegebenen Rangfolgeinformationen `ROW_NUMBER()` kann nicht direkt verwendet werden, der `WHERE` Klausel. Allerdings kann eine abgeleitete Tabelle verwendet werden, zum Zurückgeben der `ROW_NUMBER()` Ergebnis, das dann in angezeigt werden kann die `WHERE` Klausel. Die folgende Abfrage verwendet beispielsweise eine abgeleitete Tabelle zurückzugebenden ProductName und UnitPrice-Spalten, zusammen mit den `ROW_NUMBER()` Ergebnis und verwendet dann ein `WHERE` -Klausel, um nur solche Produkte, deren Preis Rang zurück zwischen 11 und 20 ist:
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample5.sql)]
 
 Erweitern dieses Konzept etwas weiter, kann dieser Ansatz zum Abrufen einer bestimmten Seite der Daten, die anhand der gewünschten Zeile startIndex und die maximale Zeilenanzahl Werte verwenden:
-
 
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
 > Wie wir später in diesem Tutorial sehen die *`StartRowIndex`* vom dem ObjectDataSource-Steuerelement wird indiziert, beginnend mit 0 (null), während die `ROW_NUMBER()` Rückgabewert von SQL Server 2005 wird indiziert, beginnend mit 1. Aus diesem Grund die `WHERE` die Klausel gibt Datensätze zurück, in denen `PriceRank` ist größer als *`StartRowIndex`* und kleiner als oder gleich *`StartRowIndex`*  +  *`MaximumRows`*.
-
 
 Nun, wir haben erläutert, wie `ROW_NUMBER()` kann zum Abrufen einer bestimmten Seite der Daten, die der Index der Zeile beginnen und die maximale Zeilenanzahl Werte verwendet, müssen wir nun diese Logik als im BLL- und DAL-Methoden zu implementieren.
 
@@ -169,67 +149,51 @@ Bei der Erstellung der Abfrage, dass die Reihenfolge wir entscheiden, müssen we
 
 Im vorherigen Abschnitt haben wir die DAL-Methode als Ad-hoc-SQL-Anweisung erstellt. Leider der T-SQL-Parser in Visual Studio verwendet, die für die TableAdapter-Assistenten t wie die `OVER` Syntax ein, die die `ROW_NUMBER()` Funktion. Aus diesem Grund müssen wir diese DAL-Methode als eine gespeicherte Prozedur erstellen. Wählen Sie im Server-Explorer aus dem Menü "Ansicht" (oder drücken Strg + Alt + S), und erweitern Sie die `NORTHWND.MDF` Knoten. Um eine neue gespeicherte Prozedur hinzuzufügen, mit der rechten Maustaste auf den Knoten gespeicherte Prozeduren, und wählen Sie eine neue gespeicherte Prozedur hinzufügen (siehe Abbildung 6).
 
-
 ![Fügen Sie eine neue gespeicherte Prozedur für das Paging durch die Produkte hinzu.](efficiently-paging-through-large-amounts-of-data-vb/_static/image6.png)
 
 **Abbildung 6**: Fügen Sie eine neue gespeicherte Prozedur für das Paging durch die Produkte hinzu.
 
-
 Diese gespeicherte Prozedur sollte zwei ganzzahlige Eingabeparameter entgegen – akzeptieren `@startRowIndex` und `@maximumRows` und verwenden Sie die `ROW_NUMBER()` Funktion sortiert nach der `ProductName` Feld nur die Zeilen zurückgeben, die größer als der angegebene `@startRowIndex` und kleiner als oder gleich `@startRowIndex`  +  `@maximumRow` s. Geben Sie das folgende Skript in die neue gespeicherte Prozedur, und klicken Sie dann auf das Symbol "Speichern" um die gespeicherte Prozedur in der Datenbank hinzuzufügen.
-
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample7.sql)]
 
 Nach dem Erstellen der gespeicherten Prozedur an, nehmen Sie einen Moment Zeit, um dies zu testen. Mit der rechten Maustaste auf die `GetProductsPaged` gespeicherten Prozedur benennen Sie im Server-Explorer, und wählen Sie die Execute-Option. Visual Studio fordert Sie dann für die Eingabeparameter, `@startRowIndex` und `@maximumRow` s (siehe Abbildung 7). Probieren Sie unterschiedliche Werte aus, und überprüfen Sie die Ergebnisse.
 
-
 ![Geben Sie einen Wert für die @startRowIndex und @maximumRows Parameter](efficiently-paging-through-large-amounts-of-data-vb/_static/image7.png)
 
 <strong>Abbildung 7</strong>: Geben Sie einen Wert für die @startRowIndex und @maximumRows Parameter
 
-
 Nach dem Auswählen dieser Parameterwerte eingeben, das Fenster "Ausgabe" zeigt die Ergebnisse. Abbildung 8 zeigt die Ergebnisse beim Übergeben von 10 für beide die `@startRowIndex` und `@maximumRows` Parameter.
-
 
 [![Der Datensätze, würde werden in der zweiten Seite der Daten werden zurückgegeben.](efficiently-paging-through-large-amounts-of-data-vb/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image8.png)
 
 **Abbildung 8**: Der Datensätze, würde werden in der zweiten Seite der Daten zurückgegeben werden ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-vb/_static/image10.png))
 
-
 Mit dieser gespeicherten Prozedur erstellt, es erneut bereit, die zum Erstellen der `ProductsTableAdapter` Methode. Öffnen der `Northwind.xsd` typisierte DataSet, mit der rechten Maustaste in den `ProductsTableAdapter`, und wählen Sie die Option "hinzufügen". Anstatt die Abfrage, die mit Ad-hoc-SQL-Anweisungen erstellen, erstellen Sie mithilfe einer vorhandenen gespeicherten Prozedur.
-
 
 ![Erstellen Sie die DAL-Methode, die mit einer vorhandenen gespeicherten Prozedur](efficiently-paging-through-large-amounts-of-data-vb/_static/image11.png)
 
 **Abbildung 9**: Erstellen Sie die DAL-Methode, die mit einer vorhandenen gespeicherten Prozedur
 
-
 Als Nächstes werden wir dazu aufgefordert werden, wählen Sie die gespeicherte Prozedur aufrufen. Wählen Sie die `GetProductsPaged` gespeicherte Prozedur aus der Dropdown-Liste.
-
 
 ![Wählen Sie die GetProductsPaged gespeicherte Prozedur aus der Dropdown-Liste](efficiently-paging-through-large-amounts-of-data-vb/_static/image12.png)
 
 **Abbildung 10**: Wählen Sie die GetProductsPaged gespeicherte Prozedur aus der Dropdown-Liste
 
-
 Im nächste Bildschirm dann gefragt, welche Art von Daten von der gespeicherten Prozedur zurückgegeben wird: Tabellendaten, die einen einzelnen Wert oder keinen Wert. Da die `GetProductsPaged` gespeicherte Prozedur können mehrere Datensätze zurückgeben, um anzugeben, dass es tabellarische Daten zurückgibt.
-
 
 ![Anzugeben Sie, dass die gespeicherte Prozedur Tabellendaten zurück.](efficiently-paging-through-large-amounts-of-data-vb/_static/image13.png)
 
 **Abbildung 11**: Anzugeben Sie, dass die gespeicherte Prozedur Tabellendaten zurück.
 
-
 Abschließend geben Sie den Namen der Methoden, die Sie erstellt haben möchten. Wie bei unseren vorherigen Tutorials fahren Sie fort, und erstellen Sie Methoden, die sowohl die Füllung mithilfe einer "DataTable" und zurückgeben Sie DataTable. Benennen Sie die erste Methode `FillPaged` und das zweite `GetProductsPaged`.
-
 
 ![Namen der Methoden FillPaged und GetProductsPaged](efficiently-paging-through-large-amounts-of-data-vb/_static/image14.png)
 
 **Abbildung 12**: Namen der Methoden FillPaged und GetProductsPaged
 
-
 Erstellt eine DAL-Methode, um eine bestimmte Seite der Produkte zurückzugeben, müssen wir darüber hinaus auch die BLL solche Funktionalität. Wie bei der DAL-Methode die BLL s GetProductsPaged-Methode muss zwei ganzzahlige Eingaben für das Angeben der Startindex für die Zeile und der maximalen Anzahl von Zeilen akzeptieren, und muss nur die Datensätze, die innerhalb des angegebenen Bereichs liegen zurückgeben. Erstellen Sie eine solche Methode BLL, in der ProductsBLL-Klasse, dass nur Aufrufe nach unten an die DAL s GetProductsPaged-Methode, wie folgt:
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample8.vb)]
 
@@ -239,34 +203,27 @@ Sie können einen beliebigen Namen verwenden Entscheidung, wie wir gleich sehen 
 
 Mit den BLL- und DAL-Methoden für den Zugriff auf eine bestimmte Teilmenge der Datensätze, die vollständige steuern wir erneut bereit, die zum Erstellen einer GridView-Ansicht dieser Seiten durch die zugrunde liegenden Datensätze, die mithilfe von benutzerdefinierten Paging. Öffnen Sie zunächst die `EfficientPaging.aspx` auf der Seite die `PagingAndSorting` , Hinzufügen einer GridView-Ansicht auf der Seite, und konfigurieren, um ein neues ObjectDataSource-Steuerelement zu verwenden. In unserer letzten Tutorials haben wir häufig dem ObjectDataSource-Steuerelement für die Verwendung konfiguriert die `ProductsBLL` Klasse s `GetProducts` Methode. Dieses Mal jedoch verwendet werden soll die `GetProductsPaged` Methode stattdessen seit der `GetProducts` Methodenrückgabe *alle* der Produkte in der Datenbank während `GetProductsPaged` gibt nur eine bestimmte Teilmenge der Datensätze.
 
-
 ![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL Klasse s GetProductsPaged-Methode](efficiently-paging-through-large-amounts-of-data-vb/_static/image15.png)
 
 **Abbildung 13**: Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLL Klasse s GetProductsPaged-Methode
-
 
 Seit wir erneut erstellen eine nur-Lese GridView können Sie die Liste der Dropdown-Methode in der INSERT-, Update-, festgelegt, und Löschen von Registerkarten (keine).
 
 Im nächsten Schritt fordert uns der ObjectDataSource-Steuerelement-Assistent für die Datenquellen der `GetProductsPaged` s-Methode `startRowIndex` und `maximumRows` Eingabewerte für Parameter. Diese Eingabeparameter werden tatsächlich von der GridView automatisch festgelegt, also einfach behalten Sie auf "None" der Quelle und klicken Sie auf "Fertig stellen".
 
-
 ![Lassen Sie die Eingabeparameter Quellen mit "None"](efficiently-paging-through-large-amounts-of-data-vb/_static/image16.png)
 
 **Abbildung 14**: Lassen Sie die Eingabeparameter Quellen mit "None"
 
-
 Nach Abschluss des Assistenten "ObjectDataSource" wird die GridView eine BoundField- oder die CheckBoxField für jedes Produkt Datenfelder enthalten. Können Sie die GridView-s-Darstellung anpassen nach Bedarf. Ich haben sich entschieden, zur Anzeige der `ProductName`, `CategoryName`, `SupplierName`, `QuantityPerUnit`, und `UnitPrice` BoundFields. Konfigurieren Sie außerdem die GridView zur Unterstützung von Paging durch Aktivieren des Kontrollkästchens Paging aktivieren, in der Smarttag. Nach diesen Änderungen sollte die GridView und "ObjectDataSource" deklarative Markup etwa wie folgt aussehen:
-
 
 [!code-aspx[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample9.aspx)]
 
 Wenn Sie auf die Seite über einen Browser besuchen, jedoch die GridView ist kein Speicherort gefunden werden.
 
-
 ![Das GridView wird nicht angezeigt](efficiently-paging-through-large-amounts-of-data-vb/_static/image17.png)
 
 **Abbildung 15**: Das GridView wird nicht angezeigt
-
 
 Das GridView ist nicht vorhanden, da es sich bei dem ObjectDataSource-Steuerelement derzeit für beide 0 als Werte verwendet die `GetProductsPaged` `startRowIndex` und `maximumRows` Eingabeparameter. Daher wird die resultierende SQL-Abfrage ist keine Datensätze zurückgeben, und aus diesem Grund GridView wird nicht angezeigt.
 
@@ -279,28 +236,22 @@ Um dies zu beheben, müssen wir dem ObjectDataSource-Steuerelement zur Verwendun
 
 Nach diesen Änderungen durchführen, sollte die deklarative Syntax des "ObjectDataSource"-s wie folgt aussehen:
 
-
 [!code-aspx[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample10.aspx)]
 
 Beachten Sie, dass die `EnablePaging` und `SelectCountMethod` festgelegt wurde und die `<asp:Parameter>` Elemente entfernt wurden. Abbildung 16 zeigt einen Screenshot des Fensters Eigenschaften auf, nachdem diese Änderungen vorgenommen wurden.
-
 
 ![Um benutzerdefinierte Paginierung zu verwenden, konfigurieren Sie das ObjectDataSource-Steuerelement](efficiently-paging-through-large-amounts-of-data-vb/_static/image18.png)
 
 **Abbildung 16**: Um benutzerdefinierte Paginierung zu verwenden, konfigurieren Sie das ObjectDataSource-Steuerelement
 
-
 Finden Sie nach diesen Änderungen auf dieser Seite über einen Browser. Daraufhin sollte die 10 Produkte aufgeführt, alphabetisch angeordnet sind. Nehmen Sie einen Moment Zeit, die eine Seite mit Daten zu einem Zeitpunkt durchlaufen. Es gibt zwar keine visuellen Unterschied aus der Perspektive des Endbenutzers s zwischen Standard und benutzerdefiniertes Paging, Seiten benutzerdefinierte paging effizienter über große Mengen von Daten als nur die Datensätze abgerufen, die für eine bestimmte Seite angezeigt werden soll.
-
 
 [![Die Daten, die sortiert vom Produkt s Namen ist ausgelagerten verwenden benutzerdefinierte Paging.](efficiently-paging-through-large-amounts-of-data-vb/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image19.png)
 
 **Abbildung 17**: Die Daten, die sortiert vom Produkt s Namen wird ausgelagerten benutzerdefinierte mithilfe von Paging ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-vb/_static/image21.png))
 
-
 > [!NOTE]
 > Mit benutzerdefiniertem Paging, Anzahl die Seite der Rückgabewert von "ObjectDataSource" s `SelectCountMethod` wird in den GridView-s-Ansichtszustand gespeichert. Andere GridView-Variablen den `PageIndex`, `EditIndex`, `SelectedIndex`, `DataKeys` Auflistung usw. befinden sich *Steuerelementzustand*, dem wird beibehalten, unabhängig vom Wert der GridView Zuordnungsvorgänge `EnableViewState` Diese Eigenschaft. Da die `PageCount` Wert wird beibehalten postbackübergreifend über den Ansichtszustand, wenn eine Paging-Schnittstelle verwenden, die einen Link, um Sie zu der letzten Seite gelangen enthält, ist es zwingend erforderlich, der Ansichtszustand des GridView-s aktiviert werden. (Wenn Ihre Paging-Schnittstelle keinen direkten Link zur letzten enthält Seite und der Ansichtszustand deaktiviert werden kann.)
-
 
 Bewirkt, dass einen Postback und weist die GridView aktualisieren Sie auf den Seitenlink der letzten die `PageIndex` Eigenschaft. Wenn die letzte Seitenlink geklickt wird, weist die GridView seine `PageIndex` Eigenschaft auf einen Wert aus einer kleiner als die `PageCount` Eigenschaft. Mit der Ansichtszustand deaktiviert ist die `PageCount` Wert postbackübergreifend verloren und die `PageIndex` stattdessen die maximal zulässige Ganzzahl-Wert zugewiesen wird. Als Nächstes die GridView versucht, den Startzeilenindex durch Multiplikation zu bestimmen die `PageSize` und `PageCount` Eigenschaften. Dies führt zu einer `OverflowException` , da das Produkt die maximale zulässige ganzzahlige Größe überschreitet.
 
@@ -308,11 +259,9 @@ Bewirkt, dass einen Postback und weist die GridView aktualisieren Sie auf den Se
 
 Unsere aktuelle benutzerdefiniertes Paging-Implementierung muss die Reihenfolge, die mit dem die Daten werden über ausgelagert statisch angegeben werden, beim Erstellen der `GetProductsPaged` gespeicherte Prozedur. Allerdings haben Sie möglicherweise notiert haben, dass das GridView-s-Smarttag ein Kontrollkästchen Sortieren aktivieren die Option zum Aktivieren der Auslagerungsdatei enthält. Leider wird das Hinzufügen von Unterstützung der datenquellensortierung an die GridView mit unserer aktuellen benutzerdefiniertes Paging-Implementierung nur die Datensätze auf die aktuell angezeigten Seite der Daten sortiert. Z. B. Wenn Sie die GridView auch unterstützen Paginierung, und klicken Sie dann beim Anzeigen der ersten Seite der Daten konfigurieren in absteigender Reihenfolge nach Produktnamen sortiert wird die Reihenfolge der Produkte auf der Seite "1" rückgängig gemacht. Wie in Abbildung 18 dargestellt wird, zeigt eine solche Carnarvon-Tiger als das erste Produkt in umgekehrter alphabetischer Reihenfolge sortieren die 71 anderen Produkten ignoriert, die Carnarvon-Tiger, alphabetisch folgen; nur die Datensätze auf der ersten Seite werden in der Sortierung berücksichtigt.
 
-
 [![Nur die Daten angezeigt, auf der aktuellen Seite wird sortiert.](efficiently-paging-through-large-amounts-of-data-vb/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image22.png)
 
 **Abbildung 18**: Nur die Daten angezeigt, auf der aktuellen Seite sortiert wird ([klicken Sie, um das Bild in voller Größe anzeigen](efficiently-paging-through-large-amounts-of-data-vb/_static/image24.png))
-
 
 Die Sortierung gilt nur für die aktuelle Seite der Daten, da die Sortierung erfolgt nach dem Abrufen der das von der BLL s `GetProductsPaged` -Methode, und diese Methode gibt nur die Datensätze zur aktiven Seite. Um ordnungsgemäß sortieren zu implementieren, müssen wir übergeben den Sortierungsausdruck auf die `GetProductsPaged` Methode so, dass die Daten entsprechend vor der Rückgabe der speziellen Seite der Daten bewertet werden können. Wir sehen, wie Sie dies in unserem nächsten Tutorial zu erreichen.
 
@@ -333,11 +282,9 @@ Zum Beheben dieses Problems haben wir zwei Optionen zur Verfügung. Die erste be
 
 Dieser Ansatz funktioniert, da er aktualisiert die `PageIndex` nach Schritt 1, aber vor Schritt2. Aus diesem Grund wird die entsprechende Gruppe von Datensätzen in Schritt2 zurückgegeben. Zu diesem Zweck verwenden Sie Code wie folgt aus:
 
-
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample11.vb)]
 
 Eine alternative problemumgehung ist, erstellen Sie einen Ereignishandler für das "ObjectDataSource"-s `RowDeleted` Ereignis und zum Festlegen der `AffectedRows` Eigenschaft mit einem Wert von 1. Nach dem Löschen des Datensatzes in Schritt 1 (jedoch vor dem erneuten Abrufen der Daten in Schritt2), die GridView aktualisiert seine `PageIndex` Eigenschaft, wenn eine oder mehrere Zeilen von dem Vorgang betroffen sind. Allerdings die `AffectedRows` Eigenschaft wird nicht von dem ObjectDataSource-Steuerelement festgelegt, und aus diesem Grund ist dieser Schritt ausgelassen. Eine Möglichkeit, diesen Schritt ausgeführt haben manuell festlegen, wird die `AffectedRows` Eigenschaft, wenn der Löschvorgang erfolgreich abgeschlossen wurde. Dies kann erreicht werden, mithilfe von Code wie folgt:
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample12.vb)]
 
@@ -351,14 +298,12 @@ Leider gibt es s auf keine dieselbe Größe jedem passt alle hier beantwortet. D
 
 Einen Artikel, [benutzerdefiniertes Paging in ASP.NET 2.0 mit SQL Server 2005](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx), enthält Sie einige Webleistungstests, die ich ausgeführt wurde, um die Unterschiede zwischen diesen beiden Paging Verfahren aus, wenn paging durch eine Datenbanktabelle mit aufweisen 50.000 Datensätze. In diesen Tests, die ich überprüft sowohl die Zeit zum Ausführen der Abfrage auf der SQL Server-Ebene (mit [SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) und auf der Seite mit ASP.NET [ASP.NET s Ablaufverfolgungsfunktionen](https://msdn.microsoft.com/library/y13fw6we.aspx). Bedenken Sie, dass diese Tests auf meinem Entwicklungscomputer mit einem einzelnen aktiven Benutzer, die ausgeführt wurden und daher unwissenschaftlichen und typische Website Auslastungsmuster ist nicht imitieren. Unabhängig davon, veranschaulichen die Ergebnisse die relativen Unterschiede bei der Ausführungszeit für Standard- und benutzerdefinierte Paginierung, bei der Arbeit mit ausreichend große Mengen von Daten.
 
-
 |  | **Durchschn. Dauer (s)** | **Reads** |
 | --- | --- | --- |
 | **Standardmäßig Paging SQL Profiler** | 1.411 | 383 |
 | **Benutzerdefiniertes Paging SQL Profiler** | 0.002 | 29 |
 | **Paging ASP.NET-Standardablaufverfolgung** | 2.379 | *N/V* |
 | **Benutzerdefinierte Paginierung ASP.NET-Ablaufverfolgung** | 0.029 | *N/V* |
-
 
 Wie Sie sehen können, Abrufen von Daten eine bestimmte Seite 354 weniger Lesevorgänge durchschnittlich erforderlich und in einem Bruchteil der Zeit abgeschlossen. Auf der ASP.NET-Seite benutzerdefinierte Seite konnte in nahe bei 1/100 Rendern<sup>th</sup> der Zeit sie vorgenommen haben, wenn das Standardpaging verwenden. Finden Sie unter [meinen Artikel](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx) für Weitere Informationen zu dieser Ergebnisse und Code und eine Datenbank, die Sie zum Reproduzieren dieser Tests in Ihrer eigenen Umgebung herunterladen können.
 

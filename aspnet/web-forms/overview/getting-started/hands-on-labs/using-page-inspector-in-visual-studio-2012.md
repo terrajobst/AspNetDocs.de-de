@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f42b1be2697ba7d1145b3e334fe8f4ebf019cd12
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396556"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133551"
 ---
 # <a name="using-page-inspector-in-visual-studio-2012"></a>Verwenden der Seitenprüfung in Visual Studio 2012
 
@@ -36,7 +36,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > Dieses Lab führt Sie durch die Verbesserungen und neue Funktionen, die zuvor beschriebenen durch Anwenden von geringen Änderungen mit einer Beispiel-Webanwendung, die im Quellordner bereitgestellt.
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
-
 
 <a id="Objectives"></a>
 
@@ -74,13 +73,12 @@ Dieser praktischen Übungseinheit enthält die folgenden Übungen:
 > [!NOTE]
 > Jede Übung umfasst eine ab Lösung, die im Ordner "Begin" von der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. In den Quellcode für eine Übung finden Sie auch einen End-Ordner, die Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_Page_Inspector_in_ASPNET_MVC_Projects"></a>
-### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>Übung 1: Verwenden der Seitenprüfung in ASP.NET MVC-Projekte
+### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>Übung 1: Verwenden der Seitenprüfung in ASP.NET MVC-Projekte
 
 In dieser Übung erfahren Sie, wie Sie eine Vorschau anzeigen und Debuggen einer **ASP.NET MVC 4** Lösung **Page Inspector**. Führen Sie zunächst eine kurze Tour durch das Tool Informationen die Funktionen, die im Web Prozess Debuggen zu erleichtern. Klicken Sie dann arbeiten Sie auf einer Webseite, die Formatierung Probleme enthält. Erfahren Sie, wie der Seitenprüfung verwenden, um den Quellcode zu finden, der das Problem generiert, und beheben.
 
@@ -271,7 +269,7 @@ In dieser Aufgabe Sie verwenden die seitenprüfung und beheben Sie einige Proble
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Using_Page_Inspector_in_WebForms_Projects"></a>
-### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>Übung 2: Verwenden der Seitenprüfung in WebForms-Projekte
+### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>Übung 2: Verwenden der Seitenprüfung in WebForms-Projekte
 
 In dieser Übung lernen Sie, wie Sie eine Vorschau anzeigen und Debuggen einer WebForms-Lösung, die unter Verwendung der Seitenprüfung. Sie führt zunächst eine kurze Tour durch das Tool die Funktionen der Seitenprüfung zu finden, die im Web Prozess Debuggen zu erleichtern. Klicken Sie dann arbeiten Sie auf einer Webseite, die Formatierung Probleme enthält. Erfahren Sie, wie der Seitenprüfung verwenden, um den Quellcode zu finden, der das Problem generiert, und beheben.
 

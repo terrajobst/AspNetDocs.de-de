@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa118b4d733d7848b838f80e9918d62ae60033af
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1fde131086d4fb29c499f7f7c6281153c2766166
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378974"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125067"
 ---
 # <a name="creating-a-rating-control-c"></a>Erstellen eines Bewertungssteuerelements (C#)
 
@@ -22,7 +22,6 @@ durch [Christian Wenz](https://github.com/wenz)
 [Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0CS.pdf)
 
 > Viele Websites bieten e-Commerce, Community-Sites, die Benutzer auf Rate Artikel oder Elemente. Dies in der Regel erfordert einigen Aufwand beim Codeschreiben, aber wir müssen das Steuerelement-Toolkit unsere Freigabe.
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -64,7 +63,6 @@ Zugriff auf das Steuerelement für Bewertungen über, in den serverseitigen Code
 [!code-aspx[Main](creating-a-rating-control-cs/samples/sample5.aspx)]
 
 Speichern Sie die Seite, und Laden Sie sie in Ihrem Browser. Wenn Sie auf die Elemente (anfänglich leer) Bewertung zeigen, tritt ein JavaScript-Effekt: Die Bewertung ändert. Wenn Sie auf den Satz von Sternen klicken, wird die aktuelle Bewertung beibehalten. Wenn Sie das Formular übermitteln, gibt der serverseitige Code schließlich ausgewählte Bewertung aus.
-
 
 [![Erstellen ein Bewertungssystem mit minimalem code](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 0edab77cd973af129e54c7867265f86b47c349a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ed7414c0b27fc41360e259bfb0a4c82e88a4e15
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410135"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128673"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Einführung
 
@@ -30,7 +30,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET und bereitstellungsforum für](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment) oder [StackOverflow](http://stackoverflow.com).
 > 
 > Dieser Inhalt ist auch verfügbar als ein kostenloses e-Book in [der TechNet-E-Book-Galerie](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#ASPNETWebDeploymentusingVisualStudio).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -111,7 +110,7 @@ Kommentare zu den Lernprogrammen sind Willkommen, und bei der Aktualisierung des
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Komponenten
 
 In diesem Tutorial wurde für die folgenden Produkte geschrieben:
 
@@ -133,7 +132,6 @@ Je nachdem, wie viele der SDK-Abhängigkeiten Sie bereits auf Ihrem Computer ver
 
 > [!NOTE]
 > In diesem Tutorial wurde mit dem Azure SDK-Version 1.8.1 geschrieben. Seit damals wurden die neuere Versionen mit zusätzlichen Funktionen zur Verfügung gestellt. Die Lernprogramme wurden aktualisiert, um ganz zu schweigen diese Funktionen und Links zu Ressourcen, die Weitere Informationen dazu zu erhalten.
-
 
 Die Anweisungen und Screenshots basieren auf Windows 8, aber in den Tutorials werden die Unterschiede für Windows 7 erläutert.
 

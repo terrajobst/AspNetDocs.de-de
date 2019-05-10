@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 4d8c8d19-055b-4b70-9ee1-f748f0db3a01
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 7998b5bb2983410479123514661a4ddb67afc8c6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 12ed7827f7392e559e04121386f7cd045de8462b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398370"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130940"
 ---
 # <a name="the-contact-manager-solution"></a>Contact Manager-Lösung
 
@@ -24,7 +24,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 > Dies [Reihe von Tutorials](web-deployment-in-the-enterprise.md) verwendet eine beispiellösung&#x2014;Contact Manager-Lösung&#x2014;um eine unternehmensweite-Anwendung mit einem realistischen Maß an Komplexität darzustellen. In diesem Thema Contact Manager-Lösung führt, werden die Hauptkomponenten der Lösung und identifiziert die Herausforderungen bei der diese Art von Anwendungen für verschiedene Plattformen von Ziel in einer unternehmensumgebung bereitstellen.
 > 
 > Wie Sie in den Themen in diesen Tutorials durcharbeiten, können Sie Contact Manager-Lösung als eine referenzimplementierung verwenden, die veranschaulicht, wie Sie bestimmte Herausforderungen bei Bereitstellungsszenarios erfüllen können. Im nächsten Thema, [Einstellung Einrichten der Contact Manager-Lösung](setting-up-the-contact-manager-solution.md), beschreibt, wie Sie herunterladen und Ausführen der Lösung auf der Entwicklerarbeitsstation.
-
 
 ## <a name="solution-overview"></a>Übersicht über die Lösung
 
@@ -45,7 +44,6 @@ Auf konzeptioneller Ebene passen die Komponenten der Lösung zusammen wie folgt:
 
 > [!NOTE]
 > Während die ASP.NET MVC 3-Webanwendung dem ASP.NET-Mitgliedschaftsanbieter verwendet wird, werden alle Seiten innerhalb der Webanwendung anonymen Zugriff zulassen. Dies ist natürlich keine realistische Konfiguration. Allerdings ist die Lösung richten Sie auf diese Weise, die es erleichtern Ihnen das Bereitstellen und Testen der Lösung ohne Benutzerkonten und Rollen zu konfigurieren.
-
 
 ## <a name="deployment-challenges"></a>Herausforderungen bei der Bereitstellung
 

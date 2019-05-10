@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: e50fb6edb175bd1651212ae6b3daf7b1bf605068
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0b17cb6ac14b7f187bf1f175097a37907689d46e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390141"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128351"
 ---
 # <a name="re-use-ui-using-master-pages-and-partials"></a>Wiederverwenden der Benutzeroberfläche mit Masterseiten und Teilausführungen
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > Schritt 7 untersucht die Methoden, die wir "DRY-Prinzips" anwenden können in unseren Vorlagen anzeigen, um codeduplikate, mithilfe von Teilansichten, Vorlagen und Masterseiten zu vermeiden.
 > 
 > Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
-
 
 ## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner, Schritt 7: Teilansichten und Masterseiten
 

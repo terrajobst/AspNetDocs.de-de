@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 1c1283b2-6956-4937-b568-d30de432ce23
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0446a125845134d2fad869094a540c960f6b0a25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b754175c853c20eec6be3521376b62d62f33106d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406469"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123214"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>Verwendung von ASP.NET MVC mit verschiedenen IIS-Versionen (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC und URL-Routing, mit verschiedenen Versionen von Internet Information Services verwenden. Erfahren Sie, verschiedene Strategien für die Verwendung von ASP.NET MVC mit IIS 7.0 (klassischer Modus), IIS 6.0 und früheren Versionen von IIS.
-
 
 ASP.NET MVC-Framework hängt von ASP.NET-Routing zum Weiterleiten von Anforderungen zu Controlleraktionen Browser. Um die Vorteile von ASP.NET-Routing nutzen zu können, müssen Sie möglicherweise zusätzliche Konfigurationsschritte ausführen, auf dem Webserver. Dies ist die Version von Internet Information Services (IIS) und der anforderungsverarbeitungs-Modus für Ihre Anwendung abhängig.
 
@@ -53,18 +52,15 @@ Der Verarbeitungsmodus für die Anforderung richtet sich nach den Anwendungspool
 
 Standardmäßig ist IIS so konfiguriert, um zwei Anwendungspools zu unterstützen: **DefaultAppPool** und **Klassischer .NET AppPool**. Wenn DefaultAppPool ausgewählt ist, wird Ihre Anwendung im integrierten anforderungsverarbeitung-Modus ausgeführt. Wenn Classic .NET AppPool ausgewählt ist, wird Ihre Anwendung im klassischen anforderungsverarbeitung-Modus ausgeführt.
 
-
 [![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.png)
 
 **Abbildung 1**: Erkennen den Verarbeitungsmodus für die Anforderung ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.png))
-
 
 Beachten Sie, dass Sie den Modus "anforderungsverarbeitung" innerhalb der Anwendung bearbeiten-Dialogfelds ändern können. Klicken Sie auf die auswählen-Schaltfläche, und ändern Sie den Anwendungspool der Anwendung zugeordnet. Beachten Sie, dass es Kompatibilitätsprobleme, liegen Wenn Sie eine ASP.NET-Anwendung aus dem klassischen Bereitstellungsmodell auf den integrierten Modus zu ändern. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 - Aktualisieren von ASP.NET 1.1 in IIS 7.0 auf Windows Vista und WindowsServer 2008: [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
 
 - ASP.NET-Integration in IIS 7.0- [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
-
 
 Wenn eine ASP.NET-Anwendung DefaultAppPool verwendet wird, dann müssen Sie zusätzliche Schritte zum Abrufen von ASP.NET-Routing (und daher ASP.NET MVC) arbeiten ausführen. Wenn die ASP.NET-Anwendung zum Verwenden von Classic .NET AppPool, und klicken Sie dann lesen Sie weiter konfiguriert ist, müssen Sie jedoch mehr Arbeit erforderlich ist.
 
@@ -96,11 +92,9 @@ Die Standardroute konfiguriert, die in Codebeispiel 1 können Sie auf der Route-
 
 Leider wird nicht in ältere Versionen von IIS diese Anforderungen an das ASP.NET-Framework übergeben werden. Aus diesem Grund, diese Anforderungen wird nicht auf einen Controller weitergeleitet werden. Z. B. Wenn Sie eine Browseranforderung für den URL/Home/Index erhalten klicken Sie dann die Seite "Fehler" in Abbildung 2 Sie.
 
-
 [![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.png)
 
 **Abbildung 2**: Empfängt einen Fehler 404 nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.png))
-
 
 Ältere Versionen von IIS werden nur bestimmte Anforderungen auf dem ASP.NET-Framework zuzuordnen. Die Anforderung muss eine URL mit der richtigen Dateinamenerweiterung. ASP.NET-Framework ruft z. B. eine Anforderung für /SomePage.aspx zugeordnet. Dies gelingt jedoch nicht für eine Anforderung für /SomePage.htm.
 
@@ -116,9 +110,7 @@ Die geänderte Datei "Global.asax" in Liste 2 funktioniert mit älteren Versione
 
 [!code-vb[Main](using-asp-net-mvc-with-different-versions-of-iis-vb/samples/sample2.vb)]
 
-
 Wichtig: Denken Sie daran, Ihre ASP.NET MVC-Anwendung zu erstellen, später die Datei "Global.asax" ändern.
-
 
 Es gibt zwei wichtige Änderungen an der Datei "Global.asax" in Liste 2 ein. Es gibt jetzt zwei Routen, die in "Global.asax" definiert. Das URL-Muster für die Standardroute, die erste Route, sieht nun folgendermaßen aus:
 
@@ -138,9 +130,7 @@ Die zweite Route, der stammroute ist neu. Diese URL-Muster für die Stamm-Route 
 
 Nach dem vornehmen dieser Änderungen an der Routingtabelle, müssen Sie sicherstellen, dass alle Verknüpfungen in Ihrer Anwendung mit dieser neuen URL-Muster kompatibel sind. Das heißt, stellen Sie sicher, dass alle Ihre Links die MVC-Erweiterung enthalten. Wenn Sie die Hilfsmethode Html.ActionLink() zum Generieren von Ihrer Links verwenden, sollten Sie keine müssen keine Änderungen vornehmen.
 
-
 Anstatt das registermvc.wcf-Skript zu verwenden, können Sie eine neue Erweiterung zu IIS hinzufügen, die das ASP.NET-Framework, manuell zugeordnet ist. Wenn Sie eine neue Erweiterung selbst hinzufügen, stellen Sie sicher, dass das Kontrollkästchen mit der Bezeichnung **überprüfen, ob die Datei vorhanden ist** nicht aktiviert ist.
-
 
 ## <a name="hosted-server"></a>Gehosteten Server
 
@@ -172,11 +162,9 @@ Hier ist, wie Sie eine Skriptzuordnung mit Platzhalter für IIS 7.0 aktivieren:
 6. Geben Sie den Namen MVC
 7. Klicken Sie auf die **OK** Schaltfläche
 
-
 [![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.png)
 
 **Abbildung 3**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 7.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image6.png))
-
 
 Um eine Skriptzuordnung mit Platzhalter mit IIS 6.0 zu erstellen, gehen Sie wie folgt vor:
 
@@ -189,19 +177,15 @@ Um eine Skriptzuordnung mit Platzhalter mit IIS 6.0 zu erstellen, gehen Sie wie 
 7. Deaktivieren Sie das Kontrollkästchen mit der Bezeichnung **überprüfen, ob die Datei vorhanden ist**
 8. Klicken Sie auf die **OK** Schaltfläche
 
-
 [![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image7.png)
 
 **Abbildung 4**: Erstellen eine Skriptzuordnung mit Platzhalter mit IIS 6.0 ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image8.png))
 
-
 Nach der Aktivierung von Platzhalter-Skriptzuordnungen müssen Sie die Routingtabelle, in der Datei "Global.asax" zu ändern, sodass es sich um eine stammroute enthält. Andernfalls erhalten Sie die Fehlerseite in Abbildung 5, wenn Sie eine Anforderung für die Stammseite der Anwendung vornehmen. Sie können die geänderte Datei "Global.asax" in Listing 4 verwenden.
-
 
 [![Das Dialogfeld "Neues Projekt"](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image9.png)
 
 **Abbildung 5**: Fehlende Route stammfehler ([klicken Sie, um das Bild in voller Größe anzeigen](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image10.png))
-
 
 **Programmausdruck 4 – "Global.asax" (mit stammroute geändert)**
 

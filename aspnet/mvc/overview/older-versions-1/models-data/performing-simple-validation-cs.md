@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e33f522af74efe97b5a245e956bc0b918ea769af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388503"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122352"
 ---
 # <a name="performing-simple-validation-c"></a>Ausführen einer einfachen Überprüfung (C#)
 
@@ -21,16 +21,13 @@ durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Erfahren Sie, wie die Validierung in ASP.NET MVC-Anwendungen. In diesem Tutorial führt Stephen Walther Sie Modellzustand sowie die Validierung, HTML-Hilfsprogramme.
 
-
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie die Validierung in ASP.NET MVC-Anwendungen ausführen können. Beispielsweise erfahren Sie, wie Sie verhindern, dass eine Person senden eines Formulars, das nicht über einen Wert für ein erforderliches Feld enthält. Erfahren Sie, wie Sie mit der Modellzustand sowie die Überprüfung-HTML-Hilfsprogramme.
 
 ## <a name="understanding-model-state"></a>Grundlegendes zu Modellstatus
 
 Können Sie Modellstatus – oder genauer gesagt, das Modellzustandswörterbuch - Validierungsfehler darstellen. Die Aktion Create() in Codebeispiel 1 überprüft beispielsweise die Eigenschaften der einer Produktklasse vor dem Hinzufügen der Product-Klasse zu einer Datenbank an.
 
-
 Ich bin nicht empfehlen, dass Sie Ihre Logik zum Überprüfen oder die Datenbank auf einen Controller hinzufügen. Ein Controller sollte nur im Zusammenhang mit der Steuerung des Anwendungsflusses Logik enthalten. Wir werden eine Verknüpfung mit der Einfachheit halber dauert.
-
 
 **1 – Controllers\ProductController.cs auflisten**
 
@@ -52,19 +49,15 @@ Die Hilfsprogramme Html.ValidationMessage() und Html.ValidationSummary() werden 
 4. Von der **Inhalt anzeigen** Dropdown-Liste wählen erstellen.
 5. Klicken Sie auf die Schaltfläche **Hinzufügen**.
 
-
 Stellen Sie sicher, dass Sie Ihre Anwendung vor dem Hinzufügen einer Ansicht zu erstellen. Andernfalls nicht die Liste der Klassen angezeigt, der **Datenklasse anzeigen** Dropdown-Liste.
-
 
 [![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **Abbildung 01**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image2.png))
 
-
 [![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **Abbildung 02**: Erstellen einer stark typisierten Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image4.png))
-
 
 Nachdem Sie diese Schritte abgeschlossen haben, erhalten Sie die Ansicht "erstellen" in Liste 2.
 
@@ -78,11 +71,9 @@ Das Hilfsprogramm Html.ValidationMessage() wird neben jeder HTML-Formular Felder
 
 Die Seite in Abbildung 3 zeigt die Fehlermeldungen, die durch die Überprüfung-Hilfsprogramme gerendert wird, wenn das Formular, fehlende Felder mit ungültigen Werten übermittelt wird.
 
-
 [![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **Abbildung 03**: Ansicht "erstellen" mit Problemen übermittelt ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image6.png))
-
 
 Beachten Sie, dass die Darstellung des HTML-Codes die Eingabe-Felder auch geändert werden, wenn ein Überprüfungsfehler vorliegt. Die Html.TextBox() Helper rendert eine *Klasse = "Eingabe-Validation-Error"* -Attribut, wenn ein Überprüfungsfehler vorliegt, die mit der Eigenschaft, die vom Hilfsprogramm Html.TextBox() gerendert verknüpft ist.
 
@@ -98,16 +89,13 @@ Sie können diese Klassen für cascading Stylesheet ändern und die Darstellung 
 > 
 > HtmlHelper-Klasse enthält schreibgeschützte statische Eigenschaften Abrufen der Namen der Überprüfung CSS zu verwandten Klassen. Diese statische Eigenschaften werden ValidationInputCssClassName ValidationFieldCssClassName und ValidationSummaryCssClassName benannt.
 
-
 ## <a name="prebinding-validation-and-postbinding-validation"></a>Prebinding Validierung und Überprüfung der Postbinding
 
 Wenn Sie das HTML-Formular zum Erstellen eines Produkts senden und Sie einen ungültigen Wert für Feld für den Preis und keinen Wert für das UnitsInStock-Feld eingeben, klicken Sie dann die validierungsmeldungen werden angezeigt, die in Abbildung 4 erhalten Sie. Woher kommen diese Überprüfungsfehlermeldungen?
 
-
 [![Das Dialogfeld "Neues Projekt"](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **Abbildung 04**: Validierungsfehler Prebinding ([klicken Sie, um das Bild in voller Größe anzeigen](performing-simple-validation-cs/_static/image8.png))
-
 
 Es gibt tatsächlich zwei Arten von Meldungen für Validierungsfehler: die generierten werden, bevor die HTML-Formular-Felder zu einer Klasse gebunden sind, und die generiert werden, nachdem die Formularfelder auf die Klasse gebunden sind. Das heißt, es sind Überprüfungsfehler prebinding und postbinding Validierungsfehler.
 

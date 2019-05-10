@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 462b1210c45da67058899193afcea973f3daf122
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411981"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123041"
 ---
 # <a name="adding-a-view"></a>Hinzufügen einer Ansicht
 
 durch [Scott Hanselman](https://github.com/shanselman)
 
 > Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
-
 
 In diesem Abschnitt werden wir sehen uns an, wie wir unsere HelloWorldController-Klasse, die eine ansichtsvorlagendatei verwenden, um Generieren von HTML-Antworten zurück an einen Client sauber zu kapseln haben können.
 
@@ -99,7 +98,6 @@ Obwohl es in mehrere Zeilen aufgeteilt ist, ist unsere willkommene-Methode wirkl
 Nun benötigen wir eine ansichtsvorlage! Klicken Sie mit der rechten Maustaste in der Willkommen-Methode, und wählen Sie die Ansicht hinzufügen. Diesmal wir überprüfen "Stark typisierte Ansicht erstellen" und wählen aus der Dropdown-Liste unserer WelcomeViewModel-Klasse. Diese neue Ansicht wird lediglich zu WelcomeViewModels und keine anderen Arten von Objekten kennen.
 
 > *HINWEIS: Sie müssen kompiliert haben, einmal nach dem Hinzufügen Ihrer WelcomeViewModel für in der Dropdown-Liste angezeigt wird.*
-
 
 Hier ist Ihre Ansicht hinzufügen-Dialogfeld sollte folgendermaßen aussehen. Klicken Sie auf die Schaltfläche "hinzufügen". ![Fügen Sie, dass die Ansicht rot markiert.](getting-started-with-mvc-part3/_static/image10.png)
 

@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b713b56e149f196794b3223ba88e3b41bf3e34c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405624"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123371"
 ---
 # <a name="improving-performance-with-output-caching-vb"></a>Verbessern der Leistung mit Ausgabezwischenspeicherung (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > In diesem Tutorial erfahren Sie, wie Sie die Leistung Ihrer ASP.NET MVC-Webanwendungen erheblich verbessern können, durch die Nutzung der ausgabezwischenspeicherung. Erfahren Sie, wie Sie die Zwischenspeicherung des Ergebnisses über eine Controlleraktion zurückgegeben werden, sodass derselbe Inhalt muss nicht jedes Mal erstellt werden, das ein neuer Benutzer die Aktion aufruft.
-
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie die Leistung von ASP.NET MVC-Anwendungen erheblich verbessern können, durch die Nutzung des Ausgabecaches. Der Ausgabecache ermöglicht Ihnen, den Inhalt, der eine Controlleraktion vom Zwischenspeichern. Auf diese Weise muss der gleiche Inhalt nicht jedes Mal generiert werden soll, wenn, das die gleichen Controlleraktion aufgerufen wird.
 
@@ -36,9 +35,7 @@ Sie aktivieren die Zwischenspeicherung der Ausgabe durch das Hinzufügen einer &
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
-
 In der Beta-Versionen von ASP.NET MVC, ausgabezwischenspeicherung funktioniert nicht für eine URL wie [ http://www.MySite.com/ ](http://www.mysite.com/). Stattdessen geben Sie eine URL wie [ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index).
-
 
 Im Codebeispiel 1 wird die Ausgabe der Aktion Index() für 10 Sekunden zwischengespeichert. Falls gewünscht, können Sie eine viel längere Cachedauer angeben. Z. B. wenn die Ausgabe des eine Controlleraktion einen Tag lang zwischengespeichert werden sollen. anschließend können Sie angeben eine Cachedauer von 86400 Sekunden (60 Sekunden \* 60 Minuten \* 24 Stunden).
 
@@ -79,7 +76,6 @@ Sie können die Location-Eigenschaft auf eine der folgenden Werte festlegen:
 > · Keine
 > 
 > · ServerAndClient
-
 
 Die Location-Eigenschaft hat den Wert in der Standardeinstellung alle aus. Es gibt jedoch Situationen, in denen Cache nur auf den Browser oder nur auf dem Server empfiehlt. Z. B. Wenn Sie Informationen zwischenspeichern, die für jeden Benutzer personalisiert wird sollte dann Sie nicht die Informationen auf dem Server Zwischenspeichern. Wenn Sie verschiedene Informationen zu einem anderen Benutzer angezeigt werden, sollten Sie die Informationen nur auf dem Client Zwischenspeichern.
 
@@ -136,7 +132,6 @@ Sie können die VaryByParam-Eigenschaft auf die folgenden Werte festlegen:
 > None = nie verschiedene zwischengespeicherte Versionen erstellen
 > 
 > Durch Semikolons Liste von Parametern = erstellen verschiedene zwischengespeicherte Versionen aus, wenn das Formular oder Abfrage Zeichenfolge-Parameter in der Liste variiert
-
 
 #### <a name="creating-a-cache-profile"></a>Erstellen eines Cacheprofils
 

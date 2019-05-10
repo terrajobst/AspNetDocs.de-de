@@ -8,12 +8,12 @@ ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 23741d7974713102e6ccb46ced5d62ec202505e8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 41306a7f09b830e0ee88135326a48beaadcfb28c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400853"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126650"
 ---
 # <a name="creating-custom-html-helpers-c"></a>Erstellen von benutzerdefinierten HTML-Hilfsprogrammen (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [PDF herunterladen](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
 
 > Das Ziel in diesem Tutorial wird veranschaulicht, wie Sie benutzerdefinierte HTML-Hilfsprogramme erstellen können, die Sie in Ihren MVC-Ansichten verwenden können. Durch Nutzen der HTML-Hilfsprogramme, können Sie die Menge der lästige Eingabe von HTML-Tags, die Sie ausführen müssen, um eine standard-HTML-Seite zu erstellen, reduzieren.
-
 
 Das Ziel in diesem Tutorial wird veranschaulicht, wie Sie benutzerdefinierte HTML-Hilfsprogramme erstellen können, die Sie in Ihren MVC-Ansichten verwenden können. Durch Nutzen der HTML-Hilfsprogramme, können Sie die Menge der lästige Eingabe von HTML-Tags, die Sie ausführen müssen, um eine standard-HTML-Seite zu erstellen, reduzieren.
 
@@ -48,11 +47,9 @@ ASP.NET MVC-Framework enthält den folgenden Satz von standardmäßigen HTML-Hil
 
 Betrachten Sie beispielsweise das Formular in Codebeispiel 1. Dieses Formular wird mit der Hilfe von zwei der standardmäßigen HTML-Hilfsprogramme gerendert (siehe Abbildung 1). Dieses Formular verwendet die `Html.BeginForm()` und `Html.TextBox()` Helper-Methoden, um ein einfaches HTML-Formular zu rendern.
 
-
 [![Rendern der Seite mit HTML-Hilfsprogramme](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
 
 **Abbildung 01**: Rendern der Seite mit HTML-Hilfsprogramme ([klicken Sie, um das Bild in voller Größe anzeigen](creating-custom-html-helpers-cs/_static/image3.png))
-
 
 **Codebeispiel 1: `Views\Home\Index.aspx`**
 
@@ -103,11 +100,9 @@ Zweitens: Beachten Sie, dass der erste Parameter der `Label()` Methode das Schl�
 
 Nachdem Sie eine Erweiterungsmethode erstellen, und erstellen Sie Ihre Anwendung erfolgreich, wird die Erweiterungsmethode in Visual Studio Intellisense wie alle anderen Methoden einer Klasse (siehe Abbildung 2). Der einzige Unterschied ist diese Erweiterung, die Methoden mit einem speziellen Symbol neben dem Namen (ein Symbol nach unten weisenden Pfeil) angezeigt werden.
 
-
 [![Mithilfe der Erweiterungsmethode Html.Label()](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
 
 **Abbildung 02**: Mithilfe der Erweiterungsmethode Html.Label() ([klicken Sie, um das Bild in voller Größe anzeigen](creating-custom-html-helpers-cs/_static/image6.png))
-
 
 Geänderte Ansicht "Index" in Listing 4 verwendet die Html.Label()-Erweiterungsmethode, um alle Rendern die `<label>` Tags.
 

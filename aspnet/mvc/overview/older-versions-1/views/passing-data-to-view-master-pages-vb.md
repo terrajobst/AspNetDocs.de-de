@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7de5a1545ee59e671058f09789ce69d5062d3655
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ebf670fc0d8cf2cfd7df01d07d4119122b61a6a1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380976"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130422"
 ---
 # <a name="passing-data-to-view-master-pages-vb"></a>Übergeben von Daten an Ansichtsmasterseiten (VB)
 
@@ -23,7 +23,6 @@ by [Microsoft](https://github.com/microsoft)
 
 > Das Ziel in diesem Tutorial wird beschrieben, wie Sie Daten von einem Controller an eine Masterseite für die Ansicht übergeben können. Untersuchen wir zwei Strategien für die Übergabe von Daten an eine Masterseite anzeigen. Zuerst geht es sich um eine einfache Lösung, die sich in einer Anwendung, die schwierig ergibt zu verwalten ist. Als Nächstes sehen wir eine viel bessere Lösung, die ein wenig anfängliche aufwendiger, aber die Ergebnisse in einer wesentlich besser zu verwaltender-Anwendung erforderlich sind.
 
-
 ## <a name="passing-data-to-view-master-pages"></a>Übergeben von Daten an Ansichtsmasterseiten
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie Daten von einem Controller an eine Masterseite für die Ansicht übergeben können. Untersuchen wir zwei Strategien für die Übergabe von Daten an eine Masterseite anzeigen. Zuerst geht es sich um eine einfache Lösung, die sich in einer Anwendung, die schwierig ergibt zu verwalten ist. Als Nächstes sehen wir eine viel bessere Lösung, die ein wenig anfängliche aufwendiger, aber die Ergebnisse in einer wesentlich besser zu verwaltender-Anwendung erforderlich sind.
@@ -32,11 +31,9 @@ Das Ziel in diesem Tutorial wird beschrieben, wie Sie Daten von einem Controller
 
 Stellen Sie sich vor, dass Sie beim Erstellen einer filmdatenbankanwendung und Sie die Liste der Kategorien des Films auf jeder Seite in Ihrer Anwendung anzeigen möchten (siehe Abbildung 1). Stellen Sie sich vor, darüber hinaus, dass die Liste der Movie-Kategorien in einer Datenbanktabelle gespeichert werden. In diesem Fall wäre es sinnvoll, die Kategorien aus der Datenbank abgerufen und die Liste der Film Kategorien in einer Masterseite für die Ansicht zu rendern.
 
-
 [![Anzeigen von Film-Kategorien in einer Masterseite anzeigen](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
 
 **Abbildung 01**: Anzeigen von Film-Kategorien in einer Masterseite anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-vb/_static/image3.png))
-
 
 Hier ist das Problem. Wie abrufen Sie die Liste der Film Kategorien auf der Masterseite? Es ist verlockend, Methoden, die von Ihren Modellklassen in die Masterseite direkt aufzurufen. Das heißt, ist es verlockend, den Code zum Abrufen der Daten aus der Datenbank-direkt in Ihrer Masterseite einschließen. Allerdings würde Ihre MVC-Controller für den Zugriff auf die Datenbank umgehen die klare Trennung von Anliegen verletzt werden, die eine der größten Vorteile bei der Erstellung einer MVC-Anwendung ist.
 
@@ -58,11 +55,9 @@ Beachten Sie, dass sowohl die `Index()` und `Details()` Aktionen hinzufügen, zw
 
 Die `Details()` Aktion fügt außerdem zwei Schlüssel namens "Kategorien" und "Filme hinzu. Der Schlüssel Kategorien darstellt wieder die Liste der Movie-Kategorien, die von der Masterseite Ansicht angezeigt. Die Filme-Schlüssel darstellt, die Liste von Filmen in einer bestimmten Kategorie angezeigt, die von der Seite Details anzeigen (siehe Abbildung 2).
 
-
 [![Die Detailansicht](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
 
 **Abbildung 02**: Die Detailansicht ([klicken Sie, um das Bild in voller Größe anzeigen](passing-data-to-view-master-pages-vb/_static/image6.png))
-
 
 Ansicht "Index" ist im Codebeispiel 2 enthalten. Es durchläuft einfach die Liste von Filmen, die durch das Movies-Element im Anzeigen von Daten dargestellt wird.
 

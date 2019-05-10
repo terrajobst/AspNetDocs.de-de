@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 5b39d2d5-4bf9-4d04-94c7-81b84dfeeb31
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e2f2246e2126bd6e648f861bcb296fab62a748bb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5e1155ca676e7a25b5bfc63e251c6387a010eb34
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380105"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123661"
 ---
 # <a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC-Routing – Übersicht (C#)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther wird in diesem Tutorial zeigt, wie ASP.NET MVC-Framework Controlleraktionen Browseranforderungen zugeordnet.
-
 
 In diesem Tutorial haben Sie eine Einführung in eine wichtige Funktion von jeder ASP.NET MVC-Anwendung namens *ASP.NET-Routing*. Das Modul ASP.NET-Routing ist verantwortlich für die Zuordnung von eingehenden Browseranforderungen zu bestimmten MVC-Controlleraktionen. Am Ende dieses Lernprogramms werden Sie verstehen, wie die standardmäßige Routingtabelle Controlleraktionen Anforderungen zugeordnet.
 
@@ -94,11 +93,9 @@ Zum Schluss Aufrufen der Methode Index() in Listing 5 mit der URL gibt führt da
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample5.cs)]
 
-
 [![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
 
 **Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-routing-overview-cs/_static/image2.png))
-
 
 Die URL/Home/Index/3, problemlos auf der anderen Seite mit die Index-Controlleraktion in Listing 5. Die Anforderung /Home/Index/3 bewirkt, dass die Index()-Methode, die mit einem Id-Parameter aufgerufen werden, die den Wert 3 hat.
 

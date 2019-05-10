@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 4eabc535-b8a1-43f5-bb99-cfeb86db0fca
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9b2a7e00b3c50a946ad0f2518880892f103a5c1b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da1a1c9cc79a452eb0d7597810e86f7bcf6cd179
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387112"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122325"
 ---
 # <a name="validating-with-a-service-layer-c"></a>Überprüfen mit einer Dienstschicht (C#)
 
 durch [Stephen Walther](https://github.com/StephenWalther)
 
 > Erfahren Sie, wie Sie eine Validierungslogik aus Ihre Controlleraktionen und in einer separaten Dienstschicht zu verschieben. In diesem Tutorial erläutert Stephen Walther an, wie Sie eine scharfe Trennung der Zuständigkeiten verwalten können, indem isoliert von Ihrer Dienstebene aus Ihrem Controller-Ebene.
-
 
 Das Ziel dieses Lernprogramms ist eine Methode zum Ausführen der Validierung in ASP.NET MVC-Anwendungen beschrieben. In diesem Tutorial erfahren Sie, wie Sie eine Validierungslogik aus Ihren Controllern und in einer separaten Dienstschicht zu verschieben.
 

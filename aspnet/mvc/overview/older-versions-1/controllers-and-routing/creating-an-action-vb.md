@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: c8d93e11-ef78-4a30-afbc-f30419000a60
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f8eeeaa9bd77c0259f680198e57ade8d49cd06b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b1b53bea899deecef203551b23c087944e3990ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382616"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123449"
 ---
 # <a name="creating-an-action-vb"></a>Erstellen einer Aktion (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > Erfahren Sie, wie Sie ASP.NET MVC-Controller eine neue Aktion hinzufügen. Informationen Sie zu den Anforderungen für eine Methode, um eine Aktion werden.
-
 
 Das Ziel in diesem Tutorial wird beschrieben, wie Sie eine neue Controlleraktion erstellen können. Sie erfahren Sie mehr über die Anforderungen von einer Aktionsmethode. Sie erfahren außerdem, wie Sie verhindern, dass eine Methode als eine Aktion verfügbar gemacht werden.
 
@@ -55,7 +54,6 @@ Wenn Sie eine öffentliche Methode in einer Controllerklasse zu erstellen müsse
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
 Wenn Sie versuchen, die Controlleraktion CompanySecrets() aufrufen, indem Sie die Eingabe /Work/CompanySecrets in die Adressleiste des Browsers klicken Sie dann erhalten die Fehlermeldung in Abbildung 1 Sie.
-
 
 [![Aufrufen einer NonAction-Methode](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4220327388703b773011921bb206976b04b07e34
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9510eb8094a55346bec2e0dab2a15ee79d211c88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397902"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126517"
 ---
 # <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Sortieren, Filtern und Paging mit Entitätsframework in einer ASP.NET MVC-Anwendung (3 von 10)
 
@@ -26,7 +26,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > > [!NOTE] 
 > > 
 > > Wenn Sie auf ein Problem Sie nicht lösen stoßen, [herunterladen im Kapitel über das abgeschlossene](building-the-ef5-mvc4-chapter-downloads.md) und versuchen Sie es zum Reproduzieren des Problems an. Die Lösung des Problems finden in der Regel durch Ihren Code, den vollständigen Code vergleichen. Einige häufige Fehler und zu deren Lösung finden Sie [Fehler und Problemumgehungen.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 Im vorherigen Tutorial, die Sie implementiert einer Reihe von Webseiten für grundlegende CRUD-Vorgänge für `Student` Entitäten. In diesem Tutorial fügen Sie sortieren, Filtern und Pagingfunktionen für die **Schüler/Studenten** Indexseite. Sie werden auch eine Seite erstellen, auf der einfache Gruppierungsvorgänge ausgeführt werden.
 
@@ -93,7 +92,6 @@ Sie haben einen `searchString`-Parameter zur `Index`-Methode hinzugefügt. Sie h
 
 > [!NOTE]
 > In vielen Fällen können Sie die gleiche Methode aufrufen, an einer Entity Framework-Entitätenmenge oder als eine Erweiterungsmethode in einer in-Memory-Sammlung. Die Ergebnisse sind normalerweise identisch, aber in einigen Fällen können abweichen. Z. B. die Implementierung von .NET Framework die `Contains` Methode gibt alle Zeilen zurück, wenn Sie eine leere Zeichenfolge an sie übergeben, aber die Entity Framework-Anbieter für SQL Server Compact 4.0 gibt 0 (null) Zeilen auf leere Zeichenfolgen zurück. Aus diesem Grund wird der Code im Beispiel (Einfügen der `Where` -Anweisung innerhalb einer `if` Anweisung) stellt sicher, dass Sie die gleichen Ergebnisse für alle Versionen von SQL Server erhalten. Darüber hinaus die Implementierung von .NET Framework die `Contains` -Methode führt einen Vergleich Groß-/Kleinschreibung standardmäßig, aber die Entity Framework SQL Server-Ressourcenanbieter führen die Groß-/Kleinschreibung Vergleiche standardmäßig. Aus diesem Grund Aufrufen der `ToUpper` Methode, um den Test explizit Groß-/Kleinschreibung, wird sichergestellt, dass die Ergebnisse nicht ändern, wenn Sie ändern den Code später ein Repository verwenden, die zurückgibt, wird ein `IEnumerable` -Sammlung anstelle einer `IQueryable` Objekt. (Beim Aufrufen der `Contains`-Methode einer `IEnumerable`-Sammlung erhalten Sie die .NET Framework-Implementierung. Wenn Sie sie auf einem `IQueryable`-Objekt aufrufen, erhalten Sie die Implementierung des Datenanbieters.)
-
 
 ### <a name="add-a-search-box-to-the-student-index-view"></a>Hinzufügen eines Suchfelds zur Studentenindexansicht
 
@@ -378,7 +376,6 @@ Sie finden die bereitgestellte Version der Datei "Web.config" auf dem lokalen Co
 
 > [!NOTE]
 > Die Web-app implementieren nicht Sicherheit, damit jeder, der die URL findet die Daten ändern kann. Anweisungen dazu, wie Sie die Website zu schützen, finden Sie unter [bereitstellen eine sicheren ASP.NET MVC-app mit Mitgliedschaft, OAuth und SQL-Datenbank auf einem Windows Azure-Website](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Sie können verhindern, dass andere Personen über die Website mithilfe der Windows Azure-Verwaltungsportal oder **Server-Explorer** in Visual Studio für den Standort zu beenden.
-
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image35.png)
 

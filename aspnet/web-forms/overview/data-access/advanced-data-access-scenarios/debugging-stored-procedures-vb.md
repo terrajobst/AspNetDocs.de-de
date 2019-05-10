@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6dda18eb27d45f8dfdb4803cf3aca3ffe96bf11e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e02f259d0c9833a91bd1592f46e0a4e30d59cea1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406560"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131847"
 ---
 # <a name="debugging-stored-procedures-vb"></a>Definieren von gespeicherten Prozeduren (VB)
 
@@ -23,7 +23,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 > Visual Studio Professional und Team System-Editionen können Sie Haltepunkte setzen und springen, um zu gespeicherten Prozeduren in SQL Server, wodurch das Debuggen von gespeicherter Prozeduren, die so einfach wie das Debuggen von Anwendungscode. Dieses Tutorial veranschaulicht das direkte datenbankdebugging und Debuggen der Anwendung von gespeicherten Prozeduren.
 
-
 ## <a name="introduction"></a>Einführung
 
 Visual Studio bietet eine umfassende Debugleistung. Mit wenigen Tastaturanschlägen oder Mausklicks es möglich, verwenden Sie zum Beenden der Ausführung eines Programms, und überprüfen die Übertragung und Haltepunkte. Zusammen mit Debuggen von Anwendungscode, bietet Visual Studio unterstützt das Debuggen von gespeicherter Prozeduren von SQL Server. Genau wie Haltepunkte können, im Code eines ASP.NET Code-Behind-Klasse oder Business Logic Layer-Klasse festgelegt werden, damit auch sie platziert werden können, innerhalb von gespeicherten Prozeduren.
@@ -32,7 +31,6 @@ In diesem Tutorial betrachten wir Einzelschritt in gespeicherte Prozeduren im Se
 
 > [!NOTE]
 > Leider gespeicherte Prozeduren können nur werden in das gesprungen und über die Professional und Team-Systeme Versionen von Visual Studio debuggt. Wenn Sie Visual Web Developer oder die standard-Version von Visual Studio verwenden, können Sie Willkommen zusammen zu lesen, durchlaufen wir die erforderlichen Schritte zum Debuggen von gespeicherter Prozeduren, aber Sie werden nicht in der Lage, diese Schritte auf Ihrem Computer replizieren.
-
 
 ## <a name="sql-server-debugging-concepts"></a>Debuggen von SQL Server-Konzepte
 
@@ -58,25 +56,20 @@ Visual Studio erleichtert das direkte Debuggen eines Datenbankobjekts. S betrach
 
 Da die `Products_SelectByCategoryID` gespeicherte Prozedur erwartet, dass eine `@CategoryID` Eingabeparameter, wir werden aufgefordert, diesen Wert anzugeben. Geben Sie 1 an, die Informationen zu den Getränke zurückgegeben wird.
 
-
 ![Verwenden Sie den Wert 1 für die @CategoryID Parameter](debugging-stored-procedures-vb/_static/image1.png)
 
 **Abbildung 1**: Verwenden Sie den Wert 1 für die `@CategoryID` Parameter
 
-
 Nach dem Bereitstellen des Werts für die `@CategoryID` Parameter der gespeicherten Prozedur ausgeführt wird. Anstatt bis zum Abschluss ausgeführt, jedoch hält der Debugger die Ausführung bei der ersten Anweisung. Beachten Sie den gelben Pfeil in den Rand, der angibt, der aktuellen Position in der gespeicherten Prozedur. Sie können anzeigen und Bearbeiten von Parameterwerten, die über das Fenster "überwachen" oder mit dem Mauszeiger auf den Parameternamen in der gespeicherten Prozedur.
-
 
 [![Der Debugger wurde für die erste Anweisung der gespeicherten Prozedur angehalten.](debugging-stored-procedures-vb/_static/image3.png)](debugging-stored-procedures-vb/_static/image2.png)
 
 **Abbildung 2**: Der Debugger wurde angehalten, für die erste Anweisung der gespeicherten Prozedur ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image4.png))
 
-
 Um einen über die gespeicherte Prozedur eine Anweisung zu einem Zeitpunkt durchzuführen, klicken Sie auf die Schaltfläche "Step Over" in der Symbolleiste, oder drücken Sie die F10-TASTE. Die `Products_SelectByCategoryID` gespeicherte Prozedur enthält ein einzelnes `SELECT` Anweisung, daher die einzige Anweisung überspringen und die Ausführung der gespeicherten Prozedur abgeschlossen wird drücken F10. Nachdem die gespeicherte Prozedur abgeschlossen wurde, wird die Ausgabe im Ausgabefenster angezeigt, und der Debugger wird beendet.
 
 > [!NOTE]
 > T-SQL-debugging erfolgt auf der Anweisungsebene Sie können nicht schrittweise ein `SELECT` Anweisung.
-
 
 ## <a name="step-2-configuring-the-website-for-application-debugging"></a>Schritt 2: Konfigurieren der Website für das Debuggen der Anwendung
 
@@ -84,22 +77,18 @@ Beim Debuggen einer gespeicherten Prozedur direkt über den Server-Explorer ist,
 
 Bevor wir mit dem Debuggen von gespeicherten Prozeduren, die aufgerufen wird, von der Anwendung beginnen können, müssen wir die ASP.NET-Webanwendung für die Integration von SQL Server-Debugger anweisen. Starten, indem Sie mit der rechten Maustaste auf den Namen der Website im Projektmappen-Explorer (`ASPNET_Data_Tutorial_74_VB`). Wählen Sie die Eigenschaftenseiten-Option im Kontextmenü, wählen Sie das Element "Startoptionen" auf der linken Seite und aktivieren Sie das SQL Server-Kontrollkästchen im Abschnitt Debugger (siehe Abbildung 3).
 
-
 [![Aktivieren Sie das SQL Server-Kontrollkästchen in der Anwendung s-Eigenschaftenseiten](debugging-stored-procedures-vb/_static/image6.png)](debugging-stored-procedures-vb/_static/image5.png)
 
 **Abbildung 3**: Aktivieren Sie das SQL Server-Kontrollkästchen in der Anwendung-s-Eigenschaftenseiten ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image7.png))
-
 
 Darüber hinaus müssen wir zum Aktualisieren der Datenbank-Verbindungszeichenfolge, die von der Anwendung verwendet wird, so dass Verbindungspooling deaktiviert ist. Wenn eine Verbindung mit einer Datenbank geschlossen wird, den entsprechenden `SqlConnection` Objekt befindet sich in einem Pool der verfügbaren Verbindungen. Beim Herstellen einer Verbindungs mit einer Datenbank, ein Objekt verfügbare Verbindung abgerufen werden können, aus diesem Pool anstatt erstellen und eine neue Verbindung herstellen müssen. Diese pooling von Verbindungsobjekten ist eine leistungsverbesserung und ist standardmäßig aktiviert. Allerdings beim Debuggen sollten deaktivieren Verbindungspooling, da der Debuginfrastruktur nicht ordnungsgemäß wiederhergestellt ist, wenn Sie mit einer Verbindung zu arbeiten, die aus dem Pool erstellt wurde.
 
 Deaktiviertes Verbindungspooling, aktualisieren Sie die `NORTHWNDConnectionString` in `Web.config` , damit sie die Einstellung enthält `Pooling=false` .
 
-
 [!code-xml[Main](debugging-stored-procedures-vb/samples/sample1.xml)]
 
 > [!NOTE]
 > Wenn Sie fertig sind Debuggen von SQL Server über die ASP.NET-Anwendung achten reaktivieren, Verbindungspooling durch das Entfernen der `Pooling` aus der Verbindungszeichenfolge festlegen (oder durch Festlegung auf `Pooling=true` ).
-
 
 An diesem Punkt wurde die ASP.NET-Anwendung konfiguriert, um Visual Studio zum Debuggen von SQL Server-Datenbankobjekte, die beim Aufrufen durch die Webanwendung zu ermöglichen. Jetzt muss nur noch eine gespeicherte Prozedur einen Haltepunkt hinzu, und starten Sie das Debuggen wird!
 
@@ -107,51 +96,40 @@ An diesem Punkt wurde die ASP.NET-Anwendung konfiguriert, um Visual Studio zum D
 
 Öffnen der `Products_SelectByCategoryID` gespeicherte Prozedur, und legen Sie einen Haltepunkt am Anfang der `SELECT` Anweisung durch Klicken auf den Rand bei der entsprechenden Stelle platzieren den Cursor am Anfang oder das `SELECT` -Anweisung und drücken F9. Wie in Abbildung 4 dargestellt, wird der Haltepunkt als roter Kreis im Rand angezeigt.
 
-
 [![Festlegen eines Haltepunkts in der Products_SelectByCategoryID gespeicherten Prozedur](debugging-stored-procedures-vb/_static/image9.png)](debugging-stored-procedures-vb/_static/image8.png)
 
 **Abbildung 4**: Festlegen eines Haltepunkts in der `Products_SelectByCategoryID` Stored Procedure ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image10.png))
 
-
 In der Reihenfolge für eine SQL-Datenbank zu debuggenden Objekts, durch eine Clientanwendung ist es zwingend erforderlich, dass die Datenbank für die Unterstützung des Debuggens der Anwendung konfiguriert werden. Wenn Sie zuerst einen Haltepunkt festlegen, sollten diese Einstellung automatisch aktiviert werden, aber es ist ratsam, überprüfen Sie noch einmal. Mit der rechten Maustaste auf die `NORTHWND.MDF` Knoten im Server-Explorer. Das Kontextmenü sollte aktiviert Menüelement Anwendungsdebugging enthalten.
-
 
 ![Stellen Sie sicher, dass die Anwendung debuggen-Option aktiviert ist](debugging-stored-procedures-vb/_static/image11.png)
 
 **Abbildung 5**: Stellen Sie sicher, dass die Anwendung debuggen-Option aktiviert ist
 
-
 Mit dem gesetzten Haltepunkt und die Anwendungsdebuggen-Option aktiviert sind wir bereit für die gespeicherte Prozedur, die beim Aufruf von der ASP.NET-Anwendung zu debuggen. Starten Sie den Debugger, indem Sie im Menü Debuggen, und Sie Debuggen starten auswählen, durch Drücken von F5 oder durch Klicken auf die grüne play-Symbol auf der Symbolleiste. Den Debugger zu starten wird und die Website zu starten.
 
 Die `Products_SelectByCategoryID` gespeicherte Prozedur wurde erstellt, der [vorhandene gespeicherte Prozeduren verwenden, für die typisierte DataSet-s TableAdapters](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) Tutorial. Die entsprechende Webseite (`~/AdvancedDAL/ExistingSprocs.aspx`) enthält eine GridView, die von dieser gespeicherten Prozedur zurückgegebenen Ergebnisse werden angezeigt. Besuchen Sie diese Seite über den Browser aus. Beim Erreichen der Seite, die den Haltepunkt in der `Products_SelectByCategoryID` gespeicherte Prozedur wird erreicht, und Visual Studio die Steuerung zurückgegeben. Genau wie in Schritt 1, können Sie schrittweise Durchlaufen der gespeicherten Prozedur s-Anweisungen und die Ansicht und die Parameterwerte ändern.
-
 
 [![Die Seite ExistingSprocs.aspx werden zuerst die Getränke angezeigt.](debugging-stored-procedures-vb/_static/image13.png)](debugging-stored-procedures-vb/_static/image12.png)
 
 **Abbildung 6**: Die `ExistingSprocs.aspx` Seite zeigt zu Beginn der Getränke ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image14.png))
 
-
 [![Die gespeicherte Prozedur s Haltepunkt wurde erreicht](debugging-stored-procedures-vb/_static/image16.png)](debugging-stored-procedures-vb/_static/image15.png)
 
 **Abbildung 7**: Die gespeicherte Prozedur s Haltepunkt erreicht wurde ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image17.png))
 
-
 Als das Fenster "überwachen" in Abbildung 7 zeigt, der Wert des der `@CategoryID` -Parameter ist 1. Grund hierfür ist die `ExistingSprocs.aspx` Seite zeigt anfänglich Produkte in der Kategorie "Getränke", die eine `CategoryID` Wert 1. Wählen Sie eine andere Kategorie aus der Dropdown Liste ein. Dies führt dazu, dass einen Postback und führt erneut die `Products_SelectByCategoryID` gespeicherte Prozedur. Der Haltepunkt erreicht wird, erneut aus, aber dieses Mal die `@CategoryID` s-Parameterwert entspricht dem ausgewählten Dropdown-Listenfeld-Element s `CategoryID`.
-
 
 [![Wählen Sie eine andere Kategorie aus der Dropdown Liste](debugging-stored-procedures-vb/_static/image19.png)](debugging-stored-procedures-vb/_static/image18.png)
 
 **Abbildung 8**: Wählen Sie eine andere Kategorie aus der Dropdown Liste ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image20.png))
 
-
 [![Die @CategoryID Parameter gibt die Kategorie, die von der Webseite ausgewählt](debugging-stored-procedures-vb/_static/image22.png)](debugging-stored-procedures-vb/_static/image21.png)
 
 **Abbildung 9**: Die `@CategoryID` Parameter gibt die Kategorie, die von der Webseite ausgewählt ([klicken Sie, um das Bild in voller Größe anzeigen](debugging-stored-procedures-vb/_static/image23.png))
 
-
 > [!NOTE]
 > Wenn der Breakpoint im der `Products_SelectByCategoryID` gespeicherte Prozedur wird nicht erreicht werden, wenn das Unternehmen Besuchen der `ExistingSprocs.aspx` Seite, stellen Sie sicher, dass das Kontrollkästchen für die SQL Server im Abschnitt "Debugger" der ASP.NET-Anwendung s-Seite "Eigenschaften" markiert ist, wurde der Verbindungs-pooling deaktiviert, und dass die Datenbank s Anwendungsdebugging-Option aktiviert ist. Sollten Sie erneut immer noch Probleme auftreten, starten Sie Visual Studio, und versuchen Sie es erneut.
-
 
 ## <a name="debugging-t-sql-database-objects-on-remote-instances"></a>Debuggen von T-SQL-Datenbankobjekte auf Remoteinstanzen
 
@@ -166,14 +144,12 @@ Der zweite Task erfordert, dass die Windows-Benutzerkonto, das Sie verwenden, um
 
 Ein Beispiel sollte Ihnen Dinge. Angenommen, es ein Windows-Konto, das mit dem Namen ist `SQLDebug` innerhalb der Windows-Domäne. Dieses Konto mit der SQL Server-Remoteinstanz als gültigen Anmeldenamen und ein Mitglied hinzugefügt werden müssten die `sysadmin` Rolle. Klicken Sie dann, um die SQL Server-Remoteinstanz in Visual Studio zu debuggen, müssen wir zum Ausführen von Visual Studio als die `SQLDebug` Benutzer. Dies kann durch Abmelden eigenen Arbeitsstation, wieder anmelden, als `SQLDebug`, und klicken Sie dann starten von Visual Studio, jedoch ein einfacherer Ansatz wäre, die Anmeldung bei den eigenen Arbeitsstation mit eigenen Anmeldeinformationen und verwenden Sie dann `runas.exe` zum Starten von Visual Studio als die `SQLDebug` Benutzer. `runas.exe` können eine bestimmte Anwendung unter dem Deckmantel von einem anderen Benutzerkonto ausgeführt werden. Zum Starten von Visual Studio als `SQLDebug`, könnten Sie die folgende Anweisung in der Befehlszeile eingeben:
 
-
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
 
 Eine ausführlichere Erläuterung zu diesem Prozess werden soll, finden Sie unter [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s Leitfaden für Visual Studio und SQL Server, die siebte Ausgabe* sowie [so wird's gemacht: Legen Sie die SQL Server-Berechtigungen für das Debuggen](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx).
 
 > [!NOTE]
 > Wenn Ihrem Entwicklungscomputer Windows XP Service Pack 2 ausgeführt wird, Sie die Windows-Firewall zum Remotedebuggen konfigurieren müssen. [Vorgehensweise: SQL Server 2005-Debuggen aktivieren](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) Artikel – Anmerkungen zu dieser, dass diese zwei Schritten besteht: (a) auf dem Visual Studio-Hostcomputer, müssen Sie hinzufügen `Devenv.exe` auf die Liste mit Ausnahmen und öffnen Sie die TCP-Anschluss 135; und (b) auf einem Remotecomputer (SQL), müssen Sie die TCP 135 öffnen Port, und fügen `sqlservr.exe` zur Liste Ausnahmen. Wenn die Domänenrichtlinie die Netzwerkkommunikation über IPSec erfordert, müssen Sie die Ports UDP 4500 und UDP 500 öffnen.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

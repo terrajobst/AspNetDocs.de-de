@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 44a22ac7-1fc7-4174-b946-c6129fb6a19b
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7ea8c74a6621200e3a0d52a7c37fed6b5eeff4e5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d580e550f2461837f0e8a4e477273348b49cb53e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391623"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132396"
 ---
 # <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>Szenario: Konfigurieren einer Testumgebung für die Webbereitstellung
 
@@ -22,7 +22,6 @@ durch [Jason Lee](https://github.com/jrjlee)
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In diesem Thema wird beschrieben, ein typisches Web-Bereitstellungsszenario für Entwickler oder testumgebungen und erläutert, die Aufgaben, die Sie ausführen, um eine ähnliche Umgebung einrichten müssen.
-
 
 Wenn Entwickler auf Webanwendungen arbeiten zu können, sind sie häufig Zugriff auf eine Server-Umgebung gewährt, die sie verwenden können, um Änderungen für ihre Anwendungen in einer realistischen Umgebung zu testen. Diese Art von Entwicklungs-oder testumgebung hat in der Regel folgende Eigenschaften:
 
@@ -47,7 +46,6 @@ Die testumgebung muss Schritt für Schritt zu unterstützen oder die automatisie
 
 > [!NOTE]
 > Außerdem können Sie [Web Deploy bei Bedarf](https://technet.microsoft.com/library/ee517345(WS.10).aspx) ("temporäre Agent" bezeichnet). Dies ist vergleichbar mit dem remote-Agent-Ansatz in Bezug auf die Anforderungen und Einschränkungen.
-
 
 In diesem Fall die Entwickler über Administratorrechte verfügen, auf dem Zielserver, und die testumgebung unterliegt nicht der strenge sicherheitseinschränkungen, daher ist die logische Wahl Testwebserver zur Unterstützung einer Bereitstellung mit dem remote-Agent zu konfigurieren. Dies ist weniger komplex und erfordert weniger anfängliche Konfiguration als der Ansatz WebHandler bereitstellen. Sie müssen auch so konfigurieren Sie Ihren Datenbankserver zur Unterstützung von Remotezugriff und Bereitstellung.
 

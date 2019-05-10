@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 11425ff3-09fc-4efa-be9a-b53bce503460
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 0359af8d5558bdaa6a73be9774fec2284ab87c73
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 455bdfd4cfca65cadd94e8ce189c1a185a03805d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129882"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>Untersuchen der Methoden „Details“ und „Delete“
 
@@ -21,7 +21,6 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
 > > Eine aktualisierte Version dieses Tutorials finden Sie [hier](../../getting-started/introduction/getting-started.md) , ASP.NET MVC 5 und Visual Studio 2013 verwendet. Dabei handelt es sich eine sicherere, einfacher, führen weitere Funktionen veranschaulicht.
-
 
 In diesem Teil des Tutorials müssen Sie überprüfen die automatisch generierte `Details` und `Delete` Methoden.
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 301af8ed877b58624e419c04f605c41f27dbdd0c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401737"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132084"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>Neue Funktionen in Web Forms in ASP.NET 4.5
 
@@ -41,7 +41,6 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 > 
 > Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409).
 
-
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
@@ -56,7 +55,7 @@ In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
 - Implementieren der asynchronen seitenverarbeitung in Web Forms
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Erforderliche Komponenten
 
 Sie benötigen Folgendes, um diese testumgebung abzuschließen:
 
@@ -83,13 +82,12 @@ Dieser praktischen Übungseinheit enthält die folgenden Übungen:
 > [!NOTE]
 > Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
 
-
 Geschätzte Zeit für diese testumgebung abzuschließen: **60 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Model_Binding_in_ASPNET_Web_Forms"></a>
-### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>Übung 1: Die Modellbindung in ASP.NET Web Forms
+### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>Übung 1: Die Modellbindung in ASP.NET Web Forms
 
 Die neue Version von ASP.NET Web Forms führt eine Reihe von Verbesserungen umfassen hauptsächlich die Verbesserung der benutzerfreundlichkeit, beim Arbeiten mit Daten. Sie werden in dieser Übung erfahren Sie mehr über stark typisierte Datensteuerelemente und modellbindung.
 
@@ -325,7 +323,7 @@ Aktualisieren Sie die Kategorien GridView ermöglichen den Benutzer, die Kategor
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Data_Validation"></a>
-### <a name="exercise-2-data-validation"></a>Übung 2: Datenvalidierung
+### <a name="exercise-2-data-validation"></a>Übung 2: Datenvalidierung
 
 In dieser Übung erfahren Sie mehr über die neue Datenfunktionen für die Validierung in ASP.NET 4.5. Sie werden die neuen Funktionen der unaufdringlichen Validierung in Web Forms Auschecken. Sie können datenanmerkungen in die Anwendung Modellklassen für die Validierung von Benutzereingaben und schließlich erfahren Sie, wie Sie zum Aktivieren oder Deaktivieren der Anforderungsvalidierung in einzelne Steuerelemente auf einer Seite.
 
@@ -610,7 +608,6 @@ Zeitaufwändige Operationen auf Ihrer Website sind gute Kandidaten für asynchro
 
 > [!NOTE]
 > Darüber hinaus können Sie diese Anwendung in Azure Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
-
 
 ---
 

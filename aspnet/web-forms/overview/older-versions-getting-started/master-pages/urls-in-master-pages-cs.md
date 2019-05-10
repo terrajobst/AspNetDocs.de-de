@@ -8,12 +8,12 @@ ms.date: 06/10/2008
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a218dffb3d23ca95e9864fb7b272bc6a004386c4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2679429a6c32e53705905cc234ec92314c7de124
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421198"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132024"
 ---
 # <a name="urls-in-master-pages-c"></a>URLs auf Masterseiten (C#)
 
@@ -22,7 +22,6 @@ durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
 [Code herunterladen](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_CS.pdf)
 
 > Adressen, wie der URLs in die Masterseite aufgrund wird in einem anderen relativen Verzeichnis als die Inhaltsseite die Masterseitendatei umbrochen werden können. Untersucht die neuen Basisadressen URLs über ~ in der deklarativen Syntax und ResolveUrl und ResolveClientUrl Programmgesteuertes verwenden. (Betrachten Sie auch
-
 
 ## <a name="introduction"></a>Einführung
 
@@ -36,13 +35,11 @@ Eine URL auf einer Webseite gilt eine *relativen URL* ist der Speicherort der Re
 
 Unsere Website verfügt beispielsweise über eine `~/Images/` Ordner mit einer einzelnen Bilddatei, `PoweredByASPNET.gif`. Die Masterseitendatei `Site.master` verfügt über eine `<img>` Element in der `footerContent` Region durch das folgende Markup:
 
-
 [!code-html[Main](urls-in-master-pages-cs/samples/sample1.html)]
 
 Die `src` -Attributwert in der `<img>` Element ist eine relative URL, da er nicht mit beginnt `/` oder `http://`. Kurz gesagt: die `src` Attributwert weist den Browser gesucht werden soll, die `Images` Unterordner für eine Datei namens `PoweredByASPNET.gif`.
 
 Wenn sich eine Inhaltsseite zu besuchen, wird das obenstehende Markup direkt an den Browser gesendet. Besuchen in Ruhe `About.aspx` und zeigen Sie die an den Browser gesendete HTML-Quelle. Sie werden feststellen, dass genaue dasselbe Markup auf der Masterseite an den Browser gesendet wurde.
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample2.html)]
 
@@ -51,17 +48,13 @@ Ist die Seite Inhalte im Stammordner (wie `About.aspx`) alles funktioniert wie e
 > [!NOTE]
 > In der [ *Titel, Meta-Tags und anderer HTML-Header angeben, auf der Masterseite* ](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md) Lernprogramm eine benutzerdefinierten Basisseite-Klasse, die mit dem Namen erstellten `BasePage` , die Inhalte der Titel der Seite automatisch festgelegt (wenn es wurde nicht explizit zugewiesen). Vergessen Sie nicht, die neu erstellte Seite Code-Behind-Klasse abgeleitet haben `BasePage` , damit diese Funktion nutzen können.
 
-
 Nachdem Sie diese Inhaltsseite erstellt haben, sollte der Projektmappen-Explorer wie in Abbildung 1 aussehen.
-
 
 ![Einen neuen Ordner und eine ASP.NET-Seite wurden dem Projekt hinzugefügt](urls-in-master-pages-cs/_static/image1.png)
 
 **Abbildung 01**: Einen neuen Ordner und eine ASP.NET-Seite wurden dem Projekt hinzugefügt
 
-
 Aktualisieren Sie als Nächstes die `Web.sitemap` hinzu, um ein neues einzubeziehen `<siteMapNode>` Eintrag in dieser Lektion. Das folgende XML zeigt die vollständige `Web.sitemap` Markup, die jetzt das Hinzufügen einer dritten `<siteMapNode>` Element.
-
 
 [!code-xml[Main](urls-in-master-pages-cs/samples/sample3.xml)]
 
@@ -69,16 +62,13 @@ Die neu erstellte `Default.aspx` Seite müssen vier Inhaltssteuerelemente, die f
 
 Die `~/Admin/Default.aspx` Inhaltsseite erhält jedes Mal den gleichen HTML-Code für die `footerContent` Region wie der Fall war die `About.aspx` Seite:
 
-
 [!code-html[Main](urls-in-master-pages-cs/samples/sample4.html)]
 
 Da die `<img>` des Elements `src` -Attribut ist eine relative URL, die der Browser versucht, suchen Sie nach einer `Images` Ordner relativ zum Ordner für die Webseite. Das heißt, sucht der Browser für die Abbilddatei `Admin/Images/PoweredByASPNET.gif`.
 
-
 [![Die PoweredByASPNET.gif Image-Datei wurde nicht gefunden](urls-in-master-pages-cs/_static/image3.png)](urls-in-master-pages-cs/_static/image2.png)
 
 **Abbildung 02**: Die `PoweredByASPNET.gif` Image-Datei wurde nicht gefunden ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-cs/_static/image4.png))
-
 
 ### <a name="replacing-relative-urls-with-absolute-urls"></a>Ersetzen Relative URLs mit Absolute URLs
 
@@ -91,11 +81,9 @@ Um die beschädigte Bilder, die in Abbildung 2 dargestellten zu beheben, müssen
 
 Aktualisieren Sie in Ruhe die `<img>` des Elements `src` -Attribut auf eine absolute URL mithilfe eines der oben gezeigten Formate ein, und rufen Sie die `~/Admin/Default.aspx` Seite über einen Browser. Dieses Mal der Browser wird ordnungsgemäß suchen und Anzeigen der `PoweredByASPNET.gif` Image-Datei (siehe Abbildung 3).
 
-
 [![Das PoweredByASPNET.gif-Image ist jetzt angezeigt.](urls-in-master-pages-cs/_static/image6.png)](urls-in-master-pages-cs/_static/image5.png)
 
 **Abbildung 03**: Die `PoweredByASPNET.gif` Bild wird jetzt angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](urls-in-master-pages-cs/_static/image7.png))
-
 
 Fest zu programmieren, in die absolute URL funktioniert, zwar verbindet er eng Ihren HTML-Code auf der Website-Server und Ordner, die sich ändern kann. Verwenden eine absolute URL des Formulars `http://localhost:3908/...` fehleranfällig ist da die Portnummer, die vorherigen `localhost` automatisch jedes Mal, die Visual Studio integrierten ASP.NET Development Web Server gestartet wird ausgewählt. Auf ähnliche Weise die `http://localhost` Teil ist nur gültig, wenn Sie lokal testen. Sobald der Code auf einem Produktionsserver bereitgestellt wird, die URL-Basis, ändert sich etwas anderes, wie z. B. `http://www.yourserver.com`. Die absolute URL im Format `/ASPNET_MasterPages_Tutorial_04_CS/...` auch aus der gleichen Fehleranfälligkeit beeinträchtigt, da es sich bei diesen Pfad der Anwendung häufig zwischen Entwicklungs- und produktionsumgebungen Servern unterscheidet.
 
@@ -110,7 +98,6 @@ Die `Control` Klasse [ `ResolveClientUrl` Methode](https://msdn.microsoft.com/li
 > [!NOTE]
 > Da von allen ASP.NET-Serversteuerelementen abgeleitet sind die `Control` -Klasse, die alle Steuerelemente haben Zugriff auf die `ResolveClientUrl` Methode. Obwohl das `Page` Klasse leitet sich von der `Control` -Klasse, was bedeutet, dass Sie diese Methode direkt von Ihren ASP.NET-Seiten CodeBehind-Klassen verwenden können.
 
-
 ### <a name="usingin-the-declarative-markup"></a>Mithilfe von`~`im deklarativen Markup
 
 Mehrere Steuerelemente von ASP.NET Web enthalten die URL-bezogene Eigenschaften: das Linksteuerelement ist eine `NavigateUrl` Eigenschaft: das Bild, das Steuerelement hat eine `ImageUrl` Eigenschaft; und So weiter. Beim Rendern, übergeben diese Steuerelemente zu ihrer URL bezogenen Eigenschaftswerte `ResolveClientUrl`. Daher enthalten diese Eigenschaften eine `~` um den Stamm der Webanwendung anzugeben, wird die URL in eine gültige relative URL geändert werden.
@@ -119,29 +106,24 @@ Denken Sie daran, die nur die ASP.NET-Serversteuerelemente Umwandeln der `~` in 
 
 Beheben Sie das Image-Markup in `Site.master`, ersetzen Sie die vorhandene `<img>` Element mit einem ASP.NET-Webanwendung-Image-Steuerelement. Legen Sie des Image-Websteuerelements `ID` zu `PoweredByImage`, dessen `ImageUrl` Eigenschaft, um `~/Images/PoweredByASPNET.gif`, und die zugehörige `AlternateText` Eigenschaft auf "Powered by ASP.NET!"
 
-
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample5.aspx)]
 
 Nach dieser Änderung auf die Masterseite, rufen Sie erneut die `~/Admin/Default.aspx` Seite erneut. Dieses Mal die `PoweredByASPNET.gif` Bilddatei, die auf der Seite angezeigt (siehe Abbildung 3). Wenn das Image-Web-Steuerelement ist gerendert es verwendet die `ResolveClientUrl` Verfahren zum Beheben der `ImageUrl` -Eigenschaftswert. In `~/Admin/Default.aspx` der `ImageUrl` in eine entsprechende relative URL wie im folgenden Codeausschnitt wird der HTML-Quelle konvertiert:
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample6.html)]
 
 > [!NOTE]
 > Außer in URL-basierte Web-Steuerelementeigenschaften, die `~` kann auch verwendet werden, beim Aufrufen der `Response.Redirect` und `Server.MapPath` Methoden, u. a. Darüber hinaus die `ResolveClientUrl` Methode kann direkt aus einer ASP.NET- oder der Masterseite deklarativen Markup, bei Bedarf aufgerufen werden, finden Sie unter [Fritz Onion](https://www.pluralsight.com/blogs/fritz/)Blogeintrag [Using `ResolveClientUrl` im Markup](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx).
 
-
 ## <a name="fixing-the-master-pages-remaining-relative-urls"></a>Beheben die Masterseite verbleibende Relative URLs
 
 Zusätzlich zu den `<img>` Element in der `footerContent` , dass wir gerade behoben, die Masterseite enthält eine weitere relativen URL, die unsere Aufmerksamkeit erfordert. Die `topContent` Region enthält, die Verknüpfung "Master-Seiten-Lernprogramme," verweist auf `Default.aspx`.
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample7.html)]
 
 Da diese URL relativ ist, sendet den Benutzer die `Default.aspx` Seite in den Ordner der Inhaltsseite besuchen. Haben Sie diesen Link, der immer auf zeigen `Default.aspx` im Stammordner wir ersetzen müssen die `<a>` Element mit einem HyperLink Web zu steuern, sodass wir verwenden können, die `~` Notation.
 
 Entfernen Sie die `<a>` Elementknoten dem Elementmarkup und stattdessen ein Linksteuerelement hinzufügen. Legen Sie des Links des `ID` zu `lnkHome`, dessen `NavigateUrl` Eigenschaft `~/Default.aspx`, und die zugehörige `Text` Eigenschaft auf "Master-Seiten-Lernprogramme."
-
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample8.aspx)]
 
@@ -151,13 +133,11 @@ Das ist alles! An diesem Punkt befinden sich alles, was die URLs in unserem Mast
 
 In der [ *erstellen eine standortweite Layout mithilfe von Master Pages* ](creating-a-site-wide-layout-using-master-pages-cs.md) Tutorial, die wir hinzugefügt, eine `<link>` auf die `Styles.css` Datei der `<head>` Region:
 
-
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample9.aspx)]
 
 Während der `<link>` des Elements `href` Attribut relativ ist, wird automatisch auf einen geeigneten Pfad zur Laufzeit konvertiert. Wie in erläutert die [ *Titel, Meta-Tags und anderer HTML-Header angeben, auf der Masterseite* ](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md) Tutorial die `<head>` Region ist tatsächlich ein serverseitiges-Steuerelement, das die ändern, kann die der Inhalt der inneren Steuerelemente beim Rendern.
 
 Um dies zu überprüfen, rufen Sie erneut die `~/Admin/Default.aspx` Seite, und zeigen Sie die an den Browser gesendete HTML-Quelle. Wie der folgende Codeausschnitt veranschaulicht, die `<link>` des Elements `href` Attribut automatisch so geändert wurde, eine entsprechende relative URL `../Styles.css`.
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample10.html)]
 

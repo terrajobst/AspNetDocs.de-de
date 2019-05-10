@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: d3a270b9-d7b1-47f2-8775-fc3beb518b5c
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1193d7dc6fc29dfdac5637c9391a82f9f3566073
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 633e28a100937c5d40d62fe5cc151e613171cc8f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407730"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126879"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>Erstellen von Komponententests für ASP.NET MVC-Anwendungen (C#)
 
@@ -22,7 +22,6 @@ durch [Stephen Walther](https://github.com/StephenWalther)
 [PDF herunterladen](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_07_CS.pdf)
 
 > Erfahren Sie, wie Komponententests für Controlleraktionen zu erstellen. In diesem Tutorial veranschaulicht das Stephen Walther zu prüfen, ob eine Controlleraktion eine bestimmte Ansicht zurückgibt, einen bestimmten Satz von Daten gibt zurück oder einen anderen Typ von Aktionsergebnis.
-
 
 Das Ziel in diesem Tutorial wird veranschaulicht, wie Sie Komponententests für die Controller in Ihre ASP.NET MVC Anwendungen schreiben können. Gewusst wie: Erstellen Sie drei verschiedene Typen von Komponententests erörtert. Erfahren Sie, so testen Sie die Sicht zurückgegeben werden, indem eine Controlleraktion, so testen Sie die Daten anzeigen, die eine Controlleraktion vom und zum Testen, und zwar unabhängig davon, ob Sie eine Controlleraktion auf eine zweite Controlleraktion umleitet.
 
@@ -58,16 +57,13 @@ Diese Controlleraktion gibt auch eine Ansicht namens `Details`. Allerdings wird 
 
 Sie können den Komponententest in Liste 2 ausführen, indem Sie die Tastenkombination eingeben **STRG + R, A** oder durch Klicken auf die **Ausführen aller Tests in der Projektmappe** Schaltfläche (siehe Abbildung 1). Wenn der Test erfolgreich ist, sehen Sie im Fenster Testergebnisse in Abbildung 2.
 
-
 [![Führen Sie aller Tests in der Lösung aus](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
 
 **Abbildung 01**: Ausführen aller Tests in der Projektmappe ([klicken Sie, um das Bild in voller Größe anzeigen](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image3.png))
 
-
 [![Success!](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
 
 **Abbildung 02**: Erfolgreich! ([Klicken Sie, um das Bild in voller Größe anzeigen](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image6.png))
-
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>Testen das Anzeigen von Daten zurückgegeben von einem Controller
 

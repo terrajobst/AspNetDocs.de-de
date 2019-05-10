@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 348e28778e0e7d96230534df1d61386ed39f8f11
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36f2caf7c2c9bcafd22c8f6681c1d6b19fe5078a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381145"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131070"
 ---
 # <a name="master-pages"></a>Masterseiten
 
 by [Microsoft](https://github.com/microsoft)
 
 > Eine der Hauptkomponenten für eine erfolgreiche Website ist ein einheitliches Erscheinungsbild. In ASP.NET 1.x, Entwickler verwendet Steuerelemente, um allgemeine Elemente der Seite über eine Webanwendung zu replizieren. Sicherlich eine praktikable Lösung ist, muss die Benutzersteuerelemente mit, dass einige Nachteile. Eine Änderung an der Position eines Steuerelements erfordert beispielsweise eine Änderung an mehrere Seiten auf einer Website an. Benutzersteuerelemente werden auch nicht in der Entwurfsansicht nach eingefügt wird, auf einer Seite gerendert.
-
 
 Eine der Hauptkomponenten für eine erfolgreiche Website ist ein einheitliches Erscheinungsbild. In ASP.NET 1.x, Entwickler verwendet Steuerelemente, um allgemeine Elemente der Seite über eine Webanwendung zu replizieren. Sicherlich eine praktikable Lösung ist, muss die Benutzersteuerelemente mit, dass einige Nachteile. Eine Änderung an der Position eines Steuerelements erfordert beispielsweise eine Änderung an mehrere Seiten auf einer Website an. Benutzersteuerelemente werden auch nicht in der Entwurfsansicht nach eingefügt wird, auf einer Seite gerendert.
 
@@ -47,14 +46,11 @@ Eine Masterseite kann eine beliebige Anzahl von ContentPlaceHolder-Steuerelement
 > [!NOTE]
 > Sie hören oft Personen, die Masterseiten als eine Basisklasse für andere Seiten zu beschreiben. Thats tatsächlich nicht "true". Die Beziehung zwischen der Masterseiten und Inhaltsseiten ist keiner der Vererbung.
 
-
 **Abbildung 1** eine Gestaltungsvorlage und einer verknüpften Inhaltsseite zeigt, wie sie in Visual Studio 2005 angezeigt werden. Sie sehen das ContentPlaceHolder-Steuerelement in der Masterseite und dem entsprechenden Inhaltssteuerelement in der Seite Inhalt. Beachten Sie, dass der Inhalt von Masterseiten, der außerhalb der ContentPlaceHolder ist sichtbar, sind jedoch abgeblendet ist, auf der Inhaltsseite. Von der Seite Inhalt kann nur der Inhalt innerhalb der ContentPlaceHolder ersetzt werden. Alle anderen Inhalte, der von der Masterseite stammt ist unveränderlich.
-
 
 ![Eine Masterseite und ihre zugeordneten Inhaltsseite](master-pages/_static/image1.jpg)
 
 **Abbildung 1**: Eine Masterseite und ihre zugeordneten Inhaltsseite
-
 
 ## <a name="creating-a-master-page"></a>Erstellen einer Masterseite
 
@@ -65,11 +61,9 @@ So erstellen Sie eine neue Masterseite
 3. Wählen Sie im Dialogfeld "Neues Element hinzufügen" die Masterdatei, siehe **Abbildung 2:**.
 4. Klicken Sie auf Hinzufügen.
 
-
 ![Erstellen einer neuen Master-Seite](master-pages/_static/image2.jpg)
 
 **Abbildung 2**: Erstellen einer neuen Master-Seite
-
 
 Beachten Sie, dass die Dateierweiterung für eine Masterseite *.master*. Dies ist eine der Methoden, mit denen eine normale Seite eine Masterseite unterscheidet. Der andere Hauptunterschied besteht darin, die statt einer @Page Direktive, die Masterseite enthält eine @Master Richtlinie. Wechseln Sie zur Quellansicht für den Master Seite, die Sie soeben erstellt haben, und überprüfen Sie den Code.
 
@@ -86,29 +80,23 @@ In dieser Übungseinheit erhalten Sie eine neue Masterseite zu erstellen und def
     3. Wählen Sie das ContentPlaceHolder-Steuerelement, indem Sie auf den schattierten oberen Rahmen des Steuerelements, und löschen Sie sie durch Drücken der ENTF-Taste auf der Tastatur.
     4. Einfügen einer neuen Tabelle mit den *Header und Seite* Vorlage, wie in Abbildung 3 dargestellt. Ändern Sie die Breite und Höhe auf 90 %, damit die gesamte Tabelle im Designer angezeigt wird.
 
-
 ![](master-pages/_static/image3.jpg)
 
 **Abbildung 3**
-
 
 1. Platzieren Sie den Cursor in die einzelnen Zellen der Tabelle, und legen Sie die *Valign* Eigenschaft *oben*.
 2. Fügen Sie aus der Toolbox ein ContentPlaceHolder-Steuerelement in der obersten Zelle der Tabelle (die Headerzelle.)
 3. Wenn Sie dieses ContentPlaceHolder-Steuerelement einfügen, werden Sie feststellen, dass die Zeilenhöhe fast die gesamte Seite gelangen, wie in Abbildung 4 dargestellt. Seien Sie nicht beunruhigt zu, die an diesem Punkt.
 
-
 ![Der freie Speicherplatz wird in der gleichen Zelle als ContentPlaceHolder](master-pages/_static/image1.gif)
 
 **Abbildung 4**: Der freie Speicherplatz wird in der gleichen Zelle als ContentPlaceHolder
 
-
 1. Platzieren Sie ein ContentPlaceHolder-Steuerelement in den anderen beiden Zellen. Nachdem die anderen ContentPlaceHolder-Steuerelemente eingefügt wurden, sollte die Größe der Tabellenzellen wie erwartet. Die Seite sollte jetzt aussehen, wie im angezeigten Seite **Abbildung 5:**.
-
 
 ![Der Master alle ContentPlaceHolder-Steuerelemente. Beachten Sie, dass die Zellenhöhe für die Headerzelle jetzt ist es liegen](master-pages/_static/image2.gif)
 
 **Abbildung 5**: Der Master alle ContentPlaceHolder-Steuerelemente. Beachten Sie, dass die Zellenhöhe für die Headerzelle jetzt ist es liegen
-
 
 1. Geben Sie Text Ihrer Wahl in jedem der drei ContentPlaceHolder-Steuerelemente.
 2. Speichern Sie die Masterseite als exercise1.master an.
@@ -117,11 +105,9 @@ In dieser Übungseinheit erhalten Sie eine neue Masterseite zu erstellen und def
 5. Wählen Sie **Webformular** in das Dialogfeld "Neues Element hinzufügen".
 6. Stellen Sie sicher, dass die Masterseite auswählen das Kontrollkästchen aktiviert ist, wie in Abbildung 6 dargestellt.
 
-
 ![Eine neue Seite hinzufügen](master-pages/_static/image3.gif)
 
 **Abbildung 6**: Eine neue Seite hinzufügen
-
 
 1. Klicken Sie auf Hinzufügen.
 2. Wählen Sie Dialogfeld aus "" exercise1.master in die SELECT-Anweisung eine Masterseite wie in Abbildung 7 dargestellt.
@@ -129,11 +115,9 @@ In dieser Übungseinheit erhalten Sie eine neue Masterseite zu erstellen und def
 
 Die neue Seite, die mit einem Content-Steuerelement für die einzelnen ContentPlaceHolder-Steuerelemente auf der Masterseite in Visual Studio angezeigt werden. Standardmäßig sind die Inhaltssteuerelemente leer, damit Sie Ihre eigene Inhalte hinzufügen können. Wenn Sie für den Inhalt aus dem ContentPlaceHolder-Steuerelement auf der Masterseite verwenden möchten, einfach klicken Sie auf das Smarttag-Symbol (den kleinen schwarzen Pfeil in der oberen rechten Ecke des Steuerelements), und wählen Sie *Master-Inhalt standardmäßig* aus dem Smarttag Siehe **Abbildung 8:**. Wenn Sie dies tun, ändert sich das Menüelement in *erstellen benutzerdefinierte Content*. An diesem Punkt klicken, wird der Inhalt der Masterseite, sodass Sie zum Definieren von benutzerdefinierten Inhalts für diese bestimmte Inhaltssteuerelement.
 
-
 ![Der Inhalt der Master-Seiten standardmäßig ein ContentControl-Element festlegen](master-pages/_static/image4.gif)
 
 **Abbildung 7**: Der Inhalt der Master-Seiten standardmäßig ein ContentControl-Element festlegen
-
 
 ## <a name="connecting-master-page-and-content-pages"></a>Herstellen einer Verbindung Masterseite und Inhaltsseiten
 
@@ -183,15 +167,11 @@ Beachten Sie, dass in diesem Szenario der untergeordneten Master auch einer Inha
 > [!NOTE]
 > Designer-Unterstützung ist nicht verfügbar, für die geschachtelte Masterseiten. Beim Verwenden von geschachtelten Master entwickeln, müssen Sie die Datenquellensicht zu verwenden.
 
-
 Dieses Video zeigt eine exemplarische Vorgehensweise zur Verwendung von geschachtelten Masterseiten.
-
 
 ![](master-pages/_static/image1.png)
 
-
 [Open Vollbild-Video](master-pages/_static/nested1.wmv)
-
 
 ![Eine Masterseite auswählen](master-pages/_static/image4.jpg)
 

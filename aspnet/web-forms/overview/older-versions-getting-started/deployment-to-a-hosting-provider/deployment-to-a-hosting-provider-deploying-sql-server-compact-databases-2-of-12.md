@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: cc8568847e050e868a3e7563b5fc1fc6fbf25d86
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b265d210ff3b1eeb8697a973cc245f6c97b3eb07
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405481"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134178"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellen von SQL Server Compact-Datenbanken – 2 von 12
 
@@ -24,7 +24,6 @@ durch [Tom Dykstra](https://github.com/tdykstra)
 > In dieser tutorialreihe erfahren Sie, wie zum Bereitstellen einer ASP.NET-Anwendung (veröffentlichen) Webanwendungsprojekt, das eine SQL Server Compact-Datenbank mithilfe von Visual Studio 2012 RC oder Visual Studio Express 2012 RC für Web enthält. Sie können auch Visual Studio 2010 verwenden, wenn Sie die Web Publish Update installieren. Eine Einführung in die Reihe, finden Sie unter [im ersten Tutorial der Reihe](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
 > Ein Lernprogramm, das zeigt, Bereitstellungsfunktionen, die nach der RC-Version von Visual Studio 2012 eingeführt wurden, zeigt, wie zum Bereitstellen von SQL Server-Editionen als SQL Server Compact und zeigt, wie Sie in Azure App Service-Web-Apps bereitstellen, finden Sie unter [ASP.NET-webbereitstellung Mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
-
 
 ## <a name="overview"></a>Übersicht
 
@@ -144,7 +143,6 @@ Diese Menüoption fügt den folgenden Code der `using` Anweisungen am oberen Ran
 > 
 > Dieses Beispiel für dieses Tutorial verwendet die `AddOrUpdate` -Methode in der die `Seed` -Methode der Code-First-Migrationen `Configuration` Klasse. Code First-Migrationen Ruft die `Seed` -Methode auf, nachdem jede Migration, und diese Methode aktualisiert die Zeilen, die bereits eingefügt wurde, oder fügt sie, wenn sie noch nicht vorhanden sind. Die `AddOrUpdate` Methode möglicherweise nicht die beste Wahl für Ihr Szenario. Weitere Informationen finden Sie unter [kümmern mit EF 4.3 AddOrUpdate Methode](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/) Julie lermans Blog.
 
-
 Drücken Sie STRG + UMSCHALT + B, um das Projekt erstellen.
 
 Der nächste Schritt ist die Erstellung einer `DbMigration` -Klasse für die anfängliche Migration. Sie möchten diese Migration auf eine neue Datenbank erstellen, müssen Sie die Datenbank zu löschen, die bereits vorhanden ist. SQL Server Compact-Datenbanken befinden sich *.sdf* Dateien in die *App\_Daten* Ordner. In **Projektmappen-Explorer**, erweitern Sie *App\_Daten* im ContosoUniversity-Projekt auf die beiden SQL Server Compact-Datenbanken finden Sie unter dem durch dargestellt *.sdf*Dateien.
@@ -187,7 +185,6 @@ Wenn Sie einen Standort zum ersten Mal bereitstellen, ist es üblich, schließen
 
 > [!NOTE]
 > Die Mitgliedschaftsdatenbank speichert einen Hash der Kennwörter. Zum Bereitstellen von Konten, die von einem Computer zu einem anderen müssen Sie sicherstellen, dass hashing Routinen verschiedenen Hashes auf dem Zielserver kein generieren, als auf dem Quellcomputer. Sie werden die gleichen Hashwerte generieren, bei der Verwendung der ASP.NET Universal Providers, solange Sie nicht, dass den Standard-Algorithmus ändern. Der Standardalgorithmus ist HMACSHA256 und wird angegeben, der **Überprüfung** Attribut der **[MachineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Element in der Datei "Web.config".
-
 
 Die Mitgliedschaftsdatenbank wird nicht beibehalten, indem Sie Code First-Migrationen, und es gibt keine automatische Initialisierung, die die Datenbank mit Testkonten startet (wie bei der Datenbank "School"). Aus diesem Grund zum Beibehalten von Testdaten zur Verfügung stellen Sie eine Kopie der Datenbank, bevor Sie eine neue Ressourcengruppe erstellen.
 

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 792f4513-a508-4d14-a0dd-1a2fe282c7bb
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 54b3afac9b19962b02336a35909b208c4e3f7504
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e045b17434d46fa1b6e7942db95ecad67c34a46
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400554"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134759"
 ---
 # <a name="part-4-adding-an-admin-view"></a>Teil 4: Hinzufügen einer-Administratoransicht
 
@@ -52,7 +52,6 @@ Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Views", und erwe
 > [!NOTE]
 > Im Beispielprojekt habe ich ein paar andere kosmetischen Änderungen ermöglicht, z. B. ersetzt die Zeichenfolge "Ihr Logo hier einfügen" vorgenommen. Dies betrifft nicht die Funktionalität der Anwendung verwenden. Sie können das Projekt herunterladen und vergleichen Sie die Dateien.
 
-
 Führen Sie die Anwendung, und klicken Sie auf den Link "Admin", der am oberen Rand der Startseite angezeigt wird. Die Seite "Administrator" sollte wie folgt aussehen:
 
 ![](using-web-api-with-entity-framework-part-4/_static/image3.png)
@@ -79,7 +78,6 @@ Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Controllers", un
 
 > [!NOTE]
 > MVC und Web-API, die beide definieren **autorisieren** Attribute, die in verschiedenen Namespaces. MVC verwendet **System.Web.Mvc.AuthorizeAttribute**, während die Web-API verwendet **"System.Web.http.AuthorizeAttribute"**.
-
 
 Nur Administratoren können jetzt die Seite "Administrator" anzeigen. Wenn Sie mit dem Admin-Controller eine HTTP-Anforderung senden, muss die Anforderung außerdem ein Authentifizierungscookie enthalten. Wenn dies nicht der Fall ist, wird der Server sendet eine HTTP 401 (nicht autorisiert)-Antwort. Dies sehen Sie in Fiddler durch Senden einer GET-Anforderung zu `http://localhost:*port*/api/admin`.
 

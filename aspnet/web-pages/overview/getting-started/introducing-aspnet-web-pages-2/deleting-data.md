@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: e9ffe0ea3e2bf817675a4a771d3471ec6eb91133
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8620fc1abc61d514bdc039c66f7a84e67e89abe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406742"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133492"
 ---
 # <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Einführung in ASP.NET Web Pages: Löschen von DatenbankenDaten
 
@@ -33,7 +33,6 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > - Die `WebGrid` Helper.
 > - Die SQL-Anweisung `Delete` Befehl.
 > - Die `Database.Execute` Methode für die Ausführung einer SQL `Delete` Befehl.
-
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
@@ -86,7 +85,6 @@ Nun können Sie die Seite erstellen, die das Ziel für die **löschen** -Link in
 > Wenn Ihre app auf Personen, die einen Datensatz zu ändern kann, müssen Sie den Datensatz für dem Benutzer vorhanden, für die Bearbeitung trotzdem. Aber Sie könnten versucht sein, überspringen Sie diesen Schritt für das Löschen eines Datensatzes. Überspringen Sie diesen Schritt, jedoch nicht. (Es ist auch hilfreich für Benutzer finden Sie unter dem Datensatz, und bestätigen Sie, dass sie den Datensatz löschen, den sie vorgesehen.)
 > 
 > In einer nachfolgenden Tutorial Menge sehen Sie, wie Anmeldename-Funktionalität hinzufügen, damit ein Benutzer sich anmelden, bevor das Löschen eines Datensatzes müssten.
-
 
 Erstellen Sie eine Seite mit dem Namen *DeleteMovie.cshtml* , und Ersetzen Sie die neuerungen in der Datei mit folgendem Markup:
 
