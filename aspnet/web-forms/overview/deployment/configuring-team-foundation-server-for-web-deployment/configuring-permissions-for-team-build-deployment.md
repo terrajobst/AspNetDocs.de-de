@@ -34,7 +34,7 @@ Wenn Sie den Team Foundation Server (TFS) 2010-Builddienst installieren, geben S
 Alle Bereitstellungsaufgaben, die erfordern Windows-Authentifizierung, und dass Sie planen, zur Automatisierung mithilfe von Team Build, werden mit der Dienstidentität für den Build ausgeführt. Daher müssen Sie der builddienstidentität alle erforderlichen Berechtigungen für Ihre Webserver und Ihrer Datenbankserver aufzurüsten gewähren.
 
 > [!NOTE]
-> Das Netzwerkdienstkonto verwendet das Computerkonto, andere Computer zu authentifizieren. Computerkonten haben die Form * [Domänenname]\[Machine-Name] ***$**&#x2014;z. B. **FABRIKAM\TFSBUILD$**. Wenn der Builddienst ausgeführt wird, mit der Identität Network Service, sollten Sie daher alle erforderlichen Berechtigungen, der die computerkontoidentität für Ihren Buildserver gewähren.
+> Das Netzwerkdienstkonto verwendet das Computerkonto, andere Computer zu authentifizieren. Computerkonten haben die Form *[Domänenname]\[Machine-Name]* **$** &#x2014;z. B. **FABRIKAM\TFSBUILD$** . Wenn der Builddienst ausgeführt wird, mit der Identität Network Service, sollten Sie daher alle erforderlichen Berechtigungen, der die computerkontoidentität für Ihren Buildserver gewähren.
 
 ## <a name="configuring-web-server-permissions"></a>Konfigurieren von Webserver-Berechtigungen
 
