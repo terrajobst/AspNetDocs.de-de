@@ -82,7 +82,7 @@ Die nächsten Elemente, die von MSBuild in der zusammengeführten Datei trifft s
 
 [!code-xml[Main](understanding-the-build-process/samples/sample3.xml)]
 
-Wenn MSBuild verarbeitet die erste **OutputRoot** -Element, ein ähnlich benannten Parameter wurde nicht angegeben ist, legt er den Wert des der **OutputRoot** Eigenschaft **... \Publish\Out**. Wenn es trifft die zweite **OutputRoot** Element, wenn das Ergebnis der bedingungsauswertung **"true"**, er überschreibt den Wert des der **OutputRoot** Eigenschaft mit dem Wert von der **OutDir** Parameter.
+Wenn MSBuild verarbeitet die erste **OutputRoot** -Element, ein ähnlich benannten Parameter wurde nicht angegeben ist, legt er den Wert des der **OutputRoot** Eigenschaft **... \Publish\Out**. Wenn es trifft die zweite **OutputRoot** Element, wenn das Ergebnis der bedingungsauswertung **"true"** , er überschreibt den Wert des der **OutputRoot** Eigenschaft mit dem Wert von der **OutDir** Parameter.
 
 Das nächste Element, das MSBuild feststellt wird ein einzelnes Elementgruppe enthält ein Element mit dem Namen **ProjectsToBuild**.
 
@@ -164,7 +164,7 @@ Erstens ist zu beachten, dass das öffnende Tag enthält eine **Ausgaben** Attri
 
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
-Dies ist ein Beispiel der *Zielbatchverarbeitung*. In MSBuild-Projektdateien ist Batchverarbeitung eine Technik zum iterieren durch Sammlungen aus. Der Wert des der **Ausgaben** -Attribut, **"% (DbPublishPackages.Identity)"**, bezieht sich auf die **Identität** Metadata-Eigenschaft von der **DbPublishPackages**  Elementliste. This notation, **Outputs=%***(ItemList.ItemMetadataName)*, is translated as:
+Dies ist ein Beispiel der *Zielbatchverarbeitung*. In MSBuild-Projektdateien ist Batchverarbeitung eine Technik zum iterieren durch Sammlungen aus. Der Wert des der **Ausgaben** -Attribut, **"% (DbPublishPackages.Identity)"** , bezieht sich auf die **Identität** Metadata-Eigenschaft von der **DbPublishPackages**  Elementliste. This notation, **Outputs=%** *(ItemList.ItemMetadataName)* , is translated as:
 
 - Teilen die Elemente in **DbPublishPackages** in Batches von Elementen, die denselben Container **Identität** Metadatenwert.
 - Führen Sie das Ziel einmal pro Batch.
@@ -178,7 +178,7 @@ Sehen Sie eine ähnliche Notation in der  **\_Cmd** -Eigenschaft, die einen VSDB
 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
-In diesem Fall **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, und **%(DbPublishPackages.FullPath)** verweisen alle auf Metadatenwerte, der die **DbPublishPackages** Elementauflistung. Die  **\_Cmd** Eigenschaft wird verwendet, durch die **Exec** Aufgabe, das den Befehl aufruft.
+In diesem Fall **%(DbPublishPackages.DatabaseConnectionString)** , **%(DbPublishPackages.TargetDatabase)** , und **%(DbPublishPackages.FullPath)** verweisen alle auf Metadatenwerte, der die **DbPublishPackages** Elementauflistung. Die  **\_Cmd** Eigenschaft wird verwendet, durch die **Exec** Aufgabe, das den Befehl aufruft.
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
 

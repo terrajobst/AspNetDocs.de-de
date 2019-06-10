@@ -83,7 +83,7 @@ Eine Projektdatei muss in der Regel bieten viele unterschiedliche Arten von Info
 
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
-Um einen Eigenschaftswert abzurufen, verwenden Sie das Format **$(***PropertyName***) ***.* Beispielsweise, um das Abrufen des Werts der **ServerName** -Eigenschaft, geben Sie Folgendes ein:
+Um einen Eigenschaftswert abzurufen, verwenden Sie das Format * *$(***PropertyName***)***.* Beispielsweise, um das Abrufen des Werts der **ServerName** -Eigenschaft, geben Sie Folgendes ein:
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
 
@@ -97,7 +97,7 @@ Einbetten von Informationen als statische Eigenschaften in einer Projektdatei is
 > [!NOTE]
 > Weitere Informationen zu die Argumente und Schalter Sie mit MSBuild.exe können, finden Sie unter [MSBuild-Befehlszeilenreferenz](https://msdn.microsoft.com/library/ms164311.aspx).
 
-Sie können die gleiche Eigenschaftensyntax verwenden, um die Werte der Umgebungsvariablen und integrierten Eigenschaften zu erhalten. Viele häufig verwendete Eigenschaften, die für Sie definiert sind, und können Sie sie in den Projektdateien durch den Namen des entsprechenden Parameters einschließen. Beispielsweise zum Abrufen der aktuellen Projektplattform&#x2014;z. B. **X86** oder **"anycpu"**&#x2014;zählen Sie die **$(Platform)** eigenschaftsreferenz im der Projektdatei. Weitere Informationen finden Sie unter [Makros für Buildbefehle und-Eigenschaften](https://msdn.microsoft.com/library/c02as0cs.aspx), [gemeinsame MSBuild-Projekteigenschaften](https://msdn.microsoft.com/library/bb629394.aspx), und [reservierte Eigenschaften](https://msdn.microsoft.com/library/ms164309.aspx).
+Sie können die gleiche Eigenschaftensyntax verwenden, um die Werte der Umgebungsvariablen und integrierten Eigenschaften zu erhalten. Viele häufig verwendete Eigenschaften, die für Sie definiert sind, und können Sie sie in den Projektdateien durch den Namen des entsprechenden Parameters einschließen. Beispielsweise zum Abrufen der aktuellen Projektplattform&#x2014;z. B. **X86** oder **"anycpu"** &#x2014;zählen Sie die **$(Platform)** eigenschaftsreferenz im der Projektdatei. Weitere Informationen finden Sie unter [Makros für Buildbefehle und-Eigenschaften](https://msdn.microsoft.com/library/c02as0cs.aspx), [gemeinsame MSBuild-Projekteigenschaften](https://msdn.microsoft.com/library/bb629394.aspx), und [reservierte Eigenschaften](https://msdn.microsoft.com/library/ms164309.aspx).
 
 Eigenschaften werden häufig in Verbindung mit verwendet *Bedingungen*. Die meisten MSBuild-Elemente unterstützen die **Bedingung** -Attribut, das können Sie die Kriterien angeben, auf dem MSBuild sollte das Element ausgewertet. Betrachten Sie z. B. dieser Eigenschaftendefinition ein:
 
@@ -161,8 +161,8 @@ Ziele und die Aufgaben zählen **Bedingung** Attribute. Daher können Sie auswä
 
 Wenn Sie nützliche Aufgaben und Ziele erstellen, müssen Sie im Allgemeinen finden in die Eigenschaften und Elemente, die Sie an anderer Stelle in der Projektdatei definiert haben:
 
-- Um einen Eigenschaftswert zu verwenden, geben **$(***PropertyName***)**, wobei *PropertyName* ist der Name des der **Eigenschaft** Element oder den Namen der der Parameter.
-- Um ein Element zu verwenden, geben **@(***ItemName***)**, wobei *ItemName* ist der Name des der **Element** Element.
+- Um einen Eigenschaftswert zu verwenden, geben **$(***PropertyName***)** , wobei *PropertyName* ist der Name des der **Eigenschaft** Element oder den Namen der der Parameter.
+- Um ein Element zu verwenden, geben **@(***ItemName***)** , wobei *ItemName* ist der Name des der **Element** Element.
 
 > [!NOTE]
 > Denken Sie daran, dass wenn Sie mehrere Elemente mit dem gleichen Namen erstellen, Sie eine Liste erstellen. Im Gegensatz dazu, wenn Sie mehrere Eigenschaften mit dem gleichen Namen erstellen, der letzte Eigenschaftenwert, die Sie bereitstellen, überschreibt alle vorherigen Eigenschaften mit dem gleichen Namen&#x2014;eine Eigenschaft kann nur einen einzelnen Wert enthalten.
@@ -173,7 +173,7 @@ Z. B. in der *Publish.proj* Datei in der Beispielprojektmappe, sehen Sie sich di
 
 In diesem Beispiel können Sie diese wichtigen Punkte beachten:
 
-- Wenn die **BuildingInTeamBuild** Parameter angegeben ist, und hat den Wert **"true"**, keinen der Tasks in diesem Ziel wird ausgeführt.
+- Wenn die **BuildingInTeamBuild** Parameter angegeben ist, und hat den Wert **"true"** , keinen der Tasks in diesem Ziel wird ausgeführt.
 - Das Ziel enthält eine einzelne Instanz der [MSBuild](https://msdn.microsoft.com/library/z7f65y0d.aspx) Aufgabe. Mit diesem Task können Sie die anderen MSBuild-Projekte zu erstellen.
 - Die **ProjectsToBuild** Element an die Aufgabe übergeben wird. Dieses Element kann eine Liste der Projektmappen- oder Projektdateien, durch alle definierten darstellen **ProjectsToBuild** item-Elemente in einer Elementgruppe. In diesem Fall die **ProjectsToBuild** Element bezieht sich auf einer einzelnen Projektmappe-Datei.
 

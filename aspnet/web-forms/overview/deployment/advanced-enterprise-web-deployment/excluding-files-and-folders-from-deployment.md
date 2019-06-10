@@ -88,7 +88,7 @@ Im nächste Verfahren veranschaulicht das Hinzufügen einer *. wpp.targets* Date
 1. Öffnen Sie die Projektmappe in Visual Studio 2010.
 2. In der **Projektmappen-Explorer** Fenster mit der rechten Maustaste des Projektknoten der Web-Anwendung (z. B. **ContactManager.Mvc**), zeigen Sie auf **hinzufügen**, und klicken Sie dann auf **Neues Element**.
 3. In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **XML-Datei** Vorlage.
-4. In der **Namen** geben *[Projektname] ***.wpp.targets** (z. B. **ContactManager.Mvc.wpp.targets**), und klicken Sie dann auf **hinzufügen**.
+4. In der **Namen** geben *[Projektname]* **.wpp.targets** (z. B. **ContactManager.Mvc.wpp.targets**), und klicken Sie dann auf **hinzufügen**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 
