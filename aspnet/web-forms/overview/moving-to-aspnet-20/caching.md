@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 39f4eb7b0859cf52fe3ed2531e9c349b465b9327
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4f0b021ca6ca151544dd9fb0587ed9e0cf14ff65
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116852"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411242"
 ---
 # <a name="caching"></a>Zwischenspeicherung
 
@@ -94,7 +94,7 @@ Beim Ausführen dieses Befehls werden die folgenden Änderungen mit der SQL Serv
 | AspNet\_SqlCacheUnRegisterTableStoredProcedure | Hebt die Registrierung für einer Tabelle für die SQL-Cacheabhängigkeit durch das Entfernen des Eintrags in der Benachrichtigungstabelle aus, und entfernt den Trigger. |
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | Aktualisiert die Benachrichtigungstabelle durch Erhöhen der ChangeId für die geänderte Tabelle. ASP.NET verwendet diesen Wert um zu bestimmen, ob die Daten geändert haben. Wie unten angegeben, wird diese gespeicherte Prozedur ausgeführt, durch den Trigger erstellt, wenn die Tabelle aktiviert ist. |
 
-- Ein SQL Server-Trigger aufgerufen ***Tabelle\_Name *\_AspNet\_SqlCacheNotification\_Trigger** wird für die Tabelle erstellt. Dieser Trigger ausgeführt wird, das AspNet\_SqlCacheUpdateChangeIdStoredProcedure, wenn eine INSERT-, Update- oder DELETE für die Tabelle ausgeführt wird.
+- Ein SQL Server-Trigger aufgerufen  **_Tabelle\_Namen_\_AspNet\_SqlCacheNotification\_Trigger** wird für die Tabelle erstellt. Dieser Trigger ausgeführt wird, das AspNet\_SqlCacheUpdateChangeIdStoredProcedure, wenn eine INSERT-, Update- oder DELETE für die Tabelle ausgeführt wird.
 - SQL Server-Rolle namens **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** wird in der Datenbank hinzugefügt.
 
 Die **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server-Rolle verfügt über EXEC-Berechtigungen für das AspNet\_SqlCachePollingStoredProcedure. In der Reihenfolge für das Modell abrufen ordnungsgemäß funktioniert, müssen Sie Ihr Konto hinzufügen, auf das Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess-Rolle. Das Aspnet\_regsql.exe-Tool wird dies nicht für Sie.
@@ -142,7 +142,7 @@ Weitere Informationen: [https://msdn.microsoft.com/library/t9x04ed2.aspx](https:
 
 Wenn Sie SQL Server 2005 für SQL-Cacheabhängigkeit zu verwenden, ist das Abrufintervall-basierte Modell nicht erforderlich. Bei Verwendung mit SQL Server 2005, SQL-cacheabhängigkeiten zu kommunizieren direkt über die SQL-Verbindungen mit SQL Server-Instanz (keine weitere Konfiguration ist erforderlich) mit SQL Server 2005-abfragebenachrichtigungen.
 
-Die einfachste Möglichkeit, die abfragebasierte Benachrichtigung aktiviert ist, tun Sie dies deklarativ durch Festlegen der **SqlCacheDependency** Attribut das Datenquellenobjekt **CommandNotification** und Festlegen der **EnableCaching** Attribut **"true"**. Mit dieser Methode ist kein Code erforderlich. Wenn Sie das Ergebnis eines Befehls für die Daten quelländerungen ausgeführt, wird es die Daten im Cache ungültig.
+Die einfachste Möglichkeit, die abfragebasierte Benachrichtigung aktiviert ist, tun Sie dies deklarativ durch Festlegen der **SqlCacheDependency** Attribut das Datenquellenobjekt **CommandNotification** und Festlegen der **EnableCaching** Attribut **"true"** . Mit dieser Methode ist kein Code erforderlich. Wenn Sie das Ergebnis eines Befehls für die Daten quelländerungen ausgeführt, wird es die Daten im Cache ungültig.
 
 Im folgenden Beispiel wird ein Datenquellen-Steuerelement für die SQL-Cacheabhängigkeit:
 

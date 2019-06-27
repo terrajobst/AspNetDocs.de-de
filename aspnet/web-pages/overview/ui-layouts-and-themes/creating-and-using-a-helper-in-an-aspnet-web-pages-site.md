@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 380663951094c9fc7d5f0601e30995fa073a204b
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116038"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410967"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>Erstellen und Verwenden eines Hilfsprogramms in einer ASP.NET Web Pages (Razor)-Website
 
@@ -71,7 +71,7 @@ Dieses Verfahren zeigt, wie Sie das Hilfsprogramm zu erstellen, das die Beachten
     Verwenden Sie zum Aufrufen der Hilfsmethode Erstellung `@` gefolgt von den Dateinamen, in dem das Hilfsprogramm ist, einen Punkt, und klicken Sie dann den Hilfsprogramm-Namen. (Wenn Sie mehrere Ordner, in haben der *App\_Code* Ordner können Sie die Syntax `@FolderName.FileName.HelperName` aufrufen, die Hilfsmethode in einer beliebigen geschachtelte Ordner der obersten Ebene). Der Text, den Sie in Anführungszeichen innerhalb der Klammern hinzufügen, ist der Text, den das Hilfsprogramm als Teil der Notiz auf der Webseite angezeigt wird.
 3. Speichern Sie die Seite, und führen Sie sie in einem Browser. Das Hilfsprogramm generiert das Hinweis Element direkt, wenn Sie das Hilfsprogramm aufgerufen: zwischen den beiden Absätze tauschen.
 
-    ![Screenshot die Seite im Browser, und wie das Hilfsprogramm Markup generiert, die einen Rahmen um den angegebenen Text wird angezeigt.](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
+    ![Screenshot die Seite im Browser, und wie das Hilfsprogramm Markup generiert, die einen Rahmen um den angegebenen Text wird angezeigt.](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.png)
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 

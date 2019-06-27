@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f56241a6a3d1d54f917d366b08edb4a1a43bbce8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2b84b4e0f57bdddb83fc79494b66be76edcad664
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134445"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411004"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>Anzeigen einer benutzerdefinierten Fehlerseite (C#)
 
@@ -137,8 +137,10 @@ Mit dieser Änderung vorgenommen wurde, wenn ein Benutzer Zugriff auf Remote ein
 > [!NOTE]
 > Sehen Sie sich [404-Fehlerseiten, mehr einmal](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/) Anleitungen zum Erstellen von Seiten für effektive 404-Fehler.
 
-[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**Abbildung 7**: Die Seite benutzerdefinierte 404-Fehler in einer Meldung besser abgestimmten als `Oops.aspx`  
- ([Klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-custom-error-page-cs/_static/image20.png)) 
+[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)
+
+**Abbildung 7**: Die Seite benutzerdefinierte 404-Fehler in einer Meldung besser abgestimmten als `Oops.aspx`  
+([Klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
 Da Sie wissen, dass die `404.aspx` Seite wird nur erreicht werden, wenn der Benutzer für eine Seite anfordert, die nicht gefunden wurde, können Sie erweitern dieses benutzerdefinierte Fehlerseite Funktionen können Sie den Benutzer, die diese bestimmte Art von Fehler zu beheben. Z. B. Sie eine Datenbanktabelle, der zugeordnet gute URLs bekanntermaßen fehlerhafte URLs erstellen und dann konnte der `404.aspx` benutzerdefinierte Fehlerseite führen Sie eine Abfrage, die Tabelle und Seiten, die der Benutzer zu erreichen versuchen möglicherweise vorschlagen.
 

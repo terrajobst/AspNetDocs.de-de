@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c7d4802063c8610a246afe67bd15eea429f7304a
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128401"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410845"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Arbeiten mit HTML-Formularen in ASP.NET Web Pages (Razor)-Websites
 
@@ -51,7 +51,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
     [!code-html[Main](4-working-with-forms/samples/sample1.html)]
 3. Starten Sie die Seite in Ihrem Browser. (In WebMatrix, in der **Dateien** Arbeitsbereich mit der rechten Maustaste in der das, und wählen Sie dann **in Browser starten**.) Ein einfaches Formular mit drei Felder für die Eingabe und eine **senden** -Schaltfläche angezeigt wird.
 
-    ![Screenshot des ein Formular mit drei Textfelder.](4-working-with-forms/_static/image1.jpg)
+    ![Screenshot des ein Formular mit drei Textfelder.](4-working-with-forms/_static/image1.png)
 
     An diesem Punkt, wenn Sie auf die **senden** Schaltfläche geschieht nichts. Um das Formular zu nutzen, müssen Sie Code hinzufügen, der auf dem Server ausgeführt wird.
 
@@ -67,7 +67,7 @@ Um das Formular zu verarbeiten, fügen Sie Code, der die übermittelten Feldwert
 
     Wenn Sie dieses Mal die Seite senden, werden die eingegebenen Werte direkt über das Formular angezeigt werden:
 
-    ![Screenshot mit den von die Ihnen eingegebenen Werte auf der Seite angezeigt.](4-working-with-forms/_static/image2.jpg)
+    ![Screenshot mit den von die Ihnen eingegebenen Werte auf der Seite angezeigt.](4-working-with-forms/_static/image2.png)
 
     Sehen Sie sich den Code für die Seite. Verwenden Sie zunächst die `IsPost` Methode, um zu bestimmen, ob die Seite zurückgesendet wird, wird &#8212; , also an, ob der Benutzer geklickt hat die **senden** Schaltfläche. Ist dies eine Post `IsPost` "Wahr" zurückgegeben. Dies ist das Standardverfahren in ASP.NET Web Pages zu bestimmen, ob Sie mit der ersten Anforderung (eine GET-Anforderung) oder ein Postback (eine POST-Anforderung) arbeiten. (Weitere Informationen zu den Get- und POST, finden Sie unter der Randleiste "HTTP-GET und POST und der IsPost-Eigenschaft" in [Einführung in ASP.NET Web Pages-Programmierung verwenden die Razor-Syntax](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
 

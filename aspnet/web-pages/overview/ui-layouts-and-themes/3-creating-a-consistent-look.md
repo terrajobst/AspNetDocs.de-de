@@ -8,12 +8,12 @@ ms.date: 03/10/2014
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 7d580b3812c4a09d6bc8d34c46dc82339ba40ee8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3f63ce68ae4c13970ac0df196167ace0b22b592c
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133373"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411259"
 ---
 # <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>Erstellen eines konsistenten Layouts in ASP.NET Web Pages (Razor)-Websites
 
@@ -53,9 +53,9 @@ Das folgende Diagramm zeigt, wie Inhalt Arbeit blockiert wird. Wenn ein Browser 
 
 In diesem Verfahren erstellen Sie eine Seite, die zwei Inhaltsblöcke (eine Kopfzeile und eine Fußzeile) verweist, die in separaten Dateien gespeichert sind. Sie können die gleichen Inhalte Blöcke in einer beliebigen Seite auf Ihrer Website verwenden. Wenn Sie fertig sind, erhalten Sie eine Seite wie folgt:
 
-![Screenshot der Seite im Browser, der sich ergibt, die von der Ausführung einer Seite, die Aufrufe der RenderPage-Methode enthält.](3-creating-a-consistent-look/_static/image2.jpg)
+![Screenshot der Seite im Browser, der sich ergibt, die von der Ausführung einer Seite, die Aufrufe der RenderPage-Methode enthält.](3-creating-a-consistent-look/_static/image2.png)
 
-1. Erstellen Sie im Stammordner der Website, eine Datei namens *"Index.cshtml"*.
+1. Erstellen Sie im Stammordner der Website, eine Datei namens *"Index.cshtml"* .
 2. Ersetzen Sie das vorhandene Markup durch Folgendes:
 
     [!code-html[Main](3-creating-a-consistent-look/samples/sample1.html)]
@@ -80,7 +80,7 @@ In diesem Verfahren erstellen Sie eine Seite, die zwei Inhaltsblöcke (eine Kopf
 8. Führen Sie die *"Index.cshtml"* Seite in einem Browser. (In WebMatrix, in der **Dateien** Arbeitsbereich mit der rechten Maustaste in der das, und wählen Sie dann **in Browser starten**.)
 9. Zeigen Sie den Quellcode der Seite im Browser. (Z. B. in Internet Explorer Maustaste auf die Seite, und klicken Sie dann auf **Quelltext anzeigen**.)
 
-    Dadurch können Sie das Markup einer Webseite anzuzeigen, das an den Browser gesendet wird, die im Markup der Seite Index mit die Inhaltsblöcke kombiniert. Das folgende Beispiel zeigt den Quellcode der Seite, die für die gerendert wird *"Index.cshtml"*. Die Aufrufe an `RenderPage` , die Sie eingefügt *"Index.cshtml"* mit den eigentlichen Inhalt der Kopf- und Fußzeile Dateien ersetzt wurden.
+    Dadurch können Sie das Markup einer Webseite anzuzeigen, das an den Browser gesendet wird, die im Markup der Seite Index mit die Inhaltsblöcke kombiniert. Das folgende Beispiel zeigt den Quellcode der Seite, die für die gerendert wird *"Index.cshtml"* . Die Aufrufe an `RenderPage` , die Sie eingefügt *"Index.cshtml"* mit den eigentlichen Inhalt der Kopf- und Fußzeile Dateien ersetzt wurden.
 
     [!code-html[Main](3-creating-a-consistent-look/samples/sample5.html)]
 
@@ -118,7 +118,7 @@ Das folgende Verfahren veranschaulicht das Erstellen eines Layouts und einen Hyp
     Dies ist eine Seite, die eine Layoutseite verwendet werden. Der Codeblock am oberen Rand der Seite gibt an, welche Layoutseite verwenden, um diesen Inhalt zu formatieren.
 7. Führen Sie *Content1.cshtml* in einem Browser. Die gerenderte Seite verwendet das Format und das Stylesheet definiert wird,  *\_Layout1.cshtml* und der Text (Inhalt), die in definierten *Content1.cshtml*.
 
-    ![[Image]](3-creating-a-consistent-look/_static/image4.jpg)
+    ![[Image]](3-creating-a-consistent-look/_static/image4.png)
 
     Wiederholen Sie Schritt 6, um zusätzliche Inhaltsseiten zu erstellen, die klicken Sie dann die gleichen Layoutseite freigeben können.
 
@@ -148,7 +148,7 @@ Diese Prozedur zeigt, wie eine Inhaltsseite erstellen, die mehrere Inhaltsabschn
     Diese Seite enthält einen Codeblock am oberen Rand der Seite. Jeder benannten Abschnitt befindet sich in einem Abschnittsblock. Der Rest der Seite enthält der Abschnitt zum Inhalt des standardmäßige (unbenannte).
 4. Führen Sie *Content2.cshtml* in einem Browser.
 
-    ![Screenshot der Seite im Browser, der sich ergibt, die von der Ausführung einer Seite, die Aufrufe der Methode RenderSection enthält.](3-creating-a-consistent-look/_static/image6.jpg)
+    ![Screenshot der Seite im Browser, der sich ergibt, die von der Ausführung einer Seite, die Aufrufe der Methode RenderSection enthält.](3-creating-a-consistent-look/_static/image6.png)
 
 ## <a name="making-content-sections-optional"></a>Inhaltsabschnitte machen Optional
 
@@ -165,7 +165,7 @@ Jedoch können Sie dieses Verhalten für einen benannten Abschnitt überschreibe
     [!code-cshtml[Main](3-creating-a-consistent-look/samples/sample12.cshtml)]
 2. Speichern Sie die Seite, und führen Sie es in einem Browser. Eine Fehlermeldung wird angezeigt, da die Inhaltsseite Inhalt für einen Abschnitt definiert, die auf der Layoutseite, nämlich den Headerbereich bereitzustellen nicht.
 
-    ![Screenshot, der der Fehler angezeigt, der auftritt wird, wenn Sie eine Seite ausführen, ruft RenderSection-Methode im entsprechende Abschnitt wird jedoch nicht bereitgestellt.](3-creating-a-consistent-look/_static/image7.jpg)
+    ![Screenshot, der der Fehler angezeigt, der auftritt wird, wenn Sie eine Seite ausführen, ruft RenderSection-Methode im entsprechende Abschnitt wird jedoch nicht bereitgestellt.](3-creating-a-consistent-look/_static/image7.png)
 3. In der *Shared* Ordner die  *\_Layout2.cshtml* Seite, und Ersetzen Sie diese Zeile:
 
     [!code-javascript[Main](3-creating-a-consistent-look/samples/sample13.js)]
@@ -210,10 +210,10 @@ Das folgende Verfahren zeigt, wie Daten von einer Inhaltsseite zu einer Layoutse
     [!code-html[Main](3-creating-a-consistent-look/samples/sample18.html)]
 4. Führen Sie die *Content3.cshtml* Seite in einem Browser. Die Seite wird angezeigt, mit der Liste auf der linken Seite der Seite angezeigt und eine **Liste ausblenden** unten auf die Schaltfläche.
 
-    ![Screenshot der Seite, die die Liste und eine Schaltfläche mit dem Text "Ausblenden List" enthält.](3-creating-a-consistent-look/_static/image10.jpg)
+    ![Screenshot der Seite, die die Liste und eine Schaltfläche mit dem Text "Ausblenden List" enthält.](3-creating-a-consistent-look/_static/image10.png)
 5. Klicken Sie auf **Liste**. Die Liste wird ausgeblendet, und die Schaltfläche **Liste anzeigen**.
 
-    ![Screenshot der Seite, die die Liste und eine Schaltfläche mit dem Text "Anzeigen der Liste" nicht enthalten ist.](3-creating-a-consistent-look/_static/image11.jpg)
+    ![Screenshot der Seite, die die Liste und eine Schaltfläche mit dem Text "Anzeigen der Liste" nicht enthalten ist.](3-creating-a-consistent-look/_static/image11.png)
 6. Klicken Sie auf die **Liste anzeigen** Schaltfläche und die Liste wird erneut angezeigt.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen

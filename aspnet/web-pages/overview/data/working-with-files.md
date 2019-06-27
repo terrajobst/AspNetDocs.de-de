@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 684c47a8a8480dc040e5144144577c94c35d39e5
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108944"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411187"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>Arbeiten mit Dateien in einer ASP.NET Web Pages (Razor)-Website
 
@@ -22,7 +22,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > In diesem Artikel wird erläutert, wie lesen, schreiben, anfügen, löschen und Hochladen von Dateien in einer ASP.NET Web Pages (Razor)-Website.
 > 
 > > [!NOTE]
-> > Zum Hochladen von Bildern sowie zum Bearbeiten dieser Wunsch (z. B. kippen oder ihre Größe ändern), finden Sie unter [arbeiten mit Bildern in einer ASP.NET Web Pages-Website](https://go.microsoft.com/fwlink/?LinkId=202897).
+> > Zum Hochladen von Bildern sowie zum Bearbeiten dieser Wunsch (z. B. kippen oder ihre Größe ändern), finden Sie unter [arbeiten mit Bildern in einer ASP.NET Web Pages-Website](/aspnet/web-pages/overview/ui-layouts-and-themes/9-working-with-images).
 > 
 > 
 > **Sie lernen Folgendes:** 
@@ -72,7 +72,7 @@ Wenn Sie Daten in einer Textdatei speichern möchten, können Sie mithilfe der `
 
     Klicken Sie dann erstellen Sie eine Variable (`dataFile`), der den Speicherort und Namen der Datei zum Speichern der Daten enthält. Festlegen des Speicherorts ist eine besondere Behandlung erforderlich. In Websites, ist es kein empfehlenswertes Verfahren, verweisen im Code in absolute Pfade wie *C:\Folder\File.txt* für Dateien auf dem Webserver. Wenn eine Website verschoben wird, wird ein absoluter Pfad falsch sein. Darüber hinaus nicht für eine gehostete Website (im Gegensatz zu auf dem lokalen Computer) wissen Sie in der Regel einmal, was der Pfad korrekte ist, wenn Sie den Code schreiben.
 
-    Jedoch in einigen Fällen (z. B. Now, für das Schreiben einer Datei) benötigen Sie einen vollständigen Pfad. Die Lösung ist die Verwendung der `MapPath` Methode der `Server` Objekt. Dies gibt den vollständigen Pfad zu Ihrer Website zurück. Beim Abrufen des Pfads für das Stammverzeichnis der Website, die Benutzer Sie die `~` Operator (Represen die Website die virtuellen Stamm), `MapPath`. (Sie können auch einen Unterordnernamen, übergeben, z. B. *~/App\_Daten /*, um den Pfad für diesen Unterordner zu erhalten.) Sie können dann verketten Zusatzinformationen auf unabhängig von die Methode zurückgegeben wird, um einen vollständigen Pfad zu erstellen. In diesem Beispiel fügen Sie einen Dateinamen hinzu. (Weitere Informationen zum Arbeiten mit Datei- und Ordnerpfade in [Einführung in ASP.NET Web Pages-Programmierung verwenden die Razor-Syntax](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths).)
+    Jedoch in einigen Fällen (z. B. Now, für das Schreiben einer Datei) benötigen Sie einen vollständigen Pfad. Die Lösung ist die Verwendung der `MapPath` Methode der `Server` Objekt. Dies gibt den vollständigen Pfad zu Ihrer Website zurück. Beim Abrufen des Pfads für das Stammverzeichnis der Website, die Benutzer Sie die `~` Operator (Represen die Website die virtuellen Stamm), `MapPath`. (Sie können auch einen Unterordnernamen, übergeben, z. B. *~/App\_Daten /* , um den Pfad für diesen Unterordner zu erhalten.) Sie können dann verketten Zusatzinformationen auf unabhängig von die Methode zurückgegeben wird, um einen vollständigen Pfad zu erstellen. In diesem Beispiel fügen Sie einen Dateinamen hinzu. (Weitere Informationen zum Arbeiten mit Datei- und Ordnerpfade in [Einführung in ASP.NET Web Pages-Programmierung verwenden die Razor-Syntax](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths).)
 
     Die Datei wird gespeichert, der *App\_Daten* Ordner. Dieser Ordner ist ein spezieller Ordner in ASP.NET, die zum Speichern von Datendateien verwendet wird, wie in beschrieben [Einführung in die Arbeit mit einer Datenbank in ASP.NET Web Pages-Websites](https://go.microsoft.com/fwlink/?LinkId=195209).
 
@@ -194,7 +194,7 @@ Die `FileUpload` Hilfsprogramm ermöglicht Benutzern das Hochladen von Dateien a
 
     *C:\Users\Public\Sample.txt*
 
-    Sie sollten alle diese Pfadinformationen, jedoch nicht da ist der Pfad auf dem Computer des Benutzers, nicht für Ihren Server. Sie möchten nur den tatsächlichen Dateinamen (*"Sample.txt"*). Sie können sich nur auf die Datei aus einem Pfad entfernen, mit der `Path.GetFileName` -Methode wie folgt:
+    Sie sollten alle diese Pfadinformationen, jedoch nicht da ist der Pfad auf dem Computer des Benutzers, nicht für Ihren Server. Sie möchten nur den tatsächlichen Dateinamen ( *"Sample.txt"* ). Sie können sich nur auf die Datei aus einem Pfad entfernen, mit der `Path.GetFileName` -Methode wie folgt:
 
     [!code-csharp[Main](working-with-files/samples/sample8.cs)]
 

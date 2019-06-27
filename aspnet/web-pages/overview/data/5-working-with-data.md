@@ -8,12 +8,12 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 4ed2a2a1ee3cff7a50e67b6571b85f74d01efab7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 45e988d037465e59ad352bb9444af2c69fd3cd70
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133215"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411272"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>Einführung in die Arbeit mit einer Datenbank in der ASP.NET Web Pages (Razor) Sites
 
@@ -94,7 +94,7 @@ Dieses Verfahren zeigt, wie Sie eine Datenbank mit Namen SmallBakery mit dem SQL
 
     Wenn Sie fertig sind, wird die Definition wie folgt aussehen:
 
-    ![[Image]](5-working-with-data/_static/image2.jpg)
+    ![[Image]](5-working-with-data/_static/image2.png)
 17. Drücken Sie STRG + S zum Speichern der Tabelle ein.
 
 ## <a name="adding-data-to-the-database"></a>Hinzufügen von Daten in der Datenbank
@@ -366,7 +366,7 @@ In diesem Abschnitt wird gezeigt, wie Benutzer ein Produkt aus löschen lassen d
 > 
 > Die zweite Möglichkeit ist die Verwendung eine Verbindungszeichenfolge. Eine Verbindungszeichenfolge enthält Informationen zum Herstellen einer Verbindung mit einer Datenbank. Dies kann einen Dateipfad einschließen, oder er kann den Namen einer SQL Server-Datenbank auf einem lokalen oder remote-Server, zusammen mit einem Benutzernamen und Kennwort für die Verbindung zu diesem Server enthalten. (Wenn Sie Daten in einer zentral verwalteten Version von SQL Server speichern, verwenden z. B. am Standort eines Hostinganbieters, Sie immer eine Verbindungszeichenfolge auf die Datenbank-Verbindungsinformationen angeben.)
 > 
-> In WebMatrix werden Verbindungszeichenfolgen in der Regel in einer XML-Datei mit dem Namen gespeichert *"Web.config"*. Wie der Name schon sagt, können Sie eine *"Web.config"* Datei im Stammverzeichnis Ihrer Website in der Website-Konfigurationsinformationen, einschließlich Verbindungszeichenfolgen, die Ihre Site muss möglicherweise zu speichern. Ein Beispiel für eine Verbindungszeichenfolge in einer *"Web.config"* Datei könnte folgendermaßen aussehen:
+> In WebMatrix werden Verbindungszeichenfolgen in der Regel in einer XML-Datei mit dem Namen gespeichert *"Web.config"* . Wie der Name schon sagt, können Sie eine *"Web.config"* Datei im Stammverzeichnis Ihrer Website in der Website-Konfigurationsinformationen, einschließlich Verbindungszeichenfolgen, die Ihre Site muss möglicherweise zu speichern. Ein Beispiel für eine Verbindungszeichenfolge in einer *"Web.config"* Datei könnte folgendermaßen aussehen:
 > 
 > [!code-xml[Main](5-working-with-data/samples/sample27.xml)]
 > 

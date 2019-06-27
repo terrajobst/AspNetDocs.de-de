@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 6040f1fa32e9df340ebf3f8635b9d07be871ee40
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 7b0b42c02439fdb76bceecc80af881e1d58e470d
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118928"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410820"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
 
@@ -205,7 +205,7 @@ Die folgenden Versionen von jQuery, die für das CDN gehostet werden:
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.slim.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.slim.min.map
 
-#### <a name="jquery-version-311"></a>3.1.1 jQuery-version
+#### <a name="jquery-version-311"></a>3\.1.1 jQuery-version
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js
@@ -396,7 +396,7 @@ Die folgenden Versionen von jQuery, die für das CDN gehostet werden:
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0-vsdoc.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.map
 
-#### <a name="jquery-version-191"></a>1.9.1 für jQuery-version
+#### <a name="jquery-version-191"></a>1\.9.1 für jQuery-version
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js
@@ -776,7 +776,7 @@ Die folgenden Versionen von [Globalize](https://github.com/jquery/globalize "Glo
 
 ### <a name="respond-releases-on-the-cdn"></a>Reagieren Sie Versionen für das CDN
 
-Die folgenden Versionen von [https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond") reagieren auf das CDN gehostet werden:
+Die folgenden Versionen von [reagieren](https://github.com/scottjehl/Respond "reagieren") für das CDN gehostet werden:
 
 #### <a name="respond-version-142"></a>Version 1.4.2 reagieren
 

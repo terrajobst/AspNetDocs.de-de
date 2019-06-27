@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
-ms.openlocfilehash: d03919e8465c28cf00bf057193452396523cb1af
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c123545099013af71569bce4707f2b3eb732c344
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125617"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411212"
 ---
 # <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>ASP.NET – Parallele Ausführung von .NET Framework 1.0 und 1.1
 
@@ -53,7 +53,7 @@ Um zu verhindern, die Automatisches Neuzuordnen von der gesamten ASP.NET-Anwendu
 4. Klicken Sie auf **OK**.  
   
     ![](side-by-side-with-10/_static/image1.gif)
-5. Geben Sie an der Eingabeaufforderung die folgende Zeile zum Starten der Installation von .NET Framework: **Dotnetfx.exe /c:"install /noaspupgrade?**.  
+5. Geben Sie an der Eingabeaufforderung die folgende Zeile zum Starten der Installation von .NET Framework: **Dotnetfx.exe /c:"install /noaspupgrade?** .  
   
     ![](side-by-side-with-10/_static/image2.gif)
 6. Klicken Sie auf **Ja** im Setup für Microsoft .NET Framework 1.1. Dadurch wird der Einrichtung von .NET Framework 1.1 gestartet.  
@@ -68,11 +68,11 @@ Jede Version von .NET Framework umfasst eine Version des ASP.NET IIS Registratio
 
 Das Aspnet\_regiis.exe für Version 1.0 befindet sich unter:
 
-- C:\WINDOWS\Microsoft.NET\Framework\**v1.0.3705**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v1.0.3705**\aspnet\_regiis
 
 Das Aspnet\_regiis.exe für Version 1,1 befindet sich unter:
 
-- C:\WINDOWS\Microsoft.NET\Framework\**v1.1.4322**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v1.1.4322**\aspnet\_regiis
 
 Das Aspnet\_regiis.exe bietet zwei Optionen für Skripts, die eine Webanwendung zuordnen:
 

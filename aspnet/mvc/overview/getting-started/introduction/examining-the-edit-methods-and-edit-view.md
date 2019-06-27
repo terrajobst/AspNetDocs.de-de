@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: c42ec77b5d5107f3ef70e13b779fc1bebef70a14
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 264f2ec5c497682f5e3e202dd69a835ff228e75b
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120704"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410868"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>Überprüfen der Edit-Methoden und -Ansicht
 
@@ -21,7 +21,7 @@ durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
-In diesem Abschnitt werden Sie überprüfen die generierte `Edit` Aktionsmethoden und Ansichten für die Movie-Controller. Aber zunächst wird eine kurze dieses Rätsel, um das Datum der Veröffentlichung Aussehen des Suchsteuerelements ansprechender machen. Öffnen der *Models\Movie.cs* Datei, und fügen Sie die unten gezeigten markierten Zeilen hinzu:
+In diesem Abschnitt werden Sie überprüfen die generierte `Edit` Aktionsmethoden und Ansichten für die Movie-Controller. Aber zuerst werfen wir einen kurzen dieses Rätsel, um das Datum der Veröffentlichung Aussehen des Suchsteuerelements ansprechender machen. Öffnen der *Models\Movie.cs* Datei, und fügen Sie die unten gezeigten markierten Zeilen hinzu:
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample1.cs?highlight=2,12-14)]
 

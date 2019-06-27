@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8ccad3b40a723c92a3164de082e1f94577141008
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125677"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411202"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4: Bedeutende Änderungen
 
@@ -63,13 +63,13 @@ Die wichtigsten Renderingänderungen, die das neue Verhalten bietet lauten wie f
 - Die **BaseValidator** -Klasse und die Validierungssteuerelemente, die von ihr abgeleitet werden nicht mehr Rendern roten Text standardmäßig.
 - Die **HtmlForm** Steuerelement rendert keine **Namen** Attribut.
 - Die **Tabelle** -Steuerelement nicht mehr rendert eine `border="0"` Attribut.
-- Steuerelemente, die nicht für Benutzereingaben entworfen wurden (z. B. die **Bezeichnung** Steuerelement), rendern nicht mehr die `disabled="disabled"` Attribut, wenn ihre **aktiviert** -Eigenschaftensatz auf **"false"**(oder wenn sie diese Einstellung von einem Containersteuerelement erben).
+- Steuerelemente, die nicht für Benutzereingaben entworfen wurden (z. B. die **Bezeichnung** Steuerelement), rendern nicht mehr die `disabled="disabled"` Attribut, wenn ihre **aktiviert** -Eigenschaftensatz auf **"false"** (oder wenn sie diese Einstellung von einem Containersteuerelement erben).
 
 <a id="0.1__Toc245724854"></a><a id="0.1__Toc255587631"></a><a id="0.1__Toc256770142"></a>
 
 ## <a name="clientidmode-changes"></a>Änderungen für "ClientIDMode"
 
-Die **"ClientIDMode"** -Einstellung in ASP.NET 4 können Sie angeben, wie ASP.NET generiert die **Id** -Attribut für HTML-Elemente. In früheren Versionen von ASP.NET entsprach das Standardverhalten, das **"AutoID"** -Einstellung **"ClientIDMode"**. Die Standardeinstellung ist jetzt jedoch **vorhersagbar**.
+Die **"ClientIDMode"** -Einstellung in ASP.NET 4 können Sie angeben, wie ASP.NET generiert die **Id** -Attribut für HTML-Elemente. In früheren Versionen von ASP.NET entsprach das Standardverhalten, das **"AutoID"** -Einstellung **"ClientIDMode"** . Die Standardeinstellung ist jetzt jedoch **vorhersagbar**.
 
 Wenn Sie Visual Studio 2010 verwenden, um die Anwendung von ASP.NET 2.0 oder ASP.NET 3.5 zu aktualisieren, fügt das Tool automatisch eine Einstellung, um die `Web.config` -Datei, die das Verhalten früherer Versionen von .NET Framework beibehält. Wenn Sie eine Anwendung jedoch upgraden, indem Sie den Anwendungspool in IIS so ändern, dass er sich an .NET Framework 4 richtet, verwendet ASP.NET standardmäßig den neuen Modus. Um den neuen Client-ID-Modus zu deaktivieren, fügen Sie die folgende Einstellung in der `Web.config` Datei:
 
@@ -362,7 +362,7 @@ Wenn Sie die legacy-CAS-Modell wiederherstellen, werden die folgenden alten CAS-
 - Es sind mehrere unterschiedliche Berechtigungssätze in einer einzelnen Anwendungsdomäne zulässig.
 - Explizite Berechtigung Assertionen sind nicht erforderlich, für Assemblys im GAC, die aufgerufen werden, wenn nur ASP.NET oder andere .NET Framework-Code auf dem Stapel befindet.
 
-Ein Szenario kann nicht wiederhergestellt werden, in .NET Framework 4: nicht-teilweise vertrauenswürdige Anwendungen können nicht mehr bestimmte APIs in "System.Web.dll" und System.Web.Extensions.dll aufrufen. In früheren Versionen von .NET Framework war es möglich, für nicht-Anwendungen mit eingeschränkter Vertrauenswürdigkeit explizit gewährt werden <strong>überschneidet AspNetHostingPermission</strong> Berechtigungen. Diese Anwendungen können dann <strong>System.Web.HttpUtility</strong>, Typen in der <strong>System.Web.ClientServices.\< / strong > *-Namespaces und Typen im Zusammenhang mit Mitgliedschaft, Rollen und Profile. Diese Typen von Anwendungen mit teilweiser Vertrauenswürdigkeit nicht-aufrufen ist in .NET Framework 4 nicht mehr unterstützt.
+Ein Szenario kann nicht wiederhergestellt werden, in .NET Framework 4: nicht-teilweise vertrauenswürdige Anwendungen können nicht mehr bestimmte APIs in "System.Web.dll" und System.Web.Extensions.dll aufrufen. In früheren Versionen von .NET Framework war es möglich, für nicht-Anwendungen mit eingeschränkter Vertrauenswürdigkeit explizit gewährt werden **überschneidet AspNetHostingPermission** Berechtigungen. Diese Anwendungen können dann **System.Web.HttpUtility**, Typen in der **System.Web.ClientServices.\***  Namespaces und Typen im Zusammenhang mit der Mitgliedschaft, Rollen und Profile. Diese Typen von Anwendungen mit teilweiser Vertrauenswürdigkeit nicht-aufrufen ist in .NET Framework 4 nicht mehr unterstützt.
 
 > [!NOTE]
 > Die **HtmlEncode** und **HtmlDecode** Funktionalität der **System.Web.HttpUtility** Klasse wurde verschoben, um die neuen .NET Framework 4  **System.Net.WebUtility** Klasse. War, die die einzige ASP.NET-Funktionalität, die verwendet wurde, ändern Sie den Code der Anwendung zur Verwendung der neuen **WebUtility** stattdessen.
@@ -457,7 +457,7 @@ Wenn Sie mit einem dynamischen Menü arbeiten, verwenden Sie die *Menu.DynamicPo
 
 [!code-aspx[Main](breaking-changes/samples/sample13.aspx)]
 
-Wenn die *Menu.DynamicPopOutImageUrl* Eigenschaft nicht festgelegt ist und die *Menu.DynamicEnableDefaultPopOutImage* -Eigenschaftensatz auf *"false"*, kein Bild angezeigt wird. Auf ähnliche Weise, wenn die *StaticPopOutImageUrl* Eigenschaft nicht festgelegt ist und die *StaticEnableDefaultPopOutImage* -Eigenschaftensatz auf *"false"*, kein Bild angezeigt.
+Wenn die *Menu.DynamicPopOutImageUrl* Eigenschaft nicht festgelegt ist und die *Menu.DynamicEnableDefaultPopOutImage* -Eigenschaftensatz auf *"false"* , kein Bild angezeigt wird. Auf ähnliche Weise, wenn die *StaticPopOutImageUrl* Eigenschaft nicht festgelegt ist und die *StaticEnableDefaultPopOutImage* -Eigenschaftensatz auf *"false"* , kein Bild angezeigt.
 
 Wenn Sie die Pfade für diese Eigenschaften festlegen, verwenden Sie einen Schrägstrich (/) anstelle von einem umgekehrten Schrägstrich (\). Weitere Informationen finden Sie unter [Menu.StaticPopOutImageUrl und Rendern von Images beim Pfade enthalten umgekehrte Schrägstriche nicht Menu.DynamicPopOutImageUrl](#0.1__Menu.StaticPopOutImageUrl_and_Menu. "_Menu.StaticPopOutImageUrl_and_Menu.") an anderer Stelle in diesem Dokument.
 
