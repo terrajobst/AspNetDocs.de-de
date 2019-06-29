@@ -2,18 +2,18 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 title: '[Gewusst wie:]  Implementieren der Ablaufverfolgung auf einer ASP.NET-Website? | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem Video wird Chris Pels veranschaulicht werden, wie zum Implementieren der Ablaufverfolgung auf einer ASP.NET-Website zu überwachen, oder die Leistung zu messen und Diagnostizieren von Fehlern. Erfahren Sie, wie...
+description: In diesem Video wird Chris Pels veranschaulicht werden, wie zum Implementieren der Ablaufverfolgung auf einer ASP.NET-Website zu überwachen, oder die Leistung zu messen und Diagnostizieren von Fehlern.
 ms.author: riande
 ms.date: 11/05/2007
 ms.assetid: b3abbbef-ddac-4c8e-a068-5bab31db5931
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: b3c38ef329f4b6b2afe5ba0cbb13b615b1580590
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0a17b2f73cde4e4d6914c38486d19438138e21cd
+ms.sourcegitcommit: a256895f6160acc28d75424b8ab5d03b4e74412e
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397590"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471407"
 ---
 # <a name="how-do-i--implement-tracing-in-an-aspnet-web-site"></a>[Gewusst wie:]  Implementieren der Ablaufverfolgung auf einer ASP.NET-Website?
 
