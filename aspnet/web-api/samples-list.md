@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 8cbd9d7f-7027-4390-b098-cb81a63ecd6f
 msc.legacyurl: /web-api/samples-list
 msc.type: content
-ms.openlocfilehash: 673ed803f65ece1f3cd7181a48f6c9debf88bf9e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24368fc80e7fc3c840f1f1f9accf13fa15a06c1b
+ms.sourcegitcommit: 503f3a3c74124edaa82cd50c387ad9f0c276b559
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390154"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67649134"
 ---
 # <a name="web-api-samples-list"></a>Liste der Web-API-Beispiele
 
@@ -30,7 +30,7 @@ Verwendet **"HttpClient"** zum Herunterladen einer Zuordnung von Redmond, WA, US
 
 **Twitter-Client-Beispiels** | [ausführliche Beschreibung](https://blogs.msdn.com/b/henrikn/archive/2012/02/16/extending-httpclient-with-oauth-to-access-twitter.aspx) | [VS 2012-Quelle](https://github.com/aspnet/samples/blob/master/samples/aspnet/HttpClient/TwitterSample)
 
-Schreiben Sie einen einfachen Twitter-Client mit veranschaulicht **"HttpClient"**. Das Beispiel verwendet eine **HttpMessageHandler** zum Einfügen von Informationen des OAuth-Authentifizierung in den ausgehenden **HttpRequestMessage**. Das Ergebnis von Twitter mit JSON.NET gelesen. Vor dem Ausführen dieses Beispiels benötigen Sie ein [Anwendungsschlüssel aus Twitter](https://dev.twitter.com/), und geben Sie die Informationen in der OAuthMessageHandler-Sample-Klasse.
+Schreiben Sie einen einfachen Twitter-Client mit veranschaulicht **"HttpClient"** . Das Beispiel verwendet eine **HttpMessageHandler** zum Einfügen von Informationen des OAuth-Authentifizierung in den ausgehenden **HttpRequestMessage**. Das Ergebnis von Twitter mit JSON.NET gelesen. Vor dem Ausführen dieses Beispiels benötigen Sie ein [Anwendungsschlüssel aus Twitter](https://dev.twitter.com/), und geben Sie die Informationen in der OAuthMessageHandler-Sample-Klasse.
 
 **Beispiel der Weltbank** | [ausführliche Beschreibung](https://blogs.msdn.com/b/henrikn/archive/2012/02/16/httpclient-is-here.aspx) | [VS 2010 Quelle](https://github.com/aspnet/samples/blob/master/samples/aspnet/HttpClient/WorldBankSample/Net40) | [VS 2012-Quelle](https://github.com/aspnet/samples/blob/master/samples/aspnet/HttpClient/WorldBankSample/Net45)
 
@@ -85,11 +85,11 @@ Dieses Beispiel ist die Beispieldatei hochladen ähnelt, aber statt die hochgela
 
 **HTTP-Message-Handler-Pipelinebeispiel** | [ausführliche Beschreibung](https://blogs.msdn.com/b/henrikn/archive/2012/08/07/httpclient-httpclienthandler-and-httpwebrequesthandler.aspx) | [VS 2010-Quelle](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/HttpMessageHandlerPipelineSample)
 
-Zeigt, wie verknüpfen **HttpMessageHandler** -Instanzen auf dem Client (**"HttpClient"**) und Server (ASP.NET Web-API). In diesem Beispiel wird der gleiche Handler auf dem Client und Server verwendet. Während es nur selten auftritt, dass der genaue gleiche Handler an beiden Orten ausgeführt werden würde, ist das Objektmodell auf Client- und Serverseite identisch.
+Zeigt, wie verknüpfen **HttpMessageHandler** -Instanzen auf dem Client ( **"HttpClient"** ) und Server (ASP.NET Web-API). In diesem Beispiel wird der gleiche Handler auf dem Client und Server verwendet. Während es nur selten auftritt, dass der genaue gleiche Handler an beiden Orten ausgeführt werden würde, ist das Objektmodell auf Client- und Serverseite identisch.
 
 **Hochladen von JSON-Beispiel** | [VS 2012-Quelle](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/JsonUploadSample)
 
-Zeigt, wie zum Hoch- und Herunterladen von JSON in und aus einem **ApiController**. Das Beispiel verwendet eine minimale **ApiController** und greift auf mit **"HttpClient"**.
+Zeigt, wie zum Hoch- und Herunterladen von JSON in und aus einem **ApiController**. Das Beispiel verwendet eine minimale **ApiController** und greift auf mit **"HttpClient"** .
 
 **Mashup-Beispiel** | [ausführliche Beschreibung](https://blogs.msdn.com/b/henrikn/archive/2012/03/03/async-mashups-using-asp-net-web-api.aspx) | [VS 2012-Quelle](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/MashupSample)
 
@@ -109,7 +109,7 @@ Zeigt, wie auf eine Antwortentität (d. h. eine HTTP-Antworttext) in einer lokal
 
 **Hochladen von "XDocument" Beispiel** | [ausführliche Beschreibung](https://blogs.msdn.com/b/henrikn/archive/2012/02/17/push-and-pull-streams-using-httpclient.aspx) | [VS 2012-Quelle](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/UploadXDocumentSample)
 
-Zeigt, wie einem XDocument zum Hochladen einer **ApiController** mit **PushStreamContent** und **"HttpClient"**.
+Zeigt, wie einem XDocument zum Hochladen einer **ApiController** mit **PushStreamContent** und **"HttpClient"** .
 
 **Beispiel für bindungsvalidierung** | [VS 2010-Quelle](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/ValidationSample)
 
