@@ -7,12 +7,12 @@ ms.author: riande
 title: ASP.NET Core-Dokumentation
 ms.date: 08/24/2018
 description: Erfahren Sie, wie Sie ASP.NET-Anwendungen und -Webanwendungen erstellen. Rufen Sie die Dokumentation, den Beispielcode, Tutorial und noch viel mehr ab.
-ms.openlocfilehash: c907f2ba66ba6ff197ced0c67243a963ffab17e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4bfa5b2a161cdf67f3d2df0057bd68958d8a5769
+ms.sourcegitcommit: f774732a3960fca079438a88a5472c37cf7be08a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384720"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68810741"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -27,7 +27,7 @@ ms.locfileid: "59384720"
                         <ul id="core_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
-                                    <p>ASP.NET Core ist ein neues, plattformübergreifendes Open Source-Framework zum Erstellen moderner, cloudbasierter Webanwendungen unter Windows, Mac oder Linux.</p>
+                                    <p>ASP.NET Core ist ein plattformübergreifendes Open-Source-Framework zum Erstellen moderner, cloudbasierter Webanwendungen unter Windows, Mac oder Linux.</p>
                                     <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">Lernen Sie die Vorteile von ASP.NET Core und ASP.NET kennen</a>, und wählen Sie das für Sie geeignete Framework aus.</p>
                                 </div>
                             </li>
@@ -148,7 +148,6 @@ ms.locfileid: "59384720"
                             <li class="fullSpan">
                                 <div class="container footer">
                                     <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Zu ASP.NET Core-Dokumentation und -Beispielen beitragen</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Find Visual Studio 2015/project.json version of the documentation (Suchen der Visual Studio 2015/project.json-Version der Dokumentation)</a></p>
                                 </div>
                             </li>
                         </ul>
