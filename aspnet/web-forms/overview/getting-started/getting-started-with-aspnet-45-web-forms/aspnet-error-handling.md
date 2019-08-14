@@ -309,7 +309,7 @@ In diesem Tutorial haben Sie erfahren, zur Behandlung von Fehlern auf die Ebene,
 
 ## <a name="tutorial-series-conclusion"></a>Zusammenfassung der Tutorialreihe
 
-*Nochmals vielen Dank für die folgenden zusammen. Ich hoffe, diese Reihe von Lernprogrammen Sie mit ASP.NET Web Forms vertraut machen konnten. Weitere Informationen zu Web Forms-Funktionen in ASP.NET 4.5 und Visual Studio 2013 verfügbar sind, finden Sie unter* [ *ASP.NET and Web Tools für Visual Studio 2013 Release Notes* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Darüber hinaus müssen Sie unbedingt einen Blick auf das Tutorial erwähnt der* * **Nächstes *** Abschnitt und Defintely Probieren Sie die* [ *kostenlose Azure-Testversion* ](https://azure.microsoft.com/pricing/free-trial/)* .*
+*Nochmals vielen Dank für die folgenden zusammen. Ich hoffe, diese Reihe von Lernprogrammen Sie mit ASP.NET Web Forms vertraut machen konnten. Weitere Informationen zu Web Forms-Funktionen in ASP.NET 4.5 und Visual Studio 2013 verfügbar sind, finden Sie unter* [ *ASP.NET and Web Tools für Visual Studio 2013 Release Notes* ](../../../../visual-studio/overview/2013/release-notes.md)  *. Darüber hinaus müssen Sie unbedingt einen Blick auf das Tutorial erwähnt der ** **Nächstes** **Abschnitt und Defintely Probieren Sie die* [*kostenlose Azure-Testversion*](https://azure.microsoft.com/pricing/free-trial/)* .*
 
 ![Vielen Dank - Erik](aspnet-error-handling/_static/image10.png)  
 
