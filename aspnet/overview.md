@@ -1,105 +1,105 @@
 ---
 uid: overview
-title: Übersicht über ASP.NET | Microsoft-Dokumentation
+title: ASP.net Übersicht | Microsoft-Dokumentation
 author: rick-anderson
-description: Einführung in ASP.NET ist ein kostenloses Framework für das Erstellen von Websites, Webanwendungen und Web-APIs.
+description: Einführung in ASP.net, ein kostenloses Framework zum Erstellen von Websites, Webanwendungen und Web-APIs.
 ms.assetid: 3a309468-f1ca-4e51-b9c3-536af79d7a8b
 ms.author: riande
-ms.date: 03/12/2010
+ms.date: 08/10/2019
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: d4b96bd2ff99bb30ff59b9697a27e33acb0f719d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 9a6d08849f09c9d7a779df64f70e8770d2af3c87
+ms.sourcegitcommit: b67ffd5b2c5cff01ec4c8eb12a21f693f2e11887
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120076"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69995288"
 ---
 # <a name="aspnet-overview"></a>Übersicht über ASP.NET
 
-ASP.NET ist eine kostenlose webumgebung zum Erstellen ansprechender Websites und Webanwendungen mit HTML, CSS und JavaScript. Sie können auch Web-APIs zu erstellen und echtzeittechnologien wie Web Sockets.
+ASP.net ist ein kostenloses Webframework zum entwickeln hervorragend Websites und Webanwendungen mithilfe von HTML, CSS und JavaScript. Sie können auch Web-APIs erstellen und Echtzeittechnologien wie websockets verwenden.
 
-[ASP.NET Core](https://docs.microsoft.com/aspnet/core/) ist eine Alternative zum ASP.NET.  Finden Sie unter den [Anleitungen zur Wahl zwischen ASP.NET und ASP.NET Core](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework).
+[ASP.net Core](https://docs.microsoft.com/aspnet/core/) ist eine Alternative zu ASP.net.  Weitere Informationen finden [Sie in der Anleitung zur Auswahl zwischen ASP.net und ASP.net Core](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework).
 
 ## <a name="get-started"></a>Erste Schritte
 
-Installieren Sie [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community-Edition, eine kostenlose IDE für ASP.NET unter Windows.
+Installieren Sie [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community Edition, eine kostenlose IDE für ASP.net unter Windows.
 
 ## <a name="websites-and-web-applications"></a>Websites und Webanwendungen
 
- ASP.NET bietet drei Frameworks zum Erstellen von Webanwendungen: Web Forms, ASP.NET MVC und ASP.NET Web Pages. Alle drei Frameworks sind stabil und ausgereifte, und Sie tolle Webanwendungen mit einer von ihnen erstellen. Unabhängig davon, welches Framework Sie auswählen, erhalten Sie alle Vorteile und Funktionen von ASP.NET überall.
+ ASP.net bietet drei Frameworks zum Erstellen von Webanwendungen: Web Forms, ASP.NET MVC und ASP.net Web Pages. Alle drei Frameworks sind stabil und ausgereift, und Sie können mit jedem von Ihnen hervorragend Webanwendungen erstellen. Unabhängig davon, welches Framework Sie auswählen, erhalten Sie alle Vorteile und Features von ASP.net überall.
 
-Jedes Framework zielt auf einen anderen Entwicklungsstil. Die gewählte abhängig ist auf eine Kombination aus Programmiersprachen Medienobjekte (Kenntnisse, Fähigkeiten und Erfahrung in der Entwicklung), die den Typ der Anwendung aus, die Sie erstellen, und der Entwicklungsansatz, dem Sie mit vertraut.
+Jedes Framework hat einen anderen Entwicklungsstil als Ziel. Die Auswahl hängt von einer Kombination der Programmier Ressourcen (Wissensquelle, Fähigkeiten und Entwicklungserfahrung), der Art der Anwendung, die Sie erstellen, und dem Entwicklungsansatz ab, mit dem Sie vertraut sind.
 
-Es folgt eine Übersicht über jedes der Frameworks und einige Ideen zur Auswahl zwischen diesen. Ein Einführungsvideo finden Sie unter [vornehmen von Websites mit ASP.NET](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET) und [was Webtools ist?](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
+Im folgenden finden Sie eine Übersicht über die einzelnen Frameworks und einige Ideen zur Auswahl zwischen Ihnen. Wenn Sie eine Video Einführung bevorzugen, finden Sie weitere Informationen unter [Erstellen von Websites mit ASP.net](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET) und [Was sind Webtools?](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
 
-|   | Wenn Sie Erfahrung, in haben | Entwicklungsstil | Fachwissen |
+|   | Wenn Sie in | Entwicklungsstil | Ihrem |
 |-----------|----------------------|-----------------------------------------------------|----------------|
-| Web Forms | Win Forms, WPF, .NET | Eine schnelle Entwicklung mithilfe einer umfangreichen Bibliothek von Steuerelementen, die HTML-Markup zu kapseln | Mittlere, erweiterte RAD |
-| MVC       | Ruby on Rails .NET  | Vollständige Kontrolle über die HTML-Markup, Code und Markup getrennt und leicht zu Tests zu schreiben. Die beste Wahl für mobile und Single-Page-Anwendungen (SPA). | Mittlere, erweiterte |
-| Webseiten  | Klassische ASP, PHP     | HTML-Markup und Code in der gleichen Datei zusammen | Neue, mittlere |
+| Web Forms | Win Forms, WPF, .net | Schnelle Entwicklung mithilfe einer umfangreichen Bibliothek von Steuerelementen, die HTML-Markup Kapseln | Mid-Level, Advanced Rad |
+| MVC       | Ruby on Rails, .net  | Vollständige Kontrolle über HTML-Markup, Code und Markup getrennt und leicht zu schreibende Tests. Die beste Wahl für mobile Anwendungen und Single-Page-Anwendungen (Spa). | Mittelwert, erweitert |
+| Webseiten  | Klassisches ASP, PHP     | HTML-Markup und Code in derselben Datei | Neu, Mittelwert |
 
 ### <a name="web-forms"></a>Web Forms
 
-Mit ASP.NET Web Forms können Sie dynamische Websites mithilfe eines vertrauten Drag & Drop, ereignisgesteuerte-Modells erstellen. Eine Entwurfsoberfläche und Hunderte von Steuerelementen und Komponenten können Sie schnell komplexe und umfangreiche GUI-gesteuerte Websites mit Datenzugriff erstellen.
+Mit ASP.net Web Forms können Sie dynamische Websites erstellen, indem Sie ein bekanntes, ereignisgesteuerte Drag & Drop-Modell verwenden. Mit einer Entwurfs Oberfläche und Hunderten von Steuerelementen und Komponenten können Sie schnell ausgereifte, leistungsfähige, UI-gesteuerte Websites mit Datenzugriff erstellen.
 
-[Erfahren Sie mehr über Web Forms](web-forms/index.md)
+[Weitere Informationen zu Web Forms](web-forms/index.md)
 
 ### <a name="mvc"></a>MVC
 
-ASP.NET MVC bietet Ihnen leistungsfähige, auf Mustern basierende Funktionen zum Erstellen dynamischer Websites, ermöglicht eine klare Trennung von Anliegen und die vollständige Kontrolle über Markup für angenehm, agile-Entwicklung. ASP.NET MVC umfasst zahlreiche Funktionen, mit denen schnelle, TDD-freundliche Entwicklung ermöglichen, um anspruchsvolle Anwendungen, die die aktuellsten Webstandards verwenden.
+ASP.NET MVC bietet Ihnen eine leistungsstarke, auf Mustern basierende Methode zum Erstellen dynamischer Websites, die eine saubere Trennung von Anliegen ermöglicht und Ihnen die vollständige Kontrolle über Markup für eine angenehme, Agile Entwicklung bietet. ASP.NET MVC umfasst viele Features, die eine schnelle, TDD-freundliche Entwicklung zum Erstellen ausgereifter Anwendungen ermöglichen, die die neuesten Webstandards verwenden.
 
-[Erfahren Sie mehr über MVC](mvc/index.md)
+[Weitere Informationen zu MVC](mvc/index.md)
 
 ### <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
-ASP.NET Web Pages und Razor-Syntax bieten eine schnelle, bedienungsfreundliche und einfache Möglichkeit zum Kombinieren von Servercode mit HTML dynamische Webinhalte zu erstellen. Verbinden mit Datenbanken, Hinzufügen von Videos, Verknüpfen mit sozialen Netzwerken und enthalten viele weitere Features, mit denen Sie erstellen Sie ansprechende Sites, die die aktuellsten Webstandards entsprechen.
+ASP.net Web Pages und die Razor-Syntax bieten eine schnelle, geeignete und einfachere Möglichkeit, Servercode mit HTML zu kombinieren, um dynamische Webinhalte zu erstellen. Stellen Sie eine Verbindung mit Datenbanken her, fügen Sie Videos hinzu, verknüpfen Sie Sie mit sozialen Netzwerken, und fügen Sie viele weitere Funktionen hinzu, mit denen Sie schöne Websites erstellen können, die den neuesten Webstandards
 
-[Erfahren Sie mehr über die Webseiten](web-pages/index.md)
+[Weitere Informationen zu Webseiten](web-pages/index.md)
 
 ### <a name="notes-about-web-forms-mvc-and-web-pages"></a>Hinweise zu Web Forms, MVC und Webseiten
 
-Alle drei ASP.NET Frameworks basieren auf .NET Framework und Freigeben von .NET und ASP.NET Core-Funktionalität. Z. B. alle drei Frameworks bieten ein Login-Sicherheitsmodell, um die Mitgliedschaft, und alle drei Teilen die gleichen Funktionen für die Verwaltung von Anforderungen, Behandlung von Sitzungen und So weiter, die Teil der Funktionalität von ASP.NET Core sind.
+Alle drei ASP.NET-Frameworks basieren auf den .NET Framework-und Freigabe Kernfunktionen von .net und von ASP.net. Beispielsweise bieten alle drei Frameworks ein Anmelde Sicherheitsmodell, das auf der Mitgliedschaft basiert, und alle drei verfügen über die gleichen Funktionen für die Verwaltung von Anforderungen, die Handhabung von Sitzungen usw., die Bestandteil der ASP.net-Kernfunktionen sind.
 
-Darüber hinaus die drei Frameworks sind nicht vollständig voneinander unabhängig, und eine schließt das nicht mit einem anderen. Da die Frameworks in der gleichen Webanwendung gleichzeitig verwendet werden können, ist es nicht ungewöhnlich, die einzelnen Komponenten von Anwendungen unter Verwendung verschiedener Frameworks zu finden. Kundenorientierte Teile einer Anwendung können z. B. entwickelt werden, in MVC, um das Markup zu optimieren, während der Datenzugriff und administrative Teile in Web Forms-Datensteuerelemente und einfache Datenzugriff nutzen entwickelt werden.
+Außerdem sind die drei Frameworks nicht ganz unabhängig, und die Auswahl eines Frameworks schließt die Verwendung einer anderen nicht aus. Da die Frameworks in derselben Webanwendung nebeneinander vorhanden sein können, ist es nicht ungewöhnlich, einzelne Komponenten von Anwendungen zu sehen, die mit verschiedenen Frameworks geschrieben wurden. Beispielsweise können Kundenteile einer APP in MVC entwickelt werden, um das Markup zu optimieren, während der Datenzugriff und administrative Teile in Web Forms entwickelt werden, um Daten Steuerelemente und einfachen Datenzugriff zu nutzen.
 
 ## <a name="web-apis"></a>Web-APIs
 
-ASP.NET Web-API ist ein Framework, das erleichtert die Erstellung von HTTP-Diensten, die eine Breite Palette von Clients, einschließlich Browsern und mobilen Geräten zu erreichen. Die ASP.NET-Web-API ist eine ideale Plattform zum Erstellen von RESTful-Anwendungen in .NET Framework.
+ASP.net-Web-API ist ein Framework, das das Erstellen von http-Diensten erleichtert, die eine breite Palette von Clients erreichen, einschließlich Browsern und mobilen Geräten. Die ASP.NET-Web-API ist eine ideale Plattform zum Erstellen von RESTful-Anwendungen in .NET Framework.
 
-[Erfahren Sie mehr über Web-API](web-api/index.md)
+[Weitere Informationen zur Web-API](web-api/index.md)
 
 <!-- Put first under Web API TOC:  Watch video (9 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/services-and-aspnet -->
 
-## <a name="real-time-technologies"></a>Real-Time-Technologien
+## <a name="real-time-technologies"></a>Echtzeittechnologien
 
-ASP.NET SignalR ist eine neue Bibliothek für ASP.NET-Entwickler,, die Entwicklung von Echtzeit-Webfunktionen einfacher macht. SignalR ermöglicht die bidirektionale Kommunikation zwischen Server und Client. Server können Inhalte mithilfe von push sofort an verbundene Clients sobald diese verfügbar werden. SignalR-WebSockets unterstützt und greift auf andere kompatiblen Techniken für ältere Browser zurück. SignalR enthält APIs für die verbindungsverwaltung (z. B. eine Verbindung herstellen und trennungsereignisse), Gruppieren von Verbindungen und -Autorisierung.
+ASP.net signalr ist eine neue Bibliothek für ASP.NET-Entwickler, die die Entwicklung von Echt Zeit Webrollen vereinfachen. Signalr ermöglicht die bidirektionale Kommunikation zwischen Server und Client. -Server können Inhalte sofort per Push an verbundene Clients Übertragung, sobald Sie verfügbar sind. Signalr unterstützt websockets und greift auf andere kompatible Techniken für ältere Browser zurück. Signalr umfasst APIs für die Verbindungs Verwaltung (beispielsweise Verbindungs-und Trennungs Ereignisse), das Gruppieren von Verbindungen und die Autorisierung.
 
-[Weitere Informationen zu SignalR](signalr/index.md)
+[Weitere Informationen zu signalr](signalr/index.md)
 
 <!-- Put first under SignalR TOC:  Watch video (6 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-the-real-time-web -->
 
-## <a name="mobile-apps-and-sites"></a>Mobile apps und Websites
+## <a name="mobile-apps-and-sites"></a>Mobile Apps und Websites
 
-ASP.NET kann es sich um native mobile apps mit einem Web-API-Back-End als auch mobile Websites mit reaktionsfähiges Design-Frameworks wie Twitter Bootstrap bereitstellen. Wenn Sie eine native mobile app erstellen, ist es einfach, eine JSON-basierte Web-API Zugriff auf die Handle-Daten, Authentifizierung und Pushbenachrichtigungen für Ihre app zu erstellen. Wenn Sie eine mobile reaktionsfähige Website erstellen, können Sie CSS-Framework oder Sie möchten, oder wählen Sie eine leistungsstarke mobile System wie jQuery Mobile oder Sencha und leistungsstarker Anwendungen für mobile mit PhoneGap-Rastersystem öffnen.
+ASP.net kann Native Mobile Apps mit einem Web-API-Back-End und mobilen Websites mit reaktionsfähigen Design-Frameworks wie Twitter-Bootstrap unterstützen. Wenn Sie eine systemeigene Mobile App erstellen, ist es einfach, eine JSON-basierte Web-API zu erstellen, um den Datenzugriff, die Authentifizierung und Pushbenachrichtigungen für Ihre APP zu verarbeiten. Wenn Sie eine reaktionsfähige Mobile Site entwickeln, können Sie jedes beliebige CSS-Framework oder Open Grid-System verwenden, oder Sie können ein leistungsfähiges mobiles System wie jQuery Mobile oder Sencha und großartige Mobile Anwendungen mit PhoneGap auswählen.
 
-[Erfahren Sie mehr über die mobile Entwicklung von Apps und -Website](mobile/index.md)
+[Weitere Informationen zur Entwicklung von Mobile App und Websites](mobile/index.md)
 
 <!-- Put first under mobile TOC:  Watch video (11 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-mobile -->
 
 ## <a name="single-page-applications"></a>Single-Page-Anwendungen
 
-ASP.NET Single Page Application (SPA) können Sie die Anwendungen zu erstellen, die signifikante clientseitigen Interaktionen mit HTML 5, CSS 3 und JavaScript enthalten. Visual Studio enthält eine Vorlage zum Erstellen von einseitigen Anwendungen mithilfe von knockout.js und ASP.NET Web-API. Zusätzlich zu der integrierten SPA-Vorlage sind auch Community erstellte SPA-Vorlagen zum Download zur Verfügung.
+ASP.net Single Page Application (Spa) unterstützt Sie beim Erstellen von Anwendungen, die bedeutende Client seitige Interaktionen mit HTML 5, CSS 3 und JavaScript einschließen. Visual Studio enthält eine Vorlage zum Erstellen von Single-Page-Anwendungen mithilfe von Knockout. js und ASP.net-Web-API. Neben der integrierten Spa-Vorlage stehen auch von der Community erstellte Spa-Vorlagen zum Download zur Verfügung.
 
-[Erfahren Sie mehr über die Single-Page-app-Entwicklung](single-page-application/index.md)
+[Weitere Informationen zur Entwicklung von einseitigen apps](single-page-application/index.md)
 
 ## <a name="webhooks"></a>WebHooks
 
-WebHooks ist ein einfacher HTTP-Muster, die eine einfache Veröffentlichungs-/Abonnementmodells verbinden zusammen Web-APIs und SaaS-Dienste bereitstellen. Wenn ein Ereignis in einem Dienst auftritt, wird eine Benachrichtigung an die registrierten Abonnenten in Form von HTTP POST-Anforderung gesendet. Die POST-Anforderung enthält Informationen über das Ereignis dadurch ist es möglich, dass der Empfänger entsprechend reagieren.
+Webhooks ist ein einfaches http-Muster, das ein einfaches Pub/Sub-Modell zum Verbinden von Web-APIs und Saas-Diensten bereitstellt. Wenn ein Ereignis in einem Dienst auftritt, wird eine Benachrichtigung in Form einer HTTP POST-Anforderung an registrierte Abonnenten gesendet. Die Post-Anforderung enthält Informationen zum Ereignis, das es dem Empfänger ermöglicht, entsprechend zu agieren.
 
-WebHooks werden durch eine große Anzahl von Diensten, einschließlich, Dropbox, GitHub, Instagram, MailChimp, PayPal, Slack, Trello und vieles mehr verfügbar gemacht. Ein WebHook kann beispielsweise angeben, in Dropbox eine Datei geändert wurde oder hat eine Änderung des Codes in GitHub ein Commit ausgeführt wurde oder eine Zahlung wurde in PayPal initiiert, oder eine Karte in Trello erstellt wurde.
+Webhooks werden durch eine große Anzahl von Diensten verfügbar gemacht, darunter Dropbox, GitHub, Instagram, MailChimp, PayPal, Slack, trello und vieles mehr. Ein webhook kann z. b. angeben, dass eine Datei in Dropbox geändert wurde oder für eine Codeänderung in GitHub ein Commit ausgeführt wurde oder eine Zahlung in PayPal initiiert wurde oder eine Karte in trello erstellt wurde.
 
-[Erfahren Sie mehr über WebHooks](webhooks/index.md)
+[Weitere Informationen zu webhooks](webhooks/index.md)
 
 <!--
 Create Deployment TOC based on https://www.asp.net/aspnet/overview/deployment
