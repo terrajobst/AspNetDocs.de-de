@@ -1,27 +1,27 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/creating-a-consistent-look-part-1
-title: Erstellen einer konsistenten Gestaltung (Teil 1) | Microsoft-Dokumentation
+title: Erstellen eines konsistenten Erscheinungsbild (Teil 1) | Microsoft-Dokumentation
 author: JoeStagner
-description: Video sinnvoll ergänzen erstellen ein konsistentes Aussehen Tutorial (Teil 1)
+description: Video Begleitung zum Tutorial zum Erstellen eines konsistenten Erscheinungsbild (Teil 1)
 ms.author: riande
 ms.date: 02/25/2011
 ms.assetid: 1057d00f-187f-4187-a674-194b6262c3a3
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/creating-a-consistent-look-part-1
 msc.type: video
-ms.openlocfilehash: 462572b6216519aeb3bac56458a466e6d44c87c5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c1b6732577dca8d448c153f0ae8073e5e13fa0f6
+ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389153"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445643"
 ---
 # <a name="creating-a-consistent-look-part-1"></a>Erstellen einer konsistenten Gestaltung (Teil 1)
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Video sinnvoll ergänzen erstellen ein konsistentes Aussehen Tutorial (Teil 1)
+Video Begleitung zum Tutorial zum Erstellen eines konsistenten Erscheinungsbild (Teil 1)
 
-[&#9654;Sehen Sie sich Video (23 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-part-1)
+[&#9654;Video ansehen (23 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-1))
 
 > [!div class="step-by-step"]
 > [Zurück](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)

@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-5
-title: Erstellen Sie die Datenübertragungsobjekte (DTOs) | Microsoft-Dokumentation
+title: Create Datenübertragung Objects (DTOs) | Microsoft-Dokumentation
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,48 +8,48 @@ ms.date: 06/16/2014
 ms.assetid: 0fd07176-b74b-48f0-9fac-0f02e3ffa213
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 1af29955e8040c34840d4c77fc2006f59d2324dd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fc0463420207eba764014b8ec7123c5150e38247
+ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395276"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445753"
 ---
 # <a name="create-data-transfer-objects-dtos"></a>Erstellen von Datentransferobjekten (DTOs)
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](https://github.com/MikeWasson/BookService)
+[Herunterladen des abgeschlossenen Projekts](https://github.com/MikeWasson/BookService)
 
-Die Datenbankentitäten an den Client, macht rechts nun unsere Web-API verfügbar. Der Client empfängt Daten, die direkt von Datenbanktabellen zugeordnet. Allerdings ist, die nicht immer eine gute Idee. Manchmal möchten Sie die Form der Daten zu ändern, die an den Client gesendet. Auf diese Weise können Sie z. B. folgende Vorgänge durchführen:
+Derzeit macht unsere Web-API die Daten Bank Entitäten für den Client verfügbar. Der Client empfängt Daten, die direkt den Datenbanktabellen zugeordnet sind. Das ist jedoch nicht immer eine gute Idee. Manchmal möchten Sie die Form der Daten ändern, die Sie an den Client senden. Auf diese Weise können Sie z. B. folgende Vorgänge durchführen:
 
-- Zirkuläre Verweise entfernen (Siehe vorheriger Abschnitt).
-- Blenden Sie bestimmte Eigenschaften, die Clients sollten nicht anzeigen.
-- Lassen Sie einige Eigenschaften Weg, um die Nutzlastgröße zu reduzieren.
-- Vereinfachen von Objektdiagrammen, die geschachtelte Objekte, um die bequemer für Clients zu enthalten.
-- Vermeiden Sie "overposting" Sicherheitsrisiken. (Finden Sie unter [Modellvalidierung](../../formats-and-model-binding/model-validation-in-aspnet-web-api.md) eine Erläuterung der overposting.)
-- Entkoppeln von Ihrer Dienstebene aus der Datenbankebene.
+- Entfernen Sie zirkuläre Verweise (siehe vorheriger Abschnitt).
+- Blenden Sie bestimmte Eigenschaften aus, die Clients nicht anzeigen sollen.
+- Lassen Sie einige Eigenschaften Weg, um die Nutzlastgröße zu verringern.
+- Vereinfachen Sie Objekt Diagramme, die die verglichenen Objekte enthalten, damit Sie für Clients bequemer werden.
+- Vermeiden Sie "overposting"-Sicherheitsrisiken. (Eine Erörterung der Übertragung finden Sie unter [Modell Validierung](../../formats-and-model-binding/model-validation-in-aspnet-web-api.md) .)
+- Entkoppeln Sie die Dienst Ebene von der Datenbankebene.
 
-Um dies zu erreichen, können Sie definieren eine *Datenübertragungsobjekt* (DTO). Ein DTO ist ein Objekt, das definiert, wie die Daten über das Netzwerk gesendet werden. Sehen wir uns an, wie dies mit der Entität Buch funktioniert. Fügen Sie in den Ordner "Models" zwei DTO-Klassen hinzu:
+Hierzu können Sie ein *Datenübertragungs Objekt (Data Transfer Object* , dto) definieren. Ein DTO ist ein Objekt, das definiert, wie die Daten über das Netzwerk gesendet werden. Sehen wir uns an, wie das mit der Buch-Entität funktioniert. Fügen Sie im Ordner Models zwei DTO-Klassen hinzu:
 
 [!code-csharp[Main](part-5/samples/sample1.cs)]
 
-Die `BookDetailDTO` Klasse enthält alle Eigenschaften aus dem Buch-Modell, außer dass `AuthorName` ist eine Zeichenfolge, die der Name des Autors enthalten wird. Die `BookDTO` -Klasse enthält eine Teilmenge der Eigenschaften von `BookDetailDTO`.
+Die `BookDetailDto`-Klasse enthält alle Eigenschaften aus dem Buch Modell, mit dem Unterschied, dass `AuthorName` eine Zeichenfolge ist, die den Namen des Autors enthält. Die `BookDto`-Klasse enthält eine Teilmenge der Eigenschaften von `BookDetailDto`.
 
-Ersetzen Sie als Nächstes die beiden GET-Methoden in der `BooksController` Klasse, die mit Versionen, die DTOs zurückgeben. Wir verwenden die LINQ **wählen** -Anweisung von buchentitäten in DTOs zu konvertieren.
+Ersetzen Sie als nächstes die beiden Get-Methoden in der `BooksController`-Klasse mit den Versionen, die DTOs zurückgeben. Wir verwenden die LINQ **Select** -Anweisung, um von Book-Entitäten in DTOs zu konvertieren.
 
 [!code-csharp[Main](part-5/samples/sample2.cs)]
 
-Hier ist die SQL-generiert, durch die neue `GetBooks` Methode. Sie sehen, dass EF LINQ übersetzt **wählen** in eine SQL-SELECT-Anweisung.
+Hier ist das SQL, das von der neuen `GetBooks`-Methode generiert wird. Sie können sehen, dass EF die LINQ **Select** -Anweisung in eine SQL SELECT-Anweisung übersetzt.
 
 [!code-sql[Main](part-5/samples/sample3.sql)]
 
-Ändern Sie abschließend die `PostBook` Methode, um ein DTO zurückzugeben.
+Ändern Sie abschließend die `PostBook`-Methode, um einen DTO-Wert zurückzugeben.
 
 [!code-csharp[Main](part-5/samples/sample4.cs)]
 
 > [!NOTE]
-> In diesem Tutorial konvertieren zu DTOs manuell im Code wir. Eine weitere Möglichkeit ist die Verwendung von einer Bibliothek wie [AutoMapper](http://automapper.org/) , die die Konvertierung automatisch verarbeitet.
+> In diesem Tutorial werden Sie manuell in DTOs in den Code umwandelt. Eine andere Möglichkeit besteht darin, eine Bibliothek wie [AutoMapper](http://automapper.org/) zu verwenden, die die Konvertierung automatisch verarbeitet.
 > 
 > [!div class="step-by-step"]
 > [Zurück](part-4.md)
