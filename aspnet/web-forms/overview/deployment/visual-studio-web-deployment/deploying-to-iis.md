@@ -15,7 +15,7 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 09/13/2019
 ms.locfileid: "70985857"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen für Testzwecke
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellung zum Testen
 
 von [Tom Dykstra](https://github.com/tdykstra)
 
@@ -43,7 +43,7 @@ Option 2 ist die zuverlässigste Methode zum Testen. Wenn Sie Option 2 verwenden
 
 Weitere Informationen zur Verwendung von Webservern in Visual Studio finden Sie unter [Webserver in Visual Studio für ASP.NET-Webprojekte](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 
-Erneut Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, während Sie das Tutorial durchlaufen, überprüfen Sie die [Problem Behandlungs Seite](troubleshooting.md).
+Erinnerung: Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, wenn Sie das Tutorial durchlaufen, überprüfen Sie die [Problem Behandlungs Seite](troubleshooting.md).
 
 ## <a name="download-the-contoso-university-starter-project"></a>Herunterladen des Projekts "" der Projekt "" der "
 
@@ -67,7 +67,7 @@ Vergewissern Sie sich, dass IIS und Web deploy installiert sind, um Sie auf dem 
 
      Es werden Meldungen angezeigt, die angeben, dass IIS 7 installiert wird. Der Link funktioniert für IIS 8 unter Windows 8. für Windows 8 und höher müssen Sie jedoch die folgenden Schritte durchführen, um sicherzustellen, dass ASP.NET 4,7 installiert ist:
 
-   * Öffnen Sie die **Systemsteuerung** > **Programme** > **Programme und Features** > , und aktivieren**oder deaktivieren Sie Windows-Funktionen**.
+   * Öffnen Sie die **Systemsteuerung** > **Programme** > **Programme und Funktionen** , > aktivieren **oder deaktivieren Sie Windows-Funktionen**.
 
    * Erweitern Sie **Internetinformationsdienste**, **World Wide Web Dienste**und **Features für die Anwendungsentwicklung**.
    
@@ -95,7 +95,7 @@ Führen Sie nach der Installation von IIS den **IIS-Manager** aus, um sicherzust
 
 4. Wenn nur zwei Anwendungs Pools angezeigt werden und beide auf .NET Framework 2,0 festgelegt sind, installieren Sie ASP.NET 4 in IIS.
 
-   Informationen zu Windows 8 oder höher finden Sie in den Anweisungen im vorherigen Abschnitt, um sicherzustellen, dass ASP.NET 4,7 installiert ist, oder erfahren Sie, [wie Sie ASP.NET 4,5 unter Windows 8 und Windows Server 2012 installieren](https://support.microsoft.com/kb/2736284). Öffnen Sie für Windows 7 ein Eingabe Aufforderungs Fenster, indem Sie im Windows- **Startmenü** mit der rechten Maustaste auf **Eingabeaufforderung** klicken und **als Administrator ausführen**auswählen. Führen Sie " [ASPNET\_regiis. exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) " aus, um ASP.NET 4 mit den folgenden Befehlen in IIS zu installieren. (Ersetzen Sie in 32-Bit-Systemen "Framework64" durch "Framework".)
+   Informationen zu Windows 8 oder höher finden Sie in den Anweisungen im vorherigen Abschnitt, um sicherzustellen, dass ASP.NET 4,7 installiert ist, oder erfahren Sie, [wie Sie ASP.NET 4,5 unter Windows 8 und Windows Server 2012 installieren](https://support.microsoft.com/kb/2736284). Öffnen Sie für Windows 7 ein Eingabe Aufforderungs Fenster, indem Sie im Windows- **Startmenü** mit der rechten Maustaste auf **Eingabeaufforderung** klicken und **als Administrator ausführen**auswählen. Führen Sie [ASPNET\_regiis. exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) aus, um ASP.NET 4 mit den folgenden Befehlen in IIS zu installieren. (Ersetzen Sie in 32-Bit-Systemen "Framework64" durch "Framework".)
 
    [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -109,7 +109,7 @@ Führen Sie nach der Installation von IIS den **IIS-Manager** aus, um sicherzust
 
 7. Ändern Sie im Dialogfeld **Anwendungs Pool bearbeiten** die **.NET CLR-Version** in **.NET CLR v 4.0.30319**. Klicken Sie auf **OK**.
 
-   ![Selecting_. net _4_for_defaultapppool](deploying-to-iis/_static/image6a.png)
+   ![Selecting_. NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
 
 Sie sind jetzt bereit, eine Webanwendung in IIS zu veröffentlichen. Erstellen Sie zunächst jedoch Datenbanken zum Testen.
 
@@ -119,7 +119,7 @@ Sie sind jetzt bereit, eine Webanwendung in IIS zu veröffentlichen. Erstellen S
 
 Localdb ist nicht für die Verwendung in IIS konzipiert, daher muss in Ihrer Testumgebung SQL Server Express installiert sein. Wenn Sie Visual Studio 2010 SQL Server Express verwenden, ist es bereits standardmäßig installiert. Wenn Sie Visual Studio 2012 oder höher verwenden, installieren Sie SQL Server Express.
 
-Um SQL Server Express zu installieren, laden Sie es aus [dem Download Center herunter und installieren es: Microsoft SQL Server 2017 Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express). 
+Um SQL Server Express zu installieren, laden Sie es aus dem Download Center herunter, und installieren Sie es [: Microsoft SQL Server 2017 Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express). 
 
 Wählen Sie auf der ersten Seite des SQL Server-Installations Centers die **Option neu SQL Server eigenständige Installation aus, oder fügen Sie einer vorhandenen Installation Features hinzu** , und befolgen Sie die Anweisungen, um die Standardoptionen zu akzeptieren. Übernehmen Sie im Installations-Assistenten die Standardeinstellungen. Weitere Informationen zu Installationsoptionen finden Sie unter [Install SQL Server from the Installation Wizard (Setup)](https://msdn.microsoft.com/library/ms143219.aspx).
 
@@ -144,7 +144,7 @@ Geben Sie im Dialogfeld **neue SQL Server Datenbank erstellen** im Feld **Server
 
 ![Erstellen von ASPNET-contosouniversity](deploying-to-iis/_static/image9.png)
 
-Gehen Sie wie folgt vor, um eine neue SQL Server Express School- `ContosoUniversity`Datenbank mit dem Namen zu erstellen.
+Gehen Sie wie folgt vor, um eine neue SQL Server Express School-Datenbank mit dem Namen `ContosoUniversity`zu erstellen.
 
 In **Server-Explorer** werden die beiden neuen Datenbanken angezeigt.
 
@@ -164,7 +164,7 @@ Kopieren Sie in einem Text-Editor die folgenden SQL-Befehle in eine neue Datei, 
 > Dieses Skript ist so konzipiert, dass es mit SQL Server Express 2012 oder höher und mit den IIS-Einstellungen in Windows 10, Windows 8 oder Windows 7 funktioniert, wie Sie in diesem Tutorial angegeben sind. Wenn Sie eine andere Version von SQL Server oder Windows verwenden oder IIS auf dem Computer anders einrichten, sind möglicherweise Änderungen an diesem Skript erforderlich. Weitere Informationen zu SQL Server Skripts finden Sie unter [SQL Server-Onlinedokumentation](https://go.microsoft.com/fwlink/?LinkId=132511).
 
 > [!NOTE] 
-> **Sicherheitshinweis** Dieses Skript erteilt `db_owner` dem Benutzerberechtigungen, die zur Laufzeit auf die Datenbank zugreifen, was Sie in der Produktionsumgebung tun werden. In einigen Szenarien möchten Sie möglicherweise einen Benutzer angeben, der über vollständige Datenbankschema-Aktualisierungs Berechtigungen für die Bereitstellung verfügt, und für die Laufzeit einen anderen Benutzer angeben, der nur über Berechtigungen zum Lesen und Schreiben von Daten verfügt. Weitere Informationen finden Sie unter über [Prüfen der automatischen Änderungen an der Web. config-Datei für Code First-Migrationen](#reviewingmigrations) weiter unten in diesem Tutorial.
+> **Sicherheitshinweis** Dieses Skript erteilt `db_owner` Berechtigungen für den Benutzer, der zur Laufzeit auf die Datenbank zugreift, was Sie in der Produktionsumgebung tun werden. In einigen Szenarien möchten Sie möglicherweise einen Benutzer angeben, der über vollständige Datenbankschema-Aktualisierungs Berechtigungen für die Bereitstellung verfügt, und für die Laufzeit einen anderen Benutzer angeben, der nur über Berechtigungen zum Lesen und Schreiben von Daten verfügt. Weitere Informationen finden Sie unter über [Prüfen der automatischen Änderungen an der Web. config-Datei für Code First-Migrationen](#reviewingmigrations) weiter unten in diesem Tutorial.
 
 <a id="publish"></a>
 
@@ -205,7 +205,7 @@ Vergewissern Sie sich vor dem veröffentlichen, dass Sie Visual Studio im Admini
 
 2. Wählen Sie **Neues Profil**aus. Das Dialogfeld **Veröffentlichungsziel auswählen** wird angezeigt.
 
-3. Wählen Sie **IIS, FTP usw**. Klicken Sie auf **Profil erstellen**. Der **Veröffentlichungs** -Assistent wird angezeigt.
+3. Wählen Sie **IIS, FTP usw**. Wählen Sie **Profil erstellen**aus. Der **Veröffentlichungs** -Assistent wird angezeigt.
 
    ![Registerkarte "Profil veröffentlichen" des Assistenten](deploying-to-iis/_static/image26.png)
 
@@ -215,7 +215,7 @@ Vergewissern Sie sich vor dem veröffentlichen, dass Sie Visual Studio im Admini
 
 6. Geben Sie unter **Standort Name den Namen** *Default Web Site/Conto souniversity*ein.
 
-7. GebenSie *http://localhost/ContosoUniversity* als Ziel-URL ein.
+7. Geben Sie *http://localhost/ContosoUniversity* für die **Ziel-URL**ein.
 
    Die Einstellung für die **Ziel-URL** ist nicht erforderlich. Wenn Visual Studio die Bereitstellung der Anwendung abgeschlossen hat, öffnet sie automatisch Ihren Standardbrowser mit dieser URL. Wenn Sie nicht möchten, dass der Browser nach der Bereitstellung automatisch geöffnet wird, lassen Sie dieses Feld leer.
 
@@ -229,7 +229,7 @@ Vergewissern Sie sich vor dem veröffentlichen, dass Sie Visual Studio im Admini
 
 10. Das Dropdown Feld **Konfiguration** gibt die Buildkonfiguration an, die bereitgestellt werden soll. Legen Sie den Standardwert **Release**fest. Sie werden in diesem Tutorial keine Debugbuilds bereitstellen.
 
-11. Erweitern Sie **Datei Veröffentlichungs Optionen**. Wählen Sie **Dateien aus dem App\_-Datenordner ausschließen aus**.
+11. Erweitern Sie **Datei Veröffentlichungs Optionen**. Wählen Sie **Dateien aus dem App-\_Datenordner ausschließen aus**.
 
     In der Testumgebung greift die Anwendung auf die Datenbanken zu, die Sie in der lokalen SQL Server Express Instanz erstellt haben, nicht auf die MDF-Dateien im Ordner *App\_Data* .
 
@@ -246,7 +246,7 @@ Vergewissern Sie sich vor dem veröffentlichen, dass Sie Visual Studio im Admini
     > 
     > Wenn Sie z. b. eine Webanwendung in einem Unterordner auf dem Server haben, wenn Sie ein Projekt im Stamm Ordner bereitstellen, wird der Unterordner gelöscht. Möglicherweise verfügen Sie über ein Projekt für die Hauptwebsite unter contoso.com und ein weiteres Projekt für einen Blog unter contoso.com/Blog. Die Blog Anwendung befindet sich in einem Unterordner. Wenn Sie beim Bereitstellen des Haupt Standorts **Weitere Dateien am Ziel entfernen** auswählen, wird die Blog Anwendung gelöscht.
     > 
-    > Ein weiteres Beispiel ist, dass\_der APP-Datenordner unerwartet gelöscht wird. Bestimmte Datenbanken, z. b. SQL Server Compact, speichern\_Datenbankdateien im App-Datenordner. Nach der erstmaligen Bereitstellung möchten Sie die Datenbankdateien nicht mehr in nachfolgenden bereit Stellungen kopieren, daher wählen Sie auf der Registerkarte "Web packen/veröffentlichen" die Option **\_App-Daten ausschließen** aus. Nachdem Sie die **zusätzlichen Dateien am Ziel** ausgewählt haben, werden die Datenbankdateien und der APP\_-Datenordner selbst gelöscht, wenn Sie das nächste Mal veröffentlichen.
+    > Ein weiteres Beispiel ist, dass Ihr App-\_Datenordner möglicherweise unerwartet gelöscht wird. Bestimmte Datenbanken, z. b. SQL Server Compact, speichern Datenbankdateien im App-\_Datenordner. Nach der erstmaligen Bereitstellung möchten Sie die Datenbankdateien nicht mehr in nachfolgenden bereit Stellungen kopieren, daher wählen Sie auf der Registerkarte "Web packen/veröffentlichen" die Option **App-\_Daten ausschließen** aus. Nachdem Sie die **zusätzlichen Dateien am Ziel** ausgewählt haben, werden die Datenbankdateien und der APP-\_Datenordner selbst gelöscht, wenn Sie das nächste Mal veröffentlichen.
 
 ### <a name="configure-deployment-for-the-membership-database"></a>Konfigurieren der Bereitstellung für die Mitgliedschafts Datenbank
 
@@ -258,7 +258,7 @@ Die folgenden Schritte gelten für die **DefaultConnection** -Datenbank im Absch
 
    Beim Bereitstellungs Prozess wird diese Verbindungs Zeichenfolge in die bereitgestellte Web. config-Datei eingefügt, weil **Diese Verbindungs Zeichenfolge zur Laufzeit verwenden** ausgewählt ist.
 
-    Sie können auch die Verbindungs Zeichenfolge aus **Server-Explorer**erhalten. Erweitern Sie in **Server-Explorer**den Knoten **Datenverbindungen** , und wählen Sie die  **&lt;Datenbank MachineName&gt;\sqlexpress.Aspnet-condesouniversity** aus, und kopieren Sie dann im **Eigenschaften** Fenster die **Verbindungs Zeichenfolge.** Wert. Diese Verbindungs Zeichenfolge verfügt über eine zusätzliche Einstellung, die Sie `Pooling=False`löschen können:.
+    Sie können auch die Verbindungs Zeichenfolge aus **Server-Explorer**erhalten. Erweitern Sie in **Server-Explorer**den Knoten **Datenverbindungen** , und wählen Sie den **&lt;MachineName&gt;\sqlexpress.Aspnet-condesouniversity** aus, und kopieren Sie dann im **Eigenschaften** Fenster den Wert der **Verbindungs Zeichenfolge** . Diese Verbindungs Zeichenfolge verfügt über eine zusätzliche Einstellung, die Sie löschen können: `Pooling=False`.
 
 2. Wählen Sie **Datenbank aktualisieren**aus.
 
@@ -276,7 +276,7 @@ Die folgenden Schritte gelten für die **DefaultConnection** -Datenbank im Absch
 
 ### <a name="configure-deployment-for-the-application-database"></a>Konfigurieren der Bereitstellung für die Anwendungsdatenbank
 
-Wenn Visual Studio eine `DbContext` Entity Framework Klasse erkennt, wird ein Eintrag im **Daten** Bank Abschnitt erstellt, der anstelle des Kontrollkästchens **Datenbank aktualisieren** über das Kontrollkästchen **Code First-Migrationen ausführen** verfügt. In diesem Tutorial verwenden Sie dieses Kontrollkästchen, um Code First-Migrationen Bereitstellung anzugeben.
+Wenn Visual Studio eine Entity Framework `DbContext` Klasse erkennt, wird ein Eintrag im **Daten** Bank Abschnitt erstellt, der anstelle des Kontrollkästchens **Datenbank aktualisieren** über das Kontrollkästchen **Code First-Migrationen ausführen** verfügt. In diesem Tutorial verwenden Sie dieses Kontrollkästchen, um Code First-Migrationen Bereitstellung anzugeben.
 
 In einigen Szenarien verwenden Sie möglicherweise eine `DbContext` Datenbank, aber Sie möchten den dbdacfx-Anbieter anstelle von Migrationen verwenden, um die Datenbank bereitzustellen. Weitere Informationen finden Sie unter [Gewusst wie Bereitstellen einer Code First Datenbank ohne Migrationen?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) in den FAQ zur ASP.net-Webbereitstellung auf MSDN.
 
@@ -292,7 +292,7 @@ Die folgenden Schritte gelten für die **School Context** -Datenbank im Abschnit
 
 2. Wählen Sie **Code First-Migrationen ausführen (wird beim Anwendungsstart ausgeführt) aus**.
 
-   Diese Option bewirkt, dass der Bereitstellungs Prozess die bereitgestellte Web. config-Datei `MigrateDatabaseToLatestVersion` konfiguriert, um den Initialisierer anzugeben. Dieser Initialisierer aktualisiert die Datenbank automatisch auf die neueste Version, wenn die Anwendung zum ersten Mal nach der Bereitstellung auf die Datenbank zugreift.
+   Diese Option bewirkt, dass der Bereitstellungs Prozess die bereitgestellte Web. config-Datei konfiguriert, um den `MigrateDatabaseToLatestVersion` Initialisierer anzugeben. Dieser Initialisierer aktualisiert die Datenbank automatisch auf die neueste Version, wenn die Anwendung zum ersten Mal nach der Bereitstellung auf die Datenbank zugreift.
 
 ### <a name="configure-publish-profile-transforms"></a>Konfigurieren von Transformationen für Veröffentlichungs profile
 
@@ -344,7 +344,7 @@ Die folgenden Schritte gelten für die **School Context** -Datenbank im Abschnit
 
 Beachten Sie, dass der Umgebungs Indikator "(Test)" anstelle von "(dev)" anzeigt, der anzeigt, dass die *Web. config* -Transformation für den Umgebungs Indikator erfolgreich war.
 
-Führen Sie die Seite **Dozenten** aus, um zu überprüfen, ob die Datenbank mit den Dozenten Daten Code First. Wenn Sie diese Seite auswählen, kann es einige Minuten dauern, bis die Daten Bank Code First erstellt und dann die `Seed` -Methode ausgeführt wird. (Dies ist nicht der Fall, wenn Sie auf der Startseite waren, weil die Anwendung noch nicht versucht hat, auf die Datenbank zuzugreifen.)
+Führen Sie die Seite **Dozenten** aus, um zu überprüfen, ob die Datenbank mit den Dozenten Daten Code First. Wenn Sie diese Seite auswählen, kann es einige Minuten dauern, bis Code First die Datenbank erstellt und dann die `Seed`-Methode ausführt. (Dies ist nicht der Fall, wenn Sie auf der Startseite waren, weil die Anwendung noch nicht versucht hat, auf die Datenbank zuzugreifen.)
 
 Wählen Sie die Registerkarte **Studenten** aus, um zu überprüfen, ob die bereitgestellte Datenbank keine Studenten
 
@@ -364,11 +364,11 @@ Stellen Sie sicher, dass ein *ELMAH* -Ordner im Ordner " *c:\inetpub\wwwroot\con
 
 Beim Bereitstellungs Prozess wurde außerdem eine neue Verbindungs Zeichenfolge für Code First-Migrationen erstellt, die ausschließlich zum Aktualisieren des Datenbankschemas verwendet wird:
 
-![Database_Publish Verbindungs Zeichenfolge](deploying-to-iis/_static/image22.png)
+![Verbindungs Zeichenfolge Database_Publish](deploying-to-iis/_static/image22.png)
 
-Mit dieser zusätzlichen Verbindungs Zeichenfolge können Sie ein Benutzerkonto für Datenbankschema Updates und ein anderes Benutzerkonto für den Zugriff auf Anwendungsdaten angeben. Beispielsweise können Sie der Anwendung die **\_** Datenbankbesitzer Rolle Code First-Migrationen und **DB\_DataReader** mit **DB\_-DataWriter** -Rollen zuweisen. Dies ist ein gängiges tiefgreifendes Verteidigungs Muster, das verhindert, dass potenziell bösartiger Code in der Anwendung das Datenbankschema ändert. (Dies kann beispielsweise bei einem erfolgreichen SQL Injection-Angriff vorkommen.) In diesen Tutorials wird dieses Muster nicht verwendet. Gehen Sie folgendermaßen vor, um dieses Muster in Ihrem Szenario zu implementieren:
+Mit dieser zusätzlichen Verbindungs Zeichenfolge können Sie ein Benutzerkonto für Datenbankschema Updates und ein anderes Benutzerkonto für den Zugriff auf Anwendungsdaten angeben. Beispielsweise können Sie der Anwendung die Rolle " **DB\_Owner** " Code First-Migrationen und **DB-\_DataReader** mit **DB-\_-DataWriter** -Rollen zuweisen. Dies ist ein gängiges tiefgreifendes Verteidigungs Muster, das verhindert, dass potenziell bösartiger Code in der Anwendung das Datenbankschema ändert. (Dies kann beispielsweise bei einem erfolgreichen SQL Injection-Angriff vorkommen.) In diesen Tutorials wird dieses Muster nicht verwendet. Gehen Sie folgendermaßen vor, um dieses Muster in Ihrem Szenario zu implementieren:
 
-1. Geben Sie im Assistenten **Web veröffentlichen** auf der Registerkarte **Einstellungen** die Verbindungs Zeichenfolge ein, die einen Benutzer mit vollständigen Datenbankschema-Aktualisierungs Berechtigungen angibt. Deaktivieren Sie das Kontrollkästchen **Diese Verbindungs Zeichenfolge zur Laufzeit verwenden** . In der bereitgestellten Web. config-Datei wird dies `DatabasePublish` zur Verbindungs Zeichenfolge.
+1. Geben Sie im Assistenten **Web veröffentlichen** auf der Registerkarte **Einstellungen** die Verbindungs Zeichenfolge ein, die einen Benutzer mit vollständigen Datenbankschema-Aktualisierungs Berechtigungen angibt. Deaktivieren Sie das Kontrollkästchen **Diese Verbindungs Zeichenfolge zur Laufzeit verwenden** . In der bereitgestellten Web. config-Datei wird dies die `DatabasePublish` Verbindungs Zeichenfolge.
 
 2. Erstellen Sie eine Transformation für die Datei "Web. config" für die Verbindungs Zeichenfolge, die von der Anwendung zur Laufzeit verwendet werden soll.
 

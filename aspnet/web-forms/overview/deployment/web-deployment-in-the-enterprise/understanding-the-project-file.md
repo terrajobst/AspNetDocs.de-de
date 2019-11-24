@@ -117,7 +117,7 @@ Wenn Sie mehrere **Element** Elemente mit dem gleichen Namen angeben, erstellen 
 
 [!code-xml[Main](understanding-the-project-file/samples/sample7.xml)]
 
-Auf diese Weise weist die Projektdatei MSBuild an, Listen von Dateien zu erstellen, die auf die gleiche Weise verarbeitet werden müssen,&#x2014;wie die **Verweis** Liste Assemblys enthält, die für einen erfolgreichen Build vorhanden sein müssen. die **Kompilierungs** Liste enthält Code. Dateien, die kompiliert werden müssen, und die **Inhalts** Liste enthält Ressourcen, die unverändert kopiert werden müssen. Wir sehen uns an, wie der Buildprozess später in diesem Thema auf diese Elemente verweist und diese verwendet.
+Auf diese Weise weist die Projektdatei MSBuild an, Listen von Dateien zu erstellen, die auf die gleiche Weise verarbeitet werden müssen,&#x2014;wie die **Verweis** Liste Assemblys enthält, die für einen erfolgreichen Build vorhanden sein müssen, die **Kompilierungs** Liste enthält Code Dateien, die kompiliert werden müssen, und die **Inhalts** Liste enthält Ressourcen, die unverändert kopiert werden müssen. Wir sehen uns an, wie der Buildprozess später in diesem Thema auf diese Elemente verweist und diese verwendet.
 
 Element Elemente können auch untergeordnete [ItemMetadata](https://msdn.microsoft.com/library/ms164284.aspx) -Elemente enthalten. Dabei handelt es sich um benutzerdefinierte Schlüssel-Wert-Paare, die im wesentlichen Eigenschaften darstellen, die für dieses Element spezifisch sind. Beispielsweise enthalten viele Elemente der **Kompilierungs** Elemente in der Projektdatei **abhängige abhängige** Elemente.
 

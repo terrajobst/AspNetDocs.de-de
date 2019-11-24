@@ -21,7 +21,7 @@ von [Mike Wasson](https://github.com/MikeWasson)
 
 [Herunterladen des abgeschlossenen Projekts](https://github.com/MikeWasson/BookService)
 
-Derzeit macht unsere Web-API die Daten Bank Entitäten für den Client verfügbar. Der Client empfängt Daten, die direkt den Datenbanktabellen zugeordnet sind. Das ist jedoch nicht immer eine gute Idee. Manchmal möchten Sie die Form der Daten ändern, die Sie an den Client senden. Auf diese Weise können Sie z. B. folgende Vorgänge durchführen:
+Derzeit macht unsere Web-API die Daten Bank Entitäten für den Client verfügbar. Der Client empfängt Daten, die direkt den Datenbanktabellen zugeordnet sind. Das ist jedoch nicht immer eine gute Idee. Manchmal möchten Sie die Form der Daten ändern, die Sie an den Client senden. Auf diese Weise können Sie z. B. folgende Vorgänge durchführen:
 
 - Entfernen Sie zirkuläre Verweise (siehe vorheriger Abschnitt).
 - Blenden Sie bestimmte Eigenschaften aus, die Clients nicht anzeigen sollen.
