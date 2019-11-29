@@ -8,12 +8,12 @@ ms.date: 01/16/2019
 ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: c45003325832258466a787bc589bf40e844248a2
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985857"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74591242"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellung zum Testen
 
@@ -23,7 +23,7 @@ Diese tutorialreihe zeigt, wie Sie eine ASP.NET-Webanwendung mithilfe von Visual
 
 Eine aktuelle Version der Bereitstellung in Azure finden Sie unter [Erstellen einer ASP.net Core-Web-App in Azure](/azure/app-service/app-service-web-get-started-dotnet).
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 In diesem Tutorial stellen Sie eine ASP.NET-Webanwendung für Internet Information Server (IIS) auf dem lokalen Computer bereit.
 
@@ -49,7 +49,7 @@ Erinnerung: Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, 
 
 Laden Sie die Visual Studio-Startprojekt Mappe und das Projekt für die Projekt Mappe von Visual Studio herunter Diese Lösung enthält das abgeschlossene Tutorial. 
 
-[Starter Projekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Starter Projekt herunterladen](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 ## <a name="install-iis"></a>Installieren von IIS
 
@@ -372,7 +372,7 @@ Mit dieser zusätzlichen Verbindungs Zeichenfolge können Sie ein Benutzerkonto 
 
 2. Erstellen Sie eine Transformation für die Datei "Web. config" für die Verbindungs Zeichenfolge, die von der Anwendung zur Laufzeit verwendet werden soll.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 Sie haben Ihre Anwendung nun auf dem Entwicklungs Computer auf IIS bereitgestellt und dort getestet.
 

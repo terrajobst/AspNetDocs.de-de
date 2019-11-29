@@ -1,170 +1,170 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
-title: Anzeigen einer Tabelle von Datenbankdaten (c#) | Microsoft-Dokumentation
+title: Anzeigen einer Tabelle mit DatenbankdatenC#() | Microsoft-Dokumentation
 author: microsoft
-description: In diesem Tutorial zeige ich zwei Methoden zum Anzeigen eines Satzes von Datenbank-Datensätzen. Aufgezeigt werden zwei Methoden einen Satz von Datenbank-Datensätzen in einem HTML-ta formatieren...
+description: In diesem Tutorial zeige ich zwei Methoden zum Anzeigen eines Satzes von Datenbankdaten Sätzen. Ich zeige zwei Methoden zum Formatieren eines Satzes von Datenbankdaten Sätzen in einer HTML-Ta...
 ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: d6e758b6-6571-484d-a132-34ee6c47747a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c5ee59873468b4928b45ec586386e28cbe94c728
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3c908d030076fc8400190ef3cf1672632ac1ed6b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122438"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74589430"
 ---
 # <a name="displaying-a-table-of-database-data-c"></a>Anzeigen einer Tabelle von Datenbankdaten (C#)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-[PDF herunterladen](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_CS.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_CS.pdf)
 
-> In diesem Tutorial zeige ich zwei Methoden zum Anzeigen eines Satzes von Datenbank-Datensätzen. Ich zeigen, zwei Methoden einen Satz von Datenbank-Datensätzen in einer HTML-Tabelle zu formatieren. Zunächst zeige ich, wie Sie Datensätze aus der Datenbank direkt in einer Ansicht formatieren können. Als Nächstes zeige ich, wie Sie von Teilansichten profitieren bei der Formatierung von Datenbank-Datensätzen.
+> In diesem Tutorial zeige ich zwei Methoden zum Anzeigen eines Satzes von Datenbankdaten Sätzen. Ich zeige zwei Methoden zum Formatieren eines Satzes von Datenbankdaten Sätzen in einer HTML-Tabelle. Zuerst zeige ich, wie Sie die Datenbankeinträge direkt in einer Sicht formatieren können. Als nächstes zeige ich Ihnen, wie Sie beim Formatieren von Datenbankdaten Sätzen partiale nutzen können.
 
-Das Ziel in diesem Tutorial wird beschrieben, wie Sie eine HTML-Tabelle von Datenbankdaten in ASP.NET MVC-Anwendungen anzeigen können. Zunächst erfahren Sie, wie Sie mit, dass die Gerüstbau-Tools in Visual Studio enthalten um eine Sicht zu generieren, die eine Gruppe von Datensätzen automatisch anzeigt. Als Nächstes erfahren Sie, wie Sie eine partielle als Vorlage verwenden, bei der Formatierung von Datenbank-Datensätzen.
+In diesem Tutorial wird erläutert, wie Sie eine HTML-Tabelle mit Datenbankdaten in einer ASP.NET MVC-Anwendung anzeigen können. Zunächst erfahren Sie, wie Sie mithilfe der in Visual Studio enthaltenen Gerüstbau Tools eine Ansicht generieren, in der automatisch eine Reihe von Datensätzen angezeigt werden. Als Nächstes erfahren Sie, wie Sie beim Formatieren von Datenbankdaten Sätzen eine partielle als Vorlage verwenden.
 
-## <a name="create-the-model-classes"></a>Erstellen Sie die Modell-Klasse
+## <a name="create-the-model-classes"></a>Erstellen der Modellklassen
 
-Wir werden eine Reihe von Datensätzen aus der Tabelle der Datenbank Filme angezeigt. Die Filme-Datenbank-Tabelle enthält die folgenden Spalten:
+Wir werden den Satz von Datensätzen aus der Datenbanktabelle "Movies" anzeigen. Die "Movies"-Datenbanktabelle enthält die folgenden Spalten:
 
 <a id="0.3_table01"></a>
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spalten Name** | **Datentyp** | **NULL-Werten zulassen** |
 | --- | --- | --- |
-| Id | Int | False |
-| Titel | Nvarchar(200)-Datentyp gepackt ist | False |
-| Director | NVarchar(50) | False |
-| DateReleased | DateTime | False |
+| Id | Int | Falsch |
+| Title | Nvarchar (200) | Falsch |
+| Direktors | Nvarchar (50) | Falsch |
+| Datereleasing | DateTime | Falsch |
 
-Um die Filme-Tabelle in der ASP.NET MVC-Anwendung darstellen zu können, müssen wir eine Model-Klasse zu erstellen. In diesem Tutorial verwenden wir das Microsoft Entity Framework zum Erstellen von unserem Modellklassen aus.
+Um die Filme-Tabelle in unserer ASP.NET MVC-Anwendung darzustellen, müssen wir eine Modell Klasse erstellen. In diesem Tutorial verwenden wir die Microsoft-Entity Framework, um unsere Modellklassen zu erstellen.
 
 > [!NOTE] 
 > 
-> In diesem Tutorial verwenden wir das Microsoft Entity Framework. Allerdings ist es wichtig, zu verstehen, dass Sie eine Vielzahl verschiedener Technologien für die Interaktion mit einer Datenbank aus einer ASP.NET MVC-Anwendung, einschließlich LINQ to SQL, NHibernate oder ADO.NET verwenden können.
+> In diesem Tutorial verwenden wir die Microsoft-Entity Framework. Es ist jedoch wichtig zu verstehen, dass Sie eine Vielzahl verschiedener Technologien verwenden können, um mit einer Datenbank aus einer ASP.NET MVC-Anwendung, einschließlich LINQ to SQL, NHibernate oder ADO.net, zu interagieren.
 
-Um den Entity Data Model-Assistenten zu starten, gehen Sie wie folgt vor:
+Führen Sie die folgenden Schritte aus, um den Entity Data Model Assistenten zu starten:
 
-1. Mit der rechten Maustaste in den Ordner "Models" im Projektmappen-Explorer und Auswählen der Menüoption **hinzufügen, neue Element**.
-2. Wählen Sie die **Daten** Kategorie, und wählen die **ADO.NET Entity Data Model** Vorlage.
-3. Geben Sie den Namen Ihres Datenmodells *MoviesDBModel.edmx* , und klicken Sie auf die **hinzufügen** Schaltfläche.
+1. Klicken Sie im Fenster Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle, und wählen Sie die Menüoption **hinzufügen, neues Element**aus.
+2. Wählen Sie die Kategorie **Daten** aus, und wählen Sie die Vorlage **ADO.NET Entity Data Model** aus.
+3. Geben Sie Ihrem Datenmodell den Namen " *moviesdbmodel. edmx* ", und klicken Sie auf die Schaltfläche **Hinzufügen** .
 
-Nachdem Sie die Schaltfläche "hinzufügen", klicken Sie auf Assistent für Entity Data Model wird angezeigt (siehe Abbildung 1). Um den Assistenten abgeschlossen haben, gehen Sie wie folgt vor:
+Nachdem Sie auf die Schaltfläche Hinzufügen geklickt haben, wird der Entity Data Model-Assistent angezeigt (siehe Abbildung 1). Führen Sie die folgenden Schritte aus, um den Assistenten abzuschließen:
 
-1. In der **auswählen des Modellinhalts** Schritt wählen die **aus Datenbank generieren** Option.
-2. In der **wählen Sie Ihre Datenverbindung** Schritt, verwenden Sie die *MoviesDB.mdf* Datenverbindung und dem Namen *MoviesDBEntities* für die Verbindungseinstellungen. Klicken Sie auf die **Weiter** Schaltfläche.
-3. In der **Datenbankobjekte auswählen** Schritt, erweitern Sie den Knoten "Tabellen", wählen Sie die Tabelle für Filme. Geben Sie den Namespace *Modelle* , und klicken Sie auf die **Fertig stellen** Schaltfläche.
+1. Wählen Sie im Schritt **Modell Inhalt auswählen** die Option **aus Datenbank generieren aus** .
+2. Verwenden Sie im Schritt **Wählen Sie Ihre Datenverbindung** aus die Datenverbindung " *moviesdb. mdf* " und den Namen " *moviesdbentities* " für die Verbindungseinstellungen. Klicken Sie auf die Schaltfläche **weiter** .
+3. Erweitern Sie im Schritt **Wählen Sie Ihre Datenbankobjekte** aus den Knoten Tabellen, und wählen Sie die Tabelle Movies aus. Geben Sie die Namespace *Modelle* ein, und klicken Sie auf **Fertig** stellen.
 
-[![Erstellen von LINQ to SQL-Klassen](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
+[![Erstellen von LINQ to SQL Klassen](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
 
-**Abbildung 01**: Erstellen von LINQ to SQL-Klassen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image2.png))
+**Abbildung 01**: Erstellen von LINQ to SQL Klassen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image2.png))
 
-Nach Abschluss des Assistenten für Entity Data Model wird dem Entity Data Model-Designer geöffnet. Der Designer sollte die Filme-Entität angezeigt (siehe Abbildung 2).
+Nachdem Sie den Entity Data Model-Assistenten beendet haben, wird der Entity Data Model-Designer geöffnet. Der Designer sollte die Filme-Entität anzeigen (siehe Abbildung 2).
 
-[![Der Entity Data Model-Designer](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
+[![des Entity Data Model-Designers](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
 
-**Abbildung 02**: Das Entity Data Model Designer ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image4.png))
+**Abbildung 02**: der Entity Data Model-Designer ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image4.png))
 
-Wir müssen eine Änderung vornehmen, bevor der Vorgang fortgesetzt. Assistent für Entity Data generiert eine Modellklasse namens *Filme* , die die Tabelle der Datenbank Filme darstellt. Da wir die Filme-Klasse verwenden müssen, um einen bestimmten Film darzustellen, müssen wir den Namen der Klasse ändern *Film* anstelle von *Filme* (im singular statt im plural).
+Wir müssen eine Änderung vornehmen, bevor wir fortfahren. Der Assistent für Entitäts Daten generiert eine Modell Klasse mit dem Namen *Filme* , die die Datenbanktabelle "Movies" darstellt Da wir die Klasse "Movies" verwenden, um einen bestimmten Film darzustellen, müssen wir den Namen der Klasse in *Movie* anstelle von *Movies* (Singular anstelle von Plural) ändern.
 
-Doppelklicken Sie auf den Namen der Klasse auf der Designeroberfläche, und ändern Sie den Namen der Klasse von Filmen, Film. Nachdem Sie diese Änderung vornehmen, klicken Sie auf die **speichern** (das Symbol der Diskette) Schaltfläche, um die Movie-Klasse zu generieren.
+Doppelklicken Sie auf den Namen der Klasse auf der Designer Oberfläche, und ändern Sie den Namen der Klasse von Movies in Movie. Nachdem Sie diese Änderung vorgenommen haben, klicken Sie auf die Schaltfläche **Speichern** (das Symbol der Diskette), um die Movie-Klasse zu generieren.
 
-## <a name="create-the-movies-controller"></a>Erstellen des "Movies"-Controllers
+## <a name="create-the-movies-controller"></a>Erstellen des Filme Controllers
 
-Nun, da wir eine Methode zur Darstellung von unseren Unterlagen Datenbank haben, können wir einen Controller erstellen, der die Auflistung von Filmen zurückgibt. Klicken Sie im Fenster Projektmappen-Explorer von Visual Studio mit der rechten Maustaste in den Ordner "Controllers", und wählen Sie die Menüoption **hinzufügen, Controller** (siehe Abbildung 3).
+Nachdem wir nun über eine Möglichkeit verfügen, unsere Datenbankdaten Sätze darzustellen, können wir einen Controller erstellen, der die Sammlung von Filmen zurückgibt. Klicken Sie im Visual Studio-Projektmappen-Explorer Fenster mit der rechten Maustaste auf den Ordner Controllers, und wählen Sie die Menüoption **hinzufügen, Controller** (siehe Abbildung 3).
 
-[![Die Controller-Menü "hinzufügen"](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
+[![dem Menü "Controller hinzufügen"](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
 
-**Abbildung 03**: Im Controller hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image6.png))
+**Abbildung 03**: das Menü "Controller hinzufügen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image6.png))
 
-Wenn die **Controller hinzufügen** Dialogfeld angezeigt wird, geben Sie den Namen des Controllers MovieController (siehe Abbildung 4). Klicken Sie auf die **hinzufügen** , um den neuen Controller hinzuzufügen.
+Wenn das Dialogfeld **Controller hinzufügen** angezeigt wird, geben Sie den Controller Namen "muviecontroller" ein (siehe Abbildung 4). Klicken Sie zum Hinzufügen des neuen Controllers auf die Schaltfläche **Hinzufügen** .
 
-[![Das Dialogfeld "Controller hinzufügen"](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
+[Dialogfeld "Controller hinzufügen" ![](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
 
-**Abbildung 04**: Das Dialogfeld "Controller hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image8.png))
+**Abbildung 04**: Dialogfeld "Controller hinzufügen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image8.png))
 
-Wir müssen so ändern Sie die Index()-Aktion, die von der Movie-Controller verfügbar gemacht werden, sodass sie den Satz von Datenbank-Datensätzen zurückgibt. Ändern Sie den Controller, sodass es den Controller in der Liste 1 aussieht.
+Wir müssen die vom Movie Controller verfügbar gemachte Index ()-Aktion ändern, damit Sie den Satz von Datenbankdaten Sätzen zurückgibt. Ändern Sie den Controller so, dass er wie der Controller in der Liste 1 aussieht.
 
-**Codebeispiel 1 – Controllers\MovieController.cs**
+**Codebeispiel 1 – controllers\muviecontroller.cs**
 
 [!code-csharp[Main](displaying-a-table-of-database-data-cs/samples/sample1.cs)]
 
-In Codebeispiel 1 ist die MoviesDBEntities-Klasse verwendet, um die Datenbank MoviesDB darzustellen. Um diese Klasse verwenden zu können, müssen Sie wie folgt den MvcApplication1.Models-Namespace zu importieren:
+In der Liste 1 wird die Klasse "moviesdbentities" verwendet, um die Datenbank "moviesdb" darzustellen. Um diese Klasse verwenden zu können, müssen Sie den Namespace MvcApplication1. Models wie folgt importieren:
 
-Verwenden von MvcApplication1.Models;
+Verwenden von MvcApplication1. Models;
 
-Der Ausdruck *Entitäten. MovieSet.ToList()* gibt den Satz aller Filme aus der Tabelle der Datenbank Filme.
+Die Ausdrucks *Entitäten. "Movieset. Start List ()* " gibt den Satz aller Filme aus der Datenbanktabelle "Movies" zurück.
 
-## <a name="create-the-view"></a>Erstellen Sie die Sicht
+## <a name="create-the-view"></a>Erstellen der Sicht
 
-Die einfachste Möglichkeit zum Anzeigen eines Satzes von Datenbank-Datensätzen in einer HTML-Tabelle ist das Gerüst, das von Visual Studio bereitgestellten nutzen.
+Die einfachste Möglichkeit, einen Satz von Datenbankdaten Sätzen in einer HTML-Tabelle anzuzeigen, besteht darin, das von Visual Studio bereitgestellte Gerüstbau zu nutzen.
 
-Erstellen Sie Ihre Anwendung durch Auswählen der Menüoption **erstellen "," Projektmappe erstellen**. Bauen Sie Ihre Anwendung vor dem Öffnen der **Ansicht hinzufügen** Dialogfeld oder die Datenklassen nicht in das Dialogfeld angezeigt.
+Erstellen Sie die Anwendung, indem Sie die Menüoption **Build,** Projekt Mappe erstellen auswählen. Sie müssen die Anwendung erstellen, bevor Sie das Dialog **Feld Ansicht hinzufügen** öffnen, oder die Daten Klassen werden nicht im Dialogfeld angezeigt.
 
-Mit der rechten Maustaste der Index()-Aktion, und wählen Sie die Menüoption **Ansicht hinzufügen** (siehe Abbildung 5).
+Klicken Sie mit der rechten Maustaste auf die Aktion Index (), und wählen Sie die Menüoption **Ansicht hinzufügen** (siehe Abbildung 5).
 
 [![Hinzufügen einer Ansicht](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
 
-**Abbildung 05**: Hinzufügen einer Ansicht ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image10.png))
+**Abbildung 05**: Hinzufügen einer Ansicht ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image10.png))
 
-In der **Ansicht hinzufügen** Dialogfeld aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie die Movie-Klasse als die **Datenklasse anzeigen**. Wählen Sie *Liste* als die **Inhalt anzeigen** (siehe Abbildung 6). Wählen diese Optionen generiert eine stark typisierte Ansicht, in dem eine Liste von Filmen angezeigt.
+Aktivieren Sie im Dialog **Feld Ansicht hinzufügen** das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie die Klasse Movie als **Ansichts Datenklasse**aus. Wählen Sie *Liste* als **Inhalt der Ansicht** aus (siehe Abbildung 6). Wenn Sie diese Optionen auswählen, wird eine stark typisierte Ansicht generiert, in der eine Liste der Filme angezeigt wird.
 
-[![Das Dialogfeld "Ansicht hinzufügen"](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
+[Dialogfeld "Ansicht hinzufügen" ![](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
 
-**Abbildung 06**: Das Dialogfeld "Ansicht hinzufügen" ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image12.png))
+**Abbildung 06**: Dialogfeld "Ansicht hinzufügen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image12.png))
 
-Nachdem Sie auf die **hinzufügen** Schaltfläche, die Ansicht im Codebeispiel 2 wird automatisch generiert. Diese Ansicht enthält den Code, der zum Durchlaufen der Auflistung von Filmen und Anzeigen aller Eigenschaften eines Films erforderlich sind.
+Nachdem Sie auf die Schaltfläche **Hinzufügen** geklickt haben, wird die Ansicht in der Liste 2 automatisch generiert. Diese Sicht enthält den Code, der zum Durchlaufen der Auflistung von Filmen und zum Anzeigen der einzelnen Eigenschaften eines Films erforderlich ist.
 
-**Codebeispiel 2 – Views\Movie\Index.aspx**
+**Codebeispiel 2 – views\muvie\index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-cs/samples/sample2.aspx)]
 
-Sie können die Anwendung ausführen, indem Sie durch Auswählen der Menüoption **Debuggen, Debugging starten** (oder F5 drücken). Internet Explorer wird gestartet, wenn Sie die Anwendung ausführen. Wenn Sie an die /Movie URL navigieren, und klicken Sie dann die Seite in Abbildung 7 angezeigt werden.
+Sie können die Anwendung ausführen, indem Sie die Menüoption **Debuggen, Debuggen starten** (oder Drücken der Taste F5) auswählen. Wenn Sie die Anwendung ausführen, wird Internet Explorer gestartet. Wenn Sie zur/Movie-URL navigieren, wird die Seite in Abbildung 7 angezeigt.
 
-[![Eine Tabelle mit den Filmen](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
+[![einer Tabelle mit Filmen](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
 
-**Abbildung 07**: Eine Tabelle mit den Filmen ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-a-table-of-database-data-cs/_static/image14.png))
+**Abbildung 07**: eine Tabelle mit Filmen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-a-table-of-database-data-cs/_static/image14.png))
 
-Wenn Sie etwas über das Erscheinungsbild des Rasters der Datenbank-Datensätzen in Abbildung 7 nicht zufrieden sind können Sie einfach die Ansicht "Index" ändern. Sie können z. B. Ändern der *DateReleased* Header *Veröffentlichungsdatum* durch Ändern der Ansicht "Index".
+Wenn Sie nichts über die Darstellung des Rasters von Datenbankdaten Sätzen in Abbildung 7 erfahren möchten, können Sie einfach die Index Ansicht ändern. Beispielsweise können Sie den *datereleasing* -Header in das *Date* -Format ändern, indem Sie die Index Ansicht ändern.
 
-## <a name="create-a-template-with-a-partial"></a>Erstellen Sie eine Vorlage mit einer partiellen
+## <a name="create-a-template-with-a-partial"></a>Erstellen einer Vorlage mit einem partiellen
 
-Wenn eine Ansicht zu kompliziert wird, ist es eine gute Idee, starten Sie die Ansicht in Teilansichten aufteilen. Verwenden von Teilansichten erleichtert Ihre Ansichten verstehen und zu verwalten. Wir erstellen eine partielle, wir können jedes von der Movie-Datenbank-Datensätzen formatiert als Vorlage verwenden.
+Wenn eine Ansicht zu kompliziert wird, empfiehlt es sich, die Ansicht in partiale zu zerlegen. Wenn Sie partiale verwenden, werden Ihre Ansichten leichter zu verstehen und zu warten. Wir erstellen eine partielle, die wir als Vorlage zum Formatieren der einzelnen Movie Database-Datensätze verwenden können.
 
-Um die partielle erstellen, gehen Sie wie folgt vor:
+Führen Sie die folgenden Schritte aus, um den partiellen
 
-1. Mit der rechten Maustaste in des Ordners Views\Movie, und wählen Sie die Menüoption **Ansicht hinzufügen**.
-2. Aktivieren Sie das Kontrollkästchen mit der Bezeichnung *erstellen Sie eine Teilansicht (.ascx)*.
-3. Benennen Sie die partielle *MovieTemplate*.
+1. Klicken Sie mit der rechten Maustaste auf den Ordner views\movie, und wählen Sie die Menüoption **Ansicht hinzufügen**.
+2. Aktivieren Sie das Kontrollkästchen als *Teilansicht erstellen (. ascx)* .
+3. Benennen Sie die partielle " *mavietemplate*".
 4. Aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**.
-5. Wählen Sie Film als die *Datenklasse anzeigen*.
-6. Wählen Sie die leere als die *Inhalt anzeigen*.
-7. Klicken Sie auf die **hinzufügen** , um die partielle zu Ihrem Projekt hinzuzufügen.
+5. Wählen Sie Movie als *Ansichts Datenklasse*aus.
+6. Wählen Sie leer als *Inhalt der Sicht*aus.
+7. Klicken Sie auf die Schaltfläche **Hinzufügen** , um dem Projekt die partielle hinzuzufügen.
 
-Nachdem Sie diese Schritte abgeschlossen haben, ändern Sie die partielle MovieTemplate Codebeispiel 3 aussehen.
+Nachdem Sie diese Schritte ausgeführt haben, ändern Sie die Datei "muvietemplate" so, dass Sie wie in der Liste 3
 
-**Codebeispiel 3 – Views\Movie\MovieTemplate.ascx**
+**Codebeispiel 3 – views\muvie\muvietemplate.ascx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-cs/samples/sample3.aspx)]
 
-Die partielle in Programmausdruck 3 enthält eine Vorlage für eine einzelne Zeile von Datensätzen.
+Die partielle in der Liste 3 enthält eine Vorlage für eine einzelne Zeile mit Datensätzen.
 
-Geänderte Ansicht "Index" in Listing 4 wird der partiellen MovieTemplate verwendet.
+Die geänderte Index Sicht in der Liste 4 verwendet die "muvietemplate"-partielle.
 
-**Programmausdruck 4 – Views\Movie\Index.aspx**
+**Codebeispiel 4 – views\muvie\index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-cs/samples/sample4.aspx)]
 
-Die Ansicht in Listing 4 enthält eine Foreach-Schleife, die alle Filme durchläuft. Für jeden Film wird der partiellen MovieTemplate verwendet, um den Film zu formatieren. Die MovieTemplate wird durch Aufrufen der Hilfsmethode RenderPartial() gerendert.
+Die Ansicht in der Liste 4 enthält eine foreach-Schleife, die alle Filme durchläuft. Für jeden Film wird der "mavietemplate"-Teil verwendet, um den Film zu formatieren. Die "muvietemplate" wird durch Aufrufen der renderpartial ()-Hilfsmethode gerendert.
 
-Geänderte Ansicht "Index" rendert, die dieselbe HTML-Tabelle der Datenbank-Datensätzen. Allerdings wurde die Ansicht stark vereinfacht.
+Die geänderte Index Ansicht rendert dieselbe HTML-Tabelle von Datenbankdaten Sätzen. Allerdings wurde die Ansicht erheblich vereinfacht.
 
-Die RenderPartial()-Methode ist anders als die meisten anderen Hilfsmethoden, da sie keine Zeichenfolge zurückgibt. Aus diesem Grund müssen Sie die Methode mit RenderPartial() aufrufen &lt;% Html.RenderPartial(); %&gt; anstelle von &lt;% = Html.RenderPartial(); %&gt;.
+Die renderpartial ()-Methode unterscheidet sich von den meisten anderen Hilfsmethoden, da Sie keine Zeichenfolge zurückgibt. Daher müssen Sie die renderpartial ()-Methode mit &lt;% HTML. renderpartial (); aufgerufen werden. %&gt; anstelle von &lt;% = HTML. renderpartial (); %&gt;.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Das Ziel in diesem Tutorial wurde erläutert, wie Sie einen Satz von Datenbank-Datensätzen in einer HTML-Tabelle anzeigen können. Zuerst, wie Sie einen Satz von Datenbank-Datensätzen in eine Controlleraktion zurückgegeben wird, durch die Nutzung von Microsoft Entity Framework. Als Nächstes, wie Sie Visual Studio-Gerüst zu verwenden, um eine Sicht zu generieren, die eine Auflistung von Elementen automatisch anzeigt. Abschließend wie Sie die Ansicht zu vereinfachen, indem Sie eine partielle zu nutzen. Sie haben gelernt, wie eine partielle als Vorlage zu verwenden, damit Sie jeden Datensatz der Datenbank formatieren können.
+In diesem Tutorial wurde erläutert, wie Sie einen Satz von Datenbankdaten Sätzen in einer HTML-Tabelle anzeigen können. Zuerst haben Sie gelernt, wie Sie einen Satz von Datenbankdaten Sätzen aus einer Controller Aktion zurückgeben, indem Sie den Microsoft-Entity Framework nutzen. Als nächstes haben Sie gelernt, wie Sie mit dem Visual Studio-Gerüst eine Ansicht generieren, in der automatisch eine Auflistung von Elementen angezeigt wird. Schließlich haben Sie erfahren, wie Sie die Ansicht vereinfachen, indem Sie eine partielle nutzen. Sie haben gelernt, wie Sie eine partielle als Vorlage verwenden, damit Sie jeden Datenbankdaten Satz formatieren können.
 
 > [!div class="step-by-step"]
 > [Zurück](creating-model-classes-with-linq-to-sql-cs.md)

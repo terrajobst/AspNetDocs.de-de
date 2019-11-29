@@ -1,204 +1,204 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
-title: Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (c#) | Microsoft-Dokumentation
+title: Einführung in ASP.net-Webprogrammierung mit der Razor-C#Syntax () | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Dieses Kapitel bietet Ihnen einen Überblick über die Programmierung mit ASP.NET Web Pages mit Razor-Syntax. ASP.NET ist Microsoft Technologie für die dynamische Pa ausgeführt...
+description: Dieses Kapitel enthält eine Übersicht über die Programmierung mit ASP.net Web Pages mithilfe des Razor-Syntax. ASP.net ist die Technologie von Microsoft zum Ausführen von dynamischem Web-PA...
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: d9edcd61e52941c0fd69e645da7e2cf467a632ac
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c2f420bb7c2f7d2e31654c20fb9ec7497a30a9f7
+ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131780"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564885"
 ---
-# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax (c#)
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.net-Webprogrammierung mit der Razor-C#Syntax ()
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> Dieser Artikel bietet Ihnen einen Überblick über die Programmierung mit ASP.NET Web Pages mit Razor-Syntax. ASP.NET ist die Technologie von Microsoft für die Ausführung von dynamischen Webseiten auf Webservern. Dieser Artikel konzentriert sich auf die mit der Programmiersprache c#.
+> In diesem Artikel erhalten Sie einen Überblick über die Programmierung mit ASP.net Web Pages mithilfe des Razor-Syntax. ASP.net ist die Technologie von Microsoft zum Ausführen dynamischer Webseiten auf Webservern. Dieser Artikel konzentriert sich auf die C# Verwendung der Programmiersprache.
 > 
-> **Sie lernen Folgendes**:
+> **Lernen Sie**Folgendes:
 > 
-> - Das obere 8 Programmiertipps für die ersten Schritte mit ASP.NET Web Pages mit Razor-Syntax.
-> - Grundlegende Programmierkonzepte kennen, die Sie benötigen.
-> - Welche ASP.NET-Servercode: und die Razor-Syntax geht.
+> - Die ersten 8 Programmiertipps für den Einstieg in die Programmierung ASP.net Web Pages mithilfe Razor-Syntax.
+> - Grundlegende Programmier Konzepte, die Sie benötigen.
+> - Was ist ASP.net Servercode und der Razor-Syntax.
 >   
 > 
-> ## <a name="software-versions"></a>Software-Versionen
+> ## <a name="software-versions"></a>Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 3
+> - ASP.net Web Pages (Razor) 3
 >   
 > 
-> In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
+> Dieses Tutorial funktioniert auch mit ASP.net Web Pages 2.
 
-## <a name="the-top-8-programming-tips"></a>Die besten Tipps für 8 Programmierung
+## <a name="the-top-8-programming-tips"></a>Die Top 8-Programmiertipps
 
-Dieser Abschnitt enthält einige Tipps, die Sie unbedingt benötigen wissen, wie Sie mithilfe der Razor-Syntax ASP.NET-Servercode: schreibe.
+Dieser Abschnitt enthält einige Tipps, die Sie unbedingt kennen müssen, wenn Sie mit dem Schreiben von ASP.net-Servercode mit dem Razor-Syntax beginnen.
 
 > [!NOTE]
-> Die Razor-Syntax basiert auf der C#-Programmiersprache, und das ist die Sprache, die am häufigsten mit ASP.NET Web Pages verwendet wird. Die Razor-Syntax unterstützt jedoch auch Visual Basic-Sprache, und alle Elemente, die Sie sehen, dass Sie auch in Visual Basic durchführen können. Weitere Informationen finden Sie im Anhang [Visual Basic-Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908).
+> Der Razor-Syntax basiert auf der C# Programmiersprache, und das ist die Sprache, die am häufigsten mit ASP.net Web Pages verwendet wird. Der Razor-Syntax unterstützt jedoch auch die Visual Basic Sprache und alles, was Sie sehen können, auch in Visual Basic. Weitere Informationen finden Sie im Anhang [Visual Basic Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908).
 
-Weitere Informationen über die meisten dieser Techniken zur Programmierung finden Sie später in diesem Artikel.
+Weitere Details zu den meisten dieser Programmiertechniken finden Sie später in diesem Artikel.
 
-### <a name="1-you-add-code-to-a-page-using-the--character"></a>1. Sie fügen Code hinzu, um eine Seite mit dem @-Zeichen
+### <a name="1-you-add-code-to-a-page-using-the--character"></a>1. Sie fügen Code zu einer Seite mit dem @-Zeichen hinzu.
 
-Die `@` Inlineausdrücke, einzelne Anweisungsblöcken und mit mehreren Anweisungen Blöcke beginnt:
+Das `@` Zeichen startet Inline Ausdrücke, einzelne Anweisungsblöcke und Blöcke mit mehreren Anweisungen:
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample1.html)]
 
-Dies ist, wie diese Anweisungen aussehen, wenn die Seite in einem Browser ausgeführt wird:
+Diese Anweisungen sehen wie folgt aus, wenn die Seite in einem Browser ausgeführt wird:
 
-![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
+![Razor-Bild1](introducing-razor-syntax-c/_static/image1.jpg)
 
 > [!TIP] 
 > 
 > **HTML-Codierung**
 > 
-> Wenn Sie Inhalt anzeigen, auf eine Seite mit den `@` Zeichen, wie in den obigen Beispielen ASP.NET HTML-Codierung der Ausgabe. Dies ersetzt die reservierte HTML-Zeichen (z. B. `<` und `>` und `&`) mit Codes, mit denen die Zeichen als Zeichen statt als HTML-Tags oder Entitäten interpretiert wird auf einer Webseite angezeigt werden können. Ohne HTML-Codierung, die aus Ihrem Code möglicherweise nicht richtig angezeigt, und möglicherweise eine Seite, um Sicherheitsrisiken ausgesetzt.
+> Wenn Sie Inhalt in einer Seite mit dem `@` Zeichen anzeigen, wie in den vorherigen Beispielen, codiert ASP.net die Ausgabe. Dies ersetzt reservierte HTML-Zeichen (z. b. `<` und `>` und `&`) durch Codes, die es ermöglichen, dass die Zeichen als Zeichen in einer Webseite angezeigt werden, anstatt als HTML-Tags oder-Entitäten interpretiert zu werden. Ohne HTML-Codierung wird die Ausgabe des Server Codes möglicherweise nicht ordnungsgemäß angezeigt und kann eine Seite für Sicherheitsrisiken verfügbar machen.
 > 
-> Wenn Ihr Ziel ist, um HTML-Markup auszugeben, die Tags als Markup rendert (z. B. `<p></p>` für einen Absatz oder `<em></em>` Text hervorgehoben), finden Sie im Abschnitt [Kombinieren von Text, Markup und Code in Codeblöcken](#BM_CombiningTextMarkupAndCode) weiter unten in diesem Artikel.
+> Wenn das Ziel darin besteht, HTML-Markup auszugeben, das Tags als Markup rendert (z. b. `<p></p>` für einen Absatz oder `<em></em>`, um Text hervorzuheben), lesen Sie den Abschnitt [Kombinieren von Text, Markup und Code in Code Blöcken](#BM_CombiningTextMarkupAndCode) weiter unten in diesem Artikel.
 > 
-> Erfahren Sie mehr über die HTML-Codierung [arbeiten mit Formularen](https://go.microsoft.com/fwlink/?LinkId=202892).
+> Weitere Informationen zur HTML-Codierung finden Sie unter [Arbeiten mit Formularen](https://go.microsoft.com/fwlink/?LinkId=202892).
 
-### <a name="2-you-enclose-code-blocks-in-braces"></a>2. Schließen Sie Codeblöcke in geschweifte Klammern
+### <a name="2-you-enclose-code-blocks-in-braces"></a>2. Sie schließen Code Blöcke in geschweiften Klammern ein.
 
-Ein *Codeblock* enthält eine oder mehrere codeanweisungen und in geschweifte Klammern eingeschlossen ist.
+Ein *Codeblock* enthält mindestens eine Code Anweisung und ist in geschweifte Klammern eingeschlossen.
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample2.html)]
 
-Das Ergebnis in einem Browser angezeigt:
+Das in einem Browser angezeigte Ergebnis:
 
-![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
+![Razor-Bild2](introducing-razor-syntax-c/_static/image2.jpg)
 
-### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. In einem Block am Ende jeder Anweisung mit einem Semikolon
+### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. innerhalb eines-Blocks beenden Sie jede Code Anweisung mit einem Semikolon.
 
-In einem Codeblock muss jede vollständige Code-Anweisung mit einem Semikolon enden. Inline-Ausdrücke enden nicht mit einem Semikolon.
+In einem Codeblock muss jede Complete Code-Anweisung mit einem Semikolon enden. Inline Ausdrücke enden nicht mit einem Semikolon.
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample3.html)]
 
-### <a name="4-you-use-variables-to-store-values"></a>4. Sie verwenden Variablen zum Speichern von Werten
+### <a name="4-you-use-variables-to-store-values"></a>4. Sie verwenden Variablen zum Speichern von Werten.
 
-Sie können Werte in speichern eine *Variable*, einschließlich Zeichenfolgen, Zahlen und Datumsangaben. Sie erstellen eine neue Variable mit dem `var` Schlüsselwort. Sie können Werte direkt in eine Seite mit einfügen `@`.
+Sie können Werte in einer *Variablen*speichern, einschließlich Zeichen folgen, Zahlen und Datumsangaben usw. Sie erstellen eine neue Variable mit dem `var`-Schlüsselwort. Sie können Variablen Werte direkt in eine Seite einfügen, indem Sie `@`verwenden.
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample4.html)]
 
-Das Ergebnis in einem Browser angezeigt:
+Das in einem Browser angezeigte Ergebnis:
 
-![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
+![Razor-Bild3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
-### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. Sie einschließen literale Zeichenfolgenwerte in Anführungszeichen
+### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. Sie schließen Literalzeichenfolgen-Werte in doppelte Anführungszeichen ein.
 
-Ein *Zeichenfolge* ist eine Folge von Zeichen, die als Text behandelt werden. Um eine Zeichenfolge angeben, schließen Sie ihn in doppelte Anführungszeichen ein:
+Eine *Zeichen* Folge ist eine Sequenz von Zeichen, die als Text behandelt werden. Um eine Zeichenfolge anzugeben, müssen Sie Sie in doppelte Anführungszeichen einschließen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample5.cshtml)]
 
-Wenn die Zeichenfolge, die Sie anzeigen möchten, einen umgekehrten Schrägstrich enthält ( `\` ) oder doppelte Anführungszeichen ( `"` ), verwenden Sie eine *ausführliches Zeichenfolgenliteral* , enthält das Präfix der `@` Operator. (In C# geschrieben, die \ Zeichen eine besonderen Bedeutung hat, es sei denn, Sie ein ausführliches Zeichenfolgenliteral verwenden.)
+Wenn die anzuzeigende Zeichenfolge einen umgekehrten Schrägstrich (`\`) oder doppelte Anführungszeichen (`"`) enthält, verwenden Sie einen *ausführlichen Zeichenfolgenliteralwert* , der dem `@`-Operator vorangestellt ist. (In C#hat das Zeichen \ eine besondere Bedeutung, es sei denn, Sie verwenden einen ausführlichen Zeichenfolgenliterals.
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample6.html)]
 
-Klicken Sie zum Einbetten von doppelten Anführungszeichen verwenden ein ausführliches Zeichenfolgenliteral, und wiederholen Sie die Anführungszeichen:
+Um doppelte Anführungszeichen einzubetten, verwenden Sie einen ausführlichen Zeichenfolgenliteralwert und wiederholen die Anführungszeichen
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample7.html)]
 
-So sieht das Ergebnis der Verwendung von diesen beiden Beispielen auf einer Seite aus:
+Im folgenden finden Sie das Ergebnis der Verwendung beider Beispiele in einer Seite:
 
 ![Razor-Img4](introducing-razor-syntax-c/_static/image4.jpg)
 
 > [!NOTE]
-> Beachten Sie, dass die `@` Zeichen wird verwendet, markieren Sie wörtliche Zeichenfolgenliterale in C# geschrieben und Markieren von Code in ASP.NET-Seiten.
+> Beachten Sie, dass das `@` Zeichen verwendet wird, um ausführliche Zeichen folgen Literale in C# und zu kennzeichnen, um Code in ASP.NET Seiten zu markieren.
 
-### <a name="6-code-is-case-sensitive"></a>6. Code wird die Groß-/Kleinschreibung beachten
+### <a name="6-code-is-case-sensitive"></a>6. bei Code wird Groß-/Kleinschreibung
 
-C#-Schlüsselwörter (z. B. `var`, `true`, und `if`) und Namen wird die Groß-/Kleinschreibung beachtet. Die folgenden Codezeilen erstellt zwei unterschiedliche Variablen `lastName` und `LastName.`
+In C#wird bei Schlüsselwörtern (z. b. `var`, `true`und `if`) und Variablennamen die Groß-/Kleinschreibung beachtet. In den folgenden Codezeilen werden zwei verschiedene Variablen erstellt: `lastName` und `LastName.`
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample8.cshtml)]
 
-Wenn Sie eine Variable deklarieren `var lastName = "Smith";` und wenn Sie versuchen, diese Variable auf der Seite als verweisen `@LastName`, ein Fehler ausgegeben, da `LastName` wird nicht erkannt werden.
+Wenn Sie eine Variable als `var lastName = "Smith";` deklarieren und versuchen, auf die Variable auf der Seite als `@LastName`zu verweisen, erhalten Sie den Wert `"Jones"` anstelle von `"Smith"`.
 
 > [!NOTE]
-> In Visual Basic-Schlüsselwörter und Variablen werden *nicht* Groß-/Kleinschreibung beachtet.
+> In Visual Basic wird die Groß-/Kleinschreibung *nicht* beachtet.
 
-### <a name="7-much-of-your-coding-involves-objects"></a>7. Die Codierung ein Großteil beinhaltet Objekte
+### <a name="7-much-of-your-coding-involves-objects"></a>7. ein Großteil ihrer Codierung umfasst Objekte
 
-Ein *Objekt* stellt eine Sache, die Sie programmieren können, mit &#8212; eine Seite, ein Textfeld, eine Datei, ein Bild, eine webanforderung, eine e-Mail-Nachricht, einen Kundendatensatz (Datenbankzeile) usw. Objekte verfügen über Eigenschaften, die ihre Merkmale zu beschreiben, und Sie lesen oder ändern können &#8212; ein Textfeld-Objekt verfügt über eine `Text` -Eigenschaft (unter anderem) eine Request-Objekt verfügt über eine `Url` -Eigenschaft, die eine e-Mail-Nachricht verfügt über eine `From` -Eigenschaft und ein Kundenobjekt verfügt über eine `FirstName` Eigenschaft. Objekte verfügen außerdem über Methoden, die die &quot;Verben&quot; ausführen. Beispiele hierfür sind ein Dateiobjekt `Save` -Methode, ein Bildobjekt `Rotate` -Methode und eine e-Mail-Adresse des Objekts `Send` Methode.
+Ein- *Objekt* stellt eine Aufgabe dar, mit &#8212; der Sie eine Seite, ein Textfeld, eine Datei, ein Bild, eine Webanforderung, eine e-Mail-Nachricht, einen Kundendaten Satz (Datenbankzeile) usw. programmieren können. Objekte verfügen über Eigenschaften, die ihre Merkmale beschreiben, und Sie können ein &#8212; Textfeld-`Text` Objekt lesen oder ändern (unter anderem), ein Request-Objekt verfügt über eine `Url`-Eigenschaft, eine e-Mail-Nachricht über eine `From`-Eigenschaft, und ein Customer-Objekt verfügt über eine `FirstName`-Eigenschaft. -Objekte verfügen auch über Methoden, die die &quot;Verben&quot; können, die Sie ausführen können. Beispiele hierfür sind die `Save`-Methode eines File-Objekts, die `Rotate`-Methode eines Bildobjekts und die `Send`-Methode eines e-Mail-Objekts.
 
-Sie arbeiten häufig mit der `Request` Objekt, wo Sie Informationen wie die Werte von Textfeldern (Felder) auf der Seite Art der Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. gesendet. Das folgende Beispiel zeigt, wie Sie den Zugriff auf Eigenschaften von den `Request` -Objekt und das Aufrufen von der `MapPath` -Methode der der `Request` -Objekt, das Sie den absoluten Pfad der Seite auf dem Server erhalten:
+Häufig arbeiten Sie mit dem `Request` Objekt, das Ihnen Informationen wie die Werte von Textfeldern (Formularfelder) auf der Seite, den Typ des Browsers, der die Anforderung durchgeführt hat, die URL der Seite, die Benutzeridentität usw. enthält. Im folgenden Beispiel wird gezeigt, wie Sie auf Eigenschaften des `Request` Objekts zugreifen und wie Sie die `MapPath`-Methode des `Request`-Objekts aufrufen, das Ihnen den absoluten Pfad der Seite auf dem Server liefert:
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample9.html)]
 
-Das Ergebnis in einem Browser angezeigt:
+Das in einem Browser angezeigte Ergebnis:
 
 ![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
-### <a name="8-you-can-write-code-that-makes-decisions"></a>8. Sie können Code schreiben, die Entscheidungen trifft
+### <a name="8-you-can-write-code-that-makes-decisions"></a>8. Sie können Code schreiben, der Entscheidungen trifft.
 
-Ein wichtiges Feature von dynamischen Webseiten ist, dass auf Sie bestimmen können, was zu tun ist basierend auf Bedingungen. Die gängigste Methode dazu ist die `if` Anweisung (und optional `else` Anweisung).
+Ein wichtiges Feature von dynamischen Webseiten ist, dass Sie anhand der Bedingungen ermitteln können, was zu tun ist. Die gängigste Methode hierfür ist die `if`-Anweisung (und optional `else`-Anweisung).
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample10.cshtml)]
 
-Die Anweisung `if(IsPost)` ist eine schnelle Möglichkeit der Verfassung `if(IsPost == true)`. Zusammen mit `if` Anweisungen, es gibt eine Vielzahl von Möglichkeiten zum Testen von Bedingungen, wiederholen Sie Codeblöcke und usw., die sind weiter unten in diesem Artikel beschrieben.
+Die-Anweisung `if(IsPost)` ist eine Kurzform zum Schreiben von `if(IsPost == true)`. Zusammen mit `if`-Anweisungen gibt es eine Vielzahl von Möglichkeiten, Bedingungen zu testen, Code Blöcke zu wiederholen usw., die weiter unten in diesem Artikel beschrieben werden.
 
-Das Ergebnis in einem Browser angezeigt (nach dem Klicken auf **senden**):
+Das in einem Browser angezeigte Ergebnis (nach dem Klicken auf " **senden**"):
 
 ![Razor-Img6](introducing-razor-syntax-c/_static/image6.jpg)
 
 > [!TIP] 
 > 
 > <a id="SB_HttpGetPost"></a>
-> ### <a name="http-get-and-post-methods-and-the-ispost-property"></a>HTTP GET und POST-Methoden und die IsPost-Eigenschaft
+> ### <a name="http-get-and-post-methods-and-the-ispost-property"></a>HTTP Get-und Post-Methoden und die ispost-Eigenschaft
 > 
-> Das Protokoll für Webseiten (HTTP) unterstützt eine sehr begrenzte Anzahl von Methoden (Verben), die verwendet werden, um Anforderungen an den Server zu senden. Die zwei häufigsten Gründe sind GET, die zum Lesen einer Seite verwendet wird, und POST, das verwendet wird, um eine Seite zu übermitteln. Zum ersten Mal, das ein Benutzer eine Seite anfordert, wird im Allgemeinen unter Verwendung von GET eine Seite angefordert. Wenn der Benutzer in einem Formular ausgefüllt und klickt dann auf eine Schaltfläche "Senden", sendet der Browser eine POST-Anforderung an dem Server an.
+> Das Protokoll, das für Webseiten (http) verwendet wird, unterstützt eine sehr begrenzte Anzahl von Methoden (Verben), die verwendet werden, um Anforderungen an den Server zu senden. Die beiden häufigsten sind Get, das zum Lesen einer Seite verwendet wird, und Post, der zum Senden einer Seite verwendet wird. Wenn ein Benutzer zum ersten Mal eine Seite anfordert, wird die Seite mithilfe von Get angefordert. Wenn der Benutzer ein Formular ausfüllt und dann auf die Schaltfläche Senden klickt, sendet der Browser eine Post-Anforderung an den Server.
 > 
-> In Web-Programmierung ist es oft hilfreich zu wissen, ob eine Seite als GET oder POST angefordert wird, damit Sie wissen, wie auf die Seite zu verarbeiten. In ASP.NET Web Pages, können Sie die `IsPost` Eigenschaft, um festzustellen, ob eine Anforderung eine Get- oder POST ist. Wenn die Anforderung eine POST-ist der `IsPost` Eigenschaft "true" zurück, und Sie können Aktionen wie lesen die Werte von Textfeldern in einem Formular. Viele Beispiele, die Sie sehen, in dem Sie zeigen, wie zum Verarbeiten der Seite hängt der Wert des `IsPost`.
+> Bei der Webprogrammierung ist es häufig hilfreich zu wissen, ob eine Seite als Get-oder Post-Vorgang angefordert wird, damit Sie wissen, wie die Seite verarbeitet wird. In ASP.net Web Pages können Sie die `IsPost`-Eigenschaft verwenden, um festzustellen, ob eine Anforderung ein Get-oder Post-Eintrag ist. Wenn es sich bei der Anforderung um einen Post-Vorgang handelt, wird die `IsPost`-Eigenschaft "true" zurückgegeben. Sie können z. b. die Werte von Textfeldern in einem Formular lesen. Viele Beispiele zeigen Ihnen, wie Sie die Seite je nach dem Wert `IsPost`anders verarbeiten können.
 
-## <a name="a-simple-code-example"></a>Ein einfaches Codebeispiel
+## <a name="a-simple-code-example"></a>Einfaches Code Beispiel
 
-Dieses Verfahren zeigt, wie Sie eine Seite erstellen, die die grundlegenden Programmiertechniken veranschaulicht. Im Beispiel erstellen Sie eine Seite, mit dem Benutzer, die zwei Zahlen eingeben, dann fügt sie hinzu, und das Ergebnis wird angezeigt.
+In diesem Verfahren wird gezeigt, wie Sie eine Seite erstellen, die grundlegende Programmiertechniken veranschaulicht. In diesem Beispiel erstellen Sie eine Seite, mit der Benutzer zwei Zahlen eingeben können. Anschließend werden Sie hinzugefügt, und das Ergebnis wird angezeigt.
 
-1. Klicken Sie in Ihrem Editor, erstellen Sie eine neue Datei, und nennen sie *AddNumbers.cshtml*.
-2. Kopieren Sie den folgenden Code und Markup auf der Seite, und Ersetzen Sie dabei alle Elemente bereits in der Seite an.  
+1. Erstellen Sie im Editor eine neue Datei, und nennen Sie Sie " *AddNumbers. cshtml*".
+2. Kopieren Sie den folgenden Code und das Markup in die Seite, und ersetzen Sie alles, was bereits auf der Seite ist.  
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample11.cshtml)]
 
-    Es gibt einige Dinge beachten Sie:
+    Beachten Sie Folgendes:
 
-    - Die `@` Zeichen beginnt des erste Codeblocks auf der Seite, und ihm vorausgeht der `totalMessage` Variable, die am unteren Rand der Seite eingebettet ist.
-    - Der Block am oberen Rand der Seite wird in Klammern eingeschlossen.
-    - Am Anfang des Blocks enden alle Zeilen mit einem Semikolon.
-    - Die Variablen `total`, `num1`, `num2`, und `totalMessage` mehrere Zahlen und einer Zeichenfolge zu speichern.
-    - Der Zeichenfolgenliteral-Wert, der zugewiesen der `totalMessage` Variable ist in doppelte Anführungszeichen.
-    - Da der Code beim Groß-/Kleinschreibung beachtet, ist die `totalMessage` Variable, die am unteren Rand der Seite verwendet wird, muss der Name der Variablen am Anfang genau entsprechen.
-    - Der Ausdruck `num1.AsInt() + num2.AsInt()` für die Arbeit mit Objekten und Methoden veranschaulicht. Die `AsInt` Methode für jede Variable konvertiert die Zeichenfolge, die von einem Benutzer in eine Zahl (Integer) eingegeben wird, sodass Sie arithmetische Operationen darauf ausführen können.
-    - Die `<form>` Tag enthält eine `method="post"` Attribut. Dies gibt an, dass wenn der Benutzer klickt **hinzufügen**, die Seite an den Server mithilfe der HTTP-POST-Methode gesendet. Wenn die Seite gesendet wird, die `if(IsPost)` Test True ergibt, der bedingte code ausgeführt wird, und das Ergebnis der Addition der Zahlen angezeigt.
-3. Speichern Sie die Seite, und führen Sie sie in einem Browser. (Stellen Sie sicher, dass die Seite ist ausgewählt, der **Dateien** Arbeitsbereich vor der Ausführung.) Geben Sie zwei ganzen Zahlen, und klicken Sie dann auf die **hinzufügen** Schaltfläche. 
+    - Mit dem `@` Zeichen wird der erste Codeblock auf der Seite gestartet, und vor der `totalMessage` Variablen, die am unteren Rand der Seite eingebettet ist.
+    - Der Block am oberen Rand der Seite wird in geschweifte Klammern eingeschlossen.
+    - Im Block am oberen Ende werden alle Zeilen mit einem Semikolon enden.
+    - In den Variablen `total`, `num1`, `num2`und `totalMessage` werden mehrere Zahlen und eine Zeichenfolge gespeichert.
+    - Der Literalzeichenfolgen-Wert, der der `totalMessage` Variablen zugewiesen ist, ist in doppelten Anführungszeichen.
+    - Da im Code die Groß-/Kleinschreibung beachtet wird, muss der Name, wenn die `totalMessage` Variable im unteren Bereich der Seite verwendet wird, genau mit der Variablen oben übereinstimmen.
+    - Der Ausdruck `num1.AsInt() + num2.AsInt()` zeigt, wie Sie mit Objekten und Methoden arbeiten. Die `AsInt`-Methode für jede Variable konvertiert die von einem Benutzer eingegebene Zeichenfolge in eine Zahl (eine ganze Zahl), sodass Sie arithmetische Operationen ausführen können.
+    - Das `<form>`-Tag enthält ein `method="post"` Attribut. Dies gibt an, dass die Seite mithilfe der HTTP Post-Methode an den Server gesendet wird, wenn der Benutzer auf **Hinzufügen**klickt. Wenn die Seite übermittelt wird, wird der `if(IsPost)` Test als true ausgewertet, und der bedingte Code wird ausgeführt, und das Ergebnis des Hinzufügens der Zahlen wird angezeigt.
+3. Speichern Sie die Seite, und führen Sie Sie in einem Browser aus. (Stellen Sie sicher, dass die Seite im Arbeitsbereich " **Dateien** " ausgewählt ist, bevor Sie Sie ausführen.) Geben Sie zwei ganze Zahlen ein, und klicken Sie dann auf **Hinzufügen** . 
 
     ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
-## <a name="basic-programming-concepts"></a>Grundlegende Programmierkonzepte
+## <a name="basic-programming-concepts"></a>Grundlegende Programmier Konzepte
 
-Dieser Artikel bietet eine Übersicht über ASP.NET Web-Programmierung. Es ist nicht für eine vollständige Prüfung, nur eine kurze Führung zusammengestellt über die Programmierkonzepte kennen, die Sie am häufigsten verwenden. Dennoch werden fast alles, was benötigen Sie für den Einstieg mit ASP.NET Web Pages behandelt.
+Dieser Artikel bietet eine Übersicht über die ASP.net-Webprogrammierung. Es handelt sich nicht um eine umfassende Prüfung, sondern nur eine kurze Tour durch die Programmier Konzepte, die Sie am häufigsten verwenden werden. Auch hier wird fast alles behandelt, was Sie für den Einstieg in ASP.net Web Pages benötigen.
 
-Aber zuerst, eine kleine technischen Hintergrund.
+Aber zuerst ein wenig technischer Hintergrund.
 
-### <a name="the-razor-syntax-server-code-and-aspnet"></a>Die Razor-Syntax, Servercode und ASP.NET
+### <a name="the-razor-syntax-server-code-and-aspnet"></a>Die Razor-Syntax, der Server Code und ASP.net
 
-Razor-Syntax ist eine einfache Programmiersyntax zum Einbetten von serverbasiertem Code in einer Webseite. Auf einer Webseite, die die Razor-Syntax verwendet, es gibt zwei Arten von Inhalten: Clientcode Inhalte und Server. Clients Inhalte ist der Code, den Sie in Webseiten verwendet werden: HTML-Markup (Elemente), Stilinformationen wie CSS, vielleicht einige Clientskripts wie JavaScript und nur-Text.
+Razor-Syntax ist eine einfache Programmier Syntax zum Einbetten von Server basiertem Code in einer Webseite. Auf einer Webseite, die die Razor-Syntax verwendet, gibt es zwei Arten von Inhalten: Client Inhalt und Servercode. Client Inhalt ist das, was Sie in Webseiten verwenden: HTML-Markup (Elemente), Formatinformationen wie CSS, vielleicht einige Client Skripts wie JavaScript und nur-Text.
 
-Razor-Syntax können Sie diese Clients Inhalte Servercode hinzufügen. Liegt Servercode auf der Seite, führt der Server diesen Code zuerst, bevor die Seite an den Browser gesendet. Auf dem Server ausführen, kann der Code Aufgaben ausführen, die mit Clientinhalt alleine, wie Sie den Zugriff auf serverbasierte Datenbanken sehr viel komplizierter sein können. Der wichtigste Servercode kann Clientinhalt dynamisch erstellen &#8212; können sie HTML-Markup oder andere Inhalte nebenbei generieren und senden Sie sie an den Browser sowie die statische HTML-Elemente, die die Seite enthalten können. Aus Sicht des Browsers unterscheidet sich Clients Inhalte, die von Ihrem Code generiert wird nicht als jeder andere Client-Inhalte. Wie Sie bereits gesehen haben, befindet sich der Code, der erforderlich ist recht einfach.
+Mit Razor-Syntax können Sie diesem Client Inhalt Servercode hinzufügen. Wenn auf der Seite Servercode vorhanden ist, führt der Server den Code zuerst aus, bevor die Seite an den Browser gesendet wird. Durch die Ausführung auf dem Server kann der Code Aufgaben ausführen, die für die Verwendung von Client Inhalten allein sehr viel komplexer sein können, z. b. den Zugriff auf serverbasierte Datenbanken. Der wichtigste Punkt ist, dass der Servercode Client &#8212; Inhalte dynamisch erstellen kann, um HTML-Markup oder anderen Inhalt dynamisch zu generieren und ihn dann zusammen mit jedem statischen HTML-Code, den die Seite enthält, an den Browser zu senden. Aus Sicht des Browsers unterscheidet sich der Client Inhalt, der vom Servercode generiert wird, nicht von anderen Client Inhalten. Wie Sie bereits gesehen haben, ist der erforderliche Servercode recht einfach.
 
-ASP.NET-Webseiten, die die Razor-Syntax enthalten haben eine besondere Dateinamenerweiterung (*.cshtml* oder *vbhtml*). Der Server erkennt diese Erweiterungen, führt den Code, der mit Razor-Syntax markiert ist, und klicken Sie dann die Seite an den Browser sendet.
+ASP.NET Webseiten, die die Razor-Syntax enthalten, haben eine spezielle Dateierweiterung ( *. cshtml* oder *. vbhtml*). Der Server erkennt diese Erweiterungen, führt den Code aus, der mit Razor-Syntax gekennzeichnet ist, und sendet die Seite dann an den Browser.
 
-### <a name="where-does-aspnet-fit-in"></a>Wo ist ASP.NET angebracht?
+### <a name="where-does-aspnet-fit-in"></a>Wo ist ASP.net passt?
 
-Razor-Syntax basiert auf einer Technologie von Microsoft, die Namen ASP.NET, die wiederum auf Microsoft .NET Framework basiert. Der.NET Framework ist ein großes, umfassende Programmierframework von Microsoft für die Entwicklung von praktisch jeder Art von Computer-Anwendung. ASP.NET ist der Teil von .NET Framework, die speziell zum Erstellen von Webanwendungen konzipiert ist. Entwickler haben die ASP.NET verwendet, um viele der größten und höchsten Datenverkehr Websites in der ganzen Welt zu erstellen. (Jedes Mal, die die Dateinamenerweiterung daraufhin *aspx* als Teil der URL an einem Standort, wissen Sie, dass die Website mit ASP.NET geschrieben wurde.)
+Razor-Syntax basiert auf einer Technologie von Microsoft namens ASP.net, die wiederum auf dem Microsoft .NET Framework basiert. The.NET Framework ist ein großes, umfassendes Programmier Framework von Microsoft für die Entwicklung von praktisch jeder Art von Computeranwendung. ASP.net ist der Teil der .NET Framework, die speziell für das Erstellen von Webanwendungen entworfen wurde. Entwickler haben ASP.NET verwendet, um viele der größten und weltweit höchsten Websites zu erstellen. (Jedes Mal, wenn die Dateinamenerweiterung " *. aspx* " als Teil der URL einer Website angezeigt wird, wissen Sie, dass die Website mit ASP.NET geschrieben wurde.)
 
-Die Razor-Syntax bietet Ihnen die Leistungsfähigkeit der ASP.NET, aber verwenden eine vereinfachte Syntax, der leichter erfahren Sie, ob Sie Anfänger sind und Sie produktiver stellt, wenn Sie ein Experte sind. Obwohl diese Syntax einfach zu verwenden ist, bedeutet die Familie Beziehung zu ASP.NET und .NET Framework, wie Ihre Websites komplexer werden, Sie die Leistungsfähigkeit der größeren Frameworks zur Verfügung haben.
+Der Razor-Syntax bietet Ihnen die gesamte Leistungsfähigkeit von ASP.net, verwendet jedoch eine vereinfachte Syntax, die einfacher zu erlernen ist, wenn Sie ein Anfänger sind und Sie produktiver machen, wenn Sie ein Experte sind. Obwohl diese Syntax einfach zu verwenden ist, bedeutet Ihre Familienbeziehung zu ASP.net und der .NET Framework, dass Sie, wenn Ihre Websites komplexer werden, die Leistungsfähigkeit der größeren Frameworks haben, die Ihnen zur Verfügung stehen.
 
 ![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
@@ -206,132 +206,132 @@ Die Razor-Syntax bietet Ihnen die Leistungsfähigkeit der ASP.NET, aber verwende
 > 
 > **Klassen und Instanzen**
 > 
-> ASP.NET-Servercode: verwendet Objekte, die wiederum auf der Idee von Klassen erstellt werden. Die Klasse ist die Definition oder eine Vorlage für ein Objekt. Beispielsweise kann eine Anwendung enthalten eine `Customer` Klasse, die definiert, die Eigenschaften und Methoden, die alle Customer-Objekt.
+> ASP.net-Servercode verwendet-Objekte, die wiederum auf der Idee von Klassen basieren. Bei der-Klasse handelt es sich um die Definition oder Vorlage für ein Objekt. Beispielsweise kann eine Anwendung eine `Customer` Klasse enthalten, die die Eigenschaften und Methoden definiert, die ein beliebiges Kunden Objekt benötigt.
 > 
-> Wenn die Anwendung mit tatsächlichen Kundeninformationen arbeiten muss, erstellt er eine Instanz von (oder *instanziiert*) eine Customer-Objekt. Jeder einzelne Kunde wird eine separate Instanz von der `Customer` Klasse. Jede Instanz unterstützt die gleichen Eigenschaften und Methoden, aber die Eigenschaftswerte für die einzelnen Instanzen unterscheiden sich in der Regel, da jedes Kundenobjekt eindeutig ist. In einer Customer-Objekt das `LastName` Eigenschaft möglicherweise "Smith"; in einer anderen Customer-Objekt, das `LastName` Eigenschaft möglicherweise "Jones" ab.
+> Wenn die Anwendung mit den tatsächlichen Kundeninformationen arbeiten muss, erstellt Sie eine Instanz von (oder *instanziiert*) ein Customer-Objekt. Bei jedem einzelnen Kunden handelt es sich um eine separate Instanz der `Customer`-Klasse. Jede Instanz unterstützt dieselben Eigenschaften und Methoden, aber die Eigenschaftswerte für jede Instanz unterscheiden sich in der Regel, da jedes Kunden Objekt eindeutig ist. In einem Kunden Objekt kann die `LastName`-Eigenschaft "Smith" lauten. in einem anderen Customer-Objekt kann die `LastName`-Eigenschaft "Jones" lauten.
 > 
-> Jeder einzelne Webseite auf Ihrer Website auf ähnliche Weise wird eine `Page` -Objekt, das eine Instanz von der `Page` Klasse. Eine Schaltfläche auf der Seite ist eine `Button` -Objekt, das eine Instanz von der `Button` -Klasse, und So weiter. Jede Instanz verfügt über eigene Eigenschaften, aber alle basieren auf den in der Definition der Klasse des Objekts angegebenen.
+> Auf ähnliche Weise ist jede einzelne Webseite in Ihrer Site ein `Page` Objekt, das eine Instanz der `Page`-Klasse ist. Eine Schaltfläche auf der Seite ist ein `Button` Objekt, das eine Instanz der `Button`-Klasse ist usw. Jede Instanz verfügt über eigene Merkmale, aber Sie basieren auf den Angaben, die in der Klassendefinition des Objekts angegeben sind.
 
 ## <a name="basic-syntax"></a>Allgemeine Syntax
 
-Zuvor haben Sie ein einfaches Beispiel zum Erstellen einer ASP.NET Web Pages-Seite, und wie Sie HTML-Markup Servercode hinzufügen können. Hier erfahren Sie die Grundlagen zum Schreiben von ASP.NET-Code-Server mithilfe der Razor-Syntax &#8212; , also die programming Language-Regeln.
+Früher haben Sie ein einfaches Beispiel für das Erstellen einer ASP.net Web Pages Seite und die Vorgehensweise zum Hinzufügen von Servercode zu HTML-Markup gesehen. Hier lernen Sie die Grundlagen zum Schreiben von ASP.net-Servercode mithilfe &#8212; der Razor-Syntax der Programmiersprachen Regeln kennen.
 
-Wenn Sie bereits über Erfahrung mit Programmierung (insbesondere, wenn Sie C#, C++, c#, Visual Basic oder JavaScript verwendet haben), werden viele der hier Sie lesen vertraut sein. Sie müssen wahrscheinlich machen Sie sich nur mit Markup wie Server-Code hinzugefügt wird *.cshtml* Dateien.
+Wenn Sie Erfahrung mit der Programmierung haben (insbesondere, wenn Sie C, C++, C#, Visual Basic oder JavaScript verwendet haben), werden viele der hier gelesenen Elemente Ihnen vertraut sein. Sie müssen sich wahrscheinlich nur mit dem Hinzufügen von Servercode zu Markup in *. cshtml* -Dateien vertraut machen.
 
 <a id="BM_CombiningTextMarkupAndCode"></a>
-### <a name="combining-text-markup-and-code-in-code-blocks"></a>Kombinieren von Text, Markup und Code in Codeblöcken
+### <a name="combining-text-markup-and-code-in-code-blocks"></a>Kombinieren von Text, Markup und Code in Code Blöcken
 
-In Server-Codeblöcken möchten Sie häufig Ausgabe Text oder Markup (oder beides) auf der Seite. Wenn ein Server-Codeblock Text enthält, die nicht Code und, stattdessen gerendert werden soll, wie, muss ASP.NET Text von Code zu unterscheiden können. Dafür stehen verschiedene Möglichkeiten zur Verfügung:
+In Servercode Blöcken möchten Sie häufig Text oder Markup (oder beides) an die Seite ausgeben. Wenn ein Server Codeblock Text enthält, der nicht Code ist und stattdessen unverändert gerendert werden soll, muss ASP.net in der Lage sein, diesen Text vom Code zu unterscheiden. Dafür stehen verschiedene Möglichkeiten zur Verfügung:
 
-- Schließen Sie den Text in einem HTML-Element, z. B. `<p></p>` oder `<em></em>`:   
+- Schließen Sie den Text in ein HTML-Element wie `<p></p>` oder `<em></em>`ein:   
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample12.cshtml)]
 
-    Das HTML-Element kann Text, zusätzliche HTML-Elemente und Servercode Ausdrücke enthalten. Wenn erkennt ASP.NET das öffnende HTML-Tag (z. B. `<p>`), sondert rendert alle Elemente einschließlich des-Elements und dessen Inhalt als wird an den Browser, und Beheben von Servercode Ausdrücke, wie es geht.
-- Verwenden der `@:` Operator oder die `<text>` Element. Die `@:` Ausgaben eine einzelne Zeile des Inhalts, der nur-Text oder HTML-Tags für nicht übereinstimmenden; enthält die `<text>` Element einschließt, mehrere Zeilen ausgegeben. Diese Optionen sind nützlich, wenn Sie nicht, ein HTML-Element als Teil der Ausgabe gerendert möchten.  
+    Das HTML-Element kann Text, zusätzliche HTML-Elemente und Servercode Ausdrücke enthalten. Wenn ASP.NET das öffnende HTML-Tag sieht (z. b. `<p>`), werden alle Elemente, einschließlich des Elements und seines Inhalts, unverändert im Browser gerendert, und die Servercode Ausdrücke werden entsprechend aufgelöst.
+- Verwenden Sie den `@:`-Operator oder das `<text>`-Element. Der `@:` gibt eine einzelne Zeile mit Inhalt aus, die nur-Text oder nicht übereinstimmende HTML-Tags enthält Das `<text>` Element schließt mehrere Zeilen ein, die ausgegeben werden sollen. Diese Optionen sind hilfreich, wenn Sie ein HTML-Element nicht als Teil der Ausgabe renderingrensten möchten.  
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample13.cshtml)]
 
-    Wenn Sie mehrere Zeilen Text oder HTML-Tags, die nicht übereinstimmenden ausgeben möchten, können Sie jede Zeile mit dem voranstellen `@:`, oder Sie können einschließen, die Zeile in einer `<text>` Element. Wie die `@:` Operator`<text>` Tags werden von ASP.NET zum Identifizieren von Textinhalt verwendet und nie in der Seitenausgabe gerendert werden.
+    Wenn Sie mehrere Textzeilen oder nicht übereinstimmende HTML-Tags ausgeben möchten, können Sie jede Zeile mit `@:`versehen, oder Sie können die Zeile in ein `<text>` Element einschließen. Wie der `@:`-Operator werden`<text>` Tags von ASP.NET verwendet, um Textinhalte zu identifizieren und nie in der Seiten Ausgabe gerendert zu werden.
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample14.cshtml)]
 
-    Im erste Beispiel wird das vorherige Beispiel wiederholt, aber verwendet ein einzelnes Paar von `<text>` Tags aus, um den Text Rendern einschließen. Im zweiten Beispiel die `<text>` und `</text>` Tags einschließen drei Zeilen, die jeweils einige nicht enthaltene Text und HTML-Tags, die nicht übereinstimmenden sind (`<br />`), sowie der Servercode und HTML-Tags, die übereinstimmende. In diesem Fall können Sie auch jede Zeile einzeln mit voranstellen der `@:` Operator; beide Weise funktionieren.
+    Im ersten Beispiel wird das vorherige Beispiel wiederholt, aber es wird ein einzelnes Paar `<text>` Tags verwendet, um den zu Rendering enden Text einzuschließen. Im zweiten Beispiel schließen die Tags "`<text>`" und "`</text>`" drei Zeilen ein, die alle über einen nicht enthaltenen Text und nicht übereinstimmende HTML-Tags (`<br />`) zusammen mit Servercode und übereinstimmenden HTML-Tags verfügen. Auch hier kann jede Zeile einzeln mit dem `@:`-Operator vorangestellt werden. Beides funktioniert.
 
     > [!NOTE]
-    > Wenn Sie Text ausgeben, wie in diesem Abschnitt gezeigt &#8212; mithilfe eines HTML-Elements, die `@:` -Operator, oder die `<text>` Element &#8212; ASP.NET die Ausgabe nicht HTML-Codierung. (Wie bereits erwähnt, ASP.NET codiert die Ausgabe von Codeausdrücken Server und Server-Codeblöcke, die vor `@`, außer in die Sonderfälle, in diesem Abschnitt erwähnt wurden.)
+    > Wenn Sie Text wie in diesem Abschnitt &#8212; gezeigt mit einem HTML--Element ausgeben, wird der `@:`-Operator oder &#8212; das `<text>` Element ASP.net die Ausgabe nicht in HTML-codiert. (Wie bereits erwähnt, codiert ASP.net die Ausgabe von Servercode Ausdrücken und Servercode Blöcken, denen `@`vorangestellt ist, mit Ausnahme der in diesem Abschnitt notierten Sonderfälle.)
 
 ### <a name="whitespace"></a>Whitespace
 
-Zusätzliche Leerzeichen in einer Anweisung (und außerhalb eines Zeichenfolgenliterals) wirken sich nicht auf die Anweisung aus:
+Zusätzliche Leerzeichen in einer-Anweisung (und außerhalb eines Zeichenfolgenliterals) haben keine Auswirkung auf die Anweisung:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample15.cshtml)]
 
-Ein Zeilenumbruch in einer Anweisung hat keine Auswirkungen auf die Anweisung aus, und können Sie Anweisungen zur besseren Lesbarkeit umbrochen. Die folgenden Anweisungen sind identisch:
+Ein Zeilenumbruch in einer-Anweisung hat keine Auswirkung auf die-Anweisung, und Sie können-Anweisungen zur besseren Lesbarkeit umschließen. Die folgenden Anweisungen sind gleich:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample16.cshtml)]
 
-Sie können keine jedoch eine Zeile in der Mitte eines Zeichenfolgenliterals umschließen. Das folgende Beispiel funktioniert nicht:
+Sie können jedoch keine Linie in der Mitte eines Zeichenfolgenliterals umschließen. Das folgende Beispiel funktioniert nicht:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample17.cshtml)]
 
-Es gibt zwei Optionen, um eine lange Zeichenfolge zu kombinieren, die in mehrere Zeilen wie im obigen Code umschließt. Sie können den Operator für Verkettungen verwenden (`+`), die Sie später in diesem Artikel sehen werden. Sie können auch die `@` Zeichen, das eine wörtliche Zeichenfolge literal erstellt, wie Sie weiter oben in diesem Artikel gesehen haben. Wörtliche Zeichenfolgenliterale können Sie über mehrere Zeilen unterteilen:
+Um eine lange Zeichenfolge zu kombinieren, die mit mehreren Zeilen wie dem obigen Code umbrochen wird, gibt es zwei Optionen. Sie können den Verkettungs Operator (`+`) verwenden, den Sie später in diesem Artikel sehen werden. Sie können auch das `@` Zeichen verwenden, um ein wörtlich zeichenfolgenliteralformat zu erstellen, wie zuvor in diesem Artikel gezeigt. Sie können ausführliche Zeichen folgen Literale Zeilen übergreifend unterbrechen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample18.cshtml)]
 
-### <a name="code-and-markup-comments"></a>Code (und Markup) Kommentare
+### <a name="code-and-markup-comments"></a>Kommentare zu Code (und Markup)
 
-Kommentare können Sie Notizen für sich selbst oder andere zu verlassen. Sie ermöglichen auch deaktivieren (*auskommentieren*) einen Abschnitt des Codes oder Markups, die Sie nicht ausführen möchten, jedoch auf Ihrer Seite vorerst beibehalten möchten.
+Mit Kommentaren können Sie Notizen für sich selbst oder für andere Personen hinterlassen. Sie ermöglichen es Ihnen außerdem, einen Code Abschnitt oder Markup, den Sie nicht ausführen möchten, zu deaktivieren (*auszukommentieren*), auf der Seite zu speichern.
 
-Es gibt verschiedene kommentieren die Syntax für Razor-Code und HTML-Markup. Wie bei allen Razor-Code werden Razor-Kommentare verarbeitet (und anschließend entfernt) auf dem Server, bevor die Seite an den Browser gesendet wird. Aus diesem Grund kann die Kommentierung Razor-Syntax Sie Kommentare im Code (oder sogar in das Markup) bereitstellen, die Sie sehen können, wenn Sie die Datei bearbeiten, aber Benutzern nicht angezeigt wird, auch in den Quellcode der Seite.
+Es gibt verschiedene Kommentar Syntax für Razor-Code und für HTML-Markup. Wie bei sämtlichen Razor-Code werden Razor-Kommentare auf dem Server verarbeitet (und dann entfernt), bevor die Seite an den Browser gesendet wird. Daher können Sie mit der Razor-Kommentar Syntax Kommentare in den Code einfügen (oder sogar in das Markup), den Sie beim Bearbeiten der Datei anzeigen können, die aber auch nicht in der Seitenquelle angezeigt werden.
 
-Für ASP.NET Razor-Kommentare, starten Sie den Kommentar mit `@*` und enden mit `*@`. Der Kommentar kann auf eine oder mehrere Zeilen sein:
+Für ASP.net Razor-Kommentare starten Sie den Kommentar mit `@*` und beenden ihn mit `*@`. Der Kommentar kann sich in einer Zeile oder in mehreren Zeilen befinden:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample19.cshtml)]
 
-Hier ist ein Kommentar in einem Codeblock:
+Hier ist ein Kommentar innerhalb eines Code Blocks:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample20.cshtml)]
 
-Hier ist der gleiche Codeblock, mit der Zeile des Codes auskommentiert, damit er nicht ausgeführt wird:
+Hier ist derselbe Codeblock, in dem die Codezeile auskommentiert ist, sodass Sie nicht ausgeführt werden kann:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample21.cshtml)]
 
-In einem Codeblock können Sie als Alternative zur Verwendung von Razor-Kommentar-Syntax, die Kommentierung Syntax der Programmiersprache verwenden, die Sie, die wie z. B. c# verwenden:
+In einem Codeblock können Sie als Alternative zur Verwendung der Razor-Kommentar Syntax die Kommentar Syntax der verwendeten Programmiersprache verwenden, z. b. C#:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample22.cshtml)]
 
-In c# einzeilige Kommentare vorangestellt sind, wird die `//` Zeichen und mehrzeilige Kommentare beginnen mit `/*` und enden mit `*/`. (Wie bei der Razor-Kommentare werden C#-Kommentare nicht an den Browser gerendert.)
+In C#werden einzeilige Kommentare `//` Zeichen vorangestellt, und mehrzeilige Kommentare beginnen mit `/*` und enden mit `*/`. (Wie bei Razor-Kommentaren C# werden Kommentare nicht im Browser gerendert.)
 
-Für Markup wie Sie wahrscheinlich wissen, können Sie einen HTML-Kommentar erstellen:
+Für Markup können Sie, wie Sie wahrscheinlich wissen, einen HTML-Kommentar erstellen:
 
 [!code-xml[Main](introducing-razor-syntax-c/samples/sample23.xml)]
 
-HTML-Kommentare beginnen mit `<!--` Zeichen und enden mit `-->`. Sie können HTML-Kommentare verwenden, um umgeben, nicht nur Text, sondern auch für jedes HTML-Markup, die Sie auf der Seite beibehalten möchten, aber nicht gerendert werden soll. Diese HTML-Kommentar wird den gesamten Inhalt des Tags und den darin enthaltenen Text ausblenden:
+HTML-Kommentare beginnen mit `<!--` Zeichen und enden mit `-->`. Sie können HTML-Kommentare verwenden, um nicht nur Text zu umschließen, sondern auch ein beliebiges HTML-Markup, das Sie auf der Seite behalten möchten, aber nicht Rendering möchten. Dieser HTML-Kommentar blendet den gesamten Inhalt der Tags und den darin enthaltenen Text aus:
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample24.html)]
 
-Im Gegensatz zu Razor-Kommentare, HTML-Kommentaren *sind* auf der Seite gerendert und der Benutzer kann den Quellcode der Seite anzeigen.
+Im Gegensatz zu Razor-Kommentaren *werden* HTML-Kommentare auf der Seite gerendert, und der Benutzer kann diese anzeigen, indem er die Seitenquelle anzeigen kann.
 
-Razor kann Einschränkungen auf geschachtelte Blöcke von c#. Weitere Informationen finden Sie unter [mit dem Namen C#-Variablen und geschachtelte Blöcke unterteilt Code generieren](http://aspnetwebstack.codeplex.com/workitem/1914)
+Razor hat Einschränkungen für die Blöcke von C#. Weitere Informationen finden Sie [unter C# benannte Variablen und geschiebte Blöcke generieren](http://aspnetwebstack.codeplex.com/workitem/1914) von fehlerhafter Code.
 
 ## <a name="variables"></a>Variablen
 
-Eine Variable ist ein benanntes Objekt, das Sie verwenden, um Daten zu speichern. Sie können Variablen Namen, aber der Name muss mit einem alphabetischen Zeichen beginnen, und es darf keine Leerzeichen oder reservierte Zeichen enthalten.
+Eine Variable ist ein benanntes Objekt, das Sie zum Speichern von Daten verwenden. Sie können Variablen einen beliebigen Namen benennen, aber der Name muss mit einem alphabetischen Zeichen beginnen und darf keine Leerzeichen oder reservierten Zeichen enthalten.
 
 ### <a name="variables-and-data-types"></a>Variablen und Datentypen
 
-Eine Variable haben einen bestimmten Datentyp, der angibt, welche Art von Daten in der Variablen gespeichert ist. Können Sie Zeichenfolgenvariablen, in denen Zeichenfolgenwerte gespeichert haben (z. B. &quot;Hallo Welt&quot;), Ganzzahl-Variablen, die ganzzahlige Werte (z. B. 3 oder 79) speichern, und die Datenvariablen, die Datumswerte in einer Vielzahl von Formaten (z. B. 4/12/2012 oder März 2009 speichern ). Und es gibt viele andere Datentypen, die Sie verwenden können.
+Eine Variable kann einen bestimmten Datentyp aufweisen, der angibt, welche Art von Daten in der Variablen gespeichert ist. Sie können Zeichen folgen Variablen haben, die Zeichen folgen Werte (wie &quot;Hello World&quot;) speichern, ganzzahlige Variablen, die ganzzahlige Werte (z. b. 3 oder 79) speichern, und Datums Variablen, die Datumswerte in einer Vielzahl von Formaten (z. b. 4/12/2012 oder März 2009) speichern. Und es gibt viele weitere Datentypen, die Sie verwenden können.
 
-Allerdings müssen Sie in der Regel einen Typ für eine Variable angeben. In den meisten Fällen, kann ASP.NET ermitteln den Typ basierend auf wie die Daten in der Variablen verwendet wird. (Gelegentlich müssen Sie einen Typ angeben, sehen Sie Beispiele, in denen dies "true".)
+Sie müssen jedoch im Allgemeinen keinen Typ für eine Variable angeben. In den meisten Fällen kann ASP.NET den Typ basierend auf der Verwendung der Daten in der Variablen ermitteln. (Gelegentlich müssen Sie einen Typ angeben. es werden Beispiele angezeigt, wenn dies zutrifft.)
 
-Sie deklarieren eine Variable mit dem `var` Schlüsselwort (sofern Sie nicht möchten, dass für einen Typ angegeben wird) oder mit dem Namen des Typs:
+Sie deklarieren eine Variable mit dem `var`-Schlüsselwort (wenn Sie keinen Typ angeben möchten) oder mit dem Namen des Typs:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample25.cshtml)]
 
-Das folgende Beispiel zeigt einige typischen Verwendungen von Variablen in einer Webseite ein:
+Das folgende Beispiel zeigt einige typische Verwendungen von Variablen in einer Webseite:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample26.cshtml)]
 
-Wenn Sie die vorherigen Beispielen auf einer Seite kombinieren, sehen Sie dies in einem Browser angezeigt:
+Wenn Sie die vorherigen Beispiele in einer Seite kombinieren, wird dies in einem Browser angezeigt:
 
 ![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
-### <a name="converting-and-testing-data-types"></a>Konvertieren und Testen von Datentypen
+### <a name="converting-and-testing-data-types"></a>Wandeln und Testen von Datentypen
 
-Obwohl ASP.NET einen Datentyp in der Regel automatisch ermitteln kann, manchmal kann es nicht. Aus diesem Grund müssen Sie ASP.NET weiterhelfen, indem Sie eine explizite Konvertierung ausführen. Auch wenn Sie keine Typen zu konvertieren, ist es manchmal hilfreich, testen, welche Art von Daten Sie verwenden können.
+Obwohl ASP.net normalerweise einen Datentyp automatisch ermitteln kann, kann dies manchmal nicht der Fall sein. Daher müssen Sie möglicherweise ASP.net durch eine explizite Konvertierung unterstützen. Auch wenn Sie keine Typen konvertieren müssen, ist es manchmal hilfreich, zu testen, um festzustellen, mit welchem Datentyp Sie möglicherweise arbeiten.
 
-Der häufigste Fall ist, dass Sie zum Konvertieren von einer Zeichenfolge in einen anderen Typ, z. B. auf eine ganze Zahl oder Datum. Das folgende Beispiel zeigt einem typischen Fall, in dem Sie eine Zeichenfolge in eine Zahl konvertieren müssen.
+Der häufigste Fall ist, dass Sie eine Zeichenfolge in einen anderen Typ konvertieren müssen, z. b. in eine ganze Zahl oder ein Datum. Das folgende Beispiel zeigt einen typischen Fall, in dem Sie eine Zeichenfolge in eine Zahl konvertieren müssen.
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample27.cshtml)]
 
-Als Faustregel gilt wird der Benutzereingabe für Sie als Zeichenfolgen bereitgestellt. Auch wenn Sie haben die Benutzer eine Zahl eingeben aufgefordert, und auch wenn sie bei der Eingabe des Benutzers gesendet wird, und Sie finden es im Code eine Ziffer eingegeben haben, die Daten im Zeichenfolgenformat werden. Aus diesem Grund müssen Sie die Zeichenfolge in eine Zahl konvertieren. Im Beispiel wenn Sie versuchen, die Durchführung von Berechnungen auf den Werten, ohne zu konvertieren, führt der folgende Fehler, da zwei Zeichenfolgen von ASP.NET hinzugefügt werden können:
+Als Regel werden Benutzereingaben als Zeichen folgen angezeigt. Selbst wenn Sie Benutzer zur Eingabe einer Zahl aufgefordert haben und Sie eine Ziffer eingegeben haben, werden die Daten im Zeichen folgen Format angezeigt, wenn die Benutzereingaben übermittelt werden und Sie Sie im Code lesen. Daher müssen Sie die Zeichenfolge in eine Zahl konvertieren. Wenn Sie in diesem Beispiel versuchen, arithmetische Werte für die Werte auszuführen, ohne Sie zu wandeln, wird die folgende Fehlermeldung ausgegeben, da ASP.net nicht zwei Zeichen folgen hinzufügen kann:
 
-*Typ "String" in "Int" kann nicht implizit konvertiert werden.*
+*Der Typ "String" kann nicht implizit in "int" konvertiert werden.*
 
-Um die Werte in ganzen Zahlen zu konvertieren, rufen Sie die `AsInt` Methode. Wenn die Konvertierung erfolgreich ist, können Sie dann die Zahlen hinzufügen.
+Um die Werte in ganze Zahlen zu konvertieren, wird die `AsInt`-Methode aufgerufen. Wenn die Konvertierung erfolgreich ist, können Sie die Zahlen hinzufügen.
 
-Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden für die Variablen an.
+In der folgenden Tabelle werden einige allgemeine Konvertierungs-und Testmethoden für Variablen aufgelistet.
 
 :::row:::
     :::column:::
@@ -352,7 +352,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-    Konvertiert eine Zeichenfolge, die eine ganze Zahl (z. B. "593") in eine ganze Zahl darstellt.
+    Konvertiert eine Zeichenfolge, die eine ganze Zahl (z. b. "593") darstellt, in eine ganze Zahl.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -366,7 +366,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-    Konvertiert eine Zeichenfolge wie &quot;"true"&quot; oder &quot;"false"&quot; auf einen booleschen Typ.
+    Konvertiert eine Zeichenfolge wie &quot;true&quot; oder &quot;false-&quot; in einen booleschen Typ.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -380,7 +380,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-    Konvertiert eine Zeichenfolge, die einen decimal-Wert wie &quot;1.3&quot; oder &quot;7.439&quot; in eine Gleitkommazahl.
+    Konvertiert eine Zeichenfolge mit einem Dezimalwert wie &quot;1,3&quot; oder &quot;7,439&quot; in eine Gleit Komma Zahl.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -394,7 +394,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-    Konvertiert eine Zeichenfolge, die einen decimal-Wert wie &quot;1.3&quot; oder &quot;7.439&quot; in eine Dezimalzahl. (In ASP.NET ist eine Dezimalzahl genauer als eine Gleitkommazahl.)
+    Konvertiert eine Zeichenfolge mit einem Dezimalwert wie &quot;1,3&quot; oder &quot;7,439&quot; in eine Dezimalzahl. (In ASP.net ist eine Dezimalzahl präziser als eine Gleit Komma Zahl.)
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
@@ -408,7 +408,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-    Konvertiert eine Zeichenfolge, die einen Wert für Datum und Uhrzeit der ASP.NET darstellt `DateTime` Typ.
+    Konvertiert eine Zeichenfolge, die einen Datums-und Uhrzeitwert darstellt, in den ASP.net-`DateTime` Typs.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -422,7 +422,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
         `ToString()`
     :::column-end:::
     :::column:::
-    Konvertiert einen anderen Datentyp in eine Zeichenfolge an.
+    Konvertiert einen beliebigen anderen Datentyp in eine Zeichenfolge.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
@@ -431,7 +431,7 @@ Die folgende Tabelle enthält einige allgemeine Konvertierung und Test-Methoden 
 
 ## <a name="operators"></a>Operatoren
 
-Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber informiert, welche Art von Befehl aus, um in einem Ausdruck durchgeführt werden. Der C#-Sprache (und die Razor-Syntax, die darauf basieren) unterstützt viele Operatoren müssen Sie nur ein Paar für den Einstieg zu erkennen. In der folgende Tabelle werden die am häufigsten verwendeten Operatoren zusammengefasst.
+Ein Operator ist ein Schlüsselwort oder Zeichen, das ASP.net die Art des Befehls angibt, der in einem Ausdruck durchgeführt werden soll. Die C# Sprache (und die Razor-Syntax, die darauf basiert) unterstützt viele Operatoren, aber Sie müssen nur einige für den Einstieg erkennen. In der folgenden Tabelle werden die gängigsten Operatoren zusammengefasst.
 
 :::row:::
     :::column:::
@@ -452,7 +452,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-    Mathematische Operatoren, die in numerischen Ausdrücken verwendet.
+    Mathematische Operatoren, die in numerischen Ausdrücken verwendet werden.
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -466,7 +466,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `=`
     :::column-end:::
     :::column:::
-    Zuweisung. Weist den Wert auf der rechten Seite einer Anweisung, um das Objekt auf der linken Seite.
+    Zuweisung. Weist dem-Objekt auf der linken Seite den Wert auf der rechten Seite einer-Anweisung zu.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -480,7 +480,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `==`
     :::column-end:::
     :::column:::
-    Gleichheit. Gibt `true` , wenn die Werte gleich sind. (Beachten Sie, dass den Unterschied zwischen der `=` Operator und die `==` Operator.)
+    Gleichheit. Gibt `true` zurück, wenn die Werte gleich sind. (Beachten Sie den Unterschied zwischen dem `=`-Operator und dem `==`-Operator.)
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
@@ -494,7 +494,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `!=`
     :::column-end:::
     :::column:::
-    Ungleichheit. Gibt `true` , wenn die Werte nicht gleich sind.
+    Ungleichheit. Gibt `true` zurück, wenn die Werte nicht gleich sind.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -508,7 +508,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `< > <= >=`
     :::column-end:::
     :::column:::
-    Kleiner-als, größer-als, kleiner-als-oder-gleich und größer-als-oder-gleich.
+    "Kleiner als", "größer als", "kleiner als oder gleich", "größer als" oder "gleich".
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -522,7 +522,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `+`
     :::column-end:::
     :::column:::
-    Verkettung, die zum Verketten von Zeichenfolgen verwendet wird. ASP.NET ist den Unterschied zwischen diesen Operator und der Additionsoperator, basierend auf den Datentyp des Ausdrucks bekannt.
+    Verkettung, die verwendet wird, um Zeichen folgen zu verknüpfen. ASP.net kennt den Unterschied zwischen diesem Operator und dem Additions Operator auf der Grundlage des Datentyps des Ausdrucks.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -536,7 +536,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `+=` `-=`
     :::column-end:::
     :::column:::
-    Die Inkrement- und Dekrement-Operatoren, die Addition und Subtraktion 1 (bzw.) aus einer Variablen.
+    Die Inkrement-und Dekrementoperatoren, die 1 (bzw.) von einer Variablen addieren bzw. daraus ziehen.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -550,7 +550,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `.`
     :::column-end:::
     :::column:::
-    Punkt. Verwendet, um Objekte und deren Eigenschaften und Methoden zu unterscheiden.
+    Gewinn. Wird verwendet, um Objekte und deren Eigenschaften und Methoden zu unterscheiden.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -564,7 +564,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `()`
     :::column-end:::
     :::column:::
-    Klammern. Verwendet, um Ausdrücke zu gruppieren und zum Übergeben von Parametern zu Methoden.
+    Klammern. Wird verwendet, um Ausdrücke zu gruppieren und um Parameter an Methoden zu übergeben.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -578,7 +578,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `[]`
     :::column-end:::
     :::column:::
-    Eckige Klammern. Für den Zugriff auf Werte in Arrays oder Auflistungen verwendet.
+    Angegeben. Wird für den Zugriff auf Werte in Arrays oder Auflistungen verwendet.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -592,7 +592,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `!`
     :::column-end:::
     :::column:::
-    Nicht. Kehrt eine `true` Wert `false` und umgekehrt. In der Regel als eine schnelle Möglichkeit zum Testen verwendet `false` (d. h. für nicht `true`).
+    Hätten. Kehrt einen `true` Wert in `false` um und umgekehrt. Wird in der Regel als Kurzform zum Testen auf `false` verwendet (d. h. für nicht `true`).
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -606,7 +606,7 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
         `&&` `||`
     :::column-end:::
     :::column:::
-    Logisches AND und zusammen Bedingungen, die verwendet werden, um zu verknüpfen.
+    Logisches and und or, die zum Verknüpfen von Bedingungen verwendet werden.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
@@ -614,230 +614,230 @@ Ein Operator ist ein Schlüsselwort oder das Zeichen, das ASP.NET darüber infor
 :::row-end:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
-## <a name="working-with-file-and-folder-paths-in-code"></a>Arbeiten mit Datei- und Ordnerpfade in Code
+## <a name="working-with-file-and-folder-paths-in-code"></a>Arbeiten mit Datei-und Ordner Pfaden im Code
 
-Sie werden häufig mit Datei- und Ordnerpfade in Ihrem Code arbeiten. Hier ist ein Beispiel der physischen Ordnerstruktur für eine Website auf, wie es auf Ihrem Entwicklungscomputer angezeigt werden kann:
+Häufig arbeiten Sie mit Datei-und Ordner Pfaden in Ihrem Code. Im folgenden finden Sie ein Beispiel für eine physische Ordnerstruktur für eine Website, wie Sie auf dem Entwicklungs Computer angezeigt werden kann:
 
 `C:\WebSites\MyWebSite default.cshtml datafile.txt \images Logo.jpg \styles Styles.css`
 
-Hier sind einige wichtigen Informationen über URLs und Pfade:
+Im folgenden finden Sie einige wichtige Details zu URLs und Pfaden:
 
-- Eine URL beginnt entweder mit einen Domänennamen (`http://www.example.com`) oder einen Servernamen (`http://localhost`, `http://mycomputer`).
-- Eine URL entspricht einem physischen Pfad auf einem Hostcomputer. Z. B. `http://myserver` möglicherweise zu dem Ordner entsprechen *C:\websites\mywebsite* auf dem Server.
-- Ein virtueller Pfad ist die Abkürzung, um Pfade im Code darzustellen, ohne den vollständigen Pfad angeben zu müssen. Es umfasst den Teil einer URL, die der Domäne oder Server Name folgt. Wenn Sie die virtuellen Pfade verwenden, können Sie Ihren Code zu einer anderen Domäne oder Server verschieben, ohne die Pfade aktualisieren zu müssen.
+- Eine URL beginnt entweder mit einem Domänen Namen (`http://www.example.com`) oder einem Servernamen (`http://localhost`, `http://mycomputer`).
+- Eine URL entspricht einem physischen Pfad auf einem Host Computer. Beispielsweise können `http://myserver` dem Ordner *c:\websites\meinewebsite* auf dem Server entsprechen.
+- Ein virtueller Pfad ist eine kurzzeile, um Pfade im Code darzustellen, ohne den vollständigen Pfad angeben zu müssen. Sie enthält den Teil einer URL, der auf den Domänen-oder Servernamen folgt. Wenn Sie virtuelle Pfade verwenden, können Sie Ihren Code in eine andere Domäne oder einen anderen Server verschieben, ohne die Pfade aktualisieren zu müssen.
 
-Hier ist ein Beispiel hilft Ihnen die Unterschiede zu verstehen:
+Hier finden Sie ein Beispiel, das Ihnen hilft, die Unterschiede zu verstehen:
 
-| Vollständige URL | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
+| Complete URL | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
 | --- | --- |
 | Servername | *mycompanyserver* |
-| Virtueller Pfad | */humanresources/CompanyPolicy.htm* |
-| Physischer Pfad | *C:\mywebsites\humanresources\CompanyPolicy.htm* |
+| Virtueller Pfad | */HumanResources/CompanyPolicy.htm* |
+| Physischer Pfad | *C:\meinewebsites\humanresources\companypolicy.htm* |
 
-Das virtuelle Stammverzeichnis ist /, genau wie der Stamm von Laufwerk C: Laufwerk \. (Virtuelle Ordnerpfade verwenden immer Schrägstriche.) Der virtuelle Pfad eines Ordners muss nicht den gleichen Namen wie der physische Ordner haben; Es kann ein Alias sein. (Auf Produktionsservern entspricht der virtuelle Pfad nur selten einen genaue physischen Pfad.)
+Das virtuelle Stammverzeichnis ist/, genauso wie der Stamm des Laufwerks C: \. (Pfade für virtuelle Ordner verwenden immer Schrägstriche.) Der virtuelle Pfad eines Ordners muss nicht denselben Namen wie der physische Ordner aufweisen. Dabei kann es sich um einen Alias handeln. (Auf Produktionsservern entspricht der virtuelle Pfad selten einem exakten physischen Pfad.)
 
-Bei der Arbeit mit Dateien und Ordner im Code, müssen Sie gelegentlich verweisen auf den physischen Pfad und manchmal auf einen virtuellen Pfad, je nachdem welche Objekte, die mit dem Sie arbeiten. ASP.NET bietet Ihnen diese Tools zum Arbeiten mit Datei- und Ordnerpfade im Code: die `Server.MapPath` -Methode, und die `~` Operator und `Href` Methode.
+Beim Arbeiten mit Dateien und Ordnern im Code müssen Sie manchmal auf den physischen Pfad und manchmal auf einen virtuellen Pfad verweisen, je nachdem, mit welchen Objekten Sie arbeiten. ASP.net bietet Ihnen diese Tools zum Arbeiten mit Datei-und Ordner Pfaden im Code: die `Server.MapPath`-Methode und der `~`-Operator und `Href`-Methode.
 
-### <a name="converting-virtual-to-physical-paths-the-servermappath-method"></a>Konvertieren von virtuellen und physischen Pfade: die Server.MapPath-Methode
+### <a name="converting-virtual-to-physical-paths-the-servermappath-method"></a>Umstellen von virtuellen in physische Pfade: die Server. MapPath-Methode
 
-Die `Server.MapPath` Methode konvertiert einen virtuellen Pfad (z. B. */default.cshtml*), ein absoluter physischer Pfad (z. B. *C:\WebSites\MyWebSiteFolder\default.cshtml*). Sie verwenden diese Methode können Sie jederzeit einen vollständigen physischen Pfad. Ein typisches Beispiel ist beim Lesen oder Schreiben einer Text- oder Image-Datei auf dem Webserver.
+Die `Server.MapPath`-Methode konvertiert einen virtuellen Pfad (z. b. */default.cshtml*) in einen absoluten physischen Pfad (z. b. *c:\websites\mywebsitefolder\default.cshtml*). Sie verwenden diese Methode, wenn Sie einen kompletten physischen Pfad benötigen. Ein typisches Beispiel ist das Lesen oder Schreiben einer Textdatei oder Bilddatei auf dem Webserver.
 
-Sie können die absoluten physischen Pfad der Website auf einer hosting-Site-Server in der Regel nicht kennen, damit diese Methode konvertieren des Pfads können Sie wissen – der virtuelle Pfad, in den entsprechenden Pfad auf dem Server für Sie. Sie den virtuellen Pfad zu einer Datei oder Ordner für die Methode übergeben, und es gibt den physischen Pfad:
+Der absolute physische Pfad der Website auf dem Server einer Host Website ist in der Regel nicht bekannt. Daher kann diese Methode den Pfad, den Sie kennen – den virtuellen Pfad –, in den entsprechenden Pfad auf dem Server konvertieren. Sie übergeben den virtuellen Pfad an eine Datei oder einen Ordner an die-Methode und geben den physischen Pfad zurück:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample46.cshtml)]
 
-### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>Verweisen auf das virtuelle Stammverzeichnis: der ~-Operator und Href-Methode
+### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>Verweisen auf das virtuelle Stammverzeichnis: der ~-Operator und die href-Methode
 
-In einer *.cshtml* oder *vbhtml* -Datei können Sie verweisen, den virtuellen Stamm-Pfad mit der `~` Operator. Dies ist sehr praktisch, da Sie Seiten, an einem Standort navigieren können, und alle Links zu anderen Seiten enthaltenen nicht unterbrochen. Es ist auch praktisch, für den Fall, dass Sie Ihre Website immer an einem anderen Speicherort verschieben. Hier einige Beispiele:
+In einer *cshtml* -oder *vbhtml* -Datei können Sie mithilfe des `~`-Operators auf den virtuellen Stammpfad verweisen. Dies ist sehr praktisch, da Sie Seiten auf einer Website verschieben können und alle Links, die Sie auf anderen Seiten enthalten, nicht beschädigt werden. Es ist auch praktisch, wenn Sie Ihre Website jemals an einen anderen Speicherort verschieben. Hier einige Beispiele:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample47.cshtml)]
 
-Wenn die Website ist `http://myserver/myapp`, sieht wie ASP.NET diese Pfade behandelt wird, wenn die Seite ausgeführt wird:
+Wenn die Website `http://myserver/myapp`ist, so behandelt ASP.net diese Pfade, wenn die Seite ausgeführt wird:
 
 - `myImagesFolder`: `http://myserver/myapp/images`
 - `myStyleSheet` : `http://myserver/myapp/styles/Stylesheet.css`
 
-(Diese Pfade nicht tatsächlich als die Werte der Variablen angezeigt, aber ASP.NET die Pfade behandelt, als ob einstellungsänderungen ist.)
+(Diese Pfade werden nicht als Werte der Variablen angezeigt, aber ASP.NET behandelt die Pfade so, als wären Sie so.)
 
-Sie können die `~` Operator sowohl im Server-Code (wie oben erläutert) und im Markup wie folgt:
+Sie können den `~`-Operator sowohl im Servercode (wie oben) als auch im Markup wie folgt verwenden:
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample48.html)]
 
-Im Markup, das Sie verwenden die `~` Operator, um Pfade zu den Ressourcen, wie Bilddateien, andere Webseiten und CSS-Dateien zu erstellen. Wenn die Seite ausgeführt wird, durchsucht Sie die Seite (Code und Markup) und behebt alle ASP.NET die `~` Verweise auf den entsprechenden Pfad.
+In Markup verwenden Sie den `~`-Operator, um Pfade zu Ressourcen wie Bilddateien, anderen Webseiten und CSS-Dateien zu erstellen. Wenn die Seite ausgeführt wird, durchsucht ASP.net die Seite (sowohl Code als auch Markup) und löst alle `~` Verweise auf den entsprechenden Pfad auf.
 
-## <a name="conditional-logic-and-loops"></a>Bedingungen und Schleifen
+## <a name="conditional-logic-and-loops"></a>Bedingte Logik und Schleifen
 
-ASP.NET Server-Code können Sie die Aufgaben, die basierend auf Bedingungen, und Schreiben von Code, der Anweisungen wird wiederholt, eine bestimmte Anzahl von Malen (d. h. Code, der eine Schleife ausgeführt wird).
+ASP.net-Servercode ermöglicht das Ausführen von Aufgaben auf der Grundlage von Bedingungen und das Schreiben von Code, der-Anweisungen eine bestimmte Anzahl von Vorkommen wiederholt (d. h. Code, der eine Schleife ausführt).
 
-### <a name="testing-conditions"></a>Testen von Bedingungen
+### <a name="testing-conditions"></a>Testbedingungen
 
-Um eine einfache Bedingung zu testen, Sie verwenden, die `if` -Anweisung, die einen Test gibt "true" oder "false" Grundlage Sie angeben:
+Um eine einfache Bedingung zu testen, verwenden Sie die `if`-Anweisung, die basierend auf einem von Ihnen angegebenen Test true oder false zurückgibt:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample49.cshtml)]
 
-Die `if` Schlüsselwort beginnt einen Block. Der eigentliche Test (Bedingung) wird in Klammern angegeben und gibt "true" oder "false" zurück. Die Anweisungen, die ausgeführt werden, wenn der Test "true" ist, werden in geschweifte Klammern eingeschlossen. Ein `if` -Anweisung kann enthalten eine `else` Block, der angibt, Anweisungen, die ausgeführt werden, wenn die Bedingung "false" ist:
+Das `if`-Schlüsselwort startet einen-Block. Der tatsächliche Test (Bedingung) wird in Klammern gesetzt und gibt true oder false zurück. Die Anweisungen, die ausgeführt werden, wenn der Test true ist, werden in geschweifte Klammern eingeschlossen. Eine `if`-Anweisung kann einen `else`-Block enthalten, der Anweisungen angibt, die ausgeführt werden sollen, wenn die Bedingung false ist:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample50.cshtml)]
 
-Sie können mehrere Bedingungen mit Hinzufügen einer `else if` blockieren:
+Sie können mit einem `else if`-Block mehrere Bedingungen hinzufügen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample51.cshtml)]
 
-In diesem Beispiel, wenn die erste in der If-Bedingung Block ist nicht "true", die `else if` Bedingung aktiviert ist. Wenn diese Bedingung erfüllt ist, die Anweisungen in der `else if` Block ausgeführt werden. Wenn keine der Bedingungen erfüllt sind, die Anweisungen in der `else` Block ausgeführt werden. Sie können eine beliebige Anzahl von ElseIf hinzufügen blockiert, und schließen Sie dann mit einer `else` als blockiert die &quot;alles&quot; Bedingung.
+Wenn in diesem Beispiel die erste Bedingung im If-Block nicht true ist, wird die `else if` Bedingung geprüft. Wenn diese Bedingung erfüllt ist, werden die Anweisungen im `else if`-Block ausgeführt. Wenn keine der Bedingungen erfüllt ist, werden die Anweisungen im `else`-Block ausgeführt. Sie können eine beliebige Anzahl von else-if-Blöcken hinzufügen und dann mit einem `else`-Block als &quot;alle anderen&quot; Bedingung schließen.
 
-Um eine große Anzahl von Bedingungen zu testen, verwenden Sie eine `switch` blockieren:
+Um eine große Anzahl von Bedingungen zu testen, verwenden Sie einen `switch`-Block:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample52.cshtml)]
 
-Der zu testende Wert wird in Klammern angegeben (im Beispiel die `weekday` Variable). Jeder einzelne Test verwendet einen `case` -Anweisung, die mit einem Doppelpunkt (:).) endet. Wenn der Wert des einem `case` Anweisung entspricht dem Testwert, der Code in diesen Fall Block wird ausgeführt. Schließen Sie jede Case-Anweisung mit einem `break` Anweisung. (Wenn Sie vergessen, jede Unterbrechung einschließt `case` blockieren, den Code aus der nächsten `case` Anweisung auch ausgeführt werden.) Ein `switch` Block verfügt oft über eine `default` -Anweisung als im letzten Fall für eine &quot;alles&quot; Option aus, die ausgeführt wird, wenn keine anderen Fällen erfüllt sind.
+Der zu testende Wert ist in Klammern (im Beispiel die `weekday` Variable). Jeder einzelne Test verwendet eine `case`-Anweisung, die mit einem Doppelpunkt endet (:). Wenn der Wert einer `case`-Anweisung mit dem Testwert übereinstimmt, wird der Code in diesem Fall Block ausgeführt. Sie schließen jede Case-Anweisung mit einer `break`-Anweisung. (Wenn Sie vergessen, Unterbrechung in jedem `case` Block einzuschließen, wird der Code der nächsten `case` Anweisung ebenfalls ausgeführt.) Ein `switch` Block verfügt häufig über eine `default`-Anweisung als letzter Fall für eine &quot;alles andere&quot; Option, die ausgeführt wird, wenn keiner der anderen Fälle true ist.
 
-Das Ergebnis der letzten beiden bedingte Blöcke in einem Browser angezeigt:
+Das Ergebnis der letzten beiden bedingten Blöcke, die in einem Browser angezeigt werden:
 
 ![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
-### <a name="looping-code"></a>Schleifen-Code
+### <a name="looping-code"></a>Schleifen Code
 
-Sie müssen häufig die gleichen Anweisungen mehrmals ausgeführt werden. Dazu müssen Sie Schleifen. Beispielsweise führen Sie häufig die gleichen Anweisungen für jedes Element in einer Auflistung von Daten. Wenn Sie wissen, wie oft Sie möchten eine Schleife, können Sie eine `for` Schleife. Diese Art von Schleife eignet sich besonders für zugewiesen, oder nach unten zählen:
+Häufig müssen Sie dieselben Anweisungen wiederholt ausführen. Dies geschieht durch Schleifen. Beispielsweise führen Sie häufig die gleichen Anweisungen für jedes Element in einer Datensammlung aus. Wenn Sie genau wissen, wie oft Sie eine Schleife durchführen möchten, können Sie eine `for` Schleife verwenden. Diese Art von Schleife ist besonders nützlich, wenn Sie nach oben oder unten gezählt werden:
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample53.html)]
 
-Die Schleife beginnt mit der `for` Schlüsselwort, gefolgt von drei Anweisungen in Klammern ein, jeweils mit einem Semikolon abgeschlossen.
+Die Schleife beginnt mit dem `for`-Schlüsselwort, gefolgt von drei Anweisungen in Klammern, die jeweils mit einem Semikolon beendet werden.
 
-- Innerhalb der Klammern, die erste Anweisung (`var i=10;`) einen Leistungsindikator erstellt und initialisiert es mit 10. Sie müssen keine benennen Sie den Zähler `i` &#8212; können Sie eine beliebige Variable. Wenn die `for` Schleife ausgeführt wird, wird der Indikator wird automatisch aktualisiert.
-- Die zweite Anweisung (`i < 21;`) legt die Bedingung für die wie weit Sie zählen möchten. In diesem Fall möchten Sie ihn an, auf ein Maximum von 20 (d. h. weiternutzen während der Zähler auf weniger als 21 ist).
-- Die dritte Anweisung (`i++` ) Inkrement-Operators, der einfach gibt an, dass der Zähler sollte 1 hinzugefügt wird bei jeder Ausführung die Schleife verwendet.
+- Innerhalb der Klammern erstellt die erste Anweisung (`var i=10;`) einen Counter und initialisiert sie mit 10. Sie müssen den Counter nicht benennen, `i` &#8212; Sie beliebige Variablen verwenden können. Wenn die `for`-Schleife ausgeführt wird, wird der-Wert automatisch inkrementiert.
+- Mit der zweiten Anweisung (`i < 21;`) wird die Bedingung für die gewünschte Anzahl festgelegt. In diesem Fall möchten Sie, dass der Wert maximal 20 beträgt (d. h., der Wert ist kleiner als 21).
+- Die dritte Anweisung (`i++`) verwendet einen Inkrementoperator, der lediglich angibt, dass der-Wert bei jedem Ausführen der Schleife 1 hinzugefügt werden soll.
 
-Innerhalb der geschweiften Klammern ist Sie der Code, der für jede Iteration der Schleife ausgeführt wird. Das Markup erstellt einen neuen Absatz (`<p>` Element) jedes Mal, und fügt eine Zeile in die Ausgabe, sodass der Wert `i` (den Zähler). Wenn Sie diese Seite ausführen, wird im Beispiel 11 Zeilen anzeigen der Ausgabe, mit dem Text in jeder Zeile an, der angibt, der Elementnummer erstellt.
+Innerhalb der geschweiften Klammern befindet sich der Code, der für jede Iterations Schleife ausgeführt wird. Das Markup erstellt jedes Mal einen neuen Absatz (`<p>`-Element) und fügt der Ausgabe eine Zeile hinzu, in der der Wert `i` (der Leistungs Bestellungs Wert) angezeigt wird. Wenn Sie diese Seite ausführen, erstellt das Beispiel 11 Zeilen, in denen die Ausgabe angezeigt wird, wobei der Text in jeder Zeile die Element Nummer angibt.
 
 ![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
-Wenn Sie mit einer Auflistung oder ein Array arbeiten, verwenden Sie häufig eine `foreach` Schleife. Eine Auflistung ist eine Gruppe ähnlicher Objekte und die `foreach` Schleife können Sie eine Aufgabe für jedes Element in der Auflistung durchführen. Dieser Art von Schleife eignet sich für Auflistungen, da im Gegensatz zu einem `for` Schleife, Sie müssen keine Erhöhen des Zählerwerts oder ein Limit festlegen. Stattdessen die `foreach` Schleifen-Code wird einfach in der Auflistung fortgesetzt, bis er abgeschlossen ist.
+Wenn Sie mit einer Sammlung oder einem Array arbeiten, verwenden Sie häufig eine `foreach` Schleife. Eine Sammlung ist eine Gruppe von ähnlichen Objekten, und mit der `foreach`-Schleife können Sie für jedes Element in der Auflistung eine Aufgabe ausführen. Diese Art von Schleife eignet sich für Auflistungen, da Sie im Gegensatz zu einer `for` Schleife den Wert nicht erhöhen oder eine Beschränkung festlegen müssen. Stattdessen durchläuft der `foreach` Schleifen Code einfach die Auflistung, bis er abgeschlossen ist.
 
-Der folgende Code gibt beispielsweise die Elemente in der `Request.ServerVariables` Auflistung, die ein Objekt, das Informationen über den Webserver enthält. Er verwendet eine `foreac` h-Schleife, um den Namen der einzelnen Elemente anzuzeigen, durch Erstellen eines neuen `<li>` Element in einer HTML-Aufzählung.
+Der folgende Code gibt beispielsweise die Elemente in der `Request.ServerVariables`-Auflistung zurück, bei der es sich um ein Objekt handelt, das Informationen über den Webserver enthält. Er verwendet eine `foreac` h-Schleife, um den Namen der einzelnen Elemente anzuzeigen, indem er ein neues `<li>` Element in einer Liste mit HTML-Auflistungs Zeichen erstellt.
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample54.html)]
 
-Die `foreach` Schlüsselwort ist, gefolgt von Klammern deklarieren, in dem Sie eine Variable, die ein einzelnes Element in der Auflistung darstellt (beispielsweise `var item`), gefolgt von der `in` Schlüsselwort, gefolgt von der Auflistung durchlaufen werden sollen. Im Hauptteil der `foreach` Schleife können Sie das aktuelle Element, das mit der Variablen, die Sie zuvor deklarierten zugreifen.
+Auf das `foreach` Schlüsselwort folgen Klammern, in denen Sie eine Variable deklarieren, die ein einzelnes Element in der Auflistung darstellt (im Beispiel `var item`), gefolgt vom `in` Schlüsselwort, gefolgt von der Auflistung, die Sie durchlaufen möchten. Im Text der `foreach` Schleife können Sie mithilfe der Variablen, die Sie zuvor deklariert haben, auf das aktuelle Element zugreifen.
 
 ![Razor-Img12](introducing-razor-syntax-c/_static/image12.jpg)
 
-Verwenden Sie zum Erstellen einer allgemeinen Schleife die `while` Anweisung:
+Verwenden Sie die `while`-Anweisung, um eine allgemeinere Schleife zu erstellen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample55.cshtml)]
 
-Ein `while` Schleife beginnt mit der `while` Schlüsselwort, gefolgt von Klammern für die Sie angeben, wie lange die Schleife fortgesetzt wird (hier, um so lange `countNum` beträgt weniger als 50), klicken Sie dann den Block wiederholt werden soll. Schleifen in der Regel erhöhen (hinzugefügt) oder zu verringern (subtrahiert) eine Variable oder ein Objekt, das für die Inventur verwendet. Im Beispiel die `+=` Operator addiert 1 zu `countNum` bei jeder Ausführung die Schleife. (Um eine Variable in einer Schleife zu verringern, die wird nach unten gezählt, verwenden Sie des Dekrementoperators `-=`).
+Eine `while` Schleife beginnt mit dem Schlüsselwort "`while`", gefolgt von Klammern, in denen Sie angeben, wie lange die Schleife fortgesetzt wird (hier, solange `countNum` kleiner als 50 ist), und dann den Block, der wiederholt werden soll. Schleifen werden in der Regel in einer Variablen oder einem Objekt, das für das zählen verwendet wird, Inkrement (zu) oder Dekrement (subtrahieren Im Beispiel fügt der `+=`-Operator bei jeder Ausführung der Schleife 1 `countNum` hinzu. (Um eine Variable in einer Schleife, die Sie anzählt, herabzusetzen, verwenden Sie den Dekrementoperator `-=`).
 
 ## <a name="objects-and-collections"></a>Objekte und Auflistungen
 
-Fast alles in einer ASP.NET-Website ist ein Objekt, einschließlich der Webseite selbst. Dieser Abschnitt beschreibt einige wichtige Objekte, die Sie häufig in Ihrem Code verwenden werden.
+Fast alles auf einer ASP.NET-Website ist ein Objekt, das auch die Webseite selbst enthält. In diesem Abschnitt werden einige wichtige Objekte erläutert, mit denen Sie häufig in Ihrem Code arbeiten werden.
 
-### <a name="page-objects"></a>Page-Objekte
+### <a name="page-objects"></a>Seiten Objekte
 
-Die meisten grundlegenden Objekts in ASP.NET ist die Seite. Sie können die Eigenschaften der Page-Objekt, ohne alle berechtigten Objekte direkt zugreifen. Der folgende Code Ruft den Dateipfad der Seite mit den `Request` Objekt der Seite:
+Das grundlegendste Objekt in ASP.net ist die Seite. Sie können auf die Eigenschaften des Seiten Objekts direkt ohne qualifizierendes Objekt zugreifen. Der folgende Code Ruft den Dateipfad der Seite ab, wobei das `Request` Objekt der Seite verwendet wird:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample56.cshtml)]
 
-Um es zu machen klar, dass Sie auf Eigenschaften und Methoden für das Seitenobjekt der aktuellen verweisen, optional können Sie das Schlüsselwort `this` das Page-Objekt in Ihrem Code darstellen. Hier ist das vorherige Codebeispiel, bei dem `this` zur Darstellung der Seite hinzugefügt:
+Um das Festlegen von Eigenschaften und Methoden für das aktuelle Seiten Objekt zu vereinfachen, können Sie optional das Schlüsselwort `this` verwenden, um das Seiten Objekt in Ihrem Code darzustellen. Im folgenden finden Sie das vorherige Codebeispiel, in dem `this` zur Darstellung der Seite hinzugefügt wurde:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample57.cshtml)]
 
-Können Sie Eigenschaften der `Page` Objekt um eine Vielzahl von Informationen, wie z. B. zu erhalten:
+Sie können die Eigenschaften des `Page`-Objekts verwenden, um zahlreiche Informationen zu erhalten, z. b.:
 
-- `Request`. Wie Sie bereits gesehen haben, ist dies eine Auflistung von Informationen über die aktuelle Anforderung, einschließlich welche Art von Browser die Anforderung, die URL der Seite, die Identität des Benutzers usw. vorgenommen.
-- `Response`. Dies ist eine Auflistung von Informationen über die Antwort (Seite), die an den Browser gesendet wird, wenn der Code ausgeführt wurde. Beispielsweise können Sie diese Eigenschaft, um Informationen in die Antwort zu schreiben. 
+- `Request`. Wie Sie bereits gesehen haben, handelt es sich hierbei um eine Sammlung von Informationen über die aktuelle Anforderung, einschließlich des Typs des Browsers, der die Anforderung gestellt hat, der URL der Seite, der Benutzeridentität usw.
+- `Response`. Dabei handelt es sich um eine Sammlung von Informationen über die Antwort (Seite), die an den Browser gesendet werden, wenn die Ausführung des Server Codes abgeschlossen ist. Beispielsweise können Sie diese Eigenschaft verwenden, um Informationen in die Antwort zu schreiben. 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
 <a id="ID_CollectionsAndObjects"></a>
-### <a name="collection-objects-arrays-and-dictionaries"></a>Von Auflistungsobjekten (Arrays und Dictionarys)
+### <a name="collection-objects-arrays-and-dictionaries"></a>Sammlungsobjekte (Arrays und Wörterbücher)
 
-Ein *Auflistung* ist eine Gruppe von Objekten desselben Typs, z. B. eine Auflistung von `Customer` Objekte aus einer Datenbank. ASP.NET enthält viele integrierte Auflistungen, z.B. die `Request.Files` Auflistung.
+Eine *Sammlung* ist eine Gruppe von Objekten desselben Typs, z. b. eine Auflistung von `Customer` Objekten aus einer Datenbank. ASP.NET enthält viele integrierte Auflistungen, wie z. b. die `Request.Files` Auflistung.
 
-Sie werden häufig in Sammlungen mit Daten arbeiten. Zwei allgemeine Auflistungstypen sind die *Array* und *Wörterbuch*. Ein Array ist nützlich, wenn Sie eine Sammlung mit ähnlichen Elementen gespeichert werden soll, aber nicht, erstellen Sie eine separate Variable für jedes Element möchten:
+Häufig arbeiten Sie mit Daten in Auflistungen. Zwei gängige Auflistungs Typen sind das- *Array* und das- *Wörterbuch*. Ein Array ist nützlich, wenn Sie eine Sammlung ähnlicher Elemente speichern möchten, aber keine separate Variable zum Speichern der einzelnen Elemente erstellen möchten:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample59.cshtml)]
 
-Mit Arrays, Sie deklarieren einen bestimmten Datentyp, z. B. `string`, `int`, oder `DateTime`. Um anzugeben, dass die Variable darf ein Array, das Sie Klammern zur Deklaration hinzufügen (z. B. `string[]` oder `int[]`). Es stehen die Elemente in einem Array mit ihrer Position (Index) oder mithilfe der `foreach` Anweisung. Arrayindizes sind nullbasiert &#8212; , also das erste Element ist an position 0, das zweite Element ist an Position 1 und So weiter.
+Mit Arrays deklarieren Sie einen bestimmten Datentyp, z. b. `string`, `int`oder `DateTime`. Um anzugeben, dass die Variable ein Array enthalten kann, fügen Sie der Deklaration eckige Klammern hinzu (z. b. `string[]` oder `int[]`). Sie können auf Elemente in einem Array zugreifen, indem Sie Ihre Position (Index) oder die `foreach`-Anweisung verwenden. Array Indizes sind NULL basiert &#8212; , d. h., das erste Element befindet sich an Position 0, das zweite Element an Position 1 usw.
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample60.cshtml)]
 
-Sie können die Anzahl der Elemente in einem Array zu bestimmen, durch Abrufen der `Length` Eigenschaft. Rufen Sie die Position eines bestimmten Elements im Array (und das Array zu suchen) mit der `Array.IndexOf` Methode. Sie können auch Aktionen wie Reverse den Inhalt eines Arrays (die `Array.Reverse` Methode) oder den Inhalt zu sortieren (die `Array.Sort` Methode).
+Sie können die Anzahl der Elemente in einem Array ermitteln, indem Sie die `Length`-Eigenschaft erhalten. Um die Position eines bestimmten Elements im Array (zum Durchsuchen des Arrays) zu erhalten, verwenden Sie die `Array.IndexOf`-Methode. Sie können auch den Inhalt eines Arrays umkehren (die `Array.Reverse`-Methode) oder den Inhalt (die `Array.Sort`-Methode) sortieren.
 
-Die Ausgabe von der Zeichenfolgen-Array-Code in einem Browser angezeigt:
+Die Ausgabe des Zeichen folgen Array Codes, der in einem Browser angezeigt wird:
 
 ![Razor-Img13](introducing-razor-syntax-c/_static/image13.jpg)
 
-Ein Wörterbuch ist eine Auflistung von Schlüssel/Wert-Paare, in dem Sie den Schlüssel (oder Name) festlegen oder Abrufen des entsprechenden Werts angeben:
+Ein Wörterbuch ist eine Auflistung von Schlüssel-Wert-Paaren, bei der Sie den Schlüssel (oder Namen) bereitstellen, um den entsprechenden Wert festzulegen oder abzurufen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample61.cshtml)]
 
-Um ein Wörterbuch zu erstellen, verwenden Sie die `new` Schlüsselwort, um anzugeben, dass Sie ein neues Wörterbuchobjekt erstellen. Sie können ein Wörterbuch zuweisen, um eine Variable mit dem `var` Schlüsselwort. Sie zeigen die Daten der Elemente in das Wörterbuch, das mithilfe der spitzen Klammern ( `< >` ). Am Ende der Deklaration müssen Sie ein Paar von Klammern, hinzufügen, da es sich eigentlich eine Methode handelt, die ein neues Wörterbuch erstellt.
+Zum Erstellen eines Wörterbuchs verwenden Sie das `new`-Schlüsselwort, um anzugeben, dass Sie ein neues Dictionary-Objekt erstellen. Mit dem `var`-Schlüsselwort können Sie einer Variablen ein Wörterbuch zuweisen. Die Datentypen der Elemente im Wörterbuch werden mithilfe von spitzen Klammern (`< >`) angegeben. Am Ende der Deklaration müssen Sie ein paar Klammern hinzufügen, da es sich hierbei tatsächlich um eine Methode handelt, die ein neues Wörterbuch erstellt.
 
-Um Elemente zum Wörterbuch hinzuzufügen, rufen Sie die `Add` Methode der "Dictionary"-Variable (`myScores` in diesem Fall), und geben Sie einen Schlüssel und Wert. Alternativ können Sie eckige Klammern verwenden, um den Schlüssel angeben, und führen eine einfache Zuweisung, wie im folgenden Beispiel:
+Um dem Wörterbuch Elemente hinzuzufügen, können Sie die `Add`-Methode der Wörterbuch Variablen (in diesem Fall`myScores`) und dann einen Schlüssel und einen Wert angeben. Alternativ können Sie eckige Klammern verwenden, um den Schlüssel anzugeben und eine einfache Zuweisung durchzuführen, wie im folgenden Beispiel gezeigt:
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample62.cs)]
 
-Um einen Wert aus dem Wörterbuch abzurufen, geben Sie den Schlüssel in Klammern ein:
+Um einen Wert aus dem Wörterbuch zu erhalten, geben Sie den Schlüssel in eckige Klammern an:
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample63.cs)]
 
 ## <a name="calling-methods-with-parameters"></a>Aufrufen von Methoden mit Parametern
 
-Wenn Sie zuvor in diesem Artikel lesen, können die Objekte, denen Sie Programmieren mit Methoden verfügen. Z. B. eine `Database` Objekt möglicherweise eine `Database.Connect` Methode. Viele Methoden verfügen auch über einen oder mehrere Parameter. Ein *Parameter* ist ein Wert, der Sie an eine Methode übergeben, um die Methode zum Abschließen des Tasks zu aktivieren. Betrachten Sie z. B. eine Deklaration für die `Request.MapPath` -Methode, die drei Parameter akzeptiert:
+Wie Sie zuvor in diesem Artikel gelesen haben, können die Objekte, mit denen Sie programmieren, über Methoden verfügen. Beispielsweise kann ein `Database` Objekt über eine `Database.Connect`-Methode verfügen. Viele Methoden verfügen auch über einen oder mehrere Parameter. Ein *Parameter* ist ein Wert, den Sie an eine-Methode übergeben, um die-Methode zum Abschließen der Aufgabe zu aktivieren. Betrachten Sie z. b. eine Deklaration für die `Request.MapPath`-Methode, die drei Parameter annimmt:
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample64.cs)]
 
-(Die Zeile wurde umgebrochen, um sie besser lesbar zu machen. Beachten Sie, dass Sie Zeilenumbrüche einfügen können, fast jeden Ort, mit der Ausnahme, die innerhalb von Zeichenfolgen, in Anführungszeichen eingeschlossen sind.)
+(Die Zeile wurde umschließt, um Sie besser lesbar zu machen. Denken Sie daran, dass Sie Zeilenumbrüche fast an jeder Stelle platzieren können, außer in Zeichen folgen, die in Anführungszeichen eingeschlossen sind.)
 
-Diese Methode gibt den physischen Pfad auf dem Server, der entspricht einem angegebenen virtuellen Pfad zurück. Die drei Parameter für die Methode sind `virtualPath`, `baseVirtualDir`, und `allowCrossAppMapping`. (Beachten Sie, dass in der Deklaration, die Parameter mit den Datentypen der Daten aufgeführt sind, die eingegeben werden.) Wenn Sie diese Methode aufrufen, müssen Sie Werte für alle drei Parameter angeben.
+Diese Methode gibt den physischen Pfad auf dem Server zurück, der einem angegebenen virtuellen Pfad entspricht. Die drei Parameter für die-Methode sind `virtualPath`, `baseVirtualDir`und `allowCrossAppMapping`. (Beachten Sie, dass in der-Deklaration die Parameter mit den Datentypen der Daten aufgelistet werden, die Sie akzeptieren.) Wenn Sie diese Methode aufgerufen haben, müssen Sie Werte für alle drei Parameter angeben.
 
-Die Razor-Syntax bietet Ihnen zwei Optionen zum Übergeben von Parametern an eine Methode: *Positionsparameter* und *benannte Parameter*. Um eine Methode mithilfe von positionelle Parameter aufzurufen, übergeben Sie die Parameter in einem strikter Reihenfolge, der in der Deklaration der Methode angegeben ist. (Sie würden diese Reihenfolge in der Regel kennen, lesen Sie die Dokumentation für die Methode.) Führen Sie die Reihenfolge, und Sie können einen der Parameter nicht überspringen &#8212; erforderlich, eine leere Zeichenfolge übergeben (`""`) oder `null` für einen positionelle Parameter, die einen Wert für nicht verfügbar.
+Der Razor-Syntax bietet Ihnen zwei Optionen zum Übergeben von Parametern an eine Methode: *Positions Parameter* und *benannte Parameter*. Um eine Methode mit Positions Parametern aufzurufen, übergeben Sie die Parameter in einer strengen Reihenfolge, die in der Methoden Deklaration angegeben ist. (In der Regel wissen Sie diese Bestellung, indem Sie die Dokumentation für die-Methode lesen.) Sie müssen die Reihenfolge befolgen, und Sie können die Parameter &#8212; bei Bedarf nicht überspringen. Sie übergeben eine leere Zeichenfolge (`""`) oder `null` für einen positionellen Parameter, für den Sie keinen Wert besitzen.
 
-Im folgende Beispiel wird angenommen, Sie haben einen Ordner namens *Skripts* auf Ihrer Website. Der Code Ruft die `Request.MapPath` -Methode auf und übergibt Werte für die drei Parameter in der richtigen Reihenfolge. Dann wird den resultierenden zugeordneten Pfad angezeigt.
+Im folgenden Beispiel wird davon ausgegangen, dass Sie über einen Ordner namens *Scripts* auf Ihrer Website verfügen. Der Code Ruft die `Request.MapPath`-Methode auf und übergibt Werte für die drei Parameter in der richtigen Reihenfolge. Daraufhin wird der resultierende zugeordnete Pfad angezeigt.
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample65.cshtml)]
 
-Wenn eine Methode über viele Parameter verfügt, können Sie Ihren Code besser lesbar behalten mit benannten Parametern. Um eine Methode, die mit benannten Parametern aufzurufen, geben Sie an, gefolgt von der Parameternamen von einem Doppelpunkt (:), und klicken Sie dann den Wert. Der Vorteil für benannte Parameter ist, dass Sie sie in beliebiger Reihenfolge übergeben können, werden sollen. (Ein Nachteil ist, dass der Methodenaufruf nicht so kompakt ist).
+Wenn eine Methode über viele Parameter verfügt, können Sie Ihren Code mit benannten Parametern besser lesbar halten. Um eine Methode mit benannten Parametern aufzurufen, geben Sie den Parameternamen gefolgt von einem Doppelpunkt (:) und dann den Wert an. Der Vorteil von benannten Parametern besteht darin, dass Sie Sie in beliebiger Reihenfolge übergeben können. (Ein Nachteil ist, dass der Methoden Aufrufwert nicht so kompakt ist.)
 
-Im folgenden Beispiel wird die gleiche Methode wie oben beschrieben, aber verwendet benannte Parameter, die Werte anzugeben:
+Im folgenden Beispiel wird dieselbe Methode wie oben aufgerufen, es werden jedoch benannte Parameter verwendet, um die Werte bereitzustellen:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample66.cshtml)]
 
-Wie Sie sehen können, werden die Parameter in einer anderen Reihenfolge übergeben. Wenn Sie im vorherigen Beispiel und in diesem Beispiel ausführen, werden sie jedoch den gleichen Wert zurück.
+Wie Sie sehen können, werden die Parameter in einer anderen Reihenfolge übermittelt. Wenn Sie jedoch das vorherige Beispiel und dieses Beispiel ausführen, wird derselbe Wert zurückgegeben.
 
 <a id="ID_HandlingErrors"></a>
-## <a name="handling-errors"></a>Behandeln von Fehlern
+## <a name="handling-errors"></a>Fehlerbehandlung
 
-### <a name="try-catch-statements"></a>Try-Catch-Anweisungen
+### <a name="try-catch-statements"></a>Try-catch-Anweisungen
 
-Sie müssen oft Anweisungen in Ihrem Code, die außerhalb Ihrer Kontrolle Gründen fehlschlagen kann. Zum Beispiel:
+Sie verfügen häufig über Anweisungen in Ihrem Code, die aus Gründen außerhalb ihrer Kontrolle fehlschlagen können. Beispiel:
 
-- Wenn Ihr Code versucht, erstellen oder auf eine Datei zugreifen, können alle möglichen Fehler auftreten. Die gewünschte Datei nicht vorhanden sind, wird sie möglicherweise gesperrt, der Code möglicherweise nicht über Berechtigungen verfügen, und so weiter.
-- Auf ähnliche Weise Wenn Ihr Code versucht, die Datensätze in einer Datenbank zu aktualisieren, können Berechtigungsprobleme vorhanden sein, kann die Verbindung mit der Datenbank gelöscht werden, die zu speichernden Daten möglicherweise ungültig und so weiter.
+- Wenn Ihr Code versucht, eine Datei zu erstellen oder darauf zuzugreifen, können alle möglichen Fehler auftreten. Die gewünschte Datei ist möglicherweise nicht vorhanden, Sie ist möglicherweise gesperrt, der Code verfügt möglicherweise nicht über Berechtigungen usw.
+- Wenn Ihr Code versucht, Datensätze in einer Datenbank zu aktualisieren, können auch Berechtigungsprobleme auftreten, die Verbindung mit der Datenbank kann gelöscht werden, die zu speichernden Daten sind möglicherweise ungültig usw.
 
-Programmiertechnisch ausgedrückt, werden diese Situationen aufgerufen *Ausnahmen*. Wenn Ihr Code eine Ausnahme auftritt, generiert er (auslöst) eine Fehlermeldung angezeigt, die es im besten Fall ziemlich ärgerlich, für Benutzer:
+In Programmier begriffen werden diese Situationen als *Ausnahmen*bezeichnet. Wenn im Code eine Ausnahme auftritt, wird eine Fehlermeldung generiert (ausgelöst), die für Benutzer am besten geeignet ist:
 
 ![Razor-Img14](introducing-razor-syntax-c/_static/image14.jpg)
 
-In Situationen, in denen Ihr Code kann Ausnahmen auftreten, und um Fehler Nachrichten dieses Typs zu vermeiden, können Sie `try/catch` Anweisungen. In der `try` -Anweisung, führen Sie den Code, die Sie überprüfen können. In einer oder mehreren `catch` -Anweisungen, sehen Sie nach bestimmten Fehlern (bestimmte Arten von Ausnahmen), die aufgetreten sind. Sie können beliebig viele einschließen `catch` Anweisungen, wie Sie nach Fehlern zu suchen, die Sie planen müssen.
+In Situationen, in denen in Ihrem Code Ausnahmen auftreten können, und um Fehlermeldungen dieses Typs zu vermeiden, können Sie `try/catch`-Anweisungen verwenden. In der `try`-Anweisung führen Sie den Code aus, den Sie überprüfen. In mindestens einer `catch`-Anweisung können Sie nach bestimmten Fehlern (bestimmte Typen von Ausnahmen) suchen, die möglicherweise aufgetreten sind. Sie können so viele `catch` Anweisungen einschließen, wie Sie nach Fehlern suchen müssen, die Sie erwarten.
 
 > [!NOTE]
-> Es wird empfohlen, dass Sie, verwenden vermeiden die `Response.Redirect` -Methode in der `try/catch` -Anweisungen, da dies eine Ausnahme auf Ihrer Seite führen kann.
+> Es wird empfohlen, die Verwendung der `Response.Redirect`-Methode in `try/catch` Anweisungen zu vermeiden, da dies eine Ausnahme in der Seite verursachen kann.
 
-Das folgende Beispiel zeigt eine Seite, die auf der ersten Anforderung eine Textdatei erstellt und zeigt dann eine Schaltfläche der Benutzer die Datei zu öffnen. Im Beispiel verwendet absichtlich einen ungültigen Dateinamen ein, damit es eine Ausnahme ausgelöst wird. Der Code enthält `catch` -Anweisungen für die zwei möglichen Ausnahmen: `FileNotFoundException`, Dies tritt ein, wenn der Dateiname ungültig, ist und `DirectoryNotFoundException`, Dies tritt ein, wenn ASP.NET nicht den Ordner selbst finden können. (Sie können die auskommentierung Aufheben einer Anweisung im Beispiel um zu sehen, wie sie ausgeführt wird, wenn alles ordnungsgemäß funktioniert.)
+Das folgende Beispiel zeigt eine Seite, die bei der ersten Anforderung eine Textdatei erstellt und dann eine Schaltfläche anzeigt, mit der der Benutzer die Datei öffnen kann. Im Beispiel wird absichtlich ein ungültiger Dateiname verwendet, damit eine Ausnahme ausgelöst wird. Der Code enthält `catch` Anweisungen für zwei mögliche Ausnahmen: `FileNotFoundException`, bei einem ungültigen Dateinamen und `DirectoryNotFoundException`. Dies tritt auf, wenn ASP.NET den Ordner nicht selbst finden kann. (Sie können die Auskommentierung einer Anweisung im Beispiel aufheben, um zu sehen, wie Sie ausgeführt wird, wenn alles ordnungsgemäß funktioniert.)
 
-Wenn Ihr Code die Ausnahme behandelt hat nicht, sehen Sie eine Fehlerseite angezeigt, wie im vorherigen Screenshot. Allerdings die `try/catch` Abschnitt hilft zu verhindern, dass den Benutzer diese Arten von Fehlern angezeigt.
+Wenn der Code die Ausnahme nicht behandelt hat, sehen Sie eine Fehlerseite wie der vorherige Screenshot. Mit dem `try/catch` Abschnitt wird jedoch verhindert, dass der Benutzer diese Fehlertypen erkennen kann.
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample67.cshtml)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-**Programmierung mit Visual Basic**
+**Programmieren mit Visual Basic**
 
-[Anhang: Visual Basic-Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908)
+[Anhang: Visual Basic Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-**Referenzdokumentation**
+**Referenz Dokumentation**
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[C#-Sprache](https://msdn.microsoft.com/library/kx37x362.aspx)
+[C#Kurse](https://msdn.microsoft.com/library/kx37x362.aspx)

@@ -1,56 +1,56 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
-title: Animieren eines UpdatePanel-Steuerelements (VB) | Microsoft-Dokumentation
+title: Animieren eines Update Panel-Steuer Elements (VB) | Microsoft-Dokumentation
 author: wenz
-description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Für den Inhalt einer...
+description: Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Für den Inhalt eines...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4c306a2c-92b6-4904-b70b-365b847334fe
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b44dfd284ac1ed94e92bd52f4ca426a36bf86825
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d66dda923940a328c0757049c9d8bfa3b2d2b9fc
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130758"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607065"
 ---
 # <a name="animating-an-updatepanel-control-vb"></a>Animieren eines UpdatePanel-Steuerelements (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
 
-> Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Für den Inhalt von einem UpdatePanel-Steuerelement vorhanden ist, ein spezieller Extender, der stark auf die Animationsframework basiert: UpdatePanelAnimation. In diesem Tutorial veranschaulicht, wie Sie solche eine Animation für ein UpdatePanel einrichten.
+> Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Für den Inhalt eines Update Panel ist ein spezieller Extender vorhanden, der sich stark auf das Animations Framework stützt: UpdatePanelAnimation. In diesem Tutorial wird gezeigt, wie eine solche Animation für ein Update Panel eingerichtet wird.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Für den Inhalt einer `UpdatePanel`, ein spezieller Extender vorhanden ist, die sehr auf die Animationsframework basiert: `UpdatePanelAnimation`. In diesem Tutorial wird gezeigt, wie solche eine Animation für Einrichten einer `UpdatePanel`.
+Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Für den Inhalt einer `UpdatePanel`ist ein spezieller Extender vorhanden, der sich stark auf das Animations Framework stützt: `UpdatePanelAnimation`. In diesem Tutorial wird gezeigt, wie Sie eine solche Animation für eine `UpdatePanel`einrichten.
 
 ## <a name="steps"></a>Schritte
 
-Der erste Schritt ist wie üblich, enthalten die `ScriptManager` auf der Seite, damit die ASP.NET AJAX-Bibliothek geladen wird und das Steuerelement-Toolkit verwendet werden kann:
+Der erste Schritt besteht darin, die `ScriptManager` auf der Seite einzuschließen, sodass die ASP.NET AJAX-Bibliothek geladen und das steuerungstooltoolkit verwendet werden kann:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample1.aspx)]
 
-Die Animation in diesem Szenario gelten für eine ASP.NET `Wizard` Websteuerelement Wohnsitz in einem `UpdatePanel`. Drei (beliebiger) Schritte stellen genügend Optionen zum Auslösen von Postbacks bereit:
+Die Animation in diesem Szenario wird auf ein ASP.net-`Wizard`-websteuer Element angewendet, das sich in einem `UpdatePanel`befindet. Drei (beliebige) Schritte bieten genügend Optionen, um Postbacks auszublenden:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample2.aspx)]
 
-Das Markup für die `UpdatePanelAnimationExtender` Steuerelement ist sehr ähnlich, mit das Markup für die `AnimationExtender`. In der `TargetControlID` Attribut wir bieten die `ID` von der `UpdatePanel` animieren; innerhalb der `UpdatePanelAnimationExtender` -Steuerelement, die `<Animations>` -Element enthält XML-Markup für die Animation(s). Es gibt jedoch einen Unterschied: Die Größe der Ereignisse und Ereignishandler ist im Vergleich zur beschränkt `AnimationExtender`. Für `UpdatePanels`, nur zwei davon vorhanden:
+Das für das `UpdatePanelAnimationExtender` Steuerelement erforderliche Markup ähnelt dem Markup, das für die `AnimationExtender`verwendet wird. Im `TargetControlID`-Attribut werden die `ID` des zu animierenden `UpdatePanel` bereitgestellt. im `UpdatePanelAnimationExtender`-Steuerelement enthält das `<Animations>`-Element XML-Markup für die Animation (en). Es gibt jedoch einen Unterschied: die Anzahl von Ereignissen und Ereignis Handlern ist im Vergleich zu `AnimationExtender`beschränkt. Bei `UpdatePanels`sind nur zwei davon vorhanden:
 
-- `<OnUpdated>` Wenn UpdatePanel aktualisiert wurde
-- `<OnUpdating>` Beim Starten der UpdatePanel aktualisiert
+- `<OnUpdated>`, wenn Update Panel aktualisiert wurde.
+- `<OnUpdating>`, wenn Update Panel mit der Aktualisierung beginnt
 
-In diesem Szenario wird der neue Inhalt, der die `UpdatePanel` (nach dem Postback) eingeblendet wird. Dies ist die notwendigen Markups dafür:
+In diesem Szenario sollte der neue Inhalt des `UpdatePanel` (nach dem Postback) ausgeblendet werden. Dies ist das erforderliche Markup hierfür:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample3.aspx)]
 
-Nun, wenn ein Postback in UpdatePanel, was erfolgt, den neuen Inhalt des Bereichs reibungslos eingeblendet.
+Wenn nun ein Postback innerhalb von Update Panel auftritt, wird der neue Inhalt des Bereichs reibungslos ausgeblendet.
 
-[![Der nächste Assistentenschritt wird eingeblendet,](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![der nächste Schritt des Assistenten wird ausgeblendet.](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
-Der nächste Assistentenschritt wird eingeblendet, ([klicken Sie, um das Bild in voller Größe anzeigen](animating-an-updatepanel-control-vb/_static/image3.png))
+Der nächste Schritt des Assistenten wird ausgeblendet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](animating-an-updatepanel-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Zurück](changing-an-animation-using-client-side-code-vb.md)

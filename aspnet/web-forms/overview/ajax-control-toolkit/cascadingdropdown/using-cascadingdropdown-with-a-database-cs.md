@@ -1,96 +1,96 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs
-title: Verwenden von CascadingDropDown mit einer Datenbank (c#) | Microsoft-Dokumentation
+title: Verwenden von CascadingDropDown mit einer DatenbankC#() | Microsoft-Dokumentation
 author: wenz
-description: Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in Anoth verknüpft...
+description: Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList zugeordnete Werte in Anoth laden...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 684f0c28-a490-4e5b-b5e5-5dfb77464b49
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 706a099042a298f8870f36cb653f1e5d5d156f2a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: bcf453170d17807b4e3b2d2a8b545cba43139f89
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125166"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599792"
 ---
 # <a name="using-cascadingdropdown-with-a-database-c"></a>Verwenden von CascadingDropDown mit einer Datenbank (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1CS.pdf)
 
-> Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. Damit dies funktioniert muss ein spezielle Web-Dienst erstellt werden.
+> Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. Damit dies funktioniert, muss ein spezieller Webdienst erstellt werden.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. (Z. B. eine Liste enthält eine Liste der US-Staaten und die folgenden Liste wird dann mit der größten Städte in diesem Zustand gefüllt.) Damit dies funktioniert muss ein spezielle Web-Dienst erstellt werden.
+Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. (Eine Liste enthält beispielsweise eine Liste der US-Bundesstaaten, und die nächste Liste wird dann mit den wichtigsten Städten in diesem Zustand aufgefüllt.) Damit dies funktioniert, muss ein spezieller Webdienst erstellt werden.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal ist eine Datenquelle erforderlich. Dieses Beispiel verwendet die AdventureWorks-Datenbank und die Microsoft SQL Server 2005 Express Edition. Die Datenbank ist eine optionale Komponente von einer Visual Studio-Installation (einschließlich express Edition) und steht auch als separater Download unter [ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064). Die AdventureWorks-Datenbank ist Teil der SQL Server 2005 Samples and Sample Databases (download unter [ https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp; DisplayLang = En](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)). Die einfachste Möglichkeit zum Einrichten der Datenbank ist die Verwendung der Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp; DisplayLang = En](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)) und fügen Sie der `AdventureWorks.mdf` Datenbankdatei.
+Zuerst ist eine Datenquelle erforderlich. In diesem Beispiel werden die AdventureWorks-Datenbank und die Microsoft SQL Server 2005 Express Edition verwendet. Die Datenbank ist ein optionaler Teil einer Visual Studio-Installation (einschließlich Express Edition) und ist auch als separater Download unter [https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)verfügbar. Die AdventureWorks-Datenbank ist Teil der SQL Server 2005-Beispiele und-Beispiel Datenbanken (Download bei [https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)). Die einfachste Möglichkeit, die Datenbank einzurichten, ist die Verwendung des Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)) und das Anfügen der `AdventureWorks.mdf` Datenbankdatei.
 
-In diesem Beispiel wird angenommen, dass, dass Sie die Instanz von SQL Server 2005 Express Edition aufgerufen wird `SQLEXPRESS` und befindet sich auf dem gleichen Computer wie der Webserver; Dies ist auch der standardeinrichtung. Wenn Ihr Setup unterscheidet, müssen Sie die Verbindungsinformationen für die Datenbank anpassen.
+Bei diesem Beispiel wird davon ausgegangen, dass die Instanz des SQL Server 2005 Express Edition `SQLEXPRESS` ist und sich auf demselben Computer wie der Webserver befindet. Dies ist auch das Standard Setup. Wenn das Setup abweicht, müssen Sie die Verbindungsinformationen für die Datenbank anpassen.
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der &lt; `form` &gt; Element):
+Um die Funktionalität von ASP.NET AJAX und dem Steuerelement-Toolkit zu aktivieren, muss das `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden (innerhalb des &lt;`form`&gt; Element):
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-cs/samples/sample1.aspx)]
 
-Im nächsten Schritt müssen zwei DropDownList-Steuerelementen. In diesem Beispiel verwenden wir die Hersteller- und wenden Sie sich an Informationen aus den AdventureWorks, daher erstellen wir eine Liste für die verfügbaren Anbieter und eine für die verfügbaren Kontakte aus:
+Im nächsten Schritt sind zwei Dropdown List-Steuerelemente erforderlich. In diesem Beispiel verwenden wir die Hersteller-und Kontaktinformationen von AdventureWorks. Daher erstellen wir eine Liste für die verfügbaren Lieferanten und eine für die verfügbaren Kontakte:
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-cs/samples/sample2.aspx)]
 
-Anschließend müssen zwei CascadingDropDown-Extender zur Seite hinzugefügt werden. Einer die erste (Anbieter)-Liste füllt und anderen Knoten die zweite (Kontakte)-Liste füllt. Die folgenden Attribute müssen festgelegt werden:
+Anschließend müssen der Seite zwei CascadingDropDown-Extender hinzugefügt werden. Eine füllt die erste Liste (Lieferanten) und die andere die zweite Liste (Kontakte) aus. Die folgenden Attribute müssen festgelegt werden:
 
-- `ServicePath`: Die URL eines Webdiensts, der Einträge in der Liste bereitstellen
-- `ServiceMethod`: Web-Methode, die Bereitstellung von Einträge in der Liste
-- `TargetControlID`: ID der Dropdown-Liste
-- `Category`: Kategorieinformationen, die beim Aufruf der Web-Methode übermittelt wird
-- `PromptText`: Text, der angezeigt wird, wenn Sie Daten aus der Liste asynchron vom Server geladen
-- `ParentControlID`: (optional), dass Trigger das Laden der aktuellen Liste der übergeordneten-Dropdownliste
+- `ServicePath`: URL eines Webdiensts, der die Listeneinträge bereitgestellt
+- `ServiceMethod`: Webmethode, die die Listeneinträge bereitgestellt
+- `TargetControlID`: ID der Dropdown Liste
+- `Category`: Kategorieinformationen, die beim Aufrufen an die Webmethode übermittelt werden.
+- `PromptText`: Text, der beim asynchronen Laden von Listen Daten vom Server angezeigt wird.
+- `ParentControlID`: (optional) übergeordnete Dropdown Liste, die das Laden der aktuellen Liste auslöst
 
-Abhängig von der Programmiersprache, der verwendet wird ändert sich der Name des betreffenden-Webdiensts, aber alle anderen Attributwerte sind identisch. So sieht das CascadingDropDown-Element für das erste Dropdown-Liste aus:
+Abhängig von der verwendeten Programmiersprache ändert sich der Name des fraglichen Webdiensts, aber alle anderen Attributwerte sind identisch. Hier ist das CascadingDropDown-Element für die erste Dropdown Liste:
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-cs/samples/sample3.aspx)]
 
-Die Steuerelement-Extendern, für die zweite Liste müssen festlegen, die `ParentControlID` Attribut, damit Sie einen Eintrag auswählen, in der Anbieter Auflisten von Triggern Laden von Elementen in der Kontaktliste verknüpft ist.
+Die Steuerelement Erweiterungen für die zweite Liste müssen das `ParentControlID`-Attribut festlegen, damit das Auswählen eines Eintrags in der Liste "Lieferanten" das Laden der zugeordneten Elemente in der Liste Kontakte auslöst.
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-cs/samples/sample4.aspx)]
 
-Die eigentliche Arbeit im Webdienst, erfolgt das folgendermaßen eingerichtet wird. Beachten Sie, dass die `[ScriptService]` Attribut wird verwendet, andernfalls ASP.NET AJAX kann nicht erstellt werden die JavaScript-Proxy für den Zugriff auf den Webmethoden aus dem clientseitigen Skriptcode.
+Die eigentliche Arbeit wird dann im Webdienst durchgeführt, der wie folgt eingerichtet wird. Beachten Sie, dass das `[ScriptService]`-Attribut verwendet wird, andernfalls kann ASP.NET AJAX den JavaScript-Proxy nicht erstellen, um von Client seitigem Skriptcode auf die Webmethoden zuzugreifen.
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-cs/samples/sample5.aspx)]
 
-Die Signatur der Webmethoden CascadingDropDown azurenode lautet wie folgt aus:
+Die Signatur der von CascadingDropDown aufgerufenen Webmethoden lautet wie folgt:
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample6.cs)]
 
-Daher der Rückgabewert muss ein Array vom Typ `CascadingDropDownNameValue` die vom Toolkit-Steuerelement definiert ist. Die `GetVendors()` Methode ist recht einfach zu implementieren: Der Code eine Verbindung mit der AdventureWorks-Datenbank her und fragt die ersten 25 Hersteller. Der erste Parameter in der `CascadingDropDownNameValue` Konstruktor ist die Beschriftung des den Eintrag, der zweite Parameter der Wert (Value-Attribut in HTML &lt; `option` &gt; Element). Hier ist der Code ein:
+Der Rückgabewert muss daher ein Array vom Typ `CascadingDropDownNameValue` sein, das durch das Control Toolkit definiert wird. Die `GetVendors()`-Methode ist recht einfach zu implementieren: der Code stellt eine Verbindung zur AdventureWorks-Datenbank her und fragt die ersten 25 Anbieter ab. Der erste Parameter im `CascadingDropDownNameValue`-Konstruktor ist die Beschriftung des Listen Eintrags, der zweite Parameter ist der Wert (value-Attribut in HTML-&lt;`option`&gt; Element). Hier ist der Code:
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample7.cs)]
 
-Abrufen von zugeordneten Kontakte für einen Anbieter (Methodenname: `GetContactsForVendor()`) ist ein wenig komplizierter. Als Erstes muss der Anbieter, die in der ersten Dropdownliste ausgewählt wurden, hat bestimmt werden. Das Steuerelement-Toolkit definiert eine Hilfsmethode für diese Aufgabe: Die `ParseKnownCategoryValuesString()` Methode gibt eine `StringDictionary` Element mit den Dropdown-Daten:
+Das erhalten der zugeordneten Kontakte für einen Anbieter (Methodenname: `GetContactsForVendor()`) ist etwas schwieriger. Zuerst muss der Hersteller, der in der ersten Dropdown Liste ausgewählt wurde, ermittelt werden. Das Steuerelement-Toolkit definiert eine Hilfsmethode für diese Aufgabe: die `ParseKnownCategoryValuesString()`-Methode gibt ein `StringDictionary`-Element mit den Dropdown Daten zurück:
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample8.cs)]
 
-Aus Sicherheitsgründen müssen diese Daten zuerst überprüft werden. Wenn ein Anbieter-Eintrag vorhanden ist (da die `Category` des ersten Elements CascadingDropDown-Eigenschaftensatz auf `"Vendor"`), die dem ausgewählten Hersteller-ID kann abgerufen werden:
+Aus Sicherheitsgründen müssen diese Daten zuerst überprüft werden. Wenn es also einen Lieferanten Eintrag gibt (da die `Category`-Eigenschaft des ersten CascadingDropDown-Elements auf `"Vendor"`festgelegt ist), kann die ID des ausgewählten Anbieters abgerufen werden:
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample9.cs)]
 
-Der Rest der Methode ist ziemlich selbsterklärend, klicken Sie dann auf. Des Lieferanten-ID wird als Parameter für eine SQL-Abfrage verwendet, die alle zugeordneten Kontakte für diesen Kreditor abruft. Auch hier die Methode gibt ein Array vom Typ `CascadingDropDownNameValue`.
+Der Rest der Methode ist recht einfach, und dann. Die ID des Anbieters wird als Parameter für eine SQL-Abfrage verwendet, die alle zugeordneten Kontakte für diesen Anbieter abruft. Die-Methode gibt wiederum ein Array vom Typ `CascadingDropDownNameValue`zurück.
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample10.cs)]
 
-Laden die ASP.NET-Seite und nach einer kurzen Zeit wird die Liste der Anbieter mit 25 Einträgen gefüllt. Wählen Sie einen Eintrag, und beachten Sie, wie der zweiten Dropdownliste mit Daten gefüllt ist.
+Laden Sie die Seite ASP.net, und nach kurzer Zeit wird die Anbieterliste mit 25 Einträgen gefüllt. Wählen Sie einen Eintrag aus, und beachten Sie, dass die zweite Dropdown Liste mit Daten gefüllt ist.
 
-[![Die erste Liste wird automatisch ausgefüllt.](using-cascadingdropdown-with-a-database-cs/_static/image2.png)](using-cascadingdropdown-with-a-database-cs/_static/image1.png)
+[![die erste Liste automatisch ausgefüllt wird](using-cascadingdropdown-with-a-database-cs/_static/image2.png)](using-cascadingdropdown-with-a-database-cs/_static/image1.png)
 
-Die erste Liste wird automatisch übernommen ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-cs/_static/image3.png))
+Die erste Liste wird automatisch ausgefüllt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-cascadingdropdown-with-a-database-cs/_static/image3.png)).
 
-[![Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt.](using-cascadingdropdown-with-a-database-cs/_static/image5.png)](using-cascadingdropdown-with-a-database-cs/_static/image4.png)
+[![die zweite Liste entsprechend der Auswahl in der ersten Liste ausgefüllt ist.](using-cascadingdropdown-with-a-database-cs/_static/image5.png)](using-cascadingdropdown-with-a-database-cs/_static/image4.png)
 
-Die zweite Liste wird entsprechend der Auswahl in der ersten Liste gefüllt ([klicken Sie, um das Bild in voller Größe anzeigen](using-cascadingdropdown-with-a-database-cs/_static/image6.png))
+Die zweite Liste wird entsprechend der Auswahl in der ersten Liste ausgefüllt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-cascadingdropdown-with-a-database-cs/_static/image6.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](filling-a-list-using-cascadingdropdown-cs.md)

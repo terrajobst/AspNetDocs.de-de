@@ -1,166 +1,166 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
-title: Unterstützen von OData-Aktionen in der ASP.NET-Web-API 2 | Microsoft-Dokumentation
+title: Unterstützende odata-Aktionen in ASP.net-Web-API 2 | Microsoft-Dokumentation
 author: MikeWasson
-description: 'In OData sind Aktionen eine Möglichkeit, serverseitige Verhaltensweisen hinzufügen, die nicht einfach als CRUD-Vorgänge für Entitäten definiert sind. Einige Verwendungsmöglichkeiten für Aktionen umfassen: Implementieren...'
+description: 'In odata können Aktionen serverseitiges Verhalten hinzugefügt werden, die nicht einfach als CRUD-Vorgänge für Entitäten definiert werden können. Einige Verwendungsmöglichkeiten für Aktionen sind: implementieren...'
 ms.author: riande
 ms.date: 02/25/2014
 ms.assetid: 2d7b3aa2-aa47-4e6e-b0ce-3d65a1c6fe02
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
 msc.type: authoredcontent
-ms.openlocfilehash: 523225d86b06914349ebd689c4042b0b20393b9b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ae8b23f0868f992cb2bbbf14ee3f7ac848501515
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112329"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600349"
 ---
-# <a name="supporting-odata-actions-in-aspnet-web-api-2"></a>Unterstützung von OData-Aktionen in der ASP.NET Web API 2
+# <a name="supporting-odata-actions-in-aspnet-web-api-2"></a>Unterstützende odata-Aktionen in ASP.net-Web-API 2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
-> In OData *Aktionen* sind eine Möglichkeit, serverseitige Verhaltensweisen hinzufügen, die nicht einfach als CRUD-Vorgänge für Entitäten definiert sind. Einige Verwendungsmöglichkeiten für Aktionen umfassen:
+> In odata können *Aktionen* serverseitiges Verhalten hinzugefügt werden, die nicht einfach als CRUD-Vorgänge für Entitäten definiert werden können. Einige Verwendungsmöglichkeiten für Aktionen sind:
 > 
-> - Implementieren von komplexen Transaktionen.
-> - Bearbeiten gleichzeitig mehrere Entitäten.
-> - Erlauben nur bestimmte Eigenschaften einer Entität aktualisiert.
-> - Senden von Informationen an den Server, die nicht in einer Entität definiert wird.
+> - Implementieren komplexer Transaktionen.
+> - Gleichzeitige Bearbeitung mehrerer Entitäten.
+> - Zulassen von Updates nur für bestimmte Eigenschaften einer Entität.
+> - Senden von Informationen an den Server, der nicht in einer Entität definiert ist.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
 > - Web-API 2
-> - OData v3
+> - Odata, Version 3
 > - Entity Framework 6
 
-## <a name="example-rating-a-product"></a>Beispiel: Ein Produkt bewerten
+## <a name="example-rating-a-product"></a>Beispiel: bewerten eines Produkts
 
-In diesem Beispiel möchten wir, damit Benutzer, die Produkte zu bewerten, und machen Sie dann die durchschnittliche Bewertung für jedes Produkt. In der Datenbank werden wir eine Liste von Bewertungen auf Produkte verschlüsselt gespeichert.
+In diesem Beispiel möchten wir, dass Benutzer Produkte bewerten und dann die durchschnittlichen Bewertungen für die einzelnen Produkte verfügbar machen. In der-Datenbank speichern wir eine Liste mit Bewertungen, die in Produkte eingegeben werden.
 
-Hier ist das Modell, das wir verwenden können, um die Bewertungen im Entity Framework darzustellen:
+Dies ist das Modell, mit dem die Bewertungen in Entity Framework dargestellt werden können:
 
 [!code-csharp[Main](odata-actions/samples/sample1.cs)]
 
-Wir möchten jedoch nicht POST-Clients eine `ProductRating` Objekt, das eine Auflistung von "Ratings". Intuitiv die Bewertung der Sammlung von Produkten zugeordnet ist, und der Client müssen nur den Bewertungswert bereitstellen.
+Wir möchten jedoch nicht, dass Clients ein `ProductRating` Objekt in einer "Bewertungs Sammlung" veröffentlichen. Die Bewertung ist intuitiv mit der Produktsammlung verknüpft, und der Client sollte nur den Bewertungs Wert veröffentlichen.
 
-Aus diesem Grund definieren anstatt die normalen CRUD-Vorgänge zu verwenden, wir eine Aktion, die ein Client aufrufen kann, auf ein Produkt. In der OData-Terminologie, die Aktion ist *gebunden* zu Product-Entitäten.
+Anstatt die normalen CRUD-Vorgänge zu verwenden, wird daher eine Aktion definiert, die ein Client für ein Produkt aufrufen kann. In der odata-Terminologie ist die-Aktion an Product-Entitäten *gebunden* .
 
->Aktionen verursachen Nebeneffekte auf dem Server. Aus diesem Grund werden sie die mit HTTP POST-Anforderungen aufgerufen. Aktionen möglich, Parameter und Rückgabetypen auf, die in den Metadaten beschrieben werden. Der Client sendet die Parameter im Hauptteil Anforderung, und der Server sendet den Rückgabewert in den Antworttext. Zum Aufrufen der Aktion "Rate Produkt" sendet der Client einen Beitrag zu einem URI wie folgt:
+>Aktionen haben Nebeneffekte auf dem Server. Aus diesem Grund werden Sie mithilfe von HTTP POST-Anforderungen aufgerufen. Aktionen können über Parameter und Rückgabe Typen verfügen, die in den Dienst Metadaten beschrieben werden. Der Client sendet die Parameter im Anforderungs Text, und der Server sendet den Rückgabewert im Antworttext. Zum Aufrufen der Aktion "Produkt Raten" sendet der Client wie folgt einen Post-Vorgang an einen URI:
 
 [!code-console[Main](odata-actions/samples/sample2.cmd)]
 
-Die Daten in der POST-Anforderung werden einfach die Produkt-Bewertung:
+Bei den Daten in der Post-Anforderung handelt es sich lediglich um die Produktbewertung:
 
 [!code-console[Main](odata-actions/samples/sample3.cmd)]
 
-## <a name="declare-the-action-in-the-entity-data-model"></a>Deklarieren Sie die Aktion in das Entity Data Model
+## <a name="declare-the-action-in-the-entity-data-model"></a>Deklarieren Sie die Aktion im Entity Data Model
 
-Fügen Sie in Ihrer Web-API-Konfiguration die Aktion mit den Entity Data Model (EDM) hinzu:
+Fügen Sie die Aktion in Ihrer Web-API-Konfiguration dem Entity Data Model (EDM) hinzu:
 
 [!code-csharp[Main](odata-actions/samples/sample4.cs)]
 
-Dieser Code definiert die "RateProduct" als eine Aktion, die für die Product-Entitäten ausgeführt werden kann. Deklariert außerdem, dass die Aktion eine **Int** Parameter mit dem Namen "Rating", und gibt eine **Int** Wert.
+In diesem Code wird "rateproduct" als eine Aktion definiert, die für Product-Entitäten ausgeführt werden kann. Außerdem wird deklariert, dass die Aktion einen **int** -Parameter mit dem Namen "Rating" annimmt und einen **int** -Wert zurückgibt.
 
-## <a name="add-the-action-to-the-controller"></a>Hinzufügen der Aktions zum Controller
+## <a name="add-the-action-to-the-controller"></a>Hinzufügen der Aktion zum Controller
 
-Die Aktion "RateProduct" ist an Product-Entitäten gebunden. Um die Aktion zu implementieren, fügen Sie eine Methode, die mit dem Namen `RateProduct` an den Controller Produkte:
+Die Aktion "rateproduct" ist an Product Entities gebunden. Fügen Sie dem Products-Controller eine Methode mit dem Namen `RateProduct` hinzu, um die Aktion zu implementieren:
 
 [!code-csharp[Main](odata-actions/samples/sample5.cs)]
 
-Beachten Sie, dass der Name der Methode mit dem Namen der Aktion im EDM übereinstimmt. Die Methode verfügt über zwei Parameter:
+Beachten Sie, dass der Methodenname mit dem Namen der Aktion im EDM übereinstimmt. Die-Methode verfügt über zwei Parameter:
 
-- *key*: Der Schlüssel für das Produkt zu Rate.
-- *Parameter*: Ein Wörterbuch der Parameterwerte für die Aktion.
+- *Key*: der Schlüssel, der vom Produkt zu bewerten ist.
+- *Parameter*: ein Wörterbuch mit Aktionsparameter Werten.
 
-Wenn Sie die Standard-routingkonventionen verwenden, muss der Key-Parameter "Key" benannt werden. Es ist auch wichtig, Sie enthalten die **[FromOdataUri]** Attribut, wie gezeigt. Dieses Attribut teilt die Web-API-OData-Syntaxregeln beim Analysieren des Schlüssels aus der Anforderungs-URI zu verwenden.
+Wenn Sie die standardmäßigen Routing Konventionen verwenden, muss der Schlüsselparameter "Key" lauten. Es ist auch wichtig, das Attribut **[fromudatauri]** wie dargestellt einzubeziehen. Dieses Attribut weist die Web-API an, odata-Syntax Regeln zu verwenden, wenn der Schlüssel aus dem Anforderungs-URI analysiert wird.
 
-Verwenden der *Parameter* Wörterbuch, das die Aktionsparameter zu erhalten:
+Verwenden Sie das *Parameter* Wörterbuch, um die Aktionsparameter zu erhalten:
 
 [!code-csharp[Main](odata-actions/samples/sample6.cs)]
 
-Wenn der Client der Action-Parameter in der richtigen sendet zu formatieren, den Wert der **ModelState.IsValid** ist "true". In diesem Fall können Sie die **ODataActionParameters** Wörterbuch, das die Parameterwerte abzurufen. In diesem Beispiel die `RateProduct` Aktion nimmt einen einzelnen Parameter, die mit dem Namen "Rating".
+Wenn der Client die Aktionsparameter im richtigen Format sendet, ist der Wert von **modelstate. IsValid** "true". In diesem Fall können Sie das **odataaktionparameters** -Wörterbuch verwenden, um die Parameterwerte zu erhalten. In diesem Beispiel nimmt die `RateProduct` Aktion einen einzelnen Parameter mit dem Namen "Rating" an.
 
-## <a name="action-metadata"></a>Aktion-Metadaten
+## <a name="action-metadata"></a>Aktions Metadaten
 
-Um die Metadaten des Diensts anzuzeigen, senden Sie eine GET-Anforderung an /odata/$ Metadaten ein. Dies ist der Teil der Metadaten, die deklariert die `RateProduct` Aktion:
+Um die Dienst Metadaten anzuzeigen, senden Sie eine GET-Anforderung an/odata/-$Metadata. Dies ist der Teil der Metadaten, der die `RateProduct` Aktion deklariert:
 
 [!code-xml[Main](odata-actions/samples/sample7.xml)]
 
-Die **FunctionImport** Element deklariert, die Aktion. Die meisten Felder sind selbsterklärend, doch die beiden sind zu beachten:
+Das **FunctionImport** -Element deklariert die Aktion. Die meisten Felder sind selbsterklärend, aber zwei sind erwähnenswert:
 
-- **IsBindable** bedeutet, dass die Aktion kann aufgerufen werden, für die Zielentität, mindestens ein Teil der Zeit.
-- **IsAlwaysBindable** bedeutet, dass die Aktion kann für die Zielentität immer aufgerufen werden.
+- **Isbindable** bedeutet, dass die Aktion für die Ziel Entität mindestens einige Zeit aufgerufen werden kann.
+- **Isalwaysbindable** bedeutet, dass die Aktion immer für die Ziel Entität aufgerufen werden kann.
 
-Der Unterschied besteht darin, dass einige Aktionen immer für Clients verfügbar sind, aber andere Aktionen vom Zustand der Entität abhängig können. Nehmen wir beispielsweise an, dass Sie eine Aktion "Kaufen" definieren. Sie können nur ein Element erwerben, die auf Lager ist. Wenn der Artikel nicht vorrätig ist, kann kein Client mit dieser Aktion aufrufen.
+Der Unterschied besteht darin, dass einige Aktionen für Clients immer verfügbar sind, andere Aktionen jedoch möglicherweise vom Zustand der Entität abhängen. Nehmen Sie beispielsweise an, dass Sie eine Aktion zum Kauf definieren. Sie können nur ein Element erwerben, das sich in der Aktienliste befindet. Wenn das Element nicht vorrätig ist, kann ein Client diese Aktion nicht aufrufen.
 
-Wenn Sie das EDM definieren die **Aktion** Methode erstellt eine Aktion immer gebunden werden kann:
+Wenn Sie das EDM definieren, erstellt die **Aktions** Methode eine immer bindbare Aktion:
 
 [!code-csharp[Main](odata-actions/samples/sample8.cs?highlight=1)]
 
-Ich werde nicht immer – bindbare Aktionen (so genannte *vorübergehende* Aktionen) weiter unten in diesem Thema.
+Ich werde weiter unten in diesem Thema über nicht immer bindbare Aktionen (auch als *vorübergehende* Aktionen bezeichnet) sprechen.
 
 ## <a name="invoking-the-action"></a>Aufrufen der Aktion
 
-Jetzt sehen wir uns an, wie ein Client dadurch aufgerufen würde. Angenommen, das der Client möchte gerne eine Bewertung von 2 für das Produkt mit der ID = 4. Hier ist eine Beispiel-Anforderungsnachricht, die mithilfe von JSON-Format für den Anforderungstext ein:
+Sehen wir uns nun an, wie ein Client diese Aktion aufruft. Angenommen, der Client möchte eine Bewertung von 2 für das Produkt mit der ID "4" abgeben. Im folgenden finden Sie ein Beispiel für eine Anforderungs Nachricht mit dem JSON-Format für den Anforderungs Text:
 
 [!code-console[Main](odata-actions/samples/sample9.cmd)]
 
-So sieht die Response-Nachricht aus:
+Die Antwortnachricht lautet wie folgt:
 
 [!code-console[Main](odata-actions/samples/sample10.cmd)]
 
-## <a name="binding-an-action-to-an-entity-set"></a>Binden eine Aktion an einer Entitätenmenge
+## <a name="binding-an-action-to-an-entity-set"></a>Binden einer Aktion an eine Entitätenmenge
 
-Im vorherigen Beispiel ist die Aktion an eine einzelne Entität gebunden: Der Client bewertet ein einzelnes Produkt. Sie können auch eine Aktion an eine Auflistung von Entitäten binden. Stellen Sie einfach die folgenden Änderungen:
+Im vorherigen Beispiel ist die Aktion an eine einzelne Entität gebunden: der Client bewertet ein einzelnes Produkt. Sie können eine Aktion auch an eine Auflistung von Entitäten binden. Nehmen Sie einfach die folgenden Änderungen vor:
 
-Im EDM hinzufügen der Aktion auf der Entität **Auflistung** Eigenschaft.
+Fügen Sie im EDM die **Aktion der Auflistungs Eigenschaft der** Entität hinzu.
 
 [!code-csharp[Main](odata-actions/samples/sample11.cs?highlight=1)]
 
-Lassen Sie in der Controllermethode, die *Schlüssel* Parameter.
+Lassen Sie in der Controller Methode den *Key* -Parameter Weg.
 
 [!code-csharp[Main](odata-actions/samples/sample12.cs)]
 
-Nun ruft der Client die Aktion auf die Entitätenmenge Produkte:
+Nun ruft der Client die Aktion für die Products-Entitätenmenge auf:
 
 [!code-console[Main](odata-actions/samples/sample13.cmd)]
 
-## <a name="actions-with-collection-parameters"></a>Aktionen mit Parametern für die Datensammlung
+## <a name="actions-with-collection-parameters"></a>Aktionen mit Sammlungs Parametern
 
-Aktionen können Parameter aufweisen, die eine Auflistung von Werten zu akzeptieren. Verwenden Sie im EDM **CollectionParameter&lt;T&gt;**  um den Parameter zu deklarieren.
+Aktionen können über Parameter verfügen, die eine Auflistung von Werten annehmen. Verwenden Sie im EDM **collectionparameter&lt;t-&gt;** , um den-Parameter zu deklarieren.
 
 [!code-csharp[Main](odata-actions/samples/sample14.cs)]
 
-Damit wird deklariert einen Parameter namens "Ratings", die eine Auflistung von akzeptiert **Int** Werte. In der Controllermethode, erhalten Sie immer noch den Wert des Parameters aus der **ODataActionParameters** -Objekt, aber jetzt der Wert ist eine **ICollection&lt;Int&gt;**  Wert:
+Dadurch wird ein Parameter mit dem Namen "Ratings" deklariert, der eine Auflistung von **int** -Werten annimmt. In der Controller Methode erhalten Sie immer noch den Parameterwert aus dem **odataaktionparameters** -Objekt, aber der Wert ist nun ein **ICollection-&lt;int&gt;** Wert:
 
 [!code-csharp[Main](odata-actions/samples/sample15.cs)]
 
 ## <a name="transient-actions"></a>Vorübergehende Aktionen
 
-Im Beispiel "RateProduct" können Benutzer ein Produkt, immer bewerten, damit die Aktion immer verfügbar ist. Aber einige Aktionen abhängig vom Zustand der Entität. Beispielsweise ist in einem Dienst videoverleih die Aktion "Kasse" nicht immer verfügbar. (Diese hängt davon ab, ob eine Kopie des betreffenden Videos verfügbar ist.) Diese Art von Aktion wird aufgerufen, eine *vorübergehende* Aktion.
+Im Beispiel "rateproduct" können Benutzer immer ein Produkt bewerten, sodass die Aktion immer verfügbar ist. Einige Aktionen hängen jedoch vom Zustand der Entität ab. Beispielsweise ist in einem videovermietungs Dienst die Aktion "Auschecken" nicht immer verfügbar. (Es hängt davon ab, ob eine Kopie des Videos verfügbar ist.) Diese Art von Aktion wird als *vorübergehende* Aktion bezeichnet.
 
-In den Dienstmetadaten eine vorübergehende Aktion verfügt **IsAlwaysBindable** gleich "false". Das ist eigentlich den Standardwert, damit die Metadaten wie folgt aussehen wird:
+In den Dienst Metadaten ist **isalwaysbindable** für eine vorübergehende Aktion gleich false. Das ist eigentlich der Standardwert, sodass die Metadaten wie folgt aussehen:
 
 [!code-xml[Main](odata-actions/samples/sample16.xml)]
 
-Der folgende warum dies wichtig ist: Wenn eine Aktion vorübergehend ist, muss der Server weiß, dass dem Client die Aktion verfügbar ist. Hierzu werden ein Link zu der Aktion in der Entität eingeschlossen. Hier ist ein Beispiel für eine Movie-Entität:
+Dies ist der Grund, warum dies wichtig ist: Wenn eine Aktion vorübergehend ist, muss der Server dem Client mitteilen, wann die Aktion verfügbar ist. Dies erfolgt durch Einschließen eines Links zur Aktion in der Entität. Im folgenden finden Sie ein Beispiel für eine Movie-Entität:
 
 [!code-console[Main](odata-actions/samples/sample17.cmd)]
 
-Die Eigenschaft "#CheckOut" enthält einen Link zu der CheckOut-Aktion. Wenn die Aktion nicht verfügbar ist, lässt der Server den Link aus.
+Die Eigenschaft "#Checkout" enthält einen Link zur Checkout-Aktion. Wenn die Aktion nicht verfügbar ist, lässt der Server den Link aus.
 
-Um eine vorübergehende Aktion im EDM zu deklarieren, rufen Sie die **TransientAction** Methode:
+Rufen Sie zum Deklarieren einer vorübergehenden Aktion im EDM die **transientaction** -Methode auf:
 
 [!code-csharp[Main](odata-actions/samples/sample18.cs)]
 
-Darüber hinaus müssen Sie eine Funktion bereitstellen, die einen Aktionslink für eine bestimmte Entität zurückgibt. Legen Sie diese Funktion durch den Aufruf **HasActionLink**. Sie können die Funktion als Lambda-Ausdruck schreiben:
+Außerdem müssen Sie eine Funktion bereitstellen, die einen Aktions Link für eine bestimmte Entität zurückgibt. Legen Sie diese Funktion durch Aufrufen von **hasaction Link**fest. Sie können die Funktion als Lambda-Ausdruck schreiben:
 
 [!code-csharp[Main](odata-actions/samples/sample19.cs)]
 
-Wenn die Aktion verfügbar ist, gibt der Lambda-Ausdruck einen Link auf die Aktion zurück. Die OData-Serialisierer enthält diesen Link an, beim Serialisieren der Entitäts. Wenn die Aktion nicht verfügbar ist, wird die Funktion gibt `null`.
+Wenn die Aktion verfügbar ist, gibt der Lambda-Ausdruck einen Link zur Aktion zurück. Der odata-Serialisierer schließt diesen Link ein, wenn die Entität serialisiert wird. Wenn die Aktion nicht verfügbar ist, gibt die Funktion `null`zurück.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Beispiel für OData-Aktionen](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v3/ODataActionsSample/)
+[Beispiel für odata-Aktionen](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v3/ODataActionsSample/)

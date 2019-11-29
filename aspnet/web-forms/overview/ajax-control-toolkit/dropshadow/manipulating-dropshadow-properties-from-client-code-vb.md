@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
-title: Bearbeiten von DropShadow-Eigenschaften über den Clientcode (VB) | Microsoft-Dokumentation
+title: Bearbeiten von DropShadow-Eigenschaften aus Client Code (VB) | Microsoft-Dokumentation
 author: wenz
-description: DropShadow-Steuerelements im AJAX Control Toolkit erweitert, einen Bereich mit einem Schlagschatteneffekt. Eigenschaften dieses Extenders können auch mit JavaScript-Client geändert werden...
+description: Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Die Eigenschaften dieses Extenders können auch mithilfe des Client-JavaScrip geändert werden...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5c44a1e95564c668f017f6116f3e62652e87eeac
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a39adb9c06819f6f828add7d762effad430b8570
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116951"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574030"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>Bearbeiten von DropShadow-Eigenschaften über den Clientcode (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow2.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow2VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow2.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow2VB.pdf)
 
-> DropShadow-Steuerelements im AJAX Control Toolkit erweitert, einen Bereich mit einem Schlagschatteneffekt. Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Clientcode geändert werden.
+> Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Die Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Code des Clients geändert werden.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-DropShadow-Steuerelements im AJAX Control Toolkit erweitert, einen Bereich mit einem Schlagschatteneffekt. Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Clientcode geändert werden.
+Mit dem DropShadow-Steuerelement im AJAX Control Toolkit wird ein Panel mit einem Schlag Schatten erweitert. Die Eigenschaften dieses Extenders können auch mithilfe von JavaScript-Code des Clients geändert werden.
 
 ## <a name="steps"></a>Schritte
 
-Der Code beginnt mit einem Bereich, der einige Textzeilen enthält:
+Der Code beginnt mit einem Panel, das einige Textzeilen enthält:
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample1.aspx)]
 
-Die zugeordnete CSS-Klasse bietet dem Bereich eine schöne Hintergrundfarbe:
+Die zugeordnete CSS-Klasse gibt dem Panel eine schöne Hintergrundfarbe:
 
 [!code-css[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample2.css)]
 
-Die `DropShadowExtender` hinzugefügt wird, erweitern Sie den Bereich mit einem Schlagschatteneffekt, Deckkraft, die auf 50 % festgelegt:
+Der `DropShadowExtender` wird hinzugefügt, um den Bereich mit einem Schlag Schatteneffekt zu erweitern, Deckkraft auf 50% festgelegt:
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample3.aspx)]
 
-Klicken Sie dann das ASP.NET AJAX `ScriptManager` -Steuerelement können Sie das Steuerelement-Toolkit funktioniert:
+Mit dem ASP.NET AJAX-`ScriptManager` Steuerelement kann das Steuerelement Toolkit funktionieren:
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample4.aspx)]
 
-Einen anderen Bereich enthält zwei JavaScript-Links zum Festlegen der Durchlässigkeit des Schlagschattens: das Minuszeichen links verringert den Schatten Deckkraft, die plus-Verknüpfung wird vergrößert.
+Ein anderes Panel enthält zwei JavaScript-Links zum Festlegen der Deckkraft des Schlag Schattens: der minus Link verringert die Deckkraft des Schattens, der Plus Link erhöht ihn.
 
 [!code-aspx[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample5.aspx)]
 
-Die JavaScript-Funktion `changeOpacity()` suchen müssen Sie dann zuerst die `DropShadowExtender` Steuerelement auf der Seite. ASP.NET AJAX-definiert den `$find()` -Methode für genau diese Aufgabe. Anschließend wird die `get_Opacity()` -Methode ruft die aktuelle Durchlässigkeit, ab der `set_Opacity()` Methode festgelegt. Der JavaScript-Code fügt den aktuellen durchsichtigkeitswert klicken Sie dann in der `<label>` Element:
+Die JavaScript-Funktion `changeOpacity()` muss dann zuerst das `DropShadowExtender`-Steuerelement auf der Seite suchen. ASP.NET AJAX definiert die `$find()` Methode genau für diese Aufgabe. Anschließend ruft die `get_Opacity()`-Methode die aktuelle Deckkraft ab, die von der `set_Opacity()`-Methode festgelegt wird. Der JavaScript-Code legt dann den aktuellen Wert für die Deckkraft in das `<label>`-Element ein:
 
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample6.html)]
 
-[![Die Deckkraft wird auf der Clientseite geändert.](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
+[![die Deckkraft auf der Clientseite geändert wird.](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
 
-Die Deckkraft wird auf der Clientseite geändert ([klicken Sie, um das Bild in voller Größe anzeigen](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
+Die Deckkraft wird auf der Clientseite geändert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorherige](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [Vorheriges](adjusting-the-z-index-of-a-dropshadow-vb.md)

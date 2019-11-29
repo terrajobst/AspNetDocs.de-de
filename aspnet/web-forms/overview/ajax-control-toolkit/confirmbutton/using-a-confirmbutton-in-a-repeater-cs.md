@@ -1,53 +1,53 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
-title: Verwenden eines ConfirmButton-Steuerelements In einem Wiederholungssteuerelement (c#) | Microsoft-Dokumentation
+title: Verwenden von ConfirmButton in einem Repeater (C#) | Microsoft-Dokumentation
 author: wenz
-description: Einen ConfirmButton-Extender im AJAX Control Toolkit erstellt eine Ja/kein Popupfenster angezeigt, wenn der Benutzer auf eine Schaltfläche klickt (einschließlich LinkButton-Steuerelement). Es ist Ja nur, wenn...
+description: Der ConfirmButton-Extender im AJAX Control Toolkit erstellt das Popup "Yes/No", wenn der Benutzer auf eine Schaltfläche klickt (einschließlich des LinkButton-Steuer Elements). Nur wenn ja...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 783562bb1a8790e1254dab5bff92da480a6fd56d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 468a830f01c48dc39b22bc5d826f80533df65c1a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109146"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574400"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-c"></a>Verwenden eines ConfirmButton-Steuerelements in einem Wiederholungssteuerelement (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
 
-> Einen ConfirmButton-Extender im AJAX Control Toolkit erstellt eine Ja/kein Popupfenster angezeigt, wenn der Benutzer auf eine Schaltfläche klickt (einschließlich LinkButton-Steuerelement). Nur wird Wenn Ja klicken, wird der Schaltfläche Aktion ausgeführt, andernfalls abgebrochen. Dies ist auch möglich, in einem wiederholungssteuerelement.
+> Der ConfirmButton-Extender im AJAX Control Toolkit erstellt das Popup "Yes/No", wenn der Benutzer auf eine Schaltfläche klickt (einschließlich des LinkButton-Steuer Elements). Nur wenn auf Ja geklickt wird, wird die Aktion der Schaltfläche ausgeführt und andernfalls abgebrochen. Dies ist auch in einem Repeater möglich.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Einen ConfirmButton-Extender im AJAX Control Toolkit erstellt eine Ja/kein Popupfenster angezeigt, wenn der Benutzer auf eine Schaltfläche klickt (einschließlich LinkButton-Steuerelement). Nur wird Wenn Ja klicken, wird der Schaltfläche Aktion ausgeführt, andernfalls abgebrochen. Dies ist auch möglich, in einem wiederholungssteuerelement.
+Der ConfirmButton-Extender im AJAX Control Toolkit erstellt das Popup "Yes/No", wenn der Benutzer auf eine Schaltfläche klickt (einschließlich des LinkButton-Steuer Elements). Nur wenn auf Ja geklickt wird, wird die Aktion der Schaltfläche ausgeführt und andernfalls abgebrochen. Dies ist auch in einem Repeater möglich.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal ist eine Datenquelle erforderlich. Dieses Beispiel verwendet die AdventureWorks-Datenbank und die Microsoft SQL Server 2005 Express Edition. Die Datenbank ist eine optionale Komponente von einer Visual Studio-Installation (einschließlich express Edition) und steht auch als separater Download unter [ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064). Die AdventureWorks-Datenbank ist Teil der SQL Server 2005 Samples and Sample Databases (download unter [ https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp; DisplayLang = En](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)). Die einfachste Möglichkeit zum Einrichten der Datenbank ist die Verwendung der Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp; DisplayLang = En](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)) und fügen Sie der `AdventureWorks.mdf` Datenbankdatei.
+Zuerst ist eine Datenquelle erforderlich. In diesem Beispiel werden die AdventureWorks-Datenbank und die Microsoft SQL Server 2005 Express Edition verwendet. Die Datenbank ist ein optionaler Teil einer Visual Studio-Installation (einschließlich Express Edition) und ist auch als separater Download unter [https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)verfügbar. Die AdventureWorks-Datenbank ist Teil der SQL Server 2005-Beispiele und-Beispiel Datenbanken (Download bei [https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)). Die einfachste Möglichkeit, die Datenbank einzurichten, ist die Verwendung des Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)) und das Anfügen der `AdventureWorks.mdf` Datenbankdatei.
 
-In diesem Beispiel wird angenommen, dass, dass Sie die Instanz von SQL Server 2005 Express Edition aufgerufen wird `SQLEXPRESS` und befindet sich auf dem gleichen Computer wie der Webserver; Dies ist auch der standardeinrichtung. Wenn Ihr Setup unterscheidet, müssen Sie die Verbindungsinformationen für die Datenbank anpassen.
+Bei diesem Beispiel wird davon ausgegangen, dass die Instanz des SQL Server 2005 Express Edition `SQLEXPRESS` ist und sich auf demselben Computer wie der Webserver befindet. Dies ist auch das Standard Setup. Wenn das Setup abweicht, müssen Sie die Verbindungsinformationen für die Datenbank anpassen.
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der `<form>` Element):
+Um die Funktionalität von ASP.NET AJAX und dem Steuerelement-Toolkit zu aktivieren, muss das `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden (innerhalb des `<form>` Elements):
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample1.aspx)]
 
-Dann ist eine Datenquelle erforderlich. Der Einfachheit halber werden nur die ersten fünf Einträge in der Tabelle der AdventureWorks-Händler abgerufen. Beachten Sie, dass bei Verwendung des Visual Studio-Assistenten, um die Datenquelle, die den Namen der Tabelle zu erstellen (`Vendors`) ist derzeit nicht ordnungsgemäß mit dem Präfix `Purchasing`. Das folgende Markup ist die richtige Auswahl:
+Anschließend ist eine Datenquelle erforderlich. Der Einfachheit halber werden nur die ersten fünf Einträge in der Tabelle "Lieferanten" von AdventureWorks abgerufen. Beachten Sie, dass bei der Verwendung des Visual Studio-Assistenten zum Erstellen der Datenquelle der Tabellenname (`Vendors`) derzeit nicht ordnungsgemäß mit dem Präfix `Purchasing`versehen ist. Das folgende Markup ist das richtige Markup:
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample2.aspx)]
 
-Diese Datenquelle kann dann in einem wiederholungssteuerelement verwendet werden. Wie üblich die `DataBinder.Eval()` Methode ruft Daten aus der Datenquelle ab. Die `ConfirmButtonExtender` Steuerelement muss dann platziert werden, in der `<ItemTemplate>` Teil der Repeater, damit er für jeden Eintrag in der Datenquelle angezeigt wird.
+Diese Datenquelle kann dann in einem Repeater verwendet werden. Wie üblich Ruft die `DataBinder.Eval()`-Methode Daten aus der Datenquelle ab. Das `ConfirmButtonExtender` Steuerelement muss dann im `<ItemTemplate>` Abschnitt des Wiederholungs Moduls platziert werden, damit es für jeden Eintrag in der Datenquelle angezeigt wird.
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample3.aspx)]
 
-[![Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt.](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
+[![die Schaltfläche bestätigen neben jedem Eintrag aus der Datenquelle angezeigt wird.](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
 
-Die Schaltfläche "bestätigen" wird neben jeder Eintrag aus der Datenquelle angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png))
+Die Schaltfläche bestätigen wird neben jedem Eintrag aus der Datenquelle angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Nächste](using-a-confirmbutton-in-a-repeater-vb.md)

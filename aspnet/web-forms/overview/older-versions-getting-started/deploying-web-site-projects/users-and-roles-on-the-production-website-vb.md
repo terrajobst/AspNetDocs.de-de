@@ -1,118 +1,118 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
-title: Benutzer und Rollen auf der Produktionswebsite (VB) | Microsoft-Dokumentation
+title: Benutzer und Rollen auf der Produktions Website (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Die ASP.NET Website Administration Tool (WSAT) bietet eine webbasierte Benutzeroberfläche zum Konfigurieren von Einstellungen für Mitgliedschaft und Rollen und zum Erstellen, bearbeiten, ein...
+description: Das ASP.NET-Website-Verwaltungs Tool (WSAT) stellt eine webbasierte Benutzeroberfläche zum Konfigurieren von Mitgliedschafts-und Rollen Einstellungen sowie zum Erstellen, bearbeiten,
 ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: 491ed5ae-9be1-4191-87be-65e4e1c57690
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: df863fc6740847101c9900750a3f257c19ced9fd
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d4ce8b278322684be2d44faefd6e69fc524bbe18
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134206"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74617947"
 ---
-# <a name="users-and-roles-on-the-production-website-vb"></a>Benutzer und Rollen auf der Produktionswebsite (VB)
+# <a name="users-and-roles-on-the-production-website-vb"></a>Benutzer und Rollen auf der Produktions Website (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[PDF herunterladen](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial16_CustomAWAT_vb.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial16_CustomAWAT_vb.pdf)
 
-> Die ASP.NET Website Administration Tool (WSAT) bietet eine webbasierte Benutzeroberfläche zum Konfigurieren von Einstellungen für Mitgliedschaft und Rollen und zum Erstellen, bearbeiten und Löschen von Benutzern und Rollen. Leider funktioniert das WSAT nur, wenn besucht von "localhost", was bedeutet, dass Sie über Ihren Browser nicht der Produktionswebsite Verwaltungstool erreichen können. Die gute Nachricht ist, dass es problemumgehungen, die zum Verwalten von Benutzern und Rollen in der Produktion ermöglichen. In diesem Tutorial untersucht die folgenden Vorgehensweisen und andere.
+> Das ASP.NET-Website-Verwaltungs Tool (WSAT) stellt eine webbasierte Benutzeroberfläche zum Konfigurieren von Mitgliedschafts-und Rollen Einstellungen sowie zum Erstellen, bearbeiten und Löschen von Benutzern und Rollen bereit. Leider funktioniert das WSAT nur beim Besuch von localhost. Dies bedeutet, dass Sie das Verwaltungs Tool der Produktions Website nicht über Ihren Browser erreichen können. Die gute Nachricht ist, dass es Problem Umgehungen gibt, die es ermöglichen, Benutzer und Rollen in der Produktionsumgebung zu verwalten. In diesem Tutorial werden diese Problem Umgehungen und andere behandelt.
 
 ## <a name="introduction"></a>Einführung
 
-ASP.NET 2.0 verwendet eine Anzahl von *Anwendungsdienste*, Hierbei handelt es sich um eine Sammlung von Baustein-Dienste, die Sie Ihre Web-Anwendung hinzufügen können. Wir hinzugefügt, die Dienste für Mitgliedschaft und Rollen auf der Website Book Reviews zurück die [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-vb.md). Der Mitgliedschaftsdienst erleichtert die Erstellung und Verwaltung von Benutzerkonten; der Rollendienst bietet eine API für die Benutzer in Gruppen kategorisieren. Die Book Reviews-Website verfügt über drei Benutzerkonten - Scott, Jisun, und Alice- und eine Rolle, mit Scott und Jisun in der Rolle "Administrator"-Administrator.
+ASP.NET 2,0 hat eine Reihe von *Anwendungsdiensten*eingeführt, bei denen es sich um eine Sammlung von Baustein Diensten handelt, die Sie Ihrer Webanwendung hinzufügen können. Die Mitgliedschafts-und Rollen Dienste wurden der Book Reviews-Website im Tutorial [ *Konfigurieren einer Website, die Anwendungsdienste verwendet,* ](configuring-a-website-that-uses-application-services-vb.md)hinzugefügt. Der Mitgliedschafts Dienst erleichtert das Erstellen und Verwalten von Benutzerkonten. der Rollen Dienst bietet eine API für die Kategorisierung von Benutzern in Gruppen. Die Book Reviews-Website verfügt über drei Benutzerkonten: Scott, jisun und Alice und eine einzige Rolle, admin, mit Scott und jisun in der Administrator Rolle.
 
-ASP. NET Application-Dienste sind nicht auf eine bestimmte Implementierung gebunden werden. Stattdessen weisen Sie den Anwendungsdiensten, um eine bestimmte *Anbieter*, und dieser Anbieter implementiert den Dienst mit einer bestimmten Technologie. Konfiguriert die Book Reviews-Web-Anwendung zur Verwendung der `SqlMembershipProvider` und `SqlRoleProvider` Anbieter für die Mitgliedschaft und Rollen. Diese zwei Anbieter Benutzerkonto-und Rolle in einer SQL Server-Datenbank zu speichern und die am häufigsten verwendeten Anbieter für Internet-basierte Webanwendungen, die an ein Webhostingunternehmen gehostet werden.
+ASP. Die Anwendungsdienste von net sind nicht an eine bestimmte Implementierung gebunden. Stattdessen weisen Sie die Anwendungsdienste an, einen bestimmten *Anbieter*zu verwenden, und dieser Anbieter implementiert den Dienst mithilfe einer bestimmten Technologie. Wir haben die Webanwendung Book Reviews so konfiguriert, dass Sie die `SqlMembershipProvider`-und `SqlRoleProvider` Anbieter für die Mitgliedschafts-und Rollen Dienste verwendet. Diese beiden Anbieter speichern Benutzerkonto-und Rollen Informationen in einer SQL Server Datenbank und sind die am häufigsten verwendeten Anbieter für Internet basierte Webanwendungen, die in einem Webhostingunternehmen gehostet werden.
 
-Eine gängige Herausforderung für Entwickler, die mit den Diensten Mitgliedschaften und Rollen verwaltet die Benutzer und Rollen in der produktionsumgebung. Wie Sie das Löschen eines Benutzerkontos aus der Produktionswebsite, eine neue Rolle hinzufügen oder Hinzufügen eines vorhandenen Benutzers zu einer vorhandenen Rolle? Dieses Tutorial werden verschiedene Verfahren zum Verwalten von Benutzern und Rollen auf der Produktionswebsite behandelt.
+Eine gängige Herausforderung für Entwickler, die die Mitgliedschafts-und Rollen Dienste verwenden, ist die Verwaltung der Benutzer und Rollen in der Produktionsumgebung. Wie können Sie ein Benutzerkonto aus der Produktions Website löschen, eine neue Rolle hinzufügen oder einen vorhandenen Benutzer zu einer vorhandenen Rolle hinzufügen? In diesem Tutorial werden verschiedene Verfahren zum Verwalten von Benutzern und Rollen auf der Produktions Website erläutert.
 
-## <a name="using-the-aspnet-web-site-administration-tool"></a>Mithilfe der ASP.NET Webseite-Administrationstool
+## <a name="using-the-aspnet-web-site-administration-tool"></a>Verwenden des ASP.NET-Websiteverwaltungs-Tools
 
-ASP.NET umfasst eine [Websiteverwaltungs-Tool](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) können sie leicht erstellen und Verwalten von Benutzerkonten und Rollen und Autorisierungsregeln für Benutzer und rollenbasierte an. Um die WSAT verwenden möchten, klicken Sie auf das Symbol "ASP.NET-Konfiguration" im Projektmappen-Explorer, oder wechseln Sie zu der Website oder das Projekt im Menü aus, und wählen Sie die ASP.NET-Konfiguration-Option. Beide Vorgehensweisen startet einen Webbrowser, und zeigt es auf die WSAT an eine Adresse wie: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+ASP.NET enthält ein [Websiteverwaltungs-Tool](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT), das das Erstellen und Verwalten von Benutzerkonten und-Rollen sowie die Angabe von Benutzer-und rollenbasierten Autorisierungs Regeln erleichtert. Um das WSAT zu verwenden, klicken Sie auf das ASP.NET-Konfigurations Symbol in der Projektmappen-Explorer, oder wechseln Sie zum Menü Website oder Projekt, und wählen Sie die Konfigurationsoption ASP.net aus. Beide Ansätze starten einen Webbrowser und weisen ihn auf die WSAT an einer Adresse wie den folgenden hin: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
-Die WSAT ist in drei Abschnitte unterteilt:
+Das WSAT ist in drei Abschnitte unterteilt:
 
-- **Sicherheit** -Verwalten von Benutzern, Rollen und Autorisierungsregeln.
-- **ApplicationConfiguration** -Verwalten der &lt;"appSettings"&gt; und SMTP-servereinstellungen von hier aus. Sie können auch die Anwendung offline schalten und Debuggen und Überwachung der Einstellungen von hier aus zu verwalten, sowie die Standardseite für die benutzerdefinierten Fehler angeben.
-- **ProviderConfiguration** -konfigurieren Sie die Anbieter, die von der die Anwendungsdienste verwendet.
+- **Sicherheit** : Verwalten von Benutzern, Rollen und Autorisierungs Regeln.
+- **ApplicationConfiguration** : Verwalten Sie die &lt;appSettings-&gt; und die SMTP-Einstellungen hier. Sie können die Anwendung auch offline schalten und debuggingeinstellungen und Ablauf Verfolgungs Einstellungen verwalten und die Standardseite für benutzerdefinierte Fehler angeben.
+- **Providerconfiguration** : Konfigurieren Sie die Anbieter, die von den Anwendungsdiensten verwendet werden.
 
-Abschnitt "Sicherheit" (siehe **Abbildung 1**) enthält Links, für die Erstellung von neuen Benutzern, Verwalten von Benutzern, erstellen und Verwalten von Rollen, und erstellen und Verwalten von Regeln zugreifen. Von hier aus können Sie das System eine neue Rolle hinzufügen, Löschen einen vorhandenen Benutzer hinzufügen oder Entfernen von Rollen von einem bestimmten Benutzerkonto.
+Der Abschnitt "Sicherheit" (siehe **Abbildung 1**) enthält Links zum Erstellen neuer Benutzer, zum Verwalten von Benutzern, zum Erstellen und Verwalten von Rollen sowie zum Erstellen und Verwalten von Zugriffsregeln. Hier können Sie dem System eine neue Rolle hinzufügen, einen vorhandenen Benutzer löschen oder Rollen zu einem bestimmten Benutzerkonto hinzufügen oder daraus entfernen.
 
 [![](users-and-roles-on-the-production-website-vb/_static/image2.png)](users-and-roles-on-the-production-website-vb/_static/image1.png)
 
-**Abbildung 1**: WSAT Abschnitt "Sicherheit" bietet Optionen zum Verwalten von Benutzern und Rollen  
-([Klicken Sie, um das Bild in voller Größe anzeigen](users-and-roles-on-the-production-website-vb/_static/image3.png))
+**Abbildung 1**: der Abschnitt "WSAT-Sicherheit" enthält Optionen zum Verwalten von Benutzern und Rollen.  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](users-and-roles-on-the-production-website-vb/_static/image3.png))
 
-Leider ist die WSAT nur zugänglich lokal. Sie können nicht die WSAT auf Ihrer Produktionswebsite remote besuchen; Wenn Sie besuchen `www.yoursite.com/asp.netwebadminfiles/default.aspx` erhalten Sie mit einer 404 nicht gefunden. Der Code, der die WSAT verwendet steuert die `Membership` und `Roles` Klassen in .NET Framework zu erstellen, bearbeiten und Löschen von Benutzern und Rollen. Diese Klassen finden Sie in der Webanwendung-Konfigurationsinformationen, um zu bestimmen, welche Anbieter verwendet; in der [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-vb.md) wir verwenden die Book Reviews-Website Einrichten der `SqlMembershipProvider` und `SqlRoleProvider` Anbieter. Dies umfasste hinzufügen `<membership>` und `<roleManager>` zu Abschnitten `Web.config`.
+Leider ist die WSAT-Datei nur lokal zugänglich. Sie können das WSAT nicht auf Ihrer remoteproduktionswebsite besuchen. Wenn Sie `www.yoursite.com/asp.netwebadminfiles/default.aspx` besuchen Sie die Antwort "404 nicht gefunden". Der Code, der das WSAT unterstützt, verwendet die Klassen `Membership` und `Roles` in der .NET Framework, um Benutzer und Rollen zu erstellen, zu bearbeiten und zu löschen. Diese Klassen überprüfen die Konfigurationsinformationen der Webanwendung, um zu bestimmen, welcher Anbieter verwendet werden soll. wieder im Tutorial [ *Konfigurieren einer Website, die Anwendungsdienste verwendet,* ](configuring-a-website-that-uses-application-services-vb.md) wird die Website "Book Reviews" für die Verwendung der `SqlMembershipProvider`-und `SqlRoleProvider`-Anbieter eingerichtet. Dies umfasste das Hinzufügen von `<membership>`-und `<roleManager>` Abschnitten zu `Web.config`.
 
 [!code-xml[Main](users-and-roles-on-the-production-website-vb/samples/sample1.xml)]
 
-Beachten Sie, dass die `<membership>` und `<roleManager>` Abschnitte Verweis der `SqlMembershipProvider` und `SqlRoleProvider` Anbieter in ihrer `type` -Attribut. Diese Anbieter werden die Rolleninformationen zu Benutzern und in einer angegebenen SQL Server-Datenbank speichern. Anhand die Datenbank, die von diesen Anbietern verwendet die `connectionStringName` Attribut `ReviewsConnectionString`, definiert in der `~/ConfigSections/databaseConnectionStrings.config` Datei. Bedenken Sie, dass die `databaseConnectionStrings.config` -Datei in der Entwicklungsumgebung enthält die Verbindungszeichenfolge in der Entwicklungsdatenbank aus, während die `databaseConnectionStrings.config` auf Produktions-Datei enthält die Verbindungszeichenfolge in der Produktionsdatenbank.
+Beachten Sie, dass die Abschnitte "`<membership>`" und "`<roleManager>`" auf die `SqlMembershipProvider`-und `SqlRoleProvider` Anbieter in Ihrem `type`-Attribut verweisen. Diese Anbieter speichern die Benutzer-und Rollen Informationen in einer angegebenen SQL Server Datenbank. Die von diesen Anbietern verwendete Datenbank wird durch das `connectionStringName`-Attribut `ReviewsConnectionString`angegeben, das in der `~/ConfigSections/databaseConnectionStrings.config`-Datei definiert ist. Beachten Sie, dass die `databaseConnectionStrings.config`-Datei in der Entwicklungsumgebung die Verbindungs Zeichenfolge für die Entwicklungs Datenbank enthält, während die `databaseConnectionStrings.config` Datei in der Produktionsumgebung die Verbindungs Zeichenfolge für die Produktionsdatenbank enthält.
 
-Kurz gesagt, die WSAT muss lokal zugegriffen werden, über die Entwicklungsumgebung, und es funktioniert mit den Informationen für Benutzer und die Rolle in der Datenbank der `databaseConnectionStrings.config` Datei. Daher, wenn wir die Informationen in der Verbindungszeichenfolge ändern der `databaseConnectionStrings.config` Datei in der Entwicklungsumgebung können verwenden wir die WSAT lokal zum Verwalten von Benutzern und Rollen in der produktionsumgebung.
+Kurz gesagt, der Zugriff auf das WSAT muss lokal über die Entwicklungsumgebung erfolgen, und es funktioniert mit den Benutzer-und Rollen Informationen in der Datenbank, die in der `databaseConnectionStrings.config`-Datei angegeben ist. Wenn die Verbindungs Zeichenfolgen-Informationen in der `databaseConnectionStrings.config`-Datei in der Entwicklungsumgebung geändert werden, können wir die WSAT-Datei lokal zum Verwalten von Benutzern und Rollen in der Produktionsumgebung verwenden.
 
-Um diese Funktion zu veranschaulichen, öffnen Sie die `databaseConnectionStrings.config` Datei in Visual Studio in der Entwicklungsumgebung aus, und Ersetzen Sie die Verbindungszeichenfolge für die Entwicklung mit der Verbindungszeichenfolge für die Produktion. Starten Sie dann die WSAT, wechseln Sie die Registerkarte "Sicherheit" und Hinzufügen eines neuen Benutzers mit dem Namen "Sam", und das Kennwort "Password". (kleiner markiert die Anführungszeichen). **Abbildung 2** zeigt die WSAT-Bildschirm, wenn Sie dieses Konto zu erstellen.
+Um diese Funktionalität zu veranschaulichen, öffnen Sie die Datei `databaseConnectionStrings.config` in Visual Studio in der Entwicklungsumgebung, und ersetzen Sie die Verbindungs Zeichenfolge der Entwicklungs Datenbank durch die Verbindungs Zeichenfolge der Produktionsdatenbank. Starten Sie dann das WSAT, wechseln Sie zur Registerkarte Sicherheit, und fügen Sie einen neuen Benutzer mit dem Namen Sam mit dem Kennwort "Password!" (weniger Anführungszeichen). **Abbildung 2** zeigt den WSAT-Bildschirm beim Erstellen dieses Kontos.
 
 [![](users-and-roles-on-the-production-website-vb/_static/image5.png)](users-and-roles-on-the-production-website-vb/_static/image4.png)
 
-**Abbildung 2**: Erstellen eines neuen Benutzers mit dem Namen Sam In der Produktionsumgebung  
-([Klicken Sie, um das Bild in voller Größe anzeigen](users-and-roles-on-the-production-website-vb/_static/image6.png))
+**Abbildung 2**: Erstellen eines neuen Benutzers namens Sam in der Produktionsumgebung  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](users-and-roles-on-the-production-website-vb/_static/image6.png))
 
-Da wir geändert, dass die Verbindungszeichenfolge in `databaseConnectionStrings.config` um mit dem Produktions-Datenbankserver zu verweisen, Sam als Benutzer in der produktionsumgebung hinzugefügt wurde. Um dies zu überprüfen, ändern Sie die Verbindungszeichenfolge in der `databaseConnectionStrings.config` Datei wieder in der Entwicklungsdatenbank aus, und besuchen dann die `Login.aspx` Seite in der Entwicklungsumgebung. Versuchen Sie es für die Anmeldung als Sam (finden Sie unter **Abbildung 3**).
+Da wir die Verbindungs Zeichenfolge in `databaseConnectionStrings.config` geändert haben, um auf den Produktionsdaten Bankserver zu verweisen, wurde Sam in der Produktionsumgebung als Benutzer hinzugefügt. Um dies zu überprüfen, ändern Sie die Verbindungs Zeichenfolge in der `databaseConnectionStrings.config`-Datei zurück in die Entwicklungs Datenbank, und besuchen Sie dann die `Login.aspx` Seite in der Entwicklungsumgebung. Versuchen Sie, sich als Sam anzumelden (siehe **Abbildung 3**).
 
 [![](users-and-roles-on-the-production-website-vb/_static/image8.png)](users-and-roles-on-the-production-website-vb/_static/image7.png)
 
-**Abbildung 3**: Sie können nicht als Sam in der Entwicklungsumgebung anmelden.  
-([Klicken Sie, um das Bild in voller Größe anzeigen](users-and-roles-on-the-production-website-vb/_static/image9.png))
+**Abbildung 3**: Sie können sich in der Entwicklungsumgebung nicht als Sam anmelden.  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](users-and-roles-on-the-production-website-vb/_static/image9.png))
 
-Sie können nicht als Sam in der Entwicklungsumgebung sich anmelden, da die Benutzerkontoinformationen in der lokalen Datenbank nicht vorhanden ist. Es ist in der Produktionsdatenbank hinzugefügt wurde. Um dies zu überprüfen, zeigen Sie den Inhalt der `aspnet_Users` Tabelle in der Entwicklungs- und produktionsumgebungen Datenbanken. In der Entwicklungsumgebung sollte nur drei Datensätze für die Benutzer Alice, Scott und Jisun vorhanden sein. Allerdings die `aspnet_Users` Tabelle in der Produktionsdatenbank hat vier Datensätze: Scott, Jisun, Alice und Sam. Daher kann Sam über die Website in der Produktion, jedoch nicht über die Entwicklungsumgebung anmelden.
+Sie können sich in der Entwicklungsumgebung nicht als Sam anmelden, da die Benutzerkontoinformationen in der lokalen Datenbank nicht vorhanden sind. Stattdessen wurde der Produktionsdatenbank hinzugefügt. Um dies zu überprüfen, zeigen Sie den Inhalt der `aspnet_Users` Tabelle sowohl in der Entwicklungs-als auch in der Produktionsdatenbank an. In der Entwicklungsumgebung sollten nur drei Datensätze für Benutzer Scott, jisun und Alice vorhanden sein. Die `aspnet_Users` Tabelle in der Produktionsdatenbank enthält jedoch vier Datensätze: Scott, jisun, Alice und Sam. Folglich kann Sam sich über die Website in der Produktionsumgebung, aber nicht über die Entwicklungsumgebung anmelden.
 
 [![](users-and-roles-on-the-production-website-vb/_static/image11.png)](users-and-roles-on-the-production-website-vb/_static/image10.png)
 
-**Abbildung 4**: SAM kann auf der Produktionswebsite anmelden.  
-([Klicken Sie, um das Bild in voller Größe anzeigen](users-and-roles-on-the-production-website-vb/_static/image12.png))
+**Abbildung 4**: Sam kann sich auf der Produktions Website anmelden  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](users-and-roles-on-the-production-website-vb/_static/image12.png))
 
 > [!NOTE]
-> Vergessen Sie nicht so ändern Sie die Verbindungszeichenfolge in der `databaseConnectionStrings.config` Datei wieder in der Entwicklungsdatenbank der Zeichenfolge eine Verbindung herstellen, wenn Sie fertig sind arbeiten mit WSAT andernfalls Sie mit Produktionsdaten beim Testen der Website durch die Entwicklung arbeiten Umgebung. Auch Bedenken Sie, dass Änderungen von anderen WSAT-Konfigurationsoptionen (Zugriffsregeln, SMTP-Einstellungen, Debug- und Ablaufverfolgungsfunktionen Einstellungen usw.) während der soeben erläuterten Verfahren wir uns die WSAT an Remote-Benutzer und Rollen verwalten kann, die Ändern`Web.config` Datei. Infolgedessen gelten alle Änderungen an den Einstellungen der Entwicklungsumgebung und nicht in der produktionsumgebung bereit.
+> Vergessen Sie nicht, die Verbindungs Zeichenfolge in der `databaseConnectionStrings.config`-Datei wieder in die Verbindungs Zeichenfolge der Entwicklungs Datenbank zu ändern, wenn Sie mit dem WSAT gearbeitet haben. andernfalls arbeiten Sie mit Produktionsdaten, wenn Sie den Standort über die Entwicklungsumgebung testen. Beachten Sie auch, dass wir mit dem soeben erläuterten Verfahren die Verwendung von WSAT zur Remote Verwaltung von Benutzern und Rollen, Änderungen an anderen WSAT-Konfigurationsoptionen (Zugriffsregeln, SMTP-Einstellungen, Debug-und Ablauf Verfolgungs Einstellungen usw.) in der `Web.config` Datei ändern können. Folglich gelten alle Änderungen, die an den Einstellungen vorgenommen werden, für die Entwicklungsumgebung und nicht für die Produktionsumgebung.
 
-## <a name="creating-custom-user-and-role-management-web-pages"></a>Erstellen von benutzerdefinierten und Rolle Management-Webseiten
+## <a name="creating-custom-user-and-role-management-web-pages"></a>Erstellen von benutzerdefinierten Webseiten für Benutzer-und Rollen Verwaltung
 
-Die WSAT enthält einen Out-of System Feld für die Verwaltung von Benutzern und Rollen, aber nur lokal gestartet werden und erforderlich ist, dass Änderungen auf die Informationen in Verbindungszeichenfolgen, um die Benutzer und Rollen in der Produktion zu verwalten. Die meisten Websites, die die Benutzerkonten unterstützen umfassen auch eine Reihe von Benutzer und Rolle Verwaltung von Webseiten, mit denen Administratoren, Benutzer und Rollen von Seiten innerhalb der Website zu verwalten. Solche Seiten webbasierte Verwaltung machen es einfacher, Benutzer und Rollen verwalten und für Websites von entscheidender Bedeutung sind, gibt es möglicherweise viele oder Administratoren, die nicht den Zugriff auf oder dem technischen Hintergrund zur Visual Studio zu verwenden, um die WSAT starten verfügen.
+Das WSAT stellt ein Standardsystem zum Verwalten von Benutzern und Rollen bereit, kann jedoch nur lokal gestartet werden und erfordert Änderungen an den Verbindungs Zeichenfolgen-Informationen, um die Benutzer und Rollen in der Produktionsumgebung zu verwalten. Die meisten Websites, die Benutzerkonten unterstützen, enthalten auch eine Reihe von Webseiten zur Benutzer-und Rollen Verwaltung, mit denen Administratoren Benutzer und Rollen von Seiten innerhalb der Website aus verwalten können. Solche webbasierten Verwaltungs Seiten vereinfachen die Verwaltung von Benutzern und Rollen und sind für Websites, bei denen es möglicherweise viele Administratoren oder Administratoren gibt, die keinen Zugriff auf oder den technischen Hintergrund haben, für die Verwendung von Visual Studio zum Starten von WSAT.
 
-ASP.NET umfasst eine Reihe von integrierten Web anmeldebezogene-Steuerelementen, die Implementierung vieler diese administrativen Webseiten, die so einfach wie Drag & drop. Beispielsweise können Sie eine Seite für Administratoren, um ein neues Benutzerkonto zu erstellen, durch Ziehen des Steuerelements CreateUserWizard auf der Seite und Festlegen einiger Eigenschaften erstellen. Tatsächlich ist die Seite für das Erstellen von Benutzern in der WSAT Siehe **abbildung2** verwendet die gleiche CreateUserWizard-Steuerelement, das Sie Ihren Seiten hinzufügen können. Darüber hinaus sind die Mitgliedschaft und Rollen-Services-Funktionen verfügbar, programmgesteuert über die `Membership` und `Roles` Klassen in .NET Framework. Mit diesen Klassen können Sie schreiben Code zum Erstellen, bearbeiten und Löschen von Benutzern und Rollen auch hinzufügen oder Entfernen von Benutzern zu Rollen, um zu bestimmen, welche Benutzer welche Rollen werden und andere Benutzer und Rollen-bezogenen Aufgaben auszuführen.
+ASP.NET enthält eine Reihe integrierter, Anmelde bezogener websteuer Elemente, mit denen viele dieser administrativen Webseiten so einfach wie Drag & Drop implementiert werden können. Beispielsweise können Sie eine Seite für Administratoren erstellen, um ein neues Benutzerkonto zu erstellen, indem Sie das Steuerelement "kreateuserwizard" auf die Seite ziehen und einige Eigenschaften festlegen. Tatsächlich wird auf der Seite zum Erstellen von Benutzern in der in **Abbildung 2** dargestellten WSAT dasselbe Steuerelement "kreateuserwizard" verwendet, das Sie Ihren Seiten hinzufügen können. Außerdem sind die Funktionen der Mitgliedschafts-und Rollen Dienste Programm gesteuert über die `Membership`-und `Roles` Klassen im .NET Framework verfügbar. Mit diesen Klassen können Sie Code schreiben, um Benutzer und Rollen zu erstellen, zu bearbeiten und zu löschen sowie um Benutzer zu Rollen hinzuzufügen oder zu entfernen, um zu bestimmen, welche Benutzer welche Rollen haben, und um andere Benutzer-und Rollen bezogene Aufgaben auszuführen.
 
-In der [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-vb.md) ich hinzugefügt, dass eine Seite, um die `Admin` Ordner mit dem Namen `CreateAccount.aspx`. Auf dieser Seite können Sie einen Administrator ein neues Benutzerkonto mit dem Standort hinzufügen und angeben, ob der neu erstellte Benutzer in der Rolle "Administrator" ist (siehe **Abbildung 5**).
+Im Tutorial [ *Konfigurieren einer Website, die Anwendungsdienste verwendet,* ](configuring-a-website-that-uses-application-services-vb.md) habe ich dem Ordner `Admin` eine Seite mit dem Namen `CreateAccount.aspx`hinzugefügt. Auf dieser Seite kann ein Administrator ein neues Benutzerkonto zur Website hinzufügen und angeben, ob der neu erstellte Benutzer in der Rolle "Administrator" ist (siehe **Abbildung 5**).
 
 [![](users-and-roles-on-the-production-website-vb/_static/image14.png)](users-and-roles-on-the-production-website-vb/_static/image13.png)
 
 **Abbildung 5**: Administratoren können neue Benutzerkonten erstellen.  
-([Klicken Sie, um das Bild in voller Größe anzeigen](users-and-roles-on-the-production-website-vb/_static/image15.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](users-and-roles-on-the-production-website-vb/_static/image15.png))
 
-Ausführlichere Informationen zu erstellen sowie eine schrittweise Anleitung zur Verwendung von Benutzer und die Rolle Verwaltungsseiten der `Membership` und `Roles` Klassen und der ASP.NET Web anmeldebezogene Steuerelemente, achten Sie darauf, lesen Sie meine [Website-Sicherheit Lernprogramme](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md). Gibt es finden Anleitungen zum Erstellen von Webseiten für neue Konten erstellen, erstellen und Verwalten von Rollen, Sie Zuweisen von Benutzern zu Rollen und andere allgemeinen Verwaltungsaufgaben.
+Eine ausführlichere Betrachtung der Entwicklung von Benutzer-und Rollen Verwaltungs Seiten sowie Schritt-für-Schritt-Anweisungen zur Verwendung der `Membership`-und `Roles` Klassen und der Anmelde bezogenen ASP.net-websteuer Elemente finden Sie unter meine [Website-Sicherheits](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)Lernprogramme. Hier finden Sie Anleitungen zum Erstellen von Webseiten zum Erstellen neuer Konten, zum Erstellen und Verwalten von Rollen, zum Zuweisen von Benutzern zu Rollen und anderen allgemeinen Verwaltungsaufgaben.
 
-Zum Implementieren von WSAT-ähnliche Funktionen auf der Produktionswebsite können Sie immer eigene Reihe von Webseiten erstellen, die die WSAT Funktionen zu implementieren. Um zu beginnen, sehen Sie sich den Quellcode WSAT, der sich im Ordner befindet `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`. Eine weitere Möglichkeit ist die Verwendung des Dan Clem WSAT Alternative, die er in seinem Artikel freigegeben hat, [parallelen Ihrer eigenen Web Site Administration Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx). Dan führt die Leser durch die Erstellung von benutzerdefinierten WSAT-ähnlichen Tools, enthält seine Anwendungsquellcode (in c#) zum Herunterladen und bietet eine ausführliche Anleitung zum Hinzufügen von seiner benutzerdefinierten WSAT an eine gehostete Website.
+Um WSAT-ähnliche Funktionen auf der Produktions Website zu implementieren, können Sie immer eine eigene Reihe von Webseiten erstellen, mit denen die Funktionen von WSAT implementiert werden. Informationen zu den ersten Schritten finden Sie im WSAT-Quellcode, der sich im Ordner `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`befindet. Eine andere Möglichkeit besteht darin, die WSAT-Alternative von Dan Clem zu verwenden, die er in seinem Artikel freigibt und ein [eigenes Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)bereitstellt. Dan führt Sie durch die Schritte zum Entwickeln eines benutzerdefinierten WSAT-ähnlichen Tools, enthält den Quellcode der Anwendung für den Download ( C#in) und enthält schrittweise Anleitungen zum Hinzufügen seines benutzerdefinierten WSAT zu einer gehosteten Website.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Der ASP.NET Web Site Administration Tool (WSAT) zur Verfügung kann zusammen mit der die Anwendungsdienste Mitgliedschaften und Rollen verwendet werden, um Benutzer und die Rolle Informationen für Ihre Website zu verwalten. Leider die WSAT ist nur lokal verfügbar und kann nicht aus Ihrer Produktionswebsite besucht werden. Durch Ändern der Verbindungszeichenfolge in die Entwicklung können Umgebung für die Sie in der Produktionsdatenbank zu verweisen die WSAT jedoch die Benutzer und Rollen auf der Produktionswebsite zu verwalten.
+Das ASP.net Web Site Administration Tool (WSAT) kann zusammen mit den Mitgliedschafts-und Rollen Anwendungsdiensten verwendet werden, um Benutzer-und Rollen Informationen für Ihre Website zu verwalten. Leider ist das WSAT nur lokal zugänglich und kann nicht von Ihrer Produktions Website besucht werden. Wenn Sie jedoch die Verbindungs Zeichenfolge in der Entwicklungsumgebung ändern, sodass Sie auf die Produktionsdatenbank verweist, können Sie die Benutzer und Rollen auf der Produktions Website mithilfe von WSAT verwalten.
 
-Während der WSAT Ansatz eine schnelle und einfache Möglichkeit zum Verwalten von Benutzern und Rollen ermöglicht, erfordert es die WSAT aus Visual Studio als auch für temporäre Änderungen auf die Informationen in Verbindungszeichenfolgen zu starten. Die WSAT bietet eine schnelle Möglichkeit zum Verwalten von Benutzern und Rollen für die Produktion, aber ist mühsam und funktioniert nicht gut für Websites mit mehreren Administratoren und Administratoren, die keine oder nicht mit Visual Studio und die WSAT vertraut sind. Aus diesen Gründen sind die meisten Websites, die Benutzerkonten unterstützt einen Satz von Webseiten zur Verwaltung. Solche ein Satz von Webseiten beseitigt die Notwendigkeit der WSAT und von verschiedenen Administratoren von jedem Computer verwendet.
+Während der WSAT-Ansatz eine schnelle und einfache Möglichkeit zur Verwaltung von Benutzern und Rollen bietet, ist es erforderlich, die WSAT von Visual Studio aus und temporäre Änderungen an den Verbindungs Zeichenfolgen-Informationen zu starten. Das WSAT bietet eine schnelle Möglichkeit zum Verwalten von Benutzern und Rollen in der Produktionsumgebung, ist jedoch mühsam und funktioniert nicht gut für Websites mit mehreren Administratoren oder Administratoren, die Visual Studio und das WSAT nicht kennen oder nicht kennen. Aus diesen Gründen enthalten die meisten Websites, die Benutzerkonten unterstützen, eine Gruppe administrativer Webseiten. Eine solche Gruppe von Webseiten entfällt auf den Bedarf an WSAT und wird von verschiedenen Administratoren von einem beliebigen Computer verwendet.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ### <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
-- [Untersuchen ASP. NET Mitgliedschaft, Rollen und Profile](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [Paralleles eigene Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [Website-Tool (Übersicht)](https://msdn.microsoft.com/library/yy40ytx0.aspx)
-- [Website-Lernprogramme zur ASP.NET-Sicherheit](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
+- [Untersuchen von ASP. Netzwerk Mitgliedschaft, Rollen und Profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
+- [Parallele Websiteverwaltungs-Tools](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
+- [Übersicht über das Websiteverwaltungs-Tool](https://msdn.microsoft.com/library/yy40ytx0.aspx)
+- [Tutorials zur Website Sicherheit](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 > [!div class="step-by-step"]
-> [Vorherige](precompiling-your-website-vb.md)
+> [Vorheriges](precompiling-your-website-vb.md)

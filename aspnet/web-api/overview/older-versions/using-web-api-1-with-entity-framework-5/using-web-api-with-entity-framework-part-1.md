@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
-title: 'Teil 1: Übersicht und erstellen das Projekt | Microsoft-Dokumentation'
+title: 'Teil 1: Übersicht und Erstellen des Projekts | Microsoft-Dokumentation'
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,86 +8,86 @@ ms.date: 07/03/2012
 ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a76a18f2bd95969358452085ef342fdca8a386e2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384213"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600327"
 ---
 # <a name="part-1-overview-and-creating-the-project"></a>Teil 1: Übersicht und Erstellen des Projekts
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
-Entitätsframework ist ein Framework für Objekt-relationale Zuordnung. Es ist die Domänenobjekte in Ihrem Code Entitäten in einer relationalen Datenbank zugeordnet. Zum größten Teil, müssen Sie keinen der Datenbankschicht zu kümmern, da Entity Framework es für Sie übernimmt. Ihr Code bearbeitet, die Objekte, und Änderungen in einer Datenbank beibehalten werden.
+Entity Framework ist ein Objekt-/Relationales Mapping-Framework. Die Domänen Objekte in Ihrem Code werden Entitäten in einer relationalen Datenbank zugeordnet. Zum größten Teil müssen Sie sich keine Gedanken über die Datenbankschicht machen, da Sie Entity Framework für Sie kümmert. Der Code bearbeitet die Objekte, und die Änderungen werden in einer Datenbank gespeichert.
 
-## <a name="about-the-tutorial"></a>Über das Tutorial
+## <a name="about-the-tutorial"></a>Informationen zum Tutorial
 
-In diesem Tutorial erstellen Sie eine einfache Store-Anwendung. Es gibt zwei wesentliche Teile der Anwendung. Standardbenutzer können Produkte anzeigen, und Aufträge zu erstellen:
+In diesem Tutorial erstellen Sie eine einfache Store-Anwendung. Die Anwendung besteht aus zwei Hauptbereichen. Normale Benutzer können Produkte anzeigen und Aufträge erstellen:
 
 ![](using-web-api-with-entity-framework-part-1/_static/image1.png)
 
-Administratoren können zu erstellen, löschen oder Bearbeiten von Produkten:
+Administratoren können Produkte erstellen, löschen oder bearbeiten:
 
 ![](using-web-api-with-entity-framework-part-1/_static/image2.png)
 
-## <a name="skills-youll-learn"></a>Fähigkeiten, mit denen, die Sie lernen Folgendes
+## <a name="skills-youll-learn"></a>Fähigkeiten, die Sie erlernen
 
-Hier ist Sie lernen Folgendes:
+Hier lernen Sie Folgendes:
 
-- Wie Sie Entity Framework mit ASP.NET Web-API zu verwenden.
-- Gewusst wie "Knockout.js" verwenden, um eine dynamische Clientbenutzeroberfläche zu erstellen.
-- So verwenden Sie die Formularauthentifizierung mit Web-API zum Authentifizieren von Benutzern.
+- Verwendung von Entity Framework mit ASP.net-Web-API.
+- Verwenden von Knockout. js zum Erstellen einer dynamischen Client Benutzeroberfläche.
+- Verwenden der Formular Authentifizierung mit der Web-API zum Authentifizieren von Benutzern
 
-Obwohl in diesem Tutorial eigenständig ist, empfiehlt es sich, zuerst die folgenden Lernprogramme zu lesen:
+Obwohl dieses Tutorial eigenständig ist, sollten Sie zunächst die folgenden Tutorials lesen:
 
-- [Ihre erste ASP.NET Web-API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
-- [Erstellen einer Webs-API, die unterstützt CRUD-Vorgänge](../creating-a-web-api-that-supports-crud-operations.md)
+- [Ihre erste ASP.net-Web-API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
+- [Erstellen einer Web-API, die CRUD-Vorgänge unterstützt](../creating-a-web-api-that-supports-crud-operations.md)
 
-Sie benötigen Kenntnisse des [ASP.NET MVC](../../../../mvc/index.md) ist auch hilfreich.
+Einige Kenntnisse von [ASP.NET MVC](../../../../mvc/index.md) sind ebenfalls hilfreich.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Auf einer hohen Ebene sieht der Architektur der Anwendung zur Verfügung:
+Im folgenden finden Sie die Architektur der Anwendung:
 
 - ASP.NET MVC generiert die HTML-Seiten für den Client.
-- ASP.NET Web-API macht die CRUD-Vorgänge für die Daten ("Produkte" und "Orders") verfügbar.
-- Entitätsframework übersetzt der c#-Modelle, die von Web-API verwendet werden, in der Datenbankentitäten.
+- ASP.net-Web-API macht CRUD-Vorgänge für die Daten (Produkte und Aufträge) verfügbar.
+- Entity Framework übersetzt die C# von der Web-API verwendeten Modelle in Daten Bank Entitäten.
 
 ![](using-web-api-with-entity-framework-part-1/_static/image3.png)
 
-Das folgende Diagramm zeigt, wie die Domänenobjekte auf verschiedenen Ebenen der Anwendung dargestellt werden: Die Datenbankebene, das Objektmodell und schließlich das Wire-Format, die zum Übertragen von Daten an den Client über HTTP verwendet wird.
+Das folgende Diagramm zeigt, wie die Domänen Objekte auf verschiedenen Ebenen der Anwendung dargestellt werden: die Datenbankebene, das Objektmodell und schließlich das Wire-Format, das zum Übertragen von Daten an den Client über HTTP verwendet wird.
 
 ![](using-web-api-with-entity-framework-part-1/_static/image4.png)
 
-## <a name="create-the-visual-studio-project"></a>Visual Studio-Projekt erstellen
+## <a name="create-the-visual-studio-project"></a>Erstellen des Visual Studio-Projekts
 
-Sie können das Tutorial-Projekt mit Visual Web Developer Express oder die Vollversion von Visual Studio erstellen.
+Sie können das tutorialprojekt entweder mithilfe von Visual Web Developer Express oder der Vollversion von Visual Studio erstellen.
 
-Von der **starten** auf **neues Projekt**.
+Klicken Sie auf der **Start** Seite auf **Neues Projekt**.
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie die **Visual C#-** Knoten. Klicken Sie unter **Visual C#-** Option **Web**. Wählen Sie in der Liste der Projektvorlagen das Projekt **ASP.NET MVC 4-Webanwendung**. Nennen Sie das Projekt "ProductStore", und klicken Sie auf **OK**.
+Wählen Sie im Bereich **Vorlagen** die Option **installierte Vorlagen** aus, und erweitern Sie den Knoten **visuelle C#**  Knoten. Wählen Sie unter **Visualisierung C#** die Option **Web**aus. Wählen Sie in der Liste der Projektvorlagen die Option **ASP.NET MVC 4-Webanwendung**aus. Nennen Sie das Projekt productstore, und klicken Sie auf **OK**.
 
 ![](using-web-api-with-entity-framework-part-1/_static/image5.png)
 
-In der **neues ASP.NET MVC 4-Projekt** wählen Sie im Dialogfeld **Internetanwendung** , und klicken Sie auf **OK**.
+Wählen Sie im Dialogfeld **Neues ASP.NET MVC 4-Projekt** die Option **Internet Anwendung** aus, und klicken Sie auf **OK**.
 
 ![](using-web-api-with-entity-framework-part-1/_static/image6.png)
 
-Die Vorlage "Internetanwendung" erstellt eine ASP.NET MVC-Anwendung, die Formularauthentifizierung unterstützt. Wenn Sie die Anwendung jetzt ausführen, verfügt sie bereits über einige Features:
+Die Vorlage "Internet Anwendung" erstellt eine ASP.NET MVC-Anwendung, die die Formular Authentifizierung unterstützt. Wenn Sie die Anwendung jetzt ausführen, haben Sie bereits einige Features:
 
-- Neue Benutzer können auf den Link "Register" in der oberen rechten Ecke registrieren.
-- Registrierte Benutzer können auf den Link "Anmelden" anmelden.
+- Neue Benutzer können sich registrieren, indem Sie auf den Link "Register" in der oberen rechten Ecke klicken.
+- Registrierte Benutzer können sich anmelden, indem Sie auf den Link "Anmelden" klicken.
 
-Informationen zur Mitgliedschaft werden in einer Datenbank beibehalten, der automatisch erstellt wird. Weitere Informationen zur Formularauthentifizierung in ASP.NET MVC finden Sie unter [Exemplarische Vorgehensweise: Verwenden der Formularauthentifizierung in ASP.NET MVC](https://msdn.microsoft.com/library/ff398049(VS.98).aspx).
+Mitgliedschafts Informationen werden in einer Datenbank gespeichert, die automatisch erstellt wird. Weitere Informationen zur Formular Authentifizierung in ASP.NET MVC finden Sie unter Exemplarische Vorgehensweise [: Verwenden der Formular Authentifizierung in ASP.NET MVC](https://msdn.microsoft.com/library/ff398049(VS.98).aspx).
 
-## <a name="update-the-css-file"></a>Aktualisieren Sie die CSS-Datei
+## <a name="update-the-css-file"></a>Aktualisieren der CSS-Datei
 
-Dieser Schritt ist kosmetischer Natur, aber machen die Seiten, wie die früheren Screenshots gerendert wird.
+Dieser Schritt ist kosmetisch, aber die Seiten werden wie die vorherigen Screenshots dargestellt.
 
-Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Content", und öffnen Sie die Datei mit dem Namen "Site.CSS". Fügen Sie die folgenden CSS-Stile hinzu:
+Erweitern Sie in Projektmappen-Explorer den Ordner Inhalt, und öffnen Sie die Datei mit dem Namen Site. CSS. Fügen Sie die folgenden CSS-Stile hinzu:
 
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 

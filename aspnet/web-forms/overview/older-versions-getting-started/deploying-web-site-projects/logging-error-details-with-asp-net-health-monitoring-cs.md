@@ -1,151 +1,151 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
-title: Protokollieren von Fehlerdetails mit der ASP.NET-Systemüberwachung (c#) | Microsoft-Dokumentation
+title: Protokollieren von Fehler Details mit ASP.NET HealthC#Monitoring () | Microsoft-Dokumentation
 author: rick-anderson
-description: Überwachung von Microsoft Health-System bietet eine einfache und anpassbare Möglichkeit, verschiedene Webereignisse, einschließlich der nicht behandelte Ausnahmen zu protokollieren. In diesem Tutorial werden wei...
+description: Das System Überwachungssystem von Microsoft bietet eine einfache und anpassbare Möglichkeit zum Protokollieren verschiedener Webanwendungen, einschließlich nicht behandelter Ausnahmen. Dieses Tutorial führt Sie durch...
 ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6b444de67f3bce3d09dd8c3c172895cf07f58df8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e52ed94f78d053701771690fce432d5a1d465b62
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134414"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74637309"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Protokollieren von Fehlerdetails mit der ASP.NET-Systemüberwachung (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
+[Code herunterladen](https://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip) oder [PDF herunterladen](https://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
-> Überwachung von Microsoft Health-System bietet eine einfache und anpassbare Möglichkeit, verschiedene Webereignisse, einschließlich der nicht behandelte Ausnahmen zu protokollieren. Dieses Tutorial führt durch das System für die Systemüberwachung einrichten, um nicht behandelte Ausnahmen in einer Datenbank zu protokollieren und Entwickler über eine e-Mail zu benachrichtigen.
+> Das System Überwachungssystem von Microsoft bietet eine einfache und anpassbare Möglichkeit zum Protokollieren verschiedener Webanwendungen, einschließlich nicht behandelter Ausnahmen. In diesem Tutorial erfahren Sie Schritt für Schritt, wie Sie das System Überwachungssystem einrichten, um nicht behandelte Ausnahmen in einer Datenbank zu protokollieren und Entwickler über eine e-Mail zu benachrichtigen.
 
 ## <a name="introduction"></a>Einführung
 
-Die Protokollierung ist ein nützliches Tool für die Überwachung der Integrität einer bereitgestellten Anwendung und für die Diagnose von Problemen, die auftreten können. Es ist besonders wichtig, um Fehler zu protokollieren, die in einer bereitgestellten Anwendung auftreten, sodass sie korrigiert werden, können. Die `Error` Ereignis wird ausgelöst, wenn eine unbehandelte Ausnahme, in einer ASP.NET-Anwendung auftritt; die [vorherigen Lernprogramm](processing-unhandled-exceptions-cs.md) wurde gezeigt, wie ein Entwickler einen Fehler und melden Sie sich die Details erstellen einen Ereignishandler für die `Error` Ereignis. Erstellen Sie jedoch eine `Error` -Ereignishandler zum Melden des Fehlers Details, und benachrichtigen einen Entwickler ist nicht erforderlich, wie diese Aufgabe von ASP durchgeführt werden kann. NET *System für die Systemüberwachung*.
+Die Protokollierung ist ein nützliches Tool für die Überwachung der Integrität einer bereitgestellten Anwendung und für die Diagnose eventuell auftretende Probleme. Es ist besonders wichtig, Fehler zu protokollieren, die in einer bereitgestellten Anwendung auftreten, damit Sie behoben werden können. Das `Error` Ereignis wird immer dann ausgelöst, wenn eine nicht behandelte Ausnahme in einer ASP.NET-Anwendung auftritt. im [vorherigen Tutorial](processing-unhandled-exceptions-cs.md) wurde gezeigt, wie Sie einen Entwickler über einen Fehler benachrichtigen und seine Details protokollieren können, indem Sie einen Ereignishandler für das `Error`-Ereignis erstellen. Das Erstellen eines `Error` Ereignis Handlers zum Protokollieren der Fehlerdetails und Benachrichtigen eines Entwicklers ist jedoch unnötig, da diese Aufgabe von ASP ausgeführt werden kann. *System Überwachungssystem*von net.
 
-Das System für die Integritätsüberwachung in ASP.NET 2.0 eingeführt wurde und dient zur Überwachung der Integrität einer bereitgestellten Anwendung mit ASP.NET durch Protokollierung von Ereignissen, die während der Lebensdauer der Anforderung oder der Anwendung auftreten. Die vom System für die Systemüberwachung protokollierten Ereignisse werden als bezeichnet *Systemüberwachungsereignisse* oder *Web Ereignisse*, und enthalten:
+Das System Überwachungssystem wurde in ASP.NET 2,0 eingeführt und dient zur Überwachung der Integrität einer bereitgestellten ASP.NET-Anwendung, indem Ereignisse protokolliert werden, die während der Anwendungs-oder Anforderungs Lebensdauer auftreten. Die vom Integritäts Überwachungssystem protokollierten Ereignisse werden als Integritäts *Überwachungs Ereignisse* oder *Webereignisse*bezeichnet und umfassen Folgendes:
 
-- Anwendungslebensdauer-Ereignisse, z. B. wenn eine Anwendung startet oder beendet
-- Sicherheitsereignisse, einschließlich fehlgeschlagener Anmeldeversuche und URL-autorisierungsanforderungen mit Fehlern
-- Anwendungsfehler, einschließlich der Ausnahmefehler, Analysieren von Ausnahmen, Überprüfung fordern Sie Ausnahmen und Kompilierungsfehler, u. a. Fehler Ansichtszustand.
+- Anwendungs Lebensdauer-Ereignisse, z. b. Wenn eine Anwendung gestartet oder angehalten wird
+- Sicherheitsereignisse, einschließlich fehlgeschlagener Anmeldeversuche und fehlerhafter URL-Autorisierungs Anforderungen
+- Anwendungsfehler, einschließlich nicht behandelter Ausnahmen, Ausnahmen bei der Ansichts Zustands Überprüfung, Ausnahmen bei der Anforderungs Validierung und Kompilierungsfehler, unter anderem Fehlertypen.
 
-Wenn ein Health monitoring Ereignis ausgelöst wird, kann er auf eine beliebige Anzahl von protokolliert werden angegebene *melden Quellen*. Das System für die Systemüberwachung im Lieferumfang von Protokollquellen, die mit einer Microsoft SQL Server-Datenbank, in das Windows-Ereignisprotokoll oder über eine e-Mail-Nachricht, u. a. Web-Ereignisse zu protokollieren. Sie können auch Ihre eigenen Protokollquellen erstellen.
+Wenn ein Integritäts Überwachungs Ereignis ausgelöst wird, kann es auf einer beliebigen Anzahl von angegebenen *Protokoll Quellen*protokolliert werden. Das System Überwachungssystem wird mit Protokoll Quellen ausgeliefert, die Webereignisse in einer Microsoft SQL Server Datenbank, im Windows-Ereignisprotokoll oder über eine e-Mail-Nachricht protokollieren. Sie können auch eigene Protokoll Quellen erstellen.
 
-Die Ereignisse, die System für die Systemüberwachung protokolliert werden, sowie die Protokollquellen, die verwendet wird, werden in definiert `Web.config`. Mit wenigen Codezeilen konfigurationsmarkup können Sie alle nicht behandelte Ausnahmen in einer Datenbank zu protokollieren und Sie für die Ausnahme per e-Mail benachrichtigt werden, die Systemüberwachung.
+Die Ereignisse, die das System Überwachungssystem zusammen mit den verwendeten Protokoll Quellen protokolliert, werden in `Web.config`definiert. Mit einigen Konfigurations Markup Zeilen können Sie die Systemüberwachung verwenden, um alle nicht behandelten Ausnahmen in einer Datenbank zu protokollieren und Sie per e-Mail über die Ausnahme zu benachrichtigen.
 
-## <a name="exploring-the-health-monitoring-systems-configuration"></a>Untersuchen die Konfiguration des Systems für die Systemüberwachung
+## <a name="exploring-the-health-monitoring-systems-configuration"></a>Überprüfen der Konfiguration des System Überwachungssystems
 
-Das Verhalten des Systems für die Integritätsüberwachung wird durch seine Konfigurationsinformationen, die sich im befindet definiert die [ `<healthMonitoring>` Element](https://msdn.microsoft.com/library/2fwh2ss9.aspx) in `Web.config`. Dieser Konfigurationsabschnitt definiert, unter anderem die folgenden drei wichtigen Arten von Informationen:
+Das Verhalten des Integritäts Überwachungssystems wird durch die Konfigurationsinformationen definiert, die sich im [`<healthMonitoring>`-Element](https://msdn.microsoft.com/library/2fwh2ss9.aspx) in `Web.config`befinden. Dieser Konfigurations Abschnitt definiert unter anderem die folgenden drei wichtigen Informationen:
 
-1. Die Integrität Überwachen von Ereignissen, die protokolliert werden sollen, wenn ausgelöst
-2. Die Protokollquellen und
-3. Wie jede Systemüberwachungsereignisses in (1) definiert die Protokollquellen zugeordnet wird, die in (2) definiert wurden.
+1. Die Integritäts Überwachungs Ereignisse, die, wenn Sie ausgelöst werden, protokolliert werden sollen.
+2. Die Protokoll Quellen und
+3. Wie jedes in (1) definierte Integritäts Überwachungs Ereignis den in (2) definierten Protokoll Quellen zugeordnet wird.
 
-Diese Informationen werden mithilfe von Konfigurationselementen für die drei untergeordneten Elemente angegeben: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), und [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx)bzw.
+Diese Informationen werden durch drei untergeordnete Konfigurationselemente angegeben: [`<eventMappings>`](https://msdn.microsoft.com/library/yc5yk01w.aspx), [`<providers>`](https://msdn.microsoft.com/library/zaa41kz1.aspx)bzw. [`<rules>`](https://msdn.microsoft.com/library/fe5wyxa0.aspx).
 
-Informationen zur Betriebssystemkonfiguration für die standardmäßige Integritätsüberwachung finden Sie in der `Web.config` Datei `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` Ordner. Diese Daten standardmäßig mit Markup entfernt aus Gründen der Übersichtlichkeit unten:
+Die Standard Konfigurationsinformationen für die Systemüberwachung finden Sie in der `Web.config`-Datei in `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` Ordner. Diese Standard Konfigurationsinformationen, bei denen ein Markup aus Gründen der Kürze entfernt wurde, sind unten dargestellt:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample1.xml)]
 
-Die Integrität, die Ereignisse bei der Überwachung von Interesse, in definiert sind der `<eventMappings>` -Element, das ein Benutzerfreundlicher Name für eine Klasse von Systemüberwachungsereignissen zu erhalten. Im obigen Markup der `<eventMappings>` -Element weist den Benutzerfreundlicher Namen "Alle Fehler" mit der Integrität der Überwachung von Ereignissen vom Typ `WebBaseErrorEvent` und dem Namen "Fehlerüberwachungen" zum Überwachen von Ereignissen des Typs des Zustands `WebFailureAuditEvent`.
+Die relevanten Integritäts Überwachungs Ereignisse werden im `<eventMappings>`-Element definiert, das einen benutzerfreundlichen Namen für eine Klasse von Integritäts Überwachungs Ereignissen liefert. Im obigen Markup weist das `<eventMappings>`-Element den benutzerfreundlichen Namen "All Errors" den Integritäts Überwachungs Ereignissen vom Typ `WebBaseErrorEvent` und den Namen "Fehler Überwachungen" für Integritäts Überwachungs Ereignisse des Typs `WebFailureAuditEvent`zu.
 
-Die `<providers>` -Element definiert die Protokollquellen, Ihnen einen Benutzerfreundlicher Namen, und alle Protokollinformationen für die Source-spezifische Konfiguration angeben. Die erste `<add>` -Element definiert den Anbieter "EventLogProvider" protokolliert die angegebene Integrität Überwachen von Ereignissen mit der `EventLogWebEventProvider` Klasse. Die `EventLogWebEventProvider` Klasse das Ereignis protokolliert in das Windows-Ereignisprotokoll. Die zweite `<add>` -Element definiert den Anbieter "SqlWebEventProvider" protokolliert Ereignisse in einer Microsoft SQL Server-Datenbank über die `SqlWebEventProvider` Klasse. Die Konfiguration "SqlWebEventProvider" gibt an, der Datenbank-Verbindungszeichenfolge (`connectionStringName`) zwischen anderen Optionen.
+Das `<providers>`-Element definiert die Protokoll Quellen und gibt Ihnen einen benutzerfreundlichen Namen und die Angabe beliebiger Protokoll Quellen spezifischer Konfigurationsinformationen. Das erste `<add>`-Element definiert den Event LogProvider-Anbieter, der die angegebenen Integritäts Überwachungs Ereignisse mithilfe der `EventLogWebEventProvider`-Klasse protokolliert. Die `EventLogWebEventProvider`-Klasse protokolliert das Ereignis im Windows-Ereignisprotokoll. Mit dem zweiten `<add>`-Element wird der Anbieter "SqlWebEventProvider" definiert, der Ereignisse über die `SqlWebEventProvider`-Klasse in einer Microsoft SQL Server Datenbank protokolliert. Die Konfiguration "SqlWebEventProvider" gibt die Verbindungs Zeichenfolge (`connectionStringName`) der Datenbank unter anderen Konfigurationsoptionen an.
 
-Die `<rules>` -Element ordnet die im angegebenen Ereignisse der `<eventMappings>` Element Quellen melden Sie sich die `<providers>` Element. In der Standardeinstellung ASP.NET-Webanwendungen melden Sie sich alle nicht behandelte Ausnahmen und Fehlern in das Windows-Ereignisprotokoll überwachen.
+Das `<rules>`-Element ordnet die im `<eventMappings>`-Element angegebenen Ereignisse den Protokoll Quellen im `<providers>`-Element zu. Standardmäßig protokollieren ASP.NET-Webanwendungen alle nicht behandelten Ausnahmen und Überwachungs Fehler im Windows-Ereignisprotokoll.
 
 ## <a name="logging-events-to-a-database"></a>Protokollieren von Ereignissen in einer Datenbank
 
-Standardkonfiguration des Systems für die Systemüberwachung kann pro Web-Anwendung-von-Web-Anwendung angepasst werden, durch das Hinzufügen einer `<healthMonitoring>` Abschnitt aus, um der Anwendung `Web.config` Datei. Sie können zusätzliche Elemente einschließen der `<eventMappings>`, `<providers>`, und `<rules>` Abschnitte mit der `<add>` Element. So entfernen Sie eine Einstellung aus der Verwendung der standardmäßigen Konfiguration der `<remove>` -Element, oder verwenden Sie `<clear />` So entfernen Sie alle Standardwerte aus einem dieser Abschnitte. Konfigurieren wir die Book Reviews-Webanwendung, um nicht behandelte Ausnahmen zu protokollieren, einer Microsoft SQL Server-Datenbank mithilfe der `SqlWebEventProvider` Klasse.
+Die Standardkonfiguration des Integritäts Überwachungssystems kann auf Webanwendungen für Webanwendungen angepasst werden, indem ein `<healthMonitoring>` Abschnitt zur `Web.config` Datei der Anwendung hinzugefügt wird. Sie können zusätzliche Elemente in die Abschnitte `<eventMappings>`, `<providers>`und `<rules>` einschließen, indem Sie das `<add>`-Element verwenden. Um eine Einstellung aus der Standardkonfiguration zu entfernen, verwenden Sie das `<remove>`-Element, oder verwenden Sie `<clear />`, um alle Standardwerte aus einem dieser Abschnitte zu entfernen. Wir konfigurieren die Webanwendung "Book Reviews" so, dass alle nicht behandelten Ausnahmen in einer Microsoft SQL Server Datenbank mithilfe der `SqlWebEventProvider`-Klasse protokolliert werden.
 
-Die `SqlWebEventProvider` -Klasse ist Teil des Systems für die Integritätsüberwachung und protokolliert ein Ereignis, um eine angegebene SQL Server-Datenbank für die Systemüberwachung. Die `SqlWebEventProvider` Klasse erwartet, dass die angegebene Datenbank eine gespeicherte Prozedur namens enthält `aspnet_WebEvent_LogEvent`. Diese gespeicherte Prozedur die Details des Ereignisses übergeben und ist damit beauftragt, Details zu speichern. Die gute Nachricht ist, dass Sie nicht benötigen, erstellen Sie diese gespeicherte Prozedur noch in der Tabelle, um die Ereignisdetails zu speichern. Sie können diese Objekte hinzufügen, um Ihre Datenbank mit der `aspnet_regsql.exe` Tool.
+Die `SqlWebEventProvider`-Klasse ist Teil des System Überwachungssystems und protokolliert ein Integritäts Überwachungs Ereignis für eine angegebene SQL Server Datenbank. Die `SqlWebEventProvider`-Klasse erwartet, dass die angegebene Datenbank eine gespeicherte Prozedur mit dem Namen `aspnet_WebEvent_LogEvent`enthält. Dieser gespeicherten Prozedur werden die Details des Ereignisses und das Speichern der Ereignis Details übermittelt. Die gute Nachricht ist, dass Sie diese gespeicherte Prozedur und die Tabelle nicht zum Speichern der Ereignis Details erstellen müssen. Sie können diese Objekte mit dem `aspnet_regsql.exe` Tool zur Datenbank hinzufügen.
 
 > [!NOTE]
-> Die `aspnet_regsql.exe` Tool wurde erläutert, in der [ *konfigurieren eine Website, dass verwendet Anwendungsdienste* Tutorial](configuring-a-website-that-uses-application-services-cs.md) bei der Addition ASP-Unterstützung. NET Application-Dienste. Daher der Book Reviews-Website Datenbank enthält bereits die `aspnet_WebEvent_LogEvent` gespeicherte Prozedur, die speichert die Ereignisinformationen in eine Tabelle namens `aspnet_WebEvent_Events`.
+> Das `aspnet_regsql.exe` Tool wurde im Abschnitt [ *Konfigurieren einer Website erläutert, die Anwendungsdienste Tutorial verwendet,* ](configuring-a-website-that-uses-application-services-cs.md) wenn wir die Unterstützung für ASP hinzugefügt haben. NET-Anwendungsdienste. Folglich enthält die Website der Website zur Buch Überprüfung bereits die gespeicherte Prozedur `aspnet_WebEvent_LogEvent`, die die Ereignis Informationen in einer Tabelle mit dem Namen `aspnet_WebEvent_Events`speichert.
 
-Nachdem Sie die erforderliche gespeicherte Prozedur und die Tabelle, die mit Ihrer Datenbank hinzugefügt haben, übrig bleibt anweisen Health überwacht werden, um alle nicht behandelten Ausnahmen in der Datenbank zu protokollieren. Dies erreichen, indem Sie das folgende Markup Ihrer Website hinzufügen `Web.config` Datei:
+Nachdem Sie die erforderliche gespeicherte Prozedur und Tabelle zur Datenbank hinzugefügt haben, müssen Sie nur noch die Integritäts Überwachung anweisen, alle nicht behandelten Ausnahmen in der Datenbank zu protokollieren. Fügen Sie hierzu der `Web.config` Datei Ihrer Website das folgende Markup hinzu:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample2.xml)]
 
-Die Systemüberwachung konfigurationsmarkup oben verwendet `<clear />` Elementen, die Konfigurationsinformationen aus für die vordefinierte Integritätsüberwachung Zurücksetzen der `<eventMappings>`, `<providers>`, und `<rules>` Abschnitte. Anschließend wird einen einziger Eintrag auf den folgenden Abschnitten hinzugefügt.
+Das obige Integritäts Überwachungs-Konfigurations Markup verwendet `<clear />` Elemente, um die vordefinierte Konfigurationsinformationen zur Integritäts Überwachung aus den Abschnitten `<eventMappings>`, `<providers>`und `<rules>` zu löschen. Anschließend wird jedem dieser Abschnitte ein einziger Eintrag hinzugefügt.
 
-- Die `<eventMappings>` -Element definiert eine einzelne Systemüberwachung-Ereignis von Interesse, die mit dem Namen "Alle Fehler", die ausgelöst wird, wenn eine unbehandelte Ausnahme auftritt.
-- Die `<providers>` -Element definiert eine Protokoll für einzelnes Ereignis-Quelle, die mit dem Namen "SqlWebEventProvider", die verwendet die `SqlWebEventProvider` Klasse. Die `connectionStringName` Attribut auf "ReviewsConnectionString", der Name der unsere Verbindung ist festgelegt wurde in definierten Zeichenfolge die `<connectionStrings>` Abschnitt.
-- Zum Schluss die &lt;Regeln&gt; Element gibt an, dass wenn ein Ereignis "Alle Fehler", die herausstellt es protokolliert werden sollten mit dem Anbieter "SqlWebEventProvider".
+- Das `<eventMappings>`-Element definiert ein einzelnes Integritäts Überwachungs Ereignis namens "All Errors", das immer dann ausgelöst wird, wenn eine nicht behandelte Ausnahme auftritt.
+- Das `<providers>`-Element definiert eine einzelne Protokoll Quelle mit dem Namen "SqlWebEventProvider", die die `SqlWebEventProvider`-Klasse verwendet. Das `connectionStringName`-Attribut wurde auf "reviewsconnectionstring" festgelegt, d. h. der Name der Verbindungs Zeichenfolge, die im `<connectionStrings>` Abschnitt definiert ist.
+- Zum Schluss gibt das &lt;Rules&gt;-Element an, dass, wenn ein "alle Fehler"-Ereignis auftritt, mit dem Anbieter "SqlWebEventProvider" protokolliert werden soll.
 
-Diese Konfigurationsinformationen weist das System, um alle nicht behandelten Ausnahmen in der Datenbank Book Reviews melden Sie sich für die Systemüberwachung.
+Diese Konfigurationsinformationen weisen das System Überwachungssystem an, alle nicht behandelten Ausnahmen in der Datenbank der Buch Reviews zu protokollieren.
 
 > [!NOTE]
-> Die `WebBaseErrorEvent` Ereignis wird nur für Server-Fehler ausgelöst; es wird nicht ausgelöst, für die HTTP-Fehler, z. B. eine Anforderung für eine ASP.NET-Ressource, die nicht gefunden wird. Dies unterscheidet sich vom Verhalten der `HttpApplication` Klasse `Error` -Ereignis, das für sowohl Server-als auch HTTP-Fehler ausgelöst wird.
+> Das `WebBaseErrorEvent` Ereignis wird nur für Server Fehler ausgelöst. Sie wird nicht für HTTP-Fehler ausgelöst, z. b. eine Anforderung einer nicht gefundenen ASP.NET-Ressource. Dies unterscheidet sich vom Verhalten des `Error` Ereignisses der `HttpApplication` Klasse, das sowohl für Server-als auch für HTTP-Fehler ausgelöst wird.
 
-Um das Überwachungssystem in Aktion sehen zu können, finden Sie auf der Website aus, und verursachen einen Laufzeitfehler finden Sie unter `Genre.aspx?ID=foo`. Daraufhin sollte die entsprechende Fehlerseite – entweder die Ausnahme Details gelben Bildschirm of Death (wenn lokal auf) oder die benutzerdefinierte Fehlerseite (wenn besuchen die Website in der Produktion). Hinter den Kulissen System für die Systemüberwachung werden die Fehlerinformationen in der Datenbank protokolliert. Es muss ein Datensatz in die `aspnet_WebEvent_Events` Tabelle (finden Sie unter **Abbildung 1**); dieser Datensatz enthält Informationen über den Common Language Runtime-Fehler, die nur aufgetreten sind.
+Um das System Überwachungssystem in Aktion zu sehen, besuchen Sie die Website, und generieren Sie einen Laufzeitfehler, indem Sie `Genre.aspx?ID=foo`besuchen. Die entsprechende Fehlerseite sollte angezeigt werden: entweder der Bildschirm Ausnahme Details gelb (beim lokalen Besuch) oder die benutzerdefinierte Fehlerseite (beim Besuch der Website in der Produktion). Im Hintergrund protokolliert das System Überwachungssystem die Fehlerinformationen in der Datenbank. In der `aspnet_WebEvent_Events` Tabelle sollte ein Datensatz vorhanden sein (siehe **Abbildung 1**). Dieser Datensatz enthält Informationen zum Laufzeitfehler, der soeben aufgetreten ist.
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image2.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image1.png)
 
-**Abbildung 1**: Die Fehlerdetails wurden protokolliert, um die `aspnet_WebEvent_Events` Tabelle  
-([Klicken Sie, um das Bild in voller Größe anzeigen](logging-error-details-with-asp-net-health-monitoring-cs/_static/image3.png))
+**Abbildung 1**: die Fehler Details wurden in der `aspnet_WebEvent_Events` Tabelle protokolliert.  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](logging-error-details-with-asp-net-health-monitoring-cs/_static/image3.png))
 
-### <a name="displaying-the-error-log-in-a-web-page"></a>Das Fehlerprotokoll anzeigen auf einer Webseite
+### <a name="displaying-the-error-log-in-a-web-page"></a>Anzeigen des Fehler Protokolls auf einer Webseite
 
-Mit der aktuellen Konfiguration der Website protokolliert das System für die Systemüberwachung alle nicht behandelte Ausnahmen in der Datenbank. Überwachung der Integrität bietet sich jedoch nicht auf alle Mechanismus zum Anzeigen des Fehlerprotokolls über eine Webseite aus. Allerdings könnten Sie eine ASP.NET-Seite erstellen, die diese Informationen aus der Datenbank angezeigt. (Wir sofort sehen, können Sie optional die Fehlerdetails, die in einer e-Mail-Nachricht an Sie gesendet haben.)
+Mit der aktuellen Konfiguration der Website protokolliert das System Überwachungssystem alle nicht behandelten Ausnahmen in der Datenbank. Die Systemüberwachung bietet jedoch keinen Mechanismus, um das Fehlerprotokoll über eine Webseite anzuzeigen. Sie können jedoch eine ASP.NET-Seite erstellen, auf der diese Informationen aus der Datenbank angezeigt werden. (Wie wir sehen werden, können Sie die Fehlerdetails in einer e-Mail-Nachricht an Sie senden.)
 
-Wenn Sie eine solche Seite erstellen, stellen Sie sicher, dass Sie Maßnahmen können nur autorisierte Benutzer auf die Fehlerdetails anzuzeigen. Wenn Ihre Website bereits Benutzerkonten verwendet, Sie URL-Autorisierungsregeln verwenden, um den Zugriff auf der Seite auf bestimmte Benutzer oder Rollen einschränken. Weitere Informationen zum gewähren oder Einschränken des Zugriffs auf Webseiten, die basierend auf dem angemeldeten Benutzer finden Sie in meinem [Website-Lernprogramme zur ASP.NET-Sicherheit](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
+Wenn Sie eine solche Seite erstellen, stellen Sie sicher, dass Sie Maßnahmen ergreifen, damit nur autorisierte Benutzer die Fehlerdetails anzeigen können. Wenn Ihre Website bereits Benutzerkonten verwendet, können Sie URL-Autorisierungs Regeln verwenden, um den Zugriff auf die Seite auf bestimmte Benutzer oder Rollen einzuschränken. Weitere Informationen zum gewähren oder Einschränken des Zugriffs auf Webseiten basierend auf dem angemeldeten Benutzer finden Sie in den Tutorials zu den Sicherheitsprogrammen der [Website](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
 
 > [!NOTE]
-> Die nachfolgenden Tutorial wird beschrieben, ein alternativer Fehler protokollieren und Benachrichtigung System mit dem Namen ELMAH. ELMAH enthält einen integrierten Mechanismus zum Anzeigen des Fehlerprotokolls von sowohl einer Webseite und als RSS-feed.
+> Im nachfolgenden Tutorial wird ein alternatives Fehler Protokollierungs-und Benachrichtigungssystem mit dem Namen ELMAH behandelt. ELMAH enthält einen integrierten Mechanismus zum Anzeigen des Fehler Protokolls sowohl auf einer Webseite als auch als RSS-Feed.
 
-## <a name="logging-events-to-email"></a>Protokollierung von Ereignissen an e-Mail-Adresse
+## <a name="logging-events-to-email"></a>Protokollieren von Ereignissen in e-Mail
 
-Das System für die Systemüberwachung enthält einen Protokollanbieter in der Datenquelle ein, das "in einer e-Mail-Nachricht ein Ereignis protokolliert". Die Protokollquelle enthält dieselbe Informationen, die mit der Datenbank, in dem Textkörper der e-Mail-Adresse angemeldet ist. Diese Protokollquelle können Sie um einen Entwickler zu benachrichtigen, wenn ein bestimmtes Überwachung Health-Ereignis auftritt.
+Das System Überwachungssystem enthält einen Protokoll Quellen Anbieter, der ein Ereignis in einer e-Mail-Nachricht protokolliert. Die Protokoll Quelle enthält dieselben Informationen, die in der-Datenbank im e-Mail-Nachrichtentext protokolliert werden. Mit dieser Protokoll Quelle können Sie einen Entwickler benachrichtigen, wenn ein bestimmtes Integritäts Überwachungs Ereignis auftritt.
 
-Aktualisieren wir die Book Reviews Websitekonfiguration, damit erhalten wir eine e-Mail, wenn eine Ausnahme tritt auf, ein. Zu diesem Zweck müssen wir drei Aufgaben ausführen:
+Aktualisieren Sie die Konfiguration der Website "Book Reviews", damit wir immer dann eine e-Mail erhalten, wenn eine Ausnahme auftritt. Um dies zu erreichen, müssen Sie drei Aufgaben ausführen:
 
-1. Konfigurieren der ASP.NET-Webanwendung zum Senden von e-Mails an. Dies wird erreicht, indem Sie angeben, wie e-Mail-Nachrichten gesendet werden, über die `<system.net>` Konfigurationselement. Weitere Informationen zum Senden von e-Mails von Nachrichten in einer ASP.NET-Anwendung finden Sie in [Senden von e-Mail-Adresse in ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) und [System.Net.Mail – häufig gestellte Fragen](http://systemnetmail.com/).
-2. Registrieren Sie den e-Mail-Quelle Protokollanbieter in der `<providers>` -Element, und
-3. Fügen Sie einen Eintrag, um die `<rules>` -Element, das Ereignis "Alle Fehler" in der Quelle Protokollanbieter hinzugefügt, die in Schritt (2) zugeordnet.
+1. Konfigurieren Sie die ASP.NET-Webanwendung, um e-Mails zu senden. Dies wird erreicht, indem angegeben wird, wie e-Mail-Nachrichten über das `<system.net>` Konfigurationselement gesendet werden. Weitere Informationen zum Senden von e-Mail-Nachrichten in einer ASP.NET-Anwendung finden Sie unter [Senden von e-Mails in ASP.net](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) und häufig gestellte Fragen zu [System .net. Mail](http://systemnetmail.com/).
+2. Registrieren Sie den e-Mail-Protokoll Quellen Anbieter im `<providers>`-Element, und
+3. Fügen Sie dem `<rules>`-Element einen Eintrag hinzu, der dem in Schritt (2) hinzugefügten Protokoll Quellen Anbieter das Ereignis "alle Fehler" zuordnet.
 
-Das System für die Systemüberwachung enthält zwei e-Mail-Log-Datenquellen-Anbieterklassen: `SimpleMailWebEventProvider` und `TemplatedMailWebEventProvider`. Die [ `SimpleMailWebEventProvider` Klasse](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) sendet eine nur-Text-e-Mail-Nachricht, die das Ereignis enthält details und bietet aber kleine Anpassungen des e-Mail-Texts. Mit der [ `TemplatedMailWebEventProvider` Klasse](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) Angabe eine ASP.NET-Seite, deren gerendertes Markup wird als Text der e-Mail-Nachricht verwendet. Die [ `TemplatedMailWebEventProvider` Klasse](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) bietet Ihnen viel bessere Kontrolle über den Inhalt und Format der e-Mail-Nachricht, aber erfordert etwas mehr Vorarbeiten, wie Sie die ASP.NET-Seite zu erstellen, die e-Mail-Text generiert. Dieses Tutorial konzentriert sich auf die Verwendung der `SimpleMailWebEventProvider` Klasse.
+Das System Überwachungssystem enthält zwei Klassen von e-Mail-Protokoll Quellen Anbietern: `SimpleMailWebEventProvider` und `TemplatedMailWebEventProvider`. Die [`SimpleMailWebEventProvider`-Klasse](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) sendet eine nur-Text-e-Mail-Nachricht, die die Ereignis Details enthält und wenig Anpassungen des e-Mail-Texts ermöglicht. Mit der [`TemplatedMailWebEventProvider`-Klasse](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) geben Sie eine ASP.NET-Seite an, deren gerendertes Markup als Text für die e-Mail-Nachricht verwendet wird. Die [`TemplatedMailWebEventProvider`-Klasse](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) ermöglicht Ihnen eine viel bessere Kontrolle über den Inhalt und das Format der e-Mail-Nachricht, erfordert jedoch etwas mehr Vorarbeit, da Sie die ASP.NET-Seite erstellen müssen, die den Nachrichtentext der e-Mail generiert. Dieses Tutorial konzentriert sich auf die Verwendung der `SimpleMailWebEventProvider`-Klasse.
 
-Aktualisieren des Systems für die Systemüberwachung `<providers>` Element in der `Web.config` eingeschlossen ein Protokollquelle für die `SimpleMailWebEventProvider` Klasse:
+Aktualisieren Sie das `<providers>`-Element des Integritäts Überwachungssystems in der `Web.config`-Datei, um eine Protokoll Quelle für die `SimpleMailWebEventProvider`-Klasse einzuschließen:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample3.xml)]
 
-Das obenstehende Markup verwendet den `SimpleMailWebEventProvider` Klasse als den Protokollanbieter für die Datenquelle, und weist sie den Anzeigenamen "EmailWebEventProvider". Darüber hinaus die `<add>` Attribut enthält zusätzliche Konfigurationsoptionen, z. B. den und aus der e-Mail-Adressen.
+Im obigen Markup wird die `SimpleMailWebEventProvider`-Klasse als Protokoll Quellen Anbieter verwendet und dem anzeigen Amen "emailwebeventprovider" zugewiesen. Darüber hinaus enthält das `<add>`-Attribut zusätzliche Konfigurationsoptionen, wie z. b. die an-und die-Adresse der e-Mail-Nachricht.
 
-Mit der Quelle des e-Mail-Protokoll, die definiert übrig bleibt, weisen Sie das System, um diese Quelle verwendet wird, nicht behandelte Ausnahmen "Anmelden" für die Systemüberwachung. Dies geschieht durch Hinzufügen einer neuen Regel in der `<rules>` Abschnitt:
+Wenn die e-Mail-Protokoll Quelle definiert ist, besteht lediglich die Anweisung, das System Überwachungssystem anzuweisen, diese Quelle zur Protokollierung nicht behandelter Ausnahmen zu verwenden. Dies wird erreicht, indem im `<rules>` Abschnitt eine neue Regel hinzugefügt wird:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample4.xml)]
 
-Die `<rules>` Abschnitt enthält jetzt zwei Regeln. Erstens, mit dem Namen "Alle Fehler, Email", sendet alle nicht behandelte Ausnahmen an die Protokollquelle "EmailWebEventProvider". Diese Regel wirkt sich das Senden von Informationen zu Fehlern auf der Website mit dem angegebenen Adresse. Die Regel "Alle Fehler für Datenbank" protokolliert die Fehlerdetails in der Datenbank des Standorts an. Folglich immer eine unbehandelte Ausnahme, auf der Website die Details auftritt werden beide in der Datenbank protokolliert und an die angegebene e-Mail-Adresse gesendet.
+Der Abschnitt "`<rules>`" enthält jetzt zwei Regeln. Der erste mit dem Namen "alle Fehler in e-Mail" sendet alle nicht behandelten Ausnahmen an die Protokoll Quelle "emailwebeventprovider". Diese Regel hat den Effekt, dass Details zu Fehlern auf der Website an die angegebene Adresse gesendet werden. Mit der Regel "alle Fehler in der Datenbank" werden die Fehlerdetails in der Datenbank des Standorts protokolliert. Folglich werden bei jedem Auftreten einer nicht behandelten Ausnahme auf der Website die Details in der Datenbank protokolliert und an die angegebene e-Mail-Adresse gesendet.
 
-**Abbildung 2** zeigt die vom e-Mail-Adresse der `SimpleMailWebEventProvider` Klasse, wenn der Zugriff auf `Genre.aspx?ID=foo`.
+**Abbildung 2** zeigt die e-Mail, die von der `SimpleMailWebEventProvider`-Klasse beim Besuch `Genre.aspx?ID=foo`generiert wurde.
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image4.png)
 
-**Abbildung 2**: Die Fehlerdetails werden in einer e-Mail-Nachricht gesendet.  
-([Klicken Sie, um das Bild in voller Größe anzeigen](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
+**Abbildung 2**: die Fehler Details werden in einer e-Mail-Nachricht gesendet.  
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Der ASP.NET-Systemüberwachung soll Administratoren die Integrität einer bereitgestellten Webanwendung überwachen können. Überwachung Health-Ereignisse werden ausgelöst, wenn bestimmte Aktionen wie z. B. wenn die Anwendung beendet wird, wenn ein Benutzer erfolgreich bei der Site protokolliert umgewandelt werden soll, oder wenn eine nicht behandelte Ausnahme auftritt. Diese Ereignisse können auf eine beliebige Anzahl von Protokollquellen protokolliert werden. In diesem Tutorial wurde gezeigt, wie die Details der nicht behandelten Ausnahmen in einer Datenbank und über eine e-Mail-Nachricht protokolliert wird.
+Das ASP.NET-System Überwachungssystem ist so konzipiert, dass Administratoren die Integrität einer bereitgestellten Webanwendung überwachen können. Ereignisse der Integritäts Überwachung werden ausgelöst, wenn bestimmte Aktionen ausgeführt werden, z. b. wenn die Anwendung beendet wird, wenn sich ein Benutzer erfolgreich bei der Website anmeldet oder wenn eine nicht behandelte Ausnahme auftritt. Diese Ereignisse können auf einer beliebigen Anzahl von Protokoll Quellen protokolliert werden. In diesem Tutorial wurde gezeigt, wie die Details von nicht behandelten Ausnahmen in einer Datenbank und per e-Mail protokolliert werden.
 
-Dieses Tutorial konzentriert sich auf die Systemüberwachung zum Melden Sie sich nicht behandelte Ausnahmen, aber denken Sie daran, dass die Systemüberwachung dient zum Messen Sie der allgemeinen Integritäts einer bereitgestellten Anwendung mit ASP.NET und bietet eine Fülle von Systemüberwachungsereignissen und Quellen nicht verwenden Hier untersucht. Was ist, können Sie Ihre eigenen Ereignisse und Protokollquellen, die Systemüberwachung erstellen Bedarf auftreten. Wenn Sie möchten mehr über die Überwachung der Integrität, ist ein guter erster Schritt, zu lesen, [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)des [– häufig gestellte Fragen für die Systemüberwachung](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Danach finden Sie in [so wird's gemacht: Verwenden Sie die Integritätsüberwachung in ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
+Dieses Tutorial konzentriert sich auf die Verwendung der Integritäts Überwachung zur Protokollierung nicht behandelter Ausnahmen. Beachten Sie jedoch, dass die Integritäts Überwachung so konzipiert ist, dass die Gesamt Integrität einer bereitgestellten ASP.NET-Anwendung gemessen wird, und umfasst eine Vielzahl von Integritäts Überwachungs Ereignissen und Protokoll Quellen Hier untersucht. Darüber hinaus können Sie Ihre eigenen Integritäts Überwachungs Ereignisse und-Protokoll Quellen erstellen, wenn dies erforderlich ist. Wenn Sie mehr über die Integritäts Überwachung erfahren möchten, sollten Sie sich zunächst mit der häufig gestellten Fragen zur System [Überwachung](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)von [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)vertraut machen. Weitere Informationen finden Sie unter Gewusst [wie: Verwenden der Integritäts Überwachung in ASP.NET 2,0](https://msdn.microsoft.com/library/ms998306.aspx).
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ### <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
-- [Übersicht über die ASP.NET-Systemüberwachung](https://msdn.microsoft.com/library/bb398933.aspx)
-- [Konfigurieren und Anpassen von System von ASP.NET für die Systemüberwachung](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
-- [Häufig gestellte Fragen – ASP.NET 2.0 für die Systemüberwachung](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [How To: Senden von e-Mail-Einstellungen für Benachrichtigungen für die Systemüberwachung](https://msdn.microsoft.com/library/ms227553.aspx)
-- [How To: Verwenden Sie die Integritätsüberwachung in ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
-- [Systemüberwachung in ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
+- [ASP.net Übersicht über die Integritäts Überwachung](https://msdn.microsoft.com/library/bb398933.aspx)
+- [Konfigurieren und Anpassen des System Überwachungssystems von ASP.net](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
+- [FAQ: Integritäts Überwachung in ASP.NET 2,0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
+- [Gewusst wie: Senden von e-Mails für Integritäts Überwachungs Benachrichtigungen](https://msdn.microsoft.com/library/ms227553.aspx)
+- [Vorgehensweise: Verwenden der Integritäts Überwachung in ASP.net](https://msdn.microsoft.com/library/ms998306.aspx)
+- [Integritäts Überwachung in ASP.net](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 > [!div class="step-by-step"]
 > [Zurück](processing-unhandled-exceptions-cs.md)

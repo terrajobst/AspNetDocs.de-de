@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
-title: Positionieren eines ModalPopup-Steuerelements (c#) | Microsoft-Dokumentation
+title: Positionieren eines ModalPopup-C#() | Microsoft-Dokumentation
 author: wenz
-description: Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Das Steuerelement jedoch keine bietet ein...
+description: Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Das Steuerelement bietet jedoch keine...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1caac9d0-e21e-49d6-a8ff-e563a736d6ca
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 362e0f84ce336d320e016dd19d2dd286560f75c6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8034f5aeb5a1a80f1ea8cbc9d638f3dfb1a38706
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115407"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599007"
 ---
 # <a name="positioning-a-modalpopup-c"></a>Positionieren eines ModalPopup-Steuerelements (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4CS.pdf)
 
-> Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Das Steuerelement bietet jedoch keine integrierte Funktionen, die das Popup zu positionieren.
+> Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Das-Steuerelement bietet jedoch keine integrierte Funktionalität zum Positionieren des Popups.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Das Steuerelement bietet jedoch keine integrierte Funktionen, die das Popup zu positionieren.
+Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Das-Steuerelement bietet jedoch keine integrierte Funktionalität zum Positionieren des Popups.
 
 ## <a name="steps"></a>Schritte
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager`. Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der `<form>` Element):
+Um die Funktionalität von ASP.NET AJAX und dem Control Toolkit zu aktivieren, wird der `ScriptManager`. das Steuerelement muss an beliebiger Stelle auf der Seite abgelegt werden (innerhalb des `<form>` Elements):
 
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample1.aspx)]
 
-Fügen Sie einen Bereich, der als modales Fenster dient. Eine Schaltfläche wird verwendet, um das Popup zu schließen:
+Fügen Sie als nächstes ein Panel hinzu, das als modales Popup fungiert. Zum Schließen des Popups wird eine Schaltfläche verwendet:
 
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample2.aspx)]
 
-Wenn das Popup angezeigt wird, müssen sie an einer bestimmten Stelle auf der Seite angeordnet sein. Für diese Aufgabe wird eine clientseitige JavaScript-Funktion erstellt. Zuerst wird versucht, die dem Zugriffsbereich. Wenn dies gelingt, ist des Bereichs Position festgelegt mithilfe von CSS und JavaScript (Änderung, die die Position des Popupfensters am wird). Jedoch `ModalPopupExtender` Steuerelement außerdem versucht wird, um das Popup zu positionieren. Aus diesem Grund wird der JavaScript-Code Popupfenster jeder Zehntel Sekunde wiederholt positioniert.
+Wenn das Popup Fenster angezeigt wird, muss es an einer bestimmten Stelle auf der Seite positioniert werden. Für diese Aufgabe wird eine Client seitige JavaScript-Funktion erstellt. Zuerst wird versucht, auf den Bereich zuzugreifen. Wenn der Vorgang erfolgreich ist, wird die Position des Panels mithilfe von CSS und JavaScript festgelegt (ändern Sie die Position des Popups bei wird). Das `ModalPopupExtender`-Steuerelement versucht jedoch auch, das Popup Fenster zu positionieren. Aus diesem Grund positioniert der JavaScript-Code jedes Zehntel einer Sekunde wiederholt das Popup.
 
 [!code-html[Main](positioning-a-modalpopup-cs/samples/sample3.html)]
 
-Wie Sie sehen können, den Rückgabewert der `setTimeout()` JavaScript-Methode wird in einer globalen Variablen gespeichert. Auf diese Weise beenden, die wiederholte Positionierung des Popups bei Bedarf kann mithilfe der `clearTimeout()` Methode:
+Wie Sie sehen, wird der Rückgabewert der JavaScript-Methode `setTimeout()` in einer globalen Variablen gespeichert. Dadurch kann die wiederholte Positionierung des Popup Bedarfs bei Bedarf mit der `clearTimeout()`-Methode beendet werden:
 
 [!code-javascript[Main](positioning-a-modalpopup-cs/samples/sample4.js)]
 
-Nun müssen lediglich um den Browser, rufen diese Funktionen an, wo immer möglich zu machen. Die `movePanel()` JavaScript-Funktion muss aufgerufen werden, wenn die Schaltfläche geklickt wird, die den Bereich auslöst:
+Nun müssen Sie nur noch den Browser zum Abrufen dieser Funktionen verwenden, wenn dies angemessen ist. Die `movePanel()` JavaScript-Funktion muss aufgerufen werden, wenn auf die Schaltfläche geklickt wird, mit der das Panel ausgelöst wird:
 
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample5.aspx)]
 
-Und die `stopMoving()` Funktion ins Spiel, wenn das Popup kann geschlossen wird ausgelöst, der `ModalPopupExtender` Steuerelement:
+Wenn das Popup Fenster geschlossen wird, wird die `stopMoving()` Funktion wiedergegeben, die im `ModalPopupExtender` Steuerelement ausgelöst werden kann:
 
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample6.aspx)]
 
-[![Die modales Fenster angezeigt wird, an der angegebenen position](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
+[![das modale Popup an der angegebenen Position angezeigt wird.](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
 
-Die modales Fenster angezeigt wird, an der angegebenen Position ([klicken Sie, um das Bild in voller Größe anzeigen](positioning-a-modalpopup-cs/_static/image3.png))
+Das modale Popup Fenster wird an der angegebenen Position angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](positioning-a-modalpopup-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](handling-postbacks-from-a-modalpopup-cs.md)

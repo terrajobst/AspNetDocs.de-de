@@ -1,168 +1,168 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
-title: Mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt (VB) | Microsoft-Dokumentation
+title: Mehrere Inhalts Platzhalter und Standard Inhalt (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Untersucht, wie eine Masterseite mehrere Content Platzhalter hinzugefügt sowie Standardinhalt die Content Platzhalter angeben.
+description: Hier wird erläutert, wie Sie einer Master Seite mehrere Inhaltsort-Inhaber hinzufügen und wie Sie Standard Inhalt in den Besitzern für Inhalts Platz angeben.
 ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 02d94c340f79299beae77531e87f5c0d65902720
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b71cacb143094dcc5cf483c69c2fcc0f10def51c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126892"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74628507"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-vb"></a>Mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip) oder [PDF herunterladen](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
 
-> Untersucht, wie eine Masterseite mehrere Content Platzhalter hinzugefügt sowie Standardinhalt die Content Platzhalter angeben.
+> Hier wird erläutert, wie Sie einer Master Seite mehrere Inhaltsort-Inhaber hinzufügen und wie Sie Standard Inhalt in den Besitzern für Inhalts Platz angeben.
 
 ## <a name="introduction"></a>Einführung
 
-Im vorherigen Tutorial wurde beschrieben, wie Masterseiten aktivieren ASP.NET-Entwicklern ein einheitliches Layout für die gesamte Website zu erstellen. Masterseiten definieren Markup, das in allen die Inhaltsseiten und Regionen, die pro Seite von Seite angepasst werden. Im vorherigen Tutorial erstellt es eine einfache Masterseite (`Site.master`) und zwei Inhaltsseiten (`Default.aspx` und `About.aspx`). Unsere Masterseite Bestand aus zwei ContentPlaceHolder-Steuerelemente, die mit dem Namen `head` und `MainContent`, wurden die befindet, der `<head>` Element und das Web Form bzw. Während die Inhaltsseiten jedes zwei Inhaltssteuerelemente hatten, nur angegebene Markup für den Endpunkt für `MainContent`.
+Im vorherigen Tutorial wurde erläutert, wie die Masterseiten ASP.NET-Entwicklern ermöglichen, ein konsistentes, Site weites Layout zu erstellen. Master Seiten definieren sowohl Markup, das allen Inhaltsseiten und-Regionen gemeinsam ist, die seitenweise anpassbar sind. Im vorherigen Tutorial haben wir eine einfache Master Seite (`Site.master`) und zwei Inhaltsseiten (`Default.aspx` und `About.aspx`) erstellt. Unsere Master Seite umfasste zwei Inhalts Platzhalter namens "`head`" und "`MainContent`", die sich im `<head>`-Element bzw. im Webformular befanden. Obwohl die Inhaltsseiten jeweils über zwei Inhalts Steuerelemente verfügten, haben wir nur Markup für das `MainContent`angegeben, das den entspricht.
 
-Wie durch die beiden ContentPlaceHolder-Steuerelemente in belegt `Site.master`, eine Masterseite möglicherweise mehrere ContentPlaceHolder-Steuerelemente enthalten. Die Masterseite kann, Standard-Markup für die ContentPlaceHolder-Steuerelemente angeben. Eine Inhaltsseite, kann dann optional ein eigenes Markup angeben oder das Standardmarkup. In diesem Tutorial haben wir sehen Sie sich mit mehreren ContentControl-Elemente auf der Masterseite und Informationen zum Standard-Markup in die ContentPlaceHolder-Steuerelemente zu definieren.
+Wie von den beiden contentplachalter-Steuerelementen in `Site.master`gezeigt, kann eine Master Seite mehrere Content-Platzhalter enthalten. Darüber hinaus kann auf der Master Seite Standard Markup für die contentplachalter-Steuerelemente angegeben werden. Eine Inhaltsseite kann dann optional ein eigenes Markup angeben oder das Standard Markup verwenden. In diesem Tutorial betrachten wir die Verwendung mehrerer Inhalts Steuerelemente auf der Master Seite und erfahren, wie Sie das Standard Markup in den contentplachalter-Steuerelementen definieren.
 
-## <a name="step-1-adding-additional-contentplaceholder-controls-to-the-master-page"></a>Schritt 1: Hinzufügen von zusätzlichen ContentPlaceHolder-Steuerelemente auf der Masterseite
+## <a name="step-1-adding-additional-contentplaceholder-controls-to-the-master-page"></a>Schritt 1: Hinzufügen zusätzlicher contentplachalter-Steuerelemente zur Master Seite
 
-Viele Entwürfe der Website enthält mehrere Bereiche auf dem Bildschirm, die pro Seite von Seite angepasst werden. `Site.master`, die Masterseite, die wir im vorherigen Tutorial erstellt haben, enthält ein einzelnes ContentPlaceHolder-Objekt in das Webformular mit dem Namen `MainContent`. Insbesondere diese ContentPlaceHolder befindet sich in der `mainContent` `<div>` Element.
+Viele Website Entwürfe enthalten mehrere Bereiche auf dem Bildschirm, die seitenweise angepasst werden. `Site.master`ist die Master Seite, die wir im vorherigen Tutorial erstellt haben, im Webformular mit dem Namen `MainContent`einen einzelnen contentplachalter enthalten. Insbesondere befindet sich dieser contentplachalter innerhalb des `mainContent` `<div>`-Elements.
 
-Abbildung 1 zeigt `Default.aspx` über einen Browser angezeigt. Die Region, die rot markiert ist, die seitenspezifische-Markup für `MainContent`.
+Abbildung 1 zeigt `Default.aspx`, wenn Sie in einem Browser angezeigt werden. Der rot Eingekreiste Bereich ist das Seiten spezifische Markup, das `MainContent`entspricht.
 
-[![Der Eingekreiste Bereich zeigt den Bereich pro Seite von Seite derzeit anpassbare](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
+[![der kreisförmige Bereich den aktuell anpassbaren Bereich auf seitenweise anzeigt](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
 
-**Abbildung 01**: Die Region mit Kreis zeigt der Bereich als derzeit anpassbare pro Seite von Seite ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image3.png))
+**Abbildung 01**: der Kreisbereich zeigt den aktuell anpassbaren Bereich auf seitenweise an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image3.png)).
 
-Stellen Sie sich vor, dass neben der Region, die in Abbildung 1 dargestellt, wir auch seitenspezifische-Elemente auf der linken Spalte unter die Lektionen und Nachrichten hinzuzufügen müssen Abschnitte. Zu diesem Zweck fügen wir ein weiteres ContentPlaceHolder-Steuerelement hinzu, auf die Masterseite. Um folgen zu können, öffnen Sie die `Site.master` Masterseite in Visual Web Developer, und ziehen Sie dann ein ContentPlaceHolder-Steuerelement aus der Toolbox in den Designer nach dem Abschnitt "News". Legen Sie die ContentPlaceHolder `ID` zu `LeftColumnContent`.
+Stellen Sie sich vor, dass neben der in Abbildung 1 gezeigten Region auch Seiten spezifische Elemente in der linken Spalte unterhalb der Lektionen und der Nachrichten Abschnitte hinzugefügt werden müssen. Um dies zu erreichen, fügen Sie der Master Seite ein weiteres contentplachalter-Steuerelement hinzu. Öffnen Sie hierzu die `Site.master` Master Seite in Visual Web Developer, und ziehen Sie dann ein contentplachalter-Steuerelement aus der Toolbox auf den Designer nach dem News-Abschnitt. Legen Sie den `ID` contentplachalter auf `LeftColumnContent`fest.
 
-[![Ein ContentPlaceHolder-Steuerelement auf der linken Spalte der Masterseite hinzufügen](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
+[![der linken Spalte der Master Seite ein contentplachalter-Steuerelement hinzufügen](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
 
-**Abbildung 02**: Ein ContentPlaceHolder-Steuerelement auf der Masterseite linke Spalte hinzufügen ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image6.png))
+**Abbildung 02**: Hinzufügen eines contentplachalter-Steuer Elements zur linken Spalte der Master Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image6.png))
 
-Durch das Hinzufügen der `LeftColumnContent` ContentPlaceHolder der Masterseite, wir können definieren, Inhalt für diese Region pro Seite von Seite indem einen Inhalt Steuerelemente auf der Seite, deren `ContentPlaceHolderID` nastaven NA hodnotu `LeftColumnContent`. Untersuchen wir diesen Prozess in Schritt2.
+Durch das Hinzufügen des `LeftColumnContent` contentplachalter zur Master Seite können wir Inhalt für diesen Bereich seitenweise definieren, indem wir ein Inhalts Steuerelement auf der Seite einschließen, dessen `ContentPlaceHolderID` auf `LeftColumnContent`festgelegt ist. Dieser Vorgang wird in Schritt 2 untersucht.
 
-## <a name="step-2-defining-content-for-the-new-contentplaceholder-in-the-content-pages"></a>Schritt 2: Definieren von Inhalt für die neue ContentPlaceHolder auf die Inhaltsseiten
+## <a name="step-2-defining-content-for-the-new-contentplaceholder-in-the-content-pages"></a>Schritt 2: Definieren von Inhalten für den neuen contentplachalter auf den Inhaltsseiten
 
-Wenn Sie eine neue Seite auf der Website hinzufügen, erstellt Visual Web Developer automatisch einen Inhalt Steuerelement auf der Seite für die einzelnen ContentPlaceHolder in der ausgewählten Masterseite. Hinzugefügt müssen eine der `LeftColumnContent` ContentPlaceHolder unserer master-Seite in Schritt 1, neue ASP.NET Pages wird jetzt haben Sie drei ContentControl-Elemente.
+Wenn Sie der Website eine neue Inhaltsseite hinzufügen, erstellt Visual Web Developer automatisch ein Inhalts Steuerelement auf der Seite für jeden contentplachalter auf der ausgewählten Master Seite. Nachdem Sie der Master Seite in Schritt 1 einen `LeftColumnContent` contentplachalter hinzugefügt haben, haben neue ASP.NET-Seiten nun drei Inhalts Steuerelemente.
 
-Um dies zu veranschaulichen, fügen Sie eine neue Seite in das Stammverzeichnis, das mit dem Namen `MultipleContentPlaceHolders.aspx` , gebunden ist, um die `Site.master` Masterseite. Mit dem folgenden deklaratives Markup, erstellt Visual Web Developer auf dieser Seite:
+Um dies zu veranschaulichen, fügen Sie dem Stammverzeichnis eine neue Inhaltsseite mit dem Namen `MultipleContentPlaceHolders.aspx` hinzu, die an die `Site.master` Master Seite gebunden ist. Visual Web Developer erstellt diese Seite mit dem folgenden deklarativen Markup:
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample1.aspx)]
 
-Geben Sie einige Inhalte in das Inhaltssteuerelement verweisen auf die `MainContent` ContentPlaceHolder-Steuerelemente (`Content2`). Fügen Sie das folgende Markup zu der `Content3` Inhaltssteuerelement (das auf die `LeftColumnContent` ContentPlaceHolder):
+Geben Sie einige Inhalte in das Inhalts Steuerelement ein, die auf die `MainContent` contentplatzhalter (`Content2`) verweisen. Fügen Sie als nächstes das folgende Markup zum `Content3` Content-Steuerelement hinzu (das auf den `LeftColumnContent` contentplachalter verweist):
 
 [!code-html[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample2.html)]
 
-Nach dem Hinzufügen dieses Markup, finden Sie auf der Seite über einen Browser. Wie in Abbildung 3 gezeigt, wird das Markup in platziert die `Content3` Inhaltssteuerelement wird angezeigt, in der linken Spalte unter dem Abschnitt "News" (rot markiert). Das Markup in platziert `Content2` wird rechts auf der Seite (blau markiert) angezeigt.
+Nachdem Sie dieses Markup hinzugefügt haben, besuchen Sie die Seite über einen Browser. Wie in Abbildung 3 gezeigt, wird das im `Content3` Inhalts Steuerelement angezeigte Markup in der linken Spalte unterhalb des Abschnitts "News" angezeigt (rot). Das in `Content2` platzierte Markup wird im rechten Bereich der Seite angezeigt (in blau).
 
-[![Die linke Spalte enthält jetzt seitenspezifische Inhalte unter dem Abschnitt "News"](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
+[![in der linken Spalte wird nun Seiten spezifischer Inhalt unterhalb des Abschnitts "News" angezeigt.](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
 
-**Abbildung 03**: Der linken Spalte jetzt enthält seitenspezifische Inhalte unter der Abschnitt "News" ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
+**Abbildung 03**: die linke Spalte enthält jetzt Seiten spezifischen Inhalt unterhalb des Abschnitts "News" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
 
-### <a name="defining-content-in-existing-content-pages"></a>Definieren von Inhalt in bestehenden Inhaltsseiten
+### <a name="defining-content-in-existing-content-pages"></a>Definieren von Inhalten in vorhandenen Inhaltsseiten
 
-Erstellen eine neue Seite automatisch umfasst das ContentPlaceHolder-Steuerelement, das in Schritt 1 hinzugefügt wurde. Aber unsere zwei vorhandenen Inhaltsseiten - `About.aspx` und `Default.aspx` -ein ContentControl-Element für keinen der `LeftColumnContent` ContentPlaceHolder. Zum Angeben von Inhalt für diese ContentPlaceHolder in diese beiden vorhandenen Seiten müssen wir ein Inhaltssteuerelement selbst hinzufügen.
+Beim Erstellen einer neuen Inhaltsseite wird automatisch das contentplachalter-Steuerelement integriert, das in Schritt 1 hinzugefügt wurde. Unsere beiden vorhandenen Inhaltsseiten-`About.aspx` und `Default.aspx` haben jedoch kein Inhalts Steuerelement für den `LeftColumnContent` contentplachalter. Um Inhalt für diesen contentplachalter in diesen beiden vorhandenen Seiten anzugeben, müssen wir ein Inhalts Steuerelement selbst hinzufügen.
 
-Im Gegensatz zu den meisten Steuerelementen für ASP.NET Web schließt Visual Web Developer-Toolbox kein Inhaltssteuerelement-Element. Wir können manuell in das Inhaltssteuerelement deklarativem Markup eingeben, in der Datenquellensicht an, aber ein schneller und einfacher Ansatz ist die Verwendung von der Entwurfsansicht. Öffnen der `About.aspx` Seite, und wechseln Sie zur Entwurfsansicht. Wie in Abbildung 4 dargestellt, die `LeftColumnContent` ContentPlaceHolder wird in der Entwurfsansicht angezeigt, wenn Sie den Mauszeiger darüber, liest des angezeigte Titels: "LeftColumnContent (Master)." Die Aufnahme der "Master" im Titel Gibt an, dass keine Inhaltssteuerelement, das auf der Seite für diese ContentPlaceHolder definiert. Wenn ein ContentControl-Element, für die ContentPlaceHolder, wie im Fall für vorhanden `MainContent`, der Titel wird gelesen: "*ContentPlaceHolderID* (Benutzerdefiniert)."
+Im Gegensatz zu den meisten ASP.net-websteuer Elementen enthält die Visual Web Developer-Toolbox kein Inhalts Steuerelement. Wir können das deklarative Markup des Inhalts Steuer Elements manuell in die Quell Ansicht eingeben, aber ein einfacherer und schnellerer Ansatz ist die Verwendung der Designansicht. Öffnen Sie die Seite `About.aspx`, und wechseln Sie zum Designansicht. Wie Abbildung 4 zeigt, wird der `LeftColumnContent` contentplachalter in der Designansicht angezeigt. Wenn Sie den Mauszeiger darüber bewegen, wird der Titel wie folgt angezeigt: "leftcolumncontent (Master)". Die Einbindung von "Master" in den Titel gibt an, dass auf der Seite für diesen contentplachalter kein Inhalts Steuerelement definiert ist. Wenn ein Inhalts Steuerelement für den contentplachalter vorhanden ist, wie im Fall von `MainContent`, liest der Titel Folgendes: "*ContentPlaceHolderID* (Custom)".
 
-Hinzufügen ein Content-Steuerelements für die `LeftColumnContent` ContentPlaceHolder zu `About.aspx`, erweitern Sie ContentPlaceHolders-Smarttag, und klicken Sie auf den Link erstellen Sie benutzerdefinierte Content.
+Wenn Sie ein Inhalts Steuerelement für den `LeftColumnContent` contentplachalter hinzufügen `About.aspx`möchten, erweitern Sie das Smarttag contentplachalter, und klicken Sie auf den Link benutzerdefinierten Inhalt erstellen.
 
-[![Die Entwurfsansicht für About.aspx zeigt die LeftColumnContent ContentPlaceHolder](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
+[![die Entwurfs Ansicht für "about. aspx" den leftcolumncontent-contentplachalter anzeigt.](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
 
-**Abbildung 04**: Die Entwurfsansicht für `About.aspx` zeigt die `LeftColumnContent` ContentPlaceHolder ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image12.png))
+**Abbildung 04**: in der Entwurfs Ansicht für `About.aspx` wird die `LeftColumnContent` contentplachalter angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image12.png))
 
-Auf den Hyperlink benutzerdefinierten Inhalt erstellen, generiert die erforderlichen Inhaltssteuerelement auf der Seite und legt seine `ContentPlaceHolderID` Eigenschaft, um die ContentPlaceHolder `ID`. Klicken Sie beispielsweise den Link, um benutzerdefinierten Inhalt erstellen `LeftColumnContent` -Region in `About.aspx` folgende deklarative Markup auf der Seite hinzugefügt:
+Wenn Sie auf den Link benutzerdefinierten Inhalt erstellen klicken, wird das erforderliche Inhalts Steuerelement auf der Seite generiert und seine `ContentPlaceHolderID`-Eigenschaft auf die `ID`des contentplachalters festgelegt Wenn Sie z. b. auf den Link benutzerdefinierten Inhalt erstellen für `LeftColumnContent` Region in `About.aspx` klicken, wird der Seite das folgende deklarative Markup hinzugefügt:
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample3.aspx)]
 
-### <a name="omitting-content-controls"></a>Das Auslassen von Inhaltssteuerelementen
+### <a name="omitting-content-controls"></a>Weglassen von Inhalts Steuerelementen
 
-ASP.NET erforderlich nicht, dass alle Inhaltsseiten für jede in der Masterseite definierte ContentPlaceHolder Inhaltssteuerelemente enthalten sind. Wenn ein ContentControl-Element ausgelassen wird, verwendet das ASP.NET-Modul das Markup in der ContentPlaceHolder auf der Masterseite definiert. Dieses Markup wird als die ContentPlaceHolder bezeichnet *Inhalt standardmäßig* und ist nützlich in Szenarien, in dem der Inhalt für eine Region für die meisten Seiten, üblich ist, muss jedoch für eine kleine Anzahl von Seiten angepasst werden. Schritt 3 untersucht die Angabe der Standardinhalt der Masterseite.
+ASP.net erfordert nicht, dass alle Inhaltsseiten Inhalts Steuerelemente für jeden und jeden contentplachalter enthalten, der auf der Master Seite definiert ist. Wenn ein Inhalts Steuerelement weggelassen wird, verwendet die ASP.net-Engine das innerhalb des contentplachalter-Elements auf der Master Seite definierte Markup. Dieses Markup wird als *Standard Inhalt* von contentplachalter bezeichnet und ist in Szenarios nützlich, in denen der Inhalt für eine bestimmte Region in den meisten Seiten üblich ist, aber für eine kleine Anzahl von Seiten angepasst werden muss. In Schritt 3 wird das Angeben von Standard Inhalten auf der Master Seite untersucht.
 
-Derzeit `Default.aspx` enthält zwei Inhaltssteuerelemente für die `head` und `MainContent` ContentPlaceHolder-Steuerelemente, er verfügt nicht über ein ContentControl-Element für `LeftColumnContent`. Daher, wenn `Default.aspx` wird gerendert, die `LeftColumnContent` ContentPlaceHolder Standardinhalt wird verwendet. Da wir noch standardmäßigen Inhalt für diese ContentPlaceHolder definieren müssen, ist das Endergebnis, dass kein Markup für diese Region ausgegeben wird. Um dieses Verhalten zu überprüfen, finden Sie unter `Default.aspx` über einen Browser. Wie in Abbildung 5 gezeigt, wird kein Markup in der linken Spalte unter dem Abschnitt "News" ausgegeben.
+Derzeit enthält `Default.aspx` zwei Inhalts Steuerelemente für die `head` und `MainContent` contentplatzhalter. Sie verfügt über kein Inhalts Steuerelement für `LeftColumnContent`. Folglich wird, wenn `Default.aspx` gerendert wird, der Standard Inhalt `LeftColumnContent` contentplachalter verwendet. Da wir noch keinen Standard Inhalt für diesen contentplachalter definieren müssen, ist der Nettoeffekt, dass für diesen Bereich kein Markup ausgegeben wird. Um dieses Verhalten zu überprüfen, besuchen Sie `Default.aspx` über einen Browser. Wie in Abbildung 5 gezeigt, wird in der linken Spalte unterhalb des News-Abschnitts kein Markup ausgegeben.
 
-[![Kein Inhalt ist für die LeftColumnContent ContentPlaceHolder gerendert.](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
+[![kein Inhalt für den leftcolumncontent-contentplachalter gerendert wird.](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
 
-**Abbildung 05**: Kein Inhalt gerendert wird, für die `LeftColumnContent` ContentPlaceHolder ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image15.png))
+**Abbildung 05**: Es wird kein Inhalt für den `LeftColumnContent` contentplachalter gerendert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image15.png))
 
-## <a name="step-3-specifying-default-content-in-the-master-page"></a>Schritt 3: Angeben des standardmäßigen Inhalt auf der Masterseite
+## <a name="step-3-specifying-default-content-in-the-master-page"></a>Schritt 3: Angeben von Standard Inhalten auf der Master Seite
 
-Einige Websitedesigns gehören eine Region an, deren Inhalt für alle Seiten der Website, abgesehen von ein oder zwei Ausnahmen identisch ist. Erwägen Sie eine Website, die Benutzerkonten unterstützt. Ein solcher Standort erfordert eine Anmeldeseite, in denen Besucher ihre Anmeldeinformationen zum Signieren der Website eingegeben werden können. Um den Anmeldevorgang zu beschleunigen, können die Website-Designer Benutzername und Kennwort Textfelder in der oberen linken Ecke jeder Seite können Benutzer sich anmelden, ohne explizit für die Anmeldeseite finden Sie unter enthalten. Diese Textfelder Benutzername und Kennwort in den meisten Seiten hilfreich sind, sind redundante in die Anmeldeseite, in die Textfelder für die Anmeldeinformationen des Benutzers bereits enthält.
+Einige Website Entwürfe enthalten eine Region, deren Inhalt für alle Seiten auf der Website identisch ist, mit Ausnahme von einer oder zwei Ausnahmen. Angenommen, eine Website unterstützt Benutzerkonten. Eine solche Website erfordert eine Anmeldeseite, auf der Besucher Ihre Anmelde Informationen eingeben können, um sich bei der Website anzumelden. Um den Anmeldevorgang zu beschleunigen, können die Website-Designer in der linken oberen Ecke jeder Seite Benutzername-und Kenn Wort Textfelder einschließen, damit Benutzer sich anmelden können, ohne die Anmeldeseite explizit besuchen zu müssen. Obwohl diese Textfelder für Benutzername und Kennwort auf den meisten Seiten hilfreich sind, sind Sie auf der Anmeldeseite redundant, die bereits Textfelder für die Anmelde Informationen des Benutzers enthält.
 
-Um diesen Entwurf zu implementieren, können Sie ein ContentPlaceHolder-Steuerelement in der oberen linken Ecke der Masterseite erstellen. Jede Seite, die erforderlich, um die Textfelder "Benutzername und Kennwort" ein in der oberen linken Ecke angezeigt würde erstellen ein ContentControl-Element für diese ContentPlaceHolder und fügen die erforderliche Schnittstelle. Die Anmeldeseite, auf der anderen Seite würde entweder ein ContentControl-Element für dieses ContentPlaceHolder hinzufügen lassen, oder erstellen Sie würden einen Inhalt Steuerelement kein Markup definiert. Der Nachteil dieses Ansatzes ist, denken Sie daran, die Textfelder "Benutzername und Kennwort" ein zu jeder Seite hinzuzufügen, die an den Standort (mit Ausnahme der Anmeldeseite) hinzugefügt werden müssen. Dies ist zwangsläufig zu Problemen. Wir wahrscheinlich vergessen, die diese Textfelder auf einer Seite oder zwei hinzuzufügen oder, schlimmer noch, wir möglicherweise implementiert die Schnittstelle nicht ordnungsgemäß (möglicherweise nur ein Textfeld anstelle von zwei hinzufügen).
+Um diesen Entwurf zu implementieren, können Sie in der oberen linken Ecke der Master Seite ein contentplachalter-Steuerelement erstellen. Jede Seite, die zum Anzeigen der Textfelder für Benutzername und Kennwort in der oberen linken Ecke benötigt wird, würde ein Inhalts Steuerelement für diesen contentplachalter erstellen und die erforderliche Schnittstelle hinzufügen. Die Anmeldeseite hingegen würde entweder das Hinzufügen eines Inhalts Steuer Elements für diesen contentplachalter weglassen oder ein Inhalts Steuerelement ohne definiertes Markup erstellen. Der Nachteil dieses Ansatzes besteht darin, dass Sie die Textfelder "username" und "Password" allen Seiten hinzufügen müssen, die der Website hinzugefügt werden (mit Ausnahme der Anmeldeseite). Dabei werden Probleme gefordert. Wir sind davon auszugehen, dass Sie diese Textfelder zu einer Seite hinzufügen können, oder es ist nicht möglich, die Schnittstelle ordnungsgemäß zu implementieren (möglicherweise wird nur ein Textfeld anstelle von zwei hinzugefügt).
 
-Eine bessere Lösung ist die Textfelder "Benutzername und Kennwort" ein als ContentPlaceHolders-Standardinhalt definieren. Auf diese Weise müssen wir nur dieses Standardinhalt in diese Seiten zu überschreiben, die nicht die Textfelder "Benutzername und Kennwort" ein angezeigt (die Anmeldeseite, zum Beispiel). Zum Angeben von Standardinhalt für ein ContentPlaceHolder-Steuerelement zu veranschaulichen, die gerade beschriebenen Szenarios implementieren.
+Eine bessere Lösung besteht darin, die Textfelder Benutzername und Kennwort als Standard Inhalt des contentplachalter-Steuerelemente zu definieren. Auf diese Weise müssen wir diese Standard Inhalte nur auf den wenigen Seiten außer Kraft setzen, die nicht die Textfelder "username" und "Password" (z. b. die Anmeldeseite) anzeigen. Um die Angabe von Standard Inhalten für ein contentplachalter-Steuerelement zu veranschaulichen, implementieren wir das soeben erörterte Szenario.
 
 > [!NOTE]
-> Der Rest dieses Tutorials aktualisiert unsere Website, um eine Schnittstelle für die Anmeldung in der linken Spalte für alle Seiten, sondern die Anmeldeseite enthalten. In diesem Tutorial untersucht jedoch nicht die Website zur Unterstützung von Benutzerkonten zu konfigurieren. Weitere Informationen zu diesem Thema finden Sie in meinem [Formular-Authentifizierung, Autorisierung, Benutzerkonten und Rollen](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md) Tutorials.
+> Im restlichen Teil dieses Tutorials wird unsere Website aktualisiert, sodass Sie in der linken Spalte eine Anmelde Schnittstelle für alle Seiten, aber die Anmeldeseite enthält. In diesem Tutorial wird jedoch nicht untersucht, wie Sie die Website für die Unterstützung von Benutzerkonten konfigurieren. Weitere Informationen zu diesem Thema finden Sie in den Tutorials meine [Formular Authentifizierung, Autorisierung, Benutzerkonten und Rollen](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md) .
 
-### <a name="adding-a-contentplaceholder-and-specifying-its-default-content"></a>Ein ContentPlaceHolder-Objekt und geben Sie den Standardinhalt
+### <a name="adding-a-contentplaceholder-and-specifying-its-default-content"></a>Hinzufügen eines contentplachalter-und angeben seines Standard Inhalts
 
-Öffnen der `Site.master` Masterseite, und fügen Sie das folgende Markup auf der linken Spalte zwischen die `DateDisplay` Abschnitt Bezeichnung und Lektionen:
+Öffnen Sie die Seite `Site.master` Master, und fügen Sie der linken Spalte zwischen der `DateDisplay` Bezeichnung und dem Abschnitt Lektionen das folgende Markup hinzu:
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample4.aspx)]
 
-Nach dem Hinzufügen dieses Markup sollte die Entwurfsansicht für die Masterseite in Abbildung 6 ähneln.
+Nachdem Sie dieses Markup hinzugefügt haben, sollte die Designansicht der Master Seite in etwa wie in Abbildung 6 aussehen.
 
-[![Die Master-Seite enthält ein Anmeldesteuerelement](multiple-contentplaceholders-and-default-content-vb/_static/image17.png)](multiple-contentplaceholders-and-default-content-vb/_static/image16.png)
+[![die Master Seite ein Anmelde Steuerelement enthält.](multiple-contentplaceholders-and-default-content-vb/_static/image17.png)](multiple-contentplaceholders-and-default-content-vb/_static/image16.png)
 
-**Abbildung 06**: Die Masterseite enthält ein Anmeldesteuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image18.png))
+**Abbildung 06**: die Master Seite enthält ein Anmelde Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image18.png))
 
-Diese ContentPlaceHolder, `QuickLoginUI`, verfügt über ein Login-Steuerelement als Inhalt standardmäßig. Das Anmeldesteuerelement zeigt eine Benutzeroberfläche, die der Benutzer seinen Benutzernamen und Kennwort sowie eine Schaltfläche "Anmelden" auffordert. Nach dem Klicken auf die Schaltfläche "Anmelden", überprüft das Anmeldesteuerelement intern die Anmeldeinformationen des Benutzers anhand der Membership-API. Um dieses Steuerelement für die Anmeldung in der Praxis verwenden zu können, müssen Sie Sie dann Ihren Standort Gruppenmitgliedschaft konfigurieren. In diesem Thema ist nicht Gegenstand dieses Lernprogramms; finden Sie in meinem [Formular-Authentifizierung, Autorisierung, Benutzerkonten und Rollen](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md) Lernprogramme für Weitere Informationen zum Erstellen einer Web-Anwendung, die Benutzerkonten unterstützt.
+Dieser contentplachalter (`QuickLoginUI`) verfügt über ein Login-websteuer Element als Standard Inhalt. Das-Anmelde Steuerelement zeigt eine Benutzeroberfläche an, die den Benutzer zur Eingabe des Benutzernamens und Kennworts zusammen mit einer Anmelde Schaltfläche auffordert. Nach dem Klicken auf die Schaltfläche Anmelden überprüft das Anmelde Steuerelement intern die Anmelde Informationen des Benutzers anhand der Mitgliedschafts-API. Um dieses Anmelde Steuerelement in der Praxis verwenden zu können, müssen Sie Ihren Standort für die Verwendung der Mitgliedschaft konfigurieren. Dieses Thema geht über den Rahmen dieses Tutorials hinaus. Weitere Informationen zum Entwickeln einer Webanwendung, die Benutzerkonten unterstützt, finden Sie in den Tutorials zur [Formular Authentifizierung, Autorisierung, Benutzerkonten und Rollen](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md) .
 
-Des Anmeldesteuerelement Verhalten oder die Darstellung anpassen können. Ich habe zwei seiner Eigenschaften eingerichtet: `TitleText` und `FailureAction`. Die `TitleText` Eigenschaftswert, der Standardeinstellungen auf "Log In" wird am oberen Rand des Steuerelements-Benutzeroberfläche angezeigt. Ich habe diese Eigenschaft eingerichtet werden, damit es den Text "Sign In" als anzeigt ein `<h3>` Element. Die `FailureAction` Eigenschaft gibt an, was zu tun ist, wenn die Anmeldeinformationen des Benutzers ungültig sind. Wird standardmäßig der Wert `Refresh`, belässt den Benutzer auf derselben Seite und zeigt eine Fehlermeldung, in dem Login-Steuerelement. Ich habe es geändert `RedirectToLoginPage`, der den Benutzer auf die Anmeldeseite im Fall von ungültigen Anmeldeinformationen sendet. Ich ziehe den Benutzer zur Anmeldeseite senden, wenn ein Benutzer versucht, für die Anmeldung in eine andere Seite jedoch ein Fehler auftritt, da die Anmeldeseite enthalten kann, zusätzliche Anweisungen und Optionen, die nicht einfach in der linken Spalte passt. Beispielsweise enthalten unter Umständen die Anmeldeseite um ein vergessenes Kennwort abzurufen oder ein neues Konto erstellen.
+Sie können das Verhalten oder die Darstellung des Anmeldungs Steuer Elements anpassen. Ich habe zwei Eigenschaften festgelegt: `TitleText` und `FailureAction`. Der `TitleText`-Eigenschafts Wert, der standardmäßig auf "Anmelden" festgelegt wird, wird oben auf der Benutzeroberfläche des Steuer Elements angezeigt. Ich habe diese Eigenschaft so festgelegt, dass Sie den Text "Sign in" als `<h3>`-Element anzeigt. Die `FailureAction`-Eigenschaft gibt an, was geschehen soll, wenn die Anmelde Informationen des Benutzers ungültig sind. Standardmäßig wird der Wert `Refresh`verwendet, der den Benutzer auf derselben Seite verlässt und eine Fehlermeldung im Anmelde Steuerelement anzeigt. Ich habe Sie in "`RedirectToLoginPage`" geändert, wodurch der Benutzer im Falle ungültiger Anmelde Informationen an die Anmeldeseite gesendet wird. Ich ziehe es vor, den Benutzer an die Anmeldeseite zu senden, wenn ein Benutzer versucht, sich auf einer anderen Seite anzumelden, aber fehlschlägt, da die Anmeldeseite zusätzliche Anweisungen und Optionen enthalten kann, die nicht problemlos in die linke Spalte passen. Beispielsweise kann die Anmeldeseite Optionen zum Abrufen eines vergessenen Kennworts oder zum Erstellen eines neuen Kontos enthalten.
 
-### <a name="creating-the-login-page-and-overriding-the-default-content"></a>Erstellen die Anmeldeseite, und überschreiben den standardmäßigen Inhalt
+### <a name="creating-the-login-page-and-overriding-the-default-content"></a>Erstellen der Anmeldeseite und Überschreiben der Standard Inhalte
 
-Im nächsten Schritt werden mit die Masterseite abgeschlossen die Anmeldeseite erstellen. Hinzufügen eine ASP.NET-Seite mit dem Namen Ihrer Website-Stammverzeichnis `Login.aspx`, binden an die `Site.master` Masterseite. Auf diese Weise wird eine Seite mit vier Content-Steuerelementen erstellt, eine für jede der ContentPlaceHolder-Steuerelemente in definierten `Site.master`.
+Wenn die Master Seite fertiggestellt ist, ist der nächste Schritt das Erstellen der Anmeldeseite. Fügen Sie dem Stammverzeichnis Ihrer Website eine ASP.NET-Seite mit dem Namen `Login.aspx`hinzu, und binden Sie Sie an die `Site.master` Master Seite. Dadurch wird eine Seite mit vier Inhalts Steuerelementen erstellt, eine für jeden der in `Site.master`definierten contentplatzhalter.
 
-Fügen Sie ein Anmeldesteuerelement, um die `MainContent` Inhaltssteuerelement. Ebenso können Sie Inhalte zum Hinzufügen der `LeftColumnContent` Region. Allerdings stellen Sie sicher, dass das Steuerelement für die `QuickLoginUI` ContentPlaceHolder leer. Dadurch wird sichergestellt, dass die Anmeldung Steuerelement nicht in der linken Spalte der Anmeldeseite angezeigt wird.
+Fügen Sie dem `MainContent`-Inhalts Steuerelement ein Anmelde Steuerelement hinzu. Ebenso können Sie dem `LeftColumnContent` Bereich Inhalte hinzufügen. Achten Sie jedoch darauf, das Inhalts Steuerelement für den `QuickLoginUI` contentplachalter leer zu lassen. Dadurch wird sichergestellt, dass das Anmelde Steuerelement nicht in der linken Spalte der Anmeldeseite angezeigt wird.
 
-Nach dem Definieren des Inhalts für die `MainContent` und `LeftColumnContent` Regionen deklaratives Markup für die Anmeldeseite sollte etwa wie folgt aussehen:
+Nachdem Sie den Inhalt für die `MainContent`-und `LeftColumnContent` Regionen definiert haben, sollte das deklarative Markup Ihrer Anmeldeseite in etwa wie folgt aussehen:
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample5.aspx)]
 
-Abbildung 7 zeigt diese Seite, wenn Sie über einen Browser angezeigt. Da diese Seite gibt an, ein ContentControl-Element für die `QuickLoginUI` ContentPlaceHolder, er überschreibt den standardmäßigen Inhalt der Masterseite angegeben. Das Endergebnis ist, dass die Login-Steuerelement in die Masterseite Design angezeigt, die Ansicht (siehe Abbildung 6) nicht auf dieser Seite gerendert wird.
+In Abbildung 7 wird diese Seite angezeigt, wenn Sie in einem Browser angezeigt wird. Da auf dieser Seite ein Inhalts Steuerelement für den `QuickLoginUI` contentplachalter festgelegt wird, wird der auf der Master Seite angegebene Standard Inhalt überschrieben. Der Nettoeffekt ist, dass das im Designansicht der Master Seite angezeigte Anmelde Steuerelement (siehe Abbildung 6) auf dieser Seite nicht gerendert wird.
 
-[![Die Anmeldeseite Represses Standardinhalt der QuickLoginUI ContentPlaceHolder des](multiple-contentplaceholders-and-default-content-vb/_static/image20.png)](multiple-contentplaceholders-and-default-content-vb/_static/image19.png)
+[![die Anmeldeseite den Standard Inhalt von quickloginui-contentplachalter erneut drückt](multiple-contentplaceholders-and-default-content-vb/_static/image20.png)](multiple-contentplaceholders-and-default-content-vb/_static/image19.png)
 
-**Abbildung 07**: Die Login-Seite Represses der `QuickLoginUI` ContentPlaceHolder Standard Content ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image21.png))
+**Abbildung 07**: die Anmeldeseite drückt den Standard Inhalt des `QuickLoginUI` contentplachalter ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image21.png))
 
-### <a name="using-the-default-content-in-new-pages"></a>Verwenden den standardmäßigen Inhalt in neue Seiten
+### <a name="using-the-default-content-in-new-pages"></a>Verwenden des Standard Inhalts auf neuen Seiten
 
-Wir möchten das Steuerelement für die Anmeldung in der linken Spalte für alle Seiten mit Ausnahme der Anmeldeseite angezeigt. Um dies zu erreichen, sollten alle Inhaltsseiten mit Ausnahme der Anmeldeseite ein ContentControl-Element für weglassen der `QuickLoginUI` ContentPlaceHolder. Durch Auslassen eines Inhaltssteuerelements, wird stattdessen ContentPlaceHolders-Standardinhalt verwendet werden.
+Wir möchten das Login-Steuerelement in der linken Spalte für alle Seiten mit Ausnahme der Anmeldeseite anzeigen. Um dies zu erreichen, sollten alle Inhaltsseiten außer der Anmeldeseite ein Inhalts Steuerelement für den `QuickLoginUI` contentplachalter weglassen. Wenn Sie ein Inhalts Steuerelement weglassen, wird stattdessen der Standard Inhalt des contentplachalter-Elements verwendet.
 
-Unsere bestehenden Inhaltsseiten - `Default.aspx`, `About.aspx`, und `MultipleContentPlaceHolders.aspx` -verwenden Sie ein ContentControl-Element für die keine `QuickLoginUI` weil sie erstellt wurden, bevor wir die Masterseite, ContentPlaceHolder-Steuerelement hinzugefügt. Daher müssen diese vorhandenen Seiten nicht aktualisiert werden. Allerdings enthalten neue Seiten, die auf der Website hinzugefügt, ein ContentControl-Element für die `QuickLoginUI` ContentPlaceHolder, in der Standardeinstellung. Aus diesem Grund müssen wir denken Sie daran, entfernen Sie diese Inhaltssteuerelemente jedes Mal, die wir fügen eine neue Seite hinzu, (es sei denn, wir ContentPlaceHolders-Standardinhalt, außer Kraft setzen wie bei der Anmeldeseite möchten).
+Die vorhandenen Inhaltsseiten `Default.aspx`, `About.aspx`und `MultipleContentPlaceHolders.aspx` enthalten kein Inhalts Steuerelement für `QuickLoginUI`, da Sie erstellt wurden, bevor das contentplachalter-Steuerelement der Master Seite hinzugefügt wurde. Daher müssen diese vorhandenen Seiten nicht aktualisiert werden. Neue Seiten, die der Website hinzugefügt werden, enthalten jedoch standardmäßig ein Inhalts Steuerelement für den `QuickLoginUI` contentplachalter. Daher müssen Sie diese Inhalts Steuerelemente jedes Mal entfernen, wenn Sie eine neue Inhaltsseite hinzufügen (es sei denn, wir möchten den Standard Inhalt von contentplachalter überschreiben, wie im Fall der Anmeldeseite).
 
-Um das Steuerelement zu entfernen, Sie können entweder manuell löschen der deklarative Markup aus der Datenquellensicht an oder wählen Sie in die Entwurfsansicht zu sehen, die standardmäßig auf die Master Inhaltslink aus sein Smarttag. Beide Vorgehensweisen entfernt das Steuerelement der Seite auf, und erzeugt, die gleich net wirksam.
+Um das Inhalts Steuerelement zu entfernen, können Sie sein deklaratives Markup entweder manuell aus der Quell Ansicht löschen oder aus dem Designansicht den Link Standard für die Inhalts Verknüpfung des Masters aus dem Smarttag auswählen. Beide Ansätze entfernen das Inhalts Steuerelement aus der Seite und erzeugen denselben Nettoeffekt.
 
-Abbildung 8 zeigt `Default.aspx` über einen Browser angezeigt. Zur Erinnerung: `Default.aspx` hat nur zwei Inhaltssteuerelemente in seiner deklarativen Markup - eines für angegebene `head` und eine für `MainContent`. Als Ergebnis wird der Standardwert für die `LeftColumnContent` und `QuickLoginUI` ContentPlaceHolder-Steuerelemente werden angezeigt.
+Abbildung 8 zeigt `Default.aspx`, wenn Sie in einem Browser angezeigt werden. Beachten Sie, dass `Default.aspx` nur zwei Inhalts Steuerelemente enthält, die im deklarativen Markup angegeben sind: einen für `head` und einen für `MainContent`. Folglich werden die Standard Inhalte für die `LeftColumnContent`-und `QuickLoginUI`-contentplatzhalter angezeigt.
 
-[![Der standardmäßige Inhalt für die LeftColumnContent und QuickLoginUI ContentPlaceHolders werden angezeigt](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
+[![der Standard Inhalt für die contentplatzhalter "leftcolumncontent" und "quickloginui" angezeigt.](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
 
-**Abbildung 08**: Der standardmäßige Inhalt der `LeftColumnContent` und `QuickLoginUI` ContentPlaceHolder-Steuerelemente werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
+**Abbildung 08**: der Standard Inhalt für die `LeftColumnContent`-und `QuickLoginUI`-contentplatzhalter wird angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Eine beliebige Anzahl von ContentPlaceHolder-Steuerelemente auf der Masterseite ermöglicht die Masterseite ASP.NET-Modell. Ist ContentPlaceHolder-Steuerelemente enthalten Standardinhalt, der im Fall ausgegeben wird, dass es kein entsprechendes ist Inhaltssteuerelement in der Seite Inhalt. In diesem Tutorial haben wir gesehen wie zusätzliche ContentPlaceHolder-Steuerelemente in die Masterseite einschließen und definieren Sie ContentControl-Elemente für diese neue ContentPlaceHolder-Steuerelemente in neue und vorhandene ASP.NET-Seiten. Wir haben uns auch an das Angeben von Standardwerten Inhalte in ein ContentPlaceHolder-Objekt, was nützlich in Szenarien, in denen nur eine Minderheit der Seiten anpassen, die andernfalls muss die Inhalte in einer bestimmten Region standardisiert, ist.
+Mit dem ASP.NET-Masterseiten Modell können beliebig viele contentplatzhalter auf der Master Seite angezeigt werden. Außerdem enthalten contentplatzhalter Standard Inhalt, der ausgegeben wird, wenn kein entsprechendes Inhalts Steuerelement auf der Inhaltsseite vorhanden ist. In diesem Tutorial haben Sie erfahren, wie Sie zusätzliche contentplachalter-Steuerelemente in die Master Seite einfügen und Inhalts Steuerelemente für diese neuen Inhalts Platzhalter auf neuen und vorhandenen ASP.NET-Seiten definieren. Außerdem haben wir uns mit der Angabe von Standard Inhalten in einem contentplachalter beschäftigt. Dies ist in Szenarios nützlich, in denen nur eine Minderheit von Seiten den anderweitig standardisierten Inhalt innerhalb einer bestimmten Region anpassen muss.
 
-Im nächsten Tutorial untersucht die `head` ContentPlaceHolder im Detail, wie deklaratives und Programmgesteuertes den Titel, Meta-Tags und anderer HTML-Header pro Seite von Seite zu definieren.
+Im nächsten Tutorial untersuchen wir den `head` contentplachalter ausführlicher und erfahren, wie Sie den Titel, die Meta-Tags und andere HTML-Header auf seitenweise deklarativ und Programm gesteuert definieren.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-### <a name="about-the-author"></a>Der Autor
+### <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer Büchern zu ASP/ASP.NET und Gründer von 4GuysFromRolla.com, arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neuestes Buch heißt [ *Sams Teach selbst ASP.NET 3.5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott erreicht werden kann, zur [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
-### <a name="special-thanks-to"></a>Besonderen Dank an
+### <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Suchi Banerjee. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com).
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Suchi Banerjee. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)ablegen.
 
 > [!div class="step-by-step"]
 > [Zurück](creating-a-site-wide-layout-using-master-pages-vb.md)

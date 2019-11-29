@@ -8,12 +8,12 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 6fcfcda5b95e5844f7d357ac0cbb6d1fd2e215ac
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.openlocfilehash: fb7e76101cbe6a874ddf5b3429ca2dc6d474334b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445770"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74595763"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>XSRF/CSRF-Schutz bei ASP.NET MVC und Web Pages
 
@@ -128,7 +128,7 @@ Bei der Anspruchs basierten Authentifizierung ist hingegen nicht unbedingt die I
 
 Viele bereit Stellungen, die die Anspruchs basierte Authentifizierung verwenden, verwenden insbesondere [Azure-Access Control Service](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx) (ACS). ACS ermöglicht es dem Entwickler, individuelle *Identitäts Anbieter* (z. b. AD FS, den Microsoft-Konto Anbieter, OpenID-Anbieter wie Yahoo! usw.) zu konfigurieren, und die Identitäts Anbieter geben *namens*Bezeichner zurück. Diese namens Bezeichner können personenbezogene Informationen (PII) wie eine e-Mail-Adresse enthalten, oder Sie können anonymisiert werden, wie eine private persönliche ID (PPID). Unabhängig davon, dass das Tupel (Identitäts Anbieter, namens Bezeichner) ausreichend als ein geeignetes Überwachungs Token für einen bestimmten Benutzer fungiert, während Sie die Website durchsucht, kann die ASP.net Web Stack-Laufzeit das Tupel anstelle des Benutzernamens verwenden, wenn Sie erstellen. die Anti-XSRF-Feldtoken werden überprüft. Die spezifischen URIs für den Identitäts Anbieter und den namens Bezeichner lauten:
 
-- `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
+- `https://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
 (Weitere Informationen finden Sie auf dieser [ACS-Dokumentseite](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx) .)

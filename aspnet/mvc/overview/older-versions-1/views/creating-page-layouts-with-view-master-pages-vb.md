@@ -1,131 +1,131 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
-title: Erstellen von Seitenlayouts mit Ansichtsmasterseiten (VB) | Microsoft-Dokumentation
+title: Erstellen von Seiten Layouts mit Ansichts Master Seiten (VB) | Microsoft-Dokumentation
 author: microsoft
-description: In diesem Tutorial erfahren Sie, wie Sie ein gebräuchliches Seitenlayout für mehrere Seiten in Ihrer Anwendung zu erstellen, indem Sie der Ansicht Masterseiten nutzen. Sie können ein...
+description: In diesem Tutorial erfahren Sie, wie Sie ein gängiges Seitenlayout für mehrere Seiten in Ihrer Anwendung erstellen, indem Sie die Masterseiten der Ansicht nutzen. Sie können eine...
 ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: d34f90a1-6de3-482a-a326-f87fdcbaaaff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6891953654d8ae81bbec8d78d38f97f3847201cc
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 97c0ecf1953cc54030656dd710a5150243877110
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117221"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74593938"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-vb"></a>Erstellen von Seitenlayouts mit Ansichtsmasterseiten (VB)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-[PDF herunterladen](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_VB.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_VB.pdf)
 
-> In diesem Tutorial erfahren Sie, wie Sie ein gebräuchliches Seitenlayout für mehrere Seiten in Ihrer Anwendung zu erstellen, indem Sie der Ansicht Masterseiten nutzen. Sie können eine Masterseite Ansicht z. B. verwenden, definieren ein Seitenlayout mit zwei Spalten und verwenden die zweispalten-Layout für alle Seiten in Ihrer Webanwendung.
+> In diesem Tutorial erfahren Sie, wie Sie ein gängiges Seitenlayout für mehrere Seiten in Ihrer Anwendung erstellen, indem Sie die Masterseiten der Ansicht nutzen. Sie können z. b. eine Ansichts Master Seite verwenden, um ein zweispaltige Seitenlayout zu definieren und das zweispaltige Layout für alle Seiten in der Webanwendung zu verwenden.
 
-## <a name="creating-page-layouts-with-view-master-pages"></a>Erstellen von Seitenlayouts mit Masterseiten für Ansichten
+## <a name="creating-page-layouts-with-view-master-pages"></a>Erstellen von Seiten Layouts mit Ansichts Master Seiten
 
-In diesem Tutorial erfahren Sie, wie Sie ein gebräuchliches Seitenlayout für mehrere Seiten in Ihrer Anwendung zu erstellen, indem Sie der Ansicht Masterseiten nutzen. Sie können eine Masterseite Ansicht z. B. verwenden, definieren ein Seitenlayout mit zwei Spalten und verwenden die zweispalten-Layout für alle Seiten in Ihrer Webanwendung.
+In diesem Tutorial erfahren Sie, wie Sie ein gängiges Seitenlayout für mehrere Seiten in Ihrer Anwendung erstellen, indem Sie die Masterseiten der Ansicht nutzen. Sie können z. b. eine Ansichts Master Seite verwenden, um ein zweispaltige Seitenlayout zu definieren und das zweispaltige Layout für alle Seiten in der Webanwendung zu verwenden.
 
-Sie können auch der Ansicht Masterseiten Freigeben von gemeinsamen Inhalten über mehrere Seiten in Ihrer Anwendung nutzen. Beispielsweise können Sie Ihr Logo der Website, Navigationslinks und Banner Ankündigungen auf einer Masterseite der Ansicht platzieren. Auf diese Weise wird jeder Seite in Ihrer Anwendung diese Inhalte automatisch angezeigt.
+Sie können auch die Masterseiten der Ansicht nutzen, um gemeinsame Inhalte für mehrere Seiten in Ihrer Anwendung freizugeben. Beispielsweise können Sie das Website Logo, Navigationslinks und Banner Ankündigungen in eine Ansichts Master Seite platzieren. Auf diese Weise wird dieser Inhalt von jeder Seite in der Anwendung automatisch angezeigt.
 
-In diesem Tutorial erfahren Sie, wie eine neue Ansicht Masterseite und erstellt eine neue Ansichtsseite basierend auf der Masterseite.
+In diesem Tutorial erfahren Sie, wie Sie eine neue Ansichts Master Seite erstellen und eine neue Seite Inhaltsseite auf der Grundlage der Master Seite erstellen.
 
-### <a name="creating-a-view-master-page"></a>Erstellen einer Ansicht-Masterseite
+### <a name="creating-a-view-master-page"></a>Erstellen einer Ansichts Master Seite
 
-Wir erstellen zunächst eine Masterseite anzeigen, die einem zweispalten Layout definiert. Sie fügen eine neue Ansicht master Seite mit einer MVC-Projekt durch Rechtsklick auf den Ordner "Views\Shared", durch Auswählen der Menüoption **hinzufügen, neue Element**, und wählen die Vorlage für die MVC-Ansicht-Masterseite (siehe Abbildung 1).
+Erstellen Sie zunächst eine Ansichts Master Seite, die ein zweispaltige Layout definiert. Sie fügen eine neue Ansichts Master Seite zu einem MVC-Projekt hinzu, indem Sie mit der rechten Maustaste auf den Ordner views\shared klicken, die Menüoption **hinzufügen, neues Element**und die Vorlage MVC-Ansichts Master Seite auswählen (siehe Abbildung 1).
 
-[![Hinzufügen einer Masterseite anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
+[![Hinzufügen einer Ansichts Master Seite](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
 
-**Abbildung 01**: Hinzufügen einer Ansicht Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image3.png))
+**Abbildung 01**: Hinzufügen einer Ansichts Master Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image3.png))
 
-Sie können eine Masterseite mit mehr als eine Ansicht in einer Anwendung erstellen. Jede Ansicht Masterseite kann eine andere Seitenlayout definieren. Beispielsweise sollten Sie bestimmte Seiten in einem zweispalten Layout haben und andere Seiten um eine dreispalten-Layout zu erhalten.
+Sie können in einer Anwendung mehr als eine Ansichts Master Seite erstellen. Jede Ansichts Master Seite kann ein anderes Seitenlayout definieren. Beispielsweise möchten Sie möglicherweise, dass bestimmte Seiten über ein Layout mit zwei Spalten verfügen und andere Seiten ein Layout mit drei Spalten aufweisen.
 
-Eine Masterseite Ansicht entspricht weitgehend einer standardmäßigen ASP.NET MVC-Ansicht. Im Gegensatz zu einer normalen Ansicht, eine Masterseite für die Ansicht enthält jedoch mindestens eine `<asp:ContentPlaceHolder>` Tags. Die `<contentplaceholder>` werden verwendet, um die Bereiche der Masterseite zu kennzeichnen, die in einer einzelnen Inhaltsseite überschrieben werden kann.
+Eine Ansichts Master Seite sieht in etwa wie eine standardmäßige ASP.NET-MVC-Ansicht aus. Anders als bei einer normalen Ansicht enthält eine Ansichts Master Seite jedoch mindestens einen `<asp:ContentPlaceHolder>` Tags. Die `<contentplaceholder>` Tags werden verwendet, um die Bereiche der Master Seite zu markieren, die auf einer einzelnen Inhaltsseite überschrieben werden können.
 
-Die Ansicht Masterseite in Codebeispiel 1 wird z. B. einem zweispalten Layout definiert. Es enthält zwei `<contentplaceholder>` Tags. Eine `<ContentPlaceHolder>` für jede Spalte.
+Beispielsweise wird auf der Seite Master anzeigen in der Liste 1 ein zweispaltige Layout definiert. Sie enthält zwei `<contentplaceholder>` Tags. Eine `<ContentPlaceHolder>` für jede Spalte.
 
-**Codebeispiel 1: `Views\Shared\Site.master`**
+**Codebeispiel 1 – `Views\Shared\Site.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample1.aspx)]
 
-Der Inhalt der Masterseite in Codebeispiel 1 enthält zwei Sicht `<div>` Tags, die die beiden Spalten entsprechen. Die Cascading Style Sheet-Spaltenklasse gilt für beide `<div>` Tags. Diese Klasse wird im Stylesheet am oberen Rand der Masterseite deklariert definiert. Sie können anzeigen, wie die Masterseite für die Ansicht gerendert wird, durch den Wechsel zur Entwurfsansicht. Klicken Sie auf der Registerkarte "Entwurf", unter der unteren linken Ecke des der Quellcode-Editor (siehe Abbildung 2).
+Der Text der Ansichts Master Seite in der Liste 1 enthält zwei `<div>` Tags, die den beiden Spalten entsprechen. Die Cascading Stylesheet-Spalten Klasse wird auf beide `<div>` Tags angewendet. Diese Klasse wird in dem Stylesheet definiert, das am oberen Rand der Master Seite deklariert wird. Sie können eine Vorschau anzeigen, wie die Ansichts Master Seite gerendert wird, indem Sie zu Designansicht wechseln. Klicken Sie unten links im Quellcode-Editor auf die Registerkarte Entwurf (siehe Abbildung 2).
 
-[![Anzeigen einer Vorschau eine Masterseite im designer](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
+[![Anzeigen der Vorschau einer Master Seite im Designer](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
 
-**Abbildung 02**: Anzeigen einer Vorschau einer Masterseite in den Designer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image6.png))
+**Abbildung 02**: Anzeigen einer Vorschau einer Master Seite im Designer ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image6.png))
 
-### <a name="creating-a-view-content-page"></a>Erstellen eine Inhaltsseite anzeigen
+### <a name="creating-a-view-content-page"></a>Erstellen einer Seite "Inhalt anzeigen"
 
-Nach der Erstellung einer Masterseite Ansicht können Sie mindestens eine Ansicht Inhaltsseiten basierend auf der Masterseite Ansicht erstellen. Sie können z. B. eine Index der Inhaltsseite anzeigen, für den Home-Controller erstellen, indem Sie mit der rechten Maustaste in den Ordner Views\Home den Ordner auswählen **hinzufügen, neue Element**, wählen die **Inhalt von MVC-Ansichtsseite** Vorlage eingeben Schaltfläche "(siehe Abbildung 3), den Namen Index.aspx, und klicken Sie auf Hinzufügen.
+Nachdem Sie eine Ansichts Master Seite erstellt haben, können Sie eine oder mehrere Inhaltsseiten anzeigen, basierend auf der Seite Master anzeigen. Sie können z. b. eine Inhaltsseite für die Index Ansicht für den Home-Controller erstellen, indem Sie mit der rechten Maustaste auf den Ordner views\home klicken, **hinzufügen, neues Element**auswählen, die Vorlage für die **Inhaltsseite für die MVC-Ansicht** eingeben, den Namen index. aspx eingeben und auf die Schaltfläche Hinzufügen klicken (siehe Abbildung 3
 
-[![Hinzufügen einer Inhaltsseite anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
+[![Hinzufügen einer Ansichts Inhaltsseite](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
 
-**Abbildung 03**: Hinzufügen einer ansichtsinhaltsseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image9.png))
+**Abbildung 03**: Hinzufügen einer Ansichts Inhaltsseite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image9.png))
 
-Nachdem Sie auf die Schaltfläche "hinzufügen" klicken, ein neues Dialogfeld wird angezeigt, die es Ihnen die ermöglicht Auswahl eine Ansicht Masterseite der Inhaltsseite Ansicht zugeordnet werden soll (siehe Abbildung 4). Sie können auf die Ansicht Site.master-Masterseite navigieren, die wir im vorherigen Abschnitt erstellt haben.
+Nachdem Sie auf die Schaltfläche Hinzufügen geklickt haben, wird ein neues Dialogfeld angezeigt, in dem Sie eine Ansichts Master Seite auswählen können, die mit der Seite Inhalt anzeigen verknüpft werden soll (siehe Abbildung 4). Sie können zur Master Seite "Site. Master View" navigieren, die wir im vorherigen Abschnitt erstellt haben.
 
-[![Eine Masterseite auswählen](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
+[![Auswählen einer Master Seite](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
 
-**Abbildung 04**: Auswählen einer Masterseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image12.png))
+**Abbildung 04**: Auswählen einer Master Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image12.png))
 
-Nachdem Sie eine neue Ansichtsseite basierend auf der Masterseite Site.master erstellt haben, erhalten Sie die Datei im Codebeispiel 2.
+Nachdem Sie basierend auf der Seite "Site. Master Master" eine neue Seite Inhaltsseite erstellt haben, wird die Datei in der Liste 2 angezeigt.
 
-**Codebeispiel 2: `Views\Home\Index.aspx`**
+**Codebeispiel 2 – `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample2.aspx)]
 
-Beachten Sie, die diese Sicht enthält eine `<asp:Content>` Tag, das auf die einzelnen entspricht der `<asp:ContentPlaceHolder>` -Tags in der master-Seite anzeigen. Jede `<asp:Content>` Tag enthält ein ContentPlaceHolderID-Attribut, das auf den jeweiligen zeigt `<asp:ContentPlaceHolder>` , die sie überschreibt.
+Beachten Sie, dass diese Ansicht ein `<asp:Content>`-Tag enthält, das den einzelnen `<asp:ContentPlaceHolder>`-Tags auf der Seite Master anzeigen entspricht. Jedes `<asp:Content>` Tag enthält ein ContentPlaceHolderID-Attribut, das auf die bestimmte `<asp:ContentPlaceHolder>` verweist, die es überschreibt.
 
-Beachten Sie außerdem, dass die Ansicht "Inhalt"-Seite in Liste 2 nicht der normalen öffnende und schließende HTML-Tags enthält. Angenommen, sie enthält keine den öffnenden und schließenden `<html>` oder `<head>` Tags. Alle normalen öffnenden und schließenden Tags befinden sich in der master-Seite anzeigen.
+Beachten Sie außerdem, dass die Seite Inhaltsansicht in der Liste 2 keine normalen öffnenden und schließenden HTML-Tags enthält. Er enthält z. b. nicht die öffnenden und schließenden `<html>` oder `<head>` Tags. Alle normalen öffnenden und schließenden Tags sind auf der Ansichts Master Seite enthalten.
 
-Alle Inhalte, die in einer ansichtsinhaltsseite angezeigt werden soll, muss innerhalb von platziert werden eine `<asp:Content>` Tag. Wenn Sie die HTML-Elemente oder andere Inhalte außerhalb dieser Tags setzen, klicken Sie dann erhalten einen Fehler Sie beim Versuch, die Seite anzuzeigen.
+Alle Inhalte, die Sie auf der Seite Inhalt anzeigen anzeigen möchten, müssen in einem `<asp:Content>`-Tag abgelegt werden. Wenn Sie HTML-Inhalte oder andere Inhalte außerhalb dieser Tags platzieren, erhalten Sie eine Fehlermeldung, wenn Sie versuchen, die Seite anzuzeigen.
 
-Sie müssen nicht außer Kraft setzen alle `<asp:ContentPlaceHolder>` Tag von einer Masterseite in einer Ansicht "Inhalt"-Seite. Sie müssen nur Überschreiben einer `<asp:ContentPlaceHolder>` markieren, wenn Sie das Tag mit bestimmten Inhalt zu ersetzen möchten.
+Sie müssen nicht jedes `<asp:ContentPlaceHolder>`-Tag von einer Master Seite auf einer Inhalts Ansichts Seite überschreiben. Sie müssen nur ein `<asp:ContentPlaceHolder>`-Tag überschreiben, wenn Sie das-Tag durch bestimmten Inhalt ersetzen möchten.
 
-Beispielsweise geänderte Ansicht "Index" in Programmausdruck 3 enthält nur zwei `<asp:Content>` Tags. Jede der `<asp:Content>` Tags enthält Text.
+Beispielsweise enthält die geänderte Index Sicht in der Liste 3 nur zwei `<asp:Content>` Tags. Alle `<asp:Content>` Tags enthalten Text.
 
-**Codebeispiel 3: `Views\Home\Index.aspx (modified)`**
+**Codebeispiel 3 – `Views\Home\Index.aspx (modified)`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample3.aspx)]
 
-Wenn die Ansicht in Programmausdruck 3 angefordert wird, rendert sie die Seite in Abbildung 5. Beachten Sie, dass die Ansicht eine Seite mit zwei Spalten gerendert wird. Beachten Sie außerdem, dass der Inhalt der Inhaltsseite anzeigen mit dem Inhalt der Ansicht-Masterseite zusammengeführt wird.
+Wenn die Ansicht in der Liste 3 angefordert wird, wird die Seite in Abbildung 5 gerendert. Beachten Sie, dass die Sicht eine Seite mit zwei Spalten rendert. Beachten Sie außerdem, dass der Inhalt der Seite Inhalt anzeigen mit dem Inhalt der Seite Master anzeigen zusammengeführt wird.
 
-[![Der Seite für den Inhalt zum Anzeigen des Index](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
+[![der Seite "Inhalt der Index Ansicht"](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
 
-**Abbildung 05**: Die Content View Indexseite ([klicken Sie, um das Bild in voller Größe anzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image15.png))
+**Abbildung 05**: die Inhaltsseite der Index Ansicht ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-page-layouts-with-view-master-pages-vb/_static/image15.png))
 
-### <a name="modifying-view-master-page-content"></a>Ändern von Seiteninhalt Masterseiten
+### <a name="modifying-view-master-page-content"></a>Ändern des Inhalts der Sicht Master Seite
 
-Ein Problem, mit denen Sie fast konfrontiert ist, sofort bei der Arbeit mit Masterseiten anzeigen, des Problems ändern Sie die Masterseite Inhalt anzeigen, wenn andere Ansicht Inhaltsseiten angefordert werden. Beispielsweise möchten Sie jede Seite in der Webanwendung für einen eindeutigen Titel aufweisen. Der Titel wird jedoch in der master-Seite anzeigen und nicht in der Ansicht Inhaltsseite deklariert. Also, wie Sie den Seitentitel für jede-ansichtsinhaltsseite anpassen?
+Ein Problem, das bei der Arbeit mit dem Anzeigen von Masterseiten fast sofort auftritt, ist das Problem beim Ändern von Ansichts-Masterseiten Inhalten, wenn verschiedene Ansichts Inhaltsseiten angefordert werden. Beispielsweise möchten Sie, dass jede Seite in Ihrer Webanwendung einen eindeutigen Titel hat. Der Titel wird jedoch auf der Seite Master anzeigen und nicht auf der Seite Inhalt anzeigen deklariert. Wie passen Sie also den Seitentitel für jede Inhaltsseite der Ansicht an?
 
-Es gibt zwei Möglichkeiten, die Sie, den von einer ansichtsinhaltsseite angezeigten Titel ändern können. Sie können zuerst einen Titel der Seite auf das Title-Attribut des Zuweisen der `<%@ page %>` Richtlinie deklariert werden, am oberen Rand einer Inhaltsseite anzeigen. Z. B. Wenn Sie den Titel der Seite "Super großartige Website" Ansicht "Index" zuweisen möchten, können Sie die folgende Direktive am oberen Rand der Ansicht "Index" einschließen:
+Es gibt zwei Möglichkeiten, wie Sie den Titel ändern können, der auf der Seite Inhalt anzeigen angezeigt wird. Zuerst können Sie dem Title-Attribut der `<%@ page %>` Direktive, die oben auf der Seite Inhalt anzeigen deklariert wurde, einen Seitentitel zuweisen. Wenn Sie z. b. der Index Ansicht den Seitentitel "super tolle Website" zuweisen möchten, können Sie die folgende Direktive am Anfang der Index Ansicht einschließen:
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample4.aspx)]
 
-Wenn die Ansicht "Index" an den Browser gerendert wird, wird der gewünschte Titel in der Titelleiste des Browsers angezeigt:
+Wenn die Index Ansicht im Browser gerendert wird, wird der gewünschte Titel in der Titelleiste des Browsers angezeigt:
 
-[![Konfigurationsbrowser, Startseite](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
+[Titelleiste des ![Browsers](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
 
-Es ist eine wichtige Anforderung, die in der Reihenfolge für das Title-Attribut, funktioniert eine Masteransichtsseite erfüllen müssen. Die Masterseite für die Sicht darf eine `<head runat="server">` Tag anstelle einer normalen `<head>` Tag für Header. Wenn die `<head>` Tag enthält keine Runat = "Server"-Attribut aus, und klicken Sie dann der Titel nicht angezeigt werden. Die Standardansicht, die Masterseite enthält die erforderlichen `<head runat="server">` Tag.
+Eine Master Ansichts Seite muss eine wichtige Voraussetzung erfüllen, damit das Title-Attribut funktioniert. Die Ansichts Master Seite muss eine `<head runat="server">` Kennung anstelle eines normalen `<head>`-Tags für den zugehörigen Header enthalten. Wenn das `<head>`-Tag das runat = "Server"-Attribut nicht enthält, wird der Titel nicht angezeigt. Die standardmäßige Ansichts Master Seite enthält die erforderliche `<head runat="server">` Kennung.
 
-Eine alternative Methode zum Ändern der Inhalt der Masterseite von der Inhaltsseite eine einzelne Ansicht besteht darin, die Region, die Sie ändern möchten eine `<asp:ContentPlaceHolder>` Tag. Angenommen Sie, dass Sie nicht nur den Titel, sondern auch die Meta-Tags, die durch eine Masteransichtsseite gerendert ändern möchten. Die Masteransicht-Seite in Listing 4 enthält eine `<asp:ContentPlaceHolder>` tag innerhalb der `<head>` Tag.
+Eine alternative Methode zum Ändern des Inhalts von Masterseiten von einer einzelnen Ansichts Inhaltsseite besteht darin, den Bereich, den Sie ändern möchten, in einem `<asp:ContentPlaceHolder>`-Tag zu schließen. Stellen Sie sich beispielsweise vor, dass Sie nicht nur den Titel, sondern auch die Meta-Tags ändern möchten, die von einer Master Ansichts Seite gerendert werden. Die Seite Master Ansicht in der Liste 4 enthält ein `<asp:ContentPlaceHolder>`-Tag innerhalb des `<head>`-Tags.
 
-**Codebeispiel 4: `Views\Shared\Site2.master`**
+**Codebeispiel 4 – `Views\Shared\Site2.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample5.aspx)]
 
-Beachten Sie, dass die `<asp:ContentPlaceHolder>` Tag im Codebeispiel 4 enthält Standardinhalt: eine Standardtitel und die Standard-Meta-Tags. Wenn Sie diese nicht außer Kraft setzen `<asp:ContentPlaceHolder>` markieren Sie auf eine einzelne Ansicht Inhaltsseite, und klicken Sie dann der standardmäßigen Inhalt angezeigt wird.
+Beachten Sie, dass das `<asp:ContentPlaceHolder>`-Tag in der Liste 4 Standard Inhalt enthält: einen Standard Titel und standardmeta-Tags. Wenn Sie dieses `<asp:ContentPlaceHolder>`-Tag nicht auf einer einzelnen Inhaltsseite anzeigen außer Kraft setzen, wird der Standard Inhalt angezeigt.
 
-Die Ansicht "Inhalt"-Seite in Listing 5 überschreibt die `<asp:ContentPlaceHolder>` Tag um einen benutzerdefinierten Titel und benutzerdefinierte Metatags für anzuzeigen.
+Die Seite Inhaltsansicht in der Liste 5 überschreibt das `<asp:ContentPlaceHolder>`-Tag, um einen benutzerdefinierten Titel und benutzerdefinierte Meta-Tags anzuzeigen.
 
-**Codebeispiel 5: `Views\Home\Index2.aspx`**
+**Codebeispiel 5 – `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample6.aspx)]
 
-### <a name="summary"></a>Zusammenfassung
+### <a name="summary"></a>Summary
 
-In diesem Tutorial werden Sie mit einer grundlegenden Einführung in anzeigen Masterseiten und Inhaltsseiten angegeben. Sie haben gelernt, wie neue Ansicht Masterseiten und erstellt basierende auf diesen Inhalt Ansichtsseiten. Es überprüft auch, wie Sie den Inhalt einer Ansicht Masterseite von einer bestimmten ansichtsinhaltsseite ändern können.
+In diesem Tutorial haben Sie eine grundlegende Einführung zum Anzeigen von Masterseiten und zum Anzeigen von Inhaltsseiten bereitgestellt. Sie haben gelernt, wie Sie neue Ansichts Masterseiten erstellen und Inhaltsseiten auf der Grundlage dieser Seiten erstellen können. Wir haben auch erläutert, wie Sie den Inhalt einer Ansichts Master Seite auf einer bestimmten Seite Inhaltsseite ändern können.
 
 > [!div class="step-by-step"]
 > [Zurück](using-the-tagbuilder-class-to-build-html-helpers-vb.md)

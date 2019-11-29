@@ -1,240 +1,240 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
-title: Interaktion mit der Masterseite der Inhaltsseite (c#) | Microsoft-Dokumentation
+title: Interaktion mit der Master Seite von der Inhaltsseite (C#) | Microsoft-Dokumentation
 author: rick-anderson
-description: Untersucht, wie Sie rufen Methoden, Eigenschaften usw. von der Masterseite im Code auf der Inhaltsseite festgelegt.
+description: Untersucht, wie Methoden, Eigenschaften usw. der Master Seite aus dem Code auf der Seite Inhalt aufgerufen werden.
 ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 32d54638-71b2-491d-81f4-f7417a13a62f
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 52f3563a59647c3bc48c5c4d7e40ce8941d18268
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 5ef030d3bed117e98fdd090f7c63643354b47f76
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132303"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74583863"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-c"></a>Interaktion mit der Inhaltsseite von der Masterseite (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_CS.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_CS.zip) oder [PDF herunterladen](https://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_CS.pdf)
 
-> Untersucht, wie Sie rufen Methoden, Eigenschaften usw. von der Masterseite im Code auf der Inhaltsseite festgelegt.
+> Untersucht, wie Methoden, Eigenschaften usw. der Master Seite aus dem Code auf der Seite Inhalt aufgerufen werden.
 
 ## <a name="introduction"></a>Einführung
 
-Im Laufe der letzten fünf Lernprogramme haben erläutert, wie zum Erstellen einer Masterseite, Inhaltsbereiche definieren, binden ASP.NET-Seiten auf eine Gestaltungsvorlage und seitenspezifische Inhalte definieren. Wenn ein Besucher eine bestimmte Inhaltsseite auf anfordert, werden der Inhalt und Masterseiten Markup zur Laufzeit, was das Rendern von einer einheitlichen Steuerelementhierarchie fused. Aus diesem Grund, wir haben bereits gesehen, einer Möglichkeit, die die Masterseite und eines entsprechenden Inhaltsseiten interagieren können: das Markup für transfuse in die Masterseite ContentPlaceHolder-Steuerelemente die Seite Inhalte beschreibt.
+Im Verlauf der letzten fünf Tutorials haben wir uns mit dem Erstellen einer Master Seite, dem Definieren von Inhalts Bereichen, dem Binden von ASP.NET-Seiten an eine Master Seite und dem Definieren von Seiten spezifischem Inhalt beschäftigt. Wenn ein Besucher eine bestimmte Inhaltsseite anfordert, werden das Markup der Inhalts-und Masterseiten zur Laufzeit miteinander verschmolzen, was zum Rendern einer vereinheitlichten Steuerelement Hierarchie führt. Daher haben wir bereits eine Möglichkeit gesehen, wie die Master Seite und eine ihrer Inhaltsseiten interagieren können: die Inhaltsseite gibt das Markup aus, das in die contentplachalter-Steuerelemente der Master Seite übersetzt werden soll.
 
-Was ist wir noch untersuchen wie der Masterseite und die Seite "Inhalt" programmgesteuert interagieren können. Neben der Definition des Markups für die Masterseite ContentPlaceHolder-Steuerelemente, eine Inhaltsseite außerdem die Masterseite öffentliche Eigenschaften Werte zuweisen und die öffentlichen Methoden aufrufen. Auf ähnliche Weise kann eine Masterseite mit entsprechenden Inhaltsseiten interagieren. Während das Programminteraktion zwischen einem Master- und Seite seltener auf als die Interaktion zwischen ihren deklarative Markups ist, gibt es viele Szenarien, in denen solche programmgesteuerte Interaktion erforderlich ist.
+Wir haben noch untersucht, wie die Master Seite und die Inhaltsseite Programm gesteuert interagieren können. Zusätzlich zum Definieren des Markups für die contentplachalter-Steuerelemente der Master Seite kann eine Inhaltsseite auch den öffentlichen Eigenschaften der Master Seite Werte zuweisen und deren öffentliche Methoden aufrufen. Auf ähnliche Weise kann eine Master Seite mit ihren Inhaltsseiten interagieren. Während die programmgesteuerte Interaktion zwischen einer Master-und einer Inhaltsseite weniger häufig ist als die Interaktion zwischen ihren deklarativen Markups, gibt es viele Szenarios, in denen eine solche programmgesteuerte Interaktion erforderlich ist.
 
-In diesem Tutorial untersuchen wir an, wie eine Inhaltsseite mit der Masterseite programmgesteuert interagieren kann; im nächsten Tutorial betrachten wir wie die Masterseite auf ähnliche Weise mit der Inhaltsseiten interagieren kann.
+In diesem Tutorial untersuchen wir, wie eine Inhaltsseite Programm gesteuert mit der Master Seite interagieren kann. im nächsten Tutorial wird erläutert, wie die Master Seite auf ähnliche Weise mit ihren Inhaltsseiten interagieren kann.
 
-## <a name="examples-of-programmatic-interaction-between-a-content-page-and-its-master-page"></a>Beispiele für die programmgesteuerte Interaktion zwischen einer Inhaltsseite und die Masterseite
+## <a name="examples-of-programmatic-interaction-between-a-content-page-and-its-master-page"></a>Beispiele für die programmgesteuerte Interaktion zwischen einer Inhaltsseite und ihrer Master Seite
 
-Wenn eine bestimmte Region einer Seite für Seite von Seite konfiguriert werden muss, verwenden wir ein ContentPlaceHolder-Steuerelement. Aber was Situationen, in denen die Mehrheit der Seiten, die eine bestimmte Ausgabe, aber eine größere Anzahl von Seiten ausgeben müssen, angepasst werden muss, um etwas anderes anzuzeigen? Ein Beispiel, das wir in untersucht die [ *mehrere ContentPlaceHolder-Steuerelemente und Inhalte Standard* ](multiple-contentplaceholders-and-default-content-cs.md) Tutorial umfasst eine Schnittstelle für die Anmeldung auf jeder Seite angezeigt. Während die meisten Seiten eine Anmeldung Schnittstelle enthalten sollen, sie unterdrückt werden sollen für eine Reihe von Seiten, z. B.: die main-Anmeldeseite (`Login.aspx`); die Seite "Konto erstellen", und die anderen Seiten, die nur für authentifizierte Benutzer zugänglich sind. Die [ *mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt* ](multiple-contentplaceholders-and-default-content-cs.md) Tutorial zeigte das Erstellen, um den standardmäßigen Inhalt für ein ContentPlaceHolder-Objekt auf der Masterseite zu definieren, und klicken Sie dann das in diesen überschreiben Where Seiten der Standardinhalt wurde nicht wollten.
+Wenn ein bestimmter Bereich einer Seite Seite für Seite konfiguriert werden muss, verwenden wir ein contentplachalter-Steuerelement. Aber wie sieht es mit Situationen aus, in denen die Mehrzahl der Seiten eine bestimmte Ausgabe ausgeben muss, aber eine kleine Anzahl von Seiten muss Sie so anpassen, dass Sie etwas anderes zeigt? Ein Beispiel, das wir im Lernprogramm mit [*mehreren Content-und Standard Inhalten*](multiple-contentplaceholders-and-default-content-cs.md) untersucht haben, beinhaltet die Anzeige einer Anmelde Schnittstelle auf jeder Seite. Die meisten Seiten sollten zwar eine Anmelde Schnittstelle enthalten, Sie sollten jedoch für eine Handvoll Seiten unterdrückt werden, z. b.: die Haupt Anmeldeseite (`Login.aspx`). die Seite "Konto erstellen"; und andere Seiten, auf die nur authentifizierte Benutzer zugreifen können. Im Tutorial " [*mehrere Inhalts Platzhalter und Standard Inhalte*](multiple-contentplaceholders-and-default-content-cs.md) " wurde gezeigt, wie Sie den Standard Inhalt für einen contentplachalter auf der Master Seite definieren und dann auf den Seiten überschreiben, auf denen der Standard Inhalt nicht gewünscht war.
 
-Eine weitere Möglichkeit ist die Erstellung von einer öffentlichen Eigenschaft oder Methode innerhalb der Masterseite, die angibt, ob auf Sie ein- oder Ausblenden der Login-Schnittstelle. Für die Masterseite kann beispielsweise eine öffentliche Eigenschaft mit dem Namen `ShowLoginUI` festgelegt wurde, deren Wert verwendet die `Visible` -Eigenschaft des Steuerelements Anmeldung auf der Masterseite. Diese Inhaltsseiten, in denen die Anmeldebenutzeroberfläche unterdrückt werden sollen. anschließend programmgesteuert legen die `ShowLoginUI` Eigenschaft `false`.
+Eine andere Möglichkeit besteht darin, eine öffentliche Eigenschaft oder Methode auf der Master Seite zu erstellen, die angibt, ob die Anmelde Schnittstelle angezeigt oder ausgeblendet werden soll. Die Master Seite könnte z. b. eine öffentliche Eigenschaft mit dem Namen `ShowLoginUI` enthalten, deren Wert verwendet wurde, um die `Visible`-Eigenschaft des Login-Steuer Elements auf der Master Seite festzulegen. Die Inhaltsseiten, auf denen die Anmelde Benutzeroberfläche unterdrückt werden soll, können dann die `ShowLoginUI`-Eigenschaft Programm gesteuert auf `false`festlegen.
 
-Möglicherweise tritt auf, die am häufigsten auftretende Beispiel des Inhalts und der Interaktion der Masterseite, wenn Daten angezeigt, in die Masterseite muss aktualisiert werden, nachdem eine Aktion auf der Inhaltsseite wiederholt wurde. Beachten Sie, dass eine Masterseite, die einer GridView-Ansicht enthält, die die fünf zuletzt zeigt Datensätze aus einer bestimmten Datenbanktabelle hinzugefügt und, dass eine der entsprechenden Inhaltsseiten enthält eine Schnittstelle für die dieselbe Tabelle neue Datensätze hinzugefügt.
+Möglicherweise ist das häufigste Beispiel für die Interaktion von Inhalten und der Master Seite, wenn die auf der Master Seite angezeigten Daten aktualisiert werden müssen, nachdem eine Aktion auf der Inhaltsseite aufgetreten ist. Betrachten Sie eine Master Seite, die eine GridView enthält, in der die fünf zuletzt hinzugefügten Datensätze aus einer bestimmten Datenbanktabelle angezeigt werden und eine ihrer Inhaltsseiten eine Schnittstelle zum Hinzufügen neuer Datensätze zu derselben Tabelle enthält.
 
-Wenn ein Benutzer auf das Zeichenblatt, um einen neuen Datensatz hinzufügen besucht, sieht sie, dass Datensätze auf der Masterseite angezeigt, das die fünf zuletzt hinzugefügt wurde. Nach dem Füllen die Werte für Spalten des neuen Datensatzes, wie sie das Formular übermittelt. Vorausgesetzt, dass das GridView auf der Masterseite hat seine `EnableViewState` Eigenschaft auf "true" (Standard) festgelegt wurde, dessen Inhalt wird aus dem Ansichtszustand neu geladen, und daher werden die gleichen fünf Datensätze angezeigt, obwohl die Datenbank ein neuer Datensatz hinzugefügt wurde. Dies kann den Benutzer verwirren.
-
-> [!NOTE]
-> Auch wenn Sie den GridView Ansichtszustand, damit sie mit der zugrunde liegenden Datenquelle bei jedem Postback bindet erneut deaktiviert, wird diese nicht immer noch den gerade hinzugefügten Eintrag angezeigt, da die Daten gebunden werden, an die GridView weiter oben in den Lebenszyklus der Seite, als wenn die Datab der neue Datensatz hinzugefügt wird ASE.
-
-An, um dieses Problem zu beheben, damit der gerade hinzugefügten Datensatz auf der Masterseite angezeigt wird, die Sie GridView beim Postback anweisen, die GridView, die mit der Datenquelle binden möchten *nach* des neuen Eintrags der Datenbank hinzugefügt wurde. Dies erfordert die Interaktion zwischen dem Inhalt und Masterseiten, da die Schnittstelle für das Hinzufügen des neuen Datensatzes (und dessen Ereignishandler) werden in der Seite Inhalt, aber der GridView, die aktualisiert werden muss auf der Masterseite ist.
-
-Aktualisieren die Masterseite Anzeige von einem Ereignishandler in der Seite Inhalt die häufigsten Anforderungen für Inhalt und die Interaktion der Masterseite ist, sehen wir uns in diesem Thema noch ausführlicher. Der Download für dieses Tutorial enthält eine Microsoft SQL Server 2005 Express Edition-Datenbank, die mit dem Namen `NORTHWIND.MDF` in der Website `App_Data` Ordner. Die Northwind-Datenbank speichert, Produkt, Mitarbeiter und Verkaufsinformationen für ein fiktives Unternehmen, Northwind Traders.
-
-Schritt 1 führt über die fünf zuletzt angezeigt haben Produkte in einer GridView-Ansicht auf der Masterseite hinzugefügt. Schritt 2 erstellt eine Seite zum Hinzufügen neuer Produkte. Schritt 3 dargestellt, wie zum Erstellen von öffentlichen Eigenschaften und Methoden in der Masterseite und Schritt 4 wird veranschaulicht, wie Sie programmgesteuert mit diesen Eigenschaften und Methoden auf der Seite Inhalt.
+Wenn ein Benutzer die Seite besucht, um einen neuen Datensatz hinzuzufügen, werden die fünf zuletzt hinzugefügten Datensätze auf der Master Seite angezeigt. Nachdem Sie die Werte für die Spalten des neuen Datensatzes ausgefüllt haben, wird das Formular übermittelt. Wenn für die GridView auf der Master Seite die `EnableViewState`-Eigenschaft auf true (Standardeinstellung) festgelegt ist, wird der zugehörige Inhalt aus dem Ansichts Zustand neu geladen. Folglich werden die fünf gleichen Datensätze angezeigt, auch wenn ein neuerer Datensatz soeben der Datenbank hinzugefügt wurde. Dadurch kann der Benutzer verwirrend sein.
 
 > [!NOTE]
-> In diesem Tutorial werden die Besonderheiten der Arbeit mit Daten in ASP.NET nicht beschäftigen. Die Schritte zum Einrichten der master-Seite zum Anzeigen von Daten und der Inhaltsseite zum Einfügen von Daten sind vollständige, noch die Bereitstellung – locker und. Eine eingehendere Betrachtung anzeigen und Einfügen von Daten sowie zur Verwendung der SqlDataSource-Steuerelement und GridView-Steuerelemente finden Sie in den Ressourcen im Abschnitt Weitere Messwerte am Ende dieses Tutorials.
+> Auch wenn Sie den Ansichts Zustand der GridView deaktivieren, sodass er bei jedem Postback an die zugrunde liegende Datenquelle zurückgebunden wird, wird der soeben hinzugefügte Datensatz immer noch nicht angezeigt, da die Daten zuvor im Seiten Lebenszyklus an die GridView gebunden sind, als wenn der neue Datensatz dem datab hinzugefügt wird. Wissens.
 
-## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>Schritt 1: Anzeigen der fünf zuletzt hinzugefügt wurde Produkte auf der Masterseite
+Um dies zu beheben, damit der soeben hinzugefügte Datensatz in der GridView der Master Seite im Postback angezeigt wird, müssen wir die GridView anweisen, eine erneute Bindung an die Datenquelle herzustellen, *nachdem* der neue Datensatz der Datenbank hinzugefügt wurde. Dies erfordert eine Interaktion zwischen dem Inhalt und den Masterseiten, da die Schnittstelle zum Hinzufügen des neuen Datensatzes (und seiner Ereignishandler) auf der Seite Inhalt angezeigt wird, die zu Aktualisier Ende GridView jedoch auf der Master Seite angezeigt wird.
 
-Öffnen der `Site.master` Masterseite, und fügen Sie eine Bezeichnung und ein GridView-Steuerelement, um die `leftContent` `<div>`. Löschen Sie der Bezeichnung des `Text` Eigenschaftensatz, dessen `EnableViewState` Eigenschaft auf "false", und dessen `ID` Eigenschaft, um `GridMessage`; legen Sie des GridView `ID` Eigenschaft, um `RecentProducts`. Klicken Sie dann aus dem Designer, erweitern Sie den GridView Smarttag und mit einer neuen Datenquelle bindet, bindet es auch. Dadurch wird der Assistent zum Konfigurieren von Datenquellen gestartet. Da der Northwind-Datenbank der `App_Data` Ordner ist eine Microsoft SQL Server-Datenbank, um ein SqlDataSource-Steuerelement zu erstellen, indem Sie auswählen (siehe Abbildung 1) wählen, geben Sie dem SqlDataSource-Steuerelement Namen `RecentProductsDataSource`.
+Da die Aktualisierung der Anzeige der Master Seite von einem Ereignishandler auf der Seite Inhalt einer der gängigsten Anforderungen für die Interaktion von Inhalten und Masterseiten ist, betrachten wir dieses Thema ausführlicher. Der Download für dieses Tutorial enthält eine Microsoft SQL Server 2005 Express Edition-Datenbank mit dem Namen `NORTHWIND.MDF` im `App_Data` Ordner der Website. In der Northwind-Datenbank werden Produkt-, Mitarbeiter-und Vertriebsinformationen für ein fiktives Unternehmen, Northwind Traders, gespeichert.
 
-[![GridView zu binden, um ein SqlDataSource-Steuerelement, das mit dem Namen RecentProductsDataSource](interacting-with-the-master-page-from-the-content-page-cs/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image1.png)
+In Schritt 1 werden die fünf zuletzt hinzugefügten Produkte in einer GridView auf der Master Seite angezeigt. Schritt 2 erstellt eine Inhaltsseite zum Hinzufügen neuer Produkte. In Schritt 3 wird erläutert, wie Sie öffentliche Eigenschaften und Methoden auf der Master Seite erstellen, und Schritt 4 veranschaulicht, wie Sie eine programmgesteuerte Schnittstelle mit diesen Eigenschaften und Methoden von der Inhaltsseite aus erstellen.
 
-**Abbildung 01**: GridView zu binden, um ein SqlDataSource-Steuerelement namens `RecentProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image3.png))
+> [!NOTE]
+> In diesem Tutorial werden die Besonderheiten der Arbeit mit Daten in ASP.net nicht behandelt. Die Schritte zum Einrichten der Master Seite zum Anzeigen von Daten und der Inhaltsseite für das Einfügen von Daten sind fertig, aber immer noch. Eine ausführlichere Betrachtung der Anzeige und des Einfügens von Daten und der Verwendung der SqlDataSource-und GridView-Steuerelemente finden Sie im Abschnitt Weitere Messwerte am Ende dieses Tutorials.
 
-Im nächste Schritt fordert uns an, welche Datenbank eine Verbindung hergestellt. Wählen Sie die `NORTHWIND.MDF` -Datenbankdatei aus der Dropdown-Liste, und klicken Sie auf Weiter. Da dies beim ersten ist, haben wir diese Datenbank verwendet, bietet der Assistent zum Speichern der Verbindungszeichenfolge in `Web.config`. Lassen Sie sie speichern die Verbindungszeichenfolge, die mit dem Namen `NorthwindConnectionString`.
+## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>Schritt 1: Anzeigen der fünf zuletzt hinzugefügten Produkte auf der Master Seite
 
-[![Verbinden Sie mit der Northwind-Datenbank](interacting-with-the-master-page-from-the-content-page-cs/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image4.png)
+Öffnen Sie die Seite `Site.master` Master, und fügen Sie der `leftContent` `<div>`eine Bezeichnung und ein GridView-Steuerelement hinzu. Löschen Sie die `Text`-Eigenschaft der Bezeichnung, legen Sie die `EnableViewState`-Eigenschaft auf false und deren `ID`-Eigenschaft auf `GridMessage`fest. Legen Sie die `ID`-Eigenschaft der GridView auf `RecentProducts`fest. Erweitern Sie anschließend im Designer das Smarttag der GridView, und wählen Sie die Bindung an eine neue Datenquelle aus. Dadurch wird der Assistent zum Konfigurieren von Datenquellen gestartet. Da die Datenbank Northwind im `App_Data` Ordner eine Microsoft SQL Server Datenbank ist, wählen Sie aus, ob Sie eine SqlDataSource erstellen möchten, indem Sie auswählen (siehe Abbildung 1). Benennen Sie die SqlDataSource-`RecentProductsDataSource`.
 
-**Abbildung 02**: Verbinden mit der Northwind-Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image6.png))
+[![das GridView-Steuerelement an ein SqlDataSource-Steuerelement namens recentproductdatasource binden.](interacting-with-the-master-page-from-the-content-page-cs/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image1.png)
 
-Das Konfigurieren von Datenquellen-Assistent bietet zwei Möglichkeiten, die mit denen wir die Abfrage zum Abrufen von Daten angeben können:
+**Abbildung 01**: Binden der GridView an ein SqlDataSource-Steuerelement mit dem Namen `RecentProductsDataSource` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image3.png))
 
-- Durch Angabe eines benutzerdefinierten SQL-Anweisung oder gespeicherte Prozedur, oder
-- Durch Auswählen einer Tabelle oder Sicht, und klicken Sie dann angeben der zurückzugebenden Spalten
+Im nächsten Schritt werden wir aufgefordert, anzugeben, mit welcher Datenbank eine Verbindung hergestellt werden soll. Wählen Sie in der Dropdown Liste die `NORTHWIND.MDF` Datenbankdatei aus, und klicken Sie auf Weiter. Da diese Datenbank zum ersten Mal verwendet wird, bietet der Assistent die Verwendung der Verbindungs Zeichenfolge in `Web.config`. Speichern Sie die Verbindungs Zeichenfolge mit dem Namen `NorthwindConnectionString`.
 
-Da zurückgegeben, dass nur die fünf zuletzt Produkten hinzugefügt werden soll, müssen wir eine benutzerdefinierte SQL­Anweisung angeben. Verwenden Sie die folgende SELECT-Abfrage:
+[![Herstellen einer Verbindung mit der Northwind-Datenbank](interacting-with-the-master-page-from-the-content-page-cs/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image4.png)
+
+**Abbildung 02**: Herstellen der Verbindung mit der Northwind-Datenbank ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image6.png))
+
+Der Assistent zum Konfigurieren von Datenquellen bietet zwei Möglichkeiten, um die Abfrage anzugeben, die zum Abrufen von Daten verwendet wird:
+
+- Durch Angeben einer benutzerdefinierten SQL-Anweisung oder gespeicherten Prozedur oder
+- Durch Auswahl einer Tabelle oder Sicht und anschließendes angeben der zurück zugebende Spalten
+
+Da wir nur die fünf zuletzt hinzugefügten Produkte zurückgeben möchten, müssen wir eine benutzerdefinierte SQL-Anweisung angeben. Verwenden Sie die folgende SELECT-Abfrage:
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample1.sql)]
 
-Die `TOP 5` Schlüsselwort gibt nur die ersten fünf Datensätze aus der Abfrage. Die `Products` Primärschlüssel der Tabelle, `ProductID`, ist ein `IDENTITY` Spalte, die uns wird sichergestellt, dass jeder neuen Produkts in der Tabelle hinzugefügt, einen höheren Wert als den vorherigen Eintrag hat. Aus diesem Grund Sortieren der Ergebnisse von `ProductID` gibt zurück, die Produkte an, wobei die zuletzt erstellte diejenigen in absteigender Reihenfolge.
+Das `TOP 5`-Schlüsselwort gibt nur die ersten fünf Datensätze aus der Abfrage zurück. Der Primärschlüssel der `Products` Tabelle (`ProductID`) ist eine `IDENTITY` Spalte, mit der wir sichergestellt werden, dass jedes neue Produkt, das der Tabelle hinzugefügt wird, einen größeren Wert als der vorherige Eintrag hat. Wenn Sie die Ergebnisse nach `ProductID` in absteigender Reihenfolge sortieren, werden die Produkte zurückgegeben, beginnend mit den zuletzt erstellten.
 
-[![Die fünf zuletzt hinzugefügte Produkte zurückgeben](interacting-with-the-master-page-from-the-content-page-cs/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image7.png)
+[die fünf zuletzt hinzugefügten Produkte werden ![zurückgegeben.](interacting-with-the-master-page-from-the-content-page-cs/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image7.png)
 
-**Abbildung 03**: Die fünf am häufigsten vor kurzem hinzugefügt Produkte zurückzugeben ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image9.png))
+**Abbildung 03**: Zurückgeben der fünf zuletzt hinzugefügten Produkte ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image9.png))
 
-Nach Abschluss des Assistenten, generiert Visual Studio zwei BoundFields für GridView zum Anzeigen der `ProductName` und `UnitPrice` Felder, die aus der Datenbank zurückgegeben. An diesem Punkt sollte die Masterseite deklaratives Markup ähnlich dem folgenden Markup enthalten:
+Nachdem Sie den Assistenten abgeschlossen haben, generiert Visual Studio zwei boundfields für die GridView, um die `ProductName`-und `UnitPrice` Felder anzuzeigen, die von der Datenbank zurückgegeben werden. An diesem Punkt sollte das deklarative Markup der Master Seite ein Markup enthalten, das dem folgenden ähnelt:
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample2.aspx)]
 
-Wie Sie sehen können, die das Markup enthält: das Label-Steuerelement (`GridMessage`); die GridView `RecentProducts`mit zwei BoundFields; und ein SqlDataSource-Steuerelement, das gibt zurück, der fünf Produkte zuletzt hinzugefügt wurde.
+Wie Sie sehen, enthält das Markup Folgendes: das Beschriftungs-websteuer Element (`GridMessage`). die GridView-`RecentProducts`mit zwei boundfields. und ein SqlDataSource-Steuerelement, das die fünf zuletzt hinzugefügten Produkte zurückgibt.
 
-Mit diesem GridView, die erstellt und dessen SqlDataSource-Steuerelement konfiguriert haben, besuchen Sie die Website über einen Browser. Wie in Abbildung 4 gezeigt, sehen Sie sich, dass ein Raster in der unteren linken Ecke, die die fünf zuletzt listet Produkte hinzugefügt.
+Wenn Sie diese GridView erstellt und das zugehörige SqlDataSource-Steuerelement konfiguriert haben, besuchen Sie die Website über einen Browser. Wie in Abbildung 4 gezeigt, wird ein Raster in der unteren linken Ecke angezeigt, in dem die fünf zuletzt hinzugefügten Produkte aufgeführt sind.
 
-[![Das GridView zeigt die fünf zuletzt hinzugefügte Produkte](interacting-with-the-master-page-from-the-content-page-cs/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image10.png)
+[![in der GridView werden die fünf zuletzt hinzugefügten Produkte angezeigt.](interacting-with-the-master-page-from-the-content-page-cs/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image10.png)
 
-**Abbildung 04**: Das GridView zeigt die fünf am häufigsten vor kurzem hinzugefügt Produkte ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image12.png))
+**Abbildung 04**: in der GridView werden die fünf zuletzt hinzugefügten Produkte angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image12.png))
 
 > [!NOTE]
-> Können Sie, um die Darstellung der GridView zu bereinigen. Einige Vorschläge enthalten die Formatierung der angezeigten `UnitPrice` Wert als eine Währung und mithilfe von Hintergrundfarben und Schriftarten um zu des Datenblatts Darstellung zu verbessern.
+> Sie können die Darstellung der GridView jederzeit bereinigen. Einige Vorschläge umfassen das Formatieren des angezeigten `UnitPrice` Werts als Währung und das Verwenden von Hintergrundfarben und Schriftarten, um die Darstellung des Rasters zu verbessern.
 
 ## <a name="step-2-creating-a-content-page-to-add-new-products"></a>Schritt 2: Erstellen einer Inhaltsseite zum Hinzufügen neuer Produkte
 
-Unsere nächste Aufgabe besteht darin, eine Inhaltsseite erstellen, von dem ein Benutzer kann auf ein neues Produkt hinzufügen, der `Products` Tabelle. Fügen Sie eine neue Seite auf die `Admin` Ordner mit dem Namen `AddProduct.aspx`, und bindet, bindet es an der `Site.master` Masterseite. Abbildung 5 zeigt den Projektmappen-Explorer, nachdem auf dieser Seite auf der Website hinzugefügt wurde.
+Die nächste Aufgabe besteht darin, eine Inhaltsseite zu erstellen, von der ein Benutzer der `Products` Tabelle ein neues Produkt hinzufügen kann. Fügen Sie eine neue Inhaltsseite zum Ordner "`Admin`" mit dem Namen `AddProduct.aspx`hinzu, und stellen Sie sicher, dass Sie an die `Site.master` Master Seite gebunden ist. Abbildung 5 zeigt die Projektmappen-Explorer, nachdem diese Seite der Website hinzugefügt wurde.
 
-[![Fügen Sie eine neue ASP.NET-Seite, um den Ordner Admin](interacting-with-the-master-page-from-the-content-page-cs/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image13.png)
+[![dem Administrator Ordner eine neue ASP.NET-Seite hinzufügen](interacting-with-the-master-page-from-the-content-page-cs/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image13.png)
 
-**Abbildung 05**: Hinzufügen einer neuen ASP.NET-Seite zu den `Admin` Ordner ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image15.png))
+**Abbildung 05**: Hinzufügen einer neuen ASP.NET-Seite zum Ordner "`Admin`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image15.png))
 
-Denken Sie daran, dass in der [ *Titel, Meta-Tags und anderer HTML-Header angeben, auf der Masterseite* ](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md) Lernprogramm eine benutzerdefinierten Basisseite-Klasse, die mit dem Namen erstellten `BasePage` , die den Titel der Seite generiert, wenn es war nicht explizit festgelegt wurde. Wechseln Sie zu der `AddProduct.aspx` Seite des Code-Behind-Klasse und deren abgeleitet `BasePage` (anstelle von aus `System.Web.UI.Page`).
+Beachten Sie, dass im Tutorial zum [*angeben des Titels, der Meta-Tags und anderer HTML-Header in der Master Seite*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md) eine benutzerdefinierte Basis Seiten Klasse mit dem Namen `BasePage` erstellt wurde, die den Titel der Seite generiert hat, wenn er nicht explizit festgelegt wurde. Wechseln Sie zur Code Behind-Klasse der `AddProduct.aspx` Seite, und lassen Sie Sie von `BasePage` (anstelle von `System.Web.UI.Page`) ableiten.
 
-Aktualisieren Sie abschließend die `Web.sitemap` hinzu, um einen Eintrag in dieser Lektion einzubeziehen. Fügen Sie das folgende Markup unterhalb der `<siteMapNode>` für die Steuerelement-ID-Benennungsprobleme Lektion:
+Aktualisieren Sie abschließend die `Web.sitemap` Datei, sodass Sie einen Eintrag für diese Lektion enthält. Fügen Sie das folgende Markup unterhalb der `<siteMapNode>` für die Lektion namens Probleme der Steuerelement-ID hinzu:
 
 [!code-xml[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample3.xml)]
 
-Siehe Abbildung 6: das Hinzufügen dieses `<siteMapNode>` Elements in der Liste der Lektionen wiedergegeben wird.
+Wie in Abbildung 6 gezeigt, wird das Hinzufügen dieses `<siteMapNode>` Elements in der Liste der Lektionen widergespiegelt.
 
-Wechseln Sie zurück zur `AddProduct.aspx`. In das Steuerelement für die `MainContent` ContentPlaceHolder, fügen Sie einem DetailsView-Steuerelement hinzu, und nennen Sie sie `NewProduct`. Binden von DetailsView an ein neues SqlDataSource-Steuerelement, das mit dem Namen `NewProductDataSource`. Wie Sie mit dem SqlDataSource-Steuerelement in Schritt 1, konfigurieren Sie den Assistenten, sodass sie die Northwind-Datenbank verwendet, und wählen eine benutzerdefinierte SQL­Anweisung angeben. Da DetailsView Hinzufügen von Elementen in der Datenbank verwendet wird, müssen wir beide geben eine `SELECT` Anweisung und eine `INSERT` Anweisung. Verwenden Sie die folgenden `SELECT` Abfrage:
+Kehren Sie zu `AddProduct.aspx`zurück. Fügen Sie im Inhalts Steuerelement für den `MainContent` contentplachalter ein DetailsView-Steuerelement hinzu, und benennen Sie es `NewProduct`. Binden Sie die DetailsView an ein neues SqlDataSource-Steuerelement mit dem Namen `NewProductDataSource`. Konfigurieren Sie den Assistenten wie bei SqlDataSource in Schritt 1 so, dass er die Datenbank Northwind verwendet, und wählen Sie eine benutzerdefinierte SQL-Anweisung aus. Da die DetailsView zum Hinzufügen von Elementen zur Datenbank verwendet wird, müssen wir sowohl eine `SELECT`-Anweisung als auch eine `INSERT`-Anweisung angeben. Verwenden Sie die folgende `SELECT` Abfrage:
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample4.sql)]
 
-Klicken Sie dann auf der Registerkarte einfügen, fügen Sie die folgenden `INSERT` Anweisung:
+Fügen Sie dann auf der Registerkarte Einfügen die folgende `INSERT`-Anweisung hinzu:
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample5.sql)]
 
-Finden Sie nach Abschluss des Assistenten unter DetailsViews-Smarttag, und aktivieren Sie das Kontrollkästchen "Einfügen aktivieren". Dadurch werden eine CommandField zur DetailsView mit der `ShowInsertButton` Eigenschaft auf "true" festgelegt ist. Da diese DetailsView ausschließlich zum Einfügen von Daten verwendet wird, legen Sie die DetailsView `DefaultMode` Eigenschaft `Insert`.
+Nachdem Sie den Assistenten abgeschlossen haben, wechseln Sie zum Smarttag der DetailsView, und aktivieren Sie das Kontrollkästchen "Einfügen aktivieren". Dadurch wird der DetailsView ein CommandField hinzugefügt, dessen `ShowInsertButton`-Eigenschaft auf true festgelegt ist. Da diese DetailsView ausschließlich für das Einfügen von Daten verwendet wird, legen Sie die `DefaultMode`-Eigenschaft der DetailsView auf `Insert`fest.
 
-Das ist schon alles! Testen Sie nun auf dieser Seite. Besuchen Sie `AddProduct.aspx` über einen Webbrowser, geben Sie einen Namen und den Preis (siehe Abbildung 6).
+Das ist schon alles! Testen Sie diese Seite. Besuchen Sie `AddProduct.aspx` über einen Browser, und geben Sie einen Namen und einen Preis ein (siehe Abbildung 6).
 
-[![Hinzufügen eines neuen Produkts in der Datenbank](interacting-with-the-master-page-from-the-content-page-cs/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image16.png)
+[![der Datenbank ein neues Produkt hinzufügen](interacting-with-the-master-page-from-the-content-page-cs/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image16.png)
 
-**Abbildung 06**: Hinzufügen eines neuen Produkts in die Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image18.png))
+**Abbildung 06**: Hinzufügen eines neuen Produkts zur Datenbank ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image18.png))
 
-Klicken Sie nach dem Eingeben der Namen und den Preis für Ihr neues Produkt, auf die Schaltfläche "Insert". Dies bewirkt, dass das Formular, um postback. Beim Postback, dem SqlDataSource-Steuerelement des `INSERT` -Anweisung ausgeführt wird, werden die zwei Parameter mit den Werten der freien Eingabe in DetailsViews zwei TextBox-Steuerelemente aufgefüllt. Es ist leider keine visuelle Bestätigung, die eine Einfügung durchgeführt wurde. Es wäre gut, haben eine Meldung angezeigt wird, bestätigt, dass ein neuer Datensatz hinzugefügt wurde. Ich lassen Sie dieses als Übung für den Leser. Darüber hinaus zeigt nach dem Hinzufügen eines neuen Datensatzes aus der DetailsView GridView auf der Masterseite weiterhin dieselben fünf Datensätze wie vor; Es umfasst nicht den gerade hinzugefügten Datensatz. Untersucht, wie Sie dies in den nächsten Schritten zu beheben.
+Nachdem Sie den Namen und den Preis für das neue Produkt eingegeben haben, klicken Sie auf die Schaltfläche einfügen. Dies bewirkt, dass das Formular Postback durchgesetzt wird. Beim Postback wird die `INSERT`-Anweisung des SqlDataSource-Steuer Elements ausgeführt. die beiden Parameter werden mit den vom Benutzer eingegebenen Werten in den zwei TextBox-Steuerelementen der DetailsView aufgefüllt. Leider gibt es kein visuelles Feedback, dass eine Einfügung aufgetreten ist. Es wäre schön, dass eine Meldung angezeigt wird, die bestätigt, dass ein neuer Datensatz hinzugefügt wurde. Ich lasse dies als Übung für den Reader aus. Nach dem Hinzufügen eines neuen Datensatzes aus der DetailsView zeigt die GridView auf der Master Seite weiterhin dieselben fünf Datensätze an wie zuvor. der soeben hinzugefügte Datensatz ist nicht enthalten. Wir untersuchen, wie dies in den nächsten Schritten behoben werden kann.
 
 > [!NOTE]
-> Zusätzlich zum Hinzufügen von einer Art von visuellem Feedback, das die Einfügung erfolgreich war, empfehle ich Ihnen auch aktualisieren, Einfügen von DetailsViews-Schnittstelle zur Validierung einschließen. Es gibt derzeit keine Validierung. Wenn ein Benutzer einen ungültigen Wert für eingibt der `UnitPrice` Feld, z. B. "zu viel Leistung beanspruchen," eine Ausnahme wird beim Postback ausgelöst werden, wenn das System versucht, diese Zeichenfolge in einen Dezimalwert zu konvertieren. Weitere Informationen zum Anpassen der Einfügen von Schnittstellen, finden Sie in der [ *Anpassen der Benutzeroberfläche für die Änderung der Daten* Tutorial](../../data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md) aus meiner [arbeiten mit Daten tutorialreihe](../../data-access/index.md).
+> Zusätzlich zum Hinzufügen einer Form des visuellen Feedbacks, dass die Einfügung erfolgreich war, empfiehlt es sich, auch die einfügeschnittstelle der DetailsView so zu aktualisieren, dass Sie die Validierung einschließt. Zurzeit ist keine Validierung vorhanden. Wenn ein Benutzer einen ungültigen Wert für das `UnitPrice` Feld, z. b. "zu teuer", eingibt, wird eine Ausnahme beim Postback ausgelöst, wenn das System versucht, diese Zeichenfolge in eine Dezimalzahl zu konvertieren. Weitere Informationen zum Anpassen der einfügeschnittstelle finden Sie im Tutorial [ *Anpassen der Daten Änderungs Schnittstelle* ](../../data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md) in der Reihe " [Arbeiten mit Daten](../../data-access/index.md)".
 
-## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>Schritt 3: Erstellen öffentliche Eigenschaften und Methoden auf der Masterseite
+## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>Schritt 3: Erstellen von öffentlichen Eigenschaften und Methoden auf der Master Seite
 
-In Schritt 1 hinzugefügten wir ein Label-Steuerelement mit dem Namen `GridMessage` oben auf der Masterseite GridView. Diese Bezeichnung ist vorgesehen, optional eine Meldung angezeigt. Beispielsweise nach dem Hinzufügen eines neuen Datensatzes, der `Products` Tabelle, wir möchten eine Meldung angezeigt, die liest: "*ProductName* in der Datenbank hinzugefügt wurde." Anstatt hartcodieren der Text für diese Bezeichnung auf der Masterseite sollten wir die Nachricht von der Seite Inhalt angepasst werden.
+In Schritt 1 haben wir auf der Master Seite ein Label-websteuer Element mit dem Namen `GridMessage` oberhalb der GridView hinzugefügt. Diese Bezeichnung soll optional eine Meldung anzeigen. Wenn Sie z. b. der `Products` Tabelle einen neuen Datensatz hinzugefügt haben, möchten Sie möglicherweise eine Meldung anzeigen, die Folgendes enthält: "*ProductName* wurde der Datenbank hinzugefügt." Anstatt den Text für diese Bezeichnung auf der Master Seite hart zu codieren, möchten wir möglicherweise, dass die Nachricht von der Inhaltsseite angepasst wird.
 
-Da das Label-Steuerelement als eine geschützte Member-Variable innerhalb der Masterseite implementiert wird, kann nicht diese direkt von Inhaltsseiten zugegriffen werden. Für die Arbeit mit der Bezeichnung in einer Masterseite der Inhaltsseite (oder einfach alle Websteuerelement in die Masterseite) müssen wir eine öffentliche Eigenschaft in die Masterseite zu erstellen, macht das Websteuerelement oder dient als Proxy mit dem eine seiner Eigenschaften werden kann  der Zugriff auf. Fügen Sie die folgende Syntax, die Masterseite CodeBehind-Klasse, der Bezeichnung des verfügbar zu machen `Text` Eigenschaft:
+Da das Label-Steuerelement als geschützte Element Variable innerhalb der Master Seite implementiert ist, kann auf Inhaltsseiten nicht direkt zugegriffen werden. Um die Bezeichnung in einer Master Seite von der Inhaltsseite aus zu bearbeiten (oder für jedes websteuer Element auf der Master Seite), müssen wir auf der Master Seite eine öffentliche Eigenschaft erstellen, die das websteuer Element verfügbar macht oder als Proxy fungiert, mit dem eine ihrer Eigenschaften sein kann.  auf. Fügen Sie der Code Behind-Klasse der Master Seite die folgende Syntax hinzu, um die `Text`-Eigenschaft der Bezeichnung verfügbar zu machen:
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample6.cs)]
 
-Wenn ein neuer Datensatz hinzugefügt wird, um die `Products` Tabelle von einer Inhaltsseite der `RecentProducts` GridView, die auf der Masterseite muss mit der zugrunde liegenden Datenquelle zu binden. Zum Binden des GridView-Aufrufs der `DataBind` Methode. Da die GridView auf der Masterseite nicht programmgesteuert zugegriffen werden kann, auf die Inhaltsseiten ist, werden wir müssen eine öffentliche Methode in der Masterseite, die während der Erstellung aufgerufen, bindet die Daten an die GridView. Fügen Sie auf der Masterseite CodeBehind-Klasse die folgende Methode hinzu:
+Wenn der `Products` Tabelle auf einer Inhaltsseite ein neuer Datensatz hinzugefügt wird, muss die `RecentProducts` GridView auf der Master Seite erneut an die zugrunde liegende Datenquelle gebunden werden. Zum erneuten Binden der GridView-Methode wird die `DataBind`-Methode aufgerufen. Da die GridView auf der Master Seite nicht Programm gesteuert für die Inhaltsseiten zugänglich ist, müssen wir eine öffentliche Methode auf der Master Seite erstellen, die die Daten bei der aufgerufenen wieder an die GridView bindet. Fügen Sie der Code Behind-Klasse der Master Seite die folgende Methode hinzu:
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample7.cs)]
 
-Mit der `GridMessageText` Eigenschaft und `RefreshRecentProductsGrid` Methode vorhanden, jeder Inhaltsseite kann programmgesteuert festlegen oder Lesen Sie den Wert des der `GridMessage` Bezeichnungsfelds `Text` Eigenschaft oder binden Sie die Daten in die `RecentProducts` GridView. Schritt 4 untersucht, wie Sie öffentliche Eigenschaften und Methoden der Masterseite von einer Inhaltsseite zugreifen wird.
+Wenn die `GridMessageText`-Eigenschaft und `RefreshRecentProductsGrid`-Methode vorhanden sind, kann jede Inhaltsseite den Wert der `Text` Eigenschaft `GridMessage` Bezeichnung Programm gesteuert festlegen oder lesen oder die Daten erneut an die `RecentProducts` GridView binden. In Schritt 4 wird der Zugriff auf die öffentlichen Eigenschaften und Methoden der Master Seite über eine Inhaltsseite untersucht.
 
 > [!NOTE]
-> Vergessen Sie nicht, markieren Sie die Eigenschaften und Methoden wie der Masterseite `public`. Wenn Sie nicht explizit diese Eigenschaften und Methoden als kennzeichnen `public`, sie können nicht auf der Seite Inhalt zugegriffen werden.
+> Vergessen Sie nicht, die Eigenschaften und Methoden der Master Seite als `public`zu markieren. Wenn Sie diese Eigenschaften und Methoden nicht explizit als `public`bezeichnen, kann auf Sie nicht über die Inhaltsseite zugegriffen werden.
 
-## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>Schritt 4: Öffentliche Member der Masterseite Aufrufen von einer Inhaltsseite
+## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>Schritt 4: Aufrufen der öffentlichen Member der Master Seite über eine Inhaltsseite
 
-Nachdem die Masterseite erforderlichen öffentliche Eigenschaften und Methoden verfügt, wir können diese Eigenschaften und Methoden aus Aufrufen der `AddProduct.aspx` Inhaltsseite. Insbesondere müssen wir die Gestaltungsvorlage festgelegt `GridMessageText` -Eigenschaft, und rufen die `RefreshRecentProductsGrid` -Methode auf, nachdem das neue Produkt mit der Datenbank hinzugefügt wurde. Alle ASP.NET Daten-Websteuerelemente auslösen Ereignisse, unmittelbar vor und nach dem Ausführen verschiedener Aufgaben, die Seitenentwickler, die eine programmgesteuerte Aktion vor oder nach der Aufgabe zu erleichtern. Z. B. wenn der Endbenutzer DetailsViews-Einfügen-Schaltfläche klickt, auf postback die DetailsView löst die `ItemInserting` -Ereignis vor dem Einfügen von Workflow ab. Klicken Sie dann den Datensatz in die Datenbank eingefügt. Danach DetailsView löst die `ItemInserted` Ereignis. Erstellen aus diesem Grund für die Arbeit mit der Masterseite nachdem das neue Produkt hinzugefügt wurde, einen Ereignishandler für die DetailsView `ItemInserted` Ereignis.
+Nun, da die Master Seite über die erforderlichen öffentlichen Eigenschaften und Methoden verfügt, sind wir bereit, diese Eigenschaften und Methoden auf der Seite "`AddProduct.aspx` Inhalt" aufzurufen. Insbesondere müssen wir die `GridMessageText`-Eigenschaft der Master Seite festlegen und ihre `RefreshRecentProductsGrid`-Methode aufzurufen, nachdem das neue Produkt der Datenbank hinzugefügt wurde. Alle ASP.NET Data Web-Steuerelemente lösen Ereignisse unmittelbar vor und nach dem Durchführen verschiedener Aufgaben aus, die es Seiten Entwicklern erleichtern, eine programmgesteuerte Aktion entweder vor oder nach der Aufgabe auszuführen. Wenn z. b. der Endbenutzer auf die Schaltfläche Einfügen der DetailsView klickt, löst die DetailsView bei Postback das `ItemInserting`-Ereignis aus, bevor der Einfügungs Workflow gestartet wird. Anschließend wird der Datensatz in die Datenbank eingefügt. Danach löst die DetailsView das `ItemInserted`-Ereignis aus. Um mit der Master Seite zu arbeiten, nachdem das neue Produkt hinzugefügt wurde, erstellen Sie daher einen Ereignishandler für das `ItemInserted`-Ereignis der DetailsView.
 
-Es gibt zwei Möglichkeiten, eine Inhaltsseite programmgesteuert mit der die Masterseite kann:
+Es gibt zwei Möglichkeiten, wie eine Inhaltsseite Programm gesteuert mit der Master Seite in eine Schnittstelle gehen kann:
 
-- Mithilfe der `Page.Master` -Eigenschaft, die einen lose typisierten Verweis auf die Masterseite zurückgegeben wird, oder
-- Geben Sie Pfad der Seite Masterseite Typ oder die Datei über eine `@MasterType` -Direktive; Dadurch wird eine stark typisierte Eigenschaft automatisch auf die Seite mit dem Namen hinzugefügt `Master`.
+- Verwenden der `Page.Master`-Eigenschaft, die einen lose typisierten Verweis auf die Master Seite zurückgibt, oder
+- Geben Sie den Master Seitentyp der Seite oder den Dateipfad über eine `@MasterType` Direktive an. Dadurch wird der Seite mit dem Namen `Master`automatisch eine stark typisierte Eigenschaft hinzugefügt.
 
-Betrachten wir beide Ansätze.
+Sehen wir uns beide Ansätze genauer an.
 
-### <a name="using-the-loosely-typedpagemasterproperty"></a>Verwenden die lose typisierte`Page.Master`Eigenschaft
+### <a name="using-the-loosely-typedpagemasterproperty"></a>Verwenden der lose typisierten`Page.Master`-Eigenschaft
 
-Alle ASP.NET-Webseiten muss abgeleitet werden, aus der `Page` -Klasse, die sich im befindet der `System.Web.UI` Namespace. Die `Page` Klasse enthält eine [ `Master` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) , der einen Verweis auf die Masterseite zurückgibt. Wenn die Seite nicht über eine Masterseite verfügt `Master` gibt `null`.
+Alle ASP.NET Webseiten müssen von der `Page`-Klasse abgeleitet werden, die sich im `System.Web.UI`-Namespace befindet. Die `Page`-Klasse enthält eine [`Master`-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) , die einen Verweis auf die Master Seite der Seite zurückgibt. Wenn die Seite keine Master Seite hat `Master` gibt `null`zurück.
 
-Die `Master` -Eigenschaft gibt ein Objekt des Typs [ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (auch im Verzeichnis der `System.Web.UI` Namespace) Dies ist der Basistyp, von dem alle Masterseiten abgeleitet. Aus diesem Grund auf mit öffentlichen Eigenschaften oder Methoden, die in unsere Website, die Masterseite, wir müssen umwandeln, definiert die `MasterPage` Objekt, das von der `Master` Eigenschaft in den entsprechenden Typ. Da wir unsere Masterseitendatei namens `Site.master`, wurde der Code-Behind-Klasse mit dem Namen `Site`. Der folgende code aus diesem Grund Umwandlungen der `Page.Master` -Eigenschaft auf eine Instanz der Website-Klasse.
+Die `Master`-Eigenschaft gibt ein Objekt vom Typ " [`MasterPage`](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) " zurück (auch im `System.Web.UI` Namespace). Dies ist der Basistyp, von dem alle Masterseiten abgeleitet werden. Damit öffentliche Eigenschaften oder Methoden verwendet werden können, die auf der Master Seite unserer Website definiert sind, müssen wir das `MasterPage` Objekt, das von der `Master`-Eigenschaft zurückgegeben wird, in den entsprechenden Typ umwandeln. Da wir unsere Masterseiten Datei `Site.master`benannt haben, wurde die Code-Behind-Klasse `Site`benannt. Daher wandelt der folgende Code die `Page.Master`-Eigenschaft in eine Instanz der Site-Klasse um.
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample8.cs)]
 
-Nun, da wir umgewandelt haben die lose typisierte `Page.Master` Eigenschaft, um die `Site` geben wir können die Eigenschaften und Methoden, die Website zu verweisen. Wie in Abbildung 7 dargestellt, das die öffentliche Eigenschaft `GridMessageText` wird in der IntelliSense-Dropdownliste angezeigt.
+Nachdem wir nun die lose typisierte `Page.Master` Eigenschaft in den `Site` Typ eingefügt haben, können wir auf die Eigenschaften und Methoden verweisen, die für die Website spezifisch sind. Wie in Abbildung 7 gezeigt, wird die öffentliche Eigenschaften `GridMessageText` in der IntelliSense-Dropdown-Anzeige angezeigt.
 
-[![IntelliSense zeigt unsere Masterseite öffentliche Eigenschaften und Methoden](interacting-with-the-master-page-from-the-content-page-cs/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image19.png)
+[![IntelliSense zeigt die öffentlichen Eigenschaften und Methoden unserer Master Seite an.](interacting-with-the-master-page-from-the-content-page-cs/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image19.png)
 
-**Abbildung 07**: IntelliSense zeigt unsere Masterseite öffentliche Eigenschaften und Methoden ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image21.png))
+**Abbildung 07**: IntelliSense zeigt die öffentlichen Eigenschaften und Methoden unserer Master Seite[an (Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image21.png))
 
 > [!NOTE]
-> Wenn Sie Ihre Masterseitendatei namens `MasterPage.master` lautet die Masterseite Code-Behind-Klassenname `MasterPage`. Dies kann zu mehrdeutigen Code führen, bei der Umwandlung vom Typ `System.Web.UI.MasterPage` auf Ihre `MasterPage` Klasse. Kurz gesagt, müssen Sie den vollqualifizierten des Typs, dem Sie umwandeln, das kann etwas schwierig sein, wenn das Websiteprojekt-Modell verwenden. Mein Vorschlag wäre entweder sicherstellen, dass bei der Erstellung Ihrer Masterseite Sie es etwas anderen als Namen `MasterPage.master` oder noch besser ist, erstellen Sie einen stark typisierten Verweis auf die Masterseite.
+> Wenn Sie die Masterseiten Datei `MasterPage.master` haben, wird der Code Behind-Klassenname der Master Seite `MasterPage`. Dies kann zu mehrdeutigem Code führen, wenn die Umwandlung vom Typ `System.Web.UI.MasterPage` in Ihre `MasterPage` Klasse durchgeführt wird. Kurz gesagt, Sie müssen den Typ, in den Sie umgewandelt werden, vollständig qualifizieren, was bei der Verwendung des Website-Projekt Modells etwas kompliziert sein kann. Ich möchte entweder sicherstellen, dass Sie beim Erstellen der Master Seite einen anderen Namen als `MasterPage.master` haben oder einen stark typisierten Verweis auf die Master Seite erstellen.
 
-### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>Erstellen einen stark typisierten Verweis mit dem`@MasterType`Richtlinie
+### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>Erstellen eines stark typisierten Verweises mit der`@MasterType`-Direktive
 
-Wenn Sie genau hinsehen werden Sie sehen, dass eine ASP.NET-Seite Code-Behind-Klasse eine partielle Klasse ist (Beachten Sie die `partial` Schlüsselwort in der Klassendefinition). Partielle Klassen in c# und Visual Basic mit Framework 2.0 eingeführt wurden und im Prinzip für die Member einer Klasse in mehreren Dateien definiert werden können. Die CodeBehind-Klassendatei - `AddProduct.aspx.cs`, Beispiel: enthält den Code, den Sie, die Seitenentwickler erstellen. Neben unserem Code das ASP.NET-Modul erstellt automatisch eine separate Klasse-Datei mit den Eigenschaften, und Ereignishandlern, übersetzen deklarative Markup in der Klassenhierarchie der Seite aus.
+Wenn Sie sich genau ansehen, sehen Sie, dass die Code-Behind-Klasse einer ASP.NET-Seite eine partielle Klasse ist (Beachten Sie das `partial`-Schlüsselwort in der Klassendefinition). Partielle Klassen wurden in C# und Visual Basic with.NET Framework 2,0 eingeführt und ermöglichen es, den Membern einer Klasse in einer kurzen Zahl über mehrere Dateien hinweg zu definieren. Die Code-Behind-Klasse File-`AddProduct.aspx.cs`z. b. enthält den Code, den wir, den Seiten Entwickler, erstellen. Zusätzlich zu unserem Code erstellt die ASP.net-Engine automatisch eine separate Klassendatei mit Eigenschaften und Ereignis Handlern in, die das deklarative Markup in die Klassenhierarchie der Seite übersetzen.
 
-Die automatische codegenerierung, die auftritt, wenn eine ASP.NET-Seite besucht wird kontextspezifischen einige recht interessanten und nützliche Möglichkeiten. Im Fall von Masterseiten, wenn wir das ASP.NET-Modul mitteilen, welche Masterseite von unserer Seite verwendet wird, er generiert einen stark typisierten `Master` -Eigenschaft für uns.
+Die automatische Codegenerierung, die jedes Mal auftritt, wenn eine ASP.NET-Seite besucht wird, ist für einige sehr interessante und nützliche Möglichkeiten geeignet. Wenn wir bei Masterseiten der ASP.net-Engine mitteilen, welche Master Seite von unserer Inhaltsseite verwendet wird, generiert Sie eine stark typisierte `Master`-Eigenschaft für uns.
 
-Verwenden der [ `@MasterType` Richtlinie](https://msdn.microsoft.com/library/ms228274.aspx) die ASP.NET-Engine für die master Seitentyp der Seite Inhalt informiert. Die `@MasterType` Richtlinie kann entweder der Typname der Masterseite oder der Pfad der Datei akzeptieren. Um anzugeben, dass die `AddProduct.aspx` verwendet `Site.master` als Gestaltungsvorlage, fügen Sie die folgende Anweisung am Anfang `AddProduct.aspx`:
+Verwenden Sie die [`@MasterType`-Direktive](https://msdn.microsoft.com/library/ms228274.aspx) , um die ASP.net-Engine über den Master Seitentyp der Inhaltsseite zu informieren. Die `@MasterType`-Direktive kann entweder den Typnamen der Master Seite oder den zugehörigen Dateipfad akzeptieren. Um anzugeben, dass die `AddProduct.aspx` Seite `Site.master` als Master Seite verwendet, fügen Sie die folgende Direktive am Anfang der `AddProduct.aspx`hinzu:
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample9.aspx)]
 
-Diese Anweisung weist die Engine ASP.NET einen stark typisierten Verweis auf die Masterseite über eine Eigenschaft mit dem Namen hinzufügen `Master`. Mit der `@MasterType` -Anweisung direktes Aufrufen der `Site.master` master öffentliche Eigenschaften und Methoden, die direkt über die Seite die `Master` Eigenschaft ohne datentypkonvertierungen.
+Diese Direktive weist die ASP.net-Engine an, einen stark typisierten Verweis auf die Master Seite über eine Eigenschaft mit dem Namen `Master`hinzuzufügen. Wenn die `@MasterType`-Direktive vorhanden ist, können die öffentlichen Eigenschaften und Methoden der `Site.master` Master Seite direkt über die `Master`-Eigenschaft aufgerufen werden, ohne dass Umwandlungen vorhanden sind.
 
 > [!NOTE]
-> Wenn Sie weglassen der `@MasterType` Richtlinie ist die Syntax `Page.Master` und `Master` das gleiche Ergebnis zurückgegeben: ein lose typisiertes Objekt in die Masterseite. Wenn Sie enthalten die `@MasterType` Richtlinie dann `Master` gibt einen stark typisierten Verweis auf die angegebene Masterseite. `Page.Master`, jedoch immer noch einen lose typisierten Verweis zurück. Eine ausführlichere Betrachtung warum dies der Fall ist und wie die `Master` Eigenschaft erstellt wird bei der `@MasterType` Richtlinie enthalten ist, finden Sie unter [K. Scott Allen](http://odetocode.com/blogs/scott/default.aspx)Blogeintrag [ `@MasterType` in ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
+> Wenn Sie die `@MasterType`-Direktive weglassen, wird die Syntax `Page.Master` und `Master` dasselbe Ergebnis zurückgeben: ein lose typisiertes Objekt zur Master Seite der Seite. Wenn Sie die `@MasterType`-Direktive einschließen, gibt `Master` einen stark typisierten Verweis auf die angegebene Master Seite zurück. `Page.Master`gibt jedoch immer noch einen locker-typisierten Verweis zurück. Eine ausführlichere Betrachtung der Gründe, warum dies der Fall ist und wie die `Master`-Eigenschaft erstellt wird, wenn die `@MasterType`-Direktive enthalten ist, finden Sie im Blogeintrag von [K. Scott allen](http://odetocode.com/blogs/scott/default.aspx) [`@MasterType` in ASP.NET 2,0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
 
-### <a name="updating-the-master-page-after-adding-a-new-product"></a>Aktualisieren die Masterseite, nach dem Hinzufügen eines neuen Produkts
+### <a name="updating-the-master-page-after-adding-a-new-product"></a>Aktualisieren der Master Seite nach dem Hinzufügen eines neuen Produkts
 
-Nachdem wir wissen, wie zum Aufrufen der öffentlichen Eigenschaften und Methoden von einer Inhaltsseite einer Masterseite wir sind bereit zum Aktualisieren der `AddProduct.aspx` Seite, damit die Masterseite aktualisiert wird, nach dem Hinzufügen eines neuen Produkts. Zu Beginn von Schritt 4, die wir erstellt eines ereignishandlers für des DetailsView-Steuerelements `ItemInserting` -Ereignis, das ausgeführt wird, sofort, nachdem das neue Produkt mit der Datenbank hinzugefügt wurde. Fügen Sie zu diesem Ereignishandler den folgenden Code hinzu:
+Nachdem wir nun wissen, wie die öffentlichen Eigenschaften und Methoden einer Master Seite auf einer Inhaltsseite aufgerufen werden, können wir die `AddProduct.aspx` Seite aktualisieren, sodass die Master Seite nach dem Hinzufügen eines neuen Produkts aktualisiert wird. Zu Beginn von Schritt 4 haben wir einen Ereignishandler für das `ItemInserting`-Ereignis des DetailsView-Steuer Elements erstellt, das unmittelbar nach dem Hinzufügen des neuen Produkts zur Datenbank ausgeführt wird. Fügen Sie dem Ereignishandler folgenden Code hinzu:
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample10.cs)]
 
-Der obige Code wird sowohl die lose typisierte `Page.Master` Eigenschaft und die stark typisierte `Master` Eigenschaft. Beachten Sie, dass die `GridMessageText` -Eigenschaftensatz auf "*ProductName* ... Raster hinzugefügt" Werte für den gerade hinzugefügten des Produkts können Sie über die `e.Values` Auflistung, wie Sie sehen können, die gerade hinzugefügte `ProductName` Wert erfolgt über `e.Values["ProductName"]`.
+Der obige Code verwendet sowohl die lose typisierte `Page.Master`-Eigenschaft als auch die stark typisierte `Master`-Eigenschaft. Beachten Sie, dass die `GridMessageText`-Eigenschaft auf "*ProductName* wurde dem Raster hinzugefügt..." festgelegt ist. Die Werte des soeben hinzugefügten Produkts sind über die `e.Values` Auflistung verfügbar. wie Sie sehen können, erfolgt der Zugriff auf den soeben hinzugefügten `ProductName` Wert über `e.Values["ProductName"]`.
 
-Abbildung 8 zeigt die `AddProduct.aspx` Seite sofort nach der ein neues Produkt - Scotts Soda - Datenbank hinzugefügt wurde. Beachten Sie, dass der Name des gerade hinzugefügten Produkts in die Masterseite Bezeichnung angegeben ist und die GridView aktualisiert worden sind, um das Produkt und seinem Preis enthalten.
+Abbildung 8 zeigt die `AddProduct.aspx` Seite unmittelbar nach dem Hinzufügen eines neuen Produkts, das der-Datenbank hinzugefügt wurde. Beachten Sie, dass der soeben hinzugefügte Produktname in der Bezeichnung der Master Seite vermerkt ist und dass die GridView aktualisiert wurde, um das Produkt und den Preis einzuschließen.
 
-[![Bezeichnung und GridView anzeigen, das gerade hinzugefügte Produkt der Masterseite](interacting-with-the-master-page-from-the-content-page-cs/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image22.png)
+[![die Bezeichnung und die GridView der Master Seite das soeben hinzugefügte Produkt](interacting-with-the-master-page-from-the-content-page-cs/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image22.png)
 
-**Abbildung 08**: Die Masterseite Bezeichnung und GridView wird gezeigt, das Produkt Just-Added ([klicken Sie, um das Bild in voller Größe anzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image24.png))
+**Abbildung 08**: die Bezeichnung und die GridView der Master Seite zeigen das soeben hinzugefügte Produkt an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image24.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Im Idealfall eine Masterseite und die Inhaltsseiten sind vollständig voneinander getrennt, und Sie benötigen keine Interaktion. Während der Masterseiten und Inhaltsseiten mit diesem Ziel vor Augen entworfen werden soll, gibt es zahlreiche gängige Szenarien, in denen eine Inhaltsseite mit der Masterseite Schnittstelle muss. Einer der häufigsten Gründe Rechenzentren zu einen bestimmten Teil die Masterseite-Anzeige, die eine Aktion, die auf der Inhaltsseite wiederholt entsprechend aktualisieren.
+Idealerweise sind eine Master Seite und ihre Inhaltsseiten vollständig voneinander getrennt und erfordern keine Interaktions Ebene. Während Masterseiten und Inhaltsseiten mit diesem Ziel entworfen werden sollten, gibt es eine Reihe allgemeiner Szenarien, in denen eine Inhaltsseite mit der Master Seite in eine Schnittstelle gesetzt werden muss. Einer der häufigsten Gründe ist das Aktualisieren eines bestimmten Teils der Masterseiten Anzeige auf der Grundlage einer Aktion, die auf der Inhaltsseite aufgetreten ist.
 
-Die gute Nachricht ist, dass es relativ einfach, um eine programmgesteuerte Interaktion mit der Masterseite Inhaltsseite zu erhalten. Zunächst erstellen öffentliche Eigenschaften oder Methoden auf der Masterseite, die die Funktionalität zu kapseln, die von einer Inhaltsseite aufgerufen werden muss. Klicken Sie dann auf der Inhaltsseite, Zugriff auf Eigenschaften und Methoden der Masterseite über die typenlosen `Page.Master` Eigenschaft oder verwenden Sie die `@MasterType` Direktive, um einen stark typisierten Verweis auf die Masterseite zu erstellen.
+Die gute Nachricht ist, dass es relativ einfach ist, eine Inhaltsseite Programm gesteuert mit der Master Seite zu interagieren. Beginnen Sie, indem Sie auf der Master Seite öffentliche Eigenschaften oder Methoden erstellen, die die Funktionalität Kapseln, die von einer Inhaltsseite aufgerufen werden muss. Greifen Sie dann auf der Seite Inhalt über die lose typisierte `Page.Master`-Eigenschaft auf die Eigenschaften und Methoden der Master Seite zu, oder verwenden Sie die `@MasterType`-Direktive, um einen stark typisierten Verweis auf die Master Seite zu erstellen.
 
-Im nächsten Tutorial untersuchen wir auf die programmgesteuerte Interaktion mit einem entsprechenden Inhaltsseiten Masterseite.
+Im nächsten Tutorial wird erläutert, wie die Master Seite Programm gesteuert mit einer ihrer Inhaltsseiten interagieren kann.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ### <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
-- [Zugreifen auf und Aktualisieren von Daten in ASP.NET](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [ASP.NET Masterseiten: Tipps, Tricks und fallen](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType` in ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
-- [Übergeben von Informationen zwischen Inhalt und Masterseiten](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
-- [Arbeiten mit Daten in den ASP.NET-Tutorials](../../data-access/index.md)
+- [Zugreifen auf und Aktualisieren von Daten in ASP.net](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
+- [ASP.net Master Seiten: Tipps, Tricks und Traps](http://www.odetocode.com/articles/450.aspx)
+- [`@MasterType` in ASP.NET 2,0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [Übergeben von Informationen zwischen Inhalt und Master Seiten](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
+- [Arbeiten mit Daten in ASP.net-Tutorials](../../data-access/index.md)
 
-### <a name="about-the-author"></a>Der Autor
+### <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer Büchern zu ASP/ASP.NET und Gründer von 4GuysFromRolla.com, arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neuestes Buch heißt [ *Sams Teach selbst ASP.NET 3.5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott erreicht werden kann, zur [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
-### <a name="special-thanks-to"></a>Besonderen Dank an
+### <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Zack Jones. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Prüfer für dieses Tutorial war Zack Jones. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, löschen Sie eine Zeile bei [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](control-id-naming-in-content-pages-cs.md)

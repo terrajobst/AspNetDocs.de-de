@@ -2,62 +2,62 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 title: Auslösen einer Animation in einem anderen Steuerelement (VB) | Microsoft-Dokumentation
 author: wenz
-description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Starten Sie in der Regel ein...
+description: Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Im Allgemeinen wird das Starten einer...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc27e44ae42865eebbf67da69dbe1aa43a57a4d7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 6a4af2324afab7519170c123b6ea7c57ab3e03fb
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128165"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74575031"
 ---
 # <a name="triggering-an-animation-in-another-control-vb"></a>Auslösen einer Animation in einem anderen Steuerelement (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)
 
-> Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Starten eine Animation wird im Allgemeinen durch eine Benutzerinteraktion mit dem gleichen Steuerelement ausgelöst. Es ist jedoch auch möglich, ein Steuerelement, und klicken Sie dann Animation ein anderes Steuerelement interagieren.
+> Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Im Allgemeinen wird das Starten einer Animation durch eine Benutzerinteraktion mit demselben Steuerelement ausgelöst. Es ist jedoch auch möglich, mit einem Steuerelement zu interagieren und dann ein anderes Steuerelement zu Animation.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Starten eine Animation wird im Allgemeinen durch eine Benutzerinteraktion mit dem gleichen Steuerelement ausgelöst. Es ist jedoch auch möglich, ein Steuerelement, und klicken Sie dann Animation ein anderes Steuerelement interagieren.
+Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Im Allgemeinen wird das Starten einer Animation durch eine Benutzerinteraktion mit demselben Steuerelement ausgelöst. Es ist jedoch auch möglich, mit einem Steuerelement zu interagieren und dann ein anderes Steuerelement zu Animation.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal sind die `ScriptManager` in die Seite klicken Sie dann die ASP.NET AJAX-Bibliothek wird geladen, lässt sich das Steuerelement-Toolkit verwenden:
+Fügen Sie zunächst den `ScriptManager` auf der Seite ein. Anschließend wird die ASP.NET AJAX-Bibliothek geladen, sodass Sie das steuerungstooltoolkit verwenden können:
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample1.aspx)]
 
-Die Animation wird auf einen Bereich des Texts angewendet werden, der so aussieht:
+Die Animation wird auf einen Textbereich angewendet, der wie folgt aussieht:
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample2.aspx)]
 
-Definieren Sie in der zugehörigen CSS-Klasse für den Bereich eine gute Hintergrundfarbe aus, und auch festlegen Sie eine feste Breite für den Bereich:
+Definieren Sie in der zugeordneten CSS-Klasse für den Bereich eine schöne Hintergrundfarbe, und legen Sie außerdem eine festgelegte Breite für den Bereich fest:
 
 [!code-css[Main](triggering-an-animation-in-another-control-vb/samples/sample3.css)]
 
-Um das Panel Animation zu starten, wird eine HTML-Schaltfläche verwendet. Beachten Sie, dass `<input type="button" />` ist über begünstigt `<asp:Button />` da wir einen Postback nicht soll, wenn der Benutzer auf diese Schaltfläche klickt.
+Um mit der Animation des Panels zu beginnen, wird eine HTML-Schaltfläche verwendet. Beachten Sie, dass `<input type="button" />` für `<asp:Button />` bevorzugt ist, da wir kein Postback wünschen, wenn der Benutzer auf diese Schaltfläche klickt.
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample4.aspx)]
 
-Fügen Sie dann die `AnimationExtender` auf der Seite Bereitstellen einer `ID`, `TargetControlID` -Attribut und das obligatorische `runat="server"`. Es ist wichtig, legen Sie `TargetControlID` auf die ID der Schaltfläche (das Auslösen der Animation-Element), nicht auf die ID des Bereichs (Element der zu animierenden)
+Fügen Sie dann der Seite die `AnimationExtender` hinzu, und geben Sie dabei eine `ID`, das `TargetControlID`-Attribut und den obligatorischen `runat="server"`an. Es ist wichtig, `TargetControlID` auf die ID der Schaltfläche (das Element, das die Animation auslöst) festzulegen, nicht auf die ID des Bereichs (das zu animierende Element).
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample5.aspx)]
 
-In der `<Animations>` Knoten Ort Animationen wie gewohnt. Damit sie im Bereich geändert werden können, legen Sie nicht die Schaltfläche, die `AnimationTarget` -Attribut für jedes Animationselement in `AnimationExtender`. Der Wert für `AnimationTarget` ist die ID des Bereichs, natürlich. Auf diese Weise Fall die Animationen im Bereich nicht mit der Schaltfläche mit den auslösenden sein. Hier ist die `AnimationExtender` Markup für dieses Szenario:
+Platzieren Sie die Animationen innerhalb des `<Animations>` Knotens wie üblich. Um den Bereich zu ändern, nicht die Schaltfläche, legen Sie das `AnimationTarget`-Attribut für jedes Animations Element innerhalb `AnimationExtender`fest. Der Wert für `AnimationTarget` ist natürlich die ID des Panels. Auf diese Weise werden die Animationen mit dem Panel und nicht mit der auslösenden Schaltfläche durchgeführt. Im folgenden finden Sie `AnimationExtender` Markup für dieses Szenario:
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample6.aspx)]
 
-Beachten Sie die spezielle Reihenfolge, in der die einzelnen Animationen angezeigt werden. Als Erstes ruft die Schaltfläche deaktiviert, nachdem die Animation ausgeführt wird. Da gibt es keine `AnimationTarget` -Attribut in der `<EnableAction>` Element dieser Animation wird angewendet, auf das ursprüngliche Steuerelement: die Schaltfläche. Die nächsten beiden Animationsschritte parallel durchgeführt werden müssen (`<Parallel>` Element). Beide verfügen über ihre `AnimationTarget` Attribute festgelegt werden, um `"Panel1"`, animieren daher im Bereich nicht auf die Schaltfläche.
+Beachten Sie die besondere Reihenfolge, in der die einzelnen Animationen angezeigt werden. Zuerst wird die Schaltfläche deaktiviert, sobald die Animation ausgeführt wird. Da das `<EnableAction>`-Element kein `AnimationTarget` Attribut enthält, wird diese Animation auf das ursprüngliche Steuerelement angewendet: die Schaltfläche. Die nächsten zwei Animations Schritte müssen parallel ausgeführt werden (`<Parallel>`-Element). Beide Attribute `AnimationTarget` sind auf `"Panel1"`festgelegt, sodass das Panel und nicht die Schaltfläche animiert werden.
 
-[![Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)
+[![mit einem Mausklick auf die Schaltfläche startet die Panel-Animation.](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)
 
-Startet die Animation Bereich, klicken mit der Maus auf die Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](triggering-an-animation-in-another-control-vb/_static/image3.png))
+Mit dem Mauszeiger auf die Schaltfläche wird die Panel-Animation gestartet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](triggering-an-animation-in-another-control-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](disabling-actions-during-animation-vb.md)

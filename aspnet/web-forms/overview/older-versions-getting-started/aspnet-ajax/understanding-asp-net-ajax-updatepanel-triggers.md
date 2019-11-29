@@ -1,147 +1,147 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
-title: Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX | Microsoft-Dokumentation
+title: Grundlegendes zu ASP.NET AJAX-UpdatePanel-Triggern | Microsoft-Dokumentation
 author: scottcate
-description: Bei der Arbeit in den Markup-Editor in Visual Studio können Sie (von IntelliSense) Beachten Sie, dass es zwei untergeordnete Elemente von einem UpdatePanel-Steuerelement gibt. Einer der w-fragewörter...
+description: Wenn Sie im Markup-Editor in Visual Studio arbeiten, bemerken Sie möglicherweise (von IntelliSense), dass zwei untergeordnete Elemente eines Update Panel-Steuer Elements vorhanden sind. Eins von wh...
 ms.author: riande
 ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: c61d10c28ba3975cb6fbadc6eda1f7a3c9406dfc
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b1cc869f373d4f8283b4d92af74707c3f11fef61
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114614"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74588843"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX
 
-durch [Scott Cate](https://github.com/scottcate)
+von [Scott Cate](https://github.com/scottcate)
 
-[PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
 
-> Bei der Arbeit in den Markup-Editor in Visual Studio können Sie (von IntelliSense) Beachten Sie, dass es zwei untergeordnete Elemente von einem UpdatePanel-Steuerelement gibt. Einer davon ist das Trigger-Element gibt an, die Steuerelemente auf der Seite (oder das Benutzersteuerelement, wenn Sie einen verwenden), der auslöst einer partiellen Rendering des UpdatePanel-Steuerelements in der das Element befindet.
+> Wenn Sie im Markup-Editor in Visual Studio arbeiten, bemerken Sie möglicherweise (von IntelliSense), dass zwei untergeordnete Elemente eines Update Panel-Steuer Elements vorhanden sind. Eines davon ist das Triggers-Element, das die Steuerelemente auf der Seite angibt (oder das Benutzer Steuerelement, wenn Sie eines verwenden), das ein partielles Rendering des Update Panel-Steuer Elements auslöst, in dem sich das Element befindet.
 
 ## <a name="introduction"></a>Einführung
 
-Die Technologie von Microsoft ASP.NET bietet ein Programmiermodell, das objektorientierte und ereignisgesteuerte und vereinen sie die Vorteile des kompilierten Codes. Das Modell für die serverseitige Verarbeitung hat jedoch einige Nachteile, die sich von der Technologie, von die viele durch die neuen Features in den Microsoft ASP.NET 3.5-AJAX-Erweiterungen behandelt werden können. Mithilfe dieser Erweiterungen können viele neue rich-Client-Features, darunter Teilrendering von Seiten ohne einer vollständigen seitenaktualisierung, den Zugriff auf Webdienste über Clientskript (einschließlich ASP.NET profilerstellungs-API) und eine umfangreiche clientseitige API entwickelt, um viele der Steuerelement-Schemas finden Sie in den Satz der ASP.NET serverseitigen Steuerelements zu spiegeln.
+Die ASP.NET-Technologie von Microsoft sorgt für ein objektorientiertes und Ereignis gesteuertes Programmiermodell und vereinigt es mit den Vorteilen von kompiliertem Code. Das serverseitige Verarbeitungsmodell weist jedoch mehrere Nachteile in der Technologie auf, von denen viele durch die neuen Features in den Microsoft ASP.NET 3,5-AJAX-Erweiterungen adressiert werden können. Diese Erweiterungen ermöglichen viele neue Rich Client-Features, einschließlich partielles Rendering von Seiten, ohne dass eine vollständige Seiten Aktualisierung erforderlich ist, die Möglichkeit des Zugriffs auf Webdienste über ein Client Skript (einschließlich der ASP.net-Profilerstellungs-API) und eine umfangreiche Client seitige API entworfen, um viele der Steuerelement Schemas zu spiegeln, die im serverseitigen ASP.NET-Steuerelement Satz angezeigt werden.
 
-In diesem Whitepaper werden die XML-Trigger-Funktionalität von ASP.NET AJAX untersucht `UpdatePanel` Komponente. XML-Trigger geben Sie eine präzise Kontrolle über die Komponenten, die dazu partielles Rendering für bestimmte UpdatePanel-Steuerelemente.
+Dieses Whitepaper untersucht die XML-Triggerfunktionen der ASP.NET AJAX-`UpdatePanel` Komponente. XML-Trigger sorgen für eine differenzierte Steuerung der Komponenten, die partielles Rendering für bestimmte Update Panel-Steuerelemente verursachen können.
 
-In diesem Whitepaper basiert auf der Version von .NET Framework 3.5 Beta 2 und Visual Studio 2008. ASP.NET AJAX Extensions, zuvor eine Add-on-Assembly, die auf ASP.NET 2.0 ausgerichtet sind, sind jetzt in der .NET Framework-Basisklassenbibliothek integriert. In diesem Whitepaper wird vorausgesetzt, dass Sie mit Visual Studio 2008 nicht Visual Web Developer Express arbeiten werden und bieten Exemplarische Vorgehensweisen, gemäß der Benutzeroberfläche von Visual Studio (obwohl codeauflistungen vollständig unabhängig von kompatibel sind Entwicklungsumgebung).
+Dieses Whitepaper basiert auf der Beta 2-Version von .NET Framework 3,5 und Visual Studio 2008. Die ASP.NET-AJAX-Erweiterungen, zuvor eine Add-on-Assembly, die auf ASP.NET 2,0 ausgerichtet ist, sind jetzt in die .NET Framework Basisklassen Bibliothek integriert. In diesem Whitepaper wird auch davon ausgegangen, dass Sie mit Visual Studio 2008, nicht mit Visual Web Developer Express arbeiten und Exemplarische Vorgehensweisen entsprechend der Benutzeroberfläche von Visual Studio bereitstellen (obwohl Code Auflistungen unabhängig von Entwicklungsumgebung).
 
 ## <a name="triggers"></a>*Trigger*
 
-Trigger für eine bestimmte UpdatePanel standardmäßig enthalten automatisch alle untergeordneten Steuerelemente, die ein Postback handeln, einschließlich der TextBox-Steuerelemente, die (z. B.) aufrufen ihre `AutoPostBack` -Eigenschaftensatz auf **"true"**. Trigger können jedoch auch deklarativ mithilfe von Markup enthalten sein. Dies erfolgt im der `<triggers>` Teil der Deklaration des UpdatePanel-Steuerelement. Obwohl Trigger über zugegriffen werden können die `Triggers` Auflistungseigenschaft, es wird empfohlen, dass keine partiellen Rendering Trigger zur Laufzeit registriert werden (z. B. wenn ein Steuerelement zur Entwurfszeit nicht verfügbar ist) mit der `RegisterAsyncPostBackControl(Control)` -Methode der der ScriptManager Objekt für die Seite in der `Page_Load` Ereignis. Denken Sie daran, dass die Seiten sind zustandslos und daher sollte erneut registrieren dieser Steuerelemente jedes Mal, wenn sie erstellt werden.
+Trigger für ein bestimmtes Update Panel enthalten standardmäßig automatisch alle untergeordneten Steuerelemente, die ein Postback aufrufen, einschließlich (z. b.) Textfeld-Steuerelemente, deren `AutoPostBack`-Eigenschaft auf **true**festgelegt ist. Trigger können jedoch auch deklarativ mithilfe von Markup eingeschlossen werden. Dies erfolgt im Abschnitt `<triggers>` der Deklaration des UpdatePanel-Steuer Elements. Obwohl auf Trigger über die `Triggers` Auflistungs Eigenschaft zugegriffen werden kann, wird empfohlen, dass Sie alle partiellen rendertrigger zur Laufzeit registrieren (z. b. Wenn ein Steuerelement zur Entwurfszeit nicht verfügbar ist), indem Sie die `RegisterAsyncPostBackControl(Control)`-Methode des ScriptManager-Objekts für die Seite im `Page_Load` Ereignis verwenden. Denken Sie daran, dass die Seiten zustandslos sind. Sie sollten diese Steuerelemente daher bei jeder Erstellung erneut registrieren.
 
-Automatische untergeordneten Trigger einschließen kann auch deaktiviert werden (so, dass untergeordnete Steuerelemente, die Postbacks erstellen teilweise rendert nicht automatisch auslöst) durch Festlegen der `ChildrenAsTriggers` Eigenschaft **"false"**. Dies gibt Ihnen die größte Flexibilität beim Zuweisen von bestimmten steuert rufen möglicherweise eine Seite gerendert, und es wird empfohlen, sodass ein Entwickler opt-in wird zum Reagieren auf ein Ereignis, anstatt die Behandlung der Ereignisse, die auftreten können.
+Die automatische Einfügung von untergeordneten Elementen kann ebenfalls deaktiviert werden (sodass untergeordnete Steuerelemente, die Postbacks erstellen, nicht automatisch partielle Renderfunktionen auslöst), indem Sie die `ChildrenAsTriggers`-Eigenschaft auf **false**festlegen Dies ermöglicht Ihnen die größte Flexibilität bei der Zuweisung, welche spezifischen Steuerelemente ein Seiten Rendering aufrufen können. es wird empfohlen, dass ein Entwickler auf ein Ereignis reagiert, anstatt Ereignisse zu behandeln, die möglicherweise auftreten.
 
-Beachten Sie, dass wenn UpdatePanel-Steuerelemente geschachtelt sind, wenn die UpdateMode auf festgelegt ist **bedingte**, wenn das untergeordnete Element UpdatePanel wird ausgelöst, aber das übergeordnete Element ist nicht der Fall, klicken Sie dann nur die untergeordneten UpdatePanel aktualisiert wird. Jedoch, wenn das übergeordnete Element UpdatePanel aktualisiert wird, klicken Sie dann das untergeordnete Element UpdatePanel auch aktualisiert werden.
+Beachten Sie, dass beim Auslösen der Update Panel-Steuerelemente, wenn Update Mode auf **Conditional**festgelegt wird, wenn das untergeordnete Update Panel ausgelöst wird, das übergeordnete Element jedoch nicht ist, nur das untergeordnete Update Panel aktualisiert wird. Wenn jedoch das übergeordnete Update Panel aktualisiert wird, wird das untergeordnete Update Panel ebenfalls aktualisiert.
 
-## <a name="the-lttriggersgt-element"></a>*Die &lt;Trigger&gt; Element*
+## <a name="the-lttriggersgt-element"></a>*Die &lt;&gt; Element Trigger*
 
-Wenn Sie in den Markup-Editor in Visual Studio arbeiten, Sie bemerken (von IntelliSense), dass es zwei untergeordnete Elemente gibt von einer `UpdatePanel` Steuerelement. Das am häufigsten verwendeten angezeigte Element ist die `<ContentTemplate>` -Element, das im Wesentlichen auf den Inhalt kapselt, die mit dem Update-Bereich gespeichert werden (der Inhalt für das werden wir partielles Rendering aktivieren). Das andere Element ist die `<Triggers>` Element, das die Steuerelemente auf der Seite (oder das Benutzersteuerelement, wenn Sie einen verwenden) angibt, der eine partielle Rendering des UpdatePanel-Steuerelements in der auslöst der &lt;Trigger&gt; Element befindet.
+Wenn Sie im Markup-Editor in Visual Studio arbeiten, bemerken Sie möglicherweise (von IntelliSense), dass zwei untergeordnete Elemente eines `UpdatePanel`-Steuer Elements vorhanden sind. Das am häufigsten gesehene Element ist das `<ContentTemplate>`-Element, das im Wesentlichen den Inhalt kapselt, der im Aktualisierungs Panel (dem Inhalt, für den wir partielles Rendering aktivieren) enthalten ist. Das andere Element ist das `<Triggers>`-Element, das die Steuerelemente auf der Seite angibt (oder das Benutzer Steuerelement, wenn Sie eines verwenden), das eine partielle Darstellung des Update Panel-Steuer Elements auslöst, in dem sich die &lt;Trigger&gt;-Element befindet.
 
-Die `<Triggers>` Element kann eine beliebige Anzahl jedes von zwei untergeordnete Knoten enthalten: `<asp:AsyncPostBackTrigger>` und `<asp:PostBackTrigger>`. Beide übernehmen zwei Attribute, `ControlID` und `EventName`, und geben Sie jedes Steuerelement in der aktuellen Einheit der Kapselung kann (z. B. wenn sich das UpdatePanel-Steuerelement in einer Web-Benutzersteuerelement befindet, Sie sollten nicht versuchen, auf ein Steuerelement zu verweisen. die Seite, auf der das Steuerelement befindet).
+Das `<Triggers>`-Element kann jede beliebige Anzahl von zwei untergeordneten Knoten enthalten: `<asp:AsyncPostBackTrigger>` und `<asp:PostBackTrigger>`. Beide akzeptieren beide Attribute, `ControlID` und `EventName`und können jedes beliebige Steuerelement innerhalb der aktuellen Kapselungs Einheit angeben (wenn sich z. b. das Update Panel-Steuerelement in einem Webbenutzer Steuerelement befindet), sollten Sie nicht versuchen, auf die Seite, auf der sich das Benutzer Steuerelement befindet, auf ein Steuerelement zu verweisen.
 
-Die `<asp:AsyncPostBackTrigger>` Element ist besonders nützlich, ein Ereignis von einem Steuerelement ausgeführt werden können, die als untergeordnetes Element vorhanden ist, *alle* UpdatePanel-Steuerelement in der Einheit Kapselungsschichten kommt, nicht nur das UpdatePanel, unter dem dieser Trigger ein untergeordnetes Element ist, . Daher kann jedes Steuerelement vorgenommen werden, um eine partielle Aktualisierung auszulösen.
+Das `<asp:AsyncPostBackTrigger>`-Element ist besonders nützlich, da es ein beliebiges Ereignis von einem Steuerelement, das als untergeordnetes *Element eines Update* Panel-Steuer Elements in der Kapselungs Einheit vorhanden ist, als untergeordnetes Element festlegen kann, nicht nur das Update Panel, unter dem dieser-Fehler ein untergeordnetes Element ist. Folglich kann jedes Steuerelement so erstellt werden, dass eine partielle Seiten Aktualisierung ausgelöst wird.
 
-Auf ähnliche Weise die `<asp:PostBackTrigger>` Element kann verwendet werden, um den Trigger, die eine partielle Seite zu rendern, aber eine, die einen vollständige Roundtrip zum Server erforderlich sind. Dieser Trigger-Element kann auch verwendet werden, um eine gesamte Seite rendern zu erzwingen, wenn ein Steuerelement ein renderobjekt Teilseite andernfalls normalerweise auslösen würde (z. B. wenn ein `Button` Steuerelement vorhanden ist, der `<ContentTemplate>` Element von einem UpdatePanel-Steuerelement). In diesem Fall kann das PostBackTrigger Element jedes Steuerelement angeben, die ein untergeordnetes Element eines beliebigen UpdatePanel-Steuerelements in der aktuellen Einheit der Kapselung ist.
+Ebenso kann das `<asp:PostBackTrigger>`-Element verwendet werden, um ein teilweises Seiten Rendering zu auslösen, aber eines, für das ein vollständiger Roundtrip zum Server erforderlich ist. Dieses Auslöserelement kann auch verwendet werden, um ein vollständiges Seiten Rendering zu erzwingen, wenn ein Steuerelement normalerweise ein partielles Seiten Rendering auslöst (z. b. Wenn ein `Button` Steuerelement im `<ContentTemplate>`-Element eines Update Panel-Steuer Elements vorhanden ist). Auch hier kann das Postback-Auslöserelement ein beliebiges Steuerelement angeben, das ein untergeordnetes Element eines Update Panel-Steuer Elements in der aktuellen Kapselungs Einheit ist.
 
-## <a name="lttriggersgt-element-reference"></a>*&lt;Trigger&gt; -Elementverweis*
+## <a name="lttriggersgt-element-reference"></a>*&lt;Trigger&gt; Element Verweis*
 
-*Nachfolger von Markup:*
+*Markup Nachfolger:*
 
 | **Tag** | **Beschreibung** |
 | --- | --- |
-| &lt;asp:AsyncPostBackTrigger&gt; | Gibt an, ein Steuerelement und ein Ereignis, das einer partiellen seitenaktualisierung UpdatePanel verursachen kann, die diese Trigger-Verweis enthält. |
-| &lt;asp:PostBackTrigger&gt; | Gibt an, ein Steuerelement und ein Ereignis, das einer vollständigen seitenaktualisierung (einer vollständigen seitenaktualisierung) führt. Dieses Tag kann verwendet werden, um eine vollständige Aktualisierung zu erzwingen, wenn ein Steuerelement andernfalls partielles Rendering auslösen würde. |
+| &lt;ASP: asyncpostbackauslöser&gt; | Gibt ein Steuerelement und ein Ereignis an, die eine Teil Seiten Aktualisierung für das Update Panel verursachen, das diesen auslöserverweis enthält. |
+| &lt;ASP: postbackauslöser&gt; | Gibt ein Steuerelement und ein Ereignis an, die eine vollständige Seiten Aktualisierung bewirken (eine vollständige Seiten Aktualisierung). Dieses Tag kann verwendet werden, um eine vollständige Aktualisierung zu erzwingen, wenn ein Steuerelement andernfalls partielles Rendering auslöst. |
 
-## <a name="walkthrough-cross-updatepanel-triggers"></a>*Exemplarische Vorgehensweise: Cross-UpdatePanel-Triggern*
+## <a name="walkthrough-cross-updatepanel-triggers"></a>*Exemplarische Vorgehensweise: Kreuz Update Panel-Trigger*
 
-1. Erstellen Sie eine neue ASP.NET-Seite mit einem ScriptManager-Objekt, das zum Aktivieren des partiellen Renderings festlegen. Zwei UpdatePanels zu dieser Seite – in der ersten hinzugefügt werden, enthalten ein Label-Steuerelement (Label1) und zwei Schaltflächen-Steuerelemente (Button1 und Button2). "Button1" besser gesagt, klicken Sie auf, um beide zu aktualisieren und Button2 besser gesagt, klicken Sie auf, um diese oder eine ähnliche Funktion wie diese Zeilen zu aktualisieren. Enthalten Sie in der zweiten UpdatePanel nur ein Label-Steuerelement "Label2 ("), aber legen Sie die ForeColor-Eigenschaft auf einen anderen Wert als den Standardwert zur Kennzeichnung.
-2. Legen Sie die UpdateMode-Eigenschaft der beiden Tags UpdatePanel **bedingte**.
+1. Erstellen Sie eine neue ASP.NET-Seite mit einem ScriptManager-Objekt, das das partielle Rendering ermöglicht. Fügen Sie dieser Seite zwei Update Panel-Elemente hinzu: Fügen Sie in der ersten ein Label-Steuerelement (Label1) und zwei Schaltflächen-Steuerelemente ein (button1 und Button2). Button1 sollte zum Aktualisieren sowohl von als auch von Button2 zum Aktualisieren dieses Elements oder etwas in diesen Zeilen klicken. Fügen Sie im zweiten Update Panel nur ein Label-Steuerelement (Label2) ein, aber legen Sie dessen ForeColor-Eigenschaft auf einen anderen Wert als den Standardwert fest, um ihn zu unterscheiden.
+2. Legen Sie die UpdateMode-Eigenschaft beider Update Panel-Tags auf **Conditional**fest.
 
-**Codebeispiel 1: Markup für "default.aspx":** 
+**Codebeispiel 1: Markup für "default. aspx":** 
 
 [!code-aspx[Main](understanding-asp-net-ajax-updatepanel-triggers/samples/sample1.aspx)]
 
-1. Legen Sie im Click-Ereignishandler für Button1 Label1.Text und Label2.Text auf etwas zeitabhängige (z. B. DateTime.Now.ToLongTimeString()). Legen Sie für das Click-Ereignishandler für Button2 nur Label1.Text auf den zeitabhängige-Wert.
+1. Legen Sie im Click-Ereignishandler für Button1 Label1. Text und Label2. Text auf einen zeitabhängigen Wert fest (z. b. DateTime. now. ToLongTimeString ()). Legen Sie für den Click-Ereignishandler für Button2 nur Label1. Text auf den zeitabhängigen Wert fest.
 
-**Codebeispiel 2: CodeBehind (hier gekürzt), in der Datei default.aspx.cs:** 
+**Codebeispiel 2: Code Behind (gekürzt) in Default.aspx.cs:** 
 
 [!code-csharp[Main](understanding-asp-net-ajax-updatepanel-triggers/samples/sample2.cs)]
 
-1. Drücken Sie F5, um das Projekt erstellen und ausführen. Beachten Sie, dass beide Bezeichnungen Text, wenn Sie Updatebereiche, die sowohl Klicken ändern, Wenn Sie dieses Update-Panels klicken, wird jedoch nur "Label1" aktualisiert.
+1. Drücken Sie F5, um das Projekt zu erstellen und auszuführen. Beachten Sie, dass beim Klicken auf beide Panels aktualisieren beide Bezeichnungen Text ändern. Wenn Sie jedoch auf dieses Panel aktualisieren klicken, wird nur Label1 aktualisiert.
 
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image2.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image1.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
 
 ## <a name="under-the-hood"></a>*Einblick in die Hintergründe*
 
-Verwenden das Beispiel, die, das wir soeben erstellt, können wir sehen Sie sich Was macht ASP.NET AJAX und die Funktionsweise von unserem UpdatePanel-Triggern in Cross-Bereich. Zu diesem Zweck arbeiten wir mit der generierten Seitenprofilklasse HTML-Quelle als auch die FireBug - wird aufgerufen, damit, Mozilla Firefox-Erweiterung können wir einfach die AJAX-Postbacks untersuchen. Wir verwenden auch das Tool .NET Reflector von Lutz Roeder. Beide Tools sind kostenlos online, und Sie können mit einer Internetsuche gefunden werden.
+Im Beispiel, das wir soeben erstellt haben, sehen wir uns an, was ASP.NET AJAX tut und wie unsere Panel übergreifenden Update Panel-Trigger funktionieren. Zu diesem Zweck arbeiten wir mit dem generierten Seiten Quell-HTML und der Mozilla Firefox-Erweiterung namens Firebug, damit wir die AJAX-Postbacks leicht untersuchen können. Wir verwenden auch das .net-reflektortool von Lutz Roeder. Beide Tools sind kostenlos online verfügbar und können über eine Internetsuche gefunden werden.
 
-Eine Untersuchung der Quellcode der Seite wird fast nichts Ungewöhnliches angezeigt. Das UpdatePanel-Steuerelemente werden als gerendert `<div>` Container, und sehen die Skriptressource enthält, angegeben durch die `<asp:ScriptManager>`. Es gibt auch einige neue AJAX-spezifischen Aufrufe der PageRequestManager, die für die AJAX-Skript-Clientbibliothek intern sind. Zum Schluss sehen Sie die beiden UpdatePanel-Container – eine mit der gerenderten `<input>` Schaltflächen mit den beiden `<asp:Label>` Steuerelemente gerendert wird, als `<span>` Container. (Wenn Sie die DOM-Struktur in FireBug untersuchen, bemerken Sie, dass der Bezeichnungen abgeblendet sind, um anzugeben, dass sie nicht sichtbaren Inhalt erstellen).
+Eine Untersuchung des Quellcodes der Seite zeigt fast nichts von der normalen. die Update Panel-Steuerelemente werden als `<div>` Container gerendert, und die vom `<asp:ScriptManager>`bereitgestellte Skript Ressource wird angezeigt. Es gibt auch einige neue AJAX-spezifische Aufrufe der PageRequestManager, die für die AJAX-Client Skript Bibliothek intern sind. Schließlich werden die beiden Update Panel-Container angezeigt: eine mit den gerenderten `<input>` Schaltflächen, wobei die beiden `<asp:Label>`-Steuerelemente als `<span>` Container gerendert werden. (Wenn Sie die DOM-Struktur in Firebug untersuchen, werden Sie feststellen, dass die Bezeichnungen abgeblendet sind, um anzugeben, dass Sie keinen sichtbaren Inhalt erzeugen).
 
-Klicken Sie auf die Schaltfläche "Update dieses Panel", und beachten Sie, dass mit dem aktuellen Server Schlüsselzeit obere UpdatePanel aktualisiert wird. Wählen Sie in FireBug die Registerkarte "Console", damit Sie die Anforderung untersuchen können. Überprüfen Sie zuerst die Parameter der POST-Anforderung:
+Klicken Sie auf die Schaltfläche dieses Panel aktualisieren, und beachten Sie, dass das oberste Update Panel mit der aktuellen Serverzeit aktualisiert wird. Wählen Sie in Firebug die Registerkarte Konsole aus, um die Anforderung zu überprüfen. Überprüfen Sie zuerst die Parameter für die Post-Anforderung:
 
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image5.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image4.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image6.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image6.png))
 
-Beachten Sie, dass UpdatePanel auf den serverseitigen AJAX-Code angegeben hat, genau die Steuerelementstruktur über den Parameter ScriptManager1 ausgelöst wurde: `Button1` von der `UpdatePanel1` Steuerelement. Klicken Sie nun auf die Schaltfläche "Updatebereiche, die sowohl" auf. Klicken Sie dann dazu finden Sie untersuchen die Antwort, wir eine durch senkrechte Striche getrennte Reihe von Variablen, die in einer Zeichenfolge festgelegt. insbesondere sehen wir die obere UpdatePanel `UpdatePanel1`, hat die an den Browser gesendeten HTML-Dateien während des gesamten Entwicklungsprozesses. Die AJAX-Clientbibliothek Skript ersetzt das UpdatePanel ursprünglichen HTML-Inhalt mit dem neuen Inhalt über die `.innerHTML` -Eigenschaft, und der Server den geänderten Inhalt auf dem Server im HTML-Format sendet.
+Beachten Sie, dass das Update Panel dem serverseitigen AJAX-Code genau anzeigt, welche Steuerungsstruktur über den ScriptManager1-Parameter ausgelöst wurde: `Button1` des `UpdatePanel1` Steuer Elements. Klicken Sie jetzt auf die Schaltfläche beide Panels aktualisieren. Dann sehen wir, dass die Antwort eine durch Trennzeichen getrennte Reihe von Variablen ist, die in einer Zeichenfolge festgelegt sind. insbesondere sehen wir, dass das oberste Update Panel, `UpdatePanel1`, das gesamte HTML-Format hat, das an den Browser gesendet wird. Die AJAX-Client Skript Bibliothek ersetzt den ursprünglichen HTML-Inhalt von Update Panel durch die `.innerHTML`-Eigenschaft, sodass der geänderte Inhalt vom Server als HTML gesendet wird.
 
-Nun, klicken Sie auf die Schaltfläche "Updatebereiche, die sowohl" aus, und überprüfen Sie die Ergebnisse vom Server. Die Ergebnisse sind sehr ähnlich – beide UpdatePanels neuen HTML-Code vom Server empfangen. Wie bei den vorherigen Rückruf wird zusätzliche seitenspezifischen Status gesendet.
+Klicken Sie nun auf die Schaltfläche beide Panels aktualisieren, und überprüfen Sie die Ergebnisse des Servers. Die Ergebnisse sind sehr ähnlich: beide Update Panel-Instanzen erhalten neue HTML-Daten vom Server. Wie beim vorherigen Rückruf wird der zusätzliche Seiten Status gesendet.
 
-Wie wir sehen, da keine spezieller Code zum Ausführen eines AJAX-Postbacks verwendet wird, kann die AJAX-Skript-Clientbibliothek Formular Postbacks ohne zusätzlichen Code abfangen. Serversteuerelemente nutzen automatisch JavaScript, damit sie das Formular nicht automatisch senden – ASP.NET automatisch Code, für die formularvalidierung und Status noch in erster Linie durch automatische Skripts Ressource einschließen, die PostBackOptions-Klasse erreicht einfügt. , und der ClientScriptManager-Klasse.
+Wie Sie sehen können, kann die AJAX-Client Skript Bibliothek Formular Postbacks ohne zusätzlichen Code abfangen, da kein spezieller Code zum Ausführen eines AJAX-Postbacks verwendet wird. Server Steuerelemente verwenden automatisch JavaScript, damit Sie nicht automatisch das Formular senden ASP.NET fügt automatisch Code für die Formular Validierung und den Zustand ein, der in erster Linie durch die automatische Skript Ressourcen Einbindung, die PostBackOptions-Klasse, erreicht wird. und die ClientScriptManager-Klasse.
 
-Betrachten Sie beispielsweise ein Kontrollkästchen-Steuerelement ein; Überprüfen Sie die Disassembly Klasse in .NET Reflector. Zu diesem Zweck stellen Sie sicher, dass die Assembly "System.Web" geöffnet ist, und navigieren Sie zu der `System.Web.UI.WebControls.CheckBox` -Klasse, öffnen die `RenderInputTag` Methode. Suchen Sie nach einer Bedingung, die überprüft die `AutoPostBack` Eigenschaft:
+Stellen Sie sich beispielsweise ein CheckBox-Steuerelement vor. untersuchen Sie die Klassen disassemblierassembly in .net Stellen Sie zu diesem Zweck sicher, dass die System. Web-Assembly geöffnet ist, und navigieren Sie zur `System.Web.UI.WebControls.CheckBox`-Klasse, indem Sie die `RenderInputTag`-Methode öffnen. Suchen Sie nach einer bedingten Bedingung, die die `AutoPostBack`-Eigenschaft überprüft:
 
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image8.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image7.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image9.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image9.png))
 
-Wenn Automatisches Postback aktiviert ist, auf eine `CheckBox` steuern (über die AutoPostBack-Eigenschaft wird "true"), die resultierenden `<input>` Tag gerendert wird daher mit einem ASP.NET-Ereignis, das Behandeln von Skript in die `onclick` Attribut. Das Abfangen der Übermittlung des Formulars, klicken Sie dann, ermöglicht ASP.NET AJAX nonintrusively, auf der Seite eingefügt werden wichtige Änderungen, die auftreten können, durch die Verwendung einer möglicherweise ungenaue zeichenfolgenersetzungen potenzielle vermeiden helfen. Darüber hinaus ermöglicht dies *alle* benutzerdefiniertes ASP.NET-Steuerelement nutzen die Leistungsfähigkeit der ASP.NET AJAX ohne zusätzlichen Code in einem UpdatePanel-Container unterstützen.
+Wenn automatisches Postback für ein `CheckBox` Steuerelement aktiviert ist (über die AutoPostBack-Eigenschaft true), wird das resultierende `<input>` Tag daher mit einem Skript für die ASP.NET-Ereignis Behandlung im `onclick`-Attribut gerendert. Das Abfangen der Übermittlung des Formulars ermöglicht dann, dass ASP.NET AJAX in die Seite eingefügt werden kann, um alle möglichen wichtigen Änderungen zu vermeiden, die durch die Verwendung einer möglicherweise ungenauen Zeichen folgen Ersetzung auftreten können. Außerdem ermöglicht es *allen* benutzerdefinierten ASP.NET-Steuerelementen, die Leistungsfähigkeit von ASP.NET AJAX ohne zusätzlichen Code zu nutzen, um die Verwendung in einem Update Panel-Container zu unterstützen.
 
-Die `<triggers>` Funktionalität entspricht den Werten, die im Aufruf der PageRequestManager initialisiert \_UpdateControls (Beachten Sie, dass die ASP.NET AJAX-Clientbibliothek Skript der Konvention verwendet, diese Methoden, Ereignisse und Feldnamen, beginnen sind mit einem Unterstrich als intern markiert und sind nicht dafür vorgesehen, für die Verwendung außerhalb von die Bibliothek selbst). Mithilfe dieser Option können wir beobachten, welche Steuerelemente AJAX-Postbacks bewirken sollen.
+Die `<triggers>`-Funktionalität entspricht den Werten, die im PageRequestManager-Befehl \_UpdateControls initialisiert werden (Beachten Sie, dass die ASP.NET AJAX-Client Skript Bibliothek die Konvention verwendet, dass Methoden, Ereignisse und Feldnamen, die mit einem Unterstrich beginnen, als intern gekennzeichnet sind und nicht zur Verwendung außerhalb der Bibliothek selbst vorgesehen sind.) Damit können wir beobachten, welche Steuerelemente für AJAX-Postbacks vorgesehen sind.
 
-Beispielsweise fügen Sie zwei zusätzliche Steuerelemente auf der Seite ein Steuerelement außerhalb von UpdatePanels völlig verlassen, und lassen eine in einem UpdatePanel-Steuerelement. Wir fügen ein Kontrollkästchen-Steuerelement in der oberen UpdatePanel, und löschen eine DropDownList mit einer Anzahl von Farben in der Liste definiert. Hier ist das neue Markup:
+Fügen wir der Seite z. b. zwei zusätzliche Steuerelemente hinzu, wobei ein Steuerelement nicht vollständig außerhalb der Update Panel-Elemente steht und ein Update Panel in einem Update Panel belassen wird. Wir fügen ein CheckBox-Steuerelement im oberen UpdatePanel hinzu und legen eine Dropdown List mit einer Reihe von Farben ab, die in der Liste definiert sind. Hier ist das neue Markup:
 
-**Codebeispiel 3: Neue Markup**
+**Codebeispiel 3: neues Markup**
 
 [!code-aspx[Main](understanding-asp-net-ajax-updatepanel-triggers/samples/sample3.aspx)]
 
-Und hier ist das neue Code-Behind:
+Und hier ist der neue Code Behind:
 
-**Codebeispiel 4: Codebehind**
+**Codebeispiel 4: Code Behind**
 
 [!code-csharp[Main](understanding-asp-net-ajax-updatepanel-triggers/samples/sample4.cs)]
 
-Die Idee hinter dieser Seite ist, dass die Dropdown Liste, eine von drei Farben wählt, die zweite Bezeichnung angezeigt, dass Sie dieses Kontrollkästchen legt fest, gibt an, ob es fett formatiert ist, und gibt an, ob die Bezeichnungen für das Datum als auch die Zeit anzuzeigen. Das Kontrollkästchen sollte nicht dazu, dass ein AJAX-Update, aber die Dropdown Liste sollten, obwohl es nicht innerhalb eines UpdatePanel befindet.
+Die Idee hinter dieser Seite besteht darin, dass in der Dropdown Liste eine von drei Farben zum Anzeigen der zweiten Bezeichnung ausgewählt wird, dass das Kontrollkästchen sowohl feststellt, ob es Fett ist, als auch, ob die Bezeichnungen das Datum und die Uhrzeit anzeigen. Das Kontrollkästchen sollte kein AJAX-Update verursachen, aber die Dropdown Liste sollte, auch wenn es nicht in einem Update Panel enthalten ist.
 
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image11.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image10.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image12.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-updatepanel-triggers/_static/image12.png))
 
-Wie im obigen Screenshot ersichtlich ist, wurde die neuesten Schaltfläche geklickt wird mit der rechten Maustaste dieses Aktualisierungsbereich, die unabhängig von oberen Zeit der unteren Zeit aktualisiert. Das Datum wurde auch zwischen den Klicks, deaktiviert, wie das Datum in die untere Bezeichnung angezeigt wird. Schließlich von Interesse ist die untere Bezeichnung die Farbe: aktueller als der Bezeichnungstext, der zeigt, dass Steuerelementzustand wichtig ist, aktualisiert wurde und die Benutzer erwarten, dass sie über AJAX-Postbacks beibehalten werden. *Jedoch*, die Zeit wurde nicht aktualisiert. Die Zeit wurde automatisch durch die Persistenz erneut aufgefüllt. die \_ \_VIEWSTATE-Feld der Seite von der ASP.NET-Laufzeit interpretiert wird, wenn das Steuerelement auf dem Server erneut gerendert wurde. Der ASP.NET AJAX-Servercode erkennt nicht die Methoden der Steuerelemente in dem Zustand ändern; Es füllt einfach aus dem Ansichtszustand und führt dann die Ereignisse, die geeignet sind.
+Wie bereits im obigen Screenshot ersichtlich ist, ist die aktuellste Schaltfläche, auf die geklickt werden soll, die Rechte Schaltfläche, mit der Sie den Bereich aktualisieren, der die höchste Uhrzeit unabhängig von der untersten Zeit aktualisiert hat. Das Datum wurde auch zwischen den Mausklicks gewechselt, da das Datum in der untersten Bezeichnung sichtbar ist. Schließlich ist die Farbe der untersten Bezeichnung wichtig: Sie wurde vor kurzem aktualisiert als der Text der Bezeichnung, der zeigt, dass der Steuerelement Zustand wichtig ist, und Benutzer erwarten, dass Sie durch AJAX-Postbacks beibehalten werden. Die Zeit wurde *jedoch*nicht aktualisiert. Die Zeit wurde automatisch durch die Persistenz des \_\_ViewState-Felds der Seite aufgefüllt, die von der ASP.NET-Laufzeit interpretiert wird, als das Steuerelement auf dem Server erneut gerendert wurde. Der ASP.NET AJAX-Servercode erkennt nicht, in welchen Methoden die Steuerelemente den Zustand ändern; Er füllt einfach vom Ansichts Zustand erneut auf und führt dann die entsprechenden Ereignisse aus.
 
-Es sollte verwiesen, jedoch, dass ich die Zeit auf der Seite initialisiert hatte\_Load-Ereignis, die Zeit wurde würde ordnungsgemäß inkrementiert. Folglich Entwickler sollte vor, dass der entsprechende Code bei der die entsprechenden Ereignishandler ausgeführt wird und vermeiden Sie die Verwendung der Seite\_laden, wenn ein Handler für Steuerelementereignisse geeignet wären.
+Es sollte jedoch darauf hingewiesen werden, dass die Zeit in der Seite\_Lade Ereignisses initialisiert wurde, die Zeit jedoch ordnungsgemäß erhöht worden wäre. Folglich sollten Entwickler darauf achten, dass der entsprechende Code bei den entsprechenden Ereignis Handlern ausgeführt wird, und die Verwendung von Seiten\_laden vermeiden, wenn ein Steuerelement-Ereignishandler geeignet wäre.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Das UpdatePanel von ASP.NET AJAX Extensions-Steuerelement ist vielseitig und kann eine Reihe von Methoden für die Identifizierung von Ereignissen, die sie aktualisiert werden, verursachen sollen verwendet werden. Unterstützt durch seine untergeordneten Steuerelemente automatisch aktualisiert wird, sondern können auch auf Steuerelementereignisse an anderer Stelle auf der Seite reagieren.
+Das Update Panel-Steuerelement von ASP.NET AJAX Extensions ist vielseitiger und kann eine Reihe von Methoden zum Identifizieren von Steuerelement Ereignissen verwenden, die die Aktualisierung bewirken. Sie unterstützt das automatische Aktualisieren durch die untergeordneten Steuerelemente, kann aber auch auf Steuerungs Ereignisse an anderer Stelle auf der Seite reagieren.
 
-Um das Potenzial für die Verarbeitung der Serverlast zu verringern, es wird empfohlen, die `ChildrenAsTriggers` Eigenschaft von einem UpdatePanel-Steuerelement festgelegt werden, um `false`, und dass Ereignisse abonniert-in nicht standardmäßig enthalten sein. Dies wird auch verhindert, dass nicht benötigte Ereignisse verursacht potenziell unerwünschte Effekte, einschließlich Überprüfung und Änderungen in Eingabefeldern. Diese Arten von Fehlern können schwierig sein, zu isolieren, da die Seite wird für den Benutzer transparent aktualisiert, und die Ursache daher möglicherweise nicht sofort ersichtlich.
+Um das Potenzial der Server Verarbeitungs Last zu reduzieren, wird empfohlen, dass die `ChildrenAsTriggers`-Eigenschaft eines Update Panel-Objekts auf `false`festgelegt ist und dass Ereignisse in den standardmäßigen eingeschlossen werden. Dadurch wird auch verhindert, dass nicht benötigte Ereignisse potenziell unerwünschte Effekte, einschließlich Validierung und Änderungen an Eingabefeldern, auslösen. Diese Fehlertypen können schwer zu isolieren sein, da die Seite für den Benutzer transparent aktualisiert wird, und die Ursache ist möglicherweise nicht sofort ersichtlich.
 
-Posten anhand der internen Funktionsweise des ASP.NET AJAX-Formulars Interception-Modell, konnten wir feststellen, dass es sich um das Framework, die bereits von ASP.NET bereitgestellt wird. In diesem Fall es behält maximalen Kompatibilität mit Steuerelementen, die mithilfe desselben Frameworks entworfen und eingreift, nur minimal auf alle weiteren JavaScript-Code für die Seite geschrieben.
+Durch die Untersuchung der inneren Funktionsweise des ASP.NET AJAX-Formular postinterceptionmodells konnten wir feststellen, dass es das bereits von ASP.NET bereitgestellte Framework nutzt. Dabei behält Sie die maximale Kompatibilität mit Steuerelementen bei, die mit demselben Framework entworfen wurden, und greift minimal auf zusätzliches JavaScript hin, das für die Seite geschrieben wurde.
 
-## <a name="bio"></a>Bio
+## <a name="bio"></a>Basierten
 
-Rob Paveza ist senior .NET Application Entwickler Terralever ([www.terralever.com](http://www.terralever.com)), ein führender interaktive Marketingunternehmen in Tempe, AZ. Er ist unter [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), und sein Blog befindet sich im [ http://geekswithblogs.net/robp/ ](http://geekswithblogs.net/robp/).
+Rob pveza ist leitender .NET-Anwendungsentwickler bei terralever ([www.terralever.com](http://www.terralever.com)), einem führenden interaktiven Marketingunternehmen in Tempe, AZ. Er kann auf [robpaveza@gmail.com](mailto:robpaveza@gmail.com)erreicht werden, und sein Blog befindet sich unter [http://geekswithblogs.net/robp/](http://geekswithblogs.net/robp/).
 
-Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
+Scott Cate arbeitet seit 1997 mit Microsoft-Webtechnologien und ist der Präsident von myKB.com ([www.myKB.com](http://www.myKB.com)), wo er sich darauf spezialisiert hat, ASP.NET basierte Anwendungen zu schreiben, die sich auf die Software Lösungen der Wissensdatenbank konzentrieren. Scott kann über [scott.cate@myKB.com](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com) per e-Mail kontaktiert werden.
 
 > [!div class="step-by-step"]
 > [Zurück](understanding-partial-page-updates-with-asp-net-ajax.md)

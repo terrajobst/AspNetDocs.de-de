@@ -1,66 +1,66 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
-title: Erstellen von neuen gespeicherten Prozeduren für TableAdapter-Steuerelemente des typisierten DataSet (VB) | Microsoft-Dokumentation
+title: Erstellen neuer gespeicherter Prozeduren für die TableAdapters des typisierten Datasets (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In den vorherigen Tutorials haben wir die SQL-Anweisungen in unserem Code erstellt und übergeben die Anweisungen in der Datenbank ausgeführt werden. Ein alternativer Ansatz ist die Verwendung von s...
+description: In den vorherigen Tutorials haben wir SQL-Anweisungen in unserem Code erstellt und die-Anweisungen an die Datenbank weitergegeben, die ausgeführt werden soll. Ein alternativer Ansatz ist die Verwendung von s...
 ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: a5a4a9ba-d18d-489a-a6b0-a3c26d6b0274
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 19e9800eb3862ad1f78a6cd2616b28deee997876
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a7cc890038e5bb4eb61c7c3b808154c196ab2423
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132423"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74605639"
 ---
 # <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>Erstellen von neuen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_67_VB.zip) oder [PDF-Datei herunterladen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/datatutorial67vb1.pdf)
+[Code herunterladen](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_67_VB.zip) oder [PDF herunterladen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/datatutorial67vb1.pdf)
 
-> In den vorherigen Tutorials haben wir die SQL-Anweisungen in unserem Code erstellt und übergeben die Anweisungen in der Datenbank ausgeführt werden. Ein alternativer Ansatz ist, können gespeicherte Prozeduren verwenden, wenn die SQL-Anweisungen in der Datenbank vorab definiert. In diesem Tutorial erfahren wir, wie den TableAdapter-Assistenten generiert neue gespeicherte Prozeduren für uns zu haben.
+> In den vorherigen Tutorials haben wir SQL-Anweisungen in unserem Code erstellt und die-Anweisungen an die Datenbank weitergegeben, die ausgeführt werden soll. Ein alternativer Ansatz ist die Verwendung von gespeicherten Prozeduren, bei denen die SQL-Anweisungen in der Datenbank vordefiniert sind. In diesem Tutorial erfahren Sie, wie Sie mit dem TableAdapter-Assistenten neue gespeicherte Prozeduren für uns generieren.
 
 ## <a name="introduction"></a>Einführung
 
-Der Data Access Layer (DAL) für diese Tutorials wird typisierter DataSets verwendet. Siehe die [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md) Tutorial typisierte DataSets bestehen aus stark typisierten DataTables und TableAdapters. Die DataTables stellen die logischen Entitäten dar, in das System während der TableAdapter-Schnittstelle, mit der zugrunde liegenden Datenbank, die Zugriff auf Ihre Daten ausführen. Dies schließt die Datentabellen mit Daten auffüllen, Ausführen von Abfragen, die skalare Daten zurückgeben und einfügen, aktualisieren und Löschen von Datensätzen aus der Datenbank.
+Die Datenzugriffs Schicht (Data Access Layer, DAL) für diese Tutorials verwendet typisierte Datasets. Wie im Tutorial [Erstellen einer Datenzugriffs Ebene](../introduction/creating-a-data-access-layer-vb.md) erläutert, bestehen typisierte Datasets aus stark typisierten DataTables und TableAdapters. Die DataTables stellen die logischen Entitäten im System dar, während die TableAdapters-Schnittstelle mit der zugrunde liegenden Datenbank zum Ausführen des Datenzugriffs funktioniert. Dies umfasst das Auffüllen der DataTables mit Daten, das Ausführen von Abfragen, die skalare Daten zurückgeben, sowie das Einfügen, aktualisieren und Löschen von Datensätzen aus der Datenbank.
 
-Die SQL-Befehle ausgeführt, indem die TableAdapters werden entweder Ad-hoc-SQL-Anweisungen, wie z. B. `SELECT columnList FROM TableName`, oder gespeicherten Prozeduren. Die TableAdapters in unserer Architektur verwenden Sie Ad-hoc-SQL-Anweisungen. Viele Entwickler und Datenbankadministratoren, allerdings bevorzugen gespeicherte Prozeduren über Ad-hoc-SQL-Anweisungen, Sicherheit, wartbarkeit und aktualisierbarkeit Gründen. Andere Benutzer bevorzugen ardently Ad-hoc-SQL-Anweisungen, um ihre Flexibilität zu erzielen. In meiner eigenen Arbeit ich gespeicherte Prozeduren über Ad-hoc-SQL-Anweisungen bevorzugen allerdings möchten die Ad-hoc-SQL-Anweisungen zu verwenden, um den früheren Tutorials zu vereinfachen.
+Die von den TableAdapters ausgeführten SQL-Befehle können entweder Ad-hoc-SQL-Anweisungen sein, z. b. `SELECT columnList FROM TableName`oder gespeicherte Prozeduren. Die TableAdapters in unserer Architektur verwenden Ad-hoc-SQL-Anweisungen. Viele Entwickler und Datenbankadministratoren bevorzugen jedoch gespeicherte Prozeduren über Ad-hoc-SQL-Anweisungen aus Gründen der Sicherheit, Wartbarkeit und Aktualisierbarkeit. Andere bevorzugen Ad-hoc-SQL-Anweisungen für Ihre Flexibilität. In meiner eigenen Arbeit bevorzuge ich gespeicherte Prozeduren für Ad-hoc-SQL-Anweisungen, entschied mich jedoch für die Verwendung von Ad-hoc-SQL-Anweisungen zur Vereinfachung der früheren Tutorials.
 
-Wenn erleichtert einen TableAdapter definieren oder Hinzufügen neuer Methoden, die TableAdapter-s-Assistenten genauso einfach neue gespeicherte Prozeduren erstellen oder vorhandene gespeicherte Prozeduren verwenden, wie es um die Ad-hoc-SQL-Anweisungen verwenden. In diesem Tutorial betrachten wir, wie der TableAdapter-s-Assistent gespeicherte Prozeduren automatisch generiert werden. Im nächsten Tutorial werden wir konfigurieren die TableAdapter-s-Methoden, um vorhandene oder manuell erstellte gespeicherte Prozeduren verwenden betrachten.
+Wenn Sie einen TableAdapter definieren oder neue Methoden hinzufügen, erleichtert der TableAdapter s-Assistent das Erstellen neuer gespeicherter Prozeduren oder das Verwenden vorhandener gespeicherter Prozeduren, wie bei der Verwendung von Ad-hoc-SQL-Anweisungen. In diesem Tutorial wird erläutert, wie der TableAdapter s-Assistent die automatische Generierung gespeicherter Prozeduren durchführen kann. Im nächsten Tutorial wird erläutert, wie die TableAdapter s-Methoden für die Verwendung vorhandener oder manuell erstellter gespeicherter Prozeduren konfiguriert werden.
 
 > [!NOTE]
-> Finden Sie unter Rob Howard Blogeintrag [Don ' t mit gespeicherten Prozeduren noch?](http://grokable.com/2003/11/dont-use-stored-procedures-yet-must-be-suffering-from-nihs-not-invented-here-syndrome/) und [Frans Bouma](https://weblogs.asp.net/fbouma/) s Blogeintrag [gespeicherte Prozeduren sind schlecht, M Kay?](https://weblogs.asp.net/fbouma/archive/2003/11/18/38178.aspx) für eine lebhafte Diskussion über die vor- und Nachteile von gespeicherte Prozeduren und Ad-hoc-SQL.
+> Weitere Informationen zu den vor-und Nachteile von gespeicherten Prozeduren und [AD](https://weblogs.asp.net/fbouma/) -hoc-SQL finden Sie im [Blogeintrag von](http://grokable.com/2003/11/dont-use-stored-procedures-yet-must-be-suffering-from-nihs-not-invented-here-syndrome/) Rob Howard. die [gespeicherten Prozeduren sind schlecht, M Kay?](https://weblogs.asp.net/fbouma/archive/2003/11/18/38178.aspx) .
 
 ## <a name="stored-procedure-basics"></a>Grundlagen der gespeicherten Prozeduren
 
-Funktionen sind ein Konstrukt, das für alle Programmiersprachen. Eine Funktion ist eine Sammlung von Anweisungen, die ausgeführt werden, wenn die Funktion aufgerufen wird. Funktionen können annehmen von Eingabeparametern und können optional einen Wert zurückgeben. *[Gespeicherte Prozeduren](http://en.wikipedia.org/wiki/Stored_procedure)*  Datenbankkonstrukte, die viele ähnlichkeiten mit Funktionen in Programmiersprachen zu vergleichen gemeinsam sind. Eine gespeicherte Prozedur einen Satz von T-SQL-Anweisungen besteht, die ausgeführt werden, wenn die gespeicherte Prozedur aufgerufen wird. Eine gespeicherte Prozedur kann 0 (null), zu viele Eingabeparameter akzeptieren und kann Skalare Werte als auch Ausgabeparameter zurückgeben oder, in den meisten Fällen-Resultsets aus `SELECT` Abfragen.
+Funktionen sind ein Konstrukt, das für alle Programmiersprachen gemeinsam ist. Eine Funktion ist eine Auflistung von-Anweisungen, die ausgeführt werden, wenn die-Funktion aufgerufen wird. Funktionen können Eingabeparameter akzeptieren und optional einen Wert zurückgeben. *[Gespeicherte Prozeduren](http://en.wikipedia.org/wiki/Stored_procedure)* sind Datenbankkonstrukte, die viele Ähnlichkeiten mit Funktionen in Programmiersprachen aufweisen. Eine gespeicherte Prozedur besteht aus einem Satz von T-SQL-Anweisungen, die ausgeführt werden, wenn die gespeicherte Prozedur aufgerufen wird. Eine gespeicherte Prozedur akzeptiert möglicherweise null bis viele Eingabeparameter und kann skalare Werte, Ausgabeparameter oder, am häufigsten Resultsets, aus `SELECT` Abfragen zurückgeben.
 
 > [!NOTE]
-> Gespeicherte Prozeduren werden häufig als gespeicherte Prozeduren oder SPs bezeichnet.
+> Gespeicherte Prozeduren werden oft als Sprocs oder SPS bezeichnet.
 
-Gespeicherte Prozeduren werden erstellt, mit der [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) T-SQL-Anweisung. Das folgende T-SQL-Skript erstellt z. B. eine gespeicherte Prozedur namens `GetProductsByCategoryID` , die in einem einzelnen Parameter mit dem Namen akzeptiert `@CategoryID` und gibt die `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Felder dieser Spalten in der `Products` Tabelle, die über eine entsprechende `CategoryID` Wert:
+Gespeicherte Prozeduren werden mit der [`CREATE PROCEDURE`](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) t-SQL-Anweisung erstellt. Das folgende T-SQL-Skript erstellt z. b. eine gespeicherte Prozedur mit dem Namen `GetProductsByCategoryID`, die einen einzelnen Parameter mit dem Namen `@CategoryID` annimmt und die Felder `ProductID`, `ProductName`, `UnitPrice`und `Discontinued` der Spalten in der `Products` Tabelle zurückgibt, die einen entsprechenden `CategoryID` Wert aufweisen:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample1.sql)]
 
-Nachdem diese gespeicherte Prozedur erstellt wurde, kann sie mithilfe der folgenden Syntax aufgerufen werden:
+Nachdem diese gespeicherte Prozedur erstellt wurde, kann Sie mithilfe der folgenden Syntax aufgerufen werden:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample2.sql)]
 
 > [!NOTE]
-> Im nächsten Tutorial untersuchen wir das Erstellen von gespeicherten Prozeduren über die Visual Studio-IDE. In diesem Tutorial werden jedoch wir den TableAdapter-Assistenten, die die gespeicherten Prozeduren automatisch für uns generieren zu lassen.
+> Im nächsten Tutorial erfahren Sie, wie Sie gespeicherte Prozeduren über die Visual Studio-IDE erstellen. In diesem Tutorial soll der TableAdapter-Assistent die gespeicherten Prozeduren für uns jedoch automatisch generieren.
 
-Zusätzlich zum Zurückgeben von Daten einfach, werden gespeicherte Prozeduren häufig verwendet, um mehrere Datenbankbefehle innerhalb des Bereichs einer einzelnen Transaktion auszuführen. Eine gespeicherte Prozedur namens `DeleteCategory`, z. B. dauert eine `@CategoryID` Parameter und führen Sie zwei `DELETE` Anweisungen: zuerst eine zum Löschen von verwandten Produkten und ein zweites ein Löschen der angegebenen Kategorie. Mehrere Anweisungen innerhalb einer gespeicherten Prozedur werden *nicht* automatisch umbrochenen innerhalb einer Transaktion. Weitere T-SQL-Befehle ausgegeben werden, um sicherzustellen, dass die gespeicherte Prozedur s, die mehrere Befehle als atomischen Vorgang behandelt werden müssen. Wir sehen, wie Sie eine gespeicherte Prozedur-s-Befehle innerhalb des Bereichs einer Transaktion in nachfolgenden Tutorial zu umschließen.
+Zusätzlich zur einfachen Rückgabe von Daten werden gespeicherte Prozeduren häufig verwendet, um mehrere Daten Bank Befehle innerhalb des Gültigkeits Bereichs einer einzelnen Transaktion auszuführen. Eine gespeicherte Prozedur mit dem Namen `DeleteCategory`beispielsweise könnte einen `@CategoryID`-Parameter annehmen und zwei `DELETE`-Anweisungen ausführen: zuerst eine zum Löschen der zugehörigen Produkte und ein zweites, das die angegebene Kategorie löscht. Mehrere Anweisungen in einer gespeicherten Prozedur werden *nicht* automatisch in eine Transaktion umschließt. Weitere T-SQL-Befehle müssen ausgegeben werden, um sicherzustellen, dass die gespeicherten Prozeduren mehrere Befehle als atomarer Vorgang behandelt werden. Im nachfolgenden Tutorial wird erläutert, wie Sie Befehle von gespeicherten Prozeduren innerhalb des Umfangs einer Transaktion umschließen.
 
-Wenn Sie gespeicherte Prozeduren in einer Architektur verwenden, rufen die Data Access Layer-s-Methoden, eine Ad-hoc-SQL-Anweisung auszugeben, anstatt eine bestimmte gespeicherte Prozedur. Auf diese Weise den Speicherort der SQL-Anweisungen ausgeführt (in der Datenbank) zentralisiert, anstatt es in die-s-Anwendungsarchitektur definiert. Diese Zentralisierung wohl suchen, analysieren und Optimieren der Abfragen erleichtert und bietet ein besseres Verständnis, wo und wie die Datenbank verwendet wird.
+Bei der Verwendung von gespeicherten Prozeduren in einer Architektur rufen die Methoden der Datenzugriffs Ebene eine bestimmte gespeicherte Prozedur auf, anstatt eine Ad-hoc-SQL-Anweisung auszugeben. Dadurch wird der Speicherort der SQL-Anweisungen, die ausgeführt werden (in der Datenbank), zentralisiert, anstatt Sie in der Architektur der Anwendung zu definieren. Diese Zentralisierung vereinfacht das Auffinden, analysieren und Optimieren der Abfragen und bietet ein viel deutlicheres Bild, wo und wie die Datenbank verwendet wird.
 
-Weitere Informationen zu den Grundlagen der gespeicherten Prozedur finden Sie in den Ressourcen im Abschnitt Weitere nützliche Informationen am Ende dieses Tutorials.
+Weitere Informationen zu den Grundlagen gespeicherter Prozeduren finden Sie in den Ressourcen im Abschnitt Weitere Informationen am Ende dieses Tutorials.
 
-## <a name="step-1-creating-the-advanced-data-access-layer-scenarios-web-pages"></a>Schritt 1: Erstellen der erweiterte Data Access Layer Szenarien von Webseiten
+## <a name="step-1-creating-the-advanced-data-access-layer-scenarios-web-pages"></a>Schritt 1: Erstellen der erweiterten Szenarios für die Datenzugriffs Schicht-Webseiten
 
-Bevor wir unsere Diskussion zum Erstellen einer DAL, die mithilfe von gespeicherten Prozeduren beginnen, können Sie s zuerst können Sie die ASP.NET-Seiten in unserer Websiteprojekt zu erstellen, die wir für diese und die nächste mehrere Tutorials benötigen. Starten, indem Sie einen neuen Ordner namens hinzufügen `AdvancedDAL`. Fügen Sie die folgenden ASP.NET-Seiten in diesen Ordner, um sicherzustellen, ordnen Sie jeder Seite mit den `Site.master` Masterseite:
+Bevor wir uns mit der Erstellung einer dal mithilfe gespeicherter Prozeduren auseinandersetzen, nehmen Sie sich zunächst einen Moment Zeit, um die ASP.NET-Seiten in unserem Website Projekt zu erstellen, die wir für dieses und die nächsten verschiedenen Tutorials benötigen. Fügen Sie zunächst einen neuen Ordner mit dem Namen `AdvancedDAL`hinzu. Fügen Sie dann die folgenden ASP.NET-Seiten zu diesem Ordner hinzu, und stellen Sie sicher, dass Sie die einzelnen Seiten der `Site.master` Master Seite zuordnen:
 
 - `Default.aspx`
 - `NewSprocs.aspx`
@@ -71,262 +71,262 @@ Bevor wir unsere Diskussion zum Erstellen einer DAL, die mithilfe von gespeicher
 - `EncryptingConfigSections.aspx`
 - `ManagedFunctionsAndSprocs.aspx`
 
-![Fügen Sie die ASP.NET-Seiten für die erweiterte Data Access Layer Szenarien-Lernprogramme](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image1.png)
+![Fügen Sie die ASP.NET-Seiten für Szenarios mit erweiterten Datenzugriffsebenen-Szenarien hinzu.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image1.png)
 
-**Abbildung 1**: Fügen Sie die ASP.NET-Seiten für die erweiterte Data Access Layer Szenarien-Lernprogramme
+**Abbildung 1**: Hinzufügen der ASP.NET-Seiten für Szenarios mit erweiterten Datenzugriffsebenen-Szenarios
 
-Wie in den anderen Ordnern `Default.aspx` in die `AdvancedDAL` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
+Wie in den anderen Ordnern werden `Default.aspx` im Ordner `AdvancedDAL` die Lernprogramme in diesem Abschnitt auflisten. Denken Sie daran, dass das `SectionLevelTutorialListing.ascx` Benutzer Steuerelement diese Funktionalität bereitstellt. Fügen Sie dieses Benutzer Steuerelement daher `Default.aspx` hinzu, indem Sie es aus dem Projektmappen-Explorer auf die Seite s Designansicht ziehen.
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)
+[![das Benutzer Steuerelement "sectionleveltutoriallisting. ascx" zu "default. aspx" hinzufügen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)
 
-**Abbildung 2**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image4.png))
+**Abbildung 2**: Hinzufügen des `SectionLevelTutorialListing.ascx` Benutzer Steuer Elements zu `Default.aspx` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image4.png))
 
-Abschließend fügen Sie diese Seiten als Einträge der `Web.sitemap` Datei. Fügen Sie das folgende Markup insbesondere nach dem Arbeiten mit Daten in einem Batch verarbeitet `<siteMapNode>`:
+Fügen Sie diese Seiten schließlich als Einträge zur `Web.sitemap` Datei hinzu. Fügen Sie insbesondere nach dem `<siteMapNode>`arbeiten mit Batch Daten das folgende Markup hinzu:
 
 [!code-xml[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample3.xml)]
 
-Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website über einen Browser anzeigen. Klicken Sie im Menü auf der linken Seite enthält jetzt Elemente für die Tutorials für fortgeschrittene DAL-Szenarien.
+Nehmen Sie sich nach dem Aktualisieren `Web.sitemap`einen Moment Zeit, um die Tutorials-Website über einen Browser anzuzeigen. Das Menü auf der linken Seite enthält jetzt Elemente für die Tutorials für erweiterte dal-Szenarios.
 
-![Die Sitemap enthält jetzt die Einträge für die erweiterte DAL-Szenarien-Lernprogramme](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image5.png)
+![Die Site Übersicht enthält jetzt Einträge für die Tutorials zu erweiterten dal-Szenarios.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image5.png)
 
-**Abbildung 3**: Die Sitemap enthält jetzt die Einträge für die erweiterte DAL-Szenarien-Lernprogramme
+**Abbildung 3**: die Site Übersicht enthält jetzt Einträge für die Tutorials zu erweiterten dal-Szenarios.
 
-## <a name="step-2-configuring-a-tableadapter-to-create-new-stored-procedures"></a>Schritt 2: Konfigurieren einen TableAdapter zum Erstellen von neuen gespeicherten Prozeduren
+## <a name="step-2-configuring-a-tableadapter-to-create-new-stored-procedures"></a>Schritt 2: Konfigurieren eines TableAdapters zum Erstellen neuer gespeicherter Prozeduren
 
-Zum Demonstrieren der Erstellung einer Datenzugriffsschicht, die gespeicherte Prozeduren anstelle von Ad-hoc-SQL-Anweisungen verwendet, können s erstellen Sie ein neues typisierte DataSet in den `~/App_Code/DAL` Ordner mit dem Namen `NorthwindWithSprocs.xsd`. Da wir diesen Prozess im Detail in vorherigen Tutorials schrittweise durchlaufen haben, wird durch den folgenden Schritten schnell fortfahren. Wenn Sie Probleme oder benötigen weitere schrittweise Anweisungen erstellen und Konfigurieren eines typisierten Datasets, verweisen zurück auf die [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md) Tutorial.
+Zum Veranschaulichen der Erstellung einer Datenzugriffs Ebene, die gespeicherte Prozeduren anstelle von Ad-hoc-SQL-Anweisungen verwendet, erstellen Sie ein neues typisiertes DataSet im `~/App_Code/DAL` Ordner mit dem Namen `NorthwindWithSprocs.xsd`. Da wir diesen Prozess in vorherigen Tutorials ausführlich durchlaufen haben, werden wir die hier beschriebenen Schritte schnell durchführen. Wenn Sie hängen bleiben oder weitere Schritt-für-Schritt-Anleitungen zum Erstellen und Konfigurieren eines typisierten Datasets benötigen, lesen Sie das Tutorial [Erstellen einer Datenzugriffs Ebene](../introduction/creating-a-data-access-layer-vb.md) .
 
-Fügen Sie ein neues DataSet für das Projekt mit der rechten Maustaste auf die `DAL` Ordner, wählen neues Element hinzufügen und die DataSet-Vorlage auswählen, wie in Abbildung 4 dargestellt.
+Fügen Sie dem Projekt ein neues Dataset hinzu, indem Sie mit der rechten Maustaste auf den Ordner `DAL` klicken, neues Element hinzufügen auswählen und die DataSet-Vorlage auswählen, wie in Abbildung 4 dargestellt.
 
-[![Fügen Sie ein neues typisiertes DataSet, auf das Projekt mit dem Namen NorthwindWithSprocs.xsd](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image6.png)
+[![dem Projekt ein neues typisiertes DataSet mit dem Namen northwindwithsprocs. xsd hinzufügen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image6.png)
 
-**Abbildung 4**: Hinzufügen eines neuen typisierten Datasets, auf das Projekt mit dem Namen `NorthwindWithSprocs.xsd` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image8.png))
+**Abbildung 4**: Hinzufügen eines neuen typisierten Datasets zum Projekt mit dem Namen `NorthwindWithSprocs.xsd` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image8.png))
 
-Dies wird das neue typisierte DataSet zu erstellen, öffnen Sie den Designer, erstellen einen neuen TableAdapter und den TableAdapter-Konfigurations-Assistenten zu starten. Der erste Schritt des TableAdapter-Konfigurations-Assistenten-s fragt, arbeiten mit die Datenbank auszuwählen. Die Verbindungszeichenfolge zur Northwind-Datenbank sollten in der Dropdown-Liste aufgeführt werden. Wählen Sie diese Option aus, und klicken Sie auf Weiter.
+Dadurch wird das neue typisierte DataSet erstellt, der zugehörige Designer geöffnet, ein neuer TableAdapter erstellt und der TableAdapter-Konfigurations-Assistent gestartet. Im ersten Schritt des TableAdapter-Konfigurations-Assistenten werden Sie aufgefordert, die Datenbank auszuwählen, mit der Sie arbeiten möchten. Die Verbindungs Zeichenfolge für die Northwind-Datenbank sollte in der Dropdown Liste aufgeführt werden. Wählen Sie diesen aus, und klicken Sie auf weiter
 
-Auf diesem Bildschirm weiter können wir, wie der TableAdapter auf die Datenbank zugreifen muss. In vorherigen Tutorials haben wir uns für die erste Option, die SQL-Anweisungen. Für dieses Lernprogramm die zweite Option auswählen, neue gespeicherte Prozeduren erstellen, und klicken Sie auf Weiter.
+Auf dem nächsten Bildschirm können Sie auswählen, wie der TableAdapter auf die Datenbank zugreifen soll. In den vorherigen Tutorials haben wir die erste Option "SQL-Anweisungen verwenden" ausgewählt. Wählen Sie für dieses Tutorial die zweite Option aus, erstellen Sie neue gespeicherte Prozeduren, und klicken Sie auf Weiter.
 
-[![Weisen Sie den TableAdapter um neue gespeicherte Prozeduren zu erstellen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image9.png)
+[![den TableAdapter anzuweisen, neue gespeicherte Prozeduren zu erstellen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image9.png)
 
-**Abbildung 5**: Weisen Sie den TableAdapter, erstellen Sie neue gespeicherte Prozeduren ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png))
+**Abbildung 5**: anweisen des TableAdapters, neue gespeicherte Prozeduren zu erstellen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png))
 
-Genau wie bei der Verwendung von Ad-hoc-SQL-Anweisungen, in den folgenden Schritt wir aufgefordert werden, geben Sie die `SELECT` -Anweisung für die Hauptabfrage des TableAdapter s. Aber statt der `SELECT` Anweisung hier eingegeben werden, um eine Ad-hoc-Abfragen direkt ausführen, in der TableAdapter-s-Assistent erstellt eine gespeicherte Prozedur, der diesen `SELECT` Abfrage.
+Wie bei der Verwendung von Ad-hoc-SQL-Anweisungen werden wir im folgenden Schritt aufgefordert, die `SELECT`-Anweisung für die Haupt Abfrage TableAdapter s bereitzustellen. Anstatt jedoch die hier eingegebene `SELECT`-Anweisung zu verwenden, um eine Ad-hoc-Abfrage direkt auszuführen, erstellt der TableAdapter s-Assistent eine gespeicherte Prozedur, die diese `SELECT` Abfrage enthält.
 
-Verwenden Sie die folgenden `SELECT` Abfrage für diese TableAdapter:
+Verwenden Sie die folgende `SELECT` Abfrage für diesen TableAdapter:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample4.sql)]
 
-[![Geben Sie die SELECT-Abfrage](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image12.png)
+[![Sie die SELECT-Abfrage ein.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image12.png)
 
-**Abbildung 6**: Geben Sie die `SELECT` Abfrage ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image14.png))
-
-> [!NOTE]
-> Die obige Abfrage unterscheidet sich geringfügig vom die Hauptabfrage der `ProductsTableAdapter` in die `Northwind` typisierte DataSet. Bedenken Sie, dass die `ProductsTableAdapter` in die `Northwind` typisierte DataSet enthält zwei abhängige Unterabfragen, um wieder den Kategorienamen und den Firmennamen für jede Produktkategorie s und Lieferanten zu versetzen. Im kommenden [Aktualisieren des TableAdapters, verknüpft mit](updating-the-tableadapter-to-use-joins-vb.md) Tutorial betrachten wir das Hinzufügen dieser verwandter Daten dieses TableAdapter.
-
-Nehmen Sie einen Moment Zeit, auf die Schaltfläche "Erweiterte Optionen" klicken. Von hier aus können wir angeben, ob der Assistent auch generieren soll INSERT-, Update- und Delete-Anweisungen für den TableAdapter, ob eine vollständige Parallelität verwendet, und gibt an, ob die Datentabelle nach Einfüge- und updatevorgängen aktualisiert werden sollen. Die generieren Insert, Update und Delete-Anweisungen-Option ist standardmäßig aktiviert. Lassen Sie ausgecheckt werden soll. Für dieses Tutorial für lassen Sie die Verwendung optimistischer Parallelitätsoptionen deaktiviert.
-
-Wenn die gespeicherten Prozeduren, die von den TableAdapter-Assistenten automatisch erstellt, wird es angezeigt, dass die Aktualisierung der Daten-Tabellenoption ignoriert wird. Unabhängig davon, ob dieses Kontrollkästchen aktiviert ist, die sich ergebende INSERT- und Update abgerufen werden gespeicherte Prozeduren den gerade eingefügten oder nur aktualisierte Datensatz, wie wir in Schritt 3 angezeigt wird.
-
-![Lassen Sie die Option aktiviert generieren Insert, Update und Delete-Anweisungen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image15.png)
-
-**Abbildung 7**: Lassen Sie die Option aktiviert generieren Insert, Update und Delete-Anweisungen
+**Abbildung 6**: eingeben der `SELECT` Abfrage ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image14.png))
 
 > [!NOTE]
-> Wenn die Verwendung optimistischer Parallelität-Option aktiviert ist, wird der Assistent zusätzliche Bedingungen zum Hinzufügen der `WHERE` -Klausel, die verhindern, dass die Daten aktualisiert wird, wenn Änderungen in anderen Feldern vorgenommen wurden. Verweisen zurück auf die [optimistische Parallelität implementieren](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md) Tutorial Weitere Informationen zur Verwendung der TableAdapter s integrierte optimistische Parallelität Funktion.
+> Die obige Abfrage unterscheidet sich geringfügig von der Haupt Abfrage der `ProductsTableAdapter` im `Northwind` typisierten DataSet. Beachten Sie, dass die `ProductsTableAdapter` im `Northwind` typisierten Dataset zwei korrelierte Unterabfragen enthält, um den Kategorien Amen und den Firmennamen für die einzelnen Produkt-und Lieferanten Kategorien wiederholen zu können. Im nächsten Tutorial zum [Aktualisieren des TableAdapter zum Verwenden von Joins](updating-the-tableadapter-to-use-joins-vb.md) wird das Hinzufügen dieser verknüpften Daten zu diesem TableAdapter untersucht.
 
-Nach dem Eingeben der `SELECT` abzufragen und die Bestätigung, dass die generieren Insert, Update und Delete-Anweisungen-Option aktiviert ist, und klicken Sie auf Weiter. Die Namen der gespeicherten Prozeduren, die der Assistent erstellt für Sie auswählen, einfügen, aktualisieren und Löschen von Daten aufgefordert, diesen nächsten Bildschirm in Abbildung 8 dargestellt. Änderungen, die diese gespeicherten Prozeduren Objektnamen `Products_Select`, `Products_Insert`, `Products_Update`, und `Products_Delete`.
+Nehmen Sie sich einen Moment Zeit, um auf die Schaltfläche Erweiterte Optionen Hier können Sie angeben, ob der Assistent auch INSERT-, Update-und DELETE-Anweisungen für den TableAdapter generieren soll, ob die optimistische Parallelität verwendet werden soll und ob die Datentabelle nach Einfügungen und Updates aktualisiert werden soll. Die Option INSERT-, Update-und DELETE-Anweisungen generieren ist standardmäßig aktiviert. Lassen Sie die Option aktiviert. Lassen Sie für dieses Tutorial die Option optimistische Parallelität verwenden deaktiviert.
 
-[![Benennen Sie die gespeicherten Prozeduren](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
+Wenn die gespeicherten Prozeduren automatisch mit dem TableAdapter-Assistenten erstellt werden, wird die Option Datentabelle aktualisieren ignoriert. Unabhängig davon, ob dieses Kontrollkästchen aktiviert ist, rufen die sich ergebenden gespeicherten Prozeduren INSERT und Update den soeben eingefügten oder soeben aktualisierten Datensatz ab, wie in Schritt 3 zu sehen.
 
-**Abbildung 8**: Benennen Sie gespeicherte Prozeduren ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image18.png))
+![Lassen Sie die Option INSERT-, Update-und DELETE-Anweisungen generieren aktiviert.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image15.png)
 
-Um das T-SQL finden Sie in der TableAdapter-Assistenten zum Erstellen von vier gespeicherten Prozeduren verwenden, klicken Sie auf die Schaltfläche "SQL-Skriptvorschau anzeigen". Im Dialogfeld "SQL-Skriptvorschau anzeigen" können Sie das Skript in einer Datei speichern oder in die Zwischenablage kopieren.
-
-![Vorschau der SQL-Skripts verwendet, um die gespeicherten Prozeduren generieren](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image19.png)
-
-**Abbildung 9**: Vorschau der SQL-Skripts verwendet, um die gespeicherten Prozeduren generieren
-
-Nach dem Benennen der gespeicherten Prozeduren ein, klicken Sie neben dem entsprechenden Namen die TableAdapter-Methoden. Vergleichbar mit dem bei der Ad-hoc-SQL-Anweisungen verwenden können wir Methoden erstellen, die eine vorhandene DataTable füllen, oder geben Sie einen neuen zurück. Wir können auch angeben, ob der TableAdapter das DB-Direct-Muster für das Einfügen, aktualisieren und Löschen von Datensätzen enthalten soll. Lassen Sie alle drei Kontrollkästchen aktiviert, aber benennen Sie eine DataTable-Methode, um der Rückgabe `GetProducts` (wie in Abbildung 10 gezeigt).
-
-[![Benennen Sie die Methoden Füllung und GetProducts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)
-
-**Abbildung 10**: Benennen Sie die Methoden `Fill` und `GetProducts` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image22.png))
-
-Klicken Sie auf Weiter, um eine Zusammenfassung der Schritte finden Sie unter, die der Assistent ausführt. Schließen Sie den Assistenten, indem Sie auf die Schaltfläche "Fertig stellen". Nachdem der Assistent abgeschlossen ist, werden Sie auf der DataSet-s-Designers, der jetzt enthalten soll zurückgegeben werden die `ProductsDataTable`.
-
-[![Der DataSet-s-Designer zeigt die neu hinzugefügte ProductsDataTable](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)
-
-**Abbildung 11**: Die DataSet-s-Designer zeigt die neu hinzugefügte `ProductsDataTable` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image25.png))
-
-## <a name="step-3-examining-the-newly-created-stored-procedures"></a>Schritt 3: Untersuchen die neu erstellten gespeicherten Prozeduren
-
-Die TableAdapter-Assistenten automatisch verwendet, die in Schritt2 erstellt die gespeicherten Prozeduren zum auswählen, einfügen, aktualisieren und Löschen von Daten. Diese gespeicherten Prozeduren angezeigt, oder über Visual Studio im Server-Explorer und Drilldown in den Ordner der Datenbank gespeicherte Prozeduren geändert werden können. Wie in Abbildung 12 gezeigt, handelt es sich bei der Datenbank Northwind enthält vier neue gespeicherte Prozeduren: `Products_Delete`, `Products_Insert`, `Products_Select`, und `Products_Update`.
-
-![Die vier gespeicherten Prozeduren, die in Schritt 2 erstellten finden Sie im Ordner "s-Datenbank gespeicherte Prozeduren"](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image26.png)
-
-**Abbildung 12**: Die vier gespeicherten Prozeduren, die in Schritt 2 erstellten finden Sie im Ordner "s-Datenbank gespeicherte Prozeduren"
+**Abbildung 7**: belassen der Option INSERT-, Update-und DELETE-Anweisungen generieren aktiviert
 
 > [!NOTE]
-> Wenn Sie den Server-Explorer nicht angezeigt werden, finden Sie unter dem Menü "Ansicht", und wählen Sie die Server-Explorer-Option. Wenn Sie nicht die produktbezogene gespeicherten Prozeduren hinzugefügt, die aus Schritt2 angezeigt werden, aktualisieren, versuchen Sie es mit der rechten Maustaste auf den Ordner gespeicherte Prozeduren, und wählen.
+> Wenn die Option "vollständige Parallelität verwenden" aktiviert ist, fügt der Assistent der `WHERE`-Klausel weitere Bedingungen hinzu, mit denen verhindert wird, dass Daten aktualisiert werden, wenn andere Felder geändert wurden. Weitere Informationen zur Verwendung der integrierten Funktion für die vollständige Parallelitäts Steuerung von TableAdapter finden Sie im Tutorial zum [Implementieren von optimistischer](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md) Parallelität.
 
-Zum Anzeigen oder Ändern einer gespeicherten Prozedur, doppelklicken Sie auf den Namen im Server-Explorer oder alternativ mit der rechten Maustaste auf die gespeicherte Prozedur, und wählen Sie öffnen. Abbildung 13 zeigt die `Products_Delete` gespeicherte Prozedur aus, wenn geöffnet.
+Nachdem Sie die `SELECT` Abfrage eingegeben und bestätigt haben, dass die Option INSERT-, Update-und DELETE-Anweisungen generieren aktiviert ist, klicken Sie auf Weiter. Auf dem nächsten Bildschirm, der in Abbildung 8 dargestellt wird, werden die Namen der gespeicherten Prozeduren angezeigt, die der Assistent zum auswählen, einfügen, aktualisieren und Löschen von Daten erstellt. Ändern Sie die Namen dieser gespeicherten Prozeduren in `Products_Select`, `Products_Insert`, `Products_Update`und `Products_Delete`.
 
-[![Gespeicherte Prozeduren können geöffnet und in Visual Studio geändert werden](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image27.png)
+[Umbenennen der gespeicherten Prozeduren ![](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
 
-**Abbildung 13**: Gespeicherte Prozeduren geöffnet werden kann und Änderung von innerhalb von Visual Studio ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image29.png))
+**Abbildung 8**: Umbenennen der gespeicherten Prozeduren ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image18.png))
 
-Der Inhalt sowohl die `Products_Delete` und `Products_Select` gespeicherte Prozeduren sind ziemlich einfach. Die `Products_Insert` und `Products_Update` gespeicherte Prozeduren, auf der anderen Seite rechtfertigen eine Prüfung beide beim Ausführen einer `SELECT` Anweisung nach ihren `INSERT` und `UPDATE` Anweisungen. Z. B. die folgende SQL-Anweisung bildet die `Products_Insert` gespeicherte Prozedur:
+Zum Anzeigen des T-SQL-Assistenten, der vom TableAdapter-Assistenten zum Erstellen der vier gespeicherten Prozeduren verwendet wird, klicken Sie auf die Schaltfläche SQL-Skript Im Dialogfeld Vorschau-SQL-Skript können Sie das Skript in einer Datei speichern oder in die Zwischenablage kopieren.
+
+![Vorschau des zum Generieren der gespeicherten Prozeduren verwendeten SQL-Skripts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image19.png)
+
+**Abbildung 9**: Vorschau des zum Generieren der gespeicherten Prozeduren verwendeten SQL-Skripts
+
+Nachdem Sie die gespeicherten Prozeduren benannt haben, klicken Sie auf Weiter, um die entsprechenden Methoden für TableAdapter zu benennen Ebenso wie bei der Verwendung von Ad-hoc-SQL-Anweisungen können wir Methoden erstellen, die eine vorhandene Datentabelle ausfüllen oder eine neue zurückgeben. Wir können auch angeben, ob der TableAdapter das DB-Direct-Muster zum Einfügen, aktualisieren und Löschen von Datensätzen enthalten soll. Lassen Sie alle drei Kontrollkästchen aktiviert, benennen Sie jedoch die Methode zum Zurückgeben einer Datentabelle in `GetProducts` um (siehe Abbildung 10).
+
+[![den Namen der Methoden Fill und GetProducts.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)
+
+**Abbildung 10**: Benennen der Methoden `Fill` und `GetProducts` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image22.png))
+
+Klicken Sie auf Weiter, um eine Zusammenfassung der Schritte anzuzeigen, die der Assistent ausführt. Beenden Sie den Assistenten durch Klicken auf die Schaltfläche Fertigstellen. Sobald der Assistent abgeschlossen ist, werden Sie an den DataSet-Designer zurückgegeben, der nun die `ProductsDataTable`enthalten sollte.
+
+[![der DataSet-Designer zeigt das neu hinzugefügte productdatabel-Element an.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)
+
+**Abbildung 11**: der DataSet s-Designer zeigt das neu hinzugefügte `ProductsDataTable` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image25.png))
+
+## <a name="step-3-examining-the-newly-created-stored-procedures"></a>Schritt 3: Untersuchen der neu erstellten gespeicherten Prozeduren
+
+Mit dem TableAdapter-Assistenten, der in Schritt 2 verwendet wurde, wurden automatisch die gespeicherten Prozeduren zum auswählen, einfügen, aktualisieren und Löschen von Daten erstellt. Diese gespeicherten Prozeduren können über Visual Studio angezeigt oder geändert werden, indem Sie auf den Server-Explorer klicken und einen Drilldown in den Ordner gespeicherte Prozeduren der Datenbank ausführen. Wie in Abbildung 12 gezeigt, enthält die Northwind-Datenbank vier neue gespeicherte Prozeduren: `Products_Delete`, `Products_Insert`, `Products_Select`und `Products_Update`.
+
+![Die vier gespeicherten Prozeduren, die in Schritt 2 erstellt wurden, befinden sich im Ordner gespeicherte Prozeduren der Datenbank.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image26.png)
+
+**Abbildung 12**: die vier gespeicherten Prozeduren, die in Schritt 2 erstellt wurden, befinden sich im Ordner gespeicherte Prozeduren der Datenbank.
+
+> [!NOTE]
+> Wenn das Server-Explorer nicht angezeigt wird, klicken Sie auf das Menü Ansicht, und wählen Sie die Option Server-Explorer. Wenn die produktbezogenen gespeicherten Prozeduren aus Schritt 2 nicht angezeigt werden, klicken Sie mit der rechten Maustaste auf den Ordner gespeicherte Prozeduren, und wählen Sie aktualisieren aus.
+
+Um eine gespeicherte Prozedur anzuzeigen oder zu ändern, doppelklicken Sie in der Server-Explorer auf den Namen, oder klicken Sie alternativ mit der rechten Maustaste auf die gespeicherte Prozedur, und wählen Sie öffnen aus. Abbildung 13 zeigt die gespeicherte Prozedur `Products_Delete`, wenn Sie geöffnet wird.
+
+[![gespeicherte Prozeduren können innerhalb von Visual Studio geöffnet und geändert werden.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image27.png)
+
+**Abbildung 13**: gespeicherte Prozeduren können innerhalb von Visual Studio geöffnet und geändert werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image29.png))
+
+Der Inhalt der gespeicherten Prozeduren `Products_Delete` und `Products_Select` ist recht unkompliziert. Die gespeicherten Prozeduren `Products_Insert` und `Products_Update` haben dagegen eine genauere Betrachtung, da beide eine `SELECT`-Anweisung nach Ihren `INSERT`-und `UPDATE`-Anweisungen ausführen. Der folgende SQL-Code bildet z. b. die gespeicherte Prozedur `Products_Insert`:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample5.sql)]
 
-Die gespeicherte Prozedur als Eingabeparameter akzeptiert die `Products` Spalten, die von zurückgegeben wurden die `SELECT` Abfrage, die in den TableAdapter-s-Assistenten und diese Werte werden verwendet, eine `INSERT` Anweisung. Nach der `INSERT` -Anweisung eine `SELECT` Abfrage dient zum Zurückgeben der `Products` Spaltenwerte (einschließlich der `ProductID`) des neu hinzugefügten Datensatzes. Diese Aktualisierung-Funktion ist nützlich, beim Hinzufügen eines neuen Datensatzes, der mit dem BatchUpdate-Muster somit automatisch die neu hinzugefügte aktualisiert `ProductRow` Instanzen `ProductID` Eigenschaften mit dem automatisch inkrementierte Werte, die von der Datenbank zugewiesen.
+Die gespeicherte Prozedur akzeptiert die `Products` Spalten, die von der im TableAdapter-Assistenten angegebenen `SELECT` Abfrage zurückgegeben wurden, als Eingabeparameter, und diese Werte werden in einer `INSERT`-Anweisung verwendet. Nach der `INSERT`-Anweisung wird eine `SELECT` Abfrage verwendet, um die `Products` Spaltenwerte (einschließlich der `ProductID`) des neu hinzugefügten Datensatzes zurückzugeben. Diese Aktualisierungs Funktion ist hilfreich, wenn ein neuer Datensatz mit dem Batch Aktualisierungs Muster hinzugefügt wird, da automatisch die neu hinzugefügten `ProductRow` Instanzen `ProductID` Eigenschaften mit den automatisch inkrementierten Werten aktualisiert werden, die von der Datenbank zugewiesen werden.
 
-Der folgende Code veranschaulicht diese Funktion. Er enthält eine `ProductsTableAdapter` und `ProductsDataTable` erstellt, die für die `NorthwindWithSprocs` typisierte DataSet. Ein neues Produkt wird in der Datenbank hinzugefügt, durch das Erstellen einer `ProductsRow` Instanz, die Werte angeben und die TableAdapter aufrufen `Update` Methode und übergeben die `ProductsDataTable`. Intern die TableAdapter `Update` Methode listet den `ProductsRow` Instanzen in der übergebenen "DataTable" (in diesem Beispiel wird nur ein – eine, die wir gerade hinzugefügt haben) und führt die entsprechende einfügen, aktualisieren oder delete-Befehl. In diesem Fall die `Products_Insert` gespeicherte Prozedur ausgeführt wird, wird die fügt eines neuen Datensatzes in die `Products` Tabelle, und gibt die Details des neu hinzugefügten Datensatzes zurück. Die `ProductsRow` s-Instanz `ProductID` Wert wird dann aktualisiert. Nach der `Update` -Methode abgeschlossen wurde, können wir auf die neu hinzugefügte Datensatz s zugreifen `ProductID` Wert über die `ProductsRow` s `ProductID` Eigenschaft.
+Der folgende Code veranschaulicht diese Funktion. Sie enthält einen `ProductsTableAdapter` und `ProductsDataTable`, der für das `NorthwindWithSprocs` typisierte DataSet erstellt wurde. Ein neues Produkt wird der Datenbank hinzugefügt, indem eine `ProductsRow` Instanz erstellt wird, die Werte bereitgestellt werden und die TableAdapter s `Update`-Methode aufgerufen wird. dabei wird die `ProductsDataTable`übergeben. Intern listet die TableAdapter s-`Update`-Methode die `ProductsRow` Instanzen in der übergeordneten Datentabelle auf (in diesem Beispiel gibt es nur einen, den wir soeben hinzugefügt haben) und führt den entsprechenden INSERT-, Update-oder DELETE-Befehl aus. In diesem Fall wird die gespeicherte Prozedur `Products_Insert` ausgeführt, wodurch der `Products` Tabelle ein neuer Datensatz hinzugefügt und die Details des neu hinzugefügten Datensatzes zurückgegeben werden. Der Wert der `ProductsRow` Instanz s `ProductID` wird dann aktualisiert. Nachdem die `Update`-Methode abgeschlossen wurde, können Sie über die Eigenschaft `ProductsRow` s `ProductID` auf den neu hinzugefügten Datensatz s `ProductID` Wert zugreifen.
 
 [!code-vb[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample6.vb)]
 
-Die `Products_Update` gespeicherte Prozedur auf ähnliche Weise umfasst eine `SELECT` Anweisung nach der `UPDATE` Anweisung.
+Die gespeicherte Prozedur `Products_Update` enthält auf ähnliche Weise eine `SELECT`-Anweisung nach der `UPDATE`-Anweisung.
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample7.sql)]
 
-Beachten Sie, dass diese gespeicherte Prozedur enthält zwei Eingabeparameter für `ProductID`: `@Original_ProductID` und `@ProductID`. Diese Funktion ermöglicht Szenarien, in dem der primäre Schlüssel geändert werden kann. Beispielsweise kann jedes Mitarbeiterdatensatz in einer Mitarbeiterdatenbank, die Mitarbeiter-s-Sozialversicherungsnummer als ihres Primärschlüssels erstellt verwenden. Um eine Sozialversicherungsnummer der vorhandenen Mitarbeiter s zu ändern, müssen sowohl die neuen Sozialversicherungsnummer und der ursprünglichen angegeben werden. Für die `Products` Tabelle, eine solche Funktion ist nicht erforderlich, da die `ProductID` Spalte ist eine `IDENTITY` Spalte und sollte nie geändert werden. In der Tat die `UPDATE` -Anweisung in der `Products_Update` gespeicherten Prozedur t enthalten die `ProductID` Spalte in seiner Spaltenliste. Daher zwar `@Original_ProductID` werden in der `UPDATE` Anweisung s `WHERE` -Klausel, es ist überflüssig, für die `Products` -Tabelle und könnte durch ersetzt werden die `@ProductID` Parameter. Beim Ändern einer s-Parameter von gespeicherten Prozeduren ist es wichtig, dass die TableAdapter-Methoden, die die gespeicherte Prozedur verwenden, ebenfalls aktualisiert werden.
+Beachten Sie, dass diese gespeicherte Prozedur zwei Eingabeparameter für `ProductID`enthält: `@Original_ProductID` und `@ProductID`. Diese Funktion ermöglicht Szenarien, in denen der Primärschlüssel geändert werden kann. Beispielsweise kann in einer Mitarbeiter Datenbank jeder Mitarbeiterdaten Satz die Sozialversicherungsnummer des Mitarbeiters als Primärschlüssel verwenden. Um eine vorhandene Sozialversicherungsnummer eines Mitarbeiters zu ändern, müssen sowohl die neue Sozialversicherungsnummer als auch die ursprüngliche Sozialversicherungsnummer angegeben werden. Diese Funktionalität wird für die `Products` Tabelle nicht benötigt, da die `ProductID` Spalte eine `IDENTITY` Spalte ist und nie geändert werden sollte. Tatsächlich ist die `UPDATE`-Anweisung in der gespeicherten Prozedur `Products_Update` nicht die `ProductID` Spalte in der zugehörigen Spaltenliste enthalten. Obwohl `@Original_ProductID` in der `UPDATE` Anweisung s `WHERE`-Klausel verwendet wird, ist Sie für die `Products` Tabelle überflüssig und kann durch den `@ProductID` Parameter ersetzt werden. Wenn Sie die Parameter einer gespeicherten Prozedur ändern, ist es wichtig, dass die TableAdapter-Methoden, die diese gespeicherte Prozedur verwenden, ebenfalls aktualisiert werden.
 
-## <a name="step-4-modifying-a-stored-procedure-s-parameters-and-updating-the-tableadapter"></a>Schritt 4: Ändern von Parametern für eine gespeicherte Prozedur s, und Aktualisieren der TableAdapter-Steuerelements
+## <a name="step-4-modifying-a-stored-procedure-s-parameters-and-updating-the-tableadapter"></a>Schritt 4: Ändern der Parameter einer gespeicherten Prozedur und Aktualisieren des TableAdapter
 
-Da die `@Original_ProductID` -Parameter überflüssig ist, können Sie s entfernen Sie sie aus der `Products_Update` vollständig gespeicherten Prozedur. Öffnen der `Products_Update` gespeicherte Prozedur Löschen der `@Original_ProductID` Parameter, und aktivieren Sie in der `WHERE` -Klausel der `UPDATE` -Anweisung, Änderung, die den Namen des Parameters verwendet `@Original_ProductID` zu `@ProductID`. Nach diesen Änderungen sollte das T-SQL in der gespeicherten Prozedur wie folgt aussehen:
+Da der `@Original_ProductID`-Parameter überflüssig ist, entfernen Sie ihn aus der `Products_Update` gespeicherten Prozedur. Öffnen Sie die gespeicherte Prozedur `Products_Update`, löschen Sie den Parameter `@Original_ProductID`, und ändern Sie in der `WHERE`-Klausel der `UPDATE`-Anweisung den von `@Original_ProductID` verwendeten Parameternamen in `@ProductID`. Nachdem Sie diese Änderungen vorgenommen haben, sollte T-SQL in der gespeicherten Prozedur wie folgt aussehen:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample8.sql)]
 
-Um diese Änderungen in der Datenbank zu speichern, klicken Sie auf das Symbol "Speichern" in der Symbolleiste, oder drücken Sie STRG + S aus. An diesem Punkt die `Products_Update` gespeicherte Prozedur wird kein erwartet eine `@Original_ProductID` Eingabeparameter, aber der TableAdapter ist so konfiguriert, dass um diese einen Parameter zu übergeben. Sehen Sie die Parameter, die der TableAdapter sendet an die `Products_Update` die gespeicherte Prozedur den TableAdapter im DataSet-Designer auswählen, soll das Fenster "Eigenschaften" und klicken auf die Auslassungspunkte in der `UpdateCommand` s `Parameters` Auflistung. Dadurch wird das Dialogfeld Parametersammlungs-Editor in Abbildung 14 dargestellt.
+Um diese Änderungen in der Datenbank zu speichern, klicken Sie auf der Symbolleiste auf das Symbol speichern, oder drücken Sie STRG + S. An diesem Punkt erwartet die gespeicherte Prozedur `Products_Update` keinen `@Original_ProductID` Input-Parameter, aber der TableAdapter ist so konfiguriert, dass er einen solchen Parameter übergibt. Sie können die Parameter anzeigen, die der TableAdapter an die gespeicherte Prozedur `Products_Update` sendet, indem Sie den TableAdapter im DataSet-Designer auswählen, zum Eigenschaftenfenster navigieren und auf die Ellipsen in der `Parameters` Auflistung `UpdateCommand` s klicken. Dadurch wird das Dialogfeld Parameter Sammlungs-Editor angezeigt, das in Abbildung 14 angezeigt wird.
 
-![Die Parameter-Auflistungs-Editor Listen die Parameter verwendet, die an die Products_Update gespeicherten Prozedur](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image30.png)
+![Der Parameter Sammlungs-Editor listet die Parameter auf, die an die gespeicherte Prozedur Products_Update verwendet werden.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image30.png)
 
-**Abbildung 14**: Die Parameter-Auflistungs-Editor Listen die Parameter verwendet, die an die `Products_Update` gespeicherten Prozedur
+**Abbildung 14**: der Parameter Sammlungs-Editor listet die Parameter auf, die an die gespeicherte Prozedur `Products_Update` verwendet werden.
 
-Sie können diesen Parameter hier entfernen, wählen Sie einfach die `@Original_ProductID` Parameter aus der Liste der Elemente, und klicken Sie auf die Schaltfläche "entfernen".
+Sie können diesen Parameter hier entfernen, indem Sie einfach den `@Original_ProductID`-Parameter aus der Liste der Elemente auswählen und auf die Schaltfläche Entfernen klicken.
 
-Alternativ können Sie die Parameter für alle Methoden verwendet werden, indem mit der rechten Maustaste auf den TableAdapter im Designer und konfigurieren aktualisieren. Hierdurch wird der TableAdapter-Konfigurations-Assistent, die die gespeicherten Prozeduren zum auswählen, einfügen, aktualisieren, auflisten und löschen, zusammen mit den Parametern die gespeicherten Prozeduren erwarten. Wenn Sie auf der Update-Dropdown-Liste klicken, sehen Sie die `Products_Update` gespeicherte Prozeduren erwartet Eingabeparameter, darunter jetzt nicht mehr `@Original_ProductID` (siehe Abbildung 15). Klicken Sie einfach auf "Fertig stellen", um die Parameterauflistung, die von der TableAdapter verwendet automatisch zu aktualisieren.
+Alternativ können Sie die für alle Methoden verwendeten Parameter aktualisieren, indem Sie im Designer mit der rechten Maustaste auf den TableAdapter klicken und konfigurieren auswählen. Dadurch wird der TableAdapter-Konfigurations-Assistent angezeigt, in dem die für das auswählen, einfügen, aktualisieren und löschen verwendeten gespeicherten Prozeduren zusammen mit den Parametern aufgelistet werden, die von den gespeicherten Prozeduren erwartet werden. Wenn Sie auf die Dropdown Liste aktualisieren klicken, sehen Sie, dass die `Products_Update` gespeicherten Prozeduren die Eingabeparameter erwartet haben, die jetzt nicht mehr `@Original_ProductID` enthalten (siehe Abbildung 15). Klicken Sie einfach auf "Fertigstellen", um die vom TableAdapter verwendete Parameter Sammlung automatisch zu aktualisieren.
 
-[![Sie können auch können den TableAdapter-s-Konfigurations-Assistenten Sie seine Methoden Parameter Sammlungen aktualisieren](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
+[![Alternativ können Sie den Konfigurations-Assistenten für TableAdapter s verwenden, um die Methoden Parameter Sammlungen zu aktualisieren.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
 
-**Abbildung 15**: Alternativ können Sie die TableAdapter-Konfigurations-Assistenten zum Aktualisieren von seine Methoden Parameterauflistungen ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image33.png))
+**Abbildung 15**: Alternativ können Sie den Konfigurations-Assistenten für TableAdapter s verwenden, um die Methoden Parameter Auflistungen zu aktualisieren ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image33.png)).
 
-## <a name="step-5-adding-additional-tableadapter-methods"></a>Schritt 5: Hinzufügen von zusätzlichen TableAdapter-Methoden
+## <a name="step-5-adding-additional-tableadapter-methods"></a>Schritt 5: Hinzufügen zusätzlicher TableAdapter-Methoden
 
-Schritt 2 ist dargestellt ist beim Erstellen eines neuen TableAdapter es einfach, die entsprechenden gespeicherten Prozeduren automatisch generiert haben. Dasselbe gilt beim Hinzufügen von zusätzlicher Methods zu einem TableAdapter. Um dies zu veranschaulichen, können Sie s hinzufügen eine `GetProductByProductID(productID)` Methode, um die `ProductsTableAdapter` in Schritt2 erstellt haben. Diese Methode benötigt als Eingabe eine `ProductID` Wert und Zurückgeben von Details zu das angegebene Produkt.
+Wie in Schritt 2 dargestellt, ist es bei der Erstellung eines neuen TableAdapters einfach, die entsprechenden gespeicherten Prozeduren automatisch zu generieren. Dasselbe gilt, wenn einem TableAdapter zusätzliche Methoden hinzugefügt werden. Um dies zu veranschaulichen, fügen Sie dem in Schritt 2 erstellten `ProductsTableAdapter` eine `GetProductByProductID(productID)`-Methode hinzu. Diese Methode nimmt einen `ProductID` Wert als Eingabe an und gibt Details zu dem angegebenen Produkt zurück.
 
-Beginnen Sie mit der rechten Maustaste auf den TableAdapter, und wählen im Kontextmenü der Abfrage hinzufügen.
+Klicken Sie zunächst mit der rechten Maustaste auf den TableAdapter, und wählen Sie im Kontextmenü Abfrage hinzufügen aus.
 
-![Eine neue Abfrage wird dem TableAdapter hinzufügen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image34.png)
+![Neue Abfrage zum TableAdapter hinzufügen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image34.png)
 
-**Abbildung 16**: Eine neue Abfrage wird dem TableAdapter hinzufügen.
+**Abbildung 16**: Hinzufügen einer neuen Abfrage zum TableAdapter
 
-Dies wird im TableAdapter-Abfrage-Konfigurations-Assistenten gestartet, der zuerst aufgefordert, wie der TableAdapter auf die Datenbank zugreifen muss. Um eine neue gespeicherte Prozedur erstellt haben, wählen Sie erstellen eine neue gespeicherte Prozedur aus, und klicken Sie auf Weiter.
+Dadurch wird der Konfigurations-Assistent für TableAdapter-Abfragen gestartet, der zuerst auffordert, wie der TableAdapter auf die Datenbank zugreifen soll. Um eine neue gespeicherte Prozedur zu erstellen, wählen Sie die Option neue gespeicherte Prozedur erstellen aus, und klicken Sie auf Weiter.
 
-[![Wählen Sie dem Erstellen einer neuen gespeicherten Prozedur Option](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)
+[Wählen Sie ![die Option neue gespeicherte Prozedur erstellen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)
 
-**Abbildung 17**: Wählen Sie dem Erstellen eine neue gespeicherte Prozedur Option ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image37.png))
+**Abbildung 17**: Auswählen der Option zum Erstellen einer neuen gespeicherten Prozedur ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image37.png))
 
-Im nächste Bildschirm fordert uns identifiziert den Typ der Abfrage aus, ob sie eine Gruppe von Zeilen oder einen einzelnen Skalarwert zurückgeben wird, oder führen Sie an, eine `UPDATE`, `INSERT`, oder `DELETE` Anweisung. Da die `GetProductByProductID(productID)` Methode wird eine Zeile zurück, die zurückgibt, Row-Option ausgewählt ist, und drücken Sie die nächsten auswählen lassen.
+Im nächsten Bildschirm werden wir aufgefordert, den Typ der auszuführenden Abfrage zu identifizieren, ob ein Satz von Zeilen oder ein einzelner Skalarwert zurückgegeben wird oder ob eine `UPDATE`-, `INSERT`-oder `DELETE`-Anweisung ausgeführt werden soll. Da die `GetProductByProductID(productID)`-Methode eine Zeile zurückgibt, lassen Sie die Option SELECT, die die Zeile zurückgibt ausgewählt und dann auf Weiter.
 
-[![Wählen Sie die wählen die Option-Zeile zurückgibt.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)
+[![wählen Sie die Option Select What Returns Row aus.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)
 
-**Abbildung 18**: Wählen Sie die wählen die Option-Zeile zurückgibt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image40.png))
+**Abbildung 18**: Auswählen der Option auswählen, welche Zeile zurückgibt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image40.png))
 
-Der nächste Bildschirm zeigt an, die TableAdapter-s-Haupt-Abfrage, die den Namen der gespeicherten Prozedur aufgeführt (`dbo.Products_Select`). Ersetzen Sie den Namen der gespeicherten Prozedur durch den folgenden `SELECT` -Anweisung, die alle von der Produktfeldern für ein angegebenes Produkt zurückgibt:
+Im nächsten Bildschirm wird die Haupt Abfrage TableAdapter s angezeigt, die nur den Namen der gespeicherten Prozedur (`dbo.Products_Select`) auflistet. Ersetzen Sie den Namen der gespeicherten Prozedur durch die folgende `SELECT`-Anweisung, die alle Produktfelder für ein bestimmtes Produkt zurückgibt:
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample9.sql)]
 
-[![Ersetzen Sie den Namen der gespeicherten Prozedur durch eine SELECT-Abfrage](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)
+[![den Namen der gespeicherten Prozedur durch eine SELECT-Abfrage ersetzen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)
 
-**Abbildung 19**: Ersetzen Sie den Namen der gespeicherten-Prozedur mit einem `SELECT` Abfrage ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image43.png))
+**Abbildung 19**: Ersetzen des Namens einer gespeicherten Prozedur durch eine `SELECT` Abfrage ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image43.png))
 
-Im folgenden Bildschirm fordert Sie auf die Namen der gespeicherten Prozedur, die erstellt werden. Geben Sie den Namen `Products_SelectByProductID` , und klicken Sie auf Weiter.
+Auf dem nachfolgenden Bildschirm werden Sie aufgefordert, die gespeicherte Prozedur zu benennen, die erstellt wird. Geben Sie den Namen `Products_SelectByProductID`, und klicken Sie auf Weiter.
 
-[![Name der neuen gespeicherten Prozedur Products_SelectByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image44.png)
+[![der neuen gespeicherten Prozedur den Namen Products_SelectByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image44.png)
 
-**Abbildung 20**: Benennen Sie die neue gespeicherte Prozedur `Products_SelectByProductID` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image46.png))
+**Abbildung 20**: Benennen der neuen gespeicherten Prozedur `Products_SelectByProductID` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image46.png))
 
-Der letzte Schritt des Assistenten ermöglicht uns, ändern Sie die Namen generiert sowie gibt an, ob die Füllung verwenden ein DataTable-Muster, ein DataTable-Muster oder beides zurück. Für diese Methode, lassen Sie beide Optionen aktiviert, aber die Methoden zum Benennen `FillByProductID` und `GetProductByProductID`. Klicken Sie auf "Weiter", um eine Zusammenfassung der Schritte der Assistent ausführen wird, und klicken Sie dann auf "Fertig stellen", um den Assistenten abzuschließen.
+Der letzte Schritt des Assistenten ermöglicht es uns, die generierten Methodennamen zu ändern und anzugeben, ob das Muster Fill a databel verwendet werden soll, ob ein Datentabelle oder beides zurückgegeben werden soll. Lassen Sie für diese Methode beide Optionen aktiviert, benennen Sie jedoch die Methoden in `FillByProductID` und `GetProductByProductID`um. Klicken Sie auf Weiter, um eine Zusammenfassung der vom Assistenten ausgeführten Schritte anzuzeigen, und klicken Sie dann auf Fertigstellen, um den Assistenten abzuschließen.
 
-[![Benennen Sie die TableAdapter-s-Methoden in FillByProductID und GetProductByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image47.png)
+[![die TableAdapter s-Methoden in fillbyproductid und getproductbyproductid umbenennen.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image47.png)
 
-**Abbildung 21**: Benennen Sie die TableAdapter-s-Methoden zu `FillByProductID` und `GetProductByProductID` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image49.png))
+**Abbildung 21**: Umbenennen der TableAdapter s-Methoden in `FillByProductID` und `GetProductByProductID` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image49.png))
 
-Nach dem Fertigstellen des Assistenten für TableAdapter eine neue Methode verfügbar ist, hat `GetProductByProductID(productID)` , beim Aufrufen, führt die `Products_SelectByProductID` gespeicherten Prozedur, die gerade erstellt haben. Diese neue gespeicherte Prozedur vom Server-Explorer anzeigen, indem Drilldown in den Ordner gespeicherte Prozeduren, und öffnen in Ruhe `Products_SelectByProductID` (wenn es nicht angezeigt wird, mit der rechten Maustaste auf den Ordner gespeicherte Prozeduren, und wählen Sie die Aktualisierung).
+Nachdem Sie den Assistenten abgeschlossen haben, ist für den TableAdapter eine neue Methode verfügbar, `GetProductByProductID(productID)`, die die soeben erstellte `Products_SelectByProductID` gespeicherte Prozedur ausführt, wenn Sie aufgerufen wird. Nehmen Sie sich einen Moment Zeit, um diese neue gespeicherte Prozedur aus der Server-Explorer anzuzeigen, indem Sie einen Drilldown in den Ordner gespeicherte Prozeduren ausführen und `Products_SelectByProductID` öffnen (wenn Sie ihn nicht sehen, klicken Sie mit der rechten Maustaste auf den Ordner gespeicherte Prozeduren und wählen
 
-Beachten Sie, dass die `SelectByProductID` gespeicherte Prozedur nimmt `@ProductID` als Eingabeparameter und führt die `SELECT` -Anweisung, die wir im Assistenten eingegeben haben.
+Beachten Sie, dass die gespeicherte Prozedur `SelectByProductID` `@ProductID` als Eingabeparameter annimmt und die `SELECT`-Anweisung ausführt, die wir im Assistenten eingegeben haben.
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample10.sql)]
 
-## <a name="step-6-creating-a-business-logic-layer-class"></a>Schritt 6: Erstellen einer Business Logic Layer-Klasse
+## <a name="step-6-creating-a-business-logic-layer-class"></a>Schritt 6: Erstellen einer Klasse für die Geschäftslogik Schicht
 
-In der tutorialreihe haben wir danach gestrebt darin eine mehrschichtigen Architektur, in der die Darstellungsschicht aller die Aufrufe an die Geschäftslogikschicht (Business Logic Layer, BLL) vorgenommen. Um diese entwurfsentscheidung entsprechen, müssen wir zunächst eine BLL-Klasse für das neue typisierte DataSet erstellen, bevor wir der Darstellungsschicht Product-Daten zugreifen können.
+In der tutorialreihe haben wir festgelegt, dass Sie eine geschichtete Architektur erhalten, in der die Präsentationsschicht alle Aufrufe an die Geschäftslogik Schicht (Business Logic Layer, BLL) gerichtet hat. Um diese Entwurfs Entscheidung einzuhalten, müssen wir zuerst eine BLL-Klasse für das neue typisierte DataSet erstellen, bevor wir auf die Produktdaten von der Präsentationsebene aus zugreifen können.
 
-Erstellen Sie eine neue Klassendatei mit dem Namen `ProductsBLLWithSprocs.vb` in die `~/App_Code/BLL` Ordner und fügen Sie den folgenden Code hinzu:
+Erstellen Sie eine neue Klassendatei mit dem Namen `ProductsBLLWithSprocs.vb` im Ordner `~/App_Code/BLL`, und fügen Sie Ihr den folgenden Code hinzu:
 
 [!code-vb[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample11.vb)]
 
-Dieser Klasse imitiert die `ProductsBLL` Klasse Semantik aus früheren Lernprogrammen, jedoch die `ProductsTableAdapter` und `ProductsDataTable` Objekte aus der `NorthwindWithSprocs` DataSet. Z. B. statt einer `Imports NorthwindTableAdapters` -Anweisung am Anfang der Klassendatei als `ProductsBLL` der Fall ist, die `ProductsBLLWithSprocs` -Klasse `Imports NorthwindWithSprocsTableAdapters`. Ebenso die `ProductsDataTable` und `ProductsRow` Objekte, die in dieser Klasse verwendete Präfix der `NorthwindWithSprocs` Namespace. Die `ProductsBLLWithSprocs` Klasse bietet zwei Methoden für Datenzugriff `GetProducts` und `GetProductByProductID`, sowie Methoden zum Hinzufügen, aktualisieren und löschen Sie eine einzelne Product-Instanz.
+Diese Klasse imitiert die Semantik der `ProductsBLL`-Klasse aus früheren Tutorials, verwendet jedoch die Objekte `ProductsTableAdapter` und `ProductsDataTable` aus dem `NorthwindWithSprocs` DataSet. Anstatt z. b. eine `Imports NorthwindTableAdapters`-Anweisung am Anfang der Klassendatei zu haben, wie `ProductsBLL`, verwendet die `ProductsBLLWithSprocs`-Klasse `Imports NorthwindWithSprocsTableAdapters`. Ebenso werden die `ProductsDataTable`-und `ProductsRow` Objekte, die in dieser Klasse verwendet werden, dem `NorthwindWithSprocs` Namespace vorangestellt. Die `ProductsBLLWithSprocs`-Klasse bietet zwei Datenzugriffs Methoden `GetProducts` und `GetProductByProductID`sowie Methoden zum Hinzufügen, aktualisieren und Löschen einer einzelnen Produkt Instanz.
 
-## <a name="step-7-working-with-thenorthwindwithsprocsdataset-from-the-presentation-layer"></a>Schritt 7: Arbeiten mit der`NorthwindWithSprocs`DataSet auf der Darstellungsschicht
+## <a name="step-7-working-with-thenorthwindwithsprocsdataset-from-the-presentation-layer"></a>Schritt 7: Arbeiten mit dem`NorthwindWithSprocs`DataSet von der Präsentationsschicht
 
-An diesem Punkt haben wir eine DAL erstellt, die gespeicherte Prozeduren zugreifen auf und ändern die Datenbankdaten der zugrunde liegenden verwendet. Wir haben auch eine rudimentäre BLL mit Methoden zum Abrufen aller Produkte oder ein bestimmtes Produkt sowie Methoden zum Hinzufügen, aktualisieren und Löschen von Produkten erstellt. Um dieses Tutorial abzurunden, Let s erstellen Sie eine ASP.NET-Seite, die die BLL s verwendet `ProductsBLLWithSprocs` -Klasse für das anzeigen, aktualisieren und Löschen von Datensätzen.
+Nun haben wir eine dal erstellt, die gespeicherte Prozeduren verwendet, um auf die zugrunde liegenden Datenbankdaten zuzugreifen und diese zu ändern. Wir haben auch eine rudimentäre BLL mit Methoden erstellt, mit denen alle Produkte oder ein bestimmtes Produkt zusammen mit Methoden zum Hinzufügen, aktualisieren und Löschen von Produkten abgerufen werden können. Um dieses Lernprogramm zu beenden, können Sie eine ASP.NET-Seite erstellen, die die BLL s-`ProductsBLLWithSprocs` Klasse zum Anzeigen, aktualisieren und Löschen von Datensätzen verwendet.
 
-Öffnen der `NewSprocs.aspx` auf der Seite die `AdvancedDAL` Ordner, und ziehen Sie einer GridView-Ansicht aus der Toolbox auf den Designer, und nennen Sie es `Products`. Das GridView s Smarttag auswählen, um die Bindung an eine neue, mit dem Namen "ObjectDataSource" `ProductsDataSource`. Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLLWithSprocs` Klasse, wie in Abbildung 22 dargestellt.
+Öffnen Sie die Seite `NewSprocs.aspx` im Ordner `AdvancedDAL`, und ziehen Sie eine GridView-Ansicht aus der Toolbox auf den Designer, und benennen Sie Sie `Products`. Wählen Sie aus dem GridView s-Smarttag die Bindung an eine neue ObjectDataSource mit dem Namen `ProductsDataSource`. Konfigurieren Sie ObjectDataSource so, dass die `ProductsBLLWithSprocs`-Klasse verwendet wird, wie in Abbildung 22 dargestellt.
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLLWithSprocs-Klasse](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image50.png)
+[![konfigurieren Sie ObjectDataSource für die Verwendung der productbllwithsprocs-Klasse.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image50.png)
 
-**Abbildung 22**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image52.png))
+**Abbildung 22**: Konfigurieren von ObjectDataSource für die Verwendung der `ProductsBLLWithSprocs`-Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image52.png))
 
-Die Dropdown-Liste in der Registerkarte "SELECT" verfügt über zwei Optionen: `GetProducts` und `GetProductByProductID`. Da wir alle Produkte in den GridView-Ansicht anzeigen möchten, wählen Sie die `GetProducts` Methode. Die Dropdownlisten auf den Registerkarten Update-, INSERT- und DELETE jedes müssen nur eine Methode. Stellen Sie sicher, dass jede dieser Dropdown-Listen die geeignete Methode ausgewählt verfügt, und klicken Sie dann auf "Fertig stellen".
+Die Dropdown Liste auf der Registerkarte auswählen verfügt über zwei Optionen: `GetProducts` und `GetProductByProductID`. Da wir alle Produkte in der GridView anzeigen möchten, wählen Sie die `GetProducts`-Methode aus. Die Dropdown Listen in den Registerkarten Update, INSERT und DELETE verfügen jeweils nur über eine einzige Methode. Stellen Sie sicher, dass für jede dieser Dropdown Listen die entsprechende Methode ausgewählt ist, und klicken Sie dann auf Fertigstellen.
 
-Nachdem das ObjectDataSource-Steuerelement-Assistent abgeschlossen ist, wird Visual Studio BoundFields und eine CheckBoxField GridView für die Product-Datenfelder hinzufügen. Aktivieren der GridView s integrierte bearbeiten und Löschen von Features durch Überprüfen der Bearbeitung aktivieren und löschen aktivieren Optionen, die in das Smarttag vorhanden.
+Nachdem der ObjectDataSource-Assistent abgeschlossen wurde, fügt Visual Studio boundfields und ein CheckBoxField zur GridView für die Product Data-Felder hinzu. Aktivieren Sie die integrierten Funktionen zum Bearbeiten und Löschen von GridView-Funktionen, indem Sie die Optionen Aktivieren der Bearbeitung aktivieren und löschen aktivieren im Smarttags aktivieren.
 
-[![Die Seite enthält eine GridView mit bearbeiten und Löschen von-Unterstützung aktiviert](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image53.png)
+[![die Seite eine GridView mit aktivierter Unterstützung für die Bearbeitung und Löschung enthält.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image53.png)
 
-**Abbildung 23**: Die Seite enthält eine GridView mit bearbeiten und Löschen von-Unterstützung aktiviert ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image55.png))
+**Abbildung 23**: die Seite enthält eine GridView mit aktivierter Unterstützung für die Bearbeitung und Löschung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image55.png))
 
-Als wir haben erläutert in vorherigen Tutorials nach dem Abschluss des Assistenten "ObjectDataSource" s Visual Studio legt die `OldValuesParameterFormatString` Eigenschaft, um die ursprüngliche\_{0}. Dieser Schritt muss auf den Standardwert zurückgesetzt werden {0} erhalten Sie die Parameter, die von den Methoden in unserer BLL erwartet in der Reihenfolge für die Funktionen zur pfadänderung Daten ordnungsgemäß funktioniert. Aus diesem Grund werden Sie sicher, dass die `OldValuesParameterFormatString` Eigenschaft {0} oder entfernen Sie die Eigenschaft vollständig aus der deklarativen Syntax.
+Wie bereits in den vorherigen Tutorials erläutert, legt Visual Studio nach Abschluss des Assistenten für ObjectDataSource s die `OldValuesParameterFormatString`-Eigenschaft auf ursprüngliches\_{0}fest. Dies muss auf den Standardwert von {0} zurückgesetzt werden, damit die Daten Änderungs Funktionen mit den Parametern, die von den Methoden in unserer BLL erwartet werden, ordnungsgemäß funktionieren. Stellen Sie daher sicher, dass Sie die `OldValuesParameterFormatString`-Eigenschaft auf {0} festlegen, oder entfernen Sie die-Eigenschaft vollständig aus der deklarativen Syntax.
 
-Nach Abschluss des Konfigurieren von Datenquellen-Assistenten, bearbeiten und Löschen von-Unterstützung in den GridView und Zurückgeben von "ObjectDataSource" s einschalten `OldValuesParameterFormatString` -Eigenschaft auf den Standardwert zurück, im deklarativen Markup Ihrer Seite s sollte etwa wie folgt aussehen:
+Nach dem Abschließen des Assistenten zum Konfigurieren von Datenquellen, beim Aktivieren der Unterstützung für das Bearbeiten und löschen in der GridView und beim Zurückgeben der Eigenschaft ObjectDataSource s `OldValuesParameterFormatString` auf den Standardwert, sollte das deklarative Markup der Seite in etwa wie folgt aussehen:
 
 [!code-aspx[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample12.aspx)]
 
-An diesem Punkt können wir die GridView aufräumen, durch Anpassen der Benutzeroberfläche der Bearbeitung zum Einschließen von Validierung, dass die `CategoryID` und `SupplierID` Spalten Rendern als DropDownList-Steuerelementen und so weiter. Wir könnten auch eine clientseitiger Bestätigung hinzufügen, auf die Schaltfläche "löschen", und sollten Sie die Zeit zum Implementieren dieser Verbesserungen in Anspruch nehmen. Da diese Themen in vorherigen Tutorials behandelt wurde haben, werden jedoch nicht diese wieder hier behandelt.
+An diesem Punkt könnten wir die GridView bereinigen, indem wir die Bearbeitungs Schnittstelle so anpassen, dass Sie überprüft werden kann, dass die `CategoryID`-und `SupplierID` Spalten als Dropdown Listen usw. angezeigt werden. Wir könnten der Schaltfläche "Löschen" auch eine Client seitige Bestätigung hinzufügen, und ich empfehle Ihnen, sich die Zeit zu nehmen, diese Verbesserungen zu implementieren. Da diese Themen bereits in vorherigen Tutorials behandelt wurden, werden Sie hier nicht näher behandelt.
 
-Unabhängig davon, ob Sie die GridView oder nicht optimiert haben testen Sie die Seite "," s-Kernfunktionen in einem Browser aus. Wie in Abbildung 24 dargestellt, enthält die Seite die Produkte in einer GridView-Ansicht, die pro Zeile bearbeiten und Löschen von Funktionen bereitstellt.
+Unabhängig davon, ob Sie die GridView verbessern, testen Sie die Core-Features der Seite in einem Browser. Wie in Abbildung 24 gezeigt, werden auf der Seite die Produkte in einer GridView aufgelistet, die Bearbeitungs-und Löschfunktionen pro Zeile bereitstellt.
 
-[![Die Produkte können angezeigt, bearbeitet und aus der GridView gelöscht werden](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image56.png)
+[![können die Produkte in der GridView angezeigt, bearbeitet und gelöscht werden.](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image56.png)
 
-**Abbildung 24**: Die Produkte angezeigt werden können, bearbeiteter und aus der GridView gelöscht ([klicken Sie, um das Bild in voller Größe anzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image58.png))
+**Abbildung 24**: die Produkte können in der GridView angezeigt, bearbeitet und gelöscht werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image58.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Die TableAdapters in einem typisierten DataSet können Sie Daten aus der Datenbank, die mit Ad-hoc-SQL-Anweisungen oder mithilfe von gespeicherten Prozeduren zugreifen. Beim Arbeiten mit gespeicherten Prozeduren, können entweder vorhandenen gespeicherten Prozeduren verwendet werden, oder der TableAdapter-Assistenten kann angewiesen werden, zum Erstellen von neuen gespeicherten Prozeduren, die auf der Grundlage einer `SELECT` Abfrage. In diesem Tutorial haben wir, wie Sie die gespeicherten Prozeduren, die automatisch für uns erstellt haben.
+Die TableAdapters in einem typisierten DataSet können mithilfe von Ad-hoc-SQL-Anweisungen oder gespeicherten Prozeduren auf Daten aus der Datenbank zugreifen. Beim Arbeiten mit gespeicherten Prozeduren können entweder vorhandene gespeicherte Prozeduren verwendet werden, oder der TableAdapter-Assistent kann angewiesen werden, neue gespeicherte Prozeduren auf der Grundlage einer `SELECT` Abfrage zu erstellen. In diesem Tutorial haben wir untersucht, wie die gespeicherten Prozeduren automatisch für uns erstellt werden.
 
-Während Sie die gespeicherten Prozeduren, die automatisch generierte können Zeit sparen, gibt es bestimmte Fälle, in dem die gespeicherte Prozedur erstellt der Assistent t ausrichten, mit was wir selbst erstellt haben würden. Ein Beispiel ist die `Products_Update` gespeicherte Prozedur, die beide erwartet `@Original_ProductID` und `@ProductID` Eingabeparameter, obwohl die `@Original_ProductID` Parameter war überflüssig.
+Obwohl das automatische Generieren gespeicherter Prozeduren zu einer Zeitersparnis beiträgt, gibt es bestimmte Fälle, in denen die vom Assistenten erstellte gespeicherte Prozedur nicht an dem, was wir selbst erstellt hätten, ausgerichtet ist. Ein Beispiel hierfür ist die gespeicherte Prozedur `Products_Update`, die sowohl `@Original_ProductID` als auch `@ProductID` Eingabeparameter erwartet, obwohl der `@Original_ProductID` Parameter überflüssig war.
 
-In vielen Szenarien ist die gespeicherten Prozeduren wurden möglicherweise bereits erstellt, oder erstellen sie manuell, um eine feiner abgestufte Kontrolle über die gespeicherte Prozedur-s-Befehle haben sollen. In beiden Fällen möchten wir weisen Sie den TableAdapter um vorhandene gespeicherte Prozeduren für ihre Methoden zu verwenden. Wir sehen, wie Sie dazu im nächsten Tutorial.
+In vielen Szenarios wurden die gespeicherten Prozeduren möglicherweise bereits erstellt, oder wir möchten Sie ggf. manuell erstellen, um eine präzisere Steuerung der Befehle gespeicherter Prozeduren zu erhalten. In beiden Fällen möchten wir den TableAdapter anweisen, vorhandene gespeicherte Prozeduren für seine Methoden zu verwenden. Im nächsten Tutorial wird erläutert, wie Sie dies erreichen.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
 - [Erstellen und Verwalten von gespeicherten Prozeduren](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [Abrufen von skalaren Daten aus einer gespeicherten Prozedur](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
-- [SQLServer-gespeicherte Prozedur-Grundlagen](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
-- [Gespeicherte Prozeduren: Eine Übersicht über die](http://www.sqlteam.com/item.asp?ItemID=563)
+- [Grundlagen der SQL Server gespeicherten Prozedur](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
+- [Gespeicherte Prozeduren: eine Übersicht](http://www.sqlteam.com/item.asp?ItemID=563)
 - [Schreiben einer gespeicherten Prozedur](http://www.4guysfromrolla.com/webtech/111499-1.shtml)
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial ist Hilton Geisenow. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Hilton geisenow. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs.md)

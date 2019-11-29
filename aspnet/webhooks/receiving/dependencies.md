@@ -1,20 +1,20 @@
 ---
 uid: webhooks/receiving/dependencies
-title: Empfängerabhängigkeiten ASP.NET-WebHooks | Microsoft-Dokumentation
+title: ASP.net webhooks-Empfänger Abhängigkeiten | Microsoft-Dokumentation
 author: rick-anderson
-description: Empfängerabhängigkeiten und Abhängigkeitsinjektion in ASP.NET WebHooks.
+description: Empfänger Abhängigkeiten und Abhängigkeitsinjektion in ASP.net-webhooks.
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 5125e483-c2bb-435b-8cd1-21d3499bfaaf
-ms.openlocfilehash: c44cfe3ed310aa728a989b108c410e8786e4f514
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 477b8828209d0da1d485ef883b0f99b4e1b9b5bf
+ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048727"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564868"
 ---
-# <a name="aspnet-webhooks-receiver-dependencies"></a>ASP.NET WebHooks empfängerabhängigkeiten
+# <a name="aspnet-webhooks-receiver-dependencies"></a>ASP.net webhooks-Empfänger Abhängigkeiten
 
-Microsoft ASP.NET WebHooks dient über Dependency Injection, denken Sie daran. Die meisten Abhängigkeiten in das System können durch alternative Implementierung, die mithilfe eines Dependency Injection ersetzt werden.
+Microsoft ASP.net webhooks ist im Hinblick auf die Abhängigkeitsinjektion konzipiert. Die meisten Abhängigkeiten im System können mithilfe einer Abhängigkeitsinjektion-Engine durch alternative Implementierungen ersetzt werden.
 
-Informieren Sie sich [DependencyScopeExtensions](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/Extensions/DependencyScopeExtensions.cs) für eine Liste der empfängerabhängigkeiten. Wenn keine Abhängigkeit registriert wurde, wird eine standardmäßige Implementierung verwendet. Informieren Sie sich [ReceiverServices](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/Services/ReceiverServices.cs) eine Liste der standardimplementierungen.
+Eine Liste der Empfänger Abhängigkeiten finden Sie unter [dependencyscopeextensions](https://github.com/aspnet/aspnetWebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/Extensions/DependencyScopeExtensions.cs) . Wenn keine Abhängigkeit registriert wurde, wird eine Standard Implementierung verwendet. Eine Liste der Standard Implementierungen finden Sie unter [receiverservices](https://github.com/aspnet/aspnetWebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/Services/ReceiverServices.cs) .

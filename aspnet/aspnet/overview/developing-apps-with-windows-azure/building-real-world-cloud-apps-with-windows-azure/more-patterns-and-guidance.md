@@ -1,130 +1,130 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
-title: Weitere Muster und Anleitungen (erstellen realer Cloud-Apps mit Azure) | Microsoft-Dokumentation
+title: Weitere Muster und Anleitungen (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
+description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 42066d4154758fce7ebd1529edf41ba49df07d93
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: afade34477d1136883e7543d09e73dfbe435690e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118703"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585357"
 ---
-# <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Weitere Muster und Anleitungen (erstellen realer Cloud-Apps mit Azure)
+# <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Weitere Muster und Anleitungen (entwickeln realer Cloud-apps mit Azure)
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
-[Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
-Sie haben jetzt gesehen 13 Muster, die bieten Anleitungen dazu, wie erfolgreich in-computing Cloud. Dies sind nur einige der Muster, die Cloud-apps gelten. Hier sind einige weitere Cloud-computing-Themen und Ressourcen, die mit ihnen zu helfen:
+Sie haben nun 13 Muster gesehen, die eine Anleitung zur erfolgreichen Ausführung in Cloud Computing bereitstellen. Dies sind nur einige der Muster, die für Cloud-apps gelten. Hier finden Sie weitere Cloud Computing Themen und Ressourcen, die Ihnen dabei helfen:
 
-- Migrieren Sie vorhandene lokale Anwendungen in die Cloud. 
+- Migrieren vorhandener lokaler Anwendungen in die Cloud. 
 
-    - [Verschieben von Anwendungen in der Cloud](https://msdn.microsoft.com/library/ff728592.aspx). E-Book von Microsoft Patterns and Practices. Auch verfügbar als eine [hergestelltes Taschenbuch](https://www.amazon.com/dp/1621140202).
-    - [Migrieren von Microsoft ASP.NET und IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Fallstudie von Robert McMurray.
-    - [Verschieben ab der 4. &amp; Bürgermeisteramt in Azure Websites](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Blogbeitrag von Jeff Wilcox chronicling seine Erfahrungen bei der Verschieben einer Web-app von Amazon Web Services, Web-Apps in Azure App Service.
-    - [Verschieben von Apps in Azure: Welche Änderungen?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Kurze Video von Stefan Schackow, Dateisystemzugriff in in Azure App Service-Web-Apps erläutert.
-    - [Azure Hybrid Cloud](https://www.amazon.com/dp/B00EOP4UQW). Kopie mit festem Buch oder e-Book von Danny Garber Jamal Malik und Adam Fazio.
-- Sicherheit, Authentifizierung und Autorisierung Probleme, die eindeutig für Cloudanwendungen
+    - [Verschieben von Anwendungen in die Cloud](https://msdn.microsoft.com/library/ff728592.aspx). E-Book von Microsoft Patterns and Practices. Auch als [Papierbuch mit harter Kopie](https://www.amazon.com/dp/1621140202)verfügbar.
+    - [Migrieren von Microsoft-ASP.net und IIS.net](https://go.microsoft.com/fwlink/?LinkId=400656). Fallstudie von Robert McMurray.
+    - [Verschieben von 4. &amp;-Bürger in Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/)Websites. Der Blog Beitrag von Jeff Wilcox chronisieren seine Benutzerkenntnisse über das Verschieben einer Web-App aus Amazon Web Services in Web-Apps in Azure App Service.
+    - [Verschieben von apps nach Azure: Was ändert sich?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Das kurze Video von Stefan Schackow erläutert den Dateisystem Zugriff in Web-Apps in Azure App Service.
+    - [Azure-hybridcloud](https://www.amazon.com/dp/B00EOP4UQW). Hardcopy Book oder e-Book von Danny Garber, Jamal Malik und Adam Fazio.
+- Sicherheits-, Authentifizierungs-und Autorisierungs Probleme für cloudanwendungen
 
-    - [Azure-Sicherheitsleitfaden](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices - Leitfaden zur Azure](https://msdn.microsoft.com/library/dn568099.aspx). Finden Sie unter Muster "Gatekeeper", verbundidentitätsmuster.
-    - [Azure-Netzwerksicherheit](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Whitepaper von Ashin Palekar.
+    - [Azure-Sicherheits Leit Faden](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
+    - [Microsoft Patterns and Practices: Azure-Leitfaden](https://msdn.microsoft.com/library/dn568099.aspx). Weitere Informationen finden Sie unter Gatekeeper Pattern, Federated Identity Pattern.
+    - [Azure-Netzwerksicherheit](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Whitepaper von Asum Palekar.
 
-Siehe auch weitere Cloud-computing-Muster und Anleitungen an [Microsoft Patterns and Practices - Leitfaden zur Azure](https://msdn.microsoft.com/library/dn568099.aspx).
+Weitere Cloud Computing Muster und Anleitungen finden Sie unter [Microsoft Patterns and Practices (Azure-Leitfaden](https://msdn.microsoft.com/library/dn568099.aspx)).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Ressourcen
 
-Jede der in diesem e-Book-Kapitel enthält Links zu Ressourcen für Weitere Informationen zu diesem bestimmten Thema. Die folgende Liste enthält Links zu Überblick über bewährte Methoden und empfohlene Muster für die erfolgreiche Cloud-Entwicklung mit Azure.
+Jedes der Kapitel in diesem e-Book enthält Links zu Ressourcen, um weitere Informationen zu diesem speziellen Thema zu erhalten. In der folgenden Liste finden Sie Links zu Übersichten bewährter Methoden und empfohlene Muster für eine erfolgreiche cloudentwicklung mit Azure.
 
-Dokumentation
+Documentation
 
-- [Bewährte Methoden für den Entwurf umfangreicher Dienste auf Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Whitepaper von Mark Simms und Michael Thomassy.
-- [Failsafe: Leitfaden zu robusten Cloud-Architekturen](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Whitepaper von Marc Mercuri, Ulrich Homann und Andrew Townhill. Die FailSafe-Videoreihe Webseite-Version.
-- [Leitfaden zur Azure](https://azure.microsoft.com/develop/net/guidance/) der Portalseite für die offizielle Dokumentation im Zusammenhang mit der Entwicklung von Anwendungen für Azure.
+- [Bewährte Methoden für den Entwurf umfangreicher Dienste in Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Whitepaper von Mark Simms und Michael thomassy.
+- [Failsafe: Leitfaden für robuste cloudarchitekturen](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Whitepaper von Marc Mercuri, Ulrich Homann und Andrew Townhill. Webseiten Version der Failsafe-Videoserie.
+- [Azure-Leitfaden](https://azure.microsoft.com/develop/net/guidance/) Die Portal Seite für die offizielle Dokumentation im Zusammenhang mit der Entwicklung von Anwendungen für Azure.
 
 Videos
 
-- [Erstellen von Real-World Cloud Apps with Azure – Teil 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324) und [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325). Video der Präsentation von Scott Guthrie, die in diesem e-Book basiert. Im September 2013 beim Tech Ed Australien bereitgestellt wurden. Eine frühere Version der gleichen Darstellung wurde am Norwegische Entwickler Conference (NDC) im Juni 2013 übermittelt: [NDC Teil 1](http://vimeo.com/68215538), [NDC Teil 2](http://vimeo.com/68215602).
-- [FailSafe: Erstellen von skalierbaren, robusten Cloud-Diensten](https://channel9.msdn.com/Series/FailSafe). Videoreihe neun-Teil von Marc Mercuri, Ulrich Homann und Mark Simms. Bietet einen Überblick über 400 auf Serverebene wie Sie Cloud-apps zu gestalten. Diese Serie konzentriert sich auf die Theorie und Gründe für empfohlene Muster; Weitere Informationen zur Vorgehensweise finden Sie in der Erstellung großer von Mark Simms.
-- [Erstellen von großen: Erfahrungen aus Azure-Kunden – Teil 1](https://channel9.msdn.com/Events/Build/2012/3-029) und [Teil 2](https://channel9.msdn.com/Events/Build/2012/3-030). Mit dem zweiteiligen Videoreihe von Simon Davies und Mark Simms, ähnlich wie die FailSafe-Serie, aber ausgerichtet mehr in Richtung praktische Implementierung.
+- Entwickeln Sie mit Azure, Teil 1 und [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325), [reale Cloud-apps](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324) . Video der Präsentation von Scott Guthrie, auf dem dieses e-book basiert. Präsentiert am Tech Ed Australia im September 2013. Eine frühere Version der gleichen Präsentation wurde im Juni 2013 auf der Norwegian Developers Conference (NDC) geliefert: [NDC Part 1](http://vimeo.com/68215538), [NDC Part 2](http://vimeo.com/68215602).
+- [Failsafe: aufbauen skalierbarer, robuster Cloud Services](https://channel9.msdn.com/Series/FailSafe). Neun teilige Videoreihe von Ulrich Homann, Marc Mercuri und Mark Simms. Bietet eine 400-stufige Ansicht der Architektur von Cloud-apps. Diese Reihe konzentriert sich auf Theorie und Gründe, die auf Empfohlene Muster zurückgeht. Weitere Informationen zur Vorgehensweise finden Sie unter Building Big Series by Mark Simms.
+- [Building Big: Erkenntnisse von Azure-Kunden, Teil 1](https://channel9.msdn.com/Events/Build/2012/3-029) und [Teil 2](https://channel9.msdn.com/Events/Build/2012/3-030). Zweiteilige Videoreihe von Simon Davies und Mark Simms, ähnlich wie bei der Failsafe-Reihe, aber eher in Bezug auf die praktische Implementierung.
 
 Codebeispiel
 
-- [Der Fix It-Anwendung, die mit diesem e-Book](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002).
-- [Clouddienstgrundlagen in Azure in c# für Visual Studio 2012](https://aka.ms/csf). Herunterladbaren Projekt in der Microsoft Code Gallery-Website enthält sowohl Code als auch Dokumentation, die von der Microsoft Customer Advisory Teams (CAT) entwickelt. Veranschaulicht viele der bewährten Methoden in der FailSafe-Whitepaper und die Videoreihe FailSafe und Erstellen von Big propagiert. Die Code Gallery-Seite zudem einen Link zu umfangreichen Dokumentation von den Autoren des Projekts – finden Sie insbesondere die [Clouddienstgrundlagen Wiki Auflistung](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) -Link in das blaue Feld oben auf der die Beschreibung für das Projekt. Dieses Projekt, und die Dokumentation für diese immer noch aktiv entwickelt, die somit einer besseren Wahl für Informationen zu vielen Themen als ähnlich, aber frühere Whitepapers.
+- [Die Korrektur-IT-Anwendung, die dieses e-book begleitet](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002).
+- [Grundlagen des clouddiensts C# in Azure in für Visual Studio 2012](https://aka.ms/csf). Herunterladbares Projekt auf der Microsoft Code Gallery-Website enthält sowohl Code als auch Dokumentation, die vom Microsoft Customer Advisory Team (CAT) entwickelt wurden. Veranschaulicht viele der bewährten Methoden, die in der Failsafe-und der Building Big Video Series und im Failsafe-Whitepaper erläutert werden. Die Code Galerieseite ist auch mit einer umfassenden Dokumentation der Autoren des Projekts verknüpft. Informationen hierzu finden Sie im oberen [Bereich der Projekt](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) Beschreibung im blauen Feld im blauen Bereich. Dieses Projekt und die Dokumentation für die IT-Abteilung werden immer noch aktiv entwickelt, sodass es eine bessere Wahl für Informationen zu vielen Themen als ähnliche, aber ältere Whitepapers ist.
 
-Kopieren der VHD-Bücher
+Bücher zur fest Kopie
 
-- [Cloud Computing so richtig Werbung](https://www.amazon.com/dp/0470903562). Durch Barrie Sosinsky.
-- [Veröffentlichen Sie es aus! Entwerfen und Bereitstellen von Software für produktionsbereite](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). By Michael T. Nygard.
-- [Cloud-Architekturmuster: Mit Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Von Bill Wilder.
-- [Windows Azure-Plattform](https://www.amazon.com/dp/1430235632). Von Tejaswi Redkar.
-- [Windows Azure für Startups-Programmiermuster](https://www.amazon.com/dp/1849685606). By Riccardo Becker.
-- [Microsoft Windows Azure-Entwicklung Cookbook](https://www.amazon.com/dp/1849682224). Von Neil Mackenzie.
+- [Cloud Computing-Bibel](https://www.amazon.com/dp/0470903562). Von Barrie sosinsky.
+- [Release! entwerfen und Bereitstellen von Produktions bereiter Software](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Von Michael T. Nygard.
+- [Cloudarchitektur: Verwenden von Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Von Rechnung Wilder.
+- [Windows Azure Platform](https://www.amazon.com/dp/1430235632). Von Tejaswi redkar.
+- [Windows Azure-Programmier Muster für Start-ups](https://www.amazon.com/dp/1849685606). Von Riccardo Becker.
+- [Cookbook zur Microsoft Windows Azure-Entwicklung](https://www.amazon.com/dp/1849682224). Von Neil Mackenzie.
 
-Schließlich, wenn Sie beginnen, realen apps erstellen und diese in Azure ausgeführt wird, früher oder später benötigen Sie vielleicht Unterstützung durch Experten. Fragen Sie in der Community-Sites wie z. B. [Azure-Foren oder StackOverflow](https://azure.microsoft.com/support/forums/), oder Sie können Microsoft direkt für die Azure-Support kontaktieren. Microsoft bietet mehrere Ebenen von technischen Support von Azure: eine Zusammenfassung und einen Vergleich der Optionen, finden Sie unter [Azure-Support](https://azure.microsoft.com/support/plans/).
+Wenn Sie mit der Erstellung realer apps beginnen und diese in Azure ausführen, benötigen Sie wahrscheinlich eine Unterstützung von Experten. Sie können Fragen auf Communitysites wie [Azure-Foren oder StackOverflow](https://azure.microsoft.com/support/forums/)stellen, oder Sie können sich direkt an Microsoft wenden, um den Azure-Support zu erhalten. Microsoft bietet verschiedene technische Support Stufen in Azure: eine Zusammenfassung und einen Vergleich der Optionen finden Sie [unter Azure-Support](https://azure.microsoft.com/support/plans/).
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>Danksagungen
 
-Dieser Inhalt wurde von Tom Dykstra und Rick Anderson Mike Wasson geschrieben. Die meisten von den ursprünglichen Inhalt stammt [Scott Guthrie](https://weblogs.asp.net/scottgu/), und er wiederum zog auf Material aus Mark Simms und die Microsoft Customer Advisory Teams (CAT).
+Dieser Inhalt wurde von Tom Dykstra, Rick Anderson und Mike Wasson geschrieben. Der größte Teil der Originalinhalte stammt von [Scott Guthrie](https://weblogs.asp.net/scottgu/), und er hat sich seinerseits mit dem Material von Mark Simms und dem Microsoft Customer Advisory Team (CAT) gezeichnet.
 
-Viele andere Kollegen bei Microsoft überprüft und Entwürfe und Code kommentiert:
+Viele andere Kollegen bei Microsoft haben Entwürfe und Code überprüft und kommentiert:
 
-- TIM Ammann - überprüft im Kapitel über das Automation.
-- Christopher Bennage - überprüft und den Code Fix It getestet.
-- Ryan Berry - überprüft die CD/CI-Kapitel.
-- Vittorio Bertocci - überprüft der SSO-Kapitel.
-- Chris Clayton – dabei geholfen, technische Probleme in der PowerShell-Skripts zu lösen.
-- Conor Cunningham - überprüft im Daten-Storage-Optionen Kapitel.
-- Carlos Farre - überprüft und den Code Fix It auf Sicherheitsprobleme getestet.
-- Larry Franks - überprüft der Telemetriedaten und Überwachung im Kapitel.
-- Jonathan Gao - überprüft Hadoop und MapReduce-Abschnitten des Kapitels Data Storage-Optionen.
-- Sidney Higa - überprüft alle Kapitel.
-- Gordon Hogenson - überprüft im Kapitel über das Datenquellen-Steuerelement.
-- Tamra Myers - geprüfte Optionen für die datenspeicherung, BLOB- und Warteschlangen Kapitel.
-- Pranav Rastogi – überprüft die SSO-Kapitel.
-- June Blender Rogers - hinzugefügt Fehlerbehandlung und dabei helfen, die Automation-PowerShell-Skripts.
-- Mani Subramanian - überprüft alle Kapitel und führte die codeüberprüfung und Testverfahren für den Code zu beheben.
-- Shaun Tinline-Jones - überprüft die Datenpartitionierung Kapitel.
-- Selcin Tukarslan - geprüfte Kapiteln, in denen SQL-Datenbank und SQL Server behandelt.
-- Edward Wu - Beispielcode für das SSO-Kapitel bereitgestellt.
-- Guang Yang - schrieb die Automation-PowerShell-Skripts.
+- Tim Ammann hat das Automation-Kapitel geprüft.
+- Christopher bennage-hat den Korrektur-IT-Code überprüft und getestet.
+- Ryan Berry: hat das Kapitel "CD/CI" überprüft.
+- Vittorio berbicci: hat das SSO-Kapitel geprüft.
+- Chris Clayton-half beim lösen technischer Probleme in den PowerShell-Skripts.
+- Im Kapitel zur Datenspeicher Optionen.
+- Carlos Farre-Review und testet den Korrektur-IT-Code auf Sicherheitsprobleme.
+- Larry Franks: hat das Kapitel Telemetrie und Überwachung geprüft.
+- Jonathan Gao-überprüfte Hadoop-und MapReduce-Abschnitte des Kapitels zu den Datenspeicher Optionen.
+- Sidney Higa-überprüft alle Kapitel.
+- Gordon hugenson: hat das Kapitel zur Quell Code Verwaltung geprüft.
+- Tamra Myers-überprüfte Kapitel zu Datenspeicher Optionen, BLOBs und Warteschlangen.
+- Pranav Rastogi: hat das SSO-Kapitel geprüft.
+- Blender der Juni (Juni): hinzugefügte Fehlerbehandlung und Hilfe zu den PowerShell-Automatisierungs Skripts.
+- Mani Subramanian: hat alle Kapiteln überprüft und den Code Review-und Testprozess für den Korrektur-IT-Code geleitet.
+- Shaun tinline-Jones: überprüft das Kapitel zur Daten Partitionierung.
+- Selcin tukarslan-überprüfte Kapitel, die SQL-Datenbank und SQL Server abdecken.
+- Der von Edward Wu bereitgestellte Beispielcode für das SSO-Kapitel.
+- Guang Yang: schrieb die PowerShell-Automatisierungs Skripts.
 
-Mitglieder der [Microsoft Entwickler Anleitungen Advisory Council](https://aka.ms/DGAC) (DGAC) auch überprüft und kommentiert Entwürfe:
+Die Mitglieder des [Microsoft Developer Guidance Advisory Council](https://aka.ms/DGAC) (DGAC) haben auch die Entwürfe überprüft und kommentiert:
 
-- Jean-Luc Boucho
-- Catalin Gheorghiu
+- Jean-Luc boucho
+- Katalin Gheorghiu
 - Wouter de Kort
 - Carlos dos Santos
 - Neil Mackenzie
 - Dennis Persson
-- Sunil Sabat
-- [Alexej Sinyagin](http://www.linkedin.com/in/sinyagin)
+- Sunil-Sabat
+- [Aleksey sinyagin](http://www.linkedin.com/in/sinyagin)
 - Bill Wagner
 - Michael Wood
 
-Andere Mitglieder der DGAC überprüft und kommentiert, auf die vorläufige Gliederung:
+Andere Mitglieder der DGAC haben die vorläufige Gliederung überprüft und kommentiert:
 
-- Damir Arh
-- Edward Bakker
+- Damir ARH
+- Edward Backer
 - Srdjan Bozovic
-- Ming Man ändern
+- Ming man Chan
 - Gianni Rosa Gallina
 - Paulo Morgado
 - Jason Oliveira
 - Alberto Poblacion
 - Ryan Riley
-- Perez Jones Tsisah
+- Perez Jones tsisah
 - Roger Whitehead
 - Pawel Wilkosz
 

@@ -1,177 +1,177 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
-title: Erstellen eine benutzerdefinierte Sortierung-Benutzeroberfläche (VB) | Microsoft-Dokumentation
+title: Erstellen einer benutzerdefinierten Sortierungs Benutzeroberfläche (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Wenn Daten mit einer langen Liste sortiert werden, es kann sehr hilfreich sein, gruppieren Sie verknüpfte Daten durch die Einführung von Trennzeichen für Zeilen. In diesem Tutorial sehen, dass wie ASK erstellen...
+description: Beim Anzeigen einer langen Liste sortierter Daten kann es sehr hilfreich sein, verwandte Daten durch die Einführung von Trennzeichen zu gruppieren. In diesem Tutorial erfahren Sie, wie Sie CRE...
 ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e2c2ab402c1ffeb9a9a54e0097eb4680158169ff
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 66127630560141cd795beb15f525a7fba85f3993
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134283"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607368"
 ---
 # <a name="creating-a-customized-sorting-user-interface-vb"></a>Erstellen einer angepassten Benutzeroberfläche zum Sortieren (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_VB.exe) oder [PDF-Datei herunterladen](creating-a-customized-sorting-user-interface-vb/_static/datatutorial27vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_VB.exe) oder [PDF herunterladen](creating-a-customized-sorting-user-interface-vb/_static/datatutorial27vb1.pdf)
 
-> Wenn Daten mit einer langen Liste sortiert werden, es kann sehr hilfreich sein, gruppieren Sie verknüpfte Daten durch die Einführung von Trennzeichen für Zeilen. In diesem Tutorial sehen wir, wie Sie solche eine Sortierung Benutzeroberfläche zu erstellen.
+> Beim Anzeigen einer langen Liste sortierter Daten kann es sehr hilfreich sein, verwandte Daten durch die Einführung von Trennzeichen zu gruppieren. In diesem Tutorial erfahren Sie, wie Sie eine solche sortierende Benutzeroberfläche erstellen.
 
 ## <a name="introduction"></a>Einführung
 
-Wenn mit einer langen Liste sortierter Daten vorhanden sind nur wenige unterschiedliche Werte in der sortierten Spalte an, ein Benutzer finden es möglicherweise schwierig, genau die Unterschied Grenzen auftreten zu erkennen. Beispielsweise sind 81 Produkte in der Datenbank, aber nur neun andere Kategorie-Optionen (acht eindeutigen Kategorien sowie die `NULL` Option). Betrachten Sie den Fall eines Benutzers ist daran interessiert, untersuchen die Produkte, die unter der Kategorie "Seafood" fallen. Von einer Seite, die auflistet *alle* der Produkte in einer einzelnen GridView, kann der Benutzer entscheiden, ihr am sinnvollsten ist, zum Sortieren der Ergebnisse nach Kategorie, die gruppiert werden alle Produkte Seafood zusammen. Nach dem Sortieren nach Kategorie, muss der Benutzer über der Liste zu suchen gesucht, in denen die Produkte Seafood gruppiert beginnen und enden. Da die Ergebnisse nach alphabetischer Reihenfolge sortiert werden der Kategoriename der Seafood Produkte zu finden, ist nicht schwierig, aber erfordert er dennoch genau überprüft die Liste der Elemente im Raster.
+Beim Anzeigen einer langen Liste von sortierten Daten, bei denen es nur wenige unterschiedliche Werte in der sortierten Spalte gibt, kann ein Endbenutzer feststellen, wo genau die Differenz Grenzen eintreten. Beispielsweise gibt es 81 Produkte in der-Datenbank, aber nur neun verschiedene Kategorieoptionen (acht eindeutige Kategorien plus die `NULL`-Option). Betrachten Sie den Fall eines Benutzers, der an der Untersuchung der Produkte interessiert ist, die in der Kategorie "Seafood" liegen. Auf einer Seite, auf der *alle* Produkte in einer einzelnen GridView aufgelistet sind, kann der Benutzer entscheiden, ob die Ergebnisse nach Kategorie sortiert werden sollen, in der alle Produkte der Benutzer Produkte gruppiert werden. Nach der Sortierung nach Kategorie muss der Benutzer dann die Liste durchsuchen, um zu suchen, wo die in der Benutzerliste gruppierten Produkte beginnen und enden. Da die Ergebnisse alphabetisch nach dem Kategorienamen sortiert werden, ist die Suche nach den Produkten der-Produkte nicht schwierig, erfordert aber trotzdem eine genaue Überprüfung der Liste der Elemente im Raster.
 
-Damit können die Grenzen zwischen sortierte Gruppen markieren, nutzen viele Websites eine Benutzeroberfläche, die ein Trennzeichen zwischen Gruppen hinzugefügt. Trennzeichen, wie in Abbildung 1 dargestellten ermöglicht Benutzern schneller eine bestimmte Gruppe suchen und identifizieren die Grenzen, als auch ermitteln, welche unterschiedlichen Gruppen in den Daten vorhanden sind.
+Um die Grenzen zwischen sortierten Gruppen hervorzuheben, verwenden viele Websites eine Benutzeroberfläche, die ein Trennzeichen zwischen diesen Gruppen hinzufügt. Mithilfe von Trennzeichen wie den in Abbildung 1 gezeigten können Benutzer eine bestimmte Gruppe schneller finden und ihre Grenzen identifizieren und ermitteln, welche unterschiedlichen Gruppen in den Daten vorhanden sind.
 
-[![Jede Kategoriegruppe ist eindeutig identifiziert](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
+[![werden alle Kategoriegruppen eindeutig identifiziert.](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
 
-**Abbildung 1**: Jede Kategoriegruppe ist eindeutig identifiziert ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
+**Abbildung 1**: jede Kategoriegruppe ist eindeutig identifiziert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
 
-In diesem Tutorial sehen wir, wie Sie solche eine Sortierung Benutzeroberfläche zu erstellen.
+In diesem Tutorial erfahren Sie, wie Sie eine solche sortierende Benutzeroberfläche erstellen.
 
-## <a name="step-1-creating-a-standard-sortable-gridview"></a>Schritt 1: Erstellen eine Standard, sortierbare GridView
+## <a name="step-1-creating-a-standard-sortable-gridview"></a>Schritt 1: Erstellen eines Standard mäßigen, sortierbaren GridView-Sicht
 
-Bevor wir Gewusst wie: verbessern die GridView, um die erweiterte Sortierung Oberfläche bereitzustellen, zu untersuchen, können Sie s, erstellen Sie zunächst eine standard, sortierbare GridView, die die Produkte aufgelistet werden. Öffnen Sie zunächst die `CustomSortingUI.aspx` auf der Seite die `PagingAndSorting` Ordner. Hinzufügen einer GridView-Ansicht auf der Seite, legen Sie dessen `ID` Eigenschaft `ProductList`, und binden sie an eine neue "ObjectDataSource". Konfigurieren Sie mit dem ObjectDataSource-Steuerelement die `ProductsBLL` Klasse s `GetProducts()` Methode zum Auswählen von Datensätzen.
+Bevor wir untersuchen, wie die GridView erweitert wird, um die erweiterte Sortier Schnittstelle bereitzustellen, können Sie zuerst eine standardmäßige, sortierbare GridView erstellen, die die Produkte auflistet. Öffnen Sie zunächst die Seite `CustomSortingUI.aspx` im Ordner `PagingAndSorting`. Fügen Sie der Seite eine GridView hinzu, legen Sie die `ID`-Eigenschaft auf `ProductList`fest, und binden Sie Sie an eine neue ObjectDataSource. Konfigurieren Sie ObjectDataSource so, dass die `ProductsBLL` Klasse s `GetProducts()` Methode zum Auswählen von Datensätzen verwendet wird.
 
-Konfigurieren Sie anschließend die GridView, nur enthält die `ProductName`, `CategoryName`, `SupplierName`, und `UnitPrice` BoundFields und CheckBoxField nicht mehr unterstützt. Konfigurieren Sie abschließend die GridView zur Unterstützung von Sortierung durch Aktivieren des Kontrollkästchens Sortieren aktivieren, in das GridView-s-Smarttag (oder durch Festlegen seiner `AllowSorting` Eigenschaft `true`). Nach dem Herstellen dieser Ergänzungen zu den `CustomSortingUI.aspx` Seite deklarative Markup sollte etwa wie folgt aussehen:
+Als Nächstes konfigurieren Sie die GridView so, dass Sie nur die `ProductName`, `CategoryName`, `SupplierName`und `UnitPrice` boundfields und das nicht mehr unterstützte CheckBoxField enthält. Konfigurieren Sie abschließend die GridView, um die Sortierung zu unterstützen, indem Sie das Kontrollkästchen Sortierung aktivieren im GridView-Smarttag aktivieren (oder indem Sie die `AllowSorting`-Eigenschaft auf `true`festlegen). Nachdem Sie diese Ergänzungen auf der Seite `CustomSortingUI.aspx` vorgenommen haben, sollte das deklarative Markup in etwa wie folgt aussehen:
 
 [!code-aspx[Main](creating-a-customized-sorting-user-interface-vb/samples/sample1.aspx)]
 
-Nehmen Sie einen Moment Zeit, um unseren Fortschritt bisher in einem Browser anzuzeigen. Abbildung 2 zeigt das sortierbare GridView, wenn die Daten nach Kategorie in alphabetischer Reihenfolge sortiert ist.
+Nehmen Sie sich einen Moment Zeit, um den Fortschritt in einem Browser anzuzeigen. Abbildung 2 zeigt die sortierbare GridView, wenn Ihre Daten nach Kategorie in alphabetischer Reihenfolge sortiert werden.
 
-[![Der sortierbare GridView-s werden Daten nach Kategorie sortiert.](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
+[![die sortierbaren GridView s-Daten nach Kategorie sortiert](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
 
-**Abbildung 2**: Die sortierbar GridView-Zuordnungsvorgänge, die Daten nach Kategorie sortiert werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
+**Abbildung 2**: die sortierbaren GridView s-Daten werden nach Kategorie sortiert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
 
-## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>Schritt 2: Untersuchen Techniken für das Trennzeichen für Zeilen hinzufügen
+## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>Schritt 2: Untersuchen von Verfahren zum Hinzufügen der Trenn Zeilen
 
-Mit generischen, sortierbar GridView vollständige übrig bleibt, um die Trennzeichen für Zeilen in der GridView vor jeder eindeutige sortierten Gruppe hinzufügen zu können. Aber wie können solche Zeilen eingefügt werden in der GridView? Im Wesentlichen, wir benötigen zum iterieren durch die GridView-s-Zeilen bestimmen, in denen die Unterschiede zwischen den Werten in der sortierten Spalte auftreten, und fügen Sie das entsprechende Trennzeichen-Zeile hinzu. Bei Informationen zu diesem Problem scheint es natürlich, dass die Lösung an einer beliebigen Stelle in den GridView-s liegt `RowDataBound` -Ereignishandler. Wie wir unter den [benutzerdefinierte Formatierung basierend auf Daten](../custom-formatting/custom-formatting-based-upon-data-vb.md) Tutorial dieser Ereignishandler wird häufig verwendet, wenn es sich bei anhand von Daten aus der Zeile s auf Zeilenebene Formatierung anwenden. Allerdings die `RowDataBound` -Ereignishandler ist nicht die Lösung hier, wie Zeilen an die GridView programmgesteuert aus diesem Ereignishandler hinzugefügt werden können. Das GridView-s `Rows` -Auflistung, in der Tat schreibgeschützt ist.
+Wenn die generische, sortierbare GridView vollständig ist, muss nur noch die Trenn Zeilen in der GridView vor jeder eindeutigen sortierten Gruppe hinzugefügt werden können. Aber wie können solche Zeilen in die GridView-Struktur eingefügt werden? Im Wesentlichen müssen die GridView s-Zeilen durchlaufen werden, und es wird festgelegt, wo die Unterschiede zwischen den Werten in der sortierten Spalte auftreten, und anschließend wird die entsprechende Trennlinie hinzugefügt. Wenn Sie dieses Problem betrachten, scheint es natürlich, dass die Projekt Mappe irgendwo im `RowDataBound` Ereignishandler von GridView s liegt. Wie im Tutorial " [benutzerdefinierte Formatierung basierend auf Daten](../custom-formatting/custom-formatting-based-upon-data-vb.md) " erläutert, wird dieser Ereignishandler häufig verwendet, wenn die Formatierung auf Zeilenebene auf Grundlage der Daten der Zeile angewendet wird. Der `RowDataBound` Ereignishandler ist hier jedoch nicht die Projekt Mappe, da Zeilen von diesem Ereignishandler nicht Programm gesteuert zur GridView hinzugefügt werden können. Die GridView s-`Rows` Sammlung ist tatsächlich schreibgeschützt.
 
-Zum Hinzufügen von zusätzlicher Zeilen an die GridView gibt es drei Möglichkeiten zur Auswahl:
+Wenn Sie der GridView zusätzliche Zeilen hinzufügen möchten, stehen Ihnen drei Optionen zur Auswahl:
 
-- Fügen Sie diese Metadaten Trennzeichen für Zeilen, auf die tatsächlichen Daten, die an die GridView gebunden ist
-- Nachdem Sie auf die Daten die GridView gebunden wurde, hinzufügen, zusätzliche `TableRow` Instanzen der GridView-s steuern Auflistung
-- Erstellen Sie ein benutzerdefiniertes Serversteuerelement, das erweitert des GridView-Steuerelements und überschreibt die Methoden, die verantwortlich für die Erstellung der GridView-s-Struktur
+- Fügen Sie diese metadatentrennzeilen den eigentlichen Daten hinzu, die an die GridView gebunden sind.
+- Nachdem die GridView an die Daten gebunden wurde, fügen Sie der GridView s-Steuerelement Sammlung zusätzliche `TableRow` Instanzen hinzu.
+- Erstellen Sie ein benutzerdefiniertes Server Steuerelement, das das GridView-Steuerelement erweitert und die Methoden überschreibt, die für das Erstellen der GridView-Struktur
 
-Erstellen ein benutzerdefiniertes Serversteuerelement wäre am besten, wenn diese Funktionalität auf viele Webseiten oder über mehrere Websites erforderlich war. Es wäre jedoch einiges an Code und eine gründliche Untersuchung in die Tiefe der die interne Funktionsweise des GridView-s gelten. Aus diesem Grund werden wir die Option für dieses Tutorial nicht berücksichtigt.
+Das Erstellen eines benutzerdefinierten Server Steuer Elements ist der beste Ansatz, wenn diese Funktionalität auf vielen Webseiten oder über mehrere Websites benötigt wird. Es würde jedoch etwas Code und eine gründliche Untersuchung in die Tiefe der internen GridView s-Funktionen umfassen. Daher wird diese Option für dieses Tutorial nicht berücksichtigt.
 
-Die anderen beiden Optionen Hinzufügen von Trennzeichen für Zeilen, die tatsächlichen Daten, an die GridView gebunden, und Bearbeiten von der GridView-s-steuerelementauflistung nach dessen wurde gebunden – das Problem anders Angriffe und eine Erläuterung bedürfen.
+Die anderen beiden Optionen fügen Trenn Zeilen zu den eigentlichen Daten hinzu, die an die GridView gebunden werden, und zum Bearbeiten der GridView s-Steuerelement Auflistung nach dem gebundenen Angriff auf das Problem und eine Erörterung.
 
-## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>Hinzufügen von Zeilen auf die Daten an die GridView gebunden
+## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>Hinzufügen von Zeilen zu den Daten, die an die GridView gebunden sind
 
-Wenn die GridView mit einer Datenquelle gebunden ist, erstellt es einen `GridViewRow` für jeden Datensatz von der Datenquelle zurückgegeben. Aus diesem Grund können wir die erforderlichen Trennzeichen für Zeilen einfügen, durch Trennzeichen Datensätze an die Datenquelle hinzufügen, bevor er an die GridView gebunden. Abbildung 3 veranschaulicht dieses Konzept.
+Wenn die GridView an eine Datenquelle gebunden ist, erstellt Sie eine `GridViewRow` für jeden Datensatz, der von der Datenquelle zurückgegeben wird. Aus diesem Grund können wir die erforderlichen Trenn Zeilen einfügen, indem Sie der Datenquelle Trennzeichen Sätze hinzufügen, bevor Sie an die GridView gebunden werden. In Abbildung 3 wird dieses Konzept veranschaulicht.
 
-![Eine Technik wird das Hinzufügen von Trennzeichen für Zeilen mit der Datenquelle](creating-a-customized-sorting-user-interface-vb/_static/image7.png)
+![Eine Technik umfasst das Hinzufügen von Trenn Zeilen zur Datenquelle.](creating-a-customized-sorting-user-interface-vb/_static/image7.png)
 
-**Abbildung 3**: Eine Technik wird das Hinzufügen von Trennzeichen für Zeilen mit der Datenquelle
+**Abbildung 3**: eine Technik umfasst das Hinzufügen von Trenn Zeilen zur Datenquelle.
 
-Ich verwende Begriff Trennzeichen Datensätze in Anführungszeichen, da es keine spezielle Trennzeichen für Datensatz; Stattdessen müssen wir irgendwie flag, die ein bestimmter Datensatz in der Datenquelle als Trennzeichen und nicht als eine Zeile für normale Daten dient. Für unseren Beispielen wir re-Bindung eine `ProductsDataTable` Instanz an die GridView, das aus besteht `ProductRows`. Wir können einen Datensatz als eine Trennzeichenzeile kennzeichnen, durch Festlegen seiner `CategoryID` Eigenschaft `-1` (da es sich um eine solche Werte normalerweise vorhanden konnte nicht).
+Ich verwende den Begriff Trennzeichen Sätze in Anführungszeichen, weil kein spezieller Trennzeichen Daten Satz vorhanden ist. Stattdessen müssen wir auf irgendeine Weise darauf achten, dass ein bestimmter Datensatz in der Datenquelle als Trennzeichen und nicht als normale Daten Zeile fungiert. In unseren Beispielen wird eine `ProductsDataTable` Instanz erneut an die GridView-Instanz gebunden, die aus `ProductRows`besteht. Wir könnten einen Datensatz als Trennlinie markieren, indem wir dessen `CategoryID`-Eigenschaft auf `-1` festlegen (da ein solcher Wert nicht normal vorhanden sein konnte).
 
-Um dieses Verfahren nutzen zu können, müssen wir d die folgenden Schritte ausführen:
+Um dieses Verfahren zu verwenden, müssen wir die folgenden Schritte ausführen:
 
-1. Programmgesteuertes Abrufen von Daten an die GridView zu binden (eine `ProductsDataTable` Instanz)
-2. Sortieren Sie die Daten basierend auf der GridView-s `SortExpression` und `SortDirection` Eigenschaften
-3. Durchlaufen der `ProductsRows` in die `ProductsDataTable`, suchen, wo die Unterschiede in der sortierten Spalte liegen
-4. Einfügen von an jeder Gruppengrenze,, einen Trennzeichen für Datensatz `ProductsRow` Instanz in die Datentabelle, einen, der s `CategoryID` festgelegt `-1` (oder beliebige Bezeichnung erfassungsebene wurde, um einen Datensatz als Trennzeichen für Datensatz markieren)
-5. Nach dem Einfügen der Trennzeichen für Zeilen, binden Sie die Daten an die GridView programmgesteuert
+1. Programm gesteuertes Abrufen der Daten für die Bindung an die GridView-Instanz (eine `ProductsDataTable` Instanz)
+2. Sortieren der Daten auf der Grundlage der Eigenschaften von GridView s `SortExpression` und `SortDirection`
+3. Durchlaufen Sie die `ProductsRows` im `ProductsDataTable`, und suchen Sie nach dem Ort, an dem die Unterschiede in der sortierten Spalte liegen.
+4. Fügen Sie an jeder Gruppen Grenze einen Trennzeichen Daten Satz `ProductsRow`-Instanz in die Datentabelle ein, bei der es sich um einen `CategoryID` auf `-1` festgelegt hat
+5. Binden Sie die Daten nach dem Einfügen der Trenn Zeilen Programm gesteuert an die GridView.
 
-Zusätzlich zu den folgenden fünf Schritte aus, wir d müssen auch einen Ereignishandler für das GridView-s bereitstellen `RowDataBound` Ereignis. Hier prüfen wir d jeweils `DataRow` und ermitteln, ob es ein Trennzeichen wurde eine Zeile, deren `CategoryID` Einstellung wurde `-1`. Wenn dies der Fall ist, möchten wir d wahrscheinlich passen Sie die Formatierung oder den Text in die Zellen wird angezeigt.
+Zusätzlich zu diesen fünf Schritten muss auch ein Ereignishandler für das GridView s `RowDataBound`-Ereignis bereitgestellt werden. An dieser Stelle werden alle `DataRow` überprüft und ermittelt, ob es sich um eine Trennlinie handelt, deren `CategoryID` Einstellung `-1`wurde. Wenn dies der Fall ist, möchten wir wahrscheinlich die Formatierung oder den Text anpassen, der in den Zellen angezeigt wird.
 
-Verwendung dieser Technik für Grenzen für die Sortierung einfügen etwas mehr Arbeit als oben beschrieben, wie Sie auch einen Ereignishandler für das GridView-s bereitstellen müssen `Sorting` Ereignis und beibehalten zu verfolgen, der die `SortExpression` und `SortDirection` Werte.
+Die Verwendung dieser Technik zum Einfügen der Sortierungs Gruppen Grenzen erfordert etwas mehr Arbeit als oben beschrieben, da Sie auch einen Ereignishandler für das GridView s `Sorting`-Ereignis bereitstellen und die `SortExpression`-und `SortDirection`-Werte nachverfolgen müssen.
 
-## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>Bearbeiten der GridView-s-Auflistung nach dem sie steuern s wurde an Daten gebunden
+## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>Bearbeiten der GridView s-Steuerelement Sammlung, nachdem Sie Daten gebunden war
 
-Anstatt die Daten vor dem Binden an die GridView-messaging, wir können die Trennzeichen für Zeilen hinzufügen *nach* die Daten an die GridView gebunden wurde. Der Prozess der Datenbindung erstellt, der Steuerelementhierarchie GridView s, die in der Praxis ist einfach eine `Table` Instanz besteht aus einer Auflistung von Zeilen, von denen jede aus einer Auflistung von Zellen besteht. Insbesondere die steuerelementauflistung des GridView-s enthält eine `Table` Objekt am Stamm, eine `GridViewRow` (ergibt sich aus der `TableRow` Klasse) für jeden Datensatz in die `DataSource` an die GridView gebunden und ein `TableCell` Objekt in jeder `GridViewRow` Instanz für jedes Datenfeld in der `DataSource`.
+Anstatt die Daten vor der Bindung an die GridView zu überprüfen, können wir die Trennzeichen Zeilen hinzufügen, *nachdem* die Daten an die GridView gebunden wurden. Der Prozess der Datenbindung erstellt die GridView s-Steuerelement Hierarchie, bei der es sich in Wirklichkeit einfach um eine `Table` Instanz handelt, die aus einer Auflistung von Zeilen besteht, von denen jede aus einer Auflistung von Zellen besteht. Die GridView s-Steuerelement Auflistung enthält insbesondere ein `Table` Objekt im Stammverzeichnis, ein `GridViewRow` (das von der `TableRow`-Klasse abgeleitet wird) für jeden Datensatz in der `DataSource`, der an die GridView gebunden ist, und ein `TableCell` Objekt in jeder `GridViewRow` Instanz für jedes Datenfeld in der `DataSource`.
 
-Um Trennzeichen für Zeilen zwischen den einzelnen sortieren Gruppen hinzuzufügen, können wir diese Steuerelementhierarchie direkt bearbeiten, nachdem es erstellt wurde. Wir können sicher sein, dass die Hierarchie der GridView-s-Steuerelemente zum letzten Mal mit der Zeit erstellt wurde, die die Seite gerendert wird. Dieser Ansatz aus diesem Grund überschreibt die `Page` Klasse s `Render` Methode, die an diesem Punkt-die Steuerelementhierarchie GridView s endgültige aktualisiert wird, um die erforderlichen Trennzeichen für Zeilen enthalten. Dieser Prozess wird in Abbildung 4 dargestellt.
+Um zwischen den einzelnen Sortiergruppen Trenn Zeilen hinzuzufügen, können wir diese Steuerelement Hierarchie nach der Erstellung direkt bearbeiten. Wir können sicher sein, dass die GridView s-Steuerelement Hierarchie zum letzten Mal erstellt wurde, bis die Seite gerendert wird. Daher überschreibt dieser Ansatz die `Page` Class s `Render`-Methode. zu diesem Zeitpunkt wird die endgültige Steuerelement Hierarchie der GridView s so aktualisiert, dass die erforderlichen Trenn Zeilen enthalten sind. Dieses Verfahren wird in Abbildung 4 veranschaulicht.
 
-[![Eine alternative Methode bearbeitet die Hierarchie der GridView-s-Steuerelemente](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
+[![eine Alternative Technik die GridView s-Steuerelement Hierarchie manipuliert](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
 
-**Abbildung 4**: Eine alternative Methode ändert das GridView-s-Serversteuerelement-Hierarchie ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
+**Abbildung 4**: eine Alternative Technik bearbeitet die GridView s-Steuerelement Hierarchie ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
 
-In diesem Tutorial wird dieser zweite Ansatz verwendet, um die Sortierung benutzererfahrung anpassen.
+In diesem Tutorial verwenden wir diesen letzteren Ansatz, um die Sortierfunktion für Benutzer anzupassen.
 
 > [!NOTE]
-> Der Code ich m darstellen, in diesem Tutorial basiert auf dem Beispiel unter [Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx) s Blogeintrag [spielen etwas mit GridView sortieren Gruppierung](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx).
+> Der Code, den Sie in diesem Tutorial vorstellen, basiert auf dem Beispiel im Blogeintrag [Teemu-Keiski](http://aspadvice.com/blogs/joteke/default.aspx) s, das [etwas mit der GridView-Sortier Gruppierung spielt](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx).
 
-## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>Schritt 3: Die Trennzeichen für Zeilen hinzufügen, die Hierarchie der GridView-s-Steuerelemente
+## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>Schritt 3: Hinzufügen der Trenn Zeilen zur GridView s-Steuerelement Hierarchie
 
-Da möchten wir nur die Trennzeichen für Zeilen die Hierarchie der GridView-s-Steuerelemente hinzufügen, nachdem seine Steuerelementhierarchie erstellt und zum letzten Mal auf dieser Seite finden Sie unter erstellt wurde, sollten Sie diese Ergänzung am Ende des Lebenszyklus der Seite, aber vor der tatsächlichen GridView c ausführen quellcodeverwaltung-Hierarchie ist in HTML gerendert. Der neueste Punkt an der wir dies erreichen können, ist die `Page` Klasse s `Render` -Ereignis, das wir in unserem Code-Behind-Klasse, die mit die folgende Methodensignatur überschreiben können:
+Da wir nur die Trenn Zeilen der GridView s-Steuerelement Hierarchie hinzufügen möchten, nachdem die Steuerelement Hierarchie erstellt und zum letzten Mal auf dieser Seite erstellt wurde, möchten wir diese Addition am Ende des Lebenszyklus der Seite, aber vor der tatsächlichen GridView c- die Benutzerkontensteuerung-Hierarchie wurde in HTML gerendert. Der letzte mögliche Punkt, an dem dies erreicht werden kann, ist das `Page` Class-`Render` Ereignis, das wir in unserer Code-Behind-Klasse mithilfe der folgenden Methoden Signatur überschreiben können:
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample2.vb)]
 
-Wenn die `Page` s, die ursprüngliche Klasse `Render` Methode wird aufgerufen, `base.Render(writer)` jedes der Steuerelemente auf der Seite gerendert wird, generiert das Markup, das basierend auf ihrer Hierarchie. Daher ist es zwingend erforderlich, dass wir beide rufen `base.Render(writer)`, damit die Seite gerendert wird, und dass wir das GridView-s bearbeiten-Steuerelementhierarchie vor dem Aufruf `base.Render(writer)`, sodass die GridView-s-Steuerelementhierarchie vor dem Trennzeichen für Zeilen hinzugefügt wurden s wurde gerendert.
+Wenn die ursprüngliche `Render`-Methode der `Page` Klasse aufgerufen wird `base.Render(writer)` werden alle Steuerelemente auf der Seite gerendert, wodurch das Markup basierend auf Ihrer Steuerelement Hierarchie erzeugt wird. Daher ist es zwingend erforderlich, dass wir `base.Render(writer)`aufrufen, sodass die Seite gerendert wird, und dass wir die Hierarchie der GridView s-Steuerelemente vor dem Aufrufen von `base.Render(writer)`bearbeiten, sodass die Trennzeichen Zeilen der GridView s-Steuerelement Hierarchie hinzugefügt wurden, bevor Sie gerendert wurden.
 
-Zum Einfügen der Gruppenheader sortieren müssen wir sicherstellen, dass der Benutzer angefordert hat, dass die Daten sortiert werden. In der Standardeinstellung der GridView-s-Inhalt nicht sortiert sind, und daher Wir raten t muss jede Gruppe sortieren Header eingeben.
+Um die Sortierungs Gruppen Header einzufügen, müssen Sie zuerst sicherstellen, dass der Benutzer die Sortierung der Daten angefordert hat. Standardmäßig sind die Inhalte der GridView-Inhalte nicht sortiert, daher müssen wir keine Gruppen Sortierungs Header eingeben.
 
 > [!NOTE]
-> Wenn Sie möchten die GridView nach einer bestimmten Spalte sortiert werden, wenn die Seite zuerst geladen wird, rufen Sie die GridView-s `Sort` Methode ersten Besuch der Seite (aber nicht bei nachfolgenden Postbacks). Um dies zu erreichen, fügen Sie diesen Aufruf in die `Page_Load` Ereignishandler innerhalb einer `if (!Page.IsPostBack)` bedingte. Verweisen zurück auf die [Paging und Sortieren von Berichtsdaten](paging-and-sorting-report-data-vb.md) Tutorial Informationen Weitere Informationen zu den `Sort` Methode.
+> Wenn die GridView nach einer bestimmten Spalte sortiert werden soll, wenn die Seite zum ersten Mal geladen wird, rufen Sie die GridView s `Sort`-Methode auf dem ersten Seitenbesuch auf (aber nicht bei nachfolgenden Postbacks). Fügen Sie zu diesem Zweck diesen-Befehl im `Page_Load`-Ereignishandler innerhalb einer `if (!Page.IsPostBack)` bedingten ein. Weitere Informationen zur `Sort`-Methode finden Sie im Tutorial zum [Paging und zum Sortieren von Berichtsdaten](paging-and-sorting-report-data-vb.md) .
 
-Vorausgesetzt, dass die Daten sortiert wurden, unsere nächste Aufgabe ist, um zu bestimmen, welche Spalten, klicken Sie dann Werte, die Unterschiede in der Spalte s nach Zeilen zu durchsuchen und die Daten sortiert wurde. Der folgende Code stellt sicher, dass die Daten sortiert wurden, und sucht nach der Spalte, die mit der die Daten sortiert wurden:
+Wenn Sie davon ausgehen, dass die Daten sortiert wurden, besteht die nächste Aufgabe darin, zu bestimmen, nach welcher Spalte die Daten sortiert wurden, und dann die Zeilen zu scannen, die auf Unterschiede in diesen Spaltenwerten suchen. Der folgende Code stellt sicher, dass die Daten sortiert wurden, und sucht die Spalte, nach der die Daten sortiert wurden:
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample3.vb)]
 
-Wenn das GridView hat noch sein sortiert, die GridView s `SortExpression` Eigenschaft wurde wird nicht festgelegt. Daher möchten wir nur die Trennzeichen für Zeilen hinzugefügt werden soll, wenn diese Eigenschaft einen Wert verfügt. Wenn dies der Fall ist, müssen wir als Nächstes den Index der Spalte zu bestimmen, mit dem die Daten sortiert wurde. Dies geschieht durch Durchlaufen der GridView-s `Columns` Auflistung, die nach der Spalte gesucht, deren `SortExpression` Eigenschaft gleich die GridView-s `SortExpression` Eigenschaft. Zusätzlich zu den Spaltenindex s, nehmen wir außerdem die `HeaderText` -Eigenschaft, die verwendet wird, wenn die Trennzeichen für Zeilen anzeigen.
+Wenn das GridView-Objekt noch sortiert werden kann, wurde die GridView s-`SortExpression`-Eigenschaft nicht festgelegt. Daher möchten wir nur die Trennzeichen Zeilen hinzufügen, wenn diese Eigenschaft einen Wert aufweist. Wenn dies der Fall ist, müssen wir den Index der Spalte festlegen, nach der die Daten sortiert wurden. Dies wird erreicht, indem die GridView s-`Columns` Auflistung durchlaufen wird. dabei wird nach der Spalte gesucht, deren `SortExpression`-Eigenschaft der `SortExpression` Eigenschaft GridView s entspricht. Zusätzlich zum Spalten Index wird auch die `HeaderText`-Eigenschaft verwendet, die beim Anzeigen der Trennzeichen Zeilen verwendet wird.
 
-Der Index der Spalte mit der die Daten sortiert sind, ist der letzte Schritt zum Aufzählen von den Zeilen der GridView. Für jede Zeile müssen wir bestimmen, ob s der vorherigen Zeile s sortiert Spaltenwert der Wert des s sortierte Spalte unterscheidet. Wenn wir also eine neue einfügen müssen `GridViewRow` -Instanz in die Hierarchie der Steuerelemente. Dies erfolgt durch den folgenden Code:
+Mit dem Index der Spalte, nach der die Daten sortiert werden, besteht der letzte Schritt darin, die Zeilen der GridView aufzulisten. Für jede Zeile muss bestimmt werden, ob sich der Wert der sortierten Spalte von dem Wert der Spalte in der vorherigen Zeile in der Spalte unterscheidet. Wenn dies der Fall ist, müssen wir eine neue `GridViewRow` Instanz in die Steuerelement Hierarchie einfügen. Dies wird mit folgendem Code erreicht:
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample4.vb)]
 
-Dieser Code beginnt, durch Programmgesteuertes Verweisen auf die `Table` Objekt am Stamm der GridView-s-Steuerelementhierarchie gefunden, und erstellen Sie eine Zeichenfolgenvariable mit dem Namen `lastValue`. `lastValue` Dient zum Wert der aktuellen Zeile s sortiert Spalte mit der vorherigen s-Zeilenwert verglichen werden soll. Anschließend wird das GridView-s `Rows` Auflistung aufgezählt und für jede Zeile befindet sich der Wert, der die sortierte Spalte in der `currentValue` Variable.
+Dieser Code beginnt mit einem programmgesteuerten Verweis auf das `Table` Objekt, das sich im Stammverzeichnis der GridView s-Steuerelement Hierarchie befindet, und erstellt eine Zeichen folgen Variable mit dem Namen `lastValue`. `lastValue` wird verwendet, um den Wert der aktuellen Zeilen-sortierten Spalte mit dem Wert der vorherigen Zeile zu vergleichen. Als nächstes wird die GridView s-`Rows` Collection aufgelistet, und für jede Zeile wird der Wert der sortierten Spalte in der `currentValue`-Variablen gespeichert.
 
 > [!NOTE]
-> Zum Bestimmen des Werts der Spalte sortiert s bestimmten Zeile die Zelle s verwende `Text` Eigenschaft. Dies eignet sich gut für BoundFields, werden jedoch nicht wie gewünscht für von TemplateFields, CheckBoxFields, arbeiten und so weiter. Wir werden wie alternative GridView-Felder in Kürze berücksichtigen betrachten.
+> Um den Wert der sortierten Spalte der Spalte zu bestimmen, verwende ich die Cell s `Text`-Eigenschaft. Dies funktioniert gut für boundfields, funktioniert jedoch nicht wie gewünscht für templatefields, checkboxfields usw. Wir sehen uns an, wie Sie die alternativen GridView-Felder in Kürze berücksichtigen.
 
-Die `currentValue` und `lastValue` Variablen werden dann verglichen. Wenn Unterschiede festgestellt werden, müssen wir eine neue Trennzeichenzeile für die Hierarchie der Steuerelemente hinzu. Dies wird erreicht, indem bestimmt den Index des der `GridViewRow` in die `Table` s-Objekt `Rows` -Auflistung, Erstellen neuer `GridViewRow` und `TableCell` Instanzen und zum anschließenden Hinzufügen der `TableCell` und `GridViewRow` auf der Hierarchie der Steuerelemente.
+Anschließend werden die Variablen `currentValue` und `lastValue` verglichen. Wenn Sie sich unterscheiden, müssen wir der Steuerelement Hierarchie eine neue Trenn Zeile hinzufügen. Dies wird erreicht, indem der Index der `GridViewRow` in der `Table`-Objekt-`Rows`-Auflistung ermittelt wird, neue `GridViewRow`-und `TableCell` Instanzen erstellt werden und dann die `TableCell` und `GridViewRow` der Steuerelement Hierarchie hinzugefügt werden.
 
-Beachten Sie, dass das Trennzeichen für s, die einzelne Zeile `TableCell` ist so formatiert, dass es sich um die gesamte Breite des GridView umfasst mit formatiert wird die `SortHeaderRowStyle` CSS-Klasse, und verfügt über seine `Text` Eigenschaft z. B., dass sowohl die Gruppe für das Sortieren angezeigt (z. B. Kategorie) zu benennen und der Gruppe-s-Wert (z. B. Getränke). Zum Schluss `lastValue` wird aktualisiert, um den Wert der `currentValue`.
+Beachten Sie, dass die einzeilige `TableCell` der Zeilen Trennlinie so formatiert ist, dass Sie die gesamte Breite der GridView umfasst, mit der `SortHeaderRowStyle` CSS-Klasse formatiert wird und die `Text`-Eigenschaft aufweist, sodass Sie sowohl den Namen der Sortier Gruppe (z. b. Kategorie) als auch den Wert der Gruppe (z. b. Getränke) anzeigt. Schließlich wird `lastValue` auf den Wert `currentValue`aktualisiert.
 
-Die CSS-Klasse, die zum Formatieren der Sortierung Gruppenkopfzeile verwendet `SortHeaderRowStyle` in angegeben werden, muss die `Styles.css` Datei. Verwenden Sie die formateinstellungen für Sie interessant sein können, Ich habe verwendet Folgendes:
+Die CSS-Klasse, die zum Formatieren der Kopfzeilen `SortHeaderRowStyle` der Sortier Gruppe verwendet wird, muss in der `Styles.css` Datei angegeben werden. Sie können jederzeit beliebige Stileinstellungen verwenden, Ich habe Folgendes verwendet:
 
 [!code-css[Main](creating-a-customized-sorting-user-interface-vb/samples/sample5.css)]
 
-Durch den aktuellen Code aus, die Sortierung-Schnittstelle fügt Kopfzeilen von Gruppen sortieren, beim Sortieren nach jeder BoundField (siehe Abbildung 5, die einen Screenshot beim Sortieren von Lieferant zeigt). Allerdings sind beim Sortieren von jedem anderen Feldtyp (z. B. eine CheckBoxField oder TemplateField) der Sort-Gruppenheader an keiner Stelle (siehe Abbildung 6) gefunden werden.
+Mit dem aktuellen Code fügt die Sortierungs Schnittstelle Sortiergruppen Kopfzeilen hinzu, wenn Sie nach beliebigen BoundField sortiert werden (siehe Abbildung 5, das beim Sortieren nach Lieferanten einen Screenshot anzeigt). Beim Sortieren nach einem beliebigen anderen Feldtyp (z. b. CheckBoxField oder TemplateField) werden die Header der Sortier Gruppe jedoch nicht gefunden (siehe Abbildung 6).
 
-[![Die Sortierung Schnittstelle enthält Header, Gruppe sortieren, beim Sortieren nach BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
+[![die Sortierungs Schnittstelle Sortiergruppen Kopfzeilen beim Sortieren nach boundfields enthält.](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
 
-**Abbildung 5**: Das Sortieren-Schnittstelle enthält sortieren Header beim Sortieren von Gruppen von BoundFields ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
+**Abbildung 5**: die Sortierungs Schnittstelle enthält Sortiergruppen Kopfzeilen beim Sortieren nach boundfields ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
 
-[![Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
+[beim Sortieren eines CheckBoxField fehlen ![die Sortiergruppen Header.](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
 
-**Abbildung 6**: Der Sort-Gruppenheader sind fehlende beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
+**Abbildung 6**: die Header der Sortier Gruppe fehlen beim Sortieren eines CheckBoxField ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
 
-Der Sort-Gruppenheader beim Sortieren nach einer CheckBoxField fehlen ist, weil der Code derzeit nur verwendet die `TableCell` s `Text` Eigenschaft zum Bestimmen des Werts, der die sortierte Spalte für jede Zeile. Für CheckBoxFields die `TableCell` s `Text` Eigenschaft ist eine leere Zeichenfolge; stattdessen des Werts über ein Kontrollkästchen-Steuerelement, das innerhalb der `TableCell` s `Controls` Auflistung.
+Der Grund für das Sortieren von Sortierungs Gruppen Headern in einem CheckBoxField-Objekt liegt darin, dass der Code derzeit nur die `TableCell` s `Text`-Eigenschaft verwendet, um den Wert der sortierten Spalte für jede Zeile zu bestimmen. Bei checkboxfields ist die `TableCell` s `Text`-Eigenschaft eine leere Zeichenfolge. Stattdessen ist der Wert über ein CheckBox-websteuer Element verfügbar, das sich innerhalb der `TableCell` s `Controls` Auflistung befindet.
 
-Um Feldtypen als BoundFields behandeln zu können, müssen wir den Code zu erweitern, in denen die `currentValue` Variable zugewiesen wird überprüft, ob ein Kontrollkästchen in der `TableCell` s `Controls` Auflistung. Anstelle von `currentValue = gvr.Cells(sortColumnIndex).Text`, ersetzen Sie diesen Code durch Folgendes:
+Um andere Feldtypen als boundfields zu verarbeiten, müssen wir den Code erweitern, in dem die `currentValue` Variable zum Überprüfen des Vorhandenseins eines Kontrollkästchens in der `Controls` Auflistung der `TableCell` s zugewiesen wird. Anstatt `currentValue = gvr.Cells(sortColumnIndex).Text`zu verwenden, ersetzen Sie diesen Code durch Folgendes:
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample6.vb)]
 
-Dieser Code überprüft die sortierte Spalte `TableCell` für die aktuelle Zeile zu bestimmen, ob alle Steuerelemente in der `Controls` Auflistung. Wenn Sie vorhanden sind, und das erste Steuerelement ein Kontrollkästchen, die `currentValue` Variable wird festgelegt, auf Ja oder Nein, je nach den Kontrollkästchen s `Checked` Eigenschaft. Der Wert stammt, andernfalls aus der `TableCell` s `Text` Eigenschaft. Diese Logik kann repliziert werden, um Sortierung für alle von TemplateFields, die ggf. in der GridView vorhanden, zu verarbeiten.
+Dieser Code untersucht die sortierte Spalte `TableCell` für die aktuelle Zeile, um zu bestimmen, ob in der `Controls` Auflistung Steuerelemente vorhanden sind. Wenn dies der Fall ist und das erste Steuerelement ein Kontrollkästchen ist, wird die `currentValue` Variable abhängig von der Eigenschaft `Checked` Eigenschaft auf Ja oder Nein festgelegt. Andernfalls wird der Wert aus der `TableCell` s-`Text` Eigenschaft entnommen. Diese Logik kann repliziert werden, um die Sortierung für alle templatefields-Felder zu verarbeiten, die in der GridView vorhanden sein können.
 
-Mit dem obigen Code außerdem der Sort-Gruppenheader vorhanden sind beim Sortieren nach CheckBoxField nicht mehr unterstützt (siehe Abbildung 7).
+Mit dem obigen Code Additions sind die Sortierungs Gruppen Header nun beim Sortieren nach dem nicht mehr unterstützten CheckBoxField vorhanden (siehe Abbildung 7).
 
-[![Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
+[![die Sortierungs Gruppen Header jetzt beim Sortieren eines CheckBoxField vorhanden sind.](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
 
-**Abbildung 7**: Der Sort-Gruppenheader sind jetzt vorhanden beim Sortieren einer CheckBoxField ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
+**Abbildung 7**: die Header der Sortier Gruppe sind nun beim Sortieren eines CheckBoxField vorhanden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
 
 > [!NOTE]
-> Wenn Sie über Produkte mit `NULL` Datenbank Werte für die `CategoryID`, `SupplierID`, oder `UnitPrice` Felder, diese Werte als leere Zeichenfolgen in den GridView-Ansicht angezeigt werden, standardmäßig, d. h. die Trennzeichen Zeilentext s für diese Produkte mit `NULL`Werte gelesen werden, wie Kategorie: (d. h. es s keine Namen nach Kategorie: wie Sie mit der Kategorie: Getränke). Wenn ein Wert, der hier angezeigt werden soll, können Sie entweder die BoundFields festlegen [ `NullDisplayText` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) auf den Text, angezeigt werden sollen oder Sie können eine bedingte Anweisung in der Render-Methode hinzufügen, beim Zuweisen der `currentValue` auf das Trennzeichen Zeile s `Text` Eigenschaft.
+> Wenn Sie über Produkte mit `NULL` Daten bankwerten für die Felder "`CategoryID`", "`SupplierID`" oder "`UnitPrice`" verfügen, werden diese Werte standardmäßig als leere Zeichen folgen in der GridView angezeigt. Dies bedeutet, dass der Text der Trenn Zeile für diese Produkte mit `NULL` Werten wie die Kategorie lautet: (das heißt, es gibt keinen Namen nach Kategorie: wie bei Kategorie: Getränke). Wenn Sie hier einen Wert anzeigen möchten, können Sie entweder die Eigenschaft boundfields [`NullDisplayText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) auf den Text festlegen, der angezeigt werden soll, oder Sie können eine Bedingungs Anweisung in der Methode "Rendering" hinzufügen, wenn Sie die `currentValue` der Eigenschaft "`Text` der Trenn zeichenzeile" zuweisen.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Das GridView enthält viele integrierte Optionen für das Anpassen der Benutzeroberfläche der Sortierung keine. Allerdings mit etwas Code auf niedriger Ebene es möglich, optimieren die GridView-s-Steuerelementhierarchie um eine individuellere Benutzeroberfläche zu erstellen. In diesem Tutorial wurde erläutert, wie eine Art Separator Gruppenzeile ein sortierbar GridView, hinzufügen. die unterschiedlichen Gruppen und diesen Gruppen Grenzen leichter identifiziert. Weitere Beispiele für benutzerdefinierte Sortierung Schnittstellen, sehen Sie sich [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [einige ASP.NET 2.0 GridView sortieren Tipps und Tricks](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) Blogeintrag.
+In der GridView sind nicht viele integrierte Optionen zum Anpassen der Sortier Schnittstelle enthalten. Allerdings ist es mit einem wenig Code auf niedriger Ebene möglich, die GridView s-Steuerelement Hierarchie zu optimieren, um eine benutzerdefinierte Schnittstelle zu erstellen. In diesem Tutorial haben Sie erfahren, wie Sie eine Sortierungs Gruppe für Sortiergruppen für eine sortierbare GridView-Struktur hinzufügen, mit der die verschiedenen Gruppen und Gruppen Grenzen leichter identifiziert werden. Weitere Beispiele für angepasste Sortier Schnittstellen finden Sie im Blogeintrag [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [A few ASP.NET 2,0 GridView Sortierungs Tipps und Tricks](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) .
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Vorherige](sorting-custom-paged-data-vb.md)
+> [Vorheriges](sorting-custom-paged-data-vb.md)

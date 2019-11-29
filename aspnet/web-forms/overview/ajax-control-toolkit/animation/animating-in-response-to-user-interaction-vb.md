@@ -1,65 +1,65 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
-title: Animieren als Reaktion auf eine Benutzerinteraktion (VB) | Microsoft-Dokumentation
+title: Animieren als Reaktion auf Benutzerinteraktion (VB) | Microsoft-Dokumentation
 author: wenz
-description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Animationen können Sternen...
+description: Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Animationen können Stern...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fa774eecd872e79e3b05f6a6ebe177be895b8191
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 629d79505cebd49c2f05333bfbf78166f80fc6cb
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112917"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607035"
 ---
 # <a name="animating-in-response-to-user-interaction-vb"></a>Animieren als Reaktion auf eine Benutzerinteraktion (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6VB.pdf)
 
-> Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Animationen können automatisch starten, oder es werden möglicherweise ausgelöst durch einen Benutzereingriff, z. B. indem Sie mit der Maus auf.
+> Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Animationen können automatisch gestartet werden, oder Sie können durch Benutzerinteraktion ausgelöst werden, z. b. durch Klicken mit der Maus.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Die Animationen können automatisch starten, oder es werden möglicherweise ausgelöst durch einen Benutzereingriff, z. B. indem Sie mit der Maus auf.
+Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Animationen können automatisch gestartet werden, oder Sie können durch Benutzerinteraktion ausgelöst werden, z. b. durch Klicken mit der Maus.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal sind die `ScriptManager` in die Seite klicken Sie dann die ASP.NET AJAX-Bibliothek wird geladen, lässt sich das Steuerelement-Toolkit verwenden:
+Fügen Sie zunächst den `ScriptManager` auf der Seite ein. Anschließend wird die ASP.NET AJAX-Bibliothek geladen, sodass Sie das steuerungstooltoolkit verwenden können:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample1.aspx)]
 
-Die Animation wird auf einen Bereich des Texts angewendet werden, der so aussieht:
+Die Animation wird auf einen Textbereich angewendet, der wie folgt aussieht:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample2.aspx)]
 
-Definieren Sie in der zugehörigen CSS-Klasse für den Bereich eine gute Hintergrundfarbe aus, und auch festlegen Sie eine feste Breite für den Bereich:
+Definieren Sie in der zugeordneten CSS-Klasse für den Bereich eine schöne Hintergrundfarbe, und legen Sie außerdem eine festgelegte Breite für den Bereich fest:
 
 [!code-css[Main](animating-in-response-to-user-interaction-vb/samples/sample3.css)]
 
-Fügen Sie dann die `AnimationExtender` auf der Seite Bereitstellen einer `ID`, `TargetControlID` -Attribut und das obligatorische `runat="server"`:
+Fügen Sie dann der Seite die `AnimationExtender` hinzu, und geben Sie dabei eine `ID`, das `TargetControlID`-Attribut und den obligatorischen `runat="server"`an:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample4.aspx)]
 
-In der `<Animations>` Knoten stehen fünf Methoden zum Starten der Animation über eine Benutzerinteraktion (das fehlende Element ist `<OnLoad>` die wird ausgeführt, nachdem die gesamte Seite vollständig geladen wurde):
+Innerhalb des `<Animations>` Knotens gibt es fünf Möglichkeiten, um die Animation über eine Benutzerinteraktion zu starten (das fehlende Element ist `<OnLoad>`, das ausgeführt wird, sobald die gesamte Seite vollständig geladen wurde):
 
-- `<OnClick>` (Mausklick auf das Steuerelement)
-- `<OnHoverOut>` (Mauszeiger das Steuerelement)
-- `<OnHoverOver>` (Maus bewegt wird, auf ein Steuerelement, das Beenden der `<OnHoverOut>` Animation)
-- `<OnMouseOut>` (Mauszeiger ein Steuerelement)
-- `<OnMouseOver>` (Maus bewegt wird, auf ein Steuerelement, das nicht beendet die `<OnMouseOut>` Animation)
+- `<OnClick>` (Klicken Sie auf das Steuerelement)
+- `<OnHoverOut>` (Maus verlässt das Steuerelement)
+- `<OnHoverOver>` (Mauszeiger über ein Steuerelement, Beenden der `<OnHoverOut>` Animation)
+- `<OnMouseOut>` (Maus verlässt ein Steuerelement)
+- `<OnMouseOver>` (Mauszeiger über ein Steuerelement, das `<OnMouseOut>` Animation wird nicht angehalten)
 
-In diesem Szenario `<OnClick>` verwendet wird. Klickt der Benutzer im Bereich angepasst wird und zur gleichen Zeit ausgeblendet wird.
+In diesem Szenario wird `<OnClick>` verwendet. Wenn der Benutzer auf den Bereich klickt, wird die Größe angepasst und gleichzeitig ausgeblendet.
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample5.aspx)]
 
-[![Startet die Animation, klicken mit der Maus](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
+[![mit einem Mausklick wird die Animation gestartet.](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
 
-Startet die Animation, klicken mit der Maus ([klicken Sie, um das Bild in voller Größe anzeigen](animating-in-response-to-user-interaction-vb/_static/image3.png))
+Mit einem Mausklick wird die Animation gestartet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](animating-in-response-to-user-interaction-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Zurück](picking-one-animation-out-of-a-list-vb.md)

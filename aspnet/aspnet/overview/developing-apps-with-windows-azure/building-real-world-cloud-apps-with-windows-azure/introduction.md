@@ -1,177 +1,177 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-title: Erstellen realer Cloud-Apps mit Azure | Microsoft-Dokumentation
+title: Entwickeln realer Cloud-apps mit Azure | Microsoft-Dokumentation
 author: MikeWasson
-description: Dieses e-Book führt Sie durch einen musterbasierten Ansatz zum Erstellen von realitätsgetreuen Cloud-Lösungen. Die Muster gelten für den Entwicklungsprozess als auch ein...
+description: Dieses e-book führt Sie durch einen musterbasierten Ansatz zum Aufbau realer cloudlösungen. Die Muster gelten sowohl für den Entwicklungsprozess als auch für eine...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 7daf08a88c614288170d676e665403cda244218a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8a4ef3aa37a9296e92fbeb513968e3abeee072d0
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118671"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585522"
 ---
-# <a name="building-real-world-cloud-apps-with-azure"></a>Erstellen realer Cloud-Apps mit Azure
+# <a name="building-real-world-cloud-apps-with-azure"></a>Entwickeln realer Cloud-apps mit Azure
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
-[Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Dieses e-Book führt Sie durch einen musterbasierten Ansatz zum Erstellen von realitätsgetreuen Cloud-Lösungen. Die Muster gelten sowohl für den Entwicklungsprozess als auch für die Architektur und Praktiken zur codeerstellung.
+> Dieses e-book führt Sie durch einen musterbasierten Ansatz zum Aufbau realer cloudlösungen. Die Muster gelten sowohl für den Entwicklungsprozess als auch für Architektur-und Codierungsverfahren.
 > 
-> Der Inhalt basiert auf einer Präsentation von Scott Guthrie entwickelt und bereitgestellt durch ihn an die Norwegische Entwickler Conference (NDC) im Juni 2013 ([Teil 1](http://vimeo.com/68215538), [Teil 2](http://vimeo.com/68215602)), und klicken Sie auf der Microsoft Tech Ed Australia in September 2013 ([Teil 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)). [Viele andere](more-patterns-and-guidance.md#acknowledgments) aktualisiert und ergänzt die Inhalte bei der Umsetzung von Video in die Schriftform.
+> Der Inhalt basiert auf einer Präsentation, die von Scott Guthrie entwickelt wurde und die von ihm auf der Norwegian Developers Conference (NDC) im Juni 2013 ([Teil 1](http://vimeo.com/68215538), [Teil 2](http://vimeo.com/68215602)) und bei Microsoft Tech Ed Australia im September 2013 ([Teil 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)) geliefert wurde. [Viele andere](more-patterns-and-guidance.md#acknowledgments) Benutzer haben den Inhalt aktualisiert und erweitert, während er vom Video in das geschriebene Formular übergeht.
 
-## <a name="intended-audience"></a>Zielgruppe
+## <a name="intended-audience"></a>Beabsichtigte Zielgruppe
 
-Entwickler, die wissen, was die Entwicklung für die Cloud in Betracht ziehen eine Verschiebung in die Cloud sind oder noch nicht mit cloud-Entwicklung werden hier eine präzise Übersicht über die wichtigsten Konzepte und Methoden, die sie kennen müssen. Die Konzepte sind mit konkreten Beispielen und jedes Kapitellinks zu anderen Ressourcen Ausführlichere Informationen veranschaulicht. Die Beispiele und Links zu weiteren Ressourcen sind für Microsoft-Frameworks und -Dienste, aber die gezeigten Grundsätze auf andere Webentwicklungs-Frameworks und Cloudumgebungen ebenfalls.
+Entwickler, die sich mit der Entwicklung für die Cloud auskennen, in Erwägung ziehen, in die Cloud zu wechseln oder mit der cloudentwicklung noch nicht vertraut sind, finden hier einen präzisen Überblick über die wichtigsten Konzepte und Vorgehensweisen, die Sie kennen müssen. Die Konzepte werden mit konkreten Beispielen veranschaulicht, und jedes Kapitel verknüpft sich mit anderen Ressourcen, um ausführlichere Informationen zu erhalten. Die Beispiele und die Links zu zusätzlichen Ressourcen sind für Microsoft-Frameworks und-Dienste, die veranschaulichten Grundsätze gelten jedoch auch für andere Webentwicklungs-Frameworks und cloudumgebungen.
 
-Entwickler, die bereits für die Cloud entwickeln möglicherweise, dass hier Ideen, die helfen ihnen noch erfolgreicher zu sein. Jedes Kapitel in der Reihe kann unabhängig voneinander gelesen werden, sodass Sie auswählen können, und wählen Themen, in denen Sie interessiert sind.
+Entwickler, die bereits für die Cloud entwickeln, können hier Ideen finden, die Ihnen helfen, Sie erfolgreicher zu gestalten. Jedes Kapitel in der Reihe kann unabhängig voneinander gelesen werden, sodass Sie die gewünschten Themen auswählen und auswählen können.
 
-Jeder, der beobachtet Scott Guthries *Building Real World Cloud Apps mit Azure* Präsentations- und weitere Details und die aktualisierten Informationen, die hier findet möchte.
+Jede Person, die Scott Guthrie *mit Azure* Presentation erstellt hat und weitere Details und aktualisierte Informationen wünscht, finden Sie hier.
 
 <a id="patterns"></a>
-## <a name="cloud-development-patterns"></a>Cloud-Entwicklungsmuster
+## <a name="cloud-development-patterns"></a>Cloudentwicklungmuster
 
-Dieses e-Book wird erläutert, dreizehn Muster für die Cloudentwicklung empfohlen. "Pattern" wird im weitesten Sinne hier verwendet, um ein empfohlenes Verfahren zum Aktionen bedeuten: optimal entwickeln, Entwerfen und Programmieren von Cloud-apps kennengelernt. Hierbei handelt es sich um wichtige Muster derer Sie "fallen unter der einfache Erfolg" Wenn Sie diese folgen.
+Dieses e-book erläutert 13 Empfohlene Muster für die cloudentwicklung. "Pattern" wird hier im Allgemeinen verwendet, um eine empfohlene Vorgehensweise zu erreichen: wie am besten ist es, Cloud-apps zu entwickeln, zu entwerfen und zu codieren. Dabei handelt es sich um Schlüssel Muster, die Ihnen helfen, "in die boxboxbox" zu kommen, wenn Sie Sie befolgen.
 
 - [Automatisieren Sie alles](automate-everything.md).
 
-    - Verwenden Sie Skripts, um die Maximierung der Effizienz und Minimieren von Fehlern in der sich wiederholende Prozesse.
-    - Demo: Azure-Verwaltungsskripts.
-- [Datenquellen-Steuerelement](source-control.md). 
+    - Verwenden von Skripts zum Maximieren der Effizienz und minimieren von Fehlern in wiederkehrenden Prozessen
+    - Demo: Azure-Verwaltungs Skripts.
+- [Quell](source-control.md)Code Verwaltung. 
 
-    - Richten Sie Verzweigungsstruktur, die in der quellcodeverwaltung aus, um die DevOps-Workflow zu erleichtern.
-    - Demo: Skripts zur quellcodeverwaltung hinzufügen.
-    - Demo: Speichern Sie vertrauliche Daten aus der quellcodeverwaltung.
-    - Demo: Verwenden Sie Git in Visual Studio.
-- [Continuous Integration und Delivery](continuous-integration-and-continuous-delivery.md). 
+    - Einrichten der Verzweigungs Struktur in der Quell Code Verwaltung, um den devops-Workflow zu vereinfachen.
+    - Demo: Fügen Sie Skripts zur Quell Code Verwaltung hinzu.
+    - Demo: halten Sie sensible Daten aus der Quell Code Verwaltung heraus.
+    - Demo: Verwenden Sie git in Visual Studio.
+- [Continuous Integration und Continuous Delivery](continuous-integration-and-continuous-delivery.md). 
 
-    - Automatisieren Sie Builds und Continuous Deployment mit jedem Source Control einchecken.
-- [Web Development best Practices](web-development-best-practices.md). 
+    - Automatisieren Sie Build und Bereitstellung mit jedem Eincheck Vorgang für die Quell Code Verwaltung.
+- [Bewährte Methoden für die Webentwicklung](web-development-best-practices.md). 
 
-    - Halten Sie die Webebene zustandslos.
+    - Sorgen Sie für Zustands lose webtier
     - Demo: Skalierung und automatische Skalierung in Web-Apps in Azure App Service.
-    - Vermeiden des Sitzungszustands.
-    - Verwenden Sie ein CDN mit Fallback, wenn das CDN nicht verfügbar ist.
-    - Verwenden Sie asynchrones Programmiermodell.
+    - Vermeiden Sie den Sitzungszustand.
+    - Verwenden Sie ein CDN mit einem Fall Back, wenn das CDN nicht verfügbar ist.
+    - Verwenden Sie das asynchrone Programmiermodell.
     - Demo: Async in ASP.NET MVC und Entity Framework.
 - [Einmaliges Anmelden](single-sign-on.md). 
 
     - Einführung in Azure Active Directory.
-    - Demo: Erstellen einer ASP.NET-Apps aus, die Azure Active Directory verwendet.
-- [Optionen für die datenspeicherung](data-storage-options.md). 
+    - Demo: Erstellen einer ASP.net-APP, die Azure Active Directory verwendet.
+- [Optionen für die Datenspeicherung](data-storage-options.md). 
 
-    - Typen von Datenspeichern.
-    - Informationen zum Auswählen des richtigen Datenspeichers.
+    - Typen von Daten speichern.
+    - Wählen Sie den richtigen Datenspeicher aus.
     - Demo: Azure SQL-Datenbank.
-- [Strategien für die Datenpartitionierung](data-partitioning-strategies.md). 
+- [Strategien für die Daten Partitionierung](data-partitioning-strategies.md). 
 
-    - Partitionieren von Daten vertikal, horizontal und/oder zu erleichtern die Skalierung von einer relationalen Datenbank.
-- [Unstrukturiertes Blob Storage](unstructured-blob-storage.md). 
+    - Partitionieren Sie Daten vertikal, horizontal oder beides, um das Skalieren einer relationalen Datenbank zu vereinfachen.
+- [Unstrukturierter BLOB-Speicher](unstructured-blob-storage.md). 
 
-    - Store Dateien in der Cloud mit dem blobdienst.
-    - Demo: Verwendung von Blob Storage in der app zu beheben.
-- [Entwurf Ausfälle überbrücken](design-to-survive-failures.md). 
+    - Speichern Sie Dateien in der Cloud, indem Sie den BLOB-Dienst verwenden.
+    - Demo: Verwenden von BLOB Storage in der Korrektur der IT-app.
+- [Entwurf, um Fehler zu überstehen](design-to-survive-failures.md). 
 
     - Arten von Fehlern.
-    - Fehler-Bereich.
+    - Fehlerbereich.
     - Grundlegendes zu SLAs.
 - [Überwachung und Telemetrie](monitoring-and-telemetry.md). 
 
-    - Warum sollte Sie sowohl eine app Telemetrie erwerben, und Schreiben eigenen Code zum Instrumentieren Ihrer app.
+    - Warum sollten Sie eine telemetrieapp kaufen und eigenen Code schreiben, um Ihre APP zu instrumentieren.
     - Demo: New Relic für Azure
-    - Demo: das Protokollieren von Code in der app zu beheben.
-    - Demo: Abhängigkeitsinjektion in der app zu beheben.
-    - Demo: integrierte Protokollierung-Unterstützung in Azure.
+    - Demo: Protokollieren von Code in der Fix-app.
+    - Demo: Abhängigkeitsinjektion in der Fix-it-app.
+    - Demo: integrierte Protokollierungs Unterstützung in Azure.
 - [Behandlung vorübergehender Fehler](transient-fault-handling.md). 
 
-    - Verwenden Sie smart wiederholen/Backoff-Logik, um die Auswirkungen der vorübergehende Fehler zu vermeiden.
+    - Verwenden Sie intelligente Wiederholungs-/Backoff-Logik, um die Auswirkungen vorübergehender Fehler zu mindern.
     - Demo: Wiederholung/Backoff in Entity Framework 6.
-- [Verteilte Zwischenspeicherung](distributed-caching.md). 
+- [Verteiltes Zwischenspeichern](distributed-caching.md). 
 
-    - Verbessern Sie der Skalierbarkeit und reduzieren Sie Transaktionskosten für die Datenbank, indem Sie Verteiltes Zwischenspeichern.
-- [Warteschlangenorientierte Muster](queue-centric-work-pattern.md). 
+    - Verbessern Sie die Skalierbarkeit, und reduzieren Sie die Kosten für die Datenbanktransaktion durch die
+- [Warteschlangen zentriertes Arbeitsmuster](queue-centric-work-pattern.md). 
 
-    - Hohen Verfügbarkeit und verbessern Sie Skalierbarkeit zu, indem Sie die lose Kopplung von Web-und workerebenen.
-    - Demo: Azure Storage-Warteschlangen in der app zu beheben.
-- [Mehr cloud-app-Muster und Anleitungen](more-patterns-and-guidance.md).
-- [Anhang: Der Fix It-Beispielanwendung](the-fix-it-sample-application.md)
+    - Aktivieren der Hochverfügbarkeit und verbessern der Skalierbarkeit durch lose Kopplung von Web-und workerebenen.
+    - Demo: Azure Storage-Warteschlangen in der Korrektur der IT-app.
+- [Weitere Cloud-App-Muster und Anleitungen](more-patterns-and-guidance.md).
+- [Anhang: Fix It-Beispielanwendung](the-fix-it-sample-application.md)
 
     - Bekannte Probleme
     - Bewährte Methoden
-    - So laden Sie herunter, erstellen, ausführen und bereitstellen.
+    - Herunterladen, erstellen, ausführen und bereitstellen.
 
-Diese Muster gelten für alle Cloudumgebungen, aber sind, illustrieren sie anhand von Beispielen, die basierend auf der Microsoft-Technologien und Dienste wie Visual Studio, Team Foundation Service, ASP.NET und Azure.
+Diese Muster gelten für alle cloudumgebungen, aber wir veranschaulichen Sie anhand von Beispielen, die auf Microsoft-Technologien und-Diensten basieren, wie z. b. Visual Studio, Team Foundation Service, ASP.net und Azure.
 
-Diese verbleibenden Teil dieses Kapitels werden die Fix It-beispielanwendung und die Web-Apps in Azure App Service-Cloud-Umgebung, die die Fix It-app ausgeführt, in wird eingeführt.
+In diesem weiteren Verlauf dieses Kapitels werden die Fehlerbehebung für die IT-Beispielanwendung und die Web-Apps in Azure App Service Cloud-Umgebung vorgestellt, in der die Korrektur der IT-App
 
 <a id="fixit"></a>
-## <a name="the-fix-it-sample-application"></a>Die Lösung, die it-beispielanwendung
+## <a name="the-fix-it-sample-application"></a>Die Anwendung zum Beheben der IT-Beispiele
 
-Die meisten Screenshots und in diesem e-Book dargestellten Codebeispiele basieren auf der Fix It-app ursprünglich entwickelt von [Scott Guthrie](https://weblogs.asp.net/scottgu/) empfohlene Cloud-app-Entwicklungsmuster und Vorgehensweisen veranschaulicht.
+Die meisten Screenshots und Codebeispiele in diesem e-book basieren auf der Lösung, die von [Scott Guthrie](https://weblogs.asp.net/scottgu/) ursprünglich entwickelt wurde, um empfohlene Entwicklungsmuster und-Methoden für Cloud-apps zu veranschaulichen.
 
-![Startseite der app beheben](introduction/_static/image1.png)
+![Reparieren der Startseite der IT-App](introduction/_static/image1.png)
 
-Die Beispiel-app ist eine einfache Arbeitsaufgabe mitgearbeitet. Wenn Sie einen festen benötigen, erstellen ein Ticket ein und weisen Sie zu einer Person und andere kann melden Sie sich, und finden Sie unter den Tickets zugewiesen an Sie und Tickets zu markieren, als abgeschlossen, wenn die Arbeit abgeschlossen ist.
+Die Beispiel-APP ist ein einfaches Arbeits Element-Ticketsystem. Wenn Sie etwas Festes benötigen, erstellen Sie ein Ticket und weisen es einer Person zu. andere Benutzer können sich anmelden und die zugewiesenen Tickets anzeigen und Tickets als abgeschlossen markieren, wenn die Arbeit erledigt ist.
 
-Es ist ein standard Visual Studio-Webprojekt. Es basiert auf ASP.NET MVC und verwendet eine SQL Server-Datenbank. Sie können in IIS Express lokal ausführen und auf einer Azure-Website in der Cloud ausführen bereitgestellt werden kann. Sie können sich mit Formularauthentifizierung und einer lokalen Datenbank oder Anbieter sozialer Netzwerke wie Google anmelden. (Später auch zeigen wir wie mit einem Active Directory-organisationskonto anmelden.)
+Dabei handelt es sich um ein standardmäßiges Visual Studio-Webprojekt. Sie basiert auf ASP.NET MVC und verwendet eine SQL Server Datenbank. Sie kann lokal in IIS Express ausgeführt und auf einer Azure-Website bereitgestellt werden, die in der Cloud ausgeführt werden kann. Sie können sich mithilfe der Formular Authentifizierung und einer lokalen Datenbank oder mithilfe eines sozialen Anbieters wie Google anmelden. (Später wird auch erläutert, wie Sie sich mit einem Active Directory Organisations Konto anmelden.)
 
 ![Anmeldeseite](introduction/_static/image2.png)
 
-Sobald Sie angemeldet sind in können Sie ein Ticket erstellen, es einem Benutzer zuweisen und Hochladen einen Überblick darüber, was behoben werden soll.
+Sobald Sie angemeldet sind, können Sie ein Ticket erstellen, einem anderen Benutzer zuweisen und ein Bild davon hochladen, was korrigiert werden soll.
 
-![Erstellen Sie einen Fix It-task](introduction/_static/image3.png)
+![Erstellen einer Korrektur](introduction/_static/image3.png)
 
-![Beheben Sie diese Aufgabe erstellt](introduction/_static/image4.png)
+![Korrektur der erstellten IT-Aufgabe](introduction/_static/image4.png)
 
-Sie können das Verfolgen von Arbeitsaufgaben, die Sie erstellt haben, finden Sie Tickets, die Sie Details zum Ticket und Mark Elemente zugewiesen werden, als abgeschlossen.
+Sie können den Fortschritt der von Ihnen erstellten Arbeitsaufgaben nachverfolgen, die Ihnen zugewiesenen Tickets anzeigen, ticketdetails anzeigen und Elemente als abgeschlossen markieren.
 
-Dies ist eine sehr einfache app hinsichtlich der Funktion, aber Sie erfahren, wie diese erstellt werden, damit sie auf Millionen von Benutzern skaliert werden kann und, wie z. B. Datenbankfehler und verbindungsunterbrechungen robust werden. Außerdem sehen, wie Sie eine automatisierte und agilen Entwicklungsworkflow zu erstellen, wodurch Sie fangen Sie einfach, und stellen die app eine bessere und bessere durch Iteration des Entwicklungszyklus, schnell und effizient.
+Dies ist eine sehr einfache APP aus einer Funktions Perspektive, aber Sie werden erfahren, wie Sie Sie erstellen können, damit Sie für Millionen von Benutzern skaliert werden kann, und Sie sind anfällig für Daten Bankausfälle und Verbindungs Beendigungen. Außerdem erfahren Sie, wie Sie einen automatisierten und agilen Entwicklungs Workflow erstellen, der Ihnen ermöglicht, einfach zu beginnen und die APP besser und besser zu gestalten, indem Sie den Entwicklungszyklen effizient und schnell iterieren.
 
 <a id="waws"></a>
-## <a name="web-apps-in-azure-app-service"></a>In Azure App Service-Web-Apps
+## <a name="web-apps-in-azure-app-service"></a>Web-Apps in Azure App Service
 
-Die Cloud-Umgebung für die Fix It-Anwendung verwendet, ist ein Dienst von Azure, dass wir Websites aufrufen. Dieser Dienst ist eine Möglichkeit, Sie können Ihre eigenen Web-app in Azure hosten, ohne virtuelle Computer erstellen und deren Aktualisierung beibehalten, installieren und Konfigurieren von IIS, usw. an. Wir hosten Ihre Website auf den virtuellen Computern und automatisch bereitzustellen, Sicherung und-Wiederherstellung sowie andere Dienste für Sie. Die Websites-Dienst funktioniert mit ASP.NET, Node.js, PHP und Python. Sie können Sie sehr schnell mithilfe von Visual Studio, Web Deploy, FTP, Git oder TFS bereitstellen. Dies ist normalerweise nur ein paar Sekunden zwischen dem Starten einer Bereitstellung und die Zeit, die der Updates über das Internet verfügbar ist. Es ist für den Einstieg kostenlos, und Sie können nach oben skalieren, wenn Ihr Datenverkehr zunimmt.
+Die Cloud-Umgebung, die für die Korrektur der IT-Anwendung verwendet wird, ist ein Dienst von Azure, den wir als Websites bezeichnen. Dieser Dienst ist eine Methode, mit der Sie Ihre eigene Web-App in Azure hosten können, ohne VMS erstellen und aktualisieren, installieren und Konfigurieren von IIS usw. Wir hosten Ihre Website auf unseren VMS und stellen automatisch Sicherung und Wiederherstellung sowie andere Dienste für Sie bereit. Der Websites-Dienst funktioniert mit ASP.net, Node. js, PHP und python. Sie ermöglicht eine sehr schnelle Bereitstellung mithilfe von Visual Studio, Web deploy, FTP, git oder TFS. Es dauert in der Regel nur wenige Sekunden zwischen dem Start einer Bereitstellung und dem Zeitpunkt, zu dem das Update über das Internet verfügbar ist. Der Einstieg ist kostenlos, und Sie können den Datenverkehr zentral hochskalieren.
 
-Hinter den Kulissen bietet Web-Apps in Azure App Service viele der Komponenten der Architektur und Funktionen, die Sie selbst erstellen, wenn Sie eine Website mit IIS auf Ihren eigenen virtuellen Computern hosten möchten müssen. Eine Komponente ist eine End-Bereitstellungspunkt, der automatisch IIS konfiguriert und installiert Ihre Anwendung auf so viele virtuelle Computer, wie Sie Ihre Website ausführen möchten.
+Im Hintergrund bieten Web-Apps in Azure App Service viele Architekturkomponenten und Features, die Sie selbst erstellen müssten, wenn Sie eine Website mit IIS auf Ihren eigenen virtuellen Computern hosten möchten. Bei einer Komponente handelt es sich um einen Bereitstellungs Endpunkt, der automatisch IIS konfiguriert und die Anwendung auf so vielen virtuellen Computern installiert, auf denen Sie Ihre Website ausführen möchten.
 
-![Bereitstellung (Dienst)](introduction/_static/image5.png)
+![Bereitstellungs Dienst](introduction/_static/image5.png)
 
-Wenn ein Benutzer der Website klickt, sie nicht die IIS-VMs direkt erreicht, sie durchlaufen [Application Request Routing (ARR)](https://www.iis.net/downloads/microsoft/application-request-routing) load balancer. Sie können diese mit Ihren eigenen Servern verwenden, aber dies hat den Vorteil, dass er für Sie automatisch eingerichtet werden. Sie verwenden eine intelligente Heuristik, die Faktoren wie z. B. sitzungsaffinität Warteschlangentiefe in IIS verwendet, und CPU-Auslastung auf jedem Computer, leiten Sie Datenverkehr an die virtuellen Computer, Hosten Ihrer Website.
+Wenn ein Benutzer auf die Website trifft, werden die IIS-VMS nicht direkt auf die IIS-VMS angewendet, sondern durch den [Anwendungs Anforderungs Routing (arr)](https://www.iis.net/downloads/microsoft/application-request-routing) Load Balancer. Sie können diese mit ihren eigenen Servern verwenden, aber der Vorteil liegt darin, dass Sie automatisch für Sie eingerichtet werden. Sie verwenden eine intelligente heuristische, bei der Faktoren wie Sitzungs Affinität, Warteschlangen Tiefe in IIS und CPU-Auslastung auf den einzelnen Computern berücksichtigt werden, um den Datenverkehr an die VMs weiterzuleiten, die die Website hosten.
 
 ![ARR-Lastenausgleich](introduction/_static/image6.png)
 
-Wenn ein Computer ausfällt, Azure automatisch per Pullvorgang aus der Rotation, startet eine neue VM-Instanz und beginnt, Datenverkehr an die neue Instanz – alle ohne Downtime für Ihre Anwendung.
+Wenn ein Computer ausfällt, ruft Azure ihn automatisch aus der Rotation ab, startet eine neue VM-Instanz und leitet den Datenverkehr an die neue Instanz weiter, ohne dass die Zeit für Ihre Anwendung nicht ausfällt.
 
-![Automatische Wiederherstellung bei Computerfehler](introduction/_static/image7.png)
+![Automatische Wiederherstellung nach Computerfehler](introduction/_static/image7.png)
 
-All dies erfolgt automatisch. Sie müssen lediglich eine Website erstellen und Bereitstellen Ihrer Anwendung, die mit Windows PowerShell, Visual Studio oder das Azure-Verwaltungsportal.
+All dies erfolgt automatisch. Sie müssen lediglich eine Website erstellen und Ihre Anwendung mithilfe von Windows PowerShell, Visual Studio oder dem Azure-Verwaltungs Portal bereitstellen.
 
-Schnelle und einfache schrittweise dieses Tutorial veranschaulicht, wie erstellen eine Webanwendung in Visual Studio und es auf einer Azure-Website bereitstellen, finden Sie unter [erste Schritte mit Azure und ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
+Ein schnelles und einfaches Tutorial, das zeigt, wie Sie eine Webanwendung in Visual Studio erstellen und auf einer Azure-Website bereitstellen, finden Sie unter Erste Schritte [mit Azure und ASP.net](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Diese Einführung hat eine Liste der Themen, in denen, die das Buch behandelt, Screenshots der beispielanwendung und eine kurze Übersicht über die Web-Apps in Azure App Service-Cloud-Umgebung bereitgestellt werden. Einer der großen Vorzüge der Entwicklung von apps, die in und für die Cloud ist, dass es einfach, wie z. B. eine testumgebung erstellen und Bereitstellen von Code, sich wiederholende Entwicklungsaufgaben automatisieren. Vorgehensweise, die Gegenstand der [im nächsten Kapitel](automate-everything.md).
+Diese Einführung bietet eine Liste der Themen, die im Buch behandelt werden, Screenshots der Beispielanwendung und eine kurze Übersicht über die Web-Apps in Azure App Service Cloud-Umgebung. Einer der großen Vorteile bei der Entwicklung von apps in und für die Cloud besteht darin, dass sich wiederholende Entwicklungsaufgaben, z. b. das Erstellen einer Testumgebung und die Bereitstellung Ihres Codes, leicht automatisieren können. Dies ist der Gegenstand des [nächsten Kapitels](automate-everything.md).
 
 ## <a name="resources"></a>Ressourcen
 
-Weitere Informationen zu den Themen in diesem Kapitel finden Sie unter den folgenden Ressourcen.
+Weitere Informationen zu den in diesem Kapitel behandelten Themen finden Sie in den folgenden Ressourcen.
 
 Dokumentation:
 
-- [Web-Apps in Azure App Service](https://azure.microsoft.com/services/app-service/web/). Portalseite für Azure-Dokumentation zu Web-Apps.
-- [Web-Apps, Clouddienste und virtuelle Computer: Bei einem so?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, wie in diesem Kapitel dargestellt ist nur eine von drei Methoden, die Web-apps in Azure ausgeführt werden können. Dieser Artikel erläutert die Unterschiede zwischen den drei Arten und bietet Anleitungen zum auswählen, welches Abonnement für Ihr Szenario geeignet ist. Wie andere Websites ist Cloud Services ein PaaS-Feature von Azure. Virtuelle Computer sind eine IaaS-Funktion. Eine Erläuterung von PaaS und IaaS, finden Sie unter den [Datenoptionen](data-storage-options.md#paasiaas) Kapitel.
+- [Web-Apps in Azure App Service](https://azure.microsoft.com/services/app-service/web/). Portal Seite für die Azure-Dokumentation zu Web-Apps.
+- [Web-Apps, Cloud Services und VMS: Wann sollte verwendet werden?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) Waws, wie in diesem Kapitel gezeigt, ist nur eine von drei Möglichkeiten, wie Sie Web-Apps in Azure ausführen können. In diesem Artikel werden die Unterschiede zwischen den drei Methoden erläutert, und es wird erläutert, wie Sie entscheiden, welche Option für Ihr Szenario geeignet ist. Wie Websites ist Cloud Services ein Feature von Azure. VMS sind ein IaaS-Feature. Eine Erläuterung von Pas im Vergleich zu IaaS finden Sie im Kapitel zu [Daten Optionen](data-storage-options.md#paasiaas) .
 
 Videos:
 
-- [Scott Guthrie beginnt bei Schritt 0: Was ist, dass das Azure-Cloud-Betriebssystem?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Websites-Architektur - mit Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
-- [Azure-Web Sites-Interna mit Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
+- [Scott Guthrie beginnt mit Schritt 0: Was ist die Azure-Cloud OS?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Website Architektur: Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
+- [Azure Websites Internals mit NIR mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 > [!div class="step-by-step"]
 > [Nächste](automate-everything.md)

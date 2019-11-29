@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
-title: 'Teil 2: Erstellen der Domänenmodelle | Microsoft-Dokumentation'
+title: 'Teil 2: Erstellen der Domänen Modelle | Microsoft-Dokumentation'
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,78 +8,78 @@ ms.date: 07/03/2012
 ms.assetid: fe3ef85f-bdc6-4e10-9768-25aa565c01d0
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: e4c0f3fe596471921c174762c83d1f013b42fb3e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7c5ed1bdb4b390c94907b14e208231f16ad42d96
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415010"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600362"
 ---
-# <a name="part-2-creating-the-domain-models"></a>Teil 2: Erstellen der Domänenmodelle
+# <a name="part-2-creating-the-domain-models"></a>Teil 2: Erstellen der Domänen Modelle
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
 ## <a name="add-models"></a>Hinzufügen von Modellen
 
-Es gibt drei Möglichkeiten, um den Ansatz von Entity Framework:
+Es gibt drei Möglichkeiten, um Entity Framework zu umgehen:
 
-- Database First: Beginnen Sie mit einer Datenbank und Entity Framework generiert den Code.
-- Model First: Beginnen Sie mit einem visual Modell und Entity Framework generiert die Datenbank und den Code.
-- Code First: Beginnen Sie mit Code und Entity Framework generiert die Datenbank.
+- Database-First: Sie beginnen mit einer Datenbank, und Entity Framework generiert den Code.
+- Model-First: Sie beginnen mit einem visuellen Modell, und Entity Framework generiert sowohl die Datenbank als auch den Code.
+- Code First: Sie beginnen mit Code, und Entity Framework generiert die Datenbank.
 
-Wir verwenden die Code First-Ansatz, damit unsere Domänenobjekte als POCOs (Plain-Old CLR Objects) definieren wir zunächst. Mit dem Code-First-Ansatz erforderlich nicht Domänenobjekte zusätzlichen Code zur Unterstützung der Datenbankebene, z. B. Transaktionen oder Persistenz. (Insbesondere, sie müssen nicht das erben die ["EntityObject"](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx) Klasse.) Sie können weiterhin datenanmerkungen verwenden, um zu steuern, wie Entity Framework für das Schema der Datenbank erstellt.
+Wir verwenden den Code First-Ansatz. daher definieren wir zunächst unsere Domänen Objekte als POCOS (Plain-Old CLR Objects). Mit dem Code First-Ansatz benötigen Domänen Objekte keinen zusätzlichen Code zur Unterstützung der Datenbankebene, z. b. Transaktionen oder Persistenz. (Insbesondere müssen Sie nicht von der [EntityObject](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx) -Klasse erben.) Sie können weiterhin Daten Anmerkungen verwenden, um zu steuern, wie Entity Framework das Datenbankschema erstellt.
 
-Da POCOs keine zusätzlichen Eigenschaften enthalten, die beschreiben, [Datenbankstatus](https://msdn.microsoft.com/library/system.data.entitystate.aspx), sie können ganz einfach JSON oder XML serialisiert werden. Allerdings bedeutet dies nicht immer die Entity Framework-Modelle direkt an die Clients sollten verfügbar machen, wie wir später in diesem Lernprogramm sehen werden.
+Da POCOS keine zusätzlichen Eigenschaften enthalten, die den [Daten Bank Status](https://msdn.microsoft.com/library/system.data.entitystate.aspx)beschreiben, können Sie problemlos in JSON oder XML serialisiert werden. Dies bedeutet jedoch nicht, dass Sie Ihre Entity Framework Modelle immer direkt für Clients verfügbar machen sollten, wie später in diesem Tutorial zu sehen ist.
 
-Wir erstellen die folgenden POCOs:
+Wir erstellen die folgenden POCOS:
 
-- Produkt
-- Auftrag
-- OrderDetail
+- Product
+- Order
+- Order Detail
 
-Um jede Klasse zu erstellen, und mit der rechten Maustaste im Projektmappen-Explorer den Ordner "Models". Wählen Sie im Kontextmenü des **hinzufügen** und wählen Sie dann **Klasse.**
+Um jede Klasse zu erstellen, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle. Klicken Sie im Kontextmenü auf **Hinzufügen** , und wählen Sie dann **Klasse aus.**
 
 ![](using-web-api-with-entity-framework-part-2/_static/image1.png)
 
-Hinzufügen einer `Product` Klasse durch die folgende Implementierung:
+Fügen Sie mit der folgenden Implementierung eine `Product` Klasse hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-2/samples/sample1.cs)]
 
-Gemäß der Konvention verwendet Entity Framework die `Id` Eigenschaft als Primärschlüssel und ordnet es zu einer Identity-Spalte in der Datenbanktabelle. Beim Erstellen einer neuen `Product` -Instanz wird nicht legen Sie einen Wert für `Id`, da die Datenbank den Wert generiert.
+Gemäß der Konvention verwendet Entity Framework die `Id`-Eigenschaft als Primärschlüssel und ordnet Sie einer Identitäts Spalte in der Datenbanktabelle zu. Wenn Sie eine neue `Product` Instanz erstellen, wird kein Wert für `Id`festgelegt, da die Datenbank den Wert generiert.
 
-Die **ScaffoldColumn** Attribut teilt ASP.NET MVC zum Überspringen der `Id` Eigenschaft, wenn ein Formular-Editors zu generieren. Die **erforderlich** Attribut wird verwendet, um das Modell überprüft. Es gibt an, dass die `Name` -Eigenschaft muss eine nicht leere Zeichenfolge sein.
+Das **Gerüst Column** -Attribut weist ASP.NET MVC an, die `Id`-Eigenschaft zu überspringen, wenn ein Editor-Formular erzeugt wird. Das **erforderliche** -Attribut wird verwendet, um das Modell zu validieren. Gibt an, dass die `Name`-Eigenschaft eine nicht leere Zeichenfolge sein muss.
 
-Hinzufügen der `Order` Klasse:
+Fügen Sie die `Order`-Klasse hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-2/samples/sample2.cs)]
 
-Hinzufügen der `OrderDetail` Klasse:
+Fügen Sie die `OrderDetail`-Klasse hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-2/samples/sample3.cs)]
 
-## <a name="foreign-key-relations"></a>Foreign Key-Beziehungen
+## <a name="foreign-key-relations"></a>Fremdschlüssel Beziehungen
 
-Ein Auftrag enthält viele Auftragsdetails, und jede auftragsdetailbereich bezieht sich auf einem einzigen Produkt. Zur Darstellung dieser Beziehungen, die `OrderDetail` -Klasse definiert Eigenschaften, die mit dem Namen `OrderId` und `ProductId`. Entitätsframework folgert, dass diese Eigenschaften Fremdschlüssel darstellen, und der Datenbank foreign Key-Einschränkungen hinzugefügt werden.
+Eine Bestellung enthält viele Bestelldetails, und jedes Bestell Detail bezieht sich auf ein einzelnes Produkt. Um diese Beziehungen darzustellen, definiert die `OrderDetail`-Klasse Eigenschaften mit dem Namen `OrderId` und `ProductId`. Entity Framework wird ableiten, dass diese Eigenschaften Fremdschlüssel darstellen, und fügt der Datenbank Foreign Key-Einschränkungen hinzu.
 
 ![](using-web-api-with-entity-framework-part-2/_static/image2.png)
 
-Die `Order` und `OrderDetail` Klassen umfassen auch "Navigation"-Eigenschaften, die Verweise auf die verknüpften Objekte enthalten. Wenn einen Auftrag, können Sie auf die Produkte in der Reihenfolge navigieren, anhand der Navigationseigenschaften.
+Die Klassen `Order` und `OrderDetail` enthalten außerdem Navigations Eigenschaften, die Verweise auf die verknüpften Objekte enthalten. Wenn Sie eine Bestellung haben, können Sie zu den Produkten in der Bestellung navigieren, indem Sie den Navigations Eigenschaften folgen.
 
-Kompilieren Sie das Projekt jetzt. Entitätsframework verwendet Reflektion, um die Eigenschaften der Modelle, zu ermitteln, deshalb sie eine kompilierte Assembly ein, um das Datenbankschema zu erstellen müssen.
+Kompilieren Sie das Projekt jetzt. Entity Framework verwendet Reflektion, um die Eigenschaften der Modelle zu ermitteln. Daher ist eine kompilierte Assembly erforderlich, um das Datenbankschema zu erstellen.
 
-## <a name="configure-the-media-type-formatters"></a>Der Medientypformatierer konfigurieren
+## <a name="configure-the-media-type-formatters"></a>Konfigurieren der Medientyp-Formatierer
 
-Ein [medientypformatierer](../../formats-and-model-binding/media-formatters.md) ein Objekt, das Ihre Daten serialisiert werden, wenn die Web-API-HTTP-Antworttext geschrieben wird. Die integrierten Formatierungsprogrammen unterstützen JSON- und XML-Ausgabe. Standardmäßig serialisiert werden beide dieser Formatierer alle Objekte nach Wert.
+Ein [Medientyp-Formatierer](../../formats-and-model-binding/media-formatters.md) ist ein Objekt, das die Daten serialisiert, wenn die Web-API den HTTP-Antworttext schreibt. Die integrierten Formatierer unterstützen die JSON-und XML-Ausgabe. Standardmäßig serialisieren beide Formatierer alle Objekte nach Wert.
 
-Serialisierung nach Wert führt zu einem Problem, wenn ein Objektdiagramm Zirkuläre Verweise enthält. Das ist genau der Fall mit der `Order` und `OrderDetail` Klassen, da Sie jeweils einen Verweis auf die andere enthält. Der Formatierer wird führen Sie die Verweise, Schreiben jedes Objekt als Wert und wechseln Sie im Kreis. Aus diesem Grund müssen wir das Standardverhalten zu ändern.
+Bei der Serialisierung nach Wert wird ein Problem erstellt, wenn ein Objekt Diagramm zirkuläre Verweise enthält. Das ist genau der Fall bei den Klassen `Order` und `OrderDetail`, da jeder einen Verweis auf den anderen enthält. Der Formatierer befolgt die Verweise, schreibt jedes Objekt nach Wert und geht in Kreise. Daher müssen wir das Standardverhalten ändern.
 
-Erweitern Sie im Projektmappen-Explorer die App\_starten Sie die Ordner, und öffnen Sie die Datei mit dem Namen WebApiConfig.cs. Fügen Sie der `WebApiConfig`-Klasse folgenden Code hinzu:
+Erweitern Sie in Projektmappen-Explorer den Ordner App\_Start, und öffnen Sie die Datei mit dem Namen WebApiConfig.cs. Fügen Sie der `WebApiConfig`-Klasse folgenden Code hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-2/samples/sample4.cs?highlight=11)]
 
-Dieser Code legt das JSON-Formatierungsprogramm Objektverweise beizubehalten, und den XML-Formatierer vollständig aus der Pipeline entfernt. (Sie können konfigurieren, dass des XML-Formatierers zum Beibehalten von Objektverweisen, aber es ist etwas mehr Arbeit, und wir brauchen nur JSON für diese Anwendung. Weitere Informationen finden Sie unter [zirkuläre Objektverweise behandeln](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references).)
+Mit diesem Code wird der JSON-Formatierer für die Beibehaltung von Objekt verweisen festgelegt, und der XML-Formatierer wird vollständig aus der Pipeline entfernt. (Sie können den XML-Formatierer so konfigurieren, dass er Objekt Verweise beibehält, aber es ist ein wenig mehr Arbeit, und wir benötigen nur JSON für diese Anwendung. Weitere Informationen finden Sie unter [Behandeln von zirkulären Objekt verweisen](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references).)
 
 > [!div class="step-by-step"]
 > [Zurück](using-web-api-with-entity-framework-part-1.md)

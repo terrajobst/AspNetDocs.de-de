@@ -1,191 +1,191 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
-title: Einfügen, aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (VB) | Microsoft-Dokumentation
+title: Einfügen, aktualisieren und Löschen von Daten mit SqlDataSource (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In vorherigen Tutorials haben Sie erfahren, wie das ObjectDataSource-Steuerelement, die für das Einfügen, aktualisieren und Löschen von Daten zulässig. Das SqlDataSource-Steuerelement unterstützt t...
+description: In den vorherigen Tutorials haben wir gelernt, wie das ObjectDataSource-Steuerelement das Einfügen, aktualisieren und Löschen von Daten zugelassen hat. Das SqlDataSource-Steuerelement unterstützt t...
 ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: 9673bef3-892c-45ba-a7d8-0da3d6f48ec5
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a52f5db8dbda2ec8f556d2627271f53ffbcc3045
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4f7b282b09769272df8ff3a32aa4c509c8917481
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115082"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74597180"
 ---
 # <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a>Einfügen, Aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_49_VB.exe) oder [PDF-Datei herunterladen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/datatutorial49vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_49_VB.exe) oder [PDF herunterladen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/datatutorial49vb1.pdf)
 
-> In vorherigen Tutorials haben Sie erfahren, wie das ObjectDataSource-Steuerelement, die für das Einfügen, aktualisieren und Löschen von Daten zulässig. Das SqlDataSource-Steuerelement unterstützt die gleichen Vorgänge, aber der Ansatz ist anders, und in diesem Tutorial wird gezeigt, wie dem SqlDataSource-Steuerelement zum Einfügen, aktualisieren und Löschen von Daten konfigurieren.
+> In den vorherigen Tutorials haben wir gelernt, wie das ObjectDataSource-Steuerelement das Einfügen, aktualisieren und Löschen von Daten zugelassen hat. Das SqlDataSource-Steuerelement unterstützt die gleichen Vorgänge, aber der Ansatz ist anders, und in diesem Tutorial wird gezeigt, wie Sie SqlDataSource zum Einfügen, aktualisieren und Löschen von Daten konfigurieren.
 
 ## <a name="introduction"></a>Einführung
 
-Siehe [eine Übersicht der einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md), GridView-Steuerelement bietet integrierte aktualisieren und Löschen von Funktionen, während die DetailsView und FormView-Steuerelemente einfügen enthalten zu unterstützen, zusammen mit Bearbeiten und Löschen von Funktionen. Diese Möglichkeiten zur Datenänderung können direkt in ein Datenquellen-Steuerelement ohne eine einzige Zeile Code geschrieben werden müssen, angeschlossen werden. [Eine Übersicht der einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) untersucht, mit dem ObjectDataSource-Steuerelement um zu ermöglichen, einfügen, aktualisieren und Löschen mit der GridView, DetailsView oder FormView-Steuerelemente. Alternativ kann dem SqlDataSource-Steuerelement statt dem ObjectDataSource-Steuerelement verwendet werden.
+Wie in [einer Übersicht über das Einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)erläutert, bietet das GridView-Steuerelement integrierte Aktualisierungs-und Löschfunktionen, während das DetailsView-Steuerelement und das FormView-Steuerelement das Einfügen von Unterstützung sowie das Bearbeiten und Löschen von Funktionen beinhalten. Diese Daten Änderungs Funktionen können direkt in ein Datenquellen-Steuerelement eingebunden werden, ohne dass eine Codezeile geschrieben werden muss. [Eine Übersicht über das Einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) untersuchten mithilfe von ObjectDataSource, um das Einfügen, aktualisieren und Löschen mit den Steuerelementen GridView, DetailsView und FormView zu vereinfachen. Alternativ kann SqlDataSource anstelle von ObjectDataSource verwendet werden.
 
-Denken Sie daran, die zur Unterstützung von einfügen, aktualisieren und löschen, mit dem ObjectDataSource-Steuerelement wir benötigt an die Methoden des Objekts Ebene aufrufen, die zum Ausführen von INSERT-, update oder delete-Aktion. Mit dem SqlDataSource-Steuerelement, ich benötige `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen (oder gespeicherte Prozeduren) ausgeführt. In diesem Tutorial sehen, werden diese Anweisungen können manuell erstellt werden oder automatisch vom SqlDataSource s Konfigurieren von Datenquellen-Assistenten generiert werden.
-
-> [!NOTE]
-> Seit wir haben bereits erläutert das Einfügen, bearbeiten und löschen die Funktionen von GridView, DetailsView und FormView-Steuerelemente, dieses Tutorial konzentriert sich auf das SqlDataSource-Steuerelement, um die Unterstützung dieser Vorgänge zu konfigurieren. Bei Bedarf zu auffrischen zur Implementierung dieser Funktionen in der Rückgabe GridView, DetailsView und FormView-Steuerelement, in den Tutorials bearbeiten, einfügen und Löschen von Daten, beginnend mit [eine Übersicht der einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md).
-
-## <a name="step-1-specifyinginsertupdate-anddeletestatements"></a>Schritt 1: Angeben von`INSERT`,`UPDATE`, und`DELETE`Anweisungen
-
-Als wir festgelegt haben, finden Sie in den letzten beiden Tutorials zum Abrufen von Daten von einem SqlDataSource-Steuerelement müssen wir zwei Eigenschaften:
-
-1. `ConnectionString`, die angibt, welche Datenbank zum Senden der Abfrage, und
-2. `SelectCommand`, der angibt, die Ad-hoc-SQL-Anweisung oder der Name der gespeicherten Prozedur, die ausgeführt werden, um die Ergebnisse zurückgeben.
-
-Für `SelectCommand` Werte mit Parametern, die den Parameter Werte, über die SqlDataSource s angegeben werden `SelectParameters` Auflistung und hart kodierte Werte häufig verwendete Parameter Quellwerte enthalten (Querystring-Felder, Sitzungsvariablen, Web Control-Werte, und usw.), oder programmgesteuert zugewiesen werden kann. Wenn die SqlDataSource-Steuerelement s `Select()` Methode wird aufgerufen, entweder programmgesteuert oder automatisch aus einem Websteuerelement eine Verbindung mit der Datenbank hergestellt wird, werden die Parameterwerte für die Abfrage zugewiesen und der Befehl ist deaktiviert übermittelt der die Datenbank. Die Ergebnisse werden anschließend als DataSet oder DataReader, zurückgegeben, abhängig vom Wert des Steuerelements s `DataSourceMode` Eigenschaft.
-
-Zusammen mit der Auswahl von Daten, das SqlDataSource-Steuerelement verwendet werden kann, zum Einfügen, aktualisieren und Löschen von Daten durch Angabe `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen in die gleiche Weise. Weisen Sie einfach die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften der `INSERT`, `UPDATE`, und `DELETE` auszuführenden SQL-Anweisungen. Wenn die Anweisungen über Parameter (wie sie die meisten immer), fügen Sie sie in der `InsertParameters`, `UpdateParameters`, und `DeleteParameters` Sammlungen.
-
-Sobald ein `InsertCommand`, `UpdateCommand`, oder `DeleteCommand` Wert angegeben wurde, die Option "Einfügen aktivieren, aktivieren Sie bearbeiten oder löschen aktivieren" in die entsprechenden Daten smart Tag des Websteuerelements s zur Verfügung stehen. Um dies zu veranschaulichen, nehmen können s ein Beispiel aus der `Querying.aspx` Seite, die wir erstellt, in haben der [Abfragen von Daten mit dem SqlDataSource-Steuerelement](querying-data-with-the-sqldatasource-control-vb.md) Tutorial, und ergänzen es sollen die Funktionen löschen.
-
-Öffnen Sie zunächst die `InsertUpdateDelete.aspx` und `Querying.aspx` Seiten aus der `SqlDataSource` Ordner. Im Designer auf die `Querying.aspx` Seite, wählen Sie aus dem ersten Beispiel SqlDataSource-Steuerelement und GridView (die `ProductsDataSource` und `GridView1` Steuerelemente). Finden Sie nachdem Sie die beiden Steuerelemente haben unter dem Menü "Bearbeiten" und wählen Sie kopieren (oder drücken Sie STRG + C nur). Navigieren Sie anschließend auf den Designer der `InsertUpdateDelete.aspx` , und fügen Sie in den Steuerelementen. Nachdem Sie auf die beiden Steuerelemente, über verschoben haben `InsertUpdateDelete.aspx`, testen Sie die Seite in einem Browser. Daraufhin sollte die Werte der `ProductID`, `ProductName`, und `UnitPrice` Spalten für alle Datensätze in der `Products` Datenbanktabelle.
-
-[![Alle Produkte aufgeführt sind, sortiert nach "ProductID",](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.png)
-
-**Abbildung 1**: Alle Produkte aufgeführt sind, sortiert nach `ProductID` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image2.png))
-
-## <a name="adding-the-sqldatasource-sdeletecommandanddeleteparametersproperties"></a>Die Zuordnungsvorgänge SqlDataSource-Steuerelement hinzufügen`DeleteCommand`und`DeleteParameters`Eigenschaften
-
-An diesem Punkt haben wir ein SqlDataSource-Steuerelement, die einfach alle Datensätze aus zurückgibt der `Products` Tabelle und einer GridView-Ansicht, die diese Daten rendert. Unser Ziel ist in diesem Beispiel für den Benutzer zum Löschen von Produkten über die GridView zu erweitern. Um dies zu erreichen, wir geben Sie Werte für die SqlDataSource-Steuerelement s müssen `DeleteCommand` und `DeleteParameters` Eigenschaften und konfigurieren Sie dann auf die GridView, um das Löschen zu unterstützen.
-
-Die `DeleteCommand` und `DeleteParameters` Eigenschaften können angegeben werden, in eine Reihe von Möglichkeiten:
-
-- Mithilfe der deklarativen syntax
-- Im Eigenschaftenfenster im Designer
-- Klicken Sie auf der Specify Bildschirm eine benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur im Konfigurieren von Datenquellen-Assistenten
-- Über die Schaltfläche "Erweitert" in die Spalten von einer Tabelle der Bildschirm zum Anzeigen von im Konfigurieren von Datenquellen-Assistenten angeben, generiert die tatsächlich automatisch die `DELETE` in verwendete Auflistung für SQL-Anweisung und die Parameter der `DeleteCommand` und `DeleteParameters` Eigenschaften
-
-Untersucht, wie Sie automatisch die `DELETE` Anweisung, die in Schritt2 erstellt haben. Jetzt können Sie s, die das Fenster "Eigenschaften" im Designer verwenden, jedoch die Assistenten zum Konfigurieren von Datenquellen oder die deklarative syntaxoption genauso gut funktionieren würde.
-
-Vom Designer in `InsertUpdateDelete.aspx`, klicken Sie auf die `ProductsDataSource` SqlDataSource-Steuerelement, und klicken Sie dann machen Sie das Fenster "Eigenschaften" (klicken Sie im Menü "Ansicht" Fenster "Eigenschaften" auswählen, oder einfach drücken Sie F4). Wählen Sie die DeleteQuery-Eigenschaft, die einen Satz von Ellipsen angezeigt wird.
-
-![Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image2.gif)
-
-**Abbildung 2**: Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster
+Um das Einfügen, aktualisieren und Löschen mit ObjectDataSource zu unterstützen, mussten wir die Methoden für die Objektebene angeben, die aufgerufen werden sollen, um die INSERT-, Update-oder DELETE-Aktion auszuführen. Mit SqlDataSource müssen wir `INSERT`, `UPDATE`und `DELETE` SQL-Anweisungen (oder gespeicherte Prozeduren) bereitstellen, die ausgeführt werden sollen. Wie in diesem Tutorial zu sehen ist, können diese Anweisungen manuell erstellt werden oder können automatisch vom Assistenten zum Konfigurieren von Datenquellen von SqlDataSource s generiert werden.
 
 > [!NOTE]
-> Die SqlDataSource-Steuerelement wurden einer DeleteQuery-Eigenschaft. Stattdessen DeleteQuery ist eine Kombination der `DeleteCommand` und `DeleteParameters` Eigenschaften und wird nur im Fenster Eigenschaften aufgelistet, wenn Sie das Fenster mit dem Designer anzeigen. Wenn Sie im Fenster Eigenschaften in der Datenquellensicht angezeigt wird, finden Sie die `DeleteCommand` Eigenschaft stattdessen.
+> Da wir bereits die Funktionen zum Einfügen, bearbeiten und Löschen der Steuerelemente GridView, DetailsView und FormView besprochen haben, konzentriert sich dieses Tutorial auf die Konfiguration des SqlDataSource-Steuer Elements, um diese Vorgänge zu unterstützen. Wenn Sie die Implementierung dieser Features in GridView, DetailsView und FormView durchführen müssen, kehren Sie zu den Tutorials zum Bearbeiten, einfügen und Löschen von Daten zurück, beginnend mit [einer Übersicht über das Einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md).
 
-Klicken Sie auf die Auslassungspunkte in der DeleteQuery-Eigenschaft, um das Dialogfeld "Befehls- und Parameter-Editor" zu öffnen, Feld (siehe Abbildung 3). In diesem Dialogfeld können Sie angeben der `DELETE` SQL-Anweisung, und geben Sie die Parameter. Geben Sie die folgende Abfrage in der `DELETE` Befehlstextfeld ein (entweder manuell oder über den Abfrage-Generator, falls gewünscht):
+## <a name="step-1-specifyinginsertupdate-anddeletestatements"></a>Schritt 1: Angeben von`INSERT`-,`UPDATE`-und`DELETE`-Anweisungen
+
+Wie in den letzten beiden Tutorials gezeigt, müssen zum Abrufen von Daten aus einem SqlDataSource-Steuerelement zwei Eigenschaften festgelegt werden:
+
+1. `ConnectionString`, das angibt, an welche Datenbank die Abfrage gesendet werden soll, und
+2. `SelectCommand`, das die Ad-hoc-SQL-Anweisung oder den Namen der gespeicherten Prozedur angibt, die zum Zurückgeben der Ergebnisse ausgeführt werden soll.
+
+Für `SelectCommand` Werte mit Parametern werden die Parameterwerte über die SqlDataSource s-`SelectParameters` Auflistung angegeben und können hart codierte Werte, allgemeine Parameter Quell Werte (queryString-Felder, Sitzungsvariablen, websteuer Element Werte usw.) enthalten, oder Sie können Programm gesteuert zugewiesen werden. Wenn das SqlDataSource-Steuerelement s `Select()` Methode entweder Programm gesteuert oder automatisch von einem datenweb-Steuerelement aufgerufen wird, wird eine Verbindung mit der Datenbank hergestellt, die Parameterwerte werden der Abfrage zugewiesen, und der Befehl wird aus der Datenbank abgefragt. Die Ergebnisse werden dann entweder als DataSet oder DataReader zurückgegeben, abhängig vom Wert der `DataSourceMode`-Eigenschaft des Steuer Elements.
+
+Zusammen mit der Auswahl von Daten kann das SqlDataSource-Steuerelement verwendet werden, um Daten einzufügen, zu aktualisieren und zu löschen, indem `INSERT`-, `UPDATE`-und `DELETE` SQL-Anweisungen auf die gleiche Weise bereitgestellt werden. Weisen Sie einfach die Eigenschaften `InsertCommand`, `UpdateCommand`und `DeleteCommand` den `INSERT`-, `UPDATE`-und `DELETE` SQL-Anweisungen zu, die ausgeführt werden sollen. Wenn die-Anweisungen über Parameter verfügen (wie Sie am meisten immer), schließen Sie Sie in die `InsertParameters`-, `UpdateParameters`-und `DeleteParameters`-Auflistungen ein.
+
+Nachdem ein `InsertCommand`-, `UpdateCommand`-oder `DeleteCommand` Wert angegeben wurde, wird die Option Einfügen aktivieren, Bearbeiten aktivieren oder löschen aktivieren im entsprechenden datwebcontrol s-Smarttag verfügbar. Um dies zu veranschaulichen, betrachten Sie ein Beispiel von der `Querying.aspx` Seite, die im Tutorial [Abfragen von Daten mit dem SqlDataSource-Steuer](querying-data-with-the-sqldatasource-control-vb.md) Element erstellt wurde, und erweitern Sie es, um Löschfunktionen einzuschließen.
+
+Öffnen Sie zunächst die Seiten `InsertUpdateDelete.aspx` und `Querying.aspx` aus dem Ordner `SqlDataSource`. Wählen Sie im Designer auf der Seite `Querying.aspx` die SqlDataSource-und GridView-Elemente aus dem ersten Beispiel aus (die `ProductsDataSource`-und `GridView1`-Steuerelemente). Nachdem Sie die beiden Steuerelemente ausgewählt haben, wechseln Sie zum Menü Bearbeiten, und wählen Sie kopieren aus (oder drücken Sie einfach STRG + C). Navigieren Sie als nächstes zum Designer von `InsertUpdateDelete.aspx`, und fügen Sie die Steuerelemente ein. Nachdem Sie die beiden Steuerelemente in `InsertUpdateDelete.aspx`verschoben haben, testen Sie die Seite in einem Browser. Es sollten die Werte der Spalten `ProductID`, `ProductName`und `UnitPrice` für alle Datensätze in der `Products` Datenbanktabelle angezeigt werden.
+
+[![alle Produkte aufgeführt werden, geordnet nach ProductID](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.png)
+
+**Abbildung 1**: alle Produkte werden aufgelistet, geordnet nach `ProductID` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image2.png))
+
+## <a name="adding-the-sqldatasource-sdeletecommandanddeleteparametersproperties"></a>Hinzufügen der Eigenschaften "SqlDataSource s`DeleteCommand`" und "`DeleteParameters`"
+
+An dieser Stelle haben wir eine SqlDataSource, die einfach alle Datensätze aus der `Products` Tabelle und eine GridView zurückgibt, die diese Daten rendert. Unser Ziel ist es, dieses Beispiel zu erweitern, um dem Benutzer zu ermöglichen, Produkte über die GridView zu löschen. Um dies zu erreichen, müssen Sie Werte für das SqlDataSource-Steuerelement s `DeleteCommand` und `DeleteParameters` Eigenschaften angeben und dann die GridView so konfigurieren, dass das Löschen unterstützt wird.
+
+Die Eigenschaften "`DeleteCommand`" und "`DeleteParameters`" können auf verschiedene Arten angegeben werden:
+
+- Durch die deklarative Syntax
+- Aus der Eigenschaftenfenster im Designer
+- Über den Bildschirm benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben im Assistenten zum Konfigurieren von Datenquellen
+- Über die Schaltfläche Erweitert im Bildschirm Spalten aus einer Tabelle der Sicht angeben im Assistenten zum Konfigurieren von Datenquellen, der automatisch die `DELETE` SQL-Anweisung und die Parameter Auflistung generiert, die in den Eigenschaften `DeleteCommand` und `DeleteParameters` verwendet werden.
+
+Wir untersuchen, wie die `DELETE`-Anweisung in Schritt 2 automatisch erstellt wird. Verwenden Sie vorerst die Eigenschaftenfenster im Designer, obwohl der Assistent zum Konfigurieren von Datenquellen oder die deklarative Syntax ebenfalls funktionieren würde.
+
+Klicken Sie im Designer in `InsertUpdateDelete.aspx`auf die `ProductsDataSource` SqlDataSource, und rufen Sie dann die Eigenschaftenfenster auf (Klicken Sie im Menü Ansicht auf Eigenschaftenfenster, oder drücken Sie einfach F4). Wählen Sie die DeleteQuery-Eigenschaft aus, die eine Reihe von Ellipsen aufführt.
+
+![Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaften Fenster aus.](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image2.gif)
+
+**Abbildung 2**: Auswählen der DeleteQuery-Eigenschaft im Eigenschaften Fenster
+
+> [!NOTE]
+> SqlDataSource hat keine DeleteQuery-Eigenschaft. DeleteQuery ist vielmehr eine Kombination aus den Eigenschaften `DeleteCommand` und `DeleteParameters` und wird nur im Eigenschaftenfenster aufgelistet, wenn das Fenster über den Designer angezeigt wird. Wenn Sie sich die Eigenschaftenfenster in der Quell Ansicht ansehen, finden Sie stattdessen die Eigenschaft `DeleteCommand`.
+
+Klicken Sie in der DeleteQuery-Eigenschaft auf die Auslassungs Punkte, um das Dialogfeld Befehls-und Parameter-Editor anzuzeigen (siehe Abbildung 3). In diesem Dialogfeld können Sie die `DELETE` SQL-Anweisung angeben und die Parameter angeben. Geben Sie die folgende Abfrage in das Textfeld `DELETE`-Befehl ein (entweder manuell oder mithilfe des Abfrage-Generator, wenn Sie es bevorzugen):
 
 [!code-sql[Main](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/samples/sample1.sql)]
 
-Klicken Sie dann auf die Schaltfläche "Parameter aktualisieren", Hinzufügen der `@ProductID` Parameter, um die Liste der folgenden Parameter.
+Klicken Sie anschließend auf die Schaltfläche Parameter aktualisieren, um der Liste der unten aufgeführten Parameter den `@ProductID`-Parameter hinzuzufügen.
 
-[![Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.png)
+[![die DeleteQuery-Eigenschaft im Eigenschaften Fenster auswählen.](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.png)
 
-**Abbildung 3**: Wählen Sie die DeleteQuery-Eigenschaft im Eigenschaftenfenster ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.png))
+**Abbildung 3**: Auswählen der DeleteQuery-Eigenschaft im Eigenschaften Fenster ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.png))
 
-Führen Sie *nicht* Geben Sie einen Wert für diesen Parameter (lassen, die als Parameter an keine Quelle). Nachdem wir Unterstützung für das Löschen von an die GridView hinzugefügt haben, die GridView wird automatisch Bereitstellen der Wert dieses Parameters, mit dem Wert des der `DataKeys` Sammlung für die Zeile, deren löschen-Schaltfläche geklickt wurde.
+Geben Sie *keinen* Wert für diesen Parameter an (belassen Sie die Parameter Quelle bei None). Nachdem wir die Unterstützung für das Löschen der GridView hinzugefügt haben, wird dieser Parameterwert von GridView automatisch bereitgestellt. dabei wird der Wert der `DataKeys` Auflistung für die Zeile verwendet, auf deren Lösch Schaltfläche geklickt wurde.
 
 > [!NOTE]
-> Der Parametername, der verwendet wird, der `DELETE` Abfrage *muss* übereinstimmen, den der Name des der `DataKeyNames` Wert in der GridView, DetailsView oder FormView-Steuerelement. D. h. der Parameter in der `DELETE` Anweisung ist absichtlich mit dem Namen `@ProductID` (anstelle von, z. B. `@ID`), da der Name der Primärschlüsselspalte in der Products-Tabelle (und daher die DataKeyNames-Wert in den GridView-Ansicht) ist `ProductID`.
+> Der Parameter Name, der in der `DELETE` Abfrage verwendet wird, *muss* mit dem Namen des `DataKeyNames` Werts in GridView, DetailsView oder FormView identisch sein. Das heißt, der-Parameter in der `DELETE`-Anweisung wird gezielt `@ProductID` benannt (anstelle von `@ID`), da der Name der Primärschlüssel Spalte in der Products-Tabelle (und somit der DataKeyNames-Wert in der GridView) `ProductID`ist.
 
-Wenn der Name des Parameters und `DataKeyNames` Wert t Match, GridView kann nicht automatisch weisen Sie dem Parameter den Wert aus der `DataKeys` Auflistung.
+Wenn der Parameter Name und der `DataKeyNames` Wert nicht mit t Stimmen, kann die GridView den Parameter nicht automatisch dem Wert aus der `DataKeys` Auflistung zuweisen.
 
-Klicken Sie nach dem Eingeben der Delete-bezogene Informationen in das Befehls- und Parameter-Editor-Dialogfeld klicken Sie auf OK, und wechseln Sie zur Quellansicht, das sich ergebende deklarative Markup zu untersuchen:
+Nachdem Sie die Lösch bezogenen Informationen in das Dialogfeld Befehls-und Parameter-Editor eingegeben haben, klicken Sie auf OK, und wechseln Sie zur Quell Ansicht, um das resultierende deklarative Markup zu untersuchen:
 
 [!code-aspx[Main](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/samples/sample2.aspx)]
 
-Beachten Sie das Hinzufügen der `DeleteCommand` Eigenschaft als auch die `<DeleteParameters>` Abschnitt und das Parameterobjekt mit dem Namen `productID`.
+Beachten Sie das Hinzufügen der `DeleteCommand`-Eigenschaft sowie des `<DeleteParameters>` Abschnitts und des Parameter Objekts mit dem Namen `productID`.
 
-## <a name="configuring-the-gridview-for-deleting"></a>Konfigurieren der GridView für das Löschen
+## <a name="configuring-the-gridview-for-deleting"></a>Konfigurieren der GridView zum Löschen
 
-Mit der `DeleteCommand` Eigenschaft hinzugefügt, das GridView-s-Smarttag enthält jetzt die Option löschen aktivieren. Fahren Sie fort, und aktivieren Sie dieses Kontrollkästchen. Siehe [eine Übersicht der einfügen, aktualisieren und Löschen von](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md), dies bewirkt, dass die GridView eine CommandField mit Hinzufügen der `ShowDeleteButton` -Eigenschaft auf festgelegt `True`. Abbildung 4 zeigt, wenn die Seite über einen Browser zugegriffen wird, an denen eine Löschen-Schaltfläche enthalten ist. Testen Sie diese Seite, löschen Sie einige Produkte.
+Wenn die `DeleteCommand`-Eigenschaft hinzugefügt wurde, enthält das GridView s-Smarttag jetzt die Option zum Aktivieren der Löschung. Aktivieren Sie dieses Kontrollkästchen. Wie in [einer Übersicht über das Einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)erläutert, fügt die GridView ein CommandField-Objekt hinzu, dessen `ShowDeleteButton`-Eigenschaft auf `True`festgelegt ist. Wie in Abbildung 4 gezeigt, wird die Schaltfläche "Löschen" angezeigt, wenn die Seite in einem Browser geöffnet wird. Testen Sie diese Seite, indem Sie einige Produkte löschen.
 
-[![Jede Zeile GridView enthält jetzt eine Schaltfläche "löschen"](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.png)
+[![jede GridView-Zeile nun eine Schaltfläche zum Löschen enthält.](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.png)
 
-**Abbildung 4**: Jede GridView-Zeile enthält jetzt eine Löschen-Schaltfläche ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.png))
+**Abbildung 4**: jede GridView-Zeile enthält jetzt eine Lösch Schaltfläche ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.png))
 
-Nach dem Klicken auf eine Schaltfläche "löschen", ein Postback auftritt, weist der GridView der `ProductID` Parameter den Wert von der `DataKeys` -Wert für die Zeile, deren Schaltfläche "löschen" geklickt wurde, und ruft die SqlDataSource s `Delete()` Methode. Das SqlDataSource-Steuerelement klicken Sie dann eine Verbindung mit der Datenbank her und führt die `DELETE` Anweisung. GridView bindet dann erneut, auf dem SqlDataSource-Steuerelement, abrufen und Anzeigen von den aktuellen Satz von Produkten (einschließlich nicht mehr den Datensatz einfach gelöscht).
+Wenn Sie auf eine Lösch Schaltfläche klicken, wird ein Postback durchgeführt. die GridView weist den `ProductID`-Parameter den Wert des `DataKeys` Sammlungs Werts für die Zeile zu, auf deren Lösch Schaltfläche geklickt wurde, und ruft die `Delete()`-Methode SqlDataSource auf. Das SqlDataSource-Steuerelement stellt dann eine Verbindung mit der Datenbank her und führt die `DELETE`-Anweisung aus. Die GridView bindet dann an die SqlDataSource zurück und zeigt die aktuelle Produktgruppe an (die nicht mehr den soeben gelöschten Datensatz enthält).
 
 > [!NOTE]
-> Da GridView verwendet die `DataKeys` Auflistung zum Auffüllen der SqlDataSource-Parameter, es wichtige s, der GridView-s `DataKeyNames` Eigenschaft festgelegt werden, um die Spalten, die den Primärschlüssel und die bilden s SqlDataSource-Steuerelement `SelectCommand` zurückgibt Diese Spalten. Darüber hinaus es wichtig, dass der Parameter in der SqlDataSource s Namen s `DeleteCommand` nastaven NA hodnotu `@ProductID`. Wenn die `DataKeyNames` Eigenschaft nicht festgelegt ist, oder der Parameter ist nicht mit dem Namen `@ProductsID`, klicken Sie auf die Schaltfläche "löschen" bewirkt, dass einen Postback, aber jeder Datensatz wird nicht tatsächlich gelöscht.
+> Da in der GridView-Auflistung die SqlDataSource-Parameter mit der `DataKeys`-Auflistung aufgefüllt werden, ist es wichtig, dass die GridView s `DataKeyNames`-Eigenschaft auf die Spalte (n) festgelegt wird, die den Primärschlüssel bilden, und dass die SqlDataSource s-`SelectCommand` diese Spalten zurückgibt. Darüber hinaus ist es wichtig, dass der Parameter Name in der SqlDataSource s-`DeleteCommand` auf `@ProductID`festgelegt ist. Wenn die `DataKeyNames`-Eigenschaft nicht festgelegt ist oder der-Parameter nicht `@ProductsID`benannt ist, wird durch Klicken auf die Schaltfläche "Löschen" ein Postback ausgelöst, aber es werden keine Datensätze gelöscht.
 
-Abbildung 5 zeigt diese Interaktion grafisch an. Verweisen zurück auf die [Untersuchen der Ereignisse zugeordnet einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb.md) Tutorial für eine ausführlichere Erläuterung in der Kette der Ereignisse im Zusammenhang mit einfügen, aktualisieren und löschen aus einem Websteuerelement.
+In Abbildung 5 wird diese Interaktion grafisch dargestellt. Eine ausführlichere Erläuterung der Ereigniskette, die dem Einfügen, aktualisieren und Löschen von einem datenweb-Steuerelement zugeordnet ist, finden Sie unter unter [Suchen der Ereignisse im Zusammenhang mit dem Tutorial zum Einfügen, aktualisieren und löschen](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb.md) .
 
-![Klicken Sie auf die Schaltfläche "löschen" in der GridView, ruft die SqlDataSource-s-Delete()-Methode](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.gif)
+![Durch Klicken auf die Schaltfläche "Löschen" in der GridView wird die Delete ()-Methode von SqlDataSource aufgerufen.](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.gif)
 
-**Abbildung 5**: Klicken Sie auf die Schaltfläche "löschen" in den GridView-Ansicht die s SqlDataSource-Steuerelement ruft `Delete()` Methode
+**Abbildung 5**: Klicken auf die Schaltfläche "Löschen" in der GridView-Methode ruft die SqlDataSource s-`Delete()` Methode auf
 
-## <a name="step-2-automatically-generating-theinsertupdate-anddeletestatements"></a>Schritt 2: Wird automatisch generiert. die`INSERT`,`UPDATE`, und`DELETE`Anweisungen
+## <a name="step-2-automatically-generating-theinsertupdate-anddeletestatements"></a>Schritt 2: Automatisches Erstellen der`INSERT`-,`UPDATE`-und`DELETE`-Anweisung
 
-Schritt 1 untersucht `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen können über das Fenster "Eigenschaften" oder die deklarative Syntax des Steuerelements s angegeben werden. Dieser Ansatz erfordert jedoch, dass manuell, die SQL-Anweisungen manuell schreiben wir die monotone und fehleranfällig sein können. Glücklicherweise bietet der Assistent zum Konfigurieren der Datenquelle eine Option aus, damit die `INSERT`, `UPDATE`, und `DELETE` Anweisungen, die automatisch generiert, wenn die Spalten angeben, aus einer Tabelle mit dem Bildschirm "Ansicht" verwenden.
+Wie in Schritt 1 untersucht, können `INSERT`-, `UPDATE`-und `DELETE`-SQL-Anweisungen über die deklarative Syntax von Eigenschaftenfenster oder Steuerelement s angegeben werden. Dieser Ansatz erfordert jedoch, dass Sie die SQL-Anweisungen manuell manuell schreiben. Dies kann monoton und fehleranfällig sein. Glücklicherweise bietet der Assistent zum Konfigurieren von Datenquellen eine Option, mit der die Anweisungen `INSERT`, `UPDATE`und `DELETE` automatisch generiert werden, wenn Sie den Bildschirm Spalten aus einer Tabellen Sicht angeben verwenden.
 
-Lassen Sie s, die diese Option für die automatische Generierung nutzen. Hinzufügen des Designers in einem DetailsView `InsertUpdateDelete.aspx` und legen Sie seine `ID` Eigenschaft `ManageProducts`. Von DetailsView s Smarttags, wählen Sie als Nächstes erstellen eine neue Datenquelle, und erstellen ein SqlDataSource-Steuerelement mit dem Namen `ManageProductsDataSource`.
+Sehen Sie sich diese automatische Generierungs Option an. Fügen Sie dem Designer in `InsertUpdateDelete.aspx` eine DetailsView hinzu, und legen Sie dessen `ID`-Eigenschaft auf `ManageProducts`fest. Wählen Sie als nächstes im Smarttags DetailsView s die Option zum Erstellen einer neuen Datenquelle aus, und erstellen Sie eine SqlDataSource mit dem Namen `ManageProductsDataSource`.
 
-[![Erstellen Sie eine neue SqlDataSource-Steuerelement mit dem Namen ManageProductsDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.png)
+[![erstellen Sie eine neue SqlDataSource mit dem Namen "manageproductdatasource".](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.png)
 
-**Abbildung 6**: Erstellen Sie eine neue SqlDataSource-Steuerelement mit dem Namen `ManageProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image8.png))
+**Abbildung 6**: Erstellen einer neuen SqlDataSource mit dem Namen "`ManageProductsDataSource`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image8.png))
 
-Deaktivieren Sie im Konfigurieren von Datenquellen-Assistenten werden Sie zum Verwenden der `NORTHWINDConnectionString` Verbindung Zeichenfolge ein, und klicken Sie auf Weiter. Aus dem Bildschirm für die Select-Anweisung konfigurieren, lassen Sie die Spalten angeben, aus einer Tabelle oder Sicht Optionsfeld ausgewählt, und wählen Sie die `Products` Tabelle aus der Dropdown-Liste. Wählen Sie die `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten aus der Liste das Kontrollkästchen.
+Wählen Sie im Assistenten zum Konfigurieren von Datenquellen die `NORTHWINDConnectionString` Verbindungs Zeichenfolge aus, und klicken Sie auf Weiter. Lassen Sie auf dem Bildschirm "SELECT-Anweisung konfigurieren" das Optionsfeld Spalten aus einer Tabelle oder Sicht angeben aktiviert, und wählen Sie die `Products` Tabelle aus der Dropdown Liste aus. Wählen Sie in der Liste der Kontrollkästchen die Spalten `ProductID`, `ProductName`, `UnitPrice`und `Discontinued` aus.
 
-[![Verwenden die Products-Tabelle, die ProductID, ProductName, UnitPrice und nicht mehr unterstützte Spalten zurückgeben](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.png)
+[Wenn Sie die Products-Tabelle verwenden, werden die Spalten ProductID, ProductName, UnitPrice und nicht mehr unterstützt. ![](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.png)
 
-**Abbildung 7**: Mithilfe der `Products` Table, Zurückgeben der `ProductID`, `ProductName`, `UnitPrice`, und `Discontinued` Spalten ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image10.png))
+**Abbildung 7**: Zurückgeben der Spalten `ProductID`, `ProductName`, `UnitPrice`und `Discontinued` mithilfe der `Products` Tabelle ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image10.png))
 
-Zum automatischen Generieren von `INSERT`, `UPDATE`, und `DELETE` Anweisungen basierend auf der ausgewählten Tabellen- und Spalten, klicken Sie auf die Schaltfläche "Erweitert", und überprüfen Sie die generieren `INSERT`, `UPDATE`, und `DELETE` Anweisungen Kontrollkästchen.
+Zum automatischen Generieren von `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen auf der Grundlage der ausgewählten Tabelle und Spalten klicken Sie auf die Schaltfläche Erweitert, und aktivieren Sie das Kontrollkästchen `INSERT`generieren, `UPDATE`und `DELETE` Anweisungen.
 
-![Überprüfen Sie die generieren INSERT, UPDATE und DELETE-Anweisungen Kontrollkästchen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image8.gif)
+![Aktivieren Sie das Kontrollkästchen INSERT-, Update-und DELETE-Anweisungen generieren.](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image8.gif)
 
-**Abbildung 8**: Überprüfen Sie die generieren `INSERT`, `UPDATE`, und `DELETE` Anweisungen Kontrollkästchen
+**Abbildung 8**: Aktivieren des Kontrollkästchens `INSERT`generieren, `UPDATE`und `DELETE` Anweisungen
 
-Der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen Kontrollkästchen wird nur überprüfbar sein, wenn die ausgewählte Tabelle über einen Primärschlüssel verfügt, und die Primärschlüsselspalte (oder Spalten) in der Liste der zurückgegebenen Spalten enthalten sind. Kontrollkästchen vollständige Parallelität verwenden, das ausgewählt wird, nach der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen Kontrollkästchen überprüft wurden, erweitern, wird die `WHERE` Klauseln in der resultierenden `UPDATE` und `DELETE` Anweisungen, die Steuerung durch vollständige Parallelität bereitzustellen. Jetzt lassen Sie dieses Kontrollkästchen deaktiviert wird; im nächsten Tutorial untersuchen wir die vollständigen Parallelität mit dem SqlDataSource-Steuerelement.
+Das Kontrollkästchen `INSERT`generieren, `UPDATE`und `DELETE` Anweisungen kann nur überprüft werden, wenn die ausgewählte Tabelle über einen Primärschlüssel verfügt und die Primärschlüssel Spalte (oder Spalten) in der Liste der zurückgegebenen Spalten enthalten ist. Das Kontrollkästchen "vollständige Parallelität verwenden", das nach dem Aktivieren des Kontrollkästchens "`INSERT`generieren", "`UPDATE`" und "`DELETE`" ausgewählt wird, erweitert die `WHERE` Klauseln in den resultierenden `UPDATE`-und `DELETE`-Anweisungen, um die Steuerung der vollständigen Parallelität Lassen Sie dieses Kontrollkästchen vorerst deaktiviert. im nächsten Tutorial untersuchen wir die optimistische Parallelität mit dem SqlDataSource-Steuerelement.
 
-Nach der Überprüfung der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen deaktivieren, klicken Sie auf "OK", um die Select-Anweisung konfigurieren Bildschirm zurückzukehren, klicken Sie auf Weiter, und schließen, um das Konfigurieren von Datenquellen-Assistenten zu beenden. Nach Abschluss des Assistenten, Visual Studio fügt BoundFields zur DetailsView für das `ProductID`, `ProductName`, und `UnitPrice` Spalten und eine CheckBoxField für die `Discontinued` Spalte. Aktivieren Sie vom DetailsView s Smarttag Paging aktivieren die Option, damit der Benutzer, die auf dieser Seite können die Produkte durchlaufen kann. Löschen Sie auch, das DetailsView-s `Width` und `Height` Eigenschaften.
+Nachdem Sie das Kontrollkästchen `INSERT`generieren, `UPDATE`und `DELETE` Anweisungen aktiviert haben, klicken Sie auf OK, um zum Bildschirm Select-Anweisung konfigurieren zurückzukehren. Klicken Sie dann auf weiter und dann auf Fertigstellen, um den Assistenten zum Konfigurieren von Datenquellen abzuschließen. Nachdem Sie den Assistenten abgeschlossen haben, fügt Visual Studio boundfields der DetailsView für die Spalten `ProductID`, `ProductName`und `UnitPrice` und ein CheckBoxField für die Spalte `Discontinued` hinzu. Aktivieren Sie aus dem Smarttag DetailsView s die Option Paging aktivieren, damit der Benutzer, der diese Seite besucht, die Produkte durchlaufen kann. Löschen Sie auch die Eigenschaften `Width` und `Height` DetailsView.
 
-Beachten Sie, dass das Smarttag der verfügbaren Optionen einfügen aktivieren, aktivieren Sie bearbeiten und löschen aktivieren. Dies ist, da es sich bei dem SqlDataSource-Steuerelement für Werte enthält die `InsertCommand`, `UpdateCommand`, und `DeleteCommand`, wie die folgende deklarative Syntax gezeigt:
+Beachten Sie, dass das Smarttags die Optionen Aktivieren von einfügen, Aktivieren der Bearbeitung und Aktivieren von Lösch Optionen enthält. Dies liegt daran, dass SqlDataSource Werte für die `InsertCommand`, `UpdateCommand`und `DeleteCommand`enthält, wie die folgende deklarative Syntax zeigt:
 
 [!code-aspx[Main](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/samples/sample3.aspx)]
 
-Beachten Sie, wie das SqlDataSource-Steuerelement automatisch für die festgelegten Werte wurden die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften. Die Anzahl der Spalten, die auf die verwiesen wird der `InsertCommand` und `UpdateCommand` Eigenschaften basieren auf den in der `SELECT` Anweisung. Also statt *jeder* Produkte-Spalte in der `InsertCommand` und `UpdateCommand`, es gibt nur die Spalten, die im angegebenen die `SelectCommand` (weniger `ProductID`, die wird ausgelassen, da es s ein [ `IDENTITY` Spalte](http://www.sqlteam.com/item.asp?ItemID=102), dessen Wert nicht geändert werden, wenn bearbeitet, und beim Einfügen automatisch zugewiesen). Darüber hinaus für jeden Parameter in der `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften vorhanden entsprechende Parameter in sind der `InsertParameters`, `UpdateParameters`, und `DeleteParameters` Sammlungen.
+Beachten Sie, dass für das SqlDataSource-Steuerelement Werte automatisch für die Eigenschaften `InsertCommand`, `UpdateCommand`und `DeleteCommand` festgelegt wurden. Die Spalten Gruppe, auf die in den Eigenschaften `InsertCommand` und `UpdateCommand` verwiesen wird, basieren auf den Spalten in der `SELECT`-Anweisung. Das heißt, anstatt *jede* Products-Spalte in der `InsertCommand` und `UpdateCommand`zu haben, gibt es nur die Spalten, die im `SelectCommand` angegeben sind (weniger `ProductID`, das weggelassen wird, da es sich um eine [`IDENTITY` Spalte](http://www.sqlteam.com/item.asp?ItemID=102)handelt, deren Wert bei der Bearbeitung nicht geändert werden kann und die beim Einfügen automatisch zugewiesen wird). Außerdem gibt es für jeden Parameter in den Eigenschaften `InsertCommand`, `UpdateCommand`und `DeleteCommand` entsprechende Parameter in den `InsertParameters`-, `UpdateParameters`-und `DeleteParameters`-Auflistungen.
 
-Überprüfen Sie zum Aktivieren der DetailsView s Datenfeatures Änderung der einfügen aktivieren, Bearbeiten aktivieren, und löschen aktivieren Optionen auf sein Smarttag. Dadurch wird eine CommandField mit seiner `ShowInsertButton`, `ShowEditButton`, und `ShowDeleteButton` Eigenschaften festgelegt, um `True`.
+Um die Daten Änderungs Features von DetailsView zu aktivieren, aktivieren Sie die Option Einfügen aktivieren, Bearbeiten aktivieren und löschen in der Smarttags aktivieren. Dadurch wird ein CommandField mit den Eigenschaften `ShowInsertButton`, `ShowEditButton`und `ShowDeleteButton` auf `True`festgelegt.
 
-Besuchen Sie die Seite in einem Browser, und notieren Sie sich, das Bearbeiten, löschen und neue Schaltflächen in DetailsView enthalten. Klicken Sie auf die Schaltfläche "Bearbeiten" DetailsView in den Bearbeitungsmodus, in dem jede BoundField angezeigt wird, dessen `ReadOnly` -Eigenschaftensatz auf `False` (Standard) als ein Textfeld, und die CheckBoxField als Kontrollkästchen.
+Besuchen Sie die Seite in einem Browser, und notieren Sie sich die Schaltflächen Bearbeiten, löschen und neu in der DetailsView. Wenn Sie auf die Schaltfläche "Bearbeiten" klicken, wird die DetailsView in den Bearbeitungsmodus umgewandelt, in dem jedes BoundField angezeigt wird, dessen `ReadOnly`-Eigenschaft auf `False` (Standard) als Textfeld festgelegt ist, und das CheckBoxField als Kontrollkästchen.
 
-[![Das DetailsView-s-Standard Bearbeitungsschnittstelle](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image11.png)
+[![der Standard Bearbeitungs Schnittstelle der DetailsView s](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image11.png)
 
-**Abbildung 9**: Das DetailsView-s-Standard bearbeiten-Schnittstelle ([klicken Sie, um das Bild in voller Größe anzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image12.png))
+**Abbildung 9**: die Standard Bearbeitungs Schnittstelle der DetailsView s ([Klicken Sie, um das Bild in voller Größe anzuzeigen](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image12.png))
 
-Auf ähnliche Weise können Sie das derzeit ausgewählte Produkt zu löschen oder Hinzufügen eines neuen Produkts mit dem System. Da die `InsertCommand` Anweisung funktioniert nur mit der `ProductName`, `UnitPrice`, und `Discontinued` Spalten, die anderen Spalten haben entweder `NULL` oder ihren Standardwert zugewiesen, die von der Datenbank beim Einfügen. Ebenso wie mit dem ObjectDataSource-Steuerelement, wenn die `InsertCommand` fehlt einer Datenbanktabelle, die Spalten, die nicht von t vorgenommen `NULL` s "und" Don ' t über einen Standardwert verfügen, ein SQL-Fehler auftreten, wird beim Ausführen der `INSERT` Anweisung.
-
-> [!NOTE]
-> Das DetailsView s einfügen und Bearbeiten von Schnittstellen verfügen nicht über ein beliebiges Anpassung oder Überprüfung aus. Hinzufügen von Steuerelementen zur gültigkeitsprüfung oder anpassen, die Schnittstellen, müssen Sie die BoundFields in von TemplateFields zu konvertieren. Finden Sie in der [Hinzufügen von Steuerelementen zur gültigkeitsprüfung zum Bearbeiten und Einfügen von Schnittstellen](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md) und [Anpassen der Benutzeroberfläche für die Änderung der Daten](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md) Lernprogramme für Weitere Informationen.
-
-Beachten Sie, dass für das Aktualisieren und löschen, DetailsView das aktuelle Produkt s verwendet außerdem, dass `DataKey` -Wert, der nur vorhanden ist, wenn die `DataKeyNames` Eigenschaft so konfiguriert ist. Wenn das Bearbeiten oder löschen angezeigt wird, keine Auswirkung haben, stellen Sie sicher, dass die `DataKeyNames` festgelegt wird.
-
-## <a name="limitations-of-automatically-generating-sql-statements"></a>Einschränkungen von SQL-Anweisungen wird automatisch generiert.
-
-Seit der Generierung `INSERT`, `UPDATE`, und `DELETE` Anweisungen-Option ist nur verfügbar, wenn Spalten aus einer Tabelle auswählen, für komplexere, Sie Abfragen Ihren eigenen schreiben muss `INSERT`, `UPDATE`, und `DELETE` Anweisungen, wie in Schritt 1. Häufig, SQL `SELECT` -Anweisungen `JOIN` s zum Wiederherstellen von Daten aus einem oder mehreren Nachschlagetabellen für Anzeigezwecke (z. B. Onlineschaltung des wieder die `Categories` Tabelle s `CategoryName` Feld beim Anzeigen von Produktinformationen). Zur gleichen Zeit, wir möchten ermöglicht dem Benutzer, bearbeiten, aktualisieren oder Einfügen von Daten in der Tabelle "Core" (`Products`, in diesem Fall).
-
-Während der `INSERT`, `UPDATE`, und `DELETE` Anweisungen können manuell eingegeben werden, sollten Sie die folgenden sparen Sie Zeit. Setup-zunächst dem SqlDataSource-Steuerelement, damit sie wieder Daten einfach Abrufen der `Products` Tabelle. Verwenden Sie die Spalten aus einer Tabelle oder Sicht Bildschirm Konfigurieren von Datenquellen-Assistenten s angeben, damit Sie automatisch generieren können die `INSERT`, `UPDATE`, und `DELETE` Anweisungen. Wählen Sie dann nach Abschluss des Assistenten zum Konfigurieren der SelectQuery aus dem Fenster "Eigenschaften" (oder alternativ, wechseln Sie zurück an den Assistent zum Konfigurieren von Datenquellen, aber verwenden Sie die benutzerdefinierte SQL-Anweisung angeben oder die gespeicherte Prozedur-Option). Aktualisieren Sie dann die `SELECT` -Anweisung zum Einschließen der `JOIN` Syntax. Diese Technik bietet zeitsparende Vorteile der automatisch generierten SQL-Anweisungen und ermöglicht eine stärker angepassten `SELECT` Anweisung.
-
-Eine weitere Einschränkung der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` Anweisungen besteht, die aus den Spalten in der `INSERT` und `UPDATE` Anweisungen werden auf Grundlage der Spalten, die vom der `SELECT` Anweisung. Wir müssen möglicherweise aktualisieren oder Einfügen von mehr oder weniger Felder jedoch. Angenommen, in dem Beispiel aus Schritt2, vielleicht möchten wir haben die `UnitPrice` BoundField schreibgeschützt sein. Es sollte nicht in diesem Fall angezeigt, der `UpdateCommand`. Oder wir können möchten, legen Sie den Wert eines Tabellenfelds, die nicht angezeigt wird, in den GridView-Ansicht. Z. B. das Hinzufügen einer neuen Datensatz möglicherweise möchten wir die `QuantityPerUnit` Wert auf TODO festgelegt.
-
-Wenn solche Anpassungen erforderlich sind, müssen Sie sie manuell über das Fenster "Eigenschaften", die benutzerdefinierte SQL-Anweisung angeben oder die gespeicherte Prozedur eine Option im Assistenten oder über die deklarative Syntax machen.
+Auf ähnliche Weise können Sie das derzeit ausgewählte Produkt löschen oder dem System ein neues Produkt hinzufügen. Da die `InsertCommand`-Anweisung nur mit den Spalten `ProductName`, `UnitPrice`und `Discontinued` verwendet werden kann, haben die anderen Spalten entweder `NULL` oder deren Standardwert beim Einfügen von der Datenbank zugewiesen. Ebenso wie bei ObjectDataSource tritt beim Versuch, die `INSERT` Anweisung auszuführen, ein SQL-Fehler auf, wenn in der `InsertCommand` keine Datenbanktabellen Spalten vorhanden sind, die `NULL` s nicht zulassen, und kein Standardwert vorhanden ist.
 
 > [!NOTE]
-> Beim Hinzufügen von Parametern, die entsprechenden Felder in den Daten noch keine-Steuerelement Web, sollten Sie bedenken, die diesen Parameterwerten Werte auf irgendeine Weise zugewiesen werden müssen. Diese Werte sind möglich: hartcodierte direkt in die `InsertCommand` oder `UpdateCommand`; können aus einer vordefinierten Quelle (die Abfragezeichenfolge, Sitzungszustand, Websteuerelemente auf der Seite, und So weiter); stammen oder können programmgesteuert zugewiesen werden, wie im vorherigen Tutorial beschrieben.
+> In den DetailsView s-und-Bearbeitungs Schnittstellen fehlt eine Anpassung oder Validierung. Zum Hinzufügen von Validierungs Steuerelementen oder zum Anpassen der Schnittstellen müssen Sie boundfields in templatefields konvertieren. Weitere Informationen finden Sie in den Tutorials zum [Hinzufügen von Validierungs Steuerelementen zu den Bearbeitungs-und einfügeschnittstellen](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md) und zum [Anpassen der Daten Änderungs Schnittstelle](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md) .
 
-## <a name="summary"></a>Zusammenfassung
+Beachten Sie außerdem, dass für das Aktualisieren und Löschen der DetailsView den aktuellen Product s `DataKey` Wert verwendet, der nur vorhanden ist, wenn die `DataKeyNames`-Eigenschaft konfiguriert ist. Wenn die Bearbeitung oder Löschung scheinbar keine Auswirkung hat, stellen Sie sicher, dass die `DataKeyNames`-Eigenschaft festgelegt ist.
 
-Damit die Daten, dass websteuerungselemente, um ihre integrierte einfügen, bearbeiten und Löschen von Funktionen zu nutzen muss das Datenquellen-Steuerelement an das, dem Sie gebunden sind, solche Funktionen bieten. Für dem SqlDataSource-Steuerelement, das bedeutet, dass `INSERT`, `UPDATE`, und `DELETE` SQL-Anweisungen müssen zugewiesen werden, um die `InsertCommand`, `UpdateCommand`, und `DeleteCommand` Eigenschaften. Diese Eigenschaften und die entsprechenden Parameter Sammlungen enthalten, können manuell hinzugefügt oder mit dem Konfigurieren von Datenquellen-Assistenten automatisch generiert. In diesem Tutorial untersucht wir beide Verfahren.
+## <a name="limitations-of-automatically-generating-sql-statements"></a>Einschränkungen beim automatischen Erstellen von SQL-Anweisungen
 
-Untersuchten wir zu "ObjectDataSource" vollständige Parallelität mit dem [optimistische Parallelität implementieren](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md) Tutorial. Das SqlDataSource-Steuerelement unterstützt außerdem optimistische Parallelität. Wie in Schritt2 erwähnt, bei der automatischen farbgenerierung die `INSERT`, `UPDATE`, und `DELETE` -Anweisungen, die der Assistent bietet einer vollständige Parallelität-Option verwenden. Im nächsten Tutorial sehen, verwenden optimistischen Parallelität, mit dem SqlDataSource-Steuerelement ändert die `WHERE` Klauseln in der `UPDATE` und `DELETE` Anweisungen, um sicherzustellen, dass die Werte für die anderen Spalten nicht geändert wurden, da die Daten entsprechend letzten seiner auf der Seite angezeigt.
+Da die Option `INSERT`generieren, `UPDATE`und `DELETE` Anweisungen nur verfügbar ist, wenn Sie Spalten aus einer Tabelle auswählen, müssen Sie für komplexere Abfragen eigene `INSERT`-, `UPDATE`-und `DELETE` Anweisungen schreiben, wie in Schritt 1. SQL `SELECT`-Anweisungen verwenden `JOIN` s häufig, um Daten aus einer oder mehreren Nachschlage Tabellen zu Anzeige Zwecken zurückzuschalten (z. b. beim Anzeigen der `Categories` Tabelle s `CategoryName` Feld beim Anzeigen von Produktinformationen). Gleichzeitig empfiehlt es sich, den Benutzern das Bearbeiten, aktualisieren oder Einfügen von Daten in die Kern Tabelle (in diesem Fall`Products`) zu ermöglichen.
 
-Viel Spaß beim Programmieren!
+Während die Anweisungen `INSERT`, `UPDATE`und `DELETE` manuell eingegeben werden können, sollten Sie sich den folgenden Zeit speichenden Tipp ansehen. Richten Sie zunächst SqlDataSource so ein, dass Daten direkt aus der `Products` Tabelle abgerufen werden. Verwenden Sie den Assistenten zum Konfigurieren von Datenquellen zum Angeben von Spalten aus einer Tabelle oder Sicht, sodass Sie automatisch die Anweisungen `INSERT`, `UPDATE`und `DELETE` generieren können. Nachdem Sie den Assistenten abgeschlossen haben, wählen Sie die Option zum Konfigurieren von SelectQuery aus dem Eigenschaftenfenster aus (oder wechseln Sie alternativ zum Assistenten zum Konfigurieren von Datenquellen, verwenden Sie jedoch die Option benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben). Aktualisieren Sie dann die `SELECT`-Anweisung, sodass Sie die `JOIN`-Syntax enthält. Diese Technik bietet zeitsparende Vorteile der automatisch generierten SQL-Anweisungen und ermöglicht eine stärker angepasste `SELECT`-Anweisung.
 
-## <a name="about-the-author"></a>Der Autor
+Eine weitere Einschränkung der automatischen Erstellung der `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen besteht darin, dass die Spalten in den `INSERT`-und `UPDATE` Anweisungen auf den Spalten basieren, die von der `SELECT`-Anweisung zurückgegeben werden. Wir müssen jedoch möglicherweise mehr oder weniger Felder aktualisieren oder einfügen. Beispielsweise möchten Sie im Beispiel aus Schritt 2 vielleicht, dass die `UnitPrice` BoundField schreibgeschützt ist. In diesem Fall sollte Sie nicht in der `UpdateCommand`angezeigt werden. Möglicherweise möchten wir auch den Wert eines Tabellen Felds festlegen, das nicht in der GridView angezeigt wird. Wenn Sie beispielsweise einen neuen Datensatz hinzufügen, möchten wir möglicherweise, dass der `QuantityPerUnit` Wert auf TODO festgelegt ist.
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+Wenn solche Anpassungen erforderlich sind, müssen Sie Sie entweder über die Eigenschaftenfenster, die Option benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben im Assistenten oder über die deklarative Syntax manuell vornehmen.
+
+> [!NOTE]
+> Beachten Sie beim Hinzufügen von Parametern, die keine entsprechenden Felder im datenweb-Steuerelement aufweisen, dass diese Parameterwerte auf irgendeine Weise den Werten zugewiesen werden müssen. Diese Werte können direkt in der `InsertCommand` oder `UpdateCommand`fest codiert werden. kann aus einer vordefinierten Quelle (der QueryString, dem Sitzungszustand, den websteuer Elementen auf der Seite usw.) stammen. oder kann Programm gesteuert zugewiesen werden, wie im vorherigen Tutorial gezeigt.
+
+## <a name="summary"></a>Summary
+
+Damit die datenweb Steuerelemente ihre integrierten Funktionen zum Einfügen, bearbeiten und löschen nutzen können, muss das Datenquellen-Steuerelement, an das Sie gebunden sind, eine solche Funktionalität bieten. Für SqlDataSource bedeutet dies, dass `INSERT`-, `UPDATE`-und `DELETE`-SQL-Anweisungen den Eigenschaften `InsertCommand`, `UpdateCommand`und `DeleteCommand` zugewiesen werden müssen. Diese Eigenschaften und die entsprechenden Parameter Sammlungen können manuell hinzugefügt oder automatisch mithilfe des Assistenten zum Konfigurieren von Datenquellen generiert werden. In diesem Tutorial haben wir beide Verfahren untersucht.
+
+Wir haben die Verwendung der optimistischen Parallelität mit ObjectDataSource im Tutorial zum [Implementieren von optimistischer](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md) Parallelität untersucht. Das SqlDataSource-Steuerelement bietet auch Unterstützung für vollständige Parallelität. Wie in Schritt 2 erwähnt, bietet der Assistent beim automatischen Erstellen der `INSERT`-, `UPDATE`-und `DELETE`-Anweisung eine Option zur Verwendung optimistischer Parallelität. Wie wir im nächsten Tutorial sehen werden, ändert die Verwendung von optimistischer Parallelität mit der SqlDataSource die `WHERE`-Klauseln in den `UPDATE`-und `DELETE`-Anweisungen, um sicherzustellen, dass die Werte für die anderen Spalten seit dem letzten Anzeigen der Daten auf der Seite nicht geändert wurden.
+
+Fröhliche Programmierung!
+
+## <a name="about-the-author"></a>Informationen zum Autor
+
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Zurück](using-parameterized-queries-with-the-sqldatasource-vb.md)

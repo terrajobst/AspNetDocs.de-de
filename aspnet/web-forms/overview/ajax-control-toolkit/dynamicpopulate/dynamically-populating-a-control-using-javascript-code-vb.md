@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
-title: Dynamisches Auffüllen eines Steuerelements, die mit JavaScript-Code (VB) | Microsoft-Dokumentation
+title: Dynamisches Auffüllen eines Steuer Elements mithilfe von JavaScript-Code (VB) | Microsoft-Dokumentation
 author: wenz
-description: Das DynamicPopulate-Steuerelement in ASP.NET AJAX Control Toolkit Aufrufe eines Webdiensts (oder eine Seitenmethode) und füllt den resultierenden Wert in ein Zielsteuerelement, auf t...
+description: Das DynamicPopulate-Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert in ein Ziel Steuerelement unter t...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 90582e54-3e90-432a-9da5-689fb39ed56b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7fc9ce6ecf01508fe426a9241cd6fbe362df4657
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b2bd5b1571ccebc9baa501b29743aecdb4543fb2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132707"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599220"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Dynamisches Auffüllen eines Steuerelements über den JavaScript-Code (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1VB.pdf)
 
-> Das DynamicPopulate-Steuerelement in ASP.NET AJAX Control Toolkit Aufrufe eines Webdiensts (oder eine Seitenmethode) und füllt den resultierenden Wert in einem Zielsteuerelement auf der Seite, ohne eine seitenaktualisierung. Es ist auch möglich, um die Auffüllung mithilfe von benutzerdefinierten JavaScript-Code für die clientseitige auszulösen.
+> Das DynamicPopulate-Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert in ein Ziel Steuerelement auf der Seite, ohne eine Seiten Aktualisierung durchführen zu müssen. Es ist auch möglich, die Auffüllung mithilfe von benutzerdefiniertem Client seitigem JavaScript-Code zu initiieren.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die `DynamicPopulate` -Steuerelement in ASP.NET AJAX Control Toolkit Aufrufe eines Webdiensts (oder eine Seitenmethode), und füllt den resultierenden Wert in einem Zielsteuerelement auf der Seite, ohne eine seitenaktualisierung. Es ist auch möglich, um die Auffüllung mithilfe von benutzerdefinierten JavaScript-Code für die clientseitige auszulösen.
+Das `DynamicPopulate`-Steuerelement im ASP.NET AJAX Control Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert ohne Seiten Aktualisierung in ein Ziel Steuerelement auf der Seite aus. Es ist auch möglich, die Auffüllung mithilfe von benutzerdefiniertem Client seitigem JavaScript-Code zu initiieren.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal benötigen Sie eines ASP.NET-Webdiensts die implementiert wird, die Methode aufgerufen werden, indem Sie die `DynamicPopulateExtender` Steuerelement. Der Webdienst implementiert, die Methode `getDate()` erwartet ein Argument vom Typzeichenfolge, mit dem Namen `contextKey`, da die `DynamicPopulate` Steuerelement sendet ein Teil der Informationen zum Sitzungskontext mit jeder Aufruf des Webdiensts. Hier ist der Code (Datei `DynamicPopulate.vb.asmx`) die ruft des aktuellen Datums in der folgenden drei Formaten:
+Zunächst benötigen Sie einen ASP.NET-Webdienst, der die Methode implementiert, die vom `DynamicPopulateExtender` Steuerelement aufgerufen werden soll. Der Webdienst implementiert die-Methode `getDate()`, die ein Argument vom Typ "String" erwartet, das als `contextKey`bezeichnet wird, da das `DynamicPopulate`-Steuerelement einen Teil der Kontextinformationen mit jedem Webdienst Aufruf sendet. Im folgenden finden Sie den Code (File `DynamicPopulate.vb.asmx`), der das aktuelle Datum in einem von drei Formaten abruft:
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-vb/samples/sample1.aspx)]
 
-Erstellen Sie im nächsten Schritt eine neue ASP.NET-Website aus, und beginnen Sie mit ASP.NET AJAX ScriptManager-Steuerelement:
+Erstellen Sie im nächsten Schritt eine neue ASP.NET-Website, und beginnen Sie mit dem ASP.NET AJAX ScriptManager-Steuerelement:
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-vb/samples/sample2.aspx)]
 
-Fügen Sie dann ein Label-Steuerelement (z. B. über das HTML-Steuerelement mit dem gleichen Namen, oder die `<asp:Label />` Webserver-Steuerelement) zeigt die das Ergebnis des Webdienstaufrufs später noch mal.
+Fügen Sie dann ein Label-Steuerelement hinzu (beispielsweise mithilfe des HTML-Steuer Elements desselben Namens oder des `<asp:Label />` Web-Steuer Elements), das später das Ergebnis des Webdienst Aufrufes anzeigt.
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-vb/samples/sample3.aspx)]
 
-Als Nächstes fügen Sie eine `DynamicPopulateExtender` steuern und Bereitstellen von Informationen zu den Webdiensten, Zielsteuerelement, aber nicht den Namen des Steuerelements die löst die Auffüllung dies später ausgeführt werden wird, die mit benutzerdefinierten JavaScript-Code!
+Fügen Sie als nächstes ein `DynamicPopulateExtender` Steuerelement hinzu, und geben Sie Webdienst Informationen, das Ziel Steuerelement, aber nicht den Namen des Steuer Elements an, das die Auffüllung auslöst. Dies wird später mithilfe von benutzerdefiniertem JavaScript durchgeführt.
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-vb/samples/sample4.aspx)]
 
-Nun, der JavaScript-Teil. Die `$find()` Funktion, die von der ASP.NET AJAX-Bibliothek definierten gibt einen Verweis auf serverseitigen Objekten von der ASP.NET AJAX Control Toolkit, z. B. `DynamicPopulateExtender`. In der aktuellen Datei `$find("dpe")` gibt einen Verweis auf die `DynamicPopulateExtender` Steuerelement auf der Seite. Es stellt eine Methode namens `populate()` die wird ausgelöst, der dynamische Auffüllung. Die `populate()` Methode erfordert ein Argument: den Kontextschlüssel das dient als Argument für die `getDate()` Webmethode. Daher beispielsweise `$find("dpe").populate("format1")` würde die Bezeichnung mit dem aktuellen Datum im Format Monat-Tag-Jahr aufzufüllen.
+Nun zum JavaScript-Teil. Die `$find()` Funktion, die von der ASP.NET AJAX-Bibliothek definiert wird, gibt einen Verweis auf serverseitige Objekte des ASP.NET AJAX Control Toolkit zurück, z. b. `DynamicPopulateExtender`. In der aktuellen Datei gibt `$find("dpe")` einen Verweis auf den `DynamicPopulateExtender` Steuerelement auf der Seite zurück. Sie macht eine Methode namens `populate()` verfügbar, die den dynamischen auffüllungs Prozess auslöst. Die `populate()`-Methode erfordert ein Argument: den Kontext Schlüssel, der als Argument für die `getDate()` Webmethode fungiert. Beispielsweise wird `$find("dpe").populate("format1")` die Bezeichnung mit dem aktuellen Datum im Format month-day-year auffüllen.
 
-Um das Beispiel etwas flexibler zu machen, kann der Benutzer nun verschiedene Datumsformate auswählen. Für jeden einzelnen wird ein Optionsfeld angezeigt. Einmal füllt der Benutzer auf ein Optionsfeld klickt, JavaScript-Code dynamisch auf die Bezeichnung mit dem ausgewählten Datum-Format. Hier sind die Optionsfelder aus:
+Damit das Beispiel etwas flexibler wird, kann der Benutzer jetzt zwischen mehreren Datumsformaten wählen. Für jeden dieser Elemente wird ein Optionsfeld angezeigt. Sobald der Benutzer auf ein Optionsfeld klickt, füllt JavaScript-Code die Bezeichnung dynamisch mit dem ausgewählten Datumsformat auf. Dies sind die folgenden Options Felder:
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-vb/samples/sample5.aspx)]
 
-Beachten Sie, dass innerhalb des Kontexts eines Optionsfelds, der JavaScript-Ausdruck `this.value` verweist auf den Wert der aktuellen Schaltfläche, die genau die gleichen Informationen werden die `getDate()` Methode mit arbeiten kann.
+Beachten Sie, dass sich der JavaScript-`this.value` Ausdruck im Kontext eines Options Felds auf den Wert der aktuellen Schaltfläche bezieht, bei der es sich um genau dieselben Informationen handelt, mit denen die `getDate()` Methode funktionieren kann.
 
-[![Ein Klick auf die Schaltfläche mit den Ruft das Datum vom Server ab, in dem angegebenen Format ab.](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
+[![ein Klick auf die Schaltfläche ruft das Datum vom Server im angegebenen Format ab.](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
 
-Ein Klick auf die Schaltfläche mit den Ruft das Datum ab, von dem Server in das angegebene Format ([klicken Sie, um das Bild in voller Größe anzeigen](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
+Wenn Sie auf die Schaltfläche klicken, wird das Datum vom Server im angegebenen Format abgerufen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](dynamically-populating-a-control-vb.md)

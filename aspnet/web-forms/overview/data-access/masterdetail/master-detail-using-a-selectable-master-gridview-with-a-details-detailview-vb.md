@@ -1,143 +1,143 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
-title: Master-/Detailbericht mit einer auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (VB) | Microsoft-Dokumentation
+title: Master/Detail mithilfe eines auswählbaren Master-GridView-Detailansicht (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial müssen einer GridView-Ansicht, deren Zeilen, die Namen und den Preis jedes Produkts zusammen mit einer Schaltfläche auswählen enthalten. Durch Klicken auf die Schaltfläche auswählen für ein Particu...
+description: In diesem Tutorial wird eine GridView-Ansicht angezeigt, deren Zeilen den Namen und den Preis jedes Produkts zusammen mit der Schaltfläche auswählen enthalten. Klicken auf die Schaltfläche "auswählen" für eine partitioncu...
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f97508aabe64d83a29ae50134d608f64c9cf72e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a953c00acc4c37fd563321477b6b21689d6e686c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131433"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74576442"
 ---
 # <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Master-/Detailbericht unter Verwendung eines auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_10_VB.exe) oder [PDF-Datei herunterladen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/datatutorial10vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_10_VB.exe) oder [PDF herunterladen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/datatutorial10vb1.pdf)
 
-> In diesem Tutorial müssen einer GridView-Ansicht, deren Zeilen, die Namen und den Preis jedes Produkts zusammen mit einer Schaltfläche auswählen enthalten. Klicken Sie auf die Schaltfläche auswählen für ein bestimmtes Produkt führt dazu, dass die vollständigen Details, die in einem DetailsView-Steuerelement auf derselben Seite angezeigt werden.
+> In diesem Tutorial wird eine GridView-Ansicht angezeigt, deren Zeilen den Namen und den Preis jedes Produkts zusammen mit der Schaltfläche auswählen enthalten. Wenn Sie auf die Schaltfläche auswählen für ein bestimmtes Produkt klicken, werden die vollständigen Details in einem DetailsView-Steuerelement auf derselben Seite angezeigt.
 
 ## <a name="introduction"></a>Einführung
 
-In der [vorherigen Tutorial](master-detail-filtering-across-two-pages-vb.md) erläutert, wie zum Erstellen eines Master-/Detail-Berichts mit zwei Webseiten: eine "master" Webseite, von dem wir die Liste der Lieferanten angezeigt und eine "Details"-Webseite, die diese Produkte von den ausgewählten aufgeführt. Lieferanten. Dieses Format zwei Seite kann auf einer einzigen Seite komprimiert werden. In diesem Tutorial müssen einer GridView-Ansicht, deren Zeilen, die Namen und den Preis jedes Produkts zusammen mit einer Schaltfläche auswählen enthalten. Klicken Sie auf die Schaltfläche auswählen für ein bestimmtes Produkt führt dazu, dass die vollständigen Details, die in einem DetailsView-Steuerelement auf derselben Seite angezeigt werden.
+Im [vorherigen Tutorial](master-detail-filtering-across-two-pages-vb.md) haben wir erläutert, wie Sie einen Master-/Detailbericht mit zwei Webseiten erstellen: einer "Master"-Webseite, auf der die Liste der Lieferanten angezeigt wird. und eine "Detail"-Webseite, die die vom ausgewählten Lieferanten bereitgestellten Produkte aufführte. Dieses Format für zwei Seiten Berichte kann auf eine Seite komprimiert werden. In diesem Tutorial wird eine GridView-Ansicht angezeigt, deren Zeilen den Namen und den Preis jedes Produkts zusammen mit der Schaltfläche auswählen enthalten. Wenn Sie auf die Schaltfläche auswählen für ein bestimmtes Produkt klicken, werden die vollständigen Details in einem DetailsView-Steuerelement auf derselben Seite angezeigt.
 
-[![Klicken Sie auf die auswählen-Schaltfläche zeigt den Produktanforderungen-Details](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image2.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image1.png)
+[Wenn Sie ![klicken auf die Schaltfläche auswählen, werden die Produkt Details angezeigt](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image2.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image1.png)
 
-**Abbildung 1**: Klicken Sie auf die auswählen-Schaltfläche zeigt den Produktanforderungen-Details ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image3.png))
+**Abbildung 1**: Klicken auf die Schaltfläche "auswählen" zeigt die Produkt Details[an (Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image3.png))
 
-## <a name="step-1-creating-a-selectable-gridview"></a>Schritt 1: Erstellen ein auswählbares GridView
+## <a name="step-1-creating-a-selectable-gridview"></a>Schritt 1: Erstellen einer auswählbaren GridView
 
-Beachten Sie, von denen in der zwei Seiten von Master-/Detailberichten gemeldet, dass jede Masterdatensatz einen Link enthalten, die beim Klicken auf den Benutzer gesendet, auf der Seite Details zum Übergeben der Zeile, auf die geklickt wurde `SupplierID` Wert in der Abfragezeichenfolge. Jede GridView-Zeile, die mit einem HyperLinkField wurde diese ein Link hinzugefügt. Für den einseitigen Master-/Detail-Bericht, benötigen wir eine Schaltfläche für jeden GridView Zeile, die beim Klicken auf die Details angezeigt. Das GridView-Steuerelement kann konfiguriert werden, um eine auswählen-Schaltfläche für jede Zeile einzuschließen, die bewirkt, dass einen Postback und markiert die Zeile als GridView [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
+Beachten Sie, dass im zweiseitigen Master/Detail-Bericht, dass jeder Master Datensatz einen Hyperlink enthielt, der den Benutzer auf die Detailseite gesendet hat, indem er den `SupplierID` Wert der angeklickten Zeile in der Abfrage Zeichenfolge übergibt. Ein solcher Hyperlink wurde jeder GridView-Zeile mithilfe eines HyperLinkField hinzugefügt. Für den Bericht mit einer einzelnen Seite Master/Details wird eine Schaltfläche für jede GridView-Zeile benötigt, bei der die Details angezeigt werden. Das GridView-Steuerelement kann so konfiguriert werden, dass es für jede Zeile, die ein Postback auslöst, eine SELECT-Schaltfläche einschließt und diese Zeile als [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx)der GridView markiert.
 
-Durch Hinzufügen einer GridView-Steuerelements zum Starten der `DetailsBySelecting.aspx` auf der Seite die `Filtering` Ordner Festlegen der `ID` Eigenschaft `ProductsGrid`. Fügen Sie eine neue, mit dem Namen "ObjectDataSource" `AllProductsDataSource` aufruft, die die `ProductsBLL` Klasse `GetProducts()` Methode.
+Fügen Sie zunächst der Seite `DetailsBySelecting.aspx` im Ordner `Filtering` ein GridView-Steuerelement hinzu, und legen Sie dessen Eigenschaft `ID` auf `ProductsGrid`fest. Fügen Sie als nächstes eine neue ObjectDataSource mit dem Namen `AllProductsDataSource` hinzu, die die `GetProducts()`-Methode der `ProductsBLL` Klasse aufruft.
 
-[![Erstellen Sie eine mit dem Namen AllProductsDataSource "ObjectDataSource"](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image5.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image4.png)
+[![erstellen Sie eine ObjectDataSource mit dem Namen allproductdatasource.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image5.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image4.png)
 
-**Abbildung 2**: Erstellen Sie ein ObjectDataSource-Steuerelement mit dem Namen `AllProductsDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image6.png))
+**Abbildung 2**: Erstellen einer ObjectDataSource mit dem Namen "`AllProductsDataSource`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image6.png))
 
-[![Verwenden Sie die ProductsBLL-Klasse](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image8.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image7.png)
+[![verwenden der productbll-Klasse](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image8.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image7.png)
 
-**Abbildung 3**: Verwenden der `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image9.png))
+**Abbildung 3**: Verwenden der `ProductsBLL`-Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image9.png))
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zum Aufrufen der GetProducts()-Methode](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image11.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image10.png)
+[![Konfigurieren von ObjectDataSource zum Aufrufen der GetProducts ()-Methode](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image11.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image10.png)
 
-**Abbildung 4**: Konfigurieren Sie das "ObjectDataSource" Invoke der `GetProducts()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image12.png))
+**Abbildung 4**: Konfigurieren von ObjectDataSource zum Aufrufen der `GetProducts()` Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image12.png))
 
-Bearbeiten Sie den GridView Felder entfernen alle außer den `ProductName` und `UnitPrice` BoundFields. Darüber hinaus können Sie diese BoundFields nach Bedarf anpassen, z. B. beim Formatieren der `UnitPrice` BoundField als Währung und Ändern der `HeaderText` Eigenschaften der BoundFields. Diese Schritte können grafisch dargestellt, auf den Link "Spalten bearbeiten" aus den GridView Smarttag oder durch manuelles Konfigurieren von der deklarativen Syntax erfolgen.
+Bearbeiten Sie die Felder der GridView, wobei alle außer den `ProductName`-und `UnitPrice` boundfields-Einstellungen entfernt werden. Sie können diese boundfields auch nach Bedarf anpassen, wie z. b. das Formatieren des `UnitPrice` BoundField als Währung und das Ändern der `HeaderText` Eigenschaften von boundfields. Diese Schritte können grafisch durchgeführt werden, indem Sie auf den Link Spalten bearbeiten im Smarttag der GridView klicken oder die deklarative Syntax manuell konfigurieren.
 
-[![Entfernen Sie alle bis auf die ProductName und UnitPrice BoundFields](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image14.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image13.png)
+[![alle außer den "ProductName"-und "UnitPrice boundfields" entfernen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image14.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image13.png)
 
-**Abbildung 5**: Entfernen Sie alle jedoch `ProductName` und `UnitPrice` BoundFields ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image15.png))
+**Abbildung 5**: Entfernen aller außer der `ProductName` und `UnitPrice` boundfields ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image15.png))
 
-Das endgültige Markup für die GridView ist:
+Das endgültige Markup für die GridView lautet wie folgt:
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/samples/sample1.aspx)]
 
-Als Nächstes müssen wir die GridView als auswählbare, kennzeichnen, die jede Zeile eine auswählen-Schaltfläche hinzugefügt wird. Zu diesem Zweck einfach das Kontrollkästchen Sie Auswahl aktivieren in den GridView Smarttag.
+Als nächstes müssen wir die GridView als wählbar markieren, sodass jeder Zeile eine SELECT-Schaltfläche hinzugefügt wird. Um dies zu erreichen, aktivieren Sie einfach das Kontrollkästchen Auswahl aktivieren im Smarttags von GridView.
 
-[![Stellen Sie den GridView Zeilen ausgewählt werden](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image17.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image16.png)
+[![die Zeilen der GridView auswählbar machen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image17.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image16.png)
 
-**Abbildung 6**: Stellen Sie des GridView Zeilen ausgewählt werden ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image18.png))
+**Abbildung 6**: machen Sie die Zeilen der GridView auswählbar ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image18.png))
 
-Überprüfen die Option zur Mehrfachauswahl aktivieren einer CommandField, fügt die `ProductsGrid` GridView mit seiner `ShowSelectButton` -Eigenschaft auf "true" festgelegt. Dies führt zu einer Schaltfläche auswählen für jede Zeile der GridView, wie in Abbildung 6 gezeigt werden. Standardmäßig werden die Option Schaltflächen als LinkButtons gerendert, aber können Schaltflächen oder ImageButtons stattdessen über die CommandField des `ButtonType` Eigenschaft.
+Wenn Sie die Option Auswahl aktivieren aktivieren, wird der `ProductsGrid` GridView ein CommandField hinzugefügt, dessen `ShowSelectButton`-Eigenschaft auf true festgelegt ist. Dies ergibt eine SELECT-Schaltfläche für jede Zeile der GridView, wie in Abbildung 6 veranschaulicht. Standardmäßig werden die SELECT-Schaltflächen als LinkButtons gerendert, aber Sie können stattdessen Schaltflächen oder imagebuttons über die `ButtonType`-Eigenschaft des CommandField verwenden.
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/samples/sample2.aspx)]
 
-Wenn eine GridView-Zeile auswählen-Schaltfläche geklickt wird ein Postback Sicherheitsvorschriften und GridView `SelectedRow` Eigenschaft aktualisiert wird. Zusätzlich zu den `SelectedRow` -Eigenschaft, die GridView bietet die [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), und [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) Eigenschaften. Die `SelectedIndex` Eigenschaft gibt den Index der ausgewählten Zeile zurück, wohingegen die `SelectedValue` und `SelectedDataKey` Eigenschaften zurückgeben, Werte basierend auf des GridView [DataKeyNames-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
+Wenn auf die Select-Schaltfläche einer GridView-Zeile geklickt wird, folgt ein Postback, und die `SelectedRow`-Eigenschaft der GridView wird aktualisiert. Zusätzlich zur `SelectedRow`-Eigenschaft stellt die GridView die Eigenschaften [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx)und [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) bereit. Die `SelectedIndex`-Eigenschaft gibt den Index der ausgewählten Zeile zurück, während die Eigenschaften `SelectedValue` und `SelectedDataKey` Werte basierend auf der [DataKeyNames-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx)der GridView zurückgeben.
 
-Die `DataKeyNames` Eigenschaft wird verwendet, um eine App zuordnen oder weitere Datenfeld Werte in dem jede Zeile, und wird häufig verwendet, eindeutig identifizierenden Informationen aus den zugrunde liegenden Daten in dem jede Zeile der GridView-Attribut. Die `SelectedValue` -Eigenschaft gibt den Wert des ersten `DataKeyNames` Datenfeld für die ausgewählte Zeile Where als die `SelectedDataKey` Eigenschaft gibt der ausgewählten Zeile `DataKey` Objekt, das alle Werte für die angegebenen Schlüssel Datenfelder für enthält Diese Zeile.
+Die `DataKeyNames`-Eigenschaft wird verwendet, um jeder Zeile einen oder mehrere Daten Feldwerte zuzuordnen, und wird häufig verwendet, um eindeutig identifizierende Informationen aus den zugrunde liegenden Daten mit jeder GridView-Zeile zuzuordnen. Die `SelectedValue`-Eigenschaft gibt den Wert des ersten `DataKeyNames` Datenfelds für die ausgewählte Zeile zurück, in der die `SelectedDataKey`-Eigenschaft das `DataKey` Objekt der ausgewählten Zeile zurückgibt, das alle Werte für die angegebenen Datenschlüssel Felder für diese Zeile enthält.
 
-Die `DataKeyNames` Eigenschaft wird automatisch beim Binden einer Datenquelle an eine GridView, DetailsView oder FormView-Steuerelement mithilfe des Designers, die eindeutig identifizierenden Felder festgelegt. Während diese Eigenschaft für uns automatisch in den vorherigen Tutorials festgelegt wurde, würde in den Beispielen gearbeitet haben, ohne die `DataKeyNames` angegebene Eigenschaft. Allerdings für die auswählbaren GridView in diesem Tutorial sowie für zukünftige Tutorials, in dem wir untersuchen werden einfügen, aktualisieren und löschen, die `DataKeyNames` muss die Eigenschaft richtig festgelegt werden. Nehmen Sie einen Moment Zeit, um sicherzustellen, dass Ihre GridView `DataKeyNames` -Eigenschaftensatz auf `ProductID`.
+Die `DataKeyNames`-Eigenschaft wird automatisch auf die eindeutig identifizierenden Datenfelder festgelegt, wenn Sie eine Datenquelle an ein GridView-, DetailsView-oder FormView-Objekt über den Designer binden. Diese Eigenschaft wurde in den vorherigen Tutorials automatisch für uns festgelegt, aber die Beispiele hätten funktioniert, ohne dass die `DataKeyNames`-Eigenschaft angegeben wurde. Für die auswählbare GridView in diesem Tutorial sowie für zukünftige Tutorials, in denen das Einfügen, aktualisieren und löschen untersucht wird, muss die `DataKeyNames`-Eigenschaft jedoch ordnungsgemäß festgelegt werden. Nehmen Sie sich einen Moment Zeit, um sicherzustellen, dass die `DataKeyNames` Eigenschaft ihrer GridView auf `ProductID`festgelegt ist.
 
-Zeigen wir unseren Fortschritt bisher über einen Browser ein. Beachten Sie, dass die GridView, die Namen und den Preis für alle Produkte zusammen mit einem LinkButton auswählen auflistet. Klicken Sie auf die auswählen-Schaltfläche auslöst ein Postback. In Schritt2 sehen wir, wie Sie ein DetailsView-Antworten auf diese Postback verfügen, indem Sie die Details für das ausgewählte Produkt anzeigen.
+Sehen wir uns den Fortschritt bis zum Browser an. Beachten Sie, dass in der GridView der Name und der Preis für alle Produkte zusammen mit dem Link Button Select aufgeführt sind. Durch Klicken auf die Schaltfläche auswählen wird ein Postback verursacht. In Schritt 2 sehen Sie, wie eine DetailsView auf dieses Postback reagieren kann, indem Sie die Details für das ausgewählte Produktanzeigen.
 
-[![Jede Zeile des Produkts enthält, auf LinkButton](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image20.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image19.png)
+[![jede Produkt Zeile eine LinkButton-Auswahl enthält.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image20.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image19.png)
 
-**Abbildung 7**: Jede Produktzeile enthält ein LinkButton wählen ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image21.png))
+**Abbildung 7**: jede Produkt Zeile enthält einen LinkButton auswählen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image21.png))
 
-## <a name="highlighting-the-selected-row"></a>Die ausgewählte Zeile hervorheben
+## <a name="highlighting-the-selected-row"></a>Markieren der ausgewählten Zeile
 
-Die `ProductsGrid` GridView hat eine `SelectedRowStyle` -Eigenschaft, die zum Bestimmen des visuellen Stils für die ausgewählte Zeile verwendet werden kann. Ordnungsgemäß verwendet wird, kann dies die benutzererfahrung verbessern, indem Sie weitere eindeutig mit dem Zeile der GridView derzeit ausgewählt ist. In diesem Tutorial haben Sie lassen Sie uns die ausgewählte Zeile durch einen gelben Hintergrund markiert werden.
+Die `ProductsGrid` GridView verfügt über eine `SelectedRowStyle`-Eigenschaft, die verwendet werden kann, um den visuellen Stil für die ausgewählte Zeile festzulegen. Wird ordnungsgemäß verwendet. Dies kann die Benutzer Leistung verbessern, indem die aktuell ausgewählte Zeile der GridView deutlicher angezeigt wird. In diesem Tutorial soll die ausgewählte Zeile mit einem gelben Hintergrund hervorgehoben werden.
 
-Wie bei unseren früheren Tutorials, wir bemühen uns, die Ästhetik-bezogenen Einstellungen, die als CSS-Klassen definiert zu halten. Aus diesem Grund erstellen Sie eine neue CSS-Klasse im `Styles.css` mit dem Namen `SelectedRowStyle`.
+Wie bei unseren vorherigen Tutorials soll es uns ermöglichen, die ästhetisch-bezogenen Einstellungen als CSS-Klassen festzuhalten. Erstellen Sie daher eine neue CSS-Klasse in `Styles.css` mit dem Namen `SelectedRowStyle`.
 
 [!code-css[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/samples/sample3.css)]
 
-Anzuwendende dieser CSS-Klasse, um die `SelectedRowStyle` Eigenschaft *alle* GridViews in unserer Reihe von Tutorials, bearbeiten die `GridView.skin` des Skinframes die `DataWebControls` Design enthalten die `SelectedRowStyle` Einstellungen wie unten dargestellt:
+Wenn Sie diese CSS-Klasse auf die `SelectedRowStyle`-Eigenschaft *aller* GridViews in der tutorialreihe anwenden möchten, bearbeiten Sie die `GridView.skin` Skin im `DataWebControls` Design, um die `SelectedRowStyle` Einstellungen wie unten dargestellt einzuschließen:
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/samples/sample4.aspx)]
 
-Mit folgender Ergänzung wird die ausgewählte GridView-Zeile jetzt durch einen gelben Hintergrundfarbe hervorgehoben.
+Mit dieser Addition wird die ausgewählte GridView-Zeile nun mit einer gelben Hintergrundfarbe hervorgehoben.
 
-[![Passen Sie die ausgewählte Zeile Darstellung mit GridView SelectedRowStyle Eigenschaft an](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image23.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image22.png)
+[![die Darstellung der ausgewählten Zeile mithilfe der SelectedRowStyle-Eigenschaft der GridView anpassen.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image23.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image22.png)
 
-**Abbildung 8**: Exemplarische Vorgehensweise: Anpassen von der ausgewählten Zeile Darstellung mithilfe von GridView `SelectedRowStyle` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image24.png))
+**Abbildung 8**: Anpassen der Darstellung der ausgewählten Zeile mithilfe der `SelectedRowStyle`-Eigenschaft der GridView ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image24.png))
 
-## <a name="step-2-displaying-the-selected-products-details-in-a-detailsview"></a>Schritt 2: Anzeigen von Details für das ausgewählte Produkt in einem DetailsView
+## <a name="step-2-displaying-the-selected-products-details-in-a-detailsview"></a>Schritt 2: Anzeigen der Details des ausgewählten Produkts in einer DetailsView
 
-Mit der `ProductsGrid` GridView abgeschlossen haben, bleibt eine DetailsView hinzufügen, die Anzeige von Informationen von bestimmten Produkts ausgewählt ist. Fügen Sie einem DetailsView-Steuerelement oben GridView und erstellen Sie eine neue, mit dem Namen "ObjectDataSource" `ProductDetailsDataSource`. Da diese DetailsView bestimmte Informationen über das ausgewählte Produkt angezeigt werden soll, konfigurieren Sie die `ProductDetailsDataSource` verwenden die `ProductsBLL` Klasse `GetProductByProductID(productID)` Methode.
+Wenn die `ProductsGrid` GridView vollständig ist, muss nur noch eine DetailsView hinzugefügt werden, in der Informationen über das ausgewählte Produkt angezeigt werden. Fügen Sie oberhalb der GridView ein DetailsView-Steuerelement hinzu, und erstellen Sie eine neue ObjectDataSource mit dem Namen `ProductDetailsDataSource`. Da diese DetailsView bestimmte Informationen über das ausgewählte Produktanzeigen soll, müssen Sie die `ProductDetailsDataSource` so konfigurieren, dass die `GetProductByProductID(productID)`-Methode der `ProductsBLL` Klasse verwendet wird.
 
-[![Aufrufen der ProductsBLL Klasse GetProductByProductID(productID)-Methode](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image26.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image25.png)
+[![rufen Sie die getproductbyproductid (ProductID)-Methode der productbll-Klasse auf.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image26.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image25.png)
 
-**Abbildung 9**: Rufen Sie die `ProductsBLL` Klasse `GetProductByProductID(productID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
+**Abbildung 9**: Aufrufen der `GetProductByProductID(productID)` Methode der `ProductsBLL` Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
-Haben die *`productID`* Wert des Parameters aus der GridView-Steuerelement `SelectedValue` Eigenschaft. Wie zuvor der GridView erläutert `SelectedValue` Eigenschaft zurückgibt, der erste Datenschlüsselwert für die ausgewählte Zeile. Aus diesem Grund ist es zwingend erforderlich, die des GridView `DataKeyNames` -Eigenschaftensatz auf `ProductID`, sodass der ausgewählten Zeile `ProductID` ist der Rückgabewert von `SelectedValue`.
+Der Wert des *`productID`* Parameters, der aus der `SelectedValue`-Eigenschaft des GridView-Steuer Elements abgerufen wird. Wie bereits erläutert, gibt die `SelectedValue`-Eigenschaft von GridView den ersten Datenschlüssel Wert für die ausgewählte Zeile zurück. Daher ist es zwingend erforderlich, dass die `DataKeyNames`-Eigenschaft der GridView auf `ProductID`festgelegt ist, sodass der `ProductID` Wert der ausgewählten Zeile von `SelectedValue`zurückgegeben wird.
 
-[![Legen Sie die ProductID-Parameter auf des GridView SelectedValue-Eigenschaft](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
+[![den ProductID-Parameter auf die SelectedValue-Eigenschaft der GridView festlegen.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**Abbildung 10**: Legen Sie die *`productID`* Parameter an der GridView `SelectedValue` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**Abbildung 10**: Festlegen des *`productID`* -Parameters auf die `SelectedValue`-Eigenschaft der GridView ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
-Sobald die `productDetailsDataSource` "ObjectDataSource" ordnungsgemäß konfiguriert und zur DetailsView gebunden wurde, in diesem Tutorial ist abgeschlossen! Wenn zuerst die Seite besucht wird keine Zeile ausgewählt ist, sodass das GridView `SelectedValue` -Eigenschaft gibt `Nothing`. Da es sich um keine Produkte mit einem `NULL` `ProductID` -Wert, von dem keine Datensätze zurückgegeben werden die `GetProductByProductID(productID)` Methode, dies bedeutet, dass die DetailsView nicht angezeigt wird (siehe Abbildung 11). Klicken Sie nach dem Klicken auf eine GridView-Zeile-Schaltfläche auswählen, erfolgt ein Postback, und DetailsView wird aktualisiert. Dieses Mal des GridView `SelectedValue` -Eigenschaft gibt die `ProductID` der ausgewählten Zeile, die `GetProductByProductID(productID)` Methode gibt eine `ProductsDataTable` mit Informationen über das jeweilige Produkt und DetailsView zeigt diese Informationen (siehe Abbildung 12).
+Nachdem der `productDetailsDataSource` ObjectDataSource ordnungsgemäß konfiguriert und an die DetailsView gebunden wurde, ist dieses Tutorial abgeschlossen! Beim ersten Besuch der Seite wird keine Zeile ausgewählt, sodass die `SelectedValue`-Eigenschaft von GridView `Nothing`zurückgibt. Da keine Produkte mit einem `NULL` `ProductID`-Wert vorhanden sind, werden von der `GetProductByProductID(productID)`-Methode keine Datensätze zurückgegeben, was bedeutet, dass die DetailsView nicht angezeigt wird (siehe Abbildung 11). Wenn Sie auf die Schaltfläche Auswählen einer GridView-Zeile klicken, folgt ein Postback, und die DetailsView wird aktualisiert. Wenn die `SelectedValue`-Eigenschaft von GridView die `ProductID` der ausgewählten Zeile zurückgibt, gibt die `GetProductByProductID(productID)`-Methode eine `ProductsDataTable` mit Informationen zu diesem Produkt zurück, und die DetailsView zeigt diese Details an (siehe Abbildung 12).
 
-[![Beim ersten besucht, nur die GridView wird](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image32.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image31.png)
+[![beim ersten Besuch wird nur die GridView angezeigt.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image32.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image31.png)
 
-**Abbildung 11**: Nur die GridView wird angezeigt, bei der ersten Anzeige ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image33.png))
+**Abbildung 11**: beim ersten Besuch wird nur die GridView angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image33.png))
 
-[![Nach dem Auswählen einer Zeile, werden Details zum entsprechenden Produkt angezeigt.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image35.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image34.png)
+[![, wenn Sie eine Zeile auswählen, werden die Details des Produkts angezeigt.](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image35.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image34.png)
 
-**Abbildung 12**: Nach dem Auswählen einer Zeile, Details zum entsprechenden Produkt angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image36.png))
+**Abbildung 12**: Wenn Sie eine Zeile auswählen, werden die Details des Produkts angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image36.png)).
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-In diesem und den drei vorherigen Tutorials haben wir gesehen, dass eine Reihe von Techniken für die Anzeige von Master/Detail-Berichte. Verwenden in diesem Lernprogramm aus, die wir untersucht ein auswählbares GridView, um die Masterdatensätze und einem DetailsView zum Anzeigen von Details zum ausgewählten master Datensatz auf derselben Seite befinden. In den vorherigen Tutorials erläutert, wie Sie zum Anzeigen von Master-/Detail-Berichten mithilfe von DropDownList-Steuerelementen und Anzeigen von Masterdatensätze in eine Webseite und die Detaildatensätze auf einer anderen.
+In diesem und den vorherigen drei Tutorials haben wir eine Reihe von Techniken zum Anzeigen von Master-/Detailberichten kennengelernt. In diesem Tutorial haben wir die Verwendung eines auswählbaren GridView-Tools für die Master Datensätze und eine DetailsView untersucht, um Details zum ausgewählten Master Daten Satz auf derselben Seite anzuzeigen. In den vorherigen Tutorials haben wir uns mit dem Anzeigen von Master-/Detailberichten mithilfe von Dropdown Listen und dem Anzeigen von Master Datensätzen auf einer Webseite und detaillierten Datensätzen auf einer anderen Seite beschäftigt.
 
-Dieses Lernprogramm schließt unserer Untersuchung von Master/Detail-Berichte. Beginnend mit dem nächsten Tutorial beginnen wir unsere Untersuchung der benutzerdefinierte Formatierung mit der GridView, DetailsView und FormView-Steuerelement. Wir sehen, Anpassen der Darstellung dieser Steuerelemente basierend auf den Daten, die an diese gebunden, wie Sie Daten in den GridView Fuß zusammenfassen und wie Sie Vorlagen verwenden, um ein höheres Maß an Kontrolle über das Layout zu erhalten.
+In diesem Tutorial wird die Untersuchung von Master-/Detailberichten abgeschlossen. Beginnend mit dem nächsten Tutorial beginnen wir mit der Untersuchung der angepassten Formatierung mit GridView, DetailsView und FormView. Wir sehen uns an, wie Sie die Darstellung dieser Steuerelemente basierend auf den Daten, die an Sie gebunden sind, anpassen, wie Sie Daten in der Fußzeile der GridView zusammenfassen und wie Sie Vorlagen verwenden, um ein höheres Maß an Kontrolle über das Layout zu erhalten.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial ist Hilton Giesenow. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Der Lead Prüfer für dieses Tutorial war Hilton giesreviewer. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](master-detail-filtering-across-two-pages-vb.md)
+> [Vorheriges](master-detail-filtering-across-two-pages-vb.md)

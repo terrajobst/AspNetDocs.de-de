@@ -1,162 +1,162 @@
 ---
 uid: config-builder
-title: Konfigurations-Generatoren für ASP.NET
+title: Konfigurations-Generatoren für ASP.net
 author: rick-anderson
-description: Erfahren Sie, wie Sie Konfigurationsdaten aus anderen Quellen als Datei "Web.config"-Werte aus externen Quellen abrufen.
+description: Erfahren Sie, wie Sie Konfigurationsdaten aus anderen Quellen als Web. config-Werte aus externen Quellen erhalten.
 ms.author: riande
 ms.date: 10/29/2018
 msc.type: content
-ms.openlocfilehash: 2bec828aa01d2c17f5374c3b1804b7444ec03dda
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: 5299d9ab057c3096773955a7461e77a80673ebfe
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905695"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74586767"
 ---
-# <a name="configuration-builders-for-aspnet"></a>Konfigurations-Generatoren für ASP.NET
+# <a name="configuration-builders-for-aspnet"></a>Konfigurations-Generatoren für ASP.net
 
-Durch [Stephen Molloy](https://github.com/StephenMolloy) und [Rick Anderson](https://twitter.com/RickAndMSFT)
+Von [Stephen Molloy](https://github.com/StephenMolloy) und [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Konfigurations-Generatoren bieten einen Mechanismus für moderne und flexible für ASP.NET-Apps Konfigurationswerte aus externen Quellen abgerufen.
+Konfigurations-Generatoren stellen einen modernen und agilen Mechanismus für ASP.net-apps bereit, um Konfigurationswerte aus externen Quellen zu erhalten.
 
-Konfigurationsgeneratoren:
+Konfigurations-Generatoren:
 
 * Sind in .NET Framework 4.7.1 und höher verfügbar.
-* Geben Sie einen flexiblen Mechanismus zum Lesen von Werten.
-* Beheben Sie einige grundlegende Anforderungen von apps in einem Container zu verschieben und fokussierte Umgebung der cloud.
-* Dienen zur Verbesserung des Schutzes von Konfigurationsdaten durch Zeichnen von Quellen, die zuvor nicht verfügbar (z. B. Azure Key Vault und Umgebungsvariablen) im Konfigurationssystem .NET.
+* Stellen Sie einen flexiblen Mechanismus zum Lesen von Konfigurations Werten bereit.
+* Berücksichtigen Sie einige der grundlegenden Anforderungen von apps, die in einen Container und eine in der Cloud fokussierte Umgebung verschoben werden.
+* Kann verwendet werden, um den Schutz von Konfigurationsdaten durch das Zeichnen aus Quellen zu verbessern, die zuvor nicht verfügbar waren (z. b. Azure Key Vault und Umgebungsvariablen) im .NET-Konfigurationssystem.
 
-## <a name="keyvalue-configuration-builders"></a>Schlüssel/Wert-Konfigurations-Generatoren
+## <a name="keyvalue-configuration-builders"></a>Schlüssel-Wert-Konfigurations-Generatoren
 
-Ein häufiges Szenario, das vom Konfigurations-Generatoren verarbeitet werden kann, ist, einen einfachen Schlüssel-Wert-Ersatz-Mechanismus für Konfigurationsabschnitte bereitzustellen, die ein Schlüssel/Wert-Muster folgen. Das .NET Framework-Konzept der ConfigurationBuilders ist nicht beschränkt auf bestimmte Konfigurationsabschnitte oder Muster. Allerdings viele der in der Konfigurations-Generatoren `Microsoft.Configuration.ConfigurationBuilders` ([Github](https://github.com/aspnet/MicrosoftConfigurationBuilders), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) innerhalb des Schlüssel-Wert-Musters arbeiten.
+Ein häufiges Szenario, das von Configuration Builder behandelt werden kann, ist die Bereitstellung eines grundlegenden Schlüssel-Wert-ersatzmechanismus für Konfigurations Abschnitte, die einem Schlüssel-Wert-Muster folgen. Das .NET Framework Konzept von configurationbuilder ist nicht auf bestimmte Konfigurations Abschnitte oder Muster beschränkt. Viele der Konfigurations-Generatoren in `Microsoft.Configuration.ConfigurationBuilders` ([GitHub](https://github.com/aspnet/MicrosoftConfigurationBuilders), [nuget](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) funktionieren jedoch innerhalb des Schlüssel-Wert-Musters.
 
-## <a name="keyvalue-configuration-builders-settings"></a>Schlüssel/Wert-Generatoren Konfigurationseinstellungen
+## <a name="keyvalue-configuration-builders-settings"></a>Einstellungen für die Schlüssel-/wertkonfigurationsbuilder
 
-Die folgenden Einstellungen gelten für alle Schlüssel/Wert-konfigurationsbuilder in `Microsoft.Configuration.ConfigurationBuilders`.
+Die folgenden Einstellungen gelten für alle Schlüssel-Wert-Konfigurations-Generatoren in `Microsoft.Configuration.ConfigurationBuilders`.
 
 ### <a name="mode"></a>Modus
 
-Der Konfigurations-Generatoren verwenden eine externe Quelle von Schlüssel-/Wertinformationen um ausgewählten Schlüssel/Wert-Elementen des Konfigurationssystems zu füllen. Insbesondere die `<appSettings/>` und `<connectionStrings/>` Abschnitten erhalten Sie spezielle Behandlung von Konfigurations-Generatoren. Die Generatoren arbeiten in drei Modi:
+Die Konfigurations-Generatoren verwenden eine externe Quelle von Schlüssel-Wert-Informationen, um die ausgewählten Schlüssel-Wert-Elemente des Konfigurations Systems aufzufüllen. Insbesondere die Abschnitte "`<appSettings/>`" und "`<connectionStrings/>`" werden von den Konfigurations-Generatoren besonders behandelt. Die Generatoren funktionieren in drei Modi:
 
-* `Strict` -Der Standardmodus. In diesem Modus kann der Konfigurations-Generator nur auf bekannte Konfigurationsabschnitte für Schlüssel/Wert-orientierte eingesetzt. `Strict` Jeder Schlüssel im Abschnitt listet die Modus. Wenn ein übereinstimmenden Schlüssel in der externen Quelle gefunden wird:
+* `Strict`: der Standardmodus. In diesem Modus arbeitet der Konfigurations-Generator nur mit bekannten Schlüssel/Wert-zentrierten Konfigurations Abschnitten. im `Strict` Modus werden die einzelnen Schlüssel im-Abschnitt aufgelistet. Wenn ein übereinstimmender Schlüssel in der externen Quelle gefunden wird:
 
-   * Der Konfigurations-Generatoren ersetzen Sie den Wert im Abschnitt mit resultierenden mit dem Wert aus der externen Quelle.
-* `Greedy` : Dieser Modus ist eng verwandt mit `Strict` Modus. Anstatt die Begrenzung auf Schlüssel, die bereits in der ursprünglichen Konfiguration vorhanden sein:
+   * Die Konfigurations-Generatoren ersetzen den Wert im resultierenden Konfigurations Abschnitt durch den Wert aus der externen Quelle.
+* `Greedy`: Dieser Modus ist eng mit `Strict` Modus verknüpft. Anstatt auf Schlüssel beschränkt zu sein, die in der ursprünglichen Konfiguration bereits vorhanden sind:
 
-  * Der Konfigurations-Generatoren fügt alle Schlüssel/Wert-Paare aus der externen Quelle in der resultierenden Konfigurationsabschnitt hinzu.
+  * Die Konfigurations-Generatoren fügen alle Schlüssel-Wert-Paare aus der externen Quelle dem sich ergebenden Konfigurations Abschnitt hinzu.
 
-* `Expand` -Arbeitet mit den unformatierten XML-Daten, bevor er in ein Konfigurationsobjekt für den Abschnitt aufgelöst wird. Sie kann als Erweiterung von Token in einer Zeichenfolge betrachtet werden. Einen beliebigen Teil der unformatierten XML-Zeichenfolge mit dem Muster übereinstimmt `${token}` ist ein Kandidat für tokenerweiterung. Wenn keine entsprechenden Wert in der externen Quelle gefunden wird, wird das Token nicht geändert werden. Generatoren, die in diesem Modus sind nicht darauf beschränkt die `<appSettings/>` und `<connectionStrings/>` Abschnitte.
+* `Expand`-für die unformatierte XML-Datei vor dem analysieren in ein Konfigurations Abschnitts Objekt. Dies kann sich als Erweiterung von Token in einer Zeichenfolge vorstellen. Jeder Teil der unformatierten XML-Zeichenfolge, die dem Muster `${token}` entspricht, ist ein Kandidat für die Tokenerweiterung. Wenn kein entsprechender Wert in der externen Quelle gefunden wird, wird das Token nicht geändert. Generatoren in diesem Modus sind nicht auf die Abschnitte `<appSettings/>` und `<connectionStrings/>` beschränkt.
 
-Das folgende Markup aus *"Web.config"* ermöglicht die [EnvironmentConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Environment/) in `Strict` Modus:
+Mit dem folgenden Markup aus *Web. config* wird der [Umgebungs](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Environment/) -Generator im `Strict` Modus aktiviert:
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebDefault.config?name=snippet)]
 
-Der folgende code liest die `<appSettings/>` und `<connectionStrings/>` angezeigt, in der vorherigen *"Web.config"* Datei:
+Der folgende Code liest die `<appSettings/>` und `<connectionStrings/>`, die in der vorherigen *Web. config* -Datei angezeigt werden:
 
 [!code-csharp[Main](config-builder/MyConfigBuilders/About.aspx.cs)]
 
-Der vorangehende Code wird die Eigenschaftswerte festgelegt, um:
+Im vorangehenden Code werden die Eigenschaftswerte auf festgelegt:
 
-* Die Werte in der *"Web.config"* Datei, wenn die Schlüssel in Umgebungsvariablen nicht festgelegt werden.
-* Die Werte der Umgebung Variable If festgelegt.
+* Die Werte in der Datei " *Web. config* ", wenn die Schlüssel nicht in Umgebungsvariablen festgelegt sind.
+* Die Werte der Umgebungsvariablen, sofern festgelegt.
 
-Z. B. `ServiceID` enthält:
+`ServiceID` enthalten beispielsweise Folgendes:
 
-* "ServiceID Wert aus" Web.config "", wenn die Umgebungsvariable `ServiceID` ist nicht festgelegt.
-* Der Wert des der `ServiceID` Umgebungsvariable, falls festgelegt.
+* "Serviceid value from Web. config", wenn die Umgebungsvariable `ServiceID` nicht festgelegt ist.
+* Der Wert der `ServiceID` Umgebungsvariablen, sofern festgelegt.
 
-Die folgende Abbildung zeigt die `<appSettings/>` Schlüssel/Werte aus dem vorherigen *"Web.config"* Dateisatz in der Umgebung-Editor:
+Die folgende Abbildung zeigt die `<appSettings/>` Schlüssel/Werte aus der vorherigen Datei *Web. config* , die im Umgebungs-Editor festgelegt wurde:
 
-![Umgebung-editor](config-builder/static/env.png)
+![Umgebungs-Editor](config-builder/static/env.png)
 
-Hinweis: Möglicherweise müssen Sie beenden und starten Sie Visual Studio, um Änderungen in Umgebungsvariablen anzuzeigen.
+Hinweis: möglicherweise müssen Sie Visual Studio beenden und neu starten, um Änderungen in Umgebungsvariablen anzuzeigen.
 
-### <a name="prefix-handling"></a>Behandlung von Präfix
+### <a name="prefix-handling"></a>Präfix Behandlung
 
-Wichtige Präfixe können Einstellungsschlüssel vereinfachen, da:
+Wichtige Präfixe können das Festlegen von Schlüsseln vereinfachen:
 
-* Die .NET Framework-Konfiguration ist komplex und geschachtelte.
-* Externen Schlüssel/Wert-Quellen sind häufig basic "und" naturgemäß Flatfile. Beispielsweise werden Umgebungsvariablen nicht geschachtelt werden.
+* Die .NET Framework Konfiguration ist komplex und wird nicht eingefügt.
+* Externe Schlüssel-/Wertquellen sind im allgemeinen grundlegend und flach. Umgebungsvariablen sind z. b. nicht vollständig.
 
-Eine der folgenden Methoden zum Einfügen von sowohl verwenden `<appSettings/>` und `<connectionStrings/>` in die Konfiguration über Umgebungsvariablen:
+Verwenden Sie einen der folgenden Ansätze, um mithilfe von Umgebungsvariablen sowohl `<appSettings/>` als auch `<connectionStrings/>` in die Konfiguration einzufügen:
 
-* Mit der `EnvironmentConfigBuilder` in der standardmäßigen `Strict` Modus und den entsprechenden Schlüsselnamen in der Konfigurationsdatei. Der vorherige Code und Markup verwendet diesen Ansatz. Mit diesem Ansatz Sie können **nicht** haben identisch benannten Schlüssel in beiden `<appSettings/>` und `<connectionStrings/>`.
-* Verwenden Sie zwei `EnvironmentConfigBuilder`s in `Greedy` Modus mit unterschiedlichen Präfixen und `stripPrefix`. Bei diesem Ansatz kann die app lesen `<appSettings/>` und `<connectionStrings/>` ohne die Konfigurationsdatei aktualisieren. Im nächsten Abschnitt [StripPrefix](#stripprefix), veranschaulicht dies.
-* Verwenden Sie zwei `EnvironmentConfigBuilder`s in `Greedy` Modus mit unterschiedlichen Präfixen. Bei diesem Ansatz können nicht Sie doppelte Schlüssel aufweisen wie Schlüsselnamen nach Präfix unterscheiden müssen.  Zum Beispiel:
+* Mit dem `EnvironmentConfigBuilder` im Standard `Strict` Modus und den entsprechenden Schlüsselnamen in der Konfigurationsdatei. Der vorangehende Code und das Markup haben diese Vorgehensweise. Wenn Sie diesen Ansatz verwenden, können Sie in `<appSettings/>` und `<connectionStrings/>`**nicht** identisch benannte Schlüssel haben.
+* Verwenden Sie im `Greedy` Modus zwei `EnvironmentConfigBuilder`s mit unterschiedlichen Präfixen und `stripPrefix`. Bei diesem Ansatz kann die APP `<appSettings/>` und `<connectionStrings/>` lesen, ohne die Konfigurationsdatei aktualisieren zu müssen. Der nächste Abschnitt, [stripprefix](#stripprefix), zeigt, wie dies geschieht.
+* Verwenden Sie im `Greedy` Modus zwei `EnvironmentConfigBuilder`s mit unterschiedlichen Präfixen. Bei dieser Vorgehensweise können keine doppelten Schlüsselnamen vorhanden sein, da Schlüsselnamen sich durch das Präfix unterscheiden müssen.  Beispiel:
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebPrefix.config?name=snippet&highlight=11-99)]
 
-Mit der im obigen Markup kann die gleiche einfache Schlüssel/Wert-Quelle zum Auffüllen der Konfiguration für zwei verschiedene Abschnitte verwendet werden.
+Mit dem vorangehenden Markup kann die gleiche flatkey/Value-Quelle verwendet werden, um die Konfiguration für zwei verschiedene Abschnitte aufzufüllen.
 
-Die folgende Abbildung zeigt die `<appSettings/>` und `<connectionStrings/>` Schlüssel/Werte aus dem vorherigen *"Web.config"* Dateisatz in der Umgebung-Editor:
+In der folgenden Abbildung werden die `<appSettings/>`-und `<connectionStrings/>` Schlüssel/Werte aus der vorherigen Datei *Web. config* im Umgebungs-Editor angezeigt:
 
-![Umgebung-editor](config-builder/static/prefix.png)
+![Umgebungs-Editor](config-builder/static/prefix.png)
 
-Der folgende code liest die `<appSettings/>` und `<connectionStrings/>` Schlüssel/Werte enthalten, die in der vorherigen *"Web.config"* Datei:
+Der folgende Code liest die `<appSettings/>`-und `<connectionStrings/>` Schlüssel/-Werte, die in der vorherigen *Web. config* -Datei enthalten sind:
 
 [!code-csharp[Main](config-builder/MyConfigBuilders/Contact.aspx.cs?name=snippet)]
 
-Der vorangehende Code wird die Eigenschaftswerte festgelegt, um:
+Im vorangehenden Code werden die Eigenschaftswerte auf festgelegt:
 
-* Die Werte in der *"Web.config"* Datei, wenn die Schlüssel in Umgebungsvariablen nicht festgelegt werden.
-* Die Werte der Umgebung Variable If festgelegt.
+* Die Werte in der Datei " *Web. config* ", wenn die Schlüssel nicht in Umgebungsvariablen festgelegt sind.
+* Die Werte der Umgebungsvariablen, sofern festgelegt.
 
-Verwenden Sie beispielsweise die vorherige *"Web.config"* -Datei, die die Schlüssel/Werte in der vorherigen Abbildung Umgebung-Editor und dem vorherigen Code, die folgenden Werte festgelegt sind:
+Beispielsweise werden die folgenden Werte festgelegt, indem Sie die vorherige *Web. config* -Datei, die Schlüssel/Werte im vorherigen Bild des Umgebungs-Editors und den vorherigen Code verwenden:
 
-|  Key              | Wert |
+|  Key              | {2&gt;Wert&lt;2} |
 | ----------------- | ------------ |
-|     AppSetting_ServiceID           | AppSetting_ServiceID von Env-Variablen|
-|    AppSetting_default            | AppSetting_default Wert env |
-|       ConnStr_default         | ConnStr_default Val von env|
+|     AppSetting_ServiceID           | AppSetting_ServiceID von "dev"-Variablen|
+|    AppSetting_default            | AppSetting_default Wert aus der enumerationsdatei |
+|       ConnStr_default         | ConnStr_default Val von der Gesamt Version|
 
-### <a name="stripprefix"></a>stripPrefix
+### <a name="stripprefix"></a>stripprefix
 
-`stripPrefix`: Boolesch, standardmäßig `false`. 
+`stripPrefix`: Boolescher Wert ist standardmäßig `false`. 
 
-Das vorhergehende XML-Markup trennt von app-Einstellungen von Verbindungszeichenfolgen, jedoch müssen Sie alle Schlüssel in der *"Web.config"* Datei, die das angegebene Präfix verwendet. Z. B. das Präfix `AppSetting` muss hinzugefügt werden, um die `ServiceID` Schlüssel ("AppSetting_ServiceID"). Mit `stripPrefix`, das Präfix wird nicht verwendet, der *"Web.config"* Datei. Das Präfix muss in der Konfigurations-Generator-Quelle (z. B. in der Umgebung.) Wir erwarten die meisten Entwickler verwenden `stripPrefix`.
+Das vorangehende XML-Markup trennt App-Einstellungen von Verbindungs Zeichenfolgen, erfordert jedoch, dass alle Schlüssel in der Datei " *Web. config* " das angegebene Präfix verwenden. Beispielsweise muss das Präfix `AppSetting` dem `ServiceID` Schlüssel ("AppSetting_ServiceID") hinzugefügt werden. Bei `stripPrefix`wird das Präfix nicht in der Datei " *Web. config* " verwendet. Das Präfix ist in der Configuration Builder-Quelle erforderlich (z. b. in der-Umgebung). Wir erwarten, dass die meisten Entwickler `stripPrefix`verwenden.
 
-Anwendungen werden in der Regel aus dem Präfix entfernen. Die folgenden *"Web.config"* entfernt das Präfix:
+Anwendungen entfernen in der Regel das Präfix. Mit der folgenden *Web. config* -Datei wird das Präfix entfernt:
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebPrefixStrip.config?name=snippet&highlight=14,19)]
 
-In der vorherigen *"Web.config"* -Datei, die `default` Schlüssel wird sowohl die `<appSettings/>` und `<connectionStrings/>`.
+In der vorherigen *Web. config* -Datei befindet sich der `default` Schlüssel sowohl in der `<appSettings/>` als auch in der `<connectionStrings/>`.
 
-Die folgende Abbildung zeigt die `<appSettings/>` und `<connectionStrings/>` Schlüssel/Werte aus dem vorherigen *"Web.config"* Dateisatz in der Umgebung-Editor:
+In der folgenden Abbildung werden die `<appSettings/>`-und `<connectionStrings/>` Schlüssel/Werte aus der vorherigen Datei *Web. config* im Umgebungs-Editor angezeigt:
 
-![Umgebung-editor](config-builder/static/prefix.png)
+![Umgebungs-Editor](config-builder/static/prefix.png)
 
-Der folgende code liest die `<appSettings/>` und `<connectionStrings/>` Schlüssel/Werte enthalten, die in der vorherigen *"Web.config"* Datei:
+Der folgende Code liest die `<appSettings/>`-und `<connectionStrings/>` Schlüssel/-Werte, die in der vorherigen *Web. config* -Datei enthalten sind:
 
 [!code-csharp[Main](config-builder/MyConfigBuilders/About2.aspx.cs?name=snippet)]
 
-Der vorangehende Code wird die Eigenschaftswerte festgelegt, um:
+Im vorangehenden Code werden die Eigenschaftswerte auf festgelegt:
 
-* Die Werte in der *"Web.config"* Datei, wenn die Schlüssel in Umgebungsvariablen nicht festgelegt werden.
-* Die Werte der Umgebung Variable If festgelegt.
+* Die Werte in der Datei " *Web. config* ", wenn die Schlüssel nicht in Umgebungsvariablen festgelegt sind.
+* Die Werte der Umgebungsvariablen, sofern festgelegt.
 
-Verwenden Sie beispielsweise die vorherige *"Web.config"* -Datei, die die Schlüssel/Werte in der vorherigen Abbildung Umgebung-Editor und dem vorherigen Code, die folgenden Werte festgelegt sind:
+Beispielsweise werden die folgenden Werte festgelegt, indem Sie die vorherige *Web. config* -Datei, die Schlüssel/Werte im vorherigen Bild des Umgebungs-Editors und den vorherigen Code verwenden:
 
-|  Key              | Wert |
+|  Key              | {2&gt;Wert&lt;2} |
 | ----------------- | ------------ |
-|     ServiceID           | AppSetting_ServiceID von Env-Variablen|
-|    default            | AppSetting_default Wert env |
-|    default         | ConnStr_default Val von env|
+|     ServiceID           | AppSetting_ServiceID von "dev"-Variablen|
+|    Standard            | AppSetting_default Wert aus der enumerationsdatei |
+|    Standard         | ConnStr_default Val von der Gesamt Version|
 
-### <a name="tokenpattern"></a>tokenPattern
+### <a name="tokenpattern"></a>tokenpattern
 
-`tokenPattern`: String, Standardwert `@"\$\{(\w+)\}"`
+`tokenPattern`: String, standardmäßig `@"\$\{(\w+)\}"`
 
-Die `Expand` Verhalten der Generatoren sucht das unformatierte XML für Token, die wie folgt aussehen `${token}`. Suche erfolgt mit dem regulären Standardausdruck `@"\$\{(\w+)\}"`. Der Satz von Zeichen, die entspricht `\w` ist strenger als XML und viele Konfigurationsquellen zulassen. Verwendung `tokenPattern` Wenn mehr Zeichen als `@"\$\{(\w+)\}"` in den token-Namen erforderlich sind.
+Das `Expand` Verhalten der Generatoren durchsucht die unformatierten XML-Daten nach Token, die wie `${token}`aussehen. Die Suche erfolgt mit dem standardmäßigen regulären Ausdruck `@"\$\{(\w+)\}"`. Der Zeichensatz, der `\w` entspricht, ist strenger als XML, und viele Konfigurations Quellen erlauben. Verwenden Sie `tokenPattern`, wenn im Tokennamen mehr Zeichen als `@"\$\{(\w+)\}"` erforderlich sind.
 
 `tokenPattern`: Zeichenfolge:
 
-* Ermöglicht Entwicklern, die dem regulären Ausdruck zu ändern, für den Abgleich von token verwendet wird.
-* Keine Validierung wird vorgenommen, um sicherzustellen, dass es sich um ein Regex wohlgeformt und nicht riskant ist.
-* Es muss eine Erfassungsgruppe enthalten. Das gesamte Token muss mit dem gesamten regulären Ausdruck übereinstimmen. Die erste Erfassung muss den token-Namen, die in der Konfigurationsquelle gesucht werden.
+* Ermöglicht es Entwicklern, den Regex zu ändern, der für die Tokenübereinstimmung verwendet wird.
+* Es wird keine Validierung durchgeführt, um sicherzustellen, dass es sich um einen wohlgeformten, nicht gefährlichen Regex handelt.
+* Es muss eine Erfassungs Gruppe enthalten. Der gesamte regex muss mit dem gesamten Token identisch sein. Die erste Erfassung muss der Tokenname sein, der in der Konfigurations Quelle gesucht werden soll.
 
-## <a name="configuration-builders-in-microsoftconfigurationconfigurationbuilders"></a>Konfigurations-Generatoren in Microsoft.Configuration.ConfigurationBuilders
+## <a name="configuration-builders-in-microsoftconfigurationconfigurationbuilders"></a>Configuration Builder in Microsoft. Configuration. configurationbuilder
 
-### <a name="environmentconfigbuilder"></a>EnvironmentConfigBuilder
+### <a name="environmentconfigbuilder"></a>Umgebungs-Generator
 
 ```xml
 <add name="Environment"
@@ -165,19 +165,19 @@ Die `Expand` Verhalten der Generatoren sucht das unformatierte XML für Token, d
     Microsoft.Configuration.ConfigurationBuilders.Environment" />
 ```
 
-Die [EnvironmentConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Environment/):
+[Umgebungs](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Environment/)Konfigurations Generator:
 
-* Ist die einfachste der konfigurationsgeneratoren.
-* Liest die Werte aus der Umgebung.
-* Es muss keine zusätzlichen Konfigurationsoptionen.
-* Die `name` Attributwert ist willkürlich.
+* Ist die einfachste der Configuration Builder.
+* Liest Werte aus der Umgebung.
+* Verfügt über keine zusätzlichen Konfigurationsoptionen.
+* Der `name` Attribut Wert ist willkürlich.
 
-**Hinweis**: In einer Umgebung mit Windows-Container werden zur Laufzeit festgelegten Variablen nur in der Umgebung der EntryPoint-Prozess eingefügt. Apps, die als Dienst ausführen, oder ein Prozess nicht EntryPoint wählen Sie diese Variablen, wenn sie andernfalls über einen Mechanismus in den Container eingefügt werden. Für [IIS](https://github.com/Microsoft/iis-docker/pull/41)/[ASP.NET](https://github.com/Microsoft/aspnet-docker)-basierte Container, die aktuelle Version des [ServiceMonitor.exe](https://github.com/Microsoft/iis-docker/pull/41) verarbeitet dies in der *DefaultAppPool* nur. Andere Windows-basierten Container Varianten müssen möglicherweise ihre eigenen Injection-Methode für nicht-EntryPoint-Prozesse zu entwickeln.
+**Hinweis:** In einer Windows-Container Umgebung werden Variablen, die zur Laufzeit festgelegt werden, nur in die EntryPoint-Prozessumgebung eingefügt. Apps, die als Dienst oder Non-EntryPoint-Prozess ausgeführt werden, nehmen diese Variablen nur dann entgegen, wenn Sie anderweitig über einen Mechanismus im Container eingefügt werden. Bei [IIS](https://github.com/Microsoft/iis-docker/pull/41) -/[ASP.net](https://github.com/Microsoft/aspnet-docker)-basierten Containern behandelt die aktuelle Version von [Servicemonitor. exe](https://github.com/Microsoft/iis-docker/pull/41) dies nur im *DefaultAppPool* . Andere Windows-basierte containervarianten müssen möglicherweise Ihren eigenen einschleusungs Mechanismus für nicht-EntryPoint-Prozesse entwickeln.
 
-### <a name="usersecretsconfigbuilder"></a>UserSecretsConfigBuilder
+### <a name="usersecretsconfigbuilder"></a>Usersecreungsconfigbuilder
 
 > [!WARNING]
-> Nie Speichern von Kennwörtern, vertrauliche Verbindungszeichenfolgen und andere sensiblen Daten im Quellcode. Produktionsgeheimnisse sollte nicht verwendet werden zu Entwicklungs- oder Testzwecken.
+> Speichern Sie niemals Kenn Wörter, sensible Verbindungs Zeichenfolgen oder andere sensible Daten im Quellcode. Produktionsgeheimnisse sollten nicht für Entwicklungs-oder Testzwecke verwendet werden.
 
 ```xml
 <add name="UserSecrets"
@@ -188,18 +188,18 @@ Die [EnvironmentConfigBuilder](https://www.nuget.org/packages/Microsoft.Configur
     Microsoft.Configuration.ConfigurationBuilders.UserSecrets" />
 ```
 
-Diese Konfigurations-Generator bietet eine Funktion, die ähnlich wie [Geheimnis-Manager für ASP.NET Core](/aspnet/core/security/app-secrets).
+Dieser Konfigurations-Generator stellt eine ähnliche Funktion wie [ASP.net Core Secret Manager](/aspnet/core/security/app-secrets)bereit.
 
-Die [UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/) in .NET Framework-Projekten verwendet werden kann, aber eine Datei mit Geheimnissen muss angegeben werden. Alternativ können Sie definieren die `UserSecretsId` Eigenschaft im Projekt Datei und erstellt die unformatierten geheimnisdatei am richtigen Speicherort für das Lesen. Um externe Abhängigkeiten aus Ihrem Projekt zu halten, ist die geheimnisdatei XML-Format. Die XML-Formatierung ist ein Implementierungsdetail, und das Format sollte nicht als zuverlässig betrachtet werden. Wenn Sie zum Freigeben benötigen eine *secrets.json* mit .NET Core-Projekte, erwägen Sie die Verwendung der [SimpleJsonConfigBuilder](#simplejsonconfigbuilder). Die `SimpleJsonConfigBuilder` format für .NET Core ein Implementierungsdetail unterliegen ebenfalls berücksichtigt werden sollten.
+[Usersecretyconfigbuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/) kann in .NET Framework Projekten verwendet werden, aber es muss eine geheime Datei angegeben werden. Alternativ können Sie die `UserSecretsId`-Eigenschaft in der Projektdatei definieren und die Datei mit den unformatierten Geheimnissen am richtigen Speicherort für den Lesevorgang erstellen. Um externe Abhängigkeiten aus dem Projekt herauszuhalten, ist die geheime Datei XML-formatiert. Die XML-Formatierung ist ein Implementierungsdetail, und das Format sollte nicht verlassen werden. Wenn Sie eine Datei " *Secrets. JSON* " für .net Core-Projekte freigeben müssen, sollten Sie die Verwendung von " [simplejsonconfigbuilder](#simplejsonconfigbuilder)" in Erwägung gezogen. Das `SimpleJsonConfigBuilder`-Format für .net Core sollte auch als Implementierungsdetails angesehen werden, die geändert werden können.
 
-Konfiguration für Attribute `UserSecretsConfigBuilder`:
+Konfigurations Attribute für `UserSecretsConfigBuilder`:
 
-* `userSecretsId` -Dies ist die bevorzugte Methode zum Identifizieren einer XML-Datei mit Geheimnissen aus. Es funktioniert ähnlich wie .NET Core, verwendet eine `UserSecretsId` Projekteigenschaft zum Speichern von diesen Bezeichner. Die Zeichenfolge muss eindeutig sein, sie muss keine GUID sein. Mit diesem Attribut den `UserSecretsConfigBuilder` Suchen in einem bekannten Speicherort (`%APPDATA%\Microsoft\UserSecrets\<UserSecrets Id>\secrets.xml`) für eine Datei mit Geheimnissen, die zu dieser Bezeichner gehören.
-* `userSecretsFile` – Ein optionales Attribut, das die Datei mit die geheimen Schlüssel angeben. Die `~` Zeichen am Anfang auf den Stammordner der Anwendung verwendet werden kann. Dieses Attribut oder das `userSecretsId` Attribut ist erforderlich. Wenn beide angegeben werden, `userSecretsFile` hat Vorrang vor.
-* `optional`: Boolesch, Standardwert `true` -wird keine Ausnahme aus, wenn die Datei mit Geheimnissen nicht gefunden werden kann. 
-* Die `name` Attributwert ist willkürlich.
+* `userSecretsId`: Dies ist die bevorzugte Methode zum Identifizieren einer XML-Geheimnis Datei. Es funktioniert ähnlich wie .net Core, das eine `UserSecretsId` Project-Eigenschaft verwendet, um diesen Bezeichner zu speichern. Die Zeichenfolge muss eindeutig sein, es muss sich nicht um eine GUID handeln. Mit diesem Attribut untersuchen die `UserSecretsConfigBuilder` einen bekannten lokalen Speicherort (`%APPDATA%\Microsoft\UserSecrets\<UserSecrets Id>\secrets.xml`) für eine geheime Datei, die zu diesem Bezeichner gehört.
+* `userSecretsFile`: ein optionales Attribut, das die Datei mit den geheimen Schlüsseln angibt. Das `~` Zeichen kann am Anfang verwendet werden, um auf den Anwendungs Stamm zu verweisen. Entweder dieses Attribut oder das `userSecretsId` Attribut ist erforderlich. Wenn beide angegeben sind, hat `userSecretsFile` Vorrang.
+* `optional`: Boolescher Wert, der Standardwert `true`-verhindert eine Ausnahme, wenn die geheime Datei nicht gefunden werden kann. 
+* Der `name` Attribut Wert ist willkürlich.
 
-Die Datei mit Geheimnissen weist das folgende Format:
+Die Geheimnis Datei hat das folgende Format:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -210,7 +210,7 @@ Die Datei mit Geheimnissen weist das folgende Format:
 </root>
 ```
 
-### <a name="azurekeyvaultconfigbuilder"></a>AzureKeyVaultConfigBuilder
+### <a name="azurekeyvaultconfigbuilder"></a>Azurekeyvaultconfigbuilder
 
 ```xml
 <add name="AzureKeyVault"
@@ -224,17 +224,17 @@ Die Datei mit Geheimnissen weist das folgende Format:
     Microsoft.Configuration.ConfigurationBuilders.Azure" />
 ```
 
-Die [AzureKeyVaultConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Azure/) gespeicherten Werte liest die [Azure Key Vault](/azure/key-vault/key-vault-whatis).
+[Azurekeyvaultconfigbuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Azure/) liest Werte, die in der [Azure Key Vault](/azure/key-vault/key-vault-whatis)gespeichert sind.
 
-`vaultName` ist erforderlich, entweder (der Name des Tresors) oder ein URI in den Tresor. Die anderen Attribute ermöglichen die Steuerung zu welchem Tresor für die Verbindung, jedoch nur dann erforderlich sind, wenn die Anwendung nicht in einer Umgebung ausgeführt wird, die mit `Microsoft.Azure.Services.AppAuthentication`. Die Authentifizierungsbibliothek von Azure-Dienste werden automatisch um Verbindungsinformationen aus die ausführungsumgebung möglichst zu übernehmen. Sie können automatisch überschreiben durch eine Verbindungszeichenfolge Bereitstellen von Verbindungsinformationen übernehmen.
+`vaultName` ist erforderlich (entweder der Name des Tresors oder ein URI für den Tresor). Mit den anderen Attributen können Sie steuern, mit welchem Tresor eine Verbindung hergestellt werden soll. Dies ist jedoch nur erforderlich, wenn die Anwendung nicht in einer Umgebung ausgeführt wird, die mit `Microsoft.Azure.Services.AppAuthentication`arbeitet. Die Authentifizierungs Bibliothek für Azure-Dienste wird verwendet, um nach Möglichkeit automatisch Verbindungsinformationen aus der Ausführungsumgebung auszuwählen. Sie können die automatische Erfassung von Verbindungsinformationen überschreiben, indem Sie eine Verbindungs Zeichenfolge angeben.
 
-* `vaultName` -Erforderlich, wenn `uri` in nicht angegeben. Gibt den Namen des Tresors in Ihrem Azure-Abonnement aus dem Schlüssel/Wert-Paare gelesen.
-* `connectionString` -Eine Verbindungszeichenfolge, die verwendet werden, indem [AzureServiceTokenProvider](https://docs.microsoft.com/en-us/azure/key-vault/service-to-service-authentication#connection-string-support)
-* `uri` -Eine Verbindung mit anderen Key Vault-Anbieter mit dem angegebenen `uri` Wert. Wenn nicht angegeben ist, Azure (`vaultName`) ist die schlüsseltresor-Anbieters.
-* `version` – Azure Key Vault bietet eine versionsverwaltung für geheime Schlüssel. Wenn `version` angegeben ist, wird der Generator ruft nur Geheimnisse, die diese Version entspricht.
-* `preloadSecretNames` -Wird standardmäßig dieser Generator Abfragen **alle** Schlüssel Namen in den schlüsseltresor aus, wenn es initialisiert wird. Legen Sie dieses Attribut auf, um zu verhindern, lesen alle Schlüsselwerte, `false`. Wenn dies auf `false` geheime Schlüssel 1 zu einem Zeitpunkt liest. Lesen von Geheimnissen, die jeweils einzeln kann sinnvoll sein, wenn im Tresor ermöglicht den Zugriff "Abrufen", aber nicht "List" zugreifen. **Hinweis**: Bei Verwendung `Greedy` Modus `preloadSecretNames` muss `true` (die Standardeinstellung.)
+* `vaultName`: erforderlich, wenn `uri` nicht angegeben ist. Gibt den Namen des Tresors in Ihrem Azure-Abonnement an, aus dem Schlüssel-Wert-Paare gelesen werden sollen.
+* `connectionString`-eine Verbindungs Zeichenfolge, die von [azureservicestokenprovider](https://docs.microsoft.com/azure/key-vault/service-to-service-authentication#connection-string-support) verwendet wird.
+* `uri`: stellt eine Verbindung mit anderen Key Vault Anbietern mit dem angegebenen `uri` Wert her. Wenn nicht angegeben, ist Azure (`vaultName`) der Tresor Anbieter.
+* `version`-Azure Key Vault bietet eine Versions Verwaltungsfunktion für Geheimnisse. Wenn `version` angegeben wird, ruft der Generator nur die geheimen Schlüssel ab, die mit dieser Version übereinstimmen.
+* `preloadSecretNames`: Standardmäßig fragt dieser Generator **alle** Schlüsselnamen im Schlüssel Tresor ab, wenn er initialisiert wird. Um zu verhindern, dass alle Schlüsselwerte gelesen werden, legen Sie dieses Attribut auf `false`fest. Wenn diese Einstellung auf `false` festgelegt wird, werden die geheimen Schlüssel einzeln gelesen. Das Lesen von geheimen Schlüsseln kann nützlich sein, wenn der Tresor den Zugriff auf "abrufen", aber nicht auf "auflisten" zulässt. **Hinweis:** Wenn Sie `Greedy` Modus verwenden, müssen `preloadSecretNames` `true` (Standard) sein.
 
-### <a name="keyperfileconfigbuilder"></a>KeyPerFileConfigBuilder
+### <a name="keyperfileconfigbuilder"></a>Keyperfileconfigbuilder
 
 ```xml
 <add name="KeyPerFile"
@@ -247,19 +247,19 @@ Die [AzureKeyVaultConfigBuilder](https://www.nuget.org/packages/Microsoft.Config
     Microsoft.Configuration.ConfigurationBuilders.KeyPerFile" />
 ```
 
-[KeyPerFileConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.KeyPerFile/) ein Basiskonfiguration-Generator, der einem Verzeichnis enthaltenen Dateien als Quelle für Werte verwendet wird. Der Name einer Datei ist der Schlüssel, und der Inhalt ist der Wert. Diese Konfigurations-Generator kann nützlich sein, wenn in einem orchestrierten containerumgebung ausgeführt. Systeme, z. B. das Bereitstellen von Docker Swarm und Kubernetes `secrets` für ihre orchestrierten Windows-Container auf diese Weise Schlüssel pro Datei.
+[Keyperfileconfigbuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.KeyPerFile/) ist ein grundlegender Konfigurations-Generator, der die Dateien eines Verzeichnisses als Quelle von Werten verwendet. Der Name einer Datei ist der Schlüssel, und der Inhalt ist der Wert. Dieser Konfigurations-Generator kann nützlich sein, wenn er in einer orchestrierten Container Umgebung ausgeführt wird. Systeme wie docker Swarm und Kubernetes bieten `secrets` ihren orchestrierten Windows-Containern in dieser Schlüssel-pro-Datei-Weise.
 
-Attributdetails:
+Attribut Details:
 
-* `directoryPath` – Erforderlich. Gibt einen Pfad nach Werten gesucht werden soll. Docker für Windows, die vertraulichen Informationen sich in befinden der *C:\ProgramData\Docker\secrets* Verzeichnis standardmäßig.
-* `ignorePrefix` -Dateien, die mit diesem Präfix beginnen, werden ausgeschlossen. Der Standardwert ist "ignorieren".
-* `keyDelimiter` – Der Standardwert ist `null`. Wenn angegeben, durchsucht der Konfigurations-Generator mehrere Ebenen des Verzeichnisses, Schlüsselnamen mit diesem Trennzeichen erstellen. Wenn dieser Wert ist `null`, sieht der Konfigurations-Generator nur auf der obersten Ebene des Verzeichnisses.
-* `optional` – Der Standardwert ist `false`. Gibt an, ob der Konfigurations-Generator zu Fehlern führen sollten, wenn das Quellverzeichnis nicht vorhanden.
+* `directoryPath` – Erforderlich. Gibt einen Pfad an, in dem nach Werten gesucht werden soll. Docker für Windows geheimen Schlüssel werden standardmäßig im Verzeichnis " *c:\programdata\docker\secrets* " gespeichert.
+* `ignorePrefix` Dateien, die mit diesem Präfix beginnen, werden ausgeschlossen. Der Standardwert ist „ignore“ (ignorieren).
+* `keyDelimiter`-Standardwert ist `null`. Wenn dieser Wert angegeben ist, durchläuft der Konfigurations-Generator mehrere Ebenen des Verzeichnisses und erstellt Schlüsselnamen mit diesem Trennzeichen. Wenn dieser Wert `null`ist, untersucht der Konfigurations-Generator nur die oberste Verzeichnisebene.
+* `optional`-Standardwert ist `false`. Gibt an, ob der Konfigurations-Generator Fehler verursachen soll, wenn das Quellverzeichnis nicht vorhanden ist.
 
-### <a name="simplejsonconfigbuilder"></a>SimpleJsonConfigBuilder
+### <a name="simplejsonconfigbuilder"></a>Simplejsonconfigbuilder
 
 > [!WARNING]
-> Nie Speichern von Kennwörtern, vertrauliche Verbindungszeichenfolgen und andere sensiblen Daten im Quellcode. Produktionsgeheimnisse sollte nicht verwendet werden zu Entwicklungs- oder Testzwecken.
+> Speichern Sie niemals Kenn Wörter, sensible Verbindungs Zeichenfolgen oder andere sensible Daten im Quellcode. Produktionsgeheimnisse sollten nicht für Entwicklungs-oder Testzwecke verwendet werden.
 
 ```xml
 <add name="SimpleJson"
@@ -271,16 +271,16 @@ Attributdetails:
     Microsoft.Configuration.ConfigurationBuilders.Json" />
 ```
 
-.NET Core-Projekte verwenden häufig die JSON-Dateien für die Konfiguration. Die [SimpleJsonConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Json/) -Generator können Sie .NET Core-JSON-Dateien, die in .NET Framework verwendet werden. Diese Konfigurations-Generator ist, stellt eine einfache Zuordnung zwischen einer einfache Schlüssel/Wert-Quelle in bestimmten Schlüssel/Wert-Bereiche von .NET Framework-Konfiguration. Diese Konfigurations-Generator ist **nicht** für hierarchische Konfigurationen bereitstellen. Die zugrunde liegende JSON-Datei ähnelt einem Wörterbuch vorhanden ist, keine komplexe hierarchische-Objekt. Eine hierarchische-Datei mit mehreren Ebene kann verwendet werden. Dieser Anbieter `flatten`s die Tiefe durch den Namen der Eigenschaft auf jeder Ebene mit anhängen `:` als Trennzeichen.
+.Net Core-Projekte verwenden häufig JSON-Dateien für die Konfiguration. Der [simplejsonconfigbuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Json/) -Generator ermöglicht die Verwendung von .net Core-JSON-Dateien in der .NET Framework. Dieser Konfigurations-Generator stellt eine einfache Zuordnung von einer flachen Schlüssel-/Wert-Quelle zu bestimmten Schlüssel-Wert-Bereichen .NET Framework Konfiguration bereit. Dieser Konfigurations-Generator bietet **keine** hierarchischen Konfigurationen. Die JSON-Unterstützungs Datei ähnelt einem Wörterbuch, nicht einem komplexen hierarchischen Objekt. Eine hierarchische Datei mit mehreren Ebenen kann verwendet werden. Dieser Anbieter `flatten`die Tiefe, indem er den Eigenschaftsnamen auf jeder Ebene anfügt, wobei `:` als Trennzeichen verwendet wird.
 
-Attributdetails:
+Attribut Details:
 
-* `jsonFile` – Erforderlich. Gibt an, die JSON-Datei gelesen werden. Die `~` Zeichen kann zu Beginn verwendet werden, auf das um Stammverzeichnis der app zu verweisen.
-* `optional` – Boolesch, Standardwert ist `true`. Verhindert, dass Ausnahmen auslösen, wenn die JSON-Datei nicht gefunden werden kann.
-* `jsonMode` - `[Flat|Sectional]`. `Flat` Der Standardwert ist. Wenn `jsonMode` ist `Flat`, die JSON-Datei ist eine einzelne einfache Schlüssel/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne einfache Schlüssel/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` erfolgt `Sectional` Modus:
+* `jsonFile` – Erforderlich. Gibt die JSON-Datei an, aus der gelesen werden soll. Das `~` Zeichen kann am Anfang verwendet werden, um auf den Stamm der APP zu verweisen.
+* `optional` boolescher Wert, der Standardwert ist `true`. Verhindert das Auslösen von Ausnahmen, wenn die JSON-Datei nicht gefunden werden kann.
+* `jsonMode` - `[Flat|Sectional]`. Standardmäßig ist `Flat` festgelegt. Wenn `jsonMode` `Flat`ist, ist die JSON-Datei eine einzelne flatkey/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne flatkey-/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` im `Sectional` Modus konfiguriert ist:
 
-  * Die JSON-Datei ist im Prinzip nur auf der obersten Ebene in mehreren Wörterbüchern unterteilt.
-  * Jede der Wörterbücher wird nur auf den Konfigurationsabschnitt angewendet, die die Eigenschaft der obersten Ebene Namens auf diese entspricht. Zum Beispiel:
+  * Die JSON-Datei wird konzeptionell direkt auf der obersten Ebene in mehrere Wörterbücher aufgeteilt.
+  * Jedes der Wörterbücher wird nur auf den Konfigurations Abschnitt angewendet, der mit dem an Sie angefügten Eigenschaftsnamen der obersten Ebene übereinstimmt. Beispiel:
 
 ```json
     {
@@ -295,18 +295,18 @@ Attributdetails:
     }
 ```
 
-## <a name="implementing-a-custom-keyvalue-configuration-builder"></a>Implementieren einen benutzerdefinierte Schlüssel-Wert-Konfigurations-Generator
+## <a name="implementing-a-custom-keyvalue-configuration-builder"></a>Implementieren eines benutzerdefinierten Schlüssel-Wert-Konfigurations-Generators
 
-Wenn der Konfigurations-Generatoren nicht Ihren Anforderungen entsprechen, können Sie eine benutzerdefinierte Aktivität schreiben. Die `KeyValueConfigBuilder` Basisklasse behandelt das Ersatz-Modi und die meisten Präfix Bedenken. Es müssen nur ein Projekt implementieren:
+Wenn die Konfigurations-Generatoren Ihren Anforderungen nicht entsprechen, können Sie ein benutzerdefiniertes schreiben. Die `KeyValueConfigBuilder` Basisklasse behandelt Ersetzungs Modi und die meisten Präfix Probleme. Ein Implementierungsprojekt benötigt nur:
 
-* Von der Basisklasse erben, und implementieren Sie eine grundlegende Quelle von Schlüssel/Wert-Paaren, durch die `GetValue` und `GetAllValues`:
-* Hinzufügen der [Microsoft.Configuration.ConfigurationBuilders.Base](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Base/) zum Projekt.
+* Erben Sie von der Basisklasse, und implementieren Sie mithilfe der `GetValue` und `GetAllValues`eine grundlegende Quelle von Schlüssel-Wert-Paaren:
+* Fügen Sie [Microsoft. Configuration. configurationbuilder. Base](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.Base/) dem Projekt hinzu.
 
 [!code-csharp[Main](config-builder/MyConfigBuilders/MyCustomConfigBuilder.cs)]
 
-Die `KeyValueConfigBuilder` Basisklasse bietet im Wesentlichen das Geschäfts-, Schul- oder konsistent Verhalten für Schlüssel/Wert-Konfigurations-Generatoren.
+Die `KeyValueConfigBuilder`-Basisklasse stellt einen Großteil der Arbeit und das konsistente Verhalten für Schlüssel-Wert-Konfigurations-Generatoren bereit.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-* [Konfigurations-Generatoren-GitHub-repository](https://github.com/aspnet/MicrosoftConfigurationBuilders)
-* [Dienst-zu-Dienst-Authentifizierung in Azure Key Vault mithilfe von .NET](/azure/key-vault/service-to-service-authentication#connection-string-support)
+* [GitHub-Repository für Konfigurations-Generatoren](https://github.com/aspnet/MicrosoftConfigurationBuilders)
+* [Dienst-zu-Dienst-Authentifizierung für Azure Key Vault mithilfe von .net](/azure/key-vault/service-to-service-authentication#connection-string-support)

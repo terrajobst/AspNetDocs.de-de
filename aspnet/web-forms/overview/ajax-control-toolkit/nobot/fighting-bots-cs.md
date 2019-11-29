@@ -1,71 +1,71 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
-title: Abwehren von Bots (c#) | Microsoft-Dokumentation
+title: Kämpfen mit BotsC#() | Microsoft-Dokumentation
 author: wenz
-description: Automatisierte Bots Stuck, Blogs und anderen Websites mit Spam, Kommentar ohne Eingreifen des Benutzers senden. Das Steuerelement "nobot" in der ASP.NET AJAX-Con...
+description: Automatisierte Bots Verputzen Webprotokolle und andere Websites mit Spam und senden Kommentar Formulare ohne Benutzerinteraktion. Das NOBOT-Steuerelement im ASP.NET AJAX-con...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0a1917e0-884a-4576-8e93-9ed660faae51
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e45fa613e985b797eef4348d26492af88a688fd8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fef55edf12a024e4dd66e2a18ea371ab4dac861f
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115527"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606448"
 ---
 # <a name="fighting-bots-c"></a>Abwehren von Bots (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/NoBot0.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/nobot0CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/NoBot0.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/nobot0CS.pdf)
 
-> Automatisierte Bots Stuck, Blogs und anderen Websites mit Spam, Kommentar ohne Eingreifen des Benutzers senden. Das Steuerelement "nobot" in der ASP.NET AJAX Control Toolkit können diese Bots zu bekämpfen.
+> Automatisierte Bots Verputzen Webprotokolle und andere Websites mit Spam und senden Kommentar Formulare ohne Benutzerinteraktion. Das NOBOT-Steuerelement im ASP.NET AJAX Control Toolkit kann Ihnen helfen, diese Bots zu bekämpfen.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Automatisierte Bots Stuck, Blogs und anderen Websites mit Spam, Kommentar ohne Eingreifen des Benutzers senden. Das Steuerelement "nobot" in der ASP.NET AJAX Control Toolkit können diese Bots zu bekämpfen.
+Automatisierte Bots Verputzen Webprotokolle und andere Websites mit Spam und senden Kommentar Formulare ohne Benutzerinteraktion. Das NOBOT-Steuerelement im ASP.NET AJAX Control Toolkit kann Ihnen helfen, diese Bots zu bekämpfen.
 
 ## <a name="steps"></a>Schritte
 
-Ein gebräuchliches Verfahren zur Bots zunichte machen werden CAPTCHAs vollständig automatisierte öffentliche Turing-Test zu verwenden, um Computer und Menschen auseinander anzugeben. Ein Turing-Test war ursprünglich ein Test eine Person, in denen entscheiden, ob ein Kommunikationspartner für eine Person oder ein Computer ist erforderlich. Im Web besteht ein CAPTCHA eines Bildes mit einigen verzerrten Buchstaben darauf in der Regel aus. Die Idee ist, dass nur einem Benutzer, der die Buchstaben auf dem Image lesen kann, während die OCR-Algorithmen fehl.
+Ein gängiger Ansatz zur Bekämpfung von Bots ist die Verwendung von Captchas vollständig automatisierten öffentlichen Tests, um Computer und Menschen voneinander zu informieren. Ein Turing-Test war ursprünglich ein Test, bei dem jemand entscheiden musste, ob es sich bei einem Kommunikationspartner um einen Menschen oder einen Computer handelt. Im Web besteht eine CAPTCHA in der Regel aus einem Bild mit einigen verzerrten Buchstaben. Die Idee ist, dass nur ein Mensch die Buchstaben auf dem Bild lesen kann, während die OCR-Algorithmen fehlschlagen.
 
-Es gibt verschiedene vor- und Nachteile dieses Ansatzes, aber eine genauere Beschreibung ist, würde den Rahmen dieses Tutorials. Es ist jedoch ein Steuerelement in ASP.NET AJAX Control Toolkit bietet einen ähnlichen Ansatz: `NoBot`. Es ist einfacher, als ein CAPTCHA zu überwinden und ist sehr einfach zu verwenden und umfassen extrem gut auf Websites wie Blogs, in denen gilt dies erfolgreich, wenn die meisten Versuche Spam, werden außer Kraft gesetzt, die die `NoBot` Steuerelement möglich.
+Dieser Ansatz bietet mehrere vor-und Nachteile, aber eine Erörterung dieses Ansatzes geht über den Rahmen dieses Tutorials hinaus. Es gibt jedoch ein Steuerelement im ASP.NET AJAX Control Toolkit, das einen ähnlichen Ansatz bietet: `NoBot`. Sie ist einfacher zu überwinden als eine CAPTCHA, aber Sie ist sehr einfach zu verwenden und eignet sich hervorragend für Websites wie Blogs, bei denen es sich um einen Erfolg handelt, wenn die meisten Spam Versuche besiegt werden, was das `NoBot`-Steuerelement tun kann.
 
-`NoBot` fängt das Postback des aktuellen ASP.NET Web Form an, wenn mindestens eine der folgenden Bedingungen erfüllt ist:
+`NoBot` fängt das Postback des aktuellen ASP.net-Webformulars ab, wenn mindestens eine dieser Bedingungen erfüllt ist:
 
-- Der Browser ein Fehler auftritt, ein JavaScript-Rätsel lösen (z. B. wenn JavaScript deaktiviert ist)
-- Der Benutzer das Formular, um schnell gesendet hat
-- Die Client-IP-Adresse übermittelt das Formular zu häufig in einem bestimmten Zeitraum an.
+- Der Browser kann ein JavaScript-Rätsel nicht lösen (z.b. wenn JavaScript deaktiviert ist).
+- Der Benutzer hat das Formular schnell übermittelt.
+- Die Client-IP-Adresse hat das Formular zu häufig in einem bestimmten Zeitraum übermittelt.
 
-Um zu prüfen, ob diese Bedingungen, die `NoBot` Steuerelement erfordert diese Attribute (alle optional):
+Um diese Bedingungen zu überprüfen, benötigt das `NoBot` Steuerelement diese Attribute (alle optional):
 
-- `ResponseMinimumDelaySeconds` minimale Anzahl von Sekunden zwischen postbacks
-- `CutoffWindowSeconds` die Länge des Zeitfensters, in dem Measures von Postbacks über eine IP-Adresse sind
+- `ResponseMinimumDelaySeconds` minimale Anzahl von Sekunden zwischen Postbacks
+- `CutoffWindowSeconds` Länge des Zeitintervalls, in dem Postbacks von einer IP Measures sind
 - `CutoffMaximumInstances` maximale Anzahl von Sekunden pro Zeitintervall
 
-Die folgende Markup-Anforderungen, mindestens zwei Sekunden verstreichen zwischen Postbacks und dass es nur fünf Postbacks innerhalb eines Zeitraums von 30 Sekunden maximal:
+Das folgende Markup erfordert, dass mindestens zwei Sekunden zwischen Postbacks Vergehen und dass nur fünf Postbacks oder weniger innerhalb eines Zeitraums von 30 Sekunden vorhanden sind:
 
 [!code-aspx[Main](fighting-bots-cs/samples/sample1.aspx)]
 
-Klicken Sie dann wie gewohnt stellen Sie sicher, dass die `ScriptManager` auf der Seite, damit die ASP.NET AJAX-Bibliothek geladen wird und das Steuerelement-Toolkit verwendet werden kann:
+Stellen Sie dann wie üblich sicher, dass die `ScriptManager` auf der Seite enthalten ist, damit die ASP.NET AJAX-Bibliothek geladen und das steuerungstooltoolkit verwendet werden kann:
 
 [!code-aspx[Main](fighting-bots-cs/samples/sample2.aspx)]
 
-Da der Großteil der Überprüfungen `NoBot` Aktionen auftreten, auf dem Server, müssen Sie das Ergebnis des diese Überprüfungen zu überprüfen. Dies ist möglich durch Aufrufen von `NoBot`des `IsValid()` Methode. Es hat ein Argument (als ein `out` Parameter /`ByRef` Parameter) vom Typ `NoBotState`. Die Zeichenfolgendarstellung enthält den Grund an, wenn die Überprüfung ein Fehler auftritt und `Valid` andernfalls. Der folgende Code gibt eine Meldung gemäß `NoBot`des führen:
+Da die meisten der Überprüfungen `NoBot` auf der Serverseite ausgeführt werden, müssen Sie das Ergebnis dieser Überprüfungen überprüfen. Dies kann durch Aufrufen der `IsValid()`-Methode von `NoBot`erfolgen. Es verfügt über ein Argument (als `out` Parameter/`ByRef` Parameter), das vom Typ `NoBotState`ist. Die Zeichen folgen Darstellung enthält den Grund, in dem die Überprüfung fehlschlägt, und `Valid` andernfalls. Der folgende Code gibt eine Nachricht gemäß `NoBot`Ergebnis aus:
 
 [!code-aspx[Main](fighting-bots-cs/samples/sample3.aspx)]
 
-Schließlich benötigen Sie ein Formular zum Senden und ein Label-Element die Meldung ausgegeben, und Sie sind fertig!
+Zum Schluss benötigen Sie ein zu über mittelendes Formular und ein Bezeichnungs Element zum Ausgeben der Nachricht.
 
 [!code-aspx[Main](fighting-bots-cs/samples/sample4.aspx)]
 
-Wenn Sie dieses Skript ausführen und Deaktivieren von JavaScript oder senden Sie das Formular in den ersten zwei Sekunden oder senden Sie das Formular sieben Mal innerhalb von 30 Sekunden, erhalten Sie eine Fehlermeldung angezeigt. Verwenden Sie dieses Steuerelement jedoch bedacht, da nur ungefähr 90 bis 95 % der Benutzer über die JavaScript-aktivierte verfügen, daher 5 bis 10 % der Benutzer nicht `NoBot`des testen.
+Wenn Sie dieses Skript ausführen und JavaScript deaktivieren oder das Formular innerhalb der ersten zwei Sekunden übermitteln oder das Formular sieben Mal innerhalb von dreißig Sekunden übermitteln, erhalten Sie eine Fehlermeldung. Verwenden Sie dieses Steuerelement jedoch klug, da für nur etwa 90-95% der Benutzer JavaScript aktiviert ist. aus diesem Grund können 5-10% der Benutzer `NoBot`Tests nicht ausgeführt werden.
 
-[![Diese Fehlermeldung kann durch einen Bot verursacht werden](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
+[![diese Fehlermeldung wurde möglicherweise von einem bot verursacht.](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
 
-Diese Fehlermeldung kann auftreten, durch einen Bot ([klicken Sie, um das Bild in voller Größe anzeigen](fighting-bots-cs/_static/image3.png))
+Diese Fehlermeldung wurde möglicherweise von einem bot verursacht ([Klicken Sie, um das Bild in voller Größe anzuzeigen](fighting-bots-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Nächste](fighting-bots-vb.md)

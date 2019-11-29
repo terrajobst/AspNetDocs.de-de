@@ -1,263 +1,263 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
-title: Erstellen eine OData v3-Endpunkts mit Web-API 2 | Microsoft-Dokumentation
+title: Erstellen eines odata-V3-Endpunkts mit der Web-API 2 | Microsoft-Dokumentation
 author: MikeWasson
-description: Das Open Data Protocol (OData) ist eine Data Access-Protokoll für das Web. OData bietet eine einheitliche Möglichkeit zum Strukturieren von Daten, die Daten Abfragen und Bearbeiten der Daten...
+description: Der Open Data Protocol (odata) ist ein Datenzugriffs Protokoll für das Web. Odata bietet eine einheitliche Möglichkeit zum Strukturieren von Daten, Abfragen der Daten und Bearbeiten der Daten...
 ms.author: riande
 ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: e31bf3215155b4b45bcf2eb90dd6947caf99b7f8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e68a454398f109dfd089be9c9a44d3fe662acc2f
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125261"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600434"
 ---
-# <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eine OData v3-Endpunkts mit Web-API 2
+# <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eines odata-V3-Endpunkts mit der Web-API 2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
-> Die [Open Data Protocol](http://www.odata.org/) (OData) ist eine Data Access-Protokoll für das Web. OData bietet eine einheitliche Möglichkeit zum Strukturieren von Daten, die Daten Abfragen und bearbeiten das DataSet über CRUD-Vorgänge (erstellen, lesen, aktualisieren und löschen). OData unterstützt AtomPub (XML) und JSON-Format. OData definiert auch eine Möglichkeit, Metadaten zu den Daten verfügbar zu machen. Clients können die Metadaten verwenden, um die Typinformationen und die Beziehungen für das Dataset zu ermitteln.
+> Der [Open Data Protocol](http://www.odata.org/) (odata) ist ein Datenzugriffs Protokoll für das Web. Odata bietet eine einheitliche Möglichkeit zum Strukturieren von Daten, Abfragen der Daten und Bearbeiten des Datasets mithilfe von CRUD-Vorgängen (erstellen, lesen, aktualisieren und löschen). Odata unterstützt die Formate AtomPub (XML) und JSON. Odata definiert auch eine Möglichkeit, Metadaten zu den Daten verfügbar zu machen. Clients können die Metadaten zum Ermitteln der Typinformationen und Beziehungen für das DataSet verwenden.
 >
-> ASP.NET Web-API erleichtert es, um einen OData-Endpunkt für ein Dataset zu erstellen. Sie können steuern, auf genau die OData-Vorgänge der Endpunkt unterstützt. Sie können mehrere OData-Endpunkte zusammen mit nicht-OData-Endpunkte hosten. Sie haben vollständige Kontrolle über Ihr Datenmodell, die Back-End-Geschäftslogik und die Datenschicht.
+> ASP.net-Web-API erleichtert das Erstellen eines odata-Endpunkts für ein DataSet. Sie können genau steuern, welche odata-Vorgänge der Endpunkt unterstützt. Sie können mehrere odata-Endpunkte neben nicht-odata-Endpunkten hosten. Sie haben vollständige Kontrolle über das Datenmodell, die Back-End-Geschäftslogik und die Datenschicht.
 >
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web-API 2
-> - OData v3
+> - Odata, Version 3
 > - Entity Framework 6
-> - [Fiddler Web Debugging Proxy (Optional)](http://www.fiddler2.com)
+> - [Webdebugproxy für das webdebugging (optional)](http://www.fiddler2.com)
 >
-> Web-API-OData-Unterstützung wurde hinzugefügt, [ASP.NET und Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=282650). In diesem Lernprogramm verwendet jedoch Gerüst, das in Visual Studio 2013 hinzugefügt wurde.
+> Die Web-API-odata-Unterstützung wurde in [ASP.net and Web Tools 2012,2-Update](https://go.microsoft.com/fwlink/?LinkId=282650)hinzugefügt In diesem Tutorial wird jedoch Gerüstbau verwendet, der in Visual Studio 2013 hinzugefügt wurde.
 
-In diesem Tutorial erstellen Sie einen einfachen OData-Endpunkt, den von Clients abgefragt werden können. Außerdem erstellen Sie einen C#-Client für den Endpunkt. Nachdem Sie dieses Tutorial abgeschlossen haben, der nächste Satz von Tutorials zeigen, wie Sie weitere Funktionen, einschließlich von entitätsbeziehungen, Aktionen hinzufügen, und wählen Sie die $erweitern / $.
+In diesem Tutorial erstellen Sie einen einfachen odata-Endpunkt, der von Clients abgefragt werden kann. Außerdem erstellen Sie einen C# Client für den Endpunkt. Nachdem Sie dieses Lernprogramm durchgeführt haben, zeigen Sie im nächsten Satz von Tutorials, wie Sie weitere Funktionen hinzufügen, einschließlich Entitäts Beziehungen, Aktionen und $Expand/$SELECT.
 
-- [Visual Studio-Projekt erstellen](#create-project)
-- [Fügen Sie ein Entitätsmodell hinzu.](#add-model)
-- [Fügen Sie einen OData-Controller hinzu.](#add-controller)
-- [Hinzufügen des EDM und Weiterleiten](#edm)
-- [Seeding für die Datenbank (Optional)](#seed-db)
-- [Untersuchen den OData-Endpunkt](#explore)
-- [OData-Serialisierungsformate](#formats)
+- [Erstellen des Visual Studio-Projekts](#create-project)
+- [Hinzufügen eines Entitäts Modells](#add-model)
+- [Hinzufügen eines odata-Controllers](#add-controller)
+- [Hinzufügen des EDM und der Route](#edm)
+- [Ausgangsdaten der Datenbank (optional)](#seed-db)
+- [Untersuchen des odata-Endpunkts](#explore)
+- [Odata-Serialisierungsformate](#formats)
 
 <a id="create-project"></a>
-## <a name="create-the-visual-studio-project"></a>Visual Studio-Projekt erstellen
+## <a name="create-the-visual-studio-project"></a>Erstellen des Visual Studio-Projekts
 
-In diesem Tutorial erstellen Sie einen OData-Endpunkt, der grundlegende CRUD-Vorgänge unterstützt. Der Endpunkt wird eine einzelne Ressource, eine Liste der Produkte verfügbar machen. Späteren Tutorials werden der Funktionsumfang erweitert.
+In diesem Tutorial erstellen Sie einen odata-Endpunkt, der grundlegende CRUD-Vorgänge unterstützt. Der Endpunkt macht eine einzelne Ressource, eine Liste mit Produkten, verfügbar. In späteren Tutorials werden weitere Funktionen hinzugefügt.
 
-Starten Sie Visual Studio, und wählen Sie **neues Projekt** von der Startseite. Alternativ wählen Sie in der **Datei** , wählen Sie im Menü **neu** und dann **Projekt**.
+Starten Sie Visual Studio, und wählen Sie auf der Start Seite die Option **Neues Projekt** aus. Oder wählen Sie im Menü **Datei** die Option **neu** und dann **Projekt**aus.
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie den Visual C#-Knoten. Klicken Sie unter **Visual C#-** Option **Web**. Wählen Sie **der ASP.NET-Webanwendung** Vorlage.
+Wählen Sie im Bereich **Vorlagen** die Option **installierte Vorlagen** aus, und C# erweitern Sie den Knoten visuelle Knoten. Wählen Sie unter **Visualisierung C#** die Option **Web**aus. Wählen Sie **die Vorlage ASP.NET Webanwendung** aus.
 
 ![](creating-an-odata-endpoint/_static/image1.png)
 
-In der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **leere** Vorlage. Klicken Sie unter &quot;fügen Sie Ordner und kernreferenzen für... &quot;, überprüfen Sie **Web-API-**. Klicken Sie auf **OK**.
+Wählen Sie im Dialogfeld **Neues ASP.net-Projekt** die Vorlage **leer** aus. Überprüfen Sie unter &quot;Ordner und Kern Verweise hinzufügen für...&quot;die **Web-API**. Klicken Sie auf **OK**.
 
 ![](creating-an-odata-endpoint/_static/image2.png)
 
 <a id="add-model"></a>
-## <a name="add-an-entity-model"></a>Fügen Sie ein Entitätsmodell hinzu.
+## <a name="add-an-entity-model"></a>Hinzufügen eines Entitäts Modells
 
-Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. Für dieses Tutorial benötigen wir ein Modell, das ein Produkt darstellt. Das Modell entspricht unserer OData-Entitätstyp.
+Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. Für dieses Tutorial benötigen wir ein Modell, das ein Produkt darstellt. Das Modell entspricht dem odata-Entitätstyp.
 
-Klicken Sie im Projektmappen-Explorer den Ordner "Models". Wählen Sie im Kontextmenü des **hinzufügen** wählen Sie dann **Klasse**.
+Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle. Klicken Sie im Kontextmenü auf **Hinzufügen** , und wählen Sie dann **Klasse**aus.
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
-In der **Add New** Element Dialogfeld, nennen Sie die Klasse &quot;Produkt&quot;.
+Benennen Sie die Klasse im Dialogfeld **Neues Element hinzufügen** &quot;Product&quot;.
 
 ![](creating-an-odata-endpoint/_static/image4.png)
 
 > [!NOTE]
-> Gemäß der Konvention werden ViewModel-Klassen im Ordner "Models" abgelegt. Sie müssen keine dieser Konvention in Ihren eigenen Projekten folgen, aber wir verwenden sie für dieses Tutorial.
+> Gemäß der Konvention werden Modellklassen in den Ordner "Models" eingefügt. Sie müssen diese Konvention nicht in ihren eigenen Projekten befolgen, aber wir verwenden Sie für dieses Tutorial.
 
-Fügen Sie in der Datei "Product.cs" die folgende Klassendefinition hinzu:
+Fügen Sie in der Datei Product.cs die folgende Klassendefinition hinzu:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample1.cs)]
 
-Die ID-Eigenschaft werden die Entitätsschlüssel. Clients können die Produkte nach ID Abfragen. Dieses Feld wird auch der Primärschlüssel in der Back-End-Datenbank sein.
+Die ID-Eigenschaft wird als Entitäts Schlüssel verwendet. Clients können Produkte nach ID Abfragen. Dieses Feld wäre auch der Primärschlüssel in der Back-End-Datenbank.
 
-Erstellen Sie jetzt das Projekt. Im nächsten Schritt verwenden wir einige Visual Studio-Gerüst, die Reflektion verwendet, um den Typ des Produkts zu suchen.
+Erstellen Sie jetzt das Projekt. Im nächsten Schritt verwenden wir ein Visual Studio-Gerüst, das Reflektion verwendet, um den Produkttyp zu suchen.
 
 <a id="add-controller"></a>
-## <a name="add-an-odata-controller"></a>Fügen Sie einen OData-Controller hinzu.
+## <a name="add-an-odata-controller"></a>Hinzufügen eines odata-Controllers
 
-Ein *Controller* ist eine Klasse, die HTTP-Anforderungen verarbeitet. Sie definieren einen separaten Controller für jede Entität, die Sie OData-Dienst festgelegt. In diesem Tutorial erstellen wir einen einzelnen Controller.
+Ein *Controller* ist eine Klasse, die HTTP-Anforderungen verarbeitet. Sie definieren einen separaten Controller für jede Entitätenmenge in Ihrem odata-Dienst. In diesem Tutorial erstellen wir einen einzelnen Controller.
 
-Klicken Sie im Projektmappen-Explorer den Ordner "Controllers". Wählen Sie **hinzufügen** und wählen Sie dann **Controller**.
+Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Controller. Wählen Sie **Hinzufügen** , und wählen Sie dann **Controller**aus.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
-In der **Gerüst hinzufügen** wählen Sie im Dialogfeld &quot;Web API 2 OData-Controller mit Aktionen unter Verwendung von Entity Framework&quot;.
+Wählen Sie im Dialogfeld **Gerüst hinzufügen** &quot;Web-API 2-odata-Controller mit Aktionen aus, indem Sie Entity Framework&quot;verwenden.
 
 ![](creating-an-odata-endpoint/_static/image6.png)
 
-In der **Controller hinzufügen** Dialogfeld benennen Sie den Controller "ProductsController". Wählen Sie die &quot;Async-Controlleraktionen verwenden&quot; Kontrollkästchen. In der **Modell** Dropdown-Liste, wählen Sie die Product-Klasse.
+Benennen Sie den Controller im Dialogfeld **Controller hinzufügen** mit "ProductController". Aktivieren Sie das Kontrollkästchen &quot;Aktionen für Async-Controller verwenden&quot;. Wählen Sie in der Dropdown Liste **Modell** die Product-Klasse aus.
 
 ![](creating-an-odata-endpoint/_static/image7.png)
 
-Klicken Sie auf die **neuer Datenkontext...**  Schaltfläche. Übernehmen Sie den Standardnamen für den Datentyp für den Kontext, und klicken Sie auf **hinzufügen**.
+Klicken Sie auf die Schaltfläche **neuer Datenkontext...** . Belassen Sie den Standardnamen für den Daten Kontexttyp, und klicken Sie auf **Hinzufügen**.
 
 ![](creating-an-odata-endpoint/_static/image8.png)
 
-Klicken Sie auf "hinzufügen", in das Dialogfeld "Controller hinzufügen", um den Controller hinzuzufügen.
+Klicken Sie im Dialogfeld Controller hinzufügen auf Hinzufügen, um den Controller hinzuzufügen.
 
 ![](creating-an-odata-endpoint/_static/image9.png)
 
-Hinweis: Wenn Sie eine Fehlermeldung erhalten, die besagt, &quot;gab es Fehler beim Abrufen des Typs... &quot;, stellen Sie sicher, dass Sie Visual Studio-Projekt erstellt, nachdem Sie die Product-Klasse hinzugefügt. Das Gerüst verwendet Reflektion, um die Klasse zu finden.
+Hinweis: Wenn Sie eine Fehlermeldung erhalten, die &quot;besagt, dass beim Eingeben des&quot;Typs ein Fehler aufgetreten ist, stellen Sie sicher, dass Sie das Visual Studio-Projekt erstellt haben, nachdem Sie die Product-Klasse hinzugefügt haben. Das Gerüst verwendet Reflektion, um die Klasse zu finden.
 
 ![](creating-an-odata-endpoint/_static/image10.png)
 
-Das Gerüst wird dem Projekt zwei Codedateien hinzugefügt:
+Das Gerüst fügt dem Projekt zwei Code Dateien hinzu:
 
-- Products.cs definiert den Web-API-Controller, der den OData-Endpunkt implementiert.
-- ProductServiceContext.cs bietet Methoden zum Abfragen der zugrunde liegenden Datenbank mithilfe von Entity Framework.
+- Products.cs definiert den Web-API-Controller, der den odata-Endpunkt implementiert.
+- ProductServiceContext.cs stellt Methoden zum Abfragen der zugrunde liegenden Datenbank mithilfe Entity Framework bereit.
 
 ![](creating-an-odata-endpoint/_static/image11.png)
 
 <a id="edm"></a>
-## <a name="add-the-edm-and-route"></a>Hinzufügen des EDM und Weiterleiten
+## <a name="add-the-edm-and-route"></a>Hinzufügen des EDM und der Route
 
-Erweitern Sie im Projektmappen-Explorer die App\_starten Sie die Ordner, und öffnen Sie die Datei mit dem Namen WebApiConfig.cs. Diese Klasse enthält den Konfigurationscode für Web-API. Ersetzen Sie diesen Code durch Folgendes:
+Erweitern Sie in Projektmappen-Explorer den Ordner App\_Start, und öffnen Sie die Datei mit dem Namen WebApiConfig.cs. Diese Klasse enthält Konfigurations Code für die Web-API. Ersetzen Sie diesen Code durch Folgendes:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample2.cs)]
 
-Dieser Code bewirkt zwei Dinge:
+Dieser Code führt zwei Aufgaben aus:
 
-- Erstellt ein Entity Data Model (EDM) für den OData-Endpunkt.
+- Erstellt ein Entity Data Model (EDM) für den odata-Endpunkt.
 - Fügt eine Route für den Endpunkt hinzu.
 
-Ein EDM ist ein abstraktes Modell der Daten. Das EDM wird verwendet, um das Metadatendokument zu erstellen und definieren Sie die URIs für den Dienst. Die **ODataConventionModelBuilder** ein EDM mithilfe eines Satzes von Standard-Benennungskonventionen EDM erstellt. Dieser Ansatz erfordert den geringsten Code. Wenn Sie mehr Kontrolle über das EDM möchten, können Sie die **ODataModelBuilder** Klasse, um die EDM zu erstellen, durch das Hinzufügen von Eigenschaften, Schlüssel und Navigationseigenschaften explizit.
+Ein EDM ist ein abstraktes Modell der Daten. Das EDM wird verwendet, um das Metadatendokument zu erstellen und die URIs für den Dienst zu definieren. Der **odataconaconmodelbuilder** erstellt mithilfe eines Satzes von Standard Benennungs Konventionen EDM ein EDM. Diese Vorgehensweise erfordert den geringsten Code. Wenn Sie mehr Kontrolle über das EDM haben möchten, können Sie das EDM mit der **odatamodelta Builder** -Klasse erstellen, indem Sie Eigenschaften, Schlüssel und Navigations Eigenschaften explizit hinzufügen.
 
-Die **EntitySet** Methode fügt eine Entität, auf das EDM festgelegt:
+Die **EntitySet** -Methode fügt dem EDM eine Entitätenmenge hinzu:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample3.cs)]
 
-Die Zeichenfolge "Produkte" definiert den Namen der Entitätenmenge. Der Name des Controllers muss den Namen der Entitätenmenge überein. In diesem Tutorial die Entitätenmenge ist mit dem Namen "Products" und den Namen des Controllers `ProductsController`. Wenn Sie den Namen der Entitätenmenge "ProductSet", nennen Sie den Controller `ProductSetController`. Beachten Sie, dass ein Endpunkt mehrere Entitätenmengen kann. Rufen Sie **EntitySet&lt;T&gt;**  für jede Entität festlegen und anschließend definieren Sie einen entsprechenden Controller.
+Die Zeichenfolge "Products" definiert den Namen der Entitätenmenge. Der Name des Controllers muss mit dem Namen der Entitätenmenge identisch sein. In diesem Tutorial heißt die Entitätenmenge "Products", und der Controller hat den Namen "`ProductsController`". Wenn Sie die Entitätenmenge "productset" genannt haben, benennen Sie den Controller `ProductSetController`. Beachten Sie, dass ein Endpunkt über mehrere Entitätenmengen verfügen kann. Nennen Sie **EntitySet&lt;t&gt;** für jede Entitätenmenge, und definieren Sie dann einen entsprechenden Controller.
 
-Die **MapODataRoute** Methode fügt eine Route für den OData-Endpunkt hinzu.
+Die **mapodataroute** -Methode fügt eine Route für den odata-Endpunkt hinzu.
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-Der erste Parameter ist ein Anzeigename für die Route. Dieser Name wird von Clients des Dienstes nicht angezeigt. Der zweite Parameter ist der URI-Präfix für den Endpunkt. Wenn diesen Code, der URI für die Produkte Entitätenmenge lautet http://<em>Hostname</em>  /Odata/Produkte. Ihre Anwendung kann mehr als ein OData-Endpunkt haben. Rufen Sie für jeden Endpunkt <strong>MapODataRoute</strong> und geben Sie einen eindeutigen Routennamen und einem eindeutigen URI-Präfix.
+Der erste Parameter ist ein Anzeige Name für die Route. Clients Ihres Dienstanbieter sehen diesen Namen nicht. Der zweite Parameter ist das URI-Präfix für den Endpunkt. Bei diesem Code ist der URI für die Products-Entitätenmenge http://<em>Hostname</em>/odata/Products. Die Anwendung kann mehr als einen odata-Endpunkt aufweisen. Nennen Sie für jeden Endpunkt <strong>mapodataroute</strong> , und geben Sie einen eindeutigen Routennamen und ein eindeutiges URI-Präfix an.
 
 <a id="seed-db"></a>
-## <a name="seed-the-database-optional"></a>Seeding für die Datenbank (Optional)
+## <a name="seed-the-database-optional"></a>Ausgangsdaten der Datenbank (optional)
 
-In diesem Schritt verwenden Sie Entity Framework, das Seeding der Datenbank mit einigen Testdaten. Dieser Schritt ist optional, jedoch können Sie Ihre OData-Endpunkt direkt zu testen.
+In diesem Schritt verwenden Sie Entity Framework, um für die Datenbank einen Ausgangswert für einige Testdaten zu erhalten. Dieser Schritt ist optional, aber Sie können den odata-Endpunkt sofort testen.
 
-Von der **Tools** , wählen Sie im Menü **NuGet Package Manager**, und wählen Sie dann **-Paket-Manager-Konsole**. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl aus:
+Klicken Sie **im Menü** Extras auf **nuget-Paket-Manager**, und wählen Sie dann Paket-Manager- **Konsole**aus. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl ein:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
-Dadurch wird einen Ordner namens "Migrations" und eine Codedatei Configuration.cs Namens hinzugefügt.
+Dadurch wird ein Ordner namens Migrationen und eine Codedatei mit dem Namen Configuration.cs hinzugefügt.
 
 ![](creating-an-odata-endpoint/_static/image12.png)
 
-Öffnen Sie diese Datei, und fügen Sie den folgenden Code der `Configuration.Seed` Methode.
+Öffnen Sie diese Datei, und fügen Sie der `Configuration.Seed`-Methode den folgenden Code hinzu.
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample6.cs)]
 
-Geben Sie im Fenster Paket-Manager-Konsole die folgenden Befehle aus:
+Geben Sie im Fenster Paket-Manager-Konsole die folgenden Befehle ein:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample7.cmd)]
 
-Diese Befehle generieren Code, der die Datenbank wird erstellt und führt dann diesen Code.
+Diese Befehle generieren Code, der die Datenbank erstellt, und führt dann den Code aus.
 
 <a id="explore"></a>
-## <a name="exploring-the-odata-endpoint"></a>Untersuchen den OData-Endpunkt
+## <a name="exploring-the-odata-endpoint"></a>Untersuchen des odata-Endpunkts
 
-In diesem Abschnitt verwenden wir die [Fiddler Web Debugging Proxy](http://www.fiddler2.com) zum Senden von Anforderungen an den Endpunkt, und überprüfen Sie die Antwortnachrichten. Dies hilft Ihnen, das die Funktionen eines OData-Endpunkts zu verstehen.
+In diesem Abschnitt verwenden wir den [webdebugproxy von "fddler](http://www.fiddler2.com) ", um Anforderungen an den Endpunkt zu senden und die Antwort Nachrichten zu untersuchen. Auf diese Weise können Sie die Funktionen eines odata-Endpunkts verstehen.
 
-Drücken Sie in Visual Studio F5, um mit dem Debuggen beginnen. Standardmäßig wird Visual Studio im Browser geöffnet, mit denen `http://localhost:*port*`, wobei *Port* ist die Portnummer, die in den projekteinstellungen konfiguriert.
+Drücken Sie in Visual Studio F5, um das Debuggen zu starten. Standardmäßig öffnet Visual Studio Ihren Browser, um zu `http://localhost:*port*`, wobei *Port* die in den Projekteinstellungen konfigurierte Portnummer ist.
 
-Sie können die Portnummer in den projekteinstellungen ändern. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in des Projekts, und wählen **Eigenschaften**. Wählen Sie im Eigenschaftenfenster **Web**. Geben Sie die Portnummer unter **Projekt-Url**.
+Sie können die Portnummer in den Projekteinstellungen ändern. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Eigenschaften**aus. Wählen Sie im Fenster Eigenschaften die Option **Web**aus. Geben Sie Unterprojekt- **URL**die Portnummer ein.
 
-### <a name="service-document"></a>-Dienstdokument
+### <a name="service-document"></a>Dienst Dokument
 
-Die *dienstdokument* enthält eine Liste von Entitätenmengen für den OData-Endpunkt. Um das dienstdokument zu erhalten, senden Sie eine GET-Anforderung an die Stamm-URI des Diensts ein.
+Das *Dienst Dokument* enthält eine Liste der Entitätenmengen für den odata-Endpunkt. Um das Dienst Dokument zu erhalten, senden Sie eine GET-Anforderung an den Stamm-URI des Dienstanbieter.
 
-Mithilfe von Fiddler, geben Sie in den folgenden URI in der **Composer** Registerkarte: `http://localhost:port/odata/`, wobei *Port* gibt die Portnummer an.
+Geben Sie auf der Registerkarte **Composer** den folgenden URI ein: `http://localhost:port/odata/`, wobei *Port* die Portnummer ist.
 
 ![](creating-an-odata-endpoint/_static/image13.png)
 
-Klicken Sie auf die **Execute** Schaltfläche. Fiddler sendet eine HTTP GET-Anforderung an Ihre Anwendung. Daraufhin sollte die Antwort in der Liste der Web-Sitzungen. Wenn alles funktioniert, wird der Statuscode 200 lauten.
+Klicken Sie auf die Schaltfläche **Ausführen** . Der "fddler" sendet eine HTTP GET-Anforderung an Ihre Anwendung. Die Antwort sollte in der Liste Websitzungen angezeigt werden. Wenn alles funktioniert, lautet der Statuscode 200.
 
 ![](creating-an-odata-endpoint/_static/image14.png)
 
-Doppelklicken Sie auf die Antwort in der Liste Websitzungen, um die Details der Antwort auf die Registerkarte "Inspektoren" anzuzeigen.
+Doppelklicken Sie auf die Antwort in der Liste Websitzungen, um die Details der Antwortnachricht auf der Registerkarte Inspektoren anzuzeigen.
 
 ![](creating-an-odata-endpoint/_static/image15.png)
 
-Unformatierte HTTP-Antwortnachricht sollte etwa wie folgt aussehen:
+Die unformatierte http-Antwortnachricht sollte in etwa wie folgt aussehen:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample8.cmd)]
 
-Standardmäßig gibt das dienstdokument von Web-API im AtomPub-Format zurück. Um JSON-Anforderung, fügen Sie die folgenden Header zur HTTP-Anforderung:
+Standardmäßig gibt die Web-API das Dienst Dokument im AtomPub-Format zurück. Fügen Sie der HTTP-Anforderung den folgenden Header hinzu, um JSON anzufordern:
 
 `Accept: application/json`
 
 ![](creating-an-odata-endpoint/_static/image16.png)
 
-Die HTTP-Antwort enthält jetzt eine JSON-Nutzlast:
+Nun enthält die HTTP-Antwort eine JSON-Nutzlast:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample9.cmd)]
 
 ### <a name="service-metadata-document"></a>Dienstmetadatendokument
 
-Die *dienstmetadatendokument* beschreibt das Datenmodell des Diensts mithilfe einer XML-Sprache, die der konzeptionellen Schemadefinitionssprache (CSDL) bezeichnet. Das Dokument zeigt die Struktur der Daten im Dienst, und Sie können zum Generieren von Clientcode verwendet werden.
+Das *dienstmetadatendokument* beschreibt das Datenmodell des Dienstanbieter mithilfe einer XML-Sprache, die als konzeptionelle Schema Definitions Sprache (CSDL) bezeichnet wird. Das Metadatendokument zeigt die Struktur der Daten im Dienst und kann zum Generieren von Client Code verwendet werden.
 
-Um das Metadatendokument zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/$metadata`. Hier ist die Metadaten für den Endpunkt, der in diesem Tutorial gezeigt.
+Um das Metadatendokument zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/$metadata`. Hier finden Sie die Metadaten für den in diesem Tutorial gezeigten Endpunkt.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample10.cmd)]
 
 ### <a name="entity-set"></a>Entitätenmenge
 
-Um die Entitätenmenge für die Produkte zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/Products`.
+Um die Products-Entitätenmenge zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/Products`.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample11.cmd)]
 
 ### <a name="entity"></a>Entität
 
-Um ein einzelnes Produkt zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/Products(1)`, wobei "1" die Produkt-ID
+Um ein einzelnes Produkt zu erhalten, senden Sie eine GET-Anforderung an `http://localhost:port/odata/Products(1)`, wobei "1" die Produkt-ID ist.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample12.cmd)]
 
 <a id="formats"></a>
-## <a name="odata-serialization-formats"></a>OData-Serialisierungsformate
+## <a name="odata-serialization-formats"></a>Odata-Serialisierungsformate
 
-OData unterstützt mehrere Serialisierungsformate:
+Odata unterstützt mehrere Serialisierungsformate:
 
-- Atom pub-Protokolls (XML)
-- JSON "Light" (eingeführt in OData v3)
-- JSON "verbose" (OData v2)
+- Atom-Pub (XML)
+- JSON "Light" (eingeführt in odata v3)
+- JSON "Verbose" (odata v2)
 
-Standardmäßig verwendet die Web-API-AtomPubJSON "Light" Format.
+Standardmäßig verwendet die Web-API atompubjson "Light"-Format.
 
-Um AtomPub-Format zu erhalten, wird den Accept-Header auf "Application/Atom + Xml" fest. Hier ist ein Beispiel-Antworttext:
+Um das AtomPub-Format zu erhalten, legen Sie den Accept-Header auf "Application/Atom + XML" fest. Im folgenden finden Sie ein Beispiel für einen Antworttext:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample13.cmd)]
 
-Sehen Sie ein offensichtlicher Nachteil des Atom-Format ein: Es ist viel ausführlicher als die JSON-Light. Wenn Sie einen Client, der AtomPub versteht verfügen, kann der Client dieses Format über JSON bevorzugen es jedoch.
+Sie können einen offensichtlichen Nachteil des Atom-Formats sehen: Es ist viel ausführlicher als das JSON-Licht. Wenn Sie jedoch über einen Client verfügen, der AtomPub versteht, könnte der Client dieses Format über JSON bevorzugen.
 
-So sieht die JSON-light-Version der gleichen Entität aus:
+Hier ist die JSON Light-Version der gleichen Entität:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample14.cmd)]
 
-Die JSON-light-Format wurde in Version 3 des OData-Protokolls eingeführt. Um Abwärtskompatibilität zu gewährleisten kann ein Client das ältere "verbose" JSON-Format anfordern. Um ausführlichen JSON-Format anzufordern, legen Sie den Accept-Header auf `application/json;odata=verbose`. Hier ist die ausführliche Version aus:
+Das JSON Light-Format wurde in Version 3 des odata-Protokolls eingeführt. Aus Gründen der Abwärtskompatibilität kann ein Client das ältere JSON-Format "Verbose" anfordern. Um ausführliche JSON anzufordern, legen Sie den Accept-Header auf `application/json;odata=verbose`fest. Hier ist die ausführliche Version:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample15.cmd)]
 
-Dieses Format gewährt mehr Metadaten in den Antworttext, der beträchtlichen Aufwand über eine gesamte Sitzung hinzufügen kann. Darüber hinaus fügt eine Dereferenzierungsebene hinzu, durch Umschließen des Objekts in einer Eigenschaft mit dem Namen "d".
+Dieses Format vermittelt mehr Metadaten im Antworttext, was einen beträchtlichen Aufwand für eine gesamte Sitzung verursachen kann. Außerdem wird eine Dereferenzierungsebene hinzugefügt, indem das Objekt in eine Eigenschaft mit dem Namen "d" umwickelt wird.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- [Hinzufügen von Entitätsbeziehungen](working-with-entity-relations.md)
-- [Hinzufügen von OData-Aktionen](odata-actions.md)
-- [Rufen Sie den OData-Dienst aus einem .NET-Client](calling-an-odata-service-from-a-net-client.md)
+- [Entitäts Beziehungen hinzufügen](working-with-entity-relations.md)
+- [Odata-Aktionen hinzufügen](odata-actions.md)
+- [Odata-Dienst über einen .NET-Client aufzurufen](calling-an-odata-service-from-a-net-client.md)

@@ -1,149 +1,149 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
-title: Durchführen von BatchUpdates (c#) | Microsoft-Dokumentation
+title: Ausführen von Batch AktualisierungenC#() | Microsoft-Dokumentation
 author: rick-anderson
-description: Erfahren Sie, wie erstellen Sie eine vollständig bearbeitbare DataList-Steuerelement, in dem alle Elemente sind im, Bearbeitungsmodus wird, deren Werte gespeichert werden können, indem Sie auf eine Schaltfläche "Alle aktualisieren" auf die...
+description: Erfahren Sie, wie Sie einen vollständig bearbeitbaren DataList erstellen können, in dem sich alle Elemente im Bearbeitungsmodus befinden und deren Werte durch Klicken auf die Schaltfläche "Alle aktualisieren" auf der Schaltfläche "Alle aktualisieren" gespeichert werden können.
 ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 01234dfab50cf608c934cb72ed06d0ad0ee58438
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: cde12a4d24555216adc49dd02818901278932eaa
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133635"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74631590"
 ---
 # <a name="performing-batch-updates-c"></a>Durchführen von Batchupdates (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_37_CS.exe) oder [PDF-Datei herunterladen](performing-batch-updates-cs/_static/datatutorial37cs1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_37_CS.exe) oder [PDF herunterladen](performing-batch-updates-cs/_static/datatutorial37cs1.pdf)
 
-> Erfahren Sie, wie erstellen Sie eine vollständig bearbeitbare DataList-Steuerelement, in dem alle Elemente befinden sich in, zu bearbeiten, Modus und die Schaltfläche "Alle aktualisieren" auf der Seite, deren Werte gespeichert werden können.
+> Erfahren Sie, wie Sie einen vollständig bearbeitbaren DataList erstellen können, in dem sich alle Elemente im Bearbeitungsmodus befinden und deren Werte durch Klicken auf die Schaltfläche "Alle aktualisieren" auf der Seite gespeichert werden können.
 
 ## <a name="introduction"></a>Einführung
 
-In der [vorherigen Lernprogramm](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md) wurde beschrieben, wie ein DataList auf Elementebene zu erstellen. Wie standard bearbeitbaren GridView jedes Element im DataList-Steuerelement enthalten eine Bearbeitung-Schaltfläche geklickt wird, würde das Element bearbeitet werden machen. Während dies auf Elementebene Bearbeitung eignet sich gut für Daten, die nur gelegentlich aktualisiert werden, erfordern bestimmte Szenarien zu Anwendungsfällen die Benutzer viele Datensätze zu bearbeiten. Wenn ein Benutzer so bearbeiten Sie Dutzende von Datensätzen muss und gezwungen, klicken Sie auf Bearbeiten, stellen ihre Änderungen und Updates für jeden einzelnen auf, kann die Menge des auf ihre Produktivität behindern. In solchen Situationen eine bessere Option darstellt, zu einem vollständig bearbeitbare DataList-Steuerelement, eine Where *alle* Elemente werden im Bearbeitungsmodus befindet und deren Werte bearbeitet werden können, indem Sie auf eine Schaltfläche "Alle aktualisieren", auf der Seite (siehe Abbildung 1).
+Im [vorherigen Tutorial](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md) wurde erläutert, wie ein DataList auf Element Ebene erstellt wird. Ebenso wie die standardmäßige bearbeitbare GridView enthielt jedes Element im DataList eine Bearbeitungs Schaltfläche, die beim Klicken auf das Element bearbeitet werden kann. Diese Bearbeitung auf Element Ebene eignet sich zwar gut für Daten, die nur gelegentlich aktualisiert werden, aber für bestimmte Anwendungsszenarien ist es erforderlich, dass der Benutzer viele Datensätze bearbeitet. Wenn ein Benutzer Dutzende von Datensätzen bearbeiten muss und gezwungen ist, auf Bearbeiten zu klicken, die Änderungen vorzunehmen und für jeden einzelnen Benutzer auf aktualisieren zu klicken, kann die Anzahl der Klicks die Produktivität beeinträchtigen. In solchen Fällen ist es eine bessere Option, einen vollständig bearbeitbaren DataList bereitzustellen, einer, in dem sich *alle* Elemente im Bearbeitungsmodus befinden und deren Werte bearbeitet werden können, indem Sie auf die Schaltfläche Alle aktualisieren auf der Seite klicken (siehe Abbildung 1).
 
-[![Jedes Element in einem vollständig bearbeitbare DataList-Steuerelement kann geändert werden](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
+[![jedes Element in einem vollständig bearbeitbaren DataList kann geändert werden.](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
 
-**Abbildung 1**: Jedes Element in einem vollständig bearbeitbare DataList-Steuerelement kann geändert werden ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image3.png))
+**Abbildung 1**: jedes Element in einem vollständig bearbeitbaren DataList kann geändert werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image3.png))
 
-In diesem Tutorial betrachten wir, wie Benutzer zum Aktualisieren der Lieferanten-Adressinformationen, die mit einem DataList-Steuerelement vollständig bearbeitet werden können.
+In diesem Tutorial wird erläutert, wie Sie es Benutzern ermöglichen können, die Adressinformationen von Lieferanten mithilfe eines vollständig bearbeitbaren DataList zu aktualisieren.
 
-## <a name="step-1-create-the-editable-user-interface-in-the-datalist-s-itemtemplate"></a>Schritt 1: Erstellen Sie die Benutzeroberfläche für die bearbeitet werden, in der ItemTemplate s DataList-Steuerelement
+## <a name="step-1-create-the-editable-user-interface-in-the-datalist-s-itemtemplate"></a>Schritt 1: Erstellen der bearbeitbaren Benutzeroberfläche in der DataList s-ItemTemplate
 
-Im vorherigen Tutorial, in denen wir zu einem standard, der auf Elementebene bearbeitbaren DataList-Steuerelement erstellen, wir zwei Vorlagen verwendet:
+Im vorherigen Tutorial, in dem wir einen standardmäßigen bearbeitbaren DataList auf Element Ebene erstellen, wurden zwei Vorlagen verwendet:
 
-- `ItemTemplate` enthalten, die nur-Lese Benutzeroberfläche (die Bezeichnung-Web-Steuerelemente zum Anzeigen von jeder s Produktnamen und Preis).
-- `EditItemTemplate` enthalten die bearbeiten-Modus-Benutzeroberfläche (die beiden TextBox-Web-Steuerelemente).
+- `ItemTemplate` enthielt die schreibgeschützte Benutzeroberfläche (die Beschriftungs-websteuer Elemente zum Anzeigen der Namen und Preise der einzelnen Produkte).
+- `EditItemTemplate` enthielt die Benutzeroberfläche für den Bearbeitungsmodus (die zwei TextBox-websteuer Elemente).
 
-DataList-Steuerelement s `EditItemIndex` Eigenschaft gibt vor, was `DataListItem` (sofern vorhanden) gerendert wird, mit der `EditItemTemplate`. Insbesondere die `DataListItem` , deren `ItemIndex` Wert entspricht die DataList s `EditItemIndex` Eigenschaft gerendert wird, mit der `EditItemTemplate`. Dieses Modell funktioniert gut, wenn Sie eine Zeit, aber voneinander fällt nur ein Element bearbeitet werden kann, bei einem vollständig bearbeitbare DataList-Steuerelement zu erstellen.
+Die DataList s `EditItemIndex`-Eigenschaft legt fest, welche `DataListItem` (sofern vorhanden) mit dem `EditItemTemplate`gerendert wird. Insbesondere die `DataListItem`, deren `ItemIndex` Wert mit der DataList s-`EditItemIndex` Eigenschaft übereinstimmt, werden mithilfe des `EditItemTemplate`gerendert. Dieses Modell funktioniert gut, wenn jeweils nur ein Element bearbeitet werden kann, jedoch beim Erstellen eines vollständig bearbeitbaren DataList.
 
-Für eine vollständig bearbeitbare DataList, möchten wir *alle* von der `DataListItem` s zum Rendern mithilfe der Benutzeroberfläche bearbeitet werden. Die einfachste Möglichkeit hierzu ist, definiert die bearbeitbaren-Schnittstelle in der `ItemTemplate`. Zum Ändern der Lieferanten-Adressinformationen, enthält die bearbeitbare Schnittstelle die Lieferantenname als Text und anschließend die Textfelder für die Adresse, Stadt und Land-Werte.
+Für einen vollständig bearbeitbaren DataList sollen *alle* `DataListItem` s mithilfe der bearbeitbaren Schnittstelle dargestellt werden. Die einfachste Möglichkeit, dies zu erreichen, besteht darin, die bearbeitbare Schnittstelle im `ItemTemplate`zu definieren. Zum Ändern der Adressinformationen des Lieferanten enthält die bearbeitbare Schnittstelle den Lieferanten Namen als Text und dann Textfelder für die Werte "Address", "City" und "Country".
 
-Öffnen Sie zunächst die `BatchUpdate.aspx` Seite, fügen Sie ein DataList-Steuerelement hinzu, und legen dessen `ID` Eigenschaft `Suppliers`. Deaktivieren Sie aus dem Smarttag DataList s, um ein neues ObjectDataSource-Steuerelement, das mit dem Namen hinzuzufügen `SuppliersDataSource`.
+Öffnen Sie zunächst die Seite `BatchUpdate.aspx`, fügen Sie ein DataList-Steuerelement hinzu, und legen Sie dessen `ID`-Eigenschaft auf `Suppliers`fest. Wählen Sie aus dem DataList s-Smarttag ein neues ObjectDataSource-Steuerelement mit dem Namen `SuppliersDataSource`.
 
-[![Erstellen Sie eine neue, mit dem Namen SuppliersDataSource "ObjectDataSource"](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
+[![erstellen Sie eine neue ObjectDataSource mit dem Namen "suppliersdatasource".](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
 
-**Abbildung 2**: Erstellen Sie eine neue "ObjectDataSource" mit dem Namen `SuppliersDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image6.png))
+**Abbildung 2**: Erstellen einer neuen ObjectDataSource mit dem Namen "`SuppliersDataSource`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image6.png))
 
-Konfigurieren Sie zum Abrufen von Daten, die mit dem ObjectDataSource-Steuerelement die `SuppliersBLL` Klasse s `GetSuppliers()` Methode (siehe Abbildung 3). Wie bei dem vorherigen Lernprogramm, anstatt die Lieferanteninformationen über das ObjectDataSource-Steuerelement wird aktualisiert, arbeiten wir direkt mit der Geschäftslogikebene. Legen Sie daher die Dropdown-Liste (keine) auf der Registerkarte "UPDATE" (siehe Abbildung 4).
+Konfigurieren Sie ObjectDataSource zum Abrufen von Daten mithilfe der `SuppliersBLL` Class s `GetSuppliers()`-Methode (siehe Abbildung 3). Wie im vorherigen Tutorial, anstatt die Lieferanteninformationen über die ObjectDataSource zu aktualisieren, arbeiten wir direkt mit der Geschäftslogik Schicht. Legen Sie daher auf der Registerkarte aktualisieren die Dropdown Liste auf (None) fest (siehe Abbildung 4).
 
-[![Abrufen von Lieferanteninformationen mithilfe der GetSuppliers()-Methode](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
+[![Abrufen von Lieferanteninformationen mithilfe der getsuppliers ()-Methode](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
 
-**Abbildung 3**: Abrufen von Lieferanten Informationen mithilfe der `GetSuppliers()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image9.png))
+**Abbildung 3**: Abrufen von Lieferanteninformationen mithilfe der `GetSuppliers()`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image9.png))
 
-[![Legen Sie die Dropdown-Liste (keine) in der Registerkarte "Updates"](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
+[![die Dropdown Liste auf der Registerkarte "Aktualisieren" auf (keine) festlegen](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
 
-**Abbildung 4**: Legen Sie die Dropdown-Liste (keine) auf der Registerkarte "UPDATE" ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image12.png))
+**Abbildung 4**: Festlegen der Dropdown Liste auf (None) auf der Registerkarte "Aktualisieren" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image12.png))
 
-Nach Abschluss des Assistenten, generiert Visual Studio automatisch die DataList s `ItemTemplate` zum Anzeigen der einzelnen Datenfelder, die von der Datenquelle in ein Label-Steuerelement zurückgegeben. Wir müssen diese Vorlage zu ändern, sodass sie stattdessen die Bearbeitungsschnittstelle bieten. Die `ItemTemplate` kann angepasst werden, mithilfe des Designers mit der Option "Vorlagen bearbeiten" aus dem Smarttag DataList s oder direkt über die deklarative Syntax.
+Nachdem Sie den Assistenten abgeschlossen haben, generiert Visual Studio automatisch die DataList-`ItemTemplate`, um die einzelnen Datenfelder anzuzeigen, die von der Datenquelle in einem Label-websteuer Element zurückgegeben werden. Wir müssen diese Vorlage so ändern, dass Sie stattdessen die Bearbeitungs Schnittstelle bereitstellt. Die `ItemTemplate` kann über den Designer angepasst werden, indem Sie die Option Vorlagen bearbeiten aus dem DataList s Smarttags oder direkt über die deklarative Syntax verwenden.
 
-Nehmen Sie einen Moment Zeit, um eine Bearbeiten-Schnittstelle zu erstellen, die wird der Name des Lieferanten s als Text angezeigt, sondern enthält Textfelder für die Lieferanten-e-Adresse, Stadt und Land-Werte. Nach diesen Änderungen sollte Ihre Seite s deklarative Syntax ähnlich der folgenden aussehen:
+Nehmen Sie sich einen Moment Zeit, um eine Bearbeitungs Schnittstelle zu erstellen, die den Namen des Lieferanten als Text anzeigt. er enthält jedoch Textfelder für die Werte von Supplier s Address, City und Country. Nachdem Sie diese Änderungen vorgenommen haben, sollte die deklarative Syntax Ihrer Seite in etwa wie folgt aussehen:
 
 [!code-aspx[Main](performing-batch-updates-cs/samples/sample1.aspx)]
 
 > [!NOTE]
-> Als muss mit dem vorherigen Lernprogramm, DataList-Steuerelement in diesem Tutorial Ansichtszustand aktiviert sein.
+> Wie beim vorherigen Tutorial muss für den DataList in diesem Tutorial der Ansichts Zustand aktiviert sein.
 
-In der `ItemTemplate` ich m mithilfe von zwei neuen CSS-Klassen `SupplierPropertyLabel` und `SupplierPropertyValue`, die hinzugefügt wurden die `Styles.css` -Klasse und konfiguriert die gleichen stileinstellungen wie die `ProductPropertyLabel` und `ProductPropertyValue` CSS-Klassen.
+In der `ItemTemplate` I m, die zwei neue CSS-Klassen verwendet, `SupplierPropertyLabel` und `SupplierPropertyValue`, die der `Styles.css`-Klasse hinzugefügt wurden und für die Verwendung der gleichen Stileinstellungen wie die `ProductPropertyLabel`-und `ProductPropertyValue`-CSS-Klassen konfiguriert wurden.
 
 [!code-css[Main](performing-batch-updates-cs/samples/sample2.css)]
 
-Finden Sie nach diesen Änderungen auf dieser Seite über einen Browser. Wie in Abbildung 5 gezeigt, wird jedes DataList-Element zeigt den Lieferantennamen als Text und Textfelder zum Anzeigen der Adresse, Stadt und Land verwendet.
+Nachdem Sie diese Änderungen vorgenommen haben, besuchen Sie diese Seite über einen Browser. Wie in Abbildung 5 gezeigt, zeigt jedes DataList-Element den Lieferanten Namen als Text an und verwendet Textfelder, um die Adresse, die Stadt und das Land anzuzeigen.
 
-[![Jeder Lieferant im DataList-Steuerelement ist bearbeitbar](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
+[![jeder Lieferant in der DataList kann bearbeitet werden.](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
 
-**Abbildung 5**: Jeder Lieferant im DataList-Steuerelement ist bearbeitbar ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image15.png))
+**Abbildung 5**: jeder Lieferant in der DataList-Tabelle kann bearbeitet werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image15.png))
 
-## <a name="step-2-adding-an-update-all-button"></a>Schritt 2: Ein Update-Schaltfläche "alle" hinzufügen
+## <a name="step-2-adding-an-update-all-button"></a>Schritt 2: Hinzufügen der Schaltfläche "Alle aktualisieren"
 
-Während der einzelnen Lieferanten in Abbildung 5 die Adresse, Stadt und Landesfelder, die in einem Textfeld angezeigt hat, ist gibt es derzeit keine Schaltfläche "Aktualisieren" verfügbar. Anstatt eine Aktualisieren-Schaltfläche pro Element, mit vollständig bearbeitbare DataList-Steuerelementen unterstützt besteht in der Regel eine einzelne alle Aktualisieren-Schaltfläche auf der Seite, die beim Klicken auf updates *alle* der Datensätze im DataList-Steuerelement. In diesem Tutorial können Sie s zwei Update alle Schaltflächen - einen am oberen Rand der Seite und einen am unteren Rand hinzufügen (auch wenn eine der Schaltflächen auf die gleiche Auswirkung haben wird).
+Obwohl für jeden Lieferanten in Abbildung 5 die Felder Adresse, Ort und Land in einem Textfeld angezeigt werden, ist derzeit keine Aktualisierungs Schaltfläche verfügbar. Anstatt eine Schaltfläche "Aktualisieren" pro Element zu haben, wird mit vollständig bearbeitbaren datalisten in der Regel eine einzelne Schaltfläche "Alle aktualisieren" auf der Seite angezeigt, die *alle* Datensätze in der DataList aktualisiert, wenn darauf geklickt wird. Fügen Sie in diesem Tutorial zwei Update alle-Schaltflächen hinzu: eins oben auf der Seite und eins unten (auch wenn auf eine der beiden Schaltflächen geklickt wird).
 
-Hinzufügen eines Steuerelements Schaltfläche Web über das DataList-Steuerelement und legen Sie zunächst die `ID` Eigenschaft `UpdateAll1`. Als Nächstes fügen Sie die zweite Schaltfläche Websteuerelement unter DataList-Steuerelement, Festlegen der `ID` zu `UpdateAll2`. Legen Sie die `Text` Eigenschaften für die beiden Schaltflächen Alle aktualisieren. Erstellen von Ereignishandlern und schließlich für beide Tasten `Click` Ereignisse. Statt der Aktualisierungslogik in jeder der Ereignishandler, Umgestalten können s Diese Logik an eine dritte Methode `UpdateAllSupplierAddresses`, müssen die Ereignishandler, die diese dritte Methode einfach im aufrufen.
+Fügen Sie zunächst ein Schaltflächen-websteuer Element oberhalb des DataList hinzu, und legen Sie dessen `ID`-Eigenschaft auf `UpdateAll1`fest. Fügen Sie anschließend unter dem DataList das zweite Schaltflächen-websteuer Element hinzu, und legen Sie dessen `ID` auf `UpdateAll2`fest. Legen Sie die `Text` Eigenschaften für die beiden Schaltflächen so fest, dass alle aktualisiert werden. Erstellen Sie abschließend Ereignishandler für beide Schaltflächen `Click` Ereignisse. Anstatt die Aktualisierungs Logik in den einzelnen Ereignis Handlern zu duplizieren, lassen Sie diese Logik mit einer dritten Methode umgestalten, `UpdateAllSupplierAddresses`, damit die Ereignishandler einfach diese dritte Methode aufrufen.
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample3.cs)]
 
-Abbildung 6 zeigt die Seite, nachdem die Aktualisierung alle Schaltflächen hinzugefügt wurden.
+Abbildung 6 zeigt die Seite, nachdem die Schaltflächen alle aktualisieren hinzugefügt wurden.
 
-[![Zwei Update alle Schaltflächen wurden auf der Seite hinzugefügt](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
+[![beiden Schaltflächen alle aktualisieren wurden der Seite hinzugefügt.](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
 
-**Abbildung 6**: Wurden zwei Update alle Schaltflächen auf der Seite hinzugefügt ([klicken Sie, um das Bild in voller Größe anzeigen](performing-batch-updates-cs/_static/image18.png))
+**Abbildung 6**: zwei Schaltflächen "Alle aktualisieren" wurden der Seite hinzugefügt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](performing-batch-updates-cs/_static/image18.png))
 
-## <a name="step-3-updating-all-of-the-suppliers-address-information"></a>Schritt 3: Aktualisieren alle die Lieferanten-Adressinformationen
+## <a name="step-3-updating-all-of-the-suppliers-address-information"></a>Schritt 3: Aktualisieren aller Adressinformationen des Lieferanten
 
-Mit allen die DataList-s-Elemente die Bearbeitungsschnittstelle anzeigen und durch das Aktualisieren aller Schaltflächen hinzufügen alle diese bleibt ist das Schreiben des Codes zur Ausführung der BatchUpdate. Insbesondere müssen wir so durchlaufen Sie das DataList-s-Elementen, und rufen die `SuppliersBLL` Klasse s `UpdateSupplierAddress` Methode für jede einzelne.
+Wenn alle DataList s-Elemente die Bearbeitungs Schnittstelle anzeigen und durch Hinzufügen der Schaltflächen alle aktualisieren, wird nur noch der Code zum Ausführen des Batch Updates geschrieben. Insbesondere müssen wir die DataList s-Elemente durchlaufen und die `SuppliersBLL` Class s `UpdateSupplierAddress`-Methode für jeden einzelnen aufzurufen.
 
-Die Auflistung der `DataListItem` Instanzen dieser Zusammensetzung DataList-Steuerelement kann, über DataList-Steuerelement s zugegriffen werden [ `Items` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx). Mit einem Verweis auf eine `DataListItem`, können wir ziehen Sie das entsprechende `SupplierID` aus der `DataKeys` Auflistung und programmgesteuert Verweis im TextBox-Web-innerhalb Steuerelemente der `ItemTemplate` wie der folgende Code veranschaulicht:
+Die Auflistung von `DataListItem` Instanzen, auf die der DataList durch die DataList- [`Items` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx)zugegriffen werden kann. Mit einem Verweis auf einen `DataListItem`können wir die entsprechende `SupplierID` aus der `DataKeys` Collection erfassen und Programm gesteuert auf die TextBox-websteuer Elemente innerhalb der `ItemTemplate` verweisen, wie im folgenden Code veranschaulicht:
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample4.cs)]
 
-Eine der Schaltflächen Alle aktualisieren, klickt der Benutzer die `UpdateAllSupplierAddresses` Methode durchläuft die einzelnen `DataListItem` in die `Suppliers` DataList und ruft die `SuppliersBLL` s-Klasse `UpdateSupplierAddress` Methode und die entsprechenden Werte übergeben. Ein nicht eingegebene Wert für die Adresse, Stadt oder Land übergibt ist ein Wert von `Nothing` zu `UpdateSupplierAddress` (anstatt eine leere Zeichenfolge), was dazu führt, in einer Datenbank `NULL` für die zugrunde liegenden Datensatz s-Felder.
+Wenn der Benutzer auf eine der Schaltflächen alle Aktualisieren klickt, durchläuft die `UpdateAllSupplierAddresses`-Methode jede `DataListItem` im `Suppliers` DataList und ruft die `SuppliersBLL` Class s `UpdateSupplierAddress`-Methode auf und übergibt dabei die entsprechenden Werte. Ein nicht eingegebener Wert für "Address", "City" oder "Country Pass" ist ein Wert von "`Nothing`", "`UpdateSupplierAddress`" (anstelle einer leeren Zeichenfolge), was zu einer Datenbank `NULL` für die zugrunde liegenden Felder "Datensatz" führt.
 
 > [!NOTE]
-> Als eine Erweiterung empfiehlt sich der Status Bezeichnung-Websteuerelement zur Seite hinzufügen, die eine bestätigungsmeldung bereitstellt, nachdem das BatchUpdate ausgeführt wird.
+> Als Ergänzung können Sie der Seite ein websteuer Element für die Status Bezeichnung hinzufügen, das nach der Ausführung des Batch Updates eine Bestätigungsmeldung bereitstellt.
 
-## <a name="updating-only-those-addresses-that-have-been-modified"></a>Aktualisieren nur die Adressen, die geändert wurde.
+## <a name="updating-only-those-addresses-that-have-been-modified"></a>Nur die geänderten Adressen werden aktualisiert
 
-Der Batch-Update-Algorithmus für dieses Lernprogramm ruft verwendet die `UpdateSupplierAddress` -Methode für *jeder* Lieferanten im DataList-Steuerelement, unabhängig davon, ob ihre Adressinformationen geändert wurde. Während solche blind Updates in der Regel ein Leistungsproblem nicht, können sie zu überflüssigen Datensätze führen re-Überwachung in die Datenbanktabelle Änderungen. Angenommen, Sie Trigger verwenden, um alle aufzuzeichnen `UPDATE` s, um die `Suppliers` Tabelle in die auf eine Überwachung, jedes Mal, wenn ein Benutzer die Schaltfläche "Alle aktualisieren" klickt, ein neuen Überwachungsdatensatz für jeden Lieferanten werden, im System erstellt wird, unabhängig davon, ob der Benutzer Änderungen vorgenommen, ändert.
+Der für dieses Tutorial verwendete Batch Update Algorithmus Ruft die `UpdateSupplierAddress`-Methode für *jeden* Lieferanten in der DataList auf, unabhängig davon, ob Ihre Adressinformationen geändert wurden. Diese Blind Updates sind zwar in der Regel kein Leistungsproblem, aber Sie können zu überflüssigen Datensätzen führen, wenn Sie Änderungen an der Datenbanktabelle erneut überwachen. Wenn Sie z. b. Trigger verwenden, um alle `UPDATE` s in der `Suppliers` Tabelle in einer Überwachungs Tabelle aufzuzeichnen, wird jedes Mal, wenn ein Benutzer auf die Schaltfläche Alle aktualisieren klickt, ein neuer Überwachungsdaten Satz für jeden Lieferanten im System erstellt, unabhängig davon, ob der Benutzer Änderungen vorgenommen hat.
 
-Die ADO.NET DataTable und DataAdapter-Klassen dienen zur Unterstützung von Batchaktualisierungen, in denen eine Datenbankkommunikation nur geändert, gelöscht und neue Datensätze zu. Jede Zeile in der Datentabelle verfügt über eine [ `RowState` Eigenschaft](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) , der angibt, ob die Zeile der Datentabelle, die von ihm, die geändert wurde, gelöscht oder unverändert bleibt. Wenn es sich bei eine "DataTable" Anfangs aufgefüllt wird, werden alle Zeilen nicht geändert markiert. Ändern des Werts auf die Zeile s-Spalten wird die Zeile als geändert gekennzeichnet.
+Die ADO.net datdatababel-Klasse und die DataAdapter-Klasse sind für die Unterstützung von Batch Aktualisierungen konzipiert, wenn nur geänderte, gelöschte und neue Datensätze zu Datenbankkommunikation führen. Jede Zeile in der Datentabelle verfügt über eine [`RowState`-Eigenschaft](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) , die angibt, ob die Zeile der Datentabelle hinzugefügt, aus ihr gelöscht, geändert oder unverändert bleibt. Wenn eine Datentabelle anfänglich aufgefüllt wird, werden alle Zeilen als unverändert markiert. Wenn Sie den Wert einer beliebigen Zeilen Spalte ändern, wird die Zeile als geändert markiert.
 
-In der `SuppliersBLL` Klasse, die wir die Adressinformationen für die angegebene Lieferanten s vom ersten Lesen des Datensatzes der einzelnen Lieferanten in Aktualisieren einer `SuppliersDataTable` und legen Sie dann die `Address`, `City`, und `Country` Spaltenwerte, die mit dem folgenden Code:
+In der `SuppliersBLL`-Klasse aktualisieren wir die Adressinformationen des angegebenen Lieferanten, indem wir zuerst den einzelnen Lieferantendaten Satz in einem `SuppliersDataTable` lesen und dann die Werte für `Address`, `City`und `Country` Spalten mithilfe des folgenden Codes festlegen:
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample5.cs)]
 
-Dieser Code weist naiv die übergebene Adresse, Stadt und Land-Werte, die `SuppliersRow` in die `SuppliersDataTable` unabhängig davon, ob die Werte geändert haben. Diese Änderungen dazu führen, dass die `SuppliersRow` s `RowState` Eigenschaft als geändert markiert werden. Wenn der Datenzugriffsebene s `Update` Methode aufgerufen wird, wird es angezeigt wird, die die `SupplierRow` geändert wurde, und deshalb sendet eine `UPDATE` Befehl in der Datenbank.
+Mit diesem Code werden die Werte für die Übergabe Adresse, den Ort und den Wert des `SuppliersRow` in der `SuppliersDataTable`, unabhängig davon, ob sich die Werte geändert haben, nicht geändert. Diese Änderungen führen dazu, dass die `SuppliersRow` s-Eigenschaft `RowState` als geändert markiert wird. Wenn die `Update`-Methode der Datenzugriffs Ebene aufgerufen wird, wird erkannt, dass die `SupplierRow` geändert wurde und daher einen `UPDATE`-Befehl an die Datenbank sendet.
 
-Stellen Sie sich vor, jedoch, dass wir Code, um diese Methode übergebene Adresse, Stadt und Land-Werte nur zuweisen hinzugefügt, wenn Unterschiede zu den `SuppliersRow` s vorhandenen Werte. Im Fall, in dem die Adresse, Stadt und Land identisch mit den vorhandenen Daten sind, werden keine Änderungen vorgenommen und die `SupplierRow` s `RowState` links als unverändert. Das Ergebnis ist, wenn die DAL-s `Update` -Methode aufgerufen wird, wird kein Datenbankaufruf vorgenommen werden, da die `SuppliersRow` wurde nicht geändert.
+Stellen Sie sich jedoch vor, dass wir dieser Methode Code hinzugefügt haben, um nur die übergebenen Adressen, Städte und Länder Werte zuzuweisen, wenn Sie sich von den `SuppliersRow` vorhandenen Werten unterscheiden. Wenn die Adresse, die Stadt und das Land mit den vorhandenen Daten identisch sind, werden keine Änderungen vorgenommen, und die `SupplierRow` s `RowState` wird als unverändert markiert. Das Ergebnis ist, dass beim Aufrufen der dal s-`Update`-Methode kein Daten Bank Aufruf erfolgt, da die `SuppliersRow` nicht geändert wurde.
 
-Um diese Änderung in Kraft gesetzt, ersetzen Sie die Anweisungen, die blind weisen Sie die übergebene Adresse, Stadt und Land-Werte, mit dem folgenden Code:
+Um diese Änderung zu implementieren, ersetzen Sie die-Anweisungen, die die übergebenen Adressen, den Ort und die Länder Werte blind durch den folgenden Code zuweisen:
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample6.cs)]
 
-Mit dieser zusätzlichen Code, der DAL s `Update` -Methode sendet ein `UPDATE` Anweisung an die Datenbank für die nur die Datensätze, deren Werte adressbezogenen geändert haben.
+Mit diesem hinzugefügten Code sendet die DAL s-`Update`-Methode eine `UPDATE`-Anweisung nur für die Datensätze, deren Adress bezogene Werte geändert wurden.
 
-Sie können auch wir behalten den Überblick darüber, ob Unterschiede zwischen den Adressfeldern übergebene und die Daten der Datenbank vorhanden sind und, wenn keine vorhanden sind, umgehen Sie einfach den Aufruf der DAL-s `Update` Methode. Dieser Ansatz funktioniert gut, wenn Sie erneut mit dem DB-Methode, leiten, da es sich bei das DB-direktmethode ist t übergeben eine `SuppliersRow` Instanz, deren `RowState` kann überprüft werden, um zu bestimmen, ob ein Datenbankaufruf tatsächlich benötigt wird.
+Alternativ können wir verfolgen, ob es Unterschiede zwischen den übergebenen Adressfeldern und den Datenbankdaten gibt. wenn keine vorhanden sind, umgehen Sie einfach den aufrufungs-`Update` Methode. Diese Vorgehensweise funktioniert gut, wenn Sie die direkte DB-Methode wieder verwenden, da die direkte DB-Methode eine `SuppliersRow`-Instanz weitergegeben hat, deren `RowState` geprüft werden kann, um zu bestimmen, ob tatsächlich ein Daten Bank Aufrufe erforderlich ist.
 
 > [!NOTE]
-> Jedes Mal die `UpdateSupplierAddress` -Methode wird aufgerufen, um die Datenbank wird ein Aufruf ausgelöst, um Informationen zu den aktualisierten Datensatz abzurufen. Klicken Sie dann, wenn alle Änderungen in den Daten vorhanden sind, einen anderen Aufruf an die Datenbank erfolgt auf die Tabellenzeile zu aktualisieren. Dieser Workflow kann optimiert werden, durch das Erstellen einer `UpdateSupplierAddress` methodenüberladung, die akzeptiert eine `EmployeesDataTable` Instanz mit *alle* der Änderungen aus der `BatchUpdate.aspx` Seite. Es konnte stellen Sie dann einen Aufruf an die Datenbank zum Abrufen aller Datensätze aus der `Suppliers` Tabelle. Die zwei Resultsets kann dann aufgelistet werden, und nur die Datensätze, in dem Änderungen vorgenommen wurden, können aktualisiert werden.
+> Jedes Mal, wenn die `UpdateSupplierAddress`-Methode aufgerufen wird, wird ein Aufruf an die Datenbank ausgeführt, um Informationen über den aktualisierten Datensatz abzurufen. Wenn dann Änderungen an den Daten vorgenommen werden, wird ein weiterer Daten Banksatz aufgerufen, um die Tabellenzeile zu aktualisieren. Dieser Workflow kann durch Erstellen einer `UpdateSupplierAddress`-Methoden Überladung optimiert werden, die eine `EmployeesDataTable` Instanz akzeptiert, die *alle* Änderungen von der `BatchUpdate.aspx` Seite aufweist. Anschließend könnte es einen Daten Bankvorgang zum Abrufen aller Datensätze aus der `Suppliers` Tabelle erstellen. Die beiden Resultsets können dann aufgezählt werden, und nur die Datensätze, in denen Änderungen aufgetreten sind, können aktualisiert werden.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-In diesem Tutorial wurde erläutert, wie einem vollständig bearbeitbare DataList-Steuerelement, sodass Benutzer schnell geändert werden. die Adressinformationen für mehrere Lieferanten zu erstellen. Wir begonnen, indem Sie definieren die Bearbeitungsschnittstelle ein TextBox-Steuerelement für die Lieferanten-e-Adresse, Stadt und Land-Werte im DataList-Steuerelement s `ItemTemplate`. Als Nächstes haben wir alle aktualisieren Schaltflächen oben und unten DataList-Steuerelement hinzugefügt. Nachdem ein Benutzer über seine Änderungen vorgenommen haben, und klicken Sie auf eine der Schaltflächen Alle aktualisieren, die `DataListItem` s aufgelistet und einem Aufruf an die `SuppliersBLL` s-Klasse `UpdateSupplierAddress` Methode erfolgt.
+In diesem Tutorial haben Sie erfahren, wie Sie einen vollständig bearbeitbaren DataList erstellen, der es einem Benutzer ermöglicht, die Adressinformationen für mehrere Lieferanten schnell zu ändern. Wir haben begonnen, indem wir die Bearbeitungs Schnittstelle für das TextBox-websteuer Element für die Werte "Supplier s Address", "City" und "Country" im DataList-`ItemTemplate` Als nächstes haben wir alle Schaltflächen Aktualisieren oberhalb und unterhalb des DataList-Steuerelemente hinzugefügt. Nachdem ein Benutzer seine Änderungen vorgenommen und auf eine der Schaltflächen "Alle aktualisieren" geklickt hat, werden die `DataListItem` s aufgelistet, und es wird ein aufzurufende `SuppliersBLL` Klassen-`UpdateSupplierAddress` Methode ausgelöst.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Zack Jones und Ken Pespisa. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Prüfer für dieses Tutorial waren Zack Jones und Ken pespisa. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)

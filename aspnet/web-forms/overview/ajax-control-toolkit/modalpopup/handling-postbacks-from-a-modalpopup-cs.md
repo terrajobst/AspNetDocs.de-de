@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
-title: Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (c#) | Microsoft-Dokumentation
+title: Verarbeiten von Postbacks über ein ModalPopupC#-Attribut () | Microsoft-Dokumentation
 author: wenz
-description: Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Besondere Sorgfalt muss ausgeführt werden, wenn ein pos...
+description: Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es muss besonders darauf geachtet werden, wenn ein POS...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1216b1cbc3ac0e3fd4850ab1e924ae4299207137
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 20073d156b4bd5ce67a47d2511b28594b70ce260
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132669"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599105"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-c"></a>Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)
 
-> Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Besondere Sorgfalt muss ausgeführt werden, wenn ein Postback aus in das Popup erstellt wird.
+> Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es muss besonders darauf geachtet werden, wenn ein Postback aus dem Popup erstellt wird.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Der ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein modales Fenster mithilfe der clientseitigen Methoden zu erstellen. Besondere Sorgfalt muss ausgeführt werden, wenn ein Postback aus in das Popup erstellt wird.
+Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es muss besonders darauf geachtet werden, wenn ein Postback aus dem Popup erstellt wird.
 
 ## <a name="steps"></a>Schritte
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der `<form>` Element):
+Um die Funktionalität von ASP.NET AJAX und dem Steuerelement-Toolkit zu aktivieren, muss das `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden (innerhalb des `<form>` Elements):
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample1.aspx)]
 
-Fügen Sie einen Bereich, der als modales Fenster dient. Dort kann der Benutzer einen Namen und eine e-Mail-Adresse eingeben. Eine Schaltfläche wird verwendet, um das Popup zu schließen und speichern Sie die Informationen. Beachten Sie, dass die `OnClick` -Attribut festgelegt ist, sodass ein Postback auftritt, wenn auf diese Schaltfläche geklickt wird:
+Fügen Sie als nächstes ein Panel hinzu, das als modales Popup fungiert. Dort kann der Benutzer einen Namen und eine e-Mail-Adresse eingeben. Eine Schaltfläche wird verwendet, um das Popup Fenster zu schließen und die Informationen zu speichern. Beachten Sie, dass das `OnClick`-Attribut festgelegt ist, sodass ein Postback auftritt, wenn auf diese Schaltfläche geklickt wird:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample2.aspx)]
 
-Die Seite selbst besteht aus zwei Bezeichnungen für genau die gleichen Informationen: Name und e-Mail-Adresse. Eine Schaltfläche dient zum modalen Popups auslösen:
+Die Seite selbst besteht aus zwei Bezeichnungen für genau dieselben Informationen: Name und e-Mail-Adresse. Eine Schaltfläche wird verwendet, um das modale Popup zu starten:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample3.aspx)]
 
-Um das Popup angezeigt werden können, fügen die `ModalPopupExtender` Steuerelement. Legen Sie die `PopupControlID` Attribut des Bereichs-ID und `TargetControlID` auf die Schaltfläche "ID:
+Fügen Sie das `ModalPopupExtender`-Steuerelement hinzu, damit das Popup angezeigt wird. Legen Sie das `PopupControlID`-Attribut auf die ID des Panels fest, und `TargetControlID` auf die ID der Schaltfläche:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample4.aspx)]
 
-Jetzt immer die `Save` innerhalb des modalen Popups geklickt wird, die serverseitige `SaveData()` Methode ausgeführt wird. Dort können Sie die eingegebenen Daten in einem Datenspeicher sparen. Der Einfachheit halber werden die neuen Daten nur in der Bezeichnung Ausgabe:
+Wenn nun auf die Schaltfläche "`Save`" innerhalb des modalen Popups geklickt wird, wird die serverseitige `SaveData()` Methode ausgeführt. Dort können Sie die eingegebenen Daten in einem Datenspeicher speichern. Der Einfachheit halber werden die neuen Daten nur in der Bezeichnung ausgegeben:
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample5.cs)]
 
-Darüber hinaus sollte die Textbox-Steuerelemente innerhalb des modalen Popups mit den aktuellen Namen und e-Mail-Adresse gefüllt werden. Dies ist jedoch nur erforderlich, wenn kein Postback auftritt. Ist es ein Postback, füllt die Viewstate-Funktion von ASP.NET automatisch die Textfelder ein, durch die entsprechenden Werte.
+Außerdem sollten die Textfeld-Steuerelemente im modalen Popup mit dem aktuellen Namen und der aktuellen e-Mail-Adresse ausgefüllt werden. Dies ist jedoch nur erforderlich, wenn kein Postback stattfindet. Wenn ein Postback vorliegt, werden die Textfelder von der ASP.NET ViewState-Funktion automatisch mit den entsprechenden Werten aufgefüllt.
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample6.cs)]
 
-[![Modale Fenster auslöst ein Postback.](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
+[![das modale Popup ein Postback verursacht.](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
 
-Modale Fenster ein Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
+Das modale Popup bewirkt ein Postback ([Klicken Sie, um das Bild in voller Größe anzuzeigen](handling-postbacks-from-a-modalpopup-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](using-modalpopup-with-a-repeater-control-cs.md)

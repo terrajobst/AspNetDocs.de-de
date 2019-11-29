@@ -1,148 +1,148 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
-title: Benutzerdefinierte Schaltflächen im DataList- oder Wiederholungssteuerelement (VB) | Microsoft-Dokumentation
+title: Benutzerdefinierte Schaltflächen im DataList und Repeater (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater verwendet wird, um die Liste der im System, wobei jede Kategorie eine Schaltfläche zum Anzeigen der Associ bereitstellen anzeigen...
+description: In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater zum Auflisten der Kategorien im System verwendet, wobei jede Kategorie eine Schaltfläche zum Anzeigen der ASSOCI...
 ms.author: riande
 ms.date: 11/13/2006
 ms.assetid: 1afdb14d-6e49-4e1f-aead-2934730d472e
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f16ab831faf213a467624559f09dafc92826bfe5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: bc7e94e59226b739c2948434c1bfecb46b3d7856
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130718"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607538"
 ---
 # <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>Benutzerdefinierte Schaltflächen im DataList- oder Wiederholungssteuerelement (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_46_VB.exe) oder [PDF-Datei herunterladen](custom-buttons-in-the-datalist-and-repeater-vb/_static/datatutorial46vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_46_VB.exe) oder [PDF herunterladen](custom-buttons-in-the-datalist-and-repeater-vb/_static/datatutorial46vb1.pdf)
 
-> In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater verwendet wird, um die Liste von Kategorien im System, wobei jede Kategorie, die Bereitstellung einer Schaltfläche, um die zugehörige Produkte, die mithilfe eines BulletedList-Steuerelements anzeigen.
+> In diesem Lernprogramm erstellen wir eine Schnittstelle, die einen Repeater zum Auflisten der Kategorien im System verwendet, wobei jede Kategorie eine Schaltfläche zum Anzeigen der zugehörigen Produkte mithilfe eines "BulletedList"-Steuer Elements bereitstellt.
 
 ## <a name="introduction"></a>Einführung
 
-In den letzten siebzehn DataList- oder Wiederholungssteuerelement Tutorials wir erstellt haben, sowohl Beispiele für die nur-Lese und bearbeiten und Löschen von Beispielen. Um zu ermöglichen, bearbeiten und Löschen von Funktionen in einem DataList-Steuerelement, wir Schaltflächen hinzugefügt, an die Datenliste s `ItemTemplate` , die beim Klicken auf einen Postback verursacht, und eine für die Schaltfläche "s" DataList-Ereignis ausgelöst hat `CommandName` Eigenschaft. Z. B. eine Schaltfläche zum Hinzufügen der `ItemTemplate` mit einer `CommandName` Eigenschaftswert Bearbeitung bewirkt, dass die DataList-s `EditCommand` auf Postbacks ausgelöst werden mit der `CommandName` löschen löst die `DeleteCommand`.
+In den letzten 17 DataList-und Repeater-Tutorials haben wir sowohl schreibgeschützte Beispiele als auch Beispiele zum Bearbeiten und löschen erstellt. Um das Bearbeiten und Löschen von Funktionen innerhalb eines DataList zu vereinfachen, haben wir dem DataList-`ItemTemplate` Schaltflächen hinzugefügt, die beim Klicken auf ein Postback geführt und ein DataList-Ereignis ausgelöst haben, das der Schaltfläche s `CommandName` Eigenschaft entspricht. Wenn Sie z. b. eine Schaltfläche zum `ItemTemplate` mit einem `CommandName`-Eigenschafts Wert bearbeiten hinzufügen, bewirkt dies, dass die DataList s-`EditCommand` beim Postback ausgelöst werden. mit dem `CommandName` DELETE wird das `DeleteCommand`ausgelöst.
 
-Darüber hinaus zum Bearbeiten und Löschen von Schaltflächen, die DataList- oder Repeater-Steuerelemente können auch enthalten Schaltflächen, LinkButtons oder ImageButtons, führen Sie durch Klicken auf eine benutzerdefinierte serverseitige Logik. In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater verwendet wird, um die Liste der Kategorien im System. Für jede Kategorie umfasst der Repeater eine Schaltfläche, um die Kategorie verknüpft sind Produkte, die über ein BulletedList-Steuerelement angezeigt werden (siehe Abbildung 1).
+Zusätzlich zu den Schaltflächen Bearbeiten und löschen können die Steuerelemente DataList und Repeater auch Schaltflächen, LinkButtons oder imagebuttons enthalten, die beim Klicken auf eine benutzerdefinierte serverseitige Logik ausgeführt werden. In diesem Tutorial erstellen wir eine Schnittstelle, die einen Repeater zum Auflisten der Kategorien im System verwendet. Für jede Kategorie schließt der Repeater eine Schaltfläche ein, um die zugeordneten Produkte der Kategorie mithilfe eines "BulletedList"-Steuer Elements anzuzeigen (siehe Abbildung 1).
 
-[![Produkte Link zeigt die Kategorie-s-Produkte in einer Liste mit Aufzählungszeichen der anzeigen klicken](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
+[![auf den Link Produkte anzeigen klicken, werden die Produkte der Kategorie in einer Auflistungs Liste angezeigt.](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
 
-**Abbildung 1**: Klicken Sie auf Link zeigt für die Produkte zeigen die Kategorie-s-Produkte in einer Liste mit Aufzählungszeichen ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image3.png))
+**Abbildung 1**: Wenn Sie auf den Link Produkte anzeigen klicken, werden die Produkte der Kategorie in einer aufhefliste angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image3.png))
 
-## <a name="step-1-adding-the-custom-button-tutorial-web-pages"></a>Schritt 1: Hinzufügen der benutzerdefinierten Schaltfläche Tutorial von Webseiten
+## <a name="step-1-adding-the-custom-button-tutorial-web-pages"></a>Schritt 1: Hinzufügen der benutzerdefinierten Schaltflächen-Tutorial-Webseiten
 
-Bevor Sie an, wie eine benutzerdefinierte Schaltfläche hinzufügen befassen, können Sie s zuerst können Sie die ASP.NET-Seiten in unserem Websiteprojekt zu erstellen, die wir für dieses Tutorial benötigen. Starten, indem Sie einen neuen Ordner namens hinzufügen `CustomButtonsDataListRepeater`. Fügen Sie die folgenden beiden ASP.NET-Seiten in diesen Ordner, um sicherzustellen, ordnen Sie jeder Seite mit den `Site.master` Masterseite:
+Bevor wir uns mit der Vorgehensweise zum Hinzufügen einer benutzerdefinierten Schaltfläche beschäftigen, nehmen wir uns zunächst einen Moment Zeit, um die ASP.NET-Seiten in unserem Website Projekt zu erstellen, die wir für dieses Tutorial benötigen. Fügen Sie zunächst einen neuen Ordner mit dem Namen `CustomButtonsDataListRepeater`hinzu. Fügen Sie dann die folgenden beiden ASP.NET-Seiten zu diesem Ordner hinzu, und stellen Sie sicher, dass Sie die einzelnen Seiten der `Site.master` Master Seite zuordnen:
 
 - `Default.aspx`
 - `CustomButtons.aspx`
 
-![Fügen Sie die ASP.NET-Seiten für die benutzerdefinierten Schaltflächen-bezogene-Lernprogramme](custom-buttons-in-the-datalist-and-repeater-vb/_static/image4.png)
+![Hinzufügen der ASP.NET-Seiten für benutzerdefinierte Schaltflächen bezogene Tutorials](custom-buttons-in-the-datalist-and-repeater-vb/_static/image4.png)
 
-**Abbildung 2**: Fügen Sie die ASP.NET-Seiten für die benutzerdefinierten Schaltflächen-bezogene-Lernprogramme
+**Abbildung 2**: Hinzufügen der ASP.NET-Seiten für benutzerdefinierte Schaltflächen bezogene Tutorials
 
-Wie in den anderen Ordnern `Default.aspx` in die `CustomButtonsDataListRepeater` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Fügen Sie dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
+Wie in den anderen Ordnern werden `Default.aspx` im Ordner `CustomButtonsDataListRepeater` die Lernprogramme in diesem Abschnitt auflisten. Denken Sie daran, dass das `SectionLevelTutorialListing.ascx` Benutzer Steuerelement diese Funktionalität bereitstellt. Fügen Sie dieses Benutzer Steuerelement zu `Default.aspx` hinzu, indem Sie es aus dem Projektmappen-Explorer auf die Seite s Designansicht ziehen.
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
+[![das Benutzer Steuerelement "sectionleveltutoriallisting. ascx" zu "default. aspx" hinzufügen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
 
-**Abbildung 3**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image7.png))
+**Abbildung 3**: Hinzufügen des `SectionLevelTutorialListing.ascx` Benutzer Steuer Elements zu `Default.aspx` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image7.png))
 
-Abschließend fügen Sie die Seiten als Einträge der `Web.sitemap` Datei. Fügen Sie das folgende Markup insbesondere nach der Paginierung und Sortierung, mit dem DataList- und Wiederholungssteuerelement `<siteMapNode>`:
+Fügen Sie abschließend die Seiten als Einträge zur `Web.sitemap` Datei hinzu. Fügen Sie insbesondere nach dem Paging und der Sortierung mit dem DataList-und Repeater-`<siteMapNode>`das folgende Markup hinzu:
 
 [!code-xml[Main](custom-buttons-in-the-datalist-and-repeater-vb/samples/sample1.xml)]
 
-Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website über einen Browser anzeigen. Klicken Sie im Menü auf der linken Seite enthält jetzt Elemente für das Bearbeiten, einfügen und löschen die Lernprogramme.
+Nehmen Sie sich nach dem Aktualisieren `Web.sitemap`einen Moment Zeit, um die Tutorials-Website über einen Browser anzuzeigen. Das Menü auf der linken Seite enthält jetzt Elemente für die Tutorials zum Bearbeiten, einfügen und löschen.
 
-![Die Sitemap enthält jetzt den Eintrag für das benutzerdefinierte Schaltflächen-Tutorial](custom-buttons-in-the-datalist-and-repeater-vb/_static/image8.png)
+![Die Site Übersicht enthält jetzt den Eintrag für das Tutorial benutzerdefinierte Schaltflächen.](custom-buttons-in-the-datalist-and-repeater-vb/_static/image8.png)
 
-**Abbildung 4**: Die Sitemap enthält jetzt den Eintrag für das benutzerdefinierte Schaltflächen-Tutorial
+**Abbildung 4**: die Site Übersicht enthält jetzt den Eintrag für das Tutorial zu benutzerdefinierten Schaltflächen.
 
-## <a name="step-2-adding-the-list-of-categories"></a>Schritt 2: Die Liste der Kategorien hinzufügen
+## <a name="step-2-adding-the-list-of-categories"></a>Schritt 2: Hinzufügen der Liste der Kategorien
 
-Für dieses Tutorial benötigen wir einen Repeater zu erstellen, die alle Kategorien zusammen mit LinkButton-Produkte anzeigen aufgeführt, die beim Klicken auf die zugeordnete Kategorie s-Produkte in einer Aufzählung angezeigt. Lassen Sie s, erstellen Sie zunächst ein einfaches Repeater, die im System die Kategorien aufgeführt. Öffnen Sie zunächst die `CustomButtons.aspx` auf der Seite die `CustomButtonsDataListRepeater` Ordner. Ziehen Sie einen Repeater aus der Toolbox in den Designer und den Satz der `ID` Eigenschaft `Categories`. Als Nächstes erstellen Sie ein neues Datenquellen-Steuerelement, aus dem Repeater-s-Smarttag. Insbesondere erstellen Sie ein neues ObjectDataSource-Steuerelement, das mit dem Namen `CategoriesDataSource` auswählt, die Daten aus der die `CategoriesBLL` Klasse s `GetCategories()` Methode.
+Für dieses Tutorial müssen Sie einen Repeater erstellen, der alle Kategorien auflistet, zusammen mit dem Link Button Produkte anzeigen, bei dem die zugeordneten Kategorie s Produkte in einer Auflistungs Liste angezeigt werden. Erstellen Sie zunächst einen einfachen Repeater, der die Kategorien im System auflistet. Öffnen Sie zunächst die Seite `CustomButtons.aspx` im Ordner `CustomButtonsDataListRepeater`. Ziehen Sie einen Repeater aus der Toolbox auf den Designer, und legen Sie dessen `ID`-Eigenschaft auf `Categories`fest. Erstellen Sie als nächstes ein neues Datenquellen-Steuerelement aus dem Repeater s Smarttags. Erstellen Sie insbesondere ein neues ObjectDataSource-Steuerelement mit dem Namen `CategoriesDataSource`, das seine Daten aus der `CategoriesBLL` Class s `GetCategories()`-Methode auswählt.
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der CategoriesBLL Klasse s GetCategories()-Methode](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
+[![Konfigurieren von ObjectDataSource für die Verwendung der Methode GetCategories () der kategoriesbll-Klasse](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
 
-**Abbildung 5**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `CategoriesBLL` s-Klasse `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image11.png))
+**Abbildung 5**: Konfigurieren von ObjectDataSource für die Verwendung der `CategoriesBLL` Class s `GetCategories()`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image11.png))
 
-Im Gegensatz zu dem DataList-Steuerelement, für die Visual Studio ein Standard erstellt- `ItemTemplate` basierend auf der Datenquelle, die Vorlagen Repeater s manuell definiert werden müssen. Darüber hinaus müssen die Repeater-s-Vorlagen erstellt und bearbeitet, deklarativ (d. h. es s keine Vorlagen bearbeiten-option im Smarttag Repeater s).
+Anders als das DataList-Steuerelement, für das Visual Studio eine Standard `ItemTemplate` erstellt, die auf der Datenquelle basiert, müssen die Repeater s-Vorlagen manuell definiert werden. Außerdem müssen die Wiederholungs Vorlagen für Wiederholungs Vorlagen deklarativ erstellt und bearbeitet werden (d. h., es gibt keine Option zum Bearbeiten von Vorlagen in der Repeater s Smarttags).
 
-Klicken Sie auf der Registerkarte "Datenquelle" in der unteren linken Ecke, und fügen eine `ItemTemplate` , die den Kategorienamen s in anzeigt ein `<h3>` -Element und seine Beschreibung in einem Absatz markieren, enthalten eine `SeparatorTemplate` , die eine horizontale Trennlinie anzeigt (`<hr />`) zwischen den einzelnen die Kategorie. Auch hinzufügen eine LinkButton mit seiner `Text` Eigenschaftensatz zu Produkten anzuzeigen. Nach Abschluss dieser Schritte sollte im deklarativen Markup Ihrer Seite s wie folgt aussehen:
+Klicken Sie in der linken unteren Ecke auf die Registerkarte Quelle, und fügen Sie eine `ItemTemplate` hinzu, die den Namen der Kategorie in einem `<h3>`-Element und seine Beschreibung in einem Absatz Kennzeichen anzeigt. Fügen Sie einen `SeparatorTemplate` ein, der eine horizontale Regel (`<hr />`) zwischen jeder Kategorie anzeigt. Fügen Sie auch einen Link Button hinzu, dessen `Text`-Eigenschaft auf Produkte anzeigen festgelegt ist. Nachdem Sie diese Schritte ausgeführt haben, sollte Ihr deklaratives Markup der Seite wie folgt aussehen:
 
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-vb/samples/sample2.aspx)]
 
-Abbildung 6 zeigt die Seite, wenn Sie über einen Browser angezeigt. Jeder Name und die Beschreibung wird aufgeführt. Die Produkte anzeigen wird beim Klicken auf ein Postback auslöst aber eine Aktion noch nicht ausgeführt wird.
+Abbildung 6 zeigt die Seite, wenn Sie in einem Browser angezeigt wird. Jeder Kategoriename und jede Beschreibung ist aufgeführt. Wenn Sie auf die Schaltfläche Produkte anzeigen klicken, wird ein Postback verursacht, aber es wird noch keine Aktion ausgeführt.
 
-[![Jede Kategorie s Name und die Beschreibung wird zusammen mit LinkButton-Produkte anzeigen angezeigt](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
+[![die einzelnen Kategorien "Name" und "Beschreibung" angezeigt werden, zusammen mit dem Link "Produkte anzeigen".](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
 
-**Abbildung 6**: Jede Kategorie s Name und die Beschreibung wird angezeigt, zusammen mit LinkButton-Produkte anzeigen ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image14.png))
+**Abbildung 6**: die Namen und Beschreibungen der Kategorien werden zusammen mit dem Link "Produkte anzeigen" angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image14.png))
 
-## <a name="step-3-executing-server-side-logic-when-the-show-products-linkbutton-is-clicked"></a>Schritt 3: Ausführen der serverseitigen Logik bei der anzeigen-Produkte LinkButton geklickt wird
+## <a name="step-3-executing-server-side-logic-when-the-show-products-linkbutton-is-clicked"></a>Schritt 3: Ausführen der Server seitigen Logik, wenn auf die linktaste "Produkte anzeigen" geklickt wird
 
-Jedes Mal, wenn eine Schaltfläche, LinkButton oder ImageButton innerhalb einer Vorlage in einem DataList- oder Repeater geklickt wird, ein Postback auftritt und der s DataList- oder Repeater `ItemCommand` -Ereignis ausgelöst wird. Zusätzlich zu den `ItemCommand` -Ereignis, das DataList-Steuerelement möglicherweise auch eine andere und spezifischere-Ereignis ausgelöst, wenn die Schaltfläche "s" `CommandName` -Eigenschaftensatz auf eine der reservierten Zeichenfolgen ("löschen", "Bearbeiten", "Abbrechen", "Update" oder "auswählen"), aber die `ItemCommand` Ereignis ist *immer* ausgelöst.
+Jedes Mal, wenn auf eine Schaltfläche, einen LinkButton oder einen ImageButton innerhalb einer Vorlage in einem DataList-oder Wiederholungs Modul geklickt wird, tritt ein Postback auf, und das DataList-oder Repeater-`ItemCommand` Ereignis wird ausgelöst. Zusätzlich zum `ItemCommand`-Ereignis kann das DataList-Steuerelement auch ein weiteres, spezifischere Ereignis auslösen, wenn die Schaltfläche s `CommandName`-Eigenschaft auf eine der reservierten Zeichen folgen festgelegt ist (Delete, Edit, Cancel, Update oder SELECT), aber das `ItemCommand`-Ereignis *immer* ausgelöst wird.
 
-Wenn eine Schaltfläche in einem DataList- oder Repeater geklickt wird, muss häufig (in dem Fall, dass möglicherweise mehrere Schaltflächen innerhalb des Steuerelements, z. B. eine Bearbeitungs- und Schaltfläche "löschen"), auf welche Schaltfläche geklickt wurde und möglicherweise einige zusätzliche Informationen (z. B. übergibt die Primärschlüssel-Wert des Elements, dessen Schaltfläche geklickt wurde). Die Schaltfläche, LinkButton und ImageButton verfügen über zwei Eigenschaften, deren Werte an, die `ItemCommand` -Ereignishandler:
+Wenn in einem DataList-oder Wiederholungs Steuerelement auf eine Schaltfläche geklickt wird, müssen wir die Schaltfläche übergeben, auf die geklickt wurde (in dem Fall, dass es mehrere Schaltflächen im Steuerelement gibt, z. b. eine Schaltfläche zum Bearbeiten und löschen), und möglicherweise einige zusätzliche Informationen (z. b. der Primärschlüssel Wert des Elements, auf dessen Schaltfläche geklickt wurde. Die Schaltfläche, LinkButton und ImageButton enthalten zwei Eigenschaften, deren Werte an den `ItemCommand`-Ereignishandler übermittelt werden:
 
-- `CommandName` eine Zeichenfolge, die in der Regel verwendet, um jede Schaltfläche in der Vorlage zu identifizieren.
-- `CommandArgument` häufig verwendet, um den Wert eines Datenfelds, z. B. der primäre Schlüsselwert enthalten soll
+- `CommandName` eine Zeichenfolge, die normalerweise zum Identifizieren der einzelnen Schaltflächen in der Vorlage verwendet
+- `CommandArgument`, die häufig verwendet wird, um den Wert eines Daten Felds (z. b. den Primärschlüssel Wert) aufzunehmen.
 
-In diesem Beispiel legen Sie die s LinkButton `CommandName` Eigenschaft ShowProducts und die Bindung für den aktuellen Datensatz s Primärschlüsselwert `CategoryID` auf die `CommandArgument` Eigenschaft, die mit der Datenbindungssyntax `CategoryArgument='<%# Eval("CategoryID") %>'`. Wenn Sie diese beiden Eigenschaften angegeben, sollte die deklarative Syntax des LinkButton-s wie folgt aussehen:
+Legen Sie für dieses Beispiel die LinkButton s `CommandName`-Eigenschaft auf showProducts fest, und binden Sie den Wert des aktuellen Datensatzes s als Primärschlüssel `CategoryID` mithilfe der Datenbindung-Syntax `CategoryArgument='<%# Eval("CategoryID") %>'`an die `CommandArgument`-Eigenschaft. Nachdem Sie diese beiden Eigenschaften angegeben haben, sollte die deklarative Syntax von LinkButton s wie folgt aussehen:
 
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-vb/samples/sample3.aspx)]
 
-Wenn die Schaltfläche geklickt wird ein Postback auftritt, und der s DataList- oder Repeater `ItemCommand` -Ereignis ausgelöst wird. Der Ereignishandler wird die Schaltfläche "s" übergeben `CommandName` und `CommandArgument` Werte.
+Wenn auf die Schaltfläche geklickt wird, erfolgt ein Postback, und das DataList-oder Repeater-`ItemCommand` Ereignis wird ausgelöst. Dem Ereignishandler werden die Schaltflächen s `CommandName` und `CommandArgument` Werte übermittelt.
 
-Erstellen Sie einen Ereignishandler für das Repeater s `ItemCommand` Ereignis und beachten Sie den zweiten Parameter an den Ereignishandler übergeben (mit dem Namen `e`). Dieser zweite Parameter ist vom Typ [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) und weist die folgenden vier Eigenschaften:
+Erstellen Sie einen Ereignishandler für das Repeater s `ItemCommand`-Ereignis, und notieren Sie sich den zweiten Parameter, der an den Ereignishandler übergeben wird (`e`). Dieser zweite Parameter ist vom Typ [`RepeaterCommandEventArgs`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) und verfügt über die folgenden vier Eigenschaften:
 
-- `CommandArgument` der Wert der angeklickten Schaltfläche s `CommandArgument` Eigenschaft
-- `CommandName` der Wert der Schaltfläche s `CommandName` Eigenschaft
-- `CommandSource` Ein Verweis auf das Schaltflächen-Steuerelement, auf die geklickt wurde
-- `Item` Ein Verweis auf die [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) , enthält der angeklickten Schaltfläche; jeder Datensatz des Repeaters gebunden ist der datenträgerverwaltung als ein `RepeaterItem`
+- `CommandArgument` den Wert der Schaltfläche s `CommandArgument` Eigenschaft, auf die geklickt wurde.
+- `CommandName` den Wert der Schaltfläche s `CommandName` Eigenschaft
+- `CommandSource` einen Verweis auf das Schaltflächen Steuerelement, auf das geklickt wurde.
+- `Item` einen Verweis auf das [`RepeaterItem`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) , das die Schaltfläche enthält, auf die geklickt wurde. jeder an den Repeater gebundene Datensatz wird als `RepeaterItem`
 
-Seit der ausgewählten Kategorie s `CategoryID` über übergeben die `CommandArgument` -Eigenschaft, wir können den Satz von Produkten, die in der ausgewählten Kategorie zugeordnet der `ItemCommand` -Ereignishandler. Diese Produkte klicken Sie dann in einem BulletedList-Steuerelement gebunden werden können die `ItemTemplate` (die wir haben noch hinzuzufügende). Alles, was bleibt, und klicken Sie dann, ist das Hinzufügen von BulletedList, verweisen sie in der `ItemCommand` -Ereignishandler und binden, den Satz von Produkten für die ausgewählte Kategorie, die wir in Schritt 4 in Angriff zu nehmen müssen.
+Da die ausgewählte Kategorie s `CategoryID` über die `CommandArgument`-Eigenschaft übermittelt wird, können wir den Satz von Produkten, die der ausgewählten Kategorie zugeordnet sind, im `ItemCommand`-Ereignishandler erhalten. Diese Produkte können dann an ein BulletedList-Steuerelement in der `ItemTemplate` gebunden werden (das wir noch hinzugefügt haben). Es bleibt alles übrig, und dann wird die aufzurufliste hinzugefügt, in der `ItemCommand`-Ereignishandler darauf verwiesen und an den Satz von Produkten für die ausgewählte Kategorie gebunden, den wir in Schritt 4 behandeln werden.
 
 > [!NOTE]
-> DataList-Steuerelement s `ItemCommand` -Ereignishandler wird ein Objekt des Typs übergeben [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), welcher bietet die gleichen vier Eigenschaften wie die `RepeaterCommandEventArgs` Klasse.
+> Dem DataList s `ItemCommand`-Ereignishandler wird ein Objekt vom Typ " [`DataListCommandEventArgs`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)" übermittelt, das dieselben vier Eigenschaften wie die `RepeaterCommandEventArgs`-Klasse bietet.
 
-## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>Schritt 4: Anzeigen von die Produkte der ausgewählten Kategorie s in eine Liste mit Aufzählungszeichen
+## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>Schritt 4: Anzeigen der Produkte der ausgewählten Kategorie in einer Auflistungs Liste
 
-Die ausgewählte Kategorie s Produkte angezeigt werden können, innerhalb des Repeaters s `ItemTemplate` mit einer Reihe von Steuerelementen. Es konnte hinzugefügt werden, dass eine andere Repeater, einem DataList-Steuerelement, einem DropDownList-Steuerelement, eine GridView und So weiter geschachtelt. Da wir Produkte als Aufzählung anzeigen möchten, dagegen verwenden wir das BulletedList-Steuerelement. Zum Zurückgeben der `CustomButtons.aspx` Seite s deklaratives Markup, das Hinzufügen eines Steuerelements BulletedList, um die `ItemTemplate` nach LinkButton-Produkte anzeigen. Legen Sie die s BulletedLists `ID` zu `ProductsInCategory`. BulletedList zeigt den Wert des Felds angegeben wird, über die `DataTextField` Eigenschaft, da dieses Steuerelement Produktinformationen gebunden hat, legen Sie die `DataTextField` Eigenschaft `ProductName`.
+Die ausgewählten Produkte der Kategorie s können innerhalb der Repeater-`ItemTemplate` mit einer beliebigen Anzahl von Steuerelementen angezeigt werden. Wir könnten weitere geschaltete Wiederholungs Steuerelemente, DataList, Dropdown Listen, GridView usw. hinzufügen. Da wir die Produkte als Auflistungs Liste anzeigen möchten, verwenden wir jedoch das Steuerelement "BulletedList". Wenn Sie zum deklarativen Markup der `CustomButtons.aspx` Seite zurückkehren, fügen Sie der `ItemTemplate` nach dem Link Schaltfläche Produkte anzeigen ein Auflistungs Listen-Steuerelement hinzu. Legen Sie die `ID` für die aufzuruflisten s auf `ProductsInCategory`fest. Die Auflistungs Liste zeigt den Wert des Daten Felds an, das über die `DataTextField`-Eigenschaft angegeben wird. Da auf dieses Steuerelement Produktinformationen gebunden werden, legen Sie die `DataTextField`-Eigenschaft auf `ProductName`fest.
 
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-vb/samples/sample4.aspx)]
 
-In der `ItemCommand` Ereignishandler, verweisen Sie auf dieses Steuerelement `e.Item.FindControl("ProductsInCategory")` und binden Sie es auf den Satz von Produkten, die der ausgewählten Kategorie zugeordnet.
+Verweisen Sie im `ItemCommand`-Ereignishandler mit `e.Item.FindControl("ProductsInCategory")` auf dieses Steuerelement, und binden Sie es an den Satz von Produkten, die der ausgewählten Kategorie zugeordnet sind.
 
 [!code-vb[Main](custom-buttons-in-the-datalist-and-repeater-vb/samples/sample5.vb)]
 
-Vor dem Ausführen einer Aktion in der `ItemCommand` -Ereignishandler es ratsam, zuerst prüfen muss den Wert des eingehenden s `CommandName`. Da die `ItemCommand` -Ereignishandler wird ausgelöst, wenn *alle* Schaltfläche geklickt wird, treten mehrere Schaltflächen in der Vorlage verwendet die `CommandName` Wert, die auszuführende Aktion an, zu erkennen. Überprüfen der `CommandName` sieht sich fraglich, da wir nur eine einzelne Schaltfläche haben allerdings handelt es sich, eine sollte zur guten Gewohnheit Formular. Als Nächstes wird der `CategoryID` der ausgewählten Kategorie abgerufen, von der `CommandArgument` Eigenschaft. Der BulletedList-Steuerelement in der Vorlage klicken Sie dann auf die verwiesen wird und gebunden an die Ergebnisse der `ProductsBLL` Klasse s `GetProductsByCategoryID(categoryID)` Methode.
+Vor dem Ausführen einer Aktion im `ItemCommand`-Ereignishandler ist es ratsam, zuerst den Wert der eingehenden `CommandName`zu überprüfen. Da der `ItemCommand` Ereignishandler ausgelöst wird, wenn auf *eine* Schaltfläche geklickt wird, verwenden Sie den `CommandName` Wert, wenn mehrere Schaltflächen in der Vorlage vorhanden sind, um die auszuführende Aktion zu ermitteln. Das Überprüfen des `CommandName` hier ist "Muot", da wir nur eine einzige Schaltfläche haben, aber es ist eine gute Gewohnheit, zu bilden. Als nächstes wird der `CategoryID` der ausgewählten Kategorie aus der `CommandArgument`-Eigenschaft abgerufen. Auf das Steuerelement "BulletedList" in der Vorlage wird dann verwiesen, und es wird an die Ergebnisse der `ProductsBLL` Klasse "s `GetProductsByCategoryID(categoryID)`-Methode gebunden.
 
-In vorherigen Tutorials, mit denen die Schaltflächen in einem DataList-Steuerelement, z. B. [eine Übersicht über die von bearbeiten und Löschen von Daten im DataList-Steuerelement](../editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md), wir festgestellt, dass der Wert des Primärschlüssels ein bestimmtes Element über die `DataKeys` Auflistung. Obwohl dieser Ansatz gut mit DataList-Steuerelement funktioniert, wird der Repeater verfügt nicht über eine `DataKeys` Eigenschaft. Wir müssen stattdessen eine alternative Methode zum Angeben von des Wert des Primärschlüssels, z. B. über die Schaltfläche "s" `CommandArgument` Eigenschaft oder ein ausgeblendetes Bezeichnung-Steuerelement in der Vorlage mit den Wert des Primärschlüssels zugewiesen, und Lesen des Werts in der `ItemCommand`Event Handler mit `e.Item.FindControl("LabelID")`.
+In vorherigen Tutorials, in denen die Schaltflächen in einem DataList verwendet wurden (z. b. [eine Übersicht über das Bearbeiten und Löschen von Daten im DataList](../editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb.md)), haben wir den Wert des Primärschlüssels eines bestimmten Elements über die `DataKeys` Collection bestimmt. Obwohl dieser Ansatz gut mit dem DataList funktioniert, verfügt der Repeater nicht über eine `DataKeys`-Eigenschaft. Stattdessen muss ein alternativer Ansatz zum Angeben des Primärschlüssel Werts verwendet werden, z. b. über die Schaltfläche s `CommandArgument` Eigenschaft oder durch Zuweisen des Primärschlüssel Werts zu einem ausgeblendeten Beschriftungs-websteuer Element innerhalb der Vorlage und durch das Lesen des Werts im `ItemCommand` Ereignishandler mithilfe von `e.Item.FindControl("LabelID")`.
 
-Nach Abschluss der `ItemCommand` -Ereignishandler können Sie diese Seite in einem Browser zu testen. Wie in Abbildung 7 dargestellt, auf die Produkte anzeigen Link ein Postback auslöst und zeigt die Produkte für die ausgewählte Kategorie in eine BulletedList. Beachten Sie außerdem, dass diese Produktinformationen bleibt, auf, auch wenn andere Kategorien anzeigen Produkte Links geklickt werden.
+Nachdem Sie den `ItemCommand`-Ereignishandler abgeschlossen haben, nehmen Sie sich einen Moment Zeit, um diese Seite in einem Browser zu testen. Wie in Abbildung 7 gezeigt, wird durch Klicken auf den Link Produkte anzeigen ein Postback verursacht, und die Produkte für die ausgewählte Kategorie werden in einer Auflistungs Liste angezeigt. Beachten Sie außerdem, dass diese Produktinformationen weiterhin angezeigt werden, auch wenn in anderen Kategorien auf "Produkte anzeigen" geklickt wird.
 
 > [!NOTE]
-> Wenn Sie das Verhalten dieses Berichts, ändern möchten, die nur eine Kategorie s-Produkte zu einem Zeitpunkt aufgeführt sind, legen Sie einfach das Steuerelement BulletedList s `EnableViewState` Eigenschaft `False`.
+> Wenn Sie das Verhalten dieses Berichts so ändern möchten, dass jeweils nur die Produkte der Kategorie s aufgeführt sind, legen Sie einfach die `EnableViewState` Eigenschaft des Steuer Elements "BulletedList" auf `False`fest.
 
-[![Eine BulletedList wird verwendet, um die Produkte der ausgewählten Kategorie angezeigt.](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
+[![eine "BulletedList" zum Anzeigen der Produkte der ausgewählten Kategorie verwendet wird.](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
 
-**Abbildung 7**: Eine BulletedList wird verwendet, um die Produkte der ausgewählten Kategorie angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png))
+**Abbildung 7**: eine "BulletedList" wird verwendet, um die Produkte der ausgewählten Kategorie anzuzeigen ([Klicken Sie, um das Bild in voller Größe](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png)anzuzeigen)
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Die DataList- oder Repeater-Steuerelemente können eine beliebige Anzahl von Schaltflächen, LinkButtons oder ImageButtons in ihren Vorlagen enthalten. Diese Schaltflächen, die beim Klicken auf einen Postback verursachen und Auslösen der `ItemCommand` Ereignis. Um benutzerdefinierte serverseitige-Aktion mit einer Schaltfläche geklickt wird zu verknüpfen, erstellen Sie einen Ereignishandler für die `ItemCommand` Ereignis. In diesem Ereignishandler überprüfen Sie zunächst den eingehenden `CommandName` um zu bestimmen, welche Schaltfläche geklickt wurde. Weitere Informationen kann optional angegeben werden, über die Schaltfläche "s" `CommandArgument` Eigenschaft.
+Die Steuerelemente DataList und Repeater können eine beliebige Anzahl von Schaltflächen, LinkButtons oder imagebuttons in ihren Vorlagen enthalten. Wenn Sie auf diese Schaltflächen klicken, wird ein Postback ausgelöst, und das `ItemCommand`-Ereignis wird ausgelöst. Erstellen Sie einen Ereignishandler für das `ItemCommand`-Ereignis, um eine benutzerdefinierte serverseitige Aktion einer Schaltfläche zuzuordnen, auf die geklickt wird. Überprüfen Sie in diesem Ereignishandler zuerst den Wert eingehender `CommandName`, um zu bestimmen, auf welche Schaltfläche geklickt wurde. Zusätzliche Informationen können optional über die Schaltfläche s `CommandArgument`-Eigenschaft bereitgestellt werden.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Dennis Patterson. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Der Lead Reviewer für dieses Tutorial war Dennis Patterson. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](custom-buttons-in-the-datalist-and-repeater-cs.md)
+> [Vorheriges](custom-buttons-in-the-datalist-and-repeater-cs.md)

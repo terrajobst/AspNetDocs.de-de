@@ -1,104 +1,104 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
-title: 'ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen von zusätzlichen Dateien | Microsoft-Dokumentation'
+title: 'ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen zusätzlicher Dateien | Microsoft-Dokumentation'
 author: tdykstra
-description: Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, indem Warnungsprovider...
+description: In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter zu Azure App Service.
 ms.author: riande
 ms.date: 03/23/2015
 ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 03afcf91b79bc7d7d294eae3dc43a8f780d94e20
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: eaa3141c22980f0c816e2f33b5597ac9fe69c23c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131915"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74594904"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen von zusätzlichen Dateien
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen zusätzlicher Dateien
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-[Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Starter Projekt herunterladen](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
+> In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Dieses Tutorial veranschaulicht, wie erweitern das Visual Studio Web veröffentlichen Pipeline, um eine zusätzliche Aufgabe während der Bereitstellung durchzuführen. Die Aufgabe besteht darin, zusätzliche Dateien kopieren, die nicht in den Projektordner, der Ziel-Website befinden.
+In diesem Tutorial wird gezeigt, wie die Visual Studio-Webveröffentlichungs Pipeline erweitert wird, um während der Bereitstellung eine zusätzliche Aufgabe auszuführen. Der Task besteht darin, zusätzliche Dateien, die sich nicht im Projektordner befinden, auf die Zielwebsite zu kopieren.
 
-In diesem Tutorial kopieren Sie eine zusätzliche Datei: *robots.txt*. Diese Datei in die Stagingumgebung, aber nicht in die Produktion bereitstellen möchten. In [Bereitstellen in der Produktion](deploying-to-production.md) Tutorial, das Sie diese Datei dem Projekt hinzugefügt und konfiguriert die Produktion Veröffentlichungsprofil, um sie auszuschließen. In diesem Tutorial sehen Sie eine alternative Methode für diese Situation, eine, die für alle Dateien nützlich sind, die Sie bereitstellen möchten, aber nicht im Projekt enthalten sein sollen.
+In diesem Tutorial kopieren Sie eine zusätzliche Datei: *robots. txt*. Sie möchten diese Datei in der Stagingumgebung, aber nicht in der Produktionsumgebung bereitstellen. Im Tutorial Bereitstellung in der [Produktion](deploying-to-production.md) haben Sie diese Datei dem Projekt hinzugefügt und das Veröffentlichungs Profil für die Produktion so konfiguriert, dass Sie ausgeschlossen wird. In diesem Tutorial wird eine alternative Methode für diese Situation angezeigt, die für alle Dateien nützlich ist, die Sie bereitstellen möchten, aber nicht in das Projekt aufgenommen werden sollen.
 
-## <a name="move-the-robotstxt-file"></a>Verschieben Sie die Datei "robots.txt"
+## <a name="move-the-robotstxt-file"></a>Verschieben Sie die Datei "robots. txt".
 
-Zur Vorbereitung der Behandlung einer anderen Methode *robots.txt*, in diesem Abschnitt des Lernprogramms verschieben Sie die Datei in einen Ordner, die nicht im Projekt enthalten ist und Sie löschen *robots.txt* aus den Stagingtabellen Umgebung. Es ist erforderlich, löschen Sie die Datei aus der Staging-, damit Sie überprüfen können, dass die neue Methode der Bereitstellung der das für diese Umgebung ordnungsgemäß funktioniert.
+Wenn Sie sich auf eine andere Methode zur Behandlung von " *robots. txt*" vorbereiten möchten, verschieben Sie die Datei in diesem Abschnitt des Tutorials in einen Ordner, der nicht im Projekt enthalten ist, und löschen Sie " *robots. txt* " aus der Stagingumgebung. Sie müssen die Datei aus der Staging-Datei löschen, damit Sie überprüfen können, ob die neue Methode zur Bereitstellung der Datei in dieser Umgebung ordnungsgemäß funktioniert.
 
-1. In **Projektmappen-Explorer**, mit der rechten Maustaste die *robots.txt* Datei, und klicken Sie auf **aus Projekt ausschließen**.
-2. Erstellen Sie einen neuen Ordner im Projektmappenordner und nennen Sie sie mithilfe des Windows-Datei-Explorers *ExtraFiles*.
-3. Verschieben der *robots.txt* -Datei aus der *ContosoUniversity* Projektordners mit dem die *ExtraFiles* Ordner.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei *robots. txt* , und klicken Sie dann auf **aus Projekt ausschließen**.
+2. Erstellen Sie mit dem Windows-Datei-Explorer einen neuen Ordner im Projektmappenordner, und nennen Sie ihn *ExtraFiles*.
+3. Verschieben Sie die Datei " *robots. txt* " aus dem Projektordner *condesouniversity* in den Ordner *ExtraFiles* .
 
-    ![ExtraFiles-Ordner](deploying-extra-files/_static/image1.png)
-4. Löschen Sie Ihre FTP-Tool, mit der *robots.txt* Datei von der staging-Website.
+    ![Ordner "ExtraFiles"](deploying-extra-files/_static/image1.png)
+4. Löschen Sie die Datei " *robots. txt* " mithilfe Ihres FTP-Tools von der Stagingwebsite.
 
-    Als Alternative können Sie auswählen können **entfernen weiterer Dateien am Ziel** unter **Dateiveröffentlichungsoptionen** auf die **Einstellungen** Registerkarte des Veröffentlichungsprofils Staging, und Veröffentlichen Sie erneut in die Stagingumgebung.
+    Alternativ können Sie auf der Registerkarte Einstellungen des stagingprofils für die Veröffentlichung auf der Registerkarte **Einstellungen** die **Option** **Weitere Dateien am Ziel entfernen** auswählen und in Staging veröffentlichen.
 
-## <a name="update-the-publish-profile-file"></a>Aktualisieren Sie das Veröffentlichungsprofil
+## <a name="update-the-publish-profile-file"></a>Aktualisieren der Veröffentlichungs Profil Datei
 
-Sie müssen nur *robots.txt* in der Stagingumgebung verfügbar, sodass Staging das einzige Veröffentlichungsprofil, das Sie aktualisieren, damit Sie sie bereitstellen möchten.
+Sie benötigen " *robots. txt* " nur in der Stagingumgebung, sodass das einzige Veröffentlichungs Profil, das Sie aktualisieren müssen, um es bereitzustellen, bereitgestellt wird.
 
-1. Öffnen Sie in Visual Studio *Staging.pubxml*.
-2. Am Ende der Datei vor dem schließenden `</Project>` markieren, fügen Sie das folgende Markup hinzu:
+1. Öffnen Sie in Visual Studio die Datei *Staging. pubxml*.
+2. Fügen Sie am Ende der Datei vor dem schließenden `</Project>`-Tag das folgende Markup hinzu:
 
     [!code-xml[Main](deploying-extra-files/samples/sample1.xml)]
 
-    Dieser Code erstellt ein neues *Ziel* sammelt, die zusätzliche Dateien bereitgestellt werden. Ein Ziel besteht aus einer oder mehrere Aufgaben, die ausgeführt wird, dass Sie MSBuild auf der Grundlage von Bedingungen, die Sie angeben.
+    Dieser Code erstellt ein neues *Ziel* , das zusätzliche bereit zustellende Dateien sammelt. Ein Ziel besteht aus einem oder mehreren Tasks, die von MSBuild basierend auf den von Ihnen angegebenen Bedingungen ausgeführt werden.
 
-    Die `Include` Attribut gibt an, dass der Ordner, in dem sich die Dateien befinden *ExtraFiles*auf derselben Ebene wie der Projektordner. MSBuild sammelt alle Dateien in diesem Ordner und rekursiv Unterordnern (das doppelte Sternchen gibt rekursiven Unterordner). Mit diesem Code können Sie mehrere Dateien und Dateien platzieren, in Unterordnern innerhalb der *ExtraFiles* Ordner und alle bereitgestellt werden.
+    Das `Include`-Attribut gibt an, dass der Ordner, in dem die Dateien gesucht werden sollen, *ExtraFiles*ist, der sich auf derselben Ebene befindet wie der Projektordner. MSBuild sammelt alle Dateien aus diesem Ordner und rekursiv aus beliebigen Unterordnern (das doppelte Sternchen gibt rekursive Unterordner an). Mit diesem Code können Sie mehrere Dateien und Dateien in Unterordnern im Ordner " *ExtraFiles* " ablegen, und alle werden bereitgestellt.
 
-    Die `DestinationRelativePath` Element gibt an, dass die Ordner und Dateien in den Stammordner der Ziel-Website, in der gleichen Struktur von Dateien und Ordner kopiert werden sollen, wie in der sie gefunden werden die *ExtraFiles* Ordner. Wenn Sie, kopieren Sie möchten die *ExtraFiles* Ordner selbst, die `DestinationRelativePath` -Werte entsprächen dann *ExtraFiles\%(RecursiveDir)%(Filename)%(Extension)*.
-3. Am Ende der Datei vor dem schließenden `</Project>` markieren, fügen Sie das folgende Markup, der angibt, wann das neue Ziel ausgeführt.
+    Das `DestinationRelativePath`-Element gibt an, dass die Ordner und Dateien in den Stamm Ordner der Zielwebsite in derselben Datei-und Ordnerstruktur kopiert werden sollen, wie Sie im Ordner " *ExtraFiles* " gefunden werden. Wenn Sie den Ordner *ExtraFiles* selbst kopieren möchten, ist der `DestinationRelativePath` Wert *ExtraFiles\%(RecursiveDir)% (Dateiname)% (Extension)* .
+3. Fügen Sie am Ende der Datei vor dem schließenden `</Project>`-Tag das folgende Markup hinzu, das angibt, wann das neue Ziel ausgeführt werden soll.
 
     [!code-xml[Main](deploying-extra-files/samples/sample2.xml)]
 
-    Dieser Code bewirkt, dass die neue `CustomCollectFiles` Ziel ausgeführt werden, wenn das Ziel, die Dateien in den Zielordner kopiert ausgeführt wird. Es ist ein separater Ziel für die zu veröffentlichen, im Vergleich zu paketerstellung für die Bereitstellung und das neue Ziel wird in beide Ziele für den Fall, dass Sie entscheiden, bereitstellen, indem Sie die Veröffentlichung ein Bereitstellungspakets anstelle eingefügt.
+    Dieser Code bewirkt, dass das neue `CustomCollectFiles` Ziel immer dann ausgeführt wird, wenn das Ziel, das Dateien in den Zielordner kopiert, ausgeführt wird. Es gibt ein separates Ziel für das Veröffentlichen im Vergleich zur Erstellung des Bereitstellungs Pakets. das neue Ziel wird in beide Ziele eingefügt, wenn Sie sich für die Bereitstellung mithilfe eines Bereitstellungs Pakets anstelle der Veröffentlichung entscheiden.
 
-    Die *pubxml* Datei sieht nun wie im folgenden Beispiel:
+    Die *pubxml* -Datei sieht nun wie im folgenden Beispiel aus:
 
     [!code-xml[Main](deploying-extra-files/samples/sample3.xml?highlight=53-71)]
-4. Speichern und schließen Sie die *Staging.pubxml* Datei.
+4. Speichern und schließen Sie die Datei *Staging. pubxml* .
 
-## <a name="publish-to-staging"></a>In der Stagingumgebung veröffentlichen
+## <a name="publish-to-staging"></a>In Staging veröffentlichen
 
-Mit One-Click-Veröffentlichung oder der Befehlszeile, die die Anwendung zu veröffentlichen, über das Staging-Profil.
+Veröffentlichen Sie die Anwendung mithilfe der One-Click-Veröffentlichung oder der Befehlszeile, indem Sie das Stagingprofil verwenden.
 
-Bei Verwendung von nur einem Klick zu veröffentlichen, können Sie überprüfen, in der **Vorschau** Fenster, *robots.txt* kopiert werden. Andernfalls verwenden Sie Ihre FTP-Tool, um zu überprüfen, ob die *robots.txt* Datei ist im Stammordner der Website nach der Bereitstellung.
+Wenn Sie die One-Click-Veröffentlichung verwenden, können Sie im **Vorschaufenster** überprüfen, ob " *robots. txt* " kopiert wird. Verwenden Sie andernfalls das FTP-Tool, um zu überprüfen, ob sich die Datei " *robots. txt* " im Stamm Ordner der Website nach der Bereitstellung befindet.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Dies schließt diese tutorialreihe zum Bereitstellen einer ASP.NET-Webanwendung zu einem Hostinganbieter von Drittanbietern. Weitere Informationen zu den Themen in diesen Tutorials behandelt, finden Sie unter den [ASP.NET die ASP.NET-Bereitstellung](https://go.microsoft.com/fwlink/p/?LinkId=282413).
+Dies schließt diese Reihe von Tutorials zum Bereitstellen einer ASP.NET-Webanwendung für einen Drittanbieter-Hostinganbieter ab. Weitere Informationen zu den Themen, die in diesen Tutorials behandelt werden, finden Sie in der [ASP.net-Bereitstellungs Inhalts](https://go.microsoft.com/fwlink/p/?LinkId=282413)Zuordnung.
 
 ## <a name="more-information"></a>Weitere Informationen
 
-Wenn Sie zum Arbeiten mit Dateien von MSBuild kennen, können Sie weitere Bereitstellungsaufgaben automatisieren, indem Schreiben von Code in *pubxml* -Dateien (für Profile-spezifische Aufgaben) oder das Projekt *. wpp.targets* Datei (für tasks, gelten Sie für alle Profile). Weitere Informationen zu *pubxml* und *. wpp.targets* finden Sie unter [Vorgehensweise: Bearbeiten der Bereitstellungseinstellungen in Veröffentlichungsprofildateien (.pubxml)-Dateien veröffentlichen und die. wpp.targets-Datei in Visual Studio-Webprojekten](https://msdn.microsoft.com/library/ff398069). Eine grundlegende Einführung in MSBuild-Code, finden Sie unter **Anatomie einer Projektdatei** in [Unternehmensbereitstellung Serie: Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Arbeiten mit Dateien von MSBuild zum Ausführen von Aufgaben für Ihre eigenen Szenarien finden Sie unter diesem Buch: [In der Microsoft Build-Engine: Mithilfe von MSBuild und Team Foundation-Build](http://msbuildbook.com) von Sayed Hashimi von Ibraham und William Bartholomew.
+Wenn Sie wissen, wie Sie mit MSBuild-Dateien arbeiten, können Sie viele andere Bereitstellungs Aufgaben automatisieren, indem Sie Code in *pubxml* -Dateien (für Profil spezifische Aufgaben) oder die Datei "Project *. WPP. targets* " (für Aufgaben, die für alle Profile gelten) schreiben. Weitere Informationen zu *. pubxml* -und *WPP. targets* -Dateien finden Sie unter Gewusst [wie: Bearbeiten von Bereitstellungs Einstellungen in Veröffentlichungs Profil Dateien (. pubxml) und in der Datei ". WPP. targets" in Visual Studio-Webprojekten](https://msdn.microsoft.com/library/ff398069). Eine grundlegende Einführung in MSBuild-Code finden Sie **unter Anatomie einer Projektdatei in der** [Enterprise-Bereitstellungs Reihe: Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Informationen zum Arbeiten mit MSBuild-Dateien zum Ausführen von Aufgaben für Ihre eigenen Szenarien finden Sie in diesem Buch: [innerhalb des Microsoft-Build-Engine: Verwenden von MSBuild und Team Foundation Build](http://msbuildbook.com) von Sayed Ibraham Hashimi und William Bartholomew.
 
-## <a name="acknowledgements"></a>Bestätigungen
+## <a name="acknowledgements"></a>Danksagungen
 
-Ich möchte die vielen Dank, dass die folgenden Personen, die wichtige Beiträge zu den Inhalt dieser tutorialreihe vorgenommen:
+Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 
 - [Alberto Poblacion, MVP &amp; MCT, Spanien](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
-- Jarod Ferguson, Entwicklung von Data Platform MVP, Vereinigte Staaten
-- Harsh Mittal, Microsoft
-- [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
+- Jarod Ferguson, Data Platform Development MVP, USA
+- Harte Verpflichtung, Microsoft
+- [Jon Galloway](https://weblogs.asp.net/jgalloway) (Twitter: [@jongalloway](http://twitter.com/jongalloway))
 - [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
-- [Mike Pope, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
-- Mohit Srivastava, Microsoft
-- [Raffaele Rialdi, Italien](http://www.iamraf.net/)
+- [Mike Papst, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
+- Treffen Sie Srivastava, Microsoft
+- [Raffaele rialdi, Italien](http://www.iamraf.net/)
 - [Rick Anderson, Microsoft](https://blogs.msdn.com/b/rickandy/)
-- [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(twitter: [ @sayedihashimi ](http://twitter.com/sayedihashimi))
-- [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](http://twitter.com/shanselman))
-- [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (twitter: [ @coolcsh ](http://twitter.com/coolcsh))
-- [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
-- [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [@vishalrjoshi](http://twitter.com/vishalrjoshi))
+- [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(Twitter: [@sayedihashimi](http://twitter.com/sayedihashimi))
+- [Scott Hanselman](http://www.hanselman.com/blog/) (Twitter: [@shanselman](http://twitter.com/shanselman))
+- [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (Twitter: [@coolcsh](http://twitter.com/coolcsh))
+- [Srđan Božović, Serbien](http://msforge.net/blogs/zmajcek/)
+- [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (Twitter: [@vishalrjoshi](http://twitter.com/vishalrjoshi))
 
 > [!div class="step-by-step"]
 > [Zurück](command-line-deployment.md)

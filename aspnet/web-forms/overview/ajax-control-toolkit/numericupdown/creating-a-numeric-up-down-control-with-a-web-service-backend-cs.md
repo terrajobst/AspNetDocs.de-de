@@ -1,60 +1,60 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
-title: Erstellen eine numerische hoch-/Herunterskalieren-Steuerelement mit einer Web-Dienst-Back-End (c#) | Microsoft-Dokumentation
+title: Erstellen eines numerischen auf-/ab--Steuerelements mit einemC#Webdienst-Back-End () | Microsoft-Dokumentation
 author: wenz
-description: Anstatt einen Benutzer aus, geben Sie einen Wert in ein Kontrollkästchen, kann ein numerischen UpAndDown-Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden) als weitere c Beweisen...
+description: Anstatt einem Benutzer einen Wert in ein Kontrollkästchen einzugeben, kann es sein, dass ein numerisches auf-/ab--Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden ist) mehr als c...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c99bbc72-d4de-41ed-92a4-9a4632368363
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
 msc.type: authoredcontent
-ms.openlocfilehash: afe712dd2b09eda49a4972e8d34fe27760d5b6f6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 816a840b9e93b95a049c3a4cb792e9deeab28983
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115339"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598877"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>Erstellen einen numerischen UpAndDown-Steuerelements mit einem Webdienst-Back-End (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/numericupdown1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/numericupdown1CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/numericupdown1.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/numericupdown1CS.pdf)
 
-> Geben Sie einen Wert in das Kontrollkästchen für einen Benutzer, anstatt ein numerischer hoch-/Herunterskalieren-Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden) kann sich als mehr vertraut. Standardmäßig werden das NumericUpDown-Steuerelement immer erhöht oder verringert einen Wert von 1, aber ein Webdienst, erweist sich als flexibler.
+> Anstatt einem Benutzer einen Wert in ein Kontrollkästchen einzugeben, kann ein numerisches auf-/ab-Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden ist) als komfortabler angesehen werden. Standardmäßig erhöht oder verringert das NumericUpDown-Steuerelement einen Wert immer um 1, aber ein Webdienst erweist sich als mehr Flexibilität.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Geben Sie einen Wert in das Kontrollkästchen für einen Benutzer, anstatt ein numerischer hoch-/Herunterskalieren-Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden) kann sich als mehr vertraut. In der Standardeinstellung die `NumericUpDown` Steuerelement immer erhöht oder verringert einen Wert von 1, aber ein Webdienst, erweist sich als flexibler.
+Anstatt einem Benutzer einen Wert in ein Kontrollkästchen einzugeben, kann ein numerisches auf-/ab-Steuerelement (das unter Windows und anderen Betriebssystemen vorhanden ist) als komfortabler angesehen werden. Standardmäßig erhöht oder verringert das `NumericUpDown` Steuerelement einen Wert immer um 1, aber ein Webdienst erweist sich als mehr Flexibilität.
 
 ## <a name="steps"></a>Schritte
 
-Das ASP.NET AJAX Control Toolkit enthält die `NumericUpDown` Extender automatisch zwei Schaltflächen zu einem Textfeld hinzugefügt: Eine für eine zum Verringern sie den Wert zu erhöhen. Das Steuerelement unterstützt jedoch auch ein Aufruf des Webdiensts (oder eine Seite-Methodenaufruf). Wenn das hoch- oder Herunterskalieren Schaltfläche geklickt wird, die JavaScript-Code eine Verbindung mit dem Webserver her und führt es eine Methode. Die Signatur der Methode ist den folgenden Ausdruck:
+Das ASP.NET AJAX-Steuerelement-Toolkit enthält den `NumericUpDown` Extender, der automatisch zwei Schaltflächen zu einem Textfeld hinzufügt: eine zum Erhöhen des Werts, eine zum verringern. Das-Steuerelement unterstützt jedoch auch einen Webdienst-oder Seiten Methodenaufrufe. Wenn Sie auf die Schaltfläche nach oben oder nach unten klicken, stellt der JavaScript-Code eine Verbindung mit dem Webserver her und führt dort eine Methode aus. Die Methoden Signatur ist die folgende:
 
 [!code-csharp[Main](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/samples/sample1.cs)]
 
-Die `current` Argument ist der aktuelle Wert in das Textfeld; die `tag` -Attribut ist zusätzlicher Kontext-Daten, die als eine Eigenschaft festgelegt werden können die `NumericUpDown` Extender (ist jedoch nicht erforderlich).
+Das `current`-Argument ist der aktuelle Wert im Textfeld. Das `tag`-Attribut sind zusätzliche Kontext Daten, die als Eigenschaft des `NumericUpDown` Extender festgelegt werden können (Dies ist jedoch nicht erforderlich).
 
-In diesem Beispiel muss der numerischen UpAndDown-Steuerelement nur Werte zulassen, die Potenzen von 2 handelt: 1, 2, 4, 8, 16, 32, 64 und So weiter. Aus diesem Grund muss die Methode ausgeführt wird, wenn der Benutzer den Wert erhöhen möchte double den alten Wert; die andere Methode muss durch zwei Teilen. Hier ist also die vollständige Webdienst:
+In diesem Beispiel darf das numerische auf-/ab--Steuerelement nur Werte zulassen, die die beiden folgenden Werte haben: 1, 2, 4, 8, 16, 32, 64 usw. Daher muss die Methode, die ausgeführt wird, wenn der Benutzer den Wert erhöhen möchte, den alten Wert verdoppeln. die andere Methode muss den Wert durch zwei dividieren. Hier ist der komplette Webdienst:
 
 [!code-aspx[Main](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/samples/sample2.aspx)]
 
-Abschließend erstellen Sie eine neue ASP.NET-Seite. Wie üblich, müssen Sie eine `ScriptManager` -Steuerelement, ein `TextBox` Steuerelement und ein `NumericUpDownExtender` Steuerelement. In letzterem Fall müssen Sie die Web-Service-Informationen bereitstellen:
+Erstellen Sie abschließend eine neue ASP.NET-Seite. Wie üblich benötigen Sie ein `ScriptManager`-Steuerelement, ein `TextBox`-Steuerelement und ein `NumericUpDownExtender`-Steuerelement. Für Letzteres müssen Sie die Webdienst Informationen bereitstellen:
 
-- `ServiceDownMethod` Name des der aus web-Methode oder die Seite Methode
-- `ServiceDownPath` Pfad auf den Webdienst mit der nach-unten-Service-Methode Lassen Sie bei Verwendung eine Seitenmethode
-- `ServiceUpMethod` Name des oben-Webmethode oder die Seite Methode
-- `ServiceUpPath` Pfad auf den Webdienst mit der Sie Dienstmethode Lassen Sie bei Verwendung eine Seitenmethode
+- `ServiceDownMethod` Name der Down-Webmethode oder Seiten Methode
+- `ServiceDownPath` Pfad zum Webdienst mit der Down-Dienst Methode. weglassen, wenn Sie eine Seiten Methode verwenden
+- `ServiceUpMethod` Name der up-Webmethode oder-Seiten Methode
+- `ServiceUpPath` Pfad zum Webdienst mit der up-Dienst Methode. weglassen, wenn Sie eine Seiten Methode verwenden
 
-Hier ist das vollständige Markup für die Seite:
+Hier ist das komplette Markup für die Seite:
 
 [!code-aspx[Main](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/samples/sample3.aspx)]
 
-Wenn Sie auf die Seite ausführen, beachten Sie, wie der Wert in das Textfeld immer verdoppelt sich, beim Klicken Sie auf die Schaltfläche "oben", und wird beim Klicken auf die untere Schaltfläche halbiert.
+Wenn Sie die Seite ausführen, beachten Sie, dass sich der Wert im Textfeld immer verdoppelt, wenn Sie auf die obere Schaltfläche klicken, und wird halbiert, wenn Sie auf die untere Schaltfläche klicken.
 
-[![Nur Zahlen, die eine Potenz von 2 angezeigt werden.](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
+[![werden nur Zahlen angezeigt, die eine Potenz von 2 haben.](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image1.png)
 
-Nur Zahlen, die eine Potenz von 2 angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png))
+Nur Zahlen, die eine Potenz von 2 sind, werden angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Nächste](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)

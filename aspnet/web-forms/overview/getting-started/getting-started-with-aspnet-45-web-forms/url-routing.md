@@ -2,151 +2,151 @@
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 title: URL-Routing | Microsoft-Dokumentation
 author: Erikre
-description: Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für wir...
+description: Diese tutorialreihe vermittelt Ihnen die Grundlagen zum Entwickeln einer ASP.net Web Forms Anwendung mit ASP.NET 4,5 und Microsoft Visual Studio Express 2013 für wir...
 ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: f8a374be79a41b34dc8f17fa8d44c6e0680984d7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 66b727b69ca4f9a3d35b67f492f9a554146e09ef
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108623"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74590711"
 ---
 # <a name="url-routing"></a>URL-Routing
 
-by [Erik Reitan](https://github.com/Erikre)
+von [Erik Reitan](https://github.com/Erikre)
 
-[Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[Herunterladen eines Wingtip Toys-C#Beispielprojekts ()](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [Herunterladen von E-Book (PDF)](https://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-> Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.5 und Microsoft Visual Studio Express 2013 für Web. Eine Visual Studio 2013 [-Projekts mit C#-Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) ist verfügbar, die dieser tutorialreihe begleitet.
+> Diese tutorialreihe vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.net Web Forms-Anwendung mit ASP.NET 4,5 und Microsoft Visual Studio Express 2013 für das Web. Für diese tutorialreihe steht ein Visual Studio 2013- [Projekt mit C# Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) zur Verfügung.
 
-In diesem Tutorial ändern Sie die Wingtip Toys-beispielanwendung, um URL-routing zu unterstützen. Routing können Ihre Webanwendung in URLs verwenden, die benutzerfreundliche, leichter zu merken und von Suchmaschinen besser unterstützt werden. Dieses Tutorial baut auf dem vorherigen Lernprogramm "Mitgliedschaft und Verwaltung" und ist Teil der tutorialreihe Wingtip Toys.
+In diesem Tutorial ändern Sie die Wingtip Toys-Beispielanwendung, um das URL-Routing zu unterstützen. Das Routing ermöglicht Ihrer Webanwendung die Verwendung von URLs, die benutzerfreundlich, leichter zu merken und besser von Suchmaschinen unterstützt werden. Dieses Tutorial baut auf dem vorherigen Tutorial "Mitgliedschaft und Administration" auf und ist Teil der Wingtip Toys-tutorialreihe.
 
-## <a name="what-youll-learn"></a>Sie lernen Folgendes:
+## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
 
-- Vorgehensweise: Registrieren von Routen für eine ASP.NET Web Forms-Anwendung.
-- Das Hinzufügen von Routen zu einer Webseite.
-- Auswählen von Daten aus einer Datenbank aus, um Routen zu unterstützen.
+- Vorgehensweise beim Registrieren von Routen für eine ASP.net-Web Forms Anwendung
+- Vorgehensweise beim Hinzufügen von Routen zu einer Webseite.
+- Auswählen von Daten aus einer Datenbank zur Unterstützung von Routen.
 
-## <a name="aspnet-routing-overview"></a>Übersicht über ASP.NET das Routing
+## <a name="aspnet-routing-overview"></a>Übersicht über ASP.NET Routing
 
-URL-routing, können Sie zum Konfigurieren einer Anwendung zum Akzeptieren von Anforderungs-URLs, die nicht auf physischen Dateien zugeordnet sind. Eine Anforderungs-URL ist einfach die URL, die ein Benutzer in ihrem Browser eine Seite auf Ihrer Website sucht eingibt. Sie verwenden routing, um die URLs zu definieren, die semantisch für Benutzer von Bedeutung sind, und suchen-suchmaschinenoptimierung (SEO) unterstützen kann.
+Über das URL-Routing können Sie eine Anwendung so konfigurieren, dass Sie Anforderungs-URLs akzeptiert, die nicht physischen Dateien zugeordnet sind. Eine Anforderungs-URL ist einfach die URL, die ein Benutzer in seinen Browser eingibt, um eine Seite auf Ihrer Website zu finden. Sie verwenden das Routing, um URLs zu definieren, die für Benutzer semantisch aussagekräftig sind und die bei der Suchmaschinenoptimierung (Search Engine Optimization, SEO) helfen können.
 
-Standardmäßig enthält die Web Forms-Vorlage [Friendly URLs von ASP.NET](http://www.nuget.org/packages/Microsoft.AspNet.FriendlyUrls/). Großteil der Arbeit mit grundlegenden routing wird implementiert werden, indem *Friendly URLs*. In diesem Tutorial werden Sie jedoch benutzerdefinierte Routingfunktionen hinzufügen.
+Standardmäßig enthält die Web Forms Vorlage [ASP.net friendly URLs](http://www.nuget.org/packages/Microsoft.AspNet.FriendlyUrls/). Ein Großteil der grundlegenden Routing Aufgaben wird mithilfe von *freundlichen URLs*implementiert. In diesem Tutorial fügen Sie jedoch angepasste Routing Funktionen hinzu.
 
-Vor dem Anpassen der URL-routing, kann die Wingtip Toys-beispielanwendung mit einem Produkt mit der folgenden URL verknüpfen:
+Vor dem Anpassen des URL-Routings kann die Wingtip Toys-Beispielanwendung mithilfe der folgenden URL eine Verknüpfung mit einem Produkt herstellen:
 
 `https://localhost:44300/ProductDetails.aspx?productID=2`
 
-Durch das Anpassen der URL-routing, werden die Wingtip Toys-beispielanwendung ein einfacher, lesen Sie die URL mit dem Produkt verknüpft:
+Durch Anpassen des URL-Routings verknüpft die Wingtip Toys-Beispielanwendung mit dem gleichen Produkt, indem eine einfachere URL verwendet wird:
 
 `https://localhost:44300/Product/Convertible%20Car`
 
 ### <a name="routes"></a>Routen
 
-Eine Route ist ein URL-Muster, das einen Handler zugeordnet ist. Der Handler kann es sich um eine physische Datei, z. B. eine ASPX-Datei in einer Web Forms-Anwendung sein. Ein Ereignishandler kann auch eine Klasse sein, die die Anforderung verarbeitet. Um eine Route definieren, erstellen Sie eine Instanz der Klasse Route durch Angabe der URL-Muster, die Ereignishandler und optional einen Namen für die Route an.
+Eine Route ist ein URL-Muster, das einem-Handler zugeordnet ist. Der Handler kann eine physische Datei sein, z. b. eine ASPX-Datei in einer Web Forms Anwendung. Ein Handler kann auch eine Klasse sein, die die Anforderung verarbeitet. Zum Definieren einer Route erstellen Sie eine Instanz der Routen Klasse, indem Sie das URL-Muster, den Handler und optional einen Namen für die Route angeben.
 
-Die Route wird zur Anwendung hinzufügen, durch das Hinzufügen der `Route` Objekt an die statische `Routes` Eigenschaft der `RouteTable` Klasse. Die Routen-Eigenschaft ist eine `RouteCollection` -Objekt, das alle Routen für die Anwendung gespeichert.
+Fügen Sie der Anwendung die Route hinzu, indem Sie das `Route`-Objekt der Eigenschaft static `Routes` der `RouteTable`-Klasse hinzufügen. Die Routes-Eigenschaft ist ein `RouteCollection` Objekt, das alle Routen für die Anwendung speichert.
 
 ### <a name="url-patterns"></a>URL-Muster
 
-Ein URL-Muster kann es sich um Literalwerte und Variable Platzhalter (bezeichnet als URL-Parameter) enthalten. Literalwerte und Platzhalter befinden sich in Segmente der URL durch den Schrägstrich getrennt sind (`/`) Zeichen.
+Ein URL-Muster kann Literalwerte und Variablen Platzhalter (als URL-Parameter bezeichnet) enthalten. Die Literale und Platzhalter befinden sich in Segmenten der URL, die durch den Schrägstrich (`/`) getrennt sind.
 
-Wenn eine Anforderung an Ihre Web-Anwendung erfolgt, die URL in Segmente und Platzhalter zerlegt wird, und die Variablenwerte werden bereitgestellt, um den Ereignishandler der Anforderung. Dieser Prozess ist ähnlich wie die Daten in einer Abfragezeichenfolge analysiert und an den Ereignishandler der Anforderung übergeben. In beiden Fällen Informationen enthalten, die in der URL und der Handler in Form von Schlüssel-Wert-Paaren übergeben. Sind für Abfragezeichenfolgen beide Schlüssel und die Werte in der URL ein. Für Routen die Schlüssel sind die Platzhalternamen, die in der URL-Muster definiert, und nur die Werte sind in der URL.
+Wenn eine Anforderung an die Webanwendung gestellt wird, wird die URL in Segmente und Platzhalter analysiert, und die Variablen Werte werden dem Anforderungs Handler bereitgestellt. Dieser Prozess ähnelt der Analyse der Daten in einer Abfrage Zeichenfolge und der Übergabe an den Anforderungs Handler. In beiden Fällen sind Variablen Informationen in der URL enthalten und in Form von Schlüssel-Wert-Paaren an den Handler übermittelt. Für Abfrage Zeichenfolgen befinden sich sowohl die Schlüssel als auch die Werte in der URL. Bei Routen sind die Schlüssel die im URL-Muster definierten Platzhalter Namen, und nur die Werte befinden sich in der URL.
 
-In einem URL-Muster, definieren Sie Platzhalter in geschweiften Klammern ( `{` und `}` ). Sie können mehrere Platzhalter in einem Segment definieren, aber die Platzhalter durch einen Literalwert getrennt werden. Z. B. `{language}-{country}/{action}` ist eine gültige Route-Muster. Allerdings `{language}{country}/{action}` ist kein gültiges Muster, da kein Literalwert oder Trennzeichen zwischen den Platzhalter vorhanden ist. Routing kann daher nicht, wo Sie den Wert für den sprachplatzhalter aus dem Wert für den Platzhalter Land zu trennen bestimmen.
+In einem URL-Muster definieren Sie Platzhalter, indem Sie Sie in geschweifte Klammern (`{` und `}`) einschließen. Sie können mehr als einen Platzhalter in einem Segment definieren, die Platzhalter müssen jedoch durch einen Literalwert getrennt werden. Beispielsweise ist `{language}-{country}/{action}` ein gültiges Routen Muster. `{language}{country}/{action}` ist jedoch kein gültiges Muster, da zwischen den Platzhaltern kein Literalwert oder Trennzeichen vorhanden ist. Daher kann Routing nicht bestimmen, wo der Wert für den sprach Platzhalter von dem Wert für den Land Platzhalter getrennt werden soll.
 
-### <a name="mapping-and-registering-routes"></a>Zuordnen und Registrieren von Routen
+### <a name="mapping-and-registering-routes"></a>Mapping und Registrieren von Routen
 
-Bevor Sie die Routen zu Seiten, die von das Wingtip Toys-beispielanwendung einfügen können, müssen Sie die Routen registrieren, beim Starten der Anwendung. Um die Routen zu registrieren, ändern Sie die `Application_Start` -Ereignishandler.
+Bevor Sie Routen zu Seiten der Wingtip Toys-Beispielanwendung einbinden können, müssen Sie die Routen beim Starten der Anwendung registrieren. Um die Routen zu registrieren, ändern Sie den `Application_Start`-Ereignishandler.
 
-1. In **Projektmappen-Explorer**von Visual Studio, suchen und öffnen Sie die *"Global.asax.cs"* Datei.
-2. Fügen Sie den Code in Gelb zu markiert die *"Global.asax.cs"* -Datei wie folgt:   
+1. Suchen Sie in **Projektmappen-Explorer**von Visual Studio die Datei *Global.asax.cs* , und öffnen Sie Sie.
+2. Fügen Sie den in gelb markierten Code wie folgt der *Global.asax.cs* -Datei hinzu:   
 
     [!code-csharp[Main](url-routing/samples/sample1.cs?highlight=30-31,34-46)]
 
-Wenn die Bezeichnung "Wingtip Toys"-Anwendung gestartet wird Beispiel, ruft er die `Application_Start` -Ereignishandler. Am Ende der Ereignishandler der `RegisterCustomRoutes` Methode wird aufgerufen. Die `RegisterCustomRoutes` Methode fügt jede Route hinzu, durch den Aufruf der `MapPageRoute` Methode der `RouteCollection` Objekt. Routen werden mit einem Routennamen, die Routen-URL und eine physische URL definiert.
+Wenn die Wingtip Toys-Beispielanwendung gestartet wird, wird der `Application_Start`-Ereignishandler aufgerufen. Am Ende dieses Ereignis Handlers wird die `RegisterCustomRoutes`-Methode aufgerufen. Die `RegisterCustomRoutes`-Methode fügt jede Route hinzu, indem Sie die `MapPageRoute`-Methode des `RouteCollection`-Objekts aufrufen. Routen werden mithilfe eines Routen namens, einer Routen-URL und einer physischen URL definiert.
 
-Der erste Parameter ("`ProductsByCategoryRoute`") ist der Routenname. Es wird verwendet, um die Route aufgerufen, wenn er benötigt wird. Der zweite Parameter ("`Category/{categoryName}`") definiert die friendly URL, die dynamisch sein kann, auf Code basierend ersetzt. Verwenden Sie diese Route, wenn Sie ein Steuerelement mit Links, die generiert werden, basierend auf Daten auffüllen. Eine Route wird folgendermaßen angezeigt:
+Der erste Parameter ("`ProductsByCategoryRoute`") ist der Routen Name. Sie wird verwendet, um die Route aufzurufen, wenn Sie benötigt wird. Der zweite Parameter ("`Category/{categoryName}`") definiert die benutzerfreundliche Ersetzungs-URL, die basierend auf dem Code dynamisch sein kann. Diese Route wird verwendet, wenn Sie ein Daten Steuerelement mit Links auffüllen, die auf der Grundlage von Daten generiert werden. Eine Route wird wie folgt angezeigt:
 
 [!code-csharp[Main](url-routing/samples/sample2.cs)]
 
-Der zweite Parameter der Route enthält einen dynamischen Wert, der von geschweiften Klammern angegeben (`{ }`). In diesem Fall die `categoryName` ist eine Variable, die verwendet wird, um den richtigen Routingpfad zu bestimmen.
+Der zweite Parameter der Route enthält einen dynamischen Wert, der durch geschweifte Klammern (`{ }`) angegeben wird. In diesem Fall ist der `categoryName` eine Variable, mit der der richtige Routing Pfad bestimmt wird.
 
 > [!NOTE] 
 > 
 > **Optional**
 > 
-> Sie finden es vielleicht einfacher zum Verwalten Ihres Codes durch das Verschieben der `RegisterCustomRoutes` Methode, um eine separate Klasse. In der *Logik* Ordner, erstellen Sie eine Separate `RouteActions` Klasse. Verschieben Sie den oben genannten `RegisterCustomRoutes` Methode aus der *"Global.asax.cs"* Datei in das neue `RoutesActions` Klasse. Verwenden der `RoleActions` Klasse und die `createAdmin` Methode als ein Beispiel zum Aufrufen der `RegisterCustomRoutes` Methode aus der *"Global.asax.cs"* Datei.
+> Sie finden es möglicherweise einfacher, den Code zu verwalten, indem Sie die `RegisterCustomRoutes`-Methode in eine separate Klasse verschieben. Erstellen Sie im Ordner " *Logic* " eine separate `RouteActions`-Klasse. Verschieben Sie die obige `RegisterCustomRoutes`-Methode aus der *Global.asax.cs* -Datei in die neue `RoutesActions`-Klasse. Verwenden Sie die `RoleActions`-Klasse und die `createAdmin`-Methode als Beispiel dafür, wie Sie die `RegisterCustomRoutes`-Methode aus der *Global.asax.cs* -Datei aufzurufen.
 
-Sie haben wahrscheinlich ebenfalls bemerkt der `RegisterRoutes` Methode mit der `RouteConfig` Objekt am Anfang der `Application_Start` -Ereignishandler. Dieser Aufruf wird durchgeführt, um Standardrouting zu implementieren. Es war als Standard-Code enthalten, wenn Sie die Anwendung mit Visual Studio Web Forms-Vorlage erstellt haben.
+Möglicherweise haben Sie auch den `RegisterRoutes` Methoden Aufrufes mithilfe des `RouteConfig`-Objekts am Anfang des `Application_Start` Ereignis Handlers bemerkt. Dieser aufgerufen wird, um das Standard Routing zu implementieren. Sie wurde als Standard Code eingeschlossen, als Sie die Anwendung mit der Web Forms-Vorlage von Visual Studio erstellt haben.
 
 ## <a name="retrieving-and-using-route-data"></a>Abrufen und Verwenden von Routendaten
 
-Wie bereits erwähnt, können die Routen definiert werden. Der Code, der Sie hinzugefügt haben die `Application_Start` -Ereignishandler in der *"Global.asax.cs"* -Datei lädt die definierbaren Routen.
+Wie bereits erwähnt, können Routen definiert werden. Der Code, den Sie dem `Application_Start`-Ereignishandler in der *Global.asax.cs* -Datei hinzugefügt haben, lädt die definierbaren Routen.
 
 ### <a name="setting-routes"></a>Festlegen von Routen
 
-Routen müssen Sie zusätzlichen Code hinzufügen. In diesem Tutorial verwenden Sie modellbindung zum Abrufen einer `RouteValueDictionary` -Objekt, das beim Generieren der Routen, die mithilfe von Daten aus einem Steuerelement verwendet wird. Die `RouteValueDictionary` Objekt enthält eine Liste der Produktnamen, die auf eine bestimmte Kategorie von Produkten gehören. Für jedes Produkt, das auf Basis der Daten und die Route wird ein Link erstellt.
+Für Routen müssen Sie zusätzlichen Code hinzufügen. In diesem Tutorial verwenden Sie die Modell Bindung, um ein `RouteValueDictionary` Objekt abzurufen, das beim Erstellen der Routen mithilfe von Daten aus einem Daten Steuerelement verwendet wird. Das `RouteValueDictionary`-Objekt enthält eine Liste von Produktnamen, die zu einer bestimmten Produktkategorie gehören. Ein Link wird für jedes Produkt basierend auf den Daten und der Route erstellt.
 
 #### <a name="enable-routes-for-categories-and-products"></a>Aktivieren von Routen für Kategorien und Produkte
 
-Als Nächstes aktualisieren Sie die Anwendung zur Verwendung der `ProductsByCategoryRoute` um zu bestimmen, die richtige Route für jedes Product Category-Link enthält. Aktualisieren Sie zudem die *"ProductList.aspx"* Seite, um eine geroutete Link für jedes Produkt enthalten. Die Links werden angezeigt wie vor der Änderung jedoch die Links jetzt an die URL-routing verwendet.
+Als nächstes aktualisieren Sie die Anwendung so, dass Sie die `ProductsByCategoryRoute` verwendet, um die richtige Route für die einzelnen Product Category-Links zu ermitteln. Außerdem aktualisieren Sie die Seite " *productList. aspx* " so, dass ein Routing Link für jedes Produkt enthalten ist. Die Links werden wie vor der Änderung angezeigt, aber die Links verwenden jetzt das URL-Routing.
 
-1. In **Projektmappen-Explorer**öffnen die *Site.Master* Seite, wenn es nicht bereits geöffnet ist.
-2. Update der **ListView** Steuerelement mit dem Namen "`categoryList`" mit den Änderungen in gelb hervorgehoben, sodass das Markup wie folgt angezeigt:   
+1. Öffnen Sie in **Projektmappen-Explorer**die Seite *Site. Master* , wenn Sie nicht bereits geöffnet ist.
+2. Aktualisieren Sie das **ListView** -Steuerelement mit dem Namen "`categoryList`" mit den in gelb markierten Änderungen, sodass das Markup wie folgt aussieht:   
 
     [!code-aspx[Main](url-routing/samples/sample3.aspx?highlight=7-9)]
-3. In **Projektmappen-Explorer**öffnen die *"ProductList.aspx"* Seite.
-4. Update der `ItemTemplate` Element der *"ProductList.aspx"* Seite mit den Updates in gelb hervorgehoben werden, damit das Markup wie folgt aussieht:   
+3. Öffnen Sie in **Projektmappen-Explorer**die Seite *productList. aspx* .
+4. Aktualisieren Sie das `ItemTemplate`-Element der *productList. aspx* -Seite mit den in gelb markierten Updates, sodass das Markup wie folgt aussieht:   
 
     [!code-aspx[Main](url-routing/samples/sample4.aspx?highlight=6-9,14-16)]
-5. Öffnen Sie den Code-Behind der *ProductList.aspx.cs* und fügen Sie den folgenden Namespace als Gelb:  
+5. Öffnen Sie die Code Behind- *productList.aspx.cs* , und fügen Sie den folgenden Namespace hinzu, wie in gelb hervorgehoben:  
 
     [!code-csharp[Main](url-routing/samples/sample5.cs?highlight=9)]
-6. Ersetzen Sie die `GetProducts` -Methode der Code-Behind (*ProductList.aspx.cs*) durch den folgenden Code:   
+6. Ersetzen Sie die `GetProducts`-Methode des Code-Behind (*productList.aspx.cs*) durch den folgenden Code:   
 
     [!code-csharp[Main](url-routing/samples/sample6.cs)]
 
-#### <a name="add-code-for-product-details"></a>Fügen Sie Code für die Produktdetails hinzu.
+#### <a name="add-code-for-product-details"></a>Hinzufügen von Code für Produkt Details
 
-Aktualisieren Sie nun die Code-Behind (*ProductDetails.aspx.cs*) für die *ProductDetails.aspx* Seite, um die Weiterleitung von Daten verwenden. Beachten Sie, dass die neue `GetProduct` -Methode akzeptiert auch den Wert einer Abfragezeichenfolge für den Fall, in denen der Benutzer einen Link ein Lesezeichen erstellt hat, die die ältere nicht optimierte und nicht-Routing-URL verwendet.
+Aktualisieren Sie nun den Code Behind (*ProductDetails.aspx.cs*) für die Seite *ProductDetails. aspx* , um Routendaten zu verwenden. Beachten Sie, dass die neue `GetProduct`-Methode auch einen Abfrage Zeichenfolgen-Wert für den Fall akzeptiert, in dem der Benutzer über ein Lesezeichen verfügt, das die ältere nicht-freundliche, nicht-weitergeleitete URL verwendet.
 
-1. Ersetzen Sie die `GetProduct` -Methode der Code-Behind (*ProductDetails.aspx.cs*) durch den folgenden Code:   
+1. Ersetzen Sie die `GetProduct`-Methode des Code-Behind (*ProductDetails.aspx.cs*) durch den folgenden Code:   
 
     [!code-csharp[Main](url-routing/samples/sample7.cs)]
 
 ## <a name="running-the-application"></a>Ausführen der Anwendung
 
-Sie können die Anwendung nun auf die aktualisierte Routen finden Sie unter ausführen.
+Sie können die Anwendung jetzt ausführen, um die aktualisierten Routen anzuzeigen.
 
-1. Drücken Sie **F5** zum Ausführen der Wingtip Toys-beispielanwendung.  
- Der Browser wird geöffnet und zeigt die *"default.aspx"* Seite.
-2. Klicken Sie auf die **Produkte** Link am oberen Rand der Seite.  
- Alle Produkte werden angezeigt, auf die *"ProductList.aspx"* Seite. Die folgende URL (unter Verwendung Ihrer Portnummer) wird für den Browser angezeigt:  
+1. Drücken Sie **F5** , um die Beispielanwendung Wingtip Toys auszuführen.  
+ Der Browser wird geöffnet und zeigt die Seite *default. aspx* an.
+2. Klicken Sie oben auf der Seite auf den Link **Produkte** .  
+ Alle Produkte werden auf der Seite " *productList. aspx* " angezeigt. Die folgende URL (unter Verwendung ihrer Portnummer) wird für den Browser angezeigt:  
     `https://localhost:44300/ProductList`
-3. Klicken Sie anschließend die **Autos** Kategorielink am oberen Rand der Seite.  
- Nur Autos werden angezeigt, auf die *"ProductList.aspx"* Seite. Die folgende URL (unter Verwendung Ihrer Portnummer) wird für den Browser angezeigt:  
+3. Klicken Sie dann im oberen **Bereich der Seite auf die** kategoriekategorie.  
+ Nur Fahrzeuge werden auf der Seite " *productList. aspx* " angezeigt. Die folgende URL (unter Verwendung ihrer Portnummer) wird für den Browser angezeigt:  
     `https://localhost:44300/Category/Cars`
-4. Klicken Sie auf der Link, mit dem Namen des jeweils ersten Fahrzeugs auf der Seite angezeigt ("**konvertierbar sein Auto**") um die Produktdetails anzuzeigen.  
- Die folgende URL (unter Verwendung Ihrer Portnummer) wird für den Browser angezeigt:  
+4. Klicken Sie auf den Link mit dem Namen des ersten Fahrzeugs, das auf der Seite ("**konvertierbar**") aufgeführt ist, um die Produktdetails anzuzeigen.  
+ Die folgende URL (unter Verwendung ihrer Portnummer) wird für den Browser angezeigt:  
     `https://localhost:44300/Product/Convertible%20Car`
-5. Geben Sie anschließend die folgende nicht weitergeleitete URL (unter Verwendung Ihrer Portnummer) in den Browser ein:  
+5. Geben Sie als nächstes die folgende nicht weitergeleitete URL (unter Verwendung ihrer Portnummer) in den Browser ein:  
     `https://localhost:44300/ProductDetails.aspx?productID=2`  
- Der Code erkennt immer noch eine URL mit einer Abfragezeichenfolge für den Fall, in denen ein Benutzer einen Link ein Lesezeichen erstellt wurde.
+ Der Code erkennt weiterhin eine URL, die eine Abfrage Zeichenfolge enthält, wenn ein Benutzer einen Link mit Lesezeichen aufweist.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-In diesem Tutorial haben Sie Routen für Kategorien und Produkte hinzugefügt. Sie haben gelernt, wie Routen mit Datensteuerelementen integriert werden können, die modellbindung zu verwenden. Im nächsten Tutorial implementieren Sie globale Fehlerbehandlung.
+In diesem Tutorial haben Sie Routen für Kategorien und Produkte hinzugefügt. Sie haben gelernt, wie Routen in Daten Steuerelemente integriert werden können, die die Modell Bindung verwenden. Im nächsten Tutorial implementieren Sie die globale Fehlerbehandlung.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[ASP.NET Friendly URLs](http://www.nuget.org/packages/Microsoft.AspNet.FriendlyUrls/)  
-[Bereitstellen einer sicheren ASP.NET Web Forms-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
-[Microsoft Azure – kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/)
+[ASP.net friendly URLs](http://www.nuget.org/packages/Microsoft.AspNet.FriendlyUrls/)  
+[Stellen Sie eine sichere ASP.net Web Forms-App mit Mitgliedschaft, OAuth und SQL-Datenbank bereit, um Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
+[Kostenlose Testversion Microsoft Azure](https://azure.microsoft.com/pricing/free-trial/)
 
 > [!div class="step-by-step"]
 > [Zurück](membership-and-administration.md)

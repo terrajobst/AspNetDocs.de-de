@@ -1,108 +1,108 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
-title: Mithilfe der FormView Vorlagen (VB) | Microsoft-Dokumentation
+title: Verwenden der FormView-Vorlagen (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Stattdessen wird das FormView-Steuerelement gerendert, mithilfe von Vorlagen. In diesem Tutorial untersuchen wir mithilfe der f...
+description: Anders als die DetailsView besteht die FormView nicht aus Feldern. Stattdessen wird die FormView mithilfe von Vorlagen gerendert. In diesem Tutorial untersuchen wir die Verwendung der F...
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 67b25f4c-2823-42b6-b07d-1d650b3fd711
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ae21259a14378ea6b41f5d45cf2cac6954175dfa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: cafe47cf5766bb14503852ec6e9f305d1e6d426f
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109100"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74618387"
 ---
-# <a name="using-the-formviews-templates-vb"></a>Mithilfe der FormView Vorlagen (VB)
+# <a name="using-the-formviews-templates-vb"></a>Verwenden der FormView-Vorlagen (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_14_VB.exe) oder [PDF-Datei herunterladen](using-the-formview-s-templates-vb/_static/datatutorial14vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_14_VB.exe) oder [PDF herunterladen](using-the-formview-s-templates-vb/_static/datatutorial14vb1.pdf)
 
-> Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Stattdessen wird das FormView-Steuerelement gerendert, mithilfe von Vorlagen. Verwenden in diesem Lernprogramm wird untersucht das FormView-Steuerelement, um eine weniger strenge Anzeige von Daten zu präsentieren.
+> Anders als die DetailsView besteht die FormView nicht aus Feldern. Stattdessen wird die FormView mithilfe von Vorlagen gerendert. In diesem Tutorial untersuchen wir die Verwendung des FormView-Steuer Elements, um eine weniger strenge Anzeige von Daten darzustellen.
 
 ## <a name="introduction"></a>Einführung
 
-In den letzten beiden Tutorials wurde erläutert, wie die GridView und DetailsView-Steuerelemente Ausgaben verwenden von TemplateFields anpassen. Von TemplateFields ermöglichen, für den Inhalt für ein bestimmtes Feld hoch angepasst werden, aber letztendlich GridView und DetailsView haben ein Recht erhalten Sie kastenförmige, Raster-ähnliches Aussehen. Solche ein Raster-ähnliches Layout ist ideal für viele Szenarien, aber manchmal eine flexiblere, weniger strenge Anzeige erforderlich ist. Wenn Sie einen einzelnen Datensatz anzeigen zu können, kann solche ein flüssiges Layout über das FormView-Steuerelement.
+In den letzten beiden Tutorials wurde erläutert, wie die Ausgaben von GridView und DetailsView-Steuerelementen mithilfe von templatefields angepasst werden. Templatefields ermöglicht, dass die Inhalte für ein bestimmtes Feld hochgradig angepasst werden, aber am Ende verfügen sowohl GridView als auch DetailsView über eine ziemlich boxy-Darstellung (Raster ähnlich). In vielen Szenarios ist ein Raster ähnliches Layout ideal, aber manchmal wird eine weniger starre Anzeige benötigt. Beim Anzeigen eines einzelnen Datensatzes ist ein solches dynamisches Layout mit dem FormView-Steuerelement möglich.
 
-Im Gegensatz zu DetailsView besteht das FormView-Steuerelement keine Felder. Sie können keinem FormView-Steuerelement eine BoundField- oder TemplateField hinzufügen. Stattdessen wird das FormView-Steuerelement gerendert, mithilfe von Vorlagen. Stellen Sie sich das FormView-Steuerelement als ein DetailsView-Steuerelement, ein einzelnes TemplateField enthält. Die FormView-Steuerelement unterstützt die folgenden Vorlagen:
+Anders als die DetailsView besteht die FormView nicht aus Feldern. Sie können einem FormView-Element kein BoundField-oder TemplateField-Element hinzufügen. Stattdessen wird die FormView mithilfe von Vorlagen gerendert. Stellen Sie sich die Form View als DetailsView-Steuerelement vor, das ein einzelnes TemplateField-Steuerelement enthält. Die FormView unterstützt die folgenden Vorlagen:
 
-- `ItemTemplate` verwendet, um den entsprechenden Datensatz angezeigt, in das FormView-Steuerelement zu rendern.
-- `HeaderTemplate` verwendet, um einen optional-Header-Zeile anzugeben.
-- `FooterTemplate` zum Angeben einer optionalen Fußzeile
-- `EmptyDataTemplate` Wenn der FormView `DataSource` verfügt nicht über die auf Datensätze, die `EmptyDataTemplate` wird anstelle von verwendet die `ItemTemplate` für das Rendern von Markup des Steuerelements
-- `PagerTemplate` kann verwendet werden, die Paging-Schnittstelle für FormViews anpassen, die Auslagerung ist aktiviert
-- `EditItemTemplate` / `InsertItemTemplate` verwendet, um die Bearbeitung Schnittstelle oder Einfügen von für FormViews anzupassen, die eine solche Funktionalität unterstützen.
+- `ItemTemplate`, der verwendet wird, um den in der FormView angezeigten Datensatz zu Rendering.
+- `HeaderTemplate` zum Angeben einer optionalen Kopfzeile verwendet.
+- `FooterTemplate`, die verwendet wird, um eine optionale Footerzeile anzugeben.
+- `EmptyDataTemplate`, wenn die `DataSource` der FormView keine Datensätze enthält, wird der `EmptyDataTemplate` anstelle der `ItemTemplate` zum Rendern des Markup des Steuer Elements verwendet.
+- `PagerTemplate` kann verwendet werden, um die pagingschnittstelle für formviews anzupassen, für die Paging aktiviert ist.
+- `EditItemTemplate` / `InsertItemTemplate`, die zum Anpassen der Bearbeitungs Schnittstelle oder zum Einfügen der Schnittstelle für formviews verwendet werden, die diese Funktionalität unterstützen
 
-In diesem Lernprogramm untersuchenden verwenden das FormView-Steuerelement, um eine weniger strenge Anzeige von Produkten zu präsentieren. Statt später durch die Felder für die Name, Kategorie, Lieferanten und So weiter, das FormView `ItemTemplate` zeigt, dass diese Werte mit einer Kombination aus einem Header-Element und ein `<table>` (siehe Abbildung 1).
+In diesem Tutorial untersuchen wir die Verwendung des FormView-Steuer Elements, um eine weniger strenge Anzeige von Produkten darzustellen. Anstatt Felder für den Namen, die Kategorie, den Lieferanten usw. zu verwenden, zeigen die `ItemTemplate` der FormView diese Werte mit einer Kombination aus einem Header Element und einem `<table>` an (siehe Abbildung 1).
 
-[![Das Raster-ähnliches Layout im DetailsView betrachtet, bricht das FormView-Steuerelement](using-the-formview-s-templates-vb/_static/image2.png)](using-the-formview-s-templates-vb/_static/image1.png)
+[![die FormView aus dem Raster ähnlichen Layout in der DetailsView heraus bricht.](using-the-formview-s-templates-vb/_static/image2.png)](using-the-formview-s-templates-vb/_static/image1.png)
 
-**Abbildung 1**: FormView, die aus der Grid-Like Layout dargestellt im DetailsView Zeilenumbrüche ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image3.png))
+**Abbildung 1**: die FormView wird aus dem Raster ähnlichen Layout, das in der DetailsView angezeigt wird, unterbrochen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-formview-s-templates-vb/_static/image3.png)).
 
-## <a name="step-1-binding-the-data-to-the-formview"></a>Schritt 1: Binden der Daten an das FormView-Steuerelement
+## <a name="step-1-binding-the-data-to-the-formview"></a>Schritt 1: Binden der Daten an FormView
 
-Öffnen der `FormView.aspx` Seite und einem FormView-Steuerelement aus der Toolbox in den Designer ziehen. Beim erstmaligen FormView hinzufügen wird es als ein graues Feld, das uns angewiesen, eine `ItemTemplate` ist erforderlich.
+Öffnen Sie die Seite `FormView.aspx`, und ziehen Sie eine FormView aus der Toolbox auf den Designer. Beim ersten Hinzufügen von FormView wird es als graues Feld angezeigt, das anweist, dass ein `ItemTemplate` erforderlich ist.
 
-[![Die FormView-Steuerelement kann im Designer nicht gerendert werden, bis eine Elementvorlage bereitgestellt wird](using-the-formview-s-templates-vb/_static/image5.png)](using-the-formview-s-templates-vb/_static/image4.png)
+[![FormView kann erst im Designer gerendert werden, wenn eine ItemTemplate bereitgestellt wird.](using-the-formview-s-templates-vb/_static/image5.png)](using-the-formview-s-templates-vb/_static/image4.png)
 
-**Abbildung 2**: Das FormView-Steuerelement kann nicht gerendert werden in den Designer an, bis ein `ItemTemplate` dient ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image6.png))
+**Abbildung 2**: die FormView kann erst im Designer gerendert werden, wenn ein `ItemTemplate` bereitgestellt wird ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-formview-s-templates-vb/_static/image6.png))
 
-Die `ItemTemplate` kann manuell erstellt werden (mithilfe der deklarativen Syntax) oder können durch die Bindung der FormView-Steuerelement an ein Datenquellen-Steuerelement mithilfe des Designers werden automatisch erstellt. Dieser automatisch erstellten `ItemTemplate` enthält HTML-Code enthält der Namen jedes Feld und eine Bezeichnung, deren steuern `Text` Eigenschaft gebunden ist, um den Wert des Felds. Dieser Ansatz auch Auto-erstellt ein `InsertItemTemplate` und `EditItemTemplate`, beide für die einzelnen Datenfelder vom Datenquellen-Steuerelement mit Eingabesteuerelementen aufgefüllt.
+Der `ItemTemplate` kann von Hand (durch die deklarative Syntax) erstellt werden oder automatisch erstellt werden, indem die FormView über den Designer an ein Datenquellen-Steuerelement gebunden wird. Diese automatisch erstellte `ItemTemplate` enthält HTML, in der die Namen der einzelnen Felder aufgeführt sind, und ein Label-Steuerelement, dessen `Text`-Eigenschaft an den Wert des Felds gebunden ist. Bei diesem Ansatz werden auch automatisch eine `InsertItemTemplate` und `EditItemTemplate`erstellt, die beide mit Eingabe Steuerelementen für jedes der vom Datenquellen-Steuerelement zurückgegebenen Datenfelder aufgefüllt werden.
 
-Wenn Sie die Vorlage automatisch erstellen möchten, fügen Sie aus der FormView Smarttag ein neues ObjectDataSource-Steuerelement, das aufruft der `ProductsBLL` Klasse `GetProducts()` Methode. Hiermit wird einem FormView-Steuerelement mit einem `ItemTemplate`, `InsertItemTemplate`, und `EditItemTemplate`. Entfernen Sie aus der Datenquellensicht an, die `InsertItemTemplate` und `EditItemTemplate` da nicht von Interesse sind einem FormView-Steuerelement zu erstellen, die unterstützt werden, noch einfügen oder bearbeiten. Weiter, löschen Sie das Markup in der `ItemTemplate` , damit Sie schon von Grund auf neu beginnen, über zu arbeiten.
+Wenn Sie die Vorlage automatisch erstellen möchten, fügen Sie im Smarttag von FormView ein neues ObjectDataSource-Steuerelement hinzu, das die `GetProducts()` Methode der `ProductsBLL` Klasse aufruft. Dadurch wird eine FormView mit einer `ItemTemplate`, `InsertItemTemplate`und `EditItemTemplate`erstellt. Entfernen Sie in der Quell Ansicht die `InsertItemTemplate` und `EditItemTemplate`, da wir nicht an der Erstellung einer FormView interessiert sind, die die Bearbeitung oder das Einfügen noch nicht unterstützt. Löschen Sie als nächstes das Markup innerhalb der `ItemTemplate`, damit wir über ein sauberes Slate verfügen, aus dem Sie arbeiten können.
 
-Wenn Sie eher, werden erstellen würden die `ItemTemplate` Sie können manuell hinzufügen und dem ObjectDataSource-Steuerelement konfigurieren, indem Sie sie aus der Toolbox in den Designer ziehen. Allerdings festlegen Sie nicht das FormView Datenquelle aus dem Designer. Stattdessen wechseln Sie zur Quellansicht und manuell festlegen, der FormView `DataSourceID` Eigenschaft, um die `ID` Wert, der dem ObjectDataSource-Steuerelement. Fügen Sie als Nächstes die `ItemTemplate`.
+Wenn Sie die `ItemTemplate` manuell erstellen möchten, können Sie die ObjectDataSource hinzufügen und konfigurieren, indem Sie Sie aus der Toolbox auf den Designer ziehen. Legen Sie jedoch die Datenquelle von FormView nicht vom Designer fest. Wechseln Sie stattdessen zur Quell Ansicht, und legen Sie die `DataSourceID`-Eigenschaft von FormView manuell auf den `ID` Wert von ObjectDataSource fest. Fügen Sie als nächstes manuell den `ItemTemplate`hinzu.
 
-Unabhängig davon, welchen Ansatz Sie sich entschieden, in Anspruch nehmen, an diesem Punkt FormViews deklarative Markup aussehen sollte:
+Unabhängig davon, welchen Ansatz Sie sich entschieden haben, sollte das deklarative Markup Ihrer FormView nun wie folgt aussehen:
 
 [!code-aspx[Main](using-the-formview-s-templates-vb/samples/sample1.aspx)]
 
-Nehmen Sie einen Moment Zeit, um das Paging aktivieren in das FormView Smarttag-Kontrollkästchen; Hiermit wird die `AllowPaging="True"` deklarative Syntax für das FormView Attribut. Legen Sie außerdem die `EnableViewState` Eigenschaft auf "false".
+Nehmen Sie sich einen Moment Zeit, um das Kontrollkästchen Paging aktivieren im Smarttag von FormView zu aktivieren. Dadurch wird das `AllowPaging="True"`-Attribut zur deklarativen Syntax von FormView hinzugefügt. Legen Sie außerdem die `EnableViewState`-Eigenschaft auf false fest.
 
-## <a name="step-2-defining-theitemtemplates-markup"></a>Schritt 2: Definieren der`ItemTemplate`Markup
+## <a name="step-2-defining-theitemtemplates-markup"></a>Schritt 2: Definieren des Markups des`ItemTemplate`
 
-Mit der FormView-Steuerelement an das ObjectDataSource-Steuerelement gebunden, und konfiguriert zur Unterstützung von Paging wir möchten, geben Sie den Inhalt für die `ItemTemplate`. Für dieses Tutorial den Namen des Produkts angezeigt wir haben eine `<h3>` Überschrift. Danach verwenden wir eine HTML `<table>` zum Anzeigen von der restlichen Produkteigenschaften in einer Tabelle mit vier Spalten, in dem die erste und dritte Spalte auflisten, die Eigenschaftennamen und die zweiten und vierten die Werte Liste.
+Wenn die FormView an das ObjectDataSource-Steuerelement gebunden ist und für die Unterstützung von Paging konfiguriert ist, können wir den Inhalt für die `ItemTemplate`angeben. In diesem Tutorial soll der Name des Produkts in einer `<h3>` Überschrift angezeigt werden. Danach verwenden wir eine HTML-`<table>`, um die verbleibenden Produkteigenschaften in einer Tabelle mit vier Spalten anzuzeigen, in der die erste und die dritte Spalte die Eigenschaftsnamen und die zweite und vierte Liste ihre Werte auflisten.
 
-Dieses Markup kann eingegeben wird, über das FormView Vorlagen bearbeiten-Schnittstelle im Designer oder manuell mithilfe der deklarativen Syntax eingegeben werden. Beim Arbeiten mit Vorlagen finde ich in der Regel es schneller, arbeiten Sie direkt mit der deklarativen Syntax, aber gerne verwenden, welcher Technik, die Sie am besten mit vertraut sind.
+Dieses Markup kann über die Vorlagen Bearbeitungs Schnittstelle von FormView im Designer eingegeben oder manuell über die deklarative Syntax eingegeben werden. Beim Arbeiten mit Vorlagen ist es in der Regel schneller, dass Sie direkt mit der deklarativen Syntax arbeiten, aber Sie können auch beliebige Techniken verwenden, mit denen Sie am meisten vertraut sind.
 
-Das folgende Markup zeigt die FormView deklarative Markup nach dem `ItemTemplate`der Struktur wurde abgeschlossen:
+Das folgende Markup zeigt das deklarative FormView-Markup, nachdem die Struktur des `ItemTemplate`abgeschlossen wurde:
 
 [!code-aspx[Main](using-the-formview-s-templates-vb/samples/sample2.aspx)]
 
-Beachten Sie, dass die Datenbindungssyntax - `<%# Eval("ProductName") %>`für Beispiel direkt in die Ausgabe der Vorlage eingefügt werden kann. D. h. sie müssen nicht zugewiesen werden ein Label-Steuerelement `Text` Eigenschaft. Angenommen, wir haben die `ProductName` in der angezeigten Werten ein `<h3>` Element mit `<h3><%# Eval("ProductName") %></h3>`, die für das Produkt als Chai gerendert werden `<h3>Chai</h3>`.
+Beachten Sie, dass die Datenbindung-Syntax `<%# Eval("ProductName") %>`z. b. direkt in die Ausgabe der Vorlage eingefügt werden kann. Das heißt, dass Sie nicht der `Text`-Eigenschaft eines Label-Steuer Elements zugewiesen werden muss. Beispielsweise wird der `ProductName` Wert in einem `<h3>`-Element mit `<h3><%# Eval("ProductName") %></h3>`angezeigt, das für das Produkt Chai als `<h3>Chai</h3>`dargestellt wird.
 
-Die `ProductPropertyLabel` und `ProductPropertyValue` CSS-Klassen werden zum Angeben der Stil, der die Produkt-Eigenschaftennamen und Werte in der `<table>`. Diese CSS-Klassen sind in definiert `Styles.css` und dazu führen, dass die Eigenschaftennamen fett und rechtsbündig ausgerichtet, und fügen Sie ein Recht, die die Eigenschaftswerte Auffüllung hinzu.
+Die `ProductPropertyLabel`-und `ProductPropertyValue` CSS-Klassen werden verwendet, um den Stil der Produkt Eigenschaftsnamen und-Werte in der `<table>`anzugeben. Diese CSS-Klassen werden in `Styles.css` definiert und bewirken, dass die Eigenschaftsnamen Fett und rechtsbündig ausgerichtet werden und den Eigenschafts Werten eine Rechte Auffüll Zeichen hinzugefügt werden.
 
-Da es sich um keine CheckBoxFields zur Verfügung, mit der FormView-Steuerelement zum Anzeigen der `Discontinued` Wert als Kontrollkästchen müssen wir unsere eigene CheckBox-Steuerelement hinzufügen. Die `Enabled` -Eigenschaftensatz auf "false", somit schreibgeschützt, und des Kontrollkästchen des `Checked` auf den Wert der Eigenschaft gebunden ist die `Discontinued` Feld "Daten".
+Da in FormView keine checkboxfields-Elemente verfügbar sind, müssen Sie ein eigenes CheckBox-Steuerelement hinzufügen, um den `Discontinued` Wert als Kontrollkästchen anzuzeigen. Die `Enabled`-Eigenschaft ist auf false festgelegt, sodass Sie schreibgeschützt ist, und die `Checked`-Eigenschaft des Kontrollkästchens wird an den Wert des `Discontinued` Datenfelds gebunden.
 
-Mit der `ItemTemplate` abgeschlossen ist, wird die Produktinformationen auf deutlich flexiblere Weise angezeigt. Vergleichen Sie die DetailsView-Ausgabe aus dem letzten Tutorial (Abbildung 3), mit der Ausgabe von FormView generiert werden, in diesem Tutorial (Abbildung 4).
+Wenn die `ItemTemplate` vollständig ist, werden die Produktinformationen auf eine viel schnellere Weise angezeigt. Vergleichen Sie die DetailsView-Ausgabe aus dem letzten Tutorial (Abbildung 3) mit der Ausgabe, die von der FormView in diesem Tutorial generiert wurde (Abbildung 4).
 
-[![Die starren DetailsView-Ausgabe](using-the-formview-s-templates-vb/_static/image8.png)](using-the-formview-s-templates-vb/_static/image7.png)
+[![die starre DetailsView-Ausgabe](using-the-formview-s-templates-vb/_static/image8.png)](using-the-formview-s-templates-vb/_static/image7.png)
 
-**Abbildung 3**: Die starren DetailsView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image9.png))
+**Abbildung 3**: die Ausgabe der starren DetailsView ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-formview-s-templates-vb/_static/image9.png))
 
-[![Die fließende FormView-Ausgabe](using-the-formview-s-templates-vb/_static/image11.png)](using-the-formview-s-templates-vb/_static/image10.png)
+[![der flüssigen FormView-Ausgabe](using-the-formview-s-templates-vb/_static/image11.png)](using-the-formview-s-templates-vb/_static/image10.png)
 
-**Abbildung 4**: Die fließende FormView-Ausgabe ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-formview-s-templates-vb/_static/image12.png))
+**Abbildung 4**: die flüssige FormView-Ausgabe ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-formview-s-templates-vb/_static/image12.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Obwohl die GridView und DetailsView-Steuerelemente ihre Ausgabe angepasst wird, verwenden von TemplateFields verfügen können, stellen beide weiterhin ihre Daten in einem Raster-ähnliches, erhalten Sie kastenförmige Format an. Für Zeiten, wenn ein einzelner Datensatz angezeigt werden muss, mit einem weniger strenge Layout, das FormView-Steuerelement ist die ideale Wahl. Wie DetailsView, rendert die FormView ein einzelnes Datensatzes aus der `DataSource`, aber im Gegensatz zu DetailsView besteht nur aus Vorlagen und unterstützt keine Felder.
+Während die Ausgabe der GridView-und DetailsView-Steuerelemente mithilfe von templatefields angepasst werden kann, stellen beide ihre Daten immer noch in einem Raster ähnlichen boxy-Format dar. Wenn ein einzelner Datensatz mithilfe eines weniger festgelegten Layouts angezeigt werden muss, ist FormView eine ideale Wahl. Wie die DetailsView rendert FormView einen einzelnen Datensatz aus seinem `DataSource`, aber im Gegensatz zu DetailsView besteht er nur aus Vorlagen und unterstützt keine Felder.
 
-Wie wir in diesem Tutorial gesehen haben, können FormView bei der Anzeige eines einzelnen Datensatzes für ein flexibleres Layout. In Zukunft Tutorials die DataList- oder Repeater-Steuerelemente, untersuchen wir die bieten den gleichen Grad an Flexibilität wie die FormsView, jedoch können mehrere Datensätze (z. B. GridView) anzeigen.
+Wie in diesem Tutorial gezeigt, ermöglicht FormView ein flexibleres Layout, wenn ein einzelner Datensatz angezeigt wird. In zukünftigen Tutorials untersuchen wir die DataList-und Repeater-Steuerelemente, die das gleiche Maß an Flexibilität wie die formsview bieten, aber mehrere Datensätze anzeigen können (wie z. b. GridView).
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führen Sie Prüfer für dieses Tutorial E.R. wurde Gärtner ein. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war E.R. Gilmore. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](using-templatefields-in-the-detailsview-control-vb.md)

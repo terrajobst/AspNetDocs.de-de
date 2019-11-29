@@ -1,173 +1,173 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
-title: 'Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellen eines SQL Server-Datenbankupdates - 11 12 | Microsoft-Dokumentation'
+title: 'Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen eines SQL Server Datenbankupdates-11 von 12 | Microsoft-Dokumentation'
 author: tdykstra
-description: In dieser tutorialreihe erfahren Sie, wie zum Bereitstellen einer ASP.NET-Anwendung (veröffentlichen) Webanwendungsprojekt, die eine SQL Server Compact-Datenbank enthält, mithilfe von Visual Stu...
+description: In dieser Reihe von Tutorials wird gezeigt, wie Sie ein ASP.NET-Webanwendungs Projekt bereitstellen (veröffentlichen), das eine SQL Server Compact-Datenbank mit Visual Stu...
 ms.author: riande
 ms.date: 11/17/2011
 ms.assetid: 5e2bb092-cb22-4511-ad0a-22ae12dd99b3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: b653a2475eaa89cf493c2ecc099888a81349a444
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 0894c0ac24737e66b6960ef3d48aa17f78c6aa1d
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132333"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74621085"
 ---
-# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mit Visual Studio oder Visual Web Developer: Bereitstellen eines SQL Server-Datenbankupdates - 11 12
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen eines SQL Server Datenbankupdates-11 von 12
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-[Startprojekt herunterladen](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+[Starter Projekt herunterladen](https://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
-> In dieser tutorialreihe erfahren Sie, wie zum Bereitstellen einer ASP.NET-Anwendung (veröffentlichen) Webanwendungsprojekt, das eine SQL Server Compact-Datenbank mithilfe von Visual Studio 2012 RC oder Visual Studio Express 2012 RC für Web enthält. Sie können auch Visual Studio 2010 verwenden, wenn Sie die Web Publish Update installieren. Eine Einführung in die Reihe, finden Sie unter [im ersten Tutorial der Reihe](deployment-to-a-hosting-provider-introduction-1-of-12.md).
+> In dieser Reihe von Tutorials erfahren Sie, wie Sie ein ASP.NET-Webanwendungs Projekt, das eine SQL Server Compact Datenbank enthält, mithilfe von Visual Studio 2012 RC oder Visual Studio Express 2012 RC für das Web bereitstellen (veröffentlichen). Sie können auch Visual Studio 2010 verwenden, wenn Sie das Webveröffentlichungs Update installieren. Eine Einführung in die Reihe finden Sie [im ersten Tutorial der Reihe](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
-> Ein Lernprogramm, das zeigt, Bereitstellungsfunktionen, die nach der RC-Version von Visual Studio 2012 eingeführt wurden, zeigt, wie zum Bereitstellen von SQL Server-Editionen als SQL Server Compact und zeigt, wie in Windows Azure-Websites bereitstellen, finden Sie unter [ASP.NET-webbereitstellung Mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
+> Ein Lernprogramm, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung auf Windows Azure-Websites durchführt. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-In diesem Tutorial erfahren Sie, wie Sie eine Aktualisierung der Datenbank auf einer vollständigen SQL Server-Datenbank bereitstellen. Der Prozess ist fast identisch mit für SQL Server Compact in bisheriges vorgehen, da der Code First-Migrationen Aktualisieren der Datenbank alle Aufgaben durchführt, die [Bereitstellen eines Datenbankupdates](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md) Tutorial.
+In diesem Tutorial wird gezeigt, wie Sie ein Datenbankupdate in einer vollständigen SQL Server Datenbank bereitstellen. Da Code First-Migrationen den gesamten Arbeitsaufwand für das Aktualisieren der Datenbank erledigt, ist der Prozess fast identisch mit dem, was Sie im Tutorial SQL Server Compact zum Bereitstellen [eines Datenbankupdates](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md) durchgeführt haben.
 
-Erinnerung: Wenn Sie eine Fehlermeldung erhalten, oder etwas nicht funktioniert, wie Sie das Lernprogramm durchzuarbeiten, sollten Sie unbedingt die [Problembehandlungsseite](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
+Erinnerung: Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, wenn Sie das Tutorial durchlaufen, achten Sie darauf, dass Sie die [Seite Problem](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)Behandlung überprüfen.
 
-## <a name="adding-a-new-column-to-a-table"></a>Hinzufügen einer neuen Spalte in einer Tabelle
+## <a name="adding-a-new-column-to-a-table"></a>Hinzufügen einer neuen Spalte zu einer Tabelle
 
-In diesem Abschnitt des Tutorials stellen Sie eine Datenbank zu ändern und entsprechende Änderungen am Code, klicken Sie dann diese testen in Visual Studio als Vorbereitung für die sie auf die Test- und produktionsumgebungen Umgebungen bereitzustellen. Die Änderung umfasst das Hinzufügen einer `OfficeHours` Spalte die `Instructor` Entität und Anzeigen von den neuen Informationen in der **Dozenten** Webseite.
+In diesem Abschnitt des Tutorials erstellen Sie eine Daten Bank Änderung und entsprechende Codeänderungen und testen Sie dann in Visual Studio, um Sie in den Test-und Produktionsumgebungen bereitzustellen. Die Änderung umfasst das Hinzufügen einer `OfficeHours` Spalte zur `Instructor` Entität und das Anzeigen der neuen Informationen auf der Seite **Dozenten** .
 
-Öffnen Sie im Projekt ContosoUniversity.DAL *Instructor.cs* und fügen Sie die folgende Eigenschaft zwischen den `HireDate` und `Courses` Eigenschaften:
+Öffnen Sie im Projekt contosouniversity. dal *Instructor.cs* , und fügen Sie die folgende Eigenschaft zwischen den Eigenschaften `HireDate` und `Courses` hinzu:
 
 [!code-csharp[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample1.cs)]
 
-Aktualisieren Sie Initialisiererklasse, sodass die neue Spalte mit Testdaten datengeneratoranwendung gestartet. Open *migrations\configuration. cs* , und Ersetzen Sie den Codeblock, der beginnt `var instructors = new List<Instructor>` mit den folgenden Codeblock enthält die neue Spalte:
+Aktualisieren Sie die Initialisiererklasse, sodass Sie die neue Spalte mit den Testdaten startet. Öffnen Sie *migrations\configuration.cs* , und ersetzen Sie den Codeblock, der `var instructors = new List<Instructor>` beginnt, durch den folgenden Codeblock, der die neue Spalte enthält:
 
 [!code-csharp[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample2.cs)]
 
-Öffnen Sie im Projekt ContosoUniversity *Instructors.aspx* und fügen Sie ein neues Vorlagenfeld für Geschäftszeiten direkt vor dem abschließenden `</Columns>` Tag in der ersten `GridView` Steuerelement:
+Öffnen Sie im Projekt contosouniversity die Datei " *Dozenten. aspx* ", und fügen Sie ein neues Vorlagen Feld für Office-Stunden direkt vor dem schließenden `</Columns>`-Tag im ersten `GridView`-Steuerelement hinzu:
 
 [!code-aspx[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample3.aspx)]
 
 Erstellen Sie die Projektmappe.
 
-Öffnen der **-Paket-Manager-Konsole** angezeigt, und wählen ContosoUniversity.DAL als die **Standardprojekt**.
+Öffnen Sie das Fenster der **Paket-Manager-Konsole** , und wählen Sie contosouniversity. dal als **Standard Projekt**aus.
 
 Geben Sie die folgenden Befehle ein:
 
 [!code-powershell[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample4.ps1)]
 
-Führen Sie die Anwendung, und wählen Sie die **Dozenten** Seite. Es dauert etwas länger als gewöhnlich zum geladen werden, da das Entity Framework die Datenbank neu erstellt und diese mit Testdaten startet, die Seite.
+Führen Sie die Anwendung aus, und wählen Sie die Seite **Dozenten** aus. Das Laden der Seite dauert etwas länger als üblich, da der Entity Framework die Datenbank neu erstellt und Sie mit Testdaten erstellt.
 
 [![Instructors_page_with_office_hours](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image2.png)](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image1.png)
 
-## <a name="deploying-the-database-update-to-the-test-environment"></a>Bereitstellen des Datenbankupdates in der Testumgebung
+## <a name="deploying-the-database-update-to-the-test-environment"></a>Bereitstellen des Datenbankupdates in der Test Umgebung
 
-Wenn Sie Code First-Migrationen verwenden, ist die Methode für die Bereitstellung der Änderung an einer Datenbank in SQL Server genauso wie bei SQL Server Compact. Allerdings müssen Sie so ändern den Test Veröffentlichungsprofil aus, da es immer noch so eingerichtet ist, Migrieren von SQL Server Compact auf SQL Server.
+Wenn Sie Code First-Migrationen verwenden, ist die Methode zum Bereitstellen einer Daten Bank Änderung in SQL Server identisch mit der für SQL Server Compact. Allerdings müssen Sie das Profil für die Test Veröffentlichung ändern, da es noch für die Migration von SQL Server Compact zu SQL Server eingerichtet ist.
 
-Der erste Schritt ist die Transformationen für die Verbindung Zeichenfolge zu entfernen, die Sie im vorherigen Tutorial erstellt haben. Diese sind nicht mehr erforderlich, da Connection String Transformationen im Veröffentlichungsprofil, angeben wird wie vor dem Konfigurieren der Sie die **SQL packen/veröffentlichen** Registerkarte für die Migration zu SQL Server.
+Der erste Schritt besteht darin, die Verbindungs Zeichenfolgen-Transformationen zu entfernen, die Sie im vorherigen Tutorial erstellt haben. Diese werden nicht mehr benötigt, da Sie Verbindungs Zeichenfolgen-Transformationen im Veröffentlichungs Profil angeben, wie Sie dies vor der Konfiguration der Registerkarte " **packen/veröffentlichen** " für die Migration zu SQL Server durchgeführt haben.
 
-Öffnen der *Web.Test.config* Datei, und entfernen Sie die `connectionStrings` Element. Die einzige verbleibende Transformation in der *Web.Test.config* -Datei ist für die `Environment` Wert in der `appSettings` Element.
+Öffnen Sie die Datei *Web. Test. config* , und entfernen Sie das `connectionStrings` Element. Die einzige verbleibende Transformation in der Datei " *Web. Test. config* " ist für den `Environment` Wert im `appSettings`-Element vorgesehen.
 
-Jetzt können Sie das Veröffentlichungsprofil und Veröffentlichen in die testumgebung aktualisieren.
+Nun können Sie das Veröffentlichungs Profil aktualisieren und in der Testumgebung veröffentlichen.
 
-Öffnen der **Webveröffentlichung** -Assistenten, und klicken Sie dann wechseln Sie zu der **Profil** Registerkarte.
+Öffnen Sie den Assistenten **Web veröffentlichen** , und wechseln Sie dann zur Registerkarte **Profil** .
 
-Wählen Sie die **Test** Veröffentlichungsprofil.
+Wählen Sie das Profil für die **Test** Veröffentlichung aus.
 
 Wählen Sie die Registerkarte **Einstellungen** aus.
 
-Klicken Sie auf **aktivieren Sie die neue Datenbank veröffentlichen Verbesserungen**.
+Klicken Sie auf **neue Verbesserungen der Daten Bank Veröffentlichung aktivieren**
 
-Klicken Sie in das Feld die Verbindungszeichenfolge für **SchoolContext**, geben Sie den gleichen Wert, der in verwendet die *Web.Test.config* Transformationsdatei im vorherigen Tutorial:
+Geben Sie im Feld Verbindungs Zeichenfolge für **schoolContext**denselben Wert ein, den Sie in der Transformations Datei *Web. Test. config* im vorherigen Tutorial verwendet haben:
 
 [!code-console[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample5.cmd)]
 
-Wählen Sie **Code First-Migrationen ausführen (wird beim Anwendungsstart ausgeführt)**. (In Ihrer Version von Visual Studio, das Kontrollkästchen kann mit der Bezeichnung **anwenden Code First-Migrationen**.)
+Wählen Sie **Code First-Migrationen ausführen (wird beim Anwendungsstart ausgeführt) aus**. (In Ihrer Version von Visual Studio kann das Kontrollkästchen mit der Bezeichnung **Apply Code First-Migrationen**bezeichnet werden.)
 
-Klicken Sie in das Feld die Verbindungszeichenfolge für **DefaultConnection**, geben Sie den gleichen Wert, der in verwendet die *Web.Test.config* Transformationsdatei im vorherigen Tutorial:
+Geben Sie im Feld Verbindungs Zeichenfolge für **DefaultConnection**den gleichen Wert ein, den Sie in der Transformations Datei *Web. Test. config* im vorherigen Tutorial verwendet haben:
 
 [!code-console[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample6.cmd)]
 
-Lassen Sie **Aktualisieren einer Datenbank** gelöscht.
+Lassen Sie **Datenbank aktualisieren** deaktiviert.
 
 Klicken Sie auf **Veröffentlichen**.
 
-Visual Studio stellt die codeänderungen in die testumgebung bereit und öffnet den Browser mit der Contoso University-Startseite.
+Visual Studio stellt die Codeänderungen in der Testumgebung bereit und öffnet den Browser auf der Homepage der "Visual Studio"-Homepage.
 
-Wählen Sie die dozentenseite.
+Wählen Sie die Seite Dozenten aus.
 
-Wenn die Anwendung auf dieser Seite ausgeführt wird, versucht, Zugriff auf die Datenbank. Code First-Migrationen wird überprüft, ob die Datenbank aktuell ist und feststellt, dass die neueste Migration noch nicht angewendet wurde. Code First-Migrationen die neueste Migration gilt, führt die `Seed` -Methode, und klicken Sie dann die Seite wird normal ausgeführt. Daraufhin wird die neue Office-Stunden-Spalte mit den per Seeding hinzugefügten Daten.
+Wenn diese Seite von der Anwendung ausgeführt wird, wird versucht, auf die Datenbank zuzugreifen. Code First-Migrationen überprüft, ob die Datenbank aktuell ist, und stellt fest, dass die aktuelle Migration noch nicht angewendet wurde. Code First-Migrationen wendet die neueste Migration an, führt die `Seed`-Methode aus, und die Seite wird normal ausgeführt. Die neue Spalte "Office-Stunden" wird mit den Seeding Daten angezeigt.
 
 [![Instructors_page_with_OfficeHours_Test](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image4.png)](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image3.png)
 
-## <a name="deploying-the-database-update-to-the-production-environment"></a>Das Datenbankupdate Bereitstellen in der Produktionsumgebung
+## <a name="deploying-the-database-update-to-the-production-environment"></a>Bereitstellen des Datenbankupdates in der Produktionsumgebung
 
-Sie müssen auch das Veröffentlichungsprofil für die produktionsumgebung zu ändern. In diesem Fall müssen Sie das vorhandene Profil zu entfernen und erstellen eine neue, indem Sie eine aktualisierte PUBLISHSETTINGS-Datei importieren. Die aktualisierte Datei enthält die Verbindungszeichenfolge für die SQL Server-Datenbank am Cytanium.
+Sie müssen auch das Veröffentlichungs Profil für die Produktionsumgebung ändern. In diesem Fall entfernen Sie das vorhandene Profil, und erstellen Sie ein neues, indem Sie eine aktualisierte publishsettings-Datei importieren. Die aktualisierte Datei enthält die Verbindungs Zeichenfolge für die SQL Server-Datenbank bei cytanium.
 
-Wie Sie gesehen haben, wenn Sie in der testumgebung bereitgestellt, nicht mehr benötigten Connection String Transformationen in der *Web.Production.config* Transformationsdatei. Öffnen Sie die Datei, und entfernen Sie die `connectionStrings` Element. Die restlichen Transformationen sind für die `Environment` Wert in der `appSettings` Element und die `location` -Element, das Zugriff auf Fehlerberichte von Elmah beschränkt.
+Wie Sie gesehen haben, als Sie in der Testumgebung bereitgestellt haben, benötigen Sie keine Verbindungs Zeichenfolgen-Transformationen mehr in der Transformations Datei *Web. Production. config* . Öffnen Sie diese Datei, und entfernen Sie das `connectionStrings` Element. Die restlichen Transformationen gelten für den `Environment` Wert im `appSettings`-Element und das `location`-Element, das den Zugriff auf ELMAH-Fehlerberichte einschränkt.
 
-Bevor Sie ein neues Veröffentlichungsprofil für die Produktion erstellen, laden eine aktualisierten PUBLISHSETTINGS-Datei die gleiche Weise wie weiter oben in der [in der Produktionsumgebung bereitstellen](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) Tutorial. (Klicken Sie in der Systemsteuerung Cytanium **Websites**, und klicken Sie dann auf die **contosouniversity.com** Website. Wählen der **Webveröffentlichung** Registerkarte, und klicken Sie dann auf **Veröffentlichungsprofil herunterladen, für diese Website**.) Der Grund dafür ist, um die Datenbank-Verbindungszeichenfolge in der Datei ".publishsettings" zu übernehmen. Die Verbindungszeichenfolge nicht beim ersten der Datei, herunterladen da Sie immer noch SQL Server Compact verwendet haben und SQL Server-Datenbank auf Cytanium noch nicht noch erstellt.
+Bevor Sie ein neues Veröffentlichungs Profil für die Produktion erstellen, laden Sie eine aktualisierte publishsettings-Datei auf die gleiche Weise wie zuvor im Tutorial bereitstellen [in der Produktionsumgebung](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) . (Klicken Sie in der Systemsteuerung cytanium auf **Websites**, und klicken Sie dann auf die Website **contosouniversity.com** . Wählen Sie die Registerkarte **Webpublishing** aus, und klicken Sie dann auf **Veröffentlichungs Profil für diese Website herunterladen**.) Der Grund hierfür ist, dass Sie die Datenbank-Verbindungs Zeichenfolge in der publishsettings-Datei abrufen. Die Verbindungs Zeichenfolge war nicht verfügbar, als Sie die Datei zum ersten mal heruntergeladen haben, weil Sie noch SQL Server Compact verwendet haben und die SQL Server Datenbank noch nicht bei cytanium erstellt haben.
 
-Jetzt können Sie das Veröffentlichungsprofil und Veröffentlichen in der produktionsumgebung aktualisieren.
+Nun können Sie das Veröffentlichungs Profil aktualisieren und in der Produktionsumgebung veröffentlichen.
 
-Öffnen der **Webveröffentlichung** -Assistenten, und klicken Sie dann wechseln Sie zu der **Profil** Registerkarte.
+Öffnen Sie den Assistenten **Web veröffentlichen** , und wechseln Sie dann zur Registerkarte **Profil** .
 
-Klicken Sie auf **Profile verwalten**, und löschen Sie dann das Profil für die Produktion.
+Klicken Sie auf **Profile verwalten**, und löschen Sie dann das Produktionsprofil.
 
-Schließen der **Webveröffentlichung** Assistenten, um diese Änderung zu speichern.
+Schließen Sie den Assistenten **Web veröffentlichen** , um diese Änderung zu speichern.
 
-Öffnen der **Webveröffentlichung** Assistenten erneut aus, und klicken Sie dann auf **Import**.
+Öffnen Sie den Assistenten **Web veröffentlichen** erneut, und klicken Sie dann auf **importieren**.
 
-Auf der **Verbindung** Registerkarte **Ziel-URL** auf den entsprechenden Wert bei Verwendung eine temporäre URL.
+Ändern Sie auf der Registerkarte **Verbindung** die **Ziel-URL** in den entsprechenden Wert, wenn Sie eine temporäre URL verwenden.
 
 Klicken Sie auf **Weiter**.
 
-Auf der **Einstellungen** auf **aktivieren Sie die neue Datenbank veröffentlichen Verbesserungen**.
+Klicken Sie auf der Registerkarte **Einstellungen** auf **neue Verbesserungen bei der Daten Bank Veröffentlichung aktivieren**.
 
-In der Verbindung Zeichenfolge Dropdown-Liste für **SchoolContext**, wählen Sie die Verbindungszeichenfolge Cytanium.
+Wählen Sie in der Dropdown Liste Verbindungs Zeichenfolge für **schoolContext**die Verbindungs Zeichenfolge cytanium aus.
 
 ![Selecting_Cytanium_connection_string](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image5.png)
 
-Wählen Sie **führen Sie Code First-Migrationen (wird beim Anwendungsstart ausgeführt)**.
+Wählen Sie **Code First Migrationen ausführen (wird beim Anwendungsstart ausgeführt) aus**.
 
-In der Verbindung Zeichenfolge Dropdown-Liste für **DefaultConnection**, wählen Sie die Verbindungszeichenfolge Cytanium.
+Wählen Sie in der Dropdown Liste Verbindungs Zeichenfolge für **DefaultConnection**die Verbindungs Zeichenfolge cytanium aus.
 
-Wählen Sie die **Profil** auf **Profile verwalten**, und benennen Sie das Profil aus "contosouniversity.com – Web Deploy" in "Produktion".
+Wählen Sie die Registerkarte **Profil** aus, klicken Sie auf **Profile verwalten**, und benennen Sie das Profil aus "contosouniversity.com-Web deploy" in "Production" um.
 
-Schließen Sie das Veröffentlichungsprofil, um die Änderung zu speichern, und öffnen Sie es erneut.
+Schließen Sie das Veröffentlichungs Profil, um die Änderung zu speichern, und öffnen Sie Sie dann erneut.
 
-Klicken Sie auf **Veröffentlichen**. (Kopieren Sie für eine Website Produktion *app\_offline.htm* für Produktions- und Put in Ihrem Projektordner vor der Veröffentlichung, entfernen sie Sie dann bei der Bereitstellung abgeschlossen ist.)
+Klicken Sie auf **Veröffentlichen**. (Bei einer realen Produktions Website würden Sie die *App\_"offline. htm* " in die Produktionsumgebung kopieren und vor der Veröffentlichung in Ihren Projektordner einfügen und dann nach Abschluss der Bereitstellung entfernen.)
 
-Visual Studio stellt die codeänderungen in die testumgebung bereit und öffnet den Browser mit der Contoso University-Startseite.
+Visual Studio stellt die Codeänderungen in der Testumgebung bereit und öffnet den Browser auf der Homepage der "Visual Studio"-Homepage.
 
-Wählen Sie die dozentenseite.
+Wählen Sie die Seite Dozenten aus.
 
-Code First-Migrationen aktualisiert die Datenbank die gleiche Weise wie in der testumgebung zuvor. Daraufhin wird die neue Office-Stunden-Spalte mit den per Seeding hinzugefügten Daten.
+Code First-Migrationen aktualisiert die Datenbank auf die gleiche Weise wie in der Test Umgebung. Die neue Spalte "Office-Stunden" wird mit den Seeding Daten angezeigt.
 
 ![Instructors_page_with_OfficeHours_Prod](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image6.png)
 
-Sie haben jetzt erfolgreich bereitgestellt ein Anwendungsupdates, das Änderung an einer Datenbank, enthalten mithilfe einer SQL Server-Datenbank.
+Sie haben nun erfolgreich ein Anwendungs Update bereitgestellt, das eine Daten Bank Änderung mit einer SQL Server Datenbank enthielt.
 
 ## <a name="more-information"></a>Weitere Informationen
 
-Dies schließt diese tutorialreihe zum Bereitstellen einer ASP.NET-Webanwendung zu einem Hostinganbieter von Drittanbietern. Weitere Informationen zu den Themen in diesen Tutorials behandelt, finden Sie unter den [ASP.NET die ASP.NET-Bereitstellung](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx) auf der MSDN-Website.
+Dies schließt diese Reihe von Tutorials zum Bereitstellen einer ASP.NET-Webanwendung für einen Drittanbieter-Hostinganbieter ab. Weitere Informationen zu den Themen, die in diesen Tutorials behandelt werden, finden Sie auf der MSDN-Website in der [ASP.net-Bereitstellungs Inhalts Karte](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx) .
 
-## <a name="acknowledgements"></a>Bestätigungen
+## <a name="acknowledgements"></a>Danksagungen
 
-Ich möchte die vielen Dank, dass die folgenden Personen, die wichtige Beiträge zu den Inhalt dieser tutorialreihe vorgenommen:
+Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 
 - [Alberto Poblacion, MVP &amp; MCT, Spanien](https://mvp.support.microsoft.com/profile/Alberto)
-- Jarod Ferguson, Entwicklung von Data Platform MVP, Vereinigte Staaten
-- Harsh Mittal, Microsoft
+- Jarod Ferguson, Data Platform Development MVP, USA
+- Harte Verpflichtung, Microsoft
 - [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
-- [Mike Pope, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
-- Mohit Srivastava, Microsoft
-- [Raffaele Rialdi, Italien](http://www.iamraf.net/)
+- [Mike Papst, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
+- Treffen Sie Srivastava, Microsoft
+- [Raffaele rialdi, Italien](http://www.iamraf.net/)
 - [Rick Anderson, Microsoft](https://blogs.msdn.com/b/rickandy/)
-- [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(twitter: [ @sayedihashimi ](http://twitter.com/sayedihashimi))
-- [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](http://twitter.com/shanselman))
-- [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (twitter: [ @coolcsh ](http://twitter.com/coolcsh))
-- [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
-- [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [@vishalrjoshi](http://twitter.com/vishalrjoshi))
+- [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(Twitter: [@sayedihashimi](http://twitter.com/sayedihashimi))
+- [Scott Hanselman](http://www.hanselman.com/blog/) (Twitter: [@shanselman](http://twitter.com/shanselman))
+- [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (Twitter: [@coolcsh](http://twitter.com/coolcsh))
+- [Srđan Božović, Serbien](http://msforge.net/blogs/zmajcek/)
+- [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (Twitter: [@vishalrjoshi](http://twitter.com/vishalrjoshi))
 
 > [!div class="step-by-step"]
 > [Zurück](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)

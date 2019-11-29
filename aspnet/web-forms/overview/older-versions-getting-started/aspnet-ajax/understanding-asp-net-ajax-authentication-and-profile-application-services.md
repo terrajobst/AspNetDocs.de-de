@@ -1,345 +1,345 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
-title: Grundlegendes zur Authentifizierung in ASP.NET AJAX und-Profilanwendungsdienste | Microsoft-Dokumentation
+title: Grundlegendes zur ASP.NET AJAX-Authentifizierung und-Profil Anwendungsdienste | Microsoft-Dokumentation
 author: scottcate
-description: Der Authentifizierungsdienst ermöglicht es Benutzern, Anmeldeinformationen anzugeben, um ein Authentifizierungscookie zu erhalten, und der Gatewaydienst kann benutzerdefinierte geht an...
+description: Der Authentifizierungsdienst ermöglicht es Benutzern, Anmelde Informationen bereitzustellen, um ein Authentifizierungs Cookie zu erhalten, und ist der Gatewaydienst zum zulassen benutzerdefinierter Benutzer...
 ms.author: riande
 ms.date: 03/14/2008
 ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 1087d9120411e51fd61d073169a88cac6cdaf15b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: cab9acb1ffd75cca87f6c575a6abdd000235828e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109491"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74635682"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Grundlegendes zu Authentifizierungs- und Profilanwendungsdiensten von ASP.NET AJAX
 
-durch [Scott Cate](https://github.com/scottcate)
+von [Scott Cate](https://github.com/scottcate)
 
-[PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial03_MSAjax_ASP.NET_Services_cs.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial03_MSAjax_ASP.NET_Services_cs.pdf)
 
-> Der Authentifizierungsdienst ermöglicht Benutzern, Anmeldeinformationen anzugeben, um ein Authentifizierungscookie zu erhalten, und ist der Gatewaydienst benutzerdefinierten Profilen können, die von ASP.NET bereitgestellt. Verwenden des Authentifizierungsdiensts ASP.NET AJAX ist bei der standardmäßigen ASP.NET-Formularauthentifizierung kompatibel, sodass es sich bei Anwendungen, die derzeit unter Verwendung der Formularauthentifizierung (z. B. steuern, mit der Anmeldung) nicht umbrochen wird durch ein Upgrade auf die AJAX-Dienst-Authentifizierung.
+> Der Authentifizierungsdienst ermöglicht es Benutzern, Anmelde Informationen bereitzustellen, um ein Authentifizierungs Cookie zu erhalten, und ist der Gatewaydienst, mit dem benutzerdefinierte Benutzerprofile von ASP.NET bereitgestellt werden können. Die Verwendung des ASP.NET AJAX-Authentifizierungs diensdienstanbieter ist kompatibel mit der standardmäßigen ASP.NET-Formular Authentifizierung, sodass Anwendungen, die derzeit die Formular Authentifizierung verwenden (z. b. mit dem Anmelde Steuerelement), nicht durch ein Upgrade auf den AJAX-Authentifizierungsdienst
 
 ## <a name="introduction"></a>Einführung
 
-Als Teil von .NET Framework 3.5 stellt Microsoft ein Upgrade beträchtliche Umgebung bereit; nicht nur eine neue Entwicklungsumgebung verfügbar ist, sondern Verknüpfungsfunktionen sind die neuen Funktionen von Language-Integrated Query (LINQ) und andere Verbesserungen der Sprache. Darüber hinaus sind einige bekannten Funktionen von anderen Toolsets, insbesondere die ASP.NET AJAX Extensions können als wesentliche Bestandteile von .NET Framework-Basisklassenbibliothek enthalten wird. Mithilfe dieser Erweiterungen können viele neue rich-Client-Features, darunter Teilrendering von Seiten ohne einer vollständigen seitenaktualisierung, den Zugriff auf Webdienste über Clientskript (einschließlich ASP.NET profilerstellungs-API) und eine umfangreiche clientseitige API entwickelt, um viele der Steuerelement-Schemas finden Sie in den Satz der ASP.NET serverseitigen Steuerelements zu spiegeln.
+Als Teil der .NET Framework 3,5 stellt Microsoft ein durch die Umgebung Aktualisier bares Umgebungs Upgrade bereit. Es ist nicht nur eine neue Entwicklungsumgebung verfügbar, sondern die neuen LINQ-Funktionen (Language-Integrated Query) und andere Verbesserungen in der Sprache. Außerdem werden einige vertraute Features anderer Toolsets, insbesondere die ASP.NET AJAX-Erweiterungen, als First-Class-Member der .NET Framework Basisklassen Bibliothek eingeschlossen. Diese Erweiterungen ermöglichen viele neue Rich Client-Features, einschließlich partielles Rendering von Seiten, ohne dass eine vollständige Seiten Aktualisierung erforderlich ist, die Möglichkeit des Zugriffs auf Webdienste über ein Client Skript (einschließlich der ASP.net-Profilerstellungs-API) und eine umfangreiche Client seitige API entworfen, um viele der Steuerelement Schemas zu spiegeln, die im serverseitigen ASP.NET-Steuerelement Satz angezeigt werden.
 
-In diesem Whitepaper untersucht die die Implementierung und Verwendung der profilerstellung von ASP.NET und Formularauthentifizierung, Diensten, wie sie von den Microsoft ASP.NET AJAX ExtensionsThe AJAX-Erweiterungen verfügbar gemacht werden Stellen Formular-Authentifizierung unterstützt, da es unglaublich einfach (sowie der Dienst die Profilerstellung) wird über ein Webdienst-Proxy-Skript verfügbar gemacht. Die AJAX-Erweiterungen unterstützen auch die benutzerdefinierten Authentifizierung über die AuthenticationServiceManager-Klasse.
+In diesem Whitepaper wird die Implementierung und Verwendung der ASP.NET-Profil Erstellungs-und Formular Authentifizierungsdienste erläutert, da diese von den Microsoft ASP.NET AJAX-Erweiterungen verfügbar gemacht werden. die AJAX-Erweiterungen machen die Formular Authentifizierung unglaublich einfach zu unterstützen, da Sie (und der Profil Erstellungs Dienst) wird über ein Webdienst-Proxy Skript verfügbar gemacht. Die AJAX-Erweiterungen unterstützen auch die benutzerdefinierte Authentifizierung über die AuthenticationServiceManager-Klasse.
 
-In diesem Whitepaper basiert auf der Beta-2-Version von Visual Studio 2008 und .NET Framework 3.5. In diesem Whitepaper wird vorausgesetzt, dass Sie mit Visual Studio 2008 Beta 2 nicht Visual Web Developer Express arbeiten werden und exemplarische Vorgehensweisen, gemäß der Benutzeroberfläche von Visual Studio bieten. Einige Codebeispiele möglicherweise nutzen Sie Projektvorlagen in Visual Web Developer Express nicht verfügbar.
+Dieses Whitepaper basiert auf der Beta 2-Version von Visual Studio 2008 und der .NET Framework 3,5. In diesem Whitepaper wird auch davon ausgegangen, dass Sie mit Visual Studio 2008 Beta 2, nicht mit Visual Web Developer Express arbeiten und Exemplarische Vorgehensweisen entsprechend der Benutzeroberfläche von Visual Studio bereitstellen. Einige Codebeispiele verwenden möglicherweise Projektvorlagen, die in Visual Web Developer Express nicht verfügbar sind.
 
 ## <a name="profiles-and-authentication"></a>*Profile und Authentifizierung*
 
-Die Microsoft ASP.NET-Profile und Authentifizierungsdienste von der ASP.NET-Formularauthentifizierung System bereitgestellt werden und sind Standardkomponenten von ASP.NET. ASP.NET AJAX Extensions bieten Zugriff auf Skripts mit diesen Diensten über Skriptproxys, über ein Modell relativ einfach, unter dem Sys.Services-Namespace, der AJAX-Clientbibliothek.
+Die Microsoft ASP.NET Profile und Authentifizierungsdienste werden vom ASP.net Forms Authentication System bereitgestellt und sind Standardkomponenten von ASP.net. Die ASP.NET-AJAX-Erweiterungen bieten Skript Zugriff auf diese Dienste über Skript Proxys über ein relativ einfaches Modell im sys. Services-Namespace der Client AJAX-Bibliothek.
 
-Der Authentifizierungsdienst ermöglicht Benutzern, Anmeldeinformationen anzugeben, um ein Authentifizierungscookie zu erhalten, und ist der Gatewaydienst benutzerdefinierten Profilen können, die von ASP.NET bereitgestellt. Verwenden des Authentifizierungsdiensts ASP.NET AJAX ist bei der standardmäßigen ASP.NET-Formularauthentifizierung kompatibel, sodass es sich bei Anwendungen, die derzeit unter Verwendung der Formularauthentifizierung (z. B. steuern, mit der Anmeldung) nicht umbrochen wird durch ein Upgrade auf die AJAX-Dienst-Authentifizierung.
+Der Authentifizierungsdienst ermöglicht es Benutzern, Anmelde Informationen bereitzustellen, um ein Authentifizierungs Cookie zu erhalten, und ist der Gatewaydienst, mit dem benutzerdefinierte Benutzerprofile von ASP.NET bereitgestellt werden können. Die Verwendung des ASP.NET AJAX-Authentifizierungs diensdienstanbieter ist kompatibel mit der standardmäßigen ASP.NET-Formular Authentifizierung, sodass Anwendungen, die derzeit die Formular Authentifizierung verwenden (z. b. mit dem Anmelde Steuerelement), nicht durch ein Upgrade auf den AJAX-Authentifizierungsdienst
 
-Der Profil-Dienst ermöglicht die automatische Integration und die Speicherung von Benutzerdaten, die basierend auf der Mitgliedschaft, gemäß Bereitstellung durch den Authentifizierungsdienst. Die gespeicherten Daten werden durch die Datei "Web.config" angegeben, und der profilerstellung Dienstanbieter behandeln, die datenverwaltung. Wie bei den Authentifizierungsdienst, ist der AJAX-Profildienst kompatibel mit dem standardmäßigen ASP.NET Profile-Dienst, sodass Seiten, die derzeit-spezifische Funktionen des ASP.NET Profile-Diensts nicht unterteilt werden sollte, durch die AJAX-Unterstützung.
+Der Profil Dienst ermöglicht die automatische Integration und Speicherung von Benutzerdaten basierend auf der Mitgliedschaft, die vom Authentifizierungsdienst bereitgestellt wird. Die gespeicherten Daten werden durch die Datei "Web. config" angegeben, und die verschiedenen Profilerstellungs-Dienstanbieter verarbeiten die Datenverwaltung. Wie beim Authentifizierungsdienst ist der AJAX-Profil Dienst mit dem standardmäßigen ASP.NET-Profil Dienst kompatibel, sodass Seiten, die Funktionen des ASP.NET-Profil Dienstanbieter enthalten, nicht durch Einschließen von AJAX-Unterstützung beschädigt werden sollten.
 
-Integrieren die Authentifizierung in ASP.NET und Profilerstellung von Diensten selbst in eine Anwendung ist nicht im Rahmen dieses Whitepapers. Weitere Informationen zu diesem Thema finden Sie unter der MSDN-Bibliothek verweisen auf Artikel Verwalten von Benutzern durch Mitgliedschaft auf [ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET enthält auch ein Hilfsprogramm zum automatisch Mitgliedschaft bei einer SQL-Server einrichten, die der Dienstanbieter des Standard-Authentifizierung für die ASP.NET-Mitgliedschaft ist. Weitere Informationen finden Sie im Artikel ASP.NET SQL Server-Registrierungstool (Aspnet\_regsql.exe) am [ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
+Das Einbinden der ASP.net-Authentifizierungs-und Profil Erstellungs Dienste in eine Anwendung ist nicht in diesem Whitepaper enthalten. Weitere Informationen zu diesem Thema finden Sie im MSDN Library-Referenz Artikel Verwalten von Benutzern mithilfe der Mitgliedschaft in [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET umfasst auch ein Dienstprogramm zum automatischen Einrichten der Mitgliedschaft mit einem SQL Server, bei dem es sich um den Standard Authentifizierungs Dienstanbieter für die ASP.NET-Mitgliedschaft handelt. Weitere Informationen finden Sie im Artikel ASP.NET SQL Server Registration Tool (ASPNET\_RegSql. exe) unter [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
-## <a name="using-the-aspnet-ajax-authentication-service"></a>*Verwenden des Authentifizierungsdiensts für ASP.NET AJAX*
+## <a name="using-the-aspnet-ajax-authentication-service"></a>*Verwenden des ASP.NET AJAX-Authentifizierungs Dienstanbieter*
 
-Der Authentifizierung in ASP.NET AJAX-Dienst muss in der Datei "Web.config" aktiviert werden:
+Der ASP.NET AJAX-Authentifizierungsdienst muss in der Datei "Web. config" aktiviert sein:
 
 [!code-xml[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample1.xml)]
 
-Der Authentifizierungsdienst erfordert ASP.NET-Formularauthentifizierung aktiviert werden und Cookies im Browser Clients aktiviert werden (ein Skript kann keine Sitzung ohne Cookies aktivieren, da für Sitzungen ohne Cookies URL-Parameter erforderlich ist).
+Der Authentifizierungsdienst erfordert, dass die ASP.NET-Formular Authentifizierung aktiviert ist, und erfordert, dass Cookies auf dem Client Browser aktiviert werden (ein Skript kann keine cookielose Sitzung aktivieren, da cookielose Sitzungen URL-Parameter erfordern).
 
-Sobald die AJAX-Dienst-Authentifizierung aktiviert und konfiguriert ist, kann Clientskript sofort die Sys.Services.AuthenticationService-Objekts nutzen. In erster Linie dem Clientskript nutzen sollten die `login` Methode und `isLoggedIn` Eigenschaft. Mehrere Eigenschaften vorhanden sind, um Standardwerte für die der Login-Methode bereitzustellen, die eine große Anzahl von Parametern annehmen kann.
+Nachdem der AJAX-Authentifizierungsdienst aktiviert und konfiguriert wurde, kann das Client Skript das sys. Services. AuthenticationService-Objekt sofort nutzen. Vor allem möchte das Client Skript die `login`-Methode und `isLoggedIn`-Eigenschaft nutzen. Es gibt mehrere Eigenschaften, um Standardwerte für die Anmelde Methode bereitzustellen, die eine große Anzahl von Parametern annehmen kann.
 
-*Sys.Services.AuthenticationService-Elemente*
+*Sys. Services. AuthenticationService-Member*
 
-*Login-Methode:*
+*Anmelde Methode:*
 
-Die Login()-Methode startet eine Anforderung an die Anmeldeinformationen des Benutzers zu authentifizieren. Diese Methode ist asynchron und Ausführung nicht blockiert.
+Mit der Login ()-Methode wird eine Anforderung zum Authentifizieren der Anmelde Informationen des Benutzers gestartet. Diese Methode ist asynchron und blockiert nicht die Ausführung.
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| userName | Erforderlich. Die zu authentifizierende Benutzername. |
-| password | Optional (Standardwert ist null). Das Kennwort des Benutzers. |
-| isPersistent | Optional (standardmäßig "false"). Gibt an, ob Cookie für die Authentifizierung des Benutzers über Sitzungen hinweg beibehalten werden sollen. False gibt an, wird der Benutzer abmelden, wenn der Browser geschlossen wird oder die Sitzung abläuft. |
-| redirectUrl | Optional (Standardwert ist null). Die URL, an den Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter Null oder eine leere Zeichenfolge ist, tritt keine Umleitung. |
-| customInfo | Optional (Standardwert ist null). Dieser Parameter wird derzeit nicht verwendet und ist für die zukünftige Verwendung reserviert. |
-| loginCompletedCallback | Optional (Standardwert ist null). Die Funktion, die aufgerufen werden, wenn die Anmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die DefaultLoginCompleted-Eigenschaft. |
-| failedCallback | Optional (Standardwert ist null). Die Funktion aufrufen, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die DefaultFailedCallback-Eigenschaft. |
-| userContext | Optional (Standardwert ist null). Benutzerdefinierte Kontextdaten, die an die Rückruffunktionen übergeben werden sollen. |
+| userName | Erforderlich Der zu authentifizier Ende Benutzername. |
+| -Kennwort | Optional (standardmäßig NULL). Das Kennwort des Benutzers. |
+| isPersistent | Optional (Standardwert: false). Gibt an, ob das Authentifizierungs Cookie des Benutzers Sitzungs übergreifend beibehalten werden soll. False gibt an, dass der Benutzer sich abmeldet, wenn der Browser geschlossen wird oder die Sitzung abläuft. |
+| Umleitungs | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
+| customInfo | Optional (standardmäßig NULL). Dieser Parameter wird derzeit nicht verwendet und ist für die zukünftige Verwendung reserviert. |
+| logincompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultloginabgeschlossene-Eigenschaft. |
+| failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die defaultFailedCallback-Eigenschaft. |
+| userContext | Optional (standardmäßig NULL). Benutzerdefinierte Benutzer Kontext Daten, die an die Rückruf Funktionen übermittelt werden sollen. |
 
 *Rückgabewert:*
 
-Diese Funktion umfasst keinen Wert zurückgegeben. Es gibt jedoch eine Reihe von Verhaltensweisen nach Abschluss eines Aufrufs dieser Funktion enthalten:
+Diese Funktion enthält keinen Rückgabewert. Beim Abschluss eines Aufrufes der Funktion werden jedoch einige Verhaltensweisen berücksichtigt:
 
-- Die aktuelle Seite wird aktualisiert werden oder geändert werden, wenn die `redirectUrl` Parameter war weder Null noch eine leere Zeichenfolge.
-- Jedoch, wenn der Parameter Null oder eine leere Zeichenfolge ist, wurde die `loginCompletedCallback` -Parameter oder `defaultLoginCompletedCallback` -Eigenschaft aufgerufen wird.
-- Wenn der Aufruf an den Webdienst ein Fehler auftritt, die `failedCallback` Parameter `defaultFailedCallback` -Eigenschaft aufgerufen wird.
+- Die aktuelle Seite wird entweder aktualisiert oder geändert, wenn der `redirectUrl`-Parameter weder NULL noch eine leere Zeichenfolge ist.
+- Wenn der-Parameter jedoch NULL oder eine leere Zeichenfolge ist, wird der `loginCompletedCallback`-Parameter oder `defaultLoginCompletedCallback`-Eigenschaft aufgerufen.
+- Wenn der Aufruf des Webdiensts fehlschlägt, wird der `failedCallback`-Parameter der `defaultFailedCallback`-Eigenschaft aufgerufen.
 
-*Logout-Methode:*
+*Abmelde-Methode:*
 
-Die logout()-Methode entfernt das Cookie für die Anmeldeinformationen und meldet den aktuellen Benutzer aus der Webanwendung.
+Die Logout ()-Methode entfernt das Cookie für Anmelde Informationen und meldet den aktuellen Benutzer aus der Webanwendung ab.
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| redirectUrl | Optional (Standardwert ist null). Die URL, an den Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter Null oder eine leere Zeichenfolge ist, tritt keine Umleitung. |
-| logoutCompletedCallback | Optional (Standardwert ist null). Die Funktion, die aufgerufen werden, wenn die Abmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die DefaultLogoutCompleted-Eigenschaft. |
-| failedCallback | Optional (Standardwert ist null). Die Funktion aufrufen, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die DefaultFailedCallback-Eigenschaft. |
-| userContext | Optional (Standardwert ist null). Benutzerdefinierte Kontextdaten, die an die Rückruffunktionen übergeben werden sollen. |
+| Umleitungs | Optional (standardmäßig NULL). Die URL, an die der Browser nach erfolgreicher Authentifizierung umgeleitet werden soll. Wenn dieser Parameter NULL oder eine leere Zeichenfolge ist, erfolgt keine Umleitung. |
+| logoutcompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Abmeldung erfolgreich abgeschlossen wurde. Wenn angegeben, überschreibt dieser Parameter die defaultlogoutabgeschlossene-Eigenschaft. |
+| failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn die Anmeldung fehlgeschlagen ist. Wenn angegeben, überschreibt dieser Parameter die defaultFailedCallback-Eigenschaft. |
+| userContext | Optional (standardmäßig NULL). Benutzerdefinierte Benutzer Kontext Daten, die an die Rückruf Funktionen übermittelt werden sollen. |
 
 *Rückgabewert:*
 
-Diese Funktion umfasst keinen Wert zurückgegeben. Es gibt jedoch eine Reihe von Verhaltensweisen nach Abschluss eines Aufrufs dieser Funktion enthalten:
+Diese Funktion enthält keinen Rückgabewert. Beim Abschluss eines Aufrufes der Funktion werden jedoch einige Verhaltensweisen berücksichtigt:
 
-- Die aktuelle Seite wird aktualisiert werden oder geändert werden, wenn die `redirectUrl` Parameter war weder Null noch eine leere Zeichenfolge.
-- Jedoch, wenn der Parameter Null oder eine leere Zeichenfolge ist, wurde die `logoutCompletedCallback` -Parameter oder `defaultLogoutCompletedCallback` -Eigenschaft aufgerufen wird.
-- Wenn der Aufruf an den Webdienst ein Fehler auftritt, die `failedCallback` Parameter `defaultFailedCallback` -Eigenschaft aufgerufen wird.
+- Die aktuelle Seite wird entweder aktualisiert oder geändert, wenn der `redirectUrl`-Parameter weder NULL noch eine leere Zeichenfolge ist.
+- Wenn der-Parameter jedoch NULL oder eine leere Zeichenfolge ist, wird der `logoutCompletedCallback`-Parameter oder `defaultLogoutCompletedCallback`-Eigenschaft aufgerufen.
+- Wenn der Aufruf des Webdiensts fehlschlägt, wird der `failedCallback`-Parameter der `defaultFailedCallback`-Eigenschaft aufgerufen.
 
-*DefaultFailedCallback-Eigenschaft ("Get", "Set"):*
+*defaultFailedCallback-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die aufgerufen werden soll, wenn ein Fehler für die Kommunikation mit dem Webdienst auftritt. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die aufgerufen werden soll, wenn ein Fehler bei der Kommunikation mit dem Webdienst auftritt. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample2.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
 | error | Gibt die Fehlerinformationen an. |
-| userContext | Gibt an, die Benutzerkontextinformationen, die bereitgestellt werden, wenn die an- bzw. Abmeldung-Funktion aufgerufen wurde. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-oder Abmelde-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*DefaultLoginCompletedCallback-Eigenschaft ("Get", "Set"):*
+*defaultLoginCompletedCallback-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die aufgerufen werden soll, bei der Anmeldung Webdienstaufruf abgeschlossen ist. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die aufgerufen werden soll, wenn der Anmeldungs-Webdienst Aufruf abgeschlossen wurde. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample3.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| validCredentials | Gibt an, ob der Benutzer gültige Anmeldeinformationen angegeben. `true` Wenn der Benutzer erfolgreich angemeldet hat; andernfalls `false`. |
-| userContext | Gibt an, die Benutzerkontextinformationen, die bereitgestellt werden, wenn die "Login"-Funktion aufgerufen wurde. |
+| Validierungs Anmelde Informationen | Gibt an, ob der Benutzer gültige Anmelde Informationen angegeben hat. `true`, wenn sich der Benutzer erfolgreich angemeldet hat. Andernfalls `false`. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*DefaultLogoutCompletedCallback-Eigenschaft ("Get", "Set"):*
+*defaultLogoutCompletedCallback-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die aufgerufen werden soll, bei der Abmeldung Webdienstaufruf abgeschlossen ist. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die aufgerufen werden soll, wenn der Abmelde-Webdienst Aufruf abgeschlossen wurde. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample4.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| result | Dieser Parameter ist immer, `null`; es ist für die zukünftige Verwendung reserviert. |
-| userContext | Gibt an, die Benutzerkontextinformationen, die bereitgestellt werden, wenn die "Login"-Funktion aufgerufen wurde. |
+| Ergebnis | Dieser Parameter wird immer `null`. Es ist für die zukünftige Verwendung reserviert. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Login-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*IsLoggedIn-Eigenschaft (Get):*
+*isLoggedIn-Eigenschaft (Get):*
 
-Diese Eigenschaft ruft den aktuellen Authentifizierungsstatus des Benutzers ab. Es wird durch das ScriptManager-Objekt während einer Seitenanforderung festgelegt.
+Diese Eigenschaft ruft den aktuellen Authentifizierungs Zustand des Benutzers ab. Sie wird während einer Seiten Anforderung vom ScriptManager-Objekt festgelegt.
 
-Diese Eigenschaft gibt `true` , wenn der Benutzer zurzeit andernfalls angemeldet ist, gibt Sie zurück `false`.
+Diese Eigenschaft gibt `true` zurück, wenn der Benutzer zurzeit angemeldet ist. Andernfalls wird `false`zurückgegeben.
 
-*Path-Eigenschaft ("Get", "Set"):*
+*Path-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft bestimmt programmgesteuert den Speicherort des Authentifizierungsdiensts Web. Es kann verwendet werden, um den Standardanbieter für die Authentifizierung als auch eine außer Kraft setzen deklarativ festgelegt werden, in der Path-Eigenschaft des ScriptManager-Steuerelements AuthenticationService untergeordneten Knotens (Weitere Informationen finden Sie unter den einen benutzerdefinierten Dienst Authentifizierungsanbieter In diesem Thema weiter unten).
+Diese Eigenschaft bestimmt den Speicherort des authentifizierungsweb Diensts Programm gesteuert. Sie kann verwendet werden, um den Standard Authentifizierungs Anbieter und einen Satz deklarativ in der Path-Eigenschaft des untergeordneten AuthenticationService-Knotens des ScriptManager-Steuer Elements zu überschreiben. (Weitere Informationen finden Sie unter Verwenden eines benutzerdefinierten Authentifizierungs Dienstanbieters. weiter unten).
 
-Beachten Sie, dass der Speicherort des Authentifizierungsdiensts standardmäßig nicht ändert. Sie können allerdings ASP.NET AJAX an den Speicherort eines Webdiensts, der die gleiche Klassenschnittstelle, wie ASP.NET AJAX-Proxys für die Authentifizierung Dienst bereitstellt.
+Beachten Sie, dass sich der Speicherort des Standard Authentifizierungs Dienes nicht ändert. Allerdings können Sie mit ASP.NET AJAX den Speicherort eines Webdiensts angeben, der dieselbe Klassen Schnittstelle wie der ASP.NET AJAX-Authentifizierungsdienst Proxy bereitstellt.
 
-Beachten Sie, dass diese Eigenschaft nicht auf einen Wert festgelegt werden soll, die die skriptanforderung aus dem aktuellen Standort weiterleitet. Da die aktuelle Anwendung keine Anmeldeinformationen für die Authentifizierung erhalten würde, wäre es nutzlos; Darüber hinaus die zugrunde liegende Technologie AJAX siteübergreifenden Anforderungen sollte nicht gesendet, und generiert möglicherweise im Clientbrowser eine Sicherheitsausnahme ausgelöst.
+Beachten Sie auch, dass diese Eigenschaft nicht auf einen Wert festgelegt werden sollte, der die Skript Anforderung von der aktuellen Website ableitet. Da die aktuelle Anwendung nicht die Authentifizierungs Anmelde Informationen erhält, wäre sie nutzlos. Außerdem sollte die Technologie, die dem AJAX zugrunde liegt, keine standortübergreifenden Anforderungen bereitstellen und kann im Client Browser eine Sicherheits Ausnahme generieren.
 
-Diese Eigenschaft ist eine `String` Objekt, das den Pfad an den Webdienst für die Authentifizierung darstellt.
+Diese Eigenschaft ist ein `String` Objekt, das den Pfad zum authentifizierungsweb Dienst darstellt.
 
-*Timeout-Eigenschaft ("Get", "Set"):*
+*Timeout-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft bestimmt, dass die Dauer für den Authentifizierungsdienst zu warten, bevor die Annahme der Anforderung der Anmeldung ein Fehler aufgetreten ist. Wenn es sich bei Ablauf des Timeouts beim Warten auf eines Aufrufs zum Abschließen der Anforderungsfehler Rückruf wird aufgerufen, und der Aufruf wird nicht abgeschlossen werden.
+Diese Eigenschaft bestimmt die Zeitspanne, die auf den Authentifizierungsdienst gewartet werden soll, bevor angenommen wird, dass die Anmelde Anforderung fehlgeschlagen ist. Wenn das Timeout abläuft, während auf den Abschluss eines Aufrufs gewartet wird, wird der Rückruf für Anforderungs Fehler aufgerufen, und der Aufruf wird nicht beendet.
 
-Diese Eigenschaft ist eine `Number` Objekt, das die Anzahl der Millisekunden warten, bis Ergebnisse vom Authentifizierungsdienst darstellt.
+Diese Eigenschaft ist ein `Number` Objekt, das die Anzahl der Millisekunden darstellt, die auf Ergebnisse vom Authentifizierungsdienst gewartet werden soll.
 
-*Codebeispiel: Anmeldung bei den Authentifizierungsdienst*
+*Code Beispiel: Anmelden beim Authentifizierungsdienst*
 
-Das folgende Markup ist ein Beispiel ASP.NET mit einem einfachen Skriptaufruf die Anmelde- und Abmeldeereignisse Methoden der AuthenticationService-Klasse.
+Das folgende Markup ist eine Beispiel-ASP.NET-Seite mit einem einfachen Skript Aufruf an die Anmelde-und Abmelde Methoden der AuthenticationService-Klasse.
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample5.aspx)]
 
-## <a name="accessing-aspnet-profiling-data-via-ajax"></a>Zugreifen auf Daten über AJAX-ASP.NET-PROFILERSTELLUNG
+## <a name="accessing-aspnet-profiling-data-via-ajax"></a>Zugreifen auf ASP.NET-Profil Erstellungs Daten über AJAX
 
-Die ASP.NET-PROFILERSTELLUNG-Dienst ist auch über ASP.NET AJAX Extensions verfügbar gemacht. Da der Profilerstellungsdienst ASP.NET eine umfangreiche, differenzierte API nach dem Speichern und Abrufen von Benutzerdaten bietet, kann dies eine hervorragende Produktivitätstool sein.
+Der ASP.NET-Profil Erstellungs Dienst wird auch über die ASP.NET AJAX-Erweiterungen verfügbar gemacht. Da der ASP.NET-Profil Erstellungs Dienst eine umfangreiche, differenzierte API bereitstellt, mit der Benutzerdaten gespeichert und abgerufen werden können, kann dies ein ausgezeichnetes Produktivitäts Tool sein.
 
-Der Profildienst muss in "Web.config" aktiviert sein. Es ist nicht standardmäßig. Zu diesem Zweck sicher, dass die `profileService` untergeordnetes Element wurde aktiviert = "true" in angegebene Datei "Web.config", und Sie angegeben haben, welche Eigenschaften gelesen oder wie folgt geschrieben werden können:
+Der Profil Dienst muss in der Datei "Web. config" aktiviert sein. Dies ist nicht standardmäßig. Stellen Sie zu diesem Zweck sicher, dass das untergeordnete `profileService`-Element in der Datei "Web. config" aktiviert = true ist, und dass Sie festgelegt haben, welche Eigenschaften wie folgt gelesen oder geschrieben werden können:
 
 [!code-xml[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample6.xml)]
 
-Der Profildienst muss auch konfiguriert werden. Konfiguration des profilerstellungs-Diensts nicht im Rahmen dieses Whitepapers ist, zwar lohnt es sich, beachten Sie, dass Gruppen gemäß Konfiguration der profileinstellungen als untergeordnete Eigenschaften den Namen zugegriffen werden kann. Z. B. mit dem folgenden Profilabschnitt, die angegeben wird:
+Der Profil Dienst muss ebenfalls konfiguriert werden. Obwohl die Konfiguration des Profil Erstellungs Dienstanbieter außerhalb des Umfangs dieses Whitepaper liegt, ist es lohnenswert zu beachten, dass die in den Profil Konfigurationseinstellungen definierten Gruppen als untergeordnete Eigenschaften des Gruppennamens zugänglich sind. Beispielsweise mit folgendem Profilabschnitt angegeben:
 
 [!code-xml[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample7.xml)]
 
-Clientskript wäre auf Name, Address.Line1, Address.Line2, Address.City, Address.State, Address.Zip und BackgroundColor als Eigenschaften das Feld "Properties" der ProfileService-Klasse zugreifen.
+Das Client Skript kann auf "Name", "Address. Zeile 1", "Address. Zeile 2", "Address. City", "Address. State", "Address. zip" und "BackgroundColor" als Eigenschaften des Felds "Properties" der ProfileService-Klasse zugreifen.
 
-Sobald die Profilerstellung für AJAX-Dienst konfiguriert ist, wird es jedoch sofort in Seiten verfügbar sein. Sie müssen jedoch einmal vor der Verwendung geladen werden.
+Nachdem der AJAX-Profil Erstellungs Dienst konfiguriert wurde, ist er sofort auf den Seiten verfügbar. Er muss jedoch einmal vor der Verwendung geladen werden.
 
-*Sys.Services.ProfileService Mitglieder*
+*Sys. Services. ProfileService-Member*
 
-*Feld "Properties":*
+*Eigenschaften Feld:*
 
-Das Feld "Properties" gibt alle konfigurierten Profildaten als untergeordneten Eigenschaften, die mit Punkt-Operator-Namenskonvention verwiesen werden können. Eigenschaften, die untergeordnete Elemente von Eigenschaftsgruppen werden als GroupName.PropertyName bezeichnet. In der oben aufgeführten Beispiel-Profilkonfiguration könnten Sie zum Abrufen des Status des Benutzers, den folgenden Bezeichner verwenden:
+Das Feldeigenschaften macht alle konfigurierten Profildaten als untergeordnete Eigenschaften verfügbar, auf die in der "dot-Operator-Name"-Konvention verwiesen werden kann. Eigenschaften, die untergeordnete Elemente von Eigenschaften Gruppen sind, werden als GroupName. PropertyName bezeichnet. In der oben dargestellten Beispiel Profil Konfiguration können Sie den folgenden Bezeichner verwenden, um den Status des Benutzers zu erhalten:
 
 [!code-csharp[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample8.cs)]
 
 *Load-Methode:*
 
-Lädt eine Liste mit ausgewählten oder allen Eigenschaften vom Server an.
+Lädt eine ausgewählte Liste oder alle Eigenschaften vom Server.
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| propertyNames | Optional (Standardwert ist null). Die Eigenschaften, die vom Server geladen werden. |
-| loadCompletedCallback | Optional (Standardwert ist null). Die Funktion, die aufgerufen werden, wenn der Ladevorgang abgeschlossen ist. |
-| failedCallback | Optional (Standardwert ist null). Die Funktion aufrufen, wenn ein Fehler auftritt. |
-| userContext | Optional (Standardwert ist null). Die Kontextinformationen, die an die Callback-Funktion übergeben werden. |
+| PropertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die vom Server geladen werden sollen. |
+| loadcompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Ladevorgang abgeschlossen ist. |
+| failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn ein Fehler auftritt. |
+| userContext | Optional (standardmäßig NULL). Kontextinformationen, die an die Rückruffunktion übermittelt werden sollen. |
 
-Die Load-Funktion muss keinen Wert zurückgegeben. Wenn der Aufruf erfolgreich war, sie rufen Sie entweder wird die `loadCompletedCallback` Parameter oder `defaultLoadCompletedCallback` Eigenschaft. Wenn der Aufruf fehlgeschlagen ist oder das Timeout ist, entweder abgelaufen die `failedCallback` Parameter oder `defaultFailedCallback` Eigenschaft aufgerufen wird.
+Die Load-Funktion weist keinen Rückgabewert auf. Wenn der-Befehl erfolgreich abgeschlossen wurde, wird entweder der `loadCompletedCallback`-Parameter oder `defaultLoadCompletedCallback`-Eigenschaft aufgerufen. Wenn der Aufruf fehlgeschlagen ist oder das Timeout abgelaufen ist, wird entweder der `failedCallback` Parameter oder `defaultFailedCallback` Eigenschaft aufgerufen.
 
-Wenn die `propertyNames` Parameter nicht angegeben wird, werden alle lesen konfigurierte Eigenschaften vom Server abgerufen.
+Wenn der `propertyNames`-Parameter nicht angegeben wird, werden alle Lese konfigurierten Eigenschaften vom Server abgerufen.
 
 *Save-Methode:*
 
-Die Save() speichert die angegebenen Eigenschaftenliste (oder alle Eigenschaften), in das Profil des Benutzers ASP.NET.
+Die Save ()-Methode speichert die angegebene Eigenschaften Liste (oder alle Eigenschaften) im ASP.NET Profil des Benutzers.
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| propertyNames | Optional (Standardwert ist null). Die Eigenschaften, die auf dem Server gespeichert werden. |
-| saveCompletedCallback | Optional (Standardwert ist null). Die Funktion zum Aufrufen der beim Speichern abgeschlossen wurde. |
-| failedCallback | Optional (Standardwert ist null). Die Funktion aufrufen, wenn ein Fehler auftritt. |
-| userContext | Optional (Standardwert ist null). Die Kontextinformationen, die an die Callback-Funktion übergeben werden. |
+| PropertyNames | Optional (standardmäßig NULL). Die Eigenschaften, die auf dem Server gespeichert werden sollen. |
+| savecompletedcallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen wird, wenn der Speichervorgang abgeschlossen ist. |
+| failedCallback | Optional (standardmäßig NULL). Die Funktion, die aufgerufen werden soll, wenn ein Fehler auftritt. |
+| userContext | Optional (standardmäßig NULL). Kontextinformationen, die an die Rückruffunktion übermittelt werden sollen. |
 
-Der Speichervorgang Funktion hat keinen Rückgabewert. Wenn der Aufruf erfolgreich ausgeführt wird, ruft sie entweder die `saveCompletedCallback` Parameter oder `defaultSaveCompletedCallback` Eigenschaft. Wenn der Aufruf fehlgeschlagen ist oder das Timeout ist, entweder abgelaufen die `failedCallback` oder `defaultFailedCallback` Eigenschaft aufgerufen wird.
+Die Funktion "Save" weist keinen Rückgabewert auf. Wenn der-Vorgang erfolgreich abgeschlossen wird, wird entweder der `saveCompletedCallback`-Parameter oder `defaultSaveCompletedCallback`-Eigenschaft aufgerufen. Wenn der Aufruf fehlgeschlagen ist oder das Timeout abgelaufen ist, wird entweder die Eigenschaft `failedCallback` oder `defaultFailedCallback` aufgerufen.
 
-Wenn die `propertyNames` Parameter null ist, alle Profileigenschaften werden an den Server gesendet werden und der Server entscheidet, welche Eigenschaften gespeichert werden können und welche nicht.
+Wenn der `propertyNames`-Parameter NULL ist, werden alle Profil Eigenschaften an den Server gesendet, und der Server entscheidet, welche Eigenschaften gespeichert werden können und welche nicht.
 
-*DefaultFailedCallback-Eigenschaft ("Get", "Set"):*
+*defaultFailedCallback-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die aufgerufen werden soll, wenn ein Fehler für die Kommunikation mit dem Webdienst auftritt. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die aufgerufen werden soll, wenn ein Fehler bei der Kommunikation mit dem Webdienst auftritt. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample9.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
 | Fehler | Gibt die Fehlerinformationen an. |
-| userContext | Gibt an, die Benutzerkontextinformationen bereitgestellt, wenn das Laden oder Speichern der Funktion aufgerufen wurde. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*DefaultSaveCompleted-Eigenschaft ("Get", "Set"):*
+*defaultsaveabgeschlossene-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die nach dem Abschluss Speichern der Profildaten des Benutzers aufgerufen werden soll. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die nach dem Abschluss der Speicherung der Profildaten des Benutzers aufgerufen werden soll. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample10.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| numPropsSaved | Gibt die Anzahl der Eigenschaften, die gespeichert wurden. |
-| userContext | Gibt an, die Benutzerkontextinformationen bereitgestellt, wenn das Laden oder Speichern der Funktion aufgerufen wurde. |
+| numpropssaved | Gibt die Anzahl der gespeicherten Eigenschaften an. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*DefaultLoadCompleted-Eigenschaft ("Get", "Set"):*
+*defaultloadabgeschlossene-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft gibt eine Funktion, die nach dem Abschluss des Ladevorgangs von Profildaten des Benutzers aufgerufen werden soll. Sie sollten einen Delegaten (oder -Funktionsreferenz) erhalten.
+Diese Eigenschaft gibt eine Funktion an, die nach dem Abschluss des Ladens der Profildaten des Benutzers aufgerufen werden soll. Es sollte einen Delegaten (oder Funktions Verweis) erhalten.
 
-Der von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur besitzen:
+Die von dieser Eigenschaft angegebene Funktionsreferenz sollte die folgende Signatur aufweisen:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample11.js)]
 
-*Parameter:*
+*Metern*
 
-| **Name des Parameters** | **Bedeutung** |
+| **Parameter Name** | **D.h.** |
 | --- | --- |
-| numPropsLoaded | Gibt die Anzahl von Eigenschaften geladen. |
-| userContext | Gibt an, die Benutzerkontextinformationen bereitgestellt, wenn das Laden oder Speichern der Funktion aufgerufen wurde. |
+| numpropsloaded | Gibt die Anzahl der geladenen Eigenschaften an. |
+| userContext | Gibt die Benutzer Kontextinformationen an, die beim Aufrufen der Load-oder Save-Funktion bereitgestellt wurden. |
 | methodName | Der Name der aufrufenden Methode. |
 
-*Path-Eigenschaft ("Get", "Set"):*
+*Path-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft bestimmt programmgesteuert den Speicherort des Webdiensts Profil. Sie können verwendet werden, um den Standardprofilanbieter für die Service als auch eine außer Kraft setzen deklarativ in der Path-Eigenschaft des ScriptManager-Steuerelements ProfileService untergeordneten Knoten festgelegt.
+Diese Eigenschaft bestimmt Programm gesteuert den Speicherort des profilweb Diensts. Sie kann verwendet werden, um den Standard-Profil Dienstanbieter und einen Satz deklarativ in der Path-Eigenschaft des untergeordneten profilleservice-Steuer Elements des ScriptManager-Steuer Elements zu überschreiben.
 
-Beachten Sie, dass der Speicherort der Standardprofildienst nicht ändert. Sie können allerdings ASP.NET AJAX an den Speicherort eines Webdiensts, der die gleiche Klassenschnittstelle, wie ASP.NET AJAX-Proxys für die Authentifizierung Dienst bereitstellt.
+Beachten Sie, dass sich der Speicherort des Standardprofil Dienes nicht ändert. Allerdings können Sie mit ASP.NET AJAX den Speicherort eines Webdiensts angeben, der dieselbe Klassen Schnittstelle wie der ASP.NET AJAX-Authentifizierungsdienst Proxy bereitstellt.
 
-Beachten Sie, dass diese Eigenschaft nicht auf einen Wert festgelegt werden soll, die die skriptanforderung aus dem aktuellen Standort weiterleitet. Die zugrunde liegende Technologie AJAX siteübergreifenden Anforderungen sollte nicht gesendet, und generiert möglicherweise im Clientbrowser eine Sicherheitsausnahme ausgelöst.
+Beachten Sie auch, dass diese Eigenschaft nicht auf einen Wert festgelegt werden sollte, der die Skript Anforderung von der aktuellen Website ableitet. Die Technologie, die dem AJAX zugrunde liegt, sollte keine standortübergreifenden Anforderungen bereitstellen und im Client Browser eine Sicherheits Ausnahme generieren.
 
-Diese Eigenschaft ist eine `String` Objekt, das den Pfad an den Profil-Webdienst darstellt.
+Diese Eigenschaft ist ein `String` Objekt, das den Pfad zum profilweb Dienst darstellt.
 
-*Timeout-Eigenschaft ("Get", "Set"):*
+*Timeout-Eigenschaft (Get, Set):*
 
-Diese Eigenschaft bestimmt, dass die Zeitspanne bis zum für den Profildienst vorausgesetzt, die Last oder speichern die Anforderung fehlgeschlagen ist. Wenn es sich bei Ablauf des Timeouts beim Warten auf eines Aufrufs zum Abschließen der Anforderungsfehler Rückruf wird aufgerufen, und der Aufruf wird nicht abgeschlossen werden.
+Diese Eigenschaft bestimmt die Zeitspanne, die auf den Profil Dienst gewartet werden soll, bevor davon ausgegangen wird, dass die Lade-oder Speicher Anforderung fehlgeschlagen ist. Wenn das Timeout abläuft, während auf den Abschluss eines Aufrufs gewartet wird, wird der Rückruf für Anforderungs Fehler aufgerufen, und der Aufruf wird nicht beendet.
 
-Diese Eigenschaft ist eine `Number` Objekt, das die Anzahl der Millisekunden warten, bis Ergebnisse aus den Profildienst darstellt.
+Diese Eigenschaft ist ein `Number` Objekt, das die Anzahl der Millisekunden darstellt, die auf Ergebnisse vom Profil Dienst gewartet werden soll.
 
-*Codebeispiel: Laden von Profildaten beim Laden der Seite*
+*Code Beispiel: Laden von Profildaten beim Laden der Seite*
 
-Der folgende Code überprüft, ob ein Benutzer authentifiziert wurde, und wenn dies der Fall ist, lädt bevorzugte Hintergrundfarbe des Benutzers als der Seite.
+Im folgenden Code wird überprüft, ob ein Benutzer authentifiziert ist. wenn dies der Fall ist, wird die bevorzugte Hintergrundfarbe des Benutzers als der der Seite geladen.
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample12.js)]
 
-## <a name="using-a-custom-authentication-service-provider"></a>*Unter Verwendung eines Dienstanbieters für die benutzerdefinierte Authentifizierung*
+## <a name="using-a-custom-authentication-service-provider"></a>*Verwenden eines benutzerdefinierten Authentifizierungs Dienstanbieters*
 
-ASP.NET AJAX Extensions können Sie einen benutzerdefiniertes Skript-Dienstanbieter zu erstellen, indem Sie die Funktionalität über einen benutzerdefinierten Webdienst bereitstellen. Um verwendet werden, muss Ihr Webdienst verfügbar zwei Methoden, machen `Login` und `Logout`; diese Methoden müssen mit den gleichen Methodensignaturen, wie der Standard-Authentifizierung in ASP.NET AJAX-Webdienst angegeben werden.
+Die ASP.NET AJAX-Erweiterungen ermöglichen es Ihnen, einen benutzerdefinierten Skript Authentifizierungsdienst-Anbieter zu erstellen, indem Sie Ihre Funktionalität über einen benutzerdefinierten Webdienst verfügbar machen. Um verwendet werden zu können, muss der Webdienst zwei Methoden, `Login` und `Logout`verfügbar machen. Diese Methoden müssen mit denselben Methoden Signaturen wie der Standardweb Dienst für die ASP.NET-AJAX-Authentifizierung angegeben werden.
 
-Nachdem Sie den benutzerdefinierten Webserver-Dienst erstellt haben, müssen Sie den Pfad dahin, entweder deklarativ auf der Seite Geben Sie im Code programmgesteuert oder über das Clientskript.
+Nachdem Sie den benutzerdefinierten Webdienst erstellt haben, müssen Sie den Pfad zu ihm entweder deklarativ auf der Seite, Programm gesteuert im Code oder über das Client Skript angeben.
 
-*Den Pfad deklarativ festgelegt werden:*
+*So legen Sie den Pfad deklarativ fest:*
 
-Damit den Pfad deklarativ, schließen Sie das AuthenticationService untergeordnete Element des Objekts ScriptManager auf der ASP.NET-Seite:
+Um den Pfad deklarativ festzulegen, schließen Sie das untergeordnete AuthenticationService-Objekt des ScriptManager-Objekts auf der ASP.NET-Seite ein:
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample13.aspx)]
 
-*So legen den Pfad in Code:*
+*So legen Sie den Pfad im Code fest:*
 
-Um den Pfad programmgesteuert festzulegen, geben Sie den Pfad über die Instanz von Ihr Skript-Manager:
+Um den Pfad Programm gesteuert festzulegen, geben Sie den Pfad über die Instanz Ihres Skript-Managers an:
 
 [!code-csharp[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample14.cs)]
 
 *So legen Sie den Pfad im Skript fest:*
 
-Verwenden Sie zum programmgesteuerten Festlegen den Pfad im Skript die `path` -Eigenschaft der Klasse AuthenticationService:
+Um den Pfad Programm gesteuert im Skript festzulegen, verwenden Sie die `path`-Eigenschaft der AuthenticationService-Klasse:
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample15.js)]
 
-*Beispiel-Webdiensts für die benutzerdefinierte Authentifizierung*
+*Beispielweb Dienst für benutzerdefinierte Authentifizierung*
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample16.aspx)]
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-ASP.NET-Dienste – insbesondere die profilerstellung, Mitgliedschaft und Authentifizierung-Dienste – werden problemlos JavaScript im Browser Clients verfügbar gemacht. Dadurch können Entwickler ihren clientseitigen Code mit der Authentifizierungsmechanismus nahtlos integrieren, ohne je nach Steuerelementen wie z. B. UpdatePanels, die die Hauptarbeit überlassen. Profildaten können vom Client ebenfalls geschützt werden, durch die Verwendung von Web-Konfigurationseinstellungen; keine Daten standardmäßig verfügbar sind, und Entwickler müssen sich auf Profileigenschaften.
+ASP.NET Services (insbesondere die Profilerstellung, die Mitgliedschaft und die Authentifizierungsdienste) lassen sich problemlos im Client Browser für JavaScript verfügbar machen. Dies ermöglicht es Entwicklern, Ihren Client seitigen Code nahtlos in den Authentifizierungsmechanismus zu integrieren, ohne abhängig von Steuerelementen wie z. b. Update Panel, um die Arbeit zu erledigen. Profildaten können auch über den Client geschützt werden, indem Webkonfigurations Einstellungen genutzt werden. Standardmäßig sind keine Daten verfügbar, und Entwickler müssen sich für Profil Eigenschaften entscheiden.
 
-Darüber hinaus können Entwickler vereinfachte Web dienstimplementierungen mit entsprechenden Methodensignaturen erstellen, benutzerdefinierte Skript-Anbieter für diese systeminternen ASP.NET-Dienste erstellen. Unterstützung für diese Techniken vereinfacht die Entwicklung rich Client-Anwendungen und gleichzeitig den Entwicklern ein breites Spektrum an Flexibilität, bestimmte Anforderungen zu erfüllen.
+Außerdem können Entwickler benutzerdefinierte Skript Anbieter für diese intrinsischen ASP.NET-Dienste erstellen, indem Sie vereinfachte Webdienst Implementierungen mit äquivalenten Methoden Signaturen erstellen. Die Unterstützung dieser Techniken vereinfacht die Entwicklung von Rich Client-Anwendungen und bietet Entwicklern gleichzeitig eine große Bandbreite an Flexibilität, um bestimmte Anforderungen zu erfüllen.
 
-## <a name="bio"></a>*Bio*
+## <a name="bio"></a>*Basierten*
 
-Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
+Scott Cate arbeitet seit 1997 mit Microsoft-Webtechnologien und ist der Präsident von myKB.com ([www.myKB.com](http://www.myKB.com)), wo er sich darauf spezialisiert hat, ASP.NET basierte Anwendungen zu schreiben, die sich auf die Software Lösungen der Wissensdatenbank konzentrieren. Scott kann über [scott.cate@myKB.com](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com) per e-Mail kontaktiert werden.
 
 > [!div class="step-by-step"]
 > [Zurück](understanding-asp-net-ajax-updatepanel-triggers.md)

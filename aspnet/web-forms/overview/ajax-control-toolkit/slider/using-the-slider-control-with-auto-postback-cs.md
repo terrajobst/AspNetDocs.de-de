@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
-title: Verwenden das Schieberegler-Steuerelement mit automatischem Postback (c#) | Microsoft-Dokumentation
+title: Verwenden des Schieberegler-Steuer Elements mit automatischemC#Postback () | Microsoft-Dokumentation
 author: wenz
-description: Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können. Es ist möglich, stellen die Schieberegler Autopost...
+description: Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler wiederherzustellen...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2b1e7c2e62438876343987917ffc8f792c755186
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 785d62108667fddac42994344cde265e82aca8f4
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124635"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598396"
 ---
-# <a name="using-the-slider-control-with-auto-postback-c"></a>Verwenden das Schieberegler-Steuerelement mit automatischem Postback (c#)
+# <a name="using-the-slider-control-with-auto-postback-c"></a>Verwenden des Schieberegler-Steuer Elements mit automatischemC#Postback ()
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)
 
-> Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können. Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.
+> Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Das Schieberegler-Steuerelement im AJAX Control Toolkit stellt einen grafischen Schieberegler, der mit der Maus kontrolliert werden können. Es ist möglich, stellen Sie der Schieberegler Autopostback einmal dessen Wert sich ändert.
+Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 
 ## <a name="steps"></a>Schritte
 
-Um den Schieberegler automatisch postback auf eine Änderung vornehmen, benötigen beide Felder das Attribut `AutoPostBack="true"`: Das Textfeld, das den Schieberegler selbst werden soll, und das Textfeld, das den Schieberegler auf die Position enthält. Hier ist das erforderliche Markup für diese:
+Damit der Schieberegler bei einer Änderung automatisch Postback wird, benötigen beide Textfelder das-Attribut `AutoPostBack="true"`: das Textfeld, das zum Schieberegler wird, und das Textfeld, das die Position des Schiebereglers enthält. Dies ist das erforderliche Markup für dieses:
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample1.aspx)]
 
-Die `SliderExtender` Steuerelement von ASP.NET AJAX Control Toolkit weist die beiden Textfelder die Schieberegler-Funktionalität:
+Das `SliderExtender`-Steuerelement aus dem ASP.NET AJAX-Steuerelement-Toolkit weist den beiden Textfeldern die Schieberegler-Funktionalität zu:
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample2.aspx)]
 
-Zusätzliche Label-Element wird später verwendet werden, um die Benutzer eines Postbacks zu informieren:
+Ein zusätzliches Label-Element wird später verwendet, um den Benutzer über ein Postback zu informieren:
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample3.aspx)]
 
-Zum Schluss die `ScriptManager` Steuerelement von ASP.NET AJAX lädt die erforderliche JavaScript für das Steuerelement-Toolkit funktioniert:
+Zum Schluss lädt das `ScriptManager`-Steuerelement von ASP.NET AJAX das erforderliche JavaScript, damit das Steuerelement-Toolkit funktioniert:
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample4.aspx)]
 
-Nachdem Sie der Schieberegler wieder veröffentlicht; Dieses Ereignis kann abgefangen und eine Aktion ausgeführt werden, auf der Serverseite:
+Der Schieberegler wird jetzt zurück gepostet. auf der Serverseite kann dieses Ereignis abgefangen und befolgt werden:
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample5.aspx)]
 
-[![Verschieben des Schiebereglers wird einen Postback ausgelöst.](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
+[![Verschieben des Schiebereglers löst ein Postback aus.](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
 
-Verschieben des Schiebereglers einen Postback auslöst ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image3.png))
+Durch Verschieben des Schiebereglers wird ein Postback ausgelöst ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-slider-control-with-auto-postback-cs/_static/image3.png))
 
-[![Das Datum dieser Änderung wird anschließend in die Bezeichnung geschrieben.](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
+[![anschließend wird das Datum dieser Änderung in der Bezeichnung geschrieben.](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
 
-Anschließend wird das Datum der Änderung in die Bezeichnung geschrieben ([klicken Sie, um das Bild in voller Größe anzeigen](using-the-slider-control-with-auto-postback-cs/_static/image6.png))
+Anschließend wird das Datum dieser Änderung in der Bezeichnung geschrieben ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-slider-control-with-auto-postback-cs/_static/image6.png)).
 
 > [!div class="step-by-step"]
 > [Nächste](databinding-the-slider-control-cs.md)

@@ -1,179 +1,179 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: Automatisieren Sie alles (erstellen realer Cloud-Apps mit Azure) | Microsoft-Dokumentation
+title: Automatisieren Sie alles (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
+description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: fd78385e563b7204b29beb4180b7bc932266bdec
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d5c8190d0b0c91bf9e42f6ef03adc5b07a65359a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65119020"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74582893"
 ---
-# <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (erstellen realer Cloud-Apps mit Azure)
+# <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (entwickeln realer Cloud-apps mit Azure)
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
-[Download korrigieren Projekt](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Eine Einführung in das e-Book, finden Sie unter [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Eine Einführung in das e-Book finden Sie [im ersten Kapitel](introduction.md).
 
-Die ersten drei Muster, denen wir betrachten werde wenden nämlich für alle Software-Entwicklungsprojekt, sondern vor allem für Cloud-Projekte. Dieses Muster eignet sich zur Automatisierung von Aufgaben bei der Anwendungsentwicklung. Es ist ein wichtiges Thema, da der manuelle Prozesse langsame und fehleranfällige sind; Automatisieren beliebig viele wie möglich einen schnellen, zuverlässigen und agilen Workflow einrichten können. Es ist eindeutig wichtig ist, für die Cloudentwicklung, da Sie viele Aufgaben leicht, die schwierig oder unmöglich automatisieren können, die in einer lokalen Umgebung zu automatisieren. Sie können z. B. festlegen, um den gesamten Test Umgebungen, einschließlich der neuen Webserver und Back-End-VMs, Datenbanken, blob-Speicher (Datei), Warteschlangen usw.
+Die ersten drei Muster, die wir betrachten werden, gelten tatsächlich für alle Softwareentwicklungsprojekte, aber insbesondere für cloudumgebungen. Dieses Muster dient zum Automatisieren von Entwicklungsaufgaben. Es ist ein wichtiges Thema, da manuelle Prozesse langsam und fehleranfällig sind. Wenn Sie so viele wie möglich automatisieren, können Sie einen schnellen, zuverlässigen und agilen Workflow einrichten. Es ist für die cloudentwicklung eindeutig, da Sie problemlos viele Aufgaben automatisieren können, die in einer lokalen Umgebung schwierig oder gar nicht automatisiert werden können. Sie können z. b. ganze Testumgebungen einrichten, z. b. neue Webserver-und Back-End-VMS, Datenbanken, BLOB-Speicher (Dateispeicher), Warteschlangen usw.
 
-## <a name="devops-workflow"></a>DevOps-Workflow
+## <a name="devops-workflow"></a>Devops-Workflow
 
-Hören Sie immer den Begriff "DevOps". Der Begriff entwickelt aus darauf, dass Sie Entwicklungs- und Betriebsaufgaben in Verbindung zu integrieren, um die Software effizient entwickeln müssen. Die Art des Workflows, die Sie aktivieren möchten ist eine in der Sie können eine app entwickeln, bereitstellen, Lernen von produktiven Einsatz des Zertifikats, ändern Sie ihn als Reaktion auf was Sie gelernt haben, und wiederholen Sie den Zyklus schnell und zuverlässig.
+Immer mehr hören Sie den Begriff "devops". Der Begriff wurde aus einer Kennung entwickelt, die Sie zum effizienten entwickeln von Software für Entwicklungs-und Betriebs Aufgaben entwickeln müssen. Die Art des Workflows, den Sie aktivieren möchten, ist eine Anwendung, in der Sie eine App entwickeln, bereitstellen, in der Produktionsumgebung verwenden, Sie in Reaktion auf die gewonnenen Inhalte ändern und den Kreis schnell und zuverlässig wiederholen können.
 
-Einige erfolgreiche Cloud-Entwicklerteams bereitstellen mehrmals täglich um eine live-Umgebung. Das Azure-Team verwendet, um eine größere bereitzustellen aktualisieren 2 bis 3 Monate, aber jetzt geringfügige Updates von Versionen jeder 2 bis 3 Tage und die Hauptversionsnummer Versionen 2 und 3-Wochen. Dieser Rhythmus eingehe ist wirklich Sie reagieren auf Kundenfeedback hilfreich.
+Einige erfolgreiche cloudentwicklungteams stellen mehrmals täglich eine Live Umgebung bereit. Das Azure-Team, das für die Bereitstellung eines wichtigen Updates jeden Zeitraum von 2-3 Monaten verwendet wird, aber jetzt werden kleinere Updates alle 2-3 Tage und die Haupt Releases alle 2-3 Wochen freigegeben. Der Einstieg in diese Kadenz hilft Ihnen, auf Kundenfeedback zu investieren.
 
-Zu diesem Zweck müssen Sie einen Zyklus für Entwicklung und Bereitstellung zu aktivieren, der wiederholbare, zuverlässige und vorhersagbare und niedrige Zykluszeit ist.
+Um dies zu erreichen, müssen Sie einen Entwicklungs-und Bereitstellungs Zyklen aktivieren, der wiederholbar, zuverlässig und vorhersagbar ist und eine geringe Zyklen Zeit aufweist.
 
-![DevOps-workflow](automate-everything/_static/image1.png)
+![Devops-Workflow](automate-everything/_static/image1.png)
 
-Die Zeitspanne zwischen Wenn Sie eine Idee für eine Funktion haben, und wenn die Kunden verwenden und Bereitstellen von Feedback muss also so kurz wie möglich sein. Der ersten drei Muster – automatisieren Sie alles, quellcodeverwaltung und continuous Integration und Delivery – werden alle Informationen zu bewährten Methoden zur Verfügung, die wir empfehlen, um diese Art von Vorgang.
+Anders ausgedrückt: der Zeitraum zwischen dem Zeitpunkt, zu dem Sie eine Idee für eine Funktion haben, und dem Zeitpunkt, zu dem die Kunden Sie verwenden, und das Bereitstellen von Feedback muss so kurz wie möglich sein. Die ersten drei Muster – automatisieren alles, die Quell Code Verwaltung und die Continuous Integration und Übermittlung. es gelten alle bewährten Methoden, die wir empfehlen, um diese Art von Prozess zu ermöglichen.
 
-## <a name="azure-management-scripts"></a>Azure-Verwaltungsskripts
+## <a name="azure-management-scripts"></a>Azure-Verwaltungs Skripts
 
-In der [dieses e-Book – Einführung](introduction.md), Sie haben gesehen, die webbasierte Konsole, das Azure-Verwaltungsportal. Das Verwaltungsportal können Sie zum Überwachen und Verwalten aller Ressourcen, die Sie in Azure bereitgestellt haben. Es ist eine einfache Möglichkeit zum Erstellen und Löschen von Diensten wie Web-apps und VMs, konfigurieren Sie diese Dienste, Dienstvorgang zu überwachen und so weiter. Es eignet sich hervorragend, aber seine Verwendung ist ein manueller Prozess. Wenn Sie wollen eine produktionsanwendung beliebiger Größe zu entwickeln, und insbesondere in einer teamumgebung sollten Sie die Benutzeroberfläche, um zu erfahren, und erkunden Sie Azure-Portals durchlaufen, und klicken Sie dann die Vorgänge automatisieren, die Sie wiederholt durchführen müssen.
+In der [Einführung in dieses e-book](introduction.md)haben Sie die webbasierte Konsole, die Azure-Verwaltungsportal, gesehen. Im Verwaltungs Portal können Sie alle Ressourcen, die Sie in Azure bereitgestellt haben, überwachen und verwalten. Es ist eine einfache Möglichkeit, Dienste wie Web-Apps und VMS zu erstellen und zu löschen, diese Dienste zu konfigurieren, den Dienst Vorgang zu überwachen usw. Es ist ein großartiges Tool, aber die Verwendung ist ein manueller Prozess. Wenn Sie eine Produktionsanwendung einer beliebigen Größe und insbesondere in einer Team Umgebung entwickeln möchten, empfiehlt es sich, die Portal-Benutzeroberfläche zu durchlaufen, um sich mit Azure vertraut zu machen und die Prozesse zu automatisieren, die wiederholt ausgeführt werden.
 
-Nahezu alle, die Sie manuell im Verwaltungsportal oder über Visual Studio können kann auch durch Aufrufen der REST-Verwaltungs-API erfolgen. Sie können mithilfe von Skripts schreiben [Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), oder Sie können ein open-Source-Framework wie z. B. [Chef](http://www.opscode.com/chef/) oder [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Sie können auch das Befehlszeilentool "Bash" in einer Mac- oder Linux-Umgebung verwenden. Azure verfügt über Skript-APIs für alle diese verschiedenen Umgebungen und auf ihm ein [.NET Verwaltungs-API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) für den Fall, dass Code anstelle von Skript geschrieben werden soll.
+Fast alles, was Sie manuell im Verwaltungs Portal oder in Visual Studio ausführen können, kann auch durch Aufrufen der Rest-Verwaltungs-API erfolgen. Sie können Skripts mithilfe von [Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx)schreiben, oder Sie können ein Open-Source-Framework verwenden, z. b. [Chef](http://www.opscode.com/chef/) oder [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Sie können auch das bash-Befehlszeilen Tool in einer Mac-oder Linux-Umgebung verwenden. Azure verfügt über Skript-APIs für alle diese verschiedenen Umgebungen und verfügt über eine [.NET-Verwaltungs-API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) für den Fall, dass Sie Code anstelle eines Skripts schreiben möchten.
 
-Für die Fix It-app haben wir einige Windows PowerShell-Skripts, die die Prozesse von einer testumgebung erstellen und Bereitstellen des Projekts für diese Umgebung zu automatisieren erstellt, und wir werden einige der den Inhalt des Skripts überprüfen.
+Für die Korrektur der IT-APP haben wir einige Windows PowerShell-Skripts erstellt, mit denen die Prozesse zum Erstellen einer Testumgebung und zum Bereitstellen des Projekts in dieser Umgebung automatisiert werden, und wir werden einige der Inhalte dieser Skripts überprüfen.
 
-## <a name="environment-creation-script"></a>Das Skript zum Umgebung erstellen
+## <a name="environment-creation-script"></a>Umgebungs Erstellungs Skript
 
-Das erste Skript, wir betrachten, den Namen *New-AzureWebsiteEnv.ps1*. Erstellt eine Azure-Umgebung, dass Sie den Fix It app zu Testzwecken bereitstellen können. Die wichtigsten Aufgaben, die dieses Skript führt lauten wie folgt:
+Das erste Skript, das wir betrachten, heißt " *New-AzureWebsiteEnv. ps1*". Sie erstellt eine Azure-Umgebung, in der Sie die Korrektur der IT-App für Tests bereitstellen können. Das Skript führt die folgenden Hauptaufgaben aus:
 
 - Erstellen einer Web-App
-- Erstellen Sie ein Speicherkonto. (Erforderlich, für Blobs und Warteschlangen, wie Sie in späteren Kapiteln sehen werden.)
-- Erstellen Sie eine SQL-Datenbankserver und zwei Datenbanken: eine Datenbank und eine Mitgliedschaftsdatenbank.
-- Store Einstellungen in Azure, die die app verwendet wird, auf die Storage-Konto und die Datenbanken zugreifen.
-- Erstellen der Einstellungsdateien an, die zum Automatisieren der Bereitstellung verwendet werden.
+- Erstellen Sie ein Speicherkonto. (Erforderlich für blobund Warteschlangen, wie Sie in späteren Kapiteln sehen werden.)
+- Erstellen Sie einen SQL-Datenbankserver und zwei Datenbanken: eine Anwendungsdatenbank und eine Mitgliedschafts Datenbank.
+- Speichern Sie Einstellungen in Azure, die von der APP für den Zugriff auf das Speicherkonto und die Datenbanken verwendet werden.
+- Erstellen Sie Einstellungen Dateien, die zur Automatisierung der Bereitstellung verwendet werden.
 
 ### <a name="run-the-script"></a>Ausführen des Skripts
 
 > [!NOTE]
-> Dieser Teil des Kapitels zeigt Beispiele für Skripts und Befehle, die Sie eingeben, um sie auszuführen. Diese Demo auch nicht alles, was Sie brauchen kennen, um die Skripts ausgeführt werden. How-to--It-Anleitung finden Sie [Anhang: Der Fix It-Beispielanwendung](the-fix-it-sample-application.md#deploybase).
+> Dieser Teil des Kapitels zeigt Beispiele für Skripts und die Befehle, die Sie eingeben, um Sie auszuführen. Dies ist eine Demo, die Ihnen nicht alles bietet, was Sie wissen müssen, um die Skripts auszuführen. Schritt-für-Schritt-Anleitungen finden Sie unter [Anhang: die Anwendung zum Beheben von IT-Beispielen](the-fix-it-sample-application.md#deploybase).
 
-Führen Sie ein PowerShell-Skript, das Azure-Dienste verwaltet, müssen Sie die Azure PowerShell-Konsole installieren und konfigurieren sie für die Arbeit mit Ihrem Azure-Abonnement. Nachdem Sie eingerichtet haben, können Sie das Fix It-Umgebung-Erstellungsskript mit einem Befehl wie diesen ausführen:
+Zum Ausführen eines PowerShell-Skripts, mit dem Azure-Dienste verwaltet werden, müssen Sie die Azure PowerShell-Konsole installieren und für die Zusammenarbeit mit Ihrem Azure-Abonnement konfigurieren. Nach der Einrichtung können Sie das Skript zum Erstellen der IT-Umgebung mit einem Befehl wie dem folgenden ausführen:
 
 `.\New-AzureWebsiteEnv.ps1 -Name <websitename> -SqlDatabasePassword <password>`
 
-Die `Name` Parameter gibt den Namen verwendet werden, wenn die Datenbank und Storage-Konten erstellen und die `SqlDatabasePassword` Parameter gibt das Kennwort für das Administratorkonto ein, die für SQL-Datenbank erstellt werden. Es gibt andere Parameter, die, denen Sie verwenden können, die wir später betrachten werde.
+Der `Name`-Parameter gibt den Namen an, der beim Erstellen der Datenbank und der Speicher Konten verwendet werden soll, und der Parameter `SqlDatabasePassword` gibt das Kennwort für das Administrator Konto an, das für die SQL-Datenbank erstellt wird. Es gibt weitere Parameter, die Sie später verwenden können.
 
 ![PowerShell-Fenster](automate-everything/_static/image2.png)
 
-Nach Abschluss der skriptausführung können Sie im Verwaltungsportal sehen, was erstellt wurde. Finden Sie zwei Datenbanken:
+Nachdem das Skript abgeschlossen wurde, können Sie im Verwaltungs Portal sehen, was erstellt wurde. Sie finden zwei Datenbanken:
 
-![Databases](automate-everything/_static/image3.png)
+![Datenbanken](automate-everything/_static/image3.png)
 
 Ein Speicherkonto:
 
-![Storage-Konto](automate-everything/_static/image4.png)
+![Speicherkonto](automate-everything/_static/image4.png)
 
-Und eine Web-app:
+Und eine Web-App:
 
 ![Website](automate-everything/_static/image5.png)
 
-Auf der **konfigurieren** Registerkarte für die Web-app sehen Sie, dass die speicherkontoeinstellungen hat und SQL-Datenbank-Verbindungszeichenfolgen Sie für die Lösung diese app richten.
+Auf der Registerkarte **Konfigurieren** für die Web-App können Sie sehen, dass die Speicherkonto Einstellungen und SQL-Daten bankverbindungs Zeichenfolgen für die Korrektur der IT-App eingerichtet sind.
 
-!["appSettings" und connectionStrings](automate-everything/_static/image6.png)
+![appSettings und connectionStrings](automate-everything/_static/image6.png)
 
-Die *Automation* Ordner jetzt enthält auch eine  *&lt;Websitename&gt;pubxml* Datei. Diese Datei speichert die Einstellungen, die MSBuild verwenden werden, um die Bereitstellung der Anwendung in der Azure-Umgebung, die gerade erstellt haben. Zum Beispiel:
+Der Ordner *Automation* enthält jetzt auch eine *&lt;Website Name&gt;. pubxml* -Datei. In dieser Datei werden Einstellungen gespeichert, die von MSBuild zum Bereitstellen der Anwendung in der soeben erstellten Azure-Umgebung verwendet werden. Beispiel:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
-Wie Sie sehen können, das Skript hat eine vollständigen Test-Umgebung erstellt, und der gesamte Prozess in ungefähr 90 Sekunden erfolgt.
+Wie Sie sehen können, hat das Skript eine vollständige Testumgebung erstellt, und der gesamte Prozess wird in ungefähr 90 Sekunden ausgeführt.
 
-Wenn jemand in Ihrem Team eine testumgebung erstellen möchte, können sie einfach das Skript ausführen. Das ist, nicht nur, sondern auch sie davon überzeugt, dass sie eine identisch mit der Umgebung verwenden, die Sie verwenden werden können. Sie konnten nicht ganz so sicher, wenn alle Schritte manuell einrichten wurde durch mithilfe des Verwaltungsportals UI sein.
+Wenn ein anderer Benutzer in Ihrem Team eine Testumgebung erstellen möchte, kann er das Skript einfach ausführen. Dies ist nicht nur schnell, sondern auch, dass Sie sicher sein können, dass Sie eine Umgebung verwenden, die mit der von Ihnen verwendeten Umgebung identisch ist. Sie konnten nicht so sicher sein, dass alle Dinge manuell über die Benutzeroberfläche des Verwaltungs Portals festgelegt wurden.
 
 ### <a name="a-look-at-the-scripts"></a>Ein Blick auf die Skripts
 
-Es gibt tatsächlich drei Skripts, die diese Aufgabe übernimmt. Sie rufen Sie eine von der Befehlszeile aus, und verwendet er automatisch die anderen beiden Sie einige der Aufgaben:
+Es gibt tatsächlich drei Skripts, die dies tun. Sie werden von der Befehlszeile aus aufgerufen, und die beiden anderen werden automatisch verwendet, um einige der Aufgaben auszuführen:
 
-- *Neue AzureWebSiteEnv.ps1* enthält das Hauptskript.
+- *New-AzureWebSiteEnv. ps1* ist das Hauptskript.
 
-    - *Neue AzureStorage.ps1* erstellt das Speicherkonto.
-    - *Neue AzureSql.ps1* die Datenbanken erstellt.
+    - *New-AzureStorage. ps1* erstellt das Speicherkonto.
+    - *New-AzureSql. ps1* erstellt die Datenbanken.
 
-### <a name="parameters-in-the-main-script"></a>Parameter in das Hauptskript
+### <a name="parameters-in-the-main-script"></a>Parameter im Hauptskript
 
-Das Hauptskript *New-AzureWebSiteEnv.ps1*, mehrere Parameter definiert:
+Das Hauptskript, *New-AzureWebSiteEnv. ps1*, definiert mehrere Parameter:
 
 [!code-powershell[Main](automate-everything/samples/sample2.ps1)]
 
 Es sind zwei Parameter erforderlich:
 
-- Der Name der Web-app, die das Skript erstellt werden soll. (Dies wird auch verwendet, für die URL: `<name>.azurewebsites.net`.)
-- Das Kennwort für den Administrator des Datenbankservers, der das Skript erstellt werden soll.
+- Der Name der Web-App, die vom Skript erstellt wird. (Dies wird auch für die URL: `<name>.azurewebsites.net`verwendet.)
+- Das Kennwort für den neuen Administrator des Datenbankservers, den das Skript erstellt.
 
-Optionale Parameter können Sie den Standort des Rechenzentrums (standardmäßig "West US"), Name des Datenbankservers Administrator (standardmäßig "Dbuser") und eine Firewallregel für den Datenbankserver angeben.
+Mit optionalen Parametern können Sie den Speicherort des Rechenzentrums (standardmäßig "USA, Westen"), den Namen des Datenbankserver Administrators (standardmäßig "dbuser") und eine Firewallregel für den Datenbankserver angeben.
 
-### <a name="create-the-web-app"></a>Erstellen Sie die Web-app
+### <a name="create-the-web-app"></a>Erstellen der Web-App
 
-Das erste, was das Skript wird die Web-app zu erstellen, indem die `New-AzureWebsite` -Cmdlet übergeben, die Web-app-Parameter-Werte für Name und Speicherort:
+Als erstes erstellt das Skript die Web-App durch Aufrufen des Cmdlets "`New-AzureWebsite`" und übergibt dabei die Parameterwerte für Web-App-Name und-Speicherort an die folgenden:
 
 [!code-powershell[Main](automate-everything/samples/sample3.ps1?highlight=2)]
 
-### <a name="create-the-storage-account"></a>Erstellen des Speicherkontos
+### <a name="create-the-storage-account"></a>Erstellen des Speicher Kontos
 
-Wird, das Hauptskript ausgeführt der *New-AzureStorage.ps1* Skript zu erstellen, angeben "*&lt;Websitename&gt;* Speicher" für den Namen des Speicherkontos, und den gleichen Standort des Rechenzentrums als die Web-app.
+Anschließend führt das Hauptskript das Skript *New-AzureStorage. ps1* aus und gibt " *&lt;Website Name&gt;* Storage" für den Namen des Speicher Kontos und denselben Rechenzentrums Standort wie die Web-App an.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
-*Neue AzureStorage.ps1* Aufrufe der `New-AzureStorageAccount` -Cmdlet zum Erstellen von Speicherkonto, und es gibt das Konto und -Schlüsselwerte. Die Anwendung benötigen diese Werte, um die Blobs und Warteschlangen im Speicherkonto zugreifen zu können.
+*New-AzureStorage. ps1* Ruft das `New-AzureStorageAccount` Cmdlet auf, um das Speicherkonto zu erstellen, und gibt den Kontonamen und die Zugriffsschlüssel Werte zurück. Die Anwendung benötigt diese Werte, um auf die BLOB-und Warteschlangen im Speicherkonto zuzugreifen.
 
 [!code-powershell[Main](automate-everything/samples/sample5.ps1?highlight=2)]
 
-Sie können nicht immer ein neues Speicherkonto erstellen möchten; Sie können das Skript verbessern, durch das Hinzufügen eines Parameters, das optional weist ein vorhandenes Speicherkonto verwenden.
+Sie möchten möglicherweise nicht immer ein neues Speicherkonto erstellen. Sie können das Skript verbessern, indem Sie einen Parameter hinzufügen, der ihn optional anweist, ein vorhandenes Speicherkonto zu verwenden.
 
-### <a name="create-the-databases"></a>Erstellen Sie die Datenbanken
+### <a name="create-the-databases"></a>Erstellen der Datenbanken
 
-Das Hauptskript führt dann das datenbankerstellungsskript, *New-AzureSql.ps1*, nach dem Einrichten der Standarddatenbank und firewall Regelnamen:
+Das Hauptskript führt dann das Daten Bank Erstellungs Skript *New-AzureSql. ps1*aus, nachdem die Standarddatenbank und die firewallregelnamen festgelegt wurden:
 
 [!code-powershell[Main](automate-everything/samples/sample6.ps1)]
 
 [!code-powershell[Main](automate-everything/samples/sample7.ps1?highlight=2)]
 
-Das datenbankerstellungsskript Ruft ab, den Entwickler-Computer-IP-Adresse und eine Firewallregel festgelegt, damit der Entwickler-Computer herstellen und des Servers verwalten kann. Das Skript zum Erstellen der Datenbank durchläuft dann verschiedene Schritte zum Einrichten von Datenbanken:
+Das Daten Bank Erstellungs Skript ruft die IP-Adresse des Entwicklers ab und legt eine Firewallregel fest, damit der Entwicklungs Computer eine Verbindung mit dem Server herstellen und ihn verwalten kann. Das Skript für die Daten Bank Erstellung führt dann verschiedene Schritte aus, um die Datenbanken einzurichten:
 
-- Der Server erstellt, mit der `New-AzureSqlDatabaseServer` Cmdlet.
+- Der Server wird mit dem `New-AzureSqlDatabaseServer`-Cmdlet erstellt.
 
     [!code-powershell[Main](automate-everything/samples/sample8.ps1?highlight=1)]
-- Erstellt die Firewallregeln zum Aktivieren der Entwickler-Computer, die zum Verwalten des Servers, und aktivieren Sie die Web-app eine Verbindung damit herstellen. 
+- Erstellt Firewallregeln, um dem Entwicklungs Computer die Verwaltung des Servers und das Herstellen einer Verbindung mit der Web-App zu ermöglichen. 
 
     [!code-powershell[Main](automate-everything/samples/sample9.ps1?highlight=3,5)]
-- Erstellt einen Datenbankkontext, der den Servernamen und Anmeldeinformationen enthält, mit der `New-AzureSqlDatabaseServerContext` Cmdlet.
+- Erstellt mithilfe des-Cmdlets `New-AzureSqlDatabaseServerContext` einen Daten Bank Kontext, der den Servernamen und die Anmelde Informationen enthält.
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText` ist eine Funktion im Skript, das Aufrufen der `ConvertTo-SecureString` Cmdlet verschlüsselt das Kennwort und gibt eine `PSCredential` Objekt vom selben Typ, der die `Get-Credential` -Cmdlet wird zurückgegeben.
-- Erstellt die Datenbank und die Mitgliedschaftsdatenbank mithilfe der `New-AzureSqlDatabase` Cmdlet.
+    `New-PSCredentialFromPlainText` ist eine Funktion im Skript, mit der das `ConvertTo-SecureString`-Cmdlet aufgerufen wird, um das Kennwort zu verschlüsseln, und gibt ein `PSCredential` Objekt zurück, den gleichen Typ, den das `Get-Credential`-Cmdlet zurückgibt.
+- Erstellt die Anwendungsdatenbank und die Mitgliedschafts Datenbank mithilfe des `New-AzureSqlDatabase`-Cmdlets.
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
-- Ruft eine lokal definierte Funktion zum Erstellen einer Verbindungszeichenfolge für die einzelnen Datenbanken. Die Anwendung wird diese Verbindungszeichenfolgen verwenden, um den Zugriff auf Datenbanken. 
+- Ruft eine lokal definierte Funktion auf, um eine Verbindungs Zeichenfolge für jede Datenbank zu erstellen. Diese Verbindungs Zeichenfolgen werden von der Anwendung für den Zugriff auf die Datenbanken verwendet. 
 
     [!code-powershell[Main](automate-everything/samples/sample12.ps1?highlight=1-2)]
 
-    Get-SQLAzureDatabaseConnectionString ist eine Funktion, die im Skript definiert, das die Verbindungszeichenfolge aus der Parameterwerte, die für sie erstellt.
+    "Get-sqlazuredatabaseconnectionstring" ist eine im Skript definierte Funktion, die die Verbindungs Zeichenfolge aus den für Sie angegebenen Parameterwerten erstellt.
 
     [!code-powershell[Main](automate-everything/samples/sample13.ps1?highlight=1)]
-- Gibt eine Hashtabelle mit den Namen des Datenbankservers und die Verbindungszeichenfolgen zurück.
+- Gibt eine Hash Tabelle mit dem Namen des Datenbankservers und den Verbindungs Zeichenfolgen zurück.
 
     [!code-powershell[Main](automate-everything/samples/sample14.ps1)]
 
-Die Fix It-app verwendet separate Mitgliedschafts- und dienstanwendungs-Datenbanken. Es ist auch möglich, Daten von Mitgliedschafts- und Anwendungsdaten in einer einzelnen Datenbank abgelegt werden sollen.
+Die Korrektur der IT-App verwendet separate Mitgliedschafts-und Anwendungsdatenbanken. Es ist auch möglich, sowohl Mitgliedschafts-als auch Anwendungsdaten in einer einzelnen Datenbank zu platzieren.
 
-### <a name="store-app-settings-and-connection-strings"></a>Store-app-Einstellungen und Verbindungszeichenfolgen
+### <a name="store-app-settings-and-connection-strings"></a>Speichern von App-Einstellungen und Verbindungs Zeichenfolgen
 
-Azure verfügt über ein Feature, können Sie zum Speichern von Einstellungen und Verbindungszeichenfolgen, die automatisch zu überschreiben, was für die Anwendung zurückgegeben wird, wenn versucht wird, lesen Sie, die `appSettings` oder `connectionStrings` Auflistungen in der Datei "Web.config". Dies ist eine Alternative zum Anwenden von [Web.config-Transformationen](../../../../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md) bei der Bereitstellung. Weitere Informationen finden Sie unter [sensible Daten im Azure Store](source-control.md#appsettings) weiter unten in diesem e-Book.
+Azure verfügt über eine Funktion, mit der Sie Einstellungen und Verbindungs Zeichenfolgen speichern können, die automatisch überschreiben, was an die Anwendung zurückgegeben wird, wenn versucht wird, die `appSettings` oder `connectionStrings` Sammlungen in der Datei "Web. config" zu lesen. Dies ist eine Alternative zum Anwenden von [Web. config-Transformationen](../../../../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md) bei der Bereitstellung von. Weitere Informationen finden Sie unter [Speichern von sensiblen Daten in Azure](source-control.md#appsettings) später in diesem e-book.
 
-Das Skript zum Erstellen der Umgebung in Azure alle speichert die `appSettings` und `connectionStrings` Werte, die die Anwendung muss Zugriff auf das Speicherkonto und die Datenbanken, bei der Ausführung in Azure.
+Das Skript für die Umgebungs Erstellung speichert in Azure alle `appSettings`-und `connectionStrings` Werte, die die Anwendung für den Zugriff auf das Speicherkonto und die Datenbanken benötigt, wenn Sie in Azure ausgeführt wird.
 
 [!code-powershell[Main](automate-everything/samples/sample15.ps1)]
 
@@ -181,82 +181,82 @@ Das Skript zum Erstellen der Umgebung in Azure alle speichert die `appSettings` 
 
 [!code-powershell[Main](automate-everything/samples/sample17.ps1?highlight=2)]
 
-[New Relic](http://newrelic.com/) ist ein Framework, Telemetriedaten, die wir in veranschaulichen die [Überwachung und Telemetrie](monitoring-and-telemetry.md) Kapitel. Das Skript zum Erstellen der Umgebung wird auch die Web-app, um sicherzustellen, dass er die New Relic-Einstellungen übernimmt neu gestartet.
+[New Relic](http://newrelic.com/) ist ein telemetrieframework, das wir im Kapitel [Überwachung und Telemetrie](monitoring-and-telemetry.md) veranschaulichen. Das Umgebungs Erstellungs Skript startet auch die Web-App neu, um sicherzustellen, dass die neuen Relic-Einstellungen übernommen werden.
 
 [!code-powershell[Main](automate-everything/samples/sample18.ps1?highlight=2)]
 
-### <a name="preparing-for-deployment"></a>Vorbereiten für die Bereitstellung
+### <a name="preparing-for-deployment"></a>Vorbereiten der Bereitstellung
 
-Das Skript zum Erstellen der Umgebung wird am Ende des Prozesses zwei Funktionen zum Erstellen von Dateien, die vom Bereitstellungsskript verwendet werden.
+Am Ende des Prozesses Ruft das Umgebungs Erstellungs Skript zwei Funktionen auf, um Dateien zu erstellen, die vom Bereitstellungs Skript verwendet werden.
 
-Eine dieser Funktionen ein Veröffentlichungsprofil erstellt *(&lt;Websitename&gt;pubxml* Datei). Der Code Ruft die Azure-REST-API zum Abrufen der Einstellungen für die Veröffentlichung, und speichert die Informationen in einem *.publishsettings* Datei. Anschließend er die Informationen aus dieser Datei zusammen mit einer Vorlagendatei verwendet (*pubxml.template*) zum Erstellen der *pubxml* -Datei, die das Veröffentlichungsprofil enthält. Dieser zweistufige Prozess simuliert, was Sie in Visual Studio ausführen: Herunterladen einer *.publishsettings* Datei und importieren, um ein Veröffentlichungsprofil erstellen.
+Eine dieser Funktionen erstellt ein Veröffentlichungs Profil *(&lt;Website Name&gt;. pubxml* -Datei). Der Code Ruft die Azure-Rest-API auf, um die Veröffentlichungs Einstellungen zu erhalten, und speichert die Informationen in einer *publishsettings* -Datei. Anschließend werden die Informationen aus dieser Datei zusammen mit einer Vorlagen Datei (*pubxml. Template*) verwendet, um die *pubxml* -Datei zu erstellen, die das Veröffentlichungs Profil enthält. Dieser zweistufige Prozess simuliert, was Sie in Visual Studio tun: Laden Sie eine *publishsettings* -Datei herunter, und importieren Sie diese, um ein Veröffentlichungs Profil zu erstellen.
 
-Die andere Funktion verwendet einen anderen Vorlagendatei (Website-environment.template) zum Erstellen einer *Website-environment.xml* die Einstellungen enthält, verwenden Sie das Bereitstellungsskript wird zusammen mit, der *pubxml*Datei.
+Die andere Funktion verwendet eine andere Vorlagen Datei ("Website-Environment. Template"), um eine *Website-Environment. XML* -Datei zu erstellen, die Einstellungen enthält, die das Bereitstellungs Skript zusammen mit der *pubxml* -Datei verwendet.
 
 ### <a name="troubleshooting-and-error-handling"></a>Problembehandlung und Fehlerbehandlung
 
-Skripts sind, wie Programme: Diese können erfolglos sein, und wenn dies der Fall möchten Sie wissen, wie Sie über den Fehler und die Ursache können. Aus diesem Grund ändert das Skript zum Erstellen der Umgebung den Wert für die `VerbosePreference` befehlsshellvariable `SilentlyContinue` zu `Continue` , damit alle ausführliche Meldungen angezeigt werden. Er ändert auch den Wert des der `ErrorActionPreference` befehlsshellvariable `Continue` zu `Stop`, damit das Skript beendet, selbst wenn sie Fehler ohne Abbruch auftritt:
+Skripts sind z. b. Programme: Sie können fehlschlagen, und wenn Sie wissen, wie Sie den Fehler und die Ursache des Fehlers ermitteln können. Aus diesem Grund ändert das Umgebungs Erstellungs Skript den Wert der `VerbosePreference` Variable von `SilentlyContinue` in `Continue`, sodass alle ausführlichen Meldungen angezeigt werden. Außerdem wird der Wert der `ErrorActionPreference` Variable von `Continue` in `Stop`geändert, damit das Skript auch dann beendet wird, wenn es nicht abschließende Fehler feststellt:
 
 [!code-powershell[Main](automate-everything/samples/sample19.ps1)]
 
-Bevor sie alle Vorgänge ausführt, speichert das Skript die Startzeit, damit es die verstrichene Zeit berechnen kann, wenn es abgeschlossen ist:
+Bevor es funktioniert, speichert das Skript die Startzeit, sodass es die verstrichene Zeit berechnen kann:
 
 [!code-powershell[Main](automate-everything/samples/sample20.ps1)]
 
-Nachdem sie ihre Arbeit abgeschlossen hat, zeigt das Skript die verstrichene Zeit:
+Nachdem die Arbeit abgeschlossen ist, zeigt das Skript die verstrichene Zeit an:
 
 [!code-powershell[Main](automate-everything/samples/sample21.ps1)]
 
-Und für jede Schlüsselvorgang schreibt das Skript ausführliche Meldungen, z. B.:
+Und für jeden Schlüssel Vorgang schreibt das Skript ausführliche Meldungen, z. b.:
 
 [!code-powershell[Main](automate-everything/samples/sample22.ps1)]
 
-## <a name="deployment-script"></a>Bereitstellungsskript
+## <a name="deployment-script"></a>Bereitstellungs Skript
 
-Was die *New-AzureWebsiteEnv.ps1* -Skripts für die umgebungserstellung, die *veröffentlichen-AzureWebsite.ps1* -Skripts für die anwendungsbereitstellung.
+Das Skript " *New-AzureWebsiteEnv. ps1* " für die Erstellung der Umgebung führt das Skript " *Publish-AzureWebsite. ps1* " für die Anwendungs Bereitstellung aus.
 
-Das Bereitstellungsskript Ruft den Namen der Web-app aus dem *Website-environment.xml* Datei, die durch das Skript zum Erstellen der Umgebung erstellt.
+Das Bereitstellungs Skript ruft den Namen der Web-App aus der *Website-Environment. XML* -Datei ab, die durch das Skript zur Erstellung der Umgebung erstellt wurde.
 
 [!code-powershell[Main](automate-everything/samples/sample23.ps1)]
 
-Es ruft das Kennwort für die Bereitstellung Benutzer aus der *.publishsettings* Datei:
+Das Benutzer Kennwort für die Bereitstellung wird aus der *publishsettings* -Datei abgerufen:
 
 [!code-powershell[Main](automate-everything/samples/sample24.ps1)]
 
-Er führt die [MSBuild](http://msbuildbook.com/) -Befehl, der erstellt und das Projekt bereitgestellt:
+Er führt den [MSBuild](http://msbuildbook.com/) -Befehl aus, der das Projekt erstellt und bereitstellt:
 
 [!code-powershell[Main](automate-everything/samples/sample25.ps1)]
 
-Und wenn Sie angegeben haben die `Launch` Parameter in der Befehlszeile angegeben wird, ruft der `Show-AzureWebsite` Cmdlet, um Ihren Standardbrowser mit Website-URL zu öffnen.
+Wenn Sie den `Launch`-Parameter in der Befehlszeile angegeben haben, wird das `Show-AzureWebsite`-Cmdlet aufgerufen, um den Standardbrowser für die Website-URL zu öffnen.
 
 [!code-powershell[Main](automate-everything/samples/sample26.ps1?highlight=3)]
 
-Sie können das Bereitstellungsskript mit einem Befehl wie diesen ausführen:
+Sie können das Bereitstellungs Skript mit einem Befehl wie dem folgenden ausführen:
 
 `.\Publish-AzureWebsite.ps1 ..\MyFixIt\MyFixIt.csproj -Launch`
 
-Und wenn dies abgeschlossen ist, der Browser geöffnet wird, mit dem Standort ausgeführt wird, in der Cloud Die `<websitename>.azurewebsites.net` URL.
+Wenn dies der Fall ist, öffnet sich der Browser mit der Website, die in der Cloud ausgeführt wird, unter der `<websitename>.azurewebsites.net`-URL.
 
-![Beheben sie die app, die in Windows Azure bereitgestellt werden.](automate-everything/_static/image7.png)
+![Reparieren der in Windows Azure bereitgestellten IT-App](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Mit diesen Skripts können Sie sicher sein, dass immer die gleichen Schritte in der gleichen Reihenfolge mit den gleichen Optionen ausgeführt werden. Dadurch wird sichergestellt, dass jeder Entwickler im Team nicht etwas verpassen etwas manipuliert oder benutzerdefinierte auf seinem eigenen Computer, die praktisch die gleiche Weise in ein anderes Teammitglied Umgebung oder in der Produktion nicht funktioniert etwas bereitstellen.
+Mit diesen Skripts können Sie sicher sein, dass dieselben Schritte immer in derselben Reihenfolge ausgeführt werden, indem Sie dieselben Optionen verwenden. Dadurch wird sichergestellt, dass jeder Entwickler im Team etwas nicht verpasst oder etwas durcheinander bringen kann oder etwas benutzerdefiniertes auf seinem eigenen Computer bereitstellt, das nicht auf die gleiche Weise in der Umgebung eines anderen Teammitglieds oder in der Produktionsumgebung funktioniert.
 
-Auf ähnliche Weise können Sie die meisten Azure-Verwaltungsfunktionen automatisieren, die Sie, im Verwaltungsportal, ausführen können mithilfe der REST-API, Windows PowerShell-Skripts, einer .NET-Sprache verwendet API oder ein Bash-Hilfsprogramm, das Ausführen unter Linux oder Mac.
+Auf ähnliche Weise können Sie die meisten Azure-Verwaltungsfunktionen automatisieren, die Sie im Verwaltungs Portal ausführen können, indem Sie die Rest-API, Windows PowerShell-Skripts, eine .NET-Programmiersprache-API oder ein Bash-Hilfsprogramm verwenden, das Sie unter Linux oder Mac ausführen können.
 
-In der [im nächsten Kapitel](source-control.md) wir sehen Sie sich den Quellcode und erläutern, warum es wichtig, Ihre Skripts in Ihrem Quellcoderepository einzuschließen ist.
+Im [nächsten Kapitel](source-control.md) betrachten wir den Quellcode und erläutern, warum es wichtig ist, Ihre Skripts in Ihr Quellcoderepository einzubeziehen.
 
 ## <a name="resources"></a>Ressourcen
 
-- [Installieren und konfigurieren Sie Windows PowerShell für Azure](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1). Erläutert, wie Sie Azure PowerShell-Cmdlets installieren und wie Sie das Zertifikat zu installieren, dass Sie auf Ihrem Computer zum Verwalten von Azure berücksichtigen müssen. Dies ist ein idealer Ausgangspunkt, um zu beginnen, da sie auch Links zu Ressourcen zum Erlernen von PowerShell selbst verfügt.
-- [Azure Script Center](https://docs.microsoft.com/azure/automation/automation-runbook-gallery). WindowsAzure.com-Portal, um Ressourcen zum Entwickeln von Skripts, die zur Verwaltung von Azure-Dienste mit Links zu Erste Schritte-Tutorials, Cmdlet-Referenz Dokumentationen und Quellcode-Code und Beispielskripts
-- [Wochenende Skripter: Erste Schritte mit Azure und PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx). In einem Blog für Windows PowerShell bietet dieser Beitrag eine hervorragende Einführung in die Verwendung von PowerShell für Azure-Management-Funktionen.
-- [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Erste-Schritte-Tutorial für ein Azure Skript-Framework, die auf Mac und Linux sowie Windows-Systemen funktioniert.
-- [Befehlszeilen-Tools-Abschnitt des Themas Herunterladen der Azure-SDKs und-Tools](https://azure.microsoft.com/downloads/). Portalseite für Dokumentation und Downloads, die im Zusammenhang mit Befehlszeilen-Tools für Azure.
-- [Automatisieren alles, was mit der Azure-Verwaltungsbibliotheken und .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman führt die .NET Verwaltungs-API für Azure.
-- [Mithilfe von Windows PowerShell-Skripts zum Veröffentlichen in Entwicklungs- und Testumgebungen](https://msdn.microsoft.com/library/azure/dn642480.aspx). MSDN-Dokumentation, die erklärt, wie Sie mit Skripts, die Visual Studio generiert automatisch für Webprojekte zu veröffentlichen.
-- [PowerShell-Tools für Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio-Erweiterung, die sprachunterstützung für die Windows PowerShell in Visual Studio hinzugefügt.
+- [Installieren und konfigurieren Sie Windows PowerShell für Azure](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1). Erläutert, wie Sie die Azure PowerShell-Cmdlets installieren und das Zertifikat installieren, das Sie auf Ihrem Computer benötigen, um Ihr Azure-Konto zu verwalten. Dies ist ein idealer Ausgangspunkt, da er auch Links zu Ressourcen für das Erlernen von PowerShell selbst enthält.
+- [Azure Script Center](https://docs.microsoft.com/azure/automation/automation-runbook-gallery). WindowsAzure.com-Portal zu Ressourcen zum Entwickeln von Skripts für die Verwaltung von Azure-Diensten mit Links zu den Tutorials zu den ersten Schritten, der Cmdlet-Referenz Dokumentation und dem Quellcode sowie Beispiel Skripts
+- [Wochenend Skripterstellung: Einstieg in Azure und PowerShell](https://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx). In einem für Windows PowerShell dedizierten Blog bietet dieser Beitrag eine gute Einführung in die Verwendung von PowerShell für Azure-Verwaltungsfunktionen.
+- [Installieren und konfigurieren Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Tutorial zu den ersten Schritten für ein Azure Scripting Framework, das unter Mac und Linux sowie in Windows-Systemen funktioniert.
+- [Abschnitt über Befehlszeilen Tools im Thema herunterladen von Azure sdert und Tools](https://azure.microsoft.com/downloads/). Portal Seite für Dokumentation und Downloads im Zusammenhang mit den Befehlszeilen Tools für Azure.
+- [Automatisieren Sie alles mit den Azure-Verwaltungs Bibliotheken und .net](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman führt die .NET-Verwaltungs-API für Azure ein.
+- [Verwenden von Windows PowerShell-Skripts zum Veröffentlichen in Entwicklungs-und Test Umgebungen](https://msdn.microsoft.com/library/azure/dn642480.aspx). In der MSDN-Dokumentation wird erläutert, wie Sie Veröffentlichungs Skripts verwenden, die von Visual Studio automatisch für Webprojekte generiert werden.
+- [PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio-Erweiterung, mit der Sprachunterstützung für Windows PowerShell in Visual Studio hinzugefügt wird.
 
 > [!div class="step-by-step"]
 > [Zurück](introduction.md)

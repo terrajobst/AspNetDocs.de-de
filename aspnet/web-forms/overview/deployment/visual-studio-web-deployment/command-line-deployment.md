@@ -1,144 +1,144 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
-title: 'ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellung über die Befehlszeile | Microsoft-Dokumentation'
+title: 'ASP.net-Webbereitstellung mithilfe von Visual Studio: Befehlszeilen Bereitstellung | Microsoft-Dokumentation'
 author: tdykstra
-description: Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, indem Warnungsprovider...
+description: In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter zu Azure App Service.
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: e6fc995ca812a461247989204caff580d06e2343
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 13cfe4492398b59f2c80394689cc113ccb218c60
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134268"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74634206"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellung der Befehlszeile
+# <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Befehlszeilen Bereitstellung
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-[Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Starter Projekt herunterladen](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
+> In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-In diesem Tutorial erfahren Sie, wie Sie das Visual Studio Web aufrufen Pipeline über die Befehlszeile zu veröffentlichen. Dies ist nützlich für Szenarien, in denen Sie möchten [Automatisierung des Bereitstellungsprozesses](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) anstatt dies manuell in Visual Studio, in der Regel mithilfe einer [source Code Versionskontrollsystem](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md).
+In diesem Tutorial wird gezeigt, wie Sie die Visual Studio-Webveröffentlichungs Pipeline von der Befehlszeile aus aufrufen. Dies ist nützlich für Szenarien, in denen Sie [den Bereitstellungs Prozess automatisieren](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) möchten, anstatt ihn manuell in Visual Studio zu verwenden, in der Regel mit einem [Quell Code Versionskontrollsystem](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md).
 
-## <a name="make-a-change-to-deploy"></a>Nehmen Sie eine Änderung bereitstellen
+## <a name="make-a-change-to-deploy"></a>Vornehmen einer Änderung an der Bereitstellung
 
-Die Seite "Info" wird derzeit den Code der Vorlage angezeigt.
+Die Seite "Info" zeigt derzeit den Vorlagen Code an.
 
-![Zu den Seiten mit Vorlagencode](command-line-deployment/_static/image1.png)
+![Info Seite mit Vorlagen Code](command-line-deployment/_static/image1.png)
 
-Sie müssen, die durch Code ersetzen, die eine Zusammenfassung der Student Registrierung angezeigt.
+Ersetzen Sie dies durch Code, der eine Zusammenfassung der Schüler-/Studentenregistrierung anzeigt.
 
-Öffnen der *About.aspx* Seite, löschen Sie alle Markups innerhalb der `MainContent` `Content` -Element und fügt das folgende Markup an seiner Stelle:
+Öffnen Sie die Seite *about. aspx* , löschen Sie das gesamte Markup innerhalb des `MainContent` `Content`-Elements, und fügen Sie das folgende Markup an der Stelle ein:
 
 [!code-aspx[Main](command-line-deployment/samples/sample1.aspx)]
 
-Führen Sie das Projekt, und wählen Sie die **zu** Seite.
+Führen Sie das Projekt aus, und wählen Sie **die Seite Info** aus.
 
 ![Seite „Info“](command-line-deployment/_static/image2.png)
 
-## <a name="deploy-to-test-by-using-the-command-line"></a>Test über die Befehlszeile bereitstellen
+## <a name="deploy-to-test-by-using-the-command-line"></a>Bereitstellen für Tests über die Befehlszeile
 
-Sie wird nicht eine andere Datenbank ändern, also deaktivieren DbDacFx-datenbankbereitstellung für die Datenbank Aspnet-ContosoUniversity bereitstellen. Öffnen der **Webveröffentlichung** Assistenten, und die in jeder der drei Veröffentlichungsprofile, deaktivieren die **Update Database** auf das Kontrollkästchen der **Einstellungen** Registerkarte.
+Sie werden keine andere Daten Bank Änderung bereitstellen, daher deaktivieren Sie die dbdacfx-Daten Bank Bereitstellung für die ASPNET-contosouniversity-Datenbank. Öffnen Sie den Assistenten **Web veröffentlichen** , und deaktivieren Sie in jedem der drei Veröffentlichungs Profile das Kontrollkästchen **Datenbank aktualisieren** auf der Registerkarte **Einstellungen** .
 
-Suchen Sie in der Windows 8-Startbildschirm **Developer-Eingabeaufforderung für VS2012**.
+Suchen Sie auf der Start Seite von Windows 8 nach **Developer-Eingabeaufforderung für VS2012**.
 
-Mit der rechten Maustaste in des Symbols für **Developer-Eingabeaufforderung für VS2012** , und klicken Sie auf **als Administrator ausführen**.
+Klicken Sie mit der rechten Maustaste auf das Symbol für **Developer-Eingabeaufforderung für VS2012** , und klicken Sie auf **als Administrator ausführen**.
 
-Geben Sie den folgenden Befehl an der Eingabeaufforderung, und Ersetzen Sie dabei den Pfad zur Projektmappendatei mit dem Pfad zu Ihrer Lösungsdatei an:
+Geben Sie den folgenden Befehl an der Eingabeaufforderung ein, und ersetzen Sie dabei den Pfad zur Projektmappendatei durch den Pfad zu ihrer Projektmappendatei:
 
 [!code-console[Main](command-line-deployment/samples/sample2.cmd)]
 
-MSBuild wird die Projektmappe erstellt und in der testumgebung bereitstellt.
+MSBuild erstellt die Lösung und stellt Sie in der Testumgebung bereit.
 
 ![Befehlszeilenausgabe](command-line-deployment/_static/image3.png)
 
-Öffnen Sie einen Browser, und wechseln Sie zu `http://localhost/ContosoUniversity`, klicken Sie dann auf die **zu** Seite, um sicherzustellen, dass die Bereitstellung erfolgreich war.
+Öffnen Sie einen Browser, navigieren Sie zu `http://localhost/ContosoUniversity`, und klicken Sie dann **auf die Seite Info, um sicher** zustellen, dass die Bereitstellung erfolgreich war
 
-Wenn Sie alle Schüler und Studenten im Test erstellt haben, sehen Sie eine leere Seite unter dem **Statistiken der Studentendaten Text** Überschrift. Wechseln Sie zu der **Schüler/Studenten** auf **hinzufügen "Student"**, und fügen Sie einige Schüler/Studenten hinzu, und wieder die **zu** Seite, um die Statistiken der Studentendaten finden Sie unter.
+Wenn Sie im Test keine Studenten erstellt haben, wird unter der Überschrift " **Student Body Statistics** " eine leere Seite angezeigt. Wechseln Sie **zur Seite "** **Studenten** ", klicken Sie auf " **Student hinzufügen**", und fügen Sie einige Schüler und Studenten hinzu.
 
-![Zu den Seiten im Test-Umgebung](command-line-deployment/_static/image4.png)
+![Info Seite in Test Umgebung](command-line-deployment/_static/image4.png)
 
-## <a name="key-command-line-options"></a>Key-Befehlszeilenoptionen
+## <a name="key-command-line-options"></a>Wichtige Befehlszeilenoptionen
 
-Der Befehl, der eingegebene Pfad der Projektmappe und zwei Eigenschaften an MSBuild übergeben werden:
+Der von Ihnen eingegebene Befehl hat den projektmappendateipfad und zwei Eigenschaften an MSBuild übermittelt:
 
 [!code-console[Main](command-line-deployment/samples/sample3.cmd)]
 
-### <a name="deploying-the-solution-versus-deploying-individual-projects"></a>Bereitstellen der Lösung und der Bereitstellung von einzelner Projekten
+### <a name="deploying-the-solution-versus-deploying-individual-projects"></a>Bereitstellen der Lösung im Vergleich zur Bereitstellung einzelner Projekte
 
-Angeben der Projektmappendatei bewirkt, dass alle Projekte in der Projektmappe erstellt werden sollen. Wenn Sie mehrere Webprojekte in der Projektmappe verfügen, gilt die folgende MSBuild-Verhalten auf:
+Das Angeben der Projektmappendatei bewirkt, dass alle Projekte in der Projekt Mappe erstellt werden. Wenn Sie mehrere Webprojekte in der Projekt Mappe haben, gilt das folgende MSBuild-Verhalten:
 
-- Die Eigenschaften, die Sie in der Befehlszeile angeben, werden jedem Projekt übergeben. Daher muss jedes Webprojekt ein Veröffentlichungsprofil mit dem Namen verfügen, die Sie angeben. Bei Angabe von `/p:PublishProfile=Test`, jedes Webprojekt benötigen ein Veröffentlichungsprofil mit dem Namen *Test*.
-- Wenn ein anderes noch nicht erstellt werden, könnten Sie ein Projekt erfolgreich veröffentlichen. Weitere Informationen finden Sie in der Stack Overflow-Thread [MSBuild ein Fehler auftritt, mit zwei Paketen](http://stackoverflow.com/questions/14226451/msbuild-fails-with-two-packages).
+- Die Eigenschaften, die Sie in der Befehlszeile angeben, werden an jedes Projekt weitergeleitet. Daher muss jedes Webprojekt über ein Veröffentlichungs Profil mit dem von Ihnen angegebenen Namen verfügen. Wenn Sie `/p:PublishProfile=Test`angeben, muss jedes Webprojekt über ein Veröffentlichungs Profil mit dem Namen " *Test*" verfügen.
+- Sie können ein Projekt erfolgreich veröffentlichen, wenn ein anderes Projekt nicht gerade erstellt wird. Weitere Informationen finden Sie unter Fehler bei MSBuild für den StackOverflow-Thread [mit zwei Paketen](http://stackoverflow.com/questions/14226451/msbuild-fails-with-two-packages).
 
-Wenn Sie ein einzelnes Projekt anstelle einer Projektmappe angeben, müssen Sie einen Parameter hinzuzufügen, der angibt, die Visual Studio-Version. Wenn Sie Visual Studio 2012 verwenden wäre wie im folgenden Beispiel der Befehlszeile aus:
+Wenn Sie anstelle einer Projekt Mappe ein einzelnes Projekt angeben, müssen Sie einen Parameter hinzufügen, der die Visual Studio-Version angibt. Wenn Sie Visual Studio 2012 verwenden, sieht die Befehlszeile in etwa wie im folgenden Beispiel aus:
 
 [!code-console[Main](command-line-deployment/samples/sample4.cmd?highlight=1)]
 
-Die Versionsnummer für Visual Studio 2010 ist 10,0. Weitere Informationen finden Sie unter [Kompatibilität mit Visual Studio-Projekt sowie VisualStudioVersion](http://sedodream.com/2012/08/19/VisualStudioProjectCompatabilityAndVisualStudioVersion.aspx) Sayed Hashimi-Blog.
+Die Versionsnummer für Visual Studio 2010 ist 10,0. Weitere Informationen finden Sie unter [Visual Studio-Projekt Kompatibilität und visualstudioversion](http://sedodream.com/2012/08/19/VisualStudioProjectCompatabilityAndVisualStudioVersion.aspx) für den Sayed Hashimi-Blog.
 
-### <a name="specifying-the-publish-profile"></a>Das Veröffentlichungsprofil angeben
+### <a name="specifying-the-publish-profile"></a>Angeben des Veröffentlichungs Profils
 
-Sie können das Veröffentlichungsprofil angeben, nach Namen oder den vollständigen Pfad zu der *pubxml* Datei, wie im folgenden Beispiel gezeigt:
+Sie können das Veröffentlichungs Profil anhand des Namens oder des vollständigen Pfads der *pubxml* -Datei angeben, wie im folgenden Beispiel gezeigt:
 
 [!code-console[Main](command-line-deployment/samples/sample5.cmd?highlight=1)]
 
-### <a name="web-publish-methods-supported-for-command-line-publishing"></a>Webveröffentlichung mit Methoden, die für die Befehlszeilen-Veröffentlichung unterstützt
+### <a name="web-publish-methods-supported-for-command-line-publishing"></a>Webveröffentlichungs Methoden, die für die Befehlszeilen Veröffentlichung unterstützt werden
 
-Veröffentlichen von drei Methoden werden für die Veröffentlichung über die Befehlszeile unterstützt:
+Drei Veröffentlichungs Methoden werden für die Veröffentlichung von Befehlszeilen unterstützt:
 
-- `MSDeploy` – Mit Web Deploy veröffentlichen.
-- `Package` – Durch Erstellen einer Web Deploy-Paket veröffentlichen. Sie müssen das Paket separat von der MSBuild-Befehl installieren, der erstellt wird.
-- `FileSystem` – Kopieren von Dateien in einem bestimmten Ordner veröffentlichen.
+- `MSDeploy` mit Web deploy veröffentlichen.
+- `Package`-Veröffentlichung durch Erstellen eines Web deploy Pakets. Sie müssen das Paket getrennt vom MSBuild-Befehl installieren, von dem es erstellt wird.
+- `FileSystem`-Veröffentlichung durch Kopieren von Dateien in einen angegebenen Ordner.
 
-### <a name="specifying-the-build-configuration-and-platform"></a>Angeben der Build-Konfiguration und Plattform
+### <a name="specifying-the-build-configuration-and-platform"></a>Angeben der Buildkonfiguration und-Plattform
 
-Die Buildkonfiguration und Plattform müssen in Visual Studio oder in der Befehlszeile festgelegt werden. Die Veröffentlichungsprofile enthalten Eigenschaften, die mit dem Namen sind `LastUsedBuildConfiguration` und `LastUsedPlatform`, aber Sie können diese Eigenschaften festlegen, um zu bestimmen, wie das Projekt erstellt wird. Weitere Informationen finden Sie unter [MSBuild: festlegen die Konfigurationseigenschaft](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Sayed Hashimi-Blog.
+Die Buildkonfiguration und-Plattform müssen in Visual Studio oder in der Befehlszeile festgelegt werden. Die Veröffentlichungs Profile enthalten Eigenschaften mit dem Namen `LastUsedBuildConfiguration` und `LastUsedPlatform`. Sie können diese Eigenschaften jedoch nicht festlegen, um zu bestimmen, wie das Projekt erstellt wird. Weitere Informationen finden Sie unter [MSBuild: So legen Sie die Konfigurations Eigenschaft für den](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Blog von Sayed Hashimi fest.
 
-## <a name="deploy-to-staging"></a>In der Stagingumgebung bereitstellen
+## <a name="deploy-to-staging"></a>Bereitstellung für Staging
 
-Um in Azure bereitstellen, müssen Sie das Kennwort an die Befehlszeile hinzufügen. Wenn Sie das Kennwort im Veröffentlichungsprofil in Visual Studio gespeichert, es wurde in verschlüsselter Form gespeichert in der Ihre *. pubxml.user* Datei. Diese Datei wird von MSBuild nicht zugegriffen werden, wenn Sie eine Bereitstellung über die Befehlszeile ausführen, müssen Sie das Kennwort in einem Parameter über die Befehlszeile zu übergeben.
+Zum Bereitstellen in Azure müssen Sie das Kennwort der Befehlszeile hinzufügen. Wenn Sie das Kennwort im Veröffentlichungs Profil in Visual Studio gespeichert haben, wurde es in verschlüsselter Form in der *pubxml. User* -Datei gespeichert. Der Zugriff auf diese Datei erfolgt nicht durch MSBuild, wenn Sie eine Befehlszeilen Bereitstellung ausführen, sodass Sie das Kennwort in einem Befehlszeilenparameter übergeben müssen.
 
-1. Kopieren Sie das Kennwort, die Sie benötigen die *.publishsettings* zuvor für die staging-Website heruntergeladene Datei. Das Kennwort ist der Wert der `userPWD` -Attribut für die Web Deploy `publishProfile` Element.
+1. Kopieren Sie das benötigte Kennwort aus der *publishsettings* -Datei, die Sie zuvor für die Stagingwebsite heruntergeladen haben. Das Kennwort ist der Wert des `userPWD`-Attributs für das Web deploy `publishProfile`-Element.
 
-    ![Web Deploy-Kennwort](command-line-deployment/_static/image5.png)
-2. Suchen Sie in der Windows 8-Startbildschirm **Developer-Eingabeaufforderung für VS2012**, und klicken Sie auf das Symbol, um die Eingabeaufforderung zu öffnen. (Sie haben nicht als Administrator dieses Mal öffnen, da Sie in IIS auf dem lokalen Computer bereitstellen.)
-3. Geben Sie den folgenden Befehl an der Eingabeaufforderung, und Ersetzen Sie den Pfad zur Projektmappendatei durch den Pfad zu Ihrer Lösungsdatei hinzufügen und das Kennwort mit Ihrem Kennwort an:
+    ![Web deploy Kennwort](command-line-deployment/_static/image5.png)
+2. Suchen Sie auf der Start Seite von Windows 8 nach **Developer-Eingabeaufforderung für VS2012**, und klicken Sie auf das Symbol, um die Eingabeaufforderung zu öffnen. (Sie müssen diese Zeit nicht als Administrator öffnen, weil Sie nicht auf IIS auf dem lokalen Computer bereitstellen.)
+3. Geben Sie den folgenden Befehl an der Eingabeaufforderung ein, und ersetzen Sie dabei den Pfad zur Projektmappendatei durch den Pfad zu ihrer Projektmappendatei und das Kennwort durch Ihr Kennwort:
 
     [!code-console[Main](command-line-deployment/samples/sample6.cmd)]
 
-    Beachten Sie, dass diese über die Befehlszeile einen zusätzlichen Parameter enthält: `/p:AllowUntrustedCertificate=true`. In diesem Tutorial geschrieben wird, die `AllowUntrustedCertificate` Eigenschaft muss festgelegt werden, wenn Sie über die Befehlszeile in Azure veröffentlichen. Wenn die Lösung für diesen Fehler veröffentlicht wird, benötigen Sie kein diesen Parameter.
-4. Öffnen Sie einen Browser und navigieren Sie zu der URL der staging-Website, und klicken Sie dann auf die **zu** Seite, um sicherzustellen, dass die Bereitstellung erfolgreich war.
+    Beachten Sie, dass diese Befehlszeile einen zusätzlichen Parameter enthält: `/p:AllowUntrustedCertificate=true`. Wenn dieses Lernprogramm geschrieben wird, muss die `AllowUntrustedCertificate`-Eigenschaft festgelegt werden, wenn Sie über die Befehlszeile in Azure veröffentlichen. Wenn die Behebung für diesen fehlerfrei gegeben wird, benötigen Sie diesen Parameter nicht.
+4. Öffnen Sie einen Browser, navigieren Sie zur URL Ihrer Stagingwebsite, und klicken Sie dann auf die Seite Info, um **zu überprüfen** , ob die Bereitstellung erfolgreich war.
 
-    Wie Sie für die testumgebung gesehen haben, müssen Sie möglicherweise erstellen Sie einige Schüler/Studenten, um die Statistiken auf finden Sie unter den **zu** Seite.
+    Wie Sie bereits gesehen haben, müssen Sie möglicherweise einige Studenten erstellen **, um Statistiken auf der Seite** "Info" anzuzeigen.
 
-## <a name="deploy-to-production"></a>Für die Produktion bereitstellen
+## <a name="deploy-to-production"></a>In Produktionsumgebungen bereitstellen
 
-Der Prozess für die Bereitstellung in der Produktion ähnelt der Prozess für das Staging.
+Der Prozess für die Bereitstellung in der Produktion ähnelt dem Stagingprozess.
 
-1. Kopieren Sie das Kennwort, die Sie benötigen die *.publishsettings* heruntergeladene Datei, zuvor für die Website für die Produktion.
-2. Open **Developer-Eingabeaufforderung für VS2012**.
-3. Geben Sie den folgenden Befehl an der Eingabeaufforderung, und Ersetzen Sie den Pfad zur Projektmappendatei durch den Pfad zu Ihrer Lösungsdatei hinzufügen und das Kennwort mit Ihrem Kennwort an:
+1. Kopieren Sie das benötigte Kennwort aus der Datei " *. publishsettings* ", die Sie zuvor für die Produktions Website heruntergeladen haben.
+2. Öffnen Sie **Developer-Eingabeaufforderung für VS2012**.
+3. Geben Sie den folgenden Befehl an der Eingabeaufforderung ein, und ersetzen Sie dabei den Pfad zur Projektmappendatei durch den Pfad zu ihrer Projektmappendatei und das Kennwort durch Ihr Kennwort:
 
     [!code-console[Main](command-line-deployment/samples/sample7.cmd)]
 
-    Für einen Standort für Produktion, wenn es auch Änderung an einer Datenbank Bestand, in der Regel kopieren Sie die *app\_offline.htm* Datei an den Standort vor der Bereitstellung und löschen Sie ihn nach der erfolgreichen Bereitstellung.
-4. Öffnen Sie einen Browser und navigieren Sie zu der URL der staging-Website, und klicken Sie dann auf die **zu** Seite, um sicherzustellen, dass die Bereitstellung erfolgreich war.
+    Bei einer realen Produktions Site kopieren Sie in der Regel vor der Bereitstellung die APP\_Datei " *Offline. htm* " auf die Website, und löschen Sie Sie nach erfolgreicher Bereitstellung.
+4. Öffnen Sie einen Browser, navigieren Sie zur URL Ihrer Stagingwebsite, und klicken Sie dann auf die Seite Info, um **zu überprüfen** , ob die Bereitstellung erfolgreich war.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Sie haben nun ein Anwendungsupdate bereitgestellt, über die Befehlszeile.
+Sie haben nun ein Anwendungs Update über die Befehlszeile bereitgestellt.
 
-![Zu den Seiten im Test-Umgebung](command-line-deployment/_static/image6.png)
+![Info Seite in Test Umgebung](command-line-deployment/_static/image6.png)
 
-Im nächsten Tutorial, sehen Sie ein Beispiel zum Erweitern Sie im Web veröffentlichen Pipeline. Im Beispiel wird zeigen, wie Dateien bereitstellen, die nicht im Projekt enthalten sind.
+Im nächsten Tutorial sehen Sie ein Beispiel zum Erweitern der Webveröffentlichungs Pipeline. Im Beispiel wird gezeigt, wie Sie Dateien bereitstellen, die nicht im Projekt enthalten sind.
 
 > [!div class="step-by-step"]
 > [Zurück](deploying-a-database-update.md)

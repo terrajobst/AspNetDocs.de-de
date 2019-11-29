@@ -1,105 +1,105 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
-title: Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (VB) | Microsoft-Dokumentation
+title: Anzeigen mehrerer Datensätze pro Zeile mit dem DataList-Steuerelement (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Lernprogramm lernen wir des DataList-Steuerelement-Layout über seine RepeatColumns und RepeatDirection Eigenschaften anpassen.
+description: In diesem kurzen Tutorial erfahren Sie, wie Sie das Layout des DataList-Layouts mithilfe der Eigenschaften RepeatColumns und RepeatDirection anpassen.
 ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: f555c531-bf33-4699-9987-42dbfef23c1f
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 68505a48d7ad6230300579ceb24de8070b1e977f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 17283dae192896fbaa48f1d7fe49afdbaf4c9a02
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116882"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74627544"
 ---
 # <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>Anzeigen von mehreren Datensätzen pro Zeile mit dem DataList-Steuerelement (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_VB.exe) oder [PDF-Datei herunterladen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/datatutorial31vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_VB.exe) oder [PDF herunterladen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/datatutorial31vb1.pdf)
 
-> In diesem Lernprogramm lernen wir des DataList-Steuerelement-Layout über seine RepeatColumns und RepeatDirection Eigenschaften anpassen.
+> In diesem kurzen Tutorial erfahren Sie, wie Sie das Layout des DataList-Layouts mithilfe der Eigenschaften RepeatColumns und RepeatDirection anpassen.
 
 ## <a name="introduction"></a>Einführung
 
-In den Beispielen DataList wir haben gesehen, in den letzten beiden Tutorials haben jeder Datensatz aus der Datenquelle als eine Zeile in eine einspaltige HTML gerendert `<table>`. Obwohl dies das Standardverhalten für das DataList-Steuerelement ist, ist es sehr einfach, die DataList-Anzeige anzupassen, dass der Datenquellenelemente, die auf eine Tabelle mit mehreren Spalten und mehrere Zeilen verteilt sind. Darüber hinaus es möglich, dass alle Daten Quelle in einem einzigen Zeile und mehrspaltige DataList-Steuerelement angezeigten Elemente.
+Die in den letzten beiden Tutorials dargestellten DataList-Beispiele haben jeden Datensatz aus seiner Datenquelle als Zeile in einer einspaltigen HTML-`<table>`gerendert. Obwohl es sich hierbei um das Standardverhalten von DataList handelt, ist es sehr einfach, die DataList-Anzeige so anzupassen, dass die Datenquellen Elemente auf eine mehrzeilige Tabelle mit mehreren Zeilen verteilt werden. Darüber hinaus ist es möglich, alle Datenquellen Elemente in einem einzeiligen, mehrspaltigen DataList anzuzeigen.
 
-Wir können das Layout DataList s durch Anpassen der `RepeatColumns` und `RepeatDirection` Eigenschaften, die jeweils angeben, wie viele Spalten gerendert werden, und gibt an, ob die Elemente vertikal oder horizontal angeordnet werden. Abbildung 1 zeigt z. B. einem DataList-Steuerelement, in dem Produktinformationen in einer Tabelle mit drei Spalten angezeigt.
+Wir können das DataList s-Layout über seine `RepeatColumns`-und `RepeatDirection` Eigenschaften anpassen, die angeben, wie viele Spalten gerendert werden und ob diese Elemente vertikal oder horizontal angeordnet werden. Abbildung 1 zeigt beispielsweise einen DataList, der Produktinformationen in einer Tabelle mit drei Spalten anzeigt.
 
-[![DataList-Steuerelement zeigt die drei Produkte pro Zeile](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
+[![dem DataList werden drei Produkte pro Zeile angezeigt.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
 
-**Abbildung 1**: DataList-Steuerelement zeigt drei Produkte pro Zeile ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image3.png))
+**Abbildung 1**: DataList zeigt drei Produkte pro Zeile an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image3.png))
 
-Durch mehrere Data Source-Elemente pro Zeile angezeigt wird, kann die DataList-Steuerelement effektiver horizontalen Bildschirmplatz nutzen. In diesem Lernprogramm lernen wir diese beiden DataList-Eigenschaften.
+Durch das Anzeigen mehrerer Datenquellen Elemente pro Zeile kann der DataList den horizontalen Bildschirmbereich effektiver nutzen. In diesem kurzen Tutorial untersuchen wir diese beiden DataList-Eigenschaften.
 
-## <a name="step-1-displaying-product-information-in-a-datalist"></a>Schritt 1: Anzeigen von Produktinformationen in einem DataList-Steuerelement
+## <a name="step-1-displaying-product-information-in-a-datalist"></a>Schritt 1: Anzeigen von Produktinformationen in einem DataList
 
-Bevor wir untersuchen die `RepeatColumns` und `RepeatDirection` Eigenschaften können s erstellen Sie zunächst einem DataList-Steuerelement auf unserer Seite aus, mit der Standardtabelle für einzelne Spalten, die mehrzeilige Layout Produktinformationen aufgeführt. In diesem Beispiel können Sie s, die die Produkt-s-Name, Kategorie und Preis, verwenden das folgende Markup zeigt:
+Bevor wir die Eigenschaften `RepeatColumns` und `RepeatDirection` überprüfen, können Sie zuerst auf unserer Seite einen DataList erstellen, der Produktinformationen mithilfe des standardmäßigen einspaltigen Tabellenlayouts mit mehreren Zeilen auflistet. In diesem Beispiel können Sie den Namen, die Kategorie und den Preis des Produkts mit dem folgenden Markup anzeigen:
 
 [!code-html[Main](showing-multiple-records-per-row-with-the-datalist-control-vb/samples/sample1.html)]
 
-Wir haben gesehen, wie binden Sie Daten an einem DataList-Steuerelement in den vorherigen Beispielen, sodass ich diese Schritte schnell durchlaufen werden. Öffnen Sie zunächst die `RepeatColumnAndDirection.aspx` auf der Seite die `DataListRepeaterBasics` Ordner, und ziehen Sie einem DataList-Steuerelement aus der Toolbox in den Designer. Deaktivieren Sie aus dem Smarttag DataList s, um eine neue "ObjectDataSource" erstellen und konfigurieren, dass die Daten aus der pull die `ProductsBLL` Klasse s `GetProducts` -Methode, die (None) auswählen, über den Assistenten s INSERT-, Update-, aus, und Löschen von Registerkarten.
+Wir haben gesehen, wie Daten in vorherigen Beispielen an einen DataList gebunden werden. Daher werde ich diese Schritte schnell durchgehen. Öffnen Sie zunächst die Seite `RepeatColumnAndDirection.aspx` im Ordner `DataListRepeaterBasics`, und ziehen Sie einen DataList aus der Toolbox auf den Designer. Wählen Sie aus dem DataList s-Smarttag eine neue ObjectDataSource aus, und konfigurieren Sie Sie so, dass Sie die Daten aus der `ProductsBLL` Klasse `GetProducts`-Methode per Pull abruft, und wählen Sie auf den Registerkarten einfügen, aktualisieren und Löschen des Assistenten die Option (keine) aus.
 
-Nach dem Erstellen und dem neuen ObjectDataSource-Steuerelement an die Datenliste binden, Visual Studio erstellt automatisch eine `ItemTemplate` , die den Namen und Wert für jedes Produkt Datenfelder anzeigt. Anpassen der `ItemTemplate` entweder direkt über den deklarativen Markup oder aus den Vorlagen bearbeiten Sie die option im Smarttag DataList s so, dass sie das Markup oben, und Ersetzen Sie dabei verwendet der *Produktname*, *Kategoriename* , und *Preis* Text, Label-Steuerelementen, die die entsprechenden Databinding-Syntax zu verwenden, um Werte zu ihren `Text` Eigenschaften. Nach der Aktualisierung der `ItemTemplate`, im deklarativen Markup Ihrer Seite s sollte etwa wie folgt aussehen:
+Nach dem Erstellen und Binden der neuen ObjectDataSource an den DataList erstellt Visual Studio automatisch eine `ItemTemplate`, die den Namen und den Wert für jedes der Product Data-Felder anzeigt. Passen Sie die `ItemTemplate` entweder direkt über das deklarative Markup oder die Option Vorlagen bearbeiten im smarttagtag DataList an, sodass Sie das oben gezeigte Markup verwendet. ersetzen Sie dabei den *Produktnamen*, den *Kategorienamen*und den *Preis* Text durch Label-Steuerelemente, die die entsprechende Datenbindung-Syntax verwenden, um Ihren `Text` Eigenschaften Werte zuzuweisen. Nachdem Sie die `ItemTemplate`aktualisiert haben, sollte Ihr deklaratives Markup der Seite in etwa wie folgt aussehen:
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-vb/samples/sample2.aspx)]
 
-Beachten Sie, dass Ve enthalten einen Formatbezeichner in der `Eval` Databinding-Syntax für die `UnitPrice`, den zurückgegebenen Wert als Währung - Formatierung `Eval("UnitPrice", "{0:C}").`
+Beachten Sie, dass ein Format Bezeichner in die `Eval` Datenbindung-Syntax für die `UnitPrice`eingeschlossen wurde, wobei der zurückgegebene Wert als Währungs `Eval("UnitPrice", "{0:C}").` formatiert wird.
 
-Nehmen Sie einen Moment Zeit, Ihre Seite in einem Browser besuchen. Wie in Abbildung 2 gezeigt, wird Sie als einspaltiges, mehrzeilige Tabelle Produkte DataList-Steuerelement gerendert.
+Nehmen Sie sich einen Moment Zeit, um Ihre Seite in einem Browser zu besuchen. Wie in Abbildung 2 gezeigt, wird der DataList als einspaltige Tabelle mit mehreren Zeilen gerendert.
 
-[![Standardmäßig wird das DataList-Steuerelement gerendert als einspaltiges, mehrzeilige Tabelle](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
+[![Standardmäßig rendert DataList als einspaltige Tabelle mit mehreren Zeilen.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
 
-**Abbildung 2**: Standardmäßig wird als eine einspaltige, Tabelle mit mehreren Zeilen DataList-Steuerelement gerendert ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image6.png))
+**Abbildung 2**: Standardmäßig wird der DataList als einspaltige Tabelle mit mehreren Zeilen gerendert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image6.png))
 
-## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Schritt 2: Ändern die Layoutrichtung der DataList-s
+## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Schritt 2: Ändern der Layoutrichtung des DataList-s
 
-Während das Standardverhalten für DataList-Steuerelement ist, um das Layout der Elemente vertikal in einer Tabelle eine Spalte, die mehrzeilige dieses Verhalten kann leicht geändert werden über DataList s [ `RepeatDirection` Eigenschaft](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). Die `RepeatDirection` Eigenschaft kann einen von zwei möglichen Werten annehmen: `Horizontal` oder `Vertical` (Standard).
+Das Standardverhalten für den DataList besteht darin, seine Elemente vertikal in einer einspaltigen Tabelle mit mehreren Zeilen anzuordnen. dieses Verhalten kann jedoch problemlos über die DataList s- [`RepeatDirection`-Eigenschaft](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx)geändert werden. Die `RepeatDirection`-Eigenschaft kann einen von zwei möglichen Werten annehmen: `Horizontal` oder `Vertical` (Standardeinstellung).
 
-Durch Ändern der `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`, DataList-Steuerelement rendert der Datensätze in einer einzelnen Zeile, erstellen eine Spalte pro Datenquellenelement. Um diesen Effekt zu veranschaulichen, klicken Sie auf das DataList-Steuerelement im Designer, und ändern Sie dann im Eigenschaftenfenster die `RepeatDirection` Eigenschaft `Vertical` zu `Horizontal`. Sofort auf diese Weise der Designer passt das DataList s Layout, erstellen eine einzelne Zeile, die mit mehreren Spalte Schnittstelle (siehe Abbildung 3).
+Wenn die `RepeatDirection`-Eigenschaft von `Vertical` in `Horizontal`geändert wird, rendert der DataList seine Datensätze in einer einzelnen Zeile und erstellt eine Spalte pro Datenquellen Element. Um diesen Effekt zu veranschaulichen, klicken Sie im Designer auf den DataList und ändern dann aus dem Eigenschaftenfenster die `RepeatDirection`-Eigenschaft von `Vertical` in `Horizontal`. Unmittelbar danach passt der Designer das Layout des DataList-s an und erstellt eine einzeilige, mehrspaltige Schnittstelle (siehe Abbildung 3).
 
-[![Die RepeatDirection-Eigenschaft bestimmt, wie die Richtung der DataList-s-Elemente werden angeordnet](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
+[![die RepeatDirection-Eigenschaft bestimmt, wie die Richtung der DataList-Elemente festgelegt wird.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
 
-**Abbildung 3**: Die `RepeatDirection` Eigenschaft gibt vor, wie die Richtung der DataList-s-Elemente Laid Out werden ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image9.png))
+**Abbildung 3**: die `RepeatDirection`-Eigenschaft legt fest, wie die Richtung der DataList-Elemente bestimmt wird ([Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image9.png)).
 
-Kleine Mengen von Daten, die eine einzelne Zeile und Anzeigen von möglicherweise mehrspaltige Tabellen eine ideale Möglichkeit, um die Bildschirmfläche zu maximieren. Für größere Datenmengen wird eine einzelne Zeile erfordern jedoch zahlreiche Spalten, die die Push-Vorgänge diese Elemente, kann nicht auf dem Bildschirm ausschalten nach rechts anpassen. Abbildung 4 zeigt die Produkte aus, wenn in einem einzeiligen DataList-Steuerelement gerendert wird. Da es sich viele Produkte (mehr als 80), verfügt der Benutzer weit nach rechts, um Informationen zu den einzelnen Produkte anzeigen einen Bildlauf durchführen.
+Wenn Sie kleine Datenmengen anzeigen, ist eine einzeilige, mehrspaltige Tabelle möglicherweise eine ideale Möglichkeit, um die Bildschirmfläche zu maximieren. Bei größeren Datenmengen erfordert eine einzelne Zeile jedoch zahlreiche Spalten, mit denen die Elemente, die auf dem Bildschirm nach rechts passen, nach rechts übertragen werden. In Abbildung 4 werden die Produkte angezeigt, wenn Sie in einem DataList mit einer Zeile gerendert werden. Da es zahlreiche Produkte gibt (über 80), muss der Benutzer einen Bildlauf nach rechts durchführen, um Informationen zu den einzelnen Produkten anzuzeigen.
 
-[![Bei ausreichend großen Datenquellen wird eine einzelne Spalte DataList erfordert horizontalen Bildlauf](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
+[![für ausreichend große Datenquellen ist für einen DataList mit einer einzelnen Spalte ein horizontaler Bildlauf erforderlich.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
 
-**Abbildung 4**: Bei ausreichend großen Datenquellen eine einzelne Spalte DataList-Steuerelement wird erfordert horizontalen Bildlauf ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image12.png))
+**Abbildung 4**: für ausreichend große Datenquellen ist für einen DataList mit einer einzelnen Spalte ein horizontaler[Bildlauf erforderlich (Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image12.png))
 
-## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Schritt 3: Anzeigen von Daten in eine Tabelle mit mehreren Spalten und mehrere Zeilen
+## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Schritt 3: Anzeigen von Daten in einer mehrzeiligen Tabelle mit mehreren Zeilen
 
-Um einem mehrspaltigen und mehrzeilige DataList-Steuerelement zu erstellen, müssen wir legen die [ `RepeatColumns` Eigenschaft](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) auf die Anzahl der Spalten angezeigt werden sollen. In der Standardeinstellung die `RepeatColumns` Eigenschaft ist auf 0 festgelegt, dadurch DataList-Steuerelement alle Elemente in eine einzelne Zeile oder Spalte angezeigt wird (abhängig vom Wert der `RepeatDirection` Eigenschaft).
+Um einen mehrzeiligen DataList mit mehreren Zeilen zu erstellen, müssen wir die`RepeatColumns`- [Eigenschaft](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) auf die Anzahl der anzuzeigenden Spalten festlegen. Standardmäßig wird die `RepeatColumns`-Eigenschaft auf 0 festgelegt, sodass der DataList alle Elemente in einer einzelnen Zeile oder Spalte anzeigt (abhängig vom Wert der `RepeatDirection`-Eigenschaft).
 
-In unserem Beispiel können Sie s, die drei Produkte pro Zeile der Tabelle angezeigt. Legen Sie daher die `RepeatColumns` -Eigenschaft auf 3 fest. Nehmen Sie einen Moment Zeit, um die Ergebnisse in einem Browser anzuzeigen, nach dieser Änderung. Wie in Abbildung 5 gezeigt, werden die Produkte in einer Tabelle drei Spalten und mehreren Zeilen jetzt aufgeführt.
+In unserem Beispiel werden drei Produkte pro Tabellenzeile angezeigt. Legen Sie daher die `RepeatColumns`-Eigenschaft auf 3 fest. Nachdem Sie diese Änderung vorgenommen haben, nehmen Sie sich einen Moment Zeit, um die Ergebnisse in einem Browser anzuzeigen. Wie in Abbildung 5 gezeigt, werden die Produkte nun in einer drei spaltigen Tabelle mit mehreren Zeilen aufgelistet.
 
-[![Es werden drei Produkte pro Zeile angezeigt.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
+[![drei Produkte pro Zeile angezeigt werden.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
 
-**Abbildung 5**: Drei Produkte pro Zeile angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image15.png))
+**Abbildung 5**: drei Produkte werden pro Zeile angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image15.png))
 
-Die `RepeatDirection` Eigenschaft wirkt sich auf wie die Elemente im DataList-Steuerelement angeordnet werden. Abbildung 5 zeigt die Ergebnisse mit den `RepeatDirection` -Eigenschaftensatz auf `Horizontal`. Beachten Sie, dass die ersten drei Produkte Chai Chang und Anissirup von links nach rechts und von oben nach unten angeordnet werden. Die nächsten drei Produkte (beginnend mit Chef Anton s Cajun Seasoning) werden in einer Zeile unterhalb der ersten drei angezeigt. Ändern der `RepeatDirection` -Eigenschaft zurück auf `Vertical`, aber diese Produkte von oben nach unten angeordnet, von links nach rechts, wie in Abbildung 6 gezeigt.
+Die `RepeatDirection`-Eigenschaft wirkt sich darauf aus, wie die Elemente im DataList angelegt werden. Abbildung 5 zeigt die Ergebnisse, bei denen die `RepeatDirection`-Eigenschaft auf `Horizontal`festgelegt ist. Beachten Sie, dass die ersten drei Produkte Chai, Chang und Aniseed-Sirup von links nach rechts und von oben nach unten angeordnet werden. Die nächsten drei Produkte (beginnend mit Chef Anton s Cajun Seasoning) werden in einer Zeile unterhalb der ersten drei Produkte angezeigt. Wenn Sie die `RepeatDirection`-Eigenschaft wieder in `Vertical`ändern, werden diese Produkte von oben nach unten, von links nach rechts, in Abbildung 6 dargestellt.
 
-[![Hier werden die Produkte vertikal angeordnet](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
+[![hier werden die Produkte vertikal angelegt.](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
 
-**Abbildung 6**: Hier werden die Produkte vertikal angeordnet ([klicken Sie, um das Bild in voller Größe anzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image18.png))
+**Abbildung 6**: Hier werden die Produkte vertikal angeordnet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image18.png))
 
-Die Anzahl der Zeilen, die in der resultierenden Tabelle angezeigten hängt von der Anzahl der Datensätze insgesamt an die Datenliste gebunden. Genauer gesagt wird es s, die die Obergrenze der Gesamtzahl der Datenquellenelemente durch geteilt die `RepeatColumns` -Eigenschaftswert. Da die `Products` Tabelle verfügt derzeit über 84 Produkte, die durch 3 teilbar ist, 28 Zeilen vorhanden sind. Wenn die Anzahl der Elemente in der Datenquelle und die `RepeatColumns` Eigenschaftswert sind nicht gleichmäßig geteilt werden, und klicken Sie dann die letzte Zeile oder Spalte weist leere Zellen. Wenn die `RepeatDirection` nastaven NA hodnotu `Vertical`, und klicken Sie dann die letzte Spalte leere Zellen hat `RepeatDirection` ist `Horizontal`, die letzte Zeile die leeren Zellen müssen.
+Die Anzahl der Zeilen, die in der resultierenden Tabelle angezeigt werden, hängt von der Anzahl der Datensätze ab, die an den DataList gebunden sind. Genau, ist die Obergrenze der Gesamtzahl der Datenquellen Elemente dividiert durch den `RepeatColumns`-Eigenschafts Wert. Da die `Products` Tabelle derzeit 84 Produkte enthält, die durch 3 teilbar sind, gibt es 28 Zeilen. Wenn die Anzahl der Elemente in der Datenquelle und der `RepeatColumns`-Eigenschafts Wert nicht teilbar sind, enthält die letzte Zeile oder Spalte leere Zellen. Wenn die `RepeatDirection` auf `Vertical`festgelegt ist, enthält die letzte Spalte leere Zellen. Wenn `RepeatDirection` `Horizontal`ist, enthält die letzte Zeile die leeren Zellen.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-DataList-Steuerelement, listet die Elemente in eine einspaltige, mehrzeilige-Tabelle, die imitiert das Layout einer GridView-Ansicht mit einem einzelnen TemplateField standardmäßig aus. Während dieser Standardlayout akzeptabel ist, können wir Bildschirmfläche maximieren, indem mehrere Datenquellenelemente pro Zeile angezeigt. Dies ist einfach darum, DataList-Steuerelement s `RepeatColumns` Eigenschaft, um die Anzahl der Spalten pro Zeile angezeigt werden sollen. Darüber hinaus DataList-Steuerelement s `RepeatDirection` Eigenschaft kann verwendet werden, um anzugeben, ob der Inhalt der Tabelle mit mehreren Spalten, die mehrzeilige horizontal von links nach rechts und von oben nach unten oder vertikal von oben nach unten, von links nach rechts angeordnet werden soll.
+Der DataList listet standardmäßig seine Elemente in einer einspaltigen Tabelle mit mehreren Zeilen auf, die das Layout eines GridView-Objekts mit einem einzelnen TemplateField imitiert. Obwohl dieses Standardlayout akzeptabel ist, können wir die Bildschirmfläche maximieren, indem wir mehrere Datenquellen Elemente pro Zeile anzeigen. Dies ist einfach das Festlegen der DataList s `RepeatColumns`-Eigenschaft auf die Anzahl der Spalten, die pro Zeile angezeigt werden. Darüber hinaus kann die DataList s-`RepeatDirection` Eigenschaft verwendet werden, um anzugeben, ob der Inhalt der mehrzeiligen Tabelle mit mehreren Zeilen horizontal von links nach rechts, von oben nach unten oder vertikal von oben nach unten, von links nach rechts angeordnet werden soll.
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial ist John Suru. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war John suru. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
