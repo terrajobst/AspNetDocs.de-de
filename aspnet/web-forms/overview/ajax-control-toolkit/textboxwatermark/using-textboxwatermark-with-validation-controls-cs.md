@@ -1,55 +1,55 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs
-title: Verwenden von TextBoxWatermark mit Validierungssteuerelementen (c#) | Microsoft-Dokumentation
+title: Verwenden von textboxwatermark mit Validierungs SteuerC#Elementen () | Microsoft-Dokumentation
 author: wenz
-description: Das Steuerelement "TextBoxWatermark" im AJAX Control Toolkit erweitert ein Textfeld, sodass ein Text in das Feld angezeigt wird. Klickt ein Benutzer in das Feld, es ich...
+description: Mit dem textboxwatermark-Steuerelement im AJAX Control Toolkit wird ein Textfeld erweitert, sodass ein Text im Feld angezeigt wird. Wenn ein Benutzer in das Feld klickt,
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: d49940cb-d38c-456a-b800-5f0eb705d09f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6ed3777e72adbb1a648a6f5215820d597a13bc92
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: bc9498b1c5ba2f38b90706c9200ffa813a945fa9
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124507"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74610863"
 ---
 # <a name="using-textboxwatermark-with-validation-controls-c"></a>Verwenden von TextBoxWatermark mit Validierungssteuerelementen (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2CS.pdf)
 
-> Das Steuerelement "TextBoxWatermark" im AJAX Control Toolkit erweitert ein Textfeld, sodass ein Text in das Feld angezeigt wird. Wenn ein Benutzer in das Feld klickt, wird es geleert. Wenn der Benutzer das Feld lässt sich ohne Eingabe von Text, wird der vorab ausgefüllte Text erneut. Dies möglicherweise in Konflikt mit ASP.NET-Validierungssteuerelementen auf derselben Seite, aber diese Probleme umgehen können.
+> Mit dem textboxwatermark-Steuerelement im AJAX Control Toolkit wird ein Textfeld erweitert, sodass ein Text im Feld angezeigt wird. Wenn ein Benutzer auf das Feld klickt, wird es geleert. Wenn der Benutzer das Kontrollkästchen verlässt, ohne Text einzugeben, wird der vorab gefüllte Text erneut angezeigt. Dies kann mit ASP.net-Validierungs Steuerelementen auf derselben Seite kollidieren, diese Probleme können jedoch möglicherweise behoben werden.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die `TextBoxWatermark` Steuerelement im AJAX Control Toolkit erweitert ein Textfeld aus, sodass ein Text in das Feld angezeigt wird. Wenn ein Benutzer in das Feld klickt, wird es geleert. Wenn der Benutzer das Feld lässt sich ohne Eingabe von Text, wird der vorab ausgefüllte Text erneut. Dies möglicherweise in Konflikt mit ASP.NET-Validierungssteuerelementen auf derselben Seite, aber diese Probleme umgehen können.
+Mit dem `TextBoxWatermark`-Steuerelement im AJAX Control Toolkit wird ein Textfeld erweitert, sodass ein Text im Feld angezeigt wird. Wenn ein Benutzer auf das Feld klickt, wird es geleert. Wenn der Benutzer das Kontrollkästchen verlässt, ohne Text einzugeben, wird der vorab gefüllte Text erneut angezeigt. Dies kann mit ASP.net-Validierungs Steuerelementen auf derselben Seite kollidieren, diese Probleme können jedoch möglicherweise behoben werden.
 
 ## <a name="steps"></a>Schritte
 
-Die grundlegende Einrichtung des Beispiels ist Folgendes: eine `TextBox` Steuerelement wird mit einem Wasserzeichen versehen mit einer `TextBoxWatermarkExtender` Steuerelement. Eine Schaltfläche löst einen Postback und später zum Auslösen der Validierungssteuerelemente auf der Seite verwendet werden. Darüber hinaus eine `ScriptManager` Steuerelement ist erforderlich, um ASP.NET AJAX zu initialisieren:
+Die grundlegende Einrichtung des Beispiels sieht folgendermaßen aus: ein `TextBox` Steuerelement wird mithilfe eines `TextBoxWatermarkExtender` Steuer Elements als Wasserzeichen gekennzeichnet. Eine Schaltfläche löst ein Postback aus und wird später verwendet, um die Validierungs Steuerelemente auf der Seite zu lösen. Außerdem ist ein `ScriptManager`-Steuerelement erforderlich, um ASP.NET AJAX zu initialisieren:
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-cs/samples/sample1.aspx)]
 
-Fügen Sie jetzt eine `RequiredFieldValidator` -Steuerelement, das überprüft, ob Text in das Feld vorhanden ist, wenn das Formular übermittelt wird. Die `InitialValue` Eigenschaft des Validierungssteuerelements muss festgelegt werden, auf den gleichen Wert, der verwendet wird die `TextBoxWatermarkExtender` Steuerelement: Wenn das Formular gesendet wird, ist der Wert des eine unverändert Textbox des Grenzwerts darin:
+Fügen Sie nun ein `RequiredFieldValidator` Steuerelement hinzu, mit dem überprüft wird, ob im Feld Text vorhanden ist, wenn das Formular übermittelt wird. Die `InitialValue`-Eigenschaft des Validierungs Steuer Elements muss auf denselben Wert festgelegt werden, der im `TextBoxWatermarkExtender`-Steuerelement verwendet wird: Wenn das Formular übermittelt wird, ist der Wert eines unverändert Textfelds der Wasserzeichen Wert.
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-cs/samples/sample2.aspx)]
 
-Es ist jedoch ein Problem bei diesem Ansatz: Wenn der Client über JavaScript deaktiviert, das Textfeld ist nicht bereits ausgefüllt ist mit der Wasserzeichentext aus diesem Grund die `RequiredFieldValidator` eine Fehlermeldung wird nicht ausgelöst. Aus diesem Grund eine zweite `RequiredFieldValidator` Steuerelement ist erforderlich, die überprüft, ob ein leeres Textfeld (das Auslassen der `InitialValue` Attribut).
+Bei diesem Ansatz gibt es jedoch ein Problem: Wenn der Client JavaScript deaktiviert, wird das Textfeld nicht mit dem Wasserzeichen Text vorab ausgefüllt, daher löst das `RequiredFieldValidator` keine Fehlermeldung aus. Aus diesem Grund ist ein zweites `RequiredFieldValidator`-Steuerelement erforderlich, das auf ein leeres Textfeld prüft (das `InitialValue`-Attribut wird weggelassen).
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-cs/samples/sample3.aspx)]
 
-Da beide Validierungssteuerelemente verwenden `Display` = `"Dynamic"`, der Endbenutzer kann nicht über die visuelle Darstellung der zwei Validatoren ausgelöst wurde. unterscheiden; stattdessen offenbar gab es nur eine davon.
+Da beide Validierungs Steuerelemente `Display`=`"Dynamic"`verwenden, kann der Endbenutzer nicht von der visuellen Darstellung unterscheiden, welche der beiden Validierungs Steuerelemente ausgelöst wurde. Stattdessen sieht es so aus, als ob nur einer davon vorhanden wäre.
 
-Abschließend fügen Sie serverseitigen Code, um den Text im Feld ausgeben, wenn kein Validierungssteuerelement eine Fehlermeldung ausgegeben:
+Fügen Sie schließlich einigen serverseitigen Code hinzu, um den Text im Feld auszugeben, wenn kein Validierungs Steuerelement eine Fehlermeldung ausgegeben hat:
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-cs/samples/sample4.aspx)]
 
-[![Das Validierungssteuerelement meldet, dass es in das Feld kein Text ist](using-textboxwatermark-with-validation-controls-cs/_static/image2.png)](using-textboxwatermark-with-validation-controls-cs/_static/image1.png)
+[![überprüft das Validierungs Steuerelement, dass kein Text im Feld vorhanden ist.](using-textboxwatermark-with-validation-controls-cs/_static/image2.png)](using-textboxwatermark-with-validation-controls-cs/_static/image1.png)
 
-Das Validierungssteuerelement meldet, dass kein Text vorhanden, in das Feld ist ([klicken Sie, um das Bild in voller Größe anzeigen](using-textboxwatermark-with-validation-controls-cs/_static/image3.png))
+Das Validierungs Steuerelement meldet, dass es keinen Text im Feld gibt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-textboxwatermark-with-validation-controls-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](using-textboxwatermark-in-a-formview-cs.md)

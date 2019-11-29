@@ -1,194 +1,194 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-title: Erste Schritte mit ASP.NET 4.7 Web Forms und Visual Studio 2017 | Microsoft-Dokumentation
+title: Getting Started with ASP.NET 4,7 Web Forms und Visual Studio 2017 | Microsoft-Dokumentation
 author: Erikre
-description: Diese detaillierte lernprogrammreihe vermittelt Sie die Grundlagen der Erstellung einer ASP.NET Web Forms-Anwendung mithilfe von ASP.NET 4.7 und Microsoft Visual Studio
+description: Diese Schritt-für-Schritt-tutorialreihe vermittelt Ihnen die Grundlagen zum Entwickeln einer ASP.net-Web Forms Anwendung mit ASP.NET 4,7 und Microsoft Visual Studio
 ms.author: riande
 ms.date: 01/09/2019
 ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: ad491193c0d669464721d82f86a78b79f45b93aa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 52d5eb7abe4520ebdf6667d299d055fc7619a635
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131368"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74615454"
 ---
-# <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2017
+# <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Getting Started with ASP.NET 4,5 Web Forms und Visual Studio 2017
 
-[Herunterladen der Wingtip Toys-Beispielprojekts (c#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [E-Book (PDF) herunterladen](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[Herunterladen eines Wingtip Toys-C#Beispielprojekts ()](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [Herunterladen von E-Book (PDF)](https://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-Dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET Web Forms-Anwendung mit ASP.NET 4.5 und Microsoft Visual Studio 2017 erstellen. 
+In dieser tutorialreihe wird gezeigt, wie Sie eine ASP.net Web Forms-Anwendung mit ASP.NET 4,5 und Microsoft Visual Studio 2017 erstellen. 
 
 ## <a name="introduction"></a>Einführung
 
-Diese lernprogrammreihe führt Sie durch Erstellen einer ASP.NET Web Forms-Anwendung, die mithilfe von Visual Studio 2017 und ASP.NET 4.5. Erstellen Sie eine Anwendung namens **Wingtip Toys** – eine vereinfachte verkauften Artikel online Storefront-Website. Während der Reihe werden die neuen Features von ASP.NET 4.5 hervorgehoben.
+Diese tutorialreihe führt Sie durch die Erstellung einer ASP.net Web Forms-Anwendung mit Visual Studio 2017 und ASP.NET 4,5. Sie erstellen eine Anwendung mit dem Namen **Wingtip Toys** -eine vereinfachte Store Front-Website, die Elemente online verkauft. Während der Reihe werden die neuen ASP.NET 4,5-Features hervorgehoben.
 
 ### <a name="target-audience"></a>Zielgruppe
 
-Entwickler, die noch nicht mit ASP.NET Web Forms sind die Zielgruppe für diese tutorialreihe.
+Entwickler, die mit ASP.net Web Forms vertraut sind, sind die Zielgruppe für diese tutorialreihe.
 
-Sie benötigen Grundkenntnisse in den folgenden Bereichen:
+Sie sollten über einige Kenntnisse in den folgenden Bereichen verfügen:
 
 - Objektorientierte Programmierung (OOP) und Sprachen
 - Webentwicklung (HTML, CSS, JavaScript)
-- relationale Datenbanken
-- Architektur mit N Ebenen
+- Relationale Datenbanken
+- N-schichtige Architektur
 
-Um diese Bereiche zu überprüfen, sollten Sie in der Untersuchung von des folgenden Inhalts:
+Um diese Bereiche zu überprüfen, sollten Sie den folgenden Inhalt untersuchen:
 
-- [Erste Schritte mit Visual c#](https://msdn.microsoft.com/library/a72418yk.aspx)
-- [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
+- [Erste Schritte mit Visual C#](https://msdn.microsoft.com/library/a72418yk.aspx)
+- [Webentwicklung](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, jQuery](http://w3schools.com/)
 - [Relationale Datenbank](http://en.wikipedia.org/wiki/Relational_database)
-- [Multi-Tier-Architektur](http://en.wikipedia.org/wiki/Multitier_architecture)
+- [Architektur mit mehreren Ebenen](http://en.wikipedia.org/wiki/Multitier_architecture)
 
-### <a name="application-features"></a>Anwendungsfeatures
+### <a name="application-features"></a>Anwendungs Features
 
-Die ASP.NET Web Form-Features, die in dieser Serie vorgestellten umfassen:
+Zu den in dieser Reihe dargestellten ASP.net Web Form-Features gehören:
 
-- Das Webanwendungsprojekt (keine Website-Projekt)
+- Das Webanwendungs Projekt (nicht das Website Projekt)
 - Web Forms
-- Masterseiten, Konfiguration
-- Bootstrap-Stil
-- Entitätsframework Code First, LocalDB
-- Request-Überprüfung
-- Stark typisierte Datensteuerelemente
+- Master Seiten, Konfiguration
+- Bootstrap
+- Entity Framework Code First, localdb
+- Anforderungs Validierung
+- Stark typisierte Daten Steuerelemente
 - Modellbindung
 - Datenanmerkungen
-- Wertanbieter
-- SSL- und OAuth
-- ASP.NET Identity, Konfiguration und -Autorisierung
+- Wert Anbieter
+- SSL und OAuth
+- ASP.net Identity, Konfiguration und Autorisierung
 - Unaufdringliche Validierung
 - Routing
 - ASP.NET – Fehlerbehandlung
 
-### <a name="application-scenarios-and-tasks"></a>Anwendungsszenarien und Aufgaben
+### <a name="application-scenarios-and-tasks"></a>Anwendungsszenarien und-Aufgaben
 
-Tutorial-Reihe von Aufgaben:
+Zu den Aufgaben der Lernprogramm Reihe gehören
 
 - Erstellen, überprüfen und Ausführen eines neuen Projekts
 - Erstellen einer Datenbankstruktur
-- Initialisieren und Ausführen eines Seedings einer Datenbank
-- Anpassen der Benutzeroberfläche mit Stilen, Grafiken und eine Masterseite
-- Hinzufügen von Seiten und navigation
-- Anzeigen von Menü-Details und Produktdaten
-- Erstellen einen Einkaufswagen gelegt hat
-- Hinzufügen von SSL und OAuth-Unterstützung
-- Eine Zahlungsmethode hinzufügen
-- Einschließlich der Rolle Administrator angehören und ein Benutzer der Anwendung
+- Initialisieren und Seeding einer Datenbank
+- Anpassen der Benutzeroberfläche mit Stilen, Grafiken und einer Master Seite
+- Hinzufügen von Seiten und Navigation
+- Anzeigen von Menü Details und Produktdaten
+- Erstellen eines Einkaufswagen
+- Hinzufügen von SSL-und OAuth-Unterstützung
+- Hinzufügen einer Zahlungsmethode
+- Einschließen einer Administrator Rolle und eines Benutzers für die Anwendung
 - Einschränken des Zugriffs auf bestimmte Seiten und Ordner
-- Hochladen einer Datei in der Webanwendung
-- Implementieren der eingabeüberprüfung
-- Registrieren von Routen für die Webanwendung
-- Implementieren der Fehlerbehandlung und Protokollierung von Anzeigefehlern
+- Hochladen einer Datei in die Webanwendung
+- Implementieren der Eingabevalidierung
+- Routen für die Webanwendung werden registriert
+- Implementieren der Fehlerbehandlung und der Fehler Protokollierung
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Dieser tutorialreihe ist die Linie für eine Person mit Programmierkonzepten vertraut, aber noch nicht mit ASP.NET Web Forms. Wenn Sie bereits mit ASP.NET Web Forms vertraut sind, können diese weiterhin neue ASP.NET 4.5-Funktionen Informationen helfen. Leser, die nicht mit den Konzepten und ASP.NET Web Forms-Programmierung finden Sie unter der weitere Web Forms-Tutorials zur Verfügung gestellt, der [Einstieg](../../../index.md) Abschnitt auf der ASP.NET-Website.
+Diese tutorialreihe richtet sich an Benutzer, die mit Programmier Konzepten vertraut sind, aber noch nicht in ASP.net Web Forms. Wenn Sie bereits mit ASP.net Web Forms vertraut sind, können Sie mit dieser Reihe noch mehr über neue ASP.NET 4,5-Features erfahren. Leser, die mit Programmier Konzepten und ASP.net-Web Forms nicht vertraut sind, finden Sie in den zusätzlichen Web Forms Tutorials im Abschnitt " [Getting Started](../../../index.md) " auf der ASP.NET-Website.
 
-Die ASP.NET 4.5 bereitgestellt, die in dieser tutorialreihe umfasst die folgenden Funktionen:
+Die in dieser tutorialreihe bereitgestellte ASP.NET 4,5 umfasst die folgenden Features:
 
-- Eine einfache Benutzeroberfläche zum Erstellen von Projekten, die bietet [Unterstützung für viele ASP.NET Frameworks](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#add) (Web Forms, MVC und Web-API).
-- [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap), Layout, Designs und Framework für reaktionsfähiges Design.
-- [ASP.NET Identity](../../../../identity/index.md), ein neues ASP.NET-Mitgliedschaftssystem, die in allen ASP.NET-Framework-Versionen und funktioniert mit Web-Software als IIS-hosting funktioniert.
+- Eine einfache Benutzeroberfläche zum Erstellen von Projekten, die [Unterstützung für viele ASP.NET-Frameworks](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#add) (Web Forms, MVC und die Web-API) bietet.
+- [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap), ein Layout, Design, Design und reaktionsfähiges Design Framework.
+- [ASP.net Identity](../../../../identity/index.md)ein neues ASP.NET-Mitgliedschaftssystem, das in allen ASP.NET-Frameworks identisch funktioniert und mit anderen Webhosting-Software als IIS funktioniert.
 - [Entity Framework 6](https://msdn.microsoft.com/data/ef.aspx)
 
-  Ein Update zu Entity Framework können Sie:
+  Ein Update der-Entity Framework, die Folgendes ermöglicht:
   - Abrufen und Bearbeiten von Daten als stark typisierte Objekte
-  - Zugriff auf Daten asynchron
-  - Behandeln von vorübergehenden Verbindungsfehlern
-  - Log-SQL-Anweisungen
+  - Asynchrones Zugreifen auf Daten
+  - Behandeln vorübergehender Verbindungsfehler
+  - SQL-Anweisungen protokollieren
 
-Eine vollständige Liste der ASP.NET 4.5-Funktionen, finden Sie unter [ASP.NET and Web Tools für Visual Studio 2013 Release Notes](../../../../visual-studio/overview/2013/release-notes.md).
+Eine komplette Liste der ASP.NET 4,5-Features finden Sie unter [ASP.net and Web Tools für Visual Studio 2013 Anmerkungen](../../../../visual-studio/overview/2013/release-notes.md)zu dieser Version.
 
-### <a name="the-wingtip-toys-sample-application"></a>Die Wingtip Toys-beispielanwendung
+### <a name="the-wingtip-toys-sample-application"></a>Die Wingtip Toys-Beispielanwendung
 
-Die folgenden Screenshots sind von der ASP.NET Web Forms-Anwendung, die Sie in diesem Tutorial erstellen. Wenn Sie die Anwendung in Visual Studio ausführen, wird die folgende Webseite-Startseite angezeigt.
+Die folgenden Screenshots stammen aus der ASP.net Web Forms-Anwendung, die Sie in dieser tutorialreihe erstellen. Wenn Sie die Anwendung in Visual Studio ausführen, wird die folgende Web-Startseite angezeigt.
 
-![Wingtip Toys - Standardseite](introduction-and-overview/_static/image1.png)
+![Wingtip Toys-Standardseite](introduction-and-overview/_static/image1.png)
 
-Sie können als neuer Benutzer registrieren, oder melden Sie sich als einen vorhandenen Benutzer. Der oberen Navigationsleiste verfügt über Links zu Produktkategorien und ihre Produkte aus der Datenbank.
+Sie können sich als neuer Benutzer registrieren oder sich als vorhandener Benutzer anmelden. Der obere Navigationsbereich enthält Links zu Produktkategorien und deren Produkten aus der Datenbank.
 
-Bei Auswahl von **Produkte**, alle verfügbaren Produkte werden angezeigt. 
+Wenn Sie **Produkte**auswählen, werden alle verfügbaren Produkte angezeigt. 
 
-![Wingtip Toys - Produkte](introduction-and-overview/_static/image2.png)
+![Wingtip Toys-Produkte](introduction-and-overview/_static/image2.png)
 
-Wenn Sie ein bestimmtes Produkt auswählen, werden die Produktdetails angezeigt.
+Wenn Sie ein bestimmtes Produkt auswählen, werden Produktdetails angezeigt.
 
-![Wingtip Toys - Produktinformationen](introduction-and-overview/_static/image3.png)
+![Wingtip Toys-Produkt Details](introduction-and-overview/_static/image3.png)
 
-Sie können als Benutzer registrieren und melden Sie sich mit Standardfunktionen für Web Forms-Vorlage. In diesem Tutorial wird die Verwendung mit einem vorhandenen Gmail-Konto anmelden. Darüber hinaus können Sie als Administrator hinzufügen und Entfernen von Produkten aus der Datenbank anmelden.
+Als Benutzer können Sie sich mit Web Forms Vorlagen Standardfunktionalität registrieren und anmelden. In diesem Tutorial wird auch erläutert, wie Sie sich mit einem vorhandenen Gmail-Konto anmelden. Außerdem können Sie sich als Administrator anmelden, um Produkte aus der Datenbank hinzuzufügen und daraus zu entfernen.
 
-![Wingtip Toys - Anmeldung](introduction-and-overview/_static/image4.png)
+![Wingtip Toys-anmelden](introduction-and-overview/_static/image4.png)
 
-Nachdem Sie sich als Benutzer angemeldet haben, können Sie Produkte auf den Einkaufswagen und Diskussion zum Bezahlvorgang mit PayPal hinzufügen. Die beispielanwendung dient, in PayPals-Entwickler-Sandbox arbeiten. Keine Transaktion tatsächlich Zahlung erfolgt.
+Wenn Sie sich als Benutzer angemeldet haben, können Sie Produkte zum Warenkorb hinzufügen und mit PayPal Auschecken. Die Beispielanwendung ist so konzipiert, dass Sie in der Developer Sandbox von PayPal funktioniert. Es findet keine tatsächliche Money-Transaktion statt.
 
-![Wingtip Toys - Warenkorb](introduction-and-overview/_static/image5.png)
+![Wingtip Toys: Einkaufswagen](introduction-and-overview/_static/image5.png)
 
-PayPal bestätigt Ihre Informationen zu Konto, Reihenfolge und Zahlung.
+PayPal bestätigt Ihre Konto-, Bestell-und Zahlungsinformationen.
 
-![Wingtip Toys - PayPal](introduction-and-overview/_static/image6.png)
+![Wingtip Toys-PayPal](introduction-and-overview/_static/image6.png)
 
-Sie können nach der Rückkehr aus PayPal, überprüfen und Abschließen der Bestellung.
+Nach der Rückgabe von PayPal können Sie Ihre Bestellung überprüfen und vervollständigen.
 
-![Wingtip Toys - Order-Überprüfung](introduction-and-overview/_static/image7.png)
+![Wingtip Toys-Bestell Überprüfung](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass die folgende Software auf Ihrem Computer installiert ist:
+Vergewissern Sie sich, dass die folgende Software auf Ihrem Computer installiert ist, bevor Sie beginnen:
 
-- [Microsoft Visual Studio 2017 "oder" Microsoft Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/).
+- [Microsoft Visual Studio 2017 oder Microsoft Visual Studio Community 2017](https://visualstudio.microsoft.com/downloads/).
 
-.NET Framework wird automatisch installiert.
+Der .NET Framework wird automatisch installiert.
 
-Dieser tutorialreihe wird Microsoft Visual Studio Community 2017 verwendet. Sie können entweder, dass oder Microsoft Visual Studio 2017 zum Abschließen dieser tutorialreihe.
+Diese tutorialreihe verwendet Microsoft Visual Studio Community 2017. Diese tutorialreihe können Sie entweder mithilfe von oder Microsoft Visual Studio 2017 durchführen.
 
-Beachten Sie Folgendes im Zusammenhang mit Visual Studio:
+Beachten Sie die folgenden Informationen zu Visual Studio:
 
-* Microsoft Visual Studio 2017 und Microsoft Visual Studio Community 2017 als bezeichnet *Visual Studio* in dieser tutorialreihe.
+* Microsoft Visual Studio 2017 und Microsoft Visual Studio Community 2017 werden in dieser tutorialreihe als *Visual Studio* bezeichnet.
 
-* Visual Studio 2017 installiert ist neben älteren Versionen bereits installiert. In früheren Versionen erstellten Websites können in Visual Studio 2017 geöffnet werden und weiterhin in früheren Versionen öffnen.
+* Visual Studio 2017 wird neben allen älteren Versionen installiert, die bereits installiert sind. Websites, die in früheren Versionen erstellt wurden, können in Visual Studio 2017 geöffnet und weiterhin in früheren Versionen geöffnet werden.
 
-* Zum ersten Mal Sie Visual Studio gestartet, es wird davon ausgegangen, dass Sie ausgewählt haben die *Webentwicklung* Einstellungen. Weitere Informationen finden Sie unter [Vorgehensweise: Wählen Sie die Umgebungseinstellungen für die Webentwicklung](https://msdn.microsoft.com/library/ff521558.aspx).
+* Wenn Sie Visual Studio zum ersten Mal gestartet haben, wird davon ausgegangen, dass Sie die *Webentwicklungs* Einstellungen ausgewählt haben. Weitere Informationen finden Sie unter Gewusst [wie: Auswählen von Einstellungen für die Webentwicklungs Umgebung](https://msdn.microsoft.com/library/ff521558.aspx).
 
-Nach der Installation der erforderlichen Komponenten können Sie damit beginnen, erstellen das Webprojekt, das in dieser tutorialreihe angezeigt.
+Nachdem Sie die erforderlichen Komponenten installiert haben, können Sie mit dem Erstellen des in dieser tutorialreihe dargestellten Webprojekts beginnen.
 
-## <a name="download-the-sample-application"></a>Herunterladen der beispielanwendung
+## <a name="download-the-sample-application"></a>Herunterladen der Beispielanwendung
 
- Sie können die vollständige Beispiel-Anwendung auf jederzeit auf der MSDN Samples-Website herunterladen:
+ Sie können die abgeschlossene Beispielanwendung jederzeit von der MSDN Samples-Website herunterladen:
 
-[Erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (c#) 
+[Getting Started with ASP.NET 4,5 Web Forms and Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 
 
  Dieser Download umfasst die folgenden Elemente:
 
-- Die beispielanwendung in der *WingtipToys* Ordner.
-- Die Ressourcen, die zum Erstellen der beispielanwendung in der *WingtipToys-Assets* Ordner in der *WingtipToys* Ordner.
+- Die Beispielanwendung im Ordner *wingtiptoys* .
+- Die Ressourcen, die zum Erstellen der Beispielanwendung im Ordner *wingtiptoys-Assets* im Ordner *wingtiptoys* verwendet werden.
 
-Der Download ist eine *ZIP* Datei. Anzeigen des abgeschlossenen Projekts, das dieser tutorialreihe erstellt suchen und Auswählen der *C#* Ordner in der ZIP-Datei. Speichern Sie die C# Ordner in den Ordner, die Sie verwenden, um mit Visual Studio-Projekten zu arbeiten. Standardmäßig ist der Ordner von Visual Studio 2017-Projekte:
+Der Download ist eine *ZIP* -Datei. Um das abgeschlossene Projekt anzuzeigen, das in dieser tutorialreihe erstellt wird *C#* , suchen Sie den Ordner in der ZIP-Datei, und wählen Sie ihn Speichern Sie C# den Ordner in dem Ordner, den Sie für die Arbeit mit Visual Studio-Projekten verwenden. Standardmäßig lautet der Ordner Visual Studio 2017-Projekte wie folgt:
 
-<strong>C:\Users&#92;</strong><strong><em>&lt;Benutzername&gt;</em></strong><strong>\source\repos</strong>
+<strong>C:\Benutzer&#92;</strong>  <strong><em>&lt;Benutzername&gt;</em></strong> <strong>\source\repos</strong>
 
-Benennen Sie die ***c#*** Ordner ***WingtipToys***.
+Benennen Sie ***C#*** den Ordner in ***wingtiptoys***um.
 
 > [!NOTE]
-> Wenn Sie bereits einen Ordner namens haben *WingtipToys* im Projektordner, bevor Sie Sie umbenennen, vorhandenen Ordner vorübergehend Umbenennen der *c#* Ordner *WingtipToys*.
+> Wenn Sie bereits über einen Ordner mit dem Namen *wingtiptoys* im Ordner "Projekte" verfügen, benennen Sie den vorhandenen *C#* Ordner vorübergehend um, bevor Sie den Ordner in *wingtiptoys*umbenennen.
 
-Öffnen Sie zum Ausführen des abgeschlossenen Projekts der *WingtipToys* Ordner und doppelklicken Sie auf die *WingtipToys.sln* Datei. Visual Studio 2017 wird das Projekt geöffnet. Als Nächstes mit der rechten Maustaste die *"default.aspx"* Datei **Projektmappen-Explorer** , und wählen Sie **In Browser anzeigen**.
+Um das abgeschlossene Projekt auszuführen, öffnen Sie den Ordner *wingtiptoys* , und doppelklicken Sie auf die Datei *wingtiptoys. sln* . Visual Studio 2017 öffnet das Projekt. Klicken Sie anschließend in **Projektmappen-Explorer** mit der rechten Maustaste auf die Datei *default. aspx* , und wählen Sie **in Browser anzeigen aus**.
 
-## <a name="take-a-aspnet-web-forms-quiz-to-review-content"></a>Machen Sie ein ASP.NET Web Forms-Quiz, Inhalte zu überprüfen.
+## <a name="take-a-aspnet-web-forms-quiz-to-review-content"></a>ASP.net-Web Forms Quiz zum Überprüfen von Inhalten
 
-Nach Abschluss der tutorialreihe können ein Quiz können Sie Ihr Wissen testen und wichtige Konzepte zu verstärken. Jeder Frage enthält eine Erläuterung und Links zu weiteren Anleitungen.
+Nachdem Sie die tutorialreihe abgeschlossen haben, erstellen Sie ein Quiz, um Ihr Wissen zu testen und wichtige Konzepte zu verstärken Jede Frage enthält eine Erläuterung und Links zu weiteren Anleitungen.
 
-* [ASP.NET Web Forms-Quiz](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
+* [ASP.net Web Forms Quiz](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
 
-## <a name="tutorial-support-and-comments"></a>Tutorial Support und Kommentare
+## <a name="tutorial-support-and-comments"></a>Lernprogramm Unterstützung und Kommentare
 
-Für Fragen und Kommentare, verwenden Sie den f und A-Abschnitt enthalten die [erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) Beispielseite.
+Für Fragen und Kommentare verwenden Sie den Q-und einen-Abschnitt, der auf der Beispielseite mit den ersten Schritten [mit ASP.NET 4,5 Web Forms und Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) enthalten ist.
 
-Kommentare zu dieser tutorialreihe sind Willkommen. Wenn dieser tutorialreihe aktualisiert wird, wird versucht, Korrekturen oder Vorschläge für Verbesserungen zu berücksichtigen.
+Kommentare zu dieser tutorialreihe sind willkommen. Wenn diese tutorialreihe aktualisiert wird, wird jeder Versuch unternommen, Korrekturen oder Verbesserungsvorschläge in Erwägung zu gezogen.
 
-Wenn ein Fehler auftritt, die entsprechende Fehlermeldungen können verwirrend sein, ohne gute Erklärung dazu, wie Sie diesen Fehler beheben. Um Hilfe zu erhalten, sehen Sie sich die [ASP.NET-Foren](https://forums.asp.net/). Eine weitere gute Quelle ist der f und A-Abschnitt in der [erste Schritte mit ASP.NET 4.5 Web Forms und Visual Studio 2013 – Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) Beispielseite. 
+Wenn ein Fehler auftritt, können die entsprechenden Fehlermeldungen verwirrend sein, und es gibt keine gute Erklärung, wie Sie Sie beheben können. Hilfe finden Sie in den ASP.net- [Foren](https://forums.asp.net/). Eine weitere gute Quelle ist der Q-und A-Abschnitt der Beispielseite " [Getting Started with ASP.NET 4,5 Web Forms and Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#)". 
 
 > [!div class="step-by-step"]
 > [Nächste](create-the-project.md)

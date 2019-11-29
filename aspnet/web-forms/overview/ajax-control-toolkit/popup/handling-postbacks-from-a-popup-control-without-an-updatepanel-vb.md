@@ -1,59 +1,59 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb
-title: Verarbeiten von Postbacks über ein Popupsteuerelement ohne ein UpdatePanel-Steuerelement (VB) | Microsoft-Dokumentation
+title: Verarbeiten von Postbacks über ein Popup Steuerelement ohne Update Panel (VB) | Microsoft-Dokumentation
 author: wenz
-description: Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Wenn ein Postback in "su" erfolgt...
+description: Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Wenn ein Postback in "su..." auftritt
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a0b9186c-0912-4fff-916a-6d17e696a50b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c0535ee78bf3ee5133d73749e8376f4b771f4d3c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: aaecf77c1d25f2c99ef4e9948d79fc01b837169b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115104"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74611673"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a>Verarbeiten von Postbacks über ein Popupsteuerelement ohne ein UpdatePanel-Steuerelement (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl3.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol3VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl3.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol3VB.pdf)
 
-> Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Wenn ein Postback, in einem Bereich angezeigt auftritt, und es mehrere Bereiche auf der Seite gibt ist es schwierig, um zu bestimmen, welchen Bereich geklickt wurde.
+> Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Wenn ein Postback in einem solchen Bereich stattfindet und mehrere Bereiche auf der Seite vorhanden sind, ist es schwierig, zu ermitteln, auf welchen Panel geklickt wurde.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Wenn ein Postback, in einem Bereich angezeigt auftritt, und es mehrere Bereiche auf der Seite gibt ist es schwierig, um zu bestimmen, welchen Bereich geklickt wurde.
+Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Wenn ein Postback in einem solchen Bereich stattfindet und mehrere Bereiche auf der Seite vorhanden sind, ist es schwierig, zu ermitteln, auf welchen Panel geklickt wurde.
 
 ## <a name="steps"></a>Schritte
 
-Bei Verwendung einer `PopupControl` mit einem Postback, aber ohne eine `UpdatePanel` auf der Seite das Steuerelement-Toolkit nicht bietet eine Möglichkeit zu bestimmen, welche Client-Element des Popups ausgelöst hat, der wiederum das Postback verursacht hat. Jedoch ein kleinen Trick zur Umgehung dieses Problems für dieses Szenario bietet.
+Wenn Sie ein `PopupControl` mit einem Postback verwenden, aber keine `UpdatePanel` auf der Seite haben, bietet das Steuerelement-Toolkit keine Möglichkeit, zu bestimmen, welches Client Element das Popup ausgelöst hat, das wiederum das Postback verursacht hat. Ein kleiner Trick bietet jedoch eine Problem Umgehung für dieses Szenario.
 
-Zunächst sieht die grundlegende Einrichtung: zwei Textfelder, die beide die gleiche Popup, einen Kalender auslösen. Zwei `PopupControlExtenders` Vereinen von Textfeldern und den popupausrichtungspunkt.
+Im folgenden finden Sie zunächst die grundlegende Einrichtung: zwei Textfelder, die beide das gleiche Popup, einen Kalender, auslöst. Zwei `PopupControlExtenders` Textfelder und Popup zusammensetzen.
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample1.aspx)]
 
-Die grundlegende Idee ist, Hinzufügen einer ausgeblendeten Formularfelds in der &lt; `form` &gt; -Element, das das Textfeld enthält, die das Popup gestartet:
+Die grundlegende Idee ist das Hinzufügen eines ausgeblendeten Formular Felds in der &lt;`form`&gt; Element, das das Textfeld enthält, das das Popup gestartet hat:
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample2.aspx)]
 
-Wenn die Seite geladen wird, fügt einen Ereignishandler von JavaScript-Code auf die beiden Textfelder hinzu: Wenn der Benutzer auf das Textfeld klickt, wird der Name in ausgeblendeten Formularfelds geschrieben:
+Wenn die Seite geladen wird, fügt JavaScript-Code beide Textfeldern einen Ereignishandler hinzu: Wenn der Benutzer auf ein Textfeld klickt, wird sein Name in das ausgeblendete Formularfeld geschrieben:
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-In den serverseitigen Code verwenden muss der Wert des ausgeblendeten Felds gelesen werden. Da ausgeblendeten Formularfeldern sehr einfach zu bearbeiten sind, ist ein Whitelist-Ansatz zur Überprüfung des Werts der ausgeblendeten erforderlich. Nachdem das Textfeld für die richtige identifiziert wurde, wird das Datum aus dem Kalender in diese geschrieben.
+Im serverseitigen Code muss der Wert des ausgeblendeten Felds gelesen werden. Da verborgene Formularfelder zu bearbeiten sind, ist ein Whitelist-Ansatz erforderlich, um den verborgenen Wert zu überprüfen. Nachdem das richtige Textfeld identifiziert wurde, wird das Datum aus dem Kalender in das Textfeld geschrieben.
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
-[![Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt.](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image1.png)
+[![der Kalender angezeigt wird, wenn der Benutzer auf das Textfeld klickt.](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image1.png)
 
-Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image3.png))
+Der Kalender wird angezeigt, wenn der Benutzer auf das Textfeld klickt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image3.png)).
 
-[![Durch Klicken auf ein Datum in das Textfeld eingefügt](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image4.png)
+[Wenn Sie ![auf ein Datum klicken, wird es in das Textfeld eingefügt.](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image4.png)
 
-Durch Klicken auf ein Datum in das Textfeld eingefügt ([klicken Sie, um das Bild in voller Größe anzeigen](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image6.png))
+Wenn Sie auf ein Datum klicken, wird es in das Textfeld eingefügt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image6.png)).
 
 > [!div class="step-by-step"]
-> [Vorherige](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
+> [Vorheriges](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)

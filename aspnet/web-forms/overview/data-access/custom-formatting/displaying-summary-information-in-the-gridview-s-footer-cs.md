@@ -1,191 +1,191 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
-title: Anzeigen von Zusammenfassungsinformationen im GridView Fuß (c#) | Microsoft-Dokumentation
+title: Anzeigen von Zusammenfassungs Informationen im GridView-FooterC#() | Microsoft-Dokumentation
 author: rick-anderson
-description: Zusammenfassende Informationen wird häufig am unteren Rand des Berichts in eine Zusammenfassungszeile angezeigt. Das GridView-Steuerelement kann eine Fußzeile enthalten, in die Zellen Pr können...
+description: Zusammenfassungs Informationen werden häufig im unteren Bereich des Berichts in einer Zusammenfassungs Zeile angezeigt. Das GridView-Steuerelement kann eine Footerzeile enthalten, in deren Zellen wir PR haben können...
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: d50edc31-9286-4c6a-8635-be09e72752a4
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 685917250247e6a36952de29404146d85af3c46d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b258a2bdeaea8da4e9c5c5d8043b167d94e1e817
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114992"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74617009"
 ---
 # <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>Anzeigen von Zusammenfassungsinformationen im GridView-Fuß (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_15_CS.exe) oder [PDF-Datei herunterladen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/datatutorial15cs1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_15_CS.exe) oder [PDF herunterladen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/datatutorial15cs1.pdf)
 
-> Zusammenfassende Informationen wird häufig am unteren Rand des Berichts in eine Zusammenfassungszeile angezeigt. Das GridView-Steuerelement kann eine Fußzeile enthalten, in die Zellen wir programmgesteuert aggregierte Daten einfügen können. In diesem Tutorial sehen wir, wie Aggregieren von Daten in dieser Fußzeile angezeigt wird.
+> Zusammenfassungs Informationen werden häufig im unteren Bereich des Berichts in einer Zusammenfassungs Zeile angezeigt. Das GridView-Steuerelement kann eine Footerzeile enthalten, in deren Zellen wir Programm gesteuert Aggregatdaten einfügen können. In diesem Tutorial wird erläutert, wie Aggregatdaten in dieser Footerzeile angezeigt werden.
 
 ## <a name="introduction"></a>Einführung
 
-Ein Benutzer kann nicht nur jedes der Preise für die Produkte, die im Lager vorrätigen Stückzahl, Einheiten auf Reihenfolge und Neuanordnen von Stufen, auch interessant, aggregierte Informationen, z. B. den durchschnittlichen Preis, der die Gesamtzahl der Einheiten im Lager, und so weiter. Eine solche Zusammenfassung wird häufig am unteren Rand des Berichts in eine Zusammenfassungszeile angezeigt. Das GridView-Steuerelement kann eine Fußzeile enthalten, in die Zellen wir programmgesteuert aggregierte Daten einfügen können.
+Zusätzlich zum Anzeigen der Preise der Produkte, Einheiten in Aktien, Einheiten in der Bestellung und Neuanordnung der Ebenen kann ein Benutzer auch an Aggregat Informationen interessiert sein, z. b. den Durchschnittspreis, die Gesamtzahl der Einheiten im Lager usw. Diese Zusammenfassungs Informationen werden häufig in einer Zusammenfassungs Zeile unten im Bericht angezeigt. Das GridView-Steuerelement kann eine Footerzeile enthalten, in deren Zellen wir Programm gesteuert Aggregatdaten einfügen können.
 
-Diese Aufgabe zeigt drei Herausforderungen:
+Diese Aufgabe stellt drei Herausforderungen dar:
 
-1. Konfigurieren der GridView, um die Footerzeile angezeigt
-2. Bestimmen die Zusammenfassungsdaten; d. h. berechnen wie wir den durchschnittlichen Preis oder die Summe der Einheiten im Lager?
-3. Die Zusammenfassungsdaten einfügen in die entsprechenden Zellen der Footerzeile
+1. Konfigurieren der GridView zum Anzeigen der Footerzeile
+2. Bestimmen der Zusammenfassungs Daten; Das heißt, wie berechnen wir den Durchschnittspreis oder die Summe der Einheiten im Lager?
+3. Einfügen der Zusammenfassungs Daten in die entsprechenden Zellen der Footerzeile
 
-In diesem Tutorial sehen wir, wie Sie diese Herausforderungen zu bewältigen. Insbesondere erstellen wir eine Seite, die die Kategorien in einer Dropdownliste mit der ausgewählten Kategorie-Produkten, die in einer GridView-Ansicht angezeigt werden aufgelistet. Das GridView wird eine Fußzeile enthalten, die den Durchschnittspreis und die Gesamtzahl der Einheiten im Lager und Reihenfolge für Produkte in dieser Kategorie angezeigt.
+In diesem Tutorial erfahren Sie, wie Sie diese Herausforderungen meistern können. Insbesondere erstellen wir eine Seite, die die Kategorien in einer Dropdown Liste mit den in einer GridView angezeigten Produkten der ausgewählten Kategorie auflistet. Die GridView enthält eine Footerzeile, in der der Durchschnittspreis und die Gesamtzahl der Einheiten in der Bestellung und die Reihenfolge der Produkte in dieser Kategorie angezeigt werden.
 
-[![Zusammenfassende Informationen wird in des GridView Fußzeile angezeigt.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image1.png)
+[![Zusammenfassungs Informationen werden in der Fußzeile der GridView angezeigt.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image1.png)
 
-**Abbildung 1**: Zusammenfassende Informationen wird angezeigt, in des GridView Fußzeile ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image3.png))
+**Abbildung 1**: zusammenfassende Informationen werden in der Fußzeile der GridView angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image3.png))
 
-Dieses Tutorial, mit der Kategorie, Produkte Master/Detail-Schnittstelle, baut auf den weiter oben behandelten Begriffen [Master/Detail-Filtern mit einer DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) Tutorial. Wenn Sie noch nicht mit dem früheren Tutorial gearbeitet haben, machen Sie dies vor dem Fortsetzen dieses.
+In diesem Tutorial mit der Kategorie "Produkte Master/Detail Interface" werden die Konzepte erläutert, die in der vorherigen [Master/Detail-Filterung mit einem DropDownList-](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) Tutorial behandelt wurden. Wenn Sie noch nicht mit dem vorherigen Tutorial gearbeitet haben, sollten Sie dies tun, bevor Sie mit diesem Tutorial fortfahren.
 
-## <a name="step-1-adding-the-categories-dropdownlist-and-products-gridview"></a>Schritt 1: Hinzufügen der DropDownList für Kategorien und Produkte GridView
+## <a name="step-1-adding-the-categories-dropdownlist-and-products-gridview"></a>Schritt 1: Hinzufügen der Kategorien DropDownList und Products GridView
 
-Bevor betreffen selbst, mit dem Hinzufügen von Zusammenfassungsinformationen zu den GridView Fuß, lassen Sie uns einfach erstellen Sie zuerst das Master/Detail-Berichts. Sobald wir im ersten Schritt abgeschlossen haben, suchen wir an, wie zusammengefasste Daten enthalten.
+Bevor wir uns mit dem Hinzufügen von Zusammenfassungs Informationen zum Footer von GridView befassen, erstellen wir zunächst einfach den Master-/Detailbericht. Nachdem wir diesen ersten Schritt abgeschlossen haben, sehen wir uns an, wie Zusammenfassungs Daten eingeschlossen werden.
 
-Öffnen Sie zunächst die `SummaryDataInFooter.aspx` auf der Seite die `CustomFormatting` Ordner. Fügen Sie einem DropDownList-Steuerelement hinzu, und legen Sie dessen `ID` zu `Categories`. Klicken Sie dann auf den Link "Datenquelle auswählen" aus der Dropdownlistes Smarttag und zum Hinzufügen einer neuen, mit dem Namen "ObjectDataSource" opt `CategoriesDataSource` aufruft, die die `CategoriesBLL` Klasse `GetCategories()` Methode.
+Öffnen Sie zunächst die Seite `SummaryDataInFooter.aspx` im Ordner `CustomFormatting`. Fügen Sie ein Dropdown List-Steuerelement hinzu, und legen Sie dessen `ID` auf `Categories` Klicken Sie anschließend auf den Link Datenquelle auswählen aus dem Smarttag DropDownList, und wählen Sie das Hinzufügen einer neuen ObjectDataSource namens `CategoriesDataSource` aus, die die `GetCategories()`-Methode der `CategoriesBLL` Klasse aufruft.
 
-[![Fügen Sie eine neue, mit dem Namen CategoriesDataSource "ObjectDataSource"](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image4.png)
+[![eine neue ObjectDataSource mit dem Namen "categoriesdatasource" hinzufügen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image4.png)
 
-**Abbildung 2**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `CategoriesDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image6.png))
+**Abbildung 2**: Hinzufügen einer neuen ObjectDataSource mit dem Namen "`CategoriesDataSource`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image6.png))
 
-[![Haben Sie dem ObjectDataSource-Steuerelement GetCategories()-Methode der CategoriesBLL-Klasse aufrufen.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image7.png)
+[![, dass ObjectDataSource die GetCategories ()-Methode der kategoriesbll-Klasse aufruft.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image7.png)
 
-**Abbildung 3**: Haben Sie die "ObjectDataSource" Aufrufen der `CategoriesBLL` -Klasse `GetCategories()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image9.png))
+**Abbildung 3**: lassen Sie die `GetCategories()` Methode der `CategoriesBLL` Klasse von ObjectDataSource aufrufen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image9.png))
 
-Nach der Konfiguration dem ObjectDataSource-Steuerelement, gibt der Assistent, wir DropDownLists-Datenquellen, die aus dem müssen wir angeben welche Datenfeldwert Assistenten angezeigt werden sollen und welche auf den Wert des der DropDownList entsprechenmuss`ListItem` s. Haben die `CategoryName` angezeigte Feld und die Verwendung der `CategoryID` als Wert.
+Nach dem Konfigurieren von ObjectDataSource kehrt der Assistent zum Konfigurationsassistenten für Datenquellen von DropDownList zurück, von dem aus angegeben werden muss, welcher Daten Feldwert angezeigt werden soll und welcher dem Wert der `ListItem` s der DropDownList entsprechen soll. Lassen Sie das `CategoryName` Feld angezeigt, und verwenden Sie die `CategoryID` als Wert.
 
-[![Verwenden Sie die CategoryID-Felder und "CategoryName" als Wert für die ListItems und Text](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image10.png)
+[![die Felder "CategoryName" und "CategoryID" als Text und Wert für die "ListItems"-Werte verwenden.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image10.png)
 
-**Abbildung 4**: Verwenden der `CategoryName` und `CategoryID` von Feldern nach der `Text` und `Value` für die `ListItem` s, bzw. ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image12.png))
+**Abbildung 4**: Verwenden der Felder "`CategoryName`" und "`CategoryID`" als `Text` und `Value` für die `ListItem` e ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image12.png))
 
-An diesem Punkt haben wir einem DropDownList-Steuerelement (`Categories`), die im System sind die Kategorien aufgeführt. Nun müssen wir einer GridView-Ansicht hinzufügen, die diese Produkte aufgeführt sind, die der ausgewählten Kategorie gehören. Bevor wir, allerdings tun können Sie das AutoPostBack aktivieren Kontrollkästchen in der Dropdownlistes Smarttag. Siehe die *Master/Detail-Filtern mit einer DropDownList* Tutorial durch Festlegen des DropDownList `AutoPostBack` Eigenschaft, um `true` die Seite wird bereitgestellt werden, wieder jedes Mal die DropDownList-Wert geändert wird. Dies bewirkt die GridView aktualisiert werden, zeigt dieser Produkte für die neu ausgewählte Kategorie. Wenn die `AutoPostBack` -Eigenschaftensatz auf `false` (Standardeinstellung), ändern die Kategorie wird nicht dazu führen, dass einen Postback und daher nicht die aufgeführten Produkte aktualisiert.
+An dieser Stelle haben wir eine Dropdown List (`Categories`), in der die Kategorien im System aufgelistet sind. Wir müssen nun eine GridView-Ansicht hinzufügen, die die Produkte auflistet, die zur ausgewählten Kategorie gehören. Nehmen Sie sich jedoch einen Moment Zeit, um das Kontrollkästchen AutoPostBack aktivieren im Smarttag DropDownList zu aktivieren. Wie im Tutorial *Master/Detail Filtering with a DropDownList* erläutert, legen Sie die `AutoPostBack`-Eigenschaft von DropDownList auf fest, `true` die Seite jedes Mal zurückgesendet wird, wenn der Dropdown List-Wert geändert wird. Dadurch wird die GridView aktualisiert und zeigt die Produkte für die neu ausgewählte Kategorie an. Wenn die `AutoPostBack`-Eigenschaft auf `false` (Standardeinstellung) festgelegt ist, führt das Ändern der Kategorie nicht zu einem Postback und aktualisiert daher die aufgelisteten Produkte nicht.
 
-[![Aktivieren Sie das AutoPostBack Kontrollkästchen aktivieren, in der Dropdownliste des Smarttag](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image13.png)
+[![aktivieren Sie das Kontrollkästchen AutoPostBack aktivieren im Smarttag DropDownList.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image13.png)
 
-**Abbildung 5**: Aktivieren Sie das Aktivieren AutoPostBack-Kontrollkästchen in der Dropdownlistes Smarttag ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image15.png))
+**Abbildung 5**: Aktivieren Sie das Kontrollkästchen AutoPostBack aktivieren im Smarttag DropDownList ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image15.png)).
 
-Fügen Sie ein GridView-Steuerelement auf der Seite hinzu, um die Produkte für die ausgewählte Kategorie anzuzeigen. Legen Sie des GridView `ID` zu `ProductsInCategory` und binden sie an eine neue, mit dem Namen "ObjectDataSource" `ProductsInCategoryDataSource`.
+Fügen Sie der Seite ein GridView-Steuerelement hinzu, um die Produkte für die ausgewählte Kategorie anzuzeigen. Legen Sie den `ID` der GridView auf `ProductsInCategory`, und binden Sie ihn an eine neue ObjectDataSource mit dem Namen `ProductsInCategoryDataSource`.
 
-[![Fügen Sie eine neue, mit dem Namen ProductsInCategoryDataSource "ObjectDataSource"](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image16.png)
+[![eine neue ObjectDataSource mit dem Namen productsincategorydatasource hinzufügen.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image16.png)
 
-**Abbildung 6**: Hinzufügen einer neuen "ObjectDataSource" mit dem Namen `ProductsInCategoryDataSource` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image18.png))
+**Abbildung 6**: Hinzufügen einer neuen ObjectDataSource mit dem Namen "`ProductsInCategoryDataSource`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image18.png))
 
-Dem ObjectDataSource-Steuerelement so konfigurieren, dass sie ruft die `ProductsBLL` Klasse `GetProductsByCategoryID(categoryID)` Methode.
+Konfigurieren Sie die ObjectDataSource so, dass Sie die `GetProductsByCategoryID(categoryID)`-Methode der `ProductsBLL` Klasse aufruft.
 
-[![Haben Sie dem Aufrufen der Methode GetProductsByCategoryID(categoryID) ObjectDataSource-Steuerelement](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image19.png)
+[![von ObjectDataSource die getproductbycategoryid (CategoryID)-Methode aufrufen.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image19.png)
 
-**Abbildung 7**: Haben Sie die "ObjectDataSource" Aufrufen der `GetProductsByCategoryID(categoryID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image21.png))
+**Abbildung 7**: lassen Sie die `GetProductsByCategoryID(categoryID)` Methode von ObjectDataSource aufrufen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image21.png))
 
-Da die `GetProductsByCategoryID(categoryID)` Methode nimmt einen Eingabeparameter, im letzten Schritt des Assistenten können wir die Quelle der Wert des Parameters angeben. Um diese Produkte aus der ausgewählten Kategorie anzuzeigen, müssen Sie den Parameter, die mithilfe von Pull aus der `Categories` DropDownList.
+Da die `GetProductsByCategoryID(categoryID)`-Methode einen Eingabeparameter annimmt, können Sie im letzten Schritt des Assistenten die Quelle des Parameter Werts angeben. Um diese Produkte aus der ausgewählten Kategorie anzuzeigen, lassen Sie den Parameter aus der Dropdown Liste `Categories`.
 
-[![Rufen Sie die CategoryID Parameterwert aus DropDownList Kategorien ausgewählt](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
+[![den Wert für den CategoryID-Parameter aus den Dropdown Listen "ausgewählte Kategorien"](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**Abbildung 8**: Abrufen der *`categoryID`* Parameterwert aus der Dropdownliste für die ausgewählten Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**Abbildung 8: ermitteln**des *`categoryID`* Parameter Werts aus der Dropdown Liste Ausgewählte Kategorien ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
-Nach Abschluss des Assistenten wird die GridView ein BoundField für jedes der Produkteigenschaften haben. Lassen Sie uns, damit nur diese BoundFields bereinigen die `ProductName`, `UnitPrice`, `UnitsInStock`, und `UnitsOnOrder` BoundFields werden angezeigt. Alle Einstellungen auf den verbleibenden BoundFields hinzufügen können (z. B. beim Formatieren der `UnitPrice` als Währung). Nach diesen Änderungen sollte GridView deklarative Markup etwa wie folgt aussehen:
+Nachdem Sie den Assistenten abgeschlossen haben, verfügt die GridView über ein BoundField für jede der Produkteigenschaften. Wir bereinigen diese boundfields, damit nur die `ProductName`, `UnitPrice`, `UnitsInStock`und `UnitsOnOrder` boundfields angezeigt werden. Sie können den verbleibenden boundfields-Einstellungen auf Feldebene hinzufügen (z. b. das `UnitPrice` als Währung formatieren). Nachdem Sie diese Änderungen vorgenommen haben, sollte das deklarative Markup der GridView in etwa wie folgt aussehen:
 
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample1.aspx)]
 
-An diesem Punkt haben wir einen voll funktionsfähigen Master/Detail-Bericht mit der Name, Preis, im Lager vorrätigen Stückzahl und Einheiten modelladministratorberechtigung für diese Produkte, die der ausgewählten Kategorie gehören.
+Zu diesem Zeitpunkt verfügen wir über einen voll funktionsfähigen Master/Detail-Bericht, in dem der Name, der Einheitspreis, die Einheiten im Lager und die Einheiten für die Produkte, die zur ausgewählten Kategorie gehören, angezeigt werden.
 
-[![Rufen Sie die CategoryID Parameterwert aus DropDownList Kategorien ausgewählt](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
+[![den Wert für den CategoryID-Parameter aus den Dropdown Listen "ausgewählte Kategorien"](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**Abbildung 9**: Abrufen der *`categoryID`* Parameterwert aus der Dropdownliste für die ausgewählten Kategorien ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**Abbildung 9**: Anzeigen des *`categoryID`* Parameter Werts aus den Dropdown Listen für ausgewählte Kategorien ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
-## <a name="step-2-displaying-a-footer-in-the-gridview"></a>Schritt 2: Eine Fußzeile anzeigen in den GridView-Ansicht
+## <a name="step-2-displaying-a-footer-in-the-gridview"></a>Schritt 2: Anzeigen einer Fußzeile in der GridView
 
-Das GridView-Steuerelement kann sowohl eine Kopf- und Fußzeile Zeile anzeigen. Diese Zeilen werden angezeigt, abhängig von den Werten der der `ShowHeader` und `ShowFooter` Eigenschaften mit `ShowHeader` Standardwert `true` und `ShowFooter` zu `false`. Legen Sie die GridView einfach eine Fußzeile einschließt seine `ShowFooter` Eigenschaft `true`.
+Das GridView-Steuerelement kann eine Kopf-und eine Footerzeile anzeigen. Diese Zeilen werden abhängig von den Werten der Eigenschaften `ShowHeader` und `ShowFooter` angezeigt, wobei `ShowHeader` standardmäßig `true` und `ShowFooter` `false`. Wenn Sie eine Fußzeile in die GridView einschließen möchten, legen Sie einfach die `ShowFooter`-Eigenschaft auf `true`fest.
 
-[![GridView ShowFooter-Eigenschaft auf True festgelegt.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image28.png)
+[![legen Sie die ShowFooter-Eigenschaft der GridView auf "true" fest.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image28.png)
 
-**Abbildung 10**: Legen Sie des GridView `ShowFooter` Eigenschaft `true` ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image30.png))
+**Abbildung 10**: Festlegen der `ShowFooter`-Eigenschaft der GridView auf `true` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image30.png))
 
-Der Fußzeile verfügt eine Zelle, für jedes der Felder in den GridView-Ansicht definiert; Diese Zellen sind jedoch standardmäßig leer. Nehmen Sie einen Moment Zeit, um unseren Fortschritt in einem Browser anzuzeigen. Mit der `ShowFooter` jetzt-eigenschaftseinstellung `true`, GridView enthält eine leere Fußzeile.
+Die Footerzeile enthält eine Zelle für jedes der Felder, die in der GridView definiert sind. Diese Zellen sind jedoch standardmäßig leer. Nehmen Sie sich einen Moment Zeit, um den Fortschritt in einem Browser anzuzeigen. Wenn die `ShowFooter`-Eigenschaft jetzt auf `true`festgelegt ist, enthält die GridView eine leere Footerzeile.
 
-[![Das GridView-jetzt umfasst eine Fußzeile](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image31.png)
+[![die GridView nun eine Footerzeile enthält.](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image31.png)
 
-**Abbildung 11**: Das GridView enthält jetzt eine Fußzeile ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image33.png))
+**Abbildung 11**: die GridView enthält jetzt eine Footerzeile ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image33.png))
 
-Die Footerzeile in Abbildung 11 hervorzuheben nicht, wie sie einen weißen Hintergrund hat. Erstellen wir eine `FooterStyle` CSS-Klasse `Styles.css` , die einem dunkelroten Hintergrund gibt an, und konfigurieren Sie dann die `GridView.skin` Skin-Datei in die `DataWebControls` Design zuweisen dieser CSS-Klasse an der GridView `FooterStyle`des `CssClass` Eigenschaft. Wenn Sie über Designs zu auffrischen möchten, verweisen zurück auf die [Anzeigen von Daten mit dem ObjectDataSource-Steuerelement](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) Tutorial.
+Die Footerzeile in Abbildung 11 steht nicht aus, da Sie einen weißen Hintergrund hat. Erstellen Sie eine `FooterStyle` CSS-Klasse in `Styles.css`, die einen dunkelroten Hintergrund angibt, und konfigurieren Sie dann die `GridView.skin` Skin-Datei im `DataWebControls` Design, um diese CSS-Klasse der `FooterStyle`-Eigenschaft der GridView zuzuweisen. Wenn Sie für Skins und Designs einen Pinsel einrichten müssen, lesen Sie das Tutorial [Anzeigen von Daten mit dem ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) -Tutorial.
 
-Starten, indem die folgende CSS-Klasse hinzufügen `Styles.css`:
+Fügen Sie zunächst die folgende CSS-Klasse zu `Styles.css`hinzu:
 
 [!code-css[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample2.css)]
 
-Die `FooterStyle` CSS-Klasse ähnelt in der Formatvorlage, die die `HeaderStyle` Klasse, obwohl die `HeaderStyle`die Hintergrundfarbe ist dunkler Besonderheit und der Text fett formatiert angezeigt wird. Darüber hinaus ist der Text in der Fußzeile rechtsbündig ausgerichtet, während des Headers Text zentriert ist.
+Die `FooterStyle` CSS-Klasse ähnelt der-Klasse für die `HeaderStyle`-Klasse. die Hintergrundfarbe des `HeaderStyle`ist jedoch dunkler, und der Text wird in Fett Schrift angezeigt. Außerdem wird der Text in der Fußzeile rechtsbündig ausgerichtet, während der Text des Headers zentriert ist.
 
-Um diese CSS-Klasse alle GridView Fuß zuzuordnen, öffnen Sie als Nächstes die `GridView.skin` Datei die `DataWebControls` Design und legen die `FooterStyle`des `CssClass` Eigenschaft. Nach dem Hinzufügen sollte der Datei Markup aussehen:
+Um diese CSS-Klasse jedem GridView-Footer zuzuordnen, öffnen Sie die Datei `GridView.skin` im `DataWebControls` Design, und legen Sie die `CssClass`-Eigenschaft des `FooterStyle`fest. Nach dieser Addition sollte das Markup der Datei wie folgt aussehen:
 
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample3.aspx)]
 
-Wie der Screenshot unten zeigt, wird diese Änderung ermöglicht die Fußzeile noch besser eindeutig.
+Wie der Screenshot unten zeigt, macht diese Änderung den Fußzeile deutlicher.
 
-[![GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image34.png)
+[![die Footerzeile der GridView jetzt eine rot-Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image34.png)
 
-**Abbildung 12**: GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image36.png))
+**Abbildung 12**: die Footerzeile der GridView weist jetzt eine farbige Hintergrundfarbe auf ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image36.png))
 
-## <a name="step-3-computing-the-summary-data"></a>Schritt 3: Die Zusammenfassungsdaten Computing
+## <a name="step-3-computing-the-summary-data"></a>Schritt 3: Berechnen der Zusammenfassungs Daten
 
-Mit den GridView Fuß angezeigt ist die nächste Herausforderung uns um Zusammenfassungsdaten zu berechnen. Es gibt zwei Möglichkeiten, diese aggregierte Informationen zu berechnen:
+Wenn die Fußzeile der GridView angezeigt wird, besteht die nächste Herausforderung darin, wie die Zusammenfassungs Daten berechnet werden. Diese Aggregat Informationen können auf zwei Arten berechnet werden:
 
-1. Über eine SQL-Abfrage konnte, schicken wir eine weitere Abfrage mit der Datenbank, um die Zusammenfassungsdaten für eine bestimmte Kategorie zu berechnen. SQL umfasst eine Reihe von Aggregatfunktionen zusammen mit einem `GROUP BY` Klausel, um die Daten anzugeben, in dem die Daten zusammengefasst werden soll. Die folgende SQL-Abfrage wird wieder die benötigte Informationen übereinstimmt:  
+1. Über eine SQL-Abfrage könnten wir eine zusätzliche Abfrage an die Datenbank ausgeben, um die Zusammenfassungs Daten für eine bestimmte Kategorie zu berechnen. SQL enthält eine Reihe von Aggregatfunktionen zusammen mit einer `GROUP BY`-Klausel, um die Daten anzugeben, über die die Daten zusammengefasst werden sollen. Die folgende SQL-Abfrage würde die benötigten Informationen zurückbringen:  
 
     [!code-sql[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample4.sql)]
 
-    Natürlich nicht empfehlenswert Geben Sie diese Abfrage direkt aus der `SummaryDataInFooter.aspx` Seite, sondern erstellen eine Methode in der `ProductsTableAdapter` und `ProductsBLL`.
-2. Diese Informationen zu berechnen, wie sie an die GridView hinzugefügt wird wie unter [benutzerdefinierte Formatierung basierend auf Daten](custom-formatting-based-upon-data-cs.md) Tutorial GridView `RowDataBound` -Ereignishandler wird einmal für jede an die GridView nach der hinzugefügten Zeile ausgelöst. die wurde Datenbindung. Durch Erstellen eines ereignishandlers für dieses Ereignis können wir speichern einen laufenden Gesamtbetrag der Werte, die wir möchten zu aggregieren. Nach dem letzten wurde Datenzeile an die GridView gebunden haben die Gesamtsummen sowie die erforderlichen Informationen zum Berechnen des Durchschnitts.
+    Natürlich sollten Sie diese Abfrage nicht direkt über die `SummaryDataInFooter.aspx` Seite ausgeben, sondern indem Sie eine Methode in der `ProductsTableAdapter` und der `ProductsBLL`erstellen.
+2. Berechnen Sie diese Informationen, während Sie der GridView hinzugefügt werden, wie unter [benutzerdefinierte Formatierung basierend auf datentutorial](custom-formatting-based-upon-data-cs.md) erläutert wird. der `RowDataBound` Ereignishandler von GridView wird für jede Zeile, die der GridView hinzugefügt wurde, nach der Datenbindung einmal ausgelöst. Durch das Erstellen eines Ereignis Handlers für dieses Ereignis können wir eine laufende Summe der zu aggregierenden Werte beibehalten. Nachdem die letzte Daten Zeile an die GridView gebunden wurde, verfügen wir über die Summen und die erforderlichen Informationen, um den Durchschnitt zu berechnen.
 
-Ich setze den zweiten Ansatz in der Regel auf, wie eine Fahrt auf die Datenbank und der Aufwand für die Zusammenfassung Funktionalität zu implementieren, in der Datenzugriffsebene und den Geschäftslogikebene gespeichert, aber beide Vorgehensweisen ausreichen würde. Für dieses Tutorial sehen wir die zweite Option verwenden und Verwalten von die laufende Summe mithilfe der `RowDataBound` -Ereignishandler.
+Ich verwende in der Regel den zweiten Ansatz, da eine Fahrt zur Datenbank und der Aufwand zum Implementieren der Zusammenfassungs Funktionalität in der Datenzugriffs Schicht und in der Geschäftslogik Schicht erforderlich ist, aber beide Vorgehensweisen sind ausreichend. Verwenden Sie für dieses Tutorial die zweite Option, und verfolgen Sie die laufende Summe mithilfe des `RowDataBound`-Ereignis Handlers.
 
-Erstellen Sie eine `RowDataBound` -Ereignishandler für das GridView GridView im Designer auswählen, indem auf das Blitzsymbol aus dem Fenster "Eigenschaften" klicken, und doppelklicken dem `RowDataBound` Ereignis. Dies erstellt einen neuen Ereignishandler mit dem Namen `ProductsInCategory_RowDataBound` in die `SummaryDataInFooter.aspx` Seite des Code-Behind-Klasse.
+Erstellen Sie einen `RowDataBound` Ereignishandler für das GridView-Ereignis, indem Sie im Designer das GridView-Symbol auswählen, auf das Blitz Symbol des Eigenschaftenfenster klicken und auf das `RowDataBound`-Ereignis doppelklicken. Dadurch wird ein neuer Ereignishandler mit dem Namen `ProductsInCategory_RowDataBound` in der Code Behind-Klasse der `SummaryDataInFooter.aspx` Seite erstellt.
 
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample5.cs)]
 
-Um einen laufenden insgesamt gewährleisten müssen wir Variablen außerhalb des Bereichs, der den Ereignishandler zu definieren. Erstellen Sie die folgenden vier auf Seitenebene Variablen:
+Um eine laufende Summe beizubehalten, müssen wir Variablen außerhalb des Gültigkeits Bereichs des Ereignis Handlers definieren. Erstellen Sie die folgenden vier Variablen auf Seitenebene:
 
-- `_totalUnitPrice`, des Typs `decimal`
-- `_totalNonNullUnitPriceCount`, des Typs `int`
-- `_totalUnitsInStock`, des Typs `int`
-- `_totalUnitsOnOrder`, des Typs `int`
+- `_totalUnitPrice`vom Typ `decimal`
+- `_totalNonNullUnitPriceCount`vom Typ `int`
+- `_totalUnitsInStock`vom Typ `int`
+- `_totalUnitsOnOrder`vom Typ `int`
 
-Schreiben Sie als Nächstes den Code, um diese drei Variablen zu erhöhen, für jede Datenzeile in ermittelt die `RowDataBound` -Ereignishandler.
+Schreiben Sie als nächstes den Code, um diese drei Variablen für jede Daten Zeile zu erhöhen, die im `RowDataBound`-Ereignishandler gefunden wurde.
 
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample6.cs)]
 
-Die `RowDataBound` Ereignishandler startet, indem sichergestellt wird, dass wir mit einer DataRow zu tun haben. Sobald, eingerichtet ist, die `Northwind.ProductsRow` -Instanz, die gerade gebunden war die `GridViewRow` -Objekt in `e.Row` befindet sich in der Variablen `product`. Weiter, ausgeführte insgesamt Variablen durch entsprechende Werte für das aktuelle Produkt erhöht werden (vorausgesetzt, dass sie eine Datenbank enthalten, nicht `NULL` Wert). Wir behalten die Übersicht der ausgeführten `UnitPrice` gesamtspeicherlimit "und" die Anzahl der nicht -`NULL` `UnitPrice` Datensätze aus, da der Durchschnittspreis der Quotient diese beiden Zahlen ist.
+Der `RowDataBound` Ereignishandler stellt sicher, dass wir mit einer DataRow arbeiten. Nachdem dieser festgelegt wurde, wird die `Northwind.ProductsRow`-Instanz, die nur an das `GridViewRow`-Objekt in `e.Row` gebunden war, in der Variablen `product`gespeichert. Als nächstes wird das Ausführen von Gesamt Variablen durch die entsprechenden Werte des aktuellen Produkts erhöht (vorausgesetzt, dass Sie keinen Daten Bank `NULL` Wert enthalten). Wir verfolgen sowohl den laufenden `UnitPrice` insgesamt als auch die Anzahl der nicht`NULL` `UnitPrice` Datensätze, da der Durchschnittspreis der Quotienten dieser beiden Zahlen ist.
 
-## <a name="step-4-displaying-the-summary-data-in-the-footer"></a>Schritt 4: Anzeigen von Zusammenfassungsdaten in der Fußzeile
+## <a name="step-4-displaying-the-summary-data-in-the-footer"></a>Schritt 4: Anzeigen der Zusammenfassungs Daten in der Fußzeile
 
-Im letzte Schritt werden mit den Zusammenfassungsdaten summiert es in den GridView Fußzeile angezeigt. Diese Aufgabe auch kann erreicht werden, programmgesteuert über die `RowDataBound` -Ereignishandler. Bedenken Sie, dass die `RowDataBound` Ereignishandler ausgelöst wird, für die *jeder* Zeile, die an die GridView, einschließlich der Fußzeile gebunden ist. Aus diesem Grund können wir unsere-Ereignishandler zum Anzeigen der Daten in der Fußzeile, die mit dem folgenden Code erweitern:
+Wenn die Zusammenfassungs Daten summiert sind, besteht der letzte Schritt darin, Sie in der Fußzeile der GridView anzuzeigen. Diese Aufgabe kann auch Programm gesteuert über den `RowDataBound`-Ereignishandler ausgeführt werden. Beachten Sie, dass der `RowDataBound` Ereignishandler für *jede* Zeile ausgelöst wird, die an die GridView gebunden ist, einschließlich der Footerzeile. Daher können wir den Ereignishandler erweitern, um die Daten in der Footerzeile mithilfe des folgenden Codes anzuzeigen:
 
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample7.cs)]
 
-Da der Fußzeile an die GridView hinzugefügt wird, nachdem alle Datenzeilen hinzugefügt wurden, können wir sicher sein, dass mit der Zeit können sich jetzt die Zusammenfassungsdaten in der Fußzeile angezeigt, die die laufende Summe Berechnungen werden abgeschlossen haben. Der letzte Schritt ist, um diese Werte in der Fußzeile der Zellen festlegen.
+Da die Footerzeile der GridView hinzugefügt wird, nachdem alle Daten Zeilen hinzugefügt wurden, können wir sicher sein, dass Sie bis zum Anzeigen der Zusammenfassungs Daten in der Fußzeile sicher sind, dass die laufenden gesamten Berechnungen abgeschlossen sind. Der letzte Schritt besteht darin, diese Werte in den Zellen des Footers festzulegen.
 
-Verwenden Sie zum Anzeigen von Text in einem bestimmten Fußzeilenzelle `e.Row.Cells[index].Text = value`, wobei die `Cells` Indizierung beginnt bei 0. Der folgende Code berechnet den durchschnittlichen Preis (der Gesamtpreis geteilt durch die Anzahl der Produkte) und zusammen mit der Gesamtanzahl der Einheiten im Bestand und Einheiten auf der Reihenfolge, in die Fußzeilenzellen der entsprechenden der GridView angezeigt.
+Zum Anzeigen von Text in einer bestimmten footerzelle verwenden Sie `e.Row.Cells[index].Text = value`, bei dem die `Cells` Indizierung bei 0 beginnt. Der folgende Code berechnet den Durchschnittspreis (der Gesamtpreis dividiert durch die Anzahl der Produkte) und zeigt ihn zusammen mit der Gesamtanzahl der Einheiten im Lager und den Einheiten in den entsprechenden Fußzeilen Zellen der GridView an.
 
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample8.cs)]
 
-Abbildung 13 zeigt den Bericht aus, nachdem dieser Code hinzugefügt wurde. Beachten Sie die `ToString("c")` bewirkt, dass der Durchschnittspreis zusammenfassende Informationen, z. B. eine Währung formatiert werden.
+Abbildung 13 zeigt den Bericht, nachdem dieser Code hinzugefügt wurde. Beachten Sie, dass der `ToString("c")` bewirkt, dass die Informationen zur durchschnittlichen Preis Zusammenfassung wie eine Währung formatiert werden.
 
-[![GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image37.png)
+[![die Footerzeile der GridView jetzt eine rot-Hintergrundfarbe](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image37.png)
 
-**Abbildung 13**: GridView Fußzeile verfügt jetzt über eine Rötlich Hintergrundfarbe ([klicken Sie, um das Bild in voller Größe anzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image39.png))
+**Abbildung 13**: die Footerzeile der GridView weist jetzt eine farbige Hintergrundfarbe auf ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image39.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Anzeigen von zusammenfassenden Daten ist eine verbreitete Anforderung für den Bericht und das GridView-Steuerelement erleichtert Ihnen solche Informationen in der Fußzeile enthalten. Die Footerzeile angezeigt wird bei der GridView `ShowFooter` -Eigenschaftensatz auf `true` und kann den Text in deren Zellen, legen Sie programmgesteuert über die `RowDataBound` -Ereignishandler. Die Zusammenfassungsdaten Computing kann entweder durch erneutes Abfragen der Datenbank oder mithilfe von Code in die CodeBehind-Klasse der ASP.NET-Seite programmgesteuert die zusammengefassten Daten berechnet erfolgen.
+Das Anzeigen von Zusammenfassungs Daten ist eine gängige Berichts Anforderung, und das GridView-Steuerelement erleichtert das einschließen derartiger Informationen in der Footerzeile. Die Footerzeile wird angezeigt, wenn die `ShowFooter`-Eigenschaft der GridView auf `true` festgelegt ist und der Text in den Zellen Programm gesteuert über den `RowDataBound`-Ereignishandler festgelegt werden kann. Das Berechnen der Zusammenfassungs Daten kann entweder durch erneutes Abfragen der Datenbank oder durch Verwendung von Code in der Code Behind-Klasse der ASP.NET-Seite erfolgen, um die Zusammenfassungs Daten Programm gesteuert zu berechnen.
 
-Dieses Lernprogramm schließt unserer Untersuchung der benutzerdefinierte Formatierung mit der GridView, DetailsView oder FormView-Steuerelemente. Unserem nächsten Tutorial startet von unserem Seminar einfügen, aktualisieren und Löschen von Daten, die mit diesen gleichen-Steuerelementen.
+In diesem Tutorial wird die Prüfung der benutzerdefinierten Formatierung mit den Steuerelementen GridView, DetailsView und FormView abgeschlossen. Im nächsten Tutorial wird das Einfügen, aktualisieren und Löschen von Daten mit denselben Steuerelementen untersucht.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Zurück](using-the-formview-s-templates-cs.md)

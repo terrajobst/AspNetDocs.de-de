@@ -1,55 +1,55 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
-title: Verwenden von mehreren Popupsteuerelementen (c#) | Microsoft-Dokumentation
+title: Verwenden von mehreren Popup SteuerC#Elementen () | Microsoft-Dokumentation
 author: wenz
-description: Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Es ist auch möglich, m verwenden...
+description: Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Es ist auch möglich, m...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 91511b0b-311d-481f-9e7c-73f07b813b79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 498afada4e020d0edf8dabef5d4a00336e15c5f5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8700fe89af591e8b481e853580b0efa0cddbf1bc
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115143"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74611658"
 ---
 # <a name="using-multiple-popup-controls-c"></a>Verwenden von mehreren Popupsteuerelementen (C#)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.cs.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1CS.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.cs.zip) oder [PDF herunterladen](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1CS.pdf)
 
-> Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Es ist auch möglich, mehr als eine Popup-Steuerelement auf einer Seite zu verwenden.
+> Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Es ist auch möglich, mehr als ein Popup-Steuerelement auf einer Seite zu verwenden.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Der PopupControl Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup auslösen, wenn ein anderes Steuerelement aktiviert ist. Es ist auch möglich, mehr als eine Popup-Steuerelement auf einer Seite zu verwenden.
+Der popupcontrol-Extender im AJAX Control Toolkit bietet eine einfache Möglichkeit, ein Popup aufzurufende, wenn ein beliebiges anderes Steuerelement aktiviert ist. Es ist auch möglich, mehr als ein Popup-Steuerelement auf einer Seite zu verwenden.
 
 ## <a name="steps"></a>Schritte
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der `<form>` Element):
+Um die Funktionalität von ASP.NET AJAX und dem Steuerelement-Toolkit zu aktivieren, muss das `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden (innerhalb des `<form>` Elements):
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample1.aspx)]
 
-Fügen Sie einen Bereich, der als das Popup dient. In aktuellen Szenario können der Bereich enthält eine `Calendar` Steuerelement. Um die Seite wird aktualisiert, die aufgrund des Kalenders Postbacks zu vermeiden, platziert der Bereich innerhalb einer `UpdatePanel` Steuerelement:
+Fügen Sie als nächstes ein Panel hinzu, das als Popup fungiert. Im aktuellen Szenario enthält der Bereich ein `Calendar` Steuerelement. Um die Seiten Aktualisierungen zu vermeiden, die durch die Postbacks des Kalenders verursacht werden, wird der Bereich in einem `UpdatePanel` Steuerelement abgelegt:
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample2.aspx)]
 
-Die Seite enthält außerdem zwei Textfelder. Für jedes Textfeld muss Calendar Popupfenster angezeigt, sobald das Textfeld aktiviert ist.
+Die Seite enthält auch zwei Textfelder. Für jedes Textfeld wird das Kalender Popup angezeigt, sobald das Textfeld aktiviert ist.
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample3.aspx)]
 
-Jetzt erweitern Sie die beiden Textfelder mit einem `PopupControlExtender`. Die `TargetControlID` Attribut stellt die ID des Steuerelements mit der Extender verknüpft. Die `PopupControlID` Attribut enthält die ID der dem Popupfenster. In diesem Fall sowohl Extender anzeigen im gleichen Bereich, jedoch unterschiedliche Bereiche sind auch möglich.
+Erweitern Sie nun die beiden Textfelder mit einem `PopupControlExtender`. Das `TargetControlID`-Attribut stellt die ID des Steuer Elements bereit, das an den Extender gebunden ist. Das `PopupControlID`-Attribut enthält die ID des Popup Panels. In diesem Fall zeigen beide Extender denselben Bereich an, aber auch unterschiedliche Bereiche sind möglich.
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample4.aspx)]
 
-Nun, wenn Sie in einem Textfeld klicken, wird ein Kalender angezeigt unterhalb des Felds, in dem ein Datum ausgewählt. (Beim Abrufen des ausgewählten Datums zurück in die Textfelder wird in einem anderen Tutorial erläutert.)
+Wenn Sie nun in ein Textfeld klicken, wird unter dem Feld ein Kalender angezeigt, in dem Sie ein Datum auswählen können. (Das ausgewählte Datum wieder in die Textfelder wird in einem anderen Tutorial behandelt.)
 
-[![Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt.](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
+[![der Kalender angezeigt wird, wenn der Benutzer auf das Textfeld klickt.](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
 
-Der Kalender wird angezeigt, wenn der Benutzer in das Textfeld klickt ([klicken Sie, um das Bild in voller Größe anzeigen](using-multiple-popup-controls-cs/_static/image3.png))
+Der Kalender wird angezeigt, wenn der Benutzer auf das Textfeld klickt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-multiple-popup-controls-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Nächste](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

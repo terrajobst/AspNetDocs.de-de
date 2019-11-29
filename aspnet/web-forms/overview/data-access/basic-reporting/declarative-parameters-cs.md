@@ -1,142 +1,142 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
-title: Deklarative Parameter (c#) | Microsoft-Dokumentation
+title: Deklarative Parameter (C#) | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial werden wir veranschaulichen ein Parametersatz, der auf einen hartcodierten Wert verwenden, zur Auswahl der Daten in einem DetailsView-Steuerelement angezeigt.
+description: In diesem Tutorial wird veranschaulicht, wie Sie einen Parameter, der auf einen hart codierten Wert festgelegt ist, verwenden, um die Daten auszuwählen, die in einem DetailsView-Steuerelement angezeigt werden.
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 603c9bd3-b895-4ec6-853b-0c81ff36d580
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ac97b459536356a0ffa2a35b0c38942318f875f0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 87c8cfe064abc536e6015b0e553618981da9fefe
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128080"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74613362"
 ---
 # <a name="declarative-parameters-c"></a>Deklarative Parameter (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_5_CS.exe) oder [PDF-Datei herunterladen](declarative-parameters-cs/_static/datatutorial05cs1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_5_CS.exe) oder [PDF herunterladen](declarative-parameters-cs/_static/datatutorial05cs1.pdf)
 
-> In diesem Tutorial werden wir veranschaulichen ein Parametersatz, der auf einen hartcodierten Wert verwenden, zur Auswahl der Daten in einem DetailsView-Steuerelement angezeigt.
+> In diesem Tutorial wird veranschaulicht, wie Sie einen Parameter, der auf einen hart codierten Wert festgelegt ist, verwenden, um die Daten auszuwählen, die in einem DetailsView-Steuerelement angezeigt werden.
 
 ## <a name="introduction"></a>Einführung
 
-In der [letzten Tutorial](displaying-data-with-the-objectdatasource-cs.md) erläutert, Anzeigen von Daten mit die GridView, DetailsView oder FormView-Steuerelemente gebunden werden, um ein ObjectDataSource-Steuerelement, das aufgerufen der `GetProducts()` Methode aus der `ProductsBLL` Klasse. Die `GetProducts()` Methode gibt eine stark typisierte DataTable, die mit der alle Datensätze aus der Northwind-Datenbank aufgefüllt `Products` Tabelle. Die `ProductsBLL` -Klasse enthält zusätzliche Methoden zum Zurückgeben nur Teilmengen der Produkte - `GetProductByProductID(productID)`, `GetProductsByCategoryID(categoryID)`, und `GetProductsBySupplierID(supplierID)`. Diese drei Methoden erwarten einen Eingabeparameter, der angibt, wie Sie die zurückgegebenen Produktinformationen zu filtern.
+Im [letzten Tutorial](displaying-data-with-the-objectdatasource-cs.md) haben wir uns mit der Anzeige von Daten mit den Steuerelementen GridView, DetailsView und FormView befasst, die an ein ObjectDataSource-Steuerelement gebunden sind, das die `GetProducts()`-Methode aus der `ProductsBLL`-Klasse aufgerufen hat. Die `GetProducts()`-Methode gibt eine stark typisierte Datentabelle zurück, die mit allen Datensätzen aus der `Products` Tabelle der Northwind-Datenbank aufgefüllt wurde. Die `ProductsBLL`-Klasse enthält zusätzliche Methoden zum Zurückgeben von nur Teilmengen der Products-`GetProductByProductID(productID)`, `GetProductsByCategoryID(categoryID)`und `GetProductsBySupplierID(supplierID)`. Diese drei Methoden erwarten einen Eingabeparameter, der angibt, wie die zurückgegebenen Produktinformationen gefiltert werden.
 
-Zum Aufrufen von Methoden, die Eingabeparameter zu erwarten, aber zu diesem Zweck müssen wir angeben, woher die Werte für diese Parameter kommen, kann dem ObjectDataSource-Steuerelement verwendet werden. Die Parameterwerte können hartcodiert werden, oder können stammen aus einer Vielzahl von dynamischen Quellen, einschließlich: Querystring-Werte, Sitzungsvariablen, Wert der Eigenschaft für ein Steuerelement auf der Seite, oder andere.
+Die ObjectDataSource kann verwendet werden, um Methoden aufzurufen, die Eingabeparameter erwarten. hierfür müssen wir jedoch angeben, wo die Werte für diese Parameter stammen. Die Parameterwerte können hart codiert sein oder aus einer Vielzahl dynamischer Quellen stammen, wie z. b. QueryString-Werte, Sitzungsvariablen, den Eigenschafts Wert eines websteuer Elements auf der Seite oder andere.
 
-In diesem Tutorial beginnen zeigen, wie Sie mithilfe eines Parameters, der auf einen hartcodierten Wert festgelegt. Insbesondere betrachten wir eine DetailsView hinzufügen, um die Seite mit Informationen zu einem bestimmten Produkt, d. h. die Chef-Anton Gumbo Mischung mit einem `ProductID` 5. Als Nächstes sehen wir, wie Sie den Wert des Parameters, basierend auf einem Websteuerelement festlegen. Insbesondere verwenden wir ein TextBox-Element, damit der Benutzer, die in einem anderen Land, geben Sie nach dem sie eine Schaltfläche, um die Liste mit Lieferanten, die in diesem Land befinden, finden klicken können.
+In diesem Tutorial wird veranschaulicht, wie Sie einen Parameter verwenden, der auf einen hart codierten Wert festgelegt ist. Insbesondere wird das Hinzufügen einer DetailsView zu der Seite untersucht, die Informationen zu einem bestimmten Produkt anzeigt, d. h. die Gumbo-Mischung von Chef Anton, die eine `ProductID` von 5 hat. Als Nächstes erfahren Sie, wie der Parameterwert auf Grundlage eines websteuer Elements festgelegt wird. Insbesondere verwenden wir ein Textfeld, um den Benutzer in ein Land einzugeben. Anschließend können Sie auf eine Schaltfläche klicken, um die Liste der Lieferanten in diesem Land anzuzeigen.
 
-## <a name="using-a-hard-coded-parameter-value"></a>Verwenden einen hartcodierten Parameterwert
+## <a name="using-a-hard-coded-parameter-value"></a>Verwenden eines hart codierten Parameter Werts
 
-Im ersten Beispiel zu starten, durch das Hinzufügen von einem DetailsView-Steuerelement, um die `DeclarativeParams.aspx` auf der Seite die `BasicReporting` Ordner. Wählen Sie aus DetailsViews Smarttag &lt;neue Datenquelle&gt; aus der Dropdownliste aus, und wählen Sie ein ObjectDataSource-Steuerelement hinzufügen.
+Beginnen Sie im ersten Beispiel mit dem Hinzufügen eines DetailsView-Steuer Elements zur Seite `DeclarativeParams.aspx` im `BasicReporting`-Ordner. Wählen Sie aus der Dropdown Liste aus dem Smarttag der DetailsView &lt;neuen Datenquellen&gt; aus, und wählen Sie die Option ObjectDataSource hinzufügen aus.
 
-[![Ein ObjectDataSource-Steuerelement auf der Seite hinzufügen](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
+[![der Seite eine ObjectDataSource hinzufügen](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
 
-**Abbildung 1**: Fügen Sie ein ObjectDataSource-Steuerelement auf der Seite ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image3.png))
+**Abbildung 1**: Hinzufügen von ObjectDataSource zur Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image3.png))
 
-Dadurch wird die Assistenten für das ObjectDataSource-Steuerelement-Datenquelle wählen Sie automatisch gestartet. Wählen Sie die `ProductsBLL` -Klasse aus dem ersten Bildschirm des Assistenten.
+Dadurch wird automatisch der Assistent zum Auswählen von Datenquellen des ObjectDataSource-Steuer Elements gestartet. Wählen Sie auf dem ersten Bildschirm des Assistenten die `ProductsBLL` Klasse aus.
 
-[![Wählen Sie die ProductsBLL-Klasse](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
+[![wählen Sie die productbll-Klasse aus.](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
 
-**Abbildung 2**: Wählen Sie die `ProductsBLL` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image6.png))
+**Abbildung 2**: Auswählen der `ProductsBLL` Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image6.png))
 
-Da wir Informationen über ein bestimmtes Produkt angezeigt werden soll, die wir verwenden möchten die `GetProductByProductID(productID)` Methode.
+Da wir Informationen zu einem bestimmten Produktanzeigen möchten, möchten wir die `GetProductByProductID(productID)`-Methode verwenden.
 
-[![Wählen Sie die GetProductByProductID(productID)-Methode](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
+[![wählen Sie die Methode getproductbyproductid (ProductID) aus.](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
 
-**Abbildung 3**: Wählen Sie die `GetProductByProductID(productID)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image9.png))
+**Abbildung 3**: Auswählen der `GetProductByProductID(productID)` Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image9.png))
 
-Da die Methode, die wir ausgewählt haben, einen Parameter enthält, ist eine weitere Bildschirm für den Assistenten, wobei wir gefragt werden, zum Definieren des Wertes für den Parameter verwendet werden. Die Liste auf der linken Seite zeigt alle Parameter für die ausgewählte Methode. Für `GetProductByProductID(productID)` ist nur ein `productID`. Auf der rechten Seite können wir den Wert für den ausgewählten Parameter angeben. Dropdownliste für die Parameter-Quelle Listet die verschiedenen möglichen Quellen für den Parameterwert auf. Da wir einen hartcodierten Wert 5 für angeben möchten die `productID` -Parameter, lassen Sie die Parameter-Quelle mit "None", und geben Sie 5 in das Textfeld "DefaultValue" ein.
+Da die ausgewählte Methode einen Parameter enthält, gibt es einen weiteren Bildschirm für den Assistenten, bei dem wir aufgefordert werden, den Wert zu definieren, der für den Parameter verwendet werden soll. Die Liste auf der linken Seite zeigt alle Parameter für die ausgewählte Methode an. Für `GetProductByProductID(productID)` gibt es nur eine `productID`. Auf der rechten Seite können Sie den Wert für den ausgewählten Parameter angeben. Die Dropdown Liste Parameter Quelle listet die verschiedenen möglichen Quellen für den Parameterwert auf. Da wir für den `productID` Parameter einen hart codierten Wert von "5" angeben möchten, belassen Sie die Parameter Quelle "None", und geben Sie 5 in das Textfeld "DefaultValue" ein.
 
-[![Eine Hard-Coded Parameter Wert von 5 verwendet für die ProductID-Parameter](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
+[![ein hart codierter Parameter Wert von 5 für den ProductID-Parameter verwendet wird.](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
 
-**Abbildung 4**: Eine Hard-Coded Parameter Wert von 5 wird die `productID` Parameter ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image12.png))
+**Abbildung 4**: der hart codierte Parameterwert 5 wird für den `productID` Parameter verwendet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image12.png))
 
-Nach Abschluss der Konfigurieren von Datenquellen-Assistenten deklaratives Markup für das ObjectDataSource-Steuerelement enthält eine `Parameter` -Objekt in der `SelectParameters` Auflistung für jeden der von der Methode definiert, die Eingabeparameter der `SelectMethod` Diese Eigenschaft. Da die Methode, die in diesem Beispiel wir verwenden nur einen einzelnen Eingabeparameter erwartet `parameterID`, hier nur ein Eintrag vorhanden ist. Die `SelectParameters` Sammlung kann jede abgeleitete Klasse enthalten die `Parameter` -Klasse in der `System.Web.UI.WebControls` Namespace. Für die hartcodierten Parameterwerte in der Base `Parameter` Klasse wird verwendet, aber der andere Parameter Source-Optionen einer abgeleiteten `Parameter` Klasse wird verwendet; Sie können auch eigene erstellen [benutzerdefinierten Parametertypen](http://www.leftslipper.com/ShowFaq.aspx?FaqId=11), falls erforderlich.
+Nach Abschluss des Assistenten zum Konfigurieren von Datenquellen enthält das deklarative Markup des ObjectDataSource-Steuer Elements ein `Parameter` Objekt in der `SelectParameters` Auflistung für jeden der Eingabeparameter, die von der in der `SelectMethod`-Eigenschaft definierten Methode erwartet werden. Da die Methode, die wir in diesem Beispiel verwenden, nur einen Eingabeparameter erwartet (`parameterID`), gibt es hier nur einen Eintrag. Die `SelectParameters`-Auflistung kann jede Klasse enthalten, die von der `Parameter`-Klasse im `System.Web.UI.WebControls`-Namespace abgeleitet ist. Für hart codierte Parameterwerte wird die Basis `Parameter` Klasse verwendet, aber für die anderen Parameter Quell Optionen wird eine abgeleitete `Parameter` Klasse verwendet; Sie können bei Bedarf auch eigene [benutzerdefinierte Parametertypen](http://www.leftslipper.com/ShowFaq.aspx?FaqId=11)erstellen.
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample1.aspx)]
 
 > [!NOTE]
-> Wenn auf Ihrem eigenen Computer deklarative Markup Anschluss sehen Sie an diesem Punkt Mai, die Werte für die `InsertMethod`, `UpdateMethod`, und `DeleteMethod` Eigenschaften als auch `DeleteParameters`. Das "ObjectDataSource" Datenquelle auswählen-Assistent gibt automatisch die Methoden aus der `ProductBLL` zum Einfügen, aktualisieren und Löschen verwendet werden, damit es sei denn, Sie explizit die heraus deaktiviert haben, sie in das Markup oben aufgenommen werden müssen.
+> Wenn Sie auf Ihrem Computer daran arbeiten, kann das deklarative Markup, das Sie zu diesem Zeitpunkt sehen, Werte für die Eigenschaften `InsertMethod`, `UpdateMethod`und `DeleteMethod` sowie `DeleteParameters`enthalten. Der Assistent zum Auswählen von Datenquellen von ObjectDataSource gibt automatisch die Methoden aus dem `ProductBLL` an, die zum Einfügen, aktualisieren und Löschen verwendet werden sollen. Wenn Sie diese also nicht explizit löschen, werden Sie im obigen Markup enthalten sein.
 
-Wenn diese Seite besuchen, ruft die Daten-Websteuerelement dem ObjectDataSource-Steuerelement `Select` -Methode, die aufgerufen wird die `ProductsBLL` -Klasse `GetProductByProductID(productID)` Methode, die mit dem hartcodierten Wert 5 für die `productID` input-Parameters. Die Methode gibt einen stark typisierten `ProductDataTable` -Objekt, das eine einzelne Zeile mit Informationen über die Chef-Anton Gumbo Mix enthält (das Produkt mit `ProductID` 5).
+Wenn Sie diese Seite aufrufen, ruft das datenweb-Steuerelement die `Select`-Methode von ObjectDataSource auf, die die `GetProductByProductID(productID)`-Methode der `ProductsBLL` Klasse aufruft, indem der hart codierte Wert 5 für den `productID` Eingabeparameter verwendet wird. Die Methode gibt ein stark typisiertes `ProductDataTable` Objekt zurück, das eine einzelne Zeile mit Informationen über die Gumbo-Mischung von Chef Anton (das Produkt mit `ProductID` 5) enthält.
 
-[![Informationen zu Chef Antons Gumbo Mix werden angezeigt.](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
+[die ![Informationen zur Gumbo-Mischung von Chef Anton werden angezeigt.](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
 
-**Abbildung 5**: Informationen zu Chef Antons Gumbo Mix angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image15.png))
+**Abbildung 5**: Informationen zur Gumbo-Mischung von Chef Anton werden angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image15.png))
 
-## <a name="setting-the-parameter-value-to-the-property-value-of-a-web-control"></a>Festlegen des Parameterwerts auf den Eigenschaftswert eines Websteuerelements
+## <a name="setting-the-parameter-value-to-the-property-value-of-a-web-control"></a>Festlegen des Parameter Werts auf den Eigenschafts Wert eines websteuer Elements
 
-Das "ObjectDataSource"-Parameter, die Werte auch festgelegt werden können, basierend auf dem Wert eines Websteuerelements auf der Seite. Um dies zu veranschaulichen, lassen Sie uns eine GridView, die alle Lieferanten auflistet, die in einem vom Benutzer angegebene Land befinden. Zum Ausführen dieser Start durch Hinzufügen eines Textfelds auf der Seite, in der der Benutzer einen Ländernamen eingeben kann. Legen Sie dieses TextBox-Steuerelements `ID` Eigenschaft `CountryName`. Fügen Sie auch ein Steuerelement Schaltfläche hinzu.
+Die Parameterwerte der ObjectDataSource können auch basierend auf dem Wert eines websteuer Elements auf der Seite festgelegt werden. Um dies zu veranschaulichen, haben wir eine GridView, die alle Lieferanten auflistet, die sich in einem Land befinden, das vom Benutzer angegeben wird. Um dies zu erreichen, fügen Sie der Seite, in die der Benutzer einen Ländernamen eingeben kann, ein Textfeld hinzu. Legen Sie die `ID`-Eigenschaft dieses Textfeld-Steuer Elements auf `CountryName`fest. Fügen Sie auch ein Schaltflächen-websteuer Element hinzu.
 
-[![Fügen Sie ein Textfeld auf die Seite mit der ID CountryName](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
+[![der Seite mit der ID CountryName ein Textfeld hinzufügen](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
 
-**Abbildung 6**: Fügen Sie ein Textfeld auf der Seite mit `ID` `CountryName` ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image18.png))
+**Abbildung 6**: Hinzufügen eines Textfelds zur Seite mit `ID` `CountryName` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image18.png))
 
-Hinzufügen einer GridView-Ansicht aus, auf der Seite und aus dem Smarttag, wählen Sie anschließend eine neue "ObjectDataSource" hinzufügen. Da wir Lieferanten Informationen wählen angezeigt werden soll die `SuppliersBLL` Klasse aus dem ersten Bildschirm des Assistenten. Wählen Sie aus dem zweiten Bildschirm der `GetSuppliersByCountry(country)` Methode.
+Fügen Sie als nächstes der Seite ein GridView-Objekt hinzu, und wählen Sie aus dem Smarttag eine neue ObjectDataSource hinzufügen aus. Da wir Lieferanteninformationen anzeigen möchten, wählen Sie die `SuppliersBLL`-Klasse auf dem ersten Bildschirm des Assistenten aus. Wählen Sie auf dem zweiten Bildschirm die `GetSuppliersByCountry(country)`-Methode aus.
 
-[![Wählen Sie die GetSuppliersByCountry(country)-Methode](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
+[![wählen Sie die getsuppliersbycountry (Country)-Methode aus.](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
 
-**Abbildung 7**: Wählen Sie die `GetSuppliersByCountry(country)` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image21.png))
+**Abbildung 7**: Auswählen der `GetSuppliersByCountry(country)` Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image21.png))
 
-Da die `GetSuppliersByCountry(country)` Methode verfügt über einen Eingabeparameter, die der Assistent umfasst wiederum einen letzten Bildschirm zum Auswählen der Wert des Parameters. Legen Sie dieses Mal die Parameterquelle steuern. Dadurch wird die ControlID Dropdown-Liste mit den Namen der Steuerelemente auf der Seite ausgefüllt; Wählen Sie die `CountryName` Steuerelement aus der Liste. Wenn zuerst die Seite besucht wird die `CountryName` TextBox, leer ist, sind, so dass keine Ergebnisse zurückgegeben werden, und es wird nichts angezeigt. Wenn einige Ergebnisse werden standardmäßig angezeigt werden sollen, legen Sie das DefaultValue-Textfeld entsprechend fest.
+Da die `GetSuppliersByCountry(country)`-Methode über einen Eingabeparameter verfügt, enthält der Assistent erneut einen letzten Bildschirm zum Auswählen des Parameter Werts. Legen Sie dieses Mal die Parameter Quelle auf Control fest. Dadurch wird die ControlID-Dropdown Liste mit den Namen der Steuerelemente auf der Seite aufgefüllt. Wählen Sie das `CountryName` Steuerelement aus der Liste aus. Beim ersten Besuch der Seite ist das Textfeld `CountryName` leer, sodass keine Ergebnisse zurückgegeben werden und nichts angezeigt wird. Wenn Sie einige Ergebnisse standardmäßig anzeigen möchten, legen Sie das Textfeld DefaultValue entsprechend fest.
 
-[![Legen Sie den Parameterwert auf den Wert für die CountryName-Steuerelement](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
+[![legen Sie den Parameter Wert auf den CountryName-Steuerelement Wert fest.](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
 
-**Abbildung 8**: Legen Sie den Parameterwert auf den `CountryName` Steuerelementwert ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image24.png))
+**Abbildung 8**: Festlegen des Parameter Werts auf den Wert des `CountryName` Steuer Elements ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image24.png))
 
-Das "ObjectDataSource" deklarative Markup unterscheidet sich geringfügig vom ersten Beispiel mit einer [ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx) anstelle des standardmäßigen `Parameter` Objekt. Ein `ControlParameter` verfügt über zusätzliche Eigenschaften, die an die `ID` das Websteuerelement und den Eigenschaftswert angibt, für den Parameter verwendet (`PropertyName`). Das Konfigurieren von Datenquellen-Assistent konnte intelligent genug, um zu bestimmen, dass für ein Textfeld, wir Sie verwenden möchten die `Text` -Eigenschaft für den Wert des Parameters. Wenn Sie jedoch einen anderen Eigenschaftswert aus dem Web-Steuerelement verwendet werden sollen. Sie können ändern, die `PropertyName` Wert hier oder auf den Link "Erweiterte Eigenschaften einblenden" im Assistenten.
+Das deklarative Markup von ObjectDataSource unterscheidet sich geringfügig vom ersten Beispiel mithilfe eines [ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx) anstelle des Standard-`Parameter` Objekts. Ein `ControlParameter` verfügt über zusätzliche Eigenschaften, um die `ID` des websteuer Elements und den Eigenschafts Wert anzugeben, der für den Parameter (`PropertyName`) verwendet werden soll. Der Assistent zum Konfigurieren von Datenquellen war intelligent genug, um zu bestimmen, dass für ein Textfeld wahrscheinlich die `Text`-Eigenschaft für den Parameterwert verwendet werden soll. Wenn Sie jedoch einen anderen Eigenschafts Wert aus dem websteuer Element verwenden möchten, können Sie den `PropertyName` Wert hier ändern oder indem Sie im Assistenten auf den Link Erweiterte Eigenschaften anzeigen klicken.
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample2.aspx)]
 
-Wenn die Seite zum ersten Mal besuchen der `CountryName` Textfeld leer ist. Das "ObjectDataSource" `Select` Methode wird von der GridView, aber der Wert immer noch aufgerufen `null` übergeben wird, in der `GetSuppliersByCountry(country)` Methode. TableAdapter konvertiert die `null` in einer Datenbank `NULL` Wert (`DBNull.Value`), jedoch die Abfrage ein, die die `GetSuppliersByCountry(country)` Methode ist so geschrieben, dass es Rückgabewert nicht Werte, wenn eine `NULL` Wert wird angegeben, für die `@CategoryID`Parameter. Kurz gesagt, es werden keine Lieferanten zurückgegeben.
+Wenn Sie die Seite zum ersten Mal aufrufen, ist das `CountryName` Textfeld leer. Die `Select`-Methode von ObjectDataSource wird weiterhin von der GridView aufgerufen, aber der Wert `null` wird an die `GetSuppliersByCountry(country)`-Methode übergeben. Der TableAdapter konvertiert die `null` in einen Daten Bank `NULL` Wert (`DBNull.Value`), aber die von der `GetSuppliersByCountry(country)`-Methode verwendete Abfrage wird so geschrieben, dass Sie keine Werte zurückgibt, wenn ein `NULL` Wert für den `@CategoryID` Parameter angegeben wird. Kurz gesagt, es werden keine Lieferanten zurückgegeben.
 
-Nachdem der Besucher in einem anderen Land, jedoch gibt ein und klickt auf die Schaltfläche anzeigen Lieferanten, um ein Postback, dem ObjectDataSource-Steuerelement die dazu führen, dass `Select` Methode erneut abgefragt, in des TextBox-Steuerelements übergeben `Text` Wert wie die `country` Parameter.
+Nachdem der Besucher in ein Land gelangt ist und auf die Schaltfläche Suppliers anzeigen klickt, um ein Postback auszulösen, wird die `Select`-Methode von ObjectDataSource angefordert, und der `Text` Wert des TextBox-Steuer Elements wird als `country`-Parameter übergeben.
 
-[![Die Lieferanten von Kanada werden angezeigt.](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
+[![diese Lieferanten aus Kanada angezeigt werden](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
 
-**Abbildung 9**: Die Lieferanten von Kanada angezeigt werden ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image27.png))
+**Abbildung 9**: die Lieferanten aus Kanada werden angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image27.png))
 
-## <a name="showing-all-suppliers-by-default"></a>Alle Lieferanten in der Standardeinstellung angezeigt
+## <a name="showing-all-suppliers-by-default"></a>Standardmäßige Anzeige aller Lieferanten
 
-Stattdessen als keiner der Lieferanten anzeigen, wenn Sie die Seite zuerst anzeigen sollen zeigen *alle* Lieferanten zuerst, damit der Benutzer in der Liste nach unten zu kürzen, indem Sie einen Ländernamen in das Textfeld eingeben. Wenn das Textfeld leer ist, ist die `SuppliersBLL` -Klasse `GetSuppliersByCountry(country)` Methode übergeben eine `null` Wert für die *`country`* input-Parameters. Dies `null` Wert wird dann nach unten in der DAL übergeben `GetSupplierByCountry(country)` -Methode, in dem er wird in einer Datenbank konvertiert `NULL` Wert für die `@Country` Parameter in der folgenden Abfrage:
+Anstatt den Anbietern anzuzeigen, wenn Sie die Seite zum ersten Mal anzeigen, möchten wir ggf. *alle* Lieferanten zuerst anzeigen, sodass der Benutzer die Liste durch Eingeben eines Länder namens in das Textfeld durchlaufen kann. Wenn das Textfeld leer ist, wird die `GetSuppliersByCountry(country)`-Methode der `SuppliersBLL` Klasse in einen `null` Wert für den *`country`* Eingabeparameter übergeben. Dieser `null` Wert wird dann in die `GetSupplierByCountry(country)`-Methode der dal weitergegeben, wo er in eine Datenbank `NULL` Wert für den `@Country`-Parameter in der folgenden Abfrage übersetzt wird:
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 
-Der Ausdruck `Country = NULL` immer False zurückgegeben, auch für Datensätze, deren `Country` Spalte weist eine `NULL` Wert; aus diesem Grund werden keine Datensätze zurückgegeben.
+Der Ausdruck `Country = NULL` gibt immer false zurück, auch für Datensätze, deren `Country` Spalte einen `NULL` Wert aufweist. aus diesem Grund werden keine Datensätze zurückgegeben.
 
-Zurückzugebenden *alle* Lieferanten, wenn das Land Textfeld leer ist, können wir verbessern die `GetSuppliersByCountry(country)` -Methode in der die BLL zum Aufrufen der `GetSuppliers()` Methode, wenn als Land-Parameter `null` und rufen Sie die DAL `GetSuppliersByCountry(country)` Methode, die andernfalls. Dadurch müssen die Auswirkungen der alle Lieferanten, wenn kein Land angegeben wird und die entsprechende Datenteilmenge Lieferanten zurückgeben, wenn der Country-Parameter enthalten ist.
+Um *alle* Lieferanten zurückzugeben, wenn das Textfeld Country leer ist, können wir die `GetSuppliersByCountry(country)`-Methode in der BLL erweitern, um die `GetSuppliers()`-Methode aufzurufen, wenn der Country-Parameter `null` ist, und andernfalls die `GetSuppliersByCountry(country)` Methode der dal aufzurufen. Dies hat den Effekt, dass alle Lieferanten zurückgegeben werden, wenn kein Land angegeben ist, und die entsprechende Teilmenge der Lieferanten, wenn der Country-Parameter eingeschlossen wird.
 
-Ändern der `GetSuppliersByCountry(country)` -Methode in der die `SuppliersBLL` -Klasse folgendermaßen:
+Ändern Sie die `GetSuppliersByCountry(country)`-Methode in der `SuppliersBLL`-Klasse wie folgt:
 
 [!code-csharp[Main](declarative-parameters-cs/samples/sample4.cs)]
 
-Durch diese Änderung der `DeclarativeParams.aspx` Seite zeigt alle Lieferanten beim ersten Mal besucht hat (oder jedes Mal, wenn die `CountryName` Textfeld leer ist).
+Mit dieser Änderung werden auf der `DeclarativeParams.aspx` Seite alle Lieferanten angezeigt, wenn Sie zum ersten Mal besucht werden (oder wenn das `CountryName` Textfeld leer ist).
 
-[![Alle Lieferanten sind jetzt standardmäßig angezeigt.](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
+[![alle Lieferanten jetzt standardmäßig angezeigt werden](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
 
-**Abbildung 10**: Alle Lieferanten sind jetzt standardmäßig angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](declarative-parameters-cs/_static/image30.png))
+**Abbildung 10**: alle Lieferanten werden jetzt standardmäßig angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image30.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Um Methoden mit Eingabeparametern verwenden zu können, müssen wir die Werte für die Parameter in dem ObjectDataSource-Steuerelement angeben `SelectParameters` Auflistung. Verschiedene Arten von Parametern ermöglichen den Wert des Parameters aus verschiedenen Quellen abgerufen werden sollen. Der standardmäßige Parametertyp verwendet einen hartcodierten Wert aber so einfach (und ohne eine einzige Zeile Code) Parameterwerte aus der Abfragezeichenfolge, Sitzung Variablen, Cookies und auch neben der freien Eingabe von Werten aus Web-Steuerelemente auf der Seite abgerufen werden können.
+Um Methoden mit Eingabe Parametern verwenden zu können, müssen die Werte für die Parameter in der `SelectParameters` Auflistung von ObjectDataSource angegeben werden. Verschiedene Typen von Parametern ermöglichen, dass der Parameterwert aus unterschiedlichen Quellen abgerufen wird. Der Standard Parametertyp verwendet einen hart codierten Wert, aber ebenso einfach (und ohne eine Codezeile) können Parameterwerte aus der QueryString, den Sitzungsvariablen, Cookies und sogar vom Benutzer eingegebenen Werten aus den websteuer Elementen auf der Seite abgerufen werden.
 
-Die Beispiele, die wir uns angesehen, in diesem Tutorial haben gezeigt, wie deklarative Parameterwerte verwenden. Allerdings kann es Zeiten werden, wenn wir benötigen eine Source-Parameter verwenden, die nicht verfügbar, z. B. das aktuelle Datum und die Uhrzeit ist, oder, wenn unsere Website Mitgliedschaft, die Benutzer-ID des Besuchers verwendet wurde. Für solche Szenarien können wir die Werte der Parameter vor dem ObjectDataSource-Steuerelement programmgesteuert festlegen, das Aufrufen des zugrunde liegenden Objekts-Methode. Erfahren Sie, wie Sie dazu in der [nächsten Tutorial](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md).
+In den Beispielen in diesem Tutorial wurde gezeigt, wie deklarative Parameterwerte verwendet werden. Es kann jedoch vorkommen, dass eine Parameter Quelle verwendet werden muss, die nicht verfügbar ist, z. b. das aktuelle Datum und die Uhrzeit, oder wenn unsere Website die Mitgliedschaft verwendet hat, die Benutzer-ID des Besuchers. In solchen Szenarien können die Parameterwerte Programm gesteuert festgelegt werden, bevor ObjectDataSource die-Methode des zugrunde liegenden Objekts aufruft. Im [nächsten Tutorial](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)erfahren Sie, wie Sie dies erreichen.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial ist Hilton Giesenow. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Der Lead Prüfer für dieses Tutorial war Hilton giesreviewer. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](displaying-data-with-the-objectdatasource-cs.md)
