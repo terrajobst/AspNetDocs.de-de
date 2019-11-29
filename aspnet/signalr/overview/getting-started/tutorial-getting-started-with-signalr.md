@@ -1,90 +1,90 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
-title: 'Tutorial: Echtzeit-Chat mit SignalR 2 | Microsoft-Dokumentation'
+title: 'Tutorial: Echt Zeit Chat mit signalr 2 | Microsoft-Dokumentation'
 author: bradygaster
-description: Dieses Tutorial zeigt, wie Sie mithilfe von SignalR eine Chatanwendung mit Echtzeitfunktionalität erstellen. Eine leere ASP.NET-Webanwendung hinzugefügt SignalR.
+description: Dieses Tutorial zeigt, wie Sie mithilfe von SignalR eine Chatanwendung mit Echtzeitfunktionalität erstellen. Sie fügen signalr einer leeren ASP.NET-Webanwendung hinzu.
 ms.author: bradyg
 ms.date: 01/22/2019
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: ecc235454d4b95ce660a4373387f44720826b076
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: bc4ef190b6e36812b6fe7ca4e16eb763431e0e82
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905643"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600472"
 ---
-# <a name="tutorial-real-time-chat-with-signalr-2"></a>Tutorial: Chatten in Echtzeit mit SignalR 2
+# <a name="tutorial-real-time-chat-with-signalr-2"></a>Tutorial: Echt Zeit Chat mit signalr 2
 
-In diesem Tutorial erfahren Sie, wie mit SignalR eine chatanwendung mit Echtzeitfunktionalität erstellen können. Sie SignalR eine leere ASP.NET-Webanwendung hinzufügen und erstellen Sie eine HTML-Seite zum Senden und Meldungen angezeigt werden.
+In diesem Tutorial wird gezeigt, wie Sie signalr verwenden, um eine echt Zeit Chat-Anwendung zu erstellen. Sie fügen signalr einer leeren ASP.NET-Webanwendung hinzu und erstellen eine HTML-Seite, um Nachrichten zu senden und anzuzeigen.
 
 In diesem Tutorial:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts
-> * Ausführen des Beispiels
-> * Überprüfen Sie den code
+> * Beispielausführung
+> * Untersuchen des Codes
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Erforderliche Voraussetzungen
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der **ASP.NET und Webentwicklung** arbeitsauslastung.
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der Arbeitsauslastung **ASP.net und Webentwicklung** .
 
 ## <a name="set-up-the-project"></a>Einrichten des Projekts
 
-Fügen Sie in diesem Abschnitt zeigt, wie Sie Visual Studio 2017 und SignalR 2 verwenden, um eine leere ASP.NET-Webanwendung erstellen SignalR hinzu, und erstellen Sie die chatanwendung.
+In diesem Abschnitt wird gezeigt, wie Sie mit Visual Studio 2017 und signalr 2 eine leere ASP.NET-Webanwendung erstellen, signalr hinzufügen und die Chat-Anwendung erstellen.
 
-1. Erstellen Sie eine ASP.NET-Webanwendung in Visual Studio.
+1. Erstellen Sie in Visual Studio eine ASP.NET-Webanwendung.
 
-    ![Erstellen Sie web](tutorial-getting-started-with-signalr/_static/image2.png)
+    ![Web erstellen](tutorial-getting-started-with-signalr/_static/image2.png)
 
-1. In der **neues ASP.NET-Projekt – SignalRChat** Fenster verlassen **leere** ausgewählt, und wählen Sie **OK**.
+1. Lassen Sie im Fenster **New ASP.net Project-signalrchat** den Eintrag **leer** , und wählen Sie **OK**aus.
 
-1. In **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neues Element**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **Neues Element** **Hinzufügen** aus.
 
-1. In **neues Element hinzufügen - SignalRChat**Option **installiert** > **Visual C#**   >  **Web**  >  **SignalR** und wählen Sie dann **SignalR-Hubklasse (v2)**.
+1. Wählen Sie unter **Neues Element hinzufügen-signalrchat**die Option **installiert** > **Visual C#**  > **Web** > **signalr** aus, und wählen Sie dann **signalr Hub-Klasse (v2)** aus.
 
-1. Nennen Sie die Klasse *ChatHub* und fügen sie dem Projekt hinzu.
+1. Benennen Sie die Klasse *chathub* , und fügen Sie Sie dem Projekt hinzu.
 
-    Dieser Schritt erstellt der *ChatHub.cs* Klassendatei, und fügt einen Satz von Skriptdateien und Assemblyverweise, die dem Projekt SignalR unterstützen.
+    In diesem Schritt wird die *ChatHub.cs* -Klassendatei erstellt, und dem Projekt wird ein Satz von Skriptdateien und Assemblyverweisen hinzugefügt, die signalr unterstützen.
 
-1. Ersetzen Sie den Code in der neuen *ChatHub.cs* Klassendatei mit dem folgenden Code:
+1. Ersetzen Sie den Code in der neuen *ChatHub.cs* -Klassendatei durch den folgenden Code:
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr/samples/sample1.cs)]
 
-1. In **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **neues Element**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **Neues Element** **Hinzufügen** aus.
 
-1. In **neues Element hinzufügen - SignalRChat** wählen **installiert** > **Visual C#**   >  **Web** und klicken Sie dann Wählen Sie **OWIN-Startklasse**.
+1. Wählen Sie in **Neues Element hinzufügen-signalrchat** die Option **installiert** > **Visual C#**  > **Web** aus, und wählen Sie dann **owin-Startklasse**
 
-1. Nennen Sie die Klasse *Start* und fügen sie dem Projekt hinzu.
+1. Benennen Sie die Klasse *Startup* , und fügen Sie Sie dem Projekt hinzu.
 
-1. Ersetzen Sie den Standardcode in *Start* Klasse durch den folgenden Code:
+1. Ersetzen Sie den Standard Code in der *Startup* -Klasse durch den folgenden Code:
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr/samples/sample2.cs)]
 
-1. In **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **hinzufügen** > **HTML-Seite**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie > **HTML-Seite** **Hinzufügen** .
 
-1. Nennen Sie die neue Seite *Index* , und wählen Sie **OK**.
+1. Benennen Sie den neuen Seiten *Index* , und wählen Sie **OK**aus.
 
-1. In **Projektmappen-Explorer**mit der rechten Maustaste auf die HTML-Seite, die Sie erstellt haben, und wählen Sie **als Startseite festlegen**.
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die erstellte HTML-Seite, und wählen Sie **als Start Seite festlegen**aus.
 
-1. Ersetzen Sie den Standardcode in der HTML-Seite mit dem folgenden Code:
+1. Ersetzen Sie den Standard Code in der HTML-Seite durch folgenden Code:
 
     [!code-html[Main](tutorial-getting-started-with-signalr/samples/sample3.html)]
 
-1. In **Projektmappen-Explorer**, erweitern Sie **Skripts**.
+1. Erweitern Sie in **Projektmappen-Explorer**den Eintrag **Skripts**.
 
-    Skriptbibliotheken für jQuery und SignalR werden in das Projekt angezeigt.
+    Skript Bibliotheken für jQuery und signalr sind im Projekt sichtbar.
 
     > [!IMPORTANT]
-    > Der Paket-Manager möglicherweise eine höhere Version von SignalR-Skripts installiert.
+    > Der Paket-Manager hat möglicherweise eine neuere Version der signalr-Skripts installiert.
 
-1. Überprüfen Sie, dass die Skriptverweise im Codeblock auf die Versionen der Skriptdateien im Projekt entsprechen.
+1. Überprüfen Sie, ob die Skript Verweise im Codeblock den Versionen der Skriptdateien im Projekt entsprechen.
 
-    Die Skriptverweise aus der ursprünglichen Codeblock:
+    Skript Verweise aus dem ursprünglichen Codeblock:
 
     ```html
     <!--Script references. -->
@@ -94,102 +94,102 @@ Fügen Sie in diesem Abschnitt zeigt, wie Sie Visual Studio 2017 und SignalR 2 v
     <script src="Scripts/jquery.signalR-2.2.1.min.js"></script>
     ```
 
-1. Wenn sie nicht übereinstimmen, aktualisieren Sie die *.html* Datei.
+1. Wenn keine Entsprechung gefunden wird, aktualisieren Sie die *HTML* -Datei.
 
-1. Wählen Sie in der Menüleiste **Datei** > **Alles speichern**.
+1. Wählen Sie in der Menüleiste **Datei** > **Alle speichern**aus.
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-1. In der Symbolleiste aktivieren **Skriptdebugging** und wählen Sie dann auf die entsprechende Schaltfläche, um das Beispiel im Debugmodus auszuführen.
+1. Aktivieren Sie auf der Symbolleiste das **Skript Debugging** , und wählen Sie dann die Schaltfläche wiedergeben aus, um das Beispiel im Debugmodus auszuführen.
 
-    ![Benutzername eingeben](tutorial-getting-started-with-signalr/_static/image3.png)
+    ![Benutzernamen eingeben](tutorial-getting-started-with-signalr/_static/image3.png)
 
-1. Wenn der Browser geöffnet wird, geben Sie einen Namen für Ihre Chat-Identität aus.
+1. Wenn der Browser geöffnet wird, geben Sie einen Namen für Ihre Chat Identität ein.
 
-1. Kopieren Sie die URL aus dem Browser, öffnen Sie zwei andere Browser, und fügen Sie die URLs in die Adresse leisten.
+1. Kopieren Sie die URL aus dem Browser, öffnen Sie zwei andere Browser, und fügen Sie die URLs in die Adressleiste ein.
 
 1. Geben Sie in jedem Browser einen eindeutigen Namen ein.
 
-1. Fügen Sie nun einen Kommentar, und wählen **senden**. Wiederholen Sie, die in den anderen Browsern. Die Kommentare werden in Echtzeit angezeigt.
+1. Fügen Sie nun einen Kommentar hinzu, und wählen Sie **senden**aus. Wiederholen Sie diesen Vorgang in den anderen Browsern. Die Kommentare werden in Echtzeit angezeigt.
 
     > [!NOTE]
-    > Diese einfache chatanwendung werden den Kontext der Diskussion auf dem Server nicht verwaltet werden. Der Hub sendet, Kommentare, um alle aktuellen Benutzer. Benutzer, die im Chat später zusammenfügen sehen, dass Nachrichten ab dem Zeitpunkt hinzugefügt werden, dass sie aufgenommen werden.
+    > Diese einfache Chat-Anwendung behält den Diskussions Kontext auf dem Server nicht bei. Der Hub überträgt Kommentare an alle aktuellen Benutzer. Benutzer, die später dem Chat beitreten, sehen die Nachrichten, die ab dem Zeitpunkt der Verknüpfung hinzugefügt werden.
 
-    Sehen Sie, wie der Chat-Anwendung in drei verschiedenen Browsern ausgeführt wird. Beim Tom, Anand und Susan Senden von Nachrichten von allen Browsern, die in Echtzeit aktualisiert werden:
+    Sehen Sie, wie die Chat-Anwendung in drei verschiedenen Browsern ausgeführt wird. Wenn Tom, Anand und Susan Nachrichten senden, werden alle Browser in Echtzeit aktualisiert:
 
-    ![Alle drei in Browsern angezeigt, den gleichen Chatverlauf](tutorial-getting-started-with-signalr/_static/image4.png)
+    ![Alle drei Browser zeigen denselben Chatverlauf an.](tutorial-getting-started-with-signalr/_static/image4.png)
 
-1. In **Projektmappen-Explorer**, überprüfen Sie die **Skriptdokumente** Knoten für die ausgeführte Anwendung. Es gibt eine Skriptdatei namens *Hubs* , die den SignalR-Bibliothek zur Laufzeit generiert. Diese Datei, verwaltet die Kommunikation zwischen der jQuery-Skripts und serverseitigen Code.
+1. Überprüfen Sie in **Projektmappen-Explorer**den Knoten **Skript Dokumente** für die Anwendung, die ausgeführt wird. Es gibt eine Skriptdatei mit dem Namen *Hubs* , die die signalr-Bibliothek zur Laufzeit generiert. Diese Datei verwaltet die Kommunikation zwischen dem jQuery-Skript und dem serverseitigen Code.
 
-    ![automatisch generierte-Hubs-Skript im Knoten "Skriptdokumente"](tutorial-getting-started-with-signalr/_static/image5.png)
+    ![automatisch generiertes Hubs-Skript im Knoten "Skript Dokumente"](tutorial-getting-started-with-signalr/_static/image5.png)
 
-## <a name="examine-the-code"></a>Überprüfen Sie den Code
+## <a name="examine-the-code"></a>Untersuchen des Codes
 
-Die Anwendung SignalRChat veranschaulicht zwei grundlegende Aufgaben für die SignalR-Entwicklung. Es veranschaulicht einen Hub erstellen. Der Server verwendet den Hub als Haupt-Coordination-Objekt. Der Hub verwendet die SignalR-jQuery-Bibliothek zum Senden und Empfangen von Nachrichten an.
+In der signalrchat-Anwendung werden zwei grundlegende signalr-Entwicklungsaufgaben veranschaulicht. Es zeigt, wie Sie einen Hub erstellen. Der Server verwendet diesen Hub als hauptkoordinations Objekt. Der Hub verwendet die signalr jQuery-Bibliothek, um Nachrichten zu senden und zu empfangen.
 
-### <a name="signalr-hubs-in-the-chathubcs"></a>SignalR-Hubs in der ChatHub.cs
+### <a name="signalr-hubs-in-the-chathubcs"></a>Signalr Hubs in ChatHub.cs
 
-Im obigen Codebeispiel die `ChatHub` Klasse leitet sich von der `Microsoft.AspNet.SignalR.Hub` Klasse. Ableiten von der `Hub` Klasse ist eine gute Möglichkeit, eine SignalR-Anwendung zu erstellen. Sie können öffentliche Methoden auf Ihrem Hub-Klasse erstellen und dann diese Methoden durch einen Aufruf über Skripts auf einer Webseite.
+Im obigen Codebeispiel wird die `ChatHub`-Klasse von der `Microsoft.AspNet.SignalR.Hub`-Klasse abgeleitet. Das Ableiten von der `Hub`-Klasse ist eine nützliche Möglichkeit zum Erstellen einer signalr-Anwendung. Sie können öffentliche Methoden für Ihre hubklasse erstellen und dann diese Methoden verwenden, indem Sie Sie aus Skripts auf einer Webseite aufrufen.
 
-Im Code Chat Clients rufen die `ChatHub.Send` Methode, um eine neue Nachricht zu senden. Der Hub sendet dann die Nachricht an alle Clients durch den Aufruf `Clients.All.broadcastMessage`.
+Im chatcode wird die `ChatHub.Send`-Methode aufgerufen, um eine neue Nachricht zu senden. Der Hub sendet die Nachricht dann an alle Clients, indem `Clients.All.broadcastMessage`aufgerufen wird.
 
-Die `Send` -Methode demonstriert, mehrere Hub-Konzepte:
+Die `Send`-Methode veranschaulicht verschiedene Hub-Konzepte:
 
-* Deklarieren Sie öffentliche Methoden für einen Hub, damit Clients, die sie aufrufen können.
+* Deklarieren Sie öffentliche Methoden auf einem Hub, damit Sie von Clients aufgerufen werden können.
 
-* Verwenden der `Microsoft.AspNet.SignalR.Hub.Clients` dynamische Eigenschaft für die Kommunikation mit allen Clients, die mit diesem Hub verbunden sind.
+* Verwenden Sie die dynamische `Microsoft.AspNet.SignalR.Hub.Clients`-Eigenschaft, um mit allen Clients zu kommunizieren, die mit diesem Hub verbunden sind.
 
-* Aufrufen einer Funktion auf dem Client (z. B. die `broadcastMessage` Funktion) zum Aktualisieren von Clients.
+* Es wird eine Funktion auf dem Client aufgerufen (z. b. die `broadcastMessage` Funktion), um Clients zu aktualisieren.
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr/samples/sample4.cs)]
 
-### <a name="signalr-and-jquery-in-the-indexhtml"></a>SignalR und jQuery in der "Index.HTML"
+### <a name="signalr-and-jquery-in-the-indexhtml"></a>Signalr und jQuery in der Datei "index. html"
 
-Die *"Index.HTML"* Seite im Codebeispiel zeigt, wie die SignalR-jQuery-Bibliothek, die zur Kommunikation mit einer SignalR-Hub verwenden. Der Code führt viele wichtige Aufgaben. Er deklariert einen Proxy für den Hub zu verweisen, deklariert eine Funktion, dass der Server, das Sie, um die pushübertragung von Inhalten an Clients aufrufen kann, und sie eine Verbindung zum Senden von Nachrichten an den Hub beginnt.
+Die Seite " *Index. html* " im Codebeispiel zeigt, wie die signalr jQuery-Bibliothek für die Kommunikation mit einem signalr-Hub verwendet wird. Der Code führt viele wichtige Aufgaben aus. Er deklariert einen Proxy, der auf den Hub verweist, deklariert eine Funktion, die der Server zum Übertragen von Inhalten an Clients senden kann, und startet eine Verbindung, um Nachrichten an den Hub zu senden.
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr/samples/sample5.js)]
 
 > [!NOTE]
-> In JavaScript muss der Verweis auf die Server-Klasse und ihre Member CamelCase sein. Das Beispiel verweist auf die C# *ChatHub* Klasse in JavaScript als `chatHub`.
+> In JavaScript muss der Verweis auf die Serverklasse und deren Member "CamelCase" lauten. Das Codebeispiel verweist auf C# die *chathub* -Klasse in JavaScript, wie `chatHub`.
 
-In diesem Codeblock erstellen Sie eine Callback-Funktion im Skript.
+In diesem Codeblock erstellen Sie eine Rückruffunktion im Skript.
 
 [!code-html[Main](tutorial-getting-started-with-signalr/samples/sample6.html)]
 
-Die hubklasse auf dem Server ruft diese Funktion, um Inhaltsupdates per Pushvorgang an jeden Client übertragen. Die beiden Linien, HTML-Codierung der Inhalt vor der Anzeige sind optional, und zeigen eine gute Möglichkeit, Script-Injection verhindern.
+Die Hub-Klasse auf dem Server ruft diese Funktion auf, um Inhalts Aktualisierungen an jeden Client zu übernehmen. Die beiden Zeilen, in denen der Inhalt vor der Anzeige HTML-codiert wird, sind optional und weisen eine gute Möglichkeit zum Verhindern von Skript Einschleusungen auf.
 
 Dieser Code öffnet eine Verbindung mit dem Hub.
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr/samples/sample7.js)]
 
 > [!NOTE]
-> Dieser Ansatz wird sichergestellt, dass der Code eine Verbindung hergestellt wird, bevor der Ereignishandler ausgeführt wird.
+> Mit diesem Ansatz wird sichergestellt, dass der Code eine Verbindung herstellt, bevor der Ereignishandler ausgeführt wird.
 
-Der Code wird die Verbindung gestartet und leitet diese dann in eine Funktion zum Behandeln der Click-Ereignis auf der **senden** auf der HTML-Seite.
+Der Code startet die Verbindung und übergibt dann eine Funktion, um das Click-Ereignis in der Schaltfläche " **senden** " auf der HTML-Seite zu verarbeiten.
 
 ## <a name="get-the-code"></a>Abrufen des Codes
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9)
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-Weitere Informationen zu SignalR finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu signalr finden Sie in den folgenden Ressourcen:
 
-* [SignalR-Projekt](http://signalr.net)
+* [Signalr-Projekt](http://signalr.net)
 
-* [SignalR Github und Beispiele](https://github.com/SignalR/SignalR)
+* [Signalr GitHub und Beispiele](https://github.com/SignalR/SignalR)
 
-* [SignalR Wiki](https://github.com/SignalR/SignalR/wiki)
+* [Signalr-wiki](https://github.com/SignalR/SignalR/wiki)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial Sie:
+In diesem Tutorial erfahren Sie Folgendes:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts
 > * Das Beispiel ausgeführt
-> * Überprüft den code
+> * Untersuchen des Codes
 
-Wechseln Sie zum nächsten Artikel erfahren, wie SignalR und MVC 5 verwendet.
+Fahren Sie mit dem nächsten Artikel fort, um zu erfahren, wie Sie signalr und MVC 5 verwenden.
 > [!div class="nextstepaction"]
-> [SignalR 2 und MVC 5](tutorial-getting-started-with-signalr-and-mvc.md)
+> [Signalr 2 und MVC 5](tutorial-getting-started-with-signalr-and-mvc.md)

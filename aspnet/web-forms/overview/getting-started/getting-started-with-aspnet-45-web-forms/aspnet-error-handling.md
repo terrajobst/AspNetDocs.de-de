@@ -8,18 +8,18 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: f420be369801208fa875d9a60e6e154afbe84aa7
-ms.sourcegitcommit: b67ffd5b2c5cff01ec4c8eb12a21f693f2e11887
+ms.openlocfilehash: 9514142ca50b33470a3f4c033e4f8e319a9ee09b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69995311"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74636470"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET – Fehlerbehandlung
 
 von [Erik Reitan](https://github.com/Erikre)
 
-[Herunterladen eines Wingtip Toys-C#Beispielprojekts ()](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [Herunterladen von E-Book (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[Herunterladen eines Wingtip Toys-C#Beispielprojekts ()](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) oder [Herunterladen von E-Book (PDF)](https://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > Diese tutorialreihe vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.net Web Forms-Anwendung mit ASP.NET 4,5 und Microsoft Visual Studio Express 2013 für das Web. Für diese tutorialreihe steht ein Visual Studio 2013- [Projekt mit C# Quellcode](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) zur Verfügung.
 
@@ -33,21 +33,21 @@ In diesem Tutorial ändern Sie die Wingtip Toys-Beispielanwendung, um Fehlerbeha
 - Anzeigen von Fehlermeldungen, die die Sicherheit nicht beeinträchtigen.
 - Gewusst wie: Implementieren von Fehler Protokollierungs Modulen und-Handlern (ELMAH)-Fehler Protokollierung.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 ASP.NET-Anwendungen müssen in der Lage sein, Fehler zu behandeln, die während der Ausführung konsistent auftreten. ASP.NET verwendet die Common Language Runtime (CLR), die eine Möglichkeit bietet, Anwendungen von Fehlern auf einheitliche Weise zu benachrichtigen. Wenn ein Fehler auftritt, wird eine Ausnahme ausgelöst. Eine Ausnahme ist ein beliebiger Fehler, eine Bedingung oder ein unerwartetes Verhalten, das von einer Anwendung erkannt wird.
 
 In .NET Framework stellt eine Ausnahme ein Objekt dar, das von der `System.Exception`-Klasse erbt. Eine Ausnahme wird in einem Codebereich ausgelöst, in dem ein Fehler aufgetreten ist. Die Ausnahme wird in der-aufrufsstapel an eine Stelle, an der die Anwendung Code zur Behandlung der Ausnahme bereitstellt, übermittelt. Wenn die Anwendung die Ausnahme nicht behandelt, wird der Browser gezwungen, die Fehlerdetails anzuzeigen.
 
-Es wird empfohlen, Fehler in auf Codeebene in `Try` / `Catch` / `Finally` Blöcken in Ihrem Code zu behandeln. Versuchen Sie, diese Blöcke zu platzieren, damit der Benutzer Probleme im Kontext beheben kann, in dem Sie auftreten. Wenn die Fehler Behandlungs Blöcke zu weit entfernt sind, wo der Fehler aufgetreten ist, wird es schwieriger, Benutzern die Informationen zur Verfügung zu stellen, die Sie zum Beheben des Problems benötigen.
+Als bewährte Vorgehensweise sollten Sie Fehler in auf der Codeebene in `Try`/`Catch`/`Finally`-Blöcke innerhalb Ihres Codes behandeln. Versuchen Sie, diese Blöcke zu platzieren, damit der Benutzer Probleme im Kontext beheben kann, in dem Sie auftreten. Wenn die Fehler Behandlungs Blöcke zu weit entfernt sind, wo der Fehler aufgetreten ist, wird es schwieriger, Benutzern die Informationen zur Verfügung zu stellen, die Sie zum Beheben des Problems benötigen.
 
 ### <a name="exception-class"></a>Exception-Klasse
 
-Die Exception-Klasse ist die Basisklasse, von der Ausnahmen erben. Die meisten Ausnahme Objekte sind Instanzen einer abgeleiteten Klasse der Ausnahme Klasse, z. b `SystemException` . die- `IndexOutOfRangeException` Klasse, die- `ArgumentNullException` Klasse oder die-Klasse. Die Exception-Klasse verfügt über Eigenschaften, z `StackTrace` . b. `InnerException` die-Eigenschaft, `Message` die-Eigenschaft und die-Eigenschaft, die spezifische Informationen über den aufgetretenen Fehler bereitstellen.
+Die Exception-Klasse ist die Basisklasse, von der Ausnahmen erben. Die meisten Ausnahme Objekte sind Instanzen einer abgeleiteten Klasse der Ausnahme Klasse, z. b. die `SystemException` Klasse, die `IndexOutOfRangeException`-Klasse oder die `ArgumentNullException`-Klasse. Die Exception-Klasse verfügt über Eigenschaften, z. b. die `StackTrace`-Eigenschaft, die `InnerException`-Eigenschaft und die `Message`-Eigenschaft, die spezifische Informationen über den aufgetretenen Fehler bereitstellen.
 
 ### <a name="exception-inheritance-hierarchy"></a>Ausnahme Vererbungs Hierarchie
 
-Die Laufzeit verfügt über einen Basissatz von Ausnahmen, `SystemException` die von der-Klasse abgeleitet werden, die die Laufzeit auslöst, wenn eine Ausnahme auftritt. Die meisten der Klassen, die von der Exception-Klasse erben, wie `IndexOutOfRangeException` z. b `ArgumentNullException` . die-Klasse und die-Klasse, implementieren keine weiteren Member. Daher finden sich die wichtigsten Informationen für eine Ausnahme in der Hierarchie von Ausnahmen, dem Namen der Ausnahme und den in der Ausnahme enthaltenen Informationen.
+Die Laufzeit verfügt über einen Basissatz von Ausnahmen, die von der `SystemException`-Klasse abgeleitet werden, die von der Laufzeit ausgelöst wird, wenn eine Ausnahme auftritt. Die meisten der Klassen, die von der Exception-Klasse erben, wie z. b. die `IndexOutOfRangeException`-Klasse und die `ArgumentNullException`-Klasse, implementieren keine weiteren Member. Daher finden sich die wichtigsten Informationen für eine Ausnahme in der Hierarchie von Ausnahmen, dem Namen der Ausnahme und den in der Ausnahme enthaltenen Informationen.
 
 ### <a name="exception-handling-hierarchy"></a>Ausnahme Behandlungs Hierarchie
 
@@ -61,15 +61,15 @@ Wenn eine Anwendung Ausnahmen behandelt, können zusätzliche Informationen übe
 
 ### <a name="application-level-error-handling"></a>Fehlerbehandlung auf Anwendungsebene
 
-Sie können Standardfehler auf Anwendungsebene behandeln, indem Sie entweder die Konfiguration Ihrer Anwendung ändern oder einen `Application_Error` Handler in der Datei *Global. asax* der Anwendung hinzufügen.
+Sie können Standardfehler auf Anwendungsebene behandeln, indem Sie die Konfiguration Ihrer Anwendung ändern oder indem Sie in der Datei " *Global. asax* " Ihrer Anwendung einen `Application_Error`-Handler hinzufügen.
 
-Sie können Standardfehler und HTTP-Fehler behandeln, indem `customErrors` Sie der Datei " *Web. config* " einen Abschnitt hinzufügen. Der `customErrors` Abschnitt ermöglicht Ihnen, eine Standardseite anzugeben, zu der Benutzer umgeleitet werden, wenn ein Fehler auftritt. Außerdem können Sie einzelne Seiten für bestimmte Statuscode Fehler angeben.
+Sie können Standardfehler und HTTP-Fehler behandeln, indem Sie der Datei " *Web. config* " einen `customErrors` Abschnitt hinzufügen. Der `customErrors` Abschnitt ermöglicht Ihnen, eine Standardseite anzugeben, zu der Benutzer bei Auftreten eines Fehlers umgeleitet werden. Außerdem können Sie einzelne Seiten für bestimmte Statuscode Fehler angeben.
 
 [!code-xml[Main](aspnet-error-handling/samples/sample1.xml?highlight=3-5)]
 
 Wenn Sie die Konfiguration verwenden, um den Benutzer zu einer anderen Seite umzuleiten, haben Sie leider keine Details zu dem aufgetretenen Fehler.
 
-Sie können jedoch Fehler abfangen, die an einer beliebigen Stelle in der Anwendung auftreten, `Application_Error` indem Sie dem Handler in der Datei *Global. asax* Code hinzufügen.
+Sie können jedoch Fehler abfangen, die an einer beliebigen Stelle in der Anwendung auftreten, indem Sie dem `Application_Error`-Handler in der Datei *Global. asax* Code hinzufügen.
 
 [!code-csharp[Main](aspnet-error-handling/samples/sample2.cs)]
 
@@ -79,17 +79,17 @@ Ein Handler auf Seitenebene gibt den Benutzer an die Seite zurück, auf der der 
 
 In der Regel verwenden Sie einen Fehlerhandler auf Seitenebene, um nicht behandelte Fehler zu protokollieren oder den Benutzer auf eine Seite zu übernehmen, auf der hilfreiche Informationen angezeigt werden können.
 
-Dieses Codebeispiel zeigt einen Handler für das Fehler Ereignis auf einer ASP.NET-Webseite. Dieser Handler fängt alle Ausnahmen ab, die nicht bereits innerhalb `try` von / `catch` Blöcken auf der Seite behandelt werden.
+Dieses Codebeispiel zeigt einen Handler für das Fehler Ereignis auf einer ASP.NET-Webseite. Dieser Handler fängt alle Ausnahmen ab, die nicht bereits in `try`/`catch`-Blöcken auf der Seite behandelt werden.
 
 [!code-csharp[Main](aspnet-error-handling/samples/sample3.cs)]
 
-Nachdem Sie einen Fehler behandelt haben, müssen Sie ihn löschen, indem `ClearError` Sie die-Methode des Server`HttpServerUtility` Objekts (-Klasse) aufrufen; andernfalls wird ein zuvor aufgetretene Fehler angezeigt.
+Nachdem Sie einen Fehler behandelt haben, müssen Sie ihn löschen, indem Sie die `ClearError`-Methode des Server Objekts (`HttpServerUtility`-Klasse) aufrufen. andernfalls wird ein zuvor aufgetretene Fehler angezeigt.
 
 ### <a name="code-level-error-handling"></a>Fehlerbehandlung auf Codeebene
 
 Die try-catch-Anweisung besteht aus einem try-Block gefolgt von einer oder mehreren catch-Klauseln, die Handler für verschiedene Ausnahmen angeben. Wenn eine Ausnahme ausgelöst wird, sucht der Common Language Runtime (CLR) nach der catch-Anweisung, die diese Ausnahme behandelt. Wenn die derzeit ausgeführte Methode keinen catch-Block enthält, untersucht die CLR die Methode, die die aktuelle Methode aufgerufen hat, usw., die Aufruf Stapel. Wenn kein Catch-Block gefunden wird, zeigt die CLR dem Benutzer eine Meldung über eine nicht behandelte Ausnahme an und beendet die Ausführung des Programms.
 
-Das folgende Codebeispiel zeigt eine gängige `try` Methode `finally` zum Behandeln von / `catch` / Fehlern.
+Das folgende Codebeispiel zeigt eine gängige Methode zum Verwenden von `try`/`catch`/`finally`, um Fehler zu behandeln.
 
 [!code-csharp[Main](aspnet-error-handling/samples/sample4.cs)]
 
@@ -97,25 +97,25 @@ Im obigen Code enthält der try-Block den Code, der vor einer möglichen Ausnahm
 
 ## <a name="adding-error-logging-support"></a>Hinzufügen der Fehler Protokollierungs Unterstützung
 
-Vor dem Hinzufügen der Fehlerbehandlung zur Wingtip Toys-Beispielanwendung fügen Sie die Unterstützung der Fehler `ExceptionUtility` Protokollierung hinzu, indem Sie dem *Logik* Ordner eine-Klasse hinzufügen. Auf diese Weise werden die Fehlerdetails der Fehlerprotokoll Datei hinzugefügt, wenn die Anwendung einen Fehler behandelt.
+Vor dem Hinzufügen der Fehlerbehandlung zur Wingtip Toys-Beispielanwendung fügen Sie die Unterstützung für die Fehler Protokollierung hinzu, indem Sie dem *Logik* Ordner eine `ExceptionUtility` Klasse hinzufügen. Auf diese Weise werden die Fehlerdetails der Fehlerprotokoll Datei hinzugefügt, wenn die Anwendung einen Fehler behandelt.
 
-1. Klicken Sie mit der rechten Maustaste auf den Ordner *Logic* , und wählen Sie **Neues Element** **Hinzufügen**  -. &gt;   
+1. Klicken Sie mit der rechten Maustaste auf den Ordner *Logic* , und wählen Sie -&gt; **Neues Element** **Hinzufügen** aus.   
    Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
-2. Wählen Sie auf der linken Seite die Gruppe  - **Visual C#**  &gt; **Code** -Vorlagen aus. Wählen Sie dann in der mittleren Liste **Klasse**aus, und nennen Sie Sie **ExceptionUtility.cs**.
+2. Wählen Sie auf der linken Seite die Gruppe **Visual C#**  -&gt; **Code** Templates aus. Wählen Sie dann in der mittleren Liste **Klasse**aus, und nennen Sie Sie **ExceptionUtility.cs**.
 3. Wählen Sie **Hinzufügen** aus. Die neue Klassendatei wird angezeigt.
 4. Ersetzen Sie den vorhandenen Code durch folgenden Code:  
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample5.cs)]
 
-Wenn eine Ausnahme auftritt, kann die Ausnahme in eine Ausnahme Protokolldatei geschrieben werden, indem die `LogException` -Methode aufgerufen wird. Diese Methode übernimmt zwei Parameter: Das Exception-Objekt und eine Zeichenfolge, die Details über die Quelle der Ausnahme enthält. Das Ausnahme Protokoll wird in die Datei *ErrorLog. txt* im Ordner *App\_Data* geschrieben.
+Wenn eine Ausnahme auftritt, kann die Ausnahme in eine Ausnahme Protokolldatei geschrieben werden, indem die `LogException`-Methode aufgerufen wird. Diese Methode übernimmt zwei Parameter: Das Exception-Objekt und eine Zeichenfolge, die Details über die Quelle der Ausnahme enthält. Das Ausnahme Protokoll wird in die Datei *ErrorLog. txt* im Ordner *App\_Data* geschrieben.
 
 ### <a name="adding-an-error-page"></a>Hinzufügen einer Fehlerseite
 
 In der Wingtip Toys-Beispielanwendung wird eine Seite verwendet, um Fehler anzuzeigen. Auf der Seite Fehler wird eine sichere Fehlermeldung an die Benutzer der Website angezeigt. Wenn der Benutzer jedoch ein Entwickler ist, der eine HTTP-Anforderung sendet, die lokal auf dem Computer bereitgestellt wird, auf dem sich der Code befindet, werden auf der Fehlerseite zusätzliche Fehlerdetails angezeigt.
 
-1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen (**Wingtip Toys**), und wählen Sie **Neues Element** **Hinzufügen**  - &gt; aus.   
+1. Klicken Sie in **Projektmappen-Explorer** mit der rechten Maustaste auf den Projektnamen (**Wingtip Toys**), und wählen Sie -&gt; **Neues Element** **Hinzufügen** aus.   
    Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
-2. Wählen Sie auf der linken Seite die Gruppe  - **Visual C#**  &gt; **Web** Templates aus. Wählen Sie in der mittleren Liste **Web Form mit Master Seite**aus, und nennen Sie es **ErrorPage. aspx**.
+2. Wählen Sie auf der linken Seite die Gruppe **Visual C#**  -&gt; **Web** Templates aus. Wählen Sie in der mittleren Liste **Web Form mit Master Seite**aus, und nennen Sie es **ErrorPage. aspx**.
 3. Klicken Sie auf **Hinzufügen**.
 4. Wählen Sie die Datei *Site. Master* als Master Seite aus, und klicken Sie dann auf **OK**.
 5. Ersetzen Sie das vorhandene Markup durch Folgendes:   
@@ -125,23 +125,23 @@ In der Wingtip Toys-Beispielanwendung wird eine Seite verwendet, um Fehler anzuz
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample7.cs)]
 
-Wenn die Fehlerseite angezeigt wird, wird `Page_Load` der Ereignishandler ausgeführt. Im- `Page_Load` Handler wird der Speicherort bestimmt, an dem der Fehler zuerst behandelt wurde. Anschließend wird der zuletzt aufgetretene Fehler durch den Rückruf der `GetLastError` -Methode des Server Objekts bestimmt. Wenn die Ausnahme nicht mehr vorhanden ist, wird eine generische Ausnahme erstellt. Wenn die HTTP-Anforderung lokal erstellt wurde, werden alle Fehlerdetails angezeigt. In diesem Fall werden nur auf dem lokalen Computer, auf dem die Webanwendung ausgeführt wird, diese Fehlerdetails angezeigt. Nachdem die Fehlerinformationen angezeigt wurden, wird der Fehler der Protokolldatei hinzugefügt, und der Fehler wird auf dem Server gelöscht.
+Wenn die Fehlerseite angezeigt wird, wird der `Page_Load` Ereignishandler ausgeführt. Im `Page_Load` Handler wird der Speicherort bestimmt, an dem der Fehler zuerst behandelt wurde. Anschließend wird der zuletzt aufgetretene Fehler durch den Rückruf der `GetLastError`-Methode des Server Objekts festgelegt. Wenn die Ausnahme nicht mehr vorhanden ist, wird eine generische Ausnahme erstellt. Wenn die HTTP-Anforderung lokal erstellt wurde, werden alle Fehlerdetails angezeigt. In diesem Fall werden nur auf dem lokalen Computer, auf dem die Webanwendung ausgeführt wird, diese Fehlerdetails angezeigt. Nachdem die Fehlerinformationen angezeigt wurden, wird der Fehler der Protokolldatei hinzugefügt, und der Fehler wird auf dem Server gelöscht.
 
 ### <a name="displaying-unhandled-error-messages-for-the-application"></a>Anzeigen nicht behandelter Fehlermeldungen für die Anwendung
 
-Wenn Sie der `customErrors` Datei " *Web. config* " einen Abschnitt hinzufügen, können Sie schnell einfache Fehler behandeln, die in der gesamten Anwendung auftreten. Sie können auch angeben, wie Fehler auf Grundlage ihres Statuscode Werts behandelt werden sollen, z. b. 404-Datei wurde nicht gefunden.
+Indem Sie der Datei " *Web. config* " einen `customErrors` Abschnitt hinzufügen, können Sie einfache Fehler, die in der gesamten Anwendung auftreten, schnell verarbeiten. Sie können auch angeben, wie Fehler auf Grundlage ihres Statuscode Werts behandelt werden sollen, z. b. 404-Datei wurde nicht gefunden.
 
 #### <a name="update-the-configuration"></a>Aktualisieren der Konfiguration
 
-Aktualisieren Sie die Konfiguration, indem `customErrors` Sie der Datei " *Web. config* " einen Abschnitt hinzufügen.
+Aktualisieren Sie die Konfiguration, indem Sie der Datei " *Web. config* " einen `customErrors` Abschnitt hinzufügen.
 
 1. Suchen Sie in **Projektmappen-Explorer**nach der Datei *Web. config* im Stammverzeichnis der Wingtip Toys-Beispielanwendung, und öffnen Sie Sie.
-2. Fügen Sie `customErrors` den Abschnitt der Datei *Web. config* innerhalb des `<system.web>` Knotens wie folgt hinzu:   
+2. Fügen Sie den `customErrors` Abschnitt der Datei " *Web. config* " im `<system.web>` Knoten wie folgt hinzu:   
 
     [!code-xml[Main](aspnet-error-handling/samples/sample8.xml?highlight=3-5)]
 3. Speichern Sie die Datei " *Web. config* ".
 
-Der `customErrors` -Abschnitt gibt den Modus an, der auf "on" festgelegt ist. Außerdem gibt `defaultRedirect`es die an, die der Anwendung mitteilt, zu welcher Seite bei Auftreten eines Fehlers navigiert werden soll. Außerdem haben Sie ein bestimmtes Error-Element hinzugefügt, das angibt, wie ein 404-Fehler behandelt wird, wenn eine Seite nicht gefunden wird. Später in diesem Tutorial fügen Sie zusätzliche Fehlerbehandlung hinzu, mit der die Details eines Fehlers auf Anwendungsebene erfasst werden.
+Der `customErrors` Abschnitt gibt den Modus an, der auf "on" festgelegt ist. Außerdem wird die `defaultRedirect`angegeben, die der Anwendung mitteilt, zu welcher Seite bei Auftreten eines Fehlers navigiert werden soll. Außerdem haben Sie ein bestimmtes Error-Element hinzugefügt, das angibt, wie ein 404-Fehler behandelt wird, wenn eine Seite nicht gefunden wird. Später in diesem Tutorial fügen Sie zusätzliche Fehlerbehandlung hinzu, mit der die Details eines Fehlers auf Anwendungsebene erfasst werden.
 
 #### <a name="running-the-application"></a>Ausführen der Anwendung
 
@@ -163,11 +163,11 @@ Um zu überprüfen, wie Ihre Anwendung bei Auftreten eines Fehlers funktioniert,
 
 1. Öffnen Sie die Code Behind-Seite der *default. aspx* -Seite in Visual Studio.   
    Die *default.aspx.cs* -Code Behind-Seite wird angezeigt.
-2. Fügen Sie im- HandlerCodehinzu,damitderHandlerwiefolgtaussieht:`Page_Load`   
+2. Fügen Sie im `Page_Load` Handler Code hinzu, damit der Handler wie folgt aussieht:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample9.cs?highlight=3-4)]
 
-Es ist möglich, verschiedene Typen von Ausnahmen zu erstellen. Im obigen Code erstellen Sie eine `InvalidOperationException` , wenn die Seite *default. aspx* geladen wird.
+Es ist möglich, verschiedene Typen von Ausnahmen zu erstellen. Im obigen Code erstellen Sie eine `InvalidOperationException`, wenn die Seite " *default. aspx* " geladen wird.
 
 #### <a name="running-the-application"></a>Ausführen der Anwendung
 
@@ -183,46 +183,46 @@ Sie können die Anwendung ausführen, um zu sehen, wie die Anwendung die Ausnahm
 
     ![ASP.net-Fehlerbehandlung-Fehlerseite](aspnet-error-handling/_static/image2.png)
 
-Wie Sie in den Fehlerdetails sehen können, wurde die Ausnahme vom `customError` -Abschnitt in der Datei " *Web. config* " aufgefangen.
+Wie Sie in den Fehlerdetails sehen können, wurde die Ausnahme vom `customError` Abschnitt in der Datei " *Web. config* " aufgefangen.
 
 ### <a name="adding-application-level-error-handling"></a>Hinzufügen der Fehlerbehandlung auf Anwendungsebene
 
-Anstatt die Ausnahme mithilfe des `customErrors` Abschnitts in der Datei " *Web. config* " zu fangen, bei der Sie nur wenige Informationen über die Ausnahme erhalten, können Sie den Fehler auf Anwendungsebene abfangen und Fehlerdetails abrufen.
+Anstatt die Ausnahme mithilfe des `customErrors` Abschnitts in der Datei " *Web. config* " abzufangen, bei der Sie nur wenige Informationen über die Ausnahme erhalten, können Sie den Fehler auf Anwendungsebene abfangen und Fehlerdetails abrufen.
 
 1. Suchen und öffnen Sie in **Projektmappen-Explorer**die Datei *Global.asax.cs* .
-2. Fügen Sie **einen\_Anwendungsfehler** Handler hinzu, der wie folgt aussieht:   
+2. Fügen Sie einen **Anwendungs\_Fehler** Handler hinzu, sodass er wie folgt aussieht:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample10.cs)]
 
-Wenn in der Anwendung ein Fehler auftritt, wird `Application_Error` der Handler aufgerufen. In diesem Handler wird die letzte Ausnahme abgerufen und überprüft. Wenn die Ausnahme nicht behandelt wurde und die Ausnahme Details der inneren Ausnahme enthält ( `InnerException` d. h. is not null), überträgt die Anwendung die Ausführung an die Fehlerseite, auf der die Ausnahme Details angezeigt werden.
+Wenn in der Anwendung ein Fehler auftritt, wird der `Application_Error`-Handler aufgerufen. In diesem Handler wird die letzte Ausnahme abgerufen und überprüft. Wenn die Ausnahme nicht behandelt wurde und die Ausnahme Details zu inneren Ausnahmen enthält (d. h. `InnerException` nicht NULL ist), überträgt die Anwendung die Ausführung an die Fehlerseite, auf der die Ausnahme Details angezeigt werden.
 
 #### <a name="running-the-application"></a>Ausführen der Anwendung
 
 Sie können die Anwendung ausführen, um die zusätzlichen Fehlerdetails anzuzeigen, indem Sie die Ausnahme auf Anwendungsebene behandeln.
 
 1. Drücken Sie **STRG + F5** , um die Beispielanwendung Wingtip Toys auszuführen.  
- Die Anwendung `InvalidOperationException` löst aus.
+ Die Anwendung löst die `InvalidOperationException` aus.
 2. Überprüfen Sie die im Browser angezeigte *ErrorPage. aspx* . 
 
     ![ASP.net-Fehlerbehandlung-Fehler auf Anwendungsebene](aspnet-error-handling/_static/image3.png)
 
 ### <a name="adding-page-level-error-handling"></a>Hinzufügen der Fehlerbehandlung auf Seitenebene
 
-Sie können eine Fehlerbehandlung auf Seitenebene zu einer Seite hinzufügen, indem Sie `ErrorPage` ein Attribut `@Page` zur-Direktive hinzufügen oder indem Sie dem `Page_Error` Code-Behind einer Seite einen-Ereignishandler hinzufügen. In diesem Abschnitt fügen Sie einen `Page_Error` Ereignishandler hinzu, der die Ausführung auf die Seite *ErrorPage. aspx* überträgt.
+Sie können eine Fehlerbehandlung auf Seitenebene zu einer Seite hinzufügen, indem Sie der `@Page`-Anweisung der Seite ein `ErrorPage` Attribut hinzufügen oder indem Sie dem Code-Behind einer Seite einen `Page_Error` Ereignishandler hinzufügen. In diesem Abschnitt fügen Sie einen `Page_Error` Ereignishandler hinzu, der die Ausführung auf die Seite *ErrorPage. aspx* überträgt.
 
 1. Suchen und öffnen Sie in **Projektmappen-Explorer**die Datei *default.aspx.cs* .
-2. Fügen Sie `Page_Error` einen Handler hinzu, damit der Code-Behind wie folgt aussieht:   
+2. Fügen Sie einen `Page_Error` Handler hinzu, damit Code Behind wie folgt aussieht:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample11.cs?highlight=18-30)]
 
-Wenn auf der Seite ein Fehler auftritt, wird `Page_Error` der Ereignishandler aufgerufen. In diesem Handler wird die letzte Ausnahme abgerufen und überprüft. Wenn ein `InvalidOperationException` auftritt, überträgt `Page_Error` der Ereignishandler die Ausführung an die Fehlerseite, auf der die Ausnahme Details angezeigt werden.
+Wenn auf der Seite ein Fehler auftritt, wird der `Page_Error` Ereignishandler aufgerufen. In diesem Handler wird die letzte Ausnahme abgerufen und überprüft. Wenn eine `InvalidOperationException` auftritt, überträgt der `Page_Error`-Ereignishandler die Ausführung an die Fehlerseite, auf der die Ausnahme Details angezeigt werden.
 
 #### <a name="running-the-application"></a>Ausführen der Anwendung
 
 Sie können die Anwendung jetzt ausführen, um die aktualisierten Routen anzuzeigen.
 
 1. Drücken Sie **STRG + F5** , um die Beispielanwendung Wingtip Toys auszuführen.  
- Die Anwendung `InvalidOperationException` löst aus.
+ Die Anwendung löst die `InvalidOperationException` aus.
 2. Überprüfen Sie die im Browser angezeigte *ErrorPage. aspx* . 
 
     ![ASP.net-Fehlerbehandlung-Fehler auf Seitenebene](aspnet-error-handling/_static/image4.png)
@@ -233,7 +233,7 @@ Sie können die Anwendung jetzt ausführen, um die aktualisierten Routen anzuzei
 Damit die Wingtip Toys-Beispielanwendung funktioniert, ohne die Ausnahme auszulösen, die Sie zuvor in diesem Tutorial hinzugefügt haben, entfernen Sie die Ausnahme.
 
 1. Öffnen Sie die Code Behind-Datei der Seite " *default. aspx* ".
-2. Entfernen Sie im- HandlerdenCode,derdieAusnahmeauslöst,sodassderHandlerwiefolgtaussieht:`Page_Load`   
+2. Entfernen Sie im `Page_Load` Handler den Code, der die Ausnahme auslöst, sodass der Handler wie folgt aussieht:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample12.cs)]
 
@@ -242,17 +242,17 @@ Damit die Wingtip Toys-Beispielanwendung funktioniert, ohne die Ausnahme auszul�
 Wie bereits weiter oben in diesem Tutorial erwähnt, können Sie try/catch-Anweisungen hinzufügen, um zu versuchen, einen Code Abschnitt auszuführen und den ersten Fehler zu behandeln, der auftritt. In diesem Beispiel werden die Fehlerdetails nur in die Fehlerprotokoll Datei geschrieben, damit der Fehler später überprüft werden kann.
 
 1. Suchen und öffnen Sie in **Projektmappen-Explorer**im Ordner " *Logic* " die Datei *PayPalFunctions.cs* .
-2. Aktualisieren Sie `HttpCall` die-Methode, sodass der Code wie folgt aussieht:   
+2. Aktualisieren Sie die `HttpCall`-Methode, sodass der Code wie folgt aussieht:   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample13.cs?highlight=20,22-23)]
 
-Der obige Code Ruft die `LogException` -Methode auf, die in `ExceptionUtility` der-Klasse enthalten ist. Sie haben die *ExceptionUtility.cs* -Klassendatei zuvor in diesem Tutorial dem *Logik* Ordner hinzugefügt. Die `LogException`-Methode nimmt zwei Parameter an. Der erste Parameter ist das Ausnahme Objekt. Der zweite Parameter ist eine Zeichenfolge, die verwendet wird, um die Fehlerquelle zu erkennen.
+Der obige Code Ruft die `LogException`-Methode auf, die in der `ExceptionUtility`-Klasse enthalten ist. Sie haben die *ExceptionUtility.cs* -Klassendatei zuvor in diesem Tutorial dem *Logik* Ordner hinzugefügt. Die `LogException`-Methode nimmt zwei Parameter an. Der erste Parameter ist das Ausnahme Objekt. Der zweite Parameter ist eine Zeichenfolge, die verwendet wird, um die Fehlerquelle zu erkennen.
 
 ### <a name="inspecting-the-error-logging-information"></a>Überprüfen der Fehler Protokollierungs Informationen
 
 Wie bereits erwähnt, können Sie das-Fehlerprotokoll verwenden, um zu bestimmen, welche Fehler in der Anwendung zuerst korrigiert werden sollten. Natürlich werden nur Fehler aufgezeichnet, die in das Fehlerprotokoll eingeschlossen und geschrieben wurden.
 
-1. Suchen Sie in **Projektmappen-Explorer**die Datei *ErrorLog. txt* im Ordner *\_App Data* , und öffnen Sie Sie.   
+1. Suchen Sie in **Projektmappen-Explorer**die Datei *ErrorLog. txt* im Ordner *App\_Data* , und öffnen Sie Sie.   
  Möglicherweise müssen Sie die Option "**alle Dateien anzeigen**" oder die Option "**Aktualisieren**" oben in **Projektmappen-Explorer** auswählen, um die Datei *ErrorLog. txt* anzuzeigen.
 2. Überprüfen Sie das in Visual Studio angezeigte Fehlerprotokoll: 
 
@@ -274,7 +274,7 @@ ELMAH (Fehler Protokollierungs Module und Handler) ist eine Fehler Protokollieru
 
 Bevor Sie mit dem ELMAH arbeiten können, müssen Sie es installieren. Dies ist einfach mit dem *nuget* -Paket-Installer. Wie bereits erwähnt, ist nuget eine Visual Studio-Erweiterung, die die Installation und Aktualisierung von Open Source-Bibliotheken und-Tools in Visual Studio erleichtert.
 
-1. Wählen Sie in Visual Studio im Menü Extras **nuget-Paket-Manager** > **nuget-Pakete für**Projekt Mappe verwalten aus. 
+1. Wählen Sie in Visual Studio im **Menü Extras** die Option **nuget-Paket-Manager** > **nuget-Pakete für**Projekt Mappe verwalten aus. 
 
     ![ASP.net-Fehlerbehandlung-nuget-Pakete für Projekt Mappe verwalten](aspnet-error-handling/_static/image6.png)
 2. Das Dialogfeld **nuget-Pakete verwalten** wird in Visual Studio angezeigt.
@@ -297,13 +297,13 @@ Das Anzeigen des ELMAH-Protokolls ist einfach, aber zunächst wird eine nicht be
 
 1. Drücken Sie **STRG + F5** , um die Beispielanwendung Wingtip Toys auszuführen.
 2. Um eine unbehandelte Ausnahme in das ELMAH-Protokoll zu schreiben, navigieren Sie in Ihrem Browser zur folgenden URL (unter Verwendung ihrer Portnummer):  
-    `https://localhost:44300/NoPage.aspx`Die Fehlerseite wird angezeigt.
+    `https://localhost:44300/NoPage.aspx` wird die Fehlerseite angezeigt.
 3. Um das ELMAH-Protokoll anzuzeigen, navigieren Sie in Ihrem Browser zur folgenden URL (unter Verwendung ihrer Portnummer):  
     `https://localhost:44300/elmah.axd`
 
     ![ASP.net-Fehlerbehandlung-ELMAH-Fehlerprotokoll](aspnet-error-handling/_static/image9.png)
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
 In diesem Tutorial haben Sie erfahren, wie Sie Fehler auf Anwendungsebene, auf Seitenebene und auf Codeebene behandeln. Sie haben auch gelernt, wie Sie behandelte und nicht behandelte Fehler zur späteren Überprüfung protokollieren. Sie haben das Dienstprogramm "ELMAH" hinzugefügt, um eine Ausnahme Protokollierung und Benachrichtigung an Ihre Anwendung mithilfe von nuget zu Darüber hinaus haben Sie die Wichtigkeit sicherer Fehlermeldungen kennengelernt.
 
@@ -324,10 +324,10 @@ Weitere Informationen zum Bereitstellen Ihrer Webanwendung in Microsoft Azure fi
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Protokollieren von Fehler Details mit der ASP.net-Integritäts Überwachung](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
+[Protokollieren von Fehler Details mit der ASP.NET Health Monitoring](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
 [ELMAH](https://code.google.com/p/elmah/)
 
-## <a name="acknowledgements"></a>Bestätigungen
+## <a name="acknowledgements"></a>Danksagungen
 
 Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 
@@ -349,14 +349,14 @@ Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt d
 - [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)
 
-## <a name="community-contributions"></a>Communitybeiträge
+## <a name="community-contributions"></a>Beiträge der Community
 
 - Graham mendick ([@grahammendick](http://twitter.com/grahammendick))  
   Visual Studio 2012-bezogenes Codebeispiel auf MSDN: [Navigation Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
 - James Chaney ([jchaney@agvance.net](mailto:jchaney@agvance.net))  
-  Visual Studio 2012-bezogenes Codebeispiel auf MSDN: [ASP.NET 4,5 Web Forms-tutorialreihe in Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
-- Andrielle Azevedo-Mitwirkender von Microsoft Technical Audience @driazevedo(Twitter:)  
-  Visual Studio 2012-Übersetzung: [Iniciando com ASP.net Web Forms 4,5-parte 1-Introduction ção e visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
+  Visual Studio 2012 Verwandte Codebeispiele auf MSDN: [ASP.NET 4,5 Web Forms-tutorialreihe in Visual Basic](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
+- Andrielle Azevedo-Mitwirkender von Microsoft Technical Audience (Twitter: @driazevedo)  
+  Visual Studio 2012-Übersetzung: [iniciando com ASP.net Web Forms 4,5-parte 1-Introduction ção e visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
 > [!div class="step-by-step"]
-> [Vorherige](url-routing.md)
+> [Vorheriges](url-routing.md)

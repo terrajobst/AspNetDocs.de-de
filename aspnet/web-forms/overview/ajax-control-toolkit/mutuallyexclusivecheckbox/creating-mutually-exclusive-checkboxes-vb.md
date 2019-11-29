@@ -1,53 +1,53 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
-title: Erstellen von sich gegenseitig ausschließenden Kontrollkästchen (VB) | Microsoft-Dokumentation
+title: Erstellen von gegenseitig ausschließenden Kontrollkästchen (VB) | Microsoft-Dokumentation
 author: wenz
-description: 'Wenn nur eine der Optionen ausgewählt werden kann, werden die Optionsfelder in der Regel verwendet. Es gibt jedoch ein Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist...'
+description: 'Wenn nur eine Reihe von Optionen ausgewählt werden kann, werden normalerweise Options Felder verwendet. Es gibt jedoch einen Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist,...'
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: e9dd1d5a-a1db-4114-981d-6a91acb1d709
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf96cf287f2fe5f394449587c70d9fc6fb33af9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: f33936dd4d71f6bbf08f02966eefe44c8c152eba
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132552"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606459"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-vb"></a>Erstellen von sich gegenseitig ausschließenden Kontrollkästchen (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)
 
-> Wenn nur eine der Optionen ausgewählt werden kann, werden die Optionsfelder in der Regel verwendet. Es gibt jedoch ein Nachteil: Sobald in einer Gruppe ein Optionsfeld ausgewählt ist, ist es nicht möglich, alle Optionsfelder deaktiviert. Kontrollkästchen kann jederzeit deaktiviert werden, jedoch sind nicht gegenseitig. In diesem Tutorial werden die Vorteile beider Ansätze: Kontrollkästchen, die sich gegenseitig.
+> Wenn nur eine Reihe von Optionen ausgewählt werden kann, werden normalerweise Options Felder verwendet. Es gibt jedoch einen Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist, ist es nicht möglich, alle Options Felder zu deaktivieren. Kontrollkästchen können jederzeit deaktiviert werden, schließen sich jedoch nicht gegenseitig aus. Dieses Tutorial bietet das Beste aus beiden Ansätzen: Kontrollkästchen, die sich gegenseitig ausschließen.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Wenn nur eine der Optionen ausgewählt werden kann, werden die Optionsfelder in der Regel verwendet. Es gibt jedoch ein Nachteil: Sobald in einer Gruppe ein Optionsfeld ausgewählt ist, ist es nicht möglich, alle Optionsfelder deaktiviert. Kontrollkästchen kann jederzeit deaktiviert werden, jedoch sind nicht gegenseitig. In diesem Tutorial werden die Vorteile beider Ansätze: Kontrollkästchen, die sich gegenseitig.
+Wenn nur eine Reihe von Optionen ausgewählt werden kann, werden normalerweise Options Felder verwendet. Es gibt jedoch einen Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist, ist es nicht möglich, alle Options Felder zu deaktivieren. Kontrollkästchen können jederzeit deaktiviert werden, schließen sich jedoch nicht gegenseitig aus. Dieses Tutorial bietet das Beste aus beiden Ansätzen: Kontrollkästchen, die sich gegenseitig ausschließen.
 
 ## <a name="steps"></a>Schritte
 
-Das ASP.NET AJAX Control Toolkit enthält die MutuallyExclusiveCheckBox-Extender. Programmierer, der Name einer Gruppe alle Kontrollkästchen zuweisen können (`Key` Attribut). Aus alle Kontrollkästchen in der gleichen Gruppe kann nur eine gleichzeitig ausgewählt werden.
+Das ASP.NET AJAX Control Toolkit enthält den MutuallyExclusiveCheckbox-Extender. Dies ermöglicht es Programmierern, einem Gruppennamen (`Key` Attribut) ein beliebiges Kontrollkästchen zuzuweisen. Aus allen Kontrollkästchen innerhalb derselben Gruppe kann jeweils nur eine ausgewählt werden.
 
-Wir beginnen mit zwei Kontrollkästchen in eine neue ASP.NET-Seite zu platzieren. Es können mehrere, aber zwei reicht aus, um das Prinzip zu demonstrieren:
+Beginnen wir damit, zwei Kontrollkästchen auf einer neuen ASP.NET-Seite zu platzieren. Es können mehr, aber zwei davon ausreichen, um das Prinzip zu veranschaulichen:
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample1.aspx)]
 
-Für beide Kontrollkästchen muss ein MutuallyExclusiveCheckBoxExtender-Steuerelement auf der Seite eingefügt werden. Beide Schlüsselattribute müssen den gleichen Wert wie der Wert sich Attribute eines HTML-Radio Button-Elemente befinden, müssen identisch mit die Gruppe zu bezeichnen, in der sie angehören. Die TargetControlID-Eigenschaft des Extenders verweist auf die ID des Kontrollkästchens.
+Für beide Kontrollkästchen muss ein mutuallyexclusivecheckboxextender-Steuerelement auf der Seite abgelegt werden. Beide Schlüssel Attribute müssen denselben Wert aufweisen, ebenso wie die Wert Attribute von HTML-Optionsfeld Elementen identisch sein müssen, um die Gruppe anzugeben, zu der Sie gehören. Die TargetControlID-Eigenschaft des Extenders verweist auf die ID des Kontrollkästchens.
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample2.aspx)]
 
-Darüber hinaus enthalten die ASP.NET AJAX `ScriptManager` die alle Elemente des ASP.NET AJAX Control Toolkit erforderlich ist:
+Schließen Sie schließlich den ASP.NET AJAX-`ScriptManager` ein, der für alle Elemente des ASP.NET AJAX Control Toolkit erforderlich ist:
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample3.aspx)]
 
-Speichern Sie, und führen Sie die Seite: Sie aktivieren und deaktivieren Sie beide Kontrollkästchen, können jedoch zu keinem Zeitpunkt beide Kontrollkästchen geprüft werden kann.
+Speichern Sie die Seite, und führen Sie Sie aus: Sie können beide Kontrollkästchen aktivieren und deaktivieren. es können jedoch nicht beide Kontrollkästchen aktiviert werden.
 
-[![Nur ein Kontrollkästchen kann zu einem Zeitpunkt überprüft werden](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)
+[![jeweils nur ein Kontrollkästchen aktiviert werden kann.](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)
 
-Nur ein Kontrollkästchen kann zu einem Zeitpunkt überprüft werden ([klicken Sie, um das Bild in voller Größe anzeigen](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))
+Es kann jeweils nur ein Kontrollkästchen geprüft werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-mutually-exclusive-checkboxes-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorherige](creating-mutually-exclusive-checkboxes-cs.md)
+> [Vorheriges](creating-mutually-exclusive-checkboxes-cs.md)

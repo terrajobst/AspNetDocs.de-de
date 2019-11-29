@@ -2,58 +2,58 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
 title: Auswählen einer Animation aus einer Liste (VB) | Microsoft-Dokumentation
 author: wenz
-description: Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Das Framework auch zulassen...
+description: Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Das Framework gibt auch die...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 81ba9116-d485-40c0-8ff6-7e9ae23e0a0c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1df265f8eaaf32d42342d39594dbba940cab0793
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 694416532b558291ff6ab57a442058b53d6167e0
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128128"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606740"
 ---
 # <a name="picking-one-animation-out-of-a-list-vb"></a>Auswählen einer Animation aus einer Liste (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5VB.pdf)
 
-> Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Das Framework ermöglicht es auch den Programmierer, wählen Sie eine Animation aus einer Liste von Animationen, je nach der Auswertung von JavaScript-Code.
+> Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Das Framework ermöglicht es dem Programmierer auch, eine Animation aus einer Liste von Animationen auszuwählen, abhängig von der Auswertung von JavaScript-Code.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Die Animation-Steuerelement in ASP.NET AJAX Control Toolkit ist nicht nur ein Steuerelement, aber ein ganzes Framework Animationen an ein Steuerelement hinzufügen. Das Framework ermöglicht es auch den Programmierer, wählen Sie eine Animation aus einer Liste von Animationen, je nach der Auswertung von JavaScript-Code.
+Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Das Framework ermöglicht es dem Programmierer auch, eine Animation aus einer Liste von Animationen auszuwählen, abhängig von der Auswertung von JavaScript-Code.
 
 ## <a name="steps"></a>Schritte
 
-Zunächst einmal sind die `ScriptManager` in die Seite klicken Sie dann die ASP.NET AJAX-Bibliothek wird geladen, lässt sich das Steuerelement-Toolkit verwenden:
+Fügen Sie zunächst den `ScriptManager` auf der Seite ein. Anschließend wird die ASP.NET AJAX-Bibliothek geladen, sodass Sie das steuerungstooltoolkit verwenden können:
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample1.aspx)]
 
-Die Animation wird auf einen Bereich des Texts angewendet werden, der so aussieht:
+Die Animation wird auf einen Textbereich angewendet, der wie folgt aussieht:
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample2.aspx)]
 
-Definieren Sie in der zugehörigen CSS-Klasse für den Bereich eine gute Hintergrundfarbe aus, und auch festlegen Sie eine feste Breite für den Bereich:
+Definieren Sie in der zugeordneten CSS-Klasse für den Bereich eine schöne Hintergrundfarbe, und legen Sie außerdem eine festgelegte Breite für den Bereich fest:
 
 [!code-css[Main](picking-one-animation-out-of-a-list-vb/samples/sample3.css)]
 
-Fügen Sie dann die `AnimationExtender` auf der Seite Bereitstellen einer `ID`, `TargetControlID` -Attribut und das obligatorische `runat="server":`
+Fügen Sie dann der Seite die `AnimationExtender` hinzu, und geben Sie eine `ID`, das `TargetControlID`-Attribut und den obligatorischen `runat="server":`
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample4.aspx)]
 
-In der `<Animations>` Knoten verwenden `<OnLoad>` die Animationen ausgeführt werden, nachdem die Seite vollständig geladen wurde. Statt in einem regulären-Animationen die `<Case>` Element ins Spiel. Der Wert seines Attributs SelectScript wird ausgewertet; der Rückgabewert muss numerische sein. Je nach dieser Anzahl, eines der Subanimation in &lt;Fall&gt; ausgeführt wird. Wenn SelectScript 2 ergibt, führt das Steuerelement-Toolkit z. B. dritte Animation in &lt;Fall&gt; (Zählung von 0 beginnt).
+Verwenden Sie innerhalb des Knotens `<Animations>` `<OnLoad>`, um die Animationen auszuführen, nachdem die Seite vollständig geladen wurde. Anstelle einer regulären Animation kommt das `<Case>`-Element ins Spiel. Der Wert seines selectScript-Attributs wird ausgewertet. der Rückgabewert muss numerisch sein. Abhängig von dieser Zahl wird eine der untergeordneten Elemente in &lt;Fall&gt; ausgeführt. Wenn selectScript beispielsweise zu 2 ausgewertet wird, führt das steuerungstoolkit die dritte Animation innerhalb &lt;Case-&gt; aus (Zählung beginnt bei 0).
 
-Das folgende Markup definiert drei Subanimation: Ändern der Größe der Breite und ausgeblendet wird, ändern Sie die Höhe der Größe. Der JavaScript-Code (`Math.floor(3 * Math.random())`) wählt anschließend eine Zahl zwischen 0 und 2, sodass einer der drei Animationen ausgeführt wird:
+Das folgende Markup definiert drei untergeordnete Elemente: die Größe der Breite, die Größe der Höhe und das ausblenden. Der JavaScript-Code (`Math.floor(3 * Math.random())`) wählt dann eine Zahl zwischen 0 und 2 aus, sodass einer der drei Animationen ausgeführt wird:
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample5.aspx)]
 
-[![Eine der drei möglichen Animationen: Ruft der Bereich ab, größere](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
+[![einer der möglichen drei Animationen: der Bereich wird breiter.](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
 
-Eine der drei möglichen Animationen: Ruft der Bereich ab, größere ([klicken Sie, um das Bild in voller Größe anzeigen](picking-one-animation-out-of-a-list-vb/_static/image3.png))
+Einer der möglichen drei Animationen: der Bereich wird breiter ([Klicken Sie, um das Bild in voller Größe anzuzeigen](picking-one-animation-out-of-a-list-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](animation-depending-on-a-condition-vb.md)

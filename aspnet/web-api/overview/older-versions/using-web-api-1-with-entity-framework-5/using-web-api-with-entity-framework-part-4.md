@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
-title: 'Teil 4: Hinzufügen einer-Administratoransicht | Microsoft-Dokumentation'
+title: 'Teil 4: Hinzufügen einer admin-Ansicht | Microsoft-Dokumentation'
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,78 +8,78 @@ ms.date: 07/04/2012
 ms.assetid: 792f4513-a508-4d14-a0dd-1a2fe282c7bb
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 9e045b17434d46fa1b6e7942db95ecad67c34a46
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 664aeb33031e933322886a6d6bdd989277e9fda2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134759"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600011"
 ---
-# <a name="part-4-adding-an-admin-view"></a>Teil 4: Hinzufügen einer-Administratoransicht
+# <a name="part-4-adding-an-admin-view"></a>Teil 4: Hinzufügen einer Administrator Ansicht
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
-## <a name="add-an-admin-view"></a>Hinzufügen einer-Administratoransicht
+## <a name="add-an-admin-view"></a>Administrator Ansicht hinzufügen
 
-Nun wir auf der Clientseite zu aktivieren, und fügen Sie eine Seite, die Daten über den Admin-Controller verwenden. Die Seite können Benutzer zu erstellen, bearbeiten oder Löschen von Produkten, per AJAX-Anforderungen an den Controller.
+Nun wird die Clientseite und eine Seite hinzugefügt, die Daten vom Administrator Controller verarbeiten kann. Die Seite ermöglicht Benutzern das Erstellen, bearbeiten oder Löschen von Produkten, indem AJAX-Anforderungen an den Controller gesendet werden.
 
-Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Controllers", und öffnen Sie die Datei mit dem Namen "HomeController.cs". Diese Datei enthält einen MVC-Controller. Fügen Sie eine Methode mit dem Namen `Admin`:
+Erweitern Sie in Projektmappen-Explorer den Ordner Controllers, und öffnen Sie die Datei mit dem Namen HomeController.cs. Diese Datei enthält einen MVC-Controller. Fügen Sie eine Methode mit dem Namen `Admin`hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-4/samples/sample1.cs)]
 
-Die **HttpRouteUrl** Methode erstellt den URI der Web-API, und wir dies in den ansichtsbehälter zur späteren Verwendung speichern.
+Die **httprouteurl** -Methode erstellt den URI für die Web-API, und wir speichern diese später in der Ansichts Tasche.
 
-Als Nächstes, positionieren Sie den Textcursor in den `Admin` Aktionsmethode, und klicken Sie dann mit der rechten Maustaste und wählen **Ansicht hinzufügen**. Hierdurch wird die **Ansicht hinzufügen** Dialogfeld.
+Positionieren Sie als nächstes den Textcursor innerhalb der `Admin` Aktionsmethode, klicken Sie mit der rechten Maustaste, und wählen Sie **Ansicht hinzufügen**aus. Dadurch wird das Dialog **Feld Ansicht hinzufügen** angezeigt.
 
 ![](using-web-api-with-entity-framework-part-4/_static/image1.png)
 
-In der **Ansicht hinzufügen** Dialogfeld Namen der Ansicht "Admin". Aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Klicken Sie unter **Modellklasse**, wählen Sie "Product (ProductStore.Models)". Behalten Sie alle anderen Optionen die Standardwerte.
+Benennen Sie im Dialog **Feld Ansicht hinzufügen** die Ansicht "admin". Aktivieren Sie das Kontrollkästchen mit der Bezeichnung **eine stark typisierte Ansicht erstellen**. Wählen Sie unter **Modell Klasse**die Option "Product (productstore. Models)" aus. Belassen Sie alle anderen Optionen als Standardwerte.
 
 ![](using-web-api-with-entity-framework-part-4/_static/image2.png)
 
-Auf **hinzufügen** Fügt eine Datei mit dem Namen Admin.cshtml unter Views/Home. Öffnen Sie diese Datei, und fügen Sie folgenden HTML-Code hinzu. Dieser HTML-Code definiert die Struktur der Seite, aber keine Funktionen läuft noch.
+Wenn **Sie auf Hinzufügen** klicken, wird eine Datei namens admin. cshtml unter views/Home hinzugefügt. Öffnen Sie diese Datei, und fügen Sie folgenden HTML-Code hinzu. Dieser HTML-Code definiert die Struktur der Seite, aber noch keine Funktionalität.
 
 [!code-cshtml[Main](using-web-api-with-entity-framework-part-4/samples/sample2.cshtml)]
 
-## <a name="create-a-link-to-the-admin-page"></a>Erstellen Sie einen Link auf der Seite "Administrator"
+## <a name="create-a-link-to-the-admin-page"></a>Erstellen eines Links zur Administrator Seite
 
-Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Views", und erweitern Sie dann den Ordner Shared. Öffnen Sie die Datei mit dem Namen \_Layout.cshtml. Suchen Sie die **Ul** Element mit der Id = "Menu" und einen Aktionslink für die Admin-Ansicht:
+Erweitern Sie in Projektmappen-Explorer den Ordner views, und erweitern Sie dann den freigegebenen Ordner. Öffnen Sie die Datei mit dem Namen \_"Layout. cshtml". Suchen Sie das **UL** -Element mit der ID = "Menu" und einen Aktions Link für die Administrator Ansicht:
 
 [!code-cshtml[Main](using-web-api-with-entity-framework-part-4/samples/sample3.cshtml)]
 
 > [!NOTE]
-> Im Beispielprojekt habe ich ein paar andere kosmetischen Änderungen ermöglicht, z. B. ersetzt die Zeichenfolge "Ihr Logo hier einfügen" vorgenommen. Dies betrifft nicht die Funktionalität der Anwendung verwenden. Sie können das Projekt herunterladen und vergleichen Sie die Dateien.
+> Im Beispiel Projekt habe ich einige andere kosmetische Änderungen vorgenommen, z. b. die Zeichenfolge "Ihr Logo hier" zu ersetzen. Diese wirken sich nicht auf die Funktionalität der Anwendung aus. Sie können das Projekt herunterladen und die Dateien vergleichen.
 
-Führen Sie die Anwendung, und klicken Sie auf den Link "Admin", der am oberen Rand der Startseite angezeigt wird. Die Seite "Administrator" sollte wie folgt aussehen:
+Führen Sie die Anwendung aus, und klicken Sie auf den Link "admin", der oben auf der Startseite angezeigt wird. Die Seite admin sollte wie folgt aussehen:
 
 ![](using-web-api-with-entity-framework-part-4/_static/image3.png)
 
-Rechts jetzt die Seite nicht. Im nächsten Abschnitt verwenden wir "Knockout.js" zum Erstellen einer dynamischen Benutzeroberflächenautomatisierungs.
+Momentan führt die Seite nichts aus. Im nächsten Abschnitt verwenden wir Knockout. js, um eine dynamische Benutzeroberfläche zu erstellen.
 
 ## <a name="add-authorization"></a>Autorisierung hinzufügen
 
-Die Seite "Administrator" ist derzeit für alle Benutzer Zugriff auf die Website zugegriffen werden kann. Wir ändern Sie diese Option, um die Berechtigungen für Administratoren einschränken.
+Alle Benutzer, die die Website besuchen, können auf die Seite "admin" zugreifen. Ändern wir dies, um die Berechtigung für Administratoren einzuschränken.
 
-Durch Hinzufügen einer Rolle "Administrator" und einen Benutzer mit Administratorrechten starten. Klicken Sie im Projektmappen-Explorer erweitern Sie den Filter-Ordner, und öffnen Sie die Datei mit dem Namen InitializeSimpleMembershipAttribute.cs. Suchen Sie die `SimpleMembershipInitializer` Konstruktor. Nach dem Aufruf von **WebSecurity.InitializeDatabaseConnection**, fügen Sie den folgenden Code hinzu:
+Beginnen Sie, indem Sie eine Administrator Rolle und einen Administrator Benutzer hinzufügen. Erweitern Sie in Projektmappen-Explorer den Ordner Filter, und öffnen Sie die Datei mit dem Namen InitializeSimpleMembershipAttribute.cs. Suchen Sie den `SimpleMembershipInitializer`-Konstruktor. Fügen Sie nach dem Aufrufen von **WebSecurity. initializedatabaseconnetction**den folgenden Code hinzu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-4/samples/sample4.cs)]
 
-Dies ist eine schnelle Möglichkeit zum Hinzufügen der Rolle "Administrator", und erstellen Sie einen Benutzer für die Rolle.
+Dies ist eine schnelle und geänderte Möglichkeit, die Rolle "Administrator" hinzuzufügen und einen Benutzer für die Rolle zu erstellen.
 
-Klicken Sie im Projektmappen-Explorer erweitern Sie den Ordner "Controllers", und öffnen Sie die Datei "HomeController.cs". Hinzufügen der **autorisieren** -Attribut auf die `Admin` Methode.
+Erweitern Sie in Projektmappen-Explorer den Ordner Controllers, und öffnen Sie die Datei HomeController.cs. Fügen Sie das Attribut **autorisieren** der `Admin`-Methode hinzu.
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-4/samples/sample5.cs)]
 
-Öffnen Sie die Datei AdminController.cs und Hinzufügen der **autorisieren** -Attribut auf die gesamte `AdminController` Klasse.
+Öffnen Sie die Datei AdminController.cs, und fügen Sie das Attribut **autorisieren** der gesamten `AdminController` Klasse hinzu.
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-4/samples/sample6.cs)]
 
 > [!NOTE]
-> MVC und Web-API, die beide definieren **autorisieren** Attribute, die in verschiedenen Namespaces. MVC verwendet **System.Web.Mvc.AuthorizeAttribute**, während die Web-API verwendet **"System.Web.http.AuthorizeAttribute"**.
+> MVC und die Web-API definieren beide **Autorisierungs** Attribute in verschiedenen Namespaces. MVC verwendet **System. Web. MVC. autorizeattribute**, während die Web-API **System. Web. http. autorizeattribute**verwendet.
 
-Nur Administratoren können jetzt die Seite "Administrator" anzeigen. Wenn Sie mit dem Admin-Controller eine HTTP-Anforderung senden, muss die Anforderung außerdem ein Authentifizierungscookie enthalten. Wenn dies nicht der Fall ist, wird der Server sendet eine HTTP 401 (nicht autorisiert)-Antwort. Dies sehen Sie in Fiddler durch Senden einer GET-Anforderung zu `http://localhost:*port*/api/admin`.
+Jetzt können nur Administratoren die Administrator Seite anzeigen. Außerdem muss die Anforderung ein Authentifizierungs Cookie enthalten, wenn Sie eine HTTP-Anforderung an den Administrator Controller senden. Wenn dies nicht der Fall ist, sendet der Server eine HTTP 401-Antwort (nicht autorisiert). Sie können dies in "fddler" sehen, indem Sie eine GET-Anforderung an `http://localhost:*port*/api/admin`senden.
 
 > [!div class="step-by-step"]
 > [Zurück](using-web-api-with-entity-framework-part-3.md)

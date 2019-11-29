@@ -2,61 +2,61 @@
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb
 title: Abfragen von Daten mit dem SqlDataSource-Steuerelement (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: In den vorherigen Tutorials verwendet haben wir das ObjectDataSource-Steuerelement, um die Darstellungsschicht vollständig von der Datenzugriffsschicht zu trennen. Mit diesem Tutor wird gestartet...
+description: In den vorherigen Tutorials haben wir das ObjectDataSource-Steuerelement verwendet, um die Präsentationsschicht vollständig von der Datenzugriffs Ebene zu trennen. Ab diesem Dozenten...
 ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: b12f752d-3502-40a4-b695-fc7b7d08cfd3
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9e2689e665c39fda15df27ba03f4dcd44e834bff
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 199ddb46e877c3a0937672d33241a240660684da
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124556"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606030"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-vb"></a>Abfragen von Daten mit dem SqlDataSource-Steuerelement (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_47_VB.exe) oder [PDF-Datei herunterladen](querying-data-with-the-sqldatasource-control-vb/_static/datatutorial47vb1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_47_VB.exe) oder [PDF herunterladen](querying-data-with-the-sqldatasource-control-vb/_static/datatutorial47vb1.pdf)
 
-> In den vorherigen Tutorials verwendet haben wir das ObjectDataSource-Steuerelement, um die Darstellungsschicht vollständig von der Datenzugriffsschicht zu trennen. In diesem Tutorial beginnen, wird erläutert, wie das SqlDataSource-Steuerelement, für einfache Anwendungen verwendet werden kann, die nicht mit eine strikte Trennung von Darstellung und den Datenzugriff benötigen.
+> In den vorherigen Tutorials haben wir das ObjectDataSource-Steuerelement verwendet, um die Präsentationsschicht vollständig von der Datenzugriffs Ebene zu trennen. Ab diesem Tutorial erfahren Sie, wie das SqlDataSource-Steuerelement für einfache Anwendungen verwendet werden kann, die keine strikte Trennung der Präsentation und des Datenzugriffs erfordern.
 
 ## <a name="introduction"></a>Einführung
 
-Alle in den Tutorials wir haben bisher untersucht eine geschichtete Architektur, die mit Präsentation, Geschäftslogik und Datenzugriff Ebenen verwendet haben. (Data Access Layer, DAL) im ersten Lernprogramm erstellt wurde ([Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md)) und den Geschäftslogikebene in der zweiten ([Erstellen einer Geschäftslogikebene](../introduction/creating-a-business-logic-layer-vb.md)). Beginnend mit der [Anzeigen von Daten mit dem ObjectDataSource-Steuerelement](../basic-reporting/displaying-data-with-the-objectdatasource-vb.md) Tutorial wurde erläutert, wie neues s-ObjectDataSource-Steuerelement von ASP.NET 2.0 zu verwenden, um mit der Architektur auf der Darstellungsschicht deklarativ Schnittstelle.
+Alle Lernprogramme, die wir bisher geprüft haben, haben eine mehrstufige Architektur verwendet, die aus Präsentations-, Geschäftslogik-und Datenzugriffs Schichten besteht. Die Datenzugriffs Schicht (Data Access Layer, DAL) wurde im ersten Tutorial ([Erstellen einer Datenzugriffs Ebene](../introduction/creating-a-data-access-layer-vb.md)) und der Geschäftslogik Schicht im zweiten Schritt ([Erstellen einer Geschäftslogik Schicht) erstellt](../introduction/creating-a-business-logic-layer-vb.md). Beginnend mit dem Tutorial [Anzeigen von Daten mit dem ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-vb.md) -Tutorial haben Sie erfahren, wie Sie das neue ObjectDataSource-Steuerelement ASP.NET 2,0 s verwenden, um eine deklarative Schnittstelle mit der Architektur von der Präsentationsschicht zu erhalten.
 
-Während alle bisher in den Tutorials die Architektur zum Arbeiten mit Daten verwendet haben, ist es auch möglich, zugreifen, einfügen, aktualisieren und Löschen von Datenbankdaten direkt aus einer ASP.NET-Seite unter Umgehung der Architektur. Auf diese Weise wird der Datenbankabfragen und Geschäftslogik direkt auf der Webseite angezeigt. Bei ausreichend großen oder komplexen Anwendungen ist das Entwerfen, implementieren und verwenden eine geschichtete Architektur äußerst wichtig für den Erfolg, aktualisierbarkeit und wartbarkeit der Anwendung. Entwickeln eine robuste Architektur, kann jedoch nicht erforderlich sein, wenn äußerst einfache, einmalige Anwendungen erstellen.
+Obwohl alle Tutorials bisher die Architektur verwendet haben, um mit Daten zu arbeiten, ist es auch möglich, Datenbankdaten direkt von einer ASP.NET-Seite aus zu aktualisieren, einzufügen, zu aktualisieren und zu löschen, wobei die Architektur umgangen wird. Dadurch werden die spezifischen Datenbankabfragen und die Geschäftslogik direkt auf der Webseite platziert. Bei ausreichend großen oder komplexen Anwendungen ist das Entwerfen, implementieren und Verwenden einer mehrstufigen Architektur äußerst wichtig für die erfolgreiche, Aktualisierbarkeit und Verwaltbarkeit der Anwendung. Das Entwickeln einer robusten Architektur ist jedoch möglicherweise unnötig, wenn überaus einfache, einmalige Anwendungen erstellt werden.
 
-ASP.NET 2.0 bietet fünf integrierten Datenquellen-Steuerelemente [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), ["ObjectDataSource"](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx), und [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx). Dem SqlDataSource-Steuerelement kann verwendet werden, zugreifen auf und Ändern von Daten direkt aus einer relationalen Datenbank, einschließlich Microsoft SQL Server, Microsoft Access, Oracle, MySQL und andere. In diesem Tutorial und die folgenden drei untersuchen wir zum Arbeiten mit dem SqlDataSource-Steuerelement einfügen, aktualisieren und Löschen von Daten untersuchen, wie Sie Abfragen und Datenbank Filtern von Daten sowie wie Sie mit dem SqlDataSource-Steuerelement auf.
+ASP.NET 2,0 bietet fünf integrierte Datenquellen-Steuerelemente: [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx)und [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx). SqlDataSource kann verwendet werden, um direkt aus einer relationalen Datenbank auf Daten zuzugreifen und diese zu ändern, einschließlich Microsoft SQL Server, Microsoft Access, Oracle, MySQL und anderen. In diesem Tutorial und den nächsten drei untersuchen wir, wie Sie mit dem SqlDataSource-Steuerelement arbeiten und wie Sie Datenbankdaten Abfragen und Filtern und wie Sie SqlDataSource verwenden, um Daten einzufügen, zu aktualisieren und zu löschen.
 
-![ASP.NET 2.0 umfasst fünf integrierten Datenquellen-Steuerelemente](querying-data-with-the-sqldatasource-control-vb/_static/image1.gif)
+![ASP.NET 2,0 enthält fünf integrierte Datenquellen-Steuerelemente.](querying-data-with-the-sqldatasource-control-vb/_static/image1.gif)
 
-**Abbildung 1**: ASP.NET 2.0 umfasst fünf integrierten Datenquellen-Steuerelemente
+**Abbildung 1**: ASP.NET 2,0 enthält fünf integrierte Datenquellen-Steuerelemente
 
-## <a name="comparing-the-objectdatasource-and-sqldatasource"></a>Vergleichen der ObjectDataSource und SqlDataSource-Steuerelement
+## <a name="comparing-the-objectdatasource-and-sqldatasource"></a>Vergleichen von "ObjectDataSource" und "SqlDataSource"
 
-Sowohl der ObjectDataSource und SqlDataSource-Steuerelemente sind im Prinzip einfach Proxys für Daten. Siehe die [Anzeigen von Daten mit dem ObjectDataSource-Steuerelement](../basic-reporting/displaying-data-with-the-objectdatasource-vb.md) Tutorial dem ObjectDataSource-Steuerelement verfügt über Eigenschaften, die den Objekttyp, die bereitstellt angeben, die Daten und die Methoden aufrufen, um auszuwählen, einfügen, aktualisieren und Löschen von Daten aus dem zugrunde liegenden Objekttyp. Sobald die "ObjectDataSource"-s-Eigenschaften konfiguriert wurden, ein Daten-Websteuerelement wie GridView, DetailsView oder DataList-Steuerelement gebunden werden können auf das Steuerelement, mit der "ObjectDataSource"-s `Select()`, `Insert()`, `Delete()`, und `Update()` Methoden interagieren Sie mit der zugrunde liegenden Architektur.
+Konzeptionell sind sowohl die ObjectDataSource-als auch die SqlDataSource-Steuerelemente einfach Proxys zu Daten. Wie im Tutorial [Anzeigen von Daten mit dem ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-vb.md) -Tutorial erläutert, verfügt ObjectDataSource über Eigenschaften, die den Objekttyp angeben, der die Daten und die aufzurufenden Methoden zum auswählen, einfügen, aktualisieren und Löschen von Daten aus dem zugrunde liegenden Objekttyp bereitstellt. Nachdem die Eigenschaften von ObjectDataSource s konfiguriert wurden, kann ein datenweb Steuerelement wie z. b. GridView, DetailsView oder DataList an das Steuerelement gebunden werden, wobei die Methoden `Select()`, `Insert()`, `Delete()`und `Update()` von ObjectDataSource zum interagieren mit der zugrunde liegenden Architektur verwendet werden.
 
-Dem SqlDataSource-Steuerelement bietet dieselbe Funktionalität, aber für eine relationale Datenbank, anstatt eine Objektbibliothek ausgeführt wird. Mit dem SqlDataSource-Steuerelement wir müssen angeben, die Datenbank-Verbindungszeichenfolge und die Ad-hoc-SQL-Abfragen oder gespeicherte Prozeduren zum Einfügen, aktualisieren, löschen und Abrufen von Daten ausgeführt. Die s SqlDataSource `Select()`, `Insert()`, `Update()`, und `Delete()` Methoden, wenn aufgerufen, eine Verbindung mit der angegebenen Datenbank herstellen, und geben Sie die entsprechenden SQL-Abfrage. Wie das folgende Diagramm veranschaulicht, die diese Methoden führen die Routinearbeit der Verbindung mit einer Datenbank, eine Abfrage und Zurückgeben der Ergebnisse.
+SqlDataSource bietet die gleiche Funktionalität, funktioniert jedoch nicht mit einer Objektbibliothek, sondern mit einer relationalen Datenbank. Mit SqlDataSource müssen wir die Daten bankverbindungs Zeichenfolge und die Ad-hoc-SQL-Abfragen oder gespeicherten Prozeduren angeben, die ausgeführt werden sollen, um Daten einzufügen, zu aktualisieren, zu löschen und abzurufen. Die SqlDataSource-Methoden `Select()`, `Insert()`, `Update()`und `Delete()`, wenn Sie aufgerufen werden, stellen eine Verbindung mit der angegebenen Datenbank her und geben die entsprechende SQL-Abfrage aus. Wie das folgende Diagramm veranschaulicht, führen diese Methoden die grunt-Arbeit aus, um eine Verbindung mit einer Datenbank herzustellen, eine Abfrage auszugeben und die Ergebnisse zurückzugeben.
 
-![Dem SqlDataSource-Steuerelement dient als Proxy für die Datenbank](querying-data-with-the-sqldatasource-control-vb/_static/image2.gif)
+![SqlDataSource dient als Proxy für die Datenbank.](querying-data-with-the-sqldatasource-control-vb/_static/image2.gif)
 
-**Abbildung 2**: Dem SqlDataSource-Steuerelement dient als Proxy für die Datenbank
+**Abbildung 2**: SqlDataSource dient als Proxy für die Datenbank.
 
 > [!NOTE]
-> In diesem Tutorial konzentrieren wir uns über das Abrufen von Daten aus der Datenbank. In der [einfügen, aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuerelement](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md) Tutorial wird gezeigt, wie mit dem SqlDataSource-Steuerelement zur Unterstützung von einfügen, aktualisieren und löschen zu konfigurieren.
+> In diesem Tutorial konzentrieren wir uns auf das Abrufen von Daten aus der Datenbank. Im Tutorial [Einfügen, aktualisieren und Löschen von Daten mit dem SqlDataSource-Steuer](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md) Element erfahren Sie, wie Sie SqlDataSource konfigurieren, um das Einfügen, aktualisieren und löschen zu unterstützen.
 
-## <a name="the-sqldatasource-and-accessdatasource-controls"></a>Dem SqlDataSource-Steuerelement und AccessDataSource-Steuerelement
+## <a name="the-sqldatasource-and-accessdatasource-controls"></a>Die SqlDataSource-und AccessDataSource-Steuerelemente
 
-Neben dem SqlDataSource-Steuerelement enthält ASP.NET 2.0 auch einem AccessDataSource-Steuerelement. Diese zwei verschiedene Steuerelemente führen viele Entwickler, die noch nicht mit ASP.NET 2.0 zu vermuten, dass das AccessDataSource-Steuerelement konzipiert ist, funktioniert exklusiv mit Microsoft Access mit dem SqlDataSource-Steuerelement, das ausschließlich mit Microsoft SQL Server funktionieren. Die AccessDataSource konzipiert ist insbesondere bei Microsoft Access, das SqlDataSource-Steuerelement arbeitet es mit *alle* relationale Datenbank, die über .NET zugegriffen werden kann. Dies schließt alle OLE DB oder ODBC-kompatiblen Datenspeichern, z.B. Microsoft SQL Server, Microsoft Access, Oracle, Informix, MySQL und PostgreSQL neben vielen anderen.
+Zusätzlich zum SqlDataSource-Steuerelement enthält ASP.NET 2,0 auch ein AccessDataSource-Steuerelement. Diese zwei verschiedenen Steuerelemente leiten viele Entwickler neu in ASP.NET 2,0, um zu vermuten, dass das AccessDataSource-Steuerelement ausschließlich für den Microsoft-Zugriff mit dem SqlDataSource-Steuerelement entworfen wurde, das ausschließlich für die Microsoft SQL Server verwendet werden soll. Obwohl die AccessDataSource speziell für die Verwendung mit Microsoft Access entwickelt wurde, funktioniert das SqlDataSource-Steuerelement mit *allen* relationalen Datenbanken, auf die über .NET zugegriffen werden kann. Dies umfasst u. a. alle OLE DB-oder ODBC-kompatiblen Datenspeicher, z. b. Microsoft SQL Server, Microsoft Access, Oracle, Informix, MySQL und PostgreSQL.
 
-Der einzige Unterschied zwischen den Steuerelementen AccessDataSource und SqlDataSource-Steuerelement ist, wie die Datenbank-Verbindungsinformationen angegeben wird. AccessDataSource-Steuerelement benötigt nur den Pfad zum Access-Datenbankdatei an. Dem SqlDataSource-Steuerelement erfordert dagegen auf eine vollständige Verbindungszeichenfolge.
+Der einzige Unterschied zwischen den Steuerelementen AccessDataSource und SqlDataSource besteht darin, wie die Daten bankverbindungs Informationen angegeben werden. Das AccessDataSource-Steuerelement benötigt lediglich den Dateipfad zur Access-Datenbankdatei. Die SqlDataSource hingegen erfordert eine komplette Verbindungs Zeichenfolge.
 
-## <a name="step-1-creating-the-sqldatasource-web-pages"></a>Schritt 1: Erstellen von Webseiten SqlDataSource-Steuerelement
+## <a name="step-1-creating-the-sqldatasource-web-pages"></a>Schritt 1: Erstellen der "SqlDataSource"-Webseiten
 
-Bevor wir beginnen, arbeiten Sie direkt mit dem SqlDataSource-Steuerelement mit Daten der Datenbank untersuchen, können Sie s zuerst können Sie die ASP.NET-Seiten in unserem Websiteprojekt zu erstellen, die wir für dieses Lernprogramm sowie die folgenden drei benötigen. Starten, indem Sie einen neuen Ordner namens hinzufügen `SqlDataSource`. Fügen Sie die folgenden ASP.NET-Seiten in diesen Ordner, um sicherzustellen, ordnen Sie jeder Seite mit den `Site.master` Masterseite:
+Bevor wir untersuchen, wie Sie mit dem SqlDataSource-Steuerelement direkt mit Datenbankdaten arbeiten, sollten Sie sich zunächst einen Moment Zeit nehmen, um die ASP.NET-Seiten in unserem Website Projekt zu erstellen, die wir für dieses Tutorial benötigen, und die nächsten drei. Fügen Sie zunächst einen neuen Ordner mit dem Namen `SqlDataSource`hinzu. Fügen Sie dann die folgenden ASP.NET-Seiten zu diesem Ordner hinzu, und stellen Sie sicher, dass Sie die einzelnen Seiten der `Site.master` Master Seite zuordnen:
 
 - `Default.aspx`
 - `Querying.aspx`
@@ -64,162 +64,162 @@ Bevor wir beginnen, arbeiten Sie direkt mit dem SqlDataSource-Steuerelement mit 
 - `InsertUpdateDelete.aspx`
 - `OptimisticConcurrency.aspx`
 
-![Fügen Sie die ASP.NET-Seiten für die Lernprogramme SqlDataSource-bezogene hinzu.](querying-data-with-the-sqldatasource-control-vb/_static/image3.gif)
+![Fügen Sie die ASP.NET-Seiten für die SqlDataSource-bezogenen Tutorials hinzu.](querying-data-with-the-sqldatasource-control-vb/_static/image3.gif)
 
-**Abbildung 3**: Fügen Sie die ASP.NET-Seiten für die Lernprogramme SqlDataSource-bezogene hinzu.
+**Abbildung 3**: Hinzufügen der ASP.NET-Seiten für die auf SqlDataSource bezogenen Tutorials
 
-Wie in den anderen Ordnern `Default.aspx` in die `SqlDataSource` Ordner werden in den Tutorials im Abschnitt aufgelistet. Bedenken Sie, dass die `SectionLevelTutorialListing.ascx` Benutzersteuerelement stellt diese Funktionalität bereit. Aus diesem Grund fügen dieses Benutzersteuerelement zu `Default.aspx` durch Ziehen aus dem Projektmappen-Explorer auf die Seite s Entwurfsansicht.
+Wie in den anderen Ordnern werden `Default.aspx` im Ordner `SqlDataSource` die Lernprogramme in diesem Abschnitt auflisten. Denken Sie daran, dass das `SectionLevelTutorialListing.ascx` Benutzer Steuerelement diese Funktionalität bereitstellt. Fügen Sie dieses Benutzer Steuerelement daher `Default.aspx` hinzu, indem Sie es aus dem Projektmappen-Explorer auf die Seite s Designansicht ziehen.
 
-[![Fügen Sie das SectionLevelTutorialListing.ascx-Benutzersteuerelement an "default.aspx"](querying-data-with-the-sqldatasource-control-vb/_static/image5.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image4.gif)
+[![das Benutzer Steuerelement "sectionleveltutoriallisting. ascx" zu "default. aspx" hinzufügen](querying-data-with-the-sqldatasource-control-vb/_static/image5.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image4.gif)
 
-**Abbildung 4**: Hinzufügen der `SectionLevelTutorialListing.ascx` Benutzersteuerelement `Default.aspx` ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image6.gif))
+**Abbildung 4**: Hinzufügen des `SectionLevelTutorialListing.ascx` Benutzer Steuer Elements zu `Default.aspx` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image6.gif))
 
-Abschließend fügen Sie diese vier Seiten als Einträge der `Web.sitemap` Datei. Fügen Sie das folgende Markup insbesondere nach dem Hinzufügen von benutzerdefinierten Schaltflächen, zu dem DataList- und Wiederholungssteuerelement `<siteMapNode>`:
+Fügen Sie schließlich diese vier Seiten als Einträge zur `Web.sitemap` Datei hinzu. Fügen Sie dem DataList-und Repeater-`<siteMapNode>`insbesondere das folgende Markup hinzu, um die benutzerdefinierten Schaltflächen hinzuzufügen:
 
 [!code-sql[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample1.sql)]
 
-Nach der Aktualisierung `Web.sitemap`, können Sie die Lernprogramme-Website über einen Browser anzeigen. Klicken Sie im Menü auf der linken Seite enthält jetzt Elemente für das Bearbeiten, einfügen und löschen die Lernprogramme.
+Nehmen Sie sich nach dem Aktualisieren `Web.sitemap`einen Moment Zeit, um die Tutorials-Website über einen Browser anzuzeigen. Das Menü auf der linken Seite enthält jetzt Elemente für die Tutorials zum Bearbeiten, einfügen und löschen.
 
-![Die Sitemap enthält jetzt die Einträge für die Lernprogramme SqlDataSource-Steuerelement](querying-data-with-the-sqldatasource-control-vb/_static/image7.gif)
+![Die Site Übersicht enthält jetzt Einträge für die SqlDataSource-Tutorials.](querying-data-with-the-sqldatasource-control-vb/_static/image7.gif)
 
-**Abbildung 5**: Die Sitemap enthält jetzt die Einträge für die Lernprogramme SqlDataSource-Steuerelement
+**Abbildung 5**: die Site Übersicht enthält jetzt Einträge für die SqlDataSource-Tutorials.
 
-## <a name="step-2-adding-and-configuring-the-sqldatasource-control"></a>Schritt 2: Hinzufügen und Konfigurieren von dem SqlDataSource-Steuerelement
+## <a name="step-2-adding-and-configuring-the-sqldatasource-control"></a>Schritt 2: Hinzufügen und Konfigurieren des SqlDataSource-Steuer Elements
 
-Öffnen Sie zunächst die `Querying.aspx` auf der Seite die `SqlDataSource` Ordner und wechseln Sie zur Entwurfsansicht. Ziehen Sie ein SqlDataSource-Steuerelement aus der Toolbox in den Designer und den Satz der `ID` zu `ProductsDataSource`. Wie bei dem ObjectDataSource-Steuerelement, dem SqlDataSource-Steuerelement ist keine gerenderte Ausgabe erzeugt, und daher als ein graues Feld auf der Entwurfsoberfläche angezeigt. Um dem SqlDataSource-Steuerelement zu konfigurieren, klicken Sie auf den Link "Datenquelle konfigurieren" aus dem SqlDataSource-s-Smarttag.
+Öffnen Sie zunächst die Seite `Querying.aspx` im Ordner `SqlDataSource`, und wechseln Sie zu Designansicht. Ziehen Sie ein SqlDataSource-Steuerelement aus der Toolbox auf den Designer, und legen Sie dessen `ID` auf `ProductsDataSource`fest. Wie bei ObjectDataSource erzeugt SqlDataSource keine gerenderte Ausgabe und wird daher als graues Feld auf der Entwurfs Oberfläche angezeigt. Um SqlDataSource zu konfigurieren, klicken Sie auf den Link Datenquelle konfigurieren des Smarttags SqlDataSource s.
 
-![Klicken Sie auf den Link "Quelle" Daten aus dem SqlDataSource-s-Smarttag konfigurieren](querying-data-with-the-sqldatasource-control-vb/_static/image8.gif)
+![Klicken Sie im smarttagtag SqlDataSource auf den Link Datenquelle konfigurieren.](querying-data-with-the-sqldatasource-control-vb/_static/image8.gif)
 
-**Abbildung 6**: Klicken Sie auf den Link "Quelle" Daten aus dem SqlDataSource-s-Smarttag konfigurieren
+**Abbildung 6**: Klicken Sie auf den Link "Datenquelle konfigurieren" aus dem Smarttag SqlDataSource s.
 
-Dadurch wird s SqlDataSource-Steuerelement-konfigurieren von Datenquellen-Assistent. Während Sie die Schritte im Assistenten s über das ObjectDataSource-Steuerelement s unterscheiden zu können, ist das endgültige Ziel identisch sein, um die Details zum Abrufen, einfügen, aktualisieren und Löschen von Daten von der Datenquelle angeben. Dem SqlDataSource-Steuerelement umfasst dies das Angeben der zugrunde liegenden Datenbank zu verwenden und bereitstellen, die Ad-hoc-SQL-Anweisungen oder gespeicherten Prozeduren.
+Dadurch wird der Assistent zum Konfigurieren von Datenquellen des SqlDataSource-Steuer Elements angezeigt. Während sich die Schritte des Assistenten von den ObjectDataSource-Steuerelementen unterscheiden, ist das Endergebnis identisch, um die Details zum Abrufen, einfügen, aktualisieren und Löschen von Daten über die Datenquelle bereitzustellen. Für SqlDataSource bedeutet dies, die zugrunde liegende Datenbank anzugeben, die verwendet werden soll, und die Ad-hoc-SQL-Anweisungen oder gespeicherte Prozeduren bereitzustellen
 
-Der erste Assistentenschritt verlangt für die Datenbank. Die Dropdownliste enthält diese Datenbanken finden Sie in der Web Application s `App_Data` Ordner sowie diejenigen, die im Server-Explorer den Knoten "Datenverbindungen" hinzugefügt wurden. Seit wir hinzugefügt haben bereits eine Verbindungszeichenfolge für die `NORTHWIND.MDF` -Datenbank in die `App_Data` Ordner, um unser Projekt s `Web.config` -Datei, die Dropdownliste enthält einen Verweis auf diese Verbindungszeichenfolge `NORTHWINDConnectionString`. Wählen Sie dieses Element aus der Dropdown-Liste aus, und klicken Sie auf Weiter.
+Im ersten Schritt des Assistenten werden wir zur Eingabe der Datenbank aufgefordert. Die Dropdown Liste enthält die Datenbanken, die sich im Ordner "Webanwendungen" `App_Data` befinden, sowie die Datenbanken, die dem Knoten "Datenverbindungen" in der Server-Explorer hinzugefügt wurden. Da wir bereits eine Verbindungs Zeichenfolge für die `NORTHWIND.MDF`-Datenbank im Ordner "`App_Data`" zu unserer `Web.config`-Datei des Projekts hinzugefügt haben, enthält die Dropdown Liste einen Verweis auf die Verbindungs Zeichenfolge, `NORTHWINDConnectionString`. Wählen Sie dieses Element in der Dropdown Liste aus, und klicken Sie auf Weiter.
 
-![Wählen Sie die NORTHWINDConnectionString aus der Dropdown Liste](querying-data-with-the-sqldatasource-control-vb/_static/image9.gif)
+![Wählen Sie NorthwindConnectionString aus der Dropdown Liste aus.](querying-data-with-the-sqldatasource-control-vb/_static/image9.gif)
 
-**Abbildung 7**: Wählen Sie die `NORTHWINDConnectionString` aus der Dropdown-Liste
+**Abbildung 7**: Auswählen des `NORTHWINDConnectionString` aus der Dropdown Liste
 
-Nach dem Auswählen der Datenbank, fragt der Assistent für die Abfrage aus, um Daten zurückzugeben. Wir können entweder angeben, dass die Spalten einer Tabelle oder Sicht zum Zurückgeben oder eine benutzerdefinierte SQL-Anweisung eingeben und kann eine gespeicherte Prozedur angeben. Sie können zwischen dieser Option über der Specify, benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur und Spalten aus einer Tabelle angeben oder Anzeigen von Optionsfeldern.
+Nachdem Sie die Datenbank ausgewählt haben, fragt der Assistent nach der Abfrage ab, die Daten zurückgeben soll. Wir können entweder die Spalten einer Tabelle oder Sicht angeben, die zurückgegeben werden sollen, oder Sie können eine benutzerdefinierte SQL-Anweisung oder eine gespeicherte Prozedur angeben. Sie können zwischen dieser Auswahl wechseln, indem Sie die Options Felder benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben und Spalten aus einer Tabelle oder Sicht angeben.
 
 > [!NOTE]
-> In diesem ersten Beispiel können Sie s verwenden, die Spalten von einer Tabelle oder Sicht-Option angeben. Wir später in diesem Lernprogramm zum Assistenten zurückzukehren und Untersuchen der Specify, benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur-Option.
+> Verwenden Sie für dieses erste Beispiel die Option Spalten aus einer Tabelle oder Sicht angeben. Wir kehren später in diesem Tutorial zum Assistenten zurück und untersuchen die Option benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben.
 
-Abbildung 8 zeigt konfigurieren den Bildschirm für die Select-Anweisung, wenn die Spalten angeben, über eine Tabelle oder Sicht Optionsfeld ausgewählt ist. Die Dropdownliste enthält den Satz von Tabellen und Sichten in der Northwind-Datenbank mit der ausgewählten Tabelle oder Ansicht-s-Spalten in der folgenden Kontrollkästchen-Liste angezeigt. In diesem Beispiel können s Zurückgeben der `ProductID`, `ProductName`, und `UnitPrice` Spalten aus der `Products` Tabelle. Wie in Abbildung 8 gezeigt, nachdem die resultierende SQL-Anweisung eine Auswahl treffen diese des Assistenten angezeigt werden, `SELECT [ProductID], [ProductName], [UnitPrice] FROM [Products]`.
+Abbildung 8 zeigt den Bildschirm Select-Anweisung konfigurieren, wenn das Optionsfeld Spalten aus einer Tabelle oder Sicht angeben ausgewählt ist. Die Dropdown Liste enthält den Satz von Tabellen und Sichten in der Northwind-Datenbank, wobei die Spalten der ausgewählten Tabelle oder Sicht in der Liste unten angezeigt werden. Geben Sie in diesem Beispiel die Spalten `ProductID`, `ProductName`und `UnitPrice` aus der `Products` Tabelle zurück. Wie in Abbildung 8 gezeigt, zeigt der Assistent die resultierende SQL-Anweisung `SELECT [ProductID], [ProductName], [UnitPrice] FROM [Products]`an, nachdem er diese Auswahl getroffen hat.
 
-![Zurückgeben von Daten aus der Tabelle Products](querying-data-with-the-sqldatasource-control-vb/_static/image10.gif)
+![Rückgabe von Daten aus der Products-Tabelle](querying-data-with-the-sqldatasource-control-vb/_static/image10.gif)
 
 **Abbildung 8**: Zurückgeben von Daten aus der `Products` Tabelle
 
-Nachdem Sie den Assistenten zum Zurückgeben konfiguriert haben die `ProductID`, `ProductName`, und `UnitPrice` Spalten aus der `Products` Tabelle, klicken Sie auf die Schaltfläche "Weiter". Diese letzten Bildschirm bietet die Möglichkeit, die Ergebnisse der Abfrage aus dem vorherigen Schritt konfiguriert untersuchen. Klicken Sie auf die Schaltfläche "Testen von Abfragen" führt den konfigurierten `SELECT` -Anweisung und zeigt die Ergebnisse in einem Raster.
+Nachdem Sie den Assistenten so konfiguriert haben, dass er die Spalten `ProductID`, `ProductName`und `UnitPrice` aus der `Products` Tabelle zurückgibt, klicken Sie auf die Schaltfläche Weiter. Dieser letzte Bildschirm bietet die Möglichkeit, die Ergebnisse der Abfrage zu untersuchen, die Sie im vorherigen Schritt konfiguriert haben. Durch Klicken auf die Schaltfläche Test Abfrage wird die konfigurierte `SELECT`-Anweisung ausgeführt und die Ergebnisse in einem Raster angezeigt.
 
-![Klicken Sie auf die Schaltfläche zum Testen von Abfragen zum Überprüfen der SELECT-Abfrage](querying-data-with-the-sqldatasource-control-vb/_static/image11.gif)
+![Klicken Sie auf die Schaltfläche Test Abfrage, um die SELECT-Abfrage anzuzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image11.gif)
 
-**Abbildung 9**: Klicken Sie auf die Schaltfläche zum Testen von Abfragen an die Prüfung Ihrer `SELECT` Abfrage
+**Abbildung 9**: Klicken auf die Schaltfläche "Test Abfrage" zum Überprüfen der `SELECT` Abfrage
 
-Klicken Sie auf "Fertig stellen", um den Assistenten zu beenden.
+Zum Abschließen des Assistenten klicken Sie auf Fertig stellen.
 
-Wie Sie mit dem ObjectDataSource-Steuerelement, SqlDataSource s ordnet der Assistent nur Werte auf die Eigenschaften des Steuerelements s, nämlich die [ `ConnectionString` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) und [ `SelectCommand` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) Eigenschaften. Nach Abschluss des Assistenten, sollte Ihre SqlDataSource-Steuerelement s-deklarative Markup etwa wie folgt aussehen:
+Wie bei ObjectDataSource weist der SqlDataSource-Assistent nur den Eigenschaften des Steuer Elements Werte zu, nämlich die Eigenschaften [`ConnectionString`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) und [`SelectCommand`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) . Nachdem Sie den Assistenten abgeschlossen haben, sollte das deklarative Markup Ihres SqlDataSource-Steuer Elements in etwa wie folgt aussehen:
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample2.aspx)]
 
-Die `ConnectionString` Eigenschaft enthält Informationen zur Verbindung mit der Datenbank. Mithilfe dieser Eigenschaft kann einen vollständigen, hartcodierte Verbindungszeichenfolgenwert zugewiesen werden oder auf eine Verbindungszeichenfolge im verweisen `Web.config`. Um einen Verbindungszeichenfolgenwert in der Datei "Web.config" zu verweisen, verwenden Sie die Syntax `<%$ expressionPrefix:expressionValue %>`. In der Regel *ExpressionPrefix* ist ConnectionStrings und *ExpressionValue* ist der Name der Verbindungszeichenfolge in der `Web.config` [ `<connectionStrings>` Abschnitt](https://msdn.microsoft.com/library/bf7sd233.aspx). Allerdings kann die Syntax verwendet werden zu verweisen `<appSettings>` Elemente oder Inhalt aus Ressourcendateien. Finden Sie unter [ASP.NET Ausdrücke Overview](https://msdn.microsoft.com/library/d5bd1tad.aspx) Weitere Informationen zu dieser Syntax.
+Die `ConnectionString`-Eigenschaft stellt Informationen zum Herstellen einer Verbindung mit der-Datenbank bereit. Dieser Eigenschaft kann ein kompletter, hart codierte Verbindungs Zeichenfolgen-Wert zugewiesen werden, oder Sie kann auf eine Verbindungs Zeichenfolge in `Web.config`verweisen. Verwenden Sie die Syntax `<%$ expressionPrefix:expressionValue %>`, um auf einen Verbindungs Zeichen folgen Wert in "Web. config" zu verweisen. In der Regel ist *expressionPrefix* connectionStrings, und *expressionvalue* ist der Name der Verbindungs Zeichenfolge im [Abschnitt `Web.config``<connectionStrings>`](https://msdn.microsoft.com/library/bf7sd233.aspx). Die Syntax kann jedoch verwendet werden, um auf `<appSettings>` Elemente oder Inhalte aus Ressourcen Dateien zu verweisen. Weitere Informationen zu dieser Syntax finden Sie unter [Übersicht über ASP.net-Ausdrücke](https://msdn.microsoft.com/library/d5bd1tad.aspx) .
 
-Die `SelectCommand` Eigenschaft gibt an, die Ad-hoc-SQL-Anweisung oder gespeicherte Prozedur ausgeführt werden, um die Daten zurückgeben.
+Die `SelectCommand`-Eigenschaft gibt die Ad-hoc-SQL-Anweisung oder die gespeicherte Prozedur an, die zum Zurückgeben der Daten ausgeführt wird.
 
-## <a name="step-3-adding-a-data-web-control-and-binding-it-to-the-sqldatasource"></a>Schritt 3: Ein Web-Steuerelement hinzufügen und binden es an dem SqlDataSource-Steuerelement
+## <a name="step-3-adding-a-data-web-control-and-binding-it-to-the-sqldatasource"></a>Schritt 3: Hinzufügen eines datenweb-Steuer Elements und binden dieses Steuer Elements an SqlDataSource
 
-Nach dem SqlDataSource-Steuerelement konfiguriert wurde, kann es in einen Daten-Web-Steuerelement, z. B. einem GridView- oder DetailsView gebunden werden. In diesem Tutorial können Sie s, die die Daten in einer GridView anzeigen. Ziehen Sie aus der Toolbox einer GridView-Ansicht auf der Seite, und binden Sie es an der `ProductsDataSource` SqlDataSource-Steuerelement durch Auswählen der Datenquelle aus der Dropdown-Liste in den GridView-s-Smarttag.
+Nachdem die SqlDataSource konfiguriert wurde, kann Sie an ein datenweb Steuerelement gebunden werden, z. b. an GridView oder DetailsView. In diesem Tutorial können Sie die Daten in einer GridView anzeigen. Ziehen Sie aus der Toolbox eine GridView auf die Seite, und binden Sie Sie an den `ProductsDataSource` SqlDataSource, indem Sie die Datenquelle in der Dropdown Liste des Smarttags GridView s auswählen.
 
-[![Hinzufügen einer GridView-Ansicht, und ihn mit dem SqlDataSource-Steuerelement](querying-data-with-the-sqldatasource-control-vb/_static/image13.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image12.gif)
+[![eine GridView-Ansicht hinzuzufügen und Sie an das SqlDataSource-Steuerelement zu binden.](querying-data-with-the-sqldatasource-control-vb/_static/image13.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image12.gif)
 
-**Abbildung 10**: Hinzufügen einer GridView-Ansicht, und ihn mit dem SqlDataSource-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image14.gif))
+**Abbildung 10**: Hinzufügen einer GridView und Binden der Ansicht an das SqlDataSource-Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image14.gif))
 
-Nachdem Sie haben das SqlDataSource-Steuerelement aus der Dropdown-Liste in den GridView-s-Smarttag ausgewählt, wird Visual Studio automatisch eine BoundField- oder CheckBoxField hinzufügen an die GridView für jede Spalte zurückgegeben, die für das Datenquellen-Steuerelement. Da es sich bei dem SqlDataSource-Steuerelement gibt drei Spalten Datenbank `ProductID`, `ProductName`, und `UnitPrice` stehen drei Felder in den GridView-Ansicht.
+Nachdem Sie das SqlDataSource-Steuerelement aus der Dropdown Liste im "GridView"-Smarttag ausgewählt haben, fügt Visual Studio der GridView automatisch ein BoundField-oder CheckBoxField-Element für jede Spalte hinzu, die vom Datenquellen-Steuerelement zurückgegeben wird. Da SqlDataSource drei Daten Bank Spalten `ProductID`, `ProductName`und `UnitPrice` zurückgibt, gibt es drei Felder in der GridView.
 
-So konfigurieren Sie die GridView-Zuordnungsvorgänge drei in Ruhe BoundFields. Ändern der `ProductName` Feld s `HeaderText` Eigenschaft, um Product Name und die `UnitPrice` Feld s Preis. Formatieren der `UnitPrice` Feld als Währung. Nachdem diese Änderungen vorgenommen wurden, sollte Ihre GridView s deklarative Markup etwa wie folgt aussehen:
+Nehmen Sie sich einen Moment Zeit, um die drei boundfields (GridView) zu konfigurieren. Ändern Sie die `ProductName` Feld s `HeaderText` Eigenschaft in Product Name und das Feld `UnitPrice` in Price. Formatieren Sie auch das `UnitPrice`-Feld als Währung. Nachdem Sie diese Änderungen vorgenommen haben, sollte das deklarative Markup der GridView s in etwa wie folgt aussehen:
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample3.aspx)]
 
-Besuchen Sie diese Seite über einen Browser ein. Wie in Abbildung 11 gezeigt, enthält die GridView jedes Produkt s `ProductID`, `ProductName`, und `UnitPrice` Werte.
+Besuchen Sie diese Seite über einen Browser. Wie in Abbildung 11 dargestellt, listet die GridView die einzelnen Produkte `ProductID`, `ProductName`und `UnitPrice` Werte auf.
 
-[![Die GridView zeigt die einzelnen Produkt s ProductID, ProductName und UnitPrice-Werte](querying-data-with-the-sqldatasource-control-vb/_static/image16.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image15.gif)
+[![das GridView-Objekt die Werte "ProductID", "ProductName" und "UnitPrice" des Produkts anzeigt](querying-data-with-the-sqldatasource-control-vb/_static/image16.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image15.gif)
 
-**Abbildung 11**: Das GridView zeigt jedes Produkt s `ProductID`, `ProductName`, und `UnitPrice` Werte ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image17.gif))
+**Abbildung 11**: in der GridView werden alle Produkte `ProductID`, `ProductName`und `UnitPrice` Werte angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image17.gif)).
 
-Wenn die Seite besucht wird ruft GridView der Datenquellen-Steuerelement s `Select()` Methode. Wenn wir das ObjectDataSource-Steuerelement verwenden, dies bezeichnet die `ProductsBLL` Klasse s `GetProducts()` Methode. Mit dem SqlDataSource-Steuerelement, jedoch die `Select()` Methode richtet eine Verbindung mit der angegebenen Datenbank und die Probleme der `SelectCommand` (`SELECT [ProductID], [ProductName], [UnitPrice] FROM [Products]`, in diesem Beispiel). Dem SqlDataSource-Steuerelement gibt die Ergebnisse an die GridView dann erstellen eine Zeile in der GridView für die einzelnen Datenbank Datensätze zurückgegeben zählt, zurück.
+Beim Besuch der Seite ruft das GridView-Steuerelement die `Select()`-Methode des Datenquellen-Steuer Elements auf. Als wir das ObjectDataSource-Steuerelement verwendet haben, wurde dies als `ProductsBLL` Class s `GetProducts()`-Methode bezeichnet. Mit SqlDataSource stellt die `Select()`-Methode jedoch eine Verbindung mit der angegebenen Datenbank her und gibt die `SelectCommand` aus (in diesem Beispiel`SELECT [ProductID], [ProductName], [UnitPrice] FROM [Products]`). Die SqlDataSource gibt die Ergebnisse zurück, die die GridView dann auflistet, und erstellt eine Zeile in der GridView für jeden zurückgegebenen Datenbankdaten Satz.
 
-## <a name="the-built-in-data-web-control-features-and-the-sqldatasource-control"></a>Funktionen der integrierten Web- und dem SqlDataSource-Steuerelement
+## <a name="the-built-in-data-web-control-features-and-the-sqldatasource-control"></a>Die integrierten datenweb-Steuerelement Features und das SqlDataSource-Steuerelement
 
-Im Allgemeinen gilt: die Features der websteuerungselemente, paging, sortieren, bearbeiten Daten, löschen, einfügen und So weiter sind spezifisch für das Websteuerelement Daten und hängen nicht von den Datenquellen-Steuerelement verwendet. GridView verwenden, also kann den integrierten paging, sortieren, bearbeiten und Löschen von, ob es ein ObjectDataSource-Steuerelement oder ein SqlDataSource-Steuerelement gebunden ist. Allerdings sind bestimmte Funktionen der Web-Daten vertrauliche, um das Datenquellen-Steuerelement verwendet wird oder die s-Steuerelement für die Datenquellenkonfiguration.
+Im Allgemeinen sind die Features, die dem datenweb Steuerelement Paging, Sortierung, Bearbeitung, löschen, einfügen usw. unterliegen, für das datenweb-Steuerelement spezifisch und nicht vom verwendeten Datenquellen-Steuerelement abhängig. Das heißt, die GridView kann das integrierte Paging, sortieren, bearbeiten und Löschen verwenden, ob es an eine ObjectDataSource oder eine SqlDataSource gebunden ist. Bestimmte datenwebsteuerungs-Funktionen sind jedoch für das verwendete Datenquellen-Steuerelement oder die Konfiguration des Datenquellen Steuer Elements sensibel.
 
-Z. B. in der [effizient Paging durch große Mengen von Daten](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) Tutorial erläutert, wie in der Standardeinstellung die Paginglogik für die Daten Web naiv gibt steuert *alle* Datensätze aus der zugrunde liegenden Data source und zeigt dann nur die entsprechenden Teilmenge der Datensätze im angegebenen Index der aktuellen Seite und die Anzahl der Datensätze pro Seite angezeigt. Dieses Modell ist sehr ineffizient, wenn paging durch ausreichend große Resultsets. Glücklicherweise kann dem ObjectDataSource-Steuerelement konfiguriert werden, um benutzerdefiniertes Paging zu unterstützen, das nur die genaue Teilmenge der anzuzeigenden Datensätze zurückgibt. Das SqlDataSource-Steuerelement, verfügt jedoch nicht über die Eigenschaften für die benutzerdefinierte Paginierung implementieren.
+Beispielsweise wird im Tutorial [effizientes Paging durch große Datenmengen](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) erläutert, wie die Auslagerungs Logik für die datenweb Steuerelemente standardmäßig *alle* Datensätze aus der zugrunde liegenden Datenquelle zurückgibt und dann nur die entsprechende Teilmenge der Datensätze anzeigt, wenn der aktuelle Seitenindex und die Anzahl der Datensätze pro Seite angezeigt werden. Dieses Modell ist beim Paging durch ausreichend große Resultsets sehr ineffizient. Glücklicherweise kann die ObjectDataSource so konfiguriert werden, dass benutzerdefinierte Paginierung unterstützt werden, die nur die genaue Teilmenge der anzuzeigenden Datensätze zurückgibt. Im SqlDataSource-Steuerelement fehlen jedoch die Eigenschaften zum Implementieren von benutzerdefiniertem Paging.
 
-Tritt auf, eine andere Besonderheit mit Paginierung und Sortierung mit dem SqlDataSource-Steuerelement. Standardmäßig können die von einem SqlDataSource-Steuerelement zurückgegebenen Daten ausgelagert oder über die GridView sortiert werden. Um dies zu demonstrieren, überprüfen Sie die Optionen "Aktivieren von Paging und Sortieren aktivieren" im GridView Smarttag s in `Querying.aspx` und stellen Sie sicher, dass dies funktioniert wie erwartet.
+Eine weitere Feinheit beim Paging und Sortieren ergibt sich aus der SqlDataSource. Standardmäßig können die von einer SqlDataSource zurückgegebenen Daten per Pager oder über die GridView-Struktur sortiert werden. Um dies zu veranschaulichen, aktivieren Sie die Option Paging aktivieren und Sortieren in der GridView s-Smarttag in `Querying.aspx`, und überprüfen Sie, ob dies erwartungsgemäß funktioniert.
 
-Sortieren und paging funktioniert, da es sich bei dem SqlDataSource-Steuerelement in ein DataSet mit flexibler typbindung Ruft Daten in der Datenbank ab. Die Gesamtzahl der Datensätze, die von der Abfrage einen wichtiger Aspekt zum Implementieren von Paging zurückgegebenen kann aus dem DataSet überprüft werden. Darüber hinaus können die DataSet-s-Ergebnisse mit einer "DataView" sortiert werden. Diese Funktionen werden automatisch von dem SqlDataSource-Steuerelement verwendet, wenn die GridView-Anforderungen ausgelagert oder Daten sortierte.
+Das Sortieren und Paging funktioniert, da die SqlDataSource die Datenbankdaten in ein lose typisiertes DataSet abruft. Die Gesamtanzahl der Datensätze, die von der Abfrage zurückgegeben werden, ist ein wichtiger Aspekt bei der Implementierung von Paging. Darüber hinaus können die Ergebnisse des Datasets durch eine DataView sortiert werden. Diese Funktionen werden automatisch von SqlDataSource verwendet, wenn die GridView auslagerbare oder sortierte Daten anfordert.
 
-Dem SqlDataSource-Steuerelement kann so konfiguriert werden, dass ein DataReader-Ziel anstelle eines Datasets als ändern zurückgegeben werden, dessen [ `DataSourceMode` Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) aus `DataSet` (Standard), `DataReader`. Mit "DataReader" kann in Situationen bevorzugt wird, wenn die SqlDataSource-s-Ergebnisse am vorhandenen Code übergeben, die ein DataReader-Ziel erwartet. Da "DataReaders" deutlich einfacher Objekte als DataSets sind, bieten sie darüber hinaus eine bessere Leistung. Wenn Sie diese Änderung vornehmen, allerdings kann weder das Websteuerelement Daten sortieren, und die Seite, da es sich bei dem SqlDataSource-Steuerelement kann nicht ermitteln, wie viele Datensätze von der Abfrage zurückgegeben werden, ebenso wie das DataReader-Objekt nicht bieten alle Techniken zum Sortieren der zurückgegebenen Daten.
+SqlDataSource kann so konfiguriert werden, dass anstelle eines Datasets ein DataReader-Objekt zurückgegeben wird, indem die [`DataSourceMode`-Eigenschaft](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) von `DataSet` (Standard) in `DataReader`geändert wird. Die Verwendung eines DataReader kann in Situationen bevorzugt werden, in denen die Ergebnisse von SqlDataSource s an vorhandenen Code übergeben werden, der einen DataReader erwartet. Da DataReaders erheblich einfachere Objekte sind als Datasets, bieten Sie außerdem eine bessere Leistung. Wenn Sie diese Änderung vornehmen, kann das datenweb Steuerelement jedoch weder sortieren noch seitenweise, da SqlDataSource nicht ermitteln kann, wie viele Datensätze von der Abfrage zurückgegeben werden, und der DataReader bietet keine Techniken zum Sortieren der zurückgegebenen Daten.
 
-## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>Schritt 4: Verwenden eine benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur
+## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>Schritt 4: Verwenden einer benutzerdefinierten SQL-Anweisung oder gespeicherten Prozedur
 
-Wenn Sie das SqlDataSource-Steuerelement zu konfigurieren, kann die Abfrage verwendet, um Daten zurückzugeben in einem der beiden Methoden als eine benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur oder Spalten aus einer vorhandenen Tabelle oder Sicht angegeben werden. Wählen Sie in Schritt2, die wir untersucht die Spalten aus der `Products` Tabelle. Können Sie sehen Sie sich mit einer benutzerdefinierten SQL­Anweisung s ein.
+Beim Konfigurieren des SqlDataSource-Steuer Elements kann die zum Zurückgeben von Daten verwendete Abfrage in einem von zwei Ansätzen als benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur oder als Spalten aus einer vorhandenen Tabelle oder Sicht angegeben werden. In Schritt 2 haben wir die Auswahl von Spalten aus der `Products` Tabelle untersucht. Sehen Sie sich die Verwendung einer benutzerdefinierten SQL-Anweisung an.
 
-Fügen Sie ein anderes GridView-Steuerelement, das `Querying.aspx` Seite, und wählen Sie aus der Dropdown-Liste im Smarttag eine neue Datenquelle zu erstellen. Als Nächstes anzugeben, dass die Daten aus einer Datenbank diese gezogen werden, wird ein neues SqlDataSource-Steuerelement erstellt. Benennen Sie das Steuerelement `ProductsWithCategoryInfoDataSource`.
+Fügen Sie der `Querying.aspx` Seite ein weiteres GridView-Steuerelement hinzu, und wählen Sie aus der Dropdown Liste im Smarttags eine neue Datenquelle aus. Geben Sie als nächstes an, dass die Daten aus einer Datenbank abgerufen werden, sodass ein neues SqlDataSource-Steuerelement erstellt wird. Benennen Sie das Steuerelement `ProductsWithCategoryInfoDataSource`.
 
-![Erstellen Sie ein neues SqlDataSource-Steuerelement, das mit dem Namen ProductsWithCategoryInfoDataSource](querying-data-with-the-sqldatasource-control-vb/_static/image18.gif)
+![Erstellen Sie ein neues SqlDataSource-Steuerelement mit dem Namen productwithcategoryinfodatasource.](querying-data-with-the-sqldatasource-control-vb/_static/image18.gif)
 
-**Abbildung 12**: Erstellen Sie ein neues SqlDataSource-Steuerelement, das mit dem Namen `ProductsWithCategoryInfoDataSource`
+**Abbildung 12**: Erstellen eines neuen SqlDataSource-Steuer Elements namens `ProductsWithCategoryInfoDataSource`
 
-Im nächste Bildschirm fordert uns um die Datenbank anzugeben. Wählen Sie wie in Abbildung 7 die `NORTHWINDConnectionString` aus der Dropdownliste aus, und klicken Sie auf Weiter. Der Bildschirm für die Select-Anweisung konfigurieren wählen Sie eine benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur Optionsfeld angeben, und klicken Sie auf Weiter. Dadurch wird den Bildschirm definieren benutzerdefinierte Anweisungen oder gespeicherte Prozeduren angezeigt, die Registerkarten, SELECT, UPDATE, INSERT und DELETE mit der Bezeichnung bietet. Auf jeder Registerkarte können Sie benutzerdefinierte SQL-Anweisung in das Textfeld eingeben, oder wählen Sie eine gespeicherte Prozedur aus der Dropdown Liste. In diesem Tutorial betrachten wir eine benutzerdefinierte SQL­Anweisung eingeben; Im nächste Tutorial enthält ein Beispiel, das eine gespeicherte Prozedur verwendet.
+Im nächsten Bildschirm werden Sie aufgefordert, die Datenbank anzugeben. Wählen Sie in Abbildung 7 die `NORTHWINDConnectionString` aus der Dropdown Liste aus, und klicken Sie auf Weiter. Wählen Sie im Bildschirm "SELECT-Anweisung konfigurieren" das Optionsfeld benutzerdefinierte SQL-Anweisung oder gespeicherte Prozedur angeben aus, und klicken Sie auf Weiter. Dadurch wird der Bildschirm benutzerdefinierte Anweisungen oder gespeicherte Prozeduren definieren angezeigt, der Registerkarten mit den Bezeichnungen SELECT, Update, INSERT und DELETE enthält. Auf jeder Registerkarte können Sie eine benutzerdefinierte SQL-Anweisung in das Textfeld eingeben oder eine gespeicherte Prozedur aus der Dropdown Liste auswählen. In diesem Tutorial erfahren Sie, wie Sie eine benutzerdefinierte SQL-Anweisung eingeben. Das nächste Tutorial enthält ein Beispiel, in dem eine gespeicherte Prozedur verwendet wird.
 
-![Geben Sie eine benutzerdefinierte SQL-Anweisung, oder wählen Sie eine gespeicherte Prozedur](querying-data-with-the-sqldatasource-control-vb/_static/image19.gif)
+![Benutzerdefinierte SQL-Anweisung eingeben oder gespeicherte Prozedur auswählen](querying-data-with-the-sqldatasource-control-vb/_static/image19.gif)
 
-**Abbildung 13**: Geben Sie eine benutzerdefinierte SQL-Anweisung, oder wählen Sie eine gespeicherte Prozedur
+**Abbildung 13**: eingeben einer benutzerdefinierten SQL-Anweisung oder Auswählen einer gespeicherten Prozedur
 
-Die benutzerdefinierte SQL-Anweisung manuell in das Textfeld eingegeben werden kann oder grafisch konstruiert werden kann, indem Sie auf die Schaltfläche "Abfrage-Generator". Über den Abfrage-Generator oder das Textfeld ein, verwenden Sie die folgende Abfrage zurückzugebenden der `ProductID` und `ProductName` Felder aus der `Products` Tabelle mithilfe von einer `JOIN` zum Abrufen des Produkts s `CategoryName` aus der `Categories` Tabelle:
+Die benutzerdefinierte SQL-Anweisung kann per Hand in das Textfeld eingegeben werden oder durch Klicken auf die Schaltfläche "Abfrage-Generator" grafisch erstellt werden. Verwenden Sie die folgende Abfrage aus dem Abfrage-Generator oder dem Textfeld, um die Felder `ProductID` und `ProductName` aus der `Products` Tabelle zurückzugeben. verwenden Sie dazu ein `JOIN`, um die Product s `CategoryName` aus der `Categories` Tabelle abzurufen:
 
 [!code-sql[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample4.sql)]
 
-![Sie können grafisch die Abfrage mithilfe des Abfrage-Generators erstellen](querying-data-with-the-sqldatasource-control-vb/_static/image20.gif)
+![Sie können die Abfrage mithilfe der Abfrage-Generator](querying-data-with-the-sqldatasource-control-vb/_static/image20.gif)
 
-**Abbildung 14**: Sie können grafisch die Abfrage mithilfe des Abfrage-Generators erstellen
+**Abbildung 14**: Sie können die Abfrage mithilfe der Abfrage-Generator
 
-Nach dem Angeben der Abfrage an, klicken Sie auf Weiter, um zum Testen von Abfragen Bildschirm zu gelangen. Klicken Sie auf "Fertig stellen", um den SqlDataSource-Steuerelement-Assistenten abzuschließen.
+Nachdem Sie die Abfrage angegeben haben, klicken Sie auf Weiter, um mit dem Bildschirm Test Abfrage fortzufahren. Klicken Sie auf Fertigstellen, um den SqlDataSource-Assistenten abzuschließen.
 
-Nach Abschluss des Assistenten an, die GridView müssen drei BoundFields hinzugefügt, Anzeigen von der `ProductID`, `ProductName`, und `CategoryName` Spalten von der Abfrage zurückgegeben und führt die folgenden deklaratives Markup:
+Nachdem Sie den Assistenten abgeschlossen haben, werden der GridView drei boundfields hinzugefügt, in denen die von der Abfrage zurückgegebenen Spalten `ProductID`, `ProductName`und `CategoryName` angezeigt werden und das folgende deklaratives Markup ergibt:
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample5.aspx)]
 
-[![Das GridView zeigt jedes Produkt s-ID, Name und die zugeordnete Kategoriename](querying-data-with-the-sqldatasource-control-vb/_static/image22.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image21.gif)
+[![der GridView die einzelnen Produkt-ID, den Namen und den zugehörigen Kategorienamen anzeigt](querying-data-with-the-sqldatasource-control-vb/_static/image22.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image21.gif)
 
-**Abbildung 15**: Die GridView zeigt jede Produkt-s-ID, den Namen und den Kategorienamen verknüpft ist ([klicken Sie, um das Bild in voller Größe anzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image23.gif))
+**Abbildung 15**: die GridView zeigt die ID des Produkts, den Namen und den zugehörigen Kategorienamen[an (Klicken Sie, um das Bild in voller Größe anzuzeigen](querying-data-with-the-sqldatasource-control-vb/_static/image23.gif))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-In diesem Tutorial wurde erläutert, wie Abfragen und Anzeigen von Daten, die mit dem SqlDataSource-Steuerelement. Wie dem ObjectDataSource-Steuerelement dient dem SqlDataSource-Steuerelement als Proxy und einen deklarativen Ansatz zum Zugreifen auf Daten bereitstellt. Die Eigenschaften angeben, die Datenbank für die Verbindung und der SQL- `SELECT` zum Ausführen von Abfragen; sie können über das Eigenschaftenfenster oder mit dem Konfigurieren von Datenquellen-Assistenten angegeben werden.
+In diesem Tutorial wurde erläutert, wie Daten mithilfe des SqlDataSource-Steuer Elements abgefragt und angezeigt werden. Wie bei ObjectDataSource fungiert auch SqlDataSource als Proxy, der einen deklarativen Ansatz für den Zugriff auf Daten bereitstellt. Die Eigenschaften geben die Datenbank an, mit der eine Verbindung hergestellt werden soll, und die auszuführende SQL `SELECT` Abfrage. Sie können über die Eigenschaftenfenster oder mithilfe des Assistenten zum Konfigurieren von Datenquellen angegeben werden.
 
-Die `SELECT` Abfragebeispiele in diesem Tutorial wir untersuchten alle Datensätze zurückgegeben, aus der angegebenen Abfrage. Das SqlDataSource-Steuerelement, kann dagegen enthalten eine `WHERE` -Klausel mit Parametern, deren Werte programmgesteuert zugeordnet sind oder automatisch aus einer angegebenen Quelle abgerufen werden. Untersucht das Erstellen und verwenden Sie parametrisierte Abfragen im nächsten Tutorial.
+In den `SELECT` Abfrage Beispielen, die wir in diesem Tutorial überprüft haben, wurden alle Datensätze aus der angegebenen Abfrage zurückgegeben. Das SqlDataSource-Steuerelement kann jedoch eine `WHERE`-Klausel mit Parametern enthalten, deren Werte Programm gesteuert zugewiesen werden oder automatisch aus einer angegebenen Quelle abgerufen werden. Im nächsten Tutorial wird erläutert, wie parametrisierte Abfragen erstellt und verwendet werden.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
-- [Zugreifen auf Daten der relationalen Datenbank](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
-- [Übersicht über die SqlDataSource-Steuerelement](https://msdn.microsoft.com/library/dz12d98w.aspx)
-- [ASP.NET-Schnellstart-Lernprogramme: Dem SqlDataSource-Steuerelement](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
-- [Die Datei "Web.config" `<connectionStrings>` Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
-- [Datenbank-Verbindung-Zeichenfolgenreferenz](http://www.connectionstrings.com/)
+- [Zugreifen auf relationale Datenbankdaten](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
+- [Übersicht über das SqlDataSource-Steuerelement](https://msdn.microsoft.com/library/dz12d98w.aspx)
+- [ASP.net Quick Start-Tutorials: das SqlDataSource-Steuerelement](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
+- [Das Web. config-`<connectionStrings>` Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
+- [Daten bankverbindungs-Zeichen folgen Verweis](http://www.connectionstrings.com/)
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurden Susan Connery Bernadette Leigh und David Suru. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Die führenden Reviewer für dieses Tutorial waren Susan-Konstante, Bernadette Leigh und David suru. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](implementing-optimistic-concurrency-with-the-sqldatasource-cs.md)

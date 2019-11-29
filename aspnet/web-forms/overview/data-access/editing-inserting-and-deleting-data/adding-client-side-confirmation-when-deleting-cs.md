@@ -1,141 +1,141 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: Hinzufügen von clientseitiger Bestätigung beim Löschen von (c#) | Microsoft-Dokumentation
+title: Hinzufügen der Client seitigen Bestätigung beim LöschenC#() | Microsoft-Dokumentation
 author: rick-anderson
-description: In den Schnittstellen, die wir bisher erstellt haben, kann ein Benutzer versehentlich löschen von Daten durch Klicken auf die Schaltfläche "löschen", wenn sie auf die Schaltfläche "Bearbeiten" klicken, bestimmt. In diesen Typ t...
+description: In den bisher erstellten Schnittstellen können Benutzer versehentlich Daten löschen, indem Sie auf die Schaltfläche "Löschen" klicken, wenn Sie auf die Schaltfläche "Bearbeiten" klicken. In diesem t...
 ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 31d6cd9ca7181ea9fea2ba3e30ccaafcb4578483
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e7d53bc65fdbbfa9ce9bfa5fbdbfa0dea598eebe
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108871"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74623502"
 ---
 # <a name="adding-client-side-confirmation-when-deleting-c"></a>Hinzufügen von clientseitiger Bestätigung beim Löschen (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_22_CS.exe) oder [PDF-Datei herunterladen](adding-client-side-confirmation-when-deleting-cs/_static/datatutorial22cs1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_22_CS.exe) oder [PDF herunterladen](adding-client-side-confirmation-when-deleting-cs/_static/datatutorial22cs1.pdf)
 
-> In den Schnittstellen, die wir bisher erstellt haben, kann ein Benutzer versehentlich löschen von Daten durch Klicken auf die Schaltfläche "löschen", wenn sie auf die Schaltfläche "Bearbeiten" klicken, bestimmt. In diesem Tutorial fügen wir ein Dialogfeld von clientseitiger Bestätigung, die angezeigt wird, wenn die Schaltfläche Löschen geklickt wird.
+> In den bisher erstellten Schnittstellen können Benutzer versehentlich Daten löschen, indem Sie auf die Schaltfläche "Löschen" klicken, wenn Sie auf die Schaltfläche "Bearbeiten" klicken. In diesem Tutorial fügen wir ein Client seitiges Bestätigungs Dialogfeld hinzu, das beim Klicken auf die Schaltfläche löschen angezeigt wird.
 
 ## <a name="introduction"></a>Einführung
 
-Über die letzten mehrere Lernprogramme wir haben gesehen, wie Sie unsere Anwendungsarchitektur, "ObjectDataSource" und die Daten Websteuerelemente gemeinsam zum Bereitstellen von einfügen, bearbeiten und Löschen von Funktionen zu verwenden. Das Löschen von Schnittstellen wir untersucht haben bisher war ein Löschvorgang aus-Schaltfläche geklickt wird, führt dazu, dass einen Postback aus, und ruft die "ObjectDataSource"-s `Delete()` Methode. Die `Delete()` Methode ruft dann die konfigurierten-Methode aus der Business Logic Layer, dem den Aufruf an die Datenzugriffsebene, die die tatsächliche Ausgabe überträgt `DELETE` Anweisung an die Datenbank.
+In den letzten Tutorials haben wir gesehen, wie wir unsere Anwendungsarchitektur, ObjectDataSource und die datenweb-Steuerelemente in Concert verwenden, um Funktionen zum Einfügen, bearbeiten und löschen bereitzustellen. Die bisher untersuchten Lösch Schnittstellen bestehen aus einer DELETE-Schaltfläche, die beim Klicken auf ein Postback führt und die `Delete()` Methode ObjectDataSource s aufruft. Die `Delete()`-Methode ruft dann die konfigurierte Methode aus der Geschäftslogik Schicht auf, die den Aufruf an die Datenzugriffs Ebene weitergibt und die tatsächliche `DELETE` Anweisung an die Datenbank ausgibt.
 
-Während dieser Benutzeroberfläche Besucher zum Löschen von Datensätzen durch die GridView, DetailsView oder FormView-Steuerelemente ermöglicht, fehlt ein beliebiges Bestätigung klickt der Benutzer die Schaltfläche "löschen". Wenn ein Benutzer versehentlich klickt bearbeiten Sie die Schaltfläche "löschen", wenn sie klicken sollen, wird der Datensatz, den sie aktualisieren soll stattdessen gelöscht. Damit dies vermieden werden in diesem Tutorial fügen wir ein Dialogfeld von clientseitiger Bestätigung, die angezeigt wird, wenn die Schaltfläche Löschen geklickt wird.
+Wenngleich diese Benutzeroberfläche es Benutzern ermöglicht, Datensätze über das GridView-, DetailsView-oder FormView-Steuerelement zu löschen, fehlt die Bestätigung, wenn der Benutzer auf die Schaltfläche "Löschen" klickt. Wenn ein Benutzer versehentlich auf die Schaltfläche Löschen klickt, wenn er auf Bearbeiten geklickt hat, wird der Datensatz, für den die Aktualisierung durchgeführt wurde, stattdessen gelöscht. Um dies zu verhindern, fügen Sie in diesem Tutorial ein Client seitiges Bestätigungs Dialogfeld hinzu, das beim Klicken auf die Schaltfläche löschen angezeigt wird.
 
-Das JavaScript `confirm(string)` Funktion zeigt die Zeichenfolgen-Eingabeparameter an, wie der Text innerhalb eines modalen Dialogfelds, das ist gut mit zwei Schaltflächen - ausgestattet und Abbrechen (siehe Abbildung 1). Die `confirm(string)` Funktionsergebnis ist einen booleschen Wert, je nachdem, welche Schaltfläche geklickt wird (`true`, wenn der Benutzer auf OK klickt und `false` Wenn sie auf "Abbrechen" klicken).
+Die JavaScript-`confirm(string)` Funktion zeigt den Eingabeparameter der Zeichenfolge als Text in einem modalen Dialogfeld an, das mit zwei Schaltflächen ausgestattet ist: OK und Abbrechen (siehe Abbildung 1). Die `confirm(string)`-Funktion gibt einen booleschen Wert zurück, abhängig davon, auf welche Schaltfläche geklickt wird (`true`, wenn der Benutzer auf OK klickt und `false`, wenn er auf Abbrechen klickt).
 
-![Die JavaScript-confirm(string) Methode zeigt ein modales, Client-Side-Messagebox](adding-client-side-confirmation-when-deleting-cs/_static/image1.png)
+![Die Javascript Confirm (String)-Methode zeigt eine modale Client seitige MessageBox an.](adding-client-side-confirmation-when-deleting-cs/_static/image1.png)
 
-**Abbildung 1**: Das JavaScript `confirm(string)` Methode zeigt ein modales, clientseitige Messagebox an.
+**Abbildung 1**: die JavaScript-`confirm(string)`-Methode zeigt eine modale Client seitige MessageBox an
 
-Während einer Formularübergabe, wenn ein Wert von `false` von einem clientseitigen Ereignis-Handler zurückgegeben wird, und klicken Sie dann die Übermittlung des Formulars abgebrochen wird. Mit dieser Funktion können wir haben der löschen-Schaltfläche "," s-Clientseite `onclick` -Ereignishandler den Rückgabewert eines Aufrufs von `confirm("Are you sure you want to delete this product?")`. Wenn der Benutzer auf "Abbrechen", klickt `confirm(string)` gibt "false", wodurch verursacht die Übermittlung des Formulars zum abzubrechen. Kein Postback nicht des Produkts, dessen löschen-Schaltfläche geklickt wurde, gelöscht. Wenn jedoch der Benutzer in das Dialogfeld zur Bestätigung auf OK klickt, wird das Postback ungehindert und das Produkt gelöscht werden. Wenden Sie sich an [Verwenden von JavaScript-s `confirm()` Methode, um die Formularübermittlung Steuerelement](http://www.webreference.com/programming/javascript/confirm/) für Weitere Informationen zu dieser Technik.
+Wenn während einer Formular Übermittlung der Wert `false` von einem Client seitigen Ereignishandler zurückgegeben wird, wird die Formular Übermittlung abgebrochen. Mit dieser Funktion können Sie die Client seitige DELETE-Schaltfläche s verwenden, `onclick` Ereignishandler den Wert eines Aufrufens `confirm("Are you sure you want to delete this product?")`zurückgibt. Wenn der Benutzer auf Abbrechen klickt, wird `confirm(string)` false zurückgeben, wodurch die Formular Übermittlung abgebrochen wird. Ohne Postback wird das Produkt, auf dessen Lösch Schaltfläche geklickt wurde, nicht gelöscht. Wenn der Benutzer jedoch im Bestätigungs Dialogfeld auf OK klickt, wird das Postback nicht fortgesetzt, und das Produkt wird gelöscht. Weitere Informationen zu dieser Technik finden [Sie unter Verwenden der JavaScript s `confirm()`-Methode zum Steuern der Formular Übermittlung](http://www.webreference.com/programming/javascript/confirm/) .
 
-Hinzufügen der erforderlichen Client-seitige Skript unterscheidet sich geringfügig bei Verwendung von Vorlagen als bei der Verwendung einer CommandField. Aus diesem Grund wird in diesem Tutorial sowohl einen FormView und GridView-Beispiel betrachten wir.
+Das Hinzufügen des erforderlichen Client seitigen Skripts unterscheidet sich geringfügig, wenn Vorlagen verwendet werden, als bei Verwendung eines CommandField. In diesem Tutorial sehen wir uns daher ein Beispiel für FormView und GridView an.
 
 > [!NOTE]
-> Mit clientseitiger Bestätigung Techniken wird vorausgesetzt, dass wie die in diesem Tutorial erläutert, dass Ihre Benutzer mit Browsern besuchen, die JavaScript-Unterstützung, dass JavaScript aktiviert ist. Wenn eine der Annahmen nicht "true" für einen bestimmten Benutzer sind, wird Sie auf die Schaltfläche "löschen" sofort einen Postback (nicht angezeigt. eine Messagebox bestätigen) führen.
+> Bei der Verwendung von Client seitigen Bestätigungs Techniken, wie in diesem Tutorial erläutert, wird davon ausgegangen, dass die Benutzer mit Browsern, die JavaScript unterstützen, und JavaScript aktiviert sind. Wenn eine dieser Annahmen für einen bestimmten Benutzer nicht wahr ist, wird beim Klicken auf die Schaltfläche "Löschen" sofort ein Postback ausgelöst (keine Überprüfung der MessageBox).
 
-## <a name="step-1-creating-a-formview-that-supports-deletion"></a>Schritt 1: Erstellen von einem FormView-Steuerelement, unterstützt löschen
+## <a name="step-1-creating-a-formview-that-supports-deletion"></a>Schritt 1: Erstellen einer FormView, die das Löschen unterstützt
 
-Starten, indem einem FormView-Steuerelement, Hinzufügen der `ConfirmationOnDelete.aspx` auf der Seite die `EditInsertDelete` Ordner Binden an eine neue "ObjectDataSource", die die Produktinformationen über wieder bezieht die `ProductsBLL` s-Klasse `GetProducts()` Methode. Auch dem ObjectDataSource-Steuerelement konfigurieren, damit die `ProductsBLL` s-Klasse `DeleteProduct(productID)` -Methode zugeordnet ist, der "ObjectDataSource"-s `Delete()` Methode stellen Sie sicher, dass die INSERT- und UPDATE-Registerkarten, Dropdownlisten auf (keine) festgelegt sind. Überprüfen Sie abschließend das Kontrollkästchen Paging aktivieren, in das FormView-s-Smarttag.
+Fügen Sie zunächst der Seite `ConfirmationOnDelete.aspx` im Ordner `EditInsertDelete` einen FormView hinzu, und binden Sie ihn an eine neue ObjectDataSource, die die Produktinformationen über die `GetProducts()`-Methode der `ProductsBLL`-Klasse zurückgibt. Konfigurieren Sie auch ObjectDataSource so, dass die `ProductsBLL` Class s `DeleteProduct(productID)`-Methode der ObjectDataSource s `Delete()`-Methode zugeordnet ist. Stellen Sie sicher, dass die Dropdown Listen der Registerkarten einfügen und Aktualisieren auf (keine) festgelegt sind. Aktivieren Sie abschließend das Kontrollkästchen Paging aktivieren im Smarttag von FormView s.
 
-Nach diesen Schritten wird die neue "ObjectDataSource" s deklarative Markup wie folgt aussehen:
+Nach diesen Schritten sieht das neue deklarative Markup von ObjectDataSource s wie folgt aus:
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample1.aspx)]
 
-Wie in unseren früheren Beispielen, die nicht die vollständigen Parallelität verwendet haben, können Sie das "ObjectDataSource"-s löschen `OldValuesParameterFormatString` Eigenschaft.
+Wie in den vorherigen Beispielen, in denen keine vollständige Parallelität verwendet wurde, sollten Sie sich einen Moment Zeit nehmen, um die ObjectDataSource s-`OldValuesParameterFormatString`-Eigenschaft zu löschen.
 
-Da es an ein ObjectDataSource-Steuerelement, das nur löschen gebunden wurde unterstützt "," der FormView-s `ItemTemplate` bietet nur die Schaltfläche "löschen", fehlt der Schaltflächen "Neu" und "Update". Die FormView s deklarative Markup, enthält jedoch eine überflüssige `EditItemTemplate` und `InsertItemTemplate`, die entfernt werden kann. Anpassen in Ruhe die `ItemTemplate` also d.h. zeigt nur eine Teilmenge des Produkts Datenfelder. Ich Ve konfiguriert Meine zum Anzeigen der Produktnamen s in eine `<h3>` Überschrift über seine Namen "Supplier" und "Category" (zusammen mit der Schaltfläche "löschen").
+Da es an ein ObjectDataSource-Steuerelement gebunden wurde, das nur das Löschen unterstützt, bietet das FormView s-`ItemTemplate` nur die Schaltfläche "Löschen", ohne die Schaltflächen neu und aktualisieren. Das deklarative Markup von FormView s enthält jedoch eine überflüssige `EditItemTemplate` und `InsertItemTemplate`, die entfernt werden können. Nehmen Sie sich einen Moment Zeit, um die `ItemTemplate` anzupassen, sodass nur eine Teilmenge der Product Data-Felder anzeigt. Ich habe "My" so konfiguriert, dass der Name des Produkts in einer `<h3>` Überschrift über deren Lieferanten-und Kategorienamen (und die Schaltfläche "Löschen") angezeigt wird
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample2.aspx)]
 
-Mit diesen Änderungen haben wir eine voll funktionsfähige Webseite, die einem Benutzer ermöglicht, über die Produkte einer gleichzeitig die Möglichkeit, ein Produkt zu löschen, indem Sie einfach die Schaltfläche "löschen" umschalten. Abbildung 2 zeigt einen Screenshot des unseren Fortschritt bisher ein, wenn Sie über einen Browser angezeigt.
+Mit diesen Änderungen verfügen wir über eine voll funktionsfähige Webseite, die es Benutzern ermöglicht, die Produkte einzeln zu wechseln, und die Möglichkeit zum Löschen eines Produkts zu haben, indem Sie einfach auf die Schaltfläche "Löschen" klicken. Abbildung 2 zeigt einen Screenshot dieses Fortschritts, der in einem Browser angezeigt wird.
 
-[![Die FormView-Steuerelement zeigt Informationen zu einem einzigen Produkt](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
+[![FormView zeigt Informationen zu einem einzelnen Produkt an.](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
 
-**Abbildung 2**: Die FormView-Steuerelement zeigt Informationen über ein einzelnes Produkt ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image4.png))
+**Abbildung 2**: FormView zeigt Informationen zu einem einzelnen Produkt an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image4.png))
 
-## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>Schritt 2: Aufrufen der Funktion confirm(string) aus dem Löschen von Schaltflächen der clientseitigen Onclick-Ereignis
+## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>Schritt 2: Aufrufen der Confirm (String)-Funktion über das Client seitige OnClick-Ereignis der Schaltfläche "Löschen"
 
-Mit der FormView-Steuerelement erstellt, der der letzte Schritt ist so konfigurieren Sie die Schaltfläche "löschen" solche, die bei es s geklickt wird, um dem Besucher angezeigt, den JavaScript-Code `confirm(string)` Funktion wird aufgerufen. Hinzufügen des clientseitigen Skripts auf eine Schaltfläche, LinkButton oder ImageButton s clientseitige `onclick` Ereignis kann erreicht werden, mithilfe des der `OnClientClick property`, das ist neu in ASP.NET 2.0. Da wir den Wert des möchten der `confirm(string)` -Funktion zurückgegeben hat, legen Sie einfach diese Eigenschaft auf: `return confirm('Are you certain that you want to delete this product?');`
+Wenn die Form Ansicht erstellt wurde, ist der letzte Schritt die Konfiguration der Schaltfläche "Löschen", sodass die JavaScript-`confirm(string)` Funktion aufgerufen wird, wenn Sie vom Besucher darauf geklickt wird. Das Hinzufügen eines Client seitigen Skripts zu einem Client seitigen "Button"-, "LinkButton"-oder "ImageButton s"-`onclick` Ereignis kann durch die Verwendung des `OnClientClick property`erreicht werden, das neu in ASP.NET 2,0 ist. Da der Wert der `confirm(string)`-Funktion zurückgegeben werden soll, legen Sie diese Eigenschaft einfach auf fest: `return confirm('Are you certain that you want to delete this product?');`
 
-Nach dieser Änderung sollte die deklarative Syntax des löschen LinkButton-s wie folgt aussehen:
+Nachdem Sie diese Änderung vorgenommen haben, sollte die deklarative Syntax von LinkButton s löschen in etwa wie folgt aussehen:
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample3.aspx)]
 
-Alles, was, s wird es! Abbildung 3 zeigt einen Screenshot des dieser Bestätigung in Aktion. Durch Klicken auf die Schaltfläche "löschen" wird im Dialogfeld bestätigen. Wenn der Benutzer auf "Abbrechen" klickt, das Postback abgebrochen, und das Produkt wird nicht gelöscht. Wenn Sie jedoch die Benutzer auf OK klickt, wird das Postback fortgesetzt und das "ObjectDataSource"-s `Delete()` Methode aufgerufen wird, verbessert den Datenbank-Datensatz gelöscht wird.
+Das ist schon alles! Abbildung 3 zeigt einen Screenshot dieser Bestätigung in Aktion. Wenn Sie auf die Schaltfläche Löschen klicken, wird das Dialogfeld bestätigen geöffnet. Wenn der Benutzer auf Abbrechen klickt, wird das Postback abgebrochen, und das Produkt wird nicht gelöscht. Wenn der Benutzer jedoch auf OK klickt, wird das Postback fortgesetzt, und die ObjectDataSource s-`Delete()`-Methode wird aufgerufen, die im Datenbankdaten Satz steht, der gelöscht wird.
 
 > [!NOTE]
-> Die übergebene Zeichenfolge in die `confirm(string)` JavaScript-Funktion mit Apostrophe (und nicht mit Anführungszeichen) als Trennzeichen dient. In JavaScript können Zeichenfolgen mithilfe der beiden Zeichen getrennt werden. Wir verwenden Apostrophe hier, sodass die Trennzeichen für die Zeichenfolge übergeben `confirm(string)` führen eine Mehrdeutigkeit mit Trennzeichen verwendet werden, für die `OnClientClick` Eigenschaftswert.
+> Die Zeichenfolge, die an die JavaScript-Funktion von `confirm(string)` übertragen wird, wird durch Apostrophe (anstelle von Anführungszeichen) getrennt. In JavaScript können Zeichen folgen mithilfe von Zeichen getrennt werden. Hier werden Apostrophe verwendet, damit die Trennzeichen für die Zeichenfolge, die an `confirm(string)` übergeben wird, keine Mehrdeutigkeit mit den Trennzeichen enthalten, die für den `OnClientClick`-Eigenschafts Wert verwendet werden.
 
-[![Eine Bestätigung wird jetzt angezeigt, wenn durch Klicken auf die Schaltfläche "löschen"](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
+[![eine Bestätigung angezeigt wird, wenn Sie auf die Schaltfläche "Löschen" klicken](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
 
-**Abbildung 3**: Eine Bestätigung wird jetzt angezeigt, wenn durch Klicken auf die Schaltfläche "löschen" ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image7.png))
+**Abbildung 3**: eine Bestätigung wird angezeigt, wenn Sie auf die Schaltfläche "Löschen" klicken ([Klicken Sie, um das Bild in voller Größe anzuzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image7.png))
 
-## <a name="step-3-configuring-the-onclientclick-property-for-the-delete-button-in-a-commandfield"></a>Schritt 3: Konfigurieren die OnClientClick-Eigenschaft für die Schaltfläche "löschen" in einem CommandField
+## <a name="step-3-configuring-the-onclientclick-property-for-the-delete-button-in-a-commandfield"></a>Schritt 3: Konfigurieren der OnClientClick-Eigenschaft für die Schaltfläche "Löschen" in einem CommandField
 
-Bei der Arbeit mit einer Schaltfläche, LinkButton oder ImageButton direkt in eine Vorlage ein Bestätigungsdialogfeld kann zugeordnet werden es einfach konfigurieren die `OnClientClick` Eigenschaft, um den JavaScript-Code zurückgeben, `confirm(string)` Funktion. Die CommandField - Dadurch wird ein Feld von Schaltflächen zum Löschen einem GridView- oder DetailsView hinzugefügt – verfügt jedoch nicht über eine `OnClientClick` -Eigenschaft, die deklarativ festgelegt werden kann. Verweisen Sie stattdessen wir müssen programmgesteuert auf die Schaltfläche "löschen" in den entsprechenden GridView- oder DetailsView s `DataBound` -Ereignishandler, und legen dessen `OnClientClick` Eigenschaft vorhanden.
+Wenn Sie direkt in einer Vorlage mit einer Schaltfläche, einem LinkButton oder einem ImageButton arbeiten, kann Ihr ein Bestätigungs Dialogfeld zugeordnet werden, indem einfach die `OnClientClick`-Eigenschaft so konfiguriert wird, dass die Ergebnisse der JavaScript-`confirm(string)`-Funktion zurückgegeben werden. Das CommandField-Objekt, das ein Feld mit Lösch Schaltflächen zu einem GridView-oder DetailsView-Objekt hinzufügt, verfügt jedoch nicht über eine `OnClientClick`-Eigenschaft, die deklarativ festgelegt werden kann. Stattdessen müssen Sie Programm gesteuert auf die Schaltfläche "Löschen" in der GridView-oder DetailsView-`DataBound` Ereignishandler verweisen und dann die zugehörige `OnClientClick`-Eigenschaft festlegen.
 
 > [!NOTE]
-> Beim Festlegen der Schaltfläche "löschen" s `OnClientClick` Eigenschaft in den entsprechenden `DataBound` -Ereignishandler haben Zugriff auf die Daten auf den aktuellen Datensatz gebunden wurde. Dies bedeutet, dass wir die bestätigungsmeldung angezeigt, um Details zu den entsprechenden Datensatz aus, z. B. einzuschließen, "Sind Sie sicher, dass Sie das Produkt Chai löschen möchten?" erweitern können Eine solche Anpassung kann auch in Vorlagen, die mithilfe der Datenbindungssyntax.
+> Beim Festlegen der DELETE-Schaltfläche s `OnClientClick`-Eigenschaft im entsprechenden `DataBound`-Ereignishandler haben wir Zugriff auf die Daten, die an den aktuellen Datensatz gebunden wurden. Dies bedeutet, dass wir die Bestätigungsnachricht so erweitern können, dass Sie Details zum jeweiligen Datensatz enthält, z. b. "möchten Sie das Chai-Produkt wirklich löschen?". Diese Anpassung ist auch in Vorlagen möglich, die die Datenbindung-Syntax verwenden.
 
-Einstellung der Methode die `OnClientClick` -Eigenschaft für die Delete-Tasten in einem CommandField, Let s Hinzufügen einer GridView-Ansicht auf der Seite. Konfigurieren Sie diese GridView Verwendung derselbe ObjectDataSource-Steuerelement, das das FormView-Steuerelement verwendet. Auch einschränken Sie, die GridView s BoundFields sollen nur die Product-s-Name, Kategorie und Lieferanten. Schließlich das Kontrollkästchen Sie aktivieren Sie das Löschen aus dem GridView-s-Smarttag. Dadurch wird eine CommandField hinzugefügt, der GridView-s `Columns` Sammlung mit der `ShowDeleteButton` -Eigenschaftensatz auf `true`.
+Wenn Sie die `OnClientClick`-Eigenschaft für die Lösch Schaltfläche (n) in einem CommandField festlegen möchten, fügen Sie der Seite eine GridView hinzu. Konfigurieren Sie diese GridView für die Verwendung desselben ObjectDataSource-Steuer Elements, das von der FormView verwendet wird. Begrenzen Sie außerdem die "GridView s boundfields", sodass Sie nur den Namen, die Kategorie und den Lieferanten des Produkts enthalten. Aktivieren Sie abschließend das Kontrollkästchen "Löschen" im GridView-Smarttag. Dadurch wird der GridView s `Columns`-Auflistung ein CommandField hinzugefügt, dessen `ShowDeleteButton`-Eigenschaft auf `true`festgelegt ist.
 
-Nach diesen Änderungen sollte Ihre GridView s deklarative Markup wie folgt aussehen:
+Nachdem Sie diese Änderungen vorgenommen haben, sollte das deklarative Markup der GridView s wie folgt aussehen:
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample4.aspx)]
 
-Die CommandField enthält eine einzelne löschen LinkButton-Instanz, die von der GridView-s programmgesteuert zugegriffen werden kann `RowDataBound` -Ereignishandler. Nachdem Sie auf die verwiesen wird, können wir Festlegen seiner `OnClientClick` Eigenschaft entsprechend. Erstellen Sie einen Ereignishandler für die `RowDataBound` Ereignis mit dem folgenden Code:
+Das CommandField enthält eine einzelne DELETE LinkButton-Instanz, auf die Programm gesteuert über den GridView s `RowDataBound`-Ereignishandler zugegriffen werden kann. Nachdem auf Sie verwiesen wurde, können wir Ihre `OnClientClick`-Eigenschaft entsprechend festlegen. Erstellen Sie einen Ereignishandler für das `RowDataBound`-Ereignis, indem Sie den folgenden Code verwenden:
 
 [!code-csharp[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample5.cs)]
 
-Dieser Ereignishandler arbeitet mit Datenzeilen (diejenigen, die die Schaltfläche "löschen" hat) und durch Programmgesteuertes Verweisen auf die Schaltfläche "löschen" beginnt. Verwenden Sie im Allgemeinen das folgende Muster:
+Dieser Ereignishandler funktioniert mit Daten Zeilen (mit der Schaltfläche "Löschen") und beginnt mit der programmgesteuerten Referenzierung der Schaltfläche "Löschen". Verwenden Sie im Allgemeinen das folgende Muster:
 
 [!code-csharp[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample6.cs)]
 
-*ButtonType* ist der Typ der Schaltfläche, die von der CommandField - Schaltfläche, LinkButton oder ImageButton verwendet wird. Standardmäßig verwendet die CommandField LinkButtons, aber dies kann angepasst werden, über die CommandField s `ButtonType property`. Die *CommandFieldIndex* ist der Ordinalindex des der CommandField in den GridView-s `Columns` Sammlung, während die *ControlIndex* ist der Schnittstellenindex der Schaltfläche "löschen" in der CommandField s `Controls` Auflistung. Die *ControlIndex* Wert hängt von der Schaltfläche "s" Position relativ zu anderen Schaltflächen in der CommandField. Beispielsweise ist die einzige Schaltfläche in der CommandField angezeigt auf die Schaltfläche "löschen", verwenden Sie einen Index 0. Wenn Sie jedoch, gibt es s eine Schaltfläche "Bearbeiten", das die Schaltfläche "löschen" vorangestellt ist einen Index der-verwenden 2. Der Grund, ein Index von 2 verwendet wird, ist, da zwei Steuerelemente, durch die CommandField, bevor Sie die Schaltfläche "löschen hinzugefügt werden": die Schaltfläche "Bearbeiten" und ein LiteralControl, s, die mit der ein Leerzeichen zwischen den Schaltflächen Bearbeiten und löschen hinzugefügt.
+*ButtonType* ist der Typ der Schaltfläche, die von CommandField-Button, LinkButton oder ImageButton verwendet wird. Standardmäßig verwendet das CommandField Link Buttons, aber dies kann über die CommandField s-`ButtonType property`angepasst werden. Der *commandfieldindex* ist der Ordinalindex des CommandField innerhalb der GridView s-`Columns` Auflistung, während *controlindex* der Index der DELETE-Schaltfläche in der CommandField s `Controls` Auflistung ist. Der *controlindex* -Wert hängt von der Position der Schaltflächen in Bezug auf andere Schaltflächen im CommandField ab. Wenn z. b. die einzige Schaltfläche, die im CommandField angezeigt wird, die Schaltfläche Löschen ist, verwenden Sie einen Index von 0. Wenn jedoch eine Bearbeitungs Schaltfläche vorhanden ist, die der Schaltfläche "Löschen" vorangestellt ist, verwenden Sie einen Index von 2. Der Grund für die Verwendung eines Index von 2 liegt darin, dass zwei Steuerelemente von CommandField vor der Schaltfläche Löschen hinzugefügt werden: die Schaltfläche Bearbeiten und ein LiteralControl, das zum Hinzufügen von Leerzeichen zwischen den Schaltflächen Bearbeiten und Löschen verwendet wurde.
 
-Für unser Beispiel der CommandField LinkButtons verwendet und wird das Feld ganz links besitzt eine *CommandFieldIndex* 0. Da es sich um keine anderen Schaltflächen, aber die Löschen-Schaltfläche in der CommandField, verwenden wir eine *ControlIndex* 0.
+In unserem Beispiel verwendet das CommandField Link Buttons, und das Feld ganz links hat einen *commandfieldindex* von 0. Da keine anderen Schaltflächen, sondern die Schaltfläche "Löschen" im CommandField vorhanden sind, verwenden wir einen *controlindex* von 0.
 
-Nach Verweisen auf die Schaltfläche "löschen" in der CommandField, nehmen wir als Nächstes Informationen über das Produkt mit der aktuellen Zeile mit GridView gebunden. Wir legen Sie abschließend die Schaltfläche "löschen" s `OnClientClick` Eigenschaft für das entsprechende JavaScript, der den Produktnamen s enthält. Da die JavaScript-Zeichenfolge übergeben die `confirm(string)` Funktion begrenzt wird, Apostrophe, wir müssen mit Escapezeichen versehen, die innerhalb der Produktnamen s bereits, verwenden. Insbesondere bereits im Produktnamen s werden mit Escapezeichen versehen "`\'`".
+Nachdem Sie auf die Schaltfläche "Löschen" im CommandField verwiesen haben, werden Informationen über das an die aktuelle GridView-Zeile gebundene Produkt angezeigt. Zum Schluss legen wir die Delete-Schaltfläche s `OnClientClick`-Eigenschaft auf das entsprechende JavaScript fest, das den Namen des Produkts enthält. Da die an die `confirm(string)` Funktion über gegebene JavaScript-Zeichenfolge mithilfe von Apostrophe getrennt wird, müssen wir alle Apostrophe mit Escapezeichen versehen, die innerhalb des Namens des Produkts enthalten sind. Vor allem werden alle Apostrophe im Product s-Namen mit "`\'`" versehen.
 
-Abgeschlossen Sie mit diesen Änderungen haben, klicken auf eine Schaltfläche "löschen" im GridView zeigt eine benutzerdefinierte Bestätigung Dialogfeld (siehe Abbildung 4). Als mit der Messagebox bestätigen von FormView, wird Wenn der Benutzer auf "Abbrechen" klickt des Postbacks abgebrochen und verhindert den Löschvorgang zu.
+Nachdem diese Änderungen vorgenommen wurden, wird durch Klicken auf die Schaltfläche Löschen in der GridView ein angepasstes Bestätigungs Dialogfeld angezeigt (siehe Abbildung 4). Wie bei der Bestätigungs-MessageBox in FormView, wenn der Benutzer auf Abbrechen klickt, wird das Postback abgebrochen. Dadurch wird verhindert, dass das Löschen auftritt.
 
 > [!NOTE]
-> Diese Technik kann auch verwendet werden, programmgesteuert auf die Schaltfläche "löschen" in der CommandField in einem DetailsView zugreifen. Für die DetailsView, Sie jedoch d erstellen einen Ereignishandler für die `DataBound` Ereignisses, weil die DetailsView keine `RowDataBound` Ereignis.
+> Diese Technik kann auch verwendet werden, um Programm gesteuert auf die Schaltfläche "Löschen" im CommandField in einer DetailsView zuzugreifen. Für die DetailsView erstellen Sie jedoch einen Ereignishandler für das `DataBound`-Ereignis, da die DetailsView kein `RowDataBound`-Ereignis enthält.
 
-[![Klicken Sie auf die Schaltfläche zum Löschen von GridView-s zeigt ein benutzerdefiniertes Bestätigungsdialogfeld](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
+[![klicken auf die Schaltfläche Löschen von GridView s wird ein angepasstes Bestätigungs Dialogfeld](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
 
-**Abbildung 4**: Das GridView-s-Schaltfläche "löschen" klicken, zeigt ein Bestätigungsdialogfeld angepasst ([klicken Sie, um das Bild in voller Größe anzeigen](adding-client-side-confirmation-when-deleting-cs/_static/image10.png))
+**Abbildung 4**: durch Klicken auf die Schaltfläche "Löschen"[von](adding-client-side-confirmation-when-deleting-cs/_static/image10.png)GridView s wird ein angepasstes Bestätigungs Dialogfeld angezeigt.
 
-## <a name="using-templatefields"></a>Verwenden von TemplateFields
+## <a name="using-templatefields"></a>Verwenden von templatefields
 
-Einer der Nachteile der CommandField ist, dass die Schaltflächen über der Indizierung zugegriffen werden müssen und das resultierende Objekt in die entsprechende Schaltfläche-Typ (Schaltfläche, LinkButton oder ImageButton) umgewandelt werden muss. "Magische Zahlen" mit hartcodierten Typen problematisch, die erst zur Laufzeit nicht ermittelt werden können. Z. B. Wenn Sie oder ein anderer Entwickler die CommandField irgendwann in der Zukunft (z. B. eine Schaltfläche "Bearbeiten") oder Änderungen neue Schaltflächen hinzugefügt der `ButtonType` -Eigenschaft, der vorhandene Code weiterhin ohne Fehler kompiliert, aber auf der Seite möglicherweise ein Ausnahmefehler oder unerwartetes Verhalten, je nachdem, wie Code geschrieben wurde und welche Änderungen vorgenommen wurden.
+Einer der Nachteile des CommandField ist, dass auf seine Schaltflächen über die Indizierung zugegriffen werden muss und dass das resultierende Objekt in den entsprechenden Schalt Flächentyp (Schaltfläche, LinkButton oder ImageButton) umgewandelt werden muss. Die Verwendung von "Magic Numbers" und hart codierten Typen lädt Probleme ein, die bis zur Laufzeit nicht erkannt werden können. Wenn Sie oder ein anderer Entwickler z. b. dem CommandField zu einem späteren Zeitpunkt neue Schaltflächen hinzufügen (z. b. eine Bearbeitungs Schaltfläche) oder die `ButtonType`-Eigenschaft ändern, wird der vorhandene Code weiterhin fehlerfrei kompiliert. das Aufrufen der Seite kann jedoch eine Ausnahme oder ein unerwartetes Verhalten verursachen, je nachdem, wie Ihr Code geschrieben wurde und welche Änderungen vorgenommen wurden.
 
-Ein alternativer Ansatz besteht darin die GridView und DetailsView s CommandFields in von TemplateFields zu konvertieren. Dadurch wird ein TemplateField mit einer `ItemTemplate` , die ein LinkButton (oder der Schaltfläche oder ImageButton) für jede Schaltfläche auf der CommandField hat. Diese Schaltflächen `OnClientClick` Eigenschaften können deklarativ zugewiesen werden, wie wir gesehen, mit der FormView-Steuerelement haben oder programmgesteuert werden, in den entsprechenden zugegriffen kann `DataBound` Ereignishandler mithilfe des folgenden Musters:
+Ein alternativer Ansatz ist das Konvertieren der Befehls Felder GridView und DetailsView s in templatefields. Dadurch wird ein TemplateField-Element mit einem `ItemTemplate` generiert, das für jede Schaltfläche im CommandField einen LinkButton (oder eine Schaltfläche oder ein ImageButton) enthält. Diese Schaltflächen `OnClientClick` Eigenschaften können deklarativ zugewiesen werden, wie es bei FormView der Fall war, oder Sie können im entsprechenden `DataBound`-Ereignishandler Programm gesteuert mithilfe des folgenden Musters aufgerufen werden:
 
 [!code-csharp[Main](adding-client-side-confirmation-when-deleting-cs/samples/sample7.cs)]
 
-Wo *ControlID* ist der Wert der Schaltfläche s `ID` Eigenschaft. Während dieses Muster immer noch einen hartcodierte-Typ für die Umwandlung erforderlich ist, besteht keine Notwendigkeit es für die Indizierung für das Layout ändern, ohne einen Laufzeitfehler zu ermöglichen.
+Where *ControlID* ist der Wert der Schaltfläche s `ID`-Eigenschaft. Obwohl dieses Muster weiterhin einen hart codierten Typ für die Umwandlung erfordert, entfällt die Indizierung, sodass das Layout ohne einen Laufzeitfehler geändert werden kann.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Das JavaScript `confirm(string)` Funktion ist ein häufig verwendetes Verfahren für die Steuerung des Workflows für Übermittlung. Bei der Ausführung zeigt die Funktion ein modales, clientseitige Dialogfeld, das enthält zwei Schaltflächen OK und Abbrechen an. Klickt der Benutzer "OK", die `confirm(string)` -Funktion zurückgegeben `true`; Wenn Sie auf "Abbrechen" `false`. Diese Funktionalität, gekoppelt mit einem s Browserverhalten eine Formularübergabe Abbrechen, wenn ein Ereignishandler während der Übertragung zurückgibt `false`, können verwendet werden, um eine Bestätigung Messagebox angezeigt wird, wenn einen Datensatz zu löschen.
+Die JavaScript-`confirm(string)`-Funktion ist eine häufig verwendete Technik zum Steuern des Workflows für die Formular Übermittlung. Wenn die Funktion ausgeführt wird, wird ein modales, Client seitiges Dialogfeld angezeigt, das zwei Schaltflächen (OK und Abbrechen) enthält. Wenn der Benutzer auf OK klickt, gibt die `confirm(string)`-Funktion `true`zurück. durch Klicken auf Abbrechen wird `false`zurückgegeben Diese Funktion ist mit einem Browser-Verhalten gekoppelt, um eine Formular Übermittlung abzubrechen, wenn ein Ereignishandler während des Übermittlungs Prozesses `false`zurückgibt, kann verwendet werden, um beim Löschen eines Datensatzes eine Bestätigungs-MessageBox anzuzeigen.
 
-Die `confirm(string)` Funktion kann mit einer Schaltfläche Web Steuerelement s der clientseitigen verbunden werden `onclick` Ereignishandler über das Steuerelement s `OnClientClick` Eigenschaft. Bei der Arbeit mit der löschen-Schaltfläche in einer Vorlage – entweder in einem FormView-Vorlagen s oder in ein TemplateField im DetailsView oder GridView - kann diese Eigenschaft festgelegt werden entweder deklarativ oder programmgesteuert, wie in diesem Tutorial beschrieben.
+Die `confirm(string)`-Funktion kann einem Client seitigen `onclick` Ereignishandler für Schaltflächen-websteuer Elemente über die Steuerelement-`OnClientClick` Eigenschaft zugeordnet werden. Beim Arbeiten mit einer Lösch Schaltfläche in einer Vorlage (entweder in einer der FormView s-Vorlagen oder in einem TemplateField in der DetailsView oder GridView), kann diese Eigenschaft entweder deklarativ oder Programm gesteuert festgelegt werden, wie in diesem Tutorial gezeigt.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Zurück](implementing-optimistic-concurrency-cs.md)

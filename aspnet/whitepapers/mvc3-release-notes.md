@@ -8,12 +8,12 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 46d051a5eba6501cf36910b7674ce6400597de8a
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.openlocfilehash: 504202068f5db4f8614bba02e8066ffecfd15b48
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057017"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74619239"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -91,7 +91,7 @@ ms.locfileid: "74057017"
 - [ERS](#0.1__Toc274034231)
 
 <a id="overview"></a>
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
 In diesem Dokument wird die Veröffentlichung von ASP.NET MVC 3 RTM für Visual Studio 2010 beschrieben. ASP.NET MVC ist ein Framework für die Entwicklung von Webanwendungen, die das Model-View-Controller (MVC)-Muster verwenden. Der ASP.NET MVC 3-Installer umfasst die folgenden Komponenten:
 
@@ -102,7 +102,7 @@ In diesem Dokument wird die Veröffentlichung von ASP.NET MVC 3 RTM für Visual 
 - Microsoft-Paket-Manager für .net (nuget)
 - Ein Update für Visual Studio 2010, das die Unterstützung für Razor-Syntax ermöglicht. (Ausführliche Informationen finden Sie im Knowledge Base-Artikel 2483190.)
 
-Den vollständigen Satz der Anmerkungen zu dieser Version für jede Vorabversion von ASP.NET MVC 3 finden Sie auf der ASP.NET-Website unter der folgenden URL:
+Sämtliche Versionshinweise zu den Vorabversionen von ASP.NET MVC 3 können unter der folgenden URL von der ASP.NET-Website abgerufen werden:
 
 https://www.asp.net/learn/whitepapers/mvc3-release-notes
 
@@ -130,7 +130,7 @@ Die ASP.NET MVC 3-Laufzeitkomponenten erfordern folgende Software:
 - Visual Studio 2010 oder Visual Web Developer 2010 Express.
 
 <a id="documentation"></a>
-## <a name="documentation"></a>Dokumentation
+## <a name="documentation"></a>Documentation
 
 Die Dokumentation für ASP.NET MVC ist auf der MSDN-Website unter der folgenden URL verfügbar:
 
@@ -141,11 +141,11 @@ Tutorials und weitere Informationen zu ASP.NET MVC sind auf der MVC-Seite der AS
 [https://www.asp.net/mvc/](../mvc/index.md)
 
 <a id="support"></a>
-## <a name="support"></a>Unterstützung
+## <a name="support"></a>-Unterstützung
 
-Dies ist eine vollständig unterstützte Version. Informationen zum technischen Support finden Sie auf der Microsoft-Support- [Website](https://support.microsoft.com/).
+Für diese Version wird vollständige Unterstützung geboten. Informationen zum technischen Support finden Sie auf der Microsoft-Support- [Website](https://support.microsoft.com/).
 
-Außerdem können Sie Fragen zu dieser Version im ASP.NET MVC-Forum stellen, in dem Mitglieder der ASP.net-Community häufig informelle Unterstützung bereitstellen können:
+Darüber hinaus können Sie im ASP.NET MVC-Forum Fragen zu dieser Version stellen. Oftmals können die in diesem Forum aktiven Mitglieder der ASP.NET-Community informelle Unterstützung leisten.
 
 [https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)
 
@@ -156,8 +156,8 @@ ASP.NET MVC 3 kann parallel zu ASP.NET MVC 2 auf demselben Computer installiert 
 
 Gehen Sie folgendermaßen vor, um eine vorhandene ASP.NET MVC 2-Anwendung manuell auf Version 3 zu aktualisieren:
 
-1. Erstellen Sie ein neues leeres ASP.NET MVC 3-Projekt auf Ihrem Computer. Dieses Projekt enthält einige Dateien, die für das Upgrade benötigt werden.
-2. Kopieren Sie die folgenden Dateien aus dem ASP.NET MVC 3-Projekt in den entsprechenden Speicherort Ihres ASP.NET MVC 2-Projekts. Sie müssen alle Verweise auf die jQuery-Bibliothek aktualisieren, um den neuen Dateinamen (jQuery-1.5.1. js) zu berücksichtigen: 
+1. Erstellen Sie ein neues leeres ASP.NET MVC 3-Projekt auf Ihrem Computer. Dieses Projekt enthält einige Dateien, die für die Aktualisierung benötigt werden.
+2. Kopieren Sie die folgenden Dateien aus dem ASP.NET MVC 3-Projekt an die entsprechende Position Ihres ASP.NET MVC 2-Projekts. Um dem neuen Dateinamen (jQuery-1.5.1.js) Rechnung zu tragen, müssen Sie sämtliche Verweise auf die jQuery-Bibliothek aktualisieren: 
 
     - /Views/Web.config
     - /packages.config
@@ -165,21 +165,21 @@ Gehen Sie folgendermaßen vor, um eine vorhandene ASP.NET MVC 2-Anwendung manuel
     - /Content/Themes/-\*.\*
 3. Kopieren Sie den Ordner " *Packages* " im Stammverzeichnis der leeren ASP.NET MVC 3-Projekt Mappe in das Stammverzeichnis der Projekt Mappe, das sich in dem Verzeichnis befindet, in dem sich die SLN-Datei der Projekt Mappe befindet.
 4. Wenn Ihr ASP.NET MVC 2-Projektbereiche enthält, kopieren Sie die Datei/views/Web.config in den Ordner *views* jedes Bereichs.
-5. In den Web. config-Dateien im ASP.NET MVC 2-Projekt müssen Sie die ASP.NET MVC-Version Global suchen und ersetzen. Suchen Sie Folgendes: 
+5. In den Web. config-Dateien im ASP.NET MVC 2-Projekt müssen Sie die ASP.NET MVC-Version Global suchen und ersetzen. Suchen Sie nach: 
 
     [!code-console[Main](mvc3-release-notes/samples/sample1.cmd)]
 
-    Ersetzen Sie es durch Folgendes:
+    Ersetzen Sie dies durch:
 
     [!code-console[Main](mvc3-release-notes/samples/sample2.cmd)]
 6. Löschen Sie in Projektmappen-Explorer den Verweis auf *System. Web. MVC* (der auf die dll von Version 2 verweist), und fügen Sie dann einen Verweis auf *System. Web. MVC* (v 3.0.0.0) hinzu.
-7. Fügen Sie einen Verweis auf "System. Web. Webseiten. dll" und "System. Web. Hilfsprogramme. dll" hinzu. Diese Assemblys befinden sich in den folgenden Ordnern: 
+7. Fügen Sie einen Verweis auf "System. Web. Webseiten. dll" und "System. Web. Hilfsprogramme. dll" hinzu. Diese Assemblies befinden sich in den folgenden Ordnern: 
 
-    - % Program Files% \ Microsoft ASP. net\asp.NET MVC 3 \ Assemblys
-    - % Program Files% \ Microsoft ASP. net\asp.net Web-webbenutzer\v1.0\assemblys
-8. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie Projekt entladen aus. Klicken Sie dann mit der rechten Maustaste erneut auf den Projektnamen, und wählen Sie *ProjectName*. csproj bearbeiten aus.
+    - %ProgramFiles%\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
+    - %ProgramFiles%\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
+8. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und klicken Sie auf Projekt entfernen. Klicken Sie dann mit der rechten Maustaste erneut auf den Projektnamen, und wählen Sie *ProjectName*. csproj bearbeiten aus.
 9. Suchen Sie nach dem *projecttypguids* -Element, und ersetzen Sie {F85E285D-A4E0-4152-9332-AB1D724D3325} durch {E53F8FEA-EAE0-44A6-8774-FFD645390401}.
-10. Speichern Sie die Änderungen, klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie dann Projekt erneut laden.
+10. Speichern Sie die Änderungen, klicken Sie mit der rechten Maustaste auf den Projektnamen, und wählen Sie dann Projekt erneut laden.
 11. Fügen Sie in der Web. config-Stammdatei der *Anwendung die folgenden Einstellungen zum Abschnitt* Assemblys hinzu. 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample3.xml)]
@@ -193,68 +193,68 @@ Gehen Sie folgendermaßen vor, um eine vorhandene ASP.NET MVC 2-Anwendung manuel
 In diesem Abschnitt werden die Änderungen beschrieben, die in der ASP.NET MVC 3 Tools Update-Version seit der Version ASP.NET MVC 3 RTM vorgenommen wurden.
 
 <a id="tu-AddControllerDialog"></a>
-### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>Das Dialogfeld "Controller hinzufügen" kann jetzt Controller mit Ansichten und Datenzugriffs Code Gerüstbau
+### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>Das Dialogfeld "Controller hinzufügen" kann Controller jetzt mit einem Gerüst aus Ansichten und Code für den Datenzugriff versehen
 
-Gerüstbau ist eine Möglichkeit, schnell einen Controller und Ansichten für Ihre Anwendung zu erstellen. Nachdem der Code generiert wurde, können Sie ihn bearbeiten, um die Anforderungen des Projekts zu erfüllen.
+Gerüstbau stellt eine Möglichkeit dar, schnell und einfach einen Controller und Ansichten für Ihre Anwendung zu erstellen. Nachdem der Code generiert wurde, können Sie ihn bearbeiten, um die Anforderungen des Projekts zu erfüllen.
 
-Um das Dialog *Feld Controller hinzufügen* in ASP.NET MVC 3 aufzurufen, klicken Sie in *Projektmappen-Explorer*mit der rechten Maustaste auf den Ordner *Controller* , klicken Sie auf *Hinzufügen*und dann auf *Controller*. Das Dialogfeld wurde erweitert, um zusätzliche gerüstingoptionen zu bieten.
+Um das Dialog *Feld Controller hinzufügen* in ASP.NET MVC 3 aufzurufen, klicken Sie in *Projektmappen-Explorer*mit der rechten Maustaste auf den Ordner *Controller* , klicken Sie auf *Hinzufügen*und dann auf *Controller*. Das Dialogfeld wurde verbessert und bietet nun zusätzliche Optionen für den Gerüstbau.
 
 ![](mvc3-release-notes/_static/image1.png)
 
-Standardmäßig sind drei Gerüstbau Vorlagen verfügbar.
+In der Standardeinstellung stehen die drei folgenden Gerüstbauvorlagen zur Verfügung.
 
 #### <a name="empty-controller"></a>Leerer Controller
 
-Mit dieser Vorlage wird eine leere Controller Datei generiert. Diese Vorlage entspricht nicht der Überprüfung von *Add-Aktionen für CREATE-, Edit-, Details-und DELETE-Szenarien* in früheren Versionen von ASP.NET MVC. Wenn Sie diese Option auswählen, sind keine weiteren Optionen verfügbar.
+Diese Vorlage erzeugt eine leere Controllerdatei. Diese Vorlage entspricht nicht der Überprüfung von *Add-Aktionen für CREATE-, Edit-, Details-und DELETE-Szenarien* in früheren Versionen von ASP.NET MVC. Wenn Sie diese Vorlage auswählen, stehen keine weiteren Optionen zur Verfügung.
 
 #### <a name="controller-with-empty-readwrite-actions"></a>Controller mit leeren Lese-/Schreibaktionen
 
-Diese Vorlage generiert eine Controller Datei, die über alle erforderlichen Aktionsmethoden, aber keinen Implementierungs Code in den-Methoden verfügt. Diese Vorlage entspricht der Überprüfung von *Aktionen zum Erstellen, bearbeiten, hinzufügen und Löschen von Aktionen* in früheren Versionen von ASP.NET MVC. Wenn Sie diese Option auswählen, sind keine weiteren Optionen verfügbar.
+Diese Vorlage erzeugt eine Controllerdatei, die alle erforderlichen Aktionsmethoden enthält, wobei die Methoden jedoch keinen Implementierungscode besitzen. Diese Vorlage entspricht der Überprüfung von *Aktionen zum Erstellen, bearbeiten, hinzufügen und Löschen von Aktionen* in früheren Versionen von ASP.NET MVC. Wenn Sie diese Vorlage auswählen, stehen keine weiteren Optionen zur Verfügung.
 
-#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>Controller mit Lese-/Schreibaktionen und Ansichten unter Verwendung Entity Framework
+#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>Controller mit Lese-/Schreibaktionen und Ansichten unter Verwendung von Entity Framework
 
-Mit dieser Vorlage können Sie schnell eine funktionierende Dateneingabe-Benutzeroberfläche erstellen. Es generiert Code, der eine Reihe allgemeiner Anforderungen und Szenarien behandelt, wie z. b. Folgendes:
+Diese Vorlage ermöglicht es Ihnen, schnell eine funktionstüchtige Dateneingabe-Benutzeroberfläche zu erstellen. Sie erzeugt Code, der eine Vielzahl gängiger Anforderungen und Szenarien behandelt, so beispielsweise:
 
-- *Datenzugriff*. Der generierte Code liest und schreibt Entitäten in einer Datenbank. Dies funktioniert mit dem Entity Framework Code First Ansatz, wenn Sie eine vorhandene Datenkontext Klasse auswählen oder wenn Sie die Vorlage eine neue *dbcontext* -Klasse generieren lassen. Es funktioniert auch mit dem Entity Framework Database First oder Model First Ansatz, wenn Sie eine vorhandene *ObjectContext* -Klasse auswählen.
-- *Validierung*. Der generierte Code verwendet ASP.NET MVC-Modell Bindung und Metadatenfeatures, damit Formular Übermittlungen gemäß den in der Modell Klasse deklarierten Regeln validiert werden. Dies schließt integrierte Validierungsregeln ein, z. b. die *erforderlichen* und *StringLength* -Attribute sowie benutzerdefinierte Validierungsregeln.
-- *1:* n-Beziehungen. Wenn Sie 1: n-Fremdschlüssel Beziehungen zwischen den Modellklassen definieren, erzeugt der generierte Code Dropdown Listen für die Auswahl verwandter Entitäten. Beispielsweise können Sie die folgenden Modellklassen nach Entity Framework Code First Konventionen definieren: 
+- *Datenzugriff*. Der erzeugte Code liest und schreibt Entitäten in einer Datenbank. Dies funktioniert mit dem Entity Framework Code First Ansatz, wenn Sie eine vorhandene Datenkontext Klasse auswählen oder wenn Sie die Vorlage eine neue *dbcontext* -Klasse generieren lassen. Es funktioniert auch mit dem Entity Framework Database First oder Model First Ansatz, wenn Sie eine vorhandene *ObjectContext* -Klasse auswählen.
+- *Validierung*. Der erzeugte Code verwendet ASP.NET MVC-Modellbindung und Metadatenfunktionen, um übermittelte Formulare entsprechend der in Ihrer Modellklasse deklarierten Regeln zu überprüfen. Dies schließt integrierte Validierungsregeln ein, z. b. die *erforderlichen* und *StringLength* -Attribute sowie benutzerdefinierte Validierungsregeln.
+- *1:* n-Beziehungen. Wenn Sie 1:n-Fremdschlüssel-Beziehungen zwischen Ihren Modellklassen definieren, generiert der erzeugte Code Dropdownlisten für die Auswahl von verknüpften Entitäten. So könnten Sie beispielsweise auf Grundlage der Entity Framework Code First-Konventionen die folgenden Modellklassen definieren: 
 
     [!code-csharp[Main](mvc3-release-notes/samples/sample5.cs)]
 
     Wenn Sie dann einen Controller für die *Product* -Klasse Gerüstbau, ermöglichen seine Ansichten Benutzern das Auswählen eines *kategorieobjekts* für jede *Produkt* Instanz.
 
     Diese Vorlage ermöglicht zusätzliche Optionen im Dialogfeld *Controller hinzufügen* . Für *Modellklassen*können Sie eine beliebige Modell Klasse in der Projekt Mappe auswählen, die den Typ der Daten bestimmt, die Benutzer erstellen oder bearbeiten können:
-- Wenn Sie Entity Framework Code First verwenden möchten, können Sie eine beliebige Modell Klasse auswählen.
-- Wenn Sie Entity Framework Database First oder Entity Framework Model First verwenden, stellen Sie sicher, dass Sie eine Entitäts Klasse auswählen, die im konzeptionellen Modell definiert ist.
+- Wenn Sie Entity Framework Code First verwenden möchten, können Sie jede beliebige Modellklasse wählen.
+- Wenn Sie Entity Framework Database First oder Entity Framework Model First verwenden, müssen Sie darauf achten, eine in Ihrem konzeptionellen Modell definierte Entitätenklasse zu wählen.
 
 Für die *Datenkontext Klasse*können Sie folgende Optionen auswählen:
 
-- Wenn Sie Code First verwenden möchten und keine Datenkontext Klasse vorhanden ist, wählen Sie * * neuer Datenkontext * * aus. Eine Datenkontext Klasse wird dann für Sie generiert.
-- Wenn Sie Code First verwenden und über eine vorhandene Datenkontext Klasse verfügen möchten, wählen Sie diese hier aus. Er wird aktualisiert, um die von Ihnen ausgewählte Modell Klasse beizubehalten.
-- Wenn Sie Database First oder Model First verwenden, wählen Sie hier die Objekt Kontext Klasse aus.
+- Wenn Sie Code First verwenden möchten und keine Datenkontext Klasse vorhanden ist, wählen Sie * * neuer Datenkontext * * aus. In diesem Fall wird eine neue Datenkontextklasse für Sie erstellt.
+- Wenn Sie Code First verwenden möchten und über eine bestehende Datenkontextklasse verfügen, so wählen Sie diese hier aus. In diesem Fall wird sie aktualisiert, um die ausgewählte Modellklasse beizubehalten.
+- Wenn Sie Database First oder Model First verwenden, so wählen Sie hier Ihre Objektkontextklasse aus.
 
-Wählen Sie für Sichten das Ansichts Modul aus, das Sie verwenden möchten, oder wählen Sie keine aus, wenn Sie keine Ansichten für das Gerüst verwenden möchten.
+Wählen Sie unter Ansichten die gewünschte Ansichts-Engine aus, oder wählen Sie Keines, wenn Sie keine Ansichten in das Gerüst aufnehmen möchten.
 
-Sie können erweiterte optionsto auswählen, um weitere Optionen für die generierten Sichten anzugeben. Beispielsweise können Sie das zu verwendende Layout oder die Master Seite auswählen.
+Sie können erweiterte optionsto auswählen, um weitere Optionen für die generierten Sichten anzugeben. Beispielsweise können Sie die zu verwendende Layout- oder Masterseite auswählen.
 
 <a id="tu-ImprovementsNewDialogBox"></a>
-### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>Verbesserungen am Dialog Feld "ASP.NET MVC 3 New Project"
+### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>Verbesserungen am Dialogfeld "Neues ASP.NET MVC 3-Projekt"
 
 Das Dialogfeld, das Sie zum Erstellen neuer ASP.NET MVC 3-Projekte verwenden, umfasst mehrere Verbesserungen, wie unten aufgeführt.
 
 ![](mvc3-release-notes/_static/image2.png)
 
-#### <a name="new-intranet-project-template"></a>Neue Vorlage "intranetprojekt"
+#### <a name="new-intranet-project-template"></a>Neue Vorlage für Intranetprojekte
 
-Die Projektvorlagen Liste enthält eine neue Vorlage für Intranetanwendungen. Diese Vorlage enthält Einstellungen zum Erstellen einer Webanwendung mithilfe der Windows-Authentifizierung anstelle der Formular Authentifizierung. Da eine Intranetanwendung einige IIS-Einstellungen erfordert, die in einer Projektvorlage nicht gekapselt werden können, enthält die Vorlage eine Infodatei mit Anweisungen dazu, wie die Projektvorlage in IIS funktioniert. Die Dokumentation für die Vorlage neue Intranetanwendung ist auf der MSDN-Website unter der folgenden URL verfügbar:
+Die Liste Projektvorlage enthält nun eine neue Vorlage Intranetanwendung. Diese Vorlage enthält Einstellungen für das Erstellen von Webanwendungen unter Verwendung der Windowsauthentifizierung (anstatt der Formularauthentifizierung). Da eine Intranetanwendung einige IIS-Einstellungen erfordert, die in einer Projektvorlage nicht gekapselt werden können, enthält die Vorlage eine Infodatei mit Anweisungen dazu, wie die Projektvorlage in IIS funktioniert. Die Dokumentation für die Vorlage neue Intranetanwendung ist auf der MSDN-Website unter der folgenden URL verfügbar:
 
 [https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
-#### <a name="project-templates-are-now-html5-enabled"></a>Die Projektvorlagen sind jetzt HTML5-fähig.
+#### <a name="project-templates-are-now-html5-enabled"></a>Projektvorlagen unterstützen nun HTML5
 
-Das Dialogfeld "Neues Projekt" enthält jetzt eine Option zum Hinzufügen von HTML5-spezifischen Funktionen zu den Projektvorlagen. Das Auswählen der Option bewirkt, dass Sichten generiert werden, die die neuen HTML5-`<header>`, `<footer>`und `<navigation>` Elemente enthalten.
+Das Dialogfeld "Neues Projekt" enthält nun eine Option, mit der die Projektvorlagen um HTML5-spezifische Funktionen ergänzt werden können. Das Auswählen der Option bewirkt, dass Sichten generiert werden, die die neuen HTML5-`<header>`, `<footer>`und `<navigation>` Elemente enthalten.
 
-Beachten Sie, dass in früheren Versionen von Browsern keine HTML5-spezifischen Tags unterstützt werden. Die HTML5-Projektvorlagen enthalten einen Verweis auf die modernizr-Bibliothek, um diese Einschränkung zu beheben. (Weitere Informationen finden Sie im nächsten Abschnitt.)
+Beachten Sie bitte, dass ältere Browserversionen keine Unterstützung für HTML5-spezifische Tags bieten. Zur Überwindung dieser Einschränkung enthalten die HTML5-Projektvorlagen einen Verweis auf die Modernizr-Bibliothek (siehe nächster Abschnitt).
 
 <a id="tu-Modernizr"></a>
 ### <a name="project-templates-now-include-modernizr-17"></a>Projektvorlagen enthalten jetzt modernizr 1,7
@@ -262,44 +262,44 @@ Beachten Sie, dass in früheren Versionen von Browsern keine HTML5-spezifischen 
 Modernizr ist eine JavaScript-Bibliothek, die die Unterstützung für CSS 3 und HTML5 in Browsern ermöglicht, die diese Features noch nicht unterstützen. Diese Bibliothek ist als vorinstalliertes nuget-Paket in Vorlagen für ASP.NET MVC 3-Projekte enthalten. Weitere Informationen zu modernizr finden Sie unter [http://www.modernizr.com/](http://www.modernizr.com/).
 
 <a id="tu-UpdatedJQuery"></a>
-### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>Zu den Projektvorlagen zählen aktualisierte Versionen von jQuery, jQuery UI und jQuery-Validierung.
+### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>Neue Projektvorlagen: Aktualisierte Versionen von jQuery, jQuery UI und jQuery Validation
 
 Die Projektvorlagen enthalten nun die folgenden Versionen der jQuery-Skripts:
 
 - jQuery 1.5.1
-- jQuery-Validierung 1,8
-- jQuery-Benutzeroberfläche 1.8.11
+- jQuery Validation 1.8
+- jQuery UI 1.8.11
 
-Diese Bibliotheken sind als vorinstallierte nuget-Pakete enthalten.
+Diese Bibliotheken sind als vorinstallierte NuGet-Pakete enthalten.
 
 <a id="tu-EF"></a>
 ### <a name="project-templates-now-include-adonet-entity-framework-41-as-a-pre-installed-nuget-package"></a>Projektvorlagen enthalten nun ADO.NET Entity Framework 4,1 als vorinstalliertes nuget-Paket.
 
-Der ADO.NET Entity Framework 4,1 umfasst das Code First Feature. Code First ist ein neues Entwicklungsmuster für den ADO.NET-Entity Framework, das eine Alternative zu den vorhandenen Database First und Model First Mustern bereitstellt.
+Der ADO.NET Entity Framework 4,1 umfasst das Code First Feature. Code First ist ein neues Entwicklungsmuster für das ADO.NET Entity Framework, das eine Alternative zu den bereits bestehenden Mustern Database First und Model First bietet.
 
-Code First ist darauf ausgerichtet, das Modell mit poco-Klassen ("Plain Old CLR Objects") zu definieren, C#die in Visual Basic oder geschrieben wurden. Diese Klassen können dann einer vorhandenen Datenbank zugeordnet oder zum Generieren eines Datenbankschemas verwendet werden. Zusätzliche Konfigurationen können mithilfe von *DataAnnotations* -Attributen oder mithilfe von fließenden APIs bereitgestellt werden.
+Code First legt das Hauptaugenmerk auf die Definition Ihres Modells unter Verwendung von in Visual Basic oder C# geschriebenen POCO-Klassen (Plain Old CLR Objects). Diese Klassen können dann einer bestehenden Datenbank zugeordnet oder für die Erstellung eines Datenbankschemas verwendet werden. Zusätzliche Konfigurationen können mithilfe von *DataAnnotations* -Attributen oder mithilfe von fließenden APIs bereitgestellt werden.
 
 Die Dokumentation zur Verwendung von Code firstwith ASP.NET MVC ist auf der ASP.NET-Website unter den folgenden URLs verfügbar:
 
 [https://www.asp.net/mvc/tutorials/getting-started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 <a id="tu-JavaScriptLibsNuget"></a>
-### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>Projektvorlagen enthalten JavaScript-Bibliotheken als vorinstallierte nuget-Pakete.
+### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>Neue Projektvorlagen: JavaScript-Bibliotheken (als vorinstallierte NuGet-Pakete)
 
-Wenn Sie ein neues ASP.NET MVC 3-Projekt erstellen, enthält das Projekt die zuvor erwähnten JavaScript-Dateien (z. b. die modernizr-Bibliothek), indem Sie diese mithilfe von nuget installieren, anstatt die Skripts direkt dem Ordner "Scripts" in der Projektvorlage hinzuzufügen. Haus. Dies ermöglicht es Ihnen, die Skripts mit nuget auf die neueste Version zu aktualisieren, wenn neue Versionen der Skripts veröffentlicht werden.
+Wenn Sie ein neues ASP.NET MVC 3-Projekt erstellen, enthält das Projekt die zuvor erwähnten JavaScript-Dateien (z. b. die modernizr-Bibliothek), indem Sie diese mithilfe von nuget installieren, anstatt die Skripts direkt dem Ordner "Scripts" in der Projektvorlage hinzuzufügen. Haus. Auf diese Weise können Sie die Skripts mit NuGet jederzeit auf die jeweils neueste Version aktualisieren.
 
-Wenn z. b. die Häufigkeit neuer jQuery-Releases auftritt, ist die Version von jQuery, die in der Projektvorlage enthalten ist, zu einem bestimmten Zeitpunkt veraltet. Da jQuery jedoch als installiertes nuget-Paket enthalten ist, werden Sie im nuget-Dialogfeld benachrichtigt, wenn neuere Versionen von jQuery verfügbar sind.
+Bedenkt man beispielsweise die Häufigkeit neuer jQuery-Versionen, kann man mit Sicherheit davon ausgehen, dass die in der Projektvorlage enthaltene Version von jQuery irgendwann einmal veraltet sein wird. Da jQuery jedoch als installiertes NuGet-Paket enthalten ist, werden Sie im NuGet-Dialogfeld benachrichtigt, sobald eine neuere Version von jQuery verfügbar ist.
 
-Da jQuery die Versionsnummer im Dateinamen enthält, erfordert die Aktualisierung von jQuery auf die aktuelle Version auch das Aktualisieren des `<script>`-Tags, das auf die jQuery-Datei verweist, damit der neue Dateiname verwendet wird. Andere enthaltene Skript Bibliotheken enthalten nicht die Versionsnummer im Skriptnamen, sodass Sie leichter auf die neuesten Versionen aktualisiert werden können.
+Da jQuery die Versionsnummer im Dateinamen enthält, erfordert die Aktualisierung von jQuery auf die aktuelle Version auch das Aktualisieren des `<script>`-Tags, das auf die jQuery-Datei verweist, damit der neue Dateiname verwendet wird. Andere enthaltene Skriptbibliotheken tragen keine Versionsnummer im Skriptnamen und können daher einfacher auf die jeweils neueste Version aktualisiert werden.
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>Bekannte Probleme
 
 - In einigen Fällen schlägt die Installation möglicherweise mit der Fehlermeldung "Fehler bei der Installation mit Fehlercode (0x80070643)" fehl. Informationen zum umgehen dieses Problems finden Sie im [Knowledge Base-Artikel 2531566](https://support.microsoft.com/kb/2531566).
-- Das Gerüst für das Hinzufügen eines Controllers umfasst keine Gerüstbau-Entitäten, die die Unterstützung von Entitäts Vererbung in Entity Framework nutzen Wenn z. b. eine Basisklasse der *Person* ist, die von einer *Student* -Klasse geerbt wird, führt das Gerüstbau der *Student* -Klasse zu generiertem Code, der nicht kompiliert wird.
+- Der Gerüstbauprozess für das Hinzufügen eines Controllers berücksichtigt keine Entitäten, die von der Entitätenvererbungs-Unterstützung in Entity Framework Nutzen machen. Wenn z. b. eine Basisklasse der *Person* ist, die von einer *Student* -Klasse geerbt wird, führt das Gerüstbau der *Student* -Klasse zu generiertem Code, der nicht kompiliert wird.
 - Das Erstellen eines neuen ASP.NET MVC 3-Projekts in einem Projektmappenordner verursacht einen *NullReferenceException* -Fehler. Die Problem Umgehung besteht darin, das ASP.NET MVC 3-Projekt im Stammverzeichnis der Projekt Mappe zu erstellen und dann in den Projektmappenordner zu verschieben.
-- IntelliSense für Razor-Syntax funktioniert nicht, wenn reschärfere installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
-- Während der Installation werden im Dialogfeld EULA-Annahme die Lizenzbedingungen in einem Fenster angezeigt, das kleiner als beabsichtigt ist.
+- IntelliSense für Razor-Syntax funktioniert nicht, wenn ReSharper installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
+- Während der Installation werden die Lizenzbedingungen im Dialogfeld zum Akzeptieren des EULAs in einem zu kleinen Fenster angezeigt.
 - Beim Bearbeiten einer Razor-Ansicht (. cshtml oder). *vbhtml* -Datei), Ansichten. ASP.NET MVC 3 enthält keine Ausschnitte für Razor-Ansichten. aspxauswählt einen Code Ausschnitt für ASP.NET MVC zeigt Ausschnitte für
 - Wenn Sie ASP.NET MVC 3 für Visual Web Developer Express auf einem Computer installieren, auf dem Visual Studio nicht installiert ist, und später Visual Studio installieren, müssen Sie ASP.NET MVC 3 neu installieren. Visual Studio und Visual Web Developer Express Teilen Komponenten auf, die mit dem ASP.NET MVC 3-Installer aktualisiert werden. Dasselbe Problem tritt auf, wenn Sie ASP.NET MVC 3 für Visual Studio auf einem Computer installieren, auf dem Visual Web Developer Express nicht installiert ist, und anschließend Visual Web Developer Express später installieren.
 
@@ -347,15 +347,15 @@ Wenn Sie eine Razor-Datei mit Projektmappen-Explorer umbenennen, während die Da
 - Der ASP.NET MVC 3-Installer kann nur eine anfängliche Version des nuget-Paket-Managers installieren. Nachdem Sie die anfängliche Version installiert haben, kann nuget mit dem Erweiterungs-Manager von Visual Studio installiert und aktualisiert werden. Wenn Sie nuget bereits installiert haben, navigieren Sie zum Visual Studio-Erweiterungs Katalog, um ein Update auf die neueste Version von nuget durchzusetzen.
 - Das Erstellen eines neuen ASP.NET MVC 3-Projekts in einem Projektmappenordner verursacht einen *NullReferenceException* -Fehler. Die Problem Umgehung besteht darin, das ASP.NET MVC 3-Projekt im Stammverzeichnis der Projekt Mappe zu erstellen und dann in den Projektmappenordner zu verschieben.
 - Das Installationsprogramm kann deutlich länger dauern als vorherige Versionen von ASP.NET MVC. Dies liegt daran, dass die Komponenten von Visual Studio 2010 aktualisiert werden.
-- IntelliSense für Razor-Syntax funktioniert nicht, wenn reschärfere installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
+- IntelliSense für Razor-Syntax funktioniert nicht, wenn ReSharper installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
 - Bei ccshtml-und vbhtml-Sichten, die mit der Beta Version von ASP.NET MVC 3 erstellt wurden, ist die Buildaktion nicht ordnungsgemäß festgelegt. das Ergebnis ist, dass diese Ansichts Typen bei der Veröffentlichung des Projekts ausgelassen werden. Der buildaktionswert für diese Dateien sollte auf "Content" festgelegt werden. ASP.NET MVC 3 RTM korrigiert dieses Problem für neue Dateien, korrigiert jedoch nicht die Einstellung für vorhandene Dateien für ein Projekt, das mit vorab Versionen erstellt wurde.
 - ![](mvc3-release-notes/_static/image3.png)
-- Während der Installation werden im Dialogfeld EULA-Annahme die Lizenzbedingungen in einem Fenster angezeigt, das kleiner als beabsichtigt ist.
+- Während der Installation werden die Lizenzbedingungen im Dialogfeld zum Akzeptieren des EULAs in einem zu kleinen Fenster angezeigt.
 - Wenn Sie eine Razor-Ansicht (cshtml-Datei) bearbeiten, ist das Menü Element gehe zu Controller in Visual Studio nicht verfügbar, und es sind keine Code Ausschnitte vorhanden.
 - Wenn Sie ASP.NET MVC 3 für Visual Web Developer Express auf einem Computer installieren, auf dem Visual Studio nicht installiert ist, und später Visual Studio installieren, müssen Sie ASP.NET MVC 3 neu installieren. Visual Studio und Visual Web Developer Express Teilen Komponenten auf, die mit dem ASP.NET MVC 3-Installer aktualisiert werden. Dasselbe Problem tritt auf, wenn Sie ASP.NET MVC 3 für Visual Studio auf einem Computer installieren, auf dem Visual Web Developer Express nicht installiert ist, und anschließend Visual Web Developer Express später installieren.
 
 <a id="RTM-BC"></a>
-## <a name="breaking-changes"></a>Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen
+## <a name="breaking-changes"></a>Wichtige Änderungen
 
 - In früheren Versionen von ASP.NET MVC werden Aktionsfilter pro Anforderung erstellt, außer in wenigen Fällen. Dieses Verhalten war nie ein garantiertes Verhalten, aber nur ein Implementierungsdetail, und der Vertrag für Filter war, Sie zustandslos zu überdenken. In ASP.NET MVC 3 werden Filter aggressiver zwischengespeichert. Daher können alle benutzerdefinierten Aktionsfilter, die den Instanzzustand nicht ordnungsgemäß speichern, beschädigt werden.
 - Die Ausführungsreihenfolge für Ausnahme Filter hat sich bei Ausnahme Filtern mit dem gleichen *Reihen* folgen Wert geändert. In ASP.NET MVC 2 und früheren Versionen werden Ausnahme Filter auf dem Controller, die denselben *Reihen* folgen Wert wie die für eine Aktionsmethode aufweisen, vor der Ausnahme Filter für die Aktionsmethode ausgeführt. Dies wäre in der Regel der Fall, wenn Ausnahme Filter ohne einen angegebenen *Bestell* Wert angewendet werden. In ASP.NET MVC 3 wurde diese Reihenfolge umgekehrt, sodass der spezifischere Ausnahmehandler zuerst ausgeführt wird. Wie in früheren Versionen werden die Filter in der angegebenen Reihenfolge ausgeführt, wenn die *Order* -Eigenschaft explizit angegeben wird.
@@ -457,7 +457,7 @@ Ein Fehler wurde behoben, bei dem die *LabelFor* -Methode ein *for* -Attribut ge
 In früheren Versionen wurden explizite Werte, die an die *renderaction* -Methode weitergegeben wurden, zugunsten der aktuellen Formular Werte während der Modell Bindung innerhalb einer untergeordneten Aktion ignoriert. Durch die Korrektur wird sichergestellt, dass explizite Werte während der Modell Bindung Vorrang haben.
 
 <a id="_Toc2_BC"></a>
-## <a name="breaking-changes"></a>Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen
+## <a name="breaking-changes"></a>Wichtige Änderungen
 
 - In früheren Versionen von ASP.NET MVC wurden Aktionsfilter pro Anforderung außer in einigen Fällen erstellt. Dieses Verhalten war nie ein garantiertes Verhalten, aber nur ein Implementierungsdetail, und der Vertrag für Filter war, Sie zustandslos zu überdenken. In ASP.NET MVC 3 werden Filter aggressiver zwischengespeichert. Daher können alle benutzerdefinierten Aktionsfilter, die den Instanzzustand nicht ordnungsgemäß speichern, beschädigt werden.
 - Die Ausführungsreihenfolge für Ausnahme Filter hat sich bei Ausnahme Filtern mit dem gleichen *Reihen* folgen Wert geändert. In ASP.NET MVC 2 und früheren Versionen wurden Ausnahme Filter auf dem Controller, die denselben *Bestell* Wert wie die in einer Aktionsmethode hatten, vor der Ausnahme Filter für die Aktionsmethode ausgeführt. Dies wäre in der Regel der Fall, wenn Ausnahme Filter ohne einen angegebenen *Bestell* Wert angewendet wurden. In ASP.NET MVC 3 wurde diese Reihenfolge umgekehrt, sodass der spezifischere Ausnahmehandler zuerst ausgeführt wird. Wie in früheren Versionen werden die Filter in der angegebenen Reihenfolge ausgeführt, wenn die *Order* -Eigenschaft explizit angegeben wird.
@@ -470,9 +470,9 @@ In früheren Versionen wurden explizite Werte, die an die *renderaction* -Method
 - Der ASP.NET MVC 3-Installer kann nur eine anfängliche Version des nuget-Paket-Managers installieren. Nachdem Sie die anfängliche Version installiert haben, kann nuget mit dem Erweiterungs-Manager von Visual Studio installiert und aktualisiert werden. Wenn Sie nuget bereits installiert haben, navigieren Sie zum Visual Studio-Erweiterungs Katalog, um ein Update auf die neueste Version von nuget durchzusetzen.
 - Das Erstellen eines neuen ASP.NET MVC 3-Projekts in einem Projektmappenordner verursacht einen *NullReferenceException* -Fehler. Die Problem Umgehung besteht darin, das ASP.NET MVC 3-Projekt im Stammverzeichnis der Projekt Mappe zu erstellen und dann in den Projektmappenordner zu verschieben.
 - Das Installationsprogramm kann deutlich länger dauern als vorherige Versionen von ASP.NET MVC. Dies liegt daran, dass die Komponenten von Visual Studio 2010 aktualisiert werden.
-- IntelliSense für Razor-Syntax funktioniert nicht, wenn reschärfere installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 rc2 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
+- IntelliSense für Razor-Syntax funktioniert nicht, wenn ReSharper installiert ist. Wenn Sie installiert haben und die Razor IntelliSense-Unterstützung in ASP.NET MVC 3 rc2 nutzen möchten, lesen Sie den Eintrag [Razor IntelliSense und reschärfere](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) im Blog von Hadi Hari, in dem erläutert wird, wie Sie diese heute verwenden können.
 - Für cshtml-und vbhtml-Sichten, die mit der Beta Version von ASP.NET MVC 3 erstellt wurden, ist die Buildaktion nicht ordnungsgemäß festgelegt, und das Ergebnis ist, dass diese Ansichts Typen bei der Veröffentlichung des Projekts ausgelassen werden. Der *buildaktionswert* für diese Dateien sollte auf "Content" festgelegt werden. ASP.NET MVC 3 rc2 korrigiert dieses Problem für neue Dateien, korrigiert jedoch nicht die Einstellung für vorhandene Dateien für ein Projekt, das mit der Beta Version erstellt wurde.![](mvc3-release-notes/_static/image4.png)
-- Während der Installation werden im Dialogfeld EULA-Annahme die Lizenzbedingungen in einem Fenster angezeigt, das kleiner als beabsichtigt ist.
+- Während der Installation werden die Lizenzbedingungen im Dialogfeld zum Akzeptieren des EULAs in einem zu kleinen Fenster angezeigt.
 - Wenn Sie eine Razor-Ansicht (cshtml-Datei) bearbeiten, ist das Menü Element gehe zu Controller in Visual Studio nicht verfügbar, und es sind keine Code Ausschnitte vorhanden.
 - Wenn Sie ASP.NET MVC 3 für Visual Web Developer Express auf einem Computer installieren, auf dem Visual Studio nicht installiert ist, und später Visual Studio installieren, müssen Sie ASP.NET MVC 3 neu installieren. Visual Studio und Visual Web Developer Express Teilen Komponenten auf, die mit dem ASP.NET MVC 3-Installer aktualisiert werden. Dasselbe Problem tritt auf, wenn Sie ASP.NET MVC 3 für Visual Studio auf einem Computer installieren, auf dem Visual Web Developer Express nicht installiert ist, und anschließend Visual Web Developer Express später installieren.
 - Bei der Installation von ASP.NET MVC 3 RC 2 wird nuget nicht aktualisiert, wenn es bereits installiert ist. Wechseln Sie zum Aktualisieren von nuget zum Visual Studio-Erweiterungs-Manager und sollte als verfügbares Update angezeigt werden. Sie können das nuget-Upgrade auf das neueste Release von dort aus durchführen.
@@ -507,7 +507,7 @@ Die Unterstützung für das Ändern der Liste der im Dialogfeld aufgeführten Vo
 
 Die Standardvorlagen lauten wie folgt:
 
-Leer. Enthält einen minimalen Satz von Dateien für ein ASP.NET-MVC-Projekt, einschließlich der Standardverzeichnis Struktur für ASP.NET MVC-Projekte, einer Site. CSS-Datei, die die standardmäßigen ASP.NET MVC-Stile enthält, und einem Scripts-Verzeichnis, das die standardmäßigen JavaScript-Dateien enthält.
+Leer Enthält einen minimalen Satz von Dateien für ein ASP.NET-MVC-Projekt, einschließlich der Standardverzeichnis Struktur für ASP.NET MVC-Projekte, einer Site. CSS-Datei, die die standardmäßigen ASP.NET MVC-Stile enthält, und einem Scripts-Verzeichnis, das die standardmäßigen JavaScript-Dateien enthält.
 
 Internet Anwendung. Enthält Beispiel Funktionen, die die Verwendung des Mitgliedschafts Anbieters mit ASP.NET MVC veranschaulichen.
 
@@ -602,7 +602,7 @@ Wenn Sie die Anforderungs Validierung für jede Eigenschaft des Modells deaktivi
 [!code-csharp[Main](mvc3-release-notes/samples/sample24.cs)]
 
 <a id="_Toc276711794"></a>
-## <a name="breaking-changes"></a>Die Lauffähigkeit der Anwendung beeinträchtigende Änderungen
+## <a name="breaking-changes"></a>Wichtige Änderungen
 
 - Die Ausführungsreihenfolge für Ausnahme Filter hat sich bei Ausnahme Filtern mit dem gleichen *Reihen* folgen Wert geändert. In ASP.NET MVC 2 und früheren Versionen wurden Ausnahme Filter auf dem Controller, die dieselbe *Reihenfolge* wie die in einer Aktionsmethode hatten, vor der Ausnahme Filter für die Aktionsmethode ausgeführt. Dies wäre in der Regel der Fall, wenn Ausnahme Filter ohne einen angegebenen *Bestell* Wert angewendet wurden. In ASP.NET MVC 3 wurde diese Reihenfolge umgekehrt, sodass der spezifischere Ausnahmehandler zuerst ausgeführt wird. Wie in früheren Versionen werden die Filter in der angegebenen Reihenfolge ausgeführt, wenn die *Order* -Eigenschaft explizit angegeben wird.
 - Der Basisklasse " *virtualpathproviderviewengine* " wurde eine neue Eigenschaft mit dem Namen " *FileExtensions* " hinzugefügt. Beim Suchen nach einer Ansicht nach Pfad (und nicht nach Name) werden nur Sichten mit einer Dateierweiterung berücksichtigt, die in der von dieser neuen Eigenschaft angegebenen Liste enthalten sind. Dies ist ein Breaking Change für Benutzer, die einen benutzerdefinierten Buildanbieter registrieren, um eine benutzerdefinierte Dateierweiterung für Web Form-Sichten zu aktivieren, und auf diese Sichten mit einem vollständigen Pfad anstelle eines Namens verweisen. Die Problem Umgehung besteht darin, den Wert der *FileExtensions* -Eigenschaft so zu ändern, dass Sie die benutzerdefinierte Dateierweiterung einschließt.
@@ -613,11 +613,11 @@ Wenn Sie die Anforderungs Validierung für jede Eigenschaft des Modells deaktivi
 - Das Installationsprogramm kann deutlich länger dauern als frühere Versionen von ASP.NET MVC, da es Komponenten von Visual Studio 2010 aktualisiert.
 - Das Hinzufügen von Ansichts Gerüstbau bei der Auswahl von schreibgeschützten Eigenschaften für das Ansichts Gerüst. Diese sollten immer durch Gerüstbau ignoriert werden. Im Dialogfeld Ansicht hinzufügen werden bei der Erstellung der Ansicht "Bearbeiten" oder "erstellen" auch schreibgeschützte Eigenschaften erstellt. Für schreibgeschützte Eigenschaften sollte nur ein Gerüst für die Anzeige-und Listenansichten angezeigt werden.
 - Das Debuggen funktioniert nicht, wenn ASP.NET MVC 3 neben der Async-CTP-Version installiert wird. ASP.NET MVC 3 kann nicht parallel mit der CTP-Version Async installiert werden. Deinstallieren Sie die asynchrone CTP zum Reparieren des Debuggens Weitere Informationen finden Sie in [diesem Blogbeitrag](http://drew-prog.blogspot.com/2010/11/how-to-uninstall-microsoft-aspnet-mvc-3.html) zum Deinstallieren aller ASP.NET MVC 3 RC-Elemente.
-- Razor IntelliSense funktioniert nicht, wenn reschärfere installiert ist. Wenn Sie installiert haben und die Unterstützung von Razor IntelliSense in ASP.NET MVC 3 RC nutzen möchten, lesen Sie [diesen Blogbeitrag](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) von JetBrains, in dem erläutert wird, wie Sie Sie noch heute verwenden können.
+- Razor IntelliSense funktioniert nicht, wenn reschärfere installiert ist. Wenn Sie installiert haben und die Unterstützung von Razor IntelliSense in ASP.NET MVC 3 RC nutzen möchten, lesen Sie [diesen Blogbeitrag](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) von JetBrains, in dem erläutert wird, wie Sie Sie noch heute verwenden können.
 - Cshtml-und vbhtml-Ansichten, die mit der Beta Version von ASP.NET MVC 3 erstellt wurden, verfügen nicht über die ordnungsgemäße Buildaktion, die die Veröffentlichung auslässt. Die *Buildaktion* für diese Dateien sollte auf "Content" festgelegt werden. ASP.NET MVC 3 RC korrigiert dieses Problem für neue Dateien, korrigiert jedoch nicht die Einstellung für vorhandene Dateien für ein Projekt, das mit der Beta Version erstellt wurde.
 - Das Installationsprogramm kann deutlich länger dauern als frühere Versionen von ASP.NET MVC, da es Komponenten von Visual Studio 2010 aktualisiert.
 - Das Hinzufügen von Ansichts Gerüstbau bei der Auswahl eines "Bearbeiten"-Gerüstbau für stark typisierte Ansichten Ebenso werden schreibgeschützte Eigenschaften für "Anzeige"-Sichten als Gerüst angezeigt.
-- Während der Installation werden im Dialogfeld EULA-Annahme die Lizenzbedingungen in einem Fenster angezeigt, das kleiner als beabsichtigt ist.
+- Während der Installation werden die Lizenzbedingungen im Dialogfeld zum Akzeptieren des EULAs in einem zu kleinen Fenster angezeigt.
 - Die Installation von Visual Studio Async CTP verursacht einen Konflikt mit der Razor-Version, die im Rahmen der Installation von ASP.NET MVC 3-Tools enthalten ist. Stellen Sie sicher, dass Sie nicht versuchen, die CTP-Version von Visual Studio Async und die Razor-Version auf demselben Computer zu installieren.
 - Wenn Sie eine Razor-Ansicht (cshtml-Datei) bearbeiten, ist das Menü Element gehe zu Controller in Visual Studio nicht verfügbar, und es sind keine Code Ausschnitte vorhanden.
 
@@ -648,7 +648,7 @@ Die Unterstützung für das Ändern der Liste der im Dialogfeld aufgeführten Vo
 
 Die Standardvorlagen lauten wie folgt:
 
-Leer. Enthält einen minimalen Satz von Dateien für ein ASP.NET-MVC-Projekt, einschließlich der Standardverzeichnis Struktur für ASP.NET MVC-Projekte, einer kleinen Site. CSS-Datei, die die standardmäßigen ASP.NET MVC-Stile enthält, und einem Scripts-Verzeichnis, das die standardmäßigen JavaScript-Dateien enthält.
+Leer Enthält einen minimalen Satz von Dateien für ein ASP.NET-MVC-Projekt, einschließlich der Standardverzeichnis Struktur für ASP.NET MVC-Projekte, einer kleinen Site. CSS-Datei, die die standardmäßigen ASP.NET MVC-Stile enthält, und einem Scripts-Verzeichnis, das die standardmäßigen JavaScript-Dateien enthält.
 
 Internet Anwendung. Enthält Beispiel Funktionen, die die Verwendung des Mitgliedschafts Anbieters in ASP.NET MVC veranschaulichen.
 
@@ -841,7 +841,7 @@ Die Ausführungsreihenfolge für Ausnahme Filter hat sich bei Ausnahme Filtern m
 
 ## <a id="0.1__Toc274034230"></a>Bekannte Probleme
 
-Während der Installation werden im Dialogfeld EULA-Annahme die Lizenzbedingungen in einem Fenster angezeigt, das kleiner als beabsichtigt ist.
+Während der Installation werden die Lizenzbedingungen im Dialogfeld zum Akzeptieren des EULAs in einem zu kleinen Fenster angezeigt.
 
 Razor-Ansichten verfügen nicht über IntelliSense-Unterstützung und keine Syntax Hervorhebung. Es wird erwartet, dass die Unterstützung für Razor-Syntax in Visual Studio als Teil einer späteren Version enthalten ist.
 
@@ -861,6 +861,6 @@ Es gibt ein bekanntes Problem, das bewirkt, dass die Formular Authentifizierung 
 
 ## <a id="0.1__Toc274034231"></a>ERS
 
-© 2011 Microsoft Corporation. Alle Rechte vorbehalten. Dieses Dokument wird so bereitgestellt, wie es ist. Die in diesem Dokument enthaltenen Informationen und Ansichten, einschließlich URLs und anderer Verweise auf Internet Websites, können ohne vorherige Ankündigung geändert werden. Sie tragen das alleinige Verwendungsrisiko.
+© 2011 Microsoft Corporation. Alle Rechte vorbehalten. Dieses Dokument wird "wie besehen" bereitgestellt. Die in diesem Dokument enthaltenen Informationen und zum Ausdruck gebrachten Ansichten, auch URL- und andere Internet-Websitebezüge, können ohne vorherige Ankündigung geändert werden. Das Risiko der Produktnutzung liegt allein beim Nutzer.
 
-Dieses Dokument stellt keinerlei Rechtsansprüche auf geistiges Eigentum in Microsoft-Produkten jeglicher Art bereit. Sie dürfen Dokument für interne Informationszwecke kopieren.
+Dieses Dokument verschafft Ihnen keine rechtlichen Ansprüche auf geistiges Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen Dokument für interne Informationszwecke kopieren.

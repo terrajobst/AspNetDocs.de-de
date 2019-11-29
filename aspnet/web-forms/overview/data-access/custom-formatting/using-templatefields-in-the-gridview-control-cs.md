@@ -1,239 +1,239 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
-title: Verwenden von TemplateFields im GridView-Steuerelement (c#) | Microsoft-Dokumentation
+title: Verwenden von templatefields im GridView-SteuerC#Element () | Microsoft-Dokumentation
 author: rick-anderson
-description: Um die Flexibilität zu gewährleisten, bietet die GridView das TemplateField, das gerendert wird, mithilfe einer Vorlage. Eine Vorlage kann eine Mischung aus statischen HTML-Daten, Websteuerelemente enthalten, und...
+description: Um Flexibilität zu schaffen, bietet das GridView-Element das TemplateField-Element, das mithilfe einer Vorlage gerendert wird. Eine Vorlage kann eine Mischung aus statischem HTML, websteuer Elementen und...
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 11de31e8-a78a-4f96-bd75-66e994175902
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 753983b51a6b35718bfd3afb771382304583737b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ec17a16d7bb487d1c5cacf2d5971bbeffc1ba031
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65119620"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74628055"
 ---
 # <a name="using-templatefields-in-the-gridview-control-c"></a>Verwenden von TemplateFields im GridView-Steuerelement (C#)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Beispiel-App herunter](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_12_CS.exe) oder [PDF-Datei herunterladen](using-templatefields-in-the-gridview-control-cs/_static/datatutorial12cs1.pdf)
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_12_CS.exe) oder [PDF herunterladen](using-templatefields-in-the-gridview-control-cs/_static/datatutorial12cs1.pdf)
 
-> Um die Flexibilität zu gewährleisten, bietet die GridView das TemplateField, das gerendert wird, mithilfe einer Vorlage. Eine Vorlage kann enthalten eine Kombination von statischen HTML-Web-Steuerelemente und Databinding-Syntax. In diesem Tutorial betrachten wir, wie Sie das TemplateField verwenden, um einen höheren Grad der Anpassung mit GridView-Steuerelement zu erreichen.
+> Um Flexibilität zu schaffen, bietet das GridView-Element das TemplateField-Element, das mithilfe einer Vorlage gerendert wird. Eine Vorlage kann eine Mischung aus statischem HTML, websteuer Elementen und Datenbindung-Syntax enthalten. In diesem Tutorial wird erläutert, wie Sie TemplateField verwenden, um ein höheres Anpassungs Niveau mit dem GridView-Steuerelement zu erreichen.
 
 ## <a name="introduction"></a>Einführung
 
-Das GridView besteht aus einem Satz von Feldern, die angeben, welche Eigenschaften aus der `DataSource` eingeschlossen werden sollen, in der gerenderten Ausgabe und wie die Daten angezeigt werden. Die einfachste Art des Felds ist der BoundField, die einen Datenwert als Text angezeigt wird. Andere Feldtypen zeigen die Daten, die mit anderen HTML-Elementen an. Die CheckBoxField stellt z. B. als ein Kontrollkästchen, dessen Aktivierungszustand vom Wert eines angegebenen Felds abhängt; die ImageField rendert das Bild, dessen Quelle ein Feld für die angegebenen Daten basiert. Links und Schaltflächen, deren Zustand auf einen zugrunde liegenden Wert im Datenfeld abhängt, können die Feldtypen HyperLinkField und ButtonField gerendert werden.
+Die GridView besteht aus einem Satz von Feldern, die angeben, welche Eigenschaften aus den `DataSource` in der gerenderten Ausgabe enthalten sein sollen und wie die Daten angezeigt werden. Der einfachste Feldtyp ist das BoundField, das einen Datenwert als Text anzeigt. Andere Feldtypen zeigen die Daten mithilfe alternativer HTML-Elemente an. Das CheckBoxField wird z. b. als Kontrollkästchen gerendert, dessen aktivierter Zustand von dem Wert eines angegebenen Daten Felds abhängt. das ImageField rendert ein Bild, dessen Bildquelle auf einem angegebenen Datenfeld basiert. Hyperlinks und Schaltflächen, deren Zustand von einem zugrunde liegenden Daten Feldwert abhängt, können mithilfe der Feld Typen HyperLinkField und ButtonField gerendert werden.
 
-Die Feldtypen CheckBoxField, ImageField, HyperLinkField und ButtonField eine alternative Ansicht der Daten zu ermöglichen, sind immer noch relativ in Bezug auf die Formatierung begrenzt. Eine CheckBoxField kann nur einem einzigen Kontrollkästchen, anzeigen, während ein ImageField nur ein einzelnes Bild anzeigen kann. Was geschieht, wenn ein bestimmtes Feld muss zum Anzeigen von Text, ein Kontrollkästchen *und* ein Bild, das alle anhand von verschiedenen Datenfeldwerte? Oder was geschieht, wenn wir die Daten mithilfe eines Websteuerelements als das Kontrollkästchen, Image, links oder Schaltfläche anzeigen möchten? Darüber hinaus schränkt die BoundField um ein einzelnes Datenfeld anzuzeigen. Was geschieht, wenn wir die Feldwerte für zwei oder mehr Daten in einer einzelnen GridView-Spalte anzeigen möchten?
+Obwohl die Feldtypen CheckBoxField, ImageField, HyperLinkField und ButtonField eine Alternative Ansicht der Daten zulassen, sind Sie hinsichtlich der Formatierung weiterhin relativ eingeschränkt. Ein CheckBoxField kann nur ein einzelnes Kontrollkästchen anzeigen, während ein ImageField nur ein einzelnes Bild anzeigen kann. Was geschieht, wenn ein bestimmtes Feld Text, ein Kontrollkästchen *und* ein Bild anzeigen muss, die auf unterschiedlichen Daten Feldwerten basieren? Oder was geschieht, wenn die Daten mit einem anderen websteuer Element als dem Kontrollkästchen, dem Bild, dem Hyperlink oder der Schaltfläche angezeigt werden sollen? Außerdem schränkt BoundField die Anzeige auf ein einzelnes Datenfeld ein. Was geschieht, wenn zwei oder mehr Daten Feldwerte in einer einzelnen GridView-Spalte angezeigt werden sollen?
 
-Um dieses Maß an Flexibilität zu ermöglichen. die GridView bietet das TemplateField, die mit rendert eine *Vorlage*. Eine Vorlage kann enthalten eine Kombination von statischen HTML-Web-Steuerelemente und Databinding-Syntax. Darüber hinaus hat das TemplateField eine Vielzahl von Vorlagen, die die Anpassung für verschiedene Situationen verwendet werden können. Z. B. die `ItemTemplate` verwendet standardmäßig die Zelle für jede Zeile, aber die `EditItemTemplate` Vorlage zum Anpassen von der-Schnittstelle beim Bearbeiten von Daten verwendet werden kann.
+Um dieser Flexibilität Rechnung zu tragen, bietet das GridView-Element das TemplateField-Element, das mithilfe einer *Vorlage*gerendert wird. Eine Vorlage kann eine Mischung aus statischem HTML, websteuer Elementen und Datenbindung-Syntax enthalten. Außerdem verfügt TemplateField über eine Vielzahl von Vorlagen, mit denen das Rendering für verschiedene Situationen angepasst werden kann. Beispielsweise wird die-`ItemTemplate` standardmäßig verwendet, um die Zelle für jede Zeile zu erzeugen, aber die `EditItemTemplate` Vorlage kann verwendet werden, um die Schnittstelle beim Bearbeiten von Daten anzupassen.
 
-In diesem Tutorial betrachten wir, wie Sie das TemplateField verwenden, um einen höheren Grad der Anpassung mit GridView-Steuerelement zu erreichen. In der [vorherigen Lernprogramm](custom-formatting-based-upon-data-cs.md) erläutert, wie zur Anpassung der Formatierung basierend auf der zugrunde liegenden Daten mithilfe der `DataBound` und `RowDataBound` -Ereignishandler. Eine weitere Möglichkeit zur Anpassung der Formatierung basierend auf den zugrunde liegenden Daten wird durch Aufrufen von Methoden in einer Vorlage formatieren. Wir werden dieses Verfahren in diesem Tutorial auch betrachten.
+In diesem Tutorial wird erläutert, wie Sie TemplateField verwenden, um ein höheres Anpassungs Niveau mit dem GridView-Steuerelement zu erreichen. Im [vorherigen Tutorial](custom-formatting-based-upon-data-cs.md) wurde erläutert, wie die Formatierung basierend auf den zugrunde liegenden Daten mithilfe der `DataBound`-und `RowDataBound`-Ereignishandler angepasst wird. Eine andere Möglichkeit, die Formatierung auf der Grundlage der zugrunde liegenden Daten anzupassen, besteht darin, die Formatierungs Methoden aus einer Vorlage heraus aufrufen. Wir betrachten dieses Verfahren auch in diesem Tutorial.
 
-In diesem Tutorial verwenden wir von TemplateFields anpassen die Darstellung einer Liste von Mitarbeitern. Insbesondere wir alle Mitarbeiter führen jedoch zeigt des Mitarbeiters ersten und letzten Namen in eine Spalte, deren Einstellungsdatum in einem Monatskalender-Steuerelement und eine Statusspalte, der angibt, wie viele Tage sie im Unternehmen entwickelt haben.
+In diesem Tutorial verwenden wir templatefields, um die Darstellung einer Liste von Mitarbeitern anzupassen. Insbesondere werden alle Mitarbeiter aufgelistet, aber die vor-und Nachnamen des Mitarbeiters in einer Spalte, das Einstellungs Datum in einem Kalender Steuerelement und eine Statusspalte, die angibt, wie viele Tage Sie im Unternehmen verwendet haben.
 
-[![Drei von TemplateFields werden verwendet, um die Anzeige anpassen](using-templatefields-in-the-gridview-control-cs/_static/image2.png)](using-templatefields-in-the-gridview-control-cs/_static/image1.png)
+[![drei templatefields zum Anpassen der Anzeige verwendet.](using-templatefields-in-the-gridview-control-cs/_static/image2.png)](using-templatefields-in-the-gridview-control-cs/_static/image1.png)
 
-**Abbildung 1**: Drei von TemplateFields werden verwendet, um die Anzeige anpassen ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image3.png))
+**Abbildung 1**: drei Vorlagen Felder werden verwendet, um die Anzeige anzupassen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image3.png))
 
 ## <a name="step-1-binding-the-data-to-the-gridview"></a>Schritt 1: Binden der Daten an die GridView
 
-In Szenarien, in dem Sie von TemplateFields zu verwenden, um die Darstellung anpassen, müssen, reporting ich finde es am einfachsten, Sie beginnen mit dem ein GridView-Steuerelement, das nur BoundFields zuerst enthält erstellen und dann zum Hinzufügen von neuen von TemplateFields oder konvertieren die vorhandenen BoundFields auf Von TemplateFields, je nach Bedarf. Aus diesem Grund beginnen wir in diesem Tutorial durch Hinzufügen einer GridView-Ansicht auf der Seite mithilfe des Designers, und binden sie an einer ObjectDataSource gegeben, die die Liste der Mitarbeiter zurückgibt. Diese Schritte werden einer GridView-Ansicht mit BoundFields für jeden die Employee-Felder erstellt.
+In Bericht Erstellungs Szenarien, in denen Sie templatefields zum Anpassen der Darstellung verwenden müssen, ist es am einfachsten, wenn Sie zunächst ein GridView-Steuerelement erstellen, das nur boundfields enthält, und dann neue templatefields-Elemente hinzufügen oder die vorhandenen boundfields-Elemente konvertieren. Templatefields nach Bedarf. Aus diesem Grund soll dieses Tutorial gestartet werden, indem der Seite über den Designer eine GridView hinzugefügt und an eine ObjectDataSource gebunden wird, die die Liste der Mitarbeiter zurückgibt. Mit diesen Schritten wird eine GridView mit boundfields für jedes der Mitarbeiter Felder erstellt.
 
-Öffnen der `GridViewTemplateField.aspx` Seite und einer GridView-Ansicht aus der Toolbox in den Designer ziehen. GridView Smarttag auswählen, um ein neues ObjectDataSource-Steuerelement hinzuzufügen, die aufruft, die `EmployeesBLL` Klasse `GetEmployees()` Methode.
+Öffnen Sie die Seite `GridViewTemplateField.aspx`, und ziehen Sie eine GridView aus der Toolbox auf den Designer. Wählen Sie aus dem Smarttag der GridView ein neues ObjectDataSource-Steuerelement aus, das die `GetEmployees()` Methode der `EmployeesBLL` Klasse aufruft.
 
-[![Fügen Sie ein neues ObjectDataSource-Steuerelement, das die GetEmployees()-Methode aufruft](using-templatefields-in-the-gridview-control-cs/_static/image5.png)](using-templatefields-in-the-gridview-control-cs/_static/image4.png)
+[![ein neues ObjectDataSource-Steuerelement hinzufügen, das die GetEmployees ()-Methode aufruft.](using-templatefields-in-the-gridview-control-cs/_static/image5.png)](using-templatefields-in-the-gridview-control-cs/_static/image4.png)
 
-**Abbildung 2**: Fügen Sie ein neues ObjectDataSource-Steuerelement, Invokes der `GetEmployees()` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image6.png))
+**Abbildung 2**: Hinzufügen eines neuen ObjectDataSource-Steuer Elements, das die `GetEmployees()`-Methode aufruft ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image6.png))
 
-Binden des GridView auf diese Weise wird automatisch ein BoundField für jede der Eigenschaften der Mitarbeiter hinzugefügt: `EmployeeID`, `LastName`, `FirstName`, `Title`, `HireDate`, `ReportsTo`, und `Country`. Für diesen Bericht lassen Sie uns nicht kümmern Sie sich Anzeigen der `EmployeeID`, `ReportsTo`, oder `Country` Eigenschaften. So entfernen Sie diese BoundFields können Sie folgende Aktionen ausführen:
+Wenn Sie die GridView auf diese Weise binden, wird automatisch ein BoundField für die einzelnen Eigenschaften der Mitarbeiter hinzugefügt: `EmployeeID`, `LastName`, `FirstName`, `Title`, `HireDate`, `ReportsTo`und `Country`. Bei diesem Bericht geht es nicht darum, die Eigenschaften "`EmployeeID`", "`ReportsTo`" oder "`Country`" anzuzeigen. Um diese boundfields zu entfernen, können Sie Folgendes tun:
 
-- Verwenden Sie die Felder im Dialogfeld auf auf den Link "Spalten bearbeiten" aus den GridView Smarttag, um das Dialogfeld zu öffnen. Schaltfläche "Weiter," Wählen Sie die BoundFields aus der linken unteren Ecke aus, und klicken Sie auf das rote X, um die BoundField zu entfernen.
-- Deklarativen Syntax des GridView aus der Datenquellensicht manuell zu bearbeiten, löschen Sie die `<asp:BoundField>` -Element für die BoundField, die Sie entfernen möchten.
+- Verwenden Sie das Dialogfeld Felder, klicken Sie auf den Link Spalten bearbeiten im Smarttag der GridView, um dieses Dialogfeld anzuzeigen. Wählen Sie als nächstes die Option boundfields aus der unteren linken Liste aus, und klicken Sie auf die rote X-Schaltfläche, um das BoundField zu entfernen
+- Bearbeiten Sie die deklarative Syntax der GridView manuell aus der Quell Ansicht, und löschen Sie das `<asp:BoundField>`-Element für das BoundField, das Sie entfernen möchten.
 
-Nachdem Sie entfernt haben die `EmployeeID`, `ReportsTo`, und `Country` BoundFields, sollte Ihre GridView Markup wie folgt aussehen:
+Nachdem Sie die `EmployeeID`, `ReportsTo`und `Country` boundfields entfernt haben, sollte das Markup der GridView wie folgt aussehen:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample1.aspx)]
 
-Nehmen Sie einen Moment Zeit, um unseren Fortschritt in einem Browser anzuzeigen. An diesem Punkt sehen Sie eine Tabelle mit einem Eintrag für jeden Mitarbeiter und vier Spalten: eine für des Mitarbeiters Nachnamen, einen für ihren Vornamen, eine für ihre Titel und eine Einstellungsdatum.
+Nehmen Sie sich einen Moment Zeit, um den Fortschritt in einem Browser anzuzeigen. An diesem Punkt sollten Sie eine Tabelle mit einem Datensatz für jeden Mitarbeiter und vier Spalten sehen: einen für den Nachnamen des Mitarbeiters, einen für den Vornamen, einen für seinen Titel und einen für das Einstellungs Datum.
 
-[![Die LastName, FirstName, Titel und HireDate-Felder werden für jede Mitarbeiter angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image8.png)](using-templatefields-in-the-gridview-control-cs/_static/image7.png)
+[![die Felder "LastName", "FirstName", "Title" und "HireDate" für jeden Mitarbeiter angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image8.png)](using-templatefields-in-the-gridview-control-cs/_static/image7.png)
 
-**Abbildung 3**: Die `LastName`, `FirstName`, `Title`, und `HireDate` Felder für jedes Mitarbeiters angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image9.png))
+**Abbildung 3**: die Felder `LastName`, `FirstName`, `Title`und `HireDate` werden für jeden Mitarbeiter angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image9.png))
 
-## <a name="step-2-displaying-the-first-and-last-names-in-a-single-column"></a>Schritt 2: Die Anzeige von der ersten und letzten Namen in einer einzelnen Spalte
+## <a name="step-2-displaying-the-first-and-last-names-in-a-single-column"></a>Schritt 2: Anzeigen der vor-und Nachnamen in einer einzelnen Spalte
 
-Jeder Mitarbeiter derzeit den vor- und Nachnamen in einer separaten Spalte angezeigt werden. Gut, diese stattdessen in einer einzelnen Spalte zusammenfassen möglicherweise. Zu diesem Zweck müssen wir ein TemplateField verwenden. Wir können entweder ein neues TemplateField hinzufügen, fügen Sie das erforderliche Markup und die Databinding-Syntax hinzu und löschen Sie dann die `FirstName` und `LastName` BoundFields, oder wir können konvertieren die `FirstName` BoundField in ein TemplateField, bearbeiten Sie das TemplateField einschließen die `LastName` Wert ein, und entfernen Sie die `LastName` BoundField.
+Derzeit werden die vor-und Nachnamen der einzelnen Mitarbeiter in einer separaten Spalte angezeigt. Es kann sinnvoll sein, Sie stattdessen in einer einzelnen Spalte zu kombinieren. Um dies zu erreichen, müssen wir ein TemplateField-Element verwenden. Wir können entweder ein neues TemplateField-Element hinzufügen, ihm die erforderliche Markup-und Datenbindung-Syntax hinzufügen und dann die `FirstName` und `LastName` boundfields löschen. Alternativ können Sie das `FirstName` BoundField in ein TemplateField-Element konvertieren, das TemplateField-Element so bearbeiten, dass es den `LastName` Wert enthält, und dann das `LastName` BoundField entfernen.
 
-Beide Ansätze net das gleiche Ergebnis, aber persönlich ich gern BoundFields in von TemplateFields möglichst konvertiert werden, da es sich bei die Konvertierung automatisch hinzugefügt. eine `ItemTemplate` und `EditItemTemplate` mit Websteuerelementen und Databinding-Syntax, um die Darstellung zu imitieren. und die Funktionalität von der BoundField. Der Vorteil ist, müssen wir jedoch weniger Arbeitsschritte mit der TemplateField während des Konvertierungsvorgangs Teil der Arbeit für uns ausgeführt haben wird.
+Beide Ansätze sind identisch mit dem gleichen Ergebnis, aber ich persönlich möchte boundfields in templatefields konvertieren, wenn dies möglich ist, da bei der Konvertierung automatisch ein `ItemTemplate` und `EditItemTemplate` mit websteuer Elementen und Datenbindung-Syntax hinzugefügt werden, um das Erscheinungsbild und die Funktionalität des BoundField zu imitieren. Der Vorteil besteht darin, dass wir mit "TemplateField" weniger Arbeit erledigen müssen, da der Konvertierungs Vorgang einige der Arbeit für uns erledigt hat.
 
-Um eine vorhandene BoundField in ein TemplateField konvertieren möchten, klicken Sie auf den Link "Spalten bearbeiten" aus den GridView Smarttag, schalten das Dialogfeld "Felder". Wählen Sie die BoundField konvertieren aus der Liste in der unteren linken Ecke, und klicken Sie auf den Link "Convert dieses Feld in ein TemplateField" in der unteren rechten Ecke aus.
+Wenn Sie ein vorhandenes BoundField-Element in ein TemplateField-Element konvertieren möchten, klicken Sie auf den Link Spalten bearbeiten im Smarttags von GridView, und klicken Sie dann auf das Dialogfeld Felder. Wählen Sie in der linken unteren Ecke das zu konvertierende BoundField aus der Liste aus, und klicken Sie dann auf den Link "this field into a TemplateField" in der unteren rechten Ecke.
 
-[![Konvertieren einer BoundField in ein TemplateField aus der Felder (Dialogfeld)](using-templatefields-in-the-gridview-control-cs/_static/image11.png)](using-templatefields-in-the-gridview-control-cs/_static/image10.png)
+[![ein BoundField-Element aus dem Dialog Feld "Felder" in ein TemplateField-Element konvertieren.](using-templatefields-in-the-gridview-control-cs/_static/image11.png)](using-templatefields-in-the-gridview-control-cs/_static/image10.png)
 
-**Abbildung 4**: Ein BoundField-in ein TemplateField konvertieren, in die Felder (Dialogfeld) ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image12.png))
+**Abbildung 4**: Konvertieren eines BoundField-Objekts in ein TemplateField-Element aus dem Dialog Feld "Felder" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image12.png))
 
-Fahren Sie fort, und konvertieren die `FirstName` BoundField in ein TemplateField. Nach dieser Änderung besteht kein scharfsinnigen Unterschied im Designer zur Verfügung. Dies ist die BoundField in ein TemplateField konvertieren ein TemplateField erstellt werden, der das Aussehen und Verhalten von der BoundField verwaltet. Trotz gibt es keine visuellen Unterschied an diesem Punkt im Designer, wurde diesem Konvertierungsprozess ersetzt die BoundField-s deklarativen Syntax - `<asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />` – mit der folgenden TemplateField-Syntax:
+Konvertieren Sie den `FirstName` BoundField in ein TemplateField. Nach dieser Änderung gibt es keinen perpertiven Unterschied im Designer. Dies liegt daran, dass das Konvertieren von BoundField in ein TemplateField-Element ein TemplateField-Element erstellt, das das Erscheinungsbild des BoundField-Objekts beibehält. Obwohl an dieser Stelle im Designer kein visueller Unterschied vorhanden ist, hat dieser Konvertierungsprozess die deklarative Syntax des BoundField-`<asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />` mit der folgenden TemplateField-Syntax ersetzt:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
-Wie Sie sehen können, das TemplateField umfasst zwei Vorlagen ein `ItemTemplate` hat, die die Bezeichnung, deren `Text` -Eigenschaftensatz auf den Wert der der `FirstName` Feld "Daten", und ein `EditItemTemplate` mit einem Textfeld-Steuerelement, dessen `Text` Eigenschaft wird auch festgelegt werden. um die `FirstName` Feld "Daten". Die Datenbindungssyntax - `<%# Bind("fieldName") %>` – gibt an, dass das Datenfeld *`fieldName`* an der angegebenen Eigenschaft für die Web-Steuerelements gebunden ist.
+Wie Sie sehen, besteht das TemplateField aus zwei Vorlagen: einer `ItemTemplate`, die über eine Bezeichnung verfügt, deren `Text`-Eigenschaft auf den Wert des `FirstName` Datenfelds festgelegt ist, und ein `EditItemTemplate` mit einem TextBox-Steuerelement, dessen `Text`-Eigenschaft ebenfalls auf das `FirstName` Datenfeld festgelegt ist. Die Datenbindung-Syntax-`<%# Bind("fieldName") %>`-gibt an, dass das Datenfeld *`fieldName`* an die angegebene websteuer Element Eigenschaft gebunden ist.
 
-Hinzufügen der `LastName` Datenfeld Wert, der diese TemplateField, wir eine andere Bezeichnung Websteuerelement in müssen, der `ItemTemplate` und binden die `Text` Eigenschaft, um `LastName`. Dies kann entweder manuell oder mithilfe des Designers erreicht werden. Um per hand erledigt werden, einfach die entsprechenden deklarative Syntax zum Hinzufügen der `ItemTemplate`:
+Zum Hinzufügen des `LastName` Daten Feldwerts zu diesem TemplateField müssen wir ein weiteres Label-websteuer Element in der `ItemTemplate` hinzufügen und dessen `Text`-Eigenschaft an `LastName`binden. Dies kann entweder per Hand oder über den Designer erreicht werden. Fügen Sie der `ItemTemplate`einfach die entsprechende deklarative Syntax hinzu:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample3.aspx)]
 
-Um sie über den Designer hinzuzufügen, klicken Sie auf die Vorlagen bearbeiten von GridView Smarttag. GridView vorlagenschnittstelle bearbeiten wird angezeigt. In dieser Schnittstelle Smarttag ist eine Liste der Vorlagen in den GridView-Ansicht. Da wir ein TemplateField nur an diesem Punkt verfügen, die nur in der Dropdown-Liste aufgeführt sind die Vorlagen für die `FirstName` TemplateField zusammen mit den `EmptyDataTemplate` und `PagerTemplate`. Die `EmptyDataTemplate` Vorlage, wenn angegeben, wird zum Rendern von GridView Ausgabe, wenn keine Ergebnisse, in den Daten, die an die GridView; gebunden vorliegen verwendet die `PagerTemplate`, sofern angegeben, wird verwendet, um die Paging-Schnittstelle für einer GridView-Ansicht zu rendern, der Pagingvorgänge unterstützt.
+Um es über den Designer hinzuzufügen, klicken Sie auf den Link Vorlagen bearbeiten im Smarttags von GridView. Dadurch wird die Vorlagen Bearbeitungs Schnittstelle von GridView angezeigt. Das Smarttag dieser Schnittstelle ist eine Liste der Vorlagen in der GridView. Da an dieser Stelle nur ein TemplateField-Element vorhanden ist, sind die einzigen Vorlagen, die in der Dropdown Liste aufgeführt sind, die Vorlagen für die `FirstName` TemplateField zusammen mit den `EmptyDataTemplate` und `PagerTemplate`. Die `EmptyDataTemplate` Vorlage wird verwendet, um die Ausgabe der GridView zu renderten, wenn keine Ergebnisse in den Daten an die GridView gebunden sind. der `PagerTemplate`wird verwendet, um die pagingschnittstelle für eine GridView zu erzeugen, die das Paging unterstützt.
 
-[![GridView Vorlagen können über den Designer bearbeitet werden](using-templatefields-in-the-gridview-control-cs/_static/image14.png)](using-templatefields-in-the-gridview-control-cs/_static/image13.png)
+[![die Vorlagen von GridView über den Designer bearbeitet werden können.](using-templatefields-in-the-gridview-control-cs/_static/image14.png)](using-templatefields-in-the-gridview-control-cs/_static/image13.png)
 
-**Abbildung 5**: GridView Vorlagen können werden bearbeitet über das Verwenden des Designers ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image15.png))
+**Abbildung 5**: die Vorlagen der GridView können über den Designer bearbeitet werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image15.png))
 
-Auch Anzeigen der `LastName` in die `FirstName` TemplateField ziehen Sie das Label-Steuerelement aus der Toolbox in die `FirstName` TemplateFields `ItemTemplate` in den GridView-Ansicht der Vorlage bearbeiten-Schnittstelle.
+Um auch die `LastName` in der `FirstName` TemplateField anzuzeigen, ziehen Sie das Label-Steuerelement aus der Toolbox in die `ItemTemplate` des `FirstName` TemplateField in der Vorlagen Bearbeitungs Schnittstelle von GridView.
 
-[![Die FirstName TemplateFields ItemTemplate-Element ein Label-Steuerelement hinzugefügt](using-templatefields-in-the-gridview-control-cs/_static/image17.png)](using-templatefields-in-the-gridview-control-cs/_static/image16.png)
+[![dem ItemTemplate-Element von FirstName TemplateField ein Label-websteuer Element hinzufügen](using-templatefields-in-the-gridview-control-cs/_static/image17.png)](using-templatefields-in-the-gridview-control-cs/_static/image16.png)
 
-**Abbildung 6**: Fügen Sie ein Label-Web-Steuerelements in der `FirstName` TemplateFields ItemTemplate-Element ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image18.png))
+**Abbildung 6**: Hinzufügen eines Label-websteuer Elements zum ItemTemplate-Element von `FirstName` TemplateField ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image18.png))
 
-Das Label-Steuerelement hinzugefügt, das TemplateField an diesem Punkt verfügt die `Text` -Eigenschaft auf "Label" festgelegt. Wir müssen geändert werden, damit diese Eigenschaft gebunden ist, auf den Wert des der `LastName` Daten stattdessen das Feld. Klicken Sie auf das Label-Steuerelement smart Tag zu erreichen, und wählen Sie die Option DataBindings bearbeiten.
+An diesem Punkt hat das dem TemplateField hinzugefügte Label-websteuer Element seine `Text`-Eigenschaft auf "Label" festgelegt. Dies muss geändert werden, damit diese Eigenschaft stattdessen an den Wert des `LastName` Datenfelds gebunden wird. Um dies zu erreichen, klicken Sie auf das Smarttag des Bezeichnungs Steuer Elements und wählen die Option "DataBindings bearbeiten" aus.
 
-[![Wählen Sie die Option "DataBindings bearbeiten" aus der Bezeichnung Smarttag](using-templatefields-in-the-gridview-control-cs/_static/image20.png)](using-templatefields-in-the-gridview-control-cs/_static/image19.png)
+[![die Option "DataBindings bearbeiten" im Smarttags der Bezeichnung auswählen.](using-templatefields-in-the-gridview-control-cs/_static/image20.png)](using-templatefields-in-the-gridview-control-cs/_static/image19.png)
 
-**Abbildung 7**: Wählen Sie die Option der DataBindings bearbeiten der Bezeichnung Smarttag aus ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image21.png))
+**Abbildung 7**: Auswählen der Option "DataBindings bearbeiten" im Smarttag der Bezeichnung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image21.png))
 
-Das Dialogfeld "DataBindings" wird angezeigt. Von hier aus können Sie wählen aus, um teilnehmen in Datenbindung aus der Liste auf der linken Seite, und wählen Sie das Feld aus, um die Daten aus der Dropdown Liste auf der rechten Seite zu binden. Wählen Sie die `Text` Eigenschaft aus der linken Seite und die `LastName` -Feld aus der rechten Seite, und klicken Sie auf OK.
+Dadurch wird das Dialogfeld "DataBindings" angezeigt. Von hier aus können Sie die Eigenschaft für die Datenbindung in der Liste auf der linken Seite auswählen und in der Dropdown Liste auf der rechten Seite das Feld auswählen, an das die Daten gebunden werden sollen. Wählen Sie die `Text`-Eigenschaft von Links und das `LastName` Feld von rechts aus, und klicken Sie auf OK.
 
-[![Binden Sie der Text-Eigenschaft auf das Feld "LastName" Daten](using-templatefields-in-the-gridview-control-cs/_static/image23.png)](using-templatefields-in-the-gridview-control-cs/_static/image22.png)
+[![die Text-Eigenschaft an das LastName-Datenfeld binden.](using-templatefields-in-the-gridview-control-cs/_static/image23.png)](using-templatefields-in-the-gridview-control-cs/_static/image22.png)
 
-**Abbildung 8**: Binden der `Text` Eigenschaft, um die `LastName` Feld "Daten" ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image24.png))
+**Abbildung 8**: Binden der `Text`-Eigenschaft an das `LastName` Datenfeld ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image24.png))
 
 > [!NOTE]
-> Das Dialogfeld "DataBindings" können Sie an, ob die bidirektionale Datenbindung ausgeführt. Wenn Sie dieses Kontrollkästchen deaktiviert ist, lassen die Datenbindungssyntax `<%# Eval("LastName")%>` verwendet werden, anstelle von `<%# Bind("LastName")%>`. Beide Vorgehensweisen ist für dieses Tutorial in Ordnung. Bidirektionale Datenbindung ist wichtig, beim Einfügen und Bearbeiten von Daten. Zum Anzeigen von einfach Daten aus, jedoch funktioniert beide Ansätze gleichermaßen gut. Wir erläutere die bidirektionale Datenbindung im Detail in zukünftigen Lernprogrammen.
+> Im Dialogfeld DataBindings können Sie angeben, ob eine bidirektionale Datenbindung durchgeführt werden soll. Wenn Sie diese Option nicht aktivieren, wird die Datenbindung-Syntax `<%# Eval("LastName")%>` anstelle von `<%# Bind("LastName")%>`verwendet. Beide Vorgehensweisen sind für dieses Tutorial in Ordnung. Das bidirektionale Datenbindung wird beim Einfügen und Bearbeiten von Daten wichtig. Für das einfache Anzeigen von Daten funktioniert jedoch jeder Ansatz gleichermaßen gut. In zukünftigen Tutorials wird das bidirektionale Datenbindung ausführlich erläutert.
 
-Nehmen Sie einen Moment Zeit, zum Anzeigen dieser Seite über einen Browser ein. Wie Sie sehen, enthält die GridView trotzdem vier Spalten; allerdings die `FirstName` Spalte nun aufgeführt *sowohl* der `FirstName` und `LastName` -Datenfeldwerte.
+Nehmen Sie sich einen Moment Zeit, um diese Seite über einen Browser anzuzeigen. Wie Sie sehen können, enthält die GridView weiterhin vier Spalten. in der Spalte `FirstName` werden nun jedoch *sowohl* die Daten Feldwerte `FirstName` als auch `LastName` aufgelistet.
 
-[![Sowohl das FirstName und LastName-Werte werden in einer einzelnen Spalte angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image26.png)](using-templatefields-in-the-gridview-control-cs/_static/image25.png)
+[![werden die Werte "FirstName" und "LastName" in einer einzelnen Spalte angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image26.png)](using-templatefields-in-the-gridview-control-cs/_static/image25.png)
 
-**Abbildung 9**: Sowohl die `FirstName` und `LastName` Werte werden in einer einzelnen Spalte angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image27.png))
+**Abbildung 9**: die Werte für "`FirstName`" und "`LastName`" werden in einer einzelnen Spalte angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image27.png))
 
-Um diesem ersten Schritt abgeschlossen haben, entfernen Sie die `LastName` BoundField, und benennen Sie die `FirstName` TemplateFields `HeaderText` Eigenschaft "Name". Nach diesen Änderungen sollte den GridView deklarative Markup wie folgt aussehen:
+Entfernen Sie den `LastName` BoundField, und benennen Sie die `HeaderText`-Eigenschaft `FirstName` TemplateField in "Name" um, um diesen ersten Schritt abzuschließen. Nachdem diese Änderungen vorgenommen wurden, sollte das deklarative Markup der GridView wie folgt aussehen:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample4.aspx)]
 
-[![Erste und Nachnamen des Mitarbeiters werden in einer Spalte angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
+[![die vor-und Nachnamen der einzelnen Mitarbeiter in einer Spalte angezeigt werden.](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
 
-**Abbildung 10**: Erste und Nachnamen des Mitarbeiters werden in einer Spalte angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
+**Abbildung 10**: die vor-und Nachnamen der einzelnen Mitarbeiter werden in einer Spalte angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
 
-## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Schritt 3: Verwenden das Kalender-Steuerelement zum Anzeigen der`HiredDate`Feld
+## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Schritt 3: Verwenden des Kalender Steuer Elements zum Anzeigen des`HiredDate`Felds
 
-Einen Datenfeldwert als Text in einer GridView-Ansicht ist so einfach wie die Verwendung einer BoundField. Für bestimmte Szenarios ist jedoch die Daten am besten ausgedrückt mit der ein bestimmtes Steuerelement anstelle von nur-Text. Es ist eine solche Anpassung der Anzeige von Daten mit von TemplateFields möglich. Z. B. stattdessen als das Einstellungsdatum als Text anzuzeigen, wir konnte einen Kalender anzeigen (mit [das Kalender-Steuerelement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) mit Einstellungsdatum hervorgehoben.
+Das Anzeigen eines Daten Feldwerts als Text in einer GridView-Sicht ist so einfach wie die Verwendung eines BoundField. Für bestimmte Szenarien werden die Daten jedoch am besten mit einem bestimmten websteuer Element anstelle von Text ausgedrückt. Eine solche Anpassung der Datenanzeige ist mit templatefields möglich. Anstatt z. b. das Einstellungs Datum des Mitarbeiters als Text anzuzeigen, könnte ein Kalender (mit [dem Kalender Steuer](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)Element) angezeigt werden, bei dem das Einstellungs Datum hervorgehoben ist.
 
-Um dies zu erreichen, starten Sie durch die Konvertierung der `HiredDate` BoundField in ein TemplateField. Einfach wechseln Sie zu den GridView Smarttag, und klicken Sie auf die Spalten bearbeiten-Link, schalten Sie die Felder (Dialogfeld). Wählen Sie die `HiredDate` BoundField- und klicken Sie auf "dieses Feld konvertieren in ein TemplateField."
+Um dies zu erreichen, konvertieren Sie zunächst den `HiredDate` BoundField in ein TemplateField-Element. Wechseln Sie einfach zum Smarttag der GridView, und klicken Sie auf den Link Spalten bearbeiten, und klicken Sie dann auf das Dialogfeld Felder. Wählen Sie das `HiredDate` BoundField aus, und klicken Sie auf "dieses Feld in ein TemplateField konvertieren".
 
-[![Die HiredDate BoundField-in ein TemplateField konvertieren](using-templatefields-in-the-gridview-control-cs/_static/image32.png)](using-templatefields-in-the-gridview-control-cs/_static/image31.png)
+[![das hireddate BoundField in ein TemplateField-Element konvertieren.](using-templatefields-in-the-gridview-control-cs/_static/image32.png)](using-templatefields-in-the-gridview-control-cs/_static/image31.png)
 
-**Abbildung 11**: Konvertieren der `HiredDate` BoundField-in ein TemplateField ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image33.png))
+**Abbildung 11**: Konvertieren des `HiredDate` BoundField in ein TemplateField-Element ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image33.png))
 
-Wie in Schritt2 beschrieben, wird dadurch die BoundField ersetzen Sie durch ein TemplateField, die enthält ein `ItemTemplate` und `EditItemTemplate` mit einer Bezeichnung und ein Textfeld, dessen `Text` Eigenschaften gebunden sind, um die `HiredDate` Wert mithilfe der Datenbindungssyntax `<%# Bind("HiredDate")%>`.
+Wie in Schritt 2 gezeigt, ersetzt dies das BoundField durch ein TemplateField, das eine `ItemTemplate` enthält und `EditItemTemplate` mit einer Bezeichnung und einem Textfeld, dessen `Text` Eigenschaften mithilfe der Datenbindung-Syntax `<%# Bind("HiredDate")%>`an den `HiredDate` Wert gebunden werden.
 
-Um den Text mit einem Kalendersteuerelement zu ersetzen, bearbeiten Sie die Vorlage, indem Sie die Bezeichnung ein Kalender-Steuerelement. Klicken Sie im Designer wählen Sie aus den GridView Smarttag Vorlagen bearbeiten und dann die `HireDate` TemplateFields `ItemTemplate` aus der Dropdown-Liste. Klicken Sie dann löschen Sie das Label-Steuerelement, und ziehen Sie ein Kalender-Steuerelement aus der Toolbox in die Vorlage bearbeiten-Schnittstelle.
+Um den Text durch ein Kalender Steuerelement zu ersetzen, bearbeiten Sie die Vorlage, indem Sie die Bezeichnung entfernen und ein Kalender Steuerelement hinzufügen. Wählen Sie im Designer Vorlagen bearbeiten aus dem Smarttag der GridView aus, und wählen Sie in der Dropdown Liste die `ItemTemplate` des `HireDate` TemplateField aus. Löschen Sie anschließend das Label-Steuerelement, und ziehen Sie ein Calendar-Steuerelement aus der Toolbox in die Vorlagen Bearbeitungs Schnittstelle.
 
-[![Ein Kalendersteuerelement, das HireDate-TemplateField die ItemTemplate-Element](using-templatefields-in-the-gridview-control-cs/_static/image35.png)](using-templatefields-in-the-gridview-control-cs/_static/image34.png)
+[![der ItemTemplate von HireDate TemplateField ein Kalender Steuerelement hinzufügen](using-templatefields-in-the-gridview-control-cs/_static/image35.png)](using-templatefields-in-the-gridview-control-cs/_static/image34.png)
 
-**Abbildung 12**: Ein Kalendersteuerelement auf die `HireDate` TemplateFields `ItemTemplate` ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
+**Abbildung 12**: Hinzufügen eines Kalender Steuer Elements zur `ItemTemplate` des `HireDate` TemplateField ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
 
-An diesem Punkt enthält jede Zeile in der GridView ein Kalender-Steuerelement in seiner `HiredDate` TemplateField. Allerdings der Mitarbeiter des tatsächlichen `HiredDate` Wert ist nicht an einer beliebigen Stelle im Kalender-Steuerelement, verursacht jedes Kalender-Steuerelement standardmäßig mit den aktuellen Monat und Datum festgelegt. Um dies zu beheben, müssen wir jedes Mitarbeiters zuweisen `HiredDate` auf der Kalender-Steuerelement ["SelectedDate"](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) und ["VisibleDate"](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) Eigenschaften.
+An diesem Punkt enthält jede Zeile in der GridView ein Calendar-Steuerelement in der `HiredDate` TemplateField. Allerdings wird der tatsächliche `HiredDate` Wert des Mitarbeiters nicht an einer beliebigen Stelle im Kalender Steuerelement festgelegt, sodass jedes Kalender Steuerelement standardmäßig den aktuellen Monat und das aktuelle Datum anzeigt. Um dieses Problem zu beheben, müssen wir die `HiredDate` jedes Mitarbeiters den Eigenschaften " [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) " und " [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) " des Kalender Steuer Elements zuweisen.
 
-Wählen Sie das Kalendersteuerelement Smarttag DataBindings bearbeiten. Als Nächstes binden Sie beide `SelectedDate` und `VisibleDate` Eigenschaften, die die `HiredDate` Feld "Daten".
+Wählen Sie im Smarttag des Kalender Steuer Elements die Option DataBindings bearbeiten aus. Binden Sie als nächstes die Eigenschaften `SelectedDate` und `VisibleDate` an das `HiredDate` Datenfeld.
 
-[![Binden Sie "SelectedDate" und "VisibleDate" Eigenschaften für das Datenfeld HiredDate](using-templatefields-in-the-gridview-control-cs/_static/image38.png)](using-templatefields-in-the-gridview-control-cs/_static/image37.png)
+[![Binden der SelectedDate-Eigenschaft und der VisibleDate-Eigenschaft an das hireddate-Datenfeld](using-templatefields-in-the-gridview-control-cs/_static/image38.png)](using-templatefields-in-the-gridview-control-cs/_static/image37.png)
 
-**Abbildung 13**: Binden der `SelectedDate` und `VisibleDate` Eigenschaften, die die `HiredDate` Feld "Daten" ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image39.png))
-
-> [!NOTE]
-> Das Kalender-Steuerelement ausgewählte Datum muss nicht notwendigerweise sichtbar werden. Z. B. möglicherweise ein Kalender 1. August<sup>St</sup>, 1999 als das ausgewählte Datum, aber den aktuellen Monat und Jahr angezeigt werden. Das ausgewählte Datum und die sichtbares Datum werden durch des Kalender-Steuerelements angegeben `SelectedDate` und `VisibleDate` Eigenschaften. Da beide Wählen des Mitarbeiters sollten `HiredDate` und stellen Sie sicher, dass es angezeigt wird, müssen wir beide diese Eigenschaften zu binden der `HireDate` Feld "Daten".
-
-Wenn Sie die Seite in einem Browser anzeigen zu können, wird der Kalender jetzt zeigt den Monat des Mitarbeiters Einstellungsdatum und dieses Datum ausgewählt.
-
-[![Des Mitarbeiters HiredDate wird im Kalendersteuerelement angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image41.png)](using-templatefields-in-the-gridview-control-cs/_static/image40.png)
-
-**Abbildung 14**: Des Mitarbeiters `HiredDate` sehen Sie in das Kalender-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image42.png))
+**Abbildung 13**: Binden der Eigenschaften "`SelectedDate`" und "`VisibleDate`" an das `HiredDate` Datenfeld ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image39.png))
 
 > [!NOTE]
-> Im Gegensatz zu allen Beispielen wir, bisher gesehen haben in diesem Tutorial haben wir *nicht* festgelegt `EnableViewState` Eigenschaft `false` für diese GridView. Der Grund für diese Entscheidung ist da bewirkt, ein Postback handeln dass, der im Kalender ausgewählte Datum festlegen, auf das Datum, die einfach auf die Daten des Kalender-Steuerelements. Wenn die GridView Ansichtszustand deaktiviert ist, jedoch bei jedem Postback GridView Daten werden erneut gebunden an die zugrunde liegende Datenquelle, die bewirkt, dass der im Kalender ausgewählte Datum festgelegt werden *wieder* , des Mitarbeiters `HireDate`, überschreiben das Datum, die vom Benutzer ausgewählt wird.
+> Das ausgewählte Datum des Kalender Steuer Elements muss nicht unbedingt sichtbar sein. Ein Kalender kann z. b. den 1<sup>.</sup>August 1999 als ausgewähltes Datum aufweisen, zeigt jedoch den aktuellen Monat und das Jahr an. Das ausgewählte Datum und sichtbare Datumsangaben werden durch die Eigenschaften `SelectedDate` und `VisibleDate` des Kalender Steuer Elements angegeben. Da wir die `HiredDate` des Mitarbeiters auswählen und sicherstellen möchten, dass diese beiden Eigenschaften an das `HireDate` Datenfeld gebunden werden müssen.
 
-Für dieses Tutorial ist es sich hierbei um eine völlig irrelevant Diskussion da der Benutzer nicht zum Aktualisieren des Mitarbeiters kann `HireDate`. Es wäre wahrscheinlich am besten, das Kalender-Steuerelement so konfigurieren, dass die Daten nicht ausgewählt werden. Unabhängig davon, zeigt das Lernprogramm an, dass in einigen Fällen Ansichtszustand aktiviert werden muss, um bestimmte Funktionen bereitzustellen.
+Wenn Sie die Seite in einem Browser anzeigen, zeigt der Kalender nun den Monat des Anmelders des Mitarbeiters an und wählt dieses bestimmte Datum aus.
 
-## <a name="step-4-showing-the-number-of-days-the-employee-has-worked-for-the-company"></a>Schritt 4: Zeigt der Anzahl der Tage des Mitarbeiters hat für das Unternehmen gearbeitet.
+[![das hireddate-Element des Mitarbeiters im Calendar-Steuerelement angezeigt wird.](using-templatefields-in-the-gridview-control-cs/_static/image41.png)](using-templatefields-in-the-gridview-control-cs/_static/image40.png)
 
-Bisher haben Sie zwei Anwendungen von TemplateFields erfahren:
+**Abbildung 14**: der `HiredDate` des Mitarbeiters wird im Kalender Steuerelement angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image42.png))
 
-- Kombinieren von zwei oder mehr Datenfeldwerte in einer Spalte, und
-- Einen Wert im Datenfeld ein Websteuerelement anstelle von Text mit Ausdrücken
+> [!NOTE]
+> Im Gegensatz zu allen bisher bereits gesehenen Beispielen haben wir für dieses Tutorial `EnableViewState`-Eigenschaft *nicht* auf `false` für diese GridView festgelegt. Der Grund für diese Entscheidung liegt darin, dass durch Klicken auf die Datumsangaben des Kalender Steuer Elements ein Postback verursacht wird, wobei das ausgewählte Datum des Kalenders auf das soeben angeklickte Datum festgelegt wird Wenn der Ansichts Zustand der GridView deaktiviert ist, werden die Daten von GridView bei jedem Postback an die zugrunde liegende Datenquelle zurückgesetzt, was bewirkt, dass das ausgewählte Datum des Kalenders auf den `HireDate`des Mitarbeiters *zurück* gesetzt wird und das vom Benutzer gewählte Datum überschrieben wird.
 
-Eine dritte Verwendung der von TemplateFields liegt beim Anzeigen von Metadaten über des GridView Daten zugrunde. Neben Einstellungsdatum der Mitarbeiter wird angezeigt, möglicherweise z. B. wir möchten auch eine Spalte haben, die gesamte Anzahl der Tage anzeigt, sie bei der Arbeit gewesen.
+In diesem Tutorial ist dies eine Erörterung, da der Benutzer nicht in der Lage ist, die `HireDate`des Mitarbeiters zu aktualisieren. Wahrscheinlich empfiehlt es sich, das Kalender Steuerelement so zu konfigurieren, dass seine Datumsangaben nicht auswählbar sind. Unabhängig davon, ob in diesem Tutorial der Ansichts Zustand aktiviert werden muss, um bestimmte Funktionen bereitzustellen.
 
-Noch entsteht eine weitere Verwendungsmöglichkeit der von TemplateFields in Szenarien, wenn es sich bei müssen die zugrunde liegenden Daten im Bericht Webseite unterschiedlich angezeigt werden, als im Format in der Datenbank gespeichert ist. Stellen Sie sich vor der `Employees` -Tabelle eine `Gender` Feld, das das Zeichen gespeichert `M` oder `F` das Geschlecht des Mitarbeiters an. Wenn diese Informationen auf einer Webseite anzeigen könnten wir das Geschlecht anzeigen, entweder als "Männlich" oder "Weiblich", statt nur "M" oder "F".
+## <a name="step-4-showing-the-number-of-days-the-employee-has-worked-for-the-company"></a>Schritt 4: zeigen Sie die Anzahl der Tage an, die der Mitarbeiter für das Unternehmen gearbeitet hat.
 
-Beide Szenarien verarbeitet werden können, durch das Erstellen einer *Formatierungsmethode* in die ASP.NET-Seite Code-Behind-Klasse (oder in einer separaten Klassenbibliothek, die als implementiert eine `static` Methode), die aus der Vorlage aufgerufen wird. Solche eine Formatierungsmethode wird aus der Vorlage, die mit der gleichen Databinding-Syntax, die bereits aufgerufen. Die Formatierungsmethode dauert in einer beliebigen Anzahl von Parametern, aber es muss eine Zeichenfolge zurückgeben. Diese zurückgegebene Zeichenfolge ist der HTML-Code, der in der Vorlage eingefügt wird.
+Bisher haben wir zwei Anwendungen von templatefields gesehen:
 
-Um dieses Konzept zu veranschaulichen, erweitern wir unser Tutorial zum Einblenden einer Spalte, in der die Gesamtzahl der Tage aufgeführt, die ein Mitarbeiter für den Auftrag war ein. Diese Methode zur Formatierung übernimmt eine `Northwind.EmployeesRow` Objekt aus, und die Anzahl der Tage, die der Mitarbeiter wurde, als Zeichenfolge eingesetzt hat zurück. Diese Methode kann auf der ASP.NET-Seite CodeBehind-Klasse hinzugefügt werden, aber *müssen* gekennzeichnet werden `protected` oder `public` um aus der Vorlage zugegriffen werden.
+- Kombinieren von zwei oder mehr Daten Feldwerten in einer Spalte und
+- Ausdrücken eines Daten Feldwerts mithilfe eines websteuer Elements anstelle von Text
+
+Eine dritte Verwendung von templatefields besteht darin, Metadaten zu den zugrunde liegenden Daten der GridView anzuzeigen. Zusätzlich zum Anzeigen der Einstellungsdaten der Mitarbeiter ist es z. b. möglich, eine Spalte mit einer Spalte anzuzeigen, in der die Anzahl der Tage angezeigt wird, die für den Auftrag gelten.
+
+In Szenarien, in denen die zugrunde liegenden Daten anders als in der Datenbank gespeichert werden müssen, wird jedoch eine andere Verwendung von templatefields durchführen. Stellen Sie sich vor, dass die `Employees` Tabelle ein `Gender` Feld enthielt, in dem das Zeichen `M` oder `F` gespeichert wurde, um das Geschlecht des Mitarbeiters anzugeben. Wenn diese Informationen auf einer Webseite angezeigt werden, können wir das Geschlecht entweder als "männlich" oder "weiblich" anzeigen, im Gegensatz zu "M" oder "F".
+
+Beide Szenarien können verarbeitet werden, indem eine *Formatierungs Methode* in der Code Behind-Klasse der ASP.NET-Seite erstellt wird (oder in einer separaten Klassenbibliothek, die als `static` Methode implementiert ist), die aus der Vorlage aufgerufen wird. Eine solche Formatierungs Methode wird aus der Vorlage mit der gleichen Datenbindung-Syntax aufgerufen, die bereits zuvor gesehen wurde. Die Formatierungs Methode kann eine beliebige Anzahl von Parametern annehmen, muss jedoch eine Zeichenfolge zurückgeben. Diese zurückgegebene Zeichenfolge ist der HTML-Code, der in die Vorlage eingefügt wird.
+
+Um dieses Konzept zu veranschaulichen, soll das Tutorial erweitert werden, um eine Spalte anzuzeigen, in der die Gesamtzahl der Tage aufgeführt ist, in denen ein Mitarbeiter für den Auftrag gearbeitet hat. Diese Formatierungs Methode nimmt ein `Northwind.EmployeesRow` Objekt an und gibt die Anzahl der Tage zurück, in denen der Mitarbeiter als Zeichenfolge verwendet wurde. Diese Methode kann der Code Behind-Klasse der ASP.NET-Seite hinzugefügt werden, *muss* jedoch als `protected` oder `public` gekennzeichnet werden, damit Sie über die Vorlage zugänglich ist.
 
 [!code-csharp[Main](using-templatefields-in-the-gridview-control-cs/samples/sample5.cs)]
 
-Da die `HiredDate` Feld darf `NULL` Datenbank Werte, die wir zunächst sicherstellen müssen, dass der Wert nicht `NULL` vor dem Fortfahren mit der Berechnung. Wenn die `HiredDate` Wert `NULL`, wir einfach die Zeichenfolge "Unknown"; zurückzugeben, ist dies nicht `NULL`, wir berechnen den Unterschied zwischen der aktuellen Zeit und die `HiredDate` Wert ein, und geben die Anzahl von Tagen zurück.
+Da das `HiredDate` Feld `NULL` Daten Bankwerte enthalten kann, muss zunächst sichergestellt werden, dass der Wert nicht `NULL` ist, bevor die Berechnung fortgesetzt wird. Wenn der `HiredDate` Wert `NULL`ist, wird einfach die Zeichenfolge "unknown" zurückgegeben. Wenn dies nicht `NULL`ist, berechnen wir den Unterschied zwischen der aktuellen Uhrzeit und dem `HiredDate` Wert und geben die Anzahl der Tage zurück.
 
-Diese Methode nutzen können, wir es in ein TemplateField in den GridView-Ansicht mit der Datenbindungssyntax aufgerufen müssen. Starten Sie durch das Hinzufügen einer neuen TemplateField an die GridView durch Klicken auf den Link "Spalten bearbeiten" in den GridView Smarttag und eine neue TemplateField hinzufügen.
+Um diese Methode zu verwenden, müssen wir Sie mithilfe der Datenbindung-Syntax aus einem TemplateField in der GridView aufrufen. Fügen Sie zunächst ein neues TemplateField-Element zur GridView hinzu, indem Sie auf den Link Spalten bearbeiten im Smarttags von GridView klicken und ein neues TemplateField-Element hinzufügen.
 
-[![Fügen Sie ein neues TemplateField an die GridView](using-templatefields-in-the-gridview-control-cs/_static/image44.png)](using-templatefields-in-the-gridview-control-cs/_static/image43.png)
+[![der GridView ein neues TemplateField-Element hinzufügen](using-templatefields-in-the-gridview-control-cs/_static/image44.png)](using-templatefields-in-the-gridview-control-cs/_static/image43.png)
 
-**Abbildung 15**: Fügen Sie ein neues TemplateField an die GridView ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image45.png))
+**Abbildung 15**: Hinzufügen eines neuen TemplateField zur GridView ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image45.png))
 
-Legen Sie diese neue TemplateField des `HeaderText` "Tage auf des Auftrags"-Eigenschaft und die zugehörige `ItemStyle`des `HorizontalAlign` Eigenschaft `Center`. Zum Aufrufen der `DisplayDaysOnJob` Methode aus der Vorlage Hinzufügen einer `ItemTemplate` und verwenden Sie die folgenden Databinding-Syntax:
+Legen Sie die `HeaderText`-Eigenschaft des neuen TemplateField-Objekts auf "Days on the Job" und die `HorizontalAlign`-Eigenschaft des `ItemStyle`auf `Center`fest. Fügen Sie eine `ItemTemplate` hinzu, und verwenden Sie die folgende Datenbindung-Syntax, um die `DisplayDaysOnJob`-Methode aus der Vorlage aufzurufen:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample6.aspx)]
 
-`Container.DataItem` Gibt eine `DataRowView` Objekt entspricht der `DataSource` Datensatz gebunden, um die `GridViewRow`. Die `Row` Eigenschaft gibt den stark typisierten `Northwind.EmployeesRow`, der übergeben wird, um die `DisplayDaysOnJob` Methode. Diese Syntax Databinding stehen direkt in der `ItemTemplate` (siehe die deklarative Syntax weiter unten) oder zugewiesen werden kann, um die `Text` Eigenschaft ein Label-Steuerelement.
+`Container.DataItem` gibt ein `DataRowView` Objekt zurück, das dem `DataSource` Datensatz entspricht, der an den `GridViewRow`gebunden ist. Die `Row`-Eigenschaft gibt die stark typisierte `Northwind.EmployeesRow`zurück, die an die `DisplayDaysOnJob`-Methode übermittelt wird. Diese Datenbindung-Syntax kann direkt im `ItemTemplate` vorkommen (wie in der deklarativen Syntax unten dargestellt) oder der `Text`-Eigenschaft eines Label-websteuer Elements zugewiesen werden.
 
 > [!NOTE]
-> Auch nicht in einer `EmployeesRow` -Instanz kann nur übergeben wir den `HireDate` -Wert mithilfe `<%# DisplayDaysOnJob(Eval("HireDate")) %>`. Jedoch der `Eval` Methodenrückgabe ein `object`, daher müssten wir ändern unsere `DisplayDaysOnJob` Methodensignatur akzeptieren einen Eingabeparameter vom Typ `object`stattdessen. Es kann nicht blind umgewandelt der `Eval("HireDate")` aufrufen, um eine `DateTime` da die `HireDate` -Spalte in der `Employees` Tabelle darf `NULL` Werte. Aus diesem Grund müssen wir akzeptieren ein `object` als Eingabeparameter für die `DisplayDaysOnJob` -Methode, die überprüfen, ob es sich um eine Datenbank wurde `NULL` Wert (das kann mithilfe von durchgeführt werden `Convert.IsDBNull(objectToCheck)`), und führen Sie anschließend entsprechend.
+> Anstatt eine `EmployeesRow` Instanz zu übergeben, können Sie alternativ den `HireDate` Wert auch mit `<%# DisplayDaysOnJob(Eval("HireDate")) %>`übergeben. Die `Eval`-Methode gibt jedoch eine `object`zurück. Deshalb müssten wir unsere `DisplayDaysOnJob` Methoden Signatur so ändern, dass Sie einen Eingabeparameter vom Typ "`object`" annimmt. Wir können den `Eval("HireDate")`-Aufrufe nicht blind in eine `DateTime` umwandeln, da die Spalte `HireDate` in der `Employees` Tabelle `NULL` Werte enthalten kann. Daher müssten wir eine `object` als Eingabeparameter für die `DisplayDaysOnJob`-Methode akzeptieren, überprüfen, ob Sie über einen `NULL` Wert für die Datenbank verfügt (was mit `Convert.IsDBNull(objectToCheck)`erreicht werden kann), und dann entsprechend vorgehen.
 
-Aufgrund dieser feinheiten, ich haben sich entschieden, um die gesamte übergeben `EmployeesRow` Instanz. Im nächsten Tutorial sehen, dass ein weitere Anpassung-Beispiel für die Verwendung der `Eval("columnName")` Syntax für einen Eingabeparameter in einer Formatierungsmethode übergeben.
+Aufgrund dieser Feinheiten habe ich mich entschieden, die gesamte `EmployeesRow` Instanz zu übergeben. Im nächsten Tutorial sehen Sie ein passendes Beispiel für die Verwendung der `Eval("columnName")`-Syntax zum Übergeben eines Eingabe Parameters in eine Formatierungs Methode.
 
-Im folgenden wird die deklarative Syntax für unsere GridView gezeigt, nachdem das TemplateField hinzugefügt wurde und die `DisplayDaysOnJob` Methode mit dem Namen aus der `ItemTemplate`:
+Das folgende Beispiel zeigt die deklarative Syntax für unsere GridView, nachdem das TemplateField-Element hinzugefügt wurde, und die `DisplayDaysOnJob`-Methode, die vom `ItemTemplate`aufgerufen wurde:
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample7.aspx)]
 
-Abbildung 16 zeigt das Lernprogramm abgeschlossene, wenn Sie über einen Browser angezeigt.
+Abbildung 16 zeigt das abgeschlossene Tutorial, das in einem Browser angezeigt wird.
 
-[![Die Anzahl von-Tagen, die die Mitarbeiter für den Auftrag wurde wird angezeigt.](using-templatefields-in-the-gridview-control-cs/_static/image47.png)](using-templatefields-in-the-gridview-control-cs/_static/image46.png)
+[![die Anzahl der Tage, die der Mitarbeiter im Auftrag festgelegt wurde.](using-templatefields-in-the-gridview-control-cs/_static/image47.png)](using-templatefields-in-the-gridview-control-cs/_static/image46.png)
 
-**Abbildung 16**: Die Anzahl von Tagen auf die Mitarbeiter wurde für den Auftrag angezeigt wird ([klicken Sie, um das Bild in voller Größe anzeigen](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
+**Abbildung 16**: die Anzahl der Tage, die der Mitarbeiter für den Auftrag festgelegt wurde ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Das TemplateField im GridView-Steuerelement ermöglicht einen höheren Grad an Flexibilität beim Anzeigen von Daten als bei anderen feldsteuerungen verfügbar ist. Von TemplateFields eignen sich ideal für Situationen, in denen:
+Das TemplateField im GridView-Steuerelement ermöglicht ein höheres Maß an Flexibilität bei der Anzeige von Daten, als für die anderen Feld Steuerelemente verfügbar ist. Templatefields sind ideal für Situationen, in denen Folgendes gilt:
 
-- Mehrere Datenfelder, die in einer GridView-Spalte angezeigt werden müssen
-- Die Daten ist mithilfe von eine Websteuerelement anstelle von nur-Text am besten ausgedrückt.
-- Die Ausgabe hängt von der zugrunde liegenden Daten, z. B. das Anzeigen von Metadaten oder neuformatierung der das
+- In einer GridView-Spalte müssen mehrere Datenfelder angezeigt werden.
+- Die Daten werden am besten mithilfe eines websteuer Elements anstelle von nur-Text ausgedrückt.
+- Die Ausgabe hängt von den zugrunde liegenden Daten ab, z. b. durch das Anzeigen von Metadaten oder das Neuformatieren der Daten.
 
-Zusätzlich zum Anpassen der Anzeige von Daten, werden auch von TemplateFields verwendet, für die Benutzeroberflächen, die zum Bearbeiten und Einfügen von Daten verwendet werden, in zukünftigen Lernprogrammen sehen anpassen.
+Zusätzlich zur Anpassung der Anzeige von Daten werden auch templatefields zum Anpassen der Benutzeroberflächen verwendet, die zum Bearbeiten und Einfügen von Daten verwendet werden, wie in zukünftigen Tutorials zu sehen ist.
 
-Die nächsten beiden Lernprogramme kennenzulernen Vorlagen, beginnend mit einem Blick auf das Verwenden von TemplateFields in einem DetailsView. Danach werden wir auf die FormView aktivieren, die Vorlagen anstelle von Feldern verwendet werden, um größere Flexibilität bei der das Layout und Struktur der Daten zu ermöglichen.
+In den nächsten beiden Tutorials wird das Untersuchen von Vorlagen fortgesetzt, beginnend mit der Verwendung von templatefields in einer DetailsView. Danach wird die Form View verwendet, in der Vorlagen anstelle von Feldern verwendet werden, um eine größere Flexibilität im Layout und in der Struktur der Daten zu gewährleisten.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde Dan Jagers. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Dan Jagers. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](custom-formatting-based-upon-data-cs.md)

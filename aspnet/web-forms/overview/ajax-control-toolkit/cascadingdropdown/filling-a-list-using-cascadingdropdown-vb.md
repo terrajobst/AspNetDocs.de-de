@@ -2,66 +2,66 @@
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 title: Ausfüllen einer Liste mit CascadingDropDown (VB) | Microsoft-Dokumentation
 author: wenz
-description: Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in Anoth verknüpft...
+description: Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList zugeordnete Werte in Anoth laden...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 5236695e-5c70-4887-baee-0bfb0afb3448
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4cf5637eed1ecf8a09e8a98fa0193b6d162fd92b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8dd9ef8a4bdf705ba4451b7fd240e4de8618221c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130468"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599601"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-vb"></a>Ausfüllen einer Liste mit CascadingDropDown (VB)
 
-durch [Christian Wenz](https://github.com/wenz)
+von [Christian Wenz](https://github.com/wenz)
 
-[Code herunterladen](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip) oder [PDF-Datei herunterladen](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)
+[Code herunterladen](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip) oder [PDF herunterladen](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)
 
-> Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. (Z. B. eine Liste enthält eine Liste der US-Staaten und die folgenden Liste wird dann mit der größten Städte in diesem Zustand gefüllt.) Die erste Herausforderung lösen werden tatsächlich eine Dropdownliste mit diesem Steuerelement geben.
+> Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. (Eine Liste enthält beispielsweise eine Liste der US-Bundesstaaten, und die nächste Liste wird dann mit den wichtigsten Städten in diesem Zustand aufgefüllt.) Die erste Herausforderung besteht darin, eine Dropdown Liste mit diesem Steuerelement auszufüllen.
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Das Steuerelement "CascadingDropDown" im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer DropDownList lädt Werte in einer anderen DropDownList verknüpft ist. (Z. B. eine Liste enthält eine Liste der US-Staaten und die folgenden Liste wird dann mit der größten Städte in diesem Zustand gefüllt.) Die erste Herausforderung lösen werden tatsächlich eine Dropdownliste mit diesem Steuerelement geben.
+Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. (Eine Liste enthält beispielsweise eine Liste der US-Bundesstaaten, und die nächste Liste wird dann mit den wichtigsten Städten in diesem Zustand aufgefüllt.) Die erste Herausforderung besteht darin, eine Dropdown Liste mit diesem Steuerelement auszufüllen.
 
 ## <a name="steps"></a>Schritte
 
-Um die Funktionalität von ASP.NET AJAX und das Steuerelement-Toolkit, aktivieren die `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden muss (jedoch innerhalb der `<form>` Element):
+Um die Funktionalität von ASP.NET AJAX und dem Steuerelement-Toolkit zu aktivieren, muss das `ScriptManager` Steuerelement an einer beliebigen Stelle auf der Seite platziert werden (innerhalb des `<form>` Elements):
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample1.aspx)]
 
-Anschließend ist ein DropDownList-Steuerelement erforderlich:
+Anschließend ist ein Dropdown List-Steuerelement erforderlich:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample2.aspx)]
 
-Für diese Liste wird ein CascadingDropDown-Extender hinzugefügt. Eine asynchrone Anforderung sendet an einen Webdienst die klicken Sie dann eine Liste mit Einträgen in der Liste anzuzeigende zurückgibt. Damit dies funktioniert müssen die folgenden CascadingDropDown Attribute festgelegt werden:
+Für diese Liste wird ein CascadingDropDown-Extender hinzugefügt. Er sendet eine asynchrone Anforderung an einen Webdienst, der dann eine Liste von Einträgen zurückgibt, die in der Liste angezeigt werden sollen. Damit dies funktioniert, müssen die folgenden CascadingDropDown-Attribute festgelegt werden:
 
-- `ServicePath`: Die URL eines Webdiensts, der Einträge in der Liste bereitstellen
-- `ServiceMethod`: Web-Methode, die Bereitstellung von Einträge in der Liste
-- `TargetControlID`: ID der Dropdown-Liste
-- `Category`: Kategorieinformationen, die beim Aufruf der Web-Methode übermittelt wird
-- `PromptText`: Text, der angezeigt wird, wenn Sie Daten aus der Liste asynchron vom Server geladen
+- `ServicePath`: URL eines Webdiensts, der die Listeneinträge bereitgestellt
+- `ServiceMethod`: Webmethode, die die Listeneinträge bereitgestellt
+- `TargetControlID`: ID der Dropdown Liste
+- `Category`: Kategorieinformationen, die beim Aufrufen an die Webmethode übermittelt werden.
+- `PromptText`: Text, der beim asynchronen Laden von Listen Daten vom Server angezeigt wird.
 
-Dies ist das Markup für die `CascadingDropDown` Element. Der einzige Unterschied zwischen c# und VB ist der Name des zugeordneten Webdiensts:
+Hier ist das Markup für das `CascadingDropDown` Element. Der einzige Unterschied C# zwischen und VB ist der Name des zugeordneten Webdiensts:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample3.aspx)]
 
-Der JavaScript-Code, der von der `CascadingDropDown` Extender Aufrufen eine Webdienstmethode mit folgender Signatur:
+Der JavaScript-Code, der vom `CascadingDropDown` Extender stammt, ruft eine Webdienst Methode mit der folgenden Signatur auf:
 
 [!code-vb[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample4.vb)]
 
-Damit der wichtigste Aspekt ist, dass die Methode ein Array vom Typ zurückgeben muss `CascadingDropDownNameValue` (definiert durch die ASP.NET AJAX Control Toolkit). In der `CascadingDropDownNameValue` Konstruktor, der erste Eintrag in der der Text, und klicken Sie dann seinen Wert angegeben werden müssen, ebenso wie `<option value="VALUE">NAME</option>` in HTML tun würden. Hier sind einige Beispieldaten:
+Der wichtigste Aspekt ist, dass die Methode ein Array vom Typ `CascadingDropDownNameValue` zurückgeben muss (definiert durch das ASP.NET AJAX Control Toolkit). Im `CascadingDropDownNameValue`-Konstruktor muss zuerst der Text des Listen Eintrags und dann der zugehörige Wert bereitgestellt werden, ebenso wie `<option value="VALUE">NAME</option>` in HTML. Im folgenden finden Sie einige Beispiel Daten:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample5.aspx)]
 
-Die Seite im Browser laden, löst die Liste mit drei Anbietern gefüllt werden soll.
+Wenn Sie die Seite im Browser laden, wird die Liste mit drei Anbietern gefüllt.
 
-[![Die Liste wird automatisch ausgefüllt.](filling-a-list-using-cascadingdropdown-vb/_static/image2.png)](filling-a-list-using-cascadingdropdown-vb/_static/image1.png)
+[![die Liste automatisch aufgefüllt wird](filling-a-list-using-cascadingdropdown-vb/_static/image2.png)](filling-a-list-using-cascadingdropdown-vb/_static/image1.png)
 
-Die Liste wird automatisch übernommen ([klicken Sie, um das Bild in voller Größe anzeigen](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))
+Die Liste wird automatisch ausgefüllt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](filling-a-list-using-cascadingdropdown-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
 > [Zurück](using-auto-postback-with-cascadingdropdown-cs.md)

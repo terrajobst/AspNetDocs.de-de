@@ -1,207 +1,207 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
-title: 'ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Codeupdates | Microsoft-Dokumentation'
+title: 'ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Code Updates | Microsoft-Dokumentation'
 author: tdykstra
-description: Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, indem Warnungsprovider...
+description: In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter zu Azure App Service.
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 36d1575808925de38b909d6816e46bb6cb69cf72
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3881833bfe2a50a38a357614f92f434a04a8ab08
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134249"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74626781"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>ASP.NET-webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Codeupdates
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Code Updates
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-[Startprojekt herunterladen](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Starter Projekt herunterladen](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> Dieser tutorialreihe erfahren Sie, wie bereitzustellende (veröffentlichen) aus einer ASP.NET web-Anwendung auf Azure App Service-Web-Apps oder bei einem Hostinganbieter von Drittanbietern, mithilfe von Visual Studio 2012 oder Visual Studio 2010. Weitere Informationen über die Reihe finden Sie unter [im ersten Tutorial der Reihe](introduction.md).
+> In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht
+## <a name="overview"></a>Übersicht über
 
-Nach der erstbereitstellung Ihre Arbeit verwalten und entwickeln Ihre Website wird fortgesetzt, und vor dem Long-Wert wird ein Update bereitstellen möchten. Dieses Tutorial führt Sie durch den Prozess der Bereitstellung eines Updates an Ihrem Anwendungscode. Das Update, das Implementieren und bereitstellen, die in diesem Tutorial muss keine Änderung an einer Datenbank werden; sehen Sie, ob Sie zum Bereitstellen der Änderung an einer Datenbank im nächsten Tutorial unterschiedlich ist.
+Nach der erstmaligen Bereitstellung wird die Wartung und Entwicklung Ihrer Website fortgesetzt, und bevor Sie mit der Zeit arbeiten, möchten Sie ein Update bereitstellen. Dieses Tutorial führt Sie durch den Prozess der Bereitstellung eines Updates für den Anwendungscode. Das von Ihnen in diesem Tutorial implementierte und bereitgestellte Update umfasst keine Daten Bank Änderung. im nächsten Tutorial sehen Sie, was die Bereitstellung einer Daten Bank Änderung unterscheidet.
 
-Erinnerung: Wenn Sie eine Fehlermeldung erhalten, oder etwas nicht funktioniert, wie Sie das Lernprogramm durchzuarbeiten, sollten Sie unbedingt die [Problembehandlungsseite](troubleshooting.md).
+Erinnerung: Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, wenn Sie das Tutorial durchlaufen, achten Sie darauf, dass Sie die [Seite Problem](troubleshooting.md)Behandlung überprüfen.
 
-## <a name="make-a-code-change"></a>Einer codeänderung
+## <a name="make-a-code-change"></a>Vornehmen einer Codeänderung
 
-Fügen Sie ein einfaches Beispiel eines Updates für Ihre Anwendung, um die **Dozenten** Seite eine Liste der Kurse, die von den ausgewählten Dozenten unterrichtet.
+Als einfaches Beispiel für ein Update der Anwendung fügen Sie der Seite **Dozenten** eine Liste der Kurse hinzu, die vom ausgewählten Dozenten gelehrt werden.
 
-Wenn das Ausführen der **Dozenten** Seite werden Sie feststellen, dass es gibt **wählen** Verknüpfungen im Raster, aber nicht der Fall ist etwas anderes als stellen die Zeile Background grau dargestellt.
+Wenn Sie die Seite **Dozenten** ausführen, werden Sie feststellen, dass im Raster **ausgewählte** Verknüpfungen vorhanden sind, aber Sie führen nichts anderes aus, als den Zeilen Hintergrund grau zu lassen.
 
-!["Dozenten" mit Auswahl](deploying-a-code-update/_static/image1.png)
+![Dozenten Seite mit Auswahl](deploying-a-code-update/_static/image1.png)
 
-Nachdem Sie Code hinzufügen, die ausgeführt, wenn wird die **wählen** Link geklickt wird, und zeigt eine Liste der Kurse, die von den ausgewählten Dozenten unterrichtet.
+Nun fügen Sie Code hinzu, der ausgeführt wird, wenn auf den Link **auswählen** geklickt wird, und zeigt eine Liste der Kurse an, die vom ausgewählten Dozenten gelehrt werden.
 
-1. In *Instructors.aspx*, fügen Sie das folgende Markup direkt nach der **ErrorMessageLabel** `Label` Steuerelement:
+1. Fügen Sie in " *Dozenten. aspx*" direkt nach dem `Label`-Steuerelement **errormessagelabel** das folgende Markup hinzu:
 
     [!code-aspx[Main](deploying-a-code-update/samples/sample1.aspx)]
-2. Führen Sie die Seite, und wählen Sie einen Dozenten. Sie sehen eine Liste der Kurse, die durch dieses Dozenten unterrichtet.
+2. Führen Sie die Seite aus, und wählen Sie einen Dozenten. Es wird eine Liste der Kurse angezeigt, die von diesem Dozenten gelehrt werden.
 
-    ![Dozentenseite mit Schulungskurse](deploying-a-code-update/_static/image2.png)
+    ![Dozenten Seite mit Lehrkursen](deploying-a-code-update/_static/image2.png)
 3. Schließen Sie den Browser.
 
-## <a name="deploy-the-code-update-to-the-test-environment"></a>Bereitstellen des Code-Updates für die testumgebung
+## <a name="deploy-the-code-update-to-the-test-environment"></a>Bereitstellen des Code Updates in der Testumgebung
 
-Bevor Sie Ihre Veröffentlichungsprofile verwenden können, für Test-, Staging- und produktionsumgebungen bereitstellen, müssen Sie Optionen für die Veröffentlichung der Datenbank zu ändern. Sie müssen nicht mehr die Bereitstellungsskripts erteilen und die Daten für die Mitgliedschaftsdatenbank ausführen.
+Bevor Sie Ihre Veröffentlichungs Profile für die Bereitstellung in Test-, Staging-und Produktionsumgebungen verwenden können, müssen Sie die Optionen für die Daten Bank Veröffentlichung ändern. Sie müssen die Grant-und Daten Bereitstellungs Skripts für die Mitgliedschafts Datenbank nicht mehr ausführen.
 
-1. Öffnen der **Webveröffentlichung** Assistenten, indem Sie mit der rechten Maustaste in des Projekts ContosoUniversity und auf **veröffentlichen**.
-2. Klicken Sie auf die **Test** Profil in der **Profil** Dropdown-Liste.
-3. Klicken Sie auf die **Einstellungen** Registerkarte.
-4. Klicken Sie unter **DefaultConnection** in die **Datenbanken** deaktivieren Sie im Abschnitt der **Aktualisieren einer Datenbank** Kontrollkästchen.
-5. Klicken Sie auf die **Profil** Registerkarte, und klicken Sie dann auf die **Staging** Profil in der **Profil** Dropdown-Liste.
-6. Wenn Sie gefragt werden, wenn Sie die Änderungen speichern möchten die **Test** möchten, klicken Sie auf **Ja**.
-7. Stellen Sie die gleiche Änderung in der Staging-Profil ein.
-8. Wiederholen Sie den Vorgang, um die gleiche Änderung im produktionsprofil vornehmen.
-9. Schließen der **Webveröffentlichung** Assistenten.
+1. Öffnen Sie den Assistenten **Web veröffentlichen** , indem Sie mit der rechten Maustaste auf das Projekt contosouniversity und dann auf **veröffentlichen**klicken.
+2. Klicken Sie in der Dropdown Liste **Profil** auf das Profil **Test** .
+3. Klicken Sie auf die Registerkarte **Einstellungen** .
+4. Deaktivieren Sie im Abschnitt **Datenbanken** unter **DefaultConnection** das Kontrollkästchen **Datenbank aktualisieren** .
+5. Klicken Sie auf die Registerkarte **Profil** , und klicken Sie dann in der Dropdown Liste **Profil** **auf das** Stagingprofil.
+6. Wenn Sie gefragt werden, ob Sie die am **Test** Profil vorgenommenen Änderungen speichern möchten, klicken Sie auf **Ja**.
+7. Nehmen Sie die gleiche Änderung im Stagingprofil vor.
+8. Wiederholen Sie den Vorgang, um die gleiche Änderung im Produktionsprofil vorzunehmen.
+9. Schließen Sie den Assistenten **Web veröffentlichen** .
 
-Bereitstellung in der testumgebung ist nun einfach der Ausführung von nur einem Klick erneut veröffentlichen. Um diesen Prozess zu beschleunigen, können Sie die **klicken Sie auf Webveröffentlichung mit einem** Symbolleiste.
+Die Bereitstellung in der Testumgebung ist nun eine einfache Frage, dass die One-Click-Veröffentlichung erneut ausgeführt werden kann. Um diesen Vorgang zu beschleunigen, können Sie die Symbolleiste " **Web One Click Publish** " verwenden.
 
-1. In der **Ansicht** Menü wählen **Symbolleisten** und wählen Sie dann **klicken Sie auf Webveröffentlichung mit einem**.
+1. Klicken Sie im Menü **Ansicht auf** **Symbolleisten** , und wählen Sie dann **Web One Click Publish**aus.
 
     ![Selecting_One_Click_Publish_toolbar](deploying-a-code-update/_static/image3.png)
-2. In **Projektmappen-Explorer**, wählen Sie das Projekt ContosoUniversity.
-3. die **klicken Sie auf Webveröffentlichung mit einem** Symbolleiste wählen Sie die **Test** Veröffentlichungsprofil aus, und klicken Sie dann auf **Webveröffentlichung** (das Symbol mit den Pfeilen nach links und rechts).
+2. Wählen Sie in **Projektmappen-Explorer**das Projekt conjesouniversity aus.
+3. **Klicken Sie im Web auf** die Symbolleiste veröffentlichen, wählen **Sie das Profil** Veröffentlichungs Profil aus, und klicken Sie dann auf **Web veröffentlichen** (das Symbol mit Pfeilen nach links und rechts).
 
     ![Web_One_Click_Publish_toolbar](deploying-a-code-update/_static/image4.png)
-4. Visual Studio stellt die aktualisierte Anwendung bereit, und der Browser automatisch geöffnet wird, auf der Startseite.
-5. Führen Sie die dozentenseite, und wählen Sie einen Dozenten aus, um sicherzustellen, dass das Update wurde erfolgreich bereitgestellt wurde.
+4. Visual Studio stellt die aktualisierte Anwendung bereit, und der Browser öffnet automatisch die Startseite.
+5. Führen Sie die Seite Dozenten aus, und wählen Sie einen Dozenten aus, um sicherzustellen, dass das Update erfolgreich bereitgestellt
 
-Sie würden normalerweise auch tun Regressionstests (d. h. den Rest des Standorts, um sicherzustellen, dass die neue Änderung keine vorhandene Funktionalität nicht beeinträchtigt haben testen). Aber für dieses Tutorial überspringen Sie diesen Schritt und fahren Sie mit der Bereitstellung des Updates zu Staging und Produktion.
+Normalerweise würden Sie auch Regressionstests durchführen (Testen Sie den Rest der Site, um sicherzustellen, dass die neue Änderung keinerlei vorhandene Funktionalität beeinträchtigt). In diesem Tutorial überspringen Sie diesen Schritt und stellen das Update für Staging und Produktion bereit.
 
-Wenn Sie erneut bereitstellen, Web Deploy bestimmt automatisch, welche Dateien geändert wurden, und nur Kopien geänderte Dateien auf dem Server. Standardmäßig verwendet Web Deploy zuletzt geänderten Datumsangaben für Dateien um zu bestimmen, welche geändert haben. Einige Quellcodeverwaltungssysteme Ändern der Datei Datumsangaben sogar wenn Sie den Inhalt der Datei nicht ändern. In diesem Fall empfiehlt es sich so konfigurieren Sie Web Deploy, um die Dateiprüfsummen zu verwenden, um zu bestimmen, welche Dateien geändert wurden. Weitere Informationen finden Sie unter [Warum alle meine Dateien erneut bereitgestellt, obwohl ich nicht ändern?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) in die ASP.NET Bereitstellung – häufig gestellte Fragen.
+Wenn Sie die Bereitstellung erneut durchzuführen, bestimmt Web deploy automatisch, welche Dateien geändert wurden, und kopiert nur geänderte Dateien auf den Server. Standardmäßig verwendet Web deploy Datum der letzten Änderung von Dateien, um zu bestimmen, welche geändert wurden. Einige Quell Code Verwaltungssysteme ändern Datumsangaben, auch wenn Sie den Dateiinhalt nicht ändern. In diesem Fall möchten Sie möglicherweise Web deploy so konfigurieren, dass Datei Prüfsummen verwendet werden, um zu bestimmen, welche Dateien geändert wurden. Weitere Informationen finden Sie unter [Warum werden alle meine Dateien erneut bereitgestellt, obwohl ich Sie nicht geändert habe?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) in den FAQ zur ASP.NET-Bereitstellung.
 
-## <a name="take-the-application-offline-during-deployment"></a>Nutzen Sie die Anwendung offline schalten, während der Bereitstellung
+## <a name="take-the-application-offline-during-deployment"></a>Offline schalten der Anwendung während der Bereitstellung
 
-Die Änderung, die Sie bereitstellen, ist jetzt eine einfache Änderung an einer einzelnen Seite. Aber manchmal Sie größere Änderungen bereitstellen oder Bereitstellen von Anwendungscode und datenbankänderungen, und die Website möglicherweise fehlerhaften Verhalten, wenn ein Benutzer eine Seite anfordert, bevor die Bereitstellung abgeschlossen ist. Um zu verhindern, dass Benutzer auf den Standort zugreifen, während der Bereitstellung ausgeführt wird, können Sie eine *app\_offline.htm* Datei. Wenn Sie eine Datei namens einfügen *app\_offline.htm* im Stammordner Ihrer Anwendung, IIS automatisch die Datei statt der Ausführung Ihrer Anwendung angezeigt. Damit um den Zugriff während der Bereitstellung zu verhindern, Sie fügen *app\_offline.htm* im Stammordner, den Bereitstellungsvorgang ausführen, und entfernen Sie *app\_offline.htm* nach dem erfolgreichen die Bereitstellung.
+Die Änderung, die Sie jetzt bereitstellen, ist eine einfache Änderung an einer einzelnen Seite. Manchmal stellen Sie jedoch größere Änderungen bereit, oder Sie stellen sowohl Code als auch Daten Bank Änderungen bereit, und der Standort verhält sich möglicherweise falsch, wenn ein Benutzer eine Seite anfordert, bevor die Bereitstellung abgeschlossen ist. Wenn Sie verhindern möchten, dass Benutzer auf die Website zugreifen, während die Bereitstellung ausgeführt wird, können Sie eine *App\_offline. htm* -Datei verwenden. Wenn Sie eine Datei mit dem Namen *App\_offline. htm* im Stamm Ordner Ihrer Anwendung ablegen, wird diese Datei automatisch von IIS angezeigt, anstatt Ihre Anwendung zu verwenden. Um den Zugriff während der Bereitstellung zu verhindern, können Sie die *App\_offline. htm* im Stamm Ordner ablegen, den Bereitstellungs Prozess ausführen und dann die *App\_offline. htm* nach erfolgreicher Bereitstellung entfernen.
 
-Sie können konfigurieren, Web Deploy, um automatisch einen Standardwert versetzen *app\_offline.htm* Datei auf dem Server beim Start bereitstellen und entfernen Sie sie an, wenn er abgeschlossen ist. Zu diesem Zweck müssen Sie lediglich ist Ihre veröffentlichungsprofildatei (.pubxml) das folgende XML-Element hinzugefügt:
+Sie können Web deploy so konfigurieren, dass beim Starten der Bereitstellung automatisch eine Standard- *App\_Offline* Datei auf dem Server abgelegt wird. Zu diesem Zweck müssen Sie lediglich das folgende XML-Element zu ihrer Veröffentlichungs Profil Datei (. pubxml) hinzufügen:
 
 [!code-xml[Main](deploying-a-code-update/samples/sample2.xml)]
 
-In diesem Tutorial erfahren Sie zum Erstellen und verwenden ein benutzerdefinierten *app\_offline.htm* Datei.
+In diesem Tutorial erfahren Sie, wie Sie eine benutzerdefinierte *App\_Datei "offline. htm* " erstellen und verwenden.
 
-Mithilfe von *app\_offline.htm* auf der Stagingsite ist nicht erforderlich, da Sie nicht über Benutzer, die Zugriff auf die Stagingsite verfügen. Aber es wird empfohlen, Sie verwenden Test die Möglichkeit, die Sie in der Produktion bereitstellen möchten.
+Die Verwendung von *App-\_offline. htm* auf der Stagingwebsite ist nicht erforderlich, da Benutzer nicht auf die Stagingwebsite zugreifen. Es empfiehlt sich jedoch, die Staging-Methode zu verwenden, um alles so zu testen, wie Sie die Bereitstellung in der Produktion planen.
 
-### <a name="create-appofflinehtm"></a>Erstellen Sie app\_offline.htm
+### <a name="create-app_offlinehtm"></a>App\_offline. htm erstellen
 
-1. In **Projektmappen-Explorer**mit der rechten Maustaste auf die Projektmappe, und klicken Sie auf **hinzufügen**, und klicken Sie dann auf **neues Element**.
-2. Erstellen Sie eine **HTML-Seite** mit dem Namen *app\_offline.htm* (löschen Sie die endgültige "l" in der *.html* -Erweiterung, die Visual Studio wird standardmäßig erstellt).
-3. Ersetzen Sie das Vorlagenmarkup, durch das folgende Markup:
+1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Projekt Mappe, und klicken Sie auf **Hinzufügen**und dann auf **Neues Element**.
+2. Erstellen Sie eine **HTML-Seite** mit dem Namen *App\_offline. htm* (Löschen Sie die endgültige "l" in der *HTML* -Erweiterung, die Visual Studio standardmäßig erstellt).
+3. Ersetzen Sie das Vorlagen Markup durch das folgende Markup:
 
     [!code-html[Main](deploying-a-code-update/samples/sample3.html)]
 4. Speichern und schließen Sie die Datei.
 
-### <a name="copy-appofflinehtm-to-the-root-folder-of-the-web-site"></a>App kopieren\_offline.htm in den Stammordner der Website
+### <a name="copy-app_offlinehtm-to-the-root-folder-of-the-web-site"></a>Kopieren Sie die APP\_"offline. htm" in den Stamm Ordner der Website.
 
-Sie können alle FTP-Tool verwenden, zum Kopieren von Dateien mit der Website. [FileZilla](http://filezilla-project.org/) ist ein beliebtes Tool für die FTP und wird in den Screenshots gezeigt.
+Sie können ein beliebiges FTP-Tool zum Kopieren von Dateien auf die Website verwenden. [FileZilla](http://filezilla-project.org/) ist ein beliebtes FTP-Tool, das in den Screenshots angezeigt wird.
 
-Um ein FTP-Tool verwenden zu können, benötigen Sie drei Dinge: der FTP-URL, den Benutzernamen und das Kennwort.
+Zum Verwenden eines FTP-Tools benötigen Sie drei Dinge: die FTP-URL, den Benutzernamen und das Kennwort.
 
-Die URL wird auf der Website-Dashboard-Seite im Azure-Verwaltungsportal angezeigt, und den Benutzernamen und das Kennwort für FTP finden Sie in der *.publishsettings* -Datei, die Sie zuvor heruntergeladen haben. Die folgenden Schritte zeigen, wie Sie diese Werte zu erhalten.
+Die URL wird auf der Dashboardseite der Website im Azure-Verwaltungsportal angezeigt, und der Benutzername und das Kennwort für FTP finden Sie in der Datei " *. publishsettings* ", die Sie zuvor heruntergeladen haben. Die folgenden Schritte zeigen, wie Sie diese Werte erhalten.
 
-1. Klicken Sie in der Azure-Verwaltungsportal auf **Websites** Registerkarte, und klicken Sie dann auf die staging-Website.
-2. Auf der **Dashboard** Seite Scrollen Sie zu suchen, die der FTP-Hostname angegeben wird, in der **Blick** Abschnitt.
+1. Klicken Sie im Azure-Verwaltungsportal auf die Registerkarte **Websites** , und klicken Sie dann auf die Stagingwebsite.
+2. Scrollen Sie auf der Seite **Dashboard** nach unten, um den FTP-Hostnamen im Abschnitt **kurzer Blick** zu suchen.
 
     ![FTP-Hostname](deploying-a-code-update/_static/image5.png)
-3. Öffnen Sie das Staging *.publishsettings* Datei in Notepad oder einem anderen Texteditor.
-4. Suchen der `publishProfile` -Element für das FTP-Profil.
-5. Kopieren der `userName` und `userPWD` Werte.
+3. Öffnen Sie die Datei "Staging *. publishsettings* " im Editor oder in einem anderen Text-Editor.
+4. Suchen Sie das `publishProfile`-Element für das FTP-Profil.
+5. Kopieren Sie die Werte für `userName` und `userPWD`.
 
-    ![FTP-Anmeldeinformationen](deploying-a-code-update/_static/image6.png)
-6. Öffnen Sie Ihren FTP-Tool, und melden Sie sich bei der FTP-URL.
-7. Kopie *app\_offline.htm* im Projektmappenordner, den *"/ Site/wwwroot"* Ordner auf der staging-Website.
+    ![FTP-Anmelde Informationen](deploying-a-code-update/_static/image6.png)
+6. Öffnen Sie das FTP-Tool, und melden Sie sich bei der FTP-URL an.
+7. Kopieren Sie *App-\_"offline. htm* " aus dem Projektmappenordner in den Ordner " */Site/wwwroot* " der Stagingwebsite.
 
-    ![Kopieren Sie "App_offline"](deploying-a-code-update/_static/image7.png)
-8. Navigieren Sie zu Ihrer staging-Website-URL. Sie sehen, dass die *app\_offline.htm* Seite wird nun anstelle Ihrer Startseite angezeigt.
+    ![Kopieren App_offline](deploying-a-code-update/_static/image7.png)
+8. Navigieren Sie zur URL Ihrer Stagingsite. Sie sehen, dass die Seite *App\_offline. htm* jetzt anstelle der Startseite angezeigt wird.
 
-    ![App_offline.htm im Browserfenster](deploying-a-code-update/_static/image8.png)
+    ![App_offline. htm im Browserfenster](deploying-a-code-update/_static/image8.png)
 
-Sie können nun in der Stagingumgebung bereitgestellt.
+Sie sind jetzt bereit für die Bereitstellung in der Staging-Umgebung.
 
-## <a name="deploy-the-code-update-to-staging-and-production"></a>Bereitstellen des Code-Updates für Staging und Produktion
+## <a name="deploy-the-code-update-to-staging-and-production"></a>Bereitstellen des Code Updates für Staging und Produktion
 
-1. In der **klicken Sie auf Webveröffentlichung mit einem** Symbolleiste wählen Sie die **Staging** Veröffentlichungsprofil aus, und klicken Sie dann auf **Webveröffentlichung**.
+1. Klicken Sie im **Web auf** die Symbolleiste veröffentlichen, wählen Sie das **Staging** -Veröffentlichungs Profil aus, und klicken Sie dann auf **Web veröffentlichen**.
 
-    Visual Studio stellt die aktualisierte Anwendung bereit und öffnet der Browser zur Startseite der Website. Die *app\_offline.htm* Datei wird angezeigt. Bevor Sie zum Überprüfen der erfolgreichen Bereitstellung testen können, müssen Sie entfernen die *app\_offline.htm* Datei.
-2. Zurück zu Ihrem FTP-Tool, und Löschen von **app\_offline.htm** von der staging-Website.
-3. Klicken Sie im Browser öffnen Sie die dozentenseite auf der Stagingsite, und wählen Sie einen Dozenten aus, um sicherzustellen, dass das Update wurde erfolgreich bereitgestellt wurde.
-4. Führen Sie das gleiche Verfahren für die Produktion, ebenso wie für staging.
+    Visual Studio stellt die aktualisierte Anwendung bereit und öffnet den Browser auf der Startseite der Website. Die *App\_offline. htm* -Datei wird angezeigt. Bevor Sie testen können, um die erfolgreiche Bereitstellung zu überprüfen, müssen Sie die *App\_offline. htm* -Datei entfernen.
+2. Kehren Sie zu Ihrem FTP-Tool zurück, und löschen Sie **App-\_offline. htm** von der Stagingsite.
+3. Öffnen Sie im Browser die Seite Dozenten der Stagingsite, und wählen Sie einen Dozenten aus, um zu überprüfen, ob das Update erfolgreich bereitgestellt wurde.
+4. Befolgen Sie das gleiche Verfahren für die Produktion wie bei der Staging-Umgebung.
 
 <a id="specificfiles"></a>
 
-## <a name="reviewing-changes-and-deploying-specific-files"></a>Überprüfen von Änderungen und Bereitstellen von Dateien
+## <a name="reviewing-changes-and-deploying-specific-files"></a>Überprüfen von Änderungen und Bereitstellen spezifischer Dateien
 
-Visual Studio 2012 gibt Ihnen außerdem die Möglichkeit, einzelne Dateien bereitstellen. Für eine ausgewählte Datei können Sie Unterschiede zwischen der lokalen Version und die bereitgestellte Version anzeigen, die Datei in die zielumgebung bereitstellen oder kopieren Sie die Datei von der zielumgebung für das lokale Projekt. In diesem Abschnitt des Tutorials erfahren Sie, wie diese Funktionen verwendet.
+Visual Studio 2012 bietet Ihnen auch die Möglichkeit, einzelne Dateien bereitzustellen. Für eine ausgewählte Datei können Sie Unterschiede zwischen der lokalen Version und der bereitgestellten Version anzeigen, die Datei in der Zielumgebung bereitstellen oder die Datei aus der Zielumgebung in das lokale Projekt kopieren. In diesem Abschnitt des Tutorials erfahren Sie, wie Sie diese Funktionen verwenden.
 
-### <a name="make-a-change-to-deploy"></a>Nehmen Sie eine Änderung bereitstellen
+### <a name="make-a-change-to-deploy"></a>Vornehmen einer Änderung an der Bereitstellung
 
-1. Open *Content/Site.css*, und suchen Sie den Block für die `body` Tag.
-2. Ändern Sie den Wert für `background-color` aus `#fff` zu `darkblue`.
+1. Öffnen Sie *Content/Site. CSS*, und suchen Sie den Block für das `body`-Tag.
+2. Ändern Sie den Wert für `background-color` von `#fff` in `darkblue`.
 
     [!code-css[Main](deploying-a-code-update/samples/sample4.css?highlight=2)]
 
-### <a name="view-the-change-in-the-publish-preview-window"></a>Überprüfen Sie die Änderung im Fenster Vorschau veröffentlichen
+### <a name="view-the-change-in-the-publish-preview-window"></a>Anzeigen der Änderung im Vorschau Fenster der Veröffentlichung
 
-Bei Verwendung der **Web veröffentlichen** Assistenten zum Veröffentlichen des Projekts, sehen Sie, welche Änderungen ausgeführt werden soll veröffentlicht werden, durch Doppelklicken auf die Datei in die **Vorschau** Fenster.
+Wenn Sie den Assistenten **Web veröffentlichen** verwenden, um das Projekt zu veröffentlichen, können Sie sehen, welche Änderungen veröffentlicht werden, indem Sie im **Vorschaufenster** auf die Datei doppelklicken.
 
-1. Mit der rechten Maustaste in des ContosoUniversity-Projekts, und klicken Sie auf **veröffentlichen**.
-2. Von der **Profil** Dropdown-Liste die **Test** Veröffentlichungsprofil.
-3. Klicken Sie auf **Vorschau**, und klicken Sie dann auf **Vorschau starten**.
-4. In der **Vorschau** Bereich doppelklicken Sie auf **"Site.CSS"**.
+1. Klicken Sie mit der rechten Maustaste auf das Projekt conjesouniversity und dann auf **veröffentlichen**.
+2. Wählen Sie in der Dropdown Liste **Profil** das Profil für die **Test** Veröffentlichung aus.
+3. Klicken Sie auf **Vorschau**und dann auf **Vorschau starten**.
+4. Doppelklicken Sie im **Vorschau** Bereich auf **Site. CSS**.
 
-    ![Doppelklicken Sie auf "Site.CSS"](deploying-a-code-update/_static/image9.png)
+    ![Doppelklicken Sie auf Site. CSS.](deploying-a-code-update/_static/image9.png)
 
-    Die **Vorschau der Änderungen** Dialogfeld zeigt eine Vorschau der Änderungen, die bereitgestellt werden.
+    Im Dialogfeld **Vorschau der Änderungen** wird eine Vorschau der Änderungen angezeigt, die bereitgestellt werden.
 
-    ![Vorschau der Änderungen auf "Site.CSS"](deploying-a-code-update/_static/image10.png)
+    ![Vorschau der Änderungen an Site. CSS](deploying-a-code-update/_static/image10.png)
 
-    Wenn Sie doppelklicken Sie auf die *"Web.config"* -Datei, die **Vorschau der Änderungen** Dialogfeld zeigt die Auswirkungen des Builds Konfiguration von Transformationen, und veröffentlichen Sie die Profil-Transformationen. An diesem Punkt haben dies nicht etwas, das würde dazu führen, dass die *"Web.config"* Datei auf dem Server zu ändern, sodass Sie erwarten, dass keine Änderungen sehen,. Allerdings die **Vorschau der Änderungen** Fenster zeigt fälschlicherweise zwei Änderungen. Offenbar zwei XML-Elemente werden entfernt. Diese Elemente werden durch die Veröffentlichung hinzugefügt, bei der Auswahl **Code First-Migrationen ausführen beim Start der Anwendung** für ein Code First Context-Klasse. Der Vergleich erfolgt, bevor der Veröffentlichungsprozess diese Elemente hinzugefügt, sodass sie aussieht, wie sie entfernt werden, obwohl sie nicht entfernt werden. Dieser Fehler wird in einer zukünftigen Version behoben werden.
+    Wenn Sie auf die Datei " *Web. config* " doppelklicken, zeigt das Dialogfeld **Vorschau der Änderungen** die Auswirkung der Transformationen für die Buildkonfiguration und das Veröffentlichen von Profilen an. An diesem Punkt haben Sie nichts unternommen, das dazu führt, dass sich die Datei " *Web. config* " auf dem Server ändert, sodass Sie keine Änderungen sehen. Das Fenster " **Vorschau der Änderungen** " zeigt jedoch fälschlicherweise zwei Änderungen an. Es sieht so aus, als dass zwei XML-Elemente entfernt werden. Diese Elemente werden durch den Veröffentlichungsprozess hinzugefügt, wenn Sie **Code First-Migrationen beim Anwendungsstart ausführen** für eine Code First-Kontext Klasse auswählen. Der Vergleich erfolgt vor dem Hinzufügen dieser Elemente durch den Veröffentlichungsprozess, sodass Sie anscheinend entfernt werden, obwohl Sie nicht entfernt werden. Dieser Fehler wird in einer zukünftigen Version korrigiert.
 5. Klicken Sie auf **Schließen**.
 6. Klicken Sie auf **Veröffentlichen**.
-7. Wenn der Browser zur Startseite der Test-Website geöffnet wird, drücken Sie STRG + F5, um eine Aktualisierung schwierig zu bewirken, um die Auswirkungen der Änderung CSS finden Sie unter.
+7. Wenn der Browser mit der Startseite der Test Website geöffnet wird, drücken Sie STRG + F5, um die Auswirkungen der CSS-Änderung anzuzeigen.
 
-    ![Auswirkung der CSS-Änderung](deploying-a-code-update/_static/image11.png)
+    ![Auswirkungen der CSS-Änderung](deploying-a-code-update/_static/image11.png)
 8. Schließen Sie den Browser.
 
-### <a name="publish-specific-files-from-solution-explorer"></a>Veröffentlichen Sie bestimmte Dateien im Projektmappen-Explorer
+### <a name="publish-specific-files-from-solution-explorer"></a>Bestimmte Dateien aus Projektmappen-Explorer veröffentlichen
 
-Angenommen Sie, Sie nicht wie die blauen Hintergrund und die ursprüngliche Farbe wiederherstellen möchten. In diesem Abschnitt müssen Sie die ursprünglichen Einstellungen wiederherstellen, indem Sie eine bestimmte Datei direkt aus veröffentlichen **Projektmappen-Explorer**.
+Angenommen, Sie möchten den blauen Hintergrund nicht kennen und möchten zur ursprünglichen Farbe zurückkehren. In diesem Abschnitt stellen Sie die ursprünglichen Einstellungen wieder her, indem Sie eine bestimmte Datei direkt aus **Projektmappen-Explorer**veröffentlichen.
 
-1. Open *Content/Site.css* und Wiederherstellen der `background-color` auf `#fff`.
-2. In **Projektmappen-Explorer**, mit der rechten Maustaste die *Content/Site.css* Datei.
+1. Öffnen Sie *Content/Site. CSS* , und stellen Sie die `background-color` Einstellung auf `#fff`wieder her.
+2. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei *Content/Site. CSS* .
 
-    Das Kontextmenü enthält, dass drei Optionen veröffentlichen.
+    Das Kontextmenü zeigt drei Veröffentlichungs Optionen an.
 
-    ![Optionen im Projektmappen-Explorer veröffentlichen](deploying-a-code-update/_static/image12.png)
-3. Klicken Sie auf **Vorschau der Änderungen auf "Site.CSS"**.
+    ![Veröffentlichungs Optionen aus Projektmappen-Explorer](deploying-a-code-update/_static/image12.png)
+3. Klicken Sie **auf Vorschau der Änderungen an Site. CSS**.
 
-    Ein Fenster wird geöffnet, um die Unterschiede zwischen der lokalen Datei und die Version in der zielumgebung anzuzeigen.
+    Ein Fenster wird geöffnet, in dem die Unterschiede zwischen der lokalen Datei und der Version von in der Zielumgebung angezeigt werden.
 
-    ![Diff-Content/Site.css](deploying-a-code-update/_static/image13.png)
-4. In **Projektmappen-Explorer**, mit der rechten Maustaste **"Site.CSS"** erneut aus, und klicken Sie auf **veröffentlichen "Site.CSS"**.
+    ![Diff-Content/Site. CSS](deploying-a-code-update/_static/image13.png)
+4. Klicken Sie in **Projektmappen-Explorer**erneut mit der rechten Maustaste auf **Site. CSS** , und klicken Sie dann auf **Site. CSS veröffentlichen**.
 
-    Die **Webveröffentlichungsaktivität** zeigt an, dass die Datei veröffentlicht wurde.
+    Das Fenster **Webveröffentlichungs Aktivität** zeigt an, dass die Datei veröffentlicht wurde.
 
-    ![Fenster "Web-Aktivität veröffentlichen"](deploying-a-code-update/_static/image14.png)
-5. Öffnen Sie einen Browser auf die `http://localhost/contosouniversity` URL, und drücken Sie dann STRG + F5, um einen hartcodierten dazu führen, dass aktualisieren, um die Auswirkungen des CSS, ändern, finden Sie unter.
+    ![Webveröffentlichungs-Aktivitäts Fenster](deploying-a-code-update/_static/image14.png)
+5. Öffnen Sie einen Browser mit der `http://localhost/contosouniversity`-URL, und drücken Sie STRG + F5, um eine harte Aktualisierung durchführen, um die Auswirkung der CSS-Änderung anzuzeigen.
 
-    ![Auf der Startseite mit normalen CSS](deploying-a-code-update/_static/image15.png)
+    ![Startseite mit normalem CSS](deploying-a-code-update/_static/image15.png)
 6. Schließen Sie den Browser.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Sie haben nun gesehen, mehrere Möglichkeiten, ein Anwendungsupdate bereitstellen, die keine Änderung an einer Datenbank verbunden ist, und Sie haben gesehen, wie Sie eine Vorschau der Änderungen, um sicherzustellen, dass was aktualisiert werden, was Sie erwarten. Die dozentenseite verfügt jetzt über eine **Kurse unterrichtet** Abschnitt.
+Sie haben nun mehrere Möglichkeiten zum Bereitstellen eines Anwendungs Updates kennengelernt, die keine Daten Bank Änderungen beinhalten, und Sie haben gesehen, wie Sie die Änderungen in der Vorschau anzeigen, um zu überprüfen, ob die aktualisierten Elemente den Erwartungen entsprechen. Die Seite Dozenten verfügt jetzt über einen Kurs, der von **Kursen vermittelt** wird.
 
-![Dozentenseite mit Schulungskurse](deploying-a-code-update/_static/image16.png)
+![Dozenten Seite mit Lehrkursen](deploying-a-code-update/_static/image16.png)
 
-Im nächste Tutorial erfahren Sie, wie zum Bereitstellen der Änderung an einer Datenbank: Fügen Sie ein Feld "BirthDate" in der Datenbank und zur dozentenseite.
+Im nächsten Tutorial wird gezeigt, wie Sie eine Daten Bank Änderung bereitstellen: Sie fügen der-Datenbank und der Dozenten Seite ein BirthDate-Feld hinzu.
 
 > [!div class="step-by-step"]
 > [Zurück](deploying-to-production.md)

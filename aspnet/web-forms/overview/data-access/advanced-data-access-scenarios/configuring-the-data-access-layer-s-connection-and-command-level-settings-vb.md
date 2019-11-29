@@ -1,161 +1,161 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
-title: Konfigurieren der Datenzugriffsschicht (VB) Verbindung und Befehlsebene-Einstellungen | Microsoft-Dokumentation
+title: Konfigurieren der Einstellungen für die Verbindungs-und Befehls Ebene der Datenzugriffs Ebene (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Die TableAdapters in einem typisierten DataSet kümmert sich automatisch eine Verbindung mit der Datenbank, Ausgeben von Befehlen und eine "DataTable" mit den Ergebnissen aufgefüllt...
+description: Die TableAdapters in einem typisierten DataSet sorgen automatisch dafür, dass Sie eine Verbindung mit der Datenbank herstellen, Befehle ausgeben und eine Datentabelle mit den Ergebnissen auffüllen...
 ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5c66514dffea5b25f616ffaf9c595b5270c1082e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fa2868fc0dd8acd76f600b47d92adb984ce8d105
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133380"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74573625"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_VB.zip) oder [PDF-Datei herunterladen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/datatutorial72vb1.pdf)
+[Code herunterladen](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_VB.zip) oder [PDF herunterladen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/datatutorial72vb1.pdf)
 
-> Die TableAdapters in einem typisierten DataSet kümmert sich automatisch eine Verbindung mit der Datenbank, Ausgeben von Befehlen und das Auffüllen einer "DataTable" mit den Ergebnissen. Es gibt Situationen, in denen auf, aber wenn wir diese Informationen selbst, und klicken Sie in diesem Tutorial in Ihrer Verantwortung möchten wir die datenbankeinstellungen für die Verbindung und Befehlsebene im TableAdapter zugreifen erfahren, wie Sie.
+> Die TableAdapters in einem typisierten DataSet sorgen automatisch dafür, dass Sie eine Verbindung mit der Datenbank herstellen, Befehle ausgeben und eine Datentabelle mit den Ergebnissen auffüllen. Es gibt jedoch Fälle, in denen wir diese Details selbst berücksichtigen möchten, und in diesem Tutorial erfahren Sie, wie Sie im TableAdapter auf die Einstellungen für die Daten Bankverbindung und die Befehls Ebene zugreifen.
 
 ## <a name="introduction"></a>Einführung
 
-In der tutorialreihe haben wir typisierter DataSets verwendet, zur Implementierung der Datenzugriffsschicht und Geschäftsobjekten unsere Schichtenarchitektur. Siehe die [ersten Tutorial](../introduction/creating-a-data-access-layer-vb.md), die typisierte DataSet-Zuordnungsvorgänge DataTables als Repositorys für Daten, dienen während die TableAdapters als Wrapper fungiert für die Kommunikation mit der Datenbank abgerufen und die zugrunde liegenden Daten geändert. Die TableAdapters kapseln die Komplexität im Zusammenhang mit der Datenbank und erspart uns zum Schreiben von Code zum Verbinden mit der Datenbank, einen Befehl oder die Ergebnisse in eine DataTable füllen.
+In der tutorialreihe haben wir typisierte Datasets verwendet, um die Datenzugriffs Ebene und die Geschäftsobjekte unserer geschichteten Architektur zu implementieren. Wie im [ersten Tutorial](../introduction/creating-a-data-access-layer-vb.md)erläutert, dienen die DataTables der typisierten Datasets als Datenblatt Daten, während die TableAdapters als Wrapper fungieren, um mit der Datenbank zu kommunizieren, um die zugrunde liegenden Daten abzurufen und zu ändern. Die TableAdapters Kapseln die Komplexität, die bei der Arbeit mit der Datenbank beteiligt ist, und es ist nicht erforderlich, Code zu schreiben, um eine Verbindung mit der Datenbank herzustellen, einen Befehl auszugeben oder die Ergebnisse in eine Datentabelle aufzufüllen.
 
-Es gibt jedoch Situationen, wenn wir in die Tiefe des TableAdapter burrow und Code schreiben, der direkt mit ADO.NET-Objekten arbeitet müssen. In der [Umschließen von Datenbankänderungen innerhalb einer Transaktion](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) Tutorial, z. B. wir Methoden der TableAdapter hinzugefügte für Anfang, Commit und Rollback für Transaktionen von ADO.NET. Diese Methoden verwendet eine interne, manuell erstellte `SqlTransaction` -Objekt, das die TableAdapter zugewiesen wurde `SqlCommand` Objekte.
+Es gibt jedoch Zeiten, in denen wir uns in die Tiefen des TableAdapter einreihen und Code schreiben müssen, der direkt mit den ADO.NET-Objekten funktioniert. Im Tutorial zum [Umpacken von Daten Bank Änderungen in einer Transaktion](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) haben wir z. b. Methoden zum Starten, zum Commit und zum Rollback von ADO.NET-Transaktionen zum TableAdapter hinzugefügt. Diese Methoden haben ein internes, manuell erstelltes `SqlTransaction` Objekt verwendet, das den TableAdapter s `SqlCommand`-Objekten zugewiesen wurde.
 
-In diesem Tutorial untersuchen wir die Verbindung und Befehlsebene datenbankeinstellungen im TableAdapter zugreifen auf. Insbesondere fügen wir Funktionen für die `ProductsTableAdapter` , die Zugriff auf die zugrunde liegenden Verbindungszeichenfolge und befehlstimeouteinstellungen.
+In diesem Tutorial wird erläutert, wie Sie im TableAdapter auf die Einstellungen für die Daten Bankverbindung und auf Befehls Ebene zugreifen. Insbesondere werden dem `ProductsTableAdapter` Funktionen hinzugefügt, die den Zugriff auf die zugrunde liegende Verbindungs Zeichenfolge und die Befehls Timeout Einstellungen ermöglichen.
 
-## <a name="working-with-data-using-adonet"></a>Arbeiten mit Daten, die mithilfe von ADO.NET
+## <a name="working-with-data-using-adonet"></a>Arbeiten mit Daten mithilfe von ADO.net
 
-Microsoft .NET Framework enthält eine Vielzahl von Klassen, die speziell dazu entwickelt, mit Daten arbeiten. Diese Klassen, die innerhalb der [ `System.Data` Namespace](https://msdn.microsoft.com/library/system.data.aspx), werden als bezeichnet die *ADO.NET* Klassen. Einige der Klassen des wirkungsfelds ADO.NET sind verknüpft, auf einen bestimmten *Datenanbieter*. Sie können einen Datenanbieter als Kommunikationskanal vorstellen, die den Informationsfluss zwischen den Klassen von ADO.NET und den zugrunde liegenden Datenspeicher ermöglicht. Es gibt generalisierten Anbieter, z. B. OLE DB und ODBC sowie Anbieter, die speziell für ein bestimmtes Datenbanksystem konzipiert sind. Z. B. während es bei der Herstellung einer Verbindung mit einer Microsoft SQL Server-Datenbank, die mit dem OLE DB-Anbieter möglich ist, entspricht der SqlClient-Anbieter wesentlich effizienter konzipiert und optimiert, die speziell für SQL Server.
+Das Microsoft .NET Framework enthält eine Vielzahl von Klassen, die speziell für die Arbeit mit Daten entworfen wurden. Diese Klassen, die im [`System.Data`-Namespace](https://msdn.microsoft.com/library/system.data.aspx)gefunden werden, werden als *ADO.net* -Klassen bezeichnet. Einige der Klassen im ADO.net-Dach sind an einen bestimmten *Datenanbieter*gebunden. Sie können sich einen Datenanbieter als Kommunikationskanal vorstellen, der den Datenfluss zwischen den ADO.NET-Klassen und dem zugrunde liegenden Datenspeicher ermöglicht. Es gibt generalisierte Anbieter, wie z. b. OleDb und ODBC, sowie Anbieter, die speziell für ein bestimmtes Datenbanksystem entwickelt wurden. Beispielsweise ist es möglich, eine Verbindung mit einer Microsoft SQL Server Datenbank mithilfe des OLE DB-Anbieters herzustellen, aber der SqlClient-Anbieter ist viel effizienter, da er speziell für SQL Server entworfen und optimiert wurde.
 
-Beim programmgesteuerten Zugriff auf Daten wird häufig das folgende Muster verwendet:
+Beim programmgesteuerten Zugriff auf Daten wird das folgende Muster häufig verwendet:
 
-1. Herstellen einer Verbindungs mit der Datenbank an.
-2. Führen Sie einen Befehl.
-3. Für `SELECT` Abfragen, mit der resultierenden Datensätze zu arbeiten.
+1. Stellen Sie eine Verbindung mit der Datenbank her.
+2. Geben Sie einen Befehl aus.
+3. Arbeiten Sie für `SELECT` Abfragen mit den resultierenden Datensätzen.
 
-Es gibt separate ADO.NET-Klassen zum Durchführen jeder dieser Schritte. Verwenden Sie zum Verbinden mit einer Datenbank mit dem SqlClient-Anbieter z. B. die [ `SqlConnection` Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Problem ein `INSERT`, `UPDATE`, `DELETE`, oder `SELECT` Befehl in der Datenbank mithilfe der [ `SqlCommand` Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx).
+Es gibt separate ADO.NET-Klassen, mit denen Sie die einzelnen Schritte ausführen können. Wenn Sie z. b. mithilfe des SqlClient-Anbieters eine Verbindung mit einer Datenbank herstellen möchten, verwenden Sie die [`SqlConnection`-Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Verwenden Sie die [`SqlCommand`-Klasse](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx), um einen `INSERT`, `UPDATE`, `DELETE`oder `SELECT` Befehl an die Datenbank auszugeben.
 
-Mit Ausnahme der [Umschließen von Datenbankänderungen innerhalb einer Transaktion](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) Tutorial hatten wir nicht auf ein Schreibvorgang auf niedriger Ebene ADO.NET code selbst, da die TableAdapters automatisch generiertem Code erforderlichen Funktionen enthält Verbinden mit der Datenbank, führen Sie Befehle, Abrufen von Daten und füllen Sie die Daten in Datentabellen. Allerdings gibt es möglicherweise vorkommen, dass wir benötigen diese Low-Level-Einstellungen anpassen. Untersuchen wir über die nächsten Schritte wie Sie die ADO.NET-Objekte wird intern verwendet, durch die TableAdapters zu nutzen.
+Mit Ausnahme des Lernprogramms zum umschließen [von Daten Bank Änderungen in einer Transaktion](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) mussten wir keinen ADO.NET-Code auf niedriger Ebene schreiben, da der automatisch generierte TableAdapters-Code die Funktionen enthält, die zum Herstellen einer Verbindung mit der Datenbank, ausgeben von Befehlen, Abrufen von Daten und Auffüllen dieser Daten in DataTables benötigt werden. Es kann jedoch vorkommen, dass diese Einstellungen auf niedriger Ebene angepasst werden müssen. In den nächsten Schritten wird erläutert, wie Sie auf die ADO.NET-Objekte tippen, die intern von den TableAdapters verwendet werden.
 
-## <a name="step-1-examining-with-the-connection-property"></a>Schritt 1: Untersuchen mit der Connection-Eigenschaft
+## <a name="step-1-examining-with-the-connection-property"></a>Schritt 1: untersuchen mit der Connection-Eigenschaft
 
-Jede TableAdapter-Klasse verfügt über eine `Connection` Eigenschaft, die Datenbank-Verbindungsinformationen angibt. Diese Eigenschaft s-Datentyp und `ConnectionString` Wert werden durch die Auswahl im TableAdapter-Konfigurations-Assistenten bestimmt. Denken Sie daran, dass wenn wir einen TableAdapter zum ersten Mal mit einem typisierten DataSet hinzufügen dieser Assistent uns für die Datenbank erwartet, Quelle (siehe Abbildung 1). In diesem ersten Schritt die Dropdown-Liste enthält diese Datenbanken, die in der Konfigurationsdatei als auch für alle anderen Datenbanken im Server-Explorer s Datenverbindungen angegeben. Wenn die Datenbank, die verwendet werden soll, in der Dropdown-Liste nicht vorhanden ist, kann eine neue datenbankverbindung angegeben werden, indem Sie auf die Schaltfläche "neue Verbindung", und die erforderlichen Verbindungsinformationen bereitgestellt.
+Jede TableAdapter-Klasse verfügt über eine `Connection`-Eigenschaft, die Informationen zur Datenbankverbindung angibt. Der Datentyp der Eigenschaft und der `ConnectionString` Wert werden durch die im TableAdapter-Konfigurations-Assistenten getroffenen Auswahl bestimmt. Beachten Sie, dass der Assistent beim ersten Hinzufügen eines TableAdapter zu einem typisierten DataSet zur Datenbankquelle aufgefordert wird (siehe Abbildung 1). Die Dropdown Liste in diesem ersten Schritt umfasst die Datenbanken, die in der Konfigurationsdatei angegeben sind, sowie alle anderen Datenbanken in den Server-Explorer s-Datenverbindungen. Wenn die zu verwendende Datenbank nicht in der Dropdown Liste vorhanden ist, können Sie eine neue Datenbankverbindung angeben, indem Sie auf die Schaltfläche neue Verbindung klicken und die erforderlichen Verbindungsinformationen bereitstellen.
 
-[![Der erste Schritt des TableAdapter-Konfigurations-Assistenten](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image1.png)
+[![des ersten Schritts des TableAdapter-Konfigurations-Assistenten](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image1.png)
 
-**Abbildung 1**: Der erste Schritt des TableAdapter-Konfigurations-Assistenten ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image3.png))
+**Abbildung 1**: der erste Schritt des TableAdapter-Konfigurations-Assistenten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image3.png))
 
-Let s können Sie überprüfen den Code für die TableAdapter `Connection` Eigenschaft. Wie erwähnt in der [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md) Tutorial können wir den automatisch generierten TableAdapter-Code anzeigen, indem Sie das Fenster "Klassenansicht", Drilldown auf die entsprechende Klasse, und doppelklicken Sie dann auf den Namen des Members.
+Nehmen Sie sich einen Moment Zeit, um den Code für die TableAdapter s-`Connection`-Eigenschaft zu überprüfen. Wie im Tutorial [Erstellen einer Datenzugriffs Ebene](../introduction/creating-a-data-access-layer-vb.md) erwähnt, können wir den automatisch generierten TableAdapter-Code anzeigen, indem wir zum Fenster "Klassenansicht" navigieren, einen Drilldown auf die entsprechende Klasse ausführen und dann auf den Elementnamen doppelklicken.
 
-Navigieren Sie zu dem Fenster "Klassenansicht", indem Sie das Menü "Ansicht" und Klassenansicht auswählen (oder durch Eingabe von STRG + UMSCHALT + C). In der oberen Hälfte der das Fenster "Klassenansicht" zeigen die `NorthwindTableAdapters` Namespace, und wählen Sie die `ProductsTableAdapter` Klasse. Dadurch wird angezeigt der `ProductsTableAdapter` s Mitglieder in der unteren Hälfte der Klassenansicht, wie in Abbildung 2 dargestellt. Doppelklicken Sie auf die `Connection` Eigenschaft, um den Code anzuzeigen.
+Navigieren Sie zum Klassenansicht Fenster, indem Sie zum Menü Ansicht navigieren und Klassenansicht (oder durch Drücken von STRG + UMSCHALT + C) auswählen. Führen Sie in der oberen Hälfte des Klassenansicht Fensters einen Drilldown zum `NorthwindTableAdapters`-Namespace aus, und wählen Sie die `ProductsTableAdapter`-Klasse aus. Dadurch werden die `ProductsTableAdapter` s-Elemente in der unteren Hälfte des Klassenansicht angezeigt, wie in Abbildung 2 dargestellt. Doppelklicken Sie auf die `Connection`-Eigenschaft, um Ihren Code anzuzeigen.
 
-![Doppelklicken Sie auf die-Verbindungseigenschaft in der Klassenansicht den automatisch generierten Code anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image4.png)
+![Doppelklicken Sie im Klassenansicht auf die Verbindungs Eigenschaft, um den automatisch generierten Code anzuzeigen.](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image4.png)
 
-**Abbildung 2**: Doppelklicken Sie auf die-Verbindungseigenschaft in der Klassenansicht den automatisch generierten Code anzeigen
+**Abbildung 2**: Doppelklicken Sie auf die Connection-Eigenschaft im Klassenansicht, um den automatisch generierten Code anzuzeigen.
 
-Die TableAdapter `Connection` -Eigenschaft und die andere Verbindung-bezogenem Code folgt:
+Die TableAdapter s `Connection`-Eigenschaft und anderer Verbindungs bezogener Code folgendermaßen:
 
 [!code-vb[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/samples/sample1.vb)]
 
-Wenn die TableAdapter-Klasse instanziiert wird, ob die Membervariable `_connection` gleich `Nothing`. Wenn die `Connection` -Eigenschaft zugegriffen wird, es zuerst überprüft, wenn die `_connection` Membervariable instanziiert wurde. Ist dies nicht, die `InitConnection` Methode wird aufgerufen, die instanziiert `_connection` und legt seine `ConnectionString` Eigenschaft, um den Wert der Verbindungszeichenfolge aus dem ersten Schritt des TableAdapter-Konfigurations-Assistenten s angegeben.
+Wenn die TableAdapter-Klasse instanziiert wird, ist die Element Variable `_connection` gleich `Nothing`. Beim Zugriff auf die `Connection`-Eigenschaft wird zuerst überprüft, ob die `_connection` Member-Variable instanziiert wurde. Wenn dies nicht der Fall ist, wird die `InitConnection`-Methode aufgerufen, die `_connection` instanziiert und die `ConnectionString`-Eigenschaft auf den Wert der Verbindungs Zeichenfolge festlegt, der im ersten Schritt des TableAdapter-Konfigurations-Assistenten angegeben ist.
 
-Die `Connection` Eigenschaft kann auch zugewiesen werden, um eine `SqlConnection` Objekt. Auf diese Weise wird die neue `SqlConnection` Objekt mit den jeweiligen die TableAdapter `SqlCommand` Objekte.
+Die `Connection`-Eigenschaft kann auch einem `SqlConnection`-Objekt zugewiesen werden. Dadurch wird das neue `SqlConnection`-Objekt jedem der TableAdapter s `SqlCommand`-Objekten zugeordnet.
 
-## <a name="step-2-exposing-connection-level-settings"></a>Schritt 2: Verfügbarmachen von Verbindungsebene-Einstellungen
+## <a name="step-2-exposing-connection-level-settings"></a>Schritt 2: verfügbar machen von Einstellungen auf Verbindungs Ebene
 
-Die Verbindungsinformationen sollten bleiben innerhalb der TableAdapter gekapselten und nicht auf anderen Ebenen der Architektur der Anwendung zugegriffen werden. Allerdings gibt es möglicherweise Szenarios Wenn die TableAdapter-s-Verbindungsebene Informationen zugegriffen werden kann oder für eine Abfrage, die Benutzer oder die ASP.NET-Seite angepasst werden muss.
+Die Verbindungsinformationen sollten im TableAdapter gekapselt bleiben und sind nicht für andere Ebenen in der Anwendungsarchitektur zugänglich. Allerdings kann es Szenarien geben, in denen die Informationen auf der Basis der TableAdapter-Informationen auf Verbindungs Ebene für eine Abfrage-, Benutzer-oder ASP.NET-Seite zugänglich sein müssen.
 
-S erweitern lassen die `ProductsTableAdapter` in die `Northwind` DataSet sollen eine `ConnectionString` -Eigenschaft, die von der Geschäftslogikebene verwendet werden kann, zu lesen oder ändern die Verbindungszeichenfolge, die von der TableAdapter verwendet.
+Erweitern Sie die `ProductsTableAdapter` im `Northwind` DataSet so, dass eine `ConnectionString`-Eigenschaft enthalten ist, die von der Geschäftslogik Schicht verwendet werden kann, um die vom TableAdapter verwendete Verbindungs Zeichenfolge zu lesen oder zu ändern.
 
 > [!NOTE]
-> Ein *Verbindungszeichenfolge* ist eine Zeichenfolge, die Datenbank-Verbindungsinformationen, z. B. den zu verwendenden Anbieter an, den Speicherort der die Datenbank, die Anmeldeinformationen für die Authentifizierung und die andere Datenbank-bezogene Einstellungen angibt. Eine Liste der Verbindung Zeichenfolgenmuster, die von einer Vielzahl von Datenspeichern und der Anbieter verwendet, finden Sie unter [ConnectionStrings.com](http://www.connectionstrings.com/).
+> Eine *Verbindungs Zeichenfolge* ist eine Zeichenfolge, die Daten bankverbindungs Informationen angibt, wie z. b. den zu verwendenden Anbieter, den Speicherort der Datenbank, Anmelde Informationen für die Authentifizierung und andere datenbankbezogene Einstellungen. Eine Liste der Muster der Verbindungs Zeichenfolge, die von einer Vielzahl von Daten speichern und Anbietern verwendet werden, finden Sie unter [connectionStrings.com](http://www.connectionstrings.com/).
 
-Siehe die [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md) Tutorial die typisierte DataSet s automatisch generierte Klassen können erweitert werden, durch die Verwendung von partiellen Klassen. Erstellen Sie zunächst einen neuen Unterordner im Projekt mit dem Namen `ConnectionAndCommandSettings` unterhalb der `~/App_Code/DAL` Ordner.
+Wie im Tutorial [Erstellen einer Datenzugriffs Ebene](../introduction/creating-a-data-access-layer-vb.md) erläutert, können die automatisch generierten Klassen des typisierten Datasets durch die Verwendung von partiellen Klassen erweitert werden. Erstellen Sie zunächst einen neuen Unterordner in dem Projekt mit dem Namen `ConnectionAndCommandSettings` unterhalb des `~/App_Code/DAL` Ordners.
 
-![Fügen Sie einen Unterordner mit dem Namen ConnectionAndCommandSettings](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image5.png)
+![Fügen Sie einen Unterordner mit dem Namen connectionandcommandsettings hinzu.](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image5.png)
 
-**Abbildung 3**: Fügen Sie einen Unterordner mit dem Namen `ConnectionAndCommandSettings`
+**Abbildung 3**: Hinzufügen eines unter Ordners mit dem Namen `ConnectionAndCommandSettings`
 
-Fügen Sie eine neue Klassendatei mit dem Namen `ProductsTableAdapter.ConnectionAndCommandSettings.vb` , und geben Sie den folgenden Code:
+Fügen Sie eine neue Klassendatei namens `ProductsTableAdapter.ConnectionAndCommandSettings.vb` hinzu, und geben Sie den folgenden Code ein:
 
 [!code-vb[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/samples/sample2.vb)]
 
-Diese partielle Klasse fügt eine `Public` Eigenschaft mit dem Namen `ConnectionString` auf die `ProductsTableAdapter` -Klasse, können eine beliebige Ebene zum Lesen oder aktualisieren die Verbindungszeichenfolge für die TableAdapter zugrunde liegende Verbindung.
+Diese partielle Klasse fügt der `ProductsTableAdapter`-Klasse eine `Public` Eigenschaft mit dem Namen `ConnectionString` hinzu, die es allen Ebenen ermöglicht, die Verbindungs Zeichenfolge für die zugrunde liegende Verbindung von TableAdapter zu lesen oder zu aktualisieren.
 
-Mit dieser partiellen Klasse erstellt (und gespeichert), öffnen Sie die `ProductsBLL` Klasse. Navigieren Sie zu einem der vorhandenen Methoden aus, und geben Sie in `Adapter` und drücken Sie dann die Punkt-Taste, um IntelliSense aufzurufen. Daraufhin sollte das neue `ConnectionString` Eigenschaft, die in IntelliSense, was bedeutet, dass Sie programmgesteuert lesen oder passen Sie diesen Wert aus der BLL können verfügbar.
+Wenn diese partielle Klasse erstellt (und gespeichert) ist, öffnen Sie die `ProductsBLL`-Klasse. Wechseln Sie zu einer der vorhandenen Methoden, und geben Sie `Adapter` ein, und drücken Sie dann die Punkt Taste, um IntelliSense aufzurufen. Sie sollten sehen, dass die neue `ConnectionString`-Eigenschaft in IntelliSense verfügbar ist, was bedeutet, dass Sie diesen Wert Programm gesteuert aus der BLL lesen oder anpassen können.
 
-## <a name="exposing-the-entire-connection-object"></a>Das gesamte Verbindungsobjekt verfügbar zu machen
+## <a name="exposing-the-entire-connection-object"></a>Verfügbar machen des gesamten Verbindungs Objekts
 
-Diese partielle Klasse macht nur eine der Eigenschaften des zugrunde liegenden Verbindungsobjekts: `ConnectionString`. Wenn Sie das gesamte Verbindungsobjekt außerhalb der Grenzen des TableAdapter verfügbar machen möchten, können Sie alternativ dazu ändern die `Connection` Schutzebene s'-Eigenschaft. Die automatisch generierten Code in Schritt 1 wir untersuchten zeigen, mit dem die TableAdapter `Connection` Eigenschaft wird als markiert `Friend`, was bedeutet, dass er nur von den Klassen in der gleichen Assembly zugegriffen werden kann. Dies kann geändert werden, jedoch über die TableAdapter `ConnectionModifier` Eigenschaft.
+Diese partielle Klasse macht nur eine Eigenschaft des zugrunde liegenden Verbindungs Objekts verfügbar: `ConnectionString`. Wenn Sie das gesamte Verbindungs Objekt über die Grenzen des TableAdapter hinaus verfügbar machen möchten, können Sie alternativ die Schutz Ebene für die `Connection`-Eigenschaft ändern. Der automatisch generierte Code, den wir in Schritt 1 untersucht haben, zeigte, dass die Eigenschaft TableAdapter s `Connection` als `Friend`gekennzeichnet ist, was bedeutet, dass nur Klassen in derselben Assembly darauf zugreifen können. Dies kann jedoch über die Eigenschaft TableAdapter s `ConnectionModifier` geändert werden.
 
-Öffnen der `Northwind` DataSet, klicken Sie auf die `ProductsTableAdapter` im Designer, und navigieren Sie zu dem Fenster "Eigenschaften". Es wird Ihnen die `ConnectionModifier` legen Sie auf den Standardwert `Assembly`. Zu den `Connection` Eigenschaft außerhalb der typisierte DataSet-s-Assembly, Änderung zur Verfügung steht die `ConnectionModifier` Eigenschaft `Public`.
+Öffnen Sie das DataSet `Northwind`, klicken Sie im Designer auf die `ProductsTableAdapter`, und navigieren Sie zum Eigenschaftenfenster. Dort sehen Sie, dass die `ConnectionModifier` auf ihren Standardwert festgelegt ist, `Assembly`. Um die `Connection`-Eigenschaft außerhalb der Assembly des typisierten Datasets verfügbar zu machen, ändern Sie die Eigenschaft `ConnectionModifier` in `Public`.
 
-[![Die Verbindung Eigenschaft s Zugriffsebene kann über die ConnectionModifier-Eigenschaft konfiguriert werden](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image6.png)
+[![die Barrierefreiheits Stufe der Verbindungs Eigenschaft kann über die connectionmodifier-Eigenschaft konfiguriert werden.](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image6.png)
 
-**Abbildung 4**: Die `Connection` Eigenschaft s Barrierefreiheit Ebene kann so konfiguriert werden, über die `ConnectionModifier` Eigenschaft ([klicken Sie, um das Bild in voller Größe anzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image8.png))
+**Abbildung 4**: die Barrierefreiheits Ebene der `Connection` Eigenschaft kann über die `ConnectionModifier`-Eigenschaft konfiguriert werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image8.png))
 
-Speichern Sie das DataSet und wieder die `ProductsBLL` Klasse. Wie zuvor, besuchen Sie eine der vorhandenen Methoden aus, und geben Sie in `Adapter` und drücken Sie dann die Punkt-Taste, um IntelliSense aufzurufen. Die Liste sollte enthalten eine `Connection` -Eigenschaft, was bedeutet, dass Sie jetzt programmgesteuert lesen oder können alle Einstellungen auf Verbindungsebene der BLL zuweisen.
+Speichern Sie das DataSet, und kehren Sie dann zur `ProductsBLL`-Klasse zurück. Wechseln Sie wie zuvor zu einer der vorhandenen Methoden, und geben Sie `Adapter` ein, und drücken Sie dann die Punkt Taste, um IntelliSense aufzurufen. Die Liste sollte eine `Connection`-Eigenschaft enthalten. Dies bedeutet, dass Sie nun Programm gesteuert alle Einstellungen auf Verbindungs Ebene aus der BLL lesen oder zuweisen können.
 
-## <a name="step-3-examining-the-command-related-properties"></a>Schritt 3: Untersuchen der befehlsbezogenen Eigenschaften
+## <a name="step-3-examining-the-command-related-properties"></a>Schritt 3: Untersuchen der Befehls bezogenen Eigenschaften
 
-Ein TableAdapter besteht aus einem hauptspeicherpool für Abfragen, die in der Standardeinstellung automatisch generiert wurde `INSERT`, `UPDATE`, und `DELETE` Anweisungen. Diese Hauptabfrage s `INSERT`, `UPDATE`, und `DELETE` Anweisungen werden in den TableAdapter-s-Code implementiert, als ADO.NET Data Adapterobjekt über die `Adapter` Eigenschaft. Wie Sie mit der `Connection` -Eigenschaft, die `Adapter` eigenschaftsdatentyp s richtet sich nach den Datenanbieter verwendet. Da diese Tutorials den SqlClient-Anbieter verwenden die `Adapter` Eigenschaft ist vom Typ [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
+Ein TableAdapter besteht aus einer Haupt Abfrage, die standardmäßig automatisch generierte `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen enthält. Diese Abfrage `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen werden im TableAdapter-Code als ADO.NET Data Adapter-Objekt über die `Adapter`-Eigenschaft implementiert. Wie bei der `Connection`-Eigenschaft wird der Datentyp `Adapter` Eigenschaft s vom verwendeten Datenanbieter bestimmt. Da in diesen Tutorials der SqlClient-Anbieter verwendet wird, ist die `Adapter`-Eigenschaft vom Typ [`SqlDataAdapter`](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
 
-Die TableAdapter `Adapter` Eigenschaft verfügt über drei Eigenschaften des Typs `SqlCommand` , die es verwendet, um Problem der `INSERT`, `UPDATE`, und `DELETE` Anweisungen:
+Die Eigenschaft TableAdapter s `Adapter` verfügt über drei Eigenschaften vom Typ `SqlCommand`, mit denen die Anweisungen `INSERT`, `UPDATE`und `DELETE` ausgestellt werden:
 
 - `InsertCommand`
 - `UpdateCommand`
 - `DeleteCommand`
 
-Ein `SqlCommand` -Objekt ist verantwortlich für eine bestimmte Abfrage an die Datenbank gesendet und verfügt über Eigenschaften, z. B.: [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), enthält die Ad-hoc-SQL-Anweisung oder die gespeicherte Prozedur für die Ausführung und [ `Parameters` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx), dies ist eine Auflistung von `SqlParameter` Objekte. Wie wir, in gesehen der [Erstellen einer Datenzugriffsschicht](../introduction/creating-a-data-access-layer-vb.md) Tutorial dieser Befehl Objekte können angepasst werden, über das Eigenschaftenfenster.
+Ein `SqlCommand`-Objekt ist dafür verantwortlich, eine bestimmte Abfrage an die Datenbank zu senden, und verfügt über Eigenschaften wie: [`CommandText`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), das die auszuführende Ad-hoc-SQL-Anweisung oder gespeicherte Prozedur enthält. und [`Parameters`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx), bei dem es sich um eine Auflistung von `SqlParameter` Objekten handelt. Wie bereits im Tutorial [Erstellen einer Datenzugriffs Schicht](../introduction/creating-a-data-access-layer-vb.md) erläutert wurde, können diese Befehls Objekte über die Eigenschaftenfenster angepasst werden.
 
-Zusätzlich zu der Hauptabfrage des TableAdapter kann eine Variable Anzahl von Methoden enthalten, die beim Aufrufen, senden Sie einen angegebenen Befehl mit der Datenbank. Die Hauptabfrage s Command-Objekt und die Befehlsobjekte für alle zusätzlichen Methoden werden in die TableAdapter gespeichert `CommandCollection` Eigenschaft.
+Zusätzlich zu seiner Haupt Abfrage kann der TableAdapter eine Variable Anzahl von Methoden enthalten, die, wenn Sie aufgerufen wird, einen angegebenen Befehl an die Datenbank weitergeben. Das Haupt Befehls Objekt der Abfrage s und die Befehls Objekte für alle zusätzlichen Methoden werden in der Eigenschaft TableAdapter s `CommandCollection` gespeichert.
 
-Let s können Sie die vom generierten Code betrachten die `ProductsTableAdapter` in die `Northwind` DataSet für diese beiden Eigenschaften und deren unterstützende Membervariablen und Hilfsmethoden:
+Nehmen Sie sich einen Moment Zeit, um sich den Code anzusehen, der vom `ProductsTableAdapter` im `Northwind` Dataset für diese beiden Eigenschaften und deren unterstützende Element Variablen und Hilfsmethoden generiert wurde:
 
 [!code-vb[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/samples/sample3.vb)]
 
-Der Code für die `Adapter` und `CommandCollection` Eigenschaften imitiert eng mit der die `Connection` Eigenschaft. Es gibt Membervariablen, die die Objekte, die verwendet werden, durch die Eigenschaften enthalten. Die Eigenschaften `Get` Accessoren zu starten, indem überprüft wird, ist die entsprechende Membervariable `Nothing`. Wenn dies der Fall ist, wird eine Initialisierungsmethode aufgerufen, die erstellt eine Instanz der Membervariable und weist den Kern befehlsbezogenen Eigenschaften.
+Der Code für die `Adapter`-und `CommandCollection` Eigenschaften imitiert genau den Wert der `Connection`-Eigenschaft. Es gibt Element Variablen, die die Objekte enthalten, die von den Eigenschaften verwendet werden. Die Eigenschaften `Get` Accessoren beginnen, indem Sie überprüfen, ob die entsprechende Element Variable `Nothing`ist. Wenn dies der Fall ist, wird eine Initialisierungs Methode aufgerufen, die eine Instanz der Element Variablen erstellt und die Haupt Befehls bezogenen Eigenschaften zuweist.
 
-## <a name="step-4-exposing-command-level-settings"></a>Schritt 4: Verfügbarmachen von Befehlsebene-Einstellungen
+## <a name="step-4-exposing-command-level-settings"></a>Schritt 4: verfügbar machen von Einstellungen auf Befehls Ebene
 
-Im Idealfall sollten die Befehlsebene Informationen in der Datenzugriffsebene gekapselten bleiben. Diese Informationen in anderen Ebenen der Architektur benötigt werden sollte, kann jedoch sie mittels einer partiellen Klasse, wie mit den Einstellungen auf Serverebene verfügbar gemacht werden.
+Im Idealfall sollten die Informationen auf Befehls Ebene in der Datenzugriffs Ebene gekapselt bleiben. Sollten diese Informationen in anderen Ebenen der Architektur benötigt werden, können Sie jedoch wie bei den Einstellungen auf Verbindungs Ebene über eine partielle Klasse verfügbar gemacht werden.
 
-Da der TableAdapter nur eine einzelne hat `Connection` -Eigenschaft, die der Code für das Verfügbarmachen von Einstellungen auf Ebene von Verbindung ist recht einfach. Sind ein etwas komplizierteres Befehlsebene Einstellungen zu ändern, da der TableAdapter mehrere Befehlsobjekte - verfügen, kann ein `InsertCommand`, `UpdateCommand`, und `DeleteCommand`, zusammen mit der eine Variable Anzahl von Befehlsobjekten in die `CommandCollection` Diese Eigenschaft. Beim Befehlsebene Einstellungen zu aktualisieren, müssen diese Einstellungen auf alle Befehlsobjekte weitergegeben werden.
+Da der TableAdapter nur über eine einzige `Connection`-Eigenschaft verfügt, ist der Code zum verfügbar machen von Einstellungen auf Verbindungs Ebene recht unkompliziert. Das Ändern der Einstellungen auf Befehls Ebene ist etwas komplizierter, da der TableAdapter mehrere Befehls Objekte aufweisen kann: eine `InsertCommand`, `UpdateCommand`und `DeleteCommand`sowie eine Variable Anzahl von Befehls Objekten in der `CommandCollection`-Eigenschaft. Beim Aktualisieren der Einstellungen auf Befehls Ebene müssen diese Einstellungen an alle Befehls Objekte weitergegeben werden.
 
-Angenommen Sie, dass gab es bestimmte Abfragen in den TableAdapter, die eine außergewöhnliche viel Zeit zum Ausführen benötigt haben. Mit dem TableAdapter eine dieser Abfragen ausführen, sollten wir das Befehlsobjekt s erhöhen [ `CommandTimeout` Eigenschaft](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Diese Eigenschaft gibt die Anzahl der Sekunden warten, bis der auszuführende Befehl, und ist standardmäßig auf 30.
+Stellen Sie sich z. b. vor, dass im TableAdapter bestimmte Abfragen vorhanden waren, die eine außergewöhnlich lange Ausführungszeit gedauert haben. Wenn Sie den TableAdapter verwenden, um eine dieser Abfragen auszuführen, können Sie das Command-Objekt s [`CommandTimeout`-Eigenschaft](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)erhöhen. Diese Eigenschaft gibt die Anzahl der Sekunden an, die auf die Ausführung des Befehls gewartet werden soll. der Standardwert ist 30.
 
-Zu den `CommandTimeout` Eigenschaft angepasst werden, indem die BLL, fügen Sie die folgenden `Public` Methode, um die `ProductsDataTable` mithilfe der partiellen Klasse-Datei in Schritt2 erstellte (`ProductsTableAdapter.ConnectionAndCommandSettings.vb`):
+Fügen Sie die folgende `Public` Methode mithilfe der in Schritt 2 erstellten partiellen Klassendatei, die in Schritt 2 (`ProductsTableAdapter.ConnectionAndCommandSettings.vb`) erstellt wurde, der `ProductsDataTable` hinzu, um die Anpassung der `CommandTimeout`-Eigenschaft durch die BLL zuzulassen:
 
 [!code-vb[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/samples/sample4.vb)]
 
-Diese Methode konnte von der BLL oder Darstellungsschicht das Befehlstimeout für alle Befehle Probleme Festlegen von dieser Instanz des TableAdapter aufgerufen werden.
+Diese Methode kann von der BLL-oder Präsentationsebene aufgerufen werden, um das Befehls Timeout für alle Befehls Probleme dieser TableAdapter-Instanz festzulegen.
 
 > [!NOTE]
-> Die `Adapter` und `CommandCollection` Eigenschaften werden als `Private`, d. h., sie können nur von Code in der TableAdapter aus zugegriffen werden. Im Gegensatz zu den `Connection` -Eigenschaft, diese Zugriffsmodifizierer sind nicht konfigurierbar. Aus diesem Grund bei Bedarf auf anderen Ebenen der Architektur Befehlsebene-Eigenschaften verfügbar machen Sie müssen die partielle Klasse Ansatz verwenden erwähnte zu einem `Public` Methode oder Eigenschaft, die liest oder schreibt in die `Private` Befehlsobjekte.
+> Die Eigenschaften "`Adapter`" und "`CommandCollection`" sind als `Private`gekennzeichnet, d. h., auf Sie kann nur über Code innerhalb des TableAdapters zugegriffen werden. Anders als die `Connection`-Eigenschaft können diese Zugriffsmodifizierer nicht konfiguriert werden. Wenn Sie Eigenschaften auf Befehls Ebene für andere Ebenen in der Architektur verfügbar machen müssen, müssen Sie daher den oben beschriebenen partiellen Klassen Ansatz verwenden, um eine `Public` Methode oder Eigenschaft bereitzustellen, die die `Private` Befehls Objekte liest oder schreibt.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Die TableAdapters innerhalb eines typisierten Datasets dienen, zum Datenzugriff und die Komplexität zu kapseln. Mit TableAdapters können wir keine Gedanken um das Schreiben von Code von ADO.NET zum Verbinden mit der Datenbank, einen Befehl oder die Ergebnisse in eine DataTable füllen. Es wird alle automatisch für uns behandelt.
+Die TableAdapters in einem typisierten DataSet dienen zum Kapseln von Datenzugriffs Details und-Komplexität. Mithilfe von TableAdapters müssen Sie sich keine Gedanken über das Schreiben von ADO.NET-Code machen, um eine Verbindung mit der Datenbank herzustellen, einen Befehl auszugeben oder die Ergebnisse in eine Datentabelle aufzufüllen. Sie werden alle automatisch für uns verarbeitet.
 
-Allerdings gibt es möglicherweise vorkommen, dass wir die Low-Level ADO.NET Einzelheiten benötigen, z. B. das Ändern der Verbindungszeichenfolge oder die standardmäßigen-Verbindung oder eines Befehl Timeoutwerte anpassen. Der TableAdapter hat automatisch generierter `Connection`, `Adapter`, und `CommandCollection` Eigenschaften, aber diese sind entweder `Friend` oder `Private`, in der Standardeinstellung. Diese internen Informationen kann verfügbar gemacht werden, durch die Erweiterung des TableAdapter mit partiellen Klassen einzuschließender `Public` Methoden oder Eigenschaften. Sie können auch die TableAdapter `Connection` Zugriffsmodifizierer für die Eigenschaft kann so konfiguriert werden, über die TableAdapter `ConnectionModifier` Eigenschaft.
+Es kann jedoch vorkommen, dass die ADO.net-Besonderheiten auf niedriger Ebene angepasst werden müssen, z. b. das Ändern der Verbindungs Zeichenfolge oder der standardmäßigen Verbindungs-oder Befehls Timeout Werte. Der TableAdapter verfügt über automatisch generierte Eigenschaften vom Typ `Connection`, `Adapter`und `CommandCollection`, diese sind jedoch standardmäßig entweder `Friend` oder `Private`. Diese internen Informationen können verfügbar gemacht werden, indem der TableAdapter mithilfe von partiellen Klassen erweitert wird, um `Public` Methoden oder Eigenschaften einzuschließen. Alternativ kann der TableAdapter s `Connection`-eigenschaftenzugriffsmodifizierer über die Eigenschaft TableAdapter s `ConnectionModifier` konfiguriert werden.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führen Sie Prüfer für dieses Tutorial Burnadette Leigh, S Ren Jacob Lauritsen, Teresa Murphy und Hilton Geisenow wurden. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Führende Prüfer für dieses Tutorial waren Burnadette Leigh, S ren Jacob Lauritsen, Teresa Murphy und Hilton geisenow. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Zurück](working-with-computed-columns-vb.md)

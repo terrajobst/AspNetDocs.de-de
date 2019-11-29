@@ -1,217 +1,217 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
-title: Abrufen und Anzeigen von Daten mit model-Bindung und Web Forms | Microsoft-Dokumentation
+title: Abrufen und Anzeigen von Daten mit Modell Bindung und Web Forms | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung macht die dateninteraktion Weitere gerade-...
+description: In dieser tutorialreihe werden grundlegende Aspekte der Verwendung der Modell Bindung mit einem ASP.net Web Forms-Projekt veranschaulicht. Die Modell Bindung führt zu einer geraden Daten Interaktion-...
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 08cb65f9ef8f5c36070454e011f41554d81f333f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 81cca22cb4752d071d2a68986ae9ac2bed737594
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131537"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74633175"
 ---
-# <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit modellbindung und Web forms
+# <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit Modell Bindung und Web Forms
 
-> Diese tutorialreihe veranschaulicht die grundlegenden Aspekte der Verwendung von modellbindung mit einem ASP.NET Web Forms-Projekt. Modellbindung, wird die dateninteraktion mehr geradlinigere als Umgang mit Data Source-Objekte (z. B. "ObjectDataSource" oder SqlDataSource-Steuerelement). Diese Serie beginnt mit einführendes Material und verschiebt in späteren Tutorials zu erweiterten Konzepten übergegangen.
+> In dieser tutorialreihe werden grundlegende Aspekte der Verwendung der Modell Bindung mit einem ASP.net Web Forms-Projekt veranschaulicht. Die Modell Bindung sorgt für eine genauere Daten Interaktion als bei der Verarbeitung von Datenquellen Objekten (z. b. ObjectDataSource oder SqlDataSource). Diese Serie beginnt mit Einführungs Material und wechselt in spätere Tutorials zu erweiterten Konzepten.
 > 
-> Der Modell-bindungsmuster funktioniert mit jedem datenzugriffstechnologie. In diesem Tutorial verwenden Sie Entity Framework, jedoch können Sie die neue datenzugriffstechnologie, die Sie bereits bekannt ist. Von einem datengebundenen Serversteuerelement, z. B. eine GridView, ListView, DetailsView oder FormView-Steuerelement geben Sie den Namen der Methoden zum auswählen, aktualisieren, löschen und Erstellen von Daten verwendet. In diesem Tutorial werden Sie einen Wert für die SelectMethod angeben. 
+> Das Modell bindungsmuster funktioniert mit jeder Datenzugriffs Technologie. In diesem Tutorial verwenden Sie Entity Framework, aber Sie können die Datenzugriffs Technologie verwenden, die Ihnen am meisten vertraut ist. Über ein Daten gebundenes Server Steuerelement, z. b. ein GridView-, ListView-, DetailsView-oder FormView-Steuerelement, geben Sie die Namen der Methoden an, die zum auswählen, aktualisieren, löschen und Erstellen von Daten verwendet werden sollen. In diesem Tutorial geben Sie einen Wert für die SelectMethod-Methode an. 
 > 
-> In dieser Methode geben Sie die Logik zum Abrufen der Daten. Im nächsten Tutorial legen Sie Werte für UpdateMethod, DeleteMethod und InsertMethod fest.
+> Innerhalb dieser Methode stellen Sie die Logik zum Abrufen der Daten bereit. Im nächsten Tutorial legen Sie Werte für UpdateMethod, DeleteMethod und InsertMethod fest.
 >
-> Sie können [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) in das vollständige Projekt C# oder Visual Basic. Der herunterladbare Code funktioniert mit Visual Studio 2012 und höher. Er verwendet die Visual Studio 2012-Vorlage, die unterscheidet sich etwas von der Visual Studio 2017-Vorlage, die in diesem Tutorial gezeigt wird.
+> Sie können das gesamte Projekt in C# oder Visual Basic [herunterladen](https://go.microsoft.com/fwlink/?LinkId=286116) . Der herunterladbare Code funktioniert mit Visual Studio 2012 und höher. Dabei wird die Vorlage Visual Studio 2012 verwendet, die sich geringfügig von der in diesem Tutorial gezeigten Vorlage in Visual Studio 2017 unterscheidet.
 > 
-> In diesem Tutorial führen Sie die Anwendung in Visual Studio. Sie können auch Bereitstellen der Anwendung bei einem Hostinganbieter und über das Internet verfügbar machen. Microsoft bietet kostenloses Webhosting für bis zu 10 Websites in einem  
-> [Kostenloses Azure-Testkonto](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informationen dazu, wie Sie ein Visual Studio-Webprojekt für Azure App Service-Web-Apps bereitstellen, finden Sie unter den [ASP.NET-webbereitstellung mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) Reihe. In diesem Tutorial wird gezeigt, wie Entity Framework Code First-Migrationen zu verwenden, um Ihre SQL Server-Datenbank in Azure SQL-Datenbank bereitzustellen.
+> In diesem Tutorial führen Sie die Anwendung in Visual Studio aus. Sie können die Anwendung auch für einen Hostinganbieter bereitstellen und über das Internet verfügbar machen. Microsoft bietet kostenloses Webhosting für bis zu 10 Websites in einer  
+> [Kostenloses Azure-Testkonto](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informationen zum Bereitstellen eines Visual Studio-Webprojekts für die Azure App Service von Web-Apps finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) Series. In diesem Tutorial erfahren Sie außerdem, wie Sie Entity Framework Code First-Migrationen zum Bereitstellen Ihrer SQL Server-Datenbank in Azure SQL-Datenbank verwenden.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
-> - Microsoft Visual Studio 2017 "oder" Microsoft Visual Studio Community 2017
+> - Microsoft Visual Studio 2017 oder Microsoft Visual Studio Community 2017
 >   
-> In diesem Tutorial funktioniert auch mit Visual Studio 2012 und Visual Studio 2013, aber es gibt einige Unterschiede in der Vorlage "Benutzer"-Schnittstelle und Projekt.
+> Dieses Tutorial funktioniert auch mit Visual Studio 2012 und Visual Studio 2013. es gibt jedoch einige Unterschiede in der Benutzeroberfläche und der Projektvorlage.
 
-## <a name="what-youll-build"></a>Sie lernen Folgendes
+## <a name="what-youll-build"></a>Was Sie erstellen
 
-In diesem Tutorial müssen Sie folgende Aktionen ausführen:
+In diesem Tutorial gehen Sie wie folgt vor:
 
-* Erstellen Sie Datenobjekte, die eine Universität mit Schüler/Studenten, die Lehrveranstaltungen widerspiegeln.
-* Erstellen von Tabellen aus den Objekten
+* Erstellen von Datenobjekten, die eine Universität mit Studenten widerspiegeln, die in Kursen angemeldet sind
+* Erstellen von Datenbanktabellen aus den Objekten
 * Auffüllen der Datenbank mit Testdaten
-* Anzeigen von Daten in einem Web form
+* Anzeigen von Daten in einem Webformular
 
 ## <a name="create-the-project"></a>Erstellen eines Projekts
 
-1. Erstellen Sie in Visual Studio 2017 eine **ASP.NET-Webanwendung ((.NET Framework)** -Projekt namens **ContosoUniversityModelBinding**.
+1. Erstellen Sie in Visual Studio 2017 ein Projekt mit dem Namen " **contosouniversitymodelbinding**" der **ASP.NET-Webanwendung (.NET Framework)** .
 
    ![Projekt erstellen](retrieving-data/_static/image19.png)
 
 2. Klicken Sie auf **OK**. Das Dialogfeld zum Auswählen einer Vorlage wird angezeigt.
 
-   ![Wählen Sie die Web forms](retrieving-data/_static/image3.png)
+   ![Auswählen von Web Forms](retrieving-data/_static/image3.png)
 
-3. Wählen Sie die **Web Forms** Vorlage. 
+3. Wählen Sie die **Web Forms** Vorlage aus. 
 
-4. Ändern Sie die Authentifizierung, bei Bedarf **einzelne Benutzerkonten**. 
+4. Ändern Sie ggf. die Authentifizierung in **einzelne Benutzerkonten**. 
 
 5. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-## <a name="modify-site-appearance"></a>Erscheinungsbild der Website geändert werden.
+## <a name="modify-site-appearance"></a>Website Darstellung ändern
 
-   Stellen Sie einige Änderungen an den Standort Darstellung anpassen. 
+   Nehmen Sie einige Änderungen vor, um das Erscheinungsbild der Website anzupassen. 
    
-   1. Öffnen Sie die Datei Site.Master.
+   1. Öffnen Sie die Datei Site. Master.
    
-   2. Ändern Sie den Titel anzuzeigende **Contoso University** und nicht **My ASP.NET Application**.
+   2. Ändern Sie den Titel, um die "The **University** " und nicht die **ASP.NET-Anwendung**anzuzeigen.
 
       [!code-aspx-csharp[Main](retrieving-data/samples/sample1.aspx?highlight=1)]
 
-   3. Ändern Sie den Headertext von **Anwendungsname** zu **Contoso University**.
+   3. Ändern Sie den Header Text vom **Anwendungsnamen** in die **Datei**"Configuration Manager".
 
       [!code-aspx-csharp[Main](retrieving-data/samples/sample2.aspx?highlight=7)]
 
-   4. Ändern Sie die Header-Navigationslinks, auf die entsprechende anpassen. 
+   4. Ändern Sie die Navigations Header Links zu den entsprechenden Websites. 
    
-      Entfernen Sie die Links, um **zu** und **wenden Sie sich an** und verknüpfen Sie stattdessen mit einem **Schüler/Studenten** Seite, die Sie erstellen möchten.
+      Entfernen Sie die Links für " **about** " und " **Contact** ", und verknüpfen Sie die Seite mit der Seite " **Studenten** ", die Sie erstellen möchten.
 
       [!code-aspx-csharp[Main](retrieving-data/samples/sample3.aspx)]
 
-   5. Speichern Sie Site.Master.
+   5. Speichern Sie Site. Master.
 
-## <a name="add-a-web-form-to-display-student-data"></a>Fügen Sie ein Webformular zum Anzeigen der Studentendaten
+## <a name="add-a-web-form-to-display-student-data"></a>Hinzufügen eines Webformulars zum Anzeigen von Studenten Daten
 
-   1. In **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, wählen Sie **hinzufügen** und dann **neues Element**. 
+   1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen** und dann **Neues Element**aus. 
    
-   2. In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **Webformular mit Gestaltungsvorlage** Vorlage und nennen Sie sie **Students.aspx**.
+   2. Wählen Sie im Dialogfeld **Neues Element hinzufügen** das **Webformular mit der Vorlage Master Seite** aus, und nennen Sie es **students. aspx**.
 
       ![Seite erstellen](retrieving-data/_static/image5.png)
 
    3. Wählen Sie **Hinzufügen** aus.
    
-   4. Wählen Sie für das Web Form die Masterseite **Site.Master**.
+   4. Wählen Sie für die Master Seite des Webformulars die Option **Site. Master**aus.
    
    5. Klicken Sie auf **OK**.
 
-## <a name="add-the-data-model"></a>Datenmodell hinzufügen
+## <a name="add-the-data-model"></a>Hinzufügen des Datenmodells
 
-In der **Modelle** Ordner, fügen Sie eine Klasse, die mit dem Namen **UniversityModels.cs**.
+Fügen Sie im Ordner **Models** eine Klasse mit dem Namen **UniversityModels.cs**hinzu.
 
-   1. Mit der rechten Maustaste **Modelle**Option **hinzufügen**, und klicken Sie dann **neues Element**. Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
+   1. Klicken Sie mit der rechten Maustaste auf **Modelle**, und wählen Sie **Hinzufügen**und **Neues Element**aus. Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 
-   2. Wählen Sie im linken Navigationsmenü im **Code**, klicken Sie dann **Klasse**.
+   2. Klicken Sie im linken Navigationsmenü auf **Code**und dann auf **Klasse**.
 
-      ![Erstellen von Model-Klasse](retrieving-data/_static/image20.png)
+      ![Modell Klasse erstellen](retrieving-data/_static/image20.png)
 
-   3. Nennen Sie die Klasse **UniversityModels.cs** , und wählen Sie **hinzufügen**.
+   3. Benennen Sie die Klasse **UniversityModels.cs** , und wählen Sie **Hinzufügen**.
 
-      In dieser Datei definieren die `SchoolContext`, `Student`, `Enrollment`, und `Course` Klassen wie folgt:
+      Definieren Sie in dieser Datei die Klassen `SchoolContext`, `Student`, `Enrollment`und `Course` wie folgt:
 
       [!code-csharp[Main](retrieving-data/samples/sample4.cs)]
 
-      Die `SchoolContext` Klasse leitet sich von `DbContext`, die Verbindung mit der Datenbank verwaltet und Änderungen in den Daten.
+      Die `SchoolContext`-Klasse wird von `DbContext`abgeleitet, die die Datenbankverbindung und die Änderungen an den Daten verwaltet.
 
-      In der `Student` Klasse, beachten Sie, dass Attribute angewendet werden, um die `FirstName`, `LastName`, und `Year` Eigenschaften. Dieses Tutorial verwendet diese Attribute für die datenüberprüfung. Um den Code zu vereinfachen, werden nur diese Eigenschaften mit datenvalidierung Attributen markiert. In einem echten Projekt würde Sie Validierungsattribute, die allen Eigenschaften, die Validierung erforderlich anwenden.
+      Beachten Sie in der `Student`-Klasse die Attribute, die auf die Eigenschaften `FirstName`, `LastName`und `Year` angewendet werden. In diesem Tutorial werden diese Attribute für die Datenüberprüfung verwendet. Um den Code zu vereinfachen, werden nur diese Eigenschaften mit Daten Validierungs Attributen gekennzeichnet. In einem echten Projekt würden Sie Validierungs Attribute auf alle Eigenschaften anwenden, die überprüft werden müssen.
 
-   4. Save UniversityModels.cs.
+   4. Speichern Sie UniversityModels.cs.
 
-## <a name="set-up-the-database-based-on-classes"></a>Richten Sie die Datenbank auf Basis von Klassen
+## <a name="set-up-the-database-based-on-classes"></a>Einrichten der Datenbank auf der Grundlage von Klassen
 
-Dieses Tutorial verwendet [Code First-Migrationen](https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/) Objekte erstellen und Datenbanktabellen. Diese Tabellen speichern Informationen über die Schüler/Studenten und ihre Kurse.
+In diesem Tutorial werden [Code First-Migrationen](https://docs.microsoft.com/ef/ef6/modeling/code-first/migrations/) zum Erstellen von Objekten und Datenbanktabellen verwendet. In diesen Tabellen werden Informationen zu den Studenten und deren Kursen gespeichert.
 
-   1. Wählen Sie **Tools** > **NuGet Paket-Manager** > **Paket-Manager Konsole**.
+   1. Wählen **Sie** Extras > **nuget-Paket-Manager** > Paket-Manager- **Konsole**aus.
 
-   2. In **-Paket-Manager-Konsole**, führen Sie diesen Befehl:  
+   2. Führen Sie in der **Paket-Manager-Konsole**den folgenden Befehl aus:  
       `enable-migrations -ContextTypeName ContosoUniversityModelBinding.Models.SchoolContext`
 
-      Wenn der Befehl erfolgreich abgeschlossen wurde, Meldung eine darauf hinweist, dass Migrationen aktiviert wurden.
+      Wenn der Befehl erfolgreich abgeschlossen wurde, wird eine Meldung angezeigt, die besagt, dass Migrationen aktiviert wurden.
 
-      ![Aktivieren von Migrationen](retrieving-data/_static/image8.png)
+      ![Migrationen aktivieren](retrieving-data/_static/image8.png)
 
-      Beachten Sie, dass eine Datei mit dem Namen *Configuration.cs* erstellt wurde. Die `Configuration` -Klasse verfügt über eine `Seed` -Methode, die die Datenbanktabellen mit Testdaten vorab auffüllen kann.
+      Beachten Sie, dass eine Datei mit dem Namen *Configuration.cs* erstellt wurde. Die `Configuration`-Klasse verfügt über eine `Seed`-Methode, mit der die Datenbanktabellen mit Testdaten vorab aufgefüllt werden können.
 
-## <a name="pre-populate-the-database"></a>Die Datenbank vorab auffüllen
+## <a name="pre-populate-the-database"></a>Vorab Auffüllen der Datenbank
 
    1. Öffnen Sie Configuration.cs.
    
-   2. Fügen Sie der `Seed` -Methode folgenden Code hinzu. Fügen Sie außerdem eine `using` -Anweisung für die `ContosoUniversityModelBinding. Models` Namespace.
+   2. Fügen Sie der `Seed` -Methode folgenden Code hinzu. Fügen Sie außerdem eine `using`-Anweisung für den `ContosoUniversityModelBinding. Models`-Namespace hinzu.
 
       [!code-csharp[Main](retrieving-data/samples/sample5.cs)]
 
-   3. Configuration.cs zu speichern.
+   3. Speichern Sie Configuration.cs.
 
-   4. Führen Sie in der Paket-Manager-Konsole den Befehl **hinzufügen-Migration Initial**.
+   4. Führen Sie in der Paket-Manager-Konsole den Befehl **Add-Migration Initial**aus.
 
-   5. Führen Sie den Befehl **Update-Database**.
+   5. Führen Sie den Befehl **Update-Database**aus.
 
-      Wenn ein Fehler, beim Ausführen dieses Befehls auftritt, der `StudentID` und `CourseID` Werte möglicherweise sich von der `Seed` Methode Werte. Öffnen Sie die Datenbanktabellen und suchen Sie die vorhandenen Werte für `StudentID` und `CourseID`. Fügen Sie diese Werte auf den Code für das seeding der `Enrollments` Tabelle.
+      Wenn Sie beim Ausführen dieses Befehls eine Ausnahme erhalten, können sich die Werte für `StudentID` und `CourseID` von den Werten der `Seed`-Methode unterscheiden. Öffnen Sie diese Datenbanktabellen, und suchen Sie nach vorhandenen Werten für `StudentID` und `CourseID`. Fügen Sie diese Werte dem Code für das Seeding der `Enrollments` Tabelle hinzu.
 
-## <a name="add-a-gridview-control"></a>Hinzufügen einer GridView-Steuerelement
+## <a name="add-a-gridview-control"></a>Hinzufügen eines GridView-Steuer Elements
 
-Mit Datenbankdaten aufgefüllten können Sie nun die Daten abzurufen und anzuzeigen. 
+Mit aufgefüllten Datenbankdaten sind Sie nun bereit, diese Daten abzurufen und anzuzeigen. 
 
-1. Öffnen Sie Students.aspx.
+1. Öffnen Sie students. aspx.
 
-2. Suchen Sie die `MainContent` Platzhalter. In dieser Platzhalter Hinzufügen einer **GridView** -Steuerelement, das dieser Code enthält.
+2. Suchen Sie den `MainContent` Platzhalter. Fügen Sie innerhalb dieses Platzhalters ein **GridView** -Steuerelement hinzu, das diesen Code enthält.
 
    [!code-aspx-csharp[Main](retrieving-data/samples/sample6.aspx)]
 
    Beachten Sie Folgendes:
-   * Beachten Sie, dass der Wert festgelegt wird, für die `SelectMethod` Eigenschaft im GridView-Element. Dieser Wert gibt die Methode zum Abrufen von GridView-Daten, die Sie im nächsten Schritt erstellen. 
+   * Beachten Sie den Wert, der für die `SelectMethod`-Eigenschaft im GridView-Element festgelegt wurde. Dieser Wert gibt die Methode an, die zum Abrufen von GridView-Daten verwendet wird, die Sie im nächsten Schritt erstellen. 
    
-   * Die `ItemType` -Eigenschaftensatz auf die `Student` Klasse, die zuvor erstellt haben. Mit dieser Einstellung können Sie Eigenschaften der Klasse im Markup zu verweisen. Z. B. die `Student` -Klasse verfügt über eine Sammlung namens `Enrollments`. Können Sie `Item.Enrollments` dieser Sammlung abrufen und anschließend [LINQ-Syntax](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq) zum Abrufen von jedem Teilnehmer der Gutschrift Summe registriert.
+   * Die `ItemType`-Eigenschaft wird auf die zuvor erstellte `Student` Klasse festgelegt. Diese Einstellung ermöglicht es Ihnen, auf Klasseneigenschaften im Markup zu verweisen. Die `Student`-Klasse verfügt beispielsweise über eine Auflistung mit dem Namen `Enrollments`. Sie können `Item.Enrollments` verwenden, um diese Auflistung abzurufen, und dann die [LINQ-Syntax](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq) verwenden, um die registrierten Gutschriften des Studenten abzurufen.
    
-3. Students.aspx zu speichern.
+3. Speichern Sie students. aspx.
 
-## <a name="add-code-to-retrieve-data"></a>Fügen Sie Code zum Abrufen von Daten
+## <a name="add-code-to-retrieve-data"></a>Hinzufügen von Code zum Abrufen von Daten
 
-   Fügen Sie in der Students.aspx Code-Behind-Datei für die angegebene Methode der `SelectMethod` Wert. 
+   Fügen Sie in der Code Behind-Datei students. aspx die für den `SelectMethod` Wert angegebene Methode hinzu. 
    
-   1. Öffnen Sie Students.aspx.cs.
+   1. Öffnen Sie students.aspx.cs.
    
-   2. Hinzufügen `using` -Anweisungen für die `ContosoUniversityModelBinding. Models` und `System.Data.Entity` Namespaces.
+   2. Fügen Sie `using`-Anweisungen für die `ContosoUniversityModelBinding. Models`-und `System.Data.Entity`-Namespaces hinzu.
 
       [!code-csharp[Main](retrieving-data/samples/sample7.cs)]
 
-   3. Fügen Sie die Methode, die Sie für angegebene `SelectMethod`:
+   3. Fügen Sie die für `SelectMethod`angegebene Methode hinzu:
 
       [!code-csharp[Main](retrieving-data/samples/sample8.cs)]
 
-      Die `Include` -Klausel wird die abfrageleistung verbessert, jedoch nicht erforderlich. Ohne die `Include` -Klausel, die Daten werden abgerufen, mithilfe von [ *Lazy Load*](https://en.wikipedia.org/wiki/Lazy_loading), hierbei ist, senden eine separate Abfrage an die Datenbank jedes Mal bezogene Daten abgerufen werden. Mit der `Include` -Klausel, die Daten werden abgerufen, mithilfe von *Eager Load*, was bedeutet, dass eine einzige Datenbankabfrage Ruft alle verknüpften Daten ab. Verwandte Daten verwendet wird, ist eager Loading weniger effizient, da mehr Daten abgerufen werden. Allerdings bietet in diesem Fall unverzüglichem Laden Sie die beste Leistung daran, dass die verknüpften Daten für jeden Datensatz angezeigt werden.
+      Die `Include`-Klausel verbessert die Abfrageleistung, ist aber nicht erforderlich. Ohne die `Include`-Klausel werden die Daten mithilfe [*Lazy Loading*](https://en.wikipedia.org/wiki/Lazy_loading)abgerufen. Dies umfasst das Senden einer separaten Abfrage an die Datenbank, wenn verknüpfte Daten abgerufen werden. Mit der `Include`-Klausel werden Daten mithilfe *Eager Loading*abgerufen, was bedeutet, dass eine einzelne Datenbankabfrage alle zugehörigen Daten abruft. Wenn verwandte Daten nicht verwendet werden, ist Eager Loading weniger effizient, da mehr Daten abgerufen werden. In diesem Fall bietet Eager Loading jedoch die beste Leistung, da die zugehörigen Daten für jeden Datensatz angezeigt werden.
 
-      Weitere Informationen zu Überlegungen zur Leistung beim Laden von Daten, die verknüpft werden, finden Sie unter den **explizite Laden von verknüpften Daten, mittels Eager Load und Lazy** im Abschnitt der [verwandte Lesen von Daten mit dem Entity Framework in einer ASP.NET-Anwendung MVC-Anwendung](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) Artikel.
+      Weitere Informationen zu Leistungs Überlegungen beim Laden von verknüpften Daten finden Sie im Artikel **Lazy, eifrig und Explizites Laden verwandter Daten** im Artikel [Lesen verwandter Daten mit dem Entity Framework in einer ASP.NET MVC-Anwendung](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) .
 
-      Standardmäßig ist die Daten durch die Werte der Eigenschaft als Schlüssel markiert sortiert. Sie können Hinzufügen einer `OrderBy` -Klausel, um einen der anderen Art Wert angeben. In diesem Beispiel ist die Standardeinstellung `StudentID` Eigenschaft wird für die Sortierung verwendet. In der [sortieren, Paging und Filtern von Daten](sorting-paging-and-filtering-data.md) Artikel, der Benutzer wird aktiviert, um eine Spalte für die Sortierung auswählen.
+      Standardmäßig werden die Daten nach den Werten der als Schlüssel markierten Eigenschaft sortiert. Sie können eine `OrderBy`-Klausel hinzufügen, um einen anderen Sortier Wert anzugeben. In diesem Beispiel wird die standardmäßige `StudentID`-Eigenschaft zum Sortieren verwendet. Im Artikel [Sortieren, Paging und Filtern von Daten](sorting-paging-and-filtering-data.md) ist der Benutzer in der Lage, eine Spalte für die Sortierung auszuwählen.
  
-   4. Students.aspx.cs zu speichern.
+   4. Speichern Sie students.aspx.cs.
 
-## <a name="run-your-application"></a>Führen Sie die Anwendung 
+## <a name="run-your-application"></a>Ausführen der Anwendung 
 
-Führen Sie Ihre Webanwendung (**F5**) und navigieren Sie zu der **Schüler/Studenten** Seite, das Folgendes anzeigt:
+Führen Sie Ihre Webanwendung (**F5**) aus, und navigieren Sie zur Seite " **Studenten** ", auf der Folgendes angezeigt wird:
 
-   ![Anzeigen von Daten](retrieving-data/_static/image16.png)
+   ![Daten anzeigen](retrieving-data/_static/image16.png)
 
-## <a name="automatic-generation-of-model-binding-methods"></a>Automatische Generierung von SMO-Methoden-Bindung
+## <a name="automatic-generation-of-model-binding-methods"></a>Automatische Generierung von Modell Bindungsmethoden
 
-Wenn dieser tutorialreihe durcharbeiten, können Sie den Code einfach aus dem Lernprogramm zu Ihrem Projekt kopieren. Ein Nachteil dieses Ansatzes ist jedoch, dass Sie nicht über die Funktion, die von Visual Studio zum automatischen Generieren von Code für die Bindung SMO-Methoden bereitgestellt werden können. Bei der Arbeit an Ihre eigenen Projekte sparen automatische codegenerierung Sie Zeit und die Hilfe, die Sie wissen, wie Implementieren eines Vorgangs erhalten. Dieser Abschnitt beschreibt die automatischen Code Generation-Funktion. In diesem Abschnitt dient nur zu Informationszwecken und keinen Code, die, den Sie in Ihrem Projekt implementieren müssen. 
+Wenn Sie diese tutorialreihe durcharbeiten, können Sie einfach den Code aus dem Tutorial in Ihr Projekt kopieren. Ein Nachteil dieses Ansatzes ist jedoch, dass Sie die von Visual Studio bereitgestellte Funktion möglicherweise nicht kennen, um automatisch Code für Modell Bindungsmethoden zu generieren. Wenn Sie an Ihren eigenen Projekten arbeiten, können Sie mithilfe der automatischen Codegenerierung Zeit sparen und einen Eindruck davon gewinnen, wie ein Vorgang implementiert wird. In diesem Abschnitt wird das Feature zur automatischen Codegenerierung beschrieben. Dieser Abschnitt dient nur zu Informationszwecken und enthält keinen Code, den Sie in Ihrem Projekt implementieren müssen. 
 
-Beim Festlegen eines Werts für die `SelectMethod`, `UpdateMethod`, `InsertMethod`, oder `DeleteMethod` Eigenschaften im Markupcode, Sie können auswählen, die **neue Methode erstellen** Option.
+Wenn Sie einen Wert für die Eigenschaften `SelectMethod`, `UpdateMethod`, `InsertMethod`oder `DeleteMethod` im Markup Code festlegen, können Sie die Option **neue Methode erstellen** auswählen.
 
-![Erstellen Sie eine Methode](retrieving-data/_static/image18.png)
+![Erstellen einer Methode](retrieving-data/_static/image18.png)
 
-Visual Studio nicht nur eine Methode im Code-Behind mit der richtigen Signatur erstellt, sondern generiert auch den Implementierungscode, um den Vorgang auszuführen. Wenn Sie zuerst festlegen, die `ItemType` Eigenschaft, bevor Sie die automatische codegenerierung mit Features, die generierten Code verwendet, die eingeben, und für die Vorgänge. Beispielsweise wird beim Festlegen der `UpdateMethod` -Eigenschaft, den folgenden Code wird automatisch generiert:
+Visual Studio erstellt nicht nur eine Methode im Code-Behind mit der richtigen Signatur, sondern generiert auch Implementierungs Code, um den Vorgang auszuführen. Wenn Sie zuerst die `ItemType`-Eigenschaft festlegen, bevor Sie die Funktion zur automatischen Codegenerierung verwenden, verwendet der generierte Code diesen Typ für die Vorgänge. Wenn Sie z. b. die `UpdateMethod`-Eigenschaft festlegen, wird der folgende Code automatisch generiert:
 
 [!code-csharp[Main](retrieving-data/samples/sample9.cs)]
 
-Dieser Code muss in diesem Fall nicht zu Ihrem Projekt hinzugefügt werden. Im nächsten Tutorial implementieren Sie Methoden zum Aktualisieren, löschen und neue Daten hinzufügen.
+Dieser Code muss dem Projekt nicht hinzugefügt werden. Im nächsten Tutorial implementieren Sie Methoden zum Aktualisieren, löschen und Hinzufügen neuer Daten.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-In diesem Tutorial erstellten Data Model-Klassen und eine Datenbank aus den Klassen generiert. Sie können Tabellen der Datenbank mit Testdaten gefüllt. Sie wurden die modellbindung zum Abrufen von Daten aus der Datenbank verwendet, und klicken Sie dann die Daten in einer GridView-Ansicht angezeigt.
+In diesem Tutorial haben Sie Datenmodell Klassen erstellt und eine Datenbank aus diesen Klassen generiert. Sie haben die Datenbanktabellen mit Testdaten ausgefüllt. Sie haben die Modell Bindung verwendet, um Daten aus der Datenbank abzurufen, und dann die Daten in einer GridView angezeigt.
 
-In den nächsten [Tutorial](updating-deleting-and-creating-data.md) in dieser Reihe werde Sie aktivieren, aktualisieren, löschen und Erstellen von Daten.
+Im nächsten [Tutorial](updating-deleting-and-creating-data.md) dieser Reihe aktivieren Sie das Aktualisieren, löschen und Erstellen von Daten.
 
 > [!div class="step-by-step"]
 > [Nächste](updating-deleting-and-creating-data.md)

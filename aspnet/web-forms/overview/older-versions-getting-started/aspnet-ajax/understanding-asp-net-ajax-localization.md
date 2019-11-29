@@ -1,150 +1,150 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
-title: Grundlegendes zur Lokalisierung in ASP.NET AJAX | Microsoft-Dokumentation
+title: Grundlegendes zur ASP.NET AJAX-Lokalisierung | Microsoft-Dokumentation
 author: scottcate
-description: Lokalisierung ist der Prozess für das Entwerfen und Unterstützung für eine bestimmte Sprache und Kultur in einer Anwendung oder eine Anwendungskomponente integrieren. Der Mic...
+description: Lokalisierung ist der Prozess des Entwurfs und der Integration der Unterstützung für eine bestimmte Sprache und Kultur in eine Anwendung oder eine Anwendungs Komponente. Die MIC...
 ms.author: riande
 ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: ef4ee57496337fb13b4d1c09c058e89e04eb3138
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 003e7939accd7a68dab97441b3d999bca835b85a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114595"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600865"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>Grundlegendes zur Lokalisierung in ASP.NET AJAX
 
-durch [Scott Cate](https://github.com/scottcate)
+von [Scott Cate](https://github.com/scottcate)
 
-[PDF herunterladen](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
+[PDF herunterladen](https://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
 
-> Lokalisierung ist der Prozess für das Entwerfen und Unterstützung für eine bestimmte Sprache und Kultur in einer Anwendung oder eine Anwendungskomponente integrieren. Die Plattform von Microsoft ASP.NET bietet umfangreiche Unterstützung für Lokalisierung für ASP.NET-Anwendungen standard, durch die Integration von den standardmäßigen .NET Lokalisierungsmodell; Das Microsoft AJAX-Framework nutzen, die integrierte Modell zur Unterstützung der unterschiedlichen Szenarien, in der Lokalisierung ausgeführt werden kann.
+> Lokalisierung ist der Prozess des Entwurfs und der Integration der Unterstützung für eine bestimmte Sprache und Kultur in eine Anwendung oder eine Anwendungs Komponente. Die Microsoft ASP.NET Plattform bietet umfassende Unterstützung für die Lokalisierung für standardmäßige ASP.NET-Anwendungen durch Integration des standardmäßigen .net-Lokalisierungs Modells. das Microsoft AJAX-Framework nutzt das integrierte Modell, um die verschiedenen Szenarien zu unterstützen, in denen die Lokalisierung durchgeführt werden kann.
 
 ## <a name="introduction"></a>Einführung
 
-Die Technologie von Microsoft ASP.NET bietet ein Programmiermodell, das objektorientierte und ereignisgesteuerte und vereinen sie die Vorteile des kompilierten Codes. Hat jedoch einige Nachteile, die sich von der Technologie, von die viele adressiert werden können, indem die neuen Features im Namespace "System.Web.Extensions", der die Microsoft AJAX-Dienste in .NET Framework kapselt das Modell für die serverseitige Verarbeitung 3.5. Diese Erweiterungen ermöglichen viele rich-Client-Features, zuvor als Teil von ASP.NET 2.0 AJAX Extensions, aber jetzt Teil der Framework-Basisklassenbibliothek verfügbar. Steuerelemente und Features in diesem Namespace Teilrendering von Seiten enthalten, ohne dass von einer vollständigen seitenaktualisierung, den Zugriff auf Webdienste über Clientskript (einschließlich ASP.NET profilerstellungs-API) und viele der Spiegelung für die eine umfangreiche clientseitige API die Steuerelement-Schemas in der Menge der ASP.NET serverseitiges Steuerelement angezeigt.
+Die ASP.NET-Technologie von Microsoft sorgt für ein objektorientiertes und Ereignis gesteuertes Programmiermodell und vereinigt es mit den Vorteilen von kompiliertem Code. Das serverseitige Verarbeitungsmodell weist jedoch mehrere Nachteile in der Technologie auf, von denen viele durch die neuen Features im System. Web. Extensions-Namespace adressiert werden können, die die Microsoft AJAX-Dienste im .NET Framework 3,5. Diese Erweiterungen ermöglichen viele Rich Client-Features, die zuvor als Teil der ASP.NET 2,0 AJAX-Erweiterungen verfügbar waren, aber jetzt Teil der Framework-Basisklassen Bibliothek sind. Zu den Steuerelementen und Features in diesem Namespace gehört das partielle Rendering von Seiten, ohne dass eine vollständige Seiten Aktualisierung erforderlich ist, die Möglichkeit des Zugriffs auf Webdienste über ein Client Skript (einschließlich der ASP.net-Profilerstellungs-API) und eine umfangreiche Client seitige API für die Spiegelung vieler die Steuerelement Schemas, die in der serverseitigen ASP.NET-Steuerelement Gruppe angezeigt werden.
 
-In diesem Whitepaper untersucht die Lokalisierungsfunktionen, die in der Microsoft AJAX-Framework und das Microsoft AJAX-Skriptbibliothek, im Kontext der geschäftsanforderungen für die Unterstützung der Lokalisierung und Überprüfen von bereits integrierten Unterstützung für die Lokalisierung im Web vorhanden Anwendungen, die von .NET Framework bereitgestellt werden. Die Microsoft AJAX-Skriptbibliothek nutzt die RESX-Dateiformat bereits von Anwendungen für .NET, verwendet die integrierte IDE-Unterstützung und einen freigegebenen Ressourcentyp bereitstellt.
+In diesem Whitepaper werden die Lokalisierungs Features von Microsoft AJAX Framework und der Microsoft AJAX-Skript Bibliothek im Kontext der geschäftlichen Notwendigkeit für Lokalisierungsunterstützung und die Überprüfung bereits integrierter Unterstützung für die Lokalisierung im Web untersucht. Anwendungen, die vom .NET Framework bereitgestellt werden. Die Microsoft AJAX-Skript Bibliothek verwendet das RESX-Dateiformat, das bereits von .NET-Anwendungen verwendet wird, das integrierte IDE-Unterstützung und einen Share baren Ressourcentyp bereitstellt.
 
-In diesem Whitepaper basiert in der Beta 2-Version von Microsoft Visual Studio 2008. In diesem Whitepaper wird vorausgesetzt, dass Sie mit Visual Studio 2008 nicht Visual Web Developer Express arbeiten, und exemplarische Vorgehensweisen, gemäß der Benutzeroberfläche von Visual Studio stellt. Einige Codebeispiele werden in Projektvorlagen verwendet, die in Visual Web Developer Express nicht verfügbar sein können.
+Dieses Whitepaper basiert auf der Beta 2-Version von Microsoft Visual Studio 2008. In diesem Whitepaper wird auch davon ausgegangen, dass Sie mit Visual Studio 2008, nicht mit Visual Web Developer Express arbeiten und Exemplarische Vorgehensweisen entsprechend der Benutzeroberfläche von Visual Studio bereitstellen. In einigen Codebeispielen werden Projektvorlagen verwendet, die in Visual Web Developer Express möglicherweise nicht verfügbar sind.
 
-## <a name="the-need-for-localization"></a>*Die Notwendigkeit für die Lokalisierung*
+## <a name="the-need-for-localization"></a>*Der Bedarf an Lokalisierung*
 
-Insbesondere für Darstellung des Entwicklern von unternehmensanwendungen und Komponentenentwickler ist die Fähigkeit zum Erstellen von Tools, die über die Unterschiede zwischen Kulturen und Sprachen können zunehmend erforderlich geworden. Entwerfen von Komponenten mit der Möglichkeit zur Anpassung an das Gebietsschema des Clients erhöht die Produktivität von Entwicklern und verringert die Menge der Arbeitsaufwand für die Anpassung einer Komponente Global funktionieren.
+Insbesondere für Entwickler von Unternehmensanwendungen und Komponenten Entwickler ist die Möglichkeit, Tools zu erstellen, die die Unterschiede zwischen Kulturen und Sprachen erkennen können, zunehmend notwendig. Das Entwerfen von Komponenten mit der Möglichkeit zur Anpassung an das Gebiets Schema des Clients steigert die Produktivität von Entwicklern und reduziert den Arbeitsaufwand, der erforderlich ist, damit eine Komponente Global funktioniert.
 
-Lokalisierung ist der Prozess für das Entwerfen und Unterstützung für eine bestimmte Sprache und Kultur in einer Anwendung oder eine Anwendungskomponente integrieren. Die Plattform von Microsoft ASP.NET bietet umfangreiche Unterstützung für Lokalisierung für ASP.NET-Anwendungen standard, durch die Integration von den standardmäßigen .NET Lokalisierungsmodell; Das Microsoft AJAX-Framework nutzen, die integrierte Modell zur Unterstützung der unterschiedlichen Szenarien, in der Lokalisierung ausgeführt werden kann. Mit dem Microsoft-AJAX-Framework können Skripts entweder in Satellitenassemblys bereitgestellt wird oder durch die Verwendung einer statischen Struktur des Dateisystems lokalisiert werden.
+Lokalisierung ist der Prozess des Entwurfs und der Integration der Unterstützung für eine bestimmte Sprache und Kultur in eine Anwendung oder eine Anwendungs Komponente. Die Microsoft ASP.NET Plattform bietet umfassende Unterstützung für die Lokalisierung für standardmäßige ASP.NET-Anwendungen durch Integration des standardmäßigen .net-Lokalisierungs Modells. das Microsoft AJAX-Framework nutzt das integrierte Modell, um die verschiedenen Szenarien zu unterstützen, in denen die Lokalisierung durchgeführt werden kann. Mit dem Microsoft AJAX-Framework können Skripts entweder durch Bereitstellung in Satellitenassemblys oder durch Verwendung einer statischen Dateisystem Struktur lokalisiert werden.
 
-## <a name="embedding-scripts-with-satellite-assemblies"></a>*Einbetten von Skripts mit Satellitenassemblys*
+## <a name="embedding-scripts-with-satellite-assemblies"></a>*Einbetten von Skripts mit Satelliten*
 
-Mit der standardmäßigen .NET Framework-Lokalisierungsstrategie konsistent ist, können Ressourcen in Satellitenassemblys enthalten sein. Satellitenassemblys bieten verschiedene Vorteile über die Tatsache herkömmlichen Binärdateien - kann keine bestimmten Lokalisierung ohne Aktualisierung des größeren Bilds aktualisiert werden, können zusätzliche lokalisierungen bereitgestellt werden, einfach durch die Installation von Satellitenassemblys in Der Projektordner, und Satellitenassemblys können bereitgestellt werden, ohne dass ein erneutes Laden der Assembly Hauptprojekt. Insbesondere in ASP.NET-Projekten Dies ist nützlich, da die Menge an Systemressourcen verwendet, die für inkrementelle Updates deutlich reduziert werden kann und minimal unterbricht die Nutzung der Produktions-Website.
+In Übereinstimmung mit der standardmäßigen .NET Framework Lokalisierungsstrategie können Ressourcen in Satellitenassemblys eingeschlossen werden. Satellitenassemblys bieten im Vergleich zur herkömmlichen Ressourcen Einbindung in Binärdateien mehrere Vorteile. eine beliebige Lokalisierung kann aktualisiert werden, ohne das größere Image zu aktualisieren. Weitere Lokalisierungen können einfach durch Installieren von Satellitenassemblys bereitgestellt werden. der Projektordner und Satellitenassemblys können ohne erneutes Laden der Hauptprojektassembly bereitgestellt werden. Besonders in ASP.NET-Projekten ist dies von Vorteil, da es die Menge der Systemressourcen, die von inkrementellen Updates verwendet werden, erheblich reduzieren und die Nutzung der Produktions Website minimal stören kann.
 
-Skripts werden in Assemblys eingebettet, dazu können Sie sie in verwalteten RESX-Dateien, die in die Assembly zum Zeitpunkt der Kompilierung enthalten sind (oder kompilierten Resources). Ihre Ressourcen werden anschließend skriptanwendung durch AJAX zur Laufzeit generierte Code über Attribute auf Assemblyebene zur Verfügung gestellt.
+Skripts werden in Assemblys eingebettet, indem Sie in verwaltete RESX-Dateien (oder kompilierte resources-Dateien) eingefügt werden, die zur Kompilierzeit in der Assembly enthalten sind. Ihre Ressourcen werden dann mithilfe von AJAX-Lauf Zeit generierten Code über Attribute auf Assemblyebene der Skript Anwendung zur Verfügung gestellt.
 
-*Benennungskonventionen für Dateien mit eingebetteten Skripts*
+*Benennungs Konventionen für eingebettete Skriptdateien*
 
-Die Microsoft AJAX-Framework-Skript-Verwaltung unterstützt eine Vielzahl von Optionen für die Verwendung in der Bereitstellung und Testen von Skripts und Richtlinien werden bereitgestellt, um diese Optionen zu ermöglichen.
+Die Skript Verwaltung von Microsoft AJAX Framework unterstützt eine Vielzahl von Optionen zur Verwendung bei der Bereitstellung und zum Testen von Skripts, und Richtlinien werden bereitgestellt, um diese Optionen zu vereinfachen.
 
-*Um das Debuggen zu erleichtern:*
+*So vereinfachen Sie das Debugging:*
 
-Versionsskripts (Produktion) darf nicht enthalten. die `.debug` Qualifizierer im Dateinamen. Skripts für das Debuggen von aufzunehmen `.debug` im Dateinamen.
+Releaseskripts sollten den `.debug`-Qualifizierer nicht in den Dateinamen einschließen. Skripts, die für das Debuggen entworfen wurden, `.debug` sollten im Dateinamen
 
-*Um die Lokalisierung zu vereinfachen:*
+*So vereinfachen Sie die Lokalisierung:*
 
-Neutralen Kultur Skripts sollten keine Kulturbezeichner den Namen der Datei enthalten. Für Skripts, die lokalisierte Ressourcen enthalten, sollte der ISO-Sprachcode im Dateinamen angegeben werden. Z. B. `es-CO` steht für Spanisch – Kolumbien.
+Neutrale Kultur Skripts sollten keinen Kultur Bezeichner in den Namen der Datei einschließen. Bei Skripts, die lokalisierte Ressourcen enthalten, sollte der ISO-Sprachcode im Dateinamen angegeben werden. `es-CO` steht beispielsweise für Spanisch, Columbia.
 
-Die folgende Tabelle enthält den Dateinamenskonventionen anhand von Beispielen:
+In der folgenden Tabelle werden die Benennungs Konventionen für Dateien zusammengefasst. Beispiele:
 
-| Dateiname | Bedeutung |
+| Filename | Bedeutung |
 | --- | --- |
-| Script.js | Ein Release-Version kulturneutralen-Skript. |
-| Script.debug.js | Ein Debug-Version kulturneutralen-Skript. |
-| Script.en-US.js | Version Englisch, USA Skript der Version. |
-| Script.debug.es-CO.js | Ein Spanisch Columbia-Skript für Debug-Version. |
+| Skript. js | Ein Kultur neutrales Skript für die Releaseversion. |
+| Skript. Debug. js | Ein Kultur neutrales Skript für die Debugversion. |
+| Skript. en-US. js | Eine Version in englischer Sprache, USA Skript. |
+| Script.Debug.es-Co. js | Ein "Debug-Version Spanish"-Skript (Columbia). |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>Exemplarische Vorgehensweise: Erstellen eines lokalisierten, eingebetteten Skripts
 
-*Bitte beachten Sie: Diese exemplarische Vorgehensweise erfordert die Verwendung von Visual Studio 2008, Visual Web Developer Express eine Projektvorlage für Klassenbibliotheksprojekte keine.*
+*Beachten Sie: Diese exemplarische Vorgehensweise erfordert die Verwendung von Visual Studio 2008, da Visual Web Developer Express keine Projektvorlage für Klassen Bibliotheks Projekte enthält.*
 
-1. Erstellen Sie ein neues Projekt für die Website mit ASP.NET AJAX Extensions integriert. Erstellen Sie ein anderes Projekt, ein Klassenbibliotheksprojekt, in der Projektmappe LocalizingResources aufgerufen.
-2. Fügen Sie eine Jscript-Datei VerifyDeletion.js dem LocalizingResources-Projekt namens sowie RESX-Ressourcendateien DeletionResources.resx und DeletionResources.es.resx aufgerufen. Die erste enthält kulturneutralen Ressourcen. die zweite enthält spanischen Ressourcen.
-3. Fügen Sie den folgenden Code hinzu, um VerifyDeletion.js:
+1. Erstellen Sie ein neues Website Projekt mit integrierter ASP.NET-AJAX-Erweiterung. Erstellen Sie ein weiteres Projekt, ein Klassen Bibliotheksprojekt, in der Projekt Mappe mit dem Namen LocalizingResources.
+2. Fügen Sie dem Projekt LocalizingResources eine JScript-Datei mit dem Namen "verifydelete. js" sowie resx-Ressourcen Dateien namens "deletionresources. resx" und "deletionresources. es. resx" hinzu. Der erste enthält Kultur neutrale Ressourcen. Letztere enthält spanischsprachige Ressourcen.
+3. Fügen Sie den folgenden Code zu "verifylösch. js" hinzu:
 
 [!code-javascript[Main](understanding-asp-net-ajax-localization/samples/sample1.js)]
 
-Für diejenigen, die mit JavaScript-Regex-Syntax, Text in einzelne Schrägstriche nicht vertraut sind (im vorherigen Beispiel /FILENAME/ ist ein Beispiel) gibt eine RegExp-Objekt. Der MSDN Library enthält eine umfassende JavaScript-Referenz und Ressourcen in systemeigenen JavaScript-Objekten finden Sie online.
+Für Personen, die mit der JavaScript Regex-Syntax nicht vertraut sind, ist Text in einzelnen Schrägstrichen (im vorherigen Beispiel/filename/ein Beispiel) ein RegExp-Objekt. Die MSDN Library enthält eine umfassende JavaScript-Referenz, und Ressourcen für Native JavaScript-Objekte finden Sie online.
 
-1. Fügen Sie die folgenden Ressourcenzeichenfolgen DeletionResources.resx hinzu: 
+1. Fügen Sie die folgenden Ressourcen Zeichenfolgen zu deletionresources. resx hinzu: 
 
-    **VerifyDelete**: Opravdu chcete odstranit FILENAME?
+    **Verifydelete**: möchten Sie den Dateinamen wirklich löschen?
 
-    **Gelöschte**: Dateiname wurde gelöscht.
+    **Gelöscht**: der Dateiname wurde gelöscht.
 
-1. Fügen Sie die folgenden Ressourcenzeichenfolgen DeletionResources.es.resx hinzu: 
+1. Fügen Sie deletionresources. es. resx die folgenden Ressourcen Zeichenfolgen hinzu: 
 
-    **VerifyDelete**: EST Seguro Que desee Quitar FILENAME?
+    **Verifydelete**: EST seguro que (quitar-Dateiname) wird nicht angezeigt?
 
-    **Gelöschte**: FILENAME Se ha Quitado.
-2. Fügen Sie in der AssemblyInfo-Datei die folgenden Codezeilen hinzu:
+    **Gelöscht**: Dateiname se ha quitado.
+2. Fügen Sie der AssemblyInfo-Datei die folgenden Codezeilen hinzu:
 
 [!code-csharp[Main](understanding-asp-net-ajax-localization/samples/sample2.cs)]
 
-1. Fügen Sie Verweise auf "System.Web" und "System.Web.Extensions", um das Projekt LocalizingResources.
-2. Fügen Sie einen Verweis auf das Projekt LocalizingResources aus dem Website-Projekt hinzu.
-3. Aktualisieren Sie in "default.aspx", unter dem Website-Projekt das ScriptManager-Steuerelement mit dem folgenden zusätzliche Markup:
+1. Fügen Sie dem Projekt LocalizingResources Verweise auf System. Web und System. Web. Extensions hinzu.
+2. Fügen Sie einen Verweis auf das Projekt LocalizingResources aus dem Website Projekt hinzu.
+3. Aktualisieren Sie in der Datei default. aspx unter dem Website Projekt das ScriptManager-Steuerelement mit dem folgenden zusätzlichen Markup:
 
 [!code-aspx[Main](understanding-asp-net-ajax-localization/samples/sample3.aspx)]
 
-1. Schließen Sie dieses Markup, in eine beliebige Stelle auf der Seite "default.aspx":
+1. Fügen Sie in "default. aspx" an einer beliebigen Stelle auf der Seite dieses Markup ein:
 
 [!code-aspx[Main](understanding-asp-net-ajax-localization/samples/sample4.aspx)]
 
-1. Drücken Sie F5. Wenn Sie dazu aufgefordert werden, aktivieren Sie debugging. Wenn die Seite geladen wird, drücken Sie die Schaltfläche "löschen" aus. Beachten Sie, dass Sie nur auf Englisch verfügbar sind (sofern es sich bei Ihrem Computer bevorzugen spanischen Ressourcen wird standardmäßig festgelegt ist) zur Bestätigung aufgefordert.
-2. Das Browserfenster schließen und zurück an "default.aspx". In der @Page Header-Direktive, ersetzen Sie dies Auto für Kultur "und" UICulture "mit" es-ES. Drücken Sie erneut F5, um die Webanwendung im Browser erneut zu starten. Beachten Sie diesmal, dass Sie aufgefordert werden, die Datei in Spanisch löschen:
+1. Drücken Sie F5. Wenn Sie dazu aufgefordert werden, aktivieren Sie das Debugging Wenn die Seite geladen ist, klicken Sie auf die Schaltfläche Löschen. Beachten Sie, dass Sie in englischer Sprache aufgefordert werden (es sei denn, Ihr Computer ist so eingestellt, dass spanischsprachige Ressourcen standardmäßig bevorzugt werden).
+2. Schließen Sie das Browserfenster, und kehren Sie zu "default. aspx" zurück. Ersetzen Sie in der @Page-Header Direktive Auto for Culture und UICulture durch es-es. Drücken Sie erneut F5, um die Webanwendung erneut im Browser zu starten. Beachten Sie diesmal, dass Sie aufgefordert werden, die Datei auf Spanisch zu löschen:
 
 [![](understanding-asp-net-ajax-localization/_static/image2.png)](understanding-asp-net-ajax-localization/_static/image1.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-localization/_static/image3.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-localization/_static/image3.png))
 
 [![](understanding-asp-net-ajax-localization/_static/image5.png)](understanding-asp-net-ajax-localization/_static/image4.png)
 
-([Klicken Sie, um das Bild in voller Größe anzeigen](understanding-asp-net-ajax-localization/_static/image6.png))
+([Klicken Sie, um das Bild in voller Größe anzuzeigen](understanding-asp-net-ajax-localization/_static/image6.png))
 
-Beachten Sie, dass es mehrere Variationen für diese exemplarische Vorgehensweise gibt. Beispielsweise können Skripts beim ScriptManager-Steuerelement programmgesteuert beim Laden der Seite registriert werden.
+Beachten Sie, dass für diese exemplarische Vorgehensweise mehrere Variationen vorhanden sind. Beispielsweise können Skripts beim Laden von Seiten Programm gesteuert beim ScriptManager-Steuerelement registriert werden.
 
-## <a name="including-a-static-script-file-structure"></a>*Einschließlich einer statischen Datei-Struktur*
+## <a name="including-a-static-script-file-structure"></a>*Einschließen einer statischen Skriptdatei Struktur*
 
-Wenn Sie statischen Skriptdateien für die Bereitstellung zu verwenden, verlieren Sie zu den Vorteilen der Verwendung der inhärenten .NET Lokalisierung Schemas. In erster Linie sichtbar ist, dass Sie die automatische, einschließlich Ressourcendateien Skript generierten Typ verlieren; in der obigen exemplarischen Vorgehensweise wurden z. B. Ressourcen durch einen automatisch generierten Typ, der Nachricht vom ScriptManager-Steuerelement namens verfügbar gemacht.
+Wenn Sie statische Skriptdateien für die Bereitstellung verwenden, verlieren Sie einige der Vorteile der Verwendung des inhärenten .net-Lokalisierungs Schemas. Hauptsächlich sichtbar ist, dass Sie den automatischen Typ verlieren, der aus dem einschließen von Skript Ressourcen Dateien generiert wurde. in der obigen exemplarischen Vorgehensweise wurden beispielsweise Ressourcen von einem automatisch generierten Typ mit dem Namen "Message" aus dem ScriptManager-Steuerelement verfügbar gemacht.
 
-Es gibt jedoch einige Vorteile der Verwendung einer statischen Datei-Struktur. Updates ausgeführt werden können, ohne dass erneut kompiliert und Satellitenassemblys ein, und die Verwendung einer statischen Datei-Struktur kann auch ausgeführt werden, um das Überschreiben von eingebetteten Skripts, um einen kleinen Teil der Funktionalität, die möglicherweise nicht versendet wurden mit einer Komponente zu integrieren.
+Es gibt jedoch einige Vorteile bei der Verwendung einer statischen Skriptdatei Struktur. Updates können ohne erneutes Kompilieren und erneutes Bereitstellen von Satellitenassemblys durchgeführt werden, und die Verwendung einer statischen Dateistruktur kann auch zum Überschreiben des eingebetteten Skripts erfolgen, um ein kleines Element zu integrieren, das möglicherweise nicht mit einer Komponente ausgeliefert wurde.
 
-Microsoft empfiehlt, vermeiden ein Problem mit Steuerelement mittels automatischer Generierung von Ressourcen für Ihre Skripts während der Projektkompilierung. Wenn eine umfangreiche Skriptcode Basis verwaltet, kann es werden zunehmend schwieriger, stellen Sie sicher, dass Änderungen am Code in jedem lokalisierte Skript wiedergegeben werden. Als Alternative können Sie einfach eine Logik und Skripts für mehrere Lokalisierung, warten Zusammenführen der Dateien beim Erstellen des Projekts.
+Microsoft empfiehlt, Probleme mit der Versionskontrolle zu vermeiden, indem die Skript Ressourcen während der Projekt Kompilierung automatisch erstellt werden. Beim Verwalten einer umfassenden Skript Codebasis kann es zunehmend schwierig werden, sicherzustellen, dass Codeänderungen in jedem lokalisierten Skript widergespiegelt werden. Als Alternative können Sie einfach ein logisches Skript und mehrere Lokalisierungs Skripts verwalten und die Dateien beim Erstellen des Projekts zusammenführen.
 
-Da keine Ressourcen deklarativ einschließen, statische Skripts, die Dateien muss auf die verwiesen wird entweder durch Hinzufügen von `<asp:ScriptElement>` Elemente als untergeordnetes Element der `<Scripts>` Tag des ScriptManager-Steuerelements, oder indem Sie programmgesteuert `ScriptReference` Objekte um die `Scripts` Eigenschaft der `ScriptManager` Steuerelement auf der Seite zur Laufzeit.
+Da keine Ressourcen zur deklarativen Einbeziehung von vorhanden sind, muss auf statische Skriptdateien verwiesen werden, indem `<asp:ScriptElement>` Elemente als untergeordnetes Element des `<Scripts>`-Tags des ScriptManager-Steuer Elements hinzugefügt werden oder indem der `Scripts`-Eigenschaft des `ScriptManager`-Steuer Elements auf der Seite zur Laufzeit Programm gesteuert hinzu `ScriptReference` gefügt wird.
 
-## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager und seiner Rolle in der Lokalisierung*
+## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager und seine Rolle in der Lokalisierung*
 
-ScriptManager aktiviert mehrere automatische Verhalten bei lokalisierten Anwendungen:
+Der ScriptManager ermöglicht mehrere automatische Verhalten für lokalisierte Anwendungen:
 
-- Es sucht automatisch nach Skriptdateien, die basierend auf Einstellungen und Benennungskonventionen zur Verfügung; Klicken Sie z. B. Debug-aktivierte Skripts im Debugmodus geladen, und lädt lokalisiert Skripts auf Grundlage des Browsers Benutzerauswahl-Schnittstelle.
-- Dadurch wird die Definition von Kulturen, einschließlich Kulturen.
-- Sie können die Komprimierung von Skriptdateien über HTTP.
-- Es speichert Skripts aus, um viele Anforderungen effizient zu verwalten.
-- Sie können Skripts eine Schicht der Dereferenzierung hinzugefügt, durch das sie über eine verschlüsselte URL weiterleiten.
+- Skriptdateien werden automatisch auf Grundlage von Einstellungen und Benennungs Konventionen lokalisiert. Beispielsweise werden debugaktivierte Skripts im Debugmodus geladen und lokalisierte Skripts basierend auf der Benutzeroberflächen Auswahl des Browsers geladen.
+- Sie ermöglicht die Definition von Kulturen, einschließlich benutzerdefinierter Kulturen.
+- Dadurch wird die Komprimierung von Skriptdateien über HTTP ermöglicht.
+- Skripts werden zwischengespeichert, um viele Anforderungen effizient zu verwalten.
+- Sie fügt Skripts eine Dereferenzierungsschicht hinzu, indem Sie Sie durch eine verschlüsselte URL weiterleiten.
 
-Skriptverweise können entweder programmgesteuert oder durch deklaratives Markup an das ScriptManager-Steuerelement hinzugefügt werden. Deklaratives Markup ist besonders nützlich, bei der Arbeit mit Skripts in eingebetteten Assemblys als das Websiteprojekt selbst, wie der Name des Skripts wahrscheinlich nicht ändern wird, wie Änderungen per Push, durch übertragen werden.
+Skript Verweise können dem ScriptManager-Steuerelement entweder Programm gesteuert oder durch deklaratives Markup hinzugefügt werden. Deklaratives Markup ist besonders nützlich beim Arbeiten mit Skripts, die in anderen Assemblys als dem Website Projekt selbst eingebettet sind, da der Name des Skripts wahrscheinlich nicht geändert wird, wenn Revisionen durchlaufen werden.
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Webanwendungen wachsen, um eine größere Zielgruppe zu erreichen, wird muss breitere Kulturen und Communitys erreichen können Core ein Geschäftsmodell; e-Commerce-Webanwendungen für den Umgang mit Fremdschlüssel Währungen möglich sein muss, Content Management-Systemen benötigen, können nicht nur vorhanden sein, deren Inhalt aber auch ihre Navigation-Hinweise und Formularfelder in andere Sprachen und Unternehmen müssen wissen, dass diese Anforderung ist zugegriffen werden kann.
+Wenn Webanwendungen größer werden, um eine größere Zielgruppe zu erreichen, ist es erforderlich, umfassendere Kulturen und Communitys zu erreichen, die zu einem Kern für ein Geschäftsmodell werden. e-Commerce-Webanwendungen müssen in der Lage sein, mit fremden Währungen umzugehen, Inhalts Verwaltungssysteme müssen nicht nur ihren Inhalt, sondern auch Ihre Navigationshinweise und Formularfelder in anderen Sprachen präsentieren können, und Unternehmen müssen wissen, dass dies erforderlich ist. zugegriffen.
 
-.NET Framework unterstützt systemintern ein Framework, das umfangreiche Lokalisierung mithilfe von Satellitenassemblys und XML-Ressourcendateien (.resx), um eine einheitliche Methode zur Suche nach Ressourcen-Strings und Bilder zu präsentieren. Die ASP.NET AJAX-Erweiterungen, einschließlich der Microsoft AJAX-Framework und das Microsoft AJAX-Skriptbibliothek, bieten Unterstützung für dieses Programmiermodell in der clientseitigen Code einfach Zeichenfolge Ressourcensuchen aktivieren. Satellitenassemblys unterstützt die automatische Einbindung von Skriptressourcen (tatsächliche JS-Dateien) über ScriptResource.axd, solange die Dateinamen einem bestimmten Benennungsschema folgen. Vereinfachen Sie ASP.NET AJAX Extensions mit der entsprechenden Unterstützung der Lokalisierung von Skripts und die Globalisierung von Anwendungen.
+Der .NET Framework unterstützt intrinsisch ein umfassendes Lokalisierungs Framework und nutzt Satellitenassemblys und XML-Ressourcen Dateien (RESX-Dateien), um Ressourcen Zeichenfolgen und Images zu suchen. Die ASP.NET-AJAX-Erweiterungen, einschließlich des Microsoft AJAX-Frameworks und der Microsoft AJAX-Skript Bibliothek, bieten Unterstützung für dieses Programmiermodell im Client seitigen Code und ermöglichen einfache Ressourcen Zeichenfolgen-Suchvorgänge. Satellitenassemblys unterstützen die automatische Einbindung von Skript Ressourcen (tatsächliche JS-Dateien) über "ScriptResource. axd", sofern die Dateinamen einem bestimmten Benennungs Schema folgen. Mit dieser Unterstützung vereinfachen die ASP.NET AJAX-Erweiterungen die Lokalisierung von Skripts und die Globalisierung von Anwendungen.
 
-## <a name="bio"></a>*Bio*
+## <a name="bio"></a>*Basierten*
 
-Scott Cate arbeitet mit Microsoft-Web-Technologien seit 1997 und ist Vorsitzender der myKB.com ([www.myKB.com](http://www.myKB.com)), in dem er spezialisiert sich auf das Schreiben von ASP.NET basierende Anwendungen, die mit dem Schwerpunkt Knowledge Base-softwarelösungen. Scott hergestellt werden kann, per e-Mail unter [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com)
+Scott Cate arbeitet seit 1997 mit Microsoft-Webtechnologien und ist der Präsident von myKB.com ([www.myKB.com](http://www.myKB.com)), wo er sich darauf spezialisiert hat, ASP.NET basierte Anwendungen zu schreiben, die sich auf die Software Lösungen der Wissensdatenbank konzentrieren. Scott kann über [scott.cate@myKB.com](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com) per e-Mail kontaktiert werden.
 
 > [!div class="step-by-step"]
 > [Zurück](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
