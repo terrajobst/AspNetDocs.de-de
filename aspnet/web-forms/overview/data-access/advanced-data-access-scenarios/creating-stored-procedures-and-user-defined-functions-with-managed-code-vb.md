@@ -2,482 +2,482 @@
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 title: Erstellen von gespeicherten Prozeduren und benutzerdefinierten Funktionen mit verwaltetem Code (VB) | Microsoft-Dokumentation
 author: rick-anderson
-description: Microsoft SQL Server 2005 ist in der .NET Common Language Runtime, die Entwicklern ermöglichen, Erstellen von Datenbankobjekten mithilfe von verwaltetem Code integriert. In diesem Tutorial...
+description: Microsoft SQL Server 2005 wird in die .NET Common Language Runtime integriert, um Entwicklern das Erstellen von Datenbankobjekten über verwalteten Code zu ermöglichen. Dieses Tutorial...
 ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9128d24b9c9e4a70c90d12ecc1f27b8613182369
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 0ac5f71d519689a9dc84fb82a04196d520cca6e1
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130735"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74610391"
 ---
 # <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>Verwenden von gespeicherten Prozeduren und benutzerdefinierten Funktionen mit verwaltetem Code (VB)
 
-durch [Scott Mitchell](https://twitter.com/ScottOnWriting)
+von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[Code herunterladen](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_75_VB.zip) oder [PDF-Datei herunterladen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/datatutorial75vb1.pdf)
+[Code herunterladen](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_75_VB.zip) oder [PDF herunterladen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/datatutorial75vb1.pdf)
 
-> Microsoft SQL Server 2005 ist in der .NET Common Language Runtime, die Entwicklern ermöglichen, Erstellen von Datenbankobjekten mithilfe von verwaltetem Code integriert. Dieses Tutorial veranschaulicht das Erstellen von verwalteter gespeicherter Prozeduren und benutzerdefinierte Funktionen, mit dem Visual Basic oder C#-Code verwaltet. Wir sehen auch, wie diese Editionen von Visual Studio ermöglichen Ihnen, diese verwalteten Datenbankobjekte zu debuggen.
+> Microsoft SQL Server 2005 wird in die .NET Common Language Runtime integriert, um Entwicklern das Erstellen von Datenbankobjekten über verwalteten Code zu ermöglichen. In diesem Tutorial wird gezeigt, wie Sie verwaltete gespeicherte Prozeduren und verwaltete benutzerdefinierte Funktionen mit C# Ihrem Visual Basic oder Code erstellen. Wir sehen auch, wie diese Editionen von Visual Studio Ihnen ermöglichen, solche verwalteten Datenbankobjekte zu debuggen.
 
 ## <a name="introduction"></a>Einführung
 
-S für Microsoft SQL Server 2005-Datenbanken verwenden das [Transact-Structured Query Language (T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL) für das Einfügen, ändern und Abrufen von Daten. Die meisten Datenbanksysteme sind Konstrukte für die Gruppierung einer Reihe von SQL-Anweisungen, die dann als einzelne, wiederverwendbare Einheit ausgeführt werden können. Gespeicherte Prozeduren sind ein Beispiel. Ein weiterer Vorteil ist *User-Defined Functions*(UDFs), ein Konstrukt, das in Schritt 9 genauer untersucht werden.
+Datenbanken wie Microsoft s SQL Server 2005 verwenden [Transact-strukturierte Abfragesprache (T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL) zum Einfügen, ändern und Abrufen von Daten. Die meisten Datenbanksysteme enthalten Konstrukte zum Gruppieren einer Reihe von SQL-Anweisungen, die dann als einzelne, wiederverwendbare Einheit ausgeführt werden können. Gespeicherte Prozeduren sind ein Beispiel. Ein weiterer ist *benutzerdefinierte Funktionen (User-Defined Functions*, UDFs), ein Konstrukt, das in Schritt 9 ausführlicher untersucht wird.
 
-Im Grunde dient SQL für die Arbeit mit Datasets. Die `SELECT`, `UPDATE`, und `DELETE` Anweisungen grundsätzlich gelten für alle Datensätze in die entsprechende Tabelle und werden nur durch die beschränkt die `WHERE` Klauseln. Es gibt noch viele Sprachfeatures entwickelt, für die Arbeit mit einem Datensatz zu einem Zeitpunkt und zum Bearbeiten von skalaren Daten. [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553) für eine Gruppe von Datensätzen über jeweils eine Schleife sein können. String-Funktionen zur Zeichenfolgenmanipulation wie `LEFT`, `CHARINDEX`, und `PATINDEX` mit skalaren Daten. SQL enthält auch Anweisungen für die ablaufsteuerung wie `IF` und `WHILE`.
+Im Kern ist SQL für die Arbeit mit Datensätzen konzipiert. Die Anweisungen `SELECT`, `UPDATE`und `DELETE` gelten grundsätzlich für alle Datensätze in der entsprechenden Tabelle und sind nur durch ihre `WHERE` Klauseln beschränkt. Es gibt jedoch viele sprach Features, die für die Arbeit mit jeweils einem Datensatz und der Bearbeitung von skalaren Daten entworfen wurden. [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553) erlauben, dass eine Gruppe von Datensätzen einzeln durchlaufen wird. Zeichen folgen Bearbeitungsfunktionen wie `LEFT`, `CHARINDEX`und `PATINDEX` arbeiten mit skalaren Daten. SQL enthält auch Ablauf Steuerungs Anweisungen wie `IF` und `WHILE`.
 
-Vor der Microsoft SQL Server 2005 können gespeicherte Prozeduren und benutzerdefinierte Funktionen nur als eine Auflistung von T-SQL-Anweisungen definiert werden. SQL Server 2005, jedoch wurde konzipiert, Integration in die [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), die Laufzeit, die von allen Assemblys für .NET verwendet wird. Daher können die gespeicherten Prozeduren und benutzerdefinierte Funktionen in einer SQL Server 2005-Datenbank erstellt werden mithilfe von verwaltetem Code. D.h., können Sie eine gespeicherte Prozedur oder UDF als eine Methode in einer Visual Basic-Klasse erstellen. Dadurch können diese gespeicherten Prozeduren und benutzerdefinierte Funktionen, Funktionen, die in .NET Framework und von Ihren eigenen benutzerdefinierten Klassen nutzen können.
+Vor Microsoft SQL Server 2005 konnten gespeicherte Prozeduren und UDFs nur als eine Auflistung von T-SQL-Anweisungen definiert werden. SQL Server 2005 wurde jedoch entwickelt, um die Integration mit der [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx)zu ermöglichen, bei der es sich um die von allen .NET-Assemblys verwendete Laufzeit handelt. Folglich können die gespeicherten Prozeduren und UDFs in einer SQL Server 2005-Datenbank mithilfe von verwaltetem Code erstellt werden. Das heißt, Sie können eine gespeicherte Prozedur oder UDF als Methode in einer Visual Basic Klasse erstellen. Dadurch können diese gespeicherten Prozeduren und UDFs Funktionen in den .NET Framework und ihren eigenen benutzerdefinierten Klassen nutzen.
 
-In diesem Lernprogramm wird untersucht gespeichert wie das Erstellen verwalteten Prozeduren und benutzerdefinierte Funktionen und wie sie in unserer Northwind-Datenbank integriert. Lassen Sie s beginnen!
-
-> [!NOTE]
-> Verwaltete Datenbankobjekte bieten einige Vorteile gegenüber ihren SQL-Entsprechungen. Sprache Vielfalt und vertraut sind und die Möglichkeit, Wiederverwenden von vorhandenem Code und Geschäftslogik sind die wichtigsten Vorteile. Verwaltete Datenbankobjekte treten aber wahrscheinlich weniger effizient sein, bei der Verwendung von Datasets, die nicht viel prozedurale Logik beinhalten. Eine ausführlichere Erläuterung zu den Vorteilen der Verwendung von verwalteten Codes im Vergleich zu T-SQL finden Sie in der [Vorteile von verwaltetem Code bei der Erstellung von Datenbankobjekten](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx).
-
-## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>Schritt 1: Verschieben der Northwind-Datenbank von`App_Data`
-
-Alle unsere Tutorials bisher haben verwendet eine Microsoft SQL Server 2005 Express Edition-Datenbankdatei in der Web Application s `App_Data` Ordner. Platzieren Sie die Datenbank in `App_Data` einfachere Verteilung und in diesen Tutorials ausführen, da alle Dateien in einem Verzeichnis wurden und keine zusätzliche Konfigurationsschritte erforderlich benötigt, um das Tutorial zu testen.
-
-In diesem Tutorial jedoch Let s verschieben die Northwind-Datenbank von `App_Data` und registrieren Sie ihn explizit mit der SQL Server 2005 Express Edition-Datenbank-Instanz. Während wir die Schritte, für dieses Tutorial mit der Datenbank in ausführen können der `App_Data` Ordner eine Reihe von den Schritten erfolgen wesentlich durch die Registrierung explizit der Datenbank mit der SQL Server 2005 Express Edition-Datenbank-Instanz.
-
-Der Download für dieses Lernprogramm wurde die zwei Datenbankdateien - `NORTHWND.MDF` und `NORTHWND_log.LDF` – in einen Ordner namens platziert `DataFiles`. Wenn Sie zusammen mit Ihren eigenen Implementierung der Tutorials folgen, schließen Sie Visual Studio, und Verschieben der `NORTHWND.MDF` und `NORTHWND_log.LDF` Dateien von der Website s `App_Data` Ordner in einem Ordner außerhalb der Website. Nachdem Sie die Datenbankdateien in einen anderen Ordner verschoben werden können, dass wir benötigen, um die Northwind-Datenbank mit der SQL Server 2005 Express Edition-Datenbank-Instanz zu registrieren. Dies kann von SQL Server Management Studio erfolgen. Wenn Sie eine nicht - Express-Edition von SQL Server 2005 auf Ihrem Computer installiert haben müssen Sie wahrscheinlich bereits Management Studio installiert. Wenn Sie nur SQL Server 2005 Express Edition auf Ihrem Computer herunterladen und installieren in Ruhe [Microsoft SQL Server Management Studio Express](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796).
-
-Starten Sie SQL Server Management Studio. Wie in Abbildung 1 gezeigt, wird Sie werden aufgefordert, welchen Server Sie zum Herstellen einer Verbindung mit Management Studio gestartet. Geben Sie den Namen des Servers Localhost\SQLExpress, wählen Sie die Windows-Authentifizierung in der Dropdownliste Authentifizierung aus, und klicken Sie auf Verbinden.
-
-![Verbinden Sie mit der entsprechenden Datenbank-Instanz](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image1.png)
-
-**Abbildung 1**: Verbinden Sie mit der entsprechenden Datenbank-Instanz
-
-Nachdem Sie Ve hergestellt wurde, listet die Objekt-Explorer-Fenster Informationen über die SQL Server 2005 Express Edition-Datenbankinstanz, einschließlich Datenbanken, Sicherheitsinformationen, Management-Optionen, und So weiter.
-
-Wir fügen Sie in die Northwind-Datenbank müssen die `DataFiles` Ordner (oder ganz egal, wo Sie verschoben haben können) mit der SQL Server 2005 Express Edition-Datenbank-Instanz. Mit der rechten Maustaste auf den Ordner "Datenbanken", und wählen Sie die Attach-Option im Kontextmenü. Das Anfügen von Datenbanken-Dialogfeld wird angezeigt. Klicken Sie auf die Schaltfläche "hinzufügen", der Drilldown mit den entsprechenden `NORTHWND.MDF` Datei, und klicken Sie auf OK. An diesem Punkt werden Ihr Bildschirm sollte ähnlich wie in Abbildung 2 aussehen.
-
-[![Verbinden Sie mit der entsprechenden Datenbank-Instanz](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image3.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image2.png)
-
-**Abbildung 2**: Verbinden mit der entsprechenden Datenbank-Instanz ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image4.png))
+In diesem Tutorial wird erläutert, wie verwaltete gespeicherte Prozeduren und benutzerdefinierte Funktionen erstellt werden und wie Sie in die Northwind-Datenbank integriert werden. Legen Sie Los!
 
 > [!NOTE]
-> Beim Verbinden mit der SQL Server 2005 Express Edition-Instanz über Management Studio lässt das Dialogfeld Anfügen von Datenbanken nicht um einen Drilldown in Verzeichnissen nach Benutzer-Profil, wie z. B. Stellen Sie daher sicher, platzieren Sie die `NORTHWND.MDF` und `NORTHWND_log.LDF` Dateien in einem Verzeichnis kein Benutzerprofil.
+> Verwaltete Datenbankobjekte bieten einige Vorteile gegenüber Ihren SQL-Entsprechungen. Der größte Vorteil von sprach Reichtum und Vertrautheit sowie die Möglichkeit, vorhandenen Code und Logik wiederzuverwenden. Verwaltete Datenbankobjekte sind jedoch wahrscheinlich weniger effizient, wenn Sie mit Datasets arbeiten, die keine viel prozedurale Logik betreffen. Eine ausführlichere Erläuterung zu den Vorteilen der Verwendung von verwaltetem Code im Vergleich zu T-SQL finden Sie unter [Vorteile der Verwendung von verwaltetem Code zum Erstellen von Datenbankobjekten](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx).
 
-Klicken Sie auf die Schaltfläche "OK", um die Datenbank anzufügen. Das Anfügen von Datenbanken-Dialogfeld wird geschlossen, und im Objekt-Explorer sollten nun die gerade angefügten Datenbank aufgeführt. Die Chancen stehen die Northwind-Datenbank einen Namen wie weist `9FE54661B32FDD967F51D71D0D5145CC_LINE ARTICLES\DATATUTORIALS\VOLUME 3\CSHARP\73\ASPNET_DATA_TUTORIAL_75_CS\APP_DATA\NORTHWND.MDF`. Benennen Sie die Datenbank zur Northwind-Datenbank, indem mit der rechten Maustaste auf die Datenbank und umbenennen.
+## <a name="step-1-moving-the-northwind-database-out-ofapp_data"></a>Schritt 1: Verschieben der Northwind-Datenbank aus`App_Data`
 
-![Benennen Sie die Datenbank zur Northwind-Datenbank](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image5.png)
+Alle unsere Tutorials haben bisher eine Microsoft SQL Server 2005 Express Edition-Datenbankdatei im Ordner `App_Data` der Webanwendung verwendet. Das Platzieren der Datenbank in `App_Data` vereinfachte Verteilung und Ausführung dieser Tutorials, da sich alle Dateien in einem Verzeichnis befinden und keine weiteren Konfigurationsschritte zum Testen des Tutorials erforderlich sind.
 
-**Abbildung 3**: Benennen Sie die Datenbank zur Northwind-Datenbank
+In diesem Tutorial können Sie jedoch die Northwind-Datenbank aus `App_Data` verschieben und Sie explizit bei der SQL Server 2005 Express Edition Daten Bank Instanz registrieren. Wir können zwar die Schritte für dieses Tutorial mit der Datenbank im Ordner "`App_Data`" ausführen, aber eine Reihe von Schritten wird erheblich vereinfacht, indem die Datenbank explizit bei der SQL Server 2005 Express Edition Daten Bank Instanz registriert wird.
 
-## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>Schritt 2: Erstellen eine neue Projektmappe und SQL Server-Projekt in Visual Studio
+Der Download für dieses Tutorial enthält die beiden Datenbankdateien `NORTHWND.MDF` und `NORTHWND_log.LDF` in einem Ordner mit dem Namen `DataFiles`platziert. Wenn Sie mit ihrer eigenen Implementierung der Tutorials fortfahren, schließen Sie Visual Studio, und verschieben Sie die `NORTHWND.MDF`-und `NORTHWND_log.LDF` Dateien aus dem Ordner "Website" `App_Data` Ordner in einen Ordner außerhalb der Website. Nachdem die Datenbankdateien in einen anderen Ordner verschoben wurden, müssen Sie die Northwind-Datenbank bei der SQL Server 2005 Express Edition Daten Bank Instanz registrieren. Dies kann über SQL Server Management Studio erfolgen. Wenn Sie eine nicht-Express-Edition von SQL Server 2005 auf Ihrem Computer installiert haben, sind Sie wahrscheinlich bereits Management Studio installiert. Wenn Sie nur über SQL Server 2005 Express Edition auf dem Computer verfügen, nehmen Sie sich einen Moment Zeit, um [Microsoft SQL Server Management Studio Express](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)herunterzuladen und zu installieren.
 
-Zum Erstellen von verwalteten gespeicherten Prozeduren oder benutzerdefinierte Funktionen in SQL Server 2005 schreiben wir die gespeicherte Prozedur und die UDF-Logik als Visual Basic-Code in einer Klasse. Nachdem der Code geschrieben wurde, müssen wir dieser Klasse in eine Assembly zu kompilieren (eine `.dll` Datei), registrieren Sie die Assembly mit SQL Server-Datenbank und erstellen Sie dann in der Datenbank, die auf die entsprechende Methode in zeigt eine gespeicherte Prozedur oder UDF-Objekt die Assembly. Diese Schritte können alle manuell ausgeführt werden. Können wir erstellen Sie den Code in einem beliebigen Text-Editor, kompilieren Sie ihn über die Befehlszeile mithilfe von Visual Basic-Compiler (`vbc.exe`), registrieren Sie ihn mit der Datenbank mithilfe der [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx) Befehl oder in Management Studio, und fügen Sie den gespeicherten Prozedur oder UDF-Objekt, auf ähnliche Weise. Zum Glück enthalten die Professional und Team-Systeme Versionen von Visual Studio ein SQL Server-Projekt, das diese Aufgaben automatisiert. In diesem Tutorial werden wir die Verwendung des SQL Server-Projekt-Typs um eine verwaltete gespeicherte Prozedur und UDF-Datei zu erstellen.
+Starten Sie SQL Server Management Studio. Wie in Abbildung 1 gezeigt, wird Management Studio zunächst gefragt, mit welchem Server eine Verbindung hergestellt werden soll. Geben Sie localhost\SQLExpress als Servernamen ein, wählen Sie in der Dropdown Liste Authentifizierung die Option Windows-Authentifizierung aus, und klicken Sie auf verbinden.
+
+![Herstellen einer Verbindung mit der entsprechenden Daten Bank Instanz](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image1.png)
+
+**Abbildung 1**: Herstellen einer Verbindung mit der entsprechenden Daten Bank Instanz
+
+Nachdem Sie die Verbindung hergestellt haben, werden im Objekt-Explorer Fenster Informationen zur SQL Server 2005 Express Edition Daten Bank Instanz, einschließlich der zugehörigen Datenbanken, Sicherheitsinformationen, Verwaltungs Optionen usw., angezeigt.
+
+Wir müssen die Northwind-Datenbank in den `DataFiles` Ordner (oder wo immer, wo Sie Sie möglicherweise verschoben haben) an die SQL Server 2005 Express Edition Daten Bank Instanz anfügen. Klicken Sie mit der rechten Maustaste auf den Ordner Datenbanken, und wählen Sie im Kontextmenü die Option anfügen aus. Dadurch wird das Dialogfeld Datenbanken anfügen angezeigt. Klicken Sie auf die Schaltfläche hinzufügen, führen Sie einen Drilldown zum entsprechenden `NORTHWND.MDF` Datei aus, und klicken Sie An diesem Punkt sollte der Bildschirm in etwa wie in Abbildung 2 aussehen.
+
+[![Herstellen einer Verbindung mit der entsprechenden Daten Bank Instanz](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image3.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image2.png)
+
+**Abbildung 2**: Herstellen einer Verbindung mit der entsprechenden Daten Bank Instanz ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image4.png))
 
 > [!NOTE]
-> Wenn Sie Visual Web Developer oder die Standard Edition von Visual Studio verwenden, müssen Sie stattdessen die manuellen Ansatz zu verwenden. Schritt 13 enthält detaillierte Anweisungen zum Ausführen dieser Schritte manuell. Sollten Sie die Schritte 2 bis 12 lesen, bevor Sie Schritt 13 lesen, da diese Schritte wichtige SQL Server-Konfigurations-Anweisungen, die angewendet werden muss enthalten, unabhängig davon, welche Version von Visual Studio Sie verwenden.
+> Beim Herstellen einer Verbindung mit der SQL Server 2005 Express Edition Instanz über Management Studio das Dialogfeld Datenbanken anfügen keinen Drilldown in Benutzerprofil Verzeichnisse (z. b. "eigene Dateien"). Stellen Sie daher sicher, dass Sie die `NORTHWND.MDF`-und `NORTHWND_log.LDF` Dateien in einem Nichtbenutzer Profilverzeichnis platzieren.
 
-Starten Sie Visual Studio öffnen. Wählen Sie aus dem Menü "Datei" Neues Projekt aus, um das Dialogfeld "Neues Projekt" anzuzeigen (siehe Abbildung 4). Drilldown in der Datenbank-Projekttyp aus, und wählen Sie dann aus den Vorlagen, die auf der rechten Seite aufgeführt wird, um ein neues SQL Server-Projekt zu erstellen. Ich haben sich entschieden, dieses Projekt `ManagedDatabaseConstructs` und platziert es in einer Projektmappe mit dem Namen `Tutorial75`.
+Klicken Sie auf die Schaltfläche OK, um die Datenbank anzufügen. Das Dialogfeld Datenbanken anfügen wird geschlossen, und der Objekt-Explorer sollte nun die gerade angefügte Datenbank auflisten. Wahrscheinlichkeit ist, dass die Northwind-Datenbank einen Namen wie `9FE54661B32FDD967F51D71D0D5145CC_LINE ARTICLES\DATATUTORIALS\VOLUME 3\CSHARP\73\ASPNET_DATA_TUTORIAL_75_CS\APP_DATA\NORTHWND.MDF`hat. Benennen Sie die Datenbank in Northwind um, indem Sie mit der rechten Maustaste auf die Datenbank klicken und Umbenennen auswählen.
 
-[![Erstellen eines neuen SQL Server-Projekts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image7.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image6.png)
+![Umbenennen der Datenbank in Northwind](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image5.png)
 
-**Abbildung 4**: Erstellen eines neuen SQL Server-Projekts ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image8.png))
+**Abbildung 3**: Umbenennen der Datenbank in Northwind
 
-Klicken Sie auf die Schaltfläche "OK", klicken Sie im Dialogfeld Neues Projekt auf die Projektmappe und SQL Server-Projekt erstellen.
+## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>Schritt 2: Erstellen einer neuen Projekt Mappe und SQL Server Projekt in Visual Studio
 
-Ein SQL Server-Projekt ist mit einer bestimmten Datenbank gebunden. Daher werden nach dem Erstellen des neuen SQL Server-Projekts wir sofort aufgefordert, diese Informationen angeben. Abbildung 5 zeigt das Dialogfeld Neuer Datenbankverweis, die sich auf die Northwind-Datenbank zu verweisen, die wir in der SQL Server 2005 Express Edition-Datenbank-Instanz in Schritt 1 registriert gefüllt wurde.
+Zum Erstellen von verwalteten gespeicherten Prozeduren oder UDFs in SQL Server 2005 werden die gespeicherte Prozedur und die UDF-Logik als Visual Basic Code in einer Klasse geschrieben. Nachdem der Code geschrieben wurde, müssen Sie diese Klasse in eine Assembly (eine `.dll` Datei) kompilieren, die Assembly bei der SQL Server Datenbank registrieren und dann eine gespeicherte Prozedur oder ein UDF-Objekt in der Datenbank erstellen, die auf die entsprechende Methode in der Assembly verweist. Diese Schritte können alle manuell ausgeführt werden. Wir können den Code in einem beliebigen Text-Editor erstellen, ihn über die Befehlszeile kompilieren, indem Sie den Visual Basic Compiler (`vbc.exe`) verwenden, ihn mit dem [`CREATE ASSEMBLY`](https://msdn.microsoft.com/library/ms189524.aspx) -Befehl oder aus Management Studio bei der Datenbank registrieren und die gespeicherte Prozedur oder das UDF-Objekt über eine ähnliche Weise hinzufügen. Glücklicherweise beinhalten die Professional-und Team Systems-Versionen von Visual Studio einen SQL Server Projekttyp, der diese Aufgaben automatisiert. In diesem Tutorial wird die Verwendung des SQL Server Projekttyps zum Erstellen einer verwalteten gespeicherten Prozedur und einer UDF erläutert.
 
-![Ordnen Sie das SQL Server-Projekt mit der Northwind-Datenbank](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image9.png)
+> [!NOTE]
+> Wenn Sie Visual Web Developer oder die Standard Edition von Visual Studio verwenden, müssen Sie stattdessen den manuellen Ansatz verwenden. Schritt 13 enthält ausführliche Anweisungen zum manuellen Ausführen dieser Schritte. Ich empfehle Ihnen, vor dem Lesen von Schritt 13 Schritte 2 bis 12 zu lesen, da diese Schritte wichtige SQL Server Konfigurations Anweisungen enthalten, die unabhängig von der verwendeten Version von Visual Studio angewendet werden müssen.
 
-**Abbildung 5**: Ordnen Sie das SQL Server-Projekt mit der Northwind-Datenbank
+Beginnen Sie mit dem Öffnen von Visual Studio. Wählen Sie im Menü Datei die Option Neues Projekt aus, um das Dialogfeld Neues Projekt anzuzeigen (siehe Abbildung 4). Führen Sie einen Drilldown zum Daten Bank Projekttyp aus, und wählen Sie dann aus den auf der rechten Seite aufgeführten Vorlagen ein neues SQL Server Projekt aus. Ich habe mich entschieden, dieses Projekt `ManagedDatabaseConstructs` zu benennen und es in eine Projekt Mappe mit dem Namen `Tutorial75`zu platzieren.
 
-Um die verwaltete gespeicherte Prozeduren und benutzerdefinierte Funktionen wir in diesem Projekt erstellen zu debuggen, muss SQL/CLR-debugging-Unterstützung für die Verbindung aktiviert werden. Wenn ein SQL Server-Projekt eine neue Datenbank zuordnen (wie in Abbildung 5), Visual Studio werden wir gefragt, ob SQL/CLR-Debuggen für die Verbindung aktiviert werden soll (siehe Abbildung 6). Klicken Sie auf "Ja".
+[![erstellen Sie ein neues SQL Server Projekt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image7.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image6.png)
+
+**Abbildung 4**: Erstellen eines neuen SQL Server Projekts ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image8.png))
+
+Klicken Sie im Dialogfeld Neues Projekt auf die Schaltfläche OK, um die Projekt Mappe zu erstellen und SQL Server Projekt zu erstellen.
+
+Ein SQL Server-Projekt ist an eine bestimmte Datenbank gebunden. Nach dem Erstellen des neuen SQL Server Projekts werden wir daher sofort aufgefordert, diese Informationen anzugeben. Abbildung 5 zeigt das neue Dialogfeld "Daten Bank Verweis", das ausgefüllt wurde, um auf die Northwind-Datenbank zu verweisen, die in der SQL Server 2005 Express Edition-Daten Bank Instanz wieder in Schritt 1 registriert wurde.
+
+![Zuordnen des SQL Server Projekts zur Northwind-Datenbank](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image9.png)
+
+**Abbildung 5**: Zuordnen des SQL Server Projekts zur Datenbank Northwind
+
+Um die verwalteten gespeicherten Prozeduren und UDFs zu debuggen, die wir in diesem Projekt erstellen, muss die SQL/CLR-Debugging-Unterstützung für die Verbindung aktiviert werden. Wenn ein SQL Server-Projekt einer neuen Datenbank zugeordnet wird (wie in Abbildung 5 dargestellt), werden Sie von Visual Studio gefragt, ob Sie das SQL/CLR-Debugging für die Verbindung aktivieren möchten (siehe Abbildung 6). Klicken Sie auf Ja.
 
 ![SQL/CLR-Debuggen aktivieren](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image10.png)
 
-**Abbildung 6**: SQL/CLR-Debuggen aktivieren
+**Abbildung 6**: Aktivieren des SQL/CLR-Debuggens
 
-An diesem Punkt wurde das neue SQL Server-Projekt zur Projektmappe hinzugefügt. Es enthält einen Ordner namens `Test Scripts` mit einer Datei mit dem Namen `Test.sql`, die für das Debuggen verwalteter Datenbankobjekte im Projekt erstellt werden. Betrachten wir Debuggen in Schritt 12 fort.
+An diesem Punkt wurde das neue SQL Server Projekt der Projekt Mappe hinzugefügt. Sie enthält einen Ordner mit dem Namen `Test Scripts` mit einer Datei mit dem Namen `Test.sql`, die zum Debuggen der im Projekt erstellten verwalteten Datenbankobjekte verwendet wird. Wir werden uns mit dem Debuggen in Schritt 12 befassen.
 
-Wir können jetzt die neue verwaltete gespeicherte Prozeduren und benutzerdefinierte Funktionen hinzuzufügen, zu diesem Projekt, aber bevor wir zulassen, e zuerst enthalten unsere vorhandenen Web-App in der Projektmappe. Wählen Sie die Option hinzufügen, und die wählen Sie vorhandene Website aus, über das Menü Datei. Navigieren Sie zu der entsprechenden Website-Ordner, und klicken Sie auf OK. Wie in Abbildung 7 dargestellt, wird dadurch die Lösung enthält zwei Projekte aktualisiert: die Website und die `ManagedDatabaseConstructs` SQL Server-Projekt.
+Wir können jetzt neue verwaltete gespeicherte Prozeduren und UDFs zu diesem Projekt hinzufügen, aber bevor wir die vorhandene Webanwendung in die Projekt Mappe einbinden lassen. Wählen Sie im Menü Datei die Option hinzufügen aus, und wählen Sie vorhandene Website aus. Navigieren Sie zum entsprechenden Website Ordner, und klicken Sie auf OK. Wie in Abbildung 7 gezeigt, wird die Projekt Mappe so aktualisiert, dass Sie zwei Projekte enthält: die Website und die `ManagedDatabaseConstructs` SQL Server Projekt.
 
-![Im Projektmappen-Explorer enthält jetzt zwei Projekte](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image11.png)
+![Die Projektmappen-Explorer enthält jetzt zwei Projekte.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image11.png)
 
-**Abbildung 7**: Im Projektmappen-Explorer enthält jetzt zwei Projekte
+**Abbildung 7**: die Projektmappen-Explorer enthält jetzt zwei Projekte.
 
-Die `NORTHWNDConnectionString` Wert in `Web.config` derzeit verweist die `NORTHWND.MDF` Datei die `App_Data` Ordner. Da wir diese Datenbank von entfernt `App_Data` und registrieren Sie es explizit in der SQL Server 2005 Express Edition-Datenbank-Instanz muss entsprechend aktualisiert. die `NORTHWNDConnectionString` Wert. Öffnen der `Web.config` -Datei in die Website und die Änderung der `NORTHWNDConnectionString` Wert, sodass die Verbindungszeichenfolge lautet: `Data Source=localhost\SQLExpress;Initial Catalog=Northwind;Integrated Security=True`. Nach dieser Änderung Ihre `<connectionStrings>` im Abschnitt `Web.config` sollte etwa wie folgt aussehen:
+Der `NORTHWNDConnectionString` Wert in `Web.config` verweist aktuell auf die `NORTHWND.MDF` Datei im `App_Data` Ordner. Da wir diese Datenbank aus `App_Data` entfernt und Sie explizit in der SQL Server 2005 Express Edition Daten Bank Instanz registriert haben, müssen wir den `NORTHWNDConnectionString` Wert entsprechend aktualisieren. Öffnen Sie die `Web.config` Datei auf der Website, und ändern Sie den Wert für `NORTHWNDConnectionString`, sodass die Verbindungs Zeichenfolge: `Data Source=localhost\SQLExpress;Initial Catalog=Northwind;Integrated Security=True`lautet. Nach dieser Änderung sollte der `<connectionStrings>` Abschnitt in `Web.config` in etwa wie folgt aussehen:
 
 [!code-xml[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample1.xml)]
 
 > [!NOTE]
-> Siehe die [vorherigen Lernprogramm](debugging-stored-procedures-vb.md), beim Debuggen einer SQL Server-Objekt von einer Clientanwendung, wie z. B. einer ASP.NET-Website müssen wir Verbindungspooling nicht deaktiviert. Die Verbindungszeichenfolge, die oben gezeigte deaktiviert Verbindungspooling ( `Pooling=false` ). Wenn Sie nicht, zum Debuggen von verwalteten gespeicherten Prozeduren und benutzerdefinierten Funktionen aus der ASP.NET-Website beabsichtigen, aktivieren Sie die Verbindungs-pooling.
+> Wie bereits im [vorherigen Tutorial](debugging-stored-procedures-vb.md)erläutert, müssen wir beim Debuggen eines SQL Server Objekts aus einer Client Anwendung, wie z. b. einer ASP.NET-Website, das Verbindungspooling deaktivieren. Die oben gezeigte Verbindungs Zeichenfolge deaktiviert das Verbindungspooling (`Pooling=false`). Wenn Sie nicht Vorhaben, die verwalteten gespeicherten Prozeduren und UDFs von der ASP.NET-Website zu debuggen, aktivieren Sie das Verbindungspooling.
 
-## <a name="step-3-creating-a-managed-stored-procedure"></a>Schritt 3: Erstellen eine verwaltete gespeicherte Prozedur
+## <a name="step-3-creating-a-managed-stored-procedure"></a>Schritt 3: Erstellen einer verwalteten gespeicherten Prozedur
 
-Eine verwaltete gespeicherte Prozedur mit der Datenbank Northwind hinzufügen wir zuerst auf die gespeicherte Prozedur als Methode in der SQL Server-Projekt zu erstellen müssen. Im Projektmappen-Explorer mit der Maustaste auf die `ManagedDatabaseConstructs` Projektname und wählen Sie ein neues Element hinzufügen. Dadurch wird das Dialogfeld "Neues Element hinzufügen" angezeigt, dem die Typen verwalteter Datenbankobjekte aufgelistet, die dem Projekt hinzugefügt werden können. Wie in Abbildung 8 gezeigt, enthält diese gespeicherten Prozeduren und benutzerdefinierten Funktionen, unter anderem an.
+Um der Northwind-Datenbank eine verwaltete gespeicherte Prozedur hinzuzufügen, müssen Sie zunächst die gespeicherte Prozedur als Methode im SQL Server Projekt erstellen. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts, und wählen Sie ein neues Element hinzufügen aus. Dadurch wird das Dialogfeld Neues Element hinzufügen angezeigt, in dem die Typen der verwalteten Datenbankobjekte aufgelistet sind, die dem Projekt hinzugefügt werden können. Wie in Abbildung 8 gezeigt, umfasst dies auch gespeicherte Prozeduren und benutzerdefinierte Funktionen.
 
-Lassen Sie s starten, indem Sie eine gespeicherte Prozedur, die einfach alle Produkte zurückgibt, die eingestellt wurden hinzugefügt. Nennen Sie die neue gespeicherte Prozedurdatei `GetDiscontinuedProducts.vb`.
+Beginnen Sie mit dem Hinzufügen einer gespeicherten Prozedur, die einfach alle Produkte zurückgibt, die nicht mehr unterstützt werden. Nennen Sie die neue Datei mit gespeicherten Prozeduren `GetDiscontinuedProducts.vb`.
 
-[![Hinzufügen einer neuen gespeicherten Prozedur, die mit dem Namen GetDiscontinuedProducts.vb](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image13.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image12.png)
+[![eine neue gespeicherte Prozedur mit dem Namen getdiscontinuedproducts. vb hinzufügen.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image13.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image12.png)
 
-**Abbildung 8**: Hinzufügen einer neuen gespeicherten Prozedur mit dem Namen `GetDiscontinuedProducts.vb` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image14.png))
+**Abbildung 8**: Hinzufügen einer neuen gespeicherten Prozedur mit dem Namen `GetDiscontinuedProducts.vb` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image14.png))
 
-Dies erstellt eine neue Visual Basic-Klassendatei mit dem folgenden Inhalt:
+Dadurch wird eine neue Visual Basic-Klassendatei mit folgendem Inhalt erstellt:
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
-Beachten Sie, die die gespeicherte Prozedur, als implementiert wird eine `Shared` Methode innerhalb einer `Partial` Klassendatei mit dem Namen `StoredProcedures`. Darüber hinaus die `GetDiscontinuedProducts` Methode ergänzt wird, mit der [ `SqlProcedure` Attribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), die kennzeichnet, dass der Methode als eine gespeicherte Prozedur.
+Beachten Sie, dass die gespeicherte Prozedur als `Shared` Methode in einer `Partial` Klassendatei mit dem Namen `StoredProcedures`implementiert wird. Außerdem wird die `GetDiscontinuedProducts`-Methode mit dem [`SqlProcedure`-Attribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx)ergänzt, das die Methode als gespeicherte Prozedur markiert.
 
-Der folgende Code erstellt eine `SqlCommand` -Objekt und legt seine `CommandText` auf eine `SELECT` Abfrage, die alle Spalten aus zurückgibt der `Products` Tabelle für Produkte, deren `Discontinued` Feld 1. Dann wird der Befehl ausgeführt, und sendet die Ergebnisse zurück an die Clientanwendung. Fügen Sie folgenden Code, der `GetDiscontinuedProducts` Methode.
+Mit dem folgenden Code wird ein `SqlCommand` Objekt erstellt und dessen `CommandText` auf eine `SELECT` Abfrage festgelegt, die alle Spalten aus der `Products` Tabelle für Produkte zurückgibt, deren `Discontinued` Feld dem Wert 1 entspricht. Anschließend wird der Befehl ausgeführt, und die Ergebnisse werden an die Client Anwendung zurückgesendet. Fügen Sie der `GetDiscontinuedProducts`-Methode diesen Code hinzu.
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
-Alle verwalteten Datenbankobjekte haben Zugriff auf eine [ `SqlContext` Objekt](https://msdn.microsoft.com/library/ms131108.aspx) , das den Kontext des Aufrufers darstellt. Die `SqlContext` ermöglicht den Zugriff auf eine [ `SqlPipe` Objekt](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) über seine [ `Pipe` Eigenschaft](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Dies `SqlPipe` Objekt wird verwendet, um Informationen zwischen der SQL Server-Datenbank und die aufrufende Anwendung zu senden. Wie der Name schon sagt, den [ `ExecuteAndSend` Methode](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) führt eine übergegebenen `SqlCommand` -Objekt und die Ergebnisse an die Clientanwendung zurück sendet.
+Alle verwalteten Datenbankobjekte haben Zugriff auf ein [`SqlContext` Objekt](https://msdn.microsoft.com/library/ms131108.aspx) , das den Kontext des Aufrufers darstellt. Der `SqlContext` ermöglicht den Zugriff auf ein [`SqlPipe` Objekt](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) über seine [`Pipe`-Eigenschaft](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Dieses `SqlPipe` Objekt wird verwendet, um Informationen zwischen der SQL Server Datenbank und der aufrufenden Anwendung zu über. Wie der Name schon sagt, führt die [`ExecuteAndSend`-Methode](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) ein versektes `SqlCommand` Objekt aus und sendet die Ergebnisse an die Client Anwendung zurück.
 
 > [!NOTE]
-> Verwaltete Datenbankobjekte eignen sich am besten für gespeicherte Prozeduren und benutzerdefinierte Funktionen, die prozedurale Logik statt setbasierte Logik verwenden. Prozedurale Logik umfasst die Arbeit mit Daten pro Zeile für Zeile von oder Arbeiten mit skalaren Daten. Die `GetDiscontinuedProducts` Methode, die wir gerade erstellt, jedoch haben wird keine prozedurale Logik. Aus diesem Grund würden sie idealerweise als gespeicherte T-SQL-Prozedur implementiert werden. Die Implementierung erfolgt als eine verwaltete gespeicherte Prozedur veranschaulicht die erforderlichen Schritte zum Erstellen und Bereitstellen von gespeicherten Prozeduren verwaltet.
+> Verwaltete Datenbankobjekte eignen sich am besten für gespeicherte Prozeduren und UDFs, die anstelle der festgelegten Logik prozedurale Logik verwenden. Die Verfahrens Logik umfasst das Arbeiten mit Datensätzen auf Zeilen Basis oder das Arbeiten mit skalaren Daten. Die `GetDiscontinuedProducts` Methode, die wir gerade erstellt haben, beinhaltet jedoch keine prozedurale Logik. Daher wird Sie idealerweise als gespeicherte T-SQL-Prozedur implementiert. Es ist als verwaltete gespeicherte Prozedur implementiert, um die erforderlichen Schritte zum Erstellen und Bereitstellen von verwalteten gespeicherten Prozeduren zu veranschaulichen.
 
 ## <a name="step-4-deploying-the-managed-stored-procedure"></a>Schritt 4: Bereitstellen der verwalteten gespeicherten Prozedur
 
-Mit diesem Code, der abgeschlossen ist können wir sie in der Northwind-Datenbank bereitstellen. Bereitstellen eines SQL Server-Projekts wird der Code in eine Assembly kompiliert, registriert die Assembly mit der Datenbank und erstellt die entsprechenden Objekte in der Datenbank, die sie in die entsprechenden Methoden in der Assembly zu verknüpfen. Der genaue Satz von Tasks, die Bereitstellungsoption ist genauer gesagt in Schritt 13 ausgeschrieben. Mit der rechten Maustaste auf die `ManagedDatabaseConstructs` Projektname im Projektmappen-Explorer, und wählen Sie die Option bereitstellen. Allerdings schlägt die Bereitstellung mit dem folgenden Fehler fehl: Falsche Syntax in der Nähe von "Extern". Sie müssen möglicherweise den Kompatibilitätsgrad der aktuellen Datenbank auf einen höheren Wert zum Aktivieren dieser Funktion festlegen. Finden Sie Hilfe für die gespeicherte Prozedur `sp_dbcmptlevel`.
+Mit dieser Code Complete können wir Sie in der Northwind-Datenbank bereitstellen. Beim Bereitstellen eines SQL Server Projekts wird der Code in eine Assembly kompiliert, die Assembly wird bei der Datenbank registriert, und die entsprechenden Objekte werden in der Datenbank erstellt, sodass Sie mit den entsprechenden Methoden in der Assembly verknüpft werden. Der genaue Satz von Tasks, der von der Bereitstellungs Option ausgeführt wird, wird in Schritt 13 genauer beschrieben. Klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts im Projektmappen-Explorer, und wählen Sie die Option bereitstellen aus. Die Bereitstellung schlägt jedoch mit folgendem Fehler fehl: falsche Syntax in der Nähe von "extern". Möglicherweise müssen Sie den Kompatibilitäts Grad der aktuellen Datenbank auf einen höheren Wert festlegen, um dieses Feature zu aktivieren. Weitere Informationen finden Sie in der Hilfe zum `sp_dbcmptlevel`der gespeicherten Prozedur
 
-Diese Fehlermeldung tritt auf, bei dem Versuch, um die Assembly mit der Northwind-Datenbank zu registrieren. Um eine Assembly mit einer SQL Server 2005-Datenbank zu registrieren, muss der Kompatibilitätsgrad der Datenbank-s auf 90 festgelegt werden. Standardmäßig ist bei neuen SQL Server 2005-Datenbanken einen Kompatibilitätsgrad von 90. Allerdings haben Datenbanken mit Microsoft SQL Server 2000 erstellt einen Standard-Kompatibilitätsgrad von 80. Seit die Northwind-Datenbank zunächst eine Microsoft SQL Server 2000-Datenbank, der Kompatibilitätsgrad derzeit auf 80 festgelegt ist, und muss daher auf 90 erhöht werden, um Datenbankobjekte zu registrieren.
+Diese Fehlermeldung tritt auf, wenn versucht wird, die Assembly bei der Northwind-Datenbank zu registrieren. Um eine Assembly bei einer SQL Server 2005-Datenbank zu registrieren, muss der Kompatibilitäts Grad der Datenbank auf 90 festgelegt werden. Standardmäßig haben neue SQL Server 2005-Datenbanken einen Kompatibilitäts Grad von 90. Datenbanken, die mit Microsoft SQL Server 2000 erstellt wurden, haben jedoch den Standard Kompatibilitäts Grad 80. Da die Northwind-Datenbank anfänglich eine Microsoft SQL Server 2000-Datenbank war, ist Ihr Kompatibilitäts Grad derzeit auf 80 festgelegt und muss daher auf 90 erweitert werden, um verwaltete Datenbankobjekte registrieren zu können.
 
-Um der Kompatibilitätsgrad der Datenbank-s zu aktualisieren, öffnen Sie ein neues Abfragefenster in Management Studio, und geben Sie ein:
+Öffnen Sie ein neues Abfragefenster in Management Studio, und geben Sie Folgendes ein, um den Kompatibilitäts Grad der Datenbank zu aktualisieren:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample4.sql)]
 
-Klicken Sie auf das Symbol "ausführen" in der Symbolleiste, um die obige Abfrage ausgeführt.
+Klicken Sie in der Symbolleiste auf das Symbol ausführen, um die obige Abfrage auszuführen.
 
-[![Aktualisieren der Northwind-Datenbank-Kompatibilitätsgrad s](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image15.png)
+[Aktualisieren Sie den Kompatibilitäts Grad der Datenbank "Northwind" ![.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image15.png)
 
-**Abbildung 9**: Aktualisieren Sie die Datenbank "Northwind" s-Kompatibilitätsgrad ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image17.png))
+**Abbildung 9**: Aktualisieren des Kompatibilitäts Niveaus der Datenbank "Northwind" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image17.png))
 
-Nach dem Aktualisieren des Kompatibilitätsgrads, erneut bereitstellen Sie in der SQL Server-Projekt. Dieses Mal sollte die Bereitstellung ohne Fehler abgeschlossen werden.
+Nachdem Sie den Kompatibilitäts Grad aktualisiert haben, stellen Sie das SQL Server Projekt erneut bereit. Dieses Mal sollte die Bereitstellung ohne Fehler beendet werden.
 
-Zurück zu SQL Server Management Studio, mit der rechten Maustaste auf die Northwind-Datenbank im Objekt-Explorer, und wählen Sie aktualisieren. Als Nächstes Drilldown in den Ordner Programmierung, und erweitern Sie dann den Ordner Assemblys. Wie Abbildung 10 zeigt, enthält die Northwind-Datenbank jetzt vom generierten Assembly die `ManagedDatabaseConstructs` Projekt.
+Kehren Sie zu SQL Server Management Studio zurück, klicken Sie mit der rechten Maustaste auf die Datenbank Northwind im Objekt-Explorer, und wählen Sie aktualisieren aus. Führen Sie als nächstes einen Drilldown in den Ordner Programmierbarkeit und dann den Ordner Assemblys aus. Wie in Abbildung 10 gezeigt, enthält die Datenbank Northwind nun die Assembly, die vom `ManagedDatabaseConstructs` Projekt generiert wurde.
 
-![Die ManagedDatabaseConstructs-Assembly ist jetzt mit der Northwind-Datenbank registriert.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image18.png)
+![Die manageddatabaseconstructs-Assembly ist jetzt bei der Northwind-Datenbank registriert.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image18.png)
 
-**Abbildung 10**: Die `ManagedDatabaseConstructs` Assembly ist jetzt mit der Northwind-Datenbank registriert.
+**Abbildung 10**: die `ManagedDatabaseConstructs`-Assembly ist jetzt bei der Northwind-Datenbank registriert.
 
-Erweitern Sie auch den Ordner gespeicherte Prozeduren aus. Es wird Ihnen eine gespeicherte Prozedur namens `GetDiscontinuedProducts`. Diese gespeicherte Prozedur erstellt wurde, durch den Bereitstellungsprozess und verweist auf die `GetDiscontinuedProducts` -Methode in der die `ManagedDatabaseConstructs` Assembly. Bei der `GetDiscontinuedProducts` gespeicherte Prozedur wird ausgeführt, es wiederum führt die `GetDiscontinuedProducts` Methode. Da dies eine verwaltete gespeicherte Prozedur ist es nicht bearbeitet werden über Management Studio (daher das Schlosssymbol neben dem Namen der gespeicherten Prozedur).
+Erweitern Sie außerdem den Ordner gespeicherte Prozeduren. Dort wird eine gespeicherte Prozedur mit dem Namen `GetDiscontinuedProducts`angezeigt. Diese gespeicherte Prozedur wurde vom Bereitstellungs Prozess erstellt und verweist auf die `GetDiscontinuedProducts`-Methode in der `ManagedDatabaseConstructs`-Assembly. Wenn die gespeicherte Prozedur `GetDiscontinuedProducts` ausgeführt wird, führt Sie ihrerseits die `GetDiscontinuedProducts`-Methode aus. Da es sich hierbei um eine verwaltete gespeicherte Prozedur handelt, kann Sie nicht über Management Studio (also das Sperrsymbol neben dem Namen der gespeicherten Prozedur) bearbeitet werden.
 
-![Die GetDiscontinuedProducts gespeicherte Prozedur wird in den Ordner für die gespeicherten Prozeduren aufgeführt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image19.png)
+![Die gespeicherte Prozedur getdiscontinuedproducts ist im Ordner gespeicherte Prozeduren aufgeführt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image19.png)
 
-**Abbildung 11**: Die `GetDiscontinuedProducts` gespeicherte Prozedur wird in den Ordner für die gespeicherten Prozeduren aufgeführt.
+**Abbildung 11**: die gespeicherte Prozedur `GetDiscontinuedProducts` ist im Ordner gespeicherte Prozeduren aufgeführt.
 
-Es ist immer noch eine weitere Hürde, wir haben zu überwinden, bevor die verwaltete gespeicherte Prozedur aufgerufen werden kann: die Datenbank konfiguriert ist, um zu verhindern, dass bei der Ausführung von verwaltetem Code. Überprüfen Sie dies durch ein neues Abfragefenster öffnen und Ausführen der `GetDiscontinuedProducts` gespeicherte Prozedur. Sie erhalten die folgende Fehlermeldung angezeigt: Ausführung von Benutzercode in .NET Framework ist deaktiviert. Aktivieren Sie die Konfigurationsoption für Clr-fähig.
+Es gibt immer noch eine weitere Hürde, die wir beheben müssen, bevor wir die verwaltete gespeicherte Prozedur abrufen können: die Datenbank ist so konfiguriert, dass die Ausführung von verwaltetem Code verhindert wird. Überprüfen Sie dies, indem Sie ein neues Abfragefenster öffnen und die gespeicherte Prozedur `GetDiscontinuedProducts` ausführen. Sie erhalten die folgende Fehlermeldung: die Ausführung von Benutzercode in der .NET Framework ist deaktiviert. Aktivieren Sie die Konfigurationsoption "CLR-fähig".
 
-Überprüfen Sie die Konfigurationsinformationen des Northwind-s-Datenbank, geben aus, und führen Sie den Befehl `exec sp_configure` in das Abfragefenster. Dies zeigt, dass es sich bei der Clr-fähig festlegen auf 0 festgelegt ist.
+Um die Konfigurationsinformationen für die Northwind-Datenbank zu überprüfen, geben Sie ein, und führen Sie den Befehl `exec sp_configure` im Abfragefenster aus. Dies zeigt, dass die Einstellung für CLR-fähig derzeit auf 0 festgelegt ist.
 
-[![Die Clr-fähig Einstellung ist derzeit auf 0](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image20.png)
+[![die Einstellung für CLR-fähig aktuell auf 0 festgelegt ist.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image20.png)
 
-**Abbildung 12**: Die Clr-fähig Einstellung ist derzeit auf 0 ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image22.png))
+**Abbildung 12**: die Einstellung für CLR-fähig ist derzeit auf 0 festgelegt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image22.png))
 
-Beachten Sie, dass jede Konfigurationseinstellung in Abbildung 12 vier Werte, die mit ihm aufgeführt: die minimale und maximale Werte und die Konfiguration und Ausführungswert. Um der Konfigurationswert für die Einstellung für die Clr-fähig zu aktualisieren, führen Sie den folgenden Befehl aus:
+Beachten Sie, dass für jede Konfigurationseinstellung in Abbildung 12 vier Werte aufgelistet sind: die minimal-und Maximalwerte und die Konfigurations-und die Run-Werte. Führen Sie den folgenden Befehl aus, um den Konfigurations Wert für die Einstellung "CLR-fähig" zu aktualisieren:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
-Wenn Sie erneut ausführen, die `exec sp_configure` sehen Sie, dass die oben genannte Anweisung der Clr-fähig s Config 1 aktualisiert, aber der Ausführungswert immer noch auf 0 festgelegt ist. Für diese konfigurationsänderung wirksam müssen wir führen die [ `RECONFIGURE` Befehl](https://msdn.microsoft.com/library/ms176069.aspx), auf den aktuellen Konfigurationswert den Ausführungswert festzulegen. Geben Sie einfach `RECONFIGURE` in das Abfragefenster, und klicken Sie auf das Symbol "ausführen" in der Symbolleiste. Wenn das Ausführen `exec sp_configure` jetzt sollten Sie finden Sie unter den Wert 1 für die Clr-fähig Einstellung s-Konfigurationsdatei und führen Sie die Werte.
+Wenn Sie die `exec sp_configure` erneut ausführen, sehen Sie, dass die oben genannte Anweisung den Konfigurations Wert für CLR-aktivierte Einstellung s auf 1 aktualisiert hat, der Lauf Wert jedoch weiterhin auf 0 festgelegt ist. Damit diese Konfigurationsänderung wirksam wird, müssen wir den [`RECONFIGURE` Befehl](https://msdn.microsoft.com/library/ms176069.aspx)ausführen, mit dem der Ausführungs Wert auf den aktuellen Konfigurations Wert festgelegt wird. Geben Sie im Abfragefenster einfach `RECONFIGURE` ein, und klicken Sie auf der Symbolleiste auf das Symbol ausführen. Wenn Sie `exec sp_configure` jetzt ausführen, sollten Sie den Wert 1 für die Einstellung s config und Run Werte für CLR-fähig sehen.
 
-Mit der Clr-fähig-Konfiguration abgeschlossen ist, sind wir bereit für die verwaltete Ausführung `GetDiscontinuedProducts` gespeicherte Prozedur. Geben Sie im Abfragefenster, und führen Sie den Befehl `exec` `GetDiscontinuedProducts`. Aufrufen der gespeicherten Prozedur führt dazu, dass die entsprechenden verwalteten Code in die `GetDiscontinuedProducts` auszuführende Methode. Dieser Code gibt eine `SELECT` Abfrage alle Produkte zurückgegeben, die nicht mehr und gibt diese Daten an die aufrufende Anwendung, die SQL Server Management Studio in diesem Fall ist. Management Studio empfängt diese Ergebnisse und zeigt sie im Ergebnisfenster.
+Wenn die CLR-aktivierte Konfiguration abgeschlossen ist, können Sie die gespeicherte Prozedur `GetDiscontinuedProducts` ausführen. Geben Sie im Abfragefenster den Befehl `exec` `GetDiscontinuedProducts`ein, und führen Sie ihn aus. Das Aufrufen der gespeicherten Prozedur bewirkt, dass der entsprechende verwaltete Code in der `GetDiscontinuedProducts`-Methode ausgeführt wird. Dieser Code gibt eine `SELECT` Abfrage aus, um alle Produkte zurückzugeben, die nicht mehr unterstützt werden, und gibt diese Daten an die aufrufenden Anwendung zurück, die in dieser Instanz SQL Server Management Studio ist. Management Studio empfängt diese Ergebnisse und zeigt Sie im Fenster Ergebnisse an.
 
-[![Die gespeicherte Prozedur alle zurückgibt GetDiscontinuedProducts ausgelaufenen Produkte](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image23.png)
+[![die gespeicherte Prozedur getdiscontinuedproducts alle nicht mehr unterstützten Produkte zurückgibt](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image23.png)
 
-**Abbildung 13**: Die `GetDiscontinuedProducts` gespeicherte Prozedur gibt alle nicht mehr unterstützte Produkte ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image25.png))
+**Abbildung 13**: die gespeicherte Prozedur `GetDiscontinuedProducts` gibt alle nicht mehr unterstützten Produkte zurück ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image25.png))
 
 ## <a name="step-5-creating-managed-stored-procedures-that-accept-input-parameters"></a>Schritt 5: Erstellen von verwalteten gespeicherten Prozeduren, die Eingabeparameter akzeptieren
 
-Viele der Abfragen und gespeicherte Prozeduren, die wir, klicken Sie in diesen Tutorials erstellt haben verwendet haben *Parameter*. Z. B. in der [Erstellen neuer gespeicherter Prozeduren für die typisierte DataSet-s TableAdapters](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) Tutorial eine gespeicherte Prozedur namens erstellt `GetProductsByCategoryID` , die einen Eingabeparameter mit dem Namen akzeptiert `@CategoryID`. Die gespeicherte Prozedur dann alle Produkte zurückgegeben, deren `CategoryID` Feld übereinstimmen, den Wert des angegebenen `@CategoryID` Parameter.
+Viele der Abfragen und gespeicherten Prozeduren, die wir in diesen Tutorials erstellt haben, haben *Parameter*verwendet. Beispielsweise haben Sie im Tutorial [Erstellen neuer gespeicherter Prozeduren für das typisierte DataSet s TableAdapters](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) eine gespeicherte Prozedur mit dem Namen `GetProductsByCategoryID` erstellt, die einen Eingabeparameter mit dem Namen `@CategoryID`akzeptiert. Die gespeicherte Prozedur hat dann alle Produkte zurückgegeben, deren `CategoryID` Feld mit dem Wert des angegebenen `@CategoryID` Parameters übereinstimmt.
 
-Um eine verwaltete gespeicherte Prozedur zu erstellen, die Eingabeparameter akzeptiert, geben Sie einfach die Parameter in der Methodendefinition s ein. Um dies zu veranschaulichen, Let s eine andere verwaltete gespeicherte Prozedur zum Hinzufügen der `ManagedDatabaseConstructs` Projekt mit dem Namen `GetProductsWithPriceLessThan`. Diese verwaltete gespeicherte Prozedur akzeptiert einen Eingabeparameter, die einen Preis angeben, und gibt alle Produkte zurück, dessen `UnitPrice` Feld ist kleiner als der Parameter-s-Wert.
+Um eine verwaltete gespeicherte Prozedur zu erstellen, die Eingabeparameter akzeptiert, geben Sie diese Parameter einfach in der Definition der Methode an. Um dies zu veranschaulichen, fügen Sie dem `ManagedDatabaseConstructs` Projekt mit dem Namen `GetProductsWithPriceLessThan`eine weitere verwaltete gespeicherte Prozedur hinzu. Diese verwaltete gespeicherte Prozedur akzeptiert einen Eingabeparameter, der einen Preis angibt, und gibt alle Produkte zurück, deren `UnitPrice` Feld kleiner ist als der Wert des-Parameters.
 
-Um das Projekt eine neue gespeicherte Prozedur hinzuzufügen, mit der Maustaste auf die `ManagedDatabaseConstructs` Projektname und wählen Sie eine neue gespeicherte Prozedur hinzufügen. Nennen Sie die Datei `GetProductsWithPriceLessThan.vb`. Dadurch wird zunächst eine neue Klassendatei in Visual Basic mit einer Methode, die mit dem Namen erstellt, wie in Schritt 3 beschrieben, `GetProductsWithPriceLessThan` in platziert die `Partial` Klasse `StoredProcedures`.
+Um dem Projekt eine neue gespeicherte Prozedur hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Namen des `ManagedDatabaseConstructs` Projekts, und wählen Sie eine neue gespeicherte Prozedur hinzufügen aus. Nennen Sie die Datei `GetProductsWithPriceLessThan.vb`. Wie in Schritt 3 gezeigt, wird hierdurch eine neue Visual Basic-Klassendatei erstellt, die eine Methode mit dem Namen `GetProductsWithPriceLessThan` innerhalb der `Partial` Klasse `StoredProcedures`platziert.
 
-Update der `GetProductsWithPriceLessThan` s Methodendefinition so, dass die It akzeptiert eine [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) Eingabeparameter mit dem Namen `price` und den Code schreiben, auszuführen und die Ergebnisse der Abfrage zurückzugeben:
+Aktualisieren Sie die Definition der `GetProductsWithPriceLessThan`-Methode, sodass Sie einen [`SqlMoney`](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) Eingabeparameter mit dem Namen `price` annimmt und den Code zum Ausführen und Zurückgeben der Abfrageergebnisse zu schreiben:
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
 
-Die `GetProductsWithPriceLessThan` Methodendefinition s und Code gleicht die Definition und den Code der `GetDiscontinuedProducts` Methode, die in Schritt 3 erstellt haben. Der einzige Unterschied besteht, die die `GetProductsWithPriceLessThan` -Methode akzeptiert als Eingabe an den Parameter (`price`), wird die `SqlCommand` s-Abfrage enthält einen Parameter (`@MaxPrice`), und ein Parameter hinzugefügt wird die `SqlCommand` s `Parameters` Sammlung ist und der Wert des der `price` Variable.
+Die Definition und der Code der `GetProductsWithPriceLessThan`-Methode ähneln genau der Definition und dem Code der in Schritt 3 erstellten `GetDiscontinuedProducts` Methode. Der einzige Unterschied besteht darin, dass die `GetProductsWithPriceLessThan`-Methode als Eingabeparameter (`price`) akzeptiert, dass die `SqlCommand` s-Abfrage einen Parameter (`@MaxPrice`) enthält und dass der `SqlCommand`-Auflistung ein Parameter hinzugefügt wird und der Wert der `Parameters` Variable zugewiesen wird.
 
-Nach dem Hinzufügen dieses Codes, erneut bereitstellen Sie in der SQL Server-Projekt. Klicken Sie dann zurück zu SQL Server Management Studio, und aktualisieren Sie den Ordner für gespeicherte Prozeduren. Daraufhin sollte einen neuen Eintrag, `GetProductsWithPriceLessThan`. Geben Sie ein Abfragefenster, und führen Sie den Befehl `exec GetProductsWithPriceLessThan 25`, wird Sie Liste weniger als $25, alle Produkte, wie in Abbildung 14 dargestellt.
+Nachdem Sie diesen Code hinzugefügt haben, stellen Sie das SQL Server Projekt erneut bereit. Kehren Sie als nächstes zu SQL Server Management Studio zurück, und aktualisieren Sie den Ordner gespeicherte Prozeduren. Es sollte ein neuer Eintrag, `GetProductsWithPriceLessThan`, angezeigt werden. Geben Sie in einem Abfragefenster den Befehl `exec GetProductsWithPriceLessThan 25`ein, und führen Sie ihn aus, in dem alle Produkte aufgeführt werden, die kleiner als $25 sind, wie in Abbildung 14 gezeigt
 
-[![Produkte unter $25 werden angezeigt](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image26.png)
+[![Produkte unter $25 werden angezeigt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image26.png)
 
-**Abbildung 14**: Produkte unter $25 werden angezeigt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image28.png))
+**Abbildung 14**: Produkte unter $25 werden angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image28.png))
 
-## <a name="step-6-calling-the-managed-stored-procedure-from-the-data-access-layer"></a>Schritt 6: Die verwaltete gespeicherte Prozedur aufrufen aus der Datenzugriffsebene
+## <a name="step-6-calling-the-managed-stored-procedure-from-the-data-access-layer"></a>Schritt 6: Aufrufen der verwalteten gespeicherten Prozedur von der Datenzugriffs Ebene
 
-Wir haben an diesem Punkt hinzugefügt der `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwalteten gespeicherte Prozeduren, die `ManagedDatabaseConstructs` Projekt, und sie mit der Northwind-SQL Server-Datenbank registriert haben. Wir haben diese verwalteten gespeicherten Prozeduren von SQL Server Management Studio auch aufgerufen (Siehe Abbildungen 13 und 14). In der Reihenfolge für unsere ASP.NET verwaltete Anwendung für die Verwendung dieser gespeicherte Prozeduren, allerdings müssen wir diese Datenzugriffs- und Geschäftslogikschichten in der Architektur hinzufügen. In diesem Schritt werden wir zwei neue Methoden zum Hinzufügen der `ProductsTableAdapter` in die `NorthwindWithSprocs` typisierte DataSet, das im ursprünglich erstellt wurde die [Erstellen neuer gespeicherter Prozeduren für die typisierte DataSet-s TableAdapters](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) Tutorial. In Schritt 7 werden wir die entsprechende Methoden an die BLL hinzufügen.
+An diesem Punkt haben wir dem `ManagedDatabaseConstructs` Projekt die `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwalteten gespeicherten Prozeduren hinzugefügt und Sie mit der Northwind-SQL Server Datenbank registriert. Wir haben diese verwalteten gespeicherten Prozeduren auch aus SQL Server Management Studio aufgerufen (siehe Abbildung 13 und 14). Damit unsere ASP.NET-Anwendung diese verwalteten gespeicherten Prozeduren verwenden kann, müssen wir Sie jedoch den Datenzugriffs-und Geschäftslogik Ebenen in der Architektur hinzufügen. In diesem Schritt fügen wir zwei neue Methoden zum `ProductsTableAdapter` in das `NorthwindWithSprocs` typisierte Dataset hinzu, das anfänglich im Tutorial [Erstellen neuer gespeicherter Prozeduren für das TableAdapters für typisierte Datasets](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) erstellt wurde. In Schritt 7 fügen wir der BLL entsprechende Methoden hinzu.
 
-Öffnen der `NorthwindWithSprocs` typisierte DataSet in Visual Studio und beginnen Sie, indem Sie eine neue Methode zum Hinzufügen der `ProductsTableAdapter` mit dem Namen `GetDiscontinuedProducts`. Um eine neue Methode einen TableAdapter hinzugefügt haben, mit der rechten Maustaste auf den Namen des TableAdapter s im Designer, und wählen Sie im Kontextmenü die Option "hinzufügen".
+Öffnen Sie in Visual Studio das `NorthwindWithSprocs` typisierte DataSet, und fügen Sie dem `ProductsTableAdapter` mit dem Namen `GetDiscontinuedProducts`eine neue Methode hinzu. Wenn Sie einem TableAdapter eine neue Methode hinzufügen möchten, klicken Sie im Designer mit der rechten Maustaste auf den Namen des TableAdapter s, und wählen Sie im Kontextmenü die Option Abfrage hinzufügen aus.
 
 > [!NOTE]
-> Seit die Northwind-Datenbank aus der `App_Data` Ordner mit der SQL Server 2005 Express Edition-Datenbank-Instanz, es ist zwingend erforderlich, dass die zugehörige Verbindungszeichenfolge in "Web.config" aktualisiert werden, um diese Änderung zu übernehmen. In Schritt2 die aktualisieren erörtert die `NORTHWNDConnectionString` Wert `Web.config`. Wenn Sie vergessen haben, um dieses Update zu machen, klicken Sie dann sehen die Fehlermeldung "Fehler" Abfrage hinzufügen Sie. Keine Verbindung gefunden `NORTHWNDConnectionString` für Objekt `Web.config` in einem Dialogfeld, wenn Sie versuchen, eine neue Methode dem TableAdapter hinzugefügt. Um diesen Fehler zu beheben, klicken Sie auf OK, und fahren Sie mit `Web.config` und aktualisieren Sie die `NORTHWNDConnectionString` -Wert, wie in Schritt2 beschrieben. Wiederholen Sie dann erneut die-Methode dem TableAdapter hinzufügen. Dieses Mal sollte es fehlerfrei funktionieren.
+> Da wir die Northwind-Datenbank aus dem Ordner `App_Data` in die SQL Server 2005 Express Edition Daten Bank Instanz verschoben haben, ist es zwingend erforderlich, dass die entsprechende Verbindungs Zeichenfolge in Web. config aktualisiert wird, um diese Änderung widerzuspiegeln. In Schritt 2 haben wir das Aktualisieren des `NORTHWNDConnectionString` Werts in `Web.config`erläutert. Wenn Sie dieses Update vergessen haben, wird die Fehlermeldung Fehler beim Hinzufügen der Abfrage angezeigt. Es wurde keine Verbindung `NORTHWNDConnectionString` für Objekt `Web.config` in einem Dialogfeld gefunden, wenn versucht wird, dem TableAdapter eine neue Methode hinzuzufügen. Um diesen Fehler zu beheben, klicken Sie auf OK, navigieren Sie zu `Web.config`, und aktualisieren Sie den `NORTHWNDConnectionString` Wert, wie in Schritt 2 beschrieben. Versuchen Sie dann erneut, die Methode dem TableAdapter hinzuzufügen. Dieses Mal sollte Sie ohne Fehler funktionieren.
 
-Hinzufügen einer neuen Methode startet den TableAdapter-Abfrage-Konfigurations-Assistenten, in dem wir oft in den letzten Tutorials verwendet haben. Im ersten Schritt fragt uns an, wie der TableAdapter auf die Datenbank zugreifen soll: über eine Ad-hoc-SQL-Anweisung oder einer neuen oder vorhandenen gespeicherten Prozedur. Da wir bereits erstellt und registriert wurden die `GetDiscontinuedProducts` verwaltete gespeicherte Prozedur mit der Datenbank, wählen Sie die vorhandene gespeicherte Prozedur-Option, und drücken weiter.
+Durch das Hinzufügen einer neuen Methode wird der Konfigurations-Assistent für TableAdapter-Abfragen gestartet, den wir in früheren Tutorials mehrmals verwendet haben. Im ersten Schritt werden wir aufgefordert, anzugeben, wie der TableAdapter auf die Datenbank zugreifen soll: über eine Ad-hoc-SQL-Anweisung oder über eine neue oder vorhandene gespeicherte Prozedur. Da wir die `GetDiscontinuedProducts` verwaltete gespeicherte Prozedur bereits erstellt und mit der Datenbank registriert haben, wählen Sie die Option vorhandene gespeicherte Prozedur verwenden aus, und klicken Sie auf Weiter.
 
-[![Wählen Sie die vorhandene gespeicherte Prozedur-Option verwenden](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image30.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image29.png)
+[Wählen Sie die Option vorhandene gespeicherte Prozedur verwenden ![aus.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image30.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image29.png)
 
-**Abbildung 15**: Wählen Sie die vorhandene gespeicherte Prozedur Option ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image31.png))
+**Abbildung 15**: Auswählen der Option zum Verwenden vorhandener gespeicherter Prozeduren ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image31.png))
 
-Der nächste Bildschirm fordert uns für die gespeicherte Prozedur, die die Methode aufgerufen wird. Wählen Sie die `GetDiscontinuedProducts` verwaltete gespeicherte Prozedur aus der Dropdown-Liste, und klicken Sie weiter.
+Im nächsten Bildschirm werden wir zur Eingabe der gespeicherten Prozedur aufgefordert, die von der Methode aufgerufen wird. Wählen Sie in der Dropdown Liste die `GetDiscontinuedProducts` verwaltete gespeicherte Prozedur aus, und klicken Sie auf Weiter.
 
-[![Wählen Sie die GetDiscontinuedProducts verwalteten gespeicherten Prozedur](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image33.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image32.png)
+[![Sie die verwaltete gespeicherte Prozedur getdiscontinuedproducts aus.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image33.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image32.png)
 
-**Abbildung 16**: Wählen Sie die `GetDiscontinuedProducts` verwaltete gespeicherte Prozedur ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image34.png))
+**Abbildung 16**: Auswählen der verwalteten gespeicherten Prozedur `GetDiscontinuedProducts` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image34.png))
 
-Wir werden dann aufgefordert, um anzugeben, ob die gespeicherte Prozedur Zeilen, einen einzelnen Wert oder nichts zurückgibt. Da `GetDiscontinuedProducts` gibt den Satz von Produktzeilen nicht mehr unterstützte, wählen Sie die erste Option (Tabellendaten), und klicken Sie auf Weiter.
+Anschließend werden wir aufgefordert, anzugeben, ob die gespeicherte Prozedur Zeilen, einen einzelnen Wert oder nichts zurückgibt. Da `GetDiscontinuedProducts` den Satz nicht mehr unterstützter Produkt Zeilen zurückgibt, wählen Sie die erste Option (Tabellendaten) aus, und klicken Sie auf Weiter.
 
-[![Wählen Sie die Tabellendaten-Option](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image36.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image35.png)
+[![wählen Sie die Option Tabellendaten aus.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image36.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image35.png)
 
-**Abbildung 17**: Wählen Sie die tabellarische Daten-Option ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image37.png))
+**Abbildung 17**: Auswählen der Option für tabellarische Daten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image37.png))
 
-Der letzten Seite des Assistenten kann wir die Datenzugriffsmuster verwendet und die Namen der resultierenden Methoden angeben. Behalten Sie Sie Kontrollkästchen aktiviert und die Namen die Methoden `FillByDiscontinued` und `GetDiscontinuedProducts`. Klicken Sie auf "Fertig stellen", um den Assistenten abzuschließen.
+Im letzten Assistenten können wir die verwendeten Datenzugriffs Muster und die Namen der resultierenden Methoden angeben. Lassen Sie beide Kontrollkästchen aktiviert, und benennen Sie die Methoden `FillByDiscontinued` und `GetDiscontinuedProducts`. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
 
-[![Namen der Methoden FillByDiscontinued und GetDiscontinuedProducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
+[![den Namen der Methoden fillbyeingestellt und getdiscontinuedproducts.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
 
-**Abbildung 18**: Benennen Sie die Methoden `FillByDiscontinued` und `GetDiscontinuedProducts` ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image40.png))
+**Abbildung 18**: Benennen der Methoden `FillByDiscontinued` und `GetDiscontinuedProducts` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image40.png))
 
-Wiederholen Sie diese Schritte zum Erstellen von Methoden, die mit dem Namen `FillByPriceLessThan` und `GetProductsWithPriceLessThan` in die `ProductsTableAdapter` für die `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur.
+Wiederholen Sie diese Schritte, um Methoden mit dem Namen `FillByPriceLessThan` zu erstellen und im `ProductsTableAdapter` für die `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur `GetProductsWithPriceLessThan`.
 
-Abbildung 19 zeigt einen Screenshot des DataSet-Designer nach dem Hinzufügen der Methoden für die `ProductsTableAdapter` für die `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwalteten gespeicherte Prozeduren.
+Abbildung 19 zeigt einen Screenshot des DataSet-Designers, nachdem die Methoden zum `ProductsTableAdapter` für die `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwalteten gespeicherten Prozeduren hinzugefügt wurden.
 
-[![Die ProductsTableAdapter enthält die neuen Methoden, die in diesem Schritt hinzugefügt](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image42.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image41.png)
+[![ProductsTableAdapter die neuen Methoden enthält, die in diesem Schritt hinzugefügt wurden.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image42.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image41.png)
 
-**Abbildung 19**: Die `ProductsTableAdapter` enthält neue Methoden hinzugefügt, in diesem Schritt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image43.png))
+**Abbildung 19**: der `ProductsTableAdapter` enthält die neuen Methoden, die in diesem Schritt hinzugefügt wurden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image43.png))
 
-## <a name="step-7-adding-corresponding-methods-to-the-business-logic-layer"></a>Schritt 7: Entsprechende Methoden hinzufügen der Geschäftslogikschicht
+## <a name="step-7-adding-corresponding-methods-to-the-business-logic-layer"></a>Schritt 7: Hinzufügen entsprechender Methoden zur Geschäftslogik Ebene
 
-Nachdem wir die Datenzugriffsebene enthält Methoden zum Aufrufen der verwalteten gespeicherten Prozeduren hinzugefügt, die in den Schritte4 und 5 aktualisiert haben, müssen wir entsprechenden Methoden der Geschäftslogikschicht hinzu. Die folgenden beiden Methoden zum Hinzufügen der `ProductsBLLWithSprocs` Klasse:
+Nachdem Sie die Datenzugriffs Ebene aktualisiert haben, sodass Sie Methoden zum Aufrufen der in den Schritten 4 und 5 hinzugefügten verwalteten gespeicherten Prozeduren enthält, müssen wir der Geschäftslogik Schicht entsprechende Methoden hinzufügen. Fügen Sie der `ProductsBLLWithSprocs`-Klasse die folgenden beiden Methoden hinzu:
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample7.vb)]
 
-Beide Methoden einfach die entsprechende DAL-Methode aufrufen und Zurückgeben der `ProductsDataTable` Instanz. Die `DataObjectMethodAttribute` Markup oberhalb jeder Methode bewirkt, dass diese Methoden in der Dropdown-Liste in der Registerkarte "auswählen" den "ObjectDataSource"-s-Konfigurieren von Datenquellen-Assistenten eingeschlossen werden.
+Beide Methoden geben einfach die entsprechende dal-Methode an und geben die `ProductsDataTable` Instanz zurück. Das `DataObjectMethodAttribute` Markup oberhalb jeder Methode bewirkt, dass diese Methoden in der Dropdown Liste auf der Registerkarte auswählen des Assistenten zum Konfigurieren von Datenquellen für ObjectDataSource s enthalten sind.
 
-## <a name="step-8-invoking-the-managed-stored-procedures-from-the-presentation-layer"></a>Schritt 8: Aufrufen der verwalteten gespeicherten Prozeduren von der Darstellungsschicht
+## <a name="step-8-invoking-the-managed-stored-procedures-from-the-presentation-layer"></a>Schritt 8: Aufrufen der verwalteten gespeicherten Prozeduren von der Darstellungs Schicht
 
-Mit der Geschäftslogik und Datenzugriffsschichten erweitert, um Unterstützung für den Aufruf der `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozeduren, können wir jetzt zeigen diese gespeicherten Prozeduren Ergebnisse über eine ASP.NET-Seite.
+Wenn die Geschäftslogik und die Datenzugriffsebenen erweitert wurden, um Unterstützung für das Aufrufen der `GetDiscontinuedProducts` und `GetProductsWithPriceLessThan` verwalteten gespeicherten Prozeduren zu bieten, können wir diese gespeicherten Prozeduren nun über eine ASP.NET-Seite anzeigen.
 
-Öffnen der `ManagedFunctionsAndSprocs.aspx` auf der Seite die `AdvancedDAL` Ordner, und ziehen Sie aus der Toolbox einer GridView-Ansicht auf den Designer. Legen Sie die GridView s `ID` Eigenschaft `DiscontinuedProducts` und von sein Smarttag, binden Sie es an eine neue, mit dem Namen "ObjectDataSource" `DiscontinuedProductsDataSource`. Konfigurieren Sie zum Abrufen der Daten aus dem ObjectDataSource-Steuerelement die `ProductsBLLWithSprocs` Klasse s `GetDiscontinuedProducts` Methode.
+Öffnen Sie die Seite `ManagedFunctionsAndSprocs.aspx` im Ordner `AdvancedDAL`, und ziehen Sie aus der Toolbox eine GridView-Ansicht auf den Designer. Legen Sie die Eigenschaft GridView s `ID` auf `DiscontinuedProducts` fest, und binden Sie das Smarttag an eine neue ObjectDataSource mit dem Namen `DiscontinuedProductsDataSource`. Konfigurieren Sie ObjectDataSource so, dass die Daten aus der `ProductsBLLWithSprocs` Klasse `GetDiscontinuedProducts` Methode abgerufen werden.
 
-[![Konfigurieren von dem ObjectDataSource-Steuerelement zur Verwendung der ProductsBLLWithSprocs-Klasse](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image45.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image44.png)
+[![konfigurieren Sie ObjectDataSource für die Verwendung der productbllwithsprocs-Klasse.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image45.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image44.png)
 
-**Abbildung 20**: Konfigurieren Sie das "ObjectDataSource" Verwenden der `ProductsBLLWithSprocs` Klasse ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image46.png))
+**Abbildung 20**: Konfigurieren von ObjectDataSource für die Verwendung der `ProductsBLLWithSprocs`-Klasse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image46.png))
 
-[![Wählen Sie die GetDiscontinuedProducts-Methode aus der Dropdown-Liste in der Registerkarte "SELECT"](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image48.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image47.png)
+[![wählen Sie in der Dropdown Liste auf der Registerkarte auswählen die Methode getdiscontinuedproducts aus.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image48.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image47.png)
 
-**Abbildung 21**: Wählen Sie die `GetDiscontinuedProducts` Methode aus der Dropdown-Liste auf der Registerkarte "auswählen" ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image49.png))
+**Abbildung 21**: Auswählen der `GetDiscontinuedProducts` Methode aus der Dropdown Liste auf der Registerkarte "auswählen" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image49.png))
 
-Da dieses Raster, nur Anzeige von Produktinformationen verwendet werden, legen Sie die Dropdownlisten in der Update-, INSERT-, Registerkarten, um (keine) und löschen Sie klicken Sie dann auf "Fertig stellen".
+Da dieses Raster zum Anzeigen von Produktinformationen verwendet wird, legen Sie die Dropdown Listen auf den Registerkarten aktualisieren, einfügen und löschen auf (keine) fest, und klicken Sie dann auf Fertigstellen.
 
-Nach Abschluss des Assistenten, Visual Studio wird automatisch Hinzufügen eines BoundField- oder CheckBoxField für jedes Datenfeld in der `ProductsDataTable`. So entfernen Sie alle diese Felder mit Ausnahme von in Ruhe `ProductName` und `Discontinued`, zeigen Sie mit der Ihre GridView und "ObjectDataSource" s deklaratives Markup sollte etwa wie folgt aussehen:
+Nachdem Sie den Assistenten abgeschlossen haben, fügt Visual Studio automatisch ein BoundField-oder CheckBoxField-Element für jedes Datenfeld in der `ProductsDataTable`hinzu. Nehmen Sie sich einen Moment Zeit, um alle diese Felder außer `ProductName` und `Discontinued`zu entfernen. zu diesem Zeitpunkt sollten das deklarative Markup der GridView-und ObjectDataSource s in etwa wie folgt aussehen:
 
 [!code-aspx[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample8.aspx)]
 
-Nehmen Sie einen Moment Zeit, zum Anzeigen dieser Seite über einen Browser ein. Wenn die Seite besucht wird, die ObjectDataSource ruft die `ProductsBLLWithSprocs` Klasse s `GetDiscontinuedProducts` Methode. Wie wir in Schritt 7 gesehen haben, ruft diese Methode nach unten der DAL-s `ProductsDataTable` Klasse s `GetDiscontinuedProducts` -Methode, die Ruft die `GetDiscontinuedProducts` gespeicherte Prozedur. Diese gespeicherte Prozedur ist eine verwaltete gespeicherte Prozedur aus, und führt den Code, die in Schritt 3, die nicht mehr unterstützte Produkte zurückgeben erstellt wurde.
+Nehmen Sie sich einen Moment Zeit, um diese Seite über einen Browser anzuzeigen. Wenn die Seite besucht wird, ruft ObjectDataSource die `ProductsBLLWithSprocs` Klasse s `GetDiscontinuedProducts` Methode auf. Wie in Schritt 7 erläutert, ruft diese Methode den dal s-`ProductsDataTable` Class-`GetDiscontinuedProducts` Methode auf, die die gespeicherte Prozedur `GetDiscontinuedProducts` aufruft. Diese gespeicherte Prozedur ist eine verwaltete gespeicherte Prozedur und führt den Code aus, den wir in Schritt 3 erstellt haben, und gibt die nicht mehr unterstützten Produkte zurück.
 
-Die von der verwalteten gespeicherten Prozedur zurückgegebenen Ergebnisse werden in verpackt eine `ProductsDataTable` von der DAL und seitdem wieder an die BLL, die dann sie auf der Darstellungsschicht zurückgibt, wo sie sind an die GridView gebunden und angezeigt. Erwartungsgemäß funktioniert, listet das Raster dieser Produkte, die eingestellt wurden.
+Die Ergebnisse, die von der verwalteten gespeicherten Prozedur zurückgegeben werden, werden von der Dal in eine `ProductsDataTable` verpackt und dann an die BLL zurückgegeben, die Sie dann an die Darstellungs Schicht zurückgibt, wo Sie an die GridView gebunden und angezeigt werden. Erwartungsgemäß listet das Raster die Produkte auf, die nicht mehr unterstützt wurden.
 
-[![Die nicht mehr unterstützte Produkte werden aufgeführt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image51.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image50.png)
+[![nicht mehr unterstützte Produkte aufgeführt](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image51.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image50.png)
 
-**Abbildung 22**: Nicht mehr unterstützte Produkte aufgelistet sind ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image52.png))
+**Abbildung 22**: die unterstützten Produkte werden aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image52.png))
 
-Fügen Sie zur weiteren wird empfohlen ein Textfeld und einer anderen GridView, auf der Seite. Haben Sie diese GridView zeigt die Produkte, die kleiner als die Menge, die in das Textfeld eingegeben werden, durch den Aufruf der `ProductsBLLWithSprocs` Klasse s `GetProductsWithPriceLessThan` Methode.
+Fügen Sie der Seite ein Textfeld und eine weitere GridView hinzu. Lassen Sie in dieser GridView die Produkte anzeigen, die kleiner sind als der in das Textfeld eingegebene Wert, indem Sie die `ProductsBLLWithSprocs` Class s `GetProductsWithPriceLessThan`-Methode aufrufen.
 
 ## <a name="step-9-creating-and-calling-t-sql-udfs"></a>Schritt 9: Erstellen und Aufrufen von T-SQL-UDFs
 
-Benutzerdefinierte Funktionen oder benutzerdefinierte Funktionen, sind, dass der Nachahmung genau die Semantik der Funktionen in Programmiersprachen zu vergleichen Datenbankobjekte. UDFs können wie eine Funktion in Visual Basic enthalten eine Variable Anzahl von Eingabeparametern und den Wert eines bestimmten Typs zurück. Eine UDF kann entweder skalaren Daten – eine Zeichenfolge, eine ganze Zahl, und So weiter – oder Tabellendaten zurückgeben. Lassen Sie s, nehmen einen kurzen Blick auf beide Arten von UDFs, beginnend mit einer benutzerdefinierten Funktion, die einen skalaren Datentyp zurückgibt.
+Bei benutzerdefinierten Funktionen (oder UDFs) handelt es sich um Datenbankobjekte, die die Semantik von Funktionen in Programmiersprachen genau imitieren. Wie eine Funktion in Visual Basic können UDFs eine Variable Anzahl von Eingabe Parametern einschließen und einen Wert eines bestimmten Typs zurückgeben. Eine UDF kann entweder skalare Daten, eine Zeichenfolge, eine ganze Zahl usw. oder Tabellendaten zurückgeben. Werfen Sie einen kurzen Blick auf beide Arten von UDFs, beginnend mit einer UDF, die einen skalaren Datentyp zurückgibt.
 
-Die folgende benutzerdefinierte Funktion berechnet den erwarteten Wert des Bestands für ein bestimmtes Produkt. Dies erfolgt durch aufnehmen in die drei Parameter: den `UnitPrice`, `UnitsInStock`, und `Discontinued` für ein bestimmtes Produkt - Werte und gibt einen Wert vom Typ `money`. Berechnet den erwarteten Wert des Bestands durch Multiplikation der `UnitPrice` durch die `UnitsInStock`. Für nicht mehr unterstützte Elemente wird dieser Wert halbiert.
+Mit der folgenden UDF wird der geschätzte Wert des Bestands für ein bestimmtes Produkt berechnet. Hierzu werden drei Eingabeparameter verwendet: die Werte für `UnitPrice`, `UnitsInStock`und `Discontinued` für ein bestimmtes Produkt, und es wird ein Wert vom Typ `money`zurückgegeben. Der geschätzte Wert des Inventars wird berechnet, indem die `UnitPrice` mit dem `UnitsInStock`multipliziert werden. Bei nicht unterstützten Elementen wird dieser Wert halbiert.
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample9.sql)]
 
-Nachdem diese UDF in der Datenbank hinzugefügt wurde, können sie über Management Studio gefunden werden, durch das Erweitern der Ordner "Programmierbarkeit" und dann Funktionen, und klicken Sie dann Skalarwert-Funktionen. Es kann verwendet werden, einem `SELECT` Abfrage wie folgt:
+Nachdem diese benutzerdefinierte Funktion der-Datenbank hinzugefügt wurde, können Sie Sie über Management Studio finden, indem Sie den Programmierbarkeits Ordner, dann Functions und dann skalare-Wert-Funktionen erweitern. Sie kann in einer `SELECT` Abfrage wie folgt verwendet werden:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample10.sql)]
 
-Ich habe hinzugefügt haben die `udf_ComputeInventoryValue` UDF mit der Datenbank Northwind Abbildung 23 zeigt die Ausgabe der oben genannten `SELECT` Abfragen, wenn Sie über Management Studio angezeigt. Beachten Sie außerdem, dass die benutzerdefinierte Funktion unter dem Ordner Skalarwert-Funktionen im Objekt-Explorer aufgeführt ist.
+Ich habe die `udf_ComputeInventoryValue` UDF zur Datenbank Northwind hinzugefügt. Abbildung 23 zeigt die Ausgabe der obigen `SELECT` Abfrage, wenn Sie durch Management Studio angezeigt wird. Beachten Sie auch, dass die UDF unter dem Ordner Skalarwertfunktionen in der Objekt-Explorer aufgeführt ist.
 
-[![Jedes Produkt s Inventur Werte wird aufgeführt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image54.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image53.png)
+[![die Inventur Werte jedes Produkts aufgeführt werden.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image54.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image53.png)
 
-**Abbildung 23**: Jedes Produkt s Inventory-Werte enthält ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image55.png))
+**Abbildung 23**: die Inventur Werte für alle Produkte werden aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image55.png))
 
-Benutzerdefinierte Funktionen können auch tabellarische Daten zurückgeben. Beispielsweise können wir eine benutzerdefinierte Funktion erstellen, die Produkte zurückgibt, die zu einer bestimmten Kategorie gehören:
+UDFs können auch Tabellendaten zurückgeben. Beispielsweise können wir eine benutzerdefinierte Funktion erstellen, die Produkte zurückgibt, die zu einer bestimmten Kategorie gehören:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample11.sql)]
 
-Die `udf_GetProductsByCategoryID` UDF akzeptiert eine `@CategoryID` Eingabeparameter und gibt die Ergebnisse der angegebenen `SELECT` Abfrage. Nach der Erstellung kann diese UDF verwiesen werden, der `FROM` (oder `JOIN`)-Klausel einer `SELECT` Abfrage. Im folgende Beispiel würde Zurückgeben der `ProductID`, `ProductName`, und `CategoryID` Werte für die einzelnen von Getränken.
+Der `udf_GetProductsByCategoryID` UDF akzeptiert einen `@CategoryID` Input-Parameter und gibt die Ergebnisse der angegebenen `SELECT` Abfrage zurück. Nach der Erstellung kann auf diese UDF in der `FROM`-Klausel (oder `JOIN`) einer `SELECT` Abfrage verwiesen werden. Im folgenden Beispiel werden die Werte für `ProductID`, `ProductName`und `CategoryID` für jedes der Getränke zurückgegeben.
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample12.sql)]
 
-Ich habe hinzugefügt haben die `udf_GetProductsByCategoryID` UDF mit der Datenbank Northwind Abbildung 24 zeigt die Ausgabe der oben genannten `SELECT` Abfragen, wenn Sie über Management Studio angezeigt. Benutzerdefinierte Funktionen, die tabellarische Daten zurückgeben finden Sie im Objekt-Explorer-Ordner für die s Tabellenwert-Funktionen.
+Ich habe die `udf_GetProductsByCategoryID` UDF zur Datenbank Northwind hinzugefügt. Abbildung 24 zeigt die Ausgabe der obigen `SELECT` Abfrage, wenn Sie durch Management Studio angezeigt wird. UDFs, die tabellarische Daten zurückgeben, finden Sie im Ordner mit den Objekt-Explorer s-Tabellenwert Funktionen.
 
-[![Die ProductID, ProductName und CategoryID sind für jede trinken aufgeführt.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image57.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image56.png)
+[!["ProductID", "ProductName" und "CategoryID" für jedes Getränk aufgelistet.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image57.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image56.png)
 
-**Abbildung 24**: Die `ProductID`, `ProductName`, und `CategoryID` werden für jede trinken aufgelistet ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image58.png))
+**Abbildung 24**: die `ProductID`, `ProductName`und `CategoryID` werden für jedes Getränk aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image58.png))
 
 > [!NOTE]
-> Weitere Informationen zum Erstellen und Verwenden von benutzerdefinierten Funktionen finden Sie in [Einführung in die User-Defined Functions](http://www.sqlteam.com/item.asp?ItemID=1955). Sehen Sie sich auch [Vorteile und Funktionen von Drawbacks of User-Defined](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1).
+> Weitere Informationen zum Erstellen und Verwenden von UDFs finden Sie unter Einführung [in benutzerdefinierte Funktionen](http://www.sqlteam.com/item.asp?ItemID=1955). Sehen Sie sich auch die [Vorteile und Nachteile von benutzerdefinierten Funktionen an](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1).
 
-## <a name="step-10-creating-a-managed-udf"></a>Schritt 10: Erstellen eine verwaltete UDF
+## <a name="step-10-creating-a-managed-udf"></a>Schritt 10: Erstellen einer verwalteten UDF
 
-Die `udf_ComputeInventoryValue` und `udf_GetProductsByCategoryID` UDFs erstellt, die in den obigen Beispielen sind T-SQL-Datenbankobjekte. SQL Server 2005 unterstützt auch die verwaltete benutzerdefinierte Funktionen, die hinzugefügt werden können die `ManagedDatabaseConstructs` Projekt genau wie die verwaltete Prozeduren über die Schritte 3 und 5 gespeicherte. Für diesen Schritt können Sie s implementieren die `udf_ComputeInventoryValue` UDF in verwaltetem Code.
+Die in den obigen Beispielen erstellten `udf_ComputeInventoryValue` und `udf_GetProductsByCategoryID` UDFs sind t-SQL-Datenbankobjekte. SQL Server 2005 unterstützt auch verwaltete UDFs, die dem `ManagedDatabaseConstructs`-Projekt hinzugefügt werden können, genau wie die verwalteten gespeicherten Prozeduren aus den Schritten 3 und 5. In diesem Schritt implementieren Sie die `udf_ComputeInventoryValue` UDF in verwaltetem Code.
 
-Eine verwaltete UDF zum Hinzufügen der `ManagedDatabaseConstructs` Projekt, mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer aus, und wählen Sie ein neues Element hinzufügen. Wählen Sie die User-Defined-Vorlage im Dialogfeld "Neues Element hinzufügen", und nennen Sie die neue UDF-Datei `udf_ComputeInventoryValue_Managed.vb`.
+Um dem `ManagedDatabaseConstructs` Projekt eine verwaltete benutzerdefinierte Funktion hinzuzufügen, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie ein neues Element hinzufügen aus. Wählen Sie im Dialogfeld Neues Element hinzufügen die benutzerdefinierte Vorlage aus, und benennen Sie die neue UDF-Datei `udf_ComputeInventoryValue_Managed.vb`.
 
-[![Eine neue verwaltete UDF zum ManagedDatabaseConstructs Projekt hinzufügen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image60.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image59.png)
+[![dem Projekt manageddatabaseconstructs eine neue verwaltete UDF hinzufügen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image60.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image59.png)
 
-**Abbildung 25**: Eine neue verwaltete UDF zum Hinzufügen der `ManagedDatabaseConstructs` Projekt ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
+**Abbildung 25**: Hinzufügen einer neuen verwalteten UDF zum `ManagedDatabaseConstructs` Projekt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
-Die Vorlage für eine benutzerdefinierte Funktion erstellt eine `Partial` Klasse mit dem Namen `UserDefinedFunctions` mit einer Methode, deren Name den Klassennamen für die s-Datei entspricht (`udf_ComputeInventoryValue_Managed`, in diesem Fall). Diese Methode wird ergänzt, mit der [ `SqlFunction` Attribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), die kennzeichnet, dass der Methode als eine verwaltete UDF.
+Die Vorlage für benutzerdefinierte Funktionen erstellt eine `Partial` Klasse mit dem Namen `UserDefinedFunctions` mit einer Methode, deren Name mit dem Namen der Klassendatei (`udf_ComputeInventoryValue_Managed`in dieser Instanz) identisch ist. Diese Methode wird mithilfe des [`SqlFunction`-Attributs](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx)ergänzt, das die Methode als verwaltete UDF ausweist.
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
-Die `udf_ComputeInventoryValue` Methodenrückgabe derzeit eine [ `SqlString` Objekt](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) und nicht alle benötigten Eingabeparameter akzeptiert. Wir müssen die Definition der Methode aktualisieren, damit sie akzeptiert drei Eingabeparameter - `UnitPrice`, `UnitsInStock`, und `Discontinued` - und gibt eine `SqlMoney` Objekt. Die Logik zum Berechnen des Inventur-Werts ist identisch mit der in der T-SQL `udf_ComputeInventoryValue` UDF.
+Die `udf_ComputeInventoryValue`-Methode gibt derzeit ein [`SqlString`-Objekt](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) zurück und akzeptiert keine Eingabeparameter. Wir müssen die Methoden Definition aktualisieren, damit Sie drei Eingabeparameter akzeptiert: `UnitPrice`, `UnitsInStock`und `Discontinued`, und ein `SqlMoney` Objekt zurückgeben. Die Logik zum Berechnen des Inventur Werts ist identisch mit der Logik in der T-SQL-`udf_ComputeInventoryValue`-UDF.
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
-Beachten Sie, dass die Eingabeparameter der UDF-s-Methode von den entsprechenden SQL-Typen: `SqlMoney` für die `UnitPrice` Feld [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) für `UnitsInStock`, und [ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) für `Discontinued`. Diese Datentypen entsprechen, die in definierten Typen der `Products` Tabelle: der `UnitPrice` Spalte ist vom Typ `money`, `UnitsInStock` Spalte vom Typ `smallint`, und die `Discontinued` Spalte vom Typ `bit`.
+Beachten Sie, dass es sich bei den Eingabe Parametern der UDF-Methode um die entsprechenden SQL-Typen handelt: `SqlMoney` für das `UnitPrice` Feld, [`SqlInt16`](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) für `UnitsInStock`und [`SqlBoolean`](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) für `Discontinued`. Diese Datentypen entsprechen den Typen, die in der `Products` Tabelle definiert sind: die `UnitPrice` Spalte hat den Typ `money`, die `UnitsInStock` Spalte vom Typ `smallint`und die Spalte `Discontinued` vom Typ `bit`.
 
-Der Code beginnt mit der Erstellung einer `SqlMoney` Instanz mit dem Namen `inventoryValue` , die einen Wert von 0 zugewiesen ist. Die `Products` Table erlaubt, für die Datenbank `NULL` Werte in der `UnitsInPrice` und `UnitsInStock` Spalten. Daher wir zuerst prüfen um festzustellen, ob diese Werte enthalten müssen `NULL` s, die wir durch die `SqlMoney` s-Objekt [ `IsNull` Eigenschaft](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx). Wenn beide `UnitPrice` und `UnitsInStock` enthalten nicht`NULL` Werte, berechnen wir die `inventoryValue` das Produkt der beiden sein. Wenn danach `Discontinued` ist "true", und klicken Sie dann wir den Wert halbieren.
+Der Code beginnt mit dem Erstellen einer `SqlMoney` Instanz mit dem Namen `inventoryValue`, der der Wert 0 zugewiesen wird. Die `Products` Tabelle ermöglicht Daten Bank `NULL` Werte in den Spalten `UnitsInPrice` und `UnitsInStock`. Daher müssen wir zunächst überprüfen, ob diese Werte `NULL` s enthalten, die wir über die `SqlMoney` Objekt- [`IsNull` Eigenschaft](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx)durchführen. Wenn sowohl `UnitPrice` als auch `UnitsInStock` nicht`NULL` Werte enthalten, berechnen wir die `inventoryValue` als Produkt der beiden. Wenn `Discontinued` dann true ist, wird der Wert halbiert.
 
 > [!NOTE]
-> Die `SqlMoney` Objekt kann nur zwei `SqlMoney` Instanzen miteinander multipliziert werden sollen. Es lässt nicht zu einer `SqlMoney` Instanz eine literale Gleitkommazahl multipliziert werden. Aus diesem Grund zu halbieren `inventoryValue` wir Multiplizieren Sie es mit einer neuen `SqlMoney` Instanz, die den Wert 0,5 aufweist.
+> Das `SqlMoney`-Objekt ermöglicht nur das Multiplizieren zweier `SqlMoney` Instanzen. Es ist nicht zulässig, dass eine `SqlMoney` Instanz mit einer literalen Gleit Komma Zahl multipliziert wird. Um die `inventoryValue` zu halbieren, multiplizieren wir Sie daher mit einer neuen `SqlMoney` Instanz mit dem Wert 0,5.
 
-## <a name="step-11-deploying-the-managed-udf"></a>Schritt 11: Bereitstellen der verwalteten UDFs
+## <a name="step-11-deploying-the-managed-udf"></a>Schritt 11: Bereitstellen der verwalteten UDF
 
-Nun, dass die verwaltete benutzerdefinierte Funktion erstellt wurde, werden sie mit der Northwind-Datenbank bereitstellen. Wie in Schritt 4 beschrieben, werden die verwalteten Objekte in einer SQL Server-Datenbankprojekt bereitgestellt, mit der rechten Maustaste auf den Projektnamen im Projektmappen-Explorer, und die Bereitstellungsoption aus dem Kontextmenü auswählen.
+Nachdem die verwaltete UDF nun erstellt wurde, können wir Sie in der Northwind-Datenbank bereitstellen. Wie in Schritt 4 gezeigt, werden die verwalteten Objekte in einem SQL Server Projekt bereitgestellt, indem Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen klicken und im Kontextmenü die Option bereitstellen auswählen.
 
-Nachdem Sie das Projekt bereitgestellt haben, zurück zu SQL Server Management Studio, und aktualisieren Sie den Ordner Skalarwertfunktionen. Sie sollten jetzt zwei Einträge sehen:
+Nachdem Sie das Projekt bereitgestellt haben, kehren Sie zu SQL Server Management Studio zurück, und aktualisieren Sie den Ordner mit den skalaren Wert Funktionen. Nun sollten zwei Einträge angezeigt werden:
 
-- `dbo.udf_ComputeInventoryValue` – der T-SQL-UDF in Schritt 9 erstellt und
-- `dbo.udf ComputeInventoryValue_Managed` – das verwaltete UDF erstellt in Schritt 10, die gerade bereitgestellt wurde.
+- `dbo.udf_ComputeInventoryValue`-die in Schritt 9 erstellte t-SQL-UDF und
+- `dbo.udf ComputeInventoryValue_Managed`: die in Schritt 10 erstellte verwaltete UDF, die gerade bereitgestellt wurde.
 
-Um diese verwaltete UDF zu testen, führen Sie die folgende Abfrage aus in Management Studio:
+Um diese verwaltete UDF zu testen, führen Sie die folgende Abfrage in Management Studio aus:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample15.sql)]
 
-Dieser Befehl verwendet die verwaltete `udf ComputeInventoryValue_Managed` UDF anstelle von T-SQL `udf_ComputeInventoryValue` UDF, aber die Ausgabe ist identisch. Verweisen Sie zurück auf Abbildung 23, um einen Screenshot der UDF-s-Ausgabe anzuzeigen.
+Dieser Befehl verwendet die verwaltete `udf ComputeInventoryValue_Managed` UDF anstelle des t-SQL-`udf_ComputeInventoryValue` UDF, aber die Ausgabe ist identisch. In Abbildung 23 finden Sie einen Screenshot der UDF s-Ausgabe.
 
-## <a name="step-12-debugging-the-managed-database-objects"></a>Schritt 12: Die verwalteten Datenbankobjekte Debuggen
+## <a name="step-12-debugging-the-managed-database-objects"></a>Schritt 12: Debuggen der verwalteten Datenbankobjekte
 
-In der [gespeicherte Prozeduren Debuggen](debugging-stored-procedures-vb.md) Tutorial erläutert die drei Optionen für das Debuggen von SQL Server über Visual Studio: Direkte Datenbankdebugging, Anwendungsdebugging und aus einem SQL Server-Projekt debuggen. Verwaltete Datenbank Objekte können nicht über direktes Datenbankdebugging debuggt werden, sind aber debuggt werden können, von einer Clientanwendung und direkt in der SQL Server-Projekt. Damit das Debuggen funktioniert muss jedoch die SQL Server 2005-Datenbank SQL/CLR-Debuggen zulassen. Bedenken Sie, dass beim ersten Erstellen der `ManagedDatabaseConstructs` Projekt Visual Studio uns gefragt, ob wir wollten SQL/CLR-Debuggen (siehe Abbildung 6 in Schritt2) aktivieren. Diese Einstellung kann geändert werden, mit der rechten Maustaste auf die Datenbank im Server-Explorer-Fenster.
+Im Tutorial zum [Debuggen gespeicherter Prozeduren](debugging-stored-procedures-vb.md) wurden die drei Optionen zum Debuggen von SQL Server über Visual Studio erläutert: direktes Debuggen SQL Server von Datenbanken, Debuggen von Anwendungen und Debuggen Verwaltete Datenbankobjekte können nicht über das direkte Daten Bank Debugging debuggt werden, Sie können jedoch von einer Client Anwendung aus und direkt aus dem SQL Server Projekt debuggt werden. Damit das Debuggen funktioniert, muss die SQL Server 2005-Datenbank jedoch SQL/CLR-Debugging zulassen. Beim ersten Erstellen des `ManagedDatabaseConstructs` Projekts fragte Visual Studio, ob das SQL/CLR-Debuggen aktiviert werden soll (siehe Abbildung 6 in Schritt 2). Diese Einstellung kann geändert werden, indem Sie im Server-Explorer Fenster mit der rechten Maustaste auf die Datenbank klicken.
 
-![Stellen Sie sicher, dass die Datenbank SQL/CLR-Debuggen ermöglicht](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image62.png)
+![Sicherstellen, dass die Datenbank SQL/CLR-Debugging zulässt](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image62.png)
 
-**Abbildung 26**: Stellen Sie sicher, dass die Datenbank SQL/CLR-Debuggen ermöglicht
+**Abbildung 26**: sicherstellen, dass die Datenbank SQL/CLR-Debugging zulässt
 
-Angenommen, wir, zum Debuggen wollten der `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur. Wir zunächst einen Haltepunkt im Code der Festlegen der `GetProductsWithPriceLessThan` Methode.
+Stellen Sie sich vor, dass die `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur debuggt werden soll. Wir legen zunächst einen Haltepunkt im Code der `GetProductsWithPriceLessThan` Methode fest.
 
-[![Legen Sie einen Haltepunkt in der GetProductsWithPriceLessThan-Methode](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image64.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image63.png)
+[![einen Haltepunkt in der getproductwithpriceless than-Methode festlegen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image64.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image63.png)
 
-**Abbildung 27**: Festlegen eines Haltepunkts in der `GetProductsWithPriceLessThan` Methode ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image65.png))
+**Abbildung 27**: Festlegen eines Breakpoints in der `GetProductsWithPriceLessThan`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image65.png))
 
-Lassen Sie s ein erster Blick auf die verwalteten Datenbankobjekte aus dem SQL Server-Projekt debuggen. Da unsere Projektmappe zwei Projekte - enthält die `ManagedDatabaseConstructs` SQL Server-Projekt zusammen mit unserer Website, um aus dem SQL Server-Projekt debuggen, wir anweisen, starten Sie Visual Studio müssen, die `ManagedDatabaseConstructs` SQL-Server-Projekt, wenn wir das Debuggen starten. Mit der rechten Maustaste die `ManagedDatabaseConstructs` Projekt im Projektmappen-Explorer, und wählen Sie die Gruppe als Startprojekt-Option im Kontextmenü.
+Sehen Sie sich zunächst das Debuggen der verwalteten Datenbankobjekte aus dem SQL Server-Projekt an. Da unsere Lösung zwei Projekte enthält: die `ManagedDatabaseConstructs` SQL Server Projekt zusammen mit unserer Website. um das SQL Server Projekt zu debuggen, müssen Sie Visual Studio anweisen, das `ManagedDatabaseConstructs` SQL Server Projekt beim Debuggen zu starten. Klicken Sie mit der rechten Maustaste auf das Projekt `ManagedDatabaseConstructs` in Projektmappen-Explorer, und wählen Sie im Kontextmenü die Option als Startprojekt festlegen aus.
 
-Wenn die `ManagedDatabaseConstructs` Projekt aus dem Ausführen die SQL-Anweisungen im Debugger gestartet wird die `Test.sql` -Datei, die im befindet der `Test Scripts` Ordner. Z. B. zum Testen der `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur, ersetzen Sie die vorhandene `Test.sql` Dateiinhalt durch die folgende Anweisung, die aufruft der `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur übergeben die `@CategoryID` 14,95 Wert:
+Wenn das `ManagedDatabaseConstructs` Projekt vom Debugger gestartet wird, werden die SQL-Anweisungen in der Datei `Test.sql` ausgeführt, die sich im Ordner `Test Scripts` befindet. Wenn Sie z. b. die `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur testen möchten, ersetzen Sie den vorhandenen `Test.sql` Dateiinhalt durch die folgende Anweisung, die die `GetProductsWithPriceLessThan` verwaltete gespeicherte Prozedur aufruft, die den `@CategoryID` Wert 14,95 übergibt:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample16.sql)]
 
-Wenn Sie speichern das obige Skript in eingegeben `Test.sql`, starten Sie das Debuggen, indem Sie dem Debugmenü den Ausnahmebefehl und auswählen, Debugging starten oder durch Drücken von F5 oder die grüne play-Symbol auf der Symbolleiste. Dies wird erstellen Sie die Projekte in der Projektmappe, die verwalteten Datenbankobjekte für die Northwind-Datenbank bereitstellen und führen Sie dann die `Test.sql` Skript. An diesem Punkt wird der Haltepunkt erreicht, und wir können durchlaufen die `GetProductsWithPriceLessThan` -Methode, die Werte der Eingabeparameter prüfen und so weiter.
+Nachdem Sie das obige Skript in `Test.sql`eingegeben haben, starten Sie das Debuggen, indem Sie im Menü Debuggen auf Debuggen starten klicken oder F5 oder das grüne Wiedergabe Symbol auf der Symbolleiste drücken. Dadurch werden die Projekte in der Projekt Mappe erstellt, die verwalteten Datenbankobjekte in der Northwind-Datenbank bereitgestellt und dann das `Test.sql` Skript ausgeführt. An diesem Punkt wird der Breakpoint angezeigt, und wir können die `GetProductsWithPriceLessThan`-Methode schrittweise durchlaufen, die Werte der Eingabeparameter überprüfen usw.
 
-[![Der Haltepunkt in der Methode GetProductsWithPriceLessThan wurde erreicht.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image67.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image66.png)
+[![den Breakpoint in der getproductwithpriceless than-Methode wurde gefunden.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image67.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image66.png)
 
-**Abbildung 28**: Haltepunkt in der `GetProductsWithPriceLessThan` -Methode wurde erreicht ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image68.png))
+**Abbildung 28**: der Haltepunkt in der `GetProductsWithPriceLessThan`-Methode wurde getroffen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image68.png))
 
-In der Reihenfolge für eine SQL-Datenbank zu debuggenden Objekts, durch eine Clientanwendung ist es zwingend erforderlich, dass die Datenbank für die Unterstützung des Debuggens der Anwendung konfiguriert werden. Mit der rechten Maustaste auf die Datenbank im Server-Explorer, und stellen Sie sicher, dass die Anwendungsdebuggen-Option aktiviert ist. Darüber hinaus müssen wir so konfigurieren Sie die ASP.NET-Anwendung für die Integration der SQL-Debugger und Verbindungspooling zu deaktivieren. Diese Schritte wurden erläutert im Detail in Schritt2 der [gespeicherte Prozeduren Debuggen](debugging-stored-procedures-vb.md) Tutorial.
+Damit ein SQL-Datenbankobjekt über eine Client Anwendung debuggt werden kann, ist es zwingend erforderlich, dass die Datenbank so konfiguriert wird, dass das Anwendungs Debugging unterstützt wird. Klicken Sie in Server-Explorer mit der rechten Maustaste auf die Datenbank, und stellen Sie sicher, dass die Option Anwendungs Debugging aktiviert ist. Außerdem müssen wir die ASP.NET-Anwendung so konfigurieren, dass Sie in den SQL-Debugger integriert und das Verbindungspooling deaktiviert wird. Diese Schritte wurden in Schritt 2 des Tutorials zum [Debuggen gespeicherter Prozeduren](debugging-stored-procedures-vb.md) ausführlich erläutert.
 
-Nachdem Sie die ASP.NET-Anwendung und die Datenbank konfiguriert haben, der ASP.NET-Website als Startprojekt festlegen und mit dem Debuggen beginnen. Wenn Sie eine Seite, die der verwalteten Objekte, die ein Haltepunkt verfügt über eine aufruft besuchen, die Anwendung wird angehalten, und Steuerelement ist jetzt über, die im Debugger, in dem können Sie den Code schrittweise durchlaufen, wie in Abbildung 28 dargestellt.
+Nachdem Sie die Anwendung und die Datenbank ASP.NET konfiguriert haben, legen Sie die ASP.NET-Website als Startprojekt fest, und starten Sie das Debuggen. Wenn Sie eine Seite aufrufen, die eines der verwalteten Objekte aufruft, die über einen Haltepunkt verfügt, wird die Anwendung angehalten, und die Steuerung wird an den Debugger übergeben, in dem Sie den Code schrittweise durchlaufen können (siehe Abbildung 28).
 
-## <a name="step-13-manually-compiling-and-deploying-managed-database-objects"></a>Schritt 13: Manuell verwaltete kompilieren und Bereitstellen von Datenbanken
+## <a name="step-13-manually-compiling-and-deploying-managed-database-objects"></a>Schritt 13: Manuelles kompilieren und Bereitstellen von verwalteten Datenbankobjekten
 
-SQL Server-Projekte erleichtern das Erstellen, kompilieren und Bereitstellen von verwalteten Datenbankobjekten. SQL Server-Projekte sind leider nur in den Editionen Professional und Team-Systeme von Visual Studio verfügbar. Wenn Sie Visual Web Developer oder der Standard Edition von Visual Studio verwenden und die verwalteten Datenbankobjekte verwenden möchten, müssen Sie Sie manuell erstellen und bereitstellen können. Dies umfasst vier Schritte:
+SQL Server Projekte vereinfachen die Erstellung, Kompilierung und Bereitstellung verwalteter Datenbankobjekte. Leider sind SQL Server Projekte nur in den Editionen Professional und Team Systems von Visual Studio verfügbar. Wenn Sie Visual Web Developer oder die Standard Edition von Visual Studio verwenden und verwaltete Datenbankobjekte verwenden möchten, müssen Sie diese manuell erstellen und bereitstellen. Dies umfasst vier Schritte:
 
-1. Erstellen Sie eine Datei, die den Quellcode für das verwaltete Datenbankobjekt enthält,
+1. Erstellen Sie eine Datei, die den Quellcode für das verwaltete Datenbankobjekt enthält.
 2. Kompilieren Sie das Objekt in eine Assembly,
-3. Registrieren Sie die Assembly mit der SQL Server 2005-Datenbank, und
-4. Erstellen Sie ein Datenbankobjekt in SQL-Server, der auf die entsprechende Methode in der Assembly verweist.
+3. Registrieren Sie die Assembly bei der SQL Server 2005-Datenbank, und
+4. Erstellen Sie in SQL Server ein Datenbankobjekt, das auf die entsprechende Methode in der Assembly zeigt.
 
-Diese Aufgaben zu veranschaulichen, lassen Sie die s-Erstellen eines neuen verwalteten gespeicherten Prozedur, die Produkte zurückgibt, deren `UnitPrice` ist größer als ein angegebener Wert. Erstellen Sie eine neue Datei auf Ihrem Computer, die mit dem Namen `GetProductsWithPriceGreaterThan.vb` , und geben Sie den folgenden Code in die Datei (Sie können Visual Studio, Editor oder einem Text-Editor, um dies zu erreichen):
+Um diese Aufgaben zu veranschaulichen, erstellen Sie eine neue verwaltete gespeicherte Prozedur, die die Produkte zurückgibt, deren `UnitPrice` größer als ein angegebener Wert ist. Erstellen Sie auf Ihrem Computer eine neue Datei mit dem Namen `GetProductsWithPriceGreaterThan.vb`, und geben Sie den folgenden Code in die Datei ein (Sie können Visual Studio, Notepad oder einen beliebigen Text-Editor verwenden, um dies zu erreichen):
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample17.vb)]
 
-Dieser Code ist nahezu identisch mit der `GetProductsWithPriceLessThan` Methode, die in Schritt 5 erstellt haben. Die einzigen Unterschiede sind die Methodennamen die `WHERE` -Klausel und den Namen des Parameters in der Abfrage verwendet. In der `GetProductsWithPriceLessThan` -Methode, die `WHERE` Klausel lesen: `WHERE UnitPrice < @MaxPrice`. Hier im `GetProductsWithPriceGreaterThan`, wir verwenden: `WHERE UnitPrice > @MinPrice` .
+Dieser Code ist nahezu identisch mit dem in Schritt 5 erstellten `GetProductsWithPriceLessThan` Methode. Die einzigen Unterschiede sind die Methodennamen, die `WHERE`-Klausel und der Parameter Name, der in der Abfrage verwendet wird. Zurück in der `GetProductsWithPriceLessThan`-Methode hat die `WHERE`-Klausel Folgendes gelesen: `WHERE UnitPrice < @MaxPrice`. Hier verwenden wir in `GetProductsWithPriceGreaterThan`: `WHERE UnitPrice > @MinPrice`.
 
-Nun müssen wir diese Klasse in eine Assembly zu kompilieren. In der Befehlszeile aus, navigieren Sie zu dem Verzeichnis, in dem Sie gespeichert haben, die `GetProductsWithPriceGreaterThan.vb` Datei und Verwenden von c#-Compiler (`csc.exe`) die Klassendatei in eine Assembly zu kompilieren:
+Wir müssen diese Klasse nun in eine Assembly kompilieren. Navigieren Sie in der Befehlszeile zu dem Verzeichnis, in dem Sie die `GetProductsWithPriceGreaterThan.vb` Datei gespeichert haben C# , und verwenden Sie den Compiler (`csc.exe`), um die Klassendatei in eine Assembly zu kompilieren:
 
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample18.cmd)]
 
-Wenn der Ordner, der v `bc.exe` in nicht im System s `PATH`, müssen Sie den Pfad, vollständig zu verweisen `%WINDOWS%\Microsoft.NET\Framework\version\`, wie folgt:
+Wenn sich der Ordner, der die v-`bc.exe` enthält, nicht im `PATH`"System" befindet, müssen Sie den Pfad `%WINDOWS%\Microsoft.NET\Framework\version\`wie folgt vollständig referenzieren:
 
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample19.cmd)]
 
-[![Kompilieren Sie GetProductsWithPriceGreaterThan.vb in eine Assembly.](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image70.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image69.png)
+[!["getproduczwithpreigreaterthan. vb" in eine Assembly kompilieren](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image70.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image69.png)
 
-**Abbildung 29**: Kompilieren Sie `GetProductsWithPriceGreaterThan.vb` in eine Assembly ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image71.png))
+**Abbildung 29**: Kompilieren von `GetProductsWithPriceGreaterThan.vb` in eine Assembly ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image71.png))
 
-Die `/t` -Flag gibt an, dass die Visual Basic-Klassendatei in eine DLL-Datei (statt einer ausführbaren Datei) kompiliert werden soll. Die `/out` -Flag gibt an, den Namen der resultierenden Assembly.
+Das `/t`-Flag gibt an, dass die Visual Basic Klassendatei in eine DLL (und nicht in eine ausführbare Datei) kompiliert werden soll. Das `/out`-Flag gibt den Namen der resultierenden Assembly an.
 
 > [!NOTE]
-> Anstatt Kompilieren der `GetProductsWithPriceGreaterThan.vb` Klassendatei, die über die Befehlszeile an, Sie Alternativ können [Visual Basic Express Edition](https://msdn.microsoft.com/vstudio/express/vb/) oder erstellen Sie ein separates Class Library-Projekt in Visual Studio Standard Edition. S Ren Jacob Lauritsen hat Ihr Postfach bereitgestellt, solche ein Visual Basic Express Edition-Projekt mit Code für die `GetProductsWithPriceGreaterThan` gespeicherte Prozedur und die beiden verwalteten gespeicherte Prozeduren und UDF in den Schritten 3, 5 und 10 erstellt. S Ren s Projekt enthält auch die T-SQL-Befehle erforderlich, um den entsprechenden Datenbankobjekten hinzufügen.
+> Anstatt die `GetProductsWithPriceGreaterThan.vb` Klassendatei von der Befehlszeile aus zu kompilieren, können Sie alternativ [Visual Basic Express Edition](https://msdn.microsoft.com/vstudio/express/vb/) verwenden oder in Visual Studio Standard Edition ein separates Klassen Bibliotheksprojekt erstellen. S ren Jacob Lauritsen hat ein solches Visual Basic Express Edition-Projekt mit Code für die gespeicherte Prozedur `GetProductsWithPriceGreaterThan` und die beiden verwalteten gespeicherten Prozeduren und UDF bereitgestellt, die in den Schritten 3, 5 und 10 erstellt wurden. Das s-Projekt enthält auch die T-SQL-Befehle, die zum Hinzufügen der entsprechenden Datenbankobjekte erforderlich sind.
 
-Durch den Code in eine Assembly kompiliert wird können wir die Assembly in der SQL Server 2005-Datenbank zu registrieren. Dies erfolgt mithilfe von T-SQL, mit dem Befehl `CREATE ASSEMBLY`, oder über SQL Server Management Studio. Lassen Sie s den Fokus auf mithilfe von Management Studio.
+Nachdem der Code in eine Assembly kompiliert wurde, können wir die Assembly innerhalb der SQL Server 2005-Datenbank registrieren. Dies kann über T-SQL erfolgen, mithilfe des Befehls `CREATE ASSEMBLY`oder über SQL Server Management Studio. Konzentrieren Sie sich auf die Verwendung Management Studio.
 
-Erweitern Sie in Management Studio im Ordner Programmierbarkeit der Northwind-Datenbank aus. Eines der Unterordner wird Assemblys. Um die Datenbank manuell eine neue Assembly hinzuzufügen, mit der rechten Maustaste auf den Ordner Assemblys, und wählen Sie die neue Assembly aus dem Kontextmenü aus. Diese zeigt die neue Assembly Dialogfeld (siehe Abbildung 30). Klicken Sie auf die Schaltfläche zum Durchsuchen, wählen die `ManuallyCreatedDBObjects.dll` Assembly, die wir gerade kompiliert, und klicken Sie dann auf OK, um die Assembly mit der Datenbank hinzuzufügen. Sie sollte nicht die `ManuallyCreatedDBObjects.dll` Assembly im Objekt-Explorer.
+Erweitern Sie in Management Studio den Ordner Programmierbarkeit in der Northwind-Datenbank. Einer der Unterordner ist Assemblys. Wenn Sie der Datenbank manuell eine neue Assembly hinzufügen möchten, klicken Sie mit der rechten Maustaste auf den Ordner Assemblys, und wählen Sie im Kontextmenü neue Assembly aus. Dadurch wird das Dialogfeld neue Assembly angezeigt (siehe Abbildung 30). Klicken Sie auf die Schaltfläche Durchsuchen, wählen Sie die soeben kompilierte `ManuallyCreatedDBObjects.dll` Assembly aus, und klicken Sie dann auf OK, um die Assembly der Datenbank hinzuzufügen. Die `ManuallyCreatedDBObjects.dll` Assembly sollte in der Objekt-Explorer nicht angezeigt werden.
 
-[![Fügen Sie die ManuallyCreatedDBObjects.dll-Assembly in der Datenbank](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image73.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image72.png)
+[![die Assembly manuallykreateddbobjects. dll zur Datenbank hinzufügen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image73.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image72.png)
 
-**Abbildung 30**: Hinzufügen der `ManuallyCreatedDBObjects.dll` Assembly mit der Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image74.png))
+**Abbildung 30**: Hinzufügen der `ManuallyCreatedDBObjects.dll` Assembly zur Datenbank ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image74.png))
 
-![Die ManuallyCreatedDBObjects.dll finden Sie im Objekt-Explorer](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image75.png)
+![Die Datei "manuallykreateddbobjects. dll" wird im Objekt-Explorer](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image75.png)
 
-**Abbildung 31**: Die `ManuallyCreatedDBObjects.dll` finden Sie im Objekt-Explorer
+**Abbildung 31**: die `ManuallyCreatedDBObjects.dll` ist im Objekt-Explorer aufgeführt.
 
-Während wir die Assembly mit der Datenbank Northwind hinzugefügt haben, müssen wir noch eine gespeicherte Prozedur mit Zuordnen der `GetProductsWithPriceGreaterThan` Methode in der Assembly. Zu diesem Zweck öffnen Sie ein neues Abfragefenster, und führen Sie das folgende Skript aus:
+Obwohl wir die Assembly der Northwind-Datenbank hinzugefügt haben, müssen wir eine gespeicherte Prozedur mit der `GetProductsWithPriceGreaterThan`-Methode in der Assembly verknüpfen. Um dies zu erreichen, öffnen Sie ein neues Abfragefenster, und führen Sie das folgende Skript aus:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample20.sql)]
 
-Dadurch wird eine neue gespeicherte Prozedur erstellt, in der Northwind-Datenbank, die mit dem Namen `GetProductsWithPriceGreaterThan` und ordnet es die verwaltete Methode `GetProductsWithPriceGreaterThan` (dieser befindet sich in der Klasse `StoredProcedures`, die in der Assembly ist `ManuallyCreatedDBObjects`).
+Dadurch wird eine neue gespeicherte Prozedur in der Northwind-Datenbank mit dem Namen `GetProductsWithPriceGreaterThan` erstellt und der verwalteten Methode `GetProductsWithPriceGreaterThan` zugeordnet (in der-Klasse `StoredProcedures`, die sich in der-Assembly befindet `ManuallyCreatedDBObjects`).
 
-Nach dem Ausführen des obigen Skripts, aktualisieren Sie den Ordner für gespeicherte Prozeduren im Objekt-Explorer. Daraufhin sollte einen neuer Eintrag der gespeicherten Prozedur - `GetProductsWithPriceGreaterThan` -IValidator.h ein Schlosssymbol angezeigt. Um diese gespeicherte Prozedur zu testen, geben Sie ein, und führen Sie im Abfragefenster das folgende Skript aus:
+Aktualisieren Sie nach dem Ausführen des obigen Skripts den Ordner gespeicherte Prozeduren in der Objekt-Explorer. Es sollte ein neuer Eintrag für eine gespeicherte Prozedur angezeigt werden, `GetProductsWithPriceGreaterThan` mit einem Sperrsymbol daneben angezeigt wird. Um diese gespeicherte Prozedur zu testen, geben Sie das folgende Skript in das Abfragefenster ein, und führen Sie es aus:
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample21.sql)]
 
-Wie in Abbildung 32 dargestellt, handelt es sich bei der obigen Befehl zeigt Informationen für diese Produkte mit einem `UnitPrice` 24,95 $ größer.
+Wie in Abbildung 32 gezeigt, zeigt der obige Befehl Informationen für diese Produkte mit einem `UnitPrice` an, der größer als $24,95 ist.
 
-[![Die ManuallyCreatedDBObjects.dll finden Sie im Objekt-Explorer](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image77.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image76.png)
+[![die Datei "manuallykreateddbobjects. dll" im Objekt-Explorer](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image77.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image76.png)
 
-**Abbildung 32**: Die `ManuallyCreatedDBObjects.dll` finden Sie im Objekt-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
+**Abbildung 32**: die `ManuallyCreatedDBObjects.dll` ist im Objekt-Explorer aufgelistet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
 
-## <a name="summary"></a>Zusammenfassung
+## <a name="summary"></a>Summary
 
-Microsoft SQL Server 2005 bietet Integration mit der Common Language Runtime (CLR), dem Datenbankobjekte mit verwaltetem Code erstellt werden können. Früher, werden diese Datenbankobjekte können nur mit T-SQL erstellt werden, aber nun können wir diese Objekte mithilfe von Programmiersprachen wie Visual Basic .NET erstellen. In diesem Tutorial erstellten verwaltet zwei gespeicherte Prozeduren und eine verwaltete benutzerdefinierte Funktion.
+Microsoft SQL Server 2005 bietet die Integration mit der Common Language Runtime (CLR), die das Erstellen von Datenbankobjekten mithilfe von verwaltetem Code ermöglicht. Zuvor konnten diese Datenbankobjekte nur mit T-SQL erstellt werden. Nun können wir diese Objekte jedoch mit .NET-Programmiersprachen wie Visual Basic erstellen. In diesem Tutorial haben wir zwei verwaltete gespeicherte Prozeduren und eine verwaltete benutzerdefinierte Funktion erstellt.
 
-Visual Studio s SQL Server-Projekt-Typ erleichtert das Erstellen, kompilieren und Bereitstellen von verwalteten Datenbankobjekten. Darüber hinaus bietet sie umfassende Debugunterstützung. SQL Server-Projekt-Typen sind jedoch nur in den Editionen Professional und Team-Systeme von Visual Studio verfügbar. Für diejenigen muss mithilfe von Visual Web Developer oder der Standard Edition von Visual Studio, die Erstellung, Kompilierung und Bereitstellung manuell ausgeführt werden wie in Schritt 13 beschrieben.
+Der Visual Studio s-SQL Server Projekttyp erleichtert das Erstellen, kompilieren und Bereitstellen von verwalteten Datenbankobjekten. Außerdem bietet Sie umfassende Debuggingunterstützung. SQL Server Projekttypen sind jedoch nur in den Editionen Professional und Team Systems von Visual Studio verfügbar. Für Entwickler, die Visual Web Developer oder die Standard Edition von Visual Studio verwenden, müssen die Schritte zur Erstellung, Kompilierung und Bereitstellung manuell ausgeführt werden, wie in Schritt 13 erläutert.
 
-Viel Spaß beim Programmieren!
+Fröhliche Programmierung!
 
 ## <a name="further-reading"></a>Weiterführende Themen
 
-Weitere Informationen zu den Themen in diesem Tutorial erläutert finden Sie in den folgenden Ressourcen:
+Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
-- [Vor- und Nachteile von benutzerdefinierten Funktionen](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
-- [Erstellen von SQL Server 2005-Objekte in verwaltetem Code](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Erstellen von Triggern, die mithilfe von verwaltetem Code in SQLServer 2005](http://www.15seconds.com/issue/041006.htm)
-- [How To: Erstellen und Ausführen einer CLR-SQL Server-Prozedur](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
-- [How To: Erstellen und Ausführen einer CLR-SQL-Server eine benutzerdefinierte Funktion](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
-- [How To: Bearbeiten der `Test.sql` Skript zum Ausführen von SQL-Objekte](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
-- [Einführung in Benutzer, benutzerdefinierte Funktionen](http://www.sqlteam.com/item.asp?ItemID=1955)
-- [Verwalteter Code und SQLServer 2005 (Video)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
+- [Vorteile und Nachteile von benutzerdefinierten Funktionen](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
+- [Erstellen von SQL Server 2005-Objekten in verwaltetem Code](https://channel9.msdn.com/Showpost.aspx?postid=142413)
+- [Erstellen von Triggern mithilfe von verwaltetem Code in SQL Server 2005](http://www.15seconds.com/issue/041006.htm)
+- [Gewusst wie: Erstellen und Ausführen einer gespeicherten CLR-Prozedur SQL Server](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [Vorgehensweise: Erstellen und Ausführen einer CLR-SQL Server benutzerdefinierten Funktion](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [Vorgehensweise: Bearbeiten des `Test.sql` Skripts zum Ausführen von SQL-Objekten](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
+- [Einführung in benutzerdefinierte Funktionen](http://www.sqlteam.com/item.asp?ItemID=1955)
+- [Verwalteter Code und SQL Server 2005 (Video)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [Transact-SQL-Referenz](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
-- [Exemplarische Vorgehensweise: Erstellen eine gespeicherte Prozedur in verwaltetem Code](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
+- [Exemplarische Vorgehensweise: Erstellen einer gespeicherten Prozedur in verwaltetem Code](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
-## <a name="about-the-author"></a>Der Autor
+## <a name="about-the-author"></a>Informationen zum Autor
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor von sieben Büchern zu ASP/ASP.NET und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), arbeitet mit Microsoft-Web-Technologien seit 1998. Er ist als ein unabhängiger Berater, Schulungsleiter und Autor. Sein neueste Buch wird [*Sams Schulen selbst ASP.NET 2.0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er ist unter [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Besonderen Dank an
+## <a name="special-thanks-to"></a>Besonders vielen Dank
 
-Diese tutorialreihe wurde durch viele hilfreiche Reviewer überprüft. Führendes Prüfer für dieses Tutorial wurde S Ren Jacob Lauritsen. Neben diesen Artikel, S Ren auch erstellt, das Visual c# Express Edition-Projekt, das in diesem Artikel s Download manuell kompilieren die verwalteten Datenbankobjekte enthalten. Meine zukünftigen MSDN-Artikeln überprüfen möchten? Wenn dies der Fall ist, löschen Sie mir eine Linie an [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war S ren Jacob Lauritsen. Zusätzlich zur Überprüfung dieses Artikels hat S ren auch das Visual C# Express Edition-Projekt erstellt, das in diesem Artikel Download zum manuellen Kompilieren der verwalteten Datenbankobjekte enthalten ist. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorherige](debugging-stored-procedures-vb.md)
+> [Vorheriges](debugging-stored-procedures-vb.md)
