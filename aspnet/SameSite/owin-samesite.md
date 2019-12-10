@@ -5,12 +5,12 @@ description: Arbeiten mit SameSite-Cookies und der Open Web Interface for .net (
 ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
-ms.openlocfilehash: fc64315e8c3614e460c9a8d551bcb0848b3fe8f9
-ms.sourcegitcommit: 516a168548252ff0eaae2c02ec4bd9ffcfa8375e
+ms.openlocfilehash: ac5ae24eeb9e8e1cc6296667a4bebef72c3eb62c
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951881"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993079"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite-Cookies und die Open Web Interface für .net (owin)
 
@@ -39,7 +39,7 @@ Die ASP.NET 4. x-Version dieses Artikels finden Sie unter <xref:samesite/system-
 
 `SystemWebCookieManager` ist abhängig von den .NET 4.7.2-`System.Web`-APIs, um die `SameSite` Unterstützung und die Patches zum Ändern des Verhaltens zu aktivieren.
 
-Die Gründe für die Verwendung von `SystemWebCookieManager` werden in [owin-und System. Web-Antwort-Cookie-Integrationsproblemen](https://github.com/aspnet/AspNetKatana/wiki/System.Web-response-cookie-integration-issues)beschrieben. `SystemWebCookieManager` wird empfohlen, wenn Sie auf `System.Web`ausführen. 
+Die Gründe für die Verwendung von `SystemWebCookieManager` werden in [owin-und System. Web-Antwort-Cookie-Integrationsproblemen](https://github.com/aspnet/AspNetKatana/wiki/System.Web-response-cookie-integration-issues)beschrieben. `SystemWebCookieManager` wird empfohlen, wenn Sie auf `System.Web`ausführen.
 
 Der folgende Code legt `SameSite` auf `Lax`fest:
 
@@ -74,9 +74,7 @@ Der 2019-Entwurf der `SameSite` Spezifikation:
 * Gibt an, dass Cookies standardmäßig als `SameSite=Lax` behandelt werden.
 * Gibt Cookies an, die `SameSite=None` explizit bestätigen, um die standortübergreifende Übermittlung zu ermöglichen, muss als `Secure`gekennzeichnet werden. `None` ist ein neuer Eintrag zum ablehnen.
 * Ist für die standardmäßige Aktivierung durch [Chrome](https://chromestatus.com/feature/5088147346030592) in [Feb 2020](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)vorgesehen. Die Umstellung auf diesen Standard in 2019 wurde gestartet.
-* Wird von Patches unterstützt, die wie in den folgenden KB beschrieben ausgegeben werden:
-  * [KB-Artikel 4531182](https://support.microsoft.com/help/4531182/kb4531182)
-  * [KB-Artikel 4524421](https://support.microsoft.com/help/4524421/kb4524421)
+* Wird von Patches unterstützt, die wie in KB-Artikeln beschrieben ausgegeben werden. Weitere Informationen finden Sie unter <xref:samesite/kbs-samesite>.
 
 <a name="sob"></a>
 
