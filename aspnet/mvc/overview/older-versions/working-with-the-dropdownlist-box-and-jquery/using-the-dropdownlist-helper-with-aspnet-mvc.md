@@ -90,7 +90,7 @@ Die folgende Zeile
 
 übergibt ein Argument, das **DropDownList** Helper. Diese Zeichenfolge, die "MovieType" in unserem Beispiel bewirkt zwei Dinge:
 
-- Es stellt den Schlüssel für die **DropDownList** Hilfsmethode zum Suchen einer **"IEnumerable"&lt;SelectListItem &gt;**  in die **"ViewBag"**.
+- Es stellt den Schlüssel für die **DropDownList** Hilfsmethode zum Suchen einer **"IEnumerable"&lt;SelectListItem &gt;**  in die **"ViewBag"** .
 - Es ist, das Formularelement MovieType datengebunden. Ist die Sendemethode **HTTP GET**, `MovieType` werden eine Abfragezeichenfolge. Ist die Sendemethode **HTTP POST**, `MovieType` im Nachrichtentext hinzugefügt. Die folgende Abbildung zeigt die Abfragezeichenfolge mit dem Wert 1.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image6.png)
@@ -125,7 +125,7 @@ Durch Übergeben einer `eMovieCategories` Enumeration, die `POST` -Methode, extr
 
 ### <a name="creating-a-multiple-section-select-element"></a>Erstellen eine mehrere Select Section-Element
 
-Der [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) HTML-Hilfsobjekt rendert die HTML-Code `<select>` -Element mit der `multiple` -Attribut, das der Benutzer mehrere Optionen auswählen kann. Navigieren Sie zu dem Link "testen", und wählen Sie dann die **mit mehreren wählen Land** Link. Die gerenderte Benutzeroberfläche ermöglicht Ihnen die Auswahl von mehreren Ländern. In der folgenden Abbildung sind Canada und China ausgewählt.
+Der [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) HTML-Hilfsobjekt rendert die HTML-Code `<select>` -Element mit der `multiple` -Attribut, das der Benutzer mehrere Optionen auswählen kann. Navigieren Sie zu dem Link "testen", und wählen Sie dann die **mit mehreren wählen Land/Region** Link. Die gerenderte Benutzeroberfläche ermöglicht Ihnen die Auswahl von mehreren Ländern. In der folgenden Abbildung sind Canada und China ausgewählt.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image8.png)
 
@@ -139,7 +139,7 @@ Die `GetCountries` Methode erstellt eine Liste der Länder und anschließend üb
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample9.cs)]
 
-1. *items*: Ein ["IEnumerable"](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) mit den Elementen in der Liste. Im obigen Beispiel ist die Liste der Länder.
+1. *items*: Ein ["IEnumerable"](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) mit den Elementen in der Liste. Im obigen Beispiel ist die Liste der Länder/Regionen.
 2. *dataValueField*: Der Name der Eigenschaft in der **"IEnumerable"** Liste, die den Wert enthält. Im obigen Beispiel ist die `ID` Eigenschaft.
 3. *dataTextField*: Der Name der Eigenschaft in der **"IEnumerable"** Liste, die die Informationen für die Anzeige enthält. Im obigen Beispiel ist die `name` Eigenschaft.
 4. *selectedValues*: Die Liste der ausgewählten Werte.
@@ -210,7 +210,7 @@ Der folgende Code zeigt die abgeschlossene *Views\Home\MultiSelectCountry.cshtml
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample16.cshtml)]
 
-Führen Sie die Anwendung, und navigieren Sie zu der `MultiSelectCountry` anzeigen. Versuchen Sie es hinzufügen und Löschen von Ländern. Das bereitgestellte Beispiel zum Herunterladen enthält auch eine `MultiCountryVM` -Methode und die Ansicht, die die MultiSelectCountry-Funktionalität, die mit einer Ansicht implementiert zu modellieren, anstelle von einer **"ViewBag"**.
+Führen Sie die Anwendung, und navigieren Sie zu der `MultiSelectCountry` anzeigen. Versuchen Sie es hinzufügen und Löschen von Ländern. Das bereitgestellte Beispiel zum Herunterladen enthält auch eine `MultiCountryVM` -Methode und die Ansicht, die die MultiSelectCountry-Funktionalität, die mit einer Ansicht implementiert zu modellieren, anstelle von einer **"ViewBag"** .
 
 Im nächsten Abschnitt sehen Sie die Funktionsweise der ASP.NET MVC-Gerüstbau mit der **DropDownList** Helper.
 

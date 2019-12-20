@@ -67,7 +67,7 @@ Wenn die Anwendung zuerst ausgeführt wird, wird einen Anmeldebildschirm angezei
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/TodoList.png)
 
-Jetzt können Sie in der der SPA Land. Alles, was Sie finden Sie unter den sowie beim Bearbeiten von TODO-Elemente gerendert und auf dem Client mithilfe von Knockout und Breeze verwaltet. Untersuchen Sie die app als ein Benutzer ein... aber eines Entwicklers Augen. Verwenden Sie die Developer Tools in Ihrem Browser, um den Netzwerkdatenverkehr zu erfassen. (In InternetExplorer: Drücken Sie F12, wählen Sie die **Netzwerk** Registerkarte, und klicken Sie auf **startet das Sammeln von**.) Jetzt versuchen Sie Folgendes aus:
+Jetzt können Sie in der der SPA Land/Region. Alles, was Sie finden Sie unter den sowie beim Bearbeiten von TODO-Elemente gerendert und auf dem Client mithilfe von Knockout und Breeze verwaltet. Untersuchen Sie die app als ein Benutzer ein... aber eines Entwicklers Augen. Verwenden Sie die Developer Tools in Ihrem Browser, um den Netzwerkdatenverkehr zu erfassen. (In InternetExplorer: Drücken Sie F12, wählen Sie die **Netzwerk** Registerkarte, und klicken Sie auf **startet das Sammeln von**.) Jetzt versuchen Sie Folgendes aus:
 
 - Fügen Sie ein neues Todo-Element hinzu.
 - Klicken Sie auf die Bezeichnung, und bearbeiten Sie den Titel der Todo-Element

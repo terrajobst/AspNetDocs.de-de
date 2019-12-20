@@ -37,7 +37,7 @@ Eine definierende Merkmale des MVC-Musters ist, dass die strikte "Trennung von B
 
 Wenn eine Controllerklasse entscheidet sich, eine HTML-Antwort zurück an einen Client zu rendern, dient er explizit übergeben an die Vorlage anzeigen, die alle Daten benötigt, um die Antwort zu rendern. Anzeigen von Vorlagen sollten niemals Daten abrufen oder eine Anwendung Logik – ausführen und sollten stattdessen beschränken sich selbst, dass nur Code zum Rendern, die das Modell/Daten vom Controller übergebenen gesteuert wird.
 
-Jetzt die Modelldaten durch unsere "dinnerscontroller" übergebenen Klasse, um unsere Ansichtsvorlagen ist einfach und selbsterklärend – eine Liste der Dinner-Objekte im Fall von Index() und einem einzelnen Dinner das Objekt im Fall von Details(), Edit(), Create() und Delete(). Wie wir unsere Anwendung weitere Benutzeroberflächenfunktionen hinzufügen, werden oft wir mehr als nur diese Daten zum Rendern von HTML-Antworten in unsere Ansichtsvorlagen übergeben müssen. Wir möchten beispielsweise ändern Sie das Feld "Land" in unserem bearbeiten und Erstellen von Sichten wird ein HTML-Textfeld zu einem DropDownList-Steuerelement. Anstatt hartcodieren der Dropdown-Liste der Ländernamen in der Vorlage anzeigen möchten wir sie aus einer Liste der unterstützten Länder zu generieren, die wir dynamisch aufzufüllen. Wir benötigen eine Möglichkeit, sowohl die Dinner-Objekt übergeben *und* der Liste der unterstützten Länder, die aus den Controller zu unseren Vorlagen anzeigen.
+Jetzt die Modelldaten durch unsere "dinnerscontroller" übergebenen Klasse, um unsere Ansichtsvorlagen ist einfach und selbsterklärend – eine Liste der Dinner-Objekte im Fall von Index() und einem einzelnen Dinner das Objekt im Fall von Details(), Edit(), Create() und Delete(). Wie wir unsere Anwendung weitere Benutzeroberflächenfunktionen hinzufügen, werden oft wir mehr als nur diese Daten zum Rendern von HTML-Antworten in unsere Ansichtsvorlagen übergeben müssen. Wir möchten beispielsweise ändern Sie das Feld "Land/Region" in unserem bearbeiten und Erstellen von Sichten wird ein HTML-Textfeld zu einem DropDownList-Steuerelement. Anstatt hartcodieren der Dropdown-Liste der Ländernamen in der Vorlage anzeigen möchten wir sie aus einer Liste der unterstützten Länder zu generieren, die wir dynamisch aufzufüllen. Wir benötigen eine Möglichkeit, sowohl die Dinner-Objekt übergeben *und* der Liste der unterstützten Länder/Regionen, die aus den Controller zu unseren Vorlagen anzeigen.
 
 Wir sehen uns zwei Möglichkeiten, die wir dies erreichen können.
 
@@ -45,7 +45,7 @@ Wir sehen uns zwei Möglichkeiten, die wir dies erreichen können.
 
 Die Basisklasse für Controller verfügbar macht, eine "ViewData"-Wörterbuch-Eigenschaft, die verwendet werden kann, um zusätzliche Datenelemente von Controllern an Ansichten übergeben wird.
 
-Beispielsweise können zur Unterstützung der Szenarios, in dem wir das Textfeld "Land" in unserer Ansicht bearbeiten ändern, wird ein HTML-Textfeld zu einem DropDownList-Steuerelement möchten, wir aktualisieren unsere Edit() Action-Methode, um ein SelectList-Objekt (zusätzlich zu einem Dinner-Objekt) zu übergeben, die als das m verwendet werden kann odell von einer Dropdownlist Ländern.
+Beispielsweise können zur Unterstützung der Szenarios, in dem wir das Textfeld "Land/Region" in unserer Ansicht bearbeiten ändern, wird ein HTML-Textfeld zu einem DropDownList-Steuerelement möchten, wir aktualisieren unsere Edit() Action-Methode, um ein SelectList-Objekt (zusätzlich zu einem Dinner-Objekt) zu übergeben, die als das m verwendet werden kann odell von einer Dropdownlist Ländern.
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample1.cs)]
 
@@ -91,7 +91,7 @@ Sobald wir dies tun, werden Intellisense der "Model"-Eigenschaft in unsere ansic
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image3.png)
 
-Wir können unseren Code anzeigen, funktionieren ab dann aktualisieren. Beachten Sie, dass unten wie wir nicht verändert werden die Namen der Eingabeelemente erstellt wird (das Form-Elemente werden immer noch den Namen "Title", "Land") – aber aktualisieren wir die HTML-Hilfsmethoden zum Abrufen der Werte, die mithilfe der DinnerFormViewModel-Klasse:
+Wir können unseren Code anzeigen, funktionieren ab dann aktualisieren. Beachten Sie, dass unten wie wir nicht verändert werden die Namen der Eingabeelemente erstellt wird (das Form-Elemente werden immer noch den Namen "Title", "Land/Region") – aber aktualisieren wir die HTML-Hilfsmethoden zum Abrufen der Werte, die mithilfe der DinnerFormViewModel-Klasse:
 
 [!code-aspx[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample7.aspx)]
 

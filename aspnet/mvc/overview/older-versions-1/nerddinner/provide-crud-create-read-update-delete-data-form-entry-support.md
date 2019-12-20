@@ -33,14 +33,14 @@ Wir haben eingeführt, Controllern und Ansichten und erläutert, wie Sie diese v
 
 ### <a name="urls-handled-by-dinnerscontroller"></a>URLs, die von "dinnerscontroller" verarbeitet
 
-Zuvor hinzugefügten Aktionsmethoden zu "dinnerscontroller", die Unterstützung für zwei URLs implementiert: *"/ dinners"* und *"/ dinners" / Details / [Id]*.
+Zuvor hinzugefügten Aktionsmethoden zu "dinnerscontroller", die Unterstützung für zwei URLs implementiert: *"/ dinners"* und *"/ dinners" / Details / [Id]* .
 
 | **URL** | **VERB** | **Zweck** |
 | --- | --- | --- |
 | */Dinners/* | GET | Eine HTML-Liste mit anstehenden Dinner angezeigt. |
 | */Dinners/Details/[id]* | GET | Anzeigen von Details zu einem bestimmten Dinner. |
 
-Fügen wir jetzt Aktionsmethoden zur Implementierung von drei zusätzliche URLs: *"/ dinners" / Edit / [Id]*, */Dinners/erstellen*, und *"/ dinners" / Delete / [Id]*. Diese URLs werden Unterstützung für die Bearbeitung vorhandener Dinner, neue Dinner erstellen und Löschen von Dinner aktiviert.
+Fügen wir jetzt Aktionsmethoden zur Implementierung von drei zusätzliche URLs: *"/ dinners" / Edit / [Id]* , */Dinners/erstellen*, und *"/ dinners" / Delete / [Id]* . Diese URLs werden Unterstützung für die Bearbeitung vorhandener Dinner, neue Dinner erstellen und Löschen von Dinner aktiviert.
 
 Wir unterstützen HTTP GET- und HTTP POST-Verb-Interaktionen mit diesen neuen URLs. HTTP GET-Anforderungen an diese URLs werden die erste HTML-Ansicht der Daten (ein Formular mit den Dinner-Daten im Fall von "Bearbeiten" aufgefüllt, ein leeres Formular im Fall von "erstellen" und ein Bestätigungsfenster "löschen" im Fall von "Delete") angezeigt. HTTP-POST-Anforderungen an diese URLs werden Speichern/aktualisieren/löschen die Dinner-Daten in unsere "dinnerrepository" (und von dort aus in der Datenbank).
 
@@ -111,7 +111,7 @@ Unserer Ansicht Edit.aspx verwendet die Hilfsmethode Html.TextBox() zur Ausgabe 
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample5.aspx)]
 
-Die oben angegebenen Html.TextBox()-Methode nimmt einen einzelnen Parameter – der verwendet wird, sowohl die Name/Id-Attribute des an den &lt;Eingabetyp = "Text" /&gt; Element, um die Ausgabe als auch die Modelleigenschaft zum Auffüllen des Textbox-Werts aus. Z. B. die Dinner-Objekt, das wir an die Bearbeitungsansicht übergeben hatte "Title" des Werts von ".NET Futures", und daher unsere Html.TextBox("Title") Methodenaufruf Ausgabe: *&lt;Eingabe-Id = "Title" Name = "Title" Type = "Text" Value = ".NET Futures" /&gt;*.
+Die oben angegebenen Html.TextBox()-Methode nimmt einen einzelnen Parameter – der verwendet wird, sowohl die Name/Id-Attribute des an den &lt;Eingabetyp = "Text" /&gt; Element, um die Ausgabe als auch die Modelleigenschaft zum Auffüllen des Textbox-Werts aus. Z. B. die Dinner-Objekt, das wir an die Bearbeitungsansicht übergeben hatte "Title" des Werts von ".NET Futures", und daher unsere Html.TextBox("Title") Methodenaufruf Ausgabe: *&lt;Eingabe-Id = "Title" Name = "Title" Type = "Text" Value = ".NET Futures" /&gt;* .
 
 Alternativ können wir den ersten Html.TextBox()-Parameter verwenden, zum Angeben der Id/Name des Elements, und klicken Sie dann den Wert für die Verwendung als zweiten Parameter explizit übergeben:
 

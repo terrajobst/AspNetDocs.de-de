@@ -195,7 +195,7 @@ Dieser Ansatz bietet ein einfaches Framework, dem wir die überprüfungs- und Ge
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample11.cs)]
 
-Wir verwenden die "yield Return"-Funktion von C#-, um eine Sequenz von jedem RuleViolations zurückgibt. Die ersten sechs regelüberprüfungen, die oben genannten erzwingen einfach, dass die Eigenschaften auf unsere Dinner null oder leer sein darf nicht. Die letzte Regel ist ein wenig interessanter und Aufrufe PhoneValidator.IsValidNumber(), um eine Hilfsmethode, dass wir unser Projekt zu überprüfen, ob die ContactPhone hinzufügen können Zahl Format entspricht der Dinner Land.
+Wir verwenden die "yield Return"-Funktion von C#-, um eine Sequenz von jedem RuleViolations zurückgibt. Die ersten sechs regelüberprüfungen, die oben genannten erzwingen einfach, dass die Eigenschaften auf unsere Dinner null oder leer sein darf nicht. Die letzte Regel ist ein wenig interessanter und Aufrufe PhoneValidator.IsValidNumber(), um eine Hilfsmethode, dass wir unser Projekt zu überprüfen, ob die ContactPhone hinzufügen können Zahl Format entspricht der Dinner Land/Region.
 
 Wir können. NET Unterstützung von regulären Ausdrücken zur Implementierung dieser Unterstützung der Phone-Überprüfung. Im folgenden finden Sie eine einfache PhoneValidator-Implementierung, die wir hinzufügen können auf das Projekt, das wir länderspezifische Regex-Muster Überprüfungen hinzufügen kann:
 

@@ -1,431 +1,431 @@
 ---
 uid: visual-studio/overview/2013/release-notes
-title: ASP.NET and Webtools für Visual Studio 2013 Release Notes | Microsoft-Dokumentation
+title: ASP.net and Web Tools für Visual Studio 2013 Anmerkungen zu dieser Version | Microsoft-Dokumentation
 author: microsoft
-description: Dieses Dokument beschreibt die Version von ASP.NET und Webtools für Visual Studio 2013.
+description: In diesem Dokument wird die Veröffentlichung von ASP.net and Web Tools für Visual Studio 2013 beschrieben.
 ms.author: riande
 ms.date: 10/17/2013
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 4346303967a2446be92910355597feb19c47f338
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d8af9c8e7ee1316a5eac90c5959d07c628154e09
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113028"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600437"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools für Visual Studio 2013 – Anmerkungen zu dieser Version
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Dieses Dokument beschreibt die Version von ASP.NET und Webtools für Visual Studio 2013.
+> In diesem Dokument wird die Veröffentlichung von ASP.net and Web Tools für Visual Studio 2013 beschrieben.
 
 ## <a name="contents"></a>Inhalt
 
 - [Installationshinweise](#TOC1)
 - [Dokumentation](#TOC2)
-- [Softwareanforderungen](#TOC4)
+- [Software Anforderungen](#TOC4)
 
-### <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Neue Features in ASP.NET und Webtools für Visual Studio 2013
+### <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Neue Features in ASP.net and Web Tools für Visual Studio 2013
 
-- [One ASP.NET](#TOC6)
-- [Neue Project-Weboberfläche](#newproj)
-- [ASP.NET-Gerüstbau](#scaffold)
+- [Eine ASP.net](#TOC6)
+- [Neues Webprojekt](#newproj)
+- [ASP.net Gerüstbau](#scaffold)
 - [Browserverknüpfung](#browser-link)
-- [Visual Studio Web-Editor-Erweiterungen](#web-editor)
-- [Azure App Service-Web-Apps-Unterstützung in Visual Studio](#waws)
-- [Webveröffentlichung mit Erweiterungen](#publish)
+- [Erweiterungen von Visual Studio-Web-Editor](#web-editor)
+- [Unterstützung von Web-Apps in Visual Studio Azure App Service](#waws)
+- [Erweiterungen für die Webveröffentlichung](#publish)
 - [NuGet 2.7](#nuget)
-- [ASP.NET-Web Forms](#TOC9)
+- [ASP.net Web Forms](#TOC9)
 - [ASP.NET MVC 5](#TOC10)
-- [ASP.NET Web-API 2](#TOC11)
-- [ASP.NET SignalR](#TOC13)
+- [ASP.net-Web-API 2](#TOC11)
+- [ASP.net signalr](#TOC13)
 - [ASP.NET Identity](#TOC8)
-- [Microsoft OWIN-Komponenten](#TOC7)
+- [Microsoft-owin-Komponenten](#TOC7)
 - [Entity Framework 6](#ef6)
-- [ASP.NET Razor-3](#TOC14)
-- [ASP.NET-App Suspend](#TOC15)
-- [Bekannte Probleme und aktueller Änderungen](#knownissues)
+- [ASP.net Razor 3](#TOC14)
+- [ASP.net App aussetzen](#TOC15)
+- [Bekannte Probleme und wichtige Änderungen](#knownissues)
 
 <a id="TOC1"></a>
 ## <a name="installation-notes"></a>Installationshinweise
 
-ASP.NET and Web Tools für Visual Studio 2013 werden in der main-Installationsprogramm gebündelt und können heruntergeladen werden [hier](https://www.asp.net/downloads).
+ASP.net and Web Tools für Visual Studio 2013 werden im Haupt Installationsprogramm gebündelt und können [hier](https://www.asp.net/downloads)heruntergeladen werden.
 
 <a id="TOC2"></a>
 ## <a name="documentation"></a>Dokumentation
 
-Lernprogramme und Weitere Informationen zu ASP.NET und Webtools für Visual Studio 2013 stehen über die [ASP.NET-Website](https://www.asp.net/).
+Lernprogramme und weitere Informationen zu ASP.net and Web Tools für Visual Studio 2013 stehen auf der [ASP.NET-Website](https://www.asp.net/)zur Verfügung.
 
 <a id="TOC4"></a>
 ## <a name="software-requirements"></a>Softwareanforderungen
 
-ASP.NET and Web Tools erfordert Visual Studio 2013.
+ASP.net and Web Tools erfordert Visual Studio 2013.
 
 <a id="TOC5"></a>
-## <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Neue Features in ASP.NET und Webtools für Visual Studio 2013
+## <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Neue Features in ASP.net and Web Tools für Visual Studio 2013
 
-Die folgenden Abschnitte beschreiben die Funktionen, die in der Version eingeführt wurden.
+In den folgenden Abschnitten werden die Features beschrieben, die in der-Version eingeführt wurden.
 
 <a id="TOC6"></a>
-## <a name="one-aspnet"></a>One ASP.NET
+## <a name="one-aspnet"></a>Eine ASP.net
 
-Mit der Veröffentlichung von Visual Studio 2013 haben wir einen Schritt in Richtung vereinheitlichen die Verwendung von ASP.NET-Technologien, damit Sie leicht kombinieren und identisch mit der gewünschten ergriffen. Beispielsweise können Sie starten Sie ein Projekt mithilfe von MVC und einfach Web Forms-Seiten für das Projekt später hinzufügen, oder Erstellen des Gerüsts für Web-APIs in einem Web Forms-Projekt. Eine ASP.NET geht es einfacher für Sie als Entwickler, die Dinge zu tun, die Sie in ASP.NET gibt, lieben. Unabhängig davon, welche Technologie Sie wählen, können Sie die Gewissheit verfügen, die Sie in der vertrauenswürdigen zugrunde liegende Framework von One ASP.NET erstellen.
+Mit der Veröffentlichung von Visual Studio 2013 haben wir einen Schritt unternommen, um die Verwendung von ASP.NET-Technologien zu vereinheitlichen, damit Sie die gewünschten Möglichkeiten problemlos mischen können. Beispielsweise können Sie ein Projekt mithilfe von MVC starten und später ganz einfach Web Forms Seiten zum Projekt hinzufügen oder ein Gerüst für Web-APIs in einem Web Forms-Projekt verwenden. Eine ASP.net ist alles, was Sie als Entwickler für die Dinge, die Sie in ASP.net lieben, erleichtern soll. Unabhängig davon, welche Technologie Sie auswählen, können Sie sicher sein, dass Sie auf dem vertrauenswürdigen zugrunde liegenden Framework eines ASP.net aufbauen.
 
 <a id="newproj"></a>
-## <a name="new-web-project-experience"></a>Neue Project-Weboberfläche
+## <a name="new-web-project-experience"></a>Neues Webprojekt
 
-Wir haben die Erfahrung mit der Erstellung neuer Webprojekte in Visual Studio 2013 verbessert. In der **neuen ASP.NET-Webprojekts** Dialogfeld können Sie den Projekttyp, Sie möchten, konfigurieren eine beliebige Kombination aus Technologien (Web Forms, MVC, Web-API), konfigurieren Sie Authentifizierungsoptionen und hinzufügen ein Komponententestprojekts, auswählen.
+Wir haben das Erstellen neuer Webprojekte in Visual Studio 2013 verbessert. Im Dialogfeld **Neues ASP.NET-Webprojekt** können Sie den gewünschten Projekttyp auswählen, eine beliebige Kombination von Technologien (Web Forms, MVC, Web-API) konfigurieren, Authentifizierungs Optionen konfigurieren und ein Komponenten Testprojekt hinzufügen.
 
-![Neues ASP.NET-Projekt](release-notes/_static/image1.png)
+![Neues ASP.net-Projekt](release-notes/_static/image1.png)
 
-Der neue Dialog können Sie die standardmäßigen Authentifizierungsoptionen für viele der Vorlagen zu ändern. Z. B. beim Erstellen einer ASP.NET Web Forms-Projekts können Sie eine der folgenden Optionen auswählen:
+Das neue Dialogfeld ermöglicht es Ihnen, die Standard Authentifizierungs Optionen für viele Vorlagen zu ändern. Wenn Sie z. b. ein ASP.net Web Forms-Projekt erstellen, können Sie eine der folgenden Optionen auswählen:
 
 - Keine Authentifizierung
-- Einzelne Benutzerkonten (ASP.NET-Mitgliedschaft oder Anbieter sozialer-Anmeldung)
-- Organisations-Konten (Active Directory in einer internetanwendung)
+- Einzelne Benutzerkonten (ASP.NET Mitgliedschaft oder Social Provider Log in)
+- Organisations Konten (Active Directory in einer Internetanwendung)
 - Windows-Authentifizierung (Active Directory in einer Intranetanwendung)
 
-![Authentifizierungsoptionen](release-notes/_static/image2.png)
+![Authentifizierungs Optionen](release-notes/_static/image2.png)
 
-Weitere Informationen zu den neuen Prozess für das Erstellen von Webprojekten, finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](creating-web-projects-in-visual-studio.md). Weitere Informationen zu den neuen Authentifizierungsoptionen finden Sie unter [ASP.NET Identity](#TOC8) weiter unten in diesem Dokument.
+Weitere Informationen zum neuen Prozess zum Erstellen von Webprojekten finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](creating-web-projects-in-visual-studio.md). Weitere Informationen zu den neuen Authentifizierungs Optionen finden Sie unter [ASP.net Identity](#TOC8) weiter unten in diesem Dokument.
 
 <a id="scaffold"></a>
-## <a name="aspnet-scaffolding"></a>ASP.NET-Gerüstbau
+## <a name="aspnet-scaffolding"></a>ASP.net Gerüstbau
 
-ASP.NET-Gerüstbau ist ein Code-Generierung-Framework für Webanwendungen mit ASP.NET. Es erleichtert die Codebausteine zu Ihrem Projekt hinzufügen, die mit einem Datenmodell interagiert.
+ASP.net Gerüstbau ist ein Code Generierungs Framework für ASP.NET-Webanwendungen. Es vereinfacht das Hinzufügen von Code Bausteinen zu Ihrem Projekt, das mit einem Datenmodell interagiert.
 
-In früheren Versionen von Visual Studio konnte Gerüstbau ASP.NET MVC-Projekte. Mit Visual Studio 2013 können Sie jetzt Gerüstbau für ASP.NET Projekte, einschließlich Web Forms. Visual Studio 2013 unterstützt derzeit keine Generieren von Seiten für eine Web Forms-Projekt, aber Sie können weiterhin Gerüstbau mit Web Forms verwenden, durch das Hinzufügen von MVC-Abhängigkeiten auf das Projekt. Unterstützung für das Generieren von Seiten für Web Forms wird in einem späteren Update hinzugefügt werden.
+In früheren Versionen von Visual Studio waren Gerüstbau auf ASP.NET MVC-Projekte beschränkt. Mit Visual Studio 2013 können Sie nun Gerüstbau für alle ASP.net-Projekte verwenden, einschließlich Web Forms. Visual Studio 2013 unterstützt derzeit keine Erstellung von Seiten für ein Web Forms Projekt, aber Sie können weiterhin Gerüstbau mit Web Forms verwenden, indem Sie dem Projekt MVC-Abhängigkeiten hinzufügen. Die Unterstützung für das Erstellen von Seiten für Web Forms wird in einem späteren Update hinzugefügt.
 
-Wenn Gerüstbau verwenden zu können, stellen wir sicher, dass alle erforderlichen Abhängigkeiten im Projekt installiert sind. Z. B. Wenn Sie mit einem ASP.NET Web Forms-Projekt beginnen, und klicken Sie dann mithilfe von Gerüstbau einer Web-API-Controller hinzu, werden die erforderlichen NuGet-Pakete und Verweise dem Projekt automatisch hinzugefügt.
+Wenn Sie Gerüstbau verwenden, stellen wir sicher, dass alle erforderlichen Abhängigkeiten im Projekt installiert sind. Wenn Sie z. b. mit einem ASP.net-Web Forms Projekt beginnen und dann mithilfe von Gerüstbau einen Web-API-Controller hinzufügen, werden die erforderlichen nuget-Pakete und-Verweise automatisch dem Projekt hinzugefügt.
 
-MVC-Gerüstbau um eine Web Forms-Projekt hinzuzufügen, fügen einen **neues Gerüstelement** , und wählen Sie **MVC 5-Abhängigkeiten** im Dialogfenster. Es gibt zwei Optionen für den Gerüstbau für MVC. Minimaler und vollständiger. Wenn Sie die minimale auswählen, werden nur die NuGet-Pakete und Verweise für ASP.NET MVC zu Ihrem Projekt hinzugefügt. Bei Auswahl der Option "vollständig", die mindestens erforderliche Abhängigkeiten hinzugefügt werden, sowie die erforderlichen Inhaltsdateien für ein MVC-Projekt.
+Fügen Sie ein **Neues Gerüstbau Element** hinzu, und wählen Sie **MVC 5-Abhängigkeiten** im Dialogfenster aus, um einem Web Forms Projekt MVC-Gerüstbau hinzuzufügen. Es gibt zwei Optionen für das Gerüstbau von MVC: Minimal und vollständig. Wenn Sie minimal auswählen, werden nur die nuget-Pakete und-Verweise für ASP.NET MVC dem Projekt hinzugefügt. Wenn Sie die Option vollständig auswählen, werden die minimalen Abhängigkeiten sowie die erforderlichen Inhalts Dateien für ein MVC-Projekt hinzugefügt.
 
-Unterstützung für den Gerüstbau für Async-Controller verwendet, die neuen asynchronen Features von Entity Framework 6.
+Die Unterstützung für Gerüstbau-asynchrone Controller verwendet die neuen Async-Features aus Entity Framework 6.
 
-Weitere Informationen und Lernprogramme finden Sie unter [Gerüstbau-Übersicht über ASP.NET](aspnet-scaffolding-overview.md).
+Weitere Informationen und Tutorials finden Sie unter [Übersicht über ASP.net Gerüstbau](aspnet-scaffolding-overview.md).
 
 <a id="browser-link"></a>
-## <a name="browser-link--signalr-channel-between-browser-and-visual-studio"></a>Browserlink-SignalR-Kanal zwischen Browser und Visual Studio
+## <a name="browser-link--signalr-channel-between-browser-and-visual-studio"></a>Browser Link – signalr-Kanal zwischen Browser und Visual Studio
 
-Die neue [Browserlink](using-browser-link.md) -Funktion können Sie das Verbinden von mehreren Browsern mit Visual Studio, und aktualisieren sie alle durch Klicken auf eine Schaltfläche auf der Symbolleiste. Sie können Verbinden von mehreren Browsern mit Ihrer Entwicklungswebsite, einschließlich der mobilen Emulatoren aus, und klicken Sie auf aktualisieren, aktualisieren Sie alle zur gleichen Zeit alle Browser. Browserverknüpfung macht auch eine API zum ermöglichen Entwicklern das Schreiben von Browser Link-Erweiterungen von verfügbar.
+Mit der neuen [Browser Link](using-browser-link.md) Funktion können Sie mehrere Browser mit Visual Studio verbinden und alle aktualisieren, indem Sie auf der Symbolleiste auf eine Schaltfläche klicken. Sie können mehrere Browser mit ihrer Entwicklungswebsite verbinden, einschließlich mobiler Emulatoren, und auf Aktualisieren klicken, um alle Browser gleichzeitig zu aktualisieren. Der Browser Link macht auch eine API verfügbar, die Entwicklern das Schreiben von Browser Link Erweiterungen ermöglicht.
 
 ![](release-notes/_static/image3.png)
 
-Durch die ermöglicht es Entwicklern, die die Browserlink-API nutzen, wird es möglich, Erstellen von sehr komplexen Szenarien, die über mehrere zwischen Visual Studio und einem beliebigen Browser, der verbunden ist. Web Essentials nutzt die Vorteile der API um eine integrierte Erfahrung zwischen Visual Studio und im Browser auf die Entwicklertools, remote steuern des mobilen Emulatoren und vieles mehr zu erstellen.
+Wenn Sie Entwicklern ermöglichen, die Browser Link-API zu nutzen, können Sie sehr erweiterte Szenarios erstellen, die Grenzen zwischen Visual Studio und jedem verbundenen Browser überschreiten. Web Essentials nutzt die API, um eine integrierte Darstellung zwischen Visual Studio und den Entwicklertools des Browsers zu erstellen, die Remote Steuerung mobiler Emulatoren und vieles mehr.
 
 <a id="web-editor"></a>
-## <a name="visual-studio-web-editor-enhancements"></a>Visual Studio Web-Editor-Erweiterungen
+## <a name="visual-studio-web-editor-enhancements"></a>Erweiterungen von Visual Studio-Web-Editor
 
-Visual Studio 2013 enthält einen neuen HTML-Editor für den Razor-Dateien und HTML-Dateien in Webanwendungen. Der neue HTML-Editor bietet ein einzelnes einheitliches Schema auf Grundlage von HTML5. Es bietet automatische Vervollständigung von Klammern, jQuery-Benutzeroberfläche und AngularJS-Attribut von IntelliSense, Attribut IntelliSense Gruppierung, ID und Klassennamen Intellisense und andere Verbesserungen, die z. B. eine bessere Leistung, Formatierung und SmartTags.
+Visual Studio 2013 enthält einen neuen HTML-Editor für Razor-Dateien und HTML-Dateien in Webanwendungen. Der neue HTML-Editor bietet ein einzelnes einheitliches Schema, das auf HTML5 basiert. Sie verfügt über automatische geschweifter Klammer, jQuery UI und das angularjs-Attribut IntelliSense, Attribute IntelliSense-Gruppierung, ID-und Klassenname IntelliSense und andere Verbesserungen, einschließlich besserer Leistung, Formatierung und Smarttags.
 
-Der folgende Screenshot zeigt mithilfe von Bootstrap Attribut IntelliSense in der HTML-Editor.
+Der folgende Screenshot veranschaulicht die Verwendung des Bootstrap-Attributs IntelliSense im HTML-Editor.
 
-![IntelliSense in HTML-editor](release-notes/_static/image4.png)
+![IntelliSense im HTML-Editor](release-notes/_static/image4.png)
 
-Visual Studio 2013 enthält auch mit beiden CoffeeScript und LESS-Editor integriert. LESS-Editor enthält alle interessanten Features von CSS-Editor, und verfügt über bestimmte Intellisense für Variablen und Mixins in alle weniger Dokumente in der @import Kette.
+Visual Studio 2013 enthält auch die integrierten coffeescript-und less-Editoren. Der less-Editor enthält alle coolen Features aus dem CSS-Editor und verfügt über bestimmte IntelliSense-Funktionen für Variablen und Mixins in allen weniger Dokumenten in der @import Kette.
 
 <a id="waws"></a>
-## <a name="azure-app-service-web-apps-support-in-visual-studio"></a>Azure App Service-Web-Apps-Unterstützung in Visual Studio
+## <a name="azure-app-service-web-apps-support-in-visual-studio"></a>Unterstützung von Web-Apps in Visual Studio Azure App Service
 
-In Visual Studio 2013 mit dem Azure SDK für .NET 2.2 können Sie **Server-Explorer** direkt mit die remote-Web-apps interagieren. Sie melden Sie sich bei Ihrem Azure-Konto, Erstellen neuer Web-apps, apps konfigurieren, echtzeitprotokolle und vieles mehr anzeigen. Feedback nach SDK 2.2 veröffentlicht wird, Sie werden in den Debugmodus Remote in Azure ausführen können. Die meisten neuen Features von Azure App Service-Web-Apps funktionieren auch in Visual Studio 2012, wenn Sie die aktuelle Version des Azure SDK für .NET installieren.
+In Visual Studio 2013 mit dem Azure SDK für .NET 2,2 können Sie **Server-Explorer** verwenden, um direkt mit ihren Remote-Web-Apps zu interagieren. Sie können sich bei Ihrem Azure-Konto anmelden, neue Web-Apps erstellen, Apps konfigurieren, echt Zeitprotokolle anzeigen und vieles mehr. Bald nach der Veröffentlichung von SDK 2,2 können Sie in Azure Remote im Debugmodus ausführen. Die meisten der neuen Features für Azure App Service Web-Apps funktionieren auch in Visual Studio 2012, wenn Sie die aktuelle Version des Azure SDK für .NET installieren.
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-- [Erstellen einer ASP.NET-Web-Apps in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [Erstellen einer ASP.net-Web-App in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
 - [Problembehandlung in einer Web-App in Azure App Service mithilfe von Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
-## <a name="web-publish-enhancements"></a>Webveröffentlichung mit Erweiterungen
+## <a name="web-publish-enhancements"></a>Erweiterungen für die Webveröffentlichung
 
-Visual Studio 2013 enthält neue und verbesserte Web Publish-Funktionen. Hier sind einige davon:
+Visual Studio 2013 enthält neue und verbesserte Webveröffentlichungs Features. Dies sind einige der folgenden:
 
-- Ganz einfach [Automatisieren von "Web.config" dateiverschlüsselung](https://go.microsoft.com/fwlink/?LinkId=325529). (Dieser Link und die folgenden beiden Punkt in der Dokumentation auf MSDN, die möglicherweise nicht verfügbar bis spät in der Tag auf 10/17.)
-- Ganz einfach [automatisieren eine Anwendung offline schalten, während der Bereitstellung dauert](https://go.microsoft.com/fwlink/?LinkId=325530).
-- Konfigurieren von Web Deploy, um [Dateiprüfsumme verwenden, anstatt das zuletzt Änderungsdatum](https://go.microsoft.com/fwlink/?LinkId=325531) zu bestimmen, welche Dateien an den Server kopiert werden sollen.
-- Veröffentlichen Sie schnell können einzelnen ausgewählte Dateien (einschließlich der Datei "Web.config"), bei der Verwendung von FTP oder Dateisystem veröffentlichen Methoden als auch mit Web Deploy.
+- Automatisieren Sie mühelos die [Dateiverschlüsselung von Web. config](https://go.microsoft.com/fwlink/?LinkId=325529). (Dieser Link und die folgenden beiden weisen auf die Dokumentation auf MSDN hin, die möglicherweise erst am Ende des Tages am 10/17 verfügbar ist.)
+- Einfaches [Automatisieren der Offline Schaltung einer Anwendung während der Bereitstellung](https://go.microsoft.com/fwlink/?LinkId=325530).
+- Konfigurieren Sie Web deploy, um die [Datei Prüf Summe anstelle des letzten Änderungs Datums zu verwenden](https://go.microsoft.com/fwlink/?LinkId=325531) , um zu bestimmen, welche Dateien auf den Server kopiert werden sollen.
+- Veröffentlichen Sie die einzelnen ausgewählten Dateien (einschließlich der Datei "Web. config") schnell, wenn Sie die FTP-oder Dateisystem-Veröffentlichungs Methoden sowie die Web deploy verwenden.
 
-Weitere Informationen zur Bereitstellung von ASP.NET finden Sie unter [der ASP.NET-Website](https://go.microsoft.com/fwlink/?LinkId=322027).
+Weitere Informationen zur ASP.net-Webbereitstellung finden Sie auf [der ASP.NET-Website](https://go.microsoft.com/fwlink/?LinkId=322027).
 
 <a id="nuget"></a>
 ## <a name="nuget-27"></a>NuGet 2.7
 
-NuGet 2.7 umfasst einen umfangreichen Satz von neuen Features, die beschrieben werden, im Detail [Anmerkungen zu NuGet 2.7](http://docs.nuget.org/docs/release-notes/nuget-2.7).
+Nuget 2,7 umfasst einen umfangreichen Satz neuer Features, die in den Anmerkungen zur [nuget-Version 2,7](http://docs.nuget.org/docs/release-notes/nuget-2.7)ausführlich beschrieben werden.
 
-Diese Version von NuGet wird auch die Notwendigkeit, bieten explizite Zustimmung für das Feature für die Wiederherstellung von NuGet Paket zum Herunterladen von Paketen entfernt. Zustimmung (und die zugehörigen Kontrollkästchen im NuGet Dialogfeld "Einstellungen") werden jetzt durch Installieren von NuGet gewährt. Wiederherstellen von Paketen funktioniert nun einfach in der Standardeinstellung.
+Diese nuget-Version entfernt auch das Bereitstellen der expliziten Zustimmung für das Paket Wiederherstellungs Feature von nuget, um Pakete herunterzuladen. Die Zustimmung (und das zugehörige Kontrollkästchen im Dialogfeld "Einstellungen" von nuget) wird jetzt durch die Installation von nuget erteilt. Nun funktioniert die Paket Wiederherstellung standardmäßig einfach.
 
 <a id="TOC9"></a>
 ## <a name="aspnet-web-forms"></a>ASP.NET-Web Forms
 
-### <a name="one-aspnet"></a>One ASP.NET
+### <a name="one-aspnet"></a>Eine ASP.net
 
-Die Web Forms-Projektvorlagen nahtlose Integration in die neue Oberfläche für die One ASP.NET. Sie können hinzufügen, MVC und Web-API unterstützen, dem Web Forms-Projekt, und Sie können die Authentifizierung mithilfe von One ASP.NET projekterstellungs-Assistenten konfigurieren. Weitere Informationen finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](creating-web-projects-in-visual-studio.md).
+Die Web Forms-Projektvorlagen integrieren sich nahtlos in die neue ASP.net-Funktion. Sie können Ihrem Web Forms Projekt MVC-und Web-API-Unterstützung hinzufügen, und Sie können die Authentifizierung mithilfe des Assistenten zum Erstellen einer ASP.net-Projekt Erstellung konfigurieren. Weitere Informationen finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](creating-web-projects-in-visual-studio.md).
 
 ### <a name="aspnet-identity"></a>ASP.NET Identity
 
-Die Web Forms-Projektvorlagen unterstützen das neue ASP.NET Identity-Framework. Darüber hinaus unterstützen die Vorlagen jetzt Erstellung eines Web Forms-Intranet-Projekts. Weitere Informationen finden Sie unter [Authentifizierungsmethoden](creating-web-projects-in-visual-studio.md#auth) in **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
+Die Web Forms-Projektvorlagen unterstützen das neue ASP.net Identity Framework. Außerdem unterstützen die Vorlagen nun die Erstellung eines Web Forms intranetprojekts. Weitere Informationen finden Sie unter [Authentifizierungsmethoden](creating-web-projects-in-visual-studio.md#auth) zum **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
 
-### <a name="bootstrap"></a>Bootstrap-Stil
+### <a name="bootstrap"></a>Bootstrap
 
-Verwenden Sie die Web Forms-Vorlagen [Bootstrap](http://twitter.github.io/bootstrap/) , ein schlankes und reaktionsfähige Aussehen und Verhalten bereitzustellen, die Sie problemlos anpassen können. Weitere Informationen finden Sie unter [Bootstrap in den Visual Studio 2013-Web-Projektvorlagen](creating-web-projects-in-visual-studio.md#bootstrap).
+Die Web Forms Vorlagen verwenden [Bootstrap](http://twitter.github.io/bootstrap/) , um ein schlankes und reaktionsfähiges Aussehen und Gefühl bereitzustellen, das Sie problemlos anpassen können. Weitere Informationen finden Sie unter [Bootstrap in den Visual Studio 2013-Webprojekt Vorlagen](creating-web-projects-in-visual-studio.md#bootstrap).
 
 <a id="TOC10"></a>
 ## <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 
-### <a name="one-aspnet"></a>One ASP.NET
+### <a name="one-aspnet"></a>Eine ASP.net
 
-Die Web-MVC-Projektvorlagen nahtlose Integration in die neue Oberfläche für die One ASP.NET. Sie können Ihre MVC-Projekt anpassen und Konfigurieren von Authentifizierung unter Verwendung von One ASP.NET projekterstellungs-Assistenten. Ein einführendes Lernprogramm zu ASP.NET MVC 5 finden Sie unter [erste Schritte mit ASP.NET MVC 5](../../../mvc/overview/getting-started/introduction/getting-started.md).
+Die Web-MVC-Projektvorlagen integrieren sich nahtlos in die neue ASP.NET-Benutzeroberflächen. Sie können Ihr MVC-Projekt anpassen und die Authentifizierung mithilfe des Assistenten für die Erstellung eines ASP.NET-Projekts konfigurieren. Ein Einführungs Tutorial für ASP.NET MVC 5 finden Sie unter [Getting Started with ASP.NET MVC 5](../../../mvc/overview/getting-started/introduction/getting-started.md).
 
-Informationen zum Upgrade von MVC 4-Projekte auf MVC 5 finden Sie unter [das Upgrade von einer ASP.NET MVC 4 und Web-API-Projekt auf ASP.NET MVC 5 und Web-API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
+Weitere Informationen zum Aktualisieren von MVC 4-Projekten auf MVC 5 finden Sie unter [Upgrade eines ASP.NET MVC 4-und Web-API-Projekts auf ASP.NET MVC 5 und Web-API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
 
 ### <a name="aspnet-identity"></a>ASP.NET Identity
 
-Die MVC-Projektvorlagen wurden aktualisiert, um ASP.NET Identity für Authentifizierung und identitätsverwaltung verwenden. Ein Tutorial mit Facebook und Google-Authentifizierung und der neuen Mitgliedschafts-API finden Sie unter [erstellen Sie eine ASP.NET MVC 5-App mit Facebook und Google OAuth2 und OpenID-Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) und [Erstellen einer ASP.NET MVC-app mit Authentifizierung und SQL-Datenbank und in Azure App Service bereitstellen](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+Die MVC-Projektvorlagen wurden aktualisiert, um ASP.net Identity für die Authentifizierung und Identitätsverwaltung zu verwenden. Ein Tutorial mit Facebook-und Google-Authentifizierung und der neuen Mitgliedschafts-API finden Sie unter [Erstellen einer ASP.NET MVC 5-App mit Facebook und Google OAuth2 und OpenID-Anmeldung](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) und [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank und Bereitstellen in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 
-### <a name="bootstrap"></a>Bootstrap-Stil
+### <a name="bootstrap"></a>Bootstrap
 
-MVC-Projektvorlage wurde aktualisiert, um verwenden [Bootstrap](http://getbootstrap.com/) , ein schlankes und reaktionsfähige Aussehen und Verhalten bereitzustellen, die Sie problemlos anpassen können. Weitere Informationen finden Sie unter [Bootstrap in den Visual Studio 2013-Web-Projektvorlagen](creating-web-projects-in-visual-studio.md#bootstrap).
+Die MVC-Projektvorlage wurde aktualisiert, um [Bootstrap](http://getbootstrap.com/) zu verwenden, um ein schlankes und reaktionsfähiges Erscheinungsbild bereitzustellen, das Sie problemlos anpassen können. Weitere Informationen finden Sie unter [Bootstrap in den Visual Studio 2013-Webprojekt Vorlagen](creating-web-projects-in-visual-studio.md#bootstrap).
 
-### <a name="authentication-filters"></a>Authentifizierungsfilter
+### <a name="authentication-filters"></a>Authentifizierungs Filter
 
-Authentifizierungsfilter sind eine neue Art von Filter in ASP.NET MVC, die vor dem Autorisierungsfilter werden also in der ASP.NET MVC-Pipeline ausgeführt und ermöglichen es Ihnen, geben Sie die Authentifizierung Logik pro-Aktion, pro Controller oder global für alle Controller. Authentifizierungsfilter Anmeldeinformationen in der Anforderung zu verarbeiten, und geben einen entsprechenden Prinzipal. Authentifizierungsfilter können authentifizierungsanforderungen auch als Reaktion auf nicht autorisierte Anforderungen hinzufügen.
+Authentifizierungs Filter sind eine neue Art von Filter in ASP.NET MVC, die vor Autorisierungs Filtern in der ASP.NET MVC-Pipeline ausgeführt werden und es Ihnen ermöglichen, die Authentifizierungs Logik pro Aktion, pro Controller oder global für alle Controller anzugeben. Authentifizierungs Filter verarbeiten Anmelde Informationen in der Anforderung und geben einen entsprechenden Prinzipal an. Authentifizierungs Filter können auch Authentifizierungs Herausforderungen als Reaktion auf nicht autorisierte Anforderungen hinzufügen.
 
-### <a name="filter-overrides"></a>Überschreibungsfilter
+### <a name="filter-overrides"></a>Filter Überschreibungen
 
-Sie können jetzt überschreiben, die Filter auf eine bestimmte Aktionsmethode bzw. einen Controller angewendet werden, durch Angabe eines Filters außer Kraft setzen. Überschreibungsfilter Geben Sie einen Satz von Filtertypen, die für einen bestimmten Bereich (Aktions- oder Controllerebene) nicht ausgeführt werden soll. Dadurch können Sie so konfigurieren Sie Filter, die global angewendet, aber dann bestimmte globale Filter ausschließen, nicht auf bestimmte Aktionen oder Controller angewendet.
+Sie können jetzt überschreiben, welche Filter auf eine bestimmte Aktionsmethode oder einen bestimmten Controller angewendet werden, indem Sie einen Überschreibungs Filter angeben. Überschreibungs Filter geben einen Satz von Filtertypen an, die für einen bestimmten Bereich (Aktion oder Controller) nicht ausgeführt werden sollen. Dies ermöglicht es Ihnen, Filter zu konfigurieren, die Global angewendet werden, dann jedoch bestimmte globale Filter von der Anwendung auf bestimmte Aktionen oder Controller auszuschließen.
 
 ### <a name="attribute-routing"></a>Attributrouting
 
-ASP.NET MVC unterstützt jetzt das attributrouting, Dank der einen Beitrag von Tim McCall der Autor des [ http://attributerouting.net ](http://attributerouting.net). Das attributrouting können Sie Ihre Routen angeben, durch das Hinzufügen von Anmerkungen zu Ihren Aktionen und Controllern.
+ASP.NET MVC unterstützt jetzt das Attribut Routing, dank eines Beitrags von Tim McCall, dem Autor von [http://attributerouting.net](http://attributerouting.net). Mit dem Attribut Routing können Sie Ihre Routen durch kommentieren ihrer Aktionen und Controller angeben.
 
 <a id="TOC11"></a>
 ## <a name="aspnet-web-api-2"></a>ASP.NET-Web-API 2
 
 ### <a name="attribute-routing"></a>Attributrouting
 
-ASP.NET Web-API unterstützt jetzt das attributrouting, Dank der einen Beitrag von Tim McCall der Autor des [ http://attributerouting.net ](http://attributerouting.net). Das attributrouting können Sie Ihre Web-API-Routen angeben, durch das Hinzufügen von Anmerkungen zu Ihren Aktionen und Controllern wie folgt:
+ASP.net-Web-API unterstützt jetzt das Attribut Routing, dank eines Beitrags von Tim McCall, dem Autor von [http://attributerouting.net](http://attributerouting.net). Mit dem Attribut Routing können Sie Ihre Web-API-Routen angeben, indem Sie Ihre Aktionen und Controller wie folgt kommentieren:
 
 [!code-csharp[Main](release-notes/samples/sample1.cs)]
 
-Attribut-routing bietet Ihnen mehr Kontrolle über die URIs in Ihrer Web-API. Beispielsweise können Sie ganz einfach über einen einzelnen API-Controller Ressourcenhierarchie definieren:
+Das Attribut Routing ermöglicht Ihnen mehr Kontrolle über die URIs in Ihrer Web-API. Beispielsweise können Sie einfach eine Ressourcen Hierarchie mit einem einzigen API-Controller definieren:
 
 [!code-csharp[Main](release-notes/samples/sample2.cs)]
 
-Attributrouting auch bietet eine praktische Syntax zum Angeben Optionaler Parameter, Standardwerte und Einschränkungen:
+Attribut Routing bietet auch eine bequeme Syntax zum Angeben optionaler Parameter, Standardwerte und Routen Einschränkungen:
 
 [!code-csharp[Main](release-notes/samples/sample3.cs)]
 
-Weitere Informationen zu Attribut-routing, finden Sie unter [Attributrouting in der Web-API 2](../../../web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2.md).
+Weitere Informationen zum Attribut Routing finden Sie unter [Attribut Routing in der Web-API 2](../../../web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2.md).
 
-### <a name="oauth-20"></a>OAuth 2.0
+### <a name="oauth-20"></a>OAuth 2.0
 
-Die Web-API und Single Page Application-Projektvorlagen unterstützen nun mithilfe von OAuth 2.0 Autorisierung. OAuth 2.0 ist ein Framework für die Autorisierung des Clientzugriff auf geschützte Ressourcen. Dies funktioniert für eine Vielzahl von Clients einschließlich Browsern und mobilen Geräten.
+Die Projektvorlagen Web-API und Single-Page-Anwendung unterstützen jetzt die Autorisierung mithilfe von OAuth 2,0. OAuth 2,0 ist ein Framework für die Autorisierung des Client Zugriffs auf geschützte Ressourcen. Es funktioniert für eine Vielzahl von Clients, einschließlich Browsern und mobilen Geräten.
 
-Unterstützung für OAuth 2.0 basiert auf neuen sicherheitsmiddleware von den Microsoft-OWIN-Komponenten für Bearer-Authentifizierung bereitgestellt werden, und implementieren die Serverrolle für die Autorisierung. Alternativ können die Clients mit einem organisationsbezogenen autorisierungsserver, z. B. Azure Active Directory oder AD FS in Windows Server 2012 R2 autorisiert werden.
+Die Unterstützung für OAuth 2,0 basiert auf der neuen Sicherheits Middleware, die von den Microsoft owin-Komponenten für die Träger Authentifizierung und die Implementierung der autorisierungsserver Rolle bereitgestellt wird. Alternativ können Clients mithilfe eines Organisations Autorisierungs Servers, z. b. Azure Active Directory oder ADFS in Windows Server 2012 R2, autorisiert werden.
 
-### <a name="odata-improvements"></a>OData-Verbesserungen
+### <a name="odata-improvements"></a>Odata
 
-**Unterstützung für $select, $ $batch und $value erweitern**
+**Unterstützung für $SELECT, $Expand, $Batch und $Value**
 
-ASP.NET Web API OData bietet jetzt vollständige Unterstützung für $select, $expand, und $value. Sie können auch für die Anforderung, Batchverarbeitung und Verarbeitung von Changesets $batch verwenden.
+ASP.net-Web-API odata bietet jetzt vollständige Unterstützung für $SELECT, $Expand und $Value. Sie können auch $Batch für die Anforderungs Batch Verarbeitung und Verarbeitung von Changesets verwenden.
 
-Der $select und $expand-Optionen können Sie ändern die Form der Daten, die von einem OData-Endpunkt zurückgegeben werden. Weitere Informationen finden Sie unter [Einführung in $select und $expand-Unterstützung in Web-API OData](../../../web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value.md).
+Mit den Optionen $SELECT und $Expand können Sie die Form der Daten ändern, die von einem odata-Endpunkt zurückgegeben werden. Weitere Informationen finden Sie [unter Einführung in die $SELECT und $Expand Unterstützung in Web-API-odata](../../../web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value.md).
 
 **Verbesserte Erweiterbarkeit**
 
-Die OData-Formatierer können jetzt erweitert werden. Sie können Atom-Eintrag-Metadaten hinzufügen, benannte Streams und Medien-Link-Einträge unterstützt, instanzanmerkungen hinzufügen und anpassen, wie Links generiert werden.
+Die odata-Formatierer sind jetzt erweiterbar. Sie können Atom-Eingabe Metadaten hinzufügen, benannte Stream-und Medien Link Einträge unterstützen, instanzanmerkungen hinzufügen und die Art und Weise anpassen, wie Links generiert werden.
 
-**Typ-kleiner-Unterstützung**
+**Typlose Unterstützung**
 
-Sie können nun die OData-Dienste erstellen, ohne zu CLR-Typen für die Entitätstypen definieren müssen. Stattdessen können die OData-Controller nutzen oder Zurückgeben der Instanzen von **IEdmObject**, werden die OData-Formatierer serialisieren/deserialisieren.
+Sie können jetzt odata-Dienste erstellen, ohne CLR-Typen für die Entitäts Typen definieren zu müssen. Stattdessen können Ihre odata-Controller Instanzen von **iedmubject**verwenden oder zurückgeben, die die odata-Formatierer serialisieren/deserialisieren.
 
-**Wiederverwenden eines vorhandenen Modells**
+**Wieder verwenden eines vorhandenen Modells**
 
-Wenn Sie bereits über ein vorhandenes Entitätsdatenmodell (EDM) verfügen, können Sie jetzt es direkt wiederverwenden anstatt eine neue Ressourcengruppe zu erstellen. Z. B. Wenn Sie Entity Framework verwenden, können das EDM Sie, die EF für Sie erstellt.
+Wenn Sie bereits über ein vorhandenes Entity Data Model (EDM) verfügen, können Sie es jetzt direkt wieder verwenden, anstatt ein neues zu erstellen. Wenn Sie z. b. Entity Framework verwenden, können Sie das EDM verwenden, das EF für Sie erstellt.
 
-### <a name="request-batching"></a>Anfordern der Batchverarbeitung
+### <a name="request-batching"></a>Anforderungs Batch Verarbeitung
 
-Anforderung Batchverarbeitung kombiniert mehrere Vorgänge in eine einzelne HTTP POST-Anforderung, um den Netzwerkverkehr verringern, und geben Sie eine glattere, weniger ' geschwätzige '-Benutzeroberfläche. ASP.NET Web-API unterstützt nun verschiedene Strategien für die Batchverarbeitung der Anforderung:
+Bei der Anforderungs Batch Verarbeitung werden mehrere Vorgänge in einer einzelnen HTTP POST-Anforderung kombiniert, um den Netzwerk Datenverkehr zu reduzieren und eine reibungslosere, weniger Benutzeroberfläche zu bieten. ASP.net-Web-API unterstützt jetzt mehrere Strategien für die Batch Verarbeitung von Anforderungen:
 
-- Verwenden Sie den $batch-Endpunkt von einem OData-Dienst.
-- Verpacken Sie mehrere Anforderungen in einer einzelnen MIME-multipart-Anforderung.
-- Verwenden Sie ein benutzerdefiniertes Format für die Batchverarbeitungs.
+- Verwenden Sie den $Batch-Endpunkt eines odata-Dienstanbieter.
+- Verpacken mehrerer Anforderungen in eine einzelne MIME-mehrteiligen-Anforderung.
+- Verwenden Sie ein benutzerdefiniertes Batch Verarbeitungs Format.
 
-Um Anforderung, die Batchverarbeitung zu aktivieren, müssen fügen Sie eine Route mit einem Batchverarbeitung Handler einfach Ihrer Web-API-Konfiguration hinzu:
+Fügen Sie der Web-API-Konfiguration einfach eine Route mit einem Batch Verarbeitungs Handler hinzu, um die Anforderungs Batch Verarbeitung zu aktivieren:
 
 [!code-csharp[Main](release-notes/samples/sample4.cs)]
 
-Sie können auch steuern, ob Anforderungen oder ausgeführt werden, sequenziell oder in einer beliebigen Reihenfolge.
+Sie können auch steuern, ob Anforderungen oder sequenziell oder in beliebiger Reihenfolge ausgeführt werden.
 
-### <a name="portable-aspnet-web-api-client"></a>Portable ASP.NET Web-API-Client
+### <a name="portable-aspnet-web-api-client"></a>Portabler ASP.net-Web-API Client
 
-Sie können jetzt die ASP.NET Web-API-Client verwenden, zum Erstellen von portablen Klassenbibliotheken, die funktionieren in Ihrer Windows Store und Windows Phone 8-Anwendungen. Sie können auch portable Formatierer erstellen, die zwischen Client und Server gemeinsam genutzt werden können.
+Sie können jetzt den ASP.net-Web-API-Client verwenden, um Portable Klassenbibliotheken zu erstellen, die in Ihren Windows Store-und Windows Phone 8-Anwendungen funktionieren. Sie können auch portablen Formatierer erstellen, die auf Client und Server freigegeben werden können.
 
-### <a name="improved-testability"></a>Verbesserte Prüfbarkeit
+### <a name="improved-testability"></a>Verbesserte Testability
 
-Web-API 2 macht es viel einfacher, Komponententests testen Sie die API-Controller. Instanziieren Sie einfach Ihren API-Controller mit Ihrem Request-Nachricht und die Konfiguration, und rufen Sie dann auf die Aktionsmethode, die Sie testen möchten. Es ist auch einfach zum Simulieren der **UrlHelper** -Klasse, für die Aktionsmethoden, die linkgenerierung ausführen.
+Web-API 2 macht es viel einfacher, Komponententests für Ihre API-Controller durchzusetzen. Instanziieren Sie einfach Ihren API-Controller mit ihrer Anforderungs Nachricht und-Konfiguration, und wählen Sie dann die Aktionsmethode aus, die Sie testen möchten. Es ist auch leicht, die **Urlhelper** -Klasse für Aktionsmethoden zu simulieren, die eine Link Generierung ausführen.
 
 ### <a name="ihttpactionresult"></a>IHttpActionResult
 
-Sie können jetzt IHttpActionResult kapselt das Ergebnis der Ihre Web-API-Aktionsmethoden implementieren. Ein von einer Web-API-Aktion-Methode zurückgegebenen IHttpActionResult wird von der ASP.NET Web-API-Laufzeit zum Erzeugen der resultierenden Response-Nachricht ausgeführt. Ein IHttpActionResult zurückgegeben werden kann, in einer beliebigen Web-API-Aktion zur Vereinfachung der Einheit Testen Ihrer Web-API-Implementierung. Der Einfachheit halber, die eine Anzahl von IHttpActionResult Implementierungen, z. B. die Ergebnisse bereitgestellt werden für bestimmte Rückgabestatuscodes formatiert oder dem Inhalt ausgehandelte Antworten.
+Sie können nun ihttpactionresult implementieren, um das Ergebnis Ihrer Web-API-Aktionsmethoden zu kapseln. Ein von einer Web-API-Aktionsmethode zurück gegebenes ihttpactionresult wird von der ASP.net-Web-API Runtime ausgeführt, um die resultierende Antwortnachricht zu erzeugen. Ein ihttpactionresult kann von jeder Web-API-Aktion zurückgegeben werden, um Komponententests Ihrer Web-API-Implementierung zu vereinfachen. Zur einfacheren Bereitstellung werden eine Reihe von ihttpactionresult-Implementierungen bereitgestellt, einschließlich der Ergebnisse zum Zurückgeben bestimmter Statuscodes, formatierten Inhalts oder von Inhalten ausgehandelten Antworten.
 
 ### <a name="httprequestcontext"></a>HttpRequestContext
 
-Die neue **HttpRequestContext** verfolgt alle Status, die der Anforderung verknüpft ist, aber ist nicht sofort verfügbar ist, aus der Anforderung. Beispielsweise können Sie die **HttpRequestContext** zum Abrufen von Routendaten, die dem Prinzipal zugeordnete Anforderung das Clientzertifikat, das **UrlHelper** und der virtuelle pfadstamm. Sie können ganz einfach erstellen, eine **HttpRequestContext** für Komponententests Testzwecke.
+Mit dem neuen **httprequestcontext** wird ein beliebiger Status nachverfolgt, der an die Anforderung gebunden ist, aber nicht sofort über die Anforderung verfügbar ist. Beispielsweise können Sie mit **httprequestcontext** Routendaten, den Prinzipal, der der Anforderung zugeordnet ist, das Client Zertifikat, das **Urlhelper** -Element und den virtuellen Pfad Stamm erhalten. Sie können einfach einen **httprequestcontext** für Komponenten Testzwecke erstellen.
 
-Weil der Prinzipal für die Anforderung, mit der Anforderung übergeben wird nicht die **Thread.CurrentPrincipal**, der Prinzipal ist jetzt verfügbar, während der gesamten Lebensdauer der Anforderung, während es in der Web-API-Pipeline ist.
+Da der Prinzipal für die Anforderung mit der Anforderung weitergeleitet wird, anstatt **Thread. CurrentPrincipal**zu verwenden, ist der Prinzipal nun während der gesamten Lebensdauer der Anforderung verfügbar, während er sich in der Web-API-Pipeline befindet.
 
 ### <a name="cors"></a>CORS
 
-Dank einer anderen hervorragenden Beitrag von Brock Allen unterstützt ASP.NET jetzt vollständig Request Freigeben von CORS (Cross Origin).
+Dank eines weiteren großen Beitrags von Brock allen unterstützt ASP.net jetzt vollständig die Cross Origin Request Sharing (cors).
 
-Browsersicherheit verhindert, dass eine Webseite AJAX-Anforderungen in eine andere Domäne. [CORS](http://www.w3.org/TR/cors/) ist ein W3C-Standard, der einem Server zu lockern die Richtlinie des gleichen Ursprungs ermöglicht. Mit CORS kann ein Server explizit einige ursprungsübergreifende Anforderungen zulassen und andere ablehnen.
+Die Browser Sicherheit verhindert, dass eine Webseite AJAX-Anforderungen an eine andere Domäne sendet. [Cors](http://www.w3.org/TR/cors/) ist ein W3C-Standard, der es einem Server ermöglicht, die Richtlinie für denselben Ursprung zu lockern. Mithilfe von cors kann ein Server einige Ursprungs übergreifende Anforderungen explizit zulassen und andere ablehnen.
 
-Web-API 2 unterstützt jetzt CORS, einschließlich der automatische Behandlung von preflight-Anforderungen. Weitere Informationen finden Sie unter [Aktivieren von Cross-Origin Requests in ASP.NET Web-API](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md).
+Web-API 2 unterstützt jetzt cors, einschließlich automatischer Behandlung von Preflight-Anforderungen. Weitere Informationen finden Sie unter [Aktivieren von Ursprungs übergreifenden Anforderungen in ASP.net-Web-API](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md).
 
-### <a name="authentication-filters"></a>Authentifizierungsfilter
+### <a name="authentication-filters"></a>Authentifizierungs Filter
 
-Authentifizierungsfilter sind eine neue Art von Filter in ASP.NET Web-API, die vor dem Autorisierungsfilter werden also in der ASP.NET Web-API-Pipeline ausgeführt und ermöglichen es Ihnen, geben Sie die Authentifizierung Logik pro-Aktion, pro Controller oder global für alle Controller. Authentifizierungsfilter Anmeldeinformationen in der Anforderung zu verarbeiten, und geben einen entsprechenden Prinzipal. Authentifizierungsfilter können authentifizierungsanforderungen auch als Reaktion auf nicht autorisierte Anforderungen hinzufügen.
+Authentifizierungs Filter sind eine neue Art von Filter in ASP.net-Web-API, die vor Autorisierungs Filtern in der ASP.net-Web-API Pipeline ausgeführt werden und es Ihnen ermöglichen, die Authentifizierungs Logik pro Aktion, pro Controller oder global für alle Controller anzugeben. Authentifizierungs Filter verarbeiten Anmelde Informationen in der Anforderung und geben einen entsprechenden Prinzipal an. Authentifizierungs Filter können auch Authentifizierungs Herausforderungen als Reaktion auf nicht autorisierte Anforderungen hinzufügen.
 
-### <a name="filter-overrides"></a>Überschreibungsfilter
+### <a name="filter-overrides"></a>Filter Überschreibungen
 
-Sie können jetzt überschreiben, der Filter auf eine bestimmte Aktion-Methode oder den Controller angewendet werden, durch Angabe eines Filters außer Kraft setzen. Überschreibungsfilter Geben Sie einen Satz von Filtertypen, die für einen bestimmten Bereich (Aktions- oder Controllerebene) nicht ausgeführt werden soll. Dadurch können Sie globale Filter hinzufügen, aber dann Ausschließen einiger aus bestimmte Aktionen oder Controllern.
+Sie können jetzt überschreiben, welche Filter auf eine bestimmte Aktionsmethode oder einen bestimmten Controller angewendet werden, indem Sie einen Überschreibungs Filter angeben. Überschreibungs Filter geben einen Satz von Filtertypen an, die für einen bestimmten Bereich (Aktion oder Controller) nicht ausgeführt werden sollen. Dies ermöglicht es Ihnen, globale Filter hinzuzufügen, aber dann einige von bestimmten Aktionen oder Controllern auszuschließen.
 
-### <a name="owin-integration"></a>OWIN-Integration
+### <a name="owin-integration"></a>Owin-Integration
 
-ASP.NET Web-API jetzt vollständig unterstützt OWIN und kann jede OWIN-fähigen Hosts ausgeführt werden. Enthält auch eine **auch namensbasiert** , Integration in die OWIN-Authentifizierungssystem bereitstellt.
+ASP.net-Web-API unterstützt nun owin vollständig und kann auf einem beliebigen owin-fähigen Host ausgeführt werden. Außerdem ist ein **hostauthenticationfilter** enthalten, der die Integration mit dem owin-Authentifizierungssystem ermöglicht.
 
-Mit der OWIN-Integration können Sie Web-API in Ihrem eigenen Prozess zusammen mit anderen OWIN-Middleware, wie SignalR selbst hosten. Weitere Informationen finden Sie unter [verwenden OWIN zum selfhosten von ASP.NET-Web-API](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
+Mit der owin-Integration können Sie die Web-API in Ihrem eigenen Prozess zusammen mit anderen owin-Middleware (z. b. signalr) selbst hosten. Weitere Informationen finden Sie unter [Verwenden von owin für Self-Host-ASP.net-Web-API](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
 
 <a id="TOC13"></a>
-## <a name="aspnet-signalr-20"></a>ASP.NET SignalR 2.0
+## <a name="aspnet-signalr-20"></a>ASP.net signalr 2,0
 
-In den folgenden Abschnitten werden die Funktionen von SignalR 2.0 beschrieben.
+In den folgenden Abschnitten werden die Funktionen von signalr 2,0 beschrieben.
 
-- [Basiert auf OWIN](#builtonowin)
-- [MapHubs und MapConnection sind jetzt MapSignalR](#MapSignalR)
-- [Cross-Domain-Unterstützung](#crossdomain)
-- [iOS und Android-Unterstützung über MonoTouch und MonoDroid](#mobile)
-- [Portable .NET Client](#portable)
-- [Neues Self-Hosting-Paket](#selfhost)
-- [Abwärtskompatibilität-serverunterstützung](#backwardcompat)
-- [Server-Unterstützung für .NET 4.0 entfernt](#remove40)
-- [Senden einer Nachricht an eine Liste der Clients und Gruppen](#messagelist)
+- [Basiert auf owin](#builtonowin)
+- [Maphubs und mapconnection sind jetzt mapsignalr](#MapSignalR)
+- [Domänen übergreifende Unterstützung](#crossdomain)
+- [IOS-und Android-Unterstützung über MonoTouch und monodroid](#mobile)
+- [Portabler .NET-Client](#portable)
+- [Neues Self-Host-Paket](#selfhost)
+- [Abwärts kompatible Serverunterstützung](#backwardcompat)
+- [Entfernte Serverunterstützung für .NET 4,0](#remove40)
+- [Senden einer Nachricht an eine Liste von Clients und Gruppen](#messagelist)
 - [Senden einer Nachricht an einen bestimmten Benutzer](#sendtouser)
-- [Eine bessere Unterstützung von Fehler behandeln](#errorhandling)
-- [Einfacher Komponententest Testen von Hubs](#unittesting)
+- [Bessere Unterstützung bei der Fehlerbehandlung](#errorhandling)
+- [Einfachere Komponententests von Hubs](#unittesting)
 - [JavaScript-Fehlerbehandlung](#javascripterror)
 
-Ein Beispiel für ein vorhandenes 1.x-Projekt zu SignalR 2.0 aktualisieren, finden Sie unter [Aktualisieren einer SignalR 1.x-Projekt](../../../signalr/overview/releases/upgrading-signalr-1x-projects-to-20.md).
+Ein Beispiel für das Upgrade eines vorhandenen 1. x-Projekts auf signalr 2,0 finden Sie unter [Aktualisieren eines signalr 1. x-Projekts](../../../signalr/overview/releases/upgrading-signalr-1x-projects-to-20.md).
 
 <a id="builtonowin"></a>
-### <a name="built-on-owin"></a>Basiert auf OWIN
+### <a name="built-on-owin"></a>Basiert auf owin
 
-SignalR 2.0 basiert vollständig auf [OWIN (Open Web Interface for .NET)](http://owin.org/). Diese Änderung wird den Setupvorgang für SignalR-weitaus webgehostete und selbst gehostete SignalR-Anwendungen konsistent, aber es ist auch eine Anzahl von API-Änderungen erforderlich.
+Signalr 2,0 wird vollständig auf [owin (Open Web Interface für .net)](http://owin.org/)erstellt. Diese Änderung führt dazu, dass der Setup Vorgang für signalr zwischen im Internet gehosteten und selbst gehosteten signalr-Anwendungen wesentlich konsistent ist, aber auch eine Reihe von API-Änderungen erforderte.
 
 <a id="MapSignalR"></a>
 
-### <a name="maphubs-and-mapconnection-are-now-mapsignalr"></a>MapHubs und MapConnection sind jetzt MapSignalR
+### <a name="maphubs-and-mapconnection-are-now-mapsignalr"></a>Maphubs und mapconnection sind jetzt mapsignalr
 
-Kompatibilität mit OWIN-Standards, wurden diese Methoden in umbenannt `MapSignalR`. `MapSignalR` wird aufgerufen, ohne Parameter alle Hubs zugeordnet werden (als `MapHubs` ist in Version 1.x), um einzelne zuzuordnen **PersistentConnection** Objekte, geben Sie die Verbindung als der Type-Parameter, und die URL-Erweiterung für die Verbindung als der Erstes Argument.
+Aus Gründen der Kompatibilität mit owin-Standards wurden diese Methoden in `MapSignalR`umbenannt. `MapSignalR` ohne Parameter aufgerufen wird, werden alle Hubs zugeordnet (wie `MapHubs` in Version 1. x); Wenn Sie einzelne **persistentconnection** -Objekte zuordnen möchten, geben Sie den Verbindungstyp als Typparameter und die URL-Erweiterung für die Verbindung als erstes Argument an.
 
-Die `MapSignalR` Methode wird aufgerufen, in einer Owin-Startup-Klasse. Visual Studio 2013 enthält eine neue Vorlage für eine Owin-Startklasse; Um diese Vorlage verwenden möchten, führen Sie folgende Schritte aus:
+Die `MapSignalR`-Methode wird in einer owin-Startklasse aufgerufen. Visual Studio 2013 enthält eine neue Vorlage für eine owin-Startklasse. gehen Sie folgendermaßen vor, um diese Vorlage zu verwenden:
 
-1. Mit der rechten Maustaste auf das Projekt
-2. Wählen Sie **hinzufügen**, **neues Element...**
-3. Wählen Sie **Owin-Startklasse**. Nennen Sie die neue Klasse **"Startup.cs"**.
+1. Klicken Sie mit der rechten Maustaste auf das Projekt.
+2. Wählen Sie **Hinzufügen**, **Neues Element... aus.**
+3. Wählen Sie **owin-Startklasse aus**. Nennen Sie die neue Klasse **Startup.cs**.
 
-In einem **Webanwendung,** die Owin Startup-Klasse, enthält die `MapSignalR` Methode wird dann an Owins-Startvorgangs mit einem Eintrag in der Anwendungsknoten der Einstellungen der Datei "Web.config" hinzugefügt, wie unten dargestellt.
+In einer **Webanwendung** wird die owin-Startklasse, die die `MapSignalR`-Methode enthält, dann dem Startprozess von owin mithilfe eines Eintrags im Knoten Anwendungseinstellungen der Datei "Web. config" hinzugefügt, wie unten gezeigt.
 
-In einem **für selbst gehostete Anwendung**, die Startup-Klasse übergeben wird, wie der Typparameter der `WebApp.Start` Methode.
+In einer **selbst gehosteten Anwendung**wird die Startup-Klasse als Typparameter der `WebApp.Start`-Methode übergeben.
 
-**Zuordnen von Hubs und Verbindungen in SignalR 1.x (aus der globalen Datei in einer Webanwendung):** 
+**Mapping von Hubs und Verbindungen in signalr 1. x (aus der globalen Anwendungsdatei in einer Webanwendung):** 
 
 [!code-csharp[Main](release-notes/samples/sample5.cs)]
 
-**Zuordnen von Hubs und Verbindungen in SignalR 2.0 (aus einer Datei für den Owin-Startup-Klasse):** 
+**Zuordnung von Hubs und Verbindungen in signalr 2,0 (aus einer owin-Startklassen Datei):** 
 
 [!code-csharp[Main](release-notes/samples/sample6.cs)]
 
-In einem **für selbst gehostete Anwendung**, die Startup-Klasse übergeben wird, wie der Typparameter für die `WebApp.Start` Methode, wie unten dargestellt.
+In einer **selbst gehosteten Anwendung**wird die Startup-Klasse als Typparameter für die `WebApp.Start`-Methode übergeben, wie unten gezeigt.
 
 [!code-csharp[Main](release-notes/samples/sample7.cs)]
 
 <a id="crossdomain"></a>
 
-### <a name="cross-domain-support"></a>Cross-Domain-Unterstützung
+### <a name="cross-domain-support"></a>Domänen übergreifende Unterstützung
 
-In SignalR 1.x, domänenübergreifende Anforderungen wurden gesteuert, indem einem einzigen EnableCrossDomain-Flag. Dieses Flag gesteuert, sowohl JSONP und CORS-Anforderungen. Zur Erhöhung der Flexibilität-alle CORS-Unterstützung wurde aus dem die Server-Komponente von SignalR entfernt (JavaScript-Clients weiterhin verwenden CORS normalerweise, wenn es erkannt wird, dass der Browser unterstützt), und neue OWIN-Middleware zur Unterstützung dieser Szenarios verfügbar gemacht wurde.
+In signalr 1. x wurden Domänen übergreifende Anforderungen von einem einzelnen enablecrossdomain-Flag gesteuert. Dieses Flag hat sowohl JSONP-als auch cors-Anforderungen gesteuert. Um die Flexibilität zu erhöhen, wurde die gesamte cors-Unterstützung aus der Serverkomponente von signalr entfernt (JavaScript-Clients verwenden weiterhin üblicherweise cors, wenn erkannt wird, dass der Browser Sie unterstützt), und neue owin-Middleware wurde zur Unterstützung dieser Szenarios zur Verfügung gestellt.
 
-In SignalR 2.0 Wenn JSONP auf dem Client (zur Unterstützung von domänenübergreifende Anforderungen in älteren Browsern) erforderlich ist, muss explizit aktiviert werden, durch Festlegen von `EnableJSONP` auf die `HubConfiguration` -Objekt `true`, wie unten dargestellt. JSONP ist standardmäßig deaktiviert, da er als weniger sicher als CORS ist.
+Wenn in signalr 2,0 JSONP auf dem Client erforderlich ist (um Domänen übergreifende Anforderungen in älteren Browsern zu unterstützen), muss es explizit aktiviert werden, indem `EnableJSONP` für das `HubConfiguration` Objekt auf `true`festgelegt wird (siehe unten). JSONP ist standardmäßig deaktiviert, da es weniger sicher als cors ist.
 
-Um die neuen CORS-Middleware in SignalR 2.0 hinzuzufügen, fügen Sie der `Microsoft.Owin.Cors` Bibliothek, um das Projekt, und rufen `UseCors` vor Ihrer SignalR-Middleware, wie im folgenden Abschnitt gezeigt.
+Um die neue cors-Middleware in signalr 2,0 hinzuzufügen, fügen Sie Ihrem Projekt die `Microsoft.Owin.Cors` Bibliothek hinzu, und nennen Sie `UseCors` vor der signalr-Middleware, wie im folgenden Abschnitt gezeigt.
 
-**Hinzufügen der Microsoft.Owin.Cors zu Ihrem Projekt**: Um diese Bibliothek zu installieren, führen Sie den folgenden Befehl in der Paket-Manager-Konsole ein:
+**Hinzufügen von "Microsoft. owin. cors" zu Ihrem Projekt**: Um diese Bibliothek zu installieren, führen Sie den folgenden Befehl in der Paket-Manager-Konsole aus:
 
 [!code-powershell[Main](release-notes/samples/sample8.ps1)]
 
-Dieser Befehl fügt die 2.0.0 Version des Pakets zu Ihrem Projekt.
+Mit diesem Befehl wird dem Projekt die Version 2.0.0 des Pakets hinzugefügt.
 
-**Aufrufen von "usecors"**
+**Aufrufen von usecors**
 
-Die folgenden Codeausschnitte veranschaulichen, wie implementieren Sie die domänenübergreifende Verbindungen in SignalR 1.x und 2.0.
+Die folgenden Code Ausschnitte veranschaulichen, wie Domänen übergreifende Verbindungen in signalr 1. x und 2,0 implementiert werden.
 
-**Implementieren von domänenübergreifende Anforderungen in SignalR 1.x (aus der globalen Datei)**
+**Implementieren von Domänen übergreifenden Anforderungen in signalr 1. x (aus der globalen Anwendungsdatei)**
 
 [!code-csharp[Main](release-notes/samples/sample9.cs)]
 
-**Implementieren von domänenübergreifende Anforderungen in SignalR 2.0 (aus einer C#-Code-Datei)**
+**Implementieren von Domänen übergreifenden Anforderungen in signalr 2,0 (aus C# einer Codedatei)**
 
-Der folgende Code veranschaulicht, wie CORS oder JSONP in einem SignalR 2.0-Projekt zu aktivieren. Dieses Codebeispiel verwendet `Map` und `RunSignalR` anstelle von `MapSignalR`, sodass nur für die SignalR-Anforderungen, die CORS-Unterstützung erfordern, die CORS-Middleware ausgeführt wird (und nicht für den gesamten Datenverkehr an den im angegebenen Pfad `MapSignalR`.) `Map` kann auch verwendet werden, für alle anderen Middleware, die für eine bestimmte URL-Präfix, nicht aber für die gesamte Anwendung ausgeführt werden muss.
+Der folgende Code veranschaulicht, wie cors oder JSONP in einem signalr 2,0-Projekt aktiviert wird. Dieses Codebeispiel verwendet `Map` und `RunSignalR` anstelle von `MapSignalR`, sodass die cors-Middleware nur für die signalr-Anforderungen ausgeführt wird, die cors-Unterstützung benötigen (anstatt für den gesamten Datenverkehr an dem Pfad, der in `MapSignalR`angegeben ist). `Map` kann auch für alle anderen Middleware verwendet werden, die für ein bestimmtes URL-Präfix ausgeführt werden muss, und nicht für die
 
 [!code-csharp[Main](release-notes/samples/sample10.cs)]
 
 <a id="mobile"></a>
 
-### <a name="ios-and-android-support-via-monotouch-and-monodroid"></a>iOS und Android-Unterstützung über MonoTouch und MonoDroid
+### <a name="ios-and-android-support-via-monotouch-and-monodroid"></a>IOS-und Android-Unterstützung über MonoTouch und monodroid
 
-Unterstützung für IOS- und Android-Clients mithilfe des MonoTouch und MonoDroid-Komponenten von wurde die [Xamarin-Bibliothek](https://xamarin.com/). Weitere Informationen dazu, wie deren Verwendung finden Sie unter [mithilfe von Xamarin-Komponenten](https://github.com/SignalR/SignalR/wiki/Building-Mono.Mobile.sln). Diese Komponenten werden in der [Xamarin Store](https://store.xamarin.com/) Wenn die SignalR-RTW-Version verfügbar ist.
+Die Unterstützung für IOS-und Android-Clients wurde mithilfe von MonoTouch-und monodroid-Komponenten aus der [xamarin-Bibliothek](https://xamarin.com/)hinzugefügt. Weitere Informationen zur Verwendung finden Sie unter [Verwenden von xamarin-Komponenten](https://github.com/SignalR/SignalR/wiki/Building-Mono.Mobile.sln). Diese Komponenten werden im [xamarin Store](https://store.xamarin.com/) verfügbar sein, wenn die signalr RTW-Version verfügbar ist.
 
-<a id="portable"></a> ### Portable .NET client
+<a id="portable"></a># # # Portabler .NET-Client
 
-Vereinfachen die bessere plattformübergreifende Entwicklung, die Silverlight, WinRT und Windows Phone-Clients mit einem einzelnen portable .NET Client, der die folgenden Plattformen unterstützt ersetzt wurden:
+Um die plattformübergreifende Entwicklung besser zu vereinfachen, wurden die Silverlight-, WinRT-und Windows Phone Clients durch einen einzelnen portablen .NET-Client ersetzt, der die folgenden Plattformen unterstützt:
 
-- NET 4.5
+- NET 4,5
 - Silverlight 5
-- WinRT (.NET für Windows Store-Apps)
+- WinRT (.net für Windows Store-Apps)
 - Windows Phone 8
 
 <a id="selfhost"></a>
 
-### <a name="new-self-host-package"></a>Neues Self-Hosting-Paket
+### <a name="new-self-host-package"></a>Neues Self-Host-Paket
 
-Es ist jetzt ein NuGet-Paket zu vereinfachen den Einstieg in die Selfhosten von SignalR (SignalR-Anwendungen, die in einem Prozess gehostet werden oder andere Anwendungen, statt auf einem Webserver gehostet werden). Aktualisieren Sie eine Self-Hosting-Projekt erstellt, die mit SignalR 1.x, entfernen Sie das Paket Microsoft.AspNet.SignalR.Owin, und fügen Sie das Paket Microsoft.AspNet.SignalR.SelfHost. Weitere Informationen zu den ersten Schritten mit dem Self-Hosting-Paket finden Sie unter [Lernprogramm: Selfhosten von SignalR](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
+Es gibt jetzt ein nuget-Paket, mit dem Sie die ersten Schritte mit signalr-Self-Host (signalr-Anwendungen, die in einem Prozess oder einer anderen Anwendung gehostet werden und nicht auf einem Webserver gehostet werden) vereinfachen. Um ein mit signalr 1. x erstelltes Self-Host-Projekt zu aktualisieren, entfernen Sie das Paket Microsoft. Aspnet. signalr. owin, und fügen Sie das Paket Microsoft. Aspnet. signalr. SelfHost hinzu. Weitere Informationen zu den ersten Schritten mit dem Self-Host-Paket finden Sie unter [Tutorial: Signalr-Self-Host-](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
 
 <a id="backwardcompat"></a>
 
-### <a name="backward-compatible-server-support"></a>Abwärtskompatibilität-serverunterstützung
+### <a name="backward-compatible-server-support"></a>Abwärts kompatible Serverunterstützung
 
-In früheren Versionen von SignalR, die Versionen der SignalR-Paket auf dem Client verwendet und dem Server, die erforderlich sind, identisch sein. Um Thick-Clientanwendungen zu unterstützen, die schwer zu aktualisieren, unterstützt bei SignalR 2.0 jetzt eine neuere Serverversion mit einem älteren Client verwenden. **Hinweis: SignalR 2.0 unterstützt keine Server, die mit älteren Versionen mit neuere Clients erstellt.**
+In früheren Versionen von signalr mussten die Versionen des signalr-Pakets, die auf dem Client und dem Server verwendet wurden, identisch sein. Um Thick-Client Anwendungen zu unterstützen, die nur schwer zu aktualisieren sind, unterstützt signalr 2,0 jetzt die Verwendung einer neueren Server Version mit einem älteren Client. **Hinweis: Signalr 2,0 unterstützt keine Server, die mit älteren Versionen mit neueren Clients erstellt wurden.**
 
 <a id="remove40"></a>
 
-### <a name="removed-server-support-for-net-40"></a>Server-Unterstützung für .NET 4.0 entfernt
+### <a name="removed-server-support-for-net-40"></a>Entfernte Serverunterstützung für .NET 4,0
 
-SignalR 2.0 wurde Unterstützung für die Interoperabilität mit .NET 4.0 Server gelöscht. .NET 4.5 muss mit SignalR 2.0-Servern verwendet werden. Es ist immer noch ein .NET 4.0-Client für SignalR 2.0.
+Signalr 2,0 hat die Unterstützung für die Server Interoperabilität mit .NET 4,0 verworfen. .NET 4,5 muss mit signalr 2,0-Servern verwendet werden. Es gibt noch einen .NET 4,0-Client für signalr 2,0.
 
 <a id="messagelist"></a>
 
-### <a name="sending-a-message-to-a-list-of-clients-and-groups"></a>Senden einer Nachricht an eine Liste der Clients und Gruppen
+### <a name="sending-a-message-to-a-list-of-clients-and-groups"></a>Senden einer Nachricht an eine Liste von Clients und Gruppen
 
-In SignalR 2.0 ist es möglich, eine Nachricht mit einer Liste von Client und der Gruppe IDs senden. Die folgenden Codeausschnitte veranschaulichen die Vorgehensweise.
+In signalr 2,0 ist es möglich, eine Nachricht mithilfe einer Liste von Client-und Gruppen-IDs zu senden. Die folgenden Code Ausschnitte veranschaulichen, wie dies zu tun ist.
 
-**Senden einer Nachricht an eine Liste der Clients und Gruppen mit PersistentConnection**
+**Senden einer Nachricht an eine Liste von Clients und Gruppen mithilfe von persistentconnection**
 
 [!code-csharp[Main](release-notes/samples/sample11.cs)]
 
-**Senden einer Nachricht an eine Liste der Clients und Gruppen, die mithilfe von Hubs**
+**Senden einer Nachricht an eine Liste von Clients und Gruppen mithilfe von Hubs**
 
 [!code-csharp[Main](release-notes/samples/sample12.cs)]
 
@@ -433,51 +433,51 @@ In SignalR 2.0 ist es möglich, eine Nachricht mit einer Liste von Client und de
 
 ### <a name="sending-a-message-to-a-specific-user"></a>Senden einer Nachricht an einen bestimmten Benutzer
 
-Dieses Feature ermöglicht Benutzern, um anzugeben, was die Benutzer-ID basierend auf einer IRequest über eine neue Schnittstelle IUserIdProvider:
+Mit dieser Funktion können Benutzer angeben, welche Benutzer-ID auf einem irequest basiert, und zwar über eine neue Schnittstelle iuseridprovider:
 
-**Die IUserIdProvider-Schnittstelle**
+**Die iuseridprovider-Schnittstelle**
 
 [!code-csharp[Main](release-notes/samples/sample13.cs)]
 
-Standardmäßig wird eine Implementierung, die den Benutzernamen des Benutzers IPrincipal.Identity.Name verwendet werden.
+Standardmäßig wird eine Implementierung verwendet, die den IPrincipal.Identity.Name des Benutzers als Benutzernamen verwendet.
 
-In den Hubs wird zum Senden von Nachrichten an diese Benutzer über eine neue API werden:
+In Hubs können Sie Nachrichten über eine neue API an diese Benutzer senden:
 
-**Verwenden die Clients.User-API**
+**Verwenden der Clients. User-API**
 
 [!code-csharp[Main](release-notes/samples/sample14.cs)]
 
 <a id="errorhandling"></a>
 
-### <a name="better-error-handling-support"></a>Eine bessere Unterstützung von Fehler behandeln
+### <a name="better-error-handling-support"></a>Bessere Unterstützung bei der Fehlerbehandlung
 
-Benutzer können jetzt auslösen **HubException** aus einem hubaufruf. Der Konstruktor, der die **HubException** sind eine zeichenfolgenmeldung und ein Objekt zusätzliche Fehlerdaten. SignalR wird die Ausnahme automatisch serialisiert und sendet es an den Client, in dem er dient zum Ablehnen oder den Aufruf der hubmethode nicht.
+Benutzer können nun **hubexception aus jedem hubaufruf** auslösen. Der Konstruktor von **hubexception** kann eine Zeichen folgen Nachricht und ein Objekt zusätzliche Fehler Daten annehmen. Signalr serialisiert die Ausnahme automatisch und sendet Sie an den Client, wo Sie verwendet wird, um den Aufruf der hubmethode abzulehnen/fehlschlagen zu lassen.
 
-Die **ausführliche Hub-Ausnahmen zeigen** Einstellung hat keinen Einfluss auf **HubException** zurück an den Client gesendet werden, oder nicht; sie wird immer gesendet.
+Die Einstellung **detaillierte Hub-Ausnahmen anzeigen** hat keinen Einfluss darauf, dass **hubexception** zurück an den Client gesendet wird. Sie wird immer gesendet.
 
-**Serverseitiger Code veranschaulicht eine HubException an den Client gesendet.**
+**Server seitiger Code, der zeigt, wie eine hubexception an den Client gesendet wird**
 
 [!code-csharp[Main](release-notes/samples/sample15.cs)]
 
-**JavaScript-Client-Codebeispiel zur Erläuterung, reagieren auf eine vom Server gesendeten HubException**
+**JavaScript-Client Code, der auf eine vom Server gesendete hubexception zeigt**
 
 [!code-html[Main](release-notes/samples/sample16.html)]
 
-**.NET Client-Code veranschaulicht, reagieren auf eine vom Server gesendeten HubException**
+**.NET-Client Code, der auf eine vom Server gesendete hubexception zeigt**
 
 [!code-csharp[Main](release-notes/samples/sample17.cs)]
 
 <a id="unittesting"></a>
 
-### <a name="easier-unit-testing-of-hubs"></a>Einfacher Komponententest Testen von Hubs
+### <a name="easier-unit-testing-of-hubs"></a>Einfachere Komponententests von Hubs
 
-SignalR 2.0 umfasst eine Schnittstelle namens `IHubCallerConnectionContext` Hubs, der zum Erstellen von mock Seite Aufrufe einfacher macht. Die folgenden Codeausschnitte veranschaulichen das Verwenden dieser Schnittstelle mit beliebten testumgebungen [xUnit.net](https://github.com/xunit/xunit) und [Moq](https://code.google.com/p/moq/).
+Signalr 2,0 enthält eine Schnittstelle mit dem Namen "`IHubCallerConnectionContext`" auf Hubs, die das Erstellen von Pseudo Client seitigen aufrufen erleichtert. Die folgenden Code Ausschnitte veranschaulichen die Verwendung dieser Schnittstelle mit gängigen Test Umgebungen [xUnit.net](https://github.com/xunit/xunit) und in [der Praxis](https://code.google.com/p/moq/).
 
-**Komponententests in SignalR mit xUnit.net**
+**Komponententests von signalr mit xUnit.net**
 
 [!code-csharp[Main](release-notes/samples/sample18.cs)]
 
-**Komponententests in SignalR mit moq**
+**Komponententests von signalr mit der Verwendung von muq**
 
 [!code-csharp[Main](release-notes/samples/sample19.cs)]
 
@@ -485,220 +485,220 @@ SignalR 2.0 umfasst eine Schnittstelle namens `IHubCallerConnectionContext` Hubs
 
 ### <a name="javascript-error-handling"></a>JavaScript-Fehlerbehandlung
 
-In SignalR 2.0 zurück alle Rückrufe von JavaScript-Fehlerbehandlung JavaScript-Fehler-Objekte anstelle von unformatierten Zeichenfolgen. Dadurch wird ein SignalR umfangreichere Informationen in Ihrem Fehlerhandler. Sie erhalten die innere Ausnahme aus der `source` Eigenschaft des Fehlers.
+In signalr 2,0 geben alle JavaScript-Fehler Behandlungs Rückrufe anstelle von unformatierten Zeichen folgen JavaScript-Fehler Objekte zurück. Dies ermöglicht signalr, umfangreichere Informationen zu ihren Fehler Handlern zu übertragen. Sie können die innere Ausnahme von der `source`-Eigenschaft des Fehlers erhalten.
 
-**JavaScript-Clientcode, der die Start.Fail-Ausnahme behandelt.**
+**JavaScript-Client Code, der die Start. Fail-Ausnahme behandelt**
 
 [!code-javascript[Main](release-notes/samples/sample20.js)]
 
 <a id="TOC8"></a>
 ## <a name="aspnet-identity"></a>ASP.NET Identity
 
-### <a name="new-aspnet-membership-system"></a>Neue ASP.NET-Mitgliedschaftssystem
+### <a name="new-aspnet-membership-system"></a>Neues ASP.net-Mitgliedschafts System
 
-ASP.NET Identity ist das neue Mitgliedschaftssystem für ASP.NET-Anwendungen. ASP.NET Identity vereinfacht benutzerspezifische Profildaten in Anwendungsdaten zu integrieren. ASP.NET Identity ermöglicht auch das Persistenzmodell für Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server-Datenbank oder einem anderen Datenspeicher, einschließlich NoSQL-Datenspeicher wie Azure Storage-Tabellen speichern. Weitere Informationen finden Sie unter [einzelne Benutzerkonten](creating-web-projects-in-visual-studio.md#indauth) in **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
+ASP.net Identity ist das neue Mitgliedschaftssystem für ASP.NET-Anwendungen. Mit ASP.net Identity können benutzerspezifische Profildaten problemlos in Anwendungsdaten integriert werden. ASP.net Identity können Sie auch das Persistenzmodell für Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server Datenbank oder einem anderen Datenspeicher speichern, einschließlich der nosql-Datenspeicher, z. b. Azure Storage Tabellen. Weitere Informationen finden Sie unter [individuelle Benutzerkonten](creating-web-projects-in-visual-studio.md#indauth) in **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
 
 ### <a name="claims-based-authentication"></a>Anspruchbasierte Authentifizierung
 
-ASP.NET unterstützt nun die anspruchsbasierte Authentifizierung verwendet werden, wo die Identität des Benutzers als einen Satz von Ansprüchen von einem vertrauenswürdigen Aussteller dargestellt wird. Benutzer können sein, authentifizierten eines Benutzernamens und Kennworts in einer Datenbank gespeichert oder über soziale Netzwerke als Identitätsanbieter (z. B.: Microsoft-Konten, Facebook, Google, Twitter), oder die Verwendung von Organisationskonten durch Azure Active Directory oder Active Directory Federation Services (ADFS).
+ASP.NET unterstützt jetzt die Anspruchs basierte Authentifizierung, bei der die Identität des Benutzers als Satz von Ansprüchen von einem vertrauenswürdigen Aussteller dargestellt wird. Benutzer können mit einem Benutzernamen und einem Kennwort authentifiziert werden, die in einer Anwendungsdatenbank verwaltet werden, oder mithilfe von Identitäts Anbietern sozialer Netzwerke (z. b. Microsoft-Konten, Facebook, Google, Twitter) oder die Verwendung von Organisations Konten über Azure Active Directory oder Active Directory-Verbunddienste (AD FS) (ADFS).
 
-### <a name="integration-with-azure-active-directory-and-windows-server-active-directory"></a>Azure Active Directory und Windows Server Active Directory-Integration
+### <a name="integration-with-azure-active-directory-and-windows-server-active-directory"></a>Integration in Azure Active Directory und Windows Server Active Directory
 
-Sie können jetzt ASP.NET-Projekte erstellen, die Azure Active Directory oder Windows Server Active Directory (AD) für die Authentifizierung zu verwenden. Weitere Informationen finden Sie unter [Organisationskonten](creating-web-projects-in-visual-studio.md#orgauth) in **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
+Sie können jetzt ASP.net-Projekte erstellen, die Azure Active Directory oder Windows Server Active Directory (AD) für die Authentifizierung verwenden. Weitere Informationen finden Sie unter [Organisations Konten](creating-web-projects-in-visual-studio.md#orgauth) in **Erstellen von ASP.NET-Webprojekten in Visual Studio 2013**.
 
-### <a name="owin-integration"></a>OWIN-Integration
+### <a name="owin-integration"></a>Owin-Integration
 
-Authentifizierung in ASP.NET basiert jetzt auf OWIN-Middleware, die auf einem OWIN-basierten Host verwendet werden können. Weitere Informationen zu OWIN, finden Sie unter den folgenden [Microsoft OWIN-Komponenten](#TOC7) Abschnitt.
+Die ASP.NET-Authentifizierung basiert jetzt auf der owin-Middleware, die auf einem beliebigen owin-basierten Host verwendet werden kann. Weitere Informationen zu owin finden Sie im Abschnitt [Microsoft-owin-Komponenten](#TOC7) .
 
 <a id="TOC7"></a>
 ## <a name="microsoft-owin-components"></a>Microsoft OWIN-Komponenten
 
-[Öffnen von Weboberfläche für .NET](http://owin.org/) (OWIN) definiert eine Abstraktion zwischen Webservern für .NET und Webanwendungen. OWIN entkoppelt die Webanwendung aus dem Server, sodass Web Applications Hosts gegenüber agnostisch. Sie können z. B. eine OWIN-basierten Webanwendung in IIS hosten oder selbst in einem benutzerdefinierten Prozess hosten.
+[Open Web Interface for .net](http://owin.org/) (owin) definiert eine Abstraktion zwischen .net-Webservern und Webanwendungen. Owin entkoppelt die Webanwendung vom Server, sodass Webanwendungen Host agnostisch werden. Beispielsweise können Sie eine owin-basierte Webanwendung in IIS hosten oder Sie in einem benutzerdefinierten Prozess selbst hosten.
 
-Änderungen, die in den Microsoft-OWIN-Komponenten (auch bekannt als das Katana-Projekt) umfassen neue Server und Host-Komponenten, neue Bibliotheken und -Middleware und neue Authentifizierungs-Middleware.
+Zu den Änderungen, die in den Microsoft owin-Komponenten (auch als Katana-Projekt bezeichnet) eingeführt werden, gehören neue Server-und Host Komponenten, neue Hilfsbibliotheken und Middleware sowie neue Authentifizierungs Middleware.
 
-Weitere Informationen zu OWIN und Katana, finden Sie unter [Neuigkeiten in der OWIN und Katana](../../../aspnet/overview/owin-and-katana/index.md).
+Weitere Informationen zu owin und Katana finden Sie unter [Neues in owin und Katana](../../../aspnet/overview/owin-and-katana/index.md).
 
-**Hinweis: [OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) Anwendungen können nicht im klassischen Modus von IIS ausgeführt werden, müssen im integrierten Modus ausgeführt werden.**
+**Hinweis: [Owin](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) -Anwendungen können im klassischen IIS-Modus nicht ausgeführt werden. Sie müssen im integrierten Modus ausgeführt werden.**
 
-**Hinweis: [OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) Anwendungen mit voller Vertrauenswürdigkeit ausgeführt werden müssen.**
+**Hinweis: [Owin](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) -Anwendungen müssen mit voller Vertrauenswürdigkeit ausgeführt werden.**
 
-### <a name="new-servers-and-hosts"></a>Neue Server und -Hosts
+### <a name="new-servers-and-hosts"></a>Neue Server und Hosts
 
-In dieser Version wurden neue Komponenten hinzugefügt, um Self-Hosting-Szenarios zu ermöglichen. Zu diesen Komponenten gehören die folgenden NuGet-Pakete:
+Mit dieser Version wurden neue Komponenten hinzugefügt, um selbst gehosteter Szenarios zu ermöglichen. Zu diesen Komponenten gehören die folgenden nuget-Pakete:
 
-- **Microsoft.Owin.Host.HttpListener**. Stellt einen OWIN-Server, der verwendet **HttpListener** zum Abhören von HTTP-Anforderungen und leiten Sie ihn in die OWIN-Pipeline.
-- **Microsoft.Owin.Hosting** stellt eine Bibliothek für Entwickler, die eine OWIN-Pipeline in einem benutzerdefinierten Prozess, z. B. eine Konsolenanwendung oder einen Windows-Dienst selbst hosten möchten.
-- **OwinHost**. Stellt eine eigenständige ausführbare Datei, die umschließt `Microsoft.Owin.Hosting` und ermöglicht Ihnen die eine OWIN-Pipeline selbst hosten, ohne eine benutzerdefinierte hostanwendung schreiben zu müssen.
+- **Microsoft.Owin.Host.HttpListener**. Stellt einen owin-Server bereit, der **HttpListener** verwendet, um auf HTTP-Anforderungen zu lauschen und Sie an die owin-Pipeline weiterzuleiten.
+- **Microsoft. owin. Hosting** bietet eine Bibliothek für Entwickler, die eine owin-Pipeline in einem benutzerdefinierten Prozess selbst hosten möchten, z. b. eine Konsolenanwendung oder ein Windows-Dienst.
+- **Owinhost**. Bietet eine eigenständige ausführbare Datei, die `Microsoft.Owin.Hosting` umschließt und es Ihnen ermöglicht, eine owin-Pipeline selbst zu hosten, ohne eine benutzerdefinierte Host Anwendung schreiben zu müssen.
 
-Darüber hinaus die `Microsoft.Owin.Host.SystemWeb` Paket ermöglicht jetzt die Middleware Hinweise zum Angeben der **SystemWeb** Server, der angibt, dass die Middleware in einer bestimmten Pipeline-Phase von ASP.NET aufgerufen werden soll. Diese Funktion ist besonders nützlich für die authentifizierungsmiddleware, die einem frühen Zeitpunkt in der ASP.NET-Pipeline ausgeführt werden sollen.
+Außerdem ermöglicht das `Microsoft.Owin.Host.SystemWeb`-Paket jetzt der Middleware, Hinweise für den **systemWeb** Server bereitzustellen, was darauf hinweist, dass die Middleware während einer bestimmten ASP.NET-Pipeline Phase aufgerufen werden soll. Diese Funktion ist besonders nützlich für die Authentifizierungs Middleware, die früh in der ASP.NET-Pipeline ausgeführt werden sollte.
 
-### <a name="helper-libraries-and-middleware"></a>Bibliotheken und Middleware
+### <a name="helper-libraries-and-middleware"></a>Hilfsbibliotheken und Middleware
 
-Obwohl Sie nur die Funktions- und Typnamen Definitionen von OWIN-Spezifikation, mit der OWIN-Komponenten schreiben, können die neue `Microsoft.Owin` Paket stellt einen benutzerfreundlicheren Satz an Abstraktionen bereit. Dieses Paket kombiniert mehrere frühere Pakete (z. B. `Owin.Extensions`, `Owin.Types`) in einer einzelnen, klar strukturierten Objektmodell, das dann leicht von anderen OWIN-Komponenten verwendet werden kann. Die meisten Microsoft-OWIN-Komponenten verwenden, jetzt dieses Paket.
-
-> [!NOTE]
-> [OWIN](http://www.owin.org) Anwendungen können nicht im klassischen Modus von IIS ausgeführt werden, müssen im integrierten Modus ausgeführt werden.
+Obwohl Sie owin-Komponenten nur mit den Funktions-und Typdefinitionen aus der owin-Spezifikation schreiben können, bietet das neue `Microsoft.Owin`-Paket einen benutzerfreundlicheren Satz von Abstraktionen. Dieses Paket kombiniert mehrere frühere Pakete (z. b. `Owin.Extensions``Owin.Types`) zu einem einzelnen, gut strukturierten Objektmodell, das dann problemlos von anderen owin-Komponenten verwendet werden kann. Tatsächlich verwendet die Mehrzahl der Microsoft owin-Komponenten jetzt dieses Paket.
 
 > [!NOTE]
-> [OWIN](http://www.owin.org) Anwendungen mit voller Vertrauenswürdigkeit ausgeführt werden müssen.
+> [Owin](http://www.owin.org) -Anwendungen können im klassischen IIS-Modus nicht ausgeführt werden. Sie müssen im integrierten Modus ausgeführt werden.
 
-Diese Version enthält außerdem das Microsoft.Owin.Diagnostics-Paket, das zum Überprüfen einer ausgeführten Anwendung für die OWIN-Middleware sowie Fehlerseite-Middleware, um den Fehler untersuchen enthält.
+> [!NOTE]
+> [Owin](http://www.owin.org) -Anwendungen müssen mit voller Vertrauenswürdigkeit ausgeführt werden.
 
-### <a name="authentication-components"></a>Authentication-Komponenten
+Diese Version enthält auch das Microsoft. owin. Diagnostics-Paket, das Middleware zum Überprüfen einer laufenden owin-Anwendung sowie fehlerseitenmiddleware zum Untersuchen von Fehlern enthält.
 
-Die folgenden Authentifizierungskomponenten sind verfügbar.
+### <a name="authentication-components"></a>Authentifizierungs Komponenten
 
-- **Microsoft.Owin.Security.ActiveDirectory**. Ermöglicht die Authentifizierung mit einer lokalen oder cloudbasierten Directory Services.
-- **Microsoft.Owin.Security.Cookies** aktiviert die Authentifizierung mithilfe von Cookies. Dieses Paket wurde zuvor mit dem Namen `Microsoft.Owin.Security.Forms`.
-- **Microsoft.Owin.Security.Facebook** aktiviert die Authentifizierung mit Facebook OAuth-Dienst basiert.
-- **Microsoft.Owin.Security.Google** aktiviert die Authentifizierung mithilfe Googles OpenID-basierten Dienst.
-- **Microsoft.Owin.Security.Jwt** aktiviert die Authentifizierung mit JWT-Token.
+Die folgenden Authentifizierungs Komponenten sind verfügbar.
+
+- **Microsoft.Owin.Security.ActiveDirectory**. Aktiviert die Authentifizierung mithilfe lokaler oder cloudbasierter Verzeichnisdienste.
+- **Microsoft. owin. Security. Cookies** ermöglicht die Authentifizierung mithilfe von Cookies. Dieses Paket wurde zuvor `Microsoft.Owin.Security.Forms`benannt.
+- **Microsoft. owin. Security. Facebook** ermöglicht die Authentifizierung über den OAuth-basierten Dienst von Facebook.
+- **Microsoft. owin. Security. Google** ermöglicht die Authentifizierung mithilfe des OpenID-basierten Diensts von Google.
+- **Microsoft. owin. Security. JWT** ermöglicht die Authentifizierung mithilfe von JWT-Token.
 - **Microsoft.Owin.Security.MicrosoftAccount** Enables authentication using Microsoft accounts.
-- **Microsoft.Owin.Security.OAuth**. Stellt einen OAuth-autorisierungsserver sowie die Middleware zum Authentifizieren von Bearer-Tokens bereit.
-- **Microsoft.Owin.Security.Twitter** aktiviert die Authentifizierung über Twitter OAuth-Dienst basiert.
+- **Microsoft.Owin.Security.OAuth**. Stellt einen OAuth-autorisierungsserver und Middleware zum Authentifizieren von bearertoken bereit.
+- **Microsoft. owin. Security. Twitter** ermöglicht die Authentifizierung über den OAuth-basierten Dienst von Twitter.
 
-Diese Version umfasst auch die `Microsoft.Owin.Cors` Paket, das Middleware für die Verarbeitung von Cross-Origin-HTTP-Anforderungen enthält.
+Diese Version enthält auch das `Microsoft.Owin.Cors`-Paket, das Middleware für die Verarbeitung von Ursprungs übergreifenden HTTP-Anforderungen enthält.
 
 > [!NOTE]
-> Unterstützung für die Signierung von JWT wurde in der endgültigen Version von Visual Studio 2013 entfernt.
+> Die Unterstützung für JWT-Signierung wurde in der endgültigen Version von Visual Studio 2013 entfernt.
 
 <a id="ef6"></a>
 ## <a name="entity-framework-6"></a>Entity Framework 6
 
-Eine Liste der neuen Features und andere Änderungen in Entity Framework 6, finden Sie unter [Entity Framework-Versionsverlaufs](https://msdn.com/data/jj574253).
+Eine Liste der neuen Features und anderen Änderungen in Entity Framework 6 finden Sie unter [Entity Framework Versionsverlauf](https://msdn.com/data/jj574253).
 
 <a id="TOC14"></a>
-## <a name="aspnet-razor-3"></a>ASP.NET Razor-3
+## <a name="aspnet-razor-3"></a>ASP.net Razor 3
 
-ASP.NET Razor 3 enthält die folgenden neuen Features:
+ASP.net Razor 3 umfasst die folgenden neuen Features:
 
-- Unterstützung für die Registerkarte zu bearbeiten. Zuvor die **Dokument formatieren** -Befehl, automatische Einzug und automatische Formatierung in Visual Studio funktionierte nicht ordnungsgemäß bei Verwendung der **Tabulatoren beibehalten** Option. Diese Änderung behebt Visual Studio, die Formatierung für Razor-Code für die Registerkarte, die Formatierung.
-- Unterstützung für URL-Rewrite-Regeln beim Generieren von Links.
-- Entfernen des transparenten Sicherheitsattribut.
+- Unterstützung für die Registerkarten Bearbeitung. Zuvor funktionierte der Befehl zum **Formatieren von Dokumenten** , der automatische Einzug und die automatische Formatierung in Visual Studio bei Verwendung der Option Tabstopps **beibehalten** nicht ordnungsgemäß. Diese Änderung korrigiert die Visual Studio-Formatierung für Razor-Code für die Tabulator Formatierung.
+- Unterstützung für URL-Rewrite-Regeln beim Generieren von Verknüpfungen.
+- Entfernen des Sicherheits transparenten Attributs.
   > [!NOTE]
-  > Dies ist eine wichtige Änderung und Razor-3 nicht kompatibel mit MVC 4 und früheren Versionen bei heruntergefahrenem Razor 2 nicht kompatibel mit MVC5 oder Assemblys, die für MVC5 kompiliert ist.
+  > Dabei handelt es sich um eine Breaking Change, die Razor 3 inkompatibel mit MVC4 und früher ist, während Razor 2 nicht mit MVC5 oder Assemblys kompatibel ist, die für MVC5 kompiliert wurden.
 
-Razor 3 behobene Problemen in Visual Studio 2013 älterer Versionen finden Sie [hier](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Resolved%7cClosed&type=All&priority=All&release=All%7cv5.0%2bPreview%7cv5.0%2bRC%7cv5.0%2bRTM&assignedTo=All&component=Web%2bPages%252fRazor&reasonClosed=Fixed&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
+Razor 3-Probleme, die in Visual Studio 2013 von vorab Versionen behoben wurden, finden Sie [hier](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Resolved%7cClosed&type=All&priority=All&release=All%7cv5.0%2bPreview%7cv5.0%2bRC%7cv5.0%2bRTM&assignedTo=All&component=Web%2bPages%252fRazor&reasonClosed=Fixed&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
 <a id="TOC15"></a>
-## <a name="aspnet-app-suspend"></a>ASP.NET-App Suspend
+## <a name="aspnet-app-suspend"></a>ASP.net App aussetzen
 
-ASP.NET App Suspend ist eine revolutionäre-Funktion in .NET Framework 4.5.1, die Benutzeroberfläche und wirtschaftlichen Gesamtmodell spielt für das Hosten von große Anzahl von ASP.NET-Websites unter einem einzelnen Computer radikal ändert. Weitere Informationen finden Sie unter [ASP.NET App Suspend – reaktionsfähiges .NET Web shsp](https://blogs.msdn.com/b/dotnet/archive/2013/10/09/asp-net-app-suspend-responsive-shared-net-web-hosting.aspx).
+ASP.net App Suspend ist ein Feature für die spieländerung in der .NET Framework 4.5.1, das die Benutzer Funktionalität und das wirtschaftliche Modell für das Hosting einer großen Anzahl von ASP.NET-Sites auf einem einzelnen Computer drastisch ändert. Weitere Informationen finden Sie unter [ASP.net App Suspend – reaktivem](https://blogs.msdn.com/b/dotnet/archive/2013/10/09/asp-net-app-suspend-responsive-shared-net-web-hosting.aspx), frei gegebenes .net-Webhosting.
 
 <a id="knownissues"></a>
-## <a name="known-issues-and-breaking-changes"></a>Bekannte Probleme und aktueller Änderungen
+## <a name="known-issues-and-breaking-changes"></a>Bekannte Probleme und wichtige Änderungen
 
-Dieser Abschnitt beschreibt bekannte Probleme und wichtige Änderungen in der ASP.NET und Webtools für Visual Studio 2013.
+In diesem Abschnitt werden bekannte Probleme und wichtige Änderungen im ASP.net and Web Tools für Visual Studio 2013 beschrieben.
 
 ### <a name="nuget"></a>NuGet
 
-- [Wiederherstellen von neuen Paketen unter Mono funktioniert nicht, beim Verwenden der SLN-Datei](https://nuget.codeplex.com/workitem/3596) – wird in einer bevorstehenden nuget.exe-Download behoben und [NuGet.CommandLine Paket](http://www.nuget.org/packages/NuGet.CommandLine/) aktualisieren.
-- [Neue paketwiederherstellung funktioniert nicht mit Wix-Projekten](https://nuget.codeplex.com/workitem/3598) – wird in einer bevorstehenden nuget.exe-Download behoben und [NuGet.CommandLine Paket](http://www.nuget.org/packages/NuGet.CommandLine/) aktualisieren.
-- [Automatische paketwiederherstellung funktioniert nicht für Projekte unter einem Projektmappenordner](https://nuget.codeplex.com/workitem/3625) – wird in NuGet 2.8 behoben werden.
+- Die [neue Paket Wiederherstellung funktioniert nicht bei Mono, wenn die SLN-Datei verwendet](https://nuget.codeplex.com/workitem/3596) wird – wird in einem bevorstehenden nuget. exe-Download und [nuget. commandline-Paket](http://www.nuget.org/packages/NuGet.CommandLine/) Update korrigiert.
+- Die [neue Paket Wiederherstellung funktioniert nicht mit WiX-Projekten](https://nuget.codeplex.com/workitem/3598) – wird in einem bevorstehenden nuget. exe-Download und [nuget. commandline-Paket](http://www.nuget.org/packages/NuGet.CommandLine/) Update korrigiert.
+- Die [Automatische Paket Wiederherstellung funktioniert nicht für Projekte in einem Projektmappenordner](https://nuget.codeplex.com/workitem/3625) – wird in nuget 2,8 korrigiert.
 
 ### <a name="aspnet-web-api"></a>ASP.NET-Web-API
 
-1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` Gibt keinen zurück `IQueryable<T>` immer, wie wir Unterstützung für hinzugefügt `$select` und `$expand`.
+1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` gibt `IQueryable<T>` nicht immer zurück, da die Unterstützung für `$select` und `$expand`hinzugefügt wurde.
 
-    Für unseren früheren Beispielen `ODataQueryOptions<T>` immer die Typumwandlung der Rückgabewert von `ApplyTo` zu `IQueryable<T>`. Es funktioniert hat zuvor, da die Abfrage, die Optionen für uns unterstützt zuvor (`$filter`, `$orderby`, `$skip`, `$top`) ändern Sie die Form der Abfrage nicht. Nun, da wir unterstützen `$select` und `$expand` den Rückgabewert von `ApplyTo` nicht `IQueryable<T>` immer.
+    In den vorherigen Beispielen für `ODataQueryOptions<T>` der Rückgabewert von `ApplyTo` stets in `IQueryable<T>`umgewandelt. Dies hat früher funktioniert, weil die Abfrage Optionen, die wir zuvor unterstützten (`$filter`, `$orderby`, `$skip`, `$top`), nicht die Form der Abfrage ändern. Da wir jetzt `$select` unterstützen und `$expand` der Rückgabewert von `ApplyTo` nicht immer `IQueryable<T>` werden.
 
     [!code-csharp[Main](release-notes/samples/sample21.cs)]
 
-    Wenn Sie den Beispielcode von vorhin verwenden, es werden weiterhin ausgeführt, wenn der Client keine sendet `$select` und `$expand`. Aber wenn Sie unterstützen möchten `$select` und `$expand` müssen Sie diesen Code so zu ändern.
+    Wenn Sie den obigen Beispielcode verwenden, funktioniert er weiterhin, wenn der Client keine `$select` und `$expand`sendet. Wenn Sie jedoch `$select` und `$expand` unterstützen möchten, müssen Sie diesen Code in diese ändern.
 
     [!code-csharp[Main](release-notes/samples/sample22.cs)]
-2. **Request.Url oder RequestContext.Url ist null, während eine Batchanforderung**
+2. **"Request. URL" oder "RequestContext. URL" ist während einer Batch Anforderung NULL.**
 
-    In einem Szenario mit Batchverarbeitung **UrlHelper** ist null, wenn der Zugriff von **Request.Url** oder **RequestContext.Url**.
+    In einem Batch Verarbeitungs Szenario ist **Urlhelper** beim Zugriff über " **Request. URL** " oder " **RequestContext. URL**" NULL.
 
-    Dieses Problem ist hier zurzeit nachverfolgt: [BatchRequestContext.Url ist null für die Batchverarbeitung Anforderung](http://aspnetwebstack.codeplex.com/workitem/1301).
+    Dieses Problem wird zurzeit nachverfolgt: " [Batchrequestcontext. URL" ist für die Batch Verarbeitungs Anforderung NULL](http://aspnetwebstack.codeplex.com/workitem/1301).
 
-    Die problemumgehung für dieses Problem besteht darin erstellen Sie eine neue Instanz der **UrlHelper**, wie im folgenden Beispiel:
+    Um dieses Problem zu umgehen, können Sie eine neue Instanz von **Urlhelper**erstellen, wie im folgenden Beispiel gezeigt:
 
-    **Erstellen eine neue Instanz der UrlHelper**
+    **Erstellen einer neuen Instanz von Urlhelper**
 
     [!code-csharp[Main](release-notes/samples/sample23.cs)]
 
 ### <a name="aspnet-mvc"></a>ASP.NET MVC
 
-1. Wenn MVC5- und OrgAuth, verwenden Sie Ansichten verfügen, die AntiForgerToken Validierungen, möglicherweise stoßen Sie auf den folgenden Fehler beim Senden von Daten in der Ansicht:
+1. Wenn Sie Übersichten verfügen, für die die Überprüfung des antiforgertokens durchzuführen ist, kann bei Verwendung von MVC5 und orgauth der folgende Fehler auftreten, wenn Sie Daten in der Ansicht bereitstellen:
 
     **Fehler**:
 
-    *Serverfehler in Anwendung '/'.*
+    *Server Fehler in "/"-Anwendung.*
 
-    <em>Ein Anspruch des Typs "<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'oder'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>" war nicht vorhanden ist, auf die angegebene "ClaimsIdentity". Um Unterstützung für fälschungssicherheitstoken token mit Ansprüchen basierende Authentifizierung zu aktivieren, stellen Sie sicher, dass konfigurierten Anspruchsanbieter-Vertrauensstellung beide dieser Ansprüche auf der "ClaimsIdentity"-Instanzen bereitstellt, die sie generiert. Wenn die konfigurierten Anspruchsanbieter-Vertrauensstellung stattdessen einen anderen Anspruchstyp als eindeutiger Bezeichner verwendet, kann es durch Festlegen der statischen Eigenschaft AntiForgeryConfig.UniqueClaimTypeIdentifier konfiguriert werden.</em>
+    <em>ein Anspruch vom Typ "<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>" oder "<https://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>" in der angegebenen "ClaimsIdentity" nicht vorhanden ist. Überprüfen Sie, ob der konfigurierte Anspruchs Anbieter beide Ansprüche für die von ihm generierten ClaimsIdentity-Instanzen bereitstellt, um die Unterstützung für antifälschungstokenunterstützung mit Anspruchs basierter Authentifizierung zu aktivieren. Wenn der konfigurierte Anspruchs Anbieter stattdessen einen anderen Anspruchstyp als eindeutigen Bezeichner verwendet, kann er durch Festlegen der statischen Eigenschaft antiforgeryconfig. uniqueclaimtypeidentifier konfiguriert werden.</em>
 
     **Problemumgehung:**
 
-    Fügen Sie die folgende Zeile in "Global.asax", um das Problem zu beheben:
+    Fügen Sie die folgende Zeile in "Global. asax" hinzu, um Sie zu beheben:
 
     `AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Name;`
 
-    Dies wird für die nächste Version behoben.
-2. Nach dem Upgrade einer MVC4 app MVC5 – erstellen Sie die Projektmappe, und starten Sie ihn aus. Sie sollten die folgende Fehlermeldung angezeigt:
+    Dies wird für die nächste Version korrigiert.
+2. Nachdem Sie eine MVC4-App auf MVC5 aktualisiert haben, erstellen Sie die Projekt Mappe, und starten Sie Sie. Der folgende Fehler wird angezeigt:
 
-    [A] System.Web.WebPages.Razor.Configuration.HostSection kann nicht umgewandelt werden, um [B]System.Web.WebPages.Razor.Configuration.HostSection. Typ A stammt von ' System.Web.WebPages.Razor, Version = 2.0.0.0, Kultur = Neutral, PublicKeyToken = 31bf3856ad364e35' im Kontext 'Default' am Speicherort ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v4. 0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll ". Typ B stammt "System.Web.WebPages.Razor, Version = 3.0.0.0, Culture = Neutral, PublicKeyToken = 31bf3856ad364e35' im Kontext 'Default' am Speicherort ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll ".
+    Ein System. Web. Webseiten. Razor. Configuration. hostsection kann nicht in [B] System. Web. Webseiten. Razor. Configuration. hostsection umgewandelt werden. Type A stammt von "System. Web. Webseiten". Razor, Version = 2.0.0.0, Culture = neutral, PublicKeyToken = 31bfi3856ad364e35 "im Kontext" Default "am Speicherort" c:\WINDOWS\Microsoft.net\assembly\gac\_MSIL\System.Web.Webpages.Razor\v4.0\_2.0.0.0\_\_31bfi3856ad364e35 \ System. Web. Webseiten. Razor. dll ". Typ B stammt aus System. Web. Webseiten. Razor, Version = 3.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35 ' im Kontext ' default ' am Speicherort ' C:\WINDOWS\Microsoft.Net\Framework\v4.0.30319\Temporary ASP.net files\root\6d05bbd0\e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01 \ System. Web. Webseiten. Razor. dll '.
 
-    Um die oben angegebene Fehler zu beheben, öffnen Sie *alle* der Web.config-Dateien (einschließlich derjenigen, die im Ordner "Views") in Ihr Projekt, und gehen Sie wie folgt:
+    Um den obigen Fehler zu beheben, öffnen Sie *alle* Web. config-Dateien (einschließlich der Dateien im Ordner "Views") in Ihrem Projekt, und führen Sie die folgenden Schritte aus:
 
-   1. Aktualisieren Sie alle Vorkommen von Version "4.0.0.0" von "System.Web.Mvc", "5.0.0.0".
-   2. Aktualisieren Sie alle Vorkommen von "System.Web.Helpers," Version "2.0.0.0" &quot;System.Web.WebPages&quot; und &quot;System.Web.WebPages.Razor&quot; auf "3.0.0.0"
+   1. Aktualisieren Sie alle Vorkommen der Version "4.0.0.0" von "System. Web. MVC" auf "5.0.0.0".
+   2. Aktualisieren Sie alle Vorkommen der Version "2.0.0.0" von "System. Web. Hilfsprogramme", &quot;System. Web. Webseiten&quot; und &quot;System. Web. Webseiten. Razor&quot; in "3.0.0.0".
 
-      Nachdem Sie die oben genannten Änderungen vornehmen, sollten die Assemblybindungen beispielsweise wie folgt aussehen:
+      Nachdem Sie z. b. die oben genannten Änderungen vorgenommen haben, sollten die Assemblybindungen wie folgt aussehen:
 
       [!code-xml[Main](release-notes/samples/sample24.xml)]
 
-      Informationen zum Upgrade von MVC 4-Projekte auf MVC 5 finden Sie unter [das Upgrade von einer ASP.NET MVC 4 und Web-API-Projekt auf ASP.NET MVC 5 und Web-API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
-3. Wenn Sie die clientseitige Validierung mit jQuery Unobtrusive Validation verwenden zu können, ist der validierungsmeldung manchmal für eine HTML-Eingabeelement mit Typ = "Number". Der Validierungsfehler für einen erforderlichen Wert ("das Altersfeld ist erforderlich") wird angezeigt, wenn eine ungültige Anzahl die richtige Nachricht eingegeben werden, dass eine gültige Zahl erforderlich ist.
+      Weitere Informationen zum Aktualisieren von MVC 4-Projekten auf MVC 5 finden Sie unter [Upgrade eines ASP.NET MVC 4-und Web-API-Projekts auf ASP.NET MVC 5 und Web-API 2](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
+3. Wenn die Client seitige Validierung mit der unaufdringlichen jquery-Validierung verwendet wird, ist die Validierungs Meldung für ein HTML-Eingabe Element mit dem Typ "Number" manchmal falsch. Der Überprüfungs Fehler für einen erforderlichen Wert ("das Alters Feld ist erforderlich") wird angezeigt, wenn eine ungültige Zahl eingegeben wird, anstelle der korrekten Meldung, dass eine gültige Zahl erforderlich ist.
 
-    Dieses Problem wird häufig mit eingerüsteten Code für ein Modell mit einer Zahl mit Vorzeichen in den Bearbeitungs- und änderungsansichten gefunden.
+    Dieses Problem wird häufig mit einem Gerüst Code für ein Modell mit einer ganzzahligen Eigenschaft in den Ansichten erstellen und bearbeiten gefunden.
 
-    Um dieses Problem zu umgehen, ändern Sie das Hilfsprogramm "Editor" aus:
+    Um dieses Problem zu umgehen, ändern Sie das Editor-Hilfsprogramm von:
 
     `@Html.EditorFor(person => person.Age)`
 
     Nach:
 
     `@Html.TextBoxFor(person => person.Age)`
-4. Teilweise Vertrauenswürdigkeit wird von ASP.NET MVC 5 nicht mehr unterstützt. Projekte, die Verknüpfung mit den Binärdateien MVC- oder Web-API sollte Entfernen der [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) Attribut und die [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) Attribut. Entfernen diese Attribute werden Compilerfehler wie den folgenden entfernen.
+4. ASP.NET MVC 5 unterstützt keine teilweise Vertrauenswürdigkeit mehr. Projekte, die mit den MVC-oder WebAPI-Binärdateien verknüpft sind, sollten das [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) -Attribut und das [allowpartiallytrust dcaller](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) -Attribut entfernen. Wenn Sie diese Attribute entfernen, werden Compilerfehler wie die folgenden vermieden.
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 
-    > Beachten Sie, wie ein Nebeneffekt, dass Sie diese 4.0 und 5.0-Assemblys nicht in derselben Anwendung verwenden können. Sie müssen alle auf 5.0 aktualisiert.
+    > Beachten Sie, dass Sie als Nebeneffekt nicht 4,0-und 5,0-Assemblys in derselben Anwendung verwenden können. Sie müssen alle auf 5,0 aktualisieren.
 
-### <a name="spa-template-with-facebook-authorization-may-cause-instability-in-ie-while-the-web-site-is-hosted-in-intranet-zone"></a>SPA-Vorlage mit Facebook-Autorisierung verursachen Instabilität in Internet Explorer, während die Website, in der Intranetzone gehostet wird
+### <a name="spa-template-with-facebook-authorization-may-cause-instability-in-ie-while-the-web-site-is-hosted-in-intranet-zone"></a>Die Spa-Vorlage mit Facebook-Autorisierung kann zu Instabilität in IE führen, während die Website in der Intranetzone gehostet wird
 
-Die SPA-Vorlage enthält externe melden Sie sich mit Facebook. Wenn das Projekt erstellt haben, mit der Vorlage lokal ausgeführt wird, kann die Anmeldung bei Internet Explorer zum Absturz führen.
+Die Spa-Vorlage bietet eine externe Anmeldung mit Facebook. Wenn das mit der Vorlage erstellte Projekt lokal ausgeführt wird, kann das Anmelden dazu führen, dass der Internet Explorer abstürzt.
 
 Projektmappe:
 
-1. Hosten Sie die Website in der Zone des Internets. oder
+1. Hosten der Website in der Internet Zone noch
 
-2. Testen Sie das Szenario, in einem anderen Browser als Internet Explorer.
+2. Testen Sie das Szenario in einem anderen Browser als IE.
 
-### <a name="web-forms-scaffolding"></a>Web Forms-Gerüst
+### <a name="web-forms-scaffolding"></a>Web Forms Gerüstbau
 
-Web Forms-Gerüsts aus VS2013 entfernt wurde, und es werden in einem zukünftigen Update von Visual Studio zur Verfügung stehen. Allerdings weiterhin können Gerüstbau in Web Forms-Projekten Sie durch Hinzufügen von MVC-Abhängigkeiten, und Generieren von Gerüstbau für MVC. Das Projekt enthält eine Kombination von Web Forms und MVC.
+Web Forms Gerüstbau wurde aus VS2013 entfernt und ist in einem zukünftigen Update von Visual Studio verfügbar. Sie können Gerüstbau jedoch weiterhin in einem Web Forms Projekt verwenden, indem Sie MVC-Abhängigkeiten hinzufügen und Gerüstbau für MVC erstellen. Das Projekt enthält eine Kombination aus Web Forms und MVC.
 
-Um MVC das Web Forms-Projekt hinzuzufügen, fügen Sie ein neues gerüstelement hinzu, und wählen Sie **MVC 5-Abhängigkeiten**. Wählen Sie minimale oder vollständige, je nachdem, ob Sie alle Inhaltsdateien, z. B. Skripts benötigen. Anschließend fügen Sie eines Elements mit Gerüst für MVC, das die Ansichten und ein Controller im Projekt erstellt wird.
+Wenn Sie Ihrem Web Forms Projekt MVC hinzufügen möchten, fügen Sie ein neues Gerüst Element hinzu, und wählen Sie **MVC 5-Abhängigkeiten**aus. Wählen Sie entweder minimal oder vollständig aus, je nachdem, ob Sie alle Inhalts Dateien, z. b. Skripts, benötigen. Fügen Sie dann ein Gerüst Element für MVC hinzu, mit dem Sichten und ein Controller in Ihrem Projekt erstellt werden.
 
-### <a name="mvc-and-web-api-scaffolding---http-404-not-found-error"></a>MVC und Web-API-Gerüstbau - HTTP 404-Antwort, wurde nicht gefunden-Fehler
+### <a name="mvc-and-web-api-scaffolding---http-404-not-found-error"></a>MVC-und Web-API-Gerüstbau: Fehler HTTP 404, nicht gefunden
 
-Wenn beim Hinzufügen eines Elements mit Gerüst zu einem Projekt ein Fehler aufgetreten ist, ist es möglich, die Ihr Projekt in einem inkonsistenten Zustand gelassen werden. Einige der Gerüstbau werden die Änderungen werden rückgängig gemacht werden, aber andere Änderungen, z. B. die installierten NuGet-Pakete werden nicht zurückgesetzt werden. Wenn die Weiterleitung Änderungen an der Konfiguration ein Rollback ausgeführt werden, erhalten Benutzer einen HTTP 404-Fehler bei der Navigation zu Elementen erstellt haben.
+Wenn ein Fehler beim Hinzufügen eines gerüstten Elements zu einem Projekt auftritt, wird das Projekt möglicherweise in einem inkonsistenten Zustand belassen. Für einige der Änderungen, die an Gerüstbau vorgenommen werden, wird ein Rollback ausgeführt, aber für andere Änderungen, wie z. b Wenn für die Routing Konfigurationsänderungen ein Rollback ausgeführt wird, erhalten Benutzer einen HTTP 404-Fehler, wenn Sie zu Gerüst Elementen navigieren.
 
 Problemumgehung:
 
-- Klicken Sie zum Beheben dieses Fehlers für MVC, fügen Sie ein neues gerüstelement hinzu, und wählen Sie MVC 5-Abhängigkeiten (minimale oder vollständige). Dabei werden alle erforderlichen Änderungen zu Ihrem Projekt hinzufügen.
-- So beheben Sie diesen Fehler für Web-API:
+- Um diesen Fehler für MVC zu beheben, fügen Sie ein neues Gerüst Element hinzu, und wählen Sie MVC 5-Abhängigkeiten (Minimal oder vollständig) aus. Durch diesen Vorgang werden alle erforderlichen Änderungen in Ihrem Projekt hinzugefügt.
+- So beheben Sie diesen Fehler für die Web-API:
 
-  1. Fügen Sie der Klasse "webapiconfig" zu Ihrem Projekt hinzu.
+  1. Fügen Sie dem Projekt die webapiconfig-Klasse hinzu.
 
       [!code-csharp[Main](release-notes/samples/sample25.cs)]
 
       [!code-vb[Main](release-notes/samples/sample26.vb)]
-  2. Konfigurieren Sie in der Anwendung WebApiConfig.Register\_Start-Methode in "Global.asax" wie folgt:
+  2. Konfigurieren Sie webapiconfig. Register in der Anwendung\_Start-Methode in Global. asax wie folgt:
 
       [!code-csharp[Main](release-notes/samples/sample27.cs)]
 
