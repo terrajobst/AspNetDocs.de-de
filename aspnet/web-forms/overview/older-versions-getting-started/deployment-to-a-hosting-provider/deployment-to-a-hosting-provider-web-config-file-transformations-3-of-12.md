@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: 2b0df3d9-450b-4ea6-b315-4c9650722cad
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: fe71e6cfb0f4c5f1d99b326e9d90edb6c8c5feee
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9e7902bcf8a16c154aee1a982824bfaedeea7d9d
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600529"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309235"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Transformationen der Datei "Web. config"-3 von 12
 
@@ -43,7 +43,7 @@ In dem Szenario, das in diesem Tutorial behandelt wird, wissen Sie alles, was f�
 
 Erweitern Sie in **Projektmappen-Explorer**den Eintrag *Web. config* , um die Transformations Dateien *Web. Debug. config* und *Web. Release. config* anzuzeigen, die standardmäßig für die beiden Standardbuildkonfigurationen erstellt werden.
 
-![Web. config_transform_files](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/_static/image1.png)
+![Web.config_transform_files](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/_static/image1.png)
 
 Sie können Transformations Dateien für benutzerdefinierte Buildkonfigurationen erstellen, indem Sie mit der rechten Maustaste auf die Datei Web. config klicken und **Konfigurations Transformationen hinzufügen** aus dem Kontextmenü auswählen, aber für dieses Tutorial müssen Sie dies nicht tun.
 
@@ -135,7 +135,7 @@ In den meisten Fällen müssen Sie keine Verbindungs Zeichenfolgen-Transformatio
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
-Das `Transform`-Attribut gibt an, dass diese Verbindungs Zeichenfolge dem *connectionStrings* -Element in der bereitgestellten *Web. config* -Datei hinzugefügt wird. (Der Veröffentlichungsprozess erstellt diese zusätzliche Verbindungs Zeichenfolge automatisch für Sie, wenn Sie nicht vorhanden ist, aber standardmäßig wird das **providerName** -Attribut auf `System.Data.SqlClient`festgelegt, was nicht für SQL Server Compact funktioniert. Durch manuelles Hinzufügen der Verbindungs Zeichenfolge wird verhindert, dass der Bereitstellungs Prozess ein Verbindungs Zeichen folgen Element mit dem falschen Anbieter Namen erstellt.)
+Das `Transform`-Attribut gibt an, dass diese Verbindungs Zeichenfolge dem *connectionStrings* -Element in der bereitgestellten *Web. config* -Datei hinzugefügt wird. (Der Veröffentlichungsprozess erstellt diese zusätzliche Verbindungs Zeichenfolge automatisch für Sie, wenn Sie nicht vorhanden ist, aber standardmäßig wird das **providerName** -Attribut auf `System.Data.SqlClient`festgelegt, was für SQL Server Compact nicht funktioniert. Durch manuelles Hinzufügen der Verbindungs Zeichenfolge wird verhindert, dass der Bereitstellungs Prozess ein Verbindungs Zeichen folgen Element mit dem falschen Anbieter Namen erstellt.)
 
 Sie haben jetzt alle *Web. config* -Transformationen angegeben, die Sie zum Bereitstellen der Conto-University-Anwendung für die Test-und Produktionsumgebung benötigen. Im folgenden Tutorial werden Bereitstellungs Einrichtungs Aufgaben behandelt, die das Festlegen von Projekteigenschaften erfordern.
 
