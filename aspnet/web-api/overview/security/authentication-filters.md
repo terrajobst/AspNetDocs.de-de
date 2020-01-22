@@ -1,167 +1,167 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: Authentifizierungsfilter in ASP.NET-Web-API 2 | Microsoft-Dokumentation
+title: Authentifizierungs Filter in ASP.net-Web-API 2 | Microsoft-Dokumentation
 author: MikeWasson
-description: Ein Authentifizierungsfilter ist eine Komponente, die eine HTTP-Anforderung authentifiziert. Web-API 2 und MVC 5 unterstützen beide Authentifizierungsfilter, aber sie unterscheiden sich geringfügig...
+description: Ein Authentifizierungs Filter ist eine Komponente, die eine HTTP-Anforderung authentifiziert. Die Web-API 2 und MVC 5 unterstützen Authentifizierungs Filter, unterscheiden sich jedoch geringfügig...
 ms.author: riande
 ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 15a343a061c61313141dcb69bd329e08aa902d98
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126009"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519374"
 ---
-# <a name="authentication-filters-in-aspnet-web-api-2"></a>Authentifizierungsfilter in ASP.NET-Web-API 2
+# <a name="authentication-filters-in-aspnet-web-api-2"></a>Authentifizierungs Filter in ASP.net-Web-API 2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-> Ein Authentifizierungsfilter ist eine Komponente, die eine HTTP-Anforderung authentifiziert. Web-API 2 und MVC 5 unterstützen beide Authentifizierungsfilter, aber sie unterscheiden sich geringfügig, vor allem in den Benennungskonventionen für die filterschnittstelle. Dieses Thema beschreibt die Web-API-Authentifizierungsfilter.
+> Ein Authentifizierungs Filter ist eine Komponente, die eine HTTP-Anforderung authentifiziert. Die Web-API 2 und MVC 5 unterstützen Authentifizierungs Filter. Sie unterscheiden sich jedoch geringfügig, größtenteils in den Benennungs Konventionen für die Filter Schnittstelle. In diesem Thema werden Web-API-Authentifizierungs Filter beschrieben.
 
-Authentifizierungsfilter können Sie ein anderes Authentifizierungsschema für den individuellen Controllern oder Aktionen festlegen. Auf diese Weise kann Ihre app verschiedene Authentifizierungsmechanismen für unterschiedliche HTTP-Ressourcen unterstützen.
+Mit Authentifizierungs filtern können Sie ein Authentifizierungsschema für einzelne Controller oder Aktionen festlegen. Auf diese Weise kann Ihre APP verschiedene Authentifizierungsmechanismen für verschiedene HTTP-Ressourcen unterstützen.
 
-In diesem Artikel zeige ich, Code aus der [Standardauthentifizierung](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) auf [ http://aspnet.codeplex.com ](http://aspnet.codeplex.com). Das Beispiel zeigt einen Authentifizierungsfilter, der das HTTP-Standardauthentifizierung Access-Schema (RFC 2617) implementiert. Der Filter wird in einer Klasse, die mit dem Namen implementiert `IdentityBasicAuthenticationAttribute`. Ich nicht der gesamte Code aus dem Beispiel nur die Bestandteile angezeigt, die veranschaulichen, wie Sie einen Authentifizierungsfilter zu schreiben.
+In diesem Artikel zeige ich Code aus dem Beispiel zur Standard [Authentifizierung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) auf [https://github.com/aspnet/samples](https://github.com/aspnet/samples). Das Beispiel zeigt einen Authentifizierungs Filter, der das HTTP-Basis Zugriffs Authentifizierungsschema (RFC 2617) implementiert. Der Filter wird in einer Klasse mit dem Namen `IdentityBasicAuthenticationAttribute`implementiert. Ich zeige nicht den gesamten Code aus dem Beispiel, sondern nur die Teile, die veranschaulichen, wie ein Authentifizierungs Filter geschrieben wird.
 
-## <a name="setting-an-authentication-filter"></a>Einen Authentifizierungsfilter festlegen
+## <a name="setting-an-authentication-filter"></a>Festlegen eines Authentifizierungs Filters
 
-Wie andere Filter auch können die Authentifizierungsfilter angewendeten pro Controller, Aktion oder global auf alle Web-API-Controller sein.
+Wie bei anderen Filtern können Authentifizierungs Filter pro Controller, pro Aktion oder global auf alle Web-API-Controller angewendet werden.
 
-Um einen Authentifizierungsfilter mit einem Controller anzuwenden, ergänzen Sie die Controller-Klasse mit dem Filterattribut. Im folgenden code wird die `[IdentityBasicAuthentication]` Filter für eine Controller-Klasse, die Standardauthentifizierung für alle Aktionen des Controllers ermöglicht.
+Zum Anwenden eines Authentifizierungs Filters auf einen Controller müssen Sie die Controller Klasse mit dem Filter-Attribut ergänzen. Mit dem folgenden Code wird der `[IdentityBasicAuthentication]` Filter für eine Controller Klasse festgelegt, die die Standard Authentifizierung für alle Aktionen des Controllers ermöglicht.
 
 [!code-csharp[Main](authentication-filters/samples/sample1.cs)]
 
-Um den Filter auf eine Aktion anwenden, ergänzen Sie die Aktion, mit dem Filter. Im folgenden code wird die `[IdentityBasicAuthentication]` Filter für des Controllers `Post` Methode.
+Um den Filter auf eine Aktion anzuwenden, ergänzen Sie die Aktion mit dem Filter. Der folgende Code legt den `[IdentityBasicAuthentication]` Filter für die `Post`-Methode des Controllers fest.
 
 [!code-csharp[Main](authentication-filters/samples/sample2.cs)]
 
-Um den Filter auf alle Web-API-Controller anzuwenden, hinzufügen zu **GlobalConfiguration.Filters**.
+Wenn Sie den Filter auf alle Web-API-Controller anwenden möchten, fügen Sie ihn zu " **globalconfiguration. Filters**" hinzu.
 
 [!code-csharp[Main](authentication-filters/samples/sample3.cs)]
 
-## <a name="implementing-a-web-api-authentication-filter"></a>Implementieren eine Web-API-Authentifizierungsfilter
+## <a name="implementing-a-web-api-authentication-filter"></a>Implementieren eines Web-API-Authentifizierungs Filters
 
-In Web-API, Authentifizierungsfilter implementieren die [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) Schnittstelle. Sie sollten auch eine Vererbung von **System.Attribute**, um als Attribute angewendet werden.
+In der Web-API implementieren Authentifizierungs Filter die [System. Web. http. Filters. iauthenticationfilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) -Schnittstelle. Sie sollten auch von " **System. Attribute**" erben, damit Sie als Attribute angewendet werden können.
 
-Die **IAuthenticationFilter** Schnittstelle verfügt über zwei Methoden:
+Die **iauthenticationfilter** -Schnittstelle verfügt über zwei Methoden:
 
-- **AuthenticateAsync** authentifiziert die Anforderung von Anmeldeinformationen in der Anforderung überprüft, falls vorhanden.
-- **"Challengeasync"** der HTTP-Antwort bei Bedarf eine authentifizierungsaufforderung hinzugefügt.
+- **Authenti-easync** authentifiziert die Anforderung, indem die Anmelde Informationen in der Anforderung überprüft werden, falls vorhanden.
+- " **Herausforderer** " fügt bei Bedarf der HTTP-Antwort eine Authentifizierungs Aufforderung hinzu.
 
-Diese Methoden entsprechen den Authentifizierungsablauf in definierten [RFC 2612](http://tools.ietf.org/html/rfc2616) und [RFC 2617](http://tools.ietf.org/html/rfc2617):
+Diese Methoden entsprechen dem Authentifizierungs Fluss, der in [RFC 2612](http://tools.ietf.org/html/rfc2616) und [RFC 2617](http://tools.ietf.org/html/rfc2617)definiert ist:
 
-1. Der Client sendet die Anmeldeinformationen in der Authorization-Header. Dies geschieht normalerweise, nachdem der Client eine 401-Antwort (nicht autorisiert) vom Server empfangen. Allerdings kann ein Client Anmeldeinformationen mit jeder Anforderung senden, nicht nur nach dem Abrufen von 401.
-2. Wenn der Server die Anmeldeinformationen nicht akzeptiert, wird eine 401-Antwort (nicht autorisiert) zurückgegeben. Die Antwort enthält einen Www-Authenticate-Header, der eine oder mehrere Herausforderungen enthält. Jede Abfrage gibt ein Authentifizierungsschema, das vom Server erkannt.
+1. Der Client sendet Anmelde Informationen im Autorisierungs Header. Dies geschieht normalerweise, nachdem der Client eine Antwort vom Typ 401 (nicht autorisiert) vom Server empfangen hat. Ein Client kann jedoch Anmelde Informationen mit einer beliebigen Anforderung senden, nicht nur nach dem erhalten eines 401.
+2. Wenn der Server die Anmelde Informationen nicht akzeptiert, wird die Antwort 401 (nicht autorisiert) zurückgegeben. Die Antwort enthält einen WWW-Authenticate-Header, der eine oder mehrere Herausforderungen enthält. Jede Abfrage gibt ein Authentifizierungsschema an, das vom Server erkannt wird.
 
-Der Server kann auch eine anonyme Anforderung 401 zurückgeben. In der Tat ist, die in der Regel wie die Authentifizierung initiiert wird:
+Der Server kann 401 auch aus einer anonymen Anforderung zurückgeben. Tatsächlich wird der Authentifizierungsprozess in der Regel initiiert:
 
-1. Der Client sendet eine anonyme Anforderung an.
+1. Der Client sendet eine anonyme Anforderung.
 2. Der Server gibt 401 zurück.
-3. Die Clients sendet die Anforderung mit den Anmeldeinformationen an.
+3. Der Client sendet die Anforderung mit den Anmelde Informationen erneut.
 
-Dieser Flow enthält die beiden *Authentifizierung* und *Autorisierung* Schritte.
+Dieser Flow umfasst sowohl *Authentifizierungs* -als auch *Autorisierungs* Schritte.
 
-- Authentifizierung erweist es sich um die Identität des Clients.
-- Autorisierung wird bestimmt, ob der Client eine bestimmte Ressource zugreifen kann.
+- Bei der Authentifizierung wird die Identität des Clients bestätigt.
+- Die Autorisierung bestimmt, ob der Client auf eine bestimmte Ressource zugreifen kann.
 
-Behandeln Sie Authentifizierungsfilter in Web-API Authentifizierung, aber keine Autorisierung. Autorisierung sollte durch einen Autorisierungsfilter oder innerhalb der Controlleraktion durchgeführt werden.
+In der Web-API behandeln Authentifizierungs Filter die Authentifizierung, aber nicht die Autorisierung. Die Autorisierung sollte durch einen Autorisierungs Filter oder innerhalb der Controller Aktion durchgeführt werden.
 
 Dies ist der Flow in der Web-API 2-Pipeline:
 
-1. Vor dem Aufrufen einer Aktion, erstellt die Web-API eine Liste der Authentifizierungsfilter für diese Aktion. Dies schließt die Filter mit den Aktionsbereich, Bereich von Controller und globalen Bereich.
-2. Web-API-Aufrufe **AuthenticateAsync** auf jedem Filter in der Liste. Jeder Filter kann die Anmeldeinformationen in der Anforderung überprüfen. Wenn Filter Anmeldeinformationen erfolgreich überprüft wurde, erstellt der Filter ein **IPrincipal** und an die Anforderung angefügt wurde. Filter kann auch an diesem Punkt einen Fehler auslösen. Wenn dies der Fall ist, wird der Rest der Pipeline nicht ausgeführt.
-3. Vorausgesetzt, dass kein Fehler vorliegt, wird die Anforderung den Rest der Pipeline durchläuft.
-4. Schließlich Web-API ruft alle Authentifizierungsfilter **"challengeasync"** Methode. Filter mit dieser Methode können Sie eine Herausforderung für die Antwort, hinzufügen, bei Bedarf. In der Regel (aber nicht immer) würde, die als Reaktion auf ein 401-Fehler erfolgen.
+1. Bevor eine Aktion aufgerufen wird, erstellt die Web-API eine Liste der Authentifizierungs Filter für diese Aktion. Dies schließt Filter mit Aktionsbereich, Controllerbereich und globalem Gültigkeitsbereich ein.
+2. Die Web-API ruft bei jedem Filter in der Liste **Authenti-easync** auf. Jeder Filter kann die Anmelde Informationen in der Anforderung überprüfen. Wenn ein Filter erfolgreich Anmelde Informationen überprüft, erstellt der Filter einen **IPrincipal** und fügt ihn an die Anforderung an. Ein Filter kann an dieser Stelle auch einen Fehler auslöst. Wenn dies der Fall ist, wird der Rest der Pipeline nicht ausgeführt.
+3. Wenn kein Fehler auftritt, fließt die Anforderung durch den Rest der Pipeline.
+4. **Zum Schluss** Ruft die Web-API die Methode "-Methode" für jeden Authentifizierungs Filter auf. Filter verwenden diese Methode, um bei Bedarf der Antwort eine Aufforderung hinzuzufügen. In der Regel (aber nicht immer), die als Reaktion auf einen 401-Fehler auftreten würden.
 
-Die folgenden Diagramme zeigen die beiden möglichen Fälle. Im ersten der Authentifizierungsfilter erfolgreiche Authentifizierung der Anforderung, ein Autorisierungsfilter autorisiert die Anforderung und die Controlleraktion gibt 200 (OK) zurück.
+Die folgenden Diagramme zeigen zwei mögliche Fälle. Im ersten authentifiziert der Authentifizierungs Filter die Anforderung erfolgreich, ein Autorisierungs Filter autorisiert die Anforderung, und die Controller Aktion gibt 200 (OK) zurück.
 
 ![](authentication-filters/_static/image1.png)
 
-Im zweiten Beispiel die Authentifizierungsfilter authentifiziert die Anforderung, aber der Autorisierungsfilter gibt 401 (nicht autorisiert). In diesem Fall wird die Controlleraktion nicht aufgerufen werden. Der Authentifizierungsfilter Fügt einen Www-Authenticate-Header der Antwort hinzu.
+Im zweiten Beispiel authentifiziert der Authentifizierungs Filter die Anforderung, aber der Autorisierungs Filter gibt 401 (nicht autorisiert) zurück. In diesem Fall wird die Controller Aktion nicht aufgerufen. Der Authentifizierungs Filter fügt der Antwort einen WWW-Authenticate-Header hinzu.
 
 ![](authentication-filters/_static/image2.png)
 
-Andere Kombinationen sind möglich&mdash;z. B. wenn die Controlleraktion über anonyme Anforderungen zulässt, müssen Sie möglicherweise einen Authentifizierungsfilter, aber ohne Autorisierung.
+Andere Kombinationen sind möglich&mdash;z. b. wenn die Controller Aktion anonyme Anforderungen zulässt, verfügen Sie möglicherweise über einen Authentifizierungs Filter, aber keine Autorisierung.
 
-## <a name="implementing-the-authenticateasync-method"></a>Implementierung der AuthenticateAsync-Methode
+## <a name="implementing-the-authenticateasync-method"></a>Implementieren der Authenti-easync-Methode
 
-Die **AuthenticateAsync** Methode versucht, die die Anforderung zu authentifizieren. So sieht die Signatur der Methode aus:
+Die **authentikateasync** -Methode versucht, die Anforderung zu authentifizieren. Hier die Signatur der Methode:
 
 [!code-csharp[Main](authentication-filters/samples/sample4.cs)]
 
-Die **AuthenticateAsync** Methode müssen eine der folgenden:
+Die **Authenti-easync** -Methode muss eine der folgenden Aktionen ausführen:
 
-1. "Nothing" (ohne-Op).
-2. Erstellen Sie eine **IPrincipal** und legen Sie ihn in der Anforderung.
-3. Legen Sie ein fehlerhaftes Ergebnis.
+1. Nothing (No-OP).
+2. Erstellen Sie einen **IPrincipal** , und legen Sie ihn für die Anforderung fest.
+3. Legen Sie ein Fehler Ergebnis fest.
 
-(1) bedeutet, dass die Anforderung nicht über Anmeldeinformationen verfügt, die der Filter versteht-Option. Option (2) bedeutet, dass der Filter wird die Anforderung erfolgreich authentifiziert. Option (3) bedeutet, dass die Anforderung hatte ungültige Anmeldeinformationen (z. B. das falsche Kennwort), die eine Fehlerantwort auslöst.
+Option (1) bedeutet, dass die Anforderung keine Anmelde Informationen enthielt, die der Filter versteht. Option (2) bedeutet, dass der Filter die Anforderung erfolgreich authentifiziert hat. Die Option (3) bedeutet, dass die Anforderung ungültige Anmelde Informationen enthielt (z. b. das falsche Kennwort), die eine Fehler Antwort auslösen.
 
-Hier ist eine allgemeine Gliederung für die Implementierung **AuthenticateAsync**.
+Im folgenden finden Sie eine allgemeine Übersicht über die Implementierung von **Authenti-easync**.
 
-1. Suchen Sie nach Anmeldeinformationen in der Anforderung.
-2. Wenn keine Anmeldeinformationen vorhanden sind, wird keine Aktion durchführen, und geben Sie (keine Aktion) zurück.
-3. Wenn Anmeldeinformationen vorhanden sind, aber das Authentifizierungsschema der Filter nicht erkennt, wird keine Aktion durchführen, und geben Sie (keine Aktion) zurück. Ein weiterer Filter in der Pipeline kann das Schema erhalten.
-4. Wenn die Anmeldeinformationen, die der Filter zu verstehen sind, versuchen Sie, die Authentifizierung.
-5. Wenn die Anmeldeinformationen gefälscht sind, durch Festlegen 401 zurückgegeben `context.ErrorResult`.
-6. Wenn die Anmeldeinformationen gültig sind, erstellen Sie eine **IPrincipal** und `context.Principal`.
+1. Suchen Sie in der Anforderung nach Anmelde Informationen.
+2. Wenn keine Anmelde Informationen vorhanden sind, führen Sie nichts aus, und geben Sie (No-OP) zurück.
+3. Wenn Anmelde Informationen vorhanden sind, der Filter das Authentifizierungsschema aber nicht erkennt, führen Sie nichts aus, und geben Sie (No-OP) zurück. Ein anderer Filter in der Pipeline kann das Schema verstehen.
+4. Wenn Anmelde Informationen vorhanden sind, die der Filter versteht, versuchen Sie, diese zu authentifizieren.
+5. Wenn die Anmelde Informationen falsch sind, wird 401 zurückgegeben, indem `context.ErrorResult`festgelegt wird.
+6. Wenn die Anmelde Informationen gültig sind, erstellen Sie einen **IPrincipal** , und legen Sie `context.Principal`fest.
 
-Im folgenden Code veranschaulicht die **AuthenticateAsync** Methode aus der [Standardauthentifizierung](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) Beispiel. Jeder Schritt geben Sie die Kommentare an. Der Code zeigt verschiedene Fehlertypen: Einen Autorisierungsheader mit keine Anmeldeinformationen, fehlerhafte Anmeldeinformationen und ungültigen Benutzernamens/Kennworts.
+Der folgende Code zeigt die **Authenti-easync** -Methode aus dem Beispiel zur Standard [Authentifizierung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) . In den Kommentaren werden die einzelnen Schritte angegeben. Der Code zeigt verschiedene Arten von Fehlern: einen Autorisierungs Header ohne Anmelde Informationen, falsch formatierte Anmelde Informationen und ungültigen Benutzernamen/Kennwort.
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
-## <a name="setting-an-error-result"></a>Ein Fehlerergebnis festlegt
+## <a name="setting-an-error-result"></a>Festlegen eines Fehler Ergebnisses
 
-Der Filter muss festgelegt, wenn die Anmeldeinformationen ungültig sind, `context.ErrorResult` auf eine **IHttpActionResult** erstellt eine Fehlerantwort. Weitere Informationen zu **IHttpActionResult**, finden Sie unter [Aktionsergebnisse in Web-API 2](../getting-started-with-aspnet-web-api/action-results.md).
+Wenn die Anmelde Informationen ungültig sind, muss der Filter `context.ErrorResult` auf ein **ihttpactionresult** festlegen, das eine Fehler Antwort erstellt. Weitere Informationen zu **ihttpactionresult**finden Sie unter [Aktions Ergebnisse in der Web-API 2](../getting-started-with-aspnet-web-api/action-results.md).
 
-Das Beispiel für die Standardauthentifizierung enthält ein `AuthenticationFailureResult` -Klasse, die für diesen Zweck geeignet ist.
+Das Beispiel zur Standard Authentifizierung enthält eine `AuthenticationFailureResult`-Klasse, die für diesen Zweck geeignet ist.
 
 [!code-csharp[Main](authentication-filters/samples/sample6.cs)]
 
-## <a name="implementing-challengeasync"></a>Implementieren von "challengeasync"
+## <a name="implementing-challengeasync"></a>Implementieren von "".
 
-Der Zweck der **"challengeasync"** Methode wird die Antwort, authentifizierungsanforderungen hinzugefügt werden kann, bei Bedarf. So sieht die Signatur der Methode aus:
+Der Zweck der Methode "Delegat **Async** " besteht darin, der Antwort bei Bedarf Authentifizierungs Herausforderungen hinzuzufügen. Hier die Signatur der Methode:
 
 [!code-csharp[Main](authentication-filters/samples/sample7.cs)]
 
-Die Methode ist für alle Authentifizierungsfilter in der Pipeline aufgerufen.
+Die-Methode wird für jeden Authentifizierungs Filter in der Anforderungs Pipeline aufgerufen.
 
-Es ist wichtig zu verstehen, dass **"challengeasync"** heißt *vor* die HTTP-Antwort wird erstellt, und möglicherweise sogar, bevor Sie die Controller-Aktion ausgeführt wird. Wenn **"challengeasync"** aufgerufen wird, `context.Result` enthält ein **IHttpActionResult**, der später zum Erstellen der HTTP-Antwort verwendet wird. Dies der Fall bei **"challengeasync"** wird aufgerufen, Sie kennen nichts über die HTTP-Antwort noch nicht. Die **"challengeasync"** sollten ersetzen Sie die Methode den ursprünglichen Wert von `context.Result` mit einem neuen **IHttpActionResult**. Dies **IHttpActionResult** müssen die ursprüngliche umschließen `context.Result`.
+Es ist wichtig zu verstehen, **dass "** " "" " " "" "" ". Wenn **"** " "" "" "" "" "" **"`context.Result`,** " "" " **Wenn Sie** also "" "" "" "" ". Die Methode " **delegalasync** " sollte den ursprünglichen Wert `context.Result` durch ein neues **ihttpactionresult**ersetzen. Dieses **ihttpactionresult** muss die ursprüngliche `context.Result`einschließen.
 
 ![](authentication-filters/_static/image3.png)
 
-Ich nenne die ursprüngliche **IHttpActionResult** der *innere Ergebnis*, und die neue **IHttpActionResult** der *äußeren Ergebnis*. Das äußere Ergebnis muss die folgenden Schritte ausführen:
+Ich rufe das ursprüngliche **ihttpactionresult** -Ergebnis im *inneren Ergebnis*und das neue **ihttpactionresult** -Ergebnis das *äußere Ergebnis*auf. Das äußere Ergebnis muss folgende Aktionen ausführen:
 
-1. Rufen Sie das innere Ergebnis um die HTTP-Antwort zu erstellen.
-2. Überprüfen Sie die Antwort.
-3. Fügen Sie gegebenenfalls an die Antwort, eine authentifizierungsaufforderung hinzu.
+1. Rufen Sie das innere Ergebnis auf, um die HTTP-Antwort zu erstellen.
+2. Untersuchen Sie die Antwort.
+3. Fügen Sie bei Bedarf der Antwort eine Authentifizierungs Aufforderung hinzu.
 
-Das folgende Beispiel stammt aus dem Beispiel für die Standardauthentifizierung. Definiert eine **IHttpActionResult** für das äußere Ergebnis.
+Das folgende Beispiel stammt aus dem Beispiel zur Standard Authentifizierung. Dabei wird ein **ihttpactionresult** für das äußere Ergebnis definiert.
 
 [!code-csharp[Main](authentication-filters/samples/sample8.cs)]
 
-Die `InnerResult` Eigenschaft enthält die innere **IHttpActionResult**. Die `Challenge` Eigenschaft darstellt, ein Www-Authentifizierungsheader. Beachten Sie, dass **ExecuteAsync** ruft zuerst `InnerResult.ExecuteAsync` zum Erstellen der HTTP-Antwort und fügt dann die Herausforderung bei Bedarf.
+Die `InnerResult`-Eigenschaft enthält das innere **ihttpactionresult**. Die `Challenge`-Eigenschaft stellt einen www-Authentifizierungs Header dar. Beachten Sie, dass von **ExecuteAsync** zuerst `InnerResult.ExecuteAsync` aufgerufen wird, um die HTTP-Antwort zu erstellen. Anschließend wird die Abfrage bei Bedarf hinzugefügt.
 
-Überprüfen Sie den Antwortcode vor dem Hinzufügen der Aufforderung an. Die meisten Authentifizierungsschemen nur hinzufügen, eine Herausforderung darstellen, wenn die Antwort "401" ist, wie hier gezeigt. Einige Authentifizierungsschemas jedoch eine Herausforderung eine erfolgreiche Antwort hinzufügen. Beispielsweise finden Sie unter [Negotiate](http://tools.ietf.org/html/rfc4559#section-5) (RFC 4559).
+Überprüfen Sie den Antwort Code, bevor Sie die Abfrage hinzufügen. Die meisten Authentifizierungs Schemas fügen nur dann eine Herausforderung hinzu, wenn die Antwort 401 ist, wie hier gezeigt. Einige Authentifizierungs Schemas stellen jedoch eine Herausforderung für eine Erfolgs Antwort dar. Informationen hierzu finden Sie beispielsweise unter [Aushandlung](http://tools.ietf.org/html/rfc4559#section-5) (RFC 4559).
 
-Erhält die `AddChallengeOnUnauthorizedResult` Klasse, den tatsächlichen Code **"challengeasync"** ist einfach. Sie gerade das Ergebnis zu erstellen, und fügen Sie ihn auf `context.Result`.
+Wenn die `AddChallengeOnUnauthorizedResult`-Klasse angegeben wird, ist der tatsächliche **Code in "** " "" Sie erstellen das Ergebnis einfach und fügen es an `context.Result`an.
 
 [!code-csharp[Main](authentication-filters/samples/sample9.cs)]
 
-Hinweis: Das Beispiel für die Standardauthentifizierung abstrahiert diese Logik etwas, indem Sie diesen in eine Erweiterungsmethode.
+Hinweis: das Beispiel zur Standard Authentifizierung abstrahiert diese Logik ein wenig, indem es in eine Erweiterungsmethode platziert wird.
 
-## <a name="combining-authentication-filters-with-host-level-authentication"></a>Kombinieren von Authentifizierungsfilter mit Authentifizierung auf Aufrufebene Host
+## <a name="combining-authentication-filters-with-host-level-authentication"></a>Kombinieren von Authentifizierungs Filtern mit Authentifizierung auf Hostebene
 
-"Authentifizierung auf Hostebene" ist die Authentifizierung, die vom Host (z. B. IIS) ausgeführt wird vor der Anforderung erreicht die Web-API-Framework.
+"Authentifizierung auf Hostebene" ist die Authentifizierung, die vom Host (z. b. IIS) ausgeführt wird, bevor die Anforderung das Web-API-Framework erreicht.
 
-Häufig empfiehlt es sich zum Aktivieren der Authentifizierung auf Hostebene, für den Rest der Anwendung aber deaktivieren, für Ihre Web-API-Controller. Beispielsweise ist ein typisches Szenario zum Aktivieren der Formularauthentifizierung auf der Hostebene, jedoch tokenbasierte Authentifizierung für Web-API ein.
+Häufig empfiehlt es sich, die Authentifizierung auf Hostebene für den Rest der Anwendung zu aktivieren, diese aber für Ihre Web-API-Controller zu deaktivieren. Ein typisches Szenario ist beispielsweise die Aktivierung der Formular Authentifizierung auf Hostebene, aber die tokenbasierte Authentifizierung für die Web-API.
 
-Rufen Sie zum Deaktivieren der Authentifizierung auf Hostebene, in der Web-API-Pipeline `config.SuppressHostPrincipal()` in Ihrer Konfiguration. Dies bewirkt, dass Web-API So entfernen Sie die **IPrincipal** in jede Anforderung, die die Web-API-Pipeline eingibt. Effektiv es &quot;un-authentifiziert&quot; der Anforderung.
+Um die Authentifizierung auf Hostebene in der Web-API-Pipeline zu deaktivieren, wenden Sie `config.SuppressHostPrincipal()` in Ihrer Konfiguration an. Dies bewirkt, dass die Web-API den **IPrincipal** aus allen Anforderungen entfernt, die in die Web-API-Pipeline eingegeben werden. Effektiv &quot;&quot; der Anforderung nicht authentifiziert werden.
 
 [!code-csharp[Main](authentication-filters/samples/sample10.cs)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Sicherheitsfilter von ASP.NET Web API](https://msdn.microsoft.com/magazine/dn781361.aspx) (MSDN Magazin)
+[ASP.net-Web-API Sicherheitsfilter](https://msdn.microsoft.com/magazine/dn781361.aspx) (MSDN Magazine)

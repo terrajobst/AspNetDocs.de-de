@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 46264a0ab2244cff24761ce94b41722e61e3f426
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: d3b619ebd9448d30857ffbaf17fd245b1d54a662
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614928"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519296"
 ---
 # <a name="shopping-cart"></a>Einkaufswagen
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial wird die Geschäftslogik beschrieben, die zum Hinzufügen eines Einkaufswagen zum Beispiel ASP.net Web Forms Anwendung Wingtip Toys erforderlich ist. Dieses Tutorial baut auf dem vorherigen Tutorial "Anzeigen von Datenelementen und-Details" auf und ist Teil der Wingtip Toy Store-tutorialreihe. Wenn Sie dieses Tutorial abgeschlossen haben, können die Benutzer ihrer Beispiel-APP die Produkte in Ihrem Warenkorb hinzufügen, entfernen und ändern.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 1. Erstellen eines Einkaufswagen für die Webanwendung.
 2. Hiermit wird Benutzern das Hinzufügen von Elementen zum Warenkorb ermöglicht.
@@ -62,7 +62,7 @@ Weiter oben in dieser tutorialreihe haben Sie das Schema für die Kategorie-und 
 3. Benennen Sie diese neue Klasse *CartItem.cs*.
 4. Klicken Sie auf **Hinzufügen**.  
    Die neue Klassendatei wird im Editor angezeigt.
-5. Ersetzen Sie den Standard Code durch den folgenden Code:   
+5. Ersetzen Sie den Standardcode durch den folgenden Code:   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
 
@@ -109,7 +109,7 @@ Die `ShoppingCart` Klasse wird einem separaten Ordner in der Anwendung hinzugef�
 1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **wingtiptoys**, und wählen Sie-&gt;**neuen Ordner** **Hinzufügen** aus. Benennen Sie die neue Ordner *Logik*.
 2. Klicken Sie mit der rechten Maustaste auf den Ordner *Logic* , und wählen Sie -&gt; **Neues Element** **Hinzufügen** aus.
 3. Fügen Sie eine neue Klassendatei mit dem Namen *ShoppingCartActions.cs*hinzu.
-4. Ersetzen Sie den Standard Code durch den folgenden Code:   
+4. Ersetzen Sie den Standardcode durch den folgenden Code:   
 
     [!code-csharp[Main](shopping-cart/samples/sample3.cs)]
 
@@ -229,7 +229,7 @@ Wenn die *ShoppingCart. aspx* -Seite geladen wird, lädt Sie das Warenkorb-Objek
 Führen Sie die Anwendung jetzt aus, um zu sehen, wie Sie dem Warenkorb nicht nur ein Produkt hinzufügen können, sondern auch den Einkaufswagen gesamt.
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.  
- Der Browser wird geöffnet und zeigt die Seite *default. aspx* an.
+ Der Browser wird geöffnet und zeigt die Seite *Default.aspx* an.
 2. Wählen Sie im Navigationsmenü der Kategorie die Option **Autos** aus.
 3. Klicken Sie neben dem ersten Produkt auf den Link **zum Warenkorb hinzufügen** .   
  Die Seite " *ShoppingCart. aspx* " wird mit dem Gesamtbetrag der Bestellung angezeigt. 
@@ -312,9 +312,11 @@ In diesem Tutorial haben Sie einen Warenkorb für die Beispielanwendung Wingtip 
 
 Der Warenkorb unterstützt das Hinzufügen, löschen und Aktualisieren von Elementen, die der Benutzer für den Kauf ausgewählt hat. Zusätzlich zur Implementierung der Warenkorb-Funktion haben Sie erfahren, wie Sie waren Korb Elemente in einem **GridView** -Steuerelement anzeigen und die Bestellsumme berechnen.
 
+Um zu verstehen, wie die beschriebene Funktionalität in einer realen Geschäftsanwendung funktioniert, können Sie das Beispiel für [nopcommerce](https://github.com/nopSolutions/nopCommerce) -ASP.net Based Open Source-e-Commerce-Einkaufswagen anzeigen. Ursprünglich war es auf Web Forms und im Laufe der Jahre aufgebaut, das es in MVC verlagert hat und jetzt ASP.net Core.
+
 ## <a name="addition-information"></a>Zusätzliche Informationen
 
-[ASP.net Übersicht über den Sitzungszustand](https://msdn.microsoft.com/library/ms178581.aspx)
+[Überblick über den ASP.NET-Sitzungsstatus](https://msdn.microsoft.com/library/ms178581.aspx)
 
 > [!div class="step-by-step"]
 > [Zurück](display_data_items_and_details.md)

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5386532ab581e023d93d16a5d4107e07f40b986f
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 032368f94ce32cf6231458649e8fdd42bee685e9
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985826"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519257"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>Parameter Bindung in ASP.net-Web-API
 
@@ -26,14 +26,14 @@ In diesem Artikel wird beschrieben, wie die Web-API Parameter bindet und wie Sie
 
 Standardmäßig verwendet die Web-API die folgenden Regeln, um Parameter zu binden:
 
-- Wenn es sich bei dem Parameter um einen einfachen Typ handelt, versucht die Web-API, den Wert aus dem URI zu erhalten. Einfache Typen umfassen die [primitiven](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) .NET-Typen (**int**, **bool**, **Double**usw.) sowie **TimeSpan**, **DateTime**, **GUID**, **Decimal**und **String** *sowie* einen beliebigen Typ mit einem Typ. Konverter, der von einer Zeichenfolge konvertieren kann. (Weitere Informationen zu Typkonvertern später.)
+- Wenn es sich bei dem Parameter um einen einfachen Typ handelt, versucht die Web-API, den Wert aus dem URI zu erhalten. Einfache Typen umfassen die [primitiven](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) .NET-Typen (**int**, **bool**, **Double**usw.) sowie **TimeSpan**, **DateTime**, **GUID**, **Decimal**und **String** *sowie* einen beliebigen Typ mit einem Typkonverter, der von einer Zeichenfolge konvertieren kann. (Weitere Informationen zu Typkonvertern später.)
 - Bei komplexen Typen versucht die Web-API, den Wert aus dem Nachrichtentext mit einem [Medientyp-Formatierer](media-formatters.md)zu lesen.
 
 Hier ist z. b. eine typische Web-API-Controller Methode:
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample1.cs)]
 
-Der *ID* -Parameter ist &quot;ein&quot; einfacher Typ, daher versucht die Web-API, den Wert aus dem Anforderungs-URI zu erhalten. Der *Element* Parameter ist ein komplexer Typ, sodass die Web-API einen Medientyp-Formatierer verwendet, um den Wert aus dem Anforderungs Text zu lesen.
+Der *ID* -Parameter ist eine &quot;einfache&quot; Typs. daher versucht die Web-API, den Wert aus dem Anforderungs-URI zu erhalten. Der *Element* Parameter ist ein komplexer Typ, sodass die Web-API einen Medientyp-Formatierer verwendet, um den Wert aus dem Anforderungs Text zu lesen.
 
 Um einen Wert aus dem URI zu erhalten, sucht die Web-API in den Routendaten und in der URI-Abfrage Zeichenfolge. Die Routendaten werden aufgefüllt, wenn das Routing System den URI analysiert und mit einer Route übereinstimmt. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md).
 
@@ -41,11 +41,11 @@ Im weiteren Verlauf dieses Artikels zeige ich Ihnen, wie Sie den Modell Bindungs
 
 ## <a name="using-fromuri"></a>Verwenden [fromuri]
 
-Fügen Sie dem-Parameter das **[fromuri]** -Attribut hinzu, um zu erzwingen, dass die Web-API einen komplexen Typ aus dem URI liest. Im folgenden Beispiel wird ein `GeoPoint` -Typ zusammen mit einer Controller Methode definiert, die `GeoPoint` den aus dem URI abruft.
+Fügen Sie dem-Parameter das **[fromuri]** -Attribut hinzu, um zu erzwingen, dass die Web-API einen komplexen Typ aus dem URI liest. Im folgenden Beispiel wird ein `GeoPoint` Typ zusammen mit einer Controller Methode definiert, die die `GeoPoint` aus dem URI abruft.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample2.cs)]
 
-Der Client kann die Werte für breiten-und Längengrade in der Abfrage Zeichenfolge ablegen, und die Web- `GeoPoint`API verwendet diese, um ein zu erstellen. Beispiel:
+Der Client kann die Werte für breiten-und Längengrade in der Abfrage Zeichenfolge ablegen, und die Web-API verwendet diese, um ein `GeoPoint`zu erstellen. Beispiel:
 
 `http://localhost/api/values/?Latitude=47.678558&Longitude=-122.130989`
 
@@ -59,7 +59,7 @@ In diesem Beispiel verwendet die Web-API einen Medientyp-Formatierer, um den Wer
 
 [!code-console[Main](parameter-binding-in-aspnet-web-api/samples/sample4.cmd)]
 
-Wenn ein Parameter [frombody] aufweist, verwendet die Web-API den Content-Type-Header, um einen Formatierer auszuwählen. In diesem Beispiel ist &quot;der Inhaltstyp "Application/JSON&quot; ", und der Anforderungs Text ist eine unformatierte JSON-Zeichenfolge (kein JSON-Objekt).
+Wenn ein Parameter [frombody] aufweist, verwendet die Web-API den Content-Type-Header, um einen Formatierer auszuwählen. In diesem Beispiel ist der Inhaltstyp &quot;Application/JSON&quot; und der Anforderungs Text ist eine unformatierte JSON-Zeichenfolge (kein JSON-Objekt).
 
 Höchstens ein Parameter darf aus dem Nachrichtentext gelesen werden. Dies funktioniert nicht:
 
@@ -71,11 +71,11 @@ Der Grund für diese Regel besteht darin, dass der Anforderungs Text möglicherw
 
 Sie können festlegen, dass die Web-API eine Klasse als einfachen Typ behandelt (sodass die Web-API versucht, Sie aus dem URI zu binden), indem Sie einen **TypeConverter** erstellen und eine Zeichen folgen Konvertierung bereitstellen.
 
-Der folgende Code zeigt eine `GeoPoint` Klasse, die einen geografischen Punkt darstellt, sowie einen **TypeConverter** , der von Zeichen `GeoPoint` folgen in-Instanzen konvertiert. Die `GeoPoint` Klasse wird mit einem **[TypeConverter]** -Attribut versehen, um den Typkonverter anzugeben. (Dieses Beispiel wurde vom Blogbeitrag von Mike Stall [zum Binden an benutzerdefinierte Objekte in Aktions Signaturen in MVC/WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)inspiriert.)
+Der folgende Code zeigt eine `GeoPoint` Klasse, die einen geografischen Punkt darstellt, sowie einen **TypeConverter** , der von Zeichen folgen in `GeoPoint` Instanzen konvertiert. Die `GeoPoint`-Klasse wird mit einem **[TypeConverter]** -Attribut versehen, um den Typkonverter anzugeben. (Dieses Beispiel wurde vom Blogbeitrag von Mike Stall [zum Binden an benutzerdefinierte Objekte in Aktions Signaturen in MVC/WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)inspiriert.)
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample6.cs)]
 
-Nun wird die Web- `GeoPoint` API als einfacher Typ behandelt, d. h., `GeoPoint` es wird versucht, Parameter aus dem URI zu binden. Sie müssen **[fromuri]** nicht für den Parameter einschließen.
+Die Web-API behandelt nun `GeoPoint` als einfachen Typ, d. h., es wird versucht, `GeoPoint` Parameter aus dem URI zu binden. Sie müssen **[fromuri]** nicht für den Parameter einschließen.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample7.cs)]
 
@@ -91,7 +91,7 @@ Um einen Modell Binder zu erstellen, implementieren Sie die **IModelBinder** -Sc
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample8.cs)]
 
-Hier ist ein Modell Binder für `GeoPoint` -Objekte.
+Im folgenden finden Sie einen Modell Binder für `GeoPoint`-Objekte.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample9.cs)]
 
@@ -100,12 +100,12 @@ Ein Modell Binder ruft roheingabe Werte von einem *Wert Anbieter*ab. Dieser Entw
 - Der Wert Anbieter nimmt die HTTP-Anforderung an und füllt ein Wörterbuch von Schlüssel-Wert-Paaren.
 - Der Modell Binder verwendet dieses Wörterbuch zum Auffüllen des Modells.
 
-Der Standardwert Anbieter in der Web-API ruft Werte aus den Routendaten und der Abfrage Zeichenfolge ab. Wenn der URI beispielsweise ist `http://localhost/api/values/1?location=48,-122`, erstellt der Wert Anbieter die folgenden Schlüssel-Wert-Paare:
+Der Standardwert Anbieter in der Web-API ruft Werte aus den Routendaten und der Abfrage Zeichenfolge ab. Wenn der URI z. b. `http://localhost/api/values/1?location=48,-122`ist, erstellt der Wert Anbieter die folgenden Schlüssel-Wert-Paare:
 
 - id = &quot;1&quot;
-- Speicherort &quot;= 48.122&quot;
+- Location = &quot;48.122&quot;
 
-(Ich gehe von der Standardrouten Vorlage aus, die &quot;API/{Controller}/{ID}&quot;ist.)
+(Ich gehe von der Standardrouten Vorlage aus, bei der es sich um &quot;API/{Controller}/{ID}&quot;handelt.)
 
 Der Name des Parameters, der gebunden werden soll, wird in der **modelbindingcontext. modelname** -Eigenschaft gespeichert. Der Modell Binder sucht einen Schlüssel mit diesem Wert im Wörterbuch. Wenn der Wert vorhanden ist und in einen `GeoPoint`konvertiert werden kann, weist der Modell Binder den gebundenen Wert der **modelbindingcontext. Model** -Eigenschaft zu.
 
@@ -129,7 +129,7 @@ Bei einem Modell Bindungs Anbieter müssen Sie dem Parameter immer noch das Attr
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample13.cs)]
 
-## <a name="value-providers"></a>Wert Anbieter
+## <a name="value-providers"></a>Wertanbieter
 
 Ich habe erwähnt, dass ein Modell Binder Werte von einem Wert Anbieter abruft. Um einen benutzerdefinierten Wert Anbieter zu schreiben, implementieren Sie die **IValueProvider** -Schnittstelle. Es folgt ein Beispiel, das Werte aus den Cookies in der Anforderung abruft:
 
@@ -159,11 +159,11 @@ Modell Binder sind eine bestimmte Instanz eines allgemeineren Mechanismus. Wenn 
 
 Eine **httpparameterbinding** ist dafür verantwortlich, einen Parameter an einen Wert zu binden. Im Fall von **[Modelbinder]** gibt das Attribut eine **httpparameterbinding** -Implementierung zurück, die einen **IModelBinder** verwendet, um die tatsächliche Bindung auszuführen. Sie können auch Ihre eigene **httpparameterbinding**implementieren.
 
-Nehmen Sie beispielsweise an, dass Sie Etags aus `if-match` - `if-none-match` und-Headern in der Anforderung erhalten möchten. Wir beginnen mit der Definition einer Klasse zur Darstellung von Etags.
+Nehmen Sie beispielsweise an, Sie möchten Etags aus `if-match` und `if-none-match` Header in der Anforderung erhalten. Wir beginnen mit der Definition einer Klasse zur Darstellung von Etags.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
-Wir definieren außerdem eine Enumeration, die angibt, ob das ETag aus dem `if-match` Header oder dem `if-none-match` Header erhalten werden soll.
+Wir definieren außerdem eine Enumeration, um anzugeben, ob das ETag aus dem `if-match`-Header oder dem `if-none-match`-Header erhalten werden soll.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample20.cs)]
 
@@ -176,19 +176,19 @@ Die **executebindingasync** -Methode führt die Bindung aus. Fügen Sie in diese
 > [!NOTE]
 > Wenn die **executebindingasync** -Methode den Text der Anforderungs Nachricht liest, überschreiben Sie die **willread Body** -Eigenschaft, um true zurückzugeben. Bei dem Anforderungs Text kann es sich um einen nicht gepufferten Datenstrom handeln, der nur einmal gelesen werden kann, sodass die Web-API eine Regel erzwingt, dass höchstens eine Bindung den Nachrichtentext lesen kann.
 
-Um ein benutzerdefiniertes **httpparameterbinding**-Attribut anzuwenden, können Sie ein Attribut definieren, das von **parameterbindingattribute**abgeleitet wird. Für `ETagParameterBinding`werden zwei Attribute definiert, eine für `if-match` Header und eine für `if-none-match` Header. Beide werden von einer abstrakten Basisklasse abgeleitet.
+Um ein benutzerdefiniertes **httpparameterbinding**-Attribut anzuwenden, können Sie ein Attribut definieren, das von **parameterbindingattribute**abgeleitet wird. Für `ETagParameterBinding`definieren wir zwei Attribute, eine für `if-match` Header und eine für `if-none-match` Header. Beide werden von einer abstrakten Basisklasse abgeleitet.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample22.cs)]
 
-Im folgenden finden Sie eine Controller Methode, `[IfNoneMatch]` die das-Attribut verwendet.
+Im folgenden finden Sie eine Controller Methode, die das `[IfNoneMatch]`-Attribut verwendet.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample23.cs)]
 
-Neben **parameterbindingattribute**gibt es einen anderen Hook zum Hinzufügen eines benutzerdefinierten **httpparameterbinding**-Objekts. Im **httpconfiguration** -Objekt ist die **parameterbindingrules** -Eigenschaft eine Auflistung anonymer Funktionen vom Typ (**httpparameterdescriptor**  - &gt; **httpparameterbinding**). Beispielsweise können Sie eine Regel hinzufügen, die von jedem ETag-Parameter einer get `ETagParameterBinding` - `if-none-match`Methode mit verwendet wird:
+Neben **parameterbindingattribute**gibt es einen anderen Hook zum Hinzufügen eines benutzerdefinierten **httpparameterbinding**-Objekts. Im **httpconfiguration** -Objekt ist die **parameterbindingrules** -Eigenschaft eine Auflistung anonymer Funktionen vom Typ (**httpparameterdescriptor** -&gt; **httpparameterbinding**). Beispielsweise können Sie eine Regel hinzufügen, die von jedem ETag-Parameter einer Get-Methode `ETagParameterBinding` mit `if-none-match`verwendet wird:
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample24.cs)]
 
-Die Funktion sollte für `null` Parameter zurückgeben, bei denen die Bindung nicht anwendbar ist.
+Die Funktion sollte `null` für Parameter zurückgeben, bei denen die Bindung nicht anwendbar ist.
 
 ## <a name="iactionvaluebinder"></a>IActionValueBinder
 
@@ -205,7 +205,7 @@ Wenn Sie möchten, können Sie den gesamten **iaktionvaluebinder** -Dienst durch
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Beispiel für benutzerdefinierte Parameter Bindung](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/CustomParameterBinding/ReadMe.txt)
+[Beispiel für benutzerdefinierte Parameter Bindung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 
 Mike Stall hat eine gute Reihe von Blogbeiträgen zur Web-API-Parameter Bindung verfasst:
 

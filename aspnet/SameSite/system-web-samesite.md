@@ -3,14 +3,14 @@ title: Arbeiten mit SameSite-Cookies in ASP.net
 author: rick-anderson
 description: Erfahren Sie, wie Sie mit SameSite-Cookies in ASP.NET verwenden.
 ms.author: riande
-ms.date: 12/03/2019
+ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: 47a3d7576edb0e818c39b32fbbcb98475248e18e
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: d2160bd9aeb93398b49b3a0e5e7a8a4404a5bc63
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993063"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519192"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>Arbeiten mit SameSite-Cookies in ASP.net
 
@@ -25,7 +25,7 @@ SameSite ist ein [IETF](https://ietf.org/about/) -Entwurf, der einen Schutz vor 
 
 Der `None`-Parameter verursacht Kompatibilitätsprobleme mit Clients, die den früheren [2016-Entwurfs Standard](https://tools.ietf.org/html/draft-west-first-party-cookies-07) (z. b. IOS 12) implementiert haben. Siehe [Unterstützung älterer Browser](#sob) in diesem Dokument.
 
-Jede ASP.net Core Komponente, die Cookies ausgibt, muss entscheiden, ob SameSite geeignet ist.
+Jede ASP.NET-Komponente, die Cookies ausgibt, muss entscheiden, ob SameSite geeignet ist.
 
 ## <a name="api-usage-with-samesite"></a>API-Nutzung mit SameSite
 
@@ -44,6 +44,10 @@ Die Updates vom 19. November 2019 für Windows aktualisierte .NET 4.7.2 + von de
 * Gibt Cookies an, die `SameSite=None` explizit bestätigen, um die standortübergreifende Übermittlung zu ermöglichen, muss als `Secure`gekennzeichnet werden. `None` ist ein neuer Eintrag zum ablehnen.
 * Wird von Patches unterstützt, die wie in den oben aufgeführten KB beschrieben ausgegeben werden.
 * Ist für die standardmäßige Aktivierung durch [Chrome](https://chromestatus.com/feature/5088147346030592) in [Feb 2020](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)vorgesehen. Die Umstellung auf diesen Standard in 2019 wurde gestartet.
+
+### <a name="azure-app-servicesamesite-cookie-handling"></a>Azure App Service – SameSite-Cookie-Behandlung
+
+Weitere Informationen finden Sie unter [Azure App Service – SameSite-Cookie-Behandlung und .NET Framework 4.7.2-Patch](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/) .
 
 <a name="sob"></a>
 
@@ -69,7 +73,7 @@ Apps, die mit Remote Standorten interagieren, z. b. durch die Anmeldung von Drit
 * Testen Sie die Interaktion in mehreren Browsern.
 * Anwenden der in diesem Dokument beschriebenen [Browser Erkennung und-Entschärfung](#sob) .
 
-Testen Sie Web-Apps mithilfe einer Client Version, die das neue SameSite-Verhalten abonnieren kann. Chrome, Firefox und Microsoft Edge Chromium verfügen über neue Feature-Flags, die für Tests verwendet werden können. Nachdem Ihre APP die SameSite-Patches angewendet hat, testen Sie Sie mit älteren Client Versionen, insbesondere Safari. Weitere Informationen finden Sie [unter unterstützen älterer Browser](#sob) in diesem Dokument.
+Testen Sie Web-Apps mithilfe einer Client Version, die das neue SameSite-Verhalten abonnieren kann. Chrome, Firefox und Chromium Edge verfügen über neue Feature-Flags, die für Tests verwendet werden können. Nachdem Ihre APP die SameSite-Patches angewendet hat, testen Sie Sie mit älteren Client Versionen, insbesondere Safari. Weitere Informationen finden Sie [unter unterstützen älterer Browser](#sob) in diesem Dokument.
 
 ### <a name="test-with-chrome"></a>Testen mit Chrome
 
@@ -88,13 +92,13 @@ Safari 12 hat den vorherigen Entwurf streng implementiert und schlägt fehl, wen
 
 Die Firefox-Unterstützung für den neuen Standard kann auf Version 68 + getestet werden, indem Sie sich auf der Seite "`about:config`" mit dem Feature-Flag `network.cookie.sameSite.laxByDefault`anmelden. Es gab keine Berichte über Kompatibilitätsprobleme mit älteren Versionen von Firefox.
 
-### <a name="test-with-edge-browser"></a>Testen mit dem Microsoft Edge-Browser
+### <a name="test-with-edge-browser"></a>Testen mit dem Edge-Browser
 
-Microsoft Edge unterstützt den alten SameSite-Standard. Microsoft Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
+Edge unterstützt den alten SameSite-Standard. Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
 
-### <a name="test-with-edge-chromium"></a>Testen mit Microsoft Edge (Chromium)
+### <a name="test-with-edge-chromium"></a>Testen mit Edge (Chrom)
 
-Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Microsoft Edge Chromium erkannt.
+Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Edge-Chrom erkannt.
 
 ### <a name="test-with-electron"></a>Testen mit einem Elektron
 

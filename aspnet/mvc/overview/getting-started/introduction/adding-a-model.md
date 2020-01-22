@@ -8,58 +8,58 @@ ms.date: 05/28/2015
 ms.assetid: 276552b5-f349-4fcf-8f40-6d042f7aa88e
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 0221539f5e468faacf3e38374452c0cc2a7d31d3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0d926c7a8bd99c56820208921c10e609da56d236
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398747"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519036"
 ---
 # <a name="adding-a-model"></a>Hinzufügen eines Modells
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-[!INCLUDE [Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](index.md)]
 
-In diesem Abschnitt fügen Sie einige Klassen für die Verwaltung von Filmen in einer Datenbank. Diese Klassen bilden die &quot;Modell&quot; Teil der ASP.NET MVC-app.
+In diesem Abschnitt fügen Sie einige Klassen zum Verwalten von Filmen in einer-Datenbank hinzu. Diese Klassen sind das &quot;Modell&quot; Teil der ASP.NET MVC-app.
 
-Verwenden Sie eine .NET Framework-Datenzugriff-Technologie als bezeichnet die [Entity Framework](https://docs.microsoft.com/ef/) definieren und mit diesen Modellklassen arbeiten. Der Entity Framework (häufig als EF bezeichnet) unterstützt, wird, ein Paradigma für die Entwicklung aufgerufen *Code First*. Code zuerst können Sie Modellobjekte zu erstellen, indem einfache Klassen schreiben. (Diese werden auch bezeichnet als POCO-Klassen von &quot;einfache alte CLR-Objekte.&quot;) Sie können dann die Datenbank erstellt haben, im laufenden Betrieb von Klassen, die einen Entwicklungsworkflow sehr übersichtlich und eine schnelle ermöglicht haben. Wenn Sie zum ersten Erstellen der Datenbank erforderlich sind, können Sie dieses Lernprogramm aus, um mehr über MVC und EF-app-Entwicklung erfahren weiterhin folgen. Führen Sie dann Tom Fizmakens [ASP.NET-Gerüstbau](xref:visual-studio/overview/2013/aspnet-scaffolding-overview) Tutorial, in dem die Datenbank-first-Ansatz behandelt.
+Sie verwenden eine .NET Framework Datenzugriffs Technologie, die als [Entity Framework](https://docs.microsoft.com/ef/) bezeichnet wird, um diese Modellklassen zu definieren und mit Ihnen zu arbeiten. Der Entity Framework (häufig als EF bezeichnet) unterstützt ein Entwicklungsparadigma namens *Code First*. Code First ermöglicht es Ihnen, Modell Objekte zu erstellen, indem einfache Klassen geschrieben werden. (Diese werden auch als poco-Klassen bezeichnet, von &quot;Plain-Old CLR-Objekten.&quot;) Anschließend können Sie die Datenbank dynamisch von ihren Klassen erstellen lassen, wodurch ein sehr sauberer und schneller Entwicklungs Workflow ermöglicht wird. Wenn Sie die Datenbank zuerst erstellen müssen, finden Sie in diesem Tutorial Weitere Informationen zur MVC-und EF-App-Entwicklung. Anschließend können Sie das Tutorial "Tom fzmakens [ASP.net Gerüstbau](xref:visual-studio/overview/2013/aspnet-scaffolding-overview) " befolgen, das den Ansatz der Datenbank behandelt.
 
 ## <a name="adding-model-classes"></a>Hinzufügen von Modellklassen
 
-In **Projektmappen-Explorer**, klicken Sie mit der rechten Maustaste auf die *Modelle* Ordner **hinzufügen**, und wählen Sie dann **Klasse**.
+Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner *Modelle* , und wählen Sie **Hinzufügen**und dann **Klasse**aus.
 
 ![](adding-a-model/_static/image1.png)
 
-Geben Sie die *Klasse* Namen &quot;Film&quot;.
+Geben Sie den *Klassen* Namen &quot;Movie&quot;ein.
 
-Fügen Sie die folgenden fünf Eigenschaften, die `Movie` Klasse:
+Fügen Sie der `Movie`-Klasse die folgenden fünf Eigenschaften hinzu:
 
 [!code-csharp[Main](adding-a-model/samples/sample1.cs)]
 
-Wir verwenden die `Movie` Klasse zur Darstellung von Filmen in einer Datenbank. Jede Instanz eine `Movie` eine Zeile in einer Datenbanktabelle, und jede Eigenschaft des Objekts entspricht der `Movie` Klasse wird an eine Spalte in der Tabelle zugeordnet.
+Wir verwenden die `Movie`-Klasse, um Filme in einer Datenbank darzustellen. Jede Instanz eines `Movie` Objekts entspricht einer Zeile in einer Datenbanktabelle, und jede Eigenschaft der `Movie` Klasse wird einer Spalte in der Tabelle zugeordnet.
 
-Hinweis: Um System.Data.Entity und die verknüpfte Klasse verwenden, müssen Sie installieren die [Entity Framework-NuGet-Pakets](https://www.nuget.org/packages/EntityFramework/). Führen Sie den Link, um weitere Anweisungen zu erhalten.
+Hinweis: um "System. Data. Entity" und die zugehörige Klasse zu verwenden, müssen Sie das [Entity Framework nuget-Paket](https://www.nuget.org/packages/EntityFramework/)installieren. Weitere Anweisungen finden Sie unter dem Link.
 
-Fügen Sie in der gleichen Datei Folgendes `MovieDBContext` Klasse:
+Fügen Sie in der gleichen Datei die folgende `MovieDBContext`-Klasse hinzu:
 
 [!code-csharp[Main](adding-a-model/samples/sample2.cs?highlight=2,15-18)]
 
-Die `MovieDBContext` Klasse darstellt, die Entity Framework filmdatenbankkontext, die verarbeitet werden, abrufen, speichern und Aktualisieren von `Movie` -Klasseninstanzen in einer Datenbank. Die `MovieDBContext` leitet sich von der `DbContext` Basisklasse, die vom Entity Framework bereitgestellt.
+Die `MovieDBContext`-Klasse stellt den Entity Framework Movie-Daten Bank Kontext dar, der das Abrufen, speichern und Aktualisieren von `Movie`-Klassen Instanzen in einer Datenbank übernimmt. Die `MovieDBContext` wird von der `DbContext` Basisklasse abgeleitet, die vom Entity Framework bereitgestellt wird.
 
-Damit Sie verweisen können `DbContext` und `DbSet`, müssen Sie die folgende hinzufügen `using` -Anweisung am Anfang der Datei:
+Um auf `DbContext` und `DbSet`verweisen zu können, müssen Sie am Anfang der Datei die folgende `using`-Anweisung hinzufügen:
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-Hierzu können Sie manuell hinzufügen, die mit-Anweisung, oder Sie können die roten Wellenlinien zeigen, klicken Sie auf `Show potential fixes` , und klicken Sie auf `using System.Data.Entity;`
+Fügen Sie hierzu manuell die using-Anweisung hinzu, oder bewegen Sie den Mauszeiger über die roten Wellenlinien, klicken Sie auf `Show potential fixes` und klicken Sie dann auf `using System.Data.Entity;`
 
 ![](adding-a-model/_static/image2.png)
 
-Hinweis: Einige nicht verwendete `using` Anweisungen entfernt wurden. Visual Studio wird nicht verwendete Abhängigkeiten als grau angezeigt. Sie können die nicht verwendete Abhängigkeiten entfernen, indem Sie mit dem Mauszeiger auf die grauen Abhängigkeiten, klicken Sie auf `Show potential fixes` , und klicken Sie auf **nicht verwendete Using-Direktiven entfernen.**
+Hinweis: mehrere nicht verwendete `using` Anweisungen wurden entfernt. In Visual Studio werden nicht verwendete Abhängigkeiten als grau angezeigt. Sie können nicht verwendete Abhängigkeiten entfernen, indem Sie auf die grauen Abhängigkeiten zeigen, auf `Show potential fixes` klicken und auf nicht verwendete using-Direktiven **Entfernen klicken.**
 
 ![](adding-a-model/_static/image3.png)
 
-Schließlich haben wir ein Modell (das M in MVC) hinzugefügt. Im nächsten Abschnitt Arbeiten Sie mit der Datenbank-Verbindungszeichenfolge.
+Schließlich haben wir ein Modell hinzugefügt (M in MVC). Im nächsten Abschnitt Arbeiten Sie mit der Datenbank-Verbindungs Zeichenfolge.
 
 > [!div class="step-by-step"]
 > [Zurück](adding-a-view.md)

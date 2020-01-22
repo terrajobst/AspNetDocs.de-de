@@ -1,48 +1,48 @@
 ---
-title: Hinzufügen einer Ansicht zu einer MVC-app
+title: Hinzufügen einer Ansicht zu einer MVC-App
 author: Rick-Anderson
-description: Hinzufügen einer Ansicht zu einer MVC-app
+description: Hinzufügen einer Ansicht zu einer MVC-App
 ms.author: riande
 ms.date: 01/23/2019
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 42469611f94b374d6692a1c2017aced77a0a414c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4b369028aca1e8a6cace60466b8049ccc02a2ec2
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403856"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519062"
 ---
 # <a name="adding-a-view"></a>Hinzufügen einer Ansicht
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-[!INCLUDE [Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](index.md)]
 
-In diesem Abschnitt also ändern Sie die `HelloWorldController` anzeigen, die Vorlagendateien an sauber zu kapseln den Prozess der Generierung von HTML-Antworten an einen Client zu verwendende Klasse an. 
+In diesem Abschnitt ändern Sie die `HelloWorldController`-Klasse so, dass Sie Vorlagen Dateien anzeigen verwendet, um den Prozess der Erstellung von HTML-Antworten für einen Client zu bereinigen. 
 
-Erstellen Sie eine Ansicht Vorlage mithilfe der [Razor-ansichtsengine](../../../../web-pages/overview/getting-started/introducing-razor-syntax-c.md). Razor-basierte Ansichtsvorlagen haben eine *.cshtml* Dateierweiterung aus, und geben Sie eine elegante Methode zum Erstellen von HTML-Ausgabe mithilfe von c#. Razor minimiert die Anzahl von Zeichen und Tastaturanschläge erforderlich, wenn eine ansichtsvorlage zu schreiben und ermöglicht eine schnelle, fließende Workflows programmieren.
+Sie erstellen mithilfe der [Razor-Ansichts-Engine](../../../../web-pages/overview/getting-started/introducing-razor-syntax-c.md)eine Ansichts Vorlagen Datei. Razor-basierte Ansichts Vorlagen verfügen über die Dateierweiterung " *. cshtml* " und bieten eine elegante Möglichkeit zum Erstellen C#einer HTML-Ausgabe mithilfe von. Razor minimiert die Anzahl der zum Schreiben einer Ansichts Vorlage erforderlichen Zeichen und Tastatureingaben und ermöglicht einen schnellen, fließenden Codierungs Workflow.
 
-Derzeit gibt die `Index`-Methode eine Zeichenfolge mit der Meldung zurück, die in der Controllerklasse hartcodiert ist. Ändern der `Index` Controller aufzurufende Methode [Ansicht](/dotnet/api/microsoft.aspnetcore.mvc.controller.view#Microsoft_AspNetCore_Mvc_Controller_View) Methode, wie im folgenden Code gezeigt:
+Derzeit gibt die `Index`-Methode eine Zeichenfolge mit der Meldung zurück, die in der Controllerklasse hartcodiert ist. Ändern Sie die `Index`-Methode so, dass Sie die Controller [Ansichts](/dotnet/api/microsoft.aspnetcore.mvc.controller.view#Microsoft_AspNetCore_Mvc_Controller_View) Methode aufruft, wie im folgenden Code gezeigt:
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-Die `Index` oben genannte Methode verwendet eine ansichtsvorlage zum Generieren einer HTML-Antwortinhalts an den Browser. Controllermethoden (auch bekannt als [Aktionsmethoden](http://rachelappel.com/asp.net-mvc-actionresults-explained)), wie z. B. die `Index` oben in der Regel Methodenrückgabewert ein [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (oder eine abgeleitete Klasse [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), keine primitiven Typen wie Zeichenfolge.
+Die oben beschriebene `Index` Methode verwendet eine Ansichts Vorlage, um eine HTML-Antwort an den Browser zu generieren. Controller Methoden (auch [Aktionsmethoden](http://rachelappel.com/asp.net-mvc-actionresults-explained)genannt), wie z. b. die oben genannte `Index` Methode, geben im Allgemeinen ein [Action result](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (oder eine von " [Action result](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)" abgeleitete Klasse) und keine primitiven Typen wie String zurück.
 
-Klicken Sie mit der rechten Maustaste auf die *Views\HelloWorld* Ordner, und klicken Sie auf **hinzufügen**, klicken Sie dann auf **MVC 5-Ansichtsseite mit Layout (Razor)**.
+Klicken Sie mit der rechten Maustaste auf den Ordner *views\helloworld* , klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **MVC 5-Ansichts Seite mit Layout**
   
 ![](adding-a-view/_static/image1.png)   
   
-In der **Namen für Artikel angeben** Dialogfeld Geben Sie *Index*, und klicken Sie dann auf **OK**.  
+Geben Sie im Dialogfeld **Name für Element angeben** den Wert *Index*ein, und klicken Sie dann auf **OK**.  
   
 ![](adding-a-view/_static/image2.png)  
   
-In der **Layoutseite auswählen** Dialogfeld den Standardpfad  **\_Layout.cshtml** , und klicken Sie auf **OK**.  
+Akzeptieren Sie im Dialogfeld **Layoutseite auswählen** die Standard **\_Layout. cshtml** , und klicken Sie auf **OK**.  
   
 ![](adding-a-view/_static/image3.png)  
   
-Im Dialogfeld für die oben genannten der *Views\Shared* Ordner im linken Bereich ausgewählt ist. Wenn Sie eine benutzerdefiniertes Layout-Datei in einen anderen Ordner haben, können Sie es auswählen. Wir sprechen über die Layoutdatei später in diesem tutorial
+Im obigen Dialogfeld wird im linken Bereich der Ordner " *views\shared* " ausgewählt. Wenn Sie über eine benutzerdefinierte Layoutdatei in einem anderen Ordner verfügen, können Sie Sie auswählen. Die Layoutdatei wird später in diesem Tutorial erläutert.
 
-Die *MvcMovie\Views\HelloWorld\Index.cshtml* Datei erstellt wird.
+Die *mvcmuvie\views\helloworld\index.cshtml* -Datei wird erstellt.
 
 ![](adding-a-view/_static/image4.png)
 
@@ -50,103 +50,103 @@ Fügen Sie das folgende hervorgehobene Markup hinzu.
 
 [!code-cshtml[Main](adding-a-view/samples/sample2.cshtml?highlight=4-11)]
 
-Klicken Sie mit der rechten Maustaste auf die *"Index.cshtml"* und wählen Sie **in Browser anzeigen**.
+Klicken Sie mit der rechten Maustaste auf die Datei *Index. cshtml* , und wählen Sie **in Browser anzeigen**.
 
 ![PI](adding-a-view/_static/image5.png)
 
-Sie können auch nach rechts klicken, die *"Index.cshtml"* und wählen Sie **in Seitenprüfung anzeigen.** Finden Sie unter den [Page Inspector Tutorial](../../views/using-page-inspector-in-aspnet-mvc.md) für Weitere Informationen.
+Sie können auch mit der rechten Maustaste auf die Datei *Index. cshtml* klicken und **in Seitenprüfung** die Option Ansicht auswählen. Weitere Informationen finden Sie im [Seitenprüfung-Tutorial](../../views/using-page-inspector-in-aspnet-mvc.md) .
 
-Alternativ führen Sie die Anwendung, und navigieren Sie zu der `HelloWorld` Controller (`http://localhost:xxxx/HelloWorld`). Die `Index` -Methode in Ihrer Controller nicht viel Arbeit ausführen; es einfach ausgeführt wurde, die Anweisung `return View()`, die angab, dass die Methode eine ansichtsvorlagendatei verwenden soll, um eine Antwort an den Browser auszugeben. Da Sie den Namen der ansichtsvorlagendatei mit nicht explizit angegeben haben, ASP.NET MVC standardmäßig die *"Index.cshtml"* -Datei in die *\Views\HelloWorld* Ordner. Die folgende Abbildung zeigt die Zeichenfolge &quot;Hello from our View Template!&quot; in der Ansicht hartcodiert.
+Alternativ können Sie die Anwendung ausführen und zum `HelloWorld` Controller (`http://localhost:xxxx/HelloWorld`) navigieren. Die `Index`-Methode in Ihrem Controller hat nicht viel funktioniert. Es wurde einfach die-Anweisung `return View()`ausgeführt, mit der angegeben wurde, dass die Methode eine Ansichts Vorlagen Datei verwenden soll, um eine Antwort an den Browser auszugeben. Da Sie den Namen der zu verwendenden Ansichts Vorlagen Datei nicht explizit angegeben haben, verwendet ASP.NET MVC standardmäßig die Ansichts Datei " *Index. cshtml* " im Ordner " *\views\helloworld* ". Die folgende Abbildung zeigt die Zeichenfolge &quot;Hello aus unserer Ansichts Vorlage.&quot; in der-Sicht hart codiert.
 
 ![](adding-a-view/_static/image6.png)
 
-Das sieht recht gut. Beachten Sie jedoch, dass im Browser auf die Titelleiste zeigt "Index – My ASP.NET Application," und der große Link am oberen Rand der Seite ", sagt"Anwendungsname". Je nach kleine Sie Ihr Browserfenster vornehmen, müssen Sie möglicherweise die drei Balken in der oberen rechten Ecke, um anzuzeigen, klicken Sie auf die auf die **Startseite**, **zu**, **wenden Sie sich an**, **Registrieren** und **melden Sie sich bei** Links.
+Sieht ziemlich gut aus. Beachten Sie jedoch, dass in der Titelleiste des Browsers "Index-My ASP.NET Application" und der große Link oben auf der Seite "Anwendungsname" angezeigt wird. Je nachdem, wie klein Sie das Browserfenster machen, müssen Sie möglicherweise auf die drei Balken in der oberen rechten Ecke klicken, um die Links zu den Links **Start** **, Info,** **Contact**, **Register** und **Log in** anzuzeigen.
 
 ## <a name="changing-views-and-layout-pages"></a>Ändern von Ansichten und Layoutseiten
 
-Zunächst, den Sie ändern möchten die &quot;Anwendungsname&quot; Link am oberen Rand der Seite. Dieser Text ist üblich, jede Seite. Es ist tatsächlich in nur an einer Stelle im Projekt implementiert, obwohl er auf jeder Seite in der Anwendung angezeigt wird. Wechseln Sie zu der */Views/Shared* Ordner **Projektmappen-Explorer** , und öffnen Sie die  *\_Layout.cshtml* Datei. Diese Datei heißt eine *Layoutseite* und befindet sich in den freigegebenen Ordner, die alle anderen Seiten zu verwenden.
+Zuerst möchten Sie den &quot;Anwendungsnamen&quot; Links oben auf der Seite ändern. Dieser Text ist für jede Seite üblich. Es wird tatsächlich nur an einer Stelle im Projekt implementiert, auch wenn es auf jeder Seite in der Anwendung angezeigt wird. Wechseln Sie in **Projektmappen-Explorer** zum Ordner */views/Shared* , und öffnen Sie die Datei *\_Layout. cshtml* . Diese Datei wird als *Layoutseite* bezeichnet und befindet sich im freigegebenen Ordner, der von allen anderen Seiten verwendet wird.
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-Layoutvorlagen können Sie die HTML-Containerlayout Ihrer Website zentral anzugeben und wenden Sie es über mehrere Seiten auf Ihrer Website. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, bei dem alle ansichtsspezifischen Seiten, die Sie erstellen, von der Layoutseite &quot;umschlossen&quot; angezeigt werden. Angenommen, Sie wählen die **zu** Link die *Views\Home\About.cshtml* Ansicht gerendert wird, in der `RenderBody` Methode.
+Mit Layoutvorlagen können Sie das HTML-Container Layout Ihrer Website an einem Ort angeben und dann auf mehrere Seiten auf Ihrer Website anwenden. Suchen Sie die Zeile `@RenderBody()`. `RenderBody` ist ein Platzhalter, bei dem alle ansichtsspezifischen Seiten, die Sie erstellen, von der Layoutseite &quot;umschlossen&quot; angezeigt werden. Wenn Sie z. b. den **Link info** auswählen, wird die Ansicht *views\home\about.cshtml* innerhalb der `RenderBody`-Methode gerendert.
 
-Ändern Sie den Inhalt des Elements „title“. Ändern der [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) in der Layoutvorlage aus &quot;Anwendungsname&quot; zu &quot;MVC Movie&quot; und den Controller von `Home` zu `Movies`. Die vollständige Layoutdatei ist unten dargestellt:
+Ändern Sie den Inhalt des Elements „title“. Ändern Sie den [Aktionslink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) in der Layoutvorlage von &quot;Anwendungsname&quot; in &quot;MVC Movie&quot; und den Controller von `Home` zu `Movies`. Die komplette Layoutdatei ist unten dargestellt:
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 
-Ausführen der Anwendung und beachten Sie, der jetzt angeblich &quot;MVC Movie &quot;. Klicken Sie auf die **zu** Link, und Sie sehen wie diese Seite zeigt &quot;MVC Movie&quot;ebenfalls. Wir konnten für die Änderung einmal in der Layoutvorlage aus, und haben alle Seiten auf der Website entsprechend den neuen Titel.
+Führen Sie die Anwendung aus, und beachten Sie, dass Sie jetzt &quot;MVC Movie &quot;heißt. Klicken Sie auf **den Link info** , und Sie sehen, dass auf dieser Seite auch &quot;MVC Movie&quot;angezeigt wird. Wir konnten die Änderung einmal in der Layoutvorlage vornehmen, sodass alle Seiten auf der Website den neuen Titel widerspiegeln.
 
 ![](adding-a-view/_static/image8.png)
 
-Wenn wir zuerst erstellt die *Views\HelloWorld\Index.cshtml* -Datei, sie enthalten den folgenden Code:
+Beim ersten Erstellen der Datei " *views\helloworld\index.cshtml* " enthielt Sie den folgenden Code:
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-Der obige Razor-Code wird die Seite "Layout" explizit festlegen. Überprüfen Sie die *Ansichten\\_ViewStart.cshtml* Datei er das genaue derselbe Razor-Markup enthält. Die *[Ansichten\\_ViewStart.cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)* -Datei definiert das allgemeine Layout, das alle Ansichten, daher können Sie kommentieren, out oder entfernen Sie diesen Code aus der *Views\HelloWorld\ Datei "Index.cshtml"* Datei.
+Der obige Razor-Code legt die Layoutseite explizit fest. Überprüfen Sie die *Ansichten\\_ViewStart cshtml* -Datei, die genau dasselbe Razor-Markup enthält. Die *[Ansichten\\_ViewStart. cshtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)* -Datei definiert das gemeinsame Layout, das von allen Ansichten verwendet wird. Daher können Sie diesen Code aus der Datei " *views\helloworld\index.cshtml* " auskommentieren oder entfernen.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml?highlight=1-3)]
 
 Sie können mithilfe der `Layout`-Eigenschaft eine andere Layoutansicht festlegen oder diese auf `null` festlegen, damit keine Layoutdatei verwendet wird.
 
-Jetzt ändern wir den Titel der Ansicht "Index".
+Nun ändern wir den Titel der Index Sicht.
 
-Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Es gibt zwei Bereiche zu ändern: zuerst der Text, der angezeigt wird in der Titelleiste des Browsers, und klicken Sie dann in die sekundäre Kopfzeile (die `<h2>` Element). Sie nehmen diese geringfügig anders vor, damit Sie erkennen können, welcher Teil der App mithilfe einer Codebearbeitung geändert wird.
+Öffnen Sie *mvcmuvie\views\helloworld\index.cshtml*. Es gibt zwei Möglichkeiten, eine Änderung vorzunehmen: zuerst den Text, der im Titel des Browsers angezeigt wird, und dann im sekundären Header (das `<h2>`-Element). Sie nehmen diese geringfügig anders vor, damit Sie erkennen können, welcher Teil der App mithilfe einer Codebearbeitung geändert wird.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml?highlight=2,5)]
 
-An die HTML-Titel angezeigt werden, den Code oben legt ein `Title` Eigenschaft der `ViewBag` Objekt (dieser befindet sich in der *"Index.cshtml"* Vorlage anzeigen). Beachten Sie, dass die Layoutvorlage aus ( *Views\Shared\\"_Layout.cshtml"* ) verwendet diesen Wert in der `<title>` -Element als Teil der `<head>` Teil der HTML-Code, die wir zuvor geändert.
+Um den HTML-Titel anzugeben, der angezeigt werden soll, legt der obige Code eine `Title` Eigenschaft des `ViewBag` Objekts fest (in der Ansichts Vorlage *Index. cshtml* ). Beachten Sie, dass die Layoutvorlage ( *views\shared\\_Layout. cshtml* ) diesen Wert im `<title>`-Element als Teil des `<head>` Abschnitts von HTML verwendet, den wir zuvor geändert haben.
 
 [!code-cshtml[Main](adding-a-view/samples/sample7.cshtml?highlight=6)]
 
-Mit diesem `ViewBag` Ansatz können Sie problemlos andere Parameter übergeben zwischen Ihrer Vorlage anzeigen und die Layoutdatei.
+Mithilfe dieses `ViewBag` Ansatzes können Sie problemlos andere Parameter zwischen der Ansichts Vorlage und der Layoutdatei übergeben.
 
-Führen Sie die Anwendung aus. Sie sehen, dass sich der Browsertitel, die primäre Überschrift und die sekundären Überschriften geändert haben. (Wenn die Änderungen nicht im Browser angezeigt werden, zeigen Sie ggf. zwischengespeicherten Inhalt an. Drücken Sie in Ihrem Browser STRG+F5, um das Laden der Antwort vom Server zu erzwingen.) Der Titel des Browsers wird erstellt, mit der `ViewBag.Title` legen wir den *"Index.cshtml"* Anzeigen der Vorlage und die zusätzlichen &quot;-Movie App&quot; in der Layoutdatei hinzugefügt.
+Führen Sie die Anwendung aus. Sie sehen, dass sich der Browsertitel, die primäre Überschrift und die sekundären Überschriften geändert haben. (Wenn die Änderungen nicht im Browser angezeigt werden, zeigen Sie ggf. zwischengespeicherten Inhalt an. Drücken Sie in Ihrem Browser STRG + F5, um das Laden der Antwort vom Server zu erzwingen.) Der Browser Titel wird mit dem `ViewBag.Title` erstellt, den wir in der Ansichts Vorlage *Index. cshtml* festgelegt haben, und der zusätzlichen &quot;-Movie-App&quot; in der Layoutdatei hinzugefügt.
 
-Beachten Sie außerdem wie der Inhalt in die *"Index.cshtml"* ansichtsvorlage zusammengeführt wurde, mit der  *\_Layout.cshtml* Vorlage anzeigen und eine einzelne HTML-Antwort an den Browser gesendet wurde. Layoutvorlagen erleichtern ungemein das Vornehmen von Änderungen an allen Seiten in Ihrer Anwendung.
+Beachten Sie auch, wie der Inhalt in der Ansichts Vorlage *Index. cshtml* mit der Ansichts Vorlage *\_Layout. cshtml* zusammengeführt und eine einzelne HTML-Antwort an den Browser gesendet wurde. Layoutvorlagen erleichtern ungemein das Vornehmen von Änderungen an allen Seiten in Ihrer Anwendung.
 
 ![](adding-a-view/_static/image9.png)
 
-Unsere wenig &quot;Daten&quot; (in diesem Fall die &quot;Hello from our View Template!&quot; Nachricht) ist hartcodiert, jedoch. Die MVC-Anwendung verfügt über eine &quot;V&quot; (Ansicht), verfügen Sie über eine &quot;C&quot; (Controller), aber kein &quot;M&quot; (model) noch. Behandeln wir kurz, wie Sie eine Datenbank erstellen und Modellieren von Daten daraus abrufen.
+Unser wenig &quot;Daten&quot; (in diesem Fall die &quot;Hello aus unserer Ansichts Vorlage!&quot; Nachricht) ist jedoch hart codiert. Die MVC-Anwendung verfügt über eine &quot;V-&quot; (Ansicht), und Sie haben eine &quot;C-&quot; (Controller), aber noch keine &quot;M&quot; (Model). In Kürze wird erläutert, wie Sie eine Datenbank erstellen und Modelldaten daraus abrufen.
 
 ## <a name="passing-data-from-the-controller-to-the-view"></a>Übergeben von Daten vom Controller an die Ansicht
 
-Bevor wir mit einer Datenbank und über Modelle sprechen, jedoch zunächst sprechen wir über Informationen vom Controller an eine Ansicht übergeben. Controller-Klassen werden als Reaktion auf eine eingehende URL-Anforderung aufgerufen. Eine Controllerklasse ist, Schreiben Sie der Code, der den eingehende Browser verarbeitet, angefordert wird, ruft Daten aus einer Datenbank ab, und letztlich entscheidet, welche Art der Antwort zurück an den Browser senden. Anzeigen von Vorlagen können dann verwendet werden von einem Controller zum Generieren und Formatieren einer HTML-Antwortinhalts an den Browser.
+Bevor wir zu einer Datenbank gehen und über Modelle sprechen, sollten wir uns jedoch zunächst mit der Übergabe von Informationen vom Controller an eine Ansicht beschäftigen. Controller Klassen werden als Antwort auf eine eingehende URL-Anforderung aufgerufen. Eine Controller Klasse ist der Ort, an dem Sie den Code schreiben, der die eingehenden Browser Anforderungen verarbeitet, Daten aus einer Datenbank abruft und letztendlich entscheidet, welche Art von Antwort an den Browser zurückgesendet werden soll. Ansichts Vorlagen können dann von einem Controller verwendet werden, um eine HTML-Antwort an den Browser zu generieren und zu formatieren.
 
-Controller sind verantwortlich für das Bereitstellen der beliebige Daten oder Objekte erforderlich sind, in der Reihenfolge für eine ansichtsvorlage eine Antwort an den Browser auszugeben. Eine bewährte Methode: **Eine ansichtsvorlage sollte nie Geschäftslogik ausführen bzw. interagieren mit einer Datenbank direkt**. Stattdessen sollte eine ansichtsvorlage nur mit den Daten arbeiten, die sie durch den Controller bereitgestellt wird. Verwalten diese &quot;Trennung der Belange&quot; bleibt der Code übersichtlich, testfähig und besser verwaltbar.
+Controller sind dafür verantwortlich, welche Daten oder Objekte erforderlich sind, damit eine Ansichts Vorlage eine Antwort an den Browser Rendering. Eine bewährte Vorgehens **Weise: eine Ansichts Vorlage sollte niemals Geschäftslogik durchführen oder direkt mit einer Datenbank interagieren**. Stattdessen sollte eine Ansichts Vorlage nur mit den Daten arbeiten, die für den Controller bereitgestellt werden. Wenn Sie diese &quot;Trennung von Anliegen beibehalten&quot;, können Sie Ihren Code bereinigen, testen und besser verwalten.
 
-Derzeit den `Welcome` Aktionsmethode in der `HelloWorldController` -Klasse eine `name` und `numTimes` Parameter und gibt anschließend die Werte direkt an den Browser. Anstatt den Controller diese Antwort als Zeichenfolge Rendern zu lassen, ändern wir den Controller, um stattdessen eine ansichtsvorlage zu verwenden. Die Ansichtsvorlage generiert eine dynamische Antwort. Das bedeutet, dass Sie die entsprechenden Datenelemente vom Controller an die Ansicht übergeben müssen, um die Antwort zu generieren. Hierzu können Sie den Controller die dynamischen Daten (Parameter) zu platzieren, die die ansichtsvorlage, in benötigt einem `ViewBag` -Objekt, das die ansichtsvorlage zugreifen kann.
+Derzeit nimmt die `Welcome` Aktionsmethode in der `HelloWorldController`-Klasse eine `name` und einen `numTimes` Parameter an und gibt die Werte dann direkt an den Browser aus. Anstatt den Controller diese Antwort als Zeichenfolge zu erzeugen, ändern wir den Controller so, dass stattdessen eine Ansichts Vorlage verwendet wird. Die Ansichtsvorlage generiert eine dynamische Antwort. Das bedeutet, dass Sie die entsprechenden Datenelemente vom Controller an die Ansicht übergeben müssen, um die Antwort zu generieren. Hierzu können Sie den Controller die dynamischen Daten (Parameter), die die Ansichts Vorlage benötigt, in einem `ViewBag` Objekt ablegen, auf das die Ansichts Vorlage zugreifen kann.
 
-Wechseln Sie zurück zur der *HelloWorldController.cs* und zu ändern der `Welcome` -Methode zum Hinzufügen einer `Message` und `NumTimes` Wert der `ViewBag` Objekt. `ViewBag` ist ein dynamisches Objekt, was bedeutet, dass die gewünschten, Sie platzieren können. die `ViewBag` Objekt verfügt über keine definierten Eigenschaften aus, bis Sie etwas darin einfügen. Die [ASP.NET MVC-modellbindungssystem](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) ordnet automatisch die benannten Parameter (`name` und `numTimes`) aus der Abfragezeichenfolge in der Adressleiste den Parametern der Methode. Die vollständige Datei *HelloWorldController.cs* sieht wie folgt aus:
+Kehren Sie zur Datei *HelloWorldController.cs* zurück, und ändern Sie die `Welcome`-Methode, um dem `ViewBag` Objekt eine `Message` und `NumTimes` Wert hinzuzufügen. `ViewBag` ist ein dynamisches Objekt, d. h., Sie können den gewünschten Wert für die Anwendung einfügen. Das `ViewBag`-Objekt hat keine definierten Eigenschaften, bis Sie etwas darin ablegen. Das [ASP.NET MVC-Modell Bindungssystem](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) ordnet automatisch die benannten Parameter (`name` und `numTimes`) aus der Abfrage Zeichenfolge in der Adressleiste den Parametern in der-Methode zu. Die vollständige Datei *HelloWorldController.cs* sieht wie folgt aus:
 
 [!code-csharp[Main](adding-a-view/samples/sample8.cs)]
 
-Jetzt die `ViewBag` Objekt enthält Daten, die automatisch an die Ansicht übergeben werden. Als Nächstes fügen Sie eine ansichtsvorlage! In der **erstellen** , wählen Sie im Menü **Projektmappe** (oder STRG + UMSCHALT + B) um sicherzustellen, dass das Projekt kompiliert wird. Klicken Sie mit der rechten Maustaste auf die *Views\HelloWorld* Ordner, und klicken Sie auf **hinzufügen**, klicken Sie dann auf **MVC 5-Ansichtsseite mit Layout (Razor)**.
+Nun enthält das `ViewBag` Objektdaten, die automatisch an die Ansicht übermittelt werden. Als nächstes benötigen Sie eine Willkommens Ansichts Vorlage. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen** aus (oder drücken Sie STRG + UMSCHALT + B), um sicherzustellen, dass das Projekt kompiliert wird. Klicken Sie mit der rechten Maustaste auf den Ordner *views\helloworld* , klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **MVC 5-Ansichts Seite mit Layout**
   
 ![](adding-a-view/_static/image10.png)   
   
-In der **Namen für Artikel angeben** Dialogfeld Geben Sie *Willkommen*, und klicken Sie dann auf **OK**.   
+Geben Sie im Dialogfeld **Name für Element angeben die Bezeichnung** *Willkommen*ein, und klicken Sie dann auf **OK**.   
   
-In der **Layoutseite auswählen** Dialogfeld den Standardpfad  **\_Layout.cshtml** , und klicken Sie auf **OK**.  
+Akzeptieren Sie im Dialogfeld **Layoutseite auswählen** die Standard **\_Layout. cshtml** , und klicken Sie auf **OK**.  
   
 ![](adding-a-view/_static/image11.png)   
 
-Die *MvcMovie\Views\HelloWorld\Welcome.cshtml* Datei erstellt wird.
+Die *mvcmuvie\views\helloworld\welcome.cshtml* -Datei wird erstellt.
 
-Ersetzen Sie das Markup in der *Welcome.cshtml* Datei. Erstellen Sie eine Schleife, die besagt, &quot;Hello&quot; so oft wie der Benutzer sagt sollte. Die vollständige *Welcome.cshtml* Datei ist unten dargestellt.
+Ersetzen Sie das Markup in der Datei " *Welcome. cshtml* ". Sie erstellen eine Schleife, die &quot;Hello&quot; so oft wie der Benutzer sagt, dass dies der Fall sein sollte. Die vollständige Datei " *Welcome. cshtml* " ist unten dargestellt.
 
 [!code-cshtml[Main](adding-a-view/samples/sample9.cshtml)]
 
-Führen Sie die Anwendung, und navigieren Sie zur folgenden URL:
+Führen Sie die Anwendung aus, und navigieren Sie zur folgenden URL:
 
 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
-Jetzt Daten der URL entnommen und übergeben dem Controller mithilfe der [model Binders](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx). Der Controller Packt die Daten in einem `ViewBag` Objekt und übergibt das Objekt an die Ansicht. Die Ansicht zeigt dann die Daten im HTML-Format für den Benutzer.
+Nun werden die Daten aus der URL entnommen und mithilfe des [Modell Binders](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx)an den Controller übermittelt. Der Controller packt die Daten in ein `ViewBag` Objekt und übergibt dieses Objekt an die Ansicht. Die Ansicht zeigt dann die Daten für den Benutzer als HTML an.
 
 ![](adding-a-view/_static/image12.png)
 
-Im obigen Beispiel haben wir verwendet eine `ViewBag` Objekt, das Daten vom Controller an eine Ansicht zu übergeben. Später in diesem Tutorial verwenden wir eine Ansichtsmodell, um Daten von einem Controller an eine Ansicht zu übergeben. Die ViewModel-Ansatz zum Übergeben von Daten wird über den Ansicht-Behälter-Ansatz im Allgemeinen vorzuziehen. Finden Sie im Blogeintrag [dynamische V stark typisierte Ansichten](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) für Weitere Informationen. 
+Im obigen Beispiel haben wir ein `ViewBag` Objekt verwendet, um Daten vom Controller an eine Ansicht zu übergeben. Später in diesem Tutorial verwenden wir eine Ansichtsmodell, um Daten von einem Controller an eine Ansicht zu übergeben. Der Ansatz zum Anzeigen von Modellen für das Übergeben von Daten wird im Allgemeinen vor dem Ansichts Behälter bevorzugt. Weitere Informationen finden Sie im Blogeintrag [Dynamic V-Ansichten mit starker Typisierung](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) . 
 
-Nun, das eine Art wurde von einem &quot;M&quot; für Modell, jedoch nicht der Art Datenbank. Lassen Sie uns das Gelernte umsetzen und eine Filmdatenbank erstellen.
+Nun, das war eine Art &quot;M&quot; für das Modell, aber nicht die Daten Bank Art. Lassen Sie uns das Gelernte umsetzen und eine Filmdatenbank erstellen.
 
 > [!div class="step-by-step"]
 > [Zurück](adding-a-controller.md)

@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 title: Strategien für die Daten Partitionierung (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 2f79b1f459aff3e81dab7ea7eb4ebf3f71084463
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: b8c901ec30b6d37237f80100a2978350ac389b7a
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585818"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519166"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>Strategien für die Daten Partitionierung (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
-[Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Download korrigieren Projekt](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Weitere Informationen zu den Reihen finden Sie [im ersten Kapitel](introduction.md).
+> Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu den Reihen finden Sie [im ersten Kapitel](introduction.md).
 
 Früher haben wir gesehen, wie einfach es ist, die webeebene einer cloudanwendung durch Hinzufügen und Entfernen von Webservern zu skalieren. Wenn Sie jedoch alle den gleichen Datenspeicher erreichen, wechselt der Engpass Ihrer Anwendung vom Front-End zum Back-End, und die Datenebene ist am schwierigsten zu skalieren. In diesem Kapitel wird erläutert, wie Sie Ihre Datenebene skalierbar machen, indem Sie Daten in mehreren relationalen Datenbanken partitionieren oder den relationalen Daten Bank Speicher mit anderen Datenspeicher Optionen kombinieren.
 
@@ -51,7 +51,7 @@ Nehmen wir beispielsweise an, dass meine APP Daten über Personen speichert, ein
 
 ![Datentabelle](data-partitioning-strategies/_static/image1.png)
 
-Wenn Sie diese Daten als Tabelle darstellen und die unterschiedlichen Arten von Daten betrachten, können Sie sehen, dass die drei Spalten links Zeichen folgen Daten aufweisen, die effizient von einer relationalen Datenbank gespeichert werden können, während die beiden Spalten auf der rechten Seite im wesentlichen Byte Arrays sind, die c aus Bilddateien. Es ist möglich, Abbild Datei Daten in einer relationalen Datenbank zu speichern. viele Personen müssen dies tun, da Sie die Daten nicht im Dateisystem speichern möchten. Sie verfügen möglicherweise nicht über ein Dateisystem, das die erforderlichen Datenmengen speichern kann, oder Sie möchten möglicherweise kein separates Sicherungs-und Wiederherstellungs System verwalten. Diese Vorgehensweise eignet sich gut für lokale Datenbanken und für kleine Datenmengen in clouddatenbanken. In der lokalen Umgebung ist es möglicherweise einfacher, dass der DBA alles erledigt.
+Wenn Sie diese Daten als Tabelle darstellen und die unterschiedlichen Arten von Daten betrachten, können Sie sehen, dass die drei Spalten links Zeichen folgen Daten aufweisen, die effizient von einer relationalen Datenbank gespeichert werden können, während die beiden Spalten auf der rechten Seite im wesentlichen Byte Arrays sind, die c aus Bilddateien. Es ist möglich, Abbild Datei Daten in einer relationalen Datenbank zu speichern, und viele Personen müssen dies tun, da Sie die Daten nicht im Dateisystem speichern möchten. Sie verfügen möglicherweise nicht über ein Dateisystem, das die erforderlichen Datenmengen speichern kann, oder Sie möchten möglicherweise kein separates Sicherungs-und Wiederherstellungs System verwalten. Diese Vorgehensweise eignet sich gut für lokale Datenbanken und für kleine Datenmengen in clouddatenbanken. In der lokalen Umgebung ist es möglicherweise einfacher, dass der DBA alles erledigt.
 
 In einer clouddatenbank ist der Speicher jedoch relativ aufwendig, und eine große Anzahl von Images könnte dazu führen, dass die Größe der Datenbank über die Grenzwerte hinausgeht, auf denen Sie effizient agieren kann. Sie können diese Probleme beheben, indem Sie die Daten vertikal partitionieren. Dies bedeutet, dass Sie den am besten geeigneten Datenspeicher für jede Spalte in der Datentabelle auswählen. Das beste an diesem Beispiel ist, die Zeichen folgen Daten in einer relationalen Datenbank und die Images in BLOB Storage zu platzieren.
 
@@ -87,7 +87,7 @@ Die Komplikationen können so lange verwaltet werden, wie Sie planen, bevor Sie 
 
 ## <a name="summary"></a>Summary
 
-Ein effektives Partitionierungsschema kann es ihrer Cloud-App ermöglichen, Daten in der Cloud ohne Engpässe zu skalieren. Und Sie müssen nicht für riesige oder umfassende Infrastrukturen bezahlen, wenn Sie die app in einem lokalen Rechenzentrum ausführen. In der Cloud können Sie die Kapazität inkrementell hinzufügen, wenn Sie Sie benötigen, und Sie bezahlen nur für so viele, wie Sie verwenden.
+Ein effektives Partitionierungsschema kann es ihrer Cloud-App ermöglichen, Daten in der Cloud ohne Engpässe zu skalieren. Und Sie müssen nicht für riesige oder umfassende Infrastrukturen bezahlen, wenn Sie die app in einem lokalen Rechenzentrum ausführen. In der Cloud können Sie die Kapazität inkrementell hinzufügen, wenn Sie Sie benötigen, und Sie zahlen nur für die Verwendung bei der Verwendung.
 
 Im [nächsten Kapitel](unstructured-blob-storage.md) wird erläutert, wie die Korrektur der IT-APP die vertikale Partitionierung implementiert, indem Bilder in BLOB Storage gespeichert werden.
 

@@ -1,213 +1,213 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: Ändern des Primärschlüssels für Benutzer in ASP.NET Identity – ASP.NET 4.x
+title: Ändern des Primärschlüssels für Benutzer in ASP.net Identity-ASP.NET 4. x
 author: Rick-Anderson
-description: In Visual Studio 2013 verwendet die standardwebanwendung einen Zeichenfolgenwert für den Schlüssel für Benutzerkonten an. ASP.NET Identity können Sie den Typ des Ändern der...
+description: In Visual Studio 2013 verwendet die Standardweb Anwendung einen Zeichen folgen Wert für den Schlüssel für Benutzerkonten. Mit ASP.net Identity können Sie den Typ des...
 ms.author: riande
 ms.date: 09/30/2014
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 540a355819ac2b2e58d7c73284899f6ca2f684d1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 0afea8eacfc646f1489b87629fdb2d437815d88c
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118097"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519140"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>Ändern des Primärschlüssels für Benutzer in ASP.NET Identity
 
 durch [Tom FitzMacken](https://github.com/tfitzmac)
 
-> In Visual Studio 2013 verwendet die standardwebanwendung einen Zeichenfolgenwert für den Schlüssel für Benutzerkonten an. ASP.NET Identity ermöglicht Ihnen, den Typ des Schlüssels, der Ihre Daten zu Anforderungen ändern. Beispielsweise können Sie den Typ des Schlüssels aus einer Zeichenfolge in eine ganze Zahl ändern.
+> In Visual Studio 2013 verwendet die Standardweb Anwendung einen Zeichen folgen Wert für den Schlüssel für Benutzerkonten. ASP.net Identity ermöglicht es Ihnen, den Typ des Schlüssels zu ändern, um Ihre Datenanforderungen zu erfüllen. Beispielsweise können Sie den Typ des Schlüssels von einer Zeichenfolge in eine ganze Zahl ändern.
 > 
-> In diesem Thema wird gezeigt, wie für den Einstieg Standard, web-Anwendung und ändern den kontoschlüssel für den Benutzer auf eine ganze Zahl. Sie können die gleichen Änderungen verwenden, um jede Art von Schlüssel in Ihrem Projekt zu implementieren. Es zeigt, wie Sie diese Änderungen in der standardwebanwendung übernommen, aber Sie können ähnliche Änderungen an einer benutzerdefinierten Anwendung anwenden. Es zeigt die Änderungen, die erforderlich sind, bei der Arbeit mit MVC oder Web Forms.
+> In diesem Thema wird gezeigt, wie Sie mit der Standardweb Anwendung beginnen und den Benutzerkonto Schlüssel in eine ganze Zahl ändern. Sie können dieselben Änderungen verwenden, um beliebige Typen von Schlüsseln in Ihrem Projekt zu implementieren. Es wird gezeigt, wie diese Änderungen in der Standardweb Anwendung vorgenommen werden, aber Sie können ähnliche Änderungen auf eine angepasste Anwendung anwenden. Es zeigt die Änderungen, die bei der Arbeit mit MVC oder Web Forms erforderlich sind.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
 > - Visual Studio 2013 mit Update 2 (oder höher)
-> - ASP.NET Identity 2.1 oder höher
+> - ASP.net Identity 2,1 oder höher
 
-Um die Schritte in diesem Tutorial ausführen zu können, müssen Sie Visual Studio 2013 Update 2 (oder höher), und eine Webanwendung, die aus der ASP.NET Web Application-Vorlage erstellten verfügen. Die Vorlage, die in Update 3 geändert wird. In diesem Thema veranschaulicht, wie die Vorlage in Update 2 und Update 3 ändern.
+Damit Sie die Schritte in diesem Tutorial ausführen können, müssen Sie über Visual Studio 2013 Update 2 (oder höher) und eine Webanwendung verfügen, die aus der ASP.net-Webanwendungsvorlage erstellt wurde. Die Vorlage wurde in Update 3 geändert. In diesem Thema wird gezeigt, wie Sie die Vorlage in Update 2 und Update 3 ändern.
 
 Dieses Thema enthält folgende Abschnitte:
 
-- [Ändern Sie den Typ des Schlüssels in der Identity-Klasse](#userclass)
-- [Hinzufügen der benutzerdefinierte Identität-Klassen, die den Typ des Schlüssels verwenden](#customclass)
-- [Ändern Sie die Kontext-Klasse und Benutzer-Manager, um den Schlüsseltyp zu verwenden](#context)
-- [Start-Konfiguration ändern, verwenden Sie den Typ des Schlüssels](#startup)
-- [Ändern Sie für MVC mit Update 2 AccountController-Komponente um den Typ des Schlüssels zu übergeben.](#mvcupdate2)
-- [Für MVC mit Update 3 ändern Sie, die AccountController und ManageController, um den Typ des Schlüssels zu übergeben.](#mvcupdate3)
-- [Ändern Sie für Web Forms mit Update 2 Konto-Seiten, um den Typ des Schlüssels zu übergeben.](#webformsupdate2)
-- [Für Webformulare mit Update 3 ändern Sie die Konto-Seiten, um den Typ des Schlüssels zu übergeben.](#webformsupdate3)
-- [Ausführen der Anwendung](#run)
-- [Weitere Ressourcen](#other)
+- [Ändern Sie den Typ des Schlüssels in der Identity-Benutzerklasse.](#userclass)
+- [Hinzufügen von angepassten Identitäts Klassen, die den Schlüsseltyp verwenden](#customclass)
+- [Ändern der Kontext Klasse und des Benutzer-Managers, um den Schlüsseltyp zu verwenden](#context)
+- [Ändern Sie die Startkonfiguration, sodass der Schlüsseltyp verwendet wird.](#startup)
+- [Ändern Sie für MVC mit Update 2 den Kontotyp AccountController, um den Schlüsseltyp zu übergeben.](#mvcupdate2)
+- [Ändern Sie für MVC mit Update 3 AccountController und managecontroller so, dass der Schlüsseltyp übergeben wird.](#mvcupdate3)
+- [Ändern Sie für Web Forms mit Update 2 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate2)
+- [Ändern Sie für Web Forms mit Update 3 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate3)
+- [Anwendung ausführen](#run)
+- [Andere Ressourcen](#other)
 
 <a id="userclass"></a>
-## <a name="change-the-type-of-the-key-in-the-identity-user-class"></a>Ändern Sie den Typ des Schlüssels in der Identity-Klasse
+## <a name="change-the-type-of-the-key-in-the-identity-user-class"></a>Ändern Sie den Typ des Schlüssels in der Identity-Benutzerklasse.
 
-Geben Sie in Ihrem Projekt aus der ASP.NET Web Application-Vorlage erstellt haben, dass die Klasse "applicationuser" eine ganze Zahl für den Schlüssel für Benutzerkonten verwendet. Ändern Sie die Klasse "applicationuser" von "identityuser" erben, der den Typ aufweist, im IdentityModels.cs, **Int** für den generischen TKey-Parameter. Sie übergeben außerdem die Namen der drei benutzerdefinierte Klasse mit der Sie noch nicht implementiert wurde.
+Geben Sie in Ihrem Projekt, das aus der Vorlage ASP.NET-Webanwendung erstellt wurde, an, dass die ApplicationUser-Klasse eine Ganzzahl für den Schlüssel für Benutzerkonten verwendet. Ändern Sie in IdentityModels.cs die ApplicationUser-Klasse so, dass Sie von identityuser geerbt wird, der den Typ **int** für den generischen TKey-Parameter aufweist. Außerdem übergeben Sie die Namen von drei angepassten Klassen, die Sie noch nicht implementiert haben.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample1.cs?highlight=1-2)]
 
-Sie haben den Typ des Schlüssels geändert, aber in der Standardeinstellung die übrigen Teile der Anwendung weiterhin wird davon ausgegangen, dass der Schlüssel eine Zeichenfolge ist. Sie müssen explizit den Typ des Schlüssels im Code angeben, die eine Zeichenfolge annimmt.
+Sie haben den Typ des Schlüssels geändert, aber standardmäßig geht der Rest der Anwendung davon aus, dass der Schlüssel eine Zeichenfolge ist. Sie müssen den Typ des Schlüssels in Code, der eine Zeichenfolge annimmt, explizit angeben.
 
-In der **"applicationuser"** Klasse, Ändern der **GenerateUserIdentityAsync** Methode, um ganze Zahl, einzufügen, wie im folgenden hervorgehobenen Code gezeigt. Diese Änderung ist nicht erforderlich für Web Forms-Projekte mit der Update 3-Vorlage.
+Ändern Sie in der **ApplicationUser** -Klasse die **generateuseridentityasync** -Methode in "int", wie im folgenden hervorgehobenen Code gezeigt. Diese Änderung ist für Web Forms Projekte mit der Vorlage Update 3 nicht erforderlich.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample2.cs?highlight=2)]
 
 <a id="customclass"></a>
-## <a name="add-customized-identity-classes-that-use-the-key-type"></a>Hinzufügen der benutzerdefinierte Identität-Klassen, die den Typ des Schlüssels verwenden
+## <a name="add-customized-identity-classes-that-use-the-key-type"></a>Hinzufügen von angepassten Identitäts Klassen, die den Schlüsseltyp verwenden
 
-Die anderen Identitätsklassen, z. B. IdentityUserRole, IdentityUserClaim, IdentityUserLogin, IdentityRole, UserStore, RoleStore, werden immer noch mit einem Zeichenfolgenschlüssel eingerichtet. Erstellen Sie neue Versionen dieser Klassen, die eine ganze Zahl für den Schlüssel angeben. Sie müssen nicht viel Code zur Implementierung in diesen Klassen bereitstellen, legen Sie in erster Linie nur Int als Schlüssel.
+Die anderen Identitäts Klassen, z. b. identityuserrole, identityuserclaim, identityuserlogin, identityrole, userstore, rolestore, sind immer noch für die Verwendung eines Zeichen folgen Schlüssels festgelegt. Erstellen Sie neue Versionen dieser Klassen, die eine ganze Zahl für den Schlüssel angeben. Sie müssen in diesen Klassen nicht viel Implementierungs Code bereitstellen, Sie legen primär einfach int als Schlüssel fest.
 
-Die folgenden Klassen der IdentityModels.cs-Datei hinzufügen.
+Fügen Sie der IdentityModels.cs-Datei die folgenden Klassen hinzu.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample3.cs)]
 
 <a id="context"></a>
-## <a name="change-the-context-class-and-user-manager-to-use-the-key-type"></a>Ändern Sie die Kontext-Klasse und Benutzer-Manager, um den Schlüsseltyp zu verwenden
+## <a name="change-the-context-class-and-user-manager-to-use-the-key-type"></a>Ändern der Kontext Klasse und des Benutzer-Managers, um den Schlüsseltyp zu verwenden
 
-In IdentityModels.cs, ändern Sie die Definition der **ApplicationDbContext** Klasse zur Verwendung der neuen benutzerdefinierten Klassen und eine **Int** für den Schlüssel, wie in den hervorgehobenen Code gezeigt.
+Ändern Sie in IdentityModels.cs die Definition der **applicationdbcontext** -Klasse so, dass die neuen angepassten Klassen und ein **int** für den Schlüssel verwendet werden, wie im hervorgehobenen Code gezeigt.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample4.cs?highlight=1-2)]
 
-Der ThrowIfV1Schema-Parameter ist nicht mehr gültig ist, im Konstruktor. Ändern Sie den Konstruktor aus, damit er nicht auf einen ThrowIfV1Schema-Wert übergeben wird.
+Der ThrowIfV1Schema-Parameter ist im Konstruktor nicht mehr gültig. Ändern Sie den Konstruktor, sodass er keinen ThrowIfV1Schema-Wert übergibt.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample5.cs)]
 
-IdentityConfig.cs öffnen, und Ändern der **ApplicationUserManger** Ihr neuen Benutzer zu verwendende Klasse an Klasse zum Beibehalten von Daten zu speichern und ein **Int** für den Schlüssel.
+Öffnen Sie IdentityConfig.cs, und ändern Sie die **applicationusermanager** -Klasse so, dass Ihre neue Benutzerspeicher Klasse zum Beibehalten von Daten und eine **int** -Taste für den Schlüssel verwendet wird.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample6.cs?highlight=1,3,12,14,32,37,48)]
 
-In der Vorlage Update 3 müssen Sie die ApplicationSignInManager-Klasse ändern.
+In der Vorlage Update 3 müssen Sie die applicationsigninmanager-Klasse ändern.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample7.cs?highlight=1)]
 
 <a id="startup"></a>
-## <a name="change-start-up-configuration-to-use-the-key-type"></a>Start-Konfiguration ändern, verwenden Sie den Typ des Schlüssels
+## <a name="change-start-up-configuration-to-use-the-key-type"></a>Ändern Sie die Startkonfiguration, sodass der Schlüsseltyp verwendet wird.
 
-Ersetzen Sie in Startup.Auth.cs den OnValidateIdentity-Code, wie unten markiert. Beachten Sie, dass die Definition der GetUserIdCallback analysiert den Zeichenfolgenwert in eine ganze Zahl.
+Ersetzen Sie in Startup.auth.cs den onvalidateidentity-Code, wie unten gezeigt. Beachten Sie, dass die getuseridcallback-Definition den Zeichen folgen Wert in eine ganze Zahl analysiert.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample8.cs?highlight=7-12)]
 
-Wenn Ihr Projekt nicht die generische Implementierung erkennt das **GetUserId** -Methode, müssen Sie möglicherweise das ASP.NET Identity-NuGet-Paket auf Version 2.1 aktualisieren
+Wenn das Projekt die generische Implementierung der **GetUserID** -Methode nicht erkennt, müssen Sie möglicherweise das ASP.net Identity nuget-Paket auf Version 2,1 aktualisieren.
 
-Sie haben zahlreiche Änderungen vorgenommen, auf die Infrastrukturklassen, die von ASP.NET Identity verwendet. Wenn Sie versuchen, Kompilieren des Projekts, bemerken Sie viele Fehler. Glücklicherweise sind die übrigen Fehler ähnliche. Die Identity-Klasse erwartet eine ganze Zahl für den Schlüssel, aber der Controller (oder Web Form) ist einen String-Wert übergeben. In jedem Fall müssen Sie durch Aufrufen von einer Zeichenfolge und ganze Zahl konvertieren **GetUserId&lt;Int&gt;**. Sie können die Fehlerliste aus der Kompilierung funktioniert oder führen Sie die nachfolgenden Änderungen.
+Sie haben viele Änderungen an den von ASP.net Identity verwendeten Infrastruktur Klassen vorgenommen. Wenn Sie versuchen, das Projekt zu kompilieren, werden viele Fehler feststellen. Glücklicherweise sind die restlichen Fehler alle ähnlich. Die Identity-Klasse erwartet eine ganze Zahl für den Schlüssel, aber der Controller (oder das Webformular) übergibt einen Zeichen folgen Wert. In jedem Fall müssen Sie eine Konvertierung von einer Zeichenfolge in eine ganze Zahl und eine ganze Zahl durch Aufrufen von **GetUserID&lt;int&gt;** durchsetzen. Sie können entweder die Fehlerliste aus der Kompilierung bearbeiten oder die unten aufgeführten Änderungen befolgen.
 
-Die verbleibenden Änderungen richten sich nach dem Typ des Projekts, die Sie erstellen und zu denen die updateverwaltung, die Sie in Visual Studio installiert haben. Sie können direkt zu dem entsprechenden Abschnitt über die folgenden Links wechseln.
+Die restlichen Änderungen hängen vom Projekttyp ab, den Sie erstellen, und von dem Update, das Sie in Visual Studio installiert haben. Sie können über die folgenden Links direkt zum entsprechenden Abschnitt wechseln.
 
-- [Ändern Sie für MVC mit Update 2 AccountController-Komponente um den Typ des Schlüssels zu übergeben.](#mvcupdate2)
-- [Für MVC mit Update 3 ändern Sie, die AccountController und ManageController, um den Typ des Schlüssels zu übergeben.](#mvcupdate3)
-- [Ändern Sie für Web Forms mit Update 2 Konto-Seiten, um den Typ des Schlüssels zu übergeben.](#webformsupdate2)
-- [Für Webformulare mit Update 3 ändern Sie die Konto-Seiten, um den Typ des Schlüssels zu übergeben.](#webformsupdate3)
+- [Ändern Sie für MVC mit Update 2 den Kontotyp AccountController, um den Schlüsseltyp zu übergeben.](#mvcupdate2)
+- [Ändern Sie für MVC mit Update 3 AccountController und managecontroller so, dass der Schlüsseltyp übergeben wird.](#mvcupdate3)
+- [Ändern Sie für Web Forms mit Update 2 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate2)
+- [Ändern Sie für Web Forms mit Update 3 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.](#webformsupdate3)
 
 <a id="mvcupdate2"></a>
-## <a name="for-mvc-with-update-2-change-the-accountcontroller-to-pass-the-key-type"></a>Ändern Sie für MVC mit Update 2 AccountController-Komponente um den Typ des Schlüssels zu übergeben.
+## <a name="for-mvc-with-update-2-change-the-accountcontroller-to-pass-the-key-type"></a>Ändern Sie für MVC mit Update 2 den Kontotyp AccountController, um den Schlüsseltyp zu übergeben.
 
-Öffnen Sie die Datei "AccountController.cs". Sie müssen die folgenden Methoden ändern.
+Öffnen Sie die Datei AccountController.cs. Sie müssen die folgenden Methoden ändern.
 
-**ConfirmEmail** Methode
+**Confirmemail** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample9.cs?highlight=1,3)]
 
-**Aufheben der Zuordnung** Methode
+Methode **diszuordnen**
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample10.cs?highlight=5,9)]
 
-**Manage(ManageUserViewModel)** Methode
+**Manage (manageuserviewmodel)** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample11.cs?highlight=11,17,41)]
 
-**LinkLoginCallback** Methode
+**Linklogincallback** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample12.cs?highlight=10)]
 
-**RemoveAccountList** Methode
+**Removeaccountlist** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample13.cs?highlight=3)]
 
-**HasPassword** Methode
+**HasPassword** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample14.cs?highlight=3)]
 
-Sie können jetzt [führen Sie die Anwendung](#run) und einen neuen Benutzer registrieren.
+Sie können jetzt [die Anwendung ausführen](#run) und einen neuen Benutzer registrieren.
 
 <a id="mvcupdate3"></a>
-## <a name="for-mvc-with-update-3-change-the-accountcontroller-and-managecontroller-to-pass-the-key-type"></a>Für MVC mit Update 3 ändern Sie, die AccountController und ManageController, um den Typ des Schlüssels zu übergeben.
+## <a name="for-mvc-with-update-3-change-the-accountcontroller-and-managecontroller-to-pass-the-key-type"></a>Ändern Sie für MVC mit Update 3 AccountController und managecontroller so, dass der Schlüsseltyp übergeben wird.
 
-Öffnen Sie die Datei "AccountController.cs". Sie müssen die folgende Methode zu ändern.
+Öffnen Sie die Datei AccountController.cs. Sie müssen die folgende Methode ändern.
 
-**ConfirmEmail** Methode
+**Confirmemail** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample15.cs?highlight=1,3)]
 
-**SendCode** Methode
+**Sendcode** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample16.cs?highlight=4)]
 
-Öffnen Sie die ManageController.cs-Datei. Sie müssen die folgenden Methoden ändern.
+Öffnen Sie die Datei ManageController.cs. Sie müssen die folgenden Methoden ändern.
 
-**Index** Methode
+**Index** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample17.cs?highlight=15-17)]
 
-**RemoveLogin** Methoden
+**Removelogin** -Methoden
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample18.cs?highlight=3,13,17)]
 
-**AddPhoneNumber** Methode
+**Addphonenumber** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample19.cs?highlight=9)]
 
-**EnableTwoFactorAuthentication** Methode
+**Enabletwofactorauthentication** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample20.cs?highlight=3-4)]
 
-**DisableTwoFactorAuthentication** Methode
+**Disabletwofactorauthentication** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample21.cs?highlight=3-4)]
 
-**VerifyPhoneNumber** Methoden
+**Verifyphonenumber** -Methoden
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample22.cs?highlight=4,18,21)]
 
-**RemovePhoneNumber** Methode
+**Removephonenumber** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample23.cs?highlight=3,8)]
 
-**ChangePassword** Methode
+**ChangePassword** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample24.cs?highlight=10,13)]
 
-**SetPassword** Methode
+**SetPassword** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample25.cs?highlight=5,8)]
 
-**ManageLogins** Methode
+**Managelogins** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample26.cs?highlight=7,12)]
 
-**LinkLoginCallback** Methode
+**Linklogincallback** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample27.cs?highlight=8)]
 
-**HasPassword** Methode
+**HasPassword** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample28.cs?highlight=3)]
 
-**HasPhoneNumber** Methode
+**Hasphonenumber** -Methode
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample29.cs?highlight=3)]
 
-Sie können jetzt [führen Sie die Anwendung](#run) und einen neuen Benutzer registrieren.
+Sie können jetzt [die Anwendung ausführen](#run) und einen neuen Benutzer registrieren.
 
 <a id="webformsupdate2"></a>
-## <a name="for-web-forms-with-update-2-change-account-pages-to-pass-the-key-type"></a>Ändern Sie für Web Forms mit Update 2 Konto-Seiten, um den Typ des Schlüssels zu übergeben.
+## <a name="for-web-forms-with-update-2-change-account-pages-to-pass-the-key-type"></a>Ändern Sie für Web Forms mit Update 2 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.
 
-Für Webformulare mit Update 2 müssen Sie die folgenden Seiten ändern.
+Für Web Forms mit Update 2 müssen Sie die folgenden Seiten ändern.
 
 **Confirm.aspx.cx**
 
@@ -221,12 +221,12 @@ Für Webformulare mit Update 2 müssen Sie die folgenden Seiten ändern.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample32.cs?highlight=3,22,47,52,69,85,93,98)]
 
-Sie können jetzt [führen Sie die Anwendung](#run) und einen neuen Benutzer registrieren.
+Sie können jetzt [die Anwendung ausführen](#run) und einen neuen Benutzer registrieren.
 
 <a id="webformsupdate3"></a>
-## <a name="for-web-forms-with-update-3-change-account-pages-to-pass-the-key-type"></a>Für Webformulare mit Update 3 ändern Sie die Konto-Seiten, um den Typ des Schlüssels zu übergeben.
+## <a name="for-web-forms-with-update-3-change-account-pages-to-pass-the-key-type"></a>Ändern Sie für Web Forms mit Update 3 die Konto Seiten so, dass der Schlüsseltyp übergeben wird.
 
-Für Webformulare mit Update 3 müssen Sie die folgenden Seiten ändern.
+Für Web Forms mit Update 3 müssen Sie die folgenden Seiten ändern.
 
 **Confirm.aspx.cx**
 
@@ -263,16 +263,16 @@ Für Webformulare mit Update 3 müssen Sie die folgenden Seiten ändern.
 <a id="run"></a>
 ## <a name="run-application"></a>Ausführen der Anwendung
 
-Sie haben alle erforderlichen Änderungen an der Standardvorlage für Web-Anwendung abgeschlossen. Führen Sie die Anwendung und registrieren Sie einen neuen Benutzer. Nach der Registrierung des Benutzers werden Sie feststellen, dass die Tabelle "aspnetusers" eine Id-Spalte eine ganze Zahl ist.
+Sie haben alle erforderlichen Änderungen an der Standardweb Application-Vorlage abgeschlossen. Führen Sie die Anwendung aus, und registrieren Sie einen neuen Benutzer. Nachdem Sie den Benutzer registriert haben, werden Sie bemerken, dass die aspnettusers-Tabelle eine ID-Spalte aufweist, die eine ganze Zahl ist.
 
-![neuen Primärschlüssel](change-primary-key-for-users-in-aspnet-identity/_static/image1.png)
+![neuer Primärschlüssel](change-primary-key-for-users-in-aspnet-identity/_static/image1.png)
 
-Wenn Sie zuvor die ASP.NET Identity Tabellen mit einem anderen primären Schlüssel erstellt haben, müssen Sie einige zusätzlichen Änderungen vornehmen. Wenn möglich, nur löschen Sie die vorhandene Datenbank. Die Datenbank wird mit den richtigen Entwurf neu erstellt werden, wenn Sie die Webanwendung ausführen und einen neuen Benutzer hinzufügen. Wenn der Löschvorgang nicht möglich ist, führen Sie Code first-Migrationen zum Ändern von Tabellen. Allerdings wird der neue ganzzahlige Primärschlüssel nicht als eine SQL-IDENTITY-Eigenschaft in der Datenbank eingerichtet werden. Sie müssen manuell die Id-Spalte als Identität festlegen.
+Wenn Sie zuvor die ASP.net Identity Tabellen mit einem anderen Primärschlüssel erstellt haben, müssen Sie einige zusätzliche Änderungen vornehmen. Löschen Sie die vorhandene Datenbank, wenn möglich. Die Datenbank wird mit dem richtigen Entwurf neu erstellt, wenn Sie die Webanwendung ausführen und einen neuen Benutzer hinzufügen. Wenn das Löschen nicht möglich ist, führen Sie Code First-Migrationen aus, um die Tabellen zu ändern. Der neue ganzzahlige Primärschlüssel wird jedoch nicht als SQL-Identitäts Eigenschaft in der Datenbank eingerichtet. Sie müssen die ID-Spalte manuell als Identität festlegen.
 
 <a id="other"></a>
 ## <a name="other-resources"></a>Weitere Ressourcen
 
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter nach ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [Migrieren von Daten eines universellen Anbieters für Mitgliedschaften und Benutzerprofilen nach ASP.NET Identity](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
-- [Beispielanwendung](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) mit geänderten Primärschlüssel
+- [Migrieren von universellen Anbieter Daten für Mitgliedschafts-und Benutzerprofile zu ASP.net Identity](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
+- [Beispielanwendung](https://github.com/aspnet/samples/tree/master/samples/aspnet/Identity/ChangePK) mit geändertem Primärschlüssel

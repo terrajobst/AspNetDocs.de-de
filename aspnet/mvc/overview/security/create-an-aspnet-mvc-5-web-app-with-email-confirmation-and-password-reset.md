@@ -8,20 +8,20 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 07f5b290b73f75000e6f29fe09e4dc25e144452f
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 6169c972ad0f4ee2079d3638c54a5accc4b8b3de
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899696"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519348"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Erstellen einer sicheren ASP.NET MVC 5-Web-App mit Anmeldung, E-Mail-Bestätigung und Kennwortzurücksetzung (C#)
 
-von [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 In diesem Tutorial wird gezeigt, wie Sie eine ASP.NET MVC 5-Web-App mit e-Mail-Bestätigung und Kenn Wort Zurücksetzung mithilfe des ASP.net Identity Mitgliedschafts Systems erstellen
 
-Eine aktualisierte Version dieses Tutorials, das .net Core verwendet, finden Sie unter [Konto Bestätigung und Kenn Wort Wiederherstellung in ASP.net Core [/ASPNET/Core/Security/Authentication/accconfirm].
+Eine aktualisierte Version dieses Tutorials, das .net Core verwendet, finden Sie [Unterkonto Bestätigung und Kenn Wort Wiederherstellung in ASP.net Core](/aspnet/core/security/authentication/accconfirm).
 
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>Erstellen einer ASP.NET-MVC-App
