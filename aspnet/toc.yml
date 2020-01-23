@@ -3338,11 +3338,10 @@
             - name: SignalR und Websockets
               href: signalr/videos/getting-started/signalr-and-web-sockets.md
 - name: Mobil
-  href: mobile/index.md
   items:
-    - name: Mobil
+    - name: Übersicht
       href: mobile/overview.md
-    - name: Für mobile ASP.NET-Steuerelemente getestete Geräte
+    - name: Mit Steuerelementen getestete Geräte
       href: mobile/tested-devices.md
     - name: Simulieren von beliebten Mobilgeräten zu Testzwecken
       href: mobile/device-simulators.md
