@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 0383974baa16bb0d5fc588f9303290bdb0fd979c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9800a313879477f36a730e6a70c79bc06d403ae3
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595348"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074955"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>Behandeln von Parallelität mit dem Entity Framework in einer ASP.NET MVC-Anwendung (7 von 10)
 
@@ -53,7 +53,7 @@ Bevor John auf **Save**klickt, führt Jane dieselbe Seite aus und ändert das Fe
 
 ![Changing_English_dept_start_date_to_1999](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
-John klickt zuerst auf **Speichern** und sieht seine Änderung, wenn der Browser zur Index Seite zurückkehrt. Andrea klickt dann auf **Speichern**. Was daraufhin geschieht ist abhängig davon, wie Sie Nebenläufigkeitskonflikte handhaben. Einige der Optionen schließen Folgendes ein:
+John klickt zuerst auf **Speichern** und sieht seine Änderung, wenn der Browser zur Index Seite zurückkehrt. Andrea klickt dann auf **Speichern**. Was daraufhin geschieht, ist abhängig davon, wie Sie Nebenläufigkeitskonflikte behandeln. Einige der Optionen schließen Folgendes ein:
 
 - Sie können nachverfolgen, welche Eigenschaft ein Benutzer geändert hat und nur die entsprechenden Spalten in der Datenbank aktualisieren. Im Beispielszenario würden keine Daten verloren gehen, da verschiedene Eigenschaften von zwei Benutzern aktualisiert wurden. Beim nächsten Mal, wenn jemand die englische Abteilung durchsucht, werden sowohl die Änderungen von John es als auch Jane angezeigt – ein Startdatum von 8/8/2013 und ein Budget von NULL Dollar.
 
@@ -85,6 +85,8 @@ Fügen Sie in *models\department.cs*eine Überwachungs Eigenschaft mit dem Namen
 Das [timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) -Attribut gibt an, dass diese Spalte in der `Where`-Klausel von `Update` und `Delete` Befehle enthalten ist, die an die Datenbank gesendet werden. Das-Attribut wird als [Zeitstempel](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) bezeichnet, da frühere Versionen von SQL Server einen SQL- [Zeitstempel](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx) -Datentyp verwendet haben, bevor die SQL- [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) ihn ersetzt hat. Der .NET-Typ für `rowversion` ist ein Bytearray. Wenn Sie die fließende API bevorzugen, können Sie die [iskonaccesscytoken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx) -Methode verwenden, um die nach Verfolgungs Eigenschaft anzugeben, wie im folgenden Beispiel gezeigt:
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
+
+Weitere Informationen finden Sie im GitHub-Problem [durch IsRowVersion ersetzen](https://github.com/aspnet/AspNetDocs/issues/302).
 
 Durch das Hinzufügen einer Eigenschaft ändern Sie das Datenbankmodell, daher müssen Sie eine weitere Migration durchführen. Geben Sie die folgenden Befehle in die Paket-Manager-Konsole ein:
 
@@ -158,7 +160,7 @@ Klicken Sie im zweiten Browserfenster auf **Speichern** . Folgende Fehlermeldung
 
 ![Department_Edit_page_2_after_clicking_Save](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image10.png)
 
-Klicken Sie erneut auf **Speichern**. Der Wert, den Sie im zweiten Browser eingegeben haben, wird zusammen mit dem ursprünglichen Wert der Daten gespeichert, die Sie im ersten Browser ändern. Die gespeicherten Werte werden Ihnen auf der Indexseite angezeigt.
+Klicken Sie nochmals auf **Speichern**. Der Wert, den Sie im zweiten Browser eingegeben haben, wird zusammen mit dem ursprünglichen Wert der Daten gespeichert, die Sie im ersten Browser ändern. Die gespeicherten Werte werden Ihnen auf der Indexseite angezeigt.
 
 ![Department_Index_page_with_change_from_second_browser](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image11.png)
 
@@ -224,7 +226,7 @@ Ihnen wird eine Fehlermeldung zur Parallelität angezeigt, und die Abteilungswer
 
 Wenn Sie erneut auf **Löschen** klicken, werden Sie auf die Indexseite weitergeleitet, die anzeigt, dass die Abteilung gelöscht wurde.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Damit ist die Einführung in die Behandlung von Nebenläufigkeitskonflikten abgeschlossen. Informationen zu anderen Möglichkeiten, verschiedene Parallelitäts Szenarios zu behandeln, finden Sie unter [optimistische](https://blogs.msdn.com/b/adonet/archive/2011/02/03/using-dbcontext-in-ef-feature-ctp5-part-9-optimistic-concurrency-patterns.aspx) Parallelitäts Muster und [Arbeiten mit Eigenschafts Werten](https://blogs.msdn.com/b/adonet/archive/2011/01/30/using-dbcontext-in-ef-feature-ctp5-part-5-working-with-property-values.aspx) im Entity Framework Teamblog. Das nächste Tutorial zeigt, wie die "Tabelle pro Hierarchie"-Vererbung für die `Instructor`-und `Student` Entitäten implementiert wird.
 

@@ -6,22 +6,22 @@ description: Eine Einführung in ASP.net webhooks.
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 5e2843f0-f499-448f-a712-33d4e9858321
-ms.openlocfilehash: aa65a20e1af16d58533e37fafc77ac246e0fe327
-ms.sourcegitcommit: b95316530fa51087d6c400ff91814fe37e73f7e8
+ms.openlocfilehash: 1e21c92e950893c0ff87c63f03f4710a158441fd
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000733"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075085"
 ---
 # <a name="aspnet-webhooks-overview"></a>Übersicht über ASP.net webhooks
 
 Webhooks ist ein einfaches http-Muster, das ein einfaches Pub/Sub-Modell zum Verbinden von Web-APIs und Saas-Diensten bereitstellt. Wenn ein Ereignis in einem Dienst auftritt, wird eine Benachrichtigung in Form einer HTTP POST-Anforderung an registrierte Abonnenten gesendet. Die Post-Anforderung enthält Informationen zum Ereignis, das es dem Empfänger ermöglicht, entsprechend zu agieren.
 
-Aus Gründen der Einfachheit sind webhooks bereits durch eine große Anzahl von Diensten verfügbar, darunter [Dropbox](http://dropbox.com/), [GitHub](http://www.github.com/), [Bitbucket](https://bitbucket.org/), [MailChimp](http://www.mailchimp.com/), [PayPal](http://www.paypal.com/), [Slack](http://www.slack.com), [Stripe](http://www.stripe.com), [trello](http://www.trello.com/)und viele. Weitere. Ein webhook kann z. b. angeben, dass eine Datei in [Dropbox](http://dropbox.com/)geändert wurde oder für eine Codeänderung in GitHub ein Commit ausgeführt wurde oder eine Zahlung in [PayPal](http://www.paypal.com/)initiiert wurde oder eine Karte in [trello](http://www.trello.com/)erstellt wurde. Die Möglichkeiten sind unendlich.
+Aus Gründen der Einfachheit sind webhooks bereits durch eine große Anzahl von Diensten verfügbar, wie z. b. [Dropbox](http://dropbox.com/), [GitHub](https://www.github.com/), [Bitbucket](https://bitbucket.org/), [MailChimp](http://www.mailchimp.com/), [PayPal](http://www.paypal.com/), [Slack](http://www.slack.com), [Stripe](http://www.stripe.com), [trello](http://www.trello.com/)und viele mehr. Ein webhook kann z. b. angeben, dass eine Datei in [Dropbox](http://dropbox.com/)geändert wurde oder für eine Codeänderung in GitHub ein Commit ausgeführt wurde oder eine Zahlung in [PayPal](http://www.paypal.com/)initiiert wurde oder eine Karte in [trello](http://www.trello.com/)erstellt wurde. Die Möglichkeiten sind unendlich.
 
 Microsoft ASP.net webhooks erleichtert das Senden und empfangen von webhooks als Teil Ihrer ASP.NET-Anwendung:
 
-* Auf der Empfangsseite wird ein gängiges Modell zum empfangen und Verarbeiten von webhooks von einer beliebigen Anzahl von webhostinganbietern bereitstellt. Es ist standardmäßig mit Unterstützung für [Dropbox](http://dropbox.com/), [GitHub](http://www.github.com/), [Bitbucket](https://bitbucket.org/), [MailChimp](http://www.mailchimp.com/), [PayPal](http://www.paypal.com/), [Pusher](http://www.pusher.com), [Salesforce](http://www.salesforce.com), [Slack](http://www.slack.com), [Stripe](http://www.stripe.com), [trello](http://www.trello.com/),[WordPress](http://www.wordpress.com) und [Zendesk](https://www.zendesk.com/) , aber es ist einfach, Unterstützung für weitere Funktionen hinzuzufügen.
+* Auf der Empfangsseite wird ein gängiges Modell zum empfangen und Verarbeiten von webhooks von einer beliebigen Anzahl von webhostinganbietern bereitstellt. Es ist standardmäßig mit Unterstützung für [Dropbox](http://dropbox.com/), [GitHub](https://www.github.com/), [Bitbucket](https://bitbucket.org/), [MailChimp](http://www.mailchimp.com/), [PayPal](http://www.paypal.com/), [Pusher](http://www.pusher.com), [Salesforce](http://www.salesforce.com), [Slack](http://www.slack.com), [Stripe](http://www.stripe.com), [trello](http://www.trello.com/),[WordPress](http://www.wordpress.com) und [Zendesk](https://www.zendesk.com/) erhältlich, aber es ist einfach, Unterstützung für weitere Funktionen hinzuzufügen.
 
 * Auf der sendenden Seite bietet Sie Unterstützung für das Verwalten und Speichern von Abonnements sowie das Senden von Ereignis Benachrichtigungen an die richtige Gruppe von Abonnenten. Dies ermöglicht es Ihnen, einen eigenen Satz von Ereignissen zu definieren, den Abonnenten abonnieren können, und diese Benachrichtigen, wenn ein Problem auftritt.
 
@@ -33,7 +33,7 @@ Der Code zielt auf ASP.net-Web-API 2 und ASP.NET MVC 5 ab und steht als [OSS auf
 
 Webhooks ist ein Muster, das bedeutet, dass es sich auf die Verwendung von Service to Service, aber die grundlegende Idee unterscheidet. Sie können sich webhooks als einfaches Pub/Sub-Modell vorstellen, in dem ein Benutzer Ereignisse abonnieren kann, die an anderer Stelle ausgeführt werden. Die Ereignis Benachrichtigungen werden als HTTP POST-Anforderungen weitergegeben, die Informationen über das Ereignis selbst enthalten.
 
-In der Regel enthält die HTTP POST-Anforderung ein JSON-Objekt oder HTML-Formulardaten, die vom Absender des webhooks bestimmt werden, einschließlich Informationen zu dem Ereignis, das den webhook auslöst. Beispielsweise sieht ein webhook-Post-Anforderungs Text von [GitHub](http://www.github.com/) wie folgt aus, weil ein neues Problem in einem bestimmten Repository geöffnet wird:
+In der Regel enthält die HTTP POST-Anforderung ein JSON-Objekt oder HTML-Formulardaten, die vom Absender des webhooks bestimmt werden, einschließlich Informationen zu dem Ereignis, das den webhook auslöst. Beispielsweise sieht ein webhook-Post-Anforderungs Text von [GitHub](https://www.github.com/) wie folgt aus, weil ein neues Problem in einem bestimmten Repository geöffnet wird:
 
 ```json
 {

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 032368f94ce32cf6231458649e8fdd42bee685e9
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 464cb9b45dc0b62c4da38b7cf612934808854d32
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519257"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074903"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>Parameter Bindung in ASP.net-Web-API
 
@@ -102,7 +102,7 @@ Ein Modell Binder ruft roheingabe Werte von einem *Wert Anbieter*ab. Dieser Entw
 
 Der Standardwert Anbieter in der Web-API ruft Werte aus den Routendaten und der Abfrage Zeichenfolge ab. Wenn der URI z. b. `http://localhost/api/values/1?location=48,-122`ist, erstellt der Wert Anbieter die folgenden Schlüssel-Wert-Paare:
 
-- id = &quot;1&quot;
+- ID = &quot;1&quot;
 - Location = &quot;48.122&quot;
 
 (Ich gehe von der Standardrouten Vorlage aus, bei der es sich um &quot;API/{Controller}/{ID}&quot;handelt.)
@@ -129,7 +129,7 @@ Bei einem Modell Bindungs Anbieter müssen Sie dem Parameter immer noch das Attr
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample13.cs)]
 
-## <a name="value-providers"></a>Wertanbieter
+## <a name="value-providers"></a>Wert Anbieter
 
 Ich habe erwähnt, dass ein Modell Binder Werte von einem Wert Anbieter abruft. Um einen benutzerdefinierten Wert Anbieter zu schreiben, implementieren Sie die **IValueProvider** -Schnittstelle. Es folgt ein Beispiel, das Werte aus den Cookies in der Anforderung abruft:
 
@@ -203,9 +203,9 @@ Der gesamte Parameter Bindungsprozess wird durch einen austauschbaren Dienst ( *
 
 Wenn Sie möchten, können Sie den gesamten **iaktionvaluebinder** -Dienst durch eine benutzerdefinierte Implementierung ersetzen.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-[Beispiel für benutzerdefinierte Parameter Bindung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
+[Beispiel für benutzerdefinierte Parameter Bindung](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 
 Mike Stall hat eine gute Reihe von Blogbeiträgen zur Web-API-Parameter Bindung verfasst:
 

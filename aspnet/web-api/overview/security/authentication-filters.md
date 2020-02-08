@@ -8,12 +8,12 @@ ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 2ef9e62a6c634237e920b6d7aba2127b835f959d
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519374"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075072"
 ---
 # <a name="authentication-filters-in-aspnet-web-api-2"></a>Authentifizierungs Filter in ASP.net-Web-API 2
 
@@ -23,7 +23,7 @@ von [Mike Wasson](https://github.com/MikeWasson)
 
 Mit Authentifizierungs filtern können Sie ein Authentifizierungsschema für einzelne Controller oder Aktionen festlegen. Auf diese Weise kann Ihre APP verschiedene Authentifizierungsmechanismen für verschiedene HTTP-Ressourcen unterstützen.
 
-In diesem Artikel zeige ich Code aus dem Beispiel zur Standard [Authentifizierung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) auf [https://github.com/aspnet/samples](https://github.com/aspnet/samples). Das Beispiel zeigt einen Authentifizierungs Filter, der das HTTP-Basis Zugriffs Authentifizierungsschema (RFC 2617) implementiert. Der Filter wird in einer Klasse mit dem Namen `IdentityBasicAuthenticationAttribute`implementiert. Ich zeige nicht den gesamten Code aus dem Beispiel, sondern nur die Teile, die veranschaulichen, wie ein Authentifizierungs Filter geschrieben wird.
+In diesem Artikel zeige ich Code aus dem Beispiel zur Standard [Authentifizierung](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) auf [https://github.com/aspnet/samples](https://github.com/aspnet/samples). Das Beispiel zeigt einen Authentifizierungs Filter, der das HTTP-Basis Zugriffs Authentifizierungsschema (RFC 2617) implementiert. Der Filter wird in einer Klasse mit dem Namen `IdentityBasicAuthenticationAttribute`implementiert. Ich zeige nicht den gesamten Code aus dem Beispiel, sondern nur die Teile, die veranschaulichen, wie ein Authentifizierungs Filter geschrieben wird.
 
 ## <a name="setting-an-authentication-filter"></a>Festlegen eines Authentifizierungs Filters
 
@@ -108,7 +108,7 @@ Im folgenden finden Sie eine allgemeine Übersicht über die Implementierung von
 5. Wenn die Anmelde Informationen falsch sind, wird 401 zurückgegeben, indem `context.ErrorResult`festgelegt wird.
 6. Wenn die Anmelde Informationen gültig sind, erstellen Sie einen **IPrincipal** , und legen Sie `context.Principal`fest.
 
-Der folgende Code zeigt die **Authenti-easync** -Methode aus dem Beispiel zur Standard [Authentifizierung](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) . In den Kommentaren werden die einzelnen Schritte angegeben. Der Code zeigt verschiedene Arten von Fehlern: einen Autorisierungs Header ohne Anmelde Informationen, falsch formatierte Anmelde Informationen und ungültigen Benutzernamen/Kennwort.
+Der folgende Code zeigt die **Authenti-easync** -Methode aus dem Beispiel zur Standard [Authentifizierung](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication) . In den Kommentaren werden die einzelnen Schritte angegeben. Der Code zeigt verschiedene Arten von Fehlern: einen Autorisierungs Header ohne Anmelde Informationen, falsch formatierte Anmelde Informationen und ungültigen Benutzernamen/Kennwort.
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
@@ -135,7 +135,7 @@ Es ist wichtig zu verstehen, **dass "** " "" " " "" "" ". Wenn **"** " "" "" "" 
 Ich rufe das ursprüngliche **ihttpactionresult** -Ergebnis im *inneren Ergebnis*und das neue **ihttpactionresult** -Ergebnis das *äußere Ergebnis*auf. Das äußere Ergebnis muss folgende Aktionen ausführen:
 
 1. Rufen Sie das innere Ergebnis auf, um die HTTP-Antwort zu erstellen.
-2. Untersuchen Sie die Antwort.
+2. Überprüfen Sie die Antwort.
 3. Fügen Sie bei Bedarf der Antwort eine Authentifizierungs Aufforderung hinzu.
 
 Das folgende Beispiel stammt aus dem Beispiel zur Standard Authentifizierung. Dabei wird ein **ihttpactionresult** für das äußere Ergebnis definiert.
@@ -162,6 +162,6 @@ Um die Authentifizierung auf Hostebene in der Web-API-Pipeline zu deaktivieren, 
 
 [!code-csharp[Main](authentication-filters/samples/sample10.cs)]
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
 [ASP.net-Web-API Sicherheitsfilter](https://msdn.microsoft.com/magazine/dn781361.aspx) (MSDN Magazine)

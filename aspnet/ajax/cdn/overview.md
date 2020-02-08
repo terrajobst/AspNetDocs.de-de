@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 51cb8d672139aaebd77bcdbe80bb579d4b3776aa
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 228194a7b35e116cabae6d819e7a3a8060a3ef6a
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899568"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074916"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
 
@@ -64,9 +64,9 @@ Das CDN hostet die folgenden Skript Bibliotheken von Drittanbietern, die von den
 - jQuery (www.jquery.com)
 - jQuery UI (www.jqueryui.com)
 - jQuery Mobile (www.jquerymobile.com)
-- jQuery-Überprüfung (www.jQuery.com)
+- jQuery-Validierung (https://jqueryvalidation.org/)
 - jQuery-Cycle (www.malsup.com/jQuery/Cycle/)
-- jQuery DataTables (http://datatables.net/)
+- jQuery-DataTables (http://datatables.net/)
 
 Das Microsoft AJAX CDN enthält auch die folgenden Bibliotheken, die von Microsoft hochgeladen wurden:
 
@@ -148,7 +148,7 @@ Beachten Sie, dass Sie im obigen Code drei Dateien aus dem CDN einschließen mü
 - Die jQuery UI Library &mdash; die jQuery UI Library enthält alle jQuery-Benutzeroberflächen Effekte und-Widgets, wie z. b. das DatePicker-Widget, das auf der obigen Seite verwendet wird.
 - Ein jQuery UI-Design &mdash; der jQuery-Benutzeroberfläche unterstützt unterschiedliche Designs. Die obige Seite enthält einen Link zu einer CSS-Datei, um das Redmond-Design zu importieren.
 
-Alle standardmäßigen jQuery-UI-Designs werden im CDN gehostet. [Besuchen Sie diese Seite](jquery-ui/cdnjqueryui1910.md "jAbfragen der Benutzeroberfläche 1.8.10 im Microsoft AJAX CDN ") , um die Miniaturansichten für jedes Design anzuzeigen.
+Alle standardmäßigen jQuery-UI-Designs werden im CDN gehostet. [Besuchen Sie diese Seite](jquery-ui/cdnjqueryui1910.md "jQuery UI 1.8.10 für das Microsoft AJAX CDN") , um die Miniaturansichten für jedes Design anzuzeigen.
 
 Weitere Informationen zur jQuery UI-Bibliothek finden Sie auf der offiziellen [Website der jQuery-Benutzeroberfläche](http://jQueryUI.com "Website der jQuery-Benutzeroberfläche").
 
@@ -617,7 +617,7 @@ Die folgenden Versionen der jQuery UI-Bibliothek werden auf diesem CDN gehostet.
 
 ### <a name="jquery-validation-releases-on-the-cdn"></a>jQuery-Validierungs Releases im CDN
 
-Die folgenden Versionen der jQuery-Validierungs Bibliothek werden in diesem CDN gehostet. Klicken Sie auf die einzelnen Links, um die tatsächliche Liste der Dateien anzuzeigen.
+Die folgenden Versionen des [jQuery-Validierungs](https://jqueryvalidation.org/ "jQuery-Validierungs-Plugin") -Plug-ins werden auf diesem CDN gehostet. Klicken Sie auf die einzelnen Links, um die tatsächliche Liste der Dateien anzuzeigen.
 
 - [jQuery Validate 1.19.1](jquery-validate/cdnjqueryvalidate1191.md "jQuery-Validierung 1.19.1")
 - [jQuery Validate 1.19.0](jquery-validate/cdnjqueryvalidate1190.md "jQuery-Validierung 1.19.0")
@@ -777,7 +777,7 @@ Die folgenden Releases von [Globalize](https://github.com/jquery/globalize "Glob
 
 ### <a name="respond-releases-on-the-cdn"></a>Antworten auf Releases im CDN
 
-Die folgenden Releases von [Antworten](https://github.com/scottjehl/Respond "Antworten") werden im CDN gehostet:
+Die folgenden Releases von [Antworten](https://github.com/scottjehl/Respond "Reagieren") werden im CDN gehostet:
 
 #### <a name="respond-version-142"></a>Antworten auf Version 1.4.2
 
@@ -1180,8 +1180,8 @@ Die folgenden Versionen von [http://hammerjs.github.io/](http://hammerjs.github.
 Die folgenden Versionen der ASP.NET AJAX-Bibliothek werden im CDN gehostet. Klicken Sie auf die einzelnen Links, um die tatsächliche Liste der Dateien anzuzeigen.
 
 - [ASP.net Web Forms-und AJAX-Version 4.5.2](cdnajax452.md "ASP.NET Web Forms und AJAX 4.5.2")
-- [ASP.net Web Forms und AJAX Version 4](cdnajax4.md "ASP.NET Web Forms und AJAX 4")
-- [ASP.NET AJAX, Version 3,5](cdnajax35.md "ASP.NET Ajax 3.5")
+- [ASP.net Web Forms und AJAX Version 4](cdnajax4.md "ASP.NET-Web Forms und AJAX 4")
+- [ASP.NET AJAX, Version 3,5](cdnajax35.md "ASP.NET AJAX 3.5")
 
 <a id="ASPNET_MVC_Releases_on_the_CDN_16"></a>
 
