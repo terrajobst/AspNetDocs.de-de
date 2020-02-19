@@ -1,85 +1,85 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
-title: Hinzufügen eines Controllers (c#) | Microsoft-Dokumentation
+title: Hinzufügen eines ControllersC#() | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, was, wie ich...
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1.
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 0b8c56b5-fdf3-42dd-a866-98fbe0ab78a0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 635fae26ade5c99fb3a010b25e1d74d214e3c32e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 959116ff773f4ef466cda6b172e8321590b50e5b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130261"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457828"
 ---
 # <a name="adding-a-controller-c"></a>Hinzufügen eines Controllers (C#)
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > > [!NOTE]
-> > Eine aktualisierte Version dieses Tutorials finden Sie [hier](../../../getting-started/introduction/getting-started.md) , ASP.NET MVC 5 und Visual Studio 2013 verwendet. Dabei handelt es sich eine sicherere, einfacher, führen weitere Funktionen veranschaulicht.
+> > Eine aktualisierte Version dieses Tutorials ist [hier](../../../getting-started/introduction/getting-started.md) verfügbar, die ASP.NET MVC 5 und Visual Studio 2013 verwendet. Es ist sicherer, ist viel einfacher zu befolgen und zeigt mehr Features.
 > 
 > 
-> In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 > 
-> - [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+> - [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 > 
-> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
-> Ein Visual Web Developer-Projekt mit C#-Quellcode ist verfügbar, zur Ergänzung dieses Themas. [Laden Sie die C#-Version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zu der [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
+> Für dieses Thema steht ein Visual C# Web Developer-Projekt mit Quellcode zur Verfügung. [Laden Sie C# die Version herunter](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zur [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) dieses Tutorials.
 
-MVC steht für *Model-View-Controller*. MVC ist ein Muster für die Entwicklung von Anwendungen, die gut strukturiert und leicht zu warten sind. MVC-basierten Anwendungen enthalten:
+MVC steht für *Model-View-Controller*. MVC ist ein Muster zum Entwickeln von Anwendungen, die gut strukturiert und leicht zu verwalten sind. MVC-basierte Anwendungen enthalten Folgendes:
 
-- Domänencontroller: Klassen, die Behandlung eingehender Anforderungen an die Anwendung, rufen Daten des Modells, und geben Sie dann die Vorlagen anzeigen, die eine Antwort an den Client zurückgeben.
-- Modelle: Klassen, die die Daten der Anwendung darstellen, und, die Validierungslogik zum Erzwingen von Geschäftsregeln für diese Daten verwenden.
-- Ansichten: Vorlagendateien, die Ihre Anwendung verwendet, um HTML-Antworten dynamisch zu generieren.
+- Controller: Klassen, die eingehende Anforderungen an die Anwendung verarbeiten, Modelldaten abrufen und dann Ansichts Vorlagen angeben, die eine Antwort an den Client zurückgeben.
+- Models: Klassen, die die Daten der Anwendung darstellen und Validierungs Logik verwenden, um Geschäftsregeln für diese Daten zu erzwingen.
+- Sichten: Vorlagen Dateien, die Ihre Anwendung verwendet, um HTML-Antworten dynamisch zu generieren.
 
-Wir werden all diese Konzepte in dieser tutorialreihe abdecken und gezeigt, wie Sie diese verwenden, um eine Anwendung zu erstellen.
+Wir behandeln all diese Konzepte in dieser tutorialreihe und zeigen Ihnen, wie Sie Sie zum Erstellen einer Anwendung verwenden können.
 
-Wir erstellen zunächst eine Controller-Klasse. In **Projektmappen-Explorer**, mit der rechten Maustaste die *Controller* Ordner, und wählen Sie dann **Controller hinzufügen**.
+Zunächst erstellen wir eine Controller Klasse. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner *Controllers* , und wählen Sie dann **Controller hinzufügen**aus.
 
 [![](adding-a-controller/_static/image2.png)](adding-a-controller/_static/image1.png)
 
-Benennen Sie dem neuen Controller "HelloWorldController". Lassen Sie die Standardvorlage als **leeren Controller** , und klicken Sie auf **hinzufügen**.
+Nennen Sie den neuen Controller "helloworldcontroller". Belassen Sie die Standardvorlage als **leerer Controller** , und klicken Sie auf **Hinzufügen**.
 
-[![AddHelloWorldController](adding-a-controller/_static/image4.png)](adding-a-controller/_static/image3.png)
+[![addhelloworldcontroller](adding-a-controller/_static/image4.png)](adding-a-controller/_static/image3.png)
 
-Beachten Sie, dass **Projektmappen-Explorer** , dass eine neue Datei benannte erstellt wurde *HelloWorldController.cs*. Die Datei ist in der IDE geöffnet.
+Beachten Sie in **Projektmappen-Explorer** , dass eine neue Datei mit dem Namen *HelloWorldController.cs*erstellt wurde. Die Datei ist in der IDE geöffnet.
 
 ![](adding-a-controller/_static/image5.png)
 
-In der `public class HelloWorldController` blockieren, erstellen Sie zwei Methoden, die wie im folgenden Code aussehen. Der Controller gibt eine Zeichenfolge mit HTML als Beispiel zurück.
+Erstellen Sie im `public class HelloWorldController`-Block zwei Methoden, die wie der folgende Code aussehen. Der Controller gibt als Beispiel eine HTML-Zeichenfolge zurück.
 
 [!code-csharp[Main](adding-a-controller/samples/sample1.cs)]
 
-Den Namen Ihres Controllers `HelloWorldController` und die erste Methode, die oben genannten heißt `Index`. Lassen Sie uns in einem Browser aufrufen. Führen Sie die Anwendung (drücken Sie F5 oder STRG + F5). Fügen Sie im Browser "HelloWorld" an den Pfad in die Adressleiste ein. (Z. B. in der Abbildung unten, dessen `http://localhost:43246/HelloWorld.`) die Seite im Browser wird wie im folgenden Screenshot aussehen. In der oben genannten Methode hat der Code direkt eine Zeichenfolge zurückgegeben. Sie sagte, dass das System nur HTML-Code zurückgeben, und dies der Fall war.
+Der Controller hat den Namen `HelloWorldController`, und die erste oben genannte Methode heißt `Index`. Wir rufen es in einem Browser auf. Führen Sie die Anwendung aus (drücken Sie F5 oder STRG + F5). Fügen Sie im Browser "HelloWorld" an den Pfad in der Adressleiste an. (In der Abbildung unten ist es z. b. `http://localhost:43246/HelloWorld.`) Die Seite im Browser sieht wie der folgende Screenshot aus. In der obigen Methode gab der Code direkt eine Zeichenfolge zurück. Sie haben das System angewiesen, nur einige HTML-Code zurückzugeben.
 
 ![](adding-a-controller/_static/image6.png)
 
-ASP.NET MVC ruft verschiedene Controllerklassen (und darin enthaltene unterschiedliche Aktionsmethoden) abhängig von der eingehenden URL an. Die Standardlogik von Zuordnung, die ASP.NET MVC verwendet ein Format wie dieses, um zu bestimmen, welcher Code zum Aufrufen:
+ASP.NET MVC ruft in Abhängigkeit von der eingehenden URL verschiedene Controller Klassen (und verschiedene Aktionsmethoden) auf. Die von ASP.NET MVC verwendete standardmäßige Mapping-Logik verwendet ein Format wie dieses, um zu bestimmen, welcher Code aufgerufen werden soll:
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-Der erste Teil der URL bestimmt die auszuführende Controllerklasse. Also */HelloWorld* ordnet die `HelloWorldController` Klasse. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse ausgeführt. Also */HelloWorld/Index* würde dazu führen, dass die `Index` Methode der `HelloWorldController` Klasse ausgeführt. Beachten Sie, die wir mussten nur durchsuchen */HelloWorld* und `Index` Methode wurde in der Standardeinstellung verwendet. Dies ist, da eine Methode mit dem Namen `Index` ist die Standardmethode, die für einen Controller aufgerufen wird, wenn eine nicht explizit angegeben ist.
+Der erste Teil der URL bestimmt die auszuführende Controller Klasse. Daher wird */HelloWorld* der `HelloWorldController`-Klasse zugeordnet. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse, die ausgeführt werden soll. */HelloWorld/Index* würde also bewirken, dass die `Index`-Methode der `HelloWorldController` Klasse ausgeführt wird. Beachten Sie, dass wir nur zu */HelloWorld* navigieren mussten und die `Index`-Methode standardmäßig verwendet wurde. Dies liegt daran, dass eine Methode mit dem Namen `Index` die Standardmethode ist, die auf einem Controller aufgerufen wird, wenn Sie nicht explizit angegeben wird.
 
-Wechseln Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Methode wird ausgeführt und gibt die Zeichenfolge „This is the Welcome action method...“ zurück. Die standardzuordnung für MVC ist `/[Controller]/[ActionName]/[Parameters]`. Bei dieser URL ist `HelloWorld` der Controller und `Welcome` die Aktionsmethode. Sie haben den Teil `[Parameters]` der URL noch nicht verwendet.
+Navigieren Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Methode wird ausgeführt und gibt die Zeichenfolge „This is the Welcome action method...“ zurück. Die MVC-Standard Zuordnung ist `/[Controller]/[ActionName]/[Parameters]`. Bei dieser URL ist `HelloWorld` der Controller und `Welcome` die Aktionsmethode. Sie haben den Teil `[Parameters]` der URL noch nicht verwendet.
 
 ![](adding-a-controller/_static/image7.png)
 
-Lassen Sie uns das Beispiel etwas so ändern, dass Parameterinformationen aus der URL an den Controller übergeben werden können (z. B. */HelloWorld/Welcome? Name = Scott&amp;Numtimes = 4*). Ändern Ihrer `Welcome` Methode, um zwei Parameter enthalten, wie unten dargestellt. Beachten Sie, dass der Code die c#-Funktion optional-Parameter verwendet, um anzugeben, dass die `numTimes` Parameter sollte der Standardwert 1, wenn kein Wert für diesen Parameter übergeben wird.
+Ändern Sie das Beispiel so geringfügig, dass Sie einige Parameterinformationen von der URL an den Controller übergeben können (z. b. */HelloWorld/Welcome? Name = Scott&amp;numtimes = 4*). Ändern Sie die `Welcome`-Methode so, dass Sie zwei Parameter enthält, wie unten gezeigt. Beachten Sie, dass der Code C# die optionale-Parameter-Funktion verwendet, um anzugeben, dass der `numTimes`-Parameter den Standardwert 1 hat, wenn kein Wert für diesen Parameter übergeben wird.
 
 [!code-csharp[Main](adding-a-controller/samples/sample2.cs)]
 
-Führen Sie die Anwendung, und navigieren Sie zu der Beispiel-URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4)`. Sie können für `name` und `numtimes` in der URL verschiedene Werte ausprobieren. Das System ordnet automatisch die benannten Parameter aus der Abfragezeichenfolge in der Adressleiste den Parametern der Methode.
+Führen Sie die Anwendung aus, und navigieren Sie zur Beispiel-URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4)`. Sie können für `name` und `numtimes` in der URL verschiedene Werte ausprobieren. Das System ordnet automatisch die benannten Parameter aus der Abfrage Zeichenfolge in der Adressleiste den Parametern in der-Methode zu.
 
 ![](adding-a-controller/_static/image8.png)
 
-In diesen beiden Beispielen der Controller gearbeitet hat "den VC"-Teil von MVC, d. h. die Ansicht und Controller Arbeit. Der Controller gibt direkt HTML zurück. Normalerweise sollen nicht Controller HTML direkt zurückgeben, da dies sehr mühsam Code wird. Stattdessen wird in der Regel eine separate ansichtsvorlagendatei verwendet, um Hilfe, die HTML-Antwort zu generieren. Sehen wir uns weiter an, wie wir dies erreichen können.
+In beiden Beispielen hat der Controller den "VC"-Teil von MVC ausgeführt – das heißt, die Ansicht und der Controller funktionieren. Der Controller gibt direkt HTML zurück. Normalerweise möchten Sie nicht, dass Controller den HTML-Code direkt zurückgeben, da dieser Code sehr umständlich ist. Stattdessen verwenden wir in der Regel eine separate Ansichts Vorlagen Datei, um die HTML-Antwort zu generieren. Sehen wir uns nun an, wie wir dies tun können.
 
 > [!div class="step-by-step"]
 > [Zurück](intro-to-aspnet-mvc-3.md)

@@ -2,31 +2,31 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 title: 'Anhang: die Anwendung zum Beheben von IT-Beispielen (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation'
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6fda47babd3c2505315f42667c45f09482218c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583743"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456880"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Anhang: die Anwendung zum Beheben von IT-Beispielen (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des Projekts zum Reparieren von IT](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 In diesem Anhang im e-book erstellen realer Cloud-apps mit Azure sind die folgenden Abschnitte enthalten, die zusätzliche Informationen zur Lösung zum Beheben von IT-Beispielen enthalten, die Sie herunterladen können:
 
 - [Bekannte Probleme](#knownissues)
-- [Bewährte Methoden](#bestpractices)
+- [bewährten Methoden](#bestpractices)
 - [Ausführen der APP aus Visual Studio auf dem lokalen Computer](#run-in-vs)
 - [Bereitstellen der Basis-app zum Azure App Service von Web-Apps mithilfe der Windows PowerShell-Skripts](#deploybase)
 - [Problembehandlung bei Windows PowerShell-Skripts](#troubleshooting)
@@ -46,7 +46,7 @@ In der folgenden Liste finden Sie Probleme, die in einer Produktionsanwendung be
 - Verwenden Sie HTTPS für Anmelde Seiten und Authentifizierungs Cookies.
 - Geben Sie ein Zeitlimit für Authentifizierungs Cookies an.
 
-### <a name="input-validation"></a>Eingabevalidierung
+### <a name="input-validation"></a>Eingabeüberprüfung
 
 Im Allgemeinen führt eine Produktions-app mehr Eingabevalidierung durch als die Korrektur der IT-app. Beispielsweise sollte die Größe der Image Größe/Bild Datei, die für den Upload zulässig ist, eingeschränkt sein.
 
@@ -250,7 +250,7 @@ Es gibt zwei Möglichkeiten, die Korrektur der IT-App auszuführen:
    4. Wählen Sie **mehrere Start Projekte**aus.
    5. Wählen Sie in der Dropdown Liste **Aktion** unter myfxit und myfixitcloudservice die Option **Start**aus.
    6. Klicken Sie auf **OK**.
-   7. Drücken Sie **F5** , um beide Projekte auszuführen.
+   7. Drücken Sie **F5**, um beide Projekte auszuführen.
 
       Wenn Sie das Projekt myfixitcloudservice ausführen, startet Visual Studio den Azure-Server Emulator. Abhängig von ihrer Firewallkonfiguration müssen Sie den Emulator möglicherweise durch die Firewall zulassen.
 
@@ -263,7 +263,7 @@ Wenn Sie in Azure ohne Verwendung von Warteschlangen ausführen möchten und die
 
 Bei diesen Anweisungen wird vorausgesetzt, dass Sie die Lösung zum Beheben von Lösungen bereits heruntergeladen und ausgeführt haben und dass Sie über ein Azure-Konto verfügen oder über ein Azure-Abonnement verfügen, das Sie zur Verwaltung autorisiert haben.
 
-1. Installieren Sie die **Azure PowerShell** -Konsole. Anweisungen hierzu finden [Sie unter Installieren und Konfigurieren von Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1).
+1. Installieren Sie die **Azure PowerShell** -Konsole. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1).
 
     Diese angepasste Konsole ist für die Zusammenarbeit mit Ihrem Azure-Abonnement konfiguriert. Das Azure-Modul ist im Verzeichnis " *Programme* " installiert und wird bei jeder Verwendung der Azure PowerShell Konsole automatisch importiert.
 
@@ -395,4 +395,4 @@ Ersetzen Sie in MyFixItCloudService\ServiceConfiguration.Cloud.cscfg die gleiche
 Nun können Sie den clouddienst bereitstellen. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt myfixitcloudservice, und wählen Sie **veröffentlichen** Weitere Informationen finden Sie unter "bereitstellen[der Anwendung in Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)" in Teil 2 [dieses Tutorials](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
 
 > [!div class="step-by-step"]
-> [Vorheriges](more-patterns-and-guidance.md)
+> [Previous](more-patterns-and-guidance.md)

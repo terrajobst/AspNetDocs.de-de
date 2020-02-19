@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 title: Behandlung vorübergehender Fehler (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 11/03/2015
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: fc281e3d8f7c9edd4d98b029a67e58113132a8b3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e798cb83cfb97db63fef6dc38c8f62804461d01b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583655"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456854"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Behandlung vorübergehender Fehler (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Wenn Sie eine echte Cloud-App entwerfen, müssen Sie sich mit der Behandlung temporärer Dienstunterbrechungen beschäftigen. Dieses Problem ist in Cloud-apps eindeutig, da Sie von Netzwerkverbindungen und externen Diensten abhängig sind. Sie können häufig geringfügige Ausfälle erzielen, bei denen es sich in der Regel um eine Selbstreparatur handelt, und wenn Sie nicht darauf vorbereitet sind, Sie auf intelligente Weise zu verarbeiten, führt dies zu einem schlechten Eindruck für Ihre Kunden.
 
@@ -72,7 +72,7 @@ Es gibt keine wiederholen Sie-Richtlinie mit einer einzelnen Größe. Sie könne
 
 Eine Anleitung für die Wiederholungs Richtlinie für SQL-Datenbank finden Sie unter [beheben vorübergehender Fehler und Verbindungsfehler in SQL-Datenbank](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Eine Wiederholungs-/Backoff-Strategie kann dazu beitragen, temporäre Fehler in den meisten Fällen für den Kunden unsichtbar zu machen, und Microsoft stellt Frameworks zur Verfügung, mit denen Sie Ihre Arbeit bei der Implementierung einer Strategie minimieren können, unabhängig davon, ob Sie ADO.net, Entity Framework oder den Azure Storage-Dienst verwenden.
 
@@ -80,9 +80,9 @@ Im [nächsten Kapitel](distributed-caching.md)wird erläutert, wie Sie die Leist
 
 ## <a name="resources"></a>Ressourcen
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-Documentation
+Dokumentation
 
 - [Bewährte Methoden für den Entwurf umfangreicher Dienste in Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Whitepaper von Mark Simms und Michael thomassy. Vergleichbar mit der Failsafe-Reihe, wird jedoch ausführlicher erläutert. Weitere Informationen finden Sie im Abschnitt Telemetrie und Diagnose.
 - [Failsafe: Leitfaden für robuste cloudarchitekturen](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Whitepaper von Marc Mercuri, Ulrich Homann und Andrew Townhill. Webseiten Version der Failsafe-Videoserie.
@@ -98,7 +98,7 @@ Videos
 
 Codebeispiel
 
-- [Grundlagen des clouddiensts in Azure](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Beispielanwendung, die vom Microsoft Azure Customer Advisory Team erstellt wurde und veranschaulicht, wie der [Enterprise Library-Block zur Behandlung vorübergehender Fehler](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH) verwendet wird. Weitere Informationen finden Sie unter [Grundlagen der Datenzugriffs Schicht für Clouddienste – Behandlung vorübergehender Fehler](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx). TFH wird für den Datenbankzugriff mithilfe von ADO.net direkt (ohne Entity Framework) empfohlen.
+- [Grundlagen des clouddiensts in Azure](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Beispielanwendung, die vom Microsoft Azure Customer Advisory Team erstellt wurde und veranschaulicht, wie der [Enterprise Library-Block zur Behandlung vorübergehender Fehler](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH) verwendet wird. Weitere Informationen finden Sie unter [Clouddienst-Grundlagen Datenzugriffsebene - Handhabung vorübergehender Fehler](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx). TFH wird für den Datenbankzugriff mithilfe von ADO.net direkt (ohne Entity Framework) empfohlen.
 
 > [!div class="step-by-step"]
 > [Zurück](monitoring-and-telemetry.md)

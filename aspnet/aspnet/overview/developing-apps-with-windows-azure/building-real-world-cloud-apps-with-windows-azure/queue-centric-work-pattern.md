@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 title: Warteschlangen zentriertes Arbeitsmuster (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: c73b070f11366e781bcea70ffc84fd49a47d469a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1177336b25479c06706227e5c8ff4d027cdaebb8
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582768"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456984"
 ---
 # <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Warteschlangen zentriertes Arbeitsmuster (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Wir haben bereits gesehen, dass die Verwendung mehrerer Dienste zu einer "zusammengesetzten" SLA führen kann, bei der die effektive SLA der APP das *Produkt* der einzelnen SLAs ist. Beispielsweise verwendet die Korrektur der IT-App Websites, Storage und SQL-Datenbank. Wenn einer dieser Dienste ausfällt, gibt die APP einen Fehler an den Benutzer zurück.
 
@@ -166,7 +166,7 @@ Das Abrufen von Warteschlangen Nachrichten führt zu einer geringen Transaktions
 
 Durch das Hinzufügen von asynchronem Code in einem Webprojekt kann die Leistung automatisch verbessert werden, da IIS einen eingeschränkten Thread Pool verwaltet. Dies ist in einem workerrollenprojekt nicht der Fall. Um die Skalierbarkeit der workerrolle zu verbessern, können Sie Multithreadcode schreiben oder asynchronen Code verwenden, um die [parallele Programmierung](https://msdn.microsoft.com/library/ff963553.aspx)zu implementieren. Das Beispiel implementiert nicht die parallele Programmierung, sondern zeigt, wie Sie den Code asynchron machen, damit Sie die parallele Programmierung implementieren können.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Kapitel haben Sie erfahren, wie Sie die Reaktionsfähigkeit, Zuverlässigkeit und Skalierbarkeit von Anwendungen verbessern, indem Sie das Warteschlangen zentrierte Arbeitsmuster implementieren.
 

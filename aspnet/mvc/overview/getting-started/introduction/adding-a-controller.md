@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 80000b366203eff4b9524b7a5995832753b9eed3
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 194a8a7398e163f0c37164a8724f98b16444984b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519049"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457218"
 ---
 # <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
-von [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -65,7 +65,7 @@ Wenn Sie die Anwendung ausführen und keine URL-Segmente angeben, wird standardm
 
 Der erste Teil der URL bestimmt die auszuführende Controller Klasse. Daher wird */HelloWorld* der `HelloWorldController`-Klasse zugeordnet. Der zweite Teil der URL bestimmt die Aktionsmethode in der Klasse, die ausgeführt werden soll. */HelloWorld/Index* würde also bewirken, dass die `Index`-Methode der `HelloWorldController` Klasse ausgeführt wird. Beachten Sie, dass wir nur zu */HelloWorld* navigieren mussten und die `Index`-Methode standardmäßig verwendet wurde. Dies liegt daran, dass eine Methode mit dem Namen `Index` die Standardmethode ist, die auf einem Controller aufgerufen wird, wenn Sie nicht explizit angegeben wird. Der dritte Teil des URL-Segments (`Parameters`) ist für Routendaten. Weiter unten in diesem Tutorial werden die Weiterleitungs Daten angezeigt.
 
-Wechseln Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Methode wird ausgeführt und gibt die Zeichenfolge zurück &quot;dies die Willkommens Aktionsmethode...&quot;. Die MVC-Standard Zuordnung ist `/[Controller]/[ActionName]/[Parameters]`. Bei dieser URL ist `HelloWorld` der Controller und `Welcome` die Aktionsmethode. Sie haben den Teil `[Parameters]` der URL noch nicht verwendet.
+Navigieren Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Methode wird ausgeführt und gibt die Zeichenfolge zurück &quot;dies die Willkommens Aktionsmethode...&quot;. Die MVC-Standard Zuordnung ist `/[Controller]/[ActionName]/[Parameters]`. Bei dieser URL ist `HelloWorld` der Controller und `Welcome` die Aktionsmethode. Sie haben den Teil `[Parameters]` der URL noch nicht verwendet.
 
 ![](adding-a-controller/_static/image6.png)
 
@@ -80,7 +80,7 @@ Wechseln Sie zu `http://localhost:xxxx/HelloWorld/Welcome`. Die `Welcome`-Method
 
 ![](adding-a-controller/_static/image7.png)
 
-Im obigen Beispiel wird das URL-Segment (`Parameters`) nicht verwendet. die Parameter `name` und `numTimes` werden als [Abfrage](http://en.wikipedia.org/wiki/Query_string)Zeichenfolgen weitergegeben. Das Platzhalterzeichen ? (Fragezeichen) in der obigen URL ist ein Trennzeichen, und die Abfrage Zeichenfolgen folgen. Das Zeichen &amp; trennt Abfragezeichenfolgen.
+Im obigen Beispiel wird das URL-Segment (`Parameters`) nicht verwendet. die Parameter `name` und `numTimes` werden als [Abfrage](http://en.wikipedia.org/wiki/Query_string)Zeichenfolgen weitergegeben. Mit dem Zeichen „?“ (Fragezeichen) in der obigen URL ist ein Trennzeichen, und die Abfrage Zeichenfolgen folgen. Das Zeichen &amp; trennt Abfragezeichenfolgen.
 
 Ersetzen Sie die Willkommens Methode durch den folgenden Code:
 

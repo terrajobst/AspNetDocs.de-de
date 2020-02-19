@@ -1,142 +1,142 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
-title: Zugreifen auf Modelldaten anhand eines Controllers (c#) | Microsoft-Dokumentation
+title: Zugreifen auf die Daten des Modells von einem ControllerC#() | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, d.h....
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1.
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 002ada5c-f114-47ab-a441-57dbdb728ea0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 48fe7af73a5e5d8a3cd4c4ec152c57726fb021ba
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2e9c7f24d426635760b613f570b85455ce71b3dc
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130206"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77458097"
 ---
 # <a name="accessing-your-models-data-from-a-controller-c"></a>Zugreifen auf Modelldaten anhand eines Controllers (C#)
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > > [!NOTE]
-> > Eine aktualisierte Version dieses Tutorials finden Sie [hier](../../../getting-started/introduction/getting-started.md) , ASP.NET MVC 5 und Visual Studio 2013 verwendet. Dabei handelt es sich eine sicherere, einfacher, führen weitere Funktionen veranschaulicht.
+> > Eine aktualisierte Version dieses Tutorials ist [hier](../../../getting-started/introduction/getting-started.md) verfügbar, die ASP.NET MVC 5 und Visual Studio 2013 verwendet. Es ist sicherer, ist viel einfacher zu befolgen und zeigt mehr Features.
 > 
 > 
-> In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 > 
-> - [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+> - [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 > 
-> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
-> Ein Visual Web Developer-Projekt mit C#-Quellcode ist verfügbar, zur Ergänzung dieses Themas. [Laden Sie die C#-Version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zu der [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
+> Für dieses Thema steht ein Visual C# Web Developer-Projekt mit Quellcode zur Verfügung. [Laden Sie C# die Version herunter](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zur [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) dieses Tutorials.
 
-In diesem Abschnitt erstellen Sie ein neues `MoviesController` Klasse, und Schreiben von Code, das die Movie-Daten abgerufen und im Browser eine ansichtsvorlage anzeigt. Achten Sie darauf, dass zum Erstellen der Anwendung, bevor Sie fortfahren.
+In diesem Abschnitt erstellen Sie eine neue `MoviesController`-Klasse und schreiben Code, mit dem die Filmdaten abgerufen und im Browser mithilfe einer Ansichts Vorlage angezeigt werden. Stellen Sie sicher, dass Sie die Anwendung erstellen, bevor Sie fortfahren
 
-Mit der rechten Maustaste die *Controller* Ordner, und erstellen Sie ein neues `MoviesController` Controller. Wählen Sie die folgenden Optionen:
+Klicken Sie mit der rechten Maustaste auf den Ordner *Controllers* , und erstellen Sie einen neuen `MoviesController` Controller. Wählen Sie die folgenden Optionen:
 
-- Name des Controllers: **MoviesController**. (Dies ist die Standardeinstellung. )
-- Vorlage: **Controller mit Lese-/schreibaktionen und Ansichten unter Verwendung von Entity Framework**.
-- Modellklasse: **Movie (MvcMovie.Models)**.
-- Datenkontextklasse: **MovieDBContext (MvcMovie.Models)**.
-- Ansichten: **Razor (CSHTML)**. (Die Standardeinstellung.)
+- Controller Name: **moviescontroller**. (Dies ist die Standardeinstellung. )
+- Vorlage: **Controller mit Lese-/Schreibaktionen und Ansichten unter Verwendung Entity Framework**.
+- Modell Klasse: **Movie (mvcmovie. Models)** .
+- Datenkontext Klasse: " **wviedbcontext" (mvcmovie. Models)** .
+- Views: **Razor (cshtml)** . (Die Standardeinstellung.)
 
-[![AddScaffoldedMovieController](accessing-your-models-data-from-a-controller/_static/image2.png "AddScaffoldedMovieController")](accessing-your-models-data-from-a-controller/_static/image1.png)
+[![Addgerüoldedmuviecontroller](accessing-your-models-data-from-a-controller/_static/image2.png "AddScaffoldedMovieController")](accessing-your-models-data-from-a-controller/_static/image1.png)
 
-Klicken Sie auf **Hinzufügen**. Die folgenden Dateien und Ordner, erstellt Visual Web Developer:
+Klicken Sie auf **Hinzufügen**. Visual Web Developer erstellt die folgenden Dateien und Ordner:
 
-- *Eine "moviescontroller.cs"* Datei des Projekts *Controller* Ordner.
-- Ein *Filme* Ordner des Projekts *Ansichten* Ordner.
-- *Create.cshtml, Delete.cshtml, Details.cshtml, Edit.cshtml*, und *"Index.cshtml"* in der neuen *ansichten\filme* Ordner.
+- *Eine MoviesController.cs* -Datei im Ordner " *Controllers* " des Projekts.
+- Einen Ordner " *Movies* " im Ordner " *views* " des Projekts.
+- " *Create. cshtml", "Delete. cshtml", "Details. cshtml", "Edit. cshtml*" und " *Index. cshtml* " im neuen Ordner " *views\movies* ".
 
-[![NewMovieControllerScreenShot](accessing-your-models-data-from-a-controller/_static/image4.png "NewMovieControllerScreenShot")](accessing-your-models-data-from-a-controller/_static/image3.png)
+[![Newmuviecontrollerscreenshot](accessing-your-models-data-from-a-controller/_static/image4.png "Newmuviecontrollerscreenshot")](accessing-your-models-data-from-a-controller/_static/image3.png)
 
-Der ASP.NET MVC 3-Gerüstbau automatisch erstellt, die CRUD-Vorgänge (erstellen, lesen, aktualisieren und löschen) Aktionsmethoden und Ansichten für Sie. Sie verfügen nun über eine voll funktionsfähige Webanwendung, mit dem Sie das Erstellen, auflisten, bearbeiten und löschen filmeinträge.
+Der ASP.NET MVC 3-gerüstingmechanismus erstellte automatisch die CRUD-Aktionsmethoden und-Sichten (Create, Read, Update und DELETE) für Sie. Sie verfügen jetzt über eine voll funktionsfähige Webanwendung, mit der Sie Film Einträge erstellen, auflisten, bearbeiten und löschen können.
 
-Führen Sie die Anwendung, und navigieren Sie zu der `Movies` Controller durch Anfügen */Movies* an die URL in die Adressleiste Ihres Browsers. Da die Anwendung auf das Standardrouting der vertrauenden Seite ist (definiert der *"Global.asax"* Datei), der die Browseranforderung `http://localhost:xxxxx/Movies` weitergeleitet wird, auf den Standardwert `Index` Action-Methode der der `Movies` Controller. Das heißt, der die Browseranforderung `http://localhost:xxxxx/Movies` ist identisch mit die Browseranforderung `http://localhost:xxxxx/Movies/Index`. Das Ergebnis ist eine leere Liste von Filmen, da Sie noch keine hinzugefügt haben.
+Führen Sie die Anwendung aus, und navigieren Sie zum `Movies` Controller, indem Sie */Movies* an die URL in der Adressleiste Ihres Browsers anhängen. Da sich die Anwendung auf das Standard Routing (definiert in der Datei *Global. asax* ) verlässt, wird der `http://localhost:xxxxx/Movies` Browser Anforderung an die standardmäßige `Index` Aktionsmethode des `Movies` Controllers weitergeleitet. Das heißt, die Browser Anforderung `http://localhost:xxxxx/Movies` ist praktisch identisch mit der Browser Anforderung `http://localhost:xxxxx/Movies/Index`. Das Ergebnis ist eine leere Liste von Filmen, da Sie noch keine hinzugefügt haben.
 
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
-### <a name="creating-a-movie"></a>Erstellen einen Film
+### <a name="creating-a-movie"></a>Erstellen eines Films
 
-Klicken Sie auf den Link **Neu erstellen**. Geben Sie einige Details zu einem Film, und klicken Sie dann auf die **erstellen** Schaltfläche.
+Klicken Sie auf den Link **Neu erstellen**. Geben Sie einige Details zu einem Film ein, und klicken Sie dann auf die Schaltfläche **Erstellen** .
 
 ![](accessing-your-models-data-from-a-controller/_static/image6.png)
 
-Klicken auf die **erstellen** -Schaltfläche bewirkt, dass das Formular an den Server gesendet werden, in dem die Filminformationen in der Datenbank gespeichert. Sie werden dann auf umgeleitet, die */Movies* URL hier Sie den neu erstellten Film in der Auflistung sehen.
+Wenn Sie auf die Schaltfläche **Erstellen** klicken, wird das Formular an den Server gesendet, auf dem die Filminformationen in der Datenbank gespeichert werden. Sie werden dann zur URL */Movies* umgeleitet, auf der Sie den neu erstellten Film in der Auflistung sehen können.
 
-[![IndexWhenHarryMet](accessing-your-models-data-from-a-controller/_static/image8.png "IndexWhenHarryMet")](accessing-your-models-data-from-a-controller/_static/image7.png)
+[![Index/harrymet](accessing-your-models-data-from-a-controller/_static/image8.png "Index/harrymet")](accessing-your-models-data-from-a-controller/_static/image7.png)
 
 Erstellen Sie ein paar weitere Filmeinträge. Testen Sie die Links **Edit** (Bearbeiten), **Details** und **Delete** (Löschen), die alle funktionsbereit sind.
 
-## <a name="examining-the-generated-code"></a>Überprüfen des generierten Codes
+## <a name="examining-the-generated-code"></a>Untersuchen des generierten Codes
 
-Öffnen der *Controllers\MoviesController.cs* Datei, und untersuchen Sie die generierte `Index` Methode. Ein Teil der Movie-Controller mit dem `Index` Methode wird unten angezeigt.
+Öffnen Sie die Datei *controllers\moviescontroller.cs* , und untersuchen Sie die generierte `Index`-Methode. Unten wird ein Teil des Movie-Controllers mit der `Index`-Methode angezeigt.
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample1.cs)]
 
-Die folgende Zeile aus der `MoviesController` Klasse eine filmdatenbankkontext instanziiert, wie zuvor beschrieben. Die filmdatenbankkontext können Sie Abfragen, bearbeiten und Löschen von Filmen.
+Die folgende Zeile aus der `MoviesController`-Klasse instanziiert einen Film Daten Bank Kontext, wie zuvor beschrieben. Sie können den Film Daten Bank Kontext verwenden, um Filme abzufragen, zu bearbeiten und zu löschen.
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample2.cs)]
 
-Eine Anforderung an die `Movies` Controller gibt alle Einträge in der `Movies` Tabelle mit der filmdatenbank und übergibt dann die Ergebnisse an die `Index` anzeigen.
+Eine Anforderung an den `Movies` Controller gibt alle Einträge in der `Movies`-Tabelle der Movie-Datenbank zurück und übergibt die Ergebnisse dann an die `Index` Sicht.
 
-## <a name="strongly-typed-models-and-the-model-keyword"></a>Stark typisierte Modelle und die @model Schlüsselwort
+## <a name="strongly-typed-models-and-the-model-keyword"></a>Stark typisierte Modelle und das @model-Schlüsselwort
 
-Weiter oben in diesem Tutorial haben Sie gesehen haben wie ein Controller Daten oder Objekte in eine Ansicht Vorlage übergeben kann, die `ViewBag` Objekt. Die `ViewBag` ist ein dynamisches Objekt, das spät gebundene bequem übergeben Informationen an eine Ansicht bereitstellt.
+An früherer Stelle in diesem Tutorial haben Sie erfahren, wie ein Controllerdaten oder Objekte mithilfe des `ViewBag` Objekts an eine Ansichts Vorlage übergeben kann. Der `ViewBag` ist ein dynamisches Objekt, das eine bequeme, spät gebundene Methode zum Übergeben von Informationen an eine Ansicht bereitstellt.
 
-ASP.NET MVC bietet außerdem die Möglichkeit, stark übergeben Daten oder Objekte, um eine ansichtsvorlage eingegeben. Stark typisierte dieser Ansatz ermöglicht eine bessere Überprüfungen zur Kompilierzeit von Ihrem Code und umfangreichere IntelliSense im Visual Web Developer-Editor. Wir verwenden diesen Ansatz mit der `MoviesController` Klasse und *"Index.cshtml"* Vorlage anzeigen.
+ASP.NET MVC bietet auch die Möglichkeit, stark typisierte Daten oder Objekte an eine Ansichts Vorlage zu übergeben. Dieser stark typisierte Ansatz ermöglicht eine bessere Kompilierzeit Überprüfung Ihres Codes und umfassendere IntelliSense im Visual Web Developer-Editor. Wir verwenden diesen Ansatz mit der Ansichts Vorlage "`MoviesController`-Klasse" und " *Index. cshtml* ".
 
-Beachten Sie, wie der Code erstellt eine [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) Objekt beim Aufrufen der `View` -Hilfsmethode in den `Index` Aktionsmethode. Der Code übergibt diese dann `Movies` Liste vom Controller an die Ansicht:
+Beachten Sie, wie der Code beim Aufrufen der `View` Helper-Methode in der `Index` Action-Methode ein [`List`](https://msdn.microsoft.com/library/6sh2ey19.aspx) -Objekt erstellt. Der Code übergibt dann diese `Movies` Liste vom Controller an die Ansicht:
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample3.cs)]
 
-Durch Einschließen einer `@model` -Anweisung am Anfang der Ansichtsdatei für die Vorlage können Sie den Typ des Objekts, das die Ansicht erwartet angeben. Bei der Erstellung des Movie-Controllers enthalten Visual Web Developer automatisch die folgenden `@model` Anweisung am Anfang der *"Index.cshtml"* Datei:
+Durch Einschließen einer `@model`-Anweisung am Anfang der Ansichts Vorlagen Datei können Sie den Objekttyp angeben, den die Sicht erwartet. Beim Erstellen des Film Controllers enthielt Visual Web Developer automatisch die folgende `@model`-Anweisung am Anfang der Datei " *Index. cshtml* ":
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample4.cshtml)]
 
-Dies `@model` -Direktive ermöglicht Ihnen Zugriff auf die Liste von Filmen, die mithilfe der Controller an die Ansicht übergeben eine `Model` -Objekt, das stark typisiert ist. Z. B. in der *"Index.cshtml"* Vorlage, der Code durchläuft die Filme durch praktische Übungen einen `foreach` Anweisung für das stark typisierte `Model` Objekt:
+Diese `@model` Direktive ermöglicht Ihnen den Zugriff auf die Liste der Filme, die der Controller an die Ansicht übermittelt hat, indem er ein `Model` Objekt verwendet, das stark typisiert ist. In der Vorlage *Index. cshtml* durchläuft der Code z. b. die Filme durch Ausführen einer `foreach`-Anweisung über das stark typisierte `Model` Objekt:
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample5.cshtml)]
 
-Da die `Model` -Objekt stark typisiert ist (als ein `IEnumerable<Movie>` Objekt), die jeweils `item` Objekt in der Schleife wird als eingegeben `Movie`. Neben anderen Vorteilen bedeutet dies, dass Sie während der Kompilierung des Codes überprüfen und vollständige IntelliSense-Unterstützung im Code-Editor:
+Da das `Model` Objekt stark typisiert ist (als `IEnumerable<Movie>`-Objekt), wird jedes `item`-Objekt in der Schleife als `Movie`typisiert. Dies bedeutet neben anderen Vorteilen, dass Sie die Kompilierzeit Überprüfung des Codes und die vollständige IntelliSense-Unterstützung im Code-Editor erhalten:
 
-[![ModelIntelliSense](accessing-your-models-data-from-a-controller/_static/image10.png "ModelIntelliSense")](accessing-your-models-data-from-a-controller/_static/image9.png)
+[![Modelintellisense](accessing-your-models-data-from-a-controller/_static/image10.png "Modelintellisense")](accessing-your-models-data-from-a-controller/_static/image9.png)
 
 ## <a name="working-with-sql-server-compact"></a>Arbeiten mit SQL Server Compact
 
-Entity Framework Code First hat festgestellt, dass es sich bei die Datenbank-Verbindungszeichenfolge, die bereitgestellt wurden, zeigt eine `Movies` -Datenbank, die noch nicht vorhanden ist, sodass Code First die Datenbank automatisch erstellt. Sie können überprüfen, ob dieser erstellt wurde anhand der *App\_Daten* Ordner. Wenn Sie nicht angezeigt wird der *Movies.sdf* , klicken Sie auf die **alle Dateien anzeigen** Schaltfläche der **Projektmappen-Explorer** -Symbolleiste klicken Sie auf die **aktualisieren** Schaltfläche, und erweitern Sie dann die *App\_Daten* Ordner.
+Entity Framework Code First festgestellt, dass die angegebene Daten bankverbindungs Zeichenfolge auf eine `Movies` Datenbank verweist, die noch nicht vorhanden war, sodass Code First die Datenbank automatisch erstellt hat. Sie können überprüfen, ob er erstellt wurde, indem Sie im Ordner *App\_Data* Wenn die Datei *Movies. sdf* nicht angezeigt wird, klicken Sie auf der **Projektmappen-Explorer** Symbolleiste auf die Schaltfläche **alle Dateien anzeigen** , klicken Sie auf die Schaltfläche **Aktualisieren** , und erweitern Sie dann den Ordner *App\_Data* .
 
 [![SDF_in_SolnExp](accessing-your-models-data-from-a-controller/_static/image12.png "SDF_in_SolnExp")](accessing-your-models-data-from-a-controller/_static/image11.png)
 
-Doppelklicken Sie auf *Movies.sdf* öffnen **Server-Explorer**. Erweitern Sie dann die **Tabellen** Ordner, um die Tabellen anzuzeigen, die in der Datenbank erstellt wurden.
+Doppelklicken Sie auf " *Movies. sdf* ", um **Server-Explorer**zu öffnen. Erweitern Sie dann den Ordner **Tabellen** , um die Tabellen anzuzeigen, die in der Datenbank erstellt wurden.
 
 > [!NOTE]
-> Wenn Sie eine Fehlermeldung erhalten, wenn Sie einen Doppelklick auf *Movies.sdf*, stellen Sie sicher, dass Sie installiert haben [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen). (Links zu der Software, finden Sie in der Liste der erforderlichen Komponenten in Teil 1 dieser tutorialreihe.) Wenn Sie die Version jetzt installieren, müssen Sie schließen und öffnen Sie Visual Web Developer.
+> Wenn Sie beim Doppelklicken auf *Filme. sdf*eine Fehlermeldung erhalten, stellen Sie sicher, dass Sie [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Runtime + Tools-Unterstützung) installiert haben. (Links zur Software finden Sie in der Liste der Voraussetzungen in Teil 1 dieser tutorialreihe.) Wenn Sie jetzt das Release installieren, müssen Sie Visual Web Developer schließen und erneut öffnen.
 
 [![DB_explorer](accessing-your-models-data-from-a-controller/_static/image14.png "DB_explorer")](accessing-your-models-data-from-a-controller/_static/image13.png)
 
-Es gibt zwei Tabellen: eine für die `Movie` Entitätenmenge und dann die `EdmMetadata` Tabelle. Die `EdmMetadata` Tabelle wird vom Entity Framework verwendet, um zu bestimmen, wenn das Modell und die Datenbank nicht mehr synchron sind.
+Es gibt zwei Tabellen, eine für die `Movie` Entitätenmenge und dann die `EdmMetadata` Tabelle. Die `EdmMetadata` Tabelle wird vom Entity Framework verwendet, um zu bestimmen, wann das Modell und die Datenbank nicht synchronisiert sind.
 
-Mit der rechten Maustaste die `Movies` Tabelle, und wählen Sie **Tabellendaten anzeigen** zu ermitteln, die Daten erstellt wurde.
+Klicken Sie mit der rechten Maustaste auf die Tabelle `Movies`, und wählen Sie **Tabellendaten anzeigen** aus, um die erstellten Daten anzuzeigen.
 
-[![MoviesTable](accessing-your-models-data-from-a-controller/_static/image16.png "MoviesTable")](accessing-your-models-data-from-a-controller/_static/image15.png)
+[!["Moviestable"](accessing-your-models-data-from-a-controller/_static/image16.png ""Moviestable"")](accessing-your-models-data-from-a-controller/_static/image15.png)
 
-Mit der rechten Maustaste die `Movies` Tabelle, und wählen Sie **Tabellenschema bearbeiten**.
+Klicken Sie mit der rechten Maustaste auf die Tabelle `Movies`, und wählen Sie **Tabellen Schema bearbeiten**.
 
-[![EditTableSchema](accessing-your-models-data-from-a-controller/_static/image18.png "EditTableSchema")](accessing-your-models-data-from-a-controller/_static/image17.png)
+[![Edittableschema](accessing-your-models-data-from-a-controller/_static/image18.png "Edittableschema")](accessing-your-models-data-from-a-controller/_static/image17.png)
 
-[![TableSchemaSM](accessing-your-models-data-from-a-controller/_static/image20.png "TableSchemaSM")](accessing-your-models-data-from-a-controller/_static/image19.png)
+[![Tableschemasm](accessing-your-models-data-from-a-controller/_static/image20.png "TableSchemaSM")](accessing-your-models-data-from-a-controller/_static/image19.png)
 
-Beachten Sie, dass wie das Schema der `Movies` Tabelle zugeordnet, die `Movie` Klasse, die Sie zuvor erstellt haben. Entity Framework Code First automatisch erstellt, diesem Schema basierend auf Ihrer `Movie` Klasse.
+Beachten Sie, dass das Schema der `Movies` Tabelle der `Movie` Klasse zugeordnet ist, die Sie zuvor erstellt haben. Entity Framework Code First dieses Schema basierend auf Ihrer `Movie`-Klasse automatisch für Sie erstellt.
 
-Wenn Sie fertig sind, schließen Sie die Verbindung. (Wenn Sie die Verbindung nicht schließen, Sie erhalten möglicherweise einen Fehler beim nächsten des Projekts ausführen).
+Wenn Sie fertig sind, schließen Sie die Verbindung. (Wenn Sie die Verbindung nicht schließen, erhalten Sie möglicherweise eine Fehlermeldung, wenn Sie das Projekt das nächste Mal ausführen).
 
 [![CloseConnection](accessing-your-models-data-from-a-controller/_static/image22.png "CloseConnection")](accessing-your-models-data-from-a-controller/_static/image21.png)
 
-Sie haben jetzt die Datenbank und einer einfachen Angebotsseite, Inhalte daraus anzuzeigen. Im nächsten Tutorial, wir die restlichen aus der eingerüstete Code überprüfen und Hinzufügen einer `SearchIndex` Methode und eine `SearchIndex` an, die für Filme in dieser Datenbank durchsuchen kann.
+Sie verfügen jetzt über die Datenbank und eine einfache Auflistungs Seite, um Inhalt anzuzeigen. Im nächsten Tutorial untersuchen wir den restlichen Code und fügen eine `SearchIndex` Methode und eine `SearchIndex` Ansicht hinzu, mit der Sie in dieser Datenbank nach Filmen suchen können.
 
 > [!div class="step-by-step"]
 > [Zurück](adding-a-model.md)

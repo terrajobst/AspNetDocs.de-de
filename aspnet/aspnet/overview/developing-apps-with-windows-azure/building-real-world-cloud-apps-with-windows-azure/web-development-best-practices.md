@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 title: Bewährte Methoden für die Webentwicklung (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: 0956aaaf1f6a1a0d2f5d93f98cb6959cec98dbaf
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: dfd8a3ac2328d3f17dfbe36e68b37d181177b0f4
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582708"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457088"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Bewährte Methoden für die Webentwicklung (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Bei den ersten drei Mustern ging es um das Einrichten eines Agile-Entwicklungsprozesses. der Rest geht über die Architektur und den Code. Dabei handelt es sich um eine Sammlung von bewährten Methoden für die Webentwicklung:
 
@@ -45,7 +45,7 @@ Die meisten realen Anwendungen müssen den Zustand für eine Websitzung speicher
 
 Ein Beispiel dafür, wie einfach es ist, eine Anwendung in Windows Azure-Websites zu skalieren, wenn Ihre webeebene zustandslos ist, finden Sie auf der Registerkarte **skalieren** für eine Windows Azure-Website im Verwaltungs Portal:
 
-![Registerkarte Skalieren](web-development-best-practices/_static/image1.png)
+![Registerkarte "Skalieren"](web-development-best-practices/_static/image1.png)
 
 Wenn Sie Webserver hinzufügen möchten, können Sie einfach den Schieberegler für die Instanzen Anzahl nach rechts ziehen. Legen Sie den Wert auf 5 fest, und klicken Sie auf **Speichern**. innerhalb von Sekunden verfügen Sie über fünf Webserver in Windows Azure, die den Datenverkehr Ihrer Website verarbeiten.
 
@@ -76,7 +76,7 @@ Die Fähigkeit Ihrer Anwendung, horizontal hochskalieren, ist fast unbegrenzt in
 <a id="sessionstate"></a>
 ## <a name="avoid-session-state"></a>Vermeiden des Sitzungs Zustands
 
-Häufig ist es in einer realen Cloud-APP nicht praktikabel, eine bestimmte Form des Zustands für eine Benutzersitzung zu speichern. einige Ansätze wirken sich jedoch auf die Leistung und Skalierbarkeit aus. Wenn Sie den Status speichern müssen, besteht die beste Lösung darin, den Umfang des Zustands klein zu halten und in Cookies zu speichern. Wenn dies nicht möglich ist, besteht die nächstbeste Lösung darin, den ASP.NET-Sitzungszustand mit einem Anbieter für [verteilten, in-Memory-Cache](distributed-caching.md#sessionstate)zu verwenden. Die schlechteste Lösung aus Sicht der Leistung und Skalierbarkeit besteht darin, einen datenbankgestützten Sitzungs Zustands Anbieter zu verwenden.
+Im praktischen Einsatz von Cloud-Apps lässt sich das Speichern von Zustandsinformationen für eine Benutzersitzung oft nicht vermeiden. Allerdings beeinträchtigen einige Herangehensweisen die Leistung und Skalierbarkeit stärker als andere. Wenn Sie einen Sitzungszustand speichern müssen, ist es am besten, die Menge der Zustandsinformationen niedrig zu halten und sie in Cookies zu speichern. Wenn dies nicht möglich ist, besteht die nächstbeste Lösung darin, den ASP.NET-Sitzungszustand mit einem Anbieter für [verteilten, in-Memory-Cache](distributed-caching.md#sessionstate)zu verwenden. Die schlechteste Lösung im Hinblick auf Leistung und Skalierbarkeit wäre es, einen datenbankbasierten Sitzungszustandsanbieter zu verwenden.
 
 <a id="cdn"></a>
 ## <a name="use-a-cdn-to-cache-static-file-assets"></a>Verwenden eines CDN zum Zwischenspeichern statischer Datei Ressourcen
@@ -126,7 +126,7 @@ Diese async-Unterstützung funktioniert nicht nur für Einfügungen, Löschungen
 
 Es gibt eine `Async` Version der `ToList`-Methode, da in diesem Code die Methode ist, die bewirkt, dass eine Abfrage an die Datenbank gesendet wird. Die Methoden `Where` und `OrderByDescending` konfigurieren nur die Abfrage, während die `ToListAsync`-Methode die Abfrage ausführt und die Antwort in der `result` Variablen speichert.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie können die hier beschriebenen bewährten Methoden für die Webentwicklung in allen webprogrammier-und cloudumgebungen implementieren, aber wir haben Tools in ASP.net und Windows Azure, um dies zu vereinfachen. Wenn Sie diesen Mustern folgen, können Sie Ihre webeebene problemlos skalieren, und Sie können Ihre Ausgaben minimieren, da jeder Server mehr Datenverkehr verarbeiten kann.
 
@@ -141,7 +141,7 @@ Zustands lose Webserver:
 - [Microsoft Patterns and Practices: Leitfaden für die automatische Skalierung](https://msdn.microsoft.com/library/dn589774.aspx).
 - [Deaktivieren der arr-instanzaffinität in Windows Azure](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)-Websites. Der Blog Beitrag von Erez Benari erläutert die Sitzungs Affinität in Windows Azure-Websites.
 
-CDN
+CDN:
 
 - [Failsafe: aufbauen skalierbarer, robuster Cloud Services](https://channel9.msdn.com/Series/FailSafe). Neun teilige Videoreihe von Ulrich Homann, Marc Mercuri und Mark Simms. Weitere Informationen finden Sie in der CDN-Diskussion in Episode 3 ab 1:34:00.
 - [Microsoft Patterns and Practices-hostingmuster für statisches Content](https://msdn.microsoft.com/library/dn589776.aspx)

@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 title: Quell Code Verwaltung (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6f445e46d41b646cf6c25af2e65bc73e831d5ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 5a1e0d7cd3c396d4be79c8958422602055eb3db1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583710"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457101"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Quell Code Verwaltung (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Die Quell Code Verwaltung ist für alle cloudentwicklungsprojekte unverzichtbar, nicht nur für Team Umgebungen. Sie sind nicht in der Lage, Quellcode oder sogar ein Word-Dokument ohne Rückgängig-Funktion und automatische Sicherungen zu bearbeiten, und die Quell Code Verwaltung bietet Ihnen diese Funktionen auf Projektebene, wo Sie noch mehr Zeit sparen können, wenn etwas schief geht. Mit den Cloud-Quell Code Verwaltungsdiensten müssen Sie sich nicht mehr um eine komplizierte Einrichtung kümmern, und Sie können Azure Repos Source Control kostenlos für bis zu 5 Benutzer verwenden.
 
@@ -151,7 +151,7 @@ Wenn Sie git auswählen und auf **OK**klicken, erstellt Visual Studio in Ihrem P
 
 Visual Studio stellt automatisch alle Projektdateien für den Commit bereit und listet sie in **Team Explorer** im Bereich **enthaltene Änderungen** auf. (Wenn einige von Ihnen nicht in den Commit eingeschlossen werden sollen, können Sie Sie auswählen, mit der rechten Maustaste klicken und dann auf **ausschließen**klicken.)
 
-![Team-Explorer](source-control/_static/image12.png)
+![Team Explorer](source-control/_static/image12.png)
 
 Geben Sie einen Commit-Kommentar ein, und klicken Sie auf **Commit**. Visual Studio führt den Commit aus und zeigt die Commit-ID an.
 
@@ -187,7 +187,7 @@ Hier sehen Sie, wie Sie mit einem lokalen git-Repository in Visual Studio arbeit
 
 Dies ist natürlich nicht die einzige Möglichkeit, eine Agile Verzweigungs Strategie zu implementieren. Sie können den gleichen Agile-Workflow mithilfe eines zentralisierten Quellcodeverwaltungs-Repository aktivieren.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Messen Sie den Erfolg des Quell Code Verwaltungssystems, je nachdem, wie schnell Sie eine Änderung vornehmen und auf sichere und vorhersagbare Weise wiederherstellen können. Wenn Sie sich für eine Änderung sorgen, weil Sie einen Tag oder zwei manuelle Tests ausführen müssen, Fragen Sie sich möglicherweise, was Sie Prozess Weise oder testweise tun müssen, damit Sie diese Änderung in wenigen Minuten oder im schlechtesten als einer Stunde durchführen können. Eine Strategie hierfür ist die Implementierung von Continuous Integration und Continuous Delivery, die im [nächsten Kapitel](continuous-integration-and-continuous-delivery.md)behandelt werden.
 

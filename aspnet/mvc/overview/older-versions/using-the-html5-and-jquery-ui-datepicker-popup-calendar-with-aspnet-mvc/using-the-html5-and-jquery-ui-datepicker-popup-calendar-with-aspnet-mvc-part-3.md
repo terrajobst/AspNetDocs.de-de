@@ -1,99 +1,99 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
-title: Verwenden des HTML5 und jQuery UI Datepicker-Popupkalenders mit ASP.NET MVC – Teil 3 | Microsoft-Dokumentation
+title: Verwenden des HTML5 und jQuery UI DatePicker-Popup Kalenders mit ASP.NET MVC-Part 3 | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen der Arbeit mit Editor-Vorlagen, Anzeigevorlagen und dem jQuery UI Datepicker-Popupkalenders in einer ASP.NET MV...
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Arbeit mit Editor-Vorlagen, Anzeige Vorlagen und des jQuery UI DatePicker-Popup Kalenders in einer ASP.net MV...
 ms.author: riande
 ms.date: 08/29/2011
 ms.assetid: 8f5f91ae-12d7-4cf3-ac09-4bb53d07ee60
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7afc6ab98c1a373e73e175a415e705698744abe7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b3249397e54e64538c4dc78e5fe8b94656e8962b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129588"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457894"
 ---
-# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Verwenden des HTML5 und jQuery UI Datepicker-Popupkalenders mit ASP.NET MVC – Teil 3
+# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Verwenden des HTML5 und jQuery UI DatePicker-Popup Kalenders mit ASP.NET MVC-Part 3
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> In diesem Tutorial lernen Sie die Grundlagen der Arbeit mit Editor-Vorlagen, Anzeigevorlagen und dem jQuery UI Datepicker-Popupkalenders in einer ASP.NET MVC-Webanwendung.
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Arbeit mit Editor-Vorlagen, Anzeige Vorlagen und des jQuery UI DatePicker-Popup Kalenders in einer ASP.NET MVC-Webanwendung.
 
 ## <a name="working-with-complex-types"></a>Arbeiten mit komplexen Typen
 
-In diesem Abschnitt Sie erstellen Sie eine Adressklasse und erfahren Sie, wie zum Erstellen einer Vorlage aus, um es anzuzeigen.
+In diesem Abschnitt erstellen Sie eine Adress Klasse und erfahren, wie Sie eine Vorlage erstellen, um Sie anzuzeigen.
 
-In der *Modelle* Ordner, erstellen Sie eine neue Klassendatei mit dem Namen *Person.cs* , fügen Sie zwei Typen: ein `Person` Klasse und ein `Address` Klasse. Die `Person` Klasse enthält eine Eigenschaft, die als typisiert ist `Address`. Die `Address` Typ ist ein komplexer Typ, d. h., es ist keiner der integrierten Typen wie `int`, `string`, oder `double`. Stattdessen verfügt er über mehrere Eigenschaften. Der Code für die neuen Klassen sieht folgendermaßen aus:
+Erstellen Sie im Ordner *Models* eine neue Klassendatei mit dem Namen *Person.cs* , in der Sie zwei Typen einfügen: eine `Person`-Klasse und eine `Address`-Klasse. Die `Person`-Klasse enthält eine Eigenschaft, die als `Address`typisiert ist. Der `Address` Typ ist ein komplexer Typ. Dies bedeutet, dass es sich nicht um einen der integrierten Typen wie `int`, `string`oder `double`handelt. Stattdessen verfügt er über mehrere Eigenschaften. Der Code für die neuen Klassen sieht wie folgt aus:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample1.cs)]
 
-In der `Movie` Controller, fügen Sie die folgenden `PersonDetail` Aktion aus, um eine Personeninstanz angezeigt:
+Fügen Sie im `Movie` Controller die folgende `PersonDetail` Aktion hinzu, um eine Person-Instanz anzuzeigen:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample2.cs)]
 
-Klicken Sie dann fügen Sie den folgenden Code der `Movie` Controller zum Auffüllen der `Person` Modell mit einigen Beispieldaten:
+Fügen Sie dann dem `Movie` Controller den folgenden Code hinzu, um das Modell `Person` mit einigen Beispiel Daten aufzufüllen:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample3.cs)]
 
-Öffnen der *Views\Movies\PersonDetail.cshtml* Datei, und fügen Sie das folgende Markup für die `PersonDetail` anzeigen.
+Öffnen Sie die Datei " *views\movies\persondetail.cshtml* ", und fügen Sie das folgende Markup für die `PersonDetail` Ansicht hinzu.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample4.cshtml)]
 
-Drücken Sie STRG + F5, um die Anwendung auszuführen, und navigieren zu *Filme/PersonDetail*.
+Drücken Sie STRG + F5, um die Anwendung auszuführen, und navigieren Sie zu *Movies/persondetail*.
 
-Die `PersonDetail` Ansicht enthält nicht die `Address` komplexer Typ sein, wie Sie sehen in diesem Screenshot. (Es ist keine Adresse angezeigt.)
+Die `PersonDetail` Sicht enthält nicht den `Address` komplexen Typ, wie Sie in diesem Screenshot sehen können. (Es wird keine Adresse angezeigt.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image1.png)
 
-Die `Address` Modellieren von Daten werden nicht angezeigt werden, da es sich um einen komplexen Typ handelt. Um die Informationen zur Adresse anzuzeigen, öffnen Sie die *Views\Movies\PersonDetail.cshtml* -Datei erneut, und fügen Sie das folgende Markup hinzu.
+Die `Address` Modelldaten werden nicht angezeigt, weil es sich um einen komplexen Typ handelt. Öffnen Sie die Datei " *views\movies\persondetail.cshtml* " erneut, und fügen Sie das folgende Markup hinzu, um die Adressinformationen anzuzeigen.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample5.cshtml)]
 
-Das vollständige Markup für die `PersonDetail` nun Ansicht folgendermaßen aussieht:
+Das gesamte Markup für die `PersonDetail` now-Ansicht sieht wie folgt aus:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample6.cshtml)]
 
-Die Anwendung erneut ausführen und Anzeigen der `PersonDetail` anzeigen. Die Adressinformationen wird jetzt angezeigt werden:
+Führen Sie die Anwendung erneut aus, und zeigen Sie die `PersonDetail` Ansicht an. Die Adressinformationen werden jetzt angezeigt:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image2.png)
 
 ### <a name="creating-a-template-for-a-complex-type"></a>Erstellen einer Vorlage für einen komplexen Typ
 
-In diesem Abschnitt erstellen Sie eine Vorlage, die zum Rendern verwendet werden wird die `Address` komplexen Typ. Wenn Sie eine Vorlage zum Erstellen der `Address` Typ ASP.NET MVC können automatisch verwenden, um ein Adressmodell, an einer beliebigen Stelle in der Anwendung formatieren. Dies bietet Ihnen eine Möglichkeit zum Steuern des Renderns der `Address` Typ aus einer Stelle in der Anwendung.
+In diesem Abschnitt erstellen Sie eine Vorlage, die verwendet wird, um den `Address` komplexen Typs zu Rendering. Wenn Sie eine Vorlage für den `Address`-Typ erstellen, kann ASP.NET MVC diese automatisch verwenden, um ein Adress Modell an beliebiger Stelle in der Anwendung zu formatieren. Dadurch haben Sie die Möglichkeit, das Rendering des `Address` Typs von nur einer Stelle in der Anwendung zu steuern.
 
-In der *Views\Shared\DisplayTemplates* Ordner, erstellen Sie eine stark typisierte Teilansicht mit dem Namen **Adresse**:
+Erstellen Sie im Ordner *views\shared\displaytemplates* eine stark typisierte Teilansicht namens **Address**:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image3.png)
 
-Klicken Sie auf **hinzufügen**, und öffnen Sie dann auf die neue *Views\Shared\DisplayTemplates\Address.cshtml* Datei. Die neue Ansicht enthält die folgende generierte Markup:
+Klicken Sie auf **Hinzufügen**, und öffnen Sie dann die neue Datei *views\shared\displaytemplates\address.cshtml* . Die neue Sicht enthält das folgende generierte Markup:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample7.cshtml)]
 
-Führen Sie die Anwendung und Anzeigen der `PersonDetail` anzeigen. Dieses Mal die `Address` Vorlage, die Sie gerade erstellt haben dient zum Anzeigen der `Address` komplexer Typ sein, damit die Anzeige wie folgt aussieht:
+Führen Sie die Anwendung aus, und zeigen Sie die `PersonDetail` Ansicht an. Dieses Mal wird die soeben erstellte `Address` Vorlage zum Anzeigen des komplexen `Address` Typs verwendet, sodass die Anzeige wie folgt aussieht:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image4.png)
 
-### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>Zusammenfassung: Möglichkeiten, das Anzeigeformat für Modell und die Vorlage anzugeben.
+### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>Zusammenfassung: Möglichkeiten zum Angeben des Modell Anzeige Formats und der Vorlage
 
-Sie haben gesehen, dass Sie das Format oder die Vorlage für eine Modelleigenschaft angeben können, mithilfe der folgenden Ansätze:
+Sie haben gesehen, dass Sie das Format oder die Vorlage für eine Modell Eigenschaft mit den folgenden Ansätzen angeben können:
 
-- Anwenden der `DisplayFormat` -Attribut auf eine Eigenschaft im Modell. Beispielsweise verursacht der folgende Code das Datum ohne Uhrzeit angezeigt werden:
+- Anwenden des `DisplayFormat`-Attributs auf eine Eigenschaft im Modell. Der folgende Code bewirkt beispielsweise, dass das Datum ohne die Zeit angezeigt wird:
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- Anwenden einer [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) -Attribut auf eine Eigenschaft im Modell und die Angabe des Datentyps. Beispielsweise verursacht der folgende Code das Datum ohne Uhrzeit angezeigt werden.
+- Anwenden eines [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) -Attributs auf eine Eigenschaft im Modell und angeben des Datentyps. Der folgende Code bewirkt beispielsweise, dass das Datum ohne die Zeit angezeigt wird.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
-    Wenn die Anwendung enthält eine *date.cshtml* Vorlage in der *Views\Shared\DisplayTemplates* Ordner oder die *Views\Movies\DisplayTemplates* -Ordner, die Vorlage wird verwendet, um das Rendern der `DateTime` Eigenschaft. Andernfalls zeigt die integrierten ASP.NET vorlagensystem die Eigenschaft als Datum.
-- Erstellen einer Anzeigevorlage für die in der *Views\Shared\DisplayTemplates* Ordner oder die *Views\Movies\DisplayTemplates* Ordner, deren Name entspricht den Datentyp, der formatiert werden soll. Beispielsweise haben Sie gesehen, die die *Views\Shared\DisplayTemplates\DateTime.cshtml* wurde verwendet, um das Rendern `DateTime` Eigenschaften in einem Modell, ohne dass das Hinzufügen eines Attributs mit dem Modell oder Ansichten Markup hinzugefügt.
-- Mithilfe der ["UIHint"](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) Attribut für das Modell, das die Vorlage zum Anzeigen der Modelleigenschaft angeben.
-- Explizite Hinzufügen der Anzeigename der Vorlage, die [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) in einer Ansicht aufrufen.
+    Wenn die Anwendung eine *Date. cshtml* -Vorlage im Ordner " *views\shared\displaytemplates* " oder im Ordner " *views\movies\displaytemplates* " enthält, wird diese Vorlage zum Rendering der `DateTime`-Eigenschaft verwendet. Andernfalls zeigt das integrierte ASP.net-Vorlagen System die Eigenschaft als Datum an.
+- Erstellen einer Anzeige Vorlage im Ordner " *views\shared\displaytemplates* " oder im Ordner " *views\movies\displaytemplates* ", deren Name mit dem Datentyp übereinstimmt, den Sie formatieren möchten. Beispielsweise haben Sie gesehen, dass " *views\shared\displaytemplates\datetime.cshtml* " verwendet wurde, um `DateTime` Eigenschaften in einem Modell zu erzeugen, ohne dem Modell ein Attribut hinzuzufügen und den Sichten keine Markup hinzuzufügen.
+- Verwenden des [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) -Attributs für das Modell, um die Vorlage zum Anzeigen der Modell Eigenschaft anzugeben.
+- Explizites Hinzufügen des Namens der Anzeige Vorlage zum [HTML. DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) -Befehl in einer Ansicht.
 
-Der Ansatz, den Sie verwenden, hängt davon ab, was Sie in Ihrer Anwendung tun müssen. Es ist nicht ungewöhnlich, kombinieren diese Ansätze, um genau die Art der Formatierung zu erhalten, die Sie benötigen.
+Welche Vorgehensweise Sie verwenden, hängt davon ab, was Sie in Ihrer Anwendung tun müssen. Es ist nicht ungewöhnlich, diese Ansätze zu mischen, um genau die Art der Formatierung zu erzielen, die Sie benötigen.
 
-Wechseln Sie im nächsten Abschnitt etwas TheBeerHouse und Verschieben von anpassen, wie Daten angezeigt werden, zum Anpassen, wie er eingegeben wird. Sie müssen den bearbeiten-Ansichten in der Anwendung aus, um eine elegante Möglichkeit, die Datumsangaben festlegen, geben Sie "DatePicker" jQuery einbinden.
+Im nächsten Abschnitt wechseln Sie in ein Bit und wechseln von der Anpassung, wie Daten angezeigt werden, um anzupassen, wie Sie eingegeben werden. Sie verbinden den jQuery-DatePicker mit den Bearbeitungs Sichten in der Anwendung, um eine schlanke Möglichkeit zum Angeben von Datumsangaben bereitzustellen.
 
 > [!div class="step-by-step"]
 > [Zurück](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

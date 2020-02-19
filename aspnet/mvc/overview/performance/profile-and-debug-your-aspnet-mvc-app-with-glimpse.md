@@ -1,125 +1,125 @@
 ---
 uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
-title: Profilerstellung und Debuggen der ASP.NET MVC-app mit Glimpse | Microsoft-Dokumentation
+title: Profilerstellung und Debuggen Ihrer ASP.NET MVC-App mit Blick auf | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Glimpse ist erfolgreich sein und wachsende Familie von open-Source-NuGet-Pakete, die ausführliche Leistung bietet, Debuggen und Diagnoseinformationen für ASP.NET ein...
+description: Der Einblick ist eine wachsende und wachsende Familie von Open Source-nuget-Paketen, die ausführliche Informationen zu Leistung, Debugging und Diagnose für ASP.net a...
 ms.author: riande
 ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 051253d1e7a09f6285ebe0a83f87155de8467536
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d3689147a3bc3aa1f4180c377d2483a94bdd95a9
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129414"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457660"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> Glimpse ist erfolgreich sein und wachsenden Familie von open-Source-NuGet-Pakete, die ausführliche Leistung bietet, Debuggen und Diagnoseinformationen für ASP.NET-Apps. Dabei handelt es sich sehr einfach zu installieren, einfache, extrem schnellen, wichtige Leistungsmetriken am unteren Rand jeder Seite angezeigt. Sie können einen Drilldown in Ihre app ausführen beim müssen Sie herausfinden, was auf dem Server vor sich geht. Glimpse bietet so viel wertvolle Informationen, die es wird, dass Sie es während des gesamten Entwicklungszyklus empfohlen, einschließlich Ihrer Azure-Test-Umgebung verwenden. Während [Fiddler](http://www.telerik.com/fiddler) und [F-12 Entwicklungstools](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) eine clientseitige Sicht Glimpse bietet eine detaillierte Übersicht vom Server. Dieses Tutorial konzentriert sich auf die mit dem Blick auf ASP.NET MVC und EF-Pakete, aber viele andere Pakete verfügbar sind. Nach Möglichkeit werden ich auf die entsprechenden verknüpfen [Glimpse-Docs](http://getglimpse.com/Docs/) die ich dabei helfen, verwalten. Glimpse ist ein open-Source-Projekt, Sie zu seinen möglichen Beitrag zu den Quellcode und Dokumentation.
+> Der Einblick ist eine wachsende und wachsende Familie von Open Source-nuget-Paketen, die ausführliche Leistungs-, Debug-und Diagnoseinformationen für ASP.net-apps bereitstellt. Es ist trivial, einfach zu installieren, einfach und extrem schnell und zeigt wichtige Leistungsmetriken unten auf jeder Seite an. Sie können einen Drilldown in Ihre APP ausführen, wenn Sie herausfinden möchten, was auf dem Server läuft. Der Einblick bietet so viel nützliche Informationen, die Sie im gesamten Entwicklungszeitraum, einschließlich ihrer Azure-Testumgebung, verwenden sollten. [Wenngleich die](http://www.telerik.com/fiddler) Tools und die [F-12-Entwicklungs Tools](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) eine Client seitige Ansicht bereitstellen, bietet der Einblick eine detaillierte Ansicht des Servers. Dieses Tutorial konzentriert sich auf die Verwendung von "Glimpse ASP.NET MVC-und EF-Paketen", aber es sind viele weitere Pakete verfügbar. Wenn möglich, verwende ich eine Verknüpfung zu [den entsprechenden Informationen](http://getglimpse.com/Docs/) , die ich bei der Pflege unterstützen werde. Der Einblick ist ein Open-Source-Projekt. Sie können auch zum Quellcode und zu den Dokumenten beitragen.
 
 - [Installieren von Glimpse](#ig)
-- [Aktivieren von Glimpse für "localhost"](#eg)
-- [Die Registerkarte "Zeitplan"](#Time)
+- [Aktivieren Sie den Einblick für localhost.](#eg)
+- [Registerkarte Zeitachse](#Time)
 - [Modellbindung](#mb)
 - [Routen](#route)
 - [Verwenden von Glimpse in Azure](#da)
-- [Additional Resources](#addRes) (Zusätzliche MSBuild-Ressourcen)
+- [Weitere Ressourcen](#addRes)
 
 <a id="ig"></a>
 ## <a name="installing-glimpse"></a>Installieren von Glimpse
 
-Sie können die Glimpse installieren, von der NuGet-Paket-Manager-Konsole oder von der **NuGet-Pakete verwalten** Konsole. Für diese Demo werde ich die Mvc5- und EF6-Pakete zu installieren:
+Sie können den Einblick über die nuget-Paket-Manager-Konsole oder über die Konsole **nuget-Pakete verwalten** installieren. Für diese Demo werden die Mvc5-und EF6-Pakete installiert:
 
-![Installieren von Glimpse über NuGet Dlg](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image1.png)
+![Installieren Sie den Einblick von nuget Dlg](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image1.png)
 
-Suchen Sie nach *Glimpse.EF*
+Suchen Sie nach " *Glimpse. EF* "
 
-![Glimpse.EF von NuGet installieren dlg](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image2.png)
+!["Glimpse. EF" aus der nuget-Installation Dlg](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image2.png)
 
-Durch Auswahl **installierte Pakete**, sehen Sie die abhängigen Glimpse-Module installiert:
+Wenn Sie **installierte Pakete**auswählen, sehen Sie, dass die glimabhängigen Module installiert sind:
 
-![Glimpse-Pakete aus DLg installiert](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image3.png)
+![Installierte Glimpse-Pakete von Dlg](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image3.png)
 
-Die folgenden Befehle installieren Glimpse MVC5- und EF6-Module aus der Paket-Manager-Konsole:
+Mit den folgenden Befehlen werden die Module "Glimpse MVC5" und "EF6" von der Paket-Manager-Konsole
 
 [!code-console[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample1.cmd)]
 
 <a id="eg"></a>
-## <a name="enable-glimpse-for-localhost"></a>Aktivieren von Glimpse für "localhost"
+## <a name="enable-glimpse-for-localhost"></a>Aktivieren Sie den Einblick für localhost.
 
-Navigieren Sie zu http://localhost:&lt; port #&gt;/glimpse.axd, und klicken Sie auf die <strong>Glimpse einschalten</strong> Schaltfläche.
+Navigieren Sie zu http://localhost:&lt;p Ort #&gt;/Glimpse.axd, und klicken Sie auf die Schaltfläche " <strong>Glimpse</strong> ein".
 
-![Glimpse Axd Seite](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
+![Seite "Blick auf axd"](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 
-Wenn Sie Ihre Favoritenleiste angezeigt haben, können Sie ziehen und legen die Schaltflächen Einblick und deren hinzufügen als Bookmarklets:
+Wenn Sie die Favoritenleiste angezeigt haben, können Sie die Schaltflächen mit dem Drag & Drop ablegen und als Bookmarklets hinzufügen:
 
-![IE mit Glimpse bookmarklets](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
+![IE mit Glimpse-Bookmarklets](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
 
-Sie können jetzt Ihre app navigieren und die **Mal "Kopf" nach oben anzeigen** (HUD) wird am unteren Rand der Seite angezeigt.
+Sie können jetzt in der APP navigieren, und die **Heads-Up-Anzeige** (HUD) wird unten auf der Seite angezeigt.
 
 ![Kontakt-Manager-Seite mit HUD](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image6.png)
 
-Die [Glimpse HUD-Seite](http://getglimpse.com/Docs/Heads-up-Display) details der oben gezeigte Informationen zur zeitlichen Steuerung. Die unaufdringliche Leistung dem HUD angezeigt können Sie für ein Problem sofort - benachrichtigen, bevor Sie den Testszyklus abrufen müssen. Durch Klicken auf die &quot;g&quot; in der unteren rechten Ecke der Glimpse-Bereich wird:
+Auf der [Seite "Glid](http://getglimpse.com/Docs/Heads-up-Display) " finden Sie Informationen zu den oben gezeigten Zeit Steuerungsinformationen. Die unaufdringlichen Leistungsdaten, die in der HUD angezeigt werden, können Sie sofort über ein Problem benachrichtigen, bevor Sie zum Testzeitraum gelangen. Wenn Sie in der unteren rechten Ecke auf die &quot;g-&quot; klicken, wird der Bereich "Glimpse" angezeigt:
 
-![Glimpse-Bereich](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image7.png)
+![Bereich mit Blick](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image7.png)
 
-In der Abbildung oben die [Registerkarte "Ausführung"](http://getglimpse.com/Docs/Execution-Tab) ausgewählt ist, zeigt die Details der zeitlichen Steuerung der Aktionen und Filter in der Pipeline. Sehen Sie meine [Überwachung beenden Filter Timer](http://www.nuget.org/packages/StopWatch/) in Phase 6 von der Pipeline beginnen. Während meiner Lightweight-Timer bieten, kann nützliche Profil/Timing Data Erkennung fehlerhaft sein sollte die Zeit aufgewendet wird, bei der Autorisierung und zum Rendern der Ansicht. Informieren Sie sich über meine Timer auf [Profil und die Uhrzeit Ihrer ASP.NET MVC-app in Azure ganz](https://blogs.msdn.com/b/webdev/archive/2014/07/29/profile-and-time-your-asp-net-mvc-app-all-the-way-to-azure.aspx). Die [Registerkarten](http://getglimpse.com/Docs/Tabs) Seite enthält Links zu detaillierten Informationen auf jeder Registerkarte.
+In der obigen Abbildung ist die [Registerkarte Ausführung](http://getglimpse.com/Docs/Execution-Tab) ausgewählt, mit der Details zur zeitlichen Steuerung der Aktionen und Filter in der Pipeline angezeigt werden. Der [Zeitgeber für den halte Filter](http://www.nuget.org/packages/StopWatch/) Start in Phase 6 der Pipeline wird angezeigt. Während mein Lightweight-Timer nützliche Profil-und Zeit Steuerungsdaten bereitstellen kann, gibt er die Zeit, die für die Autorisierung und das Rendering der Ansicht aufgewendet wird Weitere Informationen finden Sie unter [Profil und Zeit Ihrer ASP.NET MVC-app in Azure](https://blogs.msdn.com/b/webdev/archive/2014/07/29/profile-and-time-your-asp-net-mvc-app-all-the-way-to-azure.aspx). Die [Registerkarten](http://getglimpse.com/Docs/Tabs) Seite enthält Links zu detaillierten Informationen zu den einzelnen Registerkarten.
 
 <a id="Time"></a>
-## <a name="the-timeline-tab"></a>Die Registerkarte "Zeitplan"
+## <a name="the-timeline-tab"></a>Registerkarte Zeitachse
 
-Ich habe Tom Dykstras geändert ausstehenden [EF 6/MVC 5-Tutorial](../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) , des Controllers des Dozenten mit dem folgenden Code zu ändern:
+Ich habe das ausstehende [EF 6/MVC 5-Tutorial](../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) von Tom Dykstra geändert, mit der folgenden Codeänderung am Dozenten Controller:
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample2.cs?highlight=1,20-31)]
 
-Der obige Code kann ich in einer Abfragezeichenfolge übergeben (`eager`) zum Steuern eager oder explizite Laden von Daten. Explizites Laden werden in der folgenden Abbildung und die zeitlichen Steuerung Seite zeigt jede Registrierung geladen werden, der `Index` Aktionsmethode:
+Der obige Code ermöglicht es mir, die Abfrage Zeichenfolge (`eager`) zu übergeben, um das sorgfältige oder explizite Laden von Daten zu steuern. In der folgenden Abbildung wird Explizites Laden verwendet, und auf der Seite für die zeitliche Steuerung werden alle Anmeldungen angezeigt, die in der `Index`-Aktionsmethode geladen werden
 
 ![Explizites Laden](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image8.png)
 
-In den folgenden Code, mittels Eager Load angegeben ist, und jede Registrierung wird abgerufen, nachdem die `Index` Ansicht aufgerufen wird:
+Im folgenden Code wird "eifrig" angegeben, und jede Registrierung wird abgerufen, nachdem die `Index` Ansicht aufgerufen wurde:
 
-![mittels Eager Load ist angegeben.](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image9.png)
+!["eifrig" ist angegeben](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image9.png)
 
-Sie können auf ein Zeitsegment zum Abrufen von ausführliche Zeitsteuerungsinformationen zeigen:
+Sie können auf ein Zeitsegment zeigen, um ausführliche Informationen zur zeitlichen Steuerung zu erhalten:
 
-![Wenn darauf gezeigt wird, um ausführliche Zeitsteuerungsdaten finden Sie unter](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image10.png)
+![zeigen Sie auf eine ausführliche zeitliche Steuerung](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image10.png)
 
 <a id="mb"></a>
 ## <a name="model-binding"></a>Modellbindung
 
-Die [Modell Registerkarte ' Bindung '](http://getglimpse.com/Docs/Model-Binding-Tab) bietet eine Fülle von Informationen, die Ihnen zu verstehen, wie Ihre Formularvariablen gebunden sind und warum einige nicht gebunden werden wie zu erwarten ist. Die folgende Abbildung zeigt die **?** Symbol, den Sie klicken können, um die Glimpse-Hilfeseite für diese Funktion aufzurufen.
+Auf der [Registerkarte Modell Bindung](http://getglimpse.com/Docs/Model-Binding-Tab) finden Sie eine Fülle von Informationen, die Ihnen helfen zu verstehen, wie Ihre Formularvariablen gebunden werden und warum einige nicht erwartungsgemäß gebunden werden. Die Abbildung unten zeigt den **?** ein Symbol, auf das Sie klicken können, um die Hilfeseite für das entsprechende Feature aufzurufenden.
 
-![Glimpse-modellbindung anzeigen](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image11.png)
+![Ansicht für Modell Bindung](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image11.png)
 
 <a id="route"></a>
 ## <a name="routes"></a>Routen
 
- Die Registerkarte Glimpse Routen können können Sie das Debuggen und zu verstehen, routing. In der folgenden Abbildung die Produkt-Route ausgewählt ist (und werden in Grün und eine Konvention Glimpse). ![Produktname ausgewählt](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image12.png) Route, Bereiche und Datentoken werden ebenfalls angezeigt. Finden Sie unter [Glimpse Routen](http://getglimpse.com/Docs/Routes-Tab) und [Attribut-Routing in ASP.NET MVC 5](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx) für Weitere Informationen. 
+ Auf der Registerkarte "Glimpse-Routen" können Sie das Routing und das Routing verstehen. In der folgenden Abbildung ist die Produkt Route ausgewählt (und wird in grün, eine Glimpse-Konvention) angezeigt. ![Produktname](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image12.png) Routen Einschränkungen ausgewählt werden, werden Bereiche und Daten Token ebenfalls angezeigt. Weitere Informationen finden Sie unter [Einblicke in Routen](http://getglimpse.com/Docs/Routes-Tab) und [Attribut Routing in ASP.NET MVC 5](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx) . 
 
 <a id="da"></a>
 ## <a name="using-glimpse-on-azure"></a>Verwenden von Glimpse in Azure
 
-Die Standardsicherheitsrichtlinie für Glimpse lässt nur Einblick in Daten vom lokalen Host angezeigt werden. Sie können diese Sicherheitsrichtlinie ändern, damit Sie diese Daten auf einem Remoteserver (z. B. eine Web-app in Azure) anzeigen können. Für testumgebungen in Azure, fügen Sie die hervorgehobene Markierung bis zum Ende der *"Web.config"* Datei um Einblick zu aktivieren:
+Mit der Standard Sicherheitsrichtlinie für einen Blick können nur Daten vom lokalen Host angezeigt werden. Sie können diese Sicherheitsrichtlinie ändern, sodass Sie diese Daten auf einem Remote Server anzeigen können (z. b. eine Web-App in Azure). Fügen Sie für Testumgebungen in Azure die markierte Markierung am Ende der Datei " *Web. config* " hinzu, um den Einblick zu aktivieren:
 
 [!code-xml[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample3.xml?highlight=2-6)]
 
-Durch diese Änderung nur sehen alle Benutzer Ihre Glimpse-Daten an einem Remotestandort. Betrachten Sie das Markup oben zu einem Veröffentlichungsprofil hinzufügen, sodass sie nur eine angewendeten bereitgestellt hat bei der Verwendung dieses Veröffentlichungsprofil (beispielsweise Ihr Azure Testprofil.) Um Einblick in die Datenübertragungszeiten einzuschränken, fügen wir die `canViewGlimpseData` Rolle und nur Benutzer in dieser Rolle aus, um Einblick in Daten anzuzeigen.
+Mit dieser Änderung können alle Benutzer Ihre Daten auf einer Remote Website einsehen. Sie sollten das obige Markup einem Veröffentlichungs Profil hinzufügen, damit es nur bei Verwendung dieses Veröffentlichungs Profils (z. b. Ihres Azure-Test Profils) bereitgestellt wird. Um die Anzeige von Daten zu beschränken, fügen wir die `canViewGlimpseData` Rolle hinzu und gestatten Benutzern in dieser Rolle nur die Anzeige von Daten.
 
-Entfernen Sie die Kommentare aus der *GlimpseSecurityPolicy.cs* und Ändern der ["IsInRole"](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) aus aufrufen `Administrator` auf die `canViewGlimpseData` Rolle:
+Entfernen Sie die Kommentare aus der Datei *GlimpseSecurityPolicy.cs* , und ändern Sie den [IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) -Aufrufen von `Administrator` in die `canViewGlimpseData` Rolle:
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
 > [!WARNING]
-> Sicherheit – konnte die umfangreichen Daten Einblick in die Sicherheit Ihrer App verfügbar machen. Microsoft hat eine sicherheitsüberwachung von Glimpse nicht für die Verwendung auf Produktionen apps ausgeführt.
+> Sicherheit: die umfangreichen Daten, die von Glimpse bereitgestellt werden, können die Sicherheit Ihrer app verfügbar machen. Microsoft hat keine Sicherheitsüberprüfung für die Verwendung in den Produktions-apps durchgeführt.
 
-Informationen zum Hinzufügen von Rollen finden Sie in meinem [bereitstellen eine sicheren ASP.NET MVC 5-Web-app mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) Tutorial.
+Weitere Informationen zum Hinzufügen von Rollen finden Sie im Tutorial bereitstellen [einer Secure ASP.NET MVC 5-Web-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) .
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
-- [Bereitstellen einer sicheren ASP.NET MVC 5-app mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
-- [Glimpse-Konfiguration](http://getglimpse.com/Docs/Configuration) -Doc-Seite zum Konfigurieren von Registerkarten, Laufzeitrichtlinie, Protokollierung und vieles mehr.
+- [Stellen Sie eine sichere ASP.NET MVC 5-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure bereit.](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [Glimpse-Konfiguration](http://getglimpse.com/Docs/Configuration) : Seite "doc" zum Konfigurieren von Registerkarten, Lauf Zeit Richtlinie, Protokollierung und mehr.
