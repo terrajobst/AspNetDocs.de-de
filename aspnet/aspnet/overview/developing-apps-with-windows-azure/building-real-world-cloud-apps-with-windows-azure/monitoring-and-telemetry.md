@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 title: Überwachung und Telemetrie (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 44941c9fd0dcd3223604fc4a4f2836f587578acb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585613"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457062"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Überwachung und Telemetrie (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Viele Benutzer verlassen sich auf Kunden, um Sie zu informieren, wenn Ihre Anwendung herunterläuft. Das ist nicht wirklich eine bewährte Vorgehensweise, insbesondere nicht in der Cloud. Es gibt keine Garantie für eine schnelle Benachrichtigung, und wenn Sie benachrichtigt werden, erhalten Sie häufig minimale oder irreführende Daten über das, was passiert ist. Mit guten Telemetrie-und Protokollierungs Systemen können Sie wissen, was mit der APP passiert, und wenn etwas schief geht, können Sie sofort sofort herausfinden und nützliche Informationen zur Problembehandlung nutzen.
 
@@ -58,7 +58,7 @@ Klicken Sie auf **Verbindungsinformationen**, und kopieren Sie den Lizenzschlüs
 
 ![Verbindungsinformationen](monitoring-and-telemetry/_static/image5.png)
 
-Wechseln Sie im Portal zur Registerkarte **Konfigurieren** für Ihre Web-App, legen Sie die **Leistungsüberwachung** auf **Add-on**fest, und legen Sie die Dropdown Liste **Add-on auswählen** auf **New Relic**fest. Klicken Sie dann auf **Speichern**.
+Wechseln Sie im Portal zur Registerkarte **Konfigurieren** für Ihre Web-App, legen Sie die **Leistungsüberwachung** auf **Add-on**fest, und legen Sie die Dropdown Liste **Add-on auswählen** auf **New Relic**fest. Klicken Sie anschließend auf **Speichern**.
 
 ![New Relic auf Registerkarte "Konfigurieren"](monitoring-and-telemetry/_static/image6.png)
 
@@ -79,7 +79,7 @@ Hier sind nur einige der Statistiken aufgeführt, die Sie sehen können:
     ![Antwortzeit](monitoring-and-telemetry/_static/image10.png)
 - Durchsatzraten (in Anforderungen pro Minute) zu unterschiedlichen Tageszeiten.
 
-    ![Durchsatz](monitoring-and-telemetry/_static/image11.png)
+    ![Throughput](monitoring-and-telemetry/_static/image11.png)
 - Die CPU-Zeit des Servers für die Behandlung unterschiedlicher HTTP-Anforderungen
 
     ![Webtransaktions Zeiten](monitoring-and-telemetry/_static/image12.png)
@@ -98,7 +98,7 @@ Hier sind nur einige der Statistiken aufgeführt, die Sie sehen können:
     ![Externer Dienst](monitoring-and-telemetry/_static/image17.png)
 - Informationen dazu, wo weltweit oder an welchem Ort im US-Web-App-Datenverkehr stammt.
 
-    ![Geography](monitoring-and-telemetry/_static/image18.png)
+    ![Gebiet](monitoring-and-telemetry/_static/image18.png)
 
 Sie können auch Berichte und Ereignisse einrichten. Beispielsweise können Sie jedes Mal, wenn Sie Fehler sehen, eine e-Mail an das Problem senden.
 
@@ -247,7 +247,7 @@ Sie können auch Protokolle in Ihr Speicherkonto schreiben und Sie mit jedem Too
 
 ![Protokolle in Server-Explorer](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Es ist ganz einfach, ein vorkonfigurierte Telemetriesystem zu implementieren, die Protokollierung in Ihrem eigenen Code zu instrumentieren und die Protokollierung in Azure zu konfigurieren. Wenn Probleme mit der Produktion auftreten, hilft Ihnen die Kombination aus einem Telemetriesystem und benutzerdefinierten Protokollen dabei, Probleme schnell zu beheben, bevor Sie zu größeren Problemen für Ihre Kunden werden.
 

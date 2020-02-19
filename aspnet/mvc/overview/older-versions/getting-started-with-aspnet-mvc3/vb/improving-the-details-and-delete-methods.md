@@ -1,83 +1,83 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
-title: Verbessern die Details und Delete-Methoden (VB) | Microsoft-Dokumentation
+title: Verbessern der Details und Löschmethoden (VB) | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, d.h....
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1.
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: c5c14ef0-c128-4dc1-8c01-7f0fdb09e411
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 1912a36c19b27993e2bf17368d671d5a3b7f6450
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 08d80cac071907e927bb30df53c6f84a28f53156
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130032"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456256"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>Optimieren der Methoden „Details“ und „Delete“ (VB)
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 > 
-> - [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+> - [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 > 
-> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
-> Ein Visual Web Developer-Projekt mit Quellcode VB.NET steht zur Ergänzung dieses Themas. [Laden Sie die Version VB.NET](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie C# -Code bevorzugen, wechseln Sie zu der [c#-Version](../cs/improving-the-details-and-delete-methods.md) in diesem Tutorial.
+> Ein Visual Web Developer-Projekt mit VB.NET-Quellcode ist für dieses Thema verfügbar. [Laden Sie die VB.NET-Version herunter](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wechseln Sie C#ggf. zur [ C# Version](../cs/improving-the-details-and-delete-methods.md) dieses Tutorials.
 
-In diesem Teil des Tutorials erstellen Sie einige Verbesserungen an den automatisch generierten `Details` und `Delete` Methoden. Diese Änderungen sind nicht erforderlich, jedoch mit nur wenigen kleine Codeabschnitte, können Sie problemlos die Anwendung verbessern.
+In diesem Teil des Tutorials nehmen Sie einige Verbesserungen an den automatisch generierten `Details` und `Delete` Methoden vor. Diese Änderungen sind nicht erforderlich. Allerdings können Sie die Anwendung problemlos optimieren, wenn Sie nur wenige kleine Code Teile haben.
 
-## <a name="improving-the-details-and-delete-methods"></a>Verbessern die Details und Delete-Methoden
+## <a name="improving-the-details-and-delete-methods"></a>Verbessern der Details und Löschmethoden
 
-Wenn Sie erstellt haben die `Movie` Controller, ASP.NET MVC generierte Code funktioniert hervorragend, aber, können robuster gestaltet mit wenigen kleinen Änderungen.
+Als Sie das Gerüst für den `Movie` Controller erstellt haben, hat ASP.NET MVC Code generiert, der hervorragend funktionierte, aber mit nur wenigen kleinen Änderungen stabiler machen kann.
 
-Öffnen der `Movie` Controller und ändern Sie die `Details` Methode durch Rückgabe `HttpNotFound` Wenn ein Film nicht gefunden. Sie sollten auch ändern, die `Details` Methode, um einen Standardwert für die ID festzulegen, die an ihn übergeben wird. (Sie vorgenommen haben, wie Änderungen an der `Edit` -Methode in der [Teil 6](examining-the-edit-methods-and-edit-view.md) in diesem Tutorial.) Jedoch müssen Sie den Rückgabetyp Ändern der `Details` aus `ViewResult` zu `ActionResult`, da die `HttpNotFound` Methode nicht zurückgegeben. eine `ViewResult` Objekt. Das folgende Beispiel zeigt die geänderte `Details` Methode.
+Öffnen Sie den `Movie` Controller, und ändern Sie die Methode `Details`, indem Sie `HttpNotFound` zurückgeben, wenn ein Film nicht gefunden wird Außerdem sollten Sie die `Details`-Methode ändern, um einen Standardwert für die ID festzulegen, die an Sie übermittelt wird. (In [Teil 6](examining-the-edit-methods-and-edit-view.md) dieses Tutorials haben Sie ähnliche Änderungen an der `Edit`-Methode vorgenommen.) Sie müssen jedoch den Rückgabetyp der `Details` Methode von `ViewResult` in `ActionResult`ändern, da die `HttpNotFound`-Methode kein `ViewResult` Objekt zurückgibt. Das folgende Beispiel zeigt die geänderte `Details`-Methode.
 
 [!code-vb[Main](improving-the-details-and-delete-methods/samples/sample1.vb)]
 
-Code zunächst ganz einfach suchen nach Daten mithilfe der `Find` Methode. Eine wichtige Sicherheitsfunktion, die an die Methode erstellt wird, dass der Code, der überprüft, ob die `Find` Methode verfügt über einen Film gefunden, bevor der Code versucht, etwas damit zu tun. Z. B. ein Hacker kann Fehler verursachen auf der Website durch Ändern der URL erstellt, indem Sie die Links aus `http://localhost:xxxx/Movies/Details/1` z. B. `http://localhost:xxxx/Movies/Details/12345` (oder einen anderen Wert, der keinen tatsächlichen Film darstellt). Wenn Sie die Überprüfung auf einen null-Film nicht tun, könnte dies zu einem Datenbankfehler führen.
+Code First erleichtert die Suche nach Daten mithilfe der `Find`-Methode. Ein wichtiges Sicherheits Feature, das in die-Methode integriert wurde, besteht darin, dass der Code überprüft, ob die `Find`-Methode einen Film gefunden hat, bevor der Code versucht, etwas zu tun. Ein Hacker könnte z. b. Fehler in die Website einfügen, indem er die von den Verknüpfungen erstellte URL von `http://localhost:xxxx/Movies/Details/1` in etwas wie `http://localhost:xxxx/Movies/Details/12345` (oder einen anderen Wert, der keinen eigentlichen Film repräsentiert) ändert. Wenn Sie nicht auf einen NULL-Film überprüfen, kann dies zu einem Datenbankfehler führen.
 
-Analog dazu ändern Sie die `Delete` und `DeleteConfirmed` Methoden, die einen Standardwert für den ID-Parameter angeben und zurückzugeben `HttpNotFound` Wenn ein Film nicht gefunden. Die aktualisierte `Delete` Methoden in der `Movie` Controller werden unten angezeigt.
+Ändern Sie die Methoden `Delete` und `DeleteConfirmed` entsprechend, um einen Standardwert für den ID-Parameter anzugeben und `HttpNotFound` zurückzugeben, wenn ein Film nicht gefunden wird. Die aktualisierten `Delete` Methoden im `Movie` Controller sind unten dargestellt.
 
 [!code-vb[Main](improving-the-details-and-delete-methods/samples/sample2.vb)]
 
-Beachten Sie, dass die `Delete` Methode nicht die Daten zu löschen. Das Ausführen eines Löschvorgangs als Reaktion auf eine GET-Anforderung (oder eigentlich eines Bearbeitungs-, Erstellungs- oder sonstigen Vorgangs, der Daten ändern) stellt eine Sicherheitslücke dar. Weitere Informationen hierzu finden Sie unter Stephen Walthers Blogeintrag [Tipp #46 von ASP.NET MVC – verwenden Sie keine Links löschen, da Sicherheitslücken entstehen](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
+Beachten Sie, dass die `Delete`-Methode die Daten nicht löscht. Das Ausführen eines Löschvorgangs als Reaktion auf eine GET-Anforderung (oder eigentlich eines Bearbeitungs-, Erstellungs- oder sonstigen Vorgangs, der Daten ändern) stellt eine Sicherheitslücke dar. Weitere Informationen hierzu finden Sie im Blogeintrag von Stephen Walther [ASP.NET MVC Tip #46 – verwenden Sie keine Lösch Links, da Sie Sicherheitslücken erstellen](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx).
 
 Die `HttpPost`-Methode, die die Daten löscht, heißt `DeleteConfirmed`, um der HTTP-POST-Methode eine eindeutige Signatur bzw. einen eindeutigen Namen zu geben. Die beiden Methodensignaturen werden nachstehend gezeigt:
 
 [!code-vb[Main](improving-the-details-and-delete-methods/samples/sample3.vb)]
 
-Die common Language Runtime (CLR) erfordert überladene Methoden, um eine eindeutige Signatur (denselben Namen, unterschiedliche Liste von Parametern) aufweisen. Hier benötigen Sie jedoch zwei Delete-Methoden – eine für GET und eine für POST, dass beide die gleiche Signatur erfordern. (Beide müssen eine einzelne ganze Zahl als Parameter akzeptieren.)
+Der Common Language Runtime (CLR) erfordert, dass überladene Methoden über eine eindeutige Signatur verfügen (gleicher Name, andere Liste von Parametern). Hier benötigen Sie jedoch zwei Delete-Methoden: einen für "Get" und einen für "Post", bei dem beide die gleiche Signatur benötigen. (Beide müssen eine einzelne ganze Zahl als Parameter akzeptieren.)
 
-Um dies zu sortieren, können Sie ein paar Dinge tun. Eine besteht darin, die Methoden unterschiedlich zu benennen. Das ist was wir in der er die vorangehenden Beispiel getan haben. Dies bringt jedoch ein kleines Problem mit sich: ASP.NET ordnet Segmente einer URL anhand des Namens zu Aktionsmethoden zu. Wenn Sie die Methode umbenennen sollten, ist das Routing normalerweise nicht in der Lage, diese Methode zu finden. Die Lösung besteht (wie im Beispiel) im Hinzufügen des `ActionName("Delete")`-Attributs zur `DeleteConfirmed`-Methode. Dies effektiv führt die Zuordnung für das Routingsystem so, dass eine URL, die beinhaltet <em>/Delete/</em>für eine POST-Anforderung findet die `DeleteConfirmed` Methode.
+Um dies zu sortieren, können Sie einige Dinge tun. Eine Möglichkeit besteht darin, den Methoden andere Namen zuzuweisen. Das haben wir im vorherigen Beispiel getan. Dies bringt jedoch ein kleines Problem mit sich: ASP.NET ordnet Segmente einer URL anhand des Namens zu Aktionsmethoden zu. Wenn Sie die Methode umbenennen sollten, ist das Routing normalerweise nicht in der Lage, diese Methode zu finden. Die Lösung besteht (wie im Beispiel) im Hinzufügen des `ActionName("Delete")`-Attributs zur `DeleteConfirmed`-Methode. Dadurch wird die Zuordnung für das Routing System effektiv durchführt, sodass eine URL, die <em>/Delete/</em>für eine Post-Anforderung enthält, die `DeleteConfirmed`-Methode findet.
 
-Eine andere Möglichkeit, ein Problem mit den Methoden zu vermeiden, die identische Namen Signaturen und werden künstlich ändern Sie die Signatur der POST-Methode, um ein nicht verwendeter Parameter einzuschließen. Beispielsweise einige Entwickler einen Parametertyp hinzufügen `FormCollection` , das an die POST-Methode übergeben wird, und klicken Sie dann einfach nicht den Parameter verwenden:
+Eine andere Möglichkeit, ein Problem mit Methoden zu vermeiden, die identische Namen und Signaturen aufweisen, besteht darin, die Signatur der Post-Methode künstlich so zu ändern, dass Sie einen nicht verwendeten Parameter enthält. Einige Entwickler fügen beispielsweise einen Parametertyp `FormCollection` hinzu, der an die Post-Methode übergeben wird, und verwenden dann einfach nicht den Parameter:
 
 [!code-vb[Main](improving-the-details-and-delete-methods/samples/sample4.vb)]
 
-## <a name="wrapping-up"></a>Zusammenfassung
+## <a name="wrapping-up"></a>Umbilden
 
-Sie haben jetzt eine vollständige ASP.NET MVC-Anwendung, die Daten in einer SQL Server Compact-Datenbank speichert. Sie können zu erstellen, lesen, aktualisieren, löschen und suchen Sie nach Filme.
+Sie verfügen jetzt über eine komplette ASP.NET MVC-Anwendung, die Daten in einer SQL Server Compact-Datenbank speichert. Sie können Filme erstellen, lesen, aktualisieren, löschen und nach Filmen suchen.
 
 ![](improving-the-details-and-delete-methods/_static/image1.png)
 
-Dieses Lernprogramm haben Sie die Schritte der Controller mit Ansichten verknüpft werden, und übergeben, um hartcodierte Daten vornehmen. Klicken Sie dann Sie erstellt wurden und ein Datenmodell. Entity Framework Code First eine Datenbank aus dem Datenmodell dynamisch erstellt, und das System der ASP.NET MVC-Gerüstbau automatisch generiert, die Aktionsmethoden und Ansichten für grundlegende CRUD-Vorgänge. Hinzufügen klicken Sie dann ein Suchformular, mit denen Benutzer die Datenbank durchsuchen kann. Sie die Datenbank enthält eine neue Spalte mit Daten geändert und aktualisiert dann zwei Seiten zum Erstellen und diese neuen Daten anzuzeigen. Sie Überprüfung hinzugefügt, durch markieren das Datenmodell mit Attributen aus dem `DataAnnotations` Namespace. Die resultierende Überprüfung wird ausgeführt, auf dem Client und auf dem Server.
+In diesem grundlegenden Tutorial haben Sie den Einstieg in die Controller, das Zuordnen von Ansichten und das Übergeben von hart codierten Daten begonnen. Anschließend haben Sie ein Datenmodell erstellt und entworfen. Entity Framework Code First eine Datenbank im laufenden Betrieb aus dem Datenmodell erstellt haben, und das ASP.NET MVC-Gerüstsystem hat automatisch die Aktionsmethoden und-Sichten für grundlegende CRUD-Vorgänge generiert. Anschließend haben Sie ein Suchformular hinzugefügt, mit dem Benutzer die Datenbank durchsuchen können. Sie haben die Datenbank so geändert, dass Sie eine neue Datenspalte enthält. Anschließend haben Sie zwei Seiten aktualisiert, um diese neuen Daten zu erstellen und anzuzeigen. Sie haben die Validierung hinzugefügt, indem Sie das Datenmodell mit Attributen aus dem `DataAnnotations`-Namespace markieren. Die resultierende Validierung wird auf dem Client und auf dem Server ausgeführt.
 
-Wenn Sie Ihre Anwendung bereitstellen möchten, ist es hilfreich, zunächst die Anwendung auf dem lokalen IIS 7-Server zu testen. Sie können dies verwenden [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;) Link zur IIS-Einstellung für ASP.NET-Anwendungen aktivieren. Finden Sie unter den folgenden Links für die Bereitstellung:
+Wenn Sie Ihre Anwendung bereitstellen möchten, ist es hilfreich, zuerst die Anwendung auf dem lokalen IIS 7-Server zu testen. Sie können diesen Link für den [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;) verwenden, um IIS-Einstellungen für ASP.NET-Anwendungen zu aktivieren. Sehen Sie sich die folgenden Bereitstellungs Links an:
 
-- [Einstieg in ASP.NET](https://msdn.microsoft.com/library/dd394698.aspx)
-- [Aktivieren von IIS 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
-- [Bereitstellung von Webanwendungen-Projekte](https://msdn.microsoft.com/library/dd394698.aspx)
+- [ASP.net-Bereitstellungs Inhalts Zuordnung](https://msdn.microsoft.com/library/dd394698.aspx)
+- [Aktivieren von IIS 7. x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
+- [Webanwendungs Projekte](https://msdn.microsoft.com/library/dd394698.aspx)
 
-Jetzt sollten Sie mit unserem fortgeschrittene Fortfahren [erstellen ein Entity Framework-Datenmodells für eine ASP.NET MVC-Anwendung](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) und [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) Tutorials, um zu untersuchen der [ASP.NET MSDN-Artikeln für](https://msdn.microsoft.com/library/gg416514(VS.98).aspx), und überprüfen, die viele Videos und Ressourcen zu [ https://asp.net/mvc ](https://asp.net/mvc) auch weitere Informationen zur ASP.NET MVC! Die [ASP.NET MVC-Foren](https://forums.asp.net/1146.aspx) sind hervorragend, um Fragen zu stellen.
+Ich empfehle Ihnen nun, unsere zwischengeschaltete [Erstellung eines Entity Framework-Datenmodells für eine ASP.NET MVC-Anwendung](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) und [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) -Tutorials kennenzulernen, die [ASP.net-Artikel auf MSDN](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)kennenzulernen und die vielen Videos und Ressourcen in [https://asp.net/mvc](https://asp.net/mvc) kennenzulernen, um noch mehr über ASP.NET MVC zu erfahren. Die [ASP.NET-MVC-Foren](https://forums.asp.net/1146.aspx) sind ein guter Ort, um Fragen zu stellen.
 
-Viel Erfolg!
+Viel Spaß!
 
-— Scott Hanselman ([http://hanselman.com](http://hanselman.com) and [@shanselman](http://twitter.com/shanselman) on Twitter) and Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
+– Scott Hanselman ([http://hanselman.com](http://hanselman.com) und [@shanselman](http://twitter.com/shanselman) auf Twitter) und Rick Anderson [Blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [Vorherige](adding-validation-to-the-model.md)
+> [Previous](adding-validation-to-the-model.md)

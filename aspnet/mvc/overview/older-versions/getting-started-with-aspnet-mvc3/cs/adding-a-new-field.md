@@ -1,132 +1,132 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
-title: Hinzufügen eines neuen Felds zum Modell "Movie" und Tabelle (c#) | Microsoft-Dokumentation
+title: Hinzufügen eines neuen Felds zum Film Modell und zur TabelleC#() | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, d.h....
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1.
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: b4e76c1a-f66e-43a0-aa72-f39df79c07c1
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: acac3ade54cc51c8004f9ea5f0ee4157d15251e5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 40b02a2f608f07091ce6b5339688a1e6290e2e37
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130178"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457444"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>Hinzufügen eines neuen Felds zum Modell und zur Tabelle eines Films (C#)
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > > [!NOTE]
-> > Eine aktualisierte Version dieses Tutorials finden Sie [hier](../../../getting-started/introduction/getting-started.md) , ASP.NET MVC 5 und Visual Studio 2013 verwendet. Dabei handelt es sich eine sicherere, einfacher, führen weitere Funktionen veranschaulicht.
+> > Eine aktualisierte Version dieses Tutorials ist [hier](../../../getting-started/introduction/getting-started.md) verfügbar, die ASP.NET MVC 5 und Visual Studio 2013 verwendet. Es ist sicherer, ist viel einfacher zu befolgen und zeigt mehr Features.
 > 
 > 
-> In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 > 
-> - [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+> - [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 > 
-> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
-> Ein Visual Web Developer-Projekt mit C#-Quellcode ist verfügbar, zur Ergänzung dieses Themas. [Laden Sie die C#-Version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zu der [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
+> Für dieses Thema steht ein Visual C# Web Developer-Projekt mit Quellcode zur Verfügung. [Laden Sie C# die Version herunter](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie Visual Basic bevorzugen, wechseln Sie zur [Visual Basic-Version](../vb/intro-to-aspnet-mvc-3.md) dieses Tutorials.
 
-In diesem Abschnitt werden Sie die ViewModel-Klassen ein paar Änderungen vornehmen und erfahren Sie, wie Sie das Datenbankschema entsprechend den Änderungen des Datenmodells aktualisieren können.
+In diesem Abschnitt nehmen Sie einige Änderungen an den Modellklassen vor und erfahren, wie Sie das Datenbankschema aktualisieren können, sodass es den Modelländerungen entspricht.
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>Hinzufügen einer Rating-Eigenschaft zum Movie-Modell
 
-Starten Sie durch Hinzufügen eines neuen `Rating` Eigenschaft, um die vorhandene `Movie` Klasse. Öffnen der *Movie.cs* -Datei und fügen die `Rating` Eigenschaft dieser Art:
+Beginnen Sie, indem Sie der vorhandenen `Movie` Klasse eine neue `Rating`-Eigenschaft hinzufügen. Öffnen Sie die Datei *Movie.cs* , und fügen Sie die `Rating`-Eigenschaft wie folgt hinzu:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample1.cs)]
 
-Die vollständige `Movie` -Klasse sieht wie im folgenden Code:
+Die gesamte `Movie`-Klasse sieht nun wie der folgende Code aus:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample2.cs)]
 
-Kompilieren der Anwendung mithilfe der **Debuggen** &gt; **erstellen Film** Menübefehl.
+Kompilieren Sie die Anwendung mithilfe des Menübefehls **Debug** &gt;**Build Movie** neu.
 
-Nun, dass Sie aktualisiert haben die `Model` -Klasse, Sie müssen auch aktualisieren die *\Views\Movies\Index.cshtml* und *\Views\Movies\Create.cshtml* Vorlagen anzeigen, um die neue unterstützen`Rating`Eigenschaft.
+Nachdem Sie die `Model`-Klasse aktualisiert haben, müssen Sie auch die Ansichts Vorlagen *\views\movies\index.cshtml* und *\views\movies\kreate.cshtml* aktualisieren, um die neue `Rating`-Eigenschaft zu unterstützen.
 
-Öffnen der *\Views\Movies\Index.cshtml* -Datei und fügen eine `<th>Rating</th>` Spaltenüberschrift direkt nach der **Preis** Spalte. Fügen Sie dann eine `<td>` Spalte am Ende der Vorlage zum Rendern der `@item.Rating` Wert. Im folgenden finden Sie welche die aktualisierte *"Index.cshtml"* ansichtsvorlage sieht wie folgt aus:
+Öffnen Sie die Datei " *\views\movies\index.cshtml* ", und fügen Sie eine `<th>Rating</th>` Spaltenüberschrift direkt hinter der **Preis** Spalte ein. Fügen Sie dann am Ende der Vorlage eine `<td>` Spalte hinzu, um den `@item.Rating` Wert zu erzeugen. Im folgenden sehen Sie, wie die aktualisierte Vorlage " *Index. cshtml* " angezeigt wird:
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample3.cshtml)]
 
-Öffnen Sie als Nächstes die *\Views\Movies\Create.cshtml* Datei, und fügen Sie das folgende Markup in der Nähe des Formulars. Dies rendert ein Textfeld, sodass Sie eine Bewertung angeben können, wenn Sie ein neuer Film erstellt wird.
+Öffnen Sie als nächstes die Datei " *\views\movies\kreate.cshtml* ", und fügen Sie das folgende Markup am Ende des Formulars ein. Dadurch wird ein Textfeld gerendert, sodass Sie beim Erstellen eines neuen Films eine Bewertung angeben können.
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample4.cshtml)]
 
-## <a name="managing-model-and-database-schema-differences"></a>Verwalten von Modell- und Schemaunterschiede Datenbank
+## <a name="managing-model-and-database-schema-differences"></a>Verwalten von Modell-und Daten Bank Schema unterschieden
 
-Sie haben jetzt den Anwendungscode so, dass die Unterstützung der neuen `Rating` Eigenschaft.
+Sie haben nun den Anwendungscode aktualisiert, um die neue `Rating`-Eigenschaft zu unterstützen.
 
-Die Anwendung jetzt ausführen, und navigieren Sie zu der */Movies* URL. Wenn Sie dies tun, allerdings werden Sie den folgenden Fehler angezeigt:
+Führen Sie nun die Anwendung aus, und navigieren Sie zur URL */Movies* . Wenn Sie dies jedoch tun, wird der folgende Fehler angezeigt:
 
 ![](adding-a-new-field/_static/image1.png)
 
-Sie sehen diesen Fehler, da die aktualisierte `Movie` Modellklasse, die in der Anwendung unterscheidet sich von dem Schema der der `Movie` Tabelle der vorhandenen Datenbank. (Die Datenbanktabelle enthält nicht die Spalte `Rating`.)
+Dieser Fehler wird angezeigt, da die aktualisierte `Movie` Modell Klasse in der Anwendung sich nun von dem Schema der `Movie` Tabelle der vorhandenen Datenbank unterscheidet. (Die Datenbanktabelle enthält nicht die Spalte `Rating`.)
 
-In der Standardeinstellung, wenn Sie Entity Framework Code First verwenden, um automatisch eine Datenbank erstellen, wie weiter oben in diesem Tutorial Code First eine Tabelle der Datenbank hinzugefügt, um nachzuverfolgen, ob das Schema der Datenbank mit den Modellklassen synchron ist, die sie aus generiert wurde. Wenn sie nicht synchron sind, löst Entity Framework einen Fehler aus. Dies erleichtert es, die zum Zeitpunkt der Entwicklung Identifizieren von Problemen, die andernfalls nur (durch ungewöhnliche Fehler) zur Laufzeit auftreten. Das Sync-Überprüfung-Feature ist, wodurch die Fehlermeldung, die angezeigt wird, die Sie gerade gesehen haben.
+Wenn Sie Entity Framework Code First verwenden, um automatisch eine Datenbank zu erstellen, wie in diesem Tutorial bereits erwähnt, fügt Code First der Datenbank eine Tabelle hinzu, um zu verfolgen, ob das Schema der Datenbank mit den Modellklassen synchronisiert ist, von denen es generiert wurde. Wenn Sie nicht synchron sind, löst die Entity Framework einen Fehler aus. Dies vereinfacht das Auffinden von Problemen bei der Entwicklung, die Sie möglicherweise zur Laufzeit nur (aufgrund von unkomplizierter Fehlern) finden. Die Synchronisierungs Überprüfung bewirkt, dass die Fehlermeldung angezeigt wird, die Sie gerade gesehen haben.
 
-Es gibt zwei Ansätze zum Beheben des Fehlers:
+Es gibt zwei Ansätze, um den Fehler zu beheben:
 
-1. Lassen Sie die Datenbank von Entity Framework automatisch löschen und basierend auf dem neuen Modellklassenschema neu erstellen. Dieser Ansatz ist sehr praktisch, bei der aktiven Entwicklung in einer Testdatenbank, da es Ihnen ermöglicht, dass das Modell und das Datenbankschema schnell gemeinsam weiterzuentwickeln. Der Nachteil ist jedoch, dass Sie in der Datenbank vorhandene Daten verloren gehen, damit Sie *nicht* dieser Ansatz in einer Produktionsdatenbank verwendet werden soll.
+1. Lassen Sie die Datenbank von Entity Framework automatisch löschen und basierend auf dem neuen Modellklassenschema neu erstellen. Diese Vorgehensweise ist sehr praktisch, wenn Sie eine aktive Entwicklung für eine Testdatenbank durchgeführt haben, da Sie das Modell und das Datenbankschema schnell weiterentwickeln können. Der Nachteil besteht jedoch darin, dass Sie vorhandene Daten in der Datenbank verlieren – damit Sie diesen Ansatz *nicht* für eine Produktionsdatenbank verwenden möchten.
 2. Ändern Sie das Schema der vorhandenen Datenbank explizit so, dass es mit den Modellklassen übereinstimmt. Der Vorteil dieses Ansatzes ist, dass Sie Ihre Daten behalten. Sie können diese Änderung entweder manuell oder durch Erstellen eines Änderungsskripts für die Datenbank vornehmen.
 
-In diesem Tutorial verwenden wir den ersten Ansatz – müssen Sie die Entity Framework Code First die Datenbank automatisch neu erstellt, jedes Mal, wenn das Modell ändert.
+In diesem Tutorial verwenden wir den ersten Ansatz – Sie haben die Entity Framework Code First die Datenbank automatisch neu erstellen, wenn das Modell geändert wird.
 
-## <a name="automatically-re-creating-the-database-on-model-changes"></a>Erstellen die Datenbank auf Änderungen des Datenmodells automatisch erneut
+## <a name="automatically-re-creating-the-database-on-model-changes"></a>Automatisches Neuerstellen der Datenbank bei Modelländerungen
 
-Aktualisieren wir die Anwendung, sodass Code First automatisch gelöscht und neu die Datenbank erstellt jedes Mal, wenn Sie das Modell für die Anwendung zu ändern.
+Aktualisieren Sie die Anwendung, damit Code First die Datenbank jederzeit automatisch löscht und neu erstellt, wenn Sie das Modell für die Anwendung ändern.
 
 > [!NOTE] 
 > 
-> **Warnung** sollten Sie diesen Ansatz, der automatisch löschen und die Datenbank neu zu erstellen, nur, wenn Sie eine Datenbank Entwicklungs- oder testumgebung verwenden, aktivieren und *nie* in einer Produktionsdatenbank, die tatsächlichen Daten enthält. Verwenden es auf einem Produktionsserver kann zu Datenverlust führen.
+> **Warnung** Sie sollten diesen Ansatz zum automatischen Löschen und erneuten Erstellen der Datenbank nur dann aktivieren, wenn Sie eine Entwicklungs-oder Testdatenbank verwenden und *nie* in einer Produktionsdatenbank, die echte Daten enthält. Die Verwendung auf einem Produktionsserver kann zu Datenverlusten führen.
 
-In **Projektmappen-Explorer**, klicken Sie mit der rechten Maustaste auf die *Modelle* Ordner **hinzufügen**, und wählen Sie dann **Klasse**.
+Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner *Modelle* , und wählen Sie **Hinzufügen**und dann **Klasse**aus.
 
 ![](adding-a-new-field/_static/image2.png)
 
-Nennen Sie die Klasse "MovieInitializer". Update der `MovieInitializer` Klasse, um den folgenden Code enthalten:
+Benennen Sie die Klasse "movieinitializer". Aktualisieren Sie die `MovieInitializer`-Klasse so, dass Sie den folgenden Code enthält:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample5.cs)]
 
-Die `MovieInitializer` Klasse gibt an, dass die vom Modell verwendete Datenbank gelöscht und automatisch neu erstellt werden, wenn die Modellklassen jemals ändern. Der Code enthält eine `Seed` Methode, um anzugeben, einigen Standarddaten hinzuzufügende automatisch an die Datenbank eine Zeit erstellt wurde (oder neu erstellt). Dies bietet eine gute Möglichkeit, füllen die Datenbank mit Beispieldaten, ohne dass Sie manuell sie jedes Mal auffüllen, die Sie vornehmen, dass ein Modell zu ändern.
+Die `MovieInitializer`-Klasse gibt an, dass die vom Modell verwendete Datenbank gelöscht und automatisch neu erstellt werden soll, wenn sich die Modellklassen jemals ändern. Der Code enthält eine `Seed` Methode zum Angeben einiger Standarddaten, die automatisch der Datenbank hinzugefügt werden, wenn Sie erstellt (oder neu erstellt) werden. Dies bietet eine hilfreiche Möglichkeit, um die Datenbank mit einigen Beispiel Daten aufzufüllen, ohne dass Sie Sie jedes Mal manuell auffüllen müssen, wenn Sie eine Modell Änderung vornehmen.
 
-Nun, da Sie definiert haben die `MovieInitializer` -Klasse, Sie sollten, um zu verknüpfen, sodass jedes Mal, die die Anwendung ausgeführt wird, er überprüft, ob die Modellklassen aus dem Schema in der Datenbank unterschiedlich sind. Wenn dies der Fall, können Sie den Initialisierer zum Neuerstellen der Datenbank, um das Modell übereinstimmen, und füllen dann die Datenbank mit den Beispieldaten ausführen.
+Nachdem Sie nun die `MovieInitializer` Klasse definiert haben, sollten Sie Sie verknüpfen, damit jedes Mal, wenn die Anwendung ausgeführt wird, überprüft wird, ob sich die Modellklassen von dem Schema in der Datenbank unterscheiden. Wenn dies der Fall ist, können Sie den Initialisierer ausführen, um die Datenbank neu zu erstellen, damit Sie dem Modell entspricht, und dann die Datenbank mit den Beispiel Daten auffüllen.
 
-Öffnen der *"Global.asax"* -Datei im Stammverzeichnis der `MvcMovies` Projekt:
+Öffnen Sie die Datei " *Global. asax* ", die sich im Stammverzeichnis des `MvcMovies` Projekts befindet:
 
 [![](adding-a-new-field/_static/image4.png)](adding-a-new-field/_static/image3.png)
 
-Die *"Global.asax"* Datei enthält die Klasse, die die gesamte Anwendung für das Projekt definiert und enthält eine `Application_Start` -Ereignishandler, der beim ersten der Anwendung starten ausgeführt wird.
+Die Datei " *Global. asax* " enthält die-Klasse, die die gesamte Anwendung für das Projekt definiert, und enthält einen `Application_Start` Ereignishandler, der beim ersten Start der Anwendung ausgeführt wird.
 
-Fügen Sie zwei using-Anweisungen am Anfang der Datei. Die erste verweist auf den Entity Framework-Namespace und die zweite verweist auf den Namespace, in dem unsere `MovieInitializer` Leben Klasse:
+Fügen wir am Anfang der Datei zwei using-Anweisungen hinzu. Der erste verweist auf den Entity Framework Namespace, und der zweite verweist auf den Namespace, in dem sich unsere `MovieInitializer` Klasse befindet:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample6.cs)]
 
-Suchen Sie dann die `Application_Start` Methode, und fügen Sie einen Aufruf von `Database.SetInitializer` am Anfang der Methode, wie unten dargestellt:
+Suchen Sie dann nach der `Application_Start`-Methode, und fügen Sie am Anfang der Methode einen-Aufruf`Database.SetInitializer` hinzu, wie unten dargestellt:
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs)]
 
-Die `Database.SetInitializer` Anweisung, die Sie gerade hinzugefügt haben gibt an, dass die Datenbank verwendet die `MovieDBContext` Instanz sollte automatisch gelöscht und neu erstellt werden, wenn das Schema und die Datenbank nicht übereinstimmen. Und wie Sie gesehen haben, füllen sie auch die Datenbank mit den Beispieldaten, die im angegebenen die `MovieInitializer` Klasse.
+Die soeben hinzugefügte `Database.SetInitializer` Anweisung gibt an, dass die Datenbank, die von der `MovieDBContext` Instanz verwendet wird, automatisch gelöscht und neu erstellt werden soll, wenn das Schema und die Datenbank nicht stimmen. Wie Sie gesehen haben, füllt sie auch die Datenbank mit den Beispiel Daten auf, die in der `MovieInitializer`-Klasse angegeben sind.
 
-Schließen der *"Global.asax"* Datei.
+Schließen Sie die Datei " *Global. asax* ".
 
-Führen Sie die Anwendung erneut aus, und navigieren Sie zu der */Movies* URL. Wenn die Anwendung gestartet wird, erkennt er, dass es sich bei die Modellstruktur nicht mehr das Datenbankschema entspricht. Wird automatisch die Datenbank entsprechend der Struktur des neuen neu erstellt und füllt die Datenbank mit der Beispiel-Filme:
+Führen Sie die Anwendung erneut aus, und navigieren Sie zur URL */Movies* . Wenn die Anwendung gestartet wird, erkennt Sie, dass die Modellstruktur nicht mehr mit dem Datenbankschema übereinstimmt. Die Datenbank wird automatisch neu erstellt, um der neuen Modellstruktur zu entsprechen, und die Datenbank wird mit den Beispiel Filmen aufgefüllt:
 
 ![7_MyMovieList_SM](adding-a-new-field/_static/image5.png)
 
-Klicken Sie auf die **neu erstellen** Link, um einen neuen Film hinzuzufügen. Beachten Sie, dass Sie eine Bewertung hinzufügen können.
+Klicken Sie auf den Link **neu erstellen** , um einen neuen Film hinzuzufügen. Beachten Sie, dass Sie eine Bewertung hinzufügen können.
 
 [![7_CreateRioII](adding-a-new-field/_static/image7.png)](adding-a-new-field/_static/image6.png)
 
-Klicken Sie auf **Erstellen**. Der neue Film, einschließlich "Rating", wird jetzt in den Filmen auflisten:
+Klicken Sie auf **Erstellen**. Der neue Film, einschließlich der Bewertung, wird jetzt in der Liste der Filme angezeigt:
 
 [![7_ourNewMovie_SM](adding-a-new-field/_static/image9.png)](adding-a-new-field/_static/image8.png)
 
-In diesem Abschnitt wurde erläutert, wie Sie Modellobjekte ändern und die Datenbank mit den Änderungen synchron zu halten. Sie haben zudem eine Möglichkeit, eine neu erstellte Datenbank mit Beispieldaten aufzufüllen, damit Sie die Szenarien ausprobieren können. Als Nächstes sehen wir uns, wie Sie die Modellklassen umfangreichere Validierungslogik hinzugefügt und einige Geschäftsregeln erzwungen werden zu aktivieren.
+In diesem Abschnitt haben Sie erfahren, wie Sie Modell Objekte ändern und die Datenbank mit den Änderungen synchron halten. Sie haben auch gelernt, wie Sie eine neu erstellte Datenbank mit Beispiel Daten auffüllen, um Szenarios ausprobieren zu können. Als nächstes sehen wir uns an, wie Sie den Modellklassen eine umfassendere Validierungs Logik hinzufügen und einige Geschäftsregeln erzwingen können.
 
 > [!div class="step-by-step"]
 > [Zurück](examining-the-edit-methods-and-edit-view.md)

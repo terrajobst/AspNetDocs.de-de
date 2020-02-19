@@ -9,16 +9,16 @@ ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: eacfbb8a5b2d1aa3678892bc2077a56185fdebbc
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 633229cc4311d151121bf6a91b9fa8aeecca1197
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519153"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456152"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migrieren einer vorhandenen Website von einem SQL-Mitgliedschaftsanbieter zu ASP.NET Identity
 
-von [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
+von [Rick Anderson](https://twitter.com/RickAndMSFT), [Suhas Joshi](https://github.com/suhasj)
 
 > In diesem Tutorial werden die Schritte zum Migrieren einer vorhandenen Webanwendung mit Benutzer-und Rollen Daten erläutert, die mit der SQL-Mitgliedschaft für das neue ASP.net Identity System erstellt wurden Diese Vorgehensweise umfasst das Ändern des vorhandenen Datenbankschemas in das, das von der ASP.net Identity benötigt wird, und das Hook in den alten bzw. neuen Klassen. Nachdem Sie diesen Ansatz übernommen haben, werden zukünftige Updates der Identität nach der Migration der Datenbank mühelos behandelt.
 
@@ -83,29 +83,29 @@ Diese Skriptdatei ist spezifisch für dieses Beispiel. Wenn das Schema für die 
 
 Damit ASP.net Identity Klassen mit den Daten vorhandener Benutzer standardmäßig arbeiten können, müssen wir das Datenbankschema zu dem ASP.net Identity migrieren, das von benötigt wird. Hierzu können Sie neue Tabellen hinzufügen und die vorhandenen Informationen in diese Tabellen kopieren. Standardmäßig verwendet ASP.net Identity EntityFramework, um die Identitäts Modellklassen wieder der Datenbank zuzuordnen, um Informationen zu speichern/abzurufen. Diese Modellklassen implementieren die wichtigsten Identitäts Schnittstellen, die Benutzer-und Rollen Objekte definieren. Die Tabellen und die Spalten in der Datenbank basieren auf diesen Modellklassen. Die EntityFramework-Modellklassen in Identity v 2.1.0 und deren Eigenschaften sind wie unten definiert definiert.
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **Identityuser** | **Typ** | **Identityrole** | **Identityuserrole** | **Identityuserlogin** | **Identityuserclaim** |
 | --- | --- | --- | --- | --- | --- |
-| ID | string | ID | RoleId | Providerkey | ID |
-| Benutzername | string | -Name | UserId | UserId | ClaimType |
+| Id | string | Id | RoleId | Providerkey | Id |
+| Username | string | Name | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
-| SecurityStamp | string |  |  |  | Benutzer\_-ID |
-| E-Mail | string |  |  |  |  |
+| Securitystamp | string |  |  |  | Benutzer\_-ID |
+| Email | string |  |  |  |  |
 | Emailbestätigt | bool |  |  |  |  |
-| Telefonnummer | string |  |  |  |  |
+| PhoneNumber | string |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
-| LockoutEndDate | DateTime |  |  |  |  |
-| AccessFailedCount | int |  |  |  |  |
+| LockoutEndDate | Datetime |  |  |  |  |
+| AccessFailedCount | INT |  |  |  |  |
 
 Wir müssen für jedes dieser Modelle Tabellen mit Spalten aufweisen, die den Eigenschaften entsprechen. Die Zuordnung zwischen Klassen und Tabellen wird in der `OnModelCreating`-Methode der `IdentityDBContext`definiert. Dies wird als fließende API-Methode der Konfiguration bezeichnet. Weitere Informationen finden Sie [hier](https://msdn.microsoft.com/data/jj591617.aspx). Die Konfiguration für die Klassen ist wie unten beschrieben.
 
 | **Klasse** | **Table** | **Primärschlüssel** | **Fremdschlüssel** |
 | --- | --- | --- | --- |
-| IdentityUser | AspnetUsers | ID |  |
-| IdentityRole | AspnetRoles | ID |  |
+| IdentityUser | AspnetUsers | Id |  |
+| IdentityRole | AspnetRoles | Id |  |
 | IdentityUserRole | AspnetUserRole | UserID + RoleID | Benutzer\_-ID-&gt;aspnettusers RoleID-&gt;aspnettroles |
-| IdentityUserLogin | AspnetUserLogins | Providerkey + UserID und loginprovider | UserId-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | ID | Benutzer\_ID-&gt;aspnettusers |
+| IdentityUserLogin | AspnetUserLogins | Providerkey + UserID und loginprovider | UserID-&gt;aspnettusers |
+| IdentityUserClaim | AspnetUserClaims | Id | Benutzer\_ID-&gt;aspnettusers |
 
 Mit diesen Informationen können wir SQL-Anweisungen erstellen, um neue Tabellen zu erstellen. Wir können entweder jede Anweisung einzeln schreiben oder das gesamte Skript mithilfe von EntityFramework PowerShell-Befehlen generieren, die wir dann nach Bedarf bearbeiten können. Öffnen Sie hierzu in Visual Studio die **Paket-Manager-Konsole** über das Menü " **Ansicht** " oder " **Tools** ".
 
@@ -129,7 +129,7 @@ In der obigen SQL-Anweisung werden Informationen zu jedem Benutzer aus der *ASPN
 
 Diese Skriptdatei ist spezifisch für dieses Beispiel. Bei Anwendungen mit zusätzlichen Tabellen können Entwickler einem ähnlichen Ansatz folgen, um zusätzliche Eigenschaften für die Benutzer Modell Klasse hinzuzufügen und diese Spalten in der Tabelle "aspnettusers" zuzuordnen. So führen Sie das Skript aus
 
-1. Öffnen Sie den Server-Explorer. Erweitern Sie die ApplicationServices-Verbindung, um die Tabellen anzuzeigen. Klicken Sie mit der rechten Maustaste auf den Knoten Tabellen, und wählen Sie die Option Neue Abfrage aus.
+1. Öffnen Sie Server-Explorer. Erweitern Sie die ApplicationServices-Verbindung, um die Tabellen anzuzeigen. Klicken Sie mit der rechten Maustaste auf den Knoten Tabellen, und wählen Sie die Option Neue Abfrage aus.
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image7.png)
 2. Kopieren Sie im Abfragefenster das gesamte SQL-Skript, und fügen Sie es aus der Datei Migrationen. SQL ein. Führen Sie die Skriptdatei aus, indem Sie auf die Schaltfläche "ausführen" klicken.
@@ -165,7 +165,7 @@ In unserem Beispiel verfügen die aspnettroles-, aspnettuserclaims-, aspnetlogin
     Die User-Klasse sollte die identityuser-Klasse erweitern, die in der *Microsoft. Aspnet. Identity. EntityFramework* -dll enthalten ist. Deklarieren Sie die Eigenschaften in der Klasse, die den aspnettuser-Spalten wieder zugeordnet werden. Die Eigenschaften "ID", "username", "PasswordHash" und "securitystamp" sind im identityuser definiert und werden daher ausgelassen. Im folgenden finden Sie den Code für die User-Klasse, die alle Eigenschaften enthält.
 
     [!code-csharp[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample3.cs)]
-2. Eine Entity Framework dbcontext-Klasse ist erforderlich, um Daten in Modellen zurück in Tabellen zu speichern und Daten aus Tabellen abzurufen, um die Modelle aufzufüllen. *Microsoft.AspNet.Identity.EntityFramework* dll defines the IdentityDbContext class which interacts with the Identity tables to retrieve and store information. Der identitydbcontext-&lt;tuser-&gt; nimmt eine tuser-Klasse an, die jede Klasse sein kann, die die identityuser-Klasse erweitert.
+2. Eine Entity Framework dbcontext-Klasse ist erforderlich, um Daten in Modellen zurück in Tabellen zu speichern und Daten aus Tabellen abzurufen, um die Modelle aufzufüllen. Die *Microsoft. Aspnet. Identity. EntityFramework* -dll definiert die identitydbcontext-Klasse, die mit den Identitäts Tabellen interagiert, um Informationen abzurufen und zu speichern. Der identitydbcontext-&lt;tuser-&gt; nimmt eine tuser-Klasse an, die jede Klasse sein kann, die die identityuser-Klasse erweitert.
 
     Erstellen Sie eine neue applicationdbcontext-Klasse, die identitydbcontext im Ordner "Models" erweitert und die in Schritt 1 erstellte Benutzerklasse übergibt.
 

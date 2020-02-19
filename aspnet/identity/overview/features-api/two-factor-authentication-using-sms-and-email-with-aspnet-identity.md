@@ -9,22 +9,22 @@ ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5f5218ca6c65ed3a2cd39d4e100349efa35d14cd
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.openlocfilehash: 527b4392846e60dae0b216fdeabf21fd6618e4d7
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74115089"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456737"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>Zweistufige Authentifizierung mit SMS und e-Mail mit ASP.net Identity
 
-von [Hao Kung](https://github.com/HaoK), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
+von [Hao Kung](https://github.com/HaoK), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Suhas Joshi](https://github.com/suhasj)
 
 > In diesem Tutorial wird gezeigt, wie Sie die zweistufige Authentifizierung (2FA) mithilfe von SMS und e-Mail einrichten.
 > 
 > Dieser Artikel wurde von Rick Anderson ([@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)), Pranav Rastogi ([@rustd](https://twitter.com/rustd)), Hao Kung und Suhas Joshi verfasst. Das nuget-Beispiel wurde hauptsächlich von Hao Kung geschrieben.
 
-In diesem Thema wird Folgendes behandelt:
+In diesem Thema werden folgende Themen behandelt:
 
 - [Beispiel zum Aufbau der Identität](#build)
 - [Einrichten von SMS für die zweistufige Authentifizierung](#SMS)
@@ -119,7 +119,7 @@ Dieses Tutorial enthält Anweisungen zur Verwendung von twilio oder ASPSMS, aber
 8. Klicken Sie auf Ihre Benutzer-ID, die die `Index` Aktionsmethode in `Manage` Controller aktiviert.  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image2.png)
-9. Klicken Sie auf Add.  
+9. Klicken Sie auf Hinzufügen.  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image3.png)
 10. In wenigen Sekunden erhalten Sie eine Textnachricht mit dem Überprüfungs Code. Geben Sie ihn ein, **und drücken Sie die Eingabe**  
@@ -177,7 +177,7 @@ Nachdem Sie die obigen Codeänderungen vorgenommen haben, können Sie Ihr Sicher
 
 <a id="enable2"></a>
 
-## <a name="enable-two-factor-authentication"></a>Aktivieren der zweistufigen Authentifizierung
+## <a name="enable-two-factor-authentication"></a>Zwei-Faktor-Authentifizierung aktivieren
 
 In der Beispiel-App müssen Sie die Benutzeroberfläche verwenden, um die zweistufige Authentifizierung (2FA) zu aktivieren. Um 2FA zu aktivieren, klicken Sie auf der Navigationsleiste auf Ihre Benutzer-ID (e-Mail-Alias).![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image9.png)  
 Klicken Sie auf 2 Fa aktivieren.![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image10.png) Melden Sie sich ab, und melden Sie sich erneut an. Wenn Sie e-Mail aktiviert haben (siehe mein [Vorheriges Tutorial](account-confirmation-and-password-recovery-with-aspnet-identity.md)), können Sie die SMS oder e-Mail für 2FA auswählen.![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image11.png) Die Seite Code überprüfen wird angezeigt, auf der Sie den Code (von SMS oder e-Mail) eingeben können.![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image12.png) Wenn Sie auf das Kontrollkästchen **diesen Browser speichern** klicken, werden Sie von der Verwendung von 2FA zum Anmelden mit diesem Computer und Browser ausgeschlossen. Durch das Aktivieren von 2FA und das Klicken auf das **Speichern dieses Browsers** erhalten Sie einen starken 2FA-Schutz vor böswilligen Benutzern, die versuchen, auf Ihr Konto zuzugreifen, solange Sie keinen Zugriff auf Ihren Computer haben. Sie können dies auf jedem beliebigen privaten Computer durchführen, den Sie regelmäßig verwenden. Wenn Sie **diesen Browser merken**, erhalten Sie die zusätzliche Sicherheit von 2FA von Computern, die Sie nicht regelmäßig verwenden, und Sie erhalten die Möglichkeit, die 2FA nicht auf Ihren eigenen Computern zu durchlaufen. 
@@ -272,7 +272,7 @@ Obwohl Sie die Kontosperrung bei Fehlern beim Versuch eines Anmelde Kennworts fe
 
 <a id="addRes"></a>
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
 - [Empfohlene Ressourcen ASP.net Identity](../getting-started/aspnet-identity-recommended-resources.md) Eine umfassende Liste mit Identitäts Blogs, Videos, Tutorials und tollen Links.
 - Die [MVC 5-App mit Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) zeigt außerdem, wie Sie der Tabelle "Users" Profilinformationen hinzufügen.

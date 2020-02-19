@@ -2,82 +2,82 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 title: Einführung in ASP.NET MVC 3 (VB) | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, d.h....
+description: Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1.
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: a1b3d789-93b4-487f-b90d-80c9c9b4f8fa
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: e4fe82ed57e888363f22c84b178b83a07c32c95d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 24f7de303ef7f5a457bd509ecc6bd0e3be7e3d9d
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130092"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456320"
 ---
 # <a name="intro-to-aspnet-mvc-3-vb"></a>Einführung zu ASP.NET MVC 3 (VB)
 
-durch [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+> Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 > 
-> - [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+> - [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 > 
-> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+> Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 > 
-> Ein Visual Web Developer-Projekt mit Quellcode VB.NET steht zur Ergänzung dieses Themas. [Laden Sie die Version VB.NET](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wenn Sie C# -Code bevorzugen, wechseln Sie zu der [c#-Version](../cs/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
+> Ein Visual Web Developer-Projekt mit VB.NET-Quellcode ist für dieses Thema verfügbar. [Laden Sie die VB.NET-Version herunter](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). Wechseln Sie C#ggf. zur [ C# Version](../cs/intro-to-aspnet-mvc-3.md) dieses Tutorials.
 
-In diesem Tutorial lernen Sie die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio. Bevor Sie beginnen, stellen Sie sicher, dass Sie die unten aufgeführten erforderlichen Komponenten installiert haben. Sie können alle installieren, indem Sie auf den folgenden Link: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie einzeln die Voraussetzungen, die über die folgenden Links installieren:
+Dieses Tutorial vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mit Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio. Stellen Sie sicher, dass Sie die unten aufgeführten Voraussetzungen installiert haben, bevor Sie beginnen. Sie können alle Komponenten installieren, indem Sie auf den folgenden Link klicken: [Webplattform-Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativ können Sie die erforderlichen Komponenten einzeln mithilfe der folgenden Links installieren:
 
-- [Visual Studio Web Developer Express SP1-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-- [ASP.NET MVC 3 Toolsupdate](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-- [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Common Language Runtime und Tools unterstützen)
+- [Erforderliche Komponenten für Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+- [ASP.NET MVC 3-Tools aktualisieren](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+- [SQL Server Compact 4,0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(Laufzeit + Tool Unterstützung)
 
-Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, werden installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link: [Visual Studio 2010-Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+Wenn Sie Visual Studio 2010 anstelle von Visual Web Developer 2010 verwenden, installieren Sie die erforderlichen Komponenten, indem Sie auf den folgenden Link klicken: [Visual Studio 2010 Voraussetzungen](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 
-Ein Visual Web Developer-Projekt mit VB-Quellcode ist verfügbar, zur Ergänzung dieses Themas. [Laden Sie die VB-Version hier](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=14824). Falls CSharp gewünscht, wechseln Sie zu der [CSharp Version](../cs/intro-to-aspnet-mvc-3.md) in diesem Tutorial.
+Ein Visual Web Developer-Projekt mit VB-Quellcode ist für dieses Thema verfügbar. [Laden Sie die VB-Version hier herunter](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=14824). Wenn Sie CSharp bevorzugen, wechseln Sie zur [CSharp-Version](../cs/intro-to-aspnet-mvc-3.md) dieses Tutorials.
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-Implementieren Sie eine einfache Auflistung von Movie-Anwendung, die unterstützt werden, erstellen, bearbeiten und Auflisten von Filme aus einer Datenbank. Im folgenden sind die beiden Screenshots der Anwendung, die Sie erstellen. Es enthält eine Seite, die eine Liste von Filmen aus einer Datenbank anzeigt:
+Sie implementieren eine einfache Movie-Listing-Anwendung, die das Erstellen, bearbeiten und Auflisten von Filmen aus einer Datenbank unterstützt. Im folgenden finden Sie zwei Screenshots der Anwendung, die Sie erstellen. Sie enthält eine Seite, auf der eine Liste der Filme aus einer Datenbank angezeigt wird:
 
-[![MoviesWithVariousSm](intro-to-aspnet-mvc-3/_static/image2.png)](intro-to-aspnet-mvc-3/_static/image1.png)
+[![von "movieswithvarioussm"](intro-to-aspnet-mvc-3/_static/image2.png)](intro-to-aspnet-mvc-3/_static/image1.png)
 
-Die Anwendung kann auch hinzufügen, bearbeiten und Löschen von Filmen sowie finden Sie Details für einzelne Elemente. Alle Dateneingabe-Szenarien umfassen das Überprüfung sicher, dass die in der Datenbank gespeicherten Daten richtig ist.
+Mithilfe der Anwendung können Sie außerdem Filme hinzufügen, bearbeiten und löschen sowie Details zu einzelnen Personen anzeigen. Alle Dateneingabe Szenarien umfassen die Validierung, um sicherzustellen, dass die in der Datenbank gespeicherten Daten korrekt sind.
 
-[![CreateFormSo](intro-to-aspnet-mvc-3/_static/image4.png)](intro-to-aspnet-mvc-3/_static/image3.png)
+[!["kreateformso"](intro-to-aspnet-mvc-3/_static/image4.png)](intro-to-aspnet-mvc-3/_static/image3.png)
 
-## <a name="skills-youll-learn"></a>Fähigkeiten, mit denen, die Sie lernen Folgendes
+## <a name="skills-youll-learn"></a>Erlernte Fertigkeiten
 
-Hier ist Sie lernen Folgendes:
+Folgendes können Sie lernen:
 
-- Gewusst wie: Erstellen eines neuen ASP.NET MVC-Projekts
-- Vorgehensweise: erstellen eine neue Datenbank mit Entity Framework Code first
-- Vorgehensweise: Erstellen von ASP.NET MVC-Controllern und-Ansichten
-- Das Abrufen und Anzeigen von Daten
-- Bearbeiten von Daten, und aktivieren die datenüberprüfung
+- Erstellen eines neuen ASP.NET MVC-Projekts
+- Erstellen einer neuen Datenbank mit Entity Framework Code First
+- Erstellen von ASP.NET-MVC-Controllern und-Ansichten
+- Abrufen und Anzeigen von Daten
+- Vorgehensweise beim Bearbeiten von Daten und Aktivieren der Datenvalidierung
 
 ## <a name="getting-started"></a>Erste Schritte
 
-Starten Sie durch Ausführen von Visual Web Developer 2010 Express (kurz "VWD"), und wählen Sie **neues Projekt** aus der **starten** Seite.
+Führen Sie zunächst Visual Web Developer 2010 Express ("VWD" für kurze Zeit) aus, und wählen Sie auf der **Start** Seite die Option **Neues Projekt** aus.
 
-Visual Web Developer ist eine IDE oder der integrierten Entwicklungsumgebung. Wie Sie Microsoft Word zum Schreiben von Dokumenten verwenden, verwenden Sie eine IDE, um Anwendungen zu erstellen. In Visual Web Developer ist eine Symbolleiste entlang des oberen mit verschiedenen verfügbaren Optionen für Sie. Es gibt auch ein Menü, das eine andere Möglichkeit, Aufgaben in der IDE bereitstellt. (Z. B. anstelle **neues Projekt** aus der **starten** Seite können Sie das Menü und auswählen **Datei** &gt; **neues Projekt**.)
+Visual Web Developer ist eine IDE oder eine integrierte Entwicklungsumgebung. Ebenso wie Sie Microsoft Word zum Schreiben von Dokumenten verwenden, verwenden Sie eine IDE zum Erstellen von Anwendungen. In Visual Web Developer gibt es eine Symbolleiste am oberen Rand der verschiedenen Optionen, die Ihnen zur Verfügung stehen. Es gibt auch ein Menü, das eine weitere Möglichkeit bietet, Aufgaben in der IDE auszuführen. (Wenn Sie z. b. auf der **Start** Seite die Option **Neues Projekt** auswählen, können Sie das Menü verwenden und **Datei** &gt; **Neues Projekt**auswählen.)
 
 [![](intro-to-aspnet-mvc-3/_static/image6.png)](intro-to-aspnet-mvc-3/_static/image5.png)
 
 ## <a name="creating-your-first-application"></a>Erstellen Ihrer ersten Anwendung
 
-Sie können mit der Programmiersprache Ihrer Wahl von Visual Basic oder Visual C#-Anwendungen erstellen. Für dieses Lernprogramm wählen Sie die Visual Basic auf der linken Seite, und wählen Sie dann **ASP.NET MVC 3-Webanwendung**. Benennen Sie das Projekt "MvcMovie", und klicken Sie dann auf **OK**.
+Sie können Anwendungen erstellen, indem Sie entweder Visual Basic oder Visual C# als Programmiersprache verwenden. Wählen Sie auf der linken Seite Visual Basic aus, und wählen Sie dann **ASP.NET MVC 3-Webanwendung**aus. Nennen Sie das Projekt "mvcmovie", und klicken Sie dann auf **OK**.
 
 ![1NewMVCproj_sm](intro-to-aspnet-mvc-3/_static/image7.png)
 
-In der **neues ASP.NET MVC 3-Projekt** wählen Sie im Dialogfeld **Internetanwendung**. Lassen Sie **Razor** als die standardansichts-Engine.
+Wählen Sie im Dialogfeld **Neues ASP.NET MVC 3-Projekt** die Option **Internet Anwendung**aus. Belassen Sie **Razor** als Standard Ansichts-Engine.
 
 ![1InternetAppRazor_SM](intro-to-aspnet-mvc-3/_static/image8.png)
 
-Klicken Sie auf **OK**. Visual Web Developer verwendet eine Standardvorlage für das ASP.NET MVC-Projekt, das Sie gerade erstellt haben, müssen Sie eine funktionierende Anwendung jetzt ohne Benutzereingriff. Dies ist eine einfache "Hello World!" Projekt, und es ist ein guter Ausgangspunkt, um Ihre Anwendung zu starten.
+Klicken Sie auf **OK**. Visual Web Developer hat eine Standardvorlage für das ASP.NET MVC-Projekt verwendet, das Sie gerade erstellt haben, sodass Sie momentan über eine funktionierende Anwendung verfügen, ohne etwas zu tun! Dies ist eine einfache "Hallo Welt!" Das Projekt ist ein guter Ausgangspunkt, um Ihre Anwendung zu starten.
 
 [![](intro-to-aspnet-mvc-3/_static/image10.png)](intro-to-aspnet-mvc-3/_static/image9.png)
 
@@ -85,13 +85,13 @@ Wählen Sie im Menü **Debuggen** die Option **Debugging starten**.
 
 ![](intro-to-aspnet-mvc-3/_static/image11.png)
 
-Beachten Sie, dass die Tastenkombination zum Starten des Debuggings mit F5 ist.
+Beachten Sie, dass die Tastenkombination zum Starten des Debuggens F5 ist.
 
-F5 bewirkt, dass Visual Web Developer zum Starten von eines Development Webservers, und führen Sie Ihre Webanwendung. VWD dann startet einen Browser und Startseite der Anwendung wird geöffnet. Beachten Sie, dass mit dem Text die Adressleiste des Browsers `localhost` und nicht etwas wie `example.com`. Der Grund dafür ist `localhost` verweist immer auf Ihre eigenen lokalen Computer, die in diesem Fall die Anwendung ausgeführt wird Sie gerade erstellt haben. Wenn VWD ein Webprojekt ausgeführt wird, wird ein zufälliger Port für das Projekt verwendet. In der folgenden Abbildung ist die Anzahl der zufälligen Port 43246. Das Projekt wird wahrscheinlich eine andere Portnummer verwenden.
+F5 bewirkt, dass Visual Web Developer einen entwicklungsweb Server startet und die Webanwendung ausgeführt wird. Anschließend wird von vwd ein Browser gestartet und die Startseite der Anwendung geöffnet. Beachten Sie, dass die Adressleiste des Browsers `localhost` und nicht wie `example.com`anzeigt. Der Grund hierfür ist, dass `localhost` immer auf Ihren eigenen lokalen Computer verweist. in diesem Fall wird die Anwendung ausgeführt, die Sie soeben erstellt haben. Wenn VWD ein Webprojekt ausführt, wird ein zufälliger Port für das Projekt verwendet. In der folgenden Abbildung ist die zufällige Portnummer 43246. In Ihrem Projekt wird wahrscheinlich eine andere Portnummer verwendet.
 
 ![](intro-to-aspnet-mvc-3/_static/image12.png)
 
-Standardmäßig gibt dieser Standardvorlage Sie zwei Seiten besuchen und eine einfache Anmeldeseite. Wir ändern, wie diese Anwendung funktioniert, und erfahren Sie etwas, Informationen zu ASP.NET MVC im Prozess. Schließen Sie Ihren Browser, und Ändern von Code.
+Diese Standardvorlage enthält standardmäßig zwei zu besuchende Seiten und eine einfache Anmeldeseite. Ändern Sie die Funktionsweise dieser Anwendung, und erfahren Sie etwas über ASP.NET MVC im Prozess. Schließen Sie Ihren Browser, und ändern Sie den Code.
 
 > [!div class="step-by-step"]
-> [Nächste](adding-a-controller.md)
+> [Weiter](adding-a-controller.md)

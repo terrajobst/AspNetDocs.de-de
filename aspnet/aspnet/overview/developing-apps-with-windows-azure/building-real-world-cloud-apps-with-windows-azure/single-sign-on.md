@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 title: Einmaliges Anmelden (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 7e32f444dc38132296cffd45ac658f5abf51f314
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1ca93cce22487295a24aae95437b3e69dfc5b504
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585282"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457140"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Einmaliges Anmelden (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Bei der Entwicklung einer Cloud-App gibt es viele Sicherheitsaspekte, die Sie berücksichtigen sollten, aber für diese Reihe konzentrieren wir uns auf nur einen: Single Sign-on. Eine Frage, die häufig gestellt wird, lautet: "Ich erstelle hauptsächlich Apps für die Mitarbeiter meines Unternehmens. wie hosten Sie diese apps in der Cloud und ermöglichen es Ihnen, dasselbe Sicherheitsmodell zu verwenden, das meine Mitarbeiter kennen und in der lokalen Umgebung verwenden, wenn Sie apps ausführen, die in der Firewall gehostet werden? " Eine der Möglichkeiten, dieses Szenario zu aktivieren, wird Azure Active Directory (Azure AD) genannt. Azure AD ermöglicht es Ihnen, Lob-Apps (Line-of-Business) über das Internet verfügbar zu machen, und ermöglicht es Ihnen, diese apps auch für Geschäftspartner verfügbar zu machen.
 
@@ -42,7 +42,7 @@ Mit Azure AD können Sie ein Verzeichnis in der Cloud erstellen. Es handelt sich
 
 Sie kann ganz unabhängig von Ihrer lokalen Active Directory sein; Sie können jede gewünschte Person in Sie einfügen und in Internet-apps authentifizieren.
 
-![Windows Azure Active Directory gewähren](single-sign-on/_static/image2.png)
+![Microsoft Azure Active Directory](single-sign-on/_static/image2.png)
 
 Oder Sie können Sie in das lokale Ad integrieren.
 
@@ -68,7 +68,7 @@ Klicken Sie im Verwaltungs Portal auf die Registerkarte Active Directory.
 
 Sie verfügen automatisch über einen Azure AD Mandanten für Ihr Azure-Konto, und Sie können unten auf der Seite auf die Schaltfläche **Hinzufügen** klicken, um weitere Verzeichnisse zu erstellen. Sie sollten z. b. eine für eine Testumgebung und eine für die Produktion benötigen. Überlegen Sie genau, wie Sie ein neues Verzeichnis benennen. Wenn Sie Ihren Namen für das Verzeichnis verwenden und dann Ihren Namen für einen der Benutzer wieder verwenden, kann dies verwirrend sein.
 
-![Hinzufügen von Verzeichnissen](single-sign-on/_static/image6.png)
+![Hinzufügen des Verzeichnisses](single-sign-on/_static/image6.png)
 
 Das Portal bietet vollständige Unterstützung für das Erstellen, löschen und Verwalten von Benutzern in dieser Umgebung. Um beispielsweise einen Benutzer hinzuzufügen, wechseln Sie zur Registerkarte **Benutzer** , und klicken Sie auf die Schaltfläche **Benutzer hinzufügen** .
 
@@ -164,11 +164,11 @@ Wenn Sie das Projekt ausführen, wird eine Anmeldeseite angezeigt, und Sie könn
 
 Wenn Sie die app in Azure bereitstellen, müssen Sie lediglich das Kontrollkästchen **Organisations Authentifizierung aktivieren aktivieren** , sodass Visual Studio die gesamte Konfiguration für Sie übernimmt.
 
-![Web veröffentlichen](single-sign-on/_static/image27.png)
+![Website veröffentlichen](single-sign-on/_static/image27.png)
 
 Diese Screenshots stammen aus einem vollständigen schrittweisen Tutorial, das zeigt, wie Sie eine APP erstellen, die Azure AD Authentifizierung verwendet: [entwickeln von ASP.net-apps mit Azure Active Directory](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Kapitel haben Sie festgestellt, dass Azure Active Directory, Visual Studio und ASP.NET das Einrichten von Single Sign-on in Internet Anwendungen für die Benutzer Ihrer Organisation erleichtern. Ihre Benutzer können sich bei Internet-apps mit denselben Anmelde Informationen anmelden, die Sie zum Anmelden mit Active Directory in Ihrem internen Netzwerk verwenden.
 
@@ -177,9 +177,9 @@ Im [nächsten Kapitel](data-storage-options.md) werden die für eine Cloud-App v
 <a id="resources"></a>
 ## <a name="resources"></a>Ressourcen
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-- [Azure Active Directory-Dokumentation](https://docs.microsoft.com/azure/active-directory/). Portal Seite für Azure AD Dokumentation auf der windowsazure.com-Website. Schritt-für-Schritt-Tutorials finden Sie im Abschnitt " **entwickeln** ".
+- [Dokumentation zu Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) Portal Seite für Azure AD Dokumentation auf der windowsazure.com-Website. Schritt-für-Schritt-Tutorials finden Sie im Abschnitt " **entwickeln** ".
 - [Azure-Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/). Die Portal Seite für die Dokumentation zu Multi-Factor Authentication in Azure.
 - [Authentifizierungs Optionen für das Organisations Konto](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions). Erläuterung der Azure AD Authentifizierungs Optionen im Dialogfeld Visual Studio 2013-Dialog Felds "Neues Projekt".
 - [Microsoft Patterns and Practices-Verbund Identitäts Muster](https://msdn.microsoft.com/library/dn589790.aspx).

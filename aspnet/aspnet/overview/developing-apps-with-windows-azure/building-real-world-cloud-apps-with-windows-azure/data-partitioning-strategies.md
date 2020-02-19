@@ -8,20 +8,20 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: b8c901ec30b6d37237f80100a2978350ac389b7a
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: efc3fa0255aa765e515412c5fa4098303a9d9234
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519166"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457023"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>Strategien für die Daten Partitionierung (entwickeln realer Cloud-apps mit Azure)
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
-[Download korrigieren Projekt](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [E-Book herunterladen](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Die **Building Real World Cloud Apps mit Azure** e-Book basiert darauf, dass eine Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu den Reihen finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Weitere Informationen zu den Reihen finden Sie [im ersten Kapitel](introduction.md).
 
 Früher haben wir gesehen, wie einfach es ist, die webeebene einer cloudanwendung durch Hinzufügen und Entfernen von Webservern zu skalieren. Wenn Sie jedoch alle den gleichen Datenspeicher erreichen, wechselt der Engpass Ihrer Anwendung vom Front-End zum Back-End, und die Datenebene ist am schwierigsten zu skalieren. In diesem Kapitel wird erläutert, wie Sie Ihre Datenebene skalierbar machen, indem Sie Daten in mehreren relationalen Datenbanken partitionieren oder den relationalen Daten Bank Speicher mit anderen Datenspeicher Optionen kombinieren.
 
@@ -85,7 +85,7 @@ Konzeptionell lässt sich leicht erkennen, wie ein Partitionierungsschema funkti
 
 Die Komplikationen können so lange verwaltet werden, wie Sie planen, bevor Sie in die Produktion gehen. Viele Personen, die dies nicht getan haben, hatten Sie später nicht mehr. Im Durchschnitt erhält das Cat-Team (Customer Advisory Team) in etwa einmal pro Monat eine Telefonanruf-Telefonnummer von Kunden, deren apps wirklich sehr groß sind und diese Planung nicht durchlaufen haben. Und Sie sagen etwas wie: "Help! Ich lege alles in einem einzigen Datenspeicher ab, und in 45 Tagen geht es in diesem Bereich nicht mehr. Wenn Sie viel Geschäftslogik in den Zugriff auf Ihren Datenspeicher integriert haben und Sie über Kunden verfügen, die Ihre APP verwenden, gibt es keine gute Zeit für einen Tag, während Sie migrieren. Wir arbeiten am Ende daran, dass der Kunde die Daten im Handumdrehen und ohne Zeit in Betrieb nehmen muss. Das ist sehr spannend und sehr beängstigend, und es ist nicht alles, was Sie tun möchten, wenn Sie es vermeiden können. Wenn Sie dies im Vordergrund tun und in Ihre APP integrieren, wird das Leben erheblich vereinfacht, wenn die APP später wächst.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Ein effektives Partitionierungsschema kann es ihrer Cloud-App ermöglichen, Daten in der Cloud ohne Engpässe zu skalieren. Und Sie müssen nicht für riesige oder umfassende Infrastrukturen bezahlen, wenn Sie die app in einem lokalen Rechenzentrum ausführen. In der Cloud können Sie die Kapazität inkrementell hinzufügen, wenn Sie Sie benötigen, und Sie zahlen nur für die Verwendung bei der Verwendung.
 

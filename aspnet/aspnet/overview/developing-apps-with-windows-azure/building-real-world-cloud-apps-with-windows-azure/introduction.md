@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 8a4ef3aa37a9296e92fbeb513968e3abeee072d0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: b88573b3702b755b155e8da35f5f8a67931bafc6
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585522"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457114"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>Entwickeln realer Cloud-apps mit Azure
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -25,7 +25,7 @@ von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitt
 > 
 > Der Inhalt basiert auf einer Präsentation, die von Scott Guthrie entwickelt wurde und die von ihm auf der Norwegian Developers Conference (NDC) im Juni 2013 ([Teil 1](http://vimeo.com/68215538), [Teil 2](http://vimeo.com/68215602)) und bei Microsoft Tech Ed Australia im September 2013 ([Teil 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324), [Teil 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)) geliefert wurde. [Viele andere](more-patterns-and-guidance.md#acknowledgments) Benutzer haben den Inhalt aktualisiert und erweitert, während er vom Video in das geschriebene Formular übergeht.
 
-## <a name="intended-audience"></a>Beabsichtigte Zielgruppe
+## <a name="intended-audience"></a>Zielpublikum
 
 Entwickler, die sich mit der Entwicklung für die Cloud auskennen, in Erwägung ziehen, in die Cloud zu wechseln oder mit der cloudentwicklung noch nicht vertraut sind, finden hier einen präzisen Überblick über die wichtigsten Konzepte und Vorgehensweisen, die Sie kennen müssen. Die Konzepte werden mit konkreten Beispielen veranschaulicht, und jedes Kapitel verknüpft sich mit anderen Ressourcen, um ausführlichere Informationen zu erhalten. Die Beispiele und die Links zu zusätzlichen Ressourcen sind für Microsoft-Frameworks und-Dienste, die veranschaulichten Grundsätze gelten jedoch auch für andere Webentwicklungs-Frameworks und cloudumgebungen.
 
@@ -63,7 +63,7 @@ Dieses e-book erläutert 13 Empfohlene Muster für die cloudentwicklung. "Patter
 
     - Einführung in Azure Active Directory.
     - Demo: Erstellen einer ASP.net-APP, die Azure Active Directory verwendet.
-- [Optionen für die Datenspeicherung](data-storage-options.md). 
+- [Datenspeicheroptionen](data-storage-options.md). 
 
     - Typen von Daten speichern.
     - Wählen Sie den richtigen Datenspeicher aus.
@@ -154,7 +154,7 @@ All dies erfolgt automatisch. Sie müssen lediglich eine Website erstellen und I
 Ein schnelles und einfaches Tutorial, das zeigt, wie Sie eine Webanwendung in Visual Studio erstellen und auf einer Azure-Website bereitstellen, finden Sie unter Erste Schritte [mit Azure und ASP.net](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Diese Einführung bietet eine Liste der Themen, die im Buch behandelt werden, Screenshots der Beispielanwendung und eine kurze Übersicht über die Web-Apps in Azure App Service Cloud-Umgebung. Einer der großen Vorteile bei der Entwicklung von apps in und für die Cloud besteht darin, dass sich wiederholende Entwicklungsaufgaben, z. b. das Erstellen einer Testumgebung und die Bereitstellung Ihres Codes, leicht automatisieren können. Dies ist der Gegenstand des [nächsten Kapitels](automate-everything.md).
 
@@ -174,4 +174,4 @@ Videos:
 - [Azure Websites Internals mit NIR mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 > [!div class="step-by-step"]
-> [Nächste](automate-everything.md)
+> [Weiter](automate-everything.md)

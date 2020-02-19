@@ -8,20 +8,20 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: fb7e76101cbe6a874ddf5b3429ca2dc6d474334b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1965063a9b613d0e2857cddcc2165f5fda64ec0c
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595763"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455528"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>XSRF/CSRF-Schutz bei ASP.NET MVC und Web Pages
 
-von [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> Die Website übergreifende Anforderungs Fälschung (auch als XSRF oder CSRF bezeichnet) ist ein Angriff auf im Internet gehostete Anwendungen, bei dem eine böswillige Website die Interaktion zwischen einem Client Browser und einer Website beeinflussen kann, die von diesem Browser als vertrauenswürdig eingestuft wird. Diese Angriffe können durchgeführt werden, da Webbrowser Authentifizierungs Token automatisch mit jeder Anforderung an eine Website senden. Das kanonische Beispiel ist ein Authentifizierungs Cookie, z. b. ASP. Das Formular Authentifizierungs Ticket von net. Allerdings können Websites, die einen permanenten Authentifizierungsmechanismus (z. b. Windows-Authentifizierung, Basic usw.) verwenden, diese Angriffe als Ziel verwenden.
+> Die Website übergreifende Anforderungs Fälschung (auch als XSRF oder CSRF bezeichnet) ist ein Angriff auf im Internet gehostete Anwendungen, bei dem eine böswillige Website die Interaktion zwischen einem Client Browser und einer Website beeinflussen kann, die von diesem Browser als vertrauenswürdig eingestuft wird. Diese Angriffe können durchgeführt werden, da Webbrowser Authentifizierungs Token automatisch mit jeder Anforderung an eine Website senden. Ein typisches Beispiel ist ein Authentifizierungscookie, wie das Authentifizierungsticket von ASP.NET. Allerdings können Websites, die einen permanenten Authentifizierungsmechanismus (z. b. Windows-Authentifizierung, Basic usw.) verwenden, diese Angriffe als Ziel verwenden.
 > 
-> Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Phishingangriffe erfordern eine Interaktion mit dem Opfer. Bei einem Phishingangriff imitiert eine böswillige Website die Zielwebsite, und das Opfer wird getäuscht, um dem Angreifer vertrauliche Informationen bereitzustellen. Bei einem XSRF-Angriff sind häufig keine Interaktionen vom Opfer notwendig. Der Angreifer verlässt sich vielmehr darauf, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
+> Ein XSRF-Angriff unterscheidet sich von einem Phishing-Angriff. Bei Phishing-Angriffen ist die Beihilfe des Opfers erforderlich. Bei einem Phishingangriff imitiert eine böswillige Website die Zielwebsite, und das Opfer wird getäuscht, um dem Angreifer vertrauliche Informationen bereitzustellen. Bei einem XSRF-Angriff ist häufig keinerlei Aktion des Opfers erforderlich. Der Angreifer verlässt sich vielmehr darauf, dass der Browser automatisch alle relevanten Cookies an die Zielwebsite sendet.
 > 
 > Weitere Informationen finden Sie unter [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page)(OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 
@@ -155,21 +155,21 @@ Gelegentlich benötigen Entwickler eine strengere Kontrolle über das Anti-XSRF-
 
 Die *getTokens* -Methode übernimmt als Eingabe ein vorhandenes XSRF-Anforderungs Überprüfungs-Sitzungs Token (das möglicherweise NULL ist) und erzeugt als Ausgabe ein neues Sitzungs Token für die XSRF-Anforderungs Überprüfung und ein Feld Token. Die Token sind einfach nicht transparente Zeichen folgen ohne Dekoration. der *formtoken* -Wert wird beispielsweise nicht in eine &lt;Eingabe&gt; Tag umschließt. Der *newcookietoken* -Wert kann NULL sein. Wenn dies der Fall ist, ist der Wert *oldcookietoken* weiterhin gültig, und es muss kein neues Antwort Cookie festgelegt werden. Der Aufrufer von *getTokens* ist dafür verantwortlich, alle notwendigen Antwort Cookies beizubehalten oder das erforderliche Markup zu erzeugen. die *getTokens* -Methode selbst ändert die Antwort nicht als Nebeneffekt. Die *Validate* -Methode nimmt die eingehenden Sitzungs-und Feld Token an und führt die oben genannte Validierungs Logik aus.
 
-### <a name="antiforgeryconfig"></a>Antiforgeryconfig
+### <a name="antiforgeryconfig"></a>AntiForgeryConfig
 
 Der Entwickler kann das Anti-XSRF-System vom Anwendungs\_aus konfigurieren. Die Konfiguration ist Programm gesteuert. Die Eigenschaften des statischen *antiforgeryconfig* -Typs werden unten beschrieben. Die meisten Benutzer, die Ansprüche verwenden, möchten die uniqueclaimtypeidentifier-Eigenschaft festlegen.
 
-| **Property** | **Beschreibung** |
+| **Eigenschaft** | **Beschreibung** |
 | --- | --- |
-| **Additionaldataprovider** | Ein [iantiforgeryadditionaldataprovider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) , der während der tokengenerierung zusätzliche Daten bereitstellt und während der tokenüberprüfung zusätzliche Daten verbraucht. Der Standardwert ist *null*. Weitere Informationen finden Sie im Abschnitt [iantiforgeryadditionaldataprovider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) . |
-| **CookieName** | Eine Zeichenfolge, die den Namen des HTTP-Cookies bereitstellt, das verwendet wird, um das Anti-XSRF-Sitzungs Token zu speichern. Wenn dieser Wert nicht festgelegt ist, wird basierend auf dem bereitgestellten virtuellen Pfad der Anwendung automatisch ein Name generiert. Der Standardwert ist *null*. |
-| **RequireSsl** | Ein boolescher Wert, der festlegt, ob die Anti-XSRF-Token über einen SSL-gesicherten Kanal übermittelt werden müssen. Wenn dieser Wert *true*ist, wird für alle automatisch generierten Cookies das Flag "Secure" festgelegt, und die Anti-XSRF-APIs lösen Sie aus, wenn Sie aus einer Anforderung aufgerufen werden, die nicht über SSL übermittelt wird. Der Standardwert ist *FALSE*. |
-| **Suppressidentityheuristicchecks** | Ein boolescher Wert, der festlegt, ob das Anti-XSRF-System seine Unterstützung für Anspruchs basierte Identitäten deaktivieren soll. Wenn dieser Wert *true*ist, geht das System davon aus, dass *IIdentity.Name* für die Verwendung als eindeutiger Benutzer spezifischer Bezeichner geeignet ist, und versucht nicht, wie in WIF/ACS/beschrieben eine sonderschreibung für " *IClaimsIdentity* " oder " *clclaimsidentity* " zu verwenden. [ Abschnitt zur Anspruchs basierten Authentifizierung](#_WIF_ACS) . Der Standardwert ist `false`sein. |
-| **Uniqueclaimtypeidentifier** | Eine Zeichenfolge, die angibt, welcher Anspruchstyp für die Verwendung als eindeutiger Bezeichner pro Benutzer geeignet ist. Wenn dieser Wert festgelegt wird und die aktuelle *IIdentity* Anspruchs basiert ist, versucht das System, einen Anspruch mit dem durch *uniqueclaimtypeidentifier*angegebenen Typ zu extrahieren, und der entsprechende Wert wird anstelle des Benutzernamens des Benutzers verwendet, wenn das Feld Token wird erzeugt. Wenn der Anspruchstyp nicht gefunden wird, wird die Anforderung vom System nicht bestanden. Der Standardwert ist *null*. Dies bedeutet, dass das System das Tupel (Identitäts Anbieter, namens Bezeichner) wie zuvor beschrieben anstelle des Benutzernamens des Benutzers verwenden soll. |
+| **Additionaldataprovider** | Ein [iantiforgeryadditionaldataprovider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) , der während der tokengenerierung zusätzliche Daten bereitstellt und während der tokenüberprüfung zusätzliche Daten verbraucht. Der Standardwert ist *NULL*. Weitere Informationen finden Sie im Abschnitt [iantiforgeryadditionaldataprovider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) . |
+| **CookieName** | Eine Zeichenfolge, die den Namen des HTTP-Cookies bereitstellt, das verwendet wird, um das Anti-XSRF-Sitzungs Token zu speichern. Wenn dieser Wert nicht festgelegt ist, wird basierend auf dem bereitgestellten virtuellen Pfad der Anwendung automatisch ein Name generiert. Der Standardwert ist *NULL*. |
+| **RequireSsl** | Ein boolescher Wert, der festlegt, ob die Anti-XSRF-Token über einen SSL-gesicherten Kanal übermittelt werden müssen. Wenn dieser Wert *true*ist, wird für alle automatisch generierten Cookies das Flag "Secure" festgelegt, und die Anti-XSRF-APIs lösen Sie aus, wenn Sie aus einer Anforderung aufgerufen werden, die nicht über SSL übermittelt wird. Der Standardwert ist *false*. |
+| **Suppressidentityheuristicchecks** | Ein boolescher Wert, der festlegt, ob das Anti-XSRF-System seine Unterstützung für Anspruchs basierte Identitäten deaktivieren soll. Wenn dieser Wert *true*ist, geht das System davon aus, dass *IIdentity.Name* für die Verwendung als eindeutiger Benutzer spezifischer Bezeichner geeignet ist, und versucht nicht, wie im Abschnitt " [WIF/ACS/Anspruchs basierte Authentifizierung](#_WIF_ACS) " beschrieben eine sonderschreibung für " *IClaimsIdentity* " oder " *clclaimsidentity* " zu finden. Standardwert: `false`. |
+| **Uniqueclaimtypeidentifier** | Eine Zeichenfolge, die angibt, welcher Anspruchstyp für die Verwendung als eindeutiger Bezeichner pro Benutzer geeignet ist. Wenn dieser Wert festgelegt wird und die aktuelle *IIdentity* Anspruchs basiert ist, versucht das System, einen Anspruch des Typs zu extrahieren, der von *uniqueclaimtypeidentifier*festgelegt wurde, und der entsprechende Wert wird anstelle des Benutzernamens des Benutzers verwendet, wenn das Feld Token erzeugt wird. Wenn der Anspruchstyp nicht gefunden wird, wird die Anforderung vom System nicht bestanden. Der Standardwert ist *null*. Dies bedeutet, dass das System das Tupel (Identitäts Anbieter, namens Bezeichner) wie zuvor beschrieben anstelle des Benutzernamens des Benutzers verwenden soll. |
 
 <a id="_IAntiForgeryAdditionalDataProvider"></a>
 
-### <a name="iantiforgeryadditionaldataprovider"></a>Iantiforgeryadditionaldataprovider
+### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
 Der *[iantiforgeryadditionaldataprovider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* -Typ ermöglicht es Entwicklern, das Verhalten des Anti-XSRF-Systems zu erweitern, indem zusätzliche Daten in jedem Token abgerundet werden. Die *getadditionaldata* -Methode wird jedes Mal aufgerufen, wenn ein Feld Token generiert wird, und der Rückgabewert wird in das generierte Token eingebettet. Ein Implementierer könnte einen Zeitstempel, eine Nonce oder einen beliebigen anderen Wert zurückgeben, den Sie von dieser Methode wünscht.
 

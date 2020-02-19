@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 title: Entwerfen, um Fehler zu überstehen (erstellen realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 9bf9acb8b4f8521d03c053c124c5fc4a07d6cb9a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 348232af531b5d53dc3cb46d6d2c7931d95a572d
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585654"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457127"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Entwerfen, um Fehler zu überstehen (erstellen realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Eine der Dinge, die Sie berücksichtigen müssen, wenn Sie einen beliebigen Anwendungstyp erstellen, aber vor allem einen, der in der Cloud ausgeführt wird, in der viele Personen ihn verwenden werden, ist das Entwerfen der APP, damit Fehler ordnungsgemäß behandelt werden können, und die Bereitstellung des Werts weiterhin so viel wie man. Bei ausreichender Zeit geht es in jeder Umgebung oder jedem beliebigen Softwaresystem zu Fehlern. Wie Ihre APP diese Situationen behandelt, hängt davon ab, wie stark Sie Ihre Kunden erhalten und wie viel Zeit Sie für die Analyse und Behebung von Problemen aufwenden müssen.
 
@@ -78,7 +78,7 @@ Wenn Sie SLAs betrachten, ist es wichtig, sich mit der Verwendung mehrerer Diens
 
 Wie hoch ist die maximale Zeitdauer, die Sie für die App basierend auf diesen SLAs des diensslas erwarten? Sie denken möglicherweise, dass die Abfallzeit gleich dem schlechtesten SLA-Prozentsatz oder 99,9% in diesem Fall wäre. Das würde dann der Fall sein, wenn alle drei Dienste immer gleichzeitig fehlgeschlagen sind, aber das ist nicht unbedingt tatsächlich der Fall. Jeder Dienst kann zu unterschiedlichen Zeitpunkten unabhängig ausfallen, sodass Sie die zusammengesetzte SLA berechnen müssen, indem Sie die einzelnen SLA-Nummern multiplizieren.
 
-![Zusammengesetzte SLA](design-to-survive-failures/_static/image4.png)
+![Zusammengesetzte Vereinbarung zum Servicelevel](design-to-survive-failures/_static/image4.png)
 
 Ihre APP könnte also nicht nur 43,2 Minuten im Monat, sondern dreimal so hoch sein, 108 Minuten pro Monat – und liegt weiterhin innerhalb der Azure-SLA-Limits.
 
@@ -98,7 +98,7 @@ Beachten Sie auch, dass nicht jeder clouddienst auch über eine SLA verfügt. We
 
 Einige Clouddienste können den Dienst absichtlich ablehnen, wenn Sie von Ihrer APP verwendet werden. Dies wird als *Drosselung*bezeichnet. Wenn ein Dienst über eine SLA verfügt, sollte er die Bedingungen angeben, unter denen Sie möglicherweise gedrosselt werden, und Ihr App-Entwurf sollte diese Bedingungen vermeiden und entsprechend auf die Drosselung reagieren, wenn dies geschieht. Wenn beispielsweise bei Anforderungen an einen Dienst ein Fehler auftritt, wenn Sie eine bestimmte Anzahl pro Sekunde überschreiten, sollten Sie sicherstellen, dass automatische Wiederholungen nicht so schnell erfolgen, dass die Drosselung fortgesetzt wird. Im [Kapitel zur Behandlung vorübergehender Fehler](transient-fault-handling.md)erfahren Sie mehr über die Drosselung.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Kapitel wurde versucht, zu erkennen, warum eine echte Cloud-app entwickelt werden muss, um Fehler ordnungsgemäß zu überstehen. Beginnend mit dem [nächsten Kapitel](monitoring-and-telemetry.md)werden die verbleibenden Muster in dieser Reihe ausführlicher über einige Strategien erläutert, die Sie hierfür verwenden können:
 

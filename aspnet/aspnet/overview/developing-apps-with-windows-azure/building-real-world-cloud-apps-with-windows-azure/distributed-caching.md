@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 title: Verteiltes Caching (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: c66187b990a828c53bd2f8115e3c9660fc6022ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 87a7516415895e761d1589fd459b93e5c15c0f85
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582807"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456997"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Verteiltes Caching (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Im vorherigen Kapitel wurde die Behandlung vorübergehender Fehler und die erwähnte Zwischenspeicherung als Strategie für einen Trennschalter behandelt. Dieses Kapitel bietet weitere Hintergrundinformationen zur Zwischenspeicherung, einschließlich der Verwendungszwecke, allgemeiner Muster für deren Verwendung und der Implementierung in Azure.
 
@@ -53,7 +53,7 @@ Damit Daten aus dem Cache abgerufen werden können, müssen Sie Sie zuerst speic
 - Push für Hintergrunddaten
 
     Hintergrunddienste übertragen Daten regelmäßig in den Cache, und die APP ruft immer aus dem Cache ab. Dieser Ansatz eignet sich hervorragend für Datenquellen mit hoher Latenzzeit, die nicht erfordern, dass Sie immer die neuesten Daten zurückgeben.
-- Stromunterbrecher
+- Trennschalter
 
     Die Anwendung kommuniziert normalerweise direkt mit dem persistenten Datenspeicher, aber wenn der permanente Datenspeicher Verfügbarkeits Probleme aufweist, ruft die Anwendung Daten aus dem Cache ab. Daten wurden möglicherweise entweder mithilfe der Cache-oder der Push-Strategie für die Hintergrunddaten in den Cache eingefügt. Dabei handelt es sich um eine Strategie zur Fehlerbehandlung und nicht um eine leistungssteigernde Strategie.
 
@@ -82,7 +82,7 @@ Azure bietet die folgenden Caching-Dienste: [Azure redis Cache](https://msdn.mic
 
 Wie im Kapitel " [bewährte Methoden für die Webentwicklung](web-development-best-practices.md)" erwähnt, besteht die bewährte Methode darin, die Verwendung des Sitzungs Zustands zu vermeiden. Wenn für Ihre Anwendung der Sitzungszustand erforderlich ist, besteht die nächste bewährte Methode darin, den standardmäßigen in-Memory-Anbieter zu vermeiden, da dadurch das horizontale hochskalieren (mehrere Instanzen des Webservers) nicht aktiviert wird. Der ASP.NET SQL Server-Sitzungs Zustands Anbieter ermöglicht es einer Site, die auf mehreren Webservern ausgeführt wird, den Sitzungs Status zu verwenden, aber im Vergleich zu einem in-Memory-Anbieter entstehen hohe Latenz Kosten. Die beste Lösung, wenn Sie den Sitzungs Status verwenden müssen, ist die Verwendung eines Cache Anbieters, z. b. der [Sitzungs Zustands Anbieter für Azure Cache](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben gesehen, wie die korrigierende IT-APP das Caching implementieren kann, um die Reaktionszeit und die Skalierbarkeit zu verbessern und die APP für Lesevorgänge weiterhin zu aktivieren, wenn die Datenbank nicht verfügbar ist. Im [nächsten Kapitel](queue-centric-work-pattern.md) zeigen wir, wie Sie die Skalierbarkeit weiter verbessern und die APP für Schreibvorgänge weiterhin reaktionsfähig machen.
 
@@ -90,12 +90,12 @@ Sie haben gesehen, wie die korrigierende IT-APP das Caching implementieren kann,
 
 Weitere Informationen zum Zwischenspeichern finden Sie in den folgenden Ressourcen.
 
-Documentation
+Dokumentation
 
 - [Azure-Cache](https://msdn.microsoft.com/library/gg278356.aspx). Offizielle MSDN-Dokumentation zum Caching in Azure.
 - [Microsoft Patterns and Practices: Azure-Leitfaden](https://msdn.microsoft.com/library/dn568099.aspx). Weitere Informationen finden Sie unter Caching-Anleitungen und Cache Abbild.
 - [Failsafe: Leitfaden für robuste cloudarchitekturen](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Whitepaper von Marc Mercuri, Ulrich Homann und Andrew Townhill. Weitere Informationen finden Sie im Abschnitt zum Zwischenspeichern.
-- [Bewährte Methoden für den Entwurf umfangreicher Dienste in Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Löw. Whitepaper von Mark Simms und Michael thomassy. Weitere Informationen finden Sie im Abschnitt verteilte Zwischenspeicherung.
+- [Bewährte Methoden für den Entwurf umfangreicher Dienste in Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). W. Whitepaper von Mark Simms und Michael thomassy. Weitere Informationen finden Sie im Abschnitt verteilte Zwischenspeicherung.
 - [Verteiltes Zwischenspeichern auf dem Pfad zur Skalierbarkeit](https://msdn.microsoft.com/magazine/dd942840.aspx). Ein älterer (2009) MSDN Magazine-Artikel, aber eine deutlich geschriebene Einführung in das verteilte Caching im allgemeinen; geht ausführlicher vor als in den Abschnitten zum Zwischenspeichern der Whitepaper "failsafe" und "bewährte Methoden".
 
 Videos

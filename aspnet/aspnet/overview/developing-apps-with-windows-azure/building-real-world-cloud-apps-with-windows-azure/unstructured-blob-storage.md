@@ -2,30 +2,30 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 title: Unstrukturierte BLOB Storage (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 03/30/2015
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 2afd4b5cf640eb97080de7e5280409f5e5347731
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: f48b2be755b84dff9b2672bd348c73107602c6dd
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583626"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456790"
 ---
 # <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Unstrukturierte BLOB Storage (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Informationen zum e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Im vorherigen Kapitel haben wir uns mit den Partitionierungs Schemas beschäftigt und erläutert, wie die Korrektur der IT-App Images im Azure Storage BLOB Dienst und andere Aufgaben Daten in Azure SQL-Datenbank speichert. In diesem Kapitel wird der BLOB-Dienst ausführlicher beschrieben, und es wird gezeigt, wie er in Korrektur von IT-Projekt Code implementiert wird.
 
-## <a name="what-is-blob-storage"></a>Was ist BLOB Storage?
+## <a name="what-is-blob-storage"></a>Was ist Blobspeicher?
 
 Der Azure Storage BLOB-Dienst bietet eine Möglichkeit zum Speichern von Dateien in der Cloud. Der BLOB-Dienst bietet eine Reihe von Vorteilen gegenüber der Speicherung von Dateien in einem lokalen Netzwerkdatei System:
 
@@ -127,7 +127,7 @@ Wenn Sie sich den HTML-Code der angezeigten Seite ansehen, sehen Sie, dass die U
 
 [!code-cshtml[Main](unstructured-blob-storage/samples/sample13.cshtml?highlight=11)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben gesehen, wie die Korrektur der IT-App Images im BLOB-Dienst und nur Bild-URLs in der SQL-Datenbank speichert. Wenn Sie den BLOB-Dienst verwenden, ist die SQL-Datenbank viel kleiner, als andernfalls. dadurch ist es möglich, eine Skalierung auf eine fast unbegrenzte Anzahl von Aufgaben durchzusetzen, ohne viel Code schreiben zu müssen.
 

@@ -2,26 +2,26 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 title: Automatisieren Sie alles (entwickeln realer Cloud-apps mit Azure) | Microsoft-Dokumentation
 author: MikeWasson
-description: Das e-Book zur Entwicklung realer Cloud-apps mit Azure basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Vorgehensweisen erläutert, für die er...
+description: Die Building Real World Cloud Apps mit Azure-e-Book basiert auf einer Präsentation von Scott Guthrie entwickelt wurde. Es wird erläutert, 13 Muster und Vorgehensweisen, die er können...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d5c8190d0b0c91bf9e42f6ef03adc5b07a65359a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582893"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457166"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (entwickeln realer Cloud-apps mit Azure)
 
-von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
+von [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
 [Herunterladen des IT-Projekts](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) oder [herunterladen des E-Books](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es werden 13 Muster und Verfahren erläutert, die Ihnen bei der Entwicklung von Web-Apps für die Cloud helfen können. Eine Einführung in das e-Book finden Sie [im ersten Kapitel](introduction.md).
+> Das e-Book zur Entwicklung **realer Cloud-apps mit Azure** basiert auf einer Präsentation von Scott Guthrie. Es wird erläutert, 13 Muster und Methoden, die Ihnen helfen können, werden erfolgreiche Entwicklung von Web-apps für die Cloud. Eine Einführung in das e-Book finden Sie [im ersten Kapitel](introduction.md).
 
 Die ersten drei Muster, die wir betrachten werden, gelten tatsächlich für alle Softwareentwicklungsprojekte, aber insbesondere für cloudumgebungen. Dieses Muster dient zum Automatisieren von Entwicklungsaufgaben. Es ist ein wichtiges Thema, da manuelle Prozesse langsam und fehleranfällig sind. Wenn Sie so viele wie möglich automatisieren, können Sie einen schnellen, zuverlässigen und agilen Workflow einrichten. Es ist für die cloudentwicklung eindeutig, da Sie problemlos viele Aufgaben automatisieren können, die in einer lokalen Umgebung schwierig oder gar nicht automatisiert werden können. Sie können z. b. ganze Testumgebungen einrichten, z. b. neue Webserver-und Back-End-VMS, Datenbanken, BLOB-Speicher (Dateispeicher), Warteschlangen usw.
 
@@ -49,13 +49,13 @@ Für die Korrektur der IT-APP haben wir einige Windows PowerShell-Skripts erstel
 
 Das erste Skript, das wir betrachten, heißt " *New-AzureWebsiteEnv. ps1*". Sie erstellt eine Azure-Umgebung, in der Sie die Korrektur der IT-App für Tests bereitstellen können. Das Skript führt die folgenden Hauptaufgaben aus:
 
-- Erstellen einer Web-App
+- Erstellen Sie eine Web-App.
 - Erstellen Sie ein Speicherkonto. (Erforderlich für blobund Warteschlangen, wie Sie in späteren Kapiteln sehen werden.)
 - Erstellen Sie einen SQL-Datenbankserver und zwei Datenbanken: eine Anwendungsdatenbank und eine Mitgliedschafts Datenbank.
 - Speichern Sie Einstellungen in Azure, die von der APP für den Zugriff auf das Speicherkonto und die Datenbanken verwendet werden.
 - Erstellen Sie Einstellungen Dateien, die zur Automatisierung der Bereitstellung verwendet werden.
 
-### <a name="run-the-script"></a>Ausführen des Skripts
+### <a name="run-the-script"></a>Führen Sie das Skript aus.
 
 > [!NOTE]
 > Dieser Teil des Kapitels zeigt Beispiele für Skripts und die Befehle, die Sie eingeben, um Sie auszuführen. Dies ist eine Demo, die Ihnen nicht alles bietet, was Sie wissen müssen, um die Skripts auszuführen. Schritt-für-Schritt-Anleitungen finden Sie unter [Anhang: die Anwendung zum Beheben von IT-Beispielen](the-fix-it-sample-application.md#deploybase).
@@ -120,7 +120,7 @@ Als erstes erstellt das Skript die Web-App durch Aufrufen des Cmdlets "`New-Azur
 
 [!code-powershell[Main](automate-everything/samples/sample3.ps1?highlight=2)]
 
-### <a name="create-the-storage-account"></a>Erstellen des Speicher Kontos
+### <a name="create-the-storage-account"></a>Erstellen des Speicherkontos
 
 Anschließend führt das Hauptskript das Skript *New-AzureStorage. ps1* aus und gibt " *&lt;Website Name&gt;* Storage" für den Namen des Speicher Kontos und denselben Rechenzentrums Standort wie die Web-App an.
 
@@ -211,7 +211,7 @@ Und für jeden Schlüssel Vorgang schreibt das Skript ausführliche Meldungen, z
 
 [!code-powershell[Main](automate-everything/samples/sample22.ps1)]
 
-## <a name="deployment-script"></a>Bereitstellungs Skript
+## <a name="deployment-script"></a>Bereitstellungsskript
 
 Das Skript " *New-AzureWebsiteEnv. ps1* " für die Erstellung der Umgebung führt das Skript " *Publish-AzureWebsite. ps1* " für die Anwendungs Bereitstellung aus.
 
@@ -239,7 +239,7 @@ Wenn dies der Fall ist, öffnet sich der Browser mit der Website, die in der Clo
 
 ![Reparieren der in Windows Azure bereitgestellten IT-App](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Mit diesen Skripts können Sie sicher sein, dass dieselben Schritte immer in derselben Reihenfolge ausgeführt werden, indem Sie dieselben Optionen verwenden. Dadurch wird sichergestellt, dass jeder Entwickler im Team etwas nicht verpasst oder etwas durcheinander bringen kann oder etwas benutzerdefiniertes auf seinem eigenen Computer bereitstellt, das nicht auf die gleiche Weise in der Umgebung eines anderen Teammitglieds oder in der Produktionsumgebung funktioniert.
 
@@ -254,8 +254,8 @@ Im [nächsten Kapitel](source-control.md) betrachten wir den Quellcode und erlä
 - [Wochenend Skripterstellung: Einstieg in Azure und PowerShell](https://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx). In einem für Windows PowerShell dedizierten Blog bietet dieser Beitrag eine gute Einführung in die Verwendung von PowerShell für Azure-Verwaltungsfunktionen.
 - [Installieren und konfigurieren Sie die plattformübergreifende Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Tutorial zu den ersten Schritten für ein Azure Scripting Framework, das unter Mac und Linux sowie in Windows-Systemen funktioniert.
 - [Abschnitt über Befehlszeilen Tools im Thema herunterladen von Azure sdert und Tools](https://azure.microsoft.com/downloads/). Portal Seite für Dokumentation und Downloads im Zusammenhang mit den Befehlszeilen Tools für Azure.
-- [Automatisieren Sie alles mit den Azure-Verwaltungs Bibliotheken und .net](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman führt die .NET-Verwaltungs-API für Azure ein.
-- [Verwenden von Windows PowerShell-Skripts zum Veröffentlichen in Entwicklungs-und Test Umgebungen](https://msdn.microsoft.com/library/azure/dn642480.aspx). In der MSDN-Dokumentation wird erläutert, wie Sie Veröffentlichungs Skripts verwenden, die von Visual Studio automatisch für Webprojekte generiert werden.
+- [Automating everything with the Azure Management Libraries and .NET (Automatisierung mithilfe der Azure-Verwaltungsbibliotheken und .NET, in englischer Sprache)](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman führt die .NET-Verwaltungs-API für Azure ein.
+- [Veröffentlichung in Entwicklungs- und Testumgebungen mithilfe von Windows PowerShell-Skripts](https://msdn.microsoft.com/library/azure/dn642480.aspx). In der MSDN-Dokumentation wird erläutert, wie Sie Veröffentlichungs Skripts verwenden, die von Visual Studio automatisch für Webprojekte generiert werden.
 - [PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio-Erweiterung, mit der Sprachunterstützung für Windows PowerShell in Visual Studio hinzugefügt wird.
 
 > [!div class="step-by-step"]

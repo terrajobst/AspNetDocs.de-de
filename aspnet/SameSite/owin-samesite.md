@@ -1,16 +1,16 @@
 ---
-title: Chrome, Firefox und Microsoft Edge Chromium verfügen über neue Feature-Flags, die für Tests verwendet werden können.
+title: Arbeiten mit SameSite-Cookies und der Open Web Interface for .net (owin)
 author: rick-anderson
 description: Arbeiten mit SameSite-Cookies und der Open Web Interface for .net (owin)
 ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
-ms.openlocfilehash: ac5ae24eeb9e8e1cc6296667a4bebef72c3eb62c
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: a3353fd0f0332899aaba26b83aea0ff7c3a6d19b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993079"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455736"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite-Cookies und die Open Web Interface für .net (owin)
 
@@ -81,7 +81,7 @@ Der 2019-Entwurf der `SameSite` Spezifikation:
 ## <a name="supporting-older-browsers"></a>Unterstützung älterer Browser
 
 Der 2016-`SameSite` Standard hat vorgeschrieben, dass unbekannte Werte als `SameSite=Strict` Werte behandelt werden müssen. Apps, auf die von älteren Browsern zugegriffen wird, die den 2016-`SameSite` Standard unterstützen, können unterbrechen, wenn Sie eine `SameSite`-Eigenschaft mit dem Wert `None`erhalten Web-Apps müssen die Browser Erkennung implementieren, wenn Sie ältere Browser unterstützen möchten. ASP.NET implementiert die Browser Erkennung nicht, da die Werte von Benutzer-Agents stark flüchtig sind und häufig geändert werden. Ein Erweiterungs Punkt in [icookiemanager](/previous-versions/aspnet/dn800238(v%3Dvs.113)) ermöglicht das Plug in Benutzer-Agent-spezifischer Logik.
-<!-- https://docs.microsoft.com/en-us/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
+<!-- https://docs.microsoft.com/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
 
 Fügen Sie in `Startup.Configuration`Code hinzu, der in etwa wie folgt aussieht:
 
@@ -113,7 +113,7 @@ Apps, die mit Remote Standorten interagieren, z. b. durch die Anmeldung von Drit
 * Testen Sie die Interaktion in mehreren Browsern.
 * Anwenden der in diesem Dokument beschriebenen [Browser Erkennung und-Entschärfung](#sob) .
 
-Testen Sie Web-Apps mithilfe einer Client Version, die für das neue `SameSite` Verhalten verwendet werden kann. Chrome, Firefox und Microsoft Edge Chromium verfügen über neue Feature-Flags, die für Tests verwendet werden können. Nachdem Ihre APP die `SameSite` Patches angewendet hat, testen Sie Sie mit älteren Client Versionen, insbesondere Safari. Weitere Informationen finden Sie [unter unterstützen älterer Browser](#sob) in diesem Dokument.
+Testen Sie Web-Apps mithilfe einer Client Version, die für das neue `SameSite` Verhalten verwendet werden kann. Chrome, Firefox und Chromium Edge verfügen über neue Feature-Flags, die für Tests verwendet werden können. Nachdem Ihre APP die `SameSite` Patches angewendet hat, testen Sie Sie mit älteren Client Versionen, insbesondere Safari. Weitere Informationen finden Sie [unter unterstützen älterer Browser](#sob) in diesem Dokument.
 
 ### <a name="test-with-chrome"></a>Testen mit Chrome
 
@@ -132,19 +132,19 @@ Safari 12 hat den vorherigen Entwurf streng implementiert und schlägt fehl, wen
 
 Die Firefox-Unterstützung für den neuen Standard kann auf Version 68 + getestet werden, indem Sie sich auf der Seite "`about:config`" mit dem Feature-Flag `network.cookie.sameSite.laxByDefault`anmelden. Es gab keine Berichte über Kompatibilitätsprobleme mit älteren Versionen von Firefox.
 
-### <a name="test-with-edge-browser"></a>Testen mit dem Microsoft Edge-Browser
+### <a name="test-with-edge-browser"></a>Testen mit dem Edge-Browser
 
-Microsoft Edge unterstützt den alten `SameSite` Standard. Microsoft Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
+Edge unterstützt den alten `SameSite` Standard. Edge Version 44 hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
 
-### <a name="test-with-edge-chromium"></a>Testen mit Microsoft Edge (Chromium)
+### <a name="test-with-edge-chromium"></a>Testen mit Edge (Chrom)
 
-`SameSite` Flags werden auf der `edge://flags/#same-site-by-default-cookies` Seite festgelegt. Es wurden keine Kompatibilitätsprobleme mit Microsoft Edge Chromium erkannt.
+`SameSite` Flags werden auf der `edge://flags/#same-site-by-default-cookies` Seite festgelegt. Es wurden keine Kompatibilitätsprobleme mit Edge-Chrom erkannt.
 
 ### <a name="test-with-electron"></a>Testen mit einem Elektron
 
 Zu den Electron-Versionen zählen ältere Versionen von Chromium. Beispielsweise ist die Version des von Teams verwendeten Elektrons Chrom 66, das das ältere Verhalten zeigt. Sie müssen ihre eigenen Kompatibilitätstests mit der Version des von Ihrem Produkt verwendeten-Elektronen durchführen. Weitere Informationen finden Sie [unter Unterstützung älterer Browser](#sob) im folgenden Abschnitt.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 * [Chromium-Blog: Entwickler: machen Sie sich bereit für neue SameSite = None; Sichere Cookie-Einstellungen](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [Erläuterte SameSite-Cookies](https://web.dev/samesite-cookies-explained/)

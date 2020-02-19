@@ -8,16 +8,16 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 239980d747c6e0d6be1e9b4fe0371e276e37cf21
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 61bfe5dbac04b57e1461183b66ead2f01fe0734c
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519283"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457764"
 ---
 # <a name="bundling-and-minification"></a>Bundling und Minimierung
 
-von [Rick Anderson]((https://twitter.com/RickAndMSFT))
+von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > Bündelung und Minimierung sind zwei Verfahren, die Sie in ASP.NET 4,5 zur Verbesserung der Anforderungs Ladezeit verwenden können. Bündelung und Minimierung verbessern die Ladezeit, indem die Anzahl der Anforderungen an den Server reduziert und die Größe der angeforderten Assets (z. b. CSS und JavaScript) reduziert wird.
 
@@ -64,7 +64,7 @@ In der folgenden Tabelle werden verschiedene wichtige Unterschiede zwischen dem 
 |  | **Verwenden von B/M** | **Ohne B/M** | **Änderung** |
 | --- | --- | --- | --- |
 | **Datei Anforderungen** | 9 | 34 | 256% |
-| **Gesendete KB** | 3.26 | 11.92 | 266% |
+| **Gesendete KB** | 3,26 | 11.92 | 266% |
 | **KB empfangen** | 388.51 | 530 | 36% |
 | **Ladezeit** | 510 MS | 780 MS | 53% |
 
@@ -157,7 +157,7 @@ Stellen Sie sich ein Projekt mit den folgenden JavaScript-Dateien vor:
 - *Skripts\\häufig\\"addaltdeimg. js"*
 - *Skripts\\gängige\\"" "" "*
 - *Skripts\\gemeinsame\\"" "" "" ".*
-- *Scripts\\Common\\Sub1\\ToggleLinks.js*
+- *Skripts\\Common\\Sub1\\"degglelinjs. js"*
 
 ![dir IMAG](bundling-and-minification/_static/image7.png)
 
@@ -165,13 +165,13 @@ In der folgenden Tabelle werden die einem Paket hinzugefügten Dateien wie gezei
 
 | **Call** | **Hinzugefügte Dateien oder ausgelöste Ausnahme** |
 | --- | --- |
-| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js*, *ToggleDiv.js*, *ToggleImg.js* |
-| Include("~/Scripts/Common/T\*.js") | Ungültige Muster Ausnahme. Das Platzhalter Zeichen ist nur für das Präfix oder Suffix zulässig. |
-| Include("~/Scripts/Common/\*og.\*") | Ungültige Muster Ausnahme. Nur ein Platzhalter Zeichen ist zulässig. |
-| Include ("~/Scripts/Common/T\*") | *ToggleDiv.js*, *ToggleImg.js* |
+| Include ("~/Scripts/Common/\*. js") | *Addaltdeimg. js*, "", " *", "* ", "", "", " *", "* ". |
+| Include ("~/Scripts/Common/T\*. js") | Ungültige Muster Ausnahme. Das Platzhalter Zeichen ist nur für das Präfix oder Suffix zulässig. |
+| Include ("~/Scripts/Common/\*og.\*") | Ungültige Muster Ausnahme. Nur ein Platzhalter Zeichen ist zulässig. |
+| Include ("~/Scripts/Common/T\*") | " *Degglediv. js*", " *deggleimg. js* " |
 | Include ("~/Scripts/Common/\*") | Ungültige Muster Ausnahme. Ein reines Platzhalter Segment ist ungültig. |
-| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js*, *ToggleImg.js* |
-| Include Directory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js*, *ToggleImg.js*, *ToggleLinks.js* |
+| Include Directory ("~/Scripts/Common", "T\*") | " *Degglediv. js*", " *deggleimg. js* " |
+| Include Directory ("~/Scripts/Common", "T\*", true) | " *Degglediv. js* *", "* *deggleimg. js*", "" "" " |
 
 Das explizite hinzufügen jeder Datei zu einem Bündel ist aus den folgenden Gründen im Allgemeinen das über das Platzhalter Laden von Dateien vorzuziehen:
 
@@ -230,7 +230,7 @@ Der `System.Web.Optimization`-Namespace wird in *System. Web. Optimization. dll*
 
 *Ich verwende Twitter, um Quick Posts und Freigabe Links zu erstellen. Mein Twitter-Handle ist*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - Video:[bündeln und optimieren](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing) durch [Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [Hinzufügen der Weboptimierung zu einer Web Pages-Website](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx).
