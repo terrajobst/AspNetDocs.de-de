@@ -264,13 +264,13 @@ Safari 12 hat den vorherigen Entwurf streng implementiert und schlägt fehl, wen
 
 Die Firefox-Unterstützung für den neuen Standard kann auf Version 68 + getestet werden, indem Sie sich auf der Seite "`about:config`" mit dem Feature-Flag `network.cookie.sameSite.laxByDefault`anmelden. Es gab keine Berichte über Kompatibilitätsprobleme mit älteren Versionen von Firefox.
 
-### <a name="test-with-edge-legacy-browser"></a>Test mit Edge-Browser (Legacy)
+### <a name="test-with-edge-legacy-browser"></a>Test mit Microsoft Edge-Browser (Legacy)
 
-Edge unterstützt den alten SameSite-Standard. Edge Version 44 + hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
+Microsoft Edge unterstützt den alten SameSite-Standard. Microsoft Edge Version 44 + hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
 
-### <a name="test-with-edge-chromium"></a>Testen mit Edge (Chrom)
+### <a name="test-with-edge-chromium"></a>Testen mit Microsoft Edge (Chrom)
 
-Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Edge-Chrom erkannt.
+Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Microsoft Edge Chromium erkannt.
 
 ### <a name="test-with-electron"></a>Testen mit einem Elektron
 
