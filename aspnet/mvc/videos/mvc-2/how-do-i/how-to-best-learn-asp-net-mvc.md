@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-to-best-learn-asp-net-mvc
-title: 'Gewusst wie: ASP.NET MVC optimal erfahren Sie mehr | Microsoft-Dokumentation'
+title: Best mögliche Informationen ASP.NET MVC | Microsoft-Dokumentation
 author: shanselman
-description: Microsofts Scott Hanselman erfahren Sie, was Sie benötigen, erfahren, wie Sie ASP.NET MVC verwenden, um Ihre Webanwendungen zu entwickeln.
+description: Scott Hanselman von Microsoft zeigt Ihnen, was Sie benötigen, um zu erfahren, wie Sie ASP.NET MVC zum Entwickeln Ihrer Webanwendungen verwenden.
 ms.author: riande
 ms.date: 03/09/2010
 ms.assetid: 79e2a85d-e214-4e31-a9da-0980f5f86935
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-to-best-learn-asp-net-mvc
 msc.type: video
 ms.openlocfilehash: 5ccc057cfd2567e4b89fc8dcb1697a533b5df19e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407418"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450429"
 ---
-# <a name="how-to-best-learn-aspnet-mvc"></a><span data-ttu-id="05059-103">Wie Sie am besten erfahren, ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="05059-103">How to Best Learn ASP.NET MVC</span></span>
+# <a name="how-to-best-learn-aspnet-mvc"></a><span data-ttu-id="d2624-103">Best mögliche Informationen ASP.NET MVC</span><span class="sxs-lookup"><span data-stu-id="d2624-103">How to Best Learn ASP.NET MVC</span></span>
 
-<span data-ttu-id="05059-104">durch [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="05059-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="d2624-104">von [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="d2624-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="05059-105">Microsofts Scott Hanselman erfahren Sie, was Sie benötigen, erfahren, wie Sie ASP.NET MVC verwenden, um Ihre Webanwendungen zu entwickeln.</span><span class="sxs-lookup"><span data-stu-id="05059-105">Microsoft's Scott Hanselman shows you what you need to learn how to use ASP.NET MVC to develop your web applications.</span></span>
+<span data-ttu-id="d2624-105">Scott Hanselman von Microsoft zeigt Ihnen, was Sie benötigen, um zu erfahren, wie Sie ASP.NET MVC zum Entwickeln Ihrer Webanwendungen verwenden.</span><span class="sxs-lookup"><span data-stu-id="d2624-105">Microsoft's Scott Hanselman shows you what you need to learn how to use ASP.NET MVC to develop your web applications.</span></span>
 
-[<span data-ttu-id="05059-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="05059-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-best-learn-asp-net-mvc)
+[<span data-ttu-id="d2624-106">&#9654;Video ansehen (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="d2624-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-best-learn-asp-net-mvc)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="05059-107">Vorherige</span><span class="sxs-lookup"><span data-stu-id="05059-107">Previous</span></span>](5-minute-introduction-to-aspnet-mvc.md)
+> [<span data-ttu-id="d2624-107">Previous</span><span class="sxs-lookup"><span data-stu-id="d2624-107">Previous</span></span>](5-minute-introduction-to-aspnet-mvc.md)

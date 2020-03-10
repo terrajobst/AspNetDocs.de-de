@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/5-minute-introduction-to-aspnet-web-forms
-title: Einführung zu ASP.NET Web Forms | Microsoft-Dokumentation
+title: Einführung in ASP.net Web Forms | Microsoft-Dokumentation
 author: shanselman
-description: Scott Hanselman stellt eine 5-minütige Einführung in ASP.NET Web Forms.
+description: Scott Hanselman stellt eine 5-minütige Einführung in ASP.net Web Forms dar.
 ms.author: riande
 ms.date: 04/12/2011
 ms.assetid: 44dfd1e3-2b19-490f-8c27-9c860c5309d8
 msc.legacyurl: /web-forms/videos/how-do-i/5-minute-introduction-to-aspnet-web-forms
 msc.type: video
 ms.openlocfilehash: 70a21646031d135339fd0582f3b9436eb769faa5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388581"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78516279"
 ---
-# <a name="intro-to-aspnet-web-forms"></a><span data-ttu-id="c61f1-103">Einführung zu ASP.NET Web Forms</span><span class="sxs-lookup"><span data-stu-id="c61f1-103">Intro to ASP.NET Web Forms</span></span>
+# <a name="intro-to-aspnet-web-forms"></a><span data-ttu-id="7cf70-103">Einführung in ASP.net Web Forms</span><span class="sxs-lookup"><span data-stu-id="7cf70-103">Intro to ASP.NET Web Forms</span></span>
 
-<span data-ttu-id="c61f1-104">durch [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="c61f1-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="7cf70-104">von [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="7cf70-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="c61f1-105">Scott Hanselman stellt eine 5-minütige Einführung in ASP.NET Web Forms.</span><span class="sxs-lookup"><span data-stu-id="c61f1-105">Scott Hanselman presents a 5 minute introduction to ASP.NET Web Forms.</span></span>
+<span data-ttu-id="7cf70-105">Scott Hanselman stellt eine 5-minütige Einführung in ASP.net Web Forms dar.</span><span class="sxs-lookup"><span data-stu-id="7cf70-105">Scott Hanselman presents a 5 minute introduction to ASP.NET Web Forms.</span></span>
 
-[<span data-ttu-id="c61f1-106">&#9654;Sehen Sie sich Video (5 Minuten)</span><span class="sxs-lookup"><span data-stu-id="c61f1-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/5-minute-introduction-to-aspnet-web-forms)
+[<span data-ttu-id="7cf70-106">&#9654;Video ansehen (5 Minuten)</span><span class="sxs-lookup"><span data-stu-id="7cf70-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/5-minute-introduction-to-aspnet-web-forms)

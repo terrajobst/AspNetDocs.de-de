@@ -1,6 +1,6 @@
 ---
 uid: identity/overview/features-api/index
-title: ASP.NET Identity-Features und -API – ASP.NET 4.x
+title: ASP.net Identity Features & API-ASP.NET 4. x
 author: rick-anderson
 description: Features und API
 ms.author: riande
@@ -10,16 +10,16 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api
 msc.type: chapter
 ms.openlocfilehash: 377834bde332707f8e1e08b41a5d126bfb4db156
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121523"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472137"
 ---
-# <a name="aspnet-4x-identity-features--api"></a><span data-ttu-id="62145-103">Identitätsfunktionen für ASP.NET 4.x- und -API</span><span class="sxs-lookup"><span data-stu-id="62145-103">ASP.NET 4.x Identity Features & API</span></span>
+# <a name="aspnet-4x-identity-features--api"></a><span data-ttu-id="aaa8f-103">ASP.NET 4. x Identity Features &-API</span><span class="sxs-lookup"><span data-stu-id="aaa8f-103">ASP.NET 4.x Identity Features & API</span></span>
 
-> <span data-ttu-id="62145-104">Features und API</span><span class="sxs-lookup"><span data-stu-id="62145-104">Features & API</span></span>
+> <span data-ttu-id="aaa8f-104">Features und API</span><span class="sxs-lookup"><span data-stu-id="aaa8f-104">Features & API</span></span>
 
-- [<span data-ttu-id="62145-105">Best Practices für die Bereitstellung von Kennwörtern und anderer sensibler Daten für ASP.NET und Azure App Service</span><span class="sxs-lookup"><span data-stu-id="62145-105">Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service</span></span>](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
-- [<span data-ttu-id="62145-106">Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity (C#)</span><span class="sxs-lookup"><span data-stu-id="62145-106">Account Confirmation and Password Recovery with ASP.NET Identity (C#)</span></span>](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [<span data-ttu-id="62145-107">Zweistufige Authentifizierung mithilfe von SMS und E-Mails mit ASP.NET Identity</span><span class="sxs-lookup"><span data-stu-id="62145-107">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [<span data-ttu-id="aaa8f-105">Best Practices für die Bereitstellung von Kennwörtern und anderer sensibler Daten für ASP.NET und Azure App Service</span><span class="sxs-lookup"><span data-stu-id="aaa8f-105">Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service</span></span>](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
+- [<span data-ttu-id="aaa8f-106">Kontobestätigung und Kennwortwiederherstellung in ASP.NET Identity (C#)</span><span class="sxs-lookup"><span data-stu-id="aaa8f-106">Account Confirmation and Password Recovery with ASP.NET Identity (C#)</span></span>](account-confirmation-and-password-recovery-with-aspnet-identity.md)
+- [<span data-ttu-id="aaa8f-107">Zweistufige Authentifizierung mithilfe von SMS und E-Mails mit ASP.NET Identity</span><span class="sxs-lookup"><span data-stu-id="aaa8f-107">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)

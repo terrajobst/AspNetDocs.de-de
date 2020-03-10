@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-2-filtering
-title: 'ASP.NET vNext Videos: Modellbindung, Teil 2: Filterung | Microsoft-Dokumentation'
+title: 'ASP.NET vNext-Videos: Modell Bindung Teil 2-Filtern | Microsoft-Dokumentation'
 author: DamianEdwards
-description: In diesem Video weiterhin Damian Edwards die Demo der modellbindung, indem erläutert wird, filtern.
+description: In diesem Video wird die Demonstration der Modell Bindung durch die Erläuterung der Filterung fortgesetzt.
 ms.author: riande
 ms.date: 08/12/2011
 ms.assetid: b1d73fae-57c9-4b06-b5df-d68dc3b3cf5e
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-2-filtering
 msc.type: video
 ms.openlocfilehash: 65a37673342344c3412ace48abf385c7bc88c1d6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417467"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517143"
 ---
-# <a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a><span data-ttu-id="b06d8-103">ASP.NET vNext Videos: Modellbindung, Teil 2: Filtern</span><span class="sxs-lookup"><span data-stu-id="b06d8-103">ASP.NET vNext Videos: Model Binding Part 2 - Filtering</span></span>
+# <a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a><span data-ttu-id="80dbe-103">ASP.NET vNext-Videos: Modell Bindung Teil 2-Filtern</span><span class="sxs-lookup"><span data-stu-id="80dbe-103">ASP.NET vNext Videos: Model Binding Part 2 - Filtering</span></span>
 
-<span data-ttu-id="b06d8-104">durch [Damian Edwards](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="b06d8-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
+<span data-ttu-id="80dbe-104">von [Damian Edwards](https://github.com/DamianEdwards)</span><span class="sxs-lookup"><span data-stu-id="80dbe-104">by [Damian Edwards](https://github.com/DamianEdwards)</span></span>
 
-<span data-ttu-id="b06d8-105">In diesem Video weiterhin Damian Edwards die Demo der modellbindung, indem erläutert wird, filtern.</span><span class="sxs-lookup"><span data-stu-id="b06d8-105">In this video, Damian Edwards continues the demonstration of model binding by explaining filtering.</span></span>
+<span data-ttu-id="80dbe-105">In diesem Video wird die Demonstration der Modell Bindung durch die Erläuterung der Filterung fortgesetzt.</span><span class="sxs-lookup"><span data-stu-id="80dbe-105">In this video, Damian Edwards continues the demonstration of model binding by explaining filtering.</span></span>
 
-[<span data-ttu-id="b06d8-106">&#9654;Sehen Sie sich Video (1 Minuten)</span><span class="sxs-lookup"><span data-stu-id="b06d8-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-2-filtering)
+[<span data-ttu-id="80dbe-106">&#9654;Video ansehen (1 Minute)</span><span class="sxs-lookup"><span data-stu-id="80dbe-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-2-filtering)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="b06d8-107">[Zurück](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
-> [Weiter](aspnet-vnext-videos-model-binding-part-3-updating.md)</span><span class="sxs-lookup"><span data-stu-id="b06d8-107">[Previous](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
+> <span data-ttu-id="80dbe-107">[Zurück](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
+> [Weiter](aspnet-vnext-videos-model-binding-part-3-updating.md)</span><span class="sxs-lookup"><span data-stu-id="80dbe-107">[Previous](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
 [Next](aspnet-vnext-videos-model-binding-part-3-updating.md)</span></span>

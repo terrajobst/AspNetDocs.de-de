@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
-title: 'Gewusst wie: Verwenden der ViewStateMode-Eigenschaft für die Verwaltung von ViewState? | Microsoft-Dokumentation'
+title: 'Gewusst wie: Verwenden der Eigenschaft "ViewStateMode" für die Verwaltung von "ViewState" | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem video Chris Pels zeigt, wie die ViewStateMode-Eigenschaft verwenden, beim Entwerfen von ViewState für eine Website in ASP.NET.
+description: In diesem Video zeigt Chris Pels, wie die ViewStateMode-Eigenschaft beim Entwerfen von ViewState für eine Website in ASP.NET verwendet wird.
 ms.author: riande
 ms.date: 09/17/2010
 ms.assetid: e5b1cc5e-fe11-4ede-9e28-af6477277b0c
 msc.legacyurl: /web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
 msc.type: video
 ms.openlocfilehash: 5dcad703e4667af70e3c833f268b83daf155f108
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393534"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457905"
 ---
-# <a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a><span data-ttu-id="e505f-104">Gewusst wie: Verwenden der ViewStateMode-Eigenschaft für die Verwaltung von ViewState?</span><span class="sxs-lookup"><span data-stu-id="e505f-104">How Do I: Use the ViewStateMode Property for Managing ViewState?</span></span>
+# <a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a><span data-ttu-id="c7f9e-104">Gewusst wie: Verwenden der Eigenschaft "ViewStateMode" für die Verwaltung von "ViewState"</span><span class="sxs-lookup"><span data-stu-id="c7f9e-104">How Do I: Use the ViewStateMode Property for Managing ViewState?</span></span>
 
-<span data-ttu-id="e505f-105">durch [Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="e505f-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="c7f9e-105">von [Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="c7f9e-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="e505f-106">In diesem Video [Chris Pels](http://www.idevtech.com) zeigt, wie die ViewStateMode-Eigenschaft zu verwenden, wenn der Ansichtszustand für eine Website in ASP.NET zu entwerfen.</span><span class="sxs-lookup"><span data-stu-id="e505f-106">In this video [Chris Pels](http://www.idevtech.com) shows how to use the ViewStateMode property when designing ViewState for a web site in ASP.NET.</span></span> <span data-ttu-id="e505f-107">Zunächst wird die Funktionalität für die Verwaltung des Ansichtszustands in ASP.NET vor ASP.NET 4 erläutert.</span><span class="sxs-lookup"><span data-stu-id="e505f-107">First, the functionality for managing ViewState in ASP.NET prior to ASP.NET 4 is discussed.</span></span> <span data-ttu-id="e505f-108">Als Nächstes wird die ViewStateMode-Eigenschaft, die in ASP.NET 4 hinzugefügt auf Seitenebene sowohl in einer Beispielseite mit geschachtelten untergeordneten Steuerelementen veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="e505f-108">Next, the ViewStateMode property added in ASP.NET 4 is demonstrated both at the page level and in a sample page with nested child controls.</span></span> <span data-ttu-id="e505f-109">Die Wichtigkeit der hierarchischen Vererbung von der ViewStateMode-Eigenschaft wird erläutert.</span><span class="sxs-lookup"><span data-stu-id="e505f-109">The importance of the hierarchical inheritance of the ViewStateMode property is discussed.</span></span> <span data-ttu-id="e505f-110">Zum Schluss wird ein Beispielszenario für das Minimieren der Ansichtszustand für ASP.NET-Seiten veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="e505f-110">Finally, a sample scenario for minimizing ViewState on ASP.NET pages is demonstrated.</span></span>
+<span data-ttu-id="c7f9e-106">In diesem Video zeigt [Chris Pels](http://www.idevtech.com) , wie die ViewStateMode-Eigenschaft beim Entwerfen von ViewState für eine Website in ASP.NET verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="c7f9e-106">In this video [Chris Pels](http://www.idevtech.com) shows how to use the ViewStateMode property when designing ViewState for a web site in ASP.NET.</span></span> <span data-ttu-id="c7f9e-107">Zuerst wird die Funktionalität zur Verwaltung von ViewState in ASP.net vor ASP.NET 4 erörtert.</span><span class="sxs-lookup"><span data-stu-id="c7f9e-107">First, the functionality for managing ViewState in ASP.NET prior to ASP.NET 4 is discussed.</span></span> <span data-ttu-id="c7f9e-108">Im nächsten Schritt wird die in ASP.NET 4 hinzugefügte viewstatuemode-Eigenschaft sowohl auf der Seitenebene als auch in einer Beispielseite mit untergeordneten Steuerelementen veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="c7f9e-108">Next, the ViewStateMode property added in ASP.NET 4 is demonstrated both at the page level and in a sample page with nested child controls.</span></span> <span data-ttu-id="c7f9e-109">Die Bedeutung der hierarchischen Vererbung der VIEWSTATUS EMODE-Eigenschaft wird erläutert.</span><span class="sxs-lookup"><span data-stu-id="c7f9e-109">The importance of the hierarchical inheritance of the ViewStateMode property is discussed.</span></span> <span data-ttu-id="c7f9e-110">Zum Schluss wird ein Beispielszenario für das Minimieren von ViewState auf ASP.NET Seiten veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="c7f9e-110">Finally, a sample scenario for minimizing ViewState on ASP.NET pages is demonstrated.</span></span>
 
-[<span data-ttu-id="e505f-111">&#9654;Sehen Sie sich Video (16 Minuten)</span><span class="sxs-lookup"><span data-stu-id="e505f-111">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
+[<span data-ttu-id="c7f9e-111">&#9654;Video ansehen (16 Minuten)</span><span class="sxs-lookup"><span data-stu-id="c7f9e-111">&#9654; Watch video (16 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="e505f-112">Vorherige</span><span class="sxs-lookup"><span data-stu-id="e505f-112">Previous</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
+> [<span data-ttu-id="c7f9e-112">Previous</span><span class="sxs-lookup"><span data-stu-id="c7f9e-112">Previous</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
