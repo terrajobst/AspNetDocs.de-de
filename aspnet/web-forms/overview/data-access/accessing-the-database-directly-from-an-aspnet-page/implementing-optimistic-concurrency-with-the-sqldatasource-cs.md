@@ -9,11 +9,11 @@ ms.assetid: df999966-ac48-460e-b82b-4877a57d6ab9
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 87fca52e2e8be844411b2fff8382c6002eccbe09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598184"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78445497"
 ---
 # <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>Implementieren von optimistischer Parallelität mit dem SqlDataSource-Steuerelement (C#)
 
@@ -183,7 +183,7 @@ Wie Abbildung 9 zeigt, wird bei diesen beiden Ereignis Handlern eine sehr merkli
 
 **Abbildung 9**: eine Meldung wird angezeigt, wenn eine Parallelitäts Verletzung vorliegt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](implementing-optimistic-concurrency-with-the-sqldatasource-cs/_static/image16.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Erstellen einer Webanwendung, bei der mehrere gleichzeitige Benutzer möglicherweise dieselben Daten bearbeiten, ist es wichtig, die Optionen für die Parallelitäts Steuerung zu beachten. Standardmäßig verwenden die ASP.net-datenweb Steuerelemente und Datenquellen-Steuerelemente keine Parallelitäts Steuerung. Wie in diesem Tutorial gezeigt, ist die Implementierung der Steuerung der vollständigen Parallelität mit SqlDataSource relativ schnell und einfach. SqlDataSource verarbeitet den größten Teil der Arbeit-Anweisung für die hinzugefügten erweiterten `WHERE` Klauseln zu den automatisch generierten `UPDATE` und `DELETE` Anweisungen, aber es gibt einige Feinheiten bei der Behandlung von `NULL` Wert Spalten, wie im Abschnitt ordnungsgemäße Behandlung `NULL` Werte erläutert.
 
@@ -191,7 +191,7 @@ In diesem Tutorial wird die Untersuchung von SqlDataSource abgeschlossen. Unsere
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

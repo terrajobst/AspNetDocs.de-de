@@ -9,11 +9,11 @@ ms.assetid: 57459065-ed7c-4dfe-ac9c-54c093abc261
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ad6a96f2721510c2478f707c8eed018ae797f27a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74603215"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78427119"
 ---
 # <a name="working-with-computed-columns-c"></a>Arbeiten mit berechneten Spalten (C#)
 
@@ -101,7 +101,7 @@ Nachdem Sie die Haupt Abfrage eingegeben und auf "weiter" geklickt haben, könne
 
 **Abbildung 4**: Anpassen der Namen der automatisch generierten gespeicherten Prozeduren ([Klicken Sie, um das Bild in voller Größe anzuzeigen](working-with-computed-columns-cs/_static/image12.png))
 
-Im nächsten Schritt des Assistenten können wir die TableAdapter s-Methoden benennen und die Muster angeben, die für den Zugriff auf und das Aktualisieren von Daten verwendet werden. Lassen Sie alle drei Kontrollkästchen aktiviert, benennen Sie aber die `GetData`-Methode in `GetSuppliers`um. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Im nächsten Schritt des Assistenten können wir die TableAdapter s-Methoden benennen und die Muster angeben, die für den Zugriff auf und das Aktualisieren von Daten verwendet werden. Lassen Sie alle drei Kontrollkästchen aktiviert, benennen Sie aber die `GetData`-Methode in `GetSuppliers`um. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![die GetData-Methode in getsuppliers umbenennen](working-with-computed-columns-cs/_static/image14.png)](working-with-computed-columns-cs/_static/image13.png)
 
@@ -111,7 +111,7 @@ Nachdem Sie auf "Fertigstellen" geklickt haben, erstellt der Assistent die vier 
 
 ## <a name="step-4-including-the-computed-column-in-the-tableadapter-s-main-query"></a>Schritt 4: einschließen der berechneten Spalte in die Haupt Abfrage des TableAdapter s
 
-Wir müssen nun den in Schritt 3 erstellten TableAdapter und die Datentabelle aktualisieren, um die `FullContactName` berechnete Spalte einzubeziehen. Dieser Vorgang umfasst zwei Schritte:
+Wir müssen nun den in Schritt 3 erstellten TableAdapter und die Datentabelle aktualisieren, um die `FullContactName` berechnete Spalte einzubeziehen. Dies umfasst zwei Schritte:
 
 1. Aktualisieren der gespeicherten Prozedur `Suppliers_Select`, um die berechnete Spalte `FullContactName` zurückzugeben, und
 2. Aktualisieren der Datentabelle, um eine entsprechende `FullContactName` Spalte einzuschließen.
@@ -128,7 +128,7 @@ Kehren Sie anschließend zum DataSet-Designer zurück, klicken Sie mit der recht
 
 **Abbildung 6**: Ausführen des Konfigurations-Assistenten für TableAdapter s zum Aktualisieren der Spalten der Datentabelle ([Klicken Sie, um das Bild in voller Größe anzuzeigen](working-with-computed-columns-cs/_static/image18.png))
 
-Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen. Dadurch wird dem `SuppliersDataTable`automatisch eine entsprechende Spalte hinzugefügt. Der TableAdapter-Assistent ist intelligent genug, um zu erkennen, dass die `FullContactName` Spalte eine berechnete Spalte und daher schreibgeschützt ist. Folglich wird die `ReadOnly`-Eigenschaft der Spalte auf `true`festgelegt. Um dies zu überprüfen, wählen Sie die Spalte aus der `SuppliersDataTable` aus, und navigieren Sie dann zum Eigenschaftenfenster (siehe Abbildung 7). Beachten Sie, dass die `FullContactName` Spalten `DataType` und `MaxLength` Eigenschaften ebenfalls entsprechend festgelegt werden.
+Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen. Dadurch wird dem `SuppliersDataTable`automatisch eine entsprechende Spalte hinzugefügt. Der TableAdapter-Assistent ist intelligent genug, um zu erkennen, dass die `FullContactName` Spalte eine berechnete Spalte und daher schreibgeschützt ist. Folglich wird die `ReadOnly`-Eigenschaft der Spalte auf `true`festgelegt. Um dies zu überprüfen, wählen Sie die Spalte aus der `SuppliersDataTable` aus, und navigieren Sie dann zum Eigenschaftenfenster (siehe Abbildung 7). Beachten Sie, dass die `FullContactName` Spalten `DataType` und `MaxLength` Eigenschaften ebenfalls entsprechend festgelegt werden.
 
 [![die fullcontactname-Spalte als schreibgeschützt gekennzeichnet ist.](working-with-computed-columns-cs/_static/image20.png)](working-with-computed-columns-cs/_static/image19.png)
 
@@ -160,7 +160,7 @@ Schließlich werden Sie vom Assistenten aufgefordert, die Datenzugriffs Muster u
 
 **Abbildung 10**: Benennen der TableAdapter-Methoden `FillBySupplierID` und `GetSupplierBySupplierID` ([Klicken Sie, um das Bild in voller Größe anzuzeigen](working-with-computed-columns-cs/_static/image30.png))
 
-Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 ## <a name="step-6-creating-the-business-logic-layer"></a>Schritt 6: Erstellen der Geschäftslogik Ebene
 
@@ -210,7 +210,7 @@ Aktualisieren Sie den Wert von mindestens einer der bearbeitbaren Spalten, und k
 > [!NOTE]
 > Die GridView verwendet derzeit boundfields für die bearbeitbaren Felder, was zur Standard Bearbeitungs Schnittstelle führt. Da das `CompanyName` Feld erforderlich ist, sollte es in ein TemplateField-Element konvertiert werden, das ein "Requirements dfieldvalidator" enthält. Ich lasse dies als Übung für den interessierten Reader aus. Ausführliche Anweisungen zum Konvertieren eines BoundField in ein TemplateField und zum Hinzufügen von Validierungs Steuerelementen finden [Sie unter Hinzufügen von Validierungs Steuerelementen zum Bearbeitungs-und einfügeschnittstellen](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md) -Tutorial.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Definieren des Schemas für eine Tabelle ermöglicht Microsoft SQL Server das einschließen berechneter Spalten. Dabei handelt es sich um Spalten, deren Werte anhand eines Ausdrucks berechnet werden, der in der Regel auf die Werte aus anderen Spalten im gleichen Datensatz verweist. Da die Werte für berechnete Spalten auf einem Ausdruck basieren, sind Sie schreibgeschützt und können nicht in einer `INSERT`-oder `UPDATE` Anweisung einem Wert zugewiesen werden. Dies führt zu Problemen, wenn eine berechnete Spalte in der Haupt Abfrage eines TableAdapter verwendet wird, der versucht, automatisch entsprechende `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen zu generieren.
 
@@ -218,7 +218,7 @@ In diesem Tutorial haben wir Techniken zum Umgehen der Probleme erläutert, die 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

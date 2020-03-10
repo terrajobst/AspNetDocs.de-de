@@ -9,11 +9,11 @@ ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5dea23a20aba00af5109f05f18365b89e409a131
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574468"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430659"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>Verwenden von automatischem Postback mit CascadingDropDown (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. Wenn Sie jedoch das CascadingDropDown-Steuerelement verwenden, ASP. Das AutoPostBack-Feature des DropDownList-Steuer Elements von NET funktioniert nicht, da das asynchrone Laden von Daten in die Liste ein (unnötiges) Postback selbst generiert. Mit JavaScript-Code kann dieser Effekt vermieden werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. (Eine Liste enthält beispielsweise eine Liste der US-Bundesstaaten, und die nächste Liste wird dann mit den wichtigsten Städten in diesem Zustand aufgefüllt.) Wenn Sie jedoch das CascadingDropDown-Steuerelement verwenden, ASP. Das AutoPostBack-Feature des DropDownList-Steuer Elements von NET funktioniert nicht, da das asynchrone Laden von Daten in die Liste ein (unnötiges) Postback selbst generiert. Mit JavaScript-Code kann dieser Effekt vermieden werden.
 
@@ -60,4 +60,4 @@ Auf diese Weise wird ein Postback nur ausgeführt, wenn tatsächlich Elemente in
 Wenn Sie ein Listenelement auswählen, wird ein Postback ausgelöst ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [Previous](presetting-list-entries-with-cascadingdropdown-vb.md)

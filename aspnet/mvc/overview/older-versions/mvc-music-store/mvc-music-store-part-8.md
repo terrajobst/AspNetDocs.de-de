@@ -1,140 +1,140 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
-title: 'Teil 8: Einkaufswagen mit Ajax-Updates | Microsoft-Dokumentation'
+title: 'Teil 8: Einkaufswagen mit AJAX-Updates | Microsoft-Dokumentation'
 author: jongalloway
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 8 behandelt Einkaufswagen mit Ajax-Updates.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. Teil 8 umfasst den Warenkorb mit AJAX-Updates.
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
 ms.openlocfilehash: 89897ad41b217764cbd17317d4bf5d6a5c5d488f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112910"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433515"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>Teil 8: Einkaufswagen mit AJAX-Updates
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-> Die MVC Music Store ist ein lernprogrammanwendung, die eingeführt und erläutert Schritt für Schritt, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwenden.  
+> Der MVC Music Store ist eine Lernprogramm Anwendung, die Schritt für Schritt erläutert, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwendet werden.  
 >   
-> Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
+> Der MVC Music Store ist eine einfache Beispiel Speicher Implementierung, die Musikalben online verkauft und grundlegende Funktionen für Website Verwaltung, Benutzeranmeldung und Warenkorb implementiert.  
 >   
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 8 behandelt Einkaufswagen mit Ajax-Updates.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. Teil 8 umfasst den Warenkorb mit AJAX-Updates.
 
-Lassen wir Benutzern Alben in den Einkaufswagen zu platzieren, ohne zu registrieren, aber sie müssen als Gäste vollständige Auschecken registrieren. Die Einkaufs- und Auschecken wird in zwei Controller getrennt werden: eine ShoppingCart-Controller, der können anonym eine Warenkorb Elemente hinzufügt und ein Auschecken-Controller, der den Kassenvorgang behandelt. Wir beginnen mit den Warenkorb legen in diesem Abschnitt, und anschließend den Kassenvorgang im folgenden Abschnitt zu erstellen.
+Wir gestatten Benutzern das Platzieren von Alben in Ihrem Warenkorb, ohne sich zu registrieren, aber Sie müssen sich als Gäste registrieren, um das Auschecken abzuschließen. Der Einkaufs-und Auscheck Prozess wird in zwei Controller unterteilt: einen ShoppingCart-Controller, der das anonyme Hinzufügen von Elementen zu einem Warenkorb ermöglicht, und einen Checkout-Controller, der den Checkout Prozess verarbeitet. Wir beginnen mit dem Warenkorb in diesem Abschnitt und erstellen dann den Checkout-Prozess im folgenden Abschnitt.
 
-## <a name="adding-the-cart-order-and-orderdetail-model-classes"></a>Hinzufügen der Warenkorb, Reihenfolge und OrderDetail-Modell-Klassen
+## <a name="adding-the-cart-order-and-orderdetail-model-classes"></a>Hinzufügen der Modellklassen Warenkorb, Order und OrderDetail
 
-Unsere Prozesse Warenkorb und Auschecken veranlasst einiger neuer Klassen verwenden. Mit der rechten Maustaste in den Ordner "Models", und fügen Sie eine Warenkorb-Klasse (Cart.cs) durch den folgenden Code.
+In unseren Warenkorb-und Checkout-Prozessen werden einige neue Klassen verwendet. Klicken Sie mit der rechten Maustaste auf den Ordner Modelle, und fügen Sie eine Warenkorb-Klasse (Cart.cs) mit dem folgenden Code hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample1.cs)]
 
-Diese Klasse ist recht ähnlich für andere Personen, die wir bisher, mit Ausnahme des Attributs [Key] für die Datensatz-ID-Eigenschaft verwendet haben. Unsere im Warenkorb hat einen Zeichenfolgenbezeichner, der mit dem Namen CartID können anonymes einkaufen, aber die Tabelle enthält einen ganze Zahl Primärschlüssel, der mit dem Namen Datensatz-ID ein. Gemäß der Konvention erwartet, dass Entity Framework Code First, dass der primäre Schlüssel für eine Tabelle mit dem Namen Einkaufswagen wird entweder CartId oder die ID, aber wir einfach, die über Anmerkungen oder Code überschreiben können, wenn wir möchten. Dies ist ein Beispiel, wie wir verwendet die einfachen Konventionen in Entity Framework Code First-Wenn diese uns erfüllen, aber wir sind nicht von ihnen eingeschränkt, wenn dies nicht der Fall.
+Diese Klasse ähnelt den anderen, die bisher verwendet wurden, mit Ausnahme des [key]-Attributs für die RecordID-Eigenschaft. Unsere Warenkorb-Elemente verfügen über einen Zeichen folgen Bezeichner namens "cartId", um anonyme Einkäufe zuzulassen, aber die Tabelle enthält einen ganzzahligen Primärschlüssel namens "recordID". Gemäß der Konvention erwartet Entity Framework Code zunächst, dass der Primärschlüssel für eine Tabelle mit dem Namen "Cart" entweder "cartId" oder "ID" ist, aber wir können dies problemlos über Anmerkungen oder Code überschreiben. Dies ist ein Beispiel dafür, wie wir die einfachen Konventionen in Entity Framework Code verwenden können, wenn Sie sich an uns wenden, aber wir werden nicht durch Sie eingeschränkt, wenn dies nicht der Fall ist.
 
-Als Nächstes fügen Sie eine Order-Klasse (Order.cs) durch den folgenden Code hinzu.
+Fügen Sie als nächstes eine Order-Klasse (Order.cs) mit dem folgenden Code hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample2.cs)]
 
-Diese Klasse dient die Zusammenfassung und Übermittlung von Informationen zu einer Bestellung nachverfolgen. **Nicht noch kompiliert**, da es sich um eine Navigationseigenschaft OrderDetails besitzt, der von einer Klasse abhängig ist dies nicht getan haben wir noch erstellt. Korrigieren Sie wir jetzt durch das Hinzufügen eine Klasse OrderDetail.cs, Hinzufügen des folgenden Codes benannt.
+Diese Klasse verfolgt Zusammenfassungs-und Übermittlungs Informationen für eine Bestellung. Die **Kompilierung erfolgt noch nicht**, da Sie eine OrderDetails-Navigations Eigenschaft aufweist, die von einer Klasse abhängt, die noch nicht erstellt wurde. Beheben Sie dies jetzt, indem Sie eine Klasse mit dem Namen "OrderDetail.cs" hinzufügen und den folgenden Code hinzufügen.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample3.cs)]
 
-Wir erstellen eine letzte Aktualisierung um unsere MusicStoreEntities Klasse "dbsets" einbeziehen, die diese neuen Modellklassen, darunter auch einen "DbSet" verfügbar machen&lt;Interpreten&gt;. Die aktualisierte MusicStoreEntities-Klasse angezeigt wird, wie unten.
+Wir nehmen ein letztes Update für die Klasse "musicstoreentities" vor, um dbsets aufzunehmen, die diese neuen Modellklassen verfügbar machen, einschließlich einer dbset-&lt;Künstler&gt;. Die aktualisierte Klasse "musicstoreentities" wird wie unten dargestellt angezeigt.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample4.cs)]
 
-## <a name="managing-the-shopping-cart-business-logic"></a>Verwalten von der Geschäftslogik Warenkorb
+## <a name="managing-the-shopping-cart-business-logic"></a>Verwalten der Einkaufswagen-Geschäftslogik
 
-Als Nächstes erstellen wir die ShoppingCart-Klasse im Ordner "Models". Die ShoppingCart-Modell verarbeitet die Datenzugriff auf die Warenkorb-Tabelle. Darüber hinaus wird es der Geschäftslogik zum Hinzufügen und Entfernen von Elementen aus dem Warenkorb verarbeitet.
+Als Nächstes erstellen wir die Klasse "ShoppingCart" im Ordner "Models". Das ShoppingCart-Modell verarbeitet den Datenzugriff auf die Warenkorb-Tabelle. Außerdem wird die Geschäftslogik zum Hinzufügen und Entfernen von Elementen aus dem Warenkorb behandelt.
 
-Da wir keine Benutzer zum Registrieren für ein Konto aus, um Elemente zu ihrem Einkaufswagen hinzufügen möchten, zugewiesen Benutzer einen temporären eindeutigen Bezeichner (mithilfe einer GUID oder den globally unique Identifier) beim Zugreifen auf den Einkaufswagen. Wir speichern diese ID mithilfe der ASP.NET-Sitzung-Klasse.
+Da es nicht erforderlich sein soll, dass sich Benutzer für ein Konto registrieren, um dem Warenkorb Elemente hinzuzufügen, weisen wir Benutzern einen temporären eindeutigen Bezeichner (mit einer GUID oder Globally Unique Identifier) zu, wenn Sie auf den Warenkorb zugreifen. Wir speichern diese ID mithilfe der ASP.NET Session-Klasse.
 
-*Hinweis: Die ASP.NET-Sitzung ist eine bequeme Möglichkeit, benutzerspezifische Informationen speichern, die ablaufen wird, nachdem sie die Site zu verlassen. Während unsachgemäße Verwendung des Sitzungsstatus für größere Sites die Auswirkungen auf die Leistung haben kann, funktioniert die einfache Verwendung auch für Demonstrationszwecke.*
+*Hinweis: die ASP.NET-Sitzung ist ein bequemer Ort zum Speichern Benutzer spezifischer Informationen, die ablaufen, nachdem Sie die Website verlassen haben. Obwohl die Verwendung des Sitzungs Zustands die Auswirkungen auf die Leistung von größeren Standorten haben kann, ist unsere helle Verwendung für Demonstrationszwecke gut geeignet.*
 
-Die ShoppingCart-Klasse macht die folgenden Methoden verfügbar:
+Die ShoppingCart-Klasse stellt die folgenden Methoden zur Verfügung:
 
-**AddToCart** ein Album als Parameter akzeptiert und fügt es der Einkaufswagen des Benutzers hinzu. Da die Warenkorb-Tabelle Menge für jedes Album nachverfolgt, enthält sie Logik, um bei Bedarf eine neue Zeile erstellen oder nur die Menge erhöht, wenn der Benutzer bereits eine Kopie des Albums aufgegeben hat.
+**AddTo Cart** nimmt ein Album als Parameter an und fügt es dem Warenkorb des Benutzers hinzu. Da die Warenkorb-Tabelle die Menge für jedes Album nachverfolgt, umfasst Sie Logik, um bei Bedarf eine neue Zeile zu erstellen, oder die Menge zu erhöhen, wenn der Benutzer bereits eine Kopie des Albums angeordnet hat.
 
-**RemoveFromCart** übernimmt ein Album-ID und entfernt sie aus dem Einkaufswagen des Benutzers. Wenn der Benutzer nur eine Kopie des Albums im Einkaufswagen haben, wird die Zeile entfernt.
+**Removefromcart** nimmt eine Album-ID an und entfernt Sie aus dem Warenkorb des Benutzers. Wenn der Benutzer nur eine Kopie des Albums in seinem Warenkorb besaß, wird die Zeile entfernt.
 
-**EmptyCart** entfernt alle Elemente aus dem Einkaufswagen eines Benutzers.
+**Emptycart** entfernt alle Elemente aus dem Einkaufswagen eines Benutzers.
 
-**GetCartItems** Ruft eine Liste der CartItems für Sie Anzeige- oder ab.
+" **Getcartitems** " Ruft eine Liste von "kartitems" zur Anzeige oder Verarbeitung ab.
 
-**GetCount** Ruft ein die Gesamtanzahl von Alben, die ein Benutzer im Einkaufswagen hat.
+**GetCount** Ruft die Gesamtzahl der Alben ab, die ein Benutzer in seinem Warenkorb hat.
 
-**GetTotal** berechnet die Gesamtkosten für alle Elemente im Warenkorb.
+**GetTotal** berechnet die Gesamtkosten aller Elemente im Warenkorb.
 
-**CreateOrder** wandelt den Einkaufswagen in einen Auftrag während der Phase Auschecken.
+" **Anateorder** " konvertiert den Einkaufswagen in eine Bestellung während der Auscheck Phase.
 
-**GetCart** ist eine statische Methode, wodurch unsere-Controller, ein Warenkorb-Objekt abzurufen. Er verwendet den **GetCartId** Methode zum Behandeln von lesen die CartId aus der Sitzung des Benutzers. Die Methode GetCartId erfordert HttpContextBase, sodass des Benutzers CartId mit der Sitzung des Benutzers zu lesen.
+**Getcart** ist eine statische Methode, mit der unsere Controller ein Warenkorb-Objekt abrufen können. Er verwendet die **getcartid** -Methode, um das Lesen der "cartId" aus der Sitzung des Benutzers zu verarbeiten. Die getcartid-Methode erfordert HttpContextBase, damit Sie die cartId des Benutzers aus der Benutzersitzung lesen kann.
 
-Hier ist die vollständige **ShoppingCart-Klasse**:
+Hier ist die komplette **ShoppingCart-Klasse**:
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample5.cs)]
 
 ## <a name="viewmodels"></a>ViewModels
 
-Unser Shopping Cart-Controller, müssen einige komplexen Informationen zu seiner Ansichten kommunizieren, die nicht ordnungsgemäß für unsere Modellobjekte zugeordnet sind. Wir wollen nicht ändern, die Modelle, die Ansichten anpassen; Modellklassen sollte die Domäne, nicht in der Benutzeroberfläche darstellen. Eine Lösung wäre, übergeben die Informationen an den Ansichten die ViewBag-Klasse verwenden, haben wir mit den Informationen der Store Manager-Dropdownliste aus, aber eine Vielzahl von Informationen über "ViewBag" übergeben, ruft schwierig zu verwalten.
+Der Warenkorb des Warenkorb muss einige komplexe Informationen an seine Ansichten übermitteln, die den Modell Objekten nicht ordnungsgemäß zugeordnet werden. Wir möchten unsere Modelle nicht so ändern, dass Sie an unsere Ansichten angepasst werden. Modellklassen sollten unsere Domäne und nicht die Benutzeroberfläche darstellen. Eine Lösung besteht darin, die Informationen mithilfe der viewbag-Klasse an unsere Ansichten weiterzugeben, wie dies bei den Dropdown Informationen des Store-Managers der Fall ist, aber das Übergeben von vielen Informationen über viewbag ist schwierig zu verwalten.
 
-Dies ist die Verwendung der *"ViewModel"* Muster. Verwendung dieses Musters erstellen wir die stark typisierte Klassen, die für unseren bestimmten Ansicht-Szenarien optimiert sind, und das Verfügbarmachen der Eigenschaften für das dynamische Werte bzw. den Inhalt von unserem Ansichtsvorlagen benötigt werden. Die Controllerklassen können klicken Sie dann Auffüllen und übergeben diese Klassen Ansicht optimiert, unsere ansichtsvorlage verwenden. Dadurch wird typsicherheit, Überprüfung und IntelliSense-Editor in Vorlagen anzeigen.
+Eine Lösung hierfür ist die Verwendung des *ViewModel* -Musters. Bei Verwendung dieses Musters erstellen wir stark typisierte Klassen, die für unsere spezifischen Ansichts Szenarien optimiert sind und die Eigenschaften für die dynamischen Werte und Inhalte verfügbar machen, die von unseren Ansichts Vorlagen benötigt werden. Unsere Controller Klassen können diese Ansichts optimierten Klassen dann auffüllen und an unsere Ansichts Vorlage übergeben, um Sie zu verwenden. Dies ermöglicht Typsicherheit, Kompilierungszeit Überprüfung und Editor-IntelliSense innerhalb von Ansichts Vorlagen.
 
-Wir erstellen zwei Ansichtsmodelle für die Verwendung in den Einkaufswagen-Controller: die ShoppingCartViewModel übernimmt den Inhalt der Einkaufswagen eines Benutzers, und die ShoppingCartRemoveViewModel wird verwendet, um Informationen zur Bestätigung angezeigt, wenn ein Benutzer etwas entfernt in den Einkaufswagen.
+Wir erstellen zwei Ansichts Modelle für die Verwendung in unserem Warenkorb-Controller: das shoppingcartviewmodel speichert den Inhalt des Einkaufswagens des Benutzers, und das shoppingcartremuveviewmodel wird verwendet, um Bestätigungs Informationen anzuzeigen, wenn ein Benutzer etwas entfernt. aus dem Warenkorb.
 
-Erstellen wir einen neuen Ordner "ViewModels" im Stammverzeichnis des unseres Projekts halber organisiert an. Mit der rechten Maustaste in des Projekts, wählen Sie Add / neuen Ordner.
+Erstellen Sie im Stammverzeichnis des Projekts einen neuen Ordner "ViewModels", um die Aktivitäten zu organisieren. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie Hinzufügen/neuer Ordner.
 
 ![](mvc-music-store-part-8/_static/image1.jpg)
 
-Benennen Sie den Ordner "ViewModels".
+Nennen Sie den Ordner ViewModels.
 
 ![](mvc-music-store-part-8/_static/image1.png)
 
-Fügen Sie anschließend die ShoppingCartViewModel-Klasse im Ordner "ViewModels" ein. Er verfügt über zwei Eigenschaften: eine Liste der im Warenkorb, und ein decimal-Wert, den Gesamtpreis für alle Elemente im Warenkorb enthalten soll.
+Fügen Sie als nächstes die Klasse "shoppingcartviewmodel" im Ordner "ViewModels" hinzu. Sie verfügt über zwei Eigenschaften: eine Liste von waren Korb Elementen und einen Dezimalwert, der den Gesamtpreis für alle Artikel im Warenkorb enthält.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample6.cs)]
 
-Fügen Sie nun die ShoppingCartRemoveViewModel zum Ordner "ViewModels" mit den folgenden vier Eigenschaften hinzu.
+Fügen Sie nun das shoppingcartremuveviewmodel dem Ordner "ViewModels" mit den folgenden vier Eigenschaften hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample7.cs)]
 
-## <a name="the-shopping-cart-controller"></a>Die Einkaufswagencontroller
+## <a name="the-shopping-cart-controller"></a>Einkaufswagen Controller
 
-Der Controller Warenkorb hat drei Hauptfunktionen: Hinzufügen von Elementen zu einem Einkaufswagen und Entfernen von Elementen aus dem Warenkorb Elemente im Warenkorb anzeigen. Verwenden der drei Klassen wir machen wird gerade erstellt haben: ShoppingCartViewModel "," ShoppingCartRemoveViewModel "und" ShoppingCart ". Wie bei den StoreController und StoreManagerController fügen wir ein Feld, um eine Instanz der MusicStoreEntities befindet.
+Der Einkaufswagen Controller hat drei Hauptaufgaben: das Hinzufügen von Elementen zu einem Warenkorb, das Entfernen von Elementen aus dem Warenkorb und das Anzeigen von Elementen im Warenkorb. Dabei werden die drei soeben erstellten Klassen verwendet: shoppingcartviewmodel, shoppingcartremuveviewmodel und ShoppingCart. Wie bei StoreController und storemanagercontroller fügen wir ein Feld hinzu, um eine Instanz von "musicstoreentities" zu speichern.
 
-Fügen Sie einen neuen Warenkorb-Controller, auf das Projekt mithilfe der Vorlage der leeren Controller.
+Fügen Sie dem Projekt einen neuen Einkaufswagen Controller mit der leeren Controller Vorlage hinzu.
 
 ![](mvc-music-store-part-8/_static/image2.png)
 
-Hier ist der vollständige ShoppingCart-Controller. Die Aktionen für Index "und" Controller hinzufügen, sollte sehr vertraut aussehen. Die Controller-Aktionen entfernen und CartSummary behandeln zwei spezielle Fälle, die wir im folgenden Abschnitt eingehen werde.
+Hier ist der komplette ShoppingCart-Controller. Die Aktionen "index" und "Controller hinzufügen" sollten sehr vertraut aussehen. Die Remove-und cartsummary-Controller Aktionen behandeln zwei Sonderfälle, die im folgenden Abschnitt erläutert werden.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample8.cs)]
 
 ## <a name="ajax-updates-with-jquery"></a>AJAX-Updates mit jQuery
 
-Wir erstellen neben eine Shopping Cart-Indexseite, die stark typisiert, die ShoppingCartViewModel und verwendet die Listenansicht-Vorlage, die mit derselben Methode wie vor.
+Im nächsten Schritt erstellen wir eine waren Korb Index Seite, die stark an das shoppingcartviewmodel typisiert ist und die Listen Ansichts Vorlage verwendet, die dieselbe Methode wie zuvor verwendet.
 
 ![](mvc-music-store-part-8/_static/image3.png)
 
-Jedoch wird statt einer Html.ActionLink, um Elemente aus dem Einkaufswagen entfernen, jQuery verwendet, um das Click-Ereignis für alle Links in dieser Ansicht die HTML-RemoveLink Klasse "verknüpfen". Anstatt veröffentlichen das Formular, wird diese Click-Ereignishandler nur einen AJAX-Rückruf an unsere RemoveFromCart Controlleraktion vornehmen. Die RemoveFromCart ein JSON serialisierte Ergebnis zurückgegeben, die unsere jQuery-Rückruf dann analysiert und führt vier schnellen Updates auf der Seite mit jQuery:
+Anstatt jedoch einen HTML. Action Link zum Entfernen von Elementen aus dem Warenkorb zu verwenden, verwenden wir jQuery, um das Click-Ereignis für alle Links in dieser Ansicht zu übertragen, die über die HTML-Klasse removelink verfügen. Anstatt das Formular zu veröffentlichen, stellt dieser Click-Ereignishandler nur einen AJAX-Rückruf an unsere removefromcart-Controller Aktion. Removefromcart gibt ein serialisiertes JSON-Ergebnis zurück, das der jQuery-Rückruf dann analysiert und vier schnelle Aktualisierungen der Seite mithilfe von jQuery durchführt:
 
-- 1. Entfernt das Album gelöschte, aus der Liste
-- 2. Aktualisiert die Warenkorb-Anzahl in der Kopfzeile
-- 3. Zeigt eine Update-Nachricht an den Benutzer
-- 4. Aktualisiert den Gesamtpreis Warenkorb
+- 1. Entfernt das gelöschte Album aus der Liste.
+- 2. Aktualisiert die Anzahl der waren Korb in der Kopfzeile.
+- 3. Zeigt dem Benutzer eine Aktualisierungs Meldung an.
+- 4. Aktualisiert den Gesamtpreis des Warenkorbs
 
-Da das Remove-Szenario durch ein Ajax-Rückruf in die Ansicht "Index" verarbeitet wird, benötigen wir nicht für RemoveFromCart Aktion eine zusätzliche Ansicht. Hier ist der vollständige Code für die /ShoppingCart/Index-Ansicht:
+Da das Entfernungs Szenario von einem AJAX-Rückruf innerhalb der Index Ansicht behandelt wird, benötigen wir keine zusätzliche Ansicht für die removefromcart-Aktion. Im folgenden finden Sie den gesamten Code für die/ShoppingCart/Index-Sicht:
 
 [!code-cshtml[Main](mvc-music-store-part-8/samples/sample9.cshtml)]
 
-Um dies zu testen, müssen wir unsere warenkorbsoftware Elemente hinzugefügt werden können. Wir aktualisieren unsere **Store Details** Ansicht, um eine Schaltfläche "Element zum Einkaufswagen hinzufügen" enthalten. Während wir schon dabei sind, zählen wir einige zusätzliche Informationen zum Album die wir hinzugefügt haben, da wir in dieser Ansicht zum zuletzt aktualisiert: Genre, Künstler, Preis und Albumcover. Der aktualisierte Code der Store-Details anzeigen angezeigt wird, wie unten dargestellt.
+Um dies zu testen, müssen wir in der Lage sein, dem Warenkorb Elemente hinzuzufügen. Wir aktualisieren die Ansicht " **Store-Details** ", um die Schaltfläche "zum Warenkorb hinzufügen" einzuschließen. Während wir uns befinden, können wir einige der zusätzlichen Informationen des Albums hinzufügen, die wir seit der letzten Aktualisierung dieser Ansicht hinzugefügt haben: Genre, Künstler, Preis und Album Kunst. Der aktualisierte Code für die Details der Speicher Details wird wie unten dargestellt angezeigt.
 
 [!code-cshtml[Main](mvc-music-store-part-8/samples/sample10.cshtml)]
 
-Jetzt können wir klicken Sie auf, über den Store und hinzufügen und Entfernen von Alben in und aus unsere warenkorbsoftware zu testen. Führen Sie die Anwendung, und navigieren Sie zu der Store-Index.
+Nun können wir durch den Store klicken und testen, wie Sie Alben zu und aus dem Warenkorb hinzufügen und daraus entfernen. Führen Sie die Anwendung aus, und navigieren Sie zum Store-Index.
 
 ![](mvc-music-store-part-8/_static/image4.png)
 
@@ -142,19 +142,19 @@ Klicken Sie anschließend auf ein Genre, um eine Liste der Alben anzuzeigen.
 
 ![](mvc-music-store-part-8/_static/image5.png)
 
-Durch Klicken auf eine Albumtitel jetzt zeigt unserer aktualisierten Album Detailansicht, darunter die Schaltfläche "Element zum Einkaufswagen hinzufügen".
+Wenn Sie auf einen Album Titel klicken, wird nun unsere aktualisierte Ansicht mit den Album Details angezeigt, einschließlich der Schaltfläche "zu Warenkorb hinzufügen".
 
 ![](mvc-music-store-part-8/_static/image6.png)
 
-Klicken Sie auf die Schaltfläche "Element zum Einkaufswagen hinzufügen" zeigt unsere Shopping Cart-Index-Ansicht mit der shopping Cart Zusammenfassungsliste.
+Wenn Sie auf die Schaltfläche "zum Warenkorb hinzufügen" klicken, wird unsere waren Korb Index Ansicht mit der zusammenfassenden Liste Warenkorb angezeigt.
 
 ![](mvc-music-store-part-8/_static/image7.png)
 
-Nach dem Laden Sie Ihr Warenkorb ist leer, können Sie auf der Warenkorb Link entfernen, das Ajax-Update zu Ihrem Warenkorb anzeigen klicken.
+Nachdem Sie den Warenkorb geladen haben, können Sie auf den Link aus Warenkorb entfernen klicken, um das AJAX-Update für Ihren Warenkorb anzuzeigen.
 
 ![](mvc-music-store-part-8/_static/image8.png)
 
-Wir haben das fertige eines funktionsfähiges Einkaufswagen, nicht registrierte Benutzer Elemente Einkaufswagen hinzufügen können. Im folgenden Abschnitt werden wir zu registrieren und Ausführen des Auscheckvorgangs ermöglichen.
+Wir haben einen funktionierenden Einkaufswagen erstellt, der es nicht registrierten Benutzern ermöglicht, Ihrem Warenkorb Elemente hinzuzufügen. Im folgenden Abschnitt können wir Sie registrieren und den Auscheck Prozess vervollständigen.
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-7.md)

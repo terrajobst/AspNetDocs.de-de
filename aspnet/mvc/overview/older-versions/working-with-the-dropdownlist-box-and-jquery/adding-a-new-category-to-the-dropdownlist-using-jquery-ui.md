@@ -9,11 +9,11 @@ ms.assetid: 44aa1ac4-6ea2-48a2-972d-52710c48eae5
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
 ms.openlocfilehash: 3207079ee468232e5f75b081421241c232936baf
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455723"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433155"
 ---
 # <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Hinzufügen einer neuen Kategorie zu DropDownList mithilfe der jQuery-Benutzeroberfläche
 
@@ -57,7 +57,7 @@ Führen Sie die Anwendung aus, und klicken Sie auf die Schaltfläche **neues Gen
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image4.png)
 
-Klicken Sie auf die Schaltfläche **Save** . Ein AJAX-Befehl erstellt die Kategorie "Opera", füllt die Dropdown Liste mit "Opera" auf und legt Opera als ausgewähltes Genre fest.
+Klicken Sie auf die Schaltfläche **Speichern**. Ein AJAX-Befehl erstellt die Kategorie "Opera", füllt die Dropdown Liste mit "Opera" auf und legt Opera als ausgewähltes Genre fest.
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image5.png)
 
@@ -125,7 +125,7 @@ Rick.Anderson[at]Microsoft.com
 - [ASP.NET MVC – Cascading Dropdown listet Tutorial](https://weblogs.asp.net/raduenuca/archive/2011/03/06/asp-net-mvc-cascading-dropdown-lists-tutorial-part-1-defining-the-problem-and-the-context.aspx) von [Radu enuca](https://weblogs.asp.net/raduenuca/default.aspx)
 - [Ausgewählt](https://harvesthq.github.com/chosen/) Ein JavaScript-Plug-in, das die Mehrfachauswahl und Filterung unterstützt.
 
-### <a name="contributors"></a>Mitwirkende
+### <a name="contributors"></a>Contributors
 
 - [Radu-Anmeldung](https://weblogs.asp.net/raduenuca/default.aspx)
 - Jean-Sébastien Goupil

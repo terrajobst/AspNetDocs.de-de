@@ -1,23 +1,23 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: How--i | Microsoft-Dokumentation
+title: Vorgehensweise-I | Microsoft-Dokumentation
 author: rick-anderson
-description: Videos in diesem Abschnitt behandeln ASP.NET MVC, wie Sie "Das Storefront -" erstellen Sie eine gesamte e-Commerce-Anwendung von Anfang abgeschlossen.
+description: Die Videos in diesem Abschnitt beziehen sich auf ASP.NET MVC, einschließlich der Erstellung von "The Store Front", einer vollständigen e-Commerce-Anwendung von Anfang bis Ende.
 ms.author: riande
 ms.date: 09/15/2011
 ms.assetid: 9bc6c53a-3e54-4f9d-8bef-0f3359aecf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 7c2fd0d57cdd6775eb027c0dc9b360443bacbfed
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120528"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431955"
 ---
 # <a name="how-do-i"></a>Gewusst wie
 
-> Videos in diesem Abschnitt behandeln ASP.NET MVC, einschließlich Informationen zum "Das Storefront -" erstellen Sie eine gesamte e-Commerce-Anwendung von Anfang abgeschlossen.
+> Die Videos in diesem Abschnitt beziehen sich auf ASP.NET MVC, einschließlich der Erstellung von "The Store Front", einer vollständigen e-Commerce-Anwendung von Anfang bis Ende.
 
 - [Erstellen einer Aufgabenlistenanwendung mit ASP.NET MVC](creating-a-tasklist-application-with-aspnet-mvc.md)
 - [Erstellen einer Filmdatenbankanwendung mit ASP.NET MVC in 15 Minuten](creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
@@ -33,10 +33,10 @@ ms.locfileid: "65120528"
 - [Anzeigen einer Tabelle von Datenbankdaten](displaying-a-table-of-database-data.md)
 - [Was ist ASP.NET MVC? (80-minütiges technisches Video für Entwickler, die mit NerdDinner arbeiten)](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
 - [Gründe für ASP.NET MVC (3-minütiges Übersichtsvideo für Entscheidungsträger)](why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-- [ASP.NET MVC: Wie 10-minütiges technisches Video für Entwickler](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+- [ASP.NET MVC: Vorgehensweise (10-minütiges technisches Video für Entwickler)](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
 - [Zurückgeben von formatierten JSON-Daten für einen AJAX-Aufruf in einer ASP.NET MVC-Webanwendung](how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
 - [Arbeiten mit Daten in ASP.NET MVC-Teilansichten](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-- [Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten.](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+- [Implementieren von Ansichts Modellen zum Verwalten von Daten für ASP.NET-MVC-Ansichten](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
 - [Erstellen eines benutzerdefinierten HTML-Hilfsprogramms für eine MVC-Anwendung](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
 - [Arbeiten mit Modellbindungen in einer MVC-Anwendung](how-do-i-work-with-model-binders-in-an-mvc-application.md)
 - [Verwenden von HttpVerbs-Attributen in einer MVC-Anwendung](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)

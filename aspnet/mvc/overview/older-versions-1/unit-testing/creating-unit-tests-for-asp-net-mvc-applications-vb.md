@@ -9,11 +9,11 @@ ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 643faddaf6f9cd075131e8e5a9cccb303e355ceb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594695"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435381"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>Erstellen von Komponententests für ASP.NET MVC-Anwendungen (VB)
 
@@ -103,7 +103,7 @@ Sie können das Verhalten der `Details()` Aktion mit dem Komponenten Test in der
 
 Wenn Sie die `RedirectToAction()`-Methode in einer Controller Aktion aufzurufen, gibt die Controller Aktion eine `RedirectToRouteResult`zurück. Der Test überprüft, ob der `RedirectToRouteResult` den Benutzer an eine Controller Aktion mit dem Namen `Index`weiterleitet.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie gelernt, wie Sie Komponententests für MVC-Controller Aktionen erstellen. Zuerst haben Sie erfahren, wie Sie überprüfen, ob die Rechte Ansicht von einer Controller Aktion zurückgegeben wird. Sie haben gelernt, wie Sie die `ViewResult.ViewName`-Eigenschaft verwenden, um den Namen einer Ansicht zu überprüfen.
 
@@ -112,4 +112,4 @@ Als nächstes haben wir untersucht, wie Sie den Inhalt von `View Data`testen kö
 Schließlich haben wir erläutert, wie Sie überprüfen können, ob verschiedene Arten von Aktions Ergebnissen von einer Controller Aktion zurückgegeben werden. Sie haben gelernt, ob ein Controller eine `ViewResult` oder eine `RedirectToRouteResult`zurückgibt.
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
+> [Previous](creating-unit-tests-for-asp-net-mvc-applications-cs.md)

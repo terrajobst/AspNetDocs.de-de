@@ -9,11 +9,11 @@ ms.assetid: 67b25f4c-2823-42b6-b07d-1d650b3fd711
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cafe47cf5766bb14503852ec6e9f305d1e6d426f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618387"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78426579"
 ---
 # <a name="using-the-formviews-templates-vb"></a>Verwenden der FormView-Vorlagen (VB)
 
@@ -88,7 +88,7 @@ Wenn die `ItemTemplate` vollständig ist, werden die Produktinformationen auf ei
 
 **Abbildung 4**: die flüssige FormView-Ausgabe ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-formview-s-templates-vb/_static/image12.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Während die Ausgabe der GridView-und DetailsView-Steuerelemente mithilfe von templatefields angepasst werden kann, stellen beide ihre Daten immer noch in einem Raster ähnlichen boxy-Format dar. Wenn ein einzelner Datensatz mithilfe eines weniger festgelegten Layouts angezeigt werden muss, ist FormView eine ideale Wahl. Wie die DetailsView rendert FormView einen einzelnen Datensatz aus seinem `DataSource`, aber im Gegensatz zu DetailsView besteht er nur aus Vorlagen und unterstützt keine Felder.
 
@@ -96,7 +96,7 @@ Wie in diesem Tutorial gezeigt, ermöglicht FormView ein flexibleres Layout, wen
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

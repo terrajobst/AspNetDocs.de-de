@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: Routing- und Aktionsauswahl in ASP.NET Web-API | Microsoft-Dokumentation
+title: Routing-und Aktions Auswahl in ASP.net-Web-API | Microsoft-Dokumentation
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -9,168 +9,168 @@ ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
 ms.openlocfilehash: 62114e56fb29e80c93b82dcb78ce2bc2a123a83b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133658"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446913"
 ---
-# <a name="routing-and-action-selection-in-aspnet-web-api"></a>Routing- und Aktionsauswahl in ASP.NET Web-API
+# <a name="routing-and-action-selection-in-aspnet-web-api"></a>Routing-und Aktions Auswahl in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Artikel wird beschrieben, wie ASP.NET Web-API eine HTTP-Anforderung an eine bestimmte Aktion für einen Controller weitergeleitet.
+In diesem Artikel wird beschrieben, wie ASP.net-Web-API eine HTTP-Anforderung an eine bestimmte Aktion auf einem Controller weiterleitet.
 
 > [!NOTE]
-> Eine allgemeine Übersicht über routing, finden Sie unter [Routing in ASP.NET Web-API](routing-in-aspnet-web-api.md).
+> Eine allgemeine Übersicht über das Routing finden Sie unter [Routing in ASP.net-Web-API](routing-in-aspnet-web-api.md).
 
-Dieser Artikel behandelt die Details der routing-Prozess. Wenn Sie ein Web-API-Projekt erstellen, und suchen, die einige Anforderungen werden nicht weitergeleitet, die Möglichkeit, die Sie erwarten, hilft dieser Artikel hoffentlich.
+In diesem Artikel werden die Details des Routing Prozesses erläutert. Wenn Sie ein Web-API-Projekt erstellen und feststellen, dass einige Anforderungen nicht erwartungsgemäß weitergeleitet werden, wird Ihnen dieser Artikel hoffentlich helfen.
 
-Routing verfügt über drei Hauptphasen aus:
+Das Routing umfasst drei Hauptphasen:
 
-1. Mit den URI, der eine routenvorlage übereinstimmen.
-2. Wählen einen Controller.
+1. Übereinstimmung des URIs mit einer Routen Vorlage.
+2. Auswählen eines Controllers.
 3. Auswählen einer Aktion.
 
-Sie können einige Teile des Prozesses durch Ihre eigenen benutzerdefinierten Verhalten ersetzen. In diesem Artikel beschreibe ich das Standardverhalten. Beachten Sie am Ende ich die Stellen, in dem Sie das Verhalten anpassen können.
+Sie können einige Teile des Prozesses durch ihre eigenen benutzerdefinierten Verhaltensweisen ersetzen. In diesem Artikel wird das Standardverhalten beschrieben. Am Ende notieren Sie die stellen, an denen Sie das Verhalten anpassen können.
 
-## <a name="route-templates"></a>Routenvorlagen
+## <a name="route-templates"></a>Routen Vorlagen
 
-Eine routenvorlage ähnelt einem URI-Pfad, aber es kann Platzhalterwerte, mit geschweiften Klammern angegeben haben:
+Eine Routen Vorlage ähnelt einem URI-Pfad, kann jedoch Platzhalter Werte enthalten, die mit geschweiften Klammern angegeben werden:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample1.ps1)]
 
-Wenn Sie eine Route erstellen, können Sie die Standardwerte für einige oder alle Platzhalter angeben:
+Wenn Sie eine Route erstellen, können Sie Standardwerte für einige oder alle Platzhalter angeben:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample2.cs)]
 
-Sie können auch Einschränkungen angeben, die eingeschränkt wie einen Platzhalter mit einer URI-Segment verglichen werden kann:
+Sie können auch Einschränkungen bereitstellen, die einschränken, wie ein URI-Segment einem Platzhalter entsprechen kann:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample3.js)]
 
-Das Framework versucht, die die Segmente im URI-Pfad der Vorlage übereinstimmen. Literale in der Vorlage müssen genau übereinstimmen. Ein Platzhalter entspricht ein beliebiger Wert, es sei denn, Sie Einschränkungen angeben. Das Framework stimmt nicht mit anderen Teilen des URIS, wie z. B. den Hostnamen oder die Abfrageparameter überein. Das Framework wählt die erste Route in der Routingtabelle, die den URI entspricht.
+Das Framework versucht, die Segmente im URI-Pfad mit der Vorlage abzugleichen. Literale in der Vorlage müssen exakt übereinstimmen. Ein Platzhalter entspricht einem beliebigen Wert, es sei denn, Sie geben Einschränkungen an. Das Framework stimmt nicht mit anderen Teilen des URI, wie z. b. dem Hostnamen oder den Abfrage Parametern, ab. Das Framework wählt die erste Route in der Routing Tabelle aus, die dem URI entspricht.
 
-Es gibt zwei spezielle Platzhalter: "{Controller}" und "{Action}".
+Es gibt zwei spezielle Platzhalter: "{controller}" und "{action}".
 
-- "{Controller}" enthält den Namen des Controllers.
-- "{Action}" enthält den Namen der Aktion. Die übliche Konvention werden in der Web-API weglassen von "{Action}".
+- "{controller}" gibt den Namen des Controllers an.
+- "{action}" gibt den Namen der Aktion an. In der Web-API besteht die übliche Konvention darin, "{action}" auszulassen.
 
-### <a name="defaults"></a>der Arbeitszeittabelle
+### <a name="defaults"></a>Standardeinstellungen
 
-Wenn Sie Standardwerte angeben, entspricht die Route einen URI, der diese Segmente nicht vorhanden ist. Zum Beispiel:
+Wenn Sie Standardwerte angeben, entspricht die Route einem URI, der diese Segmente fehlt. Beispiel:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample4.cs)]
 
-Die URIs `http://localhost/api/products/all` und `http://localhost/api/products` die vorherige Route übereinstimmen. Im letzteren URI, die fehlende `{category}` Segment ist der Standardwert zugewiesen `all`.
+Die URIs `http://localhost/api/products/all` und `http://localhost/api/products` der vorangehenden Route entsprechen. Im letzteren URI wird dem fehlenden `{category}` Segment der Standardwert `all`zugewiesen.
 
-### <a name="route-dictionary"></a>Routenwörterbuchs
+### <a name="route-dictionary"></a>Routen Wörterbuch
 
-Wenn das Framework eine Übereinstimmung für einen URI findet, wird ein Wörterbuch, das den Wert für jeden Platzhalter enthält. Die Schlüssel sind die Platzhalternamen, nicht einschließlich der geschweiften Klammern. Die Werte stammen aus der URI-Pfad oder die Standardwerte. Das Wörterbuch befindet sich in der **IHttpRouteData** Objekt.
+Wenn das Framework eine Entsprechung für einen URI findet, wird ein Wörterbuch erstellt, das den Wert für jeden Platzhalter enthält. Bei den Schlüsseln handelt es sich um die Platzhalter Namen, ohne die geschweiften Klammern. Die Werte werden aus dem URI-Pfad oder aus den Standardwerten entnommen. Das Wörterbuch wird im **ihttproutedata** -Objekt gespeichert.
 
-Während dieser Phase übereinstimmende Route sind die speziellen "{Controller}" und "{Action}" Platzhalter wie die anderen Platzhalter behandelt. Sie werden einfach in das Wörterbuch mit den anderen Werten gespeichert.
+Während dieser Weiterleitungs Übereinstimmungs Phase werden die besonderen Platzhalter "{controller}" und "{action}" genau wie die anderen Platzhalter behandelt. Sie werden einfach im Wörterbuch mit den anderen Werten gespeichert.
 
-Ein Standardwert kann den speziellen Wert ist **RouteParameter.Optional**. Wenn ein Platzhalter, diesen Wert zugewiesen wird, wird der Wert des Routenwörterbuchs nicht hinzugefügt. Zum Beispiel:
+Ein Standardwert kann den besonderen Wert **RouteParameter. optional**aufweisen. Wenn ein Platzhalter diesem Wert zugewiesen wird, wird der Wert nicht dem Routen Wörterbuch hinzugefügt. Beispiel:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample5.cs)]
 
-Für den URI-Pfad "api/Produkte" enthält des Routenwörterbuchs Folgendes:
+Für den URI-Pfad "API/Products" enthält das Routen Wörterbuch Folgendes:
 
-- Controller: "Produkte"
-- Kategorie: "all"
+- Controller: "Products"
+- Kategorie: "alle"
 
-Für "api/Produkte/Toys/123" enthält jedoch des Routenwörterbuchs:
+Für "API/Products/Toys/123" enthält das Routen Wörterbuch jedoch Folgendes:
 
-- Controller: "Produkte"
+- Controller: "Products"
 - Kategorie: "Toys"
 - id: "123"
 
-Die Standardwerte können auch einen Wert, der nicht, eine beliebige Stelle angezeigt wird in der routenvorlage enthalten. Wenn die Route übereinstimmt, wird dieser Wert im Wörterbuch gespeichert. Zum Beispiel:
+Die Standardwerte können auch einen Wert enthalten, der nicht an einer beliebigen Stelle in der Routen Vorlage angezeigt wird. Wenn die Route übereinstimmt, wird dieser Wert im Wörterbuch gespeichert. Beispiel:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 
-Wenn der URI-Pfad "api/Root/8" ist, wird das Wörterbuch zwei Werte enthalten:
+Wenn der URI-Pfad "API/root/8" lautet, enthält das Wörterbuch zwei Werte:
 
 - Controller: "Customers"
-- id: "8"
+- ID: "8"
 
 ## <a name="selecting-a-controller"></a>Auswählen eines Controllers
 
-Auswahl der Domänencontroller erfolgt durch die **IHttpControllerSelector.SelectController** Methode. Diese Methode akzeptiert eine **HttpRequestMessage** -Instanz und gibt eine **HttpControllerDescriptor**. Die standardmäßige Implementierung erfolgt über die **DefaultHttpControllerSelector** Klasse. Diese Klasse wird einen einfachen Algorithmus verwendet:
+Die Controller Auswahl wird von der **ihttpcontrollerselector. selectcontroller** -Methode behandelt. Diese Methode nimmt eine **httprequestmessage** -Instanz an und gibt einen **httpcontrollerdescriptor**zurück. Die Standard Implementierung wird von der **defaulthttpcontrollerselector** -Klasse bereitgestellt. Diese Klasse verwendet einen einfachen Algorithmus:
 
-1. Suchen Sie in das Wörterbuch der Route für den Schlüssel "Controller".
-2. Der Wert für diesen Schlüssel, und fügen Sie die Zeichenfolge "Controller", um den Namen des Controllers erhalten.
-3. Suchen Sie nach einem Web-API-Controller mit diesem Namen geben.
+1. Suchen Sie im Routen Wörterbuch nach dem Schlüssel "controller".
+2. Nehmen Sie den Wert für diesen Schlüssel an, und fügen Sie die Zeichenfolge "controller" an, um den Namen des Controller Typs zu erhalten.
+3. Suchen Sie nach einem Web-API-Controller mit diesem Typnamen.
 
-Wenn das Route-Wörterbuch der Schlüssel-Wert-Paar "Controller" enthält = "Produkte", z. B. wird der Typ des Controllers "ProductsController". Wenn keine übereinstimmenden Typ oder mehrere Übereinstimmungen vorhanden ist, gibt das Framework einen Fehler an den Client zurück.
+Wenn das Routen Wörterbuch beispielsweise das Schlüssel-Wert-Paar "controller" = "Products" enthält, ist der Controllertyp "productscontroller". Wenn kein übereinstimmender Typ oder mehrere Übereinstimmungen vorhanden sind, gibt das Framework einen Fehler an den Client zurück.
 
-Schritt 3 **DefaultHttpControllerSelector** verwendet die **IHttpControllerTypeResolver** -Schnittstelle zum Abrufen der Liste der Web-API-Controller-Typen. Die standardmäßige Implementierung des **IHttpControllerTypeResolver** gibt alle öffentlichen Klassen, die (a) implementieren **IHttpController**, (b) werden nicht abstrahieren und (c) verfügen über einen Namen, die "Controller" enden.
+In Schritt 3 verwendet **defaulthttpcontrollerselector** die **ihttpcontrollertyperesolver** -Schnittstelle, um die Liste der Web-API-Controller Typen abzurufen. Die Standard Implementierung von **ihttpcontrollertyperesolver** gibt alle öffentlichen Klassen zurück, die (a) **ihttpcontroller**implementieren, (b) nicht abstrakt sind und (c) einen Namen haben, der auf "controller" endet.
 
-## <a name="action-selection"></a>Aktionsauswahl
+## <a name="action-selection"></a>Aktions Auswahl
 
-Nach der Auswahl des Controllers an, das Framework wählt die Aktion durch Aufrufen der **IHttpActionSelector.SelectAction** Methode. Diese Methode akzeptiert eine **HttpControllerContext** und gibt eine **HttpActionDescriptor**.
+Nachdem Sie den Controller ausgewählt haben, wählt das Framework die Aktion durch Aufrufen der **ihttpactionselector. SelectAction** -Methode aus. Diese Methode nimmt einen **httpcontrollercontext** an und gibt einen **httpactiondescriptor**zurück.
 
-Die standardmäßige Implementierung erfolgt über die **ApiControllerActionSelector** Klasse. Um eine Aktion auswählen, sieht es unter dem folgenden:
+Die Standard Implementierung wird von der **apicontrolleraction Selector** -Klasse bereitgestellt. Zum Auswählen einer Aktion wird Folgendes untersucht:
 
 - Die HTTP-Methode der Anforderung.
-- Der Platzhalter "{Action}" in der routenvorlage, falls vorhanden.
+- Der Platzhalter "{action}" in der Routen Vorlage, falls vorhanden.
 - Die Parameter der Aktionen auf dem Controller.
 
-Vor dem Betrachten des Auswahlalgorithmus, müssen wir einige Dinge zu Controlleraktionen zu verstehen.
+Bevor wir uns den Auswahl Algorithmus ansehen, müssen wir einige Dinge zu Controller Aktionen verstehen.
 
-**Welche Methoden auf dem Controller "Aktionen" gelten?** Wenn Sie eine Aktion auswählen, sucht das Framework nur auf Öffentliche Instanzenmethoden auf dem Controller. Darüber hinaus schließt er ["spezielle Name"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) Methoden (Konstruktoren, Ereignisse, operatorüberladungen und So weiter) und von geerbten Methoden der **ApiController** Klasse.
+**Welche Methoden auf dem Controller werden als "Aktionen" betrachtet?** Wenn eine Aktion ausgewählt wird, untersucht das Framework nur öffentliche Instanzmethoden auf dem Controller. Außerdem werden ["spezielle namens Methoden"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) (Konstruktoren, Ereignisse, Operator Überladungen usw.) und Methoden, die von der **apicontroller** -Klasse geerbt werden, ausgeschlossen.
 
-**HTTP-Methoden.** Das Framework wählt nur die Aktionen, die die HTTP-Methode der Anforderung wie folgt bestimmt entsprechen:
+**HTTP-Methoden.** Das Framework wählt nur Aktionen aus, die der HTTP-Methode der Anforderung entsprechen, wie folgt bestimmt:
 
-1. Sie können die HTTP-Methode mit einem Attribut angeben: **AcceptVerbs**, **HttpDelete**, **HttpGet**, **HttpHead**, **"HttpOptions"**, **HttpPatch**, **HttpPost**, oder **HttpPut**.
-2. Andernfalls, wenn der Name der Controller-Methode mit "Get", "Post", "Put", "Delete", "Head", "Optionen" oder "Patch" gestartet wird, klicken Sie dann gemäß der Konvention die Aktion unterstützt diese HTTP-Methode.
-3. Wenn keine der oben genannten, unterstützt die Methode POST aus.
+1. Sie können die HTTP-Methode mit einem Attribut angeben: **akzeptverbs**, **httpdelete**, **HttpGet**, **httphead**, **httpoptions**, **httppatch**, **HttpPost**oder **httpput**.
+2. Andernfalls, wenn der Name der Controller Methode mit "Get", "Post", "Put", "Delete", "Head", "Options" oder "Patch" beginnt, unterstützt die Aktion die HTTP-Methode gemäß der Konvention.
+3. Wenn keine der oben genannten Punkte angegeben ist, unterstützt die Methode Post.
 
-**Der Parameterbindungen.** Eine parameterbindung ist wie Web-API auf einen Wert für einen Parameter erstellt wird. Hier ist die Standardregel für die parameterbindung:
+**Parameter Bindungen.** Eine Parameter Bindung besteht darin, wie die Web-API einen Wert für einen Parameter erstellt. Dies ist die Standardregel für die Parameter Bindung:
 
-- Einfache Typen stammen aus dem URI.
-- Komplexe Typen stammen aus dem Anforderungstext.
+- Einfache Typen werden aus dem URI entnommen.
+- Komplexe Typen werden aus dem Anforderungs Text entnommen.
 
-Einfache Typen umfassen alle der [.NET Framework-primitive Typen](https://msdn.microsoft.com/library/system.type.isprimitive), plus **"DateTime"**, **Decimal**, **Guid**, **Zeichenfolge** , und **TimeSpan**. Für jede Aktion kann höchstens einen Parameter den Anforderungstext lesen.
+Einfache Typen umfassen alle [.NET Framework primitiven Typen](https://msdn.microsoft.com/library/system.type.isprimitive)sowie **DateTime**, **Decimal**, **GUID**, **String**und **TimeSpan**. Für jede Aktion kann höchstens ein Parameter den Anforderungs Text lesen.
 
 > [!NOTE]
-> Es ist möglich, die Regeln für die Bindung zu überschreiben. Finden Sie unter [WebAPI parameterbindung im Hintergrund](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx).
+> Es ist möglich, die Standard Bindungs Regeln zu überschreiben. Weitere Informationen finden Sie [unter WebAPI-Parameter Bindung im](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)Hintergrund.
 
-Mit diesem Hintergrund sieht der Auswahlalgorithmus für die Aktion aus.
+Mit diesem Hintergrund ist hier der Aktions Auswahl Algorithmus.
 
-1. Erstellen Sie eine Liste mit allen Aktionen auf dem Controller an, die die HTTP-Anforderungsmethode entsprechen.
-2. Wenn des Routenwörterbuchs einen Eintrag "Action" aufweist, entfernen Sie Aktionen, deren Name nicht mit diesem Wert übereinstimmt.
-3. Versuchen Sie es, Action-Parameter an den URI, folgendermaßen an: 
+1. Erstellen Sie eine Liste aller Aktionen auf dem Controller, die der HTTP-Anforderungs Methode entsprechen.
+2. Wenn das Routen Wörterbuch über einen "action"-Eintrag verfügt, entfernen Sie Aktionen, deren Name diesem Wert nicht entspricht.
+3. Versuchen Sie, die Aktionsparameter wie folgt mit dem URI zu vergleichen: 
 
-    1. Erhalten Sie für jede Aktion eine Liste mit den Parametern, die einen einfachen Typ, sind, in dem die Bindung ruft den Parameter aus dem URI. Schließen Sie optionale Parameter.
-    2. Versuchen Sie, eine Übereinstimmung mit jeder Parametername in des Routenwörterbuchs oder in der URI-Abfragezeichenfolge zu suchen, aus dieser Liste. Übereinstimmungen werden Groß-/Kleinschreibung und hängen nicht von der Reihenfolge der Parameter.
-    3. Wählen Sie eine Aktion aus, in dem alle Parameter in der Liste eine Übereinstimmung im URI verfügt.
-    4. Wenn mehr, eine Aktion diese Kriterien erfüllt, wählen Sie die Woche mit der meisten Parameter übereinstimmt.
-4. Ignorieren Sie Aktionen mit der **[NonAction]** Attribut.
+    1. Für jede Aktion wird eine Liste der Parameter abgerufen, bei denen es sich um einen einfachen Typ handelt, bei dem die Bindung den Parameter aus dem URI abruft. Optionale Parameter ausschließen.
+    2. Versuchen Sie aus dieser Liste, eine Entsprechung für jeden Parameternamen zu finden, entweder im Routen Wörterbuch oder in der URI-Abfrage Zeichenfolge. Bei Übereinstimmungen wird die Groß-/Kleinschreibung nicht beachtet, und die Reihenfolge der Parameter
+    3. Wählen Sie eine Aktion aus, bei der jeder Parameter in der Liste eine Entsprechung im URI aufweist.
+    4. Wenn mehr als eine Aktion diese Kriterien erfüllt, wählen Sie die mit den meisten Parameter Übereinstimmungen aus.
+4. Ignorieren von Aktionen mit dem **[NonAction]** -Attribut.
 
-Schritt #3 ist die am häufigsten verwirrend. Die grundlegende Idee ist, dass ein Parameter den Wert entweder aus dem URI, aus dem Anforderungstext oder aus einer benutzerdefinierten Bindung abrufen kann. Für Parameter, die aus dem URI enthalten sind, möchten wir sicherstellen, dass der URI einen Wert für diesen Parameter, entweder im Pfad (über die Route-Wörterbuch) oder in der Abfragezeichenfolge enthält.
+Schritt #3 ist wahrscheinlich die verwirrend. Die grundlegende Idee ist, dass ein Parameter seinen Wert entweder aus dem URI, aus dem Anforderungs Text oder aus einer benutzerdefinierten Bindung erhalten kann. Für Parameter, die aus dem URI stammen, möchten wir sicherstellen, dass der URI tatsächlich einen Wert für diesen Parameter enthält, entweder im Pfad (über das Routen Wörterbuch) oder in der Abfrage Zeichenfolge.
 
-Betrachten Sie beispielsweise die folgende Aktion aus:
+Sehen Sie sich beispielsweise die folgende Aktion an:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample7.cs)]
 
-Die *Id* Parameter bindet an den URI. Diese Aktion kann daher nur einen URI übereinstimmen, die einen Wert für "Id", im Wörterbuch Route oder in der Abfragezeichenfolge enthält.
+Der *ID* -Parameter wird an den URI gebunden. Daher kann diese Aktion nur einem URI entsprechen, der einen Wert für "ID" enthält, entweder im Routen Wörterbuch oder in der Abfrage Zeichenfolge.
 
-Optionale Parameter sind eine Ausnahme aus, da sie optional sind. Für einen optionalen Parameter ist es in Ordnung Wenn die Bindung den Wert aus dem URI nicht.
+Optionale Parameter stellen eine Ausnahme dar, da Sie optional sind. Für einen optionalen Parameter ist es in Ordnung, wenn die Bindung den Wert aus dem URI nicht erhalten kann.
 
-Komplexe Typen stellen eine Ausnahme für einen anderen Grund. Ein komplexer Typ kann nur über eine benutzerdefinierte Bindung an den URI binden. Aber in diesem Fall das Framework darf nicht bereits im Voraus wissen, ob der Parameter an einen bestimmten URI gebunden würde. Sie müssen herausfinden, rufen Sie die Bindung. Das Ziel der Auswahlalgorithmus ist der statische Beschreibung vor dem Aufrufen von Bindungen eine Aktion aus. Aus diesem Grund werden komplexe Typen aus den entsprechenden Algorithmus ausgeschlossen.
+Komplexe Typen sind aus einem anderen Grund eine Ausnahme. Ein komplexer Typ kann nur über eine benutzerdefinierte Bindung an den URI gebunden werden. Aber in diesem Fall kann das Framework nicht im Voraus wissen, ob der Parameter an einen bestimmten URI gebunden würde. Zum ermitteln muss die Bindung aufgerufen werden. Das Ziel des Auswahl Algorithmus besteht darin, vor dem Aufrufen von Bindungen eine Aktion aus der statischen Beschreibung auszuwählen. Daher werden komplexe Typen aus dem übereinstimmenden Algorithmus ausgeschlossen.
 
-Nachdem die Aktion ausgewählt wurde, werden alle parameterbindungen aufgerufen.
+Nachdem die Aktion ausgewählt wurde, werden alle Parameter Bindungen aufgerufen.
 
 Zusammenfassung:
 
-- Die Aktion muss die HTTP-Methode der Anforderung übereinstimmen.
-- Der Name der Aktion muss den "Action"-Eintrag im Wörterbuch Route vorhanden ist, falls vorhanden übereinstimmen.
-- Für jeden Parameter der Aktion Wenn der Parameter, aus dem URI erstellt wird, muss dann der Name des Parameters im Wörterbuch Route oder in der URI-Abfragezeichenfolge gefunden werden. (Parameter mit komplexen Typen und optionale Parameter werden ausgeschlossen.)
-- Versuchen Sie es mit der höchsten Anzahl von Parametern übereinstimmen. Die beste Übereinstimmung möglicherweise eine Methode ohne Parameter.
+- Die Aktion muss mit der HTTP-Methode der Anforderung identisch sein.
+- Der Aktionsname muss mit dem Eintrag "action" im Routen Wörterbuch, falls vorhanden, identisch sein.
+- Wenn der Parameter für jeden Parameter der Aktion aus dem URI entnommen wird, muss der Parameter Name entweder im Routen Wörterbuch oder in der URI-Abfrage Zeichenfolge gefunden werden. (Optionale Parameter und Parameter mit komplexen Typen werden ausgeschlossen.)
+- Versuchen Sie, die meisten Parameter zu vergleichen. Die beste Entsprechung kann eine Methode ohne Parameter sein.
 
 ## <a name="extended-example"></a>Erweitertes Beispiel
 
-Routen:
+Radwegen
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample8.cs)]
 
@@ -182,55 +182,55 @@ HTTP-Anforderung:
 
 [!code-console[Main](routing-and-action-selection/samples/sample10.cmd)]
 
-### <a name="route-matching"></a>Weiterleiten von übereinstimmenden
+### <a name="route-matching"></a>Routen Abgleich
 
-Der URI entspricht der Route, die mit dem Namen "DefaultApi". Das Wörterbuch für die Route enthält die folgenden Einträge:
+Der URI entspricht der Route mit dem Namen "defaultapi". Das Routen Wörterbuch enthält die folgenden Einträge:
 
-- Controller: "Produkte"
+- Controller: "Products"
 - id: "1"
 
-Des Routenwörterbuchs enthält nicht den Abfragezeichenfolgen-Parameter, "Version" und "Details", aber diese werden betrachtet werden bei der Auswahl der Aktion.
+Das Routen Wörterbuch enthält nicht die Abfrage Zeichenfolgen-Parameter "Version" und "Details", aber diese werden während der Aktions Auswahl weiterhin berücksichtigt.
 
-### <a name="controller-selection"></a>Auswahl der Domänencontroller
+### <a name="controller-selection"></a>Controller Auswahl
 
-Über den "Controller"-Eintrag im Wörterbuch weiterleiten, ist der Typ des Controllers `ProductsController`.
+Aus dem Eintrag "controller" im Routen Wörterbuch ist der Controllertyp `ProductsController`.
 
-### <a name="action-selection"></a>Aktionsauswahl
+### <a name="action-selection"></a>Aktions Auswahl
 
-Die HTTP-Anforderung ist eine GET-Anforderung. Die Controlleraktionen, die GET zu unterstützen sind `GetAll`, `GetById`, und `FindProductsByName`. Des Routenwörterbuchs enthält keinen Eintrag für "Action", daher wir nicht mit dem Aktionsnamen übereinstimmen müssen.
+Die HTTP-Anforderung ist eine GET-Anforderung. Die Controller Aktionen, die Get unterstützen, sind `GetAll`, `GetById`und `FindProductsByName`. Das Routen Wörterbuch enthält keinen Eintrag für "action", daher müssen wir nicht mit dem Aktions Namen vergleichen.
 
-Als Nächstes versuchen wir, Parameternamen für die Aktionen entsprechen nur auf den GET-Aktionen suchen.
+Als nächstes versuchen wir, die Parameternamen für die Aktionen abzugleichen, indem wir nur die get-Aktionen betrachten.
 
-| Aktion | Parameter zur Übereinstimmung |
+| Aktion | Parameter für die Abgleich |
 | --- | --- |
 | `GetAll` | none |
 | `GetById` | "id" |
-| `FindProductsByName` | "Name" |
+| `FindProductsByName` | Benennen |
 
-Beachten Sie, dass die *Version* Parameter `GetById` gilt nicht, da es sich um einen optionalen Parameter ist.
+Beachten Sie, dass der *Versions* Parameter von `GetById` nicht berücksichtigt wird, da es sich um einen optionalen Parameter handelt.
 
-Die `GetAll` Methode entspricht im Grunde kann. Die `GetById` Methode auch entspricht, da des Routenwörterbuchs "Id" enthält. Die `FindProductsByName` Methode stimmt nicht überein.
+Die `GetAll`-Methode entspricht trivial. Die `GetById`-Methode stimmt ebenfalls überein, da das Routen Wörterbuch "ID" enthält. Die `FindProductsByName`-Methode stimmt nicht mit ab.
 
-Die `GetById` wins-Methode, da es einen Parameter, und keine Parameter für entspricht `GetAll`. Die Methode wird mit den folgenden Parameterwerten aufgerufen:
+Die `GetById`-Methode gewinnt, da Sie mit einem Parameter übereinstimmt, im Gegensatz zu den Parametern für `GetAll`. Die-Methode wird mit den folgenden Parameterwerten aufgerufen:
 
-- *id* = 1
-- *Version* = 1.5
+- *ID* = 1
+- *Version* = 1,5
 
-Beachten Sie, dass, obwohl *Version* nicht verwendet wurde, in der Auswahlalgorithmus stammt der Wert des Parameters die URI-Abfragezeichenfolge.
+Beachten Sie, dass der Wert des-Parameters aus der URI-Abfrage Zeichenfolge stammt, obwohl die *Version* im Auswahl Algorithmus nicht verwendet wurde.
 
 ## <a name="extension-points"></a>Erweiterungspunkte
 
-Web-API stellt Erweiterungspunkte für einige Teile der routing-Prozess bereit.
+Die Web-API stellt Erweiterungs Punkte für einige Teile des Routing Prozesses bereit.
 
-| Interface | Beschreibung |
+| Schnittstelle | Beschreibung |
 | --- | --- |
-| **IHttpControllerSelector** | Wählt den Controller. |
-| **IHttpControllerTypeResolver** | Ruft die Liste der Controllertypen ab. Die **DefaultHttpControllerSelector** wählt den Controllertyp aus dieser Liste. |
-| **IAssembliesResolver** | Ruft die Liste der Projektassemblys ab. Die **IHttpControllerTypeResolver** Schnittstelle verwendet diese Liste, um die Controllertypen gefunden werden. |
-| **IHttpControllerActivator** | Erstellen von neuen Controllerinstanzen. |
-| **IHttpActionSelector** | Wählt die Aktion. |
-| **IHttpActionInvoker** | Ruft die Aktion. |
+| **Ihttpcontrollerselector** | Wählt den Controller aus. |
+| **Ihttpcontrollertyperesolver** | Ruft die Liste der Controller Typen ab. Der " **defaulthttpcontrollerselector" wählt den Controllertyp** aus der Liste aus. |
+| **Iassembliesresolver** | Ruft die Liste der projektenassemblys ab. Die **ihttpcontrollertyperesolver** -Schnittstelle verwendet diese Liste, um die Controller Typen zu suchen. |
+| **Ihttpcontrolleractivator** | Erstellt neue Controller Instanzen. |
+| **Ihttpactionselector** | Wählt die Aktion aus. |
+| **Ihttpactioninvoker** | Ruft die Aktion auf. |
 
-Um Ihre eigene Implementierung für den folgenden Schnittstellen bereitzustellen, verwenden die **Services** Auflistung auf der **HttpConfiguration** Objekt:
+Verwenden Sie die **Services** -Auflistung für das **httpconfiguration** -Objekt, um eine eigene Implementierung für eine dieser Schnittstellen bereitzustellen:
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample11.cs)]

@@ -1,25 +1,25 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
-title: ASP.NET-webbereitstellung mithilfe von Visual Studio | Microsoft-Dokumentation
+title: ASP.net-Webbereitstellung mithilfe von Visual Studio | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET Web-Anwendung, die SQL Server (nicht SQL Server Compact) verfügbar über das Internet verwendet werden, indem Sie sie bereitstellen, t...
+description: Diese tutorialreihe zeigt, wie eine ASP.NET-Webanwendung, die SQL Server (nicht SQL Server Compact) verwendet, über das Internet verfügbar gemacht wird.
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: e733027a-525f-47ae-b1c0-2e5ecf6677aa
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
 ms.openlocfilehash: 486042c428787ff03b964d04de4af59e540c62d6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128601"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439467"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio"></a>ASP.NET-Webbereitstellung mithilfe von Visual Studio
 
-> Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET Web-Anwendung, die SQL Server (nicht SQL Server Compact) verfügbar über das Internet verwendet werden, durch die Bereitstellung einer Windows Azure-Website oder einem Drittanbieter-hosting-Anbieter. Erfordert Visual Studio 2012 und die ASP.NET und Webtools 2012.2 Update oder Visual Studio 2010. Informationen zu SQL Server Compact finden Sie unter [ASP.NET-Webbereitstellung mit SQL Server Compact mit Visual Studio](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md).
+> Diese tutorialreihe zeigt, wie Sie eine ASP.NET-Webanwendung, die SQL Server (nicht SQL Server Compact) verwendet, über das Internet verfügbar machen, indem Sie Sie auf einer Windows Azure-Website oder einem Drittanbieter-Hostinganbieter bereitstellen. Erfordert Visual Studio 2012 und das ASP.net and Web Tools 2012,2-Update oder Visual Studio 2010. Informationen zu SQL Server Compact finden Sie unter [ASP.net-Webbereitstellung mit SQL Server Compact mithilfe von Visual Studio](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md).
 
-- [Introduction (Einführung)](introduction.md)
+- [Einführung](introduction.md)
 - [Vorbereiten für die Datenbankbereitstellung](preparing-databases.md)
 - [Umwandlungen für die Datei „Web.config“](web-config-transformations.md)
 - [Projekteigenschaften](project-properties.md)

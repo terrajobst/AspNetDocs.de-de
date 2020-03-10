@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
-title: '[Gewusst wie:] Implementieren von AJAX nach dem Verarbeitungsmuster? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Implementieren Sie den AJAX nach dem Verarbeitungs Muster? | Microsoft-Dokumentation'
 author: JoeStagner
-description: ASP.NET AJAX-Framework ermöglicht Ihrer serverseitigen Code verknüpfen, und klicken Sie auf verschiedene clientseitige Ereignisse reagieren. In diesem Video erfahren wir, wie die Aft implementieren...
+description: Mit dem ASP.NET AJAX-Framework kann Ihr serverseitiger Code verschiedene Client seitige Ereignisse Einhaken und darauf reagieren. In diesem Video erfahren Sie, wie Sie die...
 ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 9a382d8e-ea3a-4fa4-bd24-b56f9051f4db
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
 msc.type: video
 ms.openlocfilehash: 3d4b4e0d12d8baa6810a90ff9225fcbf88fad58f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398630"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438687"
 ---
-# <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[Gewusst wie:] Implementieren von AJAX nach dem Verarbeitungsmuster?
+# <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[Gewusst wie:] Implementieren Sie den AJAX nach dem Verarbeitungs Muster?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-ASP.NET AJAX-Framework ermöglicht Ihrer serverseitigen Code verknüpfen, und klicken Sie auf verschiedene clientseitige Ereignisse reagieren. In diesem Video erfahren wir, wie nach der Verarbeitung Implementierung des Musters, dem können serverseitigen Code Zusammenfassung Logik ausgeführt, sobald der Benutzer mit der Webseite abgeschlossen hat.
+Mit dem ASP.NET AJAX-Framework kann Ihr serverseitiger Code verschiedene Client seitige Ereignisse Einhaken und darauf reagieren. In diesem Video erfahren Sie, wie das nach Verarbeitungs Muster implementiert wird, das es Server seitigem Code ermöglicht, eine aufzurufende Logik auszuführen, sobald der Benutzer die Webseite beendet hat.
 
-[&#9654;Sehen Sie sich Video (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-ajax-after-processing-pattern)
+[&#9654;Video ansehen (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-ajax-after-processing-pattern)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-aspnet-ajax-history-control.md)

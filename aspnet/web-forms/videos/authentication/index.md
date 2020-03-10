@@ -2,22 +2,22 @@
 uid: web-forms/videos/authentication/index
 title: Authentifizierung | Microsoft-Dokumentation
 author: rick-anderson
-description: Informationen zum Implementieren und Verwalten der Sicherheit (Authentifizierung) in einer ASP.NET-Anwendung.
+description: Vorgehensweise beim Implementieren und Verwalten der Sicherheit (Authentifizierung) in einer ASP.NET-Anwendung.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 4a365e58-9b18-4bd2-bfd5-6981e7f2e179
 msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
 ms.openlocfilehash: 9802eee31ecafeb17a09d6c154d811b3d0bb01de
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133751"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421719"
 ---
 # <a name="authentication"></a>Authentifizierung
 
-> Informationen zum Implementieren und Verwalten der Sicherheit (Authentifizierung) in einer ASP.NET-Anwendung.
+> Vorgehensweise beim Implementieren und Verwalten der Sicherheit (Authentifizierung) in einer ASP.NET-Anwendung.
 
 - [Verwenden der grundlegenden Formularauthentifizierung in ASP.NET](using-basic-forms-authentication-in-aspnet.md)
 - [Ändern der Eigenschaften der Formularauthentifizierung](how-to-change-the-forms-authentication-properties.md)

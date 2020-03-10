@@ -9,11 +9,11 @@ ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a3474650939ee220b3fd712e9f5a6cf3db11db09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621136"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438945"
 ---
 # <a name="deploying-your-site-using-an-ftp-client-c"></a>Bereitstellen einer Website mithilfe eines FTP-Clients (C#)
 
@@ -134,13 +134,13 @@ Beachten Sie außerdem, dass alle Änderungen am `Web.config` oder an den Dateie
 
 Beachten Sie schließlich, dass die erneute Bereitstellung einer Anwendung von wenigen Sekunden bis zu mehreren Minuten dauern kann, abhängig von der Anzahl und Größe der Dateien, die in die Produktionsumgebung kopiert werden müssen. Während dieser Zeit können Benutzer, die Ihre Website besuchen, Fehler oder ungerade Verhalten erleben. Sie können Ihre gesamte Anwendung "Ausschalten", indem Sie eine Seite mit dem Namen "`App_Offline.htm`" zum Stammverzeichnis Ihrer Anwendung hinzufügen, in der Ihren Benutzern erläutert wird, dass die Website zur Wartung herunter ist (oder was auch immer) und in Kürze wieder verwendet wird. Wenn die `App_Offline.htm`-Datei vorhanden ist, werden alle eingehenden Anforderungen von der ASP.NET-Laufzeit auf diese Seite umgeleitet.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Bereitstellen einer Webanwendung umfasst das Kopieren der erforderlichen Dateien aus der Entwicklungsumgebung in die Produktionsumgebung. Die gängigste Methode, mit der Dateien über ein Netzwerk übertragen werden, ist die Dateiübertragungsprotokoll (FTP), und die meisten Webhostinganbieter unterstützen den FTP-Zugriff auf die Webserver. In diesem Tutorial wurde erläutert, wie ein FTP-Client verwendet wird, um die erforderlichen Dateien auf dem Webserver bereitzustellen. Nach der Bereitstellung kann die Website von jedem Benutzer mit Internet Verbindung besucht werden.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

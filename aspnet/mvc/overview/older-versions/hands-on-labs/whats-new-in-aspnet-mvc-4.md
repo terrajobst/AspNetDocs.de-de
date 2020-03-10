@@ -9,15 +9,15 @@ ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 4235f4fe666cdeb7d0821127a2b349f2ff30cd6e
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057030"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433671"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>Neue Funktionen in ASP.NET MVC 4
 
-Vom [Web Camps-Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
 [Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
@@ -45,7 +45,7 @@ In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Erforderliche Voraussetzungen
+### <a name="prerequisites"></a>Voraussetzungen
 
 Zum Durchführen dieses Labs müssen Sie über Folgendes verfügen:
 
@@ -57,7 +57,7 @@ Zum Durchführen dieses Labs müssen Sie über Folgendes verfügen:
 <a id="Setup"></a>
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
 Im gesamten Lab-Dokument werden Sie angewiesen, Code Blöcke einzufügen. Der größte Teil dieses Codes wird zur einfacheren Verwendung als Visual Studio Code Ausschnitte bereitgestellt, die Sie in Visual Studio verwenden können, um das manuelle Hinzufügen zu vermeiden.
 
@@ -203,7 +203,7 @@ ASP.NET MVC 4 vereinfacht die Entwicklung von Websites für Mobile und Tablet-Br
 
         Die Projektvorlage für mobile Anwendungen enthält die Mobile jQuery-Bibliothek, bei der es sich um eine Open-Source-Bibliothek für die Kompatibilität mobiler Browser handelt. jQuery Mobile wendet Progressive Verbesserungen auf Mobile Browser an, die CSS und JavaScript unterstützen. Die Progressive Erweiterung ermöglicht allen Browsern, den grundlegenden Inhalt einer Webseite anzuzeigen, während Sie nur die leistungsfähigsten Browser zum Anzeigen der umfangreichen Inhalte ermöglicht. Die JavaScript-und CSS-Dateien, die im jQuery Mobile-Stil enthalten sind, unterstützen Mobile Browser bei der Anpassung an den Inhalt des Bildschirms, ohne dass Änderungen am Seiten Markup vorgenommen werden.
 
-        ![jQuery-mobile-Library-enthaltene-in-the-Vorlage](whats-new-in-aspnet-mvc-4/_static/image12.png)
+        ![jQuery-mobile-library-included-in-the-template](whats-new-in-aspnet-mvc-4/_static/image12.png)
 
         *in der Vorlage enthaltene Mobile jQuery-Bibliothek*
     - **HTML5-basiertes Markup**
@@ -397,7 +397,7 @@ Eines der wichtigsten Updates in ASP.NET MVC 4 ist die Unterstützung für die M
 
     - **Views/Shared/\_Layout. Mobile. cshtml**: ist ein auf einem mobilen jQuery-basierendes Layout, das für einen kleineren Bildschirm optimiert ist. Wenn die Website eine Anforderung von einem mobilen Browser empfängt, ersetzt Sie das ursprüngliche Layout (\_Layout. cshtml) durch dieses.
     - Eine Ansichts switcherkomponente: besteht aus der Teilansicht **views/Shared/\_viewswitcher. cshtml** und dem **ViewSwitcherController.cs** -Controller. Diese Komponente zeigt einen Link auf mobilen Browsern an, damit Benutzer zur Desktop Version der Seite wechseln können.  
-        ![Fotogalerie Projekt mit mobiler Unterstützung](whats-new-in-aspnet-mvc-4/_static/image23.png "PhProjekt mit Unterstützung mobiler Geräte im Projekt "Oto")
+        ![Fotogalerie Projekt mit mobiler Unterstützung](whats-new-in-aspnet-mvc-4/_static/image23.png "Fotogalerie Projekt mit mobiler Unterstützung")
 
         *Fotogalerie Projekt mit mobiler Unterstützung*
 4. Registrieren Sie die mobilen Pakete. Öffnen Sie hierzu die Datei **Global.asax.cs** , und fügen Sie die folgende Zeile hinzu.
@@ -516,7 +516,7 @@ In dieser Aufgabe untersuchen Sie die Beispiel Implementierung eines von jQuery.
 
     - Die **HttpContext. clearoverriddenbrowser ()** -Methode entfernt alle überschriebenen Benutzer-Agents für die aktuelle Anforderung.
     - Die **HttpContext.** Setup-Methode () überschreibt den tatsächlichen Benutzer-Agent-Wert der Anforderung unter Verwendung des angegebenen Benutzer-Agents.  
-        ![Viewswitcher-Controller](whats-new-in-aspnet-mvc-4/_static/image31.png "Viewswitcher-Controller ")  
+        ![Viewswitcher-Controller](whats-new-in-aspnet-mvc-4/_static/image31.png "Viewswitcher-Controller")  
 *Viewswitcher-Controller*
 
         Die Überschreibung des Browsers ist ein zentrales Feature von ASP.NET MVC 4, das auch dann verfügbar ist, wenn Sie das Paket "jQuery. Mobile. MVC" nicht installieren. Diese Funktion wirkt sich jedoch nur auf Sicht, Layout und partielle Ansicht aus und wirkt sich nicht auf Funktionen aus, die vom Request. Browser-Objekt abhängen.
@@ -538,9 +538,9 @@ In dieser Aufgabe aktualisieren Sie das Desktop Layout, sodass es den Ansichts S
     ![Anzeigen des in der Desktop Ansicht gerenderten Switchers](whats-new-in-aspnet-mvc-4/_static/image32.png "Anzeigen des in der Desktop Ansicht gerenderten Switchers")
 
     *Anzeigen des in der Desktop Ansicht gerenderten Switchers*
-7. Wechseln Sie erneut zur mobilen Ansicht, und navigieren Sie **zur Seite "** Info" (http://localhost [Port]/Home/About). Beachten Sie, dass die Seite "Info" mit dem mobilen Layout (\_"Layout. Mobile. cshtml") angezeigt wird, auch wenn Sie keine about. Mobile. cshtml-Ansicht erstellt haben.
+7. Wechseln Sie erneut zur mobilen Ansicht, und navigieren Sie **zur Seite "** Info" (http://localhost[Port]/Home/About). Beachten Sie, dass die Seite "Info" mit dem mobilen Layout (\_"Layout. Mobile. cshtml") angezeigt wird, auch wenn Sie keine about. Mobile. cshtml-Ansicht erstellt haben.
 
-    ![Info-Seite](whats-new-in-aspnet-mvc-4/_static/image33.png "Seite „Info“")
+    ![Info-Seite](whats-new-in-aspnet-mvc-4/_static/image33.png "Infoseite")
 
     *Info-Seite*
 8. Öffnen Sie schließlich die Website in einem Desktop-Webbrowser. Beachten Sie, dass sich keines der vorherigen Updates auf die Desktop Ansicht ausgewirkt hat.
@@ -589,7 +589,7 @@ Nun verfügen Sie über drei Layouts in Ihrer ASP.NET MVC 4-Anwendung:
 7. Drücken Sie **F5** , um die Anwendung auszuführen und die Website im **Windows Phone Emulator**zu durchsuchen.
 8. Öffnen Sie einen **iPhone-Simulator** (Anweisungen zum Installieren und Konfigurieren eines iPhone-Simulators finden Sie in [Anhang C](#AppendixC) ), und navigieren Sie zu der Website. Beachten Sie, dass jedes Telefon die jeweilige Vorlage verwendet.
 
-    ![Verwenden von "-Different-Views-for-each-Mobile-Gerät2"](whats-new-in-aspnet-mvc-4/_static/image35.png)
+    ![Using-different-views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
 
     *Verwenden verschiedener Ansichten für die einzelnen mobilen Geräte*
 
@@ -862,7 +862,7 @@ Wenn Sie Ihre Website auf einem simulierten iPhone-Gerät ausführen möchten, k
 1. Öffnen Sie **Visual Studio 2012** , und öffnen Sie eine beliebige Website, oder erstellen Sie ein neues Projekt.
 2. Klicken Sie in der Schaltfläche Ausführen auf den Pfeil nach unten, und wählen Sie **Durchsuchen mit**
 
-    ![Durchsuchen](whats-new-in-aspnet-mvc-4/_static/image58.png "Durchsuchen")
+    ![Durchsuchen](whats-new-in-aspnet-mvc-4/_static/image58.png "Browserauswahl")
 
     *Durchsuchen*
 3. Klicken Sie im Dialogfeld &quot;mit&quot; durchsuchen auf **Hinzufügen**.

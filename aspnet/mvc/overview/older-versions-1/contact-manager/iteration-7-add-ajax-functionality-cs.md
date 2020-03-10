@@ -1,235 +1,235 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
-title: 'Iteration #7 – Hinzufügen von Ajax-Funktionen (c#) | Microsoft-Dokumentation'
+title: 'Iterations #7 – Hinzufügen von AJAXC#-Funktionen () | Microsoft-Dokumentation'
 author: microsoft
-description: In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+description: In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f1b0809e-8909-444e-b6bb-a5cd1dea3f72
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7c8eb3d3688674dd2c220b4bd1b5982f2610d0eb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123843"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437733"
 ---
-# <a name="iteration-7--add-ajax-functionality-c"></a>Iteration #7 – Hinzufügen von Ajax-Funktionen (c#)
+# <a name="iteration-7--add-ajax-functionality-c"></a>Iterations #7 – Hinzufügen von AJAXC#-Funktionen ()
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-7-add-ajax-functionality-cs/_static/contactmanager_7_cs1.zip)
 
-> In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+> In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Aufbauen einer Kontakt Verwaltung ASP.NET MVC-AnwendungC#()
 
-In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
+In dieser Reihe von Tutorials erstellen wir von Anfang bis Ende eine gesamte Kontakt Verwaltungs Anwendung. Mithilfe der Kontakt-Manager-Anwendung können Sie Kontaktinformationen (Namen, Telefonnummern und e-Mail-Adressen) für eine Liste von Personen speichern.
 
-Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbessern wir nach und nach der Anwendung. Das Ziel dieses mehrere Iteration-Ansatzes ist, um den Grund für jede Änderung verstehen können.
+Die Anwendung wird über mehrere Iterationen erstellt. Bei jeder Iterationen verbessern wir die Anwendung allmählich. Das Ziel dieses mehrfaches Iterations Ansatzes besteht darin, Ihnen zu ermöglichen, den Grund für jede Änderung zu verstehen.
 
-- Iteration #1 – Erstellen der Anwendung. In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen Sie, aktualisieren Sie und löschen Sie (CRUD).
+- Iterations #1: Erstellen Sie die Anwendung. In der ersten Iterationen erstellen wir den Kontakt-Manager auf einfachste Art und Weise. Wir fügen Unterstützung für grundlegende Daten Bank Vorgänge hinzu: Create, Read, Update und DELETE (CRUD).
 
-- Iteration #2 – Optimieren der Anwendung gut. In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+- Iterations #2: machen Sie das Aussehen der Anwendung schön. In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-- Iteration #3 – Hinzufügen der formularüberprüfung. In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
+- Iterations #3: Formular Validierung hinzufügen. In der dritten Iterationen fügen wir die grundlegende Formular Validierung hinzu. Wir hindern Personen daran, ein Formular zu senden, ohne die erforderlichen Formularfelder abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-- Stellen Sie Iteration #4 – lose koppeln der Anwendung. In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+- Iterations #4: Legen Sie die Anwendung lose gekoppelt. In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-- Iteration #5 – Erstellen von Komponententests. In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+- Iterations #5: Erstellen von Komponententests. In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-- Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+- Iterations #6: Verwenden Sie die Test gesteuerte Entwicklung. In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-- Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+- Iterations #7: Hinzufügen von AJAX-Funktionen. In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="this-iteration"></a>Diese Iteration
+## <a name="this-iteration"></a>Diese Iterations
 
-In dieser Iteration der Contact Manager-Anwendung gestalten wir unsere Anwendung zum Verwenden von Ajax. Durch die Nutzung von Ajax, stellen wir unsere Anwendung steigern der Reaktionsfähigkeit. Wir können vermeiden, eine ganze Seite rendern, wenn wir nur eine bestimmte Region auf einer Seite zu aktualisieren müssen.
+In dieser Iterationen der Kontakt-Manager-Anwendung wird die Anwendung für die Verwendung von AJAX umgestalten. Durch die Nutzung von AJAX machen wir unsere Anwendung reaktionsfähiger. Wir können vermeiden, dass eine ganze Seite gerendert wird, wenn nur eine bestimmte Region auf einer Seite aktualisiert werden muss.
 
-Wir werden unsere Ansicht "Index" so umgestalten, dass wir t muss die gesamte Seite erneut Raten, wenn jemand eine neue Gruppe von Kontakte auswählt. Stattdessen klickt ein Benutzer eine Gruppe von Kontakte, wir nur die Liste der Kontakte aktualisieren und lassen den Rest der Seite allein.
+Wir gestalten unsere Index Ansicht so um, dass wir die gesamte Seite immer dann erneut anzeigen müssen, wenn jemand eine neue Kontaktgruppe auswählt. Wenn ein Benutzer auf eine Kontaktgruppe klickt, wird stattdessen nur die Liste der Kontakte aktualisiert, und der Rest der Seite wird unverändert gelassen.
 
-Wir ändern außerdem die Möglichkeit, unsere Delete-link funktioniert. Anstatt eine separate Bestätigungsseite, werden wir ein JavaScript-Bestätigungsdialogfeld angezeigt. Wenn Sie bestätigen, dass Sie einen Kontakt zu löschen möchten, wird ein HTTP DELETE-Vorgang für den Server So löschen Sie den Kontaktdatensatz aus der Datenbank ausgeführt.
+Außerdem wird die Funktionsweise des Lösch Links geändert. Anstatt eine separate Bestätigungsseite anzuzeigen, wird ein JavaScript-Bestätigungs Dialogfeld angezeigt. Wenn Sie bestätigen, dass Sie einen Kontakt löschen möchten, wird ein HTTP-Löschvorgang für den Server ausgeführt, um den Kontaktdaten Satz aus der Datenbank zu löschen.
 
-Darüber hinaus werden wir nutzen von jQuery Animationseffekte unserer Ansicht "Index" hinzu. Wir werden eine Animation anzeigen, wenn die neue Liste mit Kontakten vom Server abgerufen wird, ist.
+Außerdem nutzen wir jQuery, um der Index Ansicht Animationseffekte hinzuzufügen. Wir zeigen eine Animation an, wenn die neue Liste der Kontakte vom Server abgerufen wird.
 
-Abschließend müssen wir die ASP.NET AJAX-Framework-Unterstützung für die Verwaltung von Browserverlauf nutzen. Wir erstellen von Verlaufspunkten, wenn wir auf einen Ajax-Aufruf zum Aktualisieren der Kontaktliste ausführen. Auf diese Weise der Browser rückwärts- und vorwärtsnavigationselement Schaltflächen wird funktionieren.
+Zum Schluss nutzen wir die ASP.NET AJAX Framework-Unterstützung für die Verwaltung des Browserverlaufs. Wir erstellen Verlaufs Punkte, wenn wir einen AJAX-Aufruf zum Aktualisieren der Kontaktliste ausführen. Auf diese Weise funktionieren die Schaltflächen rückwärts und vorwärts des Browsers.
 
-## <a name="why-use-ajax"></a>Gründe für die Verwendung von Ajax
+## <a name="why-use-ajax"></a>Gründe für die Verwendung von AJAX
 
-Mithilfe von Ajax hat viele Vorteile. Eine Anwendung führt eine bessere benutzererfahrung zunächst Ajax-Funktionen hinzugefügt. In einer normalen Web-Anwendung muss die gesamte Seite zurück an den Server jedes Mal gebucht werden, das ein Benutzer eine Aktion ausführt. Wenn Sie eine Aktion ausführen, müssen die Browser-sperren und der Benutzer warten, bis die gesamte Seite abgerufen und erneut angezeigt wird.
+Die Verwendung von AJAX bietet zahlreiche Vorteile. Das Hinzufügen von AJAX-Funktionen zu einer Anwendung führt zu einer besseren Benutzer Funktionalität. In einer normalen Webanwendung muss die gesamte Seite jedes Mal, wenn ein Benutzer eine Aktion ausführt, an den Server zurückgesendet werden. Wenn Sie eine Aktion ausführen, sperrt der Browser, und der Benutzer muss warten, bis die gesamte Seite abgerufen und erneut angezeigt wird.
 
-Dies wäre eine unzulässige Erfahrungen mit einer Desktopanwendung. Aber in der Vergangenheit wir kurzlebig mit diesem Benutzer negatives Erlebnis im Falle einer Webanwendung, da wir nicht wusste, dass wir besser machen können. Wir dachten, dass wurde eine Einschränkung von Webanwendungen, in Wirklichkeit nur eine Einschränkung von unserem Imaginations war.
+Dies wäre bei einer Desktop Anwendung ein unzulässiger Eindruck. Aber bisher haben wir bei einer Webanwendung mit dieser ungültigen Benutzerfunktion vertraut, da wir nicht wissen, dass wir eine bessere Leistung erzielen konnten. Wir dachten, es handelte sich um eine Einschränkung von Webanwendungen, die in Wirklichkeit nur eine Einschränkung unserer imagationen war.
 
-In einer Ajax-Anwendung Einbau Sie zusätzlichen t muss die Benutzeroberfläche zum Stillstand so aktualisieren Sie eine Seite zu bringen. Stattdessen können Sie eine asynchrone Anforderung im Hintergrund, um die Seite aktualisieren ausführen. Einbau zusätzlichen t-Force-den Benutzer warten, bis der Seite aktualisiert wird.
+In einer AJAX-Anwendung müssen Sie die Benutzer Arbeit nicht einfach anhalten, um eine Seite zu aktualisieren. Stattdessen können Sie eine asynchrone Anforderung im Hintergrund ausführen, um die Seite zu aktualisieren. Sie erzwingen, dass der Benutzer nicht warten muss, während der Teil der Seite aktualisiert wird.
 
-Durch die Nutzung von Ajax, können Sie auch die Leistung Ihrer Anwendung verbessern. Beachten Sie, wie die Kontakt-Manager-Anwendung ohne Ajax-Funktionalität jetzt funktioniert. Wenn Sie eine Gruppe von Kontakte klicken, muss die gesamte Ansicht "Index" erneut angezeigt werden. Die Liste der Kontakte und die Liste der Kontakt Gruppen müssen aus den Datenbankserver abgerufen werden. Alle diese Daten müssen über das Netzwerk vom Webserver an Webbrowser übergeben werden.
+Wenn Sie AJAX nutzen, können Sie auch die Leistung Ihrer Anwendung verbessern. Beachten Sie, wie die Kontakt-Manager-Anwendung sofort und ohne AJAX-Funktionalität funktioniert. Wenn Sie auf eine Kontaktgruppe klicken, muss die gesamte Index Ansicht erneut angezeigt werden. Die Liste der Kontakte und die Liste der Kontaktgruppen müssen vom Datenbankserver abgerufen werden. Alle diese Daten müssen über das Netzwerk vom Webserver an den Webbrowser übermittelt werden.
 
-Nachdem wir unsere Anwendung von Ajax-Funktionen hinzugefügt haben, können wir jedoch die erneute Anzeigen der gesamten Seite, klickt ein Benutzer eine Gruppe von Kontakte vermeiden. Wir müssen nicht mehr die wenden Sie sich an Gruppen aus der Datenbank abrufen. Wir raten auch t muss die gesamte Ansicht "Index" über das Netzwerk übertragen. Durch die Nutzung von Ajax, reduzieren wir die Menge der Arbeit, die unsere Datenbank-Server ausführen müssen, und reduzieren wir die Menge des Netzwerkverkehrs, die von der Anwendung erforderlich sind.
+Nach dem Hinzufügen von AJAX-Funktionen zu unserer Anwendung können wir jedoch vermeiden, dass die gesamte Seite erneut angezeigt wird, wenn ein Benutzer auf eine Kontaktgruppe klickt. Wir müssen die Kontaktgruppen nicht mehr aus der Datenbank erfassen. Wir müssen die gesamte Index Ansicht auch nicht über das Netzwerk übertragen. Durch die Nutzung von AJAX verringern wir die Menge an Arbeit, die der Datenbankserver ausführen muss, und wir reduzieren die Menge an Netzwerk Datenverkehr, der von der Anwendung benötigt wird.
 
-## <a name="don-t-be-afraid-of-ajax"></a>Don ' t werden die Aufrüstung von Ajax
+## <a name="don-t-be-afraid-of-ajax"></a>Don 't Angst vor AJAX
 
-Einige Entwickler vermeiden Sie mithilfe von Ajax, da sie die älteren Browsern kümmern. Sie möchten sicherstellen, dass ihre Webanwendungen weiterhin funktionieren, wenn von einem Browser zugegriffen wird, die JavaScript nicht unterstützt. Da Ajax JavaScript abhängt, vermeiden Sie einige Entwickler mithilfe von Ajax.
+Einige Entwickler vermeiden die Verwendung von AJAX, da Sie sich Gedanken über Downlevelbrowser machen. Sie möchten sicherstellen, dass Ihre Webanwendungen weiterhin funktionieren, wenn Sie von einem Browser aufgerufen werden, der JavaScript nicht unterstützt. Da AJAX von JavaScript abhängig ist, vermeiden einige Entwickler die Verwendung von AJAX.
 
-Jedoch berücksichtigen, wie Sie Ajax implementieren möchten können dann Sie Anwendungen erstellen, die mit sowohl Uplevel und älteren Browsern funktionieren. Die Kontakt-Manager-Anwendung funktioniert mit Browsern mit Unterstützung für JavaScript und Browser, die nicht der Fall ist.
+Wenn Sie jedoch vorsichtig sind, wie Sie AJAX implementieren, können Sie Anwendungen erstellen, die sowohl mit komplexer Darstellung-als auch mit Downlevelbrowsern funktionieren. Unsere Contact Manager-Anwendung funktioniert mit Browsern, die JavaScript und Browser unterstützen, die dies nicht tun.
 
-Wenn Sie die Kontakt-Manager-Anwendung mit einem Browser verwenden, die JavaScript unterstützt müssen eine bessere benutzererfahrung Sie. Z. B. Wenn Sie eine Gruppe von Kontakte klicken, wird nur in die Region der Seite, die Kontakte angezeigt aktualisiert werden.
+Wenn Sie die Kontakt-Manager-Anwendung mit einem Browser verwenden, der JavaScript unterstützt, erhalten Sie eine bessere Benutzer Leistung. Wenn Sie z. b. auf eine Kontaktgruppe klicken, wird nur der Bereich der Seite aktualisiert, in dem Kontakte angezeigt werden.
 
-Wenn Sie andererseits, Sie verwenden die Kontakt-Manager-Anwendung mit einem Browser, die JavaScript nicht unterstützt (oder, bei dem JavaScript deaktiviert) müssen eine etwas nicht das bevorzugte Tag Benutzeroberfläche Sie. Z. B. Wenn Sie eine Gruppe von Kontakte klicken, muss die gesamte Ansicht "Index" an den Browser gebucht werden zum Anzeigen der entsprechenden Liste der Kontakte.
+Wenn Sie auf der anderen Seite die Kontakt-Manager-Anwendung mit einem Browser verwenden, der JavaScript nicht unterstützt (oder wenn JavaScript deaktiviert ist), haben Sie eine etwas weniger wünschenswert für Benutzer. Wenn Sie z. b. auf eine Kontaktgruppe klicken, muss die gesamte Index Ansicht an den Browser zurückgesendet werden, um die passende Liste von Kontakten anzuzeigen.
 
 ## <a name="adding-the-required-javascript-files"></a>Hinzufügen der erforderlichen JavaScript-Dateien
 
-Es müssen drei JavaScript-Dateien verwenden, um die Ajax-Funktionen, die Anwendung hinzuzufügen. Alle drei dieser Dateien befinden sich im Ordner "Scripts" einer neuen ASP.NET MVC-Anwendung.
+Wir müssen drei JavaScript-Dateien verwenden, um der Anwendung AJAX-Funktionalität hinzuzufügen. Alle drei Dateien sind im Ordner Scripts einer neuen ASP.NET MVC-Anwendung enthalten.
 
-Wenn Sie Ajax in mehrere Seiten in Ihrer Anwendung verwenden möchten stellt dann sinnvoll, die erforderlichen JavaScript-Dateien in Ihrer Anwendung s anzeigen-Masterseite einschließen. Auf diese Weise werden die JavaScript-Dateien in alle Seiten in Ihrer Anwendung automatisch berücksichtigt.
+Wenn Sie AJAX auf mehreren Seiten in Ihrer Anwendung verwenden möchten, ist es sinnvoll, die erforderlichen JavaScript-Dateien in die Ansichts Master Seite der Anwendung einzubeziehen. Auf diese Weise werden die JavaScript-Dateien automatisch in alle Seiten in der Anwendung eingeschlossen.
 
-Fügen Sie der folgende JavaScript-Code enthält, in der &lt;Head&gt; Tag der Masterseite anzeigen:
+Fügen Sie die folgenden JavaScript-Includes innerhalb des &lt;Head&gt;-Tags der Ansichts Master Seite hinzu:
 
 [!code-html[Main](iteration-7-add-ajax-functionality-cs/samples/sample1.html)]
 
-## <a name="refactoring-the-index-view-to-use-ajax"></a>Umgestaltung der Ansicht "Index", um Ajax zu verwenden.
+## <a name="refactoring-the-index-view-to-use-ajax"></a>Umgestaltung der Index Ansicht zur Verwendung von AJAX
 
-Lassen Sie s zunächst, ändern unsere Ansicht "Index", sodass Sie auf eine Gruppe von Kontakten nur die Region der Sicht aktualisiert, die Kontakte angezeigt. Das rote Kästchen in Abbildung 1 enthält die Region, die aktualisiert werden sollen.
+Beginnen Sie, indem Sie die Index Ansicht ändern, sodass beim Klicken auf eine Kontaktgruppe nur der Bereich der Ansicht aktualisiert wird, in dem Kontakte angezeigt werden. Das rote Feld in Abbildung 1 enthält den Bereich, den wir aktualisieren möchten.
 
-[![Nur Kontakte aktualisieren](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
+[![nur aktualisieren von Kontakten](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
 
-**Abbildung 01**: Nur Kontakte aktualisieren ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-cs/_static/image2.png))
+**Abbildung 01**: nur Kontakte werden aktualisiert ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-7-add-ajax-functionality-cs/_static/image2.png))
 
-Der erste Schritt ist der Teil der Ansicht zu trennen, der für die asynchrone Aktualisierung in eine separate partielle (User-Steuerelement) werden soll. Der Teil der Ansicht "Index", die die Tabelle von Kontakten anzeigt, wurde in die partielle in Codebeispiel 1 verschoben.
+Der erste Schritt besteht darin, den Teil der Sicht, der asynchron aktualisiert werden soll, in eine separate partielle (Benutzer Steuerelement anzeigen) zu trennen. Der Abschnitt der Index Sicht, in dem die Tabelle mit Kontakten angezeigt wird, wurde in der Liste 1 in den Teil verschoben.
 
-**1 – Views\Contact\ContactList.ascx auflisten**
+**Auflisten 1-views\contact\contactlist.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample2.aspx)]
 
-Beachten Sie, dass die partielle in Codebeispiel 1 ein anderes Modell als Ansicht "Index". Die *Inherits* -Attribut in der &lt;% @ Page %&gt; Richtlinie gibt an, dass die partielle von den ViewUserControl erbt&lt;Gruppe&gt; Klasse.
+Beachten Sie, dass die partielle in der Auflistung 1 ein anderes Modell als die Index Ansicht aufweist. Das *erbt* -Attribut in der &lt;% @ Page%&gt;-Direktive gibt an, dass die partielle von der&lt;Group&gt; Klasse von ViewUserControl erbt.
 
-Aktualisierte Ansicht "Index" ist im Codebeispiel 2 enthalten.
+Die aktualisierte Index Sicht ist in der Liste 2 enthalten.
 
-**Codebeispiel 2 - Views\Contact\Index.aspx**
+**Codebeispiel 2: views\contact\index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample3.aspx)]
 
-Es gibt zwei Dinge, die Sie über die aktualisierte Ansicht im Codebeispiel 2 sehen. Beachten Sie, dass der gesamte Inhalt in die partielle verschoben wird zunächst mit einem Aufruf von Html.RenderPartial() ersetzt. Die Html.RenderPartial()-Methode wird aufgerufen, wenn die Ansicht "Index" zunächst angefordert wird, um den anfänglichen Satz von Kontakten anzuzeigen.
+Es gibt zwei Dinge, die Sie über die aktualisierte Ansicht in der Liste 2 bemerken sollten. Beachten Sie zunächst, dass der gesamte Inhalt, der in die partielle verschoben wird, durch einen HTML. renderpartial ()-Code ersetzt wird. Die HTML. renderpartial ()-Methode wird aufgerufen, wenn die Index Ansicht zum ersten Mal angefordert wird, um die anfängliche Gruppe von Kontakten anzuzeigen.
 
-Zweitens Beachten Sie, dass die Html.ActionLink() verwendet wird, wenden Sie sich an Gruppen anzeigen durch eine Ajax.ActionLink() ersetzt wurde. Die Ajax.ActionLink() wird mit den folgenden Parametern aufgerufen:
+Beachten Sie, dass die HTML. Action Link (), die zum Anzeigen von Kontaktgruppen verwendet wurde, durch AJAX. Action Link () ersetzt wurde. "Ajax. Action Link ()" wird mit den folgenden Parametern aufgerufen:
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample4.aspx)]
 
-Der erste Parameter darstellt, des für den Link anzuzeigende Texts, der zweite Parameter stellt die Routenwerte und der dritte Parameter repräsentiert die Ajax-Optionen. In diesem Fall verwenden wir die UpdateTargetId Ajax-Option, um auf den HTML-Code zeigen &lt;Div&gt; Tag, das Aktualisieren, nachdem die Ajax-Anforderung abgeschlossen werden soll. Wir aktualisieren möchten die &lt;Div&gt; Tag mit der neuen Liste der Kontakte.
+Der erste Parameter stellt den Text dar, der für den Link angezeigt werden soll, der zweite Parameter stellt die Routen Werte dar, und der dritte Parameter stellt die AJAX-Optionen dar. In diesem Fall wird die AJAX-Option updatetargetid verwendet, um auf das HTML-&lt;div&gt; Tag zu verweisen, das Sie nach Abschluss der AJAX-Anforderung aktualisieren möchten. Wir möchten das &lt;div&gt;-Tag mit der neuen Kontaktliste aktualisieren.
 
-Die aktualisierte Index()-Methode des Controllers Kontakt wird in Programmausdruck 3 enthalten.
+Die aktualisierte Index ()-Methode des Contact-Controllers ist in der Liste 3 enthalten.
 
-**Codebeispiel 3 - Controllers\ContactController.cs (Index-Methode)**
+**Codebeispiel 3-controllers\contactcontroller.cs (Index-Methode)**
 
 [!code-csharp[Main](iteration-7-add-ajax-functionality-cs/samples/sample5.cs)]
 
-Die aktualisierte Index()-Aktion gibt bedingt eine von zwei zurück. Die Index() Aktion aufgerufen wird, durch eine Ajax-Anforderung zurück, wenn der Controller eine partielle. Andernfalls gibt die Aktion Index() eine ganze Sicht zurück.
+Die aktualisierte Index ()-Aktion gibt bedingt einen von zwei Dingen zurück. Wenn die Index ()-Aktion durch eine AJAX-Anforderung aufgerufen wird, gibt der Controller eine partielle zurück. Andernfalls gibt die Index ()-Aktion eine gesamte Ansicht zurück.
 
-Beachten Sie, dass die Index()-Aktion nicht so viele Daten, die beim Aufrufen durch eine Ajax-Anforderung zurückgegeben. Im Kontext einer normalen Anforderung wird eine Liste aller wenden Sie sich an Gruppen und die ausgewählte Gruppe von Kontakten von Aktion des Indexes zurückgegeben. Im Kontext einer Ajax-Anforderung gibt die Aktion Index() nur die ausgewählte Gruppe zurück. AJAX bedeutet weniger Arbeit auf dem Datenbankserver.
+Beachten Sie, dass die Index ()-Aktion nicht so viele Daten zurückgeben muss, wenn Sie durch eine AJAX-Anforderung aufgerufen wird. Im Kontext einer normalen Anforderung gibt die Index Aktion eine Liste aller Kontaktgruppen und der ausgewählten Kontaktgruppe zurück. Im Kontext einer AJAX-Anforderung gibt die Index ()-Aktion nur die ausgewählte Gruppe zurück. AJAX bedeutet weniger Arbeit auf dem Datenbankserver.
 
-Unsere geänderte Ansicht "Index" funktioniert im Fall von sowohl älteren als auch keine komplexe Browser. Wenn Sie auf eine Gruppe von Kontakten und Ihr Browser JavaScript unterstützt, wird nur in die Region der Sicht, die die Liste der Kontakte enthält aktualisiert. Wenn Sie auf der anderen Seite Ihr Browser JavaScript nicht unterstützt, wird die gesamte Ansicht aktualisiert.
+Unsere geänderte Index Sicht funktioniert im Fall von komplexer Darstellung-und Downlevelbrowsern. Wenn Sie auf eine Kontaktgruppe klicken und der Browser JavaScript unterstützt, wird nur der Bereich der Ansicht aktualisiert, der die Liste der Kontakte enthält. Wenn hingegen der Browser JavaScript nicht unterstützt, wird die gesamte Ansicht aktualisiert.
 
-Unsere aktualisierten Ansicht "Index" hat ein Problem. Wenn Sie eine Gruppe von Kontakte klicken, wird die ausgewählte Gruppe nicht hervorgehoben. Da die Liste der Gruppen außerhalb der Region angezeigt werden, die während einer Ajax-Anforderung aktualisiert wird, wird die richtige Gruppe nicht hervorgehoben. Dieses Problem korrigieren wir im nächsten Abschnitt.
+Die aktualisierte Index Sicht weist ein Problem auf. Wenn Sie auf eine Kontaktgruppe klicken, wird die ausgewählte Gruppe nicht hervorgehoben. Da die Liste der Gruppen außerhalb der Region angezeigt wird, die während einer AJAX-Anforderung aktualisiert wird, wird die Rechte Gruppe nicht hervorgehoben. Wir beheben dieses Problem im nächsten Abschnitt.
 
-## <a name="adding-jquery-animation-effects"></a>Hinzufügen von jQuery Animationseffekten
+## <a name="adding-jquery-animation-effects"></a>Hinzufügen von jQuery-Animationseffekten
 
-Normalerweise, wenn Sie einen Link auf einer Webseite klicken, können die Browser-Statusanzeige Sie erkennen, und zwar unabhängig davon, ob der Browser den aktualisierten Inhalt aktiv abgerufen wird. Beim Durchführen einer Ajax-Anforderung auf der anderen Seite zeigt die Statusanzeige der Browser keine Fortschritte. Dadurch können Benutzer nervös werden. Woher wissen Sie, ob der Browser fixiert hat?
+Wenn Sie auf einen Link auf einer Webseite klicken, können Sie normalerweise in der Statusleiste des Browsers erkennen, ob der Browser den aktualisierten Inhalt aktiv abrufen soll. Wenn Sie eine AJAX-Anforderung ausführen, zeigt die Statusleiste des Browsers keinen Fortschritt an. Dadurch können Benutzer nervös werden. Woher wissen Sie, ob der Browser eingefroren ist?
 
-Es gibt mehrere Möglichkeiten, die Sie für einen Benutzer angeben können, dass beim Ausführen einer Ajax-Anforderung Arbeiten ausgeführt werden. Ein Ansatz ist eine einfache Animation angezeigt. Beispielsweise können Sie sich eine Region abgeblendet, wenn eine Ajax-Anforderung beginnt und die Region eingeblendet, wenn die Anforderung abgeschlossen ist.
+Es gibt mehrere Möglichkeiten, wie Sie einem Benutzer zeigen können, dass die Arbeit beim Ausführen einer AJAX-Anforderung ausgeführt wird. Ein Ansatz besteht darin, eine einfache Animation anzuzeigen. Beispielsweise können Sie eine Region ausblenden, wenn eine AJAX-Anforderung beginnt und in der Region ausgeblendet wird, wenn die Anforderung abgeschlossen ist.
 
-Wir verwenden die jQuery-Bibliothek, der Bestandteil von Microsoft ASP.NET MVC-Framework, um die Auswirkungen der Animation zu erstellen. Aktualisierte Ansicht "Index" ist in Listing 4 enthalten.
+Wir verwenden die jQuery-Bibliothek, die im Microsoft ASP.NET MVC-Framework enthalten ist, um die Animationseffekte zu erstellen. Die aktualisierte Index Sicht ist in der Liste 4 enthalten.
 
-**Programmausdruck 4 - Views\Contact\Index.aspx**
+**Codebeispiel 4: views\contact\index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample6.aspx)]
 
-Beachten Sie, dass die aktualisierten Ansicht "Index" drei neue JavaScript-Funktionen enthält. Die ersten beiden Funktionen mithilfe von jQuery ausgeblendet werden sollen, und in der Liste der Kontakte eingeblendet, wenn Sie eine neue Gruppe von Kontakte klicken. Die dritte Funktion zeigt eine Fehlermeldung angezeigt, wenn ein Ajax-Anforderung zu einem Fehler (z. B. Netzwerktimeout).
+Beachten Sie, dass die aktualisierte Index Sicht drei neue JavaScript-Funktionen enthält. Die ersten beiden Funktionen verwenden jQuery, um die Liste der Kontakte auszublenden und zu blenden, wenn Sie auf eine neue Kontaktgruppe klicken. Die dritte Funktion zeigt eine Fehlermeldung an, wenn eine AJAX-Anforderung zu einem Fehler führt (z. b. Netzwerk Timeout).
 
-Die erste Funktion übernimmt auch Hervorheben der ausgewählten Gruppe. Eine Klasse = ausgewählte Attribut an das übergeordnete Element (das LI-Element), der das Element geklickt wurde. In diesem Fall vereinfacht jQuery Auswahl der richtigen Elemente, und fügen Sie die CSS-Klasse.
+Die erste Funktion übernimmt auch das Hervorheben der ausgewählten Gruppe. Dem übergeordneten Element (dem Li-Element) des Elements, auf das geklickt wurde, wird ein Class = Selected-Attribut hinzugefügt. Mit jQuery können Sie das richtige Element einfach auswählen und die CSS-Klasse hinzufügen.
 
-Diese Skripts sind an die gruppenlinks mithilfe des Parameters Ajax.ActionLink() AjaxOptions gebunden. Der aktualisierte Ajax.ActionLink() Methodenaufruf sieht folgendermaßen aus:
+Diese Skripts sind mit der Hilfe des AJAX. Action Link () ajaxoptions-Parameters an die Gruppen Verknüpfungen gebunden. Der aktualisierte AJAX. Action Link ()-Methoden aufrufsieht wie folgt aus:
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample7.aspx)]
 
-## <a name="adding-browser-history-support"></a>Hinzufügen von Unterstützung für Browser-Verlauf
+## <a name="adding-browser-history-support"></a>Hinzufügen von Browser Verlaufs Unterstützung
 
-Wenn Sie einen Link zu eine Seite aktualisieren klicken, wird in der Regel Ihren Browserverlauf aktualisiert. Auf diese Weise können Sie die Browser-zurück-Taste, um zurück in den vorherigen Zustand der Seite Zeitpunkt zu verschieben, klicken. Z. B. Wenn Sie klicken auf die wenden Sie sich an Freunde-Gruppe, und klicken Sie dann auf die Gruppe "Business wenden Sie sich an", können Sie klicken Sie auf die Browser-zurück-Taste, um in den Zustand der Seite zu navigieren, wenn die Gruppe von Kontakte Freunde ausgewählt wurde.
+Wenn Sie auf einen Link klicken, um eine Seite zu aktualisieren, wird normalerweise der Browserverlauf aktualisiert. Auf diese Weise können Sie auf die Schaltfläche Zurück klicken, um zum vorherigen Zustand der Seite zurückzukehren. Wenn Sie z. b. auf die Kontaktgruppe "Freunde" klicken und dann auf die Gruppe "Geschäftskontakt" klicken, können Sie auf die Schaltfläche "zurück" klicken, um zurück zum Zustand der Seite zu navigieren, wenn die Gruppe "Freunde" ausgewählt wurde.
 
-Leider ist ein Ajax-Anforderung nicht Browserverlauf automatisch aktualisiert. Wenn Sie auf eine Gruppe von Kontakten und die Liste der übereinstimmenden Kontakte mit einer Ajax-Anforderung abgerufen wird, wird der Verlauf nicht aktualisiert. Sie können nicht die Browserschaltfläche zurück verwenden, zu einer Gruppe von Kontakten zurück zu navigieren, nach dem Auswählen einer neuen Gruppenstatus von Kontakten.
+Leider wird beim Ausführen einer AJAX-Anforderung der Browserverlauf nicht automatisch aktualisiert. Wenn Sie auf eine Kontaktgruppe klicken und die Liste der übereinstimmenden Kontakte mit einer AJAX-Anforderung abgerufen wird, wird der Browserverlauf nicht aktualisiert. Nachdem Sie eine neue Kontaktgruppe ausgewählt haben, können Sie die Schaltfläche "Browser" nicht mehr verwenden, um zu einer Kontaktgruppe zurückzukehren.
 
-Benutzer können die Browserschaltfläche zurück verwenden soll Schaltfläche nach der Durchführung von Ajax-Anforderungen müssen Sie ein wenig mehr Arbeit übernehmen. Sie müssen den Browser Verlauf Verwaltungsfunktionen, die im ASP.NET AJAX-Framework erstellt nutzen.
+Wenn Sie möchten, dass Benutzer nach dem Ausführen von AJAX-Anforderungen die zurück-Schaltfläche des Browsers verwenden können, müssen Sie etwas mehr Arbeit erledigen. Sie müssen die Funktion zur Verwaltung von Browser Verläufen nutzen, die im ASP.NET AJAX-Framework erstellt wurde.
 
-ASP.NET AJAX-Browserverlauf, müssen Sie drei Dinge erreichen:
+ASP.NET AJAX-Browserverlauf müssen Sie drei Schritte ausführen:
 
-1. Aktivieren Sie Browserverlauf, indem die EnableBrowserHistory-Eigenschaft auf "true" festlegen.
-2. Bei einer statusänderung einer Ansicht durch Aufrufen der Methode addHistoryPoint() von Verlaufspunkten zu speichern.
-3. Der Zustand der Ansicht zu rekonstruieren, wenn die Navigate-Ereignis ausgelöst wird.
+1. Aktivieren Sie den Browser Verlauf, indem Sie die enablebrowserhistory-Eigenschaft auf "true" festlegen.
+2. Speichern von Verlaufs Punkten, wenn sich der Zustand einer Sicht ändert, indem die AddHistoryPoint ()-Methode aufgerufen wird.
+3. Rekonstruiert den Status der Ansicht, wenn das Navigate-Ereignis ausgelöst wird.
 
-Aktualisierte Ansicht "Index" ist in Listing 5 enthalten.
+Die aktualisierte Index Sicht ist in der Liste 5 enthalten.
 
-**Programmausdruck 5 - Views\Contact\Index.aspx**
+**Auflisten 5-views\contact\index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample8.aspx)]
 
-In Listing 5 ist die Browserverlauf in der pageInit()-Funktion aktiviert. Die pageInit()-Funktion wird auch verwendet, um den Ereignishandler für das Ereignis navigieren einzurichten. Die Navigate-Ereignis wird ausgelöst, wenn der Browser vorwärts oder zurück-Taste den Status der Seite wird, um zu ändern.
+In der Liste 5 ist der Browser Verlauf in der pagumit ()-Funktion aktiviert. Die pageInit ()-Funktion wird auch verwendet, um den Ereignishandler für das Navigate-Ereignis einzurichten. Das Navigate-Ereignis wird ausgelöst, wenn die Schaltfläche Browser vorwärts oder zurück bewirkt, dass der Status der Seite geändert wird.
 
-Die beginContactList()-Methode wird aufgerufen, wenn Sie eine Gruppe von Kontakte klicken. Diese Methode erstellt einen neuen Verlaufspunkt durch Aufrufen der addHistoryPoint()-Methode. Die Id der Gruppe "Kontakt" geklickt wird dem Verlauf hinzugefügt.
+Die begincontactlist ()-Methode wird aufgerufen, wenn Sie auf eine Kontaktgruppe klicken. Diese Methode erstellt einen neuen Verlaufs Punkt durch Aufrufen der AddHistoryPoint ()-Methode. Die ID der angeklickten Kontaktgruppe wird dem Verlauf hinzugefügt.
 
-Die Gruppen-Id wird aus einem Expando-Attribut auf den Link für die Gruppe von Kontakten abgerufen. Die Verknüpfung wird mit dem folgenden Aufruf Ajax.ActionLink() gerendert.
+Die Gruppen-ID wird von einem Expando-Attribut im Link "Kontaktgruppe" abgerufen. Der Link wird mit dem folgenden-Befehl an AJAX. Action Link () gerendert.
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample9.aspx)]
 
-Der letzte Parameter, die an die Ajax.ActionLink() Fügt ein Expando-Attribut, das mit dem Namen Groupid auf den Link (Kleinbuchstaben für die XHTML-Kompatibilität).
+Der letzte Parameter, der an AJAX. Action Link () übergeben wird, fügt dem Link ein Expando-Attribut mit dem Namen GroupID hinzu (in Kleinbuchstaben für die XHTML-Kompatibilität).
 
-Wenn ein Benutzer die Browserschaltfläche zurück oder die Schaltfläche "Weiterleiten" trifft, das Navigate-Ereignis wird ausgelöst, und die navigate()-Methode wird aufgerufen. Diese Methode aktualisiert die Kontakte auf der Seite entsprechend den Zustand der Seite, die der Browserverlaufspunkt an die Navigate-Methode übergeben entspricht, angezeigt.
+Wenn ein Benutzer auf die Schaltfläche zurück oder weiter des Browsers klickt, wird das Navigate-Ereignis ausgelöst, und die Navigate ()-Methode wird aufgerufen. Diese Methode aktualisiert die auf der Seite angezeigten Kontakte so, dass Sie mit dem Zustand der Seite übereinstimmen, die dem an die Navigate-Methode übergebenen Browserverlaufs Punkt entspricht.
 
-## <a name="performing-ajax-deletes"></a>Ausführen von Ajax wird gelöscht
+## <a name="performing-ajax-deletes"></a>AJAX-Löschungen
 
-Aktuell, um einen Kontakt zu löschen, müssen Sie klicken auf den Link "löschen", und klicken Sie dann auf die Schaltfläche "löschen" in die Bestätigungsseite "löschen" angezeigt (siehe Abbildung 2). Dies scheint sehr viel Seitenanforderungen möchten einfach nur einen Datenbankdatensatz zu löschen.
+Zum Löschen eines Kontakts müssen Sie zurzeit auf den Link löschen klicken und dann auf die Schaltfläche Löschen klicken, die auf der Seite DELETE-Bestätigung angezeigt wird (siehe Abbildung 2). Dies scheint eine große Anzahl von Seiten Anforderungen, um etwas einfaches zu tun, wie das Löschen eines Datenbankdaten Satzes.
 
-[![Die Bestätigungsseite "löschen"](iteration-7-add-ajax-functionality-cs/_static/image2.jpg)](iteration-7-add-ajax-functionality-cs/_static/image3.png)
+[Seite "Löschen bestätigen" ![](iteration-7-add-ajax-functionality-cs/_static/image2.jpg)](iteration-7-add-ajax-functionality-cs/_static/image3.png)
 
-**Abbildung 02**: Die Bestätigungsseite "löschen" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-7-add-ajax-functionality-cs/_static/image4.png))
+**Abbildung 02**: die Seite zum Löschen der Bestätigung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-7-add-ajax-functionality-cs/_static/image4.png))
 
-Es ist verlockend, überspringen Sie die Bestätigungsseite "löschen", und Löschen eines Kontakts direkt aus der Ansicht "Index". Da bei diesem Ansatz Ihrer Anwendung zu Sicherheitslücken eröffnet, vermeiden Sie Versuchung. Im Allgemeinen Sie Ich möchte einen HTTP GET-Vorgang ausführen, wenn eine Aktion aufrufen, die den Zustand Ihrer Webanwendung ändert möchten. Wenn Sie einen Löschvorgang durchführen zu können, möchten Sie zum Ausführen von HTTP POST oder besser noch, um eine HTTP DELETE-Vorgang.
+Es ist verlockend, die Bestätigungsseite löschen zu überspringen und einen Kontakt direkt aus der Index Ansicht zu löschen. Sie sollten diese Versuchung vermeiden, da diese Vorgehensweise die Anwendung in Sicherheitslücken öffnet. Im Allgemeinen möchten Sie einen HTTP Get-Vorgang nicht ausführen, wenn Sie eine Aktion aufrufen, die den Zustand Ihrer Webanwendung ändert. Wenn Sie einen Löschvorgang ausführen, möchten Sie einen HTTP-Post-Vorgang oder einen besseren http-Löschvorgang ausführen.
 
-Der Link "löschen" ist in der partiellen ContactList enthalten. Eine aktualisierte Version der partiellen ContactList ist im Codebeispiel 6 enthalten.
+Der Link "Löschen" ist Teil der Liste "contactlist". Eine aktualisierte Version von contactlist ist in der Liste 6 enthalten.
 
-**Codebeispiel 6: Views\Contact\ContactList.ascx**
+**Auflisten 6-views\contact\contactlist.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample10.aspx)]
 
-Der Link "löschen" wird mit dem folgenden Aufruf der Methode Ajax.ImageActionLink() gerendert:
+Der Link "Löschen" wird mit dem folgenden aufzurufenden Befehl der AJAX. imageaction Link ()-Methode gerendert:
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample11.aspx)]
 
 > [!NOTE] 
 > 
-> Die Ajax.ImageActionLink() ist kein standardmäßigen Bestandteil von ASP.NET MVC-Framework. Die Ajax.ImageActionLink() ist eine benutzerdefinierte Helper-Methoden, die im Contact Manager-Projekt enthalten ist.
+> AJAX. imageaction Link () ist kein Standard Teil des ASP.NET MVC-Frameworks. AJAX. imageaction Link () ist eine benutzerdefinierte Hilfsmethode, die im Contact Manager-Projekt enthalten ist.
 
-Der AjaxOptions-Parameter verfügt über zwei Eigenschaften. Zuerst wird die Confirm-Eigenschaft verwendet, um ein Popup-JavaScript-Bestätigungsdialogfeld angezeigt. Zweitens wird die HttpMethod-Eigenschaft verwendet, um eine HTTP DELETE-Vorgang auszuführen.
+Der Parameter "ajaxoptions" verfügt über zwei Eigenschaften. Zuerst wird die Confirm-Eigenschaft verwendet, um ein JavaScript-Bestätigungs Dialogfeld für das Popup Fenster anzuzeigen. Zweitens wird die HttpMethod-Eigenschaft verwendet, um einen HTTP DELETE-Vorgang auszuführen.
 
-Codebeispiel 7 enthält eine neue AjaxDelete()-Aktion, die mit dem Contact-Controller hinzugefügt wurde.
+In der Liste 7 ist eine neue "ajaxdelete ()"-Aktion enthalten, die dem Contact-Controller hinzugefügt wurde.
 
-**Auflisten von 7 – Controllers\ContactController.cs (AjaxDelete)**
+**Codebeispiel 7-controllers\contactcontroller.cs (ajaxdelete)**
 
 [!code-csharp[Main](iteration-7-add-ajax-functionality-cs/samples/sample12.cs)]
 
-Die Aktion AjaxDelete() wird mit einem AcceptVerbs-Attribut markiert. Dieses Attribut verhindert, dass die Aktion aus, die mit Ausnahme von den einzelnen HTTP-Vorgängen als eine HTTP DELETE-Vorgang aufgerufen wird. Insbesondere kann nicht dadurch mit HTTP GET aufgerufen werden.
+Die "ajaxdelete ()"-Aktion wird mit einem "Accept tverbs"-Attribut versehen. Dieses Attribut verhindert, dass die Aktion aufgerufen wird, außer durch einen anderen HTTP-Vorgang als einen HTTP-Löschvorgang. Insbesondere können Sie diese Aktion nicht mit einem HTTP Get-Vorgang aufrufen.
 
-Nachdem Sie Datenbank-Datensatz löschen, müssen Sie die aktualisierte Liste der Kontakte anzeigen, die nicht den gelöschten Datensatz enthält. Die AjaxDelete()-Methode gibt die partielle ContactList und die aktualisierte Liste der Kontakte zurück.
+Nachdem Sie den Daten Bank Datensatz gelöscht haben, müssen Sie die aktualisierte Liste der Kontakte anzeigen, die nicht den gelöschten Datensatz enthält. Die ajaxdelete ()-Methode gibt die partielle contactlist-Auflistung und die aktualisierte Liste der Kontakte zurück.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Iteration haben wir den Ajax-Funktionen zu unserer Contact Manager-Anwendung hinzugefügt. Wir verwendet Ajax, um die Reaktionsfähigkeit und Leistung der Anwendung zu verbessern.
+In dieser Iterationen haben wir unserer Contact Manager-Anwendung AJAX-Funktionen hinzugefügt. Wir haben AJAX verwendet, um die Reaktionsfähigkeit und die Leistung unserer Anwendung zu verbessern.
 
-Zunächst umgestaltet wir die Ansicht "Index", damit Sie auf eine Gruppe von Kontakten nicht die gesamte Ansicht aktualisiert wird. Stattdessen aktualisiert die auf eine Gruppe von Kontakten nur die Liste der Kontakte.
+Zuerst haben wir die Index Sicht umgestaltet, sodass durch Klicken auf eine Kontaktgruppe nicht die gesamte Ansicht aktualisiert wird. Wenn Sie auf eine Kontaktgruppe klicken, wird stattdessen nur die Liste der Kontakte aktualisiert.
 
-Als Nächstes verwendet haben wir jQuery Animationseffekte ausblenden und einblenden, in der Liste der Kontakte. Hinzufügen von Animationen zu einer Ajax-Anwendung kann verwendet werden, um Benutzer der Anwendung durch den entspricht einer Statusanzeige Browser bereitzustellen.
+Als nächstes haben wir jQuery-Animationseffekte verwendet, um die Liste der Kontakte abzublenden und zu blenden. Das Hinzufügen von Animationen zu einer AJAX-Anwendung kann verwendet werden, um Benutzern der Anwendung das Äquivalent zu einer Browser Statusanzeige zu bieten.
 
-Wir werden auch browserverlaufsunterstützung, die Ajax-Anwendung hinzugefügt. Wir werden die Benutzer klicken Sie auf die Browserschaltfläche zurück und Vorwärts-Schaltflächen, um den Zustand der Ansicht "Index" ändern konnten.
+Wir haben auch die Unterstützung für den Browserverlauf unserer AJAX-Anwendung hinzugefügt Wir haben Benutzern ermöglicht, auf die Schaltflächen "zurück" und "Vorwärts" zu klicken, um den Status der Index Ansicht zu ändern.
 
-Schließlich haben wir einen Link "löschen", die HTTP-DELETE-Operationen unterstützt. Durch Ausführen von Ajax löscht, können wir Benutzer Datenbankdatensätze zu löschen, ohne dass der Benutzer eine zusätzliche Delete-Seite "Bestätigung" anfordern.
+Schließlich haben wir einen Lösch Link erstellt, der http-Löschvorgänge unterstützt. Durch das Ausführen von AJAX-Lösch Vorgängen ermöglichen wir Benutzern das Löschen von Datenbankdaten Sätzen, ohne dass der Benutzer eine zusätzliche Lösch Bestätigungsseite anfordern muss.
 
 > [!div class="step-by-step"]
 > [Zurück](iteration-6-use-test-driven-development-cs.md)

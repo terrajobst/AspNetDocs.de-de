@@ -1,99 +1,99 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
-title: Überprüfen mit einer Dienstschicht (VB) | Microsoft-Dokumentation
+title: Validieren mit einer Dienst Ebene (VB) | Microsoft-Dokumentation
 author: StephenWalther
-description: Erfahren Sie, wie Sie eine Validierungslogik aus Ihre Controlleraktionen und in einer separaten Dienstschicht zu verschieben. In diesem Tutorial Stephen Walther wird erläutert, wie Sie...
+description: Erfahren Sie, wie Sie Ihre Validierungs Logik aus Ihren Controller Aktionen und in eine separate Dienst Schicht verschieben. In diesem Tutorial erläutert Stephen Walther, wie Sie...
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 704657ffe6f50eaf3eb0d91d0d334567003ab7f4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122344"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78436575"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>Überprüfen mit einer Dienstschicht (VB)
 
-durch [Stephen Walther](https://github.com/StephenWalther)
+von [Stephen Walther](https://github.com/StephenWalther)
 
-> Erfahren Sie, wie Sie eine Validierungslogik aus Ihre Controlleraktionen und in einer separaten Dienstschicht zu verschieben. In diesem Tutorial erläutert Stephen Walther an, wie Sie eine scharfe Trennung der Zuständigkeiten verwalten können, indem isoliert von Ihrer Dienstebene aus Ihrem Controller-Ebene.
+> Erfahren Sie, wie Sie Ihre Validierungs Logik aus Ihren Controller Aktionen und in eine separate Dienst Schicht verschieben. In diesem Tutorial erläutert Stephen Walther, wie Sie eine deutliche Trennung der Belange gewährleisten können, indem Sie die Dienst Ebene von ihrer Controller Schicht isolieren.
 
-Das Ziel dieses Lernprogramms ist eine Methode zum Ausführen der Validierung in ASP.NET MVC-Anwendungen beschrieben. In diesem Tutorial erfahren Sie, wie Sie eine Validierungslogik aus Ihren Controllern und in einer separaten Dienstschicht zu verschieben.
+Ziel dieses Tutorials ist es, eine Methode zur Durchführung der Validierung in einer ASP.NET MVC-Anwendung zu beschreiben. In diesem Tutorial erfahren Sie, wie Sie Ihre Validierungs Logik aus ihren Controllern und in eine separate Dienst Schicht verschieben.
 
-## <a name="separating-concerns"></a>Trennen von Concerns
+## <a name="separating-concerns"></a>Trennung von Belangen
 
-Wenn Sie eine ASP.NET MVC-Anwendung erstellen, sollten Sie Ihre Datenbanklogik nicht in Ihre Controlleraktionen platzieren. Kombinieren Ihre Datenbank und Controller-Logik erschwert Ihre Anwendung im Laufe der Zeit beibehalten. Es wird empfohlen, dass Sie alle Ihre Datenbanklogik in einer separaten Repository-Ebene platzieren.
+Wenn Sie eine ASP.NET MVC-Anwendung erstellen, sollten Sie Ihre Daten Bank Logik nicht in den Controller Aktionen platzieren. Durch die Kombination von Datenbank und Controller Logik wird die Verwaltung Ihrer Anwendung im Laufe der Zeit erschwert. Es wird empfohlen, dass Sie die gesamte Daten Bank Logik in einer separaten Repository-Schicht platzieren.
 
-Liste 1 enthält beispielsweise ein einfaches Repository mit dem Namen der ProductRepository. Die produktrepository enthält alle Datenzugriffscode für die Anwendung. Die Liste enthält auch die IProductRepository-Schnittstelle, die das produktrepository implementiert.
+Beispielsweise enthält die Auflistung 1 ein einfaches Repository namens productrepository. Das produktrepository enthält den gesamten Datenzugriffs Code für die Anwendung. Die Auflistung enthält auch die iproductrepository-Schnittstelle, die das produktrepository implementiert.
 
-**1 – Models\ProductRepository.vb auflisten**
+**Codebeispiel 1: models\productrepositor**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample1.vb)]
 
-Der Controller im Codebeispiel 2 verwendet die Repository-Ebene in der Index() und Create() Aktionen. Beachten Sie, dass dieser Controller keine Datenbanklogik nicht enthält. Erstellen eine Repository-Ebene können Sie eine saubere Trennung von Zuständigkeiten zu verwalten. Controller für die Anwendung datenflusskontrolllogik verantwortlich sind, und das Repository für die Logik für den Datenzugriff verantwortlich ist.
+Der Controller in der Liste 2 verwendet die Repository-Ebene sowohl in der Index ()-als auch der Create ()-Aktion. Beachten Sie, dass dieser Controller keine Daten Bank Logik enthält. Durch das Erstellen einer Repository-Ebene können Sie eine saubere Trennung der Belange gewährleisten. Controller sind für Anwendungs Fluss-Steuerungslogik zuständig, und das Repository ist für die Datenzugriffs Logik verantwortlich.
 
-**Codebeispiel 2 - Controllers\ProductController.vb**
+**Codebeispiel 2: controllers\productcontroller.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample2.vb)]
 
-## <a name="creating-a-service-layer"></a>Erstellen eine Dienstschicht
+## <a name="creating-a-service-layer"></a>Erstellen einer Dienst Ebene
 
-Also datenflusskontrolllogik Anwendung gehört, in einem Controller und Logik für den Datenzugriff in einem Repository gehört. In diesem Fall, in dem platziere Sie eine Validierungslogik? Eine Möglichkeit ist, platzieren Sie eine Validierungslogik in einem *Dienstschicht*.
+Daher gehört die Logik der Anwendungs Fluss Steuerung zu einem Controller, und die Datenzugriffs Logik gehört zu einem Repository. Wo platzieren Sie die Validierungs Logik in diesem Fall? Eine Möglichkeit besteht darin, die Validierungs Logik in eine *Dienst Ebene*zu platzieren.
 
-Eine Dienstschicht ist eine zusätzliche Ebene in einer ASP.NET MVC-Anwendung, die Kommunikation zwischen einem Controller und einer Repositoryschicht vermittelt. Die Dienstschicht enthält Geschäftslogik. Insbesondere enthält sie Validierungslogik.
+Eine Dienst Ebene ist eine zusätzliche Ebene in einer ASP.NET MVC-Anwendung, die die Kommunikation zwischen einem Controller und einer Repository-Schicht vermittelt. Die Dienst Ebene enthält Geschäftslogik. Insbesondere enthält Sie Validierungs Logik.
 
-Die Product-Dienstebene in Programmausdruck 3 hat z. B. eine CreateProduct()-Methode. Die CreateProduct()-Methode ruft die ValidateProduct()-Methode, um ein neues Produkt zu überprüfen, bevor Sie das Produkt in der produktrepository übergeben.
+Beispielsweise verfügt die Produkt Dienst Schicht in der Liste 3 über eine Methode "kreateproduct ()". Die Methode "Methode ()" Ruft die Methode "validateproduct ()" auf, um ein neues Produkt zu validieren, bevor das Produkt an das produktrepository übergeben wird.
 
-**Codebeispiel 3 - Models\ProductService.vb**
+**Codebeispiel 3: models\productservice.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample3.vb)]
 
-Der Product-Controller wurde aktualisiert, in Listing 4 die Dienstschicht anstelle der Repositoryschicht verwenden. Die Controller-Schicht kommuniziert mit der Dienstebene. Die Dienstebene, die mit der Repositoryschicht kommuniziert werden. Jede Ebene hat eine separate Aufgabe.
+Der Produkt Controller wurde in der Liste 4 aktualisiert, sodass anstelle der Repository-Ebene die Dienst Ebene verwendet wird. Die Controller Schicht spricht mit der Dienst Ebene. Die Dienst Ebene spricht mit der Repository-Ebene. Jede Ebene hat eine separate Verantwortung.
 
-**Programmausdruck 4 - Controllers\ProductController.vb**
+**Codebeispiel 4-controllers\productcontroller.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample4.vb)]
 
-Beachten Sie, dass der Produktdienst in der Product-Controller-Konstruktor erstellt wurde. Wenn der Produktdienst erstellt wird, wird das Modellzustandswörterbuch an den Dienst übergeben. Der Produktdienst verwendet den Modellzustand Validierung Fehlermeldungen an den Controller zurückgesendet.
+Beachten Sie, dass der Product Service im Product Controller-Konstruktor erstellt wird. Wenn der Product Service erstellt wird, wird das Modell Zustands Wörterbuch an den Dienst übermittelt. Der Product Service verwendet den Modell Status, um Validierungs Fehlermeldungen an den Controller zurückzuleiten.
 
-## <a name="decoupling-the-service-layer"></a>Entkopplung der Dienstebene
+## <a name="decoupling-the-service-layer"></a>Entkoppeln der Dienst Ebene
 
-Es konnte nicht den Controller und die Dienstschichten in einer Hinsicht zu isolieren. Der Controller und die Dienstschichten kommunizieren über die Modellstatus. Anders gesagt: die Dienstschicht weist eine Abhängigkeit auf eine bestimmte Funktion von ASP.NET MVC-Framework.
+Die Controller-und Dienst Ebenen konnten nicht in einer Hinsicht isoliert werden. Die Controller-und Dienst Ebenen kommunizieren über den Modell Zustand. Anders ausgedrückt: die Dienst Schicht hat eine Abhängigkeit von einer bestimmten Funktion des ASP.NET-MVC-Frameworks.
 
-Wir möchten die Dienstschicht aus unserem Controller-Ebene, die so weit wie möglich zu isolieren. Theoretisch sollten wir die Dienstschicht mit jeder Art von Anwendung nicht nur eine ASP.NET MVC-Anwendung verwenden können. Beispielsweise sollten wir in Zukunft zum Erstellen einer WPF-Front-End für unsere Anwendung. Es sollte eine Möglichkeit zum Entfernen der Abhängigkeit von ASP.NET MVC Modellstatus von unserem Dienstebene gefunden.
+Wir möchten die Dienst Ebene so weit wie möglich von unserer Controller Schicht isolieren. Theoretisch sollten wir die Dienst Schicht mit allen Anwendungs Typen und nicht nur mit einer ASP.NET MVC-Anwendung verwenden können. Beispielsweise möchten wir in Zukunft möglicherweise ein WPF-Front-End für die Anwendung erstellen. Wir sollten eine Möglichkeit finden, die Abhängigkeit vom ASP.NET MVC-Modell Status von unserer Dienst Schicht zu entfernen.
 
-In Listing 5 ist wurde die Dienstschicht aktualisiert, damit er nicht mehr Modellzustand verwendet. Stattdessen wird jede Klasse, die die IValidationDictionary-Schnittstelle implementiert.
+In der Liste 5 wurde die Dienst Schicht so aktualisiert, dass Sie nicht mehr den Modell Status verwendet. Stattdessen wird eine beliebige Klasse verwendet, die die ivalidationdictionary-Schnittstelle implementiert.
 
-**Programmausdruck 5 - Models\ProductService.vb (entkoppelt)**
+**Auflisten 5-models\productservice.vb (entkoppelt)**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 
-Die IValidationDictionary-Schnittstelle wird im Codebeispiel 6 definiert. Diese einfache Schnittstelle verfügt über eine einzelne Methode und eine einzelne Eigenschaft.
+Die ivalidationdictionary-Schnittstelle ist in der Liste 6 definiert. Diese einfache Schnittstelle verfügt über eine einzelne-Methode und eine einzelne-Eigenschaft.
 
-**Codebeispiel 6: Models\IValidationDictionary.cs**
+**Codebeispiel 6: models\ivalidationditionary.cs**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample6.vb)]
 
-Die Klasse im Codebeispiel 7, mit dem Namen der ModelStateWrapper-Klasse implementiert die IValidationDictionary-Schnittstelle. Sie können die ModelStateWrapper-Klasse instanziieren, indem Sie ein Modell State-Wörterbuch an den Konstruktor übergeben.
+Die Klasse in der Auflistung 7 namens der modelstatewrapper-Klasse implementiert die ivalidationdictionary-Schnittstelle. Sie können die modelstatewrapper-Klasse instanziieren, indem Sie ein Modell Zustands Wörterbuch an den-Konstruktor übergeben.
 
-**Auflisten von 7 – Models\ModelStateWrapper.vb**
+**Codebeispiel 7: models\modelstatewrapper.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample7.vb)]
 
-Schließlich verwendet der aktualisierte Controller im Codebeispiel 8 die ModelStateWrapper beim Erstellen der Dienstschicht in seinem Konstruktor.
+Schließlich verwendet der aktualisierte Controller in der Auflistung 8 den modelstatewrapper, wenn die Dienst Ebene im Konstruktor erstellt wird.
 
-**Auflisten von 8 – Controllers\ProductController.vb**
+**Auflisten von 8-controllers\productcontroller.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample8.vb)]
 
-Verwenden die IValidationDictionary können Schnittstelle und der ModelStateWrapper-Klasse wir unsere Dienstebene aus unserem Controller Ebene vollständig zu isolieren. Die Dienstschicht ist nicht mehr Modellstatus abhängig. Sie können jede Klasse übergeben, die um die Dienstebene der IValidationDictionary-Schnittstelle implementiert. Beispielsweise kann eine WPF-Anwendung die IValidationDictionary-Schnittstelle mit einer einfachen Auflistung-Klasse implementieren.
+Mithilfe der ivalidationdictionary-Schnittstelle und der modelstatewrapper-Klasse können wir unsere Dienst Schicht vollständig von unserer Controller Schicht isolieren. Die Dienst Ebene ist nicht mehr vom Modell Zustand abhängig. Sie können eine beliebige Klasse übergeben, die die ivalidationdictionary-Schnittstelle implementiert, an die Dienst Ebene. Eine WPF-Anwendung kann z. b. die ivalidationdictionary-Schnittstelle mit einer einfachen Auflistungs Klasse implementieren.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Das Ziel in diesem Tutorial war ein Ansatz für die Ausführung der Validierung in ASP.NET MVC-Anwendungen erläutert. In diesem Tutorial haben Sie gelernt, wie alle eine Validierungslogik aus Ihren Controllern und in einer separaten Dienstschicht verschieben. Außerdem haben Sie gelernt, Ihrer Dienstebene aus Ihrem Controller-Ebene zu isolieren, indem Sie eine Klasse ModelStateWrapper erstellen.
+Ziel dieses Tutorials war es, einen Ansatz für die Durchführung der Validierung in einer ASP.NET MVC-Anwendung zu erörtern. In diesem Tutorial haben Sie erfahren, wie Sie Ihre gesamte Validierungs Logik aus ihren Controllern und in eine separate Dienst Schicht verschieben. Außerdem haben Sie erfahren, wie Sie die Dienst Ebene von ihrer Controller Schicht isolieren, indem Sie eine modelstatewrapper-Klasse erstellen.
 
 > [!div class="step-by-step"]
 > [Zurück](validating-with-the-idataerrorinfo-interface-vb.md)

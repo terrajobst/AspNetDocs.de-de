@@ -9,11 +9,11 @@ ms.assetid: a2d7f33b-8c4a-4b48-9fb1-9139cf9b9878
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: ea88da1e6d510f706fc7ca370cfa32974c1243f8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587744"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421839"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio: Einführung-1 von 12
 
@@ -31,7 +31,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Wenn Sie Fragen haben, die nicht direkt mit dem Tutorial zusammenhängen, können Sie Sie im [ASP.net-Bereitstellungs Forum](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment)veröffentlichen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Diese Tutorials führen Sie durch die Bereitstellung von zuerst in IIS auf dem lokalen Entwicklungs Computer zu Testzwecken und dann durch einen Drittanbieter-Hostinganbieter. Die Anwendung, die Sie bereitstellen, verwendet eine Anwendungsdatenbank und eine ASP.net-Mitgliedschafts Datenbank. Sie beginnen mit der Verwendung von SQL Server Compact und der Bereitstellung in SQL Server Compact, und in späteren Tutorials erfahren Sie, wie Sie Daten Bank Änderungen bereitstellen und die Migration zu SQL Server durchzuführen.
 
@@ -39,7 +39,7 @@ Die Anzahl der Lernprogramme – 11 und eine Problem Behandlungs Seite – könn
 
 Die Lernprogramme sind so konzipiert, dass Sie nacheinander ausgeführt werden, und jeder Teil basiert auf dem vorherigen Teil. Sie können jedoch Teile überspringen, die für Ihre Situation nicht relevant sind. (Das Überspringen von Teilen erfordert möglicherweise die Anpassung der Prozeduren in späteren Tutorials.)
 
-## <a name="intended-audience"></a>Beabsichtigte Zielgruppe
+## <a name="intended-audience"></a>Zielpublikum
 
 Die Tutorials richten sich an ASP.NET-Entwickler, die in kleinen Organisationen oder in anderen Umgebungen arbeiten, in denen Folgendes gilt:
 
@@ -77,7 +77,7 @@ Wenn während der Bereitstellung ein Fehler auftritt oder wenn der bereitgestell
 
 Kommentare zu den Tutorials sind willkommen, und wenn das Tutorial aktualisiert wird, werden alle Maßnahmen zur Unterweisung von Korrekturen oder Vorschlägen für Verbesserungen durchgeführt, die in den Lernprogramm Kommentaren bereitgestellt werden.
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie Windows 7 oder höher und eines der folgenden Produkte auf Ihrem Computer installiert haben:
 
@@ -139,4 +139,4 @@ Die folgenden Funktionen der Anwendung wirken sich darauf aus, wie Sie Sie berei
 In diesem ersten Tutorial der Reihe haben Sie das Visual Studio-Beispiel Projekt heruntergeladen und die Website Features überprüft, die sich auf die Bereitstellung der Anwendung auswirken. In den folgenden Tutorials bereiten Sie sich auf die Bereitstellung vor, indem Sie einige dieser Aktionen einrichten, die automatisch verarbeitet werden sollen. Andere, die Sie manuell erledigen.
 
 > [!div class="step-by-step"]
-> [Nächste](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [Weiter](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

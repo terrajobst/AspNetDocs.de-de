@@ -9,11 +9,11 @@ ms.assetid: ad8dd396-30f7-4abe-ac02-a0b84422e5be
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 15970bee1e990d3a139673efe12486e08f79814c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573485"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421071"
 ---
 # <a name="protecting-connection-strings-and-other-configuration-information-c"></a>Schützen von Verbindungszeichenfolgen und anderen Konfigurationsinformationen (C#)
 
@@ -179,7 +179,7 @@ Stellen Sie sich vor, dass ein Angreifer die `Web.config` Datei Ihrer Anwendung 
 > [!NOTE]
 > Weitere Informationen zu den verschiedenen Arten der Authentifizierung, die in SQL Server verfügbar sind, finden Sie unter [Building Secure ASP.NET Applications: Authentication, Authorization, and Secure Communication](https://msdn.microsoft.com/library/aa302392.aspx). Weitere Beispiele für Verbindungs Zeichenfolgen, die die Unterschiede zwischen Windows-und SQL-Authentifizierungs Syntax veranschaulichen, finden Sie unter [connectionStrings.com](http://www.connectionstrings.com/).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Standardmäßig kann auf Dateien mit einer `.config`-Erweiterung in einer ASP.NET-Anwendung nicht über einen Browser zugegriffen werden. Diese Dateitypen werden nicht zurückgegeben, da Sie möglicherweise vertrauliche Informationen enthalten, wie z. b. Daten bankverbindungs Zeichenfolgen, Benutzernamen und Kenn Wörter, usw. Das geschützte Konfigurationssystem in .NET 2,0 unterstützt den weiteren Schutz sensibler Informationen, da bestimmte Konfigurations Abschnitte verschlüsselt werden können. Es gibt zwei integrierte geschützte Konfigurations Anbieter: einen, der den RSA-Algorithmus verwendet, und einen, der die Windows-Datenschutz-API (DPAPI) verwendet.
 
@@ -187,7 +187,7 @@ In diesem Tutorial wurde beschrieben, wie Konfigurationseinstellungen mithilfe d
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -199,7 +199,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Die Konfigurations-API in .NET 2,0](http://www.odetocode.com/Articles/418.aspx)
 - [Windows-Datenschutz](https://msdn.microsoft.com/library/ms995355.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

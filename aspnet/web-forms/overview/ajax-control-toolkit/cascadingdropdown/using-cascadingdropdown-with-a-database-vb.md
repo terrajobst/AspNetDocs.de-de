@@ -9,11 +9,11 @@ ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4482aa18c4446ec8f5f160c423008398ea2e1d0d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599464"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430653"
 ---
 # <a name="using-cascadingdropdown-with-a-database-vb"></a>Verwenden von CascadingDropDown mit einer Datenbank (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. Damit dies funktioniert, muss ein spezieller Webdienst erstellt werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das CascadingDropDown-Steuerelement im AJAX Control Toolkit erweitert ein DropDownList-Steuerelement, sodass Änderungen in einer Dropdown List zugeordnete Werte in eine andere Dropdown List laden. (Eine Liste enthält beispielsweise eine Liste der US-Bundesstaaten, und die nächste Liste wird dann mit den wichtigsten Städten in diesem Zustand aufgefüllt.) Damit dies funktioniert, muss ein spezieller Webdienst erstellt werden.
 
@@ -66,7 +66,7 @@ Die Signatur der von CascadingDropDown aufgerufenen Webmethoden lautet wie folgt
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample6.vb)]
 
-Der Rückgabewert muss daher ein Array vom Typ `CascadingDropDownNameValue` sein, das durch das Control Toolkit definiert wird. Die `GetVendors()`-Methode ist recht einfach zu implementieren: der Code stellt eine Verbindung zur AdventureWorks-Datenbank her und fragt die ersten 25 Anbieter ab. Der erste Parameter im `CascadingDropDownNameValue`-Konstruktor ist die Beschriftung des Listen Eintrags, der zweite Parameter ist der Wert (value-Attribut in HTML-&lt;`option`&gt; Element). Hier ist der Code:
+Der Rückgabewert muss daher ein Array vom Typ `CascadingDropDownNameValue` sein, das durch das Control Toolkit definiert wird. Die `GetVendors()`-Methode ist recht einfach zu implementieren: der Code stellt eine Verbindung zur AdventureWorks-Datenbank her und fragt die ersten 25 Anbieter ab. Der erste Parameter im `CascadingDropDownNameValue`-Konstruktor ist die Beschriftung des Listen Eintrags, der zweite Parameter ist der Wert (value-Attribut in HTML-&lt;`option`&gt; Element). Hier folgt der Code:
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample7.vb)]
 

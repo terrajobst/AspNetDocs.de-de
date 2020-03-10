@@ -9,11 +9,11 @@ ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: d8f3fa337eda0ceed041475ecb52f8b378b9fbba
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600654"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78442137"
 ---
 # <a name="custom-formatting-based-upon-data-c"></a>Benutzerdefinierte Formatierung auf Datenbasis (C#)
 
@@ -263,7 +263,7 @@ Anstatt die `BackColor`-Eigenschaft des `GridViewRow`direkt festzulegen, wollen 
 
 **Abbildung 11**: die günstigsten Produkte sind gelb hervorgehoben ([Klicken Sie, um das Bild in voller Größe anzuzeigen](custom-formatting-based-upon-data-cs/_static/image27.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie erfahren, wie Sie GridView, DetailsView und FormView basierend auf den an das Steuerelement gebundenen Daten formatieren. Um dies zu erreichen, haben wir einen Ereignishandler für die `DataBound`-oder `RowDataBound` Ereignisse erstellt, bei denen die zugrunde liegenden Daten bei Bedarf zusammen mit einer Formatierungs Änderung überprüft wurden. Um auf die Daten zuzugreifen, die an eine DetailsView oder FormView gebunden sind, verwenden wir die `DataItem`-Eigenschaft im `DataBound`-Ereignishandler. für eine GridView enthält jede `DataItem`-Eigenschaft der `GridViewRow` Instanz die Daten, die an diese Zeile gebunden sind, die im `RowDataBound`-Ereignishandler verfügbar ist.
 
@@ -273,7 +273,7 @@ Im nächsten Tutorial wird erläutert, wie Vorlagen mit GridView und DetailsView
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -282,4 +282,4 @@ Fröhliche Programmierung!
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial waren E.R. Gilmore, Dennis Patterson und Dan Jager. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](using-templatefields-in-the-gridview-control-cs.md)
+> [Weiter](using-templatefields-in-the-gridview-control-cs.md)

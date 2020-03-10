@@ -9,11 +9,11 @@ ms.assetid: bd87413c-8160-4520-a8a2-43b555c4183a
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c9883314d6153b9816d9bad2a281ab3c0a816448
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74612621"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420657"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>Zwischenspeichern von Daten mit dem ObjectDataSource-Steuerelement (C#)
 
@@ -149,9 +149,9 @@ Es mag verschwenderisch sein, die Datenbankdaten jedes Mal abzurufen, wenn die D
 
 Durch einfaches Festlegen einiger Eigenschaften kann die ObjectDataSource so konfiguriert werden, dass die abgerufenen Daten automatisch in den ASP.NET-Daten Cache zwischengespeichert werden. In der folgenden Liste werden die Cache bezogenen Eigenschaften von ObjectDataSource zusammengefasst:
 
-- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) muss auf `true` festgelegt werden, um das Zwischenspeichern zu aktivieren. Der Standardwert ist `false`.
+- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) muss auf `true` festgelegt werden, um das Zwischenspeichern zu aktivieren. Der Standardwert lautet `false`.
 - [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) die Zeitspanne (in Sekunden), in der die Daten zwischengespeichert werden. Die Standardeinstellung ist 0. Die ObjectDataSource speichert nur dann Daten zwischen, wenn `EnableCaching` `true` ist und `CacheDuration` auf einen Wert größer als 0 (null) festgelegt ist.
-- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) kann auf `Absolute` oder `Sliding`festgelegt werden. Wenn `Absolute`, speichert die ObjectDataSource die abgerufenen Daten für `CacheDuration` Sekunden zwischen. Wenn `Sliding`, laufen die Daten erst ab, nachdem seit `CacheDuration` Sekunden auf Sie zugegriffen wurde. Der Standardwert ist `Absolute`.
+- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) kann auf `Absolute` oder `Sliding`festgelegt werden. Wenn `Absolute`, speichert die ObjectDataSource die abgerufenen Daten für `CacheDuration` Sekunden zwischen. Wenn `Sliding`, laufen die Daten erst ab, nachdem seit `CacheDuration` Sekunden auf Sie zugegriffen wurde. Der Standardwert lautet `Absolute`.
 - [Cachekeyabhängigkeit](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) verwenden Sie diese Eigenschaft, um die ObjectDataSource s-Cache Einträge einer vorhandenen Cache Abhängigkeit zuzuordnen. Die Dateneinträge von ObjectDataSource s können vorzeitig aus dem Cache entfernt werden, indem die zugehörigen `CacheKeyDependency`entfernt werden. Diese Eigenschaft wird am häufigsten verwendet, um eine SQL-Cache Abhängigkeit mit dem ObjectDataSource s-Cache zuzuordnen. Dies ist ein Thema, das wir in der Zukunft [mithilfe von SQL-Cache Abhängigkeiten](using-sql-cache-dependencies-cs.md) untersuchen.
 
 Konfigurieren Sie den `ProductsDataSource` ObjectDataSource so, dass seine Daten 30 Sekunden lang in einer absoluten Skalierung zwischengespeichert werden. Legen Sie die Eigenschaft ObjectDataSource s `EnableCaching` auf `true` und deren `CacheDuration`-Eigenschaft auf 30 fest. Belassen Sie die `CacheExpirationPolicy`-Eigenschaft auf den Standardwert `Absolute`.
@@ -187,7 +187,7 @@ Dieses Szenario kann sich auch auf eine detailliertere Weise entwickeln. Währen
 
 Verwenden Sie kurz gesagt nur zeitbasierte Abläufe, wenn Sie bereit sind, das Potenzial veralteter Daten zu haben, und verwenden Sie kürzere Abläufe für Szenarien, in denen die Aktualität der Daten wichtig ist. Wenn veraltete Daten nicht zulässig sind, müssen Sie entweder das verzichten-Caching oder SQL-Cache Abhängigkeiten verwenden (vorausgesetzt, es handelt sich um Datenbankdaten, die Sie neu In einem zukünftigen Tutorial untersuchen wir SQL-Cache Abhängigkeiten.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir die integrierten Caching-Funktionen von ObjectDataSource untersucht. Durch einfaches Festlegen einiger Eigenschaften können wir die ObjectDataSource anweisen, die vom angegebenen `SelectMethod` zurückgegebenen Ergebnisse in den ASP.NET-Daten Cache zwischenzuspeichern. Die Eigenschaften `CacheDuration` und `CacheExpirationPolicy` geben an, wie lange das Element zwischengespeichert wird und ob es sich um einen absoluten oder gleitenden Ablauf handelt. Die `CacheKeyDependency`-Eigenschaft ordnet alle ObjectDataSource s-Cache Einträge einer vorhandenen Cache Abhängigkeit zu. Dies kann verwendet werden, um die ObjectDataSource s-Einträge aus dem Cache zu entfernen, bevor der zeitbasierte Ablauf erreicht wird. Sie wird in der Regel mit SQL-Cache Abhängigkeiten verwendet.
 
@@ -195,7 +195,7 @@ Da die Werte von ObjectDataSource einfach in den Daten Cache zwischengespeichert
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -203,7 +203,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Leitfaden zum Zwischenspeichern von Architekturen für .NET Framework Anwendungen](https://msdn.microsoft.com/library/ee817645.aspx)
 - [Ausgabe Zwischenspeicherung in ASP.NET 2,0](http://aspnet.4guysfromrolla.com/articles/121306-1.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -212,4 +212,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Teresa Murphy. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](caching-data-in-the-architecture-cs.md)
+> [Weiter](caching-data-in-the-architecture-cs.md)

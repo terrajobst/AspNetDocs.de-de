@@ -1,35 +1,35 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
-title: Kapselung in OData v4-Web-API 2.2 mit | Microsoft-Dokumentation
+title: Kapselung in odata V4 mithilfe der Web-API 2,2 | Microsoft-Dokumentation
 author: rick-anderson
-description: In der Vergangenheit konnte eine Entität nur zugegriffen werden kann, wenn diese nicht in einer Entitätenmenge gekapselt wurden. OData v4 stellt zwei zusätzliche Optionen, die Singleton-als auch Nachteile jedoch...
+description: 'In der Regel konnte auf eine Entität nur zugegriffen werden, wenn Sie in einer Entitätenmenge gekapselt wurde Odata v4 bietet jedoch zwei zusätzliche Optionen: Singleton und con...'
 ms.author: riande
 ms.date: 06/27/2014
 ms.assetid: 5fbfefad-a17a-4c46-8646-f1ccd154cd56
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
 msc.type: authoredcontent
 ms.openlocfilehash: 50050e40c4c42bf6d769d077c27864ee6417d4db
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131642"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421401"
 ---
-# <a name="containment-in-odata-v4-using-web-api-22"></a>Kapselung in OData v4 mithilfe von Web-API 2.2
+# <a name="containment-in-odata-v4-using-web-api-22"></a>Kapselung in odata V4 mithilfe der Web-API 2,2
 
-durch Jinfu Tan
+von jinfu Tan
 
-> In der Vergangenheit konnte eine Entität nur zugegriffen werden kann, wenn diese nicht in einer Entitätenmenge gekapselt wurden. OData v4 stellt zwei zusätzliche Optionen, Singleton und Kapselung, beide Web-API 2.2 unterstützt jedoch.
+> In der Regel konnte auf eine Entität nur zugegriffen werden, wenn Sie in einer Entitätenmenge gekapselt wurde Odata v4 bietet jedoch zwei zusätzliche Optionen: Singleton und Containment, die beide von WebAPI 2,2 unterstützt werden.
 
-In diesem Thema veranschaulicht, wie eine Kapselung in einem OData-Endpunkt in der Web-API 2.2 zu definieren. Weitere Informationen zu Kapselung, finden Sie unter [Kapselung kommt mit OData v4](https://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx). Zum Erstellen eines OData V4-Endpunkts in Web-API finden Sie unter [erstellen Sie eine OData v4-Endpunkt mit ASP.NET-Web API 2.2](create-an-odata-v4-endpoint.md).
+In diesem Thema wird gezeigt, wie Sie eine Kapselung in einem odata-Endpunkt in WebAPI 2,2 definieren. Weitere Informationen zur Kapselung finden Sie unter [Containment ist mit odata V4](https://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx). Informationen zum Erstellen eines odata V4-Endpunkts in der Web-API finden [Sie unter Erstellen eines odata V4-Endpunkts mit ASP.net-Web-API 2,2](create-an-odata-v4-endpoint.md).
 
-Zunächst erstellen ein Domänenmodell für die Kapselung in OData-Diensts wir mit diesem Datenmodell:
+Zunächst erstellen wir ein Containment-Domänen Modell im odata-Dienst mit diesem Datenmodell:
 
 ![Datenmodell](odata-containment-in-web-api-22/_static/image1.png)
 
-Ein Konto enthält viele PaymentInstruments (PI), aber nicht definieren wir eine Entitätenmenge für einen PI. Stattdessen können der PIs nur über ein Konto zugegriffen werden.
+Ein Konto enthält viele paymentinstruments (PI), aber wir definieren keine Entitätenmenge für einen Pi. Stattdessen kann nur über ein Konto auf die PiS zugegriffen werden.
 
-Sie können die Lösung, die in diesem Thema verwendet [CodePlex](https://aspnet.codeplex.com/SourceControl/latest#Samples/WebApi/OData/v4/ODataContainmentSample/).
+Sie können die in diesem Thema verwendete Lösung von [codeplex](https://aspnet.codeplex.com/SourceControl/latest#Samples/WebApi/OData/v4/ODataContainmentSample/)herunterladen.
 
 ## <a name="defining-the-data-model"></a>Definieren des Datenmodells
 
@@ -37,25 +37,25 @@ Sie können die Lösung, die in diesem Thema verwendet [CodePlex](https://aspnet
 
     [!code-csharp[Main](odata-containment-in-web-api-22/samples/sample1.cs)]
 
-    Die `Contained` Attribut wird für Navigationseigenschaften Containment verwendet.
-2. Das EDM-Modell auf Grundlage der CLR-Typen zu generieren.
+    Das `Contained`-Attribut wird für Eigenschaften der Einschluss Navigation verwendet.
+2. Generieren Sie das EDM-Modell basierend auf den CLR-Typen.
 
     [!code-csharp[Main](odata-containment-in-web-api-22/samples/sample2.cs)]
 
-    Die `ODataConventionModelBuilder` übernimmt das EDM-Modell erstellen, wenn die `Contained` Attribut wird die entsprechende Navigationseigenschaft hinzugefügt. Wenn die Eigenschaft ein Sammlungstyp ist eine `GetCount(string NameContains)` Funktion wird auch erstellt werden.
+    Der `ODataConventionModelBuilder` behandelt das EDM-Modell, wenn das `Contained`-Attribut der entsprechenden Navigations Eigenschaft hinzugefügt wird. Wenn die Eigenschaft ein Sammlungstyp ist, wird auch eine `GetCount(string NameContains)` Funktion erstellt.
 
-    Die generierte Metadaten sieht folgendermaßen aus:
+    Die generierten Metadaten sehen wie folgt aus:
 
     [!code-xml[Main](odata-containment-in-web-api-22/samples/sample3.xml?highlight=10)]
 
-    Die `ContainsTarget` Attribut gibt an, dass die Navigationseigenschaft eine Kapselung ist.
+    Das `ContainsTarget`-Attribut gibt an, dass die Navigations Eigenschaft eine Containment ist.
 
-## <a name="define-the-containing-entity-set-controller"></a>Definieren des enthaltenden Entität Set-Controllers
+## <a name="define-the-containing-entity-set-controller"></a>Definieren des enthaltenden entitätenmengencontrollers
 
-Enthaltene Entitäten keine eigenen Controller; die Aktion, die im enthaltenden Entität Satz Controller definiert ist. In diesem Beispiel ist ein AccountsController, aber keine PaymentInstrumentsController.
+Enthaltene Entitäten haben keinen eigenen Controller. die Aktion wird im enthaltenden entitätenmengencontroller definiert. In diesem Beispiel gibt es einen accounst Controller, aber keinen paymentinstrumenscontroller.
 
 [!code-csharp[Main](odata-containment-in-web-api-22/samples/sample4.cs)]
 
-Ist der OData-Pfad mindestens 4 Segmente, nur Attribut routing funktioniert, z. B. `[ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]` im oben genannten Controller. Andernfalls sowohl Attribut als auch beim herkömmlichen routing funktioniert: z. B. `GetPayInPIs(int key)` entspricht `GET ~/Accounts(1)/PayinPIs`.
+Wenn der odata-Pfad 4 oder mehr Segmente ist, funktioniert nur das Attribut Routing, wie z. b. `[ODataRoute("Accounts({accountId})/PayinPIs({paymentInstrumentId})")]` im obigen Controller. Andernfalls funktionieren sowohl das Attribut als auch das herkömmliche Routing: beispielsweise `GetPayInPIs(int key)` Übereinstimmungen `GET ~/Accounts(1)/PayinPIs`.
 
-*Unser Dank gilt Leo Hu für den ursprünglichen Inhalt dieses Artikels.*
+*Vielen Dank für den ursprünglichen Inhalt dieses Artikels.*

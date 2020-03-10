@@ -9,11 +9,11 @@ ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
 ms.openlocfilehash: 805eb84c24764cf921291f89054435601dbac48e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636833"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440787"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Datenbankupdates
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial erstellen Sie eine Daten Bank Änderung und zugehörige Codeänderungen, testen die Änderungen in Visual Studio und stellen dann das Update für die Test-, Staging-und Produktionsumgebungen bereit.
 
@@ -129,7 +129,7 @@ Zum Bereitstellen von mithilfe des dbdacfx-Anbieters müssen Sie nur die Option 
 
 1. Öffnen Sie den Assistenten **Web veröffentlichen** , indem Sie mit der rechten Maustaste auf das Projekt contosouniversity und dann auf **veröffentlichen**klicken.
 2. Wählen Sie das **Test** Profil aus.
-3. Klicken Sie auf die Registerkarte **Einstellungen** .
+3. Klicken Sie auf die Registerkarte **Settings** .
 4. Wählen Sie unter **DefaultConnection**die Option **Datenbank aktualisieren**aus.
 5. Deaktivieren Sie die zusätzlichen Skripts, die Sie für die erste Bereitstellung konfiguriert haben:
 
@@ -156,7 +156,7 @@ Zum Bereitstellen von mithilfe des dbdacfx-Anbieters müssen Sie nur die Option 
 
     Bei einem realen Produktions Anwendungs Update, das eine Daten Bank Änderung umfasst, würden Sie die Anwendung normalerweise während der Bereitstellung offline schalten, indem Sie *App-\_offline. htm* hochladen, bevor Sie Sie veröffentlichen und anschließend löschen, wie im [vorherigen Tutorial](deploying-a-code-update.md)gezeigt.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben nun ein Anwendungs Update bereitgestellt, das eine Daten Bank Änderung mithilfe Code First-Migrationen und des dbdacfx-Anbieters enthielt.
 

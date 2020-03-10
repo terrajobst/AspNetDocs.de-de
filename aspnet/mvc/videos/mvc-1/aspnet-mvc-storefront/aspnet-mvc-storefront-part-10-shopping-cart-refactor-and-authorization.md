@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization
-title: 'ASP.NET MVC Storefront, Teil 10: Warenkorb Umgestalten des Einkaufswagens und Autorisierung | Microsoft-Dokumentation'
+title: 'ASP.NET MVC Store Front, Teil 10: Einkaufswagen umgestalten und Autorisierung | Microsoft-Dokumentation'
 author: robconery
-description: Rob gestaltet die anfängliche wechseln Sie auf den Warenkorb legen, und implementiert das Kernstück des ein Mitgliedschaftssystem, das mithilfe der ASP.NET-Mitgliedschaft.
+description: Rob gestaltet das anfängliche go im Warenkorb und implementiert den Kern eines Mitgliedschafts Systems mithilfe der ASP.NET-Mitgliedschaft.
 ms.author: riande
 ms.date: 05/27/2008
 ms.assetid: 24ee3167-c5ae-45e1-9636-299231e5eae0
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization
 msc.type: video
 ms.openlocfilehash: 57cac8d4fc2ee70689e625ed7c22cea0cb3bc4d9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408081"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432339"
 ---
-# <a name="aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization"></a>ASP.NET MVC Storefront, Teil 10: Refactoring des Einkaufswagens und Autorisierung
+# <a name="aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization"></a>ASP.NET MVC Store Front, Teil 10: Einkaufswagen Umgestaltung und-Autorisierung
 
-durch [Rob Conery](https://github.com/robconery)
+von [Rob](https://github.com/robconery) -Konstante
 
-Rob gestaltet die anfängliche wechseln Sie auf den Warenkorb legen, und implementiert das Kernstück des ein Mitgliedschaftssystem, das mithilfe der ASP.NET-Mitgliedschaft.
+Rob gestaltet das anfängliche go im Warenkorb und implementiert den Kern eines Mitgliedschafts Systems mithilfe der ASP.NET-Mitgliedschaft.
 
-[&#9654;Sehen Sie sich Video (25 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization)
+[&#9654;Video ansehen (25 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization)
 
 > [!div class="step-by-step"]
 > [Zurück](aspnet-mvc-storefront-part-9-the-shopping-cart.md)

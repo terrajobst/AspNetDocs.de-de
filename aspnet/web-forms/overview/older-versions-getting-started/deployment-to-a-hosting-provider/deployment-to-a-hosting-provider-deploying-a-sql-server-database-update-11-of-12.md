@@ -9,11 +9,11 @@ ms.assetid: 5e2bb092-cb22-4511-ad0a-22ae12dd99b3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 0894c0ac24737e66b6960ef3d48aa17f78c6aa1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621085"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78423975"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen eines SQL Server Datenbankupdates-11 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Lernprogramm, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung auf Windows Azure-Websites durchführt. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie Sie ein Datenbankupdate in einer vollständigen SQL Server Datenbank bereitstellen. Da Code First-Migrationen den gesamten Arbeitsaufwand für das Aktualisieren der Datenbank erledigt, ist der Prozess fast identisch mit dem, was Sie im Tutorial SQL Server Compact zum Bereitstellen [eines Datenbankupdates](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md) durchgeführt haben.
 
@@ -151,7 +151,7 @@ Sie haben nun erfolgreich ein Anwendungs Update bereitgestellt, das eine Daten B
 
 Dies schließt diese Reihe von Tutorials zum Bereitstellen einer ASP.NET-Webanwendung für einen Drittanbieter-Hostinganbieter ab. Weitere Informationen zu den Themen, die in diesen Tutorials behandelt werden, finden Sie auf der MSDN-Website in der [ASP.net-Bereitstellungs Inhalts Karte](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx) .
 
-## <a name="acknowledgements"></a>Danksagungen
+## <a name="acknowledgements"></a>Danksagung
 
 Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 

@@ -1,133 +1,133 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
-title: Konfigurieren von Parametern für die Bereitstellung von Paket | Microsoft-Dokumentation
+title: Konfigurieren von Parametern für die Webpaket Bereitstellung | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird beschrieben, wie Parameterwerte, wie Internet Information Services (IIS)-Web-Anwendungsnamen, Verbindungszeichenfolgen und Dienstendpunkte festlegen...
+description: In diesem Thema wird beschrieben, wie Parameterwerte wie Internetinformationsdienste (IIS)-Webanwendungs Namen, Verbindungs Zeichenfolgen und Dienst Endpunkte festgelegt werden,...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 37947d79-ab1e-4ba9-9017-52e7a2757414
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: f04ace98d81a33053b10cab7e40dbd75a6c0992c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108728"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438399"
 ---
 # <a name="configuring-parameters-for-web-package-deployment"></a>Konfigurieren von Parametern für die Bereitstellung von Webpaketen
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Dieses Thema beschreibt das Festlegen von Parameterwerten, wie Internet Information Services (IIS)-Web-Anwendungsnamen, Verbindungszeichenfolgen und Dienstendpunkte, wenn Sie ein Webpaket für einen remote-IIS-Webserver bereitstellen.
+> In diesem Thema wird beschrieben, wie Parameterwerte, wie Internetinformationsdienste (IIS)-Webanwendungs Namen, Verbindungs Zeichenfolgen und Dienst Endpunkte, beim Bereitstellen eines Webpakets auf einem IIS-Remote Webserver festgelegt werden.
 
-Wenn Sie ein Webanwendungsprojekt, die Build- und Verpackungsprozess erstellen, wird die drei Schlüsseldateien generiert:
+Wenn Sie ein Webanwendungs Projekt erstellen, generiert der Build-und Verpackungsprozess drei Schlüsseldateien:
 
-- Ein *[Projektname] ZIP* Datei. Dies ist das Webbereitstellungspaket für Ihr Webprojekt für die Anwendung. Dieses Paket enthält alle Assemblys, Dateien, Datenbankskripts und Ressourcen, die erforderlich sind, um Ihre Webanwendung auf einem remote-IIS-Webserver neu zu erstellen.
-- Ein *[Projektname].deploy.cmd* Datei. Enthält einen Satz von parametrisierten Web Deploy (MSDeploy.exe) Befehlen, die Ihr Webbereitstellungspaket auf einem remote-IIS-Webserver zu veröffentlichen.
-- Ein *[Projektname]. "SetParameters.xml"* Datei. Dies bietet einen Satz von Parameterwerten, die den MSDeploy.exe-Befehl. Sie können die Werte in dieser Datei zu aktualisieren und übergeben sie in Web Deploy als Befehlszeilenparameter bei der Bereitstellung Ihrer Webpakets.
+- Eine *[Projektname] zip* -Datei. Dies ist das Webbereitstellungs Paket für das Webanwendungs Projekt. Dieses Paket enthält alle Assemblys, Dateien, Daten Bank Skripts und Ressourcen, die zum erneuten Erstellen der Webanwendung auf einem IIS-Remote Webserver erforderlich sind.
+- Eine *[Projektname]. cmd* -Datei. Diese enthält einen Satz parametrisierter Web deploy (msdeployment. exe)-Befehle, mit denen das Webbereitstellungs Paket auf einem IIS-Remote Webserver veröffentlicht wird.
+- Ein *[Projektname]. Datei "SetParameters. XML* ". Dadurch wird ein Satz von Parameterwerten für den Befehl "msbereitstellungs. exe" bereitgestellt. Sie können die Werte in dieser Datei aktualisieren und an Web deploy als Befehlszeilenparameter übergeben, wenn Sie das Webpaket bereitstellen.
 
 > [!NOTE]
-> Weitere Informationen zu den Build- und Verpackungsprozess, finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md).
+> Weitere Informationen zum Erstellungs-und Verpackungsprozess finden Sie unter [Erstellen und Verpacken von Webanwendungs Projekten](building-and-packaging-web-application-projects.md).
 
-Die *"SetParameters.xml"* dynamisch aus der Projektdatei der Web-Anwendung und alle Konfigurationsdateien in Ihrem Projekt generiert. Wenn Sie zu erstellen und Packen das Projekt, das Web Publishing Pipeline (WPP) erkennt viele der Variablen automatisch, die wahrscheinlich zwischen bereitstellungsumgebungen, wie die Ziel-IIS-Webanwendung und eine beliebige Datenbank-Verbindungszeichenfolgen ändern. Diese Werte automatisch in das Webbereitstellungspaket parametrisiert und hinzugefügt werden, um die *"SetParameters.xml"* Datei. Z. B., wenn Sie eine Verbindungszeichenfolge zum Hinzufügen der *"Web.config"* Datei in das Webanwendungsprojekt, der Buildprozess erkennt diese Änderung, und fügt einen Eintrag in einen der *"SetParameters.xml"* Datei entsprechend.
+Die Datei " *SetParameters. XML* " wird dynamisch aus der Webanwendungs Projektdatei und allen Konfigurationsdateien in Ihrem Projekt generiert. Wenn Sie Ihr Projekt erstellen und packen, erkennt die Webpublishing Pipeline (WPP) automatisch viele der Variablen, die sich wahrscheinlich zwischen Bereitstellungs Umgebungen ändern, wie z. b. die IIS-Ziel Webanwendung und beliebige Daten bankverbindungs Zeichenfolgen. Diese Werte werden automatisch im Webbereitstellungs Paket parametrisiert und der Datei " *SetParameters. XML* " hinzugefügt. Wenn Sie z. b. der Datei " *Web. config* " in Ihrem Webanwendungs Projekt eine Verbindungs Zeichenfolge hinzufügen, wird diese Änderung vom Buildprozess erkannt, und der Datei " *SetParameters. XML* " wird ein Eintrag entsprechend hinzugefügt.
 
-In vielen Fällen wird dieser automatische Parametrisierung ausreichen. Wenn Ihre Benutzer benötigen, um andere Einstellungen zwischen bereitstellungsumgebungen, z. B. Einstellungen für Anwendungen und Dienstendpunkt-URLs, variieren Sie müssen jedoch informieren die WPP parametrisieren diese Werte in das Bereitstellungspaket und die entsprechendeEinträgehinzugefügt *"SetParameters.xml"* Datei. Die folgenden Abschnitten wird erläutert, wie dies zu tun.
+In vielen Fällen ist diese automatische Parametrisierung ausreichend. Wenn die Benutzer jedoch andere Einstellungen zwischen Bereitstellungs Umgebungen, z. b. Anwendungseinstellungen oder Dienst Endpunkt-URLs, verändern müssen, müssen Sie die WPP anweisen, diese Werte im Bereitstellungs Paket zu parametrisieren und der Datei " *SetParameters. XML* " entsprechende Einträge hinzuzufügen. In den folgenden Abschnitten wird erläutert, wie dies zu tun ist.
 
 ### <a name="automatic-parameterization"></a>Automatische Parametrisierung
 
-Beim Erstellen und Packen Sie eine Webanwendung, wird die WPP automatisch diese Dinge zu parametrisieren:
+Wenn Sie eine Webanwendung erstellen und packen, werden diese vom WPP automatisch parametrisiert:
 
-- Das Ziel IIS web Application-Pfad und den Namen.
-- Alle Verbindungszeichenfolgen in Ihrem *"Web.config"* Datei.
-- Verbindungszeichenfolgen für alle Datenbanken, die Sie hinzufügen, die **SQL packen/veröffentlichen** Registerkarte in den Eigenschaftenseiten des Projekts.
+- Der Ziel-IIS-Webanwendungs Pfad und-Name.
+- Alle Verbindungs Zeichenfolgen in der Datei " *Web. config* ".
+- Verbindungs Zeichenfolgen für Datenbanken, die Sie auf den Eigenschaften Seiten des Projekts der Registerkarte " **Paket/SQL veröffentlichen** " hinzufügen.
 
-Beispielsweise würden Sie zum Erstellen und Verpacken der [Contact Manager](the-contact-manager-solution.md) beispiellösung ohne direkten Zugriff auf die Parametrisierung wird in keiner Weise, die WPP erzeugt dies *ContactManager.Mvc.SetParameters.xml* Datei:
+Wenn Sie z. b. die Beispiellösung [Contact Manager](the-contact-manager-solution.md) erstellen und Verpacken, ohne den Parametrisierung-Prozess zu berühren, generiert WPP diese Datei *ContactManager. MVC. SetParameters. XML* :
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample1.xml)]
 
-In diesem Fall gilt Folgendes:
+In diesem Fall:
 
-- Die **IIS-Webanwendungsname** -Parameter ist der IIS-Pfad, in dem Sie die Webanwendung bereitstellen möchten. Standardmäßig ist der Wert stammt aus dem **Web packen/veröffentlichen** Seite in den Eigenschaftenseiten des Projekts.
-- Die **ApplicationServices-Web.config Verbindungszeichenfolge** Parameter aus generiert wurde eine **ConnectionStrings/hinzufügen** Element in der *"Web.config"* Datei. Es stellt die Verbindungszeichenfolge, die die Anwendung verwenden soll, wenden Sie sich an der Mitgliedschaftsdatenbank dar. Der Wert, der Sie angeben, werden hier in der bereitgestellten eingesetzt *"Web.config"* Datei. Standardmäßig ist der Wert stammt aus der vor der Bereitstellung *"Web.config"* Datei.
+- Der Name-Parameter der **IIS-Webanwendung** ist der IIS-Pfad, in dem Sie die Webanwendung bereitstellen möchten. Der Standardwert wird auf den Eigenschaften Seiten des Projekts auf der **Webseite zum Packen/veröffentlichen** übernommen.
+- Der **ApplicationServices-Web. config-Verbindungs Zeichenfolgen-** Parameter wurde aus einem **connectionStrings/Add** -Element in der Datei " *Web. config* " generiert. Sie stellt die Verbindungs Zeichenfolge dar, die von der Anwendung zum Kontaktieren der Mitgliedschafts Datenbank verwendet werden soll. Der Wert, den Sie hier angeben, wird in die bereitgestellte *Web. config* -Datei ersetzt. Der Standardwert wird aus der *Web. config* -Datei der vorab Bereitstellung entnommen.
 
-Die WPP parametrisiert auch diese Eigenschaften in das Bereitstellungspaket an, das sie generiert. Sie können Werte für diese Eigenschaften bereitstellen, wenn Sie das Bereitstellungspaket installieren. Wenn Sie das Paket manuell über IIS-Manager installieren, wie in beschrieben [Manuelles Installieren von Webpaketen](manually-installing-web-packages.md), der Installations-Assistenten aufgefordert, Werte für alle Parameter angeben. Bei der Installation des Pakets mithilfe der *. "Deploy.cmd"* Datei, wie in beschrieben [Bereitstellen von Webpaketen](deploying-web-packages.md), Web Deploy sieht dieser *"SetParameters.xml"* Datei Geben Sie die Parameterwerte. Sie können die Werte im Bearbeiten der *"SetParameters.xml"* -Datei manuell ein, oder passen Sie die Datei als Teil eines automatisierten Build & Deployment-Prozesses. Dieser Prozess wird weiter unten in diesem Thema ausführlicher beschrieben.
+Die WPP parametrisiert auch diese Eigenschaften im Bereitstellungs Paket, das Sie generiert. Sie können Werte für diese Eigenschaften angeben, wenn Sie das Bereitstellungs Paket installieren. Wenn Sie das Paket manuell über den IIS-Manager installieren (wie unter [Manuelles Installieren von Webpaketen](manually-installing-web-packages.md)beschrieben), werden Sie vom Installations-Assistenten aufgefordert, Werte für Parameter anzugeben. Wenn Sie das Paket mithilfe der Datei *.* Bereitstellungs Datei Remote installieren, wie unter Bereitstellen von [Webpaketen](deploying-web-packages.md)beschrieben, werden Web deploy diese Datei " *SetParameters. XML* " suchen, um die Parameterwerte bereitzustellen. Sie können die Werte in der Datei " *SetParameters. XML* " manuell bearbeiten, oder Sie können die Datei im Rahmen eines automatisierten Build-und Bereitstellungs Prozesses anpassen. Dieser Vorgang wird weiter unten in diesem Thema ausführlicher beschrieben.
 
 ### <a name="custom-parameterization"></a>Benutzerdefinierte Parametrisierung
 
-In komplexeren Bereitstellungsszenarien sollten Sie sich häufig um zusätzliche Eigenschaften zu parametrisieren, bevor Sie das Projekt bereitstellen. Im Allgemeinen sollten Sie parametrisieren, alle Eigenschaften und Einstellungen, die zwischen zielumgebungen variieren. Dazu gehören:
+In komplexeren Bereitstellungs Szenarien sollten Sie häufig zusätzliche Eigenschaften parametrisieren, bevor Sie das Projekt bereitstellen. Im Allgemeinen sollten Sie alle Eigenschaften und Einstellungen parametrisieren, die sich Zwischenziel Umgebungen unterscheiden. Folgende Aktionen sind möglich:
 
-- Dienstendpunkte in der *"Web.config"* Datei.
-- Einstellungen für Anwendungen in der *"Web.config"* Datei.
-- Alle anderen deklarativen Eigenschaften, denen Sie möchten Benutzer aufgefordert, anzugeben.
+- Dienst Endpunkte in der Datei " *Web. config* ".
+- Anwendungseinstellungen in der Datei " *Web. config* ".
+- Alle anderen deklarativen Eigenschaften, die Benutzer zur Angabe auffordern möchten.
 
-Die einfachste Möglichkeit zum Parametrisieren von Rowseteigenschaften wird zum Hinzufügen einer *"Parameters.xml"* Datei in den Stammordner Ihres Webprojekts für die Anwendung. In der Projektmappe Contact Manager, z. B. das ContactManager.Mvc-Projekt enthält eine *"Parameters.xml"* Datei im Stammordner.
+Die einfachste Möglichkeit, diese Eigenschaften zu parametrisieren, besteht darin, dem Stamm Ordner des Webanwendungs Projekts die Datei " *Parameters. XML* " hinzuzufügen. Beispielsweise enthält das ContactManager. MVC-Projekt in der Contact Manager-Lösung eine " *Parameters. XML* "-Datei im Stamm Ordner.
 
 ![](configuring-parameters-for-web-package-deployment/_static/image1.png)
 
-Wenn Sie diese Datei öffnen, sehen Sie, dass es sich um ein einzelnes enthält **Parameter** Eintrag. Der Eintrag verwendet eine XML Path Language (XPath)-Abfrage zu suchen und parametrisieren die Endpunkt-URL des Diensts ContactService Windows Communication Foundation (WCF) in der *"Web.config"* Datei.
+Wenn Sie diese Datei öffnen, werden Sie feststellen, dass Sie einen einzelnen **Parameter** Eintrag enthält. Der Eintrag verwendet eine XPath-Abfrage (XML Path Language), um die Endpunkt-URL des contactservice-Windows Communication Foundation (WCF)-Diensts in der Datei " *Web. config* " zu suchen und zu parametrisieren.
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample2.xml)]
 
-Zusätzlich zu parametrisieren die Endpunkt-URL in das Bereitstellungspaket an, fügt die WPP auch einen entsprechenden Eintrag aus, um die *"SetParameters.xml"* -Datei, die zusammen mit dem Bereitstellungspaket generiert wird.
+Zusätzlich zum parametrisierten der Endpunkt-URL im Bereitstellungs Paket fügt WPP auch einen entsprechenden Eintrag in die Datei " *SetParameters. XML* " ein, die zusammen mit dem Bereitstellungs Paket generiert wird.
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample3.xml)]
 
-Wenn Sie das Bereitstellungspaket manuell installieren, fordert IIS-Manager Sie zur Adresse Dienstendpunkts zusammen mit den Eigenschaften, die automatisch parametrisiert wurden. Bei der Installation des Bereitstellungspakets mit der *. "Deploy.cmd"* -Datei, die Sie bearbeiten die *"SetParameters.xml"* Datei, geben Sie einen Wert für die Dienst-Endpunktadresse sowie Werte für die Eigenschaften, die automatisch parametrisiert wurden.
+Wenn Sie das Bereitstellungs Paket manuell installieren, werden Sie von IIS-Manager zur Eingabe der dienstend Punkt Adresse neben den Eigenschaften aufgefordert, die automatisch parametrisiert wurden. Wenn Sie das Bereitstellungs Paket durch Ausführen der Datei " *. Deployment. cmd* " installieren, können Sie die Datei " *SetParameters. XML* " Bearbeiten, um einen Wert für die Adresse des Dienst Endpunkts sowie Werte für die Eigenschaften anzugeben, die automatisch parametrisiert wurden.
 
-Ausführliche Informationen zum Erstellen einer *"Parameters.xml"* finden Sie unter [Vorgehensweise: Verwenden von Parametern zum Konfigurieren von Einstellungen bei der ein Bereitstellungspaket ist installiert](https://msdn.microsoft.com/library/ff398068.aspx). Die Prozedur mit dem Namen **Bereitstellungsparameter für Web.config-dateieinstellungen verwendet** enthält schrittweise Anleitungen.
+Ausführliche Informationen zum Erstellen der Datei " *Parameters. XML* " finden Sie unter Gewusst [wie: Verwenden von Parametern zum Konfigurieren von Bereitstellungs Einstellungen bei der Installation eines Pakets](https://msdn.microsoft.com/library/ff398068.aspx). Die Vorgehensweise **zum Verwenden der Bereitstellungs Parameter für die Einstellungen der Datei "Web. config** " enthält Schritt-für-Schritt-Anleitungen.
 
-## <a name="modifying-the-setparametersxml-file"></a>Ändern die Datei "SetParameters.xml"
+## <a name="modifying-the-setparametersxml-file"></a>Ändern der Datei "SetParameters. xml"
 
-Wenn Sie planen, das Web-Anwendungspaket manuell bereitstellen&#x2014;entweder durch Ausführen der *. "Deploy.cmd"* Datei oder durch Ausführen von MSDeploy.exe über die Befehlszeile&#x2014;nichts beenden Sie die manuell bearbeitet die  *"SetParameters.xml"* Datei vor der Bereitstellung. Wenn Sie eine unternehmensweite Lösung arbeiten, müssen Sie jedoch ein Web-Application-Paket als Teil eines größeren, automatisierten Build & Deployment-Prozesses bereitstellen. In diesem Szenario benötigen Sie Microsoft Build Engine (MSBuild) so ändern Sie die *"SetParameters.xml"* -Datei für Sie. Sie erreichen dies, indem Sie MSBuild **XmlPoke** Aufgabe.
+&#x2014;Wenn Sie das Webanwendungs Paket manuell bereitstellen möchten, indem Sie entweder die Datei ". Deployment *. cmd* " ausführen oder "msdeployment.&#x2014;exe" über die Befehlszeile ausführen, müssen Sie die Datei " *SetParameters. XML* " vor der Bereitstellung nicht manuell bearbeiten. Wenn Sie jedoch an einer Unternehmenslösung arbeiten, müssen Sie möglicherweise ein Webanwendungs Paket als Teil eines größeren, automatisierten Build-und Bereitstellungs Prozesses bereitstellen. In diesem Szenario benötigen Sie den Microsoft-Build-Engine (MSBuild), um die Datei " *SetParameters. XML* " für Sie zu ändern. Hierfür können Sie die **XmlPoke** -Aufgabe von MSBuild verwenden.
 
-Die [Contact Manager-beispiellösung](the-contact-manager-solution.md) veranschaulicht diesen Prozess. Die Codebeispiele, die Folgen haben bearbeitet wurde, um nur die Details anzuzeigen, die in diesem Beispiel relevant sind.
+Dieses Verfahren wird in der [Beispiellösung Contact Manager](the-contact-manager-solution.md) veranschaulicht. Die folgenden Codebeispiele wurden bearbeitet, um nur die für dieses Beispiel relevanten Details anzuzeigen.
 
 > [!NOTE]
-> Eine umfassendere Übersicht des Projektmodells-Datei in die Projektmappe, und eine Einführung in benutzerdefinierte Projektdateien im Allgemeinen finden Sie unter [Grundlegendes zur Projektdatei](understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](understanding-the-build-process.md).
+> Einen umfassenderen Überblick über das Projektdatei Modell in der Beispiellösung und eine Einführung in benutzerdefinierte Projektdateien im Allgemeinen finden Sie Untergrund Legendes zur [Projektdatei](understanding-the-project-file.md) und Grundlegendes [zum Buildprozess](understanding-the-build-process.md).
 
-Zunächst werden die Parameterwerte von Interesse sind als Eigenschaften in der Umgebung spezifischen Projektdatei definiert (z. B. *Env-Dev.proj*).
+Zuerst werden die zu berücksichtigenden Parameterwerte als Eigenschaften in der Umgebungs spezifischen Projektdatei (z *. b. env-dev. proj*) definiert.
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample4.xml)]
 
 > [!NOTE]
-> Anleitungen zum Anpassen der umgebungsspezifischen Projektdateien für Ihre eigenen serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungseigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
+> Anleitungen zum Anpassen der Umgebungs spezifischen Projektdateien für Ihre eigenen Serverumgebungen finden Sie unter [Konfigurieren von Bereitstellungs Eigenschaften für eine Zielumgebung](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
-Als Nächstes die *Publish.proj* -Datei importiert, diese Eigenschaften. Da jede *"SetParameters.xml"* Datei zugeordnet ist eine *. "Deploy.cmd"* -Datei, und wir werden die Projektdatei, die jeweils aufrufen soll *. "Deploy.cmd"* Datei des Projekts erstellt die Datei eine MSBuild *Element* für jede *. "Deploy.cmd"* Datei, und definiert die Eigenschaften von Interesse sind, als *Elementmetadaten*.
+Als nächstes importiert die Datei *Publish. proj* diese Eigenschaften. Da jede Datei " *SetParameters. XML* " einer *. cmd* -Datei zugeordnet ist und wir letztendlich möchten, dass die Projektdatei jede. Bereitstellung. *cmd* -Datei aufruft, erstellt die Projektdatei ein MSBuild- *Element* für jede *.* cmd-Datei und definiert die Eigenschaften, die von Interesse sind, als *Element Metadaten*.
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample5.xml)]
 
-In diesem Fall gilt Folgendes:
+In diesem Fall:
 
-- Die **ParametersXml** Metadatenwert gibt die Position von der *"SetParameters.xml"* Datei.
-- Die **IisWebAppName** Wert ist der IIS-Pfad zu dem Sie die Webanwendung bereitstellen möchten.
-- Die **MembershipDBConnectionString** Wert ist die Verbindungszeichenfolge für die Mitgliedschaftsdatenbank und die **MembershipDBConnectionName** Wert ist die **Namen** Attribut des entsprechenden Parameters in der *"SetParameters.xml"* Datei.
-- Die **ServiceEndpointValue** Wert ist die Endpunktadresse für den WCF-Dienst auf dem Zielserver, und die **ServiceEndpointParamName** Wert ist das Namensattribut des entsprechenden Parameters in die *"SetParameters.xml"* Datei.
+- Der **parametersxml** -Metadatenwert gibt den Speicherort der Datei " *SetParameters. XML* " an.
+- Der Wert **iiswebappname** ist der IIS-Pfad, in dem Sie die Webanwendung bereitstellen möchten.
+- Der Wert für " **Membership shipdbconnectionstring** " ist die Verbindungs Zeichenfolge für die Mitgliedschafts Datenbank, und der Wert für " **Membership shipdbconnectionname** " ist das **namens** Attribut des entsprechenden Parameters in der Datei " *SetParameters. XML* ".
+- Der **serviceendpointvalue** -Wert ist die Endpunkt Adresse für den WCF-Dienst auf dem Zielserver, und der **serviceendpointparamname** -Wert ist das Name-Attribut des entsprechenden Parameters in der Datei " *SetParameters. XML* ".
 
-In der *Publish.proj* -Datei, die **PublishWebPackages** verwendet als Ziel der **XmlPoke** Aufgabe so ändern Sie diese Werte in der *"SetParameters.xml"* Datei.
+Schließlich verwendet das **publishwebpackages** -Ziel in der Datei *Publish. proj* die **XmlPoke** -Aufgabe, um diese Werte in der Datei " *SetParameters. XML* " zu ändern.
 
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample6.xml)]
 
-Sie werden feststellen, dass jedes **XmlPoke** Task gibt vier Attributwerte:
+Sie werden feststellen, dass jede **XmlPoke** -Aufgabe vier Attributwerte angibt:
 
-- Die **XmlInputPath** -Attribut weist der Aufgabe, wo die Datei zu finden, Sie ändern möchten.
-- Die **Abfrage** -Attribut ist eine XPath-Abfrage, die den XML-Knoten identifiziert, Sie ändern möchten.
-- Die **Wert** -Attribut ist der neue Wert in der ausgewählten XML-Knoten eingefügt werden soll.
-- Die **Bedingung** Attribut gibt die Kriterien, die auf dem die Aufgabe ausgeführt werden sollen oder nicht ausgeführt werden. In diesen Fällen ist die Bedingung wird sichergestellt, dass Sie nicht, zum Einfügen eines Werts null oder leer sein, in versuchen der *"SetParameters.xml"* Datei.
+- Das **XmlInputPath** -Attribut teilt der Aufgabe mit, wo sich die Datei befindet, die Sie ändern möchten.
+- Das **Query** -Attribut ist eine XPath-Abfrage, die den XML-Knoten identifiziert, den Sie ändern möchten.
+- Das **value** -Attribut ist der neue Wert, den Sie in den ausgewählten XML-Knoten einfügen möchten.
+- Das **Condition** -Attribut ist die Kriterien, auf denen die Aufgabe ausgeführt oder nicht ausgeführt werden soll. In diesen Fällen stellt die Bedingung sicher, dass Sie nicht versuchen, einen NULL-Wert oder einen leeren Wert in die Datei " *SetParameters. XML* " einzufügen.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema beschrieben die Rolle der *"SetParameters.xml"* Datei, und erläutert, wie es bei der Erstellung eines Webanwendungsprojekts generiert wird. Er erläutert, wie Sie durch Hinzufügen zusätzliche Einstellungen parametrisieren können eine *"Parameters.xml"* Datei zum Projekt. Es wurde außerdem beschrieben, wie Sie ändern können die *"SetParameters.xml"* Datei als Teil eines größeren, automatisierten Buildprozesses, mit der **XmlPoke** Task in den Projektdateien.
+In diesem Thema wurde die Rolle der Datei " *SetParameters. XML* " beschrieben und erläutert, wie Sie beim Erstellen eines Webanwendungs Projekts generiert wird. Es wurde erläutert, wie Sie zusätzliche Einstellungen parametrisieren können, indem Sie dem Projekt die Datei " *Parameters. XML* " hinzufügen. Außerdem wird beschrieben, wie Sie die Datei " *SetParameters. XML* " im Rahmen eines größeren, automatisierten Buildprozesses ändern können, indem Sie die **XmlPoke** -Aufgabe in den Projektdateien verwenden.
 
-Im nächsten Thema, [Bereitstellen von Webpaketen](deploying-web-packages.md), beschreibt, wie Sie eine Web-Paket entweder mit bereitstellen können die *. "Deploy.cmd"* Datei oder mithilfe von MSDeploy.exe-Befehle direkt. In beiden Fällen können Sie angeben Ihrer *"SetParameters.xml"* Datei als Bereitstellungsparameter angeben.
+Im nächsten Thema, Bereitstellen von [Webpaketen](deploying-web-packages.md), wird beschrieben, wie Sie ein Webpaket bereitstellen können, indem Sie entweder die Datei " *. cmd* " oder die Befehle "msbereitstellungs. exe" direkt verwenden. In beiden Fällen können Sie die Datei " *SetParameters. XML* " als Bereitstellungs Parameter angeben.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zum Erstellen von Webpaketen, finden Sie unter [erstellen und Verpacken von Webanwendungsprojekten](building-and-packaging-web-application-projects.md). Anleitung für das tatsächlich ein Webpaket bereitgestellt werden, finden Sie unter [Bereitstellen von Webpaketen](deploying-web-packages.md). Eine schrittweise Anleitung zum Erstellen einer *"Parameters.xml"* finden Sie unter [Vorgehensweise: Verwenden von Parametern zum Konfigurieren von Einstellungen bei der ein Bereitstellungspaket ist installiert](https://msdn.microsoft.com/library/ff398068.aspx).
+Weitere Informationen zum Erstellen von Webpaketen finden Sie unter Erstellen [und Verpacken von Webanwendungs Projekten](building-and-packaging-web-application-projects.md). Eine Anleitung zur eigentlichen Bereitstellung eines Webpakets finden Sie unter Bereitstellen von [Webpaketen](deploying-web-packages.md). Eine Schritt-für-Schritt-Anleitung zum Erstellen der Datei " *Parameters. XML* " finden Sie unter Gewusst [wie: Verwenden von Parametern zum Konfigurieren von Bereitstellungs Einstellungen bei der Installation eines Pakets](https://msdn.microsoft.com/library/ff398068.aspx).
 
-Weitere allgemeine Informationen zur Parametrisierung in Web Deploy, finden Sie unter [Bereitstellen von Web-Parametrisierung in Aktion](https://go.microsoft.com/?linkid=9805119) (Blogbeitrag).
+Weitere allgemeine Informationen zur Parametrisierung in Web deploy finden Sie unter [Web deploy Parametrisierung in Action](https://go.microsoft.com/?linkid=9805119) (Blogbeitrag).
 
 > [!div class="step-by-step"]
 > [Zurück](building-and-packaging-web-application-projects.md)

@@ -9,11 +9,11 @@ ms.assetid: e624a3e0-061b-4efc-8b0e-5877f9ff6714
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5c94baa99b126cdd24d69afc3d02bfe8b069419b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74604475"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78427527"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-vb"></a>Aktualisieren des TableAdapter-Steuerelements für die Verwendung von Verknüpfungen (VB)
 
@@ -68,7 +68,7 @@ Standardmäßig erstellt der TableAdapter automatisch `INSERT`-, `UPDATE`-und `D
 
 **Abbildung 2**: Geben Sie eine Haupt Abfrage ein, die `JOIN` s enthält.
 
-Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen. An diesem Punkt enthält Ihr Dataset s-Designer einen einzelnen TableAdapter mit einer Datentabelle mit Spalten für jedes der Felder, die in der Spaltenliste der `SELECT` Abfrage s zurückgegeben werden. Dies schließt die `CategoryName` und `SupplierName`ein, wie in Abbildung 3 gezeigt.
+Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen. An diesem Punkt enthält Ihr Dataset s-Designer einen einzelnen TableAdapter mit einer Datentabelle mit Spalten für jedes der Felder, die in der Spaltenliste der `SELECT` Abfrage s zurückgegeben werden. Dies schließt die `CategoryName` und `SupplierName`ein, wie in Abbildung 3 gezeigt.
 
 ![Die Datentabelle enthält eine Spalte für jedes Feld, das in der Spaltenliste zurückgegeben wird.](updating-the-tableadapter-to-use-joins-vb/_static/image5.png)
 
@@ -161,7 +161,7 @@ Um zu veranschaulichen, dass die aktualisierte gespeicherte Prozedur `Employees_
 
 ## <a name="step-4-implementing-the-business-logic-layer"></a>Schritt 4: Implementieren der Geschäftslogik Ebene
 
-Erstellen Sie eine neue Klassendatei im Ordner "`~/App_Code/BLL`" mit dem Namen `EmployeesBLLWithSprocs.vb`. Diese Klasse imitiert die Semantik der vorhandenen `EmployeesBLL`-Klasse, nur diese neue stellt weniger Methoden bereit und verwendet das `NorthwindWithSprocs` DataSet (anstelle des `Northwind` Datasets). Fügen Sie der `EmployeesBLLWithSprocs` -Klasse folgenden Code hinzu.
+Erstellen Sie eine neue Klassendatei im Ordner "`~/App_Code/BLL`" mit dem Namen `EmployeesBLLWithSprocs.vb`. Diese Klasse imitiert die Semantik der vorhandenen `EmployeesBLL`-Klasse, nur diese neue stellt weniger Methoden bereit und verwendet das `NorthwindWithSprocs` DataSet (anstelle des `Northwind` Datasets). Fügen Sie der `EmployeesBLLWithSprocs` -Klasse den folgenden Code hinzu.
 
 [!code-vb[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample6.vb)]
 
@@ -207,7 +207,7 @@ Damit ein Mitarbeiter gelöscht werden kann, können Sie folgende Aktionen ausf�
 
 Ich lasse dies als Übung für den Reader aus.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Arbeiten mit relationalen Datenbanken kommt es häufig vor, dass Abfragen Ihre Daten aus mehreren verknüpften Tabellen abrufen. Korrelierte Unterabfragen und `JOIN` s bieten zwei verschiedene Techniken für den Zugriff auf Daten aus verknüpften Tabellen in einer Abfrage. In vorherigen Tutorials haben wir am häufigsten korrelierte Unterabfragen verwendet, da der TableAdapter `INSERT`-, `UPDATE`-und `DELETE`-Anweisungen für Abfragen, die `JOIN` s betreffen, nicht automatisch generieren kann. Diese Werte können bei Verwendung von Ad-hoc-SQL-Anweisungen manuell bereitgestellt werden, wenn der TableAdapter-Konfigurations-Assistent abgeschlossen ist.
 
@@ -217,7 +217,7 @@ Beim erneuten Ausführen des TableAdapter-Konfigurations-Assistenten wurden die 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

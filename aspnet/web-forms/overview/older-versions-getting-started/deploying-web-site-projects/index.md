@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/index
-title: Bereitstellen von Websiteprojekten in Visual Studio 2008 und früheren Versionen | Microsoft-Dokumentation
+title: Bereitstellen von Website Projekten in Visual Studio 2008 und früher | Microsoft-Dokumentation
 author: rick-anderson
-description: ASP.NET-Webanwendungen in der Regel dienen, erstellt, und in eine lokale Entwicklungsumgebung getestet und für eine Produktions-o-Umgebung bereitgestellt werden müssen...
+description: ASP.NET Webanwendungen werden in der Regel in einer lokalen Entwicklungsumgebung entworfen, erstellt und getestet und müssen in einer Produktionsumgebung bereitgestellt werden...
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 6f72bde8-f2f1-4e4a-94e5-494c3c153c14
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects
 msc.type: chapter
 ms.openlocfilehash: 43c2397ef4ccc5eacb2ff4c5d04f62b9c8c481b7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134426"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420489"
 ---
 # <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a>Bereitstellen von Websiteprojekten in Visual Studio 2008 und früheren Versionen
 
-> ASP.NET-Webanwendungen sind in der Regel entworfen, erstellt und getestet werden, in einer lokalen Entwicklungsumgebung und müssen in einer produktionsumgebung bereitgestellt werden, sobald sie für die Veröffentlichung bereit ist. Dieser tutorialreihe werden während des Bereitstellungsvorgangs.
+> ASP.NET Webanwendungen werden in der Regel in einer lokalen Entwicklungsumgebung entworfen, erstellt und getestet und müssen in einer Produktionsumgebung bereitgestellt werden, sobald Sie für die Veröffentlichung bereit ist. Diese tutorialreihe erläutert den Bereitstellungs Prozess.
 
 - [Optionen zum Hosten von ASP.NET (C#)](asp-net-hosting-options-cs.md)
 - [Festlegen der bereitzustellenden Dateien (C#)](determining-what-files-need-to-be-deployed-cs.md)

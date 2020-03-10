@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
-title: ASP.NET MVC 2 – Renderingaktion | Microsoft-Dokumentation
+title: ASP.NET MVC 2-Rendering-Aktion | Microsoft-Dokumentation
 author: jongalloway
-description: In diesem Video erfahren Sie, wie Sie Html.RenderAction verwenden, um die Ergebnisse eine Controlleraktion auf eine Ansicht zu schreiben. Betrachten wir wie Html.RenderAction "fr" unterscheidet sich...
+description: In diesem Video erfahren Sie, wie Sie mit HTML. renderaction die Ergebnisse einer Controller Aktion in eine Ansicht schreiben. Wir sehen uns an, wie sich HTML. renderaction unterscheidet...
 ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: 11906982-0a64-4bc8-be23-6443afee8b88
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
 msc.type: video
 ms.openlocfilehash: 211a8d5e3ce535a641bc3b57c6969ab80e3524df
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400879"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432033"
 ---
 # <a name="aspnet-mvc-2---render-action"></a>ASP.NET MVC 2 – Renderingaktion
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-In diesem Video erfahren Sie, wie Sie Html.RenderAction verwenden, um die Ergebnisse eine Controlleraktion auf eine Ansicht zu schreiben. Betrachten wir wie Html.RenderAction Html.RenderPartial unterscheidet und wie Html.Action Html.RenderAction unterscheidet.
+In diesem Video erfahren Sie, wie Sie mit HTML. renderaction die Ergebnisse einer Controller Aktion in eine Ansicht schreiben. Wir sehen uns an, wie sich HTML. renderaction von HTML. renderpartial unterscheidet und wie sich HTML. Action von HTML. renderaction unterscheidet.
 
-[&#9654;Sehen Sie sich Video (3 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-render-action)
+[&#9654;Video ansehen (3 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-render-action)
 
 > [!div class="step-by-step"]
 > [Zurück](aspnet-mvc-2-areas.md)

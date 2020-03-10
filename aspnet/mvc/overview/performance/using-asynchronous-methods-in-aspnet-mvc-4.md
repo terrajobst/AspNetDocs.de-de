@@ -9,11 +9,11 @@ ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 15692b18fc112c4c6cce4d50a243a0e8d5fb52a4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457751"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432885"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>Verwenden asynchroner Methoden in ASP.NET MVC 4
 
@@ -35,34 +35,34 @@ Weitere Informationen [zum Verwenden der](https://msdn.microsoft.com/library/hh1
 
 Auf dem Webserver verwaltet das .NET Framework einen Thread Pool, der zum Service ASP.NET-Anforderungen verwendet wird. Wenn eine Anforderung eingeht, wird ein Thread aus dem Pool verteilt, um diese Anforderung zu verarbeiten. Wenn die Anforderung synchron verarbeitet wird, ist der Thread, der die Anforderung verarbeitet, ausgelastet, während die Anforderung verarbeitet wird, und dieser Thread kann keine andere Anforderung verarbeiten.   
   
-Dies stellt möglicherweise kein Problem dar, da der Thread Pool groß genug gemacht werden kann, um viele ausgelastete Threads aufnehmen zu können. Die Anzahl der Threads im Thread Pool ist jedoch begrenzt (der Standardwert für .NET 4,5 ist 5.000). In großen Anwendungen mit hoher Parallelität von Anforderungen mit langer Ausführungszeit sind möglicherweise alle verfügbaren Threads ausgelastet. Diese Bedingung wird als Threadmangel (Starvation) bezeichnet. Wenn diese Bedingung erreicht wird, werden Anforderungen vom Webserver in die Warteschlange eingereiht. Wenn die Anforderungs Warteschlange voll ist, lehnt der Webserver Anforderungen mit einem HTTP 503-Status (Server ist zu stark ausgelastet) ab. Der CLR-Thread Pool weist Einschränkungen bei neuen Thread Spritzen auf. Wenn die Parallelität burstig ist (d. h., Ihre Website kann plötzlich eine große Anzahl von Anforderungen erhalten), und alle verfügbaren Anforderungs Threads sind aufgrund von Back-End-aufrufen mit hoher Latenzzeit ausgelastet. die eingeschränkte Thread einschleusungs Rate kann dazu führen, dass Ihre Anwendung sehr schlecht reagiert. Außerdem hat jeder neue dem Thread Pool hinzugefügte Thread mehr Aufwand (z. b. 1 MB Stapel Arbeitsspeicher). Eine Webanwendung, die synchrone Methoden verwendet, um Aufrufe mit hoher Latenz zu verarbeiten, bei denen der Thread Pool auf den maximalen .NET 4,5-Standardwert von 5 000 Threads ansteigt, beansprucht ungefähr 5 GB mehr Arbeitsspeicher als eine Anwendung, die die gleichen Anforderungen verwendet. asynchrone Methoden und nur 50-Threads. Wenn Sie asynchrone Aufgaben durcharbeiten, verwenden Sie nicht immer einen Thread. Wenn Sie z. b. einen asynchronen webService Request erstellen, verwendet ASP.NET keine Threads zwischen dem asynchronen **Methoden** Aufrufvorgang und dem **warten**. Die Verwendung des Thread Pools für den Einsatz von Anforderungen mit hoher Latenzzeit kann zu einem hohen Speicherbedarf und unzureichender Auslastung der Server Hardware führen.
+Dies stellt möglicherweise kein Problem dar, da der Thread Pool groß genug gemacht werden kann, um viele ausgelastete Threads aufnehmen zu können. Die Anzahl der Threads im Thread Pool ist jedoch begrenzt (der Standardwert für .NET 4,5 ist 5.000). In großen Anwendungen mit hoher Parallelität von Anforderungen mit langer Ausführungszeit sind möglicherweise alle verfügbaren Threads ausgelastet. Diese Bedingung wird als Thread Hunger bezeichnet. Wenn diese Bedingung erreicht wird, werden Anforderungen vom Webserver in die Warteschlange eingereiht. Wenn die Anforderungs Warteschlange voll ist, lehnt der Webserver Anforderungen mit einem HTTP 503-Status (Server ist zu stark ausgelastet) ab. Der CLR-Thread Pool weist Einschränkungen bei neuen Thread Spritzen auf. Wenn die Parallelität burstig ist (d. h., Ihre Website kann plötzlich eine große Anzahl von Anforderungen erhalten), und alle verfügbaren Anforderungs Threads sind aufgrund von Back-End-aufrufen mit hoher Latenzzeit ausgelastet. die eingeschränkte Thread einschleusungs Rate kann dazu führen, dass Ihre Anwendung sehr schlecht reagiert. Außerdem hat jeder neue dem Thread Pool hinzugefügte Thread mehr Aufwand (z. b. 1 MB Stapel Arbeitsspeicher). Eine Webanwendung, die synchrone Methoden verwendet, um Aufrufe mit hoher Latenz zu verarbeiten, bei denen der Thread Pool auf den maximalen .NET 4,5-Standardwert von 5 000 Threads ansteigt, beansprucht ungefähr 5 GB mehr Arbeitsspeicher als eine Anwendung, die die gleichen Anforderungen verwendet. asynchrone Methoden und nur 50-Threads. Wenn Sie asynchrone Aufgaben durcharbeiten, verwenden Sie nicht immer einen Thread. Wenn Sie z. b. einen asynchronen webService Request erstellen, verwendet ASP.NET keine Threads zwischen dem asynchronen **Methoden** Aufrufvorgang und dem **warten**. Die Verwendung des Thread Pools für den Einsatz von Anforderungen mit hoher Latenzzeit kann zu einem hohen Speicherbedarf und unzureichender Auslastung der Server Hardware führen.
 
 ## <a name="processing-asynchronous-requests"></a>Verarbeiten von asynchronen Anforderungen
 
-In einer Web-App, die eine große Anzahl gleichzeitiger Anforderungen beim Start erkennt oder eine bursty Load (bei der die Parallelität plötzlich zunimmt), erhöht sich die Reaktionsfähigkeit der app durch das Ausführen von Webdienst aufrufen. Die Verarbeitung einer asynchronen Anforderung dauert genau so lange wie die einer synchronen Anforderung. Wenn eine Anforderung einen Webdienst aufruft, der zwei Sekunden benötigt, dauert die Anforderung zwei Sekunden, unabhängig davon, ob Sie synchron oder asynchron ausgeführt wird. Während eines asynchronen Aufrufes wird jedoch verhindert, dass ein Thread auf andere Anforderungen antwortet, während er auf den Abschluss der ersten Anforderung wartet. Daher verhindern asynchrone Anforderungen das Anforderungswarteschlangen-und Thread Pool Wachstum, wenn es viele gleichzeitige Anforderungen gibt, die Vorgänge mit langer Laufzeit aufrufen.
+In einer Web-App, die eine große Anzahl gleichzeitiger Anforderungen beim Start erkennt oder eine bursty Load (bei der die Parallelität plötzlich zunimmt), erhöht sich die Reaktionsfähigkeit der app durch das Ausführen von Webdienst aufrufen. Die Verarbeitung einer asynchronen Anforderung dauert denselben Zeitraum wie eine synchrone Anforderung. Wenn eine Anforderung einen Webdienst aufruft, der zwei Sekunden benötigt, dauert die Anforderung zwei Sekunden, unabhängig davon, ob Sie synchron oder asynchron ausgeführt wird. Während eines asynchronen Aufrufes wird jedoch verhindert, dass ein Thread auf andere Anforderungen antwortet, während er auf den Abschluss der ersten Anforderung wartet. Daher verhindern asynchrone Anforderungen das Anforderungswarteschlangen-und Thread Pool Wachstum, wenn es viele gleichzeitige Anforderungen gibt, die Vorgänge mit langer Laufzeit aufrufen.
 
 ## <a id="ChoosingSyncVasync"></a>Auswählen von synchronen oder asynchronen Aktionsmethoden
 
-In diesem Abschnitt werden die Richtlinien aufgeführt, auf deren Grundlage bestimmt wird, wann synchrone oder asynchrone Aktionsmethoden zu verwenden sind. Dies sind nur Richtlinien. untersuchen Sie jede Anwendung einzeln, um zu bestimmen, ob asynchrone Methoden die Leistung unterstützen.
+In diesem Abschnitt werden die Richtlinien für den Einsatz von synchronen oder asynchronen Aktionsmethoden aufgeführt. Dies sind nur Richtlinien. untersuchen Sie jede Anwendung einzeln, um zu bestimmen, ob asynchrone Methoden die Leistung unterstützen.
 
 Verwenden Sie in der Regel synchrone Methoden für die folgenden Bedingungen:
 
-- Die Vorgänge sind einfach oder haben eine kurze Ausführungszeit.
+- Die Vorgänge sind einfach oder kurz ausgeführt.
 - Einfachheit ist wichtiger als die Effizienz.
-- Die Vorgänge beanspruchen hauptsächlich die CPU und bringen keine umfangreiche Datenträger- oder Netzwerkauslastung mit sich. Das Verwenden asynchroner Aktionsmethoden für CPU-gebundene Vorgänge bietet keine Vorteile und führt zu einem Mehraufwand.
+- Bei den Vorgängen handelt es sich hauptsächlich um CPU-Vorgänge anstelle von Vorgängen, die einen umfangreichen Datenträger Die Verwendung von asynchronen Aktionsmethoden für CPU-gebundene Vorgänge bietet keine Vorteile und führt zu einem höheren Verwaltungsaufwand.
 
 Im Allgemeinen verwenden Sie asynchrone Methoden für die folgenden Bedingungen:
 
 - Sie rufen Dienste auf, die durch asynchrone Methoden genutzt werden können, und Sie verwenden .NET 4,5 oder höher.
-- Die Vorgänge sind netzwerkgebunden oder E/A-gebunden und nicht CPU-gebunden.
-- Parallelverarbeitung ist wichtiger als die Einfachheit des Codes.
-- Sie möchten einen Mechanismus bereitstellen, der Benutzern das Abbrechen einer Anforderung mit langer Laufzeit ermöglicht.
+- Die Vorgänge sind Netzwerk gebunden oder e/a-gebunden anstatt CPU-gebunden.
+- Parallelität ist wichtiger als die Einfachheit des Codes.
+- Sie möchten einen Mechanismus bereitstellen, mit dem Benutzer eine Anforderung mit langer Ausführungszeit abbrechen können.
 - Wenn der Vorteil der Umstellung von Threads die Kosten des Kontext Schalters übersteigt. Im Allgemeinen sollten Sie eine Methode asynchron erstellen, wenn die synchrone Methode auf den ASP.net Request-Thread wartet, während keine Arbeit ausgeführt wird. Durch die asynchrone Ausführung des Aufrufes wird der ASP.net-Anforderungs Thread nicht angehalten und funktioniert nicht mehr, während er auf den Abschluss des webService Request wartet.
 - Das Testen zeigt, dass die blockierenden Vorgänge einen Engpass bei der Standort Leistung darstellen und dass IIS mehr Anforderungen mithilfe von asynchronen Methoden für diese blockierenden Aufrufe bedienen kann.
 
-Im herunterladbaren Beispiel wird gezeigt, wie asynchrone Aktionsmethoden effektiv verwendet werden. Das bereitgestellte Beispiel wurde entworfen, um eine einfache Demonstration der asynchronen Programmierung in ASP.NET MVC 4 mithilfe von .NET 4,5 zu ermöglichen. Das Beispiel ist nicht als Referenzarchitektur für die asynchrone Programmierung in ASP.NET MVC gedacht. Das Beispielprogramm ruft [ASP.net-Web-API](../../../web-api/index.md) Methoden auf, die wiederum [Task. Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) aufrufen, um lange Ausführungs-Webdienst Aufrufe zu simulieren. Die meisten Produktionsanwendungen zeigen diese offensichtlichen Vorteile für die Verwendung von asynchronen Aktionsmethoden nicht an.   
+Das herunterladbare Beispiel zeigt, wie asynchrone Aktionsmethoden effektiv verwendet werden. Das bereitgestellte Beispiel wurde entworfen, um eine einfache Demonstration der asynchronen Programmierung in ASP.NET MVC 4 mithilfe von .NET 4,5 zu ermöglichen. Das Beispiel ist nicht als Referenzarchitektur für die asynchrone Programmierung in ASP.NET MVC gedacht. Das Beispielprogramm ruft [ASP.net-Web-API](../../../web-api/index.md) Methoden auf, die wiederum [Task. Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) aufrufen, um lange Ausführungs-Webdienst Aufrufe zu simulieren. Die meisten Produktionsanwendungen zeigen diese offensichtlichen Vorteile für die Verwendung von asynchronen Aktionsmethoden nicht an.   
   
-Nur wenige Anwendungen erfordern, dass alle Aktionsmethoden asynchron sein müssen. Oft wird durch Konvertieren einiger synchroner Aktionsmethoden in asynchrone Methoden die beste Effizienzsteigerung für den erforderlichen Arbeitsaufwand erzielt.
+Bei wenigen Anwendungen müssen alle Aktionsmethoden asynchron sein. Häufig bietet die typverarbeitung einiger synchroner Aktionsmethoden in asynchrone Methoden die beste Effizienzsteigerung für die erforderliche Arbeitsmenge.
 
 ## <a id="SampleApp"></a>Die Beispielanwendung
 

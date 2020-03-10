@@ -1,192 +1,192 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
-title: 'Iteration #4 – Optimieren der Anwendung, die lose verknüpft wird (c#) | Microsoft-Dokumentation'
+title: 'Iterations #4 – Festlegen der Anwendung lose gekoppelt (C#) | Microsoft-Dokumentation'
 author: microsoft
-description: In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Für ...
+description: In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Für ...
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ce8e3c4ff8a59be9f2f572813db599604216119d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117793"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437973"
 ---
-# <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iteration #4 – Optimieren der Anwendung, die lose verknüpft wird (c#)
+# <a name="iteration-4--make-the-application-loosely-coupled-c"></a>Iterations #4 – Festlegen der Anwendung lose gekoppelt (C#)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-4-make-the-application-loosely-coupled-cs/_static/contactmanager_4_cs1.zip)
 
-> In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+> In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Aufbauen einer Kontakt Verwaltung ASP.NET MVC-AnwendungC#()
 
-In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
+In dieser Reihe von Tutorials erstellen wir von Anfang bis Ende eine gesamte Kontakt Verwaltungs Anwendung. Mithilfe der Kontakt-Manager-Anwendung können Sie Kontaktinformationen (Namen, Telefonnummern und e-Mail-Adressen) für eine Liste von Personen speichern.
 
-Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbessern wir nach und nach der Anwendung. Das Ziel dieses mehrere Iteration-Ansatzes ist, um den Grund für jede Änderung verstehen können.
+Die Anwendung wird über mehrere Iterationen erstellt. Bei jeder Iterationen verbessern wir die Anwendung allmählich. Das Ziel dieses mehrfaches Iterations Ansatzes besteht darin, Ihnen zu ermöglichen, den Grund für jede Änderung zu verstehen.
 
-- Iteration #1 – Erstellen der Anwendung. In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen Sie, aktualisieren Sie und löschen Sie (CRUD).
+- Iterations #1: Erstellen Sie die Anwendung. In der ersten Iterationen erstellen wir den Kontakt-Manager auf einfachste Art und Weise. Wir fügen Unterstützung für grundlegende Daten Bank Vorgänge hinzu: Create, Read, Update und DELETE (CRUD).
 
-- Iteration #2 – Optimieren der Anwendung gut. In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+- Iterations #2: machen Sie das Aussehen der Anwendung schön. In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-- Iteration #3 – Hinzufügen der formularüberprüfung. In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
+- Iterations #3: Formular Validierung hinzufügen. In der dritten Iterationen fügen wir die grundlegende Formular Validierung hinzu. Wir hindern Personen daran, ein Formular zu senden, ohne die erforderlichen Formularfelder abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-- Stellen Sie Iteration #4 – lose koppeln der Anwendung. In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+- Iterations #4: Legen Sie die Anwendung lose gekoppelt. In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-- Iteration #5 – Erstellen von Komponententests. In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+- Iterations #5: Erstellen von Komponententests. In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-- Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+- Iterations #6: Verwenden Sie die Test gesteuerte Entwicklung. In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-- Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+- Iterations #7: Hinzufügen von AJAX-Funktionen. In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="this-iteration"></a>Diese Iteration
+## <a name="this-iteration"></a>Diese Iterations
 
-In dieser vierten Iteration der Contact Manager-Anwendung gestalten wir die Anwendung, damit die Anwendung mehr lose gekoppelt. Wenn eine Anwendung lose gekoppelt ist, können Sie den Code in einem Teil der Anwendung ändern, ohne den Code in anderen Teilen der Anwendung ändern. Lose verbundene Anwendungen sind stabiler, um zu ändern.
+In dieser vierten Iterations Anwendung der Kontakt-Manager-Anwendung wird die Anwendung umgestalten, um die Anwendung leichter gekoppelt zu gestalten. Wenn eine Anwendung lose gekoppelt ist, können Sie den Code in einem Teil der Anwendung ändern, ohne den Code in anderen Teilen der Anwendung ändern zu müssen. Lose gekoppelte Anwendungen sind stabiler zu ändern.
 
-Derzeit alle Daten zugreifen und Validierung Logik wird von der Contact Manager-Anwendung ist Bestandteil der Controller-Klassen. Dies ist keine gute Idee. Wenn Sie einen Teil Ihrer Anwendung ändern möchten, riskieren Sie Fehler in einem anderen Teil der Anwendung einführen. Z. B. Wenn Sie eine Validierungslogik ändern, besteht das Risiko von neuen Fehlern in Ihre Daten zugreifen oder Controller Logik.
-
-> [!NOTE] 
-> 
-> (SRP), sollte eine Klasse nicht mehr als einen Grund zur Änderung haben. Das Kombinieren von Controller, Validierung und Datenbanklogik ist eine umfangreiche Verstoß gegen das Prinzip der einzigen Verantwortung.
-
-Es gibt mehrere Gründe, die Sie benötigen Ihre Anwendung ändern. Müssen Sie möglicherweise ein neues Feature für Ihre Anwendung hinzufügen, müssen Sie möglicherweise einen Fehler in Ihrer Anwendung zu beheben, oder müssen Sie möglicherweise ändern, wie eine Funktion der Anwendung implementiert wird. Anwendungen sind selten statisch. Neigen dazu, vergrößern und im Laufe der Zeit verändern.
-
-Angenommen Sie, Sie ändern, wie Sie der Datenzugriffsebene implementieren können. Rechts wird nun die Kontakt-Manager-Anwendung Microsoft Entity Framework für den Datenbankzugriff. Möglicherweise möchten jedoch auf eine neue oder alternative datenzugriffstechnologie z. B. ADO.NET Data Services oder NHibernate migrieren. Da der Datenzugriffscode nicht von der Überprüfung und Controller Code isoliert ist, besteht jedoch keine Möglichkeit zum Ändern der Datenzugriffscode in Ihrer Anwendung ohne Änderung von anderem Code, der nicht direkt auf den Datenzugriff verknüpft ist.
-
-Bei eine Anwendung lose gekoppelt ist, können auf der anderen Seite Sie Änderungen an einem Teil einer Anwendung vornehmen ohne direkten Zugriff auf andere Teile einer Anwendung. Beispielsweise können Sie Technologien für den Datenzugriff wechseln, ohne die Überprüfung oder Controller Logik zu ändern.
-
-In dieser Iteration nutzen wir einige Entwurfsmuster für Software, mit die wir unsere Contact Manager-Anwendung in einer zunehmend lockerer verkoppelt Anwendung Umgestalten können. Wenn wir fertig sind, gewonnen Contact Manager t führen alle Elemente, die vor dem keine Überprüfung durchgeführt haben. Allerdings werden wir die Anwendung leichter in der Zukunft ändern können.
+Derzeit sind die Datenzugriffs-und Validierungs Logik, die von der Contact Manager-Anwendung verwendet wird, in den Controller Klassen enthalten. Das ist eine gute Idee. Wenn Sie einen Teil Ihrer Anwendung ändern müssen, riskieren Sie, dass Sie Fehler in einen anderen Teil der Anwendung einführen. Wenn Sie z. b. die Validierungs Logik ändern, riskieren Sie, dass neue Fehler in den Datenzugriff oder die Controller Logik eingeführt werden.
 
 > [!NOTE] 
 > 
-> Refactoring, ist der Prozess für das erneute Schreiben eine Anwendung so, dass es keine vorhandene Funktionalität verloren ist.
+> (SRP), eine Klasse sollte nie mehr als einen Grund für die Änderung aufweisen. Das Kombinieren von Controller, Validierung und Daten Bank Logik stellt einen massiven Verstoß gegen das Prinzip der einzelnen Verantwortung dar.
 
-## <a name="using-the-repository-software-design-pattern"></a>Verwenden das Repository-Software-Entwurfsmuster
+Es gibt mehrere Gründe, die Sie möglicherweise benötigen, um Ihre Anwendung zu ändern. Möglicherweise müssen Sie der Anwendung ein neues Feature hinzufügen. möglicherweise müssen Sie einen Fehler in Ihrer Anwendung beheben, oder Sie müssen ggf. ändern, wie ein Feature der Anwendung implementiert wird. Anwendungen sind selten statisch. Sie werden tendenziell vergrößert und im Laufe der Zeit mutiert.
 
-Die erste Änderung ist ein Software-Entwurfsmuster wird aufgerufen, das Repository-Muster nutzen. Wir verwenden das Repository-Muster, um unsere Datenzugriffscode vom Rest der Anwendung zu isolieren.
+Stellen Sie sich beispielsweise vor, dass Sie sich entscheiden, wie Sie Ihre Datenzugriffs Ebene implementieren. Derzeit verwendet die Contact Manager-Anwendung den Microsoft-Entity Framework, um auf die Datenbank zuzugreifen. Sie können jedoch eine Migration zu einer neuen oder alternativen Datenzugriffs Technologie durchsetzen, z. b. ADO.NET Data Services oder NHibernate. Da der Datenzugriffs Code jedoch nicht vom Validierungs-und Controller Code isoliert ist, gibt es keine Möglichkeit, den Datenzugriffs Code in der Anwendung zu ändern, ohne anderen Code zu ändern, der nicht direkt mit dem Datenzugriff verknüpft ist.
 
-Implementieren das Repository-Muster muss die folgenden zwei Schritte ausführen:
+Wenn eine Anwendung lose gekoppelt ist, können Sie auf der anderen Seite Änderungen an einem Teil der Anwendung vornehmen, ohne andere Teile einer Anwendung zu berühren. Beispielsweise können Sie Datenzugriffs Technologien wechseln, ohne die Validierungs-oder Controller Logik zu ändern.
 
-1. Erstellen Sie eine Schnittstelle
-2. Erstellen Sie eine konkrete Klasse, die die Schnittstelle implementiert
+In dieser Iterationen nutzen wir mehrere Software Entwurfsmuster, mit denen wir unsere Kontakt-Manager-Anwendung in eine lose gekoppelte Anwendung umgestalten können. Wenn Sie den Vorgang abgeschlossen haben, hat der Kontakt-Manager keine weiteren Aktionen ausgeführt, die er zuvor nicht ausgeführt hat. Die Anwendung kann jedoch in Zukunft einfacher geändert werden.
 
-Zunächst müssen wir eine Schnittstelle zu erstellen, die alle die Methoden für den Datenzugriff beschreiben, die wir ausführen müssen. Die IContactManagerRepository-Schnittstelle, die in Codebeispiel 1 enthalten ist. Diese Schnittstelle werden fünf Methoden beschrieben: CreateContact(), DeleteContact(), EditContact(), GetContact und ListContacts().
+> [!NOTE] 
+> 
+> Refactoring ist der Prozess, bei dem eine Anwendung so umgeschrieben wird, dass Sie keinerlei vorhandene Funktionalität verliert.
 
-**1 – Models\IContactManagerRepository.cs auflisten**
+## <a name="using-the-repository-software-design-pattern"></a>Verwenden des Repository-Software Entwurfs Musters
+
+Unsere erste Änderung besteht darin, ein Software Entwurfsmuster zu nutzen, das als Repository-Muster bezeichnet wird. Wir verwenden das Repository-Muster, um den Datenzugriffs Code von der restlichen Anwendung zu isolieren.
+
+Zum Implementieren des Repository-Musters müssen wir die folgenden beiden Schritte ausführen:
+
+1. Erstellen einer Schnittstelle
+2. Erstellen einer konkreten Klasse, die die-Schnittstelle implementiert
+
+Zuerst müssen wir eine Schnittstelle erstellen, die alle Datenzugriffs Methoden beschreibt, die wir ausführen müssen. Die icontactmanagerrepository-Schnittstelle ist in der Liste 1 enthalten. Diese Schnittstelle beschreibt fünf Methoden: "kreatecontact ()", "DeleteContact ()", "EditContact ()", "GetContact" und "listcontacts ()".
+
+**Codebeispiel 1: models\icontactmanagerrepositoriy.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample1.cs)]
 
-Als Nächstes müssen wir eine konkrete Klasse zu erstellen, die IContactManagerRepository-Schnittstelle implementiert. Da wir das Microsoft Entity Framework verwenden, um Zugriff auf die Datenbank zu verwenden, erstellen wir eine neue Klasse namens EntityContactManagerRepository. Diese Klasse ist im Codebeispiel 2 enthalten.
+Als nächstes müssen wir eine konkrete Klasse erstellen, die die icontactmanagerrepository-Schnittstelle implementiert. Da wir den Microsoft-Entity Framework für den Zugriff auf die Datenbank verwenden, erstellen wir eine neue Klasse mit dem Namen entitycontactmanagerrepository. Diese Klasse ist in der Liste 2 enthalten.
 
-**Codebeispiel 2 - Models\EntityContactManagerRepository.cs**
+**Auflisten 2: models\entitycontactmanagerrepositor y.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample2.cs)]
 
-Beachten Sie, dass die EntityContactManagerRepository-Klasse die IContactManagerRepository-Schnittstelle implementiert. Die Klasse implementiert alle fünf der durch diese Schnittstelle beschriebenen Methoden.
+Beachten Sie, dass die entitycontactmanagerrepository-Klasse die icontactmanagerrepository-Schnittstelle implementiert. Die-Klasse implementiert alle fünf Methoden, die von dieser Schnittstelle beschrieben werden.
 
-Sie Fragen sich vielleicht, warum müssen wir eine Schnittstelle ist kein erforderlich. Warum brauchen wir erstellen eine Schnittstelle und eine Klasse, die er implementiert?
+Vielleicht Fragen Sie sich, warum wir uns mit einer Schnittstelle beschäftigen müssen. Warum müssen wir sowohl eine Schnittstelle als auch eine Klasse erstellen, die Sie implementiert?
 
-Der Rest der Anwendung interagiert mit einer Ausnahme mit der Schnittstelle und nicht die konkrete Klasse verwendet wird. Anstatt die Methoden, die von der EntityContactManagerRepository-Klasse verfügbar gemacht werden, rufen wir auf die Methoden, die von der IContactManagerRepository-Schnittstelle verfügbar gemacht werden.
+Mit einer Ausnahme interagiert der Rest unserer Anwendung mit der-Schnittstelle und nicht mit der konkreten-Klasse. Anstatt die Methoden aufzurufen, die von der entitycontactmanagerrepository-Klasse verfügbar gemacht werden, werden die Methoden aufgerufen, die von der icontactmanagerrepository-Schnittstelle verfügbar gemacht werden.
 
-Auf diese Weise können wir die Schnittstelle mit einer neuen Klasse implementieren, ohne den Rest der Anwendung ändern. Z. B. an einem späteren Datum möchten wir eine DataServicesContactManagerRepository-Klasse zu implementieren, die die IContactManagerRepository-Schnittstelle implementiert. ADO.NET Data Services können die DataServicesContactManagerRepository-Klasse für den Datenbankzugriff anstelle von Microsoft Entity Framework.
+Auf diese Weise können wir die Schnittstelle mit einer neuen Klasse implementieren, ohne den Rest der Anwendung ändern zu müssen. Beispielsweise möchten wir zu einem späteren Zeitpunkt möglicherweise eine dataservicescontactmanagerrepository-Klasse implementieren, die die icontactmanagerrepository-Schnittstelle implementiert. Die dataservicescontactmanagerrepository-Klasse kann ADO.NET-Data Services verwenden, um auf eine Datenbank anstatt auf die Microsoft-Entity Framework zuzugreifen.
 
-Wenn unserem Anwendungscode für die IContactManagerRepository-Schnittstelle anstelle der konkreten EntityContactManagerRepository Klasse programmiert ist, können wir konkrete Klassen wechseln, ohne den Rest des Codes ändern. Beispielsweise können wir von der Klasse EntityContactManagerRepository der DataServicesContactManagerRepository-Klasse wechseln, ohne unsere Daten Zugriff oder die Überprüfung der Logik zu ändern.
+Wenn der Anwendungscode für die icontactmanagerrepository-Schnittstelle und nicht für die konkrete entitycontactmanagerrepository-Klasse programmiert wird, können wir konkrete Klassen wechseln, ohne den restlichen Code zu ändern. Beispielsweise können wir von der entitycontactmanagerrepository-Klasse zur dataservicescontactmanagerrepository-Klasse wechseln, ohne den Datenzugriff oder die Validierungs Logik zu ändern.
 
-Programmieren mit Schnittstellen (Abstraktionen) anstelle der konkreten Klassen macht die Anwendung stabiler zu ändern.
+Die Programmierung für Schnittstellen (Abstraktionen) anstelle von konkreten klassenmacht unsere Anwendung stabiler, um sich zu ändern.
 
 > [!NOTE] 
 > 
-> Sie können eine Schnittstelle schnell von einer konkreten Klasse in Visual Studio erstellen, durch Auswählen der Menüoption Umgestaltung Schnittstelle extrahieren. Beispielsweise können Sie erstellen Sie zunächst die EntityContactManagerRepository-Klasse, und klicken Sie dann mit der Schnittstelle extrahieren die IContactManagerRepository-Schnittstelle automatisch generiert.
+> Sie können schnell eine Schnittstelle aus einer konkreten Klasse in Visual Studio erstellen, indem Sie die Menüoption umgestalten, Schnittstelle extrahieren auswählen. Beispielsweise können Sie zuerst die entitycontactmanagerrepository-Klasse erstellen und dann mit Extract Interface die icontactmanagerrepository-Schnittstelle automatisch generieren.
 
-## <a name="using-the-dependency-injection-software-design-pattern"></a>Mithilfe des Software-Entwurfsmusters für Dependency Injection
+## <a name="using-the-dependency-injection-software-design-pattern"></a>Verwenden des Software Entwurfs Musters für die Abhängigkeitsinjektion
 
-Nun, da wir unsere Datenzugriffscode in eine separate repositoryklasse migriert haben, müssen wir unser wenden Sie sich an Controller zur Verwendung dieser Klasse zu ändern. Es wird ein Software-Entwurfsmuster wird aufgerufen, Dependency Injection zur Verwendung der Repository-Klasse in unserem Controller nutzen.
+Nachdem wir den Datenzugriffs Code zu einer separaten Repository-Klasse migriert haben, müssen wir den Kontakt Controller ändern, um diese Klasse zu verwenden. Wir nutzen ein Software Entwurfsmuster namens "Abhängigkeitsinjektion", um die Repository-Klasse in unserem Controller zu verwenden.
 
-Der geänderte Contact-Controller ist in Programmausdruck 3 enthalten.
+Der geänderte Kontakt Controller ist in der Liste 3 enthalten.
 
-**Codebeispiel 3 - Controllers\ContactController.cs**
+**Codebeispiel 3-controllers\contactcontroller.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample3.cs)]
 
-Beachten Sie, dass der Contact-Controller in Programmausdruck 3 zwei Konstruktoren. Der erste Konstruktor übergibt eine konkrete Instanz der Schnittstelle IContactManagerRepository an der zweite Konstruktor. Die Kontakt-Controller-Klasse verwendet *Konstruktorbasierte Dependency Injection*.
+Beachten Sie, dass der Contact Controller in der Liste 3 über zwei Konstruktoren verfügt. Der erste Konstruktor übergibt eine konkrete Instanz der icontactmanagerrepository-Schnittstelle an den zweiten Konstruktor. Die Contact Controller-Klasse verwendet die *konstruktorabhängigkeits Injektion*.
 
-Der erste Konstruktor wird der und nur die Stelle, an die EntityContactManagerRepository-Klasse verwendet wird. Der Rest der Klasse verwendet die IContactManagerRepository-Schnittstelle anstelle der konkreten EntityContactManagerRepository-Klasse.
+Die einzige Stelle, an der die entitycontactmanagerrepository-Klasse verwendet wird, ist der erste Konstruktor. Der Rest der Klasse verwendet die icontactmanagerrepository-Schnittstelle anstelle der konkreten entitycontactmanagerrepository-Klasse.
 
-Dies erleichtert die Implementierungen der IContactManagerRepository-Klasse in der Zukunft zu wechseln. Wenn Sie die DataServicesContactRepository-Klasse anstelle der EntityContactManagerRepository-Klasse verwenden möchten, ändern Sie einfach des ersten Konstruktors.
+Dadurch können Implementierungen der icontactmanagerrepository-Klasse in Zukunft einfach gewechselt werden. Wenn Sie anstelle der entitycontactmanagerrepository-Klasse die dataservicescontactrepository-Klasse verwenden möchten, ändern Sie einfach den ersten Konstruktor.
 
-Konstruktorbasierte Dependency Injection ist auch die Contact-Controller-Klasse sehr getestet werden. In den Komponententests können Sie den Contact-Controller durch Übergeben einer simulierten Implementierung der IContactManagerRepository-Klasse instanziieren. Dieses Feature von Dependency Injection ist sehr wichtig in der nächsten Iteration, wenn wir zum Erstellen von Komponententests für die Kontakt-Manager-Anwendung.
+Mit der konstruktorabhängigkeits Injektion wird die Contact Controller-Klasse ebenfalls sehr testfähig. In den Komponententests können Sie den Kontakt Controller instanziieren, indem Sie eine Mock-Implementierung der icontactmanagerrepository-Klasse übergeben. Diese Funktion der Abhängigkeitsinjektion ist für uns in der nächsten Iterationen sehr wichtig, wenn Komponententests für die Contact Manager-Anwendung erstellt werden.
 
 > [!NOTE] 
 > 
-> Sollten Sie die Controllerklasse wenden Sie sich an, über eine bestimmte Implementierung der Schnittstelle IContactManagerRepository vollständig zu entkoppeln können dann Sie ein Framework nutzen, die Dependency Injection, z. B. StructureMap oder Microsoft unterstützt Entitätsframework (MEF). Von einem Dependency Injection-Framework nutzen, müssen Sie nie auf eine konkrete Klasse in Ihrem Code verweisen.
+> Wenn Sie die Contact Controller-Klasse von einer bestimmten Implementierung der icontactmanagerrepository-Schnittstelle vollständig entkoppeln möchten, können Sie ein Framework nutzen, das die Abhängigkeitsinjektion unterstützt, wie z. b. StructureMap oder Microsoft Entity Framework (MEF). Wenn Sie ein Framework für die Abhängigkeitsinjektion nutzen, müssen Sie in Ihrem Code nie auf eine konkrete Klasse verweisen.
 
-## <a name="creating-a-service-layer"></a>Erstellen eine Dienstschicht
+## <a name="creating-a-service-layer"></a>Erstellen einer Dienst Ebene
 
-Möglicherweise haben Sie bemerkt, dass unsere Validierungslogik weiterhin mit unserem Controllerlogik in der geänderten Controllerklasse in Programmausdruck 3, wird kombiniert wird. Aus demselben Grund ist eine gute Idee, unsere Logik für den Datenzugriff zu isolieren ist es eine gute Idee, unsere Validierungslogik zu isolieren.
+Sie haben vielleicht bemerkt, dass unsere Validierungs Logik weiterhin mit unserer Controller Logik in der geänderten Controller Klasse in der Liste 3 vermischt wird. Aus demselben Grund ist es eine gute Idee, unsere Datenzugriffs Logik zu isolieren. es ist eine gute Idee, unsere Validierungs Logik zu isolieren.
 
-Um dieses Problem zu beheben, erstellen wir eine Separate [ *Dienstschicht*](http://martinfowler.com/eaaCatalog/serviceLayer.html). Die Dienstschicht ist einer separaten Schicht, die wir zwischen unsere Controller und Repositoryklassen einfügen können. Die Dienstschicht enthält unsere Geschäftslogik, einschließlich aller unserer Validierungslogik.
+Um dieses Problem zu beheben, können wir eine separate [*Dienst Schicht*](http://martinfowler.com/eaaCatalog/serviceLayer.html)erstellen. Die Dienst Ebene ist eine separate Ebene, die zwischen den Controller-und Repository-Klassen eingefügt werden kann. Die Dienst Ebene enthält unsere Geschäftslogik, einschließlich der gesamten Validierungs Logik.
 
-Die ContactManagerService ist in Listing 4 enthalten. Sie enthält die Validierungslogik aus der Contact-Controller-Klasse.
+Contactmanagerservice ist in der Liste 4 enthalten. Sie enthält die Validierungs Logik der Contact Controller-Klasse.
 
-**Programmausdruck 4 - Models\ContactManagerService.cs**
+**Codebeispiel 4: models\contactmanagerservice.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample4.cs)]
 
-Beachten Sie, dass der Konstruktor für die ContactManagerService eine ValidationDictionary erforderlich ist. Die Dienstschicht kommuniziert mit der Controller-Ebene über diese ValidationDictionary. Wenn des Decorator-Musters erörtert erläutert die ValidationDictionary im folgenden Abschnitt ausführlich.
+Beachten Sie, dass der Konstruktor für den contactmanagerservice ein validationdictionary erfordert. Die Dienst Ebene kommuniziert über dieses validationdictionary mit der Controller Schicht. Im folgenden Abschnitt wird das validationdictionary ausführlich erläutert, wenn wir das Decorator-Muster erörtern.
 
-Beachten Sie außerdem, dass die ContactManagerService der IContactManagerService-Schnittstelle implementiert. Sie sollten möglichst immer Schnittstellen statt konkreten Klassen programmieren. Andere Klassen in der Contact Manager-Anwendung interagieren mit der ContactManagerService-Klasse direkt. Stattdessen wird der Rest der Contact Manager-Anwendung mit einer Ausnahme mit der Schnittstelle IContactManagerService programmiert.
+Beachten Sie, dass der contactmanagerservice die Schnittstelle icontactmanagerservice implementiert. Sie sollten sich immer darauf konzentrieren, anstelle von konkreten Klassen für Schnittstellen zu programmieren. Andere Klassen in der Contact Manager-Anwendung interagieren nicht direkt mit der contactmanagerservice-Klasse. Stattdessen wird der Rest der Kontakt-Manager-Anwendung mit der icontactmanagerservice-Schnittstelle programmiert, mit einer Ausnahme.
 
-Die IContactManagerService-Schnittstelle, die in Listing 5 enthalten ist.
+Die icontactmanagerservice-Schnittstelle ist in der Liste 5 enthalten.
 
-**Programmausdruck 5 - Models\IContactManagerService.cs**
+**Auflisten 5: models\icontactmanagerservice.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample5.cs)]
 
-Die geänderte Contact-Controller-Klasse ist im Codebeispiel 6 enthalten. Beachten Sie, dass der Contact-Controller nicht mehr mit dem Repository ContactManager interagiert. Stattdessen wird der Contact-Controller mit dem ContactManager-Dienst interagiert. Jede Ebene wird so weit wie möglich aus anderen Ebenen isoliert.
+Die geänderte Contact Controller-Klasse ist in der Liste 6 enthalten. Beachten Sie, dass der Contact Controller nicht mehr mit dem ContactManager-Repository interagiert. Stattdessen interagiert der Kontakt Controller mit dem ContactManager-Dienst. Jede Ebene wird so weit wie möglich von anderen Ebenen isoliert.
 
-**Codebeispiel 6: Controllers\ContactController.cs**
+**Auflisten 6-controllers\contactcontroller.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample6.cs)]
 
-Die Anwendung nicht mehr of ausgeführt wird afoul der einzigen Verantwortung Prinzip (SRP). Der Contact-Controller im Codebeispiel 6 wurde jeder Verantwortung als steuern den Fluss der Ausführung der Anwendung entfernt. Alle Validierungslogik wurde aus der Contact-Controller entfernt und in der Dienstebene übertragen. Die gesamte Datenbanklogik wurde übertragen in die Repository-Ebene.
+Unsere Anwendung wird nicht mehr mit dem Prinzip der einzelnen Zuständigkeit (SRP) ausgeführt. Der Kontakt-Controller in der Liste 6 wurde für alle Verantwortlichkeiten außer der Steuerung des Anwendungs Ausführungs Flusses entfernt. Die gesamte Validierungs Logik wurde aus dem Contact Controller entfernt und in die Dienst Schicht übermittelt. Die gesamte Daten Bank Logik wurde in die Repository-Schicht übermittelt.
 
-## <a name="using-the-decorator-pattern"></a>Verwenden des Decoratormusters
+## <a name="using-the-decorator-pattern"></a>Verwenden des Decorator-Musters
 
-Wir möchten unsere Dienstebene aus unserem Controller Ebene vollständig zu entkoppeln. Im Prinzip sollten wir unsere Dienstebene in einer separaten Assembly aus unserem Controller-Ebene zu kompilieren, ohne einen Verweis zu unserer MVC-Anwendung hinzufügen können.
+Wir möchten unsere Service Schicht vollständig von unserer Controller Schicht entkoppeln. Im Prinzip sollten wir unsere Dienst Schicht in einer separaten Assembly von unserer Controller Schicht kompilieren können, ohne einen Verweis auf unsere MVC-Anwendung hinzufügen zu müssen.
 
-Allerdings muss unser Dienstschicht Validierung Fehlermeldungen an die Controller-Ebene können. Wie können wir die Dienstschicht Kommunikation Überprüfungsfehlermeldungen ohne Kopplung der Controller und der Dienstschicht aktivieren? Wir nutzen ein Software-Entwurfsmuster, mit dem Namen der [Decorator-Musters](http://en.wikipedia.org/wiki/Decorator_pattern).
+Unsere Dienst Schicht muss jedoch in der Lage sein, Validierungs Fehlermeldungen zurück an die Controller Schicht zu übergeben. Wie können wir es der Dienst Ebene ermöglichen, Validierungs Fehlermeldungen zu übermitteln, ohne den Controller und die Dienst Schicht zu koppeln? Wir können ein Software Entwurfsmuster mit dem Namen [Decorator-Muster](http://en.wikipedia.org/wiki/Decorator_pattern)nutzen.
 
-Ein Controller verwendet ein mit dem Namen ModelState ModelStateDictionary Validierungsfehler darstellen. Aus diesem Grund können Sie ModelState aus der Ebene der Controller an die Dienstebene übergeben Versuchung sein. Jedoch wäre ModelState auf der Dienstebene mithilfe Ihrer Dienstebene ein Feature von ASP.NET MVC-Framework abhängig machen. Ungültige wäre dies daran, dass Sie die Dienstschicht mit einer WPF-Anwendung statt einer ASP.NET MVC-Anwendung verwenden möchten. In diesem Fall der wäre nicht, wenn Sie ASP.NET MVC-Framework zur Verwendung der ModelStateDictionary-Klasse verweisen möchten.
+Ein Controller verwendet einen modelstatedictionary namens modelstate, um Validierungs Fehler darzustellen. Daher ist es möglicherweise verlockend, modelstate von der Controller Schicht an die Dienst Schicht zu übergeben. Die Verwendung von modelstate in der Dienst Ebene würde jedoch dazu führen, dass die Dienst Ebene von einer Funktion des ASP.NET-MVC-Frameworks abhängig ist. Dies wäre schlecht, weil Sie einen Tag lang die Dienst Ebene mit einer WPF-Anwendung anstelle einer ASP.NET MVC-Anwendung verwenden möchten. In diesem Fall möchten Sie nicht auf das ASP.NET MVC-Framework verweisen, um die modelstatuedictionary-Klasse zu verwenden.
 
-Das Decorator-Musters können Sie eine vorhandene Klasse in eine neue Klasse zu umschließen, um eine Schnittstelle zu implementieren. Unser Projekt Contact Manager umfasst die ModelStateWrapper-Klasse, die in Codebeispiel 7 enthalten. Die ModelStateWrapper-Klasse implementiert die Schnittstelle im Codebeispiel 8.
+Das Decorator-Muster ermöglicht es Ihnen, eine vorhandene Klasse in einer neuen Klasse zu umschließen, um eine Schnittstelle zu implementieren. Unser Contact Manager-Projekt enthält die modelstatewrapper-Klasse, die in der Liste 7 enthalten ist. Die modelstatewrapper-Klasse implementiert die-Schnittstelle in der Auflistung 8.
 
-**Auflisten von 7 – Models\Validation\ModelStateWrapper.cs**
+**Codebeispiel 7: models\validation\modelstatewrapper.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample7.cs)]
 
-**Auflisten von 8 – Models\Validation\IValidationDictionary.cs**
+**Auflisten von 8-models\validation\ivalidationditionary.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample8.cs)]
 
-Wenn Sie über einen längeren Blick in Listing 5 ergreifen dann sehen Sie, dass die Dienstschicht ContactManager IValidationDictionary Schnittstelle exklusiv verwendet. Der ContactManager-Dienst ist nicht abhängig von dem ModelStateDictionary-Klasse. Wenn der Controller wenden Sie sich an den ContactManager-Dienst erstellt wird, umschließt der Controller die ModelState wie folgt:
+Wenn Sie sich die Liste 5 genauer ansehen, sehen Sie, dass die Dienst Ebene "ContactManager" die ivalidationdictionary-Schnittstelle exklusiv verwendet. Der ContactManager-Dienst ist nicht von der modelstatuedictionary-Klasse abhängig. Wenn der Contact Controller den ContactManager-Dienst erstellt, bindet der Controller seinen modelstate wie folgt ein:
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample9.cs)]
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Iteration haben wir nicht die neuen Funktionen der Contact Manager-Anwendung hinzugefügt. Das Ziel dieser Iteration wurde zum Umgestalten der Contact Manager-Anwendung so leichter verwalten und zu ändern.
+In dieser Iterations Funktion haben wir der Contact Manager-Anwendung keine neuen Funktionen hinzugefügt. Das Ziel dieser Iterationen bestand darin, die Kontakt-Manager-Anwendung so zu gestalten, dass Sie einfacher zu verwalten und zu ändern ist.
 
-Zunächst haben wir das Repository-Software-Entwurfsmuster implementiert. Alle Datenzugriffscode migriert in eine separate ContactManager-Repository-Klasse.
+Zuerst haben wir das Repository-Software Entwurfsmuster implementiert. Wir haben den gesamten Datenzugriffs Code zu einer separaten ContactManager-Repository-Klasse migriert.
 
-Wir werden auch unsere Validierungslogik von unseren Controllerlogik isoliert. Wir haben eine separate Dienstschicht, die alle unseres Codes für die Validierung enthält. Die Controller-Ebene interagiert mit der Dienstebene und die Dienstebene, die mit der Repositoryschicht interagiert.
+Wir haben auch unsere Validierungs Logik von unserer Controller Logik isoliert. Wir haben eine separate Dienst Ebene erstellt, die den gesamten Validierungscode enthält. Die Controller Schicht interagiert mit der Dienst Ebene, und die Dienst Schicht interagiert mit der Repository-Ebene.
 
-Wenn wir die Dienstebene erstellt, haben wir die Vorteile des Decorator-Musters ModelState aus unserer Dienstebene zu isolieren. In unserem Dienstschicht programmiert wir der IValidationDictionary-Schnittstelle anstelle ModelState.
+Als wir die Dienst Ebene erstellt haben, nutzten wir das Decorator-Muster, um modelstate von unserer Dienst Schicht zu isolieren. In unserer Dienst Schicht haben wir anstelle von modelstate die ivalidationdictionary-Schnittstelle programmiert.
 
-Schließlich haben wir ein Software-Entwurfsmuster, mit dem Namen der Dependency Injection-Muster nutzen. Dieses Muster ermöglicht es uns zur Programmierung von Schnittstellen (Abstraktionen) anstatt konkrete Klassen. Implementieren des Entwurfsmusters Dependency Injection wird unser Code besser getestet. In der nächsten Iteration hinzugefügt unser Projekt Komponententests.
+Schließlich haben wir ein Software Entwurfsmuster mit dem Namen "Abhängigkeitsinjektion" genutzt. Mit diesem Muster können wir anstelle von konkreten Klassen für Schnittstellen (Abstraktionen) programmieren. Das Implementieren des Entwurfs Musters für die Abhängigkeitsinjektion sorgt auch für einen testbaren Code. In der nächsten Iterationen fügen wir dem Projektkomponenten Tests hinzu.
 
 > [!div class="step-by-step"]
 > [Zurück](iteration-3-add-form-validation-cs.md)

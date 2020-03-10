@@ -9,11 +9,11 @@ ms.assetid: 17772912-b47b-4557-9ce9-80f22df642f7
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 37574e4cdc86f518d01d12da58cc2862bc77d463
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643280"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78423807"
 ---
 # <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>Überprüfen der Anmeldeinformationen anhand des Mitgliedschaftsbenutzerspeichers (VB)
 
@@ -29,7 +29,7 @@ von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Ähnlich wie beim Erstellen von Benutzerkonten können Anmelde Informationen Programm gesteuert oder deklarativ überprüft werden. Die Mitgliedschafts-API enthält eine Methode zum programmgesteuerten Überprüfen der Anmelde Informationen eines Benutzers für den Benutzerspeicher. Und ASP.net wird mit dem Login-websteuer Element ausgeliefert, das eine Benutzeroberfläche mit Textfeldern für den Benutzernamen und das Kennwort und eine Schaltfläche zum Anmelden rendert.
 
-In diesem Tutorial wird erläutert, wie Sie die Anmelde Informationen eines Benutzers anhand der programmgesteuerten Mittel und des Anmeldungs Steuer Elements anhand des Mitgliedschafts Benutzerspeicher überprüfen. Wir sehen uns auch an, wie die Darstellung und das Verhalten des Anmeldungs Steuer Elements angepasst werden. Fangen wir an!
+In diesem Tutorial wird erläutert, wie Sie die Anmelde Informationen eines Benutzers anhand der programmgesteuerten Mittel und des Anmeldungs Steuer Elements anhand des Mitgliedschafts Benutzerspeicher überprüfen. Wir sehen uns auch an, wie die Darstellung und das Verhalten des Anmeldungs Steuer Elements angepasst werden. Erste Schritte
 
 ## <a name="step-1-validating-credentials-against-the-membership-user-store"></a>Schritt 1: Überprüfen der Anmelde Informationen anhand des Mitgliedschafts Benutzerspeicher
 
@@ -255,7 +255,7 @@ Um diesen Code zu testen, versuchen Sie absichtlich, sich als vorhandener Benutz
 
 **Abbildung 11**: Tito hat zu viele ungültige Anmeldeversuche durchgeführt und wurde gesperrt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](validating-user-credentials-against-the-membership-user-store-vb/_static/image33.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Vor diesem Tutorial haben unsere Anmeldeseite die angegebenen Anmelde Informationen anhand einer hart codierten Liste von Benutzername/Kennwort-Paaren überprüft. In diesem Tutorial haben wir die Seite aktualisiert, um die Anmelde Informationen anhand des Mitgliedschafts Frameworks zu überprüfen. In Schritt 1 haben wir uns mit der programmgesteuerten Verwendung der `Membership.ValidateUser`-Methode beschäftigt. In Schritt 2 haben wir unsere manuell erstellte Benutzeroberfläche und den Code durch das Login-Steuerelement ersetzt.
 
@@ -265,7 +265,7 @@ An diesem Punkt können Besucher unserer Website ein neues Benutzerkonto erstell
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -275,7 +275,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Technische Dokumentation zum Anmelde Steuerelement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx)
 - [Verwenden der Anmeldungs Steuerelemente](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/login.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

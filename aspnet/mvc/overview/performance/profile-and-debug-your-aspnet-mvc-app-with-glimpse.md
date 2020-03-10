@@ -9,11 +9,11 @@ ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
 ms.openlocfilehash: d3689147a3bc3aa1f4180c377d2483a94bdd95a9
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457660"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432897"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse
 
@@ -119,7 +119,7 @@ Entfernen Sie die Kommentare aus der Datei *GlimpseSecurityPolicy.cs* , und änd
 Weitere Informationen zum Hinzufügen von Rollen finden Sie im Tutorial bereitstellen [einer Secure ASP.NET MVC 5-Web-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) .
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Stellen Sie eine sichere ASP.NET MVC 5-App mit Mitgliedschaft, OAuth und SQL-Datenbank in Azure bereit.](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [Glimpse-Konfiguration](http://getglimpse.com/Docs/Configuration) : Seite "doc" zum Konfigurieren von Registerkarten, Lauf Zeit Richtlinie, Protokollierung und mehr.

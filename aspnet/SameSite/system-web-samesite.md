@@ -5,12 +5,12 @@ description: Erfahren Sie, wie Sie mit SameSite-Cookies in ASP.NET verwenden.
 ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: edb368910b24be2d042afe3c19ffa1fb23245443
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.openlocfilehash: 7987a5d6c9b3a82679d42a2d381d471d56f495c2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455703"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439935"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>Arbeiten mit SameSite-Cookies in ASP.net
 
@@ -177,7 +177,7 @@ Diese Erkennungen sind die am häufigsten verwendeten Browser-Agents, die den 20
 * In Ihrer APP werden möglicherweise Browser angezeigt, die für unsere Test Websites nicht angezeigt werden.
 * Sie sollten darauf vorbereitet sein, Erkennungen nach Bedarf für Ihre Umgebung hinzuzufügen.
 
-Die Art und Weise, wie Sie die Erkennung verknüpfen, variiert entsprechend der von Ihnen verwendeten .NET-Version und des verwendeten Webframe Works. Der folgende Code kann an der <xref:HTTP.HttpCookie> Aufruf Site aufgerufen werden:
+Die Art und Weise, wie Sie die Erkennung verknüpfen, variiert entsprechend der von Ihnen verwendeten .NET-Version und des verwendeten Webframe Works. Der folgende Code kann an der [HttpCookie](/dotnet/api/system.web.httpcookie) -Aufruf Site aufgerufen werden:
 
 [!code-csharp[](sample/SameSiteCheck.cs?name=snippet)]
 
@@ -248,6 +248,8 @@ Google stellt keine älteren Chrome-Versionen zur Verfügung. Befolgen Sie die A
 * [Chromium 74 Win64](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/638880/)
 * Wenn Sie keine 64-Bit-Version von Windows verwenden, können Sie den [omahaproxy-Viewer](https://omahaproxy.appspot.com/) verwenden, um zu überprüfen, welcher Chrom Branch Chrome 74 (v 74.0.3729.108) entspricht, indem Sie die [von Chrom bereitgestellten Anweisungen](https://www.chromium.org/getting-involved/download-chromium)verwenden.
 
+Beginnend mit der `80.0.3975.0`der Canary-Version kann die vorübergehende Entschärfung von Lax + nach den Testzwecken durch das neue Flag `--enable-features=SameSiteDefaultChecksMethodRigorously` deaktiviert werden, um das Testen von Standorten und Diensten im Endzustand des Features zuzulassen, bei dem die Entschärfung entfernt wurde. Weitere Informationen finden Sie in den Informationen zu den [Software Update](https://www.chromium.org/updates/same-site) -Projekten in der Projektwebsite.
+
 #### <a name="test-with-chrome-80"></a>Test mit Chrome 80 und höher
 
 [Laden Sie](https://www.google.com/chrome/) eine Version von Chrome herunter, die Ihr neues Attribut unterstützt. Zum Zeitpunkt des Schreibens ist die aktuelle Version Chrome 80. Chrome 80 benötigt das Flag, das für die Verwendung des neuen Verhaltens aktiviert `chrome://flags/#same-site-by-default-cookies`. Sie sollten auch (`chrome://flags/#cookies-without-same-site-must-be-secure`) aktivieren, um das bevorstehende Verhalten für Cookies zu testen, für die kein SameSite-Attribut aktiviert ist. Chrome 80 ist als Ziel festzulegen, damit der Schalter Cookies ohne das-Attribut als `SameSite=Lax`behandelt, auch wenn für bestimmte Anforderungen eine Zeitüberschreitung aufgetreten ist. Zum Deaktivieren der Zeitüberschreitung für die Zeitüberschreitung kann Chrome 80 mit dem folgenden Befehlszeilenargument gestartet werden:
@@ -264,13 +266,13 @@ Safari 12 hat den vorherigen Entwurf streng implementiert und schlägt fehl, wen
 
 Die Firefox-Unterstützung für den neuen Standard kann auf Version 68 + getestet werden, indem Sie sich auf der Seite "`about:config`" mit dem Feature-Flag `network.cookie.sameSite.laxByDefault`anmelden. Es gab keine Berichte über Kompatibilitätsprobleme mit älteren Versionen von Firefox.
 
-### <a name="test-with-edge-legacy-browser"></a>Test mit Microsoft Edge-Browser (Legacy)
+### <a name="test-with-edge-legacy-browser"></a>Test mit Edge-Browser (Legacy)
 
-Microsoft Edge unterstützt den alten SameSite-Standard. Microsoft Edge Version 44 + hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
+Edge unterstützt den alten SameSite-Standard. Edge Version 44 + hat keine bekannten Kompatibilitätsprobleme mit dem neuen Standard.
 
-### <a name="test-with-edge-chromium"></a>Testen mit Microsoft Edge (Chrom)
+### <a name="test-with-edge-chromium"></a>Testen mit Edge (Chrom)
 
-Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Microsoft Edge Chromium erkannt.
+Die SameSite-Flags werden auf der Seite "`edge://flags/#same-site-by-default-cookies`" festgelegt. Es wurden keine Kompatibilitätsprobleme mit Edge-Chrom erkannt.
 
 ### <a name="test-with-electron"></a>Testen mit einem Elektron
 
@@ -302,6 +304,7 @@ Aktualisieren Sie *Web. config* so, dass die folgenden Konfigurationseinstellung
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 * [Anstehende SameSite-Cookie-Änderungen in ASP.net und ASP.net Core](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
+* [Tipps zum Testen und Debuggen von SameSite-Standard und "SameSite = None;" Sichere Cookies](https://www.chromium.org/updates/same-site/test-debug)
 * [Chromium-Blog: Entwickler: machen Sie sich bereit für neue SameSite = None; Sichere Cookie-Einstellungen](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [Erläuterte SameSite-Cookies](https://web.dev/samesite-cookies-explained/)
 * [Chrome-Updates](https://www.chromium.org/updates/same-site)

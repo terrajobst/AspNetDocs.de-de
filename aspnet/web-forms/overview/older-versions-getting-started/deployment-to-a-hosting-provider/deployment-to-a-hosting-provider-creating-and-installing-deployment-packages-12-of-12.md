@@ -9,11 +9,11 @@ ms.assetid: 3fc23eed-921d-4d46-a610-a2d156e4bd03
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: db8f58e3679e6dea865dadb6f64916032dd9f38c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639875"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424035"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Problembehandlung (12 von 12)
 
@@ -317,4 +317,4 @@ Der Server unterstützt ASP.NET 4,5 nicht. Wenden Sie sich an den Hostinganbiete
 Das Fenster Projekt **Eigenschaften** enthält eine Dropdown Liste für das Ziel Framework, aber Sie können dieses Problem nicht lösen, indem Sie es einfach von **.NET Framework 4,5** in **.NET Framework 4**ändern. Wenn Sie das Ziel Framework in eine frühere Frameworkversion ändern, enthält das Projekt weiterhin Verweise auf die Assemblys der neueren Frameworkversion und kann nicht ausgeführt werden. Sie müssen diese Verweise manuell ändern oder ein neues Projekt erstellen, das auf .NET Framework 4 oder eine frühere Version abzielt. Weitere Informationen finden Sie unter [.NET Framework Zielsetzungen für Websites](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
 > [!div class="step-by-step"]
-> [Vorheriges](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [Previous](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

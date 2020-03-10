@@ -9,11 +9,11 @@ ms.assetid: 298789b4-2964-49f5-a0a8-d4dbeb9ff2c2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
 ms.openlocfilehash: aa9779c65fb587193dbabde55cc6900283ce239d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599356"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430593"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>Reduzieren und Erweitern eines Bereichs über JavaScript (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Reduzier Bare Panel-Steuerelement im ASP.NET AJAX Control Toolkit erweitert ein Panel und bietet ihm die Möglichkeit, seinen Inhalt zu reduzieren und erneut zu erweitern. Diese beiden Aktionen können auch über benutzerdefinierten JavaScript-Code ausgelöst werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Reduzier Bare Panel-Steuerelement im ASP.NET AJAX Control Toolkit erweitert ein Panel und bietet ihm die Möglichkeit, seinen Inhalt zu reduzieren und erneut zu erweitern. Diese beiden Aktionen können auch über benutzerdefinierten JavaScript-Code ausgelöst werden.
 
@@ -68,4 +68,4 @@ Die dritte Schaltfläche schaltet den Status des Panels um: von reduziert zu erw
 Die dritte Schaltfläche ändert den Status des Panels: von "reduziert" zu "Erweitert" und "zurück" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Vorheriges](collapsing-and-expanding-a-panel-from-javascript-cs.md)
+> [Previous](collapsing-and-expanding-a-panel-from-javascript-cs.md)

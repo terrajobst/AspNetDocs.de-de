@@ -1,211 +1,211 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
-title: Erstellen von Modellklassen mit dem Entitätsframework (VB) | Microsoft-Dokumentation
+title: Erstellen von Modellklassen mit dem Entity Framework (VB) | Microsoft-Dokumentation
 author: microsoft
-description: In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework zu verwenden. Erfahren Sie, wie mit dem Assistenten für Entity ein ADO.NET Entity Da erstellen...
+description: In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework verwenden. Sie erfahren, wie Sie mit dem Entity Wizard a ADO.NET Entity da...
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: ff8322c9-12f3-4e24-aba6-a38046b9bb0d
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f6c896c6f5f6d898ac6f99d5998fb29cb73bcb10
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117602"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437007"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-vb"></a>Erstellen von Modellklassen mit dem Entity Framework (VB)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework zu verwenden. Erfahren Sie, wie der Assistent für Entity verwenden, um ein ADO.NET Entity Data Model zu erstellen. Im Verlauf dieses Tutorials erstellen wir eine Anwendung, die veranschaulicht, wie Sie auswählen, einfügen, aktualisieren und Löschen von Datenbankdaten mithilfe von Entity Framework.
+> In diesem Tutorial erfahren Sie, wie Sie ASP.NET MVC mit dem Microsoft Entity Framework verwenden. Sie erfahren, wie Sie den Entitäts-Assistenten zum Erstellen eines ADO.NET-Entity Data Model verwenden. Im Rahmen dieses Tutorials erstellen wir eine Webanwendung, die veranschaulicht, wie Datenbankdaten mithilfe der Entity Framework ausgewählt, eingefügt, aktualisiert und gelöscht werden.
 
-Das Ziel in diesem Tutorial wird beschrieben, wie Sie Datenzugriffsklassen, die mithilfe von Microsoft Entity Framework beim Erstellen einer ASP.NET MVC-Anwendung erstellen können. In diesem Tutorial wird davon ausgegangen, keine vorherige Kenntnisse von Microsoft Entity Framework. Am Ende dieses Lernprogramms werden Sie verstehen, wie Sie verwenden das Entity Framework auswählen, einfügen, aktualisieren und Löschen von Datenbankdatensätzen.
+In diesem Tutorial wird erläutert, wie Sie beim Erstellen einer ASP.NET MVC-Anwendung mithilfe der Microsoft-Entity Framework Datenzugriffsklassen erstellen können. In diesem Tutorial wird davon ausgegangen, dass die Microsoft-Entity Framework nicht bekannt sind. Am Ende dieses Tutorials erfahren Sie, wie Sie die Entity Framework verwenden, um Datenbankeinträge auszuwählen, einzufügen, zu aktualisieren und zu löschen.
 
-Das Microsoft Entity Framework ist ein Objekt-relationale Zuordnung (O/RM)-Tool, das Ihnen ermöglicht, eine Datenzugriffsschicht automatisch aus einer Datenbank zu generieren. Das Entity Framework können Sie die aufwändig Ihr Datenzugriffsklassen manuell erstellen zu vermeiden.
+Beim Microsoft-Entity Framework handelt es sich um ein O/RM-Tool (Object Relational Mapping), mit dem Sie eine Datenzugriffs Ebene aus einer Datenbank automatisch generieren können. Mit der Entity Framework können Sie die mühsame Arbeit der Datenzugriffsklassen vermeiden.
 
 > [!NOTE] 
 > 
-> Es gibt keine wesentlichen Verbindung zwischen ASP.NET MVC und das Microsoft Entity Framework. Es gibt mehrere Alternativen für das Entity Framework, die Sie mit ASP.NET MVC verwenden können. Beispielsweise können Sie Ihre MVC-Modell-Klassen, die mit anderen O/RM-Tools wie Microsoft-LINQ to SQL, NHibernate und SubSonic erstellen.
+> Zwischen ASP.NET MVC und der Microsoft-Entity Framework ist keine wesentliche Verbindung vorhanden. Es gibt mehrere Alternativen zu den Entity Framework, die Sie mit ASP.NET MVC verwenden können. Beispielsweise können Sie Ihre MVC-Modellklassen mit anderen O/RM-Tools wie z. b. Microsoft LINQ to SQL, NHibernate oder Subsonic erstellen.
 
-Um zu veranschaulichen, wie Sie das Microsoft Entity Framework mit ASP.NET MVC verwenden können, erstellen wir eine einfache beispielanwendung. Wir erstellen eine Filmdatenbank-Anwendung, die Sie zum Anzeigen und Bearbeiten von filmdatensätzen-Datenbank ermöglicht.
+Um zu veranschaulichen, wie Sie die Microsoft-Entity Framework mit ASP.NET MVC verwenden können, erstellen wir eine einfache Beispielanwendung. Wir erstellen eine Movie Database-Anwendung, mit der Sie Movie Database-Datensätze anzeigen und bearbeiten können.
 
-In diesem Tutorial wird davon ausgegangen, dass Sie Visual Studio 2008 oder Visual Web Developer 2008 mit Service Pack 1 verfügen. Benötigen Sie Service Pack 1, um die Verwendung von Entity Framework. Sie können Visual Studio 2008 Service Pack 1 oder Visual Web Developer mit Service Pack 1 aus der folgenden Adresse herunterladen:
+In diesem Tutorial wird davon ausgegangen, dass Sie über Visual Studio 2008 oder Visual Web Developer 2008 mit Service Pack 1 verfügen. Sie benötigen Service Pack 1, um die Entity Framework zu verwenden. Sie können Visual Studio 2008 Service Pack 1 oder Visual Web Developer mit Service Pack 1 unter folgender Adresse herunterladen:
 
 > [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
 ## <a name="creating-the-movie-sample-database"></a>Erstellen der Movie-Beispieldatenbank
 
-Die Movie-datenbankanwendung verwendet eine Tabelle mit dem Namen Filme, die die folgenden Spalten enthält:
+Die Film Datenbankanwendung verwendet eine Datenbanktabelle mit dem Namen Filme, die die folgenden Spalten enthält:
 
-| Spaltenname | Datentyp | Zulassen NULL-Werte? | Ist der primäre Schlüssel? |
+| Spaltenname | Datentyp | NULL-Werten zulassen? | Ist der Primärschlüssel? |
 | --- | --- | --- | --- |
 | Id | int | False | True |
-| Titel | nvarchar(100) | False | False |
-| Director | nvarchar(100) | False | False |
+| Titel | Nvarchar (100) | False | False |
+| Regisseur | Nvarchar (100) | False | False |
 
-Sie können diese Tabelle zu einem ASP.NET MVC-Projekt hinzufügen, indem Sie folgende Schritte:
+Sie können diese Tabelle einem ASP.NET MVC-Projekt hinzufügen, indem Sie die folgenden Schritte ausführen:
 
-1. Mit der rechten Maustaste in der App\_Ordner im Projektmappen-Explorer-Fenster, und wählen Sie die Menüoption **hinzufügen, neue Element.**
-2. Von der **neues Element hinzufügen** wählen Sie im Dialogfeld **SQL Server-Datenbank**, nennen Sie der Datenbank MoviesDB.mdf, und klicken Sie auf die **hinzufügen** Schaltfläche.
-3. Doppelklicken Sie auf die MoviesDB.mdf-Datei, um das Server-Explorer/Datenbank-Explorer-Fenster zu öffnen.
-4. Erweitern Sie die Verbindung mit der MoviesDB.mdf, mit der rechten Maustaste in den Ordner "Tabellen" und wählen Sie die Menüoption **neue Tabelle hinzufügen**.
-5. Fügen Sie im Tabellen-Designer die Spalten-Id, Titel und Director hinzu.
-6. Klicken Sie auf die **speichern** Schaltfläche (über das Symbol für die Diskette) um die neue Tabelle mit den Filmen Namen zu speichern.
+1. Klicken Sie mit der rechten Maustaste auf den Ordner App\_Daten im Fenster Projektmappen-Explorer, und wählen Sie die Menüoption **hinzufügen, neues Element aus.**
+2. Wählen Sie im Dialogfeld **Neues Element hinzufügen** **SQL Server Datenbank**aus, geben Sie der Datenbank den Namen "moviesdb. mdf", und klicken Sie auf die Schaltfläche " **Hinzufügen** ".
+3. Doppelklicken Sie auf die Datei "moviesdb. mdf", um das Fenster Server-Explorer/Datenbank-Explorer zu öffnen.
+4. Erweitern Sie die Datenbankverbindung moviesdb. mdf, klicken Sie mit der rechten Maustaste auf den Ordner Tabellen, und wählen Sie die Menüoption **neue Tabelle hinzufügen**aus.
+5. Fügen Sie im Tabellen-Designer die Spalten "ID", "Title" und "Director" hinzu.
+6. Klicken Sie auf die Schaltfläche **Speichern** (mit dem Symbol der Diskette), um die neue Tabelle mit dem Namen Movies zu speichern.
 
-Nach der Erstellung der Tabelle der Datenbank Filme sollten Sie einige Beispieldaten in die Tabelle hinzufügen. Mit der rechten Maustaste in der Tabelle "Movies", und wählen Sie die Menüoption **Tabellendaten anzeigen**. Sie können falsche Daten in das Raster eingeben, die angezeigt wird.
+Nachdem Sie die Datenbanktabelle "Movies" erstellt haben, sollten Sie der Tabelle einige Beispiel Daten hinzufügen. Klicken Sie mit der rechten Maustaste auf die Tabelle Filme, und wählen Sie die Menüoption **Tabellendaten anzeigen**aus. Sie können gefälschte Filmdaten in das Raster eingeben, das angezeigt wird.
 
-## <a name="creating-the-adonet-entity-data-model"></a>Erstellen das ADO.NET Entity Data Model
+## <a name="creating-the-adonet-entity-data-model"></a>Erstellen der ADO.NET-Entity Data Model
 
-Um das Entity Framework zu verwenden, müssen Sie ein Entity Data Model zu erstellen. Profitieren Sie von Visual Studio *Entity Data Model-Assistenten* eines Entity Data Model aus einer Datenbank automatisch zu generieren.
+Um die Entity Framework verwenden zu können, müssen Sie eine Entity Data Model erstellen. Sie können den Visual Studio-Entity Data Model- *Assistenten* nutzen, um automatisch eine Entity Data Model aus einer Datenbank zu generieren.
 
-Führen Sie folgende Schritte aus:
+Folgen Sie diesen Schritten:
 
-1. Mit der rechten Maustaste im Projektmappen-Explorer den Ordner "Models", und wählen Sie die Menüoption **hinzufügen, neue Element**.
-2. In der **neues Element hinzufügen** Dialogfeld Wählen Sie die Kategorie der Daten (siehe Abbildung 1).
-3. Wählen Sie die **ADO.NET Entity Data Model** -Vorlage aus, nennen Sie das Entity Data Model MoviesDBModel.edmx, und klicken Sie auf die **hinzufügen** Schaltfläche. Klicken auf die **hinzufügen** Data Model-Assistenten wird gestartet.
-4. In der **auswählen des Modellinhalts** Schritt, wählen Sie die **aus einer Datenbank generieren** aus, und klicken Sie auf die **Weiter** Schaltfläche (siehe Abbildung 2).
-5. In der **wählen Sie Ihre Datenverbindung** Schritt die MoviesDB.mdf-datenbankverbindung aus, geben Sie die Entitäten, die Verbindungseinstellungen MoviesDBEntities benennen, und klicken Sie auf die **Weiter** Schaltfläche (siehe Abbildung 3).
-6. In der **Datenbankobjekte auswählen** Schritt, wählen Sie die Tabelle "Movie"-Datenbank aus, und klicken Sie auf die **Fertig stellen** Schaltfläche (siehe Abbildung 4).
+1. Klicken Sie im Projektmappen-Explorer Fenster mit der rechten Maustaste auf den Ordner Modelle, und wählen Sie die Menüoption **hinzufügen, neues Element**aus.
+2. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Kategorie Daten aus (siehe Abbildung 1).
+3. Wählen Sie die Vorlage **ADO.NET Entity Data Model** aus, geben Sie der Entity Data Model den Namen moviesdbmodel. edmx, und klicken Sie auf die Schaltfläche **Hinzufügen** . Durch Klicken auf die Schaltfläche **Hinzufügen** wird der Datenmodell-Assistent gestartet
+4. Wählen Sie im Schritt **Modell Inhalt auswählen** die Option **aus Datenbank generieren aus** , und klicken Sie auf die Schaltfläche **weiter** (siehe Abbildung 2).
+5. Wählen Sie im Schritt **Wählen Sie Ihre Datenverbindung** aus die Datenbankverbindung "moviesdb. mdf" aus, geben Sie den Namen der Verbindungseinstellungen der Entitäten ein, und klicken Sie auf die Schaltfläche " **weiter** " (siehe Abbildung 3).
+6. Wählen Sie im Schritt **Wählen Sie Ihre Datenbankobjekte** aus die Tabelle Movie Database aus, und klicken Sie auf die Schaltfläche **Fertig** stellen (siehe Abbildung 4).
 
-Nachdem Sie diese Schritte abgeschlossen haben, wird der ADO.NET Entity Data Model-Designer (Entity Designer) geöffnet.
+Nachdem Sie diese Schritte ausgeführt haben, wird der ADO.NET Entity Data Model-Designer (Entity Designer) geöffnet.
 
-**Abbildung 1 – erstellen ein neues Entity Data Model**
+**Abbildung 1 – Erstellen eines neuen Entity Data Model**
 
 ![clip_image002](creating-model-classes-with-the-entity-framework-vb/_static/image1.jpg)
 
-**Abbildung 2 – Schritt des Aktivitätsmodells Inhalt auswählen**
+**Abbildung 2 – Schritt "Modell Inhalte auswählen"**
 
 ![clip_image004](creating-model-classes-with-the-entity-framework-vb/_static/image2.jpg)
 
-**Abbildung 3 – Wählen Sie Ihre Datenverbindung**
+**Abbildung 3 – Auswählen der Datenverbindung**
 
 ![clip_image006](creating-model-classes-with-the-entity-framework-vb/_static/image3.jpg)
 
-**Abbildung 4 – Datenbankobjekte auswählen**
+**Abbildung 4 – auswählen der Datenbankobjekte**
 
 ![clip_image008](creating-model-classes-with-the-entity-framework-vb/_static/image4.jpg)
 
-## <a name="modifying-the-adonet-entity-data-model"></a>Ändern das ADO.NET Entity Data Model
+## <a name="modifying-the-adonet-entity-data-model"></a>Ändern des ADO.NET-Entity Data Model
 
-Nachdem Sie ein Entity Data Model erstellen, können Sie das Modell ändern, durch die Nutzung des Entity Designers (siehe Abbildung 5). Sie können der Entity Designer zu einem beliebigen Zeitpunkt durch Doppelklicken auf die MoviesDBModel.edmx-Datei im Ordner "Models" im Projektmappen-Explorer-Fenster öffnen.
+Nachdem Sie einen Entity Data Model erstellt haben, können Sie das Modell ändern, indem Sie die Entity Designer nutzen (siehe Abbildung 5). Sie können den Entity Designer jederzeit öffnen, indem Sie im Fenster "Projektmappen-Explorer" auf die Datei "moviesdbmodel. edmx" doppelklicken, die im Ordner "Models" enthalten ist.
 
-**Abbildung 5: der ADO.NET Entity Data Model-Designer**
+**Abbildung 5 – die ADO.NET-Entity Data Model-Designer**
 
 ![clip_image010](creating-model-classes-with-the-entity-framework-vb/_static/image5.jpg)
 
-Sie können z. B. der Entity Designer verwenden, so ändern Sie den Namen der Klassen, die der Assistent für Entity Model Daten generiert. Der Assistent erstellt eine neue Data Access-Klasse, mit dem Namen Filme hat. Das heißt, hat der Assistent der Klasse den sehr gleichen Namen wie der Datenbanktabelle. Da wir diese Klasse zum Darstellen einer bestimmten Film-Instanz verwenden, sollten wir die Klasse von Filmen in Film umbenennen.
+Beispielsweise können Sie den Entity Designer verwenden, um die Namen der Klassen zu ändern, die vom Assistenten für Entity Model Data generiert werden. Der Assistent hat eine neue Datenzugriffs Klasse mit dem Namen "Movies" erstellt. Mit anderen Worten: der Assistent hat der Klasse denselben Namen wie die Datenbanktabelle gegeben. Da wir diese Klasse verwenden, um eine bestimmte Film Instanz darzustellen, sollten wir die Klasse von Movies in Movie umbenennen.
 
-Wenn Sie eine Entitätsklasse umbenennen möchten, können Sie das Doppelklicken Sie auf den Klassennamen im Entity Designer und geben Sie einen neuen Namen (siehe Abbildung 6). Alternativ können Sie den Namen einer Entität im Fenster Eigenschaften ändern, nach dem Auswählen einer Entität im Entity Designer.
+Wenn Sie eine Entitäts Klasse umbenennen möchten, können Sie im Entity Designer auf den Klassennamen doppelklicken und einen neuen Namen eingeben (siehe Abbildung 6). Alternativ können Sie den Namen einer Entität in der Eigenschaftenfenster ändern, nachdem Sie eine Entität im Entity Designer ausgewählt haben.
 
-**Abbildung 6: Ändern eines Entitätsnamens**
+**Abbildung 6 – ändern eines Entitäts namens**
 
 ![clip_image012](creating-model-classes-with-the-entity-framework-vb/_static/image6.jpg)
 
-Denken Sie daran, Ihre Entity Data Model speichern, nach dem vornehmen einer Änderung durch Klicken auf die Schaltfläche "Speichern" (das Symbol der Diskette). Hinter den Kulissen generiert der Entity Designer einen Satz von Klassen in Visual Basic .NET. Sie können diese Klassen anzeigen, indem Sie die MoviesDBModel.Designer.vb-Datei aus dem Projektmappen-Explorer-Fenster zu öffnen.
+Speichern Sie Ihre Entity Data Model, nachdem Sie eine Änderung vorgenommen haben, indem Sie auf die Schaltfläche Speichern klicken (das Symbol der Diskette). Im Hintergrund generiert das Entity Designer eine Reihe von Visual Basic .NET-Klassen. Sie können diese Klassen anzeigen, indem Sie die Datei "moviesdbmodel. Designer. vb" im Projektmappen-Explorer Fenster öffnen.
 
-Ändern Sie den Code in der Designer.vb-Datei nicht, da Ihre Änderungen beim nächsten überschrieben werden Sie auf der Entity Designer verwendet. Wenn Sie die Entitätsklassen, die in der Designer.vb-Datei definiert die Funktionalität erweitern möchten, und klicken Sie dann können Sie erstellen *Teilklassen* in separaten Dateien.
+Ändern Sie den Code in der Datei "Designer. vb" nicht, da die Änderungen bei der nächsten Verwendung des Entity Designer überschrieben werden. Wenn Sie die Funktionalität der in der Datei "Designer. vb" definierten Entitäts Klassen erweitern möchten, können Sie *partielle Klassen* in separaten Dateien erstellen.
 
-#### <a name="selecting-database-records-with-the-entity-framework"></a>Auswählen von Datensätzen einer Datenbank mit Entitätsframework
+#### <a name="selecting-database-records-with-the-entity-framework"></a>Auswählen von Datensätzen mit der Entity Framework
 
-Beginnen wir erstellen unsere Filmdatenbank-Anwendung durch Erstellen einer Seite, die eine Liste von filmdatensätzen anzeigt. Die Home-Controller in Codebeispiel 1 stellt eine Aktion, die mit dem Namen Index(). Die Index()-Aktion, die alle die Movie-Datensätze aus der Tabelle "Movie"-Datenbank durch die Nutzung von Entity Framework zurückgegeben.
+Beginnen wir mit dem Erstellen der Film Datenbankanwendung, indem wir eine Seite erstellen, auf der eine Liste mit Film Datensätzen angezeigt wird. Der Home-Controller in der Liste 1 macht eine Aktion mit dem Namen Index () verfügbar. Die Index ()-Aktion gibt alle Film Datensätze aus der Film Datenbanktabelle zurück, indem Sie die Entity Framework nutzt.
 
-**Codebeispiel 1 – Controllers\HomeController.vb**
+**Codebeispiel 1 – controllers\homecontroller.vb**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample1.vb)]
 
-Beachten Sie, dass der Controller in Codebeispiel 1 einen Konstruktor enthält. Der Konstruktor initialisiert das Feld auf Klassenebene \_Db. Die \_Db-Feld darstellt, die Datenbankentitäten, die vom Microsoft Entity Framework generiert. Die \_Db Feld ist eine Instanz der MoviesDBEntities-Klasse, die vom Entity Designer generiert wurde.
+Beachten Sie, dass der Controller in der Liste 1 einen Konstruktor enthält. Der Konstruktor initialisiert ein Feld auf Klassenebene mit dem Namen \_DB. Das Feld \_DB stellt die Daten Bank Entitäten dar, die vom Microsoft-Entity Framework generiert werden. Das \_DB-Feld ist eine Instanz der Klasse "moviesdbentities", die vom Entity Designer generiert wurde.
 
-Die \_Db-Feld wird innerhalb der Index()-Aktion zum Abrufen der Datensätze aus der Tabelle der Datenbank Filme verwendet. Der Ausdruck \_Db. MovieSet stellt alle Datensätze aus der Tabelle der Datenbank Filme dar. Die ToList()-Methode wird verwendet, um den Satz von Filmen in eine generische Auflistung von Movie-Objekten zu konvertieren: List (Of Movie).
+Das Feld \_DB wird innerhalb der Index ()-Aktion verwendet, um die Datensätze aus der Datenbanktabelle "Movies" abzurufen. Der Ausdruck \_DB. "Movieset" stellt alle Datensätze aus der Datenbanktabelle "Movies" dar. Die Methode "-Methode ()" wird verwendet, um den Satz von Filmen in eine generische Auflistung von Movie-Objekten zu konvertieren: List (of Movie).
 
-Die Movie-Datensätze werden mithilfe von LINQ to Entities abgerufen. Die Aktion Index() in Codebeispiel 1 verwendet LINQ *Methodensyntax* auf das Abrufen des Satzes von Datenbank-Datensätzen. Falls gewünscht, können Sie LINQ *Abfragesyntax* stattdessen. Führen Sie die folgenden beiden Anweisungen sehr dieselben Schritte aus:
+Die Film Datensätze werden mithilfe von LINQ to Entities abgerufen. Die Index ()-Aktion in der Liste 1 verwendet die LINQ- *Methoden Syntax* , um den Satz von Datenbankdaten Sätzen abzurufen. Wenn Sie möchten, können Sie stattdessen die LINQ- *Abfrage Syntax* verwenden. Die folgenden beiden-Anweisungen haben dieselbe Sache:
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample2.vb)]
 
-Verwenden Sie jeweils LINQ-Syntax – Methodensyntax oder der Abfragesyntax –, die Sie die intuitivste finden. Es gibt keinen Unterschied zwischen den beiden Ansätzen – der einzige Unterschied ist.
+Verwenden Sie die gleiche LINQ-Syntax – Methoden Syntax oder Abfrage Syntax –, die Sie intuitiver finden. Es gibt keinen Unterschied in der Leistung zwischen den beiden Ansätzen – der einzige Unterschied besteht im Stil.
 
-Die Ansicht im Codebeispiel 2 wird verwendet, die Film-Datensätze angezeigt.
+Die Ansicht in der Liste 2 wird verwendet, um die Film Datensätze anzuzeigen.
 
-**Codebeispiel 2 – Views\Home\Index.aspx**
+**Codebeispiel 2 – views\home\index.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample3.aspx)]
 
-Die Ansicht im Codebeispiel 2 enthält eine **für jede** Schleife, die jeden Datensatz Film durchläuft und zeigt die Werte der Eigenschaften, die Titel und Director der Movie-Datensatz. Beachten Sie, dass ein Link zum Bearbeiten und Löschen neben jedem Datensatz angezeigt wird. Darüber hinaus ein Film hinzufügen Link angezeigt wird, am unteren Rand der Ansicht (siehe Abbildung 7).
+Die Ansicht in der Liste 2 enthält eine **for each** -Schleife, die jeden Film Daten Satz durchläuft und die Werte der Titel-und Director-Eigenschaften des Movie-Datensatzes anzeigt. Beachten Sie, dass neben jedem Datensatz ein Link zum Bearbeiten und löschen angezeigt wird. Außerdem wird unten in der Ansicht ein Link zum Hinzufügen von Movie angezeigt (siehe Abbildung 7).
 
-**Abbildung 7 – Ansicht "Index"**
+**Abbildung 7 – Index Ansicht**
 
 ![clip_image014](creating-model-classes-with-the-entity-framework-vb/_static/image7.jpg)
 
-Ansicht "Index" ist ein *typisierte Ansicht*. Ansicht "Index" verfügt über eine &lt;% @ Page %&gt; Richtlinie, die ein Inherits-Attribut enthält. Das Inherits-Attribut wird die ViewData.Model-Eigenschaft, um eine stark typisierte generische listenauflistung von Movie-Objekten – eine Liste (Of Movie) umgewandelt.
+Die Index Sicht ist eine *typisierte Sicht*. Die Index Sicht weist eine &lt;% @ Page%&gt;-Direktive auf, die ein erbt-Attribut enthält. Das erbt-Attribut wandelt die ViewData. Model-Eigenschaft in eine stark typisierte generische Listen Auflistung von Movie Objects um – eine Liste (of Movie).
 
-## <a name="inserting-database-records-with-the-entity-framework"></a>Einfügen von Datensätzen einer Datenbank mit Entitätsframework
+## <a name="inserting-database-records-with-the-entity-framework"></a>Einfügen von Datenbankdaten Sätzen mit dem Entity Framework
 
-Sie können das Entity Framework verwenden, zum Einfügen neuer Datensätze in einer Datenbanktabelle erleichtern. Codebeispiel 3 enthält zwei neue Aktionen hinzugefügt, der Home-Controller-Klasse, die Sie zum Einfügen neuer Datensätze in der Tabelle "Movie"-Datenbank verwenden können.
+Sie können den Entity Framework verwenden, um das Einfügen neuer Datensätze in eine Datenbanktabelle zu erleichtern. In der Liste 3 werden zwei neue Aktionen der Home Controller-Klasse hinzugefügt, die Sie zum Einfügen neuer Datensätze in die Film Datenbanktabelle verwenden können.
 
-**Codebeispiel 3 – Controllers\HomeController.vb (Methoden "Add")**
+**Codebeispiel 3 – controllers\homecontroller.vb (Methoden hinzufügen)**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample4.vb)]
 
-Die erste Add()-Aktion gibt einfach eine Ansicht zurück. Die Ansicht enthält ein Formular zum Hinzufügen einer neuen filmdatenbank erfassen (siehe Abbildung 8). Wenn Sie das Formular senden, wird die zweite Add() Aktion aufgerufen.
+Die erste Aktion zum Hinzufügen () gibt einfach eine Ansicht zurück. Die Ansicht enthält ein Formular zum Hinzufügen eines neuen Film Datenbankdaten Satzes (siehe Abbildung 8). Wenn Sie das Formular senden, wird die zweite Aktion zum Hinzufügen () aufgerufen.
 
-Beachten Sie, dass die zweite Add()-Aktion mit dem AcceptVerbs-Attribut ergänzt wird. Diese Aktion kann aufgerufen werden, nur, wenn einen HTTP POST-Vorgang ausführen. Das heißt, kann diese Aktion nur aufgerufen werden, beim Buchen von einem HTML-Formular.
+Beachten Sie, dass die zweite Aktion zum Hinzufügen () mit dem Attribut "Accept tverbs" ergänzt wird. Diese Aktion kann nur aufgerufen werden, wenn ein HTTP Post-Vorgang ausgeführt wird. Anders ausgedrückt: Diese Aktion kann nur aufgerufen werden, wenn Sie ein HTML-Formular veröffentlichen.
 
-Die zweite Add()-Aktion erstellt eine neue Instanz der Entity Framework Movie-Klasse mithilfe der ASP.NET MVC TryUpdateModel()-Methode. Die TryUpdateModel()-Methode akzeptiert die Felder in der Add()-Methode übergeben FormCollection und weist die Werte dieser Felder der HTML-Formular die Movie-Klasse.
+Die zweite Aktion zum Hinzufügen () erstellt eine neue Instanz der Entity Framework Movie-Klasse mit der Hilfe der ASP.NET MVC tryupdatemodel ()-Methode. Die tryupdatemodel ()-Methode nimmt die Felder in der FormCollection an, die an die Add ()-Methode übermittelt wurden, und weist die Werte dieser HTML-Formularfelder der Movie-Klasse zu.
 
-Wenn Sie das Entity Framework verwenden, müssen Sie eine "weißen Liste" von Eigenschaften angeben, wenn die TryUpdateModel oder UpdateModel-Methoden verwendet, um die Eigenschaften einer Entitätsklasse zu aktualisieren.
+Wenn Sie die Entity Framework verwenden, müssen Sie eine "weiße Liste" von Eigenschaften angeben, wenn Sie die Methoden "tryupdatemodel" oder "updatemodel" verwenden, um die Eigenschaften einer Entitäts Klasse zu aktualisieren.
 
-Als Nächstes führt die Aktion Add() einige einfache formularvalidierung. Die Aktion stellt sicher, dass die title- und Director Eigenschaften Werte besitzen. Wenn ein Überprüfungsfehler vorliegt, wird eine Validierungsfehlermeldung auf ModelState hinzugefügt.
+Anschließend führt die Aktion hinzufügen () einige einfache Formular Überprüfungen durch. Die Aktion überprüft, ob die Titel-und Director-Eigenschaften Werte aufweisen. Wenn ein Validierungs Fehler vorliegt, wird eine Validierungs Fehlermeldung zu modelstate hinzugefügt.
 
-Treten keine Validierungsfehler mehr auftreten wird ein neuen Film-Datensatz in die Datenbanktabelle "Movies" mithilfe von Entity Framework hinzugefügt. Der neue Datensatz wird die Datenbank mit den folgenden zwei Codezeilen hinzugefügt:
+Wenn keine Validierungs Fehler vorliegen, wird der Film Datenbanktabelle mithilfe der Entity Framework ein neuer Film Daten Satz hinzugefügt. Der neue Datensatz wird der Datenbank mit den folgenden zwei Codezeilen hinzugefügt:
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample5.vb)]
 
-Die erste Zeile des Codes fügt die neue Movie-Entität, auf den Satz von Filmen, die vom Entity Framework verfolgt werden. Die zweite Zeile des Codes speichert alle Änderungen, die Kino nachverfolgt wird, an der zugrunde liegenden Datenbank vorgenommen wurden.
+Die erste Codezeile fügt die neue Movie-Entität zu dem Satz von Filmen hinzu, der vom Entity Framework nachverfolgt wird. Die zweite Codezeile speichert alle Änderungen, die an den Filmen vorgenommen wurden, die an die zugrunde liegende Datenbank zurückverfolgt wurden.
 
-**Abbildung 8 – die Ansicht hinzufügen**
+**Abbildung 8 – Ansicht "hinzufügen"**
 
 ![clip_image016](creating-model-classes-with-the-entity-framework-vb/_static/image8.jpg)
 
-## <a name="updating-database-records-with-the-entity-framework"></a>Aktualisieren von Datenbankdatensätzen mit dem Entitätsframework
+## <a name="updating-database-records-with-the-entity-framework"></a>Aktualisieren von Datenbankdaten Sätzen mit dem Entity Framework
 
-Sie können fast den gleichen Ansatz, um eine Datenbank-Datensatz mit dem Entity Framework als Ansatz zu bearbeiten, die wir gerade gefolgt, um einen neuen Datenbankdatensatz einzufügen, befolgen. Programmausdruck 4 enthält zwei neue Controlleraktionen, die mit dem Namen Edit(). Die erste Edit()-Aktion gibt ein HTML-Formular zum Bearbeiten eines Datensatzes Film zurück. Die zweite Edit() Aktion versucht, die die Datenbank zu aktualisieren.
+Sie können fast denselben Ansatz verwenden, um einen Datenbankdaten Satz mit dem Entity Framework zu bearbeiten, als den Ansatz, den wir soeben befolgt haben, um einen neuen Datenbankdaten Satz einzufügen. Codebeispiel 4 enthält zwei neue Controller Aktionen mit dem Namen "Edit ()". Die erste Edit ()-Aktion gibt ein HTML-Formular zum Bearbeiten eines Film Datensatzes zurück. Die zweite Aktion bearbeiten () versucht, die Datenbank zu aktualisieren.
 
-**Programmausdruck 4 – Controllers\HomeController.vb (Edit-Methoden)**
+**Codebeispiel 4 – controllers\homecontroller.vb (Methoden bearbeiten)**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample6.vb)]
 
-Die zweite Edit() Aktion startet durch Abrufen des Datensatzes Film aus der Datenbank, die mit der Id des Films bearbeiteten übereinstimmt. Die folgende LINQ to Entities-Anweisung, holt der ersten Datenbankdatensatzes, der eine bestimmte Id entspricht:
+Die zweite Aktion bearbeiten () beginnt mit dem Abrufen des Film Datensatzes aus der Datenbank, der mit der ID des bearbeiteten Films übereinstimmt. Mit der folgenden LINQ to Entities-Anweisung wird der erste Daten Bank Datensatz erfasst, der mit einer bestimmten ID übereinstimmt:
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample7.vb)]
 
-Als Nächstes wird die TryUpdateModel()-Methode verwendet, die Eigenschaften der Entität Film die Werte der HTML-Formularfelder zuweisen. Beachten Sie, dass eine Zulassungsliste bereitgestellt wird, um die genaue Eigenschaften aktualisieren anzugeben.
+Im nächsten Schritt wird die tryupdatemodel ()-Methode verwendet, um die Werte der HTML-Formularfelder den Eigenschaften der Movie-Entität zuzuweisen. Beachten Sie, dass eine Zulassungsliste bereitgestellt wird, um die genaue Eigenschaften aktualisieren anzugeben.
 
-Als Nächstes wird eine einfache Prüfung ausgeführt, um sicherzustellen, dass sowohl der Filmtitel und Director Eigenschaften Werte besitzen. Wenn eine der Eigenschaften einen Wert vorhanden ist, klicken Sie dann eine Validierungsfehlermeldung angezeigt wird ModelState hinzugefügt, und ModelState.IsValid gibt den Wert "false" zurück.
+Im nächsten Schritt wird eine einfache Überprüfung ausgeführt, um zu überprüfen, ob die Titel-und Director-Eigenschaften des Films über Werte verfügen Wenn einer der Eigenschaften ein Wert fehlt, wird modelstate eine Validierungs Fehlermeldung hinzugefügt, und modelstate. IsValid gibt den Wert false zurück.
 
-Abschließend treten keine Validierungsfehler mehr auftreten, wird dann die zugrunde liegenden Datenbanktabelle von Filmen mit den Änderungen aktualisiert durch Aufrufen der Methode SaveChanges().
+Wenn keine Validierungs Fehler vorliegen, wird die zugrunde liegende Filme-Datenbanktabelle durch Aufrufen der SaveChanges ()-Methode mit allen Änderungen aktualisiert.
 
-Wenn Sie Datenbank-Datensätze bearbeiten zu können, müssen Sie übergeben die Id des Datensatzes wird bearbeitet werden, um die Controlleraktion, die die datenbankaktualisierung durchführt. Andernfalls wird die Controlleraktion nicht bekannt, welcher Datensatz in der zugrunde liegenden Datenbank zu aktualisieren. In Listing 5, enthalten die Edit-Ansicht enthält ein ausgeblendetes Formularfeld, das die Id der Datenbank-Datensatz bearbeitet wird darstellt.
+Wenn Sie Datenbankeinträge bearbeiten, müssen Sie die ID des bearbeiteten Datensatzes an die Controller Aktion übergeben, die das Datenbankupdate ausführt. Andernfalls weiß die Controller Aktion nicht, welcher Datensatz in der zugrunde liegenden Datenbank aktualisiert werden soll. Die Bearbeitungs Ansicht, die in der Liste 5 enthalten ist, enthält ein ausgeblendetes Formularfeld, das die ID des bearbeiteten Datenbankdaten Satzes darstellt.
 
-**Programmausdruck 5 – Views\Home\Edit.aspx**
+**Codebeispiel 5 – views\home\edit.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample8.aspx)]
 
-## <a name="deleting-database-records-with-the-entity-framework"></a>Löschen von Datensätzen einer Datenbank mit Entitätsframework
+## <a name="deleting-database-records-with-the-entity-framework"></a>Löschen von Datenbankdaten Sätzen mit dem Entity Framework
 
-Der endgültige Datenbankvorgang, die wir in diesem Tutorial angehen müssen, ist Datenbank-Datensätzen wird gelöscht. Sie können die Controlleraktion in Codebeispiel 6 verwenden, um eine bestimmte Datenbank-Datensatz zu löschen.
+Der letzte Daten Bank Vorgang, den wir in diesem Tutorial angehen müssen, ist das Löschen von Datenbankdaten Sätzen. Sie können die Controller Aktion in der Liste 6 verwenden, um einen bestimmten Datenbankdaten Satz zu löschen.
 
-**Codebeispiel 6: \Controllers\HomeController.vb (Delete-Aktion)**
+**Codebeispiel 6: \controllers\homecontroller.vb (DELETE-Aktion)**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample9.vb)]
 
-Die Aktion Delete() ruft zuerst den Film Entität mit der Id übereinstimmt, an die Aktion übergeben ab. Als Nächstes wird der Film aus der Datenbank durch Aufrufen der DeleteObject()-Methode, gefolgt von der Methode SaveChanges() gelöscht. Schließlich wird der Benutzer an die Ansicht "Index" umgeleitet.
+Die Delete ()-Aktion ruft zuerst die Film Entität ab, die der an die Aktion übergebenen ID entspricht. Als nächstes wird der Film aus der Datenbank gelöscht, indem die DeleteObject ()-Methode gefolgt von der SaveChanges ()-Methode aufgerufen wird. Schließlich wird der Benutzer zurück zur Index Ansicht umgeleitet.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Der Zweck dieses Lernprogramms wurde veranschaulicht, wie Sie einen datenbankgesteuerten Webanwendungen erstellen können, durch die Nutzung von ASP.NET MVC und das Microsoft Entity Framework. Sie haben gelernt, wie zum Erstellen einer Anwendung, mit der Sie auswählen, einfügen, aktualisieren, und Löschen von Datenbankdatensätzen.
+In diesem Tutorial wird veranschaulicht, wie Sie datenbankgesteuerte Webanwendungen erstellen können, indem Sie ASP.NET MVC und die Microsoft-Entity Framework nutzen. Sie haben gelernt, wie Sie eine Anwendung erstellen, die es Ihnen ermöglicht, Datenbankeinträge auszuwählen, einzufügen, zu aktualisieren und zu löschen.
 
-Zunächst wird erläutert, wie Sie Entity Data Model-Assistenten verwenden können, um ein Entity Data Model aus Visual Studio zu generieren. Als Nächstes erfahren Sie, wie Sie LINQ to Entities verwenden, um einen Satz von Datenbank-Datensätzen aus einer Datenbanktabelle zu abzurufen. Schließlich können wir das Entity Framework verwendet, um einfügen, aktualisieren und Löschen von Datenbankdatensätzen.
+Zunächst wurde erläutert, wie Sie mit dem Entity Data Model-Assistenten innerhalb von Visual Studio eine Entity Data Model generieren können. Als Nächstes erfahren Sie, wie Sie mit LINQ to Entities einen Satz von Datenbankdaten Sätzen aus einer Datenbanktabelle abrufen. Zum Schluss haben wir die Entity Framework verwendet, um Datenbankdaten Sätze einzufügen, zu aktualisieren und zu löschen.
 
 > [!div class="step-by-step"]
 > [Zurück](validation-with-the-data-annotation-validators-cs.md)

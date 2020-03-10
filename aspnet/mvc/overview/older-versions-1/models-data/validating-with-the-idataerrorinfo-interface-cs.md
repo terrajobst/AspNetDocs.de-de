@@ -1,90 +1,90 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
-title: Überprüfen mit der IDataErrorInfo-Schnittstelle (c#) | Microsoft-Dokumentation
+title: Validieren mit der IDataErrorInfo-SchnittC#Stelle () | Microsoft-Dokumentation
 author: StephenWalther
-description: Stephen Walther erfahren Sie, wie benutzerdefinierte Überprüfungsfehlermeldungen durch Implementieren der IDataErrorInfo-Schnittstelle in einer Modellklasse angezeigt.
+description: Stephen Walther zeigt Ihnen, wie Sie benutzerdefinierte Validierungs Fehlermeldungen anzeigen, indem Sie die IDataErrorInfo-Schnittstelle in einer Modell Klasse implementieren.
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 938b180da02b1963acffd021d18621d75d1d0447
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117555"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78436347"
 ---
 # <a name="validating-with-the-idataerrorinfo-interface-c"></a>Überprüfen mit der IDataErrorInfo-Schnittstelle (C#)
 
-durch [Stephen Walther](https://github.com/StephenWalther)
+von [Stephen Walther](https://github.com/StephenWalther)
 
-> Stephen Walther erfahren Sie, wie benutzerdefinierte Überprüfungsfehlermeldungen durch Implementieren der IDataErrorInfo-Schnittstelle in einer Modellklasse angezeigt.
+> Stephen Walther zeigt Ihnen, wie Sie benutzerdefinierte Validierungs Fehlermeldungen anzeigen, indem Sie die IDataErrorInfo-Schnittstelle in einer Modell Klasse implementieren.
 
-Das Ziel in diesem Tutorial wird ein Ansatz zum Ausführen der Validierung in ASP.NET MVC-Anwendungen beschrieben. Erfahren Sie, wie Sie verhindern, dass eine Person ein HTML-Formular ohne Angabe von Werten für die erforderlichen Felder des Formulars zu senden. In diesem Tutorial erfahren Sie, wie die Validierung mithilfe der IErrorDataInfo-Schnittstelle.
+In diesem Tutorial wird erläutert, wie Sie eine Validierung in einer ASP.NET MVC-Anwendung ausführen. Sie erfahren, wie Sie verhindern können, dass jemand ein HTML-Formular sendet, ohne für erforderliche Formularfelder Werte bereitzustellen. In diesem Tutorial erfahren Sie, wie Sie die Überprüfung mithilfe der ierrordatainfo-Schnittstelle ausführen.
 
 ## <a name="assumptions"></a>Annahmen
 
-In diesem Tutorial verwende ich die MoviesDB-Datenbank und der Tabelle der Datenbank Filme. Diese Tabelle weist die folgenden Spalten:
+In diesem Tutorial verwende ich die Datenbank "moviesdb" und die "Movies"-Datenbanktabelle. Diese Tabelle weist die folgenden Spalten auf:
 
 <a id="0.5_table01"></a>
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | Int | False |
-| Titel | nvarchar(100) | False |
-| Director | nvarchar(100) | False |
-| DateReleased | DateTime | False |
+| Titel | Nvarchar (100) | False |
+| Regisseur | Nvarchar (100) | False |
+| Datereleasing | DateTime | False |
 
-In diesem Tutorial verwende ich das Microsoft Entity Framework, meine Datenbank Modellklassen generiert werden. In Abbildung 1 ist die Movie-Klasse, die vom Entity Framework generiert wird.
+In diesem Tutorial verwende ich die Microsoft-Entity Framework, um meine Datenbankmodell Klassen zu generieren. Die vom Entity Framework generierte Movie-Klasse wird in Abbildung 1 angezeigt.
 
-[![Die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
+[![der Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
-**Abbildung 01**: Die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
+**Abbildung 01**: die Film Entität ([Klicken Sie, um das Bild in voller Größe anzuzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
 > [!NOTE] 
 > 
-> Weitere Informationen zum mithilfe von Entity Framework auf um Ihren Modellklassen für die Datenbank zu generieren, finden Sie meinen Tutorial Erstellen von Modellklassen mit dem Entity Framework.
+> Weitere Informationen zum Verwenden der Entity Framework zum Generieren von Datenbankmodell Klassen finden Sie in meinem Tutorial zum Erstellen von Modellklassen mit dem Entity Framework.
 
-## <a name="the-controller-class"></a>Der Controller-Klasse
+## <a name="the-controller-class"></a>Die Controller Klasse
 
-Wir verwenden den Home-Controller auf Liste Filme und Erstellen neuer Filme. Der Code für diese Klasse ist in Codebeispiel 1 enthalten.
+Wir verwenden den Home-Controller zum Auflisten von Filmen und zum Erstellen neuer Filme. Der Code für diese Klasse ist in der Liste 1 enthalten.
 
-**Codebeispiel 1 – Controllers\HomeController. cs**
+**Codebeispiel 1-controllers\homecontroller.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample1.cs)]
 
-Die Home-Controller-Klasse in Codebeispiel 1 enthält zwei Create() Aktionen. Die erste Aktion zeigt das HTML-Formular zum Erstellen eines neuen Films. Die zweite Create()-Aktion führt das eigentliche Einfügen des neuen Film in der Datenbank. Die zweite Create()-Aktion wird aufgerufen, wenn das Formular die erste Create()-Aktion an den Server gesendet wird.
+Die Home Controller-Klasse in der Liste 1 enthält zwei Create ()-Aktionen. Die erste Aktion zeigt das HTML-Formular zum Erstellen eines neuen Films an. Die zweite Create ()-Aktion führt den eigentlichen Einfügevorgang des neuen Films in der Datenbank aus. Die zweite Create ()-Aktion wird aufgerufen, wenn das Formular, das von der ersten Create ()-Aktion angezeigt wird, an den Server übermittelt wird.
 
-Beachten Sie, dass die zweite Create()-Aktion die folgenden Codezeilen enthält:
+Beachten Sie, dass die zweite Create ()-Aktion die folgenden Codezeilen enthält:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample2.cs)]
 
-Die Eigenschaft "IsValid" gibt false zurück, wenn ein Überprüfungsfehler vorliegt. In diesem Fall wird die Ansicht erstellen, die das HTML-Formular zum Erstellen eines Films enthält erneut angezeigt.
+Die IsValid-Eigenschaft gibt false zurück, wenn ein Validierungs Fehler vorliegt. In diesem Fall wird die CREATE VIEW, die das HTML-Formular zum Erstellen eines Films enthält, erneut angezeigt.
 
 ## <a name="creating-a-partial-class"></a>Erstellen einer partiellen Klasse
 
-Die Movie-Klasse wird vom Entity Framework generiert. Sie können den Code für die Movie-Klasse sehen, wenn Sie die MoviesDBModel.edmx-Datei im Projektmappen-Explorer-Fenster zu erweitern, und öffnen Sie die MoviesDBModel.Designer.cs-Datei im Code-Editor (siehe Abbildung 2).
+Die Movie-Klasse wird vom Entity Framework generiert. Sie können den Code für die Movie-Klasse anzeigen, wenn Sie die Datei "moviesdbmodel. edmx" im Fenster "Projektmappen-Explorer" erweitern und die Datei "MoviesDBModel.Designer.cs" im Code-Editor öffnen (siehe Abbildung 2).
 
-[![Der Code für die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
+[![den Code für die Movie-Entität](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
-**Abbildung 02**: Der Code für die Movie-Entität ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
+**Abbildung 02**: der Code für die Movie-Entität ([Klicken Sie, um das Bild in voller Größe anzuzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
 
-Die Movie-Klasse ist eine partielle Klasse. Das bedeutet, dass wir eine andere partielle Klasse mit dem gleichen Namen zum Erweitern der Funktionalität der Movie-Klasse hinzufügen können. Wir fügen unserer Validierungslogik auf die neue partielle Klasse.
+Die Movie-Klasse ist eine partielle Klasse. Dies bedeutet, dass wir eine weitere partielle Klasse mit dem gleichen Namen hinzufügen können, um die Funktionalität der Movie-Klasse zu erweitern. Wir fügen die Validierungs Logik der neuen partiellen Klasse hinzu.
 
-Fügen Sie der Klasse in Liste 2 auf den Ordner "Models".
+Fügen Sie die-Klasse in der Liste 2 dem Ordner Models hinzu.
 
-**Codebeispiel 2 - Models\Movie.cs**
+**Codebeispiel 2: models\muvie.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample3.cs)]
 
-Beachten Sie, die die Klasse im Codebeispiel 2 enthält die *teilweise* Modifizierer. Alle Methoden oder Eigenschaften, die Sie für diese Klasse hinzufügen, werden die Movie-Klasse, die vom Entity Framework generiert.
+Beachten Sie, dass die-Klasse in der Liste 2 den *partiellen* Modifizierer enthält. Alle Methoden oder Eigenschaften, die Sie dieser Klasse hinzufügen, werden Teil der vom Entity Framework generierten Movie-Klasse.
 
-## <a name="adding-onchanging-and-onchanged-partial-methods"></a>Hinzufügen von OnChanging und OnChanged partielle Methoden
+## <a name="adding-onchanging-and-onchanged-partial-methods"></a>Hinzufügen von partiellen und OnChanged-partiellen Methoden
 
-Wenn Entity Framework eine Entitätsklasse generiert, fügt Entity Framework die partielle Methoden der Klasse automatisch aus. Das Entity Framework generiert OnChanging und OnChanged partielle Methoden, die jede Eigenschaft der Klasse entsprechen.
+Wenn die Entity Framework eine Entitäts Klasse generiert, fügt die Entity Framework der Klasse automatisch partielle Methoden hinzu. Der Entity Framework generiert partielle und OnChanged-partielle Methoden, die den einzelnen Eigenschaften der-Klasse entsprechen.
 
-Im Fall von die Movie-Klasse erstellt Entity Framework die folgenden Methoden:
+Im Fall der Movie-Klasse erstellt der Entity Framework die folgenden Methoden:
 
 - OnIdChanging
 - OnIdChanged
@@ -95,57 +95,57 @@ Im Fall von die Movie-Klasse erstellt Entity Framework die folgenden Methoden:
 - OnDateReleasedChanging
 - OnDateReleasedChanged
 
-Die OnChanging-Methode wird rechts aufgerufen, bevor die entsprechende Eigenschaft geändert wird. Die OnChanged-Methode wird rechts aufgerufen, nachdem die Eigenschaft geändert wird.
+Die onchanging-Methode wird aufgerufen, unmittelbar bevor die entsprechende-Eigenschaft geändert wird. Die OnChanged-Methode wird aufgerufen, unmittelbar nachdem die-Eigenschaft geändert wurde.
 
-Sie können diese partiellen Methoden, um die Movie-Klasse Validierungslogik hinzufügen nutzen. Das Update Movie-Klasse in Programmausdruck 3 stellt sicher, dass die Eigenschaften für Titel und Director nicht leeren Werte zugewiesen werden.
+Sie können diese partiellen Methoden nutzen, um der Movie-Klasse Validierungs Logik hinzuzufügen. Die Update Movie-Klasse in der Liste 3 überprüft, ob den Titel-und Director-Eigenschaften nicht leere Werte zugewiesen werden.
 
 > [!NOTE] 
 > 
-> Eine partielle Methode ist eine Methode, die in einer Klasse, die Sie nicht erforderlich, um die Implementierung definiert. Wenn Sie eine partielle Methode implementieren, nicht der Compiler entfernt die Signatur der Methode, und alle Aufrufe an die Methode also es werden keine Laufzeit-Kosten im Zusammenhang mit der partiellen Methode. In Visual Studio Code-Editor können Sie eine partielle Methode hinzufügen, durch das Schlüsselwort *teilweise* gefolgt von einem Leerzeichen zum Anzeigen einer Liste von Teilansichten implementieren.
+> Bei einer partiellen Methode handelt es sich um eine Methode, die in einer Klasse definiert ist, die nicht implementiert werden muss. Wenn Sie keine partielle Methode implementieren, entfernt der Compiler die Methoden Signatur und alle Aufrufe der-Methode, sodass der partiellen Methode keine Lauf Zeit Kosten zugeordnet sind. Im Visual Studio Code-Editor können Sie eine partielle Methode hinzufügen, indem Sie das Schlüsselwort *partiell* eingeben, gefolgt von einem Leerzeichen, um eine Liste der zu implementierenden partitionale anzuzeigen.
 
-**Codebeispiel 3 - Models\Movie.cs**
+**Codebeispiel 3: models\muvie.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample4.cs)]
 
-Z. B. Wenn Sie versuchen, eine leere Zeichenfolge an die Title-Eigenschaft zuweisen, klicken Sie dann eine Fehlermeldung erhält in ein Wörterbuch mit dem Namen \_Fehler.
+Wenn Sie z. b. versuchen, der Title-Eigenschaft eine leere Zeichenfolge zuzuweisen, wird eine Fehlermeldung einem Wörterbuch mit dem Namen \_Fehlern zugewiesen.
 
-An diesem Punkt nichts tatsächlich geschieht, wenn Sie eine leere Zeichenfolge an die Title-Eigenschaft zuweisen, und ein Fehler, an die Private hinzugefügt wird \_Fehler Feld. Wir müssen zum Implementieren der IDataErrorInfo-Schnittstelle, um diese Überprüfungsfehler auf, um das ASP.NET MVC-Framework verfügbar zu machen.
+An diesem Punkt geschieht nichts tatsächlich, wenn Sie der Title-Eigenschaft eine leere Zeichenfolge zuweisen und dem Feld "private \_Fehler" ein Fehler hinzugefügt wird. Wir müssen die IDataErrorInfo-Schnittstelle implementieren, um diese Validierungs Fehler für das ASP.NET MVC-Framework verfügbar zu machen.
 
 ## <a name="implementing-the-idataerrorinfo-interface"></a>Implementieren der IDataErrorInfo-Schnittstelle
 
-Die IDataErrorInfo-Schnittstelle ist Teil von .NET Framework seit der ersten Version. Diese Schnittstelle ist eine sehr einfache Schnittstelle:
+Die IDataErrorInfo-Schnittstelle ist seit der ersten Version Bestandteil von .NET Framework. Diese Schnittstelle ist eine sehr einfache Schnittstelle:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample5.cs)]
 
-Wenn eine Klasse die IDataErrorInfo-Schnittstelle implementiert, wird diese Schnittstelle in ASP.NET MVC-Framework verwenden, beim Erstellen einer Instanz der Klasse. Die Home-Controller Create() Aktion akzeptiert z. B. eine Instanz der Movie-Klasse:
+Wenn eine Klasse die IDataErrorInfo-Schnittstelle implementiert, verwendet das ASP.NET-MVC-Framework diese Schnittstelle, wenn eine Instanz der-Klasse erstellt wird. Die "Home Controller Create ()"-Aktion akzeptiert z. b. eine Instanz der Movie-Klasse:
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample6.cs)]
 
-ASP.NET MVC-Framework erstellt, die Instanz des Films an die Create()-Aktion mithilfe eines Modellbinders (der DefaultModelBinder) übergeben wird. Die modellbindung ist dafür verantwortlich, erstellen eine Instanz von der Movie-Objekt, durch die Bindung der HTML-Formularfelder mit einer Instanz von der Movie-Objekt.
+Das ASP.NET-MVC-Framework erstellt die Instanz des Films, das an die Create ()-Aktion über einen Modell Binder (DefaultModelBinder) übertragen wird. Der Modell Binder ist verantwortlich für das Erstellen einer Instanz des Movie-Objekts, indem die HTML-Formularfelder an eine Instanz des Movie-Objekts gebunden werden.
 
-Der DefaultModelBinder erkennt, und zwar unabhängig davon, ob eine Klasse die IDataErrorInfo-Schnittstelle implementiert. Wenn eine Klasse diese Schnittstelle implementiert, ruft die modellbindung IDataErrorInfo.this Indexer für jede Eigenschaft der Klasse. Wenn der Indexer eine Fehlermeldung zurückgegeben, fügt die modellbindung diese Fehlermeldung Zustand automatisch zu modellieren.
+Der DefaultModelBinder erkennt, ob eine Klasse die IDataErrorInfo-Schnittstelle implementiert. Wenn eine Klasse diese Schnittstelle implementiert, ruft der Modell Binder IDataErrorInfo. this Indexer für jede Eigenschaft der Klasse auf. Wenn der Indexer eine Fehlermeldung zurückgibt, wird diese Fehlermeldung vom Modell Binder automatisch dem Modell Status hinzugefügt.
 
-Der DefaultModelBinder überprüft auch die IDataErrorInfo.Error-Eigenschaft. Diese Eigenschaft sollte keine Eigenschaften spezifische Validierungsfehler im Zusammenhang mit der Klasse darstellen. Beispielsweise empfiehlt es sich um eine Validierungsregel zu erzwingen, von die die Werte aus mehreren Eigenschaften der Movie-Klasse abhängt. In diesem Fall müsste einen Validierungsfehler aus die Error-Eigenschaft zurückgegeben werden.
+Der DefaultModelBinder überprüft auch die IDataErrorInfo. Error-Eigenschaft. Diese Eigenschaft ist für die Darstellung nicht Eigenschafts spezifischer Validierungs Fehler vorgesehen, die der-Klasse zugeordnet sind. Beispielsweise möchten Sie möglicherweise eine Validierungs Regel erzwingen, die von den Werten mehrerer Eigenschaften der Movie-Klasse abhängt. In diesem Fall würden Sie einen Validierungs Fehler von der Error-Eigenschaft zurückgeben.
 
-In Listing 4 die aktualisierte Movie-Klasse implementiert die IDataErrorInfo-Schnittstelle.
+Die aktualisierte Movie-Klasse in der Liste 4 implementiert die IDataErrorInfo-Schnittstelle.
 
-**Codebeispiel 4: Models\Movie.cs (IDataErrorInfo implementiert)**
+**Codebeispiel 4: models\muvie.cs (implementiert IDataErrorInfo)**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample7.cs)]
 
-In Listing 4, die Indexereigenschaft überprüft die \_Errors-Auflistung, um festzustellen, ob es sich um einen Schlüssel enthält, die Namen der Eigenschaft entspricht, dem Indexer übergeben. Wenn kein Validierungsfehler, die der Eigenschaft zugeordnet ist, wird eine leere Zeichenfolge zurückgegeben.
+In der Auflistung 4 prüft die Indexer-Eigenschaft die \_Errors-Auflistung, um festzustellen, ob Sie einen Schlüssel enthält, der dem an den Indexer übergebenen Eigenschaftsnamen entspricht. Wenn der-Eigenschaft kein Validierungs Fehler zugeordnet ist, wird eine leere Zeichenfolge zurückgegeben.
 
-Sie müssen nicht den Home-Controller in keiner Weise verwenden Sie die geänderte Movie-Klasse zu ändern. Die Seite angezeigt, die in Abbildung 3 wird veranschaulicht, was geschieht, wenn kein Wert für die Felder für Titel oder Director Formular eingegeben wird.
+Sie müssen den Home Controller in keiner Weise ändern, um die geänderte Movie-Klasse zu verwenden. Die in Abbildung 3 gezeigte Seite zeigt, was geschieht, wenn kein Wert für die Formularfelder "Titel" oder "Director" eingegeben wird.
 
-[![Aktionsmethoden erstellen automatisch](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
+[Automatisches Erstellen von Aktionsmethoden ![](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
-**Abbildung 03**: Ein Formular mit fehlenden Werten ([klicken Sie, um das Bild in voller Größe anzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
+**Abbildung 03**: ein Formular mit fehlenden Werten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
 
-Beachten Sie, dass der Wert DateReleased automatisch überprüft wird. Da die DateReleased-Eigenschaft keine NULL-Werte akzeptiert, generiert der DefaultModelBinder ein Überprüfungsfehler für diese Eigenschaft automatisch, wenn sie nicht über einen Wert verfügt. Wenn Sie die Fehlermeldung für die DateReleased-Eigenschaft zu ändern, müssen Sie eine benutzerdefinierte modellbindung erstellen möchten.
+Beachten Sie, dass der datereleasing-Wert automatisch überprüft wird. Da die datereleasing-Eigenschaft keine NULL-Werte akzeptiert, generiert DefaultModelBinder automatisch einen Überprüfungs Fehler für diese Eigenschaft, wenn kein Wert vorhanden ist. Wenn Sie die Fehlermeldung für die datereleasing-Eigenschaft ändern möchten, müssen Sie einen benutzerdefinierten Modell Binder erstellen.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial haben Sie gelernt, wie die IDataErrorInfo-Schnittstelle verwenden, um Meldungen für Validierungsfehler zu generieren. Zunächst haben wir eine partielle Movie-Klasse, die die Funktionalität von der partiellen Movie-Klasse, die von Entity Framework generierten erweitert. Als Nächstes haben wir die Movie-Klasse OnTitleChanging() und OnDirectorChanging() partiellen Methoden Validierungslogik hinzugefügt. Schließlich implementiert haben wir die IDataErrorInfo-Schnittstelle um diese Nachrichten zur inhaltsprüfung zu ASP.NET MVC-Framework verfügbar zu machen.
+In diesem Tutorial haben Sie gelernt, wie Sie die IDataErrorInfo-Schnittstelle verwenden, um Validierungs Fehlermeldungen zu generieren. Zuerst haben wir eine partielle Movie-Klasse erstellt, die die Funktionalität der vom Entity Framework generierten partiellen Movie-Klasse erweitert. Als nächstes haben wir der Methode "OnTitleChanging ()" und "ondirectorchanging ()" eine Validierungs Logik hinzugefügt. Schließlich haben wir die IDataErrorInfo-Schnittstelle implementiert, um diese Validierungs Nachrichten für das ASP.NET MVC-Framework verfügbar zu machen.
 
 > [!div class="step-by-step"]
 > [Zurück](performing-simple-validation-cs.md)

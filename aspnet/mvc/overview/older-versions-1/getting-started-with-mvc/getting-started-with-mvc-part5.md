@@ -1,63 +1,63 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
-title: Zugreifen auf Modelldaten anhand eines Controllers | Microsoft-Dokumentation
+title: Zugreifen auf die Daten des Modells von einem Controller | Microsoft-Dokumentation
 author: shanselman
-description: Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Erstellen Sie eine einfache Webanwendung, die aus einer Datenbank liest und schreibt.
+description: Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Erstellen Sie eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt.
 ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: 004703cd-e0e9-4ba7-9974-1b0475c71222
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
 ms.openlocfilehash: 207ed880977d794d81efdc1ea458d17a68d501d8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122893"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437367"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>Zugreifen auf Modelldaten anhand eines Controllers
 
-durch [Scott Hanselman](https://github.com/shanselman)
+von [Scott Hanselman](https://github.com/shanselman)
 
-> Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
+> Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Sie erstellen eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt. Besuchen Sie das [ASP.NET MVC Learning Center](../../../index.md) , um weitere ASP.NET MVC-Tutorials und-Beispiele zu finden.
 
-In diesem Abschnitt werden wir erstellen eine neue MoviesController-Klasse, und Schreiben von Code, der unsere Daten abgerufen und wieder an den Browser, die mithilfe einer ansichtsvorlage anzeigt.
+In diesem Abschnitt erstellen wir eine neue Klasse "moviescontroller" und schreiben Code, mit dem die Filmdaten abgerufen und mit einer Ansichts Vorlage wieder im Browser angezeigt werden.
 
-Klicken Sie mit der rechten Maustaste auf den Ordner "Controllers", und stellen Sie eine neue MoviesController.
+Klicken Sie mit der rechten Maustaste auf den Ordner Controllers, und erstellen Sie einen neuen moviescontroller.
 
-[![Controller hinzufügen](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
+[Controller hinzufügen ![](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
 
-Dadurch wird eine neue "MoviesController.cs"-Datei unterhalb unserer \Controllers-Ordner, in unserem Projekt erstellt. Aktualisieren wir die MovieController Abrufen einer Liste von Filmen aus unserer Datenbank neu aufgefüllt.
+Dadurch wird eine neue Datei "MoviesController.cs" unterhalb unseres Ordners "\controllers" in unserem Projekt erstellt. Aktualisieren Sie den "" von "", um die Liste der Filme aus unserer neu aufgefüllten Datenbank abzurufen.
 
 [!code-csharp[Main](getting-started-with-mvc-part5/samples/sample1.cs)]
 
-Wir werden eine LINQ-Abfrage ausführen, so, dass wir nur freigegeben, nachdem der Sommer 1984 Filme abgerufen. Wir benötigen eine ansichtsvorlage zum Rendern dieser Liste von Filmen zurück, also mit der rechten Maustaste in der Methode und wählen "Ansicht hinzufügen", um es zu erstellen.
+Wir führen eine LINQ-Abfrage aus, sodass nur Filme abgerufen werden, die nach dem Sommer von 1984 veröffentlicht wurden. Wir benötigen eine Ansichts Vorlage, um die Liste der Filme wiederherzustellen. Klicken Sie also mit der rechten Maustaste auf die Methode, und wählen Sie Ansicht hinzufügen aus, um Sie zu erstellen.
 
-Wir müssen das Dialogfeld "Ansicht hinzufügen" um anzugeben, dass wir eine Liste übergeben&lt;Movies.Models.Movie&gt; , unsere Vorlage anzeigen. Im Gegensatz zu den älteren Zeiten, die wir verwendet das Dialogfeld "Ansicht hinzufügen", und wählen Sie eine "Leere" Vorlage erstellen, möchten wir werden anzugeben, dass diesmal wir Visual Studio automatisch "eine ansichtsvorlage für uns mit einigen Standardinhalt Gerüst für". Wir werden dies durch Auswählen des Elements "List" in "Content-Dropdownliste im Menü Ansicht.
+Im Dialogfeld Ansicht hinzufügen geben wir an, dass wir eine Liste&lt;Filme. Models. Movie&gt; an unsere Ansichts Vorlage übergeben. Im Gegensatz zu den vorherigen Zeiten haben wir das Dialogfeld Ansicht hinzufügen verwendet und eine "leere" Vorlage erstellt. in diesem Fall geben wir an, dass Visual Studio automatisch eine Ansichts Vorlage für uns mit einem Standard Inhalt erstellen soll. Hierzu wählen Sie im Dropdown Menü "Inhalt anzeigen" das Listenelement aus.
 
-Denken Sie daran: Wenn Sie ein erstelltes haben eine neue Klasse Sie Kompilieren Ihrer Anwendung für die es in das Dialogfeld "Ansicht-" angezeigt wird müssen.
+Beachten Sie, dass Sie, wenn Sie eine neue Klasse erstellt haben, die Anwendung kompilieren müssen, damit Sie im Dialog Feld "Ansicht hinzufügen" angezeigt wird.
 
 ![Ansicht hinzufügen](getting-started-with-mvc-part5/_static/image3.png)
 
-Klicken Sie auf Hinzufügen und das System generiert automatisch Code für eine Ansicht für uns, in dem unsere Liste von Filmen angezeigt. Dies ist ein guter Zeitpunkt zum Ändern der &lt;h2&gt; Überschrift z. B. "Meine Movie List", wie zuvor mit der "Hello World" angezeigt.
+Wenn Sie auf Hinzufügen klicken, generiert das System automatisch den Code für eine Ansicht für uns, in der die Liste der Filme angezeigt wird. Dies ist ein guter Zeitpunkt, die &lt;H2-&gt; Überschrift in "My Movie List" zu ändern, wie dies bereits zuvor in der Hallo Welt Ansicht der Fall war.
 
-[![Filme – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
+[![Filme-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
 
-Führen Sie die Anwendung, und finden Sie in der Adressleiste auf /Movies. Jetzt haben wir die Daten mit der eine einfache Abfrage in den Controller aus der Datenbank abgerufen und zurückgegeben, die Daten an eine Ansicht, die über Filme bekannt sind. Diese Ansicht, und klicken Sie dann führt Spin-Vorgänge über die Liste der Filme und wird eine Tabelle mit Daten für uns erstellt.
+Führen Sie die Anwendung aus, und besuchen Sie/Movies in der Adressleiste. Nun haben wir mit einer einfachen Abfrage innerhalb des Controllers Daten aus der Datenbank abgerufen und die Daten an eine Ansicht zurückgegeben, die über Filme weiß. Diese Ansicht durchläuft dann die Liste der Filme und erstellt eine Tabelle mit Daten für uns.
 
-[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
+[![Movie List-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
-Es wird nicht implementiert bearbeiten "," Details "und" Delete-Funktionen mit dieser Anwendung -, sodass wir nicht die Standardlinks benötigen, die die Vorlage Gerüst für uns erstellt. Öffnen Sie die /Movies/Index.aspx-Datei, und entfernen Sie sie.
+Mit dieser Anwendung werden die Funktionen "Bearbeiten", "Details" und "Löschen" nicht implementiert. Daher benötigen wir nicht die Standard Verknüpfungen, die von der Gerüst Vorlage für uns erstellt wurden. Öffnen Sie die Datei/Movies/Index.aspx, und entfernen Sie Sie.
 
-Hier ist der Quellcode für die wie unsere aktuellen ansichtsvorlage aussehen soll, sobald wir diese Änderungen vornehmen:
+Im folgenden finden Sie den Quellcode für das, was unsere aktualisierte Ansichts Vorlage aussehen sollte, nachdem wir diese Änderungen vorgenommen haben:
 
 [!code-aspx[Main](getting-started-with-mvc-part5/samples/sample2.aspx)]
 
-Es ist die Links, die wir nicht brauchen, Erstellung, daher wird sie für dieses Beispiel entfernt werden. Wir bleiben unseren neu erstellen Link jedoch, wie das nächste ist! So sieht unsere app wie mit dieser Spalte entfernt.
+Es erstellt Links, die wir nicht benötigen, daher werden wir Sie für dieses Beispiel löschen. Wir behalten uns jedoch den neuen Link "neu erstellen" vor. Dies ist der nächste Schritt. So sieht unsere App aus, in der diese Spalte entfernt wurde.
 
-[![Filmliste – Windows InternetExplorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
+[![Movie List-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
-Wir haben jetzt eine einfache Liste von unserem Movie-Daten. Jedoch, wenn wir auf den Link "Neu erstellen" klicken, wir erhalten eine Fehlermeldung, da es nicht verknüpft ist! Lassen Sie uns eine Create Action-Methode implementieren, und ermöglichen einem Benutzer zur Eingabe neuer Filme in der Datenbank.
+Wir verfügen jetzt über eine einfache Auflistung unserer Filmdaten. Wenn wir jedoch auf den Link "Create New" (neu erstellen) klicken, wird eine Fehlermeldung angezeigt, da diese nicht verknüpft ist. Wir implementieren eine Create Action-Methode und ermöglichen einem Benutzer die Eingabe neuer Filme in der Datenbank.
 
 > [!div class="step-by-step"]
 > [Zurück](getting-started-with-mvc-part4.md)

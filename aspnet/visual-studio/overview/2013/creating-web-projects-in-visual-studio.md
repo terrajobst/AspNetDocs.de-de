@@ -9,11 +9,11 @@ ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: fbb4cd7afa2506879d47bce980bf0164aad40c2c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519270"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447201"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Erstellen von ASP.NET-Webprojekten in Visual Studio 2013
 
@@ -31,7 +31,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > Weitere Informationen zum Erstellen von Webprojekten für Azure Cloud Services oder Azure Mobile Services finden Sie unter Erstellen von [Azure-Cloud Services und ASP.net](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) und [Erstellen einer Bestenlisten-App mit Azure Mobile Services .net](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)-Back-End.
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>Erforderliche Komponenten
+## <a name="prerequisites"></a>Voraussetzungen
 
 Dieser Artikel bezieht sich auf [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566) , auf denen [Update 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409) installiert ist.
 
@@ -48,7 +48,7 @@ Die folgenden Schritte zeigen, wie Sie ein Webprojekt erstellen:
 1. Klicken Sie auf der **Start** Seite oder im Menü **Datei** auf **Neues Projekt** .
 2. Klicken Sie im Dialogfeld **Neues Projekt** im linken Bereich auf **Web** und im mittleren Bereich auf **ASP.NET Webanwendung** .
 
-    ![Neues Projekt (Dialogfeld)](creating-web-projects-in-visual-studio/_static/image1.png)
+    ![Dialogfeld "Neues Projekt"](creating-web-projects-in-visual-studio/_static/image1.png)
 
     Sie können im linken Bereich **Cloud** auswählen, um einen [Azure-clouddienst](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Azure Mobile Service](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx)oder [Azure webjob](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs)zu erstellen. Diese Vorlagen werden in diesem Thema nicht behandelt.
 3. Klicken Sie im rechten Bereich auf das Kontrollkästchen **Application Insights zu Projekt hinzufügen** , wenn Sie die Integritäts-und Verwendungs Überwachung für Ihre Anwendung verwenden möchten. Weitere Informationen finden Sie unter [Leistungsüberwachung in Webanwendungen](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/).
@@ -56,7 +56,7 @@ Die folgenden Schritte zeigen, wie Sie ein Webprojekt erstellen:
 
     Das Dialogfeld **Neues ASP.net-Projekt** wird angezeigt.
 
-    ![Neues Projekt (Dialogfeld)](creating-web-projects-in-visual-studio/_static/image2.png)
+    ![Dialogfeld "Neues Projekt"](creating-web-projects-in-visual-studio/_static/image2.png)
 5. Klicken Sie auf eine Vorlage.
 
     ![Vorlage auswählen](creating-web-projects-in-visual-studio/_static/image3.png)
@@ -65,7 +65,7 @@ Die folgenden Schritte zeigen, wie Sie ein Webprojekt erstellen:
     ![Frameworks hinzufügen](creating-web-projects-in-visual-studio/_static/image4.png)
 7. <a id="testproj"></a>Wenn Sie ein Komponenten Testprojekt hinzufügen möchten, klicken Sie auf Komponenten **Tests hinzufügen**.
 
-    ![Komponententests hinzufügen](creating-web-projects-in-visual-studio/_static/image5.png)
+    ![Hinzufügen von Komponententests](creating-web-projects-in-visual-studio/_static/image5.png)
 8. Wenn Sie eine andere Authentifizierungsmethode als die standardmäßig von der Vorlage bereitgestellte Authentifizierungsmethode wünschen, klicken Sie auf **Authentifizierung ändern**.
 
     ![Authentifizierungs Schaltfläche Konfigurieren](creating-web-projects-in-visual-studio/_static/image6.png)
@@ -167,7 +167,7 @@ Weitere Informationen zu MVC finden Sie unter [ASP.NET MVC](https://asp.net/mvc)
 
 Die Web-API-Vorlage erstellt einen beispielweb Dienst, der auf der Web-API basiert, einschließlich API-Hilfeseiten, die auf MVC basieren.
 
-ASP.NET-Web-API ist ein Framework, das das Erstellen von HTTP-Diensten erleichtert, die eine Vielzahl verschiedener Clients bedienen können, einschließlich Browsern und mobilen Geräten. ASP.net-Web-API ist eine ideale Plattform zum Aufbauen von Rest-Diensten auf dem .NET Framework.
+ASP.net-Web-API ist ein Framework, das das Erstellen von http-Diensten erleichtert, die eine breite Palette von Clients erreichen, einschließlich Browsern und mobilen Geräten. ASP.net-Web-API ist eine ideale Plattform zum Aufbauen von Rest-Diensten auf dem .NET Framework.
 
 Die Web-API-Vorlage erstellt einen beispielweb Dienst. Die folgenden Abbildungen zeigen Beispiel Hilfeseiten.
 
@@ -178,7 +178,7 @@ Die Web-API-Vorlage erstellt einen beispielweb Dienst. Die folgenden Abbildungen
 Weitere Informationen zur Web-API finden Sie unter [ASP.net-Web-API](https://asp.net/web-api).
 
 <a id="spa"></a>
-### <a name="single-page-application-template"></a>Vorlage für eine Anwendung mit einer Seite
+### <a name="single-page-application-template"></a>Vorlage für Einzelseiten Anwendungen
 
 Die Vorlage für die Einzelseiten Anwendung (Single Page Application, Spa) erstellt eine Beispielanwendung, die JavaScript, HTML 5 und [knockoutjs](http://knockoutjs.com/) auf dem Client und ASP.net-Web-API auf dem Server verwendet.
 
@@ -214,11 +214,11 @@ Das Dialogfeld Visual Studio 2013-Webprojekt Erstellung bietet keinen Zugriff au
 
 Mit dem Knoten " **Visual Studio 2012** " können Sie die folgenden Webvorlagen auswählen, auf die Sie in der Standardliste mit Vorlagen für Visual Studio 2013 keinen Zugriff haben:
 
-- ASP.NET MVC 4-Webanwendung
+- ASP.NET MVC 4-Webanwendung
 - Webanwendung für ASP.NET Dynamic Data Entities
-- ASP.NET-AJAX-Serversteuerelement
-- ASP.NET-AJAX-Serversteuerelement-Extender
-- ASP.NET-Serversteuerelement
+- ASP.NET AJAX-Server Steuerelement
+- ASP.NET AJAX-Server Steuerelement-Extender
+- ASP.NET-Server Steuerelement
 
 <a id="bootstrap"></a>
 ## <a name="bootstrap-in-the-visual-studio-2013-web-project-templates"></a>Bootstrap in den Visual Studio 2013-Webprojekt Vorlagen
@@ -323,7 +323,7 @@ Weitere Informationen zur Option individuelle Benutzerkonten finden Sie in den f
 - [Hinzufügen externer Anmeldungen zu Ihrer ASP.NET-Anwendung in Visual Studio 2013](https://blogs.msdn.com/b/webdev/archive/2013/06/27/adding-external-logins-to-your-asp-net-application-in-visual-studio-2013.aspx)
 
 <a id="orgauth"></a>
-### <a name="organizational-accounts"></a>Unternehmenskonten
+### <a name="organizational-accounts"></a>Organisationskonten
 
 Wenn Sie **Organisations Konten**auswählen, wird die Beispielanwendung für die Verwendung von Windows Identity Foundation (WIF) für die Authentifizierung auf der Grundlage von Benutzerkonten in Azure Active Directory (Azure AD einschließlich Office 365) oder Windows Server Active Directory konfiguriert. Weitere Informationen finden Sie weiter unten in diesem Thema unter [Organisations Konto-Authentifizierungs Optionen](#orgauthoptions) .
 
@@ -357,7 +357,7 @@ Wenn Sie eine der Azure AD Optionen ausprobieren möchten, aber noch kein Konto 
 
 Wählen Sie diese Option aus, wenn Sie die Authentifizierung für Benutzerkonten aktivieren möchten, die in [einem Azure AD Mandanten](https://technet.microsoft.com/library/jj573650.aspx)definiert sind. Beispielsweise ist die Website contoso.com und wird den Mitarbeitern des Unternehmens "Unternehmen", die sich im contoso.onmicrosoft.com-Mandanten befinden, zur Verfügung gestellt. Sie können Azure AD nicht konfigurieren, um Benutzern von anderen Mandanten den Zugriff auf die Anwendung zu gestatten.
 
-#### <a name="domain"></a>Domäne
+#### <a name="domain"></a>Domain
 
 Geben Sie die Azure AD Domäne ein, in der Sie die Anwendung einrichten möchten, z. b.: `contoso.onmicrosoft.com`. Wenn Sie über eine [benutzerdefinierte Domäne](http://www.cloudidentity.com/blog/2013/04/14/adding-a-custom-domain-to-your-windows-azure-ad/)verfügen, z. b. `contoso.com` anstelle `contoso.onmicrosoft.com`, können Sie diese hier eingeben.
 

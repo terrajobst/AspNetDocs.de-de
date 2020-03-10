@@ -9,11 +9,11 @@ ms.assetid: a5f0439f-18b2-4c89-96ab-75b02c616f46
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 46b7fc22807c8cb9f47ff035639815d7b6104735
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74622245"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421905"
 ---
 # <a name="logging-error-details-with-elmah-vb"></a>Protokollieren von Fehlerdetails mit ELMAH (VB)
 
@@ -31,7 +31,7 @@ Ein weiterer Punkt liegt in der Komplexität der Integritäts Überwachung. Da d
 
 Eine Alternative zum System Überwachungssystem ist Fehler Protokollierung Module und Handler (ELMAH), ein kostenloses Open-Source-Fehler Protokollierungs System, das von [Atif Aziz](http://www.raboof.com/)erstellt wurde. Der wichtigste Unterschied zwischen den beiden Systemen besteht darin, dass elamh eine Liste von Fehlern und Details zu einem bestimmten Fehler von einer Webseite und als RSS-Feed anzeigen kann. ELMAH ist einfacher zu konfigurieren als die Integritäts Überwachung, da nur Fehler protokolliert werden. Außerdem bietet ELMAH Unterstützung für ASP.NET 1. x, ASP.NET 2,0 und ASP.NET 3,5-Anwendungen und wird mit einer Vielzahl von Protokoll Quellen Anbietern ausgeliefert.
 
-Dieses Tutorial führt Sie durch die Schritte zum Hinzufügen von ELMAH zu einer ASP.NET-Anwendung. Fangen wir an!
+Dieses Tutorial führt Sie durch die Schritte zum Hinzufügen von ELMAH zu einer ASP.NET-Anwendung. Erste Schritte
 
 > [!NOTE]
 > Das System Überwachungssystem und ELMAH verfügen jeweils über eigene Sätze von vor-und Nachteile. Ich empfehle Ihnen, beide Systeme auszuprobieren und zu entscheiden, was für Ihre Anforderungen am besten geeignet ist.
@@ -226,7 +226,7 @@ Das `<equal>`-Element innerhalb des `<test>` Abschnitts wird als-Assertion bezei
 
 Weitere Informationen zu den Fehler Filterungs Funktionen von ELMAH finden Sie im [Abschnitt Fehler Filterung](https://code.google.com/p/elmah/wiki/ErrorFiltering) des [ELMAH wiki](https://code.google.com/p/elmah/w/list).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ELMAH bietet einen einfachen, aber leistungsfähigen Mechanismus zum Protokollieren von Fehlern in einer ASP.NET-Webanwendung. Wie das System Überwachungssystem von Microsoft kann ELMAH Fehler in einer Datenbank protokollieren und die Fehlerdetails per e-Mail an einen Entwickler senden. Im Gegensatz zum System Überwachungssystem umfasst ELMAH standardmäßig die Unterstützung für eine größere Anzahl von Fehlerprotokoll-Daten speichern, wie z. b. Microsoft SQL Server, Microsoft Access, Oracle, XML-Dateien und verschiedene andere. Außerdem bietet ELMAH einen integrierten Mechanismus zum Anzeigen des Fehler Protokolls und Details zu einem bestimmten Fehler auf einer Webseite, `elmah.axd`. Auf der Seite `elmah.axd` können auch Fehlerinformationen als RSS-Feed oder als CSV-Datei (Comma-Separated Value), die Sie mit Microsoft Excel lesen können, ausgegeben werden. Sie können ELMAH auch anweisen, Fehler aus dem Protokoll mithilfe von deklarativen oder programmatischen Assertionen zu filtern. Und ELMAH können mit ASP.NET Version 1. x-Anwendungen verwendet werden.
 
@@ -234,7 +234,7 @@ Jede bereitgestellte Anwendung sollte über einen Mechanismus zum automatischen 
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

@@ -1,25 +1,25 @@
 ---
 uid: single-page-application/index
-title: ASP.NET einzelne Seite, Anwendung | Microsoft-Dokumentation
+title: ASP.net Single-Page-Anwendung | Microsoft-Dokumentation
 author: rick-anderson
-description: Laden Sie ASP.NET Herbst 2012-Update herunter, und erhalten einen besseren End-to-End-Service zum Erstellen von Anwendungen mit signifikanten clientseitigen Interaktionen mit JavaScript...
+description: Laden Sie ASP.net Fall 2012 Update herunter, und bieten Sie eine bessere End-to-End-Benutzerfreundlichkeit zum Entwickeln von Anwendungen mit erheblichen Client seitigen Interaktionen mit JavaScrip...
 ms.author: riande
 ms.date: 11/14/2012
 ms.assetid: 4760328c-3d73-4757-a36f-ab80a5b3f611
 msc.legacyurl: /single-page-application
 msc.type: categoryindex
 ms.openlocfilehash: 74ebdc39a81d31fb3c1ef3e5bab1857915cdc247
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400936"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449799"
 ---
-# <a name="aspnet-single-page-application"></a>ASP.NET-Single-Page-Anwendung
+# <a name="aspnet-single-page-application"></a>ASP.net Single-Page-Anwendung
 
 - [Übersicht](overview/index.md)
 
-    - [Introduction (Einführung)](overview/introduction/index.md)
+    - [Einführung](overview/introduction/index.md)
 
         - [Einzelseitenanwendung: Knockout.js-Vorlage](overview/introduction/knockoutjs-template.md)
         - [Andere Bibliotheken als Knockout](overview/introduction/other-libraries.md)

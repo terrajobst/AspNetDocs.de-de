@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/scaleout-in-signalr
-title: Einführung zur horizontalen Skalierung in SignalR 1.x | Microsoft-Dokumentation
+title: Einführung in horizontales hochskalieren in signalr 1. x | Microsoft-Dokumentation
 author: bradygaster
 description: ''
 ms.author: bradyg
@@ -9,40 +9,40 @@ ms.assetid: 3fd9f11c-799b-4001-bd60-1e70cfc61c19
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
 ms.openlocfilehash: 9bad72d31a0ebc491910ebb128b3b3a7fb537958
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402686"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431211"
 ---
 # <a name="introduction-to-scaleout-in-signalr-1x"></a>Einführung in die horizontale Skalierung in SignalR 1.x
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+von [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-Im Allgemeinen stehen zwei Möglichkeiten, eine Webanwendung zu skalieren: *zentral hochskalieren* und *horizontal hochskalieren*.
+Im Allgemeinen gibt es zwei Möglichkeiten zum Skalieren einer Webanwendung: zentrales *hoch* -und herunter *skalieren*.
 
-- Zentral hochskalieren bedeutet einen größeren Server (oder eine größere VM) mit mehr Arbeitsspeicher, CPUs usw. verwenden.
-- Horizontales hochskalieren bedeutet, dass weitere Server hinzufügen, die Last zu bewältigen.
+- Zentrales hochskalieren bedeutet, dass Sie einen größeren Server (oder einen größeren virtuellen Computer) mit mehr RAM, CPUs usw. verwenden.
+- Durch horizontales hochskalieren werden weitere Server zum Verarbeiten der Last hinzugefügt.
 
-Das Problem mit Zentrales Skalieren ist, dass Sie schnell eine Begrenzung der Größe des Computers erreicht. Darüber hinaus müssen Sie horizontal hochskalieren. Aber wenn Sie horizontal hochskalieren, können Clients auf verschiedenen Servern weitergeleitet werden. Ein Client, der mit einem Server verbunden ist, erhalten keine Nachrichten von einem anderen Server gesendet.
+Das Problem beim zentralen hochskalieren besteht darin, dass Sie schnell eine Beschränkung für die Größe des Computers erreichen. Darüber hinaus müssen Sie horizontal hochskalieren. Wenn Sie jedoch horizontal hochskalieren, können Clients an andere Server weitergeleitet werden. Ein Client, der mit einem Server verbunden ist, empfängt keine Nachrichten, die von einem anderen Server gesendet werden.
 
 ![](scaleout-in-signalr/_static/image1.png)
 
-Eine Lösung besteht darin, Weiterleiten von Nachrichten zwischen Servern mit einer Komponente mit dem Namen einer *Rückwandplatine*. Mit einer Rückwandplatine aktiviert ist jede Anwendungsinstanz sendet Nachrichten an die Backplane und der Rückwand an die anderen Anwendungsinstanzen weitergeleitet werden. (Im Bereich der Elektronik ist eine Rückwandplatine eine Gruppe von parallelen Connectors. Entsprechend stellt eine Verbindung her SignalR-Backplane mehrerer Server.)
+Eine Lösung besteht darin, Nachrichten zwischen Servern mithilfe einer Komponente weiterzuleiten, die als *Rückwand*bezeichnet wird. Wenn eine Rückwand aktiviert ist, sendet jede Anwendungs Instanz Nachrichten an die Rückwand, und die Rückwand leitet Sie an die anderen Anwendungs Instanzen weiter. (In der Elektronik ist eine Rückwand eine Gruppe paralleler Connectors. Analog dazu verbindet eine signalr-Rückwand mehrere Server.)
 
 ![](scaleout-in-signalr/_static/image2.png)
 
-SignalR stellt derzeit drei Backplanes bereit:
+Signalr bietet zurzeit drei Backplane:
 
-- **Azure Servicebus**. Service Bus ist eine messaging-Infrastruktur, die Komponenten zum Senden von Nachrichten in einem lose gekoppelten System ermöglicht.
-- **Redis**. Redis ist ein Schlüssel-Wert-Speicher im Arbeitsspeicher. Redis unterstützt ein Muster zum Veröffentlichen/Abonnieren ("Pub/Sub") zum Senden von Nachrichten an.
-- **SQL Server**. Die SQL Server-Rückwandplatine Nachrichten, die in SQL-Tabellen geschrieben wird. Der Rückwand verwendet Service Broker für effiziente messaging. Es funktioniert jedoch auch, wenn Service Broker nicht aktiviert ist.
+- **Azure Service Bus** Service Bus ist eine Messaging Infrastruktur, die es Komponenten ermöglicht, Nachrichten in einer lose gekoppelten Weise zu senden.
+- **Redis**. Redis ist ein Schlüssel-Wert-Speicher im Arbeitsspeicher. Redis unterstützt ein Veröffentlichen/Abonnieren-Muster ("Pub/Sub") zum Senden von Nachrichten.
+- **SQL Server**. Die SQL Server Rückwand schreibt Nachrichten in SQL-Tabellen. Die Rückwand verwendet Service Broker für effizientes Messaging. Es funktioniert jedoch auch, wenn Service Broker nicht aktiviert ist.
 
-Wenn Sie Ihre Anwendung in Azure bereitstellen, sollten erwägen Sie, die Azure Service Bus-Rückwandplatine zu verwenden. Wenn Sie mit Ihren eigenen Serverfarm bereitstellen, sollten Sie Sie der SQL Server- oder Redis Backplanes.
+Wenn Sie Ihre Anwendung in Azure bereitstellen, sollten Sie die Verwendung der Azure Service Bus Backplane in Erwägung gezogen. Wenn Sie in ihrer eigenen Serverfarm bereitstellen, sollten Sie die SQL Server-oder redis-Backplane in Erwägung gezogen.
 
-Die folgenden Themen enthalten schrittweise aufgebaute Lernprogramme für jede-Rückwandplatine:
+Die folgenden Themen enthalten Schritt-für-Schritt-Tutorials für jede Backplane:
 
 - [Horizontale Skalierung in SignalR mit dem Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
 - [Horizontale Skalierung in SignalR mit Redis](scaleout-with-redis.md)
@@ -50,24 +50,24 @@ Die folgenden Themen enthalten schrittweise aufgebaute Lernprogramme für jede-R
 
 ## <a name="implementation"></a>Implementierung
 
-In SignalR wird jede Nachricht über einen Nachrichtenbus gesendet. Implementiert ein Nachrichtenbus der ["imessagebus"](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) -Schnittstelle, die eine Abstraktion zum Veröffentlichen/Abonnieren bereitstellt. Die Backplanes zu arbeiten, indem Sie den standardmäßigen ersetzen **"imessagebus"** mit einem Bus, die für diese Rückwandplatine konzipiert. Der Nachrichtenbus für Redis ist z. B. [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), und nutzt die Redis [Pub/Sub-](http://redis.io/topics/pubsub) Mechanismus zum Senden und Empfangen von Nachrichten.
+In signalr wird jede Nachricht über einen Nachrichtenbus gesendet. Ein Nachrichtenbus implementiert die [imessagebus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) -Schnittstelle, die eine Veröffentlichung/Abonnement-Abstraktion bereitstellt. Die Rückstände funktionieren, indem Sie den standardmäßigen **imessagebus** durch einen Bus ersetzen, der für diese Backplane konzipiert ist. Der Nachrichtenbus für redis lautet beispielsweise [redismessagebus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx)und verwendet den redis [-Pub/Sub-](http://redis.io/topics/pubsub) Mechanismus, um Nachrichten zu senden und zu empfangen.
 
-Jede Serverinstanz eine Verbindung mit der Rückwand über den Bus. Wenn eine Nachricht gesendet wird, an die Backplane darin, und der Rückwand sendet sie an jedem Server. Wenn ein Server eine Nachricht von der Backplane empfängt, werden diese die Nachricht in ihrem lokalen Cache abgelegt. Der Server sendet dann Nachrichten für Clients aus dem lokalen Cache.
+Jede Serverinstanz stellt über den Bus eine Verbindung mit der Rückwand her. Wenn eine Nachricht gesendet wird, wird Sie an die Rückwand gesendet, und die Rückwand sendet Sie an jeden Server. Wenn ein Server eine Nachricht von der Backplane erhält, wird die Nachricht in den lokalen Cache eingefügt. Der Server übergibt dann Nachrichten aus seinem lokalen Cache an Clients.
 
-Für jede Clientverbindung wird dem Client-Status im Lesen der Nachrichtenfolge nachverfolgt mithilfe eines Cursors. (Für ein Cursor stellt eine Position in den Nachrichtenstream dar.) Wenn ein Client die Verbindung trennt, und klicken Sie dann erneut eine Verbindung herstellt, fordert den Bus Nachrichten, die nach dem Clientstandort Cursorwert eingetroffen sind. Das gleiche passiert, wenn eine Verbindung verwendet [lange](../getting-started/introduction-to-signalr.md#transports). Nachdem die Anforderung eine lange Abfrage abgeschlossen ist, wird der Client öffnet eine neue Verbindung und fragt nach Nachrichten, die nach dem Cursor eingetroffen sind.
+Für jede Client Verbindung wird der Fortschritt des Clients beim Lesen des Nachrichten Datenstroms mithilfe eines Cursors nachverfolgt. (Ein Cursor stellt eine Position im Nachrichtenstream dar.) Wenn ein Client die Verbindung trennt und dann erneut eine Verbindung herstellt, fragt er den Bus nach Nachrichten ab, die nach dem Cursor Wert des Clients eingetroffen sind. Dasselbe passiert, wenn eine Verbindung eine [lange](../getting-started/introduction-to-signalr.md#transports)Abfrage verwendet. Nachdem eine lange Abruf Anforderung abgeschlossen wurde, öffnet der Client eine neue Verbindung und fragt nach Nachrichten, die nach dem Cursor eingetroffen sind.
 
-Der Cursor Mechanismus funktioniert auch, wenn ein Client auf einen anderen Server weitergeleitet wird erneut eine Verbindung herzustellen. Der Rückwand erkennt aller Server, und es spielt keine Rolle, welchen Server ein Client eine Verbindung herstellt.
+Der Cursor Mechanismus funktioniert auch dann, wenn ein Client bei der erneuten Verbindungs Herstellung an einen anderen Server weitergeleitet wird. Die Rückwand kennt alle Server, und es spielt keine Rolle, mit welchem Server ein Client eine Verbindung herstellt.
 
 ## <a name="limitations"></a>Einschränkungen
 
-Verwenden eine Rückwandplatine, ist der maximale Nachrichtendurchsatz niedriger als bei der Kommunikation von Clients direkt mit einem einzelnen Server-Knoten. Dies liegt daran der Rückwand leitet jede Nachricht auf jedem Knoten aus, damit der Rückwand Engpässe auftreten kann. Ob diese Einschränkung ein Problem aufgetreten ist, hängt von der Anwendung ab. Hier sind z. B. einige typischen Szenarien für SignalR:
+Bei Verwendung einer Backplane ist der maximale Nachrichten Durchsatz niedriger als der, wenn Clients direkt mit einem einzelnen Server Knoten kommunizieren. Das liegt daran, dass die Rück Ebene jede Nachricht an jeden Knoten weiterleitet, sodass die Rückwand zu einem Engpass werden kann. Ob diese Einschränkung ein Problem ist, hängt von der Anwendung ab. Im folgenden finden Sie einige typische signalr-Szenarien:
 
-- [Serverübertragung](tutorial-server-broadcast-with-aspnet-signalr.md) (beispielsweise Börsenticker): Backplanes eignen sich gut für dieses Szenario, da der Server die Rate kontrolliert, an der Nachrichten gesendet werden.
-- [Client-zu-Client](tutorial-getting-started-with-signalr.md) (z. B. chat): In diesem Szenario wird möglicherweise der Rückwand einen Engpass, wenn die Anzahl der Nachrichten mit der Anzahl der Clients skaliert werden kann; d. h., wenn die Anzahl der Nachrichten wird verknüpfen proportional mehr Clients.
-- [Echtzeitnachrichten](tutorial-high-frequency-realtime-with-signalr.md) (z. B. in Echtzeit Spiele): Eine Rückwandplatine wird für dieses Szenario nicht empfohlen.
+- [Server Broadcast](tutorial-server-broadcast-with-aspnet-signalr.md) (z. b. Börsen Ticker): Backplane funktionieren für dieses Szenario gut, da der Server die Rate steuert, mit der Nachrichten gesendet werden.
+- [Client-zu-Client](tutorial-getting-started-with-signalr.md) (z. b. Chat): in diesem Szenario kann die Rückwand einen Engpass darstellen, wenn die Anzahl der Nachrichten mit der Anzahl der Clients skaliert wird. Das heißt, wenn die Rate der Nachrichten proportional zunimmt, wenn mehr Clients beitreten.
+- [Hochfrequenz in Echtzeit](tutorial-high-frequency-realtime-with-signalr.md) (z. b. Echt Zeit Spiele): für dieses Szenario wird keine Rückwand empfohlen.
 
-## <a name="enabling-tracing-for-signalr-scaleout"></a>Aktivieren der Ablaufverfolgung für horizontale Skalierung in SignalR
+## <a name="enabling-tracing-for-signalr-scaleout"></a>Aktivieren der Ablauf Verfolgung für die horizontale Skalierung von signalr
 
-Fügen Sie zum Aktivieren der Ablaufverfolgung für die Backplanes in den folgenden Abschnitten in der Datei web.config unter dem Stamm **Konfiguration** Element:
+Fügen Sie der Datei "Web. config" unter dem Stamm **Konfigurations** Element die folgenden Abschnitte hinzu, um die Ablauf Verfolgung für die Rück Ebenen zu aktivieren:
 
 [!code-html[Main](scaleout-in-signalr/samples/sample1.html)]

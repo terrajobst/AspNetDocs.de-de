@@ -2,195 +2,195 @@
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
 title: Verwenden von OAuth-Anbietern mit MVC 4 | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 4-Webanwendung erstellen, die Benutzern ermöglicht, melden Sie sich mit den Anmeldeinformationen von einem externen Anbieter, z. B. Facebo...
+description: In diesem Tutorial wird gezeigt, wie Sie eine ASP.NET MVC 4-Webanwendung erstellen, die es Benutzern ermöglicht, sich mit Anmelde Informationen eines externen Anbieters anzumelden, z. b. facebo...
 ms.author: riande
 ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 5dfd1305376a62f4987caea242ca0f6aac1018e9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129632"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433365"
 ---
 # <a name="using-oauth-providers-with-mvc-4"></a>Verwenden von OAuth-Anbietern mit MVC 4
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Tutorial erfahren Sie, wie Sie eine ASP.NET MVC 4-Webanwendung zu erstellen, können die Benutzer melden Sie sich mit Anmeldeinformationen aus einem externen Anbieter, z. B. Facebook, Twitter, Microsoft oder Google, und integrieren anschließend einige der Funktionen von diesen Anbietern in, Ihre Web-Anwendung. Der Einfachheit halber konzentriert sich in diesem Tutorial zum Arbeiten mit Anmeldeinformationen von Facebook.
+> In diesem Tutorial wird gezeigt, wie Sie eine ASP.NET MVC 4-Webanwendung erstellen, die es Benutzern ermöglicht, sich mit Anmelde Informationen eines externen Anbieters anzumelden, wie z. b. Facebook, Twitter, Microsoft oder Google, und dann einige der Funktionen von diesen Anbietern in Ihre Webanwendung. Der Einfachheit halber konzentriert sich dieses Tutorial auf das Arbeiten mit Anmelde Informationen von Facebook.
 > 
-> Um die externe Anmeldeinformationen in einer ASP.NET MVC 5-Webanwendung verwenden zu können, finden Sie unter [erstellen Sie eine ASP.NET MVC 5-App mit Facebook und Google OAuth2 und OpenID-Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
+> Informationen zur Verwendung externer Anmelde Informationen in einer ASP.NET MVC 5-Webanwendung finden Sie [unter Erstellen einer ASP.NET MVC 5-App mit Facebook und Google OAuth2 und OpenID-Anmeldung](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
 > 
-> Aktivieren diese Anmeldeinformationen in Ihrer Web Sites bietet entscheidende Vorteile, da Sie Millionen Benutzer bereits Konten mit dieser externen Anbietern haben. Diese Benutzer möglicherweise eher für Ihre Website registrieren können, wenn sie nicht zum Erstellen und speichern einen neuen Satz von Anmeldeinformationen verfügen. Nachdem ein Benutzer über einen dieser Anbieter angemeldet hat, können Sie auch soziale Vorgänge vom Anbieter integrieren.
+> Die Aktivierung dieser Anmelde Informationen auf ihren Websites bietet einen erheblichen Vorteil, da Millionen von Benutzern bereits über Konten mit diesen externen Anbietern verfügen. Diese Benutzer sind möglicherweise eher geneigt, sich für Ihre Website zu registrieren, wenn Sie keinen neuen Satz von Anmelde Informationen erstellen und speichern müssen. Nachdem sich ein Benutzer über einen dieser Anbieter angemeldet hat, können Sie auch soziale Vorgänge des Anbieters integrieren.
 
-## <a name="what-youll-build"></a>Sie lernen Folgendes
+## <a name="what-youll-build"></a>Was Sie erstellen
 
-In diesem Tutorial sind zwei Hauptziele:
+In diesem Tutorial gibt es zwei Hauptziele:
 
-1. Einen Benutzer sich mit den Anmeldeinformationen eines OAuth-Anbieters anmelden zu aktivieren.
-2. Abrufen von Informationen vom Anbieter, und integrieren Sie diese Informationen, mit der kontoregistrierung für Ihre Website.
+1. Ermöglicht es Benutzern, sich mit Anmelde Informationen eines OAuth-Anbieters anzumelden.
+2. Rufen Sie Kontoinformationen vom Anbieter ab, und integrieren Sie diese Informationen mit der Kontoregistrierung für Ihren Standort.
 
-Obwohl in die Beispielen in diesem Tutorial zur Verwendung von Facebook als Authentifizierungsanbieter zu konzentrieren, können Sie den Code, um einen der Anbieter verwenden, ändern. Die Schritte zum Implementieren von beliebigen Anbietern sind sehr ähnlich, mit den Schritten, die Sie in diesem Lernprogramm sehen werden. Sie sehen nur die erhebliche Unterschiede bei direkten Aufrufen an den Anbieter-API festgelegt.
+Obwohl sich die Beispiele in diesem Tutorial auf die Verwendung von Facebook als Authentifizierungs Anbieter konzentrieren, können Sie den Code so ändern, dass er einen beliebigen Anbieter verwendet. Die Schritte zum Implementieren eines beliebigen Anbieters ähneln den Schritten, die Sie in diesem Tutorial sehen werden. Sie werden nur signifikante Unterschiede bemerken, wenn Sie direkte Aufrufe an den API-Satz des Anbieters senden.
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 - [Microsoft Visual Studio 2012](https://www.microsoft.com/visualstudio/eng/downloads#vs) oder [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/downloads#d-2012-express)
 
-Or
+Oder
 
 - Microsoft Visual Studio 2010 SP1 oder [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/visualstudio/eng/downloads#d-2010-express)
 - [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
 
-In diesem Thema wird außerdem davon ausgegangen, dass Sie über grundlegende Kenntnisse über ASP.NET MVC und Visual Studio verfügen. Wenn Sie eine Einführung in ASP.NET MVC 4 benötigen, finden Sie unter [Einführung in ASP.NET MVC 4](getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md).
+Außerdem wird in diesem Thema davon ausgegangen, dass Sie über grundlegende Kenntnisse über ASP.NET MVC und Visual Studio verfügen. Wenn Sie eine Einführung in ASP.NET MVC 4 benötigen, finden Sie weitere Informationen unter Einführung [in ASP.NET MVC 4](getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md).
 
 ## <a name="create-the-project"></a>Erstellen eines Projekts
 
-Klicken Sie in Visual Studio eine neue ASP.NET MVC 4-Webanwendung erstellen, und nennen sie &quot;OAuthMVC&quot;. Sie können entweder .NET Framework 4.5 oder 4 abzielen.
+Erstellen Sie in Visual Studio eine neue ASP.NET MVC 4-Webanwendung, und benennen Sie Sie &quot;oauthmvc-&quot;. Sie können entweder 4,5 oder 4 als Ziel .NET Framework.
 
-![Projekt erstellen](using-oauth-providers-with-mvc/_static/image1.png)
+![Erstellen des Projekts](using-oauth-providers-with-mvc/_static/image1.png)
 
-Wählen Sie im Fenster Neues ASP.NET MVC 4-Projekt **Internetanwendung** und lassen Sie **Razor** als die Ansichts-Engine.
+Wählen Sie im Fenster Neues ASP.NET MVC 4-Projekt die Option **Internet Anwendung** aus, und lassen Sie **Razor** als Ansichts-Engine.
 
-![Wählen Sie die Internet-Anwendung](using-oauth-providers-with-mvc/_static/image2.png)
+![Internet Anwendung auswählen](using-oauth-providers-with-mvc/_static/image2.png)
 
-## <a name="enable-a-provider"></a>Aktivieren Sie einen Anbieter
+## <a name="enable-a-provider"></a>Aktivieren eines Anbieters
 
-Wenn Sie eine MVC 4-Webanwendung mit Internet Application-Vorlage erstellen, wird das Projekt erstellt, mit einer Datei mit dem Namen AuthConfig.cs in der App\_Startordner.
+Wenn Sie eine MVC 4-Webanwendung mit der Internet Anwendungs Vorlage erstellen, wird das Projekt mit einer Datei namens AuthConfig.cs im Ordner App\_Start erstellt.
 
 ![AuthConfig-Datei](using-oauth-providers-with-mvc/_static/image3.png)
 
-Die AuthConfig-Datei enthält Code zum Registrieren von Clients für die externe Authentifizierungsanbieter. Standardmäßig ist dieser Code auskommentiert, damit kein externer Anbieter aktiviert sind.
+Die AuthConfig-Datei enthält Code zum Registrieren von Clients für externe Authentifizierungs Anbieter. Standardmäßig ist dieser Code auskommentiert, sodass keiner der externen Anbieter aktiviert ist.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample1.cs)]
 
-Sie müssen diesen Code, um die externe Authentifizierung-Client verwenden die auskommentierung aufheben. Kommentieren Sie Sie nur die Anbieter, die auf Ihrer Website enthalten sein sollen. In diesem Tutorial können Sie nur die Facebook-Anmeldeinformationen.
+Sie müssen die Auskommentierung dieses Codes aufheben, um den externen Authentifizierungs Client zu verwenden. Entfernen Sie nur die Anbieter, die Sie in Ihre Website einschließen möchten. Für dieses Tutorial aktivieren Sie nur die Facebook-Anmelde Informationen.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample2.cs)]
 
-Beachten Sie, dass im obigen Beispiel, dass die Methode leere Zeichenfolgen für die Registrierungsparameter enthält. Wenn Sie versuchen, die die Anwendung nun ausführen, löst die Anwendung eine Argumentausnahme aus, da leere Zeichenfolgen für die Parameter sind nicht zulässig. Um gültige Werte bereitzustellen, müssen Sie Ihre Website mit den externen Anbietern, registrieren, wie im nächsten Abschnitt gezeigt.
+Beachten Sie im obigen Beispiel, dass die-Methode leere Zeichen folgen für die Registrierungs Parameter enthält. Wenn Sie versuchen, die Anwendung jetzt auszuführen, löst die Anwendung eine Argument Ausnahme aus, da leere Zeichen folgen für die Parameter nicht zulässig sind. Um gültige Werte anzugeben, müssen Sie die Website bei den externen Anbietern registrieren, wie im nächsten Abschnitt gezeigt.
 
-## <a name="registering-with-an-external-provider"></a>Über einen externen Anbieter registrieren
+## <a name="registering-with-an-external-provider"></a>Registrieren bei einem externen Anbieter
 
-Um Benutzer mit Anmeldeinformationen aus einem externen Anbieter authentifizieren zu können, müssen Sie Ihre Website mit dem Anbieter registrieren. Wenn Sie Ihre Website registrieren, erhalten Sie die Parameter (z. B. Key oder Id und Geheimnis), um einschließen, wenn den Client registrieren. Sie müssen ein Konto mit den Anbietern verfügen, die Sie verwenden möchten.
+Um Benutzer mit Anmelde Informationen eines externen Anbieters zu authentifizieren, müssen Sie die Website beim Anbieter registrieren. Wenn Sie Ihre Website registrieren, erhalten Sie die Parameter (z. b. Schlüssel oder ID und geheimer Schlüssel), die beim Registrieren des Clients eingeschlossen werden sollen. Sie müssen über ein Konto mit den Anbietern verfügen, die Sie verwenden möchten.
 
-In diesem Tutorial werden nicht alle Schritte angezeigt, die Sie ausführen müssen, um für diese Anbieter zu registrieren. Diese Schritte sind in der Regel nicht schwierig. Um Ihre Website erfolgreich registriert haben, befolgen Sie die Anweisungen für diese Websites aus. Finden Sie Informationen zum Einstieg in die Registrierung einer Website, für die Developer-Website aus:
+In diesem Tutorial werden nicht alle Schritte erläutert, die Sie ausführen müssen, um sich bei diesen Anbietern zu registrieren. Die Schritte sind in der Regel nicht schwierig. Befolgen Sie die Anweisungen auf diesen Standorten, um Ihre Website erfolgreich zu registrieren. Informationen zu den ersten Schritten beim Registrieren Ihrer Website finden Sie auf der Entwickler Website für:
 
 - [Facebook](https://developers.facebook.com/)
 - [Google](https://developers.google.com/)
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-Wenn Sie Ihre Website mit Facebook zu registrieren, können Sie angeben &quot;"localhost"&quot; für die Domäne der Website und `&quot;http://localhost/&quot;` für die URL, wie in der folgenden Abbildung dargestellt. Verwenden "localhost" arbeitet mit den meisten Anbietern zusammen, aber derzeit funktioniert nicht mit dem Microsoft-Anbieter. Für den Microsoft-Anbieter müssen Sie eine gültige Website-URL einschließen.
+Wenn Sie Ihre Website bei Facebook registrieren, können Sie &quot;localhost-&quot; für die Website Domäne bereitstellen und für die URL `&quot; http://localhost/&quot;`, wie in der folgenden Abbildung dargestellt. Die Verwendung von localhost funktioniert mit den meisten Anbietern, funktioniert aber zurzeit nicht mit dem Microsoft-Anbieter. Für den Microsoft-Anbieter müssen Sie eine gültige URL für die Website einschließen.
 
-![Registrieren der site](using-oauth-providers-with-mvc/_static/image4.png)
+![Website registrieren](using-oauth-providers-with-mvc/_static/image4.png)
 
-In der vorherigen Abbildung wurden die Werte für die app-Id, app-Geheimnis und e-Mail-Kontaktadresse entfernt. Wenn Sie tatsächlich auf Ihrer Website registrieren, werden diese Werte vorhanden sein. Sie sollten die Werte für die app-Id und app-Geheimnis zu beachten, da Sie sie Ihrer Anwendung hinzufügen möchten.
+In der vorherigen Abbildung wurden die Werte für die APP-ID, den geheimen Schlüssel der APP und die Kontakt-e-Mail entfernt. Wenn Sie Ihre Website tatsächlich registrieren, werden diese Werte angezeigt. Sie sollten die Werte für die APP-ID und den geheimen App-Schlüssel notieren, da Sie Sie der Anwendung hinzufügen.
 
-## <a name="creating-test-users"></a>Erstellen von Benutzern von Webleistungstests
+## <a name="creating-test-users"></a>Erstellen von Test Benutzern
 
-Wenn Sie nicht erledigen, verwenden ein vorhandenes Facebook-Konto auf Ihre Website testen, können Sie diesen Abschnitt überspringen.
+Wenn Sie kein vorhandenes Facebook-Konto zum Testen Ihrer Website verwenden, können Sie diesen Abschnitt überspringen.
 
-Sie können Benutzern von Webleistungstests problemlos für Ihre Anwendung in der Facebook-app-Management-Seite erstellen. Mit diesen Befehlen können Konten für die Anmeldung auf Ihrer Website zu testen. Sie Testbenutzer erstellen, indem Sie auf die **Rollen** Link im linken Navigationsbereich und anschließend auf die **erstellen** Link.
+Auf der Seite für die Verwaltung von Facebook-Apps können Sie problemlos Test Benutzer für Ihre Anwendung erstellen. Sie können diese Testkonten verwenden, um sich bei Ihrer Website anzumelden. Sie erstellen Test Benutzer, indem Sie im linken Navigationsbereich auf den Link **Rollen** und dann auf den Link **Erstellen** klicken.
 
-![Erstellen Sie Testbenutzer](using-oauth-providers-with-mvc/_static/image5.png)
+![Test Benutzer erstellen](using-oauth-providers-with-mvc/_static/image5.png)
 
-Die Facebook-Website erstellt automatisch die Anzahl der Testkonten, die Sie anfordern.
+Auf der Facebook-Website wird die Anzahl der von Ihnen angeforderten Testkonten automatisch erstellt.
 
-## <a name="adding-application-id-and-secret-from-the-provider"></a>Anwendungs-Id und geheimen Schlüssel vom Anbieter hinzufügen
+## <a name="adding-application-id-and-secret-from-the-provider"></a>Hinzufügen von Anwendungs-ID und geheimer Schlüssel vom Anbieter
 
-Nun, dass Sie die Id und den geheimen Clientschlüssel aus Facebook erhalten haben, wechseln Sie zurück zur AuthConfig, und fügen Sie sie als Parameterwerte. Die unten aufgeführten Werte sind nicht die tatsächlichen Werte.
+Nachdem Sie die ID und den geheimen Schlüssel von Facebook erhalten haben, wechseln Sie zurück zur AuthConfig-Datei, und fügen Sie Sie als Parameterwerte hinzu. Die unten gezeigten Werte sind keine echten Werte.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample3.cs)]
 
-## <a name="log-in-with-external-credentials"></a>Melden Sie sich mit externen Anmeldeinformationen
+## <a name="log-in-with-external-credentials"></a>Mit externen Anmelde Informationen anmelden
 
-Das ist alles, was man tun, um die externe Anmeldeinformationen in Ihrer Website zu aktivieren. Führen Sie die Anwendung, und klicken Sie auf den Anmeldelink in der oberen rechten Ecke. Die Vorlage erkennt automatisch, dass Sie Facebook als Dienstanbieter registriert haben, und eine Schaltfläche für den Anbieter enthält. Wenn Sie mehrere Anbieter registrieren, ist eine Schaltfläche für jeden dieser automatisch mit eingeschlossen.
+Das ist alles, was Sie tun müssen, um externe Anmelde Informationen auf Ihrer Website zu aktivieren. Führen Sie die Anwendung aus, und klicken Sie auf den Anmeldelink in der oberen rechten Ecke. Die Vorlage erkennt automatisch, dass Sie Facebook als Anbieter registriert haben, und schließt eine Schaltfläche für den Anbieter ein. Wenn Sie mehrere Anbieter registrieren, wird automatisch eine Schaltfläche eingefügt.
 
-![externe Anmeldung](using-oauth-providers-with-mvc/_static/image6.png)
+![externer Anmelde Name](using-oauth-providers-with-mvc/_static/image6.png)
 
-Gewusst wie: Anpassen die Anmeldung über die Schaltflächen für die externe Anbieter behandelt in diesem Tutorial nicht. Diese Informationen finden Sie unter [die Anmeldebenutzeroberfläche anpassen, bei Verwendung der OAuth-/OpenID](https://blogs.msdn.com/b/pranav_rastogi/archive/2012/08/24/customizing-the-login-ui-when-using-oauth-openid.aspx).
+In diesem Tutorial wird nicht erläutert, wie die Anmelde Schaltflächen für die externen Anbieter angepasst werden. Diese Informationen finden Sie unter [Anpassen der Anmelde Benutzeroberfläche bei Verwendung von OAuth/OpenID](https://blogs.msdn.com/b/pranav_rastogi/archive/2012/08/24/customizing-the-login-ui-when-using-oauth-openid.aspx).
 
-Klicken Sie auf die Schaltfläche "Facebook", um sich mit Facebook-Anmeldeinformationen anmelden. Wenn Sie einen der externe Anbieter auswählen, werden Sie an diesem Standort umgeleitet und aufgefordert, die von diesen Diensten anmelden.
+Klicken Sie auf die Facebook-Schaltfläche, um sich mit Facebook-Anmelde Informationen anzumelden. Wenn Sie einen der externen Anbieter auswählen, werden Sie zu dieser Site umgeleitet und von diesem Dienst aufgefordert, sich anzumelden.
 
-Die folgende Abbildung zeigt den Anmeldebildschirm für Facebook an. Es enthält einen Hinweis, dass Sie Ihr Facebook-Konto für die Anmeldung an einem Standort mit dem Namen Oauthmvcexample verwenden.
+Die folgende Abbildung zeigt den Anmeldebildschirm für Facebook. Sie werden feststellen, dass Sie Ihr Facebook-Konto verwenden, um sich bei einer Website mit dem Namen oauthmvcexample anzumelden.
 
 ![Facebook-Authentifizierung](using-oauth-providers-with-mvc/_static/image7.png)
 
-Nach der Anmeldung mit Facebook-Anmeldeinformationen informiert der eine Seite den Benutzer, dass die Website zu grundlegenden Informationen zugreifen kann.
+Nach der Anmeldung mit Facebook-Anmelde Informationen wird der Benutzer auf einer Seite informiert, dass die Website Zugriff auf grundlegende Informationen hat.
 
-![Berechtigung](using-oauth-providers-with-mvc/_static/image8.png)
+![Berechtigung anfordern](using-oauth-providers-with-mvc/_static/image8.png)
 
-Nach der Auswahl **wechseln Sie zur App**, muss der Benutzer für die Website registrieren. Die folgende Abbildung zeigt die Registrierungsseite auf, nachdem ein Benutzer sich mit Facebook-Anmeldeinformationen angemeldet hat. Der Benutzername ist mit einem Namen des Anbieters in der Regel bereits vorhanden.
+Nachdem Sie die Option **Gehe zu app**ausgewählt haben, muss sich der Benutzer für die Website registrieren. Die folgende Abbildung zeigt die Registrierungsseite, nachdem sich ein Benutzer mit Facebook-Anmelde Informationen angemeldet hat. Der Benutzername ist in der Regel mit dem Namen des Anbieters vorab ausgefüllt.
 
-![register](using-oauth-providers-with-mvc/_static/image9.png)
+![Registrieren](using-oauth-providers-with-mvc/_static/image9.png)
 
-Klicken Sie auf **registrieren** zum Abschließen der Registrierung. Schließen Sie den Browser.
+Klicken Sie auf **registrieren** , um die Registrierung abzuschließen. Schließen Sie den Browser.
 
-Sie sehen, dass das neue Konto der Datenbank hinzugefügt wurde. Öffnen Sie im Server-Explorer die **DefaultConnection** Datenbank, und öffnen Sie die **Tabellen** Ordner.
+Sie können sehen, dass das neue Konto der Datenbank hinzugefügt wurde. Öffnen Sie in Server-Explorer die Datenbank **DefaultConnection** , und öffnen Sie den Ordner **Tabellen** .
 
 ![Datenbanktabellen](using-oauth-providers-with-mvc/_static/image10.png)
 
-Mit der rechten Maustaste die **UserProfile** Tabelle, und wählen Sie **Tabellendaten anzeigen**.
+Klicken Sie mit der rechten Maustaste auf die Tabelle **UserProfile** , und wählen Sie **Tabellendaten anzeigen**.
 
-![Anzeigen von Daten](using-oauth-providers-with-mvc/_static/image11.png)
+![Daten anzeigen](using-oauth-providers-with-mvc/_static/image11.png)
 
-Das neue Konto wird angezeigt, die, das Sie hinzugefügt haben. Sehen Sie sich die Daten in **Webseite\_OAuthMembership** Tabelle. Sie sehen, mehr Daten, die im Zusammenhang mit der der externe Anbieter für das Konto, das Sie gerade hinzugefügt haben.
+Das neue Konto, das Sie hinzugefügt haben, wird angezeigt. Sehen Sie sich die Daten auf der **Webseite\_oauthmembership** -Tabelle an. Es werden weitere Daten im Zusammenhang mit dem externen Anbieter für das soeben hinzugefügte Konto angezeigt.
 
-Wenn Sie nur die externe Authentifizierung aktivieren möchten, sind Sie fertig. Allerdings können Sie weitere Informationen vom Anbieter in der neuen User Registration-Prozess integrieren, wie in den folgenden Abschnitten gezeigt.
+Wenn Sie nur die externe Authentifizierung aktivieren möchten, sind Sie damit abgeschlossen. Sie können jedoch weitere Informationen vom Anbieter in den neuen Benutzer Registrierungsprozess integrieren, wie in den folgenden Abschnitten dargestellt.
 
-## <a name="create-models-for-additional-user-information"></a>Erstellen von Modellen für zusätzliche Benutzerinformationen
+## <a name="create-models-for-additional-user-information"></a>Erstellen von Modellen für weitere Benutzerinformationen
 
-Wie Sie in den vorherigen Abschnitten bemerkt haben, müssen Sie nicht zum Abrufen zusätzlichen Informationen für die Registrierung integriertes Konto arbeiten. Die meisten externen Anbieter aber auch wieder Weitere Informationen über den Benutzer übergeben. Die folgenden Abschnitte zeigen, wie Sie diese Informationen beibehalten, und speichern Sie ihn in einer Datenbank. Speziell, behält Sie Werte für den vollständigen Benutzernamen, den URI des Benutzers persönliche-Webseite und ein Wert, der angibt, ob es sich bei Facebook das Konto bestätigt wurde.
+Wie Sie in den vorherigen Abschnitten bemerkt haben, müssen Sie keine zusätzlichen Informationen abrufen, damit die integrierte Kontoregistrierung funktioniert. Bei den meisten externen Anbietern werden jedoch zusätzliche Informationen über den Benutzer zurückgegeben. In den folgenden Abschnitten wird gezeigt, wie Sie diese Informationen beibehalten und in einer-Datenbank speichern. Insbesondere behalten Sie Werte für den vollständigen Namen des Benutzers, den URI der persönlichen Webseite des Benutzers und einen Wert, der angibt, ob Facebook das Konto überprüft hat.
 
-Verwenden Sie [Code First-Migrationen](https://msdn.microsoft.com/data/jj591621) zum Hinzufügen einer Tabelle zum Speichern von zusätzlichen Benutzerinformationen. Sie fügen die Tabelle zu einer vorhandenen Datenbank, daher Sie zunächst eine Momentaufnahme der aktuellen Datenbank zu erstellen müssen. Erstellen Sie eine Momentaufnahme der aktuellen Datenbank, können Sie später eine Migration erstellen, die nur die neue Tabelle enthält. So erstellen Sie eine Momentaufnahme der aktuellen Datenbank:
+Sie verwenden [Code First-Migrationen](https://msdn.microsoft.com/data/jj591621) , um eine Tabelle zum Speichern zusätzlicher Benutzerinformationen hinzuzufügen. Wenn Sie die Tabelle einer vorhandenen Datenbank hinzufügen, müssen Sie zunächst eine Momentaufnahme der aktuellen Datenbank erstellen. Wenn Sie eine Momentaufnahme der aktuellen Datenbank erstellen, können Sie später eine Migration erstellen, die nur die neue Tabelle enthält. So erstellen Sie eine Momentaufnahme der aktuellen Datenbank:
 
-1. Öffnen der **-Paket-Manager-Konsole**
-2. Führen Sie den Befehl **Enable-Migrations**
-3. Führen Sie den Befehl **anfängliche hinzufügen-Migration – IgnoreChanges**
-4. Führen Sie den Befehl **Datenbank aktualisieren**
+1. Öffnen der **Paket-Manager-Konsole**
+2. Führen Sie den Befehl **enable-Migrationen** aus.
+3. Führen Sie den Befehl **Add-Migration Initial – ignorechanges** aus.
+4. Ausführen des Befehls " **Update-Database** "
 
-Fügen Sie nun die neuen Eigenschaften. Öffnen der Datei AccountModels.cs im Ordner "Models" und suchen Sie die RegisterExternalLoginModel-Klasse. Die Klasse RegisterExternalLoginModel enthält Werte, die vom Authentifizierungsanbieter zurückkehren. Fügen Sie Eigenschaften, die mit dem Namen "FullName" und den Link unten hervorgehoben.
+Nun fügen Sie die neuen Eigenschaften hinzu. Öffnen Sie im Ordner Models die Datei AccountModels.cs, und suchen Sie die registerexternzumodel-Klasse. Die registerexternzuweisung Model-Klasse enthält Werte, die vom Authentifizierungs Anbieter zurückgegeben werden. Fügen Sie die Eigenschaften "FullName" und "Link" wie unten gezeigt hinzu.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample4.cs?highlight=9-13)]
 
-Fügen Sie auch eine neue Klasse namens ExtraUserInformation in AccountModels.cs, hinzu. Diese Klasse stellt die neue Tabelle, die in der Datenbank erstellt wird.
+Fügen Sie außerdem in AccountModels.cs eine neue Klasse mit dem Namen extrauserinformation hinzu. Diese Klasse stellt die neue Tabelle dar, die in der Datenbank erstellt wird.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample5.cs)]
 
-Fügen Sie in der Klasse UsersContext des hervorgehobenen Codes unten, um eine "DbSet"-Eigenschaft für die neue Klasse zu erstellen.
+Fügen Sie in der userscontext-Klasse den unten markierten Code hinzu, um eine dbset-Eigenschaft für die neue Klasse zu erstellen.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample6.cs?highlight=9)]
 
-Sie sind jetzt bereit, die neue Tabelle zu erstellen. Öffnen Sie die Paket-Manager-Konsole erneut, und dieses Mal:
+Nun können Sie die neue Tabelle erstellen. Öffnen Sie die Paket-Manager-Konsole erneut und dieses Mal:
 
-1. Führen Sie den Befehl **AddExtraUserInformation der hinzufügen-Migration**
-2. Führen Sie den Befehl **Datenbank aktualisieren**
+1. Führen Sie den Befehl **Add-Migration addextrauserinformation** aus.
+2. Ausführen des Befehls " **Update-Database** "
 
-Die neue Tabelle, die jetzt in der Datenbank vorhanden ist.
+Die neue Tabelle ist jetzt in der Datenbank vorhanden.
 
-## <a name="retrieve-the-additional-data"></a>Die zusätzlichen Daten abrufen
+## <a name="retrieve-the-additional-data"></a>Abrufen der zusätzlichen Daten
 
-Es gibt zwei Möglichkeiten, um zusätzliche Daten abzurufen. Die erste Möglichkeit ist Benutzerdaten beibehalten werden sollen, die während der Authentifizierungsanforderung zurück, in der Standardeinstellung übergeben wird. Die zweite Möglichkeit ist, insbesondere die Anbieter-API aufrufen und Weitere Informationen anfordern. Werte für "FullName" und Verbindungen werden automatisch von Facebook übergeben. Ein Wert, der angibt, ob es sich bei Facebook das Konto bestätigt wurde, wird durch einen Aufruf an die Facebook-API abgerufen. Zuerst, füllen Sie Werte für "FullName" und der Link, und klicken Sie dann später erhalten Sie den überprüften Wert.
+Es gibt zwei Möglichkeiten, zusätzliche Benutzerdaten abzurufen. Die erste Möglichkeit besteht darin, Benutzerdaten beizubehalten, die während der Authentifizierungsanforderung standardmäßig zurückgegeben werden. Die zweite Möglichkeit besteht darin, die Anbieter-API speziell aufzurufen und weitere Informationen anzufordern. Werte für FullName und Link werden automatisch von Facebook zurückgegeben. Ein Wert, der angibt, ob Facebook überprüft hat, ob das Konto durch einen-Rückruf der Facebook-API abgerufen wird. Zuerst werden Werte für FullName und Link aufgefüllt, und später wird der überprüfte Wert angezeigt.
 
-Um die zusätzlichen Daten abzurufen, öffnen Sie die **AccountController.cs** Datei die **Controller** Ordner.
+Öffnen Sie die Datei **AccountController.cs** im Ordner **Controllers** , um die zusätzlichen Benutzerdaten abzurufen.
 
-Diese Datei enthält die Logik für die Protokollierung, das Registrieren und Verwalten von Konten. Beachten Sie insbesondere die aufgerufenen Methoden **ExternalLoginCallback** und **ExternalLoginConfirmation**. In diesen Methoden können Sie Code zum Anpassen der externen Anmeldung Vorgänge für Ihre Anwendung hinzufügen. Die erste Zeile der **ExternalLoginCallback** Methode enthält:
+Diese Datei enthält die Logik zum Protokollieren, registrieren und Verwalten von Konten. Beachten Sie insbesondere die Methoden **externzurückruf** und **externzugbestätigung**. Innerhalb dieser Methoden können Sie Code hinzufügen, um externe Anmeldevorgänge für Ihre Anwendung anzupassen. Die erste Zeile der **externzucallback** -Methode enthält Folgendes:
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample7.cs)]
 
-Zusätzliche Benutzerdaten werden wieder in übergeben die **ExtraData** Eigenschaft der **AuthenticationResult** von zurückgegebene Objekt der **VerifyAuthentication** Methode. Der Facebook-Client enthält die folgenden Werte in der **ExtraData** Eigenschaft:
+Zusätzliche Benutzerdaten werden in der **ExtraData** -Eigenschaft des **authenticationresult** -Objekts zurückgegeben, das von der **verifyauthentication** -Methode zurückgegeben wird. Der Facebook-Client enthält die folgenden Werte in der **ExtraData** -Eigenschaft:
 
-- id
-- Name
+- ID
+- name
 - link
-- Geschlecht
-- accesstoken
+- gender
+- Access Token
 
-Andere Anbieter müssen ähnliche, aber leicht unterschiedliche Daten in der ExtraData-Eigenschaft.
+Andere Anbieter weisen ähnliche, aber etwas andere Daten in der ExtraData-Eigenschaft auf.
 
-Wenn der Benutzer noch nicht mit Ihrer Website ist, Sie einige der zusätzlichen Daten abrufen und diese Daten übergeben, um die Anzeige der Bestätigung. Der letzte Codeblock in der Methode ausgeführt wird, nur dann, wenn der Benutzer noch nicht mit Ihrer Website ist. Ersetzen Sie die folgende Zeile:
+Wenn der Benutzer mit der Website neu ist, rufen Sie einige zusätzliche Daten ab, und übergeben Sie diese Daten an die Bestätigungs Ansicht. Der letzte Codeblock in der-Methode wird nur ausgeführt, wenn der Benutzer mit der Website neu ist. Ersetzen Sie die folgende Zeile:
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample8.cs)]
 
@@ -198,72 +198,72 @@ Durch diese Zeile:
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample9.cs)]
 
-Diese Änderung umfasst lediglich die Werte für die Eigenschaften "FullName" und Link.
+Diese Änderung schließt nur Werte für die Eigenschaften FullName und Link ein.
 
-In der **ExternalLoginConfirmation** -Methode, ändern Sie den Code wie unten, um die zusätzliche Benutzerinformationen zu speichern.
+Ändern Sie in der Methode **externdepginconfirmation** den Code wie unten gezeigt, um die zusätzlichen Benutzerinformationen zu speichern.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample10.cs?highlight=4,7-13)]
 
 ## <a name="adjusting-the-view"></a>Anpassen der Ansicht
 
-Die zusätzliche Benutzerdaten, die Sie vom Anbieter abrufen werden auf der Registrierungsseite angezeigt.
+Die zusätzlichen Benutzerdaten, die Sie vom Anbieter abrufen, werden auf der Registrierungsseite angezeigt.
 
-In der **Ansichten**/**Konto** Ordner **ExternalLoginConfirmation.cshtml**. Fügen Sie unterhalb des vorhandenen Felds für den Benutzernamen an für die "FullName", Link und PictureLink Felder hinzu.
+Öffnen Sie im Ordner **views**/**Account** den Ordner **externzuweisungen Confirmation. cshtml**. Fügen Sie unter dem vorhandenen Feld für Benutzername Felder für FullName, Link und PictureLink hinzu.
 
 [!code-cshtml[Main](using-oauth-providers-with-mvc/samples/sample11.cshtml)]
 
-Sie können nun fast bereit, die Anwendung auszuführen, und registrieren einen neuen Benutzer mit den zusätzlichen Informationen gespeichert. Sie müssen ein Konto verfügen, die mit dem Standort noch nicht registriert ist. Sie können entweder verwenden Sie ein Konto anderen Test oder Löschen von Zeilen in der **UserProfile** und **Webseiten\_OAuthMembership** Tabellen für das Konto, die Sie wiederverwenden möchten. Diese Zeilen löschen, werden Sie sicherstellen, dass das Konto erneut registriert wird.
+Sie sind jetzt fast bereit, die Anwendung auszuführen und einen neuen Benutzer mit den zusätzlich gespeicherten Informationen zu registrieren. Sie müssen über ein Konto verfügen, das nicht bereits bei dem Standort registriert ist. Sie können entweder ein anderes Testkonto verwenden oder die Zeilen in den Tabellen " **UserProfile** " und " **Webseiten"\_"oauthmembership** " für das Konto, das Sie wieder verwenden möchten, löschen. Wenn Sie diese Zeilen löschen, stellen Sie sicher, dass das Konto erneut registriert wird.
 
-Führen Sie die Anwendung, und registrieren Sie den neuen Benutzer. Beachten Sie, dass dieses Mal die Seite "Bestätigung" mehrere Werte enthält.
+Führen Sie die Anwendung aus, und registrieren Sie den neuen Benutzer. Beachten Sie, dass die Bestätigungsseite dieses Mal mehr Werte enthält.
 
-![register](using-oauth-providers-with-mvc/_static/image12.png)
+![Registrieren](using-oauth-providers-with-mvc/_static/image12.png)
 
-Schließen Sie nach Abschluss der Registrierung den Browser. Suchen Sie in der Datenbank, beachten Sie, dass die neuen Werte in der **ExtraUserInformation** Tabelle.
+Nachdem Sie die Registrierung abgeschlossen haben, schließen Sie den Browser. Suchen Sie in der Datenbank nach den neuen Werten in der Tabelle **extrauserinformation** .
 
-## <a name="install-nuget-package-for-facebook-api"></a>Installieren von NuGet-Paket für die Facebook-API
+## <a name="install-nuget-package-for-facebook-api"></a>Installieren des nuget-Pakets für die Facebook-API
 
-Facebook bietet einen [API](https://developers.facebook.com/docs/reference/apis/) können Sie aufrufen, um Vorgänge auszuführen. Sie können die Facebook-API aufrufen, Senden von HTTP-Anforderungen weitergeleitet, oder mit der Installation eines NuGet-Pakets, das ermöglicht, diese Anforderungen zu senden. In diesem Tutorial wird mithilfe eines NuGet-Pakets dargestellt, aber Installieren von NuGet-Paket ist nicht wichtig. Dieses Tutorial zeigt, wie das C# Facebook-SDK-Paket verwenden wird. Es gibt andere NuGet-Pakete, die beim Aufrufen der Facebook-API unterstützen.
+Facebook stellt eine [API](https://developers.facebook.com/docs/reference/apis/) zur Verfügung, die Sie zum Ausführen von Vorgängen aufzurufen können. Sie können die Facebook-API aufrufen, indem Sie das Senden von HTTP-Anforderungen oder das Installieren eines nuget-Pakets, das das Senden dieser Anforderungen erleichtert, verwenden. Das Verwenden eines nuget-Pakets wird in diesem Tutorial gezeigt, aber das Installieren des nuget-Pakets ist nicht zwingend erforderlich. In diesem Tutorial wird gezeigt, wie das C# Facebook SDK-Paket verwendet wird. Es gibt andere nuget-Pakete, die beim Aufrufen der Facebook-API hilfreich sind.
 
-Von der **NuGet-Pakete verwalten** Windows, wählen Sie das Facebook-C# SDK-Paket.
+Wählen Sie im Fenster **nuget-Pakete verwalten** das Facebook C# SDK-Paket aus.
 
 ![Paket installieren](using-oauth-providers-with-mvc/_static/image13.png)
 
-Sie werden das Facebook C# SDK verwenden, um einen Vorgang aufrufen, der das Zugriffstoken für den Benutzer erforderlich sind. Im nächsten Abschnitt erfahren, wie Sie das Zugriffstoken abzurufen.
+Sie verwenden das Facebook C# -SDK zum Aufrufen eines Vorgangs, der das Zugriffs Token für den Benutzer erfordert. Im nächsten Abschnitt wird gezeigt, wie Sie das Zugriffs Token abrufen.
 
-## <a name="retrieve-access-token"></a>Abrufen von Zugriffstoken
+## <a name="retrieve-access-token"></a>Zugriffs Token abrufen
 
-Die meisten externen Anbieter übergeben ein Zugriffstoken für den wieder, nachdem die Anmeldeinformationen des Benutzers überprüft werden. Dieses Zugriffstoken ist sehr wichtig, weil dadurch, dass Sie zum Aufrufen von Vorgängen, die nur für authentifizierte Benutzer verfügbar sind. Aus diesem Grund unbedingt abrufen und speichern das Zugriffstoken, wenn Sie weitere Funktionen bereitstellen möchten.
+Die meisten externen Anbieter geben ein Zugriffs Token zurück, nachdem die Anmelde Informationen des Benutzers überprüft wurden. Dieses Zugriffs Token ist sehr wichtig, da es Ihnen ermöglicht, Vorgänge aufzurufen, die nur für authentifizierte Benutzer verfügbar sind. Daher ist es erforderlich, das Zugriffs Token abzurufen und zu speichern, wenn Sie mehr Funktionalität bereitstellen möchten.
 
-Abhängig von der externe Anbieter kann das Zugriffstoken für nur einen begrenzten Zeitraum gültig sein. Um sicherzustellen, dass Sie ein gültiges Zugangstoken verfügen, werden Sie abrufen, es jedes Mal, die der Benutzer anmeldet, und speichern ihn als einen Sitzungswert statt in einer Datenbank speichern.
+Abhängig vom externen Anbieter ist das Zugriffs Token möglicherweise nur für einen begrenzten Zeitraum gültig. Um sicherzustellen, dass Sie über ein gültiges Zugriffs Token verfügen, rufen Sie es jedes Mal ab, wenn sich der Benutzer anmeldet, und speichern Sie es als Sitzungs Wert, anstatt es in einer Datenbank zu speichern.
 
-In der **ExternalLoginCallback** -Methode, das Zugriffstoken auch wieder in übergeben die **ExtraData** Eigenschaft der **AuthenticationResult** Objekt. Fügen Sie den hervorgehobenen Code **ExternalLoginCallback** , speichern Sie das Zugriffstoken in der **Sitzung** Objekt. Dieser Code ausgeführt wird, jedes Mal, wenn der Benutzer mit einer Facebook-Konto anmeldet.
+In der **externzurückcallback** -Methode wird das Zugriffs Token auch in der **ExtraData** -Eigenschaft des **authenticationresult** -Objekts zurückgegeben. Fügen Sie den hervorgehobenen Code **externzurückcallback** hinzu, um das Zugriffs Token im **Sitzungs** Objekt zu speichern. Dieser Code wird jedes Mal ausgeführt, wenn sich der Benutzer mit einem Facebook-Konto anmeldet.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample12.cs?highlight=11-14)]
 
-Obwohl in diesem Beispiel ein Zugriffstoken von Facebook abgerufen werden, können Sie das Zugriffstoken von einem externen Anbieter abrufen, über den gleichen Schlüssel, die mit dem Namen &quot;Accesstoken&quot;.
+Obwohl in diesem Beispiel ein Zugriffs Token von Facebook abgerufen wird, können Sie das Zugriffs Token von einem beliebigen externen Anbieter über denselben Schlüssel mit dem Namen &quot;Access Token&quot;abrufen.
 
 ## <a name="logging-off"></a>Abmelden
 
-Der Standardwert **Abmeldung** -Methode meldet den Benutzer von Ihrer Anwendung, aber den Benutzer bei der externe Anbieter werden nicht protokolliert. Um den Benutzer bei Facebook anmelden und zu verhindern, dass das Token beibehalten, nachdem der Benutzer abgemeldet hat, Sie können den folgenden hervorgehobenen Code zum Hinzufügen der **Abmeldung** -Methode in der AccountController-Komponente.
+Mit der **Standardmethode** für die Abmeldung wird der Benutzer von der Anwendung abgemeldet, der Benutzer wird jedoch nicht vom externen Anbieter protokolliert. Um den Benutzer von Facebook zu protokollieren und zu verhindern, dass das Token beibehalten wird, nachdem sich der Benutzer abgemeldet hat, können Sie den folgenden hervorgehobenen Code der **Logoff** -Methode in AccountController hinzufügen.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample13.cs?highlight=6-14)]
 
-Der Wert in der `next` Parameter ist die URL verwenden, nachdem der Benutzer aus Facebook angemeldet hat. Wenn Sie auf dem lokalen Computer testen möchten, würden Sie die richtige Portnummer für den lokalen Standort bereitstellen. In einer produktionsumgebung würden Sie eine Standardseite, z. B. "contoso.com" angeben.
+Der Wert, den Sie im `next`-Parameter angeben, ist die URL, die verwendet werden soll, nachdem sich der Benutzer von Facebook abgemeldet hat. Wenn Sie auf dem lokalen Computer testen, geben Sie die richtige Portnummer für den lokalen Standort ein. In der Produktionsumgebung geben Sie eine Standardseite an, z. b. contoso.com.
 
-## <a name="retrieve-user-information-that-requires-the-access-token"></a>Abrufen von Benutzerinformationen, mit denen das Zugriffstoken ist erforderlich.
+## <a name="retrieve-user-information-that-requires-the-access-token"></a>Abrufen von Benutzerinformationen, für die das Zugriffs Token erforderlich ist
 
-Nun, dass Sie das Zugriffstoken gespeichert und das Paket C# Facebook-SDK installiert, können diese zusammen Sie zusätzliche Benutzerinformationen von Facebook angefordert. In der **ExternalLoginConfirmation** -Methode, erstellen Sie eine Instanz von der **FacebookClient** Klasse übergibt den Wert des Zugriffstokens. Den Wert der Anforderung der **überprüft** -Eigenschaft für den aktuellen authentifizierten Benutzer. Die **überprüft** Eigenschaft gibt an, ob es sich bei Facebook, das Konto über andere Weise, wie z. B. das Senden einer Nachricht an ein Mobiltelefon überprüft wurde. Speichern Sie diesen Wert in der Datenbank.
+Nachdem Sie nun das Zugriffs Token gespeichert und das Facebook C# SDK-Paket installiert haben, können Sie diese kombinieren, um weitere Benutzerinformationen von Facebook anzufordern. Erstellen Sie in der **externzuzubestätigungs** -Methode eine Instanz der **facebookclient** -Klasse, indem Sie den Wert des Zugriffs Tokens übergeben. Fordert den Wert der **verifizierten** Eigenschaft für den aktuellen authentifizierten Benutzer an. Mit der **verifizierten** Eigenschaft wird angegeben, ob Facebook das Konto auf andere Weise überprüft hat, z. b. das Senden einer Nachricht an ein Mobiltelefon. Speichern Sie diesen Wert in der Datenbank.
 
 [!code-csharp[Main](using-oauth-providers-with-mvc/samples/sample14.cs?highlight=7-18,25)]
 
-Sie müssen es löschen Sie die Datensätze in der Datenbank für den Benutzer oder ein anderes Facebook-Konto verwenden.
+Sie müssen die Datensätze in der Datenbank für den Benutzer entweder löschen oder ein anderes Facebook-Konto verwenden.
 
-Führen Sie die Anwendung, und registrieren Sie den neuen Benutzer. Sehen Sie sich die **ExtraUserInformation** Tabelle, um den Wert für die überprüfte Eigenschaft anzuzeigen.
+Führen Sie die Anwendung aus, und registrieren Sie den neuen Benutzer. Sehen Sie sich die Tabelle **extrauserinformation** an, um den Wert für die überprüfte Eigenschaft anzuzeigen.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Tutorial haben Sie eine Website, die in Facebook, für die Benutzerauthentifizierung und Registrierungsdaten integriert ist erstellt. Sie haben über die das Standardverhalten, das für MVC 4-Webanwendung, und wie Sie das Standardverhalten anpassen eingerichtet ist.
+In diesem Tutorial haben Sie eine Website erstellt, die für Benutzerauthentifizierung und Registrierungsdaten in Facebook integriert ist. Sie haben das Standardverhalten kennengelernt, das für die MVC 4-Webanwendung eingerichtet ist, und wie Sie dieses Standardverhalten anpassen.
 
 ## <a name="related-topics"></a>Verwandte Themen
 
-- [Erstellen einer ASP.NET MVC-app mit Authentifizierung und SQL-Datenbank und Bereitstellen in Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)
+- [Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)

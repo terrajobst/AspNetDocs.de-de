@@ -1,271 +1,271 @@
 ---
 uid: mvc/overview/views/using-page-inspector-in-aspnet-mvc
-title: Verwenden der Seitenprüfung in ASP.NET MVC | Microsoft-Dokumentation
+title: Verwenden von Seitenprüfung in ASP.NET MVC | Microsoft-Dokumentation
 author: rick-anderson
-description: Der Seitenprüfung in Visual Studio 2012 ist ein Webentwicklungstool mit einem integrierten Browser. Auswählen eines Elements in der integrierten Browser, und klicken Sie auf der Seitenprüfung i...
+description: Seitenprüfung in Visual Studio 2012 ist ein Webentwicklungs Tool mit einem integrierten Browser. Wählen Sie ein beliebiges Element im integrierten Browser aus, und Seitenprüfung...
 ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126351"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432453"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>Verwenden der Seitenprüfung in ASP.NET MVC
 
 von Tim Ammann
 
-> Der Seitenprüfung in Visual Studio 2012 ist ein Webentwicklungstool mit einem integrierten Browser. Auswählen eines Elements in der integrierten Browser und der Seitenprüfung sofort hervorgehoben, Quell- und CSS-des-Elements. Sie können eine MVC-Ansicht navigieren, finden die Quellen der gerenderten Markup, und schnell Browsertools direkt in Visual Studio-Umgebung verwenden.
+> Seitenprüfung in Visual Studio 2012 ist ein Webentwicklungs Tool mit einem integrierten Browser. Wählen Sie ein beliebiges Element im integrierten Browser aus, und Seitenprüfung die Quelle und das CSS des Elements sofort hervorheben. Sie können eine beliebige MVC-Ansicht durchsuchen, schnell nach den Quellen des gerenderten Markups suchen und die Browser Tools direkt in der Visual Studio-Umgebung verwenden.
 > 
 > [Video ansehen](../../videos/mvc-4/using-page-inspector-in-aspnet-mvc.md)
 > 
-> Dieses Tutorial veranschaulicht, wie Überprüfungsmodus zu aktivieren und schnell suchen und Bearbeiten von Markup und CSS in Ihrer Webprojekt. Das Tutorial verwendet ein MVC-Projekt, aber Sie können auch die Seitenprüfung für [Web Forms](https://go.microsoft.com/?linkid=9802001) und anderen ASP.NET-Anwendungen.
+> In diesem Tutorial wird gezeigt, wie Sie Überprüfungsmodus aktivieren und dann schnell Markup und CSS innerhalb des Webprojekts suchen und bearbeiten können. Im Tutorial wird ein MVC-Projekt verwendet, aber Sie können auch Seitenprüfung für [Web Forms](https://go.microsoft.com/?linkid=9802001) und andere ASP.NET-Anwendungen verwenden.
 > 
 > Das Tutorial enthält die folgenden Abschnitte:
 > 
 > - [Erforderliche Komponenten](#_1_prerequisites)
 > - [Erstellen einer Webanwendung](#_2_creating_a)
-> - [Verwenden der Seitenprüfung, navigieren Sie zu einer Ansicht](#_3_using_page)
-> - [Überprüfungsmodus zu aktivieren](#_4_inspection_mode)
-> - [Verwenden der Seitenprüfung Markup ändern](#_5_using_page)
-> - [Überprüfungsmodus und HTML-Fenster](#_6_inspection_mode)
-> - [Vorschau der CSS-Änderungen im Fenster Stile](#_7_previewing_css)
-> - [CSS Auto Sync](#css_auto_sync)
-> - [Mithilfe der CSS-Farbauswahl](#css_color_picker)
-> - [Zuordnen von dynamische Seitenelemente zu JavaScript](#map_dynamic_elements)
+> - [Verwenden Sie Seitenprüfung, um zu einer Ansicht zu navigieren.](#_3_using_page)
+> - [Aktivieren von Überprüfungsmodus](#_4_inspection_mode)
+> - [Verwenden von Seitenprüfung zum vornehmen von Änderungen an Markup](#_5_using_page)
+> - [Überprüfungsmodus und das HTML-Fenster](#_6_inspection_mode)
+> - [Anzeigen einer Vorschau von CSS-Änderungen im Fenster "Stile"](#_7_previewing_css)
+> - [Automatische CSS-Synchronisierung](#css_auto_sync)
+> - [Verwenden der CSS-Farbauswahl](#css_color_picker)
+> - [Zuordnung dynamischer Seitenelemente zu JavaScript](#map_dynamic_elements)
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) oder [Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) oder [Visual Studio Express 2012 für das Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
-> Rufen Sie die neueste Version der Seitenprüfung mit [Webplattform-Installer](https://go.microsoft.com/fwlink/?LinkId=255386) Windows Azure SDK für .NET 2.0 zu installieren.
+> Um die neueste Version von Seitenprüfung zu erhalten, verwenden Sie den [Webplattform-Installer](https://go.microsoft.com/fwlink/?LinkId=255386) , um das Windows Azure SDK für .NET 2,0 zu installieren.
 
-Die Seitenprüfung ist Microsoft Web Developer Tools enthalten. Die neueste Version ist 1.3. Um die Version haben Sie, Visual Studio ausführen, und wählen Sie **Info zu Microsoft Visual Studio** aus der **Hilfe** Menü.
+Seitenprüfung ist mit Microsoft Web Developer Tools gebündelt. Die neueste Version ist 1,3. Um zu überprüfen, welche Version Sie besitzen, führen Sie Visual Studio aus, und wählen **Microsoft Visual Studio** Sie im Menü **Hilfe** die Option Info aus.
 
 <a id="_creating_a_web"></a><a id="_2_creating_a"></a>
 
 ## <a name="create-a-web-application"></a>Erstellen einer Webanwendung
 
-Erstellen Sie zunächst eine Webanwendung, der Seitenprüfung mit verwendet werden. Wählen Sie in Visual Studio **Datei** &gt; **neues Projekt**. Erweitern Sie auf der linken Seite **Visual C#-** Option **Web**, und wählen Sie dann **ASP.NET MVC 4-Webanwendung**.
+Erstellen Sie zunächst eine Webanwendung, die Sie mit Seitenprüfung verwenden werden. Wählen Sie in Visual Studio **Datei** &gt; **Neues Projekt**aus. Erweitern Sie auf der linken **Seite C#Visualisierung** , wählen Sie **Web**aus, und wählen Sie dann **ASP.net MVC4 Webanwendung**aus.
 
-![Neue ASP.NET MVC-Anwendung](using-page-inspector-in-aspnet-mvc/_static/image2.png)
+![Neue ASP.NET-MVC-Anwendung](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
 Klicken Sie auf **OK**.
 
-In der **neues ASP.NET MVC 4-Projekt** wählen Sie im Dialogfeld **Internetanwendung**. Lassen Sie **Razor** als die standardansichts-Engine.
+Wählen Sie im Dialogfeld **Neues ASP.NET MVC 4-Projekt** die Option **Internet Anwendung**aus. Belassen Sie **Razor** als Standard Ansichts-Engine.
 
-![Neues ASP.NET MVC-Projekt – Internetanwendung](using-page-inspector-in-aspnet-mvc/_static/image4.png)
+![Neues ASP.NET MVC-Projekt-Internet Anwendung](using-page-inspector-in-aspnet-mvc/_static/image4.png)
 
-Öffnet die Anwendung in **Quelle** anzeigen.
+Die Anwendung wird in der **Quell** Ansicht geöffnet.
 
-![Neue ASP.NET MVC-Anwendung in der Quellansicht](using-page-inspector-in-aspnet-mvc/_static/image6.png)
+![Neue ASP.NET MVC-Anwendung in der Quell Ansicht](using-page-inspector-in-aspnet-mvc/_static/image6.png)
 
-Nun, da Sie eine Anwendung gearbeitet haben, können Sie der Seitenprüfung verwenden, überprüfen und ändern Sie sie.
+Nachdem Sie nun über eine Anwendung verfügen, mit der Sie arbeiten können, können Sie Seitenprüfung verwenden, um Sie zu überprüfen und zu ändern.
 
 <a id="_starting_page_inspector"></a><a id="_3_using_page"></a>
 
-## <a name="use-page-inspector-to-browse-to-a-view"></a>Verwenden der Seitenprüfung, navigieren Sie zu einer Ansicht
+## <a name="use-page-inspector-to-browse-to-a-view"></a>Verwenden Sie Seitenprüfung, um zu einer Ansicht zu navigieren.
 
-In Visual Studio 2012, Sie können mit der rechten Maustaste einer beliebigen Ansicht in das Projekt, wählen **in Seitenprüfung anzeigen**, Page Inspector wird ermitteln, die Route und die Seite angezeigt.
+In Visual Studio 2012 können Sie mit der rechten Maustaste auf eine beliebige Ansicht in Ihrem Projekt klicken, **in Seitenprüfung anzeigen**auswählen und Seitenprüfung die Route herausfinden und die Seite anzeigen.
 
-In **Projektmappen-Explorer**, erweitern Sie die **Ansichten** Ordner und klicken Sie dann die **Startseite** Ordner. Klicken Sie mit der rechten Maustaste auf die Datei "Index.cshtml", und wählen Sie **in Seitenprüfung anzeigen**.
+Erweitern Sie in **Projektmappen-Explorer**den Ordner " **views** " und dann den Ordner " **Home** ". Klicken Sie mit der rechten Maustaste auf die Datei index. cshtml, und wählen Sie **in Seitenprüfung anzeigen**.
 
-![Ansicht "Index.cshtml" in der Seitenprüfung](using-page-inspector-in-aspnet-mvc/_static/image8.png)
+![Index. cshtml in Seitenprüfung anzeigen](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-Standardmäßig wird der Seitenprüfung auf der linken Seite der Visual Studio-Umgebung als Fenster angedockt. Falls gewünscht, können Sie an anderer Stelle andocken, oder lösen das Fenster. Weitere Informationen finden Sie unter [How to: Arrange and Dock Windows (Vorgehensweise: Anordnen und Andocken von Fenstern)](https://msdn.microsoft.com/library/z4y0hsax.aspx).
+Standardmäßig ist Seitenprüfung als Fenster auf der linken Seite der Visual Studio-Umgebung angedockt. Wenn Sie es vorziehen, können Sie es an anderer Stelle andocken oder das Fenster Abdocken. Siehe Gewusst [wie: anordnen und Andocken von Fenstern](https://msdn.microsoft.com/library/z4y0hsax.aspx).
 
-Im obere Bereich des Fensters die Seitenprüfung zeigt die aktuelle Seite in einem Browserfenster angezeigt. Im unteren Bereich zeigt die Seite im HTML-Markup verwendet werden, sowie einige Registerkarten, mit die Sie verschiedene Aspekte der Seite untersuchen können. Der untere Bereich ist ähnlich wie die [F12-Entwicklertools](https://msdn.microsoft.com/ie/aa740478) in Internet Explorer.
+Im oberen Bereich des Fensters Seitenprüfung wird die aktuelle Seite in einem Browserfenster angezeigt. Im unteren Bereich wird die Seite im HTML-Markup angezeigt, zusammen mit einigen Registerkarten, mit denen Sie verschiedene Aspekte der Seite untersuchen können. Der untere Bereich ähnelt dem [Entwicklertools F12](https://msdn.microsoft.com/ie/aa740478) in Internet Explorer.
 
-![ASP.NET MVC-Anwendung in der Seitenprüfung](using-page-inspector-in-aspnet-mvc/_static/image10.png)
+![ASP.NET MVC-Anwendung in Seitenprüfung](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 
-In diesem Tutorial verwenden Sie die **HTML** und **Stile** Registerkarten, navigieren schnell, und nehmen Sie Änderungen an der Anwendung.
+In diesem Tutorial verwenden Sie die Registerkarten **HTML** und **Stile** , um schnell zu navigieren und Änderungen an der Anwendung vorzunehmen.
 
 <a id="_examining_(&quot;decomposing&quot;)_the"></a><a id="_inspection_mode_and"></a><a id="_4_inspection_mode"></a>
 
-## <a name="enableinspection-mode"></a>EnableInspection-Modus
+## <a name="enableinspection-mode"></a>Enableinspection-Modus
 
-Um die Seitenprüfung in den Überprüfungsmodus zu versetzen, klicken Sie auf die **prüfen** Schaltfläche. Bei aktiviertem Überprüfungsmodus im Wenn Sie den Mauszeiger über einen beliebigen Teil der gerenderten Seite halten wird das entsprechende Quellmarkup oder der Code hervorgehoben.
+Um Seitenprüfung in Überprüfungsmodus einzufügen, klicken Sie auf die Schaltfläche über **prüfen** . Wenn Sie in Überprüfungsmodus den Mauszeiger über einen Teil der gerenderten Seite halten, wird das entsprechende Quell Markup oder der Code hervorgehoben.
 
 ![Überprüfungsmodus umschalten](using-page-inspector-in-aspnet-mvc/_static/image12.png)
 
-Jetzt können bewegen Sie die Maus über verschiedene Teile der Seite innerhalb der Seitenprüfung. Wie Sie dies tun, wird der Mauszeiger ändert sich zu einem großen Pluszeichen, und untergeordnete Element wird hervorgehoben:
+Bewegen Sie nun den Mauszeiger über verschiedene Teile der Seite in Seitenprüfung. Wie Sie dies tun, ändert sich der Mauszeiger in ein großes Pluszeichen, und das untergeordnete Element wird hervorgehoben:
 
-![Mit dem Mauszeiger auf div.content-Wrappers](using-page-inspector-in-aspnet-mvc/_static/image14.png)
+![Zeigen Sie mit dem Mauszeiger auf div. Content-Wrapper](using-page-inspector-in-aspnet-mvc/_static/image14.png)
 
-Wenn Sie den Mauszeiger bewegen, werden Visual Studio die entsprechende Razor-Syntax in der Quelldatei hervorgehoben. Wenn das HTML-Element aus einer anderen Quelldatei stammt, wird Visual Studio automatisch die Datei geöffnet.
+Wenn Sie den Mauszeiger bewegen, werden die entsprechenden Razor-Syntax in der Quelldatei von Visual Studio hervorgehoben. Wenn das HTML-Element aus einer anderen Quelldatei stammt, wird die Datei automatisch von Visual Studio geöffnet.
 
-In der Seitenprüfung die **HTML** Registerkarte zeigt den HTML-Code, der von der Razor-Syntax generiert wurde. Wenn Sie den Mauszeiger bewegen, werden die HTML-Elemente hervorgehoben. Die **Stile** Registerkarte zeigt die CSS-Regeln für das Element.
+In Seitenprüfung zeigt die Registerkarte **HTML** den HTML-Code an, der aus dem Razor-Syntax generiert wurde. Wenn Sie den Mauszeiger bewegen, werden die HTML-Elemente hervorgehoben. Auf der Registerkarte **Stile** werden die CSS-Regeln für das-Element angezeigt.
 
 <a id="_5_using_page"></a>
 
-## <a name="use-page-inspector-to-make-changes-to-markup"></a>Verwenden der Seitenprüfung Markup ändern
+## <a name="use-page-inspector-to-make-changes-to-markup"></a>Verwenden von Seitenprüfung zum vornehmen von Änderungen an Markup
 
-Der Seitenprüfung können Sie Markup finden, deren Speicherort möglicherweise nicht offensichtlich. Sie können dann ändern Sie das Markup und finden Sie die Änderungen.
+Mit Seitenprüfung können Sie Markup suchen, dessen Speicherort möglicherweise nicht offensichtlich ist. Anschließend können Sie das Markup ändern und die resultierenden Änderungen anzeigen.
 
-Um dies zu sehen, klicken Sie auf **prüfen** und führen Sie einen Bildlauf zum unteren Rand der Seite im Fenster der Seitenprüfung.
+Um dies zu sehen, klicken Sie auf über **prüfen** , und Scrollen Sie dann im Seitenprüfung Fenster zum unteren Rand der Seite.
 
-Wenn Sie den Mauszeiger in den Footerbereich verschieben, wird die Seitenprüfung öffnet die \_Layout.cshtml-Datei und hebt Sie im Abschnitt der Layoutseite, die Sie ausgewählt haben. Wie Sie sehen können, sind die Fußzeile in die Layoutdatei und nicht die Ansicht selbst definiert ist.
+Wenn Sie den Mauszeiger in den Footerbereich bewegen, öffnet Seitenprüfung die Datei \_Layout. cshtml und hebt den Abschnitt der Layoutseite hervor, die Sie ausgewählt haben. Wie Sie sehen, wird der Fußzeile in der Layoutdatei und nicht in der Ansicht selbst definiert.
 
 ![Fußzeile](using-page-inspector-in-aspnet-mvc/_static/image16.png)
 
-Verschieben Sie den Mauszeiger jetzt auf die Zeile mit dem Copyright <a id="a"> </a>beachten. In der \_Layout.cshtml-Seite, die entsprechende Zeile wird hervorgehoben.
+Bewegen Sie nun den Mauszeiger über die Zeile mit dem <a id="a"> </a>Urheberrechts Hinweis. Auf der Seite \_Layout. cshtml wird die entsprechende Zeile hervorgehoben.
 
-![Hervorgehobene Zeile der Fußzeile-copyright](using-page-inspector-in-aspnet-mvc/_static/image18.png)
+![Vorder-und-Fußzeile hervorgehoben](using-page-inspector-in-aspnet-mvc/_static/image18.png)
 
-Hinzufügen von Text an das Ende der Zeile in der \_Layout.cshtml-Datei.
+Fügen Sie am Ende der Zeile in der Datei \_Layout. cshtml Text hinzu.
 
-&lt;p&gt;&amp;kopieren; @DateTime.Now.Year -Meine ASP.NET MVC-Anwendung um eine gelungene!  &lt; /p&gt;
+&lt;p&gt;&amp;kopieren; @DateTime.Now.Year-My ASP.NET MVC-Anwendungs Felsen!&lt;/p&gt;
 
-Jetzt drücken Sie Strg + Alt + Eingabe, oder klicken Sie auf die Update-Leiste zum Anzeigen der Ergebnisse im Fenster Browser der Seitenprüfung.
+Drücken Sie nun Strg + Alt + Eingabe, oder klicken Sie auf die Update Leiste, um die Ergebnisse im Seitenprüfung Browserfenster anzuzeigen.
 
-![Meine ASP.NET Application Rocks!](using-page-inspector-in-aspnet-mvc/_static/image20.png)
+![My ASP.NET Application Rocks!](using-page-inspector-in-aspnet-mvc/_static/image20.png)
 
-Sie können daran gedacht, dass die Fußzeile in die Datei "Index.cshtml" definiert, aber es stellte sich heraus in der \_Layout.cshtml, und die Seitenprüfung, die sie für Sie gefunden.
+Sie haben vielleicht schon einmal gedacht, dass der Fußzeile in der Datei "index. cshtml" definiert ist, sich jedoch im \_"Layout. cshtml" befunden hat und Seitenprüfung ihn für Sie gefunden hat.
 
 <a id="_inspection_mode_and_1"></a><a id="_6_inspection_mode"></a>
 
-## <a name="inspection-mode-and-the-html-window"></a>Überprüfungsmodus und HTML-Fenster
+## <a name="inspection-mode-and-the-html-window"></a>Überprüfungsmodus und das HTML-Fenster
 
-Als Nächstes müssen Sie einen kurzen Blick auf die HTML-Fenster, und wie sie Elemente für Sie zugeordnet.
+Im nächsten Schritt sehen Sie sich das HTML-Fenster und die Art der Zuordnung von Elementen an.
 
-Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren.
+Klicken Sie auf über **prüfen** , um Seitenprüfung in Überprüfungsmodus einzufügen.
 
-Klicken Sie auf den oberen Teil der Seite die Fehlermeldung "Ihr Logo hier einfügen". Untersuchen Sie ein bestimmtes Element im Detail, damit die Anzeige im Browserfenster nicht mehr geändert werden, wie Sie den Mauszeiger bewegen.
+Klicken Sie auf den oberen Teil der Seite, der "Ihr Logo hier" anzeigt. Sie untersuchen ein bestimmtes Element ausführlicher, sodass sich die Anzeige im Browserfenster nicht mehr ändert, wenn Sie den Mauszeiger bewegen.
 
-Nun verschieben Sie den Mauszeiger an die **HTML** Fenster. Während Sie den Mauszeiger bewegen, wird der Seitenprüfung beschrieben, das Element innerhalb der **HTML** Fenster und das entsprechende Element im Browserfenster hervorgehoben.
+Bewegen Sie nun den Mauszeiger auf das **HTML** -Fenster. Wenn Sie den Mauszeiger bewegen, wird Seitenprüfung das Element innerhalb des **HTML** -Fensters umrissen und das entsprechende Element im Browserfenster hervorgehoben.
 
 ![HTML-Fenster](using-page-inspector-in-aspnet-mvc/_static/image22.png)
 
-Wie zuvor die Seitenprüfung öffnet die \_Layout.cshtml-Datei für Sie in eine temporäre Registerkarte. Klicken Sie auf die \_Layout.cshtml temporäre Registerkarte, und das entsprechende Markup markiert die &lt;Header&gt; Abschnitt für Sie:
+Wie zuvor öffnet Seitenprüfung die Datei "\_Layout. cshtml" für Sie auf einer temporären Registerkarte. Klicken Sie auf die Registerkarte "\_Layout. cshtml", und das entsprechende Markup wird im Abschnitt &lt;Header&gt; für Sie hervorgehoben:
 
-![Hervorgehobene markup](using-page-inspector-in-aspnet-mvc/_static/image24.png)
+![Hervorgehobene Markup](using-page-inspector-in-aspnet-mvc/_static/image24.png)
 
 <a id="_using_page_inspector"></a><a id="_7_previewing_css"></a>
 
-## <a name="preview-css-changes-in-the-styles-window"></a>Vorschau der CSS-Änderungen im Fenster Stile
+## <a name="preview-css-changes-in-the-styles-window"></a>Anzeigen einer Vorschau von CSS-Änderungen im Fenster "Stile"
 
-Als Nächstes verwenden Sie die Seitenprüfung **Stile** Fenster Vorschau der Änderungen an CSS.
+Im nächsten Schritt verwenden Sie das Fenster Seitenprüfung **Stile** , um eine Vorschau der Änderungen an CSS anzuzeigen.
 
-Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren.
+Klicken Sie auf über **prüfen** , um Seitenprüfung in Überprüfungsmodus einzufügen.
 
-Verschieben Sie im Fenster Browser der Seitenprüfung den Mauszeiger über den Abschnitt "Startseite", bis die **div.content-Wrappers** Bezeichnung angezeigt wird.
+Bewegen Sie im Seitenprüfung Browserfenster den Mauszeiger über den Abschnitt "Home Page", bis die **div. Content-Wrapper-** Bezeichnung angezeigt wird.
 
-![Mit dem Mauszeiger auf div.content-Wrappers](using-page-inspector-in-aspnet-mvc/_static/image26.png)
+![Zeigen Sie mit dem Mauszeiger auf div. Content-Wrapper](using-page-inspector-in-aspnet-mvc/_static/image26.png)
 
-Klicken Sie im Abschnitt div.content-Wrappers einmal, und verschieben Sie den Mauszeiger an die **Stile** Fenster. Die **Stile** Fenster zeigt alle CSS-Regeln für dieses Element. Scrollen Sie zur Klassenselektor Suchen der .featured .content-Wrapper. Deaktivieren Sie nun das Kontrollkästchen für die Background-Color-Eigenschaft.
+Klicken Sie einmal in den Abschnitt div. Content-Wrapper, und bewegen Sie den Mauszeiger auf das Fenster **Stile** . Im Fenster **Stile** werden alle CSS-Regeln für dieses Element angezeigt. Scrollen Sie nach unten, um die. Featured. Content-Wrapper-Klassenauswahl zu suchen. Deaktivieren Sie nun das Kontrollkästchen für die Eigenschaft Hintergrundfarbe.
 
-![Clear-Hintergrundfarbe](using-page-inspector-in-aspnet-mvc/_static/image28.png)
+![Hintergrundfarbe löschen](using-page-inspector-in-aspnet-mvc/_static/image28.png)
 
-Beachten Sie, wie die Änderung sofort im Browser der Seitenprüfung-Fenster zeigt in der Vorschau.
+Beachten Sie, dass die Änderungs Vorschau sofort im Seitenprüfung Browserfenster angezeigt wird.
 
-Wählen Sie das Kontrollkästchen erneut aus, doppelklicken Sie auf den Wert der Eigenschaft, und ändern Sie es sich in Rot. Die Änderung wird sofort aus:
+Aktivieren Sie das Kontrollkästchen erneut, doppelklicken Sie auf den Eigenschafts Wert, und ändern Sie ihn in rot. Die Änderung wird sofort angezeigt:
 
 ![Rote Hintergrundfarbe](using-page-inspector-in-aspnet-mvc/_static/image30.png)
 
-Die **Stile** Fenster macht es einfach, test und Vorschau CSS Änderungen erforderlich, bevor die Änderungen zu, um den Stil übernehmen Stylesheet selbst.
+Das Fenster **Stile** vereinfacht das Testen und die Vorschau von CSS-Änderungen, bevor Sie die Änderungen im Stylesheet selbst übertragen.
 
 <a id="css_auto_sync"></a>
 ## <a name="css-auto-sync"></a>Automatische CSS-Synchronisierung
 
 > [!NOTE]
-> Dieses Feature erfordert Version 1.3 der Seitenprüfung.
+> Diese Funktion erfordert die Version 1,3 von Seitenprüfung.
 
-Das Feature für die automatische CSS-Synchronisierung können Sie eine CSS-Datei direkt bearbeiten und die Änderungen sofort im Browser Seitenprüfung.
+Mit der Funktion "Automatische CSS-Synchronisierung" können Sie eine CSS-Datei direkt bearbeiten und die Änderungen sofort im Seitenprüfung Browser anzeigen.
 
-Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren.
+Klicken Sie auf über **prüfen** , um Seitenprüfung in Überprüfungsmodus einzufügen.
 
-Im Browser der Seitenprüfung verschieben Sie den Mauszeiger über den Abschnitt "Startseite", bis die **div.content-Wrappers** Bezeichnung angezeigt wird. Klicken Sie auf einmal, um dieses Element auszuwählen.
+Bewegen Sie im Seitenprüfung Browser den Mauszeiger über den Abschnitt "Home Page", bis die **div. Content-Wrapper-** Bezeichnung angezeigt wird. Klicken Sie einmal, um dieses Element auszuwählen.
 
-Die **Stile** Fenster zeigt alle CSS-Regeln für dieses Element. Scrollen Sie zur Klassenselektor Suchen der .featured .content-Wrapper. Klicken Sie auf ".featured .content-Wrapper". Seitenprüfung öffnet die CSS-Datei, die dieses Format ("Site.CSS") definiert und hebt den entsprechenden CSS-Stil.
+Im Fenster **Stile** werden alle CSS-Regeln für dieses Element angezeigt. Scrollen Sie nach unten, um die. Featured. Content-Wrapper-Klassenauswahl zu suchen. Klicken Sie auf ". Featured. Content-Wrapper". Seitenprüfung öffnet die CSS-Datei, mit der dieser Stil (Site. CSS) definiert wird, und hebt den entsprechenden CSS-Stil hervor.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image32.png)
 
-Ändern Sie nun den Wert für `background-color` auf "Rot". Die Änderung wird sofort im Browser Seitenprüfung angezeigt.
+Ändern Sie nun den Wert für `background-color` in "rot". Die Änderung wird sofort im Seitenprüfung Browser angezeigt.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image34.png)
 
 <a id="css_color_picker"></a>
-## <a name="using-the-css-color-picker"></a>Mithilfe der CSS-Farbauswahl
+## <a name="using-the-css-color-picker"></a>Verwenden der CSS-Farbauswahl
 
-CSS-Editor in Visual Studio 2012 verfügt über eine Farbauswahl angezeigt, die ganz einfach auswählen, und fügen Sie Farben. Die Farbauswahl enthält eine Standardpalette mit Farben, unterstützt standardfarbnamen, Hashcodes, RGB-, RGBA-, HSL- und HSLA-Farben und verwaltet eine Liste der Farben, die Sie zuletzt in das Dokument verwendet haben.
+Der CSS-Editor in Visual Studio 2012 verfügt über eine Farbauswahl, mit der Farben leicht ausgewählt und eingefügt werden können. Die Farbauswahl enthält eine Standardpalette von Farben, unterstützt Standardfarben, Hashcodes, RGB-, RGBA-, HSL-und HSLA-Farben und verwaltet eine Liste der Farben, die Sie zuletzt im Dokument verwendet haben.
 
-Im vorherigen Abschnitt haben Sie den Wert geändert der `background-color` Eigenschaft. Um die Farbauswahl aufzurufen, platzieren Sie die Einfügemarke nach dem Eigenschaftennamen und den Typ **#** oder **Rgb (**.
+Im vorherigen Abschnitt haben Sie den Wert der `background-color`-Eigenschaft geändert. Um die Farbauswahl aufzurufen, platzieren Sie die Einfügemarke nach dem Eigenschaftsnamen, und geben Sie **#** oder **RGB (** ein.
 
-![Die CSS-Auswahl Farbleiste](using-page-inspector-in-aspnet-mvc/_static/image36.png)
+![Die CSS-Farbauswahl Leiste](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 
-Klicken Sie auf eine Farbe auszuwählen, oder drücken die nach-unten-Taste, und klicken Sie dann verwenden Sie die linke und Rechte Pfeiltasten, um die Farben zu durchlaufen. Wenn Sie eine Farbe besuchen, wird der entsprechende Hexadezimalwert in der Vorschau angezeigt:
+Klicken Sie auf eine Farbe, um Sie auszuwählen, oder drücken Sie die nach-unten-Taste, und verwenden Sie dann die Pfeiltasten nach links und nach rechts, um die Farben zu durch Wenn Sie eine Farbe aufrufen, wird der entsprechende Hexadezimalwert in der Vorschau angezeigt:
 
-![Background-Color-Wert der Eigenschaft, die in der Vorschau angezeigt](using-page-inspector-in-aspnet-mvc/_static/image38.png)
+![Vorschau der Eigenschaft "Background-Color" in der Vorschau](using-page-inspector-in-aspnet-mvc/_static/image38.png)
 
-Wenn der Farbleiste nicht den gewünschten genaue Farbe haben, können Sie der Farbe Auswahl Pop aus. Um es zu öffnen, klicken Sie auf die Chevron-Doppelpfeil am rechten Ende der Farbleiste, oder ein-oder zweimal drücken Sie den Pfeil nach unten auf der Tastatur.
+Wenn die Farbleiste nicht die gewünschte Farbe hat, können Sie das Popup Fenster Farbauswahl verwenden. Um es zu öffnen, klicken Sie auf das doppelte Chevron am rechten Ende der Farbleiste, oder drücken Sie auf der Tastatur einmal oder zweimal den Pfeil nach unten.
 
-![CSS-Farbe Auswahl Pop-ab](using-page-inspector-in-aspnet-mvc/_static/image40.png)
+![CSS-Farbauswahl-Popup](using-page-inspector-in-aspnet-mvc/_static/image40.png)
 
-Klicken Sie auf eine Farbe aus der senkrechte Strich auf der rechten Seite. Dies zeigt einen Farbverlauf für diese Farbe im Hauptfenster. Wählen Sie eine Farbe direkt aus der senkrechte Strich durch Drücken der EINGABETASTE, oder klicken Sie auf einem beliebigen Zeitpunkt im Hauptfenster mit größerer Genauigkeit zu wählen.
+Klicken Sie auf eine Farbe aus der vertikalen Leiste auf der rechten Seite. Dies zeigt einen Farbverlauf für diese Farbe im Hauptfenster. Wählen Sie eine Farbe direkt aus der vertikalen Leiste aus, indem Sie die EINGABETASTE drücken, oder klicken Sie auf einen beliebigen Punkt im Hauptfenster, um eine höhere Genauigkeit auszuwählen.
 
-Wenn eine Farbe vorliegt, auf dem Bildschirm, die Sie verwenden möchten (es muss keine werden innerhalb der Visual Studio-Benutzeroberfläche), Sie können den Wert erfassen, indem Sie mit dem Tool Pipette in der unteren rechten Ecke.
+Wenn auf dem Computerbildschirm eine Farbe vorhanden ist, die Sie verwenden möchten (Sie muss sich nicht in der Visual Studio-Benutzeroberfläche befinden), können Sie Ihren Wert mit dem Tool "Pipette" unten rechts erfassen.
 
-Sie können auch die Deckkraft einer Farbe ändern, indem Sie den Schieberegler am unteren Rand der Farbauswahl. Auf diese Weise Änderungen Farbe, die Werte in RGBA-Werte, da das RGBA-Format Deckkraft darstellen kann.
+Sie können auch die Deckkraft einer Farbe ändern, indem Sie den Schieberegler am unteren Rand der Farbauswahl verschieben. Dadurch werden Farbwerte in RGBA-Werte geändert, da das RGBA-Format eine Deckkraft darstellen kann.
 
-Nachdem Sie eine Farbe ausgewählt haben, drücken Sie die EINGABETASTE, und geben Sie ein Semikolon zum Abschließen des Background-Color-Eintrags in der *"Site.CSS"* Datei.
+Nachdem Sie eine Farbe ausgewählt haben, drücken Sie die EINGABETASTE, und geben Sie dann ein Semikolon ein, um den Hintergrund Farb Eintrag in der Datei " *Site. CSS* " abzuschließen.
 
 <a id="_the_update_bar"></a>
 
-### <a name="the-page-inspector-update-bar"></a>Die Seite Inspector-Update-Leiste
+### <a name="the-page-inspector-update-bar"></a>Die Seitenprüfung Update Leiste
 
-Die Seitenprüfung sofort erkennt die Änderung an der *"Site.CSS"* Datei und zeigt eine Warnung in eine Update-Leiste.
+Seitenprüfung erkennt die Änderung an der Datei " *Site. CSS* " sofort und zeigt eine Warnung in einer Update Leiste an.
 
-![Update-Leiste](using-page-inspector-in-aspnet-mvc/_static/image42.png)
+![Update Leiste](using-page-inspector-in-aspnet-mvc/_static/image42.png)
 
-Speichern Sie alle Dateien und den Browser der Seitenprüfung zu aktualisieren, drücken Strg + Alt + Eingabe, oder klicken Sie auf die Update-Leiste. Die Änderung in die Hervorhebungsfarbe wird im Browser angezeigt.
+Um alle Dateien zu speichern und den Seitenprüfung Browser zu aktualisieren, drücken Sie Strg + Alt + Eingabe, oder klicken Sie auf die Update Leiste. Die Änderung in der Hervorhebungs Farbe wird im Browser angezeigt.
 
 <a id="map_dynamic_elements"></a>
-## <a name="mapping-dynamic-page-elements-to-javascript"></a>Zuordnen von dynamische Seitenelemente zu JavaScript
+## <a name="mapping-dynamic-page-elements-to-javascript"></a>Zuordnung dynamischer Seitenelemente zu JavaScript
 
-Bei modernen Webanwendungen werden die Elemente auf der Seite häufig dynamisch mit JavaScript generiert. Das bedeutet, dass es keine statischen Markup (HTML oder Razor), das die diese Elemente entspricht.
+In modernen Webanwendungen werden Elemente auf der Seite häufig dynamisch mit JavaScript generiert. Dies bedeutet, dass kein statisches Markup (HTML oder Razor) vorhanden ist, das diesen Seitenelementen entspricht.
 
-Mit Version 1.3 können die Seitenprüfung Elemente zuordnen, die die Seite wieder an die entsprechenden JavaScript-Code dynamisch hinzugefügt wurden. Um dieses Feature zu demonstrieren, verwenden wir die [Single-Page-Anwendung (SPA) Vorlage](../../../single-page-application/overview/introduction/knockoutjs-template.md).
+Ab Version 1,3 können Seitenprüfung Elemente, die der Seite dynamisch hinzugefügt wurden, jetzt dem entsprechenden JavaScript-Code zuordnen. Um dieses Feature zu veranschaulichen, verwenden wir die [Vorlage für die Einzelseiten Anwendung (Single Page Application, Spa)](../../../single-page-application/overview/introduction/knockoutjs-template.md).
 
 > [!NOTE]
-> Die SPA-Vorlage erfordert die [ASP.NET- und Web Tools 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650) aktualisieren.
+> Die Spa-Vorlage erfordert das Update [ASP.net and Web Tools 2012,2](https://go.microsoft.com/fwlink/?LinkId=282650) .
 
-Wählen Sie in Visual Studio **Datei** &gt; **neues Projekt**. Erweitern Sie auf der linken Seite **Visual C#-** Option **Web**, und wählen Sie dann **ASP.NET MVC 4-Webanwendung**. Klicken Sie auf **OK**.
+Wählen Sie in Visual Studio **Datei** &gt; **Neues Projekt**aus. Erweitern Sie auf der linken **Seite C#Visualisierung** , wählen Sie **Web**aus, und wählen Sie dann **ASP.net MVC4 Webanwendung**aus. Klicken Sie auf **OK**.
 
-In der **neues ASP.NET MVC 4-Projekt** wählen Sie im Dialogfeld **Single Page Application**.
+Wählen Sie im Dialogfeld **Neues ASP.NET MVC 4-Projekt** die Option **Single-Page-Anwendung**aus.
 
-Erweitern Sie im Projektmappen-Explorer die **Ansichten** Ordner und klicken Sie dann die **Startseite** Ordner. Klicken Sie mit der rechten Maustaste auf die Datei "Index.cshtml", und wählen Sie **in Seitenprüfung anzeigen**.
+Erweitern Sie in Projektmappen-Explorer den Ordner " **views** " und dann den Ordner " **Home** ". Klicken Sie mit der rechten Maustaste auf die Datei index. cshtml, und wählen Sie **in Seitenprüfung anzeigen**.
 
-Das erste angezeigte im Browser Seitenprüfung ist eine Anmeldeseite. Klicken Sie auf "Registrieren", und erstellen Sie einen Benutzernamen und Kennwort. Nachdem Sie haben registriert, wird die Anwendung meldet an und erstellt eine to-Do-Liste mit einige Beispiel-Elemente.
+Das erste, was im Seitenprüfung Browser angezeigt wird, ist eine Anmeldeseite. Klicken Sie auf "registrieren", und erstellen Sie einen Benutzernamen und ein Kennwort. Nachdem Sie sich angemeldet haben, werden Sie von der Anwendung protokolliert, und es wird eine Aufgabenliste mit einigen Beispiel Elementen erstellt.
 
-Klicken Sie auf **prüfen** der Seitenprüfung im Überprüfungsmodus zu platzieren. Die Browser der Seitenprüfung klicken Sie auf eines der to-do-Elemente. Beachten Sie, dass das Element anstelle von blau hervorgehoben wird, neben dem Elementnamen in orange dargestellt, die mit "JS" hervorgehoben ist. Dies gibt an, dass das Element dynamisch über ein Skript erstellt wurde.
+Klicken Sie auf über **prüfen** , um Seitenprüfung in Überprüfungsmodus einzufügen. Klicken Sie im Seitenprüfung Browser auf eines der to-do-Elemente. Beachten Sie, dass das-Element nicht blau hervorgehoben ist, sondern mit "js" neben dem Elementnamen hervorgehoben ist. Dies gibt an, dass das Element dynamisch über das Skript erstellt wurde.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image44.png)
 
-Darüber hinaus eine orangefarbene Unterstreichung wird angezeigt, auf die **Aufrufliste** Registerkarte. Dies bedeutet, dass die **Aufrufliste** Bereich enthält weitere Informationen über das Element.
+Außerdem wird ein orangefarbener **Unterstrich auf der Register** Karte "Registerkarte" angezeigt. Dies gibt an, dass der Bereich " **aufrufsstapel** " Weitere Informationen über das Element enthält.
 
-Klicken Sie auf die **Aufrufliste** Registerkarte. Die **Aufrufliste** Bereich zeigt die Aufrufliste für den JavaScript-Aufruf, der das Element erstellt. Aufrufe von externen Bibliotheken wie jQuery reduziert, damit Sie die Aufrufe an das Anwendungsskript leicht erkennen können.
+Klicken Sie auf **die Register** Karte "Registerkarte". Der Bereich " **Aufrufe** " zeigt die aufrufsstapel für den JavaScript-Befehl an, der das Element erstellt hat. Aufrufe externer Bibliotheken, z. b. jQuery, werden reduziert, sodass Sie die Aufrufe Ihres Anwendungs Skripts leicht erkennen können.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image46.png)
 
-Um den vollständigen Stapel, einschließlich Aufrufe von externen Bibliotheken finden Sie unter können Sie die Knoten mit der Bezeichnung "Externe Bibliotheken" erweitern:
+Um den vollständigen Stapel, einschließlich der Aufrufe externer Bibliotheken, anzuzeigen, können Sie die Knoten mit der Bezeichnung "externe Bibliotheken" erweitern:
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image48.png)
 
-Wenn Sie ein Element in der Aufrufliste klicken, wird Visual Studio öffnet die Codedatei, und das entsprechende Skript hervorgehoben.
+Wenn Sie auf ein Element in der aufrufsstapel klicken, öffnet Visual Studio die Codedatei und hebt das entsprechende Skript hervor.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image50.png)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Einführung in ASP.NET MVC 4 mit Visual Studio](../older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md) (ASP.NET-Website)
+Einführung [in ASP.NET MVC 4 mit Visual Studio](../older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md) (ASP.NET-Website)
 
-[Einführung in der Seitenprüfung](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector/) (Channel 9-Video)
+[Einführung in Seitenprüfung](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector/) (Channel 9-Video)
 
-[Fehlermeldungen der Seitenprüfung](https://go.microsoft.com/?linkid=9813062) (MSDN)
+[Seitenprüfung-Fehlermeldungen](https://go.microsoft.com/?linkid=9813062) (MSDN)

@@ -9,11 +9,11 @@ ms.assetid: dbc54313-5d05-4285-98b3-726edea6d0c9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c47bd2c1661f129dd8856916de04b8ba459fbfec
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74616567"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441219"
 ---
 # <a name="users-and-roles-on-the-production-website-c"></a>Benutzer und Rollen auf der Produktions Website (C#)
 
@@ -97,7 +97,7 @@ Eine ausführlichere Betrachtung der Entwicklung von Benutzer-und Rollen Verwalt
 
 Um WSAT-ähnliche Funktionen auf der Produktions Website zu implementieren, können Sie immer eine eigene Reihe von Webseiten erstellen, mit denen die Funktionen von WSAT implementiert werden. Informationen zu den ersten Schritten finden Sie im WSAT-Quellcode, der sich im Ordner `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`befindet. Eine andere Möglichkeit besteht darin, die WSAT-Alternative von Dan Clem zu verwenden, die er in seinem Artikel freigibt und ein [eigenes Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)bereitstellt. Dan führt Sie durch die Schritte zum Entwickeln eines benutzerdefinierten WSAT-ähnlichen Tools, enthält den Quellcode der Anwendung für den Download ( C#in) und enthält schrittweise Anleitungen zum Hinzufügen seines benutzerdefinierten WSAT zu einer gehosteten Website.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das ASP.net Web Site Administration Tool (WSAT) kann zusammen mit den Mitgliedschafts-und Rollen Anwendungsdiensten verwendet werden, um Benutzer-und Rollen Informationen für Ihre Website zu verwalten. Leider ist das WSAT nur lokal zugänglich und kann nicht von Ihrer Produktions Website besucht werden. Wenn Sie jedoch die Verbindungs Zeichenfolge in der Entwicklungsumgebung ändern, sodass Sie auf die Produktionsdatenbank verweist, können Sie die Benutzer und Rollen auf der Produktions Website mithilfe von WSAT verwalten.
 
@@ -105,7 +105,7 @@ Während der WSAT-Ansatz eine schnelle und einfache Möglichkeit zur Verwaltung 
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

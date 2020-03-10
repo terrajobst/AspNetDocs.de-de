@@ -1,78 +1,78 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: 'Teil 6: Mithilfe von Datenanmerkungen zur Modellvalidierung | Microsoft-Dokumentation'
+title: 'Teil 6: Verwenden von Daten Anmerkungen für die Modell Validierung | Microsoft-Dokumentation'
 author: jongalloway
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 6 wird die Verwendung von Datenanmerkungen für Modell V behandelt...
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. Teil 6 umfasst die Verwendung von Daten Anmerkungen für Modell V...
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129666"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433533"
 ---
-# <a name="part-6-using-data-annotations-for-model-validation"></a>Teil 6: Modellüberprüfung mithilfe von Datenanmerkungen
+# <a name="part-6-using-data-annotations-for-model-validation"></a>Teil 6: Verwenden von Daten Anmerkungen für die Modell Validierung
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-> Die MVC Music Store ist ein lernprogrammanwendung, die eingeführt und erläutert Schritt für Schritt, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwenden.  
+> Der MVC Music Store ist eine Lernprogramm Anwendung, die Schritt für Schritt erläutert, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwendet werden.  
 >   
-> Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
+> Der MVC Music Store ist eine einfache Beispiel Speicher Implementierung, die Musikalben online verkauft und grundlegende Funktionen für Website Verwaltung, Benutzeranmeldung und Warenkorb implementiert.  
 >   
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 6 wird die Verwendung von Datenanmerkungen zur Modellvalidierung behandelt.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 6 wird die Verwendung von Daten Anmerkungen für die Modell Validierung behandelt.
 
-Wir haben ein schwerwiegendes Problem mit unserem erstellen und Bearbeiten von Formularen: sie noch keine Überprüfung nicht möglich. Können wir z. B. für Pflichtfelder leer "und" Typ Buchstaben in das Feld für den Preis zu lassen, und der erste Fehler, die, den wir sehen werden, aus der Datenbank ist.
+Das Erstellungs-und Bearbeitungs Formular hat ein großes Problem: Sie führen keine Validierung durch. Wir können z. b. die Pflichtfelder leer lassen oder Buchstaben im Feld Price eingeben. der erste Fehler, den wir sehen werden, ist die Datenbank.
 
-Wir können unsere Anwendung einfach durch Hinzufügen von Datenanmerkungen auf unserem Modellklassen Validierung hinzufügen. Datenanmerkungen können wir beschreiben die gewünschten auf unsere Modelleigenschaften angewendet, und ASP.NET MVC übernimmt erzwungen werden und die entsprechende Nachrichten für unsere Benutzer anzeigen.
+Wir können unserer Anwendung problemlos eine Validierung hinzufügen, indem wir unseren Modellklassen Daten Anmerkungen hinzufügen. Mit Daten Anmerkungen können wir die Regeln beschreiben, die auf unsere Modell Eigenschaften angewendet werden sollen, und ASP.NET MVC übernimmt die Erzwingung und zeigt die entsprechenden Nachrichten für unsere Benutzer an.
 
-## <a name="adding-validation-to-our-album-forms"></a>Hinzufügen einer Validierung zu unseren Album-Formularen
+## <a name="adding-validation-to-our-album-forms"></a>Hinzufügen von Validierungen zu unseren Album Formularen
 
-Wir verwenden die folgenden Attribute für die Datenanmerkung:
+Wir verwenden die folgenden Daten Anmerkungen-Attribute:
 
-- **Erforderliche** – gibt an, dass die Eigenschaft ein erforderliches Feld.
-- **"DisplayName"** – definiert den Text, der es verwendet werden auf Formularfelder und validierungsmeldungen soll
-- **StringLength** – definiert die maximale Länge für ein Zeichenfolgenfeld eingegeben
-- **Bereich** – weist den maximalen und minimalen Wert für ein numerisches Feld
-- **Binden Sie** – Listet die Felder zum Ausschließen oder einschließen, wenn die Werte für Parameter oder Formular eine Bindung an Eigenschaften des Modells
-- **ScaffoldColumn** – ermöglicht das Ausblenden von Feldern von Editor-Formularen
+- **Required** – gibt an, dass die Eigenschaft ein Pflichtfeld ist.
+- **Display Name** – definiert den Text, der für Formularfelder und Validierungs Nachrichten verwendet werden soll.
+- **StringLength** – definiert eine maximale Länge für ein Zeichen folgen Feld.
+- **Range** – gibt einen maximalen und minimalen Wert für ein numerisches Feld an.
+- **Bind** – listet Felder auf, die beim Binden von Parameter-oder Formular Werten an Modell Eigenschaften ausgeschlossen oder eingeschlossen werden sollen.
+- **Gerüst Column** – ermöglicht das Ausblenden von Feldern aus Editor Formularen
 
-*Hinweis: Weitere Informationen zu Modellvalidierung Datenanmerkung Attribute verwenden finden Sie unter der MSDN-Dokumentation unter*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
+*Hinweis: Weitere Informationen zur Modell Validierung mithilfe von Attributen für die Daten Anmerkung finden Sie in der MSDN-Dokumentation unter* [`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
 
-Öffnen Sie die Album-Klasse, und fügen Sie die folgenden *mit* -Anweisungen an den Anfang.
+Öffnen Sie die Album-Klasse, und fügen Sie die folgenden *using* -Anweisungen am Anfang hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample1.cs)]
 
-Als Nächstes aktualisieren Sie die Eigenschaften, um die Anzeige und Validierung-Attribute hinzufügen, wie unten dargestellt.
+Aktualisieren Sie anschließend die Eigenschaften, um die Anzeige-und Validierungs Attribute hinzuzufügen, wie unten gezeigt.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample2.cs)]
 
-Während wir damit beschäftigt sind, haben wir auch das Genre und Interpreteninformationen virtuelle Eigenschaften geändert. Dies kann Entity Framework lazy sie bei Bedarf laden.
+Während wir dort sind, haben wir auch das Genre und den Künstler in Virtual Properties geändert. Dadurch können Entity Framework diese ggf. verzögert laden.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample3.cs)]
 
-Klicken Sie nach dem müssen, werden diese Attribute unseres Modells Album hinzugefügt, unsere erstellen und bearbeiten-Bildschirm beginnt sofort mit dem Überprüfen von Feldern, und verwenden die Anzeigenamen haben wir uns entschieden, (z. B. Album Art Url anstelle von AlbumArtUrl). Führen Sie die Anwendung, und navigieren Sie zu /StoreManager/Create.
+Nachdem diese Attribute dem Album Modell hinzugefügt wurden, beginnt der Bildschirm zum Erstellen und bearbeiten sofort mit der Überprüfung der Felder und der Verwendung der ausgewählten anzeigen Amen (z. b. "Album Kunst-URL" anstelle von "albumarturl"). Führen Sie die Anwendung aus, und navigieren Sie zu/StoreManager/Create.
 
 ![](mvc-music-store-part-6/_static/image1.png)
 
-Als Nächstes müssen wir einige Validierungsregeln unterbrochen. Geben Sie einen Preis von 0, und lassen Sie den Titel leer. Wenn wir auf die Schaltfläche "erstellen" klicken, sehen wir das Formular mit Meldungen für Validierungsfehler angezeigt, welche Felder die Validierungsregeln nicht erfüllt, dass wir definiert haben.
+Als nächstes unterbrechen wir einige Validierungsregeln. Geben Sie einen Preis von 0 ein, und lassen Sie den Titel leer. Wenn Sie auf die Schaltfläche "erstellen" klicken, wird das Formular mit Validierungs Fehlermeldungen angezeigt, das anzeigt, welche Felder die von uns definierten Validierungsregeln nicht erfüllen.
 
 ![](mvc-music-store-part-6/_static/image2.png)
 
-## <a name="testing-the-client-side-validation"></a>Testen die clientseitige Validierung
+## <a name="testing-the-client-side-validation"></a>Testen der Client seitigen Validierung
 
-Eine serverseitige Validierung ist sehr wichtig ist, aus Anwendungssicht, da der Benutzer die clientseitige Überprüfung umgehen können. Allerdings eine Webseite Formulare, die nur eine serverseitige Validierung implementieren drei schwerwiegende Probleme auf.
+Die Server seitige Validierung ist aus Anwendungs Sicht sehr wichtig, da Benutzer die Client seitige Validierung umgehen können. Webseiten Formulare, die nur serverseitige Validierung implementieren, weisen jedoch drei bedeutende Probleme auf.
 
-1. Der Benutzer muss warten, gesendet werden, auf dem Server überprüft das Formular, und klicken Sie für die Antwort an den Browser gesendet werden.
-2. Der Benutzer erhalten nicht sofort ein Feedback, wenn sie ein Feld, damit sie jetzt die Validierungsregeln erfolgreich zu beheben.
-3. Wir müssen die Serverressourcen zum Ausführen von Validierungslogik, statt den Browser des Benutzers nutzen verschwenden.
+1. Der Benutzer muss warten, bis das Formular gepostet, auf dem Server überprüft und die Antwort an den Browser gesendet wird.
+2. Der Benutzer erhält kein sofortiges Feedback, wenn er ein Feld korrigiert, sodass es nun die Validierungsregeln übergibt.
+3. Wir verschwenden Server Ressourcen, um Validierungs Logik auszuführen, anstatt den Browser des Benutzers zu nutzen.
 
-Sie müssen jedoch die ASP.NET MVC 3-gerüstvorlagen die clientseitige Validierung integriert, erfordert keine zusätzliche Arbeit jeglicher Art.
+Glücklicherweise ist für die ASP.NET MVC 3-Gerüst Vorlagen die Client seitige Validierung integriert, sodass keine zusätzliche Arbeit erforderlich ist.
 
-Geben einen einzelnen Buchstaben in das Feld "Titel" erfüllt die überprüfungsanforderungen zu erfüllen, damit der validierungsmeldung sofort entfernt wird.
+Wenn Sie einen einzelnen Buchstaben im Feld "Title" eingeben, werden die Überprüfungsanforderungen erfüllt, sodass die Validierungs Meldung sofort entfernt wird.
 
 ![](mvc-music-store-part-6/_static/image3.png)
 

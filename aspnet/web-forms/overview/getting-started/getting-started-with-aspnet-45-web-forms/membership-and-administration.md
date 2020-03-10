@@ -9,11 +9,11 @@ ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
 ms.openlocfilehash: ab00bc90bfc767d06e747be6dfb973245b5aae88
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615472"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439929"
 ---
 # <a name="membership-and-administration"></a>Mitgliedschaft und Verwaltung
 
@@ -25,11 +25,11 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial wird gezeigt, wie Sie die Wingtip Toys-Beispielanwendung aktualisieren, um eine benutzerdefinierte Rolle hinzuzufügen und ASP.net Identity zu verwenden. Außerdem wird gezeigt, wie Sie eine Verwaltungsseite implementieren, von der der Benutzer mit einer benutzerdefinierten Rolle Produkte zur Website hinzufügen und daraus entfernen kann.
 
-[ASP.net Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md) ist das Mitgliedschaftssystem, das zum Erstellen der ASP.NET-Webanwendung verwendet wird, und ist in ASP.NET 4,5 verfügbar ASP.net Identity wird in der Visual Studio 2013 Web Forms-Projektvorlage sowie in den Vorlagen für die [Einzelseiten Anwendung](../../../../single-page-application/index.md) [ASP.NET MVC](../../../../mvc/index.md), [ASP.net-Web-API](../../../../web-api/index.md)und ASP.NET verwendet. Sie können das ASP.net Identity System auch speziell mithilfe von nuget installieren, wenn Sie mit einer leeren Webanwendung beginnen. In dieser tutorialreihe verwenden Sie jedoch den **Web Forms**ProjectTemplate, der das ASP.net Identity System enthält. Mit ASP.net Identity können benutzerspezifische Profildaten problemlos in Anwendungsdaten integriert werden. Außerdem können Sie mit ASP.net Identity das Persistenzmodell für Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server Datenbank oder einem anderen Datenspeicher speichern, einschließlich der *nosql* -Datenspeicher, z. b. Windows Azure Storage Tabellen.
+[ASP.net Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md) ist das Mitgliedschaftssystem, das zum Erstellen der ASP.NET-Webanwendung verwendet wird, und ist in ASP.NET 4,5 verfügbar ASP.net Identity wird in der Visual Studio 2013 Web Forms-Projektvorlage sowie in den Vorlagen für die [Einzelseiten Anwendung](../../../../single-page-application/index.md) [ASP.NET MVC](../../../../mvc/index.md), [ASP.net-Web-API](../../../../web-api/index.md)und ASP.NET verwendet. Sie können das ASP.net Identity System auch speziell mithilfe von nuget installieren, wenn Sie mit einer leeren Webanwendung beginnen. In dieser tutorialreihe verwenden Sie jedoch den **Web Forms**ProjectTemplate, der das ASP.net Identity System enthält. Mit ASP.net Identity können benutzerspezifische Profildaten problemlos in Anwendungsdaten integriert werden. Außerdem können Sie im ASP.NET Identity das Persistenzmodell für die Benutzerprofile in Ihrer Anwendung auswählen. Sie können die Daten in einer SQL Server Datenbank oder einem anderen Datenspeicher speichern, einschließlich der *nosql* -Datenspeicher, z. b. Windows Azure Storage Tabellen.
 
 Dieses Tutorial baut auf dem vorherigen Tutorial mit dem Titel "Checkout und Zahlung mit PayPal" in der Wingtip Toys-tutorialreihe auf.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - Verwenden von Code, um der Anwendung eine benutzerdefinierte Rolle und einen Benutzer hinzuzufügen.
 - Einschränken des Zugriffs auf den Verwaltungs Ordner und die Seite.
@@ -124,11 +124,11 @@ Indem Sie dem *Administrator* Ordner eine *Web. config* -Datei hinzufügen, kön
 1. Klicken Sie mit der rechten Maustaste auf den Ordner *Admin* , und wählen Sie -&gt; **Neues Element** **Hinzufügen**  
    Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 2. Wählen Sie in der Liste C# der visuellen Webvorlagen die Option <strong>Webkonfigurationsdatei</strong>aus der mittleren Liste aus, übernehmen Sie den Standardnamen " <em>Web. config</em>"<strong>,</strong> und wählen Sie dann <strong>Hinzufügen</strong>aus.
-3. Ersetzen Sie den vorhandenen XML-Inhalt in der Datei " *Web. config* " durch Folgendes:  
+3. Ersetzen Sie den vorhandenen XML-Inhalt in der Datei *Web.config* durch den folgenden Code:  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
 
-Speichern Sie die Datei " *Web. config* ". Die Datei " *Web. config* " gibt an, dass nur der Benutzer, der der Rolle "CanEdit" der Anwendung angehört, auf die im *Administrator* Ordner enthaltene Seite zugreifen kann.
+Speichern Sie die Datei *Web.config* . Die Datei " *Web. config* " gibt an, dass nur der Benutzer, der der Rolle "CanEdit" der Anwendung angehört, auf die im *Administrator* Ordner enthaltene Seite zugreifen kann.
 
 ### <a name="including-custom-role-navigation"></a>Einschließen der benutzerdefinierten Rollen Navigation
 
@@ -263,7 +263,7 @@ Sie können die Anwendung jetzt ausführen, um zu erfahren, wie Sie Elemente im 
 13. Klicken Sie auf für den existierenden Verwaltungsmodus **Abmelden** .   
     Beachten Sie, dass im oberen Navigationsbereich nicht mehr das Menü Element **Admin** angezeigt wird.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie eine benutzerdefinierte Rolle und einen Benutzer hinzugefügt, der zur benutzerdefinierten Rolle gehört, den Zugriff auf den Verwaltungs Ordner und die Seite eingeschränkt und die Navigation für den Benutzer bereitgestellt hat, der zur benutzerdefinierten Rolle gehört. Sie haben die Modell Bindung verwendet, um ein **Dropdown List** -Steuerelement mit Daten aufzufüllen. Sie haben das **FileUpload** -Steuerelement und Validierungs Steuerelemente implementiert. Außerdem haben Sie erfahren, wie Sie Produkte zu einer Datenbank hinzufügen und daraus entfernen. Im nächsten Tutorial erfahren Sie, wie Sie das ASP.NET-Routing implementieren.
 

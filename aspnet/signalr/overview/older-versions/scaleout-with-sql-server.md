@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-sql-server
-title: Horizontale Skalierung in SignalR mit SQLServer (SignalR 1.x) | Microsoft-Dokumentation
+title: Horizontale Skalierung von signalr mit SQL Server (signalr 1. x) | Microsoft-Dokumentation
 author: bradygaster
 description: ''
 ms.author: bradyg
@@ -9,53 +9,53 @@ ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
 msc.type: authoredcontent
 ms.openlocfilehash: 8674b06a2a751c9a7b1c6c9b19782974d0602a62
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386559"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431127"
 ---
 # <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>Horizontale Skalierung in SignalR mit SQL Server (SignalR 1.x)
 
-durch [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
+von [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-In diesem Tutorial verwenden Sie SQL Server zur Verteilung von Nachrichten in einer SignalR-Anwendung, die in zwei verschiedenen IIS-Instanzen bereitgestellt wird. Sie können auch in diesem Tutorial ausführen, auf einem einzelnen Testcomputer, aber um den vollen Effekt zu erhalten, müssen Sie die SignalR-Anwendung in zwei oder mehr Servern bereitzustellen. Sie müssen auch SQL Server auf einem der Server oder auf einem separaten dedizierten Server installieren. Eine weitere Möglichkeit ist das Tutorial mit virtuellen Computern in Azure ausführen.
+In diesem Tutorial verwenden Sie SQL Server zum Verteilen von Nachrichten über eine signalr-Anwendung, die in zwei separaten IIS-Instanzen bereitgestellt wird. Sie können dieses Tutorial auch auf einem einzelnen Testcomputer ausführen, aber um die vollständige Wirkung zu erzielen, müssen Sie die signalr-Anwendung auf zwei oder mehr Servern bereitstellen. Sie müssen auch SQL Server auf einem der-Server oder auf einem separaten dedizierten Server installieren. Eine weitere Möglichkeit besteht darin, das Tutorial mithilfe von VMS in Azure auszuführen.
 
 ![](scaleout-with-sql-server/_static/image1.png)
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-Microsoft SQLServer 2005 oder höher. Der Rückwand unterstützt Desktop- und Server-Editionen von SQL Server. Es unterstützt SQL Server Compact Edition oder Azure SQL-Datenbank nicht. (Wenn Ihre Anwendung in Azure gehostet wird, erwägen Sie die Service Bus-Rückwandplatine stattdessen.)
+Microsoft SQL Server 2005 oder höher. Die Rückwand unterstützt sowohl die Desktop-als auch die Server Edition von SQL Server. SQL Server Compact Edition oder Azure SQL-Datenbank wird nicht unterstützt. (Wenn Ihre Anwendung in Azure gehostet wird, sollten Sie stattdessen die Service Bus Rückwand in Erwägung gezogen.)
 
 ## <a name="overview"></a>Übersicht
 
-Bevor wir mit dem ausführlichen Tutorial eingehen, sieht ein schnellen Überblick darüber, welche Aktionen Sie ausgeführt werden.
+Bevor wir zum detaillierten Tutorial gelangen, finden Sie hier einen kurzen Überblick über die Vorgehensweise.
 
-1. Erstellen Sie eine neue leere Datenbank ein. Der Rückwand erstellt die erforderlichen Tabellen in dieser Datenbank.
-2. Fügen Sie diese NuGet-Pakete für Ihre Anwendung hinzu: 
+1. Erstellen Sie eine neue leere Datenbank. Die Rückwand erstellt die erforderlichen Tabellen in dieser Datenbank.
+2. Fügen Sie die folgenden nuget-Pakete zu Ihrer Anwendung hinzu: 
 
-    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.SqlServer](http://nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
-3. Erstellen einer SignalR-Anwendung.
-4. Fügen Sie den folgenden Code, der "Global.asax" So konfigurieren Sie die Rückwandplatine: 
+    - [Microsoft. Aspnet. signalr](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [Microsoft. Aspnet. signalr. SqlServer](http://nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
+3. Erstellen Sie eine signalr-Anwendung.
+4. Fügen Sie "Global. asax" den folgenden Code hinzu, um die Backplane zu konfigurieren: 
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
-## <a name="configure-the-database"></a>Konfigurieren Sie die Datenbank
+## <a name="configure-the-database"></a>Konfigurieren der Datenbank
 
-Entscheiden Sie, ob es sich bei der Anwendung Windows-Authentifizierung oder SQL Server-Authentifizierung verwendet werden, auf die Datenbank zugreifen. Unabhängig davon, stellen Sie sicher, dass der Datenbankbenutzer berechtigt ist, melden Sie sich, Erstellen von Schemas und Tabellen erstellen.
+Entscheiden Sie, ob die Anwendung die Windows-Authentifizierung oder SQL Server Authentifizierung für den Zugriff auf die Datenbank verwendet. Stellen Sie unabhängig davon sicher, dass der Datenbankbenutzer über Berechtigungen zum Anmelden, Erstellen von Schemas und Erstellen von Tabellen verfügt.
 
-Erstellen Sie eine neue Datenbank für die Rückwandplatine verwenden. Sie können die Datenbank einen beliebigen Namen geben. Sie müssen keine Tabellen in der Datenbank zu erstellen. der Rückwand erstellt die erforderlichen Tabellen.
+Erstellen Sie eine neue Datenbank, die von der Rückwand verwendet werden soll. Sie können der Datenbank einen beliebigen Namen übergeben. Sie müssen keine Tabellen in der Datenbank erstellen. die Rückwand erstellt die erforderlichen Tabellen.
 
 ![](scaleout-with-sql-server/_static/image2.png)
 
-## <a name="enable-service-broker"></a>Aktivieren Sie Service Broker
+## <a name="enable-service-broker"></a>Aktivieren von Service Broker
 
-Es wird empfohlen, um Service Broker für die Rückwandplatine-Datenbank zu aktivieren. Service Broker bietet systemeigene Unterstützung für Messaging- und Warteschlangen in SQL Server, der in der Rückwand Updates effizienter erhalten können. (Allerdings funktioniert der Rückwand auch ohne Service Broker.)
+Es wird empfohlen, Service Broker für die Rückwand-Datenbank zu aktivieren. Service Broker bietet systemeigene Unterstützung für Messaging-und Warteschlangen Funktionen in SQL Server, sodass die Rückwand Updates effizienter empfangen können. (Die Rückwand funktioniert jedoch auch ohne Service Broker.)
 
-Um zu überprüfen, ob Service Broker aktiviert ist, Abfragen der **ist\_Broker\_aktiviert** -Spalte in der **sys.databases** -Katalogsicht angezeigt.
+Um zu überprüfen, ob Service Broker aktiviert ist, Fragen Sie die Spalte **is\_Broker\_aktivierte** Spalte in der **sys. Datenbanken** -Katalog Sicht ab.
 
 [!code-sql[Main](scaleout-with-sql-server/samples/sample2.sql)]
 
@@ -66,55 +66,55 @@ Verwenden Sie die folgende SQL-Abfrage, um Service Broker zu aktivieren:
 [!code-sql[Main](scaleout-with-sql-server/samples/sample3.sql)]
 
 > [!NOTE]
-> Wenn diese Abfrage angezeigt wird, ein Deadlock auftreten, stellen Sie sicher, dass keine Programme, die mit der Datenbank verbunden sind.
+> Wenn für diese Abfrage ein Deadlock auftritt, stellen Sie sicher, dass keine Anwendungen mit der Datenbank verbunden sind.
 
-Wenn Sie die Ablaufverfolgung aktiviert haben, zeigt die ablaufverfolgungen auch, ob Service Broker aktiviert ist.
+Wenn Sie die Ablauf Verfolgung aktiviert haben, werden die Ablauf Verfolgungen auch anzeigen, ob Service Broker aktiviert ist.
 
-## <a name="create-a-signalr-application"></a>Erstellen einer SignalR-Anwendung
+## <a name="create-a-signalr-application"></a>Erstellen einer signalr-Anwendung
 
-Erstellen einer SignalR-Anwendung entweder mit diesen Lernprogrammen:
+Erstellen Sie eine signalr-Anwendung, indem Sie eines der folgenden Tutorials befolgen:
 
-- [Erste Schritte mit SignalR](../getting-started/tutorial-getting-started-with-signalr.md)
-- [Erste Schritte mit SignalR und MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md)
+- [Einstieg in signalr](../getting-started/tutorial-getting-started-with-signalr.md)
+- [Einstieg in signalr und MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-Als Nächstes ändern wir die Chat-Anwendung mit horizontaler Skalierung mit SQL Server zu unterstützen. Fügen Sie zunächst das SignalR.SqlServer NuGet-Paket Ihrem Projekt ein. In Visual Studio aus der **Tools** die Option **NuGet Paket-Manager**, wählen Sie **Paket-Manager Konsole**. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl aus:
+Als nächstes ändern wir die Chat-Anwendung, um das horizontale hochskalieren mit SQL Server zu unterstützen. Fügen Sie zunächst das nuget-Paket signalr. SqlServer zu Ihrem Projekt hinzu. Klicken Sie in Visual Studio im **Menü Extras** auf **nuget-Paket-Manager**, und wählen Sie dann Paket-Manager- **Konsole**aus. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl ein:
 
 [!code-powershell[Main](scaleout-with-sql-server/samples/sample4.ps1)]
 
-Öffnen Sie als Nächstes die Datei "Global.asax". Fügen Sie den folgenden Code der **Anwendung\_starten** Methode:
+Öffnen Sie als nächstes die Datei "Global. asax". Fügen Sie den folgenden Code zum **\_Start** -Methode der Anwendung hinzu:
 
 [!code-csharp[Main](scaleout-with-sql-server/samples/sample5.cs)]
 
 ## <a name="deploy-and-run-the-application"></a>Bereitstellen und Ausführen der Anwendung
 
-Bereiten Sie Ihre Windows Server-Instanzen, um die SignalR-Anwendung bereitzustellen.
+Bereiten Sie Ihre Windows Server-Instanzen für die Bereitstellung der signalr-Anwendung vor.
 
-Fügen Sie die IIS-Rolle hinzu. Umfassen Sie "Anwendungsentwicklung"-Features, einschließlich der WebSocket-Protokoll.
+Fügen Sie die IIS-Rolle hinzu. Umfasst Funktionen für die Anwendungsentwicklung, einschließlich des WebSocket-Protokolls.
 
 ![](scaleout-with-sql-server/_static/image4.png)
 
-Außerdem enthalten Sie den Management-Dienst (unter "Management Tools" aufgeführt).
+Schließen Sie auch den Verwaltungsdienst ein (unter "Verwaltungs Tools" aufgeführt).
 
 ![](scaleout-with-sql-server/_static/image5.png)
 
-**Installieren Sie Web Deploy 3.0.** Wenn Sie die IIS-Manager ausführen, werden Sie zum Installieren von Microsoft-Webplattform aufgefordert, oder Sie können [Herunterladen des Installationsprogramms](https://go.microsoft.com/fwlink/?LinkId=255386). Klicken Sie in den Webplattform-Installer Web Deploy suchen Sie und installieren Sie Web Deploy 3.0
+**Installieren Sie Web Deploy 3,0.** Wenn Sie IIS-Manager ausführen, werden Sie aufgefordert, die Microsoft-Webplattform zu installieren, oder Sie können [das Installationsprogramm herunterladen](https://go.microsoft.com/fwlink/?LinkId=255386). Suchen Sie im Platt Form Installationsprogramm nach Web deploy, und installieren Sie Web Deploy 3,0
 
 ![](scaleout-with-sql-server/_static/image6.png)
 
-Überprüfen Sie, dass die Web-Management-Dienst ausgeführt wird. Wenn dies nicht der Fall ist, starten Sie den Dienst. (Wenn Sie Web-Management-Dienst in der Liste der Windows-Dienste nicht angezeigt wird, stellen Sie sicher, dass Sie den Management-Dienst installiert, wenn Sie die IIS-Rolle hinzugefügt haben.)
+Überprüfen Sie, ob der Webverwaltungsdienst ausgeführt wird. Wenn dies nicht der Wert ist, starten Sie den Dienst. (Wenn der Webverwaltungsdienst in der Liste der Windows-Dienste nicht angezeigt wird, stellen Sie sicher, dass Sie den-Verwaltungsdienst installiert haben, als Sie die IIS-Rolle hinzugefügt haben.)
 
-Öffnen Sie abschließend Port 8172 für TCP. Dies ist der Port, den das Web Deploy-Tool verwendet.
+Öffnen Sie schließlich Port 8172 für TCP. Dies ist der Port, der vom Web deploy Tool verwendet wird.
 
-Jetzt sind Sie bereit für die Bereitstellung von Visual Studio-Projekt vom Entwicklungscomputer auf dem Server. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in der Projektmappe, und klicken Sie auf **veröffentlichen**.
+Nun können Sie das Visual Studio-Projekt von Ihrem Entwicklungs Computer auf dem Server bereitstellen. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Lösung, und klicken Sie auf **veröffentlichen**.
 
-Weitere Dokumentation zur Bereitstellung finden Sie unter [Einstieg in die Webbereitstellung für Visual Studio und ASP.NET](../../../whitepapers/aspnet-web-deployment-content-map.md).
+Eine ausführlichere Dokumentation zur Webbereitstellung finden Sie unter [Webbereitstellungs-Inhalts Zuordnung für Visual Studio und ASP.net](../../../whitepapers/aspnet-web-deployment-content-map.md).
 
-Wenn Sie die Anwendung auf zwei Servern bereitstellen, können Sie jede Instanz in einem separaten Browserfenster zu öffnen und sehen, dass jeder SignalR-Nachrichten von einem anderen erhält. (Natürlich in einer produktionsumgebung, die beiden Server hinter einem Load Balancer saß.)
+Wenn Sie die Anwendung auf zwei Servern bereitstellen, können Sie jede Instanz in einem separaten Browserfenster öffnen und sehen, dass Sie jeweils signalr-Nachrichten vom anderen empfangen. (In einer Produktionsumgebung würden sich die beiden Server natürlich hinter einem Load Balancer befinden.)
 
 ![](scaleout-with-sql-server/_static/image7.png)
 
-Nachdem Sie die Anwendung ausführen, sehen Sie sich, dass SignalR automatisch Tabellen in der Datenbank erstellt wurde:
+Nachdem Sie die Anwendung ausgeführt haben, können Sie sehen, dass signalr automatisch Tabellen in der Datenbank erstellt hat:
 
 ![](scaleout-with-sql-server/_static/image8.png)
 
-SignalR verwaltet die Tabellen. Solange Ihre Anwendung bereitgestellt wird, keine Zeilen löschen, ändern Sie die Tabelle und so weiter.
+Die Tabellen werden von signalr verwaltet. Solange Ihre Anwendung bereitgestellt ist, löschen Sie Zeilen nicht, ändern Sie die Tabelle usw.

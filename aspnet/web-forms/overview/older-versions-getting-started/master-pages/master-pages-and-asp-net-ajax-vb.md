@@ -9,11 +9,11 @@ ms.assetid: 0ee9318c-29bb-4d58-b1dc-94e575b8ae10
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 7be4ff422b91321ff83ed1f1c731c9a0bfe768f1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74638078"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421815"
 ---
 # <a name="master-pages-and-aspnet-ajax-vb"></a>Masterseiten und ASP.NET AJAX (VB)
 
@@ -204,7 +204,7 @@ Abbildung 11 zeigt diese Seite, wenn Sie zum ersten Mal über einen Browser besu
 
 **Abbildung 12**: Klicken Sie auf die Schaltfläche fortsetzen, um den Timer neu zu starten ([Klicken Sie, um das Bild in voller Größe](master-pages-and-asp-net-ajax-vb/_static/image36.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Entwickeln von AJAX-fähigen Webanwendungen mit dem ASP.NET AJAX-Framework ist es zwingend erforderlich, dass jede AJAX-aktivierte Webseite ein ScriptManager-Steuerelement enthält. Um diesen Prozess zu vereinfachen, können Sie der Master Seite einen ScriptManager hinzufügen, anstatt sich daran erinnern zu müssen, dass jeder und jeder Inhaltsseite ein ScriptManager hinzugefügt wird. In Schritt 1 wurde gezeigt, wie Sie den ScriptManager der Master Seite hinzufügen, während Schritt 2 die Implementierung von AJAX-Funktionen auf einer Inhaltsseite betrachtete.
 
@@ -212,7 +212,7 @@ Wenn Sie benutzerdefinierte Skripts, Verweise auf Skript aktivierte Webdienste o
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -223,7 +223,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Verwenden von "netwid" zum Zufalls Sortieren von Datensätzen](http://www.sqlteam.com/article/using-newid-to-randomly-sort-records)
 - [Verwenden des Timer-Steuer Elements](http://aspnet.4guysfromrolla.com/articles/061808-1.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

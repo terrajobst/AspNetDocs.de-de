@@ -1,21 +1,21 @@
 ---
 uid: web-forms/index
-title: ASP.NET Web Forms | Microsoft-Dokumentation
+title: ASP.net Web Forms | Microsoft-Dokumentation
 author: rick-anderson
-description: Herunterladen von Visual Web Developer Express, und erfahren Sie, wie schnell erstellen, die apps mithilfe von leicht verständliche Steuerelemente in ASP.NET Web Forms in einem visual Design environ-Web...
+description: Laden Sie Visual Web Developer Express herunter & erfahren Sie, wie Sie schnell Web-Apps mit leicht verständlichen Steuerelementen auf Web Forms ASP.NET erstellen können, die in einem visuellen Design verfügbar sind...
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: 7e4ce5d2-ab22-44f0-9825-c12eed7b8fcb
 msc.legacyurl: /web-forms
 msc.type: categoryindex
 ms.openlocfilehash: 623df5d3ffe357f42d72ee0a33bc50aa60a8c4d0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397005"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446889"
 ---
-# <a name="aspnet-web-forms"></a>ASP.NET-Web Forms
+# <a name="aspnet-web-forms"></a>ASP.NET Web Forms
 
 - [Empfehlungen](overview/index.md)
 
@@ -62,7 +62,7 @@ ms.locfileid: "59397005"
 
         - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](overview/deployment/visual-studio-web-deployment/index.md)
 
-            - [Introduction (Einführung)](overview/deployment/visual-studio-web-deployment/introduction.md)
+            - [Einführung](overview/deployment/visual-studio-web-deployment/introduction.md)
             - [Vorbereiten für die Datenbankbereitstellung](overview/deployment/visual-studio-web-deployment/preparing-databases.md)
             - [Umwandlungen für die Datei „Web.config“](overview/deployment/visual-studio-web-deployment/web-config-transformations.md)
             - [Projekteigenschaften](overview/deployment/visual-studio-web-deployment/project-properties.md)
@@ -77,8 +77,8 @@ ms.locfileid: "59397005"
         - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](overview/deployment/deploying-web-applications-in-enterprise-scenarios/index.md)
 
             - [Bereitstellen von Webanwendungen in Unternehmensszenarien mit Visual Studio 2010](overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-            - [Webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-            - [Anwendungslebenszyklus-Verwaltung: Von der Entwicklung zur Produktion](overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+            - [Webbasierte Unternehmensbereitstellung: Szenarioübersicht](overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+            - [Application Lifecycle Management: Von der Entwicklung bis zur Produktion](overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
         - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](overview/deployment/web-deployment-in-the-enterprise/index.md)
 
             - [Webbereitstellung im Unternehmen](overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
@@ -132,13 +132,13 @@ ms.locfileid: "59397005"
 
         - [ASP.NET 4 – Tailspin Spyworks](overview/older-versions-getting-started/tailspin-spyworks/index.md)
 
-            - [Teil 1: Datei -> Neues Projekt](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
-            - [Teil 2: Datenzugriffsebene](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
+            - [Teil 1: Datei > Neues Projekt](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+            - [Teil 2: Datenzugriffsschicht](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
             - [Teil 3: Layout- und Kategoriemenü](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
             - [Teil 4: Auflistung von Produkten](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
             - [Teil 5: Geschäftslogik](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
             - [Teil 6: ASP.NET-Mitgliedschaft](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
-            - [Teil 7: Hinzufügen von Funktionen](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
+            - [Teil 7: Hinzufügen von Features](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
             - [Teil 8: Letzte Seiten, Ausnahmebehandlung und Zusammenfassung](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
         - [ASP.NET 4 – Erste Schritte mit Entity Framework 4 und Web Forms](overview/older-versions-getting-started/getting-started-with-ef/index.md)
 
@@ -152,9 +152,9 @@ ms.locfileid: "59397005"
             - [Erste Schritte mit Entity Framework 4.0 Database First – Teil 8](overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
         - [ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)](overview/older-versions-getting-started/continuing-with-ef/index.md)
 
-            - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-            - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und Komponententests](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-            - [Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+            - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+            - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und von Komponententests](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+            - [Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
             - [Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4](overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4](overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [Neue Funktionen in Entity Framework 4.0](overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -376,7 +376,7 @@ ms.locfileid: "59397005"
             - [Drag & Drop über ReorderList (C#)](overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md)
             - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md)
             - [Drag & Drop über ReorderList (VB)](overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb.md)
-        - [Schieberegler](overview/ajax-control-toolkit/slider/index.md)
+        - [Slider](overview/ajax-control-toolkit/slider/index.md)
 
             - [Schieberegler-Steuerelement mit automatischem Postback (C#)](overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md)
             - [Datenbindung des Schieberegler-Steuerelements](overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)
@@ -390,7 +390,7 @@ ms.locfileid: "59397005"
             - [Verwenden von TextBoxWatermark mit Validierungssteuerelementen (VB)](overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb.md)
     - [Ältere Versionen – Datenzugriff](overview/data-access/index.md)
 
-        - [Introduction (Einführung)](overview/data-access/introduction/index.md)
+        - [Einführung](overview/data-access/introduction/index.md)
 
             - [Erstellen einer Datenzugriffsschicht (C#)](overview/data-access/introduction/creating-a-data-access-layer-cs.md)
             - [Erstellen einer Geschäftslogikebene (C#)](overview/data-access/introduction/creating-a-business-logic-layer-cs.md)
@@ -680,7 +680,7 @@ ms.locfileid: "59397005"
         - [Erkennen von Browserfunktionen in ASP.NET Web Pages](videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
         - [Rendern eines ASP.NET-Serversteuerelements durch Zuordnung zum verwendeten Adapter](videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
         - [Übergeben von Informationen von einer Seite an eine andere Seite mithilfe einer Abfragezeichenfolge](videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-        - [Verwenden Sie das Aspnet\_merge.exe Hilfsprogramm zum Zusammenführen von Assemblys](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+        - [Verwenden des Hilfsprogramms ASPNET\_Merge. exe zum Zusammenführen von Assemblys](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
         - [Implementieren eines seitenübergreifenden PostBack in ASP.NET](videos/how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet.md)
         - [Programmgesteuertes Hinzufügen von Steuerelementen zu einer ASP.NET-Webseite](videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
         - [Speichern und Bearbeiten von clientseitigen Informationen durch ein verborgenes Feld](videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)
@@ -753,7 +753,7 @@ ms.locfileid: "59397005"
         - [MasterPages](videos/building-35-applications/masterpages.md)
         - [Einführung zu SOAP-basierten Webdiensten mit Visual Web Developer 2008](videos/building-35-applications/an-introduction-to-soap-based-web-services-with-visual-web-developer-2008.md)
         - [Diensten im AJAX-Stil mit Microsoft Visual Web Developer 2008](videos/building-35-applications/ajax-style-services-with-microsoft-visual-web-developer-2008.md)
-        - [Validierung](videos/building-35-applications/validation.md)
+        - [Überprüfung](videos/building-35-applications/validation.md)
         - [login-Steuerelemente](videos/building-35-applications/login-controls.md)
     - [Authentifizierung](videos/authentication/index.md)
 
@@ -828,16 +828,16 @@ ms.locfileid: "59397005"
         - [[Einführung zu ASP.NET 2.0:] Grundlagen zu ASP.NET 2.0](videos/migrating/intro-to-aspnet-20-aspnet-20-fundamentals.md)
         - [[Einführung zu ASP.NET 2.0:] Benutzeroberflächenelemente](videos/migrating/intro-to-aspnet-20-user-interface-elements.md)
         - [[Migration von] Classic ASP nach ASP.NET](videos/migrating/migrating-from-classic-asp-to-aspnet.md)
-        - [Einführung in ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0](videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+        - [Einführung zu ASP.NET für JSP-Entwickler: Willkommen bei ASP.NET 2.0](videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
         - [Einführung in ASP.NET für JSP-Entwickler: Erstellen von Anwendungen](videos/migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-        - [Einführung in ASP.NET für ColdFusion-Entwickler: Hinzufügen von ASP.NET in ein Repertoire](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-        - [Einführung in ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung](videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+        - [Einführung zu ASP.NET für ColdFusion-Entwickler: Erweitern des Repertoires um ASP.NET](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+        - [Einführung zu ASP.NET für ColdFusion-Entwickler: Erstellen einer ASP.NET-Anwendung](videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
         - [Interoperabilität zwischen PHP und der Windows-Plattform](videos/migrating/interop-between-php-and-the-windows-platform.md)
     - [Erstellen von Anwendungen der Version 2.0](videos/building-20-applications/index.md)
 
         - [[Lektion 1:] Erste Schritte mit Visual Web Developer Express](videos/building-20-applications/lesson-1-getting-started-with-visual-web-developer-express.md)
         - [[Lektion 2:] Erstellen einer Web Forms-Benutzeroberfläche](videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface.md)
-        - [[Lektion 3:] Weiterführende Informationen zu Ereignissen und Postback](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
+        - [[Lektion 3:] Weitere Informationen zu Ereignissen und Postback](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
         - [[Lektion 4:] Grundlegendes zum Webanwendungszustand](videos/building-20-applications/lesson-4-understanding-web-application-state.md)
         - [[Lektion 5:] Debuggen und Überwachung von Websites](videos/building-20-applications/lesson-5-debugging-and-tracing-your-website.md)
         - [[Lektion 6:] Arbeiten mit Stylesheets und Masterseiten](videos/building-20-applications/lesson-6-working-with-stylesheets-and-master-pages.md)
@@ -965,10 +965,10 @@ ms.locfileid: "59397005"
             - [LINQ to SQL: Abfragen der Datenbank](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
             - [LINQ to SQL: Aktualisieren der Datenbank](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
             - [LINQ to SQL: LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-            - [LINQ to SQL: Benutzerdefinierte LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+            - [LINQ to SQL: Anpassen von LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
             - [LINQ to SQL: Verwenden von gespeicherten Prozeduren](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-            - [LINQ to SQL: Aktualisieren mit gespeicherten Prozeduren](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-            - [LINQ to SQL: Ausführen einer beliebigem SQL](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+            - [LINQ to SQL: Aktualisieren von gespeicherten Prozeduren](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+            - [LINQ to SQL: Ausführen einer beliebigem SQL-Abfrage](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
         - [Videos zu LINQ vom VB-Team](videos/data-access/linq-videos-from-the-vb-team/index.md)
 
             - [Erste Schritte mit LINQ](videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
@@ -1017,7 +1017,7 @@ ms.locfileid: "59397005"
             - [ASP.NET AJAX-Unterstützung in Visual Studio 2008](videos/aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
             - [Erweitern der AJAX-Funktionalität für eine vorhandene ASP.NET-Seite](videos/aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
             - [Erstellen und Verwenden eines AJAX-fähigen Webdiensts bei einer Website](videos/aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-            - [ASP.NET-AJAX: Eine Demonstration von ASP.NET AJAX](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+            - [ASP.NET-AJAX: Demo zu ASP.NET AJAX](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
             - [ADO.NET Data Services mit ASP.NET AJAX-Unterstützung](videos/aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
             - [Einführung zum ASP.NET AJAX-Steuerelement „History“](videos/aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
             - [Verbessern der AJAX-Leistung mithilfe von Skriptkombination](videos/aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -1048,17 +1048,17 @@ ms.locfileid: "59397005"
             - [ScriptLoader](videos/net-4/ajax/aspnet-4-quick-hit-the-scriptloader.md)
             - [jQuery-Syntax für Microsoft AJAX](videos/net-4/ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
             - [AJAX-Datenvorlagen](videos/net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-        - [Chart](videos/net-4/chart/index.md)
+        - [Diagramm](videos/net-4/chart/index.md)
 
             - [Chart Control](videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
             - [Einführung zum neuen Chart-Steuerelement in Visual Studio 2010](videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
-        - [Kernspeicher](videos/net-4/core/index.md)
+        - [Core](videos/net-4/core/index.md)
 
             - [Automatischer Start](videos/net-4/core/aspnet-4-quick-hit-auto-start.md)
             - [Bereinigen von „Web.config“-Dateien](videos/net-4/core/aspnet-4-quick-hit-clean-webconfig-files.md)
             - [Vorhersagbare Client-IDs](videos/net-4/core/aspnet-4-quick-hit-predictable-client-ids.md)
             - [HtmlEncoder-Hilfsprogrammmethode](videos/net-4/core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-        - [Data](videos/net-4/data/index.md)
+        - [Daten](videos/net-4/data/index.md)
 
             - [Persistente GridView-Zeilenauswahl](videos/net-4/data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
         - [Markup-Steuerelement](videos/net-4/markup-control/index.md)

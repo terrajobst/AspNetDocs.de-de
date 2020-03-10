@@ -9,11 +9,11 @@ ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e35c3d6a98516a07f6119e6cb9dbeb99bc28fe33
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613504"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78427125"
 ---
 # <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>Verwenden von vorhandenen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (VB)
 
@@ -130,7 +130,7 @@ Ziehen Sie als nächstes eine GridView-Ansicht auf den Designer, und platzieren 
 
 **Abbildung 10**: Abrufen von Daten aus der `GetProductsByCategoryID(categoryID)`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image30.png))
 
-Die auf der Registerkarte auswählen ausgewählte Methode erwartet einen Parameter, daher werden Sie im letzten Schritt des Assistenten aufgefordert, den Parameter s Quelle einzugeben. Legen Sie in der Dropdown Liste Parameter Quelle die Option Control fest, und wählen Sie in der Dropdown Liste ControlID das `Categories` Steuerelement aus. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Die auf der Registerkarte auswählen ausgewählte Methode erwartet einen Parameter, daher werden Sie im letzten Schritt des Assistenten aufgefordert, den Parameter s Quelle einzugeben. Legen Sie in der Dropdown Liste Parameter Quelle die Option Control fest, und wählen Sie in der Dropdown Liste ControlID das `Categories` Steuerelement aus. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![die Dropdown List Kategorien als Quelle für den CategoryID-Parameter verwenden.](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
 
@@ -220,13 +220,13 @@ Nachdem die DAL aktualisiert wurde, werden durch das Löschen einer Kategorie au
 > [!NOTE]
 > Vor dem Testen der gespeicherten Prozedur `Categories_Delete`, mit der eine Reihe von Produkten zusammen mit der ausgewählten Kategorie gelöscht werden, kann es ratsam sein, eine Sicherungskopie der Datenbank zu erstellen. Wenn Sie die `NORTHWND.MDF`-Datenbank in `App_Data`verwenden, schließen Sie einfach Visual Studio, und kopieren Sie die MDF-und LDF-Dateien in `App_Data` in einen anderen Ordner. Nachdem Sie die Funktionalität getestet haben, können Sie die Datenbank wiederherstellen, indem Sie Visual Studio schließen und die aktuellen MDF-und LDF-Dateien in `App_Data` durch die Sicherungskopien ersetzen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Während der Assistent für TableAdapter s automatisch gespeicherte Prozeduren für uns generiert, gibt es einige Zeiten, in denen diese gespeicherten Prozeduren möglicherweise bereits erstellt wurden oder stattdessen manuell oder mit anderen Tools erstellt werden sollen. Um derartige Szenarios zu ermöglichen, kann der TableAdapter auch so konfiguriert werden, dass er auf eine vorhandene gespeicherte Prozedur verweist. In diesem Tutorial haben wir uns mit dem manuellen Hinzufügen gespeicherter Prozeduren zu einer Datenbank über die Visual Studio-Umgebung und der Übertragung der TableAdapter s-Methoden an diese gespeicherten Prozeduren beschäftigt. Wir haben auch die T-SQL-Befehle und das Skript Muster untersucht, die zum Starten, zum Commit und zum Rollback von Transaktionen innerhalb einer gespeicherten Prozedur verwendet werden.
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -9,11 +9,11 @@ ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
 ms.openlocfilehash: db0d83a0fd1f1f175001d20844b298be0cf7e1cd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74609120"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428763"
 ---
 # <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Erstellen von neuen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (C#)
 
@@ -34,7 +34,7 @@ Wenn Sie einen TableAdapter definieren oder neue Methoden hinzufügen, erleichte
 > [!NOTE]
 > Weitere Informationen zu den vor-und Nachteile von gespeicherten Prozeduren und Ad-hoc-SQL finden Sie im Blogbeitrag von Rob Howard. es werden [noch keine gespeicherten Prozeduren verwendet?](http://grokable.com/2003/11/dont-use-stored-procedures-yet-must-be-suffering-from-nihs-not-invented-here-syndrome/) und die [gespeicherten Prozeduren](https://weblogs.asp.net/fbouma/archive/2003/11/18/38178.aspx) für den Blogeintrag von [Frans Bouma](https://weblogs.asp.net/fbouma/) sind schlecht.
 
-## <a name="stored-procedure-basics"></a>Grundlagen der gespeicherten Prozeduren
+## <a name="stored-procedure-basics"></a>Grundlagen der gespeicherten Prozedur
 
 Funktionen sind ein Konstrukt, das für alle Programmiersprachen gemeinsam ist. Eine Funktion ist eine Auflistung von-Anweisungen, die ausgeführt werden, wenn die-Funktion aufgerufen wird. Funktionen können Eingabeparameter akzeptieren und optional einen Wert zurückgeben. *[Gespeicherte Prozeduren](http://en.wikipedia.org/wiki/Stored_procedure)* sind Datenbankkonstrukte, die viele Ähnlichkeiten mit Funktionen in Programmiersprachen aufweisen. Eine gespeicherte Prozedur besteht aus einem Satz von T-SQL-Anweisungen, die ausgeführt werden, wenn die gespeicherte Prozedur aufgerufen wird. Eine gespeicherte Prozedur akzeptiert möglicherweise null bis viele Eingabeparameter und kann skalare Werte, Ausgabeparameter oder, am häufigsten Resultsets, aus `SELECT` Abfragen zurückgeben.
 
@@ -300,7 +300,7 @@ Unabhängig davon, ob Sie die GridView verbessern, testen Sie die Core-Features 
 
 **Abbildung 24**: die Produkte können in der GridView angezeigt, bearbeitet und gelöscht werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image58.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die TableAdapters in einem typisierten DataSet können mithilfe von Ad-hoc-SQL-Anweisungen oder gespeicherten Prozeduren auf Daten aus der Datenbank zugreifen. Beim Arbeiten mit gespeicherten Prozeduren können entweder vorhandene gespeicherte Prozeduren verwendet werden, oder der TableAdapter-Assistent kann angewiesen werden, neue gespeicherte Prozeduren auf der Grundlage einer `SELECT` Abfrage zu erstellen. In diesem Tutorial haben wir untersucht, wie die gespeicherten Prozeduren automatisch für uns erstellt werden.
 
@@ -310,7 +310,7 @@ In vielen Szenarios wurden die gespeicherten Prozeduren möglicherweise bereits 
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -320,7 +320,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Gespeicherte Prozeduren: eine Übersicht](http://www.sqlteam.com/item.asp?ItemID=563)
 - [Schreiben einer gespeicherten Prozedur](http://www.4guysfromrolla.com/webtech/111499-1.shtml)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -329,4 +329,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Hilton geisenow. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [Weiter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)

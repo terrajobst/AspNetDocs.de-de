@@ -1,82 +1,82 @@
 ---
 uid: mvc/overview/older-versions-1/overview/asp-net-mvc-overview
-title: ASP.NET MVC – Übersicht | Microsoft-Dokumentation
+title: Übersicht über ASP.NET MVC | Microsoft-Dokumentation
 author: microsoft
-description: Informationen Sie zu den Unterschieden zwischen ASP.NET MVC-Anwendung und ASP.NET Web Forms-Anwendungen. Erfahren Sie, wie, wann zum Erstellen einer ASP.NET MVC-Anwendung.
+description: Erfahren Sie mehr über die Unterschiede zwischen ASP.NET MVC-Anwendungen und ASP.net-Web Forms Anwendungen. Erfahren Sie, wie Sie entscheiden, wann eine ASP.NET MVC-Anwendung erstellt werden soll.
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 2dcb44a4-5cbf-4d62-b363-718104082d86
 msc.legacyurl: /mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 msc.type: authoredcontent
 ms.openlocfilehash: 73965c71f37de13e3813df089a253fde528ea7ee
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128224"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435489"
 ---
 # <a name="aspnet-mvc-overview"></a>Übersicht über ASP.NET MVC
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Informationen Sie zu den Unterschieden zwischen ASP.NET MVC-Anwendung und ASP.NET Web Forms-Anwendungen. Erfahren Sie, wie, wann zum Erstellen einer ASP.NET MVC-Anwendung.
+> Erfahren Sie mehr über die Unterschiede zwischen ASP.NET MVC-Anwendungen und ASP.net-Web Forms Anwendungen. Erfahren Sie, wie Sie entscheiden, wann eine ASP.NET MVC-Anwendung erstellt werden soll.
 
-Das Architekturmuster Model-View-Controller (MVC) trennt eine Anwendung in drei Hauptkomponenten: das Modell, Ansicht und Controller. ASP.NET MVC-Framework bietet eine Alternative für das ASP.NET Web Forms-Muster zum Erstellen von MVC-basierte Web-Anwendungen. ASP.NET MVC-Framework ist eine einfache und leicht zu testendes Präsentationsframework, (wie bei Web Forms-basierte Anwendungen) ist in vorhandene ASP.NET-Funktionen, z. B. Gestaltungsvorlagen und mitgliedschaftsbasierte Authentifizierung integriert. Das MVC-Framework wird definiert, der **System.Web.Mvc** Namespace und ein grundlegender, unterstützter Teil der **"System.Web"** Namespace.   
+Das Architekturmuster Model-View-Controller (MVC) trennt eine Anwendung in drei Hauptkomponenten: das Modell, die Ansicht und den Controller. Das ASP.NET-MVC-Framework bietet eine Alternative zum ASP.net-Web Forms Muster zum Erstellen von MVC-basierten Webanwendungen. Das ASP.NET-MVC-Framework ist ein schlankes, hochgradig testbares Präsentations Framework, das (wie bei Web Forms basierten Anwendungen) in vorhandene ASP.NET-Features wie Masterseiten und Mitgliedschafts basierte Authentifizierung integriert ist. Das MVC-Framework ist im Namespace " **System. Web. MVC** " definiert und ist ein grundlegender, unterstützter Teil des **System. Web** -Namespace.   
   
-MVC ist ein Standardentwurfsschema, die viele Entwickler kennen. Einige Arten von Webanwendungen profitieren vom MVC-Framework. Andere werden weiterhin das herkömmliche ASP.NET-Anwendungsschema verwenden, das auf Web Forms und Postbacks basiert. Andere Arten von Webanwendungen werden beide Ansätze kombinieren; keiner dieser Ansätze, die den anderen ausschließt.   
+MVC ist ein Standard Entwurfsmuster, mit dem viele Entwickler vertraut sind. Einige Arten von Webanwendungen profitieren vom MVC-Framework. Andere verwenden weiterhin das herkömmliche ASP.NET-Anwendungs Muster, das auf Web Forms und Postbacks basiert. Andere Arten von Webanwendungen werden die beiden Ansätze kombinieren. keines dieser Ansätze schließt die andere aus.   
   
 Das MVC-Framework umfasst die folgenden Komponenten:
 
-[![Eine Controlleraktion aufgerufen wird, die einen Parameterwert erwartet](asp-net-mvc-overview/_static/image1.jpg)](asp-net-mvc-overview/_static/image1.png)
+[![Aufrufen einer Controller Aktion, die einen Parameterwert erwartet](asp-net-mvc-overview/_static/image1.jpg)](asp-net-mvc-overview/_static/image1.png)
 
-**Abbildung 01**: Eine Controlleraktion, die einen Parameterwert erwartet aufrufen ([klicken Sie, um das Bild in voller Größe anzeigen](asp-net-mvc-overview/_static/image2.png))
+**Abbildung 01**: Aufrufen einer Controller Aktion, die einen Parameterwert erwartet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](asp-net-mvc-overview/_static/image2.png))
 
-- **Modelle**. Modellobjekte sind die Teile der Anwendung, die die Logik für die Anwendungsdomäne des s Daten implementieren. Häufig Modellobjekte abgerufen und in einer Datenbank gespeichert. Beispielsweise kann ein Product-Objekt abrufen von Informationen aus einer Datenbank, verarbeiten und anschließend aktualisierten Informationen zurück in eine Produkttabelle in SQL Server schreiben.
+- **Modelle**. Modell Objekte sind die Teile der Anwendung, die die Logik für die Daten Domäne der Anwendung implementieren. Häufig werden Modell Objekte in einer Datenbank abgerufen und gespeichert. Ein Product-Objekt kann z. b. Informationen aus einer Datenbank abrufen, darauf arbeiten und anschließend aktualisierte Informationen zurück in eine Products-Tabelle in SQL Server schreiben.
 
-Bei kleineren Anwendungen ist das Modell häufig eine konzeptionelle Trennung statt physisch von den anderen. Z. B. wenn die Anwendung wird nur ein Dataset liest und sie an die Ansicht sendet, verfügt die Anwendung keine physische Modellebene und verknüpfter Klassen über. In diesem Fall übernimmt das Dataset die Rolle eines Modellobjekts.
+In kleinen Anwendungen ist das Modell oftmals eine konzeptionelle Trennung anstelle eines physischen Modells. Wenn die Anwendung z. b. nur ein DataSet liest und an die Ansicht sendet, verfügt die Anwendung nicht über eine physische Modell Ebene und zugehörige Klassen. In diesem Fall übernimmt das DataSet die Rolle eines Modell Objekts.
 
-- **Ansichten**. Ansichten sind die Komponenten, die die Anwendung-s-Benutzeroberfläche (UI) anzuzeigen. In der Regel wird diese Benutzeroberfläche aus den Modelldaten erstellt. Ein Beispiel wäre eine Bearbeitungsansicht einer Produkttabelle, in der Textfelder, Dropdownlisten und Kontrollkästchen, die basierend auf den aktuellen Status eines Objekts Produkte angezeigt.
+- **Sichten**. Ansichten sind die Komponenten, die die Benutzeroberfläche der Anwendung anzeigen. In der Regel wird diese Benutzeroberfläche aus den Modelldaten erstellt. Ein Beispiel wäre eine Bearbeitungs Ansicht einer Produkttabelle, in der Textfelder, Dropdown Listen und Kontrollkästchen auf Grundlage des aktuellen Zustands eines Products-Objekts angezeigt werden.
 
-- **Controller**. Controller sind Komponenten, die Benutzerinteraktionen verarbeiten, mit dem Modell arbeiten und letztlich eine Ansicht zu rendern, die Benutzeroberfläche zeigt auswählen. In einer MVC-Anwendung zeigt die Ansicht nur Informationen an. Benutzereingaben und -interaktionen werden vom Controller verarbeitet und beantwortet. Beispielsweise wird der Controller behandelt die Abfragezeichenfolgen-Werte und übergibt diese Werte an das Modell, das wiederum die Datenbank abgefragt wird mithilfe der Werte.
+- **Controller**. Controller sind die Komponenten, die die Benutzerinteraktion verarbeiten, mit dem Modell arbeiten und letztendlich eine Ansicht zum Rendering auswählen, die die Benutzeroberfläche anzeigt. In einer MVC-Anwendung zeigt die Ansicht nur Informationen an. Benutzereingaben und -interaktionen werden vom Controller verarbeitet und beantwortet. Der Controller verarbeitet z. b. Abfrage Zeichenfolgen-Werte und übergibt diese Werte an das Modell, das wiederum die Datenbank mithilfe der-Werte abfragt.
 
-Das MVC-Muster können Sie Anwendungen erstellen, die die verschiedenen Aspekte der Anwendung (Eingabelogik, Geschäftslogik und UI-Logik), und gleichzeitig eine lose Kopplung zwischen diesen Elementen zu trennen. Das Muster gibt an, in dem jede Art von Logik in der Anwendung befinden soll. Die Benutzeroberflächenlogik ist Teil der Ansicht (view). Die Eingabelogik gehört zum Controller. Die Geschäftslogik gehört zum Modell. Diese Trennung ermöglicht Ihnen das bewältigen von Komplexität beim Erstellen einer Anwendung, da Sie sich auf einen Aspekt der Implementierung zu einem Zeitpunkt konzentrieren können. Beispielsweise können Sie in der Ansicht ohne von der Geschäftslogik konzentrieren.   
+Das MVC-Muster hilft Ihnen beim Erstellen von Anwendungen, die die verschiedenen Aspekte der Anwendung (Eingabe Logik, Geschäftslogik und UI-Logik) trennen, während gleichzeitig eine lose Kopplung zwischen diesen Elementen ermöglicht wird. Das Muster gibt an, wo sich jede Art von Logik in der Anwendung befinden sollte. Die Benutzeroberflächenlogik ist Teil der Ansicht (view). Die Eingabelogik gehört zum Controller. Die Geschäftslogik gehört zum Modell. Diese Trennung hilft Ihnen bei der Verwaltung der Komplexität, wenn Sie eine Anwendung erstellen, da Sie sich auf einen Aspekt der Implementierung gleichzeitig konzentrieren kann. Beispielsweise können Sie sich auf die Ansicht konzentrieren, ohne abhängig von der Geschäftslogik.   
   
-Zusätzlich zur Verwaltung der Komplexität erleichtert das MVC-Muster zum Testen von Anwendungen, als zu eine Web Forms-basierten ASP.NET-Webanwendung zu testen. In einer Web Forms-basierten ASP.NET-Webanwendung wird z. B. eine einzelne Klasse sowohl zur Anzeige der Ausgabe als auch auf Benutzereingaben reagieren verwendet. Das Schreiben automatisierter Tests für ASP.NET Web Forms-basierten Anwendungen kann komplex sein, da zum Testen einer einzelnen Seite die Seitenklasse, alle seine untergeordneten Steuerelemente und zusätzliche abhängige Klassen in der Anwendung instanziiert werden müssen. Da so viele Klassen instanziiert werden, um die Seite ausführen, kann es schwierig sein, Tests zu schreiben, die sich ausschließlich auf einzelne Teile der Anwendung konzentrieren. Tests für ASP.NET Web Forms-basierte Anwendungen können daher schwieriger zu implementieren als Tests in einer MVC-Anwendung sein. Darüber hinaus ist für Tests in einer Web Forms-basierten ASP.NET-Anwendung ein Webserver erforderlich. Das MVC-Framework entkoppelt die Komponenten und nutzt intensiv Schnittstellen, die es ermöglichen, einzelne Komponenten isoliert vom Rest des Frameworks zu testen.   
+Zusätzlich zur Verwaltung der Komplexität erleichtert das MVC-Muster das Testen von Anwendungen als das Testen einer Web Forms basierten ASP.NET-Webanwendung. Beispielsweise wird in einer Web Forms basierten ASP.NET-Webanwendung eine einzelne Klasse verwendet, um die Ausgabe anzuzeigen und auf Benutzereingaben zu reagieren. Das Schreiben automatisierter Tests für Web Forms-basierte ASP.NET-Anwendungen kann komplex sein, da Sie zum Testen einer einzelnen Seite die Seiten Klasse, alle untergeordneten Steuerelemente und zusätzliche abhängige Klassen in der Anwendung instanziieren müssen. Da so viele Klassen instanziiert werden, um die Seite auszuführen, kann es schwierig sein, Tests zu schreiben, die sich ausschließlich auf einzelne Teile der Anwendung konzentrieren. Tests für Web Forms basierte ASP.NET-Anwendungen können daher schwieriger zu implementieren sein als Tests in einer MVC-Anwendung. Außerdem ist für Tests in einer Web Forms basierten ASP.NET-Anwendung ein Webserver erforderlich. Das MVC-Framework entkoppelt die Komponenten und nutzt Schnittstellen stark. Dadurch können einzelne Komponenten isoliert vom Rest des Frameworks getestet werden.   
   
-Die lose Kopplung zwischen den drei Hauptkomponenten einer MVC-Anwendung begünstigt auch parallele Entwicklung. Z. B. ein Entwickler kann die auf die Ansicht, ein zweiter Entwickler an der Controllerlogik arbeiten kann und ein dritter Entwickler kann sich auf die Geschäftslogik im Modell konzentrieren.
+Die lose Kopplung zwischen den drei Hauptkomponenten einer MVC-Anwendung fördert auch die parallele Entwicklung. Beispielsweise kann ein Entwickler an der Ansicht arbeiten, ein zweiter Entwickler kann an der Controller Logik arbeiten, und ein Dritter Entwickler kann sich auf die Geschäftslogik im Modell konzentrieren.
 
-## <a name="deciding-when-to-create-an-mvc-application"></a>Entscheidungshilfen für die Erstellung eine MVC-Anwendung
+## <a name="deciding-when-to-create-an-mvc-application"></a>Entscheiden, wann eine MVC-Anwendung erstellt werden soll
 
-Sie müssen sorgfältig, ob eine Webanwendung mit ASP.NET MVC-Framework oder das ASP.NET Web Forms-Modell implementiert. Das MVC-Framework ist kein Ersatz für das Web Forms-Modell. Sie können jedes der beiden Frameworks für Webanwendungen verwenden. (Wenn Sie eine vorhandene Web Forms-basierten Anwendungen verfügen, weiterhin diese genau wie gewohnt funktioniert.)   
+Sie müssen sorgfältig überlegen, ob eine Webanwendung mit dem ASP.NET MVC-Framework oder mit dem ASP.net-Web Forms Modell implementiert werden soll. Das MVC-Framework ersetzt nicht das Web Forms Modell. Sie können beide Frameworks für Webanwendungen verwenden. (Wenn Sie über Web Forms basierte Anwendungen verfügen, funktionieren diese weiterhin genauso wie immer.)   
   
-Bevor Sie das MVC-Framework oder das Web Forms-Modell für eine bestimmte Website verwenden möchten, wiegen Sie die Vorteile beider Ansätze.
+Bevor Sie sich entscheiden, das MVC-Framework oder das Web Forms Modell für eine bestimmte Website zu verwenden, wiegen Sie die Vorteile der einzelnen Ansätze.
 
 ### <a name="advantages-of-an-mvc-based-web-application"></a>Vorteile einer MVC-basierten Webanwendung
 
-ASP.NET MVC-Framework bietet die folgenden Vorteile:
+Das ASP.NET-MVC-Framework bietet die folgenden Vorteile:
 
-- Es erleichtert die Komplexität zu verwalten, indem Sie eine Anwendung in das Modell, Ansicht und den Controller zu unterteilen.
-- Es verwendet keine Ansichtszustand oder severbasierten Formularen. Dadurch wird das MVC-Framework für Entwickler, die vollständige Kontrolle über das Verhalten einer Anwendung ideal.
-- Er verwendet ein Frontcontroller-Schema, das webanwendungsanforderungen durch einen einzelnen Controller verarbeitet. Dadurch können Sie eine Anwendung entwerfen, die eine umfangreiche Routinginfrastruktur unterstützen. Weitere Informationen finden Sie unter [Frontcontroller](https://go.microsoft.com/fwlink/?LinkId=106357 "Frontcontroller") auf der MSDN-Website.
-- Es bietet bessere Unterstützung für testgesteuerte Entwicklung (TDD).
-- Es eignet sich gut für Webanwendungen, die unterstützt werden, indem große Teams, die von Entwicklern und Web-Designer, die ein hohes Maß an Kontrolle über das Verhalten der Anwendung benötigen.
+- Es vereinfacht die Verwaltung der Komplexität durch Aufteilen einer Anwendung in das Modell, die Ansicht und den Controller.
+- Sie verwendet weder den Ansichts Zustand noch serverbasierte Formulare. Dadurch ist das MVC-Framework ideal für Entwickler, die die volle Kontrolle über das Verhalten einer Anwendung wünschen.
+- Dabei wird ein Front-Controller-Muster verwendet, das Webanwendungs Anforderungen über einen einzelnen Controller verarbeitet. Dies ermöglicht Ihnen das Entwerfen einer Anwendung, die eine umfangreiche Routing Infrastruktur unterstützt. Weitere Informationen finden Sie unter [Front Controller](https://go.microsoft.com/fwlink/?LinkId=106357 "Front-Controller") auf der MSDN-Website.
+- Sie bietet bessere Unterstützung für die Test gesteuerte Entwicklung (Test-gesteuerte Entwicklung, TDD).
+- Dies funktioniert gut für Webanwendungen, die von großen Teams von Entwicklern und Webdesignern unterstützt werden, die ein hohes Maß an Kontrolle über das Anwendungsverhalten benötigen.
 
-### <a name="advantages-of-a-web-forms-based-web-application"></a>Vorteile einer Web Forms-basierten Webanwendung
+### <a name="advantages-of-a-web-forms-based-web-application"></a>Vorteile einer Web Forms basierten Webanwendung
 
-Das Web Forms-basierte Framework bietet die folgenden Vorteile:
+Das Web Forms basierte Framework bietet die folgenden Vorteile:
 
-- Es unterstützt ein Ereignismodell, der Zustand über HTTP beibehält, die Entwicklung von LOB-Webanwendungen profitieren. Die Web Forms-basierte Anwendung stellt Dutzende von Ereignissen, die in Hunderten von Serversteuerelementen unterstützt werden.
-- Er verwendet ein Seitencontroller-Muster, das Funktionen für einzelne Seiten hinzugefügt. Weitere Informationen finden Sie unter [Seitencontroller](https://go.microsoft.com/fwlink/?LinkId=106359 "Seitencontroller") auf der MSDN-Website.
-- Er verwendet Ansichtszustand oder severbasierten Formularen, die Verwaltung von Zustandsinformationen vereinfachen können.
-- Es eignet sich gut für kleine Teams von Web-Entwicklern und Designern, die die große Anzahl von Komponenten, die für eine schnelle Anwendungsentwicklung nutzen möchten.
-- Ist im Allgemeinen weniger komplex ist, für die Anwendungsentwicklung, da die Komponenten (die **Seite** -Klasse, Steuerelemente usw.) stark integriert sind und normalerweise weniger Code als das MVC-Modell erfordern.
+- Es unterstützt ein Ereignis Modell, das den Zustand über HTTP beibehält, was die Entwicklung von Webanwendungen für die Entwicklung unterstützt. Die Web Forms basierte Anwendung bietet Dutzende von Ereignissen, die in Hunderten von Server Steuerelementen unterstützt werden.
+- Dabei wird ein Seiten Controller Muster verwendet, das einzelnen Seitenfunktionen hinzufügt. Weitere Informationen finden Sie unter [Page Controller](https://go.microsoft.com/fwlink/?LinkId=106359 "Seiten Controller") auf der MSDN-Website.
+- Sie verwendet Ansichts Zustand oder serverbasierte Formulare, die die Verwaltung von Zustandsinformationen vereinfachen.
+- Dies funktioniert gut für kleine Teams von Webentwicklern und Designern, die die große Anzahl von Komponenten nutzen möchten, die für die schnelle Anwendungsentwicklung zur Verfügung stehen.
+- Im Allgemeinen ist es für die Anwendungsentwicklung weniger komplex, da die Komponenten (die **Seiten** Klasse, Steuerelemente usw.) eng integriert sind und normalerweise weniger Code als das MVC-Modell benötigen.
 
-## <a name="features-of-the-aspnet-mvc-framework"></a>Funktionen von ASP.NET MVC-Framework
+## <a name="features-of-the-aspnet-mvc-framework"></a>Features des ASP.NET-MVC-Frameworks
 
-ASP.NET MVC-Framework bietet die folgenden Features:
+Das ASP.NET-MVC-Framework bietet die folgenden Features:
 
-- Trennung von Anwendungsaufgaben, (Eingabelogik, Geschäftslogik und UI-Logik) Prüfbarkeit und testgesteuerter Entwicklung (TDD) in der Standardeinstellung. Alle Kernverträge im MVC-Framework sind, und können getestet werden, mithilfe von mock-Objekte, die simulierte Objekte sind, die das Verhalten tatsächlicher Objekte in der Anwendung imitieren. Sie können Komponententests die Anwendung ohne die Controller in einem ASP.NET-Prozess auszuführen, wodurch Komponententests schnell und flexibel. Sie können alle Komponententestframework verwenden, die mit .NET Framework kompatibel ist.
-- Ein erweiterbares und austauschbares Framework. Die Komponenten von ASP.NET MVC-Framework sind so konzipiert, dass sie leicht ausgetauscht oder angepasst werden können. Sie können eigene Ansichts-Engine, URL-Routingrichtlinien, Aktion Serialisierung für Aktionsmethodenparameter und andere Komponenten einbinden. ASP.NET MVC-Framework unterstützt auch die Verwendung von Dependency Injection (DI) und die Umkehrung von Control (IOC) die steuerungsumkehrung bei containermodellen. DI ermöglicht Ihnen, Objekte in einer Klasse, anstatt für die Klasse zum Erstellen des Objekts selbst einzufügen. IOC gibt an, dass die ersten Objekte Wenn ein Objekt eines anderen Objekts erforderlich ist, das zweite Objekt aus einer externen Quelle, z. B. einer Konfigurationsdatei abrufen soll. Dadurch wird das Testen vereinfacht.
-- Eine leistungsstarke URL-Zuordnungskomponente, mit dem Sie Anwendungen erstellen, die verständlichen und suchbaren URLs haben. URLs müssen keine Dateinamenerweiterungen enthalten und dienen zur Unterstützung von URL-Benennungsschemas, die funktionieren gut für Search engine Optimization (SEO) und die representational State Transfer (REST), adressiert.
-- Unterstützung für das Verwenden von Markup aus vorhandenen ASP.NET-Seite (ASPX-Dateien), das Benutzersteuerelement (ASCX-Dateien) und master Seite (Master-Dateien) als Ansichtsvorlagen. Sie können vorhandene ASP.NET-Funktionen mit dem ASP.NET MVC-Framework, z. B. verschachtelte Gestaltungsvorlagen, Inlineausdrücke (&lt;% = %&gt;), deklarative Serversteuerelemente, Vorlagen, Datenbindung, Lokalisierung und So weiter.
-- Unterstützung für vorhandene ASP.NET-Funktionen. ASP.NET MVC können Sie die Features wie z. B. Formularauthentifizierung und Windows-Authentifizierung, URL-Autorisierung, Mitgliedschaft und Rollen, Ausgabe und das Zwischenspeichern von Daten, Sitzung und profilzustandsverwaltung, Systemüberwachung, das Konfigurationssystem und der Anbieter verwenden. Architektur.
+- Die Trennung von Anwendungsaufgaben (Eingabe Logik, Geschäftslogik und Benutzeroberflächen Logik), Testability und Test gesteuerte Entwicklung (Test-gesteuerte Entwicklung, TDD) standardmäßig. Alle kernverträge im MVC-Framework sind Schnittstellen basiert und können mithilfe von Pseudo Objekten getestet werden, bei denen es sich um simulierte Objekte handelt, die das Verhalten tatsächlicher Objekte in der Anwendung imitieren. Sie können die Anwendung Komponententests ausführen, ohne die Controller in einem ASP.NET-Prozess ausführen zu müssen, wodurch Komponententests schnell und flexibel werden. Sie können jedes Komponenten Test Framework verwenden, das mit dem .NET Framework kompatibel ist.
+- Ein erweiterbares und austauschbares Framework. Die Komponenten des ASP.NET-MVC-Frameworks sind so konzipiert, dass Sie problemlos ersetzt oder angepasst werden können. Sie können Ihre eigene Ansichts-Engine, URL-Routing Richtlinie, aktionsmethodenparameterserialisierung und andere Komponenten einbinden. Das ASP.NET-MVC-Framework unterstützt auch die Verwendung von "Abhängigkeitsinjektion (di)" und "Inversion of Control" (IOC)-Container Modellen. DI ermöglicht das Einfügen von Objekten in eine Klasse, anstatt sich auf die Klasse zu verlassen, um das Objekt selbst zu erstellen. IOC gibt an, dass die ersten Objekte das zweite Objekt aus einer externen Quelle, z. b. einer Konfigurationsdatei, erhalten, wenn ein Objekt ein anderes Objekt erfordert. Dies erleichtert das Testen.
+- Eine leistungsstarke URL-Zuordnungskomponente, mit der Sie Anwendungen erstellen können, die über verständliche und durchsuchbare URLs verfügen. URLs müssen keine Dateinamen Erweiterungen enthalten und sind für die Unterstützung von URL-Benennungs Mustern konzipiert, die sich gut für die Suchmaschinenoptimierung (Search Engine Optimization, SEO) und die Representational State Transfer (Rest)-Adressierung eignen.
+- Unterstützung für das Verwenden des Markups in vorhandenen ASP.net page (ASPX-Dateien), Benutzer Steuerelement (ASCX-Dateien) und Masterseiten (Master Dateien) Markup Dateien als Ansichts Vorlagen. Sie können vorhandene ASP.NET-Funktionen mit dem ASP.NET-MVC-Framework verwenden, z. b. für die Verwendung von nativen Masterseiten, Inline Ausdrücke (&lt;% =%&gt;), deklarative Server Steuerelemente, Vorlagen, Datenbindung, Lokalisierung usw.
+- Unterstützung vorhandener ASP.NET-Funktionen. Mit ASP.NET MVC können Sie Features wie Formular Authentifizierung und Windows-Authentifizierung, URL-Autorisierung, Mitgliedschaft und Rollen, Ausgabe-und Daten Caching, Sitzungs-und Profil Zustands Verwaltung, Integritäts Überwachung, das Konfigurationssystem und den Anbieter verwenden. Architektur.

@@ -9,11 +9,11 @@ ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4924d4f70099255b930d53f6a72e810be7a47485
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606835"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430929"
 ---
 # <a name="disabling-actions-during-animation-vb"></a>Deaktivieren von Aktionen während der Animation (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Außerdem werden Aktionen wie Mausklicks unterstützt. Wenn jedoch mit einem Mausklick eine Animation gestartet wird, ist es wünschenswert, während der Animation Mausklicks zu deaktivieren.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Außerdem werden Aktionen wie Mausklicks unterstützt. Wenn jedoch mit einem Mausklick eine Animation gestartet wird, ist es wünschenswert, während der Animation Mausklicks zu deaktivieren.
 

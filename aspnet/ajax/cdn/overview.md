@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 228194a7b35e116cabae6d819e7a3a8060a3ef6a
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.openlocfilehash: 92fa428608d4ac2bf56d3c6dc9c50f1449295869
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074916"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438021"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft AJAX Content Delivery Network
 
@@ -22,7 +22,7 @@ ms.locfileid: "77074916"
 >
 > Das Microsoft AJAX CDN hat keine SLA oberhalb und über die Verwendung eines Azure CDN.
 >
-> Verwenden Sie [dieses GitHub-Problem](https://github.com/aspnet/AspNetDocs/issues/116) , um Probleme mit dem Microsoft AJAX CDN zu melden.
+> Verwenden Sie [dieses GitHub-Problem](https://github.com/dotnet/AspNetDocs/issues/116) , um Probleme mit dem Microsoft AJAX CDN zu melden.
 
 ## <a name="table-of-contents"></a>Inhaltsverzeichnis
 
@@ -1180,8 +1180,8 @@ Die folgenden Versionen von [http://hammerjs.github.io/](http://hammerjs.github.
 Die folgenden Versionen der ASP.NET AJAX-Bibliothek werden im CDN gehostet. Klicken Sie auf die einzelnen Links, um die tatsächliche Liste der Dateien anzuzeigen.
 
 - [ASP.net Web Forms-und AJAX-Version 4.5.2](cdnajax452.md "ASP.NET Web Forms und AJAX 4.5.2")
-- [ASP.net Web Forms und AJAX Version 4](cdnajax4.md "ASP.NET-Web Forms und AJAX 4")
-- [ASP.NET AJAX, Version 3,5](cdnajax35.md "ASP.NET AJAX 3.5")
+- [ASP.net Web Forms und AJAX Version 4](cdnajax4.md "ASP.NET Web Forms und AJAX 4")
+- [ASP.NET AJAX, Version 3,5](cdnajax35.md "ASP.NET Ajax 3.5")
 
 <a id="ASPNET_MVC_Releases_on_the_CDN_16"></a>
 
@@ -1227,7 +1227,7 @@ Die folgenden ASP.NET-MVC-JavaScript-Dateien werden auf diesem CDN gehostet:
 - https://ajax.aspnetcdn.com/ajax/mvc/2.0/MicrosoftMvcAjax.js
 - https://ajax.aspnetcdn.com/ajax/mvc/2.0/MicrosoftMvcAjax.debug.js
 
-#### <a name="aspnet-mvc-10"></a>ASP.NET MVC 1,0
+#### <a name="aspnet-mvc-10"></a>ASP.NET MVC 1.0
 
 - https://ajax.aspnetcdn.com/ajax/mvc/1.0/MicrosoftMvcAjax.js
 - https://ajax.aspnetcdn.com/ajax/mvc/1.0/MicrosoftMvcAjax.debug.js

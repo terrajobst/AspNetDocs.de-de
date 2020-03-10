@@ -9,11 +9,11 @@ ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6a4af2324afab7519170c123b6ea7c57ab3e03fb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575031"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430785"
 ---
 # <a name="triggering-an-animation-in-another-control-vb"></a>Auslösen einer Animation in einem anderen Steuerelement (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Im Allgemeinen wird das Starten einer Animation durch eine Benutzerinteraktion mit demselben Steuerelement ausgelöst. Es ist jedoch auch möglich, mit einem Steuerelement zu interagieren und dann ein anderes Steuerelement zu Animation.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Im Allgemeinen wird das Starten einer Animation durch eine Benutzerinteraktion mit demselben Steuerelement ausgelöst. Es ist jedoch auch möglich, mit einem Steuerelement zu interagieren und dann ein anderes Steuerelement zu Animation.
 

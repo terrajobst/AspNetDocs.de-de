@@ -1,77 +1,77 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
-title: Team Foundation Server für die Bereitstellung konfigurieren | Microsoft-Dokumentation
+title: Konfigurieren von Team Foundation Server für die Webbereitstellung | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Tutorial erfahren Sie, wie Team Foundation Server (TFS) 2010 zum Erstellen von Lösungen und Bereitstellen von Web-Inhalte in verschiedenen zielumgebungen zu konfigurieren. Dies...
+description: In diesem Tutorial wird gezeigt, wie Sie Team Foundation Server (TFS) 2010 konfigurieren, um Lösungen zu erstellen und Webinhalte in verschiedenen Ziel Umgebungen bereitzustellen. ...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: ff55233a-e795-4007-a4fc-861fe1bb590b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 638d696abbc5f05957c0ed2eb7ebb65fce7813ea
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133871"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424203"
 ---
 # <a name="configuring-team-foundation-server-for-web-deployment"></a>Konfigurieren von Team Foundation Server für die Webbereitstellung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Tutorial erfahren Sie, wie Team Foundation Server (TFS) 2010 zum Erstellen von Lösungen und Bereitstellen von Web-Inhalte in verschiedenen zielumgebungen zu konfigurieren. Dies schließt die fortlaufende Integration (CI) Szenarien, in dem Sie Inhalte automatisch bereitstellen jedes Mal, wenn ein Entwickler eine Änderung vornimmt. Er kann auch Szenarien manueller Trigger enthalten, in denen ein Administrator für die Bereitstellung eines bestimmten Builds in einer Stagingumgebung auslösen, nachdem der Build wurde überprüft und validiert, in der testumgebung möchten möglicherweise. Die Themen in diesem Tutorial führt Sie durch den gesamten Konfigurationsprozess, einschließlich:
+> In diesem Tutorial wird gezeigt, wie Sie Team Foundation Server (TFS) 2010 konfigurieren, um Lösungen zu erstellen und Webinhalte in verschiedenen Ziel Umgebungen bereitzustellen. Dies umfasst Continuous Integration (CI)-Szenarios, in denen Sie Inhalte automatisch bereitstellen, wenn ein Entwickler eine Änderung vornimmt. Es können auch manuelle auslöserszenarien enthalten sein, in denen ein Administrator die Bereitstellung eines bestimmten Builds in einer Stagingumgebung möglicherweise auslöst, sobald der Build überprüft und in der Testumgebung validiert wurde. Die Themen in diesem Tutorial führen Sie durch den gesamten Konfigurationsprozess, einschließlich der folgenden:
 > 
-> - Vorgehensweise: Erstellen Sie ein neues Teamprojekt in TFS.
-> - Inhalte zur quellcodeverwaltung hinzufügen
-> - Vorgehensweise: konfigurieren ein Buildservers zur Unterstützung von CI und Bereitstellung.
-> - Erstellen eine Builddefinition, die Bereitstellungslogik enthält.
-> - So konfigurieren Sie Berechtigungen für die automatisierte Bereitstellung.
+> - Erstellen eines neuen Teamprojekts in TFS.
+> - Vorgehensweise beim Hinzufügen von Inhalt zur Quell Code Verwaltung.
+> - Konfigurieren eines Buildservers für die Unterstützung von CI und Bereitstellung.
+> - Erstellen einer Builddefinition, die Bereitstellungs Logik einschließt.
+> - Vorgehensweise beim Konfigurieren der Berechtigungen für die automatisierte Bereitstellung.
 > 
-> Ein italienischen Übersetzung mit diesen Lernprogrammen finden Sie unter [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
+> Eine italienische Übersetzung dieser Tutorials finden Sie unter [http://www.lucamorelli.it](http://www.lucamorelli.it).
 
-In diesem Tutorial wird davon ausgegangen, dass die Installation von TFS 2010 und eine teamprojektauflistung im Rahmen der anfänglichen Konfiguration erstellt. Die [Installationshandbuch zu Team Foundation für Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) bietet eine umfassende Anleitung zu diesen Aufgaben.
+In diesem Tutorial wird davon ausgegangen, dass Sie TFS 2010 installiert und im Rahmen des erst Konfigurations Vorgangs eine Teamprojekt Sammlung erstellt haben. Das [Team Foundation-Installationshandbuch für Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) bietet umfassende Anleitungen zu diesen Aufgaben.
 
 ## <a name="context"></a>Kontext
 
-Dies ist Teil einer Reihe von Tutorials, die basierend auf den Anforderungen des Enterprise-Bereitstellung für das fiktive Unternehmen mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) Lösung&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dies ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der&#x2014; [Contact Manager](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) -Lösung verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md), in dem der Buildprozess durch gesteuert wird zwei Projektdateien&#x2014;enthält Erstellen Sie die Anweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Build & Deployment-Einstellungen gelten. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Mittelpunkt dieser Tutorials basiert auf dem Untergrund Legendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md)beschriebenen Ansatz der Split Project-Datei, in dem der Buildprozess von zwei&#x2014;Projektdateien gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
 ## <a name="scenario-overview"></a>Übersicht über das Szenario
 
-Das allgemeine Szenario für diese Tutorials finden Sie im [webbasierte Unternehmensbereitstellung: Übersicht über das Szenario](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md). Es wird empfohlen, in diesem Thema lesen, bevor Sie mit diesem Tutorial beginnen.
+Das allgemeine Szenario für diese Tutorials wird unter [Unternehmensweb Bereitstellung: Szenarioübersicht](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)beschrieben. Es wird empfohlen, dieses Thema zu lesen, bevor Sie mit diesem Tutorial beginnen.
 
 ## <a name="how-to-use-this-tutorial"></a>Verwendung dieses Tutorials
 
-Wenn das erste Mal haben Sie die in diesem Tutorial beschriebenen Aufgaben ausgeführt, oder wenn Sie den beispiellösung mit Beispielen folgen möchten, sollten Sie den Lernprogrammthemen in der Reihenfolge durcharbeiten. Alternativ können Sie einzelne Themen als Leitfaden für bestimmte Aufgaben verwenden. In diesem Lernprogramm umfasst folgende Themen:
+Wenn Sie die in diesem Tutorial beschriebenen Aufgaben zum ersten Mal ausgeführt haben oder wenn Sie die Beispiele mit der Beispiellösung befolgen möchten, sollten Sie die Lernprogramm Themen in der richtigen Reihenfolge durcharbeiten. Alternativ können Sie einzelne Themen als Leitfaden für bestimmte Aufgaben verwenden. Dieses Tutorial enthält die folgenden Themen:
 
-- [Erstellen eines Teamprojekts in TFS](creating-a-team-project-in-tfs.md). Ein Teamprojekt ist die grundlegende Einheit für quellcodeverwaltung, prozessverwaltung und Builds in TFS. Sie müssen ein Teamprojekt erstellen, bevor Sie Inhalt an Datenquellen-Steuerelement, oder Erstellen von Builddefinitionen hinzufügen können.
-- [Hinzufügen von Inhalten zur Quellcodeverwaltung](adding-content-to-source-control.md). Nachdem Sie ein Teamprojekt erstellt haben, können Sie beginnen, Hinzufügen von Inhalten zur quellcodeverwaltung. Sie müssen Ihre Projekte und Projektmappen, zusammen mit externen Abhängigkeiten, hinzufügen, bevor Sie Builds konfigurieren können.
-- [Konfigurieren eine TFS-Buildserver für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md). Wenn Sie Ihre Inhalte der Team-Projekt erstellen möchten, müssen Sie einen Buildserver konfigurieren zu können. In den meisten Fällen sollte dies auf einem separaten Computer aus der TFS-Installation. Um einen Buildserver konfigurieren zu können, müssen Sie installieren und Konfigurieren der TFS-Build-Diensts, Visual Studio 2010 installieren, erstellen Buildcontroller und build-Agents, installieren Sie Produkte oder Komponenten, die Ihr Code benötigt, um erfolgreich erstellt werden, und installieren Sie die Internetinformationsdienste (IIS)-Webbereitstellungstool (Web Deploy).
-- [Erstellen eine Builddefinition, unterstützt die Bereitstellung](creating-a-build-definition-that-supports-deployment.md). Bevor Sie beginnen können, queuing oder Builds in TFS auslösen, müssen Sie mindestens eine Builddefinition für das Teamprojekt zu erstellen. Die Build-Definition definiert alle Aspekte des Builds, einschließlich, was in den Build enthalten sein sollen und was den Build auslösen sollen, in dem die Buildausgaben Team Build senden soll. Sie können eine Builddefinition zum Ausführen von benutzerdefinierter Microsoft Build Engine (MSBuild)-Projektdateien, konfigurieren, die Sie Bereitstellungslogik in Ihren automatisierten Builds einschließen können.
-- [Bereitstellen eines bestimmten Builds](deploying-a-specific-build.md). In vielen Szenarien sollten Sie einen bestimmten Build, anstatt den aktuellen Build, in einer zielumgebung bereitgestellt. In diesem Fall können Sie eine Builddefinition konfigurieren, die Inhalte aus einem bestimmten Ablageordner bereitstellt.
-- [Konfigurieren von Berechtigungen für Team-Buildbereitstellung](configuring-permissions-for-team-build-deployment.md). Wenn der Builddienst wird zum Bereitstellen von Inhalt als Teil einer automatisierten Buildprozess zu, müssen Sie verschiedene Berechtigungen für den Build Service-Konto für alle Ziel-Webserver und Datenbankserver zu gewähren.
+- [Erstellen eines Team Projekts in TFS](creating-a-team-project-in-tfs.md). Ein Teamprojekt ist die Kerneinheit für die Quell Code Verwaltung, Prozess Verwaltung und Erstellung in TFS. Sie müssen ein Teamprojekt erstellen, bevor Sie der Quell Code Verwaltung Inhalt hinzufügen oder Builddefinitionen erstellen können.
+- [Hinzufügen von Inhalt zur Quell](adding-content-to-source-control.md)Code Verwaltung. Nachdem Sie ein Teamprojekt erstellt haben, können Sie mit dem Hinzufügen von Inhalt zur Quell Code Verwaltung beginnen. Sie müssen Ihre Projekte und Projektmappen sowie alle externen Abhängigkeiten hinzufügen, bevor Sie mit der Konfiguration von Builds beginnen können.
+- [Konfigurieren eines TFS-Buildservers für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md). Wenn Sie den Teamprojekt Inhalt erstellen möchten, müssen Sie einen Buildserver konfigurieren. In den meisten Fällen sollte dies auf einem separaten Computer von ihrer TFS-Installation erfolgen. Zum Konfigurieren eines Buildservers müssen Sie den TFS-Builddienst installieren und konfigurieren, Visual Studio 2010 installieren, BuildController und Build-Agents erstellen, alle Produkte oder Komponenten installieren, die Ihr Code benötigt, um erfolgreich zu erstellen, und installieren Sie das Internetinformationsdienste (IIS)-Webbereitstellungs Tool (Web deploy).
+- [Erstellen einer Builddefinition, die Bereitstellung unterstützt](creating-a-build-definition-that-supports-deployment.md). Bevor Sie mit der Warteschlange oder dem Auslösen von Builds in TFS beginnen können, müssen Sie mindestens eine Builddefinition für das Teamprojekt erstellen. Die Builddefinition definiert jeden Aspekt des Builds, einschließlich der Elemente, die in den Build eingeschlossen werden sollen, was den Build auslöst, und wo die Buildausgaben von Team Build gesendet werden sollen. Sie können eine Builddefinition konfigurieren, um benutzerdefinierte Microsoft-Build-Engine (MSBuild)-Projektdateien auszuführen, sodass Sie die Bereitstellungs Logik in die automatisierten Builds einschließen können.
+- Bereitstellen [eines bestimmten Builds](deploying-a-specific-build.md). In vielen Szenarien sollten Sie einen bestimmten Build anstelle des aktuellen Builds in einer Zielumgebung bereitstellen. In diesem Fall können Sie eine Builddefinition konfigurieren, mit der Inhalt aus einem bestimmten Ablage Ordner bereitgestellt wird.
+- [Konfigurieren von Berechtigungen für die Team Build-Bereitstellung](configuring-permissions-for-team-build-deployment.md). Wenn der Builddienst Inhalte als Teil eines automatisierten Buildprozesses bereitstellen soll, müssen Sie dem Builddienstkonto für alle Zielweb Server und Datenbankserver verschiedene Berechtigungen erteilen.
 
-## <a name="key-technologies"></a>Schlüsseltechnologien
+## <a name="key-technologies"></a>Wichtige Technologien
 
-In diesem Tutorial geht es um die Produkte und Technologien zu verwenden, um automatische Builds und webbereitstellung zu unterstützen:
+Dieses Tutorial konzentriert sich auf die Verwendung dieser Produkte und Technologien, um die automatisierte Build-und Webbereitstellung zu unterstützen:
 
 - Visual Studio Team Foundation Server 2010
-- Teambuild und MSBuild
+- Team Build und MSBuild
 - Web Deploy
 
-Das Tutorial betrifft auch bei der Verwendung von Windows Server 2008 R2, IIS 7.5, SQL Server 2008 R2, ASP.NET 4.0 und ASP.NET MVC 3.
+Das Tutorial berührt außerdem die Verwendung von Windows Server 2008 R2, IIS 7,5, SQL Server 2008 R2, ASP.NET 4,0 und ASP.NET MVC 3.
 
-## <a name="other-tutorials-in-this-series"></a>Andere Tutorials in dieser Reihe
+## <a name="other-tutorials-in-this-series"></a>Weitere Tutorials in dieser Reihe
 
-Dies ist Teil einer Reihe von fünf Lernprogrammen auf Unternehmensniveau webbereitstellung. Dies sind die anderen Tutorials der Reihe:
+Dies ist Teil einer Reihe von fünf Tutorials für die Webbereitstellung im Unternehmen. Dies sind die anderen Tutorials in der Reihe:
 
-- [Bereitstellen von Webanwendungen in Unternehmensszenarien](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md). Dieser einführenden Inhalt enthält die kontextbezogenen Hintergrundinformationen zum der Tutorial-Reihe. Das tutorialszenario beschrieben und veranschaulicht, wie die Aufgaben und exemplarische Vorgehensweisen beschrieben, die in der gesamten Reihe in einem größeren Application Lifecycle Management (ALM)-Prozess passen.
-- [Webbereitstellung im Unternehmen](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). Dieses Tutorial bietet eine grundlegende Einführung in MSBuild-Projektdateien, die Web Publishing-Pipeline (WPP), Web Deploy und andere verwandten Technologien. Es wird erläutert, wie diese Tools zusammen verwenden werden können, um komplexe Bereitstellungsprozesse zu verwalten.
-- [Konfigurieren von Serverumgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie Windows Server zur Unterstützung verschiedener Bereitstellungsszenarien, einschließlich der remote-Web-Paket-Bereitstellung mithilfe der Webbereitstellungs-Agent-Dienst (der remote-Agent) oder Bereitstellen von Web-Handler und remote-Datenbank-Bereitstellung konfiguriert. Sie erhalten Anweisungen zum Auswählen der geeigneten Bereitstellungsmethode für Ihre eigene Umgebung, und es wird beschrieben, wie das Web Farm Framework (WFF) verwenden, um bereitgestellten Webanwendungen für alle Webserver in einer Serverfarm zu replizieren.
-- [Erweiterte webbasierte Unternehmensbereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie verschiedene erweiterte Bereitstellung, z. B. Anpassen von datenbankbereitstellungen für mehrere Umgebungen und Ausschließen von Dateien und Ordner von der Bereitstellung von Webanwendungen während der Bereitstellung und Aufgaben .
+- Bereitstellen von [Webanwendungen in Unternehmens Szenarios](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) Dieser einführende Inhalt enthält den kontextbezogenen Hintergrund der tutorialreihe. Es beschreibt das Tutorial-Szenario und veranschaulicht, wie die in der Reihe beschriebenen Aufgaben und exemplarischen Vorgehensweisen in einen umfassenderen Application Lifecycle Management (ALM)-Prozess passen.
+- [Webbereitstellung im Unternehmen](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). Dieses Tutorial enthält eine konzeptionelle Einführung in MSBuild-Projektdateien, die Web Publishing Pipeline (WPP), Web deploy und andere verwandte Technologien. Es wird erläutert, wie Sie diese Tools zum Verwalten komplexer Bereitstellungs Prozesse verwenden können.
+- [Konfigurieren von Server Umgebungen für die Webbereitstellung](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). In diesem Tutorial wird beschrieben, wie Sie Windows Server zur Unterstützung verschiedener Bereitstellungs Szenarien konfigurieren, einschließlich der Remoteweb Paket Bereitstellung mithilfe des Web Deployment Agent-Diensts (Remote-Agent) oder des Web deploy Handlers und der Remote Datenbank Es enthält Anleitungen zum Auswählen der geeigneten Bereitstellungs Methode für Ihre eigene Umgebung. Außerdem wird beschrieben, wie Sie das Web Farm Framework (WFF) verwenden, um bereitgestellte Webanwendungen auf allen Webservern in einer Server Farm zu replizieren.
+- [Erweiterte Unternehmensweb Bereitstellung](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). In diesem Tutorial wird beschrieben, wie Sie verschiedene erweiterte Bereitstellungs Aufgaben durchführen können, wie z. b. das Anpassen von Daten Bank Bereitstellungen für mehrere Umgebungen, das Ausschließen von Dateien und Ordnern aus der Bereitstellung und das offline schalten von Webanwendungen .
 
 > [!div class="step-by-step"]
-> [Nächste](creating-a-team-project-in-tfs.md)
+> [Weiter](creating-a-team-project-in-tfs.md)

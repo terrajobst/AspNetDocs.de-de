@@ -9,11 +9,11 @@ ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6e0d57ef2f1e8132f19777a7d14e94611c68adcd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615274"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441495"
 ---
 # <a name="uploading-files-vb"></a>Hochladen von Dateien (VB)
 
@@ -151,7 +151,7 @@ Geben Sie im dritten Schritt die folgende SQL-Abfrage ein, und klicken Sie auf W
 
 [!code-sql[Main](uploading-files-vb/samples/sample3.sql)]
 
-Der letzte Schritt besteht darin, den Namen für die neue Methode auszuwählen. Verwenden Sie `FillCategoryWithBinaryDataByCategoryID` und `GetCategoryWithBinaryDataByCategoryID` für die Datentabelle ausfüllen und Datentabelle zurückgeben. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Der letzte Schritt besteht darin, den Namen für die neue Methode auszuwählen. Verwenden Sie `FillCategoryWithBinaryDataByCategoryID` und `GetCategoryWithBinaryDataByCategoryID` für die Datentabelle ausfüllen und Datentabelle zurückgeben. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![wählen Sie die Namen für die TableAdapter s-Methoden aus.](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
 
@@ -229,13 +229,13 @@ Das FileUpload-Steuerelement ist für große Datei Uploads nicht praktikabel. We
 
 Wenn Ihre Anwendung große Dateien verarbeiten muss, müssen Sie die Herausforderungen sorgfältig untersuchen und geeignete Lösungen für Ihre speziellen Anforderungen finden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Erstellen einer Anwendung, die Binärdaten erfassen muss, führt zu einer Reihe von Herausforderungen. In diesem Tutorial haben wir die ersten beiden untersucht: entscheiden, wo die Binärdaten gespeichert werden sollen, und ermöglichen einem Benutzer, Binär Inhalte über eine Webseite hochzuladen. In den nächsten drei Tutorials erfahren Sie, wie die hochgeladenen Daten einem Datensatz in der Datenbank zugeordnet werden, und wie die Binärdaten zusammen mit den Text Datenfeldern angezeigt werden.
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -244,7 +244,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Das ASP.NET 2,0 FileUpload-Server Steuerelement](http://www.wrox.com/WileyCDA/Section/id-292158.html)
 - [Die dunkle Seite der Datei Uploads.](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

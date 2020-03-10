@@ -9,11 +9,11 @@ ms.assetid: 43d1e83c-0092-4dcf-977c-e709c4dce7c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 01627988f68bb619969a5fe3cfaae68fe70b5d4f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588255"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441105"
 ---
 # <a name="urls-in-master-pages-vb"></a>URLs auf Masterseiten (VB)
 
@@ -58,7 +58,7 @@ Aktualisieren Sie als nächstes die `Web.sitemap` Datei, sodass Sie einen neuen 
 
 [!code-xml[Main](urls-in-master-pages-vb/samples/sample3.xml)]
 
-Die neu erstellte `Default.aspx` Seite sollte vier Inhalts Steuerelemente aufweisen, die den vier Content-Platzhaltern in `Site.master`entsprechen. Fügen Sie dem Inhalts Steuerelement Text hinzu, der auf den `MainContent` contentplachalter verweist, und besuchen Sie dann die Seite über einen Browser. Wie in Abbildung 2 gezeigt, kann der Browser die `PoweredByASPNET.gif` Bilddatei nicht finden. Was ist hier los?
+Die neu erstellte `Default.aspx` Seite sollte vier Inhalts Steuerelemente aufweisen, die den vier Content-Platzhaltern in `Site.master`entsprechen. Fügen Sie dem Inhalts Steuerelement Text hinzu, der auf den `MainContent` contentplachalter verweist, und besuchen Sie dann die Seite über einen Browser. Wie in Abbildung 2 gezeigt, kann der Browser die `PoweredByASPNET.gif` Bilddatei nicht finden. Was geht da vor?
 
 Der `~/Admin/Default.aspx` Inhaltsseite wird das gleiche HTML-Format für die `footerContent` Region gesendet wie die `About.aspx` Seite:
 
@@ -141,7 +141,7 @@ Um dies zu überprüfen, besuchen Sie die Seite `~/Admin/Default.aspx` und zeige
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample10.html)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Master Seiten enthalten häufig Links, Bilder und andere externe Ressourcen, die über eine URL angegeben werden müssen. Da die Master Seite und Inhaltsseiten möglicherweise nicht im selben Ordner vorhanden sind, ist es wichtig, dass Sie keine relativen URLs verwenden. Obwohl es möglich ist, hart codierte absolute URLs zu verwenden, verbindet das absolute URL so eng mit der Webanwendung. Wenn das absolute URL geändert wird, wie es häufig beim Verschieben oder Bereitstellen einer Webanwendung der Fall ist, müssen Sie daran denken, die absoluten URLs zu aktualisieren.
 
@@ -149,7 +149,7 @@ Der ideale Ansatz besteht darin, die Tilde (`~`) zu verwenden, um den Anwendungs
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -157,7 +157,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [URL-Neuzuordnung auf einer Master Seite](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx#urls)
 - [Verwenden von `ResolveClientUrl` in Markup](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

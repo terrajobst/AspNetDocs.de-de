@@ -9,11 +9,11 @@ ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
 ms.openlocfilehash: fa2868fc0dd8acd76f600b47d92adb984ce8d105
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573625"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78444273"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurieren von Einstellungen der Datenzugriffsschicht auf Verbindungs- und Befehlsebene (VB)
 
@@ -141,7 +141,7 @@ Diese Methode kann von der BLL-oder Präsentationsebene aufgerufen werden, um da
 > [!NOTE]
 > Die Eigenschaften "`Adapter`" und "`CommandCollection`" sind als `Private`gekennzeichnet, d. h., auf Sie kann nur über Code innerhalb des TableAdapters zugegriffen werden. Anders als die `Connection`-Eigenschaft können diese Zugriffsmodifizierer nicht konfiguriert werden. Wenn Sie Eigenschaften auf Befehls Ebene für andere Ebenen in der Architektur verfügbar machen müssen, müssen Sie daher den oben beschriebenen partiellen Klassen Ansatz verwenden, um eine `Public` Methode oder Eigenschaft bereitzustellen, die die `Private` Befehls Objekte liest oder schreibt.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die TableAdapters in einem typisierten DataSet dienen zum Kapseln von Datenzugriffs Details und-Komplexität. Mithilfe von TableAdapters müssen Sie sich keine Gedanken über das Schreiben von ADO.NET-Code machen, um eine Verbindung mit der Datenbank herzustellen, einen Befehl auszugeben oder die Ergebnisse in eine Datentabelle aufzufüllen. Sie werden alle automatisch für uns verarbeitet.
 
@@ -149,7 +149,7 @@ Es kann jedoch vorkommen, dass die ADO.net-Besonderheiten auf niedriger Ebene an
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

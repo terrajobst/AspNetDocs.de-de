@@ -1,19 +1,19 @@
 ---
 uid: mvc/pluralsight
-title: MVC-Schulungsvideo von Pluralsight | Microsoft-Dokumentation
+title: MVC-Video Training von Pluralsight | Microsoft-Dokumentation
 author: rick-anderson
-description: MVC-Schulungsvideo von Pluralsight dieser kostenloses videotraining erhalten einsatzbereit mit ASP.NET MVC Sie. Hierin sind alle Informationen vom Einrichten einer Entwicklung...
+description: MVC-Video Training von Pluralsight dieses kostenlose Video Training ist mit ASP.NET MVC in Betrieb. Alles ist von der Einrichtung einer Entwicklungsumgebung abgedeckt...
 ms.author: riande
 ms.date: 03/09/2011
 ms.assetid: 87612fe1-258c-4f50-88d8-c3047dec3f14
 msc.legacyurl: /mvc/pluralsight
 msc.type: content
 ms.openlocfilehash: 200e6b8cf8c32fbf70b383fc02e2fd74cbc313e5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419872"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432369"
 ---
 # <a name="mvc-video-training-from-pluralsight"></a>MVC-Schulungsvideo von Pluralsight
 
@@ -26,15 +26,15 @@ ms.locfileid: "59419872"
 - [Web-API 2](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m5-webapi2&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 - [Entity Framework 6](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m6-ef6&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 - [SignalR](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m7-signalr&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
-- [Web Developer-Tools und Visual Studio 2013](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
+- [Web Entwicklertools und Visual Studio 2013](https://pluralsight.com/training/Player?author=scott-allen&name=aspdotnet-mvc5-fundamentals-m8-visualstudio&mode=live&clip=0&course=aspdotnet-mvc5-fundamentals)
 
-> Dieser MVC 5-Kurs von K. Scott Allen aufgezeichnet wurden für Pluralsight bietet eine fantastische Möglichkeit, schnell, schneller auf die neueste Version von ASP.NET MVC. Scott Guthries Präsentationsstil ist leicht verständlich und technisch beeindruckende und die Kurs-Format, video-Player und allgemeine Rhythmus sind wirklich großartig. Plus – es ist kostenfrei, es gibt also keine Entschuldigung nicht zu MVC 5 heute erfahren!
+> Dieser MVC 5-Kurs, der von K. Scott allen für Pluralsight aufgezeichnet wurde, bietet eine fantastische Möglichkeit, sich schnell mit der neuesten Version von ASP.NET MVC vertraut zu machen. Das Präsentationsformat von Scott ist leicht zu befolgen und technisch aussagekräftigen, und das Kurs Format, der Video Player und die Gesamt Kadenz sind wirklich großartig. Und – es ist kostenlos. es gibt also keine Entschuldigung, noch heute MVC 5 kennenzulernen!
 >
-> &mdash;Scott Guthrie, Executive Vice President, Cloud von Microsoft und Enterprise-Gruppe, Microsoft
+> &mdash;Scott Guthrie, Executive Vice President, Microsoft Cloud und Enterprise Group, Microsoft
 
-![pluralsight-logo-playbutton](pluralsight/_static/image1.png)
+![Pluralsight-Logo-PlayButton](pluralsight/_static/image1.png)
 
-Sperre des Zugriffs auf über 3.000 Entwickler, IT und kreative Kurse, die Sie jederzeit und überall ansehen können.
+Entsperren Sie den Zugriff auf 3000 + dev-, IT-und Creative-Kurse, die Sie jederzeit und überall beobachten können.
 
 * [ASP.NET MVC 5-Grundlagen](https://www.pluralsight.com/courses/aspdotnet-mvc5-fundamentals)
-* [Pluralsight-Preisen und Plänen](https://www.pluralsight.com/pricing)
+* [Pluralsight-Preise und-Pläne](https://www.pluralsight.com/pricing)

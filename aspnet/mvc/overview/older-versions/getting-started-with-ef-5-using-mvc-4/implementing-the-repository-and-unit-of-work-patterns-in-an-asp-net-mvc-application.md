@@ -9,11 +9,11 @@ ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: 18de9b125ee5d10795b9ce1a366918dadf4fc4e3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595243"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78434379"
 ---
 # <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implementieren von Repository-und Arbeitseinheiten Mustern in einer ASP.NET MVC-Anwendung (9 von 10)
 
@@ -237,7 +237,7 @@ Führen Sie die Website aus, und klicken Sie auf die Registerkarte **Kurse**
 
 Die Seite wird genauso aussehen und funktioniert wie vor Ihren Änderungen, und die anderen Kursseiten funktionieren ebenfalls identisch.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben nun sowohl das Repository als auch das Arbeits Einheits Muster implementiert. Sie haben Lambda-Ausdrücke als Methoden Parameter im generischen Repository verwendet. Weitere Informationen zum Verwenden dieser Ausdrücke mit einem `IQueryable`-Objekt finden Sie unter [iquervable (t) Interface (t) Interface (System. Linq)](https://msdn.microsoft.com/library/bb351562.aspx) in der MSDN Library. Im nächsten Tutorial erfahren Sie, wie einige erweiterte Szenarien behandelt werden.
 

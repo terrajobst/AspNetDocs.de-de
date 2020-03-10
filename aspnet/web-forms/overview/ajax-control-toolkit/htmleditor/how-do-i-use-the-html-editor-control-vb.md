@@ -1,101 +1,101 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
-title: Wie verwende ich das HTML-Editor-Steuerelement? (VB) | Microsoft-Dokumentation
+title: Gewusst wie das HTML-Editor-Steuerelement verwenden? (VB) | Microsoft-Dokumentation
 author: microsoft
-description: HTMLEditor ist ein ASP.NET AJAX-Steuerelement mit dem Sie ganz einfach erstellen und Bearbeiten von HTML-Inhalte über Schaltflächen in einer Symbolleiste an.
+description: HTMLEditor ist ein ASP.NET AJAX-Steuerelement, mit dem Sie HTML-Inhalt problemlos über Schaltflächen in einer Symbolleiste erstellen und bearbeiten können.
 ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 20f8a2f8148bc658370ba1a939ebf1b62d376bc0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115474"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446283"
 ---
-# <a name="how-do-i-use-the-html-editor-control-vb"></a>Wie verwende ich das HTML-Editor-Steuerelement? (VB)
+# <a name="how-do-i-use-the-html-editor-control-vb"></a>Gewusst wie das HTML-Editor-Steuerelement verwenden? (VB)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> HTMLEditor ist ein ASP.NET AJAX-Steuerelement mit dem Sie ganz einfach erstellen und Bearbeiten von HTML-Inhalte über Schaltflächen in einer Symbolleiste an.
+> HTMLEditor ist ein ASP.NET AJAX-Steuerelement, mit dem Sie HTML-Inhalt problemlos über Schaltflächen in einer Symbolleiste erstellen und bearbeiten können.
 
-Das Ziel dieses Lernprogramms ist eine Übersicht über das HTML-Editor-Steuerelement, das mit dem AJAX Control Toolkit enthalten bereit. Der HTML-Editor enthält Optionen zum Ändern der Größe der Schriftart, Auswählen einer Schriftart, Hintergrundfarbe ändern, ändern die die Vordergrundfarbe darstellt, Hinzufügen von Links, Bilder, hinzufügen, ändern die textausrichtung und Ausführen Ausschneiden, kopieren und einfügen (siehe Abbildung 1).
+Ziel dieses Tutorials ist es, Ihnen einen Überblick über das HTML-Editor-Steuerelement zu geben, das im AJAX Control Toolkit enthalten ist. Der HTML-Editor enthält Optionen zum Ändern des Schrift Grads, Auswählen einer Schriftart, Ändern der Hintergrundfarbe, Ändern der Vordergrundfarbe, Hinzufügen von Links, Hinzufügen von Bildern, Ändern der Textausrichtung und Ausführen von Ausschneiden, kopieren und Einfügen (siehe Abbildung 1).
 
-[![Der HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
+[![des HTML-Editors](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
-**Abbildung 01**: Der HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
+**Abbildung 01**: der HTML-Editor ([Klicken Sie, um das Bild in voller Größe anzuzeigen](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
-Der HTML-Editor können Sie Inhalte mithilfe von Entwurfsmodus eingeben, oder Sie HTML direkt eingeben. Sie auch erhalten die Möglichkeit, Ihren HTML-Inhalt (Vorschau) (siehe Abbildung 2).
+Der HTML-Editor ermöglicht es Ihnen, Inhalte mithilfe eines Entwurfs Modus einzugeben, oder Sie können HTML direkt eingeben. Sie erhalten auch die Möglichkeit, eine Vorschau Ihres HTML-Inhalts anzuzeigen (siehe Abbildung 2).
 
-[![Entwurf, HTML und Vorschau Schaltflächen](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
+[![Entwurfs-, HTML-und Vorschau Schaltflächen](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
-**Abbildung 02**: Entwurf, HTML und Vorschau Schaltflächen ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
+**Abbildung 02**: Entwurfs-, HTML-und Vorschau Schaltflächen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
 
-In diesem Tutorial erfahren Sie, wie der HTML-Editor angezeigt, wie Sie die Schaltflächen der Symbolleiste anpassen, die in der HTML-Editor angezeigt werden und Cross-Site Scripting-Angriffe zu vermeiden.
+In diesem Tutorial erfahren Sie, wie Sie den HTML-Editor anzeigen, wie Sie die Symbolleisten Schaltflächen anpassen können, die im HTML-Editor angezeigt werden, und wie Sie Site übergreifende Skript Angriffe vermeiden.
 
-## <a name="displaying-the-html-editor"></a>Der HTML-Editor anzeigen
+## <a name="displaying-the-html-editor"></a>Anzeigen des HTML-Editors
 
-Bevor Sie den HTML-Editor in einer ASP.NET-Seite verwenden können, müssen Sie zuerst ein ScriptManager-Steuerelement auf der Seite hinzufügen. Das ScriptManager-Steuerelement befindet sich unterhalb der Registerkarte AJAX-Erweiterungen in der Visual Studio/Visual Web Developer Express-Toolbox.
+Bevor Sie den HTML-Editor auf einer ASP.NET-Seite verwenden können, müssen Sie der Seite zunächst ein ScriptManager-Steuerelement hinzufügen. Das ScriptManager-Steuerelement befindet sich unterhalb der Registerkarte AJAX-Erweiterungen in der Visual Studio-/Visual Web Developer Express-Toolbox.
 
-Sie sollten das ScriptManager-Steuerelement am oberen Rand der Seite vor allen anderen Steuerelementen auf der Seite platzieren. Angenommen, Sie können platzieren Sie es sofort unter das öffnendes serverseitige &lt;Formular&gt; Tag.
+Sie sollten das ScriptManager-Steuerelement oben auf der Seite vor allen anderen Steuerelementen auf der Seite platzieren. Sie können Sie z. b. direkt unterhalb des öffnenden serverseitigen &lt;Formulars&gt; Tag platzieren.
 
-Das HTML-Editor-Steuerelement befindet sich in der Toolbox mit dem Rest der Steuerelemente des AJAX Control Toolkit. Sie heißt das Editorsteuerelement (siehe Abbildung 3).
+Das HTML-Editor-Steuerelement befindet sich in der Toolbox mit dem Rest der AJAX Control Toolkit-Steuerelemente. Sie wird als Editor-Steuerelement bezeichnet (siehe Abbildung 3).
 
-[![Das HTML-Editor-Steuerelement](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
+[![des HTML-Editor-Steuer Elements](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
-**Abbildung 03**: Das HTML-Editor-Steuerelement ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
+**Abbildung 03**: das HTML-Editor-Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
 
-Nachdem Sie auf eine Seite der HTML-Editor ziehen, können Sie seine Eigenschaften im Eigenschaftenfenster festlegen. Sie möchten z. B. normalerweise zum Festlegen der Eigenschaften von Breite und Höhe. Codebeispiel 1 enthält die Quelle für eine ASP.NET-Seite, die einen HTML-Editor enthält.
+Nachdem Sie den HTML-Editor auf eine Seite gezogen haben, können Sie seine Eigenschaften im Eigenschaften Blatt festlegen. Sie möchten z. b. normalerweise die Eigenschaften Width und Height festlegen. In der Liste 1 ist die Quelle für eine ASP.NET Seite enthalten, die einen HTML-Editor enthält.
 
-**1 – SimpleEditor.aspx auflisten**
+**Codebeispiel 1: simpleeditor. aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample1.aspx)]
 
-Die Seite in Codebeispiel 1 enthält ein HTML-Editor-Steuerelement, ein Schaltflächen-Steuerelement und ein literales Steuerelement. Wenn Sie die Schaltfläche klicken, den Inhalt des HTML-Editors angezeigt werden, im Literalsteuerelement (siehe Abbildung 4).
+Die Seite in der Liste 1 enthält ein HTML-Editor-Steuerelement, ein Schaltflächen-Steuerelement und ein Literalsteuerelement. Wenn Sie auf die Schaltfläche klicken, wird der Inhalt des HTML-Editors im Literalsteuerelement angezeigt (siehe Abbildung 4).
 
 [![Senden eines Formulars mit einem HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
-**Abbildung 04**: Senden eines Formulars mit einem HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
+**Abbildung 04**: Senden eines Formulars mit einem HTML-Editor ([Klicken Sie, um das Bild in voller Größe anzuzeigen](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
 
-Die HTML-Editor-Content-Eigenschaft wird verwendet, zum Abrufen des HTML-Inhalts in der HTML-Editor eingegeben werden. Denken Sie daran, dass diese HTML-Inhalt JavaScript enthalten kann. Im nächsten Abschnitt wird erläutert, wie JavaScript-Injection-Angriffe verhindern können.
+Die Inhalts Eigenschaft HTML-Editor wird verwendet, um den HTML-Inhalt abzurufen, der in den HTML-Editor eingegeben wird. Beachten Sie, dass dieser HTML-Inhalt JavaScript enthalten kann. Im nächsten Abschnitt wird erläutert, wie Sie JavaScript Injection-Angriffe verhindern können.
 
-## <a name="customizing-the-html-editor-toolbar"></a>Anpassen der HTML-Editor-Symbolleiste
+## <a name="customizing-the-html-editor-toolbar"></a>Anpassen der Symbolleiste des HTML-Editors
 
-Sie können anpassen, dass genau welche Schaltflächen im Editor dargestellt. Beispielsweise empfiehlt es sich um die Registerkarte "HTML", um zu verhindern, dass Benutzer der HTML-Editor in HTML-Modus wechseln zu entfernen. Oder, entfernen Sie die Schriftart Größe Dropdown-Liste aus, um zu verhindern, dass Benutzer übermäßig großen Text in einem Forum erstellen möchten (siehe Abbildung 5) nach Nachrichten.
+Sie können genau anpassen, welche Schaltflächen im Editor angezeigt werden. Beispielsweise können Sie die Registerkarte "HTML" entfernen, um zu verhindern, dass Benutzer den HTML-Editor in den HTML-Modus wechseln. Oder Sie möchten die Dropdown Liste "Schriftart Größe" entfernen, um zu verhindern, dass Benutzer übermäßig großen Text in einem Forums Nachrichtenbeitrag erstellen (siehe Abbildung 5).
 
-[![Einen benutzerdefinierten HTML-Editor](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
+[![eines angepassten HTML-Editors](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
-**Abbildung 05**: Eine angepasste HTML-Editor ([klicken Sie, um das Bild in voller Größe anzeigen](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
+**Abbildung 05**: ein angepasster HTML-Editor ([Klicken Sie, um das Bild in voller Größe anzuzeigen](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
 
-Durch Ableiten einer neuen HTML-Editor von der Basisklasse-Editor können Sie die Schaltflächen der Symbolleiste anpassen. Beispielsweise enthält der benutzerdefinierte Editor Programmausdruck 2 nur Symbolleisten-Schaltflächen für fett- und kursivformatierung. Alle anderen Symbolleisten-Schaltflächen wurden entfernt. Darüber hinaus wurde zwischen dem unteren Rand der Editor die Registerkarte "HTML" entfernt (jedoch die Entwurf und Vorschau-Registerkarten sind weiterhin vorhanden).
+Sie passen die Symbolleisten Schaltflächen durch Ableiten eines neuen HTML-Editors von der Basis-Editor-Klasse an. Der benutzerdefinierte Editor in der Liste 2 enthält z. b. nur die Symbolleisten Schaltflächen Fett und kursiv formatiert. Alle anderen Symbolleisten Schaltflächen wurden entfernt. Außerdem wurde die Registerkarte HTML aus dem unteren Bereich des Editors entfernt (die Registerkarten Entwurf und Vorschau sind jedoch noch vorhanden).
 
-**Codebeispiel 2 - App\_Code\CustomEditor.vb**
+**Codebeispiel 2: App\_code\customeditor .vb**
 
 [!code-vb[Main](how-do-i-use-the-html-editor-control-vb/samples/sample2.vb)]
 
-Sie müssen die Klasse im Codebeispiel 2 zu Ihrer App hinzufügen\_Ordner Code, sodass die Klasse automatisch kompiliert wird. Wenn die App\_Ordner "Code" in Ihre Website nicht vorhanden, und klicken Sie dann können Sie einfach den Ordner hinzufügen.
+Sie müssen die Klasse in der Liste 2 der APP\_Code Ordner hinzufügen, damit die Klasse automatisch kompiliert wird. Wenn die APP\_-Code Ordner nicht auf der Website vorhanden ist, können Sie einfach den Ordner hinzufügen.
 
-Nach der Erstellung eines benutzerdefinierten Editors können Sie es für eine ASP.NET-Seite auf die gleiche Weise hinzufügen wie Sie die normale HTML-Editor (siehe Codebeispiel 3) hinzufügen.
+Nachdem Sie einen benutzerdefinierten Editor erstellt haben, können Sie ihn einer ASP.NET-Seite auf die gleiche Weise hinzufügen, wie Sie den normalen HTML-Editor hinzufügen (siehe Codebeispiel 3).
 
-**Codebeispiel 3 - ShowCustomEditor.aspx**
+**Codebeispiel 3: showcustomeditor. aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample3.aspx)]
 
-## <a name="avoiding-cross-site-scripting-xss-attacks"></a>Vermeiden von siteübergreifendem Skripting (XSS)-Angriffe
+## <a name="avoiding-cross-site-scripting-xss-attacks"></a>Vermeiden von Cross-Site Scripting (XSS)-Angriffen
 
-Wenn Sie Benutzereingaben akzeptieren und wieder, in der Eingabe auf Ihrer Website anzuzeigen, öffnen Sie möglicherweise Ihre Website für Cross-Site Scripting (XSS)-Angriffe. Theoretisch kann ein böswilliger Hacker JavaScript-Code senden, die ausgeführt wird, wenn die Eingabe erneut angezeigt wird. Der JavaScript-Code kann verwendet werden, um Benutzerkennwörter oder andere sensible Daten zu stehlen.
+Wenn Sie Eingaben von einem Benutzer akzeptieren und diese Eingabe auf Ihrer Website erneut anzeigen, können Sie Ihre Website möglicherweise für Cross-Site Scripting (XSS)-Angriffe öffnen. Theoretisch könnte ein böswilliger Hacker JavaScript-Code übermitteln, der ausgeführt wird, wenn die Eingabe erneut angezeigt wird. Das JavaScript könnte verwendet werden, um Benutzer Kennwörter oder andere vertrauliche Informationen zu stehlen.
 
-In der Regel können Sie Punkten, XSS-Angriffe durch HTML-Codierung einfach alle Eingaben, die Sie vor der Anzeige auf einer Webseite von einem Benutzer abrufen. Allerdings in HTML codierte Ausgabe im HTML-Editor wird nicht nur codieren &lt;Skript&gt; Tags, wäre es auch alle HTML-Tags codieren. Das heißt, würden Sie die Formatierung wie z. B. die Schriftart, Schriftgrad und Hintergrundfarbe verlieren.
+Normalerweise können Sie XSS-Angriffe durch HTML-Codierung von allen Eingaben, die Sie von einem Benutzer abrufen, übertragen, bevor Sie ihn auf einer Webseite anzeigen. Die HTML-Codierung der Ausgabe des HTML-Editors würde jedoch nicht nur &lt;Skript&gt; Tags codieren, sondern auch alle HTML-Tags codieren. Dies bedeutet, dass Sie die gesamte Formatierung verlieren würden, z. b. Schriftart, Schrift Grad und Hintergrundfarbe.
 
-Wenn Sie vertraulichen Informationen von Ihren Benutzern – z. B. Kennwörter, -Kreditkartennummern und Sozialversicherungsnummern - sammeln sollten dann Sie nicht nicht codierten Inhalt anzeigen, die Sie von einem Benutzer mit dem HTML-Editor abrufen. Sie sollten nur in Situationen, in dem Sie werden nicht erneut den HTML-Inhalt anzeigen, oder der HTML-Inhalt wird übermittelt wird, der HTML-Editor verwenden, zu Ihrer Website von einer vertrauenswürdigen Partei.
+Wenn Sie vertrauliche Informationen von Benutzern erfassen, z. b. Kenn Wörter, Kreditkartennummern und Sozialversicherungsnummern, sollten Sie nicht codierten Inhalt nicht anzeigen, den Sie von einem Benutzer mit dem HTML-Editor abrufen. Der HTML-Editor sollte nur in Situationen verwendet werden, in denen der HTML-Inhalt nicht erneut angezeigt wird, oder der HTML-Inhalt wird von einer vertrauenswürdigen Partei an Ihre Website übermittelt.
 
-Stellen Sie sich vor, z. B., dass Sie eine Bloganwendung erstellen. In diesem Fall vereinfacht sinnvoll, den HTML-Editor zu verwenden, beim Verfassen von Blogbeiträgen. Sie sind der einzige, die einen Blogbeitrag übermittelt, und es empfiehlt sich, Sie können darauf vertrauen selbst nicht, um schädlichen JavaScript-Code zu übermitteln. Allerdings ist es nicht sinnvoll, der HTML-Editor zu verwenden, wenn anonyme Benutzer zum Posten von Kommentaren zulassen einzurichten. Sie sollten in Situationen besonders vorsichtig sein in denen Benutzer die vertraulichen Daten wie Kennwörter senden. Potenziell könnte ein böswilliger Benutzer einen Kommentar zu Posten, der die richtigen JavaScript-Code für ein Kennwort zu stehlen.
+Stellen Sie sich beispielsweise vor, dass Sie eine Blog Anwendung erstellen. In dieser Situation ist es sinnvoll, bei der Erstellung von Blogbeiträgen den HTML-Editor zu verwenden. Sie sind der einzige, der einen Blogbeitrag übermittelt, und Sie können sich vermutlich Selbstvertrauen, dass Sie böswillige JavaScript nicht übermitteln. Es ist jedoch nicht sinnvoll, den HTML-Editor zu verwenden, wenn anonyme Benutzerkommentare veröffentlichen können. In Situationen, in denen Benutzer vertrauliche Informationen wie Kenn Wörter übermitteln, sollten Sie besonders vorsichtig sein. Möglicherweise könnte ein böswilliger Benutzer einen Kommentar Posten, der das richtige JavaScript zum Stehlen eines Kennworts enthält.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial wurden eine kurze Übersicht über das HTML-Editor-Steuerelement enthalten, die im AJAX Control Toolkit bereitgestellt. Sie haben gelernt, wie umfangreiche Inhalte von einem Benutzer akzeptieren und übermitteln den Inhalt an den Server mit der HTML-Editor. Es wird auch erläutert, wie Sie die Schaltflächen der Symbolleiste anpassen können, die von der HTML-Editor angezeigt werden. Schließlich haben Sie Gewusst, Cross-Site Scripting-Angriffe zu vermeiden, wenn es sich bei der HTML-Editor mit potenziell schädlichen Eingaben akzeptieren.
+In diesem Tutorial haben Sie eine kurze Übersicht über das HTML-Editor-Steuerelement bereitgestellt, das im AJAX Control Toolkit enthalten ist. Sie haben gelernt, wie Sie den HTML-Editor verwenden, um umfangreiche Inhalte eines Benutzers zu akzeptieren und den Inhalt an den Server zu übermitteln. Außerdem wurde erläutert, wie Sie die Symbolleisten Schaltflächen anpassen können, die im HTML-Editor angezeigt werden. Schließlich haben Sie erfahren, wie Sie Cross-Site Scripting-Angriffe vermeiden, wenn Sie den HTML-Editor verwenden, um potenziell schädliche Eingaben zu akzeptieren.
 
 > [!div class="step-by-step"]
-> [Vorherige](how-do-i-use-the-html-editor-control-cs.md)
+> [Previous](how-do-i-use-the-html-editor-control-cs.md)

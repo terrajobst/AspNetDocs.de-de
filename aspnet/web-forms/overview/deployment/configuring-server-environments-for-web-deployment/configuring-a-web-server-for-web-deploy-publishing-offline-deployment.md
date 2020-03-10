@@ -9,11 +9,11 @@ ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: f93cf11085fb19afb97b71aca8f638bd88fe658b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621100"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440823"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>Konfigurieren eines Webservers für die Web Deploy-Veröffentlichung (Offlinebereitstellung)
 
@@ -210,7 +210,7 @@ Sie können einen Dienst auf verschiedene Weise mit verschiedenen Befehlszeilen 
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image10.png)
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 An diesem Punkt ist der Webserver für die Offline Bereitstellung des Webpakets bereit. Bevor Sie versuchen, Webpakete in eine IIS-Website zu importieren, sollten Sie diese wichtigen Punkte überprüfen:
 

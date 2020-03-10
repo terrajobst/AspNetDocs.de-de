@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
-title: '[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Profildienste? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Profil Dienste? | Microsoft-Dokumentation'
 author: rick-anderson
-description: ASP.NET 2.0 eingeführten Profileigenschaften, mit denen Sie Details für jeden Benutzer Ihrer ASP.NET Web-Anwendung speichern können. ASP.NET AJAX-Profildienste zulassen...
+description: In ASP.NET 2,0 wurden Profil Eigenschaften eingeführt, mit denen Sie Details für jeden Benutzer Ihrer ASP.NET-Webanwendung speichern können. ASP.NET AJAX-Profil Dienste zulassen...
 ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 8fc77048-4d1f-42bf-a947-ecc9a02b25c9
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 msc.type: video
 ms.openlocfilehash: 54b82c52f0bd58a0184824a861b5f31754652ace
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420314"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439551"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Profildienste?
+# <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Profil Dienste?
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-ASP.NET 2.0 eingeführten [Profileigenschaften](https://msdn.microsoft.com/library/at64shx3.aspx) mit dem Sie Details für jeden Benutzer Ihrer ASP.NET Web-Anwendung speichern können. ASP.NET AJAX-Profildienste können Ihre Client-Side-Weboberfläche abzurufenden Profileigenschaften eines Benutzers von der Webanwendung für die serverseitige. Dieses Video zeigt, wie ein AJAX-aktivierten Travel-Beispielwebsite Informationen zu den Ortswechsel eines Benutzers speichern kann, damit die Informationen abgerufen werden können, wenn er oder sie als Nächstes die Site besucht.
+In ASP.NET 2,0 wurden [Profil Eigenschaften](https://msdn.microsoft.com/library/at64shx3.aspx) eingeführt, mit denen Sie Details für jeden Benutzer Ihrer ASP.NET-Webanwendung speichern können. ASP.NET AJAX-Profil Dienste ermöglichen Ihrer Client seitigen Weboberfläche das Abrufen der Profil Eigenschaften eines Benutzers aus der serverseitigen Webanwendung. In diesem Video wird veranschaulicht, wie eine AJAX-fähige Beispiel Reise Website die Reise Anforderungs Informationen eines Benutzers speichern kann, damit die Details abgerufen werden können, wenn der Benutzer die Website als Nächstes besucht.
 
-[&#9654;Sehen Sie sich Video (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-profile-services)
+[&#9654;Video ansehen (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-profile-services)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax.md)

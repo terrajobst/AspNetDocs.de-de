@@ -1,72 +1,72 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
-title: Hinzufügen der Überprüfung zum Modell | Microsoft-Dokumentation
+title: Hinzufügen der Validierung zum Modell | Microsoft-Dokumentation
 author: shanselman
-description: Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Erstellen Sie eine einfache Webanwendung, die aus einer Datenbank liest und schreibt.
+description: Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Erstellen Sie eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt.
 ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
 ms.openlocfilehash: 9403be574324c34edf93bef1e0e4fd7ba68a3a9d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122773"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437277"
 ---
 # <a name="adding-validation-to-the-model"></a>Hinzufügen der Überprüfung zum Modell
 
-durch [Scott Hanselman](https://github.com/shanselman)
+von [Scott Hanselman](https://github.com/shanselman)
 
-> Dies ist ein Tutorial für Anfänger, die die Grundlagen von ASP.NET MVC eingeführt werden. Sie erstellen eine einfache Webanwendung, die aus einer Datenbank liest und schreibt. Besuchen Sie die [ASP.NET MVC-Informationscenter](../../../index.md) anderen ASP.NET MVC anhand von Tutorials und Beispiele finden.
+> Dies ist ein Einsteiger-Tutorial, in dem die Grundlagen von ASP.NET MVC vorgestellt werden. Sie erstellen eine einfache Webanwendung, die Daten aus einer Datenbank liest und in diese schreibt. Besuchen Sie das [ASP.NET MVC Learning Center](../../../index.md) , um weitere ASP.NET MVC-Tutorials und-Beispiele zu finden.
 
-In diesem Abschnitt werden wir implementieren Sie die notwendige Unterstützung für die Validierung von Benutzereingaben in unserer Anwendung zu aktivieren. Wir stellen sicher, dass unsere Datenbankinhalte immer richtig ist und hilfreiche Fehlermeldungen für Endbenutzer bereit, wenn sie versuchen, und geben Sie die Daten ungültig ist. Wir beginnen, indem die Movie-Klasse ein wenig Validierungslogik hinzugefügt.
+In diesem Abschnitt implementieren wir die erforderliche Unterstützung zum Aktivieren der Eingabevalidierung in unserer Anwendung. Wir stellen sicher, dass der Daten Bank Inhalt immer korrekt ist, und stellen hilfreiche Fehlermeldungen für Endbenutzer bereit, wenn Sie versuchen, die Film Daten einzugeben, die ungültig sind. Wir beginnen mit dem Hinzufügen einer kleinen Validierungs Logik zur Movie-Klasse.
 
-Klicken Sie mit der rechten Maustaste auf den Modell-Ordner, und wählen Sie die Klasse hinzufügen. Benennen Sie die Movie-Klasse.
+Klicken Sie mit der rechten Maustaste auf den Modell Ordner und wählen Sie Klasse hinzufügen Benennen Sie Ihre Class Movie.
 
-Wenn wir das Entitätsmodell Film zuvor erstellt haben, erstellt die IDE eine Movie-Klasse. Tatsächlich können die Movie-Klasse in einer Datei und Teil an einer anderen angehören. Dies ist eine partielle Klasse bezeichnet. Wir werden die Movie-Klasse aus einer anderen Datei zu erweitern.
+Als wir das Movie-Entitäts Modell zuvor erstellt haben, hat die IDE eine Movie-Klasse erstellt. Tatsächlich kann sich ein Teil der Movie-Klasse in einer Datei befinden und Teil eines anderen sein. Dies wird als partielle Klasse bezeichnet. Wir erweitern die Movie-Klasse aus einer anderen Datei.
 
-Wir erstellen eine partielle Movie-Klasse, die auf "Buddy-Klasse" zeigt für einige Attribute, die Validierung Hinweise auf das System erhalten. Wir markieren den Titel und der Preis nach Bedarf, und auch bestehen, dass der Preis innerhalb eines bestimmten Bereichs liegen. Klicken Sie mit der rechten Maustaste auf den Ordner "Models", und wählen Sie die Klasse hinzufügen. Benennen Sie die Movie-Klasse, und klicken Sie auf die Schaltfläche "OK". Hier ist unsere teilweise Movie-Klasse-ähnlichen.
+Wir erstellen eine partielle Movie-Klasse, die auf eine "Buddy-Klasse" zeigt, mit einigen Attributen, die Validierungs Hinweise an das System übergeben. Wir markieren den Titel und den Preis als erforderlich und setzen auch darauf, dass sich der Preis innerhalb eines bestimmten Bereichs liegt. Klicken Sie mit der rechten Maustaste auf den Ordner Modelle, und wählen Sie Klasse Benennen Sie die Klasse Movie, und klicken Sie auf die Schaltfläche OK. So sieht unsere partielle Movie-Klasse aus.
 
 [!code-csharp[Main](getting-started-with-mvc-part7/samples/sample1.cs)]
 
-Führen Sie die Anwendung erneut aus, und versuchen Sie, einen Film mit einem Preis über 100 einzugeben. Sie erhalten eine Fehlermeldung, nachdem Sie das Formular gesendet haben. Der Fehler abgefangen wird, auf dem Server, und es tritt auf, nachdem das Formular gesendet wird. Beachten Sie, wie integrierte HTML-Hilfsprogramme des ASP.NET intelligent genug, um die Fehlermeldung angezeigt, und behalten die Werte für uns in der Textbox-Elemente wurden:
+Führen Sie die Anwendung erneut aus, und versuchen Sie, einen Film mit einem Preis über 100 einzugeben. Nachdem Sie das Formular übermittelt haben, erhalten Sie einen Fehler. Der Fehler wird auf Serverseite abgefangen und tritt auf, nachdem das Formular gepostet wurde. Beachten Sie, dass die integrierten HTML-Hilfsprogramme von ASP.NET MVC intelligent genug waren, um die Fehlermeldung anzuzeigen und die Werte für uns innerhalb der Textfeld-Elemente beizubehalten:
 
-[![CreateMovieWithValidation](getting-started-with-mvc-part7/_static/image2.png)](getting-started-with-mvc-part7/_static/image1.png)
+[!["kreatemoviewithvalidation"](getting-started-with-mvc-part7/_static/image2.png)](getting-started-with-mvc-part7/_static/image1.png)
 
-Dies funktioniert hervorragend, aber es wäre schön, wenn wir den Benutzer auf der Clientseite sofort mitteilen könnten, bevor der Server beteiligt ruft.
+Dies funktioniert hervorragend, aber es wäre schön, wenn wir den Benutzer sofort über die Clientseite informieren könnten, bevor der Server eingebunden wird.
 
-Lassen Sie uns einige clientseitige Validierung mit JavaScript zu aktivieren.
+Wir ermöglichen eine Client seitige Validierung mit JavaScript.
 
-## <a name="adding-client-side-validation"></a>Die clientseitige Validierung hinzufügen
+## <a name="adding-client-side-validation"></a>Hinzufügen der Client seitigen Validierung
 
-Da unsere Movie-Klasse bereits einige Validierungsattribute aufweist, müssen wir nur unseren Create.aspx ansichtsvorlage einige JavaScript-Dateien hinzu, und fügen eine Codezeile aktivieren Sie die clientseitige Validierung durchgeführt werden.
+Da unsere Movie-Klasse bereits über einige Validierungs Attribute verfügt, müssen wir nur einige JavaScript-Dateien zur CREATE. aspx-Ansichts Vorlage hinzufügen und eine Codezeile hinzufügen, um die Client seitige Validierung zu aktivieren.
 
-In VWD wechseln Sie den Ordner Views/Film, und öffnen Sie Create.aspx.
+Wechseln Sie in VWD in den Ordner views/Movie, und öffnen Sie Create. aspx.
 
-Öffnen Sie im Projektmappen-Explorer den Ordner "Scripts", und ziehen Sie die folgenden drei Skripts innerhalb der &lt;Head&gt; Tag.
+Öffnen Sie den Ordner Scripts in der Projektmappen-Explorer, und ziehen Sie die folgenden drei Skripts in das &lt;Head&gt;-Tags.
 
 - MicrosoftAjax.js
 - MicrosoftMvcValidation.js
 
-Diese Skriptdateien in dieser Reihenfolge angezeigt werden sollen.
+Sie möchten, dass diese Skriptdateien in dieser Reihenfolge angezeigt werden.
 
 [!code-html[Main](getting-started-with-mvc-part7/samples/sample2.html)]
 
-Darüber hinaus fügen Sie dieser einzelnen Zeile oberhalb der Html.BeginForm hinzu:
+Fügen Sie außerdem diese einzelne Zeile oberhalb von HTML. BeginForm hinzu:
 
 [!code-aspx[Main](getting-started-with-mvc-part7/samples/sample3.aspx)]
 
-Hier ist der Code in der IDE angezeigt.
+Hier sehen Sie den Code, der in der IDE angezeigt wird.
 
-[![Filme – Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![Filme-Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
-Führen Sie die Anwendung und besuchen Sie /Movies/Create erneut, und klicken Sie auf erstellen, ohne Eingabe von Daten. Die Fehlermeldungen werden sofort ohne die Seite flash, ordnen wir Senden von Daten zurück an den Server. Dies ist, da ASP.NET MVC jetzt die Eingabe der sowohl der Client (JavaScript) eine Überprüfung durchgeführt wird und auf dem Server.
+Führen Sie die Anwendung aus, und klicken Sie auf/Movies/Create, und klicken Sie auf erstellen, ohne Daten einzugeben. Die Fehlermeldungen werden sofort ohne den seitenflash angezeigt, den wir mit dem Senden von Daten an den Server verknüpfen. Dies liegt daran, dass ASP.NET MVC nun die Eingabe sowohl auf dem Client (mit JavaScript) als auch auf dem Server überprüft.
 
-[![Erstellen Sie – Windows InternetExplorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![erstellen-Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
-Dies ist gut suchen! Nun fügen Sie eine zusätzliche Spalte in der Datenbank.
+Das sieht gut aus! Nun fügen wir der Datenbank eine zusätzliche Spalte hinzu.
 
 > [!div class="step-by-step"]
 > [Zurück](getting-started-with-mvc-part6.md)

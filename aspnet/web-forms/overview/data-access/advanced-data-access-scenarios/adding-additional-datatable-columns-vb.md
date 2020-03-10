@@ -9,11 +9,11 @@ ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3a55f8bc4d3508387927ca81674073a001867de7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74608300"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78429099"
 ---
 # <a name="adding-additional-datatable-columns-vb"></a>Hinzufügen von zusätzlichen DataTable-Spalten (VB)
 
@@ -168,7 +168,7 @@ Wenn Sie einen neuen TableAdapter hinzufügen, bleiben die DataTables unbeschäd
 
 Der Download für dieses Tutorial enthält eine `ProductsWithPriceQuartileTableAdapter`-Klasse im `NorthwindWithSprocs` DataSet, die diese alternative Vorgehensweise veranschaulicht.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In den meisten Szenarien geben alle Methoden in einem TableAdapter denselben Satz von Datenfeldern zurück, aber es gibt Situationen, in denen eine bestimmte Methode oder zwei möglicherweise ein zusätzliches Feld zurückgeben müssen. Beispielsweise wurde im [Master/Detail mithilfe einer aufzurufenden Liste von Master Datensätzen mit einem DataList](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md) -Lernprogramm "Details" eine Methode zum `CategoriesTableAdapter` hinzugefügt, die zusätzlich zu den Hauptdaten Feldern der Abfrage ein `NumberOfProducts` Feld zurückgegeben hat, das die Anzahl der der jeweiligen Kategorie zugeordneten Produkte zurückgegeben hat. In diesem Tutorial haben wir das Hinzufügen einer Methode in der `ProductsTableAdapter` untersucht, die zusätzlich zu den Hauptdaten Feldern der Abfrage ein `PriceQuartile` Feld zurückgegeben hat. Um zusätzliche Datenfelder aufzuzeichnen, die von den TableAdapter s-Methoden zurückgegeben werden, müssen die entsprechenden Spalten der Datentabelle hinzugefügt werden.
 
@@ -176,7 +176,7 @@ Wenn Sie das manuelle Hinzufügen von Spalten zur Datentabelle planen, wird empf
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -1,262 +1,262 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
-title: Maximieren der Leistung bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung | Microsoft-Dokumentation
+title: Maximieren der Leistung mit dem Entity Framework 4,0 in einer ASP.NET 4-Webanwendung | Microsoft-Dokumentation
 author: tdykstra
-description: Dieser tutorialreihe erstellt in der Contoso University-Webanwendung, die von den ersten Schritten mit der Entity Framework 4.0-Tutorial-Reihe erstellt wird. ICH...
+description: Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte mit Entity Framework 4,0 erstellt wurde. I...
 ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
 ms.openlocfilehash: 5630200a1ad1d30f6d89b38e15179f15b699fa9f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108585"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439263"
 ---
-# <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Maximieren der Leistung bei Entitätsframework 4.0 in eine ASP.NET 4-Webanwendung
+# <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Maximieren der Leistung mit dem Entity Framework 4,0 in einer ASP.NET 4-Webanwendung
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Dieser tutorialreihe erstellt, in der Contoso University-Webanwendung, die erstellt wird die [erste Schritte mit Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) Tutorial-Reihe. Wenn Sie den vorherigen Tutorials wurde nicht abgeschlossen haben, als Ausgangspunkt für dieses Tutorial können Sie [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , die Sie erstellt haben würden. Sie können auch [Laden Sie die Anwendung](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , indem Sie die vollständige Reihe von Tutorials erstellt wird. Wenn Sie Fragen zu den Lernprogrammen haben, können Sie sie veröffentlichen das [ASP.NET Entity Framework-Forum](https://forums.asp.net/1227.aspx).
+> Diese tutorialreihe basiert auf der Webanwendung der Website von "Web", die in der tutorialreihe für die ersten Schritte [mit Entity Framework 4,0](https://asp.net/entity-framework/tutorials#Getting%20Started) erstellt wurde. Wenn Sie die vorherigen Tutorials nicht durchgearbeitet haben, können Sie die Anwendung, die Sie erstellt haben, als Ausgangspunkt für dieses Tutorial [herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) . Sie können auch [die Anwendung herunterladen](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , die von der kompletten tutorialreihe erstellt wird. Wenn Sie Fragen zu den Tutorials haben, können Sie Sie im ASP.net- [Entity Framework Forum](https://forums.asp.net/1227.aspx)Posten.
 
-Im vorherigen Tutorial wurde erläutert, wie man nebenläufigkeitskonflikte behandelt. Dieses Tutorial Zeigt Optionen für die Verbesserung der Leistung einer ASP.NET-Webanwendung, die das Entity Framework verwendet. Sie erfahren, dass mehrere Methoden zum Maximieren der Leistung oder für die Diagnose von Leistungsproblemen.
+Im vorherigen Tutorial haben Sie erfahren, wie Parallelitäts Konflikte behandelt werden. Dieses Tutorial zeigt Optionen zur Verbesserung der Leistung einer ASP.NET-Webanwendung, die die Entity Framework verwendet. Sie lernen verschiedene Methoden zum Maximieren der Leistung oder zur Diagnose von Leistungsproblemen kennen.
 
-Informationen in den folgenden Abschnitten wird wahrscheinlich in einer Vielzahl von Szenarien nützlich sein:
+Die in den folgenden Abschnitten dargestellten Informationen sind wahrscheinlich in einer Vielzahl von Szenarios nützlich:
 
-- Verwandte Daten effizient zu laden.
-- Verwalten Sie Ansichtszustand.
+- Effizientes Laden verwandter Daten.
+- Verwalten des Ansichts Zustands.
 
-In den folgenden Abschnitten vorgestellten Informationen möglicherweise hilfreich, wenn Sie einzelne Abfragen, vorhanden Leistungsprobleme zur Folge haben:
+Die in den folgenden Abschnitten dargestellten Informationen können nützlich sein, wenn Sie über einzelne Abfragen verfügen, die Leistungsprobleme darstellen:
 
-- Verwenden der `NoTracking` Zusammenführungsoption.
-- Kompilieren Sie LINQ-Abfragen vor.
-- Überprüfen Sie die Abfragebefehle, die an die Datenbank gesendet.
+- Verwenden Sie die Option `NoTracking` Merge.
+- LINQ-Abfragen vor der Kompilierung.
+- Überprüfen Sie die an die Datenbank gesendeten Abfrage Befehle.
 
-Im folgenden Abschnitt dargelegten Informationen ist möglicherweise nützlich für Anwendungen, die sehr große Datenmodelle haben:
+Die im folgenden Abschnitt dargestellten Informationen sind möglicherweise nützlich für Anwendungen, die über extrem große Datenmodelle verfügen:
 
-- Vorgenerieren von Ansichten.
+- Vorab Generieren von Sichten.
 
 > [!NOTE]
-> Leistung der Webanwendung ist von vielen Faktoren ab, einschließlich der Größe der Anforderungs-und Antwortdaten, die Geschwindigkeit von Abfragen, wie viele Anforderungen, dass der Server in die Warteschlange kann und wie schnell sie bedienen kann, und sogar die Effizienz aller betroffen Bibliotheken mit Clientskripts, die Sie verwenden können. Wenn die Leistung in Ihrer Anwendung von entscheidender Bedeutung ist, oder testen oder Erfahrung zeigt, dass die Leistung der Anwendung nicht zufriedenstellend ist, sollten Sie die normalen Protokolls zum Optimieren der Leistung befolgen. Um zu bestimmen, wo Leistungsengpässe auftreten zu messen Sie, und beheben Sie die Bereiche, die die größte Auswirkung auf die gesamtleistung der Anwendung.
+> Die Leistung der Webanwendung ist von vielen Faktoren betroffen, z. b. der Größe von Anforderungs-und Antwortdaten, der Geschwindigkeit von Datenbankabfragen, der Anzahl von Anforderungen, die der Server in die Warteschlange aufnehmen kann, und der Art und Weise, wie schnell der Dienst Sie bedienen kann Client-Skript Bibliotheken, die Sie möglicherweise verwenden. Wenn die Leistung in Ihrer Anwendung kritisch ist, oder wenn Tests oder Benutzeroberflächen anzeigen, dass die Anwendungsleistung nicht zufriedenstellend ist, sollten Sie das normale Protokoll zur Leistungsoptimierung befolgen. Legen Sie fest, wo Leistungsengpässe auftreten, und beheben Sie dann die Bereiche, die die größten Auswirkungen auf die Gesamtleistung der Anwendung haben.
 > 
-> Dieses Thema konzentriert sich hauptsächlich auf die Weise, in denen Sie möglicherweise die Leistung von Entity Framework in ASP.NET speziell verbessern können. Hier die Vorschläge sind nützlich, wenn Sie feststellen, dass Zugriff auf Daten der Leistungsengpässe in Ihrer Anwendung ist. Außer wie bereits erwähnt, die hier erläuterten Methoden berücksichtigt werden sollten nicht &quot;bewährte Methoden&quot; im Allgemeinen – viele davon werden nur in Ausnahmefällen oder Adresse sehr spezifische Arten der Leistungsengpässe geeignet.
+> Dieses Thema konzentriert sich hauptsächlich auf Möglichkeiten, mit denen Sie die Leistung der Entity Framework in ASP.net möglicherweise verbessern können. Die hier aufgeführten Vorschläge sind hilfreich, wenn Sie feststellen, dass der Datenzugriff einer der Leistungsengpässe in der Anwendung ist. Sofern nicht erwähnt, sollten die hier erläuterten Methoden nicht &quot;bewährten Methoden&quot; im Allgemeinen nicht berücksichtigt werden – viele von Ihnen sind nur in Ausnahmesituationen oder sehr spezifischen Arten von Leistungs Engpässen geeignet.
 
-Um das Lernprogramm zu starten, starten Sie Visual Studio, und öffnen Sie die Contoso University-Webanwendung, die Sie im vorherigen Tutorial verwendet wurden.
+Um das Lernprogramm zu starten, starten Sie Visual Studio, und öffnen Sie die Webanwendung der Website "Web-so University", die Sie im vorherigen Tutorial gearbeitet haben.
 
-## <a name="efficiently-loading-related-data"></a>Effizientes Laden zugehöriger Daten
+## <a name="efficiently-loading-related-data"></a>Effizientes Laden verwandter Daten
 
-Es gibt mehrere Möglichkeiten, Entity Framework zugehörige Daten in die Navigationseigenschaften einer Entität laden kann:
+Es gibt mehrere Möglichkeiten, wie die Entity Framework verknüpfte Daten in die Navigations Eigenschaften einer Entität laden kann:
 
-- *Lazy Loading (verzögertes Laden)*. Wenn die Entität zuerst gelesen wird, werden verwandte Daten nicht abgerufen. Wenn Sie jedoch zum ersten Mal versuchen, auf eine Navigationseigenschaft zuzugreifen, werden die für diese Navigationseigenschaft erforderlichen Daten automatisch abgerufen. Dies führt zu mehreren Abfragen, die an die Datenbank gesendet – eine für die Entität selbst und eine jedes Mal, die Daten für die Entität beziehen abgerufen werden muss. 
+- *Lazy Loading (verzögertes Laden)* . Wenn die Entität zuerst gelesen wird, werden verwandte Daten nicht abgerufen. Wenn Sie jedoch zum ersten Mal versuchen, auf eine Navigationseigenschaft zuzugreifen, werden die für diese Navigationseigenschaft erforderlichen Daten automatisch abgerufen. Dies führt dazu, dass mehrere Abfragen an die Datenbank gesendet werden – eine für die Entität selbst und eine, wenn verknüpfte Daten für die Entität abgerufen werden müssen. 
 
     [![Image05](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-*Eager Loading (vorzeitiges Laden)*. Wenn die Entität gelesen wird, werden ihre verwandten Daten mit ihr abgerufen. Dies führt normalerweise zu einer einzelnen Joinabfrage, die alle Daten abruft, die erforderlich sind. Sie geben eager Loading mit der `Include` -Methode, wie Sie bereits gesehen haben in diesen Tutorials.
+*Eager Loading (vorzeitiges Laden)* . Wenn die Entität gelesen wird, werden ihre verwandten Daten mit ihr abgerufen. Dies führt normalerweise zu einer einzelnen Joinabfrage, die alle Daten abruft, die erforderlich sind. Sie können Eager Loading mit der `Include`-Methode angeben, wie Sie bereits in diesen Tutorials gesehen haben.
 
 [![Image07](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
-- *Explizites Laden*. Dies ist ähnlich wie beim verzögerten Laden, mit dem Unterschied, dass Sie explizit im Code die verwandten Daten abgerufen werden; Dies erfolgt nicht automatisch beim Zugriff auf eine Navigationseigenschaft. Sie laden die Daten manuell anhand der `Load` -Methode der Navigationseigenschaft für Auflistungen, oder Sie verwenden die `Load` -Methode der die Verweiseigenschaft für Eigenschaften, die ein einzelnes Objekt enthalten. (Z. B., rufen Sie die `PersonReference.Load` Methode zum Laden der `Person` Navigationseigenschaft eine `Department` Entität.)
+- *Explizites Laden*. Dies ähnelt Lazy Loading, mit dem Unterschied, dass Sie die zugehörigen Daten explizit im Code abrufen. Dies geschieht nicht automatisch, wenn Sie auf eine Navigations Eigenschaft zugreifen. Mit der `Load`-Methode der Navigations Eigenschaft für Auflistungen können Sie verknüpfte Daten manuell laden, oder Sie verwenden die `Load`-Methode der Reference-Eigenschaft für Eigenschaften, die ein einzelnes Objekt enthalten. (Beispielsweise wird die `PersonReference.Load`-Methode aufgerufen, um die `Person` Navigations Eigenschaft einer `Department` Entität zu laden.)
 
     [![Image06](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
-Da sie sofort der Abrufen von Eigenschaftswerten nicht lazy Loading und explizites Laden werden auch beide genannt *verzögertes Laden*.
+Da Sie die Eigenschaftswerte nicht sofort abrufen, werden Lazy Loading und explizites laden auch als *Verzögertes Laden*bezeichnet.
 
-Lazy Loading ist das Standardverhalten für einen Objektkontext, der vom Designer generiert wurde. Wenn Sie öffnen die *SchoolModel.Designer.cs* Datei, die die Objektkontextklasse definiert, finden Sie drei Konstruktormethoden und jeder URI enthält die folgende Anweisung aus:
+Lazy Load ist das Standardverhalten für einen Objekt Kontext, der vom Designer generiert wurde. Wenn Sie die *SchoolModel.Designer.cs* -Datei öffnen, die die Objekt Kontext Klasse definiert, finden Sie drei Konstruktormethoden, die jeweils die folgende Anweisung enthalten:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample1.cs)]
 
-Im Allgemeinen, wenn Sie wissen, benötigen Sie verwandte Daten für jede Entität, die abgerufen werden, eager Loading die beste Leistung bietet, da eine einzelne Abfrage, die an die Datenbank gesendet, in der Regel effizienter als separate Abfragen für jede abgerufene Entität ist. Andererseits, wenn Sie auf Navigationseigenschaften einer Entität nur selten zugreifen müssen oder nur für eine kleine Gruppe von Entitäten, lazy Loading oder expliziten Laden effizienter, möglicherweise Eager Load mehr Daten als benötigt abrufen würde.
+Wenn Sie wissen, dass Sie verwandte Daten für jede abgerufene Entität benötigen, bietet Eager Loading im Allgemeinen die beste Leistung, da eine einzelne Abfrage, die an die Datenbank gesendet wird, in der Regel effizienter als separate Abfragen für jede abgerufene Entität ist. Wenn Sie andererseits nur selten oder nur für eine kleine Gruppe von Entitäten auf die Navigations Eigenschaften einer Entität zugreifen müssen, ist Lazy Loading oder explizites laden möglicherweise effizienter, da Eager Loading mehr Daten abrufen, als Sie benötigen.
 
-In einer Webanwendung Lazy Load relativ geringem Wert dennoch möglicherweise Benutzeraktionen, die die Notwendigkeit von verknüpften Daten betreffen im Browser stattfinden, die keine Verbindung mit dem Objektkontext verfügt, die die Seite gerendert. Andererseits, wenn Sie Databind ein Steuerelement Sie i. d. r., welche Daten wissen Sie benötigen, und daher im Allgemeinen es ist am besten unverzüglichem Laden oder verzögertes Laden basierend auf wird in jedem Szenario geeignet.
+In einer Webanwendung ist Lazy Loading möglicherweise relativ wenig Wert, da Benutzeraktionen, die sich auf die Notwendigkeit von verknüpften Daten auswirken, im Browser stattfinden, der keine Verbindung mit dem Objekt Kontext hat, der die Seite gerendert hat. Wenn Sie jedoch ein Steuerelement DataBind, wissen Sie in der Regel, welche Daten Sie benötigen, und daher ist es am besten, Eager Loading oder verzögertes Laden basierend auf den in den einzelnen Szenarios geeigneten Anforderungen auszuwählen.
 
-Darüber hinaus können einem datengebundenen Steuerelement ein Entitätsobjekt, nach der Objektkontext gelöscht wird. In diesem Fall würde der Versuch, eine Navigationseigenschaft-lazy Load fehlschlagen. Die Fehlermeldung, die Sie erhalten, ist klar: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+Außerdem kann ein Daten gebundene Steuerelement ein Entitäts Objekt verwenden, nachdem der Objekt Kontext verworfen wurde. In diesem Fall würde der Versuch, eine Navigations Eigenschaft verzögert zu laden, fehlschlagen. Die Fehlermeldung, die Sie erhalten, ist eindeutig: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
-Die `EntityDataSource` Steuerelement deaktiviert standardmäßig die Lazy Load. Für die `ObjectDataSource` Steuerelement, dass Sie für das aktuelle Tutorial nutzen (oder wenn Sie den Objektkontext Seitencode zugreifen), es gibt mehrere Möglichkeiten, Sie können lazy machen, laden, die standardmäßig deaktiviert. Sie können es deaktivieren, wenn Sie einen Objektkontext instanziieren. Sie können z. B. die folgende Zeile hinzufügen, an die Konstruktormethode von der `SchoolRepository` Klasse:
+Das `EntityDataSource`-Steuerelement deaktiviert Lazy Loading standardmäßig. Für das `ObjectDataSource` Steuerelement, das Sie für das aktuelle Tutorial verwenden (oder wenn Sie über den Seitencode auf den Objekt Kontext zugreifen), gibt es mehrere Möglichkeiten, Lazy Loading standardmäßig deaktiviert zu machen. Sie können Sie deaktivieren, wenn Sie einen Objekt Kontext instanziieren. Beispielsweise können Sie der Konstruktormethode der `SchoolRepository`-Klasse die folgende Zeile hinzufügen:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample2.cs)]
 
-Für die Contoso University-Anwendung stellen Sie den Objektkontext automatisch deaktivieren Sie lazy loading, sodass diese Eigenschaft nicht festgelegt werden, wenn ein Kontext instanziiert wird.
+Für die Anwendung "" der Anwendung "" der Anwendung "" wird der Objekt Kontext automatisch deaktiviert Lazy Loading, sodass diese Eigenschaft nicht festgelegt werden muss, wenn ein Kontext instanziiert wird.
 
-Öffnen der *SchoolModel.edmx* Daten modellieren, klicken Sie auf die Entwurfsoberfläche, und legen Sie dann im Eigenschaftenbereich den **verzögerte Laden aktiviert** Eigenschaft `False`. Speichern Sie und schließen Sie das Datenmodell.
+Öffnen Sie das Datenmodell *School Model. edmx* , klicken Sie auf die Entwurfs Oberfläche, und legen Sie dann im Bereich Eigenschaften die Eigenschaft **Lazy Load aktiviert** auf `False`fest. Speichern und schließen Sie das Datenmodell.
 
 [![Image04](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image8.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image7.png)
 
-## <a name="managing-view-state"></a>Verwalten des Ansichtszustands
+## <a name="managing-view-state"></a>Verwalten des Ansichts Zustands
 
-Um Update-Funktionalität zu gewährleisten, müssen einer ASP.NET-Webseite die ursprünglichen Eigenschaftswerte einer Entität speichern, wenn eine Seite gerendert wird. Während des Postbacks verarbeiten das Steuerelement den ursprünglichen Zustand der Entität neu zu erstellen und aufrufen kann der Entität `Attach` Methode vor dem Übernehmen von Änderungen und Aufrufen der `SaveChanges` Methode. Standardmäßig können ASP.NET Web Forms-Datensteuerelemente Ansichtszustand um die ursprünglichen Werte zu speichern. Ansichtszustand kann jedoch die Leistung beeinträchtigen, da es in ausgeblendeten Feldern gespeichert wird, die im Wesentlichen die Seitengröße erhöhen kann, die in und aus den Browser gesendet wird.
+Um die Aktualisierungs Funktionalität bereitzustellen, muss eine ASP.NET-Webseite die ursprünglichen Eigenschaftswerte einer Entität speichern, wenn eine Seite gerendert wird. Während des Postbacks kann das Steuerelement den ursprünglichen Zustand der Entität neu erstellen und die `Attach` Methode der Entität aufrufen, bevor Sie Änderungen anwenden und die `SaveChanges`-Methode aufrufen. Standardmäßig verwenden ASP.net-Web Forms Daten Steuerelemente den Ansichts Zustand, um die ursprünglichen Werte zu speichern. Der Ansichts Zustand kann sich jedoch auf die Leistung auswirken, da er in ausgeblendeten Feldern gespeichert ist, die die Größe der Seite, die an den Browser gesendet wird, erheblich vergrößern kann.
 
-Verfahren für die Verwaltung der Ansichtszustand oder alternativen wie der Sitzungsstatus, nicht nur für das Entity Framework, also in diesem Tutorial in diesem Thema im Detail nicht. Weitere Informationen finden Sie unter den Links am Ende des Tutorials.
+Techniken zum Verwalten des Ansichts Zustands oder Alternativen, wie z. b. der Sitzungs Status, sind nicht für die Entity Framework eindeutig, sodass dieses Tutorial nicht ausführlich behandelt wird. Weitere Informationen finden Sie unter den Links am Ende des Tutorials.
 
-Version 4 von ASP.NET bietet jedoch eine neue Art der Arbeit mit Ansichtszustand, die jeder Entwickler ASP.NET Web Forms-Anwendungen bewusst sein sollten: die `ViewStateMode` Eigenschaft. Diese neue Eigenschaft kann auf der Seite oder ein Steuerelement-Ebene festgelegt werden, und dadurch, dass Sie deaktiviert den Ansichtszustand in der Standardeinstellung für eine Seite, und aktivieren Sie sie nur für Steuerelemente, die ihn benötigen.
+Version 4 von ASP.net bietet jedoch eine neue Möglichkeit, mit dem Ansichts Zustand zu arbeiten, den jeder ASP.NET-Entwickler von Web Forms Anwendungen beachten sollte: die `ViewStateMode`-Eigenschaft. Diese neue Eigenschaft kann auf der Seiten-oder Steuerelement Ebene festgelegt werden. Sie ermöglicht es Ihnen, den Ansichts Zustand für eine Seite standardmäßig zu deaktivieren und nur für Steuerelemente zu aktivieren, die Sie benötigen.
 
-Für Anwendungen, in denen die Leistung kritisch ist, empfiehlt sich immer deaktiviert den Ansichtszustand auf Seitenebene, und aktivieren es nur für Steuerelemente, die dies erfordern. Die Größe des Ansichtstatus auf den Seiten für die Contoso University wäre nicht von dieser Methode erheblich verringert werden, aber um anzuzeigen, wie es funktioniert, machen Sie es für die *Instructors.aspx* Seite. Diese Seite enthält viele Steuerelemente, einschließlich einer `Label` -Steuerelement, das der Ansichtszustand deaktiviert hat. Keines der Steuerelemente auf dieser Seite müssen tatsächlich anzeigen, die Status "aktiviert". (Die `DataKeyNames` Eigenschaft der `GridView` Steuerelement gibt an, Zustand, der zwischen Postbacks beibehalten werden muss, aber diese Werte im Steuerelementzustand, die von betroffen wird nicht beibehalten werden die `ViewStateMode` Eigenschaft.)
+Für Anwendungen, bei denen die Leistung kritisch ist, empfiehlt es sich, den Ansichts Zustand auf Seitenebene immer zu deaktivieren und nur für Steuerelemente zu aktivieren, die dies erfordern. Die Größe des Ansichts Zustands auf den Seiten der "Seite" der Seite "Seite" wird von dieser Methode nicht wesentlich gesenkt, aber um die Funktionsweise zu überprüfen, machen Sie dies für die Seite " *Dozenten. aspx* ". Diese Seite enthält viele Steuerelemente, einschließlich eines `Label` Steuer Elements, für das der Ansichts Zustand deaktiviert ist. Für keines der Steuerelemente auf dieser Seite muss der Ansichts Zustand aktiviert sein. (Die `DataKeyNames`-Eigenschaft des `GridView` Steuer Elements gibt den Zustand an, der zwischen Postbacks beibehalten werden muss. diese Werte werden jedoch im Steuerelement Zustand beibehalten, was von der `ViewStateMode`-Eigenschaft nicht beeinträchtigt wird.)
 
-Die `Page` Richtlinie und `Label` Markup des Steuerelements wird derzeit im folgende Beispiel ähnelt:
+Die `Page`-Direktive und `Label`-Steuerelement Markup ähneln derzeit dem folgenden Beispiel:
 
 [!code-aspx[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample3.aspx)]
 
-Stellen Sie die folgenden Änderungen:
+Nehmen Sie die folgenden Änderungen vor:
 
-- Hinzufügen `ViewStateMode="Disabled"` auf die `Page` Richtlinie.
-- Entfernen Sie `ViewStateMode="Disabled"` aus der `Label` Steuerelement.
+- Fügen Sie `ViewStateMode="Disabled"` der `Page` Direktive hinzu.
+- Entfernen Sie `ViewStateMode="Disabled"` aus dem `Label`-Steuerelement.
 
-Das Markup sieht nun wie im folgende Beispiel:
+Das Markup ähnelt nun dem folgenden Beispiel:
 
 [!code-aspx[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample4.aspx)]
 
-Der Ansichtszustand ist jetzt für alle Steuerelemente deaktiviert. Wenn Sie später ein Steuerelement hinzufügen, der Ansichtszustand verwenden muss, müssen Sie, lediglich enthalten die `ViewStateMode="Enabled"` Attribut für dieses Steuerelement.
+Der Ansichts Zustand ist jetzt für alle Steuerelemente deaktiviert. Wenn Sie später ein Steuerelement hinzufügen, das den Ansichts Zustand verwenden muss, müssen Sie lediglich das `ViewStateMode="Enabled"`-Attribut für dieses Steuerelement einschließen.
 
-## <a name="using-the-notracking-merge-option"></a>Mithilfe der NoTracking-MergeOption
+## <a name="using-the-notracking-merge-option"></a>Verwenden der NoTracking-MergeOption
 
-Bei ein Objektkontext Datenbankzeilen abruft und Entitätsobjekte, die diese darstellen erstellt, überwacht standardmäßig es außerdem die Entitätsobjekte, die über einen Objekt-Zustands-Manager. Diese Überwachungsdaten fungieren als Cache und werden verwendet, wenn Sie eine Entität aktualisieren. Da eine Webanwendung in der Regel kontextinstanzen kurzlebiges Objekt verfügt, wird in Abfragen häufig Daten zurückgeben, die nicht nachverfolgt werden müssen, da der Objektkontext, der diesen liest verworfen wird, bevor alle gelesenen Elemente erneut verwendet werden oder aktualisiert.
+Wenn ein Objekt Kontext Daten Bank Zeilen abruft und Entitäts Objekte erstellt, die diese darstellen, werden diese Entitäts Objekte standardmäßig auch mithilfe des Objekt Zustands-Managers nachverfolgt. Diese Überwachungsdaten fungieren als Cache und werden beim Aktualisieren einer Entität verwendet. Da eine Webanwendung in der Regel über kurzlebige Objekt Kontext Instanzen verfügt, geben Abfragen häufig Daten zurück, die nicht nachverfolgt werden müssen, da der Objekt Kontext, der Sie liest, verworfen wird, bevor eine der gelesenen Entitäten wieder verwendet oder aktualisiert wird.
 
-In Entity Framework können Sie angeben, ob der Objektkontext Entitätsobjekte durch Festlegen von verfolgt einen *MergeOption*. Sie können die MergeOption für einzelne Abfragen oder für Entitätenmengen festlegen. Wenn Sie es für eine Entitätssammlung festlegen, bedeutet, dass an, dass Sie die Standardzusammenführungsoption für alle Abfragen festgelegt sind, die für die Entitätenmenge erstellt werden.
+Im Entity Framework können Sie angeben, ob der Objekt Kontext Entitäts Objekte nachverfolgt, indem Sie eine *MergeOption*festlegen. Sie können die MergeOption für einzelne Abfragen oder für Entitätenmengen festlegen. Wenn Sie diese Einstellung für eine Entitätenmenge festlegen, bedeutet dies, dass Sie die standardmäßige MergeOption für alle Abfragen festlegen, die für diese Entitätenmenge erstellt werden.
 
-Überwachung nicht erforderlich für die Contoso University-Anwendung, für alle Entitätenmengen, die Sie aus dem Repository zugreifen, daher Sie die Merge-Option, um festlegen können `NoTracking` für diese Entitätenmengen, wenn Sie den Objektkontext in die "Repository"-Klasse instanziieren. (Beachten Sie, dass in diesem Tutorial Festlegen der Zusammenführungsoption eine spürbare Auswirkung auf die Leistung der Anwendung nicht. Die `NoTracking` Option ist wahrscheinlich nur in bestimmten Szenarien umfangreiche Daten – ein Observable Leistungssteigerung zu erzielen.)
+Für die Anwendung der Anwendung "die Anwendung" wird die Überwachung für keine Entitätenmengen benötigt, auf die Sie aus dem Repository zugreifen, sodass Sie die Merge-Option auf `NoTracking` für diese Entitätenmengen festlegen können, wenn Sie den Objekt Kontext in der Repository-Klasse instanziieren. (Beachten Sie, dass das Festlegen der Merge-Option in diesem Tutorial keine merkliche Auswirkung auf die Leistung der Anwendung hat. Die Option `NoTracking` wird wahrscheinlich nur in bestimmten Szenarios mit hohem Datenvolumen zu einer wahrnehmbaren Leistungsverbesserung führen.)
 
-Öffnen Sie im Ordner "DAL", die *SchoolRepository.cs* Datei, und fügen Sie eine Konstruktormethode, die die Merge-Option legt fest, für die Entität wird festgelegt, dass das Repository zugreift:
+Öffnen Sie im Ordner dal die Datei *SchoolRepository.cs* , und fügen Sie eine Konstruktormethode hinzu, die die MergeOption für die Entitätenmengen festlegt, auf die das Repository zugreift:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample5.cs)]
 
-## <a name="pre-compiling-linq-queries"></a>Vorabkompilierung von LINQ-Abfragen
+## <a name="pre-compiling-linq-queries"></a>Vorkompilieren von LINQ-Abfragen
 
-Beim ersten, die das Entity Framework eine Entity SQL-Abfrage innerhalb der Lebensdauer ausführt einer bestimmten `ObjectContext` Instanz benötigt etwas Zeit, um die Abfrage zu kompilieren. Das Ergebnis der Kompilierung wird zwischengespeichert, was bedeutet, dass alle folgenden Ausführungen der Abfrage viel schneller werden. LINQ-Abfragen folgen ein ähnlichen Muster, mit dem Unterschied, dass einige der Aufgaben erforderlich, um die Abfrage kompiliert erfolgt jedes Mal, wenn die Abfrage ausgeführt wird. Das heißt, sind für LINQ-Abfragen, standardmäßig nicht alle Ergebnisse der Kompilierung zwischengespeichert.
+Wenn das Entity Framework zum ersten Mal eine Entity SQL Abfrage innerhalb der Lebensdauer einer bestimmten `ObjectContext` Instanz ausführt, dauert die Kompilierung der Abfrage einige Zeit. Das Ergebnis der Kompilierung wird zwischengespeichert, was bedeutet, dass nachfolgende Ausführungen der Abfrage viel schneller sind. LINQ-Abfragen folgen einem ähnlichen Muster, mit dem Unterschied, dass ein Teil der Arbeit, die zum Kompilieren der Abfrage erforderlich ist, jedes Mal erfolgt, wenn die Abfrage ausgeführt wird. Anders ausgedrückt: für LINQ-Abfragen werden standardmäßig nicht alle Ergebnisse der Kompilierung zwischengespeichert.
 
-Wenn Sie eine LINQ-Abfrage, die wiederholt im Leben eines Objektkontexts ausgeführt werden sollen verfügen, können Sie Code schreiben, die bewirkt, dass alle für die Ergebnisse der Kompilierung zum ersten Mal zwischengespeichert werden, die die LINQ-Abfrage ausgeführt wird.
+Wenn Sie eine LINQ-Abfrage haben, die im Lebenszyklus eines Objekt Kontexts wiederholt ausgeführt werden soll, können Sie Code schreiben, der bewirkt, dass alle Ergebnisse der Kompilierung beim ersten Ausführen der LINQ-Abfrage zwischengespeichert werden.
 
-Veranschaulichung: Sie erreichen dies für zwei `Get` Methoden in der `SchoolRepository` -Klasse, von denen braucht keine Parameter (die `GetInstructorNames` Methode), und eine, die einen Parameter erforderlich ist (die `GetDepartmentsByAdministrator` Methode). Diese Methoden müssen wie diese mit jetzt man nicht kompiliert werden, da sie nicht, dass LINQ-Abfragen sind:
+Als Abbildung wird dies für zwei `Get` Methoden in der `SchoolRepository`-Klasse ausgeführt, von denen eine keine Parameter übernimmt (die `GetInstructorNames`-Methode), und eine, die einen-Parameter benötigt (die `GetDepartmentsByAdministrator`-Methode). Diese Methoden sind jetzt nicht mehr kompiliert, da Sie keine LINQ-Abfragen sind:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample6.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample7.cs)]
 
-Allerdings so, dass Sie die kompilierte Abfragen ausprobieren können, müssen Sie fortgesetzt, als ob diese als die folgenden LINQ-Abfragen geschrieben worden:
+Wenn Sie jedoch kompilierte Abfragen ausprobieren möchten, können Sie so vorgehen, als wären diese als die folgenden LINQ-Abfragen geschrieben worden:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample8.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample9.cs)]
 
-Sie können den Code in diesen Methoden ändern, was oben hat, und führen Sie die Anwendung aus, um sicherzustellen, dass es, bevor Sie fortfahren funktioniert. Aber die folgenden Anweisungen gehen direkt vorkompilierte Versionen davon erstellen.
+Sie können den Code in diesen Methoden in den obigen Code ändern und die Anwendung ausführen, um zu überprüfen, ob Sie funktioniert, bevor Sie fortfahren. Die folgenden Anweisungen werden jedoch direkt in das Erstellen vorkompilierter Versionen einfließen.
 
-Erstellen Sie eine Klassendatei in der *DAL* Ordner, nennen Sie sie *SchoolEntities.cs*, und Ersetzen Sie den vorhandenen Code durch den folgenden Code:
+Erstellen Sie eine Klassendatei im Ordner *dal* , benennen Sie Sie *SchoolEntities.cs*, und ersetzen Sie den vorhandenen Code durch den folgenden Code:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample10.cs)]
 
-Dieser Code erstellt eine partielle Klasse, die die automatisch generierte Objektkontextklasse erweitert. Die partielle Klasse enthält zwei kompilierte LINQ-Abfragen, die mit der `Compile` Methode der `CompiledQuery` Klasse. Es erstellt auch Methoden, die Sie aufrufen, die Abfragen verwenden können. Speichern Sie und schließen Sie diese Datei.
+Dieser Code erstellt eine partielle Klasse, die die automatisch generierte Objekt Kontext Klasse erweitert. Die partielle Klasse enthält zwei kompilierte LINQ-Abfragen mit der `Compile`-Methode der `CompiledQuery`-Klasse. Außerdem werden Methoden erstellt, die Sie verwenden können, um die Abfragen aufzurufen. Speichern und schließen Sie diese Datei.
 
-Als Nächstes wird im *SchoolRepository.cs*, ändern Sie die vorhandene `GetInstructorNames` und `GetDepartmentsByAdministrator` Methoden im Repository Klasse, sodass sie die kompilierten Abfragen aufrufen:
+Ändern Sie anschließend in *SchoolRepository.cs*die vorhandenen `GetInstructorNames`-und `GetDepartmentsByAdministrator` Methoden in der Repository-Klasse, sodass Sie die kompilierten Abfragen aufzurufen:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample11.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample12.cs)]
 
-Führen Sie die *Departments.aspx* Seite, um sicherzustellen, dass sie funktioniert wie vorher. Die `GetInstructorNames` Methode wird aufgerufen, um das Auffüllen der Administrator Dropdown-Liste, und die `GetDepartmentsByAdministrator` Methode wird aufgerufen, wenn Sie auf **Update** um sicherzustellen, dass keine "Instructor" Administrator mehrere ist Abteilung.
+Führen Sie die Seite *Departments. aspx* aus, um zu überprüfen, ob Sie wie zuvor funktioniert hat. Die `GetInstructorNames`-Methode wird aufgerufen, um die Dropdown Liste "Administrator" aufzufüllen, und die `GetDepartmentsByAdministrator`-Methode wird aufgerufen, wenn Sie auf " **Aktualisieren** " klicken, um zu überprüfen, ob kein Dozenten Administrator mehrerer Abteilungen ist.
 
 [![Image03](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image10.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image9.png)
 
-Sie haben die vorkompilierte Abfrage in der Contoso University-Anwendung nur, wie es geht nicht verwendet werden, weil sie die Leistung merklich verbessert würde. LINQ-Abfragen wird vorkompiliert ein Maß an Komplexität an Ihrem Code hinzufügen, also stellen Sie sicher, dass Sie es nur für Abfragen ausführen, die tatsächlich Leistungsengpässe in Ihrer Anwendung darstellen.
+Sie haben Abfragen in der Anwendung "" der Anwendung "" der Anwendung "" von "" in der Anwendung "" der Anwendung "" der Anwendung "" bereits kompiliert, nicht, weil dadurch die Leistung Durch das Vorkompilieren von LINQ-Abfragen wird dem Code ein Komplexitäts Grad hinzugefügt. Stellen Sie daher sicher, dass Sie ihn nur für Abfragen ausführen, die tatsächlich Leistungsengpässe in der Anwendung darstellen.
 
-## <a name="examining-queries-sent-to-the-database"></a>Untersuchung von Abfragen, die an die Datenbank gesendet
+## <a name="examining-queries-sent-to-the-database"></a>Untersuchen der an die Datenbank gesendeten Abfragen
 
-Wenn Sie Leistungsprobleme untersuchen, ist es manchmal hilfreich zu wissen, die genaue SQL-Befehle, die das Entity Framework in die Datenbank gesendet wird. Wenn Sie mit der Sie arbeiten ein `IQueryable` Objekt, eine Möglichkeit hierzu ist die Verwendung der `ToTraceString` Methode.
+Wenn Sie Leistungsprobleme untersuchen, ist es manchmal hilfreich, die exakten SQL-Befehle zu kennen, die vom Entity Framework an die Datenbank gesendet werden. Wenn Sie mit einem `IQueryable` Objekt arbeiten, besteht eine Möglichkeit darin, die `ToTraceString`-Methode zu verwenden.
 
-In *SchoolRepository.cs*, ändern Sie den Code in die `GetDepartmentsByName` Methode, um die im folgende Beispiel entsprechen:
+Ändern Sie in *SchoolRepository.cs*den Code in der `GetDepartmentsByName`-Methode so, dass er dem folgenden Beispiel entspricht:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample13.cs)]
 
-Die `departments` Variablen umgewandelt werden muss ein `ObjectQuery` geben, da die `Where` Methode am Ende der vorherigen Zeile erstellt eine `IQueryable` -Objekt ohne die `Where` -Methode, die Umwandlung nicht erforderlich.
+Die `departments` Variable muss nur in einen `ObjectQuery`-Typ umgewandelt werden, da die `Where`-Methode am Ende der vorangehenden Zeile ein `IQueryable` Objekt erstellt. ohne die `Where`-Methode ist die Umwandlung nicht erforderlich.
 
-Legen Sie einen Haltepunkt auf der `return` Zeile, und führen Sie die *Departments.aspx* Seite im Debugger. Wenn der Haltepunkt erreicht wird, untersuchen die `commandText` -Variable in der **"lokal"** und anschließend mit dem Text-Schnellansicht (das Lupensymbol in der **Wert** Spalte), seinen Wert in der anzeigen**Text-Schnellansicht** Fenster. Sie können die gesamten SQL-Befehl anzeigen, der durch diesen Code entsteht:
+Legen Sie einen Haltepunkt in der `return` Zeile fest, und führen Sie dann die Seite *Departments. aspx* im Debugger aus. Wenn Sie den Breakpoint erreichen, überprüfen Sie die `commandText` Variable **im Fenster "** lokal", und verwenden Sie die Text Schnellansicht (die Lupe in der Spalte **Wert** ), um den Wert im Fenster **Text** Schnellansicht anzuzeigen. Der gesamte SQL-Befehl, der sich aus diesem Code ergibt, wird angezeigt:
 
 [![Image08](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image12.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image11.png)
 
-Als Alternative bietet das IntelliTrace-Feature in Visual Studio Ultimate eine Möglichkeit zum Anzeigen von SQL-Befehle, die von Entity Framework, das müssen Sie Ihren Code ändern oder sogar legen Sie einen Haltepunkt nicht generiert.
+Als Alternative bietet das IntelliTrace-Feature in Visual Studio Ultimate eine Möglichkeit zum Anzeigen von SQL-Befehlen, die von der Entity Framework generiert werden, ohne dass Sie Ihren Code ändern oder sogar einen Haltepunkt festlegen müssen.
 
 > [!NOTE]
-> Sie können die folgenden Verfahren ausführen, nur, wenn Sie Visual Studio Ultimate verfügen.
+> Sie können die folgenden Prozeduren nur ausführen, wenn Sie Visual Studio Ultimate haben.
 
-Wiederherstellen des ursprünglichen Codes aus dem `GetDepartmentsByName` -Methode, und führen Sie die *Departments.aspx* Seite im Debugger.
+Stellen Sie den ursprünglichen Code in der `GetDepartmentsByName`-Methode wieder her, und führen Sie dann die Seite *Departments. aspx* im Debugger aus.
 
-Wählen Sie in Visual Studio die **Debuggen** Menü **IntelliTrace**, und klicken Sie dann **IntelliTrace-Ereignisse**.
+Wählen Sie in Visual Studio das Menü **Debuggen** , dann **IntelliTrace**und dann **IntelliTrace-Ereignisse**aus.
 
 [![Image11](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image14.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image13.png)
 
-In der **IntelliTrace** Fenster, klicken Sie auf **alle unterbrechen**.
+Klicken Sie im **IntelliTrace** -Fenster auf **Alle unterbrechen**.
 
 [![Image12](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image16.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image15.png)
 
-Die **IntelliTrace** Fenster zeigt eine Liste der zuletzt aufgetretene Ereignisse:
+Das **IntelliTrace** -Fenster zeigt eine Liste aktueller Ereignisse an:
 
 [![Image09](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image18.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image17.png)
 
-Klicken Sie auf die **ADO.NET** Zeile. Wird erweitert, um Sie den Befehlstext anzeigen:
+Klicken Sie auf die Zeile **ADO.net** . Es wird erweitert, um Ihnen den Befehls Text anzuzeigen:
 
 [![Image10](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image20.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image19.png)
 
-Sie können die Textzeichenfolge für den gesamten Befehl Kopieren, in die Zwischenablage aus der **"lokal"** Fenster.
+Sie können die gesamte Befehls Text Zeichenfolge aus dem **Lokal Fenster in** die Zwischenablage kopieren.
 
-Angenommen, Sie mit einer Datenbank mit Weitere Tabellen, Beziehungen und Spalten als die einfache arbeiteten `School` Datenbank. Unter Umständen eine Abfrage, die alle Informationen erfasst müssen Sie in einem einzelnen `Select` -Anweisung mit mehreren `Join` Klauseln ist zu komplex, um effizient arbeiten. In diesem Fall können Sie von mittels Eager Load laden zum expliziten Laden zur Vereinfachung der Abfrage wechseln.
+Angenommen, Sie arbeiten mit einer Datenbank, die mehr Tabellen, Beziehungen und Spalten als die einfache `School` Datenbank hat. Möglicherweise werden Sie feststellen, dass eine Abfrage, die alle Informationen sammelt, die Sie in einer einzigen `Select` Anweisung mit mehreren `Join` Klauseln benötigen, zu komplex wird, um effizient zu arbeiten. In diesem Fall können Sie von Eager Loading zum expliziten Laden wechseln, um die Abfrage zu vereinfachen.
 
-Versuchen Sie es z. B. mit dem Ändern des Codes in der `GetDepartmentsByName` -Methode in der *SchoolRepository.cs*. Aktuell, Methode Sie eine Objektabfrage haben, hat `Include` Methoden für die `Person` und `Courses` Navigationseigenschaften. Ersetzen Sie die `return` -Anweisung mit Code, der explizites Laden ausführt, wie im folgenden Beispiel gezeigt:
+Versuchen Sie z. b., den Code in der `GetDepartmentsByName`-Methode in *SchoolRepository.cs*zu ändern. Derzeit verfügen Sie in dieser Methode über eine Objekt Abfrage, die über `Include` Methoden für die Navigations Eigenschaften `Person` und `Courses` verfügt. Ersetzen Sie die `return`-Anweisung durch Code, der Explizites Laden ausführt, wie im folgenden Beispiel gezeigt:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample14.cs)]
 
-Führen Sie die *Departments.aspx* Seite im Debugger aus, und überprüfen Sie die **IntelliTrace** Fenster erneut als bisher. Dort war nur eine einzelne Abfrage vor, sehen Sie jetzt eine lange Abfolge von ihnen an.
+Führen Sie im Debugger die Seite " *Departments. aspx* " aus, und überprüfen Sie das **IntelliTrace** -Fenster wie zuvor. Nun, wo eine einzelne Abfrage vorhanden war, wird eine lange Sequenz von Ihnen angezeigt.
 
 [![Image13](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image22.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image21.png)
 
-Klicken Sie auf der ersten **ADO.NET** Zeile angezeigt, was für die komplexe Abfrage Sie passiert ist weiter oben angezeigt.
+Klicken Sie auf die erste Zeile **ADO.net** , um zu sehen, was mit der komplexen Abfrage geschehen ist, die Sie zuvor gesehen haben
 
 [![Image14](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image24.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image23.png)
 
-Die Abfrage von Abteilungen geworden ist eine einfache `Select` Abfragen ohne `Join` -Klausel, sondern folgt separate Abfragen, die verwandte Kurse und ein Administrator abrufen, einen Satz von zwei Abfragen für jede Abteilung zurückgegebenen von der ursprünglichen Abfrage.
+Die Abfrage aus Abteilungen ist eine einfache `Select` Abfrage ohne `Join`-Klausel, gefolgt von separaten Abfragen, die Verwandte Kurse und einen Administrator abrufen, wobei eine Reihe von zwei Abfragen für jede Abteilung verwendet werden, die von der ursprünglichen Abfrage zurückgegeben wird.
 
 > [!NOTE]
-> Wenn Sie verzögerte lassen möglicherweise Lazy Load Laden aktiviert ist, die Muster, das Sie hier mit der gleichen Abfrage wiederholt in vielen Fällen sehen, sein. Ein Muster, das Sie in der Regel vermeiden möchten, ist lazy Loading von verknüpften Daten für jede Zeile der primären Tabelle. Es sei denn, Sie überprüft haben, dass es sich bei eine einzelnen joinabfrage effizient sein zu komplex ist, würden Sie in der Regel in solchen Fällen verbessern, indem Sie die Änderung der primären Abfrage um eager Loading verwenden können.
+> Wenn Sie Lazy Loading aktiviert lassen, kann das Muster, das hier angezeigt wird, mit derselben Abfrage mehrmals wiederholt werden, von Lazy Loading resultieren. Ein Muster, das Sie in der Regel vermeiden möchten, ist das verzögerte Laden verwandter Daten für jede Zeile der primären Tabelle. Wenn Sie nicht überprüft haben, dass eine einzelne joinabfrage zu komplex ist, um effizient zu sein, können Sie in solchen Fällen die Leistung verbessern, indem Sie die primäre Abfrage so ändern, dass Sie Eager Loading verwendet.
 
-## <a name="pre-generating-views"></a>Vorab Generieren von Sichten
+## <a name="pre-generating-views"></a>Vorab generierende Sichten
 
-Wenn ein `ObjectContext` Objekt zuerst in eine neue Anwendungsdomäne erstellt wird, generiert Entity Framework einen Satz von Klassen, die zum Zugriff auf die Datenbank verwendet. Diese Klassen heißen *Ansichten*, und wenn Sie ein Modell sehr großen Datenmengen haben, Generierung dieser Ansichten verzögern der Website die Antwort auf die erste Anforderung für eine Seite nach der Initialisierung einer neuen Anwendungsdomäne. Sie können diese Verzögerung der ersten Anforderung reduzieren, indem Sie die Ansichten erstellen, zur Kompilierzeit statt zur Laufzeit.
+Wenn ein `ObjectContext` Objekt erstmalig in einer neuen Anwendungsdomäne erstellt wird, generiert die Entity Framework eine Reihe von Klassen, die für den Zugriff auf die Datenbank verwendet werden. Diese Klassen werden als *Sichten*bezeichnet. Wenn Sie über ein sehr großes Datenmodell verfügen, können Sie durch das Erstellen dieser Sichten die Website Antwort auf die erste Anforderung einer Seite verzögern, nachdem eine neue Anwendungsdomäne initialisiert wurde. Sie können diese Verzögerung der ersten Anforderung verringern, indem Sie die Sichten zur Kompilierzeit statt zur Laufzeit erstellen.
 
 > [!NOTE]
-> Wenn Ihre Anwendung verfügt nicht über einen extrem großen Datenmodells, oder wenn es sich bei einem großen Datenmodell verfügt über ein, aber Sie keine Bedenken bezüglich eines Leistungsproblems, das nur die erste Seitenanforderung betroffen sind, nachdem IIS wiederverwendet wird, können Sie diesen Abschnitt überspringen. Anzeigen, die Erstellung nicht ausgeführt werden, wenn Sie instanziieren ein `ObjectContext` Objekt, da die Ansichten in der Anwendungsdomäne zwischengespeichert werden. Aus diesem Grund, es sei denn, Sie häufig Ihre Anwendung in IIS wiederverwendet werden, nur sehr wenige Seitenanforderungen aus vorab generierten Sichten profitieren.
+> Wenn Ihre Anwendung nicht über ein extrem großes Datenmodell verfügt oder wenn Sie über ein großes Datenmodell verfügt, Sie sich aber nicht um ein Leistungsproblem kümmern, das sich nur auf die Anforderung der ersten Seite auswirkt, nachdem IIS wieder verwendet wurde, können Sie diesen Abschnitt überspringen. Die Ansichts Erstellung findet nicht jedes Mal statt, wenn Sie ein `ObjectContext` Objekt instanziieren, da die Ansichten in der Anwendungsdomäne zwischengespeichert werden. Wenn Sie Ihre Anwendung nicht häufig in IIS wieder verwenden, profitieren nur wenige Seiten Anforderungen von vordefinierten Ansichten.
 
-Können Sie mithilfe von Ansichten vorab generieren die *EdmGen.exe* Befehlszeilentool oder mithilfe einer *Text Template Transformation Toolkit* (T4)-Vorlage. In diesem Tutorial verwenden Sie eine T4-Vorlage.
+Sie können Sichten mit dem Befehlszeilen Tool " *EdmGen. exe* " oder mithilfe einer T4-Vorlage ( *Text Template Transformation Toolkit* ) vorab generieren. In diesem Tutorial verwenden Sie eine T4-Vorlage.
 
-In der *DAL* Ordner hinzufügen, eine Datei mit der **Textvorlage** Vorlage (es befindet sich unter der **Allgemein** Knoten in der **installierte Vorlagen** Liste), und nennen Sie sie *SchoolModel.Views.tt*. Ersetzen Sie den vorhandenen Code in der Datei mit dem folgenden Code ein:
+Fügen Sie im Ordner *dal* eine Datei mithilfe der Vorlage **Text Vorlage** hinzu (Sie befindet sich unter dem Knoten **Allgemein** in der Liste **installierte Vorlagen** ), und nennen Sie Sie *SchoolModel.views.tt*. Ersetzen Sie den vorhandenen Code in der Datei durch den folgenden Code:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample15.cs)]
 
-Dieser Code generiert Sichten für ein *EDMX* Datei, befindet sich im gleichen Ordner wie die Vorlage, die den gleichen Namen hat, wie die Datei der Vorlage. Angenommen, dem Namen der Vorlagendatei *SchoolModel.Views.tt*, sieht sie für eine Modell-Datendatei, die mit dem Namen *SchoolModel.edmx*.
+Dieser Code generiert Sichten für eine *edmx* -Datei, die sich im selben Ordner wie die Vorlage befindet und denselben Namen wie die Vorlagen Datei hat. Wenn die Vorlagen Datei z. b. den Namen " *SchoolModel.views.tt*" hat, sucht Sie nach einer Datenmodell Datei mit dem Namen " *SchoolModel. edmx*".
 
-Speichern Sie die Datei, und klicken Sie dann mit der rechten Maustaste in der Datei im **Projektmappen-Explorer** , und wählen Sie **benutzerdefiniertes Tool ausführen**.
+Speichern Sie die Datei, klicken Sie dann mit der rechten Maustaste auf **Projektmappen-Explorer** , und wählen Sie **benutzerdefiniertes Tool ausführen**aus.
 
 [![Image02](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image26.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image25.png)
 
-Visual Studio generiert eine Codedatei, die die Sicht erstellt mit dem Namen *SchoolModel.Views.cs* basierend auf der Vorlage. (Sie haben vielleicht bemerkt, dass die Codedatei generiert wird, noch bevor Sie auswählen, **benutzerdefiniertes Tool ausführen**, sobald Sie die Vorlagendatei speichern.)
+Visual Studio generiert eine Codedatei, mit der die Ansichten erstellt werden, die basierend auf der Vorlage den Namen *SchoolModel.views.cs* haben. (Möglicherweise haben Sie bemerkt, dass die Codedatei generiert wird, bevor Sie **benutzerdefiniertes Tool ausführen**auswählen, sobald Sie die Vorlagen Datei speichern.)
 
-[![Image01 abgerufen wird](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
+[![Image01](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
 
-Sie können jetzt die Anwendung auszuführen und stellen Sie sicher, dass sie funktioniert wie vorher.
+Sie können die Anwendung jetzt ausführen und überprüfen, ob Sie wie zuvor funktioniert.
 
-Weitere Informationen zu vorab generierten Sichten finden Sie unter den folgenden Ressourcen:
+Weitere Informationen zu vorab generierten Sichten finden Sie in den folgenden Ressourcen:
 
-- [Vorgehensweise: Vorgenerieren von Ansichten zum Verbessern der Abfrageleistung](https://msdn.microsoft.com/library/bb896240.aspx) auf der MSDN-Website. Erläutert, wie die `EdmGen.exe` Befehlszeilentool, um Sichten vorzugenerieren.
-- [Isolieren der Leistung mit vorkompilierten/vorgenerierten Sichten im Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) im Windows Server AppFabric Customer Advisory Team-Blog.
+- Gewusst [wie: Vorgenerieren von Ansichten zur Verbesserung der Abfrageleistung](https://msdn.microsoft.com/library/bb896240.aspx) auf der MSDN-Website. Erläutert die Verwendung des Befehlszeilen Tools `EdmGen.exe`, um Sichten vorab zu generieren.
+- [Isolieren der Leistung mit vorkompilierten/vordefinierten Sichten in der Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) im Windows Server AppFabric Customer Advisory Team Blog.
 
-Dies schließt die Einführung zum Verbessern der Leistung einer ASP.NET-Webanwendung, die das Entity Framework verwendet. Weitere Informationen finden Sie in den folgenden Ressourcen:
+Dies schließt die Einführung zur Verbesserung der Leistung in einer ASP.NET-Webanwendung ab, die die Entity Framework verwendet. Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-- [Überlegungen zur Leistung (Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) auf der MSDN-Website.
-- [Leistung von Beiträgen im Entity Framework-Team-Blog](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
-- [EF Zusammenführungsoptionen und kompilierte Abfragen](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Blog-Beitrag, die unerwartete Verhalten von kompilierte Abfragen und Zusammenführen wird erläutert, wie z. B. Optionen `NoTracking`. Wenn Sie kompilierte Abfragen verwenden oder Merge-optionseinstellungen in Ihrer Anwendung ändern möchten, lesen Sie diese zuerst.
-- [Entity Framework-bezogenem veröffentlicht, in der Daten und Modellieren von Customer Advisory Team-Blog](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Enthält Beiträge zu kompilierte Abfragen und verwenden die Visual Studio 2010-Profiler, um Leistungsprobleme zu ermitteln.
-- [Entity Framework-Forum-Thread mit Ratschlägen zur Verbesserung der Leistung von sehr komplexen Abfragen](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
-- [ASP.NET State Management Recommendations](https://msdn.microsoft.com/library/z1hkazw7.aspx).
-- [Verwenden von Entitätsframework und dem ObjectDataSource-Steuerelement: Benutzerdefiniertes Paging](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Blog-Beitrag, der für die Anwendung ContosoUniversity in diesen Tutorials erstellt haben, implementieren Sie Paging in erläutert erstellt die *Departments.aspx* Seite.
+- Über [Legungen zur Leistung (Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) auf der MSDN-Website.
+- [Leistungsbezogene Beiträge im Entity Framework Teamblog](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
+- [EF-mergeoptionen und kompilierte Abfragen](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Blog Beitrag, der unerwartetes Verhalten von kompilierten Abfragen und mergeoptionen wie `NoTracking`erläutert. Wenn Sie beabsichtigen, kompilierte Abfragen zu verwenden oder die Einstellungen für zusammenzustellungsoptionen in Ihrer Anwendung zu bearbeiten, lesen Sie dies zuerst
+- [Entity Framework Beiträge im Blog zum Daten-und Modellierungs Team Blog](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Enthält Beiträge zu kompilierten Abfragen und verwendet den Visual Studio 2010 Profiler zum Ermitteln von Leistungsproblemen.
+- [Entity Framework Forums Thread mit Ratschläge zum Verbessern der Leistung von sehr komplexen Abfragen](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
+- [Empfehlungen zur ASP.net State Management](https://msdn.microsoft.com/library/z1hkazw7.aspx)
+- [Verwenden des Entity Framework und der ObjectDataSource: Custom Paging](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Blog Beitrag, der auf der in diesen Tutorials erstellten Anwendung condesouniversity aufbaut und erläutert, wie Paging auf der Seite " *Departments. aspx* " implementiert wird.
 
-Im nächste Tutorial werden einige der wichtigen Verbesserungen von Entity Framework, die in Version 4 neu sind.
+Im nächsten Tutorial werden einige der wichtigen Verbesserungen der in Version 4 neuen Entity Framework überprüft.
 
 > [!div class="step-by-step"]
 > [Zurück](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)

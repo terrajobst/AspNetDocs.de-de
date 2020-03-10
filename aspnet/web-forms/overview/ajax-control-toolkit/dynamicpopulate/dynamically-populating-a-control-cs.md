@@ -9,11 +9,11 @@ ms.assetid: e1fec43e-1daf-49d2-b0c7-7f1b930455cc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24f88e44e0f878127314774d4e8846f80133413e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599288"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430557"
 ---
 # <a name="dynamically-populating-a-control-c"></a>Dynamisches Auffüllen eines Steuerelements (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das DynamicPopulate-Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert in ein Ziel Steuerelement auf der Seite, ohne eine Seiten Aktualisierung durchführen zu müssen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `DynamicPopulate`-Steuerelement im ASP.NET AJAX Control Toolkit Ruft einen Webdienst (oder eine Seiten Methode) auf und füllt den resultierenden Wert ohne Seiten Aktualisierung in ein Ziel Steuerelement auf der Seite aus. In diesem Tutorial wird gezeigt, wie Sie diese Vorgehensweise einrichten.
 
@@ -69,4 +69,4 @@ Führen Sie die ASP.NET-Seite im Browser aus, und klicken Sie auf die Schaltflä
 Durch Klicken auf die Schaltfläche wird das Datum vom Server abgerufen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](dynamically-populating-a-control-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [Weiter](dynamically-populating-a-control-using-javascript-code-cs.md)

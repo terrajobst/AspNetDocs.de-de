@@ -9,11 +9,11 @@ ms.assetid: dff54fcb-68b1-4488-89a2-ca97532d6a4c
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 026e3efb4ebf84016aa0f6a5fda4af549fdadfcb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594184"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435195"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-c"></a>Erstellen von Seitenlayouts mit Ansichtsmasterseiten (C#)
 
@@ -123,7 +123,7 @@ Die Seite Inhaltsansicht in der Liste 5 überschreibt das `<asp:ContentPlaceHold
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-cs/samples/sample6.aspx)]
 
-### <a name="summary"></a>Summary
+### <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie eine grundlegende Einführung zum Anzeigen von Masterseiten und zum Anzeigen von Inhaltsseiten bereitgestellt. Sie haben gelernt, wie Sie neue Ansichts Masterseiten erstellen und Inhaltsseiten auf der Grundlage dieser Seiten erstellen können. Wir haben auch erläutert, wie Sie den Inhalt einer Ansichts Master Seite auf einer bestimmten Seite Inhaltsseite ändern können.
 

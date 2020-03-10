@@ -9,11 +9,11 @@ ms.assetid: e618c37c-68f3-49aa-9fda-f86cb3b578b9
 msc.legacyurl: /mvc/videos
 msc.type: book
 ms.openlocfilehash: 4557a4442d59ec6314dcd2039c8c89b8b5b3d821
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414334"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432345"
 ---
 # <a name="videos"></a>Videos
 
@@ -43,10 +43,10 @@ ms.locfileid: "59414334"
         - [Anzeigen einer Tabelle von Datenbankdaten](mvc-2/how-do-i/displaying-a-table-of-database-data.md)
         - [Was ist ASP.NET MVC? (80-minütiges technisches Video für Entwickler, die mit NerdDinner arbeiten)](mvc-2/how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
         - [Gründe für ASP.NET MVC (3-minütiges Übersichtsvideo für Entscheidungsträger)](mvc-2/how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-        - [ASP.NET MVC: Wie 10-minütiges technisches Video für Entwickler](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+        - [ASP.NET MVC: Vorgehensweise (10-minütiges technisches Video für Entwickler)](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [Zurückgeben von formatierten JSON-Daten für einen AJAX-Aufruf in einer ASP.NET MVC-Webanwendung](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [Arbeiten mit Daten in ASP.NET MVC-Teilansichten](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-        - [Implementieren Sie die Modelle anzeigen, um Daten für ASP.NET MVC-Ansichten zu verwalten.](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+        - [Implementieren von Ansichts Modellen zum Verwalten von Daten für ASP.NET-MVC-Ansichten](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
         - [Erstellen eines benutzerdefinierten HTML-Hilfsprogramms für eine MVC-Anwendung](mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
         - [Arbeiten mit Modellbindungen in einer MVC-Anwendung](mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
         - [Verwenden von HttpVerbs-Attributen in einer MVC-Anwendung](mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -60,44 +60,44 @@ ms.locfileid: "59414334"
         - [Best Practices zu ASP.NET MVC](mvc-2/how-do-i/how-to-best-learn-asp-net-mvc.md)
     - [ASP.NET MVC für alle](mvc-2/aspnet-mvc-for-the-rest-of-us/index.md)
 
-        - [ASP.NET MVC für den Rest von uns: Teil 1](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-        - [ASP.NET MVC für den Rest von uns: Teil 2](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-        - [ASP.NET MVC für den Rest von uns: Teil 3](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-        - [ASP.NET MVC für den Rest von uns: Teil 4](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+        - [ASP.NET MVC für alle: Teil 1](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+        - [ASP.NET MVC für alle: Teil 2](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+        - [ASP.NET MVC für alle: Teil 3](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+        - [ASP.NET MVC für alle: Teil 4](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
     - [Music Store](mvc-2/music-store/index.md)
 
         - [MVC Music Store, Teil 1: Einführung, Tools und Projektstruktur](mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
         - [MVC Music Store, Teil 2: Controller](mvc-2/music-store/mvc-music-store-part-2-controllers.md)
-        - [MVC Music Store, Teil 3: Views und ViewModels](mvc-2/music-store/mvc-music-store-part-3-views-and-viewmodels.md)
+        - [MVC Music Store, Teil 3: Ansichten und ViewModels](mvc-2/music-store/mvc-music-store-part-3-views-and-viewmodels.md)
 - [ASP.NET MVC 1](mvc-1/index.md)
 
     - [ASP.NET MVC Storefront](mvc-1/aspnet-mvc-storefront/index.md)
 
         - [ASP.NET MVC Storefront, Teil 1: Architektonische Erläuterung und Übersicht](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
-        - [ASP.NET MVC Storefront, Teil 2: Repository-Muster](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern.md)
+        - [ASP.NET MVC Storefront, Teil 2: Repositorymuster](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern.md)
         - [ASP.NET MVC Storefront, Teil 3: Pipes und Filter](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters.md)
-        - [ASP.NET MVC Storefront, Teil 4: LINQ To Sql-Sammlung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)
+        - [ASP.NET MVC Storefront, Teil 4: LINQ to SQL-Sammlung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)
         - [ASP.NET MVC Storefront, Teil 5: Globalisierung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globalization.md)
-        - [ASP.NET MVC Storefront, Teil 6: Fertigstellen des Repositorys und anfänglichen Benutzeroberflächenaufgaben](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
+        - [ASP.NET MVC Storefront, Teil 6: Fertigstellen des Repositorys und der anfänglichen Benutzeroberflächenaufgaben](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
         - [ASP.NET MVC Storefront, Teil 7: Routing- und Benutzeroberflächenaufgaben](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work.md)
-        - [ASP.NET MVC Storefront, Teil 8: Test Controller "," Iteration 1 abgeschlossen](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
+        - [ASP.NET MVC Storefront, Teil 8: Testen des Controllers, Iteration 1 abgeschlossen](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
         - [ASP.NET MVC Storefront, Teil 9: Einkaufswagen](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart.md)
         - [ASP.NET MVC Storefront, Teil 10: Umgestalten des Einkaufswagens und Autorisierung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization.md)
-        - [ASP.NET MVC Storefront Part 11: Einbinden der Warenkorb, und Verwenden von Komponenten](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components.md)
-        - [ASP.NET MVC Storefront, Teil 12: Simulieren](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking.md)
+        - [ASP.NET MVC Storefront, Teil 11: Integrieren des Einkaufswagens und Verwenden von Komponenten](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components.md)
+        - [ASP.NET MVC Storefront, Teil 12: Simulation](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking.md)
         - [ASP.NET MVC Storefront, Teil 13: Abhängigkeitsinjektion](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection.md)
-        - [ASP.NET MVC Storefront, Teil 14: Rich Client-Interaktion](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-14-rich-client-interaction.md)
-        - [ASP.NET MVC Storefront Part 15: Öffentlicher codereview](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review.md)
+        - [ASP.NET MVC Storefront, Teil 14: Rich-Client-Interaktion](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-14-rich-client-interaction.md)
+        - [ASP.NET MVC Storefront, Teil 15: Öffentlicher Code Review](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review.md)
         - [ASP.NET MVC Storefront, Teil 16: Wiederherstellen der Mitgliedschaft mit OpenID](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
-        - [ASP.NET MVC Storefront Part 17: Bezahlvorgang mit Jeff Atwood](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
-        - [ASP.NET MVC Storefront, Teil 18: Erstellen der Benutzeroberfläche](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-        - [ASP.NET MVC Storefront Part 19: Verarbeiten von Bestellungen mit Windows-Workflow](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
-        - [ASP.NET MVC Storefront, Teil 19a: Windows Workflow – nachverfolgung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
+        - [ASP.NET MVC Storefront, Teil 17: Diskussion zum Bezahlvorgang mit Jeff Atwood](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
+        - [ASP.NET MVC Storefront, Teil 18: Schaffung eines ganzheitlichen Benutzererlebnisses](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
+        - [ASP.NET Storefront, Teil 19: Verarbeiten von Bestellungen mit Windows Workflow](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+        - [ASP.NET MVC Storefront, Teil 19a: Windows Workflow – Nachverfolgung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [ASP.NET MVC Storefront, Teil 20: Protokollierung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
-        - [ASP.NET MVC Storefront Part 21: Auftrags-Manager und Personalisierung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
-        - [ASP.NET MVC Storefront Part 22: Umstrukturierung, Umleitung und PayPal](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
-        - [ASP.NET MVC Storefront, Teil 23: Erste Schritte mit Domänengesteuertem Design](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)
-        - [ASP.NET MVC Storefront, Teil 24: Finis](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-24-finis.md)
+        - [ASP.NET MVC Storefront, Teil 21: Auftrags-Manager und Personalisierung](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
+        - [ASP.NET MVC Storefront, Teil 22: Umstrukturierung, Umleitung und PayPal](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
+        - [ASP.NET MVC Storefront, Teil 23: Erste Schritte mit domänengesteuertem Design](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)
+        - [ASP.NET MVC Storefront, Teil 24: Abschluss](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-24-finis.md)
     - [Diskussionen](mvc-1/conference-presentations/index.md)
 
         - [Erstellen von NerdDinner.com mit Microsoft ASP.NET Model View Controller (MVC)](mvc-1/conference-presentations/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)

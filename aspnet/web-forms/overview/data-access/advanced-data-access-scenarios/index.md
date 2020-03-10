@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/index
-title: Erweiterte Datenzugriffsszenarien | Microsoft-Dokumentation
+title: Erweiterte Datenzugriffs Szenarien | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesen Tutorials werden zum Arbeiten mit gespeicherten Prozeduren und berechnete Spalten, wie mit Joins mit Datenbanktabellen und wie Sie Verbindungsinformationen für die Daten zu verschlüsseln...
+description: In diesen Tutorials wird beschrieben, wie Sie mit gespeicherten Prozeduren und berechneten Spalten arbeiten, wie Sie Joins mit Datenbanktabellen verwenden und Daten Verbindungsinformationen verschlüsseln...
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 00d198ed-fddc-4fd3-a86e-3f29c5f707cc
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios
 msc.type: chapter
 ms.openlocfilehash: 25041560b9e8ff0a8c944572dad344e655100b0d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108549"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428199"
 ---
 # <a name="advanced-data-access-scenarios"></a>Erweiterte Datenzugriffsszenarien
 
-> In diesen Tutorials werden zum Arbeiten mit gespeicherten Prozeduren und berechnete Spalten, wie mit Joins mit Datenbanktabellen und Vorgehensweise beim Verschlüsseln von Informationen zur Datenverbindung.
+> In diesen Tutorials wird beschrieben, wie Sie mit gespeicherten Prozeduren und berechneten Spalten arbeiten, wie Sie Joins mit Datenbanktabellen verwenden und wie Sie Daten Verbindungsinformationen verschlüsseln.
 
 - [Erstellen von neuen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (C#)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
 - [Verwenden von vorhandenen gespeicherten Prozeduren für die TableAdapter-Steuerelemente des typisierten DataSet (C#)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)

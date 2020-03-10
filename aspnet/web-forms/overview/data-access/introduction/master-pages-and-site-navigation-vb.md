@@ -9,11 +9,11 @@ ms.assetid: 022801d8-a327-4d0c-8780-6094c9cee00d
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4a2b5ba8c1781f1194f951a44661a8f7dd095f41
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74578748"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78426027"
 ---
 # <a name="master-pages-and-site-navigation-vb"></a>Masterseiten und Sitenavigation (VB)
 
@@ -129,7 +129,7 @@ Die Site Übersichts Datei ist eine XML-Datei. Beachten Sie, dass Visual Studio 
 
 Definieren Sie die Site Übersicht, um die Dateisystem Struktur zu imitieren. Fügen Sie das `<siteMapNode>`-Element für jeden der drei Ordner und die untergeordneten `<siteMapNode>` Elemente für jede ASP.NET-Seite in diesen Ordnern hinzu, wie im folgenden Beispiel:
 
-Web. Sitemap
+Web.sitemap
 
 [!code-xml[Main](master-pages-and-site-navigation-vb/samples/sample4.xml)]
 
@@ -219,11 +219,11 @@ Wir zeigen erneut eine ungeordnete Liste mit einem Wiederholungs Modul an, aber 
 
 **Abbildung 13**: Hinzufügen eines neuen Webbenutzer Steuer Elements zum Ordner "`UserControls`" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-pages-and-site-navigation-vb/_static/image31.png))
 
-Sectionleveltutoriallisting. ascx
+SectionLevelTutorialListing.ascx
 
 [!code-aspx[Main](master-pages-and-site-navigation-vb/samples/sample12.aspx)]
 
-Sectionleveltutoriallisting. ascx. vb
+SectionLevelTutorialListing.ascx.vb
 
 [!code-vb[Main](master-pages-and-site-navigation-vb/samples/sample13.vb)]
 
@@ -239,7 +239,7 @@ Nachdem dieser Wiederholungs Vorgang erstellt wurde, öffnen Sie die `Default.as
 
 **Abbildung 15**: die grundlegenden Tutorials für die Berichterstellung sind aufgeführt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-pages-and-site-navigation-vb/_static/image37.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Nachdem die Site Map definiert und die Master Seite fertiggestellt wurde, verfügen wir nun über ein konsistentes Seitenlayout und Navigations Schema für unsere datenbezogenen Tutorials. Unabhängig davon, wie viele Seiten wir unserer Website hinzufügen, ist das Aktualisieren des Website Layouts oder der Informationen zur Website Navigation ein schneller und einfacher Prozess, weil diese Informationen zentralisiert werden. Insbesondere werden die Seitenlayoutinformationen auf der Master Seite `Site.master` und die Site Map in `Web.sitemap`definiert. Wir mussten *keinen* Code schreiben, um dieses Website weite Seitenlayout und Navigations Mechanismus zu erreichen, und wir behalten die Unterstützung für den vollständigen WYSIWYG-Designer in Visual Studio bei.
 
@@ -247,7 +247,7 @@ Nachdem Sie die Datenzugriffs Schicht und die Geschäftslogik Schicht abgeschlos
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -261,7 +261,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Vorgehensweise: Aktivieren der Ablauf Verfolgung für eine ASP.NET-Seite](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
 - [ASP.NET-Benutzer Steuerelemente](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -270,4 +270,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Führende Prüfer für dieses Tutorial waren Liz shulok, Dennis Patterson und Hilton Giesenow. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](creating-a-business-logic-layer-vb.md)
+> [Previous](creating-a-business-logic-layer-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: e68a454398f109dfd089be9c9a44d3fe662acc2f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600434"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448221"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Erstellen eines odata-V3-Endpunkts mit der Web-API 2
 
@@ -66,7 +66,7 @@ Wählen Sie im Dialogfeld **Neues ASP.net-Projekt** die Vorlage **leer** aus. Ü
 
 Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. Für dieses Tutorial benötigen wir ein Modell, das ein Produkt darstellt. Das Modell entspricht dem odata-Entitätstyp.
 
-Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle. Klicken Sie im Kontextmenü auf **Hinzufügen** , und wählen Sie dann **Klasse**aus.
+Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner „Modelle“. Wählen Sie im Kontextmenü die Option **Hinzufügen** und dann **Klasse**.
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
@@ -90,7 +90,7 @@ Erstellen Sie jetzt das Projekt. Im nächsten Schritt verwenden wir ein Visual S
 
 Ein *Controller* ist eine Klasse, die HTTP-Anforderungen verarbeitet. Sie definieren einen separaten Controller für jede Entitätenmenge in Ihrem odata-Dienst. In diesem Tutorial erstellen wir einen einzelnen Controller.
 
-Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Controller. Wählen Sie **Hinzufügen** , und wählen Sie dann **Controller**aus.
+Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Controller. Wählen Sie **Hinzufügen** und dann **Controller**.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
@@ -240,7 +240,7 @@ Odata unterstützt mehrere Serialisierungsformate:
 
 Standardmäßig verwendet die Web-API atompubjson "Light"-Format.
 
-Um das AtomPub-Format zu erhalten, legen Sie den Accept-Header auf "Application/Atom + XML" fest. Im folgenden finden Sie ein Beispiel für einen Antworttext:
+Um das AtomPub-Format zu erhalten, legen Sie den Accept-Header auf "Application/Atom + XML" fest. Hier ist ein Beispiel-Antworttext:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample13.cmd)]
 

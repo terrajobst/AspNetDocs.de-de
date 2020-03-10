@@ -1,222 +1,222 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
-title: 'Iteration #5 – Erstellen von Komponententests (VB) | Microsoft-Dokumentation'
+title: 'Iterations #5 – Erstellen von Komponententests (VB) | Microsoft-Dokumentation'
 author: microsoft
-description: In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und Erstellen von Komponententests für o...
+description: In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für o...
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4ce1c6224a7e9203ff62f136f4f3a43e4561a904
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123832"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437835"
 ---
-# <a name="iteration-5--create-unit-tests-vb"></a>Iteration #5 – Erstellen von Komponententests (VB)
+# <a name="iteration-5--create-unit-tests-vb"></a>Iterations #5 – Erstellen von Komponententests (VB)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
 
-> In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+> In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (VB)
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Aufbauen einer Kontakt Verwaltung ASP.NET MVC-Anwendung (VB)
 
-In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
+In dieser Reihe von Tutorials erstellen wir von Anfang bis Ende eine gesamte Kontakt Verwaltungs Anwendung. Mithilfe der Kontakt-Manager-Anwendung können Sie Kontaktinformationen (Namen, Telefonnummern und e-Mail-Adressen) für eine Liste von Personen speichern.
 
-Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbessern wir nach und nach der Anwendung. Das Ziel dieses mehrere Iteration-Ansatzes ist, um den Grund für jede Änderung verstehen können.
+Die Anwendung wird über mehrere Iterationen erstellt. Bei jeder Iterationen verbessern wir die Anwendung allmählich. Das Ziel dieses mehrfaches Iterations Ansatzes besteht darin, Ihnen zu ermöglichen, den Grund für jede Änderung zu verstehen.
 
-- Iteration #1 – Erstellen der Anwendung. In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen Sie, aktualisieren Sie und löschen Sie (CRUD).
+- Iterations #1: Erstellen Sie die Anwendung. In der ersten Iterationen erstellen wir den Kontakt-Manager auf einfachste Art und Weise. Wir fügen Unterstützung für grundlegende Daten Bank Vorgänge hinzu: Create, Read, Update und DELETE (CRUD).
 
-- Iteration #2 – Optimieren der Anwendung gut. In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+- Iterations #2: machen Sie das Aussehen der Anwendung schön. In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-- Iteration #3 – Hinzufügen der formularüberprüfung. In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
+- Iterations #3: Formular Validierung hinzufügen. In der dritten Iterationen fügen wir die grundlegende Formular Validierung hinzu. Wir hindern Personen daran, ein Formular zu senden, ohne die erforderlichen Formularfelder abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-- Stellen Sie Iteration #4 – lose koppeln der Anwendung. In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+- Iterations #4: Legen Sie die Anwendung lose gekoppelt. In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-- Iteration #5 – Erstellen von Komponententests. In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+- Iterations #5: Erstellen von Komponententests. In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-- Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+- Iterations #6: Verwenden Sie die Test gesteuerte Entwicklung. In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-- Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+- Iterations #7: Hinzufügen von AJAX-Funktionen. In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="this-iteration"></a>Diese Iteration
+## <a name="this-iteration"></a>Diese Iterations
 
-In vorherigen Iterationen der Contact Manager-Anwendung haben wir die Anwendung in loser gekoppelt werden umgestaltet. Wir getrennt, die Anwendung in unterschiedliche Controller-Dienst und Repository-Ebenen. Jede Ebene interagiert mit der Ebene darunter über Schnittstellen.
+In der vorherigen Iterationen der Kontakt-Manager-Anwendung haben wir die Anwendung so umgestaltet, dass Sie lockerer gekoppelt ist. Die Anwendung wurde in verschiedene Controller-, Dienst-und Repository-Schichten aufgeteilt. Jede Ebene interagiert mit der darunter liegenden Ebene über Schnittstellen.
 
-Wir haben die Anwendung aus, um die Anwendung leichter verwalten und ändern umgestaltet. Z. B. wenn wir eine neue datenzugriffstechnologie verwenden müssen, können wir einfach die Repository-Ebene ändern, ohne durch berühren der Controller oder Dienstebene. Die Kontakt-Manager lose gekoppelt, machen wir Ve vorgenommen die Anwendung stabiler zu ändern.
+Wir haben die Anwendung umgestaltet, um die Wartung und Änderung der Anwendung zu vereinfachen. Wenn wir z. b. eine neue Datenzugriffs Technologie verwenden müssen, können wir einfach die Repository-Ebene ändern, ohne den Controller oder die Dienst Schicht zu berühren. Indem der Kontakt-Manager locker gekoppelt wird, haben wir die Anwendung stabiler geändert, damit Sie geändert werden kann.
 
-Aber was geschieht, wenn ein neues Feature der Contact Manager-Anwendung hinzufügen möchten? Oder, was geschieht, wenn wir einen Fehler beheben? Eine traurige Sache, aber auch bewährte Wahrheit beim Schreiben von Code ist, wenn Sie Code, die Sie erstellen, das Risiko der Einführung neuer Fehler berühren.
+Was passiert jedoch, wenn wir der Kontakt-Manager-Anwendung ein neues Feature hinzufügen müssen? Oder was geschieht, wenn ein Fehler behoben wird? Eine traurige, aber bewährte Tatsache, dass Sie Code schreiben, besteht darin, dass Sie immer dann, wenn Sie Code berühren, das Risiko einer Einführung neuer Fehler erzeugen.
 
-Beispielsweise kann einen Tag in Ordnung, Ihren Vorgesetzten bitten Sie, eine neue Funktion zum Contact Manager hinzuzufügen. Sie möchte Sie Unterstützung für wenden Sie sich an Gruppen hinzufügen. Er möchte, dass Sie damit Benutzer auf ihre Kontakte in Gruppen wie z. B. Freunde, Business und So weiter organisieren können.
+Beispielsweise kann Ihr Manager einen guten Tag zum Hinzufügen eines neuen Features zum Contact Manager auffordern. Sie möchte Unterstützung für Kontaktgruppen hinzufügen. Sie möchte, dass Benutzer Ihre Kontakte in Gruppen wie Friends, Business usw. organisieren können.
 
-Um dieses neue Feature zu implementieren, müssen Sie alle drei Ebenen der Contact Manager-Anwendung zu ändern. Sie müssen die Controller, die Dienstschicht und dem Repository neue Funktionalität hinzufügen. Sobald Sie beginnen, Code zu ändern, riskieren Sie wichtige Funktionen, die gearbeitet.
+Um diese neue Funktion zu implementieren, müssen Sie alle drei Ebenen der Contact Manager-Anwendung ändern. Sie müssen den Controllern, der Dienst Ebene und dem Repository neue Funktionen hinzufügen. Sobald Sie mit dem Ändern von Code beginnen, riskieren Sie die Funktionen, die zuvor funktionieren.
 
-Die Anwendung in verschiedenen Schichten, Refactoring, wie in der vorherigen Iteration ist eine gute Sache. Es war eine gute Sache, da es uns, Änderungen auf ganze Ebenen zu machen, ohne zu verändern die übrigen Teile der Anwendung ermöglicht. Wenn Sie den Code innerhalb einer Ebene leichter verwalten und ändern möchten, müssen Sie jedoch, Komponententests für den Code zu erstellen.
+Das Umgestalten der Anwendung in separate Ebenen, wie dies in der vorherigen Iterationen der Fall war, war eine gute Sache. Dies war eine gute Sache, da es uns ermöglicht, Änderungen an ganzen Ebenen vorzunehmen, ohne den Rest der Anwendung zu berühren. Wenn Sie jedoch den Code in einer Ebene leichter verwalten und ändern möchten, müssen Sie Komponententests für den Code erstellen.
 
-Sie verwenden einer Einheit Test zu Test eine einzelne Einheit von Code. Diese Einheiten von Code sind kleiner als die Ebenen der gesamten Anwendung. In der Regel verwenden Sie einen Komponententest um zu überprüfen, ob eine bestimmte Methode in Ihrem Code anders verhält, die Sie erwarten. Beispielsweise würden Sie einen Komponententest für die CreateContact()-Methode, die verfügbar gemacht, von der Klasse ContactManagerService erstellen.
+Sie verwenden einen-Komponenten Test, um eine einzelne Code Einheit zu testen. Diese Code Einheiten sind kleiner als ganze Anwendungsebenen. In der Regel verwenden Sie einen Komponenten Test, um zu überprüfen, ob eine bestimmte Methode im Code erwartungsgemäß verhält. Beispielsweise erstellen Sie einen Komponenten Test für die Methode "Methode", die von der contactmanagerservice-Klasse verfügbar gemacht wird.
 
-Die Komponententests für eine anwendungsarbeit genau wie ein Sicherheitsnetz bereitstellen. Wenn Sie Code in einer Anwendung ändern, können Sie einen Satz von Komponententests zu überprüfen, ob die Änderung die vorhandene Funktionalität unterbricht ausführen. Komponententests stellen Ihren Code sicher ändern. Komponententests stellen alle des Codes in Ihrer Anwendung stabiler zu ändern.
+Die Komponententests für eine Anwendung funktionieren genau wie ein Sicherheitsnetz. Wenn Sie Code in einer Anwendung ändern, können Sie eine Reihe von Komponententests ausführen, um zu überprüfen, ob die Änderung vorhandene Funktionalität unterbricht. Mit Komponententests können Sie den Code sicher ändern. Mit Komponententests können Sie den gesamten Code in der Anwendung stabiler ändern.
 
-In dieser Iteration hinzugefügt unsere Anwendung Contact Manager Komponententests. Auf diese Weise können in der nächsten Iteration, wir wenden Sie sich an Gruppen unserer Anwendung hinzufügen ohne sich Gedanken, vorhandene Funktionalität zu beschädigen.
-
-> [!NOTE] 
-> 
-> Es gibt eine Vielzahl von Komponententest-Frameworks wie NUnit und xUnit.net MbUnit. In diesem Tutorial verwenden wir die Komponententest-Framework in Visual Studio enthalten. Sie können jedoch ganz einfach eines dieser Frameworks alternative verwenden.
-
-## <a name="what-gets-tested"></a>Ruft ab, was getestet
-
-Im besten Fall würde Ihr gesamter Code von Komponententests abgedeckt werden. Im besten Fall müssten Sie die perfekte Sicherheitsnetz Spannen. Sie würden in der Lage, jede Codezeile in Ihrer Anwendung zu ändern und Sie wissen sofort, durch die Komponententests ausführen, ob die Änderung die vorhandene Funktionalität unterbrochen wurde.
-
-Allerdings wird der Einbau zusätzlichen wir t, die in einer perfekten Welt live geöffnet. In der Praxis, wenn Sie Komponententests schreiben konzentrieren Sie sich über das Schreiben von Tests für Ihre Geschäftslogik (z. B. die Validierungslogik). Insbesondere Sie *nicht* Schreiben von Komponententests für Ihre Daten zugreifen, Logik und die ansichtslogik.
-
-Um Sie hilfreich sein, müssen sehr schnell Ausführen von Komponententests. Sie können ganz einfach die Möglichkeit, Hunderte (oder sogar Tausende) von Komponententests für eine Anwendung sammeln. Wenn die Komponententests sehr lange dauert ausgeführt, und Sie vermeiden, diese ausgeführt werden. Das heißt, sind die Ausführung lang andauernder Komponententests für den Tag zu Tag codierungszwecke nutzlos.
-
-Aus diesem Grund werden Sie in der Regel keine Komponententests für Code schreiben, die mit einer Datenbank interagiert. Ausführen von Hunderten von Komponententests für eine Livedatenbank wäre zu langsam ausgeführt. Sie können stattdessen modellieren Ihrer Datenbank und Code schreiben, der Interaktion der simulierten Datenbank zwischen (erörtert, simulieren eine Datenbank, die weiter unten).
-
-Einem ähnlichen Grund ist führen Sie in der Regel von Komponententests für Ansichten nicht geschrieben werden. Um eine Ansicht zu testen, müssen Sie einen Webserver einrichten. Da sich drehende, um einen Webserver eine relativ langsam Prozess ist, wird das Erstellen von Komponententests für Ihre Ansichten nicht empfohlen.
-
-Wenn Ihrer Ansicht komplizierte Logik enthält dann sollten Sie die Logik in Helper-Methoden zu verschieben. Sie können Komponententests für Hilfsmethoden schreiben, die ohne aufstocken von einem Webserver ausgeführt werden.
+In dieser Iterations Komponente fügen wir unserer Contact Manager-Anwendung Komponententests hinzu. Auf diese Weise können wir in der nächsten Iterationen der Anwendung Kontaktgruppen hinzufügen, ohne sich Gedanken über das Abbrechen vorhandener Funktionen machen zu müssen.
 
 > [!NOTE] 
 > 
-> Beim Schreiben von für die Logik für den Datenzugriff Tests oder Anzeigelogik nicht ratsam, ist wenn Komponententests schreiben, können diese Tests sehr wertvoll sein, wenn tests erstellen, die funktionale oder zur Integration.
+> Es gibt eine Vielzahl von Frameworks für Unittests, einschließlich nunit, xUnit.net und MbUnit. In diesem Tutorial verwenden wir das Komponenten Test-Framework, das in Visual Studio enthalten ist. Sie könnten jedoch auch eines dieser alternativen Frameworks verwenden.
+
+## <a name="what-gets-tested"></a>Was wird getestet?
+
+In der perfekten Welt würde der gesamte Code durch Komponententests abgedeckt werden. In der perfekten Welt hätten Sie das perfekte Sicherheitsnetz. Sie können jede Codezeile in Ihrer Anwendung ändern und sofort wissen, indem Sie die Komponententests ausführen, und zwar unabhängig davon, ob die Änderung die vorhandene Funktionalität abgebrochen hat.
+
+Wir leben jedoch nicht in einer idealen Welt. In der Praxis konzentrieren Sie sich beim Schreiben von Komponententests auf das Schreiben von Tests für Ihre Geschäftslogik (z. b. Validierungs Logik). Insbesondere schreiben Sie *keine* Komponententests für Ihre Datenzugriffs Logik oder Ihre Ansichts Logik.
+
+Um nützlich zu sein, müssen Komponententests sehr schnell ausgeführt werden. Sie können mühelos Hunderte (oder sogar Tausende) von Komponententests für eine Anwendung sammeln. Wenn die Ausführung der Komponententests viel Zeit in Anspruch nimmt, wird die Ausführung vermieden. Mit anderen Worten, die Komponententests mit langer Ausführungszeit sind für tägliche Codierungs Zwecke unbrauchbar.
+
+Aus diesem Grund schreiben Sie in der Regel keine Komponententests für Code, der mit einer-Datenbank interagiert. Das Ausführen von Hunderten von Komponententests für eine Live Datenbank wäre zu langsam. Stattdessen können Sie Ihre Datenbank simulieren und Code schreiben, der mit der Mock-Datenbank interagiert (es wird beschrieben, wie Sie eine Datenbank weiter unten durcharbeiten).
+
+Aus einem ähnlichen Grund schreiben Sie in der Regel keine Komponententests für Sichten. Um eine Ansicht zu testen, müssen Sie einen Webserver einrichten. Da das Einrichten eines Webservers ein relativ langsamer Prozess ist, wird das Erstellen von Komponententests für Ihre Sichten nicht empfohlen.
+
+Wenn Ihre Ansicht komplizierte Logik enthält, sollten Sie erwägen, die Logik in Hilfsmethoden zu verschieben. Sie können Komponententests für Hilfsmethoden schreiben, die ausgeführt werden, ohne einen Webserver aufzugliederung.
 
 > [!NOTE] 
 > 
-> ASP.NET MVC ist die Web Forms-Ansichts-Engine. Während die Web Forms-Ansichts-Engine auf einem Webserver abhängig ist, möglicherweise andere Ansichts-Engines nicht.
-
-## <a name="using-a-mock-object-framework"></a>Mithilfe eines Pseudoobjektframeworks
-
-Wenn Sie Komponententests erstellen, müssen Sie fast immer ein Objekt simulieren-Framework nutzen. Ein Objekt simulieren-Framework können Sie Mocks und Stubs für die Klassen in Ihrer Anwendung zu erstellen.
-
-Sie können z. B. ein Objekt simulieren-Framework verwenden, auf um eine Pseudoversion des Ihr Repository-Klasse zu generieren. Auf diese Weise können Sie die pseudorepository-Klasse anstelle der echten repositoryklasse in Ihren Komponententests verwenden. Verwenden das pseudorepository, können Sie vermeiden Sie die Ausführung von Datenbankcode, beim Ausführen eines Komponententests.
-
-Visual Studio enthält ein Objekt simulieren Framework keine. Es gibt jedoch mehrere kommerzielle und open Source-Objekt simulieren-Frameworks für .NET Framework zur Verfügung:
-
-1. Moq - ist dieses Framework, die unter der open-Source-BSD-Lizenz verfügbar. Sie können die Moq aus [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/).
-2. Rhino Mocks – dieses Framework wird unter der open-Source-BSD-Lizenz verfügbar. Können Sie herunterladen, Rhino Mocks aus [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx).
-3. Typemock Isolator - ist dies ein kommerzieller Framework. Sie können eine Testversion von [ http://www.typemock.com/ ](http://www.typemock.com/).
-
-In diesem Tutorial entschied ich mich mit Moq. Allerdings genauso einfach können Sie Rhino Mocks oder Typemock Isolator das Mock Erstellen von Objekten für die Kontakt-Manager-Anwendung.
-
-Bevor Sie Moq verwenden können, müssen Sie die folgenden Schritte ausführen:
-
-1. sein.
-2. Bevor Sie den Download Entzippen, stellen Sie sicher, dass Sie mit der rechten Maustaste in der das, und klicken Sie auf die Schaltfläche **Unblock** (siehe Abbildung 1).
-3. Entzippen Sie den Download aus.
-4. Fügen Sie einen Verweis auf die Assembly Moq dem Testprojekt, indem Sie durch Auswählen der Menüoption **-Projekt "," Verweis hinzufügen** zum Öffnen der **Verweis hinzufügen** Dialogfeld. Navigieren Sie zum Ordner, in dem Sie Moq entpackt haben, und wählen Sie die Moq.dll-Assembly, unter der Registerkarte Durchsuchen. Klicken Sie auf die **OK** Schaltfläche (siehe Abbildung 2).
-
-[![Das Aufheben der Blockierung Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
-
-**Abbildung 01**: Das Aufheben der Blockierung Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image2.png))
-
-[![Verweise, die nach dem Hinzufügen von Moq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
-
-**Abbildung 02**: Verweise, die nach dem Hinzufügen von Moq ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image4.png))
-
-## <a name="creating-unit-tests-for-the-service-layer"></a>Erstellen von Komponententests für die Dienstschicht
-
-Lassen Sie zunächst erstellen Sie einen Satz von Komponententests für unseren Contact Manager s anwendungsdienstebene s ein. Wir verwenden diese Tests, um zu überprüfen, ob unsere Validierungslogik.
-
-Erstellen Sie einen neuen Ordner namens Modelle im Projekt ContactManager.Tests. Als Nächstes mit der rechten Maustaste in den Ordner "Models", und wählen Sie **hinzufügen "," neuen Test**. Die **neuen Test hinzufügen** in Abbildung 3 dargestellte Dialogfeld wird angezeigt. Wählen Sie die **Komponententest** Vorlage und den neuen Test ContactManagerServiceTest.vb nennen. Klicken Sie auf die **OK** , um den neuen Test zu Ihrem Testprojekt hinzuzufügen.
+> Obwohl das Schreiben von Tests für die Datenzugriffs Logik oder die Sicht Logik beim Schreiben von Komponententests keine gute Idee ist, können diese Tests bei der Erstellung funktionaler oder Integrationstests sehr wertvoll sein.
 
 > [!NOTE] 
 > 
-> Im Allgemeinen sollten Sie die Ordnerstruktur des Projekts Test in der Ordnerstruktur Ihrer ASP.NET MVC-Projekts entsprechen. Sie können z. B. Controller-Tests in einen Ordner "Controllers", Modell-Tests in einem Ordner "Models" platzieren und so weiter.
+> ASP.NET MVC ist die Web Forms Ansichts-Engine. Während das Web Forms Ansichts Modul von einem Webserver abhängt, sind andere Ansichts-Engines möglicherweise nicht.
 
-[![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-vb/_static/image3.jpg)](iteration-5-create-unit-tests-vb/_static/image5.png)
+## <a name="using-a-mock-object-framework"></a>Verwenden eines Mock-Objekt-Frameworks
 
-**Abbildung 03**: Models\ContactManagerServiceTest.cs ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image6.png))
+Beim Erstellen von Komponententests müssen Sie fast immer ein Mock-Objekt Framework nutzen. Mit einem Mock-Objekt Framework können Sie Mock und stubweise für die Klassen in der Anwendung erstellen.
 
-Anfänglich, möchten wir uns die CreateContact()-Methode, die von der ContactManagerService-Klasse verfügbar gemacht werden. Wir erstellen die folgenden fünf Tests:
+Beispielsweise können Sie ein Mock-Objekt Framework verwenden, um eine Pseudo Version der Repository-Klasse zu generieren. Auf diese Weise können Sie die mockrepository-Klasse anstelle der realen Repository-Klasse in ihren Komponententests verwenden. Mithilfe des mockrepository können Sie beim Ausführen eines Komponententests vermeiden, Datenbankcode auszuführen.
 
-- CreateContact() - Tests, CreateContact() gibt den Wert True zurück, wenn ein gültiger Kontakt an die Methode übergeben wird.
-- CreateContactRequiredFirstName() - Tests, dass eine Fehlermeldung Modellstatus, wenn eine Verbindung mit einen fehlenden Vornamen hinzugefügt wird an die CreateContact()-Methode übergeben.
-- CreateContactRequiredLastName() - Tests, dass eine Fehlermeldung Modellstatus, wenn ein Kontakt mit einem fehlenden Nachnamen hinzugefügt wird an die CreateContact()-Methode übergeben.
-- CreateContactInvalidPhone() - Tests, dass die Modellstatus, wenn eine Verbindung mit einer ungültigen Telefonnummer eine Fehlermeldung hinzugefügt wird an die CreateContact()-Methode übergeben.
-- CreateContactInvalidEmail() - Tests, dass eine Fehlermeldung Modellstatus, wenn ein Kontakt mit der eine ungültige e-Mail-Adresse hinzugefügt wird an die CreateContact()-Methode übergeben...
+Visual Studio enthält kein Mock-Objekt Framework. Es gibt jedoch mehrere kommerzielle und Open Source-Pseudo Objekt-Frameworks, die für .NET Framework verfügbar sind:
 
-Der erste Test überprüft, dass ein gültiger Kontakt keine Überprüfung ein Fehler generiert. Überprüfen Sie die verbleibenden Tests aller Validierungsregeln.
+1. Muq: Dieses Framework ist unter der Open Source-BSD-Lizenz verfügbar. Sie können "muq" aus [https://code.google.com/p/moq/](https://code.google.com/p/moq/)herunterladen.
+2. Rhino-Mock: Dieses Framework ist unter der Open Source-BSD-Lizenz verfügbar. Sie können Rhino-Mock aus [http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx)herunterladen.
+3. Typemockisolator: Dies ist ein kommerzielles Framework. Sie können eine Testversion von [http://www.typemock.com/](http://www.typemock.com/)herunterladen.
 
-Der Code für diese Tests ist in Codebeispiel 1 enthalten.
+In diesem Tutorial entschied ich mich für die Verwendung von "muq". Allerdings können Sie mit Rhino-Mock oder typemockisolator die Mockobjekte für die Contact Manager-Anwendung erstellen.
 
-**1 – Models\ContactManagerServiceTest.vb auflisten**
+Bevor Sie die Verwendung von "muq" durchführen können, müssen Sie die folgenden Schritte ausführen:
+
+1. erforderlich.
+2. Stellen Sie vor dem Entzippen des Downloads sicher, dass Sie mit der rechten Maustaste auf die Datei klicken, und klicken Sie auf die Schaltfläche **Unblock** (siehe Abbildung 1).
+3. Entpacken Sie den Download.
+4. Fügen Sie dem Test Projekt einen Verweis auf die-Assembly hinzu, indem Sie die Menüoption **Projekt, Verweis hinzufügen auswählen,** um das Dialogfeld **Verweis hinzufügen** zu öffnen. Navigieren Sie auf der Registerkarte durchsuchen zu dem Ordner, in dem Sie die Datei ". dll" entzippt haben, und wählen Sie die Assembly ". Klicken Sie auf die Schaltfläche **OK** (siehe Abbildung 2).
+
+[Aufheben der Blockierung von muq ![](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+
+**Abbildung 01**: Aufheben der Blockierung von muq ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-5-create-unit-tests-vb/_static/image2.png))
+
+[Verweise ![nach dem Hinzufügen von muq](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+
+**Abbildung 02**: Verweise nach dem Hinzufügen von muq ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-5-create-unit-tests-vb/_static/image4.png))
+
+## <a name="creating-unit-tests-for-the-service-layer"></a>Erstellen von Komponenten Tests für die Dienst Ebene
+
+Beginnen Sie, indem Sie eine Reihe von Komponententests für die Dienst Ebene der Kontakt-Manager-Anwendung erstellen. Wir verwenden diese Tests, um unsere Validierungs Logik zu überprüfen.
+
+Erstellen Sie im Projekt "ContactManager. Tests" einen neuen Ordner mit dem Namen "Models". Klicken Sie dann mit der rechten Maustaste auf den Ordner Modelle, und wählen Sie **hinzufügen, neuer Test**aus. Das in Abbildung 3 dargestellte Dialogfeld **neuen Test hinzufügen** wird angezeigt. Wählen Sie die Vorlage für Komponenten **Tests** aus, und benennen Sie den neuen Test contactmanagerservicetest. vb. Klicken Sie auf die Schaltfläche **OK** , um den neuen Test dem Testprojekt hinzuzufügen.
+
+> [!NOTE] 
+> 
+> Im Allgemeinen möchten Sie, dass die Ordnerstruktur des Test Projekts der Ordnerstruktur Ihres ASP.NET MVC-Projekts entspricht. Beispielsweise platzieren Sie Controller Tests in einem Controller Ordner, modellieren Tests in einem Modell Ordner usw.
+
+[![models\contactmanagerservicetest.cs](iteration-5-create-unit-tests-vb/_static/image3.jpg)](iteration-5-create-unit-tests-vb/_static/image5.png)
+
+**Abbildung 03**: models\contactmanagerservicetest.cs ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-5-create-unit-tests-vb/_static/image6.png))
+
+Zunächst möchten wir die Methode "Methode", die von der contactmanagerservice-Klasse verfügbar gemacht wird, testen. Wir erstellen die folgenden fünf Tests:
+
+- "Kreatecontact ()": testet, ob "kreatecontact ()" den Wert "true" zurückgibt, wenn ein gültiger Kontakt an die Methode übergeben wird.
+- "Kreatecontactrequiredfirstname ()": testet, ob dem Modell Status eine Fehlermeldung hinzugefügt wird, wenn ein Kontakt mit einem fehlenden Vornamen an die Methode "up contact ()" übergeben wird.
+- "Kreatecontactrequiredlastname ()": testet, ob eine Fehlermeldung zum Modell Status hinzugefügt wird, wenn ein Kontakt mit einem fehlenden Nachnamen an die Methode "up contact ()" übergeben wird.
+- "Kreatecontactinvalidphone ()": testet, ob dem Modell Status eine Fehlermeldung hinzugefügt wird, wenn ein Kontakt mit einer ungültigen Telefonnummer an die Methode "Methode" von "| atecontact ()" übergeben wird.
+- "Kreatecontactinvalidemail ()": testet, ob dem Modell Status eine Fehlermeldung hinzugefügt wird, wenn ein Kontakt mit einer ungültigen e-Mail-Adresse an die Methode "Methode.
+
+Der erste Test überprüft, ob ein gültiger Kontakt keinen Validierungs Fehler generiert. Die verbleibenden Tests überprüfen jede der Validierungsregeln.
+
+Der Code für diese Tests ist in der Liste 1 enthalten.
+
+**Codebeispiel 1: models\contactmanagerservicetest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample1.vb)]
 
-Da wir die Contact-Klasse in Codebeispiel 1 verwenden, müssen wir unser Testprojekt einen Verweis auf das Microsoft Entity Framework hinzufügen. Fügen Sie einen Verweis auf die System.Data.Entity-Assembly hinzu.
+Da wir die Contact-Klasse in der Liste 1 verwenden, müssen wir dem Test Projekt einen Verweis auf den Microsoft-Entity Framework hinzufügen. Fügen Sie einen Verweis auf die System. Data. Entity-Assembly hinzu.
 
-Codebeispiel 1 enthält eine Methode, die mit dem Namen Initialize(), die mit dem [TestInitialize]-Attribut ergänzt wird. Diese Methode wird automatisch aufgerufen, bevor jede der Komponententests ausgeführt wird (es wird 5 Mal direkt vor jedem der Komponententests bezeichnet). Die Initialize()-Methode wird ein pseudorepository mit der folgenden Zeile des Codes erstellt:
+In der Liste 1 ist eine Methode mit dem Namen Initialize () enthalten, die mit dem [TestInitialize]-Attribut ergänzt wird. Diese Methode wird automatisch vor jedem Ausführen der Komponententests aufgerufen (Sie wird fünf Mal direkt vor jedem der Komponententests aufgerufen). Die Initialize ()-Methode erstellt ein Mock-Repository mit der folgenden Codezeile:
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample2.vb)]
 
-Diese Codezeile verwendet das Moq-Framework zum Generieren eines simulierten Repositorys über die IContactManagerRepository-Schnittstelle. Das pseudorepository wird anstelle der tatsächlichen EntityContactManagerRepository verwendet, um zu vermeiden, Zugriff auf die Datenbank aus, wenn jeder Komponententest ausgeführt wird. Das pseudorepository implementiert die Methoden der Schnittstelle IContactManagerRepository, aber die Methoden Don t eigentlich lediglich.
+Diese Codezeile verwendet das MOQ-Framework, um ein mockrepository aus der icontactmanagerrepository-Schnittstelle zu generieren. Das mockrepository wird anstelle des eigentlichen entitycontactmanagerrepository verwendet, um den Zugriff auf die Datenbank zu vermeiden, wenn jeder Komponenten Test ausgeführt wird. Das Mock-Repository implementiert die Methoden der icontactmanagerrepository-Schnittstelle, aber die Methoden Don 't machen tatsächlich etwas.
 
 > [!NOTE] 
 > 
-> Wenn Sie das Moq-Framework verwenden, besteht ein Unterschied zwischen \_MockRepository und \_mockRepository.Object. Die erste bezieht sich auf die Mock (der IContactManagerRepository)-Klasse enthält Methoden zur Angabe, wie sich das pseudorepository verhält. Letztere bezieht sich auf die tatsächliche pseudorepository, das die IContactManagerRepository-Schnittstelle implementiert.
+> Bei der Verwendung des muq-Frameworks wird zwischen \_mockrepository und \_mockrepository. Object unterschieden. Der erste verweist auf die Mock-Klasse (of icontactmanagerrepository), die Methoden zum Angeben des Verhaltens des Mock-Repository enthält. Letztere bezieht sich auf das eigentliche Mock-Repository, das die icontactmanagerrepository-Schnittstelle implementiert.
 
-Beim Erstellen einer Instanz der Klasse ContactManagerService, wird das pseudorepository in die Initialize()-Methode verwendet. Alle die einzelnen Komponententests verwenden diese Instanz der ContactManagerService-Klasse.
+Das mockrepository wird in der Initialize ()-Methode verwendet, wenn eine Instanz der contactmanagerservice-Klasse erstellt wird. Alle einzelnen Unittests verwenden diese Instanz der contactmanagerservice-Klasse.
 
-Codebeispiel 1 enthält fünf Methoden, die jeweils die Komponententests entsprechen. Jede dieser Methoden wird mit dem [TestMethod]-Attribut ergänzt. Wenn Sie die Komponententests ausführen, wird jede Methode, die dieses Attribut wurde aufgerufen. Das heißt, ist eine Methode, die mit dem [TestMethod]-Attribut ergänzt wird ein Komponententest.
+In der Liste 1 sind fünf Methoden enthalten, die den einzelnen Komponententests entsprechen. Jede dieser Methoden wird mit dem [TestMethod]-Attribut versehen. Wenn Sie die Komponententests ausführen, wird jede Methode, die über dieses Attribut verfügt, aufgerufen. Anders ausgedrückt: jede Methode, die mit dem [TestMethod]-Attribut ergänzt wird, ist ein Komponenten Test.
 
-Der erste Komponententest, mit dem Namen CreateContact(), stellt sicher, dass der Wert "true" beim Aufrufen von CreateContact() zurückgegeben werden, wenn eine gültige Instanz von der Contact-Klasse an die Methode übergeben wird. Der Test erstellt eine Instanz der Klasse wenden Sie sich an, ruft die CreateContact()-Methode auf und stellt sicher, dass CreateContact() den Wert True zurückgibt.
+Der erste Komponenten Test mit dem Namen CreateContact () überprüft, ob das Aufrufen von CreateContact () den Wert true zurückgibt, wenn eine gültige Instanz der Contact-Klasse an die-Methode übergeben wird. Der Test erstellt eine Instanz der Contact-Klasse, ruft die Methode "| atecontact ()" auf und überprüft, ob "kreatecontact ()" den Wert "true" zurückgibt.
 
-Die verbleibenden Tests stellen Sie sicher, dass, wenn die CreateContact()-Methode, mit einer ungültigen Kontakt aufgerufen wird Klicken Sie dann die Methode "false" zurückgibt und die erwarteten Überprüfungsfehlermeldung Modellzustand hinzugefügt. Der CreateContactRequiredFirstName() Test erstellt z. B. eine Instanz der Klasse wenden Sie sich an, mit einer leeren Zeichenfolge für die FirstName-Eigenschaft. Als Nächstes wird die CreateContact()-Methode mit dem ungültigen Kontakt aufgerufen. Zum Schluss der Test überprüft, ob CreateContact() "false" zurückgibt und Modellstatus auf der erwartete Überprüfungsfehlermeldung enthält "Vorname ist erforderlich."
+Die verbleibenden Tests überprüfen, ob die Methode "false" zurückgibt, wenn die Methode "Methode" mit einem ungültigen Kontakt aufgerufen wird, und die erwartete Validierungs Fehlermeldung wird dem Modell Status hinzugefügt. Beispielsweise wird mit dem Test "kreatecontactrequiredfirstname ()" eine Instanz der Contact-Klasse mit einer leeren Zeichenfolge für die FirstName-Eigenschaft erstellt. Als nächstes wird die Methode "up contact ()" mit dem ungültigen Kontakt aufgerufen. Schließlich wird mit dem Test überprüft, ob "deatecontact ()" den Wert "false" zurückgibt und dass der Modell Status die erwartete Überprüfungs Fehlermeldung "Vorname ist erforderlich" enthält.
 
-Sie können die Komponententests in Codebeispiel 1 ausführen, indem Sie durch Auswählen der Menüoption **Test ausführen, alle Tests in der Projektmappe (STRG + R, A)**. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
+Sie können die Komponententests in der Liste 1 ausführen, indem Sie die Menüoption **Test, ausführen, alle Tests in Projekt Mappe (STRG + R, A)** auswählen. Die Ergebnisse der Tests werden im Fenster Testergebnisse angezeigt (siehe Abbildung 4).
 
 [![Testergebnisse](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
-**Abbildung 04**: Testergebnisse ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-5-create-unit-tests-vb/_static/image8.png))
+**Abbildung 04**: Testergebnisse ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-5-create-unit-tests-vb/_static/image8.png))
 
-## <a name="creating-unit-tests-for-controllers"></a>Erstellen von Komponententests für Controller
+## <a name="creating-unit-tests-for-controllers"></a>Erstellen von Komponenten Tests für Controller
 
-ASP.NET MVC-Anwendung steuern den Fluss der Benutzerinteraktion. Wenn Sie einen Controller zu testen, möchten Sie zu prüfen, ob der Controller die richtige Aktion Ergebnis und die Ansicht Daten zurückgibt. Möglicherweise möchten Sie auch überprüfen, ob ein Controller mit Modellklassen in die Art und Weise erwartet interagiert.
+ASP.NET MVC-Anwendung steuert den Fluss der Benutzerinteraktion. Beim Testen eines Controllers möchten Sie testen, ob der Controller das richtige Aktions Ergebnis zurückgibt, und Daten anzeigen. Möglicherweise möchten Sie auch testen, ob ein Controller in der erwarteten Weise mit Modellklassen interagiert.
 
-Codebeispiel 2 enthält beispielsweise zwei Komponententests für den Kontakt Controller Create()-Methode. Der erste Komponententest überprüft, ob, wenn ein gültiger Kontakt an die Create()-Methode übergeben wird, und klicken Sie dann die Create()-Methode an die Index-Aktion umleitet. Das heißt, sollten, wenn einen gültigen Kontakt zu übergeben, die Create()-Methode eine RedirectToRouteResult zurück, die Index-Aktion darstellt.
+Beispielsweise enthält die Liste 2 zwei Komponententests für die Methode Contact Controller Create (). Der erste Komponenten Test überprüft, ob die Create ()-Methode, wenn ein gültiger Kontakt an die Create ()-Methode übergeben wird, an die Index Aktion umgeleitet wird. Anders ausgedrückt: Wenn ein gültiger Kontakt übermittelt wird, sollte die Create ()-Methode eine redirecttorouteresult zurückgeben, die die Index Aktion darstellt.
 
-Wir raten t die ContactManager-Dienstebene zu testen, wenn wir die Controller-Ebene testen möchten. Aus diesem Grund simulieren wir die Dienstschicht mit den folgenden Code in der Initialize-Methode:
+Wir möchten die Dienst Ebene "ContactManager" nicht testen, wenn wir die Controller Schicht testen. Daher wird die Dienst Ebene mit dem folgenden Code in der Initialize-Methode verspottet:
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample3.vb)]
 
-In den Komponententest CreateValidContact() simulieren wir das Verhalten von Aufrufen der Dienstschicht CreateContact()-Methode, mit der folgenden Zeile des Codes:
+Im createvalidcontact ()-Komponenten Test wird das Verhalten beim Aufrufen der Methode CreateContact () der Dienst Schicht mit der folgenden Codezeile verspottet:
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample4.vb)]
 
-Diese Codezeile führt dazu, dass den mock ContactManager-Dienst den Wert True zurückgegeben, wenn seine CreateContact()-Methode aufgerufen wird. Durch simulieren die Dienstebene, können wir das Verhalten des Controllers testen, ohne Code ausführen, auf der Dienstebene.
+Diese Codezeile bewirkt, dass der Mock ContactManager-Dienst den Wert "true" zurückgibt, wenn die zugehörige Methode "| atecontact ()" aufgerufen wird. Durch die Durchführung der Dienst Ebene können wir das Verhalten des Controllers testen, ohne dass Code in der Dienst Ebene ausgeführt werden muss.
 
-Der zweite Unit Test stellt sicher, dass die Aktion Create() Ansicht "erstellen" zurückgibt, wenn eine ungültige wenden Sie sich an, an die Methode übergeben wird. Wir führen die Dienstschicht CreateContact()-Methode, um den Wert "false" mit der folgenden Zeile des Codes zurückzugeben:
+Der zweite Komponenten Test überprüft, ob die Create ()-Aktion die CREATE VIEW zurückgibt, wenn ein ungültiger Kontakt an die-Methode übermittelt wird. Wir führen dazu, dass die Methode "kreatecontact ()" der Dienst Schicht den Wert "false" mit der folgenden Codezeile zurückgibt:
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample5.vb)]
 
-Wenn die Methode verhält sich wie wir dann erwarten Create() Ansicht "erstellen" zurückgeben soll, wenn die Dienstebene der Wert "false" zurückgegeben. Auf diese Weise kann der Controller Validierungsfehlermeldungen in der Create-Ansicht und der Benutzer hat die Möglichkeit, zu beheben, wenden Sie sich an wurden ungültige Eigenschaften.
+Wenn sich die Create ()-Methode wie erwartet verhält, sollte Sie die CREATE VIEW zurückgeben, wenn die Dienst Ebene den Wert false zurückgibt. Auf diese Weise kann der Controller die Validierungs Fehlermeldungen in der Create-Ansicht anzeigen, und der Benutzer hat die Möglichkeit, die ungültigen Kontakt Eigenschaften zu korrigieren.
 
-Wenn Sie planen, erstellen Sie Komponententests für Ihre Controller müssen Sie explizite Ansichtsnamen aus Ihre Controlleraktionen zurückzugeben. Beispielsweise geben eine Ansicht wie folgt zurück:
+Wenn Sie Komponententests für Ihre Controller erstellen möchten, müssen Sie explizite Ansichts Namen aus den Controller Aktionen zurückgeben. Geben Sie z. b. keine Ansicht wie folgt zurück:
 
-Zurückgeben von View()
+Rückgabe Ansicht ()
 
-Stattdessen geben Sie die Ansicht wie folgt zurück:
+Geben Sie stattdessen die Ansicht wie folgt zurück:
 
-Zurückgeben von View("Create")
+Rückgabe Ansicht ("erstellen")
 
-Wenn Sie nicht explizit sind bei der Rückgabe einer Ansicht klicken Sie dann zurückgegeben die ViewResult.ViewName-Eigenschaft eine leere Zeichenfolge.
+Wenn Sie beim Zurückgeben einer Sicht nicht explizit sind, gibt die ViewResult. ViewName-Eigenschaft eine leere Zeichenfolge zurück.
 
-**Codebeispiel 2 - Controllers\ContactControllerTest.vb**
+**Codebeispiel 2: controllers\contactcontrollertest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample6.vb)]
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Iteration haben wir Komponententests für die Kontakt-Manager-Anwendung erstellt. Wir können diese Komponententests ausführen, um sicherzustellen, dass die Anwendung weiterhin in die Art und Weise verhält sich, die wir erwarten, dass jederzeit. Die Komponententests fungieren als Sicherheitsnetz für die Anwendung ermöglicht uns, unsere Anwendung in der Zukunft sicher zu ändern.
+In dieser Iterationen haben wir Komponententests für unsere Contact Manager-Anwendung erstellt. Wir können diese Komponententests jederzeit ausführen, um zu überprüfen, ob sich die Anwendung immer noch auf die erwartete Weise verhält. Die Komponententests fungieren als Sicherheitsnetz für unsere Anwendung, sodass wir unsere Anwendung in Zukunft sicher ändern können.
 
-Wir haben zwei Sätze von Komponententests erstellt. Zunächst haben wir unsere Validierungslogik durch Erstellen von Komponententests für unseren Dienstebene getestet. Als Nächstes können wir unsere datenflusskontrolllogik durch Erstellen von Komponententests für unseren Controller-Ebene getestet. Beim Testen unsere Dienstebene isoliert wir unsere Tests für unseren Dienstebene aus unserem Repository-Ebene durch unsere Repositoryschicht imitieren. Wenn Sie die Controller-Ebene zu testen, isoliert wir unsere Tests für unsere Controller-Ebene durch Simulieren von der Dienstebene.
+Wir haben zwei Sätze von Komponententests erstellt. Zunächst haben wir unsere Validierungs Logik getestet, indem wir Komponententests für unsere Dienst Ebene erstellt haben. Als nächstes haben wir unsere Fluss Steuerungslogik getestet, indem wir Komponententests für unsere Controller Schicht erstellen. Beim Testen unserer Dienst Schicht haben wir unsere Tests für unsere Dienst Ebene von unserer Repository-Schicht isoliert, indem wir unsere Repository-Ebene durch die. Beim Testen der Controller Schicht isolieren wir unsere Tests für unsere Controller Schicht durch das Durchsuchen der Dienst Ebene.
 
-In der nächsten Iteration ändern wir die Kontakt-Manager-Anwendung, damit sie wenden Sie sich an Gruppen unterstützt. Wir werden unsere Anwendung, die unter Verwendung der Software Design sogenannten testgesteuerte Entwicklung dieser neuen Funktionalität hinzufügen.
+In der nächsten Iterationen wird die Contact Manager-Anwendung so geändert, dass Sie Kontaktgruppen unterstützt. Wir fügen diese neue Funktionalität unserer Anwendung mithilfe eines Software Entwurfsprozesses hinzu, der als Test gesteuerte Entwicklung bezeichnet wird.
 
 > [!div class="step-by-step"]
 > [Zurück](iteration-4-make-the-application-loosely-coupled-vb.md)

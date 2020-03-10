@@ -9,11 +9,11 @@ ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c19f7dfac0ddd12c2b4f3388a71a8ca0f71cbb18
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74580212"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438885"
 ---
 # <a name="unlocking-and-approving-user-accounts-c"></a>Entsperren und Genehmigen von Benutzerkonten (C#)
 
@@ -174,7 +174,7 @@ Abbildung 7 zeigt die `Verification.aspx` Seite, wenn Sie über einen Browser be
 
 **Abbildung 7**: das neue Benutzerkonto ist nun genehmigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](unlocking-and-approving-user-accounts-cs/_static/image21.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Alle Mitgliedschafts Benutzerkonten haben zwei Statuswerte, die bestimmen, ob sich der Benutzer bei der Website anmelden kann: `IsLockedOut` und `IsApproved`. Beide Eigenschaften müssen für den Benutzer `true` werden, damit Sie sich anmelden können.
 
@@ -184,7 +184,7 @@ Der genehmigte Status wird häufig als Mittel verwendet, um zu verhindern, dass 
 
 Fröhliche Programmierung!
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
