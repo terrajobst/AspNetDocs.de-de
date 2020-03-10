@@ -1,24 +1,24 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-view-engine
-title: MVC 3 – Razor-Ansichtsengine | Microsoft-Dokumentation
+title: MVC 3-Razor-Ansichts-Engine | Microsoft-Dokumentation
 author: jongalloway
-description: In diesem Video lernen Sie die Grundlagen der neuen Razor-ansichtsengine in ASP.NET MVC 3 enthalten.
+description: In diesem Video erfahren Sie mehr über die Grundlagen der neuen Razor-Ansichts-Engine, die in ASP.NET MVC 3 enthalten ist.
 ms.author: riande
 ms.date: 04/04/2011
 ms.assetid: 300978f7-108c-4729-a8f5-f84ef585a81f
 msc.legacyurl: /mvc/videos/mvc-3/mvc-3-razor-view-engine
 msc.type: video
 ms.openlocfilehash: 2fa92936804c9f8b5f6634948eaaccb7ba618069
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393391"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431889"
 ---
-# <a name="mvc-3---razor-view-engine"></a><span data-ttu-id="84d28-103">MVC 3 – Razor-Anzeige-Engine</span><span class="sxs-lookup"><span data-stu-id="84d28-103">MVC 3 - Razor View Engine</span></span>
+# <a name="mvc-3---razor-view-engine"></a><span data-ttu-id="d9c19-103">MVC 3 – Razor-Anzeige-Engine</span><span class="sxs-lookup"><span data-stu-id="d9c19-103">MVC 3 - Razor View Engine</span></span>
 
-<span data-ttu-id="84d28-104">durch [Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="84d28-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+<span data-ttu-id="d9c19-104">von [Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="d9c19-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
-<span data-ttu-id="84d28-105">In diesem Video lernen Sie die Grundlagen der neuen Razor-ansichtsengine in ASP.NET MVC 3 enthalten.</span><span class="sxs-lookup"><span data-stu-id="84d28-105">In this video you will learn the basics of the new Razor view engine included in ASP.NET MVC 3.</span></span>
+<span data-ttu-id="d9c19-105">In diesem Video erfahren Sie mehr über die Grundlagen der neuen Razor-Ansichts-Engine, die in ASP.NET MVC 3 enthalten ist.</span><span class="sxs-lookup"><span data-stu-id="d9c19-105">In this video you will learn the basics of the new Razor view engine included in ASP.NET MVC 3.</span></span>
 
-[<span data-ttu-id="84d28-106">&#9654;Sehen Sie sich Video (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="84d28-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-3-razor-view-engine)
+[<span data-ttu-id="d9c19-106">&#9654;Video ansehen (3 Minuten)</span><span class="sxs-lookup"><span data-stu-id="d9c19-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-3-razor-view-engine)

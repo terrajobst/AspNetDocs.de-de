@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/net-4/core/aspnet-4-quick-hit-auto-start
-title: Automatisch starten | Microsoft-Dokumentation
+title: Automatischer Start | Microsoft-Dokumentation
 author: JoeStagner
-description: In diesem Video erfahren Sie über die neue Funktion für automatischen Start Skalierbarkeit mit eines kontrollierten Ansatzes für die ein Anwendungspool Initializ gestartet...
+description: In diesem Video erfahren Sie mehr über das neue Feature für die automatische Start Skalierbarkeit, das einen kontrollierten Ansatz zum Starten eines Anwendungs Pools, initializ...
 ms.author: riande
 ms.date: 11/11/2009
 ms.assetid: ff2bba8e-4dbb-4b73-95fe-0bba17152ef5
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-auto-start
 msc.type: video
 ms.openlocfilehash: c1e0a596cf9928ebf8447dc1aaa1dbeac85c8605
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404649"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421515"
 ---
-# <a name="aspnet-4-quick-hit---auto-start"></a><span data-ttu-id="92613-103">ASP.NET 4 "Schnelles drücken -" automatisch starten</span><span class="sxs-lookup"><span data-stu-id="92613-103">ASP.NET 4 "Quick Hit" - Auto Start</span></span>
+# <a name="aspnet-4-quick-hit---auto-start"></a><span data-ttu-id="06228-103">ASP.NET 4 "schnell Treffer"-Automatischer Start</span><span class="sxs-lookup"><span data-stu-id="06228-103">ASP.NET 4 "Quick Hit" - Auto Start</span></span>
 
-<span data-ttu-id="92613-104">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="92613-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="06228-104">von [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="06228-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="92613-105">In diesem Video erfahren Sie über die neue Funktion für automatischen Start Skalierbarkeit, die ein kontrollierten Ansatzes, der für einen Anwendungspool gestartet, eine ASP.NET-Anwendung initialisiert werden, und dann akzeptiert HTTP-Anforderungen bereitstellt.</span><span class="sxs-lookup"><span data-stu-id="92613-105">In this video you will learn about the new auto-start scalability feature which provides a controlled approach for starting up an application pool, initializing an ASP.NET application, and then accepting HTTP requests.</span></span> 
+<span data-ttu-id="06228-105">In diesem Video erfahren Sie mehr über das neue Feature für die automatische Start Skalierbarkeit, das einen kontrollierten Ansatz zum Starten eines Anwendungs Pools, Initialisieren einer ASP.NET-Anwendung und anschließendes akzeptieren von HTTP-Anforderungen bereitstellt.</span><span class="sxs-lookup"><span data-stu-id="06228-105">In this video you will learn about the new auto-start scalability feature which provides a controlled approach for starting up an application pool, initializing an ASP.NET application, and then accepting HTTP requests.</span></span> 
 
-[<span data-ttu-id="92613-106">&#9654;Sehen Sie sich Video (11 Minuten)</span><span class="sxs-lookup"><span data-stu-id="92613-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-auto-start)
+[<span data-ttu-id="06228-106">&#9654;Video ansehen (11 Minuten)</span><span class="sxs-lookup"><span data-stu-id="06228-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-auto-start)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="92613-107">Nächste</span><span class="sxs-lookup"><span data-stu-id="92613-107">Next</span></span>](aspnet-4-quick-hit-clean-webconfig-files.md)
+> [<span data-ttu-id="06228-107">Weiter</span><span class="sxs-lookup"><span data-stu-id="06228-107">Next</span></span>](aspnet-4-quick-hit-clean-webconfig-files.md)
