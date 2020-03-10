@@ -1,31 +1,31 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
-title: Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 3 | Microsoft-Dokumentation
+title: Einführung in Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Part 3 | Microsoft-Dokumentation
 author: tdykstra
-description: Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mithilfe von Entity Framework. Die beispielanwendung ist...
+description: Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie mithilfe der Entity Framework Web Forms Anwendungen erstellen. Die Beispielanwendung ist...
 ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: ccdc3f8c-2568-40a7-8f8b-3c23d2e05388
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3
 msc.type: authoredcontent
 ms.openlocfilehash: 88debb11a9157dce9ff000b1cb459b876dbceaf3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116661"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522639"
 ---
-# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 3
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-3"></a>Einführung in Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Part 3
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
+> Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie ASP.net-Web Forms Anwendungen mithilfe von Entity Framework 4,0 und Visual Studio 2010 erstellen. Weitere Informationen zur tutorialreihe finden Sie [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md) .
 
-## <a name="filtering-ordering-and-grouping-data"></a>Filtern, Sortieren und Gruppieren von Daten
+## <a name="filtering-ordering-and-grouping-data"></a>Filtern, anordnen und Gruppieren von Daten
 
-Im vorherigen Tutorial verwendet Sie die `EntityDataSource` -Steuerelement zum Anzeigen und Bearbeiten von Daten. In diesem Tutorial werden Sie filtern, Sortieren und Gruppieren von Daten. Hierfür durch Festlegen der Eigenschaften der `EntityDataSource` -Steuerelement, die Syntax unterscheidet sich von anderen Datenquellen-Steuerelemente. Wie Sie sehen werden, jedoch können Sie die `QueryExtender` Steuerelement, um diese Unterschiede zu minimieren.
+Im vorherigen Tutorial haben Sie das `EntityDataSource`-Steuerelement verwendet, um Daten anzuzeigen und zu bearbeiten. In diesem Tutorial filtern, Sortieren und gruppieren Sie Daten. Wenn Sie dazu Eigenschaften des `EntityDataSource`-Steuer Elements festlegen, unterscheidet sich die Syntax von anderen Datenquellen-Steuerelementen. Wie Sie sehen werden, können Sie jedoch das `QueryExtender`-Steuerelement verwenden, um diese Unterschiede zu minimieren.
 
-Ändern Sie die *Students.aspx* Seite für Schüler/Studenten, gefiltert nach Namen, und suchen Sie nach Name sortieren. Ändern Sie auch die *Courses.aspx* Kurse für die ausgewählte Abteilung, und Suchen nach Kursen anhand des Namens anzuzeigenden Seite. Abschließend fügen Sie studentenstatistiken für Schüler und die *About.aspx* Seite.
+Sie ändern die Seite " *students. aspx* ", um nach Schülern zu filtern, nach Name zu sortieren und nach Name zu suchen. Außerdem ändern Sie die Seite " *Courses. aspx* ", um Kurse für die ausgewählte Abteilung anzuzeigen und nach Kursen nach Namen zu suchen. Schließlich fügen Sie der Seite "Info *. aspx* " Studenten Statistiken hinzu.
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-3/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image1.png)
 
@@ -35,150 +35,150 @@ Im vorherigen Tutorial verwendet Sie die `EntityDataSource` -Steuerelement zum A
 
 [![Image14](the-entity-framework-and-aspnet-getting-started-part-3/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image7.png)
 
-## <a name="using-the-entitydatasource-where-property-to-filter-data"></a>Mithilfe der EntityDataSource "Where"-Eigenschaft zum Filtern von Daten
+## <a name="using-the-entitydatasource-where-property-to-filter-data"></a>Verwenden der EntityDataSource-Eigenschaft "Where" zum Filtern von Daten
 
-Öffnen der *Students.aspx* Seite, die Sie im vorherigen Tutorial erstellt haben. Derzeitige Konfiguration der `GridView` Steuerelement auf der Seite zeigt alle Namen von der `People` Entitätenmenge. Sie möchten jedoch nur Schüler/Studenten, zeigen finden Sie dazu `Person` Entitäten, die Registrierung für nicht-Null-Datumswerte unterstützen.
+Öffnen Sie die Seite " *students. aspx* ", die Sie im vorherigen Tutorial erstellt haben. Wie derzeit konfiguriert, zeigt das `GridView`-Steuerelement auf der Seite alle Namen aus der `People` Entitätenmenge an. Sie können jedoch nur die Schüler/Studenten anzeigen, die Sie finden, indem Sie `Person` Entitäten auswählen, die Registrierungsdaten ungleich NULL aufweisen.
 
-Wechseln Sie zur **Entwurf** anzeigen und Auswählen der `EntityDataSource` Steuerelement. Legen Sie im Fenster **Eigenschaften** die Eigenschaft `Where` auf `it.EnrollmentDate is not null`fest.
+Wechseln Sie zur **Entwurfs** Ansicht, und wählen Sie das `EntityDataSource` Steuerelement aus. Legen Sie im Fenster **Eigenschaften** die Eigenschaft `Where` auf `it.EnrollmentDate is not null`fest.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-3/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image9.png)
 
-Die Syntax, in der `Where` Eigenschaft der `EntityDataSource` Steuerelement ist Entity SQL. Entity SQL ist Transact-SQL ähnelt, aber er ist für die Verwendung mit Entitäten anstelle von Datenbankobjekten angepasst. Im Ausdruck `it.EnrollmentDate is not null`, das Wort `it` stellt einen Verweis auf die von der Abfrage zurückgegebenen Entität dar. Aus diesem Grund `it.EnrollmentDate` bezieht sich auf die `EnrollmentDate` Eigenschaft der `Person` Entität, die die `EntityDataSource` gibt steuern.
+Die Syntax, die Sie in der `Where`-Eigenschaft des `EntityDataSource`-Steuer Elements verwenden, ist Entity SQL. Entity SQL ähnelt Transact-SQL, ist jedoch für die Verwendung mit Entitäten und nicht von Datenbankobjekten angepasst. Im Ausdrucks `it.EnrollmentDate is not null`stellt das Wort `it` einen Verweis auf die von der Abfrage zurückgegebene Entität dar. Daher verweist `it.EnrollmentDate` auf die `EnrollmentDate`-Eigenschaft der `Person`-Entität, die vom `EntityDataSource` Steuerelement zurückgegeben wird.
 
-Führen Sie die Seite. Liste der Studenten enthält jetzt nur Schüler/Studenten. (Es sind keine Zeilen angezeigt, in denen es liegt kein Registrierungsdatum.)
+Führen Sie die Seite aus. Die Liste "Students" enthält jetzt nur Studenten. (Es werden keine Zeilen angezeigt, in denen kein Registrierungsdatum vorhanden ist.)
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-3/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image11.png)
 
-## <a name="using-the-entitydatasource-orderby-property-to-order-data"></a>Mithilfe der EntityDataSource "OrderBy"-Eigenschaft Sortieren von Daten
+## <a name="using-the-entitydatasource-orderby-property-to-order-data"></a>Verwenden der EntityDataSource-Eigenschaft "OrderBy" zum Sortieren von Daten
 
-Sie sollten auch diese Liste, um in Reihenfolge der Namen sein, wenn es zuerst angezeigt wird. Mit der *Students.aspx* Seite, die in noch geöffnet **Entwurf** anzeigen, und mit der `EntityDataSource` weiterhin ausgewähltem Steuerelement in der **Eigenschaften** legen die  **OrderBy** Eigenschaft `it.LastName`.
+Außerdem soll diese Liste in der Reihenfolge der Namen angezeigt werden, wenn Sie zum ersten Mal angezeigt wird. Wenn die Seite " *students. aspx* " in der **Entwurfs** Ansicht weiterhin geöffnet ist und das `EntityDataSource`-Steuerelement noch ausgewählt ist, legen Sie im **Eigenschaften** Fenster die **OrderBy** -Eigenschaft auf `it.LastName`fest.
 
 [![Image05](the-entity-framework-and-aspnet-getting-started-part-3/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image13.png)
 
-Führen Sie die Seite. Liste der Studenten ist jetzt in der Reihenfolge nach Nachnamen.
+Führen Sie die Seite aus. Die Liste der Schüler/Studenten liegt nun in der Reihenfolge nach dem Nachnamen.
 
 [![Image04](the-entity-framework-and-aspnet-getting-started-part-3/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image15.png)
 
-## <a name="using-a-control-parameter-to-set-the-where-property"></a>Verwenden einen Steuerelementparameter zum Festlegen der Eigenschaft "Where"
+## <a name="using-a-control-parameter-to-set-the-where-property"></a>Verwenden eines Control-Parameters zum Festlegen der Where-Eigenschaft
 
-Wie Sie mit anderen Datenquellen-Steuerelemente, Sie Parameterwerte übergeben, können die `Where` Eigenschaft. Auf der *Courses.aspx* Seite, dass Sie in Teil 2 des Tutorials erstellt haben, können Sie diese Methode verwenden, um Kurse anzuzeigen, die die Abteilung zugeordnet sind, die ein Benutzer aus der Dropdown Liste auswählt.
+Wie bei anderen Datenquellen-Steuerelementen können Sie Parameterwerte an die `Where`-Eigenschaft übergeben. Auf der Seite " *Courses. aspx* ", die Sie in Teil 2 des Tutorials erstellt haben, können Sie diese Methode zum Anzeigen von Kursen verwenden, die mit der Abteilung verknüpft sind, die ein Benutzer aus der Dropdown Liste auswählt.
 
-Open *Courses.aspx* und wechseln Sie zur **Entwurf** anzeigen. Fügen Sie eine zweite `EntityDataSource` die Steuerung an die Seite, und nennen Sie sie `CoursesEntityDataSource`. Verbinden Sie es mit der `SchoolEntities` Modell, und wählen `Courses` als die **EntitySetName** Wert.
+Öffnen Sie " *Courses. aspx* ", und wechseln Sie zur **Entwurfs** Ansicht. Fügen Sie der Seite ein zweites `EntityDataSource`-Steuerelement hinzu, und benennen Sie es `CoursesEntityDataSource`. Stellen Sie eine Verbindung mit dem `SchoolEntities` Modell her, und wählen Sie `Courses` als **entitySetName** -Wert aus.
 
-In der **Eigenschaften** Fenster, klicken Sie auf die Auslassungspunkte in der **, in denen** Eigenschaftenfeld. (Stellen Sie sicher, dass die `CoursesEntityDataSource` weiterhin ausgewähltem Steuerelement vor der Verwendung der **Eigenschaften** Fenster.)
+Klicken Sie im **Eigenschaften** Fenster auf die Auslassungs Punkte im Feld **Where** -Eigenschaft. (Stellen Sie sicher, dass das `CoursesEntityDataSource` Steuerelement immer noch ausgewählt ist, bevor Sie das **Eigenschaften** Fenster verwenden.)
 
 [![Image06](the-entity-framework-and-aspnet-getting-started-part-3/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image17.png)
 
-Die **Ausdrucks-Editor** Dialogfeld wird angezeigt. Wählen Sie in diesem Dialogfeld **automatisch generieren Ausdruck auf der Grundlage der bereitgestellten Parameter**, und klicken Sie dann auf **Parameter hinzufügen**. Nennen Sie den Parameter `DepartmentID`Option **Steuerelement** als die **Parameterquelle** Wert ein, und wählen Sie **DepartmentsDropDownList** als die **ControlID**  Wert.
+Das Dialogfeld **Ausdrucks-Editor** wird angezeigt. Wählen Sie in diesem Dialogfeld **den WHERE-Ausdruck basierend auf den angegebenen Parametern automatisch generieren**aus, und klicken Sie dann auf **Parameter hinzufügen**. Benennen Sie den Parameter `DepartmentID`, wählen Sie **Steuer** Element als **Parameter Quellwert** aus, und wählen Sie **departmentsdropdownlist** als **ControlID** -Wert aus.
 
 [![Image07](the-entity-framework-and-aspnet-getting-started-part-3/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image19.png)
 
-Klicken Sie auf **erweiterte Eigenschaften einblenden**, und klicken Sie in der **Eigenschaften** Fenster die **Ausdrucks-Editor** im Dialogfeld die `Type` Eigenschaft `Int32`.
+Klicken Sie auf **Erweiterte Eigenschaften anzeigen**, und ändern Sie im **Eigenschaften** Fenster des Dialog Felds **Ausdrucks-Editor** die `Type`-Eigenschaft in `Int32`.
 
 [![Image15](the-entity-framework-and-aspnet-getting-started-part-3/_static/image22.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image21.png)
 
 Wenn Sie fertig sind, klicken Sie auf **OK**.
 
-Fügen Sie unterhalb der Dropdownliste eine `GridView` die Steuerung an die Seite, und nennen Sie sie `CoursesGridView`. Verbinden Sie es mit der `CoursesEntityDataSource` Datenquellen-Steuerelement, klicken Sie auf **Schema aktualisieren**, klicken Sie auf **Spalten bearbeiten**, und entfernen Sie die `DepartmentID` Spalte. Die `GridView` Markup des Steuerelements ähnelt dem folgenden Beispiel.
+Fügen Sie der Seite unterhalb der Dropdown Liste ein `GridView`-Steuerelement hinzu, und benennen Sie es `CoursesGridView`. Verbinden Sie ihn mit dem `CoursesEntityDataSource` Datenquellen-Steuerelement, klicken Sie auf **Schema aktualisieren**, klicken Sie auf **Spalten bearbeiten**, und entfernen Sie die Spalte `DepartmentID`. Das `GridView`-Steuerelement Markup ähnelt dem folgenden Beispiel.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample1.aspx)]
 
-Wenn der Benutzer die ausgewählte Abteilung in der Dropdown-Liste ändert, möchten Sie die Liste der zugeordneten Kurse automatisch geändert. Auf dazu wählen Sie die Dropdown-Liste, und klicken Sie in der **Eigenschaften** legen die `AutoPostBack` Eigenschaft `True`.
+Wenn der Benutzer die ausgewählte Abteilung in der Dropdown Liste ändert, soll die Liste der zugeordneten Kurse automatisch geändert werden. Um dies zu erreichen, wählen Sie die Dropdown Liste aus, und legen Sie im **Eigenschaften** Fenster die `AutoPostBack`-Eigenschaft auf `True`fest.
 
 [![Image08](the-entity-framework-and-aspnet-getting-started-part-3/_static/image24.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image23.png)
 
-Nun, da Sie mithilfe des Designers abgeschlossen haben, wechseln Sie zur **Quelle** anzuzeigen, und Ersetzen Sie die `ConnectionString` und `DefaultContainer` Benennen von Eigenschaften der `CoursesEntityDataSource` steuern Sie mit der `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"` Attribut. Wenn Sie fertig sind, wird das Markup für das Steuerelement wie im folgenden Beispiel aussehen.
+Nachdem Sie nun mit der Verwendung des Designers fertig sind, wechseln Sie zur **Quell** Ansicht, und ersetzen Sie die Eigenschaften `ConnectionString` und `DefaultContainer` Name des `CoursesEntityDataSource`-Steuer Elements durch das `ContextTypeName="ContosoUniversity.DAL.SchoolEntities"`-Attribut. Wenn Sie fertig sind, wird das Markup für das Steuerelement wie im folgenden Beispiel aussehen.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample2.aspx)]
 
-Führen Sie die Seite, und verwenden Sie die Dropdownliste, um verschiedene Abteilungen auszuwählen. Nur die Kurse, die von der ausgewählten Abteilung angebotenen werden angezeigt, der `GridView` Steuerelement.
+Führen Sie die Seite aus, und wählen Sie die Dropdown Liste aus, um verschiedene Abteilungen auszuwählen. Im `GridView` Steuerelement werden nur Kurse angezeigt, die von der ausgewählten Abteilung angeboten werden.
 
 [![Image09](the-entity-framework-and-aspnet-getting-started-part-3/_static/image26.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image25.png)
 
-## <a name="using-the-entitydatasource-groupby-property-to-group-data"></a>Mithilfe der EntityDataSource "GroupBy"-Eigenschaft zum Gruppieren von Daten
+## <a name="using-the-entitydatasource-groupby-property-to-group-data"></a>Verwenden der EntityDataSource-Eigenschaft "GroupBy" zum Gruppieren von Daten
 
-Nehmen wir an, dass Contoso University möchte einige Student-Body-Statistiken auf der Seite "Info". Insbesondere möchte er eine Aufschlüsselung der Anzahl von Schülern nach dem Datum anzeigen, die sie registriert.
+Nehmen wir an, dass die IT-Organisation auf der Seite "Info" auf der Seite "Info" eine Reihe von Statistiken Insbesondere möchte ich eine Aufschlüsselung der Anzahl von Studenten nach dem Datum anzeigen, an dem Sie sich angemeldet haben.
 
-Open *About.aspx*, und klicken Sie in **Quelle** anzuzeigen, ersetzen Sie den vorhandenen Inhalt der der `BodyContent` steuern mit "Statistiken der Studentendaten Text" zwischen `h2` Tags:
+Öffnen Sie *about. aspx*, und ersetzen Sie in der **Quell** Ansicht den vorhandenen Inhalt des `BodyContent`-Steuer Elements durch "Student Body Statistics" between `h2` Tags:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample3.aspx)]
 
-Nach der Überschrift, Hinzufügen einer `EntityDataSource` steuern, und nennen Sie sie `StudentStatisticsEntityDataSource`. Verbinden Sie es mit `SchoolEntities`, wählen die `People` Entität festgelegt und lassen Sie die **wählen** Feld im Assistenten nicht geändert. Legen Sie die folgenden Eigenschaften der **Eigenschaften** Fenster:
+Fügen Sie nach der Überschrift ein `EntityDataSource`-Steuerelement hinzu, und benennen Sie es `StudentStatisticsEntityDataSource`. Verbinden Sie ihn mit `SchoolEntities`, wählen Sie die `People` Entitätenmenge aus, und lassen Sie das Feld **auswählen** im Assistenten unverändert. Legen Sie im **Eigenschaften** Fenster die folgenden Eigenschaften fest:
 
-- Legen Sie zum Filtern für Schüler/Studenten, nur die `Where` Eigenschaft `it.EnrollmentDate is not null`.
-- Um die Ergebnisse nach dem Registrierungsdatum zu gruppieren, legen Sie die `GroupBy` Eigenschaft `it.EnrollmentDate`.
-- Um das Registrierungsdatum und die Anzahl der Schüler/Studenten auswählen, legen Sie die `Select` Eigenschaft `it.EnrollmentDate, Count(it.EnrollmentDate) AS NumberOfStudents`.
-- Um die Ergebnisse nach dem Registrierungsdatum bestellen, legen Sie die `OrderBy` Eigenschaft `it.EnrollmentDate`.
+- Legen Sie die `Where`-Eigenschaft auf `it.EnrollmentDate is not null`fest, um nur nach Schülern zu filtern.
+- Um die Ergebnisse nach dem anmelderungs Datum zu gruppieren, legen Sie die `GroupBy`-Eigenschaft auf `it.EnrollmentDate`fest.
+- Legen Sie die `Select`-Eigenschaft auf `it.EnrollmentDate, Count(it.EnrollmentDate) AS NumberOfStudents`fest, um das anmelddatum und die Anzahl der Schüler/Studenten auszuwählen.
+- Um die Ergebnisse nach dem anmelderungs Datum zu sortieren, legen Sie die `OrderBy`-Eigenschaft auf `it.EnrollmentDate`fest.
 
-In **Quelle** anzuzeigen, ersetzen Sie die `ConnectionString` und `DefaultContainer` Benennen von Eigenschaften mit einem `ContextTypeName` Eigenschaft. Die `EntityDataSource` Markup des Steuerelements ähnelt nun dem folgenden Beispiel.
+Ersetzen Sie in der **Quell** Ansicht die Eigenschaften `ConnectionString` und `DefaultContainer` Name durch eine `ContextTypeName`-Eigenschaft. Das `EntityDataSource`-Steuerelement Markup ähnelt nun dem folgenden Beispiel.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample4.aspx)]
 
-Die Syntax der `Select`, `GroupBy`, und `Where` Eigenschaften ähnelt der Transact-SQL, mit Ausnahme von der `it` Schlüsselwort, das die aktuelle Entität angibt.
+Die Syntax der Eigenschaften `Select`, `GroupBy`und `Where` ähnelt Transact-SQL, mit Ausnahme des `it` Schlüsselworts, das die aktuelle Entität angibt.
 
-Fügen Sie das folgende Markup zum Erstellen einer `GridView` Steuerelement zum Anzeigen der Daten.
+Fügen Sie das folgende Markup hinzu, um ein `GridView`-Steuerelement zum Anzeigen der Daten zu erstellen.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample5.aspx)]
 
-Führen Sie die Seite zum Anzeigen einer Liste, die die Anzahl der Schüler/Studenten nach Anmeldedatum zeigt.
+Führen Sie die Seite aus, um eine Liste mit der Anzahl der Schüler/Studenten nach anmelderungs Datum anzuzeigen.
 
 [![Image10](the-entity-framework-and-aspnet-getting-started-part-3/_static/image28.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image27.png)
 
-## <a name="using-the-queryextender-control-for-filtering-and-ordering"></a>Verwenden das QueryExtender-Steuerelement für die Filterung und Sortierung
+## <a name="using-the-queryextender-control-for-filtering-and-ordering"></a>Verwenden des QueryExtender-Steuer Elements zum Filtern und anordnen
 
-Die `QueryExtender` -Steuerelement bietet eine Möglichkeit zum Filtern und Sortieren in Markup angeben. Die Syntax ist unabhängig von der Verwendung von Datenbank-Managementsystem (DBMS). Es ist auch in der Regel unabhängig von den Entity Framework, mit der Ausnahme, dass die verwendete Syntax für Navigationseigenschaften zu Entity Framework eindeutig ist.
+Das `QueryExtender`-Steuerelement bietet eine Möglichkeit, das Filtern und Sortieren im Markup anzugeben. Die Syntax ist unabhängig vom verwendeten Datenbankverwaltungssystem (Database Management System, DBMS). Sie ist auch in der Regel unabhängig vom Entity Framework, mit der Ausnahme, dass die Syntax, die Sie für Navigations Eigenschaften verwenden, für die Entity Framework eindeutig ist.
 
-In diesem Teil des Tutorials verwenden Sie eine `QueryExtender` Steuerelement zu filtern und Reihenfolge von Daten und eines der Felder Order by werden eine Navigationseigenschaft.
+In diesem Teil des Tutorials verwenden Sie ein `QueryExtender`-Steuerelement, um Daten zu filtern und zu sortieren, und eines der Order-by-Felder ist eine Navigations Eigenschaft.
 
-(Wenn Sie lieber Code anstelle von Markup verwenden, die Abfragen zu erweitern, die automatisch vom generiert werden die `EntityDataSource` -Steuerelement, Sie können dies durch Behandeln der `QueryCreated` Ereignis. Dies ist die `QueryExtender` Steuerelement `EntityDataSource` Abfragen auch steuern.)
+(Wenn Sie lieber Code anstelle von Markup verwenden möchten, um die Abfragen zu erweitern, die automatisch vom `EntityDataSource`-Steuerelement generiert werden, können Sie dies erreichen, indem Sie das `QueryCreated`-Ereignis behandeln. Auf diese Weise erweitert das `QueryExtender`-Steuerelement auch `EntityDataSource` Steuerelement Abfragen.)
 
-Öffnen der *Courses.aspx* Seite, und fügen Sie unten das Markup, das Sie zuvor hinzugefügt haben, das folgende Markup, um eine Überschrift, ein Textfeld zum Eingeben von Suchzeichenfolgen, eine Schaltfläche "Suchen" zu erstellen und ein `EntityDataSource` -Steuerelement, das an die gebundenist`Courses` Entitätenmenge.
+Öffnen Sie die Seite " *Courses. aspx* ", und fügen Sie unter dem zuvor hinzugefügten Markup das folgende Markup ein, um eine Überschrift, ein Textfeld zum Eingeben von Such Zeichenfolgen, eine Such Schaltfläche und ein `EntityDataSource` Steuerelement, das an die `Courses` Entitätenmenge gebunden ist
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample6.aspx)]
 
-Beachten Sie, dass die `EntityDataSource` des Steuerelements `Include` -Eigenschaftensatz auf `Department`. In der Datenbank die `Course` Tabelle enthält nicht den Namen der Abteilung; er enthält eine `DepartmentID` Fremdschlüsselspalte. Wenn Sie die Datenbank direkt Abfragen wurden, um den Abteilungsnamen sowie Kursdaten abzurufen, müssten Sie verknüpfen die `Course` und `Department` Tabellen. Durch Festlegen der `Include` Eigenschaft `Department`, Sie angeben, dass das Entity Framework den zugehörigen kommunikationsaufrufe ausführen soll `Department` Entität aus, wenn er erhält eine `Course` Entität. Die `Department` Entität befindet sich dann in der `Department` Navigationseigenschaft der `Course` Entität. (Standardmäßig die `SchoolEntities` -Klasse, die von der Data Modelldesigner generiert wurde abruft verwandte Daten aus, wenn sie benötigt, und Sie das Datenquellen-Steuerelement, auf diese Klasse gebunden haben, sodass das Festlegen der `Include` Eigenschaft ist nicht erforderlich. Allerdings festlegen verbessert die Leistung der Seite, da andernfalls das Entity Framework machen würden separate Aufrufe an die Datenbank zum Abrufen von Daten für die `Course` Entitäten und für die verknüpfte `Department` Entitäten.)
+Beachten Sie, dass die `Include`-Eigenschaft des `EntityDataSource`-Steuer Elements auf `Department`festgelegt ist. In der-Datenbank enthält die `Course` Tabelle nicht den Abteilungsnamen; Sie enthält eine `DepartmentID` Fremdschlüssel Spalte. Wenn Sie die Datenbank direkt Abfragen, um den Abteilungsnamen zusammen mit den Kurs Daten zu erhalten, müssten Sie den `Course`-und `Department` Tabellen beitreten. Wenn Sie die `Include`-Eigenschaft auf `Department`festlegen, geben Sie an, dass die Entity Framework das Abrufen der zugehörigen `Department` Entität durchführen soll, wenn eine `Course` Entität abgerufen wird. Die `Department`-Entität wird dann in der `Department`-Navigations Eigenschaft der `Course`-Entität gespeichert. (Standardmäßig ruft die `SchoolEntities`-Klasse, die vom Datenmodell-Designer generiert wurde, zugehörige Daten ab, wenn Sie benötigt werden, und Sie haben das Datenquellen-Steuerelement an diese Klasse gebunden, sodass das Festlegen der `Include`-Eigenschaft nicht erforderlich ist. Durch das festlegen wird die Leistung der Seite verbessert, da andernfalls die Entity Framework separate Aufrufe der Datenbank vornehmen würde, um Daten für die `Course` Entitäten und für die zugehörigen `Department` Entitäten abzurufen.)
 
-Nach der `EntityDataSource` Kontrolle, die Sie gerade erstellt haben, fügen Sie das folgende Markup zum Erstellen einer `QueryExtender` -Steuerelement, das an, die gebunden ist `EntityDataSource` Steuerelement.
+Fügen Sie nach dem soeben erstellten `EntityDataSource` Steuerelement das folgende Markup ein, um ein `QueryExtender` Steuerelement zu erstellen, das an dieses `EntityDataSource` Steuerelement gebunden ist.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample7.aspx)]
 
-Die `SearchExpression` Element gibt an, die Kurse auswählen, deren Titel mit dem Wert in das Textfeld eingegeben übereinstimmen, werden sollen. Wie viele Zeichen wie in das Textfeld eingegeben werden, verglichen werden da nur die `SearchType` Eigenschaft gibt an, `StartsWith`.
+Das `SearchExpression`-Element gibt an, dass Kurse ausgewählt werden sollen, deren Titel mit dem im Textfeld eingegebenen Wert verglichen werden. Nur so viele Zeichen, wie im Textfeld eingegeben werden, werden verglichen, da die `SearchType`-Eigenschaft `StartsWith`angibt.
 
-Die `OrderByExpression` Element gibt an, dass das Resultset Kurstitel innerhalb der Abteilungsname sortiert werden. Beachten Sie, wie der Name der Abteilung angegeben wird: `Department.Name`. Da die Zuordnung zwischen der `Course` Entität und die `Department` Entität 1: 1, ist die `Department` Navigationseigenschaft enthält eine `Department` Entität. (Würde dies eine 1: n Beziehung, würde die Eigenschaft eine Auflistung enthält.) Um den Namen der Abteilung zu erhalten, geben Sie die `Name` Eigenschaft der `Department` Entität.
+Das `OrderByExpression`-Element gibt an, dass das Resultset nach Kurstitel innerhalb des Abteilungs namens geordnet wird. Beachten Sie, dass der Abteilungs Name angegeben ist: `Department.Name`. Da die Zuordnung zwischen der `Course`-Entität und der `Department`-Entität eins-zu-eins ist, enthält die `Department`-Navigations Eigenschaft eine `Department` Entität. (Wenn es sich um eine 1: n-Beziehung handelt, würde die-Eigenschaft eine-Auflistung enthalten.) Um den Abteilungsnamen zu erhalten, müssen Sie die `Name`-Eigenschaft der `Department` Entität angeben.
 
-Fügen Sie abschließend eine `GridView` Steuerelement zum Anzeigen der Liste der Kurse:
+Fügen Sie abschließend ein `GridView`-Steuerelement hinzu, um die Liste der Kurse anzuzeigen:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample8.aspx)]
 
-Die erste Spalte ist eine Vorlagenfeld, das die Abteilungsnamen anzeigt. Gibt an, der Datenbindungsausdruck `Department.Name`genau wie in der `QueryExtender` Steuerelement.
+Die erste Spalte ist ein Vorlagen Feld, in dem der Abteilungs Name angezeigt wird. Der Datenbindung-Ausdruck gibt `Department.Name`genau so an, wie Sie im `QueryExtender`-Steuerelement gesehen haben.
 
-Führen Sie die Seite. Das erste zeigt einer Liste aller Kurse in der Reihenfolge nach Abteilung und dann nach Titel.
+Führen Sie die Seite aus. Die erste Anzeige zeigt eine Liste aller Kurse nach Abteilung und dann nach Kurs Titel an.
 
 [![Image11](the-entity-framework-and-aspnet-getting-started-part-3/_static/image30.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image29.png)
 
-Geben Sie ein "m", und klicken Sie auf **Suche** alle Kurse anzeigen, deren Namen mit "m" (die Suche wird keine Groß-/ Kleinschreibung) beginnen.
+Geben Sie "m" ein, und klicken Sie auf **Suchen** , um alle Kurse anzuzeigen, deren Titel mit "m" beginnen (bei der Suche wird die Groß-/Kleinschreibung nicht beachtet
 
 [![Image12](the-entity-framework-and-aspnet-getting-started-part-3/_static/image32.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image31.png)
 
-## <a name="using-the-like-operator-to-filter-data"></a>Verwenden den Operator "Like" zum Filtern von Daten
+## <a name="using-the-like-operator-to-filter-data"></a>Verwenden des "like"-Operators zum Filtern von Daten
 
-Erreichen Sie eine ähnliche Wirkung wie das `QueryExtender` des Steuerelements `StartsWith`, `Contains`, und `EndsWith` Typen suchen, indem eine `Like` -Operator in der `EntityDataSource` des Steuerelements `Where` Eigenschaft. In diesem Teil des Tutorials, sehen Sie, wie Sie mit der `Like` Operator für Schüler/Student nach Namen suchen.
+Sie können eine ähnliche Wirkung wie die `StartsWith`-, `Contains`-und `EndsWith` Suchtypen des `QueryExtender`-Steuer Elements erzielen, indem Sie einen `Like`-Operator in der `EntityDataSource`-Eigenschaft des `Where`-Steuer Elements verwenden. In diesem Teil des Tutorials erfahren Sie, wie Sie den `Like`-Operator verwenden, um nach einem Schüler/Student nach dem Namen zu suchen.
 
-Open *Students.aspx* in **Quelle** anzeigen. Nach der `GridView` Steuerelement, fügen Sie das folgende Markup hinzu:
+Öffnen Sie " *students. aspx* " in der **Quell** Ansicht. Fügen Sie nach dem `GridView`-Steuerelement das folgende Markup hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-3/samples/sample9.aspx)]
 
-Dieses Markup wird ähnlich wie Sie zuvor mit Ausnahme von haben die `Where` -Eigenschaftswert. Der zweite Teil der `Where` Ausdruck definiert eine teilzeichenfolgensuche (`LIKE %FirstMidName% or LIKE %LastName%`), durchsucht die ersten und letzten Namen für den Inhalt in das Textfeld eingegeben wird.
+Dieses Markup ähnelt dem, was Sie zuvor gesehen haben, mit Ausnahme des `Where`-Eigenschafts Werts. Der zweite Teil des `Where` Ausdrucks definiert eine Teil Zeichenfolgen-Suche (`LIKE %FirstMidName% or LIKE %LastName%`), die sowohl den Vornamen als auch den Nachnamen nach dem im Textfeld eingegebenen Namen durchsucht.
 
-Führen Sie die Seite. Anfänglich Sie sehen alle Studenten, da der Standardwert für die `StudentName` -Parameter ist "%".
+Führen Sie die Seite aus. Anfänglich werden alle Studenten angezeigt, da der Standardwert für den `StudentName`-Parameter "%" ist.
 
 [![Image13](the-entity-framework-and-aspnet-getting-started-part-3/_static/image34.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image33.png)
 
-Geben Sie den Buchstaben "g" in das Textfeld ein, und klicken Sie auf **Suche**. Sie sehen eine Liste der Schüler/Studenten, die ein "g" entweder in den ersten oder letzten Namen haben.
+Geben Sie den Buchstaben "g" in das Textfeld ein, und klicken Sie auf **Suchen**. Sie sehen eine Liste von Schülern mit dem Namen "g" im vor-oder Nachnamen.
 
 [![Image14](the-entity-framework-and-aspnet-getting-started-part-3/_static/image36.png)](the-entity-framework-and-aspnet-getting-started-part-3/_static/image35.png)
 
-Sie haben jetzt angezeigt, aktualisiert, gefiltert, sortiert und gruppiert die Daten aus den einzelnen Tabellen. Im nächsten Tutorial beginnen Sie zum Arbeiten mit verknüpften Daten (Master / Detail-Szenarien).
+Sie haben nun Daten aus einzelnen Tabellen angezeigt, aktualisiert, gefiltert, sortiert und gruppiert. Im nächsten Tutorial beginnen Sie mit der Arbeit mit verwandten Daten (Master/Detail-Szenarien).
 
 > [!div class="step-by-step"]
 > [Zurück](the-entity-framework-and-aspnet-getting-started-part-2.md)

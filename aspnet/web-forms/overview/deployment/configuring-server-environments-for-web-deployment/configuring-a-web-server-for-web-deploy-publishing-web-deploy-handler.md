@@ -9,11 +9,11 @@ ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
 ms.openlocfilehash: baaebd32f08d3c6b861572c5c5a16ec0fb70aaf0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589036"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458637"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>Konfigurieren eines Webservers für die Web Deploy-Veröffentlichung (Web Deploy-Handler)
 
@@ -273,14 +273,14 @@ Als letzte Aufgabe müssen Sie dem nicht-Administrator Benutzer, dessen Anmelde 
 
 Standardmäßig lauscht der IIS-Webverwaltungsdienst an TCP-Port 8172. Wenn die Windows-Firewall auf dem Webserver aktiviert ist, müssen Sie eine neue eingehende Regel erstellen, um TCP-Datenverkehr an Port 8172 zuzulassen (der gesamte ausgehende Datenverkehr wird standardmäßig in der Windows-Firewall zugelassen). Wenn Sie eine Drittanbieter-Firewall verwenden, müssen Sie Regeln erstellen, um Datenverkehr zuzulassen.
 
-| Richtung | Von Port | An Port | Porttyp |
+| Direction | Von Port | An Port | Porttyp |
 | --- | --- | --- | --- |
-| Eingehende | Alle | 8172 | TCP |
-| Ausgehende | 8172 | Alle | TCP |
+| Eingehend | Beliebig | 8172 | TCP |
+| Ausgehend | 8172 | Beliebig | TCP |
 
 Weitere Informationen zum Konfigurieren von Regeln in der Windows-Firewall finden Sie unter [Konfigurieren von Firewallregeln](https://technet.microsoft.com/library/dd448559(WS.10).aspx). Informationen zu Firewalls von Drittanbietern finden Sie in der Produktdokumentation.
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 Ihr Webserver sollte nun bereit sein, Remote Bereitstellungen für den Web deploy-Handler über den Webverwaltungsdienst zu akzeptieren. Bevor Sie versuchen, eine Webanwendung auf dem Server bereitzustellen, sollten Sie diese wichtigen Punkte überprüfen:
 
@@ -292,7 +292,7 @@ Ihr Webserver sollte nun bereit sein, Remote Bereitstellungen für den Web deplo
 - Hat das Benutzerkonto ohne Administrator Berechtigungen auf Website Ebene in IIS Berechtigungen?
 - Lässt Ihre Firewall eingehende Verbindungen mit dem Server über TCP-Port 8172 zu?
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Eine Anleitung zum Konfigurieren von Projektdateien für benutzerdefinierte Microsoft-Build-Engine (MSBuild) zum Bereitstellen von Webpaketen für den Web deploy Handler finden Sie unter [Konfigurieren von Bereitstellungs Eigenschaften für eine Zielumgebung](configuring-deployment-properties-for-a-target-environment.md).
 

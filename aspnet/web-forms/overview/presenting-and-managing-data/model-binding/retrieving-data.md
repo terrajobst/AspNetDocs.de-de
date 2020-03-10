@@ -9,11 +9,11 @@ ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
 ms.openlocfilehash: 81cca22cb4752d071d2a68986ae9ac2bed737594
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633175"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520023"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Abrufen und Anzeigen von Daten mit Modell Bindung und Web Forms
 
@@ -47,7 +47,7 @@ In diesem Tutorial gehen Sie wie folgt vor:
 
 1. Erstellen Sie in Visual Studio 2017 ein Projekt mit dem Namen " **contosouniversitymodelbinding**" der **ASP.NET-Webanwendung (.NET Framework)** .
 
-   ![Projekt erstellen](retrieving-data/_static/image19.png)
+   ![Erstellen des Projekts](retrieving-data/_static/image19.png)
 
 2. Klicken Sie auf **OK**. Das Dialogfeld zum Auswählen einer Vorlage wird angezeigt.
 
@@ -95,7 +95,7 @@ In diesem Tutorial gehen Sie wie folgt vor:
    
    5. Klicken Sie auf **OK**.
 
-## <a name="add-the-data-model"></a>Hinzufügen des Datenmodells
+## <a name="add-the-data-model"></a>Datenmodell hinzufügen
 
 Fügen Sie im Ordner **Models** eine Klasse mit dem Namen **UniversityModels.cs**hinzu.
 
@@ -121,7 +121,7 @@ Fügen Sie im Ordner **Models** eine Klasse mit dem Namen **UniversityModels.cs*
 
 In diesem Tutorial werden [Code First-Migrationen](https://docs.microsoft.com/ef/ef6/modeling/code-first/migrations/) zum Erstellen von Objekten und Datenbanktabellen verwendet. In diesen Tabellen werden Informationen zu den Studenten und deren Kursen gespeichert.
 
-   1. Wählen **Sie** Extras > **nuget-Paket-Manager** > Paket-Manager- **Konsole**aus.
+   1. Klicken Sie auf **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**.
 
    2. Führen Sie in der **Paket-Manager-Konsole**den folgenden Befehl aus:  
       `enable-migrations -ContextTypeName ContosoUniversityModelBinding.Models.SchoolContext`
@@ -136,7 +136,7 @@ In diesem Tutorial werden [Code First-Migrationen](https://docs.microsoft.com/ef
 
    1. Öffnen Sie Configuration.cs.
    
-   2. Fügen Sie der `Seed` -Methode folgenden Code hinzu. Fügen Sie außerdem eine `using`-Anweisung für den `ContosoUniversityModelBinding. Models`-Namespace hinzu.
+   2. Fügen Sie der `Seed` -Methode den folgenden Code hinzu. Fügen Sie außerdem eine `using`-Anweisung für den `ContosoUniversityModelBinding. Models`-Namespace hinzu.
 
       [!code-csharp[Main](retrieving-data/samples/sample5.cs)]
 
@@ -158,7 +158,7 @@ Mit aufgefüllten Datenbankdaten sind Sie nun bereit, diese Daten abzurufen und 
 
    [!code-aspx-csharp[Main](retrieving-data/samples/sample6.aspx)]
 
-   Beachten Sie Folgendes:
+   Hinweise:
    * Beachten Sie den Wert, der für die `SelectMethod`-Eigenschaft im GridView-Element festgelegt wurde. Dieser Wert gibt die Methode an, die zum Abrufen von GridView-Daten verwendet wird, die Sie im nächsten Schritt erstellen. 
    
    * Die `ItemType`-Eigenschaft wird auf die zuvor erstellte `Student` Klasse festgelegt. Diese Einstellung ermöglicht es Ihnen, auf Klasseneigenschaften im Markup zu verweisen. Die `Student`-Klasse verfügt beispielsweise über eine Auflistung mit dem Namen `Enrollments`. Sie können `Item.Enrollments` verwenden, um diese Auflistung abzurufen, und dann die [LINQ-Syntax](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq) verwenden, um die registrierten Gutschriften des Studenten abzurufen.
@@ -207,11 +207,11 @@ Visual Studio erstellt nicht nur eine Methode im Code-Behind mit der richtigen S
 
 Dieser Code muss dem Projekt nicht hinzugefügt werden. Im nächsten Tutorial implementieren Sie Methoden zum Aktualisieren, löschen und Hinzufügen neuer Daten.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie Datenmodell Klassen erstellt und eine Datenbank aus diesen Klassen generiert. Sie haben die Datenbanktabellen mit Testdaten ausgefüllt. Sie haben die Modell Bindung verwendet, um Daten aus der Datenbank abzurufen, und dann die Daten in einer GridView angezeigt.
 
 Im nächsten [Tutorial](updating-deleting-and-creating-data.md) dieser Reihe aktivieren Sie das Aktualisieren, löschen und Erstellen von Daten.
 
 > [!div class="step-by-step"]
-> [Nächste](updating-deleting-and-creating-data.md)
+> [Weiter](updating-deleting-and-creating-data.md)

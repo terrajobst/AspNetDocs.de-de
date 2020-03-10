@@ -9,11 +9,11 @@ ms.assetid: 3c815a9e-2296-4b9b-b945-776d54989daa
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 059dbf42956268884dcfdade696491ac39e32da9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614432"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78463587"
 ---
 # <a name="user-based-authorization-c"></a>Benutzerbasierte Autorisierung (C#)
 
@@ -29,7 +29,7 @@ Die meisten Webanwendungen, die Benutzerkonten anbieten, sind so Teil, um bestim
 
 ASP.NET vereinfacht die Definition Benutzer basierter Autorisierungs Regeln. Mit nur einem Markup in `Web.config`können bestimmte Webseiten oder gesamte Verzeichnisse gesperrt werden, sodass nur eine bestimmte Teilmenge von Benutzern zugänglich ist. Funktionen auf Seitenebene können basierend auf dem aktuell angemeldeten Benutzer durch programmgesteuerte und deklarative Mittel aktiviert oder deaktiviert werden.
 
-In diesem Tutorial erfahren Sie, wie Sie den Zugriff auf Seiten einschränken und Funktionen auf Seitenebene durch eine Vielzahl von Verfahren einschränken. Fangen wir an!
+In diesem Tutorial erfahren Sie, wie Sie den Zugriff auf Seiten einschränken und Funktionen auf Seitenebene durch eine Vielzahl von Verfahren einschränken. Erste Schritte
 
 ## <a name="a-look-at-the-url-authorization-workflow"></a>Ein Blick auf den URL-Autorisierungs Workflow
 
@@ -279,7 +279,7 @@ Eine Möglichkeit zum Ausblenden der Ansichts Schaltfläche für anonyme Benutze
 
 [!code-aspx[Main](user-based-authorization-cs/samples/sample18.aspx)]
 
- Bis: 
+ Nach: 
 
 [!code-aspx[Main](user-based-authorization-cs/samples/sample19.aspx)]
 
@@ -345,7 +345,7 @@ Neben ASP.NET Seiten verfügen viele Anwendungen auch über eine Architektur, di
 
 Weitere Informationen zur Verwendung des `PrincipalPermission`-Attributs zum Definieren von Autorisierungs Regeln für Klassen und Methoden finden Sie im Blogbeitrag von [Scott Guthrie](https://weblogs.asp.net/scottgu/)( [Hinzufügen von Autorisierungs Regeln zu Geschäfts-und Daten Ebenen mit `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir uns mit dem Anwenden von benutzerbasierten Autorisierungs Regeln beschäftigt. Wir haben mit einem Blick auf ASP begonnen. Das URL-Autorisierungs Framework von net. Bei jeder Anforderung überprüft das `UrlAuthorizationModule` der ASP.net-Engine die URL-Autorisierungs Regeln, die in der Konfiguration der Anwendung definiert sind, um zu bestimmen, ob die Identität für den Zugriff auf die angeforderte Ressource autorisiert ist. Kurz gesagt: die URL-Autorisierung vereinfacht das Angeben von Autorisierungs Regeln für eine bestimmte Seite oder für alle Seiten in einem bestimmten Verzeichnis.
 
@@ -353,7 +353,7 @@ Das URL-Autorisierungs Framework wendet Autorisierungs Regeln Seite für Seite a
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -367,7 +367,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [`UrlAuthorizationModule` technische Dokumentation](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [Arbeiten mit Daten in ASP.NET 2,0](../../data-access/index.md)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
-title: '[Gewusst wie:] Veröffentlichen und Analysieren der Testergebnisse? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Testergebnisse veröffentlichen und analysieren? | Microsoft-Dokumentation'
 author: rick-anderson
-description: Visual Studio Team System ermöglicht Diagramm Änderungen Codequalität eines Projekts während des Projekts. Dieses Video enthält eine Anleitung zum publ....
+description: Visual Studio Team System ermöglicht es Ihnen, Änderungen an der Codequalität eines Projekts im Verlauf des Projekts zu unterzeichnen. Dieses Video enthält Anweisungen zum Publ...
 ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 9fb155e0-1379-482c-963d-af7dc0397d76
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
 msc.type: video
 ms.openlocfilehash: 80289680e4d40ec903524d9f4752b71d13db790e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413502"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520875"
 ---
-# <a name="how-do-i-publish-and-analyze-test-results"></a>[Gewusst wie:] Veröffentlichen und Analysieren der Testergebnisse?
+# <a name="how-do-i-publish-and-analyze-test-results"></a>[Gewusst wie:] Testergebnisse veröffentlichen und analysieren?
 
-durch [Chris Menegay](https://twitter.com/CMenegay)
+von [Chris menegay](https://twitter.com/CMenegay)
 
-Visual Studio Team System ermöglicht Diagramm Änderungen Codequalität eines Projekts während des Projekts. Dieses Video enthält eine Anleitung zum Veröffentlichen von Testergebnissen mit der Team Foundation Server-Datenbank-Projekt, und ordnen Sie die Ergebnisse einer Buildnummer. Sehen Sie, dass wir nach dem die Ergebnisse veröffentlicht werden der Berichts-Manager verwenden können, um eine grafische Darstellung der Änderungen in unsere Testergebnisse des Builds anzuzeigen.
+Visual Studio Team System ermöglicht es Ihnen, Änderungen an der Codequalität eines Projekts im Verlauf des Projekts zu unterzeichnen. Dieses Video enthält Anweisungen zum Veröffentlichen von Testergebnissen in der Team Foundation Server Project-Datenbank und zum Zuordnen der Ergebnisse zu einer Buildnummer. Wir sehen, dass nach der Veröffentlichung der Ergebnisse die Berichts-Manager verwendet werden kann, um eine grafische Darstellung der Änderungen in den buildtestergebnissen anzuzeigen.
 
-[&#9654;Sehen Sie sich Video (7 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-publish-and-analyze-test-results)
+[&#9654;Video ansehen (7 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-publish-and-analyze-test-results)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-generic-tests.md)

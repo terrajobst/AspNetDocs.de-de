@@ -9,11 +9,11 @@ ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 66a09c637d33c812b39e0ce85a552bd71665a2e1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634661"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502953"
 ---
 # <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Sortieren von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (C#)
 
@@ -317,7 +317,7 @@ Das ist schon alles! Es gab zwar eine Reihe von Schritten, um benutzerdefinierte
 > [!NOTE]
 > In den vorherigen Beispielen wurde das Sortieren nach dem Lieferanten von Supplier suppliername als Sortier Ausdruck verwendet. Für die Implementierung der benutzerdefinierten Paginierung müssen wir jedoch "CompanyName" verwenden. Dies liegt daran, dass die gespeicherte Prozedur, die für die Implementierung von benutzerdefiniertem Paging zuständig ist `GetProductsPagedAndSorted` den Sortier Ausdruck an das `ROW_NUMBER()`-Schlüsselwort übergibt, das `ROW_NUMBER()`-Schlüsselwort den tatsächlichen Spaltennamen anstelle eines Alias. Daher müssen wir `CompanyName` (der Name der Spalte in der `Suppliers` Tabelle) anstelle des Alias verwenden, der in der `SELECT` Abfrage (`SupplierName`) für den Sortier Ausdruck verwendet wird.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Weder der DataList noch der Repeater bieten integrierte Sortier Unterstützung, aber mit etwas Code und einer benutzerdefinierten Sortier Schnittstelle können solche Funktionen hinzugefügt werden. Beim Implementieren von Sortierungen, aber nicht beim Paging, kann der Sortier Ausdruck über das `DataSourceSelectArguments` Objekt angegeben werden, das an die ObjectDataSource s `Select`-Methode übergeben wird. Diese `DataSourceSelectArguments` Objekt s `SortExpression` Eigenschaft kann im Ereignishandler von ObjectDataSource s `Selecting` zugewiesen werden.
 
@@ -327,7 +327,7 @@ In diesem Tutorial wird die Untersuchung von Paging und Sortierungen mit den Ste
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

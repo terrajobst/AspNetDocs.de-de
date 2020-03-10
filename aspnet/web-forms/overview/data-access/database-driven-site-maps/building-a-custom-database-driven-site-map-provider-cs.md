@@ -9,11 +9,11 @@ ms.assetid: 04b7591d-106f-4f05-87e9-d416cb65a8a6
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a3e27b37703b12c9796e8516f0d805aef1fdf8d8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637261"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78495855"
 ---
 # <a name="building-a-custom-database-driven-site-map-provider-c"></a>Erstellen eines benutzerdefinierten Anbieters für datenbankgesteuerte Siteübersichten (C#)
 
@@ -108,7 +108,7 @@ Abbildung 7 zeigt `Default.aspx`, wenn Sie in einem Browser angezeigt werden. We
 
 **Abbildung 8**: Verwenden der `ProductsBLL` Class s `GetProductsByCategoryID(categoryID)`-Methode ([Klicken Sie, um das Bild in voller Größe anzuzeigen](building-a-custom-database-driven-site-map-provider-cs/_static/image10.png))
 
-Im letzten Schritt des Assistenten zum Konfigurieren von Datenquellen werden Sie aufgefordert, eine Parameter Quelle für *CategoryID*einzugeben. Da diese Informationen über das QueryString-Feld `CategoryID`übergeben werden, wählen Sie in der Dropdown Liste die Option QueryString aus, und geben Sie im Textfeld QueryStringField den Wert CategoryID ein, wie in Abbildung 9 dargestellt. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Im letzten Schritt des Assistenten zum Konfigurieren von Datenquellen werden Sie aufgefordert, eine Parameter Quelle für *CategoryID*einzugeben. Da diese Informationen über das QueryString-Feld `CategoryID`übergeben werden, wählen Sie in der Dropdown Liste die Option QueryString aus, und geben Sie im Textfeld QueryStringField den Wert CategoryID ein, wie in Abbildung 9 dargestellt. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![das Feld CategoryID QueryString für den CategoryID-Parameter verwenden.](building-a-custom-database-driven-site-map-provider-cs/_static/image9.gif)](building-a-custom-database-driven-site-map-provider-cs/_static/image11.png)
 
@@ -284,7 +284,7 @@ Um auf einen für einen Site Übersichts anbieterspezifischen Member zuzugreifen
 > [!NOTE]
 > Stellen Sie sicher, dass Sie das SQL-Cache-Abhängigkeits Feature testen. Nachdem Sie die Seiten `Default.aspx`, `ProductsByCategory.aspx`und `ProductDetails.aspx` besucht haben, navigieren Sie zu einem der Tutorials im Abschnitt bearbeiten, einfügen und löschen, und bearbeiten Sie den Namen einer Kategorie oder eines Produkts. Kehren Sie dann zu einer der Seiten im `SiteMapProvider`-Ordner zurück. Wenn Sie davon ausgehen, dass genügend Zeit für den Abruf Mechanismus vergangen ist, um die Änderung an der zugrunde liegenden Datenbank zu notieren, sollte die Site Zuordnung aktualisiert werden, um den neuen Produkt-oder Kategorienamen anzuzeigen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ASP.NET 2,0 s Site Map-Features beinhalten eine `SiteMap` Klasse, eine Reihe integrierter websteuer Elemente für die Navigation und einen Standard-Site Übersichts Anbieter, der erwartet, dass die Site Übersichts Informationen in einer XML-Datei gespeichert werden. Um Site Übersichts Informationen aus einer anderen Quelle (z. b. aus einer Datenbank, der Anwendungsarchitektur oder einem Remoteweb Dienst) zu verwenden, müssen wir einen benutzerdefinierten Site Übersichts Anbieter erstellen. Dies umfasst das Erstellen einer Klasse, die direkt oder indirekt von der `SiteMapProvider` Klasse abgeleitet wird.
 
@@ -292,7 +292,7 @@ In diesem Tutorial wurde erläutert, wie Sie einen benutzerdefinierten Site Übe
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -301,7 +301,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Anbietertoolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 - [Untersuchen von ASP.NET 2,0 s-Website Navigations Features](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -310,4 +310,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Die führenden Reviewer für dieses Tutorial waren Dave Gardner, Zack Jones, Teresa Murphy und Bernadette Leigh. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](building-a-custom-database-driven-site-map-provider-vb.md)
+> [Weiter](building-a-custom-database-driven-site-map-provider-vb.md)

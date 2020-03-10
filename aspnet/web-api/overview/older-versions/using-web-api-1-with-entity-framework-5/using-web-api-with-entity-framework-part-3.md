@@ -9,11 +9,11 @@ ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
 ms.openlocfilehash: f39be7a84e85db93487d246e9f8cb59c401fe5ce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600042"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447909"
 ---
 # <a name="part-3-creating-an-admin-controller"></a>Teil 3: Erstellen eines Administrator Controllers
 
@@ -69,8 +69,8 @@ Die `AdminController`-Klasse definiert fünf Methoden, die grundlegende CRUD-Fun
 | GetProducts | Ruft alle Produkte ab. | API/Produkte | GET |
 | GetProduct | Sucht nach einem Produkt anhand der ID. | API/Produkte/*ID* | GET |
 | Putproduct | Aktualisiert ein Produkt. | API/Produkte/*ID* | PUT |
-| Postproduct | Erstellt ein neues Produkt. | API/Produkte | POST |
-| DeleteProduct | Löscht ein Produkt. | API/Produkte/*ID* | LÖSCHEN |
+| PostProduct | Erstellt ein neues Produkt. | API/Produkte | POST |
+| DeleteProduct | Löscht ein Produkt. | API/Produkte/*ID* | Delete |
 
 Jede Methode ruft `OrdersContext` auf, um die Datenbank abzufragen. Die Methoden, die den Auflistungs-(Put-, Post-und DELETE-) Befehl ändern, `db.SaveChanges`, um die Änderungen in der Datenbank beizubehalten. Controller werden pro HTTP-Anforderung erstellt und dann verworfen, sodass Änderungen persistent gespeichert werden müssen, bevor eine Methode zurückgegeben wird.
 
@@ -78,7 +78,7 @@ Jede Methode ruft `OrdersContext` auf, um die Datenbank abzufragen. Die Methoden
 
 Entity Framework verfügt über ein nettes Feature, mit dem Sie die Datenbank beim Start auffüllen und die Datenbank automatisch neu erstellen können, wenn sich die Modelle ändern. Diese Funktion ist während der Entwicklung nützlich, da Sie immer einige Testdaten haben, auch wenn Sie die Modelle ändern.
 
-Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle, und erstellen Sie eine neue Klasse mit dem Namen `OrdersContextInitializer`. Fügen Sie die folgende Implementierung ein:
+Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle, und erstellen Sie eine neue Klasse mit dem Namen `OrdersContextInitializer`. Verwenden Sie die folgenden Implementierung:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-3/samples/sample4.cs)]
 

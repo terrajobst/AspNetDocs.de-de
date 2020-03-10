@@ -9,11 +9,11 @@ ms.assetid: 9ef3e893-bebe-4b13-9fe5-8b71720dd85e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 01be198c329f372ddcd529ad8a369f2d3426a9fc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74628204"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474285"
 ---
 # <a name="creating-user-accounts-vb"></a>Hinzufügen von Benutzerkonten (VB)
 
@@ -29,13 +29,13 @@ von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Zusätzlich zu wissen, wie Sie neue Benutzerkonten erstellen, es müssen auch die Demo-Website aktualisieren wir zuerst erstellt, in haben der *<a id="_msoanchor_2"></a>[eine Übersicht der Formularauthentifizierung](../introduction/an-overview-of-forms-authentication-vb.md)* Lernprogramm, und klicken Sie dann in verbessert die *<a id="_msoanchor_3"></a>[Konfiguration der Formularauthentifizierung und erweiterte Themen](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* Lernprogramm. Unsere demowebanwendung verfügt über eine Anmeldeseite, mit der die Benutzer Anmelde Informationen anhand von hart codierten Benutzernamen/Kennwort-Paaren überprüft werden. Darüber hinaus enthält `Global.asax` Code, mit dem benutzerdefinierte `IPrincipal` und `IIdentity` Objekte für authentifizierte Benutzer erstellt werden. Wir aktualisieren die Anmeldeseite, um die Benutzer Anmelde Informationen anhand des Mitgliedschafts-Framework zu überprüfen und die benutzerdefinierte Prinzipal-und Identitätslogik zu entfernen.
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="the-forms-authentication-and-membership-checklist"></a>Prüfliste zur Formular Authentifizierung und Mitgliedschaft
 
 Bevor wir mit dem Mitgliedschafts Framework arbeiten, nehmen wir uns einen Moment Zeit, um diese Punkte zu erreichen. Wenn Sie das Mitgliedschafts Framework mit dem `SqlMembershipProvider` in einem Formular basierten Authentifizierungs Szenario verwenden, müssen die folgenden Schritte ausgeführt werden, bevor Sie die Mitgliedschafts Funktionen in der Webanwendung implementieren:
 
-1. **Aktivieren der Formular basierten Authentifizierung.** Wie in erläutert *<a id="_msoanchor_4"></a>[eine Übersicht der Formularauthentifizierung](../introduction/an-overview-of-forms-authentication-vb.md)* , Formularauthentifizierung wird aktiviert, indem Sie die Bearbeitung `Web.config` verwendet wird und die `<authentication>` Elements `mode` -Attribut `Forms`. Bei aktivierter Formular Authentifizierung wird jede eingehende Anforderung auf ein *Formular Authentifizierungs Ticket*überprüft, das, falls vorhanden, den Anforderer identifiziert.
+1. **Aktivieren der Formular basierten Authentifizierung.** Wie in erläutert eine *<a id="_msoanchor_4"></a>[Übersicht der Formularauthentifizierung](../introduction/an-overview-of-forms-authentication-vb.md)* , Formularauthentifizierung wird aktiviert, indem Sie die Bearbeitung `Web.config` verwendet wird und die `<authentication>` Elements `mode` -Attribut `Forms`. Bei aktivierter Formular Authentifizierung wird jede eingehende Anforderung auf ein *Formular Authentifizierungs Ticket*überprüft, das, falls vorhanden, den Anforderer identifiziert.
 2. **Fügen Sie das Anwendungs Dienst Schema der entsprechenden Datenbank hinzu.** Wenn Sie die `SqlMembershipProvider`, müssen wir das Anwendungs Dienst Schema in einer-Datenbank installieren. Normalerweise wird dieses Schema der Datenbank hinzugefügt, die das Datenmodell der Anwendung enthält. Die *<a id="_msoanchor_5"></a>[erstellen das Schema für die Mitgliedschaft in SQL Server](creating-the-membership-schema-in-sql-server-vb.md)* Lernprogramm erläutert, mit der `aspnet_regsql.exe` Tool, um dies zu erreichen.
 3. **Passen Sie die Einstellungen der Webanwendung so an, dass auf die Datenbank aus Schritt 2 verwiesen wird** Das Tutorial *Erstellen des Mitgliedschafts Schemas in SQL Server* hat zwei Möglichkeiten zum Konfigurieren der Webanwendung aufgezeigt, damit die `SqlMembershipProvider` die in Schritt 2: durch Ändern des `LocalSqlServer` Verbindungs Zeichenfolgen-namens verwendete Datenbank verwenden würde. oder durch Hinzufügen eines neuen registrierten Anbieters zur Liste der Mitgliedschafts Framework-Anbieter und Anpassen des neuen Anbieters zur Verwendung der Datenbank aus Schritt 2.
 
@@ -169,7 +169,7 @@ An diesem Punkt sollte der Bildschirm in etwa wie in Abbildung 6 gezeigt aussehe
 
 **Abbildung 6**: Fügen Sie die verschiedenen websteuer Elemente zum `CreatingUserAccounts.aspx Page` hinzu ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-user-accounts-vb/_static/image18.png)).
 
-Die `SecurityQuestion` Bezeichnung und `SecurityAnswer` Textfeld sollen eine vordefinierte Sicherheitsfrage anzeigen und die Benutzer Antwort erfassen. Beachten Sie, dass die Sicherheitsfrage und-Antwort auf Benutzerbasis gespeichert werden. es ist daher möglich, dass jeder Benutzer seine eigene Sicherheitsfrage definieren kann. In diesem Beispiel habe ich mich jedoch entschieden, eine universelle Sicherheitsfrage zu verwenden, nämlich: Wie sieht Ihre bevorzugte Farbe aus?
+Die `SecurityQuestion` Bezeichnung und `SecurityAnswer` Textfeld sollen eine vordefinierte Sicherheitsfrage anzeigen und die Benutzer Antwort erfassen. Beachten Sie, dass die Sicherheitsfrage und-Antwort auf Benutzerbasis gespeichert werden. es ist daher möglich, dass jeder Benutzer seine eigene Sicherheitsfrage definieren kann. In diesem Beispiel habe ich mich jedoch entschieden, eine universelle Sicherheitsfrage zu verwenden, nämlich: Welche Farbe ist Ihre Lieblingsfarbe?
 
 Um diese vordefinierte Sicherheitsfrage zu implementieren, fügen Sie eine Konstante zur Code-Behind-Klasse der Seite mit dem Namen "`passwordQuestion`" hinzu, und weisen Sie Ihr die Sicherheitsfrage zu. Weisen Sie dann im Ereignishandler für `Page_Load` diese Konstante der `Text`-Eigenschaft der `SecurityQuestion` Bezeichnung zu:
 
@@ -337,7 +337,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Master Seiten und Website Navigation](https://asp.net/learn/data-access/tutorial-03-vb.aspx)
 - [Der SQL Site Map-Anbieter, auf den Sie gewartet haben](https://msdn.microsoft.com/msdnmag/issues/06/02/WickedCode/default.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein neueste Buch wird *[Sams Schulen selbst ASP.NET 2.0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott erreicht werden kann, zur [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/).
 

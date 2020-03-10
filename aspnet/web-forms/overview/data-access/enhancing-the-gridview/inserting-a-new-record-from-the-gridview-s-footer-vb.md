@@ -9,11 +9,11 @@ ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 67ef370a90bc843f5c2da80bb43c8ef8de216b51
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631733"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78477411"
 ---
 # <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>Einfügen eines neuen Datensatzes in den GridView-Fuß (VB)
 
@@ -210,7 +210,7 @@ Zum Anpassen der gesammelten Daten können wir einen der beiden folgenden Ansät
 
 Beide Optionen funktionieren ebenfalls gleichermaßen. In den vorherigen Tutorials haben wir die letztgenannte Option verwendet, um mehrere über Ladungen für die `ProductsBLL` Klasse `UpdateProduct`-Methode zu erstellen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In der GridView fehlen die integrierten Einfügefunktionen in den DetailsView und FormView, aber mit etwas Aufwand kann eine einfügende Schnittstelle der Fußzeile hinzugefügt werden. Um die Footerzeile in einer GridView anzuzeigen, legen Sie einfach die `ShowFooter`-Eigenschaft auf `True`fest. Der Inhalt der Footerzeile kann für jedes Feld angepasst werden, indem das Feld in ein TemplateField-Element umgerechnet und die einfügeschnittstelle der `FooterTemplate`hinzugefügt wird. Wie in diesem Tutorial gezeigt, können die `FooterTemplate` Schaltflächen, Textfelder, Dropdown Listen, Kontrollkästchen, Datenquellen-Steuerelemente zum Auffüllen von datengesteuerten websteuer Elementen (z. b. Dropdown Listen) und Validierungs Steuerelemente enthalten. Zusammen mit Steuerelementen zum Erfassen der Benutzereingaben ist eine Schaltfläche "hinzufügen", "LinkButton" oder "ImageButton" erforderlich.
 
@@ -220,7 +220,7 @@ In diesem Tutorial wird das Aussehen der Techniken zum Verbessern der Darstellun
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -229,4 +229,4 @@ Fröhliche Programmierung!
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial ist Bernadette Leigh. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](adding-a-gridview-column-of-checkboxes-vb.md)
+> [Previous](adding-a-gridview-column-of-checkboxes-vb.md)

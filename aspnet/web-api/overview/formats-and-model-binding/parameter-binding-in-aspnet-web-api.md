@@ -10,11 +10,11 @@ ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 464cb9b45dc0b62c4da38b7cf612934808854d32
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074903"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448893"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>Parameter Bindung in ASP.net-Web-API
 
@@ -203,7 +203,7 @@ Der gesamte Parameter Bindungsprozess wird durch einen austauschbaren Dienst ( *
 
 Wenn Sie möchten, können Sie den gesamten **iaktionvaluebinder** -Dienst durch eine benutzerdefinierte Implementierung ersetzen.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 [Beispiel für benutzerdefinierte Parameter Bindung](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 

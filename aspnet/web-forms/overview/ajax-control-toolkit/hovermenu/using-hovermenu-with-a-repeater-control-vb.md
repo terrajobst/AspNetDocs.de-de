@@ -9,11 +9,11 @@ ms.assetid: 7f07c112-cd4f-4427-9699-57cfab2791fd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 9386aa2fe3a6174bbed52218337107733cb1fa99
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606659"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504063"
 ---
 # <a name="using-hovermenu-with-a-repeater-control-vb"></a>Verwenden von HoverMenu mit einem Wiederholungssteuerelement (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das HoverMenu-Steuerelement im AJAX Control Toolkit bietet einen einfachen Popup Effekt: Wenn mit dem Mauszeiger auf ein Element gezeigt wird, wird an einer angegebenen Position ein Popup Fenster angezeigt. Es ist auch möglich, dieses Steuerelement in einem Repeater zu verwenden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `HoverMenu`-Steuerelement im AJAX Control Toolkit bietet einen einfachen Popup Effekt: Wenn mit dem Mauszeiger auf ein Element gezeigt wird, wird an einer angegebenen Position ein Popup Fenster angezeigt. Es ist auch möglich, dieses Steuerelement in einem Repeater zu verwenden.
 
@@ -56,4 +56,4 @@ Nun zeigt jedes Element in der Datenquelle nach einer Verzögerung von 50 Millis
 Das Hover-Menü wird neben jedem Element im Wiederholungs Modul angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-hovermenu-with-a-repeater-control-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-hovermenu-with-a-repeater-control-cs.md)
+> [Previous](using-hovermenu-with-a-repeater-control-cs.md)

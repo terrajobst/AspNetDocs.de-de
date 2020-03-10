@@ -9,11 +9,11 @@ ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
 ms.openlocfilehash: eeab69e75546791978bb09d7823d95caf9dca1a0
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075059"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467139"
 ---
 # <a name="hot-towel-template"></a>Hot Towel-Vorlage
 
@@ -36,7 +36,7 @@ Hot-Handtuch ist ein idealer Ausgangspunkt für das Erstellen einer Single-Page-
 
 > Erfahren Sie mehr über das Entwickeln einer Spa aus [den Videos, Tutorials und Pluralsight-Kursen von John Papa](http://johnpapa.net/spa?vsix).
 
-## <a name="application-structure"></a>Anwendungsstruktur
+## <a name="application-structure"></a>Anwendungs Struktur
 
 Hot Handtuch Spa bietet einen app-Ordner, der die JavaScript-und HTML-Dateien enthält, die Ihre Anwendung definieren.
 
@@ -58,7 +58,7 @@ Hot-Handtuch baut auf der vertrauten und leistungsstarken ASP.NET MVC-Struktur a
 - Controllers
 - Modelle
 - Skripts
-- Sichten
+- Ansichten
 
 ## <a name="featured-libraries"></a>Ausgestattete Bibliotheken
 
@@ -108,7 +108,7 @@ Die `main.js` Datei definiert mehrere der Durandal-Module, um den Start der Anwe
 
 [!code-javascript[Main](hottowel-template/samples/sample3.js)]
 
-## <a name="views"></a>Sichten
+## <a name="views"></a>Ansichten
 
 Sichten befinden sich im Ordner "`App/views`".
 

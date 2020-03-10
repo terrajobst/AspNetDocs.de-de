@@ -2,185 +2,185 @@
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 title: ASP.NET MVC 4 benutzerdefinierte Aktionsfilter | Microsoft-Dokumentation
 author: rick-anderson
-description: ASP.NET MVC bietet Aktionsfilter für die Ausführung der Filterlogik entweder vor oder nach eine Aktionsmethode aufgerufen wird. Aktionsfilter sind benutzerdefinierte Attribute Tha...
+description: ASP.NET MVC stellt Aktionsfilter zum Ausführen der Filter Logik bereit, bevor oder nachdem eine Aktionsmethode aufgerufen wird. Aktionsfilter sind benutzerdefinierte Attribute...
 ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
 ms.openlocfilehash: eaeb32180f79fabf557cbc38ff067eb26b47fea7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129748"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468177"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 – Benutzerdefinierte Aktionsfilter
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-ASP.NET MVC bietet Aktionsfilter für die Ausführung der Filterlogik entweder vor oder nach eine Aktionsmethode aufgerufen wird. Aktionsfilter sind benutzerdefinierte Attribute, die deklarative systemverarbeitungsaufwand Aktionsmethoden des Controllers einfügen vor und nach Abschluss der Aktion-Verhalten hinzu.
+ASP.NET MVC stellt Aktionsfilter zum Ausführen der Filter Logik bereit, bevor oder nachdem eine Aktionsmethode aufgerufen wird. Aktionsfilter sind benutzerdefinierte Attribute, die deklarative Mittel zum Hinzufügen von vor-und nach-Aktion-Verhalten zu den Aktionsmethoden des Controllers bereitstellen.
 
-In dieser praktischen Übungseinheit erstellen Sie eine benutzerdefinierte Aktionsfilterattribut in MvcMusicStore Lösung zum Abfangen von Anforderungen des Controllers, und melden Sie sich die Aktivität von einem Standort in eine Datenbanktabelle. Sie werden Ihre Protokollierungsfilter durch Injection auf alle Controller oder eine Aktion hinzufügen. Zum Schluss sehen Sie die Protokollansicht mit der Liste der Besucher.
+In dieser praktischen Übungseinheit erstellen Sie ein benutzerdefiniertes Aktionsfilter Attribut in der mvcmusicstore-Projekt Mappe, um die Anforderungen des Controllers abzufangen und die Aktivität einer Website in einer Datenbanktabelle zu protokollieren. Sie können den Protokollierungs Filter per Injection zu einem beliebigen Controller oder einer Aktion hinzufügen. Schließlich wird die Protokoll Ansicht angezeigt, in der die Liste der Besucher angezeigt wird.
 
-Diese praktische Übungseinheit wird vorausgesetzt, dass grundlegende Kenntnisse der **ASP.NET MVC**. Wenn Sie nicht verwendet haben **ASP.NET MVC** vor, wir empfehlen Ihnen, sich mit Windows Live ID **Grundlagen von ASP.NET MVC 4** Hands-On Lab.
+Diese praktische Übung geht davon aus, dass Sie über grundlegende Kenntnisse von **ASP.NET MVC**verfügen. Wenn Sie **ASP.NET MVC** noch nicht verwendet haben, empfehlen wir Ihnen, **ASP.NET MVC 4-Grundlagen** praktische Übungseinheiten zu überspringen.
 
 > [!NOTE]
-> Alle Beispielcode und Ausschnitte sind im Web Camps Trainingskit, erhältlich über enthalten [Versionen der Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Das Projekt, das speziell für dieses Lab finden Sie unter [benutzerdefinierte Aktionsfilter für ASP.NET MVC 4](https://github.com/Microsoft-Web/HOL-MVC4CustomActionFilters).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das in den [Releases Microsoft-Web/webcamptrainingkit](https://aka.ms/webcamps-training-kit)verfügbar ist. Das für dieses Lab spezifische Projekt ist unter [ASP.NET MVC 4 Custom Action Filters](https://github.com/Microsoft-Web/HOL-MVC4CustomActionFilters)verfügbar.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 
-- Erstellen einer benutzerdefinierten Aktionsfilterattribut zum Erweitern von Filterfunktionen
-- Wenden Sie ein benutzerdefiniertes Filterattribut an, indem Sie Injection auf eine bestimmte Ebene
-- Registrieren Sie eine benutzerdefinierte Aktionsfilter Global
-
-<a id="Prerequisites"></a>
+- Erstellen eines benutzerdefinierten Aktionsfilter Attributs zum Erweitern der Filterfunktionen
+- Anwenden eines benutzerdefinierten Filter Attributs per injection auf eine bestimmte Ebene
+- Globales Registrieren eines benutzerdefinierten Aktions Filters
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
 
-Sie benötigen Folgendes, um diese testumgebung abzuschließen:
+<a id="Prerequisites"></a>
+### <a name="prerequisites"></a>Voraussetzungen
 
-- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder sogar eine höhere (Lesen [Anhang A](#AppendixA) Anleitungen zur Installation).
+Zum Durchführen dieses Labs müssen Sie über Folgendes verfügen:
+
+- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder Superior (Informationen zur Installation finden Sie in [Anhang A](#AppendixA) ).
 
 <a id="Setup"></a>
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
-**Installieren von Codeausschnitten**
+**Installieren von Code Ausschnitten**
 
-Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinheit verwaltet werden soll als Codeausschnitte für Visual Studio verfügbar. So installieren Sie die Codeausschnitte ausführen **.\Source\Setup\CodeSnippets.vsi** Datei.
+Der Vorteil ist, dass ein Großteil des Codes, den Sie in diesem Lab verwalten, als Visual Studio-Code Ausschnitte verfügbar ist. Um die Code Ausschnitte zu installieren, führen Sie **.\source\setup\codesnippeer-.vsi** -Datei aus.
 
-Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang C: Verwenden von Codeausschnitten](#AppendixC)&quot;.
+Wenn Sie mit den Visual Studio Code Ausschnitten nicht vertraut sind und wissen möchten, wie Sie Sie verwenden können, können Sie den Anhang dieses Dokuments &quot;[Anhang C: Verwenden von Code Ausschnitten](#AppendixC)&quot;entnehmen.
 
 ---
 
 <a id="Exercises"></a>
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-Diese praktische Übungseinheit besteht aus durch die folgenden Übungen:
+Diese praktische Übungseinheit besteht aus den folgenden Übungen:
 
-1. [Übung 1: Protokollieren von Aktionen](#Exercise1)
+1. [Übung 1: Protokollierungs Aktionen](#Exercise1)
 2. [Übung 2: Verwalten mehrerer Aktionsfilter](#Exercise2)
 
-Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**.
+Geschätzte Zeit bis zum Abschluss dieses Labs: **30 Minuten**.
 
 > [!NOTE]
-> Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
+> Jede Übung wird von einem **endordner** begleitet, der die sich ergebende Lösung enthält, die Sie nach Abschluss der Übungen erhalten. Sie können diese Lösung als Leitfaden verwenden, wenn Sie zusätzliche Hilfe beim Durcharbeiten der Übungen benötigen.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Logging_Actions"></a>
-### <a name="exercise-1-logging-actions"></a>Übung 1: Protokollieren von Aktionen
+### <a name="exercise-1-logging-actions"></a>Übung 1: Protokollierungs Aktionen
 
-In dieser Übung lernen Sie, wie ein benutzerdefinierten Aktionsfilters Protokoll erstellt wird, mithilfe von ASP.NET MVC 4-Filteranbieter. Zu diesem Zweck werden Sie einen Protokollierungsfilter auf der Music Store-Website anwenden, die alle Aktivitäten in den ausgewählten Controllern aufgezeichnet werden.
+In dieser Übung erfahren Sie, wie Sie einen benutzerdefinierten Aktionsprotokoll Filter mithilfe von ASP.NET MVC 4-Filter Anbietern erstellen. Zu diesem Zweck wenden Sie einen Protokollierungs Filter auf die Musicstore-Website an, mit der alle Aktivitäten in den ausgewählten Controllern aufgezeichnet werden.
 
-Der Filter wird erweitert **ActionFilterAttributeClass** und überschreiben **OnActionExecuting** Methode zum Abfangen jeder Anforderung ein, und führen Sie dann die Protokollierungsaktionen. Die Kontextinformationen über HTTP-Anforderungen, Ausführen von Methoden, Ergebnisse und Parameter erfolgt durch ASP.NET MVC **ActionExecutingContext** Klasse **.**
+Der Filter erweitert **Action Filter attributeclass** und setzt die **OnAction** -Methode außer Kraft, um die einzelnen Anforderungen abzufangen und dann die Protokollierungs Aktionen auszuführen. Die Kontextinformationen zu HTTP-Anforderungen, zum Ausführen von Methoden, Ergebnissen und Parametern werden von der ASP.NET MVC-Klasse " **aktionsexecutingcontext** " bereitgestellt **.**
 
 > [!NOTE]
-> ASP.NET MVC 4 verfügt auch über Standard-Filter-Anbieter, die Sie verwenden können, ohne einen benutzerdefinierten Filter erstellen. ASP.NET MVC 4 bietet die folgenden Arten von Filtern:
+> ASP.NET MVC 4 verfügt auch über Standardfilter Anbieter, die Sie verwenden können, ohne einen benutzerdefinierten Filter zu erstellen. ASP.NET MVC 4 bietet die folgenden Typen von Filtern:
 > 
-> - **Autorisierung** zu filtern, wodurch sicherheitsrelevanten Aspekten, ob eine Aktionsmethode – z. B. zur Authentifizierung oder zum Überprüfen der Eigenschaften der Anforderung ausgeführt.
-> - **Aktion** Filter, der die aktionsmethodenausführung umschließt. Dieser Filter kann zusätzliche Verarbeitungsschritte, z. B. Bereitstellen zusätzlicher Daten an die Aktionsmethode, das Überprüfen des Rückgabewerts oder das Abbrechen der Ausführung der Aktionsmethode ausführen.
-> - **Ergebnis** Filter, der Ausführung von der ActionResult-Objekt umschließt. Dieser Filter kann zusätzliche Verarbeitung des Ergebnisses, z. B. Ändern der HTTP-Antwort ausführen.
-> - **Ausnahme** Filter, der ausgeführt wird, wenn es eine nicht behandelte Ausnahme, die an einer beliebigen Stelle in der Aktionsmethode, die mit der Autorisierungsfilter beginnt und endet mit der Ausführung des Ergebnisses ausgelöst werden. Ausnahmefilter können für Aufgaben wie die Protokollierung oder Anzeigen einer Fehlerseite verwendet werden.
+> - **Autorisierungs** Filter, der Sicherheitsentscheidungen darüber trifft, ob eine Aktionsmethode ausgeführt werden soll, z. b. das Durchführen der Authentifizierung oder das Überprüfen von Eigenschaften der Anforderung.
+> - **Aktions** Filter, der die Ausführung der Aktionsmethode umschließt. Mit diesem Filter können zusätzliche Verarbeitungsschritte ausgeführt werden, z. b. das Bereitstellen zusätzlicher Daten für die Aktionsmethode, das Überprüfen des Rückgabewerts oder das Abbrechen der Ausführung der Aktionsmethode.
+> - Der **Ergebnis** Filter, der die Ausführung des Aktions result-Objekts umschließt. Dieser Filter kann zusätzliche Verarbeitungsschritte durchführen, z. b. das Ändern der HTTP-Antwort.
+> - **Ausnahme** Filter, der ausgeführt wird, wenn eine nicht behandelte Ausnahme in der Aktionsmethode ausgelöst wird, beginnend mit den Autorisierungs Filtern und mit der Ausführung des Ergebnisses. Ausnahme Filter können für Aufgaben wie z. b. die Protokollierung oder die Anzeige einer Fehlerseite verwendet werden.
 > 
-> Weitere Informationen zu Anbietern für Filter finden Sie unter diesem MSDN-Link: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
+> Weitere Informationen zu Filter Anbietern finden Sie in diesem MSDN-Link: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
 
 <a id="AboutLoggingFeature"></a>
 
 <a id="About_MVC_Music_Store_Application_logging_feature"></a>
-#### <a name="about-mvc-music-store-application-logging-feature"></a>Informationen zu MVC Music Store-Anwendung Protokollierung (Feature)
+#### <a name="about-mvc-music-store-application-logging-feature"></a>Informationen zum MVC Music Store-Anwendungs Protokollierungs Feature
 
-Diese Lösung für die Music Store verfügt über eine neue Datentabelle Modell für die Website-Protokollierung **ActionLog**, mit den folgenden Feldern: Der Name des Controllers, die eine Anforderung, die aufgerufene Aktion, die Client-IP und die Zeitstempel zu empfangen.
+Diese Music Store-Projekt Mappe verfügt über eine neue Datenmodell Tabelle für die Website Protokollierung " **Action Log**" mit den folgenden Feldern: Name des Controllers, der eine Anforderung empfangen hat, so genannte Aktion, Client-IP und Zeitstempel.
 
-![Entity Data Model. ActionLog-Tabelle. ](aspnet-mvc-4-custom-action-filters/_static/image1.png "Datenmodell. ActionLog-Tabelle.")
+![Datenmodell. Aktionsprotokoll Tabelle.](aspnet-mvc-4-custom-action-filters/_static/image1.png "Datenmodell. Aktionsprotokoll Tabelle.")
 
-*Datenmodell - ActionLog-Tabelle*
+*Datenmodell-Aktionsprotokoll Tabelle*
 
-Die Lösung bietet eine ASP.NET MVC-Ansicht für das Aktionsprotokoll, die finden Sie unter **MvcMusicStores/Views/ActionLog**:
+Die Lösung bietet eine ASP.NET MVC-Ansicht für das Aktionsprotokoll, das Sie unter **mvcmusicstores/views/Action Log**finden:
 
-![Aktion-Protokollansicht](aspnet-mvc-4-custom-action-filters/_static/image2.png "Aktionsprotokoll anzeigen")
+![Aktionsprotokoll Ansicht](aspnet-mvc-4-custom-action-filters/_static/image2.png "Aktionsprotokoll Ansicht")
 
-*Aktion-Log-Ansicht*
+*Aktionsprotokoll Ansicht*
 
-Mit dieser Struktur angegeben werden alle Aufgaben des Controllers Anforderung unterbrechen und Durchführen der protokollierungs mit benutzerdefinierten Filtern ausgerichtet sein.
+Bei dieser gegebenen Struktur konzentrieren sich alle Aufgaben auf das Unterbrechen der Anforderung des Controllers und das Ausführen der Protokollierung mithilfe der benutzerdefinierten Filterung.
 
 <a id="Ex1Task1"></a>
 
 <a id="Task_1_-_Creating_a_Custom_Filter_to_Catch_a_Controllers_Request"></a>
-#### <a name="task-1---creating-a-custom-filter-to-catch-a-controllers-request"></a>Aufgabe 1: Erstellen eines benutzerdefinierten Filters zum Abfangen eines Controllers-Anforderung
+#### <a name="task-1---creating-a-custom-filter-to-catch-a-controllers-request"></a>Aufgabe 1: Erstellen eines benutzerdefinierten Filters zum Abfangen der Anforderung eines Controllers
 
-In dieser Aufgabe erstellen Sie eine benutzerdefinierten Filter Attributklasse, die die protokollierungslogik enthalten soll. Erweitern Sie für diesen Zweck ASP.NET MVC **ActionFilterAttribute** -Klasse und Implementieren der Schnittstelle **IActionFilter**.
+In dieser Aufgabe erstellen Sie eine benutzerdefinierte Filter Attribut Klasse, die die Protokollierungs Logik enthält. Zu diesem Zweck erweitern Sie die ASP.NET MVC **Action Filter Attribute** -Klasse und implementieren die **IAction Filter**-Schnittstelle.
 
 > [!NOTE]
-> Die **ActionFilterAttribute** ist die Basisklasse für alle Attributfilter. Es bietet die folgenden Methoden, um eine bestimmte Logik nach und vor der Ausführung der der Controlleraktion auszuführen:
+> Das **Action Filter Attribute-Attribut** ist die Basisklasse für alle Attribut Filter. Es stellt die folgenden Methoden bereit, um eine bestimmte Logik nach und vor der Ausführung der Controller Aktion auszuführen:
 > 
-> - **OnActionExecuting**(ActionExecutingContext filterContext): Kurz bevor die Aktionsmethode aufgerufen wird.
-> - **OnActionExecuted**(ActionExecutedContext filterContext): Nachdem die Aktionsmethode aufgerufen wurde und bevor das Ergebnis (vor dem Rendern der Ansicht) ausgeführt wird.
-> - **OnResultExecuting**(ResultExecutingContext filterContext): Unmittelbar vor dem Ausführen des Ergebnisses (vor dem Rendern der Ansicht).
-> - **OnResultExecuted**(ResultExecutedContext filterContext): Nach dem Ausführen des Ergebnisses (nach dem Rendern der Ansicht).
+> - **OnAction-Ausführung**(Action executingcontext Filter context): unmittelbar vor dem Aufruf der Action-Methode.
+> - **OnAction**-Anweisung (Action executedcontext Filter context): nach dem Aufrufen der Aktionsmethode und vor dem Ausführen des Ergebnisses (vor dem Anzeigen des Rendering).
+> - **OnResultExecuting**(resultexecutingcontext Filter context): unmittelbar vor dem Ausführen des Ergebnisses (vor dem Anzeigen des Rendering).
+> - **OnResultExecuted**(resultexecutedcontext Filter context): nach dem Ausführen des Ergebnisses (nachdem die Ansicht gerendert wurde).
 > 
-> Indem Sie Sie einer dieser Methoden in einer abgeleiteten Klasse überschreiben, können Sie Ihren eigenen Filter Code ausführen.
+> Wenn Sie eine dieser Methoden in einer abgeleiteten Klasse überschreiben, können Sie Ihren eigenen Filter Code ausführen.
 
-1. Öffnen der **beginnen** Lösung controllerarbeitsverzeichnis **\Source\Ex01-LoggingActions\Begin** Ordner.
+1. Öffnen Sie die Projekt Mappe " **Begin** " im Ordner " **\source\ex01-loggingaktions\begin** ".
 
-   1. Sie müssen einige fehlende NuGet-Pakete herunterladen, bevor Sie fortfahren. Zu diesem Zweck klicken Sie auf die **Projekt** Menü **NuGet-Pakete verwalten**.
-   2. In der **NuGet-Pakete verwalten** Dialogfeld klicken Sie auf **wiederherstellen** um das Herunterladen fehlender Pakete.
-   3. Abschließend erstellen Sie die Projektmappe, indem Sie auf **erstellen** | **Projektmappe**.
+   1. Sie müssen einige fehlende nuget-Pakete herunterladen, bevor Sie den Vorgang fortsetzen. Klicken Sie hierzu auf das Menü **Projekt** , und wählen Sie **nuget-Pakete verwalten**aus.
+   2. Klicken Sie im Dialogfeld **nuget-Pakete verwalten** auf **Wiederherstellen** , um fehlende Pakete herunterzuladen.
+   3. Erstellen Sie abschließend die Projekt Mappe, indem Sie auf **Build** ** | Projekt Mappe erstellen klicken**.
 
       > [!NOTE]
-      > Einer der Vorteile der Verwendung von NuGet ist, dass Sie nicht alle Bibliotheken in Ihrem Projekt, Versand Verringern der Projektgröße. Mit NuGet Power Tools können werden durch Angabe von Versionen des Pakets in der Datei "Packages.config" Sie alle erforderlichen Bibliotheken das erstmalige herunterladen, die, das Sie das Projekt ausführen, können. Deshalb müssen Sie diese Schritte ausgeführt werden, nach dem Öffnen einer vorhandenen Lösung aus dieser Übungseinheit wird.
+      > Einer der Vorteile der Verwendung von nuget besteht darin, dass Sie nicht alle Bibliotheken in Ihrem Projekt liefern müssen, um die Projektgröße zu verringern. Mit nuget Power Tools können Sie durch Angabe der Paketversionen in der Datei "Packages. config" alle erforderlichen Bibliotheken herunterladen, wenn Sie das Projekt zum ersten Mal ausführen. Aus diesem Grund müssen Sie diese Schritte ausführen, nachdem Sie eine vorhandene Projekt Mappe in diesem Lab geöffnet haben.
       > 
-      > Weitere Informationen finden Sie im Artikel: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
-2. Fügen Sie eine neue C#-Klasse in der **Filter** Ordner und nennen Sie sie *CustomActionFilter.cs*. In diesem Ordner werden alle benutzerdefinierten Filter gespeichert.
-3. Open **CustomActionFilter.cs** und Hinzufügen eines Verweises auf **System.Web.Mvc** und **MvcMusicStore.Models** Namespaces:
+      > Weitere Informationen finden Sie in diesem Artikel: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+2. Fügen Sie dem C# Ordner **Filters** eine neue Klasse hinzu, und nennen Sie Sie *CustomActionFilter.cs*. In diesem Ordner werden alle benutzerdefinierten Filter gespeichert.
+3. Öffnen Sie **CustomActionFilter.cs** , und fügen Sie einen Verweis auf **System. Web. MVC** -und **mvcmusicstore. Models** -Namespaces hinzu:
 
-    (Codeausschnitt - *benutzerdefinierte Aktionsfilter ASP.NET MVC 4 - Ex1-CustomActionFilterNamespaces*)
+    (Code Ausschnitt- *ASP.NET MVC 4 benutzerdefinierte Aktionsfilter-EX1-customaktionfilternamespaces*)
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample1.cs)]
-4. Erben der **"customactionfilter"** -Klasse aus **ActionFilterAttribute** und stellen Sie dann **"customactionfilter"** implementieren **IActionFilter** Schnittstelle.
+4. Erben Sie die **CustomAction Filter** -Klasse von **Action Filter Attribute** , und legen Sie dann die **CustomAction Filter** -Klasse die **IAction Filter** -Schnittstelle an.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample2.cs)]
-5. Stellen **"customactionfilter"** Klasse überschreiben Sie die Methode **OnActionExecuting** und fügen Sie die erforderliche Logik, um den Filter für die Ausführung zu protokollieren. Zu diesem Zweck fügen Sie folgenden hervorgehobenen Code in **"customactionfilter"** Klasse.
+5. Legen Sie die **customaktionfilter** -Klasse überschreiben Sie die **onaktionexecution** -Methode, und fügen Sie die erforderliche Logik zum Protokollieren der Filter Ausführung hinzu. Fügen Sie zu diesem Zweck den folgenden markierten Code in der **customaktionfilter** -Klasse hinzu.
 
-    (Codeausschnitt - *benutzerdefinierte Aktionsfilter ASP.NET MVC 4 - Ex1-LoggingActions*)
+    (Code Ausschnitt- *ASP.NET MVC 4 benutzerdefinierte Aktionsfilter-EX1-loggingactions*)
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample3.cs#Highlight)]
 
     > [!NOTE]
-    > **OnActionExecuting** Methode ist die Verwendung **Entity Framework** um ein neues ActionLog Journal hinzuzufügen. Erstellt und füllt Sie mit den Kontextinformationen über eine neue Entitätsinstanz **FilterContext**.
+    > Die **onaktionsmethode** verwendet **Entity Framework** , um ein neues Aktionsprotokoll hinzuzufügen. Er erstellt und füllt eine neue Entitäts Instanz mit den Kontextinformationen aus **FilterContext**.
     > 
-    > Erfahren Sie mehr über **ControllerContext** -Klasse am [Msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx).
+    > Weitere Informationen zur **controllerContext** -Klasse finden Sie auf der [MSDN](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx)-Website.
 
 <a id="Ex1Task2"></a>
 
 <a id="Task_2_-_Injecting_a_Code_Interceptor_into_the_Store_Controller_Class"></a>
-#### <a name="task-2---injecting-a-code-interceptor-into-the-store-controller-class"></a>Aufgabe 2: Einfügen eines Code-Interceptors in der Store-Controller-Klasse
+#### <a name="task-2---injecting-a-code-interceptor-into-the-store-controller-class"></a>Aufgabe 2: Einfügen eines codeinterceptors in die Speicher Controller Klasse
 
-In dieser Aufgabe fügen Sie den benutzerdefinierten Filter durch Einspeisen von es für alle Controllerklassen und Controlleraktionen, die protokolliert werden. Im Rahmen dieser Übung müssen die Store-Controller-Klasse, ein Protokoll.
+In dieser Aufgabe fügen Sie den benutzerdefinierten Filter hinzu, indem Sie ihn in alle Controller Klassen und Controller Aktionen einfügen, die protokolliert werden. Für diese Übung verfügt die Store Controller-Klasse über ein Protokoll.
 
-Die Methode **OnActionExecuting** aus **ActionLogFilterAttribute** benutzerdefinierter Filter ausgeführt wird, wenn ein eingefügten Element aufgerufen wird.
+Die **OnAction** -Methode der Methode aus dem benutzerdefinierten **Action logfilterattribute** -Filter wird ausgeführt, wenn ein injiziertes Element aufgerufen wird.
 
-Es ist auch möglich, eine bestimmte Controllermethode abzufangen.
+Es ist auch möglich, eine bestimmte Controller Methode abzufangen.
 
-1. Öffnen der **StoreController** am **MvcMusicStore\Controllers** und Hinzufügen eines Verweises auf die **Filter** Namespace:
+1. Öffnen Sie **StoreController** unter **mvcmusicstore\controllers** , und fügen Sie einen Verweis auf den **Filter** -Namespace hinzu:
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample4.cs)]
-2. Den benutzerdefinierten Filter einfügen **"customactionfilter"** in **StoreController** -Klasse durch das Hinzufügen **["customactionfilter"]** Attribut vor der Klassendeklaration.
+2. Fügen Sie den benutzerdefinierten Filter **customaktionfilter** in die **StoreController** -Klasse ein, indem Sie das Attribut **[customaktionfilter]** vor der Klassen Deklaration hinzufügen
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample5.cs)]
 
    > [!NOTE]
-   > Wenn Sie ein Filter in einer Controllerklasse eingefügt wird, werden auch alle zugehörigen Aktionen eingefügt. Wenn Sie den Filter nur für eine Reihe von Aktionen anwenden möchten, müssten Sie injizieren **["customactionfilter"]** jeweils davon:
+   > Wenn ein Filter in eine Controller Klasse eingefügt wird, werden alle zugehörigen Aktionen ebenfalls eingefügt. Wenn Sie den Filter nur für eine Reihe von Aktionen anwenden möchten, müssten Sie **[customaktionfilter]** an jeden der folgenden Elemente einfügen:
    > 
    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
 
@@ -189,166 +189,166 @@ Es ist auch möglich, eine bestimmte Controllermethode abzufangen.
 <a id="Task_3_-_Running_the_Application"></a>
 #### <a name="task-3---running-the-application"></a>Aufgabe 3: Ausführen der Anwendung
 
-In dieser Aufgabe testen Sie, dass der Protokollierungsfilter ausgeführt wird. Sie starten die Anwendung und besuchen Sie den Store, und anschließend werden Sie protokollierte Aktivitäten überprüfen.
+In dieser Aufgabe testen Sie, ob der Protokollierungs Filter funktioniert. Sie starten die Anwendung und besuchen den Store, und dann überprüfen Sie die protokollierten Aktivitäten.
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.
-2. Navigieren Sie zu **/ActionLog** auf den Ausgangszustand des Protokoll-Ansicht finden Sie unter:
+2. Navigieren Sie zu **/ActionLog** , um den Anfangszustand der Protokoll Ansicht anzuzeigen:
 
-    ![Protokollstatus Tracker vor der Aktivität "Seite"](aspnet-mvc-4-custom-action-filters/_static/image3.png "Tracker-Status vor der Aktivität \"Seite\" Protokollieren")
+    ![Protokoll verfolgungsstatus vor Seiten Aktivität](aspnet-mvc-4-custom-action-filters/_static/image3.png "Protokoll verfolgungsstatus vor Seiten Aktivität")
 
-    *Log-Tracker-Status vor der Aktivität "Seite"*
+    *Protokoll verfolgungsstatus vor Seiten Aktivität*
 
    > [!NOTE]
-   > Standardmäßig wird immer ein Element angezeigt, die generiert wird, wenn Sie die vorhandenen Genres für das Menü abrufen.
+   > Standardmäßig wird immer ein Element angezeigt, das beim Abrufen der vorhandenen Genres für das Menü generiert wird.
    > 
-   > Aus Gründen der Einfachheit haben wir Bereinigen von der **ActionLog** Tabelle jedes Mal die Anwendung ausgeführt wird, sodass sie nur die Protokolle der Überprüfung für jede bestimmte Aufgabe angezeigt wird.
+   > Aus Gründen der Einfachheit wird die Tabelle " **aktionlog** " bereinigt, wenn die Anwendung ausgeführt wird, sodass nur die Protokolle der Überprüfung der jeweiligen Aufgabe angezeigt werden.
    > 
-   > Müssen Sie möglicherweise entfernen den folgenden Code aus der **Sitzung\_starten** Methode (in der **"Global.asax"** Klasse), um ein historisches Protokoll für alle Aktionen, die ausgeführt werden, in den Store zu speichern. Controller.
+   > Möglicherweise müssen Sie den folgenden Code aus der **Sitzungs\_Start** -Methode (in der **Global. asax** -Klasse) entfernen, um ein Verlaufs Protokoll für alle innerhalb des Speicher Controllers ausgeführten Aktionen zu speichern.
    > 
    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
-3. Klicken Sie auf eines der **Genres** aus dem Menü und führen Sie einige Aktionen, wie das Durchsuchen eines Albums verfügbaren.
-4. Navigieren Sie zu **/ActionLog** und wenn das Protokoll, drücken Sie die leere ist **F5** die Seite aktualisieren. Überprüfen Sie, dass Ihre Besuche nachverfolgt wurden:
+3. Klicken Sie im Menü auf eines der **Genres** , und führen Sie dort einige Aktionen aus, z. b. Durchsuchen eines verfügbaren Albums.
+4. Navigieren Sie zu **/ActionLog** , und wenn das Protokoll leer ist, drücken Sie **F5** , um die Seite zu aktualisieren. Überprüfen Sie, ob Ihre Besuche nachverfolgt wurden:
 
-    ![Aktionsprotokoll mit Aktivität protokolliert](aspnet-mvc-4-custom-action-filters/_static/image4.png "Aktionsprotokoll mit Aktivität protokolliert")
+    ![Aktionsprotokoll mit protokollierter Aktivität](aspnet-mvc-4-custom-action-filters/_static/image4.png "Aktionsprotokoll mit protokollierter Aktivität")
 
-    *Aktionsprotokoll mit Aktivität protokolliert*
+    *Aktionsprotokoll mit protokollierter Aktivität*
 
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Managing_Multiple_Action_Filters"></a>
-### <a name="exercise-2-managing-multiple-action-filters"></a>Übung 2: Verwalten mehrerer Aktionsfilter
+### <a name="exercise-2-managing-multiple-action-filters"></a>Übung 2: Verwalten mehrerer Aktionsfilter
 
-In dieser Übung werden Sie eine zweite benutzerdefinierte Aktionsfilter der StoreController-Klasse hinzufügen und Definieren dieser spezifische Reihenfolge, in der beide Filter ausgeführt werden. Klicken Sie dann aktualisieren Sie den Code, um den Filter global zu registrieren.
+In dieser Übung fügen Sie der StoreController-Klasse einen zweiten benutzerdefinierten Aktions Filter hinzu und definieren die jeweilige Reihenfolge, in der beide Filter ausgeführt werden. Anschließend aktualisieren Sie den Code, um den Filter Global zu registrieren.
 
-Es gibt verschiedene Optionen in Betracht ziehen, bei der Definition der Ausführungsreihenfolge der Filter ein. Z. B. die Order-Eigenschaft und die Filter Bereich:
+Beim Definieren der Ausführungsreihenfolge der Filter sind unterschiedliche Optionen zu berücksichtigen. Zum Beispiel die Order-Eigenschaft und der Filterbereich:
 
-Sie können definieren, eine **Bereich** für jeden der Filter, z. B. können Sie den Bereich der Aktionsfilter für die Ausführung innerhalb der **Bereich von Controller**, und alle Autorisierungsfilter für die Ausführung im **globalen Gültigkeitsbereich** . Die Bereiche verfügen über einen definierten Ausführungsreihenfolge.
+Sie können einen **Bereich** für jeden Filter definieren. Sie können z. b. alle Aktionsfilter so festlegen, dass Sie innerhalb des **Controller Bereichs**ausgeführt werden, und alle Autorisierungs Filter, die im globalen Gültigkeits **Bereich**ausgeführt werden. Die Bereiche haben eine definierte Ausführungsreihenfolge.
 
-Darüber hinaus verfügt jeder Aktionsfilter eine Order-Eigenschaft, die verwendet wird, um zu bestimmen, die Ausführungsreihenfolge im Bereich des Filters.
+Außerdem verfügt jeder Aktionsfilter über eine Order-Eigenschaft, die verwendet wird, um die Ausführungsreihenfolge im Filterbereich zu bestimmen.
 
-Weitere Informationen zu Ausführungsreihenfolge benutzerdefinierte Aktionsfilter verwendet werden, finden Sie unter diesem MSDN-Artikel: ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
+Weitere Informationen zur Ausführung von benutzerdefinierten Aktions Filtern finden Sie in diesem MSDN-Artikel: ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
 
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_Creating_a_new_Custom_Action_Filter"></a>
-#### <a name="task-1-creating-a-new-custom-action-filter"></a>Aufgabe 1: Erstellen eines neuen benutzerdefinierten Aktionsfilters
+#### <a name="task-1-creating-a-new-custom-action-filter"></a>Aufgabe 1: Erstellen eines neuen benutzerdefinierten Aktions Filters
 
-In dieser Aufgabe erstellen Sie eine neue benutzerdefinierte Aktionsfilter beim Einfügen in die StoreController-Klasse, lernen, wie Sie die Ausführungsreihenfolge der Filter zu verwalten.
+In dieser Aufgabe erstellen Sie einen neuen benutzerdefinierten Aktions Filter, der in die StoreController-Klasse eingefügt werden soll, und erfahren, wie Sie die Ausführungsreihenfolge der Filter verwalten.
 
-1. Öffnen der **beginnen** Lösung controllerarbeitsverzeichnis **\Source\Ex02-ManagingMultipleActionFilters\Begin** Ordner. Andernfalls können Sie weiterhin, verwenden die **End** Lösung abgerufen wird, indem Sie der vorherige Übung abschließen können.
+1. Öffnen Sie die Projekt Mappe " **Begin** " im Ordner " **\source\ex02-managingmultipleaktionfilters\begin** ". Andernfalls können Sie die **End** -Projekt Mappe, die Sie durch Abschließen der vorherigen Übung erhalten haben, weiterhin verwenden.
 
-    1. Wenn Sie die bereitgestellten geöffnet **beginnen** Lösung, Sie müssen einige fehlende NuGet-Pakete herunterladen bevor Sie fortfahren. Zu diesem Zweck klicken Sie auf die **Projekt** Menü **NuGet-Pakete verwalten**.
-    2. In der **NuGet-Pakete verwalten** Dialogfeld klicken Sie auf **wiederherstellen** um das Herunterladen fehlender Pakete.
-    3. Abschließend erstellen Sie die Projektmappe, indem Sie auf **erstellen** | **Projektmappe**.
+    1. Wenn Sie die bereitgestellte **Begin** -Lösung geöffnet haben, müssen Sie einige fehlende nuget-Pakete herunterladen, bevor Sie den Vorgang fortsetzen. Klicken Sie hierzu auf das Menü **Projekt** , und wählen Sie **nuget-Pakete verwalten**aus.
+    2. Klicken Sie im Dialogfeld **nuget-Pakete verwalten** auf **Wiederherstellen** , um fehlende Pakete herunterzuladen.
+    3. Erstellen Sie abschließend die Projekt Mappe, indem Sie auf **Build** ** | Projekt Mappe erstellen klicken**.
 
         > [!NOTE]
-        > Einer der Vorteile der Verwendung von NuGet ist, dass Sie nicht alle Bibliotheken in Ihrem Projekt, Versand Verringern der Projektgröße. Mit NuGet Power Tools können werden durch Angabe von Versionen des Pakets in der Datei "Packages.config" Sie alle erforderlichen Bibliotheken das erstmalige herunterladen, die, das Sie das Projekt ausführen, können. Deshalb müssen Sie diese Schritte ausgeführt werden, nach dem Öffnen einer vorhandenen Lösung aus dieser Übungseinheit wird.
+        > Einer der Vorteile der Verwendung von nuget besteht darin, dass Sie nicht alle Bibliotheken in Ihrem Projekt liefern müssen, um die Projektgröße zu verringern. Mit nuget Power Tools können Sie durch Angabe der Paketversionen in der Datei "Packages. config" alle erforderlichen Bibliotheken herunterladen, wenn Sie das Projekt zum ersten Mal ausführen. Aus diesem Grund müssen Sie diese Schritte ausführen, nachdem Sie eine vorhandene Projekt Mappe in diesem Lab geöffnet haben.
         > 
-        > Weitere Informationen finden Sie im Artikel: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
-2. Fügen Sie eine neue C#-Klasse in der **Filter** Ordner und nennen Sie sie *MyNewCustomActionFilter.cs*
-3. Open **MyNewCustomActionFilter.cs** und Hinzufügen eines Verweises auf **System.Web.Mvc** und **MvcMusicStore.Models** Namespace:
+        > Weitere Informationen finden Sie in diesem Artikel: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+2. Fügen Sie dem C# Ordner **Filters** eine neue Klasse hinzu, und nennen Sie Sie *MyNewCustomActionFilter.cs*
+3. Öffnen Sie **MyNewCustomActionFilter.cs** , und fügen Sie einen Verweis auf **System. Web. MVC** und den **mvcmusicstore. Models** -Namespace hinzu:
 
-    (Codeausschnitt - *benutzerdefinierte Aktionsfilter ASP.NET MVC 4 - Ex2-MyNewCustomActionFilterNamespaces*)
+    (Code Ausschnitt- *ASP.NET MVC 4 benutzerdefinierte Aktionsfilter-EX2-mynewcustomaktionfilternamespaces*)
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample8.cs)]
-4. Ersetzen Sie die Standard-Klassendeklaration durch den folgenden Code ein.
+4. Ersetzen Sie die Standardklassen Deklaration durch den folgenden Code.
 
-    (Codeausschnitt - *benutzerdefinierte Aktionsfilter ASP.NET MVC 4 - Ex2-MyNewCustomActionFilterClass*)
+    (Code Ausschnitt- *ASP.NET MVC 4 benutzerdefinierte Aktionsfilter-EX2-mynewcustomaction filterClass*)
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > Diese benutzerdefinierte Aktionsfilter ist fast identisch als das, was Sie in der vorherigen Übung erstellt haben. Der Hauptunterschied besteht darin, dass sie hat die *&quot;protokolliert von&quot;* Attribut aktualisiert, die mit dieser neuen Klasse Name zum Identifizieren der Filterinformationen das Protokoll registriert.
+    > Dieser benutzerdefinierte Aktions Filter ist beinahe identisch mit dem Filter, den Sie in der vorherigen Übung erstellt haben. Der Hauptunterschied besteht darin, dass die *&quot;von&quot;* Attribut mit diesem neuen Klassennamen protokolliert wurde, um zu ermitteln, welcher Filter das Protokoll registriert hat.
 
 <a id="Ex2Task2"></a>
 
 <a id="Task_2_Injecting_a_new_Code_Interceptor_into_the_StoreController_Class"></a>
-#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>Aufgabe 2: Einfügen eines neuen Code-Interceptors in die StoreController-Klasse
+#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>Aufgabe 2: Einfügen eines neuen Code Interceptors in die StoreController-Klasse
 
-In dieser Aufgabe Sie einen neuen benutzerdefinierten Filter hinzufügen, in die StoreController-Klasse und führen Sie die Projektmappe, um zu überprüfen, wie beide Filter zusammenarbeiten.
+In dieser Aufgabe fügen Sie einen neuen benutzerdefinierten Filter in die StoreController-Klasse ein und führen die Projekt Mappe aus, um zu überprüfen, wie beide Filter zusammenarbeiten.
 
-1. Öffnen der **StoreController** Klasse befindet sich am **MvcMusicStore\Controllers** , und fügen Sie den neuen benutzerdefinierten Filter **MyNewCustomActionFilter** in  **StoreController** Klasse wie im folgenden Code gezeigt wird.
+1. Öffnen Sie die **StoreController** -Klasse unter **mvcmusicstore\controllers** , und fügen Sie den neuen benutzerdefinierten Filter **mynewcustomaktionfilter** in die **StoreController** -Klasse ein, wie im folgenden Code gezeigt.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample10.cs)]
-2. Führen Sie nun die Anwendung aus, um zu sehen, wie diese zwei benutzerdefinierte Aktionsfilter. Drücken Sie die zu diesem Zweck **F5** und warten, bis die Anwendung gestartet wird.
-3. Navigieren Sie zu **/ActionLog** Anfangszustand des Protokoll-Ansicht angezeigt.
+2. Führen Sie nun die Anwendung aus, um zu sehen, wie diese beiden benutzerdefinierten Aktionsfilter funktionieren. Drücken Sie dazu **F5** , und warten Sie, bis die Anwendung gestartet wird.
+3. Navigieren Sie zu **/ActionLog** , um den Anfangszustand der Protokoll Ansicht anzuzeigen.
 
-    ![Protokollstatus Tracker vor der Aktivität "Seite"](aspnet-mvc-4-custom-action-filters/_static/image5.png "Tracker-Status vor der Aktivität \"Seite\" Protokollieren")
+    ![Protokoll verfolgungsstatus vor Seiten Aktivität](aspnet-mvc-4-custom-action-filters/_static/image5.png "Protokoll verfolgungsstatus vor Seiten Aktivität")
 
-    *Log-Tracker-Status vor der Aktivität "Seite"*
-4. Klicken Sie auf eines der **Genres** aus dem Menü und führen Sie einige Aktionen, wie das Durchsuchen eines Albums verfügbaren.
-5. Überprüfen Sie, ob dieses Mal; Ihre Besuche zweimal nachverfolgt wurden: Nachdem für jede der benutzerdefinierten Aktionsfilter, die Sie in hinzugefügt haben die **"storagecontroller"** Klasse.
+    *Protokoll verfolgungsstatus vor Seiten Aktivität*
+4. Klicken Sie im Menü auf eines der **Genres** , und führen Sie dort einige Aktionen aus, z. b. Durchsuchen eines verfügbaren Albums.
+5. Überprüfen Sie dieses Mal. Ihre Besuche wurden zweimal nachverfolgt: einmal für jeden benutzerdefinierten Aktionsfilter, den Sie in der **storagecontroller** -Klasse hinzugefügt haben.
 
-    ![Aktionsprotokoll mit Aktivität protokolliert](aspnet-mvc-4-custom-action-filters/_static/image6.png "Aktionsprotokoll mit Aktivität protokolliert")
+    ![Aktionsprotokoll mit protokollierter Aktivität](aspnet-mvc-4-custom-action-filters/_static/image6.png "Aktionsprotokoll mit protokollierter Aktivität")
 
-    *Aktionsprotokoll mit Aktivität protokolliert*
+    *Aktionsprotokoll mit protokollierter Aktivität*
 6. Schließen Sie den Browser.
 
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_Managing_Filter_Ordering"></a>
-#### <a name="task-3-managing-filter-ordering"></a>Aufgabe 3: Verwalten die Reihenfolge der Filter
+#### <a name="task-3-managing-filter-ordering"></a>Aufgabe 3: Verwalten der Filter Reihenfolge
 
-In dieser Aufgabe lernen Sie, wie Sie die Ausführungsreihenfolge der Filter zu verwalten, indem Sie mit der Order-Eigenschaft.
+In dieser Aufgabe erfahren Sie, wie Sie die Ausführungsreihenfolge der Filter mithilfe der Eigenschaft Order verwalten.
 
-1. Öffnen der **StoreController** Klasse befindet sich am **MvcMusicStore\Controllers** , und geben Sie die **Reihenfolge** -Eigenschaft in beide Filter wie wie unten gezeigt.
+1. Öffnen Sie die **StoreController** -Klasse unter **mvcmusicstore\controllers** , und geben Sie die **Order** -Eigenschaft in beiden Filtern an, wie unten gezeigt.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample11.cs)]
-2. Überprüfen Sie, wie die Filter ausgeführt werden, abhängig von der Order-Eigenschaft-Wert. Sie finden, das den Filter mit dem kleinsten Wert der Bestellung (**"customactionfilter"**) ist der erste, der ausgeführt wird. Drücken Sie **F5** und warten, bis die Anwendung gestartet wird.
-3. Navigieren Sie zu **/ActionLog** Anfangszustand des Protokoll-Ansicht angezeigt.
+2. Überprüfen Sie nun, wie die Filter ausgeführt werden, abhängig vom Wert der Order-Eigenschaft. Sie werden feststellen, dass der Filter mit dem kleinsten Bestellwert (**customaktionfilter**) der erste ist, der ausgeführt wird. Drücken Sie **F5** , und warten Sie, bis die Anwendung gestartet wird.
+3. Navigieren Sie zu **/ActionLog** , um den Anfangszustand der Protokoll Ansicht anzuzeigen.
 
-    ![Protokollstatus Tracker vor der Aktivität "Seite"](aspnet-mvc-4-custom-action-filters/_static/image7.png "Tracker-Status vor der Aktivität \"Seite\" Protokollieren")
+    ![Protokoll verfolgungsstatus vor Seiten Aktivität](aspnet-mvc-4-custom-action-filters/_static/image7.png "Protokoll verfolgungsstatus vor Seiten Aktivität")
 
-    *Log-Tracker-Status vor der Aktivität "Seite"*
-4. Klicken Sie auf eines der **Genres** aus dem Menü und führen Sie einige Aktionen, wie das Durchsuchen eines Albums verfügbaren.
-5. Überprüfen Sie, dass dieses Mal Ihre Besuche nachverfolgt wurden, sortiert nach der Filter den Wert: **"Customactionfilter"** Protokolle erste.
+    *Protokoll verfolgungsstatus vor Seiten Aktivität*
+4. Klicken Sie im Menü auf eines der **Genres** , und führen Sie dort einige Aktionen aus, z. b. Durchsuchen eines verfügbaren Albums.
+5. Überprüfen Sie, ob die Besuche dieses Zeitraums nachverfolgt wurden, geordnet nach dem Reihenfolge Wert der Filter: **customaktionfilter** Logs.
 
-    ![Aktionsprotokoll mit Aktivität protokolliert](aspnet-mvc-4-custom-action-filters/_static/image8.png "Aktionsprotokoll mit Aktivität protokolliert")
+    ![Aktionsprotokoll mit protokollierter Aktivität](aspnet-mvc-4-custom-action-filters/_static/image8.png "Aktionsprotokoll mit protokollierter Aktivität")
 
-    *Aktionsprotokoll mit Aktivität protokolliert*
-6. Jetzt Sie die Filter den Wert zu aktualisieren und überprüfen Sie, wie die Protokollierung Reihenfolge ändert. In der **StoreController** Klasse, zum Aktualisieren der Filterliste Reihenfolgenwert wie unten gezeigt.
+    *Aktionsprotokoll mit protokollierter Aktivität*
+6. Nun aktualisieren Sie den Reihenfolge Wert der Filter und überprüfen, wie sich die Protokollierungs Reihenfolge ändert. Aktualisieren Sie in der **StoreController** -Klasse den Wert für die Reihenfolge der Filter, wie unten gezeigt.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample12.cs)]
-7. Die Anwendung erneut ausführen, durch Drücken von **F5**.
-8. Klicken Sie auf eines der **Genres** aus dem Menü und führen Sie einige Aktionen, wie das Durchsuchen eines Albums verfügbaren.
-9. Überprüfen Sie, dass dieses Mal die Protokolle, indem erstellt **MyNewCustomActionFilter** Filter wird zuerst angezeigt.
+7. Führen Sie die Anwendung erneut aus, indem Sie **F5**drücken.
+8. Klicken Sie im Menü auf eines der **Genres** , und führen Sie dort einige Aktionen aus, z. b. Durchsuchen eines verfügbaren Albums.
+9. Überprüfen Sie, ob die vom **mynewcustomaktionfilter** -Filter erstellten Protokolle zuerst angezeigt werden.
 
-    ![Aktionsprotokoll mit Aktivität protokolliert](aspnet-mvc-4-custom-action-filters/_static/image9.png "Aktionsprotokoll mit Aktivität protokolliert")
+    ![Aktionsprotokoll mit protokollierter Aktivität](aspnet-mvc-4-custom-action-filters/_static/image9.png "Aktionsprotokoll mit protokollierter Aktivität")
 
-    *Aktionsprotokoll mit Aktivität protokolliert*
+    *Aktionsprotokoll mit protokollierter Aktivität*
 
 <a id="Ex2Task4"></a>
 
 <a id="Task_4_Registering_Filters_Globally"></a>
-#### <a name="task-4-registering-filters-globally"></a>Aufgabe 4: Globale Filter registrieren
+#### <a name="task-4-registering-filters-globally"></a>Aufgabe 4: globales Registrieren von Filtern
 
-In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu registrieren (**MyNewCustomActionFilter**) als globalen Filter. Auf diese Weise wird es über alle Aktionen in der Anwendung und nicht nur in der StoreController werden wie in der vorherigen Aufgabe ausgelöst werden.
+In dieser Aufgabe aktualisieren Sie die Projekt Mappe so, dass der neue Filter (**mynewcustomaktionfilter**) als globaler Filter registriert wird. Auf diese Weise wird Sie von allen Aktionen ausgelöst, die in der Anwendung ausgeführt werden, und nicht nur in den StoreController-Anwendungen, wie Sie in der vorherigen Aufgabe ausgeführt wurden.
 
-1. In **StoreController** -Klasse, entfernen Sie **[MyNewCustomActionFilter]** Attribut und der Order-Eigenschaft von **["customactionfilter"]**. Es sollte wie folgt aussehen:
+1. Entfernen Sie in der **StoreController** -Klasse das Attribut **[mynewcustomaktionfilter]** und die Order-Eigenschaft von **[customaktionfilter]** . Dieser sollte wie folgt aussehen:
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
-2. Open **"Global.asax"** Datei, und suchen Sie die **Anwendung\_starten** Methode. Beachten Sie, dass es sich bei jedem Start der Anwendung es wird der globalen Filter registrieren, durch den Aufruf **RegisterGlobalFilters** -Methode im **FilterConfig** Klasse.
+2. Öffnen Sie die Datei **Global. asax** , und suchen Sie die **Anwendung\_Start** -Methode. Beachten Sie, dass jedes Mal, wenn die Anwendung gestartet wird, die globalen Filter durch Aufrufen der **registerglobalfilters** -Methode innerhalb der Klasse **FilterConfig** registriert werden.
 
-    ![Registrieren globale Filter in "Global.asax"](aspnet-mvc-4-custom-action-filters/_static/image10.png "registrieren globaler Filter in \"Global.asax\"")
+    ![Registrieren globaler Filter in "Global. asax"](aspnet-mvc-4-custom-action-filters/_static/image10.png "Registrieren globaler Filter in "Global. asax"")
 
-    *Registrieren globale Filter in "Global.asax"*
-3. Open **"FilterConfig.cs"** in Datei **App\_starten** Ordner.
-4. Fügen Sie einen Verweis auf System.Web.Mvc verwenden; Verwenden von MvcMusicStore.Filters; Namespace.
+    *Registrieren globaler Filter in "Global. asax"*
+3. Öffnen Sie die Datei **FilterConfig.cs** im **App-\_Ordner Start** .
+4. Fügen Sie mithilfe von System. Web. MVC; einen Verweis auf hinzu. Verwenden von mvcmusicstore. Filters; Namespace.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample14.cs)]
-5. Update **RegisterGlobalFilters** Methode, die Ihren benutzerdefinierten Filter hinzufügen. Zu diesem Zweck fügen Sie den hervorgehobenen Code hinzu:
+5. Aktualisieren der **registerglobalfilters** -Methode hinzufügen des benutzerdefinierten Filters. Fügen Sie zu diesem Zweck den hervorgehobenen Code hinzu:
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample15.cs)]
 6. Drücken Sie **F5**, um die Anwendung auszuführen.
-7. Klicken Sie auf eines der **Genres** aus dem Menü und führen Sie einige Aktionen, wie das Durchsuchen eines Albums verfügbaren.
-8. Überprüfen Sie, die jetzt **[MyNewCustomActionFilter]** wird auch im HomeController und ActionLogController eingefügt wird.
+7. Klicken Sie im Menü auf eines der **Genres** , und führen Sie dort einige Aktionen aus, z. b. Durchsuchen eines verfügbaren Albums.
+8. Überprüfen Sie, ob jetzt **[mynewcustomaktionfilter]** in HomeController und aktionlogcontroller eingefügt wird.
 
-    ![Aktionsprotokoll mit Aktivität protokolliert](aspnet-mvc-4-custom-action-filters/_static/image11.png "Aktionsprotokoll mit Aktivität protokolliert")
+    ![Aktionsprotokoll mit protokollierter Aktivität](aspnet-mvc-4-custom-action-filters/_static/image11.png "Aktionsprotokoll mit protokollierter Aktivität")
 
-    *Aktionsprotokoll mit globale Aktivität protokolliert*
+    *Aktionsprotokoll mit protokollierter globaler Aktivität*
 
 > [!NOTE]
-> Darüber hinaus können Sie diese Anwendung für Windows Azure-Websites Folgendes bereitstellen [Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy](#AppendixB).
+> Außerdem können Sie diese Anwendung in Windows Azure-Websites bereitstellen, [indem Sie Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web deploy verwenden](#AppendixB).
 
 ---
 
@@ -357,229 +357,229 @@ In dieser Aufgabe aktualisieren Sie die Projektmappe, um den neuen Filter zu reg
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-Von dieser praktischen Übungseinheit haben Sie gelernt einen Aktionsfilter zum Ausführen von benutzerdefinierter Aktionen zu erweitern. Sie haben auch gelernt, Filter an, die Ihre Seite Controller einzufügen. Es wurden die folgenden Begriffe verwendet:
+Durch die Durchführung dieses praktischen Labs haben Sie gelernt, wie Sie einen Aktionsfilter zum Ausführen von benutzerdefinierten Aktionen erweitern. Sie haben auch gelernt, wie Sie einen beliebigen Filter an Ihre Seiten Controller einfügen. Die folgenden Konzepte wurden verwendet:
 
-- Vorgehensweise: Erstellen von benutzerdefinierten Aktionsfiltern mit der ASP.NET MVC ActionFilterAttribute-Klasse
-- Gewusst wie: Filtern in ASP.NET MVC-Controller einfügen
-- So verwalten Sie Filter zu sortieren, mit der Order-Eigenschaft
-- Vorgehensweise: Filter Global registrieren
+- Erstellen von benutzerdefinierten Aktions Filtern mit der ASP.NET MVC Action Filter Attribute-Klasse
+- Einfügen von Filtern in ASP.NET-MVC-Controller
+- Verwalten der Filter Reihenfolge mit der Order-Eigenschaft
+- Globales Registrieren von Filtern
 
 <a id="AppendixA"></a>
 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
-## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für Web
+## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für das Web
 
-Sie installieren können **Microsoft Visual Studio Express 2012 für Web** oder einem anderen &quot;Express&quot; Version verwenden, die **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. Die folgenden Anweisungen führen Sie über die erforderlichen Schritte zum Installieren *Visual Studio Express 2012 für Web* mit *Microsoft Web Platform Installer*.
+Sie können **Microsoft Visual Studio Express 2012 für Web** oder eine andere &quot;Express&quot; Version mit dem **[Microsoft-Webplattform-Installer](https://www.microsoft.com/web/downloads/platform.aspx)** installieren. Die folgenden Anweisungen führen Sie durch die Schritte, die zum Installieren *von Visual Studio Express 2012 für Web* mithilfe von *Microsoft-Webplattform-Installer*erforderlich sind.
 
-1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Auch wenn Sie bereits Webplattform-Installer installiert haben, können Sie öffnen ihn, und suchen Sie nach dem Produkt &quot; <em>Visual Studio Express 2012 für das Web mit Windows Azure SDK</em>&quot;.
-2. Klicken Sie auf **jetzt installieren**. Wenn Sie keine **Webplattform-Installer** gelangen Sie zum Herunterladen und installieren Sie diese zuerst.
-3. Einmal **Webplattform-Installer** geöffnet ist, klicken Sie auf **installieren** um das Setup zu starten.
+1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Wenn Sie den Webplattform-Installer bereits installiert haben, können Sie ihn auch öffnen und nach dem Produkt &quot;<em>Visual Studio Express 2012 für das Web mit dem Windows Azure SDK</em>&quot;suchen.
+2. Klicken Sie auf **jetzt installieren**. Wenn Sie nicht über einen **Webplattform-Installer** verfügen, werden Sie umgeleitet, um Sie zuerst herunterzuladen und zu installieren.
+3. Nachdem der **Webplattform-Installer** geöffnet ist, klicken Sie auf **Installieren** , um das Setup zu starten.
 
     ![Installieren von Visual Studio Express](aspnet-mvc-4-custom-action-filters/_static/image12.png "Installieren von Visual Studio Express")
 
     *Installieren von Visual Studio Express*
-4. Lesen Sie die Produkte Lizenzen und Begriffe, und klicken Sie auf **akzeptieren** um den Vorgang fortzusetzen.
+4. Lesen Sie die Lizenzbedingungen für alle Produkte, und klicken Sie auf **ich** Stimme zu, um fortzufahren.
 
     ![Akzeptieren der Lizenzbedingungen](aspnet-mvc-4-custom-action-filters/_static/image13.png)
 
     *Akzeptieren der Lizenzbedingungen*
-5. Warten Sie, bis der Prozess zum Herunterladen und die Installation abgeschlossen ist.
+5. Warten Sie, bis der Download-und Installationsvorgang abgeschlossen ist.
 
     ![Installationsstatus](aspnet-mvc-4-custom-action-filters/_static/image14.png)
 
-    *Installationsstatus*
-6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig stellen**.
+    *Installationsfortschritt*
+6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig**stellen.
 
-    ![Die Installation wurde abgeschlossen](aspnet-mvc-4-custom-action-filters/_static/image15.png)
+    ![Installation abgeschlossen](aspnet-mvc-4-custom-action-filters/_static/image15.png)
 
-    *Die Installation wurde abgeschlossen*
-7. Klicken Sie auf **beenden** Webplattform-Installer zu schließen.
-8. Um Visual Studio Express für Web zu öffnen, wechseln Sie zu der **starten** schreiben zu starten und Bildschirm &quot; **VS Express**&quot;, klicken Sie dann auf die **Visual Studio Express für Web** die Kachel.
+    *Installation abgeschlossen*
+7. Klicken Sie zum Schließen des Webplattform-Installers auf **Beenden** .
+8. Um Visual Studio Express für das Web zu öffnen, navigieren Sie zum **Start** Bildschirm, und beginnen Sie mit dem Schreiben &quot;**vs Express**&quot;und klicken Sie dann auf die Kachel **vs Express für Web** .
 
-    ![Visual Studio Express für Web-Kachel](aspnet-mvc-4-custom-action-filters/_static/image16.png)
+    ![VS Express für Web-Kachel](aspnet-mvc-4-custom-action-filters/_static/image16.png)
 
-    *Visual Studio Express für Web-Kachel*
+    *VS Express für Web-Kachel*
 
 <a id="AppendixB"></a>
 
 <a id="Appendix_B_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy
+## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Anhang B: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web deploy
 
-In diesem Anhang wird veranschaulicht, wie erstellen eine neue Website aus dem Windows Azure-Verwaltungsportal, und Veröffentlichen der Anwendung, die Sie erhalten haben, indem der testumgebung können die Nutzung der Web Deploy-publishing-Funktion von Windows Azure bereitgestellte.
+In diesem Anhang wird gezeigt, wie Sie eine neue Website aus dem Windows Azure-Verwaltungsportal erstellen und die Anwendung veröffentlichen, die Sie durch die folgenden Schritte abgerufen haben. nutzen Sie dabei die von Windows Azure bereitgestellte Funktion zur Web deploy Veröffentlichung.
 
 <a id="ApxBTask1"></a>
 
 <a id="Task_1_-_Creating_a_New_Web_Site_from_the_Windows_Azure_Portal"></a>
-#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a>Aufgabe 1: Erstellen einer neuen Website aus dem Windows Azure-Portal
+#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a>Aufgabe 1: Erstellen einer neuen Website über das Windows Azure-Portal
 
-1. Wechseln Sie zu der [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet.
+1. Wechseln Sie zum [Windows Azure-Verwaltungsportal](https://manage.windowsazure.com/) und melden Sie sich mit den Microsoft-Anmelde Informationen an, die Ihrem Abonnement zugeordnet sind.
 
     > [!NOTE]
-    > Mit Windows Azure können Sie 10 ASP.NET-Websites kostenlos hosten und dann zu skalieren, wenn Ihr Datenverkehr zunimmt. Sie können registrieren [hier](https://aka.ms/aspnet-hol-azure).
+    > Mit Windows Azure können Sie 10 ASP.NET Websites kostenlos hosten und dann skalieren, wenn Ihr Datenverkehr zunimmt. Sie können sich [hier](https://aka.ms/aspnet-hol-azure)registrieren.
 
-    ![Melden Sie sich bei Windows Azure-Portal](aspnet-mvc-4-custom-action-filters/_static/image17.png "melden Sie sich bei Windows Azure-Portal")
+    ![Anmelden bei Windows Azure-Portal](aspnet-mvc-4-custom-action-filters/_static/image17.png "Anmelden bei Windows Azure-Portal")
 
-    *Melden Sie sich bei Windows Azure-Verwaltungsportal*
-2. Klicken Sie auf **neu** auf der Befehlsleiste.
+    *Anmelden bei Windows Azure Verwaltungsportal*
+2. Klicken Sie in der Befehlsleiste auf **neu** .
 
     ![Erstellen einer neuen Website](aspnet-mvc-4-custom-action-filters/_static/image18.png "Erstellen einer neuen Website")
 
     *Erstellen einer neuen Website*
-3. Klicken Sie auf **Compute** | **Website**. Wählen Sie dann **Schnellerfassung** Option. Geben Sie eine verfügbare URL für die neue Website, und klicken Sie auf **Website erstellen**.
+3. Klicken Sie auf **Compute** - | **Website**. Wählen Sie dann **schneller** Fassung aus. Geben Sie eine verfügbare URL für die neue Website an, und klicken Sie auf **Website erstellen**.
 
     > [!NOTE]
-    > Ein Windows Azure-Website ist der Host für eine Webanwendung, die in der Cloud, die Sie steuern und verwalten können. Die Option "Schnellerfassung" können Sie eine vollständige Webanwendung auf dem Windows Azure-Website von außerhalb des Portals bereitstellen. Er umfasst keine Informationen zum Einrichten einer Datenbank.
+    > Eine Windows Azure-Website ist der Host für eine Webanwendung, die in der Cloud ausgeführt wird und die Sie steuern und verwalten können. Mit der Option schneller Fassung können Sie eine abgeschlossene Webanwendung von außerhalb des Portals auf der Windows Azure-Website bereitstellen. Sie enthält keine Schritte zum Einrichten einer Datenbank.
 
-    ![Erstellen einer neuen Website mithilfe der Schnellerfassung](aspnet-mvc-4-custom-action-filters/_static/image19.png "Erstellen einer neuen Website mithilfe der Schnellerfassung")
+    ![Erstellen einer neuen Website mithilfe der schneller Fassung](aspnet-mvc-4-custom-action-filters/_static/image19.png "Erstellen einer neuen Website mithilfe der schneller Fassung")
 
-    *Erstellen einer neuen Website mithilfe der Schnellerfassung*
-4. Warten Sie, bis die neue **Website** erstellt wird.
-5. Nachdem die Website erstellt wurde, klicken Sie auf den Link unter der **URL** Spalte. Überprüfen Sie, dass die neue Website ausgeführt wird.
+    *Erstellen einer neuen Website mithilfe der schneller Fassung*
+4. Warten Sie, bis die neue **Website** erstellt wurde.
+5. Nachdem die Website erstellt wurde, klicken Sie auf den Link unter der **URL** -Spalte. Überprüfen Sie, ob die neue Website funktioniert.
 
-    ![Navigieren zu der neuen Website](aspnet-mvc-4-custom-action-filters/_static/image20.png "auf die neue Website durchsuchen")
+    ![Navigieren zur neuen Website](aspnet-mvc-4-custom-action-filters/_static/image20.png "Navigieren zur neuen Website")
 
-    *Um die neue Website durchsuchen*
+    *Navigieren zur neuen Website*
 
-    ![Website](aspnet-mvc-4-custom-action-filters/_static/image21.png "Website ausgeführt wird")
+    ![Website wird ausgeführt](aspnet-mvc-4-custom-action-filters/_static/image21.png "Website wird ausgeführt")
 
-    *Die Website ausgeführt wird*
-6. Wechseln Sie zurück zum Portal, und klicken Sie auf den Namen der Website unter der **Namen** Spalte die Verwaltungsseiten angezeigt.
+    *Website wird ausgeführt*
+6. Wechseln Sie zurück zum Portal, und klicken Sie in der Spalte **Name** auf den Namen der Website, um die Verwaltungs Seiten anzuzeigen.
 
-    ![Öffnen die Website-Verwaltungsseiten](aspnet-mvc-4-custom-action-filters/_static/image22.png "öffnen die Website-Verwaltungsseiten")
+    ![Öffnen der Website-Verwaltungs Seiten](aspnet-mvc-4-custom-action-filters/_static/image22.png "Öffnen der Website-Verwaltungs Seiten")
 
-    *Öffnen die Website-Verwaltungsseiten*
-7. In der **Dashboard** Seite die **Blick** auf die **Veröffentlichungsprofil herunterladen** Link.
+    *Öffnen der Website-Verwaltungs Seiten*
+7. Klicken Sie auf der Seite **Dashboard** im Abschnitt **kurzer Blick** auf den Link **Veröffentlichungs Profil herunterladen** .
 
     > [!NOTE]
-    > Die *Veröffentlichungsprofil* enthält alle Informationen zum Veröffentlichen einer Webanwendung in einer Windows Azure-Website für die einzelnen aktivierten Veröffentlichungsmethoden erforderlich sind. Das Veröffentlichungsprofil enthält die URLs, Benutzeranmeldeinformationen und datenbankzeichenfolgen, die zum Herstellen einer Verbindung mit und die Authentifizierung bei jedem der Endpunkte für die eine Veröffentlichungsmethode aktiviert ist. **Microsoft WebMatrix 2**, **Microsoft Visual Studio Express für Web** und **Microsoft Visual Studio 2012** Unterstützung, die beim Lesen von veröffentlichungsprofilen Automatisieren der Konfiguration von diesen Programmen Veröffentlichung von Webanwendungen in Windows Azure-Websites.
+    > Das *Veröffentlichungs Profil* enthält alle Informationen, die zum Veröffentlichen einer Webanwendung auf einer Windows Azure-Website für die einzelnen aktivierten Veröffentlichungs Methoden erforderlich sind. Das Veröffentlichungs Profil enthält die URLs, Benutzer Anmelde Informationen und Daten Bank Zeichenfolgen, die erforderlich sind, um eine Verbindung mit den einzelnen Endpunkten herzustellen und diese zu authentifizieren, für die eine Veröffentlichungs Methode aktiviert ist. **Microsoft webmatrix 2**, **Microsoft Visual Studio Express für Web** und **Microsoft Visual Studio 2012** unterstützen das Lesen von Veröffentlichungs Profilen, um die Konfiguration dieser Programme für das Veröffentlichen von Webanwendungen auf Windows Azure-Websites zu automatisieren.
 
-    ![Herunterladen der Website-Veröffentlichungsprofil](aspnet-mvc-4-custom-action-filters/_static/image23.png "herunterladen den Website-Veröffentlichungsprofil")
+    ![Das Website-Veröffentlichungs Profil wird heruntergeladen.](aspnet-mvc-4-custom-action-filters/_static/image23.png "Das Website-Veröffentlichungs Profil wird heruntergeladen.")
 
-    *Herunterladen der Website-Veröffentlichungsprofil*
-8. Laden Sie das Veröffentlichungsprofil an einem bekannten Speicherort herunter. In dieser Übung wird weiter wie Sie diese Datei verwenden, um das Veröffentlichen einer Webanwendung auf einem Windows Azure-Websites in Visual Studio angezeigt.
+    *Das Website-Veröffentlichungs Profil wird heruntergeladen.*
+8. Laden Sie die Veröffentlichungs Profil Datei an einen bekannten Speicherort herunter. In dieser Übung erfahren Sie, wie Sie diese Datei zum Veröffentlichen einer Webanwendung auf Windows Azure-Websites in Visual Studio verwenden.
 
-    ![Speichern das Veröffentlichungsprofil](aspnet-mvc-4-custom-action-filters/_static/image24.png "speichern das Veröffentlichungsprofil")
+    ![Die Veröffentlichungs Profil Datei wird gespeichert.](aspnet-mvc-4-custom-action-filters/_static/image24.png "Das Veröffentlichungs Profil wird gespeichert.")
 
-    *Speichern das Veröffentlichungsprofil*
+    *Die Veröffentlichungs Profil Datei wird gespeichert.*
 
 <a id="ApxBTask2"></a>
 
 <a id="Task_2_-_Configuring_the_Database_Server"></a>
-#### <a name="task-2---configuring-the-database-server"></a>Aufgabe 2: Konfigurieren des Datenbank-Servers
+#### <a name="task-2---configuring-the-database-server"></a>Aufgabe 2: Konfigurieren des Datenbankservers
 
-Wenn Ihre Anwendung nutzt SQL Server Datenbanken, die Sie zum Erstellen eines SQL-Datenbank-Servers benötigen. Wenn zum Bereitstellen einer einfachen Anwendung, die keine SQL Server verwendet werden sollen, können Sie diese Aufgabe überspringen.
+Wenn Ihre Anwendung SQL Server Datenbanken nutzt, müssen Sie einen SQL-Daten Bank Server erstellen. Wenn Sie eine einfache Anwendung bereitstellen möchten, die SQL Server nicht verwendet, können Sie diese Aufgabe überspringen.
 
-1. Sie benötigen einen SQL-Datenbank-Server zum Speichern der Datenbank. Sehen Sie die SQL-Datenbank-Server aus Ihrem Abonnement in das Windows Azure-Verwaltungsportal unter **Sql-Datenbanken** | **Server** | **des Servers Dashboard**. Wenn Sie nicht mit eine Server-Instanz verfügen, können Sie erstellen, mithilfe der **hinzufügen** auf der Befehlsleiste auf die Schaltfläche. Notieren Sie sich die **Servername und -URL, Administrator-Anmeldenamen und Kennwort**, wie Sie sie in den nächsten Aufgaben verwenden. Erstellen Sie die Datenbank nicht noch, wie es in einem späteren Zeitpunkt erstellt wird.
+1. Sie benötigen einen SQL-Datenbankserver zum Speichern der Anwendungsdatenbank. Sie können die SQL-Datenbankserver aus Ihrem Abonnement im Windows Azure-Verwaltungs Portal unter **SQL-Datenbanken** | **Server** | **Dashboard des Servers**anzeigen. Wenn Sie keinen Server erstellt haben, können Sie ihn mithilfe der Schaltfläche **Hinzufügen** auf der Befehlsleiste erstellen. Notieren Sie sich den **Servernamen und die URL, den Administrator Anmelde Namen und das Kennwort**, da Sie Sie in den nächsten Aufgaben verwenden werden. Erstellen Sie die Datenbank noch nicht, da Sie in einer späteren Phase erstellt wird.
 
-    ![SQL Server-Datenbank-Dashboard](aspnet-mvc-4-custom-action-filters/_static/image25.png "Dashboard der SQL-Datenbank-Server")
+    ![Dashboard des SQL-Datenbankservers](aspnet-mvc-4-custom-action-filters/_static/image25.png "Dashboard des SQL-Datenbankservers")
 
-    *SQL Server-Datenbank-Dashboard*
-2. In der nächsten Aufgabe testen Sie die Verbindung mit der Datenbank, in Visual Studio aus diesem Grund Sie Ihre lokale IP-Adresse in der Liste des Servers der einschließen müssen **zulässige IP-Adressen**. Zu diesem Zweck klicken Sie auf **konfigurieren**, wählen Sie die IP-Adresse von **Current Client IP Address** und fügen Sie ihn auf die **IP-Startadresse** und **IP-Endadresse** Textfelder, und klicken Sie auf die ![add-client-ip-address-ok-button](aspnet-mvc-4-custom-action-filters/_static/image26.png) Schaltfläche.
+    *Dashboard des SQL-Datenbankservers*
+2. In der nächsten Aufgabe testen Sie die Datenbankverbindung aus Visual Studio. aus diesem Grund müssen Sie Ihre lokale IP-Adresse in die Liste der **zulässigen IP-Adressen**des Servers einschließen. Klicken Sie hierzu auf **Konfigurieren**, wählen Sie die IP-Adresse der **aktuellen Client-IP-Adresse** aus, und fügen Sie Sie in die Textfelder Start-IP- **Adresse** und End- **IP-Adresse** ein, und klicken Sie auf die Schaltfläche ![Add-Client-IP-Address-OK-Button](aspnet-mvc-4-custom-action-filters/_static/image26.png)
 
-    ![Client-IP-Adresse hinzufügen](aspnet-mvc-4-custom-action-filters/_static/image27.png)
+    ![Client-IP-Adresse](aspnet-mvc-4-custom-action-filters/_static/image27.png)
 
-    *Client-IP-Adresse hinzufügen*
-3. Einmal die **Client-IP-Adresse** wird hinzugefügt, um die zulässigen IP-Adressen aufzulisten, klicken Sie auf **speichern** um die Änderungen zu bestätigen.
+    *Client-IP-Adresse*
+3. Sobald die **Client-IP-Adresse** der Liste zulässige IP-Adressen hinzugefügt wurde, klicken Sie auf **Speichern** , um die Änderungen zu bestätigen.
 
-    ![Bestätigen von Änderungen](aspnet-mvc-4-custom-action-filters/_static/image28.png)
+    ![Änderungen bestätigen](aspnet-mvc-4-custom-action-filters/_static/image28.png)
 
-    *Bestätigen von Änderungen*
+    *Änderungen bestätigen*
 
 <a id="ApxBTask3"></a>
 
 <a id="Task_3_-_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Aufgabe 3: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web Deploy
+#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Aufgabe 3: Veröffentlichen einer ASP.NET MVC 4-Anwendung mit Web deploy
 
-1. Wechseln Sie zurück, der ASP.NET MVC 4-Projektmappe. In der **Projektmappen-Explorer**mit der rechten Maustaste auf das Websiteprojekt, und wählen Sie **veröffentlichen**.
+1. Kehren Sie zur ASP.NET MVC 4-Lösung zurück. Klicken Sie im **Projektmappen-Explorer**mit der rechten Maustaste auf das Website Projekt, und wählen Sie **veröffentlichen**aus.
 
     ![Veröffentlichen der Anwendung](aspnet-mvc-4-custom-action-filters/_static/image29.png "Veröffentlichen der Anwendung")
 
     *Veröffentlichen der Website*
-2. Importieren Sie das Veröffentlichungsprofil, die, das Sie in der ersten Aufgabe gespeichert.
+2. Importieren Sie das Veröffentlichungs Profil, das Sie in der ersten Aufgabe gespeichert haben.
 
-    ![Importieren das Veröffentlichungsprofil](aspnet-mvc-4-custom-action-filters/_static/image30.png "Importieren des Veröffentlichungsprofils")
+    ![Importieren des Veröffentlichungs Profils](aspnet-mvc-4-custom-action-filters/_static/image30.png "Importieren des Veröffentlichungs Profils")
 
-    *Importieren Sie das Veröffentlichungsprofil*
-3. Klicken Sie auf **überprüft, ob Verbindung**. Klicken Sie nach Abschluss der Überprüfung auf **Weiter**.
+    *Veröffentlichungs Profil wird importiert.*
+3. Klicken Sie auf **Verbindung**überprüfen. Klicken Sie nach Abschluss der Überprüfung auf **weiter**.
 
     > [!NOTE]
-    > Die Überprüfung ist abgeschlossen, wenn Sie sehen, dass ein grünes Häkchen neben der Schaltfläche "Verbindung überprüfen" angezeigt werden.
+    > Die Überprüfung ist fertiggestellt, sobald ein grünes Häkchen neben der Schaltfläche Verbindung überprüfen angezeigt wird.
 
-    ![Überprüfen der Verbindung](aspnet-mvc-4-custom-action-filters/_static/image31.png "Überprüfen der Verbindung")
+    ![Die Verbindung wird überprüft.](aspnet-mvc-4-custom-action-filters/_static/image31.png "Die Verbindung wird überprüft.")
 
-    *Überprüfen der Verbindung*
-4. In der **Einstellungen** Seite die **Datenbanken** auf die Schaltfläche neben dem Textfeld für die datenbankverbindung (d. h. **DefaultConnection**).
+    *Die Verbindung wird überprüft.*
+4. Klicken Sie auf der Seite **Einstellungen** unter dem Abschnitt **Datenbanken** auf die Schaltfläche neben dem Textfeld der Datenbankverbindung (z. b. **DefaultConnection**).
 
-    ![Web deploy-Konfiguration](aspnet-mvc-4-custom-action-filters/_static/image32.png "Web deploy-Konfiguration")
+    ![Webbereitstellungs Konfiguration](aspnet-mvc-4-custom-action-filters/_static/image32.png "Webbereitstellungs Konfiguration")
 
-    *Web deploy-Konfiguration*
-5. Konfigurieren Sie die Verbindung mit der Datenbank wie folgt:
+    *Webbereitstellungs Konfiguration*
+5. Konfigurieren Sie die Datenbankverbindung wie folgt:
 
-   - In der **Servernamen** Geben Sie Ihre SQL-Datenbankserver URL mit der *Tcp:* Präfix.
-   - In **Benutzernamen** Geben Sie Ihre Server Administrator-Anmeldenamen.
-   - In **Kennwort** Geben Sie Ihre Server Administrator-Anmeldekennwort.
+   - Geben Sie unter **Server Name** die URL des SQL-Datenbankservers unter Verwendung des *TCP:* -Präfix ein.
+   - Geben Sie unter **Benutzername** den Anmelde Namen des Server Administrators ein.
+   - Geben Sie unter **Kennwort** Ihren Server Administrator-Anmelde Kennwort ein.
    - Geben Sie einen neuen Datenbanknamen ein.
 
-     ![Konfigurieren von Ziel-Verbindungszeichenfolge](aspnet-mvc-4-custom-action-filters/_static/image33.png "Zielverbindungszeichenfolge konfigurieren")
+     ![Konfigurieren der Ziel Verbindungs Zeichenfolge](aspnet-mvc-4-custom-action-filters/_static/image33.png "Konfigurieren der Ziel Verbindungs Zeichenfolge")
 
-     *Konfigurieren von Ziel-Verbindungszeichenfolge*
-6. Klicken Sie dann auf **OK**. Bei der Aufforderung zum Erstellen der Datenbank auf **Ja**.
+     *Konfigurieren der Ziel Verbindungs Zeichenfolge*
+6. Klicken Sie dann auf **OK**. Wenn Sie zum Erstellen der Datenbank aufgefordert werden, klicken Sie auf **Ja**.
 
-    ![Erstellen der Datenbank](aspnet-mvc-4-custom-action-filters/_static/image34.png "erstellen die datenbankzeichenfolge")
+    ![Erstellen der Datenbank](aspnet-mvc-4-custom-action-filters/_static/image34.png "Erstellen der Daten Bank Zeichenfolge")
 
     *Erstellen der Datenbank*
-7. Die Verbindungszeichenfolge, die Sie für die Verbindung mit SQL-Datenbank in Windows Azure verwendet werden, ist innerhalb der Verbindungstyp Standard Textfeld angezeigt. Klicken Sie dann auf **Weiter**.
+7. Die Verbindungs Zeichenfolge, die Sie zum Herstellen einer Verbindung mit der SQL-Datenbank in Windows Azure verwenden, wird im Textfeld Standardverbindung angezeigt. Klicken Sie dann auf **Weiter**.
 
-    ![Auf der SQL-Datenbank-Verbindungszeichenfolge](aspnet-mvc-4-custom-action-filters/_static/image35.png "auf SQL-Datenbank-Verbindungszeichenfolge")
+    ![Verbindungs Zeichenfolge mit Verweis auf SQL-Datenbank](aspnet-mvc-4-custom-action-filters/_static/image35.png "Verbindungs Zeichenfolge mit Verweis auf SQL-Datenbank")
 
-    *Auf der SQL-Datenbank-Verbindungszeichenfolge*
-8. In der **Vorschau** auf **veröffentlichen**.
+    *Verbindungs Zeichenfolge mit Verweis auf SQL-Datenbank*
+8. Klicken Sie auf der Seite **Vorschau** auf **veröffentlichen**.
 
     ![Veröffentlichen der Webanwendung](aspnet-mvc-4-custom-action-filters/_static/image36.png "Veröffentlichen der Webanwendung")
 
     *Veröffentlichen der Webanwendung*
-9. Sobald der Veröffentlichungsprozess abgeschlossen ist, öffnet Ihr Standardbrowser die veröffentlichte Website.
+9. Nachdem der Veröffentlichungs Vorgang abgeschlossen ist, wird die veröffentlichte Website in Ihrem Standardbrowser geöffnet.
 
 <a id="AppendixC"></a>
 
 <a id="Appendix_C_Using_Code_Snippets"></a>
-## <a name="appendix-c-using-code-snippets"></a>Anhang C: Verwenden von Codeausschnitten
+## <a name="appendix-c-using-code-snippets"></a>Anhang C: Verwenden von Code Ausschnitten
 
-Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument informiert Sie genau wann sie verwendet werden kann wie in der folgenden Abbildung dargestellt.
+Mit Code Ausschnitten haben Sie den gesamten Code, den Sie benötigen. Im Lab-Dokument werden Sie genau wissen, wann Sie Sie verwenden können, wie in der folgenden Abbildung dargestellt.
 
-![Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt](aspnet-mvc-4-custom-action-filters/_static/image37.png "mithilfe von Visual Studio-Codeausschnitten, die Code in das Projekt einfügen.")
+![Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt](aspnet-mvc-4-custom-action-filters/_static/image37.png "Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt")
 
-*Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
+*Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
+***So fügen Sie einen Code Ausschnitt mithilfe der Tastatur hinzuC# (nur)***
 
-1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
-2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
-3. Beobachten Sie, wie IntelliSense zeigt übereinstimmende Codeausschnitte Namen.
-4. Wählen Sie den richtigen Codeausschnitt (oder halten Sie eingeben, bis die gesamte codeausschnittsnamen ausgewählt ist).
-5. Drücken Sie die Tab-Taste zweimal auf Einfügen des Codeausschnitts an der Cursorposition ein.
+1. Platzieren Sie den Cursor an der Stelle, an der Sie den Code einfügen möchten.
+2. Beginnen Sie mit der Eingabe des Ausschnitt namens (ohne Leerzeichen oder Bindestriche).
+3. Sehen Sie sich an, wie IntelliSense übereinstimmende Code Ausschnitte anzeigt.
+4. Wählen Sie den richtigen Ausschnitt aus (oder geben Sie die Eingabe fort, bis der gesamte Name des Ausschnitts ausgewählt ist).
+5. Drücken Sie zweimal die Tab-Taste, um den Ausschnitt an der Cursorposition einzufügen.
 
-![Geben Sie den Namen des Ausschnitts](aspnet-mvc-4-custom-action-filters/_static/image38.png "Geben Sie den Namen des Ausschnitts")
+![Beginnen Sie mit der Eingabe des Ausschnitt namens.](aspnet-mvc-4-custom-action-filters/_static/image38.png "Beginnen Sie mit der Eingabe des Ausschnitt namens.")
 
-*Geben Sie den Namen des Ausschnitts*
+*Beginnen Sie mit der Eingabe des Ausschnitt namens.*
 
-![Tabstopp drücken, um den hervorgehobenen Codeausschnitt auswählen](aspnet-mvc-4-custom-action-filters/_static/image39.png "Tab drücken, um den hervorgehobenen Codeausschnitt auswählen")
+![Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.](aspnet-mvc-4-custom-action-filters/_static/image39.png "Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.")
 
-*Drücken Sie Tabstopp, um den hervorgehobenen Codeausschnitt auswählen*
+*Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.*
 
-![Drücken Sie die Tabulatortaste erneut, und der Ausschnitt erweitert](aspnet-mvc-4-custom-action-filters/_static/image40.png "drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.")
+![Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.](aspnet-mvc-4-custom-action-filters/_static/image40.png "Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.")
 
-*Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
+*Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+So ***fügen Sie einen Code Ausschnitt mithilfe der Maus hinzuC#(, Visual Basic und XML)*** 1. Klicken Sie mit der rechten Maustaste auf den Ort, an dem Sie den Code Ausschnitt einfügen möchten.
 
-1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
-2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.
+1. Wählen Sie **Ausschnitt einfügen** und dann **meine Code Ausschnitte**aus.
+2. Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.
 
-![Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten](aspnet-mvc-4-custom-action-filters/_static/image41.png "mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten,")
+![Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.](aspnet-mvc-4-custom-action-filters/_static/image41.png "Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.")
 
-*Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten*
+*Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.*
 
-![Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken](aspnet-mvc-4-custom-action-filters/_static/image42.png "die relevante Codeausschnitte in der Liste auswählen, indem Sie darauf klicken")
+![Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.](aspnet-mvc-4-custom-action-filters/_static/image42.png "Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.")
 
-*Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken*
+*Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.*

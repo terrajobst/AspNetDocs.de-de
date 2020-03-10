@@ -9,11 +9,11 @@ ms.assetid: fd2a1c52-d717-44af-8a61-67c8279bb26e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs
 msc.type: authoredcontent
 ms.openlocfilehash: d1e367becd574e31d24fca8545f76b1ed3c4d85e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611748"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446355"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-c"></a>Zulassen von nur bestimmten Zeichen in einem Textfeld (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > ASP.net-Validierungs Steuerelemente können sicherstellen, dass nur bestimmte Zeichen in Benutzereingaben zulässig sind. Dadurch wird jedoch immer noch nicht verhindert, dass Benutzer ungültige Zeichen eingeben und das Formular übermitteln.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 ASP.net-Validierungs Steuerelemente können sicherstellen, dass nur bestimmte Zeichen in Benutzereingaben zulässig sind. Dadurch wird jedoch immer noch nicht verhindert, dass Benutzer ungültige Zeichen eingeben und das Formular übermitteln.
 
@@ -59,4 +59,4 @@ Führen Sie die Seite aus, und versuchen Sie, einen Buchstaben einzugeben, wenn 
 Es können nur Ziffern eingegeben werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](allowing-only-certain-characters-in-a-text-box-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](allowing-only-certain-characters-in-a-text-box-vb.md)
+> [Weiter](allowing-only-certain-characters-in-a-text-box-vb.md)

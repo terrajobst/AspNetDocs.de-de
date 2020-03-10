@@ -9,11 +9,11 @@ ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 6c28cc958a1de9844627ae16175a5aed153993a8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607270"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498057"
 ---
 # <a name="databinding-to-an-accordion-c"></a>Datenbindung an Accordion (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Steuerelement "Accordion" im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht es dem Benutzer, jeweils ein Element anzuzeigen. Panels werden in der Regel auf der Seite selbst deklariert, aber das Binden an eine Datenquelle bietet mehr Flexibilität.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Steuerelement "Accordion" im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht es dem Benutzer, jeweils ein Element anzuzeigen. Panels werden in der Regel auf der Seite selbst deklariert, aber das Binden an eine Datenquelle bietet mehr Flexibilität.
 
@@ -62,4 +62,4 @@ Um dieses Beispiel zu schließen, müssen Sie die beiden CSS-Klassen definieren,
 Die Daten im Akkordeon stammen direkt aus der Datenquelle ([Klicken Sie, um das Bild in voller Größe anzuzeigen](databinding-to-an-accordion-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](dynamically-adding-an-accordion-pane-cs.md)
+> [Weiter](dynamically-adding-an-accordion-pane-cs.md)

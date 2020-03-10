@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/sql-2005/understanding-security-and-network-connectivity
-title: Grundlegendes zur Sicherheit und Netzwerkkonnektivität | Microsoft-Dokumentation
+title: Grundlegendes zur Sicherheit und Netzwerk Konnektivität | Microsoft-Dokumentation
 author: microsoft
-description: SQL Server-Anfänger erfahren, wie Sie SQL Server-Datenbankdateien und SQL Server-Prozesse unterscheiden. Erkunden Sie Szenarien für die Verbindung mit SQL Server-E...
+description: SQL Server Einsteiger lernen, SQL Server Datenbankdateien und SQL Server Prozessen zu unterscheiden. Erkunden Sie die Szenarien für das Herstellen einer Verbindung mit SQL Server E...
 ms.author: riande
 ms.date: 03/20/2006
 ms.assetid: 5a0df3fa-07d9-4762-b9db-1824dcd8a31a
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-security-and-network-connectivity
 msc.type: video
 ms.openlocfilehash: 9f4bf5f0e0658c1fc7e883a0a5544b1f0fc96809
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395627"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440979"
 ---
 # <a name="understanding-security-and-network-connectivity"></a>Grundlegendes zur Sicherheit und Netzwerkkonnektivität
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-SQL Server-Anfänger erfahren, wie Sie SQL Server-Datenbankdateien und SQL Server-Prozesse unterscheiden. Erkunden Sie Szenarien für das Herstellen einer Verbindung mit SQL Server Express-Datenbanken, aktivieren und Deaktivieren von Benutzerinstanzen, Login-Berechtigungen verfügen und andere Sicherheitsmaßnahmen.
+SQL Server Einsteiger lernen, SQL Server Datenbankdateien und SQL Server Prozessen zu unterscheiden. Erkunden Sie die Szenarien für das Herstellen einer Verbindung mit SQL Server Express-Datenbanken, das Aktivieren und Deaktivieren von Benutzer Instanzen, Anmelde Berechtigungen und anderen Sicherheitsvorkehrungen.
 
-[&#9654;Sehen Sie sich Video (40 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-security-and-network-connectivity)
+[&#9654;Video ansehen (40 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-security-and-network-connectivity)
 
 > [!div class="step-by-step"]
 > [Zurück](more-structured-query-language.md)

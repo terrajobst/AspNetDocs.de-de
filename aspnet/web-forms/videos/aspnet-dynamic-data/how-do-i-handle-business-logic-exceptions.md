@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/how-do-i-handle-business-logic-exceptions
-title: Wie führe ich Business Logic-Ausnahmen zu behandeln? | Microsoft-Dokumentation
+title: Gewusst wie behandeln von Geschäftslogik Ausnahmen? | Microsoft-Dokumentation
 author: shanselman
-description: Dieses Video zeigt Ihnen, wie Sie das Datenmodell eine Validierung hinzugefügt wird. Sie werden sehen, wie diese Validierungslogik auf der Benutzeroberfläche angezeigt wird.
+description: In diesem Video wird gezeigt, wie Sie dem Datenmodell eine Validierung hinzufügen. Sie können sehen, wie sich die Validierungs Logik auf der Benutzeroberfläche widerspiegelt.
 ms.author: riande
 ms.date: 05/08/2008
 ms.assetid: f6c73522-4c77-4757-b1af-69f9d1db4fb1
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-handle-business-logic-exceptions
 msc.type: video
 ms.openlocfilehash: 5eb84731714bd181d69a94bbce27993439288d42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381873"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439533"
 ---
-# <a name="how-do-i-handle-business-logic-exceptions"></a>Wie führe ich Business Logic-Ausnahmen zu behandeln?
+# <a name="how-do-i-handle-business-logic-exceptions"></a>Gewusst wie behandeln von Geschäftslogik Ausnahmen?
 
-durch [Scott Hanselman](https://github.com/shanselman)
+von [Scott Hanselman](https://github.com/shanselman)
 
-Dieses Video zeigt Ihnen, wie Sie das Datenmodell eine Validierung hinzugefügt wird. Sie werden sehen, wie diese Validierungslogik auf der Benutzeroberfläche angezeigt wird.
+In diesem Video wird gezeigt, wie Sie dem Datenmodell eine Validierung hinzufügen. Sie können sehen, wie sich die Validierungs Logik auf der Benutzeroberfläche widerspiegelt.
 
-[&#9654;Sehen Sie sich Video (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-handle-business-logic-exceptions)
+[&#9654;Video ansehen (5 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-handle-business-logic-exceptions)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-change-how-my-fields-render.md)

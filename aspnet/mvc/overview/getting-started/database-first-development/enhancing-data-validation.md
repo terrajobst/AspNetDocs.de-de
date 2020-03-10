@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/enhancing-data-validation
-title: 'Tutorial: Optimieren der datenüberprüfung für EF Database First mit ASP.NET MVC-app'
-description: Dieses Tutorial konzentriert sich auf das Hinzufügen von datenanmerkungen in das Datenmodell, geben Sie die überprüfungsanforderungen zu erfüllen und Formatierung anzeigen.
+title: 'Tutorial: verbessern der Datenüberprüfung für EF-Database First mit ASP.NET MVC-App'
+description: Dieses Tutorial konzentriert sich auf das Hinzufügen von Daten Anmerkungen zum Datenmodell, um Validierungsanforderungen anzugeben und die Formatierung anzuzeigen.
 author: Rick-Anderson
 ms.author: riande
 ms.date: 01/28/2019
@@ -10,100 +10,100 @@ ms.assetid: 0ed5e67a-34c0-4b57-84a6-802b0fb3cd00
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
 ms.openlocfilehash: 897cd7c6a40445e2a4abede50d81e101372d3233
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039867"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499533"
 ---
-# <a name="tutorial-enhance-data-validation-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Optimieren der datenüberprüfung für EF Database First mit ASP.NET MVC-app
+# <a name="tutorial-enhance-data-validation-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: verbessern der Datenüberprüfung für EF-Database First mit ASP.NET MVC-App
 
-Verwenden MVC, Entity Framework und ASP.NET-Gerüstbau, können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. Dieser tutorialreihe erfahren Sie, wie Sie automatisch generierter Code, der ermöglicht Benutzern das anzeigen, bearbeiten, erstellen und Löschen von Daten, die in einer Datenbanktabelle gespeichert. Der generierte Code entspricht die Spalten in der Datenbanktabelle.
+Mithilfe von MVC, Entity Framework und ASP.net-Gerüstbau können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. In dieser tutorialreihe wird gezeigt, wie Sie automatisch Code generieren, mit dem Benutzerdaten in einer Datenbanktabelle anzeigen, bearbeiten, erstellen und löschen können. Der generierte Code entspricht den Spalten in der Datenbanktabelle.
 
-Dieses Tutorial konzentriert sich auf das Hinzufügen von datenanmerkungen in das Datenmodell, geben Sie die überprüfungsanforderungen zu erfüllen und Formatierung anzeigen. Es wurde basierend auf dem Feedback von Benutzern im Abschnitt "Kommentare" verbessert.
+Dieses Tutorial konzentriert sich auf das Hinzufügen von Daten Anmerkungen zum Datenmodell, um Validierungsanforderungen anzugeben und die Formatierung anzuzeigen. Es wurde auf der Grundlage von Feedback von Benutzern im Abschnitt "Kommentare" verbessert.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
-> * Hinzufügen von datenanmerkungen
-> * Hinzufügen von Metadatenklassen
+> * Hinzufügen von Daten Anmerkungen
+> * Metadatenklassen hinzufügen
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 * [Anpassen einer Ansicht](customizing-a-view.md)
 
-## <a name="add-data-annotations"></a>Hinzufügen von datenanmerkungen
+## <a name="add-data-annotations"></a>Hinzufügen von Daten Anmerkungen
 
-In einem vorhergehenden Thema haben Sie gesehen, gelten einige Regeln für die datenvalidierung automatisch auf die Benutzereingabe. Beispielsweise können Sie nur eine Zahl für die Eigenschaft auf Unternehmensniveau bereitstellen. Um weitere Regeln für die datenvalidierung anzugeben, können Sie Ihrer Modellklasse datenanmerkungen hinzufügen. Diese Anmerkungen werden in Ihre Webanwendung für die angegebene Eigenschaft angewendet. Sie können auch Formatierungsattribute anwenden, die sich ändern, wie die Eigenschaften angezeigt werden; z. B. das Ändern des Werts, der für Symboltitel verwendet.
+Wie Sie in einem früheren Thema gesehen haben, werden einige Daten Validierungsregeln automatisch auf die Benutzereingabe angewendet. Sie können z. b. nur eine Zahl für die Grade-Eigenschaft angeben. Wenn Sie weitere Daten Validierungsregeln angeben möchten, können Sie Ihrer Modell Klasse Daten Anmerkungen hinzufügen. Diese Anmerkungen werden in der gesamten Webanwendung für die angegebene Eigenschaft angewendet. Sie können auch Formatierungs Attribute anwenden, die die Anzeige der Eigenschaften ändern. beispielsweise, indem Sie den für Text Bezeichnungen verwendeten Wert ändern.
 
-In diesem Tutorial fügen Sie datenanmerkungen, um die Länge der die Werte für die FirstName, MiddleName und LastName-Eigenschaften zu beschränken. In der Datenbank sind diese Werte auf 50 Zeichen begrenzt. Allerdings wird in der Webanwendung, zeichenbeschränkung derzeit nicht erzwungen. Wenn ein Benutzer mehr als 50 Zeichen für einen dieser Werte bereitstellt, stürzt die Seite beim Versuch, den Wert in der Datenbank speichern. Sie werden auch auf Unternehmensniveau mit Werten zwischen 0 und 4 einschränken.
+In diesem Tutorial fügen Sie Daten Anmerkungen hinzu, um die Länge der für die Eigenschaften FirstName, LastName und MiddleName angegebenen Werte einzuschränken. In der-Datenbank sind diese Werte auf 50 Zeichen beschränkt. in Ihrer Webanwendung wird diese Zeichen Beschränkung jedoch zurzeit nicht erzwungen. Wenn ein Benutzer mehr als 50 Zeichen für einen dieser Werte bereitstellt, stürzt die Seite ab, wenn versucht wird, den Wert in der Datenbank zu speichern. Außerdem wird Grade auf Werte zwischen 0 und 4 beschränkt.
 
-Wählen Sie **Modelle** > **ContosoModel.edmx** > **ContosoModel.tt** , und öffnen Sie die *Student.cs* Datei. Fügen Sie folgenden hervorgehobenen Code zur Klasse hinzu.
+Wählen Sie Modelle ** > "** ** > "** , und öffnen Sie die Datei *Student.cs* . Fügen Sie der-Klasse den folgenden markierten Code hinzu.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample1.cs?highlight=5,15,17,20)]
 
-Open *Enrollment.cs* und fügen Sie folgenden hervorgehobenen Code hinzu.
+Öffnen Sie *Enrollment.cs* , und fügen Sie den folgenden hervorgehobenen Code hinzu.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample2.cs?highlight=5,10)]
 
 Erstellen Sie die Projektmappe.
 
-Klicken Sie auf **Liste der Studenten** , und wählen Sie **bearbeiten**. Wenn Sie versuchen, mehr als 50 Zeichen eingeben, wird eine Fehlermeldung angezeigt.
+Klicken Sie auf **Liste von Schülern** und dann auf **Bearbeiten**. Wenn Sie versuchen, mehr als 50 Zeichen einzugeben, wird eine Fehlermeldung angezeigt.
 
-![Anzeigen der Fehlermeldung](enhancing-data-validation/_static/image1.png)
+![Fehlermeldung anzeigen](enhancing-data-validation/_static/image1.png)
 
-Wechseln Sie zurück zur Startseite. Klicken Sie auf **Liste der Registrierungen** , und wählen Sie **bearbeiten**. Versucht eine Grade-Eigenschaft über 4 bereitzustellen. Sie erhalten diesen Fehler: *Das Feld muss auf Unternehmensniveau zwischen 0 und 4 liegen.*
+Kehren Sie zur Startseite zurück. Klicken Sie auf **Liste der Registrierungen** , und wählen Sie **Bearbeiten**aus. Versuchen Sie, eine Stufe oberhalb von 4 bereitzustellen. Dieser Fehler wird *angezeigt: die Feld Qualität muss zwischen 0 und 4 liegen.*
 
-## <a name="add-metadata-classes"></a>Hinzufügen von Metadatenklassen
+## <a name="add-metadata-classes"></a>Metadatenklassen hinzufügen
 
-Die Validierungsattribute direkt an die Modellklasse hinzufügen funktioniert, wenn Sie nicht, dass die erwarten zu ändernde Datenbank; aber wenn Ihre Datenbank geändert wird und Sie die Model-Klasse zu generieren müssen, verlieren alle Attribute Sie, die Sie auf die die Model-Klasse angewendet wurde. Dieser Ansatz kann sehr ineffizient und anfällig für Verlust wichtiger Validierungsregeln sein.
+Das direkte Hinzufügen der Validierungs Attribute zur Modell Klasse funktioniert, wenn Sie nicht erwarten, dass die Datenbank geändert wird. Wenn sich die Datenbank jedoch ändert und Sie die Modell Klasse neu generieren müssen, verlieren Sie alle Attribute, die Sie auf die Modell Klasse angewendet haben. Diese Vorgehensweise kann sehr ineffizient sein und den Verlust wichtiger Validierungsregeln anfällig machen.
 
-Um dieses Problem zu vermeiden, können Sie eine Metadatenklasse hinzufügen, die die Attribute enthält. Wenn Sie die Model-Klasse, auf die Metadatenklasse zuordnen, werden diese Attribute für das Modell angewendet. Bei diesem Ansatz kann die Model-Klasse erneut generiert werden, ohne zu verlieren alle Attribute, die auf die Metadatenklasse angewendet wurden.
+Um dieses Problem zu vermeiden, können Sie eine Metadatenklasse hinzufügen, die die Attribute enthält. Wenn Sie die Modell Klasse der Metadatenklasse zuordnen, werden diese Attribute auf das Modell angewendet. Bei diesem Ansatz kann die Modell Klasse neu generiert werden, ohne alle Attribute zu verlieren, die auf die Metadatenklasse angewendet wurden.
 
-In der **Modelle** Ordner, fügen Sie eine Klasse, die mit dem Namen *Metadata.cs*.
+Fügen Sie im Ordner **Models** eine Klasse mit dem Namen *Metadata.cs*hinzu.
 
 Ersetzen Sie den Code in *Metadata.cs* durch den folgenden Code.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample3.cs)]
 
-Diese Metadatenklassen enthalten alle die Validierungsattribute, die Sie zuvor für die Modellklassen angewendet wurden. Die **Anzeige** Attribut zum Ändern des Werts, der für Symboltitel verwendet werden.
+Diese Metadatenklassen enthalten alle Validierungs Attribute, die Sie zuvor auf die Modellklassen angewendet haben. Das **Anzeige** Attribut wird verwendet, um den für Text Bezeichnungen verwendeten Wert zu ändern.
 
-Nun müssen Sie die ViewModel-Klassen mit den Metadatenklassen zuordnen.
+Nun müssen Sie die Modellklassen den Metadatenklassen zuordnen.
 
-In der **Modelle** Ordner, fügen Sie eine Klasse, die mit dem Namen *PartialClasses.cs*.
+Fügen Sie im Ordner **Models** eine Klasse mit dem Namen *PartialClasses.cs*hinzu.
 
-Ersetzen Sie den Inhalt der Datei mit dem folgenden Code ein.
+Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample4.cs)]
 
-Beachten Sie, die jede Klasse, als markiert ist eine `partial` -Klasse, und jedes entspricht dem Namen und Namespace wie die Klasse, die automatisch generiert wird. Das Metadatenattribut auf der partiellen Klasse anwenden, stellen Sie sicher, dass die Attribute für die datenvalidierung der automatisch generierte Klasse angewendet werden. Diese Attribute werden nicht verloren, wenn Sie die ViewModel-Klassen neu generieren, da das Attribut von Metadaten in partiellen Klassen angewendet wird, die nicht erneut generiert werden.
+Beachten Sie, dass jede Klasse als `partial` Klasse gekennzeichnet ist und jeweils mit dem Namen und Namespace der Klasse übereinstimmt, die automatisch generiert wird. Durch Anwenden des metadatenattributs auf die partielle Klasse stellen Sie sicher, dass die Daten Validierungs Attribute auf die automatisch generierte Klasse angewendet werden. Diese Attribute gehen nicht verloren, wenn Sie die Modellklassen neu generieren, da das Metadatenattribut in partiellen Klassen angewendet wird, die nicht erneut generiert werden.
 
-Um die automatisch generierte Klassen neu generieren, öffnen Sie die *ContosoModel.edmx* Datei. Wieder mit der rechten Maustaste auf die Entwurfsoberfläche, und wählen **Modell aus der Datenbank aktualisieren**. Auch wenn Sie die Datenbank nicht geändert haben, wird dieser Prozess die Klassen neu generieren. In der **aktualisieren** Registerkarte **Tabellen** und **Fertig stellen**.
+Zum erneuten Generieren der automatisch generierten Klassen öffnen Sie die Datei " *\tosomodel. edmx* ". Klicken Sie erneut mit der rechten Maustaste auf die Entwurfs Oberfläche, und wählen Sie **Modell aus Datenbank aktualisieren aus**. Obwohl Sie die Datenbank nicht geändert haben, werden die Klassen durch diesen Prozess neu generiert. Wählen Sie auf der Registerkarte **Aktualisieren** die Option **Tabellen** und **Fertig**stellen aus.
 
-Speichern Sie die *ContosoModel.edmx* Datei, die die Änderungen zu übernehmen.
+Speichern Sie *die Datei "* %% amp; quot;", um die Änderungen zu übernehmen.
 
-Öffnen der *Student.cs* Datei oder das *Enrollment.cs* -Datei, und beachten Sie, dass die Validierung zuvor angewendeten Attribute nicht mehr in der Datei. Allerdings wird führen Sie die Anwendung aus, und beachten Sie, dass die Validierungsregeln immer noch angewendet werden, wenn Sie Daten eingeben.
+Öffnen Sie die Datei *Student.cs* oder *Enrollment.cs* , und beachten Sie, dass sich die zuvor angewendeten Daten Validierungs Attribute nicht mehr in der Datei befinden. Führen Sie die Anwendung jedoch aus, und beachten Sie, dass die Validierungsregeln weiterhin angewendet werden, wenn Sie Daten eingeben.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-Diese Reihe bereitgestellt, ein einfaches Beispiel dafür, wie zum Generieren von Code aus einer vorhandenen Datenbank, in dem Benutzer bearbeiten, aktualisieren, erstellen und Löschen von Daten. Er verwendet ASP.NET MVC 5, Entity Framework und ASP.NET Scaffolding zum Erstellen des Projekts. 
+Diese Reihe bietet ein einfaches Beispiel für das Generieren von Code aus einer vorhandenen Datenbank, die es Benutzern ermöglicht, Daten zu bearbeiten, zu aktualisieren, zu erstellen und zu löschen. Zum Erstellen des Projekts wurden ASP.NET MVC 5, Entity Framework und ASP.net Gerüstbau verwendet. 
 
-Ein einführendes Beispiel Code First-Entwicklung, finden Sie unter [erste Schritte mit ASP.NET MVC 5](../introduction/getting-started.md). 
+Ein Einführ Endes Beispiel für Code First Entwicklung finden Sie unter [Getting Started with ASP.NET MVC 5](../introduction/getting-started.md). 
 
-Ein komplexeres Beispiel, finden Sie unter [erstellen ein Entity Framework-Datenmodells für eine ASP.NET MVC 4-App](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Beachten Sie, dass die DbContext-API, mit denen Sie für die Arbeit mit Daten in der ersten Datenbank identisch mit der API Sie verwenden für die Arbeit mit Daten in Code First. Auch wenn Sie Database First verwenden möchten, erhalten Sie wie Sie die Verarbeitung komplexerer Szenarien wie z. B. das Lesen und aktualisieren die zugehörige Daten, Behandlung von nebenläufigkeitskonflikten führen, und so weiter aus einem Code First-Lernprogramm. Der einzige Unterschied besteht im wie die Datenbank, die Context-Klasse und die Entitätsklassen erstellt werden.
+Ein erweitertes Beispiel finden Sie unter [Erstellen eines Entity Framework-Datenmodells für eine ASP.NET MVC 4-APP](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Beachten Sie, dass die dbcontext-API, die Sie für die Arbeit mit Daten in Database First verwenden, mit der API identisch ist, die Sie zum Arbeiten mit Daten in Code First verwenden. Auch wenn Sie Database First verwenden möchten, können Sie erfahren, wie komplexere Szenarien behandelt werden, z. b. das Lesen und aktualisieren verwandter Daten, das Behandeln von Parallelitäts Konflikten usw. aus einem Code First Tutorial. Der einzige Unterschied besteht darin, wie die Datenbank-, Kontext Klassen-und Entitäts Klassen erstellt werden.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-Eine vollständige Liste von datenanmerkungen Überprüfung können Sie auf Eigenschaften und Klassen anwenden, finden Sie unter [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx).
+Eine vollständige Liste der Daten Validierungs Anmerkungen, die Sie auf Eigenschaften und Klassen anwenden können, finden Sie unter [System. ComponentModel. DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx).
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
-> * Hinzugefügt von datenanmerkungen
-> * Hinzugefügte Metadatenklassen
+> * Hinzugefügte Daten Anmerkungen
+> * Metadatenklassen hinzugefügt
 
-Um zu erfahren, wie Sie eine Web-app und SQL-Datenbank in Azure App Service bereitstellen, finden Sie im Tutorial:
+Informationen zum Bereitstellen einer Web-App und einer SQL-Datenbank für Azure App Service finden Sie in diesem Tutorial:
 > [!div class="nextstepaction"]
-> [Bereitstellen einer .NET-App in Azure App Service](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase/)
+> [Bereitstellen einer .net-App für Azure App Service](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase/)

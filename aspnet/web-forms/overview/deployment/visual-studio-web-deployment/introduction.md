@@ -9,11 +9,11 @@ ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
 ms.openlocfilehash: 96dd31d949633e001fc595621bedbf74e98000fc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640235"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521757"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Einführung
 
@@ -31,7 +31,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Dieser Inhalt ist auch als kostenloses e-book in [der TechNet-e-book-Galerie](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#ASPNETWebDeploymentusingVisualStudio)verfügbar.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Diese Tutorials führen Sie durch die Bereitstellung einer ASP.NET-Webanwendung, die SQL Server Datenbanken umfasst. Sie werden zuerst in IIS auf Ihrem lokalen Entwicklungs Computer bereitstellen, um Sie zu testen, und dann zu Web-Apps in Azure App Service und Azure SQL-Datenbank für Staging und Produktion. Sie erfahren, wie Sie die Bereitstellung mithilfe von Visual Studio One-Click Publish durchzuführen, und Sie sehen, wie Sie die Bereitstellung über die Befehlszeile durchzuführen.
 
@@ -39,7 +39,7 @@ Die Anzahl der Tutorials macht den Bereitstellungs Prozess möglicherweise ersch
 
 Die Lernprogramme sind so konzipiert, dass Sie nacheinander ausgeführt werden, und jeder Teil basiert auf dem vorherigen Teil. Sie können Teile überspringen, die für Ihre Situation nicht relevant sind, aber Sie müssen die Verfahren möglicherweise in späteren Tutorials anpassen.
 
-## <a name="intended-audience"></a>Beabsichtigte Zielgruppe
+## <a name="intended-audience"></a>Zielpublikum
 
 Die Tutorials richten sich an ASP.NET-Entwickler, die in Umgebungen arbeiten, in denen Folgendes gilt:
 
@@ -49,7 +49,7 @@ Die Tutorials richten sich an ASP.NET-Entwickler, die in Umgebungen arbeiten, in
 Die Bereitstellung aus der [Quell](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md) Code Verwaltung mithilfe eines [Continuous Delivery](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) Prozesses wird in diesen Tutorials nicht behandelt, mit Ausnahme eines Tutorials, in dem die Bereitstellung über die Befehlszeile veranschaulicht wird. Weitere Informationen zu Continuous Delivery finden Sie in den folgenden Ressourcen:
 
 - [Continuous Integration und Continuous Delivery (entwickeln realer Cloud-apps mit Windows Azure)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [Bereitstellen einer Web-App in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
+- [Bereitstellen von Web-Apps in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - Bereitstellen von [Webanwendungen in Unternehmens Szenarios](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) (eine ältere Reihe von Tutorials, die für Visual Studio 2010 geschrieben wurden und dennoch nützliche Informationen für Unternehmensumgebungen haben.)
 
 ## <a name="using-a-third-party-hosting-provider"></a>Verwenden eines Drittanbieter-hostinganbieters
@@ -110,13 +110,13 @@ Kommentare zu den Tutorials sind willkommen, und wenn das Tutorial aktualisiert 
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Dieses Tutorial wurde für die folgenden Produkte geschrieben:
 
 - Windows 8 oder Windows 7.
 - Visual Studio 2012 oder Visual Studio 2012 Express für Web mit [dem neuesten Update](https://go.microsoft.com/fwlink/?LinkId=272486).
-- [Azure SDK für Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkId=254364)
+- [Azure SDK für Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkId=254364)
 
 Sie können das Tutorial mithilfe von Visual Studio 2010 SP1 oder Visual Studio 2013 befolgen, aber einige Bildschirmfotos unterscheiden sich, und einige Features unterscheiden sich.
 
@@ -159,8 +159,8 @@ Führen Sie die folgenden Schritte aus, um das Projekt für die Arbeit mit den L
 
     1. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Projekt Mappe, und klicken Sie dann auf **nuget-Pakete für**Projekt Mappe verwalten.
     2. Oben im Dialogfeld **nuget-Pakete verwalten** sehen Sie, dass in **dieser Projekt Mappe einige nuget-Pakete fehlen. Klicken Sie zum Wiederherstellen.** Klicken Sie auf die Schaltfläche **Restore** .
-    3. Generieren Sie die Projektmappe neu.
-6. Drücken Sie STRG+F5, um die Anwendung auszuführen.
+    3. Erstellen Sie die Projektmappe neu.
+6. Drücken Sie STRG + F5, um die Anwendung auszuführen.
 
     Die Anwendung wird auf der Startseite der Configuration Manager-Website geöffnet.
 
@@ -193,9 +193,9 @@ Die folgenden Funktionen der Anwendung wirken sich darauf aus, wie Sie Sie berei
 - Die Anwendung enthält einige Einstellungen, die in der bereitgestellten *Web. config* -Datei in Abhängigkeit von der Zielumgebung (Test, Staging oder Produktion) und anderen Einstellungen, die je nach Buildkonfiguration geändert werden müssen, geändert werden müssen (Debug oder Release).
 - Die Visual Studio-Projekt Mappe enthält ein Klassen Bibliotheksprojekt. Nur die Assembly, die von diesem Projekt generiert wird, sollte bereitgestellt werden, nicht das Projekt selbst.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem ersten Tutorial der Reihe haben Sie das Visual Studio-Beispiel Projekt heruntergeladen und die Website Features überprüft, die sich auf die Bereitstellung der Anwendung auswirken. In den folgenden Tutorials bereiten Sie sich auf die Bereitstellung vor, indem Sie einige dieser Aktionen einrichten, die automatisch verarbeitet werden sollen. Andere, die Sie manuell erledigen.
 
 > [!div class="step-by-step"]
-> [Nächste](preparing-databases.md)
+> [Weiter](preparing-databases.md)

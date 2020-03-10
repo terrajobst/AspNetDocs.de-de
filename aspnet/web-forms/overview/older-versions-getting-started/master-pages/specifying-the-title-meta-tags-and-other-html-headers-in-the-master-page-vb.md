@@ -9,11 +9,11 @@ ms.assetid: ea8196f5-039d-43ec-8447-8997ad4d3900
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 160af664cdf27f9ede1273aaf915da749a39ad48
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637729"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522489"
 ---
 # <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>Angeben des Titels, der META-Tags und anderer HTML-Header auf der Masterseite (VB)
 
@@ -139,7 +139,7 @@ Wir müssen nun die ASP.NET-Seiten auf unserer Website aktualisieren, sodass Sie
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample7.vb)]
 
-Bis:
+Nach:
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample8.vb)]
 
@@ -276,13 +276,13 @@ Der obige Code fügt der `<head>` Region das `<meta>` Keywords-Element hinzu, da
 > [!NOTE]
 > Um beliebiges Markup hinzuzufügen, erstellen Sie eine [`LiteralControl`](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx) Instanz, legen Sie die `Text`-Eigenschaft fest, und fügen Sie Sie dann der `Controls` Auflistung des `Header`hinzu.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir eine Vielzahl von Möglichkeiten zum Hinzufügen von `<head>` Regions Markup auf seitenweise erläutert. Eine Master Seite sollte eine `HtmlHead` Instanz (`<head runat="server">`) mit einem contentplachalter enthalten. Die `HtmlHead`-Instanz ermöglicht Inhaltsseiten den programmgesteuerten Zugriff auf den `<head>` Bereich und die deklarative und programmgesteuerte Festlegung des Seitentitels. Das contentplachalter-Steuerelement ermöglicht, dass benutzerdefiniertes Markup dem `<head>` Abschnitt deklarativ über ein Inhalts Steuerelement hinzugefügt werden kann.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -293,7 +293,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Verwenden der ListView-und DataPager-Steuerelemente von ASP.NET 3.5](http://aspnet.4guysfromrolla.com/articles/122607-1.aspx)
 - [Verwenden einer benutzerdefinierten Basisklasse für Code Behind-Klassen Ihrer ASP.net Pages](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

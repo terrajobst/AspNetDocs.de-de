@@ -1,123 +1,123 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
-title: Bereitstellen von Datenbankrollenmitgliedschaften in Testumgebungen | Microsoft-Dokumentation
+title: Bereitstellen von Daten bankrollen Mitgliedschaften in Test Umgebungen | Microsoft-Dokumentation
 author: jrjlee
-description: Dieses Thema beschreibt, wie Sie Benutzerkonten, Datenbankrollen, die als Teil einer Bereitstellung in einer testumgebung hinzufügen. Beim Bereitstellen einer Lösung mit...
+description: In diesem Thema wird beschrieben, wie Sie Benutzerkonten zu Daten bankrollen als Teil einer Lösungs Bereitstellung in einer Testumgebung hinzufügen. Beim Bereitstellen einer Projekt Mappe, die...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 9b2af539-7ad9-47aa-b66e-873bd9906e79
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
 ms.openlocfilehash: a15f5bf5f659d151e91ef9e53c5ad55bcd8e2b01
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130410"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474945"
 ---
 # <a name="deploying-database-role-memberships-to-test-environments"></a>Bereitstellen von Datenbankrollenmitgliedschaften in Testumgebungen
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Dieses Thema beschreibt, wie Sie Benutzerkonten, Datenbankrollen, die als Teil einer Bereitstellung in einer testumgebung hinzufügen.
+> In diesem Thema wird beschrieben, wie Sie Benutzerkonten zu Daten bankrollen als Teil einer Lösungs Bereitstellung in einer Testumgebung hinzufügen.
 > 
-> Wenn Sie eine Projektmappe mit einem Datenbankprojekt in einer Umgebung Staging- oder produktionsumgebung bereitstellen, möchten Sie nicht in der Regel den Entwickler das Hinzufügen von Benutzerkonten, Datenbankrollen zu automatisieren. Klicken Sie in den meisten Fällen der Entwickler weiß nicht, welche Benutzerkonten müssen die Datenbankrollen hinzugefügt werden, und diese Anforderungen können sich jederzeit ändern. Beim Bereitstellen einer Projektmappe mit einem Datenbankprojekt eine Entwicklungs- oder testumgebung, unterscheidet sich jedoch die Situation in der Regel Recht:
+> Wenn Sie eine Lösung mit einem Datenbankprojekt in einer Staging-oder Produktionsumgebung bereitstellen, möchten Sie in der Regel nicht, dass Entwickler das Hinzufügen von Benutzerkonten zu Daten bankrollen automatisieren. In den meisten Fällen weiß der Entwickler nicht, welche Benutzerkonten zu welchen Daten bankrollen hinzugefügt werden müssen, und diese Anforderungen können sich jederzeit ändern. Wenn Sie jedoch eine Lösung bereitstellen, die ein Datenbankprojekt in einer Entwicklungs-oder Testumgebung enthält, ist die Situation in der Regel eher anders:
 > 
-> - Der Entwickler bereitgestellt erneut Lösung, in der Regel in regelmäßigen Abständen, häufig mehrere Male pro Tag.
-> - Die Datenbank wird in der Regel bei jeder Bereitstellung, neu erstellt das bedeutet, dass der Datenbankbenutzer erstellt und nach jeder Bereitstellung Rollen hinzugefügt werden müssen.
-> - Der Entwickler hat in der Regel Vollzugriff auf die zielumgebung für Entwicklungs- oder testumgebung.
+> - Der Entwickler stellt die Lösung normalerweise regelmäßig mehrmals täglich wieder her.
+> - Die Datenbank wird in der Regel bei jeder Bereitstellung neu erstellt. Dies bedeutet, dass Datenbankbenutzer erstellt und nach jeder Bereitstellung Rollen hinzugefügt werden müssen.
+> - Der Entwickler verfügt in der Regel über vollständige Kontrolle über die zielentwicklungs-oder Testumgebung.
 > 
-> In diesem Szenario ist es oft vorteilhaft, automatisch erstellen von Datenbankbenutzern und Zuweisen von Datenbank-Rollenmitgliedschaften im Rahmen des Bereitstellungsprozesses.
+> In diesem Szenario ist es häufig vorteilhaft, Datenbankbenutzer automatisch zu erstellen und im Rahmen des Bereitstellungs Prozesses Daten bankrollen Mitgliedschaften zuzuweisen.
 > 
-> Der wichtigste Faktor ist, dass dieser Vorgang bedingte werden basierend auf der zielumgebung muss. Wenn Sie in ein Staging- oder in einer produktionsumgebung bereitstellen möchten, möchten Sie den Vorgang zu überspringen. Wenn Sie für einen Entwickler bereitstellen oder testumgebung, möchten Sie Rollenmitgliedschaften ohne weiteren Eingriff bereitstellen. Dieses Thema beschreibt eine Möglichkeit, die Sie verwenden können, um diese Herausforderungen zu meistern.
+> Der Hauptfaktor ist, dass dieser Vorgang abhängig von der Zielumgebung bedingt sein muss. Wenn Sie in einer Staging-oder Produktionsumgebung bereitstellen, möchten Sie den Vorgang überspringen. Wenn Sie in einer Entwicklungs-oder Testumgebung bereitstellen, möchten Sie die Rollen Mitgliedschaften ohne weiteren Eingriff bereitstellen. In diesem Thema wird ein Ansatz beschrieben, mit dem Sie diese Herausforderung meistern können.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-Die Methode für die Bereitstellung das Kernstück des in diesen Tutorials basiert auf den geteilten Projekt Dateiansatz beschrieben, die [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), in dem der Buildprozess durch gesteuert wird zwei Projektdateien&#x2014;enthält Erstellen Sie die Anweisungen, die für jede zielumgebung, und enthält umgebungsspezifische Build & Deployment-Einstellungen gelten. Zur Erstellungszeit wird die umgebungsspezifischen-Projektdatei in die Unabhängigkeit von der Umgebung Projektdatei, um einen vollständigen Satz von einrichtungsanweisungen bilden zusammengeführt.
+Die Bereitstellungs Methode im Kern dieser Tutorials basiert auf dem Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz, in dem der Buildprozess von zwei Projektdateien&#x2014;gesteuert wird, die Buildanweisungen enthalten, die für jede Zielumgebung gelten, und eine mit Umgebungs spezifischen Build-und Bereitstellungs Einstellungen. Zum Zeitpunkt der Erstellung wird die Umgebungs spezifische Projektdatei in der Umgebungs unabhängigen Projektdatei zusammengeführt, um einen kompletten Satz von Buildanweisungen zu bilden.
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-In diesem Thema wird vorausgesetzt, dass:
+In diesem Thema wird Folgendes vorausgesetzt:
 
-- Verwenden Sie den Split-Projekt-Datei-Ansatz für die Bereitstellung der Lösung, wie in beschrieben [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md).
-- Rufen Sie VSDBCMD aus der Projektdatei, um das Datenbankprojekt bereitstellen wie in beschrieben [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
+- Sie verwenden den Ansatz zum Aufteilen von Projektdateien für die Lösungs Bereitstellung, wie in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschrieben.
+- Sie können VSDBCmd aus der Projektdatei abrufen, um das Datenbankprojekt bereitzustellen, wie Untergrund Legendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md)beschrieben.
 
-Zum Erstellen von Datenbankbenutzern und Rollenmitgliedschaften zuweisen, wenn Sie ein Datenbankprojekt in einer testumgebung bereitstellen, müssen Sie Folgendes ausführen:
+Wenn Sie Datenbankbenutzer erstellen und Rollen Mitgliedschaften zuweisen möchten, wenn Sie ein Datenbankprojekt in einer Testumgebung bereitstellen, müssen Sie folgende Schritte ausführen:
 
-- Erstellen Sie ein Transact Structured Query Language (Transact-SQL)-Skript, das die notwendige Änderungen vorgenommen.
-- Erstellen Sie ein Ziel von Microsoft Build Engine (MSBuild), die das Hilfsprogramm sqlcmd.exe verwendet, um das SQL-Skript auszuführen.
-- Konfigurieren Sie Ihre Projektdateien, um das Ziel aufgerufen wird, wenn Sie Ihre Lösung in einer testumgebung bereitstellen.
+- Erstellen Sie ein Transact-strukturierte Abfragesprache-Skript (Transact-SQL), das die erforderlichen Daten Bank Änderungen vornimmt.
+- Erstellen Sie ein Microsoft-Build-Engine-Ziel (MSBuild), das das sqlcmd. exe-Hilfsprogramm zum Ausführen des SQL-Skripts verwendet.
+- Konfigurieren Sie die Projektdateien, um das Ziel beim Bereitstellen der Projekt Mappe in einer Testumgebung aufzurufen.
 
-In diesem Thema werden Sie zum Durchführen dieser Verfahren erläutert.
+In diesem Thema wird gezeigt, wie Sie die einzelnen Prozeduren ausführen.
 
-## <a name="scripting-the-database-role-memberships"></a>Die Mitgliedschaften in Datenbankrollen-Skripterstellung
+## <a name="scripting-the-database-role-memberships"></a>Skripterstellung für die Daten bankrollen Mitgliedschaften
 
-Können Sie ein Transact-SQL-Skript in viele verschiedene Arten erstellen, und wählen Sie in einem beliebigen Speicherort. Der einfachste Ansatz ist die Erstellung des Skripts innerhalb der Projektmappe in Visual Studio 2010.
+Sie können ein Transact-SQL-Skript auf viele verschiedene Arten erstellen und an jedem beliebigen Ort auswählen. Der einfachste Ansatz besteht darin, das Skript in der Projekt Mappe in Visual Studio 2010 zu erstellen.
 
-**Erstellen eines SQL-Skripts**
+**So erstellen Sie ein SQL-Skript**
 
-1. In der **Projektmappen-Explorer** Fenster, erweitern Sie Ihr Datenbankprojekt-Knoten.
-2. Mit der rechten Maustaste die **Skripts** Ordner, zeigen Sie auf **hinzufügen**, und klicken Sie dann auf **neuer Ordner**.
-3. Typ **Test** als Name des Ordners aus, und drücken Sie dann die EINGABETASTE.
-4. Mit der rechten Maustaste die **Test** Ordner, zeigen Sie auf **hinzufügen**, und klicken Sie dann auf **Skript**.
-5. In der **neues Element hinzufügen** Dialogfeld gewähren Sie Ihr Skript einen aussagekräftigen Namen (z. B. **AddRoleMemberships.sql**), und klicken Sie dann auf **hinzufügen**.
+1. Erweitern Sie im Fenster **Projektmappen-Explorer** den Knoten Datenbankprojekt.
+2. Klicken Sie mit der rechten Maustaste auf den Ordner **Scripts** , zeigen Sie auf **Hinzufügen**, und klicken Sie dann auf **neuer Ordner**
+3. Geben Sie **Test** als Ordnernamen ein, und drücken Sie dann die EINGABETASTE.
+4. Klicken Sie mit der rechten Maustaste auf den Ordner **Test** , zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Skript**.
+5. Geben Sie im Dialogfeld **Neues Element hinzufügen** einen aussagekräftigen Namen (z **. b. addrolemembership. SQL**), und klicken Sie dann auf **Hinzufügen**.
 
     ![](deploying-database-role-memberships-to-test-environments/_static/image1.png)
-6. In der *AddRoleMemberships.sql* hinzufügen Transact-SQL-Anweisungen, die:
+6. Fügen Sie in der Datei *addrolemembership. SQL* folgende Transact-SQL-Anweisungen hinzu:
 
-    1. Erstellen Sie einen Datenbankbenutzer für die SQL Server-Anmeldung, die Ihre Datenbank zugreifen.
-    2. Den Datenbankbenutzer und alle erforderlichen Datenbankrollen hinzugefügt.
-7. Die Datei sollte diesem ähneln:
+    1. Erstellen Sie einen Datenbankbenutzer für den SQL Server Anmelde Namen, der auf Ihre Datenbank zugreift.
+    2. Fügen Sie den Datenbankbenutzer allen erforderlichen Daten bankrollen hinzu.
+7. Die Datei sollte in etwa wie folgt aussehen:
 
     [!code-sql[Main](deploying-database-role-memberships-to-test-environments/samples/sample1.sql)]
-8. Speichern Sie die Datei.
+8. Speichern Sie die Datei .
 
 ## <a name="executing-the-script-on-the-target-database"></a>Ausführen des Skripts in der Zieldatenbank
 
-Im Idealfall würden Sie alle erforderlichen Transact-SQL-Skripts als Teil eines Skripts nach der Bereitstellung ausführen, wenn Sie das Datenbankprojekt bereitstellen. Skripts nach der Bereitstellung nicht allerdings bedingt auf Grundlage Projektmappenkonfigurationen oder Buildeigenschaften Logik ausgeführt werden können. Die Alternative besteht darin, führen Sie die SQL-Skripts direkt von der MSBuild-Projektdatei, durch das Erstellen einer **Ziel** -Element, das ein sqlcmd.exe-Befehl ausgeführt wird. Sie können diesen Befehl verwenden, um Ihr Skript in der Zieldatenbank:
+Im Idealfall würden Sie alle erforderlichen Transact-SQL-Skripts als Teil eines Skripts nach der Bereitstellung ausführen, wenn Sie das Datenbankprojekt bereitstellen. Skripts nach der Bereitstellung ermöglichen es Ihnen jedoch nicht, Logik bedingt auf der Grundlage von Projektmappenkonfigurationen oder Buildeigenschaften auszuführen. Alternativ können Sie die SQL-Skripts direkt aus der MSBuild-Projektdatei ausführen, indem Sie ein **target** -Element erstellen, das einen sqlcmd. exe-Befehl ausführt. Sie können diesen Befehl verwenden, um das Skript in der Zieldatenbank auszuführen:
 
 [!code-console[Main](deploying-database-role-memberships-to-test-environments/samples/sample2.cmd)]
 
 > [!NOTE]
-> Weitere Informationen zu den Sqlcmd-Befehlszeilenoptionen finden Sie unter [Hilfsprogramms "Sqlcmd"](https://msdn.microsoft.com/library/ms162773.aspx).
+> Weitere Informationen zu sqlcmd-Befehlszeilenoptionen finden Sie unter [sqlcmd Utility](https://msdn.microsoft.com/library/ms162773.aspx).
 
-Bevor Sie mit diesem Befehl in einem MSBuild-Ziel einbetten, müssen Sie berücksichtigen, unter welchen Bedingungen das Skript ausgeführt werden sollen:
+Bevor Sie diesen Befehl in ein MSBuild-Ziel einbetten, müssen Sie berücksichtigen, unter welchen Bedingungen das Skript ausgeführt werden soll:
 
-- Die Zieldatenbank muss vorhanden sein, bevor Sie die Rollenmitgliedschaften ändern. Daher müssen Sie zum Ausführen dieses Skripts *nach* der datenbankbereitstellung.
-- Sie müssen eine Bedingung enthalten, sodass das Skript nur für testumgebungen ausgeführt wird.
-- Wenn Sie eine "Was-wäre-wenn"-Bereitstellung ausführen&#x2014;in anderen Worten: Wenn Sie Bereitstellungsskripts generiert sind, aber nicht tatsächlich werden ausgeführt&#x2014;Sie sollte nicht das SQL-Skript ausführen.
+- Die Zieldatenbank muss vorhanden sein, bevor Sie die Rollen Mitgliedschaften ändern. Daher müssen Sie dieses Skript *nach* der Daten Bank Bereitstellung ausführen.
+- Sie müssen eine Bedingung einschließen, damit das Skript nur für Testumgebungen ausgeführt wird.
+- Wenn Sie eine "Was-wäre-wenn"&#x2014;-Bereitstellung mit anderen Worten ausführen, sollten Sie das SQL-Skript nicht&#x2014;ausführen, wenn Sie Bereitstellungs Skripts erstellen, aber nicht ausführen.
 
-Bei Verwendung in beschriebenen Ansatz der geteilten Projekt Datei [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md), wie von der beispiellösung der Contact Manager-veranschaulicht, können Sie die Buildanweisungen für Ihre SQL-Skript folgendermaßen Teilen:
+Wenn Sie den in Grundlegendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md)beschriebenen Ansatz zum Aufteilen von Projektdateien verwenden, können Sie die Buildanweisungen für das SQL-Skript wie folgt aufteilen:
 
-- Alle erforderlichen umgebungsspezifische Eigenschaften zusammen mit der Eigenschaft, die bestimmt, ob Berechtigungen, bereitgestellt in der Projektdatei auf umgebungsspezifische gesendet werden sollen (z. B. *Env-Dev.proj*).
-- Das MSBuild-Ziel, zusammen mit allen Eigenschaften, die nicht zwischen zielumgebungen, ändern in der Projektdatei für die universelle gesendet werden sollen (z. B. *Publish.proj*).
+- Alle erforderlichen Umgebungs spezifischen Eigenschaften und die-Eigenschaft, die bestimmt, ob Berechtigungen bereitgestellt werden sollen, sollten in die Umgebungs spezifische Projektdatei (z. *b. env-dev. proj*) gelangen.
+- Das MSBuild-Ziel selbst und alle Eigenschaften, die sich nicht Zwischenziel Umgebungen ändern, sollten in die universelle Projektdatei (z. b. *Publish. proj*) gelangen.
 
-In der Projektdatei umgebungsspezifische müssen Sie definieren den Namen des Datenbankservers, den Namen der Zieldatenbank und eine boolesche Eigenschaft, die dem Benutzer, die angeben, ob Rollenmitgliedschaften bereitstellen kann.
+In der Umgebungs spezifischen Projektdatei müssen Sie den Namen des Datenbankservers, den Namen der Zieldatenbank und eine boolesche Eigenschaft definieren, mit der der Benutzer angeben kann, ob Rollen Mitgliedschaften bereitgestellt werden sollen.
 
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample3.xml)]
 
-In der Datei universal-Projekt müssen Sie angeben, den Speicherort der ausführbaren Datei "Sqlcmd" und den Speicherort des SQL-Skripts, die Sie ausführen möchten. Diese Eigenschaften bleiben unabhängig von der zielumgebung. Sie müssen außerdem erstellen Sie ein MSBuild-Ziel, um den Sqlcmd-Befehl auszuführen.
+In der universellen Projektdatei müssen Sie den Speicherort der ausführbaren sqlcmd-Datei und den Speicherort des SQL-Skripts angeben, das Sie ausführen möchten. Diese Eigenschaften bleiben unabhängig von der Zielumgebung unverändert. Sie müssen auch ein MSBuild-Ziel erstellen, um den SQLCMD-Befehl auszuführen.
 
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample4.xml)]
 
-Beachten Sie, dass Sie als statische Eigenschaft, die den Speicherort der ausführbaren Datei "Sqlcmd" hinzufügen, wie dies für andere Ziele nützlich sein könnte. Im Gegensatz dazu definieren Sie den Speicherort der Ihr SQL-Skript und die Syntax der Sqlcmd-Befehl als dynamische Eigenschaften in das Ziel, da sie nicht benötigen, bevor das Ziel ausgeführt wird. In diesem Fall die **DeployTestDBPermissions** Ziel wird nur ausgeführt werden, wenn diese Bedingungen erfüllt sind:
+Beachten Sie, dass Sie den Speicherort der ausführbaren Datei sqlcmd als statische Eigenschaft hinzufügen, da dies für andere Ziele nützlich sein könnte. Im Gegensatz dazu definieren Sie den Speicherort des SQL-Skripts und die Syntax des sqlcmd-Befehls als dynamische Eigenschaften innerhalb des Ziels, da Sie vor der Ausführung des Ziels nicht benötigt werden. In diesem Fall wird das Bereitstellungs Ziel " **deploytestdbberechtigungs** " nur ausgeführt, wenn die folgenden Bedingungen erfüllt sind:
 
-- Die **DeployTestDBRoleMemberships** -Eigenschaftensatz auf **"true"**.
-- Der Benutzer wurde nicht angegeben. ein **"WhatIf" = "true"** Flag.
+- Die **deploytestdbrolemembership** -Eigenschaft ist auf **true**festgelegt.
+- Der Benutzer hat kein **WhatIf = true** -Flag angegeben.
 
-Vergessen Sie schließlich nicht, das Ziel aufzurufen. In der *Publish.proj* -Datei, Sie können hierzu durch Hinzufügen des Ziels, um die Liste der Abhängigkeiten für den standardmäßigen **FullPublish** Ziel. Sie müssen sicherstellen, dass die **DeployTestDBPermissions** Ziel wird nicht ausgeführt, bis die **PublishDbPackages** Ziel ausgeführt wurde.
+Vergessen Sie schließlich nicht, das Ziel aufzurufen. In der Datei " *Publish. proj* " können Sie dies tun, indem Sie das Ziel der Abhängigkeits Liste für das standardmäßige **fullpublish** -Ziel hinzufügen. Sie müssen sicherstellen, dass das Ziel " **deploytestdbberechtigungs** " nicht ausgeführt wird, bis das Ziel " **publishdbpackages** " ausgeführt wurde.
 
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample5.xml)]
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema beschrieben, eine Möglichkeit, die in die Sie hinzufügen können Datenbankbenutzer und Rollenmitgliedschaften als Aktion nach der Bereitstellung, wenn Sie ein Datenbankprojekt bereitstellen. Dies ist in der Regel hilfreich, wenn Sie regelmäßig neu, eine Datenbank in einer testumgebung erstellen, aber es in der Regel vermieden werden, sollte Wenn Sie Datenbanken in Staging-oder produktionsumgebung bereitstellen. Daher sollten Sie sicherstellen, dass Sie die erforderliche bedingte Logik verwenden, sodass Datenbankbenutzer und Rollenmitgliedschaften nur erstellt werden, wenn es dazu geeignet ist.
+In diesem Thema wurde eine Möglichkeit beschrieben, wie Sie Datenbankbenutzer und Rollen Mitgliedschaften als Aktion nach der Bereitstellung hinzufügen können, wenn Sie ein Datenbankprojekt bereitstellen. Dies ist in der Regel hilfreich, wenn Sie eine Datenbank regelmäßig in einer Testumgebung neu erstellen, aber Sie sollte in der Regel vermieden werden, wenn Sie Datenbanken in Staging-oder Produktionsumgebungen bereitstellen. Daher sollten Sie sicherstellen, dass Sie die erforderliche bedingte Logik verwenden, damit Datenbankbenutzer und Rollen Mitgliedschaften nur erstellt werden, wenn dies angemessen ist.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Weitere Informationen zur Verwendung von VSDBCMD Datenbankprojekte bereitstellen, finden Sie unter [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Anleitungen zum Anpassen von datenbankbereitstellungen für unterschiedliche zielumgebungen finden Sie unter [Anpassen von Datenbankbereitstellungen für mehrere Umgebungen](customizing-database-deployments-for-multiple-environments.md). Weitere Informationen zu benutzerdefinierte MSBuild-Projektdateien verwenden, um den Bereitstellungsprozess zu steuern, finden Sie unter [Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und [Verständnis des Prozesses erstellen](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Weitere Informationen zu den Sqlcmd-Befehlszeilenoptionen finden Sie unter [Hilfsprogramms "Sqlcmd"](https://msdn.microsoft.com/library/ms162773.aspx).
+Weitere Informationen zur Verwendung von VSDBCMD zum Bereitstellen von Datenbankprojekten finden Sie unter Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Anleitungen zum Anpassen von Daten Bank Bereitstellungen für verschiedene Ziel Umgebungen finden Sie unter [Anpassen von Daten Bank Bereitstellungen für mehrere Umgebungen](customizing-database-deployments-for-multiple-environments.md). Weitere Informationen zur Verwendung von benutzerdefinierten MSBuild-Projektdateien zum Steuern des Bereitstellungs Prozesses finden Sie Untergrund Legendes [zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md) und Grundlegendes [zum Buildprozess](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Weitere Informationen zu sqlcmd-Befehlszeilenoptionen finden Sie unter [sqlcmd Utility](https://msdn.microsoft.com/library/ms162773.aspx).
 
 > [!div class="step-by-step"]
 > [Zurück](customizing-database-deployments-for-multiple-environments.md)

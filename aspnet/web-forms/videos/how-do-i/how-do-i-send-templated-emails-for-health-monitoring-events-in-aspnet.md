@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet
-title: '[Gewusst wie:] Senden Sie die Vorlagen erstellten E-Mails für Systemüberwachungsereignisse in ASP.NET | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Senden von Vorlagen-e-Mails für Integritäts Überwachungs Ereignisse in ASP.net | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem Video zeigt Chris Pels, wie von der TemplatedEmailWebEventProvider senden, dass e-Mails Auftreten von Systemüberwachungsereignisse, die eine Vorlage für t verwendet werden...
+description: In diesem Video zeigt Chris Pels, wie der templatedemailwebeventprovider verwendet wird, um e-Mails zu senden, wenn Integritäts Überwachungs Ereignisse auftreten, die eine Vorlage für t...
 ms.author: riande
 ms.date: 09/18/2008
 ms.assetid: 5c107c6e-9fb7-4206-bd3f-221cb0767f8a
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet
 msc.type: video
 ms.openlocfilehash: e7b929c6e186e59b43180e8f26cf0f8b4608328f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417987"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510483"
 ---
-# <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a>[Gewusst wie:] Senden Sie die Vorlagen erstellten E-Mails für Systemüberwachungsereignisse in ASP.NET
+# <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a>[Gewusst wie:] Senden von Vorlagen-e-Mails für Integritäts Überwachungs Ereignisse in ASP.net
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-In diesem Video zeigt Chris Pels wie die TemplatedEmailWebEventProvider zu verwenden, um e-Mails zu senden, wenn Systemüberwachungsereignisse auftreten, die eine Vorlage für die e-Mail-Inhalt verwenden. Zunächst erfahren Sie, wie so konfigurieren Sie die &lt;Anbieter&gt; und &lt;Regeln&gt; Elemente in der Datei "Web.config" die Verwendung von auf Vorlagen basierenden-e-Mail zu implementieren, und ordnen Sie ein Ereignis mit den auf Vorlagen basierende e-Mail-Anbieter für die Systemüberwachung. Nach der Konfiguration des auf Vorlagen basierenden-Anbieters finden Sie unter Vorgehensweise: Erstellen Sie die e-Mail-Vorlage als standard-ASPX-Seite verwenden. Erfahren Sie, welche Informationen in der MailEventNotificaitonInfo-Klasse verfügbar sind, die von der TemplatedEmailWebEventProvider an der Vorlage ASPX-Seite übergeben wird. Sehen Sie, wie es verwendet werden kann, sollen Informationen in der e-Mail-Inhalt geeignet ist. Zeigen Sie schließlich das Testen der Website, das e-Mail-Nachrichten als Antwort auf Ereignisse für die Systemüberwachung sendet. Zeigen Sie dann die tatsächlichen e-Mails empfangen, die für die Systemüberwachung Ereignisinformationen, die auf Grundlage der Vorlage enthalten.
+In diesem Video zeigt Chris Pels, wie der templatedemailwebeventprovider verwendet wird, um e-Mails zu senden, wenn Integritäts Überwachungs Ereignisse auftreten, die eine Vorlage für den e-Mail-Inhalt verwenden. Zuerst finden Sie weitere Informationen unter Konfigurieren des &lt;Anbieters&gt; und &lt;Regeln&gt; Elemente in der Datei "Web. config", um die Verwendung von Vorlagen-e-Mails zu implementieren und dem Anbieter der Anbieter-e-Mail-Adresse ein Integritäts Überwachungs Ereignis zuzuordnen. Nachdem der Anbieter für die Vorlage konfiguriert wurde, finden Sie weitere Informationen unter Erstellen der e-Mail-Vorlage mithilfe von als Standard. aspx. Erfahren Sie, welche Informationen in der maileventnotificaitoninfo-Klasse verfügbar sind, die von templatedemailwebeventprovider an die Template. aspx-Seite übergeben wird. Sehen Sie sich an, wie Sie verwendet werden können, um die für den e-Mail-Inhalt geeigneten Informationen einzuschließen Sehen Sie sich schließlich die Test Website an, die als Reaktion auf Integritäts Überwachungs Ereignisse e-Mails sendet. Sehen Sie sich dann die empfangenen empfangenen e-Mails an, die die Informationen zur Integritäts Überwachung enthalten, die auf der Vorlage basieren.
 
-[&#9654;Sehen Sie sich Video (25 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet)
+[&#9654;Video ansehen (25 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet)

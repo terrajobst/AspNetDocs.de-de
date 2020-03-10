@@ -9,11 +9,11 @@ ms.assetid: 41d1abba-97a5-4a45-9b44-d05624c19777
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e7a3286bcf7ca844f5dcfa4848c15e0bd4767c0f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598562"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78445779"
 ---
 # <a name="using-the-slider-control-with-auto-postback-vb"></a>Verwenden des Schieberegler-Steuer Elements mit automatischem Postback (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 

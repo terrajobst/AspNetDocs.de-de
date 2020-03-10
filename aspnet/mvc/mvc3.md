@@ -9,11 +9,11 @@ ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: 421a06c89d4dbcb05d4080033813cc6558b7c698
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586751"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499647"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -52,7 +52,7 @@ Installation und Hilfe
 - Hilfe und Erörterung von ASP.NET MVC 3 in den [Foren](https://forums.asp.net/1146.aspx)
 
 <a id="overview"></a>
-## <a name="aspnet-mvc-3-overview"></a>ASP.NET MVC 3 Overview
+## <a name="aspnet-mvc-3-overview"></a>Übersicht über ASP.NET MVC 3
 
 ASP.NET MVC 3 baut auf ASP.NET MVC 1 und 2 auf und bietet hervorragend Funktionen, die Ihren Code vereinfachen und eine tiefere Erweiterbarkeit ermöglichen. Dieses Thema enthält eine Übersicht über viele der neuen Features, die in dieser Version enthalten sind, in die folgenden Abschnitte unterteilt:
 
@@ -132,11 +132,11 @@ Einige neue Razor-Features umfassen Folgendes:
 
 Razor umfasst auch neue HTML-Hilfsprogramme, wie z. b. die folgenden:
 
-- `Chart`. Rendert ein Diagramm und bietet die gleichen Features wie das Diagramm Steuerelement in ASP.NET 4.
-- `WebGrid`. Rendert ein Datenraster, das mit Paging-und Sortierungs Funktionen fertiggestellt wird.
-- `Crypto`. Verwendet Hash Algorithmen, um korrekt gesalzene und Hashwerte zu erstellen.
-- `WebImage`. Rendert ein Bild.
-- `WebMail`. Sendet eine E-Mail.
+- [https://login.microsoftonline.com/consumers/](`Chart`). Rendert ein Diagramm und bietet die gleichen Features wie das Diagramm Steuerelement in ASP.NET 4.
+- [https://login.microsoftonline.com/consumers/](`WebGrid`). Rendert ein Datenraster, das mit Paging-und Sortierungs Funktionen fertiggestellt wird.
+- [https://login.microsoftonline.com/consumers/](`Crypto`). Verwendet Hash Algorithmen, um korrekt gesalzene und Hashwerte zu erstellen.
+- [https://login.microsoftonline.com/consumers/](`WebImage`). Rendert ein Bild.
+- [https://login.microsoftonline.com/consumers/](`WebMail`). Sendet eine E-Mail.
 
 Weitere Informationen zu Razor finden Sie in den folgenden Ressourcen:
 

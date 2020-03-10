@@ -9,11 +9,11 @@ ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8057cfbcd33c74376076363bc27940cebd522c08
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575882"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522027"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>Erstellen eine Schnittstelle zum Auswählen eines Benutzerkontos aus vielen (C#)
 
@@ -29,7 +29,7 @@ von [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 In diesem Tutorial erstellen wir eine solche Benutzeroberfläche. Die Benutzeroberfläche besteht vor allem aus einer Reihe von LinkButtons zum Filtern der Ergebnisse basierend auf dem Anfangsbuchstaben des Benutzernamens und einem GridView-Steuerelement, das die entsprechenden Benutzer anzeigt. Wir beginnen mit der Auflistung aller Benutzerkonten in einer GridView. Fügen Sie dann in Schritt 3 die filterlink Buttons hinzu. Schritt 4 prüft das Paging der gefilterten Ergebnisse. Die in den Schritten 2 bis 4 erstellte Schnittstelle wird in den nachfolgenden Tutorials zum Ausführen administrativer Aufgaben für ein bestimmtes Benutzerkonto verwendet.
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="step-1-adding-new-aspnet-pages"></a>Schritt 1: Hinzufügen neuer ASP.NET Seiten
 
@@ -218,13 +218,13 @@ In den Abbildungen 8 und 9 wird die benutzerdefinierte pagingschnittstelle in Ak
 
 **Abbildung 9**: Klicken auf den nächsten Link zeigt die zweite Seite der Benutzerkonten an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Administratoren müssen häufig einen Benutzer aus der Liste der Konten auswählen. In den vorherigen Tutorials haben wir uns mit einer Dropdown Liste befasst, die mit den Benutzern gefüllt ist, aber dieser Ansatz ist nicht gut skalierbar. In diesem Tutorial haben wir eine bessere Alternative untersucht: eine filterbare Schnittstelle, deren Ergebnisse in einer auslagerbaren GridView angezeigt werden. Mit dieser Benutzeroberfläche können Administratoren ein Benutzerkonto zwischen Tausenden schnell und effizient suchen und auswählen.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -232,7 +232,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Effizientes Paging durch große Datenmengen](https://asp.net/learn/data-access/tutorial-25-cs.aspx)
 - [Ein eigenes Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -241,4 +241,4 @@ Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRo
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Lead Reviewer für dieses Tutorial war Alicja Maziarz. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, löschen Sie eine Zeile bei [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](recovering-and-changing-passwords-cs.md)
+> [Weiter](recovering-and-changing-passwords-cs.md)

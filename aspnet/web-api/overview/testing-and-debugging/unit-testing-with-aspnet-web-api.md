@@ -1,33 +1,33 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
-title: Komponententests für ASP.NET Web API 2 | Microsoft-Dokumentation
+title: Komponententests ASP.net-Web-API 2 | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Dieser Leitfaden und die Anwendung veranschaulichen, wie einfacher Komponententests für Ihre Web-API 2-Anwendung zu erstellen. Dieses Tutorial zeigt, wie eine Unit Test Proj enthalten...
+description: Dieser Leitfaden und diese Anwendung veranschaulichen, wie Sie einfache Komponententests für Ihre Web-API 2-Anwendung erstellen. In diesem Tutorial wird gezeigt, wie Sie einen Komponenten Test-proj einschließen...
 ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: f2d60b977475e048a3a74aabff4adc768ee22baf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402647"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446985"
 ---
-# <a name="unit-testing-aspnet-web-api-2"></a>Komponententests für ASP.NET Web API 2
+# <a name="unit-testing-aspnet-web-api-2"></a>Komponententests ASP.net-Web-API 2
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-[Abgeschlossenes Projekt herunterladen](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
-> Dieser Leitfaden und die Anwendung veranschaulichen, wie einfacher Komponententests für Ihre Web-API 2-Anwendung zu erstellen. In diesem Tutorial veranschaulicht einen Datenbankkomponententest-Projekt in der Projektmappe, und Schreiben von Testmethoden, die die zurückgegebenen Werte von einer Controllermethode aus zu überprüfen.
+> Dieser Leitfaden und diese Anwendung veranschaulichen, wie Sie einfache Komponententests für Ihre Web-API 2-Anwendung erstellen. In diesem Tutorial wird gezeigt, wie Sie ein Komponenten Testprojekt in die Projekt Mappe einschließen und Testmethoden schreiben, mit denen die zurückgegebenen Werte von einer Controller Methode überprüft werden.
 >
-> In diesem Tutorial wird davon ausgegangen, dass Sie mit den grundlegenden Konzepten von ASP.NET Web-API vertraut sind. Ein einführendes Lernprogramm finden Sie unter [erste Schritte mit ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md).
+> In diesem Tutorial wird davon ausgegangen, dass Sie mit den grundlegenden Konzepten von ASP.net-Web-API vertraut sind. Ein Einführ Endes Tutorial finden Sie unter [Getting Started with ASP.net-Web-API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md).
 >
-> Die Komponententests in diesem Thema sind absichtlich auf einfachen Szenarien beschränkt. Komponententests erweiterte Data-Szenarien finden Sie unter [Mocking Entity Framework bei Komponententests Testen von ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
+> Die Komponententests in diesem Thema sind absichtlich auf einfache Daten Szenarien beschränkt. Weitere Informationen zu Komponententests für erweiterte Daten Szenarios finden Sie unter [Entity Framework bei Unittests ASP.net-Web-API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
 >
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 >
 > - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web-API 2
@@ -38,123 +38,123 @@ Dieses Thema enthält folgende Abschnitte:
 
 - [Erforderliche Komponenten](#prereqs)
 - [Code herunterladen](#download)
-- [Erstellen Sie Anwendung mit Komponententestprojekt](#appwithunittest)
-    - [Fügen Sie beim Erstellen der Anwendung Komponententestprojekt hinzu](#whencreate)
-    - [Datenbankkomponententest-Projekt zu einer vorhandenen Anwendung hinzufügen](#addtoexisting)
+- [Erstellen einer Anwendung mit einem Komponenten Testprojekt](#appwithunittest)
+    - [Komponenten Testprojekt beim Erstellen der Anwendung hinzufügen](#whencreate)
+    - [Hinzufügen eines Komponenten Testprojekts zu einer vorhandenen Anwendung](#addtoexisting)
 - [Einrichten der Web-API 2-Anwendung](#setupproject)
-- [Installieren von NuGet-Pakete im Test-Projekt](#testpackages)
-- [Erstellen von tests](#tests)
-- [Ausführen von tests](#runtests)
+- [Installieren von nuget-Paketen im Testprojekt](#testpackages)
+- [Erstellen von Tests](#tests)
+- [Tests ausführen](#runtests)
 
 <a id="prereqs"></a>
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional oder Enterprise Edition
 
 <a id="download"></a>
 ## <a name="download-code"></a>Code herunterladen
 
-Herunterladen der [abgeschlossene Projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11). Herunterladbare Projekt enthält Komponententests Codes für in diesem Thema und die [Mocking Entity Framework beim Unit Testing ASP.NET Web API](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md) Thema.
+Laden Sie das [abgeschlossene Projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)herunter. Das herunterladbare Projekt enthält Komponenten Testcode für dieses Thema und für den [Entity Framework bei Komponententests ASP.net-Web-API](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md) .
 
 <a id="appwithunittest"></a>
-## <a name="create-application-with-unit-test-project"></a>Erstellen Sie Anwendung mit Komponententestprojekt
+## <a name="create-application-with-unit-test-project"></a>Erstellen einer Anwendung mit einem Komponenten Testprojekt
 
-Sie können entweder ein Komponententestprojekt erstellen, wenn Sie Ihre Anwendung zu erstellen oder hinzufügen ein Komponententestprojekts für eine vorhandene Anwendung. Dieses Tutorial zeigt beide Methoden zum Erstellen eines Komponententestprojekts. Um dieses Tutorial folgen zu können, können Sie beide Ansätze verwenden.
+Sie können entweder ein Komponenten Testprojekt erstellen, wenn Sie die Anwendung erstellen oder einer vorhandenen Anwendung ein Komponenten Testprojekt hinzufügen. Dieses Tutorial zeigt beide Methoden zum Erstellen eines Komponenten Testprojekts. Um diesem Tutorial zu folgen, können Sie beide Ansätze verwenden.
 
 <a id="whencreate"></a>
-### <a name="add-unit-test-project-when-creating-the-application"></a>Fügen Sie beim Erstellen der Anwendung Komponententestprojekt hinzu
+### <a name="add-unit-test-project-when-creating-the-application"></a>Komponenten Testprojekt beim Erstellen der Anwendung hinzufügen
 
-Erstellen einer neuen ASP.NET Web-Anwendung mit dem Namen **StoreApp**.
+Erstellen Sie eine neue ASP.NET-Webanwendung mit dem Namen **storeapp**.
 
-![Projekt erstellen](unit-testing-with-aspnet-web-api/_static/image1.png)
+![Erstellen des Projekts](unit-testing-with-aspnet-web-api/_static/image1.png)
 
-Wählen Sie in den Fenstern neues ASP.NET-Projekt die **leere** Vorlage und fügen Sie Ordner und kernreferenzen für Web-API. Wählen Sie die **Komponententests hinzufügen,** Option. Das Komponententestprojekt wird automatisch mit dem Namen **StoreApp.Tests**. Sie können diesen Namen beibehalten.
+Wählen Sie in den neuen ASP.net-Projekt Fenstern die **leere** Vorlage aus, und fügen Sie Ordner und Kern Verweise für die Web-API hinzu. Wählen Sie die Option Komponenten **Tests hinzufügen** aus. Das Komponenten Testprojekt wird automatisch mit dem Namen **storeapp. Tests**benannt. Sie können diesen Namen beibehalten.
 
-![Komponententestprojekt erstellen](unit-testing-with-aspnet-web-api/_static/image2.png)
+![Komponenten Testprojekt erstellen](unit-testing-with-aspnet-web-api/_static/image2.png)
 
-Nach dem Erstellen der Anwendung sehen Sie sich, dass sie zwei Projekte enthält.
+Nachdem Sie die Anwendung erstellt haben, werden Sie sehen, dass Sie zwei Projekte enthält.
 
 ![zwei Projekte](unit-testing-with-aspnet-web-api/_static/image3.png)
 
 <a id="addtoexisting"></a>
-### <a name="add-unit-test-project-to-an-existing-application"></a>Datenbankkomponententest-Projekt zu einer vorhandenen Anwendung hinzufügen
+### <a name="add-unit-test-project-to-an-existing-application"></a>Hinzufügen eines Komponenten Testprojekts zu einer vorhandenen Anwendung
 
-Wenn Sie das Komponententestprojekt nicht bei der Erstellung Ihrer Anwendung erstellt haben, können Sie eine zu einem beliebigen Zeitpunkt hinzufügen. Nehmen wir beispielsweise an, dass Sie bereits über eine Anwendung namens StoreApp verfügen, und Komponententests hinzugefügt werden soll. Klicken Sie zum Hinzufügen eines Komponententestprojekts mit der rechten Maustaste in der Projektmappe, und wählen Sie **hinzufügen** und **neues Projekt**.
+Wenn Sie das Komponenten Testprojekt nicht erstellt haben, als Sie die Anwendung erstellt haben, können Sie es jederzeit hinzufügen. Nehmen wir beispielsweise an, dass Sie bereits eine Anwendung mit dem Namen storeapp haben und Komponententests hinzufügen möchten. Um ein Komponenten Testprojekt hinzuzufügen, klicken Sie mit der rechten Maustaste auf die Projekt Mappe, und wählen Sie **Hinzufügen** und **Neues Projekt**
 
-![Neues Projekt zu Projektmappe hinzufügen](unit-testing-with-aspnet-web-api/_static/image4.png)
+![Neues Projekt zur Projekt Mappe hinzufügen](unit-testing-with-aspnet-web-api/_static/image4.png)
 
-Wählen Sie **Test** im linken Bereich, und wählen **Komponententestprojekt** für den Projekttyp. Nennen Sie das Projekt **StoreApp.Tests**.
+Wählen Sie im linken Bereich **Test** aus, und wählen Sie Komponenten **Test Projekt** für den Projekttyp aus. Nennen Sie das Projekt **storeapp. Tests**.
 
-![Datenbankkomponententest-Projekt hinzufügen](unit-testing-with-aspnet-web-api/_static/image5.png)
+![Komponenten Testprojekt hinzufügen](unit-testing-with-aspnet-web-api/_static/image5.png)
 
-Sie sehen das Komponententestprojekt in Ihrer Lösung.
+Das Komponenten Testprojekt wird in der Projekt Mappe angezeigt.
 
-Fügen Sie in der Datenbankkomponententest-Projekt einen Projektverweis auf das ursprüngliche Projekt ein.
+Fügen Sie im Komponenten Testprojekt einen Projekt Verweis zum ursprünglichen Projekt hinzu.
 
 <a id="setupproject"></a>
 ## <a name="set-up-the-web-api-2-application"></a>Einrichten der Web-API 2-Anwendung
 
-Fügen Sie in Ihrem StoreApp-Projekt eine Klassendatei, die **Modelle** Ordner mit dem Namen **Product.cs**. Ersetzen Sie den Inhalt der Datei mit dem folgenden Code ein.
+Fügen Sie im Projekt storeapp dem Ordner **Models** eine Klassendatei mit dem Namen **Product.cs**hinzu. Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample1.cs)]
 
 Erstellen Sie die Projektmappe.
 
-Mit der rechten Maustaste in den Ordner "Controllers", und wählen Sie **hinzufügen** und **neues Gerüstelement**. Wählen Sie **Web-API 2-Controller - leer**.
+Klicken Sie mit der rechten Maustaste auf den Ordner Controller, und wählen Sie **Hinzufügen** und **Neues Gerüst Element**aus. Wählen Sie **Web-API 2-Controller-leer**aus.
 
-![Hinzufügen eines neuen Controllers](unit-testing-with-aspnet-web-api/_static/image6.png)
+![neuen Controller hinzufügen](unit-testing-with-aspnet-web-api/_static/image6.png)
 
-Legen Sie den Controllernamen **SimpleProductController**, und klicken Sie auf **hinzufügen**.
+Legen Sie den Controller Namen auf **simpleproductcontroller**fest, und klicken Sie auf **Hinzufügen**.
 
-![Geben Sie controller](unit-testing-with-aspnet-web-api/_static/image7.png)
+![Controller angeben](unit-testing-with-aspnet-web-api/_static/image7.png)
 
-Ersetzen Sie den vorhandenen Code durch folgenden Code: Zur Vereinfachung dieses Beispiels werden die Daten in einer Liste anstelle einer Datenbank gespeichert. Die in dieser Klasse definierten Liste stellt die Produktionsdaten dar. Beachten Sie, dass der Controller enthält einen Konstruktor, der als Parameter eine Liste der Product-Objekte akzeptiert. Dieser Konstruktor können Sie Testdaten zu übergeben wenn Komponententests ausgeführt werden. Der Controller enthält auch zwei **Async** Methoden, um asynchrone Methoden für die Komponententests zu veranschaulichen. Diese asynchronen Methoden wurden implementiert, durch den Aufruf **Task.FromResult** Minimieren von überflüssigen Code, aber normalerweise die Methoden würde ressourcenintensive Vorgänge enthalten.
+Ersetzen Sie den vorhandenen Code durch folgenden Code: Um dieses Beispiel zu vereinfachen, werden die Daten in einer Liste und nicht in einer Datenbank gespeichert. Die in dieser Klasse definierte Liste stellt die Produktionsdaten dar. Beachten Sie, dass der Controller einen Konstruktor enthält, der als Parameter eine Liste von Produkt Objekten annimmt. Dieser Konstruktor ermöglicht Ihnen das Übergeben von Testdaten bei Unittests. Der Controller enthält auch zwei **Async** -Methoden, um Komponententests für asynchrone Methoden zu veranschaulichen. Diese asynchronen Methoden wurden durch Aufrufen von **Task. fromresult** implementiert, um den überflüssigen Code zu minimieren, normalerweise enthalten die Methoden jedoch ressourcenintensive Vorgänge.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-Die GetProduct-Methode gibt eine Instanz des der **IHttpActionResult** Schnittstelle. IHttpActionResult ist eines der neuen Features in Web-API 2, und vereinfacht dadurch das Unit Testentwicklung. Klassen, die die IHttpActionResult-Schnittstelle implementieren finden Sie in der [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) Namespace. Diese Klassen stellen die mögliche Antworten aus einer aktionsanforderung dar, und sie entsprechen den HTTP-Statuscodes.
+Die GetProduct-Methode gibt eine Instanz der **ihttpactionresult** -Schnittstelle zurück. Ihttpactionresult ist eines der neuen Features in der Web-API 2 und vereinfacht die Entwicklung von Komponententests. Klassen, die die ihttpactionresult-Schnittstelle implementieren, finden Sie im [System. Web. http. results](https://msdn.microsoft.com/library/system.web.http.results.aspx) -Namespace. Diese Klassen stellen mögliche Antworten aus einer Aktions Anforderung dar und entsprechen HTTP-Statuscodes.
 
 Erstellen Sie die Projektmappe.
 
-Sie können nun können Sie das Testprojekt einrichten.
+Sie sind jetzt bereit, das Testprojekt einzurichten.
 
 <a id="testpackages"></a>
-## <a name="install-nuget-packages-in-test-project"></a>Installieren von NuGet-Pakete im Test-Projekt
+## <a name="install-nuget-packages-in-test-project"></a>Installieren von nuget-Paketen im Testprojekt
 
-Wenn Sie die leere Vorlage verwenden, um eine Anwendung zu erstellen, umfasst das Komponententestprojekt (StoreApp.Tests) keine installierten NuGet-Pakete. Weitere Vorlagen, wie z. B. die Web-API-Vorlage, schließen Sie einige NuGet-Pakete in das Komponententestprojekt. Für dieses Tutorial müssen Sie das Microsoft ASP.NET Web API 2-Core-Paket für das Testprojekt einschließen.
+Wenn Sie die leere Vorlage zum Erstellen einer Anwendung verwenden, enthält das Komponenten Testprojekt (storeapp. Tests) keine installierten nuget-Pakete. Andere Vorlagen (z. b. die Web-API-Vorlage) enthalten einige nuget-Pakete in das Komponenten Testprojekt. Für dieses Tutorial müssen Sie das Microsoft ASP.net Web-API 2-Kern Paket in das Testprojekt einschließen.
 
-Mit der rechten Maustaste in des StoreApp.Tests-Projekts, und wählen Sie **NuGet-Pakete verwalten**. Sie müssen das Projekt StoreApp.Tests, um die Pakete dem Projekt hinzufügen auswählen.
+Klicken Sie mit der rechten Maustaste auf das Projekt storeapp. Tests und wählen Sie **nuget-Pakete verwalten**aus. Sie müssen das Projekt storeapp. Tests auswählen, um die Pakete dem Projekt hinzuzufügen.
 
 ![Verwalten von Paketen](unit-testing-with-aspnet-web-api/_static/image8.png)
 
-Suchen Sie und installieren Sie Microsoft ASP.NET Web API 2-Core-Paket.
+Suchen und installieren Sie Microsoft ASP.net Web-API 2-Kernpaket.
 
-![Installieren Sie Web-api-Core-Paket](unit-testing-with-aspnet-web-api/_static/image9.png)
+![Installieren des Web-API-Kernpakets](unit-testing-with-aspnet-web-api/_static/image9.png)
 
-Schließen Sie das Fenster "NuGet-Pakete verwalten".
+Schließen Sie das Fenster nuget-Pakete verwalten.
 
 <a id="tests"></a>
 ## <a name="create-tests"></a>Tests erstellen
 
-Standardmäßig enthält das Testprojekt eine leeren Test-Datei, die mit dem Namen "UnitTest1.cs". Diese Datei werden die Attribute, dass Sie zum Erstellen der Testmethoden verwenden. Für die Komponententests können Sie diese Datei verwenden oder eine eigene Datei erstellen.
+Standardmäßig enthält das Testprojekt eine leere Testdatei mit dem Namen UnitTest1.cs. Diese Datei zeigt die Attribute, die Sie zum Erstellen von Testmethoden verwenden. Für die Komponententests können Sie diese Datei verwenden oder eine eigene Datei erstellen.
 
 ![UnitTest1](unit-testing-with-aspnet-web-api/_static/image10.png)
 
-In diesem Tutorial erstellen Sie eine eigene Testklasse. Sie können die Datei "UnitTest1.cs" löschen. Fügen Sie eine Klasse, die mit dem Namen **TestSimpleProductController.cs**, und Ersetzen Sie den Code durch den folgenden Code.
+In diesem Tutorial erstellen Sie eine eigene Testklasse. Sie können die Datei UnitTest1.cs löschen. Fügen Sie eine Klasse mit dem Namen **TestSimpleProductController.cs**hinzu, und ersetzen Sie den Code durch den folgenden Code.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample3.cs)]
 
 <a id="runtests"></a>
 ## <a name="run-tests"></a>Tests durchführen
 
-Sie können nun zum Ausführen der Tests. Alle der Methode, die mit markierten Felder der **TestMethod** Attribut getestet. Von der **Test** Menüelement, führen Sie die Tests.
+Sie sind jetzt bereit, die Tests auszuführen. Alle Methoden, die mit dem **TestMethod** -Attribut markiert sind, werden getestet. Führen Sie die Tests über das Menü Element **Test** aus.
 
 ![Tests durchführen](unit-testing-with-aspnet-web-api/_static/image11.png)
 
-Öffnen der **Test-Explorer** Fenster, und beachten Sie die Ergebnisse der Tests.
+Öffnen Sie das Fenster **Test-Explorer** , und sehen Sie sich die Ergebnisse der Tests an.
 
 ![Testergebnisse](unit-testing-with-aspnet-web-api/_static/image12.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie haben dieses Lernprogramm abgeschlossen. Die Daten in diesem Tutorial wurde absichtlich Schwerpunkte Komponententests Bedingungen vereinfacht. Komponententests erweiterte Data-Szenarien finden Sie unter [Mocking Entity Framework bei Komponententests Testen von ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
+Sie haben dieses Lernprogramm abgeschlossen. Die Daten in diesem Tutorial wurden absichtlich vereinfacht, um sich auf Komponenten Testbedingungen zu konzentrieren. Weitere Informationen zu Komponententests für erweiterte Daten Szenarios finden Sie unter [Entity Framework bei Unittests ASP.net-Web-API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).

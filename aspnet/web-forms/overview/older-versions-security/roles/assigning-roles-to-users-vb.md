@@ -9,11 +9,11 @@ ms.assetid: fd208ee9-69cc-4467-9783-b4e039bdd1d3
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
 ms.openlocfilehash: b53df4494eb0faef7c5e4547c2bf95e5fb071298
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74577858"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507279"
 ---
 # <a name="assigning-roles-to-users-vb"></a>Zuweisen von Rollen an Benutzer (VB)
 
@@ -29,7 +29,7 @@ Im <a id="_msoanchor_1"> </a> [vorherigen Tutorial](creating-and-managing-roles-
 
 In diesem Tutorial erstellen wir zwei ASP.NET-Seiten, um die Verwaltung der Benutzer zu unterstützen, die zu welchen Rollen gehören. Die erste Seite enthält Funktionen, um zu sehen, welche Benutzer zu einer bestimmten Rolle gehören, welche Rollen ein bestimmter Benutzer angehört, und die Möglichkeit, einen bestimmten Benutzer einer bestimmten Rolle zuzuweisen oder zu entfernen. Auf der zweiten Seite erweitern wir das Steuerelement "kreateuserwizard", sodass es einen Schritt zum Angeben der Rollen enthält, zu denen der neu erstellte Benutzer gehört. Dies ist in Szenarios nützlich, in denen ein Administrator neue Benutzerkonten erstellen kann.
 
-Fangen wir an!
+Erste Schritte
 
 ## <a name="listing-what-users-belong-to-what-roles"></a>Auflisten, welche Benutzer zu welchen Rollen gehören
 
@@ -305,7 +305,7 @@ Wenn Sie auf Weiter klicken, wird ein Postback ausgelöst, und der `ActiveStep` 
 
 **Abbildung 14**: Bruce, Tito und Wanda sind alle Vorgesetzten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](assigning-roles-to-users-vb/_static/image42.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Rollen Framework bietet Methoden zum Abrufen von Informationen über die Rollen und Methoden eines bestimmten Benutzers, um zu bestimmen, welche Benutzer zu einer bestimmten Rolle gehören. Außerdem gibt es eine Reihe von Methoden zum Hinzufügen und Entfernen von Benutzern zu einer oder mehreren Rollen. In diesem Tutorial haben wir uns auf zwei der folgenden Methoden konzentriert: `AddUserToRole` und `RemoveUserFromRole`. Es gibt zusätzliche Varianten, die für das Hinzufügen mehrerer Benutzer zu einer einzelnen Rolle und das Zuweisen mehrerer Rollen zu einem einzelnen Benutzer entworfen wurden.
 
@@ -315,7 +315,7 @@ An dieser Stelle haben wir gesehen, wie Sie Rollen erstellen und löschen und wi
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -323,7 +323,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Untersuchen von ASP. Netzwerk Mitgliedschaft, Rollen und Profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Ein eigenes Websiteverwaltungs-Tool](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

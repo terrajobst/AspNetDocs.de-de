@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-1
-title: 'Senden von HTML-Formulardaten in ASP.NET Web-API: Form-Urlencoded-Daten - ASP.NET 4.x'
+title: 'Senden von HTML-Formulardaten in ASP.net-Web-API: form-urlencoded Data-ASP.NET 4. x'
 author: MikeWasson
-description: In diesem Artikel zeigt, wie zum Posten von Form-Urlencoded-Daten an einen Web-API-Controller in ASP.NET 4.x
+description: In diesem Artikel wird gezeigt, wie Sie form-urlencoded-Daten an einen Web-API-Controller mit ASP.NET 4. x senden.
 ms.author: riande
 ms.date: 06/15/2012
 ms.custom: seoapril2019
@@ -10,124 +10,124 @@ ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: 7243069dbd8051b1374ed6e0112c273b8fe26f61
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115472"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449241"
 ---
-# <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>Senden von HTML-Formulardaten in ASP.NET Web-API: Form-urlencoded-Daten
+# <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>Senden von HTML-Formulardaten in ASP.net-Web-API: Formular-urlencoded-Daten
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-## <a name="part-1-form-urlencoded-data"></a>Teil 1: Form-urlencoded-Daten
+## <a name="part-1-form-urlencoded-data"></a>Teil 1: Formular-urlencoded-Daten
 
-In diesem Artikel veranschaulicht das Form-Urlencoded-Daten an einen Web-API-Controller zu veröffentlichen.
+In diesem Artikel wird gezeigt, wie Sie in Form von urlencoded-Daten an einen Web-API-Controller Posten.
 
-- [Übersicht über die HTML-Formularen](#overview_of_html_forms)
-- [Senden von komplexen Typen](#sending_complex_types)
-- [Senden von Formulardaten per AJAX](#sending_form_data_via_ajax)
+- [Übersicht über HTML-Formulare](#overview_of_html_forms)
+- [Senden komplexer Typen](#sending_complex_types)
+- [Senden von Formulardaten über AJAX](#sending_form_data_via_ajax)
 - [Senden von einfachen Typen](#sending_simple_types)
 
 > [!NOTE]
-> [Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/ASPNET-Web-API-Sending-a6f9d007).
+> [Laden Sie das abgeschlossene Projekt herunter](https://code.msdn.microsoft.com/ASPNET-Web-API-Sending-a6f9d007).
 
 <a id="overview_of_html_forms"></a>
-## <a name="overview-of-html-forms"></a>Übersicht über die HTML-Formularen
+## <a name="overview-of-html-forms"></a>Übersicht über HTML-Formulare
 
-HTML-Formulare verwenden wird entweder GET oder POST zum Senden von Daten an den Server. Die **Methode** Attribut der **Formular** -Element können die HTTP-Methode:
+HTML-Formulare verwenden entweder Get oder Post zum Senden von Daten an den Server. Das **method** -Attribut des **Form** -Elements gibt die HTTP-Methode an:
 
 [!code-html[Main](sending-html-form-data-part-1/samples/sample1.html)]
 
-Die Standardmethode ist GET. Wenn das Formular verwendet zu erhalten, das Formular, das Daten in den URI als Zeichenfolge codiert ist. Wenn das Formular POST verwendet wird, werden die Formulardaten im Anforderungstext platziert. Für Gebucht-Daten die **Enctype** Attribut gibt an, das Format des Anforderungstexts:
+Die Standardmethode ist "Get". Wenn das Formular Get verwendet, werden die Formulardaten im URI als Abfrage Zeichenfolge codiert. Wenn das Formular Post verwendet, werden die Formulardaten im Anforderungs Text abgelegt. Für veröffentlichte Daten gibt das **enctype** -Attribut das Format des Anforderungs Texts an:
 
-| enctype | Beschreibung |
+| "CType" | Beschreibung |
 | --- | --- |
-| application/x-www-form-urlencoded | Als Name/Wert-Paare, ähnlich wie eine URI-Abfragezeichenfolge ist die Formulardaten codiert. Dies ist das Standardformat für POST-Methode. |
-| Multipart/Form-data | Formulardaten werden als eine mehrteilige MIME-Nachricht codiert. Verwenden Sie dieses Format, wenn Sie eine Datei mit dem Server hochladen. |
+| application/x-www-form-urlencoded | Formulardaten werden als Name-Wert-Paare codiert, ähnlich wie eine URI-Abfrage Zeichenfolge. Dies ist das Standardformat für Post. |
+| Multipart/Form-Data | Formulardaten werden als mehrteilige MIME-Nachricht codiert. Verwenden Sie dieses Format, wenn Sie eine Datei auf den Server hochladen. |
 
-Teil 1 dieses Artikels untersucht die X-www-form-urlencoded-Format. [Teil 2](sending-html-form-data-part-2.md) mehrteiligen MIME-Nachrichten beschrieben.
+In Teil 1 dieses Artikels wird das Format "x-www-form-urlencoded" untersucht. [Teil 2](sending-html-form-data-part-2.md) beschreibt mehrteilige MIME.
 
 <a id="sending_complex_types"></a>
-## <a name="sending-complex-types"></a>Senden von komplexen Typen
+## <a name="sending-complex-types"></a>Senden komplexer Typen
 
-Senden Sie in der Regel einen komplexen Typ, bestehend aus Werten aus mehrere Steuerelemente des Formulars. Betrachten Sie das folgende Modell, das eine statusaktualisierung darstellt:
+Normalerweise senden Sie einen komplexen Typ, der aus Werten besteht, die von verschiedenen Formular Steuerelementen entnommen werden. Beachten Sie das folgende Modell, das eine Statusaktualisierung darstellt:
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample2.cs)]
 
-Hier ist ein Web-API-Controller, die akzeptiert eine `Update` Objekt über POST.
+Hier ist ein Web-API-Controller, der eine `Update` Objekt per Post akzeptiert.
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample3.cs)]
 
 > [!NOTE]
-> Dieser Controller verwendet [Aktion-basiertes routing](../web-api-routing-and-actions/routing-in-aspnet-web-api.md#routing_by_action_name), sodass die routenvorlage &quot;api / {Controller} / {Action} / {Id}&quot;. Der Client wird die Daten zu buchen &quot;/api/updates/complex&quot;.
+> Dieser Controller verwendet [Aktions basiertes Routing](../web-api-routing-and-actions/routing-in-aspnet-web-api.md#routing_by_action_name), sodass die Routen Vorlage &quot;API/{Controller}/{Action}/{ID}&quot;ist. Der Client sendet die Daten an &quot;/API/Updates/Complex-&quot;.
 
-Jetzt schreiben wir nun ein HTML-Formular für Benutzer, eine statusaktualisierung zu übermitteln.
+Nun schreiben wir ein HTML-Formular, damit Benutzer eine Statusaktualisierung übermitteln können.
 
 [!code-html[Main](sending-html-form-data-part-1/samples/sample4.html)]
 
-Beachten Sie, dass die **Aktion** Attribut des Formulars ist der URI des unsere Controlleraktion. So sieht das Formular mit einigen in eingegebenen Werten aus:
+Beachten Sie, dass das **Action** -Attribut im Formular der URI der Controller Aktion ist. Hier ist das Formular, in das einige Werte eingegeben werden:
 
 ![](sending-html-form-data-part-1/_static/image1.png)
 
-Klickt der Benutzer senden, sendet der Browser eine HTTP-Anforderung ähnelt dem folgenden:
+Wenn der Benutzer auf Senden klickt, sendet der Browser eine HTTP-Anforderung ähnlich der folgenden:
 
 [!code-console[Main](sending-html-form-data-part-1/samples/sample5.cmd)]
 
-Beachten Sie, dass der Anforderungstext Daten aus dem Formular, formatiert als Name/Wert-Paare enthält. Web-API konvertiert automatisch Name/Wert-Paare in einer Instanz von der `Update` Klasse.
+Beachten Sie, dass der Anforderungs Text die Formulardaten enthält, die als Name-Wert-Paare formatiert sind. Die Web-API konvertiert die Name-Wert-Paare automatisch in eine Instanz der `Update`-Klasse.
 
 <a id="sending_form_data_via_ajax"></a>
-## <a name="sending-form-data-via-ajax"></a>Senden von Formulardaten per AJAX
+## <a name="sending-form-data-via-ajax"></a>Senden von Formulardaten über AJAX
 
-Wenn ein Benutzer ein Formular übermittelt, wird der Browser von der aktuellen Seite weg navigiert und rendert den Text der Antwortnachricht. Das ist in Ordnung Wenn die Antwort auf eine HTML-Seite ist. Mit einer Web-API, der Antworttext ist jedoch in der Regel entweder leer ist oder strukturierte Daten, z.B. JSON enthält. In diesem Fall macht es mehr Sinn, die zum Senden von Daten aus dem Formular mit einer AJAX-Anforderung, damit an, dass die Antwort von die Seite verarbeitet werden kann.
+Wenn ein Benutzer ein Formular sendet, navigiert der Browser von der aktuellen Seite Weg und rendert den Text der Antwortnachricht. Das ist in Ordnung, wenn die Antwort eine HTML-Seite ist. Bei einer Web-API ist der Antworttext jedoch in der Regel entweder leer oder enthält strukturierte Daten, wie z. b. JSON. In diesem Fall ist es sinnvoller, die Formulardaten mit einer AJAX-Anforderung zu senden, damit die Seite die Antwort verarbeiten kann.
 
-Der folgende Code zeigt, wie unter Verwendung von jQuery Formulardaten übermittelt wird.
+Der folgende Code zeigt, wie Sie Formulardaten mithilfe von jQuery veröffentlichen.
 
 [!code-html[Main](sending-html-form-data-part-1/samples/sample6.html)]
 
-Die jQuery **übermitteln** -Funktion ersetzt die Formularaktion mit einer neuen Funktion. Dies überschreibt das Standardverhalten der Senden-Schaltfläche. Die **Serialisieren** Funktion serialisiert Daten aus dem Formular in Name/Wert-Paaren. Rufen Sie zum Senden von Daten aus dem Formular an den Server `$.post()`.
+Die jQuery-Funktion zum **senden** ersetzt die Form-Aktion durch eine neue Funktion. Dies überschreibt das Standardverhalten der Schaltfläche "Senden". Die **serialisieren** -Funktion serialisiert die Formulardaten in Name/Wert-Paare. Um die Formulardaten an den Server zu senden, wenden Sie `$.post()`an.
 
-Wenn die Anforderung abgeschlossen ist, die `.success()` oder `.error()` Handler dem Benutzer eine entsprechende Meldung angezeigt.
+Wenn die Anforderung abgeschlossen ist, zeigt der `.success()` oder `.error()` Handler dem Benutzer eine entsprechende Meldung an.
 
 ![](sending-html-form-data-part-1/_static/image2.png)
 
 <a id="sending_simple_types"></a>
 ## <a name="sending-simple-types"></a>Senden von einfachen Typen
 
-In den vorherigen Abschnitten haben wir einen komplexen Typ, der Web-API mit einer Instanz von einer Modellklasse deserialisiert gesendet. Sie können auch einfache Typen, z. B. eine Zeichenfolge senden.
+In den vorherigen Abschnitten haben wir einen komplexen Typ gesendet, der die Web-API in eine Instanz einer Modell Klasse deserialisiert hat. Sie können auch einfache Typen, z. b. eine Zeichenfolge, senden.
 
 > [!NOTE]
-> Senden einen einfachen Typ, berücksichtigen Sie stattdessen den Wert in einem komplexen Typ umschließt. Dies bietet Ihnen die Vorteile der modellvalidierung auf der Serverseite und erleichtert es, Ihr Modell zu erweitern, wenn erforderlich.
+> Vor dem Senden eines einfachen Typs sollten Sie den Wert stattdessen in einem komplexen Typ umhüllen. Dies bietet Ihnen die Vorteile der Modell Validierung auf Serverseite und erleichtert das Erweitern des Modells bei Bedarf.
 
-Die grundlegenden Schritte zum Senden von eines einfachen Typs sind identisch, aber es gibt zwei feine Unterschiede. Zunächst im Controller muss, ergänzen Sie den Namen des Parameters mit dem **FromBody** Attribut.
+Die grundlegenden Schritte zum Senden eines einfachen Typs sind identisch, aber es gibt zwei feine Unterschiede. Zuerst müssen Sie im Controller den Parameternamen mit dem **frombody** -Attribut ergänzen.
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample7.cs?highlight=3)]
 
-Web-API versucht standardmäßig einfache Typen aus der Anforderungs-URI abrufen. Die **FromBody** -Attribut weist die Web-API zum Lesen des Werts aus dem Anforderungstext.
+Standardmäßig versucht die Web-API, einfache Typen aus dem Anforderungs-URI zu erhalten. Das **frombody** -Attribut weist die Web-API an, den Wert aus dem Anforderungs Text zu lesen.
 
 > [!NOTE]
-> Web-API liest den Antworttext nur einen Parameter einer Aktion aus dem Anforderungstext stammen kann wird höchstens einmal zurückgegeben. Wenn Sie mehrere Werte aus dem Anforderungstext abrufen müssen, definieren Sie einen komplexen Typ.
+> Die Web-API liest den Antworttext höchstens einmal, sodass nur ein Parameter einer Aktion aus dem Anforderungs Text stammen kann. Wenn Sie mehrere Werte aus dem Anforderungs Text erhalten müssen, definieren Sie einen komplexen Typ.
 
-Zweitens muss der Client zum Senden von des Wert mit dem folgenden Format ein:
+Zweitens muss der Client den Wert im folgenden Format senden:
 
 [!code-xml[Main](sending-html-form-data-part-1/samples/sample8.xml)]
 
-Insbesondere muss der Namensteil von Name/Wert-Paar für einen einfachen Typ leer sein. Nicht alle Browser unterstützen diese für die HTML-Formularen, aber Sie erstellen dieses Format im Skript wie folgt:
+Insbesondere muss der Namensteil des Name-Wert-Paars für einen einfachen Typ leer sein. Nicht alle Browser unterstützen dies für HTML-Formulare, aber Sie erstellen dieses Format wie folgt im Skript:
 
 [!code-javascript[Main](sending-html-form-data-part-1/samples/sample9.js)]
 
-Hier ist ein Beispielformular:
+Im folgenden finden Sie ein Beispiel für eine Form:
 
 [!code-html[Main](sending-html-form-data-part-1/samples/sample10.html)]
 
-Und hier ist das Skript aus, um den Formularwert zu übermitteln. Der einzige Unterschied besteht aus dem vorherigen Skript wird das übergebene Argument der **Posten** Funktion.
+Und hier ist das Skript zum Übermitteln des Formular Werts. Der einzige Unterschied zum vorherigen Skript ist das Argument, das an die **Post** -Funktion übermittelt wird.
 
 [!code-javascript[Main](sending-html-form-data-part-1/samples/sample11.js?highlight=2)]
 
-Sie können den gleichen Ansatz verwenden, um ein Array von einfachen Typen zu senden:
+Sie können den gleichen Ansatz verwenden, um ein Array einfacher Typen zu senden:
 
 [!code-javascript[Main](sending-html-form-data-part-1/samples/sample12.js)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Teil 2: Dateiupload und mehrteiligen MIME-Nachrichten](sending-html-form-data-part-2.md)
+[Teil 2: Datei Upload und mehrteilige MIME](sending-html-form-data-part-2.md)

@@ -10,15 +10,15 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 21baedf6285b411f89627df9ca25d47a2a42e387
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519101"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472221"
 ---
 # <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
 > ASP.net Identity ist ein erweiterbares System, mit dem Sie einen eigenen Speicher Anbieter erstellen und in Ihre Anwendung einbinden können, ohne die Anwendung neu zu arbeiten. In diesem Thema wird beschrieben, wie ein angepasster Speicher Anbieter für ASP.net Identity erstellt wird. Es behandelt die wichtigsten Konzepte zum Erstellen eines eigenen Speicher Anbieters, aber es handelt sich nicht um eine schrittweise exemplarische Vorgehensweise zum Implementieren eines benutzerdefinierten Speicher Anbieters.
 > 
@@ -29,7 +29,7 @@ durch [Tom FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - Visual Studio 2013 mit Update 2
+> - Visual Studio 2013 mit Update 2
 > - ASP.net Identity 2
 
 ## <a name="introduction"></a>Einführung
@@ -38,7 +38,7 @@ Standardmäßig speichert das ASP.net Identity Systembenutzer Informationen in e
 
 ASP.net Identity ist in vielen der Visual Studio 2013 Vorlagen Standardmäßig enthalten. Sie können ASP.net Identity über das [nuget-Paket Microsoft ASPNET Identity EntityFramework](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)Updates für erhalten.
 
-Dieses Thema enthält folgende Abschnitte:
+Dieses Thema enthält die folgenden Abschnitte:
 
 - [Grundlegendes zur Architektur](#architecture)
 - [Verstehen der gespeicherten Daten](#data)
@@ -68,12 +68,12 @@ Sie müssen die Manager-Klassen nicht anpassen, da Sie beim Erstellen einer neue
 
 Zum Implementieren eines benutzerdefinierten Speicher Anbieters müssen Sie die Datentypen verstehen, die mit ASP.net Identity verwendet werden, und entscheiden, welche Features für Ihre Anwendung relevant sind.
 
-| importieren | Beschreibung |
+| Data | Beschreibung |
 | --- | --- |
-| -Benutzer | Registrierte Benutzer Ihrer Website. Schließt die Benutzer-ID und den Benutzernamen ein. Kann ein Hashwert für das Kennwort enthalten, wenn sich Benutzer mit Anmelde Informationen anmelden, die für Ihren Standort spezifisch sind (anstatt Anmelde Informationen von einer externen Website wie Facebook zu verwenden), und den Sicherheits Stempel angeben, um anzugeben, ob etwas in den Anmelde Informationen des Benutzers geändert wurde. Kann auch die e-Mail-Adresse, Telefonnummer, ob die zweistufige Authentifizierung aktiviert ist, die aktuelle Anzahl der fehlgeschlagenen Anmeldungen und ob ein Konto gesperrt ist. |
-| Benutzeransprüche | Ein Satz von-Anweisungen (oder-Ansprüchen) zum Benutzer, die die Identität des Benutzers darstellen. Kann einen größeren Ausdruck der Identität des Benutzers aktivieren, als durch Rollen erreicht werden kann. |
+| Benutzer | Registrierte Benutzer Ihrer Website. Schließt die Benutzer-ID und den Benutzernamen ein. Kann ein Hashwert für das Kennwort enthalten, wenn sich Benutzer mit Anmelde Informationen anmelden, die für Ihren Standort spezifisch sind (anstatt Anmelde Informationen von einer externen Website wie Facebook zu verwenden), und den Sicherheits Stempel angeben, um anzugeben, ob etwas in den Anmelde Informationen des Benutzers geändert wurde. Kann auch die e-Mail-Adresse, Telefonnummer, ob die zweistufige Authentifizierung aktiviert ist, die aktuelle Anzahl der fehlgeschlagenen Anmeldungen und ob ein Konto gesperrt ist. |
+| Benutzer Ansprüche | Ein Satz von-Anweisungen (oder-Ansprüchen) zum Benutzer, die die Identität des Benutzers darstellen. Kann einen größeren Ausdruck der Identität des Benutzers aktivieren, als durch Rollen erreicht werden kann. |
 | Benutzeranmeldungen | Informationen zum externen Authentifizierungs Anbieter (z. b. Facebook), der bei der Anmeldung eines Benutzers verwendet werden soll. |
-| -Rollen | Autorisierungs Gruppen für Ihre Website. Enthält die Rollen-ID und den Rollennamen (z. b. "admin" oder "Employee"). |
+| Rollen | Autorisierungs Gruppen für Ihre Website. Enthält die Rollen-ID und den Rollennamen (z. b. "admin" oder "Employee"). |
 
 <a id="dal"></a>
 ## <a name="create-the-data-access-layer"></a>Erstellen der Datenzugriffs Ebene
@@ -88,12 +88,12 @@ In der Datenzugriffs Ebene stellen Sie die Logik bereit, um die Daten aus ASP.ne
 
 | Klasse | Beschreibung | Beispiel |
 | --- | --- | --- |
-| Context | Kapselt die Informationen zum Herstellen einer Verbindung mit dem Persistenzmechanismus und zum Ausführen von Abfragen. Diese Klasse ist für die Datenzugriffs Ebene von zentraler Bedeutung. Die anderen Daten Klassen erfordern eine Instanz dieser Klasse, um Ihre Vorgänge auszuführen. Außerdem initialisieren Sie Ihre Store-Klassen mit einer Instanz dieser Klasse. | [MySQLDatabase](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
+| Kontext | Kapselt die Informationen zum Herstellen einer Verbindung mit dem Persistenzmechanismus und zum Ausführen von Abfragen. Diese Klasse ist für die Datenzugriffs Ebene von zentraler Bedeutung. Die anderen Daten Klassen erfordern eine Instanz dieser Klasse, um Ihre Vorgänge auszuführen. Außerdem initialisieren Sie Ihre Store-Klassen mit einer Instanz dieser Klasse. | [Mysqldatabase](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
 | Benutzerspeicher | Speichert Benutzerinformationen (z. b. Benutzername und Kenn Wort Hash) und ruft Sie ab. | [Usertable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserTable.cs) |
 | Rollen Speicher | Speichert Rollen Informationen (z. b. den Rollennamen) und ruft Sie ab. | [Roletable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
-| Speicherung von Benutzer Ansprüchen | Speichert Benutzer Anspruchs Informationen (z. b. den Anspruchstyp und-Wert) und ruft Sie ab. | [UserClaimsTable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
+| Speicherung von Benutzer Ansprüchen | Speichert Benutzer Anspruchs Informationen (z. b. den Anspruchstyp und-Wert) und ruft Sie ab. | [Userclaimstable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
 | Speicherung von Benutzeranmeldungen | Speichert und ruft Benutzer Anmelde Informationen ab (z. b. einen externen Authentifizierungs Anbieter). | [Userloginstable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserLoginsTable.cs) |
-| Benutzer Rollen Speicher | Speichert und ruft ab, welchen Rollen ein Benutzer zugewiesen ist. | [UserRoleTable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserRoleTable.cs) |
+| Benutzer Rollen Speicher | Speichert und ruft ab, welchen Rollen ein Benutzer zugewiesen ist. | [Userroletable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserRoleTable.cs) |
 
 Auch hier müssen Sie nur die Klassen implementieren, die Sie in Ihrer Anwendung verwenden möchten.
 
@@ -151,25 +151,25 @@ In der nächsten Abbildung werden weitere Details zu den Funktionen angezeigt, d
 
 - **IUserStore**  
   Der [iuserstore&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx) Interface ist die einzige Schnittstelle, die Sie in Ihrem Benutzerspeicher implementieren müssen. Es definiert Methoden zum Erstellen, aktualisieren, löschen und Abrufen von Benutzern.
-- **IUserClaimStore**  
+- **Iuserclaimstore ist**  
   Das [iuserclaimstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie in Ihrem Benutzerspeicher implementieren müssen, um Benutzer Ansprüche zu aktivieren. Sie enthält Methoden oder das Hinzufügen, entfernen und Abrufen von Benutzer Ansprüchen.
-- **IUserLoginStore**  
+- **Iuserloginstore ist**  
   Das [iuserloginstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx) definiert die Methoden, die Sie in Ihrem Benutzerspeicher implementieren müssen, um externe Authentifizierungs Anbieter zu aktivieren. Sie enthält Methoden zum Hinzufügen, entfernen und Abrufen von Benutzeranmeldungen sowie eine Methode zum Abrufen eines Benutzers basierend auf den Anmelde Informationen.
-- **IUserRoleStore**  
+- **Iuserrolestore ist**  
   Das [iuserrolestore-&lt;TKey, die tuser-&gt;](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) Schnittstelle definiert die Methoden, die Sie in Ihrem Benutzerspeicher implementieren müssen, um einen Benutzer einer Rolle zuzuordnen. Sie enthält Methoden zum Hinzufügen, entfernen und Abrufen der Rollen eines Benutzers sowie eine Methode, um zu überprüfen, ob ein Benutzer einer Rolle zugewiesen ist.
-- **IUserPasswordStore**  
+- **Iuserpasswordstore ist**  
   Das [iuserpasswordstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie in Ihrem Benutzerspeicher implementieren müssen, um Hash Kennwörter beizubehalten. Sie enthält Methoden zum erhalten und Festlegen des hashkennworts sowie eine Methode, die angibt, ob der Benutzer ein Kennwort festgelegt hat.
-- **IUserSecurityStampStore**  
+- **Iusersecuritystampstore**  
   Das [iusersecuritystampstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie in Ihrem Benutzerspeicher implementieren müssen, um mithilfe eines Sicherheits Stempels anzugeben, ob sich die Kontoinformationen des Benutzers geändert haben. Dieser Stempel wird aktualisiert, wenn ein Benutzer das Kennwort ändert oder Anmeldungen hinzufügt oder entfernt. Sie enthält Methoden zum erhalten und Festlegen des Sicherheits Stempels.
-- **IUserTwoFactorStore**  
+- **Iusertwofactorstore ist**  
   Das [iusertwofactorstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie implementieren müssen, um die zweistufige Authentifizierung zu implementieren. Sie enthält Methoden zum erhalten und festlegen, ob die zweistufige Authentifizierung für einen Benutzer aktiviert ist.
-- **IUserPhoneNumberStore**  
+- **Iuserphonenumberstore ist**  
   Die [iuserphonenumberstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie implementieren müssen, um die Telefonnummern von Benutzern zu speichern. Sie enthält Methoden zum erhalten und Festlegen der Telefonnummer und darüber, ob die Telefonnummer bestätigt ist.
-- **IUserEmailStore**  
+- **Iuseremailstore ist**  
   Der [iuseremailstore&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx) Interface definiert die Methoden, die Sie implementieren müssen, um e-Mail-Adressen von Benutzern zu speichern. Sie enthält Methoden zum erhalten und Festlegen der e-Mail-Adresse und darüber, ob die e-Mail bestätigt ist.
-- **IUserLockoutStore**  
+- **Iuserlockoutstore ist**  
   Das [iuserlockoutstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx) -Schnittstelle definiert die Methoden, die Sie implementieren müssen, um Informationen zum Sperren eines Kontos zu speichern. Sie enthält Methoden zum Abrufen der aktuellen Anzahl fehlerhafter Zugriffsversuche, abrufen und festlegen, ob das Konto gesperrt werden kann, abrufen und Festlegen des Enddatums für die Sperrung, erhöhen der Anzahl fehlerhafter Versuche und Zurücksetzen der Anzahl fehlgeschlagener Versuche.
-- **IQueryableUserStore**  
+- **Iqueryableuserstore ist**  
   Die [iqueryableuserstore-&lt;tuser, TKey&gt;](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx) -Schnittstelle definiert die Elemente, die Sie implementieren müssen, um einen abfragbaren Benutzerspeicher bereitzustellen. Sie enthält eine Eigenschaft, die die abfragbaren Benutzer enthält.
 
   Sie implementieren die Schnittstellen, die in Ihrer Anwendung erforderlich sind. beispielsweise die Schnittstellen iuserclaimstore, iuserloginstore, iuserrolestore, iuserpasswordstore und iusersecuritystampstore, wie unten gezeigt. 
@@ -214,9 +214,9 @@ Das folgende Beispiel zeigt eine Rollen Speicher Klasse. Der generische trole-Pa
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample8.cs)]
 
-- **IRoleStore&lt;TRole&gt;**  
+- **Irolestore&lt;trole-&gt;**  
   Die [irolestore](https://msdn.microsoft.com/library/dn468195.aspx) -Schnittstelle definiert die Methoden, die in der Rollen Speicher Klasse implementiert werden müssen. Sie enthält Methoden zum Erstellen, aktualisieren, löschen und Abrufen von Rollen.
-- **RoleStore&lt;TRole&gt;**  
+- **Rolestore&lt;trole&gt;**  
   Zum Anpassen von rolestore erstellen Sie eine Klasse, die die irolestore-Schnittstelle implementiert. Sie müssen diese Klasse nur implementieren, wenn Sie im System Rollen verwenden möchten. Der Konstruktor, der einen Parameter mit dem Namen " *Database* " vom Typ "exampledatabase" annimmt, ist nur ein Beispiel dafür, wie Sie die Datenzugriffs Klasse übergeben. In der MySQL-Implementierung übernimmt dieser Konstruktor z. b. einen Parameter des Typs mysqldatabase.  
   
   Eine komplette Implementierung finden Sie unter [rolestore (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/RoleStore.cs) .

@@ -9,11 +9,11 @@ ms.assetid: ddf6252f-9413-4c0c-a360-2cef8d231717
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: e4d094ef84a747c36ce05ddb0e3d1ce0391d5605
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74572777"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455073"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen eines reinen Code Updates-8 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Nach der erstmaligen Bereitstellung wird die Wartung und Entwicklung Ihrer Website fortgesetzt, und bevor Sie mit der Zeit arbeiten, möchten Sie ein Update bereitstellen. Dieses Tutorial führt Sie durch den Prozess der Bereitstellung eines Updates für den Anwendungscode. Diese Aktualisierung umfasst keine Daten Bank Änderung. im nächsten Tutorial sehen Sie, was die Bereitstellung einer Daten Bank Änderung unterscheidet.
 
@@ -110,7 +110,7 @@ Wählen Sie im Dialogfeld **Datei hochladen** die Datei *App\_offline. htm* aus,
 
 [![Upload_dialog_box_in_File_Manager](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image14.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image13.png)
 
-Navigieren Sie zu Ihrer Website-URL. Sie sehen, dass die Seite *App\_offline. htm* jetzt anstelle der Startseite angezeigt wird.
+Wechseln Sie zur URL Ihrer Site. Sie sehen, dass die Seite *App\_offline. htm* jetzt anstelle der Startseite angezeigt wird.
 
 [![App_offline. htm_page_in_production](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image16.png)](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12/_static/image15.png)
 

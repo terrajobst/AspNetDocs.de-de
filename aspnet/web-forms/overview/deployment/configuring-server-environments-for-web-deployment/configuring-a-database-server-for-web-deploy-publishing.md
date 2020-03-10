@@ -1,225 +1,225 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
-title: Konfigurieren eines Datenbankservers für Web Deploy-Veröffentlichung | Microsoft-Dokumentation
+title: Konfigurieren eines Datenbankservers für die Web deploy Veröffentlichung | Microsoft-Dokumentation
 author: jrjlee
-description: Dieses Thema beschreibt, wie Sie einen SQL Server 2008 R2-Datenbank-Server zur Unterstützung von Web-Bereitstellung und Veröffentlichung zu konfigurieren. In diesem Thema beschriebenen Aufgaben sind co...
+description: In diesem Thema wird beschrieben, wie Sie einen SQL Server 2008 R2-Daten Bank Server zur Unterstützung der Webbereitstellung und-Veröffentlichung konfigurieren Die in diesem Thema beschriebenen Aufgaben sind Co...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: e7c447f9-eddf-4bbe-9f18-3326d965d093
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
 ms.openlocfilehash: ade3c1ba1c470092f512436f39b8831458408c2c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131577"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515241"
 ---
 # <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Konfigurieren eines Datenbankservers für die Web Deploy-Veröffentlichung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Dieses Thema beschreibt, wie Sie einen SQL Server 2008 R2-Datenbank-Server zur Unterstützung von Web-Bereitstellung und Veröffentlichung zu konfigurieren.
+> In diesem Thema wird beschrieben, wie Sie einen SQL Server 2008 R2-Daten Bank Server zur Unterstützung der Webbereitstellung und-Veröffentlichung konfigurieren
 > 
-> In diesem Thema beschriebenen Aufgaben gelten für jedes Bereitstellungsszenario&#x2014;es spielt keine Rolle, ob Ihre Webserver konfiguriert sind, auf der IIS-Webbereitstellungstool (Web Deploy) Remote-Agent-Dienst, das Bereitstellen von Web-Handler oder offline-Bereitstellung verwenden oder die Anwendung wird auf einem einzelnen Web-Server oder einer Serverfarm ausgeführt werden. Die Möglichkeit, die Sie die Datenbank bereitstellen kann gemäß den sicherheitsanforderungen und andere Überlegungen zu ändern. Beispielsweise können Sie die Datenbank, die mit oder ohne Beispieldaten bereitstellen, und Sie benutzerzuordnungen für die Rolle bereitstellen oder manuell nach der Bereitstellung zu konfigurieren. Die Möglichkeit, die Sie konfigurieren, dass den Datenbankserver bleibt jedoch identisch.
+> Die in diesem Thema beschriebenen Aufgaben sind von allen Bereitstellungs Szenarien&#x2014;abhängig. es spielt keine Rolle, ob die Webserver für die Verwendung des Remote-Agent-Diensts des IIS-Webbereitstellungs Tools (Web deploy), des Web deploy Handlers oder der Offline Bereitstellung konfiguriert sind oder die Anwendung auf einem einzelnen Webserver oder einer Serverfarm ausgeführt wird. Die Art und Weise, wie Sie die Datenbank bereitstellen, kann sich je nach Sicherheitsanforderungen und anderen Überlegungen ändern Beispielsweise können Sie die Datenbank mit oder ohne Beispiel Daten bereitstellen, und Sie können Benutzer Rollen Zuordnungen bereitstellen oder Sie nach der Bereitstellung manuell konfigurieren. Die Art und Weise, wie Sie den Datenbankserver konfigurieren, bleibt jedoch unverändert.
 
-Sie haben keine zusätzliche Produkte oder Tools zu installieren, konfigurieren Sie einen Datenbankserver zur Unterstützung von Web-Bereitstellung. Vorausgesetzt, dass Ihr Datenbankserver und den Webserver auf unterschiedlichen Computern ausführen, müssen Sie einfach:
+Sie müssen keine zusätzlichen Produkte oder Tools installieren, um einen Datenbankserver zur Unterstützung der Webbereitstellung zu konfigurieren. Vorausgesetzt, dass der Datenbankserver und der Webserver auf unterschiedlichen Computern ausgeführt werden, müssen Sie lediglich die folgenden Schritte ausführen:
 
-- Lassen Sie SQL Server für die Kommunikation über TCP/IP.
-- SQL Server-Datenverkehr über eventuell vorhandene Firewalls zugelassen.
-- Geben Sie dem Computerkonto des Web-Server eine SQL Server-Anmeldung.
-- Ordnen Sie der kontoanmeldung für Computer, um alle erforderlichen Datenbankrollen.
-- Gewähren Sie dem Konto, das der Bereitstellung eine SQL Server-Anmeldung und einen Datenbankbenutzer Ersteller Berechtigungen ausgeführt wird.
-- Um mehrere Bereitstellungen zu unterstützen, ordnen Sie der Bereitstellung-kontoanmeldung an die **Db\_Besitzer** -Datenbankrolle.
+- Ermöglicht die Kommunikation von SQL Server mithilfe von TCP/IP.
+- Ermöglicht die SQL Server von Datenverkehr durch Firewalls.
+- Stellen Sie dem Webserver-Computer Konto eine SQL Server-Anmeldung zur Verfügung.
+- Ordnen Sie die Anmelde Informationen des Computer Kontos allen erforderlichen Daten bankrollen zu.
+- Legen Sie dem Konto, von dem die Bereitstellung ausgeführt wird, eine SQL Server-Anmelde-und Daten Bank Ersteller
+- Um Wiederholungs Bereitstellungen zu unterstützen, ordnen Sie die Anmelde Informationen des Bereitstellungs Kontos der Daten Bank Rolle " **DB\_Owner** " zu.
 
-In diesem Thema werden Sie zum Durchführen dieser Verfahren erläutert. Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie starten mit einer Standardinstanz von SQL Server 2008 R2 auf Windows Server 2008 R2 ausgeführt wird. Bevor Sie fortfahren, stellen Sie sicher, dass:
+In diesem Thema wird gezeigt, wie Sie die einzelnen Prozeduren ausführen. Bei den Aufgaben und exemplarischen Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie mit einer Standard Instanz von SQL Server 2008 R2 auf Windows Server 2008 R2 beginnen. Bevor Sie fortfahren, stellen Sie Folgendes sicher:
 
 - Windows Server 2008 R2 Service Pack 1 und alle verfügbaren Updates werden installiert.
-- Der Server ist die Domäne eingebunden.
-- Der Server hat eine statische IP-Adresse.
+- Der Server ist einer Domäne beigetreten.
+- Der Server verfügt über eine statische IP-Adresse.
 - SQL Server 2008 R2 Service Pack 1 und alle verfügbaren Updates werden installiert.
 
-SQL Server-Instanz muss nur enthalten die **Database Engine Services** Rolle, die automatisch in jeder SQL Server-Installation enthalten ist. Jedoch zur Vereinfachung der Konfiguration und Wartung, es wird empfohlen, dass Sie enthalten die **Verwaltungstools – einfach** und **Verwaltungstools – vollständig** Serverrollen.
+Die SQL Server Instanz muss nur die **Datenbank-Engine Services** -Rolle enthalten, die automatisch in jeder SQL Server-Installation enthalten ist. Zur Erleichterung der Konfiguration und Wartung empfiehlt es sich jedoch, die **Verwaltungs Tools – Basic** und **Verwaltungs Tools – Complete** Server-Rollen einzubeziehen.
 
 > [!NOTE]
-> Weitere Informationen zum Einbinden von Computern in einer Domäne, finden Sie unter [Hinzufügen von Computern zur Domäne und Anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren von statischen IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Weitere Informationen zum Installieren von SQL Server finden Sie unter [Installieren von SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx).
+> Weitere Informationen zum Hinzufügen von Computern zu einer Domäne finden Sie unter [Hinzufügen von Computern zur Domäne und anmelden](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Weitere Informationen zum Konfigurieren statischer IP-Adressen finden Sie unter [Konfigurieren einer statischen IP-Adresse](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Weitere Informationen zum Installieren von SQL Server finden Sie unter [Installieren von SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx).
 
-## <a name="enable-remote-access-to-sql-server"></a>Aktivieren des Remotezugriffs auf SQLServer
+## <a name="enable-remote-access-to-sql-server"></a>Aktivieren des Remote Zugriffs auf SQL Server
 
-SQL Server verwendet die TCP/IP für die Kommunikation mit Remotecomputern. Wenn Sie Ihren Datenbankserver und den Webserver auf unterschiedlichen Computern befinden, müssen Sie:
+SQL Server verwendet TCP/IP für die Kommunikation mit Remote Computern. Wenn sich der Datenbankserver und der Webserver auf unterschiedlichen Computern befinden, müssen Sie folgende Schritte ausführen:
 
-- Konfigurieren Sie SQL Server-Netzwerkeinstellungen, um die Kommunikation über TCP/IP zu ermöglichen.
-- Konfigurieren Sie alle Hardware oder Software-Firewalls zum Zulassen von TCP-Datenverkehr (und in einigen Fällen User Datagram Protocol (UDP) für Datenverkehr), auf die Ports, die die SQL Server-Instanz verwendet.
+- Konfigurieren Sie SQL Server Netzwerkeinstellungen, um die Kommunikation über TCP/IP zuzulassen.
+- Konfigurieren Sie Hardware-oder Software Firewalls, um TCP-Datenverkehr (und in einigen Fällen UDP-Datenverkehr (User Datagram Protocol) an den von der SQL Server Instanz verwendeten Ports zuzulassen.
 
-Um SQL Server für die Kommunikation über TCP/IP zu aktivieren, verwenden Sie SQL Server-Konfigurations-Manager, um die Netzwerkkonfiguration für Ihre SQL Server-Instanz zu ändern.
+Um SQL Server die Kommunikation über TCP/IP zu ermöglichen, verwenden Sie SQL Server-Konfigurations-Manager, um die Netzwerkkonfiguration für die SQL Server Instanz zu ändern.
 
-**So aktivieren Sie SQL Server für die Kommunikation über TCP/IP**
+**So aktivieren Sie SQL Server die Kommunikation mit TCP/IP**
 
-1. Auf der **starten** Startmenü **Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, klicken Sie auf **Konfigurationstools**, und klicken Sie dann auf **SQL Server-Konfigurations-Manager**.
-2. Erweitern Sie im Strukturansichtsbereich, **SQL Server-Netzwerkkonfiguration**, und klicken Sie dann auf **Protokolle für MSSQLSERVER**.
+1. Zeigen Sie im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, klicken Sie auf **Konfigurationstools**, und klicken Sie dann auf **SQL Server-Konfigurations-Manager**.
+2. Erweitern Sie im Struktur Ansichts Bereich **SQL Server Netzwerkkonfiguration**, und klicken Sie dann auf **Protokolle für MSSQLSERVER**.
 
    > [!NOTE]
-   > Wenn Sie mehrere Instanzen von SQL Server installiert haben, sehen Sie eine <strong>Protokolle für</strong><em>[Instanzname]</em> Element für jede Instanz. Sie müssen zum Konfigurieren von Netzwerkeinstellungen auf einer Instanz von Instanz Basis.
-3. Klicken Sie im Detailbereich mit der Maustaste der **TCP/IP** Zeile, und klicken Sie dann auf **aktivieren**.
+   > Wenn Sie mehrere Instanzen von SQL Server installiert haben, wird für jede Instanz ein <strong>Protokoll für</strong>das<em>[Instanzname]</em> -Element angezeigt. Sie müssen Netzwerkeinstellungen auf instanzweise konfigurieren.
+3. Klicken Sie im Detailfenster mit der rechten Maustaste auf die Zeile **TCP/IP** , und klicken Sie dann auf **aktivieren**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
-4. In der **Warnung** Dialogfeld klicken Sie auf **OK**.
+4. Klicken Sie im Dialogfeld **Warnung** auf **OK**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image2.png)
-5. Sie müssen den MSSQLSERVER-Dienst neu starten, damit die neue Netzwerkkonfiguration wirksam wird. Die an einer Eingabeaufforderung aus der Konsole Dienste oder aus SQL Server Management Studio möglich. In diesem Verfahren verwenden Sie SQL Server Management Studio.
-6. SQL Server-Konfigurations-Manager zu schließen.
-7. Auf der **starten** Startmenü **Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, und klicken Sie dann auf **SQL Server Management Studio**.
-8. In der **Herstellen einer Verbindung mit Server** Dialogfeld die **Servernamen** , geben Sie den Namen des Datenbankservers ein, und klicken Sie dann auf **Connect**.
+5. Sie müssen den MSSQLServer-Dienst neu starten, damit die neue Netzwerkkonfiguration wirksam wird. Dies können Sie an einer Eingabeaufforderung, in der Dienste-Konsole oder in SQL Server Management Studio. In diesem Verfahren verwenden Sie SQL Server Management Studio.
+6. Schließen Sie den SQL Server-Konfigurations-Manager.
+7. Zeigen Sie im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, und klicken Sie dann auf **SQL Server Management Studio**.
+8. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** im Feld **Server Name** den Namen des Datenbankservers ein, und klicken Sie dann auf **verbinden**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image3.png)
-9. In der **Objekt-Explorer** Bereich mit der rechten Maustaste in des übergeordneten Server-Knotens (z. B. **Datenbank "testdb1"**), und klicken Sie dann auf **neu starten**.
+9. Klicken Sie im **Objekt-Explorer** Bereich mit der rechten Maustaste auf den übergeordneten Server Knoten (z. b. **TESTDB1**), und klicken Sie dann auf **neu starten**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image4.png)
-10. In der **Microsoft SQL Server Management Studio** Dialogfeld klicken Sie auf **Ja**.
+10. Klicken Sie im Dialogfeld **Microsoft SQL Server Management Studio** auf **Ja**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image5.png)
 11. Wenn der Dienst neu gestartet wurde, schließen Sie SQL Server Management Studio.
 
-Um SQL Server-Datenverkehr über eine Firewall zu ermöglichen, müssen Sie wissen, welche Ports Ihrer SQL Server-Instanz verwendet wird. Dies hängt wie SQL Server-Instanz erstellt und konfiguriert wurde:
+Um SQL Server Datenverkehr über eine Firewall zuzulassen, müssen Sie zunächst wissen, welche Ports von Ihrer SQL Server Instanz verwendet werden. Dies hängt davon ab, wie die SQL Server Instanz erstellt und konfiguriert wurde:
 
-- Ein *Standardinstanz* von SQL Server überwacht (und reagiert auf) Anforderungen an TCP-Port 1433.
-- Ein *benannte Instanz* von SQL Server überwacht (und reagiert auf) die Anforderungen für einen dynamisch zugewiesenen TCP-Port.
-- Wenn der SQL Server-Browser-Dienst aktiviert ist, können Clients den Dienst auf UDP-Port 1434, um herauszufinden, welche TCP-Port für eine bestimmte SQL Server-Instanz verwenden Abfragen. Dieser Dienst ist jedoch häufig aus Sicherheitsgründen deaktiviert.
+- Eine *Standard Instanz* von SQL Server die Anforderungen an den TCP-Port 1433 abhört (und darauf antwortet).
+- Eine *benannte Instanz* von SQL Server die Anforderungen an einen dynamisch zugewiesenen TCP-Port abhört (und darauf antwortet).
+- Wenn der SQL Server-Browser-Dienst aktiviert ist, können Clients den Dienst auf UDP-Port 1434 Abfragen, um herauszufinden, welcher TCP-Port für eine bestimmte SQL Server Instanz verwendet werden soll. Dieser Dienst wird jedoch aus Sicherheitsgründen häufig deaktiviert.
 
-Vorausgesetzt, dass Sie eine Standardinstanz von SQL Server verwenden, müssen Sie Ihre Firewall zum Zulassen von Datenverkehr zu konfigurieren.
+Angenommen, Sie verwenden eine Standard Instanz von SQL Server, müssen Sie die Firewall so konfigurieren, dass Datenverkehr zugelassen wird.
 
-| Richtung | Über Port | So portieren Sie | Porttyp |
+| Direction | Von Port | An Port | Porttyp |
 | --- | --- | --- | --- |
-| Eingehende | Beliebig | 1433 | TCP |
-| Ausgehende | 1433 | Beliebig | TCP |
+| Eingehend | Beliebig | 1433 | TCP |
+| Ausgehend | 1433 | Beliebig | TCP |
 
 > [!NOTE]
-> Technisch gesehen einen zufällig zugewiesenen TCP-Port zwischen 1024 und 5000 ein Clientcomputer für die Kommunikation mit SQL Server verwenden, und Sie können die Firewall-Regeln entsprechend einschränken. Weitere Informationen zu SQL Server-Ports und Firewalls, finden Sie unter [TCP/IP-Portnummern für die Kommunikation mit SQL über eine Firewall erforderlich](https://go.microsoft.com/?linkid=9805125) und [Vorgehensweise: Konfigurieren ein Servers zur Überwachung eines bestimmten TCP-Ports (SQL Server-Konfigurations-Manager)](https://msdn.microsoft.com/library/ms177440.aspx).
+> Aus technischer Sicht verwendet ein Client Computer einen zufällig zugewiesenen TCP-Port zwischen 1024 und 5000, um mit SQL Server zu kommunizieren, und Sie können Ihre Firewallregeln entsprechend einschränken. Weitere Informationen zu SQL Server Ports und Firewalls finden Sie unter [TCP/IP-Portnummern für die Kommunikation mit SQL über eine Firewall](https://go.microsoft.com/?linkid=9805125) und Gewusst [wie: Konfigurieren eines Servers für das lauschen an einem bestimmten TCP-Port (SQL Server-Konfigurations-Manager)](https://msdn.microsoft.com/library/ms177440.aspx).
 
-In den meisten Windows Server-Umgebungen müssen Sie wahrscheinlich zum Konfigurieren von Windows-Firewall auf dem Datenbankserver. Standardmäßig lässt Windows-Firewall sämtlicher ausgehenden Datenverkehr, es sei denn, eine Regel ausdrücklich untersagt. Um Ihrem Webserver das Erreichen Ihrer Datenbank zu aktivieren, müssen Sie eine Eingangsregel zu konfigurieren, die TCP-Datenverkehr auf die Portnummer zugelassen wird, die SQL Server-Instanz verwendet. Wenn Sie eine Standardinstanz von SQL Server verwenden, können Sie das nächste Verfahren, mit dieser Regel zu konfigurieren.
+In den meisten Windows Server-Umgebungen ist es wahrscheinlich, dass Sie die Windows-Firewall auf dem Daten Bank Server konfigurieren müssen. Standardmäßig lässt die Windows-Firewall den gesamten ausgehenden Datenverkehr zu, es sei denn, dies wird von einer Regel Um dem Webserver das Erreichen der Datenbank zu ermöglichen, müssen Sie eine eingehende Regel konfigurieren, die TCP-Datenverkehr an der von der SQL Server Instanz verwendeten Portnummer zulässt. Wenn Sie eine Standard Instanz von SQL Server verwenden, können Sie diese Regel mithilfe des nächsten Verfahrens konfigurieren.
 
-**So konfigurieren Sie Windows-Firewall, damit die Kommunikation mit einer Standardinstanz von SQL Server**
+**So konfigurieren Sie die Windows-Firewall für die Kommunikation mit einer Standard SQL Server Instanz**
 
-1. Auf dem Datenbankserver auf die **starten** Startmenü **Verwaltung**, und klicken Sie dann auf **Windows-Firewall mit erweiterter Sicherheit**.
-2. Klicken Sie im Strukturansichtsbereich, auf **Eingangsregeln**.
+1. Zeigen Sie auf dem Datenbankserver im **Startmenü** auf **Verwaltung**, und klicken Sie dann auf **Windows-Firewall mit**erweiterter Sicherheit.
+2. Klicken Sie im Struktur Ansichts Bereich auf **Eingehende Regeln**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image6.png)
-3. In der **Aktionen** Bereich unter **Eingangsregeln**, klicken Sie auf **neue Regel**.
-4. In den neuen Assistenten für eingehende Regeln auf die **Regeltyp** Seite **Port**, und klicken Sie dann auf **Weiter**.
+3. Klicken Sie im **Aktions** Bereich unter **Eingehende Regeln**auf **neue Regel**.
+4. Wählen Sie im Assistenten für neue eingehende Regeln auf der Seite **Regeltyp** die Option **Port**aus, und klicken Sie dann auf **weiter**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image7.png)
-5. Auf der **Protokoll und Ports** Seite **TCP** ausgewählt ist, und klicken Sie in der **bestimmte lokale Ports** geben **1433**, und klicken Sie dann auf **Weiter**.
+5. Vergewissern Sie sich, dass auf der Seite **Protokoll und Ports** die Option **TCP** ausgewählt ist, und geben Sie im Feld **bestimmte lokale Ports** den Wert **1433**ein, und klicken Sie dann auf **weiter**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image8.png)
-6. Auf der **Aktion** Seite, lassen Sie **Verbindung zulassen,** ausgewählt, und klicken Sie auf **Weiter**.
-7. Auf der **Profil** Seite, lassen Sie **Domäne** ausgewählt haben, deaktivieren Sie die **Private** und **öffentliche** Kontrollkästchen, und klicken Sie dann auf  **Nächste**.
+6. Lassen Sie auf der Seite Aktion **die Option Verbindung zulassen** aktiviert, und klicken Sie auf **weiter**.
+7. Lassen Sie auf der Seite **Profil** die Option **Domäne** ausgewählt, deaktivieren Sie die Kontrollkästchen **Privat** und **öffentlich** , und klicken Sie dann auf **weiter**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
-8. Auf der **Namen** Seite, geben Sie der Regel einen entsprechend aussagekräftigen Namen (z. B. **SQL Server-Standardinstanz – Netzwerkzugriff**), und klicken Sie dann auf **Fertig stellen**.
+8. Geben Sie auf der Seite **Name** einen aussagekräftigen Namen für die Regel ein (z. b. **SQL Server Standard Instanz – Netzwerk Zugriff**), und klicken Sie dann auf **Fertig**stellen.
 
-Weitere Informationen zum Konfigurieren von Windows-Firewall für SQL Server, insbesondere, wenn Sie müssen mit SQL Server nicht standardmäßiger oder dynamische Ports zu kommunizieren, finden Sie unter [Vorgehensweise: Konfigurieren einer Windows-Firewall für Datenbank-Engine-Zugriff](https://technet.microsoft.com/library/ms175043.aspx).
+Weitere Informationen zum Konfigurieren der Windows-Firewall für SQL Server, insbesondere, wenn Sie mit SQL Server über nicht standardmäßige oder dynamische Ports kommunizieren müssen, finden Sie unter Vorgehens [Weise: Konfigurieren einer Windows-Firewall für Datenbank-Engine Zugriff](https://technet.microsoft.com/library/ms175043.aspx).
 
-## <a name="configure-logins-and-database-permissions"></a>Konfigurieren von Anmeldungen und Berechtigungen
+## <a name="configure-logins-and-database-permissions"></a>Konfigurieren von Anmeldungen und Daten Bank Berechtigungen
 
-Wenn Sie eine Webanwendung zu IIS (Internetinformationsdienste) bereitstellen, führt die Anwendung mit der Identität des Anwendungspools. Verwenden Sie in einer domänenumgebung Anwendungspoolidentitäten das Computerkonto des Servers, auf denen sie Zugriff auf Netzwerkressourcen ausgeführt. Computerkonten werden in der Form <em>[Domänenname]</em><strong>\</ strong ><em>[Computername]</em><strong>$</strong>&#x2014;z. B. <strong>FABRIKAM\TESTWEB1$</strong>. Damit Ihre Webanwendung auf eine Datenbank über das Netzwerk zugreifen kann, müssen Sie:
+Beim Bereitstellen einer Webanwendung für Internetinformationsdienste (IIS) wird die Anwendung mit der Identität des Anwendungs Pools ausgeführt. In einer Domänen Umgebung verwenden Anwendungs Pool Identitäten das Computer Konto des Servers, auf dem Sie ausgeführt werden, um auf Netzwerkressourcen zuzugreifen. Computer Konten haben das Format <em>[Domänen Name]</em><strong>\</strong ><em>[Computername]</em> <strong>$</strong> &#x2014;beispielsweise <strong>fabrikam\testweb1 $</strong>. Damit Ihre Webanwendung über das Netzwerk auf eine Datenbank zugreifen kann, müssen Sie folgende Schritte ausführen:
 
-- Fügen Sie eine Anmeldung für das Computerkonto des Web, mit der SQL Server-Instanz.
-- Der Computer-kontoanmeldung alle erforderlichen Datenbankrollen zugeordnet (i. d. r. **Db\_Datareader** und **Db\_Datawriter**).
+- Fügen Sie der SQL Server Instanz einen Anmelde Namen für das Computer Konto des Webservers hinzu.
+- Ordnen Sie die Anmelde Informationen des Computer Kontos allen erforderlichen Daten bankrollen zu (in der Regel **DB\_DataReader** und **DB\_-DataWriter**).
 
-Wenn Ihre Webanwendung auf einer Serverfarm, statt auf einem einzelnen Server ausgeführt wird, müssen Sie diese Verfahren für jeden Webserver in der Serverfarm zu wiederholen.
+Wenn die Webanwendung nicht auf einem einzelnen Server, sondern in einer Serverfarm ausgeführt wird, müssen Sie diese Prozeduren für jeden Webserver in der Serverfarm wiederholen.
 
 > [!NOTE]
-> Weitere Informationen zu den Identitäten des dienstanwendungspools und den Zugriff auf Netzwerkressourcen, finden Sie unter [Anwendungspoolidentitäten](https://go.microsoft.com/?linkid=9805123).
+> Weitere Informationen zu Anwendungs Pool Identitäten und zum Zugreifen auf Netzwerkressourcen finden Sie unter [Anwendungs Pool Identitäten](https://go.microsoft.com/?linkid=9805123).
 
-Sie können diese Aufgaben auf verschiedene Weise angehen. Um die Anmeldung zu erstellen, ist Folgendes möglich:
+Sie können diese Aufgaben auf verschiedene Weise angehen. Zum Erstellen der Anmeldung können Sie folgende Aktionen ausführen:
 
-- Erstellen Sie den Anmeldenamen manuell auf dem Datenbankserver, die mithilfe von Transact-SQL oder SQL Server Management Studio.
-- Verwenden Sie ein SQL Server 2008-Server-Projekt in Visual Studio zum Erstellen und Bereitstellen der Anmeldung.
+- Erstellen Sie die Anmeldung manuell auf dem Datenbankserver mithilfe von Transact-SQL oder SQL Server Management Studio.
+- Verwenden Sie ein SQL Server 2008-Server Projekt in Visual Studio, um die Anmeldung zu erstellen und bereitzustellen.
 
-SQL Server-Anmeldename ist ein Objekt auf Serverebene, anstatt ein Objekt auf Datenbankebene, daher ist es nicht abhängig von der Datenbank, die Sie bereitstellen möchten. Daher können Sie die Anmeldung zu jedem Zeitpunkt erstellen, und es ist häufig der einfachste Ansatz, erstellen Sie den Anmeldenamen manuell auf dem Datenbankserver vor der Bereitstellung von Datenbanken. Sie können im nächste Verfahren verwenden, um eine Anmeldung in SQL Server Management Studio zu erstellen.
+Eine SQL Server Anmeldung ist ein Objekt auf Server Ebene anstelle eines Objekts auf Datenbankebene, sodass es nicht von der Datenbank abhängig ist, die Sie bereitstellen möchten. Daher können Sie die Anmeldung jederzeit erstellen, und der einfachste Ansatz besteht häufig darin, den Anmelde Namen manuell auf dem Datenbankserver zu erstellen, bevor Sie mit der Bereitstellung von Datenbanken beginnen. Sie können das nächste Verfahren zum Erstellen einer Anmeldung in SQL Server Management Studio verwenden.
 
-**Zum Erstellen einer SQL Server-Anmeldung für das Computerkonto des Web-server**
+**So erstellen Sie eine SQL Server Anmeldung für das Webserver-Computer Konto**
 
-1. Auf dem Datenbankserver auf die **starten** , zeigen Sie auf **Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, und klicken Sie dann auf **SQL Server Management Studio** .
-2. In der **Herstellen einer Verbindung mit Server** Dialogfeld die **Servernamen** , geben Sie den Namen des Datenbankservers ein, und klicken Sie dann auf **Connect**.
+1. Zeigen Sie auf dem Datenbankserver im Menü **Start** auf **Alle Programme**, klicken Sie auf **Microsoft SQL Server 2008 R2**, und klicken Sie dann auf **SQL Server Management Studio**.
+2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** im Feld **Server Name** den Namen des Datenbankservers ein, und klicken Sie dann auf **verbinden**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image10.png)
-3. In der **Objekt-Explorer** Bereich mit der rechten Maustaste **Sicherheit**, zeigen Sie auf **neu**, und klicken Sie dann auf **Anmeldung**.
-4. In der **Anmeldung – neu** Dialogfeld die **Anmeldename** geben den Namen des Computerkontos Ihrer Web-Server (z. B. **FABRIKAM\TESTWEB1$**).
+3. Klicken Sie im **Objekt-Explorer** Bereich mit der rechten Maustaste auf **Sicherheit**, zeigen Sie auf **neu**, und klicken Sie dann auf **Anmelden**.
+4. Geben Sie im Dialogfeld **Anmeldung – neu** im Feld **Anmelde Name** den Namen des Computer Kontos des Webservers ein (z. b. **fabrikam\testweb1 $** ).
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image11.png)
 5. Klicken Sie auf **OK**.
 
-An diesem Punkt ist Ihrem Datenbankserver für die Web Deploy-Veröffentlichung bereit. Alle Lösungen, die Sie bereitstellen funktioniert jedoch nicht, bis Sie die erforderlichen Datenbankrollen der kontoanmeldung für Computer zuordnen. Zuordnen der Anmeldung zu Datenbankrollen erfordert viel mehr vorstellen, wie Sie können nicht Zuordnung Rollen erst nach dem haben bereitgestellt der Datenbank. Um die Anmeldung beim Computer Konto die erforderlichen Datenbankrollen zuzuordnen, ist Folgendes möglich:
+An diesem Punkt ist der Datenbankserver für die Web deploy Veröffentlichung bereit. Allerdings funktionieren alle Lösungen, die Sie bereitstellen, erst dann, wenn Sie die Computer Kontoanmeldung den erforderlichen Daten bankrollen zuordnen. Die Zuordnung des Anmelde namens zu Daten bankrollen erfordert viel mehr, da Sie erst nach der Bereitstellung der Datenbank Rollen zuordnen können. Sie haben folgende Möglichkeiten, um die Anmeldung des Computer Kontos den erforderlichen Daten bankrollen zuzuordnen:
 
-- Weisen Sie die Datenbankrollen für die Anmeldung manuell, nachdem Sie die Datenbank zum ersten Mal bereitgestellt haben.
-- Verwenden Sie ein Skript nach der Bereitstellung der Anmeldung die Datenbankrollen zuweisen.
+- Weisen Sie die Daten bankrollen der Anmeldung manuell zu, nachdem Sie die Datenbank zum ersten Mal bereitgestellt haben.
+- Verwenden Sie ein Skript nach der Bereitstellung, um der Anmeldung die Daten bankrollen zuzuweisen.
 
-Weitere Informationen zum Automatisieren der Erstellung von Anmeldungen und die rollenzuordnungen für die Datenbank, finden Sie unter [Bereitstellen von Datenbankrollenmitgliedschaften in Test-Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Im nächste Verfahren können Sie alternativ die kontoanmeldung für Computer manuell die erforderlichen Datenbankrollen zuzuordnen. Beachten Sie, dass Sie dieses Verfahren erst ausführen, können keine *nach* haben Sie die Datenbank bereitgestellt.
+Weitere Informationen zum Automatisieren der Erstellung von Anmeldungen und Daten bankrollen Zuordnungen finden Sie unter Bereitstellen von [Daten bankrollen Mitgliedschaften in Test Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Alternativ können Sie das nächste Verfahren verwenden, um die Computer Kontoanmeldung manuell den erforderlichen Daten bankrollen zuzuordnen. Beachten Sie, dass Sie dieses Verfahren erst ausführen können, *nachdem* Sie die Datenbank bereitgestellt haben.
 
-**Zuordnen von Datenbankrollen zu der Web-Server-Computer-kontoanmeldung**
+**So ordnen Sie der Webserver-Computer Kontoanmeldung Daten bankrollen zu**
 
-1. Öffnen Sie SQL Server Management Studio wie bisher.
-2. In der **Objekt-Explorer** Bereich erweitern Sie die **Sicherheit** Knoten erweitern Sie die **Anmeldungen** Knoten, und doppelklicken Sie dann auf der kontoanmeldung für Computer (z. B.  **FABRIKAM\TESTWEB1$**).
+1. Öffnen Sie SQL Server Management Studio wie zuvor.
+2. Erweitern Sie im **Objekt-Explorer** Bereich den Knoten **Sicherheit** , erweitern Sie den Knoten **Anmeldungen** , und doppelklicken Sie dann auf die Anmelde Informationen des Computer Kontos (z. b. **fabrikam\testweb1 $** ).
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image12.png)
-3. In der **Anmeldungseigenschaften** Dialogfeld klicken Sie auf **Benutzerzuordnung**.
-4. In der **Benutzer zugeordnet, die dieser Anmeldung** Tabelle, wählen Sie den Namen der Datenbank (z. B. **ContactManager**).
-5. In der **Mitgliedschaft in Datenbankrolle für:** *[Datenbankname]* wählen Sie die erforderlichen Berechtigungen. Wählen Sie im Fall der Contact Manager-beispiellösung die **Db\_Datareader** und **Db\_Datawriter** Rollen.
+3. Klicken Sie im Dialogfeld **Anmeldungs Eigenschaften** auf **Benutzer Zuordnung**.
+4. Wählen Sie in der Liste Benutzer, die **dieser Anmeldung zugeordnet** sind den Namen der Datenbank aus (z. **b. ContactManager**).
+5. Wählen Sie in der Liste **Mitgliedschaft in Daten Bank Rolle für:** *[Datenbankname]* die erforderlichen Berechtigungen aus. Wenn Sie die Beispiellösung Contact Manager auswählen, müssen Sie die Rollen **DB\_DataReader** und **DB\_-DataWriter** auswählen.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image13.png)
 6. Klicken Sie auf **OK**.
 
-Während der manuellen Zuordnung Datenbankrollen oft mehr als ausreichend für testumgebungen ist, ist es nicht das bevorzugte Tag für automatisierte oder einmalklick-Bereitstellungen in Staging-oder produktionsumgebungen. Sie finden weitere Informationen zum Automatisieren von dieser Art von Aufgabe mithilfe von Skripts nach der Bereitstellung in [Bereitstellen von Datenbankrollenmitgliedschaften in Test-Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md).
+Die manuelle Zuordnung von Daten bankrollen ist für Testumgebungen häufig nicht ausreichend, aber es ist weniger wünschenswert für automatisierte oder One-Click-bereit Stellungen in Staging-oder Produktionsumgebungen. Weitere Informationen zur Automatisierung dieser Art von Aufgaben finden Sie unter Bereitstellen von Skripts nach der Bereitstellung in der Bereitstellung [von Daten bankrollen Mitgliedschaften in Test Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md).
 
 > [!NOTE]
-> Weitere Informationen zu Server-Projekte und Datenbankprojekte, finden Sie unter [Visual Studio 2010 SQL Server-Datenbankprojekte](https://msdn.microsoft.com/library/ff678491.aspx).
+> Weitere Informationen zu Server Projekten und Datenbankprojekten finden Sie unter [Visual Studio 2010 SQL Server-Datenbankprojekte](https://msdn.microsoft.com/library/ff678491.aspx).
 
-## <a name="configure-permissions-for-the-deployment-account"></a>Konfigurieren von Berechtigungen für das Bereitstellungskonto
+## <a name="configure-permissions-for-the-deployment-account"></a>Konfigurieren von Berechtigungen für das Bereitstellungs Konto
 
-Wenn das Konto, das Sie verwenden, um die Bereitstellung ausgeführt, die nicht SQL Server-Administrator ist, müssen Sie auch eine Anmeldung für dieses Konto zu erstellen. Um die Datenbank zu erstellen, muss das Konto ein Mitglied der **Dbcreator** Serverrolle oder über vergleichbare Berechtigungen verfügen.
+Wenn das Konto, das Sie zum Ausführen der Bereitstellung verwenden, kein SQL Server Administrator ist, müssen Sie auch einen Anmelde Namen für dieses Konto erstellen. Das Konto muss ein Mitglied der **dbcreator** -Server Rolle sein oder über entsprechende Berechtigungen verfügen, um die Datenbank erstellen zu können.
 
 > [!NOTE]
-> Wenn Sie Web Deploy oder VSDBCMD verwenden, um eine Datenbank bereitzustellen, können Sie Windows oder SQL Server-Anmeldeinformationen, (wenn es sich um eine Instanz von SQL Server für die Unterstützung der Authentifizierung im gemischten Modus konfiguriert ist). Im nächste Verfahren wird davon ausgegangen, dass Sie Windows-Anmeldeinformationen verwenden möchten, aber nichts hindert, dass Sie einen SQL Server-Benutzernamen und Kennwort in der Verbindungszeichenfolge angeben, wenn Sie die Bereitstellung konfigurieren.
+> Wenn Sie Web deploy oder VSDBCmd verwenden, um eine Datenbank bereitzustellen, können Sie Windows-Anmelde Informationen oder SQL Server Anmelde Informationen verwenden (wenn die SQL Server Instanz zur Unterstützung der Authentifizierung im gemischten Modus konfiguriert ist). Im nächsten Verfahren wird davon ausgegangen, dass Sie Windows-Anmelde Informationen verwenden möchten, aber es hindert Sie nicht daran, bei der Konfiguration der Bereitstellung einen SQL Server Benutzernamen und ein Kennwort in der Verbindungs Zeichenfolge anzugeben.
 
-**Einrichten von Berechtigungen für das bereitstellungskonto**
+**So richten Sie Berechtigungen für das Bereitstellungs Konto ein**
 
-1. Öffnen Sie SQL Server Management Studio wie bisher.
-2. In der **Objekt-Explorer** Bereich mit der rechten Maustaste **Sicherheit**, zeigen Sie auf **neu**, und klicken Sie dann auf **Anmeldung**.
-3. In der **Anmeldung – neu** Dialogfeld die **Anmeldename** geben den Namen Ihres Kontos für die Bereitstellung (z. B. **FABRIKAM\matt**).
-4. In der **wählen Sie eine Seite** Bereich, klicken Sie auf **Serverrollen**.
-5. Wählen Sie **Dbcreator**, und klicken Sie dann auf **OK**.
+1. Öffnen Sie SQL Server Management Studio wie zuvor.
+2. Klicken Sie im **Objekt-Explorer** Bereich mit der rechten Maustaste auf **Sicherheit**, zeigen Sie auf **neu**, und klicken Sie dann auf **Anmelden**.
+3. Geben Sie im Dialogfeld **Anmeldung – neu** im Feld **Anmelde Name** den Namen Ihres Bereitstellungs Kontos ein (z. b. **fabrikam\matt**).
+4. Klicken Sie im Bereich **Seite auswählen** auf **Server Rollen**.
+5. Wählen Sie **dbcreator**aus, und klicken Sie dann auf **OK**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image14.png)
 
-Um nachfolgende Bereitstellungen zu unterstützen, Sie müssen auch das Bereitstellen von Konto fügen die **Db\_Besitzer** Rolle in der Datenbank nach der ersten Bereitstellung. Dies ist, da bei nachfolgenden Bereitstellungen Sie können das Ändern des Schemas einer vorhandenen Datenbank, anstatt eine neue Datenbank erstellen. Wie im vorherigen Abschnitt beschrieben wird, können nicht Sie einen Benutzer zu einer Datenbankrolle hinzufügen, bis Sie die Datenbank aus offensichtlichen Gründen erstellt haben.
+Um nachfolgende bereit Stellungen zu unterstützen, müssen Sie nach der ersten Bereitstellung auch das Bereitstellungs Konto der **DB-\_** Rolle "Besitzer" in der Datenbank hinzufügen. Dies liegt daran, dass Sie bei nachfolgenden bereit Stellungen das Schema einer vorhandenen Datenbank ändern, anstatt eine neue Datenbank zu erstellen. Wie im vorherigen Abschnitt beschrieben, können Sie einen Benutzer nicht zu einer Daten Bank Rolle hinzufügen, bis Sie die Datenbank aus offensichtlichen Gründen erstellt haben.
 
-**Um die Bereitstellung-Konto-Anmeldung in der Datenbank zuzuordnen\_-Datenbank-Rolle "Besitzer"**
+**So ordnen Sie die Anmelde Informationen für das Bereitstellungs Konto der Daten Bank Rolle "DB\_Owner**
 
-1. Öffnen Sie SQL Server Management Studio wie bisher.
-2. In der **Objekt-Explorer** Fenster erweitern Sie die **Sicherheit** Knoten erweitern Sie die **Anmeldungen** Knoten, und doppelklicken Sie dann auf der kontoanmeldung für Computer (z. B.  **FABRIKAM\matt**).
-3. In der **Anmeldungseigenschaften** Dialogfeld klicken Sie auf **Benutzerzuordnung**.
-4. In der **Benutzer zugeordnet, die dieser Anmeldung** Tabelle, wählen Sie den Namen der Datenbank (z. B. **ContactManager**).
-5. In der **Mitgliedschaft in Datenbankrolle für:** *[Datenbankname]* Liste der **Db\_Besitzer** Rolle.
+1. Öffnen Sie SQL Server Management Studio wie zuvor.
+2. Erweitern Sie im Fenster **Objekt-Explorer** den Knoten **Sicherheit** , erweitern Sie den Knoten **Anmeldungen** , und doppelklicken Sie dann auf die Anmelde Informationen des Computer Kontos (z. b. **fabrikam\matt**).
+3. Klicken Sie im Dialogfeld **Anmeldungs Eigenschaften** auf **Benutzer Zuordnung**.
+4. Wählen Sie in der Liste Benutzer, die **dieser Anmeldung zugeordnet** sind den Namen der Datenbank aus (z. **b. ContactManager**).
+5. Wählen Sie in der Liste **Mitgliedschaft in Daten Bank Rolle für:** *[Datenbankname]* die Rolle **DB-\_Besitzer** aus.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image15.png)
 6. Klicken Sie auf **OK**.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-Ihren Datenbankserver sollte jetzt bereit, akzeptieren Sie die Remotedatenbank-Bereitstellungen und remote IIS-Webserver auf Ihre Datenbanken zugreifen können. Bevor Sie versuchen, bereitstellen und Verwenden von Datenbanken, möchten Sie möglicherweise diese wichtigen Punkte überprüfen:
+Der Datenbankserver sollte jetzt bereit sein, Remote-Daten Bank Bereitstellungen zu akzeptieren und Remote-IIS-Webserver den Zugriff auf Ihre Datenbanken zu ermöglichen. Bevor Sie versuchen, Datenbanken bereitzustellen und zu verwenden, sollten Sie diese wichtigen Punkte überprüfen:
 
-- Haben Sie die SQL Server zum Zulassen von TCP/IP-Remoteverbindungen konfiguriert?
-- Haben Sie eventuell vorhandene Firewalls zum Zulassen von SQL Server-Datenverkehr konfiguriert?
-- Haben Sie eine Computer-kontoanmeldung für jeden Webserver erstellt, die den Zugriff auf SQL Server wird?
-- Schließt die Bereitstellung der Datenbank ein Skript zum Erstellen von benutzerzuordnungen für die Rolle aus, oder möchten Sie diese manuell erstellen, nachdem Sie die Datenbank zum ersten Mal bereitstellen?
-- Haben Sie eine Anmeldung für das bereitstellungskonto erstellt und hinzugefügt, damit die **Dbcreator** Serverrolle?
+- Haben Sie SQL Server für die Annahme von TCP/IP-Remote Verbindungen konfiguriert?
+- Haben Sie Firewalls konfiguriert, um SQL Server Datenverkehr zuzulassen?
+- Haben Sie für jeden Webserver, der auf SQL Server zugreifen soll, eine Computer Kontoanmeldung erstellt?
+- Umfasst die Daten Bank Bereitstellung ein Skript zum Erstellen von Benutzer Rollen Zuordnungen, oder müssen Sie diese manuell erstellen, nachdem Sie die Datenbank zum ersten Mal bereitgestellt haben?
+- Haben Sie einen Anmelde Namen für das Bereitstellungs Konto erstellt und der **dbcreator** -Server Rolle hinzugefügt?
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Anleitungen zum Bereitstellen von Datenbankprojekten, finden Sie unter [Bereitstellen von Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Anleitungen zum Erstellen von Datenbank-Rollenmitgliedschaften durch Ausführen eines Skripts nach der Bereitstellung finden Sie unter [Bereitstellen von Datenbankrollenmitgliedschaften in Test-Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Anleitungen dazu, wie Sie die individuelle Bereitstellung-Herausforderungen zu meistern, die Mitgliedschaft Datenbanken darstellen, finden Sie unter [Bereitstellen von Datenbankrollenmitgliedschaften in Enterprise-Umgebungen](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md).
+Anleitungen zum Bereitstellen von Datenbankprojekten finden Sie unter Bereitstellen von [Datenbankprojekten](../web-deployment-in-the-enterprise/deploying-database-projects.md). Anleitungen zum Erstellen von Daten bankrollen Mitgliedschaften durch Ausführen eines Skripts nach der Bereitstellung finden Sie unter Bereitstellen von [Daten bankrollen Mitgliedschaften in Test Umgebungen](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md). Anleitungen zum erfüllen der besonderen Herausforderungen bei der Bereitstellung, die für Mitgliedschafts Datenbanken stehen, finden Sie unter Bereitstellen von [Mitgliedschafts Datenbanken für Unternehmensumgebungen](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md).
 
 > [!div class="step-by-step"]
 > [Zurück](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)

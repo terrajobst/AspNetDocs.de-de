@@ -2,26 +2,26 @@
 uid: mvc/videos/mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure
 title: 'MVC Music Store, Teil 1: Einführung, Tools und Projektstruktur | Microsoft-Dokumentation'
 author: jongalloway
-description: Jon Galloway das MVC Music Store-Tutorial mit einer Einführung, die Übersicht über die Anwendung, und Überprüfen der Verzeichnisstruktur des eine MVC-Anwendung wird gestartet...
+description: Jon Galloway startet das MVC Music Store-Tutorial mit einer Einführung, einer Übersicht über die Anwendung und der Überprüfung der Verzeichnisstruktur von MVC-Anwendungen...
 ms.author: riande
 ms.date: 06/22/2010
 ms.assetid: 75cbb6d6-1823-4e3c-8c33-c733641eadb2
 msc.legacyurl: /mvc/videos/mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure
 msc.type: video
 ms.openlocfilehash: 1bcad8a023500f4738edf09f4ef0635588cd5323
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412709"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450315"
 ---
 # <a name="mvc-music-store-part-1-intro-tools-and-project-structure"></a>MVC Music Store, Teil 1: Einführung, Tools und Projektstruktur
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-Jon Galloway beginnt das MVC Music Store-Tutorial mit einer Einführung, die Übersicht über die Anwendung, und Überprüfen der Verzeichnisstruktur eine MVC-Anwendung.
+Jon Galloway startet das Tutorial zu den MVC Music Stores mit einer Einführung, einer Übersicht über die Anwendung und der Überprüfung der Verzeichnisstruktur einer MVC-Anwendung.
 
-[&#9654;Sehen Sie sich Video (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-1-intro-tools-and-project-structure)
+[&#9654;Video ansehen (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-1-intro-tools-and-project-structure)
 
 > [!div class="step-by-step"]
-> [Nächste](mvc-music-store-part-2-controllers.md)
+> [Weiter](mvc-music-store-part-2-controllers.md)

@@ -1,80 +1,80 @@
 ---
 uid: web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
-title: Zwischenspeichern von Daten in einer ASP.NET Web-Website (Razor) für eine bessere Leistung von Seiten | Microsoft-Dokumentation
+title: Zwischenspeichern von Daten auf einer ASP.net Web Pages-Website (Razor) für eine bessere Leistung | Microsoft-Dokumentation
 author: Rick-Anderson
-description: Sie können beschleunigen, Ihre Website, dass – d. h. Speichern von Cache – die Ergebnisse der Daten, die normalerweise dauern würde sehr viel Zeit zum Abrufen oder Verarbeiten einer...
+description: 'Sie können Ihre Website beschleunigen, indem Sie Sie speichern, also den Cache: die Ergebnisse der Daten, die normalerweise sehr lange dauern, bis ein abgerufen oder verarbeitet wird...'
 ms.author: riande
 ms.date: 02/14/2014
 ms.assetid: 961e525b-7700-469e-8a68-d7010b6fb68c
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
 ms.openlocfilehash: 01796d3ca699a6af5d9162b22a926551435c2040
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134581"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521157"
 ---
-# <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Zwischenspeichern von Daten in einer ASP.NET Web Pages (Razor)-Website für eine bessere Leistung
+# <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>Zwischenspeichern von Daten auf einer ASP.net Web Pages-Website (Razor) für eine bessere Leistung
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Artikel wird erläutert, wie eine Hilfsprogramm, mit dem Cache-Informationen für eine bessere Leistung auf einer Website für ASP.NET Web Pages (Razor) verwendet wird. Sie können Ihre Website, dass speichern beschleunigen &#8212; zwischenspeichern, d. h. &#8212; die Ergebnisse der Daten, die normalerweise würde erhebliche Zeit in Anspruch nehmen abrufen oder verarbeiten, die nicht häufig ändern.
+> In diesem Artikel wird erläutert, wie Sie mithilfe eines Hilfsprogramms Informationen für eine schnellere Leistung auf einer ASP.net Web Pages-Website (Razor) zwischenspeichern. Sie können Ihre Website beschleunigen, indem Sie Sie speichern &#8212; , indem Sie &#8212; die Ergebnisse von Daten zwischenspeichern, die normalerweise viel Zeit zum Abrufen oder verarbeiten benötigen und sich nicht häufig ändern.
 > 
-> **Sie lernen Folgendes:** 
+> **Lernen Sie Folgendes:** 
 > 
-> - Informationen zur Verwendung von caching zur Verbesserung der Reaktionsfähigkeit Ihrer Website.
+> - Verwenden der Zwischenspeicherung zum Verbessern der Reaktionsfähigkeit Ihrer Website.
 > 
-> Dies sind die Funktionen von ASP.NET in diesem Artikel:
+> Dies sind die ASP.NET-Funktionen, die im Artikel eingeführt wurden:
 > 
-> - Die `WebCache` Helper.
+> - Das `WebCache`-Hilfsprogramm.
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - ASP.NET Web Pages (Razor) 3
+> - ASP.net Web Pages (Razor) 3
 >   
 > 
-> In diesem Tutorial funktioniert auch mit ASP.NET Web Pages 2.
+> Dieses Tutorial funktioniert auch mit ASP.net Web Pages 2.
 
-Jedes Mal, wenn ein Benutzer auf Ihrer Website eine Seite anfordert, muss der Webserver einiges zu tun, um die Anforderung zu erfüllen. Der Server möglicherweise für einige Ihrer Seiten Aufgaben, die ein (relativ) wie das Abrufen von Daten aus einer Datenbank dauern. Auch wenn diese Aufgaben lange in absoluten Ausdrücken erfordern, wenn Ihre Website viel Datenverkehr auftritt, kann eine ganze Reihe von einzelnen Anforderungen, die dazu führen, den Webserver dass für die langsam oder komplizierte Aufgabe bis zu sehr viel Arbeit hinzufügen. Dies kann letztlich die Leistung der Website beeinträchtigen.
+Jedes Mal, wenn jemand eine Seite von Ihrer Website anfordert, muss der Webserver einige Schritte ausführen, um die Anforderung zu erfüllen. Für einige Ihrer Seiten muss der Server möglicherweise Aufgaben ausführen, die eine (vergleichsweise) lange Zeit in Anspruch nehmen, z. b. das Abrufen von Daten aus einer Datenbank. Auch wenn diese Aufgaben in absoluten Begriffen nicht lange dauern, kann eine ganze Reihe einzelner Anforderungen, die bewirken, dass der Webserver die komplizierte oder langsame Aufgabe durchführt, sehr viel Arbeit hinzufügen. Dies kann letztendlich die Leistung der Site beeinträchtigen.
 
-Eine Möglichkeit zur Verbesserung der Leistung Ihrer Website unter Umständen wie folgt, ist zum Zwischenspeichern von Daten. Wenn Ihre Website wiederholte Anforderungen für dieselben Informationen angezeigt Ruft, die Informationen muss nicht für jede Person, die geändert werden und kann nicht Zeit vertraulich, anstatt erneut abgerufen oder neu zu berechnen, können die Daten einmal abrufen und speichern Sie die Ergebnisse. Das nächste Mal, das eine Anforderung für diesen eingeht, machen Informationen Sie sich einfach sie aus dem Cache.
+Eine Möglichkeit, die Leistung Ihrer Website zu verbessern, ist das Zwischenspeichern von Daten. Wenn Ihre Website wiederholte Anforderungen für die gleichen Informationen erhält und die Informationen nicht für jede Person geändert werden müssen, und Sie ist nicht Zeit empfindlich, können Sie die Daten nur einmal abrufen und dann speichern, wenn Sie nicht erneut abgerufen oder neu berechnet werden. Wenn Sie das nächste Mal eine Anforderung für diese Informationen eingibt, erhalten Sie Sie einfach aus dem Cache.
 
-Im Allgemeinen Zwischenspeichern Sie Informationen, die nicht häufig ändern. Wenn Sie die Informationen im Cache ablegen, wird es im Arbeitsspeicher auf dem Webserver gespeichert. Sie können angeben, wie lange es, von Sekunden auf Tage zwischengespeichert werden soll. Nach Ablauf des Zeitraums der Zwischenspeicherung ist die Informationen automatisch aus dem Cache entfernt.
+Im Allgemeinen speichern Sie Informationen, die sich nicht häufig ändern. Wenn Sie Informationen in den Cache einfügen, werden Sie im Arbeitsspeicher auf dem Webserver gespeichert. Sie können angeben, wie lange der Cache zwischengespeichert werden soll (von Sekunden bis Tage). Wenn der Cache Zeitraum abläuft, werden die Informationen automatisch aus dem Cache entfernt.
 
 > [!NOTE]
-> Einträge im Cache möglicherweise Gründen außer entfernt, die abgelaufen sind. Beispielsweise der Webserver kann vorübergehend führen mit niedriger Arbeitsspeicher, und eine Möglichkeit, die er Speicher freigeben kann, ist durch das Auslösen von Einträgen aus dem Cache. Sie sehen auch, wenn Sie die Informationen in den Cache eingefügt haben, müssen Sie sicherstellen, dass sie immer noch vorhanden ist, wenn Sie sie benötigen.
+> Einträge im Cache können aus anderen Gründen entfernt werden, als Sie abgelaufen sind. Beispielsweise kann für den Webserver vorübergehend wenig Arbeitsspeicher verfügbar sein, und eine Möglichkeit zum Freigeben von Arbeitsspeicher ist das Auslösen von Einträgen aus dem Cache. Wie Sie sehen werden, müssen Sie, selbst wenn Sie Informationen in den Cache eingefügt haben, sicherstellen, dass Sie immer noch vorhanden sind, wenn Sie Sie benötigen.
 
-Angenommen Sie, Ihre Website eine Seite enthält, die die aktuelle Temperatur und die Wettervorhersage anzeigt. Um diese Art von Informationen zu erhalten, können Sie eine Anforderung an einen externen Dienst senden. Da diese Informationen nicht viel (innerhalb eines zweistündigen Zeitraums, z. B.) ändert, und da externer Aufrufe Zeit und Bandbreite erforderlich ist, ist es ein guter Kandidat für die Zwischenspeicherung.
+Stellen Sie sich vor, Ihre Website verfügt über eine Seite mit der aktuellen Temperatur-und Wettervorhersage. Um diese Art von Informationen zu erhalten, können Sie eine Anforderung an einen externen Dienst senden. Da diese Informationen nicht sehr stark geändert werden (z. b. innerhalb eines Zeitraums von zwei Stunden) und externe Anrufe Zeit und Bandbreite erfordern, ist dies ein guter Kandidat für die Zwischenspeicherung.
 
 ## <a name="adding-caching-to-a-page"></a>Hinzufügen von Caching zu einer Seite
 
-ASP.NET umfasst eine `WebCache` Hilfsmethode, die Zwischenspeicherung auf Ihrer Website hinzufügen und Hinzufügen von Daten in den Cache erleichtert. In diesem Verfahren erstellen Sie eine Seite, die die aktuelle Zeit zwischenspeichert. Dies ist ein praktisches Beispiel, nicht, da die aktuelle Uhrzeit etwas ist, das häufig ändert, und, die darüber hinaus ist nicht komplex zu berechnen. Es ist jedoch eine gute Möglichkeit zur Zwischenspeicherung in Aktion zu veranschaulichen.
+ASP.NET enthält eine `WebCache`-Hilfsprogramm, die das Hinzufügen von Caching zu Ihrer Website und das Hinzufügen von Daten zum Cache vereinfacht. In diesem Verfahren erstellen Sie eine Seite, auf der die aktuelle Zeit zwischengespeichert wird. Dabei handelt es sich nicht um ein reales Beispiel, da die aktuelle Zeit häufig geändert wird und das berechnen nicht kompliziert ist. Es ist jedoch eine gute Möglichkeit, das Caching in Aktion zu veranschaulichen.
 
-1. Hinzufügen einer neuen Seite, die mit dem Namen *WebCache.cshtml* auf der Website.
-2. Im folgenden Code und Markup der Seite hinzufügen:
+1. Fügen Sie der Website eine neue Seite mit dem Namen *Webcache. cshtml* hinzu.
+2. Fügen Sie den folgenden Code und das Markup der Seite hinzu:
 
     [!code-cshtml[Main](15-caching-to-improve-the-performance-of-your-website/samples/sample1.cshtml)]
 
-    Wenn Sie die Daten zwischenspeichern, fügen Sie es den Cache unter Verwendung eines Namens Dies ist für die Website eindeutig. In diesem Fall verwenden Sie einen Cacheeintrag mit dem Namen `CachedTime`. Dies ist die `cacheItemKey` im Codebeispiel gezeigt.
+    Wenn Sie Daten zwischenspeichern, platzieren Sie Sie im Cache mithilfe eines Namens, der auf der Website eindeutig ist. In diesem Fall verwenden Sie einen Cache Eintrag mit dem Namen `CachedTime`. Dies ist der `cacheItemKey`, der im Codebeispiel gezeigt wird.
 
-    Der Code zuerst liest die `CachedTime` des Cacheeintrags. Wenn ein Wert zurückgegeben wird (d.h., wenn der Cacheeintrag nicht null ist), legt der Code den Wert der Zeitvariablen nur die Daten im Cache fest.
+    Der Code liest zuerst den `CachedTime` Cache Eintrag. Wenn ein Wert zurückgegeben wird (d. h., wenn der Cache Eintrag nicht NULL ist), legt der Code einfach den Wert der Zeitvariablen auf die Cache Daten fest.
 
-    Aber wenn der Cacheeintrag nicht vorhanden ist (d. h. es ist null), der Code legt den Time-Wert, fügt es dem Cache hinzu und einem Ablaufwert auf eine Minute. Nach einer Minute wird der Cacheeintrag verworfen. (Der Standardwert für die Ablaufzeit für ein Element im Cache ist 20 Minuten.) Der Befehl `WebCache.Set(cacheItemKey, time, 1, false)` zeigt, wie der Cache den aktuellen Wert der Zeit hinzu, und die Ablaufzeit auf 1 Minute festgelegt. Festlegen der *SlidingExpiration* Parameter `false` bedeutet, dass die Ablaufzeit wird nicht jedes Mal, die sie angefordert wird verlängert. Läuft es genau 1 Minute, nachdem er ursprünglich mit dem Cache hinzugefügt wurde. Wenn Sie diesen Wert, um festlegen `true` die Ablaufzeit für eine Minute wird jedes Mal zurückgesetzt, der Wert aus dem Cache angefordert wird.
+    Wenn der Cache Eintrag jedoch nicht vorhanden ist (d. h., er ist NULL), legt der Code den Uhrzeitwert fest, fügt ihn dem Cache hinzu und legt einen Ablauf Wert auf eine Minute fest. Nach einer Minute wird der Cache Eintrag verworfen. (Der Standard Ablauf Wert für ein Element im Cache beträgt 20 Minuten.) Der Befehl `WebCache.Set(cacheItemKey, time, 1, false)` zeigt, wie der aktuelle Uhrzeitwert dem Cache hinzugefügt und der Ablauf auf 1 Minute festgelegt wird. Wenn der *slidingExpiration* -Parameter auf `false` festgelegt wird, bedeutet dies, dass die Ablaufzeit nicht bei jeder Anforderung erneuert wird. Sie läuft genau 1 Minute nach dem ursprünglichen hinzufügen zum Cache ab. Wenn Sie diesen Wert auf `true` festlegen, wird die Ablaufzeit von 1 Minute jedes Mal zurückgesetzt, wenn der Wert aus dem Cache angefordert wird.
 
-    Dieser Code veranschaulicht das Muster, das Sie beim Zwischenspeichern von Daten immer verwenden sollten. Bevor Sie etwas aus dem Cache erhalten, überprüfen Sie immer zuerst, ob die `WebCache.Get` Methode hat null zurückgegeben. Denken Sie daran, dass der Cacheeintrag möglicherweise abgelaufen oder möglicherweise einem anderen Grund, entfernt wurde sodass jeder Eintrag garantiert nie im Cache ist.
-3. Führen Sie *WebCache.cshtml* in einem Browser. (Stellen Sie sicher, dass die Seite ist ausgewählt, der **Dateien** Arbeitsbereich vor der Ausführung.) Beim ersten der Seite abrufen, die Time-Daten nicht im Cache sind, und der Code muss in der Time-Werten in den Cache hinzufügen.
+    Dieser Code veranschaulicht das Muster, das Sie immer verwenden sollten, wenn Sie Daten zwischenspeichern. Bevor Sie etwas aus dem Cache heraus erhalten, überprüfen Sie immer zuerst, ob die `WebCache.Get`-Methode NULL zurückgegeben hat. Beachten Sie, dass der Cache Eintrag möglicherweise abgelaufen ist oder aus einem anderen Grund entfernt wurde, sodass ein Eintrag niemals im Cache vorhanden ist.
+3. Führen Sie *Webcache. cshtml* in einem Browser aus. (Stellen Sie sicher, dass die Seite im Arbeitsbereich " **Dateien** " ausgewählt ist, bevor Sie Sie ausführen.) Wenn Sie die Seite zum ersten Mal anfordern, befinden sich die Zeit Daten nicht im Cache, und der Code muss den Zeitwert dem Cache hinzufügen.
 
-    ![Cache-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
-4. Aktualisieren Sie *WebCache.cshtml* im Browser. Diesmal ist die Zeitdaten im Cache. Beachten Sie, dass die Zeit seit dem letzten geändert hat, Sie auf die Seite angezeigt.
+    ![cache-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
+4. Aktualisieren Sie *Webcache. cshtml* im Browser. Dieses Mal befinden sich die Zeit Daten im Cache. Beachten Sie, dass sich die Zeit seit der letzten Anzeige der Seite nicht geändert hat.
 
-    ![Cache-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
-5. Warten Sie eine Minute, bis der Cache geleert werden, und klicken Sie dann aktualisieren Sie die Seite. Die Seite gibt erneut an, dass die Zeitdaten wurde nicht im Cache gefunden, und die Uhrzeit der Aktualisierung wird aus dem Cache hinzugefügt.
+    ![cache-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
+5. Warten Sie eine Minute, bis der Cache geleert wurde, und aktualisieren Sie dann die Seite. Die Seite gibt erneut an, dass die Zeit Daten nicht im Cache gefunden wurden, und die aktualisierte Zeit wird dem Cache hinzugefügt.
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Anzeigen von Daten in einem Diagramm](https://go.microsoft.com/fwlink/?LinkId=202895)
-- [WebCache-API-Referenz](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)
+- [Webcache-API-Referenz](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)

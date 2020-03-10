@@ -9,11 +9,11 @@ ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
 ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457062"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471135"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Überwachung und Telemetrie (entwickeln realer Cloud-apps mit Azure)
 
@@ -42,7 +42,7 @@ Wir werden uns schnell mit dem Einrichten von New Relic beschäftigen, um zu zei
 
 Melden Sie sich im Azure-Verwaltungs Portal für den Dienst an. Klicken Sie auf **neu**, und klicken Sie dann auf **Speichern**. Das Dialogfeld **Add-on auswählen** wird angezeigt. Scrollen Sie nach unten, und klicken Sie auf **New Relic**.
 
-![Add-On auswählen](monitoring-and-telemetry/_static/image1.png)
+![Add-on auswählen](monitoring-and-telemetry/_static/image1.png)
 
 Klicken Sie auf den Pfeil nach rechts, und wählen Sie die gewünschte Dienst Ebene aus. Für diese Demo verwenden wir den Free-Tarif.
 

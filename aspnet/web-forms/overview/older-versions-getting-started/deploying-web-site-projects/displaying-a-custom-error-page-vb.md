@@ -9,11 +9,11 @@ ms.assetid: 14873c5d-81a9-455b-bd71-30fb555583e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 33367d5e3c4b5c8fa039ee20704054ba508e717a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614978"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522771"
 ---
 # <a name="displaying-a-custom-error-page-vb"></a>Anzeigen einer benutzerdefinierten Fehlerseite (VB)
 
@@ -144,7 +144,7 @@ Da Sie wissen, dass die `404.aspx` Seite nur erreicht wird, wenn der Benutzer ei
 > [!NOTE]
 > Die benutzerdefinierte Fehlerseite wird nur angezeigt, wenn eine Anforderung an eine Ressource gerichtet ist, die von der ASP.net-Engine verarbeitet wird. Wie in den [grundlegenden Unterschieden zwischen IIS und dem ASP.NET Development Server-](core-differences-between-iis-and-the-asp-net-development-server-vb.md) Tutorial erläutert wurde, kann der Webserver bestimmte Anforderungen selbst verarbeiten. Standardmäßig verarbeitet der IIS-Webserver Anforderungen für statische Inhalte wie Bilder und HTML-Dateien, ohne dass die ASP.net-Engine aufgerufen wird. Wenn der Benutzer daher eine nicht vorhandene Bilddatei anfordert, wird die standardmäßige 404-Fehlermeldung von IIS anstelle von ASP zurückgegeben. Die konfigurierte Fehlerseite des Netzes.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wenn in einer ASP.NET-Anwendung eine nicht behandelte Ausnahme auftritt, wird dem Benutzer eine von drei Fehlerseiten angezeigt: die Ausnahme Details gelbe Bildschirm von Tod. Laufzeitfehler: gelber Bildschirm des Todes oder eine benutzerdefinierte Fehlerseite. Welche Fehlerseite angezeigt wird, hängt von der `<customErrors>` Konfiguration der Anwendung und davon ab, ob der Benutzer lokal oder Remote zu besuchen ist. Das Standardverhalten besteht darin, die Ausnahme Details Ysod an lokale Besucher und den Laufzeitfehler Ysod an Remote Besucher anzuzeigen.
 
@@ -154,7 +154,7 @@ Die Seite benutzerdefinierter Fehler ist der erste Schritt in einer umfassenden 
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

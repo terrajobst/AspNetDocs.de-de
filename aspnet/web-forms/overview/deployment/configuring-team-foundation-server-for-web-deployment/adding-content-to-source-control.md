@@ -1,156 +1,156 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
-title: Hinzufügen von Inhalten zur Quellcodeverwaltung | Microsoft-Dokumentation
+title: Hinzufügen von Inhalt zur Quell Code Verwaltung | Microsoft-Dokumentation
 author: jrjlee
-description: In diesem Thema wird erläutert, wie der quellcodeverwaltung in Team Foundation Server (TFS) 2010 Inhalt hinzugefügt wird. Es wird beschrieben, Hinzufügen von Projektmappen und Projekte zu einem Team-Projekt hinzufügen...
+description: In diesem Thema wird erläutert, wie Sie der Quell Code Verwaltung Inhalt in Team Foundation Server (TFS) 2010 hinzufügen. Es wird beschrieben, wie Projektmappen und Projekten einem Teamprofil hinzugefügt werden...
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 86c14aab-c2dd-4f73-b40c-c6d52fa44950
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
 ms.openlocfilehash: 16073dd2fb0ea1cc4ddbc94c843181933dc174c1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131543"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515109"
 ---
 # <a name="adding-content-to-source-control"></a>Hinzufügen von Inhalten zur Quellcodeverwaltung
 
-durch [Jason Lee](https://github.com/jrjlee)
+von [Jason Lee](https://github.com/jrjlee)
 
 [PDF herunterladen](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> In diesem Thema wird erläutert, wie der quellcodeverwaltung in Team Foundation Server (TFS) 2010 Inhalt hinzugefügt wird. Es beschreibt das Hinzufügen von Projektmappen und Projekte zu einem Teamprojekt in TFS, und es wird erläutert, wie externe Abhängigkeiten wie Frameworks oder Assemblys zur quellcodeverwaltung hinzufügen.
+> In diesem Thema wird erläutert, wie Sie der Quell Code Verwaltung Inhalt in Team Foundation Server (TFS) 2010 hinzufügen. Es wird beschrieben, wie Sie Projektmappen und Projekte zu einem Teamprojekt in TFS hinzufügen. Außerdem wird erläutert, wie Sie der Quell Code Verwaltung externe Abhängigkeiten wie Frameworks oder Assemblys hinzufügen.
 
-In diesem Thema ist Teil einer Reihe von Tutorials, die auf der Basis der bereitstellungsanforderungen Enterprise ein fiktives Unternehmen, die mit dem Namen Fabrikam, Inc. Dieser tutorialreihe verwendet eine beispiellösung&#x2014;der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;zur Darstellung einer Webanwendung mit einem realistischen Maß an Komplexität, einschließlich einer ASP.NET MVC 3-Anwendung, eine Windows-Kommunikation Foundation (WCF)-Dienst und ein Datenbankprojekt.
+Dieses Thema ist Teil einer Reihe von Tutorials, basierend auf den Anforderungen an die Unternehmens Bereitstellung eines fiktiven Unternehmens namens Fabrikam, Inc. In dieser tutorialreihe wird&#x2014;eine Beispiellösung der [Contact Manager-Lösung](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;verwendet, um eine Webanwendung mit einem realistischen Komplexitäts Grad darzustellen, einschließlich einer ASP.NET MVC 3-Anwendung, eines Windows Communication Foundation (WCF)-Diensts und eines Datenbankprojekts.
 
-## <a name="task-overview"></a>Übersicht über den Task
+## <a name="task-overview"></a>Aufgaben Übersicht
 
-In den meisten Fällen sollte jedes Mitglied des Entwicklerteams Inhalten zur quellcodeverwaltung hinzufügen können. Um eine Projektmappe zur quellcodeverwaltung in TFS hinzufügen möchten, müssen Sie die folgenden allgemeinen Schritte ausführen:
+In den meisten Fällen sollte jedes Mitglied des Entwicklerteams in der Lage sein, der Quell Code Verwaltung Inhalt hinzuzufügen. Zum Hinzufügen einer Projekt Mappe zur Quell Code Verwaltung in TFS müssen Sie diese Grundschritte ausführen:
 
-- Verbinden Sie mit einem Teamprojekt.
-- Ordnen Sie die Team Project-Ordnerstruktur auf dem Server, auf eine Ordnerstruktur auf dem lokalen Computer.
-- Die Lösung und seinen Inhalt zur quellcodeverwaltung hinzufügen.
-- Externen Abhängigkeiten zur quellcodeverwaltung hinzufügen.
+- Stellen Sie eine Verbindung mit einem Teamprojekt her.
+- Ordnen Sie die Teamprojekt-Ordnerstruktur auf dem-Server einer Ordnerstruktur auf dem lokalen Computer zu.
+- Fügen Sie die Projekt Mappe und ihren Inhalt der Quell Code Verwaltung hinzu.
+- Fügen Sie externe Abhängigkeiten zur Quell Code Verwaltung hinzu.
 
-In diesem Thema zeigt Sie, wie Sie diese Schritte ausführen.
+In diesem Thema wird gezeigt, wie Sie diese Prozeduren ausführen.
 
-Die Aufgaben und exemplarische Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie ein neues Teamprojekt von TFS, um die Inhalte verwalten, bereits erstellt haben. Weitere Informationen zum Erstellen eines neuen Teamprojekts finden Sie unter [Erstellen eines Teamprojekts in TFS](creating-a-team-project-in-tfs.md).
+In den Aufgaben und exemplarischen Vorgehensweisen in diesem Thema wird davon ausgegangen, dass Sie bereits ein neues TFS-Teamprojekt erstellt haben, um Ihre Inhalte zu verwalten. Weitere Informationen zum Erstellen eines neuen Teamprojekts finden Sie unter [Erstellen eines Teamprojekts in TFS](creating-a-team-project-in-tfs.md).
 
-### <a name="who-performs-these-procedures"></a>Wem diese Verfahren werden?
+### <a name="who-performs-these-procedures"></a>Wer führt diese Prozeduren aus?
 
-In den meisten Fällen sollte jedes Mitglied des Entwicklerteams möglicherweise hinzufügen und ändern die Inhalte in bestimmten Teamprojekten.
+In den meisten Fällen sollte jedes Mitglied des Entwicklerteams in der Lage sein, Inhalte innerhalb bestimmter Team Projekte hinzuzufügen und zu ändern.
 
-## <a name="connect-to-a-team-project-and-create-a-folder-mapping"></a>Verbinden mit einem Teamprojekt und erstellen Sie eine Ordnerzuordnung
+## <a name="connect-to-a-team-project-and-create-a-folder-mapping"></a>Herstellen einer Verbindung mit einem Team Projekt und Erstellen einer Ordner Zuordnung
 
-Bevor Sie alle Inhalte zur quellcodeverwaltung hinzufügen, müssen Sie eine Verbindung mit einem Teamprojekt, und erstellen Sie eine Zuordnung zwischen der Ordnerstruktur auf dem Server und dem Dateisystem auf dem lokalen Computer.
+Bevor Sie der Quell Code Verwaltung Inhalte hinzufügen, müssen Sie eine Verbindung mit einem Teamprojekt herstellen und eine Zuordnung zwischen der Ordnerstruktur auf dem Server und dem Dateisystem auf dem lokalen Computer erstellen.
 
-**Eine Verbindung mit einem Teamprojekt, und ordnen einen lokalen Pfad**
+**So stellen Sie eine Verbindung mit einem Teamprojekt her und ordnen einen lokalen Pfad zu**
 
-1. Öffnen Sie Visual Studio 2010, auf der Entwicklerarbeitsstation.
-2. In Visual Studio auf die **Team** Menü klicken Sie auf **Herstellen einer Verbindung mit Team Foundation Server**.
+1. Öffnen Sie Visual Studio 2010 auf Ihrer Entwickler Arbeitsstation.
+2. Klicken Sie in Visual Studio im Menü **Team** auf **Verbindung mit Team Foundation Server herstellen**.
 
     > [!NOTE]
-    > Wenn Sie bereits eine Verbindung mit einem TFS-Server konfiguriert haben, können Sie die Schritte 3 bis 6 auslassen.
-3. In der **Verbindung mit Teamprojekt** Dialogfeld klicken Sie auf **Server**.
-4. In der **Team Foundation Server hinzufügen/entfernen** Dialogfeld klicken Sie auf **hinzufügen**.
-5. In der **Team Foundation Server hinzufügen** Dialogfeld Geben Sie die Details Ihrer TFS-Instanz, und klicken Sie dann auf **OK**.
+    > Wenn Sie bereits eine Verbindung mit einem TFS-Server konfiguriert haben, können Sie die Schritte 3-6 weglassen.
+3. Klicken Sie im Dialogfeld **Verbindung mit Team Projekt** auf **Server**.
+4. Klicken Sie im Dialogfeld **Team Foundation Server hinzufügen/entfernen** auf **Hinzufügen**.
+5. Geben Sie im Dialogfeld **Team Foundation Server hinzufügen** die Details der TFS-Instanz an, und klicken Sie dann auf **OK**.
 
     ![](adding-content-to-source-control/_static/image1.png)
-6. In der **Team Foundation Server hinzufügen/entfernen** Dialogfeld klicken Sie auf **schließen**.
-7. In der **Herstellen einer Verbindung mit Teamprojekt** Dialogfeld Wählen Sie die TFS-Instanz, die Sie eine Verbindung herstellen möchten, markieren Sie das Team möchten project, Sammlung, wählen Sie das Teamprojekt, das Sie hinzufügen möchten, und klicken Sie dann auf **Connect**.
+6. Klicken Sie im Dialogfeld **Team Foundation Server hinzufügen/entfernen** auf **Schließen**.
+7. Wählen Sie im Dialogfeld **mit Team Projekt verbinden** die TFS-Instanz aus, mit der Sie eine Verbindung herstellen möchten, wählen Sie die Teamprojekt Sammlung aus, wählen Sie das Teamprojekt aus, das Sie hinzufügen möchten, und klicken Sie dann auf **verbinden**.
 
     ![](adding-content-to-source-control/_static/image2.png)
-8. In der **Team Explorer** , erweitern Sie Ihr Teamprojekt, und doppelklicken Sie dann auf **Quellcodeverwaltung**.
+8. Erweitern Sie im Fenster **Team Explorer** das Team Projekt, und doppelklicken Sie dann auf **Quell**Code Verwaltung.
 
     ![](adding-content-to-source-control/_static/image3.png)
-9. Auf der **Quellcodeverwaltungs-Explorer** auf **nicht zugeordnet**.
+9. Klicken Sie auf der Registerkarte **Quellcodeverwaltungs-Explorer** auf **nicht zugeordnet**.
 
     ![](adding-content-to-source-control/_static/image4.png)
-10. In der **Zuordnung** Dialogfeld die **lokalen Ordner** Feld, navigieren Sie zu (oder erstellen) fungieren als Stammordner für das Teamprojekt, und klicken Sie auf einen lokalen Ordner **Zuordnung**.
+10. Navigieren Sie **im Dialogfeld** Zuordnung im Feld **lokaler Ordner** zu einem lokalen Ordner, der als Stamm Ordner für das Teamprojekt fungieren soll, **und klicken Sie**dann auf zuordnen.
 
     ![](adding-content-to-source-control/_static/image5.png)
 11. Wenn Sie zum Herunterladen der Quelldateien aufgefordert werden, klicken Sie auf **Ja**.
 
     ![](adding-content-to-source-control/_static/image6.png)
 
-An diesem Punkt haben Sie die serverseitigen Ordner für das Teamprojekt in einen lokalen Ordner auf der Entwicklerarbeitsstation zugeordnet. Sie haben außerdem jeglichen vorhandenen Inhalt aus dem Teamprojekt auf Ihrem lokalen Ordnerstruktur heruntergeladen. Sie können jetzt starten, um Ihre eigenen Inhalte zur quellcodeverwaltung hinzufügen.
+An diesem Punkt haben Sie den serverseitigen Ordner für das Teamprojekt einem lokalen Ordner auf Ihrer Entwickler Arbeitsstation zugeordnet. Sie haben auch vorhandene Inhalte aus dem Teamprojekt in Ihre lokale Ordnerstruktur heruntergeladen. Sie können jetzt mit dem Hinzufügen Ihres eigenen Inhalts zur Quell Code Verwaltung beginnen.
 
-## <a name="add-projects-and-solutions-to-source-control"></a>Projekte und Projektmappen zur Quellcodeverwaltung hinzufügen
+## <a name="add-projects-and-solutions-to-source-control"></a>Hinzufügen von Projekten und Projektmappen zur Quell Code Verwaltung
 
-Um Projekte und Projektmappen zur quellcodeverwaltung hinzufügen möchten, müssen Sie zunächst in den zugeordneten Ordner für das Teamprojekt auf dem lokalen Computer verschieben. Sie können Inhalte in die Erweiterungen mit dem Server synchronisiert. Klicken Sie dann überprüfen.
+Wenn Sie Projekte und Projektmappen zur Quell Code Verwaltung hinzufügen möchten, müssen Sie Sie zuerst in den zugeordneten Ordner für das Teamprojekt auf dem lokalen Computer verschieben. Sie können dann den Inhalt einchecken, um die Ergänzungen mit dem Server zu synchronisieren.
 
-**Projekte zur quellcodeverwaltung hinzufügen**
+**So fügen Sie Projekte zur Quell Code Verwaltung hinzu**
 
-1. Verschieben Sie auf der Entwicklerarbeitsstation die Projekte und Projektmappen auf einen geeigneten Speicherort innerhalb der Struktur zugeordneten Ordner für das Teamprojekt aus.
+1. Verschieben Sie Ihre Projekte und Projektmappen auf der Arbeitsstation des Entwicklers an eine geeignete Position in der zugeordneten Ordnerstruktur für das Teamprojekt.
 
     > [!NOTE]
-    > Viele Organisationen haben einen bevorzugten Ansatz wie Projekte und Projektmappen in der quellcodeverwaltung angeordnet werden soll. Anleitungen zum Ordner der Struktur finden Sie unter [so wird's gemacht: Struktur von Ihrem Quellcodeverwaltungsordner in Team Foundation Server](https://msdn.microsoft.com/library/bb668992.aspx).
-2. Öffnen Sie die Projektmappe in Visual Studio 2010 ein.
-3. In der **Projektmappen-Explorer** rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **Projektmappe zur Quellcodeverwaltung hinzufügen**.
+    > Viele Organisationen haben einen bevorzugten Ansatz, um zu erfahren, wie Projekte und Projektmappen in der Quell Code Verwaltung organisiert werden sollten. Anleitungen zum Strukturieren von Ordnern finden Sie unter Gewusst [wie: Strukturieren der Quell Code Verwaltungs Ordner in Team Foundation Server](https://msdn.microsoft.com/library/bb668992.aspx).
+2. Öffnen Sie die Projekt Mappe in Visual Studio 2010.
+3. Klicken Sie im **Projektmappen-Explorer** Fenster mit der rechten Maustaste auf die Projekt Mappe, und klicken Sie dann auf Projekt Mappe **zur Quell Code Verwaltung hinzufügen**.
 
     ![](adding-content-to-source-control/_static/image7.png)
 
     > [!NOTE]
-    > In einigen Fällen, je nachdem, wie Ihre Organisation zum Strukturieren von Inhalt in TFS, gerne ganz von vorne müssen Sie zum Hinzufügen von Projekten zur quellcodeverwaltung durchzugehen, um eine präzisere Kontrolle über den Aufbau von Quellcode bereitzustellen.
-4. Überprüfen Sie, ob die **Quellcodeverwaltungs-Explorer** Registerkarte zeigt den Inhalt, die Sie in der Ordnerstruktur für das Teamprojekt hinzugefügt haben.
+    > In einigen Fällen müssen Sie, je nachdem, wie Ihre Organisation Inhalte in TFS strukturiert, möglicherweise Projekte zur Quell Code Verwaltung einzeln hinzufügen, um eine präzisere Kontrolle über die Organisation des Quellcodes zu bieten.
+4. Vergewissern Sie sich, dass die Registerkarte **Quellcodeverwaltungs-Explorer** den Inhalt anzeigt, den Sie in der Server Ordnerstruktur für das Teamprojekt hinzugefügt haben.
 
     ![](adding-content-to-source-control/_static/image8.png)
 
     > [!NOTE]
-    > Die **Quellcodeverwaltungs-Explorer** Registerkarte zeigt Ihre Inhalte mit keine weiteren eingabeaufforderungen, da Sie einen zugeordneten Ordner auf dem lokalen Dateisystem Ihrer Projektmappe hinzugefügt. Wenn Ihre Lösung an einem nicht zugeordneten Speicherort war, würden Sie an Speicherorte von Ordnern in TFS und Ihrem lokalen Dateisystem aufgefordert.
-5. Auf der **Quellcodeverwaltungs-Explorer** Registerkarte die **Ordner** Bereich mit der rechten Maustaste in des Teamprojekts (z. B. **ContactManager**), und klicken Sie dann auf **Einchecken Ausstehende Änderungen**.
-6. In der **Einchecken – Quelldateien** Dialogfeld Geben Sie einen Kommentar, und klicken Sie dann auf **Einchecken**.
+    > Auf der Registerkarte **Quellcodeverwaltungs-Explorer** werden Ihre Inhalte ohne weitere Aufforderung angezeigt, weil Sie die Projekt Mappe einem zugeordneten Ordner im lokalen Dateisystem hinzugefügt haben. Wenn sich Ihre Lösung an einem nicht zugeordneten Speicherort befand, werden Sie aufgefordert, Ordner Speicherorte sowohl in TFS als auch in Ihrem lokalen Dateisystem anzugeben.
+5. Klicken Sie auf der Registerkarte **Quellcodeverwaltungs-Explorer** im **Ordner** Fenster mit der rechten Maustaste auf das Teamprojekt (z. **b. ContactManager**), und klicken Sie dann auf **Ausstehende Änderungen einchecken**.
+6. Geben Sie im Dialogfeld **Einchecken – Quelldateien** einen Kommentar ein, und klicken Sie dann auf **Einchecken**.
 
     ![](adding-content-to-source-control/_static/image9.png)
 
-An diesem Punkt haben Sie die Projektmappe zur quellcodeverwaltung in TFS hinzugefügt.
+An diesem Punkt haben Sie die Projekt Mappe der Quell Code Verwaltung in TFS hinzugefügt.
 
-## <a name="add-external-dependencies-to-source-control"></a>Externe Abhängigkeiten zur Quellcodeverwaltung hinzufügen
+## <a name="add-external-dependencies-to-source-control"></a>Externe Abhängigkeiten zur Quell Code Verwaltung hinzufügen
 
-Wenn Sie ein Projekt oder eine Projektmappe zur quellcodeverwaltung hinzufügen, werden alle Dateien und Ordner in Ihrem Projekt oder Projektmappe auch hinzugefügt werden. Allerdings basieren in vielen Fällen, Projekte und Projektmappen auch auf externe Abhängigkeiten, ebenso wie bei lokalen Assemblys ordnungsgemäß funktioniert. In diesem Fall müssen Sie eine hinzufügen, dass solche Ressourcen zur quellcodeverwaltung, Team Build und anderen Mitgliedern des Entwicklerteams können Ihren Code erfolgreich zu erstellen.
+Wenn Sie ein Projekt oder eine Projekt Mappe zur Quell Code Verwaltung hinzufügen, werden alle Dateien und Ordner in Ihrem Projekt oder ihrer Projekt Mappe ebenfalls hinzugefügt. In vielen Fällen basieren Projekte und Projektmappen aber auch auf externen Abhängigkeiten, wie z. b. lokalen Assemblys, um ordnungsgemäß zu funktionieren. Sie müssen diese Ressourcen der Quell Code Verwaltung hinzufügen, damit sowohl der Team Build als auch andere Mitglieder des Entwicklerteams den Code erfolgreich erstellen können.
 
-Die Ordnerstruktur für die beispiellösung Contact Manager enthält beispielsweise einen Ordner namens Pakete. Die Assembly und verschiedene unterstützende Ressourcen enthält für das ADO.NET Entity Framework 4.1. Der Ordner "Pakete" ist nicht Teil der Contact Manager-Lösung, aber die Projektmappe ohne nicht erfolgreich erstellt. Um Team Build zum Erstellen der Projektmappe zu aktivieren, müssen Sie den Ordner "Pakete" zur quellcodeverwaltung hinzufügen.
+Die Ordnerstruktur für die Beispiel Projekt Mappe Contact Manager enthält z. b. einen Ordner mit dem Namen Packages. Diese enthält die Assembly und verschiedene unterstützende Ressourcen für den ADO.NET-Entity Framework 4,1. Der Ordner "Packages" ist nicht Teil der Contact Manager-Lösung, aber die Lösung wird ohne diese nicht erfolgreich erstellt. Um Team Build zum Erstellen der Projekt Mappe zu aktivieren, müssen Sie den Paket Ordner der Quell Code Verwaltung hinzufügen.
 
 > [!NOTE]
-> Die Einbeziehung von einem Ordner "Pakete" ist typisch für was geschieht, wenn Sie der Projektmappe mit der NuGet-Erweiterung für Visual Studio 2010 die Entity Framework oder ähnliche Ressourcen hinzufügen.
+> Die Einbindung eines Paket Ordners ist typisch für das, was geschieht, wenn Sie der Projekt Mappe mit der nuget-Erweiterung für Visual Studio 2010 die Entity Framework oder ähnliche Ressourcen hinzufügen.
 
-**Inhalt der nicht Teil des Projekts zur quellcodeverwaltung hinzufügen**
+**So fügen Sie der Quell Code Verwaltung nicht-Projektinhalte hinzu**
 
-1. Stellen Sie sicher, dass die Elemente, die Sie hinzufügen möchten (z. B. den Ordner "Pakete") in einen geeigneten Speicherort in einen zugeordneten Ordner auf Ihrem lokalen Dateisystem befinden.
-2. In Visual Studio 2010 In der **Team Explorer** , erweitern Sie Ihr Teamprojekt, und doppelklicken Sie dann auf **Quellcodeverwaltung**.
+1. Stellen Sie sicher, dass sich die Elemente, die Sie hinzufügen möchten (z. b. der Ordner Pakete), an einem geeigneten Speicherort innerhalb eines zugeordneten Ordners auf dem lokalen Dateisystem befinden
+2. Erweitern Sie in Visual Studio 2010 im Fenster **Team Explorer** das Team Projekt, und doppelklicken Sie dann auf **Quell**Code Verwaltung.
 
     ![](adding-content-to-source-control/_static/image10.png)
-3. Auf der **Quellcodeverwaltungs-Explorer** Registerkarte die **Ordner** wählen Sie im Bereich der Ordner, der das Element enthält, oder Sie Elemente hinzufügen möchten.
-4. Klicken Sie auf die **Elemente zu Ordner hinzufügen** Schaltfläche.
+3. Wählen Sie auf der Registerkarte **Quellcodeverwaltungs-Explorer** im **Ordner Ordner** den Ordner aus, der die Elemente enthält, die Sie hinzufügen möchten.
+4. Klicken Sie auf die Schaltfläche **Elemente zu Ordner hinzufügen** .
 
     ![](adding-content-to-source-control/_static/image11.png)
-5. In der **zur Quellcodeverwaltung hinzufügen** Dialogfeld wählen den Ordner oder die Elemente, die Sie hinzufügen möchten, und klicken Sie dann auf **Weiter**.
+5. Wählen Sie im Dialogfeld **zur Quell Code Verwaltung hinzufügen** den Ordner oder die Elemente aus, die Sie hinzufügen möchten, und klicken Sie dann auf **weiter**.
 
     ![](adding-content-to-source-control/_static/image12.png)
-6. Auf der **ausgeschlossene Elemente** Registerkarte, wählen Sie alle erforderlichen Elemente, die wurden (z. B. Assemblys) automatisch ausgeschlossen, und klicken Sie dann auf **Element(e) einschließen**.
+6. Wählen Sie auf der Registerkarte **ausgeschlossene Elemente** alle erforderlichen Elemente aus, die automatisch ausgeschlossen wurden (z. b. Assemblys), und klicken Sie dann auf **Element (e) einschließen**.
 
     ![](adding-content-to-source-control/_static/image13.png)
-7. Auf der **hinzuzufügenden Elemente** Registerkarte, stellen Sie sicher, dass alle Dateien, die Sie einschließen möchten, finden Sie, und klicken Sie dann auf **Fertig stellen**.
+7. Vergewissern Sie sich, dass auf der Registerkarte hinzu zufügende **Elemente** alle Dateien aufgelistet sind, die Sie einschließen möchten, und klicken Sie dann auf **Fertig**stellen.
 
     ![](adding-content-to-source-control/_static/image14.png)
-8. In der **Quellcodeverwaltungs-Explorer** Fenster, klicken Sie auf die **Einchecken** Schaltfläche.
+8. Klicken Sie im **Quellcodeverwaltungs-Explorer** Fenster auf die Schaltfläche **Einchecken** .
 
     ![](adding-content-to-source-control/_static/image15.png)
-9. In der **Einchecken – Quelldateien** Dialogfeld Geben Sie einen Kommentar, und klicken Sie dann auf **Einchecken**.
+9. Geben Sie im Dialogfeld **Einchecken – Quelldateien** einen Kommentar ein, und klicken Sie dann auf **Einchecken**.
 
-An diesem Punkt haben Sie die externen Abhängigkeiten für Ihre Projektmappe zur quellcodeverwaltung hinzugefügt.
+An diesem Punkt haben Sie die externen Abhängigkeiten für die Projekt Mappe zur Quell Code Verwaltung hinzugefügt.
 
-## <a name="conclusion"></a>Schlussbemerkung
+## <a name="conclusion"></a>Zusammenfassung
 
-In diesem Thema beschrieben, wie Sie eine Verbindung mit einem Teamprojekt herstellen, ordnen eine Ordnerstruktur und Inhalten zur quellcodeverwaltung hinzufügen. Weitere Informationen zum Arbeiten mit Elementen unter quellcodeverwaltung finden Sie unter [verwenden der Versionskontrolle](https://msdn.microsoft.com/library/ms181368.aspx).
+In diesem Thema wird beschrieben, wie Sie eine Verbindung mit einem Teamprojekt herstellen, eine Ordnerstruktur zuordnen und der Quell Code Verwaltung Inhalt hinzufügen. Weitere Informationen zum Arbeiten mit Elementen unter Quell Code Verwaltung finden [Sie unter Verwenden der Versionskontrolle](https://msdn.microsoft.com/library/ms181368.aspx).
 
-Im nächsten Thema, [konfigurieren eine TFS-Build-Server für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md), beschreibt, wie Sie einen TFS Team Build-Server zum Erstellen und Bereitstellen Ihrer Lösung vorbereiten.
+Im nächsten Thema [Konfigurieren eines TFS-Buildservers für die Webbereitstellung](configuring-a-tfs-build-server-for-web-deployment.md)wird beschrieben, wie Sie einen TFS Team Build-Server zum Erstellen und Bereitstellen Ihrer Lösung vorbereiten.
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-Ausführlichere Informationen zum Arbeiten mit Datenquellen-Steuerelement in TFS finden Sie unter [verwenden der Versionskontrolle](https://msdn.microsoft.com/library/ms181368.aspx).
+Ausführlichere Informationen zum Arbeiten mit der Quell Code Verwaltung in TFS finden [Sie unter Verwenden der Versionskontrolle](https://msdn.microsoft.com/library/ms181368.aspx).
 
 > [!div class="step-by-step"]
 > [Zurück](creating-a-team-project-in-tfs.md)

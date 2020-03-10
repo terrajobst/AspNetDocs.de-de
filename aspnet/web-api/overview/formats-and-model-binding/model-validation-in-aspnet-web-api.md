@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: Modellvalidierung in ASP.NET Web-API – ASP.NET 4.x
+title: Modell Validierung in ASP.net-Web-API-ASP.NET 4. x
 author: MikeWasson
-description: Übersicht über die modellvalidierung in ASP.NET Web-API für ASP.NET 4.x.
+description: Übersicht über die Modell Validierung in ASP.net-Web-API für ASP.NET 4. x.
 ms.author: riande
 ms.date: 07/20/2012
 ms.custom: seoapril2019
@@ -10,79 +10,79 @@ ms.assetid: 7d061207-22b8-4883-bafa-e89b1e7749ca
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 531a66b7ab642bd012663517640f2766f1917f25
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112827"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448929"
 ---
-# <a name="model-validation-in-aspnet-web-api"></a>Modellvalidierung in ASP.NET Web-API
+# <a name="model-validation-in-aspnet-web-api"></a>Modell Validierung in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Artikel zeigt, wie Ihre Modelle kommentieren, verwenden Sie die Anmerkungen für die datenvalidierung und Behandeln von Validierungsfehlern in Ihrer Web-API wird. Wenn ein Client Daten an Ihre Web-API sendet, möchten Sie häufig die Daten vor der Verarbeitung zu überprüfen. 
+In diesem Artikel wird gezeigt, wie Sie Ihre Modelle mit Anmerkungen versehen, die Anmerkungen für die Datenvalidierung verwenden und Validierungs Fehler in Ihrer Web-API behandeln. Wenn ein Client Daten an Ihre Web-API sendet, empfiehlt es sich, die Daten vor der Verarbeitung zu validieren. 
 
 ## <a name="data-annotations"></a>Datenanmerkungen
 
-In ASP.NET Web-API können Sie Attribute aus der [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) Namespace, um Überprüfungsregeln für Eigenschaften für Ihr Modell festgelegt. Sehen Sie sich das folgende Modell an:
+In ASP.net-Web-API können Sie Attribute aus dem [System. ComponentModel. DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) -Namespace verwenden, um Validierungsregeln für Eigenschaften in Ihrem Modell festzulegen. Sehen Sie sich das folgende Modell an:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample1.cs)]
 
-Wenn Sie die modellvalidierung in ASP.NET MVC verwendet haben, sollte das bekannt vorkommen. Die **erforderlich** Attribut wird angegeben, dass die `Name` Eigenschaft darf nicht null sein. Die **Bereich** Attribut wird angegeben, dass `Weight` muss zwischen 0 und 999 liegen.
+Wenn Sie die Modell Validierung in ASP.NET MVC verwendet haben, sollte dies Ihnen bekannt vorkommen. Das **erforderliche** Attribut besagt, dass die `Name`-Eigenschaft nicht NULL sein darf. Das **Range** -Attribut gibt an, dass `Weight` zwischen 0 und 999 liegen muss.
 
-Nehmen wir an, dass ein Client eine POST-Anforderung mit der folgenden JSON-Darstellung sendet:
+Angenommen, ein Client sendet eine Post-Anforderung mit der folgenden JSON-Darstellung:
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample2.json)]
 
-Sie sehen, dass der Client nicht enthält die `Name` -Eigenschaft, die als markiert ist erforderlich. Bei Web-API konvertiert den JSON-Code in eine `Product` Instanz überprüft die `Product` für die Validierungsattribute. In Ihrem-Controlleraktion können Sie überprüfen, ob das Modell gültig ist:
+Sie können sehen, dass der Client nicht die `Name`-Eigenschaft enthielt, die als erforderlich markiert ist. Wenn die Web-API den JSON-Code in eine `Product` Instanz konvertiert, überprüft er die `Product` anhand der Validierungs Attribute. In ihrer Controller Aktion können Sie überprüfen, ob das Modell gültig ist:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample3.cs)]
 
-Modellvalidierung garantiert nicht, dass der Clientdaten sicher sind. Zusätzliche Überprüfung kann in anderen Ebenen der Anwendung erforderlich sein. (Z. B. möglicherweise die Datenschicht foreign Key-Einschränkungen erzwingen.) Das Tutorial [mithilfe des Web-API mit Entity Framework](../data/using-web-api-with-entity-framework/part-1.md) untersucht einige dieser Probleme.
+Die Modell Validierung garantiert nicht, dass Client Daten sicher sind. In anderen Ebenen der Anwendung ist möglicherweise eine zusätzliche Überprüfung erforderlich. (Beispielsweise kann die Datenschicht Foreign Key-Einschränkungen erzwingen.) Im Tutorial [Verwenden der Web-API mit Entity Framework](../data/using-web-api-with-entity-framework/part-1.md) werden einige dieser Probleme untersucht.
 
-**"Unterdimensionierte Posting"**: Unterdimensionierte Bereitstellung geschieht, wenn es sich bei der Client und einige Eigenschaften zu verwerfen. Nehmen wir beispielsweise an, dass der Client die folgenden sendet:
+**"Bei**der Bereitstellung": eine unter Veröffentlichung erfolgt, wenn der Client einige Eigenschaften verlässt. Nehmen wir beispielsweise an, der Client sendet Folgendes:
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample4.json)]
 
-Hier ist der Client geben keine Werte für `Price` oder `Weight`. Das JSON-Formatierungsprogramm weist den Standardwert 0 (null), um die fehlenden Eigenschaften.
+Hier hat der Client keine Werte für `Price` oder `Weight`angegeben. Der JSON-Formatierer weist den fehlenden Eigenschaften den Standardwert 0 (null) zu.
 
 ![](model-validation-in-aspnet-web-api/_static/image1.png)
 
-Der Modellzustand ist ungültig, da 0 (null) einen gültigen Wert für diese Eigenschaften ist. Ob dieses Problem auftritt, hängt von Ihrem Szenario ab. Z. B. in einem Updatevorgang sollten Sie zur Unterscheidung zwischen "Zero" und "nicht festgelegt." Um Clients zum Festlegen eines Werts zu erzwingen, stellen Sie die Eigenschaft NULL-Werte zulässt, und legen die **erforderlich** Attribut:
+Der Modell Zustand ist gültig, da NULL ein gültiger Wert für diese Eigenschaften ist. Ob dies ein Problem ist, hängt von Ihrem Szenario ab. Beispielsweise können Sie bei einem Aktualisierungs Vorgang zwischen "0" und "nicht festgelegt" unterscheiden. Legen Sie die Eigenschaft auf NULL fest, und legen Sie das **erforderliche** Attribut fest, um zu erzwingen, dass Clients einen Wert festlegen:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample5.cs?highlight=1-2)]
 
-**"Overposting"**: Ein Client kann auch senden *weitere* Daten als erwartet. Zum Beispiel:
+**"Überschreiben"** : ein Client kann auch *mehr* Daten als erwartet senden. Beispiel:
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample6.json)]
 
-Hier der JSON-Code enthält eine Eigenschaft ("Color"), die in nicht vorhanden ist die `Product` Modell. In diesem Fall ignoriert der JSON-Formatierungsprogramm einfach diesen Wert. (Das XML-Formatierungsprogramm führt.) Overposting verursacht Probleme auf, wenn Ihr Modell über Eigenschaften, die eigentlich verfügt schreibgeschützt sein. Zum Beispiel:
+Hier enthält die JSON-Eigenschaft eine Eigenschaft ("Color"), die im `Product` Modell nicht vorhanden ist. In diesem Fall ignoriert der JSON-Formatierer diesen Wert einfach. (Das XML-Formatierer führt dasselbe aus.) Eine Übertragung verursacht Probleme, wenn Ihr Modell über Eigenschaften verfügt, die Sie als schreibgeschützt feststellen möchten. Beispiel:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample7.cs)]
 
-Sollen nicht zum Aktualisieren der `IsAdmin` Eigenschaft und selbst Administratoren Berechtigungen zu erhöhen! Die sicherste Strategie ist die Verwendung eine Modellklasse, die genau übereinstimmt, was der Client senden darf:
+Sie möchten nicht, dass Benutzer die `IsAdmin`-Eigenschaft aktualisieren und sich nicht auf Administratoren erhöhen! Die sicherste Strategie besteht darin, eine Modell Klasse zu verwenden, die genau mit dem übereinstimmt, was der Client senden darf:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample8.cs)]
 
 > [!NOTE]
-> Brad Wilsons Blog-Beitrag "[Eingabeüberprüfung Visual Studio. Modellvalidierung in ASP.NET MVC](http://bradwilson.typepad.com/blog/2010/01/input-validation-vs-model-validation-in-aspnet-mvc.html)"eine gute Beschreibung von unterdimensionierte Bereitstellung und zu viele Angaben gemacht hat. Obwohl im Beitrag zu ASP.NET MVC 2 ist, sind die Probleme weiterhin relevant, die Web-API.
+> Der Blogbeitrag von Brad Wilson (Eingabe Überprüfung und[Modell Überprüfung in ASP.NET MVC](http://bradwilson.typepad.com/blog/2010/01/input-validation-vs-model-validation-in-aspnet-mvc.html)) enthält eine gute Erörterung der unter-und über-und über-und Übertragung. Obwohl es sich bei dem Beitrag um ASP.NET MVC 2 handelt, sind die Probleme weiterhin für die Web-API relevant.
 
-## <a name="handling-validation-errors"></a>Behandeln von Validierungsfehlern
+## <a name="handling-validation-errors"></a>Behandeln von Validierungs Fehlern
 
-Einen Fehler an den Client werden von Web-API nicht automatisch zurück, wenn die Validierung fehlschlägt. Es ist Aufgabe der Controlleraktion auf den Modellzustand überprüfen und entsprechend reagieren.
+Die Web-API gibt beim Fehlschlagen der Validierung nicht automatisch einen Fehler an den Client zurück. Es liegt an der Controller Aktion, den Modell Status zu überprüfen und entsprechend zu reagieren.
 
-Sie können auch erstellen, dass einen Aktionsfilter, um den Modellstatus zu überprüfen, bevor die Controlleraktion aufgerufen wird. Der folgende Code zeigt ein Beispiel:
+Sie können auch einen Aktionsfilter erstellen, um den Modell Status zu überprüfen, bevor die Controller Aktion aufgerufen wird. Der folgende Code zeigt ein Beispiel:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample9.cs)]
 
-Wenn die modellvalidierung fehlschlägt, gibt dieser Filter eine HTTP-Antwort, die die Validierungsfehler enthält. In diesem Fall wird die Controlleraktion nicht aufgerufen werden.
+Wenn die Modell Validierung fehlschlägt, gibt dieser Filter eine HTTP-Antwort zurück, die die Validierungs Fehler enthält. In diesem Fall wird die Controller Aktion nicht aufgerufen.
 
 [!code-console[Main](model-validation-in-aspnet-web-api/samples/sample10.cmd)]
 
-Fügen Sie zum Anwenden dieses Filters auf alle Web-API-Controller eine Instanz des Filters, der die **HttpConfiguration.Filters** Auflistung während der Konfiguration:
+Wenn Sie diesen Filter auf alle Web-API-Controller anwenden möchten, fügen Sie der **httpconfiguration. Filters** -Auflistung während der Konfiguration eine Instanz des Filters hinzu:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample11.cs)]
 
-Eine weitere Option ist der Filter als Attribut individuellen Controllern oder Controlleraktionen festgelegt:
+Eine weitere Möglichkeit besteht darin, den Filter als Attribut für einzelne Controller oder Controller Aktionen festzulegen:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample12.cs)]

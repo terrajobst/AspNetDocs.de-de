@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/index
-title: Web-API-Anleitung – ASP.NET 4.x
+title: Leitfaden für Web-API-ASP.NET 4. x
 author: rick-anderson
-description: Liste der ASP.NET Web-API-Anleitung für ASP.NET 4.x
+description: ASP.net-Web-API Leit Faden Liste für ASP.NET 4. x
 ms.author: riande
 ms.date: 01/17/2012
 ms.custom: seoapril2019
@@ -10,13 +10,13 @@ ms.assetid: daca6735-b5d3-4ef5-af33-ee682926238b
 msc.legacyurl: /web-api/overview
 msc.type: book
 ms.openlocfilehash: 304c0d71e5e18f9d3f0768464fe39d6e6946600d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422901"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448299"
 ---
-# <a name="web-api-guidance"></a>Web-API-Leitfaden
+# <a name="web-api-guidance"></a>Leitfaden zur Web-API
 
 - [Erste Schritte](getting-started-with-aspnet-web-api/index.md)
 
@@ -24,7 +24,7 @@ ms.locfileid: "59422901"
     - [Aktionsergebnisse in Web-API 2](getting-started-with-aspnet-web-api/action-results.md)
     - [Verwenden des Web-API mit ASP.NET Web Forms](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
     - [Erstellen von Web-API-Hilfeseiten](getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-    - [Praxisnahe Übung: Erstellen einer Einzelseitenanwendung (SPA) mit ASP.NET-Web-API und Angular.js](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+    - [Praktische Übungen: Erstellen einer Einzelseitenanwendung (SPA) mit dem ASP.NET-Web-API und Angular.js](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 - [Routing](web-api-routing-and-actions/index.md)
 
     - [Routing in der Web-API](web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -112,8 +112,8 @@ ms.locfileid: "59422901"
     - [Aufrufen einer Web-API über einen .NET-Client (C#)](advanced/calling-a-web-api-from-a-net-client.md)
     - [HTTP-Meldungshandler in der Web-API](advanced/http-message-handlers.md)
     - [HttpClient-Meldungshandler in der Web-API](advanced/httpclient-message-handlers.md)
-    - [Senden von HTML-Formulardaten in Web-API: Form-Urlencoded-Daten](advanced/sending-html-form-data-part-1.md)
-    - [Senden von HTML-Formulardaten in Web-API: Dateiupload und mehrteiligen MIME-Nachrichten](advanced/sending-html-form-data-part-2.md)
+    - [Senden von HTML-Formulardaten in der Web-API: form-urlencoded-Daten](advanced/sending-html-form-data-part-1.md)
+    - [Senden von HTML-Formulardaten in der Web-API: Dateiupload und mehrteiligen MIME-Nachrichten](advanced/sending-html-form-data-part-2.md)
     - [HTTP-Cookies in der ASP.NET-Web-API](advanced/http-cookies.md)
 - [Freigaben](releases/index.md)
 

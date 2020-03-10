@@ -1,123 +1,123 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
-title: Öffnen Sie die Typen in OData v4 mit ASP.NET Web-API | Microsoft-Dokumentation
+title: Öffnen von Typen in odata v4 mit ASP.net-Web-API | Microsoft-Dokumentation
 author: microsoft
-description: In OData v4 ist ein offener Typ eines strukturierten Typs, das dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Öffnen...
+description: In odata V4 ist ein offener Typ ein strukturierter Typ, der neben den in der Typdefinition deklarierten Eigenschaften auch dynamische Eigenschaften enthält. Öffnen...
 ms.author: riande
 ms.date: 09/15/2014
 ms.assetid: f25f5ac5-4800-4950-abe5-c97750a27fc6
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
 ms.openlocfilehash: 950442c071bf50d2c8c1588971f13f85c4891436
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108453"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504579"
 ---
-# <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>Öffnen Sie die Typen in OData v4 mit ASP.NET Web-API
+# <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>Öffnen von Typen in odata v4 mit ASP.net-Web-API
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> In OData v4 ein *offener Typ* ist ein strukturierter Typ, die dynamische Eigenschaften, zusätzlich zu den Eigenschaften enthält, die in der Definition eines Typs deklariert werden. Offene Typen können Sie die Flexibilität mit Ihren Datenmodellen hinzufügen. Dieses Tutorial zeigt, wie offene Typen in OData der ASP.NET Web-API verwendet wird.
+> In odata V4 ist ein *offener Typ* ein strukturierter Typ, der neben den in der Typdefinition deklarierten Eigenschaften auch dynamische Eigenschaften enthält. Mit offenen Typen können Sie Ihren Datenmodellen Flexibilität hinzufügen. In diesem Tutorial wird gezeigt, wie Sie Open types in ASP.net-Web-API odata verwenden.
 > 
-> In diesem Tutorial wird davon ausgegangen, dass Sie bereits wissen, wie zum Erstellen eines OData-Endpunkts in ASP.NET Web-API. Falls nicht, lesen Sie zunächst [erstellen ein OData v4-Endpunkts](create-an-odata-v4-endpoint.md) erste.
+> In diesem Tutorial wird davon ausgegangen, dass Sie bereits wissen, wie ein odata-Endpunkt in ASP.net-Web-API erstellt wird. Wenn dies nicht der Anfang ist, lesen Sie zuerst [Erstellen eines odata V4-Endpunkts](create-an-odata-v4-endpoint.md) .
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - Web-API OData 5.3
+> - Web-API-odata 5,3
 > - OData v4
 
-Zunächst einige Begriffe OData:
+Zuerst einige odata-Terminologie:
 
-- Der Entitätstyp: Einen strukturierten Typ mit einem Schlüssel.
-- Komplexer Typ: Einen strukturierten Typ ohne einen Schlüssel.
-- Öffnen Sie die geben: Ein Typ mit dynamischen Eigenschaften. Sowohl Entitätstypen und komplexe Typen können geöffnet sein.
+- Entitätstyp: ein strukturierter Typ mit einem Schlüssel.
+- Komplexer Typ: ein strukturierter Typ ohne Schlüssel.
+- Open Type: ein Typ mit dynamischen Eigenschaften. Beide Entitäts Typen und komplexe Typen können geöffnet werden.
 
-Der Wert einer dynamischen Eigenschaft kann es sich um einen primitiven Typ, komplexen Typ oder Enumerationstyp sein; oder eine Auflistung aller dieser Typen. Weitere Informationen zu offenen Typen, finden Sie unter den [OData v4-Spezifikation](http://www.odata.org/documentation/odata-version-4-0/).
+Der Wert einer dynamischen Eigenschaft kann ein primitiver Typ, ein komplexer Typ oder ein Enumerationstyp sein. oder eine Auflistung von diesen Typen. Weitere Informationen zu offenen Typen finden Sie in der [odata V4-Spezifikation](http://www.odata.org/documentation/odata-version-4-0/).
 
-## <a name="install-the-web-odata-libraries"></a>Installieren Sie die Web-OData-Bibliotheken
+## <a name="install-the-web-odata-libraries"></a>Installieren der webodata-Bibliotheken
 
-Verwenden der NuGet-Paketmanager, um die neuesten Web-API OData-Bibliotheken installieren. Aus dem Fenster Paket-Manager-Konsole:
+Verwenden Sie den nuget-Paket-Manager zum Installieren der neuesten Web-API-odata-Bibliotheken. Im Fenster der Paket-Manager-Konsole:
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample1.cmd)]
 
-## <a name="define-the-clr-types"></a>Definieren Sie die CLR-Typen
+## <a name="define-the-clr-types"></a>Definieren der CLR-Typen
 
-Zuerst definieren die EDM-Modelle als CLR-Typen.
+Definieren Sie zunächst die EDM-Modelle als CLR-Typen.
 
 [!code-csharp[Main](use-open-types-in-odata-v4/samples/sample2.cs)]
 
-Wenn der Entity Data Model (EDM) erstellt wird,
+Wenn die Entity Data Model (EDM) erstellt wird,
 
 - `Category` ist ein Enumerationstyp.
-- `Address` ist ein komplexer Typ. (sie einen Schlüssel muss nicht so, dass es sich nicht um ein Entitätstyp ist.)
-- `Customer` ist ein Entitätstyp. (sie hat es sich um einen Schlüssel.)
-- `Press` ist ein offener komplexen Typ.
-- `Book` ist ein offener Entitätstyp an.
+- `Address` ist ein komplexer Typ. (Er verfügt nicht über einen Schlüssel, daher handelt es sich nicht um einen Entitätstyp.)
+- `Customer` ist ein Entitätstyp. (Er verfügt über einen Schlüssel.)
+- `Press` ist ein offener komplexer Typ.
+- `Book` ist ein offener Entitätstyp.
 
-Um einen offenen Typ zu erstellen, müssen die CLR-Typ eine Eigenschaft des Typs `IDictionary<string, object>`, das die dynamischen Eigenschaften enthält.
+Um einen geöffneten Typ zu erstellen, muss der CLR-Typ über eine Eigenschaft vom Typ `IDictionary<string, object>`verfügen, die die dynamischen Eigenschaften enthält.
 
-## <a name="build-the-edm-model"></a>Das EDM-Modell erstellen
+## <a name="build-the-edm-model"></a>Erstellen des EDM-Modells
 
-Bei Verwendung von **ODataConventionModelBuilder** EDM erstellen `Press` und `Book` werden automatisch hinzugefügt, als offene Typen, die basierend auf dem Vorhandensein einer `IDictionary<string, object>` Eigenschaft.
+Wenn Sie **odataconaconmodelbuilder** zum Erstellen des EDM verwenden, werden `Press` und `Book` automatisch als offene Typen hinzugefügt, basierend auf dem vorhanden sein einer `IDictionary<string, object>`-Eigenschaft.
 
 [!code-csharp[Main](use-open-types-in-odata-v4/samples/sample3.cs)]
 
-Sie können auch erstellen, das EDM explizit mit **ODataModelBuilder**.
+Außerdem können Sie das EDM mithilfe von **odatamodelta Builder**explizit erstellen.
 
 [!code-csharp[Main](use-open-types-in-odata-v4/samples/sample4.cs)]
 
-## <a name="add-an-odata-controller"></a>Fügen Sie einen OData-Controller hinzu.
+## <a name="add-an-odata-controller"></a>Hinzufügen eines odata-Controllers
 
-Als Nächstes fügen Sie einen OData-Controller hinzu. In diesem Tutorial verwenden wir einen vereinfachten Controller nur unterstützt zu erhalten und POST-Anforderungen, und verwendet eine in-Memory-Liste, um Entitäten zu speichern.
+Fügen Sie als nächstes einen odata-Controller hinzu. Für dieses Tutorial verwenden wir einen vereinfachten Controller, der nur Get-und Post-Anforderungen unterstützt und eine in-Memory-Liste zum Speichern von Entitäten verwendet.
 
 [!code-csharp[Main](use-open-types-in-odata-v4/samples/sample5.cs)]
 
-Beachten Sie, dass die erste `Book` Instanz hat keine dynamischen Eigenschaften. Die zweite `Book` Instanz hat die folgenden dynamischen Eigenschaften:
+Beachten Sie, dass die erste `Book` Instanz keine dynamischen Eigenschaften hat. Die zweite `Book` Instanz verfügt über die folgenden dynamischen Eigenschaften:
 
-- "Published": Primitiver Typ
-- "Autoren": Auflistung von primitiven Typen
-- "OtherCategories": Die Auflistung von Enumerationstypen.
+- "Veröffentlicht": primitiver Typ
+- "Authors": Auflistung primitiver Typen
+- "Othercategories": Sammlung von Enumerationstypen.
 
-Darüber hinaus die `Press` -Eigenschaft dieses `Book` Instanz hat die folgenden dynamischen Eigenschaften:
+Außerdem weist die `Press`-Eigenschaft dieser `Book` Instanz die folgenden dynamischen Eigenschaften auf:
 
-- "Blog": Primitiver Typ
-- "Address": Komplexer Typ
+- "Blog": primitiver Typ
+- "Address": komplexer Typ
 
 ## <a name="query-the-metadata"></a>Abfragen der Metadaten
 
-Um das Metadatendokument des OData zu erhalten, senden Sie eine GET-Anforderung an `~/$metadata`. Der Antworttext sollte etwa wie folgt aussehen:
+Um das odata-Metadatendokument zu erhalten, senden Sie eine GET-Anforderung an `~/$metadata`. Der Antworttext sollte in etwa wie folgt aussehen:
 
 [!code-xml[Main](use-open-types-in-odata-v4/samples/sample6.xml?highlight=5,21)]
 
-Aus dem Dokument sehen Sie, die Folgendes:
+Im Metadatendokument können Sie Folgendes sehen:
 
-- Für die `Book` und `Press` Typen wird der Wert, der die `OpenType` -Attribut ist "true". Die `Customer` und `Address` Typen nicht über dieses Attribut verfügen.
-- Die `Book` Entitätstyp verfügt über drei deklarierten Eigenschaften: ISBN, Titel, und drücken Sie. Die OData-Metadaten enthält keinen der `Book.Properties` Eigenschaft von der CLR-Klasse.
-- Auf ähnliche Weise die `Press` komplexerer Typ verfügt über nur zwei deklarierten Eigenschaften: Der Name und Kategorie. Die Metadaten enthält keinen der `Press.DynamicProperties` Eigenschaft von der CLR-Klasse.
+- Für die `Book`-und `Press` Typen ist der Wert des `OpenType`-Attributs "true". Die `Customer`-und `Address` Typen haben dieses Attribut nicht.
+- Der `Book` Entitätstyp verfügt über drei deklarierte Eigenschaften: ISBN, Title und drücken. Die odata-Metadaten enthalten nicht die `Book.Properties`-Eigenschaft aus der CLR-Klasse.
+- Entsprechend verfügt der `Press` Complex-Typ nur über zwei deklarierte Eigenschaften: "Name" und "Category". Die Metadaten enthalten nicht die `Press.DynamicProperties`-Eigenschaft aus der CLR-Klasse.
 
 ## <a name="query-an-entity"></a>Abfragen einer Entität
 
-Um das Buch mit der ISBN-Nummer gleich "978-0-7356-7942-9" erhalten, senden Sie eine GET-Anforderung an `~/Books('978-0-7356-7942-9')`. Der Antworttext sollte etwa wie folgt aussehen. (Eingerückt, um sie besser lesbar zu machen.)
+Um das Buch mit ISBN gleich "978-0-7356-7942-9" zu erhalten, senden Sie eine GET-Anforderung an `~/Books('978-0-7356-7942-9')`. Der Antworttext sollte in etwa wie folgt aussehen. (Eingerückt, um Sie besser lesbar zu machen.)
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample7.cmd?highlight=8-13,15-23)]
 
-Beachten Sie die dynamischen Eigenschaften sind die deklarierten Eigenschaften Inlineschemainformationen enthält.
+Beachten Sie, dass die dynamischen Eigenschaften Inline mit den deklarierten Eigenschaften enthalten sind.
 
-## <a name="post-an-entity"></a>Stellen Sie eine Entität
+## <a name="post-an-entity"></a>Eine Entität Posten
 
-Senden Sie eine POST-Anforderung zum Hinzufügen einer Entität Buch `~/Books`. Der Client kann dynamische Eigenschaften in der Anforderungsnutzlast festlegen.
+Um eine Buch Entität hinzuzufügen, senden Sie eine Post-Anforderung an `~/Books`. Der Client kann dynamische Eigenschaften in der Anforderungs Nutzlast festlegen.
 
-Hier ist eine beispielanforderung ein. Beachten Sie die Eigenschaften "Price" und "Veröffentlicht".
+Im folgenden finden Sie ein Beispiel für eine Anforderung. Beachten Sie die Eigenschaften "Price" und "veröffentlicht".
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample8.cmd?highlight=10)]
 
-Wenn Sie einen Haltepunkt in der Controllermethode festlegen, Sie sehen, dass Web-API diese Eigenschaften auf der `Properties` Wörterbuch.
+Wenn Sie in der Controller Methode einen Haltepunkt festlegen, sehen Sie, dass die Web-API diese Eigenschaften dem `Properties` Wörterbuch hinzugefügt hat.
 
 ![](use-open-types-in-odata-v4/_static/image1.png)
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-[Beispiel für OData öffnen](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataOpenTypeSample/ReadMe.txt)
+[Odata-Open-Type-Beispiel](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataOpenTypeSample/ReadMe.txt)

@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
-title: Tailspin Spyworks – Verzeichnisorganisation | Microsoft-Dokumentation
+title: Tailspin SpyWorks-Verzeichnis Organisation | Microsoft-Dokumentation
 author: JoeStagner
-description: Joe Stagner ändert die Standard-Verzeichnisstruktur für die Tailspin Spyworks Web Forms-beispielanwendung.
+description: Joe Stagner ändert die Standardverzeichnis Struktur für die Anwendung Tailspin SpyWorks Sample Web Forms.
 ms.author: riande
 ms.date: 05/12/2010
 ms.assetid: bec45728-da0d-4876-a92e-5eea3e52c868
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
 msc.type: video
 ms.openlocfilehash: 8db1c4f6233fa490c971031a188cb3cf5c3ea9ce
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387842"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440925"
 ---
 # <a name="tailspin-spyworks---directory-organization"></a>Tailspin Spyworks – Verzeichnisorganisation
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Joe Stagner ändert die Standard-Verzeichnisstruktur für die Tailspin Spyworks Web Forms-beispielanwendung.
+Joe Stagner ändert die Standardverzeichnis Struktur für die Anwendung Tailspin SpyWorks Sample Web Forms.
 
-[&#9654;Sehen Sie sich Video (4 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-directory-organization)
+[&#9654;Video ansehen (4 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-directory-organization)
 
 > [!div class="step-by-step"]
 > [Zurück](tailspin-spyworks-intro-ui-and-edm.md)

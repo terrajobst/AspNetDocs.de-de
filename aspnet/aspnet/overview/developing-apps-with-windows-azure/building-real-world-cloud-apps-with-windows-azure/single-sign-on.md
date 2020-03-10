@@ -9,11 +9,11 @@ ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
 ms.openlocfilehash: 1ca93cce22487295a24aae95437b3e69dfc5b504
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457140"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500523"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Einmaliges Anmelden (entwickeln realer Cloud-apps mit Azure)
 
@@ -72,7 +72,7 @@ Sie verfügen automatisch über einen Azure AD Mandanten für Ihr Azure-Konto, u
 
 Das Portal bietet vollständige Unterstützung für das Erstellen, löschen und Verwalten von Benutzern in dieser Umgebung. Um beispielsweise einen Benutzer hinzuzufügen, wechseln Sie zur Registerkarte **Benutzer** , und klicken Sie auf die Schaltfläche **Benutzer hinzufügen** .
 
-![Schaltfläche „Benutzer hinzufügen“](single-sign-on/_static/image7.png)
+![Schaltfläche Benutzer hinzufügen](single-sign-on/_static/image7.png)
 
 ![Dialogfeld Benutzer hinzufügen](single-sign-on/_static/image8.png)
 
@@ -164,7 +164,7 @@ Wenn Sie das Projekt ausführen, wird eine Anmeldeseite angezeigt, und Sie könn
 
 Wenn Sie die app in Azure bereitstellen, müssen Sie lediglich das Kontrollkästchen **Organisations Authentifizierung aktivieren aktivieren** , sodass Visual Studio die gesamte Konfiguration für Sie übernimmt.
 
-![Website veröffentlichen](single-sign-on/_static/image27.png)
+![Web veröffentlichen](single-sign-on/_static/image27.png)
 
 Diese Screenshots stammen aus einem vollständigen schrittweisen Tutorial, das zeigt, wie Sie eine APP erstellen, die Azure AD Authentifizierung verwendet: [entwickeln von ASP.net-apps mit Azure Active Directory](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md).
 

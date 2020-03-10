@@ -1,28 +1,28 @@
 ---
 uid: tutorials
-title: ASP.NET-Tutorials | Microsoft-Dokumentation
+title: ASP.net-Tutorials | Microsoft-Dokumentation
 author: tdykstra
-description: Eine Liste von detaillierten Anleitungen zum Entwickeln von ASP.NET-Anwendungen.
+description: Eine Liste mit Schritt-für-Schritt-Anleitungen zum Entwickeln von ASP.NET-Anwendungen.
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
 ms.openlocfilehash: 106b4b88d2e7de90900b7a73570ecd6140e2db66
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113190"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449727"
 ---
-# <a name="aspnet-tutorials"></a>ASP.NET-Lernprogramme
+# <a name="aspnet-tutorials"></a>ASP.net-Tutorials
 
 [!INCLUDE[](~/includes/rp.md)]
 
 Die folgenden schrittweisen Anleitungen zum Entwickeln von ASP.NET-Anwendungen sind verfügbar.
 
 > [!NOTE]
-> Suchen Sie nach ASP.NET Core-Tutorials?  Suchen sie [hier](https://docs.microsoft.com/aspnet/core/tutorials/).
+> Suchen Sie nach ASP.net Core Tutorials?  Finden Sie Sie [hier](https://docs.microsoft.com/aspnet/core/tutorials/).
 
-## <a name="web-forms"></a>Web Forms
+## <a name="web-forms"></a>Web Forms
 
 * [Codebearbeitung in ASP.NET Web Forms in Visual Studio 2013](web-forms/overview/getting-started/code-editing-in-web-forms-pages.md)
 * [Verwenden der Seitenprüfung in Visual Studio 2012](web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012.md)
@@ -47,8 +47,8 @@ Die folgenden schrittweisen Anleitungen zum Entwickeln von ASP.NET-Anwendungen s
 * [Verwenden der Seitenprüfung in ASP.NET MVC](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)
 * [Erstellen einer ASP.NET MVC 5-App mit Facebook, Twitter, LinkedIn und Google OAuth2-Anmeldung (C#)](mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 * [Erstellen einer sicheren ASP.NET MVC 5-Web-App mit Anmeldung, E-Mail-Bestätigung und Kennwortzurücksetzung (C#)](mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-* [ASP.NET MVC 5-App mit zweistufiger Authentifizierung per SMS und E-Mail](mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
-* [XSRF/CSRF-Schutz bei ASP.NET MVC und Web Pages](mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
+* [ASP.NET MVC 5-Anwendung mit SMS und Two-Factor Authentication über E-Mail](mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+* [XSRF/CSRF Prevention in ASP.NET MVC and Web Pages](mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) (XSRF/CSRF-Verhinderung in ASP.NET MVC und -Webseiten)
 * [Verhindern von Angriffen durch offene Umleitungen (C#)](mvc/overview/security/preventing-open-redirection-attacks.md)
 * [Migrieren von ASP.NET MVC-Anwendungen zu Windows-Containern](mvc/overview/deployment/docker-aspnetmvc.md)
 * [Erstellen von Profilen und Debuggen der ASP.NET MVC-App mit Glimpse](mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)
@@ -60,7 +60,7 @@ Die folgenden schrittweisen Anleitungen zum Entwickeln von ASP.NET-Anwendungen s
 * [Erste Schritte mit dem Web-API 2 (C#)](web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
 * [Verwenden des Web-API mit ASP.NET Web Forms](web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
 * [Erstellen von Web-API-Hilfeseiten](web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-* [Praxisnahe Übung: Erstellen einer Einzelseitenanwendung (SPA) mit ASP.NET-Web-API und Angular.js](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+* [Praktische Übungen: Erstellen einer Einzelseitenanwendung (SPA) mit dem ASP.NET-Web-API und Angular.js](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 * [Erstellen einer REST-API mit Attributrouting in der Web-API 2](web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)
 * [Verwendung der Web-API 2 mit dem Entity Framework 6](web-api/overview/data/using-web-api-with-entity-framework/index.md)
 * [Aufrufen des Web-API über eine Windows Phone 8-Anwendung (C#)](web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
@@ -78,8 +78,8 @@ Die folgenden schrittweisen Anleitungen zum Entwickeln von ASP.NET-Anwendungen s
 * [Hosten der Web-API 2 in einer Azure-Workerrolle](web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role.md)
 * [Abhängigkeitsinjektion in der Web-API 2](web-api/overview/advanced/dependency-injection.md)
 * [Aufrufen einer Web-API über einen .NET-Client (C#)](web-api/overview/advanced/calling-a-web-api-from-a-net-client.md)
-* [Senden von HTML-Formulardaten in Web-API: Form-Urlencoded-Daten](web-api/overview/advanced/sending-html-form-data-part-1.md)
-* [Senden von HTML-Formulardaten in Web-API: Dateiupload und mehrteiligen MIME-Nachrichten](web-api/overview/advanced/sending-html-form-data-part-2.md)
+* [Senden von HTML-Formulardaten in der Web-API: form-urlencoded-Daten](web-api/overview/advanced/sending-html-form-data-part-1.md)
+* [Senden von HTML-Formulardaten in der Web-API: Dateiupload und mehrteiligen MIME-Nachrichten](web-api/overview/advanced/sending-html-form-data-part-2.md)
 
 ## <a name="web-pages"></a>Webseiten
 
@@ -114,7 +114,7 @@ Die folgenden schrittweisen Anleitungen zum Entwickeln von ASP.NET-Anwendungen s
 
 * [Tutorial: Erste Schritte mit SignalR 2](signalr/overview/getting-started/tutorial-getting-started-with-signalr.md)
 * [Tutorial: Erste Schritte mit SignalR 2 und MVC 5](signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
-* [Tutorial: Echtzeitnachrichten mit SignalR 2](signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
+* [Tutorial: Häufiges Senden von Echtzeitnachrichten mit SignalR 2](signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
 * [Tutorial: Serverübertragung mit SignalR 2](signalr/overview/getting-started/tutorial-server-broadcast-with-signalr.md)
 * [Praxisnahe Übung: Echtzeit-Webanwendungen mit SignalR](signalr/overview/getting-started/real-time-web-applications-with-signalr.md)
 * [Komponententests für SignalR-Anwendungen](signalr/overview/testing-and-debugging/unit-testing-signalr-applications.md)

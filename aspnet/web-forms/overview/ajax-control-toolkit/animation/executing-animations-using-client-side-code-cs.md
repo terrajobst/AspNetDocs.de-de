@@ -9,11 +9,11 @@ ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b6ba1553b9c8c51d5d6ae1679e53f9cc1d17b769
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599676"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484023"
 ---
 # <a name="executing-animations-using-client-side-code-c"></a>Ausführen von Animationen mit clientseitigem Code (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Ausführung der Animation kann auch mit benutzerdefiniertem Client seitigem JavaScript-Code ausgelöst werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Die Ausführung der Animation kann auch mit benutzerdefiniertem Client seitigem JavaScript-Code ausgelöst werden.
 

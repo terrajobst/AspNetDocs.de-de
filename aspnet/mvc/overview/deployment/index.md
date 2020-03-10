@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/deployment/index
-title: Bereitstellung ASP.NET MVC 5.0 | ASP.NET 4.x
+title: Bereitstellung ASP.NET MVC 5,0 | ASP.NET 4. x
 author: rick-anderson
-description: Informationen zum ASP.NET MVC 5.0-Projekte auf einem Server bereitstellen.
+description: Bereitstellen von ASP.NET MVC 5,0-Projekten auf einem Server.
 ms.author: riande
 ms.date: 08/18/2011
 ms.custom: seoapril2019
@@ -10,19 +10,19 @@ ms.assetid: 31922c31-59df-4399-99d2-e935a476f16a
 msc.legacyurl: /mvc/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 014ba84a6968212c688f56e2951c0cb0304b8881
-ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410850"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499575"
 ---
 # <a name="aspnet-mvc-deployment"></a>ASP.NET MVC-Bereitstellung
 
-> Informationen zum ASP.NET MVC 5.0-Projekte auf einem Server bereitstellen.
+> Bereitstellen von ASP.NET MVC 5,0-Projekten auf einem Server.
 
-- [Web-Bereitstellungsübersicht für Visual Studio und ASP.NET](https://msdn.microsoft.com/library/dd394698)
+- [Übersicht über die Webbereitstellung für Visual Studio und ASP.net](https://msdn.microsoft.com/library/dd394698)
 - [Migrieren von ASP.NET MVC-Anwendungen zu Windows-Containern](docker-aspnetmvc.md)
-- [Continuous Integration und Continuous Delivery (erstellen realer Cloud-Apps mit Azure)](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
+- [Continuous Integration und Continuous Delivery (entwickeln realer Cloud-apps mit Azure)](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
 - [ASP.NET-Webbereitstellung mithilfe von Visual Studio](../../../web-forms/overview/deployment/visual-studio-web-deployment/index.md)
 - [ASP.NET 4 – Einführung zur Unternehmensbereitstellung](../../../web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/index.md)
 - [ASP.NET 4 – Unternehmensbereitstellung Serie 1](../../../web-forms/overview/deployment/web-deployment-in-the-enterprise/index.md)

@@ -9,11 +9,11 @@ ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
 ms.openlocfilehash: 41c8c3803923e76ef238a5c5937cbe7f81e6aa82
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74578566"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450165"
 ---
 # <a name="tutorial-signalr-self-host"></a>Tutorial: signalr-Self-Host
 
@@ -49,7 +49,7 @@ von [Patrick Fletcher](https://github.com/pfletcher)
 >
 > Bitte informieren Sie sich darüber, wie Ihnen dieses Tutorial gefallen hat und was wir in den Kommentaren unten auf der Seite verbessern konnten. Wenn Sie Fragen haben, die nicht direkt mit dem Tutorial zusammenhängen, können Sie Sie im [ASP.net signalr-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder in [StackOverflow.com](http://stackoverflow.com/)veröffentlichen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Ein signalr-Server wird in der Regel in einer ASP.NET-Anwendung in IIS gehostet, kann aber auch selbstgeh ostet (z. b. in einer Konsolenanwendung oder einem Windows-Dienst) mithilfe der Self-Host-Bibliothek verwendet werden. Diese Bibliothek basiert wie alle signalr 2 auf owin ([Open Web Interface for .net](http://owin.org)). Owin definiert eine Abstraktion zwischen .net-Webservern und Webanwendungen. Owin entkoppelt die Webanwendung vom Server, wodurch owin ideal für das selbst Hosting einer Webanwendung in Ihrem eigenen Prozess außerhalb von IIS geeignet ist.
 
@@ -86,7 +86,7 @@ In diesem Tutorial erstellen Sie einen Server, der in einer Konsolenanwendung ge
     [!code-powershell[Main](tutorial-signalr-self-host/samples/sample2.ps1)]
 
     Mit diesem Befehl wird die Bibliothek "Microsoft. owin. cors" dem Projekt hinzugefügt. Diese Bibliothek wird für die Domänen übergreifende Unterstützung verwendet, die für Anwendungen erforderlich ist, die signalr und einen Webseiten Client in verschiedenen Domänen hosten. Da Sie den signalr-Server und den WebClient auf unterschiedlichen Ports Hosting, bedeutet dies, dass die Domänen übergreifende Kommunikation zwischen diesen Komponenten aktiviert werden muss.
-5. Ersetzen Sie den Inhalt von Program.cs durch den folgenden Code.
+5. Ersetzen Sie den Inhalt von "Program.cs" durch den folgenden Code.
 
     [!code-csharp[Main](tutorial-signalr-self-host/samples/sample3.cs)]
 

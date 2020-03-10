@@ -9,11 +9,11 @@ ms.assetid: ec1cec4c-a75f-47af-a2ba-b1e2f971d24b
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
 ms.openlocfilehash: b2811791a897c9166f6222c23dddc6921e5267ab
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614945"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522939"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Projekteigenschaften
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Einige Bereitstellungs Optionen werden in den Projekteigenschaften konfiguriert, die in der Projektdatei ( *csproj* -oder *vbproj* -Datei) gespeichert sind. In den meisten Fällen sind die Standardwerte dieser Einstellungen die gewünschten Werte, aber Sie können die in Visual Studio integrierte **Projekteigenschaften** -Benutzeroberfläche verwenden, um diese Einstellungen zu bearbeiten, wenn Sie Sie ändern müssen. In diesem Tutorial überprüfen Sie die Bereitstellungs Einstellungen in den **Projekteigenschaften**. Außerdem erstellen Sie eine Platzhalter Datei, die bewirkt, dass ein leerer Ordner bereitgestellt wird.
 
@@ -60,7 +60,7 @@ Wie Sie zuvor in diesem Tutorial gesehen haben, ist die Option bereit zustellend
 
 Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner *ELMAH* , wählen Sie **Neues Element hinzufügen**aus, und erstellen Sie eine Textdatei namens " *plachalter. txt*". Fügen Sie den folgenden Text ein: "Dies ist eine Platzhalter Datei, um sicherzustellen, dass der Ordner bereitgestellt wird." und speichern Sie die Datei. Das ist alles, was Sie tun müssen, um sicherzustellen, dass Visual Studio diese Datei und den Ordner, **in dem Sie** sich befindet, bereitstellt, da die Eigenschaft "Buildvorgang" von *txt* -Dateien standardmäßig auf " **Content** " festgelegt ist.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben jetzt alle Bereitstellungs Aufgaben abgeschlossen. Im nächsten Tutorial stellen Sie die Site der Site "Site" in der Testumgebung bereit und testen Sie dort.
 

@@ -9,11 +9,11 @@ ms.assetid: 0c8e74f1-b3ba-4ca9-a1c5-f5c4831a359a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0966770f0218ca91ba7d25e7bf703bf7b005738e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606556"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496839"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-vb"></a>Verwenden von ModalPopup mit einem Wiederholungssteuerelement (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es ist auch möglich, dieses Steuerelement in einem Repeater zu verwenden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es ist auch möglich, dieses Steuerelement in einem Repeater zu verwenden.
 

@@ -9,11 +9,11 @@ ms.assetid: 603c9bd3-b895-4ec6-853b-0c81ff36d580
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 87c8cfe064abc536e6015b0e553618981da9fefe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613362"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78483243"
 ---
 # <a name="declarative-parameters-c"></a>Deklarative Parameter (C#)
 
@@ -122,7 +122,7 @@ Mit dieser Änderung werden auf der `DeclarativeParams.aspx` Seite alle Lieferan
 
 **Abbildung 10**: alle Lieferanten werden jetzt standardmäßig angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](declarative-parameters-cs/_static/image30.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Um Methoden mit Eingabe Parametern verwenden zu können, müssen die Werte für die Parameter in der `SelectParameters` Auflistung von ObjectDataSource angegeben werden. Verschiedene Typen von Parametern ermöglichen, dass der Parameterwert aus unterschiedlichen Quellen abgerufen wird. Der Standard Parametertyp verwendet einen hart codierten Wert, aber ebenso einfach (und ohne eine Codezeile) können Parameterwerte aus der QueryString, den Sitzungsvariablen, Cookies und sogar vom Benutzer eingegebenen Werten aus den websteuer Elementen auf der Seite abgerufen werden.
 
@@ -130,7 +130,7 @@ In den Beispielen in diesem Tutorial wurde gezeigt, wie deklarative Parameterwer
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

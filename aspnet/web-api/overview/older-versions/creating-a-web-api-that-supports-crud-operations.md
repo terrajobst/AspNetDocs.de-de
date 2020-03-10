@@ -10,11 +10,11 @@ ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
 ms.openlocfilehash: a096fd1c54df33b40115907a5c2517b2e3fec5b8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600336"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448041"
 ---
 # <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Aktivieren von CRUD-Vorgängen in ASP.net-Web-API 1
 
@@ -36,14 +36,14 @@ In diesem Tutorial erstellen Sie eine sehr einfache Web-API, um eine Liste von P
 
 Die Products-API macht die folgenden Methoden verfügbar.
 
-| -Aktion | HTTP-Methode | Relativer URI |
+| Aktion | HTTP-Methode | Relativer URI |
 | --- | --- | --- |
-| Abrufen einer Liste aller Produkte | GET | /api/products |
+| Eine Liste aller Produkte erhalten | GET | /api/products |
 | Produkt nach ID erhalten | GET | /API/Products/-*ID* |
 | Produkt nach Kategorie | GET | /API/Products? Category =*Kategorie* |
 | Erstellen eines neuen Produkts | POST | /api/products |
 | Aktualisieren eines Produkts | PUT | /API/Products/-*ID* |
-| Löschen eines Produkts | LÖSCHEN | /API/Products/-*ID* |
+| Löschen eines Produkts | Delete | /API/Products/-*ID* |
 
 Beachten Sie, dass einige der URIs die Produkt-ID im Pfad enthalten. Um z. b. das Produkt mit der ID 28 zu erhalten, sendet der Client eine GET-Anforderung für `http://hostname/api/products/28`.
 
@@ -51,7 +51,7 @@ Beachten Sie, dass einige der URIs die Produkt-ID im Pfad enthalten. Um z. b. da
 
 Die Products-API definiert URIs für zwei Ressourcentypen:
 
-| Ressource | URI |
+| Resource | URI |
 | --- | --- |
 | Die Liste aller Produkte. | /api/products |
 | Ein einzelnes Produkt. | /API/Products/-*ID* |
@@ -85,7 +85,7 @@ Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. In ASP.
 
 Bei der productstore-API bestehen unsere Daten aus Produkten. Daher erstellen wir eine neue Klasse mit dem Namen "`Product`".
 
-Wenn Projektmappen-Explorer nicht bereits sichtbar ist, klicken Sie auf das Menü **Ansicht** , und wählen Sie **Projektmappen-Explorer**aus. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner **Modelle** . Klicken Sie im Kontextmenü auf **Hinzufügen**, und wählen Sie dann **Klasse**aus. Benennen Sie die Klasse &quot;Product&quot;.
+Wenn der Projektmappen-Explorer nicht bereits sichtbar ist, können Sie auf das Menü **Ansicht** klicken und **Projektmappen-Explorer** wählen. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner **Modelle** . Klicken Sie im Kontextmenü auf **Hinzufügen**, und wählen Sie dann **Klasse**aus. Benennen Sie die Klasse &quot;Product&quot;.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image3.png)
 
@@ -93,7 +93,7 @@ Fügen Sie der `Product`-Klasse die folgenden Eigenschaften hinzu.
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample1.cs)]
 
-## <a name="adding-a-repository"></a>Hinzufügen eines Repositorys
+## <a name="adding-a-repository"></a>Hinzufügen eines Repository
 
 Wir müssen eine Sammlung von Produkten speichern. Es empfiehlt sich, die Sammlung von unserer Dienst Implementierung zu trennen. Auf diese Weise können wir den Sicherungs Speicher ändern, ohne die Dienstklasse neu zu schreiben. Diese Art von Entwurf wird als *Repository* -Muster bezeichnet. Definieren Sie zunächst eine generische Schnittstelle für das Repository.
 
@@ -124,7 +124,7 @@ Wenn Sie mit ASP.NET MVC gearbeitet haben, sind Sie bereits mit Controllern vert
 
 Löschen Sie valuescontroller, indem Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Datei klicken und dann **Löschen auswählen.** Fügen Sie nun wie folgt einen neuen Controller hinzu:
 
-Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Ordner Controller. Wählen Sie **Hinzufügen** , und wählen Sie dann **Controller**aus.
+Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner „Controller“. Wählen Sie **Hinzufügen** und dann **Controller**.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
@@ -135,7 +135,7 @@ Benennen Sie im Assistenten zum **Hinzufügen von Controllern** den Controller &
 > [!NOTE]
 > Die Controller müssen nicht in einem Ordner mit dem Namen "Controllers" abgelegt werden. Der Ordnername ist nicht wichtig. Es ist einfach eine bequeme Methode zum Organisieren der Quelldateien.
 
-Der Assistent zum **Hinzufügen** von Controllern erstellt eine Datei namens ProductsController.cs im Ordner Controllers. Wenn diese Datei nicht bereits geöffnet ist, doppelklicken Sie auf die Datei, um Sie zu öffnen. Fügen Sie die folgende **using** -Anweisung hinzu:
+Der Assistent zum **Hinzufügen** von Controllern erstellt eine Datei namens ProductsController.cs im Ordner Controllers. Doppelklicken Sie auf die Datei, um sie zu öffnen, falls sie noch nicht geöffnet ist. Fügen Sie die folgende **using** -Anweisung hinzu:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample4.cs)]
 
@@ -150,9 +150,9 @@ Fügen Sie ein Feld hinzu, das eine **iproductrepository** -Instanz enthält.
 
 Die productstore-API macht mehrere &quot;Lese&quot; Aktionen als HTTP Get-Methoden verfügbar. Jede Aktion entspricht einer Methode in der `ProductsController`-Klasse.
 
-| -Aktion | HTTP-Methode | Relativer URI |
+| Aktion | HTTP-Methode | Relativer URI |
 | --- | --- | --- |
-| Abrufen einer Liste aller Produkte | GET | /api/products |
+| Eine Liste aller Produkte erhalten | GET | /api/products |
 | Produkt nach ID erhalten | GET | /API/Products/-*ID* |
 | Produkt nach Kategorie | GET | /API/Products? Category =*Kategorie* |
 

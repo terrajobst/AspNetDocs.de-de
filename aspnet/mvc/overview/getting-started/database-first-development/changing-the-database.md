@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/changing-the-database
-title: 'Tutorial: Ändern Sie die Datenbank für EF Database First mit ASP.NET MVC-app'
-description: Dieses Tutorial konzentriert sich auf eine Aktualisierung vornehmen, um die Struktur der Datenbank und das Weitergeben von dieser Änderung in der Webanwendung.
+title: 'Tutorial: Ändern der Datenbank für EF-Database First mit ASP.NET MVC-App'
+description: Dieses Tutorial konzentriert sich auf die Aktualisierung der Datenbankstruktur und die Weitergabe dieser Änderung in der gesamten Webanwendung.
 author: Rick-Anderson
 ms.author: riande
 ms.date: 01/28/2019
@@ -10,64 +10,64 @@ ms.assetid: cfd5c083-a319-482e-8f25-5b38caa93954
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
 ms.openlocfilehash: 52cad1120908cf0d4f85770f8e2690f9415c5f56
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038707"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499521"
 ---
-# <a name="tutorial-change-the-database-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Ändern Sie die Datenbank für EF Database First mit ASP.NET MVC-app
+# <a name="tutorial-change-the-database-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Ändern der Datenbank für EF-Database First mit ASP.NET MVC-App
 
-Verwenden MVC, Entity Framework und ASP.NET-Gerüstbau, können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. Dieser tutorialreihe erfahren Sie, wie Sie automatisch generierter Code, der ermöglicht Benutzern das anzeigen, bearbeiten, erstellen und Löschen von Daten, die in einer Datenbanktabelle gespeichert. Der generierte Code entspricht die Spalten in der Datenbanktabelle.
+Mithilfe von MVC, Entity Framework und ASP.net-Gerüstbau können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. In dieser tutorialreihe wird gezeigt, wie Sie automatisch Code generieren, mit dem Benutzerdaten in einer Datenbanktabelle anzeigen, bearbeiten, erstellen und löschen können. Der generierte Code entspricht den Spalten in der Datenbanktabelle.
 
-Dieses Tutorial konzentriert sich auf eine Aktualisierung vornehmen, um die Struktur der Datenbank und das Weitergeben von dieser Änderung in der Webanwendung.
+Dieses Tutorial konzentriert sich auf die Aktualisierung der Datenbankstruktur und die Weitergabe dieser Änderung in der gesamten Webanwendung.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
-> * Hinzufügen einer Spalte
-> * Fügen Sie die Eigenschaft, die den Ansichten
+> * Hinzufügen eines Spaltennamens
+> * Hinzufügen der Eigenschaft zu den Ansichten
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-* [Generieren von Sichten](generating-views.md)
+* [Erstellen von Sichten](generating-views.md)
 
-## <a name="add-a-column"></a>Hinzufügen einer Spalte
+## <a name="add-a-column"></a>Hinzufügen eines Spaltennamens
 
-Wenn Sie die Struktur einer Tabelle in der Datenbank aktualisieren, müssen Sie sicherstellen, dass die Änderung an das Datenmodell, Ansichten und Controller weitergegeben wird.
+Wenn Sie die Struktur einer Tabelle in der Datenbank aktualisieren, müssen Sie sicherstellen, dass die Änderung an das Datenmodell, die Ansichten und den Controller weitergegeben wird.
 
-In diesem Tutorial werden Sie eine neue Spalte der Tabelle "Student", um den zweiten Vornamen der Student aufzuzeichnen hinzufügen. Um diese Spalte hinzuzufügen, öffnen Sie das Datenbankprojekt, und öffnen Sie die Datei Student.sql. Über Designer "oder" T-SQL-Code, fügen Sie eine Spalte, die mit dem Namen **MiddleName** , ein NVARCHAR(50) und NULL-Werte zulässt.
+In diesem Tutorial fügen Sie der Tabelle "Student" eine neue Spalte hinzu, um den Vornamen des Studenten aufzuzeichnen. Um diese Spalte hinzuzufügen, öffnen Sie das Datenbankprojekt, und öffnen Sie die Datei Student. SQL. Fügen Sie entweder über den Designer oder den T-SQL-Code eine Spalte mit dem Namen **MiddleName** ein, die ein nvarchar (50) ist, und lässt NULL-Werte zu.
 
-Ihr Datenbankprojekt (oder F5) starten, um bereitstellen Sie diese Änderung in Ihre lokale Datenbank. Das neue Feld wird in der Tabelle hinzugefügt. Wenn Sie es in der Objekt-Explorer von SQL Server nicht angezeigt werden, klicken Sie auf die Schaltfläche "Aktualisieren", klicken Sie im Bereich.
+Stellen Sie diese Änderung in der lokalen Datenbank bereit, indem Sie das Datenbankprojekt (oder F5) starten. Das neue Feld wird der Tabelle hinzugefügt. Wenn Sie im SQL Server-Objekt-Explorer nicht angezeigt wird, klicken Sie im Bereich auf die Schaltfläche Aktualisieren.
 
 ![neue Spalte anzeigen](changing-the-database/_static/image2.png)
 
-Die neue Spalte, die in der Tabelle der Datenbank vorhanden ist, aber derzeit nicht in der Modellklasse für Daten vorhanden. Sie müssen das Modell, um Ihre neue Spalte enthalten aktualisieren. In der **Modelle** Ordner die **ContosoModel.edmx** Datei in das Modelldiagramm anzuzeigen. Beachten Sie, dass das Modell "Student" nicht die MiddleName-Eigenschaft enthält. Mit der rechten Maustaste auf die Entwurfsoberfläche, und wählen **Modell aus der Datenbank aktualisieren**.
+Die neue Spalte ist in der Datenbanktabelle vorhanden, Sie ist jedoch zurzeit nicht in der Datenmodell Klasse vorhanden. Sie müssen das Modell aktualisieren, um die neue Spalte hinzufügen zu können. Öffnen Sie im Ordner **Models** die Datei " **\tosomodel. edmx** ", um das Modell Diagramm anzuzeigen. Beachten Sie, dass das Student-Modell nicht die MiddleName-Eigenschaft enthält. Klicken Sie mit der rechten Maustaste auf eine beliebige Stelle auf der Entwurfs Oberfläche, und wählen Sie **Modell aus Datenbank aktualisieren aus**
 
-Wählen Sie in der Update-Assistenten die **aktualisieren** Registerkarte, und wählen Sie dann **Tabellen** > **Dbo** > **für Schüler und Studenten**. Klicken Sie auf **Fertig stellen**.
+Wählen Sie im Update-Assistenten die Registerkarte **Aktualisieren** aus, und wählen Sie dann **Tabellen** > **dbo** > **Student**aus. Klicken Sie auf **Fertig stellen**.
 
-Nachdem der Aktualisierungsvorgang abgeschlossen ist, enthält das Datenbankdiagramm neuen **MiddleName** Eigenschaft. Speichern Sie die **ContosoModel.edmx** Datei. Sie müssen diese Datei für die neue Eigenschaft an weitergegeben speichern die **Student.cs** Klasse. Sie haben jetzt die Datenbank und das Modell aktualisiert.
+Nachdem der Update Vorgang abgeschlossen ist, enthält das Daten Bank Diagramm die neue **MiddleName** -Eigenschaft. Speichern Sie die Datei " **\desomodel. edmx** ". Sie müssen diese Datei speichern, damit die neue Eigenschaft an die **Student.cs** -Klasse weitergegeben wird. Sie haben nun die Datenbank und das Modell aktualisiert.
 
 Erstellen Sie die Projektmappe.
 
-## <a name="add-the-property-to-the-views"></a>Fügen Sie die Eigenschaft, die den Ansichten
+## <a name="add-the-property-to-the-views"></a>Hinzufügen der Eigenschaft zu den Ansichten
 
-Die Ansichten enthalten noch leider nicht die neue Eigenschaft. Aktualisieren Sie die Ansichten haben Sie zwei Optionen: können Sie entweder erneut generieren die Ansichten von wieder hinzufügen Gerüst für die Klasse "Student", oder Sie können die neue Eigenschaft manuell hinzufügen, um Ihre vorhandenen Ansichten. In diesem Tutorial fügen Sie das Gerüst erneut aus, da Sie nicht benutzerdefinierten Änderungen an den automatisch generierten Ansichten vorgenommen haben. Sie sollten erwägen, die Eigenschaft manuell hinzufügen, wenn Sie Änderungen, in den Ansichten vorgenommen haben und nicht, diese Änderungen verloren möchten.
+Leider enthalten die Ansichten noch nicht die neue Eigenschaft. Zum Aktualisieren der Ansichten stehen Ihnen zwei Optionen zur Verfügung: Sie können die Ansichten entweder erneut generieren, indem Sie erneut Gerüstbau für die Klasse "Student" hinzufügen, oder Sie können die neue Eigenschaft manuell zu Ihren vorhandenen Ansichten hinzufügen. In diesem Tutorial fügen Sie das Gerüst erneut hinzu, da Sie keine angepassten Änderungen an den automatisch generierten Sichten vorgenommen haben. Sie sollten die-Eigenschaft manuell hinzufügen, wenn Sie Änderungen an den Sichten vorgenommen haben und diese Änderungen nicht verlieren möchten.
 
-Um sicherzustellen, die Ansichten werden neu erstellt, löschen Sie die **Schüler/Studenten** Ordner unter **Ansichten**, und Löschen der **StudentsController**. Klicken Sie dann mit der rechten Maustaste die **Controller** Ordner und Hinzufügen der Gerüstbau für die **für Schüler und Studenten** Modell. Nennen Sie den Controller wieder **StudentsController**. Wählen Sie **Hinzufügen** aus.
+Um sicherzustellen, dass die Ansichten neu erstellt werden, löschen Sie den Ordner **Students** unter **views**, und löschen Sie den **studentscontroller**. Klicken Sie dann mit der rechten Maustaste auf den Ordner **Controllers** , und fügen Sie Gerüstbau für das **Student** Model Nennen Sie den Controller " **studentscontroller**". Wählen Sie **Hinzufügen** aus.
 
-Erstellen Sie die Projektmappe erneut. Die Ansichten enthalten jetzt die MiddleName-Eigenschaft.
+Erstellen Sie die Projektmappe erneut. Die Ansichten enthalten nun die MiddleName-Eigenschaft.
 
-![Zweiter Vorname anzeigen](changing-the-database/_static/image5.png)
+![mittleren Namen anzeigen](changing-the-database/_static/image5.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
-> * Eine Spalte hinzugefügt
-> * Die Eigenschaft, die Ansichten hinzugefügt wurden.
+> * Hinzugefügte Spalte
+> * Die Eigenschaft wurde den Ansichten hinzugefügt.
 
-Fahren Sie fort mit dem nächsten Tutorial erfahren, wie die Ansicht zum Anzeigen von Details zu einem Student-Datensatz ändern.
+Fahren Sie mit dem nächsten Tutorial fort, um zu erfahren, wie Sie die Ansicht zum Anzeigen von Details zu einem Student-Datensatz anpassen.
 > [!div class="nextstepaction"]
 > [Anpassen einer Ansicht](customizing-a-view.md)

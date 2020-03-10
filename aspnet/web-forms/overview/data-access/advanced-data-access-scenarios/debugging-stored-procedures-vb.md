@@ -9,11 +9,11 @@ ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 13d213ef4baf493a4f05a82daae8d2dc3b0aa61b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74604670"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78443817"
 ---
 # <a name="debugging-stored-procedures-vb"></a>Definieren von gespeicherten Prozeduren (VB)
 
@@ -151,7 +151,7 @@ Eine ausführlichere Erläuterung zu diesem Prozess finden Sie unter " [William 
 > [!NOTE]
 > Wenn auf Ihrem Entwicklungs Computer Windows XP Service Pack 2 ausgeführt wird, müssen Sie die Internet Connection Firewall so konfigurieren, dass Remote Debugging zugelassen wird. [Im Artikel Gewusst wie: Aktivieren von SQL Server 2005-Debuggen](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) wird beschrieben, dass dies zwei Schritte umfasst: (a) auf dem Visual Studio-Host Computer müssen Sie `Devenv.exe` zur Ausnahmeliste hinzufügen und den TCP 135-Port öffnen. und (b) auf dem Remote Computer (SQL) müssen Sie den TCP 135-Port öffnen und der Ausnahmeliste `sqlservr.exe` hinzufügen. Wenn Ihre Domänen Richtlinie die Netzwerkkommunikation über IPSec erfordert, müssen Sie die Ports UDP 4500 und UDP 500 öffnen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Neben der Unterstützung von Debuggingunterstützung für .NET-Anwendungscode bietet Visual Studio auch eine Vielzahl von Debugoptionen für SQL Server 2005. In diesem Tutorial haben wir zwei der folgenden Optionen untersucht: direktes Debuggen von Datenbanken und Anwendungs Debuggen. Zum direkten Debuggen eines T-SQL-Datenbankobjekts suchen Sie das Objekt über die Server-Explorer klicken Sie dann mit der rechten Maustaste darauf, und wählen Sie Einzelschritt aus. Dadurch wird der Debugger gestartet und bei der ersten Anweisung im Datenbankobjekt angehalten. an diesem Punkt können Sie die Objekt-e-Anweisungen schrittweise durchlaufen und Parameterwerte anzeigen und ändern. In Schritt 1 haben wir diese Vorgehensweise verwendet, um die gespeicherte Prozedur `Products_SelectByCategoryID` schrittweise auszuführen.
 
@@ -161,7 +161,7 @@ Datenbankobjekte können auch über SQL Server Projekte deentschlbelt werden. Im
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

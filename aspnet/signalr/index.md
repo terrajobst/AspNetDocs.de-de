@@ -1,19 +1,19 @@
 ---
 uid: signalr/index
-title: SignalR | Microsoft-Dokumentation
+title: Signalr | Microsoft-Dokumentation
 author: bradygaster
-description: Microsoft ASP.NET SignalR ist eine Bibliothek für ASP.NET-Entwickler,, die den Prozess des Hinzufügens von Echtzeit-Webfunktionen zu Ihren Anwendungen vereinfacht.
+description: Microsoft ASP.net signalr ist eine Bibliothek für ASP.NET-Entwickler, die das Hinzufügen von Echt Zeit Webfunktionen zu Ihren Anwendungen vereinfacht.
 ms.author: bradyg
 ms.date: 10/24/2012
 ms.assetid: 282a521f-2b86-4fac-bcf6-b6d5e0fe969c
 msc.legacyurl: /signalr
 msc.type: categoryindex
 ms.openlocfilehash: fa489c79e175753635d89913aaaa15a832aa16f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407587"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450297"
 ---
 # <a name="signalr"></a>SignalR
 
@@ -25,7 +25,7 @@ ms.locfileid: "59407587"
         - [Unterstützte Plattformen](overview/getting-started/supported-platforms.md)
         - [Tutorial: Erste Schritte mit SignalR 2](overview/getting-started/tutorial-getting-started-with-signalr.md)
         - [Tutorial: Erste Schritte mit SignalR 2 und MVC 5](overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
-        - [Tutorial: Echtzeitnachrichten mit SignalR 2](overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
+        - [Tutorial: Häufiges Senden von Echtzeitnachrichten mit SignalR 2](overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
         - [Tutorial: Serverübertragung mit SignalR 2](overview/getting-started/tutorial-server-broadcast-with-signalr.md)
         - [Praxisnahe Übung: Echtzeit-Webanwendungen mit SignalR](overview/getting-started/real-time-web-applications-with-signalr.md)
     - [Leitfaden für die API](overview/guide-to-the-api/index.md)

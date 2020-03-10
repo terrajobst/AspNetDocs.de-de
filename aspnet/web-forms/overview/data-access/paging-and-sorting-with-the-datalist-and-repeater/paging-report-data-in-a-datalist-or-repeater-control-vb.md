@@ -9,11 +9,11 @@ ms.assetid: bbd6b7f7-b98a-48b4-93f3-341d6a4f53c0
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5c65ca1f263e41748d99323dbdf1c28fdd077246
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74570239"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78503091"
 ---
 # <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>Auslagern von Berichtsdaten in einem DataList- oder Wiederholungssteuerelement (VB)
 
@@ -225,7 +225,7 @@ Da es keine `PagedDataSource` mit benutzerdefiniertem Paging gibt, müssen alter
 
 Im nächsten Tutorial erfahren Sie mehr über die Implementierung von benutzerdefiniertem Paging.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Obwohl weder der DataList noch der Repeater die in den Steuerelementen GridView, DetailsView und FormView gefundene Standard-Pagingunterstützung bietet, können diese Funktionen mit minimalem Aufwand hinzugefügt werden. Die einfachste Möglichkeit zum Implementieren des Standardpaging besteht darin, den gesamten Satz von Produkten in einem `PagedDataSource` zu umschließen und dann die `PagedDataSource` an den DataList-oder Repeater zu binden. In diesem Tutorial haben wir der `ProductsBLL`-Klasse die `GetProductsAsPagedDataSource`-Methode hinzugefügt, um die `PagedDataSource`zurückzugeben. Die `ProductsBLL`-Klasse enthält bereits die Methoden, die für das benutzerdefinierte Paging `GetProductsPaged` und `TotalNumberOfProducts`erforderlich sind.
 
@@ -235,7 +235,7 @@ Im nächsten Tutorial erfahren Sie, wie Sie dem DataList und Repeater Sortier Un
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

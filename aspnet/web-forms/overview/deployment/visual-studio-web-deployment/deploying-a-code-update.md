@@ -9,11 +9,11 @@ ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
 ms.openlocfilehash: 3881833bfe2a50a38a357614f92f434a04a8ab08
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626781"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457641"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen eines Code Updates
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Nach der erstmaligen Bereitstellung wird die Wartung und Entwicklung Ihrer Website fortgesetzt, und bevor Sie mit der Zeit arbeiten, möchten Sie ein Update bereitstellen. Dieses Tutorial führt Sie durch den Prozess der Bereitstellung eines Updates für den Anwendungscode. Das von Ihnen in diesem Tutorial implementierte und bereitgestellte Update umfasst keine Daten Bank Änderung. im nächsten Tutorial sehen Sie, was die Bereitstellung einer Daten Bank Änderung unterscheidet.
 
@@ -53,7 +53,7 @@ Bevor Sie Ihre Veröffentlichungs Profile für die Bereitstellung in Test-, Stag
 
 1. Öffnen Sie den Assistenten **Web veröffentlichen** , indem Sie mit der rechten Maustaste auf das Projekt contosouniversity und dann auf **veröffentlichen**klicken.
 2. Klicken Sie in der Dropdown Liste **Profil** auf das Profil **Test** .
-3. Klicken Sie auf die Registerkarte **Einstellungen** .
+3. Klicken Sie auf die Registerkarte **Settings** .
 4. Deaktivieren Sie im Abschnitt **Datenbanken** unter **DefaultConnection** das Kontrollkästchen **Datenbank aktualisieren** .
 5. Klicken Sie auf die Registerkarte **Profil** , und klicken Sie dann in der Dropdown Liste **Profil** **auf das** Stagingprofil.
 6. Wenn Sie gefragt werden, ob Sie die am **Test** Profil vorgenommenen Änderungen speichern möchten, klicken Sie auf **Ja**.
@@ -195,7 +195,7 @@ Angenommen, Sie möchten den blauen Hintergrund nicht kennen und möchten zur ur
     ![Startseite mit normalem CSS](deploying-a-code-update/_static/image15.png)
 6. Schließen Sie den Browser.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben nun mehrere Möglichkeiten zum Bereitstellen eines Anwendungs Updates kennengelernt, die keine Daten Bank Änderungen beinhalten, und Sie haben gesehen, wie Sie die Änderungen in der Vorschau anzeigen, um zu überprüfen, ob die aktualisierten Elemente den Erwartungen entsprechen. Die Seite Dozenten verfügt jetzt über einen Kurs, der von **Kursen vermittelt** wird.
 

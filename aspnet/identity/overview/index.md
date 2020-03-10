@@ -1,6 +1,6 @@
 ---
 uid: identity/overview/index
-title: Übersicht über ASP.NET Identity - ASP.NET 4.x
+title: ASP.net Identity Overview-ASP.NET 4. x
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,13 +9,13 @@ ms.assetid: d3972a0e-9ff6-4de1-bf4d-c94943cab048
 msc.legacyurl: /identity/overview
 msc.type: book
 ms.openlocfilehash: ef4eb7428770453596090af111576ab23a27206b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406170"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471711"
 ---
-# <a name="aspnet-identity-overview"></a>Übersicht über ASP.NET Identity
+# <a name="aspnet-identity-overview"></a>Übersicht über ASP.net Identity
 
 - [Erste Schritte mit ASP.NET Identity](getting-started/index.md)
 

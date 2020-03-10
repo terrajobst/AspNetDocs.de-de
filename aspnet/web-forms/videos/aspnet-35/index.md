@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-35/index
-title: ASP.NET 3.5 | Microsoft-Dokumentation
+title: ASP.NET 3,5 | Microsoft-Dokumentation
 author: rick-anderson
-description: Vorgehensweise beim Erstellen von ASP.NET 3.5-Anwendungen mit einem Schwerpunkt auf die neuen Features.
+description: Erstellen von ASP.NET 3,5-Anwendungen mit Schwerpunkt auf neuen Features.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 2e6e9c24-bb97-446a-b05e-1bd88824d352
 msc.legacyurl: /web-forms/videos/aspnet-35
 msc.type: chapter
 ms.openlocfilehash: 369f3f1516dace0c7d8fc3a87b2d50ec71889de0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133775"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462435"
 ---
 # <a name="aspnet-35"></a>ASP.NET 3.5
 
-> Vorgehensweise beim Erstellen von ASP.NET 3.5-Anwendungen mit einem Schwerpunkt auf die neuen Features.
+> Erstellen von ASP.NET 3,5-Anwendungen mit Schwerpunkt auf neuen Features.
 
 - [Gewusst wie](how-do-i/index.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "65133775"
     - [ASP.NET AJAX-Unterstützung in Visual Studio 2008](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
     - [Erweitern der AJAX-Funktionalität für eine vorhandene ASP.NET-Seite](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
     - [Erstellen und Verwenden eines AJAX-fähigen Webdiensts bei einer Website](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-    - [ASP.NET-AJAX: Eine Demonstration von ASP.NET AJAX](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+    - [ASP.NET-AJAX: Demo zu ASP.NET AJAX](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
     - [ADO.NET Data Services mit ASP.NET AJAX-Unterstützung](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
     - [Einführung zum ASP.NET AJAX-Steuerelement „History“](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
     - [Verbessern der AJAX-Leistung mithilfe von Skriptkombination](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)

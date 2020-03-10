@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/index
-title: ASP.NET 4 - Webbereitstellung mit SQL Server Compact mit Visual Studio | Microsoft-Dokumentation
+title: ASP.NET 4-Webbereitstellung mit SQL Server Compact mithilfe von Visual Studio | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET Web-Anwendung, die über das Internet SQL Server Compact verfügbar, verwendet durch die Bereitstellung an einen Drittanbieter-h...
+description: In dieser tutorialreihe wird gezeigt, wie eine ASP.NET-Webanwendung, die SQL Server Compact über das Internet verfügbar macht, durch Bereitstellung für eine Drittanbieter-h...
 ms.author: riande
 ms.date: 11/29/2011
 ms.assetid: 6798c7e4-f08e-4802-9fa5-443f67d5df62
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider
 msc.type: chapter
 ms.openlocfilehash: bb9a47eeb4197348e85bb469b68c0055e7c696a0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65119441"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514695"
 ---
 # <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - Webbereitstellung mit SQL Server Compact unter Verwendung von Visual Studio
 
-> Diese lernprogrammreihe veranschaulicht, wie Sie eine ASP.NET-Webanwendung, die über das Internet SQL Server Compact verfügbar, verwendet durch die Bereitstellung mit einem Drittanbieter-Hostinganbieter. Erfordert Visual Studio 2012 RC oder Visual Studio 2010. Weitere aktuelle Informationen zu Funktionen zur Bereitstellung und Informationen zum Bereitstellen von SQL Server-Editionen als SQL Server Compact finden Sie [ASP.NET-webbereitstellung mithilfe von Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
+> Diese tutorialreihe zeigt, wie eine ASP.NET-Webanwendung, die SQL Server Compact über das Internet verfügbar macht, durch Bereitstellung für einen Drittanbieter-Hostinganbieter bereitgestellt wird. Erfordert Visual Studio 2012 RC oder Visual Studio 2010. Weitere aktuelle Informationen zu Bereitstellungs Features oder Informationen zur Bereitstellung von anderen SQL Server Editionen als SQL Server Compact finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Einführung](deployment-to-a-hosting-provider-introduction-1-of-12.md)
 - [Visual Studio-Webbereitstellung mit SQL Server Compact – Bereitstellen von SQL Server Compact-Datenbanken](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

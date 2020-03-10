@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: 'Tutorial: Generieren von Ansichten für EF Database First mit ASP.NET MVC-app'
-description: Dieses Tutorial konzentriert sich auf ASP.NET-Gerüstbau verwenden, um die Controller und Ansichten zu generieren.
+title: 'Tutorial: Generieren von Sichten für EF-Database First mit ASP.NET MVC-App'
+description: Dieses Tutorial konzentriert sich auf die Verwendung von ASP.net-Gerüstbau zum Generieren der Controller und Sichten.
 author: Rick-Anderson
 ms.author: riande
 ms.date: 01/28/2019
@@ -10,96 +10,96 @@ ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
 ms.openlocfilehash: e71e13e22d8a72e1699cfc70d4d93af603edba5b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121228"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499473"
 ---
-# <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Generieren von Ansichten für EF Database First mit ASP.NET MVC-app
+# <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>Tutorial: Generieren von Sichten für EF-Database First mit ASP.NET MVC-App
 
-Verwenden MVC, Entity Framework und ASP.NET-Gerüstbau, können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. Dieser tutorialreihe erfahren Sie, wie Sie automatisch generierter Code, der ermöglicht Benutzern das anzeigen, bearbeiten, erstellen und Löschen von Daten, die in einer Datenbanktabelle gespeichert. Der generierte Code entspricht die Spalten in der Datenbanktabelle.
+Mithilfe von MVC, Entity Framework und ASP.net-Gerüstbau können Sie eine Webanwendung erstellen, die eine Schnittstelle für eine vorhandene Datenbank bereitstellt. In dieser tutorialreihe wird gezeigt, wie Sie automatisch Code generieren, mit dem Benutzerdaten in einer Datenbanktabelle anzeigen, bearbeiten, erstellen und löschen können. Der generierte Code entspricht den Spalten in der Datenbanktabelle.
 
-Dieses Tutorial konzentriert sich auf ASP.NET-Gerüstbau verwenden, um die Controller und Ansichten zu generieren.
+Dieses Tutorial konzentriert sich auf die Verwendung von ASP.net-Gerüstbau zum Generieren der Controller und Sichten.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Gerüst hinzufügen
-> * Hinzufügen von Links zu den neuen Ansichten
-> * Anzeigen von für Schüler und Studenten-Ansichten
-> * Anzeigen von Ansichten der Registrierung
+> * Hinzufügen von Links zu neuen Ansichten
+> * Anzeigen von Studenten Ansichten
+> * Anzeigen von Registrierungs Sichten
 
-## <a name="prerequisite"></a>Vorbereitungsmaßnahme
+## <a name="prerequisite"></a>Voraussetzung
 
-* [Erstellen Sie die Anwendungs- und Datenmodelle](creating-the-web-application.md)
+* [Erstellen der Webanwendung und der Datenmodelle](creating-the-web-application.md)
 
 ## <a name="add-scaffold"></a>Gerüst hinzufügen
 
-Sie können zum Generieren von Code, die standard-Vorgänge für die Modellklassen bereitstellt. Sie können den Code durch Hinzufügen eines Elements Gerüst hinzufügen. Es gibt viele Optionen für den Typ der Gerüstbau, die Sie hinzufügen können. In diesem Tutorial enthält das Gerüst, einen Controller und Ansichten, die die Modelle "Student" und der Registrierung entsprechen, die Sie im vorherigen Abschnitt erstellt haben.
+Sie sind bereit, Code zu generieren, der Standarddaten Vorgänge für die Modellklassen bereitstellt. Fügen Sie den Code hinzu, indem Sie ein Gerüst Element hinzufügen. Es gibt zahlreiche Optionen für die Art des Gerüsts, das Sie hinzufügen können. in diesem Tutorial schließt das Gerüst einen Controller und Ansichten ein, die den im vorherigen Abschnitt erstellten Studenten-und Registrierungs Modellen entsprechen.
 
-Um Konsistenz in Ihrem Projekt zu gewährleisten, fügen Sie den neuen Controller hinzu, die vorhandene **Controller** Ordner. Mit der rechten Maustaste die **Controller** Ordner, und wählen **hinzufügen** > **neues Gerüstelement**.
+Um die Konsistenz in Ihrem Projekt aufrechtzuerhalten, fügen Sie den neuen Controller dem Ordner vorhandene **Controller** hinzu. Klicken Sie mit der rechten Maustaste auf den Ordner **Controllers** , und wählen Sie > **Neues Gerüst Element** **Hinzufügen** aus.
 
-Wählen Sie die **MVC 5-Controller mit Ansichten unter Verwendung von Entity Framework** Option. Diese Option wird die Controller und Ansichten zum Aktualisieren, löschen, erstellen und Anzeigen der Daten in Ihrem Modell generiert.
+Wählen Sie den **MVC 5-Controller mit Ansichten unter Verwendung Entity Framework** Option aus. Mit dieser Option werden Controller und Ansichten zum Aktualisieren, löschen, erstellen und Anzeigen der Daten in Ihrem Modell generiert.
 
-![Hinzufügen der Mvc-controller](generating-views/_static/image2.png)
+![MVC-Controller hinzufügen](generating-views/_static/image2.png)
 
-Wählen Sie **für Schüler und Studenten (ContosoSite.Models)** für die Model-Klasse, und wählen die **ContosoUniversityDataEntities (ContosoSite.Models)** für der Context-Klasse. Behalten Sie den Namen der Controller als **StudentsController**.
+Wählen Sie **Student (condesosite. Models)** für die Modell Klasse aus, und wählen Sie **condesouniversitydataentities (condesosite. Models)** für die Kontext Klasse aus. Behalten Sie den Controller Namen als **studentscontroller**bei.
 
 Klicken Sie auf **Hinzufügen**.
 
-Wenn Sie eine Fehlermeldung erhalten, kann es sein, da Sie nicht auf das Projekt im vorherigen Abschnitt erstellt haben. Wenn dies der Fall ist, versuchen Sie es beim Erstellen des Projekts, und klicken Sie dann das erstellte Element erneut hinzufügen.
+Wenn Sie einen Fehler erhalten, kann dies daran liegen, dass Sie das Projekt nicht im vorherigen Abschnitt erstellt haben. Wenn dies der Fall ist, versuchen Sie, das Projekt zu entwickeln, und fügen Sie es dann erneut hinzu.
 
-Nachdem der Prozess der codegenerierung abgeschlossen ist, sehen Sie einen neuen Controller und Ansichten in Ihrem Projekts die **Controller** und **Ansichten** > **Schüler/Studenten** Ordner .
+Nachdem der Code Generierungsprozess fertiggestellt wurde, sehen Sie einen neuen Controller und Ansichten in den **Controllern** und **Ansichten** des Projekts > Ordner " **Students** ".
 
-Führen Sie die gleichen Schritte erneut aus, aber fügen Sie ein Gerüst für die **Registrierung** Klasse. Wenn Sie fertig sind, müssen Sie eine **EnrollmentsController.cs** Datei sowie einen Ordner unter **Ansichten** mit dem Namen **Registrierungen** mit den Ansichten erstellen "," Delete "," Details "," Bearbeiten "und" Index.
+Führen Sie die gleichen Schritte erneut aus, aber fügen Sie ein Gerüst für die **Registrierungs Klasse hinzu** . Wenn Sie fertig sind, verfügen Sie über eine **EnrollmentsController.cs** -Datei und einen Ordner unter **Sichten** namens **Registrierungen** mit den Sichten Create, DELETE, Details, Edit und Index.
 
-## <a name="add-links-to-new-views"></a>Hinzufügen von Links zu den neuen Ansichten
+## <a name="add-links-to-new-views"></a>Hinzufügen von Links zu neuen Ansichten
 
-Um für die Navigation zu Ihrer neuen Ansichten vereinfachen, können Sie eine Reihe von Links für Schüler/Studenten und Registrierungen, die den Index Ansichten hinzufügen. Öffnen Sie die Datei unter **Ansichten** > **Home** > *"Index.cshtml"*, dies ist die Startseite für Ihre Website. Fügen Sie den folgenden Code unter den Jumbotron hinzu.
+Um Ihnen das Navigieren zu ihren neuen Ansichten zu erleichtern, können Sie den Index Sichten für Schüler und Studenten und Registrierungen einige Hyperlinks hinzufügen. Öffnen Sie die Datei in **views** > **Home** > *Index. cshtml*. Dies ist die Startseite für Ihre Website. Fügen Sie unter dem Jumbotron den folgenden Code hinzu.
 
 [!code-cshtml[Main](generating-views/samples/sample1.cshtml)]
 
-Für die ActionLink-Methode ist der erste Parameter der im Link anzuzeigende Text. Der zweite Parameter ist die Aktion aus, und der dritte Parameter ist der Name des Controllers. Zeigt beispielsweise der erste Link zu der Aktion Index StudentsController an. Der tatsächlichen Link wird unter folgenden Werten erstellt. Die erste Verknüpfung letztendlich gelangen Benutzer zum die **"Index.cshtml"** Datei innerhalb der **Ansichten/Schüler/Studenten** Ordner.
+Bei der Action Link-Methode ist der erste Parameter der Text, der im Link angezeigt werden soll. Der zweite Parameter ist die Aktion, und der dritte Parameter ist der Name des Controllers. Der erste Link zeigt z. b. auf die Index Aktion in studentscontroller. Der tatsächliche Hyperlink wird aus diesen Werten erstellt. Der erste Link nimmt letztendlich Benutzer an der Datei " **Index. cshtml** " im Ordner " **views/Students** " an.
 
-## <a name="display-student-views"></a>Anzeigen von für Schüler und Studenten-Ansichten
+## <a name="display-student-views"></a>Anzeigen von Studenten Ansichten
 
-Sie werden überprüfen, dass der Code ordnungsgemäß zu Ihrem Projekt hinzugefügt wird eine Liste der Studenten angezeigt, und Benutzern ermöglicht das Bearbeiten, erstellen oder löschen Sie die Studentendatensätze für Schüler und in der Datenbank.
+Sie werden sicherstellen, dass der Code, der dem Projekt hinzugefügt wurde, eine Liste der Schüler/Studenten anzeigt und Benutzern das Bearbeiten, erstellen oder Löschen der Studenten Datensätze in der Datenbank ermöglicht.
 
-Mit der rechten Maustaste die **Ansichten** > **Startseite** > *"Index.cshtml"* , und wählen Sie **in Browser anzeigen**. Wählen Sie auf der Startseite der Anwendung **Liste der Studenten**.
+Klicken Sie mit der rechten Maustaste auf die **Ansichten** > **Startseite** > *Index. cshtml* -Datei, und wählen Sie **in Browser anzeigen aus**. Wählen Sie auf der Startseite der Anwendung die Option **Liste der Studenten aus**.
 
 ![](generating-views/_static/image6.png)
 
-Auf der **Index** Seite, beachten Sie, dass die Liste der Schüler/Studenten und Links zum Ändern dieser Daten. Wählen Sie die **neu erstellen** verknüpfen, und geben Sie einige Werte für einen neuen Studenten. Klicken Sie auf **erstellen**, und beachten Sie, dass die neue Studenten zur Liste hinzugefügt wird.
+Beachten Sie auf der Seite **Index** die Liste der Schüler/Studenten und Links, um diese Daten zu ändern. Wählen Sie den Link **neu erstellen** aus, und geben Sie einige Werte für einen neuen Studenten an. Klicken Sie auf **Erstellen**, und beachten Sie, dass der neue Student Ihrer Liste hinzugefügt wird.
 
-Auf der **Index** Seite die **bearbeiten** verknüpfen, und einige der Werte für Schüler/Student ändern. Klicken Sie auf **speichern**, und beachten Sie, dass der Student-Datensatz geändert wurde.
+Wählen Sie auf der Seite **Index** den Link **Bearbeiten** aus, und ändern Sie einige der Werte für einen Schüler/Student. Klicken Sie auf **Speichern**, und beachten Sie, dass der Student-Datensatz geändert wurde.
 
-Wählen Sie abschließend die **löschen** verknüpfen, und bestätigen Sie den Datensatz zu löschen, indem Sie auf die **löschen** Schaltfläche.
+Wählen Sie abschließend den Link **Löschen** aus, und bestätigen Sie, dass Sie den Datensatz löschen möchten, indem Sie auf die Schaltfläche **Löschen** klicken.
 
-Ohne Code schreiben zu müssen, haben Sie die Sichten hinzugefügt, die allgemeine Vorgänge auf die Daten in der Tabelle "Student" ausführen.
+Wenn Sie keinen Code schreiben, haben Sie Ansichten hinzugefügt, die gängige Vorgänge für die Daten in der Tabelle "Student" ausführen.
 
-Ihnen möglicherweise aufgefallen, dass das die textbezeichnung für ein Feld auf die Datenbankeigenschaft (z. B. **"LastName"**) dem ist nicht unbedingt auf der Webseite anzeigen möchten. Z. B. möglicherweise bevorzugen Sie die Bezeichnung sein **Nachname**. Sie werden später im Tutorial dieses Anzeigeproblems behoben.
+Möglicherweise haben Sie bemerkt, dass die Text Bezeichnung für ein Feld auf der Daten Bank Eigenschaft (z. b. **LastName**) basiert, die nicht unbedingt auf der Webseite angezeigt werden soll. Beispielsweise können Sie bevorzugen, dass die Bezeichnung den **Nachnamen**hat. Sie beheben dieses Problem bei der Anzeige später in diesem Tutorial.
 
-## <a name="display-enrollment-views"></a>Anzeigen von Ansichten der Registrierung
+## <a name="display-enrollment-views"></a>Anzeigen von Registrierungs Sichten
 
-Ihre Datenbank enthält eine 1: n Beziehung zwischen den Tabellen "Student" und Registrierung, und eine 1: n Beziehung zwischen den Tabellen Kurs- und Registrierungsentitäten. Die Ansichten für die Registrierung zu diese Beziehungen verarbeiten. Navigieren Sie zur Startseite für Ihre Website, und wählen die **Liste der Registrierungen** Link und klicken Sie dann die **neu erstellen** Link.
+Die Datenbank enthält eine 1: n-Beziehung zwischen den Tabellen "Student" und "Registrierung" sowie eine 1: n-Beziehung zwischen den Tabellen "Kurs" und "Registrierung". Diese Beziehungen werden von den Sichten für die Registrierung ordnungsgemäß verarbeitet. Navigieren Sie zur Startseite Ihrer Website, und wählen Sie die **Liste mit den Registrierungen** aus, und klicken Sie dann auf den Link **neu erstellen** .
 
-Die Ansicht zeigt ein Formular zum Erstellen eines neuen Eintrags für die Registrierung. Beachten Sie insbesondere die, dass das Formular enthält eine **CourseID** Dropdown-Liste und eine **"StudentID"** Dropdown-Liste. Beide werden mit Werten aus der verknüpften Tabellen aufgefüllt.
+In der Ansicht wird ein Formular zum Erstellen eines neuen Registrierungsdaten Satzes angezeigt. Beachten Sie insbesondere, dass das Formular eine " **CourseID** "-Dropdown Liste und eine " **StudentID** "-Dropdown Liste enthält. Beide werden mit Werten aus den verknüpften Tabellen aufgefüllt.
 
-Darüber hinaus wird die Überprüfung der bereitgestellten Werte automatisch basierend auf dem Datentyp des Felds angewendet. **Professionelle** erfordert eine Zahl ist, eine Fehlermeldung angezeigt wird, wenn Sie versuchen, einen nicht kompatiblen Wert angeben: *Das Feld "Grade" muss eine Zahl sein.*
+Außerdem wird die Überprüfung der angegebenen Werte automatisch auf Grundlage des Datentyps des Felds angewendet. Der **Wert erfordert eine** Zahl, sodass eine Fehlermeldung angezeigt wird, wenn Sie versuchen, einen nicht kompatiblen Wert anzugeben: *die Feld Qualität muss eine Zahl sein.*
 
-Sie haben sichergestellt, dass die automatisch generierte Ansichten für die Arbeit mit den Daten in der Datenbank ermöglichen. Im nächsten Tutorial dieser Reihe Sie die Datenbank aktualisieren, und nehmen die entsprechenden Änderungen in der Webanwendung.
+Sie haben überprüft, ob die automatisch generierten Sichten es Benutzern ermöglichen, mit den Daten in der Datenbank zu arbeiten. Im nächsten Tutorial dieser Reihe aktualisieren Sie die Datenbank und nehmen die entsprechenden Änderungen in der-Webanwendung vor.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
-> * Hinzugefügten scaffold
-> * Links zu neuen Funktionen hinzugefügt
-> * Ansichten der angezeigten für Schüler und Studenten
-> * Angezeigte Registrierung-Ansichten
+> * Gerüstbau hinzugefügt
+> * Links zu neuen Ansichten hinzugefügt
+> * Angezeigte Ansichten von Studenten
+> * Angezeigte Registrierungs Sichten
 
-Fahren Sie fort mit dem nächsten Tutorial erfahren, wie die Datenbank ändern.
+Fahren Sie mit dem nächsten Tutorial fort, um zu erfahren, wie Sie die Datenbank ändern.
 > [!div class="nextstepaction"]
-> [Ändern Sie die Datenbank](changing-the-database.md)
+> [Ändern der Datenbank](changing-the-database.md)

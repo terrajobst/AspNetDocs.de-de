@@ -9,11 +9,11 @@ ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
 ms.openlocfilehash: 5d13a51128eecd92a82cfd06054448582a348e11
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445685"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511077"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>Verwenden von Visual Studio 2013 zum Erstellen einer ASP.net-Basis Seite Web Forms 4,5
 
@@ -32,7 +32,7 @@ In dieser exemplarischen Vorgehensweise werden u. a. folgende Aufgaben veranscha
 - Hinzufügen von Ereignis Handlern.
 - Ausführen und Testen einer Seite aus Visual Studio.
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Für die Durchführung dieser exemplarischen Vorgehensweise benötigen Sie Folgendes:
 
@@ -58,11 +58,11 @@ In diesem Teil der exemplarischen Vorgehensweise erstellen Sie ein Webanwendungs
 
     Das Dialogfeld **Neues Projekt** wird angezeigt.
 3. Wählen Sie auf der linken Seite die **Vorlagen** -&gt;  **C# Visual** -&gt; **Webvorlagen** Gruppe aus.
-4. Wählen Sie die Vorlage **ASP.NET-Webanwendung** in der mittleren Spalte aus.
+4. Wählen Sie die Vorlage **ASP.NET Web Application** in der mittleren Spalte aus.
 5. Nennen Sie das Projekt ***basicwebapp*** , und klicken Sie auf die Schaltfläche **OK** .   
-![Dialogfeld "Neues Projekt"](creating-a-basic-web-forms-page/_static/image2.png)
+![Dialogfeld „Neues Projekt“](creating-a-basic-web-forms-page/_static/image2.png)
 6. Wählen Sie dann die Vorlage **Web Forms** aus, und klicken Sie auf die Schaltfläche **OK** , um das Projekt zu erstellen.  
-![Dialogfeld "neues ASP.net Projekt"](creating-a-basic-web-forms-page/_static/image3.png)  
+![Dialogfeld "Neues ASP.NET-Projekt"](creating-a-basic-web-forms-page/_static/image3.png)  
 
     Visual Studio erstellt ein neues Projekt, das eine vorgefertigte Funktionalität enthält, die auf der Web Forms Vorlage basiert. Es bietet Ihnen nicht nur die Seite " *Home. aspx* ", eine Seite " *about. aspx* ", eine " *Contact. aspx* "-Seite, sondern auch Mitgliedschafts Funktionen, die Benutzer registrieren und ihre Anmelde Informationen speichern, damit Sie sich bei Ihrer Website anmelden können. Wenn eine neue Seite erstellt wird, zeigt Visual Studio die Seite standardmäßig in der **Quell** Ansicht an, wo Sie die HTML-Elemente der Seite sehen können. In der folgenden Abbildung wird gezeigt, was in der **Quell** Ansicht angezeigt wird, wenn Sie eine neue Webseite mit dem Namen " *basicwebapp. aspx*" erstellt haben.  
     ![Quellansicht](creating-a-basic-web-forms-page/_static/image4.png)
@@ -101,7 +101,7 @@ Wenn Sie eine neue Web Forms Anwendung mithilfe der Projektvorlage " **ASP.NET-W
 2. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf den Namen der Webanwendung (in diesem Tutorial lautet der Name der Anwendung **basicwebsite**), und klicken Sie dann auf -&gt; **Neues Element** **Hinzufügen** .   
 Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.
 3. Wählen Sie auf der linken Seite die Gruppe **Visual C#**  -&gt; **Web** Templates aus. Wählen Sie dann in der mittleren Liste **Web Form** aus, und nennen Sie es " *firstwebseite. aspx*".   
-    ![Dialogfeld "Neues Element hinzufügen"](creating-a-basic-web-forms-page/_static/image6.png)
+    ![Dialogfeld „Neues Element hinzufügen“](creating-a-basic-web-forms-page/_static/image6.png)
 4. Klicken Sie auf **Hinzufügen** , um die Webseite dem Projekt hinzuzufügen.  
 Visual Studio erstellt die neue Seite und öffnet sie.
 
@@ -119,7 +119,7 @@ In diesem Teil der exemplarischen Vorgehensweise fügen Sie der Seite einen stat
 
     Die folgende Abbildung zeigt den Text, den Sie in der **Entwurfs** Ansicht eingegeben haben.
 
-    ![Begrüßungstext in Designansicht](creating-a-basic-web-forms-page/_static/image7.png "Willkommenstext in der Entwurfsansicht")
+    ![Begrüßungstext in Designansicht](creating-a-basic-web-forms-page/_static/image7.png "Begrüßungstext in Designansicht")
 4. Wechseln Sie zur **Quell** Ansicht.
 
     Sie können den HTML-Code in der **Quell** Ansicht sehen, den Sie bei der Typisierung in der **Entwurfs** Ansicht erstellt haben.  
@@ -160,7 +160,7 @@ Beachten Sie, dass Sie möglicherweise das Fenster " **Toolbox** " auf der linke
 
     Dieser statische HTML-Text ist die Beschriftung für das [TextBox](https://msdn.microsoft.com/library/system.web.ui.webcontrols.textbox.aspx) -Steuerelement. Statische HTML-und Server Steuerelemente können auf derselben Seite gemischt werden. In der folgenden Abbildung wird gezeigt, wie die drei Steuerelemente in der **Entwurfs** Ansicht angezeigt werden.
 
-    ![Drei Steuerelemente in Designansicht](creating-a-basic-web-forms-page/_static/image9.png "Drei Steuerelemente in der Entwurfsansicht")
+    ![Drei Steuerelemente in Designansicht](creating-a-basic-web-forms-page/_static/image9.png "Drei Steuerelemente in Designansicht")
 
 ### <a name="setting-control-properties"></a>Festlegen von Steuerelement Eigenschaften
 
@@ -171,7 +171,7 @@ Visual Studio bietet Ihnen verschiedene Möglichkeiten, die Eigenschaften von St
 1. Zeigen Sie zunächst die **Eigenschaften** Fenster an, indem Sie im Menü **Ansicht**&gt; **andere Fenster** -&gt; **Eigenschaften Fenster**auswählen. Alternativ können Sie **F4** auswählen, um das Fenster **Eigenschaften** anzuzeigen.
 2. Wählen Sie das [Schalt](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) Flächen-Steuerelement aus, und legen Sie dann im Fenster **Eigenschaften** den Wert von **Text** auf **Anzeige Name**fest. Der eingegebene Text wird auf der Schaltfläche im Designer angezeigt, wie in der folgenden Abbildung dargestellt.
 
-    ![Schaltflächen Text festlegen](creating-a-basic-web-forms-page/_static/image10.png "Button-Text festlegen")
+    ![Schaltflächen Text festlegen](creating-a-basic-web-forms-page/_static/image10.png "Schaltflächen Text festlegen")
 3. Wechseln Sie zur **Quell** Ansicht.
 
     In der **Quell** Ansicht wird der HTML-Code für die Seite angezeigt, einschließlich der Elemente, die von Visual Studio für die Server Steuerelemente erstellt wurden. Steuerelemente werden mit HTML-ähnlicher Syntax deklariert, mit dem Unterschied, dass die Tags das Präfix **ASP:** verwenden und das Attribut **runat =&quot;Server&quot;** einschließen.
@@ -180,7 +180,7 @@ Visual Studio bietet Ihnen verschiedene Möglichkeiten, die Eigenschaften von St
 
     > [!NOTE] 
     > 
-    > Alle-Steuerelemente befinden sich in einem **Form** -Element, das auch das Attribut **runat =&quot;Server&quot;** hat. Das **runat =&quot;Server&quot;** -Attribut und das **ASP:** -Präfix für Steuerungs Tags markieren die Steuerelemente, sodass Sie von ASP.net auf dem Server verarbeitet werden, wenn die Seite ausgeführt wird. Code außerhalb **&lt;Formulars runat =&quot;Server&quot;&gt;** und **&lt;Script runat =&quot;Server&quot;&gt;** Elemente unverändert an den Browser gesendet werden. aus diesem Grund muss sich der ASP.NET-Code innerhalb eines Elements befinden. , dessen öffnendes Tag das **runat =&quot;Server&quot;** -Attribut enthält.
+    > Alle-Steuerelemente befinden sich in einem **Form** -Element, das auch das Attribut **runat =&quot;Server&quot;** hat. Das **runat =&quot;Server&quot;** -Attribut und das **ASP:** -Präfix für Steuerungs Tags markieren die Steuerelemente, sodass Sie von ASP.net auf dem Server verarbeitet werden, wenn die Seite ausgeführt wird. Code außerhalb **&lt;Formulars runat =&quot;Server&quot;&gt;** und **&lt;Skript runat =&quot;Server&quot;&gt;** Elemente werden unverändert an den Browser gesendet. aus diesem Grund muss sich der ASP.NET-Code innerhalb eines Elements befinden, dessen Starttag das **runat =&quot;Server&quot;** -Attribut enthält.
 4. Als Nächstes fügen Sie dem [Label](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) -Steuerelement eine zusätzliche Eigenschaft hinzu. Platzieren Sie die Einfügemarke direkt hinter **ASP: Label** im **&lt;ASP: Label&gt;** -Tag, und drücken Sie dann die **LEERTASTE**.
 
     Eine Dropdown Liste wird angezeigt, in der die Liste der verfügbaren Eigenschaften angezeigt wird, die Sie für ein [Label](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) -Steuerelement festlegen können. Diese Funktion, die als **IntelliSense**bezeichnet wird, unterstützt Sie in der **Quell** Ansicht mit der Syntax von Server Steuerelementen, HTML-Elementen und anderen Elementen auf der Seite. Die folgende Abbildung zeigt die **IntelliSense** -Dropdown Liste für das [Label](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) -Steuerelement.
@@ -216,7 +216,7 @@ In dieser exemplarischen Vorgehensweise schreiben Sie Code, der den Namen liest,
 
     Wenn Sie den Zeitraum nach der **ID** der Bezeichnung (**Label1**) eingeben, zeigt Visual Studio eine Liste der verfügbaren Member für das [Label](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) -Steuerelement an, wie in der folgenden Abbildung dargestellt. Ein Member, der häufig eine Eigenschaft, eine Methode oder ein Ereignis ist.
 
-    ![IntelliSense in der Code Ansicht](creating-a-basic-web-forms-page/_static/image12.png "IntelliSense in der Codeansicht")
+    ![IntelliSense in der Code Ansicht](creating-a-basic-web-forms-page/_static/image12.png "IntelliSense in der Code Ansicht")
 4. Beenden Sie den **Click** -Ereignishandler für die Schaltfläche, sodass er wie im folgenden Codebeispiel dargestellt liest.
 
     [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample1.cs?highlight=3)]
@@ -259,18 +259,18 @@ In diesem Abschnitt fügen Sie der Seite ein [System. Web. UI. WebControls. Cale
 
     Der Smarttag-Bereich des Kalenders wird angezeigt. Der Bereich zeigt Befehle an, die es Ihnen erleichtern, die gängigsten Aufgaben für das ausgewählte Steuerelement auszuführen. Die folgende Abbildung zeigt das in der **Entwurfs** Ansicht gerenderte [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) Steuerelement.
 
-    ![Calendar-Steuerelement in Designansicht](creating-a-basic-web-forms-page/_static/image13.png "Calendar-Steuerelement in der Entwurfsansicht")
+    ![Calendar-Steuerelement in Designansicht](creating-a-basic-web-forms-page/_static/image13.png "Calendar-Steuerelement in Designansicht")
 3. Wählen Sie im smarttagpanel die Option **Auto Format**aus.
 
     Das Dialogfeld **automatisch formatieren** wird angezeigt, in dem Sie ein Formatierungsschema für den Kalender auswählen können. Die folgende Abbildung zeigt das Dialogfeld **automatisch formatieren** für das [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) Steuerelement.
 
-    ![Dialogfeld ' Auto Formatierung ' (Calendar-Steuerelement)](creating-a-basic-web-forms-page/_static/image14.png "Dialogfeld "Autom. Formatierung" (Calendar-Steuerelement)")
+    ![Dialogfeld ' Auto Formatierung ' (Calendar-Steuerelement)](creating-a-basic-web-forms-page/_static/image14.png "Dialogfeld ' Auto Formatierung ' (Calendar-Steuerelement)")
 4. Wählen Sie in der Liste **Schema auswählen** die Option **einfach** aus, und klicken Sie dann auf **OK**.
 5. Wechseln Sie zur **Quell** Ansicht.
 
     Sie können das **&lt;ASP: Calendar&gt;** -Element sehen. Dieses Element ist wesentlich länger als die Elemente für die einfachen Steuerelemente, die Sie zuvor erstellt haben. Sie enthält auch unter Elemente, wie z. b. **&lt;WeekendDayStyle-&gt;** , die verschiedene Formatierungs Einstellungen darstellen. Die folgende Abbildung zeigt das [Kalender](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) Steuerelement in der **Quell** Ansicht. (Das genaue Markup, das Sie in der **Quell** Ansicht sehen, kann sich geringfügig von der Abbildung unterscheiden.)
 
-    ![Calendar-Steuerelement in der Quell Ansicht](creating-a-basic-web-forms-page/_static/image15.png "Calendar-Steuerelement in der Quellansicht")
+    ![Calendar-Steuerelement in der Quell Ansicht](creating-a-basic-web-forms-page/_static/image15.png "Calendar-Steuerelement in der Quell Ansicht")
 
 ### <a name="programming-the-calendar-control"></a>Programmieren des Kalender Steuer Elements
 

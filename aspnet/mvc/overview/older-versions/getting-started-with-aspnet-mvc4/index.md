@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/index
-title: Erste Schritte mit ASP.NET MVC 4 | Microsoft-Dokumentation
+title: Einstieg in ASP.NET MVC 4 | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
+description: Diese tutorialreihe vermittelt Ihnen die Grundlagen des Erstellens einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
 ms.author: riande
 ms.date: 02/15/2012
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
 ms.openlocfilehash: a73935f74d696bad9070c56b506d3aa2dbcceb25
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129859"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485283"
 ---
 # <a name="getting-started-with-aspnet-mvc-4"></a>Erste Schritte mit ASP.NET MVC 4
 
-> Diese lernprogrammreihe vermittelt Ihnen die Grundlagen zum Erstellen einer ASP.NET MVC-Web-Anwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, handelt es sich eine kostenlose Version von Microsoft Visual Studio.
+> Diese tutorialreihe vermittelt Ihnen die Grundlagen der Entwicklung einer ASP.NET MVC-Webanwendung mithilfe von Microsoft Visual Web Developer 2010 Express Service Pack 1, einer kostenlosen Version von Microsoft Visual Studio.
 
 - [Einführung zu ASP.NET MVC 4](intro-to-aspnet-mvc-4.md)
 - [Hinzufügen eines Controllers](adding-a-controller.md)

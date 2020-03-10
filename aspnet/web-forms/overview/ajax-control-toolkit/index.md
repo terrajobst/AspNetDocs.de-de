@@ -1,26 +1,26 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/index
-title: Ältere Versionen – Ajax Control Toolkit | Microsoft-Dokumentation
+title: Ältere Versionen-AJAX Control Toolkit | Microsoft-Dokumentation
 author: rick-anderson
-description: Wie Sie mit dem Ajax Control Toolkit beginnen, und wie Sie einige der am häufigsten verwendeten Steuerelemente verwenden. DevExpress verwaltet, dass der freien und open Source Ajax Vertr....
+description: Erfahren Sie, wie Sie die ersten Schritte mit dem AJAX Control Toolkit durchführen und wie Sie einige der beliebtesten Steuerelemente verwenden können. DevExpress behält das kostenlose und Open Source-Ajax-Contr...
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: d7d0426ed427f3b8fc8c7f9c2fe1518b1887d695
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115375"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446277"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>Ältere Versionen – AJAX Control Toolkit
 
-> Wie Sie mit dem Ajax Control Toolkit beginnen, und wie Sie einige der am häufigsten verwendeten Steuerelemente verwenden. DevExpress verwaltet, dass der freien und open Source Ajax Control Toolkit.
+> Erfahren Sie, wie Sie die ersten Schritte mit dem AJAX Control Toolkit durchführen und wie Sie einige der beliebtesten Steuerelemente verwenden können. DevExpress unterhält das kostenlose und Open Source-AJAX Control Toolkit.
 > 
 > 
-> ![](index/_static/image1.png) DevExpress, Entwickler von ASP.NET WebForms, MVC und HTML5-UI-Steuerelementen und Frameworks, preisgekrönten haben über die Wartung des ASP.NET AJAX Control Toolkit, um diese hoch machten Open Source-Bibliothek wieder in einen verlässlichen Status zu versetzen. [Erfahren Sie mehr](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx).
+> ![](index/_static/image1.png) DevExpress haben Entwickler der preisgekrönten ASP.net WebForms-, MVC-und HTML5-UI-Steuerelemente und-Frameworks die Wartung des ASP.NET AJAX Control Toolkit übernommen, um diese hoch geforderte Open Source-Bibliothek wieder in einen zuverlässigen Zustand zu bringen. [Weitere Informationen](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx)
 
 - [Erste Schritte](getting-started/index.md)
 
@@ -160,7 +160,7 @@ ms.locfileid: "65115375"
     - [Drag & Drop über ReorderList (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [Verwenden von Postbacks mit dem ReorderList-Steuerelement (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [Drag & Drop über ReorderList (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [Schieberegler](slider/index.md)
+- [Slider](slider/index.md)
 
     - [Schieberegler-Steuerelement mit automatischem Postback (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
     - [Datenbindung des Schieberegler-Steuerelements](slider/databinding-the-slider-control-cs.md)

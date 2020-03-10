@@ -9,11 +9,11 @@ ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
 ms.openlocfilehash: c2f420bb7c2f7d2e31654c20fb9ec7497a30a9f7
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564885"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521205"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Einführung in ASP.net-Webprogrammierung mit der Razor-C#Syntax ()
 
@@ -212,7 +212,7 @@ Der Razor-Syntax bietet Ihnen die gesamte Leistungsfähigkeit von ASP.net, verwe
 > 
 > Auf ähnliche Weise ist jede einzelne Webseite in Ihrer Site ein `Page` Objekt, das eine Instanz der `Page`-Klasse ist. Eine Schaltfläche auf der Seite ist ein `Button` Objekt, das eine Instanz der `Button`-Klasse ist usw. Jede Instanz verfügt über eigene Merkmale, aber Sie basieren auf den Angaben, die in der Klassendefinition des Objekts angegeben sind.
 
-## <a name="basic-syntax"></a>Allgemeine Syntax
+## <a name="basic-syntax"></a>Grundlegende Syntax
 
 Früher haben Sie ein einfaches Beispiel für das Erstellen einer ASP.net Web Pages Seite und die Vorgehensweise zum Hinzufügen von Servercode zu HTML-Markup gesehen. Hier lernen Sie die Grundlagen zum Schreiben von ASP.net-Servercode mithilfe &#8212; der Razor-Syntax der Programmiersprachen Regeln kennen.
 
@@ -221,7 +221,7 @@ Wenn Sie Erfahrung mit der Programmierung haben (insbesondere, wenn Sie C, C++, 
 <a id="BM_CombiningTextMarkupAndCode"></a>
 ### <a name="combining-text-markup-and-code-in-code-blocks"></a>Kombinieren von Text, Markup und Code in Code Blöcken
 
-In Servercode Blöcken möchten Sie häufig Text oder Markup (oder beides) an die Seite ausgeben. Wenn ein Server Codeblock Text enthält, der nicht Code ist und stattdessen unverändert gerendert werden soll, muss ASP.net in der Lage sein, diesen Text vom Code zu unterscheiden. Dafür stehen verschiedene Möglichkeiten zur Verfügung:
+In Servercode Blöcken möchten Sie häufig Text oder Markup (oder beides) an die Seite ausgeben. Wenn ein Server Codeblock Text enthält, der nicht Code ist und stattdessen unverändert gerendert werden soll, muss ASP.net in der Lage sein, diesen Text vom Code zu unterscheiden. Hierfür gibt es mehrere Möglichkeiten.
 
 - Schließen Sie den Text in ein HTML-Element wie `<p></p>` oder `<em></em>`ein:   
 
@@ -247,7 +247,7 @@ Zusätzliche Leerzeichen in einer-Anweisung (und außerhalb eines Zeichenfolgenl
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample15.cshtml)]
 
-Ein Zeilenumbruch in einer-Anweisung hat keine Auswirkung auf die-Anweisung, und Sie können-Anweisungen zur besseren Lesbarkeit umschließen. Die folgenden Anweisungen sind gleich:
+Ein Zeilenumbruch in einer-Anweisung hat keine Auswirkung auf die-Anweisung, und Sie können-Anweisungen zur besseren Lesbarkeit umschließen. Die folgenden Anweisungen sind identisch:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample16.cshtml)]
 
@@ -295,7 +295,7 @@ Im Gegensatz zu Razor-Kommentaren *werden* HTML-Kommentare auf der Seite gerende
 
 Razor hat Einschränkungen für die Blöcke von C#. Weitere Informationen finden Sie [unter C# benannte Variablen und geschiebte Blöcke generieren](http://aspnetwebstack.codeplex.com/workitem/1914) von fehlerhafter Code.
 
-## <a name="variables"></a>Variablen
+## <a name="variables"></a>Variables
 
 Eine Variable ist ein benanntes Objekt, das Sie zum Speichern von Daten verwenden. Sie können Variablen einen beliebigen Namen benennen, aber der Name muss mit einem alphabetischen Zeichen beginnen und darf keine Leerzeichen oder reservierten Zeichen enthalten.
 
@@ -648,7 +648,7 @@ Der absolute physische Pfad der Website auf dem Server einer Host Website ist in
 
 ### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>Verweisen auf das virtuelle Stammverzeichnis: der ~-Operator und die href-Methode
 
-In einer *cshtml* -oder *vbhtml* -Datei können Sie mithilfe des `~`-Operators auf den virtuellen Stammpfad verweisen. Dies ist sehr praktisch, da Sie Seiten auf einer Website verschieben können und alle Links, die Sie auf anderen Seiten enthalten, nicht beschädigt werden. Es ist auch praktisch, wenn Sie Ihre Website jemals an einen anderen Speicherort verschieben. Hier einige Beispiele:
+In einer *cshtml* -oder *vbhtml* -Datei können Sie mithilfe des `~`-Operators auf den virtuellen Stammpfad verweisen. Dies ist sehr praktisch, da Sie Seiten auf einer Website verschieben können und alle Links, die Sie auf anderen Seiten enthalten, nicht beschädigt werden. Es ist auch praktisch, wenn Sie Ihre Website jemals an einen anderen Speicherort verschieben. Im Folgenden finden Sie einige Beispiele:
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample47.cshtml)]
 
@@ -743,8 +743,8 @@ Um das Festlegen von Eigenschaften und Methoden für das aktuelle Seiten Objekt 
 
 Sie können die Eigenschaften des `Page`-Objekts verwenden, um zahlreiche Informationen zu erhalten, z. b.:
 
-- `Request`. Wie Sie bereits gesehen haben, handelt es sich hierbei um eine Sammlung von Informationen über die aktuelle Anforderung, einschließlich des Typs des Browsers, der die Anforderung gestellt hat, der URL der Seite, der Benutzeridentität usw.
-- `Response`. Dabei handelt es sich um eine Sammlung von Informationen über die Antwort (Seite), die an den Browser gesendet werden, wenn die Ausführung des Server Codes abgeschlossen ist. Beispielsweise können Sie diese Eigenschaft verwenden, um Informationen in die Antwort zu schreiben. 
+- [https://login.microsoftonline.com/consumers/](`Request`). Wie Sie bereits gesehen haben, handelt es sich hierbei um eine Sammlung von Informationen über die aktuelle Anforderung, einschließlich des Typs des Browsers, der die Anforderung gestellt hat, der URL der Seite, der Benutzeridentität usw.
+- [https://login.microsoftonline.com/consumers/](`Response`). Dabei handelt es sich um eine Sammlung von Informationen über die Antwort (Seite), die an den Browser gesendet werden, wenn die Ausführung des Server Codes abgeschlossen ist. Beispielsweise können Sie diese Eigenschaft verwenden, um Informationen in die Antwort zu schreiben. 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -806,7 +806,7 @@ Im folgenden Beispiel wird dieselbe Methode wie oben aufgerufen, es werden jedoc
 Wie Sie sehen können, werden die Parameter in einer anderen Reihenfolge übermittelt. Wenn Sie jedoch das vorherige Beispiel und dieses Beispiel ausführen, wird derselbe Wert zurückgegeben.
 
 <a id="ID_HandlingErrors"></a>
-## <a name="handling-errors"></a>Fehlerbehandlung
+## <a name="handling-errors"></a>Behandeln von Fehlern
 
 ### <a name="try-catch-statements"></a>Try-catch-Anweisungen
 
@@ -836,7 +836,7 @@ Wenn der Code die Ausnahme nicht behandelt hat, sehen Sie eine Fehlerseite wie d
 
 [Anhang: Visual Basic Sprache und Syntax](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-**Referenz Dokumentation**
+**Referenzdokumentation**
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 

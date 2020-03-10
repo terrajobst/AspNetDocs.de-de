@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-validatorcallout-extender
-title: '[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-ValidatorCallout? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie den ASP.NET AJAX validatorcallout-Extender? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Der standard ASP.NET-Steuerelemente zur gültigkeitsprüfung auf dem Server und dem Client arbeiten. Für die Sicherheit Ihrer Web-Anwendung, während c wird eine serverseitige Validierung hinzugefügt...
+description: Die standardmäßigen ASP.net-Validierungs Steuerelemente funktionieren sowohl auf dem Server als auch auf dem Client. Die Server seitige Validierung erhöht die Sicherheit Ihrer Webanwendung, während c...
 ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 9ece2688-72d3-4ff4-8d6c-c29698c39ae5
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-validatorcallout-extender
 msc.type: video
 ms.openlocfilehash: e5182f4bf2bbaaba64fcf02dbe7f2277beaac48d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397057"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518967"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-validatorcallout-extender"></a>[Gewusst wie:] Verwenden Sie die ASP.NET AJAX-Extender-ValidatorCallout?
+# <a name="how-do-i-use-the-aspnet-ajax-validatorcallout-extender"></a>[Gewusst wie:] Verwenden Sie den ASP.NET AJAX validatorcallout-Extender?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Der standard ASP.NET-Steuerelemente zur gültigkeitsprüfung auf dem Server und dem Client arbeiten. Eine serverseitige Validierung hinzugefügt, die Sicherheit Ihrer Web-Anwendung, die clientseitige Validierung die Zweckmäßigkeit Benutzer Ihrer Webanwendung hinzugefügt. Dieses Video zeigt, wie das ValidatorCallout-Steuerelement von ASP.NET AJAX Control Toolkit die standard-Validation-Steuerelementen, um die benutzerfreundlichkeit zu verbessern, über die Positionierung des validierungsmeldungen sauber in die Felder für basisaufrufe erweitert.
+Die standardmäßigen ASP.net-Validierungs Steuerelemente funktionieren sowohl auf dem Server als auch auf dem Client. Die Server seitige Validierung erhöht die Sicherheit Ihrer Webanwendung, während die Client seitige Validierung der Benutzerfreundlichkeit Ihrer Webanwendung hinzufügt. Dieses Video zeigt, wie das validatorcallout-Steuerelement aus dem ASP.NET AJAX-Steuerelement Toolkit die Standard Validierungs Steuerelemente erweitert, um die Benutzerumgebung zu verbessern, indem Validierungs Meldungen in Legenden Feldern ordnungsgemäß positioniert werden.
 
-[&#9654;Sehen Sie sich Video (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-validatorcallout-extender)
+[&#9654;Video ansehen (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-validatorcallout-extender)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-numericupdown-extender-control.md)

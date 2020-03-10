@@ -9,11 +9,11 @@ ms.assetid: 83267f7d-64d9-41ee-82cf-da91b1bf534d
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
 ms.openlocfilehash: d8ceb6b5290300992e52199caa9314c573de1942
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626738"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514629"
 ---
 # <a name="an-overview-of-forms-authentication-vb"></a>Eine Übersicht über die Formular Authentifizierung (VB)
 
@@ -193,7 +193,7 @@ Erstellen Sie abschließend einen Ereignishandler für das Click-Ereignis von lo
 
 Wir müssen jetzt Aufgabe 2 im Click-Ereignishandler der Schaltfläche implementieren, um zu bestimmen, ob die angegebenen Anmelde Informationen gültig sind. Zu diesem Zweck muss ein Benutzerspeicher vorhanden sein, der alle Anmelde Informationen des Benutzers enthält, damit wir ermitteln können, ob die angegebenen Anmelde Informationen mit bekannten Anmelde Informationen identisch sind.
 
-Vor ASP.NET 2,0 waren Entwickler dafür verantwortlich, sowohl ihre eigenen Benutzerspeicher zu implementieren als auch den Code zu schreiben, um die angegebenen Anmelde Informationen für den Speicher zu überprüfen. Die meisten Entwickler würden den Benutzerspeicher in einer Datenbank implementieren und eine Tabelle mit dem Namen "Benutzer" mit Spalten wie "username", "Password", "Email", "LastLoginDate" usw. erstellen. Diese Tabelle hat dann einen Datensatz pro Benutzerkonto. Wenn Sie die angegebenen Anmelde Informationen eines Benutzers überprüfen, müssen Sie die Datenbank auf einen passenden Benutzernamen Abfragen und dann sicherstellen, dass das Kennwort in der Datenbank dem angegebenen Kennwort entspricht.
+Vor ASP.NET 2,0 waren Entwickler dafür verantwortlich, sowohl ihre eigenen Benutzerspeicher zu implementieren als auch den Code zu schreiben, um die angegebenen Anmelde Informationen für den Speicher zu überprüfen. Die meisten Entwickler würde den Speicher des Benutzers in einer Datenbank implementieren, erstellen eine Tabelle namens Benutzer mit Spalten, z. B. Benutzername, Kennwort, e-Mail-, LastLoginDate usw. Diese Tabelle hat dann einen Datensatz pro Benutzerkonto. Wenn Sie die angegebenen Anmelde Informationen eines Benutzers überprüfen, müssen Sie die Datenbank auf einen passenden Benutzernamen Abfragen und dann sicherstellen, dass das Kennwort in der Datenbank dem angegebenen Kennwort entspricht.
 
 Mit ASP.NET 2,0 sollten Entwickler einen der Mitgliedschafts Anbieter verwenden, um den Benutzerspeicher zu verwalten. In dieser tutorialreihe wird der sqlmembership shipprovider verwendet, der eine SQL Server Datenbank für den Benutzerspeicher verwendet. Bei Verwendung von sqlmembership shipprovider muss ein bestimmtes Datenbankschema implementiert werden, das die vom Anbieter erwarteten Tabellen, Sichten und gespeicherten Prozeduren enthält. Wir untersuchen, wie dieses Schema im Tutorial *[Erstellen des Mitgliedschafts Schemas in SQL Server](../membership/creating-the-membership-schema-in-sql-server-vb.md)* implementiert wird. Mit dem Mitgliedschafts Anbieter ist das Überprüfen der Anmelde Informationen des Benutzers so einfach wie das Aufrufen der [ValidateUser-Methode (*username*, *Password*)](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)der [Mitgliedschafts Klasse](https://msdn.microsoft.com/library/system.web.security.membership.aspx), die einen booleschen Wert zurückgibt, der angibt, ob die Gültigkeit der Kombination aus *Benutzername* und *Kennwort* gültig ist. Wenn Sie sehen, dass der Benutzerspeicher von sqlmitgliedshipprovider noch nicht implementiert wurde, ist es nicht möglich, die ValidateUser-Methode der Mitgliedschafts Klasse zu diesem Zeitpunkt zu verwenden.
 
@@ -221,7 +221,7 @@ GetAuthCookie ist praktisch, wenn Sie das Authentifizierungs Ticket ändern müs
 
 Da wir den Benutzer anmelden und ihn an die entsprechende Seite umleiten möchten, verwenden wir RedirectFromLoginPage. Aktualisieren Sie den Click-Ereignishandler von loginbutton, und ersetzen Sie die beiden kommentierten TODO-Zeilen durch die folgende Codezeile:
 
-FormsAuthentication. RedirectFromLoginPage (username. Text, Erinnerungen. aktiviert)
+FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 
 Beim Erstellen des Formular Authentifizierungs Tickets verwenden wir die Text-Eigenschaft des username-Textfelds für den Parameter " *username* " des Formular Authentifizierungs Tickets und den aktivierten Zustand des Kontrollkästchens "Erinnerung" für den *persistcookie* -Parameter.
 
@@ -268,7 +268,7 @@ Wenn dieser Code vorhanden ist, besuchen Sie "default. aspx" über einen Browser
 
 **Abbildung 12**: authentifizierte Benutzer werden die Willkommensseite angezeigt! Meldung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](an-overview-of-forms-authentication-vb/_static/image36.png))
 
-Die Identität des aktuell angemeldeten Benutzers kann anhand der [User-Eigenschaft](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)des [HttpContext-Objekts](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)ermittelt werden. Das HttpContext-Objekt stellt Informationen über die aktuelle Anforderung dar und ist das Zuhause für solche allgemeinen ASP.NET-Objekte als Antwort, Anforderung und Sitzung. Die User-Eigenschaft stellt den Sicherheitskontext der aktuellen HTTP-Anforderung dar und implementiert die [IPrincipal-Schnittstelle](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx).
+Die Identität des aktuell angemeldeten Benutzers kann anhand der [User-Eigenschaft](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)des [HttpContext-Objekts](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)ermittelt werden. Das HttpContext-Objekt stellt Informationen über die aktuelle Anforderung dar und ist für allgemeine ASP.NET-Objekte wie Antwort, der Anforderung und der Sitzungsebene, u. a. Die User-Eigenschaft stellt den Sicherheitskontext der aktuellen HTTP-Anforderung dar und implementiert die [IPrincipal-Schnittstelle](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx).
 
 Die User-Eigenschaft wird von FormsAuthenticationModule festgelegt. Insbesondere, wenn das FormsAuthenticationModule-Objekt in der eingehenden Anforderung ein Formular Authentifizierungs Ticket findet, erstellt es ein neues GenericPrincipal-Objekt und weist es der User-Eigenschaft zu.
 
@@ -329,7 +329,7 @@ Fügen Sie als nächstes zwei &lt;BR/&gt;-Elemente direkt nach dem LoginView-Ste
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample9.aspx)]
 
-Die LoginView-Vorlagen können im Designer oder im deklarativen Markup definiert werden. Erweitern Sie im Visual Studio-Designer das Smarttag von LoginView, das die konfigurierten Vorlagen in einer Dropdown Liste auflistet. Geben Sie den Text Hello, Stranger in das AnonymousTemplate-Zeichen ein. Fügen Sie als nächstes ein Hyperlink-Steuerelement hinzu, und legen Sie dessen Text-und NavigateUrl-Eigenschaften auf anmelden bzw. ~/Login.aspx fest.
+Die LoginView-Vorlagen können im Designer oder im deklarativen Markup definiert werden. Erweitern Sie im Visual Studio-Designer das Smarttag von LoginView, das die konfigurierten Vorlagen in einer Dropdown Liste auflistet. Geben Sie in den Text Hello, fremden in AnonymousTemplate; als Nächstes ein Linksteuerelement hinzufügen, und legen Sie die Text- und NavigateUrl-Eigenschaften zum Anmelden und ~ / "Login.aspx", bzw.
 
 Wechseln Sie nach dem Konfigurieren von AnonymousTemplate zu LoggedInTemplate, und geben Sie den Text "Welcome Back" ein. Ziehen Sie dann ein LoginName-Steuerelement aus der Toolbox in die LoggedInTemplate, und platzieren Sie es unmittelbar nach dem Text "Willkommen zurück". Das [LoginName-Steuer](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginname.aspx)Element, wie der Name schon sagt, zeigt den Namen des aktuell angemeldeten Benutzers an. Intern gibt das LoginName-Steuerelement einfach die User.Identity.Name-Eigenschaft aus.
 
@@ -396,7 +396,7 @@ Abbildung 18 zeigt "default. aspx" beim Besuch von jisun. Beachten Sie, dass in 
 > [!NOTE]
 > Ich empfehle Ihnen, die Seite Logout. aspx so anzupassen, dass der logincontent-contentplachalter der Master Seite ausgeblendet wird (wie in Schritt 4 in "Login. aspx"). Der Grund hierfür ist, dass der vom LoginStatus-Steuerelement (der unter Hello, Stranger) gerenderte Link Button den Benutzer an die Anmeldeseite sendet, wobei die aktuelle URL im Parameter "QueryString" von "Rückkehrer" übergeben wird. Kurz gesagt, wenn ein Benutzer, der sich abgemeldet hat, auf den Anmeldelink für LoginStatus klickt und sich dann anmeldet, wird er zurück zu Logout. aspx umgeleitet, was den Benutzer leicht verwirren könnte.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben wir mit einer Untersuchung des Workflows zur Formular Authentifizierung begonnen und dann die Formular Authentifizierung in einer ASP.NET-Anwendung implementiert. Die Formular Authentifizierung basiert auf dem FormsAuthenticationModule, das zwei Zuständigkeiten hat: die Identifizierung von Benutzern auf der Grundlage ihres Formular Authentifizierungs Tickets und die Umleitung nicht autorisierter Benutzer auf die Anmeldeseite.
 
@@ -406,7 +406,7 @@ In diesem Tutorial wurde eine kurze Übersicht über die Formular Authentifizier
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -420,7 +420,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 
 - [Verwenden der grundlegenden Formularauthentifizierung in ASP.NET](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

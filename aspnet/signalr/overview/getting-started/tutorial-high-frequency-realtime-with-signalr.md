@@ -10,11 +10,11 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtim
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 2503e90735d6cfa445ee08c9e43f8443aa106096
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600453"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450117"
 ---
 # <a name="tutorial-create-high-frequency-real-time-app-with-signalr-2"></a>Tutorial: Erstellen einer Hochfrequenz-Echt Zeit-App mit signalr 2
 
@@ -24,7 +24,7 @@ Die von Ihnen erstellte Anwendung zeigt eine Form an, die Benutzer ziehen könne
 
 Die in diesem Tutorial eingeführten Konzepte enthalten Anwendungen in Echtzeit-spielen und anderen Simulationsanwendungen.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts
@@ -38,9 +38,9 @@ In diesem Tutorial:
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der Arbeitsauslastung **ASP.net und Webentwicklung** .
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der Workload **ASP.NET und Webentwicklung**
 
 ## <a name="set-up-the-project"></a>Einrichten des Projekts
 
@@ -62,7 +62,7 @@ In diesem Abschnitt wird gezeigt, wie Sie Visual Studio 2017 verwenden, um eine 
 
     In diesem Schritt wird die *MoveShapeHub.cs* -Klassendatei erstellt. Gleichzeitig werden dem Projekt ein Satz von Skriptdateien und Assemblyverweisen hinzugefügt, die signalr unterstützen.
 
-1. Wählen **Sie** Extras > **nuget-Paket-Manager** > Paket-Manager- **Konsole**aus.
+1. Klicken Sie auf **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**.
 
 1. Führen Sie in der **Paket-Manager-Konsole**den folgenden Befehl aus:
 
@@ -88,7 +88,7 @@ In diesem Abschnitt erstellen Sie eine Browser Anwendung. Die APP sendet den Spe
 
     [!code-csharp[Main](tutorial-high-frequency-realtime-with-signalr/samples/sample1.cs)]
 
-1. Speichern Sie die Datei.
+1. Speichern Sie die Datei .
 
 Die `MoveShapeHub`-Klasse ist eine Implementierung eines signalr-Hubs. Wie im Lernprogramm für die ersten Schritte [mit signalr](tutorial-getting-started-with-signalr.md) hat der Hub eine Methode, die von den Clients direkt aufgerufen wird. In diesem Fall sendet der Client ein Objekt mit den neuen X-und Y-Koordinaten der Form an den Server. Diese Koordinaten werden an alle anderen verbundenen Clients übertragen. Signalr serialisiert dieses Objekt automatisch mithilfe von JSON.
 
@@ -228,7 +228,7 @@ Mit diesem Code wird die Form von der alten an die neue Position verschoben. Der
 
 [Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Das Kommunikations Paradigma, das Sie soeben kennengelernt haben, eignet sich für die Entwicklung von Online spielen und anderen Simulationen, wie z. b. [mit signalr erstellten shootr](https://shootr.azurewebsites.net/)-spielen.
 
@@ -242,7 +242,7 @@ Weitere Informationen zu signalr finden Sie in den folgenden Ressourcen:
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts

@@ -9,11 +9,11 @@ ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
 ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74591242"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520371"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellung zum Testen
 
@@ -23,7 +23,7 @@ Diese tutorialreihe zeigt, wie Sie eine ASP.NET-Webanwendung mithilfe von Visual
 
 Eine aktuelle Version der Bereitstellung in Azure finden Sie unter [Erstellen einer ASP.net Core-Web-App in Azure](/azure/app-service/app-service-web-get-started-dotnet).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial stellen Sie eine ASP.NET-Webanwendung für Internet Information Server (IIS) auf dem lokalen Computer bereit.
 
@@ -115,7 +115,7 @@ Sie sind jetzt bereit, eine Webanwendung in IIS zu veröffentlichen. Erstellen S
 
 <a id="sqlexpress"></a>
 
-## <a name="install-sql-server-express"></a>Installieren von SQL Server Express
+## <a name="install-sql-server-express"></a>SQL Server Express installieren
 
 Localdb ist nicht für die Verwendung in IIS konzipiert, daher muss in Ihrer Testumgebung SQL Server Express installiert sein. Wenn Sie Visual Studio 2010 SQL Server Express verwenden, ist es bereits standardmäßig installiert. Wenn Sie Visual Studio 2012 oder höher verwenden, installieren Sie SQL Server Express.
 
@@ -174,13 +174,13 @@ Sie können das Veröffentlichungs Profil so konfigurieren, dass das Grant-Skrip
 
 1. Öffnen Sie in Visual Studio die Datei *Grant. SQL* , die Sie zuvor erstellt haben.
 
-2. Wählen Sie **verbinden**aus. 
+2. Wählen Sie **Verbinden**. 
 
-    ![Verbindungs Schaltfläche](deploying-to-iis/_static/image11.png)
+    ![Schaltfläche „Verbinden“](deploying-to-iis/_static/image11.png)
 
-3. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** den Namen *.\sqlexpress* als **Servernamen**ein. Wählen Sie **verbinden**aus.
+3. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** den Namen *.\sqlexpress* als **Servernamen**ein. Wählen Sie **Verbinden**.
 
-4. Wählen Sie in der Dropdown Liste Datenbank die Option **Conto souniversity**aus. Wählen Sie **Ausführen**aus. 
+4. Wählen Sie in der Dropdown Liste Datenbank die Option **Conto souniversity**aus. Wählen Sie **Execute**(Ausführen). 
 
    ![](deploying-to-iis/_static/image12.png)
 
@@ -372,7 +372,7 @@ Mit dieser zusätzlichen Verbindungs Zeichenfolge können Sie ein Benutzerkonto 
 
 2. Erstellen Sie eine Transformation für die Datei "Web. config" für die Verbindungs Zeichenfolge, die von der Anwendung zur Laufzeit verwendet werden soll.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben Ihre Anwendung nun auf dem Entwicklungs Computer auf IIS bereitgestellt und dort getestet.
 

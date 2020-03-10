@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
-title: '[Gewusst wie:] Anpassen einer Website mit Profilen und Designs? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Meine Website mit Profilen und Designs anpassen? | Microsoft-Dokumentation'
 author: microsoft
-description: Erfahren Sie, wie Sie Profile mit benutzerspezifischen Informationen erfassen und Anwenden von Designs, um eine konsistente Aussehen und Verhalten in der gesamten Website zu erweitern.
+description: Erfahren Sie, wie Sie mithilfe von Profilen Konfigurationsinformationen pro Benutzer sammeln und Designs anwenden, um ein konsistentes Erscheinungsbild auf der Website zu erweitern.
 ms.author: riande
 ms.date: 01/06/2006
 ms.assetid: b837358b-ed14-44cd-b9fa-54910dd3e8b9
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-customize-my-site-with-profiles-and-themes
 msc.type: video
 ms.openlocfilehash: 14ca6675bf8024e7dbc5f22497a4bc8ab236dd69
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401451"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462291"
 ---
-# <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a>[Gewusst wie:] Anpassen einer Website mit Profilen und Designs?
+# <a name="how-do-i-customize-my-site-with-profiles-and-themes"></a>[Gewusst wie:] Meine Website mit Profilen und Designs anpassen?
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-Erfahren Sie, wie Sie Profile mit benutzerspezifischen Informationen erfassen und Anwenden von Designs, um eine konsistente Aussehen und Verhalten in der gesamten Website zu erweitern.
+Erfahren Sie, wie Sie mithilfe von Profilen Konfigurationsinformationen pro Benutzer sammeln und Designs anwenden, um ein konsistentes Erscheinungsbild auf der Website zu erweitern.
 
-[&#9654;Sehen Sie sich Video (12 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-customize-my-site-with-profiles-and-themes)
+[&#9654;Video ansehen (12 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-customize-my-site-with-profiles-and-themes)

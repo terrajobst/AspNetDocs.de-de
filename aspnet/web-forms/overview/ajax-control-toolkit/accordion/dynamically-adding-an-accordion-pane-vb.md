@@ -9,11 +9,11 @@ ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
 ms.openlocfilehash: be48db5ea3de4af46b0f864cc9e73d2f518294a4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607206"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484143"
 ---
 # <a name="dynamically-adding-an-accordion-pane-vb"></a>Dynamisches Hinzufügen eines Accordion-Bereichs (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Steuerelement "Accordion" im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht es dem Benutzer, jeweils ein Element anzuzeigen. Bereiche werden in der Regel auf der Seite selbst deklariert, aber serverseitiger Code kann verwendet werden, um das gleiche Ergebnis zu erzielen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Steuerelement "Accordion" im AJAX Control Toolkit bietet mehrere Bereiche und ermöglicht es dem Benutzer, jeweils ein Element anzuzeigen. Bereiche werden in der Regel auf der Seite selbst deklariert, aber serverseitiger Code kann verwendet werden, um das gleiche Ergebnis zu erzielen.
 
@@ -58,4 +58,4 @@ Um das Beispiel abzuschließen, stellen die beiden CSS-Klassen, auf die im Accor
 Die Daten im Akkordeon wurden durch serverseitigen Code dynamisch hinzugefügt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](dynamically-adding-an-accordion-pane-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](databinding-to-an-accordion-vb.md)
+> [Previous](databinding-to-an-accordion-vb.md)

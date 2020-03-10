@@ -9,11 +9,11 @@ ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 20073d156b4bd5ce67a47d2511b28594b70ce260
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599105"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446205"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-c"></a>Verarbeiten von Postbacks über ein ModalPopup-Steuerelement (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es muss besonders darauf geachtet werden, wenn ein Postback aus dem Popup erstellt wird.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Es muss besonders darauf geachtet werden, wenn ein Postback aus dem Popup erstellt wird.
 

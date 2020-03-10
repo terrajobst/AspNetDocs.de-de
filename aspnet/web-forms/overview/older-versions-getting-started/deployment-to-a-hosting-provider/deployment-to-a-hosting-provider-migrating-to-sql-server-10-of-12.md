@@ -9,11 +9,11 @@ ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: c5281a42596d95e725b32e652c75785abe0fd64e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640559"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462837"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Migrieren zu SQL Server-10 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie Sie von SQL Server Compact zu SQL Server migrieren. Ein Grund hierfür ist, dass Sie die Vorteile von SQL Server Features nutzen können, die SQL Server Compact nicht unterstützt, wie z. b. gespeicherte Prozeduren, Trigger, Sichten oder Replikation. Weitere Informationen zu den Unterschieden zwischen SQL Server Compact und SQL Server finden Sie im Tutorial bereitstellen [SQL Server Compact](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md) .
 
@@ -112,7 +112,7 @@ Die Registerkarte **Paket-/Veröffentlichungs-SQL** ist normalerweise deaktivier
 
 Klicken Sie auf **aus "Web. config" Importieren**.
 
-![Selecting_Import_from_Web. config](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image5.png)
+![Selecting_Import_from_Web.config](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image5.png)
 
 Visual Studio sucht in der Datei " *Web. config* " nach Verbindungs Zeichenfolgen, sucht einen für die Mitgliedschafts Datenbank und einen für die Datenbank "School" und fügt eine Zeile hinzu, die jeder Verbindungs Zeichenfolge in der Tabelle " **Datenbankeinträge** " entspricht. Die gefundenen Verbindungs Zeichenfolgen gelten für die vorhandenen SQL Server Compact-Datenbanken. der nächste Schritt besteht darin, zu konfigurieren, wie und wo diese Datenbanken bereitgestellt werden sollen.
 
@@ -224,7 +224,7 @@ Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Proje
 
 Wählen Sie die Registerkarte **Profil** aus.
 
-Klicken Sie auf **Profile verwalten**.
+Klicken Sie auf **Manage Profiles** (Profile verwalten).
 
 Wählen Sie **Test**, klicken Sie auf **Entfernen**, und klicken Sie dann auf **Schließen**.
 
@@ -347,7 +347,7 @@ Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Proje
 
 Wählen Sie die Registerkarte **Profil** aus.
 
-Klicken Sie auf **Profile verwalten**.
+Klicken Sie auf **Manage Profiles** (Profile verwalten).
 
 Wählen Sie **Produktion**, klicken Sie auf **Entfernen**, und klicken Sie dann auf **Schließen**.
 
@@ -361,7 +361,7 @@ Wählen Sie die Registerkarte **Profil** aus.
 
 Klicken Sie auf **importieren**, und wählen Sie die publishsettings-Datei aus, die Sie zuvor heruntergeladen haben.
 
-Ändern Sie auf der Registerkarte **Verbindung** die **Ziel-URL** in die korrekte temporäre URL, die in diesem Beispiel http://contosouniversity.com.vserver01.cytanium.com ist.
+Ändern Sie auf der Registerkarte **Verbindung** die **Ziel-URL** in die korrekte temporäre URL, die in diesem Beispiel http://contosouniversity.com.vserver01.cytanium.comist.
 
 Benennen Sie das Profil in Production um. (Wählen Sie die Registerkarte **Profil** aus, und klicken Sie hierzu auf **Profile verwalten** .)
 
@@ -414,7 +414,7 @@ Schließen Sie das **Websiteverwaltungs-Tool**.
 
 Wählen Sie in der Dropdown Liste **Standard Projekt** das Projekt conjesouniversity. dal aus.
 
-Geben Sie den folgenden Befehl ein:
+Geben Sie folgenden Befehl ein:
 
 [!code-powershell[Main](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/samples/sample9.ps1)]
 

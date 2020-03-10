@@ -9,11 +9,11 @@ ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
 ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617639"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513669"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellung in der Produktion
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial richten Sie ein Microsoft Azure-Konto ein, erstellen Staging-und Produktionsumgebungen und stellen Ihre ASP.NET-Webanwendung mithilfe der Visual Studio-Funktion zum Veröffentlichen mit nur einem Mausklick in der Stagingumgebung und in der Produktionsumgebung bereit.
 
@@ -33,7 +33,7 @@ Erinnerung: Wenn Sie eine Fehlermeldung erhalten oder etwas nicht funktioniert, 
 
 ## <a name="get-a-microsoft-azure-account"></a>Microsoft Azure Konto erhalten
 
-Wenn Sie noch nicht über ein Azure-Konto verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Wenn Sie noch nicht über ein Azure-Konto verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Einen Monat kostenlos testen](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
 ## <a name="create-a-staging-environment"></a>Erstellen einer Stagingumgebung
 
@@ -55,7 +55,7 @@ In diesem Abschnitt des Tutorials erstellen Sie eine Web-App und eine Datenbank,
     Der Assistent zum **Erstellen einer neuen Website** wird geöffnet. Mit dem Assistenten für **benutzerdefinierte Erstellung** können Sie gleichzeitig eine Website und eine Datenbank erstellen.
 3. Geben Sie im Schritt **Website erstellen** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL für die Stagingumgebung Ihrer Anwendung verwendet werden soll. Geben Sie z. b. contesouniversity-staging123 (einschließlich Zufallszahlen am Ende) ein, um diese für den Fall eindeutig zu gestalten, dass contesouniversity-Staging durchgeführt wird.
 
-    Die vollständige URL besteht aus den hier eingegebenen Informationen sowie dem Suffix, das neben dem Textfeld angezeigt wird.
+    Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird.
 4. Wählen Sie in der Dropdown Liste **Region** die Region aus, die Ihnen am nächsten liegt.
 
     Diese Einstellung gibt an, in welchem Rechenzentrum Ihre Web-App ausgeführt wird.
@@ -67,12 +67,12 @@ In diesem Abschnitt des Tutorials erstellen Sie eine Web-App und eine Datenbank,
 
     ![Website Schritt erstellen](deploying-to-production/_static/image1.png)
 
-    Der Assistent wechselt zum Schritt **Datenbankeinstellungen angeben** .
+    Der Assistent springt zum Schritt **Specify database settings** .
 8. Geben Sie im Feld **Name** die Zeichenfolge *conalsouniversity* plus eine Zufallszahl ein, um Sie eindeutig zu machen, z. b. *ContosoUniversity123*.
 9. Wählen Sie im Feld **Server** die Option **neuer SQL-Datenbankserver**aus.
 10. Geben Sie einen Administrator Namen und ein Kennwort ein.
 
-    Sie geben hier keinen vorhandenen Namen und kein Kennwort ein. Sie geben einen neuen Namen und ein Kennwort ein, die Sie jetzt definieren, wenn Sie auf die Datenbank zugreifen.
+    Sie geben hier keinen vorhandenen Namen und kein Kennwort ein. Sie geben einen neuen Namen und das dazugehörige Kennwort ein. Diese Angaben werden hier zur späteren Verwendung für den Zugriff auf die Datenbank definiert.
 11. Wählen Sie im Feld **Region** die Region aus, die Sie für die Web-App ausgewählt haben.
 
     Wenn Sie den Webserver und den Datenbankserver in derselben Region aufbewahren, erzielen Sie die beste Leistung und minimieren die Kosten.
@@ -110,15 +110,15 @@ Nachdem Sie nun eine Web-App und eine Datenbank für die Stagingumgebung erstell
     ![die publishsettings-Datei wird gespeichert.](deploying-to-production/_static/image6.png)
 
     > [!WARNING]
-    > Sicherheit: die *publishsettings* -Datei enthält Ihre (unverschlüsselten) Anmelde Informationen, die zum Verwalten Ihrer Azure-Abonnements und-Dienste verwendet werden. Die bewährte Sicherheitsmaßnahme für diese Datei besteht darin, diese temporär außerhalb der Quellverzeichnisse (z. b. im Ordner libraries\documents) zu speichern und Sie nach Abschluss des Imports zu löschen. Ein böswilliger Benutzer, der Zugriff auf die *publishsettings* -Datei erlangt, kann die Azure-Dienste bearbeiten, erstellen und löschen.
+    > Sicherheit: die *publishsettings* -Datei enthält Ihre (unverschlüsselten) Anmelde Informationen, die zum Verwalten Ihrer Azure-Abonnements und-Dienste verwendet werden. Die bewährte Sicherheitsmethode für diese Datei besteht im vorübergehenden Speichern außerhalb Ihrer Quellcodeverzeichnisse (beispielsweise im Ordner "Libraries\Documents"). Löschen Sie sie nach Abschluss des Importvorgangs. Ein böswilliger Benutzer, der Zugriff auf die *publishsettings* -Datei erlangt, kann die Azure-Dienste bearbeiten, erstellen und löschen.
 
 ### <a name="create-a-publish-profile"></a>Erstellen eines Veröffentlichungs Profils
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt condesouniversity in **Projektmappen-Explorer** , und wählen Sie im Kontextmenü **veröffentlichen** aus.
 
     Der Assistent **Web veröffentlichen** wird geöffnet.
-2. Klicken Sie auf die Registerkarte **Profil** .
-3. Klicken Sie auf **importieren**.
+2. Klicken Sie auf die Registerkarte **Profil**.
+3. Klicken Sie auf **Importieren**.
 4. Navigieren Sie zur Datei " *. publishsettings* ", die Sie zuvor heruntergeladen haben, und klicken Sie auf **Öffnen**.
 
     ![Dialogfeld "Veröffentlichungs Einstellungen importieren"](deploying-to-production/_static/image7.png)
@@ -198,13 +198,13 @@ In diesem Tutorial erstellen Sie eine Datei " *robots. txt* ".
 
     Sie möchten, dass Suchmaschinen Ihre Produktions-App katalogisieren, sodass Sie diese Datei aus der Produktions Bereitstellung ausschließen müssen. Zu diesem Zweck konfigurieren Sie eine Einstellung im Veröffentlichungs Profil für die Produktion, wenn Sie Sie erstellen.
 
-### <a name="deploy-to-staging"></a>Bereitstellung für Staging
+### <a name="deploy-to-staging"></a>Bereitstellen in der Stagingumgebung
 
 1. Öffnen Sie den Assistenten zum Veröffentlichen von Web-Assistenten, indem Sie mit der **rechten Maustaste auf**das Projekt "Projekt der Projekt **Website**
 2. Stellen Sie sicher, dass das Stagingprofil ausgewählt ist.
 3. Klicken Sie auf **Veröffentlichen**.
 
-    Das Fenster **Ausgabe** zeigt, welche Bereitstellungs Aktionen ausgeführt wurden, und meldet einen erfolgreichen Abschluss der Bereitstellung. Der Standardbrowser öffnet automatisch die URL der bereitgestellten Web-App.
+    Im Fenster **Ausgabe** wird angezeigt, welche Bereitstellungsaktionen ausgeführt wurden, und es wird die erfolgreiche Durchführung der Bereitstellung gemeldet. Der Standardbrowser öffnet automatisch die URL der bereitgestellten Web-App.
 
 ## <a name="test-in-the-staging-environment"></a>Testen in der Stagingumgebung
 
@@ -224,7 +224,7 @@ Fordern Sie eine ungültige URL an, um einen Fehler zu verursachen, den ELMAH na
 
 Die Anwendung, die Sie erstellt haben, wird jetzt in der Cloud in einer Web-App ausgeführt, die genau wie für die Produktion verwendet werden soll. Da alles ordnungsgemäß funktioniert, besteht der nächste Schritt in der Bereitstellung in der Produktion.
 
-## <a name="deploy-to-production"></a>In Produktionsumgebungen bereitstellen
+## <a name="deploy-to-production"></a>Bereitstellen für die Produktion
 
 Der Prozess zum Erstellen einer Produktions-Web-App und zum Bereitstellen in der Produktion ist identisch mit dem für das Staging, mit der Ausnahme, dass Sie die " *robots. txt* " aus der Bereitstellung ausschließen müssen Zu diesem Zweck bearbeiten Sie die Veröffentlichungs Profil Datei.
 
@@ -265,7 +265,7 @@ Eine *pubxml* -Datei enthält die Einstellungen, die sich auf ein bestimmtes Ver
 
     Weitere Informationen zum Ausschließen von Dateien und Ordnern finden Sie unter [kann ich bestimmte Dateien oder Ordner von der Bereitstellung ausschließen?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) in den häufig gestellten Fragen **zur Webbereitstellung für Visual Studio und ASP.net** auf MSDN.
 
-### <a name="deploy-to-production"></a>In Produktionsumgebungen bereitstellen
+### <a name="deploy-to-production"></a>Bereitstellen für die Produktion
 
 1. Öffnen Sie den Assistenten **Web veröffentlichen** , stellen Sie sicher, dass das Veröffentlichungs Profil für die **Produktion** ausgewählt ist, und klicken Sie dann auf der Registerkarte **Vorschau** auf **Vorschau starten** , um zu überprüfen, ob die Datei *robots. txt* in die Produktions-App kopiert wird.
 
@@ -278,7 +278,7 @@ Eine *pubxml* -Datei enthält die Einstellungen, die sich auf ein bestimmtes Ver
 
     Alles ist mit dem Staging identisch, außer die URL und das Fehlen der Datei " *robots. txt* ".
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben Ihre Web-App nun erfolgreich bereitgestellt und getestet und sind öffentlich über das Internet verfügbar.
 
@@ -287,7 +287,7 @@ Sie haben Ihre Web-App nun erfolgreich bereitgestellt und getestet und sind öff
 Im nächsten Tutorial aktualisieren Sie den Anwendungscode und stellen die Änderungen in den Test-, Staging-und Produktionsumgebungen bereit.
 
 > [!NOTE]
-> Während Ihre Anwendung in der Produktionsumgebung verwendet wird, sollten Sie einen Wiederherstellungs Plan implementieren. Das heißt, Sie müssen die Datenbanken in regelmäßigen Abständen von der Produktions-APP an einem sicheren Speicherort sichern, und Sie sollten mehrere Generationen solcher Sicherungen aufbewahren. Wenn Sie die Datenbank aktualisieren, sollten Sie direkt vor der Änderung eine Sicherungskopie erstellen. Wenn Sie dann einen Fehler machen und ihn erst ermitteln, wenn Sie ihn in der Produktionsumgebung bereitgestellt haben, können Sie die Datenbank weiterhin in dem Zustand wiederherstellen, in dem Sie sich befand, bevor Sie beschädigt wurde. Weitere Informationen finden Sie unter [Sichern und Wiederherstellen von Azure SQL-Datenbanken](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
+> Während Ihre Anwendung in der Produktionsumgebung verwendet wird, sollten Sie einen Wiederherstellungs Plan implementieren. Das heißt, Sie müssen die Datenbanken in regelmäßigen Abständen von der Produktions-APP an einem sicheren Speicherort sichern, und Sie sollten mehrere Generationen solcher Sicherungen aufbewahren. Wenn Sie die Datenbank aktualisieren, sollten Sie direkt vor der Änderung eine Sicherungskopie erstellen. Wenn Sie dann einen Fehler machen und ihn erst ermitteln, wenn Sie ihn in der Produktionsumgebung bereitgestellt haben, können Sie die Datenbank weiterhin in dem Zustand wiederherstellen, in dem Sie sich befand, bevor Sie beschädigt wurde. Weitere Informationen finden Sie unter [Sichern und Wiederherstellen der Azure SQL-Datenbank](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
 > 
 > 
 > [!NOTE]

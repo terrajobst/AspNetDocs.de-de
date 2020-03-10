@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
-title: '[Gewusst wie:] Arbeiten mit Masterseiten, deklaratives und Programmgesteuertes | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Deklarativ und Programm gesteuert mit Master Seiten arbeiten | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem video Chris Pels zeigt mehrere Aspekte des definieren und Verwenden von Masterseiten in einer ASP.NET-Website. Zunächst erfahren Sie, wie Masterseiten Declarati erstellen...
+description: In diesem Video zeigt Chris Pels verschiedene Aspekte der Definition und Verwendung von Masterseiten auf einer ASP.NET-Website an. Zuerst finden Sie weitere Informationen unter Erstellen von Masterseiten deklarati...
 ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 4f5f7805-373f-4dc3-b7f6-219edf7e66a3
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
 msc.type: video
 ms.openlocfilehash: 821ad2015d6cc040e219aec59d96792e715e2d7b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392221"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464001"
 ---
-# <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[Gewusst wie:] Arbeiten Sie mit Masterseiten, deklarativ und programmgesteuert
+# <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[Gewusst wie:] Deklarativ und Programm gesteuert mit Master Seiten arbeiten
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-In diesem video Chris Pels zeigt mehrere Aspekte des definieren und Verwenden von Masterseiten in einer ASP.NET-Website. Zunächst erfahren Sie, wie Masterseiten, die deklarativ mit dem ASP.NET Masterseite-Modell erstellen, und erfahren Sie, welche Informationen an eine Masterseite, die im Vergleich zu einer einzelnen Inhaltsseite am besten geeignet ist. Als Nächstes sehen Sie Masterseiten auf dynamisch in einer einzelnen Inhaltsseite programmgesteuert zuweisen. Außerdem erfahren Sie, wie eine Basisseite-Klasse erstellen, die eine Masterseite programmgesteuert für alle Seiten zugewiesen, die von der Basisklasse erben. Darüber hinaus finden Sie unter die Gestaltungsvorlage in der Datei "Web.config" festgelegt. Schließlich finden Sie unter Zugriff auf Elemente in einer Masterseite von einer einzelnen Inhaltsseite einschließlich einige bewährten Methoden für den Zugriff auf Elemente der Masterseite zu strukturieren.
+In diesem Video zeigt Chris Pels verschiedene Aspekte der Definition und Verwendung von Masterseiten auf einer ASP.NET-Website an. Zunächst erfahren Sie, wie Sie Masterseiten deklarativ mithilfe des ASP.NET-Masterseiten Modells erstellen und erfahren, welche Informationen für eine Master Seite im Vergleich zu einer einzelnen Inhaltsseite am besten geeignet sind. Weitere Informationen finden Sie Unterprogramm gesteuertes Zuweisen von Masterseiten auf einer einzelnen Inhaltsseite. Außerdem wird beschrieben, wie Sie eine Basis Seiten Klasse erstellen, die Programm gesteuert eine Master Seite für alle Seiten zuweist, die von der Basisklasse erben. Weitere Informationen finden Sie unter Vorgehensweise beim Festlegen der Master Seite in der Datei "Web. config". Weitere Informationen finden Sie unter Gewusst wie: Zugreifen auf Elemente in einer Master Seite von einer einzelnen Inhaltsseite aus, einschließlich einiger bewährter Methoden zum Strukturieren des Zugriffs auf Masterseiten Elemente.
 
-[&#9654;Sehen Sie sich Video (29 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-master-pages-declaratively-and-programmatically)
+[&#9654;Video ansehen (29 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-master-pages-declaratively-and-programmatically)

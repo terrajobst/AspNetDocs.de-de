@@ -1,234 +1,234 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
-title: 'Teil 7: Hinzufügen von Funktionen | Microsoft-Dokumentation'
+title: 'Teil 7: Hinzufügen von Features | Microsoft-Dokumentation'
 author: JoeStagner
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 7 fügt zusätzliche Funktionen wie das Konto übe...
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. Teil 7 fügt zusätzliche Funktionen hinzu, wie z. b. Konto Revie...
 ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
 ms.openlocfilehash: ffd2b862c727db9572c272b7b21bcc33c822fffa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126867"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521565"
 ---
-# <a name="part-7-adding-features"></a>Teil 7: Hinzufügen von Funktionen
+# <a name="part-7-adding-features"></a>Teil 7: Hinzufügen von Features
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
+> Tailspin SpyWorks veranschaulicht, wie einfach es ist, leistungsstarke, skalierbare Anwendungen für die .NET-Plattform zu erstellen. Es zeigt, wie die großartigen neuen Features in ASP.NET 4 verwendet werden, um einen Online Shop zu erstellen, einschließlich Einkaufs-, Checkout-und Verwaltungsfunktionen.
 > 
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 7 fügt zusätzliche Funktionen wie das Konto überprüfen, produktbesprechungen und "beliebtesten Elemente" und "auch erworbenen" Benutzersteuerelemente hinzu.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. Teil 7 bietet zusätzliche Features, wie z. b. Kontoüberprüfung, Produkt Reviews und "beliebte Elemente" und "auch erworbene" Benutzer Steuerelemente.
 
-## <a id="_Toc260221673"></a>  Hinzufügen von Funktionen
+## <a id="_Toc260221673"></a>Hinzufügen von Features
 
-Obwohl Benutzer unserem Katalog durchsuchen können, platzieren Sie Elemente in ihren Einkaufskorb legen, und abgeschlossen Sie des Auscheckvorgangs, gibt es zahlreiche unterstützende Funktionen, die wir einfügen, um die Verbesserung unserer Website.
+Obwohl Benutzer unseren Katalog durchsuchen, Elemente in Ihren Warenkorb platzieren und den Checkout Vorgang durchführen können, gibt es eine Reihe von unterstützenden Features, die wir zur Verbesserung unserer Website berücksichtigen werden.
 
-1. Überprüfen Sie das Konto (Liste Bestellungen platziert und zeigen Sie Details.)
-2. Fügen Sie einige spezifischen Kontext-Inhalt, auf die Titelseite.
-3. Fügen Sie ein Feature, das Benutzern lesen Sie die Produkte im Katalog hinzu.
-4. Erstellen Sie ein Benutzersteuerelement zum Anzeigen der beliebtesten Elemente und Ort, die steuern, auf der Titelseite ein.
-5. Erstellen eines Benutzersteuerelements "Auch gekauft", und fügen sie die Seite für Produktdetails hinzu.
-6. Hinzufügen eines Kontakts Seite.
-7. Hinzufügen einer zu Seite.
+1. Kontoüberprüfung (Auflisten von Aufträgen und Anzeigen von Details.)
+2. Fügen Sie der Vorderseite kontextspezifischen Inhalt hinzu.
+3. Fügen Sie eine Funktion hinzu, mit der Benutzer die Produkte im Katalog überprüfen können.
+4. Erstellen Sie ein Benutzer Steuerelement, um beliebte Elemente anzuzeigen und dieses Steuerelement auf der Vorderseite zu platzieren.
+5. Erstellen Sie ein "auch erworbenes" Benutzer Steuerelement, und fügen Sie es der Seite "Produktdetails" hinzu.
+6. Fügen Sie eine Kontaktseite hinzu.
+7. Fügen Sie eine Info-Seite hinzu.
 8. Globaler Fehler
 
-## <a id="_Toc260221674"></a>  Konto überprüfen
+## <a id="_Toc260221674"></a>Kontoüberprüfung
 
-Erstellen Sie zwei ASPX-Seiten, die eine benannte OrderList.aspx und die andere benannte OrderDetails.aspx im Ordner "Konto"
+Erstellen Sie im Ordner "Account" zwei ASPX-Seiten mit dem Namen "OrderList. aspx" und die andere mit dem Namen "OrderDetails. aspx".
 
-OrderList.aspx werden die GridView- und EntityDataSource-Steuerelemente nutzen, ähnlich wie zuvor schon.
+"OrderList. aspx" nutzt die GridView-und EntityDataSource-Steuerelemente ähnlich wie zuvor.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample1.aspx)]
 
-Das EntityDataSource wählt die Datensätze aus der Tabelle Orders, die den Benutzernamen, das gefiltert (siehe die WhereParameter) die wir in einer Sitzungsvariablen festgelegt, wenn die Benutzeranmeldung in ist.
+Die EntityDataSource wählt Datensätze aus der Tabelle Orders aus, die nach dem Benutzernamen gefiltert wird (siehe Where Parameter), den wir in einer Sitzungsvariablen festlegen, wenn der Benutzer sich in befindet.
 
-Beachten Sie auch diese Parameter werden in der HyperlinkField der GridView:
+Beachten Sie auch diese Parameter im HyperLinkField der GridView:
 
 [!code-xml[Main](tailspin-spyworks-part-7/samples/sample2.xml)]
 
-Dazu geben Sie den Link zum Anzeigen Details für jedes Produkt, das Feld "OrderID" als QueryString-Parameter auf der Seite "OrderDetails.aspx" angeben.
+Diese geben den Link zur Order Details-Ansicht für jedes Produkt an, das das OrderID-Feld als QueryString-Parameter für die Order Details. aspx-Seite angibt.
 
-## <a id="_Toc260221675"></a>  OrderDetails.aspx
+## <a id="_Toc260221675"></a>OrderDetails. aspx
 
-Wir verwenden ein EntityDataSource-Steuerelement den Zugriff auf die Bestellungen und einem FormView-Steuerelement zum Anzeigen der Daten und eine andere EntityDataSource mit einer GridView-Ansicht zum Anzeigen aller der Bestellung Einzelposten.
+Wir verwenden ein EntityDataSource-Steuerelement für den Zugriff auf die Bestellungen und eine FormView zum Anzeigen der Bestelldaten und eine weitere EntityDataSource mit einer GridView, um alle Positionen der Bestellung anzuzeigen.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample3.aspx)]
 
-In der CodeBehind-Datei (OrderDetails.aspx.cs) haben wir zwei kleine Teile Wartungsaufgaben.
+In der Code Behind-Datei (OrderDetails.aspx.cs) gibt es zwei wenige Teile der Hausführung.
 
-Zunächst müssen wir sicherstellen, dass OrderDetails immer ein "OrderID" ruft.
+Zuerst müssen wir sicherstellen, dass Order Details immer eine OrderID erhält.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample4.cs)]
 
-Wir müssen auch zum Berechnen und die Gesamtsumme aus die Einzelposten des Auftrags anzeigen.
+Wir müssen auch die Bestellsumme aus den Zeilen Elementen berechnen und anzeigen.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>  Auf der Startseite
+## <a id="_Toc260221676"></a>Die Startseite
 
-Fügen Sie einige statische Inhalte auf der Seite "default.aspx" ein.
+Fügen wir der Seite Default. aspx einige statische Inhalte hinzu.
 
-Zunächst erstelle ich einen Ordner "Content" und darin einen Ordner "Images" (und ich werde ein Bild auf der Homepage verwendet werden.)
+Zuerst erstelle ich einen Ordner "Content" (Inhalt) und innerhalb des Ordners "Images" (Ich füge ein Bild ein, das auf der Startseite verwendet werden soll.)
 
-Fügen Sie in den Platzhalter unteren Rand der Seite "default.aspx" das folgende Markup hinzu.
+Fügen Sie im unteren Platzhalter der default. aspx-Seite das folgende Markup hinzu.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>  Produktbesprechungen
+## <a id="_Toc260221677"></a>Produkt Reviews
 
-Zunächst fügen eine Schaltfläche mit einem Link zu einem Formular wir, die wir verwenden können, die eine produktprüfung eingeben.
+Zuerst fügen wir eine Schaltfläche mit einem Link zu einem Formular hinzu, das wir verwenden können, um eine Produkt Überprüfung einzugeben.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample7.aspx)]
 
 ![](tailspin-spyworks-part-7/_static/image1.jpg)
 
-Beachten Sie, dass die "ProductID" in der Abfragezeichenfolge übergeben werden
+Beachten Sie, dass die ProductID in der Abfrage Zeichenfolge übergeben wird.
 
-Nächste fügen Sie die Seite mit dem Namen ReviewAdd.aspx
+Als Nächstes fügen wir die Seite "reviewadd. aspx" hinzu.
 
-Diese Seite wird die ASP.NET AJAX Control Toolkit verwenden. Wenn Sie noch nicht getan haben, damit Sie es aus herunterladen [DevExpress](http://devexpress.com/act) und Anleitungen zum Einrichten des Toolkits für die Verwendung mit Visual Studio hier [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+Auf dieser Seite wird das ASP.NET AJAX Control Toolkit verwendet. Wenn Sie dies noch nicht getan haben, können Sie es von [DevExpress](http://devexpress.com/act) herunterladen. es gibt Anleitungen zum Einrichten des Toolkits für die Verwendung mit Visual Studio [https://www.asp.net/learn/ajax-videos/video-76.aspx](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
 
-Ziehen Sie im Entwurfsmodus Steuerelemente und Validierungssteuerelemente aus der Toolbox, und erstellen Sie eine Formulierung wie unten angegeben.
+Ziehen Sie im Entwurfs Modus Steuerelemente und Validierungs Steuerelemente aus der Toolbox, und erstellen Sie ein Formular wie das folgende.
 
 ![](tailspin-spyworks-part-7/_static/image2.jpg)
 
-Das Markup wird wie folgt aussehen.
+Das Markup sieht in etwa wie folgt aus.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample8.aspx)]
 
-Nun, da wir Reviews eingeben können, können diese Bewertungen auf der Seite angezeigt werden sollen.
+Nachdem wir nun die Überprüfungen eingegeben haben, können diese Überprüfungen auf der Produktseite angezeigt werden.
 
-Fügen Sie dieses Markup auf der Seite "ProductDetails.aspx" hinzu.
+Fügen Sie dieses Markup der Seite "ProductDetails. aspx" hinzu.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample9.aspx)]
 
-Die Anwendung jetzt ausführen, und navigieren Sie zu einem Produkt zeigt die Produktinformationen, einschließlich der Überprüfungen durch den Kunden.
+Wenn Sie die Anwendung jetzt ausführen und zu einem Produkt navigieren, werden die Produktinformationen einschließlich Kunden Reviews angezeigt.
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>  Beliebte ItemsControl (Erstellen von Benutzersteuerelementen)
+## <a id="_Toc260221678"></a>Beliebte Elemente-Steuerelement (Erstellen von Benutzer Steuerelementen)
 
-Um Umsatzsteigerung auf Ihrer Website fügen wir einige Funktionen auf "vorgeschlagene Sell" gebräuchlichsten und verwandte Produkte hinzu.
+Um den Umsatz auf Ihrer Website zu steigern, fügen wir einige Features zu beliebten oder verwandten Produkten hinzu.
 
-Der erste dieser Funktionen wird eine Liste mit den beliebtesten Produkt in unserem Produktkatalog.
+Die erste dieser Features ist eine Liste der beliebtesten Produkte in unserem Produktkatalog.
 
-Wir erstellen eine "User-Control" um die beliebtesten Elemente auf der Startseite der Anwendung anzuzeigen. Da dies ein Steuerelement sein wird, können wir es auf einer beliebigen Seite durch einfaches Ziehen und Ablegen des Steuerelements in Visual Studio Designer auf jeder Seite, die uns gefallen.
+Wir erstellen ein "Benutzer Steuerelement", um die am besten verkauften Elemente auf der Startseite der Anwendung anzuzeigen. Da dies ein Steuerelement ist, können wir es auf jeder Seite verwenden, indem wir einfach das Steuerelement im Designer von Visual Studio auf eine beliebige Seite ziehen und ablegen.
 
-Klicken Sie im Projektmappen-Explorer für Visual Studio mit der rechten Maustaste auf den Namen der Projektmappe, und erstellen Sie ein neues Verzeichnis namens "Steuerelemente". Obwohl es nicht erforderlich ist, ist, helfen wir unser Projekt, das durch das Erstellen von unserem Benutzersteuerelemente im Verzeichnis "Steuerelemente" zu halten.
+Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf den Projektmappennamen, und erstellen Sie ein neues Verzeichnis namens "Controls". Dies ist zwar nicht erforderlich, aber wir helfen, das Projekt zu organisieren, indem wir alle Benutzer Steuerelemente im Verzeichnis "Controls" erstellen.
 
-Mit der rechten Maustaste auf den Ordner "Steuerelemente", und wählen Sie "Neues Element":
+Klicken Sie mit der rechten Maustaste auf den Ordner Steuerelemente, und wählen Sie "Neues Element":
 
 ![](tailspin-spyworks-part-7/_static/image4.jpg)
 
-Geben Sie einen Namen für das Steuerelement von "PopularItems". Beachten Sie, dass die Dateierweiterung für Benutzersteuerelemente ASCX nicht aspx.
+Geben Sie einen Namen für das Steuerelement "popultems" an. Beachten Sie, dass es sich bei der Dateierweiterung für Benutzer Steuerelemente um. ascx not. aspx handelt.
 
-Unsere beliebten Elemente Benutzersteuerelement wird wie folgt definiert werden.
+Das Benutzer Steuerelement "beliebte Elemente" wird wie folgt definiert.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample10.aspx)]
 
-Hier verwenden wir eine Methode, die wir noch nicht in dieser Anwendung verwendet haben. Wir verwenden das Repeater-Steuerelement, und anstelle von Datenquellen-Steuerelement sind wir das Repeater-Steuerelement binden, um die Ergebnisse einer LINQ to Entities-Abfrage.
+Hier verwenden wir eine Methode, die wir noch nicht in dieser Anwendung verwendet haben. Wir verwenden das Repeater-Steuerelement und anstatt ein Datenquellen-Steuerelement zu verwenden, binden wir das Repeater-Steuerelement an die Ergebnisse einer LINQ to Entities Abfrage.
 
-In den Code hinter der das Steuerelement das machen wir wie folgt.
+Im Code Behind unseres Steuer Elements gehen wir wie folgt vor.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample11.cs)]
 
-Beachten Sie auch diese wichtige Zeile am Anfang Markup des Steuerelements.
+Beachten Sie auch diese wichtige Zeile am oberen Rand des Markup Elements des Steuer Elements.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample12.aspx)]
 
-Da die am häufigsten verwendeten Elemente pro minütlich nicht ändert, können wir eine schmerzenden Direktive zur Verbesserung der Leistung der Anwendung hinzufügen. Diese Anweisung bewirkt, dass die Steuerelemente Code nur ausgeführt werden, wenn die zwischengespeicherte Ausgabe des Steuerelements abläuft. Andernfalls wird die zwischengespeicherte Version der die Ausgabe des Steuerelements verwendet werden.
+Da die am häufigsten verwendeten Elemente nicht auf Minutenbasis geändert werden, können wir eine aching-Direktive hinzufügen, um die Leistung unserer Anwendung zu verbessern. Diese Direktive bewirkt, dass der Steuerelement Code nur ausgeführt wird, wenn die zwischengespeicherte Ausgabe des Steuer Elements abläuft. Andernfalls wird die zwischengespeicherte Version der Ausgabe des Steuer Elements verwendet.
 
-Jetzt ist alles, was wir schließen Sie das neue Steuerelement in unserer Seite "default.aspx" aus.
+Nun müssen wir nur noch unser neues Steuerelement auf der Seite "default. aspx" einschließen.
 
-Mithilfe von ziehen und ablegen, um eine Instanz des Steuerelements in der Spalte öffnen das Standard-Formular zu platzieren.
+Verwenden Sie Drag & Drop, um eine Instanz des Steuer Elements in der Spalte Öffnen des Standardformulars zu platzieren.
 
 ![](tailspin-spyworks-part-7/_static/image5.jpg)
 
-Wenn wir unsere Anwendung auf der Startseite ausführen zeigt die am häufigsten verwendeten Elemente jetzt.
+Wenn wir nun die Anwendung ausführen, werden auf der Startseite die beliebtesten Elemente angezeigt.
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>  "Auch gekauft" zu steuern (Benutzersteuerelemente mit Parametern)
+## <a id="_Toc260221679"></a>"Auch gekauft"-Steuerelement (Benutzer Steuerelemente mit Parametern)
 
-Das zweite Steuerelement, das wir erstellen dauert vorgeschlagenen auf die nächste Stufe durch Hinzufügen von Kontext Spezifität verkaufen.
+Das zweite Benutzer Steuerelement, das wir erstellen, wird durch Hinzufügen der Kontext Genauigkeit den suggestiven Verkauf auf der nächsten Ebene durchführen.
 
-Die Logik zum Berechnen Sie die Elemente "Auch gekauft" ist nicht trivial.
+Die Logik zum Berechnen der obersten "auch erworbenen" Elemente ist nicht trivial.
 
-Unsere "Auch gekauft"-Steuerelement die OrderDetails-Datensätze, die (zuvor gekauft) für den aktuell ausgewählten "ProductID" auswählen und ziehen Sie die Auftrags-ID für jede eindeutige Bestellung, die gefunden wurde.
+Mit unserem "auch erworbenen" Steuerelement werden die Order Details-Datensätze (zuvor gekauft) für die aktuell ausgewählte ProductID ausgewählt und die OrderIDs für jede eindeutige Bestellung erfasst.
 
-Klicken Sie dann werden wir al wählen Sie die Produkte aus allen Bestellungen und Sum Mengen erworben haben. Wir sortieren die Produkte, indem die Summe der Menge und zeigt die ersten fünf Elemente.
+Anschließend wählen wir die Produkte von all diesen Aufträgen aus und fassen die erworbenen Mengen zusammen. Wir sortieren die Produkte nach der Summe und zeigen die ersten fünf Elemente an.
 
-Angesichts die Komplexität dieser Logik, werden wir diesen Algorithmus als eine gespeicherte Prozedur implementieren.
+Aufgrund der Komplexität dieser Logik wird dieser Algorithmus als gespeicherte Prozedur implementiert.
 
-Das T-SQL für die gespeicherte Prozedur lautet wie folgt aus:
+Der T-SQL-Wert für die gespeicherte Prozedur lautet wie folgt.
 
 [!code-sql[Main](tailspin-spyworks-part-7/samples/sample13.sql)]
 
-Beachten Sie, dass diese gespeicherte Prozedur (SelectPurchasedWithProducts), die in der Datenbank vorhanden waren, als wir haben es in unserer Anwendung, und wenn wir, dass zusätzlich zu den Tabellen und Sichten, die es erforderlich, das Entity Data Model angegebenen Entity Data Model generierten eingefügt Diese gespeicherte Prozedur sollte enthalten werden.
+Beachten Sie, dass diese gespeicherte Prozedur (selectpurchasedwithproducts) in der Datenbank vorhanden war, als wir Sie in unsere Anwendung eingefügt haben, und wenn wir das Entity Data Model, das wir angegeben haben, zusätzlich zu den Tabellen und Sichten, die wir benötigten, das Entity Data Model sollte diese gespeicherte Prozedur einschließen.
 
-Die gespeicherte Prozedur aus dem Entity Data Model für den Zugriff auf müssen wir die Funktion zu importieren.
+Um auf die gespeicherte Prozedur vom Entity Data Model aus zuzugreifen, muss die Funktion importiert werden.
 
-Einen Doppelklick auf das Entity Data Model im Projektmappen-Explorer im Designer zu öffnen, und öffnen den Browser, und klicken Sie dann mit der rechten Maustaste im Designer, und wählen Sie "Funktionsimport hinzufügen".
+Doppelklicken Sie im Projektmappen-Explorer auf die Entity Data Model, um Sie im Designer zu öffnen, und öffnen Sie den Modell Browser, klicken Sie mit der rechten Maustaste in den Designer, und wählen Sie "Funktions Import hinzufügen".
 
 ![](tailspin-spyworks-part-7/_static/image1.png)
 
-Auf diese Weise wird dieses Dialogfeld geöffnet.
+Dadurch wird dieses Dialogfeld geöffnet.
 
 ![](tailspin-spyworks-part-7/_static/image2.png)
 
-Füllen Sie die Felder, wie Sie oben sehen, die "SelectPurchasedWithProducts" auswählen, und verwenden Sie den Namen der Prozedur für den Namen unserer importierten Funktion.
+Füllen Sie die Felder wie oben angezeigt aus, wählen Sie "selectpurchasedwithproducts" aus, und verwenden Sie den Prozedur Namen als Name der importierten Funktion.
 
-Klicken Sie auf "Ok".
+Klicken Sie auf "OK".
 
-Danach, die wir einfach die gespeicherte Prozedur programmieren können, wie wir jedes andere Element im Modell.
+Nachdem Sie dies getan haben, können wir einfach mit der gespeicherten Prozedur programmieren, wie es bei jedem anderen Element im Modell möglich ist.
 
-Erstellen Sie ein neues Benutzersteuerelement mit dem Namen AlsoPurchased.ascx also in den Ordner "Steuerelemente".
+Erstellen Sie daher im Ordner "Steuerelemente" ein neues Benutzer Steuerelement mit dem Namen "alsopurgejagt. ascx".
 
-Das Markup für dieses Steuerelement wird an das Steuerelement PopularItems vertraut sein.
+Das Markup für dieses Steuerelement wird dem popultems-Steuerelement vertraut sein.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample14.aspx)]
 
-Der wichtige Unterschied ist, dass, die nicht die Zwischenspeicherung der Ausgabe werden, da des Elements, das gerendert werden vom Produkt voneinander unterscheiden.
+Der bedeutende Unterschied besteht darin, dass die Ausgabe nicht zwischenspeichert, da das zu rendernde Element je nach Produkt unterschiedlich ist.
 
-Die "ProductID" wird eine "Property" für das Steuerelement.
+Die ProductID ist eine "Eigenschaft" für das Steuerelement.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample15.cs)]
 
-In PreRender Ereignishandler des Steuerelements wir Eed drei Dinge erreichen.
+Im PreRender-Ereignishandler des Steuer Elements haben wir drei Dinge durchgeführt.
 
-1. Stellen Sie sicher, dass die "ProductID" festgelegt ist.
-2. Überprüfen Sie, ob alle Produkte, die zuvor erworben wurden, mit der aktuellen Instanz.
-3. Ausgabe einige Elemente wie #2 festgelegt.
+1. Stellen Sie sicher, dass ProductID festgelegt ist.
+2. Überprüfen Sie, ob Produkte vorhanden sind, die mit dem aktuellen gekauft wurden.
+3. Ausgabe einiger Elemente, wie in #2 festgelegt.
 
-Beachten Sie, wie einfach es ist, rufen Sie die gespeicherte Prozedur über das Modell.
+Beachten Sie, wie einfach es ist, die gespeicherte Prozedur über das Modell aufzurufen.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample16.cs)]
 
-Nachdem ermittelt wurde, gibt es "auch erworben werden" können wir einfach die Repeater, die von der Abfrage zurückgegebenen Ergebnisse binden.
+Nachdem Sie festgestellt haben, dass auch "auch gekauft" vorhanden ist, können wir einfach das Repeater an die von der Abfrage zurückgegebenen Ergebnisse binden.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample17.cs)]
 
-Gäbe es keine Elemente "auch gekauft" zeigen wir einfach andere beliebte Elemente aus unserem Katalog.
+Wenn keine "auch erworbenen" Elemente vorhanden waren, zeigen wir einfach andere beliebte Elemente aus unserem Katalog an.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample18.cs)]
 
-Die "Auch gekauft" Elemente anzeigen, öffnen Sie die Seite ProductDetails.aspx, und ziehen das AlsoPurchased-Steuerelement aus dem Projektmappen-Explorer, sodass sie an dieser Position im Markup angezeigt wird.
+Um die "auch erworbenen" Elemente anzuzeigen, öffnen Sie die Seite ProductDetails. aspx, und ziehen Sie das Steuerelement alsopurgejagt aus dem Projektmappen-Explorer, sodass es an dieser Position im Markup angezeigt wird.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample19.aspx)]
 
-Auf diese Weise wird einen Verweis auf das Steuerelement am oberen Rand der Seite "ProductDetails" erstellt.
+Dadurch wird am oberen Rand der Seite "ProductDetails" ein Verweis auf das Steuerelement erstellt.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample20.aspx)]
 
-Da das Benutzersteuerelement AlsoPurchased eine Reihe von "ProductID" erfordert werden wir die ProductID-Eigenschaft, der das Steuerelement mit einer Eval-Anweisung für das aktuelle Modell-Datenelement der Seite festgelegt.
+Da das Benutzer Steuerelement "alsopurgejagt" eine ProductID-Nummer erfordert, wird die ProductID-Eigenschaft des Steuer Elements mit einer eval-Anweisung für das aktuelle Datenmodell Element der Seite festgelegt.
 
 ![](tailspin-spyworks-part-7/_static/image3.png)
 
-Wenn wir erstellen, und jetzt ausführen, und navigieren Sie zu einem Produkt sehen Sie die Elemente "Auch gekauft".
+Wenn wir jetzt erstellen und ausführen und zu einem Produkt navigieren, werden die Elemente "auch gekauft" angezeigt.
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 

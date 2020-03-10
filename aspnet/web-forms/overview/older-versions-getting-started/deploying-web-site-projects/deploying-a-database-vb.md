@@ -9,11 +9,11 @@ ms.assetid: 96ac3e69-04c7-4917-ad06-5f8968c3fbf1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 8221025bec06e052016070f74deabb3e6d936045
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643478"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455139"
 ---
 # <a name="deploying-a-database-vb"></a>Bereitstellen einer Datenbank (VB)
 
@@ -153,7 +153,7 @@ Das ist schon alles! An diesem Punkt wurde die Entwicklungs Datenbank in die Pro
 
 An diesem Punkt haben wir die Entwicklungs Datenbank nur in der Produktionsumgebung bereitgestellt. Wir haben uns noch nicht mit der Bereitstellung der Webanwendung beschäftigt oder untersucht, welche Konfigurationsänderungen erforderlich sind, damit die Anwendung die Produktionsdatenbank verwendet. Diese Probleme werden im nächsten Tutorial behandelt.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Zum Bereitstellen einer datengesteuerten Webanwendung muss die während der Entwicklung verwendete Datenbank in die Produktionsumgebung kopiert werden. Viele Webhostinganbieter bieten Tools, um den Prozess der Bereitstellung einer Datenbank zu vereinfachen. Mit DiscountASP.net können Sie z. b. die Datenbank `.mdf` Datei (oder einer Sicherung) per FTP-Datei versehen und die Datenbank dann über die Systemsteuerung an den Datenbankserver anfügen. Eine weitere Option, die unabhängig von den Features Ihres webhostinbieters funktioniert, ist das Tool Microsoft s-Datenbankveröffentlichungs-Assistent, das ein Skript mit SQL-Befehlen generiert, um das Schema und die Daten der Entwicklungs Datenbank zu erstellen. Nachdem das Skript generiert wurde, können Sie es in der Produktionsdatenbank ausführen.
 
@@ -161,7 +161,7 @@ Nun, da sich die Web Application s-Datenbank in der Produktionsumgebung befindet
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

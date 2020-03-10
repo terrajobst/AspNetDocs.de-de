@@ -1,8 +1,8 @@
 ---
 uid: identity/overview/getting-started/index
-title: Erste Schritte mit ASP.NET Identity – ASP.NET 4.x
+title: Getting Started with ASP.net Identity-ASP.NET 4. x
 author: rick-anderson
-description: Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration...
+description: Das ASP.net Identity System ist darauf ausgelegt, die vorherigen ASP.net-Mitgliedschafts Systeme und einfache Mitgliedschafts Systeme zu ersetzen. Sie enthält Unterstützung für Profile, OAuth integrat...
 ms.author: riande
 ms.date: 10/02/2013
 ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
@@ -10,15 +10,15 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 78679828dadacc1ba36eeaced9c21b741806ba47
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121511"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499785"
 ---
 # <a name="getting-started-with-aspnet-identity"></a>Erste Schritte mit ASP.NET Identity
 
-> Das ASP.NET Identity-System wurde entworfen, ersetzen die vorherigen ASP.NET-Mitgliedschaft und einfache Mitgliedschafts-Systeme. Es bietet eine Profil-Unterstützung sowie OAuth-Integration funktioniert mit OWIN und mit den Vorlagen von ASP.NET im Lieferumfang von Visual Studio 2013 enthalten ist.
+> Das ASP.net Identity System ist darauf ausgelegt, die vorherigen ASP.net-Mitgliedschafts Systeme und einfache Mitgliedschafts Systeme zu ersetzen. Es umfasst Profil Unterstützung, OAuth-Integration, funktioniert mit owin und ist in den ASP.net-Vorlagen enthalten, die mit Visual Studio 2013 ausgeliefert werden.
 
 - [Einführung zu ASP.NET Identity](introduction-to-aspnet-identity.md)
 - [ASP.NET Identity – Empfohlene Ressourcen](aspnet-identity-recommended-resources.md)

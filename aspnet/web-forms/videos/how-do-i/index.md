@@ -2,22 +2,22 @@
 uid: web-forms/videos/how-do-i/index
 title: Gewusst wie | Microsoft-Dokumentation
 author: rick-anderson
-description: So führen Sie eine Vielzahl gängiger Aufgaben aus.
+description: So führen Sie eine Reihe von häufigen Aufgaben aus.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 27591afa-3c14-47e6-8323-573f8f7aa862
 msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 12c988e64c5b724e04b6fc5f8eddc6a181764e1d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114922"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519843"
 ---
 # <a name="how-do-i"></a>Gewusst wie
 
-> So führen Sie eine Vielzahl gängiger Aufgaben aus.
+> So führen Sie eine Reihe von häufigen Aufgaben aus.
 
 - [Tipps und Tricks der Experten](how-do-i-learn-the-tips-and-tricks-of-experts.md)
 - [Erstellen einer mehrsprachigen Website mit Lokalisierung](how-do-i-create-a-multi-lingual-site-with-localization.md)
@@ -73,7 +73,7 @@ ms.locfileid: "65114922"
 - [Erkennen von Browserfunktionen in ASP.NET Web Pages](how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
 - [Rendern eines ASP.NET-Serversteuerelements durch Zuordnung zum verwendeten Adapter](how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
 - [Übergeben von Informationen von einer Seite an eine andere Seite mithilfe einer Abfragezeichenfolge](how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-- [Verwenden Sie das Aspnet\_merge.exe Hilfsprogramm zum Zusammenführen von Assemblys](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+- [Verwenden des Hilfsprogramms ASPNET\_Merge. exe zum Zusammenführen von Assemblys](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
 - [Implementieren eines seitenübergreifenden PostBack in ASP.NET](how-do-i-implement-a-cross-page-postback-in-aspnet.md)
 - [Programmgesteuertes Hinzufügen von Steuerelementen zu einer ASP.NET-Webseite](how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
 - [Speichern und Bearbeiten von clientseitigen Informationen durch ein verborgenes Feld](how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)

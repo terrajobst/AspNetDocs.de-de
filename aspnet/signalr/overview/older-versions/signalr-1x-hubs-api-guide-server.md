@@ -1,179 +1,179 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
-title: ASP.NET SignalR-Hubs-API-Guide - Server (SignalR 1.x) | Microsoft-Dokumentation
+title: ASP.net signalr Hubs-API-Handbuch-Server (signalr 1. x) | Microsoft-Dokumentation
 author: bradygaster
-description: Dieses Dokument enthält eine Einführung in die Programmierung von der Serverseite die ASP.NET SignalR-Hubs-API für SignalR-Version 1.1, mit Code-Beispiele Demonstratin...
+description: Dieses Dokument enthält eine Einführung in die Programmierung der Serverseite der ASP.net signalr Hubs-API für signalr, Version 1,1, mit den Codebeispielen
 ms.author: bradyg
 ms.date: 04/17/2013
 ms.assetid: 03e4b9f5-0fea-4d94-959f-014b2762a301
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
 ms.openlocfilehash: d9cd3fad36c0300d96c6dbdc61291ef119da2327
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113034"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468129"
 ---
-# <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR-Hubs-API-Guide - Server (SignalR 1.x)
+# <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.net signalr Hubs-API-Handbuch-Server (signalr 1. x)
 
-durch [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
+von [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> Dieses Dokument enthält eine Einführung in die Programmierung der serverbasierten Aspekte von ASP.NET SignalR-Hubs-API für SignalR-Version 1.1 mit Codebeispielen veranschaulicht allgemeine Optionen.
+> Dieses Dokument enthält eine Einführung in die Programmierung der Serverseite der ASP.net signalr Hubs-API für signalr, Version 1,1, mit Codebeispielen, die allgemeine Optionen veranschaulichen.
 > 
-> Der SignalR-Hubs-API können Sie die Remoteprozeduraufrufe (RPCs) von einem Server verbundene Clients und von den Clients an den Server vornehmen. Im Server-Code Sie Methoden definieren, die von Clients aufgerufen werden können, und rufen Sie Methoden, die auf dem Client ausgeführt. Im Clientcode Sie Methoden definieren, die vom Server aufgerufen werden können, und rufen Sie Methoden, die auf dem Server ausgeführt. SignalR ist für alle Client-zu-Server sich für Sie übernimmt.
+> Die signalr Hubs-API ermöglicht das Ausführen von Remote Prozedur aufrufen (Remote Procedure Calls, RPCs) von einem Server an verbundene Clients und von Clients an den Server. In Servercode definieren Sie Methoden, die von Clients aufgerufen werden können, und Sie können Methoden aufrufen, die auf dem Client ausgeführt werden. Im Client Code definieren Sie Methoden, die vom Server aufgerufen werden können, und Sie können Methoden aufrufen, die auf dem Server ausgeführt werden. Signalr kümmert sich um die gesamte Client-zu-Server-Grundlagen.
 > 
-> SignalR bietet außerdem eine Low-Level-API wird aufgerufen, dauerhafte Verbindungen. Eine Einführung in die SignalR-Hubs und dauerhafte Verbindungen oder für ein Lernprogramm, das zeigt, wie Sie eine vollständige SignalR-Anwendung erstellen, finden Sie unter [SignalR - erste Schritte](index.md).
+> Signalr bietet auch eine API auf niedrigerer Ebene, die als persistente Verbindungen bezeichnet wird. Eine Einführung in signalr, Hubs und persistente Verbindungen oder ein Tutorial, das zeigt, wie Sie eine komplette signalr-Anwendung erstellen, finden Sie unter [signalr-Getting Started](index.md).
 
 ## <a name="overview"></a>Übersicht
 
 Dieses Dokument enthält folgende Abschnitte:
 
-- [So registrieren die SignalR-Route und SignalR-Optionen konfigurieren](#route)
+- [Registrieren der signalr-Route und Konfigurieren von signalr-Optionen](#route)
 
-    - [Die /signalr-URL](#signalrurl)
-    - [Konfigurieren von SignalR-Optionen](#options)
-- [Das Erstellen und verwenden die Hub-Klassen](#hubclass)
+    - [Die/signalr-URL](#signalrurl)
+    - [Konfigurieren von signalr-Optionen](#options)
+- [Erstellen und Verwenden von Hub-Klassen](#hubclass)
 
-    - [Hub-Objektlebensdauer](#transience)
-    - [Camel-Schreibweise des Hub-Namen in der JavaScript-clients](#hubnames)
+    - [Hub-Objekt Lebensdauer](#transience)
+    - [Kamel Schreibweise von Hub-Namen in JavaScript-Clients](#hubnames)
     - [Mehrere Hubs](#multiplehubs)
-- [Wie Sie Methoden in der hubklasse zu definieren, die Clients aufrufen können](#hubmethods)
+- [Definieren von Methoden in der hubklasse, die von Clients aufgerufen werden können](#hubmethods)
 
-    - [Camel-Schreibweise von Methodennamen in JavaScript-clients](#methodnames)
-    - [Beim asynchron ausführen.](#asyncmethods)
-    - [Definieren von Überladungen](#overloads)
-- [Das Client Aufrufen von Methoden aus der hubklasse](#callfromhub)
+    - [Kamel Schreibweise von Methodennamen in JavaScript-Clients](#methodnames)
+    - [Zeitpunkt der asynchronen Ausführung](#asyncmethods)
+    - [Definieren von über Ladungen](#overloads)
+- [So werden Client Methoden aus der Hub-Klasse aufgerufen](#callfromhub)
 
-    - [Wählen die Clients erhalten die RPC](#selectingclients)
-    - [Keine Überprüfung während der Kompilierung Methodennamen](#dynamicmethodnames)
-    - [Übereinstimmung von Groß-/Kleinschreibung-Methode](#caseinsensitive)
+    - [Auswählen, welche Clients den RPC erhalten](#selectingclients)
+    - [Keine Validierung der Kompilierzeit für Methodennamen](#dynamicmethodnames)
+    - [Nicht Groß-/Kleinschreibung nicht beachtet.](#caseinsensitive)
     - [Asynchrone Ausführung](#asyncclient)
-- [Gewusst wie: Verwalten der Gruppenmitgliedschaft von Hub-Klasse](#groupsfromhub)
+- [Verwalten der Gruppenmitgliedschaft mit der Hub-Klasse](#groupsfromhub)
 
-    - [Asynchrone Ausführung der Add- und Remove-Methoden](#asyncgroupmethods)
-    - [Group-Mitgliedschaft-Persistenz](#grouppersistence)
-    - [Einzelbenutzer-Gruppen](#singleusergroups)
-- [Gewusst wie: Behandeln der Objektlebensdauer-Ereignisse in der hubklasse Verbindung](#connectionlifetime)
+    - [Asynchrone Ausführung von Add-und Remove-Methoden](#asyncgroupmethods)
+    - [Persistenz der Gruppenmitgliedschaft](#grouppersistence)
+    - [Einzelbenutzer Gruppen](#singleusergroups)
+- [Behandeln von Verbindungs Lebensdauer-Ereignissen in der Hub-Klasse](#connectionlifetime)
 
-    - [Wenn OnConnected, OnDisconnected und OnReconnected aufgerufen werden](#onreconnected)
+    - [Wenn "onconnected", "ongetrennte" und "onreconnected" aufgerufen werden](#onreconnected)
     - [Aufruferstatus nicht aufgefüllt](#nocallerstate)
-- [Gewusst wie: Abrufen von Informationen über den Client aus der Kontexteigenschaft](#contextproperty)
-- [Gewusst wie: Status zwischen Clients und Hub-Klasse übergeben.](#passstate)
-- [Gewusst wie: Behandeln von Fehlern in der hubklasse](#handleErrors)
-- [Das Client-Methoden aufrufen und Verwalten von Gruppen von außerhalb der Hub-Klasse](#callfromoutsidehub)
+- [So erhalten Sie Informationen über den Client aus der Kontext Eigenschaft](#contextproperty)
+- [Übergeben des Zustands zwischen Clients und der Hub-Klasse](#passstate)
+- [Behandeln von Fehlern in der Hub-Klasse](#handleErrors)
+- [Abrufen von Client Methoden und Verwalten von Gruppen von außerhalb der hubklasse](#callfromoutsidehub)
 
-    - [Aufrufen von Clientmethoden](#callingclientsoutsidehub)
+    - [Aufrufen von Client Methoden](#callingclientsoutsidehub)
     - [Verwalten der Gruppenmitgliedschaft](#managinggroupsoutsidehub)
-- [Gewusst wie: Aktivieren der Ablaufverfolgung](#tracing)
-- [Gewusst wie: Anpassen die Pipeline Hubs](#hubpipeline)
+- [Aktivieren der Ablauf Verfolgung](#tracing)
+- [Vorgehensweise beim Anpassen der Hubs-Pipeline](#hubpipeline)
 
-Dokumentation für das Programm-Clients finden Sie in den folgenden Ressourcen:
+Dokumentation zum Programmieren von Clients finden Sie in den folgenden Ressourcen:
 
-- [SignalR-Hubs-API-Leitfaden – JavaScript-Client](index.md)
-- [Leitfaden für SignalR Hubs-API – .NET-Client](index.md)
+- [Leitfaden für signalr-Hubs-API-JavaScript-Client](index.md)
+- [Leitfaden für signalr-Hubs-API: .NET-Client](index.md)
 
-Links zu Themen,-API-Referenz sind, .NET 4.5-Version der API. Wenn Sie .NET 4 verwenden, finden Sie unter [.NET 4-Version der API-Themen](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
+Links zu API-Referenz Themen beziehen sich auf die .NET 4,5-Version der API. Wenn Sie .NET 4 verwenden, finden Sie weitere Informationen unter [.NET 4-Version der API-Themen](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="route"></a>
 
-## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>So registrieren die SignalR-Route und SignalR-Optionen konfigurieren
+## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>Registrieren der signalr-Route und Konfigurieren von signalr-Optionen
 
-Um die Route definieren, die Clients verwenden, um mit Ihrem Hub herstellen, rufen Sie die [MapHubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) Methode, wenn die Anwendung gestartet wird. `MapHubs` ist ein [Erweiterungsmethode](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) für die `System.Web.Routing.RouteCollection` Klasse. Das folgende Beispiel zeigt, wie Sie definieren die SignalR-Hubs-Route in der *"Global.asax"* Datei.
+Um die Route zu definieren, die von Clients zum Herstellen einer Verbindung mit dem Hub verwendet wird, müssen Sie beim Starten der Anwendung die [maphubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) -Methode abrufen. `MapHubs` ist eine [Erweiterungsmethode](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) für die `System.Web.Routing.RouteCollection`-Klasse. Im folgenden Beispiel wird gezeigt, wie die signalr Hubs-Route in der Datei " *Global. asax* " definiert wird.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample1.cs)]
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample2.cs?highlight=5)]
 
-Wenn Sie SignalR-Funktionen zu einer ASP.NET MVC-Anwendung hinzufügen, stellen Sie sicher, dass die SignalR-Route vor anderen Routen hinzugefügt wird. Weitere Informationen finden Sie unter [Tutorial: Erste Schritte mit SignalR und MVC 4](index.md).
+Wenn Sie signalr-Funktionen zu einer ASP.NET MVC-Anwendung hinzufügen, stellen Sie sicher, dass die signalr-Route vor den anderen Routen hinzugefügt wird. Weitere Informationen finden Sie unter [Tutorial: ersten Schritte mit signalr und MVC 4](index.md).
 
 <a id="signalrurl"></a>
 
-### <a name="the-signalr-url"></a>Die /signalr-URL
+### <a name="the-signalr-url"></a>Die/signalr-URL
 
-Standardmäßig ist die Routen-URL, die Clients verwenden, um mit Ihrem Hub herstellen "/ Signalr". (Verwechseln Sie nicht diese URL mit der URL "/ Signalr/Hubs" für die automatisch generierte JavaScript-Datei handelt. Weitere Informationen zu den generierten Proxy, finden Sie unter [für die SignalR-Hubs-API – JavaScript-Client – den generierten Proxy und was dies für Sie übernimmt](index.md).)
+Standardmäßig ist die Routen-URL, die von Clients zum Herstellen einer Verbindung mit ihrem Hub verwendet wird, "/signalr". (Verwechseln Sie diese URL nicht mit der URL "/signalr/Hubs", die für die automatisch generierte JavaScript-Datei gilt. Weitere Informationen zum generierten Proxy finden [Sie im signalr Hubs-API-Handbuch-JavaScript-Client-der generierte Proxy und dessen](index.md)Funktionsweise.)
 
-Gibt es möglicherweise außergewöhnliche Umständen, die diese Basis-URL für SignalR nicht verwendbar zu machen; Angenommen, Sie verfügen über einen Ordner in Ihrem Projekt mit dem Namen *Signalr* und nicht den Namen ändern möchten. In diesem Fall können Sie die base-URL ändern, wie in den folgenden Beispielen gezeigt (ersetzen Sie "/ Signalr" im Beispielcode mit der gewünschten URL).
+Möglicherweise gibt es außergewöhnliche Umstände, in denen diese Basis-URL für signalr nicht verwendbar ist. Beispielsweise verfügen Sie über einen Ordner in Ihrem Projekt mit dem Namen *signalr* , und Sie möchten den Namen nicht ändern. In diesem Fall können Sie die Basis-URL ändern, wie in den folgenden Beispielen gezeigt (ersetzen Sie "/signalr" im Beispielcode durch die gewünschte URL).
 
-**Server-Code, der die URL angibt.**
+**Server Code, der die URL angibt**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample3.cs?highlight=1)]
 
-**JavaScript-Clientcode, der angibt, die URL (mit den generierten Proxy)**
+**JavaScript-Client Code, der die URL (mit dem generierten Proxy) angibt**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample4.js?highlight=1)]
 
-**JavaScript-Clientcode, der angibt, die URL (ohne den generierten Proxy)**
+**JavaScript-Client Code, der die URL (ohne den generierten Proxy) angibt**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample5.js?highlight=1)]
 
-**.NET Client-Code, der angibt, die URL**
+**.NET-Client Code, der die URL angibt**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample6.cs?highlight=1)]
 
 <a id="options"></a>
 
-### <a name="configuring-signalr-options"></a>Konfigurieren von SignalR-Optionen
+### <a name="configuring-signalr-options"></a>Konfigurieren von signalr-Optionen
 
-Der Überladungen der `MapHubs` Methode ermöglichen es Ihnen, eine benutzerdefinierte URL, einen benutzerdefinierten Abhängigkeitskonfliktlöser und die folgenden Optionen angeben:
+Über Ladungen der `MapHubs`-Methode ermöglichen es Ihnen, eine benutzerdefinierte URL, einen benutzerdefinierten Abhängigkeits Konflikt Löser und die folgenden Optionen anzugeben:
 
-- Domänenübergreifende Aufrufe aus Browser-Clients zu aktivieren.
+- Aktivieren Sie Domänen übergreifende Aufrufe von Browser Clients.
 
-    In der Regel, wenn der Browser eine Seite lädt `http://contoso.com`, die SignalR-Verbindung ist auf der gleichen Domäne `http://contoso.com/signalr`. Wenn die Seite `http://contoso.com` stellt eine Verbindung mit `http://fabrikam.com/signalr`, d. h. eine domänenübergreifende-Verbindung. Aus Sicherheitsgründen sind die domänenübergreifende Verbindungen standardmäßig deaktiviert. Weitere Informationen finden Sie unter [für die ASP.NET SignalR-Hubs-API – JavaScript-Client – Gewusst wie: Herstellen einer Verbindung domänenübergreifende](index.md).
-- Detaillierte Fehlermeldungen zu aktivieren.
+    Wenn der Browser eine Seite aus `http://contoso.com`lädt, befindet sich die signalr-Verbindung in der Regel in der gleichen Domäne `http://contoso.com/signalr`. Wenn die Seite aus `http://contoso.com` eine Verbindung mit `http://fabrikam.com/signalr`herstellt, handelt es sich um eine Domänen übergreifende Verbindung. Aus Sicherheitsgründen sind Domänen übergreifende Verbindungen standardmäßig deaktiviert. Weitere Informationen finden Sie unter [ASP.net signalr Hubs API Guide-JavaScript Client (Einrichten einer Domänen übergreifenden Verbindung](index.md)).
+- Aktivieren Sie detaillierte Fehlermeldungen.
 
-    Wenn Fehler auftreten, werden das Standardverhalten von SignalR ab, an Clients senden eine Benachrichtigung ohne Details, was passiert ist. Ausführliche Fehlerinformationen an Clients gesendet wird nicht in der Produktion empfohlen, weil böswillige Benutzer, die Informationen in die Angriffe auf Ihre Anwendung verwenden werden können. Informationen zur Problembehandlung können Sie diese Option verwenden, um vorübergehend informativere Fehlerberichterstattung zu aktivieren.
-- Deaktivieren Sie die automatisch generierte JavaScript-Proxy-Dateien.
+    Wenn Fehler auftreten, besteht das Standardverhalten von signalr darin, eine Benachrichtigung an Clients zu senden, ohne Details dazu zu erhalten, was passiert ist. Das Senden ausführlicher Fehlerinformationen an Clients wird in der Produktion nicht empfohlen, da böswillige Benutzer möglicherweise die Informationen in Angriffen gegen Ihre Anwendung verwenden können. Zur Problembehandlung können Sie diese Option verwenden, um eine informative Fehlerberichterstattung temporär zu aktivieren.
+- Automatisch generierte JavaScript-Proxy Dateien deaktivieren.
 
-    Standardmäßig wird eine JavaScript-Datei mit Proxys für den Hub-Klassen als Reaktion auf die URL "/ Signalr/Hubs" generiert. Wenn Sie nicht die JavaScript-Proxys verwenden möchten oder wenn Sie diese Datei manuell zu generieren, und klicken Sie auf einer physischen Datei in Ihre Clients verweisen möchten, können Sie diese Option, um Proxygenerierung zu deaktivieren. Weitere Informationen finden Sie unter [für die SignalR-Hubs-API - JavaScript-Client – erstellen eine physische Datei für die SignalR generierter Proxy](index.md).
+    Standardmäßig wird eine JavaScript-Datei mit Proxys für Ihre Hub-Klassen als Antwort auf die URL "/signalr/Hubs" generiert. Wenn Sie die JavaScript-Proxys nicht verwenden möchten oder wenn Sie diese Datei manuell generieren und auf eine physische Datei in ihren Clients verweisen möchten, können Sie diese Option verwenden, um die Proxy Generierung zu deaktivieren. Weitere Informationen finden Sie unter [signalr Hubs-API-Handbuch-JavaScript-Client-Erstellen einer physischen Datei für den von signalr generierten Proxy](index.md).
 
-Das folgende Beispiel zeigt, wie in einem Aufruf der SignalR-Verbindungs-URL und diese Optionen geben die `MapHubs` Methode. Um eine benutzerdefinierte URL anzugeben, ersetzen Sie "/ Signalr" im Beispiel durch die URL, die Sie verwenden möchten.
+Im folgenden Beispiel wird gezeigt, wie die signalr-Verbindungs-URL und diese Optionen in einem aufzurufenden `MapHubs`-Methode angegeben werden. Um eine benutzerdefinierte URL anzugeben, ersetzen Sie "/signalr" im Beispiel durch die URL, die Sie verwenden möchten.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample7.cs)]
 
 <a id="hubclass"></a>
 
-## <a name="how-to-create-and-use-hub-classes"></a>Das Erstellen und verwenden die Hub-Klassen
+## <a name="how-to-create-and-use-hub-classes"></a>Erstellen und Verwenden von Hub-Klassen
 
-Um einen Hub erstellen möchten, erstellen Sie eine abgeleitete Klasse [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). Das folgende Beispiel zeigt eine einfache hubklasse für eine Chat-Anwendung.
+Um einen Hub zu erstellen, erstellen Sie eine Klasse, die von [Microsoft. Aspnet. signalr. Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)abgeleitet wird. Das folgende Beispiel zeigt eine einfache Hub-Klasse für eine Chat-Anwendung.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample8.cs)]
 
-In diesem Beispiel ein verbundener Client aufrufen kann die `NewContosoChatMessage` -Methode, und wenn dies der Fall, werden die empfangenen Daten mithilfe von an alle verbundenen Clients.
+In diesem Beispiel kann ein verbundener Client die `NewContosoChatMessage`-Methode aufzurufen. wenn dies der Fall ist, werden die empfangenen Daten an alle verbundenen Clients übermittelt.
 
 <a id="transience"></a>
 
-### <a name="hub-object-lifetime"></a>Hub-Objektlebensdauer
+### <a name="hub-object-lifetime"></a>Hub-Objekt Lebensdauer
 
-Sie nicht die Hub-Klasse instanziieren oder seine Methoden aufrufen, aus Ihrem eigenen Code auf dem Server; All dies wird durch die Pipeline für SignalR-Hubs für Sie erledigt. SignalR erstellt eine neue Instanz der Klasse Hub jedes Mal, es muss eine Hub-Vorgängen, z. B. wenn ein Client eine Verbindung herstellt, trennt die Verbindung, oder stellt einen Methodenaufruf an dem Server zu behandeln.
+Die hubklasse wird nicht instanziiert, oder es werden keine Methoden aus dem eigenen Code auf dem Server aufgerufen. Das ist alles, was Sie von der signalr Hubs-Pipeline für Sie erledigt haben. Signalr erstellt immer dann eine neue Instanz der Hub-Klasse, wenn Sie einen Hub-Vorgang verarbeiten muss, z. b. Wenn ein Client eine Verbindung herstellt, die Verbindung trennt oder einen Methodenaufruf an den Server ausführt.
 
-Da die Instanzen der Hub-Klasse nur vorübergehend auftreten, können nicht Sie sie zur Beibehaltung des Zustands in einem Methodenaufruf an den nächsten verwenden. Jedes Mal erhält der Server einem Methodenaufruf von einem Client, eine neue Instanz von Prozessen Ihr Hub die Nachricht. Um Status über mehrere Verbindungen und Methodenaufrufe zu gewährleisten, verwenden Sie eine andere Methode z. B. eine Datenbank oder eine statische Variable auf die hubklasse oder eine andere Klasse, die nicht von abgeleitet ist `Hub`. Wenn Sie Daten im Arbeitsspeicher beibehalten, werden mit einer Methode wie z. B. eine statische Variable auf den Hub-Klasse, die Daten verloren, wenn die Anwendungsdomäne wiederverwendet wird.
+Da Instanzen der Hub-Klasse flüchtig sind, können Sie Sie nicht verwenden, um den Zustand von einem Methodenaufrufe zum nächsten beizubehalten. Jedes Mal, wenn der Server einen Methodenaufruf von einem Client empfängt, wird die Nachricht von einer neuen Instanz der Hub-Klasse verarbeitet. Um den Zustand über mehrere Verbindungen und Methodenaufrufe beizubehalten, verwenden Sie eine andere Methode, z. b. eine Datenbank oder eine statische Variable für die Hub-Klasse, oder eine andere Klasse, die nicht von `Hub`abgeleitet ist. Wenn Sie Daten im Arbeitsspeicher beibehalten, werden die Daten bei Verwendung einer Methode, z. b. einer statischen Variablen in der Hub-Klasse, verloren gehen, wenn die APP-Domäne wieder verwendet wird.
 
-Wenn Sie möchten die Nachrichten für Clients über Ihren eigenen Code zu senden, die außerhalb der hubklasse ausgeführt wird, dies nicht möglich, durch eine Instanz des Hub-Klasse instanziieren, aber können Sie dies tun, indem Sie einen Verweis auf das Kontextobjekt für die SignalR für die Hub-Klasse abrufen. Weitere Informationen finden Sie unter [wie Client-Methoden aufrufen und Verwalten von Gruppen von außerhalb der hubklasse](#callfromoutsidehub) weiter unten in diesem Thema.
+Wenn Sie Nachrichten aus Ihrem eigenen Code, der außerhalb der Hub-Klasse ausgeführt wird, an Clients senden möchten, können Sie dies nicht tun, indem Sie eine Hub-Klasseninstanz instanziieren. Sie können Sie jedoch durch einen Verweis auf das signalr-Kontext Objekt für die Hub-Klasse erstellen. Weitere Informationen finden Sie weiter unten in diesem Thema unter [Abrufen von Client Methoden und Verwalten von Gruppen von außerhalb der Hub-Klasse](#callfromoutsidehub) .
 
 <a id="hubnames"></a>
 
-### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>Camel-Schreibweise des Hub-Namen in der JavaScript-clients
+### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>Kamel Schreibweise von Hub-Namen in JavaScript-Clients
 
-Standardmäßig beziehen sich JavaScript-Clients für Hubs mit einer Version in Kamel-Schreibweise des Klassennamens. SignalR erstellt automatisch diese Änderung, damit JavaScript-Code JavaScript-Konventionen entsprechen kann. Im vorherige Beispiel würde, die als bezeichnet `contosoChatHub` im JavaScript-Code.
+Standardmäßig verweisen JavaScript-Clients auf Hubs, indem Sie eine Version des Klassen namens mit Kamel Schreibung verwenden. Signalr nimmt diese Änderung automatisch vor, damit JavaScript-Code JavaScript-Konventionen entsprechen kann. Das vorherige Beispiel wird im JavaScript-Code als `contosoChatHub` bezeichnet.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample9.cs?highlight=1)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample10.js?highlight=1)]
 
-Wenn Sie einen anderen Namen für die Clients verwenden, fügen Sie möchten die `HubName` Attribut. Bei Verwendung einer `HubName` Attribut, gibt es keine Änderung in Camel-Case für JavaScript-Clients.
+Wenn Sie einen anderen Namen angeben möchten, der von Clients verwendet werden soll, fügen Sie das `HubName`-Attribut hinzu. Wenn Sie ein `HubName` Attribut verwenden, gibt es keine Namensänderung in der Camel-Schreibweise auf JavaScript-Clients.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample11.cs?highlight=1)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample12.js?highlight=1)]
 
@@ -181,144 +181,144 @@ Wenn Sie einen anderen Namen für die Clients verwenden, fügen Sie möchten die
 
 ### <a name="multiple-hubs"></a>Mehrere Hubs
 
-Sie können mehrere Hub-Klassen in einer Anwendung definieren. Wenn Sie dies tun, wird die Verbindung freigegeben, aber Gruppen sind getrennt:
+Sie können mehrere Hub-Klassen in einer Anwendung definieren. Wenn Sie dies tun, wird die Verbindung freigegeben, die Gruppen sind jedoch getrennt:
 
-- Alle Clients verwenden die gleiche URL zum Herstellen einer SignalR-Verbindung mit Ihrem Dienst ("/ Signalr" oder die benutzerdefinierte URL, wenn Sie angegeben), und dass die Verbindung für alle Hubs verwendet wird, die vom Dienst definiert sind.
+- Alle Clients verwenden dieselbe URL, um eine signalr-Verbindung mit Ihrem Dienst herzustellen ("/signalr" oder Ihre benutzerdefinierte URL, wenn Sie eine solche URL angegeben haben), und diese Verbindung wird für alle vom Dienst definierten Hubs verwendet.
 
-    Es gibt keine Leistungsunterschiede für mehrere Hubs im Vergleich zu allen Hub-Funktionalität in einer einzelnen Klasse definieren.
-- Alle Hubs erhalten die gleiche Informationen des HTTP-Anforderung.
+    Es gibt keinen Leistungsunterschied für mehrere Hubs im Vergleich zum Definieren aller Hubfunktionen in einer einzelnen Klasse.
+- Alle Hubs erhalten die gleichen HTTP-Anforderungs Informationen.
 
-    Da alle Hubs die gleiche Verbindung gemeinsam nutzen, ist die einzige HTTP-Anforderungsinformationen, die der Server ruft was in der ursprünglichen HTTP-Anforderung stammt, die den SignalR-Verbindung hergestellt wird. Wenn Sie die verbindungsanforderung verwenden, um Informationen vom Client an den Server zu übergeben, indem Sie eine Abfragezeichenfolge angeben, können nicht Sie unterschiedlichen Abfragezeichenfolgen für unterschiedliche Hubs bereitstellen. Alle Hubs erhalten die gleiche Informationen.
-- Die generierte JavaScript-Proxys-Datei enthält die Proxys für alle Hubs in einer Datei.
+    Da alle Hubs die gleiche Verbindung gemeinsam nutzen, werden die HTTP-Anforderungs Informationen, die der Server erhält, in der ursprünglichen HTTP-Anforderung angezeigt, die die signalr-Verbindung herstellt. Wenn Sie die Verbindungsanforderung verwenden, um Informationen vom Client an den Server zu übergeben, indem Sie eine Abfrage Zeichenfolge angeben, können Sie verschiedene Abfrage Zeichenfolgen nicht für verschiedene Hubs bereitstellen. Alle Hubs erhalten die gleichen Informationen.
+- Die generierte JavaScript-Proxydatei enthält Proxys für alle Hubs in einer Datei.
 
-    Weitere Informationen zu JavaScript-Proxys, finden Sie unter [für die SignalR-Hubs-API – JavaScript-Client – den generierten Proxy und was dies für Sie übernimmt](index.md).
-- Gruppen werden in den Hubs definiert.
+    Weitere Informationen zu JavaScript [-Proxys finden Sie im signalr Hubs-API-Handbuch-JavaScript-Client-der generierte Proxy und dessen](index.md)Funktionsweise.
+- Gruppen werden innerhalb von Hubs definiert.
 
-    In SignalR, die Sie definieren, können mit dem Namen Gruppen mit Teilmengen von verbundenen Clients zu senden. Gruppen werden separat für jeden Hub verwaltet. Beispielsweise würde eine Gruppe namens "Administratoren" enthalten einen Satz von Clients für Ihre `ContosoChatHub` Klasse und demselben Gruppennamen würden, finden Sie in einen anderen Satz von Clients für Ihre `StockTickerHub` Klasse.
+    In signalr können Sie benannte Gruppen für die Übertragung an Teilmengen verbundener Clients definieren. Gruppen werden für jeden Hub separat verwaltet. Beispielsweise würde eine Gruppe mit dem Namen "Administratoren" eine Reihe von Clients für Ihre `ContosoChatHub`-Klasse enthalten, und der gleiche Gruppenname bezieht sich auf einen anderen Satz von Clients für die `StockTickerHub` Klasse.
 
 <a id="hubmethods"></a>
 
-## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>Wie Sie Methoden in der hubklasse zu definieren, die Clients aufrufen können
+## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>Definieren von Methoden in der hubklasse, die von Clients aufgerufen werden können
 
-Deklarieren Sie eine öffentliche Methode, um eine Methode auf dem Hub verfügbar gemacht werden, die vom Client aufgerufen werden sollen, wie in den folgenden Beispielen gezeigt.
+Wenn Sie eine Methode auf dem Hub verfügbar machen möchten, die vom Client aufgerufen werden soll, deklarieren Sie eine öffentliche Methode, wie in den folgenden Beispielen gezeigt.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample13.cs?highlight=3)]
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample14.cs?highlight=3)]
 
-Sie können einen Rückgabetyp und Parameter, einschließlich von komplexen Typen und Arrays, wie in jeder C#-Methode angeben. Alle Daten, die Sie in den Parametern erhalten oder an den Aufrufer zurückgeben werden zwischen dem Client und Server übermittelt, mithilfe von JSON und SignalR behandelt automatisch die Bindung von komplexen Objekten und Arrays von Objekten.
+Sie können einen Rückgabetyp und Parameter, einschließlich komplexer Typen und Arrays, wie in jeder beliebigen C# Methode angeben. Alle Daten, die Sie in Parametern empfangen oder an den Aufrufer zurückgeben, werden mithilfe von JSON zwischen dem Client und dem Server übermittelt, und signalr übernimmt automatisch die Bindung komplexer Objekte und Arrays von Objekten.
 
 <a id="methodnames"></a>
 
-### <a name="camel-casing-of-method-names-in-javascript-clients"></a>Camel-Schreibweise von Methodennamen in JavaScript-clients
+### <a name="camel-casing-of-method-names-in-javascript-clients"></a>Kamel Schreibweise von Methodennamen in JavaScript-Clients
 
-Standardmäßig beziehen sich JavaScript-Clients auf Hub-Methoden mit einer Version in Kamel-Schreibweise des Methodennamens. SignalR erstellt automatisch diese Änderung, damit JavaScript-Code JavaScript-Konventionen entsprechen kann.
+Standardmäßig verweisen JavaScript-Clients auf hubmethoden, indem Sie eine Version des Methoden namens mit Kamel Schreibung verwenden. Signalr nimmt diese Änderung automatisch vor, damit JavaScript-Code JavaScript-Konventionen entsprechen kann.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample15.cs?highlight=1)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample16.js?highlight=1)]
 
-Wenn Sie einen anderen Namen für die Clients verwenden, fügen Sie möchten die `HubMethodName` Attribut.
+Wenn Sie einen anderen Namen angeben möchten, der von Clients verwendet werden soll, fügen Sie das `HubMethodName`-Attribut hinzu.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample17.cs?highlight=1)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample18.js?highlight=1)]
 
 <a id="asyncmethods"></a>
 
-### <a name="when-to-execute-asynchronously"></a>Beim asynchron ausführen.
+### <a name="when-to-execute-asynchronously"></a>Zeitpunkt der asynchronen Ausführung
 
-Wenn die Methode wird werden lang andauernde oder Aufgaben über würde warten, z. B. einer Datenbanksuche oder einen Webdienstaufruf umfassen, die Hub-Methode asynchron machen, indem Sie zurückgeben einer [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (anstelle von `void` zurückgegeben) oder [ Aufgabe&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) Objekt (anstelle von `T` Rückgabetyp). Bei der Rückkehr eine `Task` Objekt aus der SignalR-Methode wartet darauf, dass die `Task` abgeschlossen werden, und er sendet dann das Ergebnis entpackte zurück an den Client, es gibt also keinen Unterschied in der code wie den Aufruf der Methode auf dem Client.
+Wenn die Methode eine lange Ausführungszeit erfordert oder Aufgaben ausführen müssen, die warten würden, wie z. b. eine Datenbanksuche oder ein Webdienst-aufrufbedarf, machen Sie die Hub-Methode asynchron, indem Sie eine [Aufgabe](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (anstelle von `void` Rückgabe) oder [Aufgabe&lt;t&gt;](https://msdn.microsoft.com/library/dd321424.aspx) Objekt (anstelle `T` Rückgabe Typs) zurückgeben. Wenn Sie ein `Task` Objekt von der-Methode zurückgeben, wartet signalr darauf, dass die `Task` abgeschlossen ist, und sendet dann das entpackte Ergebnis an den Client zurück. es gibt also keinen Unterschied in der Art und Weise, wie Sie den Methodenaufrufe im Client codieren.
 
-Vornehmen einer hubmethode vermeidet asynchrone blockiert die Verbindung, wenn den WebSocket-Transport verwendet. Wenn eine hubmethode synchron ausgeführt, und der Transport WebSocket ist, werden nachfolgende Aufrufe von Methoden auf dem Hub vom gleichen Client blockiert, bis die Hub-Methode abgeschlossen ist.
+Durch die asynchrone Erstellung einer hubmethode wird verhindert, dass die Verbindung blockiert wird, wenn der WebSocket-Transport verwendet wird. Wenn eine hubmethode synchron ausgeführt wird und der Transport WebSocket ist, werden nachfolgende Aufrufe von Methoden auf dem Hub desselben Clients blockiert, bis die hubmethode abgeschlossen ist.
 
-Das folgende Beispiel zeigt die gleiche Methode programmiert, dass Sie synchron ausgeführt, oder asynchron, gefolgt von JavaScript-Clientcode, der zum Aufrufen der beiden Versionen funktioniert.
+Im folgenden Beispiel wird die gleiche Methode gezeigt, die für die synchrone oder asynchrone Ausführung programmiert ist, gefolgt von JavaScript-Client Code, der zum Aufrufen einer beliebigen Version funktioniert.
 
 **Synchrone**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample19.cs)]
 
-**Asynchrone - ASP.NET 4.5**
+**Asynchronous-ASP.NET 4,5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample20.cs?highlight=1,7-8)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample21.js)]
 
-Weitere Informationen zur Verwendung von asynchronen Methoden in ASP.NET 4.5 finden Sie unter [mithilfe von asynchronen Methoden in ASP.NET MVC 4](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md).
+Weitere Informationen zum Verwenden von asynchronen Methoden in ASP.NET 4,5 finden [Sie unter Verwenden von asynchronen Methoden in ASP.NET MVC 4](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md).
 
 <a id="overloads"></a>
 
-### <a name="defining-overloads"></a>Definieren von Überladungen
+### <a name="defining-overloads"></a>Definieren von über Ladungen
 
-Wenn Sie Überladungen für eine Methode definieren möchten, muss die Anzahl von Parametern in jede Überladung sich unterscheiden. Wenn Sie eine Überladung, indem er verschiedene Parametertypen einfach unterscheiden, die Hub-Klasse wird kompiliert, aber der SignalR-Dienst löst eine Ausnahme zur Laufzeit, wenn Clients versuchen, rufen Sie eine der Überladungen.
+Wenn Sie über Ladungen für eine Methode definieren möchten, muss die Anzahl von Parametern in den einzelnen über Ladungen abweichen. Wenn Sie eine Überladung nur durch Angabe verschiedener Parametertypen unterscheiden, wird die hubklasse kompiliert, aber der signalr-Dienst löst zur Laufzeit eine Ausnahme aus, wenn Clients versuchen, eine der über Ladungen aufzurufen.
 
 <a id="callfromhub"></a>
 
-## <a name="how-to-call-client-methods-from-the-hub-class"></a>Das Client Aufrufen von Methoden aus der hubklasse
+## <a name="how-to-call-client-methods-from-the-hub-class"></a>So werden Client Methoden aus der Hub-Klasse aufgerufen
 
-Um den Client vom Server Methoden aufrufen, verwenden Sie die `Clients` Eigenschaft in einer Methode in der Hub-Klasse. Das folgende Beispiel zeigt die Servercode, der Aufrufe `addNewMessageToPage` auf allen verbundenen Clients, und Clientcode, der die Methode in einem JavaScript-Client definiert.
+Um Client Methoden vom Server aufzurufen, verwenden Sie die `Clients`-Eigenschaft in einer Methode in ihrer Hub-Klasse. Das folgende Beispiel zeigt Servercode, der `addNewMessageToPage` auf allen verbundenen Clients aufruft, und Client Code, der die-Methode in einem JavaScript-Client definiert.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample22.cs?highlight=5)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-html[Main](signalr-1x-hubs-api-guide-server/samples/sample23.html?highlight=1)]
 
-Der Rückgabewert kann nicht aus einer Clientmethode abgerufen werden; Diese Syntax sind `int x = Clients.All.add(1,1)` funktioniert nicht.
+Sie können keinen Rückgabewert von einer Client Methode erhalten. Syntax, wie z. b. `int x = Clients.All.add(1,1)`, funktioniert nicht.
 
-Sie können komplexe Typen und Arrays für die Parameter angeben. Das folgende Beispiel übergibt einen komplexen Typ in einen Methodenparameter an dem Client.
+Sie können komplexe Typen und Arrays für die Parameter angeben. Im folgenden Beispiel wird ein komplexer Typ in einem Methoden Parameter an den Client übergeben.
 
-**Servercode, der eine Clientmethode, die mithilfe von eines komplexen Objekts aufruft**
+**Server Code, der eine Client Methode mithilfe eines komplexen Objekts aufruft**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample24.cs?highlight=3)]
 
-**Server-Code, die das komplexe Objekt definiert.**
+**Server Code, der das komplexe Objekt definiert**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample25.cs?highlight=1)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample26.js?highlight=2-3)]
 
 <a id="selectingclients"></a>
 
-### <a name="selecting-which-clients-will-receive-the-rpc"></a>Wählen die Clients erhalten die RPC
+### <a name="selecting-which-clients-will-receive-the-rpc"></a>Auswählen, welche Clients den RPC erhalten
 
-Gibt die Clients-Eigenschaft einer [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) -Objekt, das bietet mehrere Optionen zum angeben, welche Clients die RPC erhält:
+Die Clients-Eigenschaft gibt ein [hubconnectioncontext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) -Objekt zurück, das mehrere Optionen zum Angeben von Clients bereitstellt, die den RPC empfangen:
 
 - Alle verbundenen Clients.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample27.cs)]
-- Nur der aufrufende Client.
+- Nur der aufrufenden Client.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample28.cs)]
 - Alle Clients mit Ausnahme des aufrufenden Clients.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample29.cs)]
-- Einen bestimmten Client identifiziert, die vom Verbindungs-ID.
+- Ein spezifischer Client, der durch die Verbindungs-ID identifiziert wird
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample30.css)]
 
-    Dieses Beispiel ruft `addContosoChatMessageToPage` für den aufrufenden Client und hat dieselbe Wirkung wie die Verwendung von `Clients.Caller`.
-- Alle verbundenen Clients mit Ausnahme der angegebenen Clients identifizierte Verbindungs-ID.
+    In diesem Beispiel wird `addContosoChatMessageToPage` auf dem aufrufenden Client aufgerufen und hat dieselbe Auswirkung wie die Verwendung von `Clients.Caller`.
+- Alle verbundenen Clients mit Ausnahme der angegebenen Clients, identifiziert durch die Verbindungs-ID.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample31.cs)]
-- Alle verbundenen Clients in einer angegebenen Gruppe.
+- Alle verbundenen Clients in einer bestimmten Gruppe.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample32.css)]
-- Alle verbundenen Clients in einer angegebenen Gruppe mit Ausnahme der angegebenen Clients identifizierte Verbindungs-ID.
+- Alle verbundenen Clients in einer angegebenen Gruppe mit Ausnahme der angegebenen Clients, identifiziert durch die Verbindungs-ID.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample33.cs)]
 - Alle verbundenen Clients in einer angegebenen Gruppe mit Ausnahme des aufrufenden Clients.
@@ -327,23 +327,23 @@ Gibt die Clients-Eigenschaft einer [HubConnectionContext](https://msdn.microsoft
 
 <a id="dynamicmethodnames"></a>
 
-### <a name="no-compile-time-validation-for-method-names"></a>Keine Überprüfung während der Kompilierung Methodennamen
+### <a name="no-compile-time-validation-for-method-names"></a>Keine Validierung der Kompilierzeit für Methodennamen
 
-Der Name der Methode, die Sie angeben wird als ein dynamisches Objekt interpretiert, was bedeutet, dass es gibt keine IntelliSense oder der Kompilierzeit-Überprüfung für sie. Der Ausdruck wird zur Laufzeit ausgewertet. Wenn der Methodenaufruf ausgeführt wird, werden SignalR den Methodennamen und die Parameterwerte an den Client sendet, und wenn der Client eine Methode verfügt, die mit dem Namen übereinstimmt, dass die Methode aufgerufen wird und die Werte der Parameter an es übergeben. Wenn keine übereinstimmende Methode auf dem Client gefunden wird, wird kein Fehler ausgelöst. Weitere Informationen zum Format der Daten, die SignalR an den Client hinter den Kulissen überträgt, wenn Sie eine Clientmethode aufrufen, finden Sie unter [Einführung zu SignalR](index.md).
+Der von Ihnen angegebene Methodenname wird als dynamisches Objekt interpretiert, was bedeutet, dass keine IntelliSense-oder Kompilierzeit Validierung dafür vorliegt. Der Ausdruck wird zur Laufzeit ausgewertet. Wenn der Methodenaufruf ausgeführt wird, sendet signalr den Methodennamen und die Parameterwerte an den Client. wenn der Client über eine Methode verfügt, die mit dem Namen übereinstimmt, wird diese Methode aufgerufen und die Parameterwerte an Sie übergeben. Wenn keine übereinstimmende Methode auf dem Client gefunden wird, wird kein Fehler ausgelöst. Informationen über das Format der Daten, die von signalr im Hintergrund an den Client übermittelt werden, wenn Sie eine Client Methode aufruft, finden Sie unter [Introduction to signalr (Einführung in signalr](index.md)).
 
 <a id="caseinsensitive"></a>
 
-### <a name="case-insensitive-method-name-matching"></a>Übereinstimmung von Groß-/Kleinschreibung-Methode
+### <a name="case-insensitive-method-name-matching"></a>Nicht Groß-/Kleinschreibung nicht beachtet.
 
-Methode-namenszuordnung wird Groß-/Kleinschreibung. Z. B. `Clients.All.addContosoChatMessageToPage` auf dem Server führt `AddContosoChatMessageToPage`, `addcontosochatmessagetopage`, oder `addContosoChatMessageToPage` auf dem Client.
+Beim Methodennamen wird die Groß-/Kleinschreibung beachtet. Beispielsweise werden auf dem-Server `Clients.All.addContosoChatMessageToPage` auf dem-Server `AddContosoChatMessageToPage`, `addcontosochatmessagetopage`oder `addContosoChatMessageToPage` auf dem Client ausgeführt.
 
 <a id="asyncclient"></a>
 
 ### <a name="asynchronous-execution"></a>Asynchrone Ausführung
 
-Die Methode, die Sie aufrufen, führt asynchron aus. Jeder Code, der nach ein Methodenaufruf an einen Client ohne Wartezeiten für SignalR, um den Vorgang abzuschließen, Daten an Clients übertragen, es sei denn, die Sie angeben, dass die nachfolgenden Codezeilen, auf den Abschluss der Methode warten soll sofort ausgeführt werden. Die folgenden Codebeispiele zeigen, wie Clientmethoden sequenziell ausführen können, eine mithilfe von code in .NET 4.5, funktioniert und eins mit diesem in .NET 4 funktioniert code.
+Die von Ihnen aufzurufende Methode wird asynchron ausgeführt. Jeglicher Code, der nach einem Methodenaufrufe an einen Client gesendet wird, wird sofort ausgeführt, ohne darauf zu warten, dass signalr die Übertragung von Daten an Clients abgeschlossen hat, es sei denn, Sie geben an, dass die nachfolgenden Codezeilen auf die In den folgenden Codebeispielen wird veranschaulicht, wie zwei Client Methoden nacheinander ausgeführt werden, eine mit Code, der in .NET 4,5 funktioniert, und eine mit Code, der in .NET 4 funktioniert.
 
-**.NET 4.5-Beispiel**
+**Beispiel für .NET 4,5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample35.cs?highlight=1,3)]
 
@@ -351,43 +351,43 @@ Die Methode, die Sie aufrufen, führt asynchron aus. Jeder Code, der nach ein Me
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample36.cs?highlight=3-4)]
 
-Bei Verwendung von `await` oder `ContinueWith` um warten, bis eine Clientmethode abgeschlossen ist, bevor die nächste Codezeile ausgeführt wird, dies bedeutet nicht, dass Clients die Nachricht tatsächlich empfangen werden, bevor die nächste Codezeile ausgeführt wird. "Abschluss", der einen Methodenaufruf für den Client bedeutet lediglich, dass SignalR alles, was Sie zum Senden der Nachricht abgeschlossen hat. Wenn Sie die Überprüfung benötigen, dass Clients die Meldung empfangen, müssen Sie diesen Mechanismus selbst programmieren. Sie können z. B. code eine `MessageReceived` -Methode für den Hub, und klicken Sie in der `addContosoChatMessageToPage` Methode auf dem Client, Sie rufen `MessageReceived` danach, was auch immer Sie arbeiten, müssen für die Sie auf dem Client. In `MessageReceived` im Hub möglich tatsächlichen Client Empfang und Verarbeitung der ursprüngliche Methodenaufruf unabhängig arbeiten abhängt.
+Wenn Sie `await` oder `ContinueWith` verwenden, um zu warten, bis eine Client Methode abgeschlossen ist, bevor die nächste Codezeile ausgeführt wird, bedeutet dies nicht, dass Clients die Nachricht tatsächlich empfangen, bevor die nächste Codezeile ausgeführt wird. Die Vervollständigung eines Client Methoden Aufrufes bedeutet nur, dass signalr alle notwendigen Schritte zum Senden der Nachricht ausgeführt hat. Wenn Sie überprüfen müssen, ob die Nachricht von Clients empfangen wurde, müssen Sie diesen Mechanismus selbst programmieren. Beispielsweise können Sie eine `MessageReceived` Methode auf dem Hub programmieren, und in der `addContosoChatMessageToPage`-Methode auf dem Client können Sie `MessageReceived` abrufen, nachdem Sie die Aufgaben ausgeführt haben, die Sie auf dem Client ausführen müssen. In `MessageReceived` im Hub können Sie jede beliebige Arbeit von tatsächlichem Client Empfang und Verarbeitung des ursprünglichen Methoden Aufrufes abhängig machen.
 
-### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Wie Sie eine String-Variable als Name der Methode zu verwenden
+### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Verwenden einer Zeichen folgen Variablen als Methodenname
 
-Wenn Sie eine Clientmethode aufrufen, mit eine String-Variable als dem Methodennamen, umwandeln möchten `Clients.All` (oder `Clients.Others`, `Clients.Caller`usw.), `IClientProxy` und rufen Sie dann [Invoke (MethodName, args…) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+Wenn Sie eine Client Methode aufrufen möchten, indem Sie eine Zeichen folgen Variable als Methodenname verwenden, wandeln Sie `Clients.All` (oder `Clients.Others`, `Clients.Caller`usw.) in `IClientProxy` und rufen Sie dann aufrufen [(MethodName, args...)](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx)auf.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample37.cs)]
 
 <a id="groupsfromhub"></a>
 
-## <a name="how-to-manage-group-membership-from-the-hub-class"></a>Gewusst wie: Verwalten der Gruppenmitgliedschaft von Hub-Klasse
+## <a name="how-to-manage-group-membership-from-the-hub-class"></a>Verwalten der Gruppenmitgliedschaft mit der Hub-Klasse
 
-Gruppen in SignalR bieten eine Methode zum Übertragen von Nachrichten an die angegebene Teilmengen von verbundenen Clients. Eine Gruppe kann eine beliebige Anzahl Clients umfassen, und ein Client kann Mitglied einer beliebigen Anzahl von Gruppen sein.
+Gruppen in signalr bieten eine Methode zum Senden von Nachrichten an bestimmte Teilmengen verbundener Clients. Eine Gruppe kann über eine beliebige Anzahl von Clients verfügen, und ein Client kann Mitglied einer beliebigen Anzahl von Gruppen sein.
 
-Verwenden Sie zum Verwalten der Gruppenmitgliedschaft die [hinzufügen](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) und [entfernen](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) von bereitgestellten Methoden die `Groups` Eigenschaft der Hub-Klasse. Das folgende Beispiel zeigt die `Groups.Add` und `Groups.Remove` Methoden im Hub-Methoden, die von Client-Code aufgerufen werden, gefolgt von JavaScript-Clientcode, der sie aufgerufen.
+Verwenden Sie zum Verwalten der Gruppenmitgliedschaft die Methoden zum [Hinzufügen](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) und [Entfernen](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) , die von der `Groups`-Eigenschaft der Hub-Klasse bereitgestellt werden. Das folgende Beispiel zeigt die `Groups.Add`-und `Groups.Remove` Methoden, die in hubmethoden verwendet werden, die vom Client Code aufgerufen werden, gefolgt von JavaScript-Client Code, der Sie aufruft.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample38.cs?highlight=5,10)]
 
-**JavaScript-Client mithilfe des generierten Proxys**
+**JavaScript-Client mit generiertem Proxy**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample39.js)]
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample40.js)]
 
-Sie haben keine Gruppen explizit zu erstellen. In Kraft ist eine Gruppe automatisch beim ersten Sie den Namen in einem Aufruf geben erstellt `Groups.Add`, und beim Entfernen der letzten Verbindungs aus der Mitgliedschaft in der er gelöscht.
+Sie müssen nicht explizit Gruppen erstellen. Tatsächlich wird eine Gruppe automatisch erstellt, wenn Sie Ihren Namen zum ersten Mal in einem Aufruf von `Groups.Add`angeben. Sie wird gelöscht, wenn Sie die letzte Verbindung aus der Mitgliedschaft entfernen.
 
-Es ist keine API zum Abrufen der Mitgliederliste einer Gruppe oder eine Liste der Gruppen ein. SignalR sendet Nachrichten an Clients und-Gruppen auf Grundlage einer [Pub/Sub-Modells](http://en.wikipedia.org/wiki/Publish/subscribe), und der Server behält keine Listen mit Gruppen oder Gruppenmitgliedschaften. Dadurch wird das Maximieren der Skalierbarkeit, da Wenn Sie einen Knoten zu einer Webfarm hinzufügen, verfügt über einem beliebigen Zustand, in der SignalR verwaltet, die auf den neuen Knoten weitergegeben werden.
+Es ist keine API zum erhalten einer Gruppen Mitgliedschafts Liste oder einer Liste von Gruppen vorhanden. Signalr sendet Nachrichten auf der Grundlage eines [Pub/Sub-Modells](http://en.wikipedia.org/wiki/Publish/subscribe)an Clients und Gruppen, und der Server verwaltet keine Listen mit Gruppen oder Gruppenmitgliedschaften. Dadurch wird die Skalierbarkeit maximiert, denn wenn Sie einer Webfarm einen Knoten hinzufügen, muss jeder Status, den signalr beibehält, an den neuen Knoten weitergegeben werden.
 
 <a id="asyncgroupmethods"></a>
 
-### <a name="asynchronous-execution-of-add-and-remove-methods"></a>Asynchrone Ausführung der Add- und Remove-Methoden
+### <a name="asynchronous-execution-of-add-and-remove-methods"></a>Asynchrone Ausführung von Add-und Remove-Methoden
 
-Die `Groups.Add` und `Groups.Remove` Methoden asynchron ausgeführt. Wenn Sie einen Client zu einer Gruppe hinzufügen und eine Nachricht sofort an den Client senden, mit dem Group möchten, müssen Sie sicherstellen, dass die `Groups.Add` Methode zuerst abgeschlossen ist. Die folgenden Codebeispiele zeigen, wie diese mithilfe von Code, der funktioniert in .NET 4.5 und mithilfe von Code, der in .NET 4 funktioniert
+Die Methoden `Groups.Add` und `Groups.Remove` werden asynchron ausgeführt. Wenn Sie einer Gruppe einen Client hinzufügen und sofort mithilfe der-Gruppe eine Nachricht an den Client senden möchten, müssen Sie sicherstellen, dass die `Groups.Add`-Methode zuerst abgeschlossen wird. In den folgenden Codebeispielen wird veranschaulicht, wie Sie dies tun, eine mit Code, der in .NET 4,5 funktioniert, und eine mit Code, der in .NET 4 funktioniert.
 
-**.NET 4.5-Beispiel**
+**Beispiel für .NET 4,5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample41.cs?highlight=1,3)]
 
@@ -397,185 +397,185 @@ Die `Groups.Add` und `Groups.Remove` Methoden asynchron ausgeführt. Wenn Sie ei
 
 <a id="grouppersistence"></a>
 
-### <a name="group-membership-persistence"></a>Group-Mitgliedschaft-Persistenz
+### <a name="group-membership-persistence"></a>Persistenz der Gruppenmitgliedschaft
 
-SignalR verfolgt Verbindungen, nicht von Benutzern, wenn also einen Benutzer in der gleichen Gruppe werden jedes Mal, wenn der Benutzer wird eine Verbindung soll, muss aufgerufen werden `Groups.Add` jedes Mal, wenn der Benutzer eine neue Verbindung hergestellt wird.
+Signalr verfolgt Verbindungen und keine Benutzer nach. Wenn Sie also möchten, dass sich ein Benutzer jedes Mal, wenn der Benutzer eine Verbindung herstellt, in derselben Gruppe befindet, müssen Sie `Groups.Add` jedes Mal anrufen, wenn der Benutzer eine neue Verbindung herstellt.
 
-Nach einem vorübergehenden Trennung der Verbindung kann manchmal SignalR die Verbindung automatisch wiederherstellen. In diesem Fall SignalR ist die gleiche Verbindung wiederherstellen nicht Herstellen einer neuen Verbindung, und daher des Clients der Gruppenmitgliedschaft wird automatisch wiederhergestellt. Dies ist möglich, auch, wenn die temporären Unterbrechung einen Neustart des Servers oder einen Fehler, das Ergebnis ist da Verbindungsstatus für jeden Client, einschließlich der Gruppenmitgliedschaften, Roundtrip an den Client ausgeführt wird. Wenn ein Server ausfällt und durch einen neuen Server ersetzt wird, bevor die Verbindung ein eintritt Timeout, kann ein Client erneut automatisch eine Verbindung mit dem neuen Server herstellen und erneut registrieren Sie sich für Gruppen, denen er Mitglied ist.
+Nach einem vorübergehenden Verbindungsverlust kann die Verbindung manchmal von signalr automatisch wieder hergestellt werden. In diesem Fall wird die gleiche Verbindung von signalr wieder hergestellt, und es wird keine neue Verbindung hergestellt, sodass die Gruppenmitgliedschaft des Clients automatisch wieder hergestellt wird. Dies ist auch dann möglich, wenn die temporäre Unterbrechung das Ergebnis eines Serverneustarts oder eines Fehlers ist, da der Verbindungsstatus für jeden Client, einschließlich der Gruppenmitgliedschaften, auf den Client gerundet wird. Wenn ein Server ausfällt und vor dem Verbindungs Timeout durch einen neuen Server ersetzt wird, kann ein Client automatisch eine Verbindung mit dem neuen Server herstellen und sich erneut bei Gruppen anmelden, bei denen er Mitglied ist.
 
-Wenn eine Verbindung nach einer verbindungsunterbrechung, nicht automatisch wiederhergestellt werden kann oder wenn die Verbindung ein auftritt Timeout oder wenn der Client die Verbindung trennt (z. B. bei ein Browser zu einer neuen Seite navigiert), werden die Gruppenmitgliedschaften verloren gehen. Das nächste Mal, die der Benutzer eine Verbindung herstellt, werden eine neue Verbindung. Um Gruppenmitgliedschaften zu gewährleisten, wenn derselbe Benutzer eine neue Verbindung herstellt, verfügt Ihre Anwendung zum Nachverfolgen von Zuordnungen zwischen Benutzern und Gruppen und Wiederherstellen von Gruppenmitgliedschaften jedes Mal ein Benutzer eine neue Verbindung hergestellt wird.
+Wenn eine Verbindung nach einem Verbindungsverlust oder einem Verbindungs Timeout nicht automatisch wieder hergestellt werden kann, oder wenn der Client die Verbindung trennt (z. b. Wenn ein Browser zu einer neuen Seite navigiert), gehen Gruppenmitgliedschaften verloren. Wenn der Benutzer das nächste Mal eine Verbindung herstellt, wird eine neue Verbindung hergestellt. Um die Gruppenmitgliedschaften beizubehalten, wenn derselbe Benutzer eine neue Verbindung herstellt, muss Ihre Anwendung die Zuordnungen zwischen Benutzern und Gruppen nachverfolgen und Gruppenmitgliedschaften jedes Mal wiederherstellen, wenn ein Benutzer eine neue Verbindung herstellt.
 
-Weitere Informationen zu Verbindungen und erneute Verbindungen finden Sie unter [Verbindung Objektlebensdauer-Ereignisse im Hub-Klasse behandeln](#connectionlifetime) weiter unten in diesem Thema.
+Weitere Informationen zu Verbindungen und erneuten Verbindungen finden Sie unter [Behandeln von Verbindungs Lebensdauer-Ereignissen in der Hub-Klasse](#connectionlifetime) weiter unten in diesem Thema.
 
 <a id="singleusergroups"></a>
 
-### <a name="single-user-groups"></a>Einzelbenutzer-Gruppen
+### <a name="single-user-groups"></a>Einzelbenutzer Gruppen
 
-Anwendungen, die in der Regel verwenden Sie SignalR können zum Nachverfolgen der Zuordnungen zwischen Benutzern und Verbindungen, um zu ermitteln, welche Benutzer eine Nachricht gesendet hat und welche Benutzer eine Nachricht empfangen sollte. Gruppen werden in einem der zwei häufig verwendete Muster dafür verwendet.
+Anwendungen, die signalr verwenden, müssen in der Regel die Zuordnungen zwischen Benutzern und Verbindungen nachverfolgen, um zu ermitteln, welcher Benutzer eine Nachricht gesendet hat und welche Benutzer eine Nachricht erhalten sollen. Gruppen werden in einem der beiden häufig verwendeten Muster verwendet.
 
-- Gruppen für einzelne Benutzer.
+- Einzelbenutzer Gruppen.
 
-    Sie können geben den Benutzernamen an, wie dem Gruppennamen und die aktuelle Verbindungs-ID zur Gruppe hinzufügen, jedes Mal, wenn der Benutzer eine Verbindung herstellt oder erneut eine Verbindung herstellt. Zum Senden von Nachrichten an den Benutzer an der Gruppe gesendet. Ein Nachteil dieser Methode ist, dass die Gruppe keine Ihnen eine Möglichkeit bieten, um herauszufinden, ob der Benutzer online oder offline ist.
-- Nachverfolgen von Zuordnungen zwischen den Benutzernamen und Verbindungs-IDs.
+    Sie können den Benutzernamen als Gruppennamen angeben und die aktuelle Verbindungs-ID der Gruppe jedes Mal hinzufügen, wenn der Benutzer eine Verbindung herstellt oder die Verbindung wiederherstellt. Zum Senden von Nachrichten an den Benutzer, den Sie an die Gruppe senden. Ein Nachteil dieser Methode besteht darin, dass die Gruppe Ihnen keine Möglichkeit bietet, herauszufinden, ob der Benutzer online oder offline ist.
+- Nachverfolgen von Zuordnungen zwischen Benutzernamen und Verbindungs-IDs.
 
-    Sie können eine Zuordnung zwischen jeden Benutzernamen und ein oder mehrere Verbindungs-IDs in einem Wörterbuch oder einer Datenbank speichern und aktualisieren Sie die gespeicherten Daten jedes Mal, die der Benutzer eine Verbindung herstellt oder trennt die Verbindung. Zum Senden von Nachrichten an den Benutzer geben Sie den Verbindungs-IDs. Ein Nachteil dieser Methode ist, dass es sich um mehr Arbeitsspeicher verwendet.
+    Sie können eine Zuordnung zwischen den einzelnen Benutzernamen und mindestens einer Verbindungs-ID in einem Wörterbuch oder einer Datenbank speichern und die gespeicherten Daten jedes Mal aktualisieren, wenn der Benutzer eine Verbindung herstellt oder die Verbindung trennt. Um Nachrichten an den Benutzer zu senden, geben Sie die Verbindungs-IDs an. Ein Nachteil dieser Methode besteht darin, dass Sie mehr Arbeitsspeicher benötigt.
 
 <a id="connectionlifetime"></a>
 
-## <a name="how-to-handle-connection-lifetime-events-in-the-hub-class"></a>Gewusst wie: Behandeln der Objektlebensdauer-Ereignisse in der hubklasse Verbindung
+## <a name="how-to-handle-connection-lifetime-events-in-the-hub-class"></a>Behandeln von Verbindungs Lebensdauer-Ereignissen in der Hub-Klasse
 
-Typische Gründe für die Verarbeitung der Verbindung Objektlebensdauer-Ereignisse sind, um nachzuverfolgen, ob ein Benutzer oder nicht verbunden ist, und um zu verfolgen die Zuordnung zwischen den Benutzernamen und Verbindungs-IDs. Um Ihren eigenen Code auszuführen, wenn Clients eine Verbindung herstellen oder trennen, überschreiben die `OnConnected`, `OnDisconnected`, und `OnReconnected` virtuelle Methoden des Hubs-Klasse, wie im folgenden Beispiel gezeigt.
+Typische Gründe für die Behandlung von Verbindungs Lebensdauer-Ereignissen besteht darin, zu verfolgen, ob ein Benutzer verbunden ist oder nicht, und die Zuordnung zwischen Benutzernamen und Verbindungs-IDs nachzuverfolgen. Um eigenen Code auszuführen, wenn Clients eine Verbindung herstellen oder trennen, überschreiben Sie die virtuellen Methoden `OnConnected`, `OnDisconnected`und `OnReconnected` der Hub-Klasse, wie im folgenden Beispiel gezeigt.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample43.cs?highlight=3,14,22)]
 
 <a id="onreconnected"></a>
 
-### <a name="when-onconnected-ondisconnected-and-onreconnected-are-called"></a>Wenn OnConnected, OnDisconnected und OnReconnected aufgerufen werden
+### <a name="when-onconnected-ondisconnected-and-onreconnected-are-called"></a>Wenn "onconnected", "ongetrennte" und "onreconnected" aufgerufen werden
 
-Jedes Mal ein Browser zu einer neuen Seite navigiert eine neue Verbindung muss hergestellt werden, was bedeutet SignalR führt die `OnDisconnected` Methode, gefolgt von der `OnConnected` Methode. SignalR erstellt eine neuen Verbindungs-ID immer, wenn eine neue Verbindung hergestellt wird.
+Jedes Mal, wenn ein Browser zu einer neuen Seite navigiert, muss eine neue Verbindung eingerichtet werden. Dies bedeutet, dass signalr die `OnDisconnected`-Methode gefolgt von der `OnConnected`-Methode ausführt. Signalr erstellt immer eine neue Verbindungs-ID, wenn eine neue Verbindung hergestellt wird.
 
-Die `OnReconnected` Methode wird aufgerufen, wenn in Verbindung, die automatisch von SignalR wiederherstellen können, z. B. wenn ein Kabel vorübergehend getrennt und wieder vor dem Timeout der Verbindung eine temporäre Unterbrechung vorliegt. Die `OnDisconnected` Methode wird aufgerufen, wenn der Client getrennt und SignalR kann nicht automatisch erneut eine Verbindung herstellen, z. B. wenn ein Browser zu einer neuen Seite navigiert. Eine mögliche Sequenz von Ereignissen für einen bestimmten Client also `OnConnected`, `OnReconnected`, `OnDisconnected`; oder `OnConnected`, `OnDisconnected`. Die Sequenz wird nicht angezeigt, `OnConnected`, `OnDisconnected`, `OnReconnected` für eine bestimmte Verbindung.
+Die `OnReconnected`-Methode wird aufgerufen, wenn eine temporäre Verbindungsunterbrechung vorliegt, von der signalr automatisch wieder hergestellt werden kann, z. b. Wenn ein Kabel vorübergehend getrennt wird und die Verbindung wieder hergestellt wird, bevor ein Timeout der Verbindung auftritt. Die `OnDisconnected`-Methode wird aufgerufen, wenn der Client getrennt wird und signalr nicht automatisch wieder verbunden werden kann, z. b. Wenn ein Browser zu einer neuen Seite navigiert. Daher ist eine mögliche Sequenz von Ereignissen für einen bestimmten Client `OnConnected`, `OnReconnected``OnDisconnected`; oder `OnConnected``OnDisconnected`. Die Sequenz `OnConnected`, `OnDisconnected``OnReconnected` für eine bestimmte Verbindung wird nicht angezeigt.
 
-Die `OnDisconnected` Methode nicht in einigen Szenarien, z. B. beim Ausfall eines Servers aufgerufen wird, oder die App-Domäne ruft wiederverwendet. Wenn Sie einen anderen Server wird in Zeile oder die Anwendungsdomäne abgeschlossen ist, die Wiederverwendung, einige Clients möglicherweise erneut eine Verbindung herstellen und Auslösen der `OnReconnected` Ereignis.
+Die `OnDisconnected`-Methode wird in einigen Szenarios nicht aufgerufen, z. b. Wenn ein Server ausfällt oder die APP-Domäne wieder verwendet wird. Wenn ein anderer Server Online ist oder die APP-Domäne die Wiederverwendung beendet, können einige Clients möglicherweise erneut eine Verbindung herstellen und das `OnReconnected` Ereignis auslösen.
 
-Weitere Informationen finden Sie unter [verstehen und Behandeln von Ereignissen für Lebensdauer in SignalR](index.md).
+Weitere Informationen finden Sie unter [verstehen und behandeln von Verbindungs Lebensdauer-Ereignissen in signalr](index.md).
 
 <a id="nocallerstate"></a>
 
 ### <a name="caller-state-not-populated"></a>Aufruferstatus nicht aufgefüllt
 
-Die Verbindung für die Lebensdauer Ereignishandlermethoden heißen vom Server ab, dies bedeutet, dass auf einem beliebigen Zustand, die Sie in aufnehmen die `state` Objekt auf dem Client werden nicht aufgefüllt werden, der `Caller` Eigenschaft auf dem Server. Informationen zu den `state` Objekt und die `Caller` -Eigenschaft finden Sie unter [wie Zustand zwischen Clients und Hub-Klasse übergeben](#passstate) weiter unten in diesem Thema.
+Die Ereignishandlermethoden der Verbindungs Lebensdauer werden vom Server aufgerufen, d. h. jeder Zustand, den Sie im `state` Objekt auf dem Client ablegen, wird nicht in der `Caller`-Eigenschaft auf dem Server aufgefüllt. Weitere Informationen über das `state`-Objekt und die `Caller`-Eigenschaft finden Sie weiter unten in diesem Thema unter [übergeben des Zustands zwischen Clients und der Hub-Klasse](#passstate) .
 
 <a id="contextproperty"></a>
 
-## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Gewusst wie: Abrufen von Informationen über den Client aus der Kontexteigenschaft
+## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>So erhalten Sie Informationen über den Client aus der Kontext Eigenschaft
 
-Rufen Sie Informationen über den Client mit der `Context` Eigenschaft der Hub-Klasse. Die `Context` -Eigenschaft gibt eine [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) Objekt bietet Zugriff auf die folgenden Informationen:
+Um Informationen über den Client zu erhalten, verwenden Sie die `Context`-Eigenschaft der Hub-Klasse. Die `Context`-Eigenschaft gibt ein [hubcallercontext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) -Objekt zurück, das den Zugriff auf die folgenden Informationen ermöglicht:
 
-- Der Verbindungs-ID des aufrufenden Clients.
+- Die Verbindungs-ID des aufrufenden Clients.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample44.cs?highlight=1)]
 
-    Die Verbindungs-ID ist eine GUID, die von SignalR zugewiesen wird (Sie können nicht den Wert in Ihrem eigenen Code angegeben). Es ist ein Verbindungs-ID für jede Verbindung, und die gleiche Verbindung, die ID von allen Hubs verwendet wird, wenn Sie mehrere Hubs in Ihrer Anwendung haben.
-- HTTP-Header der Daten.
+    Die Verbindungs-ID ist eine GUID, die von signalr zugewiesen wird (Sie können den Wert nicht in Ihrem eigenen Code angeben). Es gibt eine Verbindungs-ID für jede Verbindung, und die gleiche Verbindungs-ID wird von allen Hubs verwendet, wenn Sie über mehrere Hubs in Ihrer Anwendung verfügen.
+- HTTP-Header Daten.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample45.cs?highlight=1)]
 
-    Sie können auch HTTP-Header vom abrufen `Context.Headers`. Der Grund für mehrere Verweise auf das gleiche ist, dass `Context.Headers` wurde zuerst erstellt die `Context.Request` Eigenschaft später hinzugefügt wurde und `Context.Headers` wurde aus Kompatibilitätsgründen beibehalten.
-- Abfragen von Zeichenfolgendaten.
+    Sie können auch HTTP-Header aus `Context.Headers`erhalten. Der Grund für mehrere Verweise auf dasselbe Ergebnis ist, dass `Context.Headers` zuerst erstellt wurde, die `Context.Request`-Eigenschaft später hinzugefügt wurde und `Context.Headers` aus Gründen der Abwärtskompatibilität beibehalten wurde.
+- Abfrage Zeichen folgen Daten.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample46.cs?highlight=1)]
 
-    Sie können auch Daten aus der Abfragezeichenfolge erhalten `Context.QueryString`.
+    Sie können auch Abfrage Zeichenfolgen-Daten aus `Context.QueryString`erhalten.
 
-    Die Abfragezeichenfolge, die Sie in dieser Eigenschaft erhalten ist diejenige, die mit der HTTP-Anforderung verwendet wurde, die die SignalR-Verbindung hergestellt. Sie können Abfragezeichenfolgen-Parameter auf dem Client hinzufügen, konfigurieren Sie die Verbindung, die eine bequeme Möglichkeit, Daten über den Client vom Client an den Server übergeben wird. Das folgende Beispiel zeigt eine Möglichkeit zum Hinzufügen einer Abfragezeichenfolge in einem JavaScript-Client, wenn Sie den generierten Proxy verwenden.
+    Die Abfrage Zeichenfolge, die Sie in dieser Eigenschaft erhalten, ist die Abfrage Zeichenfolge, die mit der HTTP-Anforderung verwendet wurde, die die signalr-Verbindung Sie können dem Client Abfrage Zeichenfolgen-Parameter hinzufügen, indem Sie die Verbindung konfigurieren. Dies ist eine bequeme Möglichkeit, Daten über den Client vom Client an den Server zu übergeben. Das folgende Beispiel zeigt eine Möglichkeit, eine Abfrage Zeichenfolge in einem JavaScript-Client hinzuzufügen, wenn Sie den generierten Proxy verwenden.
 
     [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample47.js?highlight=1)]
 
-    Weitere Informationen zu Abfragezeichenfolgen-Parameter festlegen, finden Sie unter der API-Handbüchern für die [JavaScript](index.md) und [.NET](index.md) Clients.
+    Weitere Informationen zum Festlegen von Abfrage Zeichen folgen Parametern finden Sie in den API-Handbüchern für die [JavaScript](index.md) -und [.net](index.md) -Clients.
 
-    Sie finden die Transportmethode, die für die Verbindung in den Abfrage-Zeichenfolgendaten, sowie einige andere Werte, die intern von SignalR verwendet verwendet:
+    Sie finden die Transportmethode, die für die Verbindung verwendet wird, in den Abfrage Zeichenfolgen-Daten zusammen mit einigen anderen Werten, die intern von signalr verwendet werden:
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample48.cs)]
 
-    Der Wert des `transportMethod` "WebSockets", "ServerSentEvents", "ForeverFrame" oder "LongPolling" werden. Beachten Sie, dass, wenn Sie diesen Wert, in Überprüfen der `OnConnected` -Ereignishandlermethode in einigen Szenarien erhalten Sie möglicherweise zunächst einen Transportwert, der nicht die endgültige ausgehandelten Transportmethode für die Verbindung ist. In diesem Fall wird die Methode löst eine Ausnahme aus, und wird später erneut aufgerufen, wenn die endgültige Transportmethode hergestellt wird.
-- Cookies.
+    Der Wert von `transportMethod` wird "websockets", "serversentevents", "foreverframe" oder "longabruf" lauten. Beachten Sie Folgendes: Wenn Sie diesen Wert in der `OnConnected`-Ereignishandlermethode überprüfen, erhalten Sie in einigen Szenarien anfänglich möglicherweise einen Transport Wert, der nicht die endgültige aushandelte Transportmethode für die Verbindung ist. In diesem Fall löst die Methode eine Ausnahme aus und wird später erneut aufgerufen, wenn die letzte Transportmethode eingerichtet wird.
+- KS.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample49.cs?highlight=1)]
 
-    Sie erhalten auch Cookies von `Context.RequestCookies`.
+    Sie können auch Cookies aus `Context.RequestCookies`erhalten.
 - Benutzerinformationen.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample50.cs?highlight=1)]
-- Das HttpContext-Objekt, für die Anforderung:
+- Das HttpContext-Objekt für die Anforderung:
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample51.cs?highlight=1)]
 
-    Verwenden Sie diese Methode anstelle `HttpContext.Current` zum Abrufen der `HttpContext` Objekt für die SignalR-Verbindung.
+    Verwenden Sie diese Methode, anstatt `HttpContext.Current`, um das `HttpContext`-Objekt für die signalr-Verbindung zu erhalten.
 
 <a id="passstate"></a>
 
-## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>Gewusst wie: Status zwischen Clients und Hub-Klasse übergeben.
+## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>Übergeben des Zustands zwischen Clients und der Hub-Klasse
 
-Der Clientproxy stellt eine `state` Objekt in der Sie Daten, die mit jedem Methodenaufruf an den Server übertragen werden sollen speichern können. Auf dem Server können Sie zugreifen, diese Daten in die `Clients.Caller` Eigenschaft im Hub-Methoden, die von Clients aufgerufen werden. Die `Clients.Caller` ist nicht für die Verbindung für die Lebensdauer Ereignishandlermethoden ausgefüllt `OnConnected`, `OnDisconnected`, und `OnReconnected`.
+Der-Client Proxy stellt ein `state` Objekt bereit, in dem Sie Daten speichern können, die mit jedem Methoden aufrufan den Server übertragen werden sollen. Auf dem-Server können Sie auf diese Daten in der `Clients.Caller`-Eigenschaft in hubmethoden zugreifen, die von-Clients aufgerufen werden. Die `Clients.Caller`-Eigenschaft wird für die Verbindungs Lebensdauer-Ereignishandlermethoden `OnConnected`, `OnDisconnected`und `OnReconnected`nicht aufgefüllt.
 
-Erstellen oder Aktualisieren von Daten in die `state` Objekt und die `Clients.Caller` Eigenschaft funktioniert in beide Richtungen. Sie können Werte auf dem Server aktualisieren und sie werden zurück an den Client übergeben.
+Das Erstellen oder Aktualisieren von Daten im `state` Objekt und in der `Clients.Caller`-Eigenschaft funktioniert in beide Richtungen. Sie können Werte auf dem Server aktualisieren, die an den Client zurückgegeben werden.
 
-Das folgende Beispiel zeigt die JavaScript-Clientcode, mit dem Zustand für die Übertragung an den Server mit jedem Methodenaufruf von speichert.
+Das folgende Beispiel zeigt JavaScript-Client Code, der den Status für die Übertragung an den Server mit jedem Methoden Aufrufwert speichert.
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample52.js?highlight=1-2)]
 
-Das folgende Beispiel zeigt den entsprechenden Code in einen .NET Client.
+Das folgende Beispiel zeigt den entsprechenden Code in einem .NET-Client.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample53.cs?highlight=1-2)]
 
-In der Hub-Klasse, können Sie zugreifen, diese Daten in die `Clients.Caller` Eigenschaft. Das folgende Beispiel zeigt Code, der den Zustand, der im vorherigen Beispiel genannten abruft.
+In ihrer Hub-Klasse können Sie auf diese Daten in der `Clients.Caller`-Eigenschaft zugreifen. Das folgende Beispiel zeigt Code, der den Zustand abruft, auf den im vorherigen Beispiel verwiesen wird.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample54.cs?highlight=3-4)]
 
 > [!NOTE]
-> Dieser Mechanismus für den persistenten Zustand sollte nicht für große Mengen an Daten, da alles, was Sie in fügen der `state` oder `Clients.Caller` -Eigenschaft ist mit dem jeder Methodenaufruf zurückgeleitet. Es empfiehlt sich für kleinere Elemente wie Benutzernamen oder Leistungsindikatoren.
+> Dieser Mechanismus für das Beibehalten des Zustands ist nicht für große Datenmengen gedacht, da alles, was Sie in der `state`-oder `Clients.Caller`-Eigenschaft ablegen, bei jedem Methodenaufruf Roundtrip umfasst. Dies ist nützlich für kleinere Elemente, wie z. b. Benutzernamen oder Leistungsindikatoren.
 
 <a id="handleErrors"></a>
 
-## <a name="how-to-handle-errors-in-the-hub-class"></a>Gewusst wie: Behandeln von Fehlern in der hubklasse
+## <a name="how-to-handle-errors-in-the-hub-class"></a>Behandeln von Fehlern in der Hub-Klasse
 
-Zur Behandlung von Fehlern, die in Ihrem Hub-Klasse, Methoden auftreten, verwenden Sie eine oder beide der folgenden Methoden:
+Verwenden Sie eine oder beide der folgenden Methoden, um Fehler zu behandeln, die in den hubklassen Methoden auftreten:
 
-- Umschließen Sie den Methodencode in Try-Catch-Blöcke, und melden Sie sich das Ausnahmeobjekt. Sie können die Ausnahme an den Client senden, zum Debuggen, aber für die Sicherheit der Gründe, senden detaillierte Informationen für Clients in einer produktionsumgebung werden nicht empfohlen.
-- Erstellen eines Hubs Pipeline-Moduls, das behandelt die [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) Methode. Das folgende Beispiel zeigt eine Pipeline-Modul, das protokolliert Fehler, gefolgt vom Code in "Global.asax", die das Modul in die Hubs-Pipeline einfügt.
+- Packen Sie den Methoden Code in try-catch-Blöcken, und protokollieren Sie das Ausnahme Objekt. Zu Debuggingzwecken können Sie die Ausnahme an den Client senden, aber aus Sicherheitsgründen wird das Senden detaillierter Informationen an Clients in der Produktionsumgebung nicht empfohlen.
+- Erstellen Sie ein Hubs Pipeline Modul, das die [onincomingerror](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) -Methode behandelt. Das folgende Beispiel zeigt ein Pipeline Modul, das Fehler protokolliert, gefolgt von Code in Global. asax, der das Modul in die Hubs-Pipeline einfügt.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample55.cs)]
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample56.cs?highlight=3)]
 
-Weitere Informationen zu den Hub-Pipeline-Modulen, finden Sie unter [Gewusst wie: Anpassen die Pipeline Hubs](#hubpipeline) weiter unten in diesem Thema.
+Weitere Informationen zu Hub-Pipeline Modulen finden Sie weiter unten in diesem Thema unter [Anpassen der Hubs-Pipeline](#hubpipeline) .
 
 <a id="tracing"></a>
 
-## <a name="how-to-enable-tracing"></a>Gewusst wie: Aktivieren der Ablaufverfolgung
+## <a name="how-to-enable-tracing"></a>Aktivieren der Ablauf Verfolgung
 
-Fügen Sie zum Aktivieren der serverseitigen Ablaufverfolgung ein system.diagnostics-Element in die Datei Web.config hinzu, wie im folgenden Beispiel gezeigt:
+Um die serverseitige Ablauf Verfolgung zu aktivieren, fügen Sie der Datei "Web. config" ein System. Diagnostics-Element hinzu, wie im folgenden Beispiel gezeigt:
 
 [!code-html[Main](signalr-1x-hubs-api-guide-server/samples/sample57.html?highlight=17-72)]
 
-Wenn Sie die Anwendung in Visual Studio ausführen, sehen Sie in die Protokollen der **Ausgabe** Fenster.
+Wenn Sie die Anwendung in Visual Studio ausführen, können Sie die Protokolle im **Ausgabe** Fenster anzeigen.
 
 <a id="callfromoutsidehub"></a>
 
-## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>Das Client-Methoden aufrufen und Verwalten von Gruppen von außerhalb der Hub-Klasse
+## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>Abrufen von Client Methoden und Verwalten von Gruppen von außerhalb der hubklasse
 
-Um den Client von einer anderen Klasse als die Hub-Klasse Methoden aufrufen, rufen Sie einen Verweis auf das SignalR-Context-Objekt, für den Hub, und verwenden Sie, die zum Aufrufen von Methoden auf dem Client oder Verwalten von Gruppen.
+Um Client Methoden aus einer anderen Klasse als der hubklasse aufzurufen, erhalten Sie einen Verweis auf das signalr-Kontext Objekt für den Hub und verwenden dieses, um Methoden auf dem Client aufzurufen oder Gruppen zu verwalten.
 
-Im folgenden Beispiel `StockTicker` Klasse ruft die Kontextobjekt ab, speichert es in eine Instanz der Klasse, speichert die Instanz der Klasse in einer statischen Eigenschaft und verwendet den Kontext aus der Instanz des Singleton-Klasse zum Aufrufen der `updateStockPrice` Methode für Clients verbunden mit einem Hub, mit dem Namen `StockTickerHub`.
+Das folgende Beispiel `StockTicker` Klasse ruft das Kontext Objekt ab, speichert es in einer Instanz der-Klasse, speichert die-Klasseninstanz in einer statischen-Eigenschaft und verwendet den Kontext aus der Singleton-Klasseninstanz, um die `updateStockPrice`-Methode auf Clients aufzurufen, die mit einem Hub mit dem Namen `StockTickerHub`verbunden sind.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample58.cs?highlight=8,24)]
 
-Wenn Sie die Kontext-Multiple-Zeiten in einem dauerhaften-Objekt verwenden müssen, rufen Sie den Verweis einmal, und speichern Sie, anstatt ihn jedes Mal abrufen. Abrufen von Kontext einmal wird sichergestellt, dass es sich bei SignalR für Clients in derselben Reihenfolge Senden von Nachrichten in der Ihre hubmethoden Client Methodenaufrufe vornehmen. Ein Lernprogramm, das zeigt, wie Sie mit dem SignalR-Kontext für einen Hub, finden Sie unter [Serverübertragung mit ASP.NET SignalR](index.md).
+Wenn Sie den Kontext mehrmals in einem langlebiges Objekt verwenden müssen, sollten Sie den Verweis einmal erhalten und speichern, anstatt ihn jedes Mal erneut zu erhalten. Wenn Sie den Kontext einmal erhalten, stellen Sie sicher, dass signalr Nachrichten in derselben Reihenfolge an Clients sendet, in der die hubmethoden Aufrufe der Client Methode ausführen. Ein Tutorial, das zeigt, wie der signalr-Kontext für einen Hub verwendet wird, finden Sie unter [Server Broadcast mit ASP.net signalr](index.md).
 
 <a id="callingclientsoutsidehub"></a>
 
-### <a name="calling-client-methods"></a>Aufrufen von Clientmethoden
+### <a name="calling-client-methods"></a>Aufrufen von Client Methoden
 
-Sie können angeben, welche Clients die RPC erhält, aber haben weniger Optionen als beim Aufruf von einer hubklasse. Der Grund dafür ist, dass der Kontext kein bestimmter Aufruf von einem Client zugeordnet ist, damit alle Methoden, die Kenntnisse über die aktuellen Verbindungs-ID, z. B. erfordern `Clients.Others`, oder `Clients.Caller`, oder `Clients.OthersInGroup`, sind nicht verfügbar. Die folgenden Optionen sind verfügbar:
+Sie können angeben, welche Clients den RPC erhalten sollen, aber Sie haben weniger Optionen als beim Aufruf von einer Hub-Klasse. Der Grund hierfür ist, dass der Kontext keinem bestimmten Client von einem Client zugeordnet ist, sodass alle Methoden, die Kenntnisse der aktuellen Verbindungs-ID erfordern (z. b. `Clients.Others`oder `Clients.Caller`oder `Clients.OthersInGroup`), nicht verfügbar sind. Die folgenden Optionen sind verfügbar:
 
 - Alle verbundenen Clients.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample59.cs)]
-- Einen bestimmten Client identifiziert, die vom Verbindungs-ID.
+- Ein spezifischer Client, der durch die Verbindungs-ID identifiziert wird
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample60.css)]
-- Alle verbundenen Clients mit Ausnahme der angegebenen Clients identifizierte Verbindungs-ID.
+- Alle verbundenen Clients mit Ausnahme der angegebenen Clients, identifiziert durch die Verbindungs-ID.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample61.cs)]
-- Alle verbundenen Clients in einer angegebenen Gruppe.
+- Alle verbundenen Clients in einer bestimmten Gruppe.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample62.css)]
-- Alle verbundenen Clients in einer angegebenen Gruppe mit Ausnahme der angegebenen Clients identifiziert, die vom Verbindungs-ID.
+- Alle verbundenen Clients in einer angegebenen Gruppe mit Ausnahme der angegebenen Clients, die durch die Verbindungs-ID identifiziert werden.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample63.cs)]
 
-Wenn Sie in Ihre nicht-Hub-Klasse von Methoden in der Hub-Klasse aufrufen, können Sie in der aktuellen Verbindungs­id übergeben und verwenden, die mit `Clients.Client`, `Clients.AllExcept`, oder `Clients.Group` simulieren `Clients.Caller`, `Clients.Others`, oder `Clients.OthersInGroup`. Im folgenden Beispiel die `MoveShapeHub` Klasse übergibt die Verbindungs-ID, die `Broadcaster` Klasse, damit die `Broadcaster` Klasse kann simulieren `Clients.Others`.
+Wenn Sie die nicht-Hub-Klasse von Methoden in ihrer Hub-Klasse aufrufen, können Sie die aktuelle Verbindungs-ID übergeben und diese mit `Clients.Client`, `Clients.AllExcept`oder `Clients.Group` verwenden, um `Clients.Caller`, `Clients.Others`oder `Clients.OthersInGroup`zu simulieren. Im folgenden Beispiel übergibt die `MoveShapeHub`-Klasse die Verbindungs-ID an die `Broadcaster`-Klasse, damit die `Broadcaster`-Klasse `Clients.Others`simulieren kann.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample64.cs?highlight=12,36)]
 
@@ -583,25 +583,25 @@ Wenn Sie in Ihre nicht-Hub-Klasse von Methoden in der Hub-Klasse aufrufen, könn
 
 ### <a name="managing-group-membership"></a>Verwalten der Gruppenmitgliedschaft
 
-Zum Verwalten von Gruppen müssen Sie die gleichen Optionen wie in einer hubklasse.
+Zum Verwalten von Gruppen haben Sie dieselben Optionen wie in einer Hub-Klasse.
 
 - Hinzufügen eines Clients zu einer Gruppe
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample65.cs)]
-- Entfernen Sie einen Client aus einer Gruppe
+- Entfernen eines Clients aus einer Gruppe
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample66.css)]
 
 <a id="hubpipeline"></a>
 
-## <a name="how-to-customize-the-hubs-pipeline"></a>Gewusst wie: Anpassen die Pipeline Hubs
+## <a name="how-to-customize-the-hubs-pipeline"></a>Vorgehensweise beim Anpassen der Hubs-Pipeline
 
-SignalR ermöglicht Ihnen, Ihren eigenen Code in die Hub-Pipeline einzufügen. Das folgende Beispiel zeigt ein benutzerdefiniertes Hub-Pipeline-Modul, das jeden eingehenden Aufruf einer Methode empfangen aus dem Client und der ausgehende Aufruf der Methode, die aufgerufen wird, auf dem Client protokolliert:
+Mit signalr können Sie Ihren eigenen Code in die Hub-Pipeline einfügen. Das folgende Beispiel zeigt ein benutzerdefiniertes Hub Pipeline Modul, das jeden eingehenden Methodenaufruf protokolliert, der vom Client empfangen wurde, und den Aufruf der ausgehenden Methode, der auf dem Client
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample67.cs)]
 
-Im folgenden code in die *"Global.asax"* Datei registriert das Modul in die Hub-Pipeline ausführen:
+Der folgende Code in der Datei *Global. asax* registriert das Modul, das in der Hub-Pipeline ausgeführt werden soll:
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample68.cs?highlight=3)]
 
-Es gibt viele verschiedene Methoden, die Sie überschreiben können. Eine vollständige Liste finden Sie unter [HubPipelineModule Methoden](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).
+Es gibt viele verschiedene Methoden, die Sie überschreiben können. Eine umfassende Liste finden Sie unter [hubpipelinemodule-Methoden](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).

@@ -1,76 +1,76 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
-title: Vererbung von komplexen Typen in OData v4 mit ASP.NET Web-API | Microsoft-Dokumentation
+title: Vererbung komplexer Typen in odata v4 mit ASP.net-Web-API | Microsoft-Dokumentation
 author: microsoft
-description: Gemäß der OData v4-Spezifikation kann ein komplexer Typ von einem anderen komplexen Typ erben. (Ein komplexer Typ ist einen strukturierten Typ ohne einen Schlüssel.) Web-API...
+description: Gemäß der odata V4-Spezifikation kann ein komplexer Typ von einem anderen komplexen Typ erben. (Ein komplexer Typ ist ein strukturierter Typ ohne Schlüssel.) Web-API...
 ms.author: riande
 ms.date: 09/16/2014
 ms.assetid: a00d3600-9c2a-41bc-9460-06cc527904e2
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
 msc.type: authoredcontent
 ms.openlocfilehash: 3d90216c8e594055f77577eb6d8b1d978ae4c24d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132745"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448131"
 ---
-# <a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a>Vererbung von komplexen Typen in OData v4 mit ASP.NET Web-API
+# <a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a>Vererbung komplexer Typen in odata v4 mit ASP.net-Web-API
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Gemäß den OData v4 [Spezifikation](http://www.odata.org/documentation/odata-version-4-0/), ein komplexer Typ kann von einem anderen komplexen Typ erben. (Ein *komplexe* Typ ist ein strukturierter Typ ohne einen Schlüssel.) Web-API OData 5.3 unterstützt die Vererbung von komplexen Typen.
+> Gemäß der odata V4- [Spezifikation](http://www.odata.org/documentation/odata-version-4-0/)kann ein komplexer Typ von einem anderen komplexen Typ erben. (Ein *komplexer* Typ ist ein strukturierter Typ ohne Schlüssel.) Die Web-API odata 5,3 unterstützt die Vererbung komplexer Typen.
 > 
-> In diesem Thema veranschaulicht die Erstellung ein Entity Data Model (EDM) mit von komplexen Vererbungstypen. Den vollständigen Quellcode, finden Sie unter [OData Beispiel für komplexe Vererbung](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).
+> In diesem Thema wird gezeigt, wie ein Entity Data Model (EDM) mit komplexen Vererbungs Typen erstellt wird. Den gesamten Quellcode finden Sie unter [odata-Beispiel für komplexe Typvererbung](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
-> - Web-API OData 5.3
+> - Web-API-odata 5,3
 > - OData v4
 
-## <a name="model-hierarchy"></a>Hierarchie des integritätsmodells
+## <a name="model-hierarchy"></a>Modell Hierarchie
 
-Um die Vererbung von komplexen Typen zu veranschaulichen, verwenden wir die folgende Hierarchie von Klassen.
+Um die komplexe Typvererbung zu veranschaulichen, verwenden wir die folgende Klassenhierarchie.
 
 ![](complex-type-inheritance-in-odata-v4/_static/image1.png)
 
-`Shape` wird ein abstrakter komplexer Typ. `Rectangle`, `Triangle`, und `Circle` komplexe Typen abgeleitet sind `Shape`, und `RoundRectangle` leitet sich von `Rectangle`. `Window` ein Entitätstyp und enthält eine `Shape` Instanz.
+`Shape` ist ein abstrakter komplexer Typ. `Rectangle`, `Triangle`und `Circle` sind komplexe Typen, die von `Shape`abgeleitet sind, und `RoundRectangle` von `Rectangle`abgeleitet. `Window` ist ein Entitätstyp und enthält eine `Shape` Instanz.
 
 Hier sind die CLR-Klassen, die diese Typen definieren.
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample1.cs)]
 
-## <a name="build-the-edm-model"></a>Das EDM-Modell erstellen
+## <a name="build-the-edm-model"></a>Erstellen des EDM-Modells
 
-Um das EDM zu erstellen, können Sie **ODataConventionModelBuilder**, dem ableitet vererbungsbeziehungen von der CLR-Typen.
+Zum Erstellen des EDM können Sie **odataconaconmodelbuilder**verwenden, das die Vererbungs Beziehungen von den CLR-Typen leitet.
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample2.cs)]
 
-Sie können auch erstellen, das EDM explizit mit **ODataModelBuilder**. Dies nimmt mehr Code, aber es gibt Ihnen mehr Kontrolle über das EDM.
+Außerdem können Sie das EDM mithilfe von **odatamodelta Builder**explizit erstellen. Dies erfordert mehr Code, bietet Ihnen jedoch mehr Kontrolle über das EDM.
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample3.cs)]
 
-Diese beiden Beispiele erstellen, das gleiche EDM-Schema.
+In diesen beiden Beispielen wird das gleiche EDM-Schema erstellt.
 
 ## <a name="metadata-document"></a>Metadatendokument
 
-Hier ist das OData-Dokument, mit der Vererbung von komplexen Typen.
+Hier finden Sie das odata-Metadatendokument, das eine komplexe Typvererbung zeigt.
 
 [!code-xml[Main](complex-type-inheritance-in-odata-v4/samples/sample4.xml?highlight=13,17,25,30)]
 
-Aus dem Dokument sehen Sie, die Folgendes:
+Im Metadatendokument können Sie Folgendes sehen:
 
-- Die `Shape` komplexe Typ abstrakt ist.
-- Die `Rectangle`, `Triangle`, und `Circle` komplexen Typs haben den Basistyp `Shape`.
-- Die `RoundRectangle` Typ muss der Basistyp `Rectangle`.
+- Der `Shape` komplexer Typ ist abstrakt.
+- Die `Rectangle`, `Triangle`und `Circle` komplexen Typs verfügen über den Basistyp `Shape`.
+- Der `RoundRectangle` Typ verfügt über den Basistyp `Rectangle`.
 
-## <a name="casting-complex-types"></a>Wandeln komplexe Typen
+## <a name="casting-complex-types"></a>Umwandeln komplexer Typen
 
-Für komplexe Typen umwandeln, wird jetzt unterstützt. Z. B. die folgende Abfrage Wandelt eine `Shape` zu einem `Rectangle`.
+Das umwandeln komplexer Typen wird jetzt unterstützt. Mit der folgenden Abfrage wird z. b. ein `Shape` in eine `Rectangle`umgewandelt.
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample5.cmd)]
 
-Hier ist die Nutzlast der Antwort aus:
+Hier ist die Antwort Nutzlast:
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample6.cmd)]

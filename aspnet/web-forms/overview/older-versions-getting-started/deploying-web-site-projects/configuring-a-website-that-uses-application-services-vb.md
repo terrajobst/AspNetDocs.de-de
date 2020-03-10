@@ -9,11 +9,11 @@ ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 19e7258b558372259c7554a36c6ad73ce572dfa8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588644"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521655"
 ---
 # <a name="configuring-a-website-that-uses-application-services-vb"></a>Konfigurieren einer Website mit Anwendungsdiensten (VB)
 
@@ -127,7 +127,7 @@ Sie müssen das `aspnet_regsql.exe` Tool nur verwenden, wenn Sie Ihre Webanwendu
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>Kopieren von Benutzerkonten aus der Entwicklung in die Produktion
 
-Wenn Sie die `SqlMembershipProvider`-und `SqlRoleProvider` Anbieter Klassen verwenden, um die Anwendungs Dienst Informationen in einer SQL Server-Datenbank zu speichern, werden das Benutzerkonto und die Rollen Informationen in einer Vielzahl von Datenbanktabellen gespeichert, einschließlich `aspnet_Users`, `aspnet_Membership`, `aspnet_Roles`und `aspnet_UsersInRoles`. Wenn Sie während der Entwicklung Benutzerkonten in der Entwicklungsumgebung erstellen, können Sie diese Benutzerkonten in der Produktionsumgebung replizieren, indem Sie die entsprechenden Datensätze aus den entsprechenden Datenbanktabellen kopieren. Wenn Sie den Datenbankveröffentlichungs-Assistenten zum Bereitstellen von Anwendungs Dienst-Datenbankobjekten verwendet haben, haben Sie möglicherweise auch die Datensätze kopiert, was dazu führen würde, dass die Benutzerkonten, die in der Entwicklung erstellt werden, auch in der Produktion Abhängig von Ihren Konfigurationseinstellungen können Sie jedoch feststellen, dass die Benutzer, deren Konten in der Entwicklung erstellt und in die Produktion kopiert wurden, sich nicht auf der Produktions Website anmelden können. Was bietet?
+Wenn Sie die `SqlMembershipProvider`-und `SqlRoleProvider` Anbieter Klassen verwenden, um die Anwendungs Dienst Informationen in einer SQL Server-Datenbank zu speichern, werden das Benutzerkonto und die Rollen Informationen in einer Vielzahl von Datenbanktabellen gespeichert, einschließlich `aspnet_Users`, `aspnet_Membership`, `aspnet_Roles`und `aspnet_UsersInRoles`. Wenn Sie während der Entwicklung Benutzerkonten in der Entwicklungsumgebung erstellen, können Sie diese Benutzerkonten in der Produktionsumgebung replizieren, indem Sie die entsprechenden Datensätze aus den entsprechenden Datenbanktabellen kopieren. Wenn Sie den Datenbankveröffentlichungs-Assistenten zum Bereitstellen von Anwendungs Dienst-Datenbankobjekten verwendet haben, haben Sie möglicherweise auch die Datensätze kopiert, was dazu führen würde, dass die Benutzerkonten, die in der Entwicklung erstellt werden, auch in der Produktion Abhängig von Ihren Konfigurationseinstellungen können Sie jedoch feststellen, dass die Benutzer, deren Konten in der Entwicklung erstellt und in die Produktion kopiert wurden, sich nicht auf der Produktions Website anmelden können. Woran liegt das?
 
 Die `SqlMembershipProvider`-und `SqlRoleProvider` Anbieter Klassen wurden so entworfen, dass eine einzelne Datenbank als Benutzerspeicher für mehrere Anwendungen fungieren könnte, wobei jede Anwendung theoretisch Benutzer mit überlappenden Benutzernamen und Rollen mit dem gleichen Namen haben könnte. Um diese Flexibilität zu ermöglichen, verwaltet die Datenbank eine Liste der Anwendungen in der `aspnet_Applications` Tabelle, und jeder Benutzer ist einer dieser Anwendungen zugeordnet. Die `aspnet_Users` Tabelle verfügt insbesondere über eine `ApplicationId` Spalte, die jeden Benutzer mit einem Datensatz in der `aspnet_Applications` Tabelle verknüpft.
 
@@ -161,13 +161,13 @@ Beachten Sie, dass ein früheres Tutorial die Webanwendung Book Reviews so aktua
 
 Wenn Sie die vollständige Funktionalität von WSAT benötigen, sehen Sie sich das [*Rollout Ihres eigenen Websiteverwaltungs-Tools*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)an, in dem Autor Dan Clem den Prozess der Erstellung eines benutzerdefinierten WSAT-ähnlichen Tools erläutert. Dan gibt den Quellcode der Anwendung (in C#) frei und bietet schrittweise Anleitungen zum Hinzufügen des Codes zu ihrer gehosteten Website.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Bereitstellen einer Webanwendung, die die Anwendungs Dienst-Datenbankimplementierung verwendet, müssen Sie zunächst sicherstellen, dass die Produktionsdatenbank über die erforderlichen Datenbankobjekte verfügt Diese Objekte können mithilfe der Techniken hinzugefügt werden, die im Tutorial zum Bereitstellen *einer Datenbank* erläutert werden. Alternativ können Sie das `aspnet_regsql.exe` Tool verwenden, wie in diesem Tutorial gezeigt. Andere Herausforderungen, die wir im Zusammenhang mit der Synchronisierung des in den Entwicklungs-und Produktionsumgebungen verwendeten Anwendungs namensfest gestellt haben (Dies ist wichtig, wenn Benutzer und Rollen, die in der Entwicklungsumgebung erstellt werden, in der Produktion gültig sein soll) und Techniken für Verwalten der Benutzer und Rollen in der Produktionsumgebung.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

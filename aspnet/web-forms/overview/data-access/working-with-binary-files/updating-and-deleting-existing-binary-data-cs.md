@@ -9,11 +9,11 @@ ms.assetid: 35798f21-1606-434b-83f8-30166906ef49
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 3e37381ee48fcda8e0e10374aa7a6ae53c3cc77c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587108"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475143"
 ---
 # <a name="updating-and-deleting-existing-binary-data-c"></a>Aktualisieren und Löschen von vorhandenen Binärdaten (C#)
 
@@ -298,7 +298,7 @@ Nachdem eine Kategorie bearbeitet und das JPG-Bild hochgeladen wurde, wird das B
 > [!NOTE]
 > Die `UpdatingAndDeleting.aspx` Seite s zum Einfügen und Bearbeiten von Schnittstellen könnte etwas mehr Arbeit verwenden. Die `CategoryName`-und `Description` boundfields-Eigenschaft in DetailsView und GridView sollten in templatefields konvertiert werden. Da `CategoryName` keine `NULL` Werte zulässt, sollte ein "Requirements dfieldvalidator"-Element hinzugefügt werden. Und das Textfeld "`Description`" sollte wahrscheinlich in ein mehrzeilige Textfeld konvertiert werden. Ich lasse Ihnen diese abschließenden Berührungen als Übung für Sie überlassen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wird die Arbeit mit Binärdaten behandelt. In diesem Tutorial und den vorherigen drei Informationen wurde erläutert, wie Binärdaten im Dateisystem oder direkt in der Datenbank gespeichert werden können. Ein Benutzer stellt Binärdaten für das System bereit, indem er eine Datei auf der Festplatte auswählt und Sie auf den Webserver hochlädt, wo Sie im Dateisystem gespeichert oder in die Datenbank eingefügt werden kann. ASP.NET 2,0 enthält ein FileUpload-Steuerelement, das die Bereitstellung einer solchen Schnittstelle so einfach wie das ziehen und ablegen erleichtert. Wie im Tutorial [Hochladen von Dateien](uploading-files-cs.md) erwähnt, eignet sich das FileUpload-Steuerelement jedoch nur für relativ kleine Datei Uploads, die im Idealfall einen Megabyte nicht überschreiten. Außerdem wurde erläutert, wie hochgeladene Daten mit dem zugrunde liegenden Datenmodell verknüpft werden, und wie die Binärdaten aus vorhandenen Datensätzen bearbeitet und gelöscht werden.
 
@@ -306,7 +306,7 @@ Unsere nächste Reihe von Tutorials untersucht verschiedene Caching-Techniken. C
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

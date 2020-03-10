@@ -9,11 +9,11 @@ ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
 ms.openlocfilehash: b71cacb143094dcc5cf483c69c2fcc0f10def51c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74628507"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461493"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-vb"></a>Mehrere ContentPlaceHolder-Steuerelemente und Standardinhalt (VB)
 
@@ -148,7 +148,7 @@ Abbildung 8 zeigt `Default.aspx`, wenn Sie in einem Browser angezeigt werden. Be
 
 **Abbildung 08**: der Standard Inhalt für die `LeftColumnContent`-und `QuickLoginUI`-contentplatzhalter wird angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Mit dem ASP.NET-Masterseiten Modell können beliebig viele contentplatzhalter auf der Master Seite angezeigt werden. Außerdem enthalten contentplatzhalter Standard Inhalt, der ausgegeben wird, wenn kein entsprechendes Inhalts Steuerelement auf der Inhaltsseite vorhanden ist. In diesem Tutorial haben Sie erfahren, wie Sie zusätzliche contentplachalter-Steuerelemente in die Master Seite einfügen und Inhalts Steuerelemente für diese neuen Inhalts Platzhalter auf neuen und vorhandenen ASP.NET-Seiten definieren. Außerdem haben wir uns mit der Angabe von Standard Inhalten in einem contentplachalter beschäftigt. Dies ist in Szenarios nützlich, in denen nur eine Minderheit von Seiten den anderweitig standardisierten Inhalt innerhalb einer bestimmten Region anpassen muss.
 
@@ -156,7 +156,7 @@ Im nächsten Tutorial untersuchen wir den `head` contentplachalter ausführliche
 
 Fröhliche Programmierung!
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

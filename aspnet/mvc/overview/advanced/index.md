@@ -1,22 +1,22 @@
 ---
 uid: mvc/overview/advanced/index
-title: ASP.NET MVC Weiterführende Themen | Microsoft-Dokumentation
+title: ASP.net erweiterte MVC-Themen | Microsoft-Dokumentation
 author: rick-anderson
-description: Weiterführende Themen für programming ASP.NET MVC, einschließlich Eingabehilfen, Erweiterbarkeit und Internationalisierung.
+description: Erweiterte Themen zum Programmieren von ASP.NET MVC, einschließlich Barrierefreiheit, Erweiterbarkeit und Internationalisierung.
 ms.author: riande
 ms.date: 10/09/2014
 ms.assetid: 2a8cc0dc-e21b-444b-b394-bc3dfceac16a
 msc.legacyurl: /mvc/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: af876fb73fe2f9dce4e29c052b9fb69324c57397
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121319"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499683"
 ---
-# <a name="aspnet-mvc-advanced-topics"></a>ASP.NET MVC Weiterführende Themen
+# <a name="aspnet-mvc-advanced-topics"></a>Erweiterte ASP.NET MVC-Themen
 
-> Weiterführende Themen für programming ASP.NET MVC, einschließlich Eingabehilfen, Erweiterbarkeit und Internationalisierung.
+> Erweiterte Themen zum Programmieren von ASP.NET MVC, einschließlich Barrierefreiheit, Erweiterbarkeit und Internationalisierung.
 
 - [Benutzerdefinierte MVC-Vorlage](custom-mvc-templates.md)

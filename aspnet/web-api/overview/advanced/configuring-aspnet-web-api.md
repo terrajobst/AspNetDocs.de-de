@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: Konfigurieren von ASP.NET Web-API 2 - ASP.NET 4.x
+title: Konfigurieren von ASP.net-Web-API 2-ASP.NET 4. x
 author: MikeWasson
-description: 'Konfigurieren von ASP.NET-Web-API 2 für ASP.NET 4.x: Konfigurieren Sie Einstellungen, für das Hosten von ASP.NET 4.x, OWIN Selbsthosting, globale Dienste und vor Controller-Konfiguration.'
+description: 'Konfigurieren Sie ASP.net-Web-API 2 für ASP.NET 4. x: Konfigurieren Sie die Einstellungen, das ASP.NET 4. x-Hosting, das Self-Hosting von owin, globale Dienste und die Konfiguration vor dem Controller.'
 ms.author: riande
 ms.date: 03/31/2014
 ms.custom: seoapril2019
@@ -10,146 +10,146 @@ ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 4f76728fa5e4602e35e1b7cb2d41b2245093cad8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115964"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449343"
 ---
-# <a name="configuring-aspnet-web-api-2"></a>Konfigurieren von ASP.NET Web-API 2
+# <a name="configuring-aspnet-web-api-2"></a>Konfigurieren von ASP.net-Web-API 2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-Dieses Thema beschreibt, wie Sie ASP.NET Web-API zu konfigurieren.
+In diesem Thema wird beschrieben, wie Sie ASP.net-Web-API konfigurieren.
 
 - [Konfigurationseinstellungen](#settings)
-- [Konfigurieren von Web-API mit Hosten von ASP.NET](#webhost)
-- [Konfigurieren von Web-API mit Selbstgehostetem](#selfhost)
+- [Konfigurieren der Web-API mit ASP.net-Hosting](#webhost)
+- [Konfigurieren der Web-API mit selbst Hosting von owin](#selfhost)
 - [Globale Web-API-Dienste](#services)
-- [Pro Controller-Konfiguration](#percontrollerconfig)
+- [Konfiguration pro Controller](#percontrollerconfig)
 
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>Konfigurationseinstellungen
 
-Web-API-Konfigurationseinstellungen werden definiert, der [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) Klasse.
+Die Web-API-Konfigurationseinstellungen werden in der [httpconfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) -Klasse definiert.
 
 | Member | Beschreibung |
 | --- | --- |
-| **DependencyResolver** | Ermöglicht Dependency Injection für Controller. Finden Sie unter [mithilfe des Web-API-Abhängigkeitskonfliktlösers](dependency-injection.md). |
-| **Filter** | Aktionsfilter verwendet werden. |
-| **Formatierungsprogramme** | [Medientypformatierer](../formats-and-model-binding/media-formatters.md). |
-| **IncludeErrorDetailPolicy** | Gibt an, ob der Server Fehlerdetails wie ausnahmemeldungen und stapelüberwachungen in HTTP-Antwortnachrichten enthalten soll. Finden Sie unter [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
-| **Initializer** | Eine Funktion, die endgültige Initialisierung führt die **HttpConfiguration**. |
-| **MessageHandlers** | [HTTP-Meldungshandler](http-message-handlers.md). |
-| **ParameterBindingRules** | Eine Auflistung von Regeln für das Binden von Parametern in Controlleraktionen. |
-| **Eigenschaften** | Eine generische Eigenschaftensammlung. |
-| **Routen** | Die Auflistung der Routen. Finden Sie unter [Routing in ASP.NET Web-API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md). |
-| **Dienste** | Die Auflistung von Diensten. Finden Sie unter [Services](#services). |
+| **DependencyResolver** | Aktiviert die Abhängigkeitsinjektion für Controller. Siehe [Verwenden des Web-API-Abhängigkeits Konflikt Lösers](dependency-injection.md). |
+| **Filter** | Aktionsfilter. |
+| **Formatierungs Programme** | [Medientyp-Formatierer](../formats-and-model-binding/media-formatters.md). |
+| **Includebug-detailpolicy** | Gibt an, ob der Server Fehlerdetails wie Ausnahme Meldungen und Stapel Überwachungen in HTTP-Antwort Nachrichten enthalten soll. Siehe [incluererrordetailpolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
+| **Initialisierer** | Eine Funktion, die die endgültige Initialisierung der **httpconfiguration**ausführt. |
+| **Messagehandlers** | [Http-Nachrichten Handler](http-message-handlers.md). |
+| **Parameterbindingrules** | Eine Auflistung von Regeln für das Binden von Parametern für Controller Aktionen. |
+| **Eigenschaften** | Ein generischer Eigenschaften Behälter. |
+| **Routen** | Die Auflistung von Routen. Siehe [Routing in ASP.net-Web-API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md). |
+| **Dienste** | Die Sammlung von Diensten. Siehe [Dienste](#services). |
 
-## <a name="prerequisites"></a>Vorraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional oder Enterprise Edition.
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) – Community, Professional oder Enterprise Edition.
 
 <a id="webhost"></a>
-## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurieren von Web-API mit Hosten von ASP.NET
+## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurieren der Web-API mit ASP.net-Hosting
 
-Konfigurieren Sie in einer ASP.NET-Anwendung durch Aufrufen von Web-API- [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) in die **Anwendung\_starten** Methode. Die **konfigurieren** Methode verwendet einen Delegaten mit einem einzelnen Parameter vom Typ **HttpConfiguration**. Führen Sie alle von Ihrer Konfiguration in den Delegaten.
+In einer ASP.NET-Anwendung konfigurieren Sie die Web-API, indem Sie [globalconfiguration. configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) in der **Anwendung\_Start** -Methode aufrufen. Die **configure** -Methode nimmt einen Delegaten mit einem einzelnen Parameter vom Typ " **httpconfiguration**" an. Führen Sie die gesamte Konfiguration innerhalb des Delegaten aus.
 
-Hier ist ein Beispiel mit einem anonymen Delegaten:
+Im folgenden finden Sie ein Beispiel für die Verwendung eines anonymen Delegaten:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample1.cs)]
 
-In Visual Studio 2017 die Projektvorlage "ASP.NET Web Application" richtet automatisch den Konfigurationscode bei Auswahl von "Web-API" in der **neues ASP.NET-Projekt** Dialogfeld.
+In Visual Studio 2017 richtet die Projektvorlage "ASP.NET Webanwendung" den Konfigurations Code automatisch ein, wenn Sie im Dialogfeld " **Neues ASP.net-Projekt** " die Option "Web-API" auswählen.
 
 [![](configuring-aspnet-web-api/_static/image2.png)](configuring-aspnet-web-api/_static/image1.png)
 
-Die Projektvorlage erstellt eine Datei namens WebApiConfig.cs innerhalb der App\_Startordner. Diese Codedatei definiert den Delegaten, in denen Ihre Web-API-Konfigurationscode eingefügt werden soll.
+Die Projektvorlage erstellt eine Datei namens WebApiConfig.cs innerhalb des Ordners App\_Start. Mit dieser Codedatei wird der Delegat definiert, in dem Sie Ihren Web-API-Konfigurations Code platzieren sollten.
 
 ![](configuring-aspnet-web-api/_static/image3.png)
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample2.cs?highlight=12)]
 
-Die Projektvorlage fügt auch den Code, der Delegat, aus aufruft **Anwendung\_starten**.
+Die Projektvorlage fügt auch den Code hinzu, der den Delegaten aus dem **Anwendungs\_Start**aufruft.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample3.cs?highlight=5)]
 
 <a id="selfhost"></a>
-## <a name="configuring-web-api-with-owin-self-hosting"></a>Konfigurieren von Web-API mit Selbstgehostetem
+## <a name="configuring-web-api-with-owin-self-hosting"></a>Konfigurieren der Web-API mit selbst Hosting von owin
 
-Wenn Sie Selbsthosting mit OWIN sind, erstellen Sie ein neues **HttpConfiguration** Instanz. Führen Sie eine Konfiguration für diese Instanz, und übergeben Sie dann die Instanz, die die **Owin.UseWebApi** -Erweiterungsmethode.
+Wenn Sie selbst Hosting mit owin durchführen, erstellen Sie eine neue **httpconfiguration** -Instanz. Führen Sie eine beliebige Konfiguration für diese Instanz aus, und übergeben Sie die Instanz dann an die **owin. usewebapi** -Erweiterungsmethode.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample4.cs)]
 
-Das Tutorial [verwenden OWIN zum selfhosten ASP.NET Web API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md) zeigt die vollständige Schritte.
+Im Tutorial [Verwenden von owin für den Self-Host-ASP.net-Web-API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md) werden die gesamten Schritte angezeigt.
 
 <a id="services"></a>
 ## <a name="global-web-api-services"></a>Globale Web-API-Dienste
 
-Die **HttpConfiguration.Services** Auflistung enthält einen Satz von globalen Diensten, die Web-API verwendet, um verschiedene Aufgaben, wie Controller Auswahl und inhaltsaushandlung übernehmen.
+Die **httpconfiguration. Services** -Auflistung enthält eine Reihe globaler Dienste, die die Web-API verwendet, um verschiedene Aufgaben auszuführen, z. b. die Controller Auswahl und die Inhaltsaushandlung.
 
 > [!NOTE]
-> Die **Services** Auflistung ist keinen allgemeinen Mechanismus für Service Discovery oder Dependency Injection. Es speichert nur Diensttypen, die für das Web-API-Framework bezeichnet werden.
+> Die- **Dienst** Sammlung ist kein allgemeiner Mechanismus für die Dienst Ermittlung oder die Abhängigkeitsinjektion. Es werden nur Dienst Typen gespeichert, die dem Web-API-Framework bekannt sind.
 
-Die **Services** Auflistung wird mit einer Reihe von Diensten initialisiert, und Sie können eigene benutzerdefinierten Implementierungen bereitstellen. Einige Dienste unterstützen mehrere Instanzen, aus, während andere nur eine Instanz aufweisen können. (Allerdings können Sie auch Dienste auf der Controllerebene bereitstellen, finden Sie unter [pro Controller-Konfiguration](#percontrollerconfig).
+Die **Services** -Sammlung wird mit einem Standardsatz von Diensten initialisiert, und Sie können eigene benutzerdefinierte Implementierungen bereitstellen. Einige Dienste unterstützen mehrere Instanzen, während andere nur eine Instanz haben können. (Sie können jedoch auch Dienste auf Controller Ebene bereitstellen; Weitere Informationen finden Sie unter [Konfiguration pro Controller](#percontrollerconfig).
 
-Einzelinstanz-Dienste
+Einzelinstanzdienste
 
 | Dienst | Beschreibung |
 | --- | --- |
-| **IActionValueBinder** | Ruft eine Bindung für einen Parameter ab. |
-| **IApiExplorer** | Ruft eine Beschreibung der APIs verfügbar gemacht, von der Anwendung ab. Finden Sie unter [erstellen eine Hilfeseite einer Web-API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
-| **IAssembliesResolver** | Ruft eine Liste der Assemblys für die Anwendung. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IBodyModelValidator** | Überprüft ein Modell, das von einem medientypformatierer aus dem Anforderungstext gelesen wird. |
-| **IContentNegotiator** | Inhaltsaushandlung ausführt. |
-| **IDocumentationProvider** | Stellt eine Dokumentation für APIs. Der Standardwert ist **null**. Finden Sie unter [erstellen eine Hilfeseite einer Web-API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
-| **IHostBufferPolicySelector** | Gibt an, ob der Host die HTTP-Nachrichtentexte Entität Puffern soll. |
-| **IHttpActionInvoker** | Ruft eine Controlleraktion. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpActionSelector** | Wählt eine Controlleraktion. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerActivator** | Aktiviert einen Controller. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerSelector** | Wählt einen Controller. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerTypeResolver** | Enthält eine Liste der Web-API-Controllertypen in der Anwendung. Finden Sie unter [Routing und Aktionsauswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **ITraceManager** | Initialisiert das Framework für die Ablaufverfolgung an. Finden Sie unter [Ablaufverfolgung in ASP.NET Web-API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
-| **ITraceWriter** | Stellt einen Ablaufverfolgungs-Writer bereit. Der Standardwert ist eine "No-Op" Ablaufverfolgungs-Writer. Finden Sie unter [Ablaufverfolgung in ASP.NET Web-API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
-| **IModelValidatorCache** | Stellt einen Cache der Modellvalidierungssteuerelemente bereit. |
+| **Iaktionvaluebinder** | Ruft eine Bindung für einen Parameter ab. |
+| **Iapiexplorer** | Ruft Beschreibungen der APIs ab, die von der Anwendung verfügbar gemacht werden. Weitere Informationen finden Sie unter [Erstellen einer Hilfeseite für eine Web-API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
+| **Iassembliesresolver** | Ruft eine Liste der Assemblys für die Anwendung ab. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Ibodymodelvalidator** | Überprüft ein Modell, das von einem Medientyp Formatierer aus dem Anforderungs Text gelesen wird. |
+| **IContentNegotiator** | Führt Inhaltsaushandlung aus. |
+| **Idocumentationprovider** | Stellt Dokumentation für-APIs bereit. Der Standardwert ist **null**. Weitere Informationen finden Sie unter [Erstellen einer Hilfeseite für eine Web-API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
+| **Ihostbufferpolicyselector** | Gibt an, ob der Host HTTP-Nachrichten Entitäts Texte puffern soll. |
+| **Ihttpactioninvoker** | Ruft eine Controller Aktion auf. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Ihttpactionselector** | Wählt eine Controller Aktion aus. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Ihttpcontrolleractivator** | Aktiviert einen Controller. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Ihttpcontrollerselector** | Wählt einen Controller aus. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Ihttpcontrollertyperesolver** | Stellt eine Liste der Web-API-Controller Typen in der Anwendung bereit. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **Itracemanager** | Initialisiert das Ablaufverfolgungs-Framework. Siehe Ablauf [Verfolgung in ASP.net-Web-API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
+| **Itracewriter** | Stellt einen Trace Writer bereit. Der Standardwert ist ein "No-op"-Ablaufverfolgungs-Writer. Siehe Ablauf [Verfolgung in ASP.net-Web-API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
+| **Imodelvalidatorcache** | Stellt einen Cache von Modell Validierungs Steuerelementen bereit. |
 
 Dienste mit mehreren Instanzen
 
 |                 Dienst                 |                                                                                                              Beschreibung                                                                                                               |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <strong>IFilterProvider</strong>     |                                                                                           Gibt eine Liste von Filtern für eine Controlleraktion.                                                                                           |
-|  <strong>ModelBinderProvider</strong>   |                                                                                                Gibt einen Modellbinder für einen angegebenen Typ zurück.                                                                                                |
+|    <strong>Ifilterprovider</strong>     |                                                                                           Gibt eine Liste von Filtern für eine Controller Aktion zurück.                                                                                           |
+|  <strong>Modelbinderprovider</strong>   |                                                                                                Gibt einen Modell Binder für einen angegebenen Typ zurück.                                                                                                |
 | <strong>ModelMetadataProvider</strong>  |                                                                                                     Stellt Metadaten für ein Modell bereit.                                                                                                     |
-| <strong>ModelValidatorProvider</strong> |                                                                                                   Stellt eine Validierungsadapterklasse für ein Modell bereit.                                                                                                    |
-|  <strong>ValueProviderFactory</strong>  | Erstellt einen Wertanbieter. Weitere Informationen finden Sie unter der Mike Stall Blogbeitrag [erstellen Sie einen benutzerdefinierten Wertanbieter in Web-API](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
+| <strong>Modelvalidatorprovider</strong> |                                                                                                   Stellt ein Validierungs Steuerelement für ein Modell bereit.                                                                                                    |
+|  <strong>Valueproviderfactory</strong>  | Erstellt einen Wert Anbieter. Weitere Informationen finden Sie im Blogbeitrag " [Erstellen eines benutzerdefinierten Wert Anbieters in WebAPI" im](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) Blogbeitrag von Mike Stall. |
 
-Um eine benutzerdefinierte Implementierung an einen Dienst mit mehreren Instanzen hinzuzufügen, rufen Sie **hinzufügen** oder **einfügen** auf die **Services** Auflistung:
+Zum Hinzufügen einer benutzerdefinierten-Implementierung zu einem Dienst mit mehreren Instanzen müssen **Sie Add** oder **Insert** für die **Services** -Sammlung abrufen:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample5.cs)]
 
-Um einen Diensttyp mit einer Instanz durch eine benutzerdefinierte Implementierung ersetzen möchten, rufen Sie **ersetzen** auf die **Services** Auflistung:
+Um einen Einzelinstanzdienst durch eine benutzerdefinierte Implementierung zu ersetzen, nennen Sie **Replace** für die **Services** -Sammlung:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample6.cs)]
 
 <a id="percontrollerconfig"></a>
-## <a name="per-controller-configuration"></a>Pro Controller-Konfiguration
+## <a name="per-controller-configuration"></a>Konfiguration pro Controller
 
-Sie können die folgenden Einstellungen auf einer Basis pro Controller überschreiben:
+Sie können die folgenden Einstellungen pro Controller überschreiben:
 
-- Medientypformatierer
-- Parameter-Bindungsregeln
+- Medientyp-Formatierer
+- Parameter Bindungs Regeln
 - Dienste
 
-Zu diesem Zweck definieren Sie ein benutzerdefiniertes Attribut, das implementiert die **IControllerConfiguration** Schnittstelle. Wenden Sie dann das Attribut mit dem Controller.
+Definieren Sie zu diesem Zweck ein benutzerdefiniertes Attribut, das die **icontrollerconfiguration** -Schnittstelle implementiert. Wenden Sie dann das-Attribut auf den Controller an.
 
-Im folgende Beispiel ersetzt die standardmäßige medientypformatierer durch einen benutzerdefinierten Formatierer.
+Im folgenden Beispiel werden die standardmäßigen Medientyp-Formatierer durch ein benutzerdefiniertes Formatierer ersetzt.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample7.cs)]
 
-Die **IControllerConfiguration.Initialize** Methode akzeptiert zwei Parameter:
+Die **icontrollerconfiguration. Initialize** -Methode nimmt zwei Parameter an:
 
-- Ein **HttpControllerSettings** Objekt
-- Ein **HttpControllerDescriptor** Objekt
+- Ein **httpcontrollersettings** -Objekt
+- Ein **httpcontrollerdescriptor** -Objekt
 
-Die **HttpControllerDescriptor** enthält eine Beschreibung des Controllers, den Sie, zu Informationszwecken (z. B. zur Unterscheidung zwischen zwei Controller untersuchen können).
+Der **httpcontrollerdescriptor** enthält eine Beschreibung des Controllers, den Sie zu Informationszwecken überprüfen können (z.b., um zwischen zwei Controllern zu unterscheiden).
 
-Verwenden der **HttpControllerSettings** Objekt, das den Testcontroller zu konfigurieren. Dieses Objekt enthält die Teilmenge der Konfigurationsparameter, die auf einer Basis pro Controller überschrieben werden kann. Alle Einstellungen, die Sie ändern nicht standardmäßig auf die globale **HttpConfiguration** Objekt.
+Verwenden Sie das **httpcontrollersettings** -Objekt, um den Controller zu konfigurieren. Dieses Objekt enthält die Teilmenge der Konfigurationsparameter, die Sie pro Controller überschreiben können. Alle Einstellungen, die Sie nicht ändern, werden standardmäßig in das globale **httpconfiguration** -Objekt geändert.

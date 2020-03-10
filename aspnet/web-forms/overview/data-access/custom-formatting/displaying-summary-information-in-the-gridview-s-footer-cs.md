@@ -9,11 +9,11 @@ ms.assetid: d50edc31-9286-4c6a-8635-be09e72752a4
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b258a2bdeaea8da4e9c5c5d8043b167d94e1e817
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617009"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441777"
 ---
 # <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>Anzeigen von Zusammenfassungsinformationen im GridView-Fuß (C#)
 
@@ -109,7 +109,7 @@ Die Footerzeile enthält eine Zelle für jedes der Felder, die in der GridView d
 
 **Abbildung 11**: die GridView enthält jetzt eine Footerzeile ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image33.png))
 
-Die Footerzeile in Abbildung 11 steht nicht aus, da Sie einen weißen Hintergrund hat. Erstellen Sie eine `FooterStyle` CSS-Klasse in `Styles.css`, die einen dunkelroten Hintergrund angibt, und konfigurieren Sie dann die `GridView.skin` Skin-Datei im `DataWebControls` Design, um diese CSS-Klasse der `FooterStyle`-Eigenschaft der GridView zuzuweisen. Wenn Sie für Skins und Designs einen Pinsel einrichten müssen, lesen Sie das Tutorial [Anzeigen von Daten mit dem ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) -Tutorial.
+Die Footerzeile in Abbildung 11 steht nicht aus, da Sie einen weißen Hintergrund hat. Erstellen Sie eine `FooterStyle` CSS-Klasse in `Styles.css`, die einen dunkelroten Hintergrund angibt, und konfigurieren Sie dann die `GridView.skin` Skin-Datei im `DataWebControls` Design, um diese CSS-Klasse der `FooterStyle`-Eigenschaft der GridView zuzuweisen.`CssClass` Wenn Sie für Skins und Designs einen Pinsel einrichten müssen, lesen Sie das Tutorial [Anzeigen von Daten mit dem ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md) -Tutorial.
 
 Fügen Sie zunächst die folgende CSS-Klasse zu `Styles.css`hinzu:
 
@@ -175,7 +175,7 @@ Abbildung 13 zeigt den Bericht, nachdem dieser Code hinzugefügt wurde. Beachten
 
 **Abbildung 13**: die Footerzeile der GridView weist jetzt eine farbige Hintergrundfarbe auf ([Klicken Sie, um das Bild in voller Größe anzuzeigen](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image39.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Anzeigen von Zusammenfassungs Daten ist eine gängige Berichts Anforderung, und das GridView-Steuerelement erleichtert das einschließen derartiger Informationen in der Footerzeile. Die Footerzeile wird angezeigt, wenn die `ShowFooter`-Eigenschaft der GridView auf `true` festgelegt ist und der Text in den Zellen Programm gesteuert über den `RowDataBound`-Ereignishandler festgelegt werden kann. Das Berechnen der Zusammenfassungs Daten kann entweder durch erneutes Abfragen der Datenbank oder durch Verwendung von Code in der Code Behind-Klasse der ASP.NET-Seite erfolgen, um die Zusammenfassungs Daten Programm gesteuert zu berechnen.
 
@@ -183,7 +183,7 @@ In diesem Tutorial wird die Prüfung der benutzerdefinierten Formatierung mit de
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

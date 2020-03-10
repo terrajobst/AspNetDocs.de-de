@@ -9,11 +9,11 @@ ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f2e2489ac8455913f55c746dbe05b9fe8272285b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590873"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78436737"
 ---
 # <a name="displaying-a-table-of-database-data-vb"></a>Anzeigen einer Tabelle von Datenbankdaten (VB)
 
@@ -31,12 +31,12 @@ Wir werden den Satz von Datensätzen aus der Datenbanktabelle "Movies" anzeigen.
 
 <a id="0.4_table01"></a>
 
-| **Spalten Name** | **Datentyp** | **NULL-Werten zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
-| Id | Int | Falsch |
-| Title | Nvarchar (200) | Falsch |
-| Direktors | Nvarchar (50) | Falsch |
-| Datereleasing | DateTime | Falsch |
+| Id | Int | False |
+| Titel | Nvarchar (200) | False |
+| Regisseur | Nvarchar (50) | False |
+| Datereleasing | DateTime | False |
 
 Um die Filme-Tabelle in unserer ASP.NET MVC-Anwendung darzustellen, müssen wir eine Modell Klasse erstellen. In diesem Tutorial verwenden wir die Microsoft-Entity Framework, um unsere Modellklassen zu erstellen.
 
@@ -53,7 +53,7 @@ Führen Sie die folgenden Schritte aus, um den Entity Data Model Assistenten zu 
 Nachdem Sie auf die Schaltfläche Hinzufügen geklickt haben, wird der Entity Data Model-Assistent angezeigt (siehe Abbildung 1). Führen Sie die folgenden Schritte aus, um den Assistenten abzuschließen:
 
 1. Wählen Sie im Schritt **Modell Inhalt auswählen** die Option **aus Datenbank generieren aus** .
-2. Verwenden Sie im Schritt **Wählen Sie Ihre Datenverbindung** aus die Datenverbindung " *moviesdb. mdf* " und den Namen " *moviesdbentities* " für die Verbindungseinstellungen. Klicken Sie auf die Schaltfläche **weiter** .
+2. Verwenden Sie im Schritt **Wählen Sie Ihre Datenverbindung** aus die Datenverbindung " *moviesdb. mdf* " und den Namen " *moviesdbentities* " für die Verbindungseinstellungen. Klicken Sie auf die Schaltfläche **Weiter**.
 3. Erweitern Sie im Schritt **Wählen Sie Ihre Datenbankobjekte** aus den Knoten Tabellen, und wählen Sie die Tabelle Movies aus. Geben Sie die Namespace *Modelle* ein, und klicken Sie auf **Fertig** stellen.
 
 [![Erstellen von LINQ to SQL Klassen](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)
@@ -158,7 +158,7 @@ Die geänderte Index Ansicht rendert dieselbe HTML-Tabelle von Datenbankdaten S�
 
 Die renderpartial ()-Methode unterscheidet sich von den meisten anderen Hilfsmethoden, da Sie keine Zeichenfolge zurückgibt. Daher müssen Sie die renderpartial ()-Methode mit &lt;% HTML. renderpartial ()%&gt; anstelle von &lt;% = HTML. renderpartial ()%&gt;aufgerufen werden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wurde erläutert, wie Sie einen Satz von Datenbankdaten Sätzen in einer HTML-Tabelle anzeigen können. Zuerst haben Sie gelernt, wie Sie einen Satz von Datenbankdaten Sätzen aus einer Controller Aktion zurückgeben, indem Sie den Microsoft-Entity Framework nutzen. Als nächstes haben Sie gelernt, wie Sie mit dem Visual Studio-Gerüst eine Ansicht generieren, in der automatisch eine Auflistung von Elementen angezeigt wird. Schließlich haben Sie erfahren, wie Sie die Ansicht vereinfachen, indem Sie eine partielle nutzen. Sie haben gelernt, wie Sie eine partielle als Vorlage verwenden, damit Sie jeden Datenbankdaten Satz formatieren können.
 

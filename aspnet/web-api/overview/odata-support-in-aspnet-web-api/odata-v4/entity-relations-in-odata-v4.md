@@ -1,163 +1,163 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
-title: Entitätsbeziehungen in OData v4 mithilfe von ASP.NET Web API 2.2 | Microsoft-Dokumentation
+title: Entitäts Beziehungen in odata V4 mithilfe von ASP.net-Web-API 2,2 | Microsoft-Dokumentation
 author: MikeWasson
-description: 'Die meisten Datasets definieren die Beziehungen zwischen Entitäten: Kunden haben Bestellungen aufgegeben; Bücher weisen Autoren; Produkte haben Lieferanten. Mithilfe von OData, können Clients über navigieren...'
+description: 'Die meisten Datasets definieren Beziehungen zwischen Entitäten: Kunden haben Aufträge. Bücher haben Autoren. Produkte haben Lieferanten. Mithilfe von odata können Clients navigieren...'
 ms.author: riande
 ms.date: 06/26/2014
 ms.assetid: 72657550-ec09-4779-9bfc-2fb15ecd51c7
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
 msc.type: authoredcontent
 ms.openlocfilehash: fbafb2b2346689271905db5790cdddeeb809b070
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59418806"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484461"
 ---
-# <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>Entitätsbeziehungen in OData v4 mit ASP.NET Web API 2.2
+# <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>Entitäts Beziehungen in odata V4 mithilfe von ASP.net-Web-API 2,2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-> Die meisten Datasets definieren die Beziehungen zwischen Entitäten: Kunden haben Bestellungen aufgegeben; Bücher weisen Autoren; Produkte haben Lieferanten. Mithilfe von OData, können Clients auf entitätsbeziehungen navigieren. Wenn ein Produkt, finden Sie den Lieferanten. Sie können auch erstellt oder Beziehungen entfernt werden. Beispielsweise können Sie den Lieferanten für ein Produkt festlegen.
+> Die meisten Datasets definieren Beziehungen zwischen Entitäten: Kunden haben Aufträge. Bücher haben Autoren. Produkte haben Lieferanten. Mithilfe von odata können Clients durch Entitäts Beziehungen navigieren. Wenn Sie ein Produkt erhalten, finden Sie den Lieferanten. Sie können auch Beziehungen erstellen oder entfernen. Beispielsweise können Sie den Lieferanten für ein Produkt festlegen.
 >
-> In diesem Tutorial veranschaulicht, wie diese Vorgänge in OData v4 mithilfe von ASP.NET Web-API unterstützen. Das Tutorial baut auf dem Tutorial [erstellen Sie eine OData v4-Endpunkts mit ASP.NET-Web API 2](create-an-odata-v4-endpoint.md).
+> In diesem Tutorial wird gezeigt, wie diese Vorgänge in odata V4 mithilfe von ASP.net-Web-API unterstützt werden. Das Tutorial baut auf dem Tutorial [Erstellen eines odata V4-Endpunkts mit ASP.net-Web-API 2](create-an-odata-v4-endpoint.md)auf.
 >
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 >
-> - Web-API 2.1
+> - Web-API 2,1
 > - OData v4
-> - Visual Studio 2013 (Visual Studio 2017 herunterladen [hier](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
+> - Visual Studio 2013 (Visual Studio 2017 [hier](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)herunterladen)
 > - Entity Framework 6
 > - .NET 4.5
 >
-> ## <a name="tutorial-versions"></a>Lernprogramm-Versionen
+> ## <a name="tutorial-versions"></a>Tutorialversionen
 >
-> Die OData-Version 3, finden Sie unter [Unterstützung von Entitätsbeziehungen in OData v3](https://asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations).
+> Informationen zu odata, Version 3, finden Sie [unter unterstützen von Entitäts Beziehungen in odata V3](https://asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations).
 
-## <a name="add-a-supplier-entity"></a>Fügen Sie eine Entität "Supplier" hinzu.
+## <a name="add-a-supplier-entity"></a>Hinzufügen einer Lieferanten Entität
 
 > [!NOTE]
-> Das Tutorial baut auf dem Tutorial [erstellen Sie eine OData v4-Endpunkts mit ASP.NET-Web API 2](create-an-odata-v4-endpoint.md).
+> Das Tutorial baut auf dem Tutorial [Erstellen eines odata V4-Endpunkts mit ASP.net-Web-API 2](create-an-odata-v4-endpoint.md)auf.
 
-Zunächst benötigen wir eine verknüpfte Entität. Fügen Sie eine Klasse, die mit dem Namen `Supplier` im Ordner "Models".
+Zuerst benötigen wir eine verwandte Entität. Fügen Sie im Ordner Models eine Klasse mit dem Namen `Supplier` hinzu.
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample1.cs)]
 
-Fügen Sie eine Navigationseigenschaft für die `Product` Klasse:
+Fügen Sie eine Navigations Eigenschaft zur `Product`-Klasse hinzu:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample2.cs?highlight=13-15)]
 
-Fügen Sie einen neuen **"DbSet"** auf die `ProductsContext` Klasse, sodass Entity Framework die Lieferanten-Tabelle in der Datenbank berücksichtigt werden.
+Fügen Sie der `ProductsContext`-Klasse ein neues **dbset** hinzu, damit Entity Framework die Lieferanten Tabelle in der Datenbank enthält.
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample3.cs?highlight=10)]
 
-Fügen Sie in WebApiConfig.cs, eine &quot;Lieferanten&quot; Entitätenmenge mit dem Entity Data Model:
+Fügen Sie in WebApiConfig.cs dem Entity Data Model eine &quot;Suppliers&quot; Entitätenmenge hinzu:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample4.cs?highlight=6)]
 
-## <a name="add-a-suppliers-controller"></a>Hinzufügen eines Controllers ' Suppliers '
+## <a name="add-a-suppliers-controller"></a>Hinzufügen eines Suppliers-Controllers
 
-Hinzufügen einer `SuppliersController` Klasse, um den Ordner "Controllers".
+Fügen Sie dem Ordner Controllers eine `SuppliersController` Klasse hinzu.
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample5.cs)]
 
-Ich nicht das Hinzufügen von CRUD-Vorgänge für diesen Controller angezeigt. Die Schritte sind identisch mit dem Produkts-Controllers (finden Sie unter [erstellen ein OData v4-Endpunkts](create-an-odata-v4-endpoint.md)).
+Ich zeige Ihnen nicht, wie CRUD-Vorgänge für diesen Controller hinzugefügt werden. Die Schritte sind identisch mit denen für den Produkte Controller (siehe [Erstellen eines odata V4-Endpunkts](create-an-odata-v4-endpoint.md)).
 
-## <a name="getting-related-entities"></a>Abrufen von verknüpften Entitäten
+## <a name="getting-related-entities"></a>Beziehen verwandter Entitäten
 
 Um den Lieferanten für ein Produkt zu erhalten, sendet der Client eine GET-Anforderung:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample6.cmd)]
 
-Um diese Anforderung zu unterstützen, fügen Sie die folgende Methode der `ProductsController` Klasse:
+Fügen Sie der `ProductsController`-Klasse die folgende Methode hinzu, um diese Anforderung zu unterstützen:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample7.cs)]
 
-Diese Methode wird eine standardmäßige Namenskonvention verwendet.
+Diese Methode verwendet eine Standard Benennungs Konvention.
 
-- Methodenname: GetX, wobei X die Navigationseigenschaft ist.
-- Parametername: *Schlüssel*
+- Methodenname: getX, wobei X die Navigations Eigenschaft ist.
+- Parameter Name: *Schlüssel*
 
-Wenn Sie diese Benennungskonvention befolgen, ordnet Web-API-Controller-Methode automatisch die HTTP-Anforderung.
+Wenn Sie diese Benennungs Konvention befolgen, ordnet die Web-API die HTTP-Anforderung automatisch der Controller-Methode zu.
 
-Für HTTP-beispielanforderung:
+HTTP-Beispiel Anforderung:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample8.cmd)]
 
-HTTP-Beispielantwort:
+HTTP-Beispiel Antwort:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample9.cmd)]
 
-### <a name="getting-a-related-collection"></a>Abrufen einer entsprechenden Sammlung
+### <a name="getting-a-related-collection"></a>Beziehen einer verknüpften Sammlung
 
-Im vorherigen Beispiel wurde ein Produkt ein Lieferant. Eine Navigationseigenschaft kann auch eine Sammlung zurück. Der folgende Code Ruft die Produkte für einen Lieferanten:
+Im vorherigen Beispiel hat ein Produkt einen Lieferanten. Eine Navigations Eigenschaft kann auch eine Auflistung zurückgeben. Der folgende Code Ruft die Produkte für einen Lieferanten ab:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample10.cs)]
 
-In diesem Fall die Methode gibt ein **"IQueryable"** statt einer **"SingleResult"&lt;T&gt;**
+In diesem Fall gibt die Methode eine **iquervable** anstelle eines **singleresult-&lt;t zurück&gt;**
 
-Für HTTP-beispielanforderung:
+HTTP-Beispiel Anforderung:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample11.cmd)]
 
-HTTP-Beispielantwort:
+HTTP-Beispiel Antwort:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample12.cmd)]
 
-## <a name="creating-a-relationship-between-entities"></a>Erstellen eine Beziehung zwischen Entitäten
+## <a name="creating-a-relationship-between-entities"></a>Erstellen einer Beziehung zwischen Entitäten
 
-OData unterstützt das Erstellen oder Entfernen von Beziehungen zwischen zwei vorhandenen Entitäten. In der Terminologie von OData v4-die Beziehung ist eine &quot;Verweis&quot;. (In OData v3 hieß die Beziehung eine *Link*. Die Protokollunterschiede sind in diesem Tutorial zulässig.)
+Odata unterstützt das Erstellen oder Entfernen von Beziehungen zwischen zwei vorhandenen Entitäten. In der odata V4-Terminologie ist die Beziehung eine &quot;Referenz&quot;. (In odata V3 wurde die Beziehung als *Link*bezeichnet. Die Protokoll Unterschiede sind für dieses Tutorial nicht von Bedeutung.)
 
-Ein Verweis verfügt über einen eigenen URI, mit dem Formular `/Entity/NavigationProperty/$ref`. Hier ist z. B. der URI, der den Verweis zwischen eines Produkts und dem zugehörigen Lieferanten zu behandeln:
+Ein Verweis hat seinen eigenen URI, wobei das Formular `/Entity/NavigationProperty/$ref`ist. Hier ist beispielsweise der URI, der den Verweis zwischen einem Produkt und seinem Lieferanten adressiert:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample13.cmd)]
 
-Um eine Beziehung hinzuzufügen, sendet der Client eine POST- oder PUT-Anforderung an diese Adresse an.
+Zum Hinzufügen einer Beziehung sendet der Client eine Post-oder PUT-Anforderung an diese Adresse.
 
-- Einfügen, wenn die Navigationseigenschaft eine einzelne Entität, z. B. `Product.Supplier`.
-- Posten, wenn die Navigationseigenschaft eine Auflistung, z. B. `Supplier.Products`.
+- Put, wenn die Navigations Eigenschaft eine einzelne Entität ist, z. b. `Product.Supplier`.
+- Post, wenn die Navigations Eigenschaft eine Auflistung ist, z. b. `Supplier.Products`.
 
-Der Hauptteil der Anforderung enthält den URI der anderen Entität in der Beziehung. Hier ist eine beispielanforderung:
+Der Anforderungs Text enthält den URI der anderen Entität in der Beziehung. Hier ist eine Beispiel Anforderung:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample14.cmd)]
 
-In diesem Beispiel ist der Client sendet eine PUT-Anforderung an `/Products(6)/Supplier/$ref`, dies ist der URI "$ref" für die `Supplier` des Produkts, mit der ID = 6. Wenn die Anforderung erfolgreich ist, sendet der Server eine Antwort mit 204 (No Content):
+In diesem Beispiel sendet der Client eine PUT-Anforderung an `/Products(6)/Supplier/$ref`. Hierbei handelt es sich um den $ref-URI für die `Supplier` des Produkts mit der ID = 6. Wenn die Anforderung erfolgreich ausgeführt wird, sendet der Server eine Antwort vom Typ "204 (No Content)":
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample15.cmd)]
 
-Hier ist die Controllermethode eine Beziehung zum Hinzufügen einer `Product`:
+Hier ist die Controller Methode zum Hinzufügen einer Beziehung zu einem `Product`:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample16.cs)]
 
-Die *NavigationProperty* Parameter gibt an, welche Beziehung festzulegen. (Wenn mehr als einer Navigationseigenschaft auf die Entität vorhanden ist, können Sie weitere hinzufügen `case` Anweisungen.)
+Der *NavigationProperty* -Parameter gibt an, welche Beziehung festgelegt werden soll. (Wenn für die Entität mehr als eine Navigations Eigenschaft vorhanden ist, können Sie weitere `case`-Anweisungen hinzufügen.)
 
-Die *Link* Parameter enthält den URI des Lieferanten. Web-API analysiert automatisch den Hauptteil der Anforderung, um den Wert für diesen Parameter abzurufen.
+Der *Link* -Parameter enthält den URI des Lieferanten. Die Web-API analysiert automatisch den Anforderungs Text, um den Wert für diesen Parameter zu erhalten.
 
-Um Lieferanten anzuzeigen, benötigen wir die ID (oder Schlüssel), diese ist Teil der *Link* Parameter. Verwenden Sie hierzu die folgende Hilfsmethode ein:
+Zum Nachschlagen des Lieferanten benötigen wir die ID (oder den Schlüssel), die Teil des *Link* Parameters ist. Verwenden Sie hierzu die folgende Hilfsmethode:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample17.cs)]
 
-Im Grunde verwendet diese Methode die OData-Bibliothek, den URI-Pfad in Segmente aufgeteilt, suchen Sie den Abschnitt mit dem Schlüssel und den Schlüssel in den richtigen Typ zu konvertieren.
+Diese Methode verwendet im Grunde die odata-Bibliothek, um den URI-Pfad in Segmente aufzuteilen, das Segment zu suchen, das den Schlüssel enthält, und den Schlüssel in den richtigen Typ zu konvertieren.
 
 ## <a name="deleting-a-relationship-between-entities"></a>Löschen einer Beziehung zwischen Entitäten
 
-Um eine Beziehung zu löschen, sendet der Client eine HTTP DELETE-Anforderung an den $ref-URI:
+Zum Löschen einer Beziehung sendet der Client eine HTTP DELETE-Anforderung an den $ref-URI:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample18.cmd)]
 
-Hier ist der Controllermethode, um die Beziehung zwischen einem Produkt und einem Lieferanten zu löschen:
+Hier ist die Controller Methode zum Löschen der Beziehung zwischen einem Produkt und einem Lieferanten:
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample19.cs)]
 
-In diesem Fall `Product.Supplier` ist die &quot;1&quot; Ende einer 1: n-Beziehung, ganz einfach durch Festlegen die Beziehung entfernen zu können `Product.Supplier` zu `null`.
+In diesem Fall ist `Product.Supplier` das &quot;1&quot; Ende einer 1: n-Beziehung, sodass Sie die Beziehung entfernen können, indem Sie `Product.Supplier` auf `null`festlegen.
 
-In der &quot;viele&quot; -Ende einer Beziehung, die dem Client muss angeben, die zu entfernende Entität bezieht. Hierzu sendet der Client den URI der verknüpften Entität in der Abfragezeichenfolge der Anforderung. Beispielsweise so entfernen Sie "Product 1" von "Lieferant 1":
+Im &quot;viele&quot; Ende einer Beziehung muss der Client angeben, welche verwandte Entität entfernt werden soll. Hierzu sendet der Client den URI der verknüpften Entität in der Abfrage Zeichenfolge der Anforderung. Um z. b. "Product 1" aus "Supplier 1" zu entfernen:
 
 [!code-console[Main](entity-relations-in-odata-v4/samples/sample20.cmd?highlight=1)]
 
-Um dies in Web-API zu unterstützen, müssen wir einen zusätzlichen Parameter in umfassen die `DeleteRef` Methode. Hier ist die Controllermethode zum Entfernen eines Produkts aus der `Supplier.Products` Beziehung.
+Um dies in der Web-API zu unterstützen, müssen wir einen zusätzlichen Parameter in die `DeleteRef`-Methode einschließen. Hier ist die Controller Methode, mit der ein Produkt aus der `Supplier.Products` Beziehung entfernt wird.
 
 [!code-csharp[Main](entity-relations-in-odata-v4/samples/sample21.cs)]
 
-Die *Schlüssel* Parameter ist der Schlüssel für den Lieferanten, und die *RelatedKey* Parameter ist der Schlüssel für das Produkt, das Entfernen aus der `Products` Beziehung. Beachten Sie, dass Web-API ruft automatisch den Schlüssel aus der Abfragezeichenfolge ab.
+Der *Schlüssel* Parameter ist der Schlüssel für den Lieferanten, und der *relatedkey* -Parameter ist der Schlüssel für das Produkt, das aus der `Products` Beziehung entfernt werden soll. Beachten Sie, dass Web-API automatisch den Schlüssel aus der Abfrage Zeichenfolge abruft.

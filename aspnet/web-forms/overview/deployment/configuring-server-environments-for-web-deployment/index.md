@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/index
-title: ASP.NET 4 – Bereitstellung Serie 2. Konfigurieren von Unternehmensservern | Microsoft-Dokumentation
+title: ASP.NET 4-Enterprise Deployment Series 2 Konfigurieren von Servern | Microsoft-Dokumentation
 author: rick-anderson
-description: Dieses Tutorial zeigt Ihnen, wie Server-Umgebungen unterstützen nur einem Klick oder automatisierte, websitebereitstellung und Veröffentlichung in verschiedene andere Scen eingerichtet...
+description: In diesem Tutorial erfahren Sie, wie Sie Serverumgebungen einrichten, um die Bereitstellung und Veröffentlichung von One-Click-oder automatisierten Websites in verschiedenen unterschiedlichen Scen zu unterstützen...
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 489b414b-2322-4385-8638-04e08c0b6c90
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment
 msc.type: chapter
 ms.openlocfilehash: 382ed4a919418dc862caeb7d7e476690a155a4ea
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125878"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457017"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a>ASP.NET 4 – Unternehmensbereitstellung Serie 2: Konfigurieren von Servern
 
-> Dieses Tutorial zeigt Ihnen, wie Sie Server-Umgebungen unterstützen nur einem Klick oder automatisierte, websitebereitstellung und Veröffentlichung in verschiedene andere Szenarien einrichten.
+> In diesem Tutorial erfahren Sie, wie Sie Serverumgebungen einrichten, um die Bereitstellung und Veröffentlichung mit einem Mausklick in verschiedenen Szenarios zu unterstützen.
 
 - [Konfigurieren von Serverumgebungen für die Webbereitstellung](configuring-server-environments-for-web-deployment.md)
 - [Auswählen der richtigen Vorgehensweise zur Webbereitstellung](choosing-the-right-approach-to-web-deployment.md)

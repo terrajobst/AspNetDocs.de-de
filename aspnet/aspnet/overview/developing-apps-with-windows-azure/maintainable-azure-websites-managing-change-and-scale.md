@@ -1,39 +1,39 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
-title: 'Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen | Microsoft-Dokumentation'
+title: 'Praktische Übungseinheit: wart bare Azure-Websites: Verwalten von Änderungen und Skalierungen | Microsoft-Dokumentation'
 author: rick-anderson
-description: Erfahren Sie in dieser Übungseinheit, wie Microsoft Azure vereinfacht zum Erstellen und Bereitstellen von Websites in der Produktion.
+description: In dieser Übungseinheit erfahren Sie, wie Microsoft Azure das Erstellen und Bereitstellen von Websites in der Produktion erleichtert.
 ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
 ms.openlocfilehash: c88bae40a8aa092037c0b359ee391acaf161cf10
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118299"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506373"
 ---
-# <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: Verwaltbare Azure-Websites: Verwalten von Änderungen und Skalierungen
+# <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktische Übungseinheit: wart bare Azure-Websites: Verwalten von Änderungen und Skalierungen
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-> Microsoft Azure vereinfacht das Erstellen und Bereitstellen von Websites für die Produktion. Aber wenn Ihre Anwendung live ist noch nicht fertig, Sie fangen gerade erst! Sie müssen sich ändernden Anforderungen, datenbankaktualisierungen, Skalierung und mehr zu behandeln. Glücklicherweise bietet Azure App Service Ihnen, viele Features, damit Sie Ihre störungsfrei ausgeführte Sites halten können.
+> Microsoft Azure erleichtert das Erstellen und Bereitstellen von Websites in der Produktion. Sie sind jedoch nicht fertig, wenn Ihre Anwendung Live ist. Sie werden erst gestartet. Sie müssen sich ändernde Anforderungen, Datenbankaktualisierungen, Skalierungen und vieles mehr kümmern. Glücklicherweise haben Sie Azure App Service mit vielen Features abgedeckt, die Ihnen helfen, ihre Websites reibungslos zu betreiben.
 >
-> Azure bietet sichere und flexible Entwicklung, Bereitstellung und Skalierungsoptionen für Webanwendungen jeder Größe. Nutzen Sie Ihre vorhandenen Tools zum Erstellen und Bereitstellen von Anwendungen ohne umständliche Verwaltung der Infrastruktur.
+> Azure bietet sichere und flexible Entwicklungs-, Bereitstellungs-und Skalierungs Optionen für Webanwendungen jeder Größe. Nutzen Sie Ihre vorhandenen Tools, um Anwendungen zu erstellen und bereitzustellen, ohne die Infrastruktur zu verwalten.
 >
-> Bereitstellung einer Produktions-Web-Anwendung selbst in Minutenschnelle durch die einfache Bereitstellung von Inhalten, die mit Ihrem bevorzugten Entwicklungstool erstellt wurden. Sie können eine vorhandene Website direkt aus der quellcodeverwaltung mit Unterstützung für bereitstellen **Git**, **GitHub**, **Bitbucket**, **TFS**, und sogar  **DropBox**. Bereitstellen, direkt aus Ihrer bevorzugten IDE oder über Skripts mit **PowerShell** in Windows oder **CLI** Tools, die unter jedem Betriebssystem ausgeführt wird. Nach der Bereitstellung erhalten bleiben Sie mit Unterstützung für die kontinuierliche Bereitstellung ständig auf dem neuesten Stand.
+> Stellen Sie in wenigen Minuten eine produktionsweb Anwendung bereit, indem Sie problemlos Inhalte bereitstellen, die mit Ihrem bevorzugten Entwicklungs Tool erstellt wurden Sie können eine vorhandene Site direkt aus der Quell Code Verwaltung mit Unterstützung für **git**, **GitHub**, **Bitbucket**, **TFS**und sogar **Dropbox**bereitstellen. Stellen Sie direkt über Ihre bevorzugte IDE oder mithilfe von **PowerShell** in Windows oder **CLI** -Tools, die unter einem beliebigen Betriebssystem ausgeführt werden, bereit. Behalten Sie nach der Bereitstellung ihre Websites ständig auf dem neuesten Stand, und Unterstützung für Continuous Deployment.
 >
-> Azure bietet skalierbare und belastbare Speicher, Sicherung und wiederherstellungslösungen für Daten, Groß oder klein. Bei der Bereitstellung von Anwendungen in einer produktionsumgebung, die Storage-Dienste wie Tabellen, Blobs und SQL-Datenbanken können Sie Ihre Anwendung in der Cloud skalieren.
+> Azure bietet skalierbare, dauerhafte cloudspeicher-, Sicherungs-und Wiederherstellungs Lösungen für beliebige Daten, groß oder klein. Beim Bereitstellen von Anwendungen in einer Produktionsumgebung können Sie mithilfe von Speicherdiensten wie Tabellen, BLOB-und SQL-Datenbanken Ihre Anwendung in der Cloud skalieren.
 >
-> Mit SQL-Datenbanken ist es wichtig, Ihre Produktivität Datenbank aktuell zu halten, wenn neue Versionen Ihrer Anwendung bereitstellen. Vielen Dank an **Entity Framework Code First-Migrationen**, wurde die Entwicklung und Bereitstellung Ihres Datenmodells zum Aktualisieren Ihrer Umgebungen in wenigen Minuten vereinfacht. Dieser praktischen Übungseinheit zeigt Ihnen die verschiedenen Themen, die auftreten können, wenn Ihre Web-app in produktionsumgebungen in Microsoft Azure bereitstellen.
+> Bei SQL-Datenbanken ist es wichtig, dass ihre produktive Datenbank immer auf dem neuesten Stand ist, wenn Sie neue Versionen der Anwendung bereitstellen. Dank der **Entity Framework Code First-Migrationen**wurde die Entwicklung und Bereitstellung Ihres Datenmodells vereinfacht, um Ihre Umgebungen innerhalb weniger Minuten zu aktualisieren. Diese praktische Übungseinheit zeigt Ihnen die verschiedenen Themen, die bei der Bereitstellung Ihrer Web-App in Produktionsumgebungen in Microsoft Azure auftreten können.
 >
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das unter [https://aka.ms/webcamps-training-kit](https://aka.ms/webcamps-training-kit)verfügbar ist.
 >
-> Weitere detaillierte dieses Themas finden Sie unter den [Building Real-World Cloud-Apps mit Azure-e-Book](building-real-world-cloud-apps-with-windows-azure/introduction.md).
+> Ausführlichere Informationen zu diesem Thema finden [Sie im e-Book zum Aufbauen von realen Cloud-apps mit Azure](building-real-world-cloud-apps-with-windows-azure/introduction.md).
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -41,656 +41,656 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 
-- Aktivieren von Entity Framework-Migrationen mit einem vorhandenen Modell
-- Aktualisieren des Objektmodells und die Datenbank entsprechend mithilfe von Entity Framework-Migrationen
-- Bereitstellen Sie in Azure App Service mithilfe von Git
-- Rollback auf eine vorherige Bereitstellung über das Azure-Verwaltungsportal
-- Verwenden von Azure Storage skalieren eine WebApp
-- Konfigurieren Sie die automatische Skalierung für eine Web-app, die über das Azure-Verwaltungsportal
-- Erstellen Sie und konfigurieren Sie ein auslastungstestprojekt in Visual Studio
+- Aktivieren von Entity Framework Migrationen mit einem vorhandenen Modell
+- Aktualisieren des Objektmodells und der Datenbank entsprechend mithilfe Entity Framework Migrationen
+- Bereitstellen in Azure App Service mithilfe von git
+- Zurücksetzen auf eine vorherige Bereitstellung mithilfe des Azure-Verwaltungs Portals
+- Verwenden von Azure Storage zum Skalieren einer Web-App
+- Konfigurieren der automatischen Skalierung für eine Web-App mithilfe des Azure-Verwaltungsportal
+- Erstellen und Konfigurieren eines Auslastungs Testprojekts in Visual Studio
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Voraussetzungen
 
-Folgendes ist erforderlich, um diese praktische Übungseinheit auszuführen:
+Zum Durchführen dieser praktischen Übungseinheit ist Folgendes erforderlich:
 
 - [Visual Studio Express 2013 für Web](https://www.microsoft.com/visualstudio/) oder höher
-- [Azure SDK für .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
-- [GIT-System zur Versionskontrolle](http://git-scm.com/download)
-- Microsoft Azure-Abonnement
+- [Azure SDK für .NET 2,2](https://www.microsoft.com/windowsazure/sdk/)
+- [GIT-Versionskontrollsystem](http://git-scm.com/download)
+- Ein Microsoft Azure-Abonnement
 
-    - Melden Sie sich für eine [kostenlose Testversion](https://aka.ms/watk-freetrial)
-    - Wenn Sie einer eine Visual Studio Professional, Test Professional, Premium oder Ultimate mit MSDN oder MSDN Platforms-Abonnent sind, aktivieren Sie Ihre [MSDN-Vorteil](https://aka.ms/watk-msdn) jetzt zum Entwickeln und Testen in Azure
-    - [BizSpark](https://aka.ms/watk-bizspark) -Mitglieder erhalten automatisch das Angebot in ihr Visual Studio Ultimate mit MSDN-Abonnements
-    - Mitglieder der [Microsoft Partner Network](https://aka.ms/watk-mpn) Cloud Essentials-Programm erhalten monatliche Azure-Gutschriften kostenlos
+    - Registrieren Sie sich für eine [Kostenlose Testversion](https://aka.ms/watk-freetrial)
+    - Wenn Sie Visual Studio Professional, Test Professional, Premium oder Ultimate mit MSDN oder MSDN Platforms Abonnent sind, aktivieren Sie Ihren [MSDN-Vorteil](https://aka.ms/watk-msdn) nun, um mit der Entwicklung und dem Testen in Azure zu beginnen.
+    - [BizSpark](https://aka.ms/watk-bizspark) -Mitglieder erhalten den Azure-Vorteil automatisch über Ihre Visual Studio Ultimate mit MSDN-Abonnements
+    - Mitglieder des [Microsoft Partner Network](https://aka.ms/watk-mpn) Cloud Essentials-Programms erhalten monatliche Azure-Gutschriften kostenlos.
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
-Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zunächst die Umgebung einrichten.
+Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zuerst Ihre Umgebung einrichten.
 
-1. Öffnen von Windows-Explorer und navigieren Sie zu des Labs die **Quelle** Ordner.
-2. Mit der rechten Maustaste auf **"Setup.cmd"** , und wählen Sie **als Administrator ausführen** zum Starten des Setup-Prozesses, die die Umgebung konfigurieren, und installieren die Visual Studio-Codeausschnitte für diese Übung.
-3. Wenn das Dialogfeld "Benutzerkontensteuerung" angezeigt wird, bestätigen Sie die Aktion aus, um den Vorgang fortzusetzen.
+1. Öffnen Sie Windows-Explorer, und navigieren Sie zum **Quell** Ordner des Labs.
+2. Klicken Sie mit der rechten Maustaste auf **Setup. cmd** , und wählen Sie **als Administrator ausführen** aus, um den Setup Vorgang zu starten, mit dem die Umgebung konfiguriert wird, und die Visual Studio-Code Ausschnitte für diese Übungseinheit
+3. Wenn das Dialogfeld "Benutzerkontensteuerung" angezeigt wird, bestätigen Sie die Aktion, um fortzufahren.
 
 > [!NOTE]
-> Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
+> Vergewissern Sie sich, dass Sie vor dem Ausführen des Setups alle Abhängigkeiten für dieses Lab geprüft haben.
 
 <a id="CodeSnippets"></a>
-### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
+### <a name="using-the-code-snippets"></a>Verwenden der Code Ausschnitte
 
-In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. Der Einfachheit halber die meisten dieser Code dient als Visual Studio-Codeausschnitten, die Sie in Visual Studio 2013, um zu vermeiden, müssen sie manuell hinzufügen aus zugreifen können.
+Im gesamten Lab-Dokument werden Sie angewiesen, Code Blöcke einzufügen. Der größte Teil dieses Codes wird zur einfacheren Verwendung als Visual Studio Code Ausschnitte bereitgestellt, auf die Sie in Visual Studio 2013 zugreifen können, um das manuelle Hinzufügen zu vermeiden.
 
 > [!NOTE]
-> Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
+> Jede Übung wird von einer Start Lösung begleitet, die sich im Ordner " **Begin** " der Übung befindet und Ihnen ermöglicht, die einzelnen Übungen unabhängig von den anderen zu befolgen. Beachten Sie, dass die während einer Übung hinzugefügten Code Ausschnitte in diesen Projektmappen fehlen und möglicherweise erst nach Abschluss der Übung funktionieren. Innerhalb des Quellcodes für eine Übung finden Sie auch einen **endordner** mit einer Visual Studio-Projekt Mappe mit dem Code, der aus der Ausführung der Schritte in der entsprechenden Übung resultiert. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, während Sie diese praktische Übungseinheit durcharbeiten.
 
 ---
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-Dieser praktischen Übungseinheit enthält die folgenden Übungen:
+Diese praktische Übungseinheit umfasst die folgenden Übungen:
 
-1. [Mithilfe von Entity Framework-Migrationen](#Exercise1)
-2. [Bereitstellen einer Web-App in der Stagingumgebung](#Exercise2)
-3. [Rollback der Bereitstellung durchführen in der Produktion.](#Exercise3)
-4. [Skalierung mit dem Azure-Speicher](#Exercise4)
-5. [Verwenden für die automatische Skalierung für Web-Apps](#Exercise5) (Optional für Visual Studio 2013 Ultimate Edition)
+1. [Verwenden von Entity Framework Migrationen](#Exercise1)
+2. [Bereitstellen einer Web-App für die Bereitstellung](#Exercise2)
+3. [Ausführen eines Bereitstellungs Rollbacks in der Produktionsumgebung](#Exercise3)
+4. [Skalieren mithilfe Azure Storage](#Exercise4)
+5. [Verwenden der automatischen Skalierung für Web-Apps](#Exercise5) (optional für Visual Studio 2013 Ultimate Edition)
 
-Geschätzte Zeit für diese testumgebung abzuschließen: **75 Minuten**
+Geschätzte Zeit bis zum Abschluss dieses Labs: **75 Minuten**
 
 > [!NOTE]
-> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
+> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungs Sammlungen auswählen. Jede vordefinierte Sammlung ist so konzipiert, dass Sie einem bestimmten Entwicklungsstil entspricht, und bestimmt Fensterlayouts, das Editor-Verhalten, IntelliSense-Code Ausschnitte und Dialogfeld Optionen. In den Prozeduren in dieser Übungseinheit werden die Aktionen beschrieben, die zum Ausführen einer bestimmten Aufgabe in Visual Studio bei Verwendung der **allgemeinen Entwicklungs Einstellungs** Auflistung erforderlich sind. Wenn Sie eine andere Einstellungs Sammlung für Ihre Entwicklungsumgebung auswählen, kann es Unterschiede in den Schritten geben, die Sie berücksichtigen sollten.
 
 <a id="Exercise1"></a>
-### <a name="exercise-1-using-entity-framework-migrations"></a>Übung 1: Mithilfe von Entity Framework-Migrationen
+### <a name="exercise-1-using-entity-framework-migrations"></a>Übung 1: Verwenden von Entity Framework Migrationen
 
-Wenn Sie eine Anwendung entwickeln, kann Ihr Datenmodell im Laufe der Zeit ändern. Diese Änderungen können das vorhandene Modell in der Datenbank auswirken, (Wenn Sie eine neue Version erstellen), und es ist wichtig, Ihre Datenbank auf dem neuesten Stand, um Fehler zu vermeiden.
+Wenn Sie eine Anwendung entwickeln, kann sich das Datenmodell im Laufe der Zeit ändern. Diese Änderungen können sich auf das vorhandene Modell in der Datenbank auswirken (wenn Sie eine neue Version erstellen), und es ist wichtig, die Datenbank auf dem neuesten Stand zu halten, um Fehler zu verhindern.
 
-Um die nachverfolgung dieser Änderungen in Ihrem Modell zu vereinfachen **Entity Framework Code First-Migrationen** automatisch erkennen von Änderungen des Modells mit dem Schema verglichen und bestimmten Code zum Aktualisieren der Datenbank, generiert Erstellen von neuen *Versionen* Ihrer Datenbank.
+Um die Nachverfolgung dieser Änderungen im Modell zu vereinfachen, erkennen **Entity Framework Code First-Migrationen** automatisch Änderungen, die das Modell mit dem Datenbankschema vergleichen, und generieren spezifischen Code zum Aktualisieren der Datenbank, wodurch neue *Versionen* der Datenbank erstellt werden.
 
-In dieser Übung erfahren Sie, wie Sie aktivieren **Migrationen** für Ihre Anwendung und wie Sie ganz einfach erkennen und generieren die Änderungen, um Ihre Datenbanken zu aktualisieren.
+Diese Übung zeigt Ihnen, wie **Migrationen** für Ihre Anwendung aktiviert werden und wie Sie mühelos Änderungen zum Aktualisieren Ihrer Datenbanken erkennen und generieren können.
 
 <a id="Ex1Task1"></a>
-#### <a name="task-1--enabling-migrations"></a>Aufgabe 1: Aktivieren von Migrationen
+#### <a name="task-1--enabling-migrations"></a>Aufgabe 1 – Aktivieren von Migrationen
 
-Wechseln Sie in dieser Aufgabe durch die Schritte zur Aktivierung **Entity Framework Code First-Migrationen** auf die **Meister Quiz** Datenbank, die das Modell ändern und zu verstehen, wie diese Änderungen berücksichtigt werden, in der die Datenbank.
+In dieser Aufgabe durchlaufen Sie die Schritte zum Aktivieren von **Entity Framework Code First-Migrationen** für die **Geek-Quiz** Datenbank, zum Ändern des Modells und zum Verständnis der Art und Weise, wie diese Änderungen in der Datenbank widergespiegelt werden.
 
-1. Öffnen Sie Visual Studio, und öffnen Sie die **GeekQuiz.sln** Projektmappendatei und **Source\Ex1-UsingEntityFrameworkMigrations\Begin**.
-2. Erstellen Sie die Projektmappe, um das Herunterladen und Installieren der **NuGet** paketabhängigkeiten. Zu diesem Zweck mit der rechten Maustaste in der Projektmappe, und klicken Sie auf **Projektmappe** , oder drücken Sie **STRG + UMSCHALT + B**.
-3. Von der **Tools** in Visual Studio, wählen Sie im Menü **NuGet Package Manager**, und klicken Sie dann auf **-Paket-Manager-Konsole**.
-4. In der **-Paket-Manager-Konsole**, geben Sie den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE**. Eine anfängliche Migration basierend auf dem vorhandenen Modell wird erstellt.
+1. Öffnen Sie Visual Studio, und öffnen Sie die **Projekt Mappe geekquiz. sln** von **source\ex1-usingentityframeworkmigrations\begin**.
+2. Erstellen Sie die Projekt Mappe, um die **nuget** -Paketabhängigkeiten herunterzuladen und zu installieren. Klicken Sie hierzu mit der rechten Maustaste auf die Projekt Mappe, und klicken Sie auf Projekt Mappe **Erstellen** , oder drücken Sie **STRG + UMSCHALT + B**.
+3. Wählen Sie **im Menü Extras** in Visual Studio den **nuget-Paket-Manager**aus, und klicken Sie dann auf Paket-Manager- **Konsole**.
+4. Geben Sie in der **Paket-Manager-Konsole**den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste. Eine anfängliche Migration basierend auf dem vorhandenen Modell wird erstellt.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample1.ps1)]
 
-    ![Aktivieren von Migrationen](maintainable-azure-websites-managing-change-and-scale/_static/image1.png "Migrationen aktivieren")
+    ![Aktivieren von Migrationen](maintainable-azure-websites-managing-change-and-scale/_static/image1.png "Aktivieren von Migrationen")
 
     *Aktivieren von Migrationen*
 
     > [!NOTE]
-    > Dieser Befehl fügt einen **Migrationen** Ordner Meister Quiz Projekt mit einer Datei namens **Configuration.cs**. Die **Konfiguration** Klasse können Sie Migrationen wie verhält sich, für den Kontext zu konfigurieren.
-5. Mit Migrationen, die aktiviert werden, müssen Sie aktualisieren die **Konfiguration** Klasse, um die Datenbank mit den anfänglichen Daten zu füllen, **Meister Quiz** erfordert. Unter **Migrationen**, ersetzen Sie die **Configuration.cs** im Verzeichnis die Datei mit dem die **Source\Assets** Ordner dieser Anleitung.
+    > Mit diesem Befehl wird ein **Migrations** Ordner zum Geek Quiz Project hinzugefügt, das eine Datei namens **Configuration.cs**enthält. Mit der- **Konfigurations** Klasse können Sie konfigurieren, wie Migrationen für den Kontext Verhalten.
+5. Wenn Migrationen aktiviert sind, müssen Sie die **Konfigurations** Klasse aktualisieren, um die Datenbank mit den anfänglichen Daten aufzufüllen, die für den **Geek-Quiz** erforderlich sind. Ersetzen Sie unter **Migrationen**die Datei **Configuration.cs** durch die Datei, die sich im Ordner **source\assets** dieses Labs befindet.
 
     > [!NOTE]
-    > Da **Migrationen** Ruft die **Ausgangswert** Methode mit jedem Datenbankupdate, müssen Sie achten, dass die Datensätze in der Datenbank nicht dupliziert werden. Die **AddOrUpdate** Methode helfen, um doppelte Daten zu verhindern.
-6. Um eine anfängliche Migration hinzuzufügen, geben Sie den folgenden Befehl aus, und drücken Sie dann **EINGABETASTE**.
+    > Da **Migrationen** die **Seed** -Methode bei jedem Datenbankupdate aufruft, müssen Sie sicherstellen, dass die Datensätze nicht in der Datenbank dupliziert werden. Mithilfe der **addorupdate** -Methode können doppelte Daten verhindert werden.
+6. Um eine anfängliche Migration hinzuzufügen, geben Sie den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste.
 
     > [!NOTE]
-    > Stellen Sie sicher, dass es keine Datenbank mit dem Namen ist &quot;GeekQuizProd&quot; in der LocalDB-Instanz.
+    > Stellen Sie sicher, dass in ihrer localdb-Instanz keine Datenbank mit dem Namen &quot;geekquiz Prod&quot; vorhanden ist.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample2.ps1)]
 
-    ![Hinzufügen von Basisschema Migration](maintainable-azure-websites-managing-change-and-scale/_static/image2.png "Basis schemamigration hinzufügen")
+    ![Hinzufügen der Basis Schema Migration](maintainable-azure-websites-managing-change-and-scale/_static/image2.png "Hinzufügen der Basis Schema Migration")
 
-    *Hinzufügen von Basis schemamigration*
+    *Hinzufügen der Basis Schema Migration*
 
     > [!NOTE]
-    > **Add-Migration** wird Gerüst die nächste Migration basierend auf Änderungen, die Sie an Ihr Modell vorgenommen haben, seit die letzte Migration erstellt wurde. In diesem Fall wie es die erste Migration des Projekts ist, sie fügen die Skripts zum Erstellen der Tabellen, die für die definiert, der **TriviaContext** Klasse.
-7. Führen Sie die Migration aus, um die Datenbank zu aktualisieren, indem Sie den folgenden Befehl ausführen. Für diesen Befehl geben Sie die **ausführlich** Flag zum Anzeigen der SQL-Anweisungen, die in die Zieldatenbank angewendet wird.
+    > Durch **Hinzufügen der Migration** wird das Gerüst der nächsten Migration basierend auf den Änderungen, die Sie seit der letzten Migration an Ihrem Modell vorgenommen haben, gebildet. In diesem Fall werden die Skripts zum Erstellen aller Tabellen hinzugefügt, die in der **triviacontext** -Klasse definiert sind, da es sich hierbei um die erste Migration des Projekts handelt.
+7. Führen Sie die Migration aus, um die Datenbank zu aktualisieren, indem Sie den folgenden Befehl ausführen. Für diesen Befehl geben Sie das Flag " **verbose** " an, um die SQL-Anweisungen anzuzeigen, die auf die Zieldatenbank angewendet werden.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample3.ps1)]
 
-    ![Erstellen von Ausgangsdatenbank](maintainable-azure-websites-managing-change-and-scale/_static/image3.png "Ausgangsdatenbank erstellen")
+    ![Anfängliche Datenbank wird erstellt](maintainable-azure-websites-managing-change-and-scale/_static/image3.png "Anfängliche Datenbank wird erstellt")
 
-    *Erstellen die ursprüngliche Datenbank*
+    *Anfängliche Datenbank wird erstellt*
 
     > [!NOTE]
-    > **Update-Database** gelten alle ausstehenden Migrationen für die Datenbank. In diesem Fall erstellt er die Datenbank mithilfe der Verbindungszeichenfolge in der Datei "Web.config" definiert.
-8. Wechseln Sie zu **Ansicht** Menü, und öffnen Sie **Objekt-Explorer von SQL Server**.
+    > **Update-Database** wendet alle ausstehenden Migrationen auf die Datenbank an. In diesem Fall wird die Datenbank mithilfe der Verbindungs Zeichenfolge erstellt, die in der Datei "Web. config" definiert ist.
+8. Wechseln Sie zum Menü **Ansicht** , und öffnen Sie **SQL Server-Objekt-Explorer**.
 
-    ![Öffnen Sie im Objekt-Explorer von SQL Server](maintainable-azure-websites-managing-change-and-scale/_static/image4.png "in SQL Server-Objekt-Explorer öffnen")
+    ![In SQL Server-Objekt-Explorer öffnen](maintainable-azure-websites-managing-change-and-scale/_static/image4.png "In SQL Server-Objekt-Explorer öffnen")
 
     *In SQL Server-Objekt-Explorer öffnen*
-9. In der **Objekt-Explorer von SQL Server** Fenster Verbinden mit der LocalDB-Instanz, indem Sie mit der rechten Maustaste die **SQL Server** und dann **SQL Server hinzufügen...**  Option.
+9. Stellen Sie im **SQL Server-Objekt-Explorer** Fenster eine Verbindung mit ihrer localdb-Instanz her, indem Sie mit der rechten Maustaste auf den Knoten **SQL Server** klicken und **SQL Server hinzufügen** auswählen.
 
-    ![Hinzufügen einer SQL Server-Instanz](maintainable-azure-websites-managing-change-and-scale/_static/image5.png "Hinzufügen einer SQL Server-Instanz")
+    ![Hinzufügen einer SQL Server Instanz](maintainable-azure-websites-managing-change-and-scale/_static/image5.png "Hinzufügen einer SQL Server Instanz")
 
-    *Hinzufügen von SQL Server-Instanz zu SQL Server-Objekt-Explorer*
-10. Legen Sie die **Servernamen** zu *(Localdb) \v11.0* und lassen Sie **Windows-Authentifizierung** als Authentifizierungsmodus. Klicken Sie auf **Connect** um den Vorgang fortzusetzen.
+    *Hinzufügen einer SQL Server Instanz zu SQL Server-Objekt-Explorer*
+10. Legen Sie den **Servernamen** auf *(localdb) \v11.0* fest, und lassen Sie **Windows-Authentifizierung** als Authentifizierungsmodus fest. Klicken Sie auf **Verbinden** , um den Vorgang fortzusetzen.
 
-    ![Herstellen einer Verbindung mit LocalDB](maintainable-azure-websites-managing-change-and-scale/_static/image6.png "Herstellen einer Verbindung mit LocalDB")
+    ![Herstellen einer Verbindung mit localdb](maintainable-azure-websites-managing-change-and-scale/_static/image6.png "Herstellen einer Verbindung mit localdb")
 
-    *Herstellen einer Verbindung mit LocalDB*
-11. Öffnen der **GeekQuizProd** Datenbank und erweitern Sie die **Tabellen** Knoten. Wie Sie sehen können, die **Update-Database** -Befehl generiert alle Tabellen im definiert die **TriviaContext** Klasse. Suchen Sie die **Dbo. TriviaQuestions** Tabelle, und öffnen Sie den Knoten Columns. In der nächsten Aufgabe Sie diese Tabelle eine neue Spalte hinzufügen und aktualisieren Sie die Datenbank mit **Migrationen**.
+    *Herstellen einer Verbindung mit localdb*
+11. Öffnen Sie die Datenbank **geekquiz Prod** , und erweitern Sie den Knoten **Tabellen** . Wie Sie sehen, hat der **Update-Database-** Befehl alle in der **triviacontext** -Klasse definierten Tabellen generiert. Suchen Sie nach dem **dbo. Triviaquestions** -Tabelle, und öffnen Sie den Knoten Spalten. In der nächsten Aufgabe fügen Sie dieser Tabelle eine neue Spalte hinzu und aktualisieren die Datenbank mithilfe von **Migrationen**.
 
-    ![Trivia Fragen, die Spalten](maintainable-azure-websites-managing-change-and-scale/_static/image7.png "Trivia Fragen, die Spalten")
+    ![Spalten mit Trivia-Fragen](maintainable-azure-websites-managing-change-and-scale/_static/image7.png "Spalten mit Trivia-Fragen")
 
-    *Trivia Fragen, die Spalten*
+    *Spalten mit Trivia-Fragen*
 
 <a id="Ex1Task2"></a>
-#### <a name="task-2--updating-database-schema-using-migrations"></a>Aufgabe 2: Aktualisieren Schema der Datenbank, die mithilfe von Migrationen
+#### <a name="task-2--updating-database-schema-using-migrations"></a>Aufgabe 2 – Aktualisieren des Datenbankschemas mit Migrationen
 
-In dieser Aufgabe verwenden Sie **Entity Framework Code First-Migrationen** , erkennen eine Änderung in Ihrem Modell und den erforderlichen Code zum Aktualisieren der Datenbank zu generieren. Aktualisieren Sie die **TriviaQuestions** Entität durch eine neue Eigenschaft hinzugefügt wird. Klicken Sie dann führen Sie Befehle aus, um eine neue Migration Einbeziehung die neue Spalte in der Tabelle zu erstellen.
+In dieser Aufgabe verwenden Sie **Entity Framework Code First-Migrationen** , um eine Änderung im Modell zu erkennen und den erforderlichen Code zum Aktualisieren der Datenbank zu generieren. Sie aktualisieren die Entität " **triviaquestions** ", indem Sie Ihr eine neue Eigenschaft hinzufügen. Anschließend führen Sie-Befehle aus, um eine neue Migration zum Einschließen der neuen Spalte in die Tabelle zu erstellen.
 
-1. In **Projektmappen-Explorer**, doppelklicken Sie auf die **TriviaQuestion.cs** Datei, die innerhalb der **Modelle** Ordner.
-2. Fügen Sie eine neue Eigenschaft mit dem Namen **Hinweis**, wie im folgenden Codeausschnitt gezeigt.
+1. Doppelklicken Sie in **Projektmappen-Explorer**auf die Datei " **TriviaQuestion.cs** ", die sich im Ordner " **Models** " befindet.
+2. Fügen Sie eine neue Eigenschaft mit dem Namen **Hint**hinzu, wie im folgenden Code Ausschnitt gezeigt.
 
     [!code-csharp[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample4.cs)]
-3. In der **-Paket-Manager-Konsole**, geben Sie den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE**. Eine neue Migration wird die Änderung in unserem Modell Reflektion erstellt werden.
+3. Geben Sie in der **Paket-Manager-Konsole**den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste. Eine neue Migration wird erstellt, die die Änderung in unserem Modell widerspiegelt.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample5.ps1)]
 
-    ![Add-Migration](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "Add-Migration")
+    ![Migration hinzufügen](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "Migration hinzufügen")
 
-    *Add-Migration*
+    *Migration hinzufügen*
 
     > [!NOTE]
-    > Eine Migrationsdatei besteht aus zwei Methoden, **einrichten** und **unten**.
+    > Eine Migrations Datei besteht aus zwei Methoden (nach **oben** und **unten**).
     >
-    > - Die **einrichten** Methode angeben, welche Änderungen von der aktuellen Version von unseren Anwendung-Anforderungen an die Anwendung auf die Datenbank verwendet werden.
-    > - Die **unten** wird verwendet, um die Änderungen rückgängig zu machen wir hinzugefügt haben die **einrichten** Methode.
+    > - Die **up** -Methode wird verwendet, um anzugeben, welche Änderungen die aktuelle Version der Anwendung auf die Datenbank anwenden muss.
+    > - Die **down** -Methode wird verwendet, um die Änderungen umzukehren, die der **up** -Methode hinzugefügt wurden.
     >
-    > Wenn die Datenbank-Migration die Datenbank aktualisiert wird, wird es bei allen Migrationen ausgeführt, in der Reihenfolge der Zeitstempel und nur die seit der letzten Aktualisierung nicht verwendet wurden (die \_Tabelle "MigrationHistory" hält Überblick darüber, welche Migrationen angewendet wurden). Die **einrichten** -Methode für alle Migrationen wird aufgerufen, und die Änderungen, die wir in der Datenbank angegeben haben. Wenn wir zu einer vorherigen Migration zurückkehren möchten die **unten** Methode wird aufgerufen, um die Änderungen in umgekehrter Reihenfolge zu wiederholen.
-4. In der **-Paket-Manager-Konsole**, geben Sie den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE**.
+    > Wenn die Datenbank durch die Daten Bank Migration aktualisiert wird, werden alle Migrationen in der Zeitstempel Reihenfolge ausgeführt, und nur diejenigen, die seit dem letzten Update nicht verwendet wurden (in der \_migrationhistory-Tabelle wird nachverfolgt, welche Migrationen angewendet wurden). Die **up** -Methode aller Migrationen wird aufgerufen, und die von uns angegebenen Änderungen werden an die Datenbank übernehmen. Wenn wir uns für eine frühere Migration entscheiden, wird die **down** -Methode aufgerufen, um die Änderungen in umgekehrter Reihenfolge wiederholen.
+4. Geben Sie in der **Paket-Manager-Konsole**den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample6.ps1)]
-5. Die Ausgabe von der **Update-Database** Befehl generiert ein **Alter Table** SQL-Anweisung, um eine neue Spalte hinzufügen der **TriviaQuestions** Tabelle, wie in der folgenden Abbildung dargestellt.
+5. Die Ausgabe des **Update-Database-** Befehls hat eine **ALTER TABLE** SQL-Anweisung generiert, um der Tabelle **triviaquestions** eine neue Spalte hinzuzufügen, wie in der folgenden Abbildung dargestellt.
 
-    ![Fügen Sie die generierte Spalte SQL-Anweisung](maintainable-azure-websites-managing-change-and-scale/_static/image9.png "generierte Spalte SQL-Anweisung hinzufügen")
+    ![SQL-Anweisung für Spalte hinzufügen generiert](maintainable-azure-websites-managing-change-and-scale/_static/image9.png "SQL-Anweisung für Spalte hinzufügen generiert")
 
-    *Fügen Sie die generierte Spalte SQL-Anweisung*
-6. In **Objekt-Explorer von SQL Server**, aktualisieren Sie die **Dbo. TriviaQuestions** Tabelle, und überprüfen Sie, ob die neue **Hinweis** Spalte angezeigt wird.
+    *SQL-Anweisung für Spalte hinzufügen generiert*
+6. Aktualisieren Sie in **SQL Server-Objekt-Explorer**den **dbo. Triviaquestions** -Tabelle, und überprüfen Sie, ob die neue **Hinweis** Spalte angezeigt wird.
 
-    ![Mit der neuen Spalte für den Hinweis](maintainable-azure-websites-managing-change-and-scale/_static/image10.png "mit der neuen Spalte für den Hinweis")
+    ![Die neue Hinweis Spalte wird angezeigt.](maintainable-azure-websites-managing-change-and-scale/_static/image10.png "Die neue Hinweis Spalte wird angezeigt.")
 
-    *Zeigt die neue Spalte für den Hinweis*
-7. In der **TriviaQuestion.cs** fügen-Editor eine **StringLength** Einschränkung, die die *Hinweis* -Eigenschaft, wie im folgenden Codeausschnitt gezeigt.
+    *Die neue Hinweis Spalte wird angezeigt.*
+7. Fügen Sie im **TriviaQuestion.cs** -Editor der *Hint* -Eigenschaft eine **StringLength** -Einschränkung hinzu, wie im folgenden Code Ausschnitt gezeigt.
 
     [!code-csharp[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample7.cs)]
-8. In der **-Paket-Manager-Konsole**, geben Sie den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE**.
+8. Geben Sie in der **Paket-Manager-Konsole**den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample8.ps1)]
-9. In der **-Paket-Manager-Konsole**, geben Sie den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE**.
+9. Geben Sie in der **Paket-Manager-Konsole**den folgenden Befehl ein, und drücken Sie dann die **Eingabe**Taste.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample9.ps1)]
-10. Die Ausgabe des der **Update-Database** Befehl generiert eine **Alter Table** SQL-Anweisung zum Aktualisieren der *Hinweis* Spalte vom Typ der **TriviaQuestions** Tabelle, wie in der folgenden Abbildung dargestellt.
+10. Die Ausgabe des **Update-Database-** Befehls hat eine **ALTER TABLE** SQL-Anweisung generiert, um den *Hinweis* Spaltentyp der Tabelle " **triviaquestions** " zu aktualisieren, wie in der folgenden Abbildung dargestellt.
 
     ![Alter Column-SQL-Anweisung generiert](maintainable-azure-websites-managing-change-and-scale/_static/image11.png "Alter Column-SQL-Anweisung generiert")
 
     *Alter Column-SQL-Anweisung generiert*
-11. In **Objekt-Explorer von SQL Server**, aktualisieren Sie die **Dbo. TriviaQuestions** Tabelle, und überprüfen Sie, ob die **Hinweis** Spaltentyp **nvarchar(150)**.
+11. Aktualisieren Sie in **SQL Server-Objekt-Explorer**den **dbo. Triviaquestions** -Tabelle, und überprüfen Sie, ob der **Hinweis** Spaltentyp **nvarchar (150)** ist.
 
-    ![Zeigt die neue Einschränkung](maintainable-azure-websites-managing-change-and-scale/_static/image12.png "zeigt die neue Einschränkung")
+    ![Die neue Einschränkung wird angezeigt.](maintainable-azure-websites-managing-change-and-scale/_static/image12.png "Die neue Einschränkung wird angezeigt.")
 
-    *Zeigt die neue Einschränkung*
+    *Die neue Einschränkung wird angezeigt.*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-deploying-a-web-app-to-staging"></a>Übung 2: Bereitstellen einer Web-App in der Stagingumgebung
+### <a name="exercise-2-deploying-a-web-app-to-staging"></a>Übung 2: Bereitstellen einer Web-App für die Bereitstellung
 
-**Web-Apps in Azure App Service** können Sie die Staging-Veröffentlichung durchführen. Bei der Veröffentlichung ein stagingwebsiteslot für jede standardmäßige Produktionswebsite erstellt und ermöglicht es Ihnen, diese Slots ohne Downtime zu wechseln. Dies ist sehr nützlich ist, überprüfen vor der Freigabe für die Öffentlichkeit Änderungen inkrementell Websiteinhalte zu integrieren und Rollback aus, wenn Änderungen werden nicht wie erwartet funktioniert.
+Mit **Web-Apps in Azure App Service** können Sie eine gestaffelte Veröffentlichung durchführen. Die gestaffelte Veröffentlichung erstellt einen stagingsiteslot für jede Standard Produktions Site und ermöglicht es Ihnen, diese Slots ohne Ausfallzeit auszutauschen. Dies ist sehr nützlich, um Änderungen vor der Veröffentlichung in der Öffentlichkeit zu überprüfen, Website Inhalte inkrementell zu integrieren und einen Rollback auszuführen, wenn die Änderungen nicht erwartungsgemäß funktionieren.
 
-In dieser Übung werden Sie Bereitstellen der **Meister Quiz** Anwendung in die Stagingumgebung der Web-app mithilfe von Git-quellcodeverwaltung. Zu diesem Zweck, Sie erstellen die Web-app und Bereitstellen die erforderlichen Komponenten auf das Verwaltungsportal, konfigurieren Sie eine **Git** Repository und übertragen Sie die Anwendung-Quellcode aus dem lokalen Computer im stagingslot. Aktualisieren Sie auch die Produktionsdatenbank mit dem **Code First-Migrationen** Sie in der vorherigen Übung erstellt haben. Sie werden die Anwendung in dieser testumgebung, um zu überprüfen, ob der Vorgang ausgeführt. Wenn Sie zufrieden sind, dass die It arbeitet gemäß Ihren Erwartungen, stuft Sie die Anwendung für die Produktion.
+In dieser Übung stellen Sie die Anwendung " **Geek Quiz** " mithilfe der git-Quell Code Verwaltung in der Stagingumgebung Ihrer Web-App bereit. Zu diesem Zweck erstellen Sie die Web-App und stellen die erforderlichen Komponenten im Verwaltungs Portal bereit. Konfigurieren Sie ein **git** -Repository, und verschieben Sie den Quellcode der Anwendung vom lokalen Computer in den stagingslot. Außerdem aktualisieren Sie die Produktionsdatenbank mit dem **Code First-Migrationen** , den Sie in der vorherigen Übung erstellt haben. Anschließend führen Sie die Anwendung in dieser Testumgebung aus, um den Vorgang zu überprüfen. Wenn Sie zufrieden sind, dass Sie gemäß Ihren Erwartungen funktioniert, werden Sie die Anwendung auf die Produktion herauf Stufen.
 
 > [!NOTE]
-> Um die Veröffentlichung in Stagingumgebung aktivieren zu können, muss die Web-app in **Modus "Standard"**. Beachten Sie, dass zusätzliche Gebühren anfallen, wenn Sie Ihre Web-app in den Standardmodus ändern. Weitere Informationen zu den Preisen finden Sie unter [App Service-Preise](https://azure.microsoft.com/pricing/details/app-service/).
+> Zum Aktivieren der stagingveröffentlichung muss sich die Web-App im **Standard Modus**befinden. Beachten Sie, dass zusätzliche Gebühren anfallen, wenn Sie Ihre Web-App in den Standard Modus ändern. Weitere Informationen zu den Preisen finden Sie unter [App Service Preise](https://azure.microsoft.com/pricing/details/app-service/).
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-web-app-in-azure-app-service"></a>Aufgabe 1 – Erstellen einer Web-App in Azure App Service
 
-In dieser Aufgabe erstellen Sie eine Web-app in **Azure App Service** aus dem Verwaltungsportal. Konfigurieren Sie auch eine **SQL-Datenbank** zum Speichern von Anwendungsdaten und Konfigurieren von einem lokalen Git-Repository für die quellcodeverwaltung.
+In dieser Aufgabe erstellen Sie eine Web-App in **Azure App Service** aus dem Verwaltungs Portal. Außerdem konfigurieren Sie eine **SQL-Datenbank** , um die Anwendungsdaten beizubehalten, und konfigurieren ein lokales git-Repository für die Quell Code Verwaltung.
 
-1. Wechseln Sie zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com) und melden Sie sich mit dem Microsoft-Konto, das Ihrem Abonnement zugeordnet.
+1. Wechseln Sie zum [Azure-Verwaltungs Portal](https://manage.windowsazure.com) , und melden Sie sich mit der Microsoft-Konto an, die Ihrem Abonnement zugeordnet ist.
 
-    ![Melden Sie sich beim Azure-Verwaltungsportal](maintainable-azure-websites-managing-change-and-scale/_static/image13.png)
+    ![Melden Sie sich beim Azure-Verwaltungs Portal an.](maintainable-azure-websites-managing-change-and-scale/_static/image13.png)
 
-    *Melden Sie sich beim Azure-Verwaltungsportal*
-2. Klicken Sie auf **neu** in der Befehlsleiste am unteren Rand der Seite.
+    *Melden Sie sich beim Azure-Verwaltungs Portal an.*
+2. Klicken Sie in der Befehlsleiste unten auf der Seite auf **neu** .
 
-    ![Erstellen einer neuen Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image14.png "Erstellen einer neuen Web-app")
+    ![Erstellen einer neuen Web-App](maintainable-azure-websites-managing-change-and-scale/_static/image14.png "Erstellen einer neuen Web-App")
 
-    *Erstellen einer neuen Web-app*
-3. Klicken Sie auf **Compute**, **Website** und dann **Benutzerdefiniert erstellen**.
+    *Erstellen einer neuen Web-App*
+3. Klicken Sie auf **Compute**, **Website** und dann auf **Benutzer definiert erstellen**.
 
-    ![Erstellen einer neuen Web-app mithilfe von benutzerdefinierte Erstellung](maintainable-azure-websites-managing-change-and-scale/_static/image15.png "Erstellen einer neuen Web-app mithilfe von benutzerdefinierte Erstellung")
+    ![Erstellen einer neuen Web-App mit benutzerdefiniertem erstellen](maintainable-azure-websites-managing-change-and-scale/_static/image15.png "Erstellen einer neuen Web-App mit benutzerdefiniertem erstellen")
 
-    *Erstellen einer neuen Web-app mithilfe von benutzerdefinierte Erstellung*
-4. In der **neue Website - Benutzerdefiniert erstellen** Dialogfeld geben einen verfügbaren **URL** (z. B. *Meister-Quiz*), wählen Sie einen Speicherort in der **Region** Dropdown-Liste, und wählen **Erstellen einer neuen SQL-Datenbank** in die **Datenbank** Dropdown-Liste. Wählen Sie abschließend die **veröffentlichen aus der quellcodeverwaltung** Kontrollkästchen und klicken Sie auf **Weiter**.
+    *Erstellen einer neuen Web-App mit benutzerdefiniertem erstellen*
+4. Geben Sie im Dialogfeld **neue Website-benutzerdefiniertes erstellen** eine verfügbare **URL** an (z. b. " *Geek-Quiz*"), wählen Sie einen Speicherort in der Dropdown Liste **Region** aus, und wählen Sie in der Dropdown Liste **Datenbank** die Option **neue SQL-Datenbank erstellen** aus. Wählen Sie abschließend das Kontrollkästchen **aus Quell Code Verwaltung veröffentlichen aus** , und klicken Sie auf **weiter**.
 
-    ![Anpassen der neuen Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image16.png)
+    ![Anpassen der neuen Web-App](maintainable-azure-websites-managing-change-and-scale/_static/image16.png)
 
-    *Anpassen der neuen Web-app*
-5. Geben Sie die folgenden Informationen für die datenbankeinstellungen:
+    *Anpassen der neuen Web-App*
+5. Geben Sie die folgenden Informationen für die Datenbankeinstellungen an:
 
-   - In der **Namen** Text Geben Sie einen Datenbanknamen an (z. B. *Geekquiz\_Db*)
-   - Auf dem Server **Dropdownliste** Liste **neue SQL-Datenbankserver**. Alternativ können Sie einen vorhandenen Server auswählen.
-   - In der **Datenbankbenutzername** und **Datenbankkennwort** Felder, geben Sie den Benutzernamen und das Kennwort für den SQL-Datenbankserver. Wenn Sie einen Server auswählen ist bereits vorhanden, Sie werden aufgefordert, das Kennwort.
+   - Geben Sie im Textfeld **Name** einen Datenbanknamen ein (z. b. *geekquiz\_DB*).
+   - Wählen Sie in der **Dropdown** Liste Server die Option **neuer SQL-Daten Bank Server**aus. Wahlweise können Sie auch einen vorhandenen Server auswählen.
+   - Geben Sie in den Feldern **Datenbank-Benutzername** und **Daten Bank Kennwort** den Benutzernamen und das Kennwort für den SQL-Datenbankserver ein Wenn Sie einen Server auswählen, den Sie bereits erstellt haben, werden Sie zur Eingabe des Kennworts aufgefordert.
 
-     ![Die datenbankeinstellungen angeben](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
+     ![Angeben der Datenbankeinstellungen](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
 
-     *Die datenbankeinstellungen angeben*
+     *Angeben der Datenbankeinstellungen*
 6. Klicken Sie auf **Weiter**, um fortzufahren.
-7. Wählen Sie **lokales Git-Repository** für die quellcodeverwaltung verwenden, und klicken Sie auf **Weiter**.
+7. Wählen Sie **Lokales git-Repository** für die Quell Code Verwaltung aus, und klicken Sie auf **weiter**.
 
     > [!NOTE]
-    > Sie können Anmeldeinformationen für die Bereitstellung (Benutzername und Kennwort) aufgefordert.
+    > Möglicherweise werden Sie zur Eingabe der Anmelde Informationen für die Bereitstellung aufgefordert (Benutzername und Kennwort).
 
-    ![Das Git-Repository erstellen](maintainable-azure-websites-managing-change-and-scale/_static/image18.png)
+    ![Erstellen des git-Repository](maintainable-azure-websites-managing-change-and-scale/_static/image18.png)
 
-    *Das Git-Repository erstellen*
-8. Warten Sie, bis die neue Web-app erstellt wird.
+    *Erstellen des git-Repository*
+8. Warten Sie, bis die neue Web-App erstellt wurde.
 
     > [!NOTE]
-    > Standardmäßig stellt Azure Domänen bereit, mit denen *azurewebsites.net* sondern bietet auch die Möglichkeit, benutzerdefinierte Domänen, die über das Azure-Verwaltungsportal festgelegt. Allerdings können Sie benutzerdefinierte Domänen nur verwalten, bei Verwendung von bestimmten Azure App Service-Modi.
+    > Standardmäßig stellt Azure Domänen unter *azurewebsites.net* bereit, bietet Ihnen jedoch auch die Möglichkeit, benutzerdefinierte Domänen mithilfe des Azure-Verwaltungs Portals festzulegen. Sie können jedoch nur benutzerdefinierte Domänen verwalten, wenn Sie bestimmte Azure App Service Modi verwenden.
     >
-    > Azure App Service ist in Free, Shared, Basic, Standard und Premium-Editionen verfügbar. Im Free und Shared-Modus werden alle Web-apps in einer Umgebung mit mehreren Mandanten ausgeführt und Kontingente für die Verwendung von CPU, Arbeitsspeicher und Netzwerk haben. Die maximale Anzahl von kostenlosen apps kann mit Ihrem Plan variieren. Im Modus "Standard" Wählen Sie an, welche apps auf dedizierten virtuellen Computern, die entsprechen ausgeführt wird, an die standardmäßige Azure-computeressourcen. Finden Sie die Web-app-Modus-Konfiguration in der **Skalierung** im Menü der Web-app.
+    > Azure App Service ist in den Editionen Free, Shared, Basic, Standard und Premium verfügbar. Im Modus "kostenlos" und "freigegeben" werden alle Web-Apps in einer mehr Instanzen fähigen Umgebung ausgeführt und verfügen über Kontingente für die CPU-, Arbeitsspeicher-und Netzwerk Auslastung. Die maximale Anzahl von kostenlosen Apps kann mit Ihrem Plan variieren. Im Standard Modus wählen Sie aus, welche apps auf dedizierten virtuellen Computern ausgeführt werden, die den Standard mäßigen Azure-Compute-Ressourcen entsprechen. Sie finden die Konfiguration des Web-App-Modus im Menü **skalieren** Ihrer Web-App.
     >
-    > ![Azure App Service-Modi](maintainable-azure-websites-managing-change-and-scale/_static/image19.png "Azure App Service-Modi")
+    > ![Azure App Service Modi](maintainable-azure-websites-managing-change-and-scale/_static/image19.png "Azure App Service Modi")
     >
-    > Bei Verwendung von **Shared** oder **Standard** Modus, Sie werden benutzerdefinierte Domänen für Ihre Web-app zu verwalten, indem Sie zu Ihrer app **konfigurieren** Menü und klicken Sie auf **Domänen verwalten** unter *Domänennamen*.
+    > Wenn Sie den Modus "frei **gegeben** " oder " **Standard** " verwenden, können Sie benutzerdefinierte Domänen für Ihre Web-App verwalten, indem Sie zum Menü **Konfigurieren** der App wechseln und Unterdomänen *Namen*auf **Domänen verwalten** klicken.
     >
-    > ![Verwalten von Domänen](maintainable-azure-websites-managing-change-and-scale/_static/image20.png "Domänen verwalten")
+    > ![Verwalten von Domänen](maintainable-azure-websites-managing-change-and-scale/_static/image20.png "Verwalten von Domänen")
     >
-    > ![Benutzerdefinierte Domänen verwalten](maintainable-azure-websites-managing-change-and-scale/_static/image21.png "benutzerdefinierte Domänen verwalten")
-9. Nachdem die Web-app erstellt wurde, klicken Sie auf den Link unter der **URL** Spalte, um zu überprüfen, dass die neue Web-app ausgeführt wird.
+    > ![Benutzerdefinierte Domänen verwalten](maintainable-azure-websites-managing-change-and-scale/_static/image21.png "Benutzerdefinierte Domänen verwalten")
+9. Nachdem die Web-App erstellt wurde, klicken Sie auf den Link unter der Spalte **URL** , um zu überprüfen, ob die neue Web-App ausgeführt wird.
 
-    ![Navigieren in der neuen Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image22.png)
+    ![Navigieren zur neuen Web-App](maintainable-azure-websites-managing-change-and-scale/_static/image22.png)
 
-    *Navigieren in der neuen Web-app*
+    *Navigieren zur neuen Web-App*
 
-    ![ausgeführte Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image23.png)
+    ![Ausführung der Web-App](maintainable-azure-websites-managing-change-and-scale/_static/image23.png)
 
-    *ausgeführte Web-app*
+    *Ausführung der Web-App*
 
 <a id="Ex2Task2"></a>
-#### <a name="task-2--creating-the-production-sql-database"></a>Aufgabe 2: Erstellen der SQL-Datenbank der Produktion
+#### <a name="task-2--creating-the-production-sql-database"></a>Aufgabe 2 – Erstellen der SQL-Produktionsdatenbank
 
-In dieser Aufgabe verwenden Sie die **Entity Framework Code First-Migrationen** zum Erstellen der Datenbank als Ziel der **Azure SQL-Datenbank** Instanz, die Sie in der vorherigen Aufgabe erstellt haben.
+In dieser Aufgabe verwenden Sie die **Entity Framework Code First-Migrationen** , um die Datenbank für die **Azure SQL-Daten Bank** Instanz zu erstellen, die Sie in der vorherigen Aufgabe erstellt haben.
 
-1. Im Verwaltungsportal, wechseln Sie zu der Web-app, die Sie in der vorherigen Aufgabe erstellt haben, und wechseln Sie zu dessen **Dashboard**.
-2. In der **Dashboard** auf **Verbindungszeichenfolgen anzeigen** link die **Blick** Abschnitt.
+1. Navigieren Sie in der Verwaltungsportal zu der Web-App, die Sie in der vorherigen Aufgabe erstellt haben, und wechseln Sie zum **Dashboard**.
+2. Klicken Sie auf der Seite **Dashboard** im Abschnitt **kurzer Blick** auf den Link Verbindungs Zeichenfolgen **anzeigen** .
 
-    ![Verbindungszeichenfolgen anzeigen](maintainable-azure-websites-managing-change-and-scale/_static/image24.png "Verbindungszeichenfolgen anzeigen")
+    ![Verbindungs Zeichenfolgen anzeigen](maintainable-azure-websites-managing-change-and-scale/_static/image24.png "Verbindungs Zeichenfolgen anzeigen")
 
-    *Verbindungszeichenfolgen anzeigen*
-3. Kopieren der **Verbindungszeichenfolge** Wert ein, und schließen Sie das Dialogfeld.
+    *Verbindungs Zeichenfolgen anzeigen*
+3. Kopieren Sie den Wert der **Verbindungs Zeichenfolge** und schließen Sie das Dialogfeld.
 
-    ![Die Verbindungszeichenfolge im Azure-Verwaltungsportal](maintainable-azure-websites-managing-change-and-scale/_static/image25.png "Verbindungszeichenfolge im Azure-Verwaltungsportal")
+    ![Verbindungs Zeichenfolge in Azure Verwaltungsportal](maintainable-azure-websites-managing-change-and-scale/_static/image25.png "Verbindungs Zeichenfolge in Azure Verwaltungsportal")
 
-    *Die Verbindungszeichenfolge im Azure-Verwaltungsportal*
-4. Klicken Sie auf **SQL-Datenbanken** auf die Liste der SQL-Datenbanken in Azure finden Sie unter
+    *Verbindungs Zeichenfolge in Azure Verwaltungsportal*
+4. Klicken Sie auf **SQL-Datenbanken** , um die Liste der SQL-Datenbanken in Azure
 
-    ![SQL-Datenbank-Menü](maintainable-azure-websites-managing-change-and-scale/_static/image26.png "im Menü die SQL-Datenbank")
+    ![SQL-Datenbank-Menü](maintainable-azure-websites-managing-change-and-scale/_static/image26.png "SQL-Datenbank-Menü")
 
     *SQL-Datenbank-Menü*
-5. Suchen Sie die Datenbank, die Sie in der vorherigen Aufgabe erstellt haben, und klicken Sie auf dem Server.
+5. Suchen Sie die Datenbank, die Sie in der vorherigen Aufgabe erstellt haben, und klicken Sie auf den Server.
 
-    ![SQL-Datenbankserver](maintainable-azure-websites-managing-change-and-scale/_static/image27.png "SQL-Datenbankserver")
+    ![SQL-Datenbankserver](maintainable-azure-websites-managing-change-and-scale/_static/image27.png "SQL-Datenbank-Server")
 
     *SQL-Datenbankserver*
-6. In der **Schnellstart** Seite des Servers, klicken Sie auf **konfigurieren**.
+6. Klicken Sie auf der Seite **Schnellstart** des Servers auf **Konfigurieren**.
 
-    ![Menü "konfigurieren"](maintainable-azure-websites-managing-change-and-scale/_static/image28.png "Menü \"konfigurieren\"")
+    ![Menü konfigurieren](maintainable-azure-websites-managing-change-and-scale/_static/image28.png "Menü konfigurieren")
 
-    *Konfigurieren Sie im Menü*
-7. In der **zulässige IP-Adressen** an, klicken Sie im Abschnitt **hinzufügen, die den zulässigen IP-Adressen** Link, um die IP-Adresse für die Verbindung mit dem SQL-Datenbank-Server zu aktivieren.
+    *Menü konfigurieren*
+7. Klicken Sie im Abschnitt **zulässige IP-Adressen** auf **Hinzufügen zum Link zulässige IP-Adressen** , um die IP-Adresse für die Verbindung mit dem SQL-Datenbankserver zu aktivieren.
 
-    ![Zulässige IP-Adressen](maintainable-azure-websites-managing-change-and-scale/_static/image29.png "zulässige IP-Adressen")
+    ![Zulässige IP-Adressen](maintainable-azure-websites-managing-change-and-scale/_static/image29.png "Zulässige IP-Adressen")
 
     *Zulässige IP-Adressen*
-8. Klicken Sie auf **speichern** am unteren Rand der Seite, um den Schritt abzuschließen.
+8. Klicken Sie unten auf der Seite auf **Save** , um den Schritt abzuschließen.
 9. Wechseln Sie zurück zu Visual Studio.
-10. In der **-Paket-Manager-Konsole**, führen Sie den folgenden Befehl und Ersetzen Sie dabei *[YOUR-CONNECTION-STRING]* Platzhalter durch die Verbindungszeichenfolge, die Sie aus Azure kopiert
+10. Führen Sie in der **Paket-Manager-Konsole**den folgenden Befehl aus, indem Sie den Platzhalter *[Your-Connection-String]* durch die aus Azure kopierte Verbindungs Zeichenfolge ersetzen.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample10.ps1)]
 
-    ![Aktualisieren einer Datenbank für Windows Azure SQL-Datenbank](maintainable-azure-websites-managing-change-and-scale/_static/image30.png "Datenbank aktualisieren, die für Windows Azure SQL-Datenbank")
+    ![Aktualisieren der Datenbank für die Windows Azure SQL-Datenbank](maintainable-azure-websites-managing-change-and-scale/_static/image30.png "Aktualisieren der Datenbank für die Windows Azure SQL-Datenbank")
 
-    *Aktualisieren einer Datenbank für Azure SQL-Datenbank*
+    *Aktualisieren der Datenbank für die Azure SQL-Datenbank*
 
 <a id="Ex2Task3"></a>
-#### <a name="task-3--deploying-geek-quiz-to-staging-using-git"></a>Aufgabe 3: Bereitstellen von Meister Quiz in die Stagingumgebung, die mithilfe von Git
+#### <a name="task-3--deploying-geek-quiz-to-staging-using-git"></a>Aufgabe 3 – Bereitstellen von Geek Quiz für Staging mithilfe von git
 
-In dieser Aufgabe können Sie bei der Veröffentlichung in Ihrer Web-app. Klicken Sie dann verwenden Sie Git zum Veröffentlichen der Anwendung Meister Quiz direkt aus Ihrem lokalen Computer in der Stagingumgebung bereit, der Web-app.
+In dieser Aufgabe aktivieren Sie die gestaffelte Veröffentlichung in Ihrer Web-App. Anschließend verwenden Sie git, um die Geek-Quiz Anwendung direkt von Ihrem lokalen Computer in der Stagingumgebung Ihrer Web-App zu veröffentlichen.
 
-1. Wechseln Sie zurück zum Portal, und klicken Sie auf den Namen der Web-app unter der **Namen** Spalte die Verwaltungsseiten angezeigt.
+1. Wechseln Sie zurück zum Portal, und klicken Sie auf den Namen der Web-App unter der Spalte **Name** , um die Verwaltungs Seiten anzuzeigen.
 
-    ![Öffnen die Seiten der Web-app-Verwaltung](maintainable-azure-websites-managing-change-and-scale/_static/image31.png)
+    ![Öffnen der Web-App-Verwaltungs Seiten](maintainable-azure-websites-managing-change-and-scale/_static/image31.png)
 
-    *Öffnen die Seiten der Web-app-Verwaltung*
-2. Navigieren Sie zu der **Skalierung** Seite. Unter den **allgemeine** wählen Sie im Abschnitt **Standard** für die Konfiguration und klicken Sie auf **speichern** in der Befehlsleiste.
+    *Öffnen der Web-App-Verwaltungs Seiten*
+2. Navigieren Sie zur Seite **skalieren** . Wählen Sie im Abschnitt **Allgemein** die Option **Standard** für die Konfiguration aus, und klicken Sie auf der Befehlsleiste auf **Speichern** .
 
     > [!NOTE]
-    > Zum Ausführen aller Web-apps in der aktuellen Region und Abonnement in **Standard** Modus, lassen die **Alles markieren** Kontrollkästchen der **Standorte auswählen** Konfiguration. Deaktivieren Sie andernfalls die **Alles markieren** Kontrollkästchen.
+    > Wenn Sie alle Web-Apps in der aktuellen Region und im **Standard** Modus ausführen möchten, lassen Sie das Kontrollkästchen **Alle auswählen** in der Konfiguration **Websites auswählen** aktiviert. Deaktivieren Sie andernfalls das Kontrollkästchen **Alles auswählen** .
 
-    ![Aktualisieren die Web-app in den Standardmodus](maintainable-azure-websites-managing-change-and-scale/_static/image32.png "aktualisieren die Web-app zum Modus \"Standard\"")
+    ![Aktualisieren der Web-App auf den Standard Modus](maintainable-azure-websites-managing-change-and-scale/_static/image32.png "Aktualisieren der Web-App auf den Standard Modus")
 
-    *Aktualisieren die Web-App zum Modus "Standard"*
-3. Klicken Sie auf **Ja** um die Änderungen zu bestätigen.
+    *Aktualisieren der Web-App auf den Standard Modus*
+3. Klicken Sie auf **Ja** , um die Änderungen zu bestätigen.
 
-    ![Bestätigung der Änderung in den Standardmodus](maintainable-azure-websites-managing-change-and-scale/_static/image33.png "fortsetzen, die mit Änderungen an der Web-app-Modus")
+    ![Bestätigen der Änderung am Standard Modus](maintainable-azure-websites-managing-change-and-scale/_static/image33.png "Fortsetzen der Änderung des Web-App-Modus")
 
-    *Bestätigung der Änderung in den Standardmodus*
-4. Wechseln Sie zu der **Dashboard** Seite, und klicken Sie auf **Enable Staging-Veröffentlichung** unter der **Blick** Abschnitt.
+    *Bestätigen der Änderung am Standard Modus*
+4. Wechseln Sie zur Seite **Dashboard** , und klicken Sie im Abschnitt **kurzer Blick** auf bereitgestellte **Veröffentlichung aktivieren** .
 
-    ![Aktivieren der Veröffentlichung in Stagingumgebung](maintainable-azure-websites-managing-change-and-scale/_static/image34.png "aktivieren – Staging-Veröffentlichung")
+    ![Aktivieren der gestaffelten Veröffentlichung](maintainable-azure-websites-managing-change-and-scale/_static/image34.png "Aktivieren der gestaffelten Veröffentlichung")
 
-    *Aktivieren der Veröffentlichung in Stagingumgebung*
-5. Klicken Sie auf **Ja** bei der Veröffentlichung zu aktivieren.
+    *Aktivieren der gestaffelten Veröffentlichung*
+5. Klicken Sie zum Aktivieren der stagingveröffentlichung auf **Ja** .
 
-    ![Bestätigt – Staging-Veröffentlichung](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "Ja klicken, um Staging-Veröffentlichung zu aktivieren")
+    ![Bestätigung der gestaffelten Veröffentlichung](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "Klicken Sie zum Aktivieren der stagingveröffentlichung auf Ja")
 
-    *Bestätigen bei der Veröffentlichung*
-6. Erweitern Sie in der Liste der Web-apps die Markierung links vom Namen Ihrer Web-app im stagingslot-Website angezeigt. Es hat den Namen der Web-app gefolgt von ***(staging)***. Klicken Sie auf der Stagingsite, um zur Verwaltungsseite zu wechseln.
+    *Bestätigung der gestaffelten Veröffentlichung*
+6. Erweitern Sie in der Liste der Web-Apps die Markierung links neben Ihrem Web-App-Namen, um den stagingsiteslot anzuzeigen. Sie hat den Namen Ihrer Web-App gefolgt von ***(Staging)***. Klicken Sie auf die Stagingsite, um zur Verwaltungsseite zu gelangen.
 
-    ![Navigieren in der staging-Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "Navigieren in der staging-Web-app")
+    ![Navigieren zur Staging-Web-App](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "Navigieren zur Staging-Web-App")
 
-    *Navigieren in der staging-app*
-7. Beachten Sie, dass alle anderen Web-app-Verwaltungsseite, He-Verwaltungsseite aussieht. Navigieren Sie zu der **Bereitstellungen** Seite, und kopieren die **Git-URL** Wert. Sie werden später in dieser Übung verwendet.
+    *Navigieren zur Staging-App*
+7. Beachten Sie, dass die Verwaltungsseite wie jede andere Verwaltungsseite der Web-App aussieht. Navigieren Sie zur Seite bereit **Stellungen** , und kopieren Sie den Wert der **git-URL** . Sie werden Sie später in dieser Übung verwenden.
 
-    ![Kopieren den Wert der Git-URL](maintainable-azure-websites-managing-change-and-scale/_static/image37.png)
+    ![Kopieren des git-URL-Werts](maintainable-azure-websites-managing-change-and-scale/_static/image37.png)
 
-    *Kopieren den Wert der Git-URL*
-8. Öffnen Sie ein neues **Git Bash** Konsole und führen Sie die folgenden Befehle aus. Update der *[YOUR-APPLICATION-PATH]* Platzhalter durch den Pfad zu der **GeekQuiz** Lösung befindet sich in der **Source\Ex1-DeployingWebSiteToStaging\Begin** Ordner Dieses Lab.
+    *Kopieren des git-URL-Werts*
+8. Öffnen Sie eine neue **git bash** -Konsole, und führen Sie die folgenden Befehle aus. Aktualisieren Sie den Platzhalter *[your-application-path]* mit dem Pfad zur **geekquiz-Projekt** Mappe, die sich im Ordner **source\ex1-deployingwebsitedestaging\begin** dieses Labs befindet.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample11.cmd)]
 
-    ![Git-Initialisierung und der erste commit](maintainable-azure-websites-managing-change-and-scale/_static/image38.png)
+    ![Git-Initialisierung und erster Commit](maintainable-azure-websites-managing-change-and-scale/_static/image38.png)
 
-    *Git-Initialisierung und der erste commit*
-9. Führen Sie den folgenden Befehl aus, um Ihre Web-app an die Remoteinstanz übertragen **Git** Repository. Ersetzen Sie den Platzhalter durch die URL, die Sie aus dem Verwaltungsportal abgerufen haben. Sie werden aufgefordert, Ihr bereitstellungskennwort.
+    *Git-Initialisierung und erster Commit*
+9. Führen Sie den folgenden Befehl aus, um Ihre Web-App an das **git** -Remote Repository zu überführen. Ersetzen Sie den Platzhalter durch die URL, die Sie aus dem Verwaltungs Portal abgerufen haben. Sie werden zur Eingabe Ihres Bereitstellungs Kennworts aufgefordert.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample12.cmd)]
 
-    ![Pushen in Windows Azure](maintainable-azure-websites-managing-change-and-scale/_static/image39.png)
+    ![Pushübertragung an Windows Azure](maintainable-azure-websites-managing-change-and-scale/_static/image39.png)
 
-    *Pushen in Azure*
+    *Pushübertragung an Azure*
 
     > [!NOTE]
-    > Wenn Sie Inhalte auf dem FTP-Host oder das GIT-Repository eine Web-app bereitstellen, müssen Sie Authentifizierung, mit der **Anmeldeinformationen für die Bereitstellung** , die Sie aus der Web-app erstellt **Schnellstart** oder **Dashboard**  Verwaltungsseiten. Wenn Sie nicht, dass Ihre Anmeldeinformationen für die Bereitstellung wissen können Sie ganz einfach mithilfe des Verwaltungsportals zurücksetzen. Öffnen Sie die Web-app **Dashboard** Seite, und klicken Sie auf die **bereitstellungsanmeldeinformationen für die zurücksetzen** Link. Geben Sie ein neues Kennwort ein, und klicken Sie auf **OK**. Anmeldeinformationen für die Bereitstellung gelten für die Verwendung mit allen Web-apps, die Ihrem Abonnement zugeordnet wurde.
-10. Um die Web-app wurde erfolgreich per Push übertragen in Azure zu überprüfen, wechseln Sie zurück zum Verwaltungsportal, und klicken Sie auf **Websites**.
-11. Suchen Sie Ihre Web-app aus, und erweitern Sie den Eintrag, um die stagingwebsiteslot anzuzeigen. Klicken Sie auf die **Namen** um zur Verwaltungsseite zu wechseln.
-12. Klicken Sie auf **Bereitstellungen** , finden Sie unter den **Bereitstellungsverlauf**. Überprüfen Sie, ob ein **aktive Bereitstellung** mit Ihrem  *&quot;anfänglichen Commit&quot;*.
+    > Wenn Sie Inhalte auf dem FTP-Host oder im git-Repository einer Web-App bereitstellen, müssen Sie sich mit den Anmelde Informationen für die **Bereitstellung** authentifizieren, die Sie auf den Verwaltungs Seiten **Schnellstart** oder **Dashboard** der Web-App erstellt haben. Wenn Sie Ihre Anmelde Informationen für die Bereitstellung nicht kennen, können Sie Sie problemlos mithilfe des Verwaltungs Portals zurücksetzen. Öffnen Sie die Seite Web-App- **Dashboard** , und klicken Sie auf den Link zur **Bereitstellung der Anmelde** Informationen Geben **Sie ein**neues Kennwort ein, und klicken Sie auf Anmelde Informationen für die Bereitstellung können für alle Web-Apps verwendet werden, die Ihrem Abonnement zugeordnet sind.
+10. Wechseln Sie zurück zum Verwaltungs Portal, und klicken Sie auf **Websites**, um zu überprüfen, ob die Web-App erfolgreich in Azure übermittelt wurde.
+11. Suchen Sie Ihre Web-App, und erweitern Sie den Eintrag, um den stagingsiteslot anzuzeigen. Klicken Sie auf den **Namen** , um zur Verwaltungsseite zu gelangen.
+12. Klicken Sie auf bereit **Stellungen** , um den **Bereitstellungs Verlauf**anzuzeigen. Vergewissern Sie sich, dass eine **aktive Bereitstellung** mit Ihrem *&quot;anfänglichen Commit-&quot;* vorhanden ist.
 
     ![Aktive Bereitstellung](maintainable-azure-websites-managing-change-and-scale/_static/image40.png)
 
     *Aktive Bereitstellung*
-13. Klicken Sie abschließend auf **Durchsuchen** in der Befehlsleiste, um die Web-app aufzurufen.
+13. Klicken Sie abschließend in der Befehlsleiste auf **Durchsuchen** , um zur Web-App zu wechseln.
 
-    ![Navigieren zur WebApp](maintainable-azure-websites-managing-change-and-scale/_static/image41.png)
+    ![Web-App durchsuchen](maintainable-azure-websites-managing-change-and-scale/_static/image41.png)
 
-    *Navigieren zur WebApp*
-14. Wenn die Anwendung erfolgreich bereitgestellt wurde, sehen Sie die Anmeldeseite Meister Quiz.
+    *Web-App durchsuchen*
+14. Wenn die Anwendung erfolgreich bereitgestellt wurde, wird die Anmeldeseite für den Geek-Quiz angezeigt.
 
     > [!NOTE]
-    > Der Adress-URL der bereitgestellten Anwendung enthält den Namen der Web-app gefolgt von *-staging*.
+    > Die Adress-URL der bereitgestellten Anwendung enthält den Namen Ihrer Web-App gefolgt von *-Staging*.
 
     ![Anwendung, die in der Stagingumgebung ausgeführt wird](maintainable-azure-websites-managing-change-and-scale/_static/image42.png)
 
     *Anwendung, die in der Stagingumgebung ausgeführt wird*
-15. Wenn Sie die Anwendung zu untersuchen möchten, klicken Sie auf **registrieren** um einen neuen Benutzer zu registrieren. Schließen Sie die Kontodetails, indem Sie ein Benutzername, e-Mail-Adresse und Kennwort einzugeben. Als Nächstes wird die Anwendung die erste Frage des Quiz dargestellt. Beantworten Sie ein paar Fragen, um sicherzustellen, dass es wie erwartet funktioniert.
+15. Wenn Sie die Anwendung untersuchen möchten, klicken Sie auf **registrieren** , um einen neuen Benutzer zu registrieren. Vervollständigen Sie die Konto Details, indem Sie Benutzername, e-Mail-Adresse und Kennwort eingeben. Im nächsten Schritt zeigt die Anwendung die erste Frage des Quiz. Beantworten Sie einige Fragen, um sicherzustellen, dass Sie erwartungsgemäß funktioniert.
 
-    ![Anwendung verwendet werden](maintainable-azure-websites-managing-change-and-scale/_static/image43.png)
+    ![Die Anwendung kann verwendet werden.](maintainable-azure-websites-managing-change-and-scale/_static/image43.png)
 
-    *Anwendung verwendet werden*
+    *Die Anwendung kann verwendet werden.*
 
 <a id="Ex2Task4"></a>
-#### <a name="task-4--promoting-the-web-app-to-production"></a>Aufgabe 4: die Web-App für die Produktion heraufstufen
+#### <a name="task-4--promoting-the-web-app-to-production"></a>Aufgabe 4 – herauf Stufen der Web-App zur Produktion
 
-Nun, da Sie überprüft haben, dass die Web-app in der Stagingumgebung ordnungsgemäß funktioniert, können Sie es in die produktionsumgebung überführen. In dieser Aufgabe werden Sie den stagingslot-Website in den produktionsslot für den Standort ausgetauscht.
+Nachdem Sie überprüft haben, dass die Web-App in der Stagingumgebung ordnungsgemäß funktioniert, können Sie Sie in die Produktion herauf Stufen. In dieser Aufgabe tauschen Sie den stagingsiteslot mit dem Produktionsstandort Slot aus.
 
-1. Wechseln Sie zurück zum Verwaltungsportal, und wählen Sie den stagingslot-Website. Klicken Sie auf **austauschen** in der Befehlsleiste.
+1. Wechseln Sie zurück zum Verwaltungs Portal, und wählen Sie den Slot der Stagingsite aus. Klicken Sie in der Befehlsleiste auf **austauschen** .
 
-    ![Wechseln Sie in die Produktion](maintainable-azure-websites-managing-change-and-scale/_static/image44.png)
+    ![In Produktionsumgebungen austauschen](maintainable-azure-websites-managing-change-and-scale/_static/image44.png)
 
-    *Wechseln Sie in die Produktion*
-2. Klicken Sie auf **Ja** in das Dialogfeld zur Bestätigung der Swap-Vorgang fortsetzen. Azure wird den Inhalt der Produktionssite mit dem Inhalt der staging-Website sofort ausgetauscht.
-
-    > [!NOTE]
-    > Einige Einstellungen aus der bereitgestellten Version werden automatisch auf die Version (z. B. Verbindungszeichenfolge Außerkraftsetzungen "," Handlerzuordnungen "" usw.) kopiert werden, aber andere Einstellungen nicht ändert (z. B. DNS-Endpunkte, SSL-Bindungen, usw.).
-
-    ![Swap-Vorgang bestätigen](maintainable-azure-websites-managing-change-and-scale/_static/image45.png)
-
-    *Swap-Vorgang bestätigen*
-3. Nachdem der Austausch abgeschlossen ist, wählen Sie den produktionsslot, und klicken Sie auf **Durchsuchen** in der Befehlsleiste am Produktionsstandort zu öffnen. Beachten Sie die URL in die Adressleiste ein.
+    *In Produktionsumgebungen austauschen*
+2. Klicken Sie im Bestätigungs Dialogfeld auf **Ja** , um mit dem Austausch Vorgang fortzufahren. Azure tauscht den Inhalt der Produktions Website sofort mit dem Inhalt der Stagingsite aus.
 
     > [!NOTE]
-    > Sie müssen möglicherweise aktualisieren Sie Ihren Browser, um den Cache zu löschen. In Internet Explorer Sie erreichen dies durch Drücken von **STRG + R**.
+    > Einige Einstellungen der gestaffelten Version werden automatisch in die Produktionsversion kopiert (z. b. außer Kraft setzungen für Verbindungs Zeichenfolgen, Handlerzuordnungen usw.), andere Einstellungen werden jedoch nicht geändert (z. b. DNS-Endpunkte, SSL-Bindungen usw.).
 
-    ![In der produktionsumgebung ausgeführte Web-app](maintainable-azure-websites-managing-change-and-scale/_static/image46.png)
-4. In der **GitBash** -Konsole, die remote-URL für das lokale Git-Repository zur Ausrichtung auf des produktionsslots zu aktualisieren. Führen Sie zu diesem Zweck den folgenden Befehl, und Ersetzen Sie die Platzhalter durch Ihren Benutzernamen für die Bereitstellung und den Namen der Web-app ein.
+    ![Bestätigen des Swap-Vorgangs](maintainable-azure-websites-managing-change-and-scale/_static/image45.png)
+
+    *Bestätigen des Swap-Vorgangs*
+3. Wählen Sie nach Abschluss des Austauschs den Produktions Slot aus, und klicken Sie in der Befehlsleiste auf **Durchsuchen** , um die Produktions Website zu öffnen. Beachten Sie die URL in der Adressleiste.
 
     > [!NOTE]
-    > In den folgenden Übungen werden Sie Änderungen mit dem Produktionsstandort statt der Stagingumgebung nur für die Einfachheit des Labs mithilfe von Push übertragen. In einem realen Szenario ist es um die Änderungen in der Stagingumgebung zu überprüfen, bevor die Weiterleitung zur Produktion empfohlen.
+    > Möglicherweise müssen Sie Ihren Browser aktualisieren, um den Cache zu löschen. In Internet Explorer können Sie dazu **STRG + R**drücken.
+
+    ![Ausführung der Web-App in der Produktionsumgebung](maintainable-azure-websites-managing-change-and-scale/_static/image46.png)
+4. Aktualisieren Sie in der **gitbash** -Konsole die Remote-URL für das lokale git-Repository auf den Produktions Slot. Führen Sie hierzu den folgenden Befehl aus, und ersetzen Sie die Platzhalter durch Ihren Benutzernamen für die Bereitstellung und den Namen Ihrer Web-App.
+
+    > [!NOTE]
+    > In den folgenden Übungen verschieben Sie die Änderungen an die Produktions Website, anstatt Sie nur für die Einfachheit des Labs zu Staging. In einem realen Szenario empfiehlt es sich, die Änderungen in der Stagingumgebung vor der herauf Stufung in die Produktion zu überprüfen.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample13.cmd)]
 
 <a id="Exercise3"></a>
-### <a name="exercise-3-performing-deployment-rollback-in-production"></a>Übung 3: Rollback der Bereitstellung durchführen in der Produktion.
+### <a name="exercise-3-performing-deployment-rollback-in-production"></a>Übung 3: Ausführen eines Rollbacks für die Bereitstellung in der Produktion
 
-Es gibt Szenarien, in dem Sie kein stagingslots zum Austausch zwischen Staging und Produktion, z. B. im laufenden Betrieb ausführen, wenn Sie mit arbeiten **Free** oder **Shared** Modus. In diesen Szenarien sollten Sie Ihre Anwendung in einer testumgebung – entweder lokal oder an einem Remotestandort – testen, bevor in einer produktionsumgebung bereitstellen. Allerdings ist es möglich, dass ein Problem, das nicht erkannt wird, während der Testphase am Produktionsstandort auftreten kann. In diesem Fall ist es wichtig, einen Mechanismus, um einfach auf eine vorherige und stabile Version der Anwendung so schnell wie möglich zu wechseln.
+Es gibt Szenarien, in denen Sie keinen stagingslot haben, um einen aktiven Austausch zwischen Staging und Produktion auszuführen, z. b. Wenn Sie mit dem Modus " **Free** " oder " **Shared** " arbeiten. In diesen Szenarien sollten Sie Ihre Anwendung in einer Testumgebung testen – entweder lokal oder an einem Remote Standort – vor der Bereitstellung in der Produktion. Es ist jedoch möglich, dass ein während der Testphase nicht erkanntes Problem am Produktionsstandort auftritt. In diesem Fall ist es wichtig, dass Sie über einen Mechanismus verfügen, um so schnell wie möglich zu einer früheren und stabileren Version der Anwendung zu wechseln.
 
-In **Azure App Service**, kontinuierliche Bereitstellung über quellcodeverwaltung macht diese Dank der Möglichkeit der **erneut bereitstellen** Aktion im Verwaltungsportal verfügbar. Azure überwacht die Bereitstellungen, die Commits per Push an das Repository zugeordnet und bietet eine Option aus, um die Anwendung, die mit Ihrer vorherigen Bereitstellungen, jederzeit erneut bereitzustellen.
+In **Azure App Service**ermöglicht Continuous Deployment der Quell Code Verwaltung dies dank der Aktion " **erneut** bereitstellen", die im Verwaltungs Portal verfügbar ist. Azure verfolgt die bereit Stellungen, die den Commits zugeordnet sind, die an das Repository übermittelt wurden, und bietet eine Option zum erneuten Bereitstellen Ihrer Anwendung mithilfe Ihrer vorherigen bereit Stellungen.
 
-In dieser Übung führen Sie eine Änderung an den Code in die **Meister Quiz** -Anwendung, die absichtlich Fügt eine *Fehler*. Stellt Sie bereit, die Anwendung für die Produktion, um den Fehler anzuzeigen, und klicken Sie dann Sie nutzt die Funktion erneut bereitstellen zu den vorherigen Zustand zurückkehren.
+In dieser Übung führen Sie eine Änderung am Code in der Anwendung " **Geek Quiz** " aus, die absichtlich einen *Fehler*einfügt. Sie stellen die Anwendung in der Produktionsumgebung bereit, um den Fehler anzuzeigen, und dann nutzen Sie die Funktion zum erneuten bereitstellen, um zum vorherigen Zustand zurückzukehren.
 
 <a id="Ex3Task1"></a>
-#### <a name="task-1--updating-the-geek-quiz-application"></a>Aufgabe 1: Aktualisieren der Meister Quiz-Anwendung
+#### <a name="task-1--updating-the-geek-quiz-application"></a>Aufgabe 1 – Aktualisieren der Anwendung "Geek Quiz"
 
-In dieser Aufgabe gestalten Sie ein kleines Stück des Codes, der die **TriviaController** Klasse Teil der Programmlogik zu extrahieren, die die ausgewählte Test-Option in eine neue Methode aus der Datenbank abruft.
+In dieser Aufgabe gestalten Sie einen kleinen Teil des Codes der **triviacontroller** -Klasse um, um einen Teil der Logik zu extrahieren, der die ausgewählte Quiz Option aus der Datenbank in eine neue Methode abruft.
 
-1. Wechseln Sie zu Visual Studio-Instanz mit der **GeekQuiz** Lösung aus der vorhergehenden Übung.
-2. In **Projektmappen-Explorer**öffnen die **TriviaController.cs** Datei innerhalb der **Controller** Ordner.
-3. Suchen Sie die **StoreAsync** Methode, und wählen Sie der Code in der folgenden Abbildung hervorgehoben.
+1. Wechseln Sie in der vorherigen Übung zur Visual Studio-Instanz mit der **geekquiz** -Lösung.
+2. Öffnen Sie in **Projektmappen-Explorer**die Datei **TriviaController.cs** im Ordner **Controllers** .
+3. Suchen Sie nach der **storeasync** -Methode, und wählen Sie den in der folgenden Abbildung markierten Code aus.
 
-    ![Wählen den code](maintainable-azure-websites-managing-change-and-scale/_static/image47.png)
+    ![Auswählen des Codes](maintainable-azure-websites-managing-change-and-scale/_static/image47.png)
 
-    *Wählen den code*
-4. Mit der rechten Maustaste in des ausgewählten Codes, erweitern Sie die **Umgestalten** Menü **Methode extrahieren...** .
+    *Auswählen des Codes*
+4. Klicken Sie mit der rechten Maustaste auf den ausgewählten Code, erweitern Sie das Menü **umgestalten** , und wählen Sie **Methode extrahieren...** aus.
 
-    ![Den Code extrahieren als eine neue Methode](maintainable-azure-websites-managing-change-and-scale/_static/image48.png)
+    ![Extrahieren des Codes als neue Methode](maintainable-azure-websites-managing-change-and-scale/_static/image48.png)
 
-    *Wählen die Extract-Methode*
-5. In der **Methode extrahieren** klicken Sie im Dialogfeld die Namen der neuen Methode *MatchesOption* , und klicken Sie auf **OK**.
+    *Auswählen der Methode extrahieren*
+5. Benennen Sie im Dialogfeld **Methode extrahieren** die neue Methode *matchesoption* , und klicken Sie auf **OK**.
 
-    ![Der Name der Methode angeben](maintainable-azure-websites-managing-change-and-scale/_static/image49.png)
+    ![Angeben des Methoden namens](maintainable-azure-websites-managing-change-and-scale/_static/image49.png)
 
     *Angeben des Namens für die extrahierte Methode*
-6. Der ausgewählte Code wird extrahiert, in der **MatchesOption** Methode. Der resultierende Code ist im folgenden Codeausschnitt dargestellt.
+6. Der ausgewählte Code wird dann in die **matchesoption** -Methode extrahiert. Der resultierende Code wird im folgenden Code Ausschnitt gezeigt.
 
     [!code-csharp[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample14.cs)]
-7. Drücken Sie **STRG + S** um die Änderungen zu speichern.
+7. Drücken Sie **STRG + S** , um die Änderungen zu speichern.
 
 <a id="Ex3Task2"></a>
-#### <a name="task-2--redeploying-the-geek-quiz-application"></a>Aufgabe 2: die Geek-Quiz-Anwendung erneut bereitzustellen
+#### <a name="task-2--redeploying-the-geek-quiz-application"></a>Aufgabe 2 – ernedas erneute Bereitstellen der Anwendung "Geek Quiz"
 
-Sie werden jetzt die Änderungen mithilfe von Push übertragen, die Sie in der vorherigen Aufgabe an das Repository, die eine neue Bereitstellung in der produktionsumgebung ausgelöst wird. Anschließend werden Sie Problembehandlung, ein Problem mit der **F12-Entwicklungstools** von Internet Explorer bereitgestellt werden soll, und führen Sie einen Rollback auf die vorherige Bereitstellung über das Azure-Verwaltungsportal.
+Sie schieben nun die Änderungen, die Sie in der vorherigen Aufgabe vorgenommen haben, an das Repository, das eine neue Bereitstellung in der Produktionsumgebung auslöst. Dann beheben Sie ein Problem mithilfe der von Internet Explorer bereitgestellten **F12-Entwicklungs Tools** und führen dann ein Rollback zur vorherigen Bereitstellung über das Azure-Verwaltungs Portal aus.
 
-1. Öffnen Sie ein neues **Git Bash** Verwaltungskonsole, um die aktualisierte Anwendung in Azure App Service bereitstellen.
-2. Führen Sie die folgenden Befehle aus, um die Änderungen an Azure zu übertragen. Update der *[YOUR-APPLICATION-PATH]* Platzhalter durch den Pfad zu der **GeekQuiz** Lösung. Sie werden aufgefordert, Ihr bereitstellungskennwort.
+1. Öffnen Sie eine neue **git-bash** -Konsole, um die aktualisierte Anwendung für Azure App Service bereitzustellen.
+2. Führen Sie die folgenden Befehle aus, um die Änderungen an Azure zu überführen. Aktualisieren Sie den Platzhalter *[your-application-path]* mit dem Pfad zur **geekquiz-Projekt** Mappe. Sie werden zur Eingabe Ihres Bereitstellungs Kennworts aufgefordert.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample15.cmd)]
 
-    ![Pushen umgestaltete Code in Azure](maintainable-azure-websites-managing-change-and-scale/_static/image50.png)
+    ![Übertragen von umgestalteten Code in Azure per Push](maintainable-azure-websites-managing-change-and-scale/_static/image50.png)
 
-    *Pushen umgestaltete Code in Azure*
-3. Öffnen Sie Internet Explorer, und navigieren Sie zu Ihrer Web-app (z. B. `http://<your-web-site>.azurewebsites.net`). Melden Sie sich mit den zuvor erstellten Anmeldeinformationen.
-4. Drücken Sie **F12** um die Entwicklungstools zu starten, wählen die **Netzwerk** Registerkarte, und klicken Sie auf die **spielen** Schaltfläche zum Starten der Aufzeichnung.
+    *Übertragen von umgestalteten Code in Azure per Push*
+3. Öffnen Sie Internet Explorer, und navigieren Sie zu Ihrer Web-App (z. b. `http://<your-web-site>.azurewebsites.net`). Melden Sie sich mit den zuvor erstellten Anmelde Informationen an.
+4. Drücken Sie **F12** , um die Entwicklungs Tools zu starten, wählen Sie die Registerkarte **Netzwerk** aus, und klicken Sie dann auf **die Schaltfläche** wiedergeben
 
-    ![Starten die Netzwerk-Aufzeichnung](maintainable-azure-websites-managing-change-and-scale/_static/image51.png "Netzwerk Aufzeichnung starten")
+    ![Netzwerk Aufzeichnung wird gestartet](maintainable-azure-websites-managing-change-and-scale/_static/image51.png "Netzwerk Aufzeichnung wird gestartet")
 
-    *Netzwerk-Aufzeichnung starten*
-5. Eine Option des Quiz auswählen. Sie sehen, dass nichts passiert.
-6. In der **F12** Fenster der Eintrag die HTTP POST-Anforderung zeigt eine HTTP **500** Ergebnis.
+    *Netzwerk Aufzeichnung wird gestartet*
+5. Wählen Sie eine beliebige Option des Quiz aus. Sie werden festzustellen, dass nichts passiert.
+6. Im Fenster **F12** zeigt der Eintrag, der der HTTP-Anforderung Post entspricht, ein HTTP **500** -Ergebnis an.
 
-    ![HTTP 500 Fehlermeldung](maintainable-azure-websites-managing-change-and-scale/_static/image52.png)
+    ![HTTP 500-Fehler](maintainable-azure-websites-managing-change-and-scale/_static/image52.png)
 
-    *HTTP 500 Fehlermeldung*
-7. Wählen Sie die **Konsole** Registerkarte. Mit den Details der Fehlerursache wird ein Fehler protokolliert.
+    *HTTP 500-Fehler*
+7. Wählen Sie die Registerkarte **Konsole** aus. Ein Fehler wird mit den Details der Ursache protokolliert.
 
-    ![Protokolliert Fehler](maintainable-azure-websites-managing-change-and-scale/_static/image53.png)
+    ![Protokollierter Fehler](maintainable-azure-websites-managing-change-and-scale/_static/image53.png)
 
-    *Protokolliert Fehler*
-8. Suchen Sie nach dem Detailabschnitt des Fehlers. Dieser Fehler wird natürlich durch die coderefactoring Sie ein Commit in den vorherigen Schritten verursacht.
+    *Protokollierter Fehler*
+8. Suchen Sie den Abschnitt "Details" des Fehlers. Dieser Fehler wird eindeutig durch den Code umgestaltet, den Sie in den vorherigen Schritten committet haben.
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
+    [https://login.microsoftonline.com/consumers/](`Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`).
 9. Schließen Sie den Browser nicht.
-10. Wechseln Sie in einer neuen Browserinstanz zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com) und melden Sie sich mit dem Microsoft-Konto, das Ihrem Abonnement zugeordnet.
-11. Wählen Sie **Websites** , und klicken Sie auf die Web-app, die Sie in der Übung 2 erstellt haben.
-12. Navigieren Sie zu der **Bereitstellungen** Seite. Beachten Sie, dass alle Commits ausgeführt im Bereitstellungsverlauf aufgeführt sind.
+10. Navigieren Sie in einer neuen Browser Instanz zum [Azure-Verwaltungs Portal](https://manage.windowsazure.com) , und melden Sie sich mit der Microsoft-Konto an, die Ihrem Abonnement zugeordnet ist.
+11. Wählen Sie **Websites** aus, und klicken Sie auf die in Übung 2 erstellte Web-App.
+12. Navigieren Sie zur Seite bereit **Stellungen** . Beachten Sie, dass alle ausgeführten Commits im Bereitstellungs Verlauf aufgeführt sind.
 
-    ![Liste der vorhandenen Bereitstellungen](maintainable-azure-websites-managing-change-and-scale/_static/image54.png)
+    ![Liste vorhandener bereit Stellungen](maintainable-azure-websites-managing-change-and-scale/_static/image54.png)
 
-    *Liste der vorhandenen Bereitstellungen*
-13. Wählen Sie den vorherigen Commit aus, und klicken Sie auf **erneut bereitstellen** auf der Befehlsleiste.
+    *Liste vorhandener bereit Stellungen*
+13. Wählen Sie den vorherigen Commit aus, und klicken Sie auf der Befehlsleiste auf **erneut** bereitstellen.
 
-    ![Erneute Bereitstellung des vorherigen Commits](maintainable-azure-websites-managing-change-and-scale/_static/image55.png)
+    ![Der vorherige Commit wird erneut bereitgestellt.](maintainable-azure-websites-managing-change-and-scale/_static/image55.png)
 
-    *Erneute Bereitstellung des vorherigen Commits*
-14. Wenn Sie dazu aufgefordert werden, um zu bestätigen, klicken Sie auf **Ja**.
+    *Der vorherige Commit wird erneut bereitgestellt.*
+14. Wenn Sie aufgefordert werden, die Auswahl zu bestätigen, klicken Sie auf **Ja**.
 
-    ![Bestätigen die erneute Bereitstellung](maintainable-azure-websites-managing-change-and-scale/_static/image56.png)
-15. Wenn die Bereitstellung abgeschlossen ist, wechseln Sie zurück an die Browserinstanz mit Ihrer Web-app, und drücken Sie **STRG + F5**.
-16. Klicken Sie auf eine der Optionen. Die Animation Flip jetzt erfolgen soll und das Ergebnis (*richtigen/falschen*) wird angezeigt.
-17. (Optional) Wechseln Sie zu der **Git Bash** Konsole und führen Sie die folgenden Befehle, um den vorherigen Commit wiederherzustellen.
+    ![Bestätigung der erneuten Bereitstellung](maintainable-azure-websites-managing-change-and-scale/_static/image56.png)
+15. Wenn die Bereitstellung abgeschlossen ist, wechseln Sie zurück zur Browser Instanz mit Ihrer Web-App, und drücken Sie **STRG + F5**.
+16. Klicken Sie auf eine der Optionen. Die Flip-Animation wird jetzt durchgeführt, und das Ergebnis (*richtig/falsch*) wird angezeigt.
+17. Optionale Wechseln Sie zur **git-bash** -Konsole, und führen Sie die folgenden Befehle aus, um zum vorherigen Commit zurückzukehren.
 
     > [!NOTE]
-    > Diese Befehle erstellen einen neuen Commit, der alle Änderungen im Git-Repository wird rückgängig gemacht, die in den fehlerhaften Commit vorgenommen wurden. Azure wird dann die Anwendung mit den neuen Commit erneut bereitstellen.
+    > Mit diesen Befehlen wird ein neuer Commit erstellt, mit dem alle Änderungen im git-Repository, die im ungültigen Commit vorgenommen wurden, übernommen werden. Azure stellt die Anwendung dann mit dem neuen Commit erneut bereit.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample16.cmd)]
 
 <a id="Exercise4"></a>
-### <a name="exercise-4-scaling-using-azure-storage"></a>Übung 4: Skalierung mit dem Azure-Speicher
+### <a name="exercise-4-scaling-using-azure-storage"></a>Übung 4: Skalierung mithilfe Azure Storage
 
-**BLOBs** sind die einfachste Methode zum Speichern großer Mengen unstrukturierter Text-oder Binärdaten wie Video-, Audio- und Bilddaten. Verschieben die statische Inhalte von Ihrer Anwendung in den Speicher, hilft Ihrer Anwendung zu skalieren, durch das Speichern von Bildern oder Dokumenten direkt an den Browser.
+**BLOB** sind die einfachste Möglichkeit zum Speichern großer Mengen unstrukturierter Text-oder Binärdaten, z. b. Videos, Audiodateien und Bilder. Wenn Sie den statischen Inhalt der Anwendung in den Speicher verschieben, ist es hilfreich, Ihre Anwendung zu skalieren, indem Sie Images oder Dokumente direkt im Browser reservieren.
 
-In dieser Übung werden Sie die statische Inhalte Ihrer Anwendung auf einen Blob-Container verschoben. Konfigurieren Ihrer Anwendung hinzufügen, wird ein **ASP.NET URL rewrite-Regel** in die **"Web.config"** um Ihre Inhalte an den Blob-Container umzuleiten.
+In dieser Übung verschieben Sie den statischen Inhalt der Anwendung in einen BLOB-Container. Anschließend konfigurieren Sie die Anwendung so, dass Sie eine **ASP.net URL Rewrite-Regel** in der Datei " **Web. config** " hinzufügt, um Ihre Inhalte in den BlobContainer umzuleiten.
 
 <a id="Ex4Task1"></a>
-#### <a name="task-1--creating-an-azure-storage-account"></a>Aufgabe 1 – erstellen ein Azure Storage-Konto
+#### <a name="task-1--creating-an-azure-storage-account"></a>Aufgabe 1 – Erstellen eines Azure Storage Kontos
 
-In dieser Aufgabe lernen Sie, wie Sie ein neues Speicherkonto im Verwaltungsportal erstellen.
+In dieser Aufgabe erfahren Sie, wie Sie ein neues Speicherkonto mithilfe des Verwaltungs Portals erstellen.
 
-1. Navigieren Sie zu der [Azure-Verwaltungsportal](https://manage.windowsazure.com) und melden Sie sich mit dem Microsoft-Konto, das Ihrem Abonnement zugeordnet.
-2. Wählen Sie **neue | Data Services | Speicher | Schnellerfassung** zum Erstellen eines neuen Speicherkontos. Geben Sie einen eindeutigen Namen für das Konto, und wählen Sie eine **Region** aus der Liste. Klicken Sie auf **Create Storage Account** um den Vorgang fortzusetzen.
+1. Navigieren Sie zum [Azure-Verwaltungs Portal](https://manage.windowsazure.com) , und melden Sie sich mit der Microsoft-Konto an, die Ihrem Abonnement zugeordnet ist.
+2. **Neu auswählen | Data Services | Speicher | Schneller** Fassung, um mit der Erstellung eines neuen Speicher Kontos zu beginnen. Geben Sie einen eindeutigen Namen für das Konto ein, und wählen Sie eine **Region** aus der Liste aus. Klicken Sie auf **Speicherkonto erstellen** , um fortzufahren.
 
-    ![Erstellen eines neuen Speicherkontos](maintainable-azure-websites-managing-change-and-scale/_static/image57.png "ein neues Speicherkonto erstellen")
+    ![Erstellen eines neuen Speicher Kontos](maintainable-azure-websites-managing-change-and-scale/_static/image57.png "Erstellen eines neuen Speicher Kontos")
 
-    *Erstellen eines neuen Speicherkontos*
-3. In der **Storage** Abschnitt, warten Sie, bis der Status des neuen Speicherkontos zu wechselt *Online* um mit den folgenden Schritt fortfahren.
+    *Erstellen eines neuen Speicher Kontos*
+3. Warten Sie im Abschnitt **Speicher** , bis der Status des neuen Speicher Kontos in *Online* geändert wird, um mit dem folgenden Schritt fortzufahren.
 
-    ![Das erstellte Speicherkonto](maintainable-azure-websites-managing-change-and-scale/_static/image58.png "erstellte Speicherkonto")
+    ![Speicherkonto erstellt](maintainable-azure-websites-managing-change-and-scale/_static/image58.png "Speicherkonto erstellt")
 
-    *Das erstellte Speicherkonto*
-4. Klicken Sie auf den Namen des Speicherkontos, und klicken Sie dann auf die **Dashboard** Link am oberen Rand der Seite. Die **Dashboard** Seite erhalten Sie Informationen über den Status des Kontos und die Dienstendpunkte, die in Ihren Anwendungen verwendet werden können.
+    *Speicherkonto erstellt*
+4. Klicken Sie auf den Namen des Speicher Kontos, und klicken Sie dann oben auf der Seite auf den Link **Dashboard** . Auf der Seite **Dashboard** finden Sie Informationen über den Status des Kontos und die Dienst Endpunkte, die in Ihren Anwendungen verwendet werden können.
 
-    ![Anzeigen von Speicherkonto-Dashboard](maintainable-azure-websites-managing-change-and-scale/_static/image59.png "Speicherkonto-Dashboard anzeigen")
+    ![Anzeigen des Speicherkonto-Dashboards](maintainable-azure-websites-managing-change-and-scale/_static/image59.png "Anzeigen des Speicherkonto-Dashboards")
 
-    *Anzeigen von Speicherkonto-Dashboard*
-5. Klicken Sie auf die **Zugriffstastenverwaltung** Schaltfläche in der Navigationsleiste auf.
+    *Anzeigen des Speicherkonto-Dashboards*
+5. Klicken Sie in der Navigationsleiste auf die Schaltfläche **Zugriffsschlüssel verwalten** .
 
-    ![Schaltfläche "Zugriffsschlüssel verwalten"](maintainable-azure-websites-managing-change-and-scale/_static/image60.png "Schaltfläche \"Zugriffsschlüssel verwalten\"")
+    ![Schaltfläche zum Verwalten von Zugriffs Schlüsseln](maintainable-azure-websites-managing-change-and-scale/_static/image60.png "Schaltfläche zum Verwalten von Zugriffs Schlüsseln")
 
-    *Zugriffstasten-Schaltfläche "verwalten"*
-6. In der **Zugriffsschlüssel verwalten** (Dialogfeld), kopieren die **Speicherkontonamen** und **primärer Zugriffsschlüssel** , wie Sie sie in der folgenden Übung benötigen. Schließen Sie dann das Dialogfeld ein.
+    *Schaltfläche zum Verwalten von Zugriffs Schlüsseln*
+6. Kopieren Sie im Dialogfeld **Zugriffsschlüssel verwalten** den **Speicherkonto Namen** und den **primären Zugriffsschlüssel** , da Sie ihn in der folgenden Übung benötigen. Schließen Sie anschließend das Dialogfeld.
 
-    ![Dialogfeld für Zugriffsschlüssel verwalten](maintainable-azure-websites-managing-change-and-scale/_static/image61.png "Zugriffsschlüssel verwalten (Dialogfeld)")
+    ![Dialogfeld "Zugriffsschlüssel verwalten"](maintainable-azure-websites-managing-change-and-scale/_static/image61.png "Dialogfeld "Zugriffsschlüssel verwalten"")
 
-    *Dialogfeld für die Schlüssel für den Zugriff verwalten*
+    *Dialogfeld "Zugriffsschlüssel verwalten"*
 
 <a id="Ex4Task2"></a>
-#### <a name="task-2--uploading-an-asset-to-azure-blob-storage"></a>Aufgabe 2: Hochladen eines Medienobjekts in Azure Blob Storage
+#### <a name="task-2--uploading-an-asset-to-azure-blob-storage"></a>Aufgabe 2 – Hochladen eines Assets in Azure BLOB Storage
 
-In dieser Aufgabe verwenden Sie das Server-Explorer-Fenster aus Visual Studio zur Verbindung mit Ihrem Speicherkontos. Sie klicken Sie dann einen Blob-Container erstellen und Hochladen einer Datei mit dem Logo Meister Quiz in den Container.
+In dieser Aufgabe verwenden Sie das Server-Explorer Fenster in Visual Studio, um eine Verbindung mit Ihrem Speicherkonto herzustellen. Anschließend erstellen Sie einen BLOB-Container und laden eine Datei mit dem Geek-Quiz-Logo in den Container hoch.
 
-1. Wechseln Sie zu Visual Studio-Instanz mit der **GeekQuiz** Lösung aus der vorhergehenden Übung.
-2. Wählen Sie in der Menüleiste **Ansicht** , und klicken Sie dann auf **Server-Explorer**.
-3. In **Server-Explorer**, mit der rechten Maustaste die **Azure** Knoten, und wählen **mit Azure verbinden...** . Melden Sie sich mit der Microsoft-Konto, das Ihrem Abonnement zugeordnet.
+1. Wechseln Sie in der vorherigen Übung zur Visual Studio-Instanz mit der **geekquiz** -Lösung.
+2. Wählen Sie in der Menüleiste **Ansicht** aus, und klicken Sie dann auf **Server-Explorer**.
+3. Klicken Sie in **Server-Explorer**mit der rechten Maustaste auf den Knoten **Azure** , und wählen Sie **mit Azure verbinden...** aus. Melden Sie sich mit dem Microsoft-Konto an, der Ihrem Abonnement zugeordnet ist.
 
-    ![Mit Windows Azure verbinden](maintainable-azure-websites-managing-change-and-scale/_static/image62.png)
+    ![Herstellen einer Verbindung mit Windows Azure](maintainable-azure-websites-managing-change-and-scale/_static/image62.png)
 
-    *Verbinden mit Azure*
-4. Erweitern Sie die **Azure** Knoten mit der rechten Maustaste **Storage** , und wählen Sie **Externspeicher anfügen...** .
-5. In der **neues Speicherkonto hinzufügen** Dialogfeld Geben Sie die **Kontoname** und **kontoschlüssel** Sie abgerufen haben, in der vorherigen Aufgabe und auf **OK**.
+    *Herstellen einer Verbindung mit Azure*
+4. Erweitern Sie den Knoten **Azure** , klicken Sie mit der rechten Maustaste auf **Speicher** , und wählen Sie **externen Speicher anfügen**aus.
+5. Geben Sie im Dialogfeld **Neues Speicherkonto hinzufügen** den **Kontonamen** und den **Kontoschlüssel** ein, die Sie in der vorherigen Aufgabe abgerufen haben, und klicken Sie auf **OK**.
 
-    ![Dialogfeld "Neues Speicherkonto" hinzufügen](maintainable-azure-websites-managing-change-and-scale/_static/image63.png)
+    ![Dialogfeld "neues Speicherkonto hinzufügen"](maintainable-azure-websites-managing-change-and-scale/_static/image63.png)
 
-    *Dialogfeld "Neues Speicherkonto" hinzufügen*
-6. Das Speicherkonto sollte angezeigt werden, unter dem **Storage** Knoten. Erweitern Sie Ihr Speicherkonto, mit der rechten Maustaste **Blobs** , und wählen Sie **Blob-Container erstellen...** .
+    *Dialogfeld "neues Speicherkonto hinzufügen"*
+6. Ihr Speicherkonto sollte unter dem Knoten **Speicher** angezeigt werden. Erweitern Sie das Speicherkonto, klicken Sie mit der rechten Maustaste auf **BLOBs** , und wählen Sie **BlobContainer erstellen...** aus.
 
-    ![Erstellen eines Blobcontainers](maintainable-azure-websites-managing-change-and-scale/_static/image64.png "Blob-Container erstellen")
+    ![BLOB-Container erstellen](maintainable-azure-websites-managing-change-and-scale/_static/image64.png "BLOB-Container erstellen")
 
-    *Erstellen eines Blobcontainers*
-7. In der **Blob-Container erstellen** Dialogfeld Feld, geben Sie einen Namen für den Blob-Container aus, und klicken Sie auf **OK**.
+    *BLOB-Container erstellen*
+7. Geben Sie im Dialogfeld **BLOB-Container erstellen** einen Namen für den BlobContainer ein, und klicken Sie auf **OK**.
 
-    ![Dialogfeld für Blob-Container erstellen](maintainable-azure-websites-managing-change-and-scale/_static/image65.png "Dialogfeld für die Blob-Container erstellen")
+    ![Dialogfeld "BLOB-Container erstellen"](maintainable-azure-websites-managing-change-and-scale/_static/image65.png "Dialogfeld "BLOB-Container erstellen"")
 
-    *Dialogfeld für die Blob-Container erstellen*
-8. Die neuen Blob-Container hinzugefügt werden sollen, um die **Blobs** Knoten. Ändern Sie die Zugriffsberechtigungen in den Container auf den Container öffentlich zu machen. Dazu, mit der Maustaste der **Images** Container, und wählen **Eigenschaften**.
+    *Dialogfeld "BLOB-Container erstellen"*
+8. Der neue BLOB-Container sollte dem Knoten **BLOBs** hinzugefügt werden. Ändern Sie die Zugriffsberechtigungen im Container, um den Container als öffentlich zu gestalten. Klicken Sie hierzu mit der rechten Maustaste auf den Container **Images** , und wählen Sie **Eigenschaften**aus.
 
-    ![Images von Containereigenschaften](maintainable-azure-websites-managing-change-and-scale/_static/image66.png "Containereigenschaften-images")
+    ![Bild Container Eigenschaften](maintainable-azure-websites-managing-change-and-scale/_static/image66.png "Bild Container Eigenschaften")
 
-    *Abbildeigenschaften für container*
-9. In der **Eigenschaften** legen die **öffentlichen Lesezugriff** zu **Container**.
+    *Bild Container Eigenschaften*
+9. Legen Sie im Fenster **Eigenschaften** den **öffentlichen Lesezugriff** auf **Container**fest.
 
-    ![Ändern der öffentlichen Lesezugriff-Eigenschaft](maintainable-azure-websites-managing-change-and-scale/_static/image67.png "öffentlichen Lesezugriff-Eigenschaft ändern")
+    ![Ändern der Eigenschaft für den öffentlichen Lesezugriff](maintainable-azure-websites-managing-change-and-scale/_static/image67.png "Ändern der Eigenschaft für den öffentlichen Lesezugriff")
 
-    *Ändern der öffentlichen Lesezugriff-Eigenschaft*
-10. Wenn Sie aufgefordert werden, wenn Sie sicher sind, Sie möchten die Public-Access-Eigenschaft zu ändern, klicken Sie auf **Ja**.
+    *Ändern der Eigenschaft für den öffentlichen Lesezugriff*
+10. Wenn Sie gefragt werden, ob Sie die öffentliche Zugriffs Eigenschaft ändern möchten, klicken Sie auf **Ja**.
 
-    ![Microsoft Visual Studio-Warnung](maintainable-azure-websites-managing-change-and-scale/_static/image68.png "Microsoft Visual Studio-Warnung")
+    ![Microsoft Visual Studio Warnung](maintainable-azure-websites-managing-change-and-scale/_static/image68.png "Microsoft Visual Studio Warnung")
 
-    *Microsoft Visual Studio-Warnung*
-11. In **Server-Explorer**, mit der rechten Maustaste den **Images** Blob-Container, und wählen **Blob-Container anzeigen**.
+    *Microsoft Visual Studio Warnung*
+11. Klicken Sie in **Server-Explorer**mit der rechten Maustaste in den BlobContainer **Images** , und wählen Sie **BlobContainer anzeigen**aus.
 
-    ![Anzeigen von Blob-Container](maintainable-azure-websites-managing-change-and-scale/_static/image69.png "Blob-Container anzeigen")
+    ![BLOB-Container anzeigen](maintainable-azure-websites-managing-change-and-scale/_static/image69.png "BLOB-Container anzeigen")
 
-    *Blob-Container anzeigen*
-12. Sollten die Image-Container in einem neuen Fenster öffnen und eine Legende ohne Einträge angezeigt werden soll. Klicken Sie auf die **hochladen** Symbol, um eine Datei in den Blob-Container hochzuladen.
+    *BLOB-Container anzeigen*
+12. Der Container Images sollte in einem neuen Fenster geöffnet werden, und eine Legende ohne Einträge sollte angezeigt werden. Klicken Sie auf das Symbol **hochladen** , um eine Datei in den BLOB-Container hochzuladen.
 
-    ![Der Image-Container ohne Einträge](maintainable-azure-websites-managing-change-and-scale/_static/image70.png "Image-Container ohne Einträge")
+    ![Bild Container ohne Einträge](maintainable-azure-websites-managing-change-and-scale/_static/image70.png "Bild Container ohne Einträge")
 
-    *Der Image-Container ohne Einträge*
-13. In der **Blob hochladen** Dialogfeld Feld, navigieren Sie zu der **Assets** Ordner der Umgebung. Wählen Sie die **-Logo-big.png** Datei, und klicken Sie auf **öffnen**.
-14. Warten Sie, bis die Datei hochgeladen wurde. Wenn der Upload abgeschlossen ist, sollte die Datei im Container Images aufgeführt werden. Der Eintrag in der Maustaste, und wählen **URL kopieren**.
+    *Bild Container ohne Einträge*
+13. Navigieren Sie im Dialogfeld **BLOB hochladen** zum Ordner **Assets** des Labs. Wählen Sie die Datei **Logo-Big. png** aus, und klicken Sie auf **Öffnen**.
+14. Warten Sie, bis die Datei hochgeladen wurde. Wenn der Upload abgeschlossen ist, sollte die Datei im Container Images aufgeführt werden. Klicken Sie mit der rechten Maustaste auf den Datei Eintrag, und wählen Sie **URL kopieren**
 
-    ![Kopieren von Blob-URL](maintainable-azure-websites-managing-change-and-scale/_static/image71.png "Kopieren von Blob-Datei-URL")
+    ![BLOB-URL kopieren](maintainable-azure-websites-managing-change-and-scale/_static/image71.png "Kopieren der BLOB-Datei-URL")
 
-    *Kopieren von Blob-URL*
-15. Öffnen Sie Internet Explorer, und fügen Sie die URL. Die folgende Abbildung, die im Browser angezeigt werden soll.
+    *BLOB-URL kopieren*
+15. Öffnen Sie Internet Explorer, und fügen Sie die URL ein. Das folgende Bild sollte im Browser angezeigt werden.
 
-    ![Logo-big.png-Image aus dem Windows-Blobspeicher](maintainable-azure-websites-managing-change-and-scale/_static/image72.png "-Logo-big.png Bilds aus dem Speicher")
+    ![Logo-Big. png-Bild von Windows BLOB Storage](maintainable-azure-websites-managing-change-and-scale/_static/image72.png "Logo-Big. png-Bild aus Storage")
 
-    *Logo-big.png-Image aus Azure Blob Storage*
+    *Logo-Big. png-Bild von Azure BLOB Storage*
 
 <a id="Ex4Task3"></a>
-#### <a name="task-3--updating-the-solution-to-consume-static-content-from-azure-blob-storage"></a>Aufgabe 3: die Aktualisierung der Lösung zum Nutzen von statischen Inhalten aus Azure Blob Storage
+#### <a name="task-3--updating-the-solution-to-consume-static-content-from-azure-blob-storage"></a>Aufgabe 3 – Aktualisieren der Lösung zur Nutzung statischer Inhalte aus Azure BLOB Storage
 
-In dieser Aufgabe Konfigurieren Sie die **GeekQuiz** Lösung nutzen Sie das Image hochgeladen in Azure Blob Storage (anstelle der Abbildung befindet sich in der Web-app) durch das Hinzufügen einer ASP.NET URL-Rewrite-Regel in der **"Web.config"** Datei.
+In dieser Aufgabe konfigurieren Sie die **geekquiz-Projekt** Mappe so, dass das Bild, das in Azure BLOB Storage (anstelle des Bilds in der Web-App) hochgeladen wird, durch Hinzufügen einer ASP.net-URL-Rewrite-Regel in der **Web. config** -Datei verwendet wird.
 
-1. Öffnen Sie in Visual Studio die **"Web.config"** Datei innerhalb der **GeekQuiz** Projekt, und suchen Sie die **&lt;"System.Webserver"&gt;** Element.
-2. Fügen Sie den folgenden Code zum Hinzufügen eine URL rewrite-Regel, aktualisieren den Platzhalter mit den Namen Ihres Speicherkontos.
+1. Öffnen Sie in Visual Studio die Datei **Web. config** im **geekquiz** -Projekt, und suchen Sie nach dem **&lt;System. Webserver&gt;** -Element.
+2. Fügen Sie den folgenden Code hinzu, um eine URL-Rewrite-Regel hinzuzufügen, und aktualisieren Sie den Platzhalter mit Ihrem Speicherkonto Namen.
 
-    (Codeausschnitt - *WebSitesInProduction - Ex4 - UrlRewriteRule*)
+    (Code Ausschnitt- *websitesinproduction-Ex4-urlreschreiterule*)
 
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > URL-Umschreibung, ist der Prozess, der eine eingehende webanforderung abfangen und Umleiten der Anforderung an eine andere Ressource. Die URL-Umschreibung Regeln weist die Adressumschreibungs-Engine, wenn eine Anforderung umgeleitet werden soll, und, in dem sie umgeleitet werden soll. Adressumschreibungs Regel besteht aus zwei Zeichenfolgen: das Muster, in der angeforderten URL suchen Sie nach (in der Regel mithilfe von regulären Ausdrücken), und finden Sie die Zeichenfolge, die das Muster, wenn ersetzen. Weitere Informationen finden Sie unter [URL-Umschreibung in ASP.NET](https://msdn.microsoft.com/library/ms972974.aspx).
-3. Drücken Sie **STRG + S** um die Änderungen zu speichern.
-4. Öffnen Sie ein neues **Git Bash** Verwaltungskonsole, um die aktualisierte Anwendung in Azure App Service bereitstellen.
-5. Führen Sie die folgenden Befehle aus, um die Änderungen an Azure zu übertragen. Update der *[YOUR-APPLICATION-PATH]* Platzhalter durch den Pfad zu der **GeekQuiz** Lösung. Sie werden aufgefordert, Ihr bereitstellungskennwort.
+    > Das Umschreiben von URLs ist der Prozess, bei dem eine eingehende Webanforderung abgefangen und die Anforderung an eine andere Ressource umgeleitet wird. Die URL-Umschreib Regeln weisen die Umschreib-Engine an, wenn eine Anforderung umgeleitet werden muss, und wohin Sie umgeleitet werden soll. Eine Umschreib Regel besteht aus zwei Zeichen folgen: dem Muster, nach dem in der angeforderten URL gesucht werden soll (normalerweise mithilfe regulärer Ausdrücke), und der Zeichenfolge, mit der das Muster ersetzt werden soll, sofern gefunden. Weitere Informationen finden Sie unter [URL-Umschreibung in ASP.net](https://msdn.microsoft.com/library/ms972974.aspx).
+3. Drücken Sie **STRG + S** , um die Änderungen zu speichern.
+4. Öffnen Sie eine neue **git-bash** -Konsole, um die aktualisierte Anwendung für Azure App Service bereitzustellen.
+5. Führen Sie die folgenden Befehle aus, um die Änderungen an Azure zu überführen. Aktualisieren Sie den Platzhalter *[your-application-path]* mit dem Pfad zur **geekquiz-Projekt** Mappe. Sie werden zur Eingabe Ihres Bereitstellungs Kennworts aufgefordert.
 
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample18.cmd)]
 
@@ -699,213 +699,213 @@ In dieser Aufgabe Konfigurieren Sie die **GeekQuiz** Lösung nutzen Sie das Imag
     *Bereitstellen von Updates in Azure*
 
 <a id="Ex4Task4"></a>
-#### <a name="task-4--verification"></a>Aufgabe 4: Überprüfung
+#### <a name="task-4--verification"></a>Aufgabe 4 – Überprüfung
 
-In dieser Aufgabe verwenden Sie **Internet Explorer** zum Durchsuchen der **Meister Quiz** Anwendung, und überprüfen Sie, dass die URL-rewrite-Regel für Bilder funktioniert, und Sie werden umgeleitet, auf das Bild auf gehosteten **Azure-Blob Storage**.
+In dieser Aufgabe verwenden Sie **Internet Explorer** , um die Anwendung " **Geek Quiz** " zu durchsuchen und zu überprüfen, ob die URL-Rewrite-Regel für Images funktioniert und Sie zu dem auf **Azure BLOB Storage**gehosteten Image umgeleitet werden.
 
-1. Öffnen Sie Internet Explorer, und navigieren Sie zu Ihrer Web-app (z. B. `http://<your-web-site>.azurewebsites.net`). Melden Sie sich mit den zuvor erstellten Anmeldeinformationen.
+1. Öffnen Sie Internet Explorer, und navigieren Sie zu Ihrer Web-App (z. b. `http://<your-web-site>.azurewebsites.net`). Melden Sie sich mit den zuvor erstellten Anmelde Informationen an.
 
-    ![Zeigt die Meister Quiz Web-app mit dem Image](maintainable-azure-websites-managing-change-and-scale/_static/image74.png "mit Anzeige der Meister Quiz Web-app mit dem Image")
+    ![Anzeige der Geek Quiz-Web-App mit dem Image](maintainable-azure-websites-managing-change-and-scale/_static/image74.png "Anzeige der Geek Quiz-Web-App mit dem Image")
 
-    *Zeigt die Meister Quiz Web-app mit dem image*
-2. Drücken Sie **F12** um die Entwicklungstools zu starten, wählen die **Netzwerk** Registerkarte, und starten Sie die Aufzeichnung.
+    *Anzeige der Geek Quiz-Web-App mit dem Image*
+2. Drücken Sie **F12** , um die Entwicklungs Tools zu starten, wählen Sie die Registerkarte **Netzwerk** und dann Aufzeichnung starten aus.
 
-    ![Starten die Netzwerk-Aufzeichnung](maintainable-azure-websites-managing-change-and-scale/_static/image75.png "Netzwerk Aufzeichnung starten")
+    ![Netzwerk Aufzeichnung wird gestartet](maintainable-azure-websites-managing-change-and-scale/_static/image75.png "Netzwerk Aufzeichnung wird gestartet")
 
-    *Netzwerk-Aufzeichnung starten*
-3. Drücken Sie **STRG + F5** zum Aktualisieren der Webseite.
-4. Sobald die Seite geladen wurde, sollte eine HTTP-Anforderung für die **/img/logo-big.png** URL mit einem HTTP **301** Ergebnis (Umleitung) und eine andere Anforderung für `http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png` URL mit dem HTTP- **200** Ergebnis.
+    *Netzwerk Aufzeichnung wird gestartet*
+3. Drücken Sie **STRG + F5** , um die Webseite zu aktualisieren.
+4. Nachdem die Seite geladen wurde, sollten Sie eine HTTP-Anforderung für die **/IMG/Logo-Big.png** -URL mit einem HTTP **301** -Ergebnis (Redirect) und eine weitere Anforderung für `http://[YOUR-STORAGE-ACCOUNT].blob.core.windows.net/images/logo-big.png`-URL mit einem HTTP **200** -Ergebnis sehen.
 
-    ![Überprüfen die URL-Umleitung](maintainable-azure-websites-managing-change-and-scale/_static/image76.png "angezeigt, die mit den umleitungs-Entwickler-Tools")
+    ![Überprüfen der URL-Umleitung](maintainable-azure-websites-managing-change-and-scale/_static/image76.png "Die Umleitung in Entwicklungs Tools wird angezeigt.")
 
-    *Überprüfen die URL-Umleitung*
+    *Überprüfen der URL-Umleitung*
 
 <a id="Exercise5"></a>
-### <a name="exercise-5-using-autoscale-for-web-apps"></a>Übung 5: Verwenden für die automatische Skalierung für Web-Apps
+### <a name="exercise-5-using-autoscale-for-web-apps"></a>Übung 5: Verwenden der automatischen Skalierung für Web-Apps
 
 > [!NOTE]
-> In dieser Übung ist optional, da sie Unterstützung für Web-Last erfordert &amp; Leistungstests, die nur zur Verfügung steht **Visual Studio 2013 Ultimate Edition**. Weitere Informationen zu bestimmten Features von Visual Studio 2013, Versionsvergleich [hier](https://www.microsoft.com/visualstudio/eng/products/compare).
+> Diese Übung ist optional, da Sie Unterstützung für Web Load &amp; Leistungstests erfordert, die nur für **Visual Studio 2013 Ultimate Edition**verfügbar ist. Weitere Informationen zu bestimmten Visual Studio 2013 Funktionen [finden Sie hier](https://www.microsoft.com/visualstudio/eng/products/compare).
 
-**Azure App Service-Web-Apps** bietet die Autoscale-Funktion für die Web-apps, die im **Modus "Standard"**. Für die automatische Skalierung ermöglicht Azure die Anzahl der Instanzen der Web-app je nach Auslastung automatisch skaliert. Wenn für die automatische Skalierung aktiviert ist, wird Azure überprüft, einmal alle fünf Minuten die CPU der Web-app und Instanzen nach Bedarf zu diesem Zeitpunkt hinzugefügt. Wenn die CPU-Auslastung gering ist, wird Azure Instanzen einmal alle zwei Stunden entfernt, um sicherzustellen, dass die Leistung der Web-app nicht beeinträchtigt wird.
+**Azure App Service-Web-Apps** bietet die Funktion für die automatische Skalierung für Web-Apps im **Standard Modus**. Die automatische Skalierung ermöglicht es Azure, die Anzahl der Instanzen Ihrer Web-App abhängig von der Auslastung automatisch zu skalieren. Wenn die automatische Skalierung aktiviert ist, überprüft Azure alle fünf Minuten die CPU Ihrer Web-App und fügt zu diesem Zeitpunkt Instanzen nach Bedarf hinzu. Wenn die CPU-Auslastung gering ist, entfernt Azure alle zwei Stunden Instanzen, um sicherzustellen, dass die Leistung Ihrer Web-App nicht beeinträchtigt wird.
 
-Wechseln Sie in dieser Übung über die erforderlichen Schritte zum Konfigurieren der **für die automatische Skalierung** feature für die **Meister Quiz** Web-app. Diese Funktion überprüft durch Ausführen eines Auslastungstests von Visual Studio zum Generieren von genügend CPU-Auslastung der Anwendung ein instanzupgrade ausgelöst.
+In dieser Übung führen Sie die Schritte aus, die zum Konfigurieren des Features für die **Automatische Skalierung** für die **Geek Quiz** -Web-App erforderlich sind. Sie überprüfen dieses Feature, indem Sie einen Visual Studio-Auslastungs Test ausführen, um eine ausreichende CPU-Auslastung für die Anwendung zu generieren und ein instanzupgrade auslösen
 
 <a id="Ex5Task1"></a>
-#### <a name="task-1--configuring-autoscale-based-on-the-cpu-metric"></a>Aufgabe 1 – Konfigurieren von für die automatische Skalierung basierend auf der CPU-Metrik
+#### <a name="task-1--configuring-autoscale-based-on-the-cpu-metric"></a>Aufgabe 1 – Konfigurieren der automatischen Skalierung basierend auf der CPU-Metrik
 
-In dieser Aufgabe verwenden Sie das Azure-Verwaltungsportal, um die Autoscale-Funktion für die Web-app zu aktivieren, die Sie in der Übung 2 erstellt haben.
+In dieser Aufgabe verwenden Sie das Azure-Verwaltungs Portal, um die Funktion für die automatische Skalierung für die Web-App zu aktivieren, die Sie in Übung 2 erstellt haben.
 
-1. In der [Azure-Verwaltungsportal](https://manage.windowsazure.com/)Option **Websites** , und klicken Sie auf die Web-app, die Sie in der Übung 2 erstellt haben.
-2. Navigieren Sie zu der **Skalierung** Seite. Unter den **Kapazität** wählen Sie im Abschnitt **CPU** für die **nach Metrik skalieren** Konfiguration.
-
-    > [!NOTE]
-    > Bei der Skalierung von CPU, passt Azure dynamisch die Anzahl der Instanzen, die die app verwendet wird, wenn die CPU-Auslastung ändert.
-
-    ![Auswählen, dass die Skalierung nach CPU](maintainable-azure-websites-managing-change-and-scale/_static/image77.png "die CPU-Metrik für die automatische Skalierung auswählen")
-
-    *Auswählen, dass die Skalierung nach CPU*
-3. Ändern der **Ziel-CPU** Konfiguration **20**-**40** Prozent.
+1. Wählen Sie im [Azure-Verwaltungs Portal](https://manage.windowsazure.com/) **Websites** aus, und klicken Sie auf die Web-App, die Sie in Übung 2 erstellt haben.
+2. Navigieren Sie zur Seite **skalieren** . Wählen Sie im Abschnitt **Kapazität** für die Konfiguration **nach Metrik skalieren** die Option **CPU** aus.
 
     > [!NOTE]
-    > Dieser Bereich stellt die durchschnittliche CPU-Auslastung für Ihre Web-app dar. Azure wird hinzufügen oder Entfernen von Instanzen, um Ihre Web-app in diesem Bereich bleibt. Die minimale und maximale Anzahl der Instanzen, die für die Skalierung wird angegeben, der **Instanzanzahl** Konfiguration. Azure geht nie über oder über diesen Grenzwert hinaus.
+    > Bei der Skalierung nach CPU passt Azure die Anzahl der von der APP verwendeten Instanzen dynamisch an, wenn sich die CPU-Auslastung ändert.
+
+    ![Auswählen der Skalierung nach CPU](maintainable-azure-websites-managing-change-and-scale/_static/image77.png "Auswählen der CPU-Metrik für die automatische Skalierung")
+
+    *Auswählen der Skalierung nach CPU*
+3. Ändern Sie die **Ziel-CPU** -Konfiguration in **20**-**40** Prozent.
+
+    > [!NOTE]
+    > Dieser Bereich stellt die durchschnittliche CPU-Auslastung für Ihre Web-App dar. Azure wird Instanzen hinzufügen oder entfernen, um Ihre Web-App in diesem Bereich zu speichern. Die minimale und maximale Anzahl von Instanzen, die für die Skalierung verwendet werden, wird in der **Instanzanzahl** konfiguriert. Azure geht nie über diesen Grenzwert hinaus.
     >
-    > Der Standardwert **Ziel-CPU** Werte werden nur für die Zwecke dieser testumgebung geändert. Konfigurieren Sie die CPU-Bereich mit kleinen Werten, erhöhen Sie die Wahrscheinlichkeit, dass der Trigger für die automatische Skalierung, wenn eine mittlere Auslastung der Anwendung befindet.
+    > Die standardmäßigen **CPU-Ziel** Werte werden nur für die Zwecke dieses Labs geändert. Wenn Sie den CPU-Bereich mit kleinen Werten konfigurieren, erhöhen Sie die Wahrscheinlichkeit, dass die automatische Skalierung auslöst, wenn eine mittlere Auslastung in der Anwendung erfolgt.
 
-    ![Ändern des Ziels-CPU, der zwischen 20 und 40 Prozent liegt](maintainable-azure-websites-managing-change-and-scale/_static/image78.png "Ändern des Ziels-CPU, um zwischen 20 und 40 Prozent liegen.")
+    ![Ändern der Ziel-CPU zwischen 20 und 40 Prozent](maintainable-azure-websites-managing-change-and-scale/_static/image78.png "Ändern der Ziel-CPU zwischen 20 und 40 Prozent")
 
-    *Ändern die Ziel-CPU um 20 bis 40 Prozent*
-4. Klicken Sie auf **speichern** in der Befehlsleiste, um die Änderungen zu speichern.
+    *Ändern der Ziel-CPU zwischen 20 und 40 Prozent*
+4. Klicken Sie in der Befehlsleiste auf **Speichern** , um die Änderungen zu speichern.
 
 <a id="Ex5Task2"></a>
-#### <a name="task-2--load-testing-with-visual-studio"></a>Aufgabe 2: Auslastungstests mit Visual Studio
+#### <a name="task-2--load-testing-with-visual-studio"></a>Aufgabe 2 – Auslastungs Tests mit Visual Studio
 
-Nachdem **für die automatische Skalierung** wurde konfiguriert haben, erstellen Sie eine **Webleistungs- und Test-Projekt laden** in Visual Studio generiert eine CPU-Last für Ihre Web-app.
+Nachdem die **Automatische Skalierung** konfiguriert wurde, erstellen Sie ein **webleistungs-und Auslastungs Test Projekt** in Visual Studio, um eine CPU-Auslastung für Ihre Web-App zu generieren.
 
-1. Open **Visual Studio Ultimate 2013** , und wählen Sie **Datei | Neue | Projekt...**  um eine neue Projektmappe zu starten.
+1. Öffnen Sie **Visual Studio Ultimate 2013** , und wählen Sie Datei aus.  **Neu | Projekt...** , um eine neue Projekt Mappe zu starten.
 
     ![Erstellen eines neuen Projekts](maintainable-azure-websites-managing-change-and-scale/_static/image79.png "Erstellen eines neuen Projekts")
 
     *Erstellen eines neuen Projekts*
-2. In der **neues Projekt** wählen Sie im Dialogfeld **Webleistungs- und Auslastungstestprojekt** unter der **Visual c# | Test** Registerkarte. Stellen Sie sicher, dass **.NET Framework 4.5** wird ausgewählt, nennen Sie das Projekt *WebAndLoadTestProject*, wählen Sie eine **Speicherort** , und klicken Sie auf **OK**.
+2. Wählen Sie im Dialogfeld **Neues Projekt** unter dem visuellen **C# Element die Option webleistungs-und Auslastungs Test Projekt aus.** Registerkarte "Test". Stellen Sie sicher, dass **.NET Framework 4,5** ausgewählt ist, nennen Sie das Projekt *webandloadtestproject*, **Wählen Sie einen** **Speicherort** aus, und klicken
 
-    ![Erstellen eines neuen Projekts für Web- und Auslastungstests](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "Erstellen eines neuen Projekts für Web- und Auslastungstests")
+    ![Erstellen eines neuen Web-und Auslastungs Test Projekts](maintainable-azure-websites-managing-change-and-scale/_static/image80.png "Erstellen eines neuen Web-und Auslastungs Test Projekts")
 
-    *Erstellen eines neuen Projekts für Web- und Auslastungstests*
-3. In der **Namen "WebTest1.webtest"** mit der rechten Maustaste die **WebTest1** Knoten, und klicken Sie auf **hinzufügen anfordern**.
+    *Erstellen eines neuen Web-und Auslastungs Test Projekts*
+3. Klicken Sie im **WebTest1. Webtest** mit der rechten Maustaste auf den Knoten **WebTest1** , und klicken Sie auf **Anforderung hinzufügen**.
 
-    ![Hinzufügen einer Anforderung WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "WebTest1 eine Anforderung hinzugefügt")
+    ![Hinzufügen einer Anforderung zu WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "Hinzufügen einer Anforderung zu WebTest1")
 
-    *Hinzufügen einer Anforderung WebTest1*
-4. In der **Eigenschaften** Fenster für den neuen Anforderungsknoten aktualisiert den **Url** Eigenschaft, um auf die URL der Web-app zu verweisen (z. B. *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
+    *Hinzufügen einer Anforderung zu WebTest1*
+4. Aktualisieren Sie im Fenster **Eigenschaften** des Knotens neue Anforderung die **URL** -Eigenschaft so, dass Sie auf die URL Ihrer Web-App verweist (z. b. *[http://geek-quiz.azurewebsites.net/](http://geek-quiz.azurewebsites.net/)* ).
 
-    ![Ändern die Url-Eigenschaft](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "Ändern der Url-Eigenschaft")
+    ![Ändern der URL-Eigenschaft](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "Ändern der URL-Eigenschaft")
 
-    *Ändern die Url-Eigenschaft*
-5. In der **Namen "WebTest1.webtest"** Fenster mit der rechten Maustaste **WebTest1** , und klicken Sie auf **Schleife hinzufügen...** .
+    *Ändern der URL-Eigenschaft*
+5. Klicken Sie im Fenster **WebTest1. Webtest** mit der rechten Maustaste auf **WebTest1** , und klicken Sie auf **Schleife hinzufügen...** .
 
     ![Hinzufügen einer Schleife zu WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image83.png "Hinzufügen einer Schleife zu WebTest1")
 
     *Hinzufügen einer Schleife zu WebTest1*
-6. In der **Bedingungsregel und Elemente hinzufügen zu Schleife** wählen Sie im Dialogfeld die **For-Schleife** Regel, und ändern Sie die folgenden Eigenschaften.
+6. Wählen Sie im Dialogfeld **bedingte Regel und Elemente zu Schleife hinzufügen** die **for-Schleifen Regel aus** , und ändern Sie die folgenden Eigenschaften.
 
-   1. **Abschließende Wert:** 1000
-   2. **Kontextparametername:** Iterator
-   3. **Der Inkrementwert:** 1
+   1. **Terminierender Wert:** 1000
+   2. **Kontext Parameter Name:** Iterator
+   3. **Inkrement-Wert:** 1
 
-      ![Die Regel für Schleife auswählen und Aktualisieren der Eigenschaften](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "Sie die Regel für Schleife auswählen und Aktualisieren der Eigenschaften")
+      ![Auswählen der for-Schleifen Regel und Aktualisieren der Eigenschaften](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "Auswählen der for-Schleifen Regel und Aktualisieren der Eigenschaften")
 
-      *Die Regel für Schleife auswählen und Aktualisieren der Eigenschaften*
-7. Unter den **Elemente in Schleife** Abschnitt, wählen Sie die Anforderung, die Sie zuvor erstellt haben als das erste und letzte Element, für die Schleife. Klicken Sie auf **OK** um den Vorgang fortzusetzen.
+      *Auswählen der for-Schleifen Regel und Aktualisieren der Eigenschaften*
+7. Wählen Sie im Abschnitt **Elemente in der Schleife** die zuvor erstellte Anforderung als erstes und letztes Element für die Schleife aus. Klicken Sie zum Fortsetzen des Vorgangs auf **OK** .
 
-    ![Auswahl der ersten und letzten Elemente für die Schleife](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "der ersten und letzten Elemente für die Schleife auswählen")
+    ![Auswählen der ersten und letzten Elemente für die Schleife](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "Auswählen der ersten und letzten Elemente für die Schleife")
 
-    *Die ersten und letzten Elemente für die Schleife auswählen*
-8. In **Projektmappen-Explorer**, mit der rechten Maustaste die **WebAndLoadTestProject** projizieren, erweitern Sie die **hinzufügen** Menü **Auslastungstest...** .
+    *Auswählen der ersten und letzten Elemente für die Schleife*
+8. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf das Projekt **webandloadtestproject** , erweitern Sie das Menü **Hinzufügen** , und wählen Sie **Auslastungs Test**aus.
 
-    ![Hinzufügen eines Auslastungstests zum Projekt WebAndLoadTestProject](maintainable-azure-websites-managing-change-and-scale/_static/image86.png "eines Auslastungstests zum Projekt WebAndLoadTestProject hinzugefügt")
+    ![Hinzufügen eines Auslastungs Tests zum Projekt "webandloadtestproject"](maintainable-azure-websites-managing-change-and-scale/_static/image86.png "Hinzufügen eines Auslastungs Tests zum Projekt "webandloadtestproject"")
 
-    *Hinzufügen eines Auslastungstests zum WebAndLoadTestProject-Projekt*
-9. In der **Assistent für neuen Auslastungstest** Dialogfeld klicken Sie auf **Weiter**.
+    *Hinzufügen eines Auslastungs Tests zum Projekt "webandloadtestproject"*
+9. Klicken Sie im Dialogfeld **neue Auslastungstest-Assistent** auf **weiter**.
 
-    ![Assistent für neuen Auslastungstest](maintainable-azure-websites-managing-change-and-scale/_static/image87.png "Assistent für neuen Auslastungstest")
+    ![Neue Auslastungstest-Assistent](maintainable-azure-websites-managing-change-and-scale/_static/image87.png "Neue Auslastungstest-Assistent")
 
-    *Assistent für neuen Auslastungstest*
-10. In der **Szenario** Seite **verwenden Sie keine Reaktionszeiten** , und klicken Sie auf **Weiter**.
+    *Neue Auslastungstest-Assistent*
+10. Wählen Sie auf der Seite **Szenario** die Option **keine Gedanken Zeiten verwenden** aus, und klicken Sie auf **weiter**.
 
-    ![Auswahl nicht mit Reaktionszeiten](maintainable-azure-websites-managing-change-and-scale/_static/image88.png "auswählen, nicht zu Reaktionszeit verwenden")
+    ![Auswählen von "nicht für die Verwendung von"](maintainable-azure-websites-managing-change-and-scale/_static/image88.png "Auswählen von "nicht für die Verwendung von"")
 
-    *Auswählen, dass keine Reaktionszeit verwenden*
-11. In der **Auslastungsmuster** Seite, stellen Sie sicher, dass die **Konstante Auslastung** ausgewählt ist. Ändern der **Benutzeranzahl** auf **250** -Benutzer und klicken Sie auf **Weiter**.
+    *Auswählen von "nicht für die Verwendung von"*
+11. Vergewissern Sie sich auf der Seite **Auslastungs Muster** , dass die Option **konstantes laden** ausgewählt ist. Ändern Sie die Einstellung **Benutzer Anzahl** in **250** Benutzer, und klicken Sie auf **weiter**.
 
-    ![Ändern die Benutzeranzahl auf 250](maintainable-azure-websites-managing-change-and-scale/_static/image89.png "ändern die Benutzeranzahl auf 250")
+    ![Ändern der Benutzer Anzahl in 250](maintainable-azure-websites-managing-change-and-scale/_static/image89.png "Ändern der Benutzer Anzahl in 250")
 
-    *Ändern die Benutzeranzahl auf 250*
-12. In der **Testmischungsmodell** Seite **basierend auf sequenzieller Testreihenfolge** , und klicken Sie auf **Weiter**.
+    *Ändern der Benutzer Anzahl in 250*
+12. Wählen Sie auf der Seite **Test Mischungs Modell** die Option **basierend auf sequenzieller Test Reihenfolge** , **und klicken Sie**
 
-    ![Wählen das Testmischungsmodell](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "das Testmischungsmodell auswählen")
+    ![Auswählen des Test Mischungs Modells](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "Auswählen des Test Mischungs Modells")
 
-    *Wählen das Testmischungsmodell*
-13. In der **Testmischungsmodell** auf **hinzufügen...**  auf einen Test der Mischung hinzufügen.
+    *Auswählen des Test Mischungs Modells*
+13. Klicken Sie auf der Seite **Test Mischungs Modell** auf **hinzufügen...** , um der Mischung einen Test hinzuzufügen.
 
-    ![Hinzufügen eines Tests zu testmischung](maintainable-azure-websites-managing-change-and-scale/_static/image91.png "Hinzufügen eines Tests zu testmischung")
+    ![Hinzufügen eines Tests zur Test Mischung](maintainable-azure-websites-managing-change-and-scale/_static/image91.png "Hinzufügen eines Tests zur Test Mischung")
 
-    *Hinzufügen eines Tests zu testmischung*
-14. In der **Tests hinzufügen** Dialogfeld Doppelklicken Sie auf **WebTest1** des Tests hinzufügen der **ausgewählte Tests** Liste. Klicken Sie auf **OK** um den Vorgang fortzusetzen.
+    *Hinzufügen eines Tests zur Test Mischung*
+14. Doppelklicken Sie im Dialogfeld **Tests hinzufügen** auf **WebTest1** , um den Test der Liste **Ausgewählte Tests** hinzuzufügen. Klicken Sie zum Fortsetzen des Vorgangs auf **OK** .
 
-    ![Hinzufügen des Tests WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image92.png "WebTest1 Test hinzufügen")
+    ![Hinzufügen des WebTest1-Tests](maintainable-azure-websites-managing-change-and-scale/_static/image92.png "Hinzufügen des WebTest1-Tests")
 
-    *Die WebTest1 Test hinzufügen*
-15. In der **Testmischung** auf **Weiter**.
+    *Hinzufügen des WebTest1-Tests*
+15. Klicken Sie auf der Seite " **Test Mischung** " auf **weiter**.
 
-    ![Abschließen der Seite "Testmischung"](maintainable-azure-websites-managing-change-and-scale/_static/image93.png "Abschließen der Seite \"Testmischung\"")
+    ![Fertigstellen der Seite "Test Mischung"](maintainable-azure-websites-managing-change-and-scale/_static/image93.png "Fertigstellen der Seite "Test Mischung"")
 
-    *Abschließen der Seite "Testmischung"*
-16. In der **Netzwerkmischung** auf **Weiter**.
+    *Fertigstellen der Seite "Test Mischung"*
+16. Klicken Sie auf der Seite **Netzwerk Mischung** auf **weiter**.
 
-    ![Klicken Sie anschließend auf der Seite für die Netzwerkmischung](maintainable-azure-websites-managing-change-and-scale/_static/image94.png "klicken Sie anschließend auf der Seite für die Netzwerkmischung")
+    ![Klicken auf "weiter" auf der Seite "Netzwerk Mischung"](maintainable-azure-websites-managing-change-and-scale/_static/image94.png "Klicken auf "weiter" auf der Seite "Netzwerk Mischung"")
 
-    *Klicken Sie auf Weiter, auf der Seite der Netzwerkmischung*
-17. In der **Browsermischung** Seite **Internet Explorer 10.0** als Browsertyp, und klicken Sie auf **Weiter**.
+    *Klicken auf "weiter" auf der Seite "Netzwerk Mischung"*
+17. Wählen Sie auf der Seite **Browser Mischung** **Internet Explorer 10,0** als Browsertyp aus, und klicken Sie auf **weiter**.
 
-    ![Auswählen des Browsertyps](maintainable-azure-websites-managing-change-and-scale/_static/image95.png "Browser auswählen")
+    ![Auswählen des Browsertyps](maintainable-azure-websites-managing-change-and-scale/_static/image95.png "Auswählen des Browsertyps")
 
-    *Auswählen des Browsers*
-18. In der **Indikatorensätze** auf **Weiter**.
+    *Auswählen des Browsertyps*
+18. Klicken Sie auf der Seite **Indikatorensätze** auf **weiter**.
 
-    ![Klicken auf der Seite für die Indikatorensätze Weiter](maintainable-azure-websites-managing-change-and-scale/_static/image96.png "Weiter klicken, auf der Seite für die Indikatorensätze")
+    ![Klicken auf der Seite Indikatorensätze auf weiter](maintainable-azure-websites-managing-change-and-scale/_static/image96.png "Klicken auf der Seite Indikatorensätze auf weiter")
 
-    *Klicken auf der Seite für die Indikatorensätze weiter*
-19. In der **Laufzeiteinstellungen** Seite die **Dauer des Auslastungstests** zu **5 Minuten** , und klicken Sie auf **Fertig stellen**.
+    *Klicken auf der Seite Indikatorensätze auf weiter*
+19. Legen Sie auf der Seite Test **Lauf Einstellungen** den **Auslastungs Test** auf **5 Minuten** fest, und klicken Sie auf **Fertig**stellen.
 
-    ![Festlegen der Dauer des Auslastungstests auf 5 Minuten](maintainable-azure-websites-managing-change-and-scale/_static/image97.png "Festlegen der Dauer des Auslastungstests auf 5 Minuten")
+    ![Festlegen der Dauer des Auslastungs Tests auf 5 Minuten](maintainable-azure-websites-managing-change-and-scale/_static/image97.png "Festlegen der Dauer des Auslastungs Tests auf 5 Minuten")
 
-    *Festlegen der Dauer des Auslastungstests auf 5 Minuten*
-20. In **Projektmappen-Explorer**, doppelklicken Sie auf die **Local.settings** Datei, um die testeinstellungen zu untersuchen. Standardmäßig verwendet Visual Studio den lokalen Computer zum Ausführen der Tests an.
+    *Festlegen der Dauer des Auslastungs Tests auf 5 Minuten*
+20. Doppelklicken Sie in **Projektmappen-Explorer**auf die Datei **local. Settings** , um die Testeinstellungen zu untersuchen. Standardmäßig verwendet Visual Studio den lokalen Computer, um die Tests auszuführen.
 
     > [!NOTE]
-    > Alternativ können Sie das Testprojekt zum Ausführen der Auslastungstests in der Cloud mit konfigurieren **Azure Testplänen**. Azure Testpläne bietet eine cloudbasierte Auslastungstests, Tests der Dienst, der eine realistischere Auslastung simuliert, das Vermeiden von Einschränkungen der lokalen Umgebung wie CPU-Kapazität, verfügbarer Speicher und Netzwerkbandbreite. Weitere Informationen zur Verwendung von Testplänen für Azure zum Ausführen von Auslastungstests finden Sie unter [Testszenarios laden](/azure/devops/test/load-test/overview?view=vsts).
+    > Alternativ können Sie das Testprojekt so konfigurieren, dass die Auslastungs Tests in der Cloud mit **Azure Test Plans**ausgeführt werden. Azure Test Plans bietet einen cloudbasierten Auslastungs Test Dienst, der eine realistischere Last simuliert, sodass Einschränkungen in der lokalen Umgebung wie CPU-Kapazität, verfügbarer Arbeitsspeicher und Netzwerkbandbreite vermieden werden. Weitere Informationen zum Verwenden von Azure Test Plans zum Ausführen von Auslastungs Tests finden Sie unter [Auslastungs Testszenarien](/azure/devops/test/load-test/overview?view=vsts).
 
     ![Testeinstellungen](maintainable-azure-websites-managing-change-and-scale/_static/image98.png)
 
 <a id="Ex5Task3"></a>
-#### <a name="task-3--autoscale-verification"></a>Aufgabe 3: Überprüfung der automatischen Skalierung
+#### <a name="task-3--autoscale-verification"></a>Aufgabe 3 – automatische Skalierungs Überprüfung
 
-Sie werden nun Ausführen des Auslastungstests, die Sie in der vorherigen Aufgabe erstellt haben, wie Ihre Web-app unter Last verhält.
+Nun führen Sie den Auslastungs Test aus, den Sie in der vorherigen Aufgabe erstellt haben, und sehen, wie sich Ihre Web-App unter Last verhält.
 
-1. In **Projektmappen-Explorer**, doppelklicken Sie auf **"LoadTest1.LoadTest"** Auslastungstest zu öffnen.
+1. Doppelklicken Sie in **Projektmappen-Explorer**auf **loadtest1. LoadTest** , um den Auslastungs Test zu öffnen.
 
-    ![Öffnen "LoadTest1.LoadTest"](maintainable-azure-websites-managing-change-and-scale/_static/image99.png "\"LoadTest1.LoadTest\" Öffnen")
+    ![Öffnen von "loadtest1. LoadTest"](maintainable-azure-websites-managing-change-and-scale/_static/image99.png "Öffnen von "loadtest1. LoadTest"")
 
-    *Die "LoadTest1.LoadTest" Öffnen*
-2. In der **"LoadTest1.LoadTest"** Fenster, klicken Sie auf die erste Schaltfläche in der Toolbox auf die Ausführung des Auslastungstests.
+    *Öffnen von "loadtest1. LoadTest"*
+2. Klicken Sie im Fenster **loadtest1. LoadTest** auf die erste Schaltfläche in der Toolbox, um den Auslastungs Test auszuführen.
 
-    ![Ausführen des Auslastungstests](maintainable-azure-websites-managing-change-and-scale/_static/image100.png "Ausführen des Auslastungstests")
+    ![Ausführen des Auslastungs Tests](maintainable-azure-websites-managing-change-and-scale/_static/image100.png "Ausführen des Auslastungs Tests")
 
-    *Ausführen des Auslastungstests*
-3. Warten Sie, bis der Auslastungstest abgeschlossen ist.
-
-    > [!NOTE]
-    > Der Auslastungstest simuliert mehrere Benutzer, die gleichzeitig Anforderungen an die Web-app senden. Wenn der Test ausgeführt wird, können Sie die verfügbaren Indikatoren zum Erkennen von Fehlern, Warnungen oder anderen Informationen, die im Zusammenhang mit Ihren Auslastungstestlauf überwachen.
-
-    ![Auslastungstest ausführen](maintainable-azure-websites-managing-change-and-scale/_static/image101.png "warten, bis der Auslastungstest abgeschlossen ist")
-
-    *Auslastungstest*
-4. Wenn der Test abgeschlossen ist, wechseln Sie zurück zum Verwaltungsportal, und navigieren Sie zu der **Skalierung** auf der Seite Ihrer Web-app. Unter den **Kapazität** Abschnitt sollte im Diagramm, dass automatisch eine neue Instanz bereitgestellt wurde.
-
-    ![Neue Instanz, die automatisch bereitgestellt.](maintainable-azure-websites-managing-change-and-scale/_static/image102.png)
-
-    *Neue Instanz, die automatisch bereitgestellt.*
+    *Ausführen des Auslastungs Tests*
+3. Warten Sie, bis der Auslastungs Test abgeschlossen ist.
 
     > [!NOTE]
-    > Es dauert einige Minuten, bis die Änderungen im Diagramm angezeigt werden (drücken Sie die **STRG + F5** in regelmäßigen Abständen, um die Seite zu aktualisieren). Wenn Sie die Änderungen nicht angezeigt werden, können Sie Folgendes versuchen:
+    > Mit dem Auslastungs Test werden mehrere Benutzer simuliert, die gleichzeitig Anforderungen an die Web-App senden. Wenn der Test ausgeführt wird, können Sie die verfügbaren Leistungsindikatoren überwachen, um Fehler, Warnungen oder andere Informationen im Zusammenhang mit dem Auslastungs Testlauf zu erkennen.
+
+    ![Auslastungs Test ausgeführt](maintainable-azure-websites-managing-change-and-scale/_static/image101.png "Warten, bis der Auslastungs Test abgeschlossen ist")
+
+    *Auslastungs Test ausgeführt*
+4. Nachdem der Test abgeschlossen ist, wechseln Sie zurück zum Verwaltungs Portal, und navigieren Sie zur Seite **skalieren** Ihrer Web-App. Im Abschnitt **Kapazität** sollte im Diagramm angezeigt werden, dass eine neue Instanz automatisch bereitgestellt wurde.
+
+    ![Neue Instanz automatisch bereitgestellt](maintainable-azure-websites-managing-change-and-scale/_static/image102.png)
+
+    *Neue Instanz automatisch bereitgestellt*
+
+    > [!NOTE]
+    > Es kann einige Minuten dauern, bis die Änderungen im Diagramm angezeigt werden (drücken Sie in regelmäßigen Abständen **STRG + F5** , um die Seite zu aktualisieren). Wenn keine Änderungen angezeigt werden, können Sie Folgendes versuchen:
     >
-    > - Erhöhen Sie die Dauer des Auslastungstests (z. B. zu **10 Minuten**)
-    > - Reduzieren Sie die maximalen und minimalen Werte, der die **Ziel-CPU** Bereich in der Konfiguration der automatischen Skalierung Ihrer Web-App
-    > - Ausführen des Auslastungstests in der Cloud mit **Azure Testplänen**. Weitere Informationen [hier](/azure/devops/test/load-test/index?view=vsts)
+    > - Dauer des Auslastungs Tests erhöhen (z. b. auf **10 Minuten**)
+    > - Reduzieren Sie die maximalen und minimalen Werte für den **Ziel-CPU** -Bereich in der Konfiguration für die automatische Skalierung Ihrer Web-App.
+    > - Führen Sie den Auslastungs Test in der Cloud mit **Azure Test Plans**aus. Weitere Informationen finden Sie [hier](/azure/devops/test/load-test/index?view=vsts).
 
 ---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser praktischen Übungseinheit haben Sie gelernt, wie Sie zum Einrichten und Bereitstellen der Anwendung auf Produktions-Web-apps in Azure. Sie beginnen, indem Sie erkennen, und aktualisieren Ihre Datenbanken mithilfe von **Entity Framework Code First-Migrationen**, setzte sich durch das Bereitstellen neuer Versionen des Standorts mit **Git** und Ausführen von Rollbacks zu den neueste stabile Version Ihres Standorts. Darüber hinaus haben Sie Ihre app mit Speicher auf den statischen Inhalt in einen Blob-Container verschieben zu skalieren.
+In dieser praktischen Übungseinheit haben Sie erfahren, wie Sie Ihre Anwendung in Produktions-Web-Apps in Azure einrichten und bereitstellen. Sie haben damit begonnen, die Datenbanken mithilfe **Entity Framework Code First-Migrationen**zu erkennen und zu aktualisieren. Anschließend haben Sie die Bereitstellung neuer Versionen Ihres Standorts mithilfe von **git** und die Durchführung von Rollbacks auf die neueste stabile Version Ihres Standorts fortgesetzt. Außerdem haben Sie erfahren, wie Sie Ihre App mithilfe von Speicher skalieren, um statische Inhalte in einen BLOB-Container zu verschieben.

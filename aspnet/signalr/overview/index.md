@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/index
-title: SignalR-Leitfaden | Microsoft-Dokumentation
+title: Leitfaden zu signalr | Microsoft-Dokumentation
 author: bradygaster
 description: ''
 ms.author: bradyg
@@ -9,13 +9,13 @@ ms.assetid: e57da75a-1d98-4e3c-8787-f1d7e1eb2d86
 msc.legacyurl: /signalr/overview
 msc.type: book
 ms.openlocfilehash: 8bef8a53f6d47a9274a984e0650125fb538c23f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380066"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450057"
 ---
-# <a name="signalr-guidance"></a>SignalR-Leitfaden
+# <a name="signalr-guidance"></a>Leitfaden zu signalr
 
 - [Erste Schritte](getting-started/index.md)
 
@@ -23,7 +23,7 @@ ms.locfileid: "59380066"
     - [Unterstützte Plattformen](getting-started/supported-platforms.md)
     - [Tutorial: Erste Schritte mit SignalR 2](getting-started/tutorial-getting-started-with-signalr.md)
     - [Tutorial: Erste Schritte mit SignalR 2 und MVC 5](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
-    - [Tutorial: Echtzeitnachrichten mit SignalR 2](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
+    - [Tutorial: Häufiges Senden von Echtzeitnachrichten mit SignalR 2](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
     - [Tutorial: Serverübertragung mit SignalR 2](getting-started/tutorial-server-broadcast-with-signalr.md)
     - [Praxisnahe Übung: Echtzeit-Webanwendungen mit SignalR](getting-started/real-time-web-applications-with-signalr.md)
 - [Leitfaden für die API](guide-to-the-api/index.md)

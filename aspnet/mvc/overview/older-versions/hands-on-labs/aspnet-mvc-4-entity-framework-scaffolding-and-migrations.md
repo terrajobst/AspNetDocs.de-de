@@ -1,228 +1,228 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
-title: ASP.NET MVC 4 Entity Framework – Gerüstbau und Migrationen | Microsoft-Dokumentation
+title: ASP.NET MVC 4 Entity Framework Gerüstbau und Migrationen | Microsoft-Dokumentation
 author: rick-anderson
-description: Wenn Sie mit ASP.NET MVC 4-Controllermethoden vertraut sind, oder haben die &quot;Hilfsprogramme, Formulare und Überprüfung&quot; praktische Übungseinheiten durchführen, sollten Sie bedenken...
+description: Wenn Sie mit ASP.NET MVC 4-Controller Methoden vertraut sind oder die &quot;Hilfsprogramme, Formulare und Validierung&quot; praktische Übungseinheit abgeschlossen haben, sollten Sie sich bewusst sein...
 ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
 ms.openlocfilehash: 2b26224390af70e19ca0593abe93a6867140f8ab
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129725"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484641"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 – Gerüstbau und Migrationen mit dem Entity Framework
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-Wenn Sie mit ASP.NET MVC 4-Controllermethoden vertraut sind, oder haben die &quot;Hilfsprogramme, Formulare und Überprüfung&quot; praktische Übungseinheiten durchführen, sollten Sie bedenken, dass viele der Logik zu erstellen, aktualisieren, auflisten und entfernen alle Datenentität, er wird wiederholt, zwischen der Anwendung. Ganz zu schweigen davon, dass, wenn Ihr Modell mehrere Klassen zum Bearbeiten von verfügt, Sie wahrscheinlich eine beträchtliche Zeit schreiben die POST- und GET-Aktionsmethoden für jeden Vorgang für die Entität, als auch jede der Ansichten können.
+Wenn Sie mit ASP.NET MVC 4-Controller Methoden vertraut sind oder die &quot;Hilfsprogramme, Formulare und Validierungs&quot; praktische Übungseinheit abgeschlossen haben, sollten Sie beachten, dass viele der Logik zum Erstellen, aktualisieren, auflisten und entfernen beliebiger Daten Entitäten, die Sie in der Anwendung wiederholt. Wenn Ihr Modell über mehrere Klassen zum Bearbeiten verfügt, werden Sie wahrscheinlich viel Zeit aufwenden, um die Post-und Get Action-Methoden für jeden Entitäts Vorgang und jede der Ansichten zu schreiben.
 
-In dieser Übung lernen Sie, wie Sie das ASP.NET MVC 4-Gerüst zu verwenden, zum automatischen Generieren von der Baseline der Ihrer Anwendung CRUD (Create, Read, Update und Delete). Starten über eine einfache Modellklasse und, ohne eine einzige Codezeile schreiben zu müssen, erstellen Sie einen Controller, der die CRUD-Vorgänge sowie die alle erforderlichen Ansichten enthält. Nach dem Erstellen und eine einfache Lösung ausführen, müssen Sie die Datenbank generiert werden, zusammen mit dem MVC-Logik und die Ansichten für die datenbearbeitung.
+In dieser Übungseinheit erfahren Sie, wie Sie den ASP.NET MVC 4-Gerüstbau zum automatischen Generieren der Baseline der CRUD (Create, Read, Update und DELETE) Ihrer Anwendung verwenden. Beginnend mit einer einfachen Modell Klasse und, ohne eine einzige Codezeile zu schreiben, erstellen Sie einen Controller, der alle CRUD-Vorgänge sowie alle notwendigen Sichten enthält. Nachdem Sie die einfache Lösung erstellt und ausgeführt haben, wird die Anwendungsdatenbank sowie die MVC-Logik und-Sichten für die Datenbearbeitung generiert.
 
-Darüber hinaus erfahren Sie, wie einfach es ist, die Entity Framework-Migrationen zu verwenden, um Modelle von Aktualisierungen in der gesamten Anwendung auszuführen. Entity Framework-Migrationen können Sie Ihre Datenbank zu ändern, nachdem das Modell mit einfachen Schritten geändert wurde. Mit all diese Denken Sie daran werden Sie zum Erstellen und Verwalten von Webanwendungen effizienter, nutzen die neuesten Funktionen von ASP.NET MVC 4.
+Darüber hinaus erfahren Sie, wie einfach es ist, Entity Framework Migrationen zu verwenden, um Modell Updates in der gesamten Anwendung auszuführen. Mit Entity Framework Migrationen können Sie Ihre Datenbank ändern, nachdem das Modell mit einfachen Schritten geändert wurde. Mit all diesen Bedenken können Sie Webanwendungen effizienter erstellen und pflegen und dabei die neuesten Features von ASP.NET MVC 4 nutzen.
 
 > [!NOTE]
-> Alle Beispielcode und Ausschnitte sind im Web Camps Trainingskit, erhältlich über enthalten [Versionen der Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Das Projekt, das speziell für dieses Lab finden Sie unter [ASP.NET MVC 4 Entity Framework – Gerüstbau und Migrationen](https://github.com/Microsoft-Web/HOL-EntityFrameworkScaffoldingAndMigrations).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das in den [Releases Microsoft-Web/webcamptrainingkit](https://aka.ms/webcamps-training-kit)verfügbar ist. Das für dieses Lab spezifische Projekt ist unter [ASP.NET MVC 4 Entity Framework Gerüstbau und Migrationen](https://github.com/Microsoft-Web/HOL-EntityFrameworkScaffoldingAndMigrations)verfügbar.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 
-- Verwenden Sie ASP.NET-Gerüstbau für CRUD-Vorgänge in Controllern.
-- Ändern Sie das Datenbankmodell mit Entity Framework-Migrationen.
-
-<a id="Prerequisites"></a>
+- Verwenden Sie ASP.net Gerüstbau für CRUD-Vorgänge in Controllern.
+- Ändern Sie das Datenbankmodell mithilfe Entity Framework Migrationen.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
 
-Sie benötigen Folgendes, um diese testumgebung abzuschließen:
+<a id="Prerequisites"></a>
+### <a name="prerequisites"></a>Voraussetzungen
 
-- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder sogar eine höhere (Lesen [Anhang A](#AppendixA) Anleitungen zur Installation).
+Zum Durchführen dieses Labs müssen Sie über Folgendes verfügen:
+
+- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder Superior (Informationen zur Installation finden Sie in [Anhang A](#AppendixA) ).
 
 <a id="Setup"></a>
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
-**Installieren von Codeausschnitten**
+**Installieren von Code Ausschnitten**
 
-Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinheit verwaltet werden soll als Codeausschnitte für Visual Studio verfügbar. So installieren Sie die Codeausschnitte ausführen **.\Source\Setup\CodeSnippets.vsi** Datei.
+Der Vorteil ist, dass ein Großteil des Codes, den Sie in diesem Lab verwalten, als Visual Studio-Code Ausschnitte verfügbar ist. Um die Code Ausschnitte zu installieren, führen Sie **.\source\setup\codesnippeer-.vsi** -Datei aus.
 
-Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang B: Verwenden von Codeausschnitten](#AppendixB)&quot;.
+Wenn Sie mit den Visual Studio Code Ausschnitten nicht vertraut sind und wissen möchten, wie Sie Sie verwenden können, finden Sie den Anhang dieses Dokuments &quot;[Anhang B: Verwenden von Code Ausschnitten](#AppendixB)&quot;.
 
 ---
 
 <a id="Exercises"></a>
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-In der folgenden Übung besteht aus diesem Hands-On Lab:
+In der folgenden Übung wird diese praktische Übungseinheit eingerichtet:
 
-1. [Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework-Migrationen](#Exercise1)
+1. [Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework Migrationen](#Exercise1)
 
 > [!NOTE]
-> In dieser Übung wird zusammen mit einem **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übung abrufen soll. Sie können diese Lösung als Leitfaden verwenden, wenn Sie zusätzliche Hilfe bei der Arbeit mit der Aufgabe benötigen.
+> Diese Übung wird von einem **End** -Ordner mit der resultierenden Lösung begleitet, die Sie nach Abschluss der Übung erhalten sollten. Sie können diese Lösung als Leitfaden verwenden, wenn Sie zusätzliche Hilfe beim Arbeiten mit der Übung benötigen.
 
-Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**
+Geschätzte Zeit bis zum Abschluss dieses Labs: **30 Minuten**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_ASPNET_MVC_4_Scaffolding_with_Entity_Framework_Migrations"></a>
-### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>Übung 1: Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework-Migrationen
+### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>Übung 1: Verwenden von ASP.NET MVC 4-Gerüstbau mit Entity Framework Migrationen
 
-ASP.NET MVC-Gerüstbau bietet eine schnelle Möglichkeit zum Generieren der CRUD-Vorgänge auf standardisierte Weise erstellen die erforderliche Logik, mit dem Ihre Anwendung mit der Datenbankschicht zu interagieren.
+ASP.NET MVC-Gerüstbau bietet eine schnelle Möglichkeit, die CRUD-Vorgänge auf standardisierte Weise zu generieren und so die erforderliche Logik zu erstellen, mit der Ihre Anwendung mit der Datenbankschicht interagieren kann.
 
-In dieser Übung lernen Sie, wie mit ASP.NET MVC 4-Gerüstbau mit Code zuerst die CRUD-Methoden erstellen. Anschließend erfahren Sie, wie Sie das Modell anwenden der Änderungen in der Datenbank mit Entity Framework-Migrationen aktualisieren.
+In dieser Übung erfahren Sie, wie Sie ASP.NET MVC 4 Gerüstbau mit Code First verwenden, um die CRUD-Methoden zu erstellen. Anschließend erfahren Sie, wie Sie das Modell aktualisieren können, indem Sie die Änderungen in der Datenbank mithilfe Entity Framework Migrationen anwenden.
 
 <a id="Ex1Task1"></a>
 
 <a id="Task_1-_Creating_a_new_ASPNET_MVC_4_project_using_Scaffolding"></a>
-#### <a name="task-1--creating-a-new-aspnet-mvc-4-project-using-scaffolding"></a>Aufgabe 1: Erstellen einer neuen ASP.NET MVC 4-Projekt mithilfe von Gerüstbau
+#### <a name="task-1--creating-a-new-aspnet-mvc-4-project-using-scaffolding"></a>Aufgabe 1: Erstellen eines neuen ASP.NET MVC 4-Projekts mithilfe eines Gerüsts
 
-1. Wenn nicht bereits geöffnet ist, starten Sie **Visual Studio 2012**.
-2. Wählen Sie **Datei | Neues Projekt**. In das neue Projekt im Dialogfeld unter die **Visual c# | Web** wählen Sie im Abschnitt **ASP.NET MVC 4-Webanwendung**. Nennen Sie das Projekt zu **MVC4andEFMigrations** , und legen Sie den Speicherort auf **Source\Ex1-UsingMVC4ScaffoldingEFMigrations** Ordner dieser Anleitung. Legen Sie die **Projektmappenname** zu **beginnen** und stellen Sie sicher **Projektmappenverzeichnis erstellen** aktiviert ist. Klicken Sie auf **OK**.
+1. Wenn Sie nicht bereits geöffnet ist, starten Sie **Visual Studio 2012**.
+2. **Datei auswählen | Neues Projekt**. Klicken Sie im Dialogfeld Neues Projekt unter **dem C# Visual | Webabschnitt** wählen Sie **ASP.NET MVC 4-Webanwendung**aus. Benennen Sie das Projekt mit **MVC4andEFMigrations** , und legen Sie den Speicherort auf den Ordner **source\ex1-usingmvc4gerüschesfmigrationen** dieses Labs fest. Legen Sie den Projektmappennamen auf **beginnen** fest, und stellen Sie sicher, dass Projektmappenverzeichnis **Erstellen** Klicken Sie auf **OK**.
 
-    ![Dialogfeld Neues ASP.NET MVC 4-Projekt](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "neue ASP.NET MVC 4-Projekt (Dialogfeld)")
+    ![Neues ASP.NET MVC 4-Projekt (Dialog Feld)](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "Neues ASP.NET MVC 4-Projekt (Dialog Feld)")
 
-    *Neues ASP.NET MVC 4-Projekt (Dialogfeld)*
-3. In der **neues ASP.NET MVC 4-Projekt** aktivieren Sie im Dialogfeld die **Internetanwendung** Vorlage, und stellen Sie sicher, dass **Razor** die ausgewählte **Ansichts-Engine**. Klicken Sie auf **OK**, um das Projekt zu erstellen.
+    *Neues ASP.NET MVC 4-Projekt (Dialog Feld)*
+3. Wählen Sie im Dialogfeld **Neues ASP.NET MVC 4-Projekt** die Vorlage **Internet Anwendung** aus, und vergewissern Sie sich, dass **Razor** die ausgewählte **Ansichts-Engine**ist. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-    ![Neue ASP.NET MVC 4-Internetanwendung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "neue ASP.NET MVC 4-Internetanwendung")
+    ![Neu ASP.NET MVC 4-Internet Anwendung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "Neu ASP.NET MVC 4-Internet Anwendung")
 
-    *Neue ASP.NET MVC 4-Internetanwendung*
-4. Klicken Sie im Projektmappen-Explorer mit der Maustaste **Modelle** , und wählen Sie **hinzufügen | Klasse** um eine einfache Klasse Person (POCO) zu erstellen. Nennen Sie sie **Person** , und klicken Sie auf **OK**.
-5. Öffnen Sie die Person-Klasse und fügen Sie die folgenden Eigenschaften.
+    *Neu ASP.NET MVC 4-Internet Anwendung*
+4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Modelle** , und wählen Sie **hinzufügen aus. Klasse** zum Erstellen einer einfachen Klasse Person (poco). Nennen Sie es **Person** , und klicken Sie auf **OK**.
+5. Öffnen Sie die Klasse Person, und fügen Sie die folgenden Eigenschaften ein.
 
-    (Codeausschnitt - *ASP.NET MVC 4 und Entity Framework-Migrationen - Ex1 Personeneigenschaften*)
+    (Code Ausschnitt- *ASP.NET MVC 4 und Entity Framework Migrationen-EX1 Person-Eigenschaften*)
 
     [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
-6. Klicken Sie auf **erstellen | Erstellen Sie Projektmappe** zum Speichern der Änderungen, und erstellen Sie das Projekt.
+6. Klicken Sie auf **Erstellen | Erstellen** Sie die Lösung, um die Änderungen zu speichern und das Projekt zu erstellen.
 
     ![Erstellen der Anwendung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "Erstellen der Anwendung")
 
     *Erstellen der Anwendung*
-7. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in den Ordner "Controllers", und wählen **hinzufügen | Controller**.
-8. Nennen Sie den Controller *PersonController* und führen Sie die **gerüstoptionen** mit den folgenden Werten.
+7. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Controller, und wählen Sie **hinzufügen aus. Controller**.
+8. Benennen Sie den Controller *personcontroller* , und vervollständigen Sie die **Gerüstbau Optionen** mit den folgenden Werten.
 
-   1. In der **Vorlage** Dropdown-Liste die **MVC-Controller mit Lese-/schreibaktionen und Ansichten unter Verwendung von Entity Framework** Option.
-   2. In der **Modellklasse** Dropdown-Liste die **Person** Klasse.
-   3. In der **Datenkontext Klasse** Liste  **&lt;neuer Datenkontext... &gt;**. Wählen Sie einen beliebigen Namen ein, und klicken Sie auf **OK**.
-   4. In der **Ansichten** Dropdown-Liste, stellen Sie sicher, dass **Razor** ausgewählt ist.
+   1. Wählen Sie in der Dropdown Liste **Vorlage** den **MVC-Controller mit Lese-/Schreibaktionen und-Sichten mit Entity Framework** Option aus.
+   2. Wählen Sie in der Dropdown Liste **Modell Klasse** die **Person** -Klasse aus.
+   3. Wählen Sie in der Liste **Datenkontext Klasse** die Option **&lt;neuer Datenkontext...&gt;** aus. Wählen Sie einen beliebigen Namen, und klicken Sie auf **OK**.
+   4. Vergewissern Sie sich, dass in der Dropdown Liste **Sichten** die Option **Razor** ausgewählt ist.
 
-      ![Die Person-Controller mit Gerüst hinzufügen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "den Person-Controller mit Gerüst hinzufügen")
+      ![Hinzufügen des Person-Controllers mit Gerüstbau](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "Hinzufügen des Person-Controllers mit Gerüstbau")
 
-      *Die Person-Controller mit Gerüst hinzufügen*
-9. Klicken Sie auf **hinzufügen** auf den neuen Controller für Personen mit Gerüst zu erstellen. Sie haben jetzt die Controlleraktionen sowie die Ansichten erstellt.
+      *Hinzufügen des Person-Controllers mit Gerüstbau*
+9. Klicken Sie auf **Hinzufügen** , um den neuen Controller für Person mit Gerüst zu erstellen. Sie haben nun die Controller Aktionen und die Ansichten generiert.
 
-    ![Nach dem Erstellen des Person-Controllers mit Gerüstbau](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image5.png "nach dem Erstellen des Person-Controllers mit Gerüstbau")
+    ![Nach dem Erstellen des Person-Controllers mit Gerüstbau](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image5.png "Nach dem Erstellen des Person-Controllers mit Gerüstbau")
 
     *Nach dem Erstellen des Person-Controllers mit Gerüstbau*
-10. Open **PersonController** Klasse. Beachten Sie, dass die vollständige CRUD-Aktionsmethoden automatisch generiert wurden.
+10. Öffnen Sie die **personcontroller** -Klasse. Beachten Sie, dass die vollständigen CRUD-Aktionsmethoden automatisch generiert wurden.
 
-   ![In den Person-Controller](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "innerhalb der Person-Controller")
+   ![Innerhalb des Person-Controllers](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "Innerhalb des Person-Controllers")
 
-   *In den Person-controller*
+   *Innerhalb des Person-Controllers*
 
 <a id="Ex1Task2"></a>
 
 <a id="Task_2-_Running_the_application"></a>
 #### <a name="task-2--running-the-application"></a>Aufgabe 2: Ausführen der Anwendung
 
-An diesem Punkt ist die Datenbank noch nicht erstellt. In dieser Aufgabe werden die Anwendung zum ersten Mal ausführen und Testen Sie die CRUD-Vorgänge. Die Datenbank wird im laufenden Betrieb mit Code First erstellt werden.
+An diesem Punkt wurde die Datenbank noch nicht erstellt. In dieser Aufgabe führen Sie die Anwendung zum ersten Mal aus und testen die CRUD-Vorgänge. Die Datenbank wird im Handumdrehen mit Code First erstellt.
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.
-2. Fügen Sie im Browser **/Person** an die URL der Seite "Person" zu öffnen.
+2. Fügen Sie im Browser **/Person** zur URL hinzu, um die Person-Seite zu öffnen.
 
-    ![Anwendung – erste Ausführung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image7.png "Anwendung – erste Ausführung")
+    ![Anwendung zuerst ausführen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image7.png "Anwendung zuerst ausführen")
 
-    *Der Anwendung: ersten Ausführen*
-3. Jetzt Untersuchen der Person-Seiten und testen die CRUD-Vorgänge.
+    *Anwendung: erste Testlauf*
+3. Sie werden nun die Personen Seiten untersuchen und die CRUD-Vorgänge testen.
 
-    1. Klicken Sie auf **neu erstellen** eine neue Person hinzufügen. Geben Sie einen Vornamen und einen Nachnamen ein, und klicken Sie auf **erstellen**.
+    1. Klicken Sie auf **neu erstellen** , um eine neue Person hinzuzufügen. Geben Sie einen Vornamen und einen Nachnamen ein, und klicken Sie auf **Erstellen**.
 
-        ![Eine neue Person hinzufügen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image8.png "eine neue Person hinzufügen")
+        ![Hinzufügen einer neuen Person](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image8.png "Hinzufügen einer neuen Person")
 
-        *Eine neue Person hinzufügen*
-    2. In der Liste der Person können Sie zu löschen, bearbeiten oder Hinzufügen von Elementen.
+        *Hinzufügen einer neuen Person*
+    2. In der Liste der Personen können Sie Elemente löschen, bearbeiten oder hinzufügen.
 
-        ![Personenliste](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image9.png "Person-Liste")
+        ![Personen Liste](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image9.png "Personen Liste")
 
-        *Person-Liste*
-    3. Klicken Sie auf **Details** um der Person zu öffnen.
+        *Personen Liste*
+    3. Klicken Sie auf **Details** , um die Details der Person zu öffnen.
 
-        ![Person Details](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image10.png "Person Details")
+        ![Personen Details](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image10.png "Personen Details")
 
-        *Person-details*
-4. Schließen Sie den Browser, und kehren Sie zu Visual Studio zurück. Beachten Sie, dass Sie in der gesamten Anwendung – von des Modells in den Ansichten: die gesamte CRUD-Vorgänge für die Personenentität erstellt haben, ohne eine einzige Codezeile schreiben zu müssen.
+        *Personen Details*
+4. Schließen Sie den Browser, und kehren Sie zu Visual Studio zurück. Beachten Sie, dass Sie in der gesamten Anwendung den gesamten CRUD für die Person-Entität erstellt haben, ohne eine einzige Codezeile schreiben zu müssen.
 
 <a id="Ex1Task3"></a>
 
 <a id="Task_3-_Updating_the_database_using_Entity_Framework_Migrations"></a>
-#### <a name="task-3--updating-the-database-using-entity-framework-migrations"></a>Aufgabe 3: Aktualisieren der Datenbank mithilfe von Entity Framework-Migrationen
+#### <a name="task-3--updating-the-database-using-entity-framework-migrations"></a>Aufgabe 3: Aktualisieren der Datenbank mithilfe Entity Framework Migrationen
 
-In dieser Aufgabe aktualisieren Sie die Datenbank mithilfe von Entity Framework-Migrationen. Sie werden feststellen, wie einfach es ist, ändern Sie das Modell und die Änderungen widerzuspiegeln, in Ihren Datenbanken mithilfe der Funktion von Entity Framework-Migrationen.
+In dieser Aufgabe aktualisieren Sie die Datenbank, indem Sie Entity Framework Migrationen verwenden. Sie werden feststellen, wie einfach es ist, das Modell zu ändern und die Änderungen in ihren Datenbanken mithilfe der Entity Framework Migrations Funktion widerzuspiegeln.
 
-1. Öffnen Sie die Paket-Manager-Konsole. Wählen Sie **Tools** > **NuGet Paket-Manager** > **Paket-Manager Konsole**.
-2. Geben Sie in der Paket-Manager-Konsole den folgenden Befehl aus:
+1. Öffnen Sie die Paket-Manager-Konsole. Klicken Sie auf **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**.
+2. Geben Sie in der Paket-Manager-Konsole den folgenden Befehl ein:
 
     PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample2.ps1)]
 
-    ![Aktivieren von Migrationen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image11.png "Migrationen aktivieren")
+    ![Aktivieren von Migrationen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image11.png "Aktivieren von Migrationen")
 
     *Aktivieren von Migrationen*
 
-    Der Aktivierung der Migration Befehl erstellt die **Migrationen** Ordner, in dem ein Skript zum Initialisieren der Datenbank enthalten.
+    Mit dem Befehl enable-Migration wird der Ordner **Migrationen** erstellt, in dem ein Skript zum Initialisieren der Datenbank enthalten ist.
 
-    ![Ordner "Migrations"](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image12.png "Ordner \"Migrations\"")
+    ![Migrations Ordner](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image12.png "Migrations Ordner")
 
-    *Ordner "Migrations"*
-3. Öffnen der **Configuration.cs** -Datei im Ordner "Migrations". Der Konstruktor der Klasse zu suchen und ändern Sie die **AutomaticMigrationsEnabled** Wert *"true"*.
+    *Migrations Ordner*
+3. Öffnen Sie die Datei **Configuration.cs** im Migrations Ordner. Suchen Sie den Klassenkonstruktor, und ändern Sie den Wert **automaticmigrationsenabled** in *true*.
 
     [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
-4. Öffnen Sie die Person-Klasse, und fügen Sie ein Attribut für den Vornamen einer Person hinzu. Mit diesem neuen Attribut ändern Sie das Modell.
+4. Öffnen Sie die Person-Klasse, und fügen Sie ein-Attribut für den Vornamen der Person hinzu. Mit diesem neuen Attribut ändern Sie das Modell.
 
     [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
-5. Wählen Sie **erstellen | Erstellen Sie Projektmappe** im Menü, um die Anwendung zu erstellen.
+5. **Build auswählen | Erstellen** Sie die Projekt Mappe im Menü, um die Anwendung zu erstellen.
 
     ![Erstellen der Anwendung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "Erstellen der Anwendung")
 
     *Erstellen der Anwendung*
-6. Geben Sie in der Paket-Manager-Konsole den folgenden Befehl aus:
+6. Geben Sie in der Paket-Manager-Konsole den folgenden Befehl ein:
 
     PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample5.ps1)]
 
-    Dieser Befehl sucht nach Änderungen in den Datenobjekten, und klicken Sie dann, fügen sie die erforderlichen Befehle, die Datenbank entsprechend zu ändern.
+    Mit diesem Befehl wird nach Änderungen in den Datenobjekten gesucht, und dann werden die erforderlichen Befehle zum Ändern der Datenbank hinzugefügt.
 
-    ![Hinzufügen einer zweiten Vornamens](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image14.png "einen Zweitnamen hinzufügen")
+    ![Hinzufügen eines mittleren namens](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image14.png "Hinzufügen eines mittleren namens")
 
-    *Ein zweiter Vorname hinzufügen*
-7. (Optional) Sie können den folgenden Befehl zum Generieren eines SQL-Skripts mit dem Update, differenzielle ausführen. Auf diese Weise können Sie die Datenbank manuell zu aktualisieren (In diesem Fall es ist nicht erforderlich), oder wenden Sie die Änderungen in anderen Datenbanken:
+    *Hinzufügen eines mittleren namens*
+7. Optionale Sie können den folgenden Befehl ausführen, um ein SQL-Skript mit dem differenziellen Update zu generieren. Auf diese Weise können Sie die Datenbank manuell aktualisieren (in diesem Fall nicht erforderlich) oder die Änderungen in anderen Datenbanken anwenden:
 
     PMC
 
     [!code-powershell[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample6.ps1)]
 
-    ![Generieren eines SQL-Skripts](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image15.png "Generieren eines SQL-Skripts")
+    ![Erstellen eines SQL-Skripts](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image15.png "Generieren eines SQL-Skripts")
 
-    *Generieren eines SQL-Skripts*
+    *Erstellen eines SQL-Skripts*
 
-    ![Update für SQL-Skript](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image16.png "Update für SQL-Skript")
+    ![SQL-Skript Aktualisierung](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image16.png "SQL-Skript Aktualisierung")
 
-    *Update für SQL-Skript*
-8. Geben Sie den folgenden Befehl zum Aktualisieren der Datenbank, in der Paket-Manager-Konsole:
+    *SQL-Skript Aktualisierung*
+8. Geben Sie in der Paket-Manager-Konsole den folgenden Befehl ein, um die Datenbank zu aktualisieren:
 
     PMC
 
@@ -232,32 +232,32 @@ In dieser Aufgabe aktualisieren Sie die Datenbank mithilfe von Entity Framework-
 
     *Aktualisieren der Datenbank*
 
-    Hiermit wird die **MiddleName** -Spalte in der **Personen** Tabelle entsprechend die aktuelle Definition der der **Person** Klasse.
-9. Nachdem die Datenbank aktualisiert wurde, mit der rechten Maustaste in den Ordner "Controller", und wählen Sie **hinzufügen | Controller** zum Hinzufügen der Person Controllers erneut (vollständig mit den gleichen Werten). Dadurch werden die vorhandenen Methoden und Ansichten, die das neue Attribut hinzufügen aktualisiert.
+    Dadurch wird die **MiddleName** -Spalte in der **People** -Tabelle hinzugefügt, um der aktuellen Definition der **Person** -Klasse zu entsprechen.
+9. Nachdem die Datenbank aktualisiert wurde, klicken Sie mit der rechten Maustaste auf den Ordner Controller, und wählen Sie **Hinzufügen | Controller** zum erneuten Hinzufügen des Person-Controllers (mit denselben Werten vervollständigen). Dadurch werden die vorhandenen Methoden und Sichten aktualisiert, die das neue Attribut hinzufügen.
 
-    ![Hinzufügen von einem controllerupdate](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image18.png "Hinzufügen von einem controllerupdate")
+    ![Hinzufügen eines Controller Updates](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image18.png "Hinzufügen eines Controller Updates")
 
-    *Update des Controllers*
-10. Klicken Sie auf **Hinzufügen**. Wählen Sie dann die Werte **überschreiben PersonController.cs** und **überschreiben zugeordnete Ansichten** , und klicken Sie auf **OK**.
+    *Aktualisieren des Controllers*
+10. Klicken Sie auf **Hinzufügen**. Wählen Sie dann die Werte **Überschreibungs PersonController.cs** und zugeordnete **Sichten überschreiben** aus, und klicken Sie auf **OK**.
 
-   ![Das Überschreiben einer Controller hinzufügen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
+   ![Hinzufügen eines Controller-überschreiben](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
 
-   *Update des Controllers*
+   *Aktualisieren des Controllers*
 
 <a id="Ex1Task4"></a>
 
 <a id="Task4-_Running_the_application"></a>
-#### <a name="task4--running-the-application"></a>Task4 - Ausführen der Anwendung
+#### <a name="task4--running-the-application"></a>Task4-Ausführen der Anwendung
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.
-2. Open **/Person**. Beachten Sie, dass die Daten beibehalten wurde, während die zweite Vorname-Spalte hinzugefügt wurde, ein.
+2. Öffnen Sie **/Person**. Beachten Sie, dass die Daten beibehalten wurden, während die Spalte "Middle Name" hinzugefügt wurde.
 
-    ![Zweiter Vorname hinzugefügt](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image20.png "Vornamen hinzugefügt")
+    ![Mittlerer Name hinzugefügt](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image20.png "Mittlerer Name hinzugefügt")
 
-    *Zweiter Vorname hinzugefügt*
-3. Wenn Sie auf **bearbeiten**, ein zweiter Vorname an die aktuelle Person hinzufügen können.
+    *Mittlerer Name hinzugefügt*
+3. Wenn Sie auf **Bearbeiten**klicken, können Sie der aktuellen Person einen mittleren Namen hinzufügen.
 
-    ![Zweiter Vorname Edition](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image21.png "Vornamen-Edition")
+    ![Edition des mittleren namens](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image21.png "Edition des mittleren namens")
 
 ---
 
@@ -266,84 +266,84 @@ In dieser Aufgabe aktualisieren Sie die Datenbank mithilfe von Entity Framework-
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser praktischen Übungseinheit haben Sie einfache Schritte zum Erstellen von CRUD-Vorgänge mit ASP.NET MVC 4-Gerüstbau jede beliebige Modellklasse verwenden. Klicken Sie dann haben Sie gelernt, ein Update für die End-to-End in Ihrer Anwendung – aus der Datenbank, die den Ansichten – führen Sie mithilfe von Entity Framework-Migrationen.
+In dieser praktischen Übungseinheit haben Sie einfache Schritte zum Erstellen von CRUD-Vorgängen mit ASP.NET MVC 4-Gerüstbau mithilfe einer beliebigen Modell Klasse kennengelernt. Anschließend haben Sie gelernt, wie Sie ein End-to-End-Update in Ihrer Anwendung durchführen, und zwar von der Datenbank zu den Sichten, indem Sie Entity Framework Migrationen verwenden.
 
 <a id="AppendixA"></a>
 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
-## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für Web
+## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für das Web
 
-Sie installieren können **Microsoft Visual Studio Express 2012 für Web** oder einem anderen &quot;Express&quot; Version verwenden, die **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. Die folgenden Anweisungen führen Sie über die erforderlichen Schritte zum Installieren *Visual Studio Express 2012 für Web* mit *Microsoft Web Platform Installer*.
+Sie können **Microsoft Visual Studio Express 2012 für Web** oder eine andere &quot;Express&quot; Version mit dem **[Microsoft-Webplattform-Installer](https://www.microsoft.com/web/downloads/platform.aspx)** installieren. Die folgenden Anweisungen führen Sie durch die Schritte, die zum Installieren *von Visual Studio Express 2012 für Web* mithilfe von *Microsoft-Webplattform-Installer*erforderlich sind.
 
-1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Auch wenn Sie bereits Webplattform-Installer installiert haben, können Sie öffnen ihn, und suchen Sie nach dem Produkt &quot; <em>Visual Studio Express 2012 für das Web mit Windows Azure SDK</em>&quot;.
-2. Klicken Sie auf **jetzt installieren**. Wenn Sie keine **Webplattform-Installer** gelangen Sie zum Herunterladen und installieren Sie diese zuerst.
-3. Einmal **Webplattform-Installer** geöffnet ist, klicken Sie auf **installieren** um das Setup zu starten.
+1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Wenn Sie den Webplattform-Installer bereits installiert haben, können Sie ihn auch öffnen und nach dem Produkt &quot;<em>Visual Studio Express 2012 für das Web mit dem Windows Azure SDK</em>&quot;suchen.
+2. Klicken Sie auf **jetzt installieren**. Wenn Sie nicht über einen **Webplattform-Installer** verfügen, werden Sie umgeleitet, um Sie zuerst herunterzuladen und zu installieren.
+3. Nachdem der **Webplattform-Installer** geöffnet ist, klicken Sie auf **Installieren** , um das Setup zu starten.
 
     ![Installieren von Visual Studio Express](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image22.png "Installieren von Visual Studio Express")
 
     *Installieren von Visual Studio Express*
-4. Lesen Sie die Produkte Lizenzen und Begriffe, und klicken Sie auf **akzeptieren** um den Vorgang fortzusetzen.
+4. Lesen Sie die Lizenzbedingungen für alle Produkte, und klicken Sie auf **ich** Stimme zu, um fortzufahren.
 
     ![Akzeptieren der Lizenzbedingungen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image23.png)
 
     *Akzeptieren der Lizenzbedingungen*
-5. Warten Sie, bis der Prozess zum Herunterladen und die Installation abgeschlossen ist.
+5. Warten Sie, bis der Download-und Installationsvorgang abgeschlossen ist.
 
     ![Installationsstatus](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image24.png)
 
-    *Installationsstatus*
-6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig stellen**.
+    *Installationsfortschritt*
+6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig**stellen.
 
-    ![Die Installation wurde abgeschlossen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image25.png)
+    ![Installation abgeschlossen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image25.png)
 
-    *Die Installation wurde abgeschlossen*
-7. Klicken Sie auf **beenden** Webplattform-Installer zu schließen.
-8. Um Visual Studio Express für Web zu öffnen, wechseln Sie zu der **starten** schreiben zu starten und Bildschirm &quot; **VS Express**&quot;, klicken Sie dann auf die **Visual Studio Express für Web** die Kachel.
+    *Installation abgeschlossen*
+7. Klicken Sie zum Schließen des Webplattform-Installers auf **Beenden** .
+8. Um Visual Studio Express für das Web zu öffnen, navigieren Sie zum **Start** Bildschirm, und beginnen Sie mit dem Schreiben &quot;**vs Express**&quot;und klicken Sie dann auf die Kachel **vs Express für Web** .
 
-    ![Visual Studio Express für Web-Kachel](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image26.png)
+    ![VS Express für Web-Kachel](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image26.png)
 
-    *Visual Studio Express für Web-Kachel*
+    *VS Express für Web-Kachel*
 
 <a id="AppendixB"></a>
 
 <a id="Appendix_B_Using_Code_Snippets"></a>
-## <a name="appendix-b-using-code-snippets"></a>Anhang B: Verwenden von Codeausschnitten
+## <a name="appendix-b-using-code-snippets"></a>Anhang B: Verwenden von Code Ausschnitten
 
-Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument informiert Sie genau wann sie verwendet werden kann wie in der folgenden Abbildung dargestellt.
+Mit Code Ausschnitten haben Sie den gesamten Code, den Sie benötigen. Im Lab-Dokument werden Sie genau wissen, wann Sie Sie verwenden können, wie in der folgenden Abbildung dargestellt.
 
-![Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image27.png "mithilfe von Visual Studio-Codeausschnitten, die Code in das Projekt einfügen.")
+![Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image27.png "Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt")
 
-*Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
+*Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
+***So fügen Sie einen Code Ausschnitt mithilfe der Tastatur hinzuC# (nur)***
 
-1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
-2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
-3. Beobachten Sie, wie IntelliSense zeigt übereinstimmende Codeausschnitte Namen.
-4. Wählen Sie den richtigen Codeausschnitt (oder halten Sie eingeben, bis die gesamte codeausschnittsnamen ausgewählt ist).
-5. Drücken Sie die Tab-Taste zweimal auf Einfügen des Codeausschnitts an der Cursorposition ein.
+1. Platzieren Sie den Cursor an der Stelle, an der Sie den Code einfügen möchten.
+2. Beginnen Sie mit der Eingabe des Ausschnitt namens (ohne Leerzeichen oder Bindestriche).
+3. Sehen Sie sich an, wie IntelliSense übereinstimmende Code Ausschnitte anzeigt.
+4. Wählen Sie den richtigen Ausschnitt aus (oder geben Sie die Eingabe fort, bis der gesamte Name des Ausschnitts ausgewählt ist).
+5. Drücken Sie zweimal die Tab-Taste, um den Ausschnitt an der Cursorposition einzufügen.
 
-![Geben Sie den Namen des Ausschnitts](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image28.png "Geben Sie den Namen des Ausschnitts")
+![Beginnen Sie mit der Eingabe des Ausschnitt namens.](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image28.png "Beginnen Sie mit der Eingabe des Ausschnitt namens.")
 
-*Geben Sie den Namen des Ausschnitts*
+*Beginnen Sie mit der Eingabe des Ausschnitt namens.*
 
-![Tabstopp drücken, um den hervorgehobenen Codeausschnitt auswählen](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image29.png "Tab drücken, um den hervorgehobenen Codeausschnitt auswählen")
+![Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image29.png "Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.")
 
-*Drücken Sie Tabstopp, um den hervorgehobenen Codeausschnitt auswählen*
+*Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.*
 
-![Drücken Sie die Tabulatortaste erneut, und der Ausschnitt erweitert](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image30.png "drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.")
+![Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image30.png "Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.")
 
-*Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
+*Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+So ***fügen Sie einen Code Ausschnitt mithilfe der Maus hinzuC#(, Visual Basic und XML)*** 1. Klicken Sie mit der rechten Maustaste auf den Ort, an dem Sie den Code Ausschnitt einfügen möchten.
 
-1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
-2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.
+1. Wählen Sie **Ausschnitt einfügen** und dann **meine Code Ausschnitte**aus.
+2. Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.
 
-![Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image31.png "mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten,")
+![Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image31.png "Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.")
 
-*Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten*
+*Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.*
 
-![Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image32.png "die relevante Codeausschnitte in der Liste auswählen, indem Sie darauf klicken")
+![Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image32.png "Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.")
 
-*Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken*
+*Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.*

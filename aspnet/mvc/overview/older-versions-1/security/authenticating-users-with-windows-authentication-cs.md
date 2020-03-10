@@ -1,91 +1,91 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
-title: Authentifizieren von Benutzern mit der Windows-Authentifizierung (c#) | Microsoft-Dokumentation
+title: Authentifizieren von Benutzern mit der WindowsC#-Authentifizierung () | Microsoft-Dokumentation
 author: microsoft
-description: Erfahren Sie, wie Sie Windows-Authentifizierung im Rahmen einer MVC-Anwendung verwenden. Erfahren Sie, wie zum Aktivieren der Windows-Authentifizierung in Ihrer Anwendung Web co...
+description: Erfahren Sie, wie Sie die Windows-Authentifizierung im Kontext einer MVC-Anwendung verwenden. Sie erfahren, wie Sie die Windows-Authentifizierung im Web Ihrer Anwendung aktivieren...
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 418bb07e-f369-4119-b4b0-08f890f7abb2
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
 msc.type: authoredcontent
 ms.openlocfilehash: bb3909bff2791c15a8737fc12cac69f79b55733f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125442"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506247"
 ---
 # <a name="authenticating-users-with-windows-authentication-c"></a>Authentifizieren von Benutzern bei der Windows-Authentifizierung (C#)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Erfahren Sie, wie Sie Windows-Authentifizierung im Rahmen einer MVC-Anwendung verwenden. Erfahren Sie, wie Windows-Authentifizierung in Ihrer Anwendung-Web-Konfigurationsdatei zu aktivieren und Konfigurieren der Authentifizierung mit IIS. Schließlich erfahren Sie, wie Sie die [Authorize]-Attribut zu verwenden, um den Zugriff auf Controlleraktionen an bestimmte Windows-Benutzer oder Gruppen beschränken.
+> Erfahren Sie, wie Sie die Windows-Authentifizierung im Kontext einer MVC-Anwendung verwenden. Sie erfahren, wie Sie die Windows-Authentifizierung in der Webkonfigurationsdatei Ihrer Anwendung aktivieren und wie Sie die Authentifizierung mit IIS konfigurieren. Schließlich erfahren Sie, wie Sie das Attribut [autorisieren] verwenden, um den Zugriff auf Controller Aktionen auf bestimmte Windows-Benutzer oder-Gruppen zu beschränken.
 
-Das Ziel in diesem Tutorial wird beschrieben, wie Sie nutzen können Security Features in Internet Information Services integriert werden, um das Kennwort die Sichten in Ihre MVC-Anwendungen schützen. Erfahren Sie, wie um Controlleraktionen aufgerufen werden, nur von bestimmten Windows-Benutzer oder Benutzer, die Mitglieder von bestimmten Windows-Gruppen zu ermöglichen.
+In diesem Tutorial wird erläutert, wie Sie die Internetinformationsdienste in integrierten Sicherheitsfeatures nutzen können, um die Ansichten in ihren MVC-Anwendungen per Kennwort zu schützen. Sie erfahren, wie Sie zulassen, dass Controller Aktionen nur von bestimmten Windows-Benutzern oder-Benutzern aufgerufen werden, die Mitglieder bestimmter Windows-Gruppen sind.
 
-Mithilfe der Windows-Authentifizierung ist sinnvoll, wenn Sie eine unternehmensinterne-Website (eine Intranetsite) erstellen und Ihre Benutzer, um die standardmäßige Windows-Benutzernamen und Kennwörter zu verwenden, wenn die Website zugreifen zu können. Bei der Erstellung einer aus nach außen mit Internetzugriff-Website (eine Internetwebsite) erwägen Sie stattdessen unter Verwendung der Formularauthentifizierung.
+Die Verwendung der Windows-Authentifizierung ist sinnvoll, wenn Sie eine interne Unternehmenswebsite (eine Intranetsite) aufbauen und möchten, dass die Benutzer Ihre standardmäßigen Windows-Benutzernamen und-Kenn Wörter für den Zugriff auf die Website verwenden können. Wenn Sie eine nach außen gerichtete Website (Internet Website) aufbauen, sollten Sie stattdessen die Formular Authentifizierung verwenden.
 
 #### <a name="enabling-windows-authentication"></a>Aktivieren der Windows-Authentifizierung
 
-Wenn Sie eine neue ASP.NET MVC-Anwendung erstellen, ist die Windows-Authentifizierung nicht standardmäßig aktiviert. Formularauthentifizierung ist der standardauthentifizierungstyp für MVC-Anwendungen aktiviert. Sie müssen Windows-Authentifizierung aktivieren, durch Ändern der Webkonfigurationsdatei (web.config) für Ihre MVC-Anwendung. Suchen der &lt;Authentifizierung&gt; aus, und ändern, um Windows zu verwenden, anstatt der Formularauthentifizierung wie folgt:
+Wenn Sie eine neue ASP.NET MVC-Anwendung erstellen, ist die Windows-Authentifizierung standardmäßig nicht aktiviert. Die Formular Authentifizierung ist der für MVC-Anwendungen aktivierte Standard Authentifizierungstyp. Sie müssen die Windows-Authentifizierung aktivieren, indem Sie die Webkonfigurationsdatei (Web. config) Ihrer MVC-Anwendung ändern. Suchen Sie den Abschnitt &lt;Authentication&gt;, und ändern Sie ihn so, dass Windows anstelle der Formular Authentifizierung wie folgt verwendet wird:
 
 [!code-xml[Main](authenticating-users-with-windows-authentication-cs/samples/sample1.xml)]
 
-Wenn Sie Windows-Authentifizierung aktivieren, wird Ihre Webserver zum Authentifizieren von Benutzern verantwortlich. Es gibt in der Regel zwei verschiedene Arten von Webservern, mit denen Sie beim Erstellen und Bereitstellen einer ASP.NET MVC-Anwendung.
+Wenn Sie die Windows-Authentifizierung aktivieren, wird Ihr Webserver für die Authentifizierung von Benutzern verantwortlich. In der Regel gibt es zwei verschiedene Typen von Webservern, die Sie beim Erstellen und Bereitstellen einer ASP.NET MVC-Anwendung verwenden.
 
-Zunächst verwenden Sie beim Entwickeln einer MVC-Anwendung kann den ASP.NET Development Web Server mit Visual Studio enthalten. Standardmäßig führt ASP.NET Development Web Server alle Seiten im Kontext des aktuellen Windows-Kontos (jeweils passende Konto, das Sie zum Anmelden verwendet in Windows).
+Beim Entwickeln einer MVC-Anwendung verwenden Sie zunächst den ASP.NET Development-Webserver, der in Visual Studio enthalten ist. Standardmäßig führt der ASP.NET Development-Webserver alle Seiten im Kontext des aktuellen Windows-Kontos aus (welches Konto Sie zum Anmelden bei Windows verwendet haben).
 
-ASP.NET Web Development Server unterstützt auch die NTLM-Authentifizierung. Sie können die NTLM-Authentifizierung aktivieren, indem Sie mit der rechten Maustaste in des Namens des Projekts im Projektmappen-Explorer-Fenster und Eigenschaften auswählen. Klicken Sie dann die Registerkarte "Web" und aktivieren Sie das Kontrollkästchen für die NTLM (siehe Abbildung 1).
+Der ASP.NET Development-Webserver unterstützt auch die NTLM-Authentifizierung. Sie können die NTLM-Authentifizierung aktivieren, indem Sie im Projektmappen-Explorer Fenster mit der rechten Maustaste auf den Namen des Projekts klicken und Eigenschaften auswählen. Wählen Sie als nächstes die Registerkarte Web aus, und aktivieren Sie das Kontrollkästchen NTLM (siehe Abbildung 1).
 
-**Abbildung 1: Aktivieren der NTLM-Authentifizierung für den ASP.NET Development Web Server**
+**Abbildung 1 – Aktivieren der NTLM-Authentifizierung für den ASP.net-entwicklungsweb Server**
 
 ![clip_image002](authenticating-users-with-windows-authentication-cs/_static/image1.jpg)
 
-Für eine Produktions-Web-Anwendung verwenden Sie auf der Hand Sie IIS als Webserver. IIS unterstützt mehrere Typen der Authentifizierung, einschließlich:
+Bei einer produktionsweb Anwendung verwenden Sie dagegen IIS als Webserver. IIS unterstützt verschiedene Arten der Authentifizierung, einschließlich:
 
-- Basic-Authentifizierung –, die als Teil des Protokolls HTTP 1.0 definiert werden. Benutzernamen und Kennwörter im Klartext (Base64-codiert) über das Internet gesendet. -Digest-Authentifizierung – sendet einen Hashcode für ein Kennwort, anstatt das Kennwort, über das Internet. -Integrierte Windows (NTLM)-Authentifizierung – die beste Art der Authentifizierung in Intranetumgebungen, die mithilfe von Windows verwenden. -Authentifizierung – aktiviert die Authentifizierung mit einem Zertifikat für die clientseitige Zertifikat. Das Zertifikat wird ein Windows-Benutzerkonto zugeordnet.
+- Standard Authentifizierung – als Teil des HTTP 1,0-Protokolls definiert. Benutzernamen und Kenn Wörter werden im Klartext (base64-codiert) über das Internet gesendet. -Digest-Authentifizierung – sendet einen Hashwert eines Kennworts anstelle des Kennworts über das Internet. -Integrierte Windows-Authentifizierung (NTLM) – der beste Authentifizierungstyp, der in Intranetumgebungen mithilfe von Windows verwendet werden soll. -Zertifikat Authentifizierung – aktiviert die Authentifizierung mithilfe eines Client seitigen Zertifikats. Das Zertifikat ist einem Windows-Benutzerkonto zugeordnet.
 
 > [!NOTE] 
 > 
-> Eine ausführlichere Übersicht über die unterschiedlichen Arten von Authentifizierung, finden Sie unter [ https://msdn.microsoft.com/library/aa292114(VS.71).aspx ](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
+> Eine ausführlichere Übersicht über die verschiedenen Authentifizierungs Typen finden Sie unter [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
-Sie können den Internetinformationsdienste-Manager verwenden, um einen bestimmten Typ von Authentifizierung zu aktivieren. Denken Sie daran, dass alle Arten der Authentifizierung nicht bei jedem Betriebssystem verfügbar sind. Wenn Sie IIS 7.0 mit Windows Vista verwenden, müssen Sie außerdem die verschiedenen Typen von Windows-Authentifizierung zu aktivieren, bevor sie in der Internetinformationsdienste-Manager angezeigt. Open **Systemsteuerung unter Programme, Programme und Funktionen, aktivieren Sie Windows-Funktionen ein- oder ausschalten**, und erweitern Sie den Knoten für die Internet Information Services (siehe Abbildung 2).
+Sie können Internetinformationsdienste-Manager verwenden, um einen bestimmten Authentifizierungstyp zu aktivieren. Beachten Sie, dass alle Arten der Authentifizierung bei jedem Betriebssystem nicht verfügbar sind. Wenn Sie IIS 7,0 mit Windows Vista verwenden, müssen Sie außerdem die verschiedenen Arten der Windows-Authentifizierung aktivieren, bevor Sie im Internetinformationsdienste Manager angezeigt werden. Öffnen Sie die **Systemsteuerung, Programme, Programme und Funktionen, aktivieren oder deaktivieren Sie Windows-Funktionen**, und erweitern Sie den Knoten Internetinformationsdienste (siehe Abbildung 2).
 
-**Abbildung 2 – aktivieren Windows IIS-features**
+**Abbildung 2 – Aktivieren von Windows IIS-Features**
 
 ![clip_image004](authenticating-users-with-windows-authentication-cs/_static/image2.jpg)
 
-Verwenden Internet Information Services, können Sie aktivieren oder deaktivieren verschiedene Arten der Authentifizierung. Abbildung 3 zeigt beispielsweise, deaktiviert die anonyme Authentifizierung und integrierte Windows (NTLM) durch Aktivieren der Authentifizierung bei Verwendung von IIS 7.0.
+Mithilfe Internetinformationsdienste können Sie unterschiedliche Authentifizierungs Typen aktivieren oder deaktivieren. Abbildung 3 zeigt z. b. die Deaktivierung der anonymen Authentifizierung und die Aktivierung der NTLM-Authentifizierung (Integrated Windows) bei Verwendung von IIS 7,0.
 
-**Abbildung 3: Aktivieren der integrierten Windows-Authentifizierung**
+**Abbildung 3 – Aktivieren der integrierten Windows-Authentifizierung**
 
 ![clip_image006](authenticating-users-with-windows-authentication-cs/_static/image3.jpg)
 
-#### <a name="authorizing-windows-users-and-groups"></a>Autorisieren des Windows-Benutzer und Gruppen
+#### <a name="authorizing-windows-users-and-groups"></a>Autorialisieren von Windows-Benutzern und-Gruppen
 
-Nachdem Sie Windows-Authentifizierung aktiviert haben, können Sie die [Authorize]-Attribut, zum Steuern des Zugriffs auf Controller oder Controlleraktionen. Dieses Attribut kann auf einen gesamten MVC-Controller oder eine bestimmte Controlleraktion angewendet werden.
+Nachdem Sie die Windows-Authentifizierung aktiviert haben, können Sie das Attribut [autorisieren] verwenden, um den Zugriff auf Controller oder Controller Aktionen zu steuern. Dieses Attribut kann auf einen gesamten MVC-Controller oder eine bestimmte Controller Aktion angewendet werden.
 
-Beispielsweise macht der Home-Controller in Codebeispiel 1 drei Aktionen, die mit dem Namen Index() CompanySecrets() und StephenSecrets() verfügbar. Jeder Benutzer kann die Index() Aktion aufrufen. Allerdings können nur Mitglieder der lokalen Windows-Gruppe von Managers CompanySecrets() Aktion aufrufen. Schließlich kann nur die Windows Domänenbenutzer mit dem Namen Stephen (in der Domäne "Redmond") die StephenSecrets() Aktion aufrufen.
+Der Home-Controller in der Liste 1 macht z. b. drei Aktionen mit den Namen Index (), companysecrets () und stephensecrets () verfügbar. Jeder kann die Index ()-Aktion aufrufen. Allerdings können nur Mitglieder der lokalen Windows-Manager-Gruppe die companysecrets ()-Aktion aufrufen. Zum Schluss kann nur der Windows-Domänen Benutzer mit dem Namen Stephen (in der Redmond-Domäne) die Aktion stephensecrets () aufrufen.
 
-**Codebeispiel 1 – Controllers\HomeController. cs**
+**Codebeispiel 1 – controllers\homecontroller.cs**
 
 [!code-csharp[Main](authenticating-users-with-windows-authentication-cs/samples/sample2.cs)]
 
 > [!NOTE] 
 > 
-> Aufgrund von Windows User Account Control (UAC), bei der Arbeit mit Windows Vista oder Windows Server 2008, verhält sich der lokalen Gruppe "Administratoren" anders als andere Gruppen. Die [Authorize]-Attribut wird nicht ordnungsgemäß ein Mitglied der lokalen Gruppe "Administratoren" erkennen, es sei denn, Sie UAC-Einstellungen Ihres Computers ändern.
+> Aufgrund der Windows-Benutzerkontensteuerung (User Account Control, UAC) verhält sich die lokale Gruppe "Administratoren" bei der Arbeit mit Windows Vista oder Windows Server 2008 anders als andere Gruppen. Das Attribut [autorisieren] erkennt nicht ordnungsgemäß ein Mitglied der lokalen Administratoren Gruppe, es sei denn, Sie ändern die UAC-Einstellungen Ihres Computers.
 
-Genau was geschieht, wenn Sie versuchen, eine Controlleraktion aufgerufen wird, ohne die richtigen Berechtigungen, hängt von den Typ der Authentifizierung aktiviert. Standardmäßig wird bei der ASP.NET Development Server verwenden erhalten Sie einfach eine leere Seite. Die Seite wird bereitgestellt, mit einem **401 nicht autorisiert** HTTP-Antwortstatus.
+Genau was geschieht, wenn Sie versuchen, eine Controller Aktion aufzurufen, ohne die richtigen Berechtigungen zu haben, hängt vom Authentifizierungstyp ab, der aktiviert ist. Wenn Sie die ASP.NET Development Server verwenden, erhalten Sie standardmäßig einfach eine leere Seite. Die Seite wird mit dem HTTP-Antwort Status **401 nicht autorisiert** bereitgestellt.
 
-Wenn Sie auf der anderen Seite verwenden Sie IIS mit anonyme Authentifizierung deaktiviert und die Standardauthentifizierung aktiviert, und Sie behalten eine Aufforderung zur Benutzeranmeldung Dialogfeld jedes Mal, die Sie anfordern, dass die geschützte Seite abrufen (siehe Abbildung 4).
+Wenn Sie dagegen IIS mit deaktivierter anonymer Authentifizierung und Standard Authentifizierung verwenden, erhalten Sie immer dann eine Anmelde Dialogfeld-Eingabeaufforderung, wenn Sie die geschützte Seite anfordern (siehe Abbildung 4).
 
-**Abbildung 4 – Standardauthentifizierung-Anmeldedialogfeld**
+**Abbildung 4 – Anmelde Dialogfeld für die Standard Authentifizierung**
 
 ![clip_image008](authenticating-users-with-windows-authentication-cs/_static/image4.jpg)
 
 #### <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial wird erläutert, wie Sie Windows-Authentifizierung im Kontext einer ASP.NET MVC-Anwendung verwenden können. Sie haben gelernt, wie Windows-Authentifizierung in Ihrer Anwendung-Web-Konfigurationsdatei zu aktivieren und Konfigurieren der Authentifizierung mit IIS. Zum Schluss, wie Sie die [Authorize]-Attribut zu verwenden, um den Zugriff auf Controlleraktionen an bestimmte Windows-Benutzer oder Gruppen beschränken.
+In diesem Tutorial wurde erläutert, wie Sie die Windows-Authentifizierung im Kontext einer ASP.NET MVC-Anwendung verwenden können. Sie haben gelernt, wie Sie die Windows-Authentifizierung in der Webkonfigurationsdatei Ihrer Anwendung aktivieren und wie Sie die Authentifizierung mit IIS konfigurieren. Schließlich haben Sie erfahren, wie Sie das Attribut [autorisieren] verwenden, um den Zugriff auf Controller Aktionen auf bestimmte Windows-Benutzer oder-Gruppen einzuschränken.
 
 > [!div class="step-by-step"]
 > [Zurück](authenticating-users-with-forms-authentication-cs.md)

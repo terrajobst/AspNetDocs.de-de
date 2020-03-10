@@ -9,11 +9,11 @@ ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 8edaf1754eddd7b03f1c323d1bee13238582fc99
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74596870"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475341"
 ---
 # <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>Einschließen einer Dateiuploadoption beim Hinzufügen eines neuen Datensatzes (VB)
 
@@ -87,7 +87,7 @@ Nachdem Sie die deklarative Syntax und `GenerateBrochureLink` Methode auf die `U
 
 Der von `Categories` GridView verwendete `CategoriesDataSource` ObjectDataSource bietet derzeit keine Möglichkeit zum Einfügen von Daten. Um das Einfügen über dieses Datenquellen-Steuerelement zu unterstützen, müssen wir die `Insert` Methode einer Methode im zugrunde liegenden Objekt `CategoriesBLL`zuordnen. Insbesondere möchten wir ihn der `CategoriesBLL` Methode zuordnen, die wir in Schritt 2 `InsertWithPicture`hinzugefügt haben.
 
-Klicken Sie zunächst auf den Link Datenquelle konfigurieren des Smarttags ObjectDataSource s. Der erste Bildschirm zeigt das Objekt, für das die Datenquelle konfiguriert ist, `CategoriesBLL`. Belassen Sie diese Einstellung unverändert, und klicken Sie auf Weiter, um mit dem Bildschirm Daten Methoden definieren fortzufahren. Wechseln Sie zur Registerkarte Einfügen, und wählen Sie die `InsertWithPicture`-Methode aus der Dropdown Liste aus. Klicken Sie auf Fertig stellen, um den Assistenten abzuschließen.
+Klicken Sie zunächst auf den Link Datenquelle konfigurieren des Smarttags ObjectDataSource s. Der erste Bildschirm zeigt das Objekt, für das die Datenquelle konfiguriert ist, `CategoriesBLL`. Belassen Sie diese Einstellung unverändert, und klicken Sie auf Weiter, um mit dem Bildschirm Daten Methoden definieren fortzufahren. Wechseln Sie zur Registerkarte Einfügen, und wählen Sie die `InsertWithPicture`-Methode aus der Dropdown Liste aus. Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 [![konfigurieren Sie ObjectDataSource für die Verwendung der insertwithpicture-Methode.](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image9.png)
 
@@ -224,7 +224,7 @@ Wie bereits im Tutorial [Behandeln von Ausnahmen der BLL-und Dal-Ebene in einer 
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample13.vb)]
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Zum Bereitstellen einer webbasierten Schnittstelle zum Hinzufügen von Datensätzen, die Binärdaten enthalten, müssen mehrere Schritte ausgeführt werden. Wenn die Binärdaten direkt in der Datenbank gespeichert werden, ist es wahrscheinlich, dass Sie die Architektur aktualisieren und bestimmte Methoden hinzufügen, um den Fall zu behandeln, in dem Binärdaten eingefügt werden. Nachdem die Architektur aktualisiert wurde, ist der nächste Schritt das Erstellen der einfügeschnittstelle, die mit einer DetailsView durchgeführt werden kann, die so angepasst wurde, dass für jedes binäre Datenfeld ein FileUpload-Steuerelement enthalten ist. Die hochgeladenen Daten können dann im Dateisystem des Webserver s gespeichert oder einem Datenquellen Parameter im Ereignishandler DetailsView s `ItemInserting` zugewiesen werden.
 
@@ -234,7 +234,7 @@ Wir haben nun die Möglichkeit, dem System neue Kategorien mit einer-Grafik und 
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

@@ -9,11 +9,11 @@ ms.assetid: a8d776af-4735-4612-87f6-9f326587f2d3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 3385e1019d9e7a9263fd9513c39b25eb85febbb5
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582021"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455103"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-database-update---9-of-12"></a>Bereitstellen einer ASP.NET-Webanwendung mit SQL Server Compact mithilfe von Visual Studio oder Visual Web Developer: Bereitstellen eines Datenbankupdates-9 von 12
 
@@ -25,7 +25,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 > 
 > Ein Tutorial, das nach der RC-Version von Visual Studio 2012 eingeführte Bereitstellungs Funktionen zeigt, zeigt, wie SQL Server Editionen außer SQL Server Compact bereitgestellt werden, und zeigt, wie Sie die Bereitstellung für Azure App Service Web-Apps ausführen. Weitere Informationen finden Sie unter [ASP.net Web Deployment using Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial erstellen Sie eine Daten Bank Änderung und zugehörige Codeänderungen, testen die Änderungen in Visual Studio und stellen das Update dann sowohl in der Test-als auch in der Produktionsumgebung bereit.
 

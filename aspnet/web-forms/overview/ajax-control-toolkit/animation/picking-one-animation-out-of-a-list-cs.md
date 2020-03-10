@@ -9,11 +9,11 @@ ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2bc203d694792716bbf4f7d7b8d152c589bf99b1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575113"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78483843"
 ---
 # <a name="picking-one-animation-out-of-a-list-c"></a>Auswählen einer Animation aus einer Liste (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Das Framework ermöglicht es dem Programmierer auch, eine Animation aus einer Liste von Animationen auszuwählen, abhängig von der Auswertung von JavaScript-Code.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Animations Steuerelement im ASP.NET AJAX-Steuerelement-Toolkit ist nicht nur ein Steuerelement, sondern ein ganzes Framework zum Hinzufügen von Animationen zu einem Steuerelement. Das Framework ermöglicht es dem Programmierer auch, eine Animation aus einer Liste von Animationen auszuwählen, abhängig von der Auswertung von JavaScript-Code.
 

@@ -9,11 +9,11 @@ ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a11dadfda8b6a189acedd7ac723d85f8b2084324
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569927"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515733"
 ---
 # <a name="determining-what-files-need-to-be-deployed-vb"></a>Festlegen der bereitzustellenden Dateien (VB)
 
@@ -148,7 +148,7 @@ Zusätzlich zum Kopieren der ASP.NET-Markup-und Quell Code Dateien müssen Sie a
 > [!NOTE]
 > Website Projekte können auch eine explizite Kompilierung verwenden. In einem zukünftigen Tutorial wird erläutert, wie ein Website Projekt explizit kompiliert wird.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Bereitstellen einer ASP.NET-Anwendung umfasst das Kopieren der erforderlichen Dateien aus der Entwicklungsumgebung in die Produktionsumgebung. Der genaue Satz von Dateien, die synchronisiert werden müssen, hängt davon ab, ob der Code der ASP.NET-Anwendung explizit oder automatisch kompiliert wird. Welche Kompilierungs Strategie angestellt ist, hängt davon ab, ob Visual Studio für die Verwaltung der ASP.NET-Anwendung mit dem Webanwendungs Projekt Modell oder dem Website Projekt Modell konfiguriert ist.
 
@@ -160,7 +160,7 @@ Nachdem wir nun geprüft haben, welche Dateien zwischen den Entwicklungs-und Pro
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

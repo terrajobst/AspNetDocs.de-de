@@ -9,11 +9,11 @@ ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
 ms.openlocfilehash: 08ced380f3551407d757524dbc84b5feeeb5482b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74601506"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510861"
 ---
 # <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Grundlegendes zu Debuggingfunktionen von ASP.NET AJAX
 
@@ -218,9 +218,9 @@ Die sys. Debug-Klasse stellt mehrere verschiedene Funktionen zur Verfügung, die
 
 | **Funktionsname** | **Beschreibung** |
 | --- | --- |
-| Assert (Bedingung, Meldung, displayCaller) | Bestätigt, dass der Condition-Parameter true ist. Wenn die zu testende Bedingung false ist, wird ein Meldungs Feld verwendet, um den Wert des Nachrichten Parameters anzuzeigen. Wenn der displayCaller-Parameter true ist, zeigt die Methode auch Informationen über den Aufrufer an. |
-| clearTrace () | Löscht Anweisungen aus Ablauf Verfolgungs Vorgängen. |
-| Fehler (Meldung) | Bewirkt, dass das Programm die Ausführung beendet und in den Debugger unterbricht. Der Message-Parameter kann verwendet werden, um einen Grund für den Fehler anzugeben. |
+| assert(condition, message, displayCaller) | Bestätigt, dass der Condition-Parameter true ist. Wenn die zu testende Bedingung false ist, wird ein Meldungs Feld verwendet, um den Wert des Nachrichten Parameters anzuzeigen. Wenn der displayCaller-Parameter true ist, zeigt die Methode auch Informationen über den Aufrufer an. |
+| clearTrace() | Löscht Anweisungen aus Ablauf Verfolgungs Vorgängen. |
+| fail(message) | Bewirkt, dass das Programm die Ausführung beendet und in den Debugger unterbricht. Der Message-Parameter kann verwendet werden, um einen Grund für den Fehler anzugeben. |
 | Ablauf Verfolgung (Meldung) | Schreibt den Message-Parameter in die Ablauf Verfolgungs Ausgabe. |
 | traceDump (Objekt, Name) | Gibt die Daten eines Objekts in einem lesbaren Format aus. Der Name-Parameter kann verwendet werden, um eine Bezeichnung für das Ablaufverfolgungs-Dump bereitzustellen. Alle untergeordneten Objekte innerhalb des Objekts, das gekippt wird, werden standardmäßig geschrieben. |
 
@@ -301,7 +301,7 @@ In Fällen, in denen eine Debug-oder Releaseversion eines benutzerdefinierten Sk
 
 Mithilfe der ScriptMode-Eigenschaft können Sie Anwendungen einfacher Debuggen und den gesamten Prozess vereinfachen. Die Releaseskripts der ASP.NET AJAX-Bibliothek sind recht schwierig zu durchlaufen und zu lesen, da die Code Formatierung entfernt wurde, während die Debugskripts speziell für Debugzwecke formatiert sind.
 
-## <a name="conclusion"></a>Schlussfolgerung
+## <a name="conclusion"></a>Zusammenfassung
 
 Die ASP.NET AJAX-Technologie von Microsoft bietet eine solide Grundlage zum Entwickeln von AJAX-fähigen Anwendungen, die die Gesamtleistung des Endbenutzers verbessern können. Wie bei jeder Programmier Technologie treten jedoch auch Fehler und andere Anwendungsprobleme auf. Wenn Sie die verschiedenen verfügbaren Debugoptionen kennen, können Sie viel Zeit sparen und zu einem stabileren Produkt führen.
 
@@ -314,4 +314,4 @@ Dan Wahlin (Microsoft Most Valuable Professional für ASP.net und XML Web Servic
 Scott Cate arbeitet seit 1997 mit Microsoft-Webtechnologien und ist der Präsident von myKB.com ([www.myKB.com](http://www.myKB.com)), wo er sich darauf spezialisiert hat, ASP.NET basierte Anwendungen zu schreiben, die sich auf die Software Lösungen der Wissensdatenbank konzentrieren. Scott kann über [scott.cate@myKB.com](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com) per e-Mail kontaktiert werden.
 
 > [!div class="step-by-step"]
-> [Vorheriges](understanding-asp-net-ajax-web-services.md)
+> [Previous](understanding-asp-net-ajax-web-services.md)

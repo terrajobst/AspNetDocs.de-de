@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
-title: Verbindungs-Dichte SignalR mit Crank testen | Microsoft-Dokumentation
+title: Signalr-Verbindungs Dichte Tests mit Kurbel | Microsoft-Dokumentation
 author: bradygaster
 description: Testen der Verbindungsdichte in SignalR mit Crank
 ms.author: bradyg
@@ -9,61 +9,61 @@ ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
 ms.openlocfilehash: 901e039fbb81651ed18d560c99745b7e7f716e01
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116089"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449871"
 ---
 # <a name="signalr-connection-density-testing-with-crank"></a>Testen der Verbindungsdichte in SignalR mit Crank
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> Dieser Artikel beschreibt, wie das Crank-Tool zum Testen einer Anwendung mit mehreren simulierten Clients.
+> In diesem Artikel wird beschrieben, wie Sie mit dem Tool "Kurbel" eine Anwendung mit mehreren simulierten Clients testen.
 
-Sobald Ihre Anwendung in der hostumgebung (entweder eine Azure web-Rolle, IIS, oder für selbst gehostete Einsatz von Owin) ausgeführt wird, können Sie die Antwort der Anwendung auf ein hohes Maß an Verbindung Dichte, die mit dem Tool Crank testen. Die Hostingumgebung kann ein Server (Internet Information Services, IIS), einem Owin-Host oder einer Azure-Webrolle sein. (Hinweis: Leistungsindikatoren sind nicht verfügbar auf Azure App Service-Web-Apps, sodass Sie nicht um ein Dichte Verbindungstest Leistungsdaten erhalten.)
+Sobald Ihre Anwendung in ihrer Hostingumgebung (entweder eine Azure-webrolle, IIS oder selbstgeh ostet mithilfe von owin) ausgeführt wird, können Sie die Antwort der Anwendung auf ein hohes Maß an Verbindungs Dichte mit dem Kurbel Tool testen. Bei der Hostingumgebung kann es sich um einen Internetinformationsdienste (IIS)-Server, einen owin-Host oder eine Azure-webrolle handeln. (Hinweis: Leistungsindikatoren sind für Azure App Service-Web-Apps nicht verfügbar, sodass Sie keine Leistungsdaten aus einem Verbindungs Dichte Test erhalten können.)
 
-Verbindung Dichte bezieht sich auf die Anzahl der gleichzeitigen TCP-Verbindungen, die auf einem Server hergestellt werden kann. Jede TCP-Verbindung eine eigene Rechenaufwand, und Öffnen einer großen Anzahl von Verbindungen im Leerlauf werden schließlich einen Speicherengpass erstellen.
+Die Verbindungs Dichte bezieht sich auf die Anzahl der gleichzeitigen TCP-Verbindungen, die auf einem Server eingerichtet werden können. Jede TCP-Verbindung verursacht einen eigenen Aufwand, und das Öffnen einer großen Anzahl von Verbindungen im Leerlauf erzeugt letztendlich einen Speicher Engpass.
 
-[SignalR-Codebasis](https://github.com/signalr/signalr) enthält ein Auslastungstest-Tool namens **Anforderungen**. Die neueste Version des Crank befinden sich [der entwicklungsverzweigung](https://github.com/SignalR/signalr/tree/dev) auf GitHub. Sie können eine ZIP-Archiv der entwicklungsverzweigung von SignalR-Codebasis Datei [hier](https://github.com/SignalR/SignalR/archive/dev.zip).
+[Die signalr-Codebasis](https://github.com/signalr/signalr) enthält ein Auslastungs Test Tool mit dem Namen " **Kurbel**". Die neueste Version der Kurbel finden Sie in [der Verzweigung dev](https://github.com/SignalR/signalr/tree/dev) auf GitHub. Sie können [hier](https://github.com/SignalR/SignalR/archive/dev.zip)ein ZIP-Archiv der dev-Verzweigung der signalr-Codebasis herunterladen.
 
-Crank kann zu vollständig sättigenden der Arbeitsspeicher des Servers verwendet werden, um die Gesamtzahl von Verbindungen im Leerlauf auf die Serverhardware möglich zu berechnen. Alternativ können Sie auch Kurbel verwenden für den Auslastungstest den Server unter eine bestimmte Menge an Arbeitsspeicher durch langsame Verbindungen bis eine bestimmte Anzahl oder einen bestimmten speicherschwellenwert erreicht ist.
+Die Kurbel kann verwendet werden, um den Arbeitsspeicher des Servers vollständig zu verzieren und so die Gesamtzahl der Verbindungen im Leerlauf auf der Server Hardware zu berechnen. Alternativ dazu können Sie auch die Kurbel zum Auslastungs Test des Servers mit einer bestimmten Menge an Speicherauslastung verwenden, indem Sie Verbindungen bis zu einer bestimmten Anzahl oder einen bestimmten Arbeitsspeicher Schwellenwert erreichen.
 
-Beim Testen ist es wichtig, die remote-Clients zu verwenden, um einen beliebigen Wettbewerb, für die Ressourcen (z. B. TCP-Verbindungen und Arbeitsspeicher) zu vermeiden. Überwachen Sie den Clients, um sicherzustellen, dass sie kein Engpässe erreichen, die den Server verhindert möglicherweise, dessen voller Kapazität (Arbeitsspeicher oder CPU) erreicht. Sie müssen möglicherweise die Anzahl der Clients zu erhöhen, um vollständig vom Server geladen werden.
+Beim Testen ist es wichtig, dass Sie Remote Clients verwenden, um den Wettbewerb von Ressourcen (d.h. TCP-Verbindungen und Arbeitsspeicher) zu vermeiden. Überwachen Sie die Clients, um sicherzustellen, dass keine Engpässe auftreten, die möglicherweise verhindern, dass der Server seine volle Kapazität erreicht (Arbeitsspeicher oder CPU). Möglicherweise müssen Sie die Anzahl der Clients erhöhen, um den Server vollständig zu laden.
 
-### <a name="running-a-connection-density-test"></a>Ausführen eines Tests der Verbindungs-Dichte
+### <a name="running-a-connection-density-test"></a>Ausführen eines Verbindungs Dichte Tests
 
-In diesem Abschnitt wird beschrieben, die erforderlichen Schritte zum ein Verbindungstest-Dichte auf einer SignalR-Anwendung ausgeführt wird.
+In diesem Abschnitt werden die Schritte beschrieben, die zum Ausführen eines Verbindungs Dichte Tests für eine signalr-Anwendung erforderlich sind.
 
-1. Herunterladen und erstellen die [entwicklungsverzweigung von SignalR-Codebasis](https://github.com/SignalR/SignalR/archive/dev.zip). Wechseln Sie in einer Eingabeaufforderung den Befehl zu &lt;Projektverzeichnis&gt;\src\Microsoft.AspNet.SignalR.Crank\bin\debug.
-2. Stellen Sie Ihre Anwendung in der vorgesehenen hostumgebung bereit. Notieren Sie sich den Endpunkt die Anwendung verwendeten; z. B. in der Anwendung erstellt, der [Tutorials: Erste Schritte](../getting-started/tutorial-getting-started-with-signalr.md), der Endpunkt ist `http://<yourhost>:8080/signalr`.
-3. Installieren Sie [SignalR-Leistungsindikatoren](signalr-performance.md#perfcounters) auf dem Server. Wenn Ihre Anwendung in Azure ausgeführt wird, finden Sie unter [mithilfe von SignalR-Leistungsindikatoren in einer Azure-Webrolle](using-signalr-performance-counters-in-an-azure-web-role.md).
+1. Laden Sie den [dev-Branch der signalr](https://github.com/SignalR/SignalR/archive/dev.zip)-Codebasis herunter, und erstellen Sie ihn. Navigieren Sie in einer Eingabeaufforderung zu &lt;Projektverzeichnis&gt;\src\Microsoft.Aspnet.SignalR.Crank\bin\debug.
+2. Stellen Sie Ihre Anwendung in der vorgesehenen Hostingumgebung bereit. Notieren Sie sich den Endpunkt, den die Anwendung verwendet. Beispielsweise wird in der im [Tutorial "Getting Started](../getting-started/tutorial-getting-started-with-signalr.md)" erstellten Anwendung der Endpunkt `http://<yourhost>:8080/signalr`.
+3. Installieren Sie [signalr-Leistungsindikatoren](signalr-performance.md#perfcounters) auf dem Server. Wenn Ihre Anwendung in Azure ausgeführt wird, finden Sie unter [Verwenden von signalr-Leistungsindikatoren in einer Azure-webrolle](using-signalr-performance-counters-in-an-azure-web-role.md)Weitere Informationen.
 
-Sobald heruntergeladen und erstellt die Codebasis und Leistungsindikatoren auf dem Host installiert haben, das Befehlszeilentool "Crank" finden Sie in der `src\Microsoft.AspNet.SignalR.Crank\bin\Debug` Ordner.
+Nachdem Sie die CodeBase heruntergeladen und erstellt und Leistungsindikatoren auf Ihrem Host installiert haben, befindet sich das Befehlszeilen Tool "Kurbel" im Ordner "`src\Microsoft.AspNet.SignalR.Crank\bin\Debug`".
 
-Optionen für das Tool Crank sind verfügbar:
+Folgende Optionen sind für das Tool "Kurbel" verfügbar:
 
-- **/?**: Zeigt die Hilfe an. Die verfügbaren Optionen werden auch angezeigt, wenn die **Url** Parameter ausgelassen wird.
-- **/Url**: Die URL für SignalR-Verbindungen. Dieser Parameter ist erforderlich. Für eine SignalR-Anwendung, die Verwendung der standardzuordnung, endet der Pfad in "/ Signalr".
-- **/Transport**: Der Name des Transports verwendet werden soll. Der Standardwert ist `auto`, wählt die verfügbare Protokoll. Unter anderem `WebSockets`, `ServerSentEvents`, und `LongPolling` (`ForeverFrame` ist keine Option für Crank, seit der .NET Client statt Internet Explorer verwendet wird). Weitere Informationen dazu, wie SignalR Transporte auswählt, finden Sie unter [Transporte und Fallbacks](../getting-started/introduction-to-signalr.md#transports).
-- **/BatchSize**: Die Anzahl der Clients, die in jedem Batch hinzugefügt werden soll. Der Standardwert ist 50.
-- **/ConnectInterval**: Das Intervall in Millisekunden zwischen dem Hinzufügen von Verbindungen. Der Standard ist 500.
-- **/ Verbindungen**: Die Anzahl der Verbindungen verwendet, um Auslastungstest-Anwendung. Der Standardwert ist 100.000.
-- **/ConnectTimeout**: Das Timeout in Sekunden vor Abbruch des Testlaufs. Der Standardwert ist 300.
-- **MinServerMBytes**: Die minimale Megabyte (MB) erreicht. Der Standard ist 500.
-- **SendBytes**: Die Größe der Nutzlast in Bytes an den Server gesendet werden soll. Der Standard ist 0.
-- **SendInterval**: Die Verzögerung in Millisekunden zwischen Nachrichten an den Server. Der Standard ist 500.
-- **SendTimeout**: Das Timeout in Millisekunden für Nachrichten an den Server. Der Standardwert ist 300.
-- **ControllerUrl**: Die Url, in denen ein Client einen Controller-Hub hostet. Der Standardwert ist null (kein Controller-Hub). Der Controller-Hub wurde gestartet, beim Start der Sitzung Crank. keine weiteren erfolgt, wenden Sie sich an, zwischen dem Controller-Hub und einer Kurbel.
-- **NumClients**: Die Anzahl der simulierten Clients an die Anwendung eine Verbindung herzustellen. Der Standardwert ist 1.
-- **Logfile**: Der Dateiname für die Protokolldatei für den Testlauf. Die Standardeinstellung ist `crank.csv`.
-- **SampleInterval**: Die Zeit in Millisekunden zwischen Proben von Leistungsindikatoren. Der Standard ist 1000.
-- **SignalRInstance**: Der Instanzname für die Leistungsindikatoren auf dem Server. Der Standardwert ist der Zustand der Client-Verbindung verwenden.
+- **/?** : Zeigt den Hilfe Bildschirm an. Die verfügbaren Optionen werden auch angezeigt, wenn der **URL** -Parameter ausgelassen wird.
+- **/URL**: die URL für signalr-Verbindungen. Dieser Parameter ist erforderlich. Für eine signalr-Anwendung, die die Standard Zuordnung verwendet, endet der Pfad mit "/signalr".
+- **/Transport**: der Name des verwendeten Transports. Der Standardwert ist `auto`, bei dem das am besten verfügbare Protokoll ausgewählt wird. Zu den Optionen gehören `WebSockets`, `ServerSentEvents`und `LongPolling` (`ForeverFrame` ist keine Option für die Kurbel, da der .NET-Client anstelle von Internet Explorer verwendet wird). Weitere Informationen dazu, wie signalr Transporte auswählt, finden Sie unter [Transporte und Fallbacks](../getting-started/introduction-to-signalr.md#transports).
+- **/BatchSize**: die Anzahl der Clients, die in jedem Batch hinzugefügt werden. Der Standardwert ist 50.
+- **/ConnectInterval**: das Intervall (in Millisekunden) zwischen dem Hinzufügen von Verbindungen. Der Standard ist 500.
+- **/Connections**: die Anzahl von Verbindungen, die zum Laden der Anwendung verwendet werden. Der Standardwert ist 100.000.
+- **/ConnectTimeout**: das Timeout in Sekunden, bevor der Test abgebrochen wird. Der Standardwert ist 300.
+- **Minservermb**: die minimale Anzahl von Server Megabyte, die erreicht werden müssen. Der Standard ist 500.
+- **SendBytes**: die Größe der Nutzlast, die an den Server gesendet wird (in Bytes). Die Standardeinstellung ist 0.
+- **Sendinterval**: die Verzögerung in Millisekunden zwischen Nachrichten an den Server. Der Standard ist 500.
+- **SendTimeout**: das Timeout in Millisekunden für Nachrichten an den Server. Der Standardwert ist 300.
+- **Controllerurl**: die URL, unter der ein Client einen Controller-Hub hostet. Der Standardwert ist NULL (kein Controller-Hub). Der controllerhub wird beim Start der Kurbel Sitzung gestartet. Es wurde kein weiterer Kontakt zwischen dem Controller-Hub und der Kurbel ausgelöst.
+- **Numclients**: die Anzahl der simulierten Clients, die eine Verbindung mit der Anwendung herstellen. Der Standardwert ist 1.
+- **Protokolldatei**: der Dateiname für die Protokolldatei für den Testlauf. Der Standardwert lautet `crank.csv`.
+- **Sampleingeterval**: die Zeit in Millisekunden zwischen Stichproben von Leistungs Zählern. Der Standardwert lautet 1000.
+- **Signalrinstance**: der Instanzname für die Leistungsindikatoren auf dem Server. Standardmäßig wird der Client Verbindungsstatus verwendet.
 
 ### <a name="example"></a>Beispiel
 
-Der folgende Befehl testet eine Site mit dem Namen `pfsignalr` mithilfe von 100 Verbindungen in Azure, die eine Anwendung an Port 8080 mit einem Hub, mit dem Namen "ControllerHub" hostet.
+Mit dem folgenden Befehl wird eine Website mit dem Namen `pfsignalr` in Azure getestet, die eine Anwendung auf Port 8080 mit einem Hub mit dem Namen "controllerhub" unter Verwendung von 100 Verbindungen hostet.
 
 `crank /Connections:100 /Url:http://pfsignalr.cloudapp.net:8080/signalr`

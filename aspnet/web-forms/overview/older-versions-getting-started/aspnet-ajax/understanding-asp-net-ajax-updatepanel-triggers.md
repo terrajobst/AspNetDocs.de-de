@@ -9,11 +9,11 @@ ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
 ms.openlocfilehash: b1cc869f373d4f8283b4d92af74707c3f11fef61
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588843"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440541"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>Grundlegendes zu UpdatePanel-Triggern in ASP.NET AJAX
 
@@ -129,7 +129,7 @@ Wie bereits im obigen Screenshot ersichtlich ist, ist die aktuellste Schaltfläc
 
 Es sollte jedoch darauf hingewiesen werden, dass die Zeit in der Seite\_Lade Ereignisses initialisiert wurde, die Zeit jedoch ordnungsgemäß erhöht worden wäre. Folglich sollten Entwickler darauf achten, dass der entsprechende Code bei den entsprechenden Ereignis Handlern ausgeführt wird, und die Verwendung von Seiten\_laden vermeiden, wenn ein Steuerelement-Ereignishandler geeignet wäre.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Das Update Panel-Steuerelement von ASP.NET AJAX Extensions ist vielseitiger und kann eine Reihe von Methoden zum Identifizieren von Steuerelement Ereignissen verwenden, die die Aktualisierung bewirken. Sie unterstützt das automatische Aktualisieren durch die untergeordneten Steuerelemente, kann aber auch auf Steuerungs Ereignisse an anderer Stelle auf der Seite reagieren.
 

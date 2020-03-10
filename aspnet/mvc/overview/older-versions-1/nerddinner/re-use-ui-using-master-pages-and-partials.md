@@ -1,137 +1,137 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: Nutzen Sie die Benutzeroberfläche mit Masterseiten und Teilausführungen | Microsoft-Dokumentation
+title: Erneutes Verwenden der Benutzeroberfläche mithilfe von Master Seiten und partialen Microsoft-Dokumentation
 author: microsoft
-description: Schritt 7 untersucht die Methoden, die wir "DRY-Prinzips" anwenden können in unseren Vorlagen anzeigen, um codeduplikate, mithilfe von Teilansichten, Vorlagen und Masterseiten zu vermeiden.
+description: In Schritt 7 sehen Sie, wie wir das "trockene Prinzip" innerhalb unserer Ansichts Vorlagen anwenden können, um Code Duplikate mithilfe von partiellen Ansichts Vorlagen und Masterseiten zu vermeiden.
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
 ms.openlocfilehash: 0b17cb6ac14b7f187bf1f175097a37907689d46e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128351"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468723"
 ---
 # <a name="re-use-ui-using-master-pages-and-partials"></a>Wiederverwenden der Benutzeroberfläche mit Masterseiten und Teilausführungen
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [PDF herunterladen](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> Dies ist Schritt 7 der ein kostenloses ["NerdDinner"-webanwendungstutorial](introducing-the-nerddinner-tutorial.md) , die führt – Exemplarische Vorgehensweise erstellen eine kleine, jedoch abgeschlossen haben, Web-Anwendung mithilfe von ASP.NET MVC-1.
+> Dies ist Schritt 7 des kostenlosen ["nerddinner"](introducing-the-nerddinner-tutorial.md) -Lernprogramms, in dem erläutert wird, wie eine kleine, aber komplette Webanwendung mit ASP.NET MVC 1 erstellt wird.
 > 
-> Schritt 7 untersucht die Methoden, die wir "DRY-Prinzips" anwenden können in unseren Vorlagen anzeigen, um codeduplikate, mithilfe von Teilansichten, Vorlagen und Masterseiten zu vermeiden.
+> Schritt 7 zeigt, wie wir das "trockene Prinzip" innerhalb unserer Ansichts Vorlagen anwenden können, um Code Duplikate mithilfe von partiellen Ansichts Vorlagen und Masterseiten zu vermeiden.
 > 
-> Wenn Sie ASP.NET MVC 3 verwenden, sollten Sie Sie folgen den [erste Schritte mit MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) oder [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) Tutorials.
+> Wenn Sie ASP.NET MVC 3 verwenden, empfiehlt es sich, die Tutorials " [Getting Started with MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) " oder " [MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md) " zu befolgen.
 
-## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner, Schritt 7: Teilansichten und Masterseiten
+## <a name="nerddinner-step-7-partials-and-master-pages"></a>Nerddinner STEP 7: partiale und Master Seiten
 
-Einer der die Entwurfsphilosophien, die ASP.NET MVC umfasst ist das "Ist nicht wiederhole dich"-Prinzip (häufig als "DRY" bezeichnet). Eine DRY Gestaltung hilft dabei, entfernen die Duplizierung von Code und die Logik, die letztlich wird von Anwendungen, die zum Erstellen schneller und einfacher zu verwalten.
+Zu den Entwurfs Philosophien ASP.NET MVC gehört das Prinzip "keine Wiederholung selbst" (häufig als "trocken" bezeichnet). Ein trockener Entwurf hilft dabei, die Duplizierung von Code und Logik zu vermeiden, wodurch Anwendungen schneller erstellt und leichter zu verwalten sind.
 
-Wir haben das DRY-Prinzip angewendet wird, in einigen Szenarios NerdDinner gesehen. Einige Beispiele: unsere Validierungslogik wird implementiert, in unserem Modellebene bearbeitungs-erzwungen werden, und erstellen in unserem Controller; Szenarien ermöglicht Wir verwenden wieder die ansichtsvorlage "NotFound" auf die Aktionsmethoden bearbeiten "," Details "und" Delete; Wir verwenden eine Konvention - Benennungsmuster mit unseren Vorlagen anzeigen, die entfällt die Notwendigkeit, den Namen explizit anzugeben, beim Aufrufen der Hilfsmethode View(); und wir verwenden Sie erneut die DinnerFormViewModel-Klasse für Bearbeitungs- und Aktion Szenarien zu erstellen.
+Wir haben bereits gesehen, wie das Dry-Prinzip in einigen unserer nerddinner-Szenarios angewendet wurde. Einige Beispiele: unsere Validierungs Logik wird in unserer Modell Ebene implementiert, sodass Sie sowohl in Bearbeitungs-als auch in Erstellungs Szenarien in unserem Controller erzwungen werden kann. Wir verwenden die "NotFound"-Ansichts Vorlage in den Aktionsmethoden "Edit", "Details" und "Delete" erneut. Wir verwenden ein Konvention-Benennungs Muster mit unseren Ansichts Vorlagen, sodass der Name nicht explizit angegeben werden muss, wenn die View ()-Hilfsmethode aufgerufen wird. und wir verwenden die Klasse "dinnerformviewmodel" für Bearbeitungs-und Aktions Szenarien erneut.
 
-Jetzt sehen wir uns Möglichkeiten, die wir "DRY-Prinzips" anwenden, können in unseren Vorlagen anzeigen, um codeduplikate gibt es auch zu entfernen.
+Sehen wir uns nun an, wie wir das "trockene Prinzip" innerhalb unserer Ansichts Vorlagen anwenden können, um die Code Duplizierung ebenfalls zu vermeiden.
 
-### <a name="re-visiting-our-edit-and-create-view-templates"></a>Besuchen Sie unsere bearbeiten erneut aus, und erstellen Sie Vorlagen anzeigen
+### <a name="re-visiting-our-edit-and-create-view-templates"></a>Erneutes Besuchen unserer Vorlagen zum Bearbeiten und Erstellen von Ansichten
 
-Zurzeit verwenden wir zwei verschiedenen Ansichtsvorlagen – "Edit.aspx" und "Create.aspx" –, um unsere Dinner-Formular-Benutzeroberfläche anzuzeigen. Ein sofortvergleich davon visual hervorgehoben werden wie ähnlich. Im folgenden sehen, wie die erstellen-Form aussieht:
+Zurzeit verwenden wir zwei verschiedene Ansichts Vorlagen – "Edit. aspx" und "Create. aspx" –, um die Dinner Form-Benutzeroberfläche anzuzeigen. Bei einem schnellen visuellen Vergleich werden Sie hervorgehoben, wie ähnlich Sie sind. Im folgenden sehen Sie, wie das Formular erstellen aussieht:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image1.png)
 
-Und was das Formular "Bearbeiten" sieht wie folgt aus:
+Das Formular "Bearbeiten" sieht wie folgt aus:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image2.png)
 
-Es ist nicht so großen Unterschied? Außer den Titel und die Header-Text sind die Steuerelemente des Formulars Layout und die Eingabe identisch.
+Es gibt keinen großen Unterschied? Anders als der Titel und der Header Text sind das Formularlayout und die Eingabe Steuerelemente identisch.
 
-Wenn wir die "Edit.aspx" und "Create.aspx" Ansichtsvorlagen öffnen, die gefunden werden, die enthalten sie identische Formular Layout und die Eingabe-Steuerelement-Code. Diese Duplizierung bedeutet, dass wir letztendlich Änderungen vornehmen, zweimal jedes Mal, wenn wir einführen, oder ändern Sie eine neue Eigenschaft von Dinner - handelt es sich nicht gut.
+Wenn wir die Ansichts Vorlagen "Edit. aspx" und "Create. aspx" öffnen, werden Sie feststellen, dass Sie ein identisches Formularlayout und Eingabe Steuerungs Code enthalten. Diese Duplizierung bedeutet, dass wir Änderungen am Ende jedes Mal zweimal vornehmen müssen, wenn wir eine neue Dinner-Eigenschaft einführen oder ändern, was nicht gut ist.
 
-### <a name="using-partial-view-templates"></a>Mithilfe von Teilansichten, Vorlagen
+### <a name="using-partial-view-templates"></a>Verwenden von partiellen Ansichts Vorlagen
 
-ASP.NET MVC unterstützt die Möglichkeit, "Teilansicht" Vorlagen zu definieren, die verwendet werden können, um Anzeigen der Renderinglogik für einen untergeordneten Teil einer Seite zu kapseln. "Teilansichten" bieten eine gute Möglichkeit zum Rendering der ansichtslogik einmal definieren, und klicken Sie dann erneut verwenden sie an mehreren Stellen innerhalb einer Anwendung.
+ASP.NET MVC unterstützt die Möglichkeit, partielle Ansichts Vorlagen zu definieren, die verwendet werden können, um die Ansichts-Renderinglogik für einen Teilbereich einer Seite zu kapseln. "Partiale" bieten eine nützliche Möglichkeit zum einmaligen Definieren der Ansichts-Renderinglogik und zur anschließenden erneuten Verwendung an mehreren Stellen in einer Anwendung.
 
-Um "DRY-Up" unsere Edit.aspx "und" Create.aspx Ansicht Vorlage Datenduplizierung zu unterstützen, können wir eine Teilansicht-Vorlage, die mit dem Namen "DinnerForm.ascx", die das Layout von Datenformularen und Eingabeelementen sowohl kapselt erstellen. Wir erreichen dies, indem mit der rechten Maustaste auf unser/Views/Dinners-Verzeichnis, und wählen die "Add -&gt;Ansicht" Menübefehl:
+Wir können eine Teil Ansichts Vorlage mit dem Namen "dinnerform. ascx" erstellen, die das Formularlayout und die Eingabeelemente kapselt, die beides gemeinsam sind, um die "Bereinigung" der Ansichts Vorlage "Edit. aspx" und "Create. aspx" zu unterstützen. Hierzu klicken Sie mit der rechten Maustaste auf das Verzeichnis "/Views/Dinners" und wählen den Menübefehl "Add-&gt;View" aus:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image3.png)
 
-Dadurch wird das Dialogfeld "Ansicht hinzufügen" angezeigt. Den Namen der neuen Ansicht, wir möchten "DinnerForm" zu erstellen, aktivieren Sie das Kontrollkästchen "Eine Teilansicht erstellen" im Dialogfeld und anzugeben, dass es eine DinnerFormViewModel-Klasse übergeben wird:
+Dadurch wird das Dialogfeld "Ansicht hinzufügen" angezeigt. Wir benennen die neue Ansicht, die Sie als "dinnerform" erstellen möchten, aktivieren das Kontrollkästchen "partielle Ansicht erstellen" im Dialogfeld und geben an, dass wir ihr eine dinnerformviewmodel-Klasse übergeben werden:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image4.png)
 
-Wenn wir auf die Schaltfläche "Hinzufügen" klicken, wird Visual Studio eine neue "DinnerForm.ascx" ansichtsvorlage für uns innerhalb des Verzeichnisses "\Views\Dinners" erstellt.
+Wenn wir auf die Schaltfläche "Add" (hinzufügen) klicken, erstellt Visual Studio im Verzeichnis "\views\dinner" eine neue "dinnerform. ascx"-Ansichts Vorlage für uns.
 
-Wir können dann kopieren und Einfügen des Formularlayouts von doppelten / Steuercode aus unserer Edit.aspx/ Create.aspx Ansichtsvorlagen in unserer neuen "DinnerForm.ascx" Teilansicht Vorlage eingegeben:
+Anschließend können Sie den doppelten Formularlayout-/eingabesteuerungscode aus den Ansichts Vorlagen "Edit. aspx/Create. aspx" in unsere neue Teil Ansichts Vorlage "dinnerform. ascx" Kopieren und einfügen:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample1.aspx)]
 
-Wir können dann aktualisieren, dass unsere Ansichtsvorlagen bearbeiten und erstellen, zum Aufrufen der DinnerForm partielle Vorlage und zum Beseitigen der Duplizierung des Formulars. Wir können dies vom aufrufenden Html.RenderPartial("DinnerForm") in unserer Ansichtsvorlagen durchführen:
+Anschließend können wir unsere Vorlagen zum Bearbeiten und Erstellen von Ansichten aktualisieren, um die Teil Vorlage "dinnerform" aufzurufen und die Formular Duplizierung auszuschließen. Dies erreichen Sie, indem Sie "HTML. renderpartial" ("dinnerform") innerhalb unserer Ansichts Vorlagen aufrufen:
 
-##### <a name="createaspx"></a>Create.aspx
+##### <a name="createaspx"></a>Create. aspx
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample2.aspx)]
 
-##### <a name="editaspx"></a>Edit.aspx
+##### <a name="editaspx"></a>Edit. aspx
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample3.aspx)]
 
-Sie können den Pfad der gewünschte beim Aufrufen von Html.RenderPartial partielle Vorlage explizit qualifizieren (z. B.: ~ Views/Dinners/DinnerForm.ascx "). In unserem Code oben jedoch nutzen das auf Konventionen basierendes Muster in ASP.NET MVC, und wir einfach "DinnerForm" als Namen für die partielle zum Rendern angeben. Wenn wir dies tun sucht ASP.NET MVC zuerst in das konventionsbasierte Ansichtenverzeichnis ("dinnerscontroller" / Views/Dinners wäre). Wenn sie nicht die partielle Vorlage findet sucht es es klicken Sie dann dafür im Verzeichnis /Views/Shared.
+Sie können den Pfad der partiellen Vorlage explizit qualifizieren, wenn Sie HTML. renderpartial aufrufen (z. b.: ~ views/Dinner/dinnerform. ascx "). In unserem obigen Code nutzen wir jedoch das auf Konventionen basierende Benennungs Muster innerhalb von ASP.NET MVC und legen einfach "dinnerform" als Namen der zu Rendering enden partiellen Angabe fest. Wenn dies der Fall ist ASP.net wird MVC zuerst im Verzeichnis für die Konventionen auf Konventionen angezeigt (für dinnerscontroller wäre dies/views/Dinners). Wenn die partielle Vorlage dort nicht gefunden wird, wird Sie im Verzeichnis "/Views/Shared" angezeigt.
 
-Wenn nur der Name der Teilansicht Html.RenderPartial() aufgerufen wird, wird ASP.NET MVC die gleichen Modell und "ViewData" Dictionary-Objekte, die von der aufrufenden ansichtsvorlage verwendet an die Teilansicht übergeben. Es gibt auch überlastete Versionen der Html.RenderPartial(), mit denen Sie eine alternative Modellobjekt und/oder ViewData-Wörterbuch für die Teilansicht verwendet übergeben. Dies ist nützlich für Szenarien, in dem Sie nur eine Teilmenge des vollständigen Modells/ViewModels übergeben möchten.
+Wenn HTML. renderpartial () nur mit dem Namen der partiellen Ansicht aufgerufen wird, übergibt ASP.NET MVC an die partielle Ansicht dieselben Model-und ViewData-Wörterbuch Objekte, die von der aufrufenden Ansichts Vorlage verwendet werden. Alternativ gibt es überladene Versionen von HTML. renderpartial (), die es Ihnen ermöglichen, ein alternatives Modell Objekt und/oder ViewData-Wörterbuch für die zu verwendende Teilansicht zu übergeben. Dies ist nützlich für Szenarien, in denen nur eine Teilmenge des vollständigen Modells/ViewModel übergeben werden soll.
 
-| **Seite-Thema: Warum &lt;%%&gt; anstelle von &lt;% = %&gt;?** |
+| **Seitiges Thema: Warum &lt;%%&gt; anstelle von &lt;% =%&gt;?** |
 | --- |
-| Einer der geringfügige Vorteile, die Sie haben, mit dem obigen Code bemerkt vielleicht wird die Verwendung von einer &lt;%%&gt; anstelle von Sperren ein &lt;% = %&gt; blockieren, wenn Html.RenderPartial() aufrufen. &lt;% = %&gt; Blöcke in ASP.NET anzugeben, dass ein Entwickler zum Rendern eines angegebenen Werts möchte (z. B.: &lt;% = "Hello" %&gt; würde "Hello" Rendern). &lt;%%&gt; Blöcke stattdessen zeigen an, dass der Entwickler kann Code ausgeführt werden, dass eine Ausgabe, die darin enthaltenen gerendert explizit ausgeführt werden muss (z. B.: &lt;Response.Write("Hello") %&gt;. Der Grund wir verwenden eine &lt;%%&gt; Block mit unserem Html.RenderPartial Code oben ist, da die Html.RenderPartial()-Methode gibt keine Zeichenfolge zurück, und stattdessen gibt die Inhalte direkt an die aufrufende ansichtsvorlage den Ausgabestream. Dies wird zur Verbesserung der Leistung Effizienz, und hierfür ist es erforderlich ist, erstellen ein (potenziell sehr großen) temporäre Zeichenfolgenobjekt, das verhindert. Dies verringert die speicherauslastung und verbessert den Durchsatz der gesamten Anwendung. Ein häufiger Fehler, die beim Verwenden von Html.RenderPartial() vergessen besteht, fügen Sie ein Semikolon am Ende des Aufrufs, wenn es innerhalb einer &lt;%%&gt; Block. Beispielsweise wird dieser Code verursacht einen Compilerfehler: &lt;Html.RenderPartial("DinnerForm") %&gt; müssen Sie stattdessen schreiben: &lt;% Html.RenderPartial("DinnerForm"); %&gt; Grund hierfür ist, &lt;%%&gt; Blöcke sind eigenständige codeanweisungen, und bei Verwendung C# codeanweisungen müssen mit einem Semikolon beendet werden. |
+| Eine der kleinen Probleme, die Sie möglicherweise mit dem obigen Code bemerkt haben, besteht darin, dass wir einen &lt;%%&gt;-Block anstelle eines &lt;% =%&gt;-Blocks verwenden, wenn Sie HTML. renderpartial () aufrufen. &lt;% =%&gt; Blöcke in ASP.net geben an, dass ein Entwickler einen angegebenen Wert renderrenderz (z. b. &lt;% = "Hello"%&gt; würde "Hello" renderz renderz). &lt;%%&gt; blockiert stattdessen, dass der Entwickler Code ausführen möchte, und dass jede gerenderte Ausgabe darin explizit erfolgen muss (z. b.: &lt;% Response. Write ("Hello")%&gt;. Der Grund für die Verwendung eines &lt;%%&gt; Blocks mit unserem HTML. renderpartial-Code oben liegt daran, dass die HTML. renderpartial ()-Methode keine Zeichenfolge zurückgibt, sondern den Inhalt direkt in den Ausgabestream der aufrufenden Ansichts Vorlage ausgibt. Dies erfolgt aus Leistungsgründen, und dadurch entfällt die Notwendigkeit, ein (potenziell sehr großes) temporäres Zeichen folgen Objekt zu erstellen. Dies reduziert die Speicherauslastung und verbessert den gesamten Anwendungs Durchsatz. Ein häufiger Fehler bei der Verwendung von HTML. renderpartial () besteht darin, das Semikolon am Ende des Aufrufes zu vergessen, wenn es sich innerhalb eines &lt;%%&gt; Blocks befindet. Der folgende Code verursacht z. b. einen Compilerfehler: &lt;% HTML. renderpartial ("dinnerform")%&gt; Sie müssen stattdessen Folgendes schreiben: &lt;% HTML. renderpartial ("dinnerform"); %&gt; Dies liegt daran, dass &lt;%%&gt; Blöcke eigenständige Code Anweisungen sind und die Verwendung C# von Code Anweisungen mit einem Semikolon beendet werden muss. |
 
-### <a name="using-partial-view-templates-to-clarify-code"></a>Mithilfe der Teilansicht-Vorlagen, um Code zu verdeutlichen.
+### <a name="using-partial-view-templates-to-clarify-code"></a>Verdeutlichen von Code mithilfe von partiellen Ansichts Vorlagen
 
-Wir haben die "DinnerForm" Teilansicht Vorlage duplizieren Ansicht Renderinglogik an mehreren Orten zu vermeiden. Dies ist der häufigste Grund für die Teilansicht Vorlagen erstellen.
+Wir haben die Teil Ansichts Vorlage "dinnerform" erstellt, um eine Duplizierung der Ansichts Renderinglogik an mehreren Stellen zu vermeiden Dies ist der häufigste Grund für das Erstellen von partiellen Ansichts Vorlagen.
 
-Manchmal ist es immer noch sinnvoll, Teilansichten zu erstellen, selbst wenn sie nur an einer zentralen Stelle aufgerufen werden. Sehr kompliziert Ansichtsvorlagen können häufig viel einfacher zu lesen, wenn ihre Ansicht Renderinglogik extrahiert und in eine partitionierte oder mehr auch mit der Bezeichnung teilweise Vorlagen werden.
+Manchmal ist es auch sinnvoll, partielle Ansichten zu erstellen, auch wenn Sie nur an einer einzigen Stelle aufgerufen werden. Sehr komplizierte Ansichts Vorlagen können häufig viel leichter lesbar werden, wenn Ihre Ansichts-Renderinglogik in eine oder mehrere benannte partielle Vorlagen extrahiert und partitioniert wird.
 
-Betrachten Sie beispielsweise den folgenden Codeausschnitt aus der Datei Site.master in unserem Projekt (die wir kurz betrachten werden wird). Der Code ist recht einfach, lesen teilweise daran, dass die Logik zum Anzeigen einer Anmeldung/Abmeldung link oben – rechten Rand des Bildschirms in die partielle "LogOnUserControl" gekapselt ist:
+Betrachten Sie beispielsweise den folgenden Code Ausschnitt aus der Datei "Site. Master" in unserem Projekt (in Kürze). Der Code ist relativ einfach zu lesen – teilweise, weil die Logik zum Anzeigen eines Anmelde-/Abmelde-Links oben rechts auf dem Bildschirm innerhalb des "logonusercontrol"-Elements gekapselt ist:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample4.aspx)]
 
-Wenn Sie sich die erste verwechselt finden versuchen, sich mit das Markup der html-Code in eine ansichtsvorlage, überlegen Sie, ob es wäre klarer, wenn einige davon extrahiert und in gut benannt Teilansichten umgestaltet wurde.
+Wenn Sie versuchen, das HTML-/codemarkup innerhalb einer Ansichts Vorlage besser zu verstehen, sollten Sie sich darüber im klaren sein, ob es nicht klarer wäre, wenn einige davon extrahiert und in wohl benannte Teilansichten umgestaltet wurden.
 
 ### <a name="master-pages"></a>Masterseiten
 
-Zusätzlich zur Unterstützung von Teilansichten, unterstützt ASP.NET MVC auch die Möglichkeit, "Masterseite" Vorlagen erstellen, die verwendet werden kann, um das allgemeine Layout und die obersten Ebene HTML-Code von einem Standort zu definieren. Die Inhalte Platzhalter, die Steuerelemente klicken Sie dann auf die Masterseite ersetzbare Bereiche zu identifizieren, die außer Kraft gesetzt werden können oder die "eingetragen" von Sichten hinzugefügt werden können. Dies bietet es sich um eine sehr effiziente (und DRY) Möglichkeit, um ein gebräuchliches Layout für eine Anwendung zu übernehmen.
+Zusätzlich zur Unterstützung von Teilansichten unterstützt ASP.NET MVC auch die Möglichkeit zum Erstellen von Vorlagen für Masterseiten, mit denen das allgemeine Layout und das HTML-Format einer Website definiert werden können. Inhalts Platzhalter-Steuerelemente können der Master Seite hinzugefügt werden, um verteilbare Bereiche zu identifizieren, die überschrieben oder durch Sichten "ausgefüllt" werden können. Dies ermöglicht eine sehr effektive (und trockene) Methode, ein gängiges Layout auf eine Anwendung anzuwenden.
 
-Standardmäßig verfügen neue ASP.NET MVC-Projekte eine Masterseitenvorlage automatisch hinzugefügt werden. Diese Masterseite heißt "Site.master" und befindet sich im Ordner \Views\Shared\:
+Standardmäßig wird neuen ASP.NET-MVC-Projekten automatisch eine Vorlage für Masterseiten hinzugefügt. Diese Master Seite hat den Namen "Site. Master" und befindet sich im Ordner "\views\shared\":
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image5.png)
 
-Die standardmäßige Site.master-Datei sieht wie folgt aus. Den äußeren HTML-Code des Standorts, zusammen mit einem Menü für die Navigation oben definiert. Es enthält zwei ersetzbare Inhaltsplatzhalter-Steuerelemente: eines für den Titel und die andere für die, in dem der primäre Inhalt einer Seite ersetzt werden soll:
+Die Standarddatei "Site. Master" sieht wie folgt aus. Er definiert den äußeren HTML-Code der Site sowie ein Menü für die Navigation im oberen Bereich. Sie enthält zwei ersetzbare Inhalts Platzhalter-Steuerelemente – eine für den Titel und die andere für den Ort, an dem der primäre Inhalt einer Seite ersetzt werden soll:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample5.aspx)]
 
-Alle Vorlagen anzeigen, die wir für die NerdDinner-Anwendung ("List", "Details", "Bearbeiten", "Erstellen", "NotFound" usw.) erstellt haben wurde basierend auf dieser Vorlage Site.master. Dies wird angezeigt, über das "MasterPageFile"-Attribut, das standardmäßig, an den Anfang hinzugefügt wurde &lt;% @ Page %&gt; Anweisung, wenn wir die Ansichten, die mithilfe des Dialogfelds "Ansicht hinzufügen" erstellt:
+Alle Ansichts Vorlagen, die wir für die "nerddinner"-Anwendung erstellt haben ("List", "Details", "Edit", "Create", "NotFound" usw.), basieren auf dieser Site. Master-Vorlage. Dies wird über das Attribut "MasterPageFile" angegeben, das standardmäßig der obersten &lt;% @ Page%&gt;-Direktive hinzugefügt wurde, als wir die Ansichten mithilfe des Dialog Felds "Ansicht hinzufügen" erstellt haben:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample6.aspx)]
 
-Dies bedeutet, dass wir können den Inhalt Site.master ändern, und haben die Änderungen automatisch angewendet und werden verwendet, wenn wir unsere Vorlagen Ansicht zu rendern.
+Dies bedeutet, dass wir den Inhalt von Site. Master ändern und die Änderungen automatisch anwenden und verwenden können, wenn wir unsere Ansichts Vorlagen Rendering.
 
-Unsere Site.master der Headerabschnitt aktualisieren wir damit, dass der Header der Anwendung "NerdDinner" anstelle von "Meine MVC-Anwendung" ist. Außerdem aktualisieren wir unsere Navigationsmenü, damit die erste Registerkarte ist "Finden Sie ein Dinner" (von des HomeController Index() Aktionsmethode behandelt), und fügen Sie eine neue Registerkarte namens "Host ein Dinner" (von der "dinnerscontroller" Create() Aktionsmethode behandelt):
+Aktualisieren Sie den Header Abschnitt von "Site. Master", sodass der Header der Anwendung "nerddinner" anstelle von "meine MVC-Anwendung" lautet. Wir aktualisieren auch das Navigationsmenü, sodass die erste Registerkarte "Find a Dinner" (wird von der "Index ()"-Aktionsmethode von HomeController behandelt) ist, und wir fügen eine neue Registerkarte mit dem Namen "Host a Dinner" (behandelt von der Create ()-Aktionsmethode von dinnerscontroller) hinzu:
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample7.aspx)]
 
-Wenn wir die Datei Site.master Aktualisierung, und speichern Änderungen mit unserem Browser sehen wir unsere Header für alle Sichten in unserer Anwendung. Zum Beispiel:
+Wenn wir die Datei "Site. Master" Speichern und unseren Browser aktualisieren, werden die Header Änderungen in allen Ansichten innerhalb unserer Anwendung angezeigt. Beispiel:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
-Und mit der *"/ dinners" / Edit / [Id]* URL:
+Und mit der */Dinners/Edit/[ID]* -URL:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image7.png)
 
 ### <a name="next-step"></a>Nächster Schritt
 
-Teilansichten und Masterseiten bieten sehr flexible Optionen, mit die Sie problemlos Ansichten organisieren können. Sie werden feststellen, dass sie helfen, die Sie vermeiden, duplizieren die Ansicht Inhalt / code, und stellen Ihre Vorlagen anzeigen einfacher zu lesen und zu verwalten.
+Partiale und Masterseiten bieten sehr flexible Optionen, mit denen Sie Ansichten ordnungsgemäß organisieren können. Sie werden feststellen, dass Sie Sie dabei unterstützen, das Duplizieren von Inhalt und Code der Ansicht zu vermeiden und ihre Ansichts Vorlagen leichter zu lesen und zu verwalten.
 
-Lassen Sie uns nun noch einmal das Angebot-Szenario, das wir zuvor erstellt und skalierbare pagingunterstützung zu aktivieren.
+Sehen wir uns jetzt das Auflistungs Szenario an, das wir zuvor erstellt haben
 
 > [!div class="step-by-step"]
 > [Zurück](use-viewdata-and-implement-viewmodel-classes.md)

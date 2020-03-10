@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
-title: '[Gewusst wie:] Verwenden Sie das DropDown-Steuerelement von ASP.NET AJAX? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie das ASP.NET AJAX-Dropdown-Steuerelement? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Mit dem DropDown-Steuerelement-Extender aus dem ASP.NET AJAX Control Toolkit können Sie den Benutzer mit einer Dropdown-Liste der Optionen darstellen, die eine teilweise-Pa auslösen...
+description: Mit dem Dropdown-Steuerelement-Extender aus dem ASP.NET AJAX Control Toolkit können Sie dem Benutzer eine Dropdown Liste mit Optionen präsentieren, mit denen eine Teil-PA (Teil-PA) auslöst.
 ms.author: riande
 ms.date: 03/30/2007
 ms.assetid: a997a9f8-9f71-4b9e-b7ed-f8e3a0daa576
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
 msc.type: video
 ms.openlocfilehash: 4efddfa898514f9f5f8caf1baca250d5b4ac85b5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392702"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454641"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[Gewusst wie:] Verwenden Sie das DropDown-Steuerelement von ASP.NET AJAX?
+# <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[Gewusst wie:] Verwenden Sie das ASP.NET AJAX-Dropdown-Steuerelement?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Mit dem DropDown-Steuerelement-Extender aus dem ASP.NET AJAX Control Toolkit können Sie den Benutzer mit einer Dropdown-Liste der Optionen darstellen, die einer teilweisen seitenaktualisierung an anderer Stelle auf der Webseite auslösen. Die vom Benutzer ausgewählten Option wird auf dem Server, sodass der serverseitige Code die Auswahl vor dem Abschluss der teilweisen seitenaktualisierung verarbeitet übergeben.
+Mit dem Dropdown-Steuerelement-Extender aus dem ASP.NET AJAX Control Toolkit können Sie dem Benutzer eine Dropdown Liste mit Optionen präsentieren, die an anderer Stelle auf der Webseite eine Teil Seiten Aktualisierung auslöst. Die vom Benutzer ausgewählte Option wird an den Server übermittelt, sodass der serverseitige Code die Auswahl verarbeiten kann, bevor die Teil Seiten Aktualisierung abgeschlossen wird.
 
-[&#9654;Sehen Sie sich Video (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dropdown-control)
+[&#9654;Video ansehen (11 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dropdown-control)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-configure-the-aspnet-ajax-calendar-control.md)

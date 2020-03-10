@@ -9,11 +9,11 @@ ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
 ms.openlocfilehash: ac1dcaf1ba911fdcaeb3845c6836ec771733d93e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636816"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522903"
 ---
 # <a name="ui-and-navigation"></a>Benutzeroberfläche und Navigation
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial ändern Sie die Benutzeroberfläche der Standardweb Anwendung, um Funktionen der Anwendung Wingtip Toys Store Front zu unterstützen. Außerdem fügen Sie einfache und Daten gebundene Navigation hinzu. Dieses Tutorial baut auf dem vorherigen Tutorial "Erstellen der Datenzugriffs Ebene" auf und ist Teil der Wingtip Toys-tutorialreihe.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - Ändern der Benutzeroberfläche zur Unterstützung der Funktionen der Wingtip Toys Store-Front-Anwendung.
 - So konfigurieren Sie ein HTML5-Element, um die Seitennavigation einzuschließen
@@ -93,11 +93,11 @@ Das `CodeBehind`-Attribut, das in der `@Page`-Direktive enthalten ist, gibt den 
 
 ### <a name="updating-the-master-page"></a>Aktualisieren der Master Seite
 
-In ASP.net Web Forms können Sie mit Masterseiten ein konsistentes Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzelne Master Seite definiert das Aussehen und Verhalten und das Standardverhalten für alle Seiten (oder eine Gruppe von Seiten) in der Anwendung. Sie können dann einzelne Inhaltsseiten erstellen, die den Inhalt enthalten, den Sie anzeigen möchten, wie oben erläutert. Wenn Benutzer die Inhaltsseiten anfordern, werden Sie von ASP.net mit der Master Seite zusammengeführt, um eine Ausgabe zu erstellen, die das Layout der Master Seite mit dem Inhalt der Inhaltsseite kombiniert.
+In ASP.NET Web Forms können Sie mit Masterseiten ein einheitliches Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzige Masterdseite definiert das Aussehen und das Standardverhalten, das Sie für alle Seiten (oder eine Gruppe von Seiten) in Ihrer Anwendung wünschen. Sie können dann einzelne Inhaltsseiten erstellen, die den Inhalt enthalten, den Sie anzeigen möchten, wie oben erläutert. Wenn Benutzer Inhaltsseiten anfordern, werden diese in ASP.NET mit der Masterseite zusammengeführt, um eine Ausgabe zu erstellen, in der das Layout der Masterseite mit dem Inhalt der Inhaltsseite kombiniert wird.
 
 Die neue Website benötigt ein einzelnes Logo, das auf jeder Seite angezeigt werden soll. Um dieses Logo hinzuzufügen, können Sie den HTML-Code auf der Master Seite ändern.
 
-1. Suchen und öffnen Sie in **Projektmappen-Explorer**die Seite **Site. Master** .
+1. Öffnen Sie im **Projektmappen-Explorer**die Seite **Site.Master** .
 2. Wenn sich die Seite in der **Entwurfs** Ansicht befindet, wechseln Sie zur **Quell** Ansicht.
 3. Aktualisieren Sie die Master Seite, indem Sie das in gelb markierte Markup **ändern oder hinzufügen** : 
 
@@ -208,7 +208,7 @@ In diesem Code werden alle Kategorien aus der Datenbank angezeigt. Das **ListVie
 
 > [!NOTE] 
 > 
-> **PP**
+> **Tipp**
 > 
 > Wenn Sie Code hinzufügen, indem Sie während der Entwicklung eingeben, können Sie sicher sein, dass ein gültiger Member eines Objekts gefunden wird, da stark typisierte Daten Steuerelemente die verfügbaren Member basierend auf IntelliSense anzeigen. IntelliSense bietet Kontext geeignete Code Optionen beim Eingeben von Code, z. b. Eigenschaften, Methoden und Objekte.
 
@@ -273,7 +273,7 @@ Nun können Sie die Daten, die in der Datenbankdatei *wingtiptoys. mdf* enthalte
  Wenn Sie die Datenbank von Visual Studio trennen, kann das Datenbankschema später in dieser tutorialreihe geändert werden.
 11. Kehren Sie zu **Projektmappen-Explorer**zurück, indem Sie die Registerkarte **Projektmappen-Explorer** unten im **Server-Explorer** Fenster auswählen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial der Reihe haben Sie einige grundlegende Benutzeroberfläche, Grafiken, Seiten und Navigation hinzugefügt. Außerdem haben Sie die Webanwendung ausgeführt, die die Datenbank aus den Daten Klassen erstellt hat, die Sie im vorherigen Tutorial hinzugefügt haben. Sie haben auch den Inhalt der Tabelle " *Products* " der Datenbank angezeigt, indem Sie die Datenbank direkt anzeigen. Im nächsten Tutorial zeigen Sie Datenelemente und Details aus der Datenbank an.
 

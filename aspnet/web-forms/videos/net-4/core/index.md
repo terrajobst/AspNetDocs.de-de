@@ -2,22 +2,22 @@
 uid: web-forms/videos/net-4/core/index
 title: Core | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese Videoreihe untersucht Core Verbesserungen in ASP.NET 4 automatisch gestartet, Bereinigen von Konfigurationsdateien und HTML-Codierung.
+description: In dieser Videoreihe werden wichtige Verbesserungen in ASP.NET 4 erläutert, z. b. automatischer Start, saubere Konfigurationsdateien und HTML-Codierung.
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 257686f7-7e10-4c4b-a2e9-299f93c0f917
 msc.legacyurl: /web-forms/videos/net-4/core
 msc.type: chapter
 ms.openlocfilehash: 2737578294e63c80205d6ca2d7671a6f42e498cd
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128578"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511437"
 ---
 # <a name="core"></a>Kernspeicher
 
-> Diese Videoreihe untersucht Core Verbesserungen in ASP.NET 4 automatisch gestartet, Bereinigen von Konfigurationsdateien und HTML-Codierung.
+> In dieser Videoreihe werden wichtige Verbesserungen in ASP.NET 4 erläutert, z. b. automatischer Start, saubere Konfigurationsdateien und HTML-Codierung.
 
 - [Automatischer Start](aspnet-4-quick-hit-auto-start.md)
 - [Bereinigen von „Web.config“-Dateien](aspnet-4-quick-hit-clean-webconfig-files.md)

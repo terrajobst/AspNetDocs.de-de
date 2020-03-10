@@ -2,22 +2,22 @@
 uid: web-forms/overview/data-access/caching-data/index
 title: Zwischenspeichern von Daten | Microsoft-Dokumentation
 author: rick-anderson
-description: Diese lernprogrammreihe wird erläutert, caching, wodurch Leistung von Websites und Anwenden von caching in der Darstellungsschicht, die mit dem ObjectDataSource-Steuerelement verbessert werden kann...
+description: In diesem Tutorial wird das Caching erläutert, das die Leistung der Website verbessern und das Zwischenspeichern mithilfe des ObjectDataSource-Steuer Elements auf die Präsentationsebene anwenden kann...
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 7d7ee56c-a867-4777-9407-ec8f73a605a3
 msc.legacyurl: /web-forms/overview/data-access/caching-data
 msc.type: chapter
 ms.openlocfilehash: 3426a83f0b42d40ee57d4eb40abeecde6fac2985
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109562"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465627"
 ---
 # <a name="caching-data"></a>Zwischenspeichern von Daten
 
-> Diese lernprogrammreihe wird erläutert, caching, wodurch Leistung von Websites und Anwenden von caching in der Darstellungsschicht, die mit dem ObjectDataSource-Steuerelement verbessert werden kann.
+> In diesem Tutorial wird das Caching erläutert, das die Standort Leistung verbessern kann, und wie die Zwischenspeicherung mithilfe des ObjectDataSource-Steuer Elements auf die Präsentationsebene angewendet wird.
 
 - [Zwischenspeichern von Daten mit dem ObjectDataSource-Steuerelement (C#)](caching-data-with-the-objectdatasource-cs.md)
 - [Zwischenspeichern von Daten in der Architektur (C#)](caching-data-in-the-architecture-cs.md)

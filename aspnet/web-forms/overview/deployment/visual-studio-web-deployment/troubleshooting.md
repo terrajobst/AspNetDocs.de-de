@@ -9,11 +9,11 @@ ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
 ms.openlocfilehash: b42476fca18b04f4557a216ee205cfd9220023e8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623586"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465093"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Problembehandlung
 
@@ -58,7 +58,7 @@ Damit die Anwendung detaillierte Fehlermeldungen anzeigen kann, wenn Sie auf dem
 
 Wenn Sie versuchen, ein Projekt in Visual Studio auszuführen, erhalten Sie eine Fehlerseite mit einer Meldung wie im folgenden Beispiel:
 
-Serverfehler in '/' Anwendung. Das Erstellen/Schatten kopieren von "condesouniversity" ist nicht möglich, wenn diese Datei bereits vorhanden ist.
+Serverfehler in Anwendung '/'. Das Erstellen/Schatten kopieren von "condesouniversity" ist nicht möglich, wenn diese Datei bereits vorhanden ist.
 
 ### <a name="possible-cause-and-solution"></a>Mögliche Ursache und Lösung
 
@@ -70,7 +70,7 @@ Warten Sie eine Minute, und aktualisieren Sie den Browser, oder kompilieren Sie 
 
 Wenn Sie einen Standort bereitstellen, der SQL Server Compact verwendet und Sie eine Seite an dem bereitgestellten Standort ausführen, der auf die Datenbank zugreift, wird die folgende Fehlermeldung angezeigt:
 
-Zugriff verweigert. (Ausnahme von HRESULT: 0x80070005 (E\_AccessDenied))
+Zugriff verweigert.“ (Ausnahme von HRESULT: 0x80070005 (E\_AccessDenied))
 
 ### <a name="possible-cause-and-solution"></a>Mögliche Ursache und Lösung
 
@@ -172,7 +172,7 @@ Möglicherweise müssen Sie auch die .NET Framework Version des Standard Anwendu
 
 Sie haben die Verbindungs Zeichenfolge der Datei " *Web. config* " so aktualisiert, dass Sie auf eine SQL Server Express Datenbank als *MDF* -Datei in Ihrer *App\_Daten* Ordner verweist. Wenn Sie die Anwendung zum ersten Mal ausführen, wird die folgende Fehlermeldung angezeigt:
 
-System. Data. SqlClient. SqlException: die von der Anmeldung angeforderte Datenbank "DatabaseName" kann nicht geöffnet werden. Die Anmeldung ist fehlgeschlagen.
+System. Data. SqlClient. SqlException: die von der Anmeldung angeforderte Datenbank "DatabaseName" kann nicht geöffnet werden. Fehler bei der Anmeldung.
 
 ### <a name="possible-cause-and-solution"></a>Mögliche Ursache und Lösung
 
@@ -276,7 +276,7 @@ Die bereitgestellte Site verfügt nicht über *amd64* -und *x86* -Unterordner mi
 
 Sie stellen eine Anwendung bereit, die Entity Framework Code First-Migrationen und ein DBMS verwendet, z. b. SQL Server Compact, in dem die Datenbank in einer Datei im Ordner App\_Data gespeichert wird. Sie haben Code First-Migrationen konfiguriert, um die Datenbank nach der ersten Bereitstellung zu erstellen. Wenn Sie die Anwendung ausführen, erhalten Sie eine Fehlermeldung wie im folgenden Beispiel:
 
-Der Pfad ist ungültig. Überprüfen Sie das Verzeichnis für die Datenbank. [Path = c:\inetpub\wwwroot\app\_data\databasename.sdf]
+Der Pfad ist nicht gültig. Überprüfen Sie das Verzeichnis für die Datenbank. [Path = c:\inetpub\wwwroot\app\_data\databasename.sdf]
 
 ### <a name="possible-cause-and-solution"></a>Mögliche Ursache und Lösung
 
@@ -374,4 +374,4 @@ Der angeforderte Inhalt ist anscheinend ein Skript und wird vom statischen Datei
 ASP.NET 4,5 ist möglicherweise nicht auf Ihrem Computer installiert. Lesen Sie die Schritte im Tutorial bereitstellen in IIS als Test Umgebung in dieser Reihe, in der die Installation von ASP.NET 4,5 erläutert wird.
 
 > [!div class="step-by-step"]
-> [Vorheriges](deploying-extra-files.md)
+> [Previous](deploying-extra-files.md)

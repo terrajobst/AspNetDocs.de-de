@@ -1,117 +1,117 @@
 ---
 uid: single-page-application/overview/templates/breezeangular-template
-title: Breeze.js-/Angular.js-Vorlage | Microsoft-Dokumentation
+title: Breeze/Angular-Vorlage | Microsoft-Dokumentation
 author: madskristensen
-description: Breeze/Angular-Single-Page-Application-Vorlage
+description: Anwendung "Breeze/Angular Single Page Application"
 ms.author: riande
 ms.date: 03/08/2013
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3e4e63d385a56d51d3d08696782b43d6228f6201
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113402"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467187"
 ---
 # <a name="breezeangular-template"></a>Breeze-/Angular-Vorlage
 
-durch [Mads Kristensen](https://github.com/madskristensen)
+von [Mads Kristensen](https://github.com/madskristensen)
 
-> Die Breeze/Angular-MVC-Vorlage wurde von Ward Bell geschrieben.
+> Die MVC-Vorlage "Breeze/Angular" wurde von der Stations Glocke geschrieben.
 > 
-> [Die Breeze/Angular MVC-Vorlage herunterladen](https://go.microsoft.com/fwlink/?LinkId=286437)
+> [Herunterladen der MVC-Vorlage für Breeze/Angular](https://go.microsoft.com/fwlink/?LinkId=286437)
 
-[AngularJS](http://angularjs.org) ist eine open-Source-Bibliothek von Google für die Erstellung von Single Page Applications (SPAs). Die Datenbindung, Abhängigkeitsinjektion und Bildschirm-Verwaltung bietet. Kombinieren Sie sie mit [BreezeJS](http://www.breezejs.com/?utm_source=ms-spa), einer anderen open-Source-Bibliothek für die datenmodellierung und die datenverwaltung und Sie haben die wesentlichen Zutaten für eine große HTML/JavaScript-Client-app.
+[Angularjs](http://angularjs.org) ist eine Open-Source-Bibliothek von Google zum Entwickeln von Single-Page-Anwendungen (Spas). Sie bietet Datenbindung, Abhängigkeitsinjektion und Bildschirm Verwaltung. Kombinieren Sie es mit " [breezejs](http://www.breezejs.com/?utm_source=ms-spa)", einer anderen Open-Source-Bibliothek für die Datenmodellierung und Datenverwaltung, und Sie verfügen über die wesentlichen Komponenten für eine großartige HTML-/Javas-Client-
 
-Die Breeze/Angular-SPA-Vorlage ist eine Variation auf die [KnockoutJS SPA-Vorlage](../introduction/knockoutjs-template.md) im ASP.NET and Web Tools 2012.2-Update enthalten. Wenn Sie Visual Studio haben, müssen ein Beispiel für SPA und in weniger als 60 Sekunden Sie.
+Die Vorlage "Breeze/Angular Spa" ist eine Variation der in der ASP.net and Web Tools 2012,2-Aktualisierung enthaltenen [knockoutjs-Spa-Vorlage](../introduction/knockoutjs-template.md) . Wenn Sie Visual Studio haben, verfügen Sie über eine Beispiel-Spa, die in weniger als 60 Sekunden ausgeführt wird.
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/NgRunningTodoPage.png)
 
-Nach außen, ähnelt die Anwendung die die KnockoutJS SPA-Vorlage. Aber es ist sehr unterschiedlich sind, im Hintergrund. Die Knockout.js-Vorlage verwendet Knockout für die Datenbindung und unformatierte AJAX für den Datenzugriff. Die Breeze/Angular-Vorlage verwendet die Angular für die Datenbindung und Breeze für den Datenzugriff. Diese Bibliotheken ermöglichen zusätzliche Funktionen, einschließlich der Seitennavigation und Verlaufstabellen.
+Im Außenbereich sieht die Anwendung ähnlich wie die "knockoutjs"-Spa-Vorlage aus. Es ist jedoch ganz anders. Die knockoutjs-Vorlage verwendet Knockout für die Datenbindung und den unformatierten AJAX für den Datenzugriff. Die Breeze-/Angular-Vorlage verwendet Angular für die Datenbindung und Breeze für den Datenzugriff. Diese Bibliotheken ermöglichen zusätzliche Funktionen, einschließlich Seitennavigation und-Verlauf.
 
-Hier ist der Anwendung – Seite "Info":
+Hier ist die Info-Seite der Anwendung:
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/NgRunningAboutPage.png)
 
-Diese Seite wird ein Ausführungsprotokoll von Ereignissen angezeigt, während der aktuellen benutzersitzung, einschließlich:
+Auf dieser Seite wird ein Ereignisprotokoll angezeigt, das während der aktuellen Benutzersitzung ausgeführt wird, einschließlich:
 
-- Paging. Beachten Sie die Erstellung des Todo-Controller auf #2 und #7.
-- Remoteabfragen (3) und lokalen Cache-Abfragen (#7).
-- Neue speichern (5, #6) und (4) Entitäten geändert.
-- Änderungen, die auf dem Client (#9), damit der Benutzer die Fehler korrigieren kann, vor dem Ausführen eines Commits für Änderungen in der Datenbank überprüft.
+- Paging. Beachten Sie die TODO-Controller Erstellung bei #2 und #7.
+- Remote Abfragen (#3) und lokale Cache Abfragen (#7).
+- Neue (#5, #6) und geänderte (#4) Entitäten werden gespeichert.
+- Auf dem Client (#9) validierte Änderungen, sodass der Benutzerfehler beheben kann, bevor Änderungen an die Datenbank übergeben werden.
 
-Vorhanden ist, auf die Zukunft in dieser Vorlage, einschließlich:
+In dieser Vorlage finden Sie weitere Informationen, darunter:
 
-- Dynamisches Laden von HTML-Ansichtsvorlagen.
-- Benutzerdefinierte Datenbindung durch Angular "-Direktiven."
-- Modularität und die Abhängigkeitsinjektion.
-- Fragen Sie ab, Filter, Sortierungen, Paging, Projektionen und Aufnahme von verknüpften Entitäten.
-- Freigeben von Daten auf mehrere Bildschirme.
-- Speichern als einzelne Transaktion mehrere Änderungen.
-- Regeln zur Überprüfung weitergegeben automatisch vom Server an den JavaScript-Client.
+- Dynamisches Laden von HTML-Ansichts Vorlagen.
+- Benutzerdefinierte Datenbindung durch Angular-Direktiven.
+- Modularität und Abhängigkeitsinjektion.
+- Abfragen von Filtern, sortieren, Paging, Projektionen und Einbindung verwandter Entitäten.
+- Freigeben von Daten auf mehreren Bildschirmen.
+- Speichern mehrerer Änderungen als einzelne Transaktion.
+- Validierungsregeln werden automatisch vom Server an den JavaScript-Client weitergegeben.
 
-Fangen wir also an.
+Fangen wir an.
 
-## <a name="create-a-breezeangular-template-project"></a>Erstellen Sie ein Projekt für Breeze/Angular-Vorlage
+## <a name="create-a-breezeangular-template-project"></a>Erstellen eines Breeze-/Angular-Vorlagen Projekts
 
-Herunterladen Sie und installieren Sie die Vorlage, indem Sie auf die Schaltfläche "herunterladen" oben. Die Vorlage wird als eine Datei für Visual Studio-Erweiterung (VSIX) verpackt. Sie müssen möglicherweise Visual Studio neu starten.
+Um die Vorlage herunterzuladen und zu installieren, klicken Sie oben auf die Schaltfläche herunterladen Die Vorlage ist als Visual Studio-Erweiterungs Datei (VSIX) verpackt. Möglicherweise müssen Sie Visual Studio neu starten.
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie die **Visual C#-** Knoten. Klicken Sie unter **Visual C#-** Option **Web**. Wählen Sie in der Liste der Projektvorlagen das Projekt **ASP.NET MVC 4-Webanwendung**. Nennen Sie das Projekt, und klicken Sie auf **OK**.
+Wählen Sie im Bereich **Vorlagen** die Option **installierte Vorlagen** aus, und erweitern Sie den Knoten **visuelle C#**  Knoten. Wählen Sie unter **Visualisierung C#** die Option **Web**aus. Wählen Sie in der Liste der Projektvorlagen die Option **ASP.NET MVC 4-Webanwendung**aus. Geben Sie dem Projekt einen Namen, und klicken Sie auf **OK**.
 
-In der **neues Projekt** Assistenten **Breeze Angular-SPA**.
+Wählen Sie im Assistenten für **neue Projekte** **Breeze Angular Spa**aus.
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/SelectBreezeNgSpaTemplate.png)
 
-Drücken Sie STRG + F5 zum Erstellen und Ausführen der Anwendungs ohne Debuggen, oder drücken Sie F5, um mit Debuggen auszuführen.
+Drücken Sie STRG + F5, um die Anwendung zu erstellen und ohne Debuggen auszuführen, oder drücken Sie F5, um das Debugging auszuführen.
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ZephyrLogin.png)
 
-Wenn die Anwendung zuerst ausgeführt wird, wird einen Anmeldebildschirm angezeigt. Klicken Sie auf den Link "Registrierung", und eine neue Seite glides in der Ansicht, in dem Sie einen Benutzernamen und ein Kennwort eingeben. (Die Seiten für Anmeldung und Registrierung werden mithilfe von ASP.NET MVC erstellt.) Wenn Sie das Registrierungsformular übermitteln, generiert der Server eine "Todolist" mit zwei Elementen, die für Ihr Konto an. Präsentiert er diese für Sie in diesem gelb.
+Wenn die Anwendung zum ersten Mal ausgeführt wird, wird ein Anmeldebildschirm angezeigt. Klicken Sie auf den Link "registrieren", und in der Ansicht wird eine neue Seite angezeigt, in der Sie einen Benutzernamen und ein Kennwort eingeben können. (Die Anmelde-und Registrierungsseiten werden mithilfe von ASP.NET MVC erstellt.) Wenn Sie das Registrierungsformular übermitteln, generiert der Server eine ToDoList mit zwei Elementen für Ihr Konto. Anschließend werden Sie Ihnen in einer gelben Notiz angezeigt.
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/TodoList.png)
 
-Jetzt können Sie in der der SPA Land/Region. Alles, was Sie finden Sie unter den sowie beim Bearbeiten von TODO-Elemente gerendert und auf dem Client mithilfe von Knockout und Breeze verwaltet. Untersuchen Sie die app als ein Benutzer ein... aber eines Entwicklers Augen. Verwenden Sie die Developer Tools in Ihrem Browser, um den Netzwerkdatenverkehr zu erfassen. (In InternetExplorer: Drücken Sie F12, wählen Sie die **Netzwerk** Registerkarte, und klicken Sie auf **startet das Sammeln von**.) Jetzt versuchen Sie Folgendes aus:
+Sie befinden sich nun im Land der Spa. Alles, was Sie während der Bearbeitung von TODO sehen und haben, wird auf dem Client mithilfe von Knockout und Breeze gerendert und verwaltet. Untersuchen Sie die APP als Benutzer... aber mit der Perspektive eines Entwicklers. Verwenden Sie die Entwicklertools in Ihrem Browser, um den Netzwerk Datenverkehr zu erfassen. (In Internet Explorer: Drücken Sie F12, wählen Sie die Registerkarte **Netzwerk** aus, und klicken Sie auf **Aufzeichnung starten**.) Versuchen Sie jetzt Folgendes:
 
-- Fügen Sie ein neues Todo-Element hinzu.
-- Klicken Sie auf die Bezeichnung, und bearbeiten Sie den Titel der Todo-Element
-- Kontrollkästchen Sie ein, um das Element abgeschlossen zu markieren. Beachten Sie, dass das Textfeld deaktiviert ist, damit der Titel nicht mehr bearbeitet werden kann.
-- Klicken Sie auf das "X" rechts neben der Bezeichnung. Das Element nicht mehr angezeigt wird und aus der Datenbank gelöscht wird.
-- Wählen Sie ein anderes Element aus, und deaktivieren Sie den Titel. Sie erhalten einen Validierungsfehler, dass der Titel erforderlich ist. Nach einer kurzen Pause wird der vorherige Titel wiederhergestellt.
-- Geben Sie eine unglaublich lange Titel. Sie erhalten einen anderen Validierungsfehler, dass der Titel zu lang.
-- Klicken Sie auf die Schaltfläche "Todo-Liste hinzufügen". Eine neue Liste, die auf der linken Seite der vorherigen Liste angezeigt wird.
-- Experimentieren Sie mit der "Todolist"-Titel, auslösen erforderlich und die Länge Überprüfungen.
-- Klicken Sie auf, in das Textfeld Titel ein, um die Fehlermeldung zu löschen.
-- Klicken Sie auf das "X" in den Kreis in der oberen rechten Ecke, um die "Todolist" und seine TODO-Elemente zu löschen.
-- Klicken Sie auf den Link "Info" in der oberen rechten Ecke, um ein Protokoll dieser Aktivitäten anzuzeigen.
+- Fügen Sie ein neues TODO-Element hinzu.
+- Klicken Sie auf die Bezeichnung, und bearbeiten Sie den TODO-Element Titel
+- Aktivieren Sie das Kontrollkästchen, um das Element als abgeschlossen zu markieren. Beachten Sie, dass das Textfeld deaktiviert ist, sodass der Titel nicht mehr bearbeitet werden kann.
+- Klicken Sie auf das x rechts neben der Bezeichnung. Das Element wird ausgeblendet und aus der Datenbank gelöscht.
+- Wählen Sie ein anderes Element aus, und löschen Sie seinen Titel Sie erhalten einen Validierungs Fehler, dass der Titel erforderlich ist. Nach einer kurzen Pause wird der vorherige Titel wieder hergestellt.
+- Geben Sie einen unglaublich langen Titel ein. Sie erhalten einen anderen Validierungs Fehler, wenn der Titel zu lang ist.
+- Klicken Sie auf die Schaltfläche "ToDo-Liste hinzufügen". Links neben der vorherigen Liste wird eine neue Liste angezeigt.
+- Spielen Sie mit dem Titel der Liste "", und lösen Sie die erforderlichen und Längen Prüfungen aus.
+- Klicken Sie in das Textfeld Titel, um die Fehlermeldung zu löschen.
+- Klicken Sie im Kreis in der oberen rechten Ecke auf das "x", um die Liste und die zugehörigen Aufgaben zu löschen.
+- Klicken Sie oben rechts auf den Link "Info", um ein Protokoll dieser Aktivitäten anzuzeigen.
 
-Die Validierungslogik wird von Breeze clientseitige ausgeführt. Validierungsattribute für die Server-Modell-Klassen werden an den Client weitergegeben und automatisch ausgeführt werden, bevor der Client den Server kontaktiert.
+Die Validierungs Logik wird Client seitig durch Breeze ausgeführt. Validierungs Attribute für die Server Modellklassen werden an den Client weitergegeben und automatisch ausgeführt, bevor der Client den Server kontaktiert.
 
-Überprüfen Sie den Netzwerkdatenverkehr. Beachten Sie, dass es keine Aufrufe an den Server, gab Wenn Breeze ein Fehler erkannt. Jede gültige Änderung führte zu einer POST-Anforderung "/ api/Todo /" SaveChanges"". Breeze bündelt die Änderungen und sendet diese zusammen als eine einzelne Anforderung an die Web-API-Controllers `SaveChanges` Methode. Unterscheidet sich vom KnockoutJS SPA-Vorlage, die PUT, POST und DELETE-Anforderungen für jedes Element einzeln ist.
+Überprüfen Sie den Netzwerkverkehr. Beachten Sie, dass es keine Aufrufe an den Server gab, wenn Breeze einen Fehler festgestellt hat. Jede gültige Änderung führte zu einer POST-Anforderung an "/API/TODO/SaveChanges". Breeze bündelt die Änderungen und sendet sie als einzelne Anforderung an die `SaveChanges` Methode des Web-API-Controllers. Dies unterscheidet sich von der knockoutjs-Spa-Vorlage, mit der für jedes Element einzeln Put-, Post-und DELETE-Anforderungen erstellt werden.
 
-Beachten Sie, dass kein Netzwerkdatenverkehr vorhanden ist, wenn Sie zwischen der "Todolist" sowie zu den Seiten wechseln. Das ist da die Abfrage in den lokalen Cache von Breeze eingeschränkt wurde.
+Beachten Sie außerdem, dass kein Netzwerk Datenverkehr vorhanden ist, wenn Sie zwischen der Liste der Aufgaben und den Seiten wechseln. Das liegt daran, dass die Abfrage auf den lokalen Breeze-Cache beschränkt wurde.
 
-## <a name="peek-inside"></a>Peek-in
+## <a name="peek-inside"></a>Einblick in
 
-Diese Anwendung verfügt über eine Clientseite und einer serverseitigen. Der Client-Side-Stapel besteht aus ein wenig HTML und eine Kombination aus Anwendung JavaScript-Module (im Ordner "app") und Drittanbieter-JavaScript-Bibliotheken (im Ordner "Scripts").
+Diese Anwendung verfügt über eine Clientseite und eine Serverseite. Der Client seitige Stapel besteht aus einem kleinen HTML-Code und einer Kombination aus JavaScript-Anwendungsmodulen (im Ordner "App") plus Drittanbieter-JavaScript-Bibliotheken (im Ordner "Scripts").
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/NgClientArchitecture2.png)
 
-Die Benutzeroberflächen-Architektur trennt die HTML-Widgets der Ansichten aus dem zugrunde liegenden Presentation-Code in den Controllern. Die Angular-Datenbindungssystem koordiniert Ansichten und Controllern, sodass die einzelnen weder eine eingehende Kenntnis der anderen durchführen kann.
+Die UI-Architektur trennt die HTML-Widgets der Ansichten von dem unterstützenden Präsentationscode in den Controllern. Das Angular-Daten Bindungssystem koordiniert Sichten und Controller so, dass jede seine Aufgabe ausführen kann, ohne dass Sie sich mit dem anderen vertraut machen müssen.
 
-Der Controller fragt den Datenkontext zum Abrufen und speichern die Modellelemente. Der Datenkontext delegiert die meisten Aufgaben zu Breeze, das aus Abfrageergebnissen JSON-modellobjekten mit selbstnachverfolgung erstellt.
+Der Controller fragt den Datenkontext ab, um die Modell Entitäten abzurufen und zu speichern. Der Datenkontext delegiert den größten Teil der Arbeit an Breeze, wodurch Modell Objekte mit selbst Nachverfolgung aus JSON-Abfrage Ergebnissen erstellt werden.
 
-Die serverseitigen Stapels besteht aus einige Entwickler das Codieren und drei Prinzip .NET Bibliotheken: Web-API, Entitätsframework und Breeze.NET:
+Der serverseitige Stapel besteht aus einem Entwickler Code und drei Grundprinzipien von .NET-Bibliotheken: Web-API, Entity Framework und Breeze.net:
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-Die grundlegende Architektur ist identisch mit der KnockoutJS SPA-Vorlage. Die Implementierung ist jedoch viel einfacher: DTOs gelöscht wurden, und die meisten Details Entity Framework an Breeze.NET delegiert wurden.
+Die grundlegende Architektur ist identisch mit der Spa-Vorlage von knockoutjs. Die Implementierung ist jedoch viel einfacher: die DTOs wurden gelöscht, und die meisten Entity Framework Details wurden an Breeze.net delegiert.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Es wird empfohlen, dass Sie den Code, die durch MDX Untersuchen der [umfassende Diskussion](http://www.breezejs.com/ng-spa-template?utm_source=ms-spa) von sowohl Client als auch die Server-Stapel auf der Website zum Kinderspiel.
+Wir empfehlen Ihnen, den Code zu untersuchen, der durch die [umfassende Erörterung](http://www.breezejs.com/ng-spa-template?utm_source=ms-spa) von Client-und Server Stapeln auf der Breeze-Website gesteuert wird.
 
-Versuchen Sie, ob Sie spielen mit Breeze clientseitige Abfrage; Fügen Sie einige Filter und Sortierungen. Sie können weitere Eigenschaften des Modells und weitere Entitäten erhalten ein besseres Gefühl für die Entwicklung von SPAS End-to-End hinzufügen. Wenn Sie das Design sicher sind, können sich die Todo-Features entfernen und Ersetzen sie durch Ihre eigenen.
+Sie können versuchen, mit der Client seitigen Breeze-Abfrage zu spielen. Fügen Sie einige Filter und Sortierungen hinzu. Sie können weitere Modell Eigenschaften und mehr Entitäten hinzufügen, um ein besseres Gefühl für die End-to-End-Entwicklung von Spa zu erhalten. Wenn Sie sicher sind, dass Sie über das Design verfügen, können Sie die TODO-Features herausreißen und durch ihre eigenen ersetzen.
 
 Viel Spaß beim Programmieren!

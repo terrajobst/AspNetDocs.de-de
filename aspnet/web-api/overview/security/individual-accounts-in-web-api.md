@@ -1,106 +1,106 @@
 ---
 uid: web-api/overview/security/individual-accounts-in-web-api
-title: Schützen eine Web-API mit einzelnen Konten und lokale Anmeldung in ASP.NET-Web-API 2.2 | Microsoft-Dokumentation
+title: Sichern einer Web-API mit einzelnen Konten und lokalen Anmelde Informationen in ASP.net-Web-API 2,2 | Microsoft-Dokumentation
 author: MikeWasson
-description: In diesem Thema wird das Sichern einer Web-API, authentifizieren eine Mitgliedschaftsdatenbank mithilfe von OAuth2 veranschaulicht. Die Softwareversionen, die in den Tutorials Visual Studio 201 verwendet...
+description: In diesem Thema wird gezeigt, wie Sie eine Web-API mit OAuth2 für die Authentifizierung bei einer Mitgliedschafts Datenbank sichern. Im Tutorial Visual Studio 201 verwendete Software Versionen...
 ms.author: riande
 ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 7492c4aa4c2a0a8aeed64c3462bda8fc51f35a6b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134312"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447177"
 ---
-# <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Schützen einer Webs-API mit einzelnen Konten und lokale Anmeldung in ASP.NET-Web-API 2.2
+# <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Sichern einer Web-API mit einzelnen Konten und lokalen Anmelde Informationen in ASP.net-Web-API 2,2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Beispiel-App herunter](https://github.com/MikeWasson/LocalAccountsApp)
+[Beispiel-app herunterladen](https://github.com/MikeWasson/LocalAccountsApp)
 
-> In diesem Thema wird das Sichern einer Web-API, authentifizieren eine Mitgliedschaftsdatenbank mithilfe von OAuth2 veranschaulicht.
+> In diesem Thema wird gezeigt, wie Sie eine Web-API mit OAuth2 für die Authentifizierung bei einer Mitgliedschafts Datenbank sichern.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 > 
 > 
 > - [Visual Studio 2013 Update 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [Web-API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
-> - [ASP.NET Identity 2.1](../../../identity/index.md)
+> - [Web-API 2,2](../releases/whats-new-in-aspnet-web-api-22.md)
+> - [ASP.net Identity 2,1](../../../identity/index.md)
 
-In Visual Studio 2013 bietet die Web-API-Projektvorlage aus drei Optionen für die Authentifizierung:
+In Visual Studio 2013 bietet die Web-API-Projektvorlage drei Authentifizierungs Optionen:
 
-- **Individuelle Konten.** Die app verwendet eine Mitgliedschaftsdatenbank.
-- **Organisationskonten.** Benutzer melden Sie sich mit ihren Azure Active Directory, Office 365 oder einer lokalen Active Directory-Anmeldeinformationen.
-- **Windows-Authentifizierung.** Diese Option dient für Intranetanwendungen und verwendet das Windows-Authentifizierung-IIS-Modul.
+- **Einzelne Konten.** Die APP verwendet eine Mitgliedschafts Datenbank.
+- **Organisations Konten.** Benutzer melden sich mit ihren Azure Active Directory, Office 365 oder lokalen Active Directory Anmelde Informationen an.
+- **Windows-Authentifizierung.** Diese Option ist für Intranetanwendungen vorgesehen und verwendet das IIS-Modul für die Windows-Authentifizierung.
 
 Weitere Informationen zu diesen Optionen finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth).
 
-Einzelkonten bieten zwei Möglichkeiten, die für einen Benutzer für die Anmeldung:
+Einzelne Konten bieten zwei Möglichkeiten für einen Benutzer, sich anzumelden:
 
-- **Lokale Anmeldung**. Der Benutzer registriert sich am Standort Eingabe eines Benutzernamens und Kennworts. Die app speichert den Hashwert des Kennworts in der Mitgliedschaftsdatenbank. Wenn der Benutzer anmeldet, überprüft das ASP.NET Identity-System das Kennwort an.
-- **Anmeldung für soziale Netzwerke**. Der Benutzer meldet sich mit einem externen Dienst, z. B. Facebook, Microsoft oder Google. Die app weiterhin erstellt einen Eintrag für den Benutzer in der Mitgliedschaftsdatenbank, aber keine Anmeldeinformationen nicht gespeichert. Der Benutzer authentifiziert, indem Sie den externen Dienst anmelden.
+- **Lokale Anmeldung**. Der Benutzer registriert sich am Standort und gibt einen Benutzernamen und ein Kennwort ein. Die APP speichert den Kenn Wort Hash in der Mitgliedschafts Datenbank. Wenn sich der Benutzer anmeldet, überprüft das ASP.net Identity System das Kennwort.
+- **Anmeldung für soziale**Netzwerke. Der Benutzer meldet sich mit einem externen Dienst an, z. b. Facebook, Microsoft oder Google. Die App erstellt weiterhin einen Eintrag für den Benutzer in der Mitgliedschafts Datenbank, speichert aber keine Anmelde Informationen. Der Benutzer authentifiziert sich, indem er sich beim externen Dienst anmeldet.
 
-Dieser Artikel befasst sich das Szenario für die lokale Anmeldung. Für lokale und soziale Anmeldung verwendet Web-API "oauth2" zum Authentifizieren von Anforderungen an. Die Datenflüsse Anmeldeinformationen unterscheiden sich jedoch für lokale und soziale Anmeldung.
+Dieser Artikel befasst sich mit dem lokalen Anmelde Szenario. Sowohl für die lokale als auch für die soziale Anmeldung verwendet die Web-API OAuth2, um Anforderungen zu authentifizieren. Allerdings unterscheiden sich die Anmelde Informationen für die lokale Anmeldung und die Anmeldung für soziale Netzwerke.
 
-In diesem Artikel zeige ich eine einfache app, mit dem den Benutzer anmelden und zum Senden von authentifizierten AJAX-Aufrufe an eine Web-API. Sie können den Beispielcode herunterladen [hier](https://github.com/MikeWasson/LocalAccountsApp). Die Infodatei beschreibt, wie Sie das Beispiel von Grund auf neu in Visual Studio zu erstellen.
+In diesem Artikel zeige ich eine einfache APP, die es dem Benutzer ermöglicht, authentifizierte AJAX-Aufrufe an eine Web-API zu senden. Sie können den Beispielcode [hier](https://github.com/MikeWasson/LocalAccountsApp)herunterladen. In der Info Datei wird beschrieben, wie das Beispiel in Visual Studio von Grund auf neu erstellt wird.
 
 [![](individual-accounts-in-web-api/_static/image2.png)](individual-accounts-in-web-api/_static/image1.png)
 
-Die Beispiel-app verwendet "Knockout.js" für die Datenbindung und jQuery für AJAX-Anforderungen senden. Ich werde auf die AJAX-Aufrufe, konzentrieren, sodass Sie nicht "Knockout.js" für diesen Artikel kennen müssen.
+Die Beispiel-App verwendet Knockout. js für die Datenbindung und jQuery zum Senden von AJAX-Anforderungen. Ich konzentriere mich auf die AJAX-Aufrufe, damit Sie "Knockout. js" für diesen Artikel nicht kennen müssen.
 
-Dabei werde ich Folgendes beschreiben:
+Dabei beschreibe ich Folgendes:
 
-- Was die app auf der Clientseite ausführt.
-- Woran liegt das auf dem Server.
+- Was die APP auf der Clientseite tut.
+- Was geschieht auf dem Server?
 - Der HTTP-Datenverkehr in der Mitte.
 
-Zunächst müssen wir einige OAuth2-Terminologie zu definieren.
+Zuerst müssen wir eine OAuth2-Terminologie definieren.
 
-- *Ressource*. Teil der Daten, die geschützt werden können.
-- *Ressourcenserver*. Der Server, der die Ressource hostet.
-- *Ressourcenbesitzer*. Die Entität, die über die Berechtigung zum Zugriff auf eine Ressource erteilen kann. (Dies ist üblicherweise der Benutzer.)
-- *Client*: Die app, die auf die Ressource zugreifen möchte. In diesem Artikel ist der Client ein Webbrowser.
-- *Zugriffstoken*. Ein Token, die Zugriff auf eine Ressource.
-- *Bearertoken*. Einen bestimmten Typ von Zugriffstoken, mit der Eigenschaft an, dass jemand das Token verwenden kann. Ein Client benötigen nicht in anderen Worten: ein kryptografischer Schlüssel oder anderen geheimen Schlüssel ein trägertoken, das mit. Aus diesem Grund Bearer-Tokens sollte nur über eine HTTPS verwendet werden, und benötigen relativ kurze Ablaufzeiten.
-- *Autorisierungsserver*. Ein Server, der von Access-Token zu erhalten.
+- *Ressource*. Einige Daten, die geschützt werden können.
+- *Ressourcen Server*. Der Server, der die Ressource hostet.
+- *Ressourcen Besitzer*. Die Entität, die die Berechtigung für den Zugriff auf eine Ressource erteilen kann. (Normalerweise der Benutzer.)
+- *Client*: die APP, die auf die Ressource zugreifen möchte. In diesem Artikel ist der Client ein Webbrowser.
+- *Zugriffs Token*. Ein Token, das den Zugriff auf eine Ressource gewährt.
+- *Bearertoken*. Ein bestimmter Typ von Zugriffs Token mit der-Eigenschaft, die von jedem verwendet werden kann. Anders ausgedrückt: ein Client benötigt keinen kryptografischen Schlüssel oder anderen geheimen Schlüssel, um ein bearertoken zu verwenden. Aus diesem Grund sollten bearertoken nur über HTTPS verwendet werden, und es sollten relativ kurze Ablaufzeiten vorhanden sein.
+- *Autorisierungsserver*. Ein Server, der Zugriffs Token zuweist.
 
-Eine Anwendung kann als autorisierungsserver und Ressourcenserver fungieren. Die Web-API-Projektvorlage folgt diesem Muster.
+Eine Anwendung kann sowohl als autorisierungsserver als auch als Ressourcen Server fungieren. Die Web-API-Projektvorlage folgt diesem Muster.
 
-## <a name="local-login-credential-flow"></a>Lokale Anmeldung mit Clientanmeldeinformationen
+## <a name="local-login-credential-flow"></a>Anmelde Informationsfluss für lokale Anmeldung
 
-Für die lokale Anmeldung verwendet, Web-API verwendet die [ressourcenbesitzerflow Kennwort](http://oauthlib.readthedocs.org/en/latest/oauth2/grants/password.html) in "oauth2" definiert.
+Bei der lokalen Anmeldung verwendet die Web-API den in OAuth2 definierten Kenn [Wort Fluss des Ressourcen Besitzers](http://oauthlib.readthedocs.org/en/latest/oauth2/grants/password.html) .
 
-1. Der Benutzer gibt eines Namens und Kennworts in den Client.
-2. Der Client sendet diese Anmeldeinformationen an den autorisierungsserver.
-3. Der autorisierungsserver authentifiziert die Anmeldeinformationen und gibt ein Zugriffstoken zurück.
-4. Um eine geschützte Ressource zuzugreifen, fügt der Client das Zugriffstoken im Autorisierungsheader der HTTP-Anforderung.
+1. Der Benutzer gibt einen Namen und ein Kennwort in den Client ein.
+2. Der Client sendet diese Anmelde Informationen an den autorisierungsserver.
+3. Der autorisierungsserver authentifiziert die Anmelde Informationen und gibt ein Zugriffs Token zurück.
+4. Für den Zugriff auf eine geschützte Ressource schließt der Client das Zugriffs Token im Autorisierungs Header der HTTP-Anforderung ein.
 
 ![](individual-accounts-in-web-api/_static/image3.png)
 
-Bei der Auswahl **einzelkonten** in der Web-API-Projektvorlage enthält das Projekt einen autorisierungsserver, die Anmeldeinformationen des Benutzers überprüft und Token ausstellt. Das folgende Diagramm zeigt den gleichen Anmeldeinformationen Flow in Form von Web-API.
+Wenn Sie **einzelne Konten** in der Web-API-Projektvorlage auswählen, enthält das Projekt einen autorisierungsserver, der die Benutzer Anmelde Informationen überprüft und Token ausgibt. Das folgende Diagramm zeigt den gleichen Anmelde Informationsfluss in Bezug auf Web-API-Komponenten.
 
 ![](individual-accounts-in-web-api/_static/image4.png)
 
-In diesem Szenario werden Web-API-Controller als Ressourcenserver fungieren. Ein Authentifizierungsfilter überprüft das Zugriffstoken, und die **[Authorize]** Attribut wird verwendet, um eine Ressource zu schützen. Wenn ein Controller bzw. die Aktionsmethode hat die **[Authorize]** Attribut, alle Anforderungen an diesen Controller oder die Aktion muss authentifiziert werden. Andernfalls wird die Autorisierung verweigert, und Web-API-Fehler 401 (nicht autorisiert) zurückgibt.
+In diesem Szenario fungieren Web-API-Controller als Ressourcen Server. Ein Authentifizierungs Filter überprüft Zugriffs Token, und das **[autorisieren]** -Attribut wird verwendet, um eine Ressource zu schützen. Wenn ein Controller oder eine Aktion über das Attribut **[autorisieren]** verfügt, müssen alle Anforderungen an diesen Controller oder diese Aktion authentifiziert werden. Andernfalls wird die Autorisierung verweigert, und die Web-API gibt einen Fehler 401 (nicht autorisiert) zurück.
 
-Der autorisierungsserver und der Authentifizierungsfilter, die beide einen Aufruf an ein [OWIN-Middleware](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) Komponente, die Details der "oauth2" verarbeitet. Ich beschreibe später in diesem Tutorial das Design im Detail.
+Der autorisierungsserver und der Authentifizierungs Filter filtern beide eine [owin-Middleware](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md) -Komponente, die die Details von OAuth2 behandelt. Der Entwurf wird später in diesem Tutorial ausführlicher beschrieben.
 
-## <a name="sending-an-unauthorized-request"></a>Senden eine nicht autorisierte Anforderung
+## <a name="sending-an-unauthorized-request"></a>Senden einer nicht autorisierten Anforderung
 
-Klicken Sie zum Einstieg, führen Sie die app, und klicken Sie auf die **-API Aufrufen** Schaltfläche. Wenn die Anforderung abgeschlossen ist, sollte eine Fehlermeldung in die **Ergebnis** Feld. Das ist da die Anforderung ein Zugriffstoken nicht enthält, damit die Anforderung nicht autorisiert ist.
+Führen Sie die APP aus, und klicken Sie auf die Schaltfläche **API Anrufen** , um loszulegen. Wenn die Anforderung abgeschlossen ist, sollte im **Ergebnis** Feld eine Fehlermeldung angezeigt werden. Der Grund hierfür ist, dass die Anforderung kein Zugriffs Token enthält, sodass die Anforderung nicht autorisiert ist.
 
 [![](individual-accounts-in-web-api/_static/image6.png)](individual-accounts-in-web-api/_static/image5.png)
 
-Die **-API Aufrufen** Schaltfläche sendet eine AJAX-Anforderung an ~/api/Werten, die eine Controlleraktion der Web-API aufruft. Hier ist der Teil der JavaScript-Code, der die AJAX-Anforderung sendet. In der Beispiel-app alle von der JavaScript-app-Code befindet sich in der Datei Scripts\app.js.
+Die Schaltfläche **API aufrufen** sendet eine AJAX-Anforderung an ~/API/Values, die eine Web-API-Controller Aktion aufruft. Dies ist der Abschnitt von JavaScript-Code, der die AJAX-Anforderung sendet. In der Beispiel-App befindet sich der gesamte JavaScript-app-Code in der Datei scripung\app.js.
 
 [!code-javascript[Main](individual-accounts-in-web-api/samples/sample1.js)]
 
-Bis der Benutzer anmeldet, ist es kein bearertoken und daher keine Authorization-Header in der Anforderung. Dies bewirkt, dass die Anforderung ein 401-Fehler zurückgegeben.
+Bis der Benutzer sich anmeldet, gibt es kein bearertoken und daher keinen Autorisierungs Header in der Anforderung. Dies bewirkt, dass die Anforderung einen 401-Fehler zurückgibt.
 
-Hier ist die HTTP-Anforderung. (Ich verwendet habe [Fiddler](http://www.telerik.com/fiddler) den HTTP-Datenverkehr zu erfassen.)
+Hier ist die HTTP-Anforderung. (Ich habe " [fddler](http://www.telerik.com/fiddler) " zum Erfassen des HTTP-Datenverkehrs verwendet.)
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample2.cmd)]
 
@@ -108,17 +108,17 @@ HTTP-Antwort:
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample3.cmd?highlight=1,4)]
 
-Beachten Sie, dass die Antwort enthält den Www-Authentifizierungsheader der Herausforderung, die auf den Bearer festgelegt. Der angibt, dass der Server ein bearertoken erwartet.
+Beachten Sie, dass die Antwort einen WWW-Authenticate-Header enthält, bei dem die Challenge auf bearfest gelegt ist. Dies gibt an, dass der Server ein bearertoken erwartet.
 
-## <a name="register-a-user"></a>Registrieren Sie einen Benutzer
+## <a name="register-a-user"></a>Registrieren eines Benutzers
 
-In der **registrieren** Abschnitt der app, geben Sie einen e-Mail-Adresse und ein Kennwort ein, und klicken Sie auf die **registrieren** Schaltfläche.
+Geben Sie im Abschnitt **registrieren** der App eine e-Mail und ein Kennwort ein, und klicken Sie auf die Schaltfläche **registrieren** .
 
-Sie müssen eine gültige e-Mail-Adresse für dieses Beispiel verwenden, aber eine echte app würde die Adresse zu bestätigen. (Finden Sie unter [erstellen eine sichere ASP.NET MVC 5-Web-app mit Anmeldung, e-Mail-Bestätigung und kennwortzurücksetzung](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md).) Verwenden Sie für das Kennwort etwa "Kennwort1!", mit einem Großbuchstaben, Kleinbuchstaben, Anzahl und nicht alphanumerische Zeichen. Um die app einfach zu halten, ausgelassen ich die clientseitige Validierung, daher liegt ein Problem mit dem Kennwortformat vor, Sie Fehlercode 400 (Ungültige Anforderung) erhalten.
+Sie müssen für dieses Beispiel keine gültige e-Mail-Adresse verwenden, aber eine echte App bestätigt die Adresse. (Siehe [Erstellen einer Secure ASP.NET MVC 5-Web-App mit Anmeldung, e-Mail-Bestätigung und Kenn Wort](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)Zurücksetzung.) Verwenden Sie für das Kennwort etwa "Password1!" mit einem Großbuchstaben, Kleinbuchstaben, Zahlen und nicht alphanumerischen Zeichen. Um die APP auf dem neuesten Stand zu halten, habe ich die Client seitige Validierung ausgelassen. Wenn also ein Problem mit dem Kenn Wort Format vorliegt, erhalten Sie den Fehler 400 (ungültige Anforderung).
 
 [![](individual-accounts-in-web-api/_static/image8.png)](individual-accounts-in-web-api/_static/image7.png)
 
-Die **registrieren** Schaltfläche sendet eine POST-Anforderung an ~/api/Account/Register /. Der Anforderungstext ist eine jsonobjekt, das den Namen und das Kennwort enthält. Hier ist der JavaScript-Code, der die Anforderung sendet:
+Die **Register** Schaltfläche sendet eine Post-Anforderung an ~/API/Account/Register/. Der Anforderungs Text ist ein JSON-Objekt, das den Namen und das Kennwort enthält. Dies ist der JavaScript-Code, der die Anforderung sendet:
 
 [!code-javascript[Main](individual-accounts-in-web-api/samples/sample4.js)]
 
@@ -130,47 +130,47 @@ HTTP-Antwort:
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample6.cmd)]
 
-Diese Anforderung erfolgt durch die `AccountController` Klasse. Intern `AccountController` verwendet ASP.NET Identity zum Verwalten der Mitgliedschaftsdatenbank.
+Diese Anforderung wird von der `AccountController`-Klasse verarbeitet. Intern verwendet `AccountController` ASP.net Identity zum Verwalten der Mitgliedschafts Datenbank.
 
-Wenn Sie die app lokal aus Visual Studio ausführen, werden die Benutzerkonten in LocalDB, in der Tabelle "aspnetusers" gespeichert. Um die Tabellen in Visual Studio anzuzeigen, klicken Sie auf die **Ansicht** , wählen Sie im Menü **Server-Explorer**, erweitern Sie dann **Datenverbindungen**.
+Wenn Sie die APP lokal aus Visual Studio ausführen, werden Benutzerkonten in der Tabelle "aspnettusers" in "localdb" gespeichert. Um die Tabellen in Visual Studio anzuzeigen, klicken Sie auf das Menü **Ansicht** , wählen Sie **Server-Explorer**und dann **Datenverbindungen**aus.
 
 ![](individual-accounts-in-web-api/_static/image9.png)
 
-## <a name="get-an-access-token"></a>Abrufen eines Zugriffstokens
+## <a name="get-an-access-token"></a>Abrufen eines Zugriffs Tokens
 
-Bisher haben wir keine OAuth fertig, aber nun sehen, dass der OAuth-autorisierungsserver in Aktion, wenn es sich um ein Zugriffstoken anfordern. In der **anmelden** Bereich der Beispiel-app, geben Sie den e-Mail-Adresse und das Kennwort, und klicken Sie auf **anmelden**.
+Bisher haben wir keine OAuth abgeschlossen, aber jetzt wird der OAuth-autorisierungsserver in Aktion angezeigt, wenn wir ein Zugriffs Token anfordern. Geben Sie im Bereich **Log in** der Beispiel-APP die e-Mail und das Kennwort ein, und klicken Sie auf **Anmelden**.
 
 [![](individual-accounts-in-web-api/_static/image11.png)](individual-accounts-in-web-api/_static/image10.png)
 
-Die **anmelden** Schaltfläche sendet eine Anforderung an den token-Endpunkt. Der Hauptteil der Anforderung enthält die folgenden Formular-Url-codierte Daten:
+Die Schaltfläche **Anmelden** sendet eine Anforderung an den tokenendpunkt. Der Anforderungs Text enthält die folgenden Formular-URL-codierten Daten:
 
-- Erteilen Sie\_Typ: "Password"
-- Benutzername: &lt;e-Mail des Benutzers&gt;
-- password: &lt;password&gt;
+- Grant\_Type: "Password"
+- Benutzername: &lt;die e-Mail des Benutzers an&gt;
+- Kennwort: &lt;Kennwort&gt;
 
-Hier ist der JavaScript-Code, der die AJAX-Anforderung sendet:
+Hier sehen Sie den JavaScript-Code, der die AJAX-Anforderung sendet:
 
 [!code-javascript[Main](individual-accounts-in-web-api/samples/sample7.js?highlight=14)]
 
-Wenn die Anforderung erfolgreich ist, gibt der autorisierungsserver ein Zugriffstoken im Antworttext zurück. Beachten Sie, dass wir das Token in Sitzung Storage zur späteren Verwendung beim Senden von Anforderungen an die API gespeichert werden. Im Gegensatz zu einige Formen der Authentifizierung (z. B. Cookie-basierte Authentifizierung) wird der Browser nicht automatisch das Zugriffstoken in nachfolgenden Anforderungen hinzugefügt. Die Anwendung müssen manuell. Das ist eine gute Sache, da er begrenzt [CSRF-Sicherheitsrisiken](preventing-cross-site-request-forgery-csrf-attacks.md).
+Wenn die Anforderung erfolgreich ist, gibt der autorisierungsserver ein Zugriffs Token im Antworttext zurück. Beachten Sie, dass das Token im Sitzungs Speicher gespeichert wird, um es später beim Senden von Anforderungen an die API zu verwenden. Im Gegensatz zu einigen Authentifizierungs Formen (z. b. cookiebasierte Authentifizierung) fügt der Browser das Zugriffs Token nicht automatisch in nachfolgende Anforderungen ein. Die Anwendung muss dies explizit tun. Das ist eine gute Sache, da Sie [CSRF-Sicherheits](preventing-cross-site-request-forgery-csrf-attacks.md)Risiken einschränkt.
 
 HTTP-Anforderung:
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample8.cmd?highlight=5,10)]
 
-Sie können sehen, dass die Anforderung die Anmeldeinformationen des Benutzers enthält. Sie *müssen* HTTPS TLS zu verwenden.
+Sie können sehen, dass die Anforderung die Anmelde Informationen des Benutzers enthält. Sie *müssen* HTTPS verwenden, um die Transportschicht Sicherheit bereitzustellen.
 
 HTTP-Antwort:
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample9.cmd?highlight=8)]
 
-Zur besseren Lesbarkeit, wenn ich den JSON-Code mit Einzug dargestellt und das Zugriffstoken, das eine ziemlich lang ist abgeschnitten.
+Zur besseren Lesbarkeit habe ich den JSON-Code eingerückt und das Zugriffs Token gekürzt, was recht lang ist.
 
-Die `access_token`, `token_type`, und `expires_in` Eigenschaften durch OAuth2-Spezifikation definiert sind. Die anderen Eigenschaften (`userName`, `.issued`, und `.expires`) sind nur zu Informationszwecken. Sie finden den Code, der diese zusätzlichen Eigenschaften in fügt die `TokenEndpoint` -Methode, in der Datei /Providers/ApplicationOAuthProvider.cs.
+Die Eigenschaften `access_token`, `token_type`und `expires_in` werden von der OAuth2-Spezifikation definiert. Die anderen Eigenschaften (`userName`, `.issued`und `.expires`) dienen nur zu Informationszwecken. Sie finden den Code, mit dem diese zusätzlichen Eigenschaften in der `TokenEndpoint`-Methode in der/Providers/ApplicationOAuthProvider.cs-Datei hinzugefügt werden.
 
-## <a name="send-an-authenticated-request"></a>Eine authentifizierte Anforderung senden
+## <a name="send-an-authenticated-request"></a>Authentifizierte Anforderung senden
 
-Nun, da wir ein bearertoken verfügen, können wir eine authentifizierte Anforderung an die API vornehmen. Dies erfolgt durch Festlegen des Authorization-Headers in der Anforderung. Klicken Sie auf die **-API Aufrufen** Schaltfläche erneut aus, um dies zu sehen.
+Nachdem wir nun über ein bearertoken verfügen, können wir eine authentifizierte Anforderung an die API senden. Dies geschieht, indem der Autorisierungs Header in der Anforderung festgelegt wird. Klicken Sie erneut auf die Schaltfläche **API abrufen** , um dies anzuzeigen.
 
 [![](individual-accounts-in-web-api/_static/image13.png)](individual-accounts-in-web-api/_static/image12.png)
 
@@ -182,78 +182,78 @@ HTTP-Antwort:
 
 [!code-console[Main](individual-accounts-in-web-api/samples/sample11.cmd)]
 
-## <a name="log-out"></a>Melden Sie sich ab
+## <a name="log-out"></a>Abmelden
 
-Da der Browser die Anmeldeinformationen oder das Zugriffstoken nicht zwischengespeichert ist, ist das Abmelden lediglich "vergessen" das Token, indem Sie ihn aus dem Sitzungsspeicher entfernen:
+Da der Browser die Anmelde Informationen oder das Zugriffs Token nicht zwischenspeichert, ist es einfach, das Token zu "vergessen", indem es aus dem Sitzungs Speicher entfernt wird:
 
 [!code-javascript[Main](individual-accounts-in-web-api/samples/sample12.js)]
 
-## <a name="understanding-the-individual-accounts-project-template"></a>Verstehen der Einzelkonten-Projektvorlage
+## <a name="understanding-the-individual-accounts-project-template"></a>Grundlegendes zur Projektvorlage für einzelne Konten
 
-Bei der Auswahl **Einzelkonten** in der ASP.NET Web Application-Projektvorlage, die das Projekt enthält:
+Wenn Sie **einzelne Konten** in der Projektvorlage ASP.NET-Webanwendung auswählen, enthält das Projekt Folgendes:
 
-- Ein Server für den OAuth2-Autorisierung.
-- Eine Web-API-Endpunkt für die Verwaltung von Benutzerkonten
+- Ein OAuth2-autorisierungsserver.
+- Ein Web-API-Endpunkt zum Verwalten von Benutzerkonten
 - Ein EF-Modell zum Speichern von Benutzerkonten.
 
-Hier sind die hauptanwendung-Klassen, die diese Funktionen zu implementieren:
+Im folgenden finden Sie die wichtigsten Anwendungs Klassen, die diese Features implementieren:
 
-- `AccountController`. Stellt einen Web-API-Endpunkt für die Verwaltung von Benutzerkonten bereit. Die `Register` Aktion ist die einzige, die wir in diesem Tutorial verwendet. Andere Methoden für die Klasse unterstützt das Zurücksetzen von Kennwörtern, Anmeldungen per sozialem Netzwerk und andere Funktionen.
-- `ApplicationUser`, in /Models/IdentityModels.cs definiert. Diese Klasse ist das EF-Modell für Benutzerkonten in der Mitgliedschaftsdatenbank.
-- `ApplicationUserManager`, definiert in/app\_Start/IdentityConfig.cs, die diese Klasse von wird [UserManager](https://msdn.microsoft.com/library/dn613290.aspx) führt Vorgänge für Benutzerkonten, z. B. Erstellen eines neuen Benutzers, und Überprüfen von Kennwörtern und So weiter, und automatisch beibehalten. Änderungen an der Datenbank.
-- `ApplicationOAuthProvider`. Dieses Objekt wird in die OWIN-Middleware integriert und von der Middleware ausgelösten Ereignisse verarbeitet. Es leitet sich von [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
+- [https://login.microsoftonline.com/consumers/](`AccountController`). Stellt einen Web-API-Endpunkt zum Verwalten von Benutzerkonten bereit. Die `Register` Aktion ist die einzige Aktion, die wir in diesem Tutorial verwendet haben. Andere Methoden der-Klasse unterstützen die Kenn Wort Zurücksetzung, soziale Anmeldungen und andere Funktionen.
+- in/Models/IdentityModels.cs. definierte `ApplicationUser` Diese Klasse ist das EF-Modell für Benutzerkonten in der Mitgliedschafts Datenbank.
+- `ApplicationUserManager`, die in/App\_Start/identityconfig. cs definiert ist, wird diese Klasse von [usermanager](https://msdn.microsoft.com/library/dn613290.aspx) abgeleitet und führt Vorgänge für Benutzerkonten aus, z. b. das Erstellen eines neuen Benutzers, das Überprüfen von Kenn Wörtern usw. und speichert automatisch Änderungen an der Datenbank.
+- [https://login.microsoftonline.com/consumers/](`ApplicationOAuthProvider`). Dieses Objekt wird in die owin-Middleware eingebunden und verarbeitet Ereignisse, die von der Middleware ausgelöst werden. Sie wird von [oauthauthorizationserverprovider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)abgeleitet.
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 
-### <a name="configuring-the-authorization-server"></a>Konfigurieren des Autorisierungsservers
+### <a name="configuring-the-authorization-server"></a>Konfigurieren des Autorisierungs Servers
 
-In StartupAuth.cs konfiguriert der folgende Code den autorisierungsserver "oauth2".
+Der folgende Code konfiguriert in StartupAuth.cs den OAuth2-autorisierungsserver.
 
 [!code-csharp[Main](individual-accounts-in-web-api/samples/sample13.cs)]
 
-Die `TokenEndpointPath` -Eigenschaft ist die URL-Pfad, an den autorisierungsendpunkt-Server. Dies ist die URL die app verwendet, um das bearertoken zu erhalten.
+Die `TokenEndpointPath`-Eigenschaft ist der URL-Pfad zum autorisierungsserver Endpunkt. Das ist die URL, die die APP verwendet, um die bearertoken zu erhalten.
 
-Die `Provider` Eigenschaft gibt an, einen Anbieter, der integriert wird, in die OWIN-Middleware und verarbeitet Ereignisse, die von der Middleware ausgelöst.
+Die `Provider`-Eigenschaft gibt einen Anbieter an, der in die owin-Middleware einfügt und Ereignisse verarbeitet, die von der Middleware ausgelöst werden.
 
-Hier ist der grundlegende Ablauf bei möchte, dass die app ein Token zu erhalten:
+Hier ist der grundlegende Ablauf, wenn die APP ein Token erhalten soll:
 
-1. Um ein Zugriffstoken zu erhalten, die app sendet eine Anforderung zum ~ / Token.
-2. Ruft die OAuth-Middleware `GrantResourceOwnerCredentials` für den Anbieter.
-3. Der Anbieter Ruft die `ApplicationUserManager` die Anmeldeinformationen zu überprüfen, und erstellen eine anspruchsidentität.
-4. Wenn dies erfolgreich ist, erstellt der Anbieter ein Authentifizierungsticket, die zum Generieren des Tokens verwendet wird.
+1. Um ein Zugriffs Token zu erhalten, sendet die APP eine Anforderung an ~/Token.
+2. Die OAuth-Middleware ruft `GrantResourceOwnerCredentials` für den Anbieter auf.
+3. Der Anbieter Ruft die `ApplicationUserManager` auf, um die Anmelde Informationen zu überprüfen und eine Anspruchs Identität zu erstellen.
+4. Wenn dies erfolgreich ist, erstellt der Anbieter ein Authentifizierungs Ticket, das verwendet wird, um das Token zu generieren.
 
 [![](individual-accounts-in-web-api/_static/image16.png)](individual-accounts-in-web-api/_static/image15.png)
 
-Die OAuth-Middleware weiß nicht, alles zu den Benutzerkonten. Der Anbieter kommuniziert zwischen dem Middleware und ASP.NET Identity. Weitere Informationen über die autorisierungsserver Implementierung finden Sie unter [OWIN OAuth 2.0-Autorisierungsserver](../../../aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server.md).
+Die OAuth-Middleware weiß nichts über die Benutzerkonten. Der Anbieter kommuniziert zwischen der Middleware und ASP.net Identity. Weitere Informationen zum Implementieren des Autorisierungs Servers finden Sie unter [owin OAuth 2,0 Authorization Server](../../../aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server.md).
 
-### <a name="configuring-web-api-to-use-bearer-tokens"></a>Konfigurieren von Web-API mit Bearer-Tokens
+### <a name="configuring-web-api-to-use-bearer-tokens"></a>Konfigurieren der Web-API für die Verwendung von bearertoken
 
-In der `WebApiConfig.Register` -Methode, der folgende Code legt fest, um die Authentifizierung für die Web-API-Pipeline:
+In der `WebApiConfig.Register`-Methode richtet der folgende Code die Authentifizierung für die Web-API-Pipeline ein:
 
 [!code-csharp[Main](individual-accounts-in-web-api/samples/sample14.cs)]
 
-Die **auch namensbasiert** Klasse ermöglicht die Authentifizierung mithilfe von Bearer-Tokens.
+Die **hostauthenticationfilter** -Klasse aktiviert die Authentifizierung mithilfe von bearertoken.
 
-Die **SuppressDefaultHostAuthentication** Methode weist die Web-API-Authentifizierung zu ignorieren, die erfolgt, bevor die Anforderung die Web-API-Pipeline, die von IIS oder von OWIN-Middleware erreicht hat. Auf diese Weise können wir die Web-API für die Authentifizierung nur mit Bearer-Tokens einschränken.
+Die **suppressdefaulthostauthentication** -Methode weist die Web-API an, jegliche Authentifizierung zu ignorieren, bevor die Anforderung die Web-API-Pipeline erreicht, entweder von IIS oder von owin-Middleware. Auf diese Weise können Sie die Authentifizierung der Web-API ausschließlich auf Bearertoken einschränken.
 
 > [!NOTE]
-> Insbesondere kann der MVC-Teil der app Formularauthentifizierung verwendet die Anmeldeinformationen in einem Cookie gespeichert. Cookiebasierte Authentifizierung erfordert die Verwendung von fälschungssicherheitstoken, um CSRF-Angriffe zu verhindern. Das ist ein Problem für Web-APIs, da es gibt keine praktische Möglichkeit für die Web-API das fälschungssicherheitstoken an den Client zu senden. (Weitere Informationen zu diesem Problem finden Sie unter [verhindern von CSRF-Angriffen in Web-API-](preventing-cross-site-request-forgery-csrf-attacks.md).) Aufrufen von **SuppressDefaultHostAuthentication** wird sichergestellt, dass die Web-API nicht von den Anmeldeinformationen in Cookies gespeicherten CSRF-Angriffe anfällig ist.
+> Der MVC-Teil Ihrer APP kann insbesondere eine Formular Authentifizierung verwenden, die Anmelde Informationen in einem Cookie speichert. Die cookiebasierte Authentifizierung erfordert die Verwendung von Fälschungs Token, um CSRF-Angriffe zu verhindern. Das ist ein Problem für Web-APIs, da die Web-API keine bequeme Möglichkeit hat, das antifälschungstoken an den Client zu senden. (Weitere Hintergrundinformationen zu diesem Problem finden Sie unter [verhindern von CSRF-Angriffen in der Web-API](preventing-cross-site-request-forgery-csrf-attacks.md).) Der Aufruf von **suppressdefaulthostauthentication** stellt sicher, dass die Web-API nicht anfällig für CSRF-Angriffe von Anmelde Informationen ist, die in Cookies gespeichert
 
-Wenn der Client eine geschützte Ressource anfordert, hier geschieht in der Web-API-Pipeline:
+Wenn der Client eine geschützte Ressource anfordert, geschieht Folgendes in der Web-API-Pipeline:
 
-1. Die **HostAuthentication** Filter Ruft die OAuth-Methode, um das Token zu überprüfen.
-2. Die Middleware konvertiert das Token in eine anspruchsidentität.
-3. Die Anforderung an diesem Punkt ist *authentifiziert* , nicht jedoch *autorisiert*.
-4. Der Autorisierungsfilter untersucht die anspruchsidentität. Wenn die Ansprüche den Benutzer für diese Ressource zu autorisieren, wird die Anforderung autorisiert. In der Standardeinstellung die **[Authorize]** Attribut wird jede Anforderung, die authentifiziert werden autorisiert. Allerdings können Sie die Rolle oder von anderen Ansprüchen autorisieren. Weitere Informationen finden Sie unter [Authentifizierung und Autorisierung in Web-API-](authentication-and-authorization-in-aspnet-web-api.md).
-5. Wenn die vorherigen Schritte erfolgreich sind, gibt der Controller die geschützte Ressource zurück. Andernfalls erhält der Client Fehler 401 (nicht autorisiert).
+1. Der **hostauthentication** -Filter Ruft die OAuth-Middleware auf, um das Token zu validieren.
+2. Die Middleware konvertiert das Token in eine Anspruchs Identität.
+3. An diesem Punkt wird die Anforderung *authentifiziert* , aber nicht *autorisiert*.
+4. Der Autorisierungs Filter untersucht die Anspruchs Identität. Wenn die Ansprüche den Benutzer für diese Ressource autorisieren, wird die Anforderung autorisiert. Standardmäßig werden alle authentifizierten authentifizierten Anforderungen vom Attribut **[autorisieren]** autorisiert. Allerdings können Sie Sie nach Rolle oder anderen Ansprüchen autorisieren. Weitere Informationen finden Sie unter [Authentifizierung und Autorisierung in der Web-API](authentication-and-authorization-in-aspnet-web-api.md).
+5. Wenn die vorherigen Schritte erfolgreich ausgeführt wurden, gibt der Controller die geschützte Ressource zurück. Andernfalls empfängt der Client den Fehler 401 (nicht autorisiert).
 
 [![](individual-accounts-in-web-api/_static/image18.png)](individual-accounts-in-web-api/_static/image17.png)
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [ASP.NET Identity](../../../identity/index.md)
-- [Grundlegendes zu Sicherheitsfunktionen in der SPA-Vorlage für VS2013 RC](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx). MSDN-Blog-Beitrag von Hongye Sun.
-- [Analyse der Web-API einzelne Konten Vorlage – Teil 2: Lokale Konten](http://leastprivilege.com/2013/11/26/dissecting-the-web-api-individual-accounts-templatepart-2-local-accounts/). Der Blogbeitrag von Dominick Baier.
-- [Hosten von Authentifizierungs- und Web-API mit OWIN](http://brockallen.com/2013/10/27/host-authentication-and-web-api-with-owin-and-active-vs-passive-authentication-middleware/). Eine gute Erklärung dafür `SuppressDefaultHostAuthentication` und `HostAuthenticationFilter` von Brock Allen.
-- [Anpassen von Profilinformationen in ASP.NET Identity in Visual Studio 2013-Vorlagen](https://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx). MSDN-Blogbeitrag von Pranav Rastogi.
-- [Pro Anforderung Prozesslebensdauer-Verwaltung für UserManager-Klasse in ASP.NET Identity](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx). MSDN-Blogbeitrag von Suhas Joshi, mit einer guten Erklärung der `UserManager` Klasse.
+- Grundlegendes [zu Sicherheits Features in der Spa-Vorlage für VS2013 RC](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx). MSDN-Blogbeitrag von hongye sun.
+- [Dissecting the Web API Individual Accounts Template – Part 2: local Accounts](http://leastprivilege.com/2013/11/26/dissecting-the-web-api-individual-accounts-templatepart-2-local-accounts/). Blog Beitrag von Dominick Baier.
+- [Host Authentifizierung und Web-API mit owin](http://brockallen.com/2013/10/27/host-authentication-and-web-api-with-owin-and-active-vs-passive-authentication-middleware/). Eine gute Erläuterung der `SuppressDefaultHostAuthentication` und `HostAuthenticationFilter` von Brock allen.
+- [Anpassen von Profilinformationen in ASP.net Identity in vs 2013-Vorlagen](https://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx). MSDN-Blogbeitrag von Pranav Rastogi.
+- [Pro Anforderungs Lebensdauer-Verwaltung für die usermanager-Klasse in ASP.net Identity](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx). MSDN-Blogbeitrag von Suhas Joshi, mit einer guten Erläuterung der `UserManager`-Klasse.

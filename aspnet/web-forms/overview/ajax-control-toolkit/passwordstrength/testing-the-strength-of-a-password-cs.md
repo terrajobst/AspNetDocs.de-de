@@ -9,11 +9,11 @@ ms.assetid: cb4afbae-9b8f-483d-9729-476d4b9f85fc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e55eab9feebc18f39dd40c59cfb423208296b6c5
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598853"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508965"
 ---
 # <a name="testing-the-strength-of-a-password-c"></a>Testen der Sicherheit eines Kennworts (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Kenn Wörter sind fast überall erforderlich, sodass verzögerte Benutzer tendenziell einfache Kenn Wörter auswählen, die leicht zu unterbrechen sind. Das passwordStrength-Steuerelement im ASP.NET AJAX Control Toolkit kann prüfen, wie gut ein Kennwort ist.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Kenn Wörter sind fast überall erforderlich, sodass verzögerte Benutzer tendenziell einfache Kenn Wörter auswählen, die leicht zu unterbrechen sind. Mit dem `PasswordStrength`-Steuerelement im ASP.NET AJAX Control Toolkit können Sie überprüfen, wie gut ein Kennwort ist.
 
@@ -47,4 +47,4 @@ Führen Sie die Seite aus, und geben Sie Folgendes ein: erst nachdem Sie Kleinbu
 Das Kennwort ist nun (Recht) gut ([Klicken Sie, um das Bild in voller Größe anzuzeigen](testing-the-strength-of-a-password-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](testing-the-strength-of-a-password-vb.md)
+> [Weiter](testing-the-strength-of-a-password-vb.md)

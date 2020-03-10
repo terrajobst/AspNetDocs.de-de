@@ -9,11 +9,11 @@ ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 11f4a7cae8d425873b1828a9e5f51471def954fb
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457153"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78470319"
 ---
 # <a name="mvc-recommended-resources"></a>MVC – Empfohlene Ressourcen
 
@@ -24,7 +24,7 @@ von [Rick Anderson](https://twitter.com/RickAndMSFT)
 > Ein guter Ausgangspunkt, um Ihre Fragen zu beantworten oder Lösungen für Probleme zu finden, finden Sie im [ASP.NET MVC-Forum](https://forums.asp.net/1146.aspx/1?MVC) oder in [StackOverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc).
 > <a id="gettingstarted"></a>
 
-## <a name="getting-started-with-aspnet-mvc"></a>Erste Schritte mit ASP.NET MVC
+## <a name="getting-started-with-aspnet-mvc"></a>Einstieg in ASP.NET MVC
 
 - [Einführung in ASP.NET MVC 5](introduction/getting-started.md)
 - [Einführung in ASP.NET MVC](https://pluralsight.com/training/Player?author=scott-allen&amp;name=mvc4-building-m1-intro&amp;mode=live&amp;clip=0&amp;course=mvc4-building) (Video von Pluralsight)
@@ -36,7 +36,7 @@ von [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 <a id="newfeatured"></a>
 
-## <a name="new-featured-content"></a>Neue ausgewählte Inhalte
+## <a name="new-featured-content"></a>Neue Inhalte
 
 - [Auswählen von Kulturen für die Lokalisierung in ASP.net](http://weblog.west-wind.com/posts/2014/Mar/27/Auto-Selecting-Cultures-for-Localization-in-ASPNET)
 - [Erstellen einer ASP.NET MVC 5-App mit Facebook und Google OAuth2 Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)

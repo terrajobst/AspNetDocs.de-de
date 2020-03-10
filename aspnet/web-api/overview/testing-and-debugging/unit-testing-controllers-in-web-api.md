@@ -1,122 +1,122 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
-title: Komponententests für Controller in ASP.NET Web-API 2 | Microsoft-Dokumentation
+title: Komponenten Test Controller in ASP.net-Web-API 2 | Microsoft-Dokumentation
 author: MikeWasson
-description: Dieses Thema beschreibt, welche Techniken für Komponententests für Controller in Web-API 2. Bevor Sie dieses Thema lesen, sollten Sie das Tutorial Einheit zu lesen...
+description: In diesem Thema werden einige spezielle Techniken für Komponenten Test Controller in der Web-API 2 beschrieben. Bevor Sie dieses Thema lesen, sollten Sie die tutorialeinheit lesen...
 ms.author: riande
 ms.date: 06/11/2014
 ms.assetid: 43a6cce7-a3ef-42aa-ad06-90d36d49f098
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: cdb1700537021e276669de1a9e0330a62659746c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121998"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447003"
 ---
 # <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>Komponententests für Controller in ASP.NET-Web-API 2
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-> Dieses Thema beschreibt, welche Techniken für Komponententests für Controller in Web-API 2. Bevor Sie dieses Thema lesen, sollten, lesen das Tutorial [Unit Testing ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md), erfahren, wie Sie ein Komponententestprojekt der Projektmappe hinzufügen.
+> In diesem Thema werden einige spezielle Techniken für Komponenten Test Controller in der Web-API 2 beschrieben. Bevor Sie dieses Thema lesen, sollten Sie das Tutorial [Unit Testing ASP.net-Web-API 2](unit-testing-with-aspnet-web-api.md)lesen, das zeigt, wie Sie der Projekt Mappe ein Komponenten Testprojekt hinzufügen.
 >
-> ## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+> ## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 >
 > - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web-API 2
-> - [Moq](https://github.com/Moq) 4.5.30
+> - [4.5.30](https://github.com/Moq)
 
 > [!NOTE]
-> Ich habe die Moq verwendet, aber das gleiche Prinzip gilt für alle Mockframework. Moq 4.5.30 (und höher) unterstützt Visual Studio 2017, Roslyn und .NET 4.5 und höheren Versionen.
+> Ich habe mich für die Verwendung von "muq", aber dieselbe Idee gilt für jedes andere Framework. "Muq 4.5.30 (und höher)" unterstützt Visual Studio 2017, Roslyn und .NET 4,5 und höhere Versionen.
 
-Ein häufiges Muster in Komponententests ist &quot;anordnen-Act-assert&quot;:
+Ein gängiges Muster in Komponententests ist &quot;"Arrange-Act-Assert"-&quot;:
 
-- Arrangieren: Richten Sie alle Voraussetzungen für den Test ausführen.
-- ACT: Führen Sie den Test.
-- Bestätigen: Stellen Sie sicher, dass der Test erfolgreich war.
+- Anordnen: richten Sie alle Voraussetzungen ein, damit der Test ausgeführt werden muss.
+- Act: führt den Test aus.
+- Assert: Überprüfen Sie, ob der Test erfolgreich war.
 
-Im Schritt anordnen wird häufig Mock oder stub-Objekte. Das minimiert der Anzahl der Abhängigkeiten, damit der Test auf einen Aspekt orientiert.
+Im Schritt "Anordnen" werden häufig Mock-oder Stub-Objekte verwendet. Dadurch wird die Anzahl der Abhängigkeiten minimiert, daher konzentriert sich der Test auf das Testen eines solchen.
 
-Hier sind einige Dinge, die Sie in Ihren Web-API-Controllern Komponententests sollten:
+Im folgenden finden Sie einige Punkte, die Sie in Ihren Web-API-Controllern testen sollten:
 
-- Die Aktion gibt die richtige Art der Antwort zurück.
-- Ungültige Parameter geben die richtige Fehlermeldung.
-- Die Aktion ruft die richtige Methode auf der Ebene Repository oder den Dienst an.
-- Wenn die Antwort ein Domänenmodell enthält, überprüfen Sie den Typ des Modells.
+- Die Aktion gibt den korrekten Antworttyp zurück.
+- Ungültige Parameter geben die korrekte Fehler Antwort zurück.
+- Die Aktion ruft die richtige Methode für das Repository oder die Dienst Ebene auf.
+- Wenn die Antwort ein Domänen Modell enthält, überprüfen Sie den Modelltyp.
 
-Dies sind einige allgemeine Dinge zu testen, aber die Details hängen von der controllerimplementierung. Insbesondere macht es einen großen Unterschied, ob Ihre Controlleraktionen zurückgeben **HttpResponseMessage** oder **IHttpActionResult**. Weitere Informationen zu dieser Ergebnistypen, finden Sie unter [Aktionsergebnisse in Web-Api 2](../getting-started-with-aspnet-web-api/action-results.md).
+Dies sind einige der allgemeinen Dinge, die getestet werden müssen, aber die Besonderheiten hängen von ihrer Controller Implementierung ab. Insbesondere ist ein großer Unterschied, ob die Controller Aktionen " **HttpResponseMessage** " oder " **ihttpactionresult**" zurückgeben. Weitere Informationen zu diesen Ergebnistypen finden Sie unter [Aktions Ergebnisse in der Web-API 2](../getting-started-with-aspnet-web-api/action-results.md).
 
-## <a name="testing-actions-that-return-httpresponsemessage"></a>Testen von Aktionen, die HttpResponseMessage zurückgegeben
+## <a name="testing-actions-that-return-httpresponsemessage"></a>Testen von Aktionen, die httprespontmessage zurückgeben
 
-Hier ist ein Beispiel für einen Controller, deren Rückgabetyp Aktionen **HttpResponseMessage**.
+Im folgenden finden Sie ein Beispiel für einen Controller, dessen Aktionen " **httpresponabmessage**" zurückgeben.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample1.cs)]
 
-Beachten Sie, dass der Controller verwendet abhängigkeitseinfügung zum Einfügen einer `IProductRepository`. Das kann für den Controller besser getestet werden, da Sie eine simulierte Repository einfügen können. Im folgenden UnitTest überprüft, ob die `Get` -Methode schreibt eine `Product` in den Antworttext. Vorausgesetzt, dass `repository` ist ein Mock `IProductRepository`.
+Beachten Sie, dass der Controller eine `IProductRepository`mit Abhängigkeitsinjektion Einschleusung Dadurch kann der Controller schneller getestet werden, da Sie ein Mock-Repository einfügen können. Der folgende Komponenten Test überprüft, ob die `Get`-Methode eine `Product` in den Antworttext schreibt. Angenommen, `repository` ist ein Mock `IProductRepository`.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample2.cs)]
 
-Es ist wichtig, legen Sie **anfordern** und **Konfiguration** auf dem Controller. Andernfalls schlägt der Test fehl, mit einem **"ArgumentNullException"** oder **"InvalidOperationException"**.
+Es ist wichtig, die **Anforderung** und **Konfiguration** auf dem Controller festzulegen. Andernfalls schlägt der Test mit einer **ArgumentNullException** oder **InvalidOperationException**fehl.
 
-## <a name="testing-link-generation"></a>Erstellen von links testen
+## <a name="testing-link-generation"></a>Test Link Generierung
 
-Die `Post` Methodenaufrufe **UrlHelper.Link** Links in der Antwort zu erstellen. Dies erfordert etwas mehr Einstellungen im Komponententest:
+Die `Post`-Methode ruft **Urlhelper. Link** auf, um Links in der Antwort zu erstellen. Dies erfordert ein wenig mehr Setup im Komponenten Test:
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample3.cs)]
 
-Die **UrlHelper** Klasse benötigt die Anforderungsdaten-URL und der Route, damit der Test Werte für diese festlegen muss. Eine andere Möglichkeit besteht, Mock oder Stub **UrlHelper**. Bei diesem Ansatz ersetzen Sie den Standardwert [ApiController.Url](https://msdn.microsoft.com/library/system.web.http.apicontroller.url.aspx) mit einer Simulation oder Stub-Version, die einen festen Wert zurückgibt.
+Die **Urlhelper** -Klasse benötigt die Anforderungs-URL und die Routendaten, sodass der Test Werte für diese festlegen muss. Eine andere Möglichkeit ist Mock oder Stub **Urlhelper**. Bei diesem Ansatz ersetzen Sie den Standardwert von " [apicontroller. URL](https://msdn.microsoft.com/library/system.web.http.apicontroller.url.aspx) " durch eine Mock-oder Stubversion, die einen festgelegten Wert zurückgibt.
 
-Ändern wir den Test mit der [Moq](https://github.com/Moq) Framework. Installieren Sie die `Moq` NuGet-Paket im Projekt.
+Wir schreiben den Test mit dem " [muq](https://github.com/Moq) "-Framework neu. Installieren Sie das nuget-Paket `Moq` im Testprojekt.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample4.cs)]
 
-In dieser Version nicht erforderlich, um alle Routendaten einzurichten da das Mock **UrlHelper** gibt eine Konstante Zeichenfolge zurück.
+In dieser Version müssen Sie keine Routendaten einrichten, da der Mock- **Urlhelper** eine Konstante Zeichenfolge zurückgibt.
 
-## <a name="testing-actions-that-return-ihttpactionresult"></a>Testen von Aktionen, die IHttpActionResult zurückgeben
+## <a name="testing-actions-that-return-ihttpactionresult"></a>Testen von Aktionen, die ihttpactionresult zurückgeben
 
-In Web-API 2, kann eine Controlleraktion zurückgeben **IHttpActionResult**, dies ist analog zu **ActionResult** in ASP.NET MVC. Die **IHttpActionResult** Schnittstelle definiert ein Befehlsmuster zum Erstellen von HTTP-Antworten. Anstatt die Antwort direkt erstellen, der Controller gibt eine **IHttpActionResult**. Später, der die Pipeline aufruft der **IHttpActionResult** zum Erstellen der Antwort. Dieser Ansatz erleichtert es, Schreiben von Komponententests, da Sie einen Großteil der Einrichtung, die überspringen können für die benötigte **HttpResponseMessage**.
+In der Web-API 2 kann eine Controller Aktion **ihttpactionresult**zurückgeben, was analog zu **Action result** in ASP.NET MVC ist. Die **ihttpactionresult** -Schnittstelle definiert ein Befehls Muster zum Erstellen von HTTP-Antworten. Anstatt die Antwort direkt zu erstellen, gibt der Controller ein **ihttpactionresult**zurück. Später Ruft die Pipeline das **ihttpactionresult** auf, um die Antwort zu erstellen. Diese Vorgehensweise erleichtert das Schreiben von Komponententests, da Sie eine große Menge an Setup überspringen können, die für **HttpResponseMessage**benötigt wird.
 
-Hier ist ein Beispiel-Controller, deren Rückgabetyp Aktionen **IHttpActionResult**.
+Hier ist ein Beispiel Controller, dessen Aktionen **ihttpactionresult**zurückgeben.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample5.cs)]
 
-Dieses Beispiel zeigt einige allgemeine Muster, die mit **IHttpActionResult**. Sehen wir uns an wie Einheit testen.
+In diesem Beispiel werden einige gängige Muster mithilfe von **ihttpactionresult**veranschaulicht. Sehen wir uns an, wie Sie Komponententests ausführen.
 
-### <a name="action-returns-200-ok-with-a-response-body"></a>Aktion gibt 200 (OK) mit einem Antworttext zurück.
+### <a name="action-returns-200-ok-with-a-response-body"></a>Action gibt 200 (OK) mit einem Antworttext zurück.
 
-Die `Get` Methodenaufrufe `Ok(product)` Wenn das Produkt gefunden wird. Stellen Sie sicher, dass der Rückgabetyp ist im Komponententest, **OkNegotiatedContentResult** und das zurückgegebene Produkt verfügt über die richtigen-ID.
+Die `Get`-Methode ruft `Ok(product)` auf, wenn das Produkt gefunden wurde. Stellen Sie im Komponenten Test sicher, dass der Rückgabetyp **okaushandatedcontentresult** und das zurückgegebene Produkt die Rechte-ID aufweist.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample6.cs)]
 
-Beachten Sie, dass der Komponententest nicht das Aktionsergebnis ausführt. Sie können davon ausgehen, dass das Aktionsergebnis die HTTP-Antwort ordnungsgemäß erstellt. (Daher der Web-API-Framework verfügt über eine eigene Komponententests!)
+Beachten Sie, dass der Komponenten Test das Aktions Ergebnis nicht ausführt. Sie können davon ausgehen, dass das Aktions Ergebnis die HTTP-Antwort ordnungsgemäß erstellt. (Aus diesem Grund verfügt das Web-API-Framework über eigene Komponententests!)
 
-### <a name="action-returns-404-not-found"></a>Aktion gibt 404 (nicht gefunden) zurück.
+### <a name="action-returns-404-not-found"></a>Aktion gibt 404 zurück (nicht gefunden)
 
-Die `Get` Methodenaufrufe `NotFound()` Wenn das Produkt nicht gefunden wird. Für diesen Fall den Komponententest nur überprüft, wenn der Rückgabetyp ist **NotFoundResult**.
+Die `Get`-Methode ruft `NotFound()` auf, wenn das Produkt nicht gefunden wurde. In diesem Fall prüft der Komponenten Test nur, ob der Rückgabetyp **notfoundresult**ist.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample7.cs)]
 
-### <a name="action-returns-200-ok-with-no-response-body"></a>Aktion gibt 200 (OK) ohne Antworttext zurück.
+### <a name="action-returns-200-ok-with-no-response-body"></a>Action gibt 200 (OK) ohne Antworttext zurück.
 
-Die `Delete` Methodenaufrufe `Ok()` eine leere HTTP 200-Antwort zurückgegeben. Wie im vorherigen Beispiel, überprüft der UnitTest den Rückgabetyp, in diesem Fall **OkResult**.
+Die `Delete`-Methode ruft `Ok()` auf, um eine leere HTTP 200-Antwort zurückzugeben. Wie im vorherigen Beispiel überprüft der UnitTest den Rückgabetyp, in diesem Fall **okresult**.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample8.cs)]
 
 ### <a name="action-returns-201-created-with-a-location-header"></a>Aktion gibt 201 (erstellt) mit einem Location-Header zurück.
 
-Die `Post` Methodenaufrufe `CreatedAtRoute` eine HTTP 201-Antwort mit einem URI im Location-Header zurückgegeben. Im Komponententest stellen Sie sicher, dass die Aktion, die richtigen routing Werte festlegt.
+Die `Post`-Methode ruft `CreatedAtRoute` auf, um eine HTTP 201-Antwort mit einem URI im Location-Header zurückzugeben. Überprüfen Sie im Komponenten Test, ob die richtigen Routing Werte von der Aktion festgelegt werden.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample9.cs)]
 
-### <a name="action-returns-another-2xx-with-a-response-body"></a>Aktion gibt eine andere 2xx mit einem Antworttext zurück.
+### <a name="action-returns-another-2xx-with-a-response-body"></a>Action gibt einen weiteren 2xx mit einem Antworttext zurück.
 
-Die `Put` Methodenaufrufe `Content` eine HTTP 202 (akzeptiert)-Antwort mit einem Antworttext zurückgegeben. Diesen Fall ähnelt der 200 (OK) zurückgeben, aber der Komponententest sollten auch den Statuscode überprüfen.
+Mit der `Put`-Methode wird `Content` aufgerufen, um eine HTTP 202-Antwort (akzeptiert) mit einem Antworttext zurückzugeben. Dieser Fall ähnelt der Rückgabe von 200 (OK), aber der Komponenten Test sollte auch den Statuscode überprüfen.
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample10.cs)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Simulieren des Entitätsframework bei Komponententests für ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)
-- [Schreiben von Tests für eine ASP.NET Web-API-Dienst](https://blogs.msdn.com/b/youssefm/archive/2013/01/28/writing-tests-for-an-asp-net-webapi-service.aspx) (Blogbeitrag vom Youssef Moussaoui).
-- [Debuggen von ASP.NET Web-API mit dem Routendebugger](https://blogs.msdn.com/b/webdev/archive/2013/04/04/debugging-asp-net-web-api-with-route-debugger.aspx)
+- [Entity Framework, wenn Komponententests ASP.net-Web-API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)
+- [Schreiben von Tests für einen ASP.net-Web-API-Dienst](https://blogs.msdn.com/b/youssefm/archive/2013/01/28/writing-tests-for-an-asp-net-webapi-service.aspx) (Blogbeitrag von Youssef Moussaoui).
+- [Debuggen von ASP.net-Web-API mit dem Routen Debugger](https://blogs.msdn.com/b/webdev/archive/2013/04/04/debugging-asp-net-web-api-with-route-debugger.aspx)

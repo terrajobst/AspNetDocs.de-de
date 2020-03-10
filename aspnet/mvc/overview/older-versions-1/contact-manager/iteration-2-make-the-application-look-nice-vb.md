@@ -1,148 +1,148 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
-title: 'Iteration #2 – Optimieren der Anwendung gut (VB) | Microsoft-Dokumentation'
+title: 'Iterations #2 – Optimieren der Anwendung (VB) | Microsoft-Dokumentation'
 author: microsoft
-description: In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+description: In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f65cb436-e493-46fd-9608-384b27385aa1
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cd392baaefcfc9eef3551bc534e0b912ccd349cc
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123973"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78487281"
 ---
-# <a name="iteration-2--make-the-application-look-nice-vb"></a>Iteration #2 – Optimieren der Anwendung gut (VB)
+# <a name="iteration-2--make-the-application-look-nice-vb"></a>Iterations #2 – Optimieren der Anwendung (VB)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-2-make-the-application-look-nice-vb/_static/contactmanager_2_vb1.zip)
 
-> In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+> In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (VB)
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Aufbauen einer Kontakt Verwaltung ASP.NET MVC-Anwendung (VB)
 
-In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie Kontaktinformationen – Namen, Telefon und e-Mail-Adressen – eine Liste der Personen zu speichern.
+In dieser Reihe von Tutorials erstellen wir von Anfang bis Ende eine gesamte Kontakt Verwaltungs Anwendung. Mithilfe der Contact Manager-Anwendung können Sie Kontaktinformationen – Namen, Telefonnummern und e-Mail-Adressen – für eine Liste von Personen speichern.
 
-Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbessern wir nach und nach der Anwendung. Das Ziel dieses mehrere Iteration-Ansatzes ist, um den Grund für jede Änderung verstehen können.
+Die Anwendung wird über mehrere Iterationen erstellt. Bei jeder Iterationen verbessern wir die Anwendung allmählich. Das Ziel dieses mehrfaches Iterations Ansatzes besteht darin, Ihnen zu ermöglichen, den Grund für jede Änderung zu verstehen.
 
-- Iteration #1 – Erstellen der Anwendung. In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen Sie, aktualisieren Sie und löschen Sie (CRUD).
+- Iterations #1 – Erstellen der Anwendung. In der ersten Iterationen erstellen wir den Kontakt-Manager auf einfachste Art und Weise. Wir fügen Unterstützung für grundlegende Daten Bank Vorgänge hinzu: Create, Read, Update und DELETE (CRUD).
 
-- Iteration #2 – Optimieren der Anwendung gut. In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+- Iterations #2 – machen Sie das Aussehen der Anwendung schön. In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-- Iteration #3 – Hinzufügen der formularüberprüfung. In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
+- Iterations #3 – Formular Validierung hinzufügen. In der dritten Iterationen fügen wir die grundlegende Formular Validierung hinzu. Wir hindern Personen daran, ein Formular zu senden, ohne die erforderlichen Formularfelder abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-- Stellen Sie Iteration #4 – lose koppeln der Anwendung. In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+- Iterations #4 – legen Sie die Anwendung lose gekoppelt. In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-- Iteration #5 – Erstellen von Komponententests. In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+- Iterations #5 – Erstellen von Komponententests. In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-- Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+- Iterations #6 – verwenden Sie die Test gesteuerte Entwicklung. In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-- Iteration #7 – Hinzufügen von Ajax-Funktionen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+- Iterations #7 – Hinzufügen von AJAX-Funktionen. In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="this-iteration"></a>Diese Iteration
+## <a name="this-iteration"></a>Diese Iterations
 
-Das Ziel dieser Iteration ist, um die Darstellung der Contact Manager-Anwendung zu verbessern. Contact Manager wird derzeit verwendet, die standardmäßige ASP.NET MVC-Ansichtsseite master und cascading Stylesheet (siehe Abbildung 1). Diese Don ' t ist nach dem, aber ich nicht t möchten Contact Manager, genau wie jede andere ASP.NET MVC-Website zu suchen. Ich möchte diese Dateien mit benutzerdefinierten Dateien zu ersetzen.
+Das Ziel dieser Iterationen besteht darin, die Darstellung der Kontakt-Manager-Anwendung zu verbessern. Der Kontakt-Manager verwendet derzeit die standardmäßige ASP.NET-MVC-Ansichts-Master Seite und das Cascading-Stylesheet (siehe Abbildung 1). Diese Don 't sieht schlecht aus, aber ich möchte, dass der Kontakt-Manager nicht wie jede andere ASP.NET MVC-Website aussieht. Ich möchte diese Dateien durch benutzerdefinierte Dateien ersetzen.
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image1.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image1.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image1.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image1.png)
 
-**Abbildung 01**: Die standarddarstellung der einer ASP.NET MVC-Anwendung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image2.png))
+**Abbildung 01**: die Standarddarstellung einer ASP.NET-MVC-Anwendung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image2.png))
 
-In dieser Iteration erläutere ich zwei Ansätze zum Verbessern der des visuellen Entwurfs der Anwendung. Zunächst erfahren Sie, wie ASP.NET MVC-Entwurf Katalog aus, um eine kostenlose ASP.NET MVC-Design-Vorlage herunterladen nutzen. Die ASP.NET MVC Design Gallery ermöglicht Ihnen die Erstellung eine professionellen Web-Anwendung, ohne eine Aufgabe auszuführen.
+In dieser Iterations Diskussion werden zwei Ansätze erläutert, um den visuellen Entwurf unserer Anwendung zu verbessern. Zuerst zeige ich Ihnen, wie Sie die ASP.NET MVC-Entwurfs Galerie nutzen können, um eine kostenlose ASP.NET MVC-Entwurfs Vorlage herunterzuladen. Der ASP.NET MVC-Entwurfs Katalog ermöglicht es Ihnen, eine professionelle Webanwendung zu erstellen, ohne eine Arbeit zu erledigen.
 
-Ich habe mich entschieden, eine Vorlage aus dem Katalog der ASP.NET MVC-Entwurf für die Kontakt-Manager-Anwendung nicht zu verwenden. Stattdessen musste ich einen benutzerdefinierten Entwurf entwickeln, die von den Profis erstellt. Im zweiten Teil dieses Lernprogramms wird erläutert, wie ich bei einem professionelles Design-Unternehmen, um den endgültigen Entwurf für die ASP.NET MVC erstellen funktioniert hat.
+Ich entschied mich für die Verwendung einer Vorlage aus der ASP.NET MVC-Entwurfs Galerie für die Contact Manager-Anwendung. Stattdessen hatte ich einen benutzerdefinierten Entwurf, der von einem professionellen Entwurfs Unternehmen erstellt wurde. Im zweiten Teil dieses Tutorials erläutere ich, wie ich mit einem professionellen Entwurfs Unternehmen zum Erstellen des endgültigen ASP.NET MVC-Entwurfs gearbeitet habe.
 
-## <a name="the-aspnet-mvc-design-gallery"></a>Der ASP.NET MVC-Design-Gallery
+## <a name="the-aspnet-mvc-design-gallery"></a>Der ASP.NET MVC-Entwurfs Katalog
 
-Die ASP.NET MVC-Design-Katalog ist eine kostenlose Ressource, die von Microsoft bereitgestellt werden. Die ASP.NET MVC-Katalog befindet sich unter folgender Adresse:
+Der ASP.NET MVC-Entwurfs Katalog ist eine von Microsoft bereitgestellte kostenlose Ressource. Der ASP.NET MVC-Katalog befindet sich unter folgender Adresse:
 
 [https://www.asp.net/mvc/gallery](https://www.asp.net/mvc/gallery)
 
-Die ASP.NET MVC-Design-Katalog hostet eine Sammlung von kostenlose Website-Entwürfe, die speziell für die Verwendung in einem ASP.NET MVC-Projekt erstellt wurden. Designs werden von Mitgliedern der Community hochgeladen. Besucher im Katalog für ihre bevorzugten Entwürfe darüber abstimmen können (siehe Abbildung 2).
+Der ASP.NET MVC-Entwurfs Katalog hostet eine Sammlung von kostenlosen Website Entwürfen, die speziell für die Verwendung von in einem ASP.NET MVC-Projekt erstellt wurden. Entwürfe werden von Mitgliedern der Community hochgeladen. Besucher des Katalogs können für Ihre bevorzugten Entwürfe abstimmen (siehe Abbildung 2).
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image2.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image3.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image2.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image3.png)
 
-**Abbildung 02**: Der ASP.NET MVC-Design-Gallery ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image4.png))
+**Abbildung 02**: ASP.NET MVC-Entwurfs Galerie ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image4.png))
 
-Wie ich in diesem Tutorial schreiben, ist der am häufigsten verwendete Entwurf im Katalog ein Entwurf, Oktober von David Hauser benannt wird. Sie können dieses Entwurfs für ein ASP.NET MVC-Projekt verwenden, durch die folgenden Schritte aus:
+Während ich dieses Tutorial schreibe, ist der am häufigsten verwendete Entwurf im Katalog der Entwurf von David Hauser. Sie können dieses Design für ein ASP.NET-MVC-Projekt verwenden, indem Sie die folgenden Schritte ausführen:
 
-1. Klicken Sie auf die **herunterladen** Schaltfläche, um die October.zip-Datei auf Ihren Computer herunterladen.
-2. Mit der rechten Maustaste in der heruntergeladenen October.zip-Datei, und klicken Sie auf die **Unblock** Schaltfläche (siehe Abbildung 3).
-3. Entzippen Sie die Datei in einen Ordner namens Oktober aus.
-4. Wählen Sie alle Dateien aus dem DesignTemplate-Ordner, in der Oktober-Ordner enthalten, mit der rechten Maustaste in der Dateien und wählen Sie die Menüoption **Kopie**.
-5. Mit der rechten Maustaste des Knotens der ContactManager-Projekt im Projektmappen-Explorer von Visual Studio-Fenster, und wählen Sie die Menüoption **einfügen** (siehe Abbildung 4).
-6. Wählen Sie die Visual Studio-Menüoption **bearbeiten, suchen und ersetzen, Schnellersetzung** , und Ersetzen Sie *[MyProjectName]* mit *ContactManager* (siehe Abbildung 5).
+1. Klicken Sie auf die Schaltfläche **herunterladen** , um die ZIP-Datei von Oktober auf Ihren Computer herunterzuladen.
+2. Klicken Sie mit der rechten Maustaste auf die heruntergeladene ZIP-Datei, und klicken Sie auf die Schaltfläche zum **entsperren** (siehe Abbildung 3).
+3. Entzippen Sie die Datei in einen Ordner mit dem Namen Oktober.
+4. Wählen Sie alle Dateien aus dem Ordner "Designtemplate" aus, die im Oktober-Ordner enthalten sind, klicken Sie mit der rechten Maustaste auf die Dateien, und wählen Sie die Menüoption **Kopieren**.
+5. Klicken Sie im Visual Studio-Projektmappen-Explorer Fenster mit der rechten Maustaste auf den Projekt Knoten ContactManager, und wählen Sie die Menüoption **Einfügen** aus (siehe Abbildung 4).
+6. Wählen Sie die Visual Studio-Menüoption **Bearbeiten, suchen und ersetzen, schneller** Setzung und ersetzen *[myprojectname]* durch *ContactManager* (siehe Abbildung 5).
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)
 
-**Abbildung 03**: Aufhebung der Blockierung einer Datei aus dem Internet heruntergeladene ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image6.png))
+**Abbildung 03**: Aufheben der Blockierung einer aus dem Internet heruntergeladenen Datei ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image6.png))
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image4.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image7.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image4.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image7.png)
 
-**Abbildung 04**: Überschreiben von Dateien im Projektmappen-Explorer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
+**Abbildung 04**: Überschreiben von Dateien im Projektmappen-Explorer ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image5.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image9.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image5.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image9.png)
 
-**Abbildung 05**: Ersetzen [Projektname] durch ContactManager ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image10.png))
+**Abbildung 05**: Ersetzen von [ProjectName] durch ContactManager ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image10.png))
 
-Nachdem Sie diese Schritte abgeschlossen haben, wird Ihre Webanwendung das neue Design verwenden. Die Seite in Abbildung 6 zeigt die Darstellung der Contact Manager-Anwendung mit der Oktober-Entwurf.
+Nachdem Sie diese Schritte ausgeführt haben, verwendet Ihre Webanwendung den neuen Entwurf. Die Seite in Abbildung 6 veranschaulicht das Aussehen der Contact Manager-Anwendung mit dem Oktober-Design.
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image6.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image11.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image6.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image11.png)
 
-**Abbildung 06**: ContactManager mit der Oktober-Vorlage ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image12.png))
+**Abbildung 06**: ContactManager mit der Oktober-Vorlage ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image12.png))
 
-## <a name="creating-a-custom-aspnet-mvc-design"></a>Erstellen eines benutzerdefinieren ASP.NET MVC-Entwurfs
+## <a name="creating-a-custom-aspnet-mvc-design"></a>Erstellen eines benutzerdefinierten ASP.NET MVC-Entwurfs
 
-Die ASP.NET MVC-Design-Katalog verfügt über eine gute Auswahl von verschiedenen entwurfsstile. Der Katalog bietet Ihnen eine problemlose Möglichkeit anpassen die Darstellung von ASP.NET MVC-Anwendungen. Und natürlich der Katalog enthält den großen Vorteil, völlig kostenlos.
+Der ASP.NET MVC-Entwurfs Katalog bietet eine gute Auswahl an verschiedenen Entwurfs Stilen. Der-Katalog bietet Ihnen die Möglichkeit, die Darstellung Ihrer ASP.NET-MVC-Anwendungen auf mühelose Weise anzupassen. Natürlich hat der Katalog den großen Vorteil, dass er vollständig kostenlos ist.
 
-Allerdings müssen Sie ein völlig Design für Ihre Website erstellen. In diesem Fall Sie es sinnvoll, ein Website-Entwurfs-Unternehmen gearbeitet. Ich beschloss, diesen Ansatz für den Entwurf für die Kontakt-Manager-Anwendung verwenden.
+Allerdings müssen Sie möglicherweise einen vollständig eindeutigen Entwurf für Ihre Website erstellen. In diesem Fall ist es sinnvoll, mit einem Website Entwurfs Unternehmen zu arbeiten. Ich entschied mich, diesen Ansatz für den Entwurf der Contact Manager-Anwendung zu treffen.
 
-Ich ZIP Einrichten der Contact Manager aus Iteration 1 und der designbüros des Projekts an. Sie Visual Studio (schade darauf!) nicht besitzt, aber nicht, die ein Problem darstellen. Sie konnten für den kostenlosen download von Microsoft Visual Web Developer aus der [ https://www.asp.net ](https://www.asp.net) -Website und öffnen Sie die Kontakt-Manager-Anwendung in Visual Web Developer. In einigen Tagen mussten sie den Entwurf in Abbildung 7 erstellt.
+Ich habe den Contact Manager aus der Iterations #1 gezippt und das Projekt an das Entwurfs Unternehmen gesendet. Sie waren nicht in der Besitz von Visual Studio (schade darauf!), aber das stellte kein Problem dar. Sie konnten Microsoft Visual Web Developer kostenlos von der [https://www.asp.net](https://www.asp.net) -Website herunterladen und die Contact Manager-Anwendung in Visual Web Developer öffnen. In einigen Tagen haben Sie den Entwurf in Abbildung 7 erzeugt.
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
 
-**Abbildung 07**: Der Kontakt-Manager für ASP.NET MVC-Entwurf ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image14.png))
+**Abbildung 07**: der ASP.NET MVC Contact Manager-Entwurf ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image14.png))
 
-Das neue Design Bestand aus zwei Hauptdateien: ein neues CSS-Datei und eine neue Masterseitendatei anzeigen. Eine Masterseite für die Ansicht enthält das Layout und die freigegebene Inhalte für Ansichten in ASP.NET MVC-Anwendungen. Die Masterseite für die Ansicht enthält z. B. Header, Navigationsregisterkarten und Fußzeile, die angezeigt werden in Abbildung 7. Ich überschreibt die vorhandene Ansicht Stammwebsite im Ordner "Views\Shared" mit der neuen Site.Master-Datei aus dem Unternehmen entwerfen,
+Der neue Entwurf umfasste zwei Haupt Dateien: eine neue Cascading Stylesheet-Datei und eine neue Ansichts-Masterseiten Datei. Eine Ansichts Master Seite enthält das Layout und den freigegebenen Inhalt für Sichten in einer ASP.NET MVC-Anwendung. Beispielsweise enthält die Seite Master anzeigen den Header, die Navigations Registerkarten und die Fußzeile, die in Abbildung 7 angezeigt werden. Ich habe die vorhandene Master Seite "Site. Master View" im Ordner "views\shared" mit der neuen Datei "Site. Master" aus dem Design Unternehmen überschrieben.
 
-Das Unternehmen Entwurf erstellt auch eine neue cascading Stylesheets und einen Satz von Bildern. Ich habe diese neuen Dateien in den Ordner "Content" platziert und überschrieben wurden der vorhandene Datei "Site.CSS". Sie sollten alle statischen Inhalte im Inhaltsordner platzieren.
+Das Design Unternehmen hat auch ein neues Cascading Stylesheet und einen Satz von Bildern erstellt. Diese neuen Dateien wurden im Inhalts Ordner abgelegt und die vorhandene Datei "Site. CSS" überschrieben. Sie sollten alle statischen Inhalte im Inhalts Ordner platzieren.
 
-Beachten Sie, dass das neue Design für den Kontakt-Manager-Images für bearbeiten und Löschen von Kontakten enthält. Ein Bild bearbeiten und löschen, die neben einzelnen Kontakte in der HTML-Tabelle der Kontakte angezeigt werden.
+Beachten Sie, dass der neue Entwurf für den Contact Manager Bilder zum Bearbeiten und Löschen von Kontakten enthält. Ein Bild zum Bearbeiten und löschen wird neben den einzelnen Kontakten in der HTML-Tabelle der Kontakte angezeigt.
 
-Ursprünglich diese Links, die mit dem HTML gerendert wurden. ActionLink() Hilfsprogramm wie folgt:
+Ursprünglich wurden diese Verknüpfungen mit dem HTML-Code gerendert. Action Link ()-Hilfsprogramm wie folgt:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample1.aspx)]
 
-Die Methode Html.ActionLink() unterstützt keine Bilder (die HTML-Methode codiert den Text des Links aus Sicherheitsgründen). Aus diesem Grund ersetzt ich die Aufrufe an Html.ActionLink() durch Aufrufe von Url.Action() wie folgt:
+Die HTML. Action Link ()-Methode unterstützt keine Bilder (die Methode HTML codiert den Linktext aus Sicherheitsgründen). Daher habe ich die Aufrufe von HTML. Action Link () durch Aufrufe von URL. Action () wie folgt ersetzt:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample2.aspx)]
 
-Die Html.ActionLink()-Methode rendert eines gesamten HTML-Links. Rendert die Url.Action()-Methode, auf der anderen Seite einfach die URL ohne den &lt;eine&gt; Tag.
+Die HTML. Action Link ()-Methode rendert einen gesamten HTML-Hyperlink. Die URL. Action ()-Methode hingegen rendert nur die URL ohne den &lt;ein&gt;-Tag.
 
-Beachten Sie außerdem, dass das neue Design ausgewählte und nicht ausgewählte Registerkarten enthält. Zum Beispiel in Abbildung 8: die **neuen Kontakt erstellen** Registerkarte ausgewählt ist und die **Meine Kontakte** Registerkarte nicht ausgewählt ist.
+Beachten Sie außerdem, dass der neue Entwurf sowohl ausgewählte als auch nicht ausgewählte Registerkarten enthält. In Abbildung 8 wird z. b. die Registerkarte **neuen Kontakt erstellen** ausgewählt, und die Registerkarte **meine Kontakte** ist nicht ausgewählt.
 
-[![Das Dialogfeld "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image8.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image15.png)
+[![des Dialog Felds "Neues Projekt"](iteration-2-make-the-application-look-nice-vb/_static/image8.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image15.png)
 
-**Abbildung 08**: Aktiviert und deaktiviert Sie Registerkarten ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-2-make-the-application-look-nice-vb/_static/image16.png))
+**Abbildung 08**: ausgewählte und nicht ausgewählte Registerkarten ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-2-make-the-application-look-nice-vb/_static/image16.png))
 
-Um Registerkarten für ausgewählte und nicht ausgewählte rendering zu unterstützen, erstellt habe ich eine benutzerdefinierte HTML-Hilfsobjekt, das mit dem Namen der MenuItemHelper. Diese Hilfsmethode rendert entweder eine &lt;li&gt; Tag oder eine &lt;li-Klasse = "ausgewählt"&gt; Tag, je nachdem, ob der aktuelle Controller und Aktion entspricht dem Controller- und Aktionsnamen Namen übergeben an das Hilfsprogramm. Der Code für die MenuItemHelper befindet sich in Codebeispiel 1.
+Um das Rendern sowohl ausgewählter als auch nicht ausgewählter Registerkarten zu unterstützen, habe ich ein benutzerdefiniertes HTML-Hilfsprogramm namens menuitemhelper erstellt Diese Hilfsmethode rendert entweder ein &lt;Li&gt; Tag oder ein &lt;li class = "Selected"&gt; Tag, je nachdem, ob der aktuelle Controller und die Aktion dem Controller und dem Aktions Namen entsprechen, der an das Hilfsprogramm weitergegeben wurde. Der Code für das menuitemhelper-Element ist in der Liste 1 enthalten.
 
-**Codebeispiel 1 – Helpers\MenuItemHelper.vb**
+**Codebeispiel 1 – helpers\menuitemhelper.vb**
 
 [!code-vb[Main](iteration-2-make-the-application-look-nice-vb/samples/sample3.vb)]
 
-Die MenuItemHelper verwendet die TagBuilder-Klasse intern zum Erstellen der &lt;li&gt; HTML-Tag. TagBuilder-Klasse ist eine sehr nützlicher Dienstprogrammfunktionen-Klasse, die Sie verwenden können, wann immer Sie benötigen, um ein neues HTML-Tag zu erstellen. Sie enthält Methoden zum Hinzufügen von Attributen, Hinzufügen von CSS-Klassen, Generieren von Ids und ändern das Tag s innere HTML-Code.
+Der menuitemhelper verwendet intern die tagbuilder-Klasse, um das &lt;Li&gt; HTML-Tag zu erstellen. Die tagbuilder-Klasse ist eine sehr nützliche Hilfsprogrammklasse, die Sie verwenden können, wenn Sie ein neues HTML-Tag erstellen müssen. Es enthält Methoden zum Hinzufügen von Attributen, zum Hinzufügen von CSS-Klassen, zum Erstellen von IDs und zum Ändern des inneren HTML-Tags der
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Iteration verbessert es den visuellen Entwurf Ihrer ASP.NET MVC-Anwendung. Zunächst wurden Sie in der ASP.NET MVC-Design-Gallery eingeführt. Haben Sie gelernt, kostenlose Entwurfsvorlagen aus dem ASP.NET MVC-Design-Katalog herunterladen, die Sie in ASP.NET MVC-Anwendungen verwenden können.
+In dieser Iterationen haben wir den visuellen Entwurf unserer ASP.NET MVC-Anwendung verbessert. Zuerst wurden Sie mit dem ASP.NET MVC-Entwurfs Katalog eingeführt. Sie haben gelernt, wie Sie kostenlose Entwurfsvorlagen aus der ASP.NET MVC-Entwurfs Galerie herunterladen, die Sie in Ihren ASP.NET MVC-Anwendungen verwenden können.
 
-Als Nächstes wird erläutert, wie Sie einen benutzerdefinierten Entwurf entwickeln durch Ändern der standardmäßigen CSS-Datei und die Auslagerungsdatei Masteransicht erstellen können. Um das neue Design unterstützen zu können, mussten wir einige kleinen Änderungen an unseren Contact Manager-Anwendung vornehmen. Beispielsweise haben wir eine neue HTML-Hilfsobjekt, das mit dem Namen der MenuItemHelper, die ausgewählte und nicht ausgewählte Registerkarten anzeigt hinzugefügt.
+Als nächstes haben wir erläutert, wie Sie einen benutzerdefinierten Entwurf erstellen können, indem Sie die standardmäßige Cascading Stylesheet-Datei und die Datei für die Master Ansicht ändern. Um den neuen Entwurf zu unterstützen, mussten wir einige geringfügige Änderungen an unserer Contact Manager-Anwendung vornehmen. Wir haben z. b. ein neues HTML-Hilfsprogramm namens "menuitemhelper" hinzugefügt, das ausgewählte und nicht ausgewählte Registerkarten anzeigt.
 
-In der nächsten Iteration behandeln wir die sehr wichtigen Thema der Überprüfung. Wir hinzufügen Validierungscode, damit ein Benutzer keine neuen Kontakt erstellen, ohne zuerst Angabe der erforderlichen Werte, z. B. eine Person s und Nachname zu unserer Anwendung.
+In der nächsten Iterationen befassen wir uns mit dem sehr wichtigen Betreff der Validierung. Wir fügen der Anwendung Validierungscode hinzu, damit ein Benutzer keinen neuen Kontakt erstellen kann, ohne die erforderlichen Werte anzugeben, z. b. die vor-und Nachnamen einer Person.
 
 > [!div class="step-by-step"]
 > [Zurück](iteration-1-create-the-application-vb.md)

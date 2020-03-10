@@ -9,11 +9,11 @@ ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 468a830f01c48dc39b22bc5d826f80533df65c1a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574400"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446397"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-c"></a>Verwenden eines ConfirmButton-Steuerelements in einem Wiederholungssteuerelement (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Der ConfirmButton-Extender im AJAX Control Toolkit erstellt das Popup "Yes/No", wenn der Benutzer auf eine Schaltfläche klickt (einschließlich des LinkButton-Steuer Elements). Nur wenn auf Ja geklickt wird, wird die Aktion der Schaltfläche ausgeführt und andernfalls abgebrochen. Dies ist auch in einem Repeater möglich.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Der ConfirmButton-Extender im AJAX Control Toolkit erstellt das Popup "Yes/No", wenn der Benutzer auf eine Schaltfläche klickt (einschließlich des LinkButton-Steuer Elements). Nur wenn auf Ja geklickt wird, wird die Aktion der Schaltfläche ausgeführt und andernfalls abgebrochen. Dies ist auch in einem Repeater möglich.
 
@@ -50,4 +50,4 @@ Diese Datenquelle kann dann in einem Repeater verwendet werden. Wie üblich Ruft
 Die Schaltfläche bestätigen wird neben jedem Eintrag aus der Datenquelle angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](using-a-confirmbutton-in-a-repeater-vb.md)
+> [Weiter](using-a-confirmbutton-in-a-repeater-vb.md)

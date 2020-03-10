@@ -9,11 +9,11 @@ ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
 ms.openlocfilehash: 0fcf050474a57be9ed53ec0783a6d6b7dde2bf4c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575750"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438375"
 ---
 # <a name="create-the-data-access-layer"></a>Erstellen der Datenzugriffsschicht
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial wird das Erstellen, zugreifen auf und Überprüfen von Daten aus einer Datenbank mithilfe von ASP.net Web Forms und Entity Framework Code First beschrieben. Dieses Tutorial baut auf dem vorherigen Tutorial "Erstellen des Projekts" auf und ist Teil der Wingtip Toy Store-tutorialreihe. Wenn Sie dieses Tutorial abgeschlossen haben, haben Sie eine Gruppe von Datenzugriffsklassen erstellt, die sich im Ordner " *Models* " des Projekts befinden.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - Erstellen der Datenmodelle.
 - Initialisieren und Seed der Datenbank.
@@ -71,7 +71,7 @@ In diesem Tutorial beginnen Sie mit dem Hinzufügen einfacher Entitäts Klassen,
 3. Wählen Sie im mittleren Bereich **Klasse** aus, und benennen Sie diese neue Klasse *Product.cs*.
 4. Klicken Sie auf **Hinzufügen**.  
    Die neue Klassendatei wird im Editor angezeigt.
-5. Ersetzen Sie den Standard Code durch den folgenden Code:   
+5. Ersetzen Sie den Standardcode durch den folgenden Code:   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
 6. Erstellen Sie eine weitere Klasse, indem Sie die Schritte 1 bis 4 wiederholen, benennen Sie jedoch die neue Klasse *Category.cs* , und ersetzen Sie den Standard Code durch den folgenden Code:  
@@ -166,7 +166,7 @@ Um sicherzustellen, dass alle Klassen und Änderungen an der Webanwendung funkti
 
 Wenn ein Fehler auftritt, überprüfen Sie die obigen Schritte erneut. Die Informationen im **Ausgabe** Fenster geben an, in welcher Datei ein Problem aufgetreten ist und wo in der Datei eine Änderung erforderlich ist. Mithilfe dieser Informationen können Sie bestimmen, welcher Teil der obigen Schritte in Ihrem Projekt überprüft und korrigiert werden muss.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial der Reihe, in der Sie das Datenmodell erstellt haben, und wurde der Code hinzugefügt, der verwendet wird, um die Datenbank zu initialisieren und zu erstellen. Außerdem haben Sie die Anwendung so konfiguriert, dass Sie die Datenmodelle verwendet, wenn die Anwendung ausgeführt wird.
 
@@ -178,7 +178,7 @@ Im nächsten Tutorial aktualisieren Sie die Benutzeroberfläche, fügen die Navi
 [Leitfaden für Einsteiger zum ADO.NET-Entity Framework](https://msdn.microsoft.com/data/ee712907)   
 [Code First Entwicklung mit Entity Framework](http://www.msteched.com/2010/Europe/DEV212) (Video)   
   der [Code First-Beziehung](https://msdn.microsoft.com/data/hh134698)  
-[Code First von Daten Anmerkungen](https://msdn.microsoft.com/data/gg193958)  
+[Code First Data Annotations](https://msdn.microsoft.com/data/gg193958)  
 [Produktivitätsverbesserungen für die Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 > [!div class="step-by-step"]

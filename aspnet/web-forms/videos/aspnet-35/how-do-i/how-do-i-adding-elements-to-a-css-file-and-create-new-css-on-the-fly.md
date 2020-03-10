@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly
-title: '[Gewusst wie:] Hinzufügen von Elementen zu einer CSS-Datei und Erstellen eines neuen CSS dynamisch | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Hinzufügen von Elementen zu einer CSS-Datei und Erstellen von neuem CSS im Handumdrehen | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem Video werden auf ein vorhandenes Stylesheet und erweitern es mit der Element-Ids, die mit der neuen CSS-Management-Tools in Visual Studio 2008.
+description: In diesem Video wird ein vorhandenes Stylesheet erstellt und mit Element-IDs mithilfe der neuen CSS-Verwaltungs Tools in Visual Studio 2008 erweitert.
 ms.author: riande
 ms.date: 02/14/2008
 ms.assetid: 426a5d0f-fde7-447c-ad69-4efe45f8efea
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly
 msc.type: video
 ms.openlocfilehash: b1ea56d8588023dd37bc42521c7cd339e6f631c8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416193"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454491"
 ---
-# <a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a>[Gewusst wie:] Hinzufügen von Elementen zu einer CSS-Datei, und Erstellen eines neuen CSS im laufenden Betrieb
+# <a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a>[Gewusst wie:] Hinzufügen von Elementen zu einer CSS-Datei und Erstellen von neuem CSS im Handumdrehen
 
-durch Asli Bilgin
+von Asli Bilgin
 
-In diesem Video werden auf ein vorhandenes Stylesheet und erweitern es mit der Element-Ids, die mit der neuen CSS-Management-Tools in Visual Studio 2008.
+In diesem Video wird ein vorhandenes Stylesheet erstellt und mit Element-IDs mithilfe der neuen CSS-Verwaltungs Tools in Visual Studio 2008 erweitert.
 
-[&#9654;Sehen Sie sich Video (16 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly)
+[&#9654;Video ansehen (16 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-working-with-visual-studio-2008-net-framework.md)

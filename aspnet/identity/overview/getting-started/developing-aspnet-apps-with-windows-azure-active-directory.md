@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
 ms.openlocfilehash: 28425ea8d1312dfc6e14df9677396f2cbcf6f16d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456724"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471741"
 ---
 # <a name="developing-aspnet-apps-with-azure-active-directory"></a>Entwickeln von ASP.NET-Apps mit Azure Active Directory
 

@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
 ms.openlocfilehash: 2f0b47d45bce82c71d1864536309f9e2ffed2d63
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519127"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500067"
 ---
 # <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>Implementieren eines benutzerdefinierten MySQL ASP.NET Identity-Speicheranbieters
 
@@ -40,7 +40,7 @@ Sie können den abgeschlossenen MySQL-Speicher Anbieter unter [ASPNET. Identity.
 
 ## <a name="the-steps-you-will-perform"></a>Die Schritte, die Sie ausführen werden
 
-Inhalt des Tutorials:
+In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 1. Erstellen einer MySQL-Datenbank in Azure
 2. Erstellen der ASP.net Identity Tabellen in MySQL
@@ -73,7 +73,7 @@ In diesem Beispiel enthalten die Klassen der Datenzugriffs Ebene SQL-Anweisungen
 
 ## <a name="create-a-mysql-database-instance-on-azure"></a>Erstellen einer MySQL-Daten Bank Instanz in Azure
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/)an.
 2. Klicken Sie unten auf der Seite auf **+ neu** , und wählen Sie dann **Speichern**aus.  
     ![](implementing-a-custom-mysql-aspnet-identity-storage-provider/_static/image1.png)
 3. Wählen Sie im Assistenten zum **auswählen und hinzufügen** von **cleardb MySQL-Datenbank** aus, und klicken Sie unten rechts im Dialogfeld auf den Pfeil "weiter".  
@@ -121,7 +121,7 @@ Installieren Sie bei Bedarf entweder [Visual Studio Express 2013 für Web](https
 5. Klicken Sie mit der rechten Maustaste auf das Projekt identitymysqldemo, wählen Sie **Hinzufügen**, **Verweis, Projekt Mappe, Projekte** aus, und klicken **Sie auf**das Projekt ASPNET. Identity. MySQL.
 6. Ersetzen Sie im Projekt identitymysqldemo alle Verweise auf.  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
-   mit  
+   with  
      `using AspNet.Identity.MySQL;`
 7. Legen Sie in IdentityModels.cs **applicationdbcontext** auf Ableitung von **mysqldatabase** fest, und fügen Sie einen Konstruktor ein, der einen einzelnen Parameter mit dem Verbindungs Namen annimmt.  
 

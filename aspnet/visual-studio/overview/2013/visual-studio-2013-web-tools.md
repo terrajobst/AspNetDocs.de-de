@@ -1,33 +1,33 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-tools
-title: 'Praktische Übungseinheiten: Visual Studio 2013-Webtools | Microsoft-Dokumentation'
+title: 'Praktische Übungseinheit: Visual Studio 2013 WebTools | Microsoft-Dokumentation'
 author: rick-anderson
-description: Visual Studio ist eine ausgezeichnete Entwicklungsumgebung für. NET-basierten Windows und Webprojekte. Es enthält einen leistungsfähige Text-Editor ein, der auf einfache Weise verwendet werden kann...
+description: Visual Studio ist eine ausgezeichnete Entwicklungsumgebung für. NET-basierte Windows-und Webprojekte. Sie enthält einen leistungsfähigen Text-Editor, der problemlos verwendet werden kann...
 ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
 ms.openlocfilehash: 2fb987dd9b26ad9f0e8a88fd881bde4505ec4148
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115901"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78505005"
 ---
-# <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Praktische Übungseinheiten: Visual Studio 2013 Web Tools
+# <a name="hands-on-lab-visual-studio-2013-web-tools"></a>Praktische Übungseinheit: Visual Studio 2013-WebTools
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-> Visual Studio ist eine ausgezeichnete Entwicklungsumgebung für. NET-basierten Windows und Webprojekte. Sie enthält einen leistungsfähige Text-Editor ein, der leicht verwendet werden kann, um eigenständige Dateien ohne ein Projekt bearbeiten.
+> Visual Studio ist eine ausgezeichnete Entwicklungsumgebung für. NET-basierte Windows-und Webprojekte. Sie enthält einen leistungsfähigen Text-Editor, der problemlos verwendet werden kann, um eigenständige Dateien ohne ein Projekt zu bearbeiten.
 > 
-> Visual Studio verwaltet eine voll funktionsfähige Analysestruktur an, wie Sie jede Datei bearbeiten. Dadurch können Visual Studio, um eine beispiellose automatische Vervollständigung und dokumentbasierte Aktionen bieten und gleichzeitig die Entwicklung schneller und problemloser. Diese Funktionen sind besonders interessant, in HTML und CSS-Dokumenten.
+> Visual Studio behält eine Analyse Struktur mit vollem Funktionsumfang bei, während Sie die einzelnen Dateien bearbeiten. Dies ermöglicht Visual Studio, eine unschöne automatische Vervollständigung und Dokument basierte Aktionen bereitzustellen und gleichzeitig die Entwicklung schneller und angenehmer zu gestalten. Diese Features sind besonders leistungsfähig in HTML-und CSS-Dokumenten.
 > 
-> Alle von dieser Leistung steht auch für Erweiterungen, die Editoren mit leistungsfähigen neuen Features entsprechend Ihren Anforderungen erweitern erleichtert. Web Essentials ist eine Auflistung von (hauptsächlich) webbezogene Verbesserungen in Visual Studio. Er enthält viele neue IntelliSense-vervollständigungen (insbesondere bei CSS), neuen Features von Browser Link, automatische JSHint für JavaScript-Dateien, neue Warnungen für HTML, CSS und viele weitere Features, die die moderne Webentwicklung unverzichtbar sind.
+> Diese Leistungsfähigkeit steht auch für Erweiterungen zur Verfügung, sodass die Editoren einfach mit leistungsstarken neuen Features erweitert werden können, die Ihren Anforderungen entsprechen. Web Essentials ist eine Sammlung von (größtenteils) webbezogenen Erweiterungen für Visual Studio. Es enthält viele neue IntelliSense-Vervollständigungen (insbesondere für CSS), neue browserlinkfeatures, automatisches jshint für JavaScript-Dateien, neue Warnungen für HTML und CSS sowie viele weitere Features, die für die moderne Webentwicklung von entscheidender Bedeutung sind.
 > 
-> Alle Beispielcode und Ausschnitte sind im Web Camps Training Kit unter enthalten [ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das unter [https://aka.ms/webcamps-training-kit](https://aka.ms/webcamps-training-kit)verfügbar ist.
 
 <a id="Overview"></a>
 ## <a name="overview"></a>Übersicht
@@ -35,486 +35,486 @@ durch [Web Camps Team](https://twitter.com/webcamps)
 <a id="Objectives"></a>
 ### <a name="objectives"></a>Ziele
 
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
 
-- Verwenden Sie die neuen HTML-Editor-Features in Web Essentials z. B. rich-HTML5-Codeausschnitte und Zen-Codierung
-- Verwenden Sie die neue CSS-Editor-Funktionen, die im Web Essentials enthalten sind, z. B. die Farbauswahl angezeigt und die QuickInfo für Browser-matrix
-- Verwenden Sie die neue JavaScript-Editor-Funktionen, die im Web Essentials, z. B. extrahieren in die Datei und IntelliSense für alle HTML-Elemente enthalten
-- Austauschen von Daten zwischen Ihrem Browser, und Visual Studio verwenden einer Browserverknüpfung
+- Verwenden neuer HTML-Editor-Funktionen, die in Web Essentials enthalten sind, z. b. umfangreiche HTML5-Code Ausschnitte
+- Verwenden neuer CSS-Editor-Features in WebEssentials, z. b. Farbauswahl und Browser Matrix-QuickInfo
+- Verwenden neuer JavaScript-Editor-Funktionen in WebEssentials, z. b. Extrahieren in Dateien und IntelliSense für alle HTML-Elemente
+- Austauschen von Daten zwischen Ihrem Browser und Visual Studio mithilfe von Browser Link
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Vorraussetzungen
+### <a name="prerequisites"></a>Voraussetzungen
 
-Folgendes ist erforderlich, um diese praktische Übungseinheit auszuführen:
+Zum Durchführen dieser praktischen Übungseinheit ist Folgendes erforderlich:
 
 - [Microsoft Visual Studio Professional 2013](https://www.microsoft.com/visualstudio/) oder höher
 - [Web Essentials 2013](http://vswebessentials.com/)
 - [Google Chrome](https://www.google.com/chrome/)
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Einrichten
 
-Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zunächst die Umgebung einrichten.
+Um die Übungen in dieser praktischen Übungseinheit auszuführen, müssen Sie zuerst Ihre Umgebung einrichten.
 
-1. Öffnen Sie ein Windows-Explorer-Fenster, und navigieren Sie zu des Labs die **Quelle** Ordner.
-2. Mit der rechten Maustaste **"Setup.cmd"** , und wählen Sie **als Administrator ausführen** zum Starten des Setup-Prozesses, die die Umgebung konfigurieren, und installieren die Visual Studio-Codeausschnitte für diese Übung.
-3. Wenn das Dialogfeld "Benutzerkontensteuerung" angezeigt wird, bestätigen Sie die Aktion aus, um den Vorgang fortzusetzen.
+1. Öffnen Sie ein Windows-Explorer-Fenster, und navigieren Sie zum **Quell** Ordner des Labs.
+2. Klicken Sie mit der rechten Maustaste auf **Setup. cmd** , und wählen Sie **als Administrator ausführen** aus, um den Setup Vorgang zu starten, mit dem die Umgebung konfiguriert wird, und die Visual Studio-Code Ausschnitte für dieses Lab
+3. Wenn das Dialogfeld Benutzerkontensteuerung angezeigt wird, bestätigen Sie die Aktion, um fortzufahren.
 
 > [!NOTE]
-> Stellen Sie sicher, dass Sie alle Abhängigkeiten für diese laborumgebung aktiviert haben, bevor Sie das Setup ausführen.
+> Vergewissern Sie sich, dass Sie vor dem Ausführen des Setups alle Abhängigkeiten für dieses Lab geprüft haben.
 
 <a id="CodeSnippets"></a>
-### <a name="using-the-code-snippets"></a>Verwenden von Codeausschnitten
+### <a name="using-the-code-snippets"></a>Verwenden der Code Ausschnitte
 
-In diesem Dokument Lab werden Sie aufgefordert, zum Einfügen von Codeblöcken. Der Einfachheit halber die meisten dieser Code dient als Visual Studio-Codeausschnitten, die Sie in Visual Studio 2013, um zu vermeiden, müssen sie manuell hinzufügen aus zugreifen können.
+Im gesamten Lab-Dokument werden Sie angewiesen, Code Blöcke einzufügen. Der größte Teil dieses Codes wird zur einfacheren Verwendung als Visual Studio Code Ausschnitte bereitgestellt, auf die Sie in Visual Studio 2013 zugreifen können, um das manuelle Hinzufügen zu vermeiden.
 
 > [!NOTE]
-> Jede Übung umfasst eine ab Lösung befindet sich in der **beginnen** Ordner der Übung, mit dem Sie jede Übung unabhängig von den anderen verfolgen kann. Bedenken Sie bitte, dass die Codeausschnitte, die während der Übung hinzugefügt werden fehlen aus diesen Lösungen ab und funktioniert möglicherweise nicht, bis Sie in dieser Übung abgeschlossen haben. In den Quellcode für eine Übung, finden Sie auch eine **End** Ordner, der Visual Studio-Projektmappe mit dem Code, die aus der Schritte in der entsprechenden Übung enthält. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, wie Sie mithilfe dieser praktischen Übungseinheit arbeiten.
+> Jede Übung wird von einer Start Lösung begleitet, die sich im Ordner " **Begin** " der Übung befindet und Ihnen ermöglicht, die einzelnen Übungen unabhängig von den anderen zu befolgen. Beachten Sie, dass die während einer Übung hinzugefügten Code Ausschnitte in diesen Projektmappen fehlen und möglicherweise erst nach Abschluss der Übung funktionieren. Innerhalb des Quellcodes für eine Übung finden Sie auch einen **endordner** mit einer Visual Studio-Projekt Mappe mit dem Code, der aus der Ausführung der Schritte in der entsprechenden Übung resultiert. Sie können diese Lösungen als Leitfaden verwenden, wenn Sie zusätzliche Hilfe benötigen, während Sie diese praktische Übungseinheit durcharbeiten.
 
 ---
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-Dieser praktischen Übungseinheit enthält die folgenden Übungen:
+Diese praktische Übungseinheit umfasst die folgenden Übungen:
 
-1. [Verwenden von Browserlink und die Web Essentials](#Exercise1)
-2. [Nutzung von Codeausschnitten und IntelliSense](#Exercise2)
+1. [Arbeiten mit Browser Link und Web Essentials](#Exercise1)
+2. [Nutzen von Code Ausschnitten und IntelliSense](#Exercise2)
 
 > [!NOTE]
-> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungen Sammlungen auswählen. Jede vordefinierte Sammlung dient einem bestimmten Entwicklungsstil und bestimmt, Fensterlayouts, Editor-Verhalten, IntelliSense-Codeausschnitte und Dialogfeld "Optionen". In dieser Übung wird beschrieben, die erforderlichen Aktionen zum Ausführen der jeweiligen Aufgabe in Visual Studio bei Verwendung der **allgemeine Entwicklungseinstellungen** Auflistung. Wenn Sie eine Sammlung mit anderen Einstellungen für Ihre Entwicklungsumgebung auswählen, unter Umständen gibt es bestehen Unterschiede in den Schritten, die Sie berücksichtigen sollten.
+> Wenn Sie Visual Studio zum ersten Mal starten, müssen Sie eine der vordefinierten Einstellungs Sammlungen auswählen. Jede vordefinierte Sammlung ist so konzipiert, dass Sie einem bestimmten Entwicklungsstil entspricht, und bestimmt Fensterlayouts, das Editor-Verhalten, IntelliSense-Code Ausschnitte und Dialogfeld Optionen. In den Prozeduren in dieser Übungseinheit werden die Aktionen beschrieben, die zum Ausführen einer bestimmten Aufgabe in Visual Studio bei Verwendung der **allgemeinen Entwicklungs Einstellungs** Auflistung erforderlich sind. Wenn Sie eine andere Einstellungs Sammlung für Ihre Entwicklungsumgebung auswählen, kann es Unterschiede in den Schritten geben, die Sie berücksichtigen sollten.
 
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>Übung 1: Verwenden von Browserlink und die Web Essentials
+### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>Übung 1: Arbeiten mit Browser Link und Web Essentials
 
-**Web Essentials** ist eine Visual Studio-Erweiterung, die eine Vielzahl von nützlichen Features für die moderne Webentwicklung, vor allem darauf konzentriert, die die webentwicklungserfahrung viel schneller und problemloser hinzufügt. Sie können die Web Essentials aus dem Katalog der Erweiterung in Visual Studio installieren.
+**WebEssentials** ist eine Visual Studio-Erweiterung, die eine Vielzahl nützlicher Features für die moderne Webentwicklung bietet. Sie konzentriert sich hauptsächlich darauf, die Webentwicklung viel schneller und angenehmer zu gestalten. Sie können Web Essentials aus dem Erweiterungs Katalog in Visual Studio installieren.
 
-**Browserverknüpfung** ist ein neues Feature in Visual Studio 2013, die einen Kanal zwischen Visual Studio-IDE und jedem geöffneten Browser zum Austauschen von Daten zwischen der Webanwendung und die Visual Studio bietet enthalten. Web Essentials erweitert Browserlink mit Tools zum Bearbeiten des DOM-Objekt und die CSS-Formate von Webseiten direkt über den Browser.
+**Browser Link** ist ein neues Feature, das in Visual Studio 2013 enthalten ist, das einen Kanal zwischen der Visual Studio-IDE und einem beliebigen geöffneten Browser zum Austauschen von Daten zwischen Ihrer Webanwendung und Visual Studio bereitstellt. Web Essentials erweitert den Browser Link mit Tools, um das DOM-Objektmodell und die CSS-Stile Ihrer Webseiten direkt aus dem Browser zu bearbeiten.
 
-In dieser Übung werden Sie lernen Sie einige der vom unterstützten Funktionen **Web Essentials** und **Browserlink** um eine einfache Quiz-Seite zu verbessern.
+In dieser Übung untersuchen Sie einige der Features, die von **Web Essentials** und **Browser Link** unterstützt werden, um eine einfache Quiz Seite zu verbessern.
 
 <a id="Ex1Task1"></a>
 #### <a name="task-1---running-the-project-in-multiple-browsers"></a>Aufgabe 1: Ausführen des Projekts in mehreren Browsern
 
-In dieser Aufgabe Konfigurieren Sie Ihre Webanwendung in mehreren Browsern gleichzeitig ausführen Dies ist hilfreich für browserübergreifende Tests.
+In dieser Aufgabe konfigurieren Sie die Webanwendung so, dass Sie in mehreren Browsern gleichzeitig ausgeführt wird, was für Browser übergreifende Tests nützlich ist.
 
-1. Open **Microsoft Visual Studio**.
-2. In der **Datei** , wählen Sie im Menü **Open | Projekt/Projektmappe...**  und navigieren Sie zu **Ex1-WorkingwithBrowserLinkandWebEssentials\Begin** in die **Quelle** Ordner der Umgebung (C:\WebCampsTK\HOL\VSWebTooling\Source). Wählen Sie **Begin.sln** , und klicken Sie auf **öffnen**.
-3. Erweitern Sie in der Symbolleiste von Visual Studio das Menü "Browser"- **Browserauswahl...** .
+1. Öffnen Sie **Microsoft Visual Studio**.
+2. Wählen Sie im Menü **Datei** die Option Öffnen aus.  **Projekt/Projekt Mappe...** und navigieren Sie zu **EX1-WorkingwithBrowserLinkandWebEssentials\Begin** im **Quell** Ordner des Labs (c:\webcampstk\hol\vswebtooling\source). Wählen Sie **BEGIN. sln** aus, und klicken Sie auf **Öffnen**.
+3. Erweitern Sie in der Visual Studio-Symbolleiste das Menü Browser, und wählen Sie **Durchsuchen mit...** aus.
 
-    ![Navigieren Sie mit der Menüoption](visual-studio-2013-web-tools/_static/image1.png "durchsuchen mit... im \"Objektkatalog\"")
+    ![Menüoption "Durchsuchen"](visual-studio-2013-web-tools/_static/image1.png "Durchsuchen... im Menü Browser")
 
-    *Navigieren Sie mit der Menüoption*
-4. In der **Browserauswahl** (Dialogfeld), wählen Sie **Google Chrome** und **Internet Explorer** halten die **STRG** gedrückt, und klicken Sie auf  **Als Standard festlegen**.
+    *Menüoption "Durchsuchen"*
+4. Wählen Sie im Dialogfeld **Durchsuchen mit** den Optionen **Google Chrome** und **Internet Explorer** aus, indem Sie die **STRG** -Taste gedrückt halten, und klicken Sie dann auf **als Standard festlegen**.
 
-    ![Navigieren Sie im Dialogfeld](visual-studio-2013-web-tools/_static/image2.png "navigieren Sie im Dialogfeld")
+    ![Dialogfeld "Durchsuchen"](visual-studio-2013-web-tools/_static/image2.png "Dialogfeld "Durchsuchen"")
 
-    *Mehrere Standardbrowser auswählen*
-5. Sowohl für Google Chrome als auch für Internet Explorer sollte nun wie der Standardbrowser angezeigt werden. Klicken Sie auf **Abbrechen** um das Dialogfeld zu schließen.
+    *Auswählen mehrerer Standardbrowser*
+5. Google Chrome und Internet Explorer sollten jetzt als Standardbrowser angezeigt werden. Klicken Sie auf **Abbrechen** , um das Dialogfeld zu schließen.
 
-    ![Google Chrome und Internet Explorer als Standardbrowser](visual-studio-2013-web-tools/_static/image3.png "Google Chrome und Internet Explorer Standardbrowser")
+    ![Google Chrome und Internet Explorer als Standardbrowser](visual-studio-2013-web-tools/_static/image3.png "Google Chrome-und Internet Explorer-Standardbrowser")
 
     *Google Chrome und Internet Explorer als Standardbrowser*
 
     > [!NOTE]
-    > Nach dem Konfigurieren der Standardbrowser der **mehreren Browsern** Option im Menü "Browser" ausgewählt ist.
+    > Nach dem Konfigurieren der Standardbrowser wird die Option **mehrere Browser** im Menü Browser ausgewählt.
     > 
-    > ![Mehrere Browser](visual-studio-2013-web-tools/_static/image4.png "mehrere Browser")
-6. Drücken Sie **STRG** + **F5** um die Anwendung ohne Debuggen auszuführen.
-7. Wenn beide Browserfenster öffnen, müssen platzieren Sie eine von ihnen über die anderen, um die Updates gleichzeitig auf beide Browser anzuzeigen. Der Browser sollte eine Webseite mit einem hellblaue Rechteck angezeigt werden.
+    > ![Mehrere Browser](visual-studio-2013-web-tools/_static/image4.png "Mehrere Browser")
+6. Drücken Sie **STRG** + **F5** , um die Anwendung ohne Debuggen auszuführen.
+7. Wenn beide Browserfenster geöffnet sind, platzieren Sie eine von Ihnen über der anderen, um die Aktualisierungen auf beiden Browsern gleichzeitig anzuzeigen. Die Browser sollten eine Webseite mit einem hellblauen Rechteck anzeigen.
 
-    ![Platzieren einen Browser über der anderen](visual-studio-2013-web-tools/_static/image5.png "Platzieren von einem Browser über der anderen")
+    ![Platzieren eines Browsers über dem anderen](visual-studio-2013-web-tools/_static/image5.png "Platzieren eines Browsers über dem anderen")
 
-    *Platzieren einen Browser über der anderen*
-8. Schließen Sie den Browser nicht. Sie verwenden diese in der nächsten Aufgabe.
+    *Platzieren eines Browsers über dem anderen*
+8. Schließen Sie die Browser nicht. Diese werden in der nächsten Aufgabe verwendet.
 
 <a id="Ex1Task2"></a>
-#### <a name="task-2---using-zen-coding-to-create-html-elements"></a>Aufgabe 2: Verwendung Zen-Codierung zum Erstellen von HTML-Elementen
+#### <a name="task-2---using-zen-coding-to-create-html-elements"></a>Aufgabe 2: Verwenden der Zen-Codierung zum Erstellen von HTML-Elementen
 
-**Codieren von Zen** ist Sie ein Editor-Plug-In für Hochgeschwindigkeits-HTML, XML, XSL-(oder jedes andere strukturiertem Code-Format) zu programmieren und zu bearbeiten. Der Kern der dieses Plug-in ist eine leistungsstarke Abkürzung-Engine – ähnlich wie CSS-Selektoren - Ausdrücke, in HTML-Code erweitern können. Zen-Codierung ist eine schnelle Möglichkeit zum Schreiben, dass HTML mithilfe einer CSS-Selektor-Syntax formatieren.
+Bei der **Zen-Codierung** handelt es sich um ein Editor-Plug-in für schnelle HTML-, XML-, XSL-und andere strukturierte Code Formate, die Codieren und bearbeiten. Der Kern dieses Plug-ins ist eine leistungsstarke Abkürzung-Engine, mit der Sie Ausdrücke wie CSS-Selektoren in HTML-Code erweitern können. Die Zen-Codierung ist eine schnelle Möglichkeit zum Schreiben von HTML mithilfe einer Syntax der CSS-Stil Auswahl.
 
-In dieser Übung verwenden Sie die Codierung Zen-Funktion von Web Essentials bereitgestellt, die HTML-Schaltflächen generieren, die die Optionen der Frage darstellt.
+In dieser Übung verwenden Sie die von Web Essentials bereitgestellte Zen-Codierungsfunktion, um die HTML-Schaltflächen zu generieren, die die Optionen der Frage darstellen.
 
 1. Wechseln Sie zurück zu Visual Studio.
-2. Öffnen der **"Index.cshtml"** Datei befindet sich in der **Ansichten** | **Startseite** Ordner.
-3. Ersetzen der **&lt;!--TODO: Fügen Sie die Optionen zur Verfügung –&gt;** Kommentar mit dem folgenden Code, und drücken Sie **Registerkarte**.
+2. Öffnen Sie die Datei " **Index. cshtml** ", die sich im Ordner **views** | **Home** befindet.
+3. Ersetzen **Sie den&lt;!--TODO: hier hinzufügen-Optionen&gt;** Kommentar durch den folgenden Code, und drücken Sie die **Tab**-Taste.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
-4. Der Code sollte in HTML erweitert werden.
+4. Der Code sollte auf HTML erweitert werden.
 
-    ![Erweitert HTML](visual-studio-2013-web-tools/_static/image6.png "erweitert HTML")
+    ![Erweitertes HTML](visual-studio-2013-web-tools/_static/image6.png "Erweitertes HTML")
 
-    *Erweiterte HTML*
+    *Erweitertes HTML*
 
     > [!NOTE]
-    > Weitere Informationen zur Codierung von Zen-Syntax finden Sie unter den folgenden [Artikel](http://www.johnpapa.net/zen-coding-in-visual-studio-2012/).
-5. Klicken Sie auf die **verknüpfte Browser aktualisieren** Schaltfläche, um beide Browser zu aktualisieren.
+    > Weitere Informationen zur Zen-Codierungs Syntax finden Sie im folgenden [Artikel](http://www.johnpapa.net/zen-coding-in-visual-studio-2012/).
+5. Klicken Sie auf die Schaltfläche Verbindungs **Browser aktualisieren** , um beide Browser zu aktualisieren.
 
-    ![Verknüpfte Browser aktualisieren](visual-studio-2013-web-tools/_static/image7.png "verknüpfte Browser aktualisieren")
+    ![Verknüpfte Browser aktualisieren](visual-studio-2013-web-tools/_static/image7.png "Verknüpfte Browser aktualisieren")
 
     *Verknüpfte Browser aktualisieren*
 
-    ![InternetExplorer - Seite aktualisiert, mit vier Schaltflächen](visual-studio-2013-web-tools/_static/image8.png "InternetExplorer - Seite aktualisiert, mit vier Schaltflächen")
+    ![Internet Explorer-Seite aktualisiert mit vier Schaltflächen](visual-studio-2013-web-tools/_static/image8.png "Internet Explorer-Seite aktualisiert mit vier Schaltflächen")
 
-    *InternetExplorer - Seite mit vier Schaltflächen aktualisiert*
+    *Internet Explorer-Seite aktualisiert mit vier Schaltflächen*
 
-    ![Google Chrome – Seite aktualisiert, mit vier Schaltflächen](visual-studio-2013-web-tools/_static/image9.png "Google Chrome – Seite aktualisiert, mit vier Schaltflächen")
+    ![Google Chrome-Seite mit vier Schaltflächen aktualisiert](visual-studio-2013-web-tools/_static/image9.png "Google Chrome-Seite mit vier Schaltflächen aktualisiert")
 
-    *Google Chrome – aktualisiert die Seite mit vier Schaltflächen*
+    *Google Chrome-Seite mit vier Schaltflächen aktualisiert*
 6. Wechseln Sie zurück zu Visual Studio.
-7. Sie haben die Schaltflächen auf der Seite hinzugefügt, jedoch müssen Sie immer noch eine Frage der Vorlage hinzufügen. Zu diesem Zweck verwenden Sie ein neues Feature in Web Essentials namens **Lorem Ipsum Generator**. Suchen Sie die **Div** -Element mit dem **Klasse** Attribut **Front**.
-8. Fügen Sie den folgenden Code als das erste untergeordnete Element von der **Div**, und drücken Sie die **Registerkarte**.
+7. Sie haben der Seite die Schaltflächen hinzugefügt, aber Sie müssen dennoch eine Vorlagen Frage hinzufügen. Zu diesem Zweck verwenden Sie ein neues Feature in Web Essentials namens " **Lorem Ipsum Generator**". Suchen Sie das **div** -Element mit dem **Class** -Attribut **Front**.
+8. Fügen Sie den folgenden Code als erstes untergeordnetes Element des **div**-Elements hinzu, und drücken Sie die **Tab**-Taste.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample2.css)]
-9. Der Code sollte in HTML erweitert werden.
+9. Der Code sollte auf HTML erweitert werden.
 
-    ![Lorem Ipsum automatisch generierte](visual-studio-2013-web-tools/_static/image10.png "Lorem Ipsum automatisch generiert")
+    !["Lorem ipsum" automatisch generiert](visual-studio-2013-web-tools/_static/image10.png ""Lorem ipsum" automatisch generiert")
 
-    *Lorem Ipsum automatisch generiert*
+    *"Lorem ipsum" automatisch generiert*
 
     > [!NOTE]
-    > Im Rahmen der Zen-Codierung können Sie jetzt Lorem Ipsum-Code direkt im HTML-Editor generieren. Geben Sie einfach **Lorem** und klicken Sie auf **Registerkarte** und eine 30 Lorem Ipsum Text eingefügt werden soll. Beispiel: *lorem10* fügt 10 Lorem Ipsum-Wörter.
-10. Fügen Sie ein Logo am oberen Rand der Frage ein weiteres neues Feature in Web Essentials aufgerufen mit **Lorem Pixel Generator**. Fügen Sie den folgenden Code als das erste untergeordnete Element von der **Div** -Element mit **Container** als **Klasse** Wert ein, und drücken Sie **Registerkarte**.
+    > Im Rahmen der Zen-Codierung können Sie jetzt den Lorem ipsum-Code direkt im HTML-Editor generieren. Geben Sie einfach " **Lorem** " und "Treffer **Registerkarte** " ein, und ein 30-Wort-ipsum-Text wird eingefügt. Beispiel: *lorem10* fügt 10 Lorem ipsum-Wörter ein.
+10. Sie fügen am Anfang der Frage ein Logo hinzu, indem Sie ein weiteres neues Feature in Web Essentials mit dem Namen " **Lorem Pixel Generator**" verwenden. Fügen Sie den folgenden Code als erstes untergeordnetes Element des **div** -Elements mit **Container** als **Klassen** Wert hinzu, und drücken Sie die **Tab**-Taste.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample3.css)]
-11. Der Code sollte in HTML erweitern.
+11. Der Code sollte in HTML erweitert werden.
 
-    ![Lorem Pixel automatisch generierte](visual-studio-2013-web-tools/_static/image11.png "Lorem Pixel automatisch generiert")
+    ![Lorem-Pixel automatisch generiert](visual-studio-2013-web-tools/_static/image11.png "Lorem-Pixel automatisch generiert")
 
-    *Lorem Pixel automatisch generiert*
-
-    > [!NOTE]
-    > Im Rahmen der Zen-Codierung können Sie auch Lorem-Pixel-Code direkt im HTML-Editor generieren. Geben Sie einfach **Pix-200 x 200-Tiere** und klicken Sie auf **Registerkarte** und **Img** Tag mit einem 200 x 200-Image von einem Tier eingefügt werden soll. Weitere Informationen finden Sie unter [Lorem Pixel](http://www.lorempixel.com).
-12. Klicken Sie auf die **verknüpfte Browser aktualisieren** Schaltfläche, um beide Browser zu aktualisieren.
-
-    ![InternetExplorer – automatisch generierte Bild und Text](visual-studio-2013-web-tools/_static/image12.png "Internet Explorer – automatisch generierte Bild und Text")
-
-    *InternetExplorer – automatisch generierte Bild und text*
-
-    ![Google Chrome – automatisch generierte Bild und Text](visual-studio-2013-web-tools/_static/image13.png "Google Chrome – automatisch generierte Bild und Text")
-
-    *Google Chrome – automatisch generierte Bild und text*
+    *Lorem-Pixel automatisch generiert*
 
     > [!NOTE]
-    > Da das Bild nach dem Zufallsprinzip ausgewählt ist, wenn Sie den Codeausschnitt hinzufügen, das Bild in den Browsern unterscheiden sich möglicherweise.
-13. Schließen Sie den Browser nicht. Sie verwenden diese in der nächsten Aufgabe.
+    > Im Rahmen der Zen-Codierung können Sie auch den Lorem-pixelcode direkt im HTML-Editor generieren. Geben Sie einfach **pix-200 x 200-animals** ein, und klicken Sie auf die **Registerkarte** , und ein **IMG** -Tag mit einem 200 x 200-Bild eines Tieres wird eingefügt. Weitere Informationen finden Sie unter [Lorem Pixel](http://www.lorempixel.com).
+12. Klicken Sie auf die Schaltfläche Verbindungs **Browser aktualisieren** , um beide Browser zu aktualisieren.
+
+    ![Internet Explorer: automatisch generiertes Bild und Text](visual-studio-2013-web-tools/_static/image12.png "Internet Explorer: automatisch generiertes Bild und Text")
+
+    *Internet Explorer: automatisch generiertes Bild und Text*
+
+    ![Google Chrome-automatisch generiertes Bild und Text](visual-studio-2013-web-tools/_static/image13.png "Google Chrome-automatisch generiertes Bild und Text")
+
+    *Google Chrome-automatisch generiertes Bild und Text*
+
+    > [!NOTE]
+    > Da das Bild beim Hinzufügen des Code Ausschnitts zufällig ausgewählt wird, kann sich das in den Browsern angezeigte Bild unterscheiden.
+13. Schließen Sie die Browser nicht. Diese werden in der nächsten Aufgabe verwendet.
 
 <a id="Ex1Task3"></a>
 #### <a name="task-3---updating-a-style-property"></a>Aufgabe 3: Aktualisieren einer Style-Eigenschaft
 
-In dieser Aufgabe verwenden Sie den Browserlink **Modus überprüfen** Feature zum Erkennen des exakten Speicherort, an dem das bestimmte DOM-Element generiert wird, und aktualisieren Sie dann die Color-Eigenschaft dieses Elements, das über eine Farbauswahl angezeigt, die vom Webdienst bereitgestellt Essentials.
+In dieser Aufgabe verwenden Sie die Funktion zum über **prüfen** des Browsers, um den genauen Speicherort zu ermitteln, an dem das jeweilige DOM-Element generiert wird, und aktualisieren anschließend die Color-Eigenschaft dieses Elements mithilfe einer Farbauswahl, die von Web Essentials bereitgestellt wird.
 
-1. Drücken Sie in der Internet Explorer-Browser **STRG** + **ALT** + **ich** Aktivieren des Modus zu überprüfen.
-2. Zeigen Sie auf den hellen blauen Rahmen, und klicken Sie auf.
+1. Drücken Sie im Internet Explorer-Browser **STRG** + **alt** + **I** , um den Überprüfungs Modus zu aktivieren.
+2. Bewegen Sie den Mauszeiger über den hellen blauen Rahmen, und klicken Sie auf.
 
-    ![Bewegen des Mauszeigers über den hellen blauen Rahmen](visual-studio-2013-web-tools/_static/image14.png "Bewegen des Mauszeigers über den hellen blauen Rahmen")
+    ![Bewegen des Zeigers über den hellen blauen Rahmen](visual-studio-2013-web-tools/_static/image14.png "Bewegen des Zeigers über den hellen blauen Rahmen")
 
-    *Bewegen des Mauszeigers über den hellen blauen Rahmen*
-3. Wechseln Sie zurück zu Visual Studio. Beachten Sie, wie das HTML-Element, das Sie im Browser ausgewählt ebenfalls in der Visual Studio-HTML-Editor aktiviert ist.
+    *Bewegen des Zeigers über den hellen blauen Rahmen*
+3. Wechseln Sie zurück zu Visual Studio. Beachten Sie, dass das HTML-Element, das Sie im Browser ausgewählt haben, auch im HTML-Editor von Visual Studio ausgewählt ist.
 
-    ![HTML-Element in der Visual Studio-HTML-Editor ausgewählten](visual-studio-2013-web-tools/_static/image15.png "HTML-Element in der Visual Studio-HTML-Editor ausgewählt")
+    ![Im HTML-Editor von Visual Studio ausgewähltes HTML-Element](visual-studio-2013-web-tools/_static/image15.png "Im HTML-Editor von Visual Studio ausgewähltes HTML-Element")
 
-    *HTML-Element in der Visual Studio-HTML-Editor ausgewählt*
-4. Aktualisieren Sie jetzt die **Front** CSS-Klasse, um den Stil des ausgewählten Elements zu ändern. Drücken Sie die zu diesem Zweck **STRG** + **,** zum Öffnen der **Navigieren zu** Suchfeld. Typ **"Site.CSS"** , und drücken Sie **EINGABETASTE** zum Öffnen der Datei.
+    *Im HTML-Editor von Visual Studio ausgewähltes HTML-Element*
+4. Sie aktualisieren nun die **Front** -CSS-Klasse, um die Formatierung des ausgewählten Elements zu ändern. Drücken Sie hierzu **STRG** +  **,** um das Suchfeld **zu** suchen. Geben Sie **Site. CSS** ein und drücken **Sie die Eingabe** Taste, um die Datei zu öffnen
 
-    ![Öffnen die Datei "Site.CSS"](visual-studio-2013-web-tools/_static/image16.png "Öffnen der Datei \"Site.CSS\"")
+    ![Datei Site. CSS wird geöffnet](visual-studio-2013-web-tools/_static/image16.png "Datei Site. CSS wird geöffnet")
 
-    *Öffnen der Datei "Site.CSS"*
-5. Drücken Sie **STRG** + **F** und **.flip-Container .front** die CSS-Auswahl gefunden.
-6. Klicken Sie auf das Licht blaue Quadrat aus, in die Border-Eigenschaft der Klasse, um den Farbwähler zu öffnen.
+    *Datei Site. CSS wird geöffnet*
+5. Drücken Sie **STRG** + **F** , und geben Sie **. Flip-Container. Front** ein, um die CSS-Auswahl zu suchen.
+6. Klicken Sie in der Border-Eigenschaft der-Klasse auf das helle blaue Quadrat, um die Farbauswahl zu öffnen.
 
-    ![Öffnen die Farbauswahl](visual-studio-2013-web-tools/_static/image17.png "öffnen die Farbauswahl")
+    ![Öffnen der Farbauswahl](visual-studio-2013-web-tools/_static/image17.png "Öffnen der Farbauswahl")
 
-    *Öffnen die Farbauswahl*
-7. Erweitern Sie die Farbauswahl, indem Sie auf die Chevron-Schaltfläche, und wählen Sie eine neue Farbe.
+    *Öffnen der Farbauswahl*
+7. Erweitern Sie die Farbauswahl, indem Sie auf die Chevron-Schaltfläche klicken und eine neue Farbe auswählen.
 
-    ![Erweitern die Farbauswahl](visual-studio-2013-web-tools/_static/image18.png "die Farbauswahl erweitern")
+    ![Erweitern der Farbauswahl](visual-studio-2013-web-tools/_static/image18.png "Erweitern der Farbauswahl")
 
-    *Die Farbauswahl erweitern*
-8. Drücken Sie **STRG** + **ALT** + **EINGABETASTE** verknüpften Browser zu aktualisieren.
-9. Wechseln Sie zu Internet Explorer, und beachten Sie, wie sich die Farbe des Rahmens geändert hat.
+    *Erweitern der Farbauswahl*
+8. Drücken Sie **STRG** + **alt** + **Eingabe** Taste, um verknüpfte Browser zu aktualisieren.
+9. Wechseln Sie zu Internet Explorer, und beachten Sie, dass sich die Farbe des Rahmens geändert hat.
 
-    ![InternetExplorer – die Farbe des Rahmens aktualisiert](visual-studio-2013-web-tools/_static/image19.png "Internet Explorer – die Farbe des Rahmens aktualisiert")
+    ![Internet Explorer-Rahmenfarbe aktualisiert](visual-studio-2013-web-tools/_static/image19.png "Internet Explorer-Rahmenfarbe aktualisiert")
 
-    *InternetExplorer – die Farbe des Rahmens aktualisiert*
-10. Wechseln Sie zur Google Chrome, und beachten Sie, wie sich die Farbe des Rahmens geändert hat.
+    *Internet Explorer-Rahmenfarbe aktualisiert*
+10. Wechseln Sie zu Google Chrome, und beachten Sie, dass sich die Farbe des Rahmens geändert hat.
 
-    ![Google Chrome – die Farbe des Rahmens aktualisiert](visual-studio-2013-web-tools/_static/image20.png "Google Chrome – die Farbe des Rahmens aktualisiert")
+    ![Google Chrome-Rahmenfarbe aktualisiert](visual-studio-2013-web-tools/_static/image20.png "Google Chrome-Rahmenfarbe aktualisiert")
 
-    *Google Chrome – die Farbe des Rahmens aktualisiert*
+    *Google Chrome-Rahmenfarbe aktualisiert*
 11. Wechseln Sie zurück zu Visual Studio.
-12. Wechseln Sie an das Ende der **"Site.CSS"** -Datei, und drücken Sie **STRG** + **F** finden die **.btn** Selektor.
-13. Beachten Sie, dass die **- Webkit-Rahmen-Radius** Eigenschaft Grün unterstrichen ist.
+12. Wechseln Sie zum Ende der Datei " **Site. CSS** ", und drücken Sie **STRG** + **F** , um die **. BTN** -Auswahl zu suchen.
+13. Beachten Sie, dass die Eigenschaft **-webkit-border-radius** grün unterstrichen ist.
 
-    ![-Webkit-Rahmen-Radius-Eigenschaft des Selektors Btn](visual-studio-2013-web-tools/_static/image21.png "- Webkit-Rahmen-Radius-Eigenschaft des Selektors Btn")
+    ![-webkit-border-Radius-Eigenschaft des BTN-Selektor](visual-studio-2013-web-tools/_static/image21.png "-webkit-border-Radius-Eigenschaft des BTN-Selektor")
 
-    *-Webkit-Rahmen-Radius-Eigenschaft des Selektors btn*
-14. Platzieren Sie den Textcursor in den **- Webkit-Rahmen-Radius** Eigenschaft. Eine blaue Linie sollte unter dem ersten Buchstaben des ersten Worts der Eigenschaft angezeigt werden. Dies ist die **Smarttag**.
-15. Drücken Sie **STRG** + **.** Öffnen Sie das Menü Vorschläge, und klicken Sie auf **hinzufügen fehlender Standardeigenschaft (Border-Radius)**.
+    *-webkit-border-Radius-Eigenschaft des BTN-Selektor*
+14. Platzieren Sie die Einfügemarke in der **-webkit-border-radius-** Eigenschaft. Unter dem ersten Buchstaben des ersten Worts der Eigenschaft sollte eine blaue Linie angezeigt werden. Dies ist das **Smarttag**.
+15. Drücken Sie die **STRG** - +  **.** Öffnen Sie das Vorschlags Menü, und klicken Sie auf **Fehlende Standard Eigenschaft hinzufügen (border-radius)** .
 
-    ![Hinzufügen fehlender Standardeigenschaft Vorschlag](visual-studio-2013-web-tools/_static/image22.png "hinzufügen fehlender Standardeigenschaft Vorschlag")
+    ![Fehlenden Standard Eigenschafts Vorschlag hinzufügen](visual-studio-2013-web-tools/_static/image22.png "Fehlenden Standard Eigenschafts Vorschlag hinzufügen")
 
-    *Fügen Sie fehlender Standardeigenschaft Vorschlag hinzu*
-16. Die **Rahmen-Radius** Eigenschaft wird die CSS-Regel automatisch hinzugefügt.
+    *Fehlenden Standard Eigenschafts Vorschlag hinzufügen*
+16. Die **Border-RADIUS-** Eigenschaft wird der CSS-Regel automatisch hinzugefügt.
 
-    ![Fehlende Standardeigenschaft hinzugefügt](visual-studio-2013-web-tools/_static/image23.png "fehlt die standard-Eigenschaft hinzugefügt")
+    ![Fehlende Standard Eigenschaft wurde hinzugefügt.](visual-studio-2013-web-tools/_static/image23.png "Fehlende Standard Eigenschaft wurde hinzugefügt.")
 
-    *Fehlende Standardeigenschaft hinzugefügt*
-17. Zeigen Sie auf die **Rahmen-Radius** Eigenschaft zum Anzeigen der **Browser Matrix QuickInfo**. Die **Browser Matrix QuickInfo** zeigt die Verfügbarkeit der Eigenschaft in jedem Browser.
+    *Fehlende Standard Eigenschaft wurde hinzugefügt.*
+17. Bewegen Sie den Mauszeiger über die **Border-RADIUS-** Eigenschaft, um die **Browser Matrix**-QuickInfo anzuzeigen. Die **Browser Matrix** -QuickInfo zeigt die Verfügbarkeit der Eigenschaft in jedem Browser an.
 
-    ![Browser Matrix QuickInfo](visual-studio-2013-web-tools/_static/image24.png "Browser Matrix QuickInfo")
+    ![Browser Matrix-QuickInfo](visual-studio-2013-web-tools/_static/image24.png "Browser Matrix-QuickInfo")
 
-    *Browser-Matrix-QuickInfo*
-18. Beachten Sie, dass der Wert des der **Rahmen-Radius** -Eigenschaft ist immer noch unterstrichen. Zeigen Sie auf den Wert in der Warnmeldung angezeigt.
+    *Browser Matrix-QuickInfo*
+18. Beachten Sie, dass der Wert der **Border-RADIUS-** Eigenschaft immer noch unterstrichen ist. Bewegen Sie den Zeiger auf den Wert, um die Warnmeldung anzuzeigen.
 
-    ![Border-Radius-Eigenschaft Warnung](visual-studio-2013-web-tools/_static/image25.png "Rahmen-Radius-Eigenschaft-Wert-Warnung")
+    ![Eigenschaft Wert für Border-Radius-Eigenschaft](visual-studio-2013-web-tools/_static/image25.png "Eigenschaft Wert für Border-Radius-Eigenschaft")
 
-    *Warnung Rahmen-Radius-Eigenschaft*
-19. Entfernen Sie die Einheit für die **Rahmen-Radius** Eigenschaftswert gemäß dem Vorschlag von der QuickInfo.
-20. Als **Rahmen-Radius** ist die standard-Eigenschaft für die Definition wie abgerundeten Rahmen, die Ecken sind, können Sie entfernen die **- Webkit-Rahmen-Radius** -Eigenschaft und Wert in der CSS-Regel.
-21. Platzieren Sie den Textcursor in den **Zeilenumbruch** -Eigenschaft und das Smarttag auch unten angezeigt.
-22. Öffnen Sie das Menü, und klicken Sie auf **hinzufügen fehlender Besonderheiten der jeweiligen Hersteller**.
+    *Eigenschaft Wert für Border-Radius-Eigenschaft*
+19. Entfernen Sie die Einheit des **Border-RADIUS-** Eigenschafts Werts, wie von der QuickInfo vorgeschlagen.
+20. Da **Border-RADIUS** die Standard Eigenschaft für die Definition von abgerundeten Rahmen Ecken ist, können Sie die **-webkit-border-radius** -Eigenschaft und den Wert aus der CSS-Regel entfernen.
+21. Platzieren Sie die **Einfügemarke in der Word-Wrap-** Eigenschaft, und beachten Sie, dass das Smarttag auch unten angezeigt wird.
+22. Öffnen Sie das Menü, und klicken Sie auf **fehlende Hersteller Spezifikationen hinzufügen**.
 
-    ![Hinzufügen fehlender Hersteller Besonderheiten Vorschlag](visual-studio-2013-web-tools/_static/image26.png "fehlenden Anbieter Besonderheiten der jeweiligen Empfehlung hinzufügen")
+    ![Vorschlag für fehlende Hersteller Besonderheiten hinzufügen](visual-studio-2013-web-tools/_static/image26.png "Vorschlag für fehlende Hersteller Besonderheiten hinzufügen")
 
-    *Fügen Sie fehlender Hersteller Besonderheiten Vorschlag hinzu*
-23. Die **-ms-Zeilenumbruch** Eigenschaft wird die CSS-Regel automatisch hinzugefügt.
+    *Vorschlag für fehlende Hersteller Besonderheiten hinzufügen*
+23. Die **-MS-Word-Wrap** -Eigenschaft wird der CSS-Regel automatisch hinzugefügt.
 
-    ![Hersteller (Eigenschaft) bestimmte hinzugefügt](visual-studio-2013-web-tools/_static/image27.png "bestimmten Hersteller (Eigenschaft) hinzugefügt")
+    ![Anbieterspezifische Eigenschaft hinzugefügt](visual-studio-2013-web-tools/_static/image27.png "Anbieterspezifische Eigenschaft hinzugefügt")
 
-    *Bestimmten Hersteller (Eigenschaft) hinzugefügt*
+    *Anbieterspezifische Eigenschaft hinzugefügt*
 
 <a id="Ex1Task4"></a>
-#### <a name="task-4---updating-the-html-code-from-the-browser"></a>Aufgabe 4: Aktualisieren der HTML-Code aus dem Browser
+#### <a name="task-4---updating-the-html-code-from-the-browser"></a>Aufgabe 4: Aktualisieren des HTML-Codes aus dem Browser
 
-In dieser Aufgabe verwenden Sie den Browserlink **Entwurfsmodus** Funktion bearbeiten das DOM-Objekt, aus dem Browser, und übertragen die Änderungen an der HTML-Quelldatei in Visual Studio.
+In dieser Aufgabe verwenden Sie die **Entwurfs Modus** -Funktion des Browser Links, um das DOM-Objekt aus dem Browser zu bearbeiten und die Änderungen an die HTML-Quelldatei in Visual Studio zu übertragen.
 
-1. Drücken Sie in Google Chrome, **STRG** + **ALT** + **D** Entwurfsmodus aktivieren.
-2. Zeigen Sie auf die **Lorem Ipsum Dolor Sit Amet** bezeichnen, und klicken Sie auf.
+1. Drücken Sie in Google Chrome **STRG** + **alt** + **D** , um den Entwurfs Modus zu aktivieren.
+2. Bewegen Sie den Mauszeiger über die Bezeichnung " **Lorem ipsum dolor sit amet** ", und klicken Sie auf.
 
-    ![Bearbeiten die Frage](visual-studio-2013-web-tools/_static/image28.png "die Frage bearbeiten")
+    ![Bearbeiten der Frage](visual-studio-2013-web-tools/_static/image28.png "Bearbeiten der Frage")
 
-    *Die Frage bearbeiten*
-3. Ein Cursor sollte angezeigt werden. Ersetzen Sie den ursprünglichen Text mit *Was sieht, wenn eine Frage mehr geschrieben?*, und drücken Sie dann **ESC** zum Entwurfsmodus zu beenden.
+    *Bearbeiten der Frage*
+3. Ein Cursor sollte angezeigt werden. Ersetzen Sie den ursprünglichen Text durch das *aussehen, wenn ich eine längere Frage schreibe?* , und drücken Sie dann **ESC** , um den Entwurfs Modus zu beenden.
 
     ![Frage bearbeitet](visual-studio-2013-web-tools/_static/image29.png "Frage bearbeitet")
 
     *Frage bearbeitet*
-4. Wechseln Sie zurück zu Visual Studio und öffnen **"Index.cshtml"**, sofern nicht bereits geöffnet. Beachten Sie, dass der innere Text des der **&lt;p&gt;** Element aktualisiert wurde.
+4. Wechseln Sie zurück zu Visual Studio, und öffnen Sie die Datei **Index. cshtml**, sofern diese nicht bereits geöffnet ist. Beachten Sie, dass der innere Text des **&lt;p-&gt;** Elements aktualisiert wurde.
 
-    ![Aktualisierte Frage im HTML-Seite](visual-studio-2013-web-tools/_static/image30.png "aktualisierte Frage im HTML-Seite")
+    ![Aktualisierte Frage auf der HTML-Seite](visual-studio-2013-web-tools/_static/image30.png "Aktualisierte Frage auf der HTML-Seite")
 
-    *Aktualisierte Frage im HTML-Seite*
+    *Aktualisierte Frage auf der HTML-Seite*
 
 <a id="Ex1Task5"></a>
-#### <a name="task-5---reviewing-seo-related-warnings"></a>Aufgabe 5: Überprüfung SEO-bezogene Warnungen
+#### <a name="task-5---reviewing-seo-related-warnings"></a>Aufgabe 5: Überprüfen von SEO-bezogenen Warnungen
 
-**Suchmaschinenoptimierung** (SEO) ist der Prozess der höheren Rang Website auf eine Such-Engine-Liste mit Ergebnissen vornehmen. Je höher die Rangfolge bestimmt der Website und je konsistenter wird aufgeführt, die mehr Besucher die Website erhalten aus dieser Such-Engine. Web Essentials enthält, in der HTML untersucht Instrument, Berichte, die Probleme gefunden, und bietet Unterstützung zu erhalten, um sie zu beheben.
+Bei der **Suchmaschinenoptimierung** (SEO) handelt es sich um den Prozess, bei dem der Rang einer Website in der Liste der Ergebnisse einer Suchmaschine höher ist. Je höher die Website Rangfolge ist, desto genauer wird Sie aufgelistet. je mehr Besucher die Website von der Suchmaschine erhalten. Web Essentials umfasst ein analytisches Tool, das HTML untersucht, die gefundenen Probleme meldet und Hilfe zur Behebung von Problemen bietet.
 
-1. Wechseln Sie zu der **Ansicht** Menü, und klicken Sie auf **Fehlerliste** zum Öffnen der **Fehlerliste** Fenster.
+1. Wechseln Sie zum Menü **Ansicht** , und klicken Sie auf **Fehlerliste** , um das Fenster **Fehlerliste** zu öffnen.
 
-    ![In der Ansicht Fehlerliste Menü](visual-studio-2013-web-tools/_static/image31.png "Fehlerliste im Menü \"Ansicht\"")
+    ![Im Menü "Ansicht" Fehlerliste](visual-studio-2013-web-tools/_static/image31.png "Im Menü "Ansicht" Fehlerliste")
 
-    *Fehler in der Ansicht im Menü aufgeführt.*
-2. Beachten Sie, dass es eine SEO-Warnung benachrichtigt, die eine **&lt;Meta&gt;** tag für die Beschreibung für die Seite fehlt. Doppelklicken Sie auf den SEO-Warnung-Eintrag, um das Problem zu beheben.
+    *Im Menü "Ansicht" Fehlerliste*
+2. Beachten Sie, dass eine SEO-Warnung mit dem Hinweis angezeigt wird, dass ein **&lt;Meta&gt;** -Tag für die Seiten Beschreibung fehlt. Doppelklicken Sie auf den Eintrag SEO Warning, um ihn zu beheben.
 
-    ![Fehlerliste (Fenster)](visual-studio-2013-web-tools/_static/image32.png "Fenster \"Fehlerliste\"")
+    ![Fehlerliste (Fenster)](visual-studio-2013-web-tools/_static/image32.png "Fehlerliste (Fenster)")
 
     *Fehlerliste (Fenster)*
-3. In der **Web Essentials** Dialogfeld klicken Sie auf **Ja** , fügen Sie eine Beschreibung &lt;Meta&gt; Tag.
+3. Klicken Sie im Dialogfeld **Web Essentials** auf **Ja** , um eine Beschreibung &lt;Meta&gt;-Tags einzufügen.
 
-    ![Web Essentials-Dialogfeld](visual-studio-2013-web-tools/_static/image33.png "Web Essentials-Dialogfeld")
+    ![WebEssentials (Dialogfeld)](visual-studio-2013-web-tools/_static/image33.png "WebEssentials (Dialogfeld)")
 
-    *Web Essentials-Dialogfeld*
-4. Der Editor für  **\_Layout.cshtml** wird geöffnet und die **&lt;Meta&gt;** Tag wird automatisch hinzugefügt, die **Head** Teil der HTML-Datei.
+    *WebEssentials (Dialogfeld)*
+4. Der Editor für **\_Layout. cshtml** wird geöffnet, und das Tag **&lt;Meta&gt;** wird automatisch dem **Head** -Abschnitt der HTML-Datei hinzugefügt.
 
-    ![Meta-Tag, die automatisch auf _Layout hinzugefügt](visual-studio-2013-web-tools/_static/image34.png "Meta-Tag _Layout Seite automatisch hinzugefügt.")
+    ![Das Meta-Tag wurde automatisch auf _Layout Seite hinzugefügt.](visual-studio-2013-web-tools/_static/image34.png "Das Meta-Tag wurde automatisch auf _Layout Seite hinzugefügt.")
 
-    *Meta-Tag automatisch hinzugefügt, \_Layoutseite*
-5. Ändern Sie den Wert, der die **Inhalt** Attribut *GeekQuiz* und speichern Sie die Datei.
+    *Das Meta-Tag wurde \_Layoutseite automatisch hinzugefügt*
+5. Ändern Sie den Wert des **Content** -Attributs in *geekquiz* , und speichern Sie die Datei.
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>Übung 2: Nutzung von Codeausschnitten und IntelliSense
+### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>Übung 2: Nutzen von Code Ausschnitten und IntelliSense
 
-Mit Web Essentials wurde der HTML-Editor mit zusätzlicher Funktionalität erweitert. In dieser Übung sehen Sie einige neue Features, die Sie bei der Entwicklung von Webanwendungen.
+Mit Web Essentials wurde der HTML-Editor mit zusätzlicher Funktionalität erweitert. In dieser Übung werden einige neue Features angezeigt, die beim Entwickeln von Webanwendungen hilfreich sind.
 
 <a id="Ex2Task1"></a>
-#### <a name="task-1---using-intellisense-in-html-documents"></a>Aufgabe 1: Verwenden von IntelliSense in HTML-Dokumente
+#### <a name="task-1---using-intellisense-in-html-documents"></a>Aufgabe 1: Verwenden von IntelliSense in HTML-Dokumenten
 
-Das erste neue Feature wird Ihnen in dieser Aufgabe wird aufgerufen, **dynamische IntelliSense**. Dynamische IntelliSense liest andere Tags und Attribute, die möglichen Ids abzuleiten, die Sie verwenden möchten.
+Das erste neue Feature, das in dieser Aufgabe angezeigt wird, wird als **dynamischer IntelliSense**bezeichnet. Dynamische IntelliSense liest andere Tags und Attribute, um die möglichen IDs abzuleiten, die Sie verwenden werden.
 
-In dieser Aufgabe erstellen Sie ein neues HTML-Formular-Element enthält eine Bezeichnung und einem Eingabefeld ein. Fügen Sie hinzu eine **für** -Attribut auf die Bezeichnung, die die Bindung an die Eingabe, und Sie sehen die IntelliSense-Vorschläge basierend auf die Ids der Eingaben im Bereich.
+In dieser Aufgabe erstellen Sie ein neues HTML-Formular Element, das eine Bezeichnung und ein Eingabefeld enthält. Dann fügen Sie der Bezeichnung ein **for** -Attribut hinzu, um es an die Eingabe zu binden, und es werden IntelliSense-Vorschläge auf der Grundlage der IDs der Eingaben im Bereich angezeigt.
 
-1. Open **Visual Studio Express 2013 für Web** und **Begin.sln** Lösung befindet sich in der **Quelle/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/Anfang** Ordner. Alternativ können Sie die Lösung weiter nutzen, den Sie in der vorherigen Übung haben.
-2. In **Projektmappen-Explorer**öffnen die **"Index.cshtml"** Datei befindet sich in der **Ansichten** | **Startseite** Ordner.
-3. Hinzufügen der folgenden Form innerhalb der **&lt;Abschnitt&gt;** Element.
+1. Öffnen Sie **Visual Studio Express 2013 für das Web** und die Projekt Mappe " **BEGIN. sln** " im Ordner " **Source/EX2-takingbegünstigeof codesnippeer-andintellisense/BEGIN** ". Alternativ können Sie mit der Lösung fortfahren, die Sie in der vorherigen Übung abgerufen haben.
+2. Öffnen Sie in **Projektmappen-Explorer**die Datei " **Index. cshtml** ", die sich im Ordner " **views** | **Home** " befindet.
+3. Fügen Sie das folgende Formular innerhalb des **&lt;Abschnitts&gt;** -Elements hinzu.
 
-    (Codeausschnitt - *VisualStudio2013WebTooling* - *Ex2* - *Formular*)
+    (Code Ausschnitt- *VisualStudio2013WebTooling* - *ex2* - *Formular*)
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample4.html)]
-4. Das input-Tag sollte eine Bezeichnung mit dem eine Beschreibung des Felds vorangestellt werden. Fügen Sie die folgende Bezeichnung vor den input-Tag hinzu.
+4. Dem Eingabetag sollte eine Bezeichnung mit einer Beschreibung des Felds vorangestellt sein. Fügen Sie die folgende Bezeichnung vor dem Eingabetag hinzu.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. Die **für** Attribut eine **&lt;Bezeichnung&gt;** gibt an, an welches Formularelement eine Beschriftung gebunden ist. Der Wert des Attributs muss gleich der Id des verknüpften Elements. Hinzufügen der **für** -Attribut auf die **&lt;Bezeichnung&gt;** Element. Wie in der folgenden Abbildung dargestellt die &quot;Namen&quot; Wert eingeblendet wird, klicken Sie im IntelliSense basierend auf der Id der Elemente innerhalb des gleichen Bereichs (die einschließende  **&lt;Formular&gt;**).
+5. Das **for** -Attribut einer **&lt;Bezeichnung&gt;** gibt an, an welches Formular Element eine Bezeichnung gebunden ist. Der Wert des Attributs sollte gleich der ID des zugehörigen Elements sein. Fügen Sie das **for** -Attribut der **&lt;Bezeichnung&gt;** -Elements hinzu. Wie in der folgenden Abbildung gezeigt, wird der &quot;Name&quot; Wert im Feld IntelliSense angezeigt, basierend auf der ID der Elemente innerhalb desselben Bereichs (das einschließende **&lt;Formular&gt;** ).
 
-    ![Die Id in IntelliSense angezeigt](visual-studio-2013-web-tools/_static/image35.png "die Id wird in IntelliSense angezeigt.")
+    ![Anzeige der ID in IntelliSense](visual-studio-2013-web-tools/_static/image35.png "Anzeige der ID in IntelliSense")
 
-    *Die Id wird in IntelliSense angezeigt.*
-6. Löschen Sie die zuletzt hinzugefügte **&lt;Formular&gt;** Element und dessen Inhalt.
+    *Anzeige der ID in IntelliSense*
+6. Löschen Sie das zuletzt hinzugefügte **&lt;Formular&gt;** Element und dessen Inhalt.
 
 <a id="Ex2Task2"></a>
-#### <a name="task-2---using-html-code-snippets"></a>Aufgabe 2: mithilfe von HTML-Codeausschnitten
+#### <a name="task-2---using-html-code-snippets"></a>Aufgabe 2: Verwenden von HTML-Code Ausschnitten
 
-HTML5 wurden mehr als 25 neue semantische Tags eingeführt. Visual Studio war bereits ein IntelliSense-Unterstützung für diese Tags, aber Visual Studio 2013 können sie schneller und einfacher, Markup durch das Hinzufügen neuer Codeausschnitte zu schreiben. Obwohl diese Tags nicht komplizierter sind, sind sie auch mit ein paar feinheiten auf, z. B. das Hinzufügen der korrekten Codec-Fallbacks für die *audio* Tag. In dieser Aufgabe wird die HTML-Codeausschnitte für das audio Tag angezeigt.
+HTML5 hat mehr als 25 neue Semantik Tags eingeführt. Visual Studio verfügte bereits über IntelliSense-Unterstützung für diese Tags, Visual Studio 2013 jedoch das Schreiben von Markup durch Hinzufügen neuer Code Ausschnitte schneller und einfacher. Obwohl diese Tags nicht kompliziert sind, sind Sie mit einigen kleinen Feinheiten verknüpft, wie z. b. das Hinzufügen der richtigen Codec-Fallbacks für das *audiotag* . In dieser Aufgabe werden die HTML-Code Ausschnitte für das audiotag angezeigt.
 
-1. In der **"Index.cshtml"** Geben Sie eine Datei  **&lt;Aud** innerhalb der **&lt;Abschnitt&gt;** -Element wie in der folgenden Abbildung gezeigt.
+1. Geben Sie in der Datei **Index. cshtml** **&lt;AUD** innerhalb des **&lt;Abschnitts&gt;** -Element ein, wie in der folgenden Abbildung dargestellt.
 
-    ![Ein audio-Element einfügen](visual-studio-2013-web-tools/_static/image36.png "ein audio-Element einfügen")
+    ![Einfügen eines Audioelements](visual-studio-2013-web-tools/_static/image36.png "Einfügen eines Audioelements")
 
-    *Ein audio-Element einfügen*
-2. Drücken Sie **Registerkarte** zweimal und beachten Sie, wie im folgende Code auf der Seite hinzugefügt wird, und der Cursor befindet sich auf die **Src** Attribut der ersten Quelle.
+    *Einfügen eines Audioelements*
+2. Drücken Sie zweimal die **Tab** -Taste, und beachten Sie, dass der folgende Code auf der Seite hinzugefügt wird und der Cursor auf dem **src** -Attribut der ersten Quelle platziert wird.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample6.html)]
 
     > [!NOTE]
-    > Durch Drücken der **Registerkarte** Schlüssel und der Codeausschnitt eingefügt wird. Der audio-Codeausschnitt zeigt die Standardverwendung von der *audio* -Tag mit zwei Quelldateien für die verbesserte Unterstützung.
-3. Die zweite Zeile löschen und aktualisieren Sie die Datenquelle der ersten Zeile mit den folgenden Link in der WebCampsTV Katana-Show: [ http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3 ](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). Der resultierende Code ist unten dargestellt.
+    > Wenn Sie die **Tab** -Taste zweimal drücken, wird der Code Ausschnitt eingefügt. Der Audioausschnitt zeigt die Standardverwendung des *Audiotags* mit zwei Quelldateien für eine verbesserte Unterstützung.
+3. Löschen Sie die zweite Zeile, und aktualisieren Sie die Quelle der ersten Zeile mit dem folgenden Link zum webcampstv Katana Show: [http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3). Der resultierende Code ist unten dargestellt.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample7.html)]
 
     > [!NOTE]
-    > Die Quelldatei *KatanaProject.mp3* als Beispiel verwendet wird. Falls gewünscht, können Sie eine andere Quelle.
-4. Drücken Sie **STRG** + **S** zum Speichern der Datei.
-5. Drücken Sie **STRG** + **F5** zum Starten der Anwendung.
-6. Beachten Sie, dass die Anwendung ein Audioplayer hinzugefügt wurde.
+    > Die Quelldatei " *katanaproject. MP3* " wird als Beispiel verwendet. Wenn Sie möchten, können Sie eine andere Quelle verwenden.
+4. Drücken Sie **STRG** + **S** , um die Datei zu speichern.
+5. Drücken Sie **STRG** + **F5** , um die Anwendung zu starten.
+6. Beachten Sie, dass der Anwendung ein Audioplayer hinzugefügt wurde.
 
-    ![Audio-Player in Internet Explorer](visual-studio-2013-web-tools/_static/image37.png "Audio-Player in Internet Explorer")
+    ![Audioplayer in Internet Explorer](visual-studio-2013-web-tools/_static/image37.png "Audioplayer in Internet Explorer")
 
-    *Audio-Player in Internet Explorer*
+    *Audioplayer in Internet Explorer*
 
-    ![Audioplayer in Google Chrome](visual-studio-2013-web-tools/_static/image38.png "Audio-Player im Google Chrome")
+    ![Audioplayer in Google Chrome](visual-studio-2013-web-tools/_static/image38.png "Audioplayer in Google Chrome")
 
     *Audioplayer in Google Chrome*
-7. Schließen Sie den Browser nicht. Sie verwenden diese in der nächsten Aufgabe.
+7. Schließen Sie die Browser nicht. Diese werden in der nächsten Aufgabe verwendet.
 
 <a id="Ex2Task3"></a>
 #### <a name="task-3---using-intellisense-in-javascript-documents"></a>Aufgabe 3: Verwenden von IntelliSense in JavaScript-Dokumenten
 
-Web Essentials 2013 wird eine Liste von IDs und Klassennamen Stylesheets und HTML-Seiten erstellen. In dieser Aufgabe lernen Sie, wie diese Listen mit JavaScript-IntelliSense-Unterstützung in Web Essentials 2013 zu verbessern.
+Mit Web Essentials 2013 werden in Stylesheets und HTML-Seiten eine Liste von IDs und Klassennamen erzeugt. In dieser Aufgabe erfahren Sie, wie diese Listen die Unterstützung von JavaScript IntelliSense in Web Essentials 2013 verbessern.
 
-1. In der **"Index.cshtml"** Datei, fügen Sie folgenden Code zum Definieren einer **Skript** Tag für JavaScript-Code.
+1. Fügen Sie in der Datei " **Index. cshtml** " den folgenden Code hinzu, um ein **Skripttag** für JavaScript-Code zu definieren.
 
     [!code-cshtml[Main](visual-studio-2013-web-tools/samples/sample8.cshtml)]
-2. Fügen Sie den folgenden Code innerhalb der **Skript** Tag, um den bereit-Abruffunktion definieren.
+2. Fügen Sie den folgenden Code innerhalb des **Skripttags** hinzu, um die fertige Rückruffunktion zu definieren.
 
-    (Codeausschnitt - *VisualStudio2013WebTooling* - *Ex2* - *ReadyFunction*)
+    (Code Ausschnitt- *VisualStudio2013WebTooling* - *ex2* - - *Funktion*)
 
     [!code-javascript[Main](visual-studio-2013-web-tools/samples/sample9.js)]
-3. Platzieren Sie den Textcursor in den **Skript** Tag, und drücken Sie **STRG** + **.** um das Menü "Vorschlag" zu öffnen.
-4. Klicken Sie auf **extrahieren Sie in der Datei**.
+3. Platzieren Sie die Einfügemarke im **Skripttags** , und drücken Sie **STRG** +  **.** , um das Vorschlags Menü zu öffnen.
+4. Klicken Sie **auf in Datei extrahieren**.
 
-    ![Extrahieren Sie JavaScript in Datei-Vorschlag](visual-studio-2013-web-tools/_static/image39.png "JavaScript zu extrahieren, in der Datei Vorschlag")
+    ![Vorschlag zum Extrahieren von JavaScript in Dateien](visual-studio-2013-web-tools/_static/image39.png "Vorschlag zum Extrahieren von JavaScript in Dateien")
 
-    *Extrahieren Sie JavaScript in Datei-Vorschlag*
-5. In der **speichern** wählen Sie im Fenster der **Skripts** Ordner, benennen Sie die Datei **init.js** , und klicken Sie auf **speichern**.
+    *Vorschlag zum Extrahieren von JavaScript in Dateien*
+5. Wählen Sie im Fenster **Speichern** unter den Ordner **Skripts** aus, benennen Sie die Datei **init. js** , und klicken Sie auf **Speichern**.
 
-    ![Fenster "Speichern unter"](visual-studio-2013-web-tools/_static/image40.png "Fenster Speichern unter")
+    ![Als Fenster speichern](visual-studio-2013-web-tools/_static/image40.png "Als Fenster speichern")
 
-    *Fenster "Speichern unter"*
+    *Als Fenster speichern*
 
     > [!NOTE]
-    > Die **init.js** Datei wird erstellt und der Inhalt des Skripts wird in der Datei verschoben.
+    > Die Datei " **init. js** " wird erstellt, und der Inhalt des Skripts wird in die Datei verschoben.
     > 
-    > ![Init.js-Datei mit den entsprechenden Inhalt erstellt](visual-studio-2013-web-tools/_static/image41.png "Init.js-Datei, die mit den entsprechenden Inhalt erstellt wurde")
+    > ![Init. js-Datei, die mit dem enthaltenen Inhalt erstellt wurde](visual-studio-2013-web-tools/_static/image41.png "Init. js-Datei, die mit dem enthaltenen Inhalt erstellt wurde")
     > 
-    > *Init.js-Datei, die mit den entsprechenden Inhalt erstellt wurde*
-6. Öffnen der **"Index.cshtml"** Datei, und überprüfen Sie, dass das Skripttag ersetzt wurde, mit einem Verweis auf die **init.js** Datei.
+    > *Init. js-Datei, die mit dem enthaltenen Inhalt erstellt wurde*
+6. Öffnen Sie die Datei **Index. cshtml** , und überprüfen Sie, ob das Skript-Tag durch einen Verweis auf die Datei **init. js** ersetzt wurde.
 
-    ![Die HTML-Verweis init.js](visual-studio-2013-web-tools/_static/image42.png "Init.js HTML-Referenz")
+    ![Init. js-html-Referenz](visual-studio-2013-web-tools/_static/image42.png "Init. js-html-Referenz")
 
-    *Init.js HTML-Referenz*
-7. Wechseln Sie zu der **Projektmappen-Explorer** und beachten Sie, dass die **init.js** Datei automatisch in der Projektmappe enthalten war.
+    *Init. js-html-Referenz*
+7. Wechseln Sie zum **Projektmappen-Explorer** , und beachten Sie, dass die Datei " **init. js** " automatisch in der Lösung enthalten war.
 
-    ![Init.js-Datei, die in der Lösung enthaltenen](visual-studio-2013-web-tools/_static/image43.png "Init.js-Datei, die in Projektmappen enthalten")
+    ![In der Lösung enthaltene Datei "init. js"](visual-studio-2013-web-tools/_static/image43.png "In der Lösung enthaltene Datei "init. js"")
 
-    *Init.js-Datei, die in Projektmappen enthalten*
-8. Wechseln Sie zurück zu der **init.js** Datei zum Aktualisieren der **bereit** Callback-Funktion.
-9. In der Definition der Funktion-Rückruf, der an übergebene *bereit*, fügen Sie den folgenden Code rufen Sie alle Elemente durch eine bestimmte Klasse-Attribut.
+    *In der Lösung enthaltene Datei "init. js"*
+8. Wechseln Sie zurück zur Datei " **init. js** ", um den **Ready** -Funktions Rückruf zu aktualisieren.
+9. Fügen Sie in der Funktions Rückruf Definition, die an *Ready*zurückgegeben wird, den folgenden Code hinzu, um alle Elemente nach einem bestimmten Klassen Attribut zu erhalten.
 
     [!code-javascript[Main](visual-studio-2013-web-tools/samples/sample10.js)]
-10. Drücken Sie **STRG** + **Speicherplatz** zwischen den Anführungszeichen in der **GetElementsByClassName** Funktionsaufruf.
+10. Drücken Sie **STRG** + **LEERTASTE** zwischen den Anführungszeichen innerhalb des **getElementsByClassName** -Funktions Aufrufes.
 
-    ![Anzeigen der IntelliSense für die Funktion GetElementsByClassName](visual-studio-2013-web-tools/_static/image44.png "zeigt IntelliSense für die GetElementsByClassName-Funktion")
+    ![IntelliSense für die getElementsByClassName-Funktion wird angezeigt.](visual-studio-2013-web-tools/_static/image44.png "IntelliSense für die getElementsByClassName-Funktion wird angezeigt.")
 
-    *Anzeigen der IntelliSense für die GetElementsByClassName-Funktion*
+    *IntelliSense für die getElementsByClassName-Funktion wird angezeigt.*
 
     > [!NOTE]
-    > Beachten Sie, IntelliSense die Klassen, die in der Projekt-Stylesheets definiert zeigt.
-11. Ersetzen Sie die Zeile, die Sie mit der folgende Code erstellt haben.
+    > Beachten Sie, dass IntelliSense die Klassen anzeigt, die in den Projekt Stylesheets definiert sind.
+11. Ersetzen Sie die Zeile, die Sie erstellt haben, durch den folgenden Code.
 
     [!code-javascript[Main](visual-studio-2013-web-tools/samples/sample11.js)]
-12. Positionieren Sie den Cursor nach **au** in Anführungszeichen in der **GetElementsByTagName** -Funktion, und drücken Sie **STRG** + **Speicherplatz**.
+12. Positionieren Sie den Cursor nach **au** innerhalb der Anführungszeichen in der **GetElementsByTagName** -Funktion, und drücken Sie **STRG** + **LEERTASTE**.
 
-    ![Anzeigen der IntelliSense für die Methode GetElementByTagName](visual-studio-2013-web-tools/_static/image45.png "zeigt IntelliSense für die GetElementByTagName-Methode")
+    ![IntelliSense für die getelementbytagname-Methode wird angezeigt.](visual-studio-2013-web-tools/_static/image45.png "IntelliSense für die getelementbytagname-Methode wird angezeigt.")
 
-    *Anzeigen der IntelliSense für die GetElementsByTagName-Methode*
-13. Wählen Sie **&quot;audio&quot;** aus der Liste und drücken Sie **EINGABETASTE**. Das Ergebnis ist in der folgenden Abbildung dargestellt.
+    *IntelliSense für die GetElementsByTagName-Methode wird angezeigt.*
+13. Wählen Sie **&quot;Audio&quot;** aus der Liste, und drücken **Sie die Eingabe**Taste. Das Ergebnis ist in der folgenden Abbildung dargestellt.
 
-    ![Abrufen von Audio Elementen](visual-studio-2013-web-tools/_static/image46.png "Audio Elemente abrufen")
+    ![Abrufen von Audioelementen](visual-studio-2013-web-tools/_static/image46.png "Abrufen von Audioelementen")
 
-    *Abrufen von Audio-Elementen*
-14. In **Projektmappen-Explorer**, mit der rechten Maustaste die **init.js** Datei die **Skripts** Ordner, und wählen **minimieren JavaScript-Dateien** aus der **Web Essentials** Menü.
+    *Abrufen von Audioelementen*
+14. Klicken Sie in **Projektmappen-Explorer**mit der rechten Maustaste auf die Datei " **init. js** " im Ordner " **Scripts** ", und wählen Sie im Menü **Web Essentials** die Option **Minify JavaScript File (s)** aus.
 
-    ![JavaScript-Dateien zu minimieren](visual-studio-2013-web-tools/_static/image47.png "minimieren JavaScript-Dateien")
+    ![JavaScript-Datei (en) minimieren](visual-studio-2013-web-tools/_static/image47.png "Minimieren von JavaScript-Dateien")
 
-    *Minimieren Sie die JavaScript-Dateien*
-15. Wenn Sie aufgefordert werden, um automatische Minimierung zu aktivieren, wenn der Quelldatei geändert, klicken Sie auf **Ja**.
+    *JavaScript-Datei (en) minimieren*
+15. Wenn Sie zur Aktivierung der automatischen Minimierung aufgefordert werden, wenn sich die Quelldatei ändert, klicken Sie auf **Ja**.
 
-    ![Aktivieren automatische Minimierung Warnung](visual-studio-2013-web-tools/_static/image48.png "automatische Minimierung Warnung aktivieren")
+    ![Aktivieren der automatischen minierungs Warnung](visual-studio-2013-web-tools/_static/image48.png "Aktivieren der automatischen minierungs Warnung")
 
-    *Aktivieren automatische Minimierung-Warnung*
+    *Aktivieren der automatischen minierungs Warnung*
 
     > [!NOTE]
-    > Die **init.min.js** wird erstellt und wurde als Abhängigkeit von der **init.js** Datei.
+    > Die Datei " **init. min. js** " wird erstellt und als Abhängigkeit von der Datei " **init. js** " hinzugefügt.
     > 
-    > ![Erstellte init.Min.js Datei](visual-studio-2013-web-tools/_static/image49.png "Init.min.js-Datei erstellt wurde")
+    > ![Init. min. js-Datei erstellt](visual-studio-2013-web-tools/_static/image49.png "Init. min. js-Datei erstellt")
     > 
-    > *Init.Min.js-Datei erstellt wurde*
-16. Öffnen der **init.min.js** Datei, und beachten Sie, dass die Datei verkleinert wird.
+    > *Init. min. js-Datei erstellt*
+16. Öffnen Sie die Datei " **init. min. js** ", und beachten Sie, dass die Datei minimiert ist.
 
-    ![Dateiinhalt init.Min.js](visual-studio-2013-web-tools/_static/image50.png "Init.min.js Dateiinhalt")
+    ![Inhalt der Datei "init. min. js"](visual-studio-2013-web-tools/_static/image50.png "Inhalt der Datei "init. min. js"")
 
-    *Dateiinhalt init.Min.js*
-17. In der **init.js** Datei, fügen Sie den folgenden Code unter der **GetElementsByTagName** Funktionsaufruf alle Elemente der audio wiedergegeben.
+    *Inhalt der Datei "init. min. js"*
+17. Fügen Sie in der Datei **init. js** den folgenden Code unterhalb des **GetElementsByTagName** -Funktions Aufrufes ein, um alle Audioelemente wiederzugeben.
 
-    (Codeausschnitt - *VisualStudio2013WebTooling* - *Ex2* - *PlayAudioElements*)
+    (Code Ausschnitt- *VisualStudio2013WebTooling* - *ex2* - *playaudioelements*)
 
     [!code-csharp[Main](visual-studio-2013-web-tools/samples/sample12.cs)]
-18. Klicken Sie auf **STRG** + **S** zum Speichern der Datei. Da die minimierte Datei bereits geöffnet ist, sehen Sie einem Dialogfeld darauf hingewiesen, dass die Datei außerhalb des Quellcode-Editors geändert wurde. Klicken Sie auf **Ja**.
+18. Klicken Sie auf **STRG** + **S** , um die Datei zu speichern. Da die minierte Datei bereits geöffnet ist, wird ein Dialogfeld angezeigt, das besagt, dass die Datei außerhalb des Quell-Editors geändert wurde. Klicken Sie auf **Ja**.
 
-    ![Microsoft Visual Studio-Warnung](visual-studio-2013-web-tools/_static/image51.png "Microsoft Visual Studio-Warnung")
+    ![Microsoft Visual Studio Warnung](visual-studio-2013-web-tools/_static/image51.png "Microsoft Visual Studio Warnung")
 
-    *Microsoft Visual Studio-Warnung*
-19. Wechseln Sie zurück zu den **init.min.js** Datei, um sicherzustellen, dass die Datei mit den neuen Code aktualisiert wurde.
+    *Microsoft Visual Studio Warnung*
+19. Wechseln Sie zurück zur Datei " **init. min. js** ", um zu überprüfen, ob die Datei mit dem neuen Code aktualisiert wurde.
 
-    ![Init.Min.js-Datei aktualisiert](visual-studio-2013-web-tools/_static/image52.png "Init.min.js-Datei aktualisiert")
+    ![Die Datei "init. min. js" wurde aktualisiert.](visual-studio-2013-web-tools/_static/image52.png "Die Datei "init. min. js" wurde aktualisiert.")
 
-    *Init.Min.js-Datei aktualisiert*
-20. Klicken Sie auf die **Browser Link aktualisieren** Schaltfläche.
-21. Sobald Sie beide Browser aktualisiert werden, werden automatisch Wiedergabe der Audioplayer, die Sie in der vorherigen Aufgabe haben gesehen, gestartet.
+    *Die Datei "init. min. js" wurde aktualisiert.*
+20. Klicken Sie auf die Schaltfläche zum **Aktualisieren des Browser Links** .
+21. Nachdem beide Browser aktualisiert wurden, werden die Audioplayer, die Sie in der vorherigen Aufgabe gesehen haben, automatisch wiedergegeben.
 
-    ![In der Ansicht enthaltenen Audioplayer](visual-studio-2013-web-tools/_static/image53.png "Audio-Player, die in der Ansicht enthalten")
+    ![In der Ansicht enthaltene Audioplayer](visual-studio-2013-web-tools/_static/image53.png "In der Ansicht enthaltene Audioplayer")
 
-    *In der Ansicht enthaltenen Audioplayer*
+    *In der Ansicht enthaltene Audioplayer*
 
 ---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-Nach Abschluss dieser praktischen Übungseinheit Sie haben gelernt, wie Sie:
+Durch die Durchführung dieses praktischen Labs haben Sie Folgendes gelernt:
 
-- Verwenden Sie die neuen HTML-Editor-Features in Web Essentials z. B. rich-HTML5-Codeausschnitte und Zen-Codierung
-- Verwenden Sie die neue CSS-Editor-Funktionen, die im Web Essentials enthalten sind, z. B. die Farbauswahl angezeigt und die QuickInfo für Browser-matrix
-- Verwenden Sie die neue JavaScript-Editor-Funktionen, die im Web Essentials, z. B. extrahieren in die Datei und IntelliSense für alle HTML-Elemente enthalten
-- Austauschen von Daten zwischen Ihrem Browser, und Visual Studio verwenden einer Browserverknüpfung
+- Verwenden neuer HTML-Editor-Funktionen, die in Web Essentials enthalten sind, z. b. umfangreiche HTML5-Code Ausschnitte
+- Verwenden neuer CSS-Editor-Features in WebEssentials, z. b. Farbauswahl und Browser Matrix-QuickInfo
+- Verwenden neuer JavaScript-Editor-Funktionen in WebEssentials, z. b. Extrahieren in Dateien und IntelliSense für alle HTML-Elemente
+- Austauschen von Daten zwischen Ihrem Browser und Visual Studio mithilfe von Browser Link

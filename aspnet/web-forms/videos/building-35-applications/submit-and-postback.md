@@ -2,23 +2,23 @@
 uid: web-forms/videos/building-35-applications/submit-and-postback
 title: Senden und Postback | Microsoft-Dokumentation
 author: JoeStagner
-description: Dieses Video bietet eine Einführung der was &quot;hinter den Kulissen&quot; bei Ihrer ASP.NET-Anwendung Browser und Server interagieren.
+description: In diesem Video erhalten Sie eine Einführung in die &quot;, die im Abschnitt "Cover"&quot;, wenn Browser und Server Ihrer ASP.NET-Anwendung interagieren.
 ms.author: riande
 ms.date: 04/20/2009
 ms.assetid: 8ccbfcee-a2e4-496d-aded-5a7119c54244
 msc.legacyurl: /web-forms/videos/building-35-applications/submit-and-postback
 msc.type: video
 ms.openlocfilehash: f2d27c6d624ceafbdc3f880ffc2a91cae0fddddf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392897"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454395"
 ---
 # <a name="submit-and-postback"></a>Senden und Postback
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-In diesem Video wird erläutert, was &quot;hinter den Kulissen&quot; bei Ihrer ASP.NET-Anwendung Browser und Server interagieren.
+In diesem Video wird erläutert, was &quot;im Zusammenwirken&quot;, wenn Browser und Server Ihrer ASP.NET-Anwendung interagieren.
 
-[&#9654;Sehen Sie sich Video (19 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/submit-and-postback)
+[&#9654;Video ansehen (19 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/submit-and-postback)

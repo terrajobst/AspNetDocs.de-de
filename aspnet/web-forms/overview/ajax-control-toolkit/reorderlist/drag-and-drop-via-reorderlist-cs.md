@@ -9,11 +9,11 @@ ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2fc6d55a290cbb58bea36d8145d814e337bbd931
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611469"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446007"
 ---
 # <a name="drag-and-drop-via-reorderlist-c"></a>Drag & Drop über ReorderList (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ReorderList-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Die aktuelle Reihenfolge der Liste muss auf dem Server persistent gespeichert werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `ReorderList`-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Die aktuelle Reihenfolge der Liste muss auf dem Server persistent gespeichert werden.
 

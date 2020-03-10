@@ -9,11 +9,11 @@ ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 7297db7d5b35a53b40f9d9162960e529a167bd12
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074890"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449775"
 ---
 # <a name="backbone-template"></a>Backbone-Vorlage
 
@@ -113,11 +113,11 @@ Sehen wir uns nun die Serverseite an.
 
 In einer Single-Page-Anwendung spielt der Server nur eine kleine Rolle in der Benutzeroberfläche. In der Regel rendert der Server die anfängliche Seite und sendet und empfängt dann JSON-Daten.
 
-Die Vorlage verfügt über zwei MVC-Controller: `HomeController` rendert die anfängliche Seite und `SupportsController` verwendet, um neue Benutzerkonten zu bestätigen und Kenn Wörter zurückzusetzen. Alle anderen Controller in der Vorlage sind ASP.net-Web-API Controller, die JSON-Daten senden und empfangen. Standardmäßig verwenden die Controller die neue `WebSecurity`-Klasse, um Benutzer bezogene Aufgaben auszuführen. Sie verfügen jedoch auch über optionale Konstruktoren, mit denen Sie Delegaten für diese Aufgaben übergeben können. Dies vereinfacht das Testen und ermöglicht es Ihnen, `WebSecurity` durch ein IOC-Container durch etwas anderes zu ersetzen. Beispiel:
+Die Vorlage verfügt über zwei MVC-Controller: `HomeController` rendert die anfängliche Seite und `SupportsController` verwendet, um neue Benutzerkonten zu bestätigen und Kenn Wörter zurückzusetzen. Alle anderen Controller in der Vorlage sind ASP.net-Web-API Controller, die JSON-Daten senden und empfangen. Standardmäßig verwenden die Controller die neue `WebSecurity`-Klasse, um Benutzer bezogene Aufgaben auszuführen. Sie verfügen jedoch auch über optionale Konstruktoren, mit denen Sie Delegaten für diese Aufgaben übergeben können. Dies vereinfacht das Testen und ermöglicht es Ihnen, `WebSecurity` durch ein IOC-Container durch etwas anderes zu ersetzen. Im Folgenden ein Beispiel:
 
 [!code-csharp[Main](backbonejs-template/samples/sample8.cs)]
 
-## <a name="views"></a>Sichten
+## <a name="views"></a>Ansichten
 
 Die Ansichten sind so konzipiert, dass Sie modular aufgebaut werden: jeder Abschnitt einer Seite verfügt über eine eigene dedizierte Ansicht. In einer Single-Page-Anwendung sind häufig Sichten enthalten, die keinen entsprechenden Controller aufweisen. Sie können eine Ansicht einschließen, indem Sie `@Html.Partial('myView')`aufrufen, dies wird jedoch mühsam. Um dies zu vereinfachen, definiert die Vorlage eine Hilfsmethode, `IncludeClientViews`, die alle Sichten in einem angegebenen Ordner rendert:
 

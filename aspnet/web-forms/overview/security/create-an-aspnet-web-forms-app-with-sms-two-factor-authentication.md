@@ -9,11 +9,11 @@ ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
 ms.openlocfilehash: c9558aca8a655071c0c94ed66433cf721f26c011
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77466428"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455979"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>Erstellen einer ASP.NET Web Forms-Anwendung mit zweistufiger Authentifizierung per SMS (C#)
 
@@ -104,7 +104,7 @@ An diesem Punkt haben Sie die zweistufige Authentifizierung für Ihre App aktivi
  Wenn Sie auf das Kontrollkästchen **diesen Browser speichern** klicken, ist es nicht erforderlich, dass Sie die zweistufige Authentifizierung für die Anmeldung verwenden, wenn Sie den Browser und das Gerät verwenden, auf dem Sie das Kontrollkästchen aktiviert haben. Solange böswillige Benutzer keinen Zugriff auf Ihr Gerät haben, können Sie durch Aktivieren der zweistufigen Authentifizierung und durch Klicken auf den Benutzer, den Sie **merken** , einen bequemen Kenn Wort Zugriff bereitstellen, während Sie weiterhin einen sicheren Schutz für die zweistufige Authentifizierung für den gesamten Zugriff von nicht vertrauenswürdigen Geräten erhalten. Sie können auf allen privaten Geräten dazu, die Sie regelmäßig verwenden.
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 - [Zweistufige Authentifizierung mithilfe von SMS und E-Mails mit ASP.NET Identity](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [Links zu ASP.net Identity empfohlenen Ressourcen](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)

@@ -1,358 +1,358 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
-title: Einführung in ASP.NET Web Pages - HTML-Formular-Grundlagen | Microsoft-Dokumentation
+title: Einführung in ASP.net Web Pages-HTML-Formular Grundlagen | Microsoft-Dokumentation
 author: Rick-Anderson
-description: 'In diesem Tutorial erfahren Sie, die Grundlagen der Vorgehensweise: Erstellen Sie ein Eingabeformular an und wie die Eingabe des Benutzers verarbeitet, bei der Verwendung von ASP.NET Web Pages (Razor). Und nachdem Sie...'
+description: In diesem Tutorial werden die Grundlagen der Erstellung eines Eingabeformulars und das Behandeln der Eingabe des Benutzers erläutert, wenn Sie ASP.net Web Pages (Razor) verwenden. Und jetzt...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
 ms.openlocfilehash: f57661077ec3bb13f3d4ec41b130bda4d2fb9070
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132960"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78463539"
 ---
-# <a name="introducing-aspnet-web-pages---html-form-basics"></a>Einführung in ASP.NET Web Pages - HTML-Formular-Grundlagen
+# <a name="introducing-aspnet-web-pages---html-form-basics"></a>Einführung in ASP.net Web Pages-HTML-Formular Grundlagen
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Tutorial erfahren Sie, die Grundlagen der Vorgehensweise: Erstellen Sie ein Eingabeformular an und wie die Eingabe des Benutzers verarbeitet, bei der Verwendung von ASP.NET Web Pages (Razor). Und nun, da Sie eine Datenbank haben, verwenden Sie Ihre Kenntnisse Formular können Benutzer bestimmte Filme in der Datenbank gefunden. Es wird vorausgesetzt, Sie haben die Reihe über [Einführung zum Anzeigen von Daten mithilfe von ASP.NET Web Pages](/aspnet/web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data).
+> In diesem Tutorial werden die Grundlagen der Erstellung eines Eingabeformulars und das Behandeln der Eingabe des Benutzers erläutert, wenn Sie ASP.net Web Pages (Razor) verwenden. Und nachdem Sie über eine Datenbank verfügen, verwenden Sie Ihre Formular Kenntnisse, um Benutzern das Auffinden bestimmter Filme in der Datenbank zu ermöglichen. Dabei wird davon ausgegangen, dass Sie die Reihe durch [Einführung in die Anzeige von Daten mit ASP.net Web Pages](/aspnet/web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data)abgeschlossen haben.
 > 
 > Sie lernen Folgendes:
 > 
-> - Vorgehensweise: Erstellen Sie ein Formular mit standard-HTML-Elemente.
-> - Gewusst wie: Lesen Sie den Benutzer Benutzereingabe in einem Formular.
-> - Wie Sie eine SQL-Abfrage erstellen, selektiv Daten mithilfe einer Suche abgerufen, die der Benutzer Begriff bereitstellt.
-> - So, dass Felder, die auf der Seite "erinnert" Eingabe des Benutzers.
+> - Erstellen eines Formulars mithilfe von HTML-Standardelementen.
+> - Lesen der Benutzereingaben in einem Formular.
+> - So erstellen Sie eine SQL-Abfrage, die Daten selektiv mithilfe eines vom Benutzer bereitgestellten Suchbegriffs abruft.
+> - Gibt an, wie Felder auf der Seite "Speichern", was der Benutzer eingegeben hat.
 >   
 > 
-> Features/Technologien erläutert:
+> Erörterte Features und Technologien:
 > 
 > - Das `Request`-Objekt.
-> - Die SQL-Anweisung `Where` Klausel.
+> - Die SQL `Where`-Klausel.
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-Im vorherigen Tutorial haben Sie eine Datenbank erstellt, Daten hinzugefügt, und dann verwendet der `WebGrid` Hilfsmethode zum Anzeigen der Daten. In diesem Tutorial fügen Sie ein Suchfeld, mit der Sie Filme, die von einer bestimmten "Genre" suchen oder, deren Titel enthält den eingegebenen Wort. (Z. B. Sie Lage finden alle Filme, deren "Genre" "Action" ist oder mit dem Titel enthält "Paul" oder "Adventure".)
+Im vorherigen Tutorial haben Sie eine Datenbank erstellt, ihr Daten hinzugefügt und dann das `WebGrid` Hilfsprogramm verwendet, um die Daten anzuzeigen. In diesem Tutorial fügen Sie ein Suchfeld hinzu, mit dem Sie Filme eines bestimmten Genres suchen können oder dessen Titel das von Ihnen eingegebene Wort enthält. (Sie können z. b. alle Filme finden, deren Genre "action" ist oder deren Titel "Harry" oder "Adventure" enthält).
 
-Wenn Sie mit diesem Lernprogramm fertig sind, müssen Sie eine Seite wie diese:
+Wenn Sie mit diesem Tutorial fertig sind, verfügen Sie über eine Seite wie die folgende:
 
-![Seite "Movies", mit der Suche nach Genre und Titel](form-basics/_static/image1.png)
+![Seite "Filme" mit Genre-und Titelsuche](form-basics/_static/image1.png)
 
-Der Angebot Teil der Seite wird der gleiche wie in das letzte Tutorial &mdash; ein Raster. Die Unterschiede werden im Raster nur die Filme anzeigt, dass Sie gesucht.
+Der Auflistungs Teil der Seite ist mit dem des letzten Tutorials &mdash; einem Raster identisch. Der Unterschied besteht darin, dass im Raster nur die Filme angezeigt werden, nach denen Sie suchen.
 
-## <a name="about-html-forms"></a>Informationen zu HTML-Formularen
+## <a name="about-html-forms"></a>Informationen über HTML-Formulare
 
-(Wenn Sie Erfahrung mit HTML-Formulare erstellen und mit den Unterschied zwischen haben `GET` und `POST`, können Sie diesen Abschnitt überspringen.)
+(Wenn Sie Erfahrung mit der Erstellung von HTML-Formularen haben und den Unterschied zwischen `GET` und `POST`haben, können Sie diesen Abschnitt überspringen.)
 
-Ein Formular hat die benutzereingabeelemente &mdash; Textfelder, Schaltflächen, Optionsfelder, Kontrollkästchen, Dropdownlisten und So weiter. Benutzer geben Sie in diesen Steuerelementen oder Optionen und klicken Sie dann das Formular durch Klicken auf eine Schaltfläche zu übermitteln.
+Ein Formular verfügt über Benutzereingabe Elemente &mdash; Textfelder, Schaltflächen, Options Felder, Kontrollkästchen, Dropdown Listen usw. Benutzer füllen diese Steuerelemente aus oder treffen die Auswahl und senden dann das Formular durch Klicken auf eine Schaltfläche.
 
-In diesem Beispiel wird ein Formular grundlegende HTML-Syntax veranschaulicht:
+Die grundlegende HTML-Syntax eines Formulars wird in diesem Beispiel veranschaulicht:
 
 [!code-html[Main](form-basics/samples/sample1.html)]
 
-Wenn dieses Markup auf einer Seite ausgeführt wird, wird ein einfaches Formular, das wie die folgende Abbildung aussieht:
+Wenn dieses Markup auf einer Seite ausgeführt wird, wird ein einfaches Formular erstellt, das wie in der folgenden Abbildung aussieht:
 
-![Grundlegende als im Browser gerenderte HTML-Formular](form-basics/_static/image2.png)
+![Einfaches HTML-Formular, das im Browser gerendert wird](form-basics/_static/image2.png)
 
-Die `<form>` Element einschließt, HTML-Elemente übermittelt werden. (Eine einfache Fehler vornehmen besteht darin, die Elemente auf der Seite hinzufügen, aber vergessen Sie Einsatzort innerhalb einer `<form>` Element. In diesem Fall ist "nothing" übermittelt.) Die `method` Attribut teilt dem Browser mit, wie Sie die Benutzereingabe zu übermitteln. Sie legen `post` Wenn Sie ein Update auf dem Server oder auf durchführen `get` , wenn Sie nur Daten vom Server abgerufen werden.
+Das `<form>` Element schließt HTML-Elemente ein, die gesendet werden sollen. (Ein einfacher Fehler besteht darin, der Seite Elemente hinzuzufügen, diese jedoch in einem `<form>` Element abzulegen. In diesem Fall wird nichts übermittelt.) Das `method`-Attribut weist den Browser an, die Benutzereingaben zu übermitteln. Sie legen dies auf `post` fest, wenn Sie ein Update auf dem Server ausführen oder `get`, wenn Sie nur Daten vom Server abrufen.
 
 <a id="GET,_POST,_and_HTTP_Verb_Safety"></a>
 
 > [!TIP] 
 > 
-> **GET, POST und HTTP-Verb-Sicherheit**
+> **Get-, Post-und HTTP-Verb Sicherheit**
 > 
-> HTTP, das Protokoll, Browser und Server zu verwenden, um Informationen auszutauschen, ist die grundlegende Vorgänge überraschend einfach. Browser verwenden nur ein paar Verben, um Anforderungen an Server senden. Beim Schreiben von Code für das Web, ist es hilfreich zu verstehen, diese Verben und wie Browser und Server sie verwenden. Bei weitem sind die am häufigsten verwendeten Verben dies die:
+> HTTP, das Protokoll, das Browser und Server zum Austauschen von Informationen verwenden, ist in den grundlegenden Vorgängen erstaunlich einfach. Browser verwenden nur wenige Verben, um Anforderungen an Server zu senden. Wenn Sie Code für das Web schreiben, ist es hilfreich, diese Verben zu verstehen und zu erfahren, wie Sie von Browser und Server verwendet werden. Die am häufigsten verwendeten Verben sind die folgenden:
 > 
-> - `GET`. Der Browser verwendet dieses Verb etwas vom Server abgerufen. Z. B. Wenn Sie eine URL in Ihren Browser eingeben, die der Browser führt eine `GET` Vorgang auf die Seite "anfordern, werden sollen. Wenn die Seite Grafiken enthält, führt der Browser zusätzliche `GET` Vorgänge, um die Bilder zu erhalten. Wenn die `GET` -Vorgang bleibt, Informationen an den Server übergeben, die Informationen als Teil der URL in der Abfragezeichenfolge übergeben wird.
-> - `POST`. Der Browser sendet eine `POST` Anforderung zum Senden von Daten hinzugefügt oder auf dem Server geändert werden. Z. B. die `POST` Verb wird verwendet, um Datensätze in einer Datenbank erstellen oder vorhandene ändern. In den meisten Fällen, wenn Sie ein Formular auszufüllen, und klicken Sie auf die Schaltfläche "Senden", die der Browser führt eine `POST` Vorgang. In einem `POST` -Vorgang an den Server übergebenen Daten werden im Text der Seite.
+> - [https://login.microsoftonline.com/consumers/](`GET`). Der Browser verwendet dieses Verb zum Abrufen von Informationen vom Server. Wenn Sie z. b. eine URL in Ihren Browser eingeben, führt der Browser einen `GET` Vorgang aus, um die gewünschte Seite anzufordern. Wenn die Seite Grafiken enthält, führt der Browser zusätzliche `GET` Vorgänge aus, um die Bilder zu erhalten. Wenn der `GET` Vorgang Informationen an den Server übergeben muss, werden die Informationen als Teil der URL in der Abfrage Zeichenfolge übergeben.
+> - [https://login.microsoftonline.com/consumers/](`POST`). Der Browser sendet eine `POST` Anforderung, um Daten zu übermitteln, die auf dem Server hinzugefügt oder geändert werden sollen. Das `POST` Verb wird z. b. verwendet, um Datensätze in einer Datenbank zu erstellen oder vorhandene zu ändern. In den meisten Fällen führt der Browser einen `POST` Vorgang aus, wenn Sie ein Formular ausfüllen und auf die Schaltfläche "Senden" klicken. Bei einem `POST` Vorgang befinden sich die Daten, die an den Server übermittelt werden, im Text der Seite.
 > 
-> Ein wichtiger Unterschied zwischen dieser Verben ist, eine `GET` Vorgang darf nicht mehr ändern, Elemente auf dem Server – oder auf etwas abstraktere Weise ausgedrückt eine `GET` Vorgang führt nicht zu einer Änderung in den Zustand auf dem Server. Durchführen können eine `GET` -Vorgang für die gleichen Ressourcen wie oft und solange aus, und ändern Sie diese Ressourcen nicht. (Ein `GET` Vorgang wird oft betont, "sicher", oder um einen technischen Begriff, zu verwenden ist *Idempotent*.) Im Gegensatz dazu sind natürlich eine `POST` Anforderung ändert sich etwas auf dem Server jedes Mal, die Sie den Vorgang ausführen.
+> Ein wichtiger Unterschied zwischen diesen Verben besteht darin, dass bei einem `GET` Vorgang nichts auf dem Server geändert werden soll – oder dass ein `GET` Vorgang etwas abstrakter Weise erfolgt, wenn ein Vorgang nicht zu einer Zustandsänderung auf dem Server führt. Sie können einen `GET` Vorgang für dieselben Ressourcen so oft wie gewünscht ausführen, und diese Ressourcen werden nicht geändert. (Ein `GET` Vorgang wird häufig als "sicher" bezeichnet oder ist *idempotent*, um einen technischen Begriff zu verwenden.) Im Gegensatz dazu ändert eine `POST` Anforderung auf dem Server jedes Mal, wenn Sie den Vorgang ausführen.
 > 
-> Zwei Beispiele hilft diese Unterscheidung veranschaulichen. Beim Durchführen einer Suche verwenden ein Modul wie Bing oder Google, füllen Sie ein Formular, das aus einem Textfeld besteht, und klicken Sie dann Sie auf die Schaltfläche "Suchen". Der Browser führt eine `GET` Vorgang, mit dem Wert, der Sie eingegeben, in das Feld, das als Teil der URL übergeben haben. Mit einem `GET` Vorgang für diese Art von Form in Ordnung ist, ist, da es sich bei ein Suchvorgang alle Ressourcen auf dem Server nicht ändert, es nur Informationen abruft.
+> Zwei Beispiele helfen Ihnen, diesen Unterschied zu veranschaulichen. Wenn Sie eine Suche mit einer Engine wie z. b. "z" oder Google ausführen, füllen Sie ein Formular aus, das aus einem Textfeld besteht, und klicken Sie dann auf die Schaltfläche "suchen". Der Browser führt einen `GET` Vorgang mit dem Wert aus, den Sie in das Feld eingegeben haben, das als Teil der URL eingegeben wurde. Die Verwendung eines `GET` Vorgangs für diese Art von Formular ist in Ordnung, da bei einem Suchvorgang keine Ressourcen auf dem Server geändert werden, sondern lediglich Informationen abgerufen werden.
 > 
-> Betrachten Sie nun den Prozess etwas online zu bestellen. Sie geben Sie in den Details der Bestellung, und klicken Sie dann auf die Schaltfläche "Senden". Dieser Vorgang wird eine `POST` anfordern, da Änderungen auf dem Server, z. B. einen neuen Datensatz für die Reihenfolge, eine Änderung der Kontoinformationen und möglicherweise viele weitere Änderungen der Vorgang führt. Im Gegensatz zu den `GET` -Operation, Sie können nicht wiederholt werden Ihre `POST` Anforderung – Wenn, jedes Mal haben Sie Sie die Anforderung erneut, würden Sie einen neuen Auftrag auf dem Server generieren. (In solchen Fällen Websites häufig warnt Sie nicht mehr als einmal auf eine Sendeschaltfläche klicken, oder die Schaltfläche "Senden" wird deaktiviert, so, dass Sie versehentlich nicht erneut das Formular übermitteln.)
+> Sehen Sie sich nun den Prozess der Bestellung von Online an. Füllen Sie die Bestelldetails aus, und klicken Sie dann auf die Schaltfläche Senden. Bei diesem Vorgang handelt es sich um eine `POST` Anforderung, da der Vorgang zu Änderungen auf dem Server führt, z. b. ein neuer Bestelldaten Satz, eine Änderung der Kontoinformationen und möglicherweise noch viele andere Änderungen. Im Gegensatz zum `GET` Vorgang können Sie Ihre `POST` Anforderung nicht wiederholen – Wenn Sie dies getan haben, würden Sie bei jeder erneuten Übermittlung der Anforderung eine neue Bestellung auf dem Server generieren. (In solchen Fällen warnen Websites häufig darauf, dass Sie nicht mehrmals auf die Schaltfläche "Senden" klicken oder die Schaltfläche "Senden" deaktivieren, um das Formular nicht versehentlich erneut zu senden.)
 > 
-> Bei diesem Tutorial verwenden Sie sowohl eine `GET` Vorgang und ein `POST` HTML-Formularen funktioniert. Erläutert in jeden Fall daher das Verb an, die, das Sie verwenden, das geeignet ist.
+> Im Rahmen dieses Tutorials verwenden Sie sowohl einen `GET` Vorgang als auch einen `POST` Vorgang, um mit HTML-Formularen zu arbeiten. In jedem Fall wird erläutert, warum das Verb, das Sie verwenden, das richtige ist.
 > 
-> (Weitere Informationen zu HTTP-Verben finden Sie unter den [Methodendefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) Artikel auf der W3C-Website.)
+> (Weitere Informationen zu HTTP-Verben finden Sie im Artikel [Methoden Definitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) auf der W3C-Website.)
 
-Die meisten benutzereingabeelemente sind HTML- `<input>` Elemente. Sie sehen, wie `<input type="type" name="name">,` , in denen *Typ* gibt die Art von Steuerelement mit Benutzereingabe werden sollen. Diese Elemente sind die gängigsten Einträge:
+Die meisten Benutzereingabe Elemente sind HTML-`<input>` Elemente. Sie sehen wie `<input type="type" name="name">,`, wobei der *Typ* die gewünschte Art von Benutzereingabe-Steuerelement angibt. Dabei handelt es sich um die folgenden Elemente:
 
 - Textfeld: `<input type="text">`
-- Aktivieren Sie das Kontrollkästchen: `<input type="check">`
-- Optionsfeld ":". `<input type="radio">`
-- Button: `<input type="button">`
-- Senden Sie Schaltfläche "": `<input type="submit">`
+- Kontrollkästchen: `<input type="check">`
+- Optionsfeld: `<input type="radio">`
+- Schaltfläche: `<input type="button">`
+- Schaltfläche "Senden": `<input type="submit">`
 
-Können Sie auch die `<textarea>` Element um ein mehrzeiliges Textfeld zu erstellen und die `<select>` Element zum Erstellen einer Dropdown-Liste oder einer bildlauffähigen Liste. (Weitere Informationen zu HTML Elemente bilden, finden Sie unter [HTML-Formularen und Eingabe](http://www.w3schools.com/html/html_forms.asp) auf der Website W3Schools.)
+Sie können auch das `<textarea>`-Element verwenden, um ein mehrzeilige Textfeld zu erstellen, und das `<select>`-Element, um eine Dropdown Liste oder scrollbare Liste zu erstellen. (Weitere Informationen zu HTML-Formular Elementen finden Sie unter [HTML Forms and Input](http://www.w3schools.com/html/html_forms.asp) auf der W3Schools-Website.)
 
-Die `name` Attribut ist sehr wichtig, da der Name ist wie den Wert der Elements höher erhalten, wie Sie bald sehen werden.
+Das `name`-Attribut ist sehr wichtig, da der Name ist, wie Sie den Wert des-Elements später erhalten, wie Sie es in Kürze sehen werden.
 
-Der interessante Teil befindet, wie Sie, den Seitenentwickler, die Eingabe des Benutzers verwenden. Es gibt keine integrierten Verhalten dieser Elemente. Stattdessen müssen Sie zum Abrufen der Werte, die der Benutzer eingegeben oder ausgewählt haben und etwas mit ihnen. Das ist in diesem Tutorial lernen Sie.
+Der interessante Teil ist das, was Sie, der Seiten Entwickler, mit der Eingabe des Benutzers tun. Diesen Elementen ist kein integriertes Verhalten zugeordnet. Stattdessen müssen Sie die Werte erhalten, die der Benutzer eingegeben oder ausgewählt hat, und damit eine Aktion ausführen. Das ist das, was Sie in diesem Tutorial erlernen werden.
 
 > [!TIP] 
 > 
 > **HTML5 und Eingabeformulare**
 > 
-> Wie Sie wissen vielleicht, wird HTML befindet sich im Übergangsstadium, und die neueste Version (HTML5) bietet Unterstützung für intuitiver Möglichkeiten für Benutzer Informationen eingeben. HTML5 können Sie (der Seitenentwickler) z. B. der Seite erkennen, dass der Benutzer ein Datum eingeben soll. Der Browser können Sie automatisch einen Kalender, statt den Benutzer manuell eingeben, ein Datum anzeigen. Allerdings wird HTML5 ist neu und wird noch nicht unterstützt in allen Browsern.
+> Wie Sie vielleicht wissen, befindet sich HTML im Übergang, und die neueste Version (HTML5) umfasst die Unterstützung intuitiver Möglichkeiten für die Eingabe von Informationen durch Benutzer. Beispielsweise können Sie (der Seiten Entwickler) in HTML5 der Seite mitteilen, dass der Benutzer ein Datum eingeben soll. Der Browser kann dann automatisch einen Kalender anzeigen, anstatt den Benutzer manuell eingeben zu müssen. HTML5 ist jedoch neu und wird in allen Browsern noch nicht unterstützt.
 > 
-> ASP.NET Web Pages unterstützt HTML5 eingeben, wenn der Browser des Benutzers ist. Für einen Überblick über die neuen Attribute für die `<input>` Element HTML5 finden Sie unter [HTML &lt;Eingabe&gt; type-Attribut](http://www.w3schools.com/html/html_form_input_types.asp) auf der Website W3Schools.
+> ASP.net Web Pages unterstützt HTML5-Eingaben in dem Umfang, in dem der Browser des Benutzers dies tut. Eine Vorstellung der neuen Attribute für das `<input>`-Element in HTML5 finden Sie unter [HTML-&lt;Eingabe&gt; Type-Attribut](http://www.w3schools.com/html/html_form_input_types.asp) auf der W3Schools-Website.
 
 ## <a name="creating-the-form"></a>Erstellen des Formulars
 
-In WebMatrix in die **Dateien** öffnen Sie im Arbeitsbereich, den *Movies.cshtml* Seite.
+Öffnen Sie in webmatrix im Arbeitsbereich " **Dateien** " die Seite " *Movies. cshtml* ".
 
-Nach dem schließenden `</h1>` Tag und vor dem öffnenden `<div>` Tag die `grid.GetHtml` aufzurufen, fügen Sie das folgende Markup hinzu:
+Fügen Sie nach dem schließenden `</h1>`-Tag und vor dem öffnenden `<div>`-Tag des `grid.GetHtml`-Aufrufes das folgende Markup hinzu:
 
 [!code-html[Main](form-basics/samples/sample2.html)]
 
-Dieses Markup erstellt ein Formular, das ein mit dem Namen Textfeld `searchGenre` sowie eine Senden-Schaltfläche. Der Text ein, und übermitteln Sie die Schaltfläche in eingeschlossen sind ein `<form>` Element, dessen `method` -Attributsatz auf `get`. (Beachten Sie, dass, wenn Sie nicht im Textfeld platzieren und Schaltfläche in "Senden" eine `<form>` Element nichts wird gesendet werden, wenn Sie die Schaltfläche klicken.) Sie verwenden die `GET` Verb hier, da Sie ein Formular erstellen, das macht keine Änderungen auf dem Server – er einfach eine Suche ergibt. (Im vorherigen Tutorial haben Sie verwendet eine `post` -Methode, die ist, wie Sie Änderungen an den Server übermitteln. Sie müssen, die im nächsten Tutorial erneut sehen.)
+Dieses Markup erstellt ein Formular, das über ein Textfeld mit dem Namen `searchGenre` und eine Schaltfläche zum Senden verfügt. Das Textfeld und die Schaltfläche Senden sind in ein `<form>` Element eingeschlossen, dessen `method`-Attribut auf `get`festgelegt ist. (Beachten Sie, dass beim Klicken auf die Schaltfläche nichts übermittelt wird, wenn Sie das Textfeld und die Schaltfläche "Senden" nicht in einem `<form>` Element ablegen.) Sie verwenden das `GET` Verb hier, da Sie ein Formular erstellen, das keine Änderungen auf dem Server vornimmt – es führt lediglich zu einer Suche. (Im vorherigen Tutorial haben Sie eine `post`-Methode verwendet, mit der Sie Änderungen an den Server übermitteln. Dies wird im nächsten Tutorial wieder angezeigt.)
 
-Führen Sie die Seite. Obwohl Sie jedes Verhalten für das Formular definiert haben, können Sie sehen, wie es aussieht:
+Führen Sie die Seite aus. Obwohl Sie kein Verhalten für das Formular definiert haben, können Sie sehen, wie es aussieht:
 
-![Seite "Movies", mit dem Suchfeld für "Genre"](form-basics/_static/image3.png)
+![Seite "Filme" mit Suchfeld für Genre](form-basics/_static/image3.png)
 
-Geben Sie einen Wert in das Textfeld ein, z. B. "Komödie." Klicken Sie dann auf **Search "Genre"**.
+Geben Sie einen Wert in das Textfeld ein, z. b. "Comedy". Klicken Sie dann auf **Genre suchen**.
 
-Notieren Sie sich die URL der Seite. Da Sie festlegen, die `<form>` des Elements `method` Attribut `get`, eingegebene Wert ist jetzt Teil der Abfragezeichenfolge in der URL wie folgt:
+Notieren Sie sich die URL der Seite. Da Sie das `method`-Attribut des `<form>` Elements auf `get`festlegen, ist der eingegebene Wert nun Teil der Abfrage Zeichenfolge in der URL, wie folgt:
 
 `http://localhost:45661/Movies.cshtml?searchGenre=Comedy`
 
-## <a name="reading-form-values"></a>Formularwerte lesen
+## <a name="reading-form-values"></a>Lesen von Formular Werten
 
-Diese Seite enthält bereits Code, der die Datenbankdaten abruft und die Ergebnisse in einem Raster angezeigt. Sie haben jetzt fügen Sie Code hinzu, der den Wert des Textfelds liest, sodass Sie eine SQL-Abfrage ausführen können, die den gesuchten Begriff enthält.
+Die Seite enthält bereits Code, mit dem Datenbankdaten abgerufen und die Ergebnisse in einem Raster angezeigt werden. Nun müssen Sie Code hinzufügen, der den Wert des Textfelds liest, damit Sie eine SQL-Abfrage ausführen können, die den Suchbegriff enthält.
 
-Da Sie die-Methode des Formulars, um festlegen `get`, Sie können den Wert, der in das Textfeld eingegeben wurde, mithilfe von Code wie folgt lesen:
+Da Sie die-Methode des Formulars auf `get`festgelegt haben, können Sie den eingegebenen Wert in das Textfeld lesen, indem Sie Code wie den folgenden verwenden:
 
 `var searchTerm = Request.QueryString["searchGenre"];`
 
-Die `Request.QueryString` Objekt (das `QueryString` Eigenschaft der `Request` Objekt) enthält die Werte der Elemente, die als Teil des gesendet wurden die `GET` Vorgang. Die `Request.QueryString` Eigenschaft enthält eine *Auflistung* (Liste) der Werte, die in das Formular übermittelt werden. Um einen einzelnen Wert zu erhalten, geben Sie den Namen des Elements, das Sie möchten. Daher enthalten sind ein `name` -Attribut für die `<input>` Element (`searchTerm`), erstellt das Textfeld ein. (Weitere Informationen zu den `Request` Objekt, finden Sie unter der [Randleiste](#BKMK_TheRequestObject) weiter unten.)
+Das `Request.QueryString`-Objekt (die `QueryString`-Eigenschaft des `Request`-Objekts) enthält die Werte der Elemente, die im Rahmen des `GET` Vorgangs übermittelt wurden. Die `Request.QueryString`-Eigenschaft enthält eine *Auflistung (eine* Liste) der Werte, die im Formular übermittelt werden. Um einen einzelnen Wert zu erhalten, geben Sie den Namen des gewünschten Elements an. Aus diesem Grund müssen Sie über ein `name`-Attribut für das `<input>` Element verfügen (`searchTerm`), das das Textfeld erstellt. (Weitere Informationen zum `Request`-Objekt finden Sie in der Rand [Leiste](#BKMK_TheRequestObject) später.)
 
-Es ist einfach genug, um den Wert des Textfelds zu lesen. Aber wenn der Benutzer nicht eingeben, was überhaupt in das Textfeld geklickt **Suche** jedenfalls können ignoriert werden, klicken Sie auf, da es nichts gibt zu suchen.
+Es ist einfach genug, um den Wert des Textfelds zu lesen. Wenn der Benutzer jedoch überhaupt nichts in das Textfeld eingegeben hat, aber auf " **Suche** " geklickt hat, können Sie diesen Klick ignorieren, da nichts zu suchen ist.
 
-Der folgende Code ist ein Beispiel, das zeigt, wie Sie diese Bedingungen zu implementieren. (Sie müssen diesen Code hinzufügen, die noch keine; Sie hierfür das weiter unten.)
+Der folgende Code ist ein Beispiel, das zeigt, wie diese Bedingungen implementiert werden. (Sie müssen diesen Code noch nicht hinzufügen. Sie müssen dies in einem Moment tun.)
 
 [!code-csharp[Main](form-basics/samples/sample3.cs)]
 
-Auf diese Weise wird der Test:
+Der Test wird auf diese Weise aufgegliedert:
 
-- Ruft den Wert der `Request.QueryString["searchGenre"]`, d. h. der Wert, der in eingegeben wurde die `<input>` Element mit dem Namen `searchGenre`.
-- Erfahren Sie, wenn sie mithilfe von leer ist die `IsEmpty` Methode. Diese Methode ist die Standardmethode zum bestimmen, ob ein (z. B. ein Formularelement) einen Wert enthält. Aber wirklich nur, wenn sie gewünschte *nicht* leer, daher...
-- Hinzufügen der `!` Operator vor dem `IsEmpty` testen. (Die `!` Operator bedeutet Logisches NOT).
+- Sie erhalten den Wert `Request.QueryString["searchGenre"]`, nämlich den Wert, der in das `<input>` Element mit dem Namen `searchGenre`eingegeben wurde.
+- Mit der `IsEmpty`-Methode ermitteln, ob Sie leer ist. Diese Methode ist die Standardmethode, um zu bestimmen, ob etwas (z. b. ein Formular Element) einen Wert enthält. Aber es ist nur wichtig, wenn es *nicht* leer ist...
+- Fügen Sie den `!`-Operator vor dem `IsEmpty` Test hinzu. (Der `!`-Operator bedeutet logisches NOT).
 
-In einfachen Worten, die gesamte `if` Bedingung in den folgenden übersetzt: *Wenn des Formulars SearchGenre Element nicht leer ist, klicken Sie dann...*
+In Klartext übersetzt sich die gesamte `if` Bedingung in Folgendes: *Wenn das searchgenre-Element des Formulars nicht leer ist, dann.* .
 
-Dieser Block legt fest, die als Grundlage für das Erstellen einer Abfrage, die den gesuchten Begriff verwendet wird. Haben Sie Gelegenheit, die im nächsten Abschnitt.
+Mit diesem Block wird die Phase zum Erstellen einer Abfrage festgelegt, die den Suchbegriff verwendet. Dies erledigen Sie im nächsten Abschnitt.
 
 <a id="BKMK_TheRequestObject"></a>
 
 > [!TIP] 
 > 
-> **Das Request-Objekt**
+> **Das Anforderungs Objekt.**
 > 
-> Die `Request` Objekt enthält alle Informationen, die der Browser zu Ihrer Anwendung sendet, wenn eine Seite angefordert oder abgesendet wird. Dieses Objekt enthält alle Informationen, die der Benutzer gibt, wie z. B. Textfeldwerte oder eine Datei zum Hochladen. Es enthält auch alle möglichen zusätzlichen Informationen, wie Cookies, Werte in der URL-Abfragezeichenfolge (sofern vorhanden), den Dateipfad der Seite, die den Typ des Browsers, die der Benutzer verwendet wird, die Liste der Sprachen ausgeführt wird, die im Browser festgelegt werden , und vieles mehr.
+> Das `Request`-Objekt enthält alle Informationen, die der Browser an Ihre Anwendung sendet, wenn eine Seite angefordert oder übermittelt wird. Dieses Objekt enthält alle Informationen, die der Benutzer bereitstellt, z. b. Text Feldwerte oder eine hoch zuladende Datei. Es umfasst auch alle möglichen zusätzlichen Informationen, wie z. b. Cookies, Werte in der URL-Abfrage Zeichenfolge (sofern vorhanden), den Dateipfad der Seite, die ausgeführt wird, den Browsertyp, den der Benutzer verwendet, die Liste der Sprachen, die im Browser festgelegt sind. und vieles mehr.
 > 
-> Die `Request` Objekt ist ein *Auflistung* (Liste) von Werten. Sie erhalten einen einzelnen Wert aus der Auflistung durch Angabe seines Namens:
+> Das `Request`-Objekt ist *eine Auflistung* (Liste) von Werten. Sie erhalten einen einzelnen Wert aus der Auflistung, indem Sie den Namen angeben:
 > 
 > `var someValue = Request["name"];`
 > 
-> Die `Request` Objekt tatsächlich stellt verschiedene Teilmengen. Zum Beispiel:
+> Das `Request`-Objekt macht tatsächlich mehrere Teilmengen verfügbar. Beispiel:
 > 
-> - `Request.Form` enthält Werte von Elementen innerhalb der übermittelten `<form>` Element, wenn die Anforderung ist ein `POST` Anforderung.
-> - `Request.QueryString` erhalten Sie nur die Werte in der URL-Abfragezeichenfolge. (In einer URL wie `http://mysite/myapp/page?searchGenre=action&page=2`, `?searchGenre=action&page=2` Teil der URL ist die Abfragezeichenfolge.)
-> - `Request.Cookies` Sammlung erhalten Sie Zugriff auf Cookies, die der Browser gesendet hat.
+> - `Request.Form` liefert Werte aus Elementen innerhalb des übermittelten `<form>` Elements, wenn die Anforderung eine `POST` Anforderung ist.
+> - `Request.QueryString` gibt Ihnen lediglich die Werte in der Abfrage Zeichenfolge der URL. (In einer URL wie `http://mysite/myapp/page?searchGenre=action&page=2`ist der `?searchGenre=action&page=2` Abschnitt der URL die Abfrage Zeichenfolge.)
+> - `Request.Cookies` Sammlung ermöglicht Ihnen den Zugriff auf Cookies, die der Browser gesendet hat.
 > 
-> Einen Wert abgerufen, die Sie kennen das übermittelte Formular wird, können Sie mit `Request["name"]`. Alternativ können Sie die spezifischeren Versionen `Request.Form["name"]` (für `POST` Anforderungen) oder `Request.QueryString["name"]` (für `GET` Anforderungen). Natürlich *Namen* ist der Name des abzurufenden Elements.
+> Um einen Wert zu erhalten, den Sie sich im übermittelten Formular befinden, können Sie `Request["name"]`verwenden. Alternativ können Sie die spezifischeren Versionen `Request.Form["name"]` (bei `POST` Anforderungen) oder `Request.QueryString["name"]` (für `GET` Anforderungen) verwenden. Natürlich ist *Name* der Name des zu entzurufenden Elements.
 > 
-> Der Name des Elements, die Sie abrufen möchten muss innerhalb der Auflistung eindeutig sein, die Sie verwenden. Deshalb die `Request` Objekt enthält die Teilmengen wie `Request.Form` und `Request.QueryString`. Nehmen wir an, dass Ihre Seite ein Formularelement mit dem Namen enthält `userName` und *auch* enthält ein Cookie mit dem Namen `userName`. Wenn man `Request["userName"]`, es ist nicht eindeutig, ob der Formularwert oder das Cookie soll. Aber wenn man `Request.Form["userName"]` oder `Request.Cookie["userName"]`, Sie sind explizit der Wert abgerufen wird.
+> Der Name des Elements, das Sie erhalten möchten, muss innerhalb der von Ihnen verwendeten Sammlung eindeutig sein. Aus diesem Grund stellt das `Request` Objekt die Teilmengen wie `Request.Form` und `Request.QueryString`bereit. Angenommen, die Seite enthält ein Formular Element mit dem Namen `userName` und enthält *auch* ein Cookie mit dem Namen `userName`. Wenn Sie `Request["userName"]`erhalten, ist es nicht eindeutig, ob Sie den Formular Wert oder das Cookie benötigen. Wenn Sie jedoch `Request.Form["userName"]` oder `Request.Cookie["userName"]`erhalten, werden Sie explizit feststellen, welcher Wert ermittelt werden soll.
 > 
-> Es hat sich bewährt, machen Sie genaue Angaben, und verwenden die Teilmenge der `Request` , dass Sie, wie interessieren `Request.Form` oder `Request.QueryString`. Für die einfache Seiten, die Sie in diesem Tutorial erstellen, erleichtern nicht wahrscheinlich wirklich einen Unterschied. Beim Erstellen komplexere Seiten verwenden jedoch die explizite Version `Request.Form` oder `Request.QueryString` ermöglicht Ihnen, Probleme zu vermeiden, die auftreten können, wenn die Seite enthält, ein Formular (oder mehrere Formulare), Cookies, Abfragezeichenfolgen-Werte und So weiter.
+> Es empfiehlt sich, bestimmte `Request` zu verwenden und die Teilmenge der zu verwenden, an der Sie interessiert sind, wie z. b. `Request.Form` oder `Request.QueryString`. Bei den einfachen Seiten, die Sie in diesem Tutorial erstellen, macht es wahrscheinlich keinen Unterschied. Wenn Sie jedoch komplexere Seiten erstellen, können Sie mithilfe der expliziten Version `Request.Form` oder `Request.QueryString` Probleme vermeiden, die auftreten können, wenn die Seite ein Formular (oder mehrere Formulare), Cookies, Werte von Abfrage Zeichenfolgen usw. enthält.
 
 ## <a name="creating-a-query-by-using-a-search-term"></a>Erstellen einer Abfrage mithilfe eines Suchbegriffs
 
-Nun, dass Sie wissen, wie den Suchbegriff abgerufen, den vom Benutzer eingegebene, können Sie eine Abfrage erstellen, die verwendet wird. Denken Sie daran, dass die um alle Elemente der Film aus der Datenbank zu erhalten, Sie eine SQL-Abfrage verwenden, die diese Anweisung ähnelt:
+Nachdem Sie nun wissen, wie Sie den Suchbegriff erhalten, den der Benutzer eingegeben hat, können Sie eine Abfrage erstellen, die diese verwendet. Denken Sie daran, dass Sie eine SQL-Abfrage verwenden, die wie folgt aussieht, um alle Movie-Elemente aus der Datenbank zu erhalten:
 
 `SELECT * FROM Movies`
 
-Um nur bestimmte Filme zu erhalten, müssen Sie eine Abfrage zu verwenden, enthält eine `Where` Klausel. Diese Klausel können Sie eine Bedingung festlegen, auf der von der Abfrage Zeilen zurückgegeben werden. Im Folgenden ein Beispiel:
+Um nur bestimmte Filme zu erhalten, müssen Sie eine Abfrage verwenden, die eine `Where`-Klausel enthält. Mit dieser Klausel können Sie eine Bedingung festlegen, nach der Zeilen von der Abfrage zurückgegeben werden. Im Folgenden ein Beispiel:
 
 `SELECT * FROM Movies WHERE Genre = 'Action'`
 
-Das Standardformat lautet `WHERE column = value`. Andere Operatoren können neben nur `=`, z. B. `>` (größer als), `<` (kleiner als), `<>` (ungleich), `<=` (kleiner als oder gleich), usw., je nachdem, was Sie suchen.
+Das grundlegende Format ist `WHERE column = value`. Sie können andere Operatoren neben nur `=`wie `>` (größer als), `<` (kleiner als), `<>` (nicht gleich), `<=` (kleiner oder gleich) usw. verwenden. Dies hängt davon ab, was Sie suchen.
 
-Falls Sie sich wundern, SQL-Anweisungen sind keine Groß-/ Kleinschreibung &mdash; `SELECT` ist identisch mit `Select` (oder sogar `select`). Allerdings Personen häufig profitieren Schlüsselwörter in einer SQL-Anweisung, wie z. B. `SELECT` und `WHERE`, um ihn leichter lesbar zu machen.
+Wenn Sie sich Fragen, wird die Groß-/Kleinschreibung von SQL-Anweisungen nicht beachtet, &mdash; `SELECT` mit `Select` (oder sogar mit `select`) identisch ist. Viele Schlüsselwörter in einer SQL-Anweisung, wie `SELECT` und `WHERE`, werden jedoch häufig groß geschrieben, um Sie leichter lesbar zu machen.
 
-### <a name="passing-the-search-term-as-a-parameter"></a>Den Suchbegriff übergeben als Parameter.
+### <a name="passing-the-search-term-as-a-parameter"></a>Übergeben des Suchbegriffs als Parameter
 
-Suchen nach einem bestimmten Genre recht einfach ist (`WHERE Genre = 'Action'`), aber Sie möchten in der Lage, die alle Genres suchen, die der Benutzer eingibt. Zu diesem Zweck erstellen Sie als SQL-Abfrage, die enthält einen Platzhalter für den Wert zu suchen. Es sieht so aus wie mit diesem Befehl:
+Das Suchen nach einem bestimmten Genre ist einfach genug (`WHERE Genre = 'Action'`), aber Sie möchten nach einem beliebigen Genre suchen können, das der Benutzer eingibt. Zu diesem Zweck erstellen Sie als SQL-Abfrage, die einen Platzhalter für den zu durchsuchenden Wert enthält. Dieser Befehl sieht wie folgt aus:
 
 `SELECT * FROM Movies WHERE Genre = @0`
 
-Der Platzhalter die `@` Zeichens, gefolgt von 0 (null). Wie Sie sich denken können, eine Abfrage kann mehrere Platzhalter enthalten, und sie den Namen `@0`, `@1`, `@2`usw.
+Der Platzhalter ist das `@` Zeichen gefolgt von 0 (null). Wie Sie vielleicht vermuten, kann eine Abfrage mehrere Platzhalter enthalten, und Sie würden `@0`, `@1`, `@2`usw. benannt werden.
 
-Informationen zum Einrichten von der Abfrage ein, und übergeben Sie sie tatsächlich den Wert, verwenden Sie den Code wie folgt aus:
+Wenn Sie die Abfrage einrichten und den Wert tatsächlich übergeben möchten, verwenden Sie den Code wie den folgenden:
 
 [!code-sql[Main](form-basics/samples/sample4.sql)]
 
-Dieser Code ist ähnlich, was Sie bereits durchgeführt haben, um Daten im Raster anzuzeigen. Der einzige Unterschied besteht:
+Dieser Code ähnelt dem, was Sie bereits zum Anzeigen von Daten im Raster getan haben. Die einzigen Unterschiede sind:
 
 - Die Abfrage enthält einen Platzhalter (`WHERE Genre = @0"`).
-- Die Abfrage wird in einer Variablen eingefügt (`selectCommand`), bevor Sie die Abfrage direkt zu übergeben, die `db.Query` Methode.
-- Beim Aufrufen der `db.Query` -Methode, übergeben Sie die Abfrage und der Wert, der für den Platzhalter verwenden. (Wenn die Abfrage mehrere Platzhalter enthält, übergeben Sie sie als unterschiedliche Werte für die Methode.)
+- Die Abfrage wird in eine Variable (`selectCommand`) eingefügt. vor haben Sie die Abfrage direkt an die `db.Query`-Methode übermittelt.
+- Wenn Sie die `db.Query`-Methode aufzurufen, übergeben Sie sowohl die Abfrage als auch den Wert, der für den Platzhalter verwendet werden soll. (Wenn die Abfrage mehrere Platzhalter enthielt, würden Sie alle als separate Werte an die-Methode übergeben.)
 
-Wenn Sie all diese Elemente zusammengestellt, erhalten Sie den folgenden Code:
+Wenn Sie alle diese Elemente kombinieren, erhalten Sie den folgenden Code:
 
 [!code-csharp[Main](form-basics/samples/sample5.cs)]
 
 > [!NOTE] 
 > 
-> **Wichtig** Mithilfe von Platzhaltern (z. B. `@0`) Werte an einen SQL-Befehl übergeben wird *äußerst wichtig* für die Sicherheit. Die Möglichkeit, die Sie es hier mit Platzhaltern für Variable Daten sehen, ist die einzige Möglichkeit, die Sie die SQL-Befehlen erstellen soll.
+> **Wichtig!** Die Verwendung von Platzhaltern (wie `@0`) zum Übergeben von Werten an einen SQL-Befehl ist für die Sicherheit *äußerst wichtig* . Wie Sie hier sehen, ist die einzige Möglichkeit, SQL-Befehle mit Platzhaltern für Variablen Daten zu erstellen.
 > 
-> Erstellen Sie eine SQL-Anweisung nie durch das Erstellen (verketten) Literaltext und Werte, die Sie vom Benutzer zu erhalten. Verkettung von Benutzereingaben in einer SQL-Anweisung öffnet die Website eine *SQL Injection-Angriff* , in denen ein böswilliger Benutzer Werte auf der Seite, die Ihre Datenbank hack übermittelt. (Erfahren Sie mehr in diesem Artikel [SQL Injection](https://msdn.microsoft.com/library/ms161953.aspx) der MSDN-Website.)
+> Erstellen Sie niemals eine SQL-Anweisung, indem Sie den Literaltext und die Werte, die Sie vom Benutzer erhalten, zusammenfügen (Verketten). Durch das Verketten von Benutzereingaben in eine SQL-Anweisung wird die Website mit einem *SQL-Injection-Angriff* geöffnet, bei dem ein böswilliger Benutzer Werte an Ihre Seite sendet, die Ihre Datenbank hacken. (Weitere Informationen finden Sie im Artikel [SQL Injection](https://msdn.microsoft.com/library/ms161953.aspx) der MSDN-Website.)
 
-## <a name="updating-the-movies-page-with-search-code"></a>Aktualisieren die Seite "Movies" mit Code durchsuchen
+## <a name="updating-the-movies-page-with-search-code"></a>Aktualisieren der Seite "Filme" mit suchcode
 
-Nachdem Sie den Code aktualisieren, können die *Movies.cshtml* Datei. Ersetzen Sie zunächst den Code im Codeblock am oberen Rand der Seite durch den folgenden Code ein:
+Nun können Sie den Code in der Datei " *Movies. cshtml* " aktualisieren. Ersetzen Sie zunächst den Code im Codeblock am oberen Rand der Seite durch folgenden Code:
 
 [!code-csharp[Main](form-basics/samples/sample6.cs)]
 
-Der Unterschied besteht darin, dass Sie die Abfrage in erstellt haben die `selectCommand` Variable, die Sie übergeben `db.Query` später noch mal. Platzieren die SQL-Anweisung in einer Variablen können Sie die Anweisung ändern, was Sie tun müssen, um die Suche durchgeführt wird.
+Der Unterschied besteht darin, dass Sie die Abfrage in die `selectCommand` Variable eingefügt haben, die Sie später an `db.Query` übergeben werden. Wenn Sie die SQL-Anweisung in eine Variable einfügen, können Sie die Anweisung ändern, was Sie tun, um die Suche auszuführen.
 
-Sie haben auch diese beiden Zeilen und entfernt, die Sie später wieder ein werden:
+Sie haben auch diese beiden Zeilen entfernt, die Sie später wieder hinzufügen:
 
 [!code-csharp[Main](form-basics/samples/sample7.cs)]
 
-Sie nicht möchten, führen Sie die Abfrage noch (d. h. Aufrufen `db.Query`) und nicht initialisiert werden soll die `WebGrid` Helper noch eine. Sie müssen diese Dinge tun, nachdem Sie ermittelt haben, das die SQL-Anweisung werden ausgeführt muss.
+Sie möchten die Abfrage noch nicht ausführen (d. h., `db.Query`), und Sie möchten die `WebGrid`-Hilfsobjekt noch nicht initialisieren. Sie müssen diese Schritte ausführen, nachdem Sie ermittelt haben, welche SQL-Anweisung ausgeführt werden muss.
 
-Nachdem dieses Blocks umgeschriebene können Sie die neue Logik zur Behandlung von der Suche hinzufügen. Der fertige Code sieht wie folgt. Aktualisieren Sie den Code auf der Seite, damit sie in diesem Beispiel entspricht:
+Nach diesem umgeschriebenen Block können Sie die neue Logik zum Behandeln der Suche hinzufügen. Der abgeschlossene Code sieht wie folgt aus. Aktualisieren Sie den Code auf der Seite, damit er mit diesem Beispiel übereinstimmt:
 
 [!code-cshtml[Main](form-basics/samples/sample8.cshtml)]
 
-Die Seite funktioniert jetzt wie folgt. Jedes Mal, wenn die Seite ausgeführt wird, wird der Code öffnet die Datenbank und die `selectCommand` Variable wird festgelegt, auf die SQL-Anweisung, die alle Datensätze aus erhält die `Movies` Tabelle. Der Code initialisiert, außerdem die `searchTerm` Variable.
+Die Seite funktioniert nun wie folgt. Jedes Mal, wenn die Seite ausgeführt wird, öffnet der Code die Datenbank, und die `selectCommand` Variable wird auf die SQL-Anweisung festgelegt, mit der alle Datensätze aus der `Movies` Tabelle abgerufen werden. Der Code initialisiert außerdem die `searchTerm` Variable.
 
-Jedoch die aktuelle Anforderung enthält einen Wert für die `searchGenre` -Element, legt der Code `selectCommand` auf eine andere Abfrage – nämlich, beinhaltet die `Where` -Klausel, um ein Genre gesucht. Außerdem wird `searchTerm` , was für das Suchfeld übergeben wurde (die "nothing" sein kann).
+Wenn die aktuelle Anforderung jedoch einen Wert für das `searchGenre`-Element enthält, legt der Code `selectCommand` auf eine andere Abfrage fest – d. auf eine, die die `Where`-Klausel zum Suchen nach einem Genre enthält. Außerdem wird `searchTerm` auf den Wert festgelegt, der für das Suchfeld (möglicherweise Nothing) weitergegeben wurde.
 
-Unabhängig davon, welche SQL-Anweisung liegt im `selectCommand`, der Code ruft dann `db.Query` zum Ausführen der Abfrage, und übergeben sie den befindet sich in `searchTerm`. Wenn es keine Werte `searchTerm`, es spielt keine Rolle, da in diesem Fall gibt es keinen Parameter, der den Wert zu übergeben, ist `selectCommand` trotzdem.
+Unabhängig davon, welche SQL-Anweisung in `selectCommand`ist, ruft der Code `db.Query` auf, um die Abfrage auszuführen, und übergibt sie an `searchTerm`. Wenn `searchTerm`ist, ist es unerheblich, denn in diesem Fall gibt es keinen Parameter, um den Wert an `selectCommand` zu übergeben.
 
-Der Code schließlich initialisiert der `WebGrid` Hilfe mit den Abfrageergebnissen wie.
+Zum Schluss initialisiert der Code das `WebGrid`-Hilfsprogramm, indem die Abfrageergebnisse wie zuvor verwendet werden.
 
-Sie können sehen, indem Sie die SQL-Anweisung einfügen und den Suchbegriff in Variablen, haben Sie Flexibilität auf den Code hinzugefügt. Wie Sie später in diesem Lernprogramm sehen werden, können Sie dieses grundlegende Framework und behalten Sie die Logik für die verschiedenen Typen von Suchvorgängen hinzufügen.
+Sie können sehen, dass Sie, indem Sie die SQL-Anweisung und den Suchbegriff in Variablen einfügen, dem Codeflexibilität hinzugefügt haben. Wie Sie später in diesem Tutorial sehen werden, können Sie dieses grundlegende Framework verwenden und weiterhin Logik für verschiedene Arten von Such Vorgängen hinzufügen.
 
-## <a name="testing-the-search-by-genre-feature"></a>Testen die Suche von "Genre"-Funktion
+## <a name="testing-the-search-by-genre-feature"></a>Testen der Funktion für die Suche nach Genre
 
-Führen Sie in WebMatrix die *Movies.cshtml* Seite. Die Seite mit dem Textfeld für "Genre" angezeigt.
+Führen Sie in webmatrix die Seite *Movies. cshtml* aus. Die Seite mit dem Textfeld für Genre wird angezeigt.
 
-Geben Sie ein Genre, die für eine Ihrer Test-Datensätze eingegeben haben, und klicken Sie dann **Suche**. Dieses Mal sehen Sie eine Liste der einfach Filme, die dieses Genres entsprechen:
+Geben Sie ein Genre ein, das Sie für einen ihrer Testdatensätze eingegeben haben, und klicken Sie dann auf **Suchen**. Dieses Mal wird eine Liste der Filme angezeigt, die mit diesem Genre identisch sind:
 
-![Seite "Movies" nach der Suche nach Genre "Comedies" auflisten](form-basics/_static/image4.png)
+![Liste der Filme nach dem Suchen nach Genre "comeals"](form-basics/_static/image4.png)
 
-Geben Sie einen anderen "Genre" und die Suche wiederholen. Versuchen Sie, das Genre mithilfe von allen klein- oder Großbuchstaben Buchstaben, damit Sie sehen, dass es sich bei der Suche nicht Groß-/Kleinschreibung beachtet werden.
+Geben Sie ein anderes Genre ein, und suchen Sie nach. Versuchen Sie, das Genre in Kleinbuchstaben oder in Großbuchstaben einzugeben, damit Sie feststellen können, dass bei der Suche die Groß-/Kleinschreibung nicht beachtet wird.
 
-## <a name="remembering-what-the-user-entered"></a>"Speichern" Eingabe des Benutzers
+## <a name="remembering-what-the-user-entered"></a>"Erinnern", was der Benutzer eingegeben hat
 
-Sie haben vielleicht bemerkt, die nach dem Sie ein Genre eingegeben, und klicken auf **Search "Genre"**, Sie haben gesehen, eine Liste für dieses Genres. Das Suchfeld ein war jedoch leer &mdash; also nicht merken, was Sie eingegeben haben.
+Sie haben vielleicht bemerkt, dass Sie nach dem Eingeben eines Genres und dem Klicken auf das **suchgenre**eine Auflistung für dieses Genre gesehen haben. Das Suchtextfeld war jedoch leer &mdash; anders ausgedrückt: Es hat nicht vergessen, was Sie eingegeben haben.
 
-Es ist wichtig zu verstehen, warum dieses Verhalten tritt auf. Wenn Sie eine Seite senden, sendet der Browser eine Anforderung an den Webserver. Wenn ASP.NET die Anforderung erhält, erstellt eine völlig neue Instanz der Seite, führt den Code in der sie und rendert dann die Seite an den Browser erneut. Aktiviert ist, wissen nicht jedoch die Seite, dass Sie nur mit einer früheren Version von sich selbst arbeiteten. Alle bekannt ist, dass die It eine Anforderung erhalten wird, die einige Formulardaten darin.
+Es ist wichtig zu verstehen, warum dieses Verhalten auftritt. Wenn Sie eine Seite übermitteln, sendet der Browser eine Anforderung an den Webserver. Wenn ASP.net die Anforderung erhält, erstellt Sie eine ganz neue Instanz der Seite, führt den Code darin aus und rendert die Seite dann erneut im Browser. Tatsächlich weiß die Seite jedoch nicht, dass Sie gerade mit einer früheren Version von selbst gearbeitet haben. Alles weiß, dass es eine Anforderung mit einigen Formulardaten erhalten hat.
 
-Jedes Mal, wenn Sie eine Seite anfordern &mdash; angibt, ob zum ersten Mal, oder Senden des Updategrams &mdash; bekommen Sie eine neue Seite. Der Webserver verfügt über kein Speicher Ihrer letzten Anforderung. Wird weder auf ASP.NET und ist weder des Browsers. Die einzige Verbindung zwischen diesen separaten Instanzen der Seite ist, alle Daten, die Sie zwischen diesen übertragen. Wenn Sie eine Seite senden, kann die neue Seiteninstanz z. B. Daten aus dem Formular abrufen, die von der früheren Instanz gesendet wurde. (Eine weitere Möglichkeit zur Datenübergabe zwischen Seiten ist Cookies verwendet.)
+Jedes Mal, wenn Sie eine Seite anfordern &mdash;, ob Sie zum ersten Mal oder übermittelt haben, &mdash; Sie eine neue Seite erhalten. Der Webserver weist keinen Arbeitsspeicher für die letzte Anforderung auf. Weder ASP.net noch den Browser. Die einzige Verbindung zwischen diesen separaten Instanzen der Seite sind alle Daten, die zwischen Ihnen übertragen werden. Wenn Sie z. b. eine Seite übermitteln, kann die neue Seiten Instanz die Formulardaten erhalten, die von der früheren Instanz gesendet wurden. (Eine andere Möglichkeit zum Übergeben von Daten zwischen Seiten ist die Verwendung von Cookies.)
 
-Eine formale zum Beschreiben dieser Situation besteht darin, sagen, dass Webseiten sind *zustandslosen*. Webserver und den Seiten selbst und die Elemente auf der Seite beibehalten keine Informationen zu den vorherigen Zustand einer Seite. Das Web wurde so entwickelt, da das Beibehalten des Zustands für einzelne Anforderungen schnell erschöpfen würde die Ressourcen der Webserver, die häufig Tausende, vielleicht verarbeiten sogar Hunderte von Tausenden von Anforderungen pro Sekunde.
+Eine formale Möglichkeit, diese Situation zu beschreiben, besteht darin, zu sagen, dass Webseiten zustandslos *sind.* Webserver und die Seiten selbst und die Elemente auf der Seite behalten keine Informationen über den vorherigen Zustand einer Seite bei. Das Web wurde auf diese Weise entworfen, weil die Wartung des Zustands einzelner Anforderungen schnell die Ressourcen von Webservern erschöpft, die häufig Tausende, vielleicht sogar Hunderttausende von Anforderungen pro Sekunde verarbeiten.
 
-Warum ist das Textfeld leer war. Nachdem Sie die Seite übermittelt, wird von ASP.NET erstellt eine neue Instanz der Seite und über Code und Markup ausgeführt wurde. Gab es keine anderen in diesem Code, der sagte ASP.NET, einen Wert in das Textfeld platzieren. Also ASP.NET nicht nichts ein, und das Textfeld wurde ohne einen Wert darin gerendert.
+Daher war das Textfeld leer. Nachdem Sie die Seite übermittelt haben, hat ASP.net eine neue Instanz der Seite erstellt und den Code und das Markup ausgeführt. In diesem Code gab es nichts, das ASP.net einen Wert in das Textfeld eingefügt hat. ASP.net hat keine Aktion durchführen, und das Textfeld wurde ohne einen Wert gerendert.
 
-Es ist tatsächlich eine einfache Möglichkeit zum Umgehen dieses Problems. Das Genre, die Sie in das Textfeld eingegeben *ist* im Code für Sie verfügbaren &mdash; befindet sich im `Request.QueryString["searchGenre"]`.
+Es gibt eigentlich eine einfache Möglichkeit, dieses Problem zu umgehen. Das Genre, das Sie in das Textfeld eingegeben haben, *steht* Ihnen im Code &mdash; in `Request.QueryString["searchGenre"]`zur Verfügung.
 
-Aktualisieren Sie das Markup für das Textfeld ein, damit die `value` Attribut Ruft den Wert von `searchTerm`, wie im folgenden Beispiel:
+Aktualisieren Sie das Markup für das Textfeld, damit das `value`-Attribut seinen Wert aus `searchTerm`abruft, wie im folgenden Beispiel gezeigt:
 
 [!code-html[Main](form-basics/samples/sample9.html?highlight=1)]
 
-Auf dieser Seite, Sie haben auch Festlegen der `value` -Attribut auf die `searchTerm` Variable, da diese Variable auch das Genre enthält Sie eingegeben haben. Während mit den `Request` Objekt zum Festlegen der `value` Attribut wie gezeigt, hier ist das Standardverfahren zum Ausführen dieser Aufgabe. (Vorausgesetzt, Sie möchten auch dazu &mdash; in einigen Fällen sollten Sie zum Rendern der Seite *ohne* Werte in den Feldern. Es hängt alles was mit Ihrer Anwendung vor sich geht.)
+Auf dieser Seite können Sie auch das `value`-Attribut auf die `searchTerm` Variable festlegen, da diese Variable auch das Genre enthält, das Sie eingegeben haben. Die Verwendung des `Request` Objekts zum Festlegen des `value` Attributs, wie hier gezeigt, ist die Standardmethode zum Ausführen dieser Aufgabe. (Vorausgesetzt, dass Sie dies in einigen Situationen auch &mdash; möchten, können Sie die Seite *ohne* Werte in den Feldern darstellen. Alles hängt davon ab, was mit Ihrer APP passiert.)
 
 > [!NOTE]
-> Sie können nicht "den Wert eines Textfelds, die verwendet wird, für die Kennwörter merken". Es wäre eine Sicherheitslücke Personen mithilfe von Code in ein Kennwortfeld zu füllen können.
+> Sie können den Wert eines Textfelds, das für Kenn Wörter verwendet wird, nicht "merken". Es wäre eine Sicherheitslücke, die es Benutzern ermöglicht, ein Kenn Wort Feld mithilfe von Code auszufüllen.
 
-Führen Sie die Seite erneut aus, geben Sie ein Genre, und klicken Sie auf **Search "Genre"**. Dieses Mal nicht nur sehen Sie die Ergebnisse der Suche, aber das Textfeld gespeichert, was letzten Besuch eingegeben haben:
+Führen Sie die Seite erneut aus, geben Sie ein Genre ein, und klicken Sie auf **Genre suchen**. Dieses Mal sehen Sie nicht nur die Ergebnisse der Suche, sondern das Textfeld speichert das letzte Mal, was Sie eingegeben haben:
 
-![Seite mit, dass das Textfeld "des vorherigen Eintrags gespeichert hat"](form-basics/_static/image5.png)
+![Die Seite, die anzeigt, dass das Textfeld den vorherigen Eintrag "gespeichert" hat](form-basics/_static/image5.png)
 
-## <a name="searching-for-any-word-in-the-title"></a>Suchen nach einem beliebigen Wort im Titel
+## <a name="searching-for-any-word-in-the-title"></a>Suchen nach einem Wort im Titel
 
-Sie können jetzt für alle "Genre" suchen, aber Sie können auch einen Titel suchen möchten. Es ist schwierig, einen Titel, ganz genau zu erhalten, bei der Suche stattdessen Sie nach einem Wort suchen können, die einen Titel an einer beliebigen Stelle angezeigt wird. Zu diesem Zweck in SQL, die Sie verwenden die `LIKE` Operator und die Syntax wie folgt aus:
+Sie können jetzt nach beliebigen Genres suchen, aber Sie möchten möglicherweise auch nach einem Titel suchen. Es ist schwierig, bei der Suche genau einen Titel zu erhalten. Sie können also stattdessen nach einem Wort suchen, das an einer beliebigen Stelle innerhalb eines Titels erscheint. Verwenden Sie dazu den `LIKE` Operator und die Syntax wie folgt:
 
 `SELECT * FROM Movies WHERE Title LIKE '%adventure%'`
 
-Dieser Befehl ruft alle Filme, deren Namen "Adventure" enthalten. Bei Verwendung der `LIKE` -Operator, enthalten Sie das Platzhalterzeichen `%` als Teil des Suchbegriffs. Die Suche `LIKE 'adventure%'` bedeutet "beginnend mit 'Adventure'". (Technisch gesehen bedeutet dies "Die Zeichenfolge 'Adventure' gefolgt von etwas".) Auf ähnliche Weise den gesuchten Begriff `LIKE '%adventure'` bedeutet "Alles gefolgt von der Zeichenfolge 'Adventure'", d.h., dass eine andere Möglichkeit, sagen Sie "bis hin zu 'Adventure'".
+Mit diesem Befehl werden alle Filme abgerufen, deren Titel "Adventure" enthalten. Wenn Sie den `LIKE`-Operator verwenden, schließen Sie das Platzhalter Zeichen `%` in den Suchbegriff ein. Das Such `LIKE 'adventure%'` bedeutet "" beginnend mit "Adventure". (Technisch gesehen bedeutet dies "die Zeichenfolge" Adventure ", gefolgt von etwas.") Ebenso bedeutet der Suchbegriff `LIKE '%adventure'` "alles, gefolgt von der Zeichenfolge" Adventure ". Dies ist eine weitere Möglichkeit," mit "" auf "Adventure" zu beenden.
 
-Der Suchbegriff `LIKE '%adventure%'` bedeutet daher "mit"Adventure' eine beliebige Stelle im Titel." (Technisch gesehen "alles im Titel, gefolgt von 'Adventure' ist, gefolgt von der nichts.")
+Der Suchbegriff `LIKE '%adventure%'` daher "mit ' Adventure ' an beliebiger Stelle im Titel". (Technisch gesehen "alles im Titel, gefolgt von" Adventure ", gefolgt von etwas.")
 
-In der `<form>` -Element, fügen Sie das folgende Markup direkt unter dem schließenden `</div>` Tag für die Suche für "Genre" (direkt vor dem abschließenden `</form>` Element):
+Fügen Sie im `<form>`-Element das folgende Markup direkt unter dem schließenden `</div>`-Tag für die Genre Suche (unmittelbar vor dem schließenden `</form>`-Element) hinzu:
 
 [!code-html[Main](form-basics/samples/sample10.html)]
 
-Der Code zum Behandeln dieser Suche ist ähnelt dem Code für die Suche für "Genre", mit dem Unterschied, dass Sie Zusammenstellen der `LIKE` suchen. Fügen Sie den Codeblock am oberen Rand der Seite, diese `if` blockieren direkt nach der `if` Block für die Suche für "Genre":
+Der Code für diese Suche ähnelt dem Code für die Genre Suche, mit dem Unterschied, dass Sie die `LIKE` Suche zusammenstellen müssen. Fügen Sie im Codeblock am oberen Rand der Seite diesen `if` Block direkt hinter dem `if`-Block für die Genre Suche ein:
 
 [!code-csharp[Main](form-basics/samples/sample11.cs)]
 
-Dieser Code verwendet die gleiche Logik, die Sie zuvor gesehen haben, mit dem Unterschied, dass die Suche verwendet einen `LIKE` Operator und der Code setzt "`%`" vor und nach dem Suchbegriff.
+In diesem Code wird die gleiche Logik verwendet, die Sie zuvor gesehen haben, mit der Ausnahme, dass die Suche einen `LIKE` Operator verwendet und der Code "`%`" vor und nach dem Suchbegriff einfügt.
 
-Beachten Sie, wie sie mühelos eine neue Suche auf der Seite hinzugefügt wurde. Alles, was Sie tun musste wurde:
+Beachten Sie, dass es einfach ist, der Seite eine weitere Suche hinzuzufügen. Alles, was Sie tun mussten:
 
-- Erstellen Sie eine `if` blockieren, die getestet werden, um festzustellen, ob das relevante Suchfeld einen Wert verfügte.
-- Legen Sie die `selectCommand` -Variable an eine neue SQL-Anweisung.
-- Legen Sie die `searchTerm` Variable auf den Wert für die Abfrage übergeben.
+- Erstellen Sie einen `if` Block, der testet, ob das relevante Suchfeld über einen Wert verfügt.
+- Legen Sie die `selectCommand` Variable auf eine neue SQL-Anweisung fest.
+- Legen Sie die `searchTerm` Variable auf den Wert fest, der an die Abfrage übergeben werden soll.
 
-Hier ist der vollständige Code-Block, enthält die Logik die neue für eine Suche nach Softwaretiteln:
+Hier ist der gesamte Codeblock, der die neue Logik für eine Titelsuche enthält:
 
 [!code-cshtml[Main](form-basics/samples/sample12.cshtml)]
 
-Hier ist eine Zusammenfassung der Funktionsweise dieses Codes:
+Im folgenden finden Sie eine Zusammenfassung der Funktionsweise dieses Codes:
 
-- Die Variablen `searchTerm` und `selectCommand` oben initialisiert werden. Diese Variablen mit dem entsprechenden Suchbegriff (sofern vorhanden) festgelegt werden soll, und entsprechende SQL-Befehl basierend auf der Funktionsweise des Benutzers auf der Seite. Die Standardsuche ist ein einfacher Vorgang alle Filme aus der Datenbank abrufen.
-- In den Tests für `searchGenre` und `searchTitle`, legt der Code `searchTerm` auf den Wert, der Sie suchen möchten. Außerdem legen Sie diese Codeblöcke `selectCommand` auf einen entsprechenden SQL‑Befehl für die Suche.
-- Die `db.Query` Methode wird aufgerufen, nur einmal verwendet den SQL-Befehl in `selectedCommand` und einen beliebigen Wert in `searchTerm`. Es ist kein Suchbegriff (keine "Genre" und kein Titel Wort) den Wert der `searchTerm` ist eine leere Zeichenfolge. Allerdings ist, die unerheblich, da in diesem Fall die Abfrage keine Parameter erfordert.
+- Die Variablen `searchTerm` und `selectCommand` werden oben initialisiert. Sie legen diese Variablen auf den entsprechenden Suchbegriff (sofern vorhanden) und den entsprechenden SQL-Befehl fest, je nachdem, was der Benutzer auf der Seite bewirkt. Die Standardsuche ist der einfache Fall, alle Filme aus der Datenbank zu erhalten.
+- In den Tests für `searchGenre` und `searchTitle`legt der Code `searchTerm` auf den Wert fest, nach dem Sie suchen möchten. Diese Code Blöcke legen auch `selectCommand` auf einen entsprechenden SQL-Befehl für diese Suche fest.
+- Die `db.Query`-Methode wird nur einmal aufgerufen. dabei wird der SQL-Befehl verwendet `selectedCommand` und welcher Wert in `searchTerm`ist. Wenn kein Suchbegriff (kein Genre und kein Titel Wort) vorhanden ist, ist der Wert von `searchTerm` eine leere Zeichenfolge. Dies ist jedoch nicht von Bedeutung, da in diesem Fall die Abfrage keinen Parameter erfordert.
 
-## <a name="testing-the-title-search-feature"></a>Testen die Suchfunktion für den Titel
+## <a name="testing-the-title-search-feature"></a>Testen der Titel Suchfunktion
 
-Jetzt können Sie Ihre abgeschlossenen Suchseite testen. Führen Sie *Movies.cshtml*.
+Nun können Sie Ihre abgeschlossene Suchseite testen. Führen Sie *Movies. cshtml*aus.
 
-Geben Sie ein Genre, und klicken Sie auf **Search "Genre"**. Das Raster zeigt Filme, die von diesem "Genre", wie vor.
+Geben Sie ein Genre ein, und klicken Sie auf **Suche Genre** Das Raster zeigt Filme dieses Genres an, wie zuvor.
 
-Geben Sie ein Wort Titel, und klicken Sie auf **Suchtitel**. Das Raster zeigt Filme, die das Wort im Titel haben.
+Geben Sie ein Titelwort ein, und klicken Sie auf **Titel suchen**. Im Raster werden Filme angezeigt, die das Wort im Titel enthalten.
 
-![Seite "Movies" nach der Suche für "Der" im Titel auflisten](form-basics/_static/image6.png)
+![Liste der Filme nach "The" im Titel suchen](form-basics/_static/image6.png)
 
-Lassen Sie beide Felder leer, und klicken Sie auf eine Schaltfläche. Das Raster zeigt alle Filme.
+Lassen Sie beide Textfelder leer, und klicken Sie auf die Schaltfläche. Im Raster werden alle Filme angezeigt.
 
-## <a name="combining-the-queries"></a>Kombinieren von Abfragen
+## <a name="combining-the-queries"></a>Kombinieren der Abfragen
 
-Sie werden feststellen, dass die suchen, die Sie ausführen können ausgeschlossen werden. Sie können nicht den Titel und das Genre zur gleichen Zeit, suchen, selbst wenn beide Suchfelder Werte enthalten. Sie können z. B., können nicht für alle Aktion Filme suchen, deren Titel "Adventure" enthält. (Wie die Seite jetzt codiert ist, wenn Sie Werte für "Genre" und Titel eingeben, ruft der Suche nach Softwaretiteln Vorrang.) Um eine Suche zu erstellen, die die Bedingungen kombiniert, müssten Sie eine SQL-Abfrage zu erstellen, die Syntax folgendermaßen:
+Sie werden möglicherweise feststellen, dass die Suchvorgänge exklusiv sind. Sie können den Titel und das Genre nicht gleichzeitig durchsuchen, auch wenn beide Suchfelder Werte enthalten. Beispielsweise können Sie nicht nach allen Aktions Filmen suchen, deren Titel "Adventure" enthält. (Da die Seite jetzt codiert ist, erhält die Titelsuche Vorrang, wenn Sie Werte für Genre und Titel eingeben.) Zum Erstellen einer Suche, die die Bedingungen kombiniert, müssten Sie eine SQL-Abfrage erstellen, die eine Syntax wie die folgende hat:
 
 `SELECT * FROM Movies WHERE Genre = @0 AND Title LIKE @1`
 
-Und Sie müssten zum Ausführen der Abfrage mit einer Anweisung wie folgt (etwa "Sprache"):
+Und Sie müssen die Abfrage wie folgt ausführen, indem Sie eine Anweisung wie die folgende verwenden:
 
 `var selectedData = db.Query(selectCommand, searchGenre, searchTitle);`
 
-Erstellen Logik, um die Anzahl der möglichen Permutationen von Suchkriterien zulassen kann etwas beteiligt sind, abrufen, wie Sie sehen können. Aus diesem Grund werden wir hier beenden.
+Das Erstellen von Logik, um viele Permutationen von Suchkriterien zuzulassen, kann ein wenig an der Stelle stehen, wie Sie sehen können. Daher werden wir hier nicht mehr Unternehmen.
 
-## <a name="coming-up-next"></a>Als Nächstes kommen
+## <a name="coming-up-next"></a>Nächste nächste
 
-Im nächsten Tutorial erstellen Sie eine Seite, die einem Formular verwendet wird, um Benutzer der Datenbank Filme hinzugefügt.
+Im nächsten Tutorial erstellen Sie eine Seite, die ein Formular verwendet, mit dem Benutzer der Datenbank Filme hinzufügen können.
 
-## <a name="complete-listing-for-movie-page-updated-with-search"></a>Vollständige Liste für Movie-Seite (mit der Suche aktualisiert)
+## <a name="complete-listing-for-movie-page-updated-with-search"></a>Vervollständigen der Auflistung für Movie Page (aktualisiert mit Search)
 
 [!code-cshtml[Main](form-basics/samples/sample13.cshtml)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
-- [SQL-WHERE-Klausel](http://www.w3schools.com/sql/sql_where.asp) auf der Website W3Schools
-- [Methodendefinitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) Artikel auf der W3C-Website
+- [Einführung in die ASP.net-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [SQL-WHERE-Klausel](http://www.w3schools.com/sql/sql_where.asp) auf der W3Schools-Website
+- Artikel zu [Methoden Definitionen](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) auf der W3C-Website
 
 > [!div class="step-by-step"]
 > [Zurück](displaying-data.md)

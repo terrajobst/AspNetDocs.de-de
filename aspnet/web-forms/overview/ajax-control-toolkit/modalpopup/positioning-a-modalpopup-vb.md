@@ -9,11 +9,11 @@ ms.assetid: 8a07210c-eb0e-485e-9ee8-82a101520e65
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
 msc.type: authoredcontent
 ms.openlocfilehash: fb79a08a339588ed8adc4b4236911819ea9286b4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598963"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496893"
 ---
 # <a name="positioning-a-modalpopup-vb"></a>Positionieren eines ModalPopup-Steuerelements (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Das-Steuerelement bietet jedoch keine integrierte Funktionalität zum Positionieren des Popups.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. Das-Steuerelement bietet jedoch keine integrierte Funktionalität zum Positionieren des Popups.
 
@@ -58,4 +58,4 @@ Wenn das Popup Fenster geschlossen wird, wird die `stopMoving()` Funktion wieder
 Das modale Popup Fenster wird an der angegebenen Position angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](positioning-a-modalpopup-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](handling-postbacks-from-a-modalpopup-vb.md)
+> [Previous](handling-postbacks-from-a-modalpopup-vb.md)

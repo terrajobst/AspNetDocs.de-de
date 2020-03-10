@@ -1,123 +1,123 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: ASP.NET-Seite-an-Seite-Ausführung von .NET Framework 1.0 und 1.1 | Microsoft-Dokumentation
+title: ASP.net parallele Ausführung von .NET Framework 1,0 und 1,1 | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Whitepaper wird beschrieben, wie sowohl .NET 1.0 und 1.1 von .NET auf dem Computer, können eine ASP.NET-Webanwendung zum Ausführen auf einer Version des der zeitsteuerung der installieren...
+description: In diesem Whitepaper wird beschrieben, wie Sie .NET 1,0 und .NET 1,1 auf Ihrem Computer installieren, sodass eine ASP.NET-Webanwendung unter beiden Versionen von Fram ausgeführt werden kann...
 ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
 ms.openlocfilehash: c123545099013af71569bce4707f2b3eb732c344
-ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67411212"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513831"
 ---
 # <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>ASP.NET – Parallele Ausführung von .NET Framework 1.0 und 1.1
 
-> In diesem Whitepaper wird beschrieben, wie zum Installieren von sowohl .NET 1.0 und 1.1 von .NET auf dem Computer, sodass einer ASP.NET-Webanwendung auf beiden Versionen des Frameworks ausgeführt werden.
+> In diesem Whitepaper wird beschrieben, wie Sie .NET 1,0 und .NET 1,1 auf Ihrem Computer installieren, sodass eine ASP.NET-Webanwendung in einer der beiden Versionen des Frameworks ausgeführt werden kann.
 > 
-> ASP.NET 1.1 zu ASP.NET 1.0 angewendet.
+> Gilt für ASP.NET 1,0 und ASP.NET 1,1.
 
-In ASP.NET Datenändernde Anwendungen nebeneinander ausgeführt werden, wenn sie auf dem gleichen Computer installiert sind, jedoch verschiedene Versionen von .NET Framework verwenden. Das folgende Thema enthält Informationen zum Konfigurieren von ASP.NET-Anwendungen für Seite-an-Seite-Ausführung und bietet eine schrittweise Anleitung:
+In ASP.net werden Anwendungen so genannten, dass Sie parallel ausgeführt werden, wenn Sie auf demselben Computer installiert werden, aber unterschiedliche Versionen des .NET Framework verwenden. Im folgenden Thema wird beschrieben, wie ASP.NET-Anwendungen für die parallele Ausführung konfiguriert werden, und es werden ausführliche Schritte für Folgendes bereitgestellt:
 
-- [Verwalten Sie Ihrer Webanwendung-Zuordnung zu .NET Framework, Version 1.0, während der installation](#1)
-- [Ordnen Sie einer Webanwendung in einer bestimmten Version von .NET Framework](#2)
-- [Suchen Sie die Version von .NET Framework, die eine Website verwendet wird](#3)
+- [Beibehalten der Zuordnung Ihrer Webanwendung zur .NET Framework Version 1,0 während der Installation](#1)
+- [Ordnen Sie eine Webanwendung einer bestimmten Version des .NET Framework](#2)
+- [Ermitteln der Version der .NET Framework, die von einer Website verwendet wird](#3)
 
-Wenn eine Komponente oder Anwendung auf einem Computer aktualisiert wird, wird die ältere Version in der Vergangenheit entfernt und durch die neuere Version ersetzt. Wenn die neue Version nicht mit der vorherigen Version kompatibel ist, unterbricht dies in der Regel andere Anwendungen, die der Komponente oder Anwendung verwenden. .NET Framework bietet Unterstützung für Seite-an-Seite-Ausführung, bei dem mehrere Versionen einer Assembly oder Anwendung gleichzeitig auf demselben Computer installiert werden kann. Da mehrere Versionen gleichzeitig installiert werden können, können verwaltete Anwendungen auswählen, welche Version Sie verwenden, ohne Auswirkungen auf Anwendungen, die eine andere Version verwenden.
+Wenn eine Komponente oder eine Anwendung auf einem Computer aktualisiert wird, wird die ältere Version traditionell entfernt und durch die neuere Version ersetzt. Wenn die neue Version nicht mit der vorherigen Version kompatibel ist, unterbricht dies normalerweise andere Anwendungen, die die Komponente oder Anwendung verwenden. Der .NET Framework bietet Unterstützung für die parallele Ausführung, sodass mehrere Versionen einer Assembly oder Anwendung gleichzeitig auf demselben Computer installiert werden können. Da mehrere Versionen gleichzeitig installiert werden können, können verwaltete Anwendungen auswählen, welche Version verwendet werden soll, ohne dass Anwendungen betroffen sind, die eine andere Version verwenden.
 
-Standardmäßig werden während der Installation von .NET Framework, Version 1.1, alle vorhandene ASP.NET-Anwendungen automatisch neu konfiguriert um die neueste Version von .NET Framework zu verwenden. Wenn Sie Ihre ASP.NET-Anwendungen .NET Framework 1.1 standardmäßig nicht möchten, klicken Sie auf [hier](#1) zu erfahren, wie Sie dies während der Installation zu verhindern.
+Standardmäßig werden bei der Installation der .NET Framework Version 1,1 alle vorhandenen ASP.NET-Anwendungen automatisch neu konfiguriert, um die neueste Version der .NET Framework zu verwenden. Wenn Sie nicht möchten, dass Ihre ASP.NET-Anwendungen standardmäßig .NET Framework 1,1, klicken Sie [hier](#1) , um zu erfahren, wie Sie dies während der Installation verhindern können.
 
-Wenn Sie Ihrem Webserver auf .NET Framework 1.1 aktualisieren und einen oder mehrere Webanwendungen auf .NET Framework 1.0 ausführen möchten, müssen Sie die Zuordnung der Internetinformationsdienste (Internet Information Services, IIS)-Skript aktualisiert. Der Skriptzuordnung ist der Mechanismus zum Zuordnen der Erweiterungs für eine bestimmte Webanwendung auf eine Version von .NET Framework. Klicken Sie auf [hier](#2) erfahren, wie eine Webanwendung auf eine bestimmte Version von .NET Framework zugeordnet.
+Wenn Sie Ihren Webserver auf .NET Framework 1,1 aktualisieren und eine oder mehrere Webanwendungen .NET Framework 1,0 ausführen möchten, müssen Sie die Skript Zuordnung Internetinformationsdienste (IIS) aktualisieren. Die Skript Zuordnung ist der Mechanismus zum Zuordnen der ASPX-Dateierweiterung für eine bestimmte Webanwendung zu einer Version der .NET Framework. Klicken Sie [hier](#2) , um zu erfahren, wie eine Webanwendung einer bestimmten Version des .NET Framework zugeordnet wird.
 
-Sie können den Internetinformationsdienste-Manager Informationen oder das ASP.NET IIS Registration-Tool verwenden (Aspnet\_regiis.exe) zu ermitteln, welche .NET Framework-Version eine bestimmte Webanwendung ausgeführt wird. Klicken Sie auf [hier](#3) zu erfahren, wie Sie die Version von .NET Framework zu ermitteln, die eine Website verwendet wird.
+Mit dem Internet Information Manager oder dem ASP.NET IIS-Registrierungs Tool (ASPNET\_regiis. exe) können Sie feststellen, welche .NET Framework Version eine bestimmte Webanwendung ausgeführt hat. Klicken Sie [hier](#3) , um zu erfahren, wie Sie die Version der .NET Framework finden, die von einer Website verwendet wird.
 
-Ein Import Aspekt bei der Migration zu .NET Framework 1.1 ist, dass jede Version von .NET Framework eine eigene Datei "Machine.config" verwendet. Daher müssen ein Webadministrator die Datei "Machine.config" geändert hat, diese Änderungen in der Datei Machine.config-Datei von .NET Framework 1.1 migriert werden.
+Bei der Migration zu .NET Framework 1,1 ist eine Überlegungen zum Import zu beachten, dass jede Version des .NET Framework eine eigene Datei "Machine. config" verwendet. Wenn ein Webadministrator Änderungen an der Datei "Machine. config" vorgenommen hat, müssen diese Änderungen daher in die Datei ".NET Framework 1,1 Machine. config" migriert werden.
 
 <a id="1"></a>
 
-## <a name="maintaining-your-web-applications-mapping-to-net-framework-10-during-installation"></a>Verwalten Ihre Webanwendung-Zuordnung zu .NET Framework 1.0, während der installation
+## <a name="maintaining-your-web-applications-mapping-to-net-framework-10-during-installation"></a>Beibehalten der Zuordnung Ihrer Webanwendung zu .NET Framework 1,0 während der Installation
 
-Standardmäßig werden alle vorhandene ASP.NET-Anwendungen automatisch während der Installation auf die neuere Version von .NET Framework neu konfiguriert. Verwenden die neuere Version von .NET Framework, können Anwendungen vollständige Verbesserungen und neuen Features in der neuen Version nutzen. Zur gleichen Zeit wird der Administrator Web präzise steuern, welche Anwendungen sollten aktualisiert werden, kann verhindern, dass die automatische neuzuordnung der alle vorhandenen ASP.NET-Anwendungen während der Installation von .NET Framework.
+Standardmäßig werden alle vorhandenen ASP.NET-Anwendungen während der Installation automatisch neu konfiguriert, um die neuere Version des .NET Framework zu verwenden. Mithilfe der neueren Version des .NET Framework können Anwendungen die Verbesserungen und neuen Features in der neuen Version in vollem Umfang nutzen. Gleichzeitig kann der Webadministrator, der die genaue Kontrolle über die aktualisierten Anwendungen hätte, die automatische Neuzuordnung aller vorhandenen ASP.NET-Anwendungen während der Installation des .NET Framework verhindern.
 
-Um zu verhindern, die Automatisches Neuzuordnen von der gesamten ASP.NET-Anwendung auf die neuere Version von .NET Framework, kann der Web-Administrator die Befehlszeilenoption "/noaspupgrade" in das Setupprogramm Dotnetfx.exe verwenden.
+Um die automatische Neuzuordnung der gesamten ASP.NET-Anwendung zur neueren Version des .NET Framework zu verhindern, kann der Webadministrator die Befehlszeilenoption/noaspupgrade mit dem Setup Programm Dotnetfx. exe verwenden.
 
-**Um zu verhindern, insgesamt neuzuordnung der ASP.NET-Anwendung auf neuere version**
+**So verhindern Sie die Neuzuordnung der ASP.NET-Anwendung zu einer neueren Version**
 
-1. Wechseln Sie zu **starten**.
-2. Klicken Sie auf **ausführen**.
+1. Navigieren Sie zu **Start**.
+2. Klicken Sie auf **Ausführen**.
 3. Geben Sie **cmd** ein.
 4. Klicken Sie auf **OK**.  
   
     ![](side-by-side-with-10/_static/image1.gif)
-5. Geben Sie an der Eingabeaufforderung die folgende Zeile zum Starten der Installation von .NET Framework: **Dotnetfx.exe /c:"install /noaspupgrade?** .  
+5. Geben Sie an der Eingabeaufforderung die folgende Zeile ein, um die Installation des .NET Framework zu starten: **Dotnetfx. exe/c: "Install/noaspupgrade?** .  
   
     ![](side-by-side-with-10/_static/image2.gif)
-6. Klicken Sie auf **Ja** im Setup für Microsoft .NET Framework 1.1. Dadurch wird der Einrichtung von .NET Framework 1.1 gestartet.  
+6. Klicken Sie im Microsoft .NET Framework 1,1-Setup auf **Ja** . Dadurch wird der Setup Vorgang des .NET Framework 1,1 gestartet.  
   
     ![](side-by-side-with-10/_static/image3.gif)
 
 <a id="2"></a>
 
-## <a name="map-a-web-application-to-a-specific-version-of-the-net-framework"></a>Ordnen Sie einer Webanwendung in einer bestimmten Version von .NET Framework
+## <a name="map-a-web-application-to-a-specific-version-of-the-net-framework"></a>Ordnen Sie eine Webanwendung einer bestimmten Version des .NET Framework
 
-Jede Version von .NET Framework umfasst eine Version des ASP.NET IIS Registration-Tool (Aspnet\_regiis.exe). Dieses Tool ermöglicht Administratoren, um anzugeben, dass eine Webanwendung unter einer bestimmten Version von .NET Framework ausgeführt werden. Dies wird wie die Zuordnung einer Webanwendung in eine Version von .NET Framework bezeichnet. Administratoren müssen das Aspnet auswählen\_regiis.exe, der die Version von .NET Framework entspricht, die mit der Web-Anwendung verknüpft werden. Beispielsweise muss ein Administrator, um anzugeben, dass eine Website mit .NET Framework 1.1 verwenden möchte, das Aspnet verwenden\_regiis.exe, die in .NET Framework 1.1 enthalten ist.
+Jede Version der .NET Framework enthält eine Version des ASP.NET IIS-Registrierungs Tools (ASPNET\_regiis. exe). Mit diesem Tool können Administratoren angeben, dass eine Webanwendung unter einer bestimmten Version des .NET Framework ausgeführt werden soll. Dies wird als Zuordnung einer Webanwendung zu einer Version der .NET Framework bezeichnet. Administratoren müssen die ASPNET-\_regiis. exe auswählen, die der Version des .NET Framework entspricht, der der Webanwendung zugeordnet werden soll. Ein Administrator, der beispielsweise angeben möchte, dass eine Website .NET Framework 1,1 verwendet, muss die ASPNET-\_regiis. exe verwenden, die mit .NET Framework 1,1 ausgestattet ist.
 
-Das Aspnet\_regiis.exe für Version 1.0 befindet sich unter:
+Die ASPNET-\_regiis. exe für Version 1,0 befindet sich unter:
 
-- C:\WINDOWS\Microsoft.NET\Framework\\**v1.0.3705**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v 1.0.3705**\ASPNET\_regiis
 
-Das Aspnet\_regiis.exe für Version 1,1 befindet sich unter:
+Die ASPNET-\_regiis. exe für Version 1, 1 befindet sich unter:
 
-- C:\WINDOWS\Microsoft.NET\Framework\\**v1.1.4322**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v 1.1.4322**\ASPNET\_regiis
 
-Das Aspnet\_regiis.exe bietet zwei Optionen für Skripts, die eine Webanwendung zuordnen:
+Die ASPNET-\_regiis. exe bietet zwei Optionen für die Skript Zuordnung für eine Webanwendung:
 
-- **-s** legt die Skriptzuordnung in den Pfad und in untergeordneten Verzeichnissen.
-- **-sn** legt die Skriptzuordnung im Pfad nur.
+- **-s** legt die Skript Zuordnung im Pfad und in den zugehörigen untergeordneten Verzeichnissen fest.
+- **-SN** legt die Skript Zuordnung nur im Pfad fest.
 
-Der Pfad definiert, die IIS-Metadaten Webanwendungspfad, die in Form von W3SVC/ROOT definiert ist / {WebSiteNumber} / {Anwendung\_Name}. Für eine Webanwendung namens Portal befindet sich unter der Standardwebsite ist beispielsweise der Metabasepfad des W3SVC/1/ROOT/Portal an.
+Der Pfad definiert den IIS-Metadatenpfad der Webanwendung, der in Form von W3SVC/root/{websitenreber}/{Application\_Name} definiert ist. Für eine Webanwendung namens "Portal" unter der Standard Website lautet der Metabasispfad beispielsweise W3SVC/1/root/Portal.
 
 ![](side-by-side-with-10/_static/image4.gif)
 
-Beachten Sie, dass Sie auch ein Tool Namens der Metabase-Editor verwenden können, um den Metabase-Pfad abzurufen. Sie können dieses Tool von der Microsoft-Support-Website unter [ https://support.microsoft.com/default.aspx?scid=kb; En-us; 232068.](https://support.microsoft.com/default.aspx?scid=kb;en-us;232068)
+Hinweis Sie können auch ein Tool mit dem Namen Metabase Editor verwenden, um den Metabasispfad zu erhalten. Sie können dieses Tool von der Microsoft-Support-Website unter [https://support.microsoft.com/default.aspx?scid=kb; en-US; 232068](https://support.microsoft.com/default.aspx?scid=kb;en-us;232068) herunterladen.
 
-- Führen Sie Aspnet\_Zuordnung und die Subapplication regiis.exe -s W3SVC/1/ROOT /-Portal, um das IIS-Portal aktualisieren ein Skript.  
+- Führen Sie ASPNET\_regiis. exe-s W3SVC/1/root/Portal aus, um die Portal-IIS-Skript Map und deren unter Anwendung zu aktualisieren.  
   
     ![](side-by-side-with-10/_static/image5.gif)
 
-- Führen Sie Aspnet\_regiis.exe -sn W3SVC/1/ROOT /-Portal, um das Skript für Portals IIS aktualisieren zuzuordnen, ohne Auswirkungen auf Anwendungen im Portal? s Unterverzeichnisse.  
+- Führen Sie ASPNET\_regiis. exe-SN W3SVC/1/root/Portal aus, um die IIS-Skript Zuordnung des Portals zu aktualisieren, ohne dass sich dies auf die Anwendungen in den Unterverzeichnissen des Portals auswirkt.  
   
     ![](side-by-side-with-10/_static/image6.gif)
 
 <a id="3"></a>
 
-## <a name="find-the-net-framework-version-that-a-web-application-is-using"></a>Suchen Sie die .NET Framework-Version, die eine Webanwendung verwendet wird
+## <a name="find-the-net-framework-version-that-a-web-application-is-using"></a>Suchen der .NET Framework Version, die eine Webanwendung verwendet
 
-Administratoren können den Internetdienste-Manager ermitteln, welche Version von .NET Framework eine Website ausgeführt wird. Starten Sie verschiedenen Betriebssystemversionen Internetdienste-Manager unterschiedlich. Um den Dienst-Manager zu starten, führen Sie die nachstehenden Schritte aus.
+Ein Administrator kann den Internet Service Manager verwenden, um zu ermitteln, welche Version des .NET Framework eine Website ausführt. Unterschiedliche Betriebssystemversionen starten das Internet Service Manager anders. Führen Sie die unten aufgeführten Schritte aus, um den Dienst-Manager zu starten.
 
-**Um Internetdienste-Manager zu starten.**
+**So starten Sie Internet Service Manager**
 
-1. Wechseln Sie zu **starten**.
-2. Klicken Sie auf **ausführen**.
-3. Typ **Inetmgr**.  
+1. Navigieren Sie zu **Start**.
+2. Klicken Sie auf **Ausführen**.
+3. Geben Sie **inetmgr**ein.  
   
     ![](side-by-side-with-10/_static/image7.gif)
-4. Wählen Sie vom Internet-Manager, die Web-Anwendung, deren Version von .NET Framework, die Sie wissen möchten.  
+4. Wählen Sie im Internet Service Manager die Webanwendung aus, deren Version der .NET Framework Sie wissen möchten.  
   
     ![](side-by-side-with-10/_static/image8.gif)
-5. Mit der rechten Maustaste auf die Webanwendung, und klicken Sie auf **Eigenschaften.**  
+5. Klicken Sie mit der rechten Maustaste auf die Webanwendung, und klicken Sie auf **Eigenschaften.**  
   
     ![](side-by-side-with-10/_static/image9.gif)
-6. Wählen Sie das Eigenschaftenfenster **Konfiguration.**  
+6. Wählen Sie im Eigenschaften Fenster die Option **Konfiguration aus.**  
   
     ![](side-by-side-with-10/_static/image10.gif)
-7. Wählen Sie in der Zuordnungstabelle für die Anwendung werden **aspx**, und klicken Sie auf **bearbeiten**.  
+7. Wählen Sie in der Tabelle Anwendungs Zuordnung die Option **. aspx**aus, und klicken Sie auf **Bearbeiten**.  
   
     ![](side-by-side-with-10/_static/image11.gif)
-8. Von der **ausführbare Datei** Textfeld Blick auf das Versionsverzeichnis, indem Sie einen Bildlauf. Wenn das Versionsverzeichnis v.1.1.4322 ist, wird die Anwendung .NET Framework 1.1 zugeordnet. Wenn das Versionsverzeichnis Version 1.0.3705 ist, wird im Gegensatz dazu die Anwendung .NET Framework 1.0 zugeordnet.  
+8. Überprüfen Sie im Textfeld **ausführbare** Datei das Versions Verzeichnis, indem Sie einen Bildlauf ausführen. Wenn das Versions Verzeichnis v. 1.1.4322 ist, wird die Anwendung .NET Framework 1,1 zugeordnet. Wenn das Versions Verzeichnis also v 1.0.3705 ist, wird die Anwendung .NET Framework 1,0 zugeordnet.  
   
     ![](side-by-side-with-10/_static/image12.gif)

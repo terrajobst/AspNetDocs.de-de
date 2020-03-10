@@ -1,339 +1,339 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: 'Iteration #6 – Verwenden der testgesteuerten Entwicklung (c#) | Microsoft-Dokumentation'
+title: 'Iterations #6 – Verwenden der Test gesteuerten Entwicklung (C#) | Microsoft-Dokumentation'
 author: microsoft
-description: In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration...
+description: In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In diesem Iterations,...
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
 ms.openlocfilehash: aee0ff9d8d7f17e8a00dab12467bd3a3457fbe18
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117752"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78487125"
 ---
-# <a name="iteration-6--use-test-driven-development-c"></a>Iteration #6 – Verwenden der testgesteuerten Entwicklung (c#)
+# <a name="iteration-6--use-test-driven-development-c"></a>Iterations #6 – Verwenden der Test gesteuerten Entwicklung (C#)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
 [Code herunterladen](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
 
-> In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+> In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Erstellen einer Kontaktverwaltung ASP.NET MVC-Anwendung (c#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Aufbauen einer Kontakt Verwaltung ASP.NET MVC-AnwendungC#()
 
-In dieser Reihe von Tutorials erstellen wir eine gesamte Anwendung Kontaktverwaltung ab Beginn um den Vorgang abzuschließen. Die Contact Manager-Anwendung können Sie zum Speichern von Kontaktinformationen - Namen, Telefonnummern und e-Mail-Adressen – eine Liste der Personen an.
+In dieser Reihe von Tutorials erstellen wir von Anfang bis Ende eine gesamte Kontakt Verwaltungs Anwendung. Mithilfe der Kontakt-Manager-Anwendung können Sie Kontaktinformationen (Namen, Telefonnummern und e-Mail-Adressen) für eine Liste von Personen speichern.
 
-Wir erstellen die Anwendung über mehrere Iterationen. Bei jeder Iteration verbessern wir nach und nach der Anwendung. Das Ziel dieses mehrere Iteration-Ansatzes ist, um den Grund für jede Änderung verstehen können.
+Die Anwendung wird über mehrere Iterationen erstellt. Bei jeder Iterationen verbessern wir die Anwendung allmählich. Das Ziel dieses mehrfaches Iterations Ansatzes besteht darin, Ihnen zu ermöglichen, den Grund für jede Änderung zu verstehen.
 
-- Iteration #1 – Erstellen der Anwendung. In der ersten Iteration wir der Contact Manager in der einfachsten maximal möglicher Größe erstellen. Wir haben Unterstützung für grundlegender Datenbankvorgänge hinzugefügt: Erstellen Sie, lesen Sie, aktualisieren Sie und löschen Sie (CRUD).
+- Iterations #1: Erstellen Sie die Anwendung. In der ersten Iterationen erstellen wir den Kontakt-Manager auf einfachste Art und Weise. Wir fügen Unterstützung für grundlegende Daten Bank Vorgänge hinzu: Create, Read, Update und DELETE (CRUD).
 
-- Iteration #2 – Optimieren der Anwendung gut. In dieser Iteration verbessern wir die Darstellung der Anwendung durch Ändern der Standard-Masterseite für ASP.NET MVC-Ansicht und cascading Stylesheet.
+- Iterations #2: machen Sie das Aussehen der Anwendung schön. In dieser Iterationen verbessern wir die Darstellung der Anwendung durch Ändern der standardmäßigen ASP.NET-MVC-Ansichts Master Seite und des Cascading Stylesheets.
 
-- Iteration #3 – Hinzufügen der formularüberprüfung. In der dritten Iteration fügen wir grundlegende formularvalidierung hinzu. Es wird verhindert, dass Personen senden eines Formulars ohne erforderlichen Felder des Formulars abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
+- Iterations #3: Formular Validierung hinzufügen. In der dritten Iterationen fügen wir die grundlegende Formular Validierung hinzu. Wir hindern Personen daran, ein Formular zu senden, ohne die erforderlichen Formularfelder abzuschließen. Wir überprüfen auch die e-Mail-Adressen und Telefonnummern.
 
-- Stellen Sie Iteration #4 – lose koppeln der Anwendung. In dieser vierten Iteration nutzen wir einige Entwurfsmuster für Software zu verwalten und ändern Sie die Kontakt-Manager-Anwendung zu vereinfachen. Z. B. gestalten wir unsere Anwendung, die dem Repositorymuster und dem Dependency Injection-Muster verwenden.
+- Iterations #4: Legen Sie die Anwendung lose gekoppelt. In dieser vierten Iterationen nutzen wir mehrere Software Entwurfsmuster, um die Verwaltung und Änderung der Contact Manager-Anwendung zu vereinfachen. Beispielsweise können wir unsere Anwendung so umgestalten, dass Sie das Repository-Muster und das Muster für die Abhängigkeitsinjektion verwendet.
 
-- Iteration #5 – Erstellen von Komponententests. In der fünften Iteration stellen wir unsere Anwendung einfacher zu verwalten und zu ändern, indem Sie die Komponententests hinzufügen. Wir unsere Data Model-Klassen modellieren und erstellen Sie Komponententests für unseren Controller und die Validierungslogik.
+- Iterations #5: Erstellen von Komponententests. In der fünften Iterationen wird die Wartung und Änderung unserer Anwendung durch Hinzufügen von Komponententests vereinfacht. Wir simulieren unsere Datenmodell Klassen und erstellen Komponententests für unsere Controller und Validierungs Logik.
 
-- Iteration #6 – Verwenden der testgesteuerten Entwicklung. In dieser Iteration sechsten fügen wir neue Funktionen zu unserer Anwendung zuerst Schreiben von Komponententests und Code für die Komponententests schreiben hinzu. In dieser Iteration fügen wir wenden Sie sich an Gruppen hinzu.
+- Iterations #6: Verwenden Sie die Test gesteuerte Entwicklung. In dieser sechsten Iterationen fügen wir der Anwendung neue Funktionen hinzu, indem wir zuerst Komponententests schreiben und Code für die Komponententests schreiben. In dieser Iterationen fügen wir Kontaktgruppen hinzu.
 
-- Iteration #7 - Ajax-Funktionen hinzufügen. In der siebten Iteration verbessern wir die Reaktionsfähigkeit und Leistung der Anwendung durch Hinzufügen von Unterstützung für Ajax.
+- Iterations #7: Hinzufügen von AJAX-Funktionen. In der siebten Iterationen verbessern wir die Reaktionsfähigkeit und Leistung unserer Anwendung durch Hinzufügen von Unterstützung für AJAX.
 
-## <a name="this-iteration"></a>Diese Iteration
+## <a name="this-iteration"></a>Diese Iterations
 
-In vorherigen Iterationen der Contact Manager-Anwendung haben wir die Komponententests um ein Sicherheitsnetz für unser Code bereitzustellen. Die Motivation für die Erstellung eines Komponententests war unser Code ändern zu gewährleisten. Bei Komponententests vorhanden können wir Glücklicherweise keine Änderungen an unseren Code und wissen sofort, ob wir die vorhandene Funktionalität unterbrochen wurde.
+In der vorherigen Iterationen der Kontakt-Manager-Anwendung wurden Komponententests erstellt, um ein Sicherheitsnetz für unseren Code bereitzustellen. Die Motivation für die Erstellung der Komponententests bestand darin, den Code stabiler zu ändern. Mit Komponententests können wir glücklicherweise Änderungen am Code vornehmen und sofort wissen, ob die vorhandene Funktionalität beschädigt ist.
 
-In dieser Iteration verwenden wir die Komponententests für einen ganz anderen Zweck. In dieser Iteration, verwenden wir Komponententests als Teil des Namens Entwurfsphilosophie von einer Anwendung *testgesteuerte Entwicklung*. Wenn Sie Test-driven Development, üben Sie zuerst Tests schreiben, und klicken Sie dann Code für die Tests zu schreiben.
+In dieser Iterationen werden Komponententests für einen völlig anderen Zweck verwendet. In dieser Iterationen verwenden wir Komponententests als Teil einer Anwendungs Entwurfs Philosophie namens *Test gesteuerte Entwicklung*. Wenn Sie die Test gesteuerte Entwicklung testen, schreiben Sie zuerst Tests und schreiben dann Code für die Tests.
 
-Genauer gesagt, bei der testgesteuerten Entwicklung eignen, sind drei Schritte, die Sie abschließen, wenn Sie Code erstellen (Rot / Grün/refaktorieren):
+Genauer: bei der Test gesteuerten Entwicklung gibt es drei Schritte, die Sie beim Erstellen von Code (rot/grün/Umgestaltung) ausführen:
 
-1. Schreiben Sie einen Komponententest, der nicht (Rot)
-2. Schreiben von Code, übergeben den Komponententest (Grün)
-3. Gestalten Sie Ihren Code (Refactoring)
+1. Schreiben eines fehlgeschlagenen Komponententests (rot)
+2. Schreiben von Code, der den Komponenten Test übergibt (grün)
+3. Umgestalten des Codes (Umgestaltung)
 
-Zunächst schreiben Sie den Komponententest. Der Komponententest sollten Ihre möchte, wie Sie Ihren Code erwarten Verhalten express. Wenn Sie zuerst den Komponententest erstellen, sollte der Komponententest fehlschlägt. Der Test sollte fehlschlagen, da Sie noch nicht Anwendungscode geschrieben haben, der den Test erfüllt.
+Zuerst schreiben Sie den Komponenten Test. Der Komponenten Test sollte ihre Absicht zum Verhalten Ihres Codes Ausdrücken. Wenn Sie den Komponenten Test erstmalig erstellen, sollte der Komponenten Test fehlschlagen. Der Test sollte fehlschlagen, da Sie noch keinen Anwendungscode geschrieben haben, der den Test erfüllt.
 
-Als Nächstes schreiben Sie die gerade genug Code in der Reihenfolge für den Komponententest übergeben. Das Ziel ist, auf die Weise laziest, sloppiest und schnellste Möglichkeit den Code zu schreiben. Sie sollten nicht nachgedacht über die Architektur Ihrer Anwendung verschwendet. Stattdessen konzentrieren sollten, Sie schreiben die minimale Menge Code erforderlich, um die Absicht, die vom Komponententest ausgedrückt zu erfüllen.
+Als nächstes schreiben Sie genau genug Code, damit der Komponenten Test erfolgreich durchlaufen wird. Ziel ist es, den Code in der verzögensten, sloppsten und schnellsten Weise zu schreiben. Sie sollten keine Zeit in Bezug auf die Architektur Ihrer Anwendung verschwenden. Stattdessen sollten Sie sich darauf konzentrieren, den minimalen Code zu schreiben, der erforderlich ist, um die vom Komponenten Test ausgedrückte Absicht zu erfüllen.
 
-Nach dem Sie viel Code geschrieben haben, können Sie schließlich Schritt zurück und betrachten Sie die allgemeine Architektur Ihrer Anwendung. In diesem Schritt haben Sie (Refactoring) schreiben Sie Ihren Code durch die Nutzung des Softwareentwurfs Muster – z. B. das Repository-Muster, damit Ihr Code besser verwaltbar ist. Sie können den Code in diesem Schritt spielerverwaltung umschreiben, da der Code von Komponententests abgedeckt ist.
+Nachdem Sie ausreichend Code geschrieben haben, können Sie einen Schritt zurückgehen und die Gesamtarchitektur Ihrer Anwendung in Erwägung gezogen. In diesem Schritt können Sie Ihren Code umschreiben (umgestalten), indem Sie die Vorteile von Software Entwurfsmustern (z. b. das Repository-Muster) nutzen, sodass der Code besser verwaltbar ist. In diesem Schritt können Sie den Code in diesem Schritt mühelos neu schreiben, da der Code von Komponententests abgedeckt wird.
 
-Es gibt viele Vorteile, die aus eignen, die testgesteuerte Entwicklung entstehen. Erste, testgesteuerte Entwicklung erzwingt, dass Sie sich auf Code zu konzentrieren, die tatsächlich geschrieben werden muss. Da Sie ständig auf das Schreiben von Code übergeben Sie einen bestimmten Test konzentrieren möchten, können Sie nicht mehr Firma noch wandering in die schädlicher Pflanzen und Schreiben große Mengen von Code, die Sie niemals verwenden.
+Es gibt viele Vorteile, die sich aus der Übung der Test gesteuerten Entwicklung ergeben. Zuerst zwingt die Test gesteuerte Entwicklung Sie, sich auf den Code zu konzentrieren, der eigentlich geschrieben werden muss. Da Sie sich ständig auf das Schreiben von ausreichendem Code zum Durchführen eines bestimmten Tests konzentrieren, werden Sie daran gehindert, in das Unkraut zu gehen und riesige Mengen an Code zu schreiben, die Sie niemals verwenden werden.
 
-Andererseits eine designmethodik "zuerst testen" sind Sie gezwungen, Schreiben Sie Code aus der Perspektive des wie Ihr Code verwendet werden soll. Das heißt, sind bei der testgesteuerten Entwicklung eignen, Sie ständig Ihre Tests aus der Benutzerperspektive schreiben. Aus diesem Grund kann die testgesteuerte Entwicklung zu klarer und verständlicher-APIs führen.
+Zweitens zwingt eine "Test First"-Entwurfsmethodik, Code aus der Perspektive zu schreiben, wie der Code verwendet werden soll. Anders ausgedrückt: Wenn Sie die Test gesteuerte Entwicklung durchlaufen, schreiben Sie ständig die Tests aus der Perspektive des Benutzers. Aus diesem Grund kann die Test gesteuerte Entwicklung zu sauberen und verständlicheren APIs führen.
 
-Schließlich erzwingt testgesteuerte Entwicklung Sie Komponententests im Rahmen des normalen Prozesses des Schreibens von einer Anwendung zu schreiben. Wenn ein Projektstichtag nähert, ist das Testen in der Regel als erstes, die aus dem Fenster gesendet wird. Wenn eignen, die testgesteuerte Entwicklung, können Sie auf der anderen Seite eher virtuous zum Schreiben von Komponententests, da testgesteuerte Entwicklung Komponententests an den Prozess der Erstellung einer Anwendung zentrale wird.
+Zum Schluss zwingt die Test gesteuerte Entwicklung das Schreiben von Komponententests im Rahmen des normalen Prozesses zum Schreiben einer Anwendung. Als Projekt Stichtag ist das Testen in der Regel die erste Aufgabe, die das Fenster verlässt. Wenn Sie die Test gesteuerte Entwicklung betreiben, ist es jedoch wahrscheinlicher, dass Sie mit dem Schreiben von Komponententests in Bezug auf das Schreiben von Komponententests zu tun haben, da Komponententests durch die Test gesteuerte Entwicklung für den Prozess der Erstellung einer Anwendung zentral sind.
 
 > [!NOTE] 
 > 
-> Weitere Informationen zu Test-driven Development, ich empfehle die Lektüre von Michael Feathers Buch **Working Effectively with Legacy Code**.
+> Um mehr über die Test gesteuerte Entwicklung zu erfahren, empfiehlt es sich, das Michael-Feathers-Buch zu lesen, das **effektiv mit Legacy Code arbeitet**.
 
-In dieser Iteration hinzugefügt unsere Contact Manager-Anwendung ein neues Feature. Wir fügen Unterstützung für wenden Sie sich an Gruppen hinzu. Sie können Gruppen von wenden Sie sich an Ihre Kontakte in Kategorien wie Business zu organisieren und Friend verwenden.
+In dieser Iterationen fügen wir unserer Contact Manager-Anwendung ein neues Feature hinzu. Wir fügen Unterstützung für Kontaktgruppen hinzu. Sie können Kontaktgruppen verwenden, um Ihre Kontakte in Kategorien wie z. b. Geschäfts-und Friend-Gruppen zu organisieren.
 
-Wir werden unsere Anwendung folgt ein Vorgang der testgesteuerten Entwicklung dieser neuen Funktionalität hinzufügen. Wir zuerst unsere Komponententests schreiben, und wir alle unsere Code für diese Tests schreiben.
+Wir fügen diese neue Funktionalität unserer Anwendung hinzu, indem wir einen Prozess der Test gesteuerten Entwicklung befolgen. Wir schreiben zuerst unsere Komponententests, und wir schreiben den gesamten Code für diese Tests.
 
-## <a name="what-gets-tested"></a>Ruft ab, was getestet
+## <a name="what-gets-tested"></a>Was wird getestet?
 
-Wie in vorherigen Iterationen erläutert, in der Regel nicht Schreiben von Komponententests für die Logik für den Datenzugriff oder Logik anzeigen. Da beim Zugriff auf eine Datenbank als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für Datenzugriffslogik zusätzlichen. Da der Zugriff auf eine Ansicht bedeutet das Einrichten eines Webservers erforderlich ist, die als relativ langsamer Vorgang ist Einbau t Schreiben von Komponententests für ansichtslogik zusätzlichen. Sie sollten keinen Komponententest schreiben, es sei denn, der Test immer wieder sehr schnell ausgeführt werden kann
+Wie bereits in der vorherigen Iterationen erläutert, schreiben Sie in der Regel keine Komponententests für Datenzugriffs Logik oder Sicht Logik. Sie schreiben keine Komponententests für die Datenzugriffs Logik, da der Zugriff auf eine Datenbank relativ langsam ist. Sie schreiben keine Komponententests für die Ansichts Logik, da der Zugriff auf eine Ansicht das Einrichten eines Webservers erfordert, bei dem es sich um einen relativ langsamen Vorgang handelt. Sie sollten keinen Komponenten Test schreiben, es sei denn, der Test kann immer wiederholt ausgeführt werden.
 
-Da die testgesteuerte Entwicklung von Komponententests gesteuert wird, konzentrieren wir uns zunächst auf Controller und Geschäftslogik zu schreiben. Wir vermeiden, verändern die Datenbank oder Sichten. Wir nicht die Datenbank ändern oder die Ansichten zu erstellen, bis das Ende des in diesem Tutorial. Wir beginnen mit, was getestet werden kann.
+Da die Test gesteuerte Entwicklung von Komponententests gesteuert wird, konzentrieren wir uns zunächst auf das Schreiben von Controller und Geschäftslogik. Wir vermeiden das Berühren der Datenbank oder Sichten. Wir werden die Datenbank erst am Ende dieses Lernprogramms ändern oder unsere Ansichten erstellen. Wir beginnen mit dem, was getestet werden kann.
 
-## <a name="creating-user-stories"></a>Erstellung von User Storys
+## <a name="creating-user-stories"></a>Erstellen von User Stories
 
-Bei der testgesteuerten Entwicklung eignen, zunächst Sie immer einen Test zu schreiben. Dies führt sofort die Frage: Wie entscheiden Sie, welcher Test zuerst schreiben? Um diese Frage zu beantworten, sollten Sie einen Satz von schreiben [ **User Storys**](http://en.wikipedia.org/wiki/User_stories).
+Beim Testen der Test gesteuerten Entwicklung beginnen Sie immer mit dem Schreiben eines Tests. Dadurch wird sofort die Frage gestellt: wie entscheiden Sie, welchen Test zuerst geschrieben werden soll? Um diese Frage zu beantworten, sollten Sie eine Reihe von [**User Stories**](http://en.wikipedia.org/wiki/User_stories)schreiben.
 
-Eine User Story ist eine sehr kurze (in der Regel einen Satz) Beschreibung der Software erforderlich. Es sollte eine technische Beschreibung einer Anforderung aus der Perspektive des Benutzers geschrieben sein.
+Eine User Story ist eine sehr kurze Beschreibung einer Software Anforderung (in der Regel ein Satz). Dies sollte eine nicht technische Beschreibung einer Anforderung sein, die aus der Benutzer Perspektive geschrieben wurde.
 
-Hier ist s den Satz von User Storys, die die durch die neue Gruppe Kontakt-Funktion erforderlichen Funktionen zu beschreiben:
+Hier finden Sie die Benutzer Textabschnitte, die die Features beschreiben, die für die neue Funktion der Kontaktgruppe erforderlich sind:
 
-1. Benutzer kann eine Liste der Kontakt Gruppen anzeigen.
-2. Benutzer kann eine neue Gruppe von Kontakte erstellen.
-3. Der Benutzer kann es sich um eine vorhandene Gruppe von Kontakten löschen.
-4. Benutzer kann eine Gruppe von Kontakte auswählen, wenn Sie einen neuen Kontakt erstellen.
-5. Benutzer kann eine Gruppe von Kontakte wählen Sie beim Bearbeiten eines vorhandenen Kontakts.
-6. Eine Liste der Kontakt Gruppen wird in der Ansicht "Index" angezeigt.
-7. Klickt ein Benutzer eine Gruppe von Kontakte, wird eine Liste der übereinstimmenden Kontakte angezeigt.
+1. Der Benutzer kann eine Liste von Kontaktgruppen anzeigen.
+2. Der Benutzer kann eine neue Kontaktgruppe erstellen.
+3. Der Benutzer kann eine vorhandene Kontaktgruppe löschen.
+4. Der Benutzer kann beim Erstellen eines neuen Kontakts eine Kontaktgruppe auswählen.
+5. Der Benutzer kann eine Kontaktgruppe auswählen, wenn ein vorhandener Kontakt bearbeitet wird.
+6. In der Index Ansicht wird eine Liste der Kontaktgruppen angezeigt.
+7. Wenn ein Benutzer auf eine Kontaktgruppe klickt, wird eine Liste mit übereinstimmenden Kontakten angezeigt.
 
-Beachten Sie, dass diese Liste von User Stories von einem Kunden vollkommen verständlich ist. Es gibt keine Erwähnung von Details zur technischen Implementierung.
+Beachten Sie, dass diese Liste von User Stories von einem Kunden vollständig verständlich ist. Technische Implementierungsdetails werden nicht erwähnt.
 
-Während im Prozess der Erstellung Ihrer Anwendung, kann die Zusammenstellung von User Stories besser optimiert werden. Sie können zur funktionsunfähigkeit einer User Story in mehrere Storys (Anforderungen). Sie könnten z. B., dass das Erstellen einer neuen Kontakten Gruppenstatus Validierung beinhalten soll. Senden eine Gruppe von Kontakte ohne Name sollte ein Überprüfungsfehler zurückgeben.
+Während der Anwendung der Anwendung kann der Satz von User Storys besser verfeinert werden. Sie können eine User Story in mehrere Storys unterbrechen (Anforderungen). Beispielsweise können Sie entscheiden, dass das Erstellen einer neuen Kontaktgruppe eine Überprüfung beinhalten soll. Wenn Sie eine Kontaktgruppe ohne Namen einreichen, sollte ein Validierungs Fehler zurückgegeben werden.
 
-Nachdem Sie eine Liste von User Storys erstellt haben, können Sie Ihre erste Komponententest schreiben. Wir beginnen, erstellen Sie einen Komponententest für die Anzeige der Liste der Kontakt-Gruppen.
+Nachdem Sie eine Liste von User Stories erstellt haben, können Sie Ihren ersten Komponenten Test schreiben. Zunächst erstellen Sie einen Komponenten Test, um die Liste der Kontaktgruppen anzuzeigen.
 
-## <a name="listing-contact-groups"></a>Wenden Sie sich an Gruppen auflisten
+## <a name="listing-contact-groups"></a>Auflisten von Kontaktgruppen
 
-Unsere erste Benutzertextabschnitt ist, dass ein Benutzer eine Liste der Kontakt Gruppen anzeigen kann sollen. Sie müssen diese Story mit einem Test express.
+Der erste User Story ist, dass ein Benutzer in der Lage sein sollte, eine Liste der Kontaktgruppen anzuzeigen. Wir müssen diese Story mit einem Test Ausdrücken.
 
-Erstellen ein neuen Komponententests durch Rechtsklick auf den Ordner "Controllers" im Projekt ContactManager.Tests auswählen **hinzufügen "," Neuer Test**, und wählen die **Komponententest** Vorlage (siehe Abbildung 1). Name die neue Einheit GroupControllerTest.cs zu testen, und klicken Sie auf die **OK** Schaltfläche.
+Erstellen Sie einen neuen Komponenten Test, indem Sie mit der rechten Maustaste auf den Ordner "Controllers" im Projekt "ContactManager. Tests" klicken, " **Hinzufügen", "neuer Test**" und "Komponenten **Test** Vorlage" auswählen (siehe Abbildung 1) Benennen Sie den neuen Komponenten Test GroupControllerTest.cs, und klicken Sie auf die Schaltfläche **OK** .
 
-[![Hinzufügen der GroupControllerTest-Komponententests](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
+[![Hinzufügen des groupcontrollertest-Komponententests](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
-**Abbildung 01**: Hinzufügen des Komponententests GroupControllerTest ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image2.png))
+**Abbildung 01**: Hinzufügen des groupcontrollertest-Komponententests ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image2.png))
 
-Der erste Komponententest ist in Codebeispiel 1 enthalten. Dieser Test überprüft, ob die Index()-Methode des Controllers Gruppe einen Satz von Gruppen zurück. Der Test überprüft, dass die Daten in der Ansicht in eine Auflistung der Gruppen zurückgegeben werden.
+Der erste Komponenten Test ist in der Liste 1 enthalten. Mit diesem Test wird überprüft, ob die Index ()-Methode des Gruppen Controllers eine Gruppe von Gruppen zurückgibt. Der Test überprüft, ob in den Ansichts Daten eine Auflistung von Gruppen zurückgegeben wird.
 
-**1 – Controllers\GroupControllerTest.cs auflisten**
+**Codebeispiel 1-controllers\groupcontrollertest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample1.cs)]
 
-Wenn Sie zuerst den Code in Codebeispiel 1 in Visual Studio eingeben, erhalten Sie einen Großteil der roten Wellenlinien. Wir haben nicht die Klassen GroupController oder eine Gruppe erstellt.
+Wenn Sie den Code zum ersten Mal in der Liste 1 in Visual Studio eingeben, werden viele rote Wellenlinien angezeigt. Die GroupController-oder Group-Klassen wurden nicht erstellt.
 
-An diesem Punkt können wir sogar t-Build die Anwendung dazu t ausführen, der erste Komponententest. Gute s. Die zählt als einen fehlgeschlagenen Test. Aus diesem Grund haben wir jetzt über die Berechtigung zum Starten der Anwendungscode schreiben. Wir müssen genug Code zum Ausführen von unserem Test schreiben.
+An diesem Punkt können wir die Anwendung selbst erstellen, damit wir den ersten Komponenten Test ausführen können. Das ist gut. Dies zählt als fehlgeschlagenen Test. Daher verfügen wir jetzt über die Berechtigung, mit dem Schreiben von Anwendungscode zu beginnen. Wir müssen genug Code schreiben, um den Test auszuführen.
 
-Die Gruppe Controllerklasse in Liste 2 enthält das absolute Minimum von Code erforderlich, um den Komponententest zu übergeben. Die Index()-Aktion gibt eine statisch codierte Liste der Gruppen, die (in Programmausdruck 3 ist die Gruppe-Klasse definiert) zurück.
+Die Group Controller-Klasse in der Liste 2 enthält das erforderliche Minimum an Code, das zum Durchlaufen des Komponententests erforderlich ist. Die Index ()-Aktion gibt eine statisch codierte Liste von Gruppen zurück (die Group-Klasse ist in der Liste 3 definiert).
 
-**Codebeispiel 2 - Controllers\GroupController.cs**
+**Codebeispiel 2: controllers\groupcontroller.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
-**Codebeispiel 3 - Models\Group.cs**
+**Codebeispiel 3: models\group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample3.cs)]
 
-Nachdem wir unser Projekt Klassen GroupController und -Gruppe hinzugefügt haben, wird der erste Komponententest erfolgreich abgeschlossen (siehe Abbildung 2). Wir haben die Arbeitsschritte, die mindestens erforderlich, um der Test erfolgreich durchgeführt. Es ist Zeit zu feiern.
+Nachdem wir dem Projekt die GroupController-Klasse und die Group-Klasse hinzugefügt haben, wird der erste Komponenten Test erfolgreich abgeschlossen (siehe Abbildung 2). Wir haben die mindestens erforderliche Arbeit zum Durchlaufen des Tests durchgeführt. Es ist Zeit, zu feiern.
 
-[![Success!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![Erfolg!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
-**Abbildung 02**: Success! ([Klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image4.png))
+**Abbildung 02**: Erfolg! ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
-## <a name="creating-contact-groups"></a>Wenden Sie sich an Gruppen erstellen
+## <a name="creating-contact-groups"></a>Erstellen von Kontaktgruppen
 
-Jetzt können wir mit dem zweiten Benutzertextabschnitt fortfahren. Wir müssen neue wenden Sie sich an Gruppen erstellen können. Wir müssen dies in einem Test express.
+Nun können wir mit dem zweiten User Story fortfahren. Wir müssen neue Kontaktgruppen erstellen können. Wir müssen diese Absicht mit einem Test Ausdrücken.
 
-Der Test in Listing 4 überprüft, die die Methode mit einer neuen Gruppe die Gruppe zur Liste der Gruppen, die von der Index()-Methode zurückgegebene fügt Create() aufruft. Das heißt, wenn ich eine neue Gruppe erstellen sollte dann ich die neue Gruppe aus der Liste der Gruppen, die von der Index()-Methode zurückgegebene zurückkehren.
+Der Test in der Liste 4 überprüft, ob der Aufruf der Create ()-Methode mit einer neuen Gruppe die Gruppe der Liste der Gruppen hinzufügt, die von der Index ()-Methode zurückgegeben werden. Anders ausgedrückt: Wenn ich eine neue Gruppe erstelle, sollte ich die neue Gruppe aus der Liste der von der Index ()-Methode zurückgegebenen Gruppen zurückholen können.
 
-**Programmausdruck 4 - Controllers\GroupControllerTest.cs**
+**Codebeispiel 4-controllers\groupcontrollertest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample4.cs)]
 
-Der Test in Listing 4 wird den Controller Gruppe Create()-Methode mit einer neuen Kontakt Gruppe aufgerufen. Als Nächstes überprüft der Test an, dass die neue Gruppe den Gruppe Controller Index()-Methode aufrufen in Ansichtsdaten zurückgegeben werden.
+Der Test in der Liste 4 Ruft die Group Controller Create ()-Methode mit einer neuen Kontaktgruppe auf. Als nächstes überprüft der Test, ob beim Aufrufen der Group Controller Index ()-Methode die neue Gruppe in den Ansichts Daten zurückgegeben wird.
 
-Der geänderte Gruppe Controller in Listing 5 enthält das absolute Minimum erforderlichen Änderungen an der neuen Test erfolgreich abgeschlossen.
+Der geänderte Gruppen Controller in der Liste 5 enthält die minimalen Änderungen, die erforderlich sind, um den neuen Test zu übergeben.
 
-**Programmausdruck 5 - Controllers\GroupController.cs**
+**Auflistung 5-controllers\groupcontroller.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample5.cs)]
 
-## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Die Gruppe Controller in Listing 5 hat es sich um eine neue Create()-Aktion. Diese Aktion wird eine Auflistung von Gruppen eine Gruppe hinzugefügt. Beachten Sie, dass die Aktion Index() geändert wurde, um den Inhalt der Auflistung der Gruppen zurückzugeben.
+## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Der Gruppen Controller in der Liste 5 verfügt über eine neue Create ()-Aktion. Durch diese Aktion wird einer Gruppe von Gruppen eine Gruppe hinzugefügt. Beachten Sie, dass die Index ()-Aktion geändert wurde, um den Inhalt der Auflistung von Gruppen zurückzugeben.
 
-Auch hier haben wir das absolute Minimum der erforderlich ist, übergeben den Komponententest ausgeführt. Nachdem wir diese Änderungen an dem Controller für die Gruppe vornehmen, alle unsere Komponententests wurden bestanden.
+Noch einmal haben wir die erforderliche Mindestmenge an Arbeit durchgeführt, die zum Durchführen des Komponententests erforderlich ist. Nachdem wir diese Änderungen am Gruppen Controller vorgenommen haben, bestehen alle Komponententests.
 
 ## <a name="adding-validation"></a>Hinzufügen der Validierung
 
-Diese Anforderung wurde in der User Story nicht explizit angegeben werden. Allerdings ist es sinnvoll, die erfordern, dass eine Gruppe einen Namen haben. Andernfalls würde Kontakte in Gruppen organisieren nicht sehr nützlich sein.
+Diese Anforderung wurde im User Story nicht explizit angegeben. Es ist jedoch sinnvoll, dass eine Gruppe einen Namen hat. Andernfalls wäre das Organisieren von Kontakten in Gruppen nicht sehr nützlich.
 
-Codebeispiel 6 enthält einen neuen Test, der die Absicht ausdrückt. Dieser Test überprüft, die versuchen, eine Gruppe zu erstellen, ohne Angabe von einem Namen führt eine Überprüfungsfehlermeldung in Modellstatus.
+Die Liste 6 enthält einen neuen Test, der diese Absicht ausdrückt. Mit diesem Test wird überprüft, ob beim Versuch, eine Gruppe ohne Angabe eines Namens zu erstellen, im Modell Status eine Validierungs Fehlermeldung angezeigt wird.
 
-**Codebeispiel 6: Controllers\GroupControllerTest.cs**
+**Codebeispiel 6-controllers\groupcontrollertest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample6.cs)]
 
-Um diesen Test erfüllen zu können, müssen wir eine Name-Eigenschaft unserer Gruppe-Klasse (siehe Codebeispiel 7) hinzufügen. Darüber hinaus müssen wir unsere Gruppe Controller s Create() Aktion (siehe Codebeispiel 8) einen kleinen Teil der Validierungslogik hinzugefügt.
+Um diesen Test zu erfüllen, müssen wir der Group-Klasse eine Name-Eigenschaft hinzufügen (siehe Codebeispiel 7). Außerdem müssen wir der Aktion "Create ()" für den Group Controller-Vorgang ein kleines wenig Validierungs Logik hinzufügen (siehe Codebeispiel 8).
 
-**Auflisten von 7 – Models\Group.cs**
+**Codebeispiel 7: models\group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample7.cs)]
 
-**Auflisten von 8 – Controllers\GroupController.cs**
+**Auflisten von 8-controllers\groupcontroller.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample8.cs)]
 
-Beachten Sie, dass der Controller Gruppe Create() Aktion jetzt die Validierung und die Datenbank Logik enthält. Derzeit besteht aus die Datenbank, die vom Controller Gruppe nicht mehr als eine in-Memory-Auflistung.
+Beachten Sie, dass die Group Controller Create ()-Aktion jetzt sowohl die Validierung als auch die Daten Bank Logik enthält. Derzeit besteht die vom Gruppen Controller verwendete Datenbank nur aus einer Sammlung im Arbeitsspeicher.
 
-## <a name="time-to-refactor"></a>Zeit für das Umgestalten
+## <a name="time-to-refactor"></a>Umgestaltungs Zeit
 
-Der dritte Schritt im Rot/Grün/refaktorieren ist der Teil der Umgestaltung. An diesem Punkt müssen wir einen Schritt zurück in unserem Code, und erwägen, wie wir unsere Anwendung zur Verbesserung der entsprechenden Entwurfs Umgestalten können. Die Refactor-Phase ist die Phase, an der wir über die beste Möglichkeit der Implementierung von Prinzipien der Softwareentwicklung und Muster vorstellen.
+Der dritte Schritt in rot/grün/Umgestaltung ist das Umgestaltungs Element. An diesem Punkt müssen wir aus dem Code zurückgehen und berücksichtigen, wie wir unsere Anwendung umgestalten können, um den Entwurf zu verbessern. Die Umgestaltungs Stufe ist die Phase, bei der wir uns die beste Methode zum Implementieren von Software Entwurfs Prinzipien und-Mustern vorstellen.
 
-Wir können unseren Code in irgendeiner Weise zu ändern, die wir wählen, um den Entwurf des Codes zu verbessern. Wir haben ein Sicherheitsnetz bereitstellen, der Komponententests, die verhindert, vorhandene Funktionalität zu beschädigen.
+Wir können unseren Code beliebig ändern, um den Code Entwurf zu verbessern. Wir haben ein Sicherheitsnetz von Unittests, die verhindern, dass vorhandene Funktionen unterbunden werden.
 
-Moment, der Controller für die Gruppe ist ein Chaos aus der Perspektive des guten Software-Entwurf. Der Controller für die Gruppe enthält ein verworrenes Chaos überprüfungs-und Datenzugriffscode. Um zu vermeiden, gegen das Prinzip der einzigen Verantwortung, müssen wir diese Probleme in verschiedene Klassen trennen.
+Derzeit ist unser Gruppen Controller ein Chaos aus der Perspektive eines guten Softwaredesigns. Der Gruppen Controller enthält ein Durcheinander mit dem Validierungs-und Datenzugriffs Code. Um das Prinzip der einzelnen Verantwortung zu vermeiden, müssen wir diese Aspekte in verschiedene Klassen aufteilen.
 
-Unsere umgestaltete Gruppe Controllerklasse ist im Codebeispiel 9 enthalten. Der Controller wurde geändert, um die ContactManager-Dienstebene verwenden. Dies ist die gleiche Dienstebene, die wir mit der Contact-Controller verwenden.
+Unsere umgestaltete Group Controller-Klasse ist in der Liste 9 enthalten. Der Controller wurde geändert, um die Dienst Ebene "ContactManager" zu verwenden. Dies ist die gleiche Dienst Schicht, die wir mit dem Contact Controller verwenden.
 
-Codebeispiel 10 enthält die neuen Methoden hinzugefügt, um die Dienstebene "ContactManager" zu überprüfen, auflisten und Erstellen von Gruppen zu unterstützen. Die IContactManagerService-Schnittstelle wurde aktualisiert, um die neuen Methoden enthalten.
+Codebeispiel 10 enthält die neuen Methoden, die der ContactManager-Dienst Ebene hinzugefügt wurden, um das validieren, auflisten und Erstellen von Gruppen zu unterstützen. Die icontactmanagerservice-Schnittstelle wurde so aktualisiert, dass Sie die neuen Methoden enthält.
 
-Codebeispiel 11 enthält eine neue FakeContactManagerRepository-Klasse, die die IContactManagerRepository-Schnittstelle implementiert. Im Gegensatz zu den EntityContactManagerRepository-Klasse, die auch die IContactManagerRepository-Schnittstelle implementiert, wird unsere neue FakeContactManagerRepository-Klasse nicht mit der Datenbank kommunizieren. Die FakeContactManagerRepository-Klasse verwendet eine speicherinterne Auflistung als Proxy für die Datenbank. Wir verwenden diese Klasse in unserer Komponententests als eine gefälschte Repository-Ebene.
+In der Liste 11 ist eine neue fakecontactmanagerrepository-Klasse enthalten, die die icontactmanagerrepository-Schnittstelle implementiert. Anders als bei der entitycontactmanagerrepository-Klasse, die auch die icontactmanagerrepository-Schnittstelle implementiert, kommuniziert unsere neue fakecontactmanagerrepository-Klasse nicht mit der Datenbank. Die fakecontactmanagerrepository-Klasse verwendet eine Speicher interne Auflistung als Proxy für die Datenbank. Wir verwenden diese Klasse in den Komponententests als gefälschte Repository-Schicht.
 
-**Codebeispiel 9 - Controllers\GroupController.cs**
+**Codebeispiel 9-controllers\groupcontroller.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample9.cs)]
 
-**Auflisten von 10 – Controllers\ContactManagerService.cs**
+**Auflisten von 10-controllers\contactmanagerservice.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**Codebeispiel 11 - Controllers\FakeContactManagerRepository.cs**
+**Codebeispiel 11-controllers\fakecontactmanagerrepositor y.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
-Ändern die Schnittstelle erfordert IContactManagerRepository verwenden, um die CreateGroup() und ListGroups()-Methode in der EntityContactManagerRepository-Klasse zu implementieren. Die laziest und schnellste Möglichkeit hierzu besteht darin die Stubmethoden hinzufügen, die wie folgt aussehen:   
+Das Ändern der icontactmanagerrepository-Schnittstelle erfordert, dass die Methoden "up Group ()" und "List Groups ()" in der entitycontactmanagerrepository-Klasse implementiert. Die verzögert und schnellste Methode hierfür ist das Hinzufügen von Stub-Methoden, die wie folgt aussehen:   
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample12.cs)]
 
-Zum Schluss uns dazu auffordern, diese Änderungen am Entwurf der Anwendung einige Änderungen an unseren Komponententests vornehmen. Nun müssen wir die FakeContactManagerRepository zu verwenden, wenn die Komponententests ausführen. Die aktualisierte GroupControllerTest-Klasse ist im Codebeispiel 12 enthalten.
+Zum Schluss erfordern diese Änderungen am Entwurf unserer Anwendung, dass wir einige Änderungen an den Komponententests vornehmen müssen. Beim Ausführen der Komponententests muss nun das fakecontactmanagerrepository-Objekt verwendet werden. Die aktualisierte groupcontrollertest-Klasse ist in der Liste 12 enthalten.
 
-**Codebeispiel 12 - Controllers\GroupControllerTest.cs**
+**Auflistung 12-controllers\groupcontrollertest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample13.cs)]
 
-Nachdem wir immer ändert sich, auch hier alle unsere Komponententests bestanden. Wir haben den gesamten Rot/Grün/refaktorieren-Zyklus abgeschlossen. Wir haben die ersten beiden User Stories implementiert. Wir haben jetzt die Unterstützung von Komponententests für die Anforderungen, die in die User Stories ausgedrückt. Zur Implementierung des Rest der User Storys müssen die wiederholen denselben Zyklus der Rot/Grün/refaktorieren.
+Nachdem wir alle diese Änderungen vorgenommen haben, werden alle Komponententests bestanden. Wir haben den gesamten Kreis von rot/grün/Umgestaltung abgeschlossen. Wir haben die ersten zwei User Stories implementiert. Wir verfügen nun über unterstützende Komponententests für die in den User Storys ausgedrückten Anforderungen. Das Implementieren der restlichen Benutzer Textabschnitte umfasst das wiederholen desselben Zyklen von rot/grün/Umgestaltung.
 
 ## <a name="modifying-our-database"></a>Ändern der Datenbank
 
-Leider, obwohl wir alle unsere Komponententests ausgedrückt Anforderungen erfüllt haben, unsere Arbeit erfolgt nicht. Wir müssen noch unsere Datenbank ändern.
+Leider ist unsere Arbeit nicht erledigt, obwohl wir alle Anforderungen erfüllt haben, die von unseren Komponententests ausgedrückt werden. Wir müssen weiterhin unsere Datenbank ändern.
 
-Wir müssen eine neue Datenbanktabelle für die Gruppe zu erstellen. Führen Sie folgende Schritte aus:
+Wir müssen eine neue Gruppendaten Bank Tabelle erstellen. Folgen Sie diesen Schritten:
 
-1. Klicken Sie im Server-Explorer-Fenster, mit der rechten Maustaste in den Ordner "Tabellen", und wählen Sie die Menüoption **neue Tabelle hinzufügen**.
-2. Geben Sie unten im Tabellen-Designer zwei Spalten.
-3. Markieren Sie die Id-Spalte als Primärschlüssel und Identity-Spalte.
-4. Speichern Sie die neue Tabelle mit den Namen Gruppen durch Klicken auf das Symbol für die Diskette an.
+1. Klicken Sie im Server-Explorer Fenster mit der rechten Maustaste auf den Ordner Tabellen, und wählen Sie die Menüoption **neue Tabelle hinzufügen**aus.
+2. Geben Sie die beiden unten beschriebenen Spalten in der Tabellen-Designer ein.
+3. Markieren Sie die ID-Spalte als Primärschlüssel und Identitäts Spalte.
+4. Speichern Sie die neue Tabelle mit den namens Gruppen, indem Sie auf das Symbol der Diskette klicken.
 
 <a id="0.11_table01"></a>
 
-| **Name der Spalte** | **Datentyp** | **NULL-Werte zulassen** |
+| **Spaltenname** | **Datentyp** | **NULL-Werte zulassen** |
 | --- | --- | --- |
 | Id | int | False |
-| name | nvarchar(50) | False |
+| Name | nvarchar(50) | False |
 
-Als Nächstes müssen wir alle Daten aus der Contacts-Tabelle löschen (andernfalls wir nicht möglich, eine Beziehung zwischen den Tabellen Kontakte und Gruppen zu erstellen). Führen Sie folgende Schritte aus:
+Als nächstes müssen wir alle Daten aus der Tabelle "Contacts" löschen (andernfalls können wir keine Beziehung zwischen den Tabellen "Contacts" und "Groups" erstellen). Folgen Sie diesen Schritten:
 
-1. Mit der rechten Maustaste der Contacts-Tabelle, und wählen Sie die Menüoption **Tabellendaten anzeigen**.
-2. Löschen Sie alle Zeilen aus.
+1. Klicken Sie mit der rechten Maustaste auf die Tabelle Kontakte, und wählen Sie die Menüoption **Tabellendaten anzeigen**aus.
+2. Löschen Sie alle Zeilen.
 
-Als Nächstes müssen wir eine Beziehung zwischen der Tabelle der Datenbank Gruppen und die vorhandene Datenbanktabelle für die Kontakte zu definieren. Führen Sie folgende Schritte aus:
+Als nächstes müssen wir eine Beziehung zwischen der Datenbanktabelle "Groups" und der vorhandenen Datenbanktabelle "Contacts" definieren. Folgen Sie diesen Schritten:
 
-1. Doppelklicken Sie auf die Tabelle "Contacts" im Server-Explorer-Fenster zu den Tabellen-Designer zu öffnen.
-2. Fügen Sie eine neue Spalte mit ganzen Zahlen, die Contacts-Tabelle, die mit dem Namen GroupId hinzu.
-3. Klicken Sie auf die Schaltfläche "Beziehung", um das Dialogfeld "Fremdschlüsselbeziehungen" zu öffnen (siehe Abbildung 3).
-4. Klicken Sie auf die Schaltfläche "hinzufügen".
-5. Klicken Sie auf die Schaltfläche mit den Auslassungszeichen neben der Schaltfläche, Tabellen- und Spaltenspezifikation.
-6. Wählen Sie Tabellen und Spalten im Dialogfeld Gruppen als die Primärschlüsseltabelle und die Id als primäre Schlüsselspalte. Kontakte als Fremdschlüsseltabelle und Gruppen-ID der foreign Key-Spalte auswählen (siehe Abbildung 4). Klicken Sie auf die Schaltfläche "OK".
-7. Klicken Sie unter **INSERT- und UPDATE-Spezifikation**, wählen Sie den Wert **Cascade** für **Regel löschen**.
-8. Klicken Sie auf die Schaltfläche "Schließen", um das Dialogfeld "Fremdschlüsselbeziehungen" zu schließen.
-9. Klicken Sie auf die Schaltfläche "Speichern", um die Änderungen an der Contacts-Tabelle speichern.
+1. Doppelklicken Sie im Fenster Server-Explorer auf die Tabelle Kontakte, um die Tabellen-Designer zu öffnen.
+2. Fügen Sie der Tabelle Contacts eine neue ganzzahlige Spalte mit dem Namen GroupID hinzu.
+3. Klicken Sie auf die Schaltfläche Beziehung, um das Dialogfeld Fremdschlüssel Beziehungen zu öffnen (siehe Abbildung 3).
+4. Klicken Sie auf die Schaltfläche Add.
+5. Klicken Sie auf die Schaltfläche mit den Auslassungs Punkten neben der Schaltfläche Tabellen-und Spaltenspezifikation.
+6. Wählen Sie im Dialogfeld Tabellen und Spalten die Option Gruppen als Primärschlüssel Tabelle und ID als Primärschlüssel Spalte aus. Wählen Sie Kontakte als Fremdschlüssel Tabelle und GroupID als Fremdschlüssel Spalte aus (siehe Abbildung 4). Klicken Sie auf die Schaltfläche "OK".
+7. Wählen Sie unter **INSERT-und Update-Spezifikation**den Wert **Cascade** for **Delete Rule**aus.
+8. Klicken Sie auf die Schaltfläche Schließen, um das Dialogfeld Fremdschlüssel Beziehungen zu schließen.
+9. Klicken Sie auf die Schaltfläche speichern, um die Änderungen in der Tabelle Kontakte zu speichern.
 
-[![Erstellen einer Beziehung der Datenbank-Tabelle](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
+[![Erstellen einer Datenbanktabellen Beziehung](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
-**Abbildung 03**: Erstellen einer Datenbank-Tabelle-Beziehung ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image6.png))
+**Abbildung 03**: Erstellen einer Datenbanktabellen Beziehung ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
-[![Angeben von tabellenbeziehungen](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
+[![angeben von Tabellen Beziehungen](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
-**Abbildung 04**: Angeben von tabellenbeziehungen ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image8.png))
+**Abbildung 04**: Angeben von Tabellen Beziehungen ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image8.png))
 
-### <a name="updating-our-data-model"></a>Unser Datenmodell aktualisieren
+### <a name="updating-our-data-model"></a>Aktualisieren des Datenmodells
 
-Als Nächstes müssen wir aktualisieren unsere Datenmodell, um die neue Datenbanktabelle darstellen. Führen Sie folgende Schritte aus:
+Als nächstes müssen wir das Datenmodell aktualisieren, um die neue Datenbanktabelle darzustellen. Folgen Sie diesen Schritten:
 
-1. Doppelklicken Sie auf die ContactManagerModel.edmx-Datei im Ordner "Models", die Entity-Designer zu öffnen.
-2. Mit der rechten Maustaste in die Oberfläche des Designers, und wählen Sie die Menüoption **Modell aus der Datenbank aktualisieren**.
-3. Im Update-Assistenten auf die Schaltfläche auswählen, die Gruppen, Tabelle, und klicken Sie auf das Beenden (siehe Abbildung 5).
-4. Mit der rechten Maustaste in der Gruppen-Entität, und wählen Sie die Menüoption **umbenennen**. Ändern des Namens der *Gruppen* Entität *Gruppe* (im singular).
-5. Mit der rechten Maustaste in der Gruppen-Navigationseigenschaft, die am unteren Rand der Entität "Contact" angezeigt wird. Ändern des Namens der *Gruppen* Navigationseigenschaft *Gruppe* (im singular).
+1. Doppelklicken Sie im Ordner Models auf die Datei contactmanagermodel. edmx, um die Entity Designer zu öffnen.
+2. Klicken Sie mit der rechten Maustaste auf die Designer Oberfläche, und wählen Sie die Menüoption **Modell aus Datenbank aktualisieren aus**.
+3. Wählen Sie im Update-Assistenten die Tabelle Gruppen aus, und klicken Sie auf die Schaltfläche Fertigstellen (siehe Abbildung 5).
+4. Klicken Sie mit der rechten Maustaste auf die Entität Gruppen, und wählen Sie die Option **Umbenennen** Ändern Sie den Namen der *Groups* -Entität in *Group* (Singular).
+5. Klicken Sie mit der rechten Maustaste auf die Gruppen Navigations Eigenschaft, die unten in der Entität "Contact" angezeigt wird. Ändern Sie den Namen der *Gruppen* Navigations Eigenschaft in *Group* (Singular).
 
-[![Aktualisieren eines Entity Framework-Modells aus der Datenbank](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
+[![Aktualisieren eines Entity Framework Modells aus der Datenbank](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
-**Abbildung 05**: Aktualisieren eines Entity Framework-Modells aus der Datenbank ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image10.png))
+**Abbildung 05**: Aktualisieren eines Entity Framework Modells aus der Datenbank ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
-Nachdem Sie diese Schritte abgeschlossen haben, wird Ihr Datenmodell der Kontakte und Gruppen darstellen. Der Entity Designer sollten beide Entitäten angezeigt (siehe Abbildung 6).
+Nachdem Sie diese Schritte ausgeführt haben, stellt das Datenmodell die Tabellen "Contacts" und "Groups" dar. Die Entity Designer sollte beide Entitäten anzeigen (siehe Abbildung 6).
 
-[![Entity-Designer zum Anzeigen von Gruppe, und wenden Sie sich an](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
+[![Entity Designer anzeigen von Gruppe und Kontakt](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
-**Abbildung 06**: Anzeigen von Gruppen- und wenden Sie sich an Entity-Designer ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image12.png))
+**Abbildung 06**: Entity Designer anzeigen von Gruppe und Kontakt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image12.png))
 
-### <a name="creating-our-repository-classes"></a>Erstellen die Repositoryklassen
+### <a name="creating-our-repository-classes"></a>Erstellen der Repository-Klassen
 
-Als Nächstes müssen wir unsere "Repository"-Klasse zu implementieren. Im Verlauf dieser Iteration haben wir mehrere neue Methoden der Schnittstelle IContactManagerRepository beim Schreiben von Code zum erfüllen unserer Komponententests hinzugefügt. Die endgültige Version der IContactManagerRepository-Schnittstelle ist im Codebeispiel 14 enthalten.
+Als nächstes müssen wir unsere Repository-Klasse implementieren. Im Verlauf dieser Iterationen haben wir der icontactmanagerrepository-Schnittstelle mehrere neue Methoden hinzugefügt, während wir Code schreiben, um die Komponententests zu erfüllen. Die endgültige Version der icontactmanagerrepository-Schnittstelle ist in der Liste 14 enthalten.
 
-**Codebeispiel 14 - Models\IContactManagerRepository.cs**
+**Codebeispiel 14: models\icontactmanagerrepositoriy.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-Einer der Methoden für die Arbeit mit wenden Sie sich an Gruppen nicht getan haben wir tatsächlich implementiert. Derzeit enthält die EntityContactManagerRepository-Klasse Stubmethoden für jede Gruppe von Kontakten Methoden aufgeführt, die in der IContactManagerRepository-Schnittstelle. Beispielsweise sieht die Methode ListGroups() derzeit folgendermaßen aus:
+Wir haben noch keine der Methoden implementiert, die sich auf die Arbeit mit Kontaktgruppen beziehen. Derzeit verfügt die entitycontactmanagerrepository-Klasse über Stubmethoden für jede der Kontaktgruppen Methoden, die in der icontactmanagerrepository-Schnittstelle aufgelistet sind. Beispielsweise sieht die ListGroups ()-Methode zurzeit wie folgt aus:
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 
-Die Stubmethoden ermöglicht, uns auf unserer Anwendung zu kompilieren, und übergeben die Komponententests. Jetzt ist es jedoch Zeit, diese Methoden implementieren. Die endgültige Version der EntityContactManagerRepository-Klasse ist im Codebeispiel 13 enthalten.
+Mit den Stub-Methoden konnten wir unsere Anwendung kompilieren und die Komponententests durchlaufen. Jetzt ist es aber an der Zeit, diese Methoden tatsächlich zu implementieren. Die endgültige Version der entitycontactmanagerrepository-Klasse ist in der Liste 13 enthalten.
 
-**Listing 13 - Models\EntityContactManagerRepository.cs**
+**Auflisten 13-models\entitycontactmanagerrepositor y.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample16.cs)]
 
-### <a name="creating-the-views"></a>Erstellen von Ansichten
+### <a name="creating-the-views"></a>Erstellen der Sichten
 
-ASP.NET MVC-Anwendung, wenn Sie die ASP.NET standardansichts-Engine verwenden. Also, Sie Ich möchte Ansichten als Reaktion auf einen bestimmten Komponententest erstellen. Da eine Anwendung ohne Ansichten unbrauchbar wäre, wir können jedoch t dieser Iteration abschließen, ohne erstellen und ändern die Ansichten, die in der Contact Manager-Anwendung enthalten.
+ASP.NET MVC-Anwendung, wenn Sie die standardmäßige ASP.net-Ansichts-Engine verwenden. Daher erstellen Sie keine Sichten als Reaktion auf einen bestimmten Komponenten Test. Da eine Anwendung jedoch ohne Ansichten nutzlos wäre, können wir diese Iterations Iterationen nicht durchführen, ohne die in der Contact Manager-Anwendung enthaltenen Sichten zu erstellen und zu ändern.
 
-Wir müssen die folgenden neuen Ansichten zum Verwalten von Gruppen von wenden Sie sich an, der (siehe Abbildung 7) zu erstellen:
+Zum Verwalten von Kontaktgruppen müssen die folgenden neuen Ansichten erstellt werden (siehe Abbildung 7):
 
-- Views\Group\Index.aspx - zeigt eine Liste der Kontakt-Gruppen
-- Views\Group\Delete.aspx - zeigt Bestätigungsformular für das Löschen einer Gruppenstatus von Kontakten
+- Views\group\index.aspx-zeigt die Liste der Kontaktgruppen an
+- Views\group\delete.aspx-zeigt das Bestätigungsformular zum Löschen einer Kontaktgruppe an
 
-[![Die Gruppe Indexansicht](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
+[![der Gruppen Index Ansicht](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
-**Abbildung 07**: Die Gruppe Indexansicht ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image14.png))
+**Abbildung 07**: Ansicht "Gruppen Index" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image14.png))
 
-Wir müssen die folgenden vorhandenen Ansichten zu ändern, sodass sie wenden Sie sich an Gruppen enthalten:
+Wir müssen die folgenden vorhandenen Ansichten so ändern, dass Sie Kontaktgruppen enthalten:
 
-- Views\Home\Create.aspx
-- Views\Home\Edit.aspx
-- Views\Home\Index.aspx
+- Views\home\kreate.aspx
+- Views\home\edit.aspx
+- Views\home\index.aspx
 
-Sie sehen die geänderten Ansichten anhand der Visual Studio-Anwendung, die in diesem Lernprogramm begleitet. Abbildung 8 veranschaulicht beispielsweise die Ansicht "Wenden Sie sich an Index".
+Die geänderten Ansichten sehen Sie sich die Visual Studio-Anwendung an, die dieses Tutorial begleitet. Abbildung 8 veranschaulicht z. b. die Kontakt Index Sicht.
 
-[![Ansicht "Wenden Sie sich an Index"](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
+[![der Ansicht "Kontakt index"](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
-**Abbildung 08**: Ansicht "Wenden Sie sich an Index" ([klicken Sie, um das Bild in voller Größe anzeigen](iteration-6-use-test-driven-development-cs/_static/image16.png))
+**Abbildung 08**: Ansicht "Kontakt index" ([Klicken Sie, um das Bild in voller Größe anzuzeigen](iteration-6-use-test-driven-development-cs/_static/image16.png))
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Iteration haben wir neue Funktionen zu unserer Contact Manager-Anwendung anhand von designmethodik eine testgesteuerte Entwicklung-Anwendung hinzugefügt. Da fingen wir durch eine Reihe von User Stories zu erstellen. Es erstellt einen Satz von Komponententests, der die die Anforderungen, die durch die User Stories ausgedrückt entspricht. Schließlich haben wir gerade genug Code zum Erfüllen der Anforderungen von den Komponententests ausgedrückt geschrieben.
+In dieser Iterationen haben wir unserer Contact Manager-Anwendung neue Funktionen hinzugefügt, indem wir eine Test gesteuerte Entwicklungsmethode für Entwicklungsanwendungen befolgen. Wir haben mit der Erstellung eines Satzes von User Stories begonnen. Wir haben eine Reihe von Komponententests erstellt, die den Anforderungen entsprechen, die von den User Storys ausgedrückt werden. Schließlich haben wir gerade genug Code geschrieben, um die Anforderungen zu erfüllen, die von den Komponententests ausgedrückt werden.
 
-Nachdem wir das Schreiben von Code erfüllen die Anforderungen von den Komponententests ausgedrückt haben, aktualisiert es Ihre Datenbank und die Ansichten. Wir unsere Datenbank eine neue Gruppentabelle hinzugefügt und aktualisiert das Entity Framework Data Model. Wir können auch erstellt und einen Satz von Ansichten geändert.
+Nachdem das Schreiben von ausreichendem Code abgeschlossen wurde, um die von den Komponententests ausgedrückten Anforderungen zu erfüllen, haben wir unsere Datenbank und Sichten aktualisiert. Wir haben unserer Datenbank eine neue Gruppentabelle hinzugefügt und unser Entity Framework Datenmodell aktualisiert. Außerdem haben wir einen Satz von Sichten erstellt und geändert.
 
-In der nächsten Iteration: die letzte Iteration – schreiben wir unsere Anwendung Ajax nutzen. Durch die Nutzung von Ajax, werden wir die Reaktionsfähigkeit und Leistung der Contact Manager-Anwendung verbessern.
+In der nächsten Iterations--der abschließenden Iterations-wird die Anwendung neu geschrieben, um AJAX zu nutzen. Durch die Nutzung von AJAX verbessern wir die Reaktionsfähigkeit und Leistung der Kontakt-Manager-Anwendung.
 
 > [!div class="step-by-step"]
 > [Zurück](iteration-5-create-unit-tests-cs.md)
