@@ -2,139 +2,139 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 title: 'Teil 2: Controller | Microsoft-Dokumentation'
 author: jongalloway
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 2 werden die Controller behandelt.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 2 werden Controller behandelt.
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 9dc2226f4951d4bed122df37d35bbb94730a00ad
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112416"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451191"
 ---
 # <a name="part-2-controllers"></a>Teil 2: Controller
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-> Die MVC Music Store ist ein lernprogrammanwendung, die eingeführt und erläutert Schritt für Schritt, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwenden.  
+> Der MVC Music Store ist eine Lernprogramm Anwendung, die Schritt für Schritt erläutert, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwendet werden.  
 >   
-> Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
+> Der MVC Music Store ist eine einfache Beispiel Speicher Implementierung, die Musikalben online verkauft und grundlegende Funktionen für Website Verwaltung, Benutzeranmeldung und Warenkorb implementiert.  
 >   
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 2 werden die Controller behandelt.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 2 werden Controller behandelt.
 
-Mit herkömmlichen Web-Frameworks werden eingehende URLs in der Regel Dateien auf dem Datenträger zugeordnet. Zum Beispiel: eine Anforderung für eine URL wie "/ Products.aspx" oder "/" Products.PHP "" kann von einer "Products.aspx" oder ""Products.PHP ""-Datei verarbeitet werden.
+Bei herkömmlichen Webframe Works werden eingehende URLs normalerweise Dateien auf dem Datenträger zugeordnet. Beispiel: eine Anforderung für eine URL wie "/Products.aspx" oder "/Products.php" wird möglicherweise von der Datei "Products. aspx" oder "Products. php" verarbeitet.
 
-Web-basierten MVC-Frameworks Servercode URLs in eine etwas andere Weise zugeordnet. Anstatt das Zuordnen von eingehenden URLs zu Dateien, sie stattdessen URLs auf Methoden in Klassen zugeordnet. Diese Klassen werden als "Controller" bezeichnet und sie sind zuständig für die Verarbeitung der eingehender HTTP-Anforderungen, Behandeln von Benutzereingaben, abrufen und Speichern von Daten und bestimmen die zu sendende Antwort zurück an den Client (HTML-Seite anzeigen, Herunterladen einer Datei, auf einen anderen umleiten URL usw.).
+Webbasierte MVC-Frameworks ordnen URLs auf etwas andere Weise dem Servercode zu. Anstatt eingehende URLs zu Dateien zuzuordnen, ordnen Sie stattdessen URLs Methoden für Klassen zu. Diese Klassen werden als "controller" bezeichnet und sind dafür verantwortlich, eingehende HTTP-Anforderungen zu verarbeiten, Benutzereingaben zu verarbeiten, Daten abzurufen und zu speichern und die Antwort zu bestimmen, die an den Client zurückgesendet werden soll (HTML anzeigen, Datei herunterladen, zu einer anderen umleiten). URL usw.).
 
-## <a name="adding-a-homecontroller"></a>Hinzufügen einen HomeController
+## <a name="adding-a-homecontroller"></a>Hinzufügen eines HomeController
 
-Zunächst müssen wir unsere MVC Music Store-Anwendung Hinzufügen einer Controllerklasse, die URLs, die auf der Startseite unserer Website behandelt. Wir führen Sie die Standard-Benennungskonventionen von ASP.NET MVC und HomeController aufrufen.
+Wir beginnen mit unserer MVC Music Store-Anwendung, indem wir eine Controller Klasse hinzufügen, die URLs zur Startseite unserer Website verarbeitet. Befolgen Sie die Standard Benennungs Konventionen von ASP.NET MVC, und nennen Sie es HomeController.
 
-Mit der rechten Maustaste in des Ordners "Controllers" im Projektmappen-Explorer, und wählen Sie "Hinzufügen", und klicken Sie dann den Befehl "Controller...":
+Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner "Controllers", und wählen Sie "hinzufügen" und dann "Controller..." aus. s
 
 ![](mvc-music-store-part-2/_static/image1.jpg)
 
-Hierdurch wird das Dialogfeld "Controller hinzufügen" angezeigt. Nennen Sie den Controller "HomeController" aus, und drücken Sie die Schaltfläche "hinzufügen".
+Dadurch wird das Dialogfeld "Controller hinzufügen" angezeigt. Nennen Sie den Controller "HomeController", und klicken Sie auf die Schaltfläche hinzufügen.
 
 ![](mvc-music-store-part-2/_static/image1.png)
 
-Dies erstellt eine neue Datei "HomeController.cs", mit dem folgenden Code:
+Dadurch wird eine neue Datei erstellt, HomeController.cs mit folgendem Code:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample1.cs)]
 
-Um so weit wie möglich zu starten, ersetzen Sie die Index-Methode lassen Sie uns eine einfache Möglichkeit, die nur eine Zeichenfolge zurückgibt. Wir erstellen zwei Änderungen:
+Um so einfach wie möglich zu beginnen, ersetzen wir die Index-Methode durch eine einfache Methode, die nur eine Zeichenfolge zurückgibt. Wir nehmen zwei Änderungen vor:
 
-- Ändern Sie die Methode, um eine Zeichenfolge anstatt in ein Aktionsergebnis zurückgegeben.
-- Ändern Sie die return-Anweisung um "Hello aus Home" zurückzugeben.
+- Ändern Sie die Methode so, dass anstelle eines Aktions Ergebnisses eine Zeichenfolge zurückgegeben wird.
+- Ändern der Return-Anweisung, sodass "Hello from Home" zurückgegeben wird
 
-Die Methode sollte jetzt wie folgt aussehen:
+Die-Methode sollte nun wie folgt aussehen:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample2.cs)]
 
 ## <a name="running-the-application"></a>Ausführen der Anwendung
 
-Jetzt führen wir die Website. Können wir unsere Web-Server starten und Testen Sie die Website mithilfe eines der folgenden:
+Nun führen wir die Website aus. Wir können unseren Web-Server starten und die Website mit einem der folgenden Schritte ausprobieren:
 
-- Wählen Sie das Debuggen ⇨ Debuggen starten im Menü-Element
-- Klicken Sie auf der grünen Pfeilschaltfläche auf der Symbolleiste ![](mvc-music-store-part-2/_static/image2.jpg)
+- Auswählen des Menü Elements Debuggen ⇨ Debuggen starten
+- Klicken Sie in der Symbolleiste auf die grüne Pfeil Schaltfläche ![](mvc-music-store-part-2/_static/image2.jpg)
 - Verwenden Sie die Tastenkombination F5.
 
-Mit einer der oben genannten Schritte wird unser Projekt kompilieren, und dann dazu führen, dass der ASP.NET Development Server, die integriert in Visual Web Developer gestartet wird. Eine Benachrichtigung wird angezeigt, in der unteren Ecke des Bildschirms, um anzugeben, dass der ASP.NET Development Server gestartet wurde, und zeigt der Portnummer an, dass er unter ausgeführt wird.
+Mit einem der oben aufgeführten Schritte wird das Projekt kompiliert und dann die ASP.NET Development Server, die in Visual Web Developer integriert ist, gestartet. In der unteren Ecke des Bildschirms wird eine Benachrichtigung angezeigt, die anzeigt, dass die ASP.NET Development Server gestartet wurde, und zeigt die Portnummer an, unter der Sie ausgeführt wird.
 
 ![](mvc-music-store-part-2/_static/image2.png)
 
-Visual Web Developer wird dann automatisch ein Browserfenster geöffnet, dessen URL auf unsere Web-Server verweist. Dies ermöglicht uns, wie Sie unserer Webanwendung testen:
+Visual Web Developer öffnet dann automatisch ein Browserfenster, dessen URL auf den Webserver zeigt. Auf diese Weise können wir die Webanwendung schnell ausprobieren:
 
 ![](mvc-music-store-part-2/_static/image3.png)
 
-Okay, das war ziemlich schnell – wir eine neue Website erstellt haben, eine Zeile mit drei-Funktion hinzugefügt, und haben wir Text in einem Browser. Nicht rocket Science, aber es ist der Anfang.
+Das war ziemlich schnell – wir haben eine neue Website erstellt, eine Funktion mit drei Zeilen hinzugefügt, und wir haben Text in einem Browser. Nicht in der Abwehr von Raketen Wissenschaften, aber es ist ein Start.
 
-*Hinweis: Visual Web Developer bietet ASP.NET Development Server, die Ihre Website auf einer Reihe zufälliger kostenlose "Port" ausgeführt wird. Im obigen Screenshot, der Standort ausgeführt wird, am `http://localhost:26641/`, sodass sie Port 26641 verwendet wird. Die Portnummer wird unterschiedlich sein. Wenn wir in diesem Tutorial zu der URL wie /Store/Browse sprechen, geht, die nach der Portnummer. Wenn 26641 die Portnummer an, navigieren zu/Store/durchsuchen bedeutet Navigieren zu `http://localhost:26641/Store/Browse`.*
+*Hinweis: Visual Web Developer enthält die ASP.NET Development Server, die Ihre Website auf einer zufälligen kostenlosen "Port"-Nummer ausführen wird. Im obigen Screenshot wird die Website unter `http://localhost:26641/`ausgeführt. Daher wird Port 26641 verwendet. Die Portnummer wird unterschiedlich angezeigt. Wenn wir über URLs wie/Store/Browse in diesem Tutorial sprechen, erfolgt die Portnummer. Wenn Sie die Portnummer 26641 aufrufen, bedeutet das Navigieren zu/Store/Browse, zu `http://localhost:26641/Store/Browse`zu navigieren.*
 
-## <a name="adding-a-storecontroller"></a>Hinzufügen einer StoreController
+## <a name="adding-a-storecontroller"></a>Hinzufügen eines StoreController
 
-Wir haben einen einfachen HomeController, die auf der Startseite unserer Website implementiert hinzugefügt. Nun fügen Sie einen anderen Controller, mit denen auf die Durchsuchen-Funktionalität unseres neuen Speichers Musik zu implementieren. Unser Controller Store unterstützt drei Szenarien:
+Wir haben einen einfachen HomeController hinzugefügt, der die Startseite der Website implementiert. Nun fügen wir einen weiteren Controller hinzu, mit dem wir die Browser Funktionalität unseres Musik Stores implementieren. Der Store-Controller unterstützt drei Szenarien:
 
-- Eine Angebotsseite von Musik Genres in unserer Music store
-- Seite "Durchsuchen", der alle von der Alben in einem bestimmten Genre auflistet
-- Eine Seite, die Informationen zu einem bestimmten Musikalbum anzeigt
+- Eine Listenseite der Musikgenres in unserem Music Store
+- Eine Seite zum Durchsuchen, auf der alle Musikalben eines bestimmten Genres aufgelistet sind.
+- Eine Detailseite, auf der Informationen zu einem bestimmten Musikalbum angezeigt werden.
 
-Wir beginnen, indem Sie eine neue StoreController-Klasse hinzufügen... Wenn Sie noch nicht geschehen, beenden Sie die Anwendung entweder über den Browser schließen, oder wählen das Debuggen ⇨ Debuggen beenden-Menüelement ausführen.
+Wir beginnen mit dem Hinzufügen einer neuen StoreController-Klasse. Wenn Sie dies noch nicht getan haben, beenden Sie die Ausführung der Anwendung, indem Sie entweder den Browser schließen oder das Menü Element Debuggen ⇨ beenden auswählen.
 
-Fügen Sie nun eine neue StoreController hinzu. Wie wir mit HomeController, wir erreichen dies, indem mit der rechten Maustaste auf den Ordner "Controllers" im Projektmappen-Explorer und Auswählen der hinzufügen -&gt;Controller-Menüelement
+Fügen Sie nun einen neuen StoreController hinzu. Wie bei HomeController wird dies durchgeführt, indem Sie in der Projektmappen-Explorer mit der rechten Maustaste auf den Ordner "Controllers" klicken und das Menü Element Add-&gt;Controller auswählen.
 
 ![](mvc-music-store-part-2/_static/image4.png)
 
-Unsere neue StoreController verfügt bereits über eine Methode "Index". Wir verwenden diese Methode "Index" auf um unserer Seite mit den Preisen zu implementieren, die alle Genres in unserer Music Store auflistet. Wir fügen auch zwei weitere Methoden, um die beiden anderen Szenarien implementieren, die wir unsere StoreController behandeln soll: Durchsuchen und Details.
+Unser neuer StoreController verfügt bereits über eine "index"-Methode. Wir verwenden diese "index"-Methode, um unsere Auflistungs Seite zu implementieren, die alle Genres in unserem Musikspeicher auflistet. Wir fügen außerdem zwei zusätzliche Methoden hinzu, um die beiden anderen Szenarien zu implementieren, die von StoreController behandelt werden sollen: Durchsuchen und Details.
 
-Diese Methoden ("Index", "Durchsuchen" und "Details") in den Controller "Controlleraktionen" aufgerufen werden, und wie Sie mit der HomeController.Index ()-Aktionsmethode bereits gesehen haben, ist ihre Arbeit auf URL-Anforderungen zu reagieren, und (im Allgemeinen) zu ermitteln welcher Inhalt sollten gesendet werden, zurück an den Browser oder die Benutzer, die die URL aufgerufen.
+Diese Methoden (Index, Browse und Details) im Controller werden als "Controller Aktionen" bezeichnet, und wie Sie bereits mit der HomeController. Index ()-Aktionsmethode gesehen haben, besteht ihre Aufgabe darin, auf URL-Anforderungen zu reagieren und (im allgemeinen) den Inhalt zu ermitteln. sollte an den Browser oder den Benutzer zurückgesendet werden, der die URL aufgerufen hat.
 
-Wird zunächst unsere Implementierung StoreController ändern theIndex()-Methode, um die Zeichenfolge "Hello aus Store.Index()" zurückzugeben, und fügen es ähnliche Methoden für Browse() und Details():
+Wir starten unsere StoreController-Implementierung, indem wir die theindex ()-Methode ändern, um die Zeichenfolge "Hello from Store. Index ()" zurückzugeben, und wir fügen ähnliche Methoden für "Browse ()" und "Details ()" hinzu:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample3.cs)]
 
 Führen Sie das Projekt erneut aus, und Durchsuchen Sie die folgenden URLs:
 
 - /Store
-- / Store/durchsuchen
-- / Store/Details
+- /Store/Browse
+- /Store/Details
 
-Zugriff auf diese URLs werden Aufrufen die Aktionsmethoden in unserem Controller und String-Antworten zurückgeben:
+Durch den Zugriff auf diese URLs werden die Aktionsmethoden in unserem Controller aufgerufen und Zeichen folgen Antworten zurückgegeben:
 
 ![](mvc-music-store-part-2/_static/image5.png)
 
-Das ist großartig, aber dies sind nur Konstanten Zeichenfolgen. Lassen Sie uns diese dynamisch, damit sie nutzen Informationen aus der URL, und sie auf der Seite ausgegeben zeigt.
+Das ist großartig, aber es handelt sich hierbei nur um konstante Zeichen folgen. Wir machen Sie dynamisch, sodass Sie Informationen aus der URL übernehmen und in der Seiten Ausgabe anzeigen.
 
-Zuerst ändern wir die Aktionsmethode durchsuchen, um eine Querystring-Wert aus der URL abzurufen. Dazu können wir unsere Aktionsmethode einen Parameter für "Genre" hinzugefügt. Wenn wir dies tun übergibt ASP.NET MVC automatisch alle Querystring oder Formular Post-Parameter, die mit dem Namen "Genre" in unserem Aktionsmethode, wenn sie aufgerufen wird.
+Zuerst ändern wir die Methode zum Durchsuchen, um einen QueryString-Wert aus der URL abzurufen. Zu diesem Zweck können Sie der Aktionsmethode einen "Genre"-Parameter hinzufügen. Wenn wir dies tun, übergibt MVC automatisch alle QueryString-oder Form Post-Parameter mit dem Namen "Genre" an unsere Aktionsmethode, wenn Sie aufgerufen wird.
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*Hinweis: HttpUtility.HtmlEncode Durchführen der Hilfsmethode verwendet, um die Benutzereingabe zu bereinigen. Dadurch wird verhindert, dass Benutzer Einfügen von Javascript in unserer Ansicht mit einem Link wie /Store/Browse? Genre =&lt;Skript&gt;Window.Location = "http://hackersite.com"&lt;/script&gt;.*
+*Hinweis: die Benutzereingaben werden mithilfe der hilfsprogrammmethode HttpUtility. HtmlEncode bereinigt. Dadurch wird verhindert, dass Benutzer JavaScript in unserer Ansicht mit einem Link wie/Store/Browse einfügen? Genre =&lt;Skript&gt;Window. Location = 'http://hackersite.com'&lt;/Script&gt;.*
 
-Nun navigieren wir zu/Store/durchsuchen? Genre = Disco
+Navigieren wir nun zu/Store/Browse? Genre = Disco
 
 ![](mvc-music-store-part-2/_static/image6.png)
 
-Als Nächstes ändern wir die Aktion "Details" zum Lesen und Anzeigen der Eingabeparameter mit dem Namen ID. Im Gegensatz zu unseren vorherigen Methode wird nicht wir den ID-Wert als Querystring-Parameter einbetten. Stattdessen werden wir es direkt in der URL selbst einbetten. Zum Beispiel: /Store/Details/5.
+Als nächstes ändern wir die Aktion "Details", um einen Eingabeparameter mit dem Namen "ID" anzuzeigen und anzuzeigen. Anders als bei der vorherigen Methode wird der ID-Wert nicht als QueryString-Parameter einbettet. Stattdessen Betten wir ihn direkt in die URL ein. Beispiel:/Store/Details/5.
 
-ASP.NET MVC ermöglicht es uns, problemlos erreichen, ohne etwas konfigurieren zu müssen. Routing ASP.NETs Standardkonvention ist, das eine URL-Segment nach dem Namen der Aktionsmethode als einen Parameter namens "ID" zu behandeln. Wenn Ihrer Aktionsmethode einen Parameter namens-ID hat wird ASP.NET MVC automatisch das URL-Segment für Sie als Parameter übergeben.
+Mit ASP.NET MVC können wir dies problemlos tun, ohne dass Sie etwas konfigurieren müssen. Die Standard Routing Konvention von ASP.NET MVC besteht darin, das Segment einer URL nach dem Namen der Aktionsmethode als Parameter mit dem Namen "ID" zu behandeln. Wenn die Aktionsmethode einen Parameter mit dem Namen ID hat, übergibt ASP.NET MVC das URL-Segment automatisch als Parameter an Sie.
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample5.cs)]
 
-Führen Sie die Anwendung, und navigieren Sie zu /Store/Details/5:
+Führen Sie die Anwendung aus, und navigieren Sie zu/Store/Details/5:
 
 ![](mvc-music-store-part-2/_static/image7.png)
 
-Betrachten wir nun, was wir bisher gemacht haben:
+Wir wollen uns nun weitermachen, was wir bisher getan haben:
 
-- Wir haben ein neues ASP.NET MVC-Projekt in Visual Web Developer erstellt.
-- Wir haben die grundlegenden Ordnerstruktur einer ASP.NET MVC-Anwendung erläutert.
-- Wir haben wie unsere Website, die mithilfe von ASP.NET Development Server ausgeführt werden gelernt.
-- Wir haben zwei Controller-Klassen erstellt: einen HomeController, und eine StoreController
-- Wir haben Aktionsmethoden unsere-Controller hinzugefügt, das auf URL-Anforderungen reagieren und Text an den Browser zurück.
+- Wir haben in Visual Web Developer ein neues ASP.NET MVC-Projekt erstellt.
+- Wir haben die grundlegende Ordnerstruktur einer ASP.NET MVC-Anwendung erläutert.
+- Wir haben gelernt, wie unsere Website mithilfe der ASP.NET Development Server
+- Wir haben zwei Controller Klassen erstellt: einen HomeController und einen StoreController.
+- Wir haben unseren Controllern Aktionsmethoden hinzugefügt, die auf URL-Anforderungen reagieren und Text an den Browser zurückgeben.
 
 > [!div class="step-by-step"]
 > [Zurück](mvc-music-store-part-1.md)

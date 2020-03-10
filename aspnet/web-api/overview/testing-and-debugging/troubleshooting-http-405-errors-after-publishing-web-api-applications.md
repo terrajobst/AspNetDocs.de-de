@@ -9,11 +9,11 @@ ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
 ms.openlocfilehash: 1b47f1ade3619cfd010260352f6a96985ab3598b
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445709"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447027"
 ---
 # <a name="troubleshoot-web-api2-apps-that-work-in-visual-studio-and-fail-on-a-production-iis-server"></a>Problembehandlung bei Web api2-apps, die in Visual Studio funktionieren und auf einem Produktions-IIS-Server fehlschlagen
 
@@ -29,23 +29,23 @@ Web-API-Apps verwenden in der Regel mehrere HTTP-Verben: Get, Post, Put, DELETE 
 
 ## <a name="what-causes-http-405-errors"></a>Was verursacht http 405-Fehler?
 
-Der erste Schritt, um zu lernen, wie http 405-Fehler behoben werden, besteht darin, zu verstehen, was ein HTTP 405-Fehler eigentlich bedeutet. Das primäre Dokument für http ist [RFC 2616](http://www.ietf.org/rfc/rfc2616.txt), das den HTTP-Statuscode http 405 als ***Methode***definiert und den Statuscode in einer Situation beschreibt, in der &quot;der in der Anforderungs Zeile angegebenen Methode nicht zulässig ist. Ressource, die durch den Anforderungs-URI identifiziert wird.&quot; bedeutet, dass das HTTP-Verb für die spezifische URL, die ein HTTP-Client angefordert hat, nicht zulässig ist.
+Der erste Schritt, um zu lernen, wie http 405-Fehler behoben werden, besteht darin, zu verstehen, was ein HTTP 405-Fehler eigentlich bedeutet. Das primäre Dokument für http ist [RFC 2616](http://www.ietf.org/rfc/rfc2616.txt), das den HTTP-Statuscode http 405 als ***Methode***definiert und den Statuscode in einer Situation beschreibt, in der &quot;der in der Anforderungs Zeile angegebenen Methode für die durch den Anforderungs-URI angegebene Ressource nicht zulässig ist.&quot; bedeutet, dass das HTTP-Verb für die spezifische URL, die ein HTTP-Client angefordert hat, nicht zulässig ist.
 
 Im folgenden finden Sie einige der am häufigsten verwendeten HTTP-Methoden, die in RFC 2616, RFC 4918 und RFC 5789 definiert sind:
 
 | HTTP-Methode | Beschreibung |
 | --- | --- |
-| **Erhalten** | Diese Methode wird verwendet, um Daten aus einem URI abzurufen, und wahrscheinlich die am häufigsten verwendete HTTP-Methode. |
+| **GET** | Diese Methode wird verwendet, um Daten aus einem URI abzurufen, und wahrscheinlich die am häufigsten verwendete HTTP-Methode. |
 | **HEAD** | Diese Methode ähnelt der Get-Methode, mit dem Unterschied, dass Sie die Daten nicht aus dem Anforderungs-URI abruft, sondern lediglich den HTTP-Status abruft. |
-| **Bereitstellen** | Diese Methode wird normalerweise verwendet, um neue Daten an den URI zu senden. Post wird häufig zum Übermitteln von Formulardaten verwendet. |
-| **Stellte** | Diese Methode wird normalerweise zum Senden von Rohdaten an den URI verwendet. Put wird häufig verwendet, um JSON-oder XML-Daten an Web-API-Anwendungen zu senden. |
+| **POST** | Diese Methode wird normalerweise verwendet, um neue Daten an den URI zu senden. Post wird häufig zum Übermitteln von Formulardaten verwendet. |
+| **PUT** | Diese Methode wird normalerweise zum Senden von Rohdaten an den URI verwendet. Put wird häufig verwendet, um JSON-oder XML-Daten an Web-API-Anwendungen zu senden. |
 | **DELETE** | Diese Methode wird verwendet, um Daten aus einem URI zu entfernen. |
 | **OPTIONS** | Diese Methode wird normalerweise verwendet, um die Liste der HTTP-Methoden abzurufen, die für einen URI unterstützt werden. |
 | **Verschieben Kopieren** | Diese beiden Methoden werden mit WebDAV verwendet, und Ihr Zweck ist selbsterklärend. |
 | **MKCOL** | Diese Methode wird mit WebDAV verwendet und wird verwendet, um eine Auflistung (z. b. ein Verzeichnis) am angegebenen URI zu erstellen. |
 | **PROPFIND PROPPATCH** | Diese beiden Methoden werden mit WebDAV verwendet und zum Abfragen und Festlegen von Eigenschaften für einen URI verwendet. |
 | **Sperre aufheben** | Diese beiden Methoden werden mit WebDAV verwendet und zum Sperren bzw. Entsperren der durch den Anforderungs-URI identifizierten Ressource bei der Erstellung verwendet. |
-| **Patch** | Diese Methode wird verwendet, um eine vorhandene HTTP-Ressource zu ändern. |
+| **PATCH** | Diese Methode wird verwendet, um eine vorhandene HTTP-Ressource zu ändern. |
 
 Wenn eine dieser HTTP-Methoden für die Verwendung auf dem Server konfiguriert ist, antwortet der Server mit dem HTTP-Status und anderen Daten, die für die Anforderung geeignet sind. (Eine Get-Methode kann z. b. eine HTTP 200 ***OK*** -Antwort erhalten, und eine Put-Methode kann eine ***http 201-*** Antwort erhalten.)
 
@@ -69,7 +69,7 @@ In diesem Beispiel hat der HTTP-Client eine gültige JSON-Anforderung an die URL
 
 ## <a name="resolve-http-405-errors"></a>Beheben von http 405-Fehlern
 
-Es gibt mehrere Gründe, warum ein bestimmtes HTTP-Verb möglicherweise nicht zulässig ist, aber es gibt ein primäres Szenario, bei dem es sich um die führende Ursache dieses Fehlers in IIS handelt: für dasselbe Verb/dieselbe Methode sind mehrere Handler definiert, und einer der Handler blockiert den erwarteten Handler von die Anforderung wird verarbeitet. Mithilfe der Erläuterung verarbeitet IIS die Handler von der ersten bis zum letzten, basierend auf den Bestell handlereinträgen in den Dateien " *ApplicationHost. config* " und " *Web. config* ", in denen die erste passende Kombination aus Pfad, Verb, Ressource usw. verwendet wird, um die Anforderung.
+Es gibt mehrere Gründe, warum ein bestimmtes HTTP-Verb möglicherweise nicht zulässig ist, aber ein primäres Szenario ist die häufigste Ursache für diesen Fehler in IIS: für dasselbe Verb/dieselbe Methode sind mehrere Handler definiert, und einer der Handler blockiert die Verarbeitung der Anforderung durch den erwarteten Handler. Mithilfe der Erläuterung verarbeitet IIS die Handler von der ersten bis zum letzten, basierend auf den Bestell handlereinträgen in den Dateien " *ApplicationHost. config* " und " *Web. config* ", in denen die erste passende Kombination aus Pfad, Verb, Ressource usw. verwendet wird, um die Anforderung zu verarbeiten.
 
 Das folgende Beispiel ist ein Auszug aus einer *ApplicationHost. config* -Datei für einen IIS-Server, der einen HTTP 405-Fehler zurückgegeben hat, wenn die Put-Methode verwendet wird, um Daten an eine Web-API-Anwendung zu senden. In diesem Auszug werden mehrere HTTP-Handler definiert, und jeder Handler verfügt über einen anderen Satz von HTTP-Methoden, für die er konfiguriert ist. der letzte Eintrag in der Liste ist der statische Inhalts Handler, der der Standard Handler ist, der verwendet wird, nachdem die anderen Handler ein chanc verwendet haben. e zum Untersuchen der Anforderung:
 

@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
-title: Routing in ASP.NET Web-API | Microsoft-Dokumentation
+title: Routing in ASP.net-Web-API | Microsoft-Dokumentation
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -9,82 +9,82 @@ ms.assetid: 0675bdc7-282f-4f47-b7f3-7e02133940ca
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 85862c094cc54365267b1f21e68d235a15519cda
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419235"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449247"
 ---
-# <a name="routing-in-aspnet-web-api"></a>Routing in ASP.NET Web-API
+# <a name="routing-in-aspnet-web-api"></a>Routing in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Artikel wird beschrieben, wie ASP.NET Web-API die HTTP-Anforderungen an Controller weitergeleitet.
+In diesem Artikel wird beschrieben, wie ASP.net-Web-API HTTP-Anforderungen an Controller weiterleitet.
 
 > [!NOTE]
-> Wenn Sie mit ASP.NET MVC vertraut sind, ist ein routing der Web-API-MVC-routing sehr ähnlich. Der Hauptunterschied besteht darin, dass die Web-API die HTTP-Verb, nicht den URI-Pfad verwendet, um die Aktion auswählen. Sie können auch die MVC-Stil-routing in Web-API verwenden. In diesem Artikel werden keine Kenntnisse von ASP.NET MVC vorausgesetzt.
+> Wenn Sie mit ASP.NET MVC vertraut sind, ähnelt das Web-API-Routing sehr dem MVC-Routing. Der Hauptunterschied besteht darin, dass die Web-API das HTTP-Verb und nicht den URI-Pfad verwendet, um die Aktion auszuwählen. Sie können auch das MVC-Routing in der Web-API verwenden. In diesem Artikel wird davon ausgegangen, dass keine Kenntnisse über ASP.NET MVC vorhanden sind.
 
-## <a name="routing-tables"></a>Routingtabellen
+## <a name="routing-tables"></a>Routing Tabellen
 
-In ASP.NET Web-API eine *Controller* ist eine Klasse, die HTTP-Anforderungen verarbeitet. Die öffentlichen Methoden des Controllers aufgerufen werden *Aktionsmethoden* oder einfach *Aktionen*. Wenn die Web-API-Framework eine Anforderung empfängt, leitet sie die Anforderung mit einer Aktion.
+In ASP.net-Web-API ist ein *Controller* eine Klasse, die HTTP-Anforderungen verarbeitet. Die öffentlichen Methoden des Controllers werden als *Aktionsmethoden* oder einfach als *Aktionen*bezeichnet. Wenn das Web-API-Framework eine Anforderung empfängt, leitet es die Anforderung an eine Aktion weiter.
 
-Um zu bestimmen, welche Aktion aufrufen, das Framework verwendet eine *Routingtabelle*. Die Visual Studio-Projektvorlage für Web-API erstellt eine Standardroute:
+Um zu ermitteln, welche Aktion aufgerufen werden soll, verwendet das Framework eine *Routing Tabelle*. Die Visual Studio-Projektvorlage für die Web-API erstellt eine Standardroute:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample1.cs)]
 
-Diese Route wird definiert, der *WebApiConfig.cs* -Datei, die in platziert wird die *App\_starten* Verzeichnis:
+Diese Route wird in der Datei *WebApiConfig.cs* definiert, die in der *App\_Start* -Verzeichnisses abgelegt wird:
 
 ![](routing-in-aspnet-web-api/_static/image1.png)
 
-Weitere Informationen zu den `WebApiConfig` Klasse, finden Sie unter [Konfigurieren von ASP.NET Web-API](../advanced/configuring-aspnet-web-api.md).
+Weitere Informationen zum `WebApiConfig`-Klasse finden Sie unter [Konfigurieren von ASP.net-Web-API](../advanced/configuring-aspnet-web-api.md).
 
-Wenn Sie Web-API selbst hosten, müssen Sie die Routingtabelle festlegen, direkt auf die `HttpSelfHostConfiguration` Objekt. Weitere Informationen finden Sie unter [selbst hosten einer Web-API](../older-versions/self-host-a-web-api.md).
+Wenn Sie die Web-API selbst hosten, müssen Sie die Routing Tabelle direkt auf das `HttpSelfHostConfiguration`-Objekt festlegen. Weitere Informationen finden Sie unter [Self-Hosting einer Web-API](../older-versions/self-host-a-web-api.md).
 
-Jeder Eintrag in der Routingtabelle enthält eine *routenvorlage*. Die Route-Standardvorlage für Web-API ist &quot;api / {Controller} / {Id}&quot;. In dieser Vorlage &quot;api&quot; ist ein literal OData-Pfadsegment, und klicken Sie auf {Controller} und {Id} Platzhaltervariablen sind.
+Jeder Eintrag in der Routing Tabelle enthält eine *Routen Vorlage*. Die Standardrouten Vorlage für die Web-API ist &quot;API/{Controller}/{ID}&quot;. In dieser Vorlage ist &quot;API-&quot; ein literales Pfad Segment, und {Controller} und {ID} sind Platzhalter Variablen.
 
-Wenn die Web-API-Framework eine HTTP-Anforderung empfängt, versucht, den URI für eine der routenvorlagen in der Routingtabelle überein. Wenn keine Route entspricht, erhält der Client einen 404-Fehler. Die folgenden URIs entspricht z. B. die Standardroute:
+Wenn das Web-API-Framework eine HTTP-Anforderung empfängt, versucht es, den URI mit einer der Routen Vorlagen in der Routing Tabelle abzugleichen. Wenn keine Route übereinstimmt, empfängt der Client einen 404-Fehler. Die folgenden URIs entsprechen z. b. der Standardroute:
 
 - /api/contacts
 - /api/contacts/1
-- /API/Products/gizmo1
+- /api/products/gizmo1
 
-Allerdings der folgende URI stimmt nicht überein, da es fehlen die &quot;api&quot; Segment:
+Der folgende URI stimmt jedoch nicht, da der &quot;-API-&quot; Segment fehlt:
 
 - /contacts/1
 
 > [!NOTE]
-> Der Grund für die Verwendung von "api" in der Route ist Konflikte mit ASP.NET MVC-Routings zu vermeiden. Auf diese Weise kann man &quot;/kontaktiert&quot; wechseln Sie zu einem MVC-Controller und &quot;/api/Contacts&quot; wechseln Sie zu einem Web-API-Controller. Wenn Sie diese Konvention nicht gefällt, können Sie natürlich die Standardroutingtabelle ändern.
+> Der Grund für die Verwendung von "API" in der Route besteht darin, Konflikte mit ASP.NET MVC-Routing zu vermeiden. Auf diese Weise können Sie &quot;/Contacts-&quot; zu einem MVC-Controller wechseln und &quot;/API/Contacts-&quot; zu einem Web-API-Controller wechseln. Wenn Ihnen diese Konvention nicht gefällt, können Sie natürlich auch die Standardrouten Tabelle ändern.
 
-Wenn eine übereinstimmende Route gefunden wurde, wählt Web-API-Controller und die Aktion:
+Wenn eine übereinstimmende Route gefunden wird, wählt die Web-API den Controller und die Aktion aus:
 
-- Um den Controller zu suchen, Web-API fügt &quot;Controller&quot; auf den Wert des der *{Controller}* Variable.
-- Um die Aktion zu suchen, Web-API untersucht das HTTP-Verb, und sucht dann nach einer Aktion, deren Name mit diesem Namen der HTTP-Verbs beginnt. Eine GET-Anforderung, z. B. Web-API sieht für eine Aktion mit dem Präfix &quot;erhalten&quot;, z. B. &quot;GetContact&quot; oder &quot;GetAllContacts&quot;. Diese Konvention gilt nur für abrufen, POST, PUT, DELETE, HEAD, Optionen und PATCHEN von Verben. Sie können andere HTTP-Verben aktivieren, auf dem Controller mithilfe von Attributen. Wir sehen später ein Beispiel.
-- Andere Platzhaltervariablen in der routenvorlage, z. B. *{Id},* Action-Parameter zugeordnet sind.
+- Um den Controller zu finden, fügt die Web-API &quot;Controller&quot; dem Wert der Variablen *{Controller}* hinzu.
+- Um die Aktion zu finden, untersucht die Web-API das HTTP-Verb und sucht dann nach einer Aktion, deren Name mit diesem http-Verb Namen beginnt. Beispielsweise sucht die Web-API mit einer GET-Anforderung nach einer Aktion, der &quot;Get&quot;vorangestellt ist, z. b. &quot;GetContact&quot; oder &quot;getallcontacts&quot;. Diese Konvention gilt nur für Get-, Post-, Put-, DELETE-, Head-, Options-und Patch-Verben. Sie können andere HTTP-Verben mithilfe von Attributen auf dem Controller aktivieren. Ein Beispiel hierfür wird später angezeigt.
+- Andere Platzhalter Variablen in der Routen Vorlage (z. b. *{ID}* ) werden Aktions Parametern zugeordnet.
 
-Sehen wir uns ein Beispiel. Nehmen wir an, dass Sie den folgenden Controller definieren:
+Schauen wir uns ein Beispiel an. Angenommen, Sie definieren den folgenden Controller:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample2.cs)]
 
-Hier sind einige möglichen HTTP-Anforderungen zusammen mit der Aktion, die für die einzelnen aufgerufen wird:
+Im folgenden finden Sie einige mögliche HTTP-Anforderungen zusammen mit der Aktion, die für jede aufgerufen wird:
 
-| HTTP Verb | URI-Pfad | Aktion | Parameter |
+| HTTP-Verb | URI-Pfad | Aktion | Parameter |
 | --- | --- | --- | --- |
-| GET | API/Produkte | GetAllProducts | *(keine)* |
+| GET | API/Produkte | Getallproducts | *gar* |
 | GET | API/Produkte/4 | GetProductById | 4 |
-| DELETE | API/Produkte/4 | DeleteProduct | 4 |
-| POST | API/Produkte | *(keine Übereinstimmung)* |  |
+| Delete | API/Produkte/4 | DeleteProduct | 4 |
+| POST | API/Produkte | *(keine Entsprechung)* |  |
 
-Beachten Sie, dass die *{Id}* -Segment des URI, falls vorhanden, zugeordnet ist die *Id* Parameter der Aktion. In diesem Beispiel ist der Controller definiert zwei GET-Methoden, mit einem *Id* Parameter und einen ohne Parameter.
+Beachten Sie, dass das *{ID}* -Segment des URIs, sofern vorhanden, dem *ID* -Parameter der Aktion zugeordnet ist. In diesem Beispiel definiert der Controller zwei Get-Methoden, eine mit einem *ID* -Parameter und eine ohne Parameter.
 
-Beachten Sie auch, die die POST-Anforderung fehl, da der Controller nicht definiert ist, eine &quot;Post... &quot; Methode.
+Beachten Sie außerdem, dass die Post-Anforderung fehlschlägt, da der Controller keine &quot;Post...&quot;-Methode definiert.
 
-## <a name="routing-variations"></a>Routing-Varianten
+## <a name="routing-variations"></a>Routing Variationen
 
-Im vorherigen Abschnitt beschrieben, die grundlegende Routingmechanismus von ASP.NET Web-API. Dieser Abschnitt beschreibt einige Varianten.
+Im vorherigen Abschnitt wurde der grundlegende Routing Mechanismus für ASP.net-Web-API beschrieben. In diesem Abschnitt werden einige Variationen beschrieben.
 
 ### <a name="http-verbs"></a>HTTP-Verben
 
-Anstatt die Namenskonvention für HTTP-Verben zu verwenden, können Sie explizit das HTTP-Verb für eine Aktion angeben, werden, indem die Aktionsmethode mit einem der folgenden Attribute:
+Anstatt die Benennungs Konvention für HTTP-Verben zu verwenden, können Sie das HTTP-Verb für eine Aktion explizit angeben, indem Sie die Aktionsmethode mit einem der folgenden Attribute versehen:
 
 - `[HttpGet]`
 - `[HttpPut]`
@@ -94,37 +94,37 @@ Anstatt die Namenskonvention für HTTP-Verben zu verwenden, können Sie explizit
 - `[HttpOptions]`
 - `[HttpPatch]`
 
-Im folgenden Beispiel die `FindProduct` Methode GET-Anforderungen zugeordnet ist:
+Im folgenden Beispiel wird die `FindProduct`-Methode GET-Anforderungen zugeordnet:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample3.cs)]
 
-Um mehrere HTTP-Verben für eine Aktion zu ermöglichen, oder um HTTP-Verben als GET, PUT, POST, DELETE, HEAD, Optionen und PATCH zu ermöglichen, verwenden die `[AcceptVerbs]` -Attribut, das eine Liste der HTTP-Verben akzeptiert.
+Verwenden Sie das `[AcceptVerbs]`-Attribut, das eine Liste von HTTP-Verben annimmt, um mehrere HTTP-Verben für eine Aktion zuzulassen oder um andere HTTP-Verben als Get, Put, Post, DELETE, Head, Options und Patch zuzulassen.
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample4.cs)]
 
 <a id="routing_by_action_name"></a>
-### <a name="routing-by-action-name"></a>Routing durch den Namen der Aktion
+### <a name="routing-by-action-name"></a>Routing nach Aktions Name
 
-Mit der Standard-routing-Vorlage verwendet die Web-API das HTTP-Verb zum Auswählen der Aktion. Allerdings können Sie auch eine Route erstellen, in dem der Name der Aktion im URI enthalten ist:
+Mit der Standard Routing Vorlage verwendet die Web-API das HTTP-Verb, um die Aktion auszuwählen. Sie können jedoch auch eine Route erstellen, bei der der Aktionsname im URI enthalten ist:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample5.cs)]
 
-In dieser routenvorlage die *{Action}* Parameternamen die Aktionsmethode im Controller. Verwenden Sie in diesem Format des Routings Attribute, um die zulässigen HTTP-Verben angeben. Nehmen wir beispielsweise an, dass Ihre Controller die folgende Methode verfügt:
+In dieser Routen Vorlage benennt der Parameter " *{Action}* " die Aktionsmethode auf dem Controller. Verwenden Sie bei diesem Routing Stil Attribute, um die zulässigen HTTP-Verben anzugeben. Nehmen Sie beispielsweise an, dass Ihr Controller die folgende Methode hat:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample6.cs)]
 
-In diesem Fall würde eine GET-Anforderung für "api/Produkte/Details/1" zum Zuordnen der `Details` Methode. Diese Art von routing ist vergleichbar mit ASP.NET MVC, und für eine RPC-Stil API eignet sich möglicherweise.
+In diesem Fall würde eine GET-Anforderung für "API/Products/Details/1" der `Details`-Methode zugeordnet werden. Diese Art des Routings ähnelt ASP.NET MVC und eignet sich möglicherweise für eine API im RPC-Stil.
 
-Sie können den Aktionsnamen überschreiben, indem die `[ActionName]` Attribut. Im folgenden Beispiel sind zwei Aktionen, die den zuordnen &quot;-api/Produkte/Miniaturansicht/*Id*. Eine GET unterstützt, und die andere POST unterstützt:
+Sie können den Aktions Namen überschreiben, indem Sie das `[ActionName]`-Attribut verwenden. Im folgenden Beispiel werden zwei Aktionen &quot;API/Products/Miniaturansicht/*ID*zugeordnet. Eine unterstützt Get und die andere unterstützt Post:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample7.cs)]
 
 ### <a name="non-actions"></a>Nicht-Aktionen
 
-Um zu verhindern, dass eine Methode abrufen als Aktion aufgerufen wird, verwenden Sie die `[NonAction]` Attribut. Dies signalisiert das Framework, dass die Methode keine Aktion, auch wenn sie andernfalls die Senderegeln übereinstimmen.
+Verwenden Sie das `[NonAction]`-Attribut, um zu verhindern, dass eine Methode als Aktion aufgerufen wird. Dies signalisiert dem Framework, dass es sich bei der Methode nicht um eine Aktion handelt, auch wenn Sie andernfalls den Routing Regeln entspricht.
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample8.cs)]
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-In diesem Thema bereitgestellten einen allgemeinen Überblick über die Weiterleitung an. Weitere Informationen finden Sie unter [Routing- und Aktionsauswahl](routing-and-action-selection.md), das beschreibt, genau wie das Framework einen URI zu einer Route übereinstimmt, wählt einen Controller und wählt dann die aufzurufende Aktion.
+Dieses Thema bietet eine allgemeine Übersicht über das Routing. Weitere Informationen finden Sie unter [Routing und Aktions Auswahl](routing-and-action-selection.md), die genau beschreiben, wie das Framework mit einem URI einer Route übereinstimmt, einen Controller auswählt und dann die aufzurufende Aktion auswählt.

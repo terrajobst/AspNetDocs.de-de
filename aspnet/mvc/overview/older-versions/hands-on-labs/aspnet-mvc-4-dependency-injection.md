@@ -1,219 +1,219 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
-title: ASP.NET MVC 4 – Abhängigkeitsinjektion | Microsoft-Dokumentation
+title: ASP.NET MVC 4-Abhängigkeitsinjektion | Microsoft-Dokumentation
 author: rick-anderson
-description: 'Hinweis: Diese praktische Übungseinheit wird davon ausgegangen, dass Sie über grundlegende Kenntnisse von ASP.NET MVC und ASP.NET MVC 4 haben. Wenn Sie nicht ASP.NET MVC 4-Filter, bevor wir Rec verwendet haben...'
+description: 'Hinweis: Diese praktische Übungseinheit setzt voraus, dass Sie über grundlegende Kenntnisse der Filter ASP.NET MVC und ASP.NET MVC 4 verfügen. Wenn Sie noch keine ASP.NET MVC 4-Filter verwendet haben, wird empfohlen...'
 ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
 ms.openlocfilehash: 15c9d4dcb9e2c6b9f6adf54d65d15737b32cca3b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129743"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451821"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 – Abhängigkeitsinjektion
 
-durch [Web Camps Team](https://twitter.com/webcamps)
+vom [Web Camps-Team](https://twitter.com/webcamps)
 
-[Herunterladen Sie Web Camps Training Kit](https://aka.ms/webcamps-training-kit)
+[Webcamps-Trainingskit herunterladen](https://aka.ms/webcamps-training-kit)
 
-Diese praktische Übungseinheit wird vorausgesetzt, dass grundlegende Kenntnisse der **ASP.NET MVC** und **ASP.NET MVC 4 filtert**. Wenn Sie nicht verwendet haben **ASP.NET MVC 4 filtert** vor, wir empfehlen Ihnen, sich mit Windows Live ID **Aktionsfilter in ASP.NET MVC benutzerdefinierte** Hands-On Lab.
+Diese praktische Übung geht davon aus, dass Sie über grundlegende Kenntnisse der Filter **ASP.NET MVC** und **ASP.NET MVC 4**verfügen. Wenn Sie noch keine **ASP.NET MVC 4-Filter** verwendet haben, empfiehlt es sich, das praktische Lab **ASP.NET MVC Custom Action Filters** zu überspringen.
 
 > [!NOTE]
-> Alle Beispielcode und Ausschnitte sind im Web Camps Trainingskit, erhältlich über enthalten [Versionen der Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Das Projekt, das speziell für dieses Lab finden Sie unter [Abhängigkeitsinjektion in ASP.NET MVC 4](https://github.com/Microsoft-Web/HOL-MVC4DependencyInjection).
+> Der gesamte Beispielcode und die Code Ausschnitte sind im Web Camps-Trainingskit enthalten, das in den [Releases Microsoft-Web/webcamptrainingkit](https://aka.ms/webcamps-training-kit)verfügbar ist. Das für dieses Lab spezifische Projekt ist unter [ASP.NET MVC 4-Abhängigkeitsinjektion](https://github.com/Microsoft-Web/HOL-MVC4DependencyInjection)verfügbar.
 
-In **objektorientierten Programmierung** -Paradigma Objekte zusammenarbeiten in einem Modell für die Zusammenarbeit, in denen es Mitwirkende und Benutzer. Natürlich generiert dieses Kommunikationsmodell Abhängigkeiten zwischen Objekten und Komponenten, die immer schwierig zu verwalten, wenn die Komplexität erhöht.
+Im **objektorientierten Programmier** Paradigma arbeiten Objekte in einem Zusammenarbeits Modell zusammen, in dem es Mitwirkende und Consumer gibt. Natürlich generiert dieses Kommunikationsmodell Abhängigkeiten zwischen Objekten und Komponenten und wird bei zunehmender Komplexität schwierig zu verwalten.
 
-![Klasse von Abhängigkeiten und Modellieren von Komplexität](aspnet-mvc-4-dependency-injection/_static/image1.png "Klasse Abhängigkeiten und Modellieren von Komplexität")
+![Klassen Abhängigkeiten und Modell Komplexität](aspnet-mvc-4-dependency-injection/_static/image1.png "Klassen Abhängigkeiten und Modell Komplexität")
 
-*Abhängigkeiten der Klasse und die Modellkomplexität*
+*Klassen Abhängigkeiten und Modell Komplexität*
 
-Sie haben wahrscheinlich schon die **Factorymuster** und die Trennung zwischen der Schnittstelle und die Implementierung, die mit Diensten, bei dem die Clientobjekte oft verantwortlich für die dienstidentifizierung.
+Sie haben wahrscheinlich das **Factorymuster** und die Trennung zwischen der Schnittstelle und der Implementierung mithilfe von Diensten gehört, bei denen die Client Objekte oft für die Dienst Identifizierung verantwortlich sind.
 
-Der Dependency Injection-Muster ist eine bestimmte Implementierung des Inversion of Control. **Inversion of Control (IoC) steuerungsumkehr** bedeutet, dass Objekte nicht andere Objekte erstellt werden, um ihre Arbeit zu erledigen, auf denen sie basieren. Stattdessen erhalten sie die Objekte, die sie aus einer externen Quelle (z. B. eine XML-Konfigurationsdatei) benötigen.
+Das Muster für die Abhängigkeitsinjektion ist eine bestimmte Implementierung der Inversion of Control. Die **Inversion of Control (IOC)** bedeutet, dass Objekte keine anderen Objekte erstellen, auf die Sie sich verlassen, um Ihre Arbeit zu erledigen. Stattdessen erhalten Sie die Objekte, die Sie benötigen, von einer externen Quelle (z. b. einer XML-Konfigurationsdatei).
 
-**Dependency Injection (DI)** bedeutet, dass dies geschieht ohne Eingreifen Objekt, in der Regel von einer Framework-Komponente, die Konstruktorparameter übergibt und legen Sie Eigenschaften fest.
+Die **Abhängigkeitsinjektion (di)** bedeutet, dass dies ohne den Objekt Eingriff erfolgt, normalerweise durch eine frameworkkomponente, die Konstruktorparameter übergibt und Eigenschaften festgelegt.
 
 <a id="The_Dependency_Injection_DI_Design_Pattern"></a>
-### <a name="the-dependency-injection-di-design-pattern"></a>Das Dependency Injection (DI)-Entwurfsmuster
+### <a name="the-dependency-injection-di-design-pattern"></a>Das Entwurfsmuster für die Abhängigkeitsinjektion (di)
 
-Das Ziel der Abhängigkeitsinjektion auf einer hohen Ebene ist, eine Clientklasse (z. B. *der dsmessages*) benötigt etwas, das eine Schnittstelle erfüllt (z. B. *IClub*). Ist es unerheblich, wie der konkrete Typ ist (z. B. *WoodClub, IronClub, WedgeClub* oder *PutterClub*), Personen, die behandelt werden sollen (z. B. eine gute *Caddy*). Der Abhängigkeitskonfliktlöser in ASP.NET MVC können Sie die Abhängigkeit Logik, die an anderer Stelle zu registrieren (z. B. einen Container oder ein *Behälter Kreuz*).
+Auf hoher Ebene besteht das Ziel der Abhängigkeitsinjektion darin, dass eine Client Klasse (z. b. *der Golfer*) etwas benötigt, das eine Schnittstelle erfüllt (z. b. *iclub*). Es ist nicht wichtig, dass der konkrete Typ (z. b. *woodclub, ironclub, wedgeclub* oder *putterclub*) von einem anderen Benutzer behandelt wird (z. b. ein guter *Caddy*). Mit dem Abhängigkeits Konflikt Löser in ASP.NET MVC können Sie Ihre Abhängigkeits Logik an einer anderen Stelle registrieren (z. b. in einem Container oder einer Sammlung *von Schlägern*).
 
-![Dependency Injection Diagramm](aspnet-mvc-4-dependency-injection/_static/image2.png "Dependency Injection-Abbildung")
+![Abhängigkeits Injection-Diagramm](aspnet-mvc-4-dependency-injection/_static/image2.png "Darstellung der Abhängigkeitsinjektion")
 
-*Dependency Injection - Golf-Beispiel*
+*Abhängigkeitsinjektion-Golf Analog*
 
-Die Vorteile der Verwendung von Dependency Injection-Muster und Inversion of Control, sind die folgenden:
+Die Verwendung von Abhängigkeits Injektions Mustern und Inversion der Kontrolle bietet folgende Vorteile:
 
-- Reduziert die Klassenkopplung
-- Erhöht die Wiederverwendung von code
-- Verbessert die codeverwaltbarkeit von
-- Verbessert die Anwendungstests
-
-> [!NOTE]
-> Abhängigkeitsinjektion mit Entwurfsmuster "abstrakte Factory" manchmal verglichen wird, aber es gibt ein geringfügigen Unterschied zwischen den beiden Ansätzen. DI ist ein Framework, hinter arbeiten, um Abhängigkeiten zu lösen, indem die Factorys und die registrierten Dienste aufrufen.
-
-Nun, da Sie den Dependency Injection-Muster verstanden haben, werden in dieser Übungseinheit erfahren Sie wie für die anzuwendende in ASP.NET MVC 4. Starten Sie mithilfe der Abhängigkeitsinjektion in die **Controller** eine Datenbank-Access-Dienst umfassen. Als Nächstes Sie Dependency Injection zum Anwenden der **Ansichten** , nutzen einen Dienst und Anzeigen von Informationen. Zum Schluss erweitern die DI auf ASP.NET MVC 4-Filter, Sie Einfügen eines benutzerdefinierten Aktionsfilters in der Projektmappe.
-
-In dieser praktischen Übungseinheit erfahren Sie, wie Sie:
-
-- Integrieren von ASP.NET MVC 4 mit Unity für Dependency Injection, die mithilfe von NuGet-Pakete
-- Dependency Injection in ASP.NET MVC-Controller verwenden
-- Dependency Injection in ASP.NET MVC-Ansicht verwenden
-- Verwenden Sie Dependency Injection in einem ASP.NET MVC-Aktionsfilter
+- Reduziert die Klassen Kopplung
+- Erhöht die Wiederverwendung von Code.
+- Verbesserte Code Wartbarkeit
+- Verbessert das Testen von Anwendungen
 
 > [!NOTE]
-> Diese Übungseinheit Unity.Mvc3 NuGet-Paket für die Auflösung von Abhängigkeiten verwendet, aber es ist möglich, alle Dependency Injection-Framework mit ASP.NET MVC 4 arbeiten anpassen.
+> Die Abhängigkeitsinjektion wird manchmal mit dem abstrakten Factoryentwurfsmuster verglichen, aber es gibt einen kleinen Unterschied zwischen beiden Ansätzen. Bei di gibt es ein Framework, mit dem Abhängigkeiten durch Aufrufen der Factorys und der registrierten Dienste gelöst werden können.
+
+Nachdem Sie das Muster für die Abhängigkeitsinjektion verstanden haben, erfahren Sie in diesem Lab, wie Sie es in ASP.NET MVC 4 anwenden können. Sie beginnen mit der Verwendung der Abhängigkeitsinjektion in den **Controllern** , um einen Datenbankzugriffs Dienst einzubeziehen. Als nächstes wenden Sie eine Abhängigkeitsinjektion auf die **Sichten** an, um einen Dienst zu nutzen und Informationen anzuzeigen. Schließlich erweitern Sie den di-Filter auf ASP.NET MVC 4-Filter und in der Lösung einen benutzerdefinierten Aktionsfilter.
+
+In dieser praktischen Übungseinheit erfahren Sie Folgendes:
+
+- Integrieren von ASP.NET MVC 4 in Unity für die Abhängigkeitsinjektion mithilfe von nuget-Paketen
+- Verwenden von Abhängigkeitsinjektion in einem ASP.NET-MVC-Controller
+- Abhängigkeitsinjektion innerhalb einer ASP.NET-MVC-Ansicht verwenden
+- Verwenden von Abhängigkeitsinjektion innerhalb eines ASP.NET MVC-Aktions Filters
+
+> [!NOTE]
+> Dieses Lab verwendet das Unity. Mvc3-nuget-Paket für die Abhängigkeitsauflösung, aber es ist möglich, jedes Framework für die Abhängigkeitsinjektion an ASP.NET MVC 4 anzupassen.
 
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Erforderliche Komponenten
+### <a name="prerequisites"></a>Voraussetzungen
 
-Sie benötigen Folgendes, um diese testumgebung abzuschließen:
+Zum Durchführen dieses Labs müssen Sie über Folgendes verfügen:
 
-- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder sogar eine höhere (Lesen [Anhang A](#AppendixA) Anleitungen zur Installation).
-
-<a id="Setup"></a>
+- [Microsoft Visual Studio Express 2012 für Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) oder Superior (Informationen zur Installation finden Sie in [Anhang A](#AppendixA) ).
 
 <a id="Setup"></a>
-### <a name="setup"></a>Setup
 
-**Installieren von Codeausschnitten**
+<a id="Setup"></a>
+### <a name="setup"></a>Einrichten
 
-Der Einfachheit halber ist Großteil des Codes, die entlang dieser Übungseinheit verwaltet werden soll als Codeausschnitte für Visual Studio verfügbar. So installieren Sie die Codeausschnitte ausführen **.\Source\Setup\CodeSnippets.vsi** Datei.
+**Installieren von Code Ausschnitten**
 
-Wenn Sie nicht mit dem Visual Studio Code Snippets und zu erfahren, wie Sie deren Verwendung vertraut sind, sehen Sie sich im Anhang in diesem Dokument &quot; [Anhang B: Verwenden von Codeausschnitten](#AppendixB)&quot;.
+Der Vorteil ist, dass ein Großteil des Codes, den Sie in diesem Lab verwalten, als Visual Studio-Code Ausschnitte verfügbar ist. Um die Code Ausschnitte zu installieren, führen Sie **.\source\setup\codesnippeer-.vsi** -Datei aus.
+
+Wenn Sie mit den Visual Studio Code Ausschnitten nicht vertraut sind und wissen möchten, wie Sie Sie verwenden können, finden Sie den Anhang dieses Dokuments &quot;[Anhang B: Verwenden von Code Ausschnitten](#AppendixB)&quot;.
 
 ---
 
 <a id="Exercises"></a>
 
 <a id="Exercises"></a>
-## <a name="exercises"></a>Übungen
+## <a name="exercises"></a>Exerzitien
 
-Diese praktische Übungseinheit besteht aus durch die folgenden Übungen:
+Diese praktische Übungseinheit besteht aus den folgenden Übungen:
 
 1. [Übung 1: Einfügen eines Controllers](#Exercise1)
-2. [Übung 2: Eine Ansicht einfügen](#Exercise2)
+2. [Übung 2: Einfügen einer Ansicht](#Exercise2)
 3. [Übung 3: Einfügen von Filtern](#Exercise3)
 
 > [!NOTE]
-> Jede Übung umfasst eine **End** Ordner mit der resultierenden Lösung, die Sie nach Abschluss der Übungen abrufen soll. Sie können diese Lösung als Leitfaden verwenden, bei Bedarf zusätzliche Hilfe bei der die Übungen durcharbeiten.
+> Jede Übung wird von einem **endordner** begleitet, der die sich ergebende Lösung enthält, die Sie nach Abschluss der Übungen erhalten. Sie können diese Lösung als Leitfaden verwenden, wenn Sie zusätzliche Hilfe beim Durcharbeiten der Übungen benötigen.
 
-Geschätzte Zeit für diese testumgebung abzuschließen: **30 Minuten**.
+Geschätzte Zeit bis zum Abschluss dieses Labs: **30 Minuten**.
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Injecting_a_Controller"></a>
-### <a name="exercise-1-injecting-a-controller"></a>Übung 1: Einfügen eines Controllers
+### <a name="exercise-1-injecting-a-controller"></a>Übung 1: Einfügen eines Controllers
 
-In dieser Übung lernen Sie, wie Dependency Injection in ASP.NET MVC-Controller verwendet werden, durch die Integration von Unity unter Verwendung eines NuGet-Pakets. Aus diesem Grund umfasst Sie Dienste in Ihre Controller MvcMusicStore, um die Logik von der Datenzugriff zu trennen. Die Dienste erstellt eine neue Abhängigkeit im controllerkonstruktor, der aufgelöst wird mithilfe der Abhängigkeitsinjektion mit Hilfe der **Unity**.
+In dieser Übung erfahren Sie, wie Sie die Abhängigkeitsinjektion in ASP.NET-MVC-Controllern verwenden, indem Sie Unity mithilfe eines nuget-Pakets integrieren. Aus diesem Grund werden Sie Dienste in Ihre mvcmusicstore-Controller einschließen, um die Logik vom Datenzugriff zu trennen. Die Dienste erstellen eine neue Abhängigkeit im controllerkonstruktor, die mithilfe von "Abhängigkeitsinjektion" mit der Hilfe von **Unity**aufgelöst wird.
 
-Dadurch erfahren Sie, wie, sind flexibler und einfacher zu verwalten und Testen weniger verbundene Anwendungen zu generieren. Außerdem lernen Sie, wie Sie ASP.NET MVC mit Unity zu integrieren.
+Dieser Ansatz zeigt Ihnen, wie Sie weniger gekoppelte Anwendungen generieren, die flexibler und leichter zu verwalten und zu testen sind. Außerdem erfahren Sie, wie Sie ASP.NET MVC in Unity integrieren.
 
 <a id="About_StoreManager_Service"></a>
-#### <a name="about-storemanager-service"></a>Informationen zu StoreManager Service
+#### <a name="about-storemanager-service"></a>Informationen zum StoreManager-Dienst
 
-Die MVC Music Store jetzt in der Begin-Lösung bereitgestellt enthält einen Dienst, der die Store-Controller-Daten, die mit dem Namen verwaltet **StoreService**. Im folgenden finden Sie die Store-dienstimplementierung. Beachten Sie, dass alle Methoden modellentitäten zurückgeben.
+Der in der Lösung "BEGIN" bereitgestellte MVC Music Store enthält jetzt einen Dienst, der die Store Controller-Daten mit dem Namen " **storeservice**" verwaltet. Unten finden Sie die Store Service-Implementierung. Beachten Sie, dass alle Methoden Modell Entitäten zurückgeben.
 
 [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample1.cs)]
 
-**StoreController** von der Begin Projektmappe jetzt nutzt **StoreService**. Alle Datenverweise wurden aus entfernt **StoreController**, und nun möglich, ändern, den aktuellen Datenzugriffsanbieter ohne jede Methode, die verbraucht **StoreService**.
+**StoreController** von der BEGIN-Lösung verwendet nun **storeservice**. Alle Daten Verweise wurden aus **StoreController**entfernt und können jetzt den aktuellen Datenzugriffs Anbieter ändern, ohne eine Methode zu ändern, die **storeservice**beansprucht.
 
-Finden Sie nachfolgend die **StoreController** Implementierung hat eine Abhängigkeit mit **StoreService** im Klassenkonstruktor.
+Unten sehen Sie, dass die **StoreController** -Implementierung über eine Abhängigkeit mit **storeservice** innerhalb des Klassenkonstruktors verfügt.
 
 > [!NOTE]
-> Die Abhängigkeit eingeführt, die in dieser Übung bezieht sich auf **Inversion of Control** (IoC).
+> Die in dieser Übung eingeführte Abhängigkeit bezieht sich auf die **Inversion of Control** (IOC).
 > 
-> Die **StoreController** Klassenkonstruktor empfängt eine **IStoreService** Typparameter, der zum Ausführen von Dienstaufrufe von innerhalb der Klasse erforderlich ist. Allerdings **StoreController** implementiert nicht den Standardkonstruktor (ohne Parameter), die jedem Controller zum Arbeiten mit ASP.NET MVC.
+> Der **StoreController** -Klassenkonstruktor empfängt einen **istoreservice** -Typparameter, der für die Durchführung von Dienst aufrufen aus der-Klasse erforderlich ist. **StoreController** implementiert jedoch nicht den Standardkonstruktor (ohne Parameter), den jeder Controller für die Arbeit mit ASP.NET MVC benötigen muss.
 > 
-> Um die Abhängigkeit zu beheben, muss der Controller erstellt werden, indem eine abstrakte Factory (eine Klasse, die jedes Objekt des angegebenen Typs zurückgibt).
+> Um die Abhängigkeit aufzulösen, muss der Controller von einer abstrakten Factory (einer Klasse, die ein beliebiges Objekt des angegebenen Typs zurückgibt) erstellt werden.
 
 [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample2.cs)]
 
 > [!NOTE]
-> Sie erhalten einen Fehler, wenn die Klasse versucht, die StoreController zu erstellen, ohne das Dienstobjekt senden, wie es keinen parameterloser Konstruktor deklariert gibt.
+> Sie erhalten eine Fehlermeldung, wenn die Klasse versucht, StoreController zu erstellen, ohne das Dienst Objekt zu senden, da kein Parameter loser Konstruktor deklariert wurde.
 
 <a id="Ex1Task1"></a>
 
 <a id="Task_1_-_Running_the_Application"></a>
 #### <a name="task-1---running-the-application"></a>Aufgabe 1: Ausführen der Anwendung
 
-In dieser Aufgabe führen Sie die Begin-Anwendung, die den Dienst in den Store-Controller enthält, die den Datenzugriff von der Anwendungslogik trennt.
+In dieser Aufgabe führen Sie die BEGIN-Anwendung aus, die den-Dienst in den Speicher Controller einschließt, der den Datenzugriff von der Anwendungslogik trennt.
 
-Wenn die Anwendung ausgeführt wird, erhalten Sie eine Ausnahme aus, wie der Controller-Dienst nicht als Parameter, wird standardmäßig übergeben wird:
+Wenn Sie die Anwendung ausführen, erhalten Sie eine Ausnahme, da der Controller Dienst nicht standardmäßig als Parameter übergeben wird:
 
-1. Öffnen der **beginnen** Lösung befindet sich in **Source\Ex01 einfügen Controller\Begin**.
+1. Öffnen Sie die Projekt Mappe " **Begin** " in **source\ex01-Input controller\begin**.
 
-   1. Sie müssen einige fehlende NuGet-Pakete herunterladen. bevor Sie fortfahren. Zu diesem Zweck klicken Sie auf die **Projekt** Menü **NuGet-Pakete verwalten**.
-   2. In der **NuGet-Pakete verwalten** Dialogfeld klicken Sie auf **wiederherstellen** um das Herunterladen fehlender Pakete.
-   3. Abschließend erstellen Sie die Projektmappe, indem Sie auf **erstellen** | **Projektmappe**.
+   1. Sie müssen einige fehlende nuget-Pakete herunterladen, bevor Sie den Vorgang fortsetzen. Klicken Sie hierzu auf das Menü **Projekt** , und wählen Sie **nuget-Pakete verwalten**aus.
+   2. Klicken Sie im Dialogfeld **nuget-Pakete verwalten** auf **Wiederherstellen** , um fehlende Pakete herunterzuladen.
+   3. Erstellen Sie abschließend die Projekt Mappe, indem Sie auf **Build** ** | Projekt Mappe erstellen klicken**.
 
       > [!NOTE]
-      > Einer der Vorteile der Verwendung von NuGet ist, dass Sie nicht alle Bibliotheken in Ihrem Projekt, Versand Verringern der Projektgröße. Mit NuGet Power Tools können werden durch Angabe von Versionen des Pakets in der Datei "Packages.config" Sie alle erforderlichen Bibliotheken das erstmalige herunterladen, die, das Sie das Projekt ausführen, können. Deshalb müssen Sie diese Schritte ausgeführt werden, nach dem Öffnen einer vorhandenen Lösung aus dieser Übungseinheit wird.
-2. Drücken Sie **STRG + F5** um die Anwendung ohne Debuggen auszuführen. Sie erhalten die Fehlermeldung &quot; **kein parameterloser Konstruktor für dieses Objekt definierten**&quot;:
+      > Einer der Vorteile der Verwendung von nuget besteht darin, dass Sie nicht alle Bibliotheken in Ihrem Projekt liefern müssen, um die Projektgröße zu verringern. Mit nuget Power Tools können Sie durch Angabe der Paketversionen in der Datei "Packages. config" alle erforderlichen Bibliotheken herunterladen, wenn Sie das Projekt zum ersten Mal ausführen. Aus diesem Grund müssen Sie diese Schritte ausführen, nachdem Sie eine vorhandene Projekt Mappe in diesem Lab geöffnet haben.
+2. Drücken Sie **STRG + F5** , um die Anwendung ohne Debuggen auszuführen. Sie erhalten die Fehlermeldung, &quot;**kein Parameter loser Konstruktor für dieses Objekt&quot;definiert** ist:
 
-    ![Fehler beim Ausführen von ASP.NET MVC-Begin-Anwendung](aspnet-mvc-4-dependency-injection/_static/image3.png "Fehler während der Ausführung beginnen ASP.NET MVC-Anwendung")
+    ![Fehler beim Ausführen der ASP.NET MVC-BEGIN-Anwendung.](aspnet-mvc-4-dependency-injection/_static/image3.png "Fehler beim Ausführen der ASP.NET MVC-BEGIN-Anwendung.")
 
-    *Fehler beim Ausführen von ASP.NET MVC-Begin-Anwendung*
+    *Fehler beim Ausführen der ASP.NET MVC-BEGIN-Anwendung.*
 3. Schließen Sie den Browser.
 
-Arbeiten Sie in den folgenden Schritten auf die Music Store-Projektmappe, die Abhängigkeit einzufügen, die diesem Controller benötigt.
+In den folgenden Schritten arbeiten Sie mit der Music Store-Projekt Mappe zusammen, um die Abhängigkeit, die dieser Controller benötigt, einzufügen.
 
 <a id="Ex1Task2"></a>
 
 <a id="Task_2_-_Including_Unity_into_MvcMusicStore_Solution"></a>
-#### <a name="task-2---including-unity-into-mvcmusicstore-solution"></a>Aufgabe 2 – einschließlich Unity in MvcMusicStore-Lösung
+#### <a name="task-2---including-unity-into-mvcmusicstore-solution"></a>Aufgabe 2: einschließen von Unity in eine mvcmusicstore-Lösung
 
-In dieser Aufgabe enthält **Unity.Mvc3** NuGet-Paket mit der Lösung.
+In dieser Aufgabe fügen Sie das nuget-Paket " **Unity. Mvc3** " in die Projekt Mappe ein.
 
 > [!NOTE]
-> Unity.Mvc3 Paket wurde für ASP.NET MVC 3 entwickelt, aber es ist vollständig kompatibel mit ASP.NET MVC 4.
+> Das Unity. Mvc3-Paket wurde für ASP.NET MVC 3 entwickelt, ist aber vollständig mit ASP.NET MVC 4 kompatibel.
 > 
-> Unity für die Instanz wird von einer einfachen und erweiterbaren Container für Abhängigkeitsinjektion mit optionalem Support und Abfangen von Typen. Es ist ein universell einsetzbarer Container für die Verwendung in eine beliebige Art von .NET-Anwendung. Es enthält alle allgemeinen Funktionen finden Sie in der Dependency Injection Mechanismen, einschließlich: Erstellen von Objekten, die Abstraktion von Anforderungen durch Angeben von Abhängigkeiten auf der Common Language Runtime und Flexibilität durch verzögern der Konfigurations der Komponente auf den Container.
+> Unity ist ein schlanker, erweiterbarer Abhängigkeits Injection-Container mit optionaler Unterstützung für Instanzen und typabfang. Dabei handelt es sich um einen allgemeinen Container zur Verwendung in beliebigen .NET-Anwendungs Typen. Es bietet alle allgemeinen Features, die in Mechanismen für die Abhängigkeitsinjektion enthalten sind: Objekt Erstellung, Abstraktion von Anforderungen durch Angeben von Abhängigkeiten zur Laufzeit und Flexibilität, indem die Komponenten Konfiguration auf den Container verschoben wird.
 
-1. Installieren Sie **Unity.Mvc3** NuGet-Paket in der **MvcMusicStore** Projekt. Zu diesem Zweck öffnen Sie die **-Paket-Manager-Konsole** aus **Ansicht** | **Other Windows**.
-2. Führen Sie den folgenden Befehl ein.
+1. Installieren Sie das nuget-Paket " **Unity. Mvc3** " im **mvcmusicstore** -Projekt. Öffnen Sie hierzu die Paket- **Manager-Konsole** in der **Ansicht** | **anderen Fenstern**.
+2. Führen Sie den folgenden Befehl aus.
 
     PMC
 
     [!code-powershell[Main](aspnet-mvc-4-dependency-injection/samples/sample3.ps1)]
 
-    ![Installieren von NuGet-Paket Unity.Mvc3](aspnet-mvc-4-dependency-injection/_static/image4.png "Unity.Mvc3 NuGet-Paket installieren")
+    ![Installieren des Unity. Mvc3-nuget-Pakets](aspnet-mvc-4-dependency-injection/_static/image4.png "Installieren des Unity. Mvc3-nuget-Pakets")
 
-    *Installieren von NuGet-Paket Unity.Mvc3*
-3. Sobald die **Unity.Mvc3** -Paket installiert ist, untersuchen Sie die Dateien und Ordner, die sie automatisch hinzugefügt, um die Unity-Konfiguration zu vereinfachen.
+    *Installieren des Unity. Mvc3-nuget-Pakets*
+3. Nachdem das **Unity. Mvc3** -Paket installiert wurde, untersuchen Sie die Dateien und Ordner, die automatisch hinzugefügt werden, um die Unity-Konfiguration zu vereinfachen.
 
-    ![Unity.Mvc3-Paket installiert](aspnet-mvc-4-dependency-injection/_static/image5.png "Unity.Mvc3-Pakets installiert")
+    ![Unity. Mvc3-Paket installiert](aspnet-mvc-4-dependency-injection/_static/image5.png "Unity. Mvc3-Paket installiert")
 
-    *Unity.Mvc3-Pakets installiert*
+    *Unity. Mvc3-Paket installiert*
 
 <a id="Ex1Task3"></a>
 
 <a id="Task_3_-_Registering_Unity_in_Globalasaxcs_Application_Start"></a>
-#### <a name="task-3---registering-unity-in-globalasaxcs-applicationstart"></a>Aufgabe 3: Registrieren von Unity in "Global.asax.cs" Anwendung\_starten
+#### <a name="task-3---registering-unity-in-globalasaxcs-application_start"></a>Aufgabe 3: Registrieren von Unity in der Global.asax.cs-Anwendung\_Start
 
-In dieser Aufgabe aktualisieren Sie die **Anwendung\_starten** Methode befindet sich in **"Global.asax.cs"** den Unity-Bootstrapper-Initialisierer aufrufen und aktualisieren Sie dann auf die Bootstrapper-Datei registrieren der Dienst und der Controller, die Sie für die Abhängigkeitsinjektion verwenden.
+In dieser Aufgabe aktualisieren Sie die **Anwendung\_Start** -Methode in **Global.asax.cs** , um den Unity-bootstrapperinitialisierer aufzurufen, und aktualisieren anschließend die Bootstrapperdatei, die den Dienst und den Controller registriert, den Sie für die Abhängigkeitsinjektion verwenden werden.
 
-1. Nun werden Sie von der Bootstrapper die Datei, die den Unity-Container initialisiert und Abhängigkeitskonfliktlöser verknüpfen. Öffnen Sie zu diesem Zweck **"Global.asax.cs"** und fügen Sie folgenden hervorgehobenen Code innerhalb der **Anwendung\_starten** Methode.
+1. Nun verbinden Sie den Boots Trapper, der die Datei ist, die den Unity-Container und den Abhängigkeits Konflikt Löser initialisiert. Öffnen Sie hierzu **Global.asax.cs** , und fügen Sie den folgenden hervorgehobenen Code in der **Anwendung\_Start** -Methode hinzu.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex01 - initialisieren Unity*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex01-Initialize Unity*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample4.cs)]
-2. Open **Bootstrapper.cs** Datei.
-3. Geben Sie die folgenden Namespaces an: **MvcMusicStore.Services** und **MusicStore.Controllers**.
+2. Öffnen Sie die Datei **Bootstrapper.cs** .
+3. Fügen Sie die folgenden Namespaces ein: **mvcmusicstore. Services** und **Musicstore. Controllers**.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection, Lab - Ex01 - Bootstrapper, Hinzufügen von Namespaces*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex01-Bootstrapper Hinzufügen von Namespaces*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample5.cs)]
-4. Ersetzen Sie dies **BuildUnityContainer** Methode den Inhalt durch den folgenden Code, der Store-Controller und Store-Dienst registriert.
+4. Ersetzen Sie den Inhalt der **buildunitycontainer** -Methode durch den folgenden Code, in dem Store Controller und Store Service registriert sind.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex01 - Register Store Controller und Dienst*)
+    (Code Ausschnitt- *ASP.net Abhängigkeitsinjektion Lab-Ex01-Store Controller und Dienst registrieren*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample6.cs)]
 
@@ -222,65 +222,65 @@ In dieser Aufgabe aktualisieren Sie die **Anwendung\_starten** Methode befindet 
 <a id="Task_4_-_Running_the_Application"></a>
 #### <a name="task-4---running-the-application"></a>Aufgabe 4: Ausführen der Anwendung
 
-In dieser Aufgabe führen Sie die Anwendung aus, um sicherzustellen, dass sie nun nach dem einschließen von Unity geladen werden können.
+In dieser Aufgabe führen Sie die Anwendung aus, um zu überprüfen, ob Sie jetzt nach dem einschließen von Unity geladen werden kann.
 
-1. Drücken Sie **F5** zum Ausführen der Anwendung, die Anwendung sollte jetzt laden, ohne alle Fehler angezeigt.
+1. Drücken Sie **F5** , um die Anwendung auszuführen. die Anwendung sollte nun geladen werden, ohne dass eine Fehlermeldung angezeigt wird.
 
-    ![Ausführen der Anwendung über Dependency Injection](aspnet-mvc-4-dependency-injection/_static/image6.png "Ausführen der Anwendung über Dependency Injection")
+    ![Ausführen einer Anwendung mit Abhängigkeitsinjektion](aspnet-mvc-4-dependency-injection/_static/image6.png "Ausführen einer Anwendung mit Abhängigkeitsinjektion")
 
-    *Ausgeführte Anwendung über Dependency Injection*
-2. Navigieren Sie zu **/Store**. Dies wird aufgerufen, **StoreController**, das wird jetzt erstellt, mit **Unity**.
+    *Ausführen einer Anwendung mit Abhängigkeitsinjektion*
+2. Navigieren Sie zu **/Store**. Dadurch wird **StoreController**aufgerufen, das nun mithilfe von **Unity**erstellt wurde.
 
     ![MVC Music Store](aspnet-mvc-4-dependency-injection/_static/image7.png "MVC Music Store")
 
     *MVC Music Store*
 3. Schließen Sie den Browser.
 
-In den folgenden Übungen lernen Sie, wie Sie den Dependency Injection-Bereich für die Verwendung in ASP.NET MVC-Ansichten und Aktionsfilter zu erweitern.
+In den folgenden Übungen erfahren Sie, wie Sie den Bereich für die Abhängigkeitsinjektion erweitern, um ihn in ASP.NET MVC-Ansichten und-Aktions Filtern zu verwenden.
 
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Injecting_a_View"></a>
-### <a name="exercise-2-injecting-a-view"></a>Übung 2: Eine Ansicht einfügen
+### <a name="exercise-2-injecting-a-view"></a>Übung 2: Einfügen einer Ansicht
 
-In dieser Übung lernen Sie, wie Sie Dependency Injection in einer Ansicht mit den neuen Features von ASP.NET MVC 4 für Unity-Integration zu verwenden. Zu diesem Zweck wird einen benutzerdefinierten Dienst in der Store durchsuchen Ansicht aufgerufen, die eine Nachricht und eine der folgenden Abbildung angezeigt werden.
+In dieser Übung erfahren Sie, wie Sie die Abhängigkeitsinjektion in einer Ansicht mit den neuen Features von ASP.NET MVC 4 für die Unity-Integration verwenden. Dazu rufen Sie einen benutzerdefinierten Dienst in der Such Ansicht des Stores auf, in der eine Meldung und ein Bild unten angezeigt werden.
 
-Klicken Sie dann Sie das Projekt mit Unity zu integrieren und erstellen einen benutzerdefinierte Abhängigkeitskonfliktlöser zum Einfügen der Abhängigkeiten.
+Anschließend integrieren Sie das Projekt in Unity und erstellen einen benutzerdefinierten Abhängigkeits Konflikt Löser zum Einfügen der Abhängigkeiten.
 
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_-_Creating_a_View_that_Consumes_a_Service"></a>
 #### <a name="task-1---creating-a-view-that-consumes-a-service"></a>Aufgabe 1: Erstellen einer Ansicht, die einen Dienst nutzt
 
-In dieser Aufgabe erstellen Sie eine Ansicht, die führt ein Dienstaufruf aus, um eine neue Abhängigkeit zu generieren. Der Dienst besteht in einen einfachen Messagingdienst in dieser Lösung enthalten.
+In dieser Aufgabe erstellen Sie eine Ansicht, die einen Dienst aufzurufen, um eine neue Abhängigkeit zu generieren. Der Dienst besteht aus einem einfachen Messaging Dienst, der in dieser Lösung enthalten ist.
 
-1. Öffnen der **beginnen** Lösung befindet sich in der **Source\Ex02 einfügen View\Begin** Ordner. Andernfalls können Sie weiterhin, verwenden die **End** Lösung abgerufen wird, indem Sie der vorherige Übung abschließen können.
+1. Öffnen Sie die Projekt Mappe " **Anfang** ", die sich im Ordner " **source\ex02-Input view\begin** " befindet. Andernfalls können Sie die **End** -Projekt Mappe, die Sie durch Abschließen der vorherigen Übung erhalten haben, weiterhin verwenden.
 
-   1. Wenn Sie die bereitgestellten geöffnet **beginnen** Lösung, Sie müssen einige fehlende NuGet-Pakete herunterladen bevor Sie fortfahren. Zu diesem Zweck klicken Sie auf die **Projekt** Menü **NuGet-Pakete verwalten**.
-   2. In der **NuGet-Pakete verwalten** Dialogfeld klicken Sie auf **wiederherstellen** um das Herunterladen fehlender Pakete.
-   3. Abschließend erstellen Sie die Projektmappe, indem Sie auf **erstellen** | **Projektmappe**.
+   1. Wenn Sie die bereitgestellte **Begin** -Lösung geöffnet haben, müssen Sie einige fehlende nuget-Pakete herunterladen, bevor Sie den Vorgang fortsetzen. Klicken Sie hierzu auf das Menü **Projekt** , und wählen Sie **nuget-Pakete verwalten**aus.
+   2. Klicken Sie im Dialogfeld **nuget-Pakete verwalten** auf **Wiederherstellen** , um fehlende Pakete herunterzuladen.
+   3. Erstellen Sie abschließend die Projekt Mappe, indem Sie auf **Build** ** | Projekt Mappe erstellen klicken**.
 
       > [!NOTE]
-      > Einer der Vorteile der Verwendung von NuGet ist, dass Sie nicht alle Bibliotheken in Ihrem Projekt, Versand Verringern der Projektgröße. Mit NuGet Power Tools können werden durch Angabe von Versionen des Pakets in der Datei "Packages.config" Sie alle erforderlichen Bibliotheken das erstmalige herunterladen, die, das Sie das Projekt ausführen, können. Deshalb müssen Sie diese Schritte ausgeführt werden, nach dem Öffnen einer vorhandenen Lösung aus dieser Übungseinheit wird.
+      > Einer der Vorteile der Verwendung von nuget besteht darin, dass Sie nicht alle Bibliotheken in Ihrem Projekt liefern müssen, um die Projektgröße zu verringern. Mit nuget Power Tools können Sie durch Angabe der Paketversionen in der Datei "Packages. config" alle erforderlichen Bibliotheken herunterladen, wenn Sie das Projekt zum ersten Mal ausführen. Aus diesem Grund müssen Sie diese Schritte ausführen, nachdem Sie eine vorhandene Projekt Mappe in diesem Lab geöffnet haben.
       > 
-      > Weitere Informationen finden Sie im Artikel: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
-2. Enthalten die **MessageService.cs** und die **IMessageService.cs** Klassen befindet sich in der **Source \Assets** Ordner **/Dienste**. Dazu, mit der Maustaste **Services** Ordner, und wählen **vorhandenes Element hinzufügen**. Suchen Sie den Pfad der Dateien, und enthalten Sie sind.
+      > Weitere Informationen finden Sie in diesem Artikel: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+2. Schließen Sie die **MessageService.cs** -und **IMessageService.cs** -Klassen ein, die sich im Ordner " **Source \assets** " in **/Services**befinden. Klicken Sie hierzu mit der rechten Maustaste auf den Ordner **Dienste** , und wählen Sie **Vorhandenes Element hinzufügen**aus. Navigieren Sie zum Speicherort der Dateien, und fügen Sie Sie ein.
 
-    ![Hinzufügen von Nachrichtendienst und Dienstschnittstelle](aspnet-mvc-4-dependency-injection/_static/image8.png "Nachrichtendienst und Dienstschnittstelle hinzufügen")
+    ![Hinzufügen von Message Service und Dienst Schnittstelle](aspnet-mvc-4-dependency-injection/_static/image8.png "Hinzufügen von Message Service und Dienst Schnittstelle")
 
-    *Hinzufügen von Message-Dienst und Dienstschnittstelle*
+    *Hinzufügen von Message Service und Dienst Schnittstelle*
 
     > [!NOTE]
-    > Die **IMessageService** Schnittstelle definiert zwei Eigenschaften, die von implementiert die **MessageService** Klasse. Diese Eigenschaften -**Nachricht** und **ImageUrl**– speichern Sie die Nachricht und die URL des Bilds angezeigt werden sollen.
-3. Erstellen Sie den Ordner **/Pages** Stammordner des Projekts, und fügen Sie dann die vorhandene Klasse hinzu **MyBasePage.cs** aus **Source\Assets**. Die Basisseite, die, der Sie erbt, hat die folgende Struktur.
+    > Die **imessageservice** -Schnittstelle definiert zwei Eigenschaften, die von der **MessageService** -Klasse implementiert werden. Diese Eigenschaften-**Message** und **ImageUrl**: Speichern Sie die Nachricht und die URL des anzuzeigenden Bilds.
+3. Erstellen Sie den Ordner **/pages** im Stamm Ordner des Projekts, und fügen Sie dann die vorhandene Klasse **MyBasePage.cs** aus **source\assets**hinzu. Die Basis Seite, von der Sie erben, weist die folgende Struktur auf.
 
-    ![Ordner "Pages"](aspnet-mvc-4-dependency-injection/_static/image9.png "Ordner \"Pages\"")
+    ![Ordner "Pages"](aspnet-mvc-4-dependency-injection/_static/image9.png "Ordner „Seiten“")
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample7.cs)]
-4. Open **Browse.cshtml** anzeigen **/Views/Store** Ordner, und stellen sie die von erben **MyBasePage.cs**.
+4. Öffnen Sie die Ansicht **Browse. cshtml** aus dem Ordner **/views/Store** , und legen Sie die Vererbung von **MyBasePage.cs**ab.
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample8.cshtml)]
-5. In der **Durchsuchen** anzuzeigen, fügen Sie einen Aufruf von **MessageService** anzuzeigende ein Bild und eine Nachricht vom Dienst abgerufen.
+5. Fügen Sie in der Ansicht **Durchsuchen** einen " **MessageService** "-Befehl hinzu, um ein Bild und eine vom Dienst abgerufene Nachricht anzuzeigen.
    (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-dependency-injection/samples/sample9.cshtml)]
@@ -288,168 +288,168 @@ In dieser Aufgabe erstellen Sie eine Ansicht, die führt ein Dienstaufruf aus, u
 <a id="Ex2Task2"></a>
 
 <a id="Task_2_-_Including_a_Custom_Dependency_Resolver_and_a_Custom_View_Page_Activator"></a>
-#### <a name="task-2---including-a-custom-dependency-resolver-and-a-custom-view-page-activator"></a>Aufgabe 2: eine benutzerdefinierte Abhängigkeitskonfliktlöser sowie eine benutzerdefinierte Ansichtsseite
+#### <a name="task-2---including-a-custom-dependency-resolver-and-a-custom-view-page-activator"></a>Aufgabe 2: Einschließen eines benutzerdefinierten Abhängigkeits Konflikt Lösers und einer benutzerdefinierten Ansichts Seiten Aktivierung
 
-In der vorherigen Aufgabe eingefügt Sie eine neue Abhängigkeit in der Ansicht ein Dienstaufrufs darin ausführen. Nun werden Sie diese Abhängigkeit aufgelöst, durch die Implementierung der Abhängigkeitsinjektion für ASP.NET MVC-Schnittstellen **IViewPageActivator** und **IDependencyResolver**. Sie umfasst in der Projektmappe eine Implementierung von **IDependencyResolver** , die mit dem Dienst abrufen mithilfe von Unity behandeln werden. Klicken Sie dann, enthält Sie eine andere benutzerdefinierte Implementierung der **IViewPageActivator** -Schnittstelle, die die Erstellung der Sichten lösen werden.
+In der vorherigen Aufgabe haben Sie eine neue Abhängigkeit in eine Ansicht eingefügt, um darin einen Dienst aufzurufen. Nun lösen Sie diese Abhängigkeit durch Implementieren der ASP.NET MVC-Abhängigkeits Injektions Schnittstellen **iviewpageactivator** und **idetzdencyresolver**. Sie fügen in die Lösung eine Implementierung von **idepdencyresolver** ein, die den Dienst Abruf mithilfe von Unity behandelt. Anschließend fügen Sie eine weitere benutzerdefinierte Implementierung der **iviewpageactivator** -Schnittstelle ein, die die Erstellung der Sichten löst.
 
 > [!NOTE]
-> Da ASP.NET MVC 3 mussten die Implementierung für Dependency Injection die Schnittstellen zum Registrieren von Diensten vereinfacht. **IDependencyResolver** und **IViewPageActivator** sind Bestandteil von ASP.NET MVC 3-Funktionen für Dependency Injection.
+> Seit ASP.NET MVC 3 hat die Implementierung für die Abhängigkeitsinjektion die Schnittstellen für die Registrierung von Diensten vereinfacht. **Idetzdencyresolver** und **iviewpageactivator** sind Teil der ASP.NET MVC 3-Funktionen für die Abhängigkeitsinjektion.
 > 
-> **-Der IDependencyResolver** Interface ersetzt die vorherige IMvcServiceLocator. Implementierer der IDependencyResolver müssen es sich um eine Instanz des Dienstes oder eine Sammlung von Diensten zurückgeben.
+> Die **idepdencyresolver-** Schnittstelle ersetzt den vorherigen imvcservicelocator. Implementierer von idepdencyresolver müssen eine Instanz des Dienstanbieter oder einer Dienst Auflistung zurückgeben.
 > 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample10.cs)]
 > 
-> **-IViewPageActivator** Schnittstelle bietet eine präzisere Steuerung wie Ansichtsseiten über Dependency Injection instanziiert werden. Die Klassen, implementieren **IViewPageActivator** Schnittstelle kann Instanzen anzeigen, die mit Kontextinformationen zu erstellen.
+> Die **iviewpageactivator-** Schnittstelle bietet eine präzisere Steuerung der instanziierten Ansichts Seiten mithilfe der Abhängigkeitsinjektion. Die Klassen, die die **iviewpageactivator** -Schnittstelle implementieren, können Ansichts Instanzen mithilfe von Kontextinformationen erstellen.
 > 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample11.cs)]
 
-1. Erstellen Sie die /**Factorys** -Ordner im Stammordner des Projekts.
-2. Umfassen **CustomViewPageActivator.cs** zu Ihrer Lösung von **/Sources/Assets/** zu **Factorys** Ordner. Zu diesem Zweck Maustaste der **/Factories** Ordner **hinzufügen | Vorhandenes Element** und wählen Sie dann **CustomViewPageActivator.cs**. Diese Klasse implementiert die **IViewPageActivator** Schnittstelle, die den Unity-Container enthalten soll.
+1. Erstellen Sie den**Ordner/** Factorys im Stamm Ordner des Projekts.
+2. Fügen Sie **CustomViewPageActivator.cs** aus dem Ordner **/Sources/Assets/** in Factorys **in Ihre** Lösung ein. Klicken Sie dazu mit der rechten Maustaste auf den Ordner **/Factories** , und wählen Sie **hinzufügen aus. Vorhandenes Element** , und wählen Sie dann **CustomViewPageActivator.cs**aus. Diese Klasse implementiert die **iviewpageactivator** -Schnittstelle für den Unity-Container.
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample12.cs)]
 
     > [!NOTE]
-    > **CustomViewPageActivator** ist verantwortlich für die Verwaltung von die Erstellung einer Ansicht mithilfe eines Unity-Containers.
-3. Umfassen **UnityDependencyResolver.cs** Datei **/Quellen/Assets** zu **/Factories** Ordner. Zu diesem Zweck Maustaste der **/Factories** Ordner **hinzufügen | Vorhandenes Element** und wählen Sie dann **UnityDependencyResolver.cs** Datei.
+    > **Customviewpageactivator** ist für die Verwaltung der Erstellung einer Ansicht mit einem Unity-Container zuständig.
+3. Fügen Sie die **UnityDependencyResolver.cs** -Datei aus **/Sources/Assets** in den Ordner **/Factories** ein. Klicken Sie dazu mit der rechten Maustaste auf den Ordner **/Factories** , und wählen Sie **hinzufügen aus. Vorhandenes Element** , und wählen Sie dann **UnityDependencyResolver.cs** File aus.
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample13.cs)]
 
     > [!NOTE]
-    > **UnityDependencyResolver** -Klasse ist eine benutzerdefinierte DependencyResolver für Unity. Wenn ein Dienst in der Unity-Container nicht gefunden wird, ist die Basis-Resolver invocated.
+    > Die **unitydependencyresolver** -Klasse ist ein benutzerdefinierter DependencyResolver für Unity. Wenn ein Dienst im Unity-Container nicht gefunden werden kann, wird der basisresolver aufgerufen.
 
-In der folgenden Aufgabe werden beide Implementierungen registriert werden, damit das Modell, das den Speicherort der Dienste und die Ansichten kennen, können.
+In der folgenden Aufgabe werden beide Implementierungen registriert, damit das Modell den Speicherort der Dienste und Sichten kennt.
 
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_-_Registering_for_Dependency_Injection_within_Unity_container"></a>
-#### <a name="task-3---registering-for-dependency-injection-within-unity-container"></a>Aufgabe 3: Registrieren für Dependency Injection in Unity-Container
+#### <a name="task-3---registering-for-dependency-injection-within-unity-container"></a>Aufgabe 3: Registrieren für die Abhängigkeitsinjektion innerhalb des Unity-Containers
 
-In dieser Aufgabe fügen Sie die vorherigen Schritte zusammen, um die Stellen Dependency Injection funktioniert ein.
+In dieser Aufgabe werden alle vorherigen Elemente zusammengefasst, um die Abhängigkeitsinjektion zu ermöglichen.
 
-Bis jetzt hat Ihre Lösung die folgenden Elemente:
+Bis jetzt verfügt Ihre Lösung über die folgenden Elemente:
 
-- Ein **Durchsuchen** Ansicht, erbt **MyBaseClass** und nutzt **MessageService**.
-- Eine Zwischenklasse -**MyBaseClass**-Listenfeldsteuerelement mit Abhängigkeitsinjektion, die für die Dienstschnittstelle deklariert.
-- Ein Dienst - **MessageService** - und die Schnittstelle **IMessageService**.
-- Eine benutzerdefinierte Abhängigkeitskonfliktlöser für Unity - **UnityDependencyResolver** -behandelt, die die Service abrufen.
-- Eine Ansichtsseite Activator - **CustomViewPageActivator** -Seite erstellt.
+- Eine **browseinsicht** , die von **MyBaseClass** erbt und **MessageService**verwendet.
+- Eine Zwischenklasse (**MyBaseClass**), für die eine Abhängigkeitsinjektion für die Dienst Schnittstelle deklariert wurde.
+- Einen Service- **MessageService** -und seine Schnittstelle **imessageservice**.
+- Ein benutzerdefinierter Abhängigkeits Konflikt Löser für Unity- **unitydependencyresolver** , der den Dienst Abruf behandelt.
+- Eine Ansichts Seiten-Activator- **customviewpageactivator** -, die die Seite erstellt.
 
-Einzufügende **Durchsuchen** Ansicht nun registrieren Sie den benutzerdefinierten Abhängigkeitskonfliktlöser im Unity-Container.
+Zum Einfügen der **browseinsicht** registrieren Sie nun den benutzerdefinierten Abhängigkeits Konflikt Löser im Unity-Container.
 
-1. Open **Bootstrapper.cs** Datei.
-2. Registrieren einer Instanz von **MessageService** in den Unity-Container, um den Dienst zu initialisieren:
+1. Öffnen Sie die Datei **Bootstrapper.cs** .
+2. Registrieren Sie eine Instanz von **MessageService** im Unity-Container, um den Dienst zu initialisieren:
 
-    (Codeausschnitt - *ASP.NET Lab - Ex02 - Register-Nachrichtendienst Injection*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex02-Register Message Service*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample14.cs)]
-3. Hinzufügen eines Verweises auf **MvcMusicStore.Factories** Namespace.
+3. Fügen Sie einen Verweis auf den **mvcmusicstore.** factorynamespace hinzu.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex02 - Factorys Namespace*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex02-factorynamespace*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample15.cs)]
-4. Registrieren Sie **CustomViewPageActivator** als eine Seite anzeigen Activator in Unity-Container:
+4. Registrieren Sie **customviewpageactivator** als Ansichts Seiten Aktivierung im Unity-Container:
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex02 - Register CustomViewPageActivator*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex02-Register customviewpageactivator*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample16.cs)]
-5. Ersetzen von ASP.NET MVC 4-Standard-Abhängigkeitskonfliktlöser mit einer Instanz von **UnityDependencyResolver**. Zu diesem Zweck ersetzen **initialisieren** Methode, die mit den folgenden Code:
+5. Ersetzen Sie ASP.NET MVC 4 Default-Abhängigkeits Konflikt Löser durch eine Instanz von **unitydependencyresolver**. Ersetzen Sie hierzu den **Initialisierungs** Methoden Inhalt durch den folgenden Code:
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex02 - Update-Abhängigkeitskonfliktlöser*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex02-Abhängigkeits*Konflikt Löser aktualisieren)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample17.cs)]
 
     > [!NOTE]
-    > ASP.NET MVC bietet standardmäßige Dependency Resolver-Klasse. Um mit benutzerdefinierten Abhängigkeitskonfliktlöser wie arbeiten, die wir für Unity erstellt haben, muss dieser Konfliktlöser ersetzt werden.
+    > ASP.NET MVC stellt eine standardabhängigkeitsresolver-Klasse bereit. Um mit benutzerdefinierten Abhängigkeits Konflikt Löser zu arbeiten, die wir für Unity erstellt haben, muss dieser Konflikt Löser ersetzt werden.
 
 <a id="Ex2Task4"></a>
 
 <a id="Task_4_-_Running_the_Application"></a>
 #### <a name="task-4---running-the-application"></a>Aufgabe 4: Ausführen der Anwendung
 
-In dieser Aufgabe führen Sie die Anwendung überprüfen, ob der Browser Store nutzt den Dienst und zeigt das Bild und die Nachricht abgerufen:
+In dieser Aufgabe führen Sie die Anwendung aus, um zu überprüfen, ob der Store-Browser den Dienst verwendet und das Abbild und die abgerufene Nachricht angezeigt werden:
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.
-2. Klicken Sie auf **Rock** innerhalb des Genres-Menü und finden Sie unter wie die **MessageService** an die Ansicht eingefügt wurde und die Willkommensnachricht und das Bild geladen. In diesem Beispiel werden wir eingeben, &quot; **Rock**&quot;:
+2. Klicken Sie im Menü Genres auf **Rock** , und sehen Sie sich an, wie der **MessageService** in die Ansicht eingefügt und die Willkommensnachricht und das Bild geladen wurde. In diesem Beispiel wechseln wir zu &quot;**Rock**&quot;:
 
-    ![MVC Music Store - Ansichtsinjektion](aspnet-mvc-4-dependency-injection/_static/image10.png "MVC Music Store - Ansichtsinjektion")
+    ![MVC Music Store-Einschleusung anzeigen](aspnet-mvc-4-dependency-injection/_static/image10.png "MVC Music Store-Einschleusung anzeigen")
 
-    *MVC Music Store - Ansichtsinjektion*
+    *MVC Music Store-Einschleusung anzeigen*
 3. Schließen Sie den Browser.
 
 <a id="Exercise3"></a>
 
 <a id="Exercise_3_Injecting_Action_Filters"></a>
-### <a name="exercise-3-injecting-action-filters"></a>Übung 3: Einfügen von Aktionsfiltern
+### <a name="exercise-3-injecting-action-filters"></a>Übung 3: Einfügen von Aktions Filtern
 
-In der vorhergehenden praktische Übungseinheit **benutzerdefinierte Aktionsfilter** jetzt haben Sie Filter anpassen und Injection. In dieser Übung lernen Sie, wie Sie Filter mit Dependency Injection einfügen, mit der Unity-Container. Zu diesem Zweck fügen Sie mit der Music Store-Lösung eines benutzerdefinierten Aktionsfilters hinzu, das die Aktivitäten des Standorts verfolgen wird.
+In den vorherigen praktischen Übungseinheiten für praktische Übungseinheiten **haben Sie mit** der Anpassung und Injektion von Filtern gearbeitet. In dieser Übung erfahren Sie, wie Sie mithilfe des Unity-Containers Filter mit Abhängigkeitsinjektion einfügen. Zu diesem Zweck fügen Sie der Music Store-Projekt Mappe einen benutzerdefinierten Aktionsfilter hinzu, der die Aktivität der Site verfolgt.
 
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Including_the_Tracking_Filter_in_the_Solution"></a>
-#### <a name="task-1---including-the-tracking-filter-in-the-solution"></a>Aufgabe 1: z. B. die Nachverfolgungs-Filter in der Projektmappe
+#### <a name="task-1---including-the-tracking-filter-in-the-solution"></a>Aufgabe 1: einschließen des nach Verfolgungs Filters in der Lösung
 
-In dieser Aufgabe werden Sie in der Music Store ein benutzerdefinierten Aktionsfilters zum Verfolgen von Ereignissen einschließen. Als benutzerdefinierte Aktionsfilter werden Konzepte bereits in der vorherigen Lektion behandelt &quot;benutzerdefinierte Aktionsfilter&quot;, Sie werden nur die Filter-Klasse aus dem Ordner "Assets" dieser Übungseinheit, und klicken Sie dann einen Filteranbieter für Unity zu erstellen:
+In dieser Aufgabe fügen Sie in den Music Store einen benutzerdefinierten Aktionsfilter ein, um Ereignisse zu verfolgen. Da benutzerdefinierte Aktionsfilter Konzepte bereits in der vorherigen Lab-&quot;&quot;benutzerdefinierte Aktionsfilter behandelt werden, fügen Sie einfach die Filter-Klasse aus dem Ordner "Assets" dieses Labs ein, und erstellen Sie dann einen Filter Anbieter für Unity:
 
-1. Öffnen der **beginnen** Lösung befindet sich in der **Source\Ex03 - Aktion Filter\Begin einfügen** Ordner. Andernfalls können Sie weiterhin, verwenden die **End** Lösung abgerufen wird, indem Sie der vorherige Übung abschließen können.
+1. Öffnen Sie **die Projekt** Mappe "Start", die sich im Ordner " **source\ex03-einschleusung\begin** " befindet. Andernfalls können Sie die **End** -Projekt Mappe, die Sie durch Abschließen der vorherigen Übung erhalten haben, weiterhin verwenden.
 
-   1. Wenn Sie die bereitgestellten geöffnet **beginnen** Lösung, Sie müssen einige fehlende NuGet-Pakete herunterladen bevor Sie fortfahren. Zu diesem Zweck klicken Sie auf die **Projekt** Menü **NuGet-Pakete verwalten**.
-   2. In der **NuGet-Pakete verwalten** Dialogfeld klicken Sie auf **wiederherstellen** um das Herunterladen fehlender Pakete.
-   3. Abschließend erstellen Sie die Projektmappe, indem Sie auf **erstellen** | **Projektmappe**.
+   1. Wenn Sie die bereitgestellte **Begin** -Lösung geöffnet haben, müssen Sie einige fehlende nuget-Pakete herunterladen, bevor Sie den Vorgang fortsetzen. Klicken Sie hierzu auf das Menü **Projekt** , und wählen Sie **nuget-Pakete verwalten**aus.
+   2. Klicken Sie im Dialogfeld **nuget-Pakete verwalten** auf **Wiederherstellen** , um fehlende Pakete herunterzuladen.
+   3. Erstellen Sie abschließend die Projekt Mappe, indem Sie auf **Build** ** | Projekt Mappe erstellen klicken**.
 
       > [!NOTE]
-      > Einer der Vorteile der Verwendung von NuGet ist, dass Sie nicht alle Bibliotheken in Ihrem Projekt, Versand Verringern der Projektgröße. Mit NuGet Power Tools können werden durch Angabe von Versionen des Pakets in der Datei "Packages.config" Sie alle erforderlichen Bibliotheken das erstmalige herunterladen, die, das Sie das Projekt ausführen, können. Deshalb müssen Sie diese Schritte ausgeführt werden, nach dem Öffnen einer vorhandenen Lösung aus dieser Übungseinheit wird.
+      > Einer der Vorteile der Verwendung von nuget besteht darin, dass Sie nicht alle Bibliotheken in Ihrem Projekt liefern müssen, um die Projektgröße zu verringern. Mit nuget Power Tools können Sie durch Angabe der Paketversionen in der Datei "Packages. config" alle erforderlichen Bibliotheken herunterladen, wenn Sie das Projekt zum ersten Mal ausführen. Aus diesem Grund müssen Sie diese Schritte ausführen, nachdem Sie eine vorhandene Projekt Mappe in diesem Lab geöffnet haben.
       > 
-      > Weitere Informationen finden Sie im Artikel: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
-2. Umfassen **TraceActionFilter.cs** Datei **/Quellen/Assets** zu **/filtert** Ordner.
+      > Weitere Informationen finden Sie in diesem Artikel: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages).
+2. Fügen Sie die **TraceActionFilter.cs** -Datei aus **/Sources/Assets** in den Ordner **/Filters** ein.
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample18.cs)]
 
     > [!NOTE]
-    > Dieser Filter für die benutzerdefinierte Aktion ausführt, mit der ASP.NET-Ablaufverfolgung. Sie können überprüfen, &quot;ASP.NET MVC 4-lokal und dynamische Aktionsfilter&quot; Lab Weitere Verweise.
-3. Fügen Sie die leere Klasse **FilterProvider.cs** zum Projekt im Ordner   **/filtert.**
-4. Hinzufügen der **System.Web.Mvc** und **Microsoft.Practices.Unity** Namespaces im **FilterProvider.cs**.
+    > Dieser benutzerdefinierte Aktionsfilter führt ASP.net-Ablauf Verfolgung aus. Sie können &quot;ASP.NET MVC 4-Filter für lokale und dynamische Aktionen&quot; Lab überprüfen, um weitere Informationen zu erhalten.
+3. Fügen Sie dem Projekt im Ordner **/Filters.** die leere **FilterProvider.cs** -Klasse hinzu.
+4. Fügen Sie die Namespaces **System. Web. MVC** und **Microsoft. Practices. unity** in **FilterProvider.cs**hinzu.
 
-    (Codeausschnitt - *Dependency Injection Lab - Ex03 - Filter ASP.NET-Anbieter hinzufügen von Namespaces*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex03-Filter Anbieter hinzufügen von Namespaces*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample19.cs)]
-5. Legen Sie die Klasse, die von erben **IFilterProvider** Schnittstelle.
+5. Erbt die Klasse von der **ifilterprovider** -Schnittstelle.
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample20.cs)]
-6. Hinzufügen einer **IUnityContainer** -Eigenschaft in der **FilterProvider** Klasse, und klicken Sie dann einen Klassenkonstruktor, um die Zuweisung von Container zu erstellen.
+6. Fügen Sie in der Klasse **filterprovider** eine **IUnityContainer** -Eigenschaft hinzu, und erstellen Sie dann einen Klassenkonstruktor, um den Container zuzuweisen.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection-Lab - Ex03 - Filterkonstruktor Anbieter*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex03-Filter anbieterkonstruktor*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample21.cs)]
 
     > [!NOTE]
-    > Der Klassenkonstruktor des Filter-Anbieter ist nicht das Erstellen einer **neue** -Objekt innerhalb. Der Container als Parameter übergeben wird, und die Abhängigkeit von Unity gelöst wird.
-7. In der **FilterProvider** Klasse, implementieren Sie die Methode **GetFilters** aus **IFilterProvider** Schnittstelle.
+    > Der filteranbieterklassenkonstruktor erstellt kein **Neues** Objekt in. Der Container wird als Parameter übergeben, und die Abhängigkeit wird von Unity gelöst.
+7. Implementieren Sie in der **filterprovider** -Klasse die **getFilters** -Methode von der **ifilterprovider** -Schnittstelle.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex03 - Filter-Anbieter GetFilters*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex03-Filter Anbieter getFilters*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample22.cs)]
 
 <a id="Ex3Task2"></a>
 
 <a id="Task_2_-_Registering_and_Enabling_the_Filter"></a>
-#### <a name="task-2---registering-and-enabling-the-filter"></a>Aufgabe 2: registrieren und aktivieren den Filter
+#### <a name="task-2---registering-and-enabling-the-filter"></a>Aufgabe 2: registrieren und Aktivieren des Filters
 
-In dieser Aufgabe können Sie die Website nachverfolgen. Zu diesem Zweck, registrieren Sie den Filter im **Bootstrapper.cs BuildUnityContainer** Methode, um die Ablaufverfolgung starten:
+In dieser Aufgabe aktivieren Sie die Standort Nachverfolgung. Zu diesem Zweck registrieren Sie den Filter in der **Bootstrapper.cs buildunitycontainer** -Methode, um die Ablauf Verfolgung zu starten:
 
-1. Open **"Web.config"** befindet sich im Stammverzeichnis des Projekts und Aktivieren der nachverfolgung der Ablaufverfolgung auf "System.Web"-Gruppe.
+1. Öffnen Sie die Datei " **Web. config** " im Stammverzeichnis des Projekts, und aktivieren Sie die Ablauf Verfolgungs Verfolgung in der Gruppe "System
 
     [!code-xml[Main](aspnet-mvc-4-dependency-injection/samples/sample23.xml)]
-2. Open **Bootstrapper.cs** am Stammverzeichnis des Projekts.
-3. Hinzufügen eines Verweises auf die **MvcMusicStore.Filters** Namespace.
+2. Öffnen Sie **Bootstrapper.cs** im Projektstamm.
+3. Fügen Sie einen Verweis auf den **mvcmusicstore. Filters** -Namespace hinzu.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection, Lab - Ex03 - Bootstrapper, Hinzufügen von Namespaces*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex03-Bootstrapper Hinzufügen von Namespaces*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample24.cs)]
-4. Wählen Sie die **BuildUnityContainer** -Methode und registrieren Sie den Filter im Unity-Container. Sie müssen beim Filteranbieter als auch den Aktionsfilter zu registrieren.
+4. Wählen Sie die **buildunitycontainer** -Methode aus, und registrieren Sie den Filter im Unity-Container. Sie müssen den Filter Anbieter und den Aktionsfilter registrieren.
 
-    (Codeausschnitt - *ASP.NET Dependency Injection Lab - Ex03 - Register FilterProvider und ActionFilter*)
+    (Code Ausschnitt- *ASP.net-Abhängigkeitsinjektion Lab-Ex03-Register filterprovider und Action Filter*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample25.cs)]
 
@@ -458,23 +458,23 @@ In dieser Aufgabe können Sie die Website nachverfolgen. Zu diesem Zweck, regist
 <a id="Task_3_-_Running_the_Application"></a>
 #### <a name="task-3---running-the-application"></a>Aufgabe 3: Ausführen der Anwendung
 
-In dieser Aufgabe, die Sie die Anwendung ausgeführt werden und testen, ob der Filter für die benutzerdefinierte Aktion die aktivitätsablaufverfolgung ist:
+In dieser Aufgabe führen Sie die Anwendung aus und testen, ob der benutzerdefinierte Aktionsfilter die Aktivität verfolgt:
 
 1. Drücken Sie **F5**, um die Anwendung auszuführen.
-2. Klicken Sie auf **Rock** innerhalb des Genres-Menüs. Sie können auf mehrere Genres durchsuchen, wenn Sie möchten.
+2. Klicken Sie im Menü Genres auf **Rock** . Wenn Sie möchten, können Sie nach weiteren Genres suchen.
 
     ![Music Store](aspnet-mvc-4-dependency-injection/_static/image11.png "Music Store")
 
     *Music Store*
-3. Navigieren Sie zu **/Trace.axd** angezeigt, und klicken Sie dann auf die Anwendung-Ablaufverfolgung **Details anzeigen**.
+3. Navigieren Sie zu **/Trace.axd** , um die Seite für die Anwendungs Ablauf Verfolgung anzuzeigen, und klicken Sie dann auf **Details anzeigen**.
 
-    ![Application-Ablaufverfolgungsprotokoll](aspnet-mvc-4-dependency-injection/_static/image12.png "Anwendung-Ablaufverfolgungsprotokoll")
+    ![Anwendungs Ablauf Verfolgungs Protokoll](aspnet-mvc-4-dependency-injection/_static/image12.png "Anwendungs Ablauf Verfolgungs Protokoll")
 
-    *Application-Ablaufverfolgungsprotokoll*
+    *Anwendungs Ablauf Verfolgungs Protokoll*
 
-    ![-Anwendungsüberwachung - Anforderungsdetails](aspnet-mvc-4-dependency-injection/_static/image13.png "Anwendung verfolgen - Anforderungsdetails")
+    ![Anwendungs Ablauf Verfolgung: Anforderungs Details](aspnet-mvc-4-dependency-injection/_static/image13.png "Anwendungs Ablauf Verfolgung: Anforderungs Details")
 
-    *-Anwendungsüberwachung - Request-Details*
+    *Anwendungs Ablauf Verfolgung: Anforderungs Details*
 4. Schließen Sie den Browser.
 
 ---
@@ -484,92 +484,92 @@ In dieser Aufgabe, die Sie die Anwendung ausgeführt werden und testen, ob der F
 <a id="Summary"></a>
 ## <a name="summary"></a>Zusammenfassung
 
-Von dieser praktischen Übungseinheit haben Sie gelernt, Dependency Injection in ASP.NET MVC 4 zu verwenden, indem Sie die Integration von Unity unter Verwendung eines NuGet-Pakets. Um dies zu erreichen, haben Sie Dependency Injection in Controllern, Ansichten und Aktionsfilter verwendet.
+Wenn Sie diese praktische Übungseinheit durcharbeiten, haben Sie gelernt, wie Sie die Abhängigkeitsinjektion in ASP.NET MVC 4 verwenden, indem Sie Unity mithilfe eines nuget-Pakets integrieren. Um dies zu erreichen, haben Sie Abhängigkeitsinjektion innerhalb von Controllern, Ansichten und Aktions Filtern verwendet.
 
-Es wurden die folgenden Konzepte behandelt:
+Die folgenden Konzepte wurden behandelt:
 
-- Abhängigkeitsinjektion in ASP.NET MVC 4-features
-- Unity-Integration mit Unity.Mvc3 NuGet-Paket
+- ASP.NET MVC 4-Abhängigkeits einschleusungs Features
+- Unity-Integration mit dem Unity. Mvc3-nuget-Paket
 - Abhängigkeitsinjektion in Controller
-- Abhängigkeitsinjektion in Ansichten
-- Abhängigkeitsinjektion von Aktionsfiltern
+- Abhängigkeitsinjektion in Sichten
+- Abhängigkeitsinjektion von Aktions Filtern
 
 <a id="AppendixA"></a>
 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
-## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für Web
+## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Anhang A: Installieren von Visual Studio Express 2012 für das Web
 
-Sie installieren können **Microsoft Visual Studio Express 2012 für Web** oder einem anderen &quot;Express&quot; Version verwenden, die **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. Die folgenden Anweisungen führen Sie über die erforderlichen Schritte zum Installieren *Visual Studio Express 2012 für Web* mit *Microsoft Web Platform Installer*.
+Sie können **Microsoft Visual Studio Express 2012 für Web** oder eine andere &quot;Express&quot; Version mit dem **[Microsoft-Webplattform-Installer](https://www.microsoft.com/web/downloads/platform.aspx)** installieren. Die folgenden Anweisungen führen Sie durch die Schritte, die zum Installieren *von Visual Studio Express 2012 für Web* mithilfe von *Microsoft-Webplattform-Installer*erforderlich sind.
 
-1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Auch wenn Sie bereits Webplattform-Installer installiert haben, können Sie öffnen ihn, und suchen Sie nach dem Produkt &quot; <em>Visual Studio Express 2012 für das Web mit Windows Azure SDK</em>&quot;.
-2. Klicken Sie auf **jetzt installieren**. Wenn Sie keine **Webplattform-Installer** gelangen Sie zum Herunterladen und installieren Sie diese zuerst.
-3. Einmal **Webplattform-Installer** geöffnet ist, klicken Sie auf **installieren** um das Setup zu starten.
+1. Wechseln Sie zu [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169). Wenn Sie den Webplattform-Installer bereits installiert haben, können Sie ihn auch öffnen und nach dem Produkt &quot;<em>Visual Studio Express 2012 für das Web mit dem Windows Azure SDK</em>&quot;suchen.
+2. Klicken Sie auf **jetzt installieren**. Wenn Sie nicht über einen **Webplattform-Installer** verfügen, werden Sie umgeleitet, um Sie zuerst herunterzuladen und zu installieren.
+3. Nachdem der **Webplattform-Installer** geöffnet ist, klicken Sie auf **Installieren** , um das Setup zu starten.
 
     ![Installieren von Visual Studio Express](aspnet-mvc-4-dependency-injection/_static/image14.png "Installieren von Visual Studio Express")
 
     *Installieren von Visual Studio Express*
-4. Lesen Sie die Produkte Lizenzen und Begriffe, und klicken Sie auf **akzeptieren** um den Vorgang fortzusetzen.
+4. Lesen Sie die Lizenzbedingungen für alle Produkte, und klicken Sie auf **ich** Stimme zu, um fortzufahren.
 
     ![Akzeptieren der Lizenzbedingungen](aspnet-mvc-4-dependency-injection/_static/image15.png)
 
     *Akzeptieren der Lizenzbedingungen*
-5. Warten Sie, bis der Prozess zum Herunterladen und die Installation abgeschlossen ist.
+5. Warten Sie, bis der Download-und Installationsvorgang abgeschlossen ist.
 
     ![Installationsstatus](aspnet-mvc-4-dependency-injection/_static/image16.png)
 
-    *Installationsstatus*
-6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig stellen**.
+    *Installationsfortschritt*
+6. Wenn die Installation abgeschlossen ist, klicken Sie auf **Fertig**stellen.
 
-    ![Die Installation wurde abgeschlossen](aspnet-mvc-4-dependency-injection/_static/image17.png)
+    ![Installation abgeschlossen](aspnet-mvc-4-dependency-injection/_static/image17.png)
 
-    *Die Installation wurde abgeschlossen*
-7. Klicken Sie auf **beenden** Webplattform-Installer zu schließen.
-8. Um Visual Studio Express für Web zu öffnen, wechseln Sie zu der **starten** schreiben zu starten und Bildschirm &quot; **VS Express**&quot;, klicken Sie dann auf die **Visual Studio Express für Web** die Kachel.
+    *Installation abgeschlossen*
+7. Klicken Sie zum Schließen des Webplattform-Installers auf **Beenden** .
+8. Um Visual Studio Express für das Web zu öffnen, navigieren Sie zum **Start** Bildschirm, und beginnen Sie mit dem Schreiben &quot;**vs Express**&quot;und klicken Sie dann auf die Kachel **vs Express für Web** .
 
-    ![Visual Studio Express für Web-Kachel](aspnet-mvc-4-dependency-injection/_static/image18.png)
+    ![VS Express für Web-Kachel](aspnet-mvc-4-dependency-injection/_static/image18.png)
 
-    *Visual Studio Express für Web-Kachel*
+    *VS Express für Web-Kachel*
 
 <a id="AppendixB"></a>
 
 <a id="Appendix_B_Using_Code_Snippets"></a>
-## <a name="appendix-b-using-code-snippets"></a>Anhang B: Verwenden von Codeausschnitten
+## <a name="appendix-b-using-code-snippets"></a>Anhang B: Verwenden von Code Ausschnitten
 
-Mit Codeausschnitten müssen Sie den Code zur Hand benötigten. Das Lab-Dokument informiert Sie genau wann sie verwendet werden kann wie in der folgenden Abbildung dargestellt.
+Mit Code Ausschnitten haben Sie den gesamten Code, den Sie benötigen. Im Lab-Dokument werden Sie genau wissen, wann Sie Sie verwenden können, wie in der folgenden Abbildung dargestellt.
 
-![Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt](aspnet-mvc-4-dependency-injection/_static/image19.png "mithilfe von Visual Studio-Codeausschnitten, die Code in das Projekt einfügen.")
+![Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt](aspnet-mvc-4-dependency-injection/_static/image19.png "Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt")
 
-*Verwenden von Visual Studio-Codeausschnitten zum Einfügen von Code in Ihrem Projekt*
+*Verwenden von Visual Studio-Code Ausschnitten zum Einfügen von Code in Ihr Projekt*
 
-***Hinzufügen ein Codeausschnitts, die über die Tastatur (nur c#)***
+***So fügen Sie einen Code Ausschnitt mithilfe der Tastatur hinzuC# (nur)***
 
-1. Platzieren Sie den Cursor, wo Sie möchten den Code einfügen.
-2. Starten Sie den codeausschnittsnamen (ohne Leerzeichen oder Bindestriche) eingeben.
-3. Beobachten Sie, wie IntelliSense zeigt übereinstimmende Codeausschnitte Namen.
-4. Wählen Sie den richtigen Codeausschnitt (oder halten Sie eingeben, bis die gesamte codeausschnittsnamen ausgewählt ist).
-5. Drücken Sie die Tab-Taste zweimal auf Einfügen des Codeausschnitts an der Cursorposition ein.
+1. Platzieren Sie den Cursor an der Stelle, an der Sie den Code einfügen möchten.
+2. Beginnen Sie mit der Eingabe des Ausschnitt namens (ohne Leerzeichen oder Bindestriche).
+3. Sehen Sie sich an, wie IntelliSense übereinstimmende Code Ausschnitte anzeigt.
+4. Wählen Sie den richtigen Ausschnitt aus (oder geben Sie die Eingabe fort, bis der gesamte Name des Ausschnitts ausgewählt ist).
+5. Drücken Sie zweimal die Tab-Taste, um den Ausschnitt an der Cursorposition einzufügen.
 
-![Geben Sie den Namen des Ausschnitts](aspnet-mvc-4-dependency-injection/_static/image20.png "Geben Sie den Namen des Ausschnitts")
+![Beginnen Sie mit der Eingabe des Ausschnitt namens.](aspnet-mvc-4-dependency-injection/_static/image20.png "Beginnen Sie mit der Eingabe des Ausschnitt namens.")
 
-*Geben Sie den Namen des Ausschnitts*
+*Beginnen Sie mit der Eingabe des Ausschnitt namens.*
 
-![Tabstopp drücken, um den hervorgehobenen Codeausschnitt auswählen](aspnet-mvc-4-dependency-injection/_static/image21.png "Tab drücken, um den hervorgehobenen Codeausschnitt auswählen")
+![Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.](aspnet-mvc-4-dependency-injection/_static/image21.png "Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.")
 
-*Drücken Sie Tabstopp, um den hervorgehobenen Codeausschnitt auswählen*
+*Drücken Sie TAB, um den markierten Ausschnitt auszuwählen.*
 
-![Drücken Sie die Tabulatortaste erneut, und der Ausschnitt erweitert](aspnet-mvc-4-dependency-injection/_static/image22.png "drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.")
+![Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.](aspnet-mvc-4-dependency-injection/_static/image22.png "Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.")
 
-*Drücken Sie die Tabulatortaste erneut, und der Ausschnitt werden erweitert.*
+*Drücken Sie erneut die Tab-Taste, und der Ausschnitt wird erweitert.*
 
-***Hinzufügen ein Codeausschnitts, die mit der Maus (c#, Visual Basic und XML)*** 1. Mit der rechten Maustaste, in dem den Codeausschnitt eingefügt werden soll.
+So ***fügen Sie einen Code Ausschnitt mithilfe der Maus hinzuC#(, Visual Basic und XML)*** 1. Klicken Sie mit der rechten Maustaste auf den Ort, an dem Sie den Code Ausschnitt einfügen möchten.
 
-1. Wählen Sie **Ausschnitt einfügen** gefolgt von **Meine Codeausschnitte**.
-2. Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken.
+1. Wählen Sie **Ausschnitt einfügen** und dann **meine Code Ausschnitte**aus.
+2. Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.
 
-![Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten](aspnet-mvc-4-dependency-injection/_static/image23.png "mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten,")
+![Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.](aspnet-mvc-4-dependency-injection/_static/image23.png "Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.")
 
-*Mit der rechten Maustaste, in dem Sie den Codeausschnitt einfügen, und wählen Ausschnitt einfügen möchten*
+*Klicken Sie mit der rechten Maustaste darauf, wo Sie den Code Ausschnitt einfügen möchten, und wählen Sie Ausschnitt einfügen aus.*
 
-![Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken](aspnet-mvc-4-dependency-injection/_static/image24.png "die relevante Codeausschnitte in der Liste auswählen, indem Sie darauf klicken")
+![Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.](aspnet-mvc-4-dependency-injection/_static/image24.png "Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.")
 
-*Wählen Sie die relevante Codeausschnitte in der Liste, indem Sie darauf klicken*
+*Wählen Sie den entsprechenden Code Ausschnitt aus der Liste aus, indem Sie darauf klicken.*

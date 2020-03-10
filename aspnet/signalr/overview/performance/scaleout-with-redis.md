@@ -1,164 +1,164 @@
 ---
 uid: signalr/overview/performance/scaleout-with-redis
-title: Horizontale Skalierung in SignalR mit Redis | Microsoft-Dokumentation
+title: Horizontale Skalierung von signalr mit redis | Microsoft-Dokumentation
 author: bradygaster
-description: Version der Software verwendete in diesem Thema Visual Studio 2013 .NET 4.5 SignalR Version 2-Vorgängerversionen des in diesem Thema Informationen zu früheren Versionen von...
+description: In den in diesem Thema verwendeten Software Versionen Visual Studio 2013 .NET 4,5 signalr Version 2 in früheren Versionen dieses Themas Informationen zu früheren Versionen von...
 ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
 ms.openlocfilehash: 58a7affa1769523955adc76455a1c33be6f49751
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114312"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467775"
 ---
 # <a name="signalr-scaleout-with-redis"></a>Horizontale Skalierung in SignalR mit Redis
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
+> ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendete Software Versionen
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
-> - SignalR-Version 2.4
+> - Signalr-Version 2,4
 >
 >
 >
 > ## <a name="previous-versions-of-this-topic"></a>Vorherige Versionen dieses Themas
 >
-> Weitere Informationen zu früheren Versionen von SignalR, finden Sie unter [ältere Versionen von SignalR](../older-versions/index.md).
+> Informationen zu früheren Versionen von signalr finden Sie unter [signalr ältere Versionen](../older-versions/index.md).
 >
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
-> Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
+> Bitte informieren Sie sich darüber, wie Ihnen dieses Tutorial gefallen hat und was wir in den Kommentaren unten auf der Seite verbessern konnten. Wenn Sie Fragen haben, die nicht direkt mit dem Tutorial zusammenhängen, können Sie Sie im [ASP.net signalr-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder in [StackOverflow.com](http://stackoverflow.com/)veröffentlichen.
 
-In diesem Tutorial verwenden Sie [Redis](http://redis.io/) zur Verteilung von Nachrichten in einer SignalR-Anwendung, die auf zwei separaten IIS-Instanzen bereitgestellt wird.
+In diesem Tutorial wird [redis](http://redis.io/) verwendet, um Nachrichten über eine signalr-Anwendung zu verteilen, die auf zwei separaten IIS-Instanzen bereitgestellt wird.
 
-Redis ist ein Schlüssel-Wert-Speicher im Arbeitsspeicher. Darüber hinaus unterstützt er ein messaging-System mit einem Veröffentlichen/Abonnieren-Modell. Die Redis-SignalR-Backplane verwendet das Pub/Sub-Feature, um Nachrichten an andere Server weiterzuleiten.
+Redis ist ein Schlüssel-Wert-Speicher im Arbeitsspeicher. Außerdem wird ein Messaging System mit einem veröffentlichen/abonnieren-Modell unterstützt. Die signalr redis-Rückwand verwendet die Pub/Sub-Funktion, um Nachrichten an andere Server weiterzuleiten.
 
 ![](scaleout-with-redis/_static/image1.png)
 
 In diesem Tutorial verwenden Sie drei Server:
 
-- Zwei Server unter Windows, das Sie zum Bereitstellen einer SignalR-Anwendung verwenden werden.
-- Ein Server unter Linux, das Sie zum Ausführen von Redis verwenden. Die Screenshots in diesem Tutorial verwendet Ubuntu 12.04 TLS.
+- Zwei Server, auf denen Windows ausgeführt wird und die Sie zum Bereitstellen einer signalr-Anwendung verwenden.
+- Ein Server, auf dem Linux ausgeführt wird und der zum Ausführen von redis verwendet wird. Für die Screenshots in diesem Tutorial habe ich Ubuntu 12,04 TLS verwendet.
 
-Wenn Sie drei physische Servern für die Verwendung nicht haben, können Sie virtuelle Computer auf Hyper-V erstellen. Eine weitere Option ist zum Erstellen von VMs in Azure.
+Wenn Sie nicht über drei physische Server verfügen, können Sie VMS auf Hyper-V erstellen. Eine weitere Möglichkeit ist das Erstellen von VMS in Azure.
 
-Obwohl in diesem Tutorial die offizielle Redis-Implementierung verwendet wird, es gibt auch eine [Windows Port von Redis](https://github.com/MSOpenTech/redis) aus MSOpenTech. Setup und Konfiguration sind unterschiedlich, aber die Schritte sind identisch.
+Obwohl in diesem Tutorial die offizielle redis-Implementierung verwendet wird, gibt es auch einen [Windows-Port von redis](https://github.com/MSOpenTech/redis) von msopretech. Setup und Konfiguration unterscheiden sich, aber andernfalls sind die Schritte identisch.
 
 > [!NOTE]
 >
-> Horizontale Skalierung in SignalR mit Redis unterstützt Redis-Cluster nicht.
+> Die horizontale Skalierung von signalr mit redis bietet keine Unterstützung für redis-Cluster.
 
 ## <a name="overview"></a>Übersicht
 
-Bevor wir mit dem ausführlichen Tutorial eingehen, sieht ein schnellen Überblick darüber, welche Aktionen Sie ausgeführt werden.
+Bevor wir zum detaillierten Tutorial gelangen, finden Sie hier einen kurzen Überblick über die Vorgehensweise.
 
-1. Installieren Sie Redis, und starten Sie den Redis-Server.
-2. Fügen Sie diese NuGet-Pakete für Ihre Anwendung hinzu:
+1. Installieren Sie redis, und starten Sie den redis-Server.
+2. Fügen Sie die folgenden nuget-Pakete zu Ihrer Anwendung hinzu:
 
-    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.StackExchangeRedis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
+    - [Microsoft. Aspnet. signalr](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [Microsoft. Aspnet. signalr. stackexchangeredis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
     
-3. Erstellen einer SignalR-Anwendung.
-4. Fügen Sie den folgenden Code, "Startup.cs" So konfigurieren Sie die Rückwandplatine:
+3. Erstellen Sie eine signalr-Anwendung.
+4. Fügen Sie Startup.cs den folgenden Code hinzu, um die Backplane zu konfigurieren:
 
     [!code-csharp[Main](scaleout-with-redis/samples/sample1.cs)]
 
-## <a name="ubuntu-on-hyper-v"></a>Ubuntu in Hyper-V
+## <a name="ubuntu-on-hyper-v"></a>Ubuntu unter Hyper-V
 
-Verwenden Windows Hyper-V, können Sie problemlos eine Ubuntu-VM unter Windows Server erstellen.
+Mithilfe von Windows Hyper-V können Sie problemlos einen virtuellen Ubuntu-Computer unter Windows Server erstellen.
 
-Laden Sie die Ubuntu-ISO-Datei von [ http://www.ubuntu.com ](http://www.ubuntu.com/).
+Laden Sie Ubuntu ISO aus [http://www.ubuntu.com](http://www.ubuntu.com/)herunter.
 
-Fügen Sie einen neuen virtuellen Computer in Hyper-V hinzu. In der **virtuelle Festplatte verbinden** Schritt select **erstellen Sie eine virtuelle Festplatte**.
+Fügen Sie in Hyper-V einen neuen virtuellen Computer hinzu. Wählen Sie im Schritt **virtuelle Festplatte verbinden** die Option **virtuelle Festplatte erstellen**aus.
 
 ![](scaleout-with-redis/_static/image2.png)
 
-In der **Installationsoptionen** Schritt select **Imagedatei (.iso)**, klicken Sie auf **Durchsuchen**, und navigieren Sie zu die ISO für Ubuntu-Installation.
+Wählen Sie im Schritt **Installationsoptionen die Option** **Abbild Datei (. ISO)** aus, klicken Sie auf **Durchsuchen**, und navigieren Sie zur Ubuntu-Installations-ISO.
 
 ![](scaleout-with-redis/_static/image3.png)
 
-## <a name="install-redis"></a>Installieren Sie Redis
+## <a name="install-redis"></a>Installieren von redis
 
-Führen Sie die Schritte unter [ http://redis.io/download ](http://redis.io/download) zum Herunterladen und Erstellen von Redis.
+Führen Sie die Schritte unter [http://redis.io/download](http://redis.io/download) aus, um redis herunterzuladen und zu erstellen.
 
 [!code-console[Main](scaleout-with-redis/samples/sample2.cmd)]
 
-Dies erstellt die Redis-Binärdateien die `src` Verzeichnis.
+Dadurch werden die redis-Binärdateien im `src` Verzeichnis erstellt.
 
-Standardmäßig wird Redis kein Kennwort erforderlich. Bearbeiten Sie zum Festlegen eines Kennworts die `redis.conf` -Datei, die im Stammverzeichnis des Quellcodes befindet. (Stellen Sie eine Sicherungskopie der Datei aus, bevor Sie sie bearbeiten.) Fügen Sie die folgende Anweisung zum `redis.conf`:
+Standardmäßig ist für redis kein Kennwort erforderlich. Um ein Kennwort festzulegen, bearbeiten Sie die Datei `redis.conf`, die sich im Stammverzeichnis des Quellcodes befindet. (Erstellen Sie eine Sicherungskopie der Datei, bevor Sie Sie bearbeiten!) Fügen Sie die folgende Direktive `redis.conf`hinzu:
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample3.ps1)]
 
-Starten Sie jetzt die Redis-Server:
+Starten Sie jetzt den redis-Server:
 
 [!code-css[Main](scaleout-with-redis/samples/sample4.css)]
 
 ![](scaleout-with-redis/_static/image4.png)
 
-Geöffneten Port 6379 aufheben, wird der Standardport, der Redis wird lauscht. (Sie können die Portnummer in der Konfigurationsdatei ändern.)
+Öffnen Sie Port 6379. Dies ist der Standardport, über den redis lauscht. (Sie können die Portnummer in der Konfigurationsdatei ändern.)
 
-## <a name="create-the-signalr-application"></a>Erstellen Sie die SignalR-Anwendung
+## <a name="create-the-signalr-application"></a>Erstellen der signalr-Anwendung
 
-Erstellen einer SignalR-Anwendung entweder mit diesen Lernprogrammen:
+Erstellen Sie eine signalr-Anwendung, indem Sie eines der folgenden Tutorials befolgen:
 
-- [Erste Schritte mit SignalR 2.0](../getting-started/tutorial-getting-started-with-signalr.md)
-- [Erste Schritte mit SignalR 2.0 und MVC 5](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+- [Einstieg in signalr 2,0](../getting-started/tutorial-getting-started-with-signalr.md)
+- [Einführung in signalr 2,0 und MVC 5](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-Als Nächstes ändern wir die Chat-Anwendung zur Unterstützung von horizontale Skalierung mit Redis. Fügen Sie zunächst die `Microsoft.AspNet.SignalR.StackExchangeRedis` NuGet-Paket Ihrem Projekt. In Visual Studio aus der **Tools** die Option **NuGet Paket-Manager**, wählen Sie **Paket-Manager Konsole**. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl aus:
+Als nächstes ändern wir die Chat-Anwendung, um die horizontale Skalierung mit redis zu unterstützen. Fügen Sie zunächst das `Microsoft.AspNet.SignalR.StackExchangeRedis` nuget-Paket zu Ihrem Projekt hinzu. Klicken Sie in Visual Studio im **Menü Extras** auf **nuget-Paket-Manager**, und wählen Sie dann Paket-Manager- **Konsole**aus. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl ein:
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 
-Öffnen Sie als Nächstes die Datei "Startup.cs". Fügen Sie den folgenden Code der **Konfiguration** Methode:
+Öffnen Sie als nächstes die Datei Startup.cs. Fügen Sie der **Konfigurations** Methode den folgenden Code hinzu:
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample6.cs)]
 
-- "Server" ist der Name des Servers, der Redis ausgeführt wird.
-- *Port* ist die Nummer des Ports
-- "Kennwort" ist das Kennwort, das Sie in der Datei redis.conf definiert.
-- "AppName" ist eine beliebige Zeichenfolge. SignalR erstellt einen Redis-Pub/Sub-Kanal mit diesem Namen.
+- "Server" ist der Name des Servers, auf dem redis ausgeführt wird.
+- *Port* ist die Portnummer
+- "Password" ist das Kennwort, das Sie in der Datei "redis. conf" definiert haben.
+- "Appname" ist eine beliebige Zeichenfolge. Signalr erstellt einen redis-Pub/Sub-Channel mit diesem Namen.
 
-Zum Beispiel:
+Beispiel:
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 
 ## <a name="deploy-and-run-the-application"></a>Bereitstellen und Ausführen der Anwendung
 
-Bereiten Sie Ihre Windows Server-Instanzen, um die SignalR-Anwendung bereitzustellen.
+Bereiten Sie Ihre Windows Server-Instanzen für die Bereitstellung der signalr-Anwendung vor.
 
-Fügen Sie die IIS-Rolle hinzu. Umfassen Sie "Anwendungsentwicklung"-Features, einschließlich der WebSocket-Protokoll.
+Fügen Sie die IIS-Rolle hinzu. Umfasst Funktionen für die Anwendungsentwicklung, einschließlich des WebSocket-Protokolls.
 
 ![](scaleout-with-redis/_static/image5.png)
 
-Außerdem enthalten Sie den Management-Dienst (unter "Management Tools" aufgeführt).
+Schließen Sie auch den Verwaltungsdienst ein (unter "Verwaltungs Tools" aufgeführt).
 
 ![](scaleout-with-redis/_static/image6.png)
 
-**Installieren Sie Web Deploy 3.0.** Wenn Sie die IIS-Manager ausführen, werden Sie zum Installieren von Microsoft-Webplattform aufgefordert, oder Sie können [Herunterladen des Installationsprogramms](https://go.microsoft.com/fwlink/?LinkId=255386). Klicken Sie in den Webplattform-Installer Web Deploy suchen Sie und installieren Sie Web Deploy 3.0
+**Installieren Sie Web Deploy 3,0.** Wenn Sie IIS-Manager ausführen, werden Sie aufgefordert, die Microsoft-Webplattform zu installieren, oder Sie können [das Installationsprogramm herunterladen](https://go.microsoft.com/fwlink/?LinkId=255386). Suchen Sie im Platt Form Installationsprogramm nach Web deploy, und installieren Sie Web Deploy 3,0
 
 ![](scaleout-with-redis/_static/image7.png)
 
-Überprüfen Sie, dass die Web-Management-Dienst ausgeführt wird. Wenn dies nicht der Fall ist, starten Sie den Dienst. (Wenn Sie Web-Management-Dienst in der Liste der Windows-Dienste nicht angezeigt wird, stellen Sie sicher, dass Sie den Management-Dienst installiert, wenn Sie die IIS-Rolle hinzugefügt haben.)
+Überprüfen Sie, ob der Webverwaltungsdienst ausgeführt wird. Wenn dies nicht der Wert ist, starten Sie den Dienst. (Wenn der Webverwaltungsdienst in der Liste der Windows-Dienste nicht angezeigt wird, stellen Sie sicher, dass Sie den-Verwaltungsdienst installiert haben, als Sie die IIS-Rolle hinzugefügt haben.)
 
-Standardmäßig wird TCP-Port 8172 den Web-Management-Dienst lauscht. Erstellen Sie eine neue eingehende Regel zum Zulassen von TCP-Datenverkehr an Port 8172, in der Windows-Firewall. Weitere Informationen finden Sie unter [Firewallregeln konfigurieren](https://technet.microsoft.com/library/dd448559(WS.10).aspx). (Wenn Sie die VMs in Azure hosten, dies direkt im Azure-Portal möglich. Finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)
+Standardmäßig lauscht der Webverwaltungsdienst an TCP-Port 8172. Erstellen Sie in der Windows-Firewall eine neue eingehende Regel, um TCP-Datenverkehr an Port 8172 zuzulassen. Weitere Informationen finden Sie unter [Konfigurieren von Firewallregeln](https://technet.microsoft.com/library/dd448559(WS.10).aspx). (Wenn Sie die VMs in Azure verwenden, können Sie dies direkt in der Azure-Portal tun. Weitere Informationen finden Sie [unter Einrichten von Endpunkten für einen virtuellen Computer](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)
 
-Jetzt sind Sie bereit für die Bereitstellung von Visual Studio-Projekt vom Entwicklungscomputer auf dem Server. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in der Projektmappe, und klicken Sie auf **veröffentlichen**.
+Nun können Sie das Visual Studio-Projekt von Ihrem Entwicklungs Computer auf dem Server bereitstellen. Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf die Lösung, und klicken Sie auf **veröffentlichen**.
 
-Weitere Dokumentation zur Bereitstellung finden Sie unter [Einstieg in die Webbereitstellung für Visual Studio und ASP.NET](../../../whitepapers/aspnet-web-deployment-content-map.md).
+Eine ausführlichere Dokumentation zur Webbereitstellung finden Sie unter [Webbereitstellungs-Inhalts Zuordnung für Visual Studio und ASP.net](../../../whitepapers/aspnet-web-deployment-content-map.md).
 
-Wenn Sie die Anwendung auf zwei Servern bereitstellen, können Sie jede Instanz in einem separaten Browserfenster zu öffnen und sehen, dass jeder SignalR-Nachrichten von einem anderen erhält. (Natürlich in einer produktionsumgebung, die beiden Server hinter einem Load Balancer saß.)
+Wenn Sie die Anwendung auf zwei Servern bereitstellen, können Sie jede Instanz in einem separaten Browserfenster öffnen und sehen, dass Sie jeweils signalr-Nachrichten vom anderen empfangen. (In einer Produktionsumgebung würden sich die beiden Server natürlich hinter einem Load Balancer befinden.)
 
 ![](scaleout-with-redis/_static/image8.png)
 
-Wenn Sie wissen möchten, finden Sie unter der Nachrichten, die mit Redis, gesendet werden, können Sie die **Redis-Cli** Client, der mit Redis installiert wird.
+Wenn Sie neugierig sind, welche Nachrichten an redis gesendet werden, können Sie den **redis-cli-** Client verwenden, der mit redis installiert wird.
 
 [!code-xml[Main](scaleout-with-redis/samples/sample8.xml)]
 

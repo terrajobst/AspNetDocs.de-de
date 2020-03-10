@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/vs-2005/web-application-projects-web-deployment-projects
-title: Webanwendungs- und Webbereitstellungsprojekte | Microsoft-Dokumentation
+title: Webanwendungs Projekte & Webbereitstellungs Projekte | Microsoft-Dokumentation
 author: BradleyBartz
-description: Bradley Bartz zeigt, wie die Web Application Projects und Web-Bereitstellungsprojekte für Visual Studio 2005 zu entwickeln und Bereitstellen von ASP.NET Projekte Simila machen...
+description: Bradley Bartz zeigt, wie die Webanwendungs Projekte und Webbereitstellungs Projekte für Visual Studio 2005 das entwickeln und Bereitstellen von ASP.NET-Projekten simila machen...
 ms.author: riande
 ms.date: 04/20/2006
 ms.assetid: 66d242f5-0306-4df2-8f05-c93e405f9847
 msc.legacyurl: /web-forms/videos/vs-2005/web-application-projects-web-deployment-projects
 msc.type: video
 ms.openlocfilehash: 026a8405e0d2078e7dc1dada4ed0185daefd86d7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406937"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515331"
 ---
 # <a name="web-application-projects--web-deployment-projects"></a>Webanwendungs- und Webbereitstellungsprojekte
 
-durch [Bradley Bartz](https://github.com/BradleyBartz)
+von [Bradley Bartz](https://github.com/BradleyBartz)
 
-Bradley Bartz wird gezeigt, wie die Web Application Projects und Web-Bereitstellungsprojekte für Visual Studio 2005 entwickeln und Bereitstellen von ASP.NET-Projekten ähnlich wie beim Visual Studio .NET 2003-Modell machen.
+Bradley Bartz zeigt, wie die Webanwendungs Projekte und Webbereitstellungs Projekte für Visual Studio 2005 das entwickeln und Bereitstellen von ASP.NET-Projekten ähneln, die dem Visual Studio .NET 2003-Modell ähneln.
 
-[&#9654;Sehen Sie sich Video (66 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/web-application-projects-web-deployment-projects)
+[&#9654;Video ansehen (66 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/web-application-projects-web-deployment-projects)
 
 > [!div class="step-by-step"]
-> [Vorherige](web-deployment-projects.md)
+> [Previous](web-deployment-projects.md)

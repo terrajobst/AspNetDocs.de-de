@@ -9,11 +9,11 @@ ms.assetid: 9715a121-fa55-4f1b-a5d2-fb3f6cd8be8f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
 ms.openlocfilehash: 410525bb2e3f6e5a0be6d7d6b33fb3a40509041a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614937"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465063"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Festlegen von Ordner Berechtigungen
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial legen Sie Ordner Berechtigungen für den Ordner *ELMAH* auf der bereitgestellten Website fest, damit die Anwendung Protokolldateien in diesem Ordner erstellen kann.
 
@@ -63,7 +63,7 @@ Testen Sie, indem Sie einen Fehler auf die gleiche Weise auslösen (ungültige U
 
 ![ELMAH-Fehlerprotokoll Seite](setting-folder-permissions/_static/image4.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Sie haben jetzt alle Aufgaben abgeschlossen, die erforderlich sind, damit die Configuration Manager-Umgebung in IIS auf dem lokalen Computer ordnungsgemäß funktioniert. Im nächsten Tutorial machen Sie die Website öffentlich verfügbar, indem Sie Sie in Azure bereitstellen.
 

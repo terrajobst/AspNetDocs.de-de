@@ -1,194 +1,194 @@
 ---
 uid: signalr/overview/security/introduction-to-security
-title: Einführung in die SignalR-Sicherheit | Microsoft-Dokumentation
+title: Einführung in die signalr-Sicherheit | Microsoft-Dokumentation
 author: bradygaster
-description: Beschreibt die Sicherheitsprobleme, die Sie berücksichtigen müssen, bei der Entwicklung einer SignalR-Anwendung.
+description: Beschreibt die Sicherheitsprobleme, die beim Entwickeln einer signalr-Anwendung berücksichtigt werden müssen.
 ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
 ms.openlocfilehash: 24ce20b45543468de28ad017ba62d2f6e5a00f3b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113666"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450075"
 ---
 # <a name="introduction-to-signalr-security"></a>Einführung in die Sicherheit von SignalR-Anwendungen
 
-durch [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+von [Patrick Fletcher](https://github.com/pfletcher), [Tom fitzmacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> Dieser Artikel beschreibt die Sicherheitsprobleme, die Sie berücksichtigen müssen, bei der Entwicklung einer SignalR-Anwendung.
+> In diesem Artikel werden die Sicherheitsprobleme beschrieben, die beim Entwickeln einer signalr-Anwendung berücksichtigt werden müssen.
 >
-> ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendeten Softwareversionen
+> ## <a name="software-versions-used-in-this-topic"></a>In diesem Thema verwendete Software Versionen
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
-> - SignalR-Version 2
+> - Signalr Version 2
 >
 >
 >
 > ## <a name="previous-versions-of-this-topic"></a>Vorherige Versionen dieses Themas
 >
-> Weitere Informationen zu früheren Versionen von SignalR, finden Sie unter [ältere Versionen von SignalR](../older-versions/index.md).
+> Informationen zu früheren Versionen von signalr finden Sie unter [signalr ältere Versionen](../older-versions/index.md).
 >
 > ## <a name="questions-and-comments"></a>Fragen und Kommentare
 >
-> Lassen Sie Feedback, auf wie Ihnen in diesem Tutorial gefallen hat und was wir in den Kommentaren am unteren Rand der Seite verbessern können. Wenn Sie Fragen, die nicht direkt mit dem Tutorial verknüpft sind haben, können Sie sie veröffentlichen das [ASP.NET SignalR-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder [StackOverflow.com](http://stackoverflow.com/).
+> Bitte informieren Sie sich darüber, wie Ihnen dieses Tutorial gefallen hat und was wir in den Kommentaren unten auf der Seite verbessern konnten. Wenn Sie Fragen haben, die nicht direkt mit dem Tutorial zusammenhängen, können Sie Sie im [ASP.net signalr-Forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) oder in [StackOverflow.com](http://stackoverflow.com/)veröffentlichen.
 
 ## <a name="overview"></a>Übersicht
 
 Dieses Dokument enthält folgende Abschnitte:
 
-- [SignalR-Sicherheitskonzepte](#concepts)
+- [Sicherheitskonzepte von signalr](#concepts)
 
     - [Authentifizierung und Autorisierung](#authentication)
-    - [Verbindungstoken](#connectiontoken)
-    - [Tritt von Gruppen beim Wiederherstellen der Verbindung](#rejoingroup)
-- [Wie SignalR websiteübergreifende Anforderungsfälschung verhindert](#csrf)
-- [Empfehlungen zur Sicherheit von SignalR](#recommendations)
+    - [Verbindungs Token](#connectiontoken)
+    - [Gruppen werden beim erneuten Herstellen der Verbindung erneut beitreten](#rejoingroup)
+- [So verhindert signalr die Website übergreifende Anforderungs Fälschung](#csrf)
+- [Signalr-Sicherheitsempfehlungen](#recommendations)
 
-    - [Secure Socket Layer (SSL)-Protokoll](#ssl)
-    - [Verwenden Sie Gruppen nicht als Sicherheitsmechanismus](#groupsecurity)
-    - [Sichere Verarbeitung von Eingaben von clients](#input)
-    - [Eine Änderung im Status "Benutzer" mit einer aktiven Verbindung abgleichen](#reconcile)
-    - [Automatisch generierte JavaScript-Proxy-Dateien](#autogen)
+    - [SSL-Protokoll (Secure Socket Layer)](#ssl)
+    - [Verwenden Sie keine Gruppen als Sicherheitsmechanismus](#groupsecurity)
+    - [Sichere Handhabung von Eingaben von Clients](#input)
+    - [Abstimmen einer Änderung des Benutzer Status mit einer aktiven Verbindung](#reconcile)
+    - [Automatisch generierte JavaScript-Proxy Dateien](#autogen)
     - [Ausnahmen](#exceptions)
 
 <a id="concepts"></a>
 
-## <a name="signalr-security-concepts"></a>SignalR-Sicherheitskonzepte
+## <a name="signalr-security-concepts"></a>Sicherheitskonzepte von signalr
 
 <a id="authentication"></a>
 
 ### <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
-SignalR stellt keine Funktionen bereit, zum Authentifizieren von Benutzern. Integrieren Sie stattdessen die SignalR-Funktionen, in der vorhandenen Struktur der Authentifizierung für eine Anwendung. Sie können Benutzer authentifizieren, wie Sie normalerweise in der Anwendung und die Arbeit mit den Ergebnissen der Authentifizierung in Ihrer SignalR würden. Beispielsweise können Sie authentifizieren Sie Ihre Benutzer bei der Formularauthentifizierung von ASP.NET und dann in Ihrem Hub erzwingen, welche Benutzer oder Rollen sind berechtigt, eine Methode aufzurufen. In Ihrem Hub können Sie auch Authentifizierungsinformationen, z. B. Benutzernamen oder einer Rolle an den Client, ob ein Benutzer angehört übergeben.
+Signalr stellt keine Features zum Authentifizieren von Benutzern bereit. Stattdessen integrieren Sie die signalr-Funktionen in die vorhandene Authentifizierungs Struktur für eine Anwendung. Sie authentifizieren Benutzer wie gewohnt in der Anwendung und arbeiten mit den Ergebnissen der Authentifizierung in Ihrem signalr-Code. Beispielsweise können Sie Ihre Benutzer mit der ASP.NET-Formular Authentifizierung authentifizieren und dann in ihrem Hub erzwingen, welche Benutzer oder Rollen autorisiert sind, eine Methode aufzurufen. In ihrem Hub können Sie auch Authentifizierungsinformationen, wie z. b. den Benutzernamen oder den Benutzer, der zu einer Rolle gehört, an den Client übergeben.
 
-SignalR stellt die [autorisieren](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) Attribut, um anzugeben, welche Benutzer mit einem Hub oder die Methode zugreifen. Sie wenden das Authorize-Attribut, auf die entweder einen Hub oder bestimmte Methoden in einem Hub. Ohne das Authorize-Attribut sind alle öffentliche Methoden des Hubs auf einem Client, der mit dem Hub verbunden ist. Weitere Informationen zu Hubs finden Sie unter [Authentifizierung und Autorisierung für SignalR-Hubs](hub-authorization.md).
+Signalr stellt das [Autorisierungs](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) Attribut bereit, um anzugeben, welche Benutzer Zugriff auf einen Hub oder eine Methode haben. Sie wenden das Attribut autorisieren entweder auf einen Hub oder bestimmte Methoden in einem Hub an. Ohne das Attribut "autorisieren" sind alle öffentlichen Methoden auf dem Hub für einen Client verfügbar, der mit dem Hub verbunden ist. Weitere Informationen zu Hubs finden Sie unter [Authentifizierung und Autorisierung für signalr-Hubs](hub-authorization.md).
 
-Sie übernehmen die `Authorize` Attribut Hubs allerdings nicht permanenten Verbindungen. Autorisierungsregeln zu erzwingen, wenn es sich bei Verwendung einer `PersistentConnection` müssen Sie überschreiben die `AuthorizeRequest` Methode. Weitere Informationen zu permanenten Verbindungen, finden Sie unter [Authentifizierung und Autorisierung für permanente SignalR-Verbindungen](persistent-connection-authorization.md).
+Sie wenden das `Authorize`-Attribut auf Hubs, jedoch nicht auf persistente Verbindungen an. Zum Erzwingen von Autorisierungs Regeln bei Verwendung eines `PersistentConnection` müssen Sie die `AuthorizeRequest`-Methode überschreiben. Weitere Informationen zu permanenten Verbindungen finden Sie unter [Authentifizierung und Autorisierung für permanente signalr-Verbindungen](persistent-connection-authorization.md).
 
 <a id="connectiontoken"></a>
 
-### <a name="connection-token"></a>Verbindungstoken
+### <a name="connection-token"></a>Verbindungs Token
 
-SignalR verringert das Risiko böswilliger Befehle ausführt, durch die Überprüfung der Identität des Absenders. Für jede Anforderung übergeben dem Client und Server ein Verbindungstoken, die die Verbindungs-Id und den Benutzernamen für authentifizierte Benutzer enthält. Die Verbindungs-Id identifiziert eindeutig einzelnen verbundenen Client. Der Server generiert nach dem Zufallsprinzip die Verbindungs-Id auf, wenn eine neue Verbindung erstellt wird, und die Id für die Dauer der Verbindung besteht. Der Authentifizierungsmechanismus für die Webanwendung gibt den Benutzernamen ein. SignalR verwendet verschlüsselungs- und eine digitale Signatur, um das Verbindungstoken zu schützen.
+Signalr verringert das Risiko, dass schädliche Befehle ausgeführt werden, indem die Identität des Absenders überprüft wird. Der Client und der Server übergeben für jede Anforderung ein Verbindungs Token, das die Verbindungs-ID und den Benutzernamen für authentifizierte Benutzer enthält. Die Verbindungs-ID identifiziert jeden verbundenen Client eindeutig. Der Server generiert nach dem Zufallsprinzip die Verbindungs-ID, wenn eine neue Verbindung erstellt wird, und behält diese ID für die Dauer der Verbindung bei. Der Authentifizierungsmechanismus für die Webanwendung stellt den Benutzernamen bereit. Signalr verwendet Verschlüsselung und eine digitale Signatur, um das Verbindungs Token zu schützen.
 
 ![](introduction-to-security/_static/image2.png)
 
-Für jede Anforderung überprüft der Server den Inhalt der Token, um sicherzustellen, dass der angegebene Benutzer die Anforderung stammt. Der Benutzername muss die Verbindungs-Id entsprechen. Durch Überprüfen sowohl die Verbindungs-Id und der Benutzername, verhindert, dass SignalR einen böswilligen Benutzer problemlos Identität eines anderen Benutzers. Die Anforderung schlägt fehl, wenn der Server kann nicht das Verbindungstoken überprüfen.
+Für jede Anforderung überprüft der Server den Inhalt des Tokens, um sicherzustellen, dass die Anforderung vom angegebenen Benutzer stammt. Der Benutzername muss der Verbindungs-ID entsprechen. Durch die Überprüfung der Verbindungs-ID und des Benutzernamens verhindert signalr, dass ein böswilliger Benutzer leicht die Identität eines anderen Benutzers annimmt. Wenn der Server das Verbindungs Token nicht validieren kann, schlägt die Anforderung fehl.
 
 ![](introduction-to-security/_static/image4.png)
 
-Da die Verbindungs-Id Teil, bei der Überprüfung ist, sollten nicht Verbindungs-Id eines Benutzers, für andere Benutzer anzeigen oder den Wert auf dem Client, z. B. in einem Cookie gespeichert.
+Da die Verbindungs-ID Teil des Überprüfungs Vorgangs ist, sollten Sie die Verbindungs-ID eines Benutzers nicht für andere Benutzer offenlegen oder den Wert auf dem Client (z. b. in einem Cookie) speichern.
 
-#### <a name="connection-tokens-vs-other-token-types"></a>Verbindungs-Token im Vergleich zu anderen Typen von Sicherheitstoken
+#### <a name="connection-tokens-vs-other-token-types"></a>Verbindungs Token und andere Tokentypen
 
-Verbindung Token werden gelegentlich von Sicherheitstools gekennzeichnet, da sie anscheinend Sitzungstoken oder Ihrer Authentifizierungstoken, die ein Risiko birgt, wenn es sich bei verfügbar gemacht werden.
+Verbindungs Token werden von Sicherheitstools gelegentlich gekennzeichnet, da es sich um Sitzungs Token oder Authentifizierungs Token handelt, die ein Risiko darstellen, wenn Sie verfügbar gemacht werden.
 
-Token für SignalR Verbindung kein Authentifizierungstoken. Es wird verwendet, um zu bestätigen, dass der Benutzer die Anforderung gesendet hat die gleiche, das die Verbindung erstellt haben. Das Verbindungstoken ist erforderlich, da ASP.NET SignalR-Verbindungen zwischen Servern verschieben zulässt. Das Token ordnet die Verbindung mit einem bestimmten Benutzer jedoch nicht die Identität des Benutzers an, der die Anforderung bestätigen. Eine SignalR-Anforderung ordnungsgemäß authentifiziert werden muss sie haben einige andere Token, das die Identität des Benutzers, z.B. ein Cookie bestätigt oder Bearer-Token. Aber die Verbindung token selbst wird kein Anspruch, der vom Benutzer angefordert wurde, das die Verbindungs-ID im Token enthalten, nur diesem Benutzer zugeordnet ist.
+Das Verbindungs Token von signalr ist kein Authentifizierungs Token. Es wird verwendet, um zu bestätigen, dass der Benutzer, der diese Anforderung vornimmt, derselbe ist, der die Verbindung erstellt hat. Das Verbindungs Token ist erforderlich, da ASP.net signalr Verbindungen zwischen Servern zulässt. Das Token ordnet die Verbindung einem bestimmten Benutzer zu, bestätigt aber nicht die Identität des Benutzers, der die Anforderung sendet. Damit eine signalr-Anforderung ordnungsgemäß authentifiziert werden kann, muss Sie über ein anderes Token verfügen, das die Identität des Benutzers bestätigt, z. b. ein Cookie oder ein bearertoken. Das Verbindungs Token selbst erhebt jedoch keinen Anspruch darauf, dass die Anforderung von diesem Benutzer hergestellt wurde, sondern nur, dass die im Token enthaltene Verbindungs-ID diesem Benutzer zugeordnet ist.
 
-Da das Verbindungstoken keine eigene authentifizierungsanspruch bereitstellt, ist nicht davon ausgegangen, eine "Sitzung" oder "Authentication" token. Nehmen Verbindung eines bestimmten Benutzers token, und es in einer Anforderung als ein anderer Benutzer authentifiziert (oder eine nicht authentifizierte Anforderung) wiedergeben schlägt fehl, da die Identität des Benutzers der Anforderung und die Identität in das Token stimmt jedoch nicht überein.
+Da das Verbindungs Token keinen eigenen Authentifizierungs Anspruch bereitstellt, gilt es nicht als Sitzungs-oder Authentifizierungs Token. Wenn Sie das Verbindungs Token eines bestimmten Benutzers übernehmen und in einer Anforderung wiedergeben, die als ein anderer Benutzer (oder eine nicht authentifizierte Anforderung) authentifiziert ist, tritt ein Fehler auf, da die Benutzeridentität der Anforderung und der Identität, die im Token gespeichert ist, nicht entspricht.
 
 <a id="rejoingroup"></a>
 
-### <a name="rejoining-groups-when-reconnecting"></a>Tritt von Gruppen beim Wiederherstellen der Verbindung
+### <a name="rejoining-groups-when-reconnecting"></a>Gruppen werden beim erneuten Herstellen der Verbindung erneut beitreten
 
-Standardmäßig wird die SignalR-Anwendung automatisch neu zuweisen eines Benutzers zu den entsprechenden Gruppen beim Wiederherstellen der Verbindung von einer vorübergehenden Störung, z. B. wenn eine Verbindung gelöscht und erneut hergestellt wird, bevor die Verbindung ein eintritt Timeout. Beim Wiederherstellen der Verbindung übergibt der Client ein Token von Gruppe, die die Verbindungs-Id und die zugewiesenen Gruppen enthält. Das Group-Token ist digital signiert und verschlüsselt. Der Client weiterhin die gleichen Verbindungs-Id hat, nachdem eine erneute Verbindung; aus diesem Grund muss die Verbindungs-Id, die von der neu verbundenen Client übergeben werden die vorherigen vom Client verwendeten Verbindungs-Id überein. Diese Überprüfung wird verhindert, dass einen böswilligen Benutzer Anforderungen, nicht autorisierten Gruppe beizutreten, beim Wiederherstellen der Verbindung zu übergeben.
+Standardmäßig wird ein Benutzer von der signalr-Anwendung automatisch den entsprechenden Gruppen zugewiesen, wenn eine Verbindung mit einer vorübergehenden Unterbrechung wieder hergestellt wird, z. b. Wenn eine Verbindung getrennt und wieder hergestellt wird, bevor ein Timeout für die Verbindung auftritt. Beim erneuten Herstellen der Verbindung übergibt der Client ein Gruppen Token, das die Verbindungs-ID und die zugewiesenen Gruppen enthält. Das Gruppen Token ist digital signiert und verschlüsselt. Der Client behält die gleiche Verbindungs-ID nach einer erneuten Verbindung bei. Daher muss die von dem Wiederherstellen des Clients übergebenen Verbindungs-ID mit der vorherigen Verbindungs-ID, die vom Client verwendet wird, identisch sein. Durch diese Überprüfung wird verhindert, dass ein böswilliger Benutzer bei erneutem Verbindungsaufbau Anforderungen an nicht autorisierte Gruppen übergibt.
 
-Allerdings ist es wichtig zu beachten Sie, dass das Token für die Gruppe nicht abläuft. Wenn ein Benutzer zu einer Gruppe, in der Vergangenheit gehören, aber aus dieser Gruppe gesperrt wurde, dieser Benutzer möglicherweise um ein Token für die Gruppe zu imitieren, die den unzulässige Gruppe enthält. Bei Bedarf, um sicher zu verwalten, welche Benutzer welche Gruppen angehören, müssen Sie die Daten auf dem Server, z. B. in einer Datenbank zu speichern. Anschließend fügen Sie Logik Ihrer Anwendung, die auf dem Server überprüft, ob ein Benutzer zu einer Gruppe gehört. Ein Beispiel für das Überprüfen der Gruppenmitgliedschaft, finden Sie unter [arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
+Es ist jedoch wichtig zu beachten, dass das Gruppen Token nicht abläuft. Wenn ein Benutzer zu einer Gruppe in der Vergangenheit gehört, aber von dieser Gruppe gesperrt wurde, kann dieser Benutzer ein Gruppen Token imitieren, das die unzulässige Gruppe enthält. Wenn Sie sicher verwalten müssen, welche Benutzer zu welchen Gruppen gehören, müssen Sie diese Daten auf dem Server speichern, z. b. in einer Datenbank. Fügen Sie dann der Anwendung Logik hinzu, mit der auf dem Server überprüft wird, ob ein Benutzer zu einer Gruppe gehört. Ein Beispiel für die Überprüfung der Gruppenmitgliedschaft finden Sie unter [Arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
 
-Tritt automatisch Gruppen gilt nur, wenn eine Verbindung die Verbindung nach einer vorübergehenden Störung wiederhergestellt wird. Wenn ein Benutzer durch die Verbindung trennt muss das Verlassen der Anwendung oder dem Neustart der Anwendung, die Anwendung wie den richtigen Gruppen diesen Benutzer hinzugefügt behandeln. Weitere Informationen finden Sie unter [arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
+Das automatische erneute Verbinden von Gruppen gilt nur, wenn eine Verbindung nach einer vorübergehenden Unterbrechung wieder hergestellt wird. Wenn ein Benutzer die Verbindung trennt, indem er von der Anwendung navigiert oder die Anwendung neu gestartet wird, muss die Anwendung behandeln, wie dieser Benutzer den richtigen Gruppen hinzugefügt wird. Weitere Informationen finden Sie unter [Arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
 
 <a id="csrf"></a>
 
-## <a name="how-signalr-prevents-cross-site-request-forgery"></a>Wie SignalR websiteübergreifende Anforderungsfälschung verhindert
+## <a name="how-signalr-prevents-cross-site-request-forgery"></a>So verhindert signalr die Website übergreifende Anforderungs Fälschung
 
-Cross-Site Request Forgery (CSRF) handelt es sich um einen Angriff, in dem eine schädliche Website sendet eine Anforderung an einer anfälligen Website, in denen der Benutzer zurzeit angemeldet ist. SignalR verhindert CSRF, indem Sie machen es sehr unwahrscheinlich ist, für eine schädliche Website um eine gültige Anforderung für die SignalR-Anwendung zu erstellen.
+Website übergreifende Anforderungs Fälschung (Cross-Site Request Fälschung, CSRF) ist ein Angriff, bei dem ein böswilliger Standort eine Anforderung an einen anfälligen Standort sendet, an dem der Benutzer zurzeit angemeldet ist Signalr verhindert csrf, da es für eine böswillige Website äußerst unwahrscheinlich ist, dass eine gültige Anforderung für Ihre signalr-Anwendung erstellt wird.
 
-### <a name="description-of-csrf-attack"></a>Beschreibung von CSRF-Angriffe
+### <a name="description-of-csrf-attack"></a>Beschreibung von CSRF-Angriffen
 
-Hier ist ein Beispiel eines CSRF-Angriffs aus:
+Im folgenden finden Sie ein Beispiel für einen CSRF-Angriff:
 
-1. Ein Benutzer sich anmeldet www.example.com, Formularauthentifizierung verwenden.
-2. Der Server authentifiziert den Benutzer. Die Antwort vom Server enthält ein Authentifizierungscookie.
-3. Der Benutzer, ohne Abmeldung, eine schädliche Website besucht. Diese schädliche Websites enthält das folgende HTML-Format an:
+1. Ein Benutzer meldet sich mit der Formular Authentifizierung bei www.example.com an.
+2. Der-Server authentifiziert den Benutzer. Die Antwort vom Server enthält ein Authentifizierungs Cookie.
+3. Ohne Abmeldung greift der Benutzer auf eine böswillige Website zu. Diese böswillige Site enthält das folgende HTML-Formular:
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
-   Beachten Sie, dass die Formularaktion an den Standort anfällig für nicht auf die bösartige Website sendet. Dies ist der Teil von "Cross-Site" für CSRF.
-4. Der Benutzer klickt auf die Schaltfläche "Senden". Der Browser enthält das Cookie für die Authentifizierung mit der Anforderung.
-5. Die Anforderung ausgeführt wird, auf dem Server "Beispiel.com" mit dem Kontext des Benutzers Authentifizierung und Aktionen möglich, die ein authentifizierter Benutzer ausführen darf.
+   Beachten Sie, dass das Formular Action an die anfällige Site und nicht an die böswillige Site sendet. Dies ist der "Cross-Site"-Teil von CSRF.
+4. Der Benutzer klickt auf die Schaltfläche Senden. Der Browser enthält das Authentifizierungs Cookie mit der Anforderung.
+5. Die Anforderung wird auf dem example.com-Server mit dem Authentifizierungs Kontext des Benutzers ausgeführt und kann alle Aktionen ausführen, die ein authentifizierter Benutzer ausführen darf.
 
-Obwohl in diesem Beispiel wird den Benutzer auf die Schaltfläche "Format" erforderlich sind, könnten auch einfach ein Skript ausführen, die eine AJAX-Anforderung an Ihre SignalR-Anwendung sendet die schädliche Seite. Darüber hinaus verhindert mithilfe von SSL ein CSRF-Angriffs nicht, da die bösartige Website eine "https://"-Anforderung senden kann.
+Obwohl es für dieses Beispiel erforderlich ist, dass der Benutzer auf die Schaltfläche "Formular" klickt, kann die bösartige Seite genauso einfach ein Skript ausführen, das eine AJAX-Anforderung an die signalr-Anwendung sendet. Außerdem wird durch die Verwendung von SSL kein CSRF-Angriff verhindert, da die böswillige Website eine "https://"-Anforderung senden kann.
 
-In der Regel sind die CSRF-Angriffe möglich vor Websites, die Cookies für die Authentifizierung zu verwenden, da Browser alle relevanten Cookies an die Ziel-Website senden. CSRF-Angriffe sind jedoch nicht beschränkt auf Cookies ausnutzen. Z. B. Basis-und Digestauthentifizierung sind auch anfällig. Nachdem ein Benutzer mit Basic oder Digest-Authentifizierung anmeldet, sendet der Browser automatisch die Anmeldeinformationen an, bis die Sitzung beendet.
+In der Regel sind CSRF-Angriffe auf Websites möglich, die Cookies für die Authentifizierung verwenden, da Browser alle relevanten Cookies an die Zielwebsite senden. Allerdings sind CSRF-Angriffe nicht auf das Ausnutzen von Cookies beschränkt. Beispielsweise sind die Standard-und Digestauthentifizierung auch anfällig. Nachdem sich ein Benutzer mit der Standard-oder Digestauthentifizierung anmeldet, sendet der Browser die Anmelde Informationen automatisch, bis die Sitzung beendet wird.
 
-### <a name="csrf-mitigations-taken-by-signalr"></a>CSRF-Lösungen, die von SignalR
+### <a name="csrf-mitigations-taken-by-signalr"></a>Von signalr abgenommene CSRF-entschärfungen
 
-SignalR verwendet die folgenden Schritte aus, um zu verhindern, dass eine schädliche Website gültige Anforderungen Ihrer Anwendung zu erstellen. SignalR verwendet die folgenden Schritte aus, in der Standardeinstellung, Sie müssen nicht in Ihrem Code keine Maßnahmen ergreifen.
+Signalr führt die folgenden Schritte aus, um zu verhindern, dass eine böswillige Site gültige Anforderungen an Ihre Anwendung erstellt. Diese Schritte werden von signalr standardmäßig ausgeführt. Sie müssen keine Aktionen in Ihrem Code durchführen.
 
-- **Deaktivieren Sie die domänenübergreifende Anforderungen** SignalR deaktiviert die domänenübergreifende Anforderungen, um zu verhindern, dass Benutzer ein SignalR-Endpunkt aus einer externen Domäne aufgerufen. SignalR jede Anforderung von einer externen Domäne als ungültig betrachtet, und die Anforderung blockiert. Es wird empfohlen, dass Sie dieses Standardverhalten beibehalten; Andernfalls kann eine schädliche Website Benutzer bringen, Senden von Befehlen auf Ihrer Website. Zu domänenübergreifende Anforderungen verwenden, finden Sie unter [Gewusst wie: Herstellen einer Verbindung domänenübergreifende](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
-- **Abfragezeichenfolge nicht Cookie Verbindungstoken übergebe** SignalR übergibt das Verbindungstoken als Wert einer Abfragezeichenfolge, statt als Cookie. Das Verbindungstoken in einem Cookie speichern ist unsicher, da der Browser das Verbindungstoken versehentlich weiterleiten kann, wenn Schadsoftware erkannt wird. Darüber hinaus verhindert, dass das Verbindungstoken in der Abfragezeichenfolge übergeben das Verbindungstoken außerhalb der aktuellen Verbindungs beibehalten. Aus diesem Grund kann kein böswilliger Benutzer unter der Authentifizierungsinformationen eines anderen Benutzers anfordern.
-- **Stellen Sie sicher Verbindungstoken** wie in beschrieben die [Verbindungstoken](#connectiontoken) Abschnitt, der Server weiß, welche Verbindungs-Id jeder authentifizierte Benutzer zugeordnet ist. Der Server verarbeitet keine Anforderungen über eine Verbindungs-Id, die nicht den Benutzernamen übereinstimmen. Es ist unwahrscheinlich, dass ein böswilliger Benutzer eine gültige Anforderung erraten kann, da der böswillige Benutzer den Benutzernamen und die aktuelle nach dem Zufallsprinzip generierte Verbindungs­ID kennen muss. Dieser Verbindungs-Id wird ungültig, sobald die Verbindung beendet wird. Anonyme Benutzer müssen nicht den Zugriff auf vertrauliche Informationen.
+- **Domänen übergreifende Anforderungen deaktivieren** Signalr deaktiviert Domänen übergreifende Anforderungen, um zu verhindern, dass Benutzer einen signalr-Endpunkt von einer externen Domäne aus aufrufen. Signalr betrachtet jede Anforderung von einer externen Domäne als ungültig und blockiert die Anforderung. Es wird empfohlen, dass Sie dieses Standardverhalten beibehalten. Andernfalls könnte ein böswilliger Standort Benutzer dazu verleiten, Befehle an Ihre Website zu senden. Wenn Sie Domänen übergreifende Anforderungen verwenden müssen, finden Sie weitere Informationen unter [Einrichten einer Domänen übergreifenden Verbindung](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
+- **Verbindungs Token in Abfrage Zeichenfolge übergeben, nicht als Cookie** Signalr übergibt das Verbindungs Token als Abfrage Zeichen folgen Wert anstelle eines Cookies. Das Speichern des Verbindungs Tokens in einem Cookie ist unsicher, da der Browser das Verbindungs Token versehentlich weiterleiten kann, wenn bösartiger Code auftritt. Außerdem verhindert das Übergeben des Verbindungs Tokens in der Abfrage Zeichenfolge, dass das Verbindungs Token nicht länger als die aktuelle Verbindung beibehalten wird. Daher kann ein böswilliger Benutzer eine Anforderung nicht unter den Authentifizierungs Anmelde Informationen eines anderen Benutzers tätigen.
+- **Verbindungs Token überprüfen** Wie im Abschnitt " [Verbindungs Token](#connectiontoken) " beschrieben, weiß der Server, welche Verbindungs-ID den einzelnen authentifizierten Benutzern zugeordnet ist. Der Server verarbeitet keine Anforderung von einer Verbindungs-ID, die nicht mit dem Benutzernamen identisch ist. Es ist unwahrscheinlich, dass ein böswilliger Benutzer eine gültige Anforderung erraten könnte, da der böswillige Benutzer den Benutzernamen und die aktuelle zufällig generierte Verbindungs-ID kennen muss. Diese Verbindungs-ID wird ungültig, sobald die Verbindung beendet wird. Anonyme Benutzer sollten keinen Zugriff auf vertrauliche Informationen haben.
 
 <a id="recommendations"></a>
 
-## <a name="signalr-security-recommendations"></a>Empfehlungen zur Sicherheit von SignalR
+## <a name="signalr-security-recommendations"></a>Signalr-Sicherheitsempfehlungen
 
 <a id="ssl"></a>
 
-### <a name="secure-socket-layers-ssl-protocol"></a>Secure Socket Layer (SSL)-Protokoll
+### <a name="secure-socket-layers-ssl-protocol"></a>SSL-Protokoll (Secure Socket Layer)
 
-Das SSL-Protokoll verwendet Verschlüsselung, um die Übertragung von Daten zwischen einem Client und Server zu sichern. Falls Ihre SignalR-Anwendung vertrauliche Informationen zwischen Client und Server sendet, verwenden Sie SSL für den Transport. Weitere Informationen zum Einrichten von SSL finden Sie unter [So richten Sie SSL in IIS 7](https://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Das SSL-Protokoll verwendet Verschlüsselung, um den Datentransport zwischen einem Client und einem Server zu sichern. Wenn die signalr-Anwendung vertrauliche Informationen zwischen Client und Server überträgt, verwenden Sie SSL für den Transport. Weitere Informationen zum Einrichten von SSL finden Sie unter [Einrichten von SSL auf IIS 7](https://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 <a id="groupsecurity"></a>
 
-### <a name="do-not-use-groups-as-a-security-mechanism"></a>Verwenden Sie Gruppen nicht als Sicherheitsmechanismus
+### <a name="do-not-use-groups-as-a-security-mechanism"></a>Verwenden Sie keine Gruppen als Sicherheitsmechanismus
 
-Gruppen sind eine einfache Möglichkeit im Zusammenhang stehenden Benutzer erfassen, aber sie sind sich nicht um einen sicheren Mechanismus zum Einschränken des Zugriffs auf vertrauliche Informationen. Dies gilt insbesondere, wenn der Benutzer automatisch Gruppen während einer erneut hergestellten Verbindung erneut hinzuzufügen können. Stattdessen Sie werden berechtigte Benutzer zu einer Rolle hinzufügen, und beschränken des Zugriffs auf eine hubmethode, um nur die Mitglieder dieser Rolle. Ein Beispiel für das Einschränken des Zugriffs basierend auf einer Rolle, finden Sie unter [Authentifizierung und Autorisierung für SignalR-Hubs](hub-authorization.md). Ein Beispiel für die Überprüfung der Benutzerzugriff auf Gruppen beim Wiederherstellen der Verbindung, finden Sie unter [arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
+Gruppen sind eine bequeme Möglichkeit, Verwandte Benutzer zu erfassen, sind aber kein sicherer Mechanismus zum Einschränken des Zugriffs auf vertrauliche Informationen. Dies trifft vor allem dann zu, wenn Benutzer bei einer erneuten Verbindungs Herstellung automatisch Gruppen beitreten können. Fügen Sie stattdessen privilegierte Benutzer zu einer Rolle hinzu, und beschränken Sie den Zugriff auf eine Hub-Methode nur auf Mitglieder dieser Rolle. Ein Beispiel für das Einschränken des Zugriffs basierend auf einer Rolle finden Sie unter [Authentifizierung und Autorisierung für signalr-Hubs](hub-authorization.md). Ein Beispiel für das Überprüfen des Benutzer Zugriffs auf Gruppen beim erneuten Herstellen der Verbindung finden Sie unter [Arbeiten mit Gruppen](../guide-to-the-api/working-with-groups.md).
 
 <a id="input"></a>
 
-### <a name="safely-handling-input-from-clients"></a>Sichere Verarbeitung von Eingaben von clients
+### <a name="safely-handling-input-from-clients"></a>Sichere Handhabung von Eingaben von Clients
 
-Um sicherzustellen, dass ein böswilliger Benutzer Skript nicht für andere Benutzer gesendet wird, müssen Sie alle Eingaben von den Clients codieren, die eine Übertragung an andere Clients vorgesehen ist. Sie sollten die Nachrichten auf dem Server, statt die empfangende Clients codieren, da Ihre SignalR-Anwendung kann viele verschiedene Arten von Clients möglicherweise. Aus diesem Grund funktioniert die HTML-Codierung für eine Webclient, jedoch nicht für andere Typen von Clients. Z. B. eine Web-Client-Methode, um eine Chatnachricht anzuzeigen würde sicher behandeln, den Benutzernamen und die Nachricht durch den Aufruf der `html()` Funktion.
+Um sicherzustellen, dass ein böswilliger Benutzer kein Skript an andere Benutzer sendet, müssen Sie alle Eingaben von Clients codieren, die für die Übertragung an andere Clients vorgesehen sind. Sie sollten Nachrichten auf den empfangenden Clients anstelle des Servers codieren, da die signalr-Anwendung viele verschiedene Arten von Clients aufweisen kann. Daher funktioniert die HTML-Codierung für einen Webclient, jedoch nicht für andere Arten von Clients. Beispielsweise würde eine Webclient Methode, mit der eine Chat Nachricht angezeigt wird, den Benutzernamen und die Nachricht sicher behandeln, indem Sie die `html()`-Funktion aufrufen.
 
 [!code-html[Main](introduction-to-security/samples/sample2.html?highlight=3-4)]
 
 <a id="reconcile"></a>
 
-### <a name="reconciling-a-change-in-user-status-with-an-active-connection"></a>Eine Änderung im Status "Benutzer" mit einer aktiven Verbindung abgleichen
+### <a name="reconciling-a-change-in-user-status-with-an-active-connection"></a>Abstimmen einer Änderung des Benutzer Status mit einer aktiven Verbindung
 
-Wenn die Authentication-Status eines Benutzers ändert, während eine aktive Verbindung vorhanden ist, der Benutzer wird eine Fehlermeldung, aus der hervorgeht, "die Identität des Benutzers kann nicht während einer aktiven SignalR-Verbindungs ändern". In diesem Fall die Anwendung erneut eine Verbindung herstellen soll an den Server aus, um sicherzustellen, dass der Verbindungs-Id und dem Benutzernamen koordiniert werden. Z. B. Wenn Ihre Anwendung kann der Benutzer abmelden, während eine aktive Verbindung vorhanden ist, wird der Benutzername für die Verbindung nicht mehr übereinstimmen den Namen, der für die nächste Anforderung übergeben wird. Sie möchten, die Verbindung zu beenden, bevor der Benutzer abmeldet, und dann neu gestartet werden.
+Wenn sich der Authentifizierungs Status eines Benutzers ändert, während eine aktive Verbindung besteht, wird dem Benutzer eine Fehlermeldung angezeigt, die besagt, dass die Benutzeridentität während einer aktiven signalr-Verbindung nicht geändert werden kann. In diesem Fall sollte die Anwendung erneut eine Verbindung mit dem Server herstellen, um sicherzustellen, dass die Verbindungs-ID und der Benutzername koordiniert werden. Wenn die Anwendung beispielsweise dem Benutzer ermöglicht, sich abzumelden, während eine aktive Verbindung besteht, entspricht der Benutzername für die Verbindung nicht mehr dem Namen, der für die nächste Anforderung weitergegeben wurde. Sie müssen die Verbindung vor dem Abmelden des Benutzers abbrechen und dann neu starten.
 
-Allerdings ist es wichtig zu beachten, dass die meisten Anwendungen müssen nicht manuell beenden und starten die Verbindung. Wenn die Anwendung Benutzer auf eine separate Seite nach der Anmeldung, z. B. das Standardverhalten in einer Web Forms-Anwendung oder eine MVC-Anwendung leitet oder die aktuelle Seite aktualisiert nach dem Abmelden, wird automatisch getrennt und nicht die aktive Verbindung zusätzliche Aktion erforderlich.
+Es ist jedoch wichtig zu beachten, dass die meisten Anwendungen die Verbindung nicht manuell beendet und gestartet werden müssen. Wenn Ihre Anwendung Benutzer nach der Abmeldung an eine separate Seite umleitet (z. b. das Standardverhalten in einer Web Forms Anwendung oder MVC-Anwendung) oder die aktuelle Seite nach der Abmeldung aktualisiert, wird die aktive Verbindung automatisch getrennt. erfordert zusätzliche Aktionen.
 
-Das folgende Beispiel zeigt, wie zum Beenden und starten eine Verbindung aus, wenn sich der Benutzerstatus geändert hat.
+Das folgende Beispiel zeigt, wie Sie eine Verbindung beenden und starten, wenn sich der Benutzer Status geändert hat.
 
 [!code-html[Main](introduction-to-security/samples/sample3.html)]
 
-Oder der Status des Benutzers Authentifizierung möglicherweise ändern, wenn Ihre Website gleitenden Ablauf bei der Formularauthentifizierung verwendet aus, und keine Aktivität auf das Authentifizierungscookie gültig bleiben. In diesem Fall der Benutzer werden abgemeldet, und der Benutzername wird nicht mehr den Benutzernamen in das Verbindungstoken übereinstimmen. Sie können dieses Problem beheben, indem Sie ein Skript, das eine Ressource auf dem Webserver, auf das Authentifizierungscookie gültig halten in regelmäßigen Abständen Anforderungen hinzufügen. Das folgende Beispiel zeigt, wie Sie eine Ressource alle 30 Minuten anfordern.
+Oder der Authentifizierungs Status des Benutzers kann sich ändern, wenn Ihre Website den gleitenden Ablauf mit der Formular Authentifizierung verwendet und keine Aktivität vorhanden ist, mit der das Authentifizierungs Cookie gültig bleibt. In diesem Fall wird der Benutzer abgemeldet, und der Benutzername stimmt nicht mehr mit dem Benutzernamen im Verbindungs Token ab. Sie können dieses Problem beheben, indem Sie ein Skript hinzufügen, das regelmäßig eine Ressource auf dem Webserver anfordert, damit das Authentifizierungs Cookie gültig bleibt. Im folgenden Beispiel wird gezeigt, wie Sie alle 30 Minuten eine Ressource anfordern.
 
 [!code-javascript[Main](introduction-to-security/samples/sample4.js)]
 
 <a id="autogen"></a>
 
-### <a name="automatically-generated-javascript-proxy-files"></a>Automatisch generierte JavaScript-Proxy-Dateien
+### <a name="automatically-generated-javascript-proxy-files"></a>Automatisch generierte JavaScript-Proxy Dateien
 
-Wenn Sie nicht alle Hubs und Methoden in der JavaScript-Proxy-Datei für jeden Benutzer einschließen möchten, können Sie die automatische Generierung der Datei deaktivieren. Sie können diese Option auswählen, wenn Sie mehrere Hubs und Methoden, aber nicht jeder Benutzer alle Methoden berücksichtigen möchten. Deaktivieren Sie automatische Generierung, indem **EnableJavaScriptProxies** zu **"false"**.
+Wenn Sie nicht alle Hubs und Methoden in die JavaScript-Proxy Datei für jeden Benutzer einschließen möchten, können Sie die automatische Generierung der Datei deaktivieren. Sie können diese Option wählen, wenn Sie über mehrere Hubs und Methoden verfügen, aber nicht möchten, dass jeder Benutzer alle Methoden kennt. Sie deaktivieren die automatische Generierung, indem Sie **enablejavascriptproxies** auf **false**festlegen.
 
 [!code-csharp[Main](introduction-to-security/samples/sample5.cs)]
 
-Weitere Informationen zu den JavaScript-Proxy-Dateien finden Sie unter [des generierten Proxys und was dies für Sie übernimmt](../guide-to-the-api/hubs-api-guide-javascript-client.md#genproxy). <a id="exceptions"></a>
+Weitere Informationen zu den JavaScript-Proxy Dateien finden [Sie unter der generierte Proxy und dessen](../guide-to-the-api/hubs-api-guide-javascript-client.md#genproxy)Funktionsweise. <a id="exceptions"></a>
 
 ### <a name="exceptions"></a>Ausnahmen
 
-Vermeiden Sie die Exception-Objekte für Clients übergeben werden, da die Objekte für vertrauliche Informationen zu den Clients zur Verfügung stellen können. Rufen Sie stattdessen eine Methode, auf dem Client, der die entsprechende Fehlermeldung angezeigt.
+Vermeiden Sie das Übergeben von Ausnahme Objekten an Clients, da die Objekte möglicherweise vertrauliche Informationen für die Clients verfügbar machen. Stattdessen wird eine Methode auf dem Client aufgerufen, die die relevante Fehlermeldung anzeigt.
 
 [!code-csharp[Main](introduction-to-security/samples/sample6.cs)]

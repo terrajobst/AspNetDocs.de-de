@@ -9,11 +9,11 @@ ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 785d62108667fddac42994344cde265e82aca8f4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598396"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78445827"
 ---
 # <a name="using-the-slider-control-with-auto-postback-c"></a>Verwenden des Schieberegler-Steuer Elements mit automatischemC#Postback ()
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das Schieberegler-Steuerelement im AJAX Control Toolkit bietet einen grafischen Schieberegler, der mit der Maus gesteuert werden kann. Es ist möglich, den Schieberegler Auto Post Back vorzunehmen, sobald sich der Wert ändert.
 
@@ -58,4 +58,4 @@ Durch Verschieben des Schiebereglers wird ein Postback ausgelöst ([Klicken Sie,
 Anschließend wird das Datum dieser Änderung in der Bezeichnung geschrieben ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-the-slider-control-with-auto-postback-cs/_static/image6.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](databinding-the-slider-control-cs.md)
+> [Weiter](databinding-the-slider-control-cs.md)

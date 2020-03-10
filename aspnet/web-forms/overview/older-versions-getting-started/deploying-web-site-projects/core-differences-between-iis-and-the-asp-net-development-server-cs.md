@@ -9,11 +9,11 @@ ms.assetid: 13a5a423-9235-4dde-b408-2fd10f791d63
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7fea3939bd910a052340215c207013e2269f32a2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617521"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522081"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>Wichtige Unterschiede zwischen den IIS und dem ASP.NET Development Server (C#)
 
@@ -110,13 +110,13 @@ Dieses Markup weist IIS 7 an, die ASP.NET-basierten Authentifizierungs-und Autor
 > [!NOTE]
 > Wenn der webhostinstanbieter weiterhin IIS 6 verwendet, können Sie die integrierte Pipeline Funktion nicht verwenden. Eine Problem Umgehung besteht darin, private Dokumente in einem Ordner zu platzieren, der den HTTP-Zugriff untersagt (z. b. `App_Data`), und anschließend eine Seite zu erstellen, die diese Dokumente verarbeitet. Diese Seite wird möglicherweise `GetPDF.aspx`aufgerufen, und der Name der PDF-Datei wird über einen QueryString-Parameter übergeben. Auf der Seite `GetPDF.aspx` wird zuerst überprüft, ob der Benutzer über die Berechtigung zum Anzeigen der Datei verfügt. wenn dies der Fall ist, wird die [`Response.WriteFile(filePath)`](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx) -Methode verwendet, um den Inhalt der angeforderten PDF-Datei an den anfordernden Client zurückzusenden. Diese Technik funktioniert auch für IIS 7, wenn Sie die integrierte Pipeline nicht aktivieren möchten.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Webanwendungen in einer Produktionsumgebung werden mithilfe der IIS-Webserver Software von Microsoft gehostet. In der Entwicklungsumgebung kann die Anwendung jedoch mit IIS oder dem ASP.NET Development Server gehostet werden. Im Idealfall sollte dieselbe Webserver Software in beiden Umgebungen verwendet werden, da bei der Verwendung unterschiedlicher Software eine weitere Variable in der Mischung hinzugefügt wird. Die einfache Verwendung des ASP.NET Development Server macht es jedoch zu einer attraktiven Wahl in der Entwicklungsumgebung. Die gute Nachricht ist, dass es nur einige grundlegende Unterschiede zwischen IIS und dem ASP.NET Development Server gibt. Wenn Sie diese Unterschiede kennen, können Sie Maßnahmen ergreifen, um sicherzustellen, dass die Anwendung unabhängig von der Umgebung.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

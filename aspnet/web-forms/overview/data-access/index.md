@@ -1,25 +1,25 @@
 ---
 uid: web-forms/overview/data-access/index
-title: Ältere Versionen – Datenzugriff | Microsoft-Dokumentation
+title: 'Ältere Versionen: Datenzugriff | Microsoft-Dokumentation'
 author: rick-anderson
-description: So führen Sie eine Vielzahl von datenbezogene Aufgaben, die mit ASP.NET Web Forms-Datensteuerelemente aus.
+description: So führen Sie eine Vielzahl Daten bezogener Aufgaben mithilfe von ASP.net-Web Forms Daten Steuerelementen aus
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cf54a6fb-a362-4481-b967-c158b98092f7
 msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
 ms.openlocfilehash: 9bdc5cdb3ef3a2289e2f76ae498544d0584f36f5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109020"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490407"
 ---
 # <a name="older-versions---data-access"></a>Ältere Versionen – Datenzugriff
 
-> So führen Sie eine Vielzahl von datenbezogene Aufgaben, die mit ASP.NET Web Forms-Datensteuerelemente aus.
+> So führen Sie eine Vielzahl Daten bezogener Aufgaben mithilfe von ASP.net-Web Forms Daten Steuerelementen aus
 
-- [Introduction (Einführung)](introduction/index.md)
+- [Einführung](introduction/index.md)
 
     - [Erstellen einer Datenzugriffsschicht (C#)](introduction/creating-a-data-access-layer-cs.md)
     - [Erstellen einer Geschäftslogikebene (C#)](introduction/creating-a-business-logic-layer-cs.md)

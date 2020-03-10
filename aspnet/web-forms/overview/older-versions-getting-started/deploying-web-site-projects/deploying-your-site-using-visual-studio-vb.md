@@ -9,11 +9,11 @@ ms.assetid: 977105f3-7987-4e50-8be7-afb53b4ca28a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6c71e36a8a434947882cc767cd2f903ff6e8d422
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582594"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474621"
 ---
 # <a name="deploying-your-site-using-visual-studio-vb"></a>Bereitstellen einer Website mithilfe von Visual Studio (VB)
 
@@ -117,13 +117,13 @@ Die Option veröffentlichen ist ein weniger differenzierteres Tool als das Tool 
 
 Es ist nicht ungewöhnlich, dass bestimmte Dateien vorhanden sind, deren Inhalt sich zwischen der Produktionsumgebung und der Entwicklungsumgebung unterscheidet. Ein wichtiges Beispiel ist die Konfigurationsdatei der Anwendung, `Web.config`. Da die Option veröffentlichen die Webanwendungs Dateien Blind kopiert, überschreibt Sie die benutzerdefinierten Konfigurationsdateien der Produktionsumgebung mit der Version in der Entwicklungsumgebung. Das nachfolgende Tutorial behandelt dieses Thema weiter und bietet Tipps zur Bereitstellung einer Webanwendung, wenn derartige Unterschiede bestehen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Zum Bereitstellen einer Website müssen die erforderlichen Dateien aus der Entwicklungsumgebung in die Produktionsumgebung kopiert werden. Im vorherigen Tutorial wurde gezeigt, wie Dateien mithilfe eines FTP-Clients wie FileZilla übertragen werden. In diesem Tutorial wurden zwei Bereitstellungs Tools in Visual Studio untersucht: das Tool "Website kopieren" und die Option "veröffentlichen". Das Tool zum Kopieren von Websites ähnelt einem FTP-Client darin, dass es über eine zweistufige Oberfläche verfügt, die die Dateien auf dem lokalen Computer auflistet, und einen angegebenen Remote Computer, der das Hochladen oder Herunterladen von Dateien zwischen den beiden Computern vereinfacht. Die Option veröffentlichen ist ein stummeres Tool, das das Projekt explizit kompiliert und anschließend die gesamte Anwendung für das angegebene Ziel bereitstellt.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 

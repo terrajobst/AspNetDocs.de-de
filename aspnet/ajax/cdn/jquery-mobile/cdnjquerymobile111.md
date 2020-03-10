@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-mobile/cdnjquerymobile111
-title: jQuery Mobile 1.1.1 für das Microsoft Ajax CDN | Microsoft-Dokumentation
+title: jQuery Mobile 1.1.1 für das Microsoft AJAX CDN | Microsoft-Dokumentation
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,15 +9,15 @@ ms.assetid: 1252d4fa-e900-45fe-bc32-87b0af33b51c
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile111
 msc.type: content
 ms.openlocfilehash: 1f46c798e98dd9ac4fdd4400b5b928712c37a6a4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392715"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78453945"
 ---
 # <a name="jquery-mobile-111-on-the-microsoft-ajax-cdn"></a>jQuery Mobile 1.1.1 für das Microsoft AJAX CDN
 
-JQuery Mobile 1.1.1-Bibliothek enthält die folgenden Dateien:
+Die jQuery Mobile 1.1.1-Bibliothek umfasst die folgenden Dateien:
 
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile.structure-1.1.1.css
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css

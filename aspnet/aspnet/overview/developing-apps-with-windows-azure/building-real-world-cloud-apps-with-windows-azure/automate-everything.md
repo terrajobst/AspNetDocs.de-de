@@ -9,11 +9,11 @@ ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
 ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457166"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472677"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatisieren Sie alles (entwickeln realer Cloud-apps mit Azure)
 
@@ -49,7 +49,7 @@ Für die Korrektur der IT-APP haben wir einige Windows PowerShell-Skripts erstel
 
 Das erste Skript, das wir betrachten, heißt " *New-AzureWebsiteEnv. ps1*". Sie erstellt eine Azure-Umgebung, in der Sie die Korrektur der IT-App für Tests bereitstellen können. Das Skript führt die folgenden Hauptaufgaben aus:
 
-- Erstellen Sie eine Web-App.
+- Erstellen einer Web-App
 - Erstellen Sie ein Speicherkonto. (Erforderlich für blobund Warteschlangen, wie Sie in späteren Kapiteln sehen werden.)
 - Erstellen Sie einen SQL-Datenbankserver und zwei Datenbanken: eine Anwendungsdatenbank und eine Mitgliedschafts Datenbank.
 - Speichern Sie Einstellungen in Azure, die von der APP für den Zugriff auf das Speicherkonto und die Datenbanken verwendet werden.
@@ -70,7 +70,7 @@ Der `Name`-Parameter gibt den Namen an, der beim Erstellen der Datenbank und der
 
 Nachdem das Skript abgeschlossen wurde, können Sie im Verwaltungs Portal sehen, was erstellt wurde. Sie finden zwei Datenbanken:
 
-![Datenbanken](automate-everything/_static/image3.png)
+![Databases](automate-everything/_static/image3.png)
 
 Ein Speicherkonto:
 

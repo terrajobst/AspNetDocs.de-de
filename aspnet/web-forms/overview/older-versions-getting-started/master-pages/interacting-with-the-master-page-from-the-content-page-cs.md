@@ -9,11 +9,11 @@ ms.assetid: 32d54638-71b2-491d-81f4-f7417a13a62f
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5ef030d3bed117e98fdd090f7c63643354b47f76
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583863"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78456129"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-c"></a>Interaktion mit der Inhaltsseite von der Masterseite (C#)
 
@@ -208,7 +208,7 @@ Abbildung 8 zeigt die `AddProduct.aspx` Seite unmittelbar nach dem Hinzufügen e
 
 **Abbildung 08**: die Bezeichnung und die GridView der Master Seite zeigen das soeben hinzugefügte Produkt an ([Klicken Sie, um das Bild in voller Größe anzuzeigen](interacting-with-the-master-page-from-the-content-page-cs/_static/image24.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Idealerweise sind eine Master Seite und ihre Inhaltsseiten vollständig voneinander getrennt und erfordern keine Interaktions Ebene. Während Masterseiten und Inhaltsseiten mit diesem Ziel entworfen werden sollten, gibt es eine Reihe allgemeiner Szenarien, in denen eine Inhaltsseite mit der Master Seite in eine Schnittstelle gesetzt werden muss. Einer der häufigsten Gründe ist das Aktualisieren eines bestimmten Teils der Masterseiten Anzeige auf der Grundlage einer Aktion, die auf der Inhaltsseite aufgetreten ist.
 
@@ -218,7 +218,7 @@ Im nächsten Tutorial wird erläutert, wie die Master Seite Programm gesteuert m
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -228,7 +228,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Übergeben von Informationen zwischen Inhalt und Master Seiten](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [Arbeiten mit Daten in ASP.net-Tutorials](../../data-access/index.md)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

@@ -9,11 +9,11 @@ ms.assetid: fe3ef85f-bdc6-4e10-9768-25aa565c01d0
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 7c5ed1bdb4b390c94907b14e208231f16ad42d96
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600362"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504273"
 ---
 # <a name="part-2-creating-the-domain-models"></a>Teil 2: Erstellen der Domänen Modelle
 
@@ -35,9 +35,9 @@ Da POCOS keine zusätzlichen Eigenschaften enthalten, die den [Daten Bank Status
 
 Wir erstellen die folgenden POCOS:
 
-- Product
-- Order
-- Order Detail
+- Produkt
+- Auftrag
+- OrderDetail
 
 Um jede Klasse zu erstellen, klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Modelle. Klicken Sie im Kontextmenü auf **Hinzufügen** , und wählen Sie dann **Klasse aus.**
 

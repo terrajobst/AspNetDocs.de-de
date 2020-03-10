@@ -1,161 +1,161 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: Erste Schritte mit ASP.NET-Web-API 2 (C#) – ASP.NET 4.x
+title: Beginnen Sie mit ASP.net-Web-API 2 (C#)-ASP.NET 4. x
 author: MikeWasson
-description: In diesem Tutorial mit Code. Verwenden Sie ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
+description: Tutorial mit Code. Verwenden Sie ASP.net-Web-API, um eine Web-API zu erstellen, die eine Liste von Produkten zurückgibt.
 ms.author: riande
 ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125228"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448551"
 ---
-# <a name="get-started-with-aspnet-web-api-2-c"></a>Erste Schritte mit ASP.NET-Web-API 2 (c#)
+# <a name="get-started-with-aspnet-web-api-2-c"></a>Beginnen Sie mit ASP.net-Web-API 2 (C#)
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
+[Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
-In diesem Tutorial verwenden Sie die ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
+In diesem Tutorial verwenden Sie ASP.net-Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt.
 
-HTTP ist nicht nur für Webseiten bereitstellt. HTTP ist auch eine leistungsstarke Plattform zum Erstellen von APIs, Dienste und Daten verfügbar machen. HTTP ist einfach, flexibel und allgegenwärtig. Nahezu jede Plattform, der Sie sich vorstellen können hat eine HTTP-Bibliothek, damit die HTTP-Dienste eine breit gefächerte Palette von Clients, einschließlich Browsern, mobilen Geräten und herkömmliche desktopanwendungen können.
+HTTP dient nicht nur zum Reservieren von Webseiten. HTTP ist auch eine leistungsstarke Plattform zum Entwickeln von APIs, die Dienste und Daten verfügbar machen. HTTP ist einfach, flexibel und allgegenwärtig. Fast jede Plattform, die Sie sich vorstellen können, verfügt über eine HTTP-Bibliothek, sodass HTTP-Dienste eine breite Palette von Clients erreichen können, einschließlich Browsern, mobiler Geräte und herkömmlicher Desktop Anwendungen.
 
-ASP.NET Web-API ist ein Framework zum Erstellen von Web-APIs auf .NET Framework. 
+ASP.net-Web-API ist ein Framework zum Entwickeln von Web-APIs auf der .NET Framework. 
 
-## <a name="software-versions-used-in-the-tutorial"></a>Softwareversionen, die in diesem Tutorial verwendet werden.
+## <a name="software-versions-used-in-the-tutorial"></a>Im Tutorial verwendete Software Versionen
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 - Web-API 2
 
-Finden Sie unter [erstellen Sie eine Web-API mit ASP.NET Core und Visual Studio für Windows](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) für eine neuere Version dieses Tutorials.
+Eine neuere Version dieses Tutorials finden Sie [unter Erstellen einer Web-API mit ASP.net Core und Visual Studio für Windows](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) .
 
-## <a name="create-a-web-api-project"></a>Erstellen Sie ein Web-API-Projekt
+## <a name="create-a-web-api-project"></a>Erstellen eines Web-API-Projekts
 
-In diesem Tutorial verwenden Sie die ASP.NET Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt. Die Front-End-Webseite verwendet jQuery, um die Ergebnisse anzuzeigen.
+In diesem Tutorial verwenden Sie ASP.net-Web-API, um eine Web-API zu erstellen, die eine Liste der Produkte zurückgibt. Die Front-End-Webseite verwendet jQuery, um die Ergebnisse anzuzeigen.
 
 ![](tutorial-your-first-web-api/_static/image1.png)
 
-Starten Sie Visual Studio, und wählen Sie **neues Projekt** aus der **starten** Seite. Alternativ wählen Sie in der **Datei** , wählen Sie im Menü **neu** und dann **Projekt**.
+Starten Sie Visual Studio, und wählen Sie auf der **Start** Seite die Option **Neues Projekt** aus. Oder wählen Sie im Menü **Datei** die Option **neu** und dann **Projekt**aus.
 
-In der **Vorlagen** wählen Sie im Bereich **installierte Vorlagen** und erweitern Sie die **Visual C#-** Knoten. Klicken Sie unter **Visual C#-** Option **Web**. Wählen Sie in der Liste der Projektvorlagen das Projekt **ASP.NET-Webanwendung**. Nennen Sie das Projekt "ProductsApp", und klicken Sie auf **OK**.
+Wählen Sie im Bereich **Vorlagen** die Option **installierte Vorlagen** aus, und erweitern Sie den Knoten **visuelle C#**  Knoten. Wählen Sie unter **Visualisierung C#** die Option **Web**aus. Wählen Sie in der Liste der Projektvorlagen die Option **ASP.NET Webanwendung**aus. Nennen Sie das Projekt "productapp", und klicken Sie auf **OK**.
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
-In der **neues ASP.NET-Projekt** wählen Sie im Dialogfeld die **leere** Vorlage. Klicken Sie unter &quot;fügen Sie Ordner und kernreferenzen für&quot;, überprüfen Sie **Web-API-**. Klicken Sie auf **OK**.
+Wählen Sie im Dialogfeld **Neues ASP.net-Projekt** die Vorlage **leer** aus. Überprüfen Sie unter &quot;Ordner und Kern Verweise hinzufügen für&quot;die **Web-API**. Klicken Sie auf **OK**.
 
 ![](tutorial-your-first-web-api/_static/image3.png)
 
 > [!NOTE]
-> Sie können auch erstellen, ein Web-API-Projekt mit der &quot;Web-API-&quot; Vorlage. Die Web-API-Vorlage verwendet ASP.NET MVC-API-Hilfeseiten bereitstellen. Ich verwende die leere Vorlage für dieses Tutorial verwenden, da ohne MVC-Web-API angezeigt werden soll. Im Allgemeinen müssen Sie nicht wissen, ASP.NET MVC, Web-API verwenden.
+> Sie können auch ein Web-API-Projekt mithilfe der &quot;Web-API&quot; Vorlage erstellen. Die Web-API-Vorlage verwendet ASP.NET MVC, um API-Hilfeseiten bereitzustellen. Ich verwende die leere Vorlage für dieses Tutorial, weil ich die Web-API ohne MVC anzeigen möchte. Im Allgemeinen müssen Sie ASP.NET MVC nicht kennen, um die Web-API zu verwenden.
 
 ## <a name="adding-a-model"></a>Hinzufügen eines Modells
 
-Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. ASP.NET Web-API können automatisch Ihr Modell JSON, XML oder ein anderes Format zu serialisieren, und klicken Sie dann die serialisierten Daten in den Hauptteil der HTTP-Antwortnachricht geschrieben. Solange ein Client das Serialisierungsformat lesen kann, können sie das Objekt deserialisieren. Die meisten Clients können XML oder JSON analysieren. Darüber hinaus kann der Client welches Format angeben, durch Festlegen des Accept-Headers in der HTTP-Anforderungsnachricht werden sollen.
+Ein *Modell* ist ein Objekt, das die Daten in Ihrer Anwendung darstellt. ASP.net-Web-API können das Modell automatisch in JSON, XML oder ein anderes Format serialisieren und dann die serialisierten Daten in den Text der http-Antwortnachricht schreiben. Solange ein Client das Serialisierungsformat lesen kann, kann das Objekt deserialisiert werden. Die meisten Clients können entweder XML oder JSON analysieren. Darüber hinaus kann der Client das gewünschte Format angeben, indem der Accept-Header in der HTTP-Anforderungs Nachricht festgelegt wird.
 
-Wir erstellen zunächst ein einfaches Modell, das ein Produkt darstellt.
+Erstellen Sie zunächst ein einfaches Modell, das ein Produkt darstellt.
 
-Wenn der Projektmappen-Explorer nicht angezeigt wird, klicken Sie auf die **Ansicht** Menü **Projektmappen-Explorer**. Klicken Sie im Projektmappen-Explorer den Ordner "Models". Wählen Sie im Kontextmenü des **hinzufügen** wählen Sie dann **Klasse**.
+Wenn der Projektmappen-Explorer nicht bereits sichtbar ist, können Sie auf das Menü **Ansicht** klicken und **Projektmappen-Explorer** wählen. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner „Modelle“. Wählen Sie im Kontextmenü die Option **Hinzufügen** und dann **Klasse**.
 
 ![](tutorial-your-first-web-api/_static/image4.png)
 
-Nennen Sie die Klasse &quot;Produkt&quot;. Fügen Sie die folgenden Eigenschaften auf der `Product` Klasse.
+Benennen Sie die Klasse &quot;Product&quot;. Fügen Sie der `Product`-Klasse die folgenden Eigenschaften hinzu.
 
 [!code-csharp[Main](tutorial-your-first-web-api/samples/sample1.cs)]
 
 ## <a name="adding-a-controller"></a>Hinzufügen eines Controllers
 
-In der Web-API eine *Controller* ist ein Objekt, das HTTP-Anforderungen verarbeitet. Wir fügen einen Controller hinzu, der entweder eine Liste mit Produkten oder ein einzelnes Produkt, das durch ID angegebene zurückgeben können
+In der Web-API ist ein *Controller* ein Objekt zum Verarbeiten von HTTP-Anforderungen. Wir fügen einen Controller hinzu, der entweder eine Liste mit Produkten oder ein einzelnes von der ID angegebenes Produkt zurückgeben kann.
 
 > [!NOTE]
-> Wenn Sie ASP.NET MVC verwendet haben, sind Sie bereits vertraut mit Controllern. Web-API-Controller ähneln MVC-Controller, aber erbt die **ApiController** -Klasse anstelle der **Controller** Klasse.
+> Wenn Sie ASP.NET MVC verwendet haben, sind Sie bereits mit Controllern vertraut. Web-API-Controller ähneln MVC-Controllern, erben aber die **apicontroller** -Klasse anstelle der **Controller** -Klasse.
 
-In **Projektmappen-Explorer**, mit der rechten Maustaste in den Ordner "Controllers". Wählen Sie **hinzufügen** und wählen Sie dann **Controller**.
+Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner „Controller“. Wählen Sie **Hinzufügen** und dann **Controller**.
 
 ![](tutorial-your-first-web-api/_static/image5.png)
 
-In der **Gerüst hinzufügen** wählen Sie im Dialogfeld **Web-API-Controller – leer**. Klicken Sie auf **Hinzufügen**.
+Wählen Sie im Dialogfeld **Gerüst hinzufügen** die Option **Web API Controller - Empty** (Web-API-Controller – Leer). Klicken Sie auf **Hinzufügen**.
 
 ![](tutorial-your-first-web-api/_static/image6.png)
 
-In der **Controller hinzufügen** Dialogfeld benennen Sie den Controller &quot;ProductsController&quot;. Klicken Sie auf **Hinzufügen**.
+Benennen Sie im Dialogfeld " **Controller hinzufügen** " den Controller &quot;ProductController-&quot;. Klicken Sie auf **Hinzufügen**.
 
 ![](tutorial-your-first-web-api/_static/image7.png)
 
-Erstellt eine Datei namens ProductsController.cs im Ordner "Controllers".
+Das Gerüst erstellt im Ordner "Controllers" eine Datei mit dem Namen ProductsController.cs.
 
 ![](tutorial-your-first-web-api/_static/image8.png)
 
 > [!NOTE]
-> Sie müssen nicht die Controller in den Ordner Controller zu platzieren. Der Ordnername ist lediglich eine bequeme Möglichkeit, Ihre Quelldateien zu organisieren.
+> Sie müssen die Controller nicht in einem Ordner mit dem Namen "Controllers" platzieren. Der Ordnername ist nur eine bequeme Möglichkeit zum Organisieren der Quelldateien.
 
-Wenn diese Datei noch nicht geöffnet ist, doppelklicken Sie auf die Datei, um ihn zu öffnen. Ersetzen Sie den Code in dieser Datei durch Folgendes ein:
+Doppelklicken Sie auf die Datei, um sie zu öffnen, falls sie noch nicht geöffnet ist. Ersetzen Sie den Code in dieser Datei durch Folgendes:
 
 [!code-csharp[Main](tutorial-your-first-web-api/samples/sample2.cs)]
 
-Um das Beispiel einfach zu halten, werden Produkte in einem Array fester Größe innerhalb der Controller-Klasse gespeichert. In einer echten Anwendung würden Sie natürlich Abfragen einer Datenbank oder einige andere externe Datenquelle verwenden.
+Um das Beispiel einfach zu halten, werden Produkte in einem Fixed-Array in der Controller Klasse gespeichert. Natürlich würden Sie in einer echten Anwendung eine Datenbank Abfragen oder eine andere externe Datenquelle verwenden.
 
-Der Controller definiert zwei Methoden, die Produkte zurückzugeben:
+Der Controller definiert zwei Methoden, die Produkte zurückgeben:
 
-- Die `GetAllProducts` Methode gibt zurück, die gesamte Liste der Produkte als ein **"IEnumerable"&lt;Produkt&gt;**  Typ.
-- Die `GetProduct` Methode sucht ein einzelnes Produkt nach seiner ID.
+- Die `GetAllProducts`-Methode gibt die gesamte Liste der Produkte als **IEnumerable-&lt;Product&gt;** Type zurück.
+- Die `GetProduct`-Methode sucht nach ihrer ID nach einem einzelnen Produkt.
 
-Das ist alles! Sie verfügen über eine funktionierende-Web-API. Jede Methode im Controller entspricht eine oder mehrere URIs:
+Das ist alles! Sie verfügen über eine funktionierende Web-API. Jede Methode auf dem Controller entspricht einem oder mehreren URIs:
 
 | Controller-Methode | URI |
 | --- | --- |
-| GetAllProducts | /api/products |
-| GetProduct | /api/products/*id* |
+| Getallproducts | /api/products |
+| GetProduct | /API/Products/-*ID* |
 
-Für die `GetProduct` -Methode, die *Id* im URI ist ein Platzhalter. Um das Produkt mit der ID 5 zu erhalten, ist der URI beispielsweise `api/products/5`.
+Bei der `GetProduct`-Methode ist die *ID* im URI ein Platzhalter. Um z. b. das Produkt mit der ID 5 zu erhalten, wird der URI `api/products/5`.
 
-Weitere Informationen dazu, wie Web-API-HTTP-Anforderungen an Controllermethoden weiterleitet, finden Sie unter [Routing in ASP.NET Web-API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md).
+Weitere Informationen zur Weiterleitung von HTTP-Anforderungen an Controller Methoden durch die Web-API finden Sie unter [Routing in ASP.net-Web-API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md).
 
-## <a name="calling-the-web-api-with-javascript-and-jquery"></a>Aufrufen der Web-API mit Javascript und jQuery
+## <a name="calling-the-web-api-with-javascript-and-jquery"></a>Aufrufen der Web-API mit JavaScript und jQuery
 
-In diesem Abschnitt fügen wir eine HTML-Seite, die von AJAX verwendet wird, um die Web-API aufzurufen. Wir verwenden jQuery für die AJAX-Aufrufe und auch auf die Seite mit den Ergebnissen zu aktualisieren.
+In diesem Abschnitt fügen wir eine HTML-Seite hinzu, die AJAX verwendet, um die Web-API aufzurufen. Wir verwenden jQuery zum Erstellen der AJAX-Aufrufe und zum Aktualisieren der Seite mit den Ergebnissen.
 
-Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste in des Projekts, und wählen **hinzufügen**, und wählen Sie dann **neues Element**.
+Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen**und dann **Neues Element**aus.
 
 ![](tutorial-your-first-web-api/_static/image9.png)
 
-In der **neues Element hinzufügen** wählen Sie im Dialogfeld die **Web** Knoten unter **Visual C#-**, und wählen Sie dann die **HTML-Seite** Element. Nennen Sie die Seite &quot;"Index.HTML"&quot;.
+Wählen Sie im Dialogfeld **Neues Element hinzufügen** unter **Visual C#** den **webknoten** aus, und wählen Sie dann das Element **HTML-Seite** aus. Benennen Sie die Seite &quot;Index. html&quot;.
 
 ![](tutorial-your-first-web-api/_static/image10.png)
 
-Ersetzen Sie alles, was in dieser Datei durch Folgendes:
+Ersetzen Sie alles in dieser Datei durch Folgendes:
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-Es gibt mehrere Möglichkeiten, um jQuery herunterzuladen. In diesem Beispiel habe ich verwendet die [Microsoft Ajax CDN](../../../ajax/cdn/overview.md). Sie können auch von [ http://jquery.com/ ](http://jquery.com/), und das ASP.NET "Web-API"-Projektvorlage enthält auch jQuery.
+Es gibt mehrere Möglichkeiten, um jQuery herunterzuladen. In diesem Beispiel habe ich das [Microsoft AJAX CDN](../../../ajax/cdn/overview.md)verwendet. Sie können Sie auch aus [http://jquery.com/](http://jquery.com/)herunterladen, und die Projektvorlage "Web-API" ASP.NET enthält auch jQuery.
 
-### <a name="getting-a-list-of-products"></a>Abrufen einer Liste von Produkten
+### <a name="getting-a-list-of-products"></a>Eine Liste der Produkte wird erhalten.
 
-Um eine Liste der Produkte zu erhalten, senden Sie eine HTTP GET-Anforderung an &quot;/api/Produkte&quot;.
+Senden Sie eine HTTP GET-Anforderung an &quot;/API/Products-&quot;, um eine Liste der Produkte zu erhalten.
 
-Die jQuery [GetJSON](http://api.jquery.com/jQuery.getJSON/) -Funktion sendet eine AJAX-Anforderung. Für die Antwort Array von JSON-Objekte enthält. Die `done` Funktion gibt einen Rückruf an, die aufgerufen wird, wenn die Anforderung erfolgreich ist. Im Rückruf aktualisieren wir das DOM mit den Produktinformationen.
+Die jQuery-Funktion [getjson](http://api.jquery.com/jQuery.getJSON/) sendet eine AJAX-Anforderung. Für Response enthält ein Array von JSON-Objekten. Die `done`-Funktion gibt einen Rückruf an, der aufgerufen wird, wenn die Anforderung erfolgreich ist. Im Rückruf aktualisieren wir das DOM mit den Produktinformationen.
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
-### <a name="getting-a-product-by-id"></a>Ein Produkt nach ID
+### <a name="getting-a-product-by-id"></a>Erhalten eines Produkts nach ID
 
-Um ein Produkt nach ID zu erhalten, senden Sie eine HTTP GET-Anforderung an &quot;/API/Produkte/*Id*&quot;, wobei *Id* ist die Produkt-ID
+Wenn Sie ein Produkt anhand der ID erhalten möchten, senden Sie eine HTTP GET-Anforderung an &quot;/API/Products/*ID*&quot;, wobei *ID* die Produkt-ID ist.
 
 [!code-javascript[Main](tutorial-your-first-web-api/samples/sample5.js)]
 
-Wir rufen Sie immer noch `getJSON` die AJAX-Anforderung, aber dieses Mal senden wir verwenden Sie die ID im Anforderungs-URI. Die Antwort auf diese Anforderung ist eine JSON-Darstellung eines einzelnen Produkts.
+Es wird weiterhin `getJSON` aufgerufen, um die AJAX-Anforderung zu senden, aber dieses Mal wird die ID in den Anforderungs-URI eingefügt. Die Antwort dieser Anforderung ist eine JSON-Darstellung eines einzelnen Produkts.
 
 ## <a name="running-the-application"></a>Ausführen der Anwendung
 
-Drücken Sie F5 zum Starten des Debuggings der Anwendungs. Die Webseite sollte wie folgt aussehen:
+Drücken Sie die F5-TASTE, um das Debuggen der Anwendung zu starten. Die Webseite sollte wie folgt aussehen:
 
 ![](tutorial-your-first-web-api/_static/image11.png)
 
-Um ein Produkt nach ID zu erhalten, geben Sie die ID, und klicken Sie auf Suchen:
+Geben Sie die ID ein, und klicken Sie auf suchen, um ein Produkt nach ID zu erhalten.
 
 ![](tutorial-your-first-web-api/_static/image12.png)
 
@@ -163,31 +163,31 @@ Wenn Sie eine ungültige ID eingeben, gibt der Server einen HTTP-Fehler zurück:
 
 ![](tutorial-your-first-web-api/_static/image13.png)
 
-## <a name="using-f12-to-view-the-http-request-and-response"></a>Verwendung F12 zum Anzeigen des HTTP-Anforderung und Antwort
+## <a name="using-f12-to-view-the-http-request-and-response"></a>Verwenden von F12 zum Anzeigen der HTTP-Anforderung und-Antwort
 
-Wenn Sie mit einem HTTP-Dienst arbeiten, kann es sein hilfreich sein, die HTTP-Anforderung anzeigen und anfordern können Nachrichten. Dazu können Sie die Verwendung F12-Entwicklertools in Internet Explorer 9. Drücken Sie in Internet Explorer 9 **F12** zu den Tools zu öffnen. Klicken Sie auf die **Netzwerk** Registerkarte, und drücken Sie **erfassen starten**. Wechseln Sie nun an die Webseite, und drücken Sie **F5** , die Webseite neu zu laden. Internet Explorer wird den HTTP-Datenverkehr zwischen dem Browser und dem Webserver erfassen. Ansicht "Zusammenfassung" zeigt den Netzwerkdatenverkehr für eine Seite an:
+Wenn Sie mit einem HTTP-Dienst arbeiten, kann es sehr nützlich sein, die HTTP-Anforderung anzuzeigen und Nachrichten anzufordern. Hierfür können Sie die F12-Entwicklertools in Internet Explorer 9 verwenden. Drücken Sie in Internet Explorer 9 die Taste **F12** , um die Tools zu öffnen. Klicken Sie auf die Registerkarte **Netzwerk** , und drücken Sie **Aufzeichnung starten**. Kehren Sie nun zurück zur Webseite, und drücken Sie **F5** , um die Webseite neu zu laden. Internet Explorer erfasst den HTTP-Datenverkehr zwischen dem Browser und dem Webserver. In der Zusammenfassungs Ansicht wird der gesamte Netzwerk Datenverkehr für eine Seite angezeigt:
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
-Suchen Sie den Eintrag für den relativen URI "api/Produkte /". Wählen Sie diesen Eintrag, und klicken Sie auf **wechseln Sie zur detaillierten Ansicht**. In der Detailansicht sind Registerkarten, um die Anforderung und Antwort-Header und Nachrichtentexte anzuzeigen. Angenommen, Sie klicken Sie auf die **Anforderungsheader** Registerkarte können Sie sehen, dass der Client angefordert &quot;Application/Json&quot; im Accept-Header.
+Suchen Sie den Eintrag für den relativen URI "API/Products/". Wählen Sie diesen Eintrag aus, und klicken Sie **auf zur detaillierten Ansicht**wechseln. In der Detailansicht gibt es Registerkarten, um die Anforderungs-und Antwortheader und Textkörper anzuzeigen. Wenn Sie z. b. auf die Registerkarte **Anforderungs Header** klicken, sehen Sie, dass der Client &quot;Anwendung/JSON-&quot; im Accept-Header angefordert hat.
 
 ![](tutorial-your-first-web-api/_static/image15.png)
 
-Wenn Sie auf der Registerkarte "Antwort-Text" klicken, sehen Sie, wie die Liste der Produkte in JSON serialisiert wurde. Andere Browser aufweisen ähnliche Funktionen. Ist ein nützliches Tool [Fiddler](http://www.fiddler2.com/fiddler2/), ein Web debugging Proxy. Sie können mithilfe von Fiddler an Ihre HTTP-Datenverkehr und zum Erstellen von HTTP-Anforderungen, wodurch Sie die vollständige Kontrolle über die HTTP-Header in der Anforderung.
+Wenn Sie auf die Registerkarte "Antworttext" klicken, können Sie sehen, wie die Produktliste in JSON serialisiert wurde. Andere Browser verfügen über eine ähnliche Funktionalität. Ein weiteres nützliches Tool ist " [fddler](http://www.fiddler2.com/fiddler2/)", ein webdebugproxy. Sie können mit "fddler" den HTTP-Datenverkehr anzeigen und auch HTTP-Anforderungen verfassen, um Ihnen die vollständige Kontrolle über die HTTP-Header in der Anforderung zu bieten.
 
-## <a name="see-this-app-running-on-azure"></a>Finden Sie unter dieser App in Azure ausführen
+## <a name="see-this-app-running-on-azure"></a>Diese APP wird in Azure ausgeführt.
 
-Möchten Sie die fertige Website als live-Web-app ausgeführt wird, finden Sie unter? Sie können eine vollständige Version der app beim Azure-Konto bereitstellen, indem Sie einfach die folgende Schaltfläche.
+Möchten Sie sehen, dass die fertige Site als Live-Web-App ausgeführt wird? Sie können eine vollständige Version der APP für Ihr Azure-Konto bereitstellen, indem Sie einfach auf die folgende Schaltfläche klicken.
 
 [![](https://azuredeploy.net/deploybutton.png)](https://deploy.azure.com/?WT.mc_id=deploy_azure_aspnet&repository=https://github.com/tfitzmac/WebAPI-ProductsApp#/form/setup)
 
-Sie benötigen ein Azure-Konto zum Bereitstellen dieser Lösung in Azure. Wenn Sie nicht bereits über ein Konto verfügen, müssen Sie die folgenden Optionen aus:
+Sie benötigen ein Azure-Konto, um diese Lösung in Azure bereitzustellen. Wenn Sie noch nicht über ein Konto verfügen, haben Sie die folgenden Optionen:
 
-- [Öffnen Sie ein Azure-Konto kostenlos](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) – Sie erhalten ein Guthaben zum Ausprobieren Zahlungspflichtiger Azure-Dienste nutzen können, und auch nach dem sie verwendet werden, bis können Sie das Konto behalten und kostenlose Azure-Dienste.
-- [MSDN-abonnentenvorteile aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Ihr MSDN-Abonnement ein monatliches Guthaben, die Sie für zahlungspflichtige Azure-Dienste verwenden können.
+- [Öffnen Sie ein Azure-Konto kostenlos](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) . Sie erhalten Gutschriften, die Sie verwenden können, um kostenpflichtige Azure-Dienste zu testen. selbst nach ihrer Nutzung können Sie das Konto behalten und kostenlose Azure-Dienste nutzen.
+- [Aktivieren von MSDN-Abonnenten Vorteilen](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) : Ihr MSDN-Abonnement bietet Ihnen jeden Monat ein Guthaben, das Sie für kostenpflichtige Azure-Dienste nutzen können.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- Ein vollständigeres Beispiel, der ein HTTP-Dienst, POST, PUT und DELETE-Aktionen unterstützt und in eine Datenbank geschrieben, werden soll, finden Sie unter [mithilfe von Web-API 2 mit Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
-- Weitere Informationen zum Erstellen von fließende und reaktionsfreudige Webanwendungen über einen HTTP-Dienst, finden Sie unter [einseitigen ASP.NET-Anwendung](../../../single-page-application/index.md).
-- Informationen dazu, wie Sie ein Visual Studio-Webprojekt in Azure App Service bereitstellen, finden Sie unter [ASP.NET Web-app in Azure App Service erstellen](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
+- Ein ausführlichere Beispiel für einen HTTP-Dienst, der Post-, Put-und DELETE-Aktionen und Schreibvorgänge in eine Datenbank unterstützt, finden [Sie unter Verwenden der Web-API 2 mit Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
+- Weitere Informationen zum Erstellen von flüssigen und reaktionsfähigen Webanwendungen zusätzlich zu einem HTTP-Dienst finden Sie unter [ASP.net Single Page Application](../../../single-page-application/index.md).
+- Weitere Informationen zum Bereitstellen eines Visual Studio-Webprojekts für Azure App Service finden Sie unter [Erstellen einer ASP.net-Web-App in Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

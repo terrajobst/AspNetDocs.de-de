@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-popup-control-extender
-title: '[Gewusst wie:] Verwenden des ASP.NET AJAX-Popup-Extender-Steuerelements? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie den ASP.NET AJAX-Popup Steuerelement-Extender? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Dieses Video zeigt die Verwendung des Popup-Extender-Steuerelements, der mit dem ASP.NET AJAX Control Toolkit enthalten ist. Erfahren Sie, wie Sie ein TextBox-Steuerelement zu erweitern, damit...
+description: Dieses Video veranschaulicht die Verwendung des Popup Steuerelement-Extenders, der mit dem ASP.NET AJAX Control Toolkit ausgeliefert wird. Erfahren Sie, wie Sie ein TextBox-Steuerelement so erweitern, dass...
 ms.author: riande
 ms.date: 01/26/2007
 ms.assetid: ecd34391-958f-410c-849d-cfaa2dd414dd
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-popup-control-extender
 msc.type: video
 ms.openlocfilehash: be086315943d9d680faa2a8bc784c2b995425903
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398389"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521325"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-popup-control-extender"></a>[Gewusst wie:] Verwenden des ASP.NET AJAX-Popup-Extender-Steuerelements?
+# <a name="how-do-i-use-the-aspnet-ajax-popup-control-extender"></a>[Gewusst wie:] Verwenden Sie den ASP.NET AJAX-Popup Steuerelement-Extender?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Dieses Video zeigt die Verwendung des Popup-Extender-Steuerelements, der mit dem ASP.NET AJAX Control Toolkit enthalten ist. Erfahren Sie, wie ein TextBox-Steuerelement so erweitern, dass, wenn es den Fokus erhält, ein Dialogfenster mit einer Liste von Optionen angezeigt wird.
+Dieses Video veranschaulicht die Verwendung des Popup Steuerelement-Extenders, der mit dem ASP.NET AJAX Control Toolkit ausgeliefert wird. Erfahren Sie, wie Sie ein TextBox-Steuerelement erweitern, sodass beim Erhalt des Fokus ein Popup Dialogfeld mit einer Liste von Optionen angezeigt wird.
 
-[&#9654;Sehen Sie sich Video (8 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-popup-control-extender)
+[&#9654;Video ansehen (8 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-popup-control-extender)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-aspnet-ajax-textboxwatermark-control-extender.md)

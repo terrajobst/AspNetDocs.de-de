@@ -9,11 +9,11 @@ ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dfe09085f26c62c566649bc6f570aa25367a0f07
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594759"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506223"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>Verhindern von Angriffen durch Einschleusung von JavaScript-Codes (VB)
 
@@ -107,9 +107,9 @@ In der Regel sollten Sie den ersten Ansatz bevorzugen, der in diesem Tutorial in
 
 Warum ist das nicht schlecht? Wenn Sie die Datenbankdaten auf einer anderen Seite als einer Webseite anzeigen müssen, treten Probleme auf. Beispielsweise können Sie die Daten nicht mehr problemlos in einer Windows Forms-Anwendung anzeigen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Der Zweck dieses Tutorials war, Sie vor der Aussicht eines JavaScript Injection-Angriffs zu erschrecken. In diesem Tutorial wurden zwei Ansätze zum verteidigen Ihrer ASP.NET MVC-Anwendungen gegen JavaScript Injection-Angriffe erläutert: Sie können entweder die von Benutzern gesendeten Daten in der Ansicht codieren oder die Benutzer übermittelten Daten im Controller codieren.
 
 > [!div class="step-by-step"]
-> [Vorheriges](authenticating-users-with-windows-authentication-vb.md)
+> [Previous](authenticating-users-with-windows-authentication-vb.md)

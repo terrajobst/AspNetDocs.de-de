@@ -9,11 +9,11 @@ ms.assetid: 14d9aa1b-4dca-43a0-aa9d-a6e891fee019
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 9bb39712855c37f5cbcbb447f7691e9451b8dc92
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642029"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461451"
 ---
 # <a name="nested-master-pages-vb"></a>Geschachtelte Masterseiten (VB)
 
@@ -185,7 +185,7 @@ Diese beiden Herausforderungen stellen eine Oberfläche dar, wenn wir die Seite 
 
 Unsere erste Aufgabe besteht darin, die von den Seiten im Abschnitt "Verwaltung" zu verwendende Seite für die vorseitige Master Seite zu erstellen. Wie in Schritt 2 gezeigt, müssen Sie beim Hinzufügen einer neuen, auf einer neuen Seite beschriebenen Master Seite die übergeordnete Master Seite der Seite der Seite angeben. Wir haben jedoch Zweimaster Seiten auf oberster Ebene: `Site.master` und `Alternate.master`. Wir erinnern uns, dass wir im vorherigen Tutorial `Alternate.master` erstellt und Code in der `BasePage`-Klasse geschrieben haben, die die `MasterPageFile`-Eigenschaft des `Page`-Objekts zur Laufzeit entweder auf `Site.master` oder `Alternate.master`, abhängig vom Wert der `MyMasterPage` Sitzungsvariablen, festgelegt haben.
 
-Wie konfigurieren wir unsere geschachtelte Master Seite so, dass Sie die entsprechende Master Seite auf oberster Ebene verwendet? Wir haben zwei Möglichkeiten:
+Wie konfigurieren wir unsere geschachtelte Master Seite so, dass Sie die entsprechende Master Seite auf oberster Ebene verwendet? Es gibt zwei Möglichkeiten:
 
 - Erstellen Sie zwei vorgebundene Masterseiten, `AdminNestedSite.master` und `AdminNestedAlternate.master`, und binden Sie diese an die Masterseiten der obersten Ebene `Site.master` bzw. `Alternate.master`. In `BasePage`haben wir die `MasterPageFile` des `Page` Objekts auf die entsprechende geschachtelte Master Seite festgelegt.
 - Erstellen Sie eine einzelne, für die Seite verwendete Master Seite, und lassen Sie die Inhaltsseiten diese bestimmte Master Seite verwenden. Zur Laufzeit müssten wir die `MasterPageFile`-Eigenschaft der geschachtelte-Master Seite zur Laufzeit auf die entsprechende Master Seite auf oberster Ebene festlegen. (Wie Sie vielleicht schon einmal herausgefunden haben, verfügen Masterseiten auch über eine `MasterPageFile`-Eigenschaft.)
@@ -232,7 +232,7 @@ Nun müssen die vorhandenen Inhaltsseiten im Verwaltungsabschnitt von `AdminBase
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample12.vb)]
 
-Bis:
+Nach:
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample13.vb)]
 
@@ -252,7 +252,7 @@ Um dieses Problem zu beheben, muss die `AdminNested.master` Code Behind-Klasse `
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample14.vb)]
 
-Bis:
+Nach:
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample15.vb)]
 
@@ -292,13 +292,13 @@ Nachdem diese Änderung vorgenommen wurde, wird die Auswahl der Master Seite des
 
 **Abbildung 13**: auf der Seite "auf der Seite" der Seite "wird die vom Benutzer ausgewählte Master Seite auf oberster Ebene verwendet ([Klicken Sie, um das Bild in voller Größe anzuzeigen](nested-master-pages-vb/_static/image39.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Ähnlich wie Inhaltsseiten an eine Master Seite gebunden werden können, ist es möglich, eine untergeordnete Master Seite zu erstellen, indem eine untergeordnete Master Seite an eine übergeordnete Master Seite gebunden wird. Die untergeordnete Master Seite kann Inhalts Steuerelemente für jeden der übergeordneten Inhalts Platzhalter definieren. Er kann dann seine eigenen contentplachalter-Steuerelemente (sowie andere Markup) zu diesen Inhalts Steuerelementen hinzufügen. Die Verwendung von in großen Webanwendungen untergeordneten Seiten ist sehr nützlich, wenn alle Seiten ein übergreifendes Aussehen und Gefühl haben, aber für bestimmte Abschnitte der Website sind eindeutige Anpassungen erforderlich.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -306,7 +306,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Tipps für die Entwurfsseiten und VS 2005-Entwurfszeit](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
 - [VS 2008-Unterstützung für unterstützte Master Seiten](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -315,4 +315,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, löschen Sie eine Zeile bei [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](specifying-the-master-page-programmatically-vb.md)
+> [Previous](specifying-the-master-page-programmatically-vb.md)

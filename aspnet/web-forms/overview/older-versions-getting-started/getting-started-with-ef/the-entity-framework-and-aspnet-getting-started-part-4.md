@@ -1,165 +1,165 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4
-title: Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 4 | Microsoft-Dokumentation
+title: Einführung in Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Part 4 | Microsoft-Dokumentation
 author: tdykstra
-description: Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mithilfe von Entity Framework. Die beispielanwendung ist...
+description: Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie mithilfe der Entity Framework Web Forms Anwendungen erstellen. Die Beispielanwendung ist...
 ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: ceb9e60f-957c-4d25-9331-cc527de96a33
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4
 msc.type: authoredcontent
 ms.openlocfilehash: eb75a76038466bf30738387ed4739687de1df944
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133297"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518283"
 ---
-# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-4"></a>Erste Schritte mit Entity Framework 4.0 Database First und ASP.NET 4 Web Forms - Teil 4
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-4"></a>Ersten Schritte mit Entity Framework 4,0 Database First und ASP.NET 4 Web Forms-Teil 4
 
-durch [Tom Dykstra](https://github.com/tdykstra)
+von [Tom Dykstra](https://github.com/tdykstra)
 
-> Die Contoso University-Beispielwebanwendung veranschaulicht, wie ASP.NET Web Forms-Anwendungen, die mit dem Entity Framework 4.0 und Visual Studio 2010. Weitere Informationen zu dieser tutorialreihe finden Sie unter [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md)
+> Die Beispiel-Webanwendung der Beispiel-Web-App veranschaulicht, wie Sie ASP.net-Web Forms Anwendungen mithilfe von Entity Framework 4,0 und Visual Studio 2010 erstellen. Weitere Informationen zur tutorialreihe finden Sie [im ersten Tutorial der Reihe](the-entity-framework-and-aspnet-getting-started-part-1.md) .
 
-## <a name="working-with-related-data"></a>Arbeiten mit zugehörigen Daten
+## <a name="working-with-related-data"></a>Arbeiten mit verwandten Daten
 
-Im vorherigen Tutorial verwendet Sie die `EntityDataSource` Steuerelement zu filtern, Sortieren und Gruppieren von Daten. In diesem Tutorial werden Sie anzeigen und aktualisieren verwandter Daten.
+Im vorherigen Tutorial haben Sie das `EntityDataSource`-Steuerelement verwendet, um Daten zu filtern, zu sortieren und zu gruppieren. In diesem Tutorial werden verwandte Daten angezeigt und aktualisiert.
 
-Erstellen Sie die dozentenseite, die eine Liste der Dozenten zeigt. Wenn Sie ein Dozent ausgewählt haben, sehen Sie eine Liste der Kurse, die durch dieses Dozenten unterrichtet. Wenn Sie einen Kurs auswählen, sehen Sie die Details für den Kurs sowie eine Liste der in diesem Kurs registrierten Studenten. Sie können den Dozenten Einstellungsdatum und bürozuweisung bearbeiten. Die bürozuweisung ist eine separate Entität-Gruppe, die Sie über eine Navigationseigenschaft zugreifen.
+Sie erstellen die Seite Dozenten, auf der eine Liste der Dozenten angezeigt wird. Wenn Sie einen Dozenten auswählen, wird eine Liste der Kurse angezeigt, die von diesem Dozenten gelehrt werden. Wenn Sie einen Kurs auswählen, werden die Details für den Kurs und eine Liste der im Kurs registrierten Studenten angezeigt. Sie können den Namen des Dozenten, das Einstellungs Datum und die Büro Zuweisung bearbeiten. Die Office-Zuweisung ist eine separate Entitätenmenge, auf die Sie über eine Navigations Eigenschaft zugreifen.
 
-Sie können Masterdaten Detaildaten in Markup oder Code verknüpfen. In diesem Teil des Tutorials verwenden Sie beide Methoden.
+Sie können Master Daten mit Detaildaten in Markup oder im Code verknüpfen. In diesem Teil des Tutorials verwenden Sie beide Methoden.
 
-[![Image01 abgerufen wird](the-entity-framework-and-aspnet-getting-started-part-4/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image1.png)
+[![Image01](the-entity-framework-and-aspnet-getting-started-part-4/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image1.png)
 
-## <a name="displaying-and-updating-related-entities-in-a-gridview-control"></a>Anzeigen und aktualisieren verknüpfte Entitäten in einem GridView-Steuerelement
+## <a name="displaying-and-updating-related-entities-in-a-gridview-control"></a>Anzeigen und aktualisieren verwandter Entitäten in einem GridView-Steuerelement
 
-Erstellen einer neuen Webseite mit dem Namen *Instructors.aspx* , verwendet der *Site.Master* Masterseite, und fügen Sie das folgende Markup zu der `Content` Steuerelement mit dem Namen `Content2`:
+Erstellen Sie eine neue Webseite namens " *Dozenten. aspx* ", die die Master Seite " *Site. Master* " verwendet, und fügen Sie das folgende Markup zum `Content`-Steuerelement mit dem Namen `Content2`hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample1.aspx)]
 
-Dieses Markup erstellt eine `EntityDataSource` Steuerelement, dass Dozenten auswählt und ermöglicht. Die `div` -Element konfiguriert die Markup zum Rendern auf der linken Seite, damit Sie eine Spalte auf der rechten Seite später hinzufügen können.
+Dieses Markup erstellt ein `EntityDataSource` Steuerelement, das Dozenten auswählt und Updates aktiviert. Das `div`-Element konfiguriert Markup so, dass es auf der linken Seite dargestellt wird, sodass Sie später eine-Spalte hinzufügen können.
 
-Zwischen der `EntityDataSource` Markup und dem schließenden `</div>` markieren, fügen Sie das folgende Markup, das erstellt eine `GridView` Steuerelement und ein `Label` -Steuerelement, das Sie für Fehlermeldungen verwenden möchten:
+Fügen Sie zwischen dem `EntityDataSource` Markup und dem schließenden `</div>`-Tag das folgende Markup hinzu, das ein `GridView`-Steuerelement und ein `Label` Steuerelement erstellt, das Sie für Fehlermeldungen verwenden:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample2.aspx)]
 
-Dies `GridView` Steuerelement ermöglicht die Zeilenauswahl, die ausgewählte Zeile mit einer hellgrauen Hintergrundfarbe hervorgehoben, und gibt an, die Handler (die Sie später erstellen) für die `SelectedIndexChanged` und `Updating` Ereignisse. Es gibt auch an `PersonID` für die `DataKeyNames` -Eigenschaft so, dass der Schlüsselwert der ausgewählten Zeile an einem anderen Steuerelement übergeben werden kann, die Sie später hinzufügen.
+Dieses `GridView` Steuerelement aktiviert die Zeilenauswahl, hebt die ausgewählte Zeile mit einer hellgrauen Hintergrundfarbe hervor und gibt Handler (die Sie später erstellen) für die `SelectedIndexChanged`-und `Updating`-Ereignisse an. Außerdem gibt Sie `PersonID` für die `DataKeyNames`-Eigenschaft an, sodass der Schlüsselwert der ausgewählten Zeile an ein anderes Steuerelement weitergegeben werden kann, das Sie später hinzufügen.
 
-Die letzte Spalte enthält die bürozuweisung des Dozenten, die in eine Navigationseigenschaft gespeichert wird die `Person` Entität weil sie von einer zugeordneten Entität stammt. Beachten Sie, dass die `EditItemTemplate` Element gibt `Eval` anstelle von `Bind`, da die `GridView` Steuerelement kann nicht direkt an Navigationseigenschaften gebunden, um sie zu aktualisieren. Sie müssen die bürozuweisung im Code aktualisieren. Zu diesem Zweck benötigen Sie einen Verweis auf die `TextBox` , und Sie erhalten und zu speichern, die in der `TextBox` des Steuerelements `Init` Ereignis.
+Die letzte Spalte enthält die Büro Zuweisung des Dozenten, die in einer Navigations Eigenschaft der `Person` Entität gespeichert wird, da Sie von einer zugeordneten Entität stammt. Beachten Sie, dass das `EditItemTemplate` Element `Eval` anstelle von `Bind`angibt, da das `GridView` Steuerelement nicht direkt an Navigations Eigenschaften gebunden werden kann, um Sie zu aktualisieren. Die Office-Zuweisung wird im Code aktualisiert. Zu diesem Zweck benötigen Sie einen Verweis auf das `TextBox`-Steuerelement, das Sie im `Init` Ereignis des `TextBox`-Steuer Elements speichern und speichern können.
 
-Nach der `GridView` Steuerelement ist ein `Label` -Steuerelement, das für Fehlermeldungen verwendet wird. Des Steuerelements `Visible` Eigenschaft `false`, und der Ansichtszustand deaktiviert ist, so, dass die Bezeichnung angezeigt wird, nur wenn Code als Reaktion auf einen Fehler sichtbar vereinfacht.
+Nach dem `GridView`-Steuerelement handelt es sich um ein `Label` Steuerelement, das für Fehlermeldungen verwendet wird. Die `Visible`-Eigenschaft des Steuer Elements ist `false`, und der Ansichts Zustand ist deaktiviert, sodass die Bezeichnung nur dann angezeigt wird, wenn der Code Sie als Reaktion auf einen Fehler sichtbar macht.
 
-Öffnen der *Instructors.aspx.cs* Datei, und fügen Sie die folgenden `using` Anweisung:
+Öffnen Sie die Datei *Instructors.aspx.cs* , und fügen Sie die folgende `using`-Anweisung hinzu:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample3.cs)]
 
-Fügen Sie einem privaten Klassenfeld direkt nach der Namensdeklaration der partiellen Klasse für einen Verweis auf das Textfeld der Office-Zuweisung.
+Fügen Sie direkt nach der Deklaration der partiellen Klassennamen ein privates Klassenfeld hinzu, um einen Verweis auf das Textfeld für die Office-Zuweisung zu erhalten.
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample4.cs)]
 
-Fügen Sie einen Stub für die `SelectedIndexChanged` -Ereignishandler, dass Sie Code für die spätere Verwendung hinzufügen. Auch hinzufügen, einen Handler für die bürozuweisung `TextBox` des Steuerelements `Init` Ereignis, damit Sie einen Verweis auf Speichern, können die `TextBox` Steuerelement. Verwenden Sie diesen Verweis, um der vom Benutzer eingegebenen zum Aktualisieren der Entität die Navigationseigenschaft zugeordnet zu nutzen.
+Fügen Sie einen Stub für den `SelectedIndexChanged` Ereignishandler hinzu, für den Sie später Code hinzufügen. Fügen Sie außerdem einen Handler für das `Init` Ereignis des Office-Zuweisungs `TextBox`-Steuer Elements hinzu, damit Sie einen Verweis auf das `TextBox`-Steuerelement speichern können. Sie verwenden diese Referenz, um den Wert zu erhalten, den der Benutzer eingegeben hat, um die mit der Navigations Eigenschaft verknüpfte Entität zu aktualisieren.
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample5.cs)]
 
-Verwenden Sie die `GridView` des Steuerelements `Updating` zu aktualisierendes Ereignis die `Location` Eigenschaft des zugeordneten `OfficeAssignment` Entität. Fügen Sie den folgenden Ereignishandler für die `Updating` Ereignis:
+Sie verwenden das `Updating`-Ereignis des `GridView`-Steuer Elements, um die `Location`-Eigenschaft der zugeordneten `OfficeAssignment` Entität zu aktualisieren. Fügen Sie den folgenden Handler für das `Updating`-Ereignis hinzu:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample6.cs)]
 
-Dieser Code ausgeführt wird, wenn der Benutzer klickt **Update** in einem `GridView` Zeile. Der Code verwendet LINQ to Entities, zum Abrufen der `OfficeAssignment` Entität, die mit dem aktuellen verknüpft ist `Person` Entität mithilfe der `PersonID` der ausgewählten Zeile in das Ereignisargument.
+Dieser Code wird ausgeführt, wenn der Benutzer in einer `GridView` Zeile auf **Aktualisieren** klickt. Der Code verwendet LINQ to Entities, um die `OfficeAssignment` Entität abzurufen, die der aktuellen `Person` Entität zugeordnet ist. dabei wird die `PersonID` der ausgewählten Zeile aus dem Ereignis Argument verwendet.
 
-Der Code führt dann eine der folgenden Aktionen je nach dem Wert in der `InstructorOfficeTextBox` Steuerelement:
+Der Code führt dann abhängig von dem Wert im `InstructorOfficeTextBox` Steuerelement eine der folgenden Aktionen aus:
 
-- Wenn das Textfeld einen Wert und gibt es keine `OfficeAssignment` Entität zu aktualisieren, erstellt es einen.
-- Wenn das Textfeld einen Wert und gibt es eine `OfficeAssignment` Entität aktualisiert die `Location` -Eigenschaftswert.
-- Wenn das Textfeld leer ist, und eine `OfficeAssignment` Entität vorhanden ist, wird die Entität.
+- Wenn das Textfeld einen Wert hat und keine zu Aktualisier `OfficeAssignment` Entität vorhanden ist, wird eines erstellt.
+- Wenn das Textfeld einen Wert enthält und eine `OfficeAssignment` Entität vorhanden ist, aktualisiert es den Wert der `Location`-Eigenschaft.
+- Wenn das Textfeld leer ist und eine `OfficeAssignment` Entität vorhanden ist, wird die Entität gelöscht.
 
-Anschließend die Änderungen in der Datenbank gespeichert. Wenn eine Ausnahme auftritt, wird eine Fehlermeldung angezeigt.
+Anschließend werden die Änderungen in der Datenbank gespeichert. Wenn eine Ausnahme auftritt, wird eine Fehlermeldung angezeigt.
 
-Führen Sie die Seite.
+Führen Sie die Seite aus.
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-4/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image3.png)
 
-Klicken Sie auf **bearbeiten** und alle Felder zu ändern, in die Textfelder.
+Klicken Sie auf **Bearbeiten** , und ändern Sie alle Felder in Textfelder.
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-4/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image5.png)
 
-Ändern Sie diese Werte, einschließlich **Bürozuweisung**. Klicken Sie auf **Update** sehen Sie die Änderungen in der Liste.
+Ändern Sie die Werte, einschließlich der **Office-Zuweisung**. Klicken Sie auf **Aktualisieren** , und die Änderungen werden in der Liste angezeigt.
 
-## <a name="displaying-related-entities-in-a-separate-control"></a>Anzeigen von verknüpften Entitäten in einem separaten Steuerelement
+## <a name="displaying-related-entities-in-a-separate-control"></a>Anzeigen verwandter Entitäten in einem separaten Steuerelement
 
-Jeden Dozenten kann einen oder mehrere Kurse, bringen, damit Sie hinzufügen, eine `EntityDataSource` Steuerelement und ein `GridView` Steuerelement, um die Liste der Kurse zugeordnet, welches "Instructor" in "Instructor"-Elementen ausgewählt ist `GridView` Steuerelement. Um eine Überschrift zu erstellen und die `EntityDataSource` für Kurse Entitäten zu steuern, fügen Sie das folgende Markup zwischen die Fehlermeldung `Label` -Steuerelement und dem schließenden `</div>` Tag:
+Jeder Dozenten kann einen oder mehrere Kurse unterrichten. daher fügen Sie ein `EntityDataSource`-Steuerelement und ein `GridView`-Steuerelement hinzu, um die Kurse aufzulisten, die mit dem in den Dozenten `GridView`-Steuerelement verknüpften Dozenten verknüpft sind. Fügen Sie zum Erstellen einer Überschrift und der `EntityDataSource`-Steuerelement für Kurs Entitäten das folgende Markup zwischen der Fehlermeldung `Label`-Steuerelement und dem schließenden `</div>`-Tag hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample7.aspx)]
 
-Die `Where` Parameter enthält den Wert des der `PersonID` des Dozenten, deren Zeile, in ausgewählt ist, der `InstructorsGridView` Steuerelement. Die `Where` Eigenschaft enthält einen untergeordneten SELECT-Befehl, der alle zugeordneten ruft `Person` Entitäten aus einer `Course` Entität `People` Navigationseigenschaft und wählt die `Course` Entität nur dann, wenn eines der zugeordneten `Person`Entitäten enthält den ausgewählten `PersonID` Wert.
+Der `Where`-Parameter enthält den Wert des `PersonID` des Dozenten, dessen Zeile im `InstructorsGridView`-Steuerelement ausgewählt ist. Die `Where`-Eigenschaft enthält einen untergeordneten SELECT-Befehl, der alle zugeordneten `Person` Entitäten aus der `People` Navigations Eigenschaft einer `Course` Entität abruft und die `Course` Entität nur dann auswählt, wenn eine der zugeordneten `Person` Entitäten den ausgewählten `PersonID` Wert enthält.
 
-Zum Erstellen der `GridView` -Steuerelement. Fügen Sie das folgende Markup direkt nach der `CoursesEntityDataSource` Control (vor dem schließenden `</div>` Tag):
+Um das `GridView` Steuerelement zu erstellen, fügen Sie das folgende Markup direkt nach dem Steuerelement `CoursesEntityDataSource` (vor dem schließenden `</div>`-Tag) hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample8.aspx)]
 
-Da keine Kurse angezeigt werden, wenn keine "Instructor" ausgewählt ist, eine `EmptyDataTemplate` Element enthalten ist.
+Da keine Kurse angezeigt werden, wenn kein Dozenten ausgewählt ist, wird ein `EmptyDataTemplate`-Element eingeschlossen.
 
-Führen Sie die Seite.
+Führen Sie die Seite aus.
 
 [![Image04](the-entity-framework-and-aspnet-getting-started-part-4/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image7.png)
 
-Wählen Sie einen Dozenten, der einen oder mehrere Kurse zugewiesen wurde, und den Kurs oder Kurse in der Liste angezeigt. (Hinweis: Obwohl das Schema der Datenbank mehrere Kurse zulässt, in den Testdaten bereitgestellt, mit der Datenbank keine "Instructor" tatsächlich hat mehr als einen Kurs. Sie können mit der Datenbank Kurse hinzufügen, selbst mit der **Server-Explorer** Fenster oder der *CoursesAdd.aspx* Seite, die Sie in einem späteren Tutorial hinzufügen,.)
+Wählen Sie einen Dozenten aus, dem ein oder mehrere Kurse zugewiesen sind, und der Kurs oder die Kurse werden in der Liste angezeigt. (Hinweis: Obwohl das Datenbankschema mehrere Kurse zulässt, verfügt der Dozenten in den Testdaten, die in der Datenbank bereitgestellt werden, über mehr als einen Kurs. Sie können der Datenbank selbst Kurse mithilfe des **Server-Explorer** Fensters oder der Seite " *coursesadd. aspx* " hinzufügen, die Sie in einem späteren Tutorial hinzufügen.)
 
 [![Image05](the-entity-framework-and-aspnet-getting-started-part-4/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image9.png)
 
-Die `CoursesGridView` Steuerelement zeigt nur einige Felder des Kurses. Um alle Details für einen Kurs anzuzeigen, verwenden Sie eine `DetailsView` Steuerelement für den Kurs, die der Benutzer auswählt. In *Instructors.aspx*, fügen Sie das folgende Markup nach dem schließenden `</div>` Tag (Stellen Sie sicher, dass Sie dieses Markup platzieren **nach** das schließende Div-tag, nicht vor):
+Das `CoursesGridView`-Steuerelement zeigt nur einige Kurs Felder an. Wenn Sie alle Details für einen Kurs anzeigen möchten, verwenden Sie ein `DetailsView`-Steuerelement für den Kurs, den der Benutzer auswählt. Fügen Sie in " *Dozenten. aspx*" nach dem schließenden `</div>` Tag das folgende Markup hinzu (stellen Sie sicher, dass Sie **Dieses Markup hinter** dem schließenden div-Tag platzieren, nicht davor):
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample9.aspx)]
 
-Dieses Markup erstellt eine `EntityDataSource` Steuerelement, gebunden ist, die `Courses` Entitätenmenge. Die `Where` -Eigenschaft wählt ein Kurs mit den `CourseID` Wert der ausgewählten Zeile in den Kursen `GridView` Steuerelement. Das Markup gibt einen Handler für die `Selected` Ereignis, das Sie später verwenden werden für die Anzeige von Noten von Studierenden, die einer anderen Ebene in der Hierarchie ist.
+Mit diesem Markup wird ein `EntityDataSource` Steuerelement erstellt, das an die `Courses` Entitätenmenge gebunden ist. Die `Where`-Eigenschaft wählt einen Kurs mithilfe des `CourseID` Werts der ausgewählten Zeile in den Kursen `GridView`-Steuerelement aus. Das Markup gibt einen Handler für das `Selected`-Ereignis an, das Sie später zum Anzeigen von Studenten Qualitäten verwenden. Dies ist eine weitere Ebene, die in der Hierarchie weiter unten ist.
 
-In *Instructors.aspx.cs*, erstellen Sie die folgenden Stub für die `CourseDetailsEntityDataSource_Selected` Methode. (Sie müssen diese Stub-ausfüllen, später in diesem Tutorial, jetzt auch noch, damit die Seite kompiliert und ausgeführt werden kann.)
+Erstellen Sie in *Instructors.aspx.cs*den folgenden Stub für die `CourseDetailsEntityDataSource_Selected`-Methode. (Sie füllen diesen Stub später in diesem Tutorial aus. vorerst benötigen Sie den Stub, damit die Seite kompiliert und ausgeführt wird.)
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample10.cs)]
 
-Führen Sie die Seite.
+Führen Sie die Seite aus.
 
 [![Image06](the-entity-framework-and-aspnet-getting-started-part-4/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image11.png)
 
-Anfänglich stehen keine Kursdetails, da keine Kurs ausgewählt ist. Wählen Sie einen Dozenten, wer einen Kurs zugewiesen hat, und wählen Sie dann einen Kurs aus, um die Details anzuzeigen.
+Anfänglich sind keine Kursdetails vorhanden, da kein Kurs ausgewählt ist. Wählen Sie einen Dozenten aus, dem ein Kurs zugewiesen ist, und wählen Sie dann einen Kurs aus, um die Details anzuzeigen.
 
 [![Image07](the-entity-framework-and-aspnet-getting-started-part-4/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image13.png)
 
-## <a name="using-the-entitydatasource-selected-event-to-display-related-data"></a>Verwenden das EntityDataSource ausgewählte Ereignis, um verknüpfte Daten anzeigen""
+## <a name="using-the-entitydatasource-selected-event-to-display-related-data"></a>Verwenden des "Selected"-Ereignisses von EntityDataSource zum Anzeigen verwandter Daten
 
-Abschließend möchten alle von der registrierten Studenten und deren Noten für den ausgewählten Kurs anzuzeigen. Zu diesem Zweck verwenden Sie die `Selected` Ereignis die `EntityDataSource` Steuerelement gebunden werden, um den Kurs `DetailsView`.
+Schließlich möchten Sie alle registrierten Studenten und deren Noten für den ausgewählten Kurs anzeigen. Zu diesem Zweck verwenden Sie das `Selected`-Ereignis des `EntityDataSource` Steuer Elements, das an den Kurs `DetailsView`gebunden ist.
 
-In *Instructors.aspx*, fügen Sie das folgende Markup nach dem `DetailsView` Steuerelement:
+Fügen Sie in *Dozenten. aspx*das folgende Markup nach dem `DetailsView`-Steuerelement hinzu:
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample11.aspx)]
 
-Dieses Markup erstellt eine `ListView` -Steuerelement, das eine Liste der Schüler/Studenten und deren Noten für den ausgewählten Kurs angezeigt. Da Databind-Steuerelements im Code wird, ist keine Datenquelle angegeben. Die `EmptyDataTemplate` -Element bietet eine Meldung angezeigt, wenn keine Kurs ausgewählt ist, befinden sich in diesem Fall keine Schüler angezeigt. Die `LayoutTemplate` Element erstellt eine HTML-Tabelle zum Anzeigen der Liste aus, und die `ItemTemplate` gibt die anzuzeigenden Spalten an. ID der Studierenden und die Note des Studenten stammen aus der `StudentGrade` Entität und den Namen "Student" stammt aus der `Person` Entität, die das Entity Framework in verfügbar macht die `Person` Navigationseigenschaft der `StudentGrade` Entität.
+Dieses Markup erstellt ein `ListView` Steuerelement, das eine Liste von Schülern und deren Noten für den ausgewählten Kurs anzeigt. Es wurde keine Datenquelle angegeben, da Sie das Steuerelement im Code übernehmen. Das `EmptyDataTemplate`-Element enthält eine Meldung, die angezeigt wird, wenn kein Kurs ausgewählt ist – in diesem Fall sind keine anzuzeigenden Studenten vorhanden. Das `LayoutTemplate` Element erstellt eine HTML-Tabelle zum Anzeigen der Liste, und die `ItemTemplate` gibt die anzuzeigenden Spalten an. Die Student-ID und die Student-Klasse stammen aus der `StudentGrade`-Entität, und der Student Name wird von der `Person` Entität abgeleitet, die der Entity Framework in der `Person` Navigations Eigenschaft der `StudentGrade`-Entität verfügbar macht.
 
-In *Instructors.aspx.cs*, ersetzen Sie die Stub-Out `CourseDetailsEntityDataSource_Selected` Methode durch den folgenden Code:
+Ersetzen Sie in *Instructors.aspx.cs*die `CourseDetailsEntityDataSource_Selected`-Methode stubout durch den folgenden Code:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample12.cs)]
 
-Das Ereignisargument für dieses Ereignis enthält die ausgewählten Daten in Form einer Auflistung, die hat NULL Elemente, wenn nichts ausgewählt ist oder eine Falls eine `Course` Entität ausgewählt ist. Wenn eine `Course` Entität ausgewählt ist, wird der Code verwendet die `First` Methode, um der Auflistung in ein einzelnes Objekt zu konvertieren. Anschließend ruft es `StudentGrade` Entitäten aus der Navigationseigenschaft für eine Sammlung konvertiert, und bindet die `GradesListView` Steuerelement der Auflistung.
+Das Ereignis Argument für dieses Ereignis stellt die ausgewählten Daten in Form einer Auflistung bereit, die 0 (null) Elemente enthält, wenn nichts ausgewählt ist, oder ein Element, wenn eine `Course` Entität ausgewählt ist. Wenn eine `Course` Entität ausgewählt ist, verwendet der Code die `First`-Methode, um die Auflistung in ein einzelnes Objekt zu konvertieren. Anschließend werden `StudentGrade` Entitäten aus der Navigations Eigenschaft abgerufen, in eine Auflistung konvertiert und das `GradesListView` Steuerelement an die Auflistung gebunden.
 
-Dies ist ausreichend, Besoldungsgruppen angezeigt, aber Sie möchten, um sicherzustellen, dass die Nachricht in der Vorlage für leere Daten zum ersten Mal angezeigt wird, auf die Seite angezeigt wird, und jedes Mal, wenn ein Kurs nicht ausgewählt ist. Zu diesem Zweck erstellen Sie die folgende Methode, die Sie, an zwei Stellen aufrufen müssen:
+Dies ist ausreichend, um die Qualität anzuzeigen, aber Sie möchten sicherstellen, dass die Meldung in der leeren Daten Vorlage angezeigt wird, wenn die Seite zum ersten Mal angezeigt wird, und wenn kein Kurs ausgewählt ist. Erstellen Sie hierzu die folgende Methode, die Sie von zwei Stellen aus abrufen:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample13.cs)]
 
-Rufen Sie diese neue Methode aus der `Page_Load` Methode, um die leere Daten zum ersten Mal angezeigt, die Seite wird angezeigt. Und nennen Sie sie aus der `InstructorsGridView_SelectedIndexChanged` Methode, da das Ereignis ausgelöst wird, wenn ein Dozent ausgewählt wird, was bedeutet, dass neue Kurse werden in den Kursen geladen `GridView` -Steuerelement und keine noch ausgewählt ist. Hier sind die beiden Aufrufe:
+Aufrufen Sie diese neue Methode aus der `Page_Load`-Methode, um die leere Daten Vorlage anzuzeigen, wenn die Seite zum ersten Mal angezeigt wird. Und über die `InstructorsGridView_SelectedIndexChanged`-Methode aufrufen, da dieses Ereignis ausgelöst wird, wenn ein Dozent ausgewählt wird. das bedeutet, dass neue Kurse in die Kurse `GridView` Steuer Elements geladen werden und keine noch ausgewählt ist. Dies sind die beiden Aufrufe:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample14.cs)]
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-4/samples/sample15.cs)]
 
-Führen Sie die Seite.
+Führen Sie die Seite aus.
 
 [![Image08](the-entity-framework-and-aspnet-getting-started-part-4/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image15.png)
 
-Wählen Sie einen Dozenten, der einen Kurs zugewiesen wurde, und wählen Sie dann den Kurs.
+Wählen Sie einen Dozenten aus, dem ein Kurs zugewiesen ist, und wählen Sie dann den Kurs aus.
 
 [![Image09](the-entity-framework-and-aspnet-getting-started-part-4/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-4/_static/image17.png)
 
-Sie haben nun einige Möglichkeiten zum Arbeiten mit verknüpften Daten erfahren. In der folgenden Tutorial erfahren Sie, das Hinzufügen von Beziehungen zwischen vorhandenen Entitäten, Beziehungen zu entfernen, und wie Sie eine neue Entität hinzufügen, die eine Beziehung zu einer vorhandenen Entität verfügt.
+Sie haben nun einige Möglichkeiten gesehen, mit verwandten Daten zu arbeiten. Im folgenden Tutorial erfahren Sie, wie Sie Beziehungen zwischen vorhandenen Entitäten hinzufügen, Beziehungen entfernen und eine neue Entität hinzufügen, die über eine Beziehung zu einer vorhandenen Entität verfügt.
 
 > [!div class="step-by-step"]
 > [Zurück](the-entity-framework-and-aspnet-getting-started-part-3.md)

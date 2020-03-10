@@ -9,11 +9,11 @@ ms.assetid: 0edcd653-f24a-41aa-aef4-75f868fe5ac2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3b039b22bef38ae6ebf80be070820dc1638f87f4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618689"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457305"
 ---
 # <a name="specifying-the-master-page-programmatically-vb"></a>Programmgesteuertes Festlegen der Masterseite (VB)
 
@@ -159,7 +159,7 @@ Nachdem Sie die `BaseMasterPage`-Klasse abgeschlossen und die beiden Masterseite
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample11.aspx)]
 
-Bis:
+Nach:
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample12.aspx)]
 
@@ -226,13 +226,13 @@ Wenn dieser Code vorhanden ist, besuchen Sie die Seite `ChooseMasterPage.aspx`. 
 
 **Abbildung 07**: Inhaltsseiten werden nun über die Seite "`Alternate.master` Master" angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](specifying-the-master-page-programmatically-vb/_static/image21.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wenn eine Inhaltsseite besucht wird, werden die Inhalts Steuerelemente mit den contentplachalter-Steuerelementen der Master Seite miteinander verschmolzen. Die Master Seite der Inhaltsseite wird durch die `MasterPageFile`-Eigenschaft der `Page` Klasse bezeichnet, die während der Initialisierungsphase dem `MasterPageFile`-Attribut der `@Page`-Direktive zugewiesen wird. Wie in diesem Tutorial gezeigt, können Sie der `MasterPageFile`-Eigenschaft einen Wert zuweisen, sofern dies vor dem Ende der PreInit-Phase geschieht. Wenn die Master Seite Programm gesteuert angegeben werden kann, wird die Tür für erweiterte Szenarien geöffnet, z. b. das dynamische Binden einer Inhaltsseite an eine Master Seite auf der Grundlage externer Faktoren.
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -242,7 +242,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Master Seiten: Tipps, Tricks und Traps](http://www.odetocode.com/articles/450.aspx)
 - [Designs in ASP.net](http://www.odetocode.com/articles/423.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 3,5 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott kann über [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 

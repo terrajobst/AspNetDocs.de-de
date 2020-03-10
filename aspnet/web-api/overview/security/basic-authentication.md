@@ -1,83 +1,83 @@
 ---
 uid: web-api/overview/security/basic-authentication
-title: Standardauthentifizierung in ASP.NET Web-API | Microsoft-Dokumentation
+title: Standard Authentifizierung in ASP.net-Web-API | Microsoft-Dokumentation
 author: MikeWasson
-description: Beschreibt die Verwendung der Standardauthentifizierung in ASP.NET Web-API.
+description: Beschreibt die Verwendung der Standard Authentifizierung in ASP.net-Web-API.
 ms.author: riande
 ms.date: 10/02/2014
 ms.assetid: 41423767-0021-47c3-9e53-0021b457c39f
 msc.legacyurl: /web-api/overview/security/basic-authentication
 msc.type: authoredcontent
 ms.openlocfilehash: 1470bd4b5abd5199b9a5105973b053812d643351
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59412553"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447633"
 ---
-# <a name="basic-authentication-in-aspnet-web-api"></a>Standardauthentifizierung in ASP.NET Web-API
+# <a name="basic-authentication-in-aspnet-web-api"></a>Standard Authentifizierung in ASP.net-Web-API
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-Die Standardauthentifizierung ist in definiert [RFC 2617, HTTP-Authentifizierung: Grundlegende und Digestauthentifizierung Zugriff](http://www.ietf.org/rfc/rfc2617.txt).
+Die Standard Authentifizierung ist in [RFC 2617, http-Authentifizierung: Standard-und Digest-Zugriffs Authentifizierung](http://www.ietf.org/rfc/rfc2617.txt)definiert.
 
 Nachteile
 
-- In der Anforderung werden die Anmeldeinformationen des Benutzers gesendet.
-- Anmeldeinformationen werden als Klartext gesendet.
-- Anmeldeinformationen werden bei jeder Anforderung gesendet.
-- So melden Sie sich, mit Ausnahme der durch die Browsersitzung beenden.
-- Anfällig für websiteübergreifende anforderungsfälschung (CSRF); erfordert, dass Anti-CSRF-Measures.
+- Benutzer Anmelde Informationen werden in der Anforderung gesendet.
+- Anmelde Informationen werden als Klartext gesendet.
+- Anmelde Informationen werden bei jeder Anforderung gesendet.
+- Es gibt keine Möglichkeit, sich abzumelden, es sei denn, Sie beenden die Browsersitzung.
+- Anfällig für Website übergreifende Anforderungs Fälschung (CSRF); erfordert Anti-CSRF-Measures.
 
 Vorteile
 
-- Internet-Standard.
-- Von allen wichtigen Browsern unterstützt.
+- Internet Standard.
+- Wird von allen wichtigen Browsern unterstützt.
 - Relativ einfaches Protokoll.
 
-Die Standardauthentifizierung funktioniert wie folgt aus:
+Die Standard Authentifizierung funktioniert wie folgt:
 
-1. Wenn eine Anforderung eine Authentifizierung erfordert, gibt der Server 401 (nicht autorisiert) zurück. Die Antwort enthält einen WWW-Authenticate-Header, der angibt, dass der Server die Standardauthentifizierung unterstützt.
-2. Der Client sendet eine weitere Anforderung, mit die Anmeldeinformationen des Clients in der Authorization-Header. Die Anmeldeinformationen werden als "Name: Password" als base64-codierte Zeichenfolge formatiert. Die Anmeldeinformationen werden nicht verschlüsselt.
+1. Wenn eine Anforderung eine Authentifizierung erfordert, gibt der Server 401 (nicht autorisiert) zurück. Die Antwort enthält einen WWW-Authenticate-Header, der angibt, dass der Server die Standard Authentifizierung unterstützt.
+2. Der Client sendet eine weitere Anforderung mit den Client Anmelde Informationen im Autorisierungs Header. Die Anmelde Informationen werden als Zeichenfolge "Name: Password", Base64-codiert formatiert. Die Anmelde Informationen werden nicht verschlüsselt.
 
-Standardauthentifizierung erfolgt im Rahmen einer "Realm". Der Server enthält den Namen des Bereichs im WWW-Authenticate-Header. Die Anmeldeinformationen des Benutzers sind innerhalb dieses Bereichs gültig. Der genauen Geltungsbereich ein Bereich wird durch den Server definiert. Beispielsweise können Sie mehrere Bereiche in der Reihenfolge nach Partition Ressourcen definieren.
+Die Standard Authentifizierung erfolgt im Kontext eines Bereichs. Der Server enthält den Namen des Bereichs im WWW-Authenticate-Header. Die Anmelde Informationen des Benutzers sind innerhalb dieses Bereichs gültig. Der genaue Bereich eines Bereichs wird vom Server definiert. Beispielsweise können Sie mehrere Bereiche definieren, um Ressourcen zu partitionieren.
 
 ![](basic-authentication/_static/image1.png)
 
-Da die Anmeldeinformationen unverschlüsselt gesendet werden, ist die Standardauthentifizierung nur sichere über HTTPS. Finden Sie unter [arbeiten mit SSL in Web-API](working-with-ssl-in-web-api.md).
+Da die Anmelde Informationen unverschlüsselt gesendet werden, ist die Standard Authentifizierung nur über HTTPS sicher. Siehe [Arbeiten mit SSL in der Web-API](working-with-ssl-in-web-api.md).
 
-Standardauthentifizierung ist auch anfällig für CSRF-Angriffe. Nachdem der Benutzer Anmeldeinformationen eingegeben hat, sendet der Browser automatisch diese bei nachfolgenden Anforderungen der gleichen Domäne an, für die Dauer der Sitzung. Dies schließt die AJAX-Anforderungen. Finden Sie unter [verhindern von Angriffen Cross-Site Request Forgery (CSRF)](preventing-cross-site-request-forgery-csrf-attacks.md).
+Die Standard Authentifizierung ist auch anfällig für CSRF-Angriffe. Nachdem der Benutzer Anmelde Informationen eingegeben hat, sendet der Browser diese automatisch für die Dauer der Sitzung bei nachfolgenden Anforderungen an dieselbe Domäne. Dies schließt AJAX-Anforderungen ein. Weitere Informationen finden Sie unter [verhindern von Angriffen für Website übergreifende Anforderungs Fälschung (CSRF)](preventing-cross-site-request-forgery-csrf-attacks.md).
 
-## <a name="basic-authentication-with-iis"></a>Standardauthentifizierung mit IIS
+## <a name="basic-authentication-with-iis"></a>Standard Authentifizierung mit IIS
 
-IIS unterstützt die Standardauthentifizierung, es gibt jedoch ein Nachteil: Der Benutzer wird für die Windows-Anmeldeinformationen authentifiziert. Das bedeutet, dass der Benutzer ein Konto für die Domäne des Servers verfügen muss. Für eine öffentliche Website möchten Sie in der Regel ein ASP.NET-Mitgliedschaftsanbieter authentifiziert.
+IIS unterstützt die Standard Authentifizierung, aber es liegt ein Nachteil vor: der Benutzer wird anhand seiner Windows-Anmelde Informationen authentifiziert. Dies bedeutet, dass der Benutzer über ein Konto in der Domäne des Servers verfügen muss. Für eine öffentliche Website möchten Sie sich in der Regel bei einem ASP.net-Mitgliedschafts Anbieter authentifizieren.
 
-Um grundlegende Authentifizierung mit IIS zu aktivieren, legen Sie den Authentifizierungsmodus auf "Windows" in "Web.config" von Ihrem ASP.NET-Projekt aus:
+Legen Sie den Authentifizierungsmodus in der Datei "Web. config" Ihres ASP.NET-Projekts auf "Windows" fest, um die Standard Authentifizierung mit IIS zu aktivieren:
 
 [!code-xml[Main](basic-authentication/samples/sample1.xml)]
 
-In diesem Modus verwendet IIS Windows-Anmeldeinformationen zum Authentifizieren. Darüber hinaus müssen Sie die grundlegenden Authentifizierung in IIS aktivieren. Im IIS-Manager, wechseln Sie zur Ansicht "Features", wählen Sie die Authentifizierung und aktivieren Sie der Standardauthentifizierung.
+In diesem Modus verwendet IIS Windows-Anmelde Informationen, um sich zu authentifizieren. Außerdem müssen Sie die Standard Authentifizierung in IIS aktivieren. Wechseln Sie im IIS-Manager zur Ansicht Features, wählen Sie Authentifizierung aus, und aktivieren Sie die Standard Authentifizierung.
 
 ![](basic-authentication/_static/image2.png)
 
-Fügen Sie in Ihrem Web-API-Projekt, das `[Authorize]` -Attribut für alle Controlleraktionen, die eine Authentifizierung benötigen.
+Fügen Sie in Ihrem Web-API-Projekt das `[Authorize]`-Attribut für alle Controller Aktionen hinzu, die eine Authentifizierung erfordern.
 
-Ein Client authentifiziert sich durch Festlegen des Authorization-Headers in der Anforderung. Browser-Clients führen Sie diesen Schritt automatisch. Nichtsuchdienst Clients müssen die Header festgelegt.
+Ein Client authentifiziert sich selbst, indem der Autorisierungs Header in der Anforderung festgelegt wird. Dieser Schritt wird automatisch von Browser Clients durchgeführt. Nicht-Browser Clients müssen den-Header festlegen.
 
-## <a name="basic-authentication-with-custom-membership"></a>Standardauthentifizierung mit benutzerdefinierten Mitgliedschaftsanbieter
+## <a name="basic-authentication-with-custom-membership"></a>Standard Authentifizierung mit benutzerdefinierter Mitgliedschaft
 
-Wie bereits erwähnt, verwendet die Standardauthentifizierung verwendet, die in IIS integrierte Windows-Anmeldeinformationen an. Das bedeutet, dass Sie Konten für die Benutzer auf dem Hostserver erstellen müssen. Aber für eine internetanwendung, Benutzerkonten in der Regel in einer externen Datenbank gespeichert sind.
+Wie bereits erwähnt, verwendet die in IIS integrierte Standard Authentifizierung Windows-Anmelde Informationen. Dies bedeutet, dass Sie Konten für Ihre Benutzer auf dem Host Server erstellen müssen. Allerdings werden Benutzerkonten bei einer Internetanwendung in der Regel in einer externen Datenbank gespeichert.
 
-Im folgenden code, wie ein HTTP-Modul, das Standardauthentifizierung ausführt. Sie können ganz einfach in ein ASP.NET-Mitgliedschaftsanbieter einbinden, durch Ersetzen der `CheckPassword` -Methode, die eine dummy-Methode in diesem Beispiel ist.
+Der folgende Code zeigt, wie ein HTTP-Modul, das die Standard Authentifizierung ausführt. Sie können problemlos einen ASP.net-Mitgliedschafts Anbieter einbinden, indem Sie die `CheckPassword`-Methode ersetzen, die in diesem Beispiel eine Dummy-Methode ist.
 
-In Web-API 2, sollten Sie das Schreiben einer [Authentifizierungsfilter](authentication-filters.md) oder [OWIN-Middleware](../../../aspnet/overview/owin-and-katana/index.md), anstatt ein HTTP-Modul.
+In der Web-API 2 sollten Sie anstelle eines HTTP-Moduls einen [Authentifizierungs Filter](authentication-filters.md) oder eine [owin-Middleware](../../../aspnet/overview/owin-and-katana/index.md)schreiben.
 
 [!code-csharp[Main](basic-authentication/samples/sample2.cs)]
 
-Um das HTTP-Modul zu aktivieren, fügen Sie Folgendes in die Datei "web.config" in der **"System.Webserver"** Abschnitt:
+Fügen Sie der Datei "Web. config" im Abschnitt " **System. Webserver** " Folgendes hinzu, um das HTTP-Modul zu aktivieren:
 
 [!code-xml[Main](basic-authentication/samples/sample3.xml?highlight=4)]
 
-Ersetzen Sie "YourAssemblyName", durch den Namen der Assembly (nicht einschließlich der Erweiterungs "Dll").
+Ersetzen Sie "yourassemblyname" durch den Namen der Assembly (ohne die DLL-Erweiterung).
 
-Sie sollten die anderen Authentifizierungsschemas, z. B. Forms oder Windows-Authentifizierung deaktivieren.
+Deaktivieren Sie andere Authentifizierungs Schemas, z. b. Formulare oder Windows-Authentifizierung.

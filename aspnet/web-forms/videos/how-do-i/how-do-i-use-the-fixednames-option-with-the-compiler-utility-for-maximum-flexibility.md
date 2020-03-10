@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility
-title: '[Gewusst wie:] Verwenden die Fixednames-Option mit dem Hilfsprogramm für Compiler für maximale Flexibilität | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie die Option fixednames mit dem Compilerdienstprogramm, um maximale Flexibilität zu bieten. Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem video Chris Pels zeigen, wie Sie die Fixednames-Option mit dem aspnet_compiler.exe-Hilfsprogramm verwenden, um eine konsistente Dateinamen in Kompilierung Organisationseinheit zu erstellen...
+description: In diesem Video zeigt Chris Pels, wie die Option fixednames mit dem Hilfsprogramm aspnet_compiler. exe verwendet wird, um konsistente Dateinamen in der Kompilierungs-OE zu erhalten...
 ms.author: riande
 ms.date: 07/24/2008
 ms.assetid: e332a1e0-226d-40ad-be99-96f13ecaec24
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility
 msc.type: video
 ms.openlocfilehash: 1b58f217716ecbc037aae736fd323bb7da8afbdd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398142"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521943"
 ---
-# <a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[Gewusst wie:] Verwenden der Fixednames-Option mit dem Hilfsprogramm für Compiler für maximale Flexibilität
+# <a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[Gewusst wie:] Verwenden der Option "fixednames" mit dem compilerhilfsprogramm für maximale Flexibilität
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-In diesem Video erfahren Chris Pels, wie zum Verwenden der Fixednames-Option mit dem Aspnet\_compiler.exe-Hilfsprogramm, um eine konsistente Datei erzeugen Namen in der Kompilierungsausgabe. Zunächst sehen wie die Kompilierung von der Aspnet Ausgabe\_compiler.exe-Hilfsprogramm generiert für eine ASP.NET-Website Ausgabedateien, die die verschiedenen Komponenten, einschließlich Seiten, Designs und der Ordner am Standort darstellen. Finden Sie, wie die Komponenten benannt werden und was sie in Bezug auf die ursprüngliche Website enthalten. Klicken Sie dann, finden Sie unter der Fixednames-Option verwenden, um die Standardisierung der Ausgabedateinamen basierend auf die Quelldateien auf denen sie basieren. Als Nächstes lernen Sie Überlegungen zur Verwendung aller die Kompilierungsoptionen, bei der Bereitstellung von Updates für kompilierte Website konzentrieren, welche Komponenten am ehesten aktualisiert werden.
+In diesem Video zeigt Chris Pels, wie die Option fixednames mit dem ASPNET\_Compiler. exe-Hilfsprogramm verwendet wird, um in der Kompilierungs Ausgabe konsistente Dateinamen zu erhalten. Sehen Sie sich zuerst an, wie die Kompilierungs Ausgabe des ASPNET\_Compiler. exe-Hilfsprogramms Ausgabedateien für eine ASP.NET-Website generiert, die die verschiedenen Komponenten, einschließlich Seiten, Designs und Ordner der Website, darstellen. Sehen Sie sich an, wie die Komponenten benannt werden und was Sie im Verhältnis zur ursprünglichen Website enthalten. Weitere Informationen finden Sie unter Verwenden der fixednames-Option zum standardisieren der Ausgabe Dateinamen basierend auf den Quelldateien, auf denen Sie basieren. Im nächsten Schritt erfahren Sie mehr über Überlegungen zur Verwendung der Kompilierungsoptionen beim Bereitstellen von Updates für die kompilierte Website, wobei Sie sich darauf konzentrieren können, welche Komponenten am wahrscheinlichsten aktualisiert werden.
 
-[&#9654;Sehen Sie sich Video (23 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility)
+[&#9654;Video ansehen (23 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility)

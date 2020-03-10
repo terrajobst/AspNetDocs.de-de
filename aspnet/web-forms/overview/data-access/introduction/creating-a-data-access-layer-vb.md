@@ -9,11 +9,11 @@ ms.assetid: 6227233a-6254-4b6b-9a89-947efef22330
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 51c9255f80f83a68cf26decf318347752498491a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635135"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489489"
 ---
 # <a name="creating-a-data-access-layer-vb"></a>Erstellen einer Datenzugriffsschicht (VB)
 
@@ -168,11 +168,11 @@ Dieser Code erforderte nicht das Schreiben eines Bits von Datenzugriffs spezifis
 
 Jedes in diesem Beispiel verwendete Objekt ist ebenfalls stark typisiert und ermöglicht Visual Studio die Bereitstellung von IntelliSense und der Typüberprüfung zur Kompilierzeit. Und das Beste aus allen vom TableAdapter zurückgegebenen DataTables kann an ASP.net-datenweb Steuerelemente gebunden werden, z. b. GridView, DetailsView, DropDownList, CheckBoxList und verschiedene andere. Im folgenden Beispiel wird veranschaulicht, wie die Datentabelle, die von der `GetProducts()`-Methode zurückgegeben wurde, an ein GridView-Steuerelemente in nur wenigen drei Codezeilen im `Page_Load`-Ereignishandler gebunden werden
 
-Allproducts. aspx
+AllProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample2.aspx)]
 
-Allproducts. aspx. vb
+AllProducts.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample3.vb)]
 
@@ -230,7 +230,7 @@ Getränke. aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample4.aspx)]
 
-Getränke. aspx. vb
+Beverages.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample5.vb)]
 
@@ -422,11 +422,11 @@ Diese Daten können auch in einem beliebigen ASP angezeigt werden. Daten-websteu
 
 Wir untersuchen, wie solche Master/Detail-Berichte in zukünftigen Tutorials angezeigt werden. In diesem Beispiel soll die Verwendung der benutzerdefinierten Methode veranschaulicht werden, die der `Northwind.SuppliersRow`-Klasse hinzugefügt wurde.
 
-Suppliersandproducts. aspx
+SuppliersAndProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample24.aspx)]
 
-Suppliersandproducts. aspx. vb
+SuppliersAndProducts.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample25.vb)]
 
@@ -434,13 +434,13 @@ Suppliersandproducts. aspx. vb
 
 **Abbildung 35**: der Unternehmens Name des Lieferanten ist in der linken Spalte aufgeführt, ihre Produkte auf der rechten Seite ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-data-access-layer-vb/_static/image93.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Wenn Sie eine Webanwendung erstellen, sollte die DAL einer der ersten Schritte sein, bevor Sie mit dem Erstellen der Präsentationsschicht beginnen. Mit Visual Studio ist das Erstellen einer dal basierend auf typisierten Datasets eine Aufgabe, die innerhalb von 10-15 Minuten durchgeführt werden kann, ohne eine Codezeile zu schreiben. Die Lernprogramme, die sich weiterentwickeln, basieren auf dieser dal. Im [nächsten Tutorial](creating-a-business-logic-layer-vb.md) definieren wir eine Reihe von Geschäftsregeln und sehen, wie Sie in einer separaten Geschäftslogik Schicht implementiert werden.
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -460,7 +460,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Manuelles Binden eines Datasets an ein DataGrid](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Arbeiten mit Datasets und Filtern aus einer ASP-Anwendung](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

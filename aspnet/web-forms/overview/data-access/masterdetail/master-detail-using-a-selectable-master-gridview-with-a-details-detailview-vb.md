@@ -9,11 +9,11 @@ ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a953c00acc4c37fd563321477b6b21689d6e686c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576442"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78503487"
 ---
 # <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Master-/Detailbericht unter Verwendung eines auswählbaren GridView-Mastersteuerelements mit einem DetailView-Detailsteuerelement (VB)
 
@@ -123,7 +123,7 @@ Nachdem der `productDetailsDataSource` ObjectDataSource ordnungsgemäß konfigur
 
 **Abbildung 12**: Wenn Sie eine Zeile auswählen, werden die Details des Produkts angezeigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image36.png)).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem und den vorherigen drei Tutorials haben wir eine Reihe von Techniken zum Anzeigen von Master-/Detailberichten kennengelernt. In diesem Tutorial haben wir die Verwendung eines auswählbaren GridView-Tools für die Master Datensätze und eine DetailsView untersucht, um Details zum ausgewählten Master Daten Satz auf derselben Seite anzuzeigen. In den vorherigen Tutorials haben wir uns mit dem Anzeigen von Master-/Detailberichten mithilfe von Dropdown Listen und dem Anzeigen von Master Datensätzen auf einer Webseite und detaillierten Datensätzen auf einer anderen Seite beschäftigt.
 
@@ -131,7 +131,7 @@ In diesem Tutorial wird die Untersuchung von Master-/Detailberichten abgeschloss
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -140,4 +140,4 @@ Fröhliche Programmierung!
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Der Lead Prüfer für dieses Tutorial war Hilton giesreviewer. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](master-detail-filtering-across-two-pages-vb.md)
+> [Previous](master-detail-filtering-across-two-pages-vb.md)

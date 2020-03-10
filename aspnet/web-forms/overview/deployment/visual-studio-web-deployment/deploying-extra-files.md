@@ -9,11 +9,11 @@ ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
 ms.openlocfilehash: eaa3141c22980f0c816e2f33b5597ac9fe69c23c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594904"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441363"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Bereitstellen zusätzlicher Dateien
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie die Visual Studio-Webveröffentlichungs Pipeline erweitert wird, um während der Bereitstellung eine zusätzliche Aufgabe auszuführen. Der Task besteht darin, zusätzliche Dateien, die sich nicht im Projektordner befinden, auf die Zielwebsite zu kopieren.
 
@@ -73,7 +73,7 @@ Veröffentlichen Sie die Anwendung mithilfe der One-Click-Veröffentlichung oder
 
 Wenn Sie die One-Click-Veröffentlichung verwenden, können Sie im **Vorschaufenster** überprüfen, ob " *robots. txt* " kopiert wird. Verwenden Sie andernfalls das FTP-Tool, um zu überprüfen, ob sich die Datei " *robots. txt* " im Stamm Ordner der Website nach der Bereitstellung befindet.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Dies schließt diese Reihe von Tutorials zum Bereitstellen einer ASP.NET-Webanwendung für einen Drittanbieter-Hostinganbieter ab. Weitere Informationen zu den Themen, die in diesen Tutorials behandelt werden, finden Sie in der [ASP.net-Bereitstellungs Inhalts](https://go.microsoft.com/fwlink/p/?LinkId=282413)Zuordnung.
 
@@ -81,7 +81,7 @@ Dies schließt diese Reihe von Tutorials zum Bereitstellen einer ASP.NET-Webanwe
 
 Wenn Sie wissen, wie Sie mit MSBuild-Dateien arbeiten, können Sie viele andere Bereitstellungs Aufgaben automatisieren, indem Sie Code in *pubxml* -Dateien (für Profil spezifische Aufgaben) oder die Datei "Project *. WPP. targets* " (für Aufgaben, die für alle Profile gelten) schreiben. Weitere Informationen zu *. pubxml* -und *WPP. targets* -Dateien finden Sie unter Gewusst [wie: Bearbeiten von Bereitstellungs Einstellungen in Veröffentlichungs Profil Dateien (. pubxml) und in der Datei ". WPP. targets" in Visual Studio-Webprojekten](https://msdn.microsoft.com/library/ff398069). Eine grundlegende Einführung in MSBuild-Code finden Sie **unter Anatomie einer Projektdatei in der** [Enterprise-Bereitstellungs Reihe: Grundlegendes zur Projektdatei](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Informationen zum Arbeiten mit MSBuild-Dateien zum Ausführen von Aufgaben für Ihre eigenen Szenarien finden Sie in diesem Buch: [innerhalb des Microsoft-Build-Engine: Verwenden von MSBuild und Team Foundation Build](http://msbuildbook.com) von Sayed Ibraham Hashimi und William Bartholomew.
 
-## <a name="acknowledgements"></a>Danksagungen
+## <a name="acknowledgements"></a>Danksagung
 
 Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 

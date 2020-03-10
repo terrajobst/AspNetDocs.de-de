@@ -1,8 +1,8 @@
 ---
 uid: identity/overview/extensibility/index
-title: ASP.NET Identity-Erweiterbarkeit – ASP.NET 4.x
+title: ASP.net Identity Erweiterbarkeit-ASP.NET 4. x
 author: rick-anderson
-description: Erweiterungen
+description: Erweiterbarkeit
 ms.author: riande
 ms.date: 10/02/2013
 ms.custom: seoapril2019
@@ -10,15 +10,15 @@ ms.assetid: d1c6e7d0-ead9-4f08-a5b9-9d7a30be78e3
 msc.legacyurl: /identity/overview/extensibility
 msc.type: chapter
 ms.openlocfilehash: 745f8685df098dcd62fc1893363719bbaee591a6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118063"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499989"
 ---
-# <a name="aspnet-identity-extensibility"></a>ASP.NET Identity-Erweiterbarkeit
+# <a name="aspnet-identity-extensibility"></a>ASP.net Identity Erweiterbarkeit
 
-> Erweiterungen
+> Erweiterbarkeit
 
 - [Übersicht über benutzerdefinierte Speicheranbieter für ASP.NET Identity](overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Implementieren eines benutzerdefinierten MySQL ASP.NET Identity-Speicheranbieters](implementing-a-custom-mysql-aspnet-identity-storage-provider.md)

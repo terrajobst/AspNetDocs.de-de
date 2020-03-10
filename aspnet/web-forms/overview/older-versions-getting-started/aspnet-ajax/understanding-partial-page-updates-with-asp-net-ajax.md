@@ -9,11 +9,11 @@ ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
 ms.openlocfilehash: 4b87cb8f58dbd7f27b16bcb0d488ff361770d4fe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74622963"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439269"
 ---
 # <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>Grundlegendes zu Teilupdates für Seiten mit ASP.NET AJAX
 
@@ -49,7 +49,7 @@ Die Möglichkeit zum Integrieren des partiellen Renderings von Seiten ist in ASP
 
 1. Erstellen Sie in Microsoft Visual Studio 2008 ein neues ASP.NET-Website Projekt, indem Sie auf <em>Datei</em> <em>-&gt; neue</em> <em>-&gt; Website</em> klicken und im Dialogfeld ASP.NET-Website auswählen. Sie können es beliebig benennen, und Sie können es entweder im Dateisystem oder in Internetinformationsdienste (IIS) installieren.
 2. Ihnen wird die leere Standardseite mit Basic ASP.NET Markup (ein serverseitiges Formular und eine `@Page`-Direktive) angezeigt. Legen Sie eine Bezeichnung mit dem Namen `Label1` und eine Schaltfläche mit dem Namen `Button1` auf der Seite im Formular Element ab. Sie können Ihre Texteigenschaften beliebig festlegen.
-3. Doppelklicken Sie in Designansicht auf `Button1`, um einen Code Behind-Ereignishandler zu generieren. Legen Sie in diesem Ereignishandler `Label1.Text` auf die Schaltfläche geklickt haben. .
+3. Doppelklicken Sie in Designansicht auf `Button1`, um einen Code Behind-Ereignishandler zu generieren. Legen Sie in diesem Ereignishandler `Label1.Text` auf die Schaltfläche geklickt haben. erforderlich.
 
 **Codebeispiel 1: Markup für "default. aspx", bevor das partielle Rendering aktiviert ist**
 
@@ -103,32 +103,32 @@ Visual Studio 2008 scheint keine vordefinierte Vorlage für eine ASP.NET AJAX-ak
 
 Markup aktivierte Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | Allowcustomerrors-Umleitung | Bool | Gibt an, ob der benutzerdefinierte Fehler Abschnitt der Datei "Web. config" verwendet werden soll, um Fehler zu behandeln. |
-| AsyncPostBackError-Meldung | String | Ruft die an den Client gesendete Fehlermeldung ab, wenn ein Fehler ausgelöst wird, oder legt diese fest. |
-| Asyncpostback-Timeout | Int32 | Ruft die Standardzeit Spanne ab, die ein Client auf den Abschluss der asynchronen Anforderung warten soll, oder legt diesen fest. |
-| EnableScript-Globalisierung | Bool | Ruft ab oder legt fest, ob die Skript Globalisierung aktiviert ist. |
-| EnableScript-Lokalisierung | Bool | Ruft ab oder legt fest, ob die Skript Lokalisierung aktiviert ist. |
-| Scriptloadtimeout | Int32 | Bestimmt die Anzahl von Sekunden, die zum Laden von Skripts in den Client zulässig sind. |
-| ScriptManagers | Enumeration (Auto, Debug, Release, erben) | Ruft ab oder legt fest, ob Releaseversionen von Skripts dargestellt werden |
-| ScriptPath | String | Ruft den Stammpfad zum Speicherort der Skriptdateien ab, die an den Client gesendet werden sollen, oder legt diesen fest. |
+| AsyncPostBackError-Message | Zeichenfolge | Ruft die an den Client gesendete Fehlermeldung ab, wenn ein Fehler ausgelöst wird, oder legt diese fest. |
+| AsyncPostBack-Timeout | Int32 | Ruft die Standardzeit Spanne ab, die ein Client auf den Abschluss der asynchronen Anforderung warten soll, oder legt diesen fest. |
+| EnableScript-Globalization | Bool | Ruft ab oder legt fest, ob die Skript Globalisierung aktiviert ist. |
+| EnableScript-Localization | Bool | Ruft ab oder legt fest, ob die Skript Lokalisierung aktiviert ist. |
+| ScriptLoadTimeout | Int32 | Bestimmt die Anzahl von Sekunden, die zum Laden von Skripts in den Client zulässig sind. |
+| ScriptMode | Enumeration (Auto, Debug, Release, erben) | Ruft ab oder legt fest, ob Releaseversionen von Skripts dargestellt werden |
+| scriptPath | Zeichenfolge | Ruft den Stammpfad zum Speicherort der Skriptdateien ab, die an den Client gesendet werden sollen, oder legt diesen fest. |
 
 Nur-Code-Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | AuthenticationService | AuthenticationService-Manager | Ruft Details zum ASP.NET-Authentifizierungsdienst Proxy ab, der an den Client gesendet wird. |
 | IsDebug-gingenabled | Bool | Ruft ab, ob Skript-und Code Debuggen aktiviert ist. |
-| IsInAsyncPostBack | Bool | Ruft ab, ob sich die Seite derzeit in einer asynchronen Post Back Anforderung befindet. |
+| IsInAsyncPostback | Bool | Ruft ab, ob sich die Seite derzeit in einer asynchronen Post Back Anforderung befindet. |
 | Profile Service | ProfileService-Manager | Ruft Details zum Proxy des ASP.NET-Profil Erstellungs Dienstanbieter ab, der an den Client gesendet wird. |
-| Scripts | Sammlungs&lt;Skript-Verweis&gt; | Ruft eine Auflistung von Skript verweisen ab, die an den Client gesendet werden. |
+| Skripts | Sammlungs&lt;Skript-Verweis&gt; | Ruft eine Auflistung von Skript verweisen ab, die an den Client gesendet werden. |
 | Dienste | Sammlungs&lt;Dienst-Verweis&gt; | Ruft eine Auflistung von Webdienst-Proxy verweisen ab, die an den Client gesendet werden. |
 | SupportsPartialRendering | Bool | Ruft ab, ob der aktuelle Client partielles Rendering unterstützt. Wenn diese Eigenschaft **false**zurückgibt, werden alle Seiten Anforderungen Standard Postbacks. |
 
 Öffentliche Code Methoden:
 
-| **Methoden Name** | **Type** | **Beschreibung** |
+| **Methodenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | SetFocus (Zeichenfolge) | Void | Legt den Fokus des Clients auf ein bestimmtes Steuerelement fest, wenn die Anforderung abgeschlossen wurde. |
 
@@ -177,7 +177,7 @@ Das ScriptManager-Steuerelement bietet umfassende Unterstützung für die Lokali
 
 Markup aktivierte Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | ChildrenAsTriggers | bool | Gibt an, ob untergeordnete Steuerelemente die Aktualisierung beim Postback automatisch aufrufen. |
 | RenderMode | Aufzählung (Block, Inline) | Gibt an, wie der Inhalt visuell dargestellt werden soll. |
@@ -185,16 +185,16 @@ Markup aktivierte Eigenschaften:
 
 Nur-Code-Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | IsInPartialRendering | bool | Ruft ab, ob Update Panel das partielle Rendering für die aktuelle Anforderung unterstützt. |
 | ContentTemplate | ITemplate | Ruft die Markup Vorlage für die Aktualisierungs Anforderung ab. |
-| ContentTemplateContainer | Steuerelement | Ruft die programmgesteuerte Vorlage für die Aktualisierungs Anforderung ab. |
+| ContentTemplateContainer | Control | Ruft die programmgesteuerte Vorlage für die Aktualisierungs Anforderung ab. |
 | Trigger | UpdatePanel-TriggerCollection | Ruft die Liste der dem aktuellen Update Panel zugeordneten Trigger ab. |
 
 Öffentliche Code Methoden:
 
-| **Methoden Name** | **Type** | **Beschreibung** |
+| **Methodenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
 | Aktualisieren () | Void | Aktualisiert das angegebene Update Panel Programm gesteuert. Ermöglicht es einer Server Anforderung, ein partielles Rendering eines anderweitig nicht ausgelösten Update Panels auszulösen. |
 
@@ -267,11 +267,11 @@ Wenn eine Anwendung erfordert, dass UpdatePanels verwendet werden, sollten die f
 
 Markup aktivierte Eigenschaften:
 
-| **Eigenschaftenname** | **Type** | **Beschreibung** |
+| **Eigenschaftenname** | **Typ** | **Beschreibung** |
 | --- | --- | --- |
-| Associatedupdate-panelid | String | Gibt die ID des Update Panel-Vorgangs an, über den dieser UpdateProgress berichten soll. |
+| AssociatedUpdate-PanelID | Zeichenfolge | Gibt die ID des Update Panel-Vorgangs an, über den dieser UpdateProgress berichten soll. |
 | Display after | Int | Gibt das Timeout in Millisekunden an, bevor dieses Steuerelement angezeigt wird, nachdem die asynchrone Anforderung beginnt. |
-| Dynamiclayout | bool | Gibt an, ob der Status dynamisch gerendert wird. |
+| DynamicLayout | bool | Gibt an, ob der Status dynamisch gerendert wird. |
 
 Markup Nachfolger:
 
@@ -283,7 +283,7 @@ Mit dem Update Progress-Steuerelement erhalten Sie ein Maß an Feedback, mit dem
 
 Beachten Sie, dass UpdateProgress-Steuerelemente an beliebiger Stelle in einer Seiten Hierarchie vorkommen können. In Fällen, in denen ein partielles Postback von einem untergeordneten Update Panel initiiert wird (wobei ein Update Panel in einem anderen Update Panel geschachtelt ist), bewirken Postbacks, die das untergeordnete Update Panel auslösen,, dass UpdateProgress-Vorlagen für das untergeordnete Element angezeigt werden. UpdatePanel und das übergeordnete Update Panel. Wenn es sich beim Auslösen jedoch um ein direktes untergeordnetes Element des übergeordneten Update Panel handelt, werden nur die UpdateProgress-Vorlagen angezeigt, die dem übergeordneten Element zugeordnet sind.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Bei den Microsoft ASP.NET AJAX-Erweiterungen handelt es sich um ausgereifte Produkte, die dazu dienen, den Zugriff auf Webinhalte zu erleichtern und eine umfassendere Benutzer Darstellung für Ihre Webanwendungen bereitzustellen. Als Teil der ASP.NET-AJAX-Erweiterungen sind die partiellen Seiten Rendering-Steuerelemente, einschließlich der ScriptManager-, Update Panel-und UpdateProgress-Steuerelemente, einige der am häufigsten sichtbaren Komponenten des Toolkits.
 
@@ -302,4 +302,4 @@ Zusammen bieten diese Tools Unterstützung bei der Erstellung umfassender und na
 Scott Cate arbeitet seit 1997 mit Microsoft-Webtechnologien und ist der Präsident von myKB.com ([www.myKB.com](http://www.myKB.com)), wo er sich darauf spezialisiert hat, ASP.NET basierte Anwendungen zu schreiben, die sich auf die Software Lösungen der Wissensdatenbank konzentrieren. Scott kann über [scott.cate@myKB.com](mailto:scott.cate@myKB.com) oder seinen Blog unter [ScottCate.com](http://ScottCate.com) per e-Mail kontaktiert werden.
 
 > [!div class="step-by-step"]
-> [Nächste](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [Weiter](understanding-asp-net-ajax-updatepanel-triggers.md)

@@ -9,11 +9,11 @@ ms.assetid: e322f34c-83b7-41ea-ab65-ab1e0bdcc609
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 19b93ff6c0878ae6ed546d347cafef95fd2a01e6
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598049"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78444717"
 ---
 # <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>Verwenden von parametrisierten Abfragen mit dem SqlDataSource-Steuerelement (VB)
 
@@ -245,7 +245,7 @@ Mit dieser Addition enthält die Seite eine GridView, in der die Produkte angeze
 
 **Abbildung 15**: keine Parameter Quelle oder keinen Standardwert angeben ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die SqlDataSource ermöglicht Seiten Entwicklern, parametrisierte Abfragen zu definieren, deren Parameterwerte hart codiert, aus vordefinierten Parameter Quellen abgerufen oder Programm gesteuert zugewiesen werden können. In diesem Tutorial wurde erläutert, wie Sie eine parametrisierte Abfrage aus dem Assistenten zum Konfigurieren von Datenquellen für Ad-hoc-SQL-Abfragen und gespeicherte Prozeduren erstellen. Außerdem haben wir uns mit der Verwendung von hart codierten Parameter Quellen, einem websteuer Element als Parameter Quelle und der programmgesteuerten Angabe des Parameter Werts beschäftigt.
 
@@ -253,7 +253,7 @@ Wie bei ObjectDataSource bietet auch SqlDataSource Funktionen zum Ändern der zu
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

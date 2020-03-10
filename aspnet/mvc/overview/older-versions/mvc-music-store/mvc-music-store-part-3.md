@@ -1,259 +1,259 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
-title: 'Teil 3: Views und ViewModels | Microsoft-Dokumentation'
+title: 'Teil 3: Ansichten und ViewModels | Microsoft-Dokumentation'
 author: jongalloway
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 3 sind die Ansichten und ViewModels.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 3 werden Sichten und ViewModels behandelt.
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
 ms.openlocfilehash: 3fcfc816cde22c697a78bab2c9ea7ace1bf68501
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129681"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451131"
 ---
 # <a name="part-3-views-and-viewmodels"></a>Teil 3: Ansichten und ViewModels
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-> Die MVC Music Store ist ein lernprogrammanwendung, die eingeführt und erläutert Schritt für Schritt, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwenden.  
+> Der MVC Music Store ist eine Lernprogramm Anwendung, die Schritt für Schritt erläutert, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwendet werden.  
 >   
-> Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.  
+> Der MVC Music Store ist eine einfache Beispiel Speicher Implementierung, die Musikalben online verkauft und grundlegende Funktionen für Website Verwaltung, Benutzeranmeldung und Warenkorb implementiert.  
 >   
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 3 sind die Ansichten und ViewModels.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 3 werden Sichten und ViewModels behandelt.
 
-Bisher haben wir nur Zeichenfolgen aus Controlleraktionen Zurückgeben von wurde. Das ist eine gute Möglichkeit, Sie erhalten eine Vorstellung der Funktionsweise von Controllern, aber es ist nicht wie Sie möchten eine echte Webanwendung erstellen. Wir werden eine bessere Möglichkeit zum Generieren von HTML zurück zum Browser besuchen unsere Website möchten – ein, in dem wir Vorlagendateien verwenden können, um den HTML-Inhalt leichter anpassen, zurücksenden. Das ist genau das, was Ansichten tun.
+Bisher haben wir soeben Zeichen folgen aus Controller Aktionen zurückgegeben. Das ist eine gute Möglichkeit, um eine Vorstellung davon zu erhalten, wie Controller funktionieren, aber es ist nicht so, dass Sie eine echte Webanwendung erstellen möchten. Wir wünschen eine bessere Möglichkeit, HTML-Code zu Browsern zu generieren, die unsere Website besuchen – eine, bei der wir Vorlagen Dateien verwenden können, um den HTML-Inhalt des sendebacks leichter anzupassen. Das ist genau das, was die Ansichten tun.
 
-## <a name="adding-a-view-template"></a>Hinzufügen einer Vorlage anzeigen
+## <a name="adding-a-view-template"></a>Hinzufügen einer Ansichts Vorlage
 
-Um eine ansichtsvorlage zu verwenden, wir ändern die HomeController-Index-Methode, um ein Aktionsergebnis zurückgegeben und View(), wie unten zurückgegeben haben:
+Um eine Ansichts Vorlage zu verwenden, ändern wir die Methode HomeController Index so, dass ein Aktions Ergebnis zurückgegeben wird, und lassen Sie View () wie folgt zurückgeben:
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample1.cs)]
 
-Die obige Änderung gibt an, dass anstelle eine Zeichenfolge zurückgegeben, wir möchten stattdessen eine "Ansicht" verwenden, um ein Ergebnis zurück zu generieren.
+Die obige Änderung gibt an, dass anstelle einer Zeichenfolge eine "Ansicht" verwendet werden soll, um ein Ergebnis zurückzugeben.
 
-Wir werden unser Projekt nun eine geeignete ansichtsvorlage hinzufügen. Zu diesem Zweck wir positionieren Sie den Textcursor in den Index-Aktionsmethode, und klicken Sie dann mit der rechten Maustaste und wählen Sie "Ansicht hinzufügen". Hierdurch wird das Dialogfeld "Ansicht hinzufügen" angezeigt:
+Nun fügen wir dem Projekt eine passende Ansichts Vorlage hinzu. Zu diesem Zweck positionieren wir den Textcursor innerhalb der Index Aktionsmethode, klicken mit der rechten Maustaste und wählen "Ansicht hinzufügen" aus. Dadurch wird das Dialogfeld "Ansicht hinzufügen" angezeigt:
 
 ![](mvc-music-store-part-3/_static/image1.jpg) ![](mvc-music-store-part-3/_static/image1.png)
 
-Das Dialogfeld "Ansicht hinzufügen" kann wir schnell und einfach Vorlagendateien für die Sicht zu generieren. Standardmäßig ist die "Ansicht hinzufügen" füllt Dialogfeld den Namen der Vorlage anzeigen, erstellen, damit diese die Aktionsmethode entspricht, die dazu verwendet werden. Da wir im Kontextmenü "Ansicht hinzufügen" innerhalb der Aktionsmethode Index() von unserem HomeController verwendet, hat das Dialogfeld "Ansicht hinzufügen" oben "Index" wie der Ansichtsname, der standardmäßig aufgefüllt. Wir müssen keine der Optionen in diesem Dialogfeld ändern möchten, klicken Sie daher auf die Schaltfläche "hinzufügen".
+Mit dem Dialogfeld "Ansicht hinzufügen" können Sie schnell und einfach Ansichts Vorlagen Dateien generieren. Standardmäßig wird im Dialogfeld "Ansicht hinzufügen" der Name der zu erstellenden Ansichts Vorlage vorab aufgefüllt, sodass Sie mit der Aktionsmethode übereinstimmt, von der Sie verwendet wird. Da wir das Kontextmenü "Ansicht hinzufügen" innerhalb der Index ()-Aktionsmethode des HomeController verwendet haben, enthält das obige Dialogfeld "Add View" (Ansicht hinzufügen) "index", da der Ansichts Name standardmäßig bereits aufgefüllt ist. Wir müssen die Optionen in diesem Dialogfeld nicht ändern, und klicken Sie auf die Schaltfläche hinzufügen.
 
-Wenn wir auf die Schaltfläche "hinzufügen" klicken, erstellt Visual Web Developer eine neue Datei "Index.cshtml" ansichtsvorlage für uns im Verzeichnis \Views\Home, erstellen den Ordner aus, wenn nicht bereits vorhanden ist.
+Wenn Sie auf die Schaltfläche Hinzufügen klicken, erstellt Visual Web Developer eine neue Index. cshtml-Ansichts Vorlage für uns im Verzeichnis "\views\home" und erstellt den Ordner, wenn er nicht bereits vorhanden ist.
 
 ![](mvc-music-store-part-3/_static/image2.png)
 
-Der Name und Ordner Speicherort der Datei "Index.cshtml" ist wichtig, und die standardmäßige ASP.NET-MVC-Namenskonventionen entspricht. Der Name des Verzeichnisses, \Views\Home, die Controller - mit dem HomeController Namen entspricht. Vorlage Ansichtsnamen Index entspricht der Aktionsmethode des Controllers, die Ansicht anzeigen lassen.
+Der Name und der Ordner Speicherort der Datei "index. cshtml" sind wichtig und folgen den standardmäßigen ASP.NET-MVC-Benennungs Konventionen. Der Verzeichnisname \views\home entspricht dem Controller mit dem Namen HomeController. Der Ansichts Vorlagen Name, Index, entspricht der Controller Aktionsmethode, die die Ansicht anzeigt.
 
-ASP.NET MVC ermöglicht uns, zu vermeiden, dass den Namen oder Speicherort, der eine ansichtsvorlage explizit angeben, wenn wir diese Namenskonvention verwenden, um eine Ansicht zurückzugeben. Es werden standardmäßig die ansichtsvorlage \Views\Home\Index.cshtml gerendert, wenn wir in unserer HomeController z. B. folgenden Code schreiben:
+ASP.NET MVC ermöglicht uns, den Namen oder den Speicherort einer Ansichts Vorlage nicht explizit anzugeben, wenn diese Benennungs Konvention verwendet wird, um eine Ansicht zurückzugeben. Standardmäßig wird die Ansichts Vorlage \views\home\index.cshtml gerenden, wenn wir Code wie unten im HomeController schreiben:
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample2.cs)]
 
-Visual Web Developer erstellt und die ansichtsvorlage "Index.cshtml" geöffnet, nachdem wir die Schaltfläche "Hinzufügen" im Dialogfeld "Ansicht hinzufügen" geklickt wurde. Der Inhalt der Datei "Index.cshtml" werden unten angezeigt.
+Visual Web Developer hat die Ansichts Vorlage "index. cshtml" erstellt und geöffnet, nachdem wir im Dialogfeld "Ansicht hinzufügen" auf die Schaltfläche "hinzufügen" geklickt haben. Der Inhalt der Datei "index. cshtml" ist unten dargestellt.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample3.cshtml)]
 
-In dieser Ansicht wird die Razor-Syntax verwendet, die präziser als die Web Forms-Ansichts-Engine, die in ASP.NET Web Forms und früheren Versionen von ASP.NET MVC verwendet wird. Die Web Forms-Ansichts-Engine ist in ASP.NET MVC 3 weiterhin verfügbar, aber viele Entwickler finden Sie, dass die Razor-ansichtsengine ASP.NET MVC-Entwicklung wirklich gut geeignet ist.
+In dieser Ansicht wird der Razor-Syntax verwendet, der präziser ist als die Web Forms Ansichts-Engine, die in ASP.net Web Forms und früheren Versionen von ASP.NET MVC verwendet wurde. Die Web Forms Ansichts-Engine ist weiterhin in ASP.NET MVC 3 verfügbar, aber viele Entwickler haben festgestellt, dass die Razor-Ansichts-Engine ASP.net die MVC-Entwicklung wirklich gut passt.
 
-Die ersten drei Zeilen fest mit ViewBag.Title Seitentitel Wir sehen Sie sich ausführlicher in Kürze, aber zuerst sehen wir Update Funktionsweise Text Überschrift und zeigen Sie die Seite. Update der &lt;h2&gt; Tag "Diese ist die Homepage" zu sagen, wie unten dargestellt.
+In den ersten drei Zeilen wird der Seitentitel mithilfe von "viewbag. Title" festgelegt. Wir sehen uns an, wie dies in Kürze ausführlicher funktioniert, aber zuerst aktualisieren wir den Text Überschriften Text und zeigen die Seite an. Aktualisieren Sie das Tag &lt;H2&gt; auf "Dies ist die Startseite", wie unten gezeigt.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample4.cshtml)]
 
-Ausführen von der Anwendung zeigt, dass der neue Text auf der Startseite angezeigt wird.
+Das Ausführen der Anwendung zeigt, dass der neue Text auf der Startseite angezeigt wird.
 
 ![](mvc-music-store-part-3/_static/image3.png)
 
-## <a name="using-a-layout-for-common-site-elements"></a>Verwenden ein Layout für allgemeine Website-Elemente
+## <a name="using-a-layout-for-common-site-elements"></a>Verwenden eines Layouts für allgemeine Standort Elemente
 
-Die meisten Websites verfügen, Inhalt, der viele Seiten gemeinsam verwendet werden: Navigation, Fußzeilen, Logos, Stylesheet Verweise usw. Die Razor-ansichtsengine macht dies einfach zu verwalten, verwenden eine Seite mit dem \_Layout.cshtml, die im Ordner "/ Views/Shared" automatisch für uns erstellt wurde.
+Die meisten Websites verfügen über Inhalte, die von vielen Seiten gemeinsam genutzt werden: Navigation, Fußzeilen, Logo Bilder, Stylesheet-Verweise usw. Die Razor-Ansichts-Engine vereinfacht diese Verwaltung mithilfe einer Seite namens \_Layout. cshtml, die automatisch für uns im Ordner/views/Shared erstellt wurde.
 
 ![](mvc-music-store-part-3/_static/image4.png)
 
-Doppelklicken Sie auf diesen Ordner zum Anzeigen des Inhalts, sind unten aufgeführt.
+Doppelklicken Sie auf diesen Ordner, um die unten gezeigten Inhalte anzuzeigen.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample5.cshtml)]
 
-Der Inhalt aus die einzelnen Ansichten angezeigt, auf die @RenderBody()-Befehl, und alle allgemeinen Inhalte, die wir außerhalb dieser angezeigt werden sollen können hinzugefügt werden die \_Layout.cshtml Markup. Sollten wir unsere MVC Music Store, um einen allgemeinen Header mit Links auf unserer Homepage und Store-Bereich auf allen Seiten der Website haben, damit wir, die für die Vorlage, die direkt über hinzufügen @RenderBody()-Anweisung.
+Der Inhalt unserer einzelnen Ansichten wird mit dem Befehl "@RenderBody()" angezeigt, und alle allgemeinen Inhalte, die außerhalb von angezeigt werden sollen, können dem \_Layout. cshtml-Markup hinzugefügt werden. Wir möchten, dass unser MVC Music Store über einen allgemeinen Header mit Links zu unserer Startseite und dem Store-Bereich auf allen Seiten der Website verfügt. daher fügen wir ihn der Vorlage direkt oberhalb dieser @RenderBody()-Anweisung hinzu.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample6.cshtml)]
 
-## <a name="updating-the-stylesheet"></a>Das StyleSheet wird aktualisiert.
+## <a name="updating-the-stylesheet"></a>Aktualisieren des Stylesheets
 
-Die leere Projektvorlage enthält eine sehr optimierte CSS-Datei nur enthält Stile verwendet, um Nachrichten zur inhaltsprüfung anzuzeigen. Einige zusätzliche CSS- und Images um das Aussehen und Verhalten für unsere Website, zu definieren, damit wir diese jetzt hinzufügen, hat unsere Designer bereitgestellt.
+Die leere Projektvorlage enthält eine sehr optimierte CSS-Datei, die nur Stile zum Anzeigen von Validierungs Meldungen enthält. Unser Designer hat einige zusätzliche CSS-und Bilddateien bereitgestellt, um das Erscheinungsbild für unsere Website zu definieren, sodass wir diese jetzt hinzufügen.
 
-Die aktualisierte CSS-Datei und die Bilder befinden sich im Verzeichnis mit Inhalt der MvcMusicStore Assets.zip, verfügbar unter [MVC-Musik-Store](https://github.com/evilDave/MVC-Music-Store). Wir wählen beide im Windows-Explorer und legen Sie sie in unserer Lösung für den Ordner "Content" in Visual Web Developer, wie unten dargestellt:
+Die aktualisierten CSS-Dateien und-Images sind im Inhaltsverzeichnis von MvcMusicStore-Assets. zip enthalten, das unter [MVC-Music-Store](https://github.com/evilDave/MVC-Music-Store)verfügbar ist. Wir wählen beide in Windows-Explorer aus und legen Sie in Visual Web Developer im Inhalts Ordner unserer Projekt Mappe ab, wie unten dargestellt:
 
 ![](mvc-music-store-part-3/_static/image5.png)
 
-Sie werden aufgefordert zu bestätigen, dass die vorhandene Datei "Site.CSS" überschrieben werden soll. Klicken Sie auf "Ja".
+Sie werden aufgefordert zu bestätigen, dass Sie die vorhandene Datei "Site. CSS" überschreiben möchten. Klicken Sie auf Ja.
 
 ![](mvc-music-store-part-3/_static/image6.png)
 
-Der Ordner "Content" der Anwendung wird nun wie folgt aussehen:
+Der Inhalts Ordner der Anwendung wird nun wie folgt angezeigt:
 
 ![](mvc-music-store-part-3/_static/image7.png)
 
-Jetzt sehen wir die Anwendung auszuführen, und sehen, wie unsere Änderungen auf der Startseite aussieht.
+Führen Sie nun die Anwendung aus, und sehen Sie sich an, wie sich unsere Änderungen auf der Startseite ansehen.
 
 ![](mvc-music-store-part-3/_static/image8.png)
 
-- Sehen wir uns an, was sich geändert hat: Index-Aktionsmethode des HomeController gefunden und die Vorlage \Views\Home\Index.cshtmlView angezeigt, obwohl unseres Codes "return View()" bezeichnet, da es sich bei unserer Vorlage anzeigen, die standardmäßige Namenskonvention folgen.
-- Auf der Startseite wird eine einfache Willkommensnachricht angezeigt, die die ansichtsvorlage \Views\Home\Index.cshtml definiert ist.
-- Auf der Startseite verwendet unsere \_Layout.cshtml-Vorlage, und daher die Willkommensnachricht in der Standardwebsite HTML-Layout enthalten ist.
+- Sehen wir uns an, was sich geändert hat: die Index Aktionsmethode von HomeController hat gefunden und die Vorlage \views\home\index.cshtmlview angezeigt, auch wenn der Code "Return View ()" genannt wird, weil unsere Ansichts Vorlage der Standard Benennungs Konvention folgte.
+- Auf der Startseite wird eine einfache Willkommensnachricht angezeigt, die in der Ansichts Vorlage "\views\home\index.cshtml" definiert ist.
+- Auf der Startseite wird unsere Vorlage "\_Layout. cshtml" verwendet, sodass die Willkommensnachricht im HTML-Layout der Standard Website enthalten ist.
 
-## <a name="using-a-model-to-pass-information-to-our-view"></a>Ein Modell verwenden, um Informationen an unsere Ansicht zu übergeben.
+## <a name="using-a-model-to-pass-information-to-our-view"></a>Verwenden eines Modells zum Übergeben von Informationen an unsere Ansicht
 
-Eine ansichtsvorlage, die hartcodierte HTML nur zeigt ist nicht die eine Website sehr interessant machen soll. Um eine dynamische Website erstellen, sollten wir stattdessen zum Übergeben von Informationen über unsere Controlleraktionen an unsere Vorlagen anzeigen.
+Eine Ansichts Vorlage, in der nur hart codiertes HTML angezeigt wird, macht keine sehr interessante Website. Zum Erstellen einer dynamischen Website möchten wir stattdessen Informationen von unseren Controller Aktionen an unsere Ansichts Vorlagen übergeben.
 
-Im Model-View-Controller-Muster Objekte der Begriff, dem bezieht sich das Modell auf, die die Daten in der Anwendung darstellen. Häufig Modellobjekte Tabellen in der Datenbank entsprechen, aber sie müssen keine.
+Im Model-View-Controller-Muster bezieht sich der Begriff Model auf Objekte, die die Daten in der Anwendung darstellen. Modell Objekte entsprechen häufig Tabellen in der Datenbank, jedoch nicht.
 
-Controlleraktionsmethoden, die ein ActionResult zurückgeben können einem Modellobjekt an die Ansicht übergeben. Dies ermöglicht einem Controller sauber Paket alle Informationen erforderlich, um eine Antwort zu generieren und diese Informationen dann in eine ansichtsvorlage übergeben, mit die entsprechenden HTML-Antwort generiert. Dies ist am einfachsten zu verstehen, indem Sie diese in Aktion zu sehen, also lassen Sie uns loslegen.
+Controller Aktionsmethoden, die ein "action result" zurückgeben, können ein Modell Objekt an die Ansicht übergeben. Dies ermöglicht es einem Controller, alle Informationen, die erforderlich sind, um eine Antwort zu generieren, ordnungsgemäß zu verpacken und diese Informationen dann an eine Ansichts Vorlage zu übergeben, die zum Generieren der entsprechenden HTML-Antwort verwendet werden soll. Dies ist am einfachsten zu verstehen, wenn Sie in Aktion angezeigt wird. beginnen wir also.
 
-Zunächst erstellen wir einige Modellklassen Genres und Alben innerhalb unseres neuen Speichers darstellen. Wir erstellen zunächst eine Klasse "Genre". Mit der rechten Maustaste in des Ordners "Models" in Ihrem Projekt, wählen Sie die Option "Klasse hinzufügen", und nennen Sie die Datei "Genre.cs".
+Zunächst erstellen wir einige Modellklassen, die Genres und Alben in unserem Geschäft darstellen. Beginnen wir mit der Erstellung einer Genre Klasse. Klicken Sie mit der rechten Maustaste auf den Ordner "Models" in Ihrem Projekt, wählen Sie die Option "Klasse hinzufügen" aus, und geben Sie der Datei den Namen "Genre.cs".
 
 ![](mvc-music-store-part-3/_static/image2.jpg)
 
 ![](mvc-music-store-part-3/_static/image9.png)
 
-Fügen Sie eine public String Name-Eigenschaft klicken Sie dann auf die Klasse, die erstellt wurde:
+Fügen Sie dann der erstellten Klasse eine Eigenschaft für den öffentlichen Zeichen folgen Namen hinzu:
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample7.cs)]
 
-*Hinweis: Für den Fall, dass Sie sich wundern, den {get; festlegen;} Notation besteht darin, Verwendung von C#der automatisch implementierten Eigenschaften-Funktion. Dadurch erhalten wir die Vorteile einer Eigenschaft, ohne uns um ein dahinter liegendes Feld zu deklarieren.*
+*Hinweis: für den Fall, dass Sie sich Fragen, verwendet die {Get; Set;} C#-Notation die automatisch implementierte Eigenschaft "Properties". Dies bietet uns die Vorteile einer Eigenschaft, ohne dass wir ein dahinter liegendes Feld deklarieren müssen.*
 
-Als Nächstes führen Sie die gleichen Schritte aus, um ein Album-Klasse, die (mit dem Namen Album.cs) zu erstellen, die einen Titel und eine Eigenschaft "Genre" verfügt:
+Führen Sie als nächstes die gleichen Schritte aus, um eine Album-Klasse (mit dem Namen Album.cs) zu erstellen, die einen Titel und eine Genre-Eigenschaft aufweist:
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample8.cs)]
 
-Jetzt können wir durch Ändern der StoreController um Sichten zu verwenden, die dynamische Informationen von unserem Modell anzuzeigen. Wenn – zu Demonstrationszwecken jetzt – wir unsere Alben basierend auf die Anforderungs-ID mit dem Namen, können wir diese Informationen, wie in der Ansicht unten darstellen.
+Nun können wir StoreController so ändern, dass Ansichten verwendet werden, die dynamische Informationen aus unserem Modell anzeigen. Wenn zurzeit zu Demonstrationszwecken unsere Alben basierend auf der Anforderungs-ID benannt wurden, könnten diese Informationen wie in der folgenden Ansicht angezeigt werden.
 
 ![](mvc-music-store-part-3/_static/image10.png)
 
-Zunächst werden die Details der Store-Aktion ändern, sodass die Informationen für ein einzelnes Album angezeigt. Fügen Sie eine "using"-Anweisung am Anfang der **StoreControllers** Klasse den Namespace MvcMusicStore.Models einbeziehen, daher müssen wir nicht MvcMusicStore.Models.Album Geben Sie jedes Mal, wenn die Album-Klasse verwendet werden soll. Im Abschnitt "Using-Direktiven" dieser Klasse sollte jetzt angezeigt werden wie folgt.
+Zunächst ändern wir die Aktion "Store-Details", sodass die Informationen für ein einzelnes Album angezeigt werden. Fügen Sie am Anfang der **storecontrollers** -Klasse eine using-Anweisung hinzu, um den mvcmusicstore. Models-Namespace einzuschließen. Daher müssen Sie nicht jedes Mal, wenn Sie die Album-Klasse verwenden möchten, mvcmusicstore. Models. Album eingeben. Der Abschnitt "using-Direktiven" dieser Klasse sollte nun wie folgt aussehen.
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample9.cs)]
 
-Als Nächstes aktualisieren die Controlleraktion Details wir damit, dass ein ActionResult anstelle einer Zeichenfolge zurückgegeben wie wir die HomeController-Index-Methode haben.
+Als nächstes aktualisieren wir die Aktion "Details Controller", sodass anstelle einer Zeichenfolge ein "action result" zurückgegeben wird, wie dies bei der Index Methode von HomeController der Fall war.
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample10.cs)]
 
-Jetzt können wir die Logik zum Zurückgeben einer Album-Objekts an die Ansicht ändern. Weiter unten in diesem Tutorial wir wird werden zum Abrufen der Daten aus einer Datenbank – aber jetzt verwenden wir "Pseudoupdate von Daten" für den Einstieg.
+Nun können wir die Logik ändern, um ein Album Objekt an die Ansicht zurückzugeben. Später in diesem Tutorial werden die Daten aus einer Datenbank abgerufen – aber zurzeit werden wir "Dummydaten" verwenden, um zu beginnen.
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample11.cs)]
 
-*Hinweis: Wenn Sie keine Erfahrung mit sind C#, Sie möglicherweise annehmen, dass es sich bei Verwenden von Var bedeutet, dass die Variable Album spät gebunden ist. Das ist nicht richtig – c#-Compiler verwendet den Typrückschluss basierend auf was wir die Variable zuweisen, um zu bestimmen, dass der Typ Album jeweiligen Album zu sehen ist und die lokalen Album-Variable als einen Typ Album, kompilieren, sodass kompilierzeitüberprüfung und Visual Studio Code-Editors abrufen unterstützt.*
+*Hinweis: Wenn Sie mit nicht vertraut C#sind, können Sie davon ausgehen, dass die Verwendung von "var" bedeutet, dass die Album-Variable spät gebunden ist. Das ist nicht korrekt – der C# Compiler verwendet den Typrückschluss basierend auf dem, was wir der Variablen zuweisen, um zu bestimmen, ob das Album vom Typ "Album" ist, und die lokale Album Variable als einen albummtyp zu kompilieren, sodass wir die Kompilierzeit Überprüfung und die Visual Studio Code-Editor-Unterstützung erhalten.*
 
-Nun erstellen wir eine Vorlage anzeigen, die unsere Album verwendet, um eine HTML-Antwort zu generieren. Zunächst müssen wir das Projekt zu erstellen, damit das Dialogfeld "Ansicht hinzufügen" unserer Klasse der neu erstellten Album bekannt sind. Sie können das Projekt erstellen durch Auswählen der Debug⇨Build MvcMusicStore Menüelement (zusätzliche Anerkennung, können Sie die Tastenkombination STRG + UMSCHALT + B zum Erstellen des Projekts verwenden).
+Nun erstellen wir eine Ansichts Vorlage, in der das Album zum Generieren einer HTML-Antwort verwendet wird. Bevor wir dies tun, müssen wir das Projekt so erstellen, dass das Dialogfeld "Ansicht hinzufügen" die neu erstellte Album-Klasse kennt. Sie können das Projekt erstellen, indem Sie das Menü Element Debuggen ⇨ Build mvcmusicstore auswählen (um das Projekt mit der Tastenkombination STRG + UMSCHALT + B zu erstellen).
 
 ![](mvc-music-store-part-3/_static/image11.png)
 
-Nun, da wir unsere unterstützenden Klassen eingerichtet haben, können wir unsere Vorlage für die Ansicht zu erstellen. Mit der rechten Maustaste in die Details-Methode, und wählen Sie "Ansicht hinzufügen" aus dem Kontextmenü aus.
+Nachdem wir nun unsere unterstützenden Klassen eingerichtet haben, sind wir bereit, unsere Ansichts Vorlage zu erstellen. Klicken Sie mit der rechten Maustaste in die Detail Methode, und wählen Sie "Ansicht hinzufügen" aus. über das Kontextmenü.
 
 ![](mvc-music-store-part-3/_static/image12.png)
 
-Wir werden eine neue, wie zuvor mit dem HomeController anzeigen-Vorlage erstellen. Da wir es aus der StoreController erstellen wird er standardmäßig in einer Datei \Views\Store\Index.cshtml erstellt werden.
+Wir erstellen eine neue Ansichts Vorlage wie zuvor mit dem HomeController. Da wir Sie aus dem StoreController erstellen, wird Sie standardmäßig in der Datei "\views\store\index.cshtml" generiert.
 
-Im Gegensatz zu werden, wir das "Erstellen, die einen stark typisierten" Ansicht-Kontrollkästchen aktivieren. Dann werden wir unsere Klasse "Album" in der "Ansicht-Datenklasse" Drop-Downlist auswählen. Dadurch wird das Dialogfeld "Ansicht hinzufügen" zum Erstellen einer Vorlage anzeigen, die von der erwartet, dass ein Album, die Objekt an ihn zur Verwendung übergeben wird.
+Anders als zuvor aktivieren wir das Kontrollkästchen "eine stark typisierte Ansicht erstellen". Dann wählen wir unsere "Album"-Klasse in der Dropdown Liste "Datenklasse anzeigen" aus. Dadurch wird das Dialogfeld "Ansicht hinzufügen" dazu geführt, eine Ansichts Vorlage zu erstellen, die erwartet, dass ein Album-Objekt zur Verwendung an Sie übermittelt wird.
 
 ![](mvc-music-store-part-3/_static/image13.png)
 
-Beim Klicken auf die Schaltfläche "Hinzufügen" wird die Vorlage unserer \Views\Store\Details.cshtml anzeigen erstellt werden, mit dem folgenden Code.
+Wenn wir auf die Schaltfläche "Add" (hinzufügen) klicken, wird die Ansichts Vorlage "\views\store\details.cshtml" erstellt, die den folgenden Code enthält.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample12.cshtml)]
 
-Beachten Sie, dass der ersten Zeile gibt an, dass diese Ansicht auf unsere Album-Klasse stark typisiert ist. Die Razor-Ansichts-Engine erkennt, dass es ein Album-Objekt, übergeben wurde also können wir ganz einfach Zugriff auf Eigenschaften des Modells und sogar den Vorteil von IntelliSense im Visual Web Developer-Editor haben.
+Beachten Sie die erste Zeile, die angibt, dass diese Ansicht stark typisiert ist. Die Razor-Ansichts-Engine erkennt, dass ihr ein Album-Objekt weitergereicht wurde, sodass wir leicht auf Modell Eigenschaften zugreifen können und sogar den Vorteil von IntelliSense im Visual Web Developer-Editor haben.
 
-Update der &lt;h2&gt; markieren, damit es zeigt jedoch das Album des Title-Eigenschaft ändern diese Zeile folgendermaßen angezeigt werden.
+Aktualisieren Sie das Tag &lt;H2&gt;, sodass die Title-Eigenschaft des Albums angezeigt wird, indem Sie diese Zeile so ändern, dass Sie wie folgt aussieht.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample13.cshtml)]
 
-Beachten Sie, dass IntelliSense ausgelöst wird, wenn Sie den Zeitraum nach dem Eingeben der @Model -Schlüsselwort, mit den Eigenschaften und Methoden, die die Album-Klasse unterstützt.
+Beachten Sie, dass IntelliSense ausgelöst wird, wenn Sie den Zeitraum nach dem @Model-Schlüsselwort eingeben, das die Eigenschaften und Methoden anzeigt, die die Album-Klasse unterstützt.
 
-Lassen Sie uns nun führen Sie das Projekt erneut aus und rufen Sie die URL der Store/Details/5. Wir sehen die Details eines Albums wie unten.
+Nun führen wir das Projekt erneut aus und besuchen die URL/Store/Details/5. Wir sehen uns die Details eines Albums wie unten dargestellt an.
 
 ![](mvc-music-store-part-3/_static/image14.png)
 
-Stellen Sie jetzt eine ähnliche Aktualisierung für die Aktionsmethode Store durchsuchen. Aktualisieren Sie die Methode so, dass ein Aktionsergebnis zurückgegeben, und ändern Sie die Logik der Methode aus, damit es ein neues Objekt für "Genre erstellt" und gibt ihn an die Ansicht zurück.
+Nun erstellen wir ein ähnliches Update für die Aktionsmethode "Store durchsuchen". Aktualisieren Sie die Methode so, dass Sie ein Aktions Ergebnis zurückgibt, und ändern Sie die Methoden Logik, damit ein neues Genre Objekt erstellt und an die Ansicht zurückgegeben wird.
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample14.cs)]
 
-Mit der rechten Maustaste in der durchsuchen-Methode, und wählen "Ansicht hinzufügen" aus dem Kontextmenü, klicken Sie dann eine Ansicht, die stark typisierte Hinzufügen der Klasse "Genre" eine stark typisierte hinzufügen.
+Klicken Sie mit der rechten Maustaste in die Browse-Methode, und wählen Sie "Ansicht hinzufügen..." Fügen Sie im Kontextmenü eine Ansicht hinzu, die stark typisiert ist, fügen Sie der Genre Klasse einen stark typisierten hinzu.
 
 ![](mvc-music-store-part-3/_static/image15.png)
 
-Update der &lt;h2&gt; Element in der Ansicht code (in /Views/Store/Browse.cshtml) zum Anzeigen der Informationen für "Genre".
+Aktualisieren Sie das Element &lt;H2&gt; im Ansichts Code (in/views/Store/Browse.cshtml), um die Genre Informationen anzuzeigen.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample15.cshtml)]
 
-Jetzt sehen wir führen Sie das Projekt erneut aus, und navigieren Sie zu dem/Store/durchsuchen? Genre = Disco-URL. Wir sehen, dass die Seite "Durchsuchen" wie unten angezeigt.
+Führen Sie nun das Projekt erneut aus, und navigieren Sie zu/Store/Browse? Genre = Disco-URL. Wir sehen, dass die Seite zum Durchsuchen wie unten dargestellt angezeigt wird.
 
 ![](mvc-music-store-part-3/_static/image16.png)
 
-Abschließend soll ein etwas komplexes Update für die **Store Index** Aktionsmethode und können Sie eine Liste mit allen Genres in unseres neuen Speichers anzeigen. Wir werden dies über eine Liste der Genres als das Modellobjekt, anstatt nur eine einzelne "Genre".
+Zum Schluss erstellen wir ein etwas komplexeres Update der Aktionsmethode und der Ansicht des **Speicher Indexes** , um eine Liste aller Genres in unserem Geschäft anzuzeigen. Dazu verwenden wir eine Liste der Genres als Modell Objekt und nicht nur ein einzelnes Genre.
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample16.cs)]
 
-Mit der rechten Maustaste in der Store-Index-Aktionsmethode, und wählen Sie die Ansicht hinzufügen, wie zuvor, wählen "Genre" als die Model-Klasse, und drücken Sie die Schaltfläche "hinzufügen".
+Klicken Sie mit der rechten Maustaste in die Aktionsmethode Store-Index, und wählen Sie Ansicht hinzufügen wie zuvor aus, wählen Sie Genre als Modell Klasse aus, und klicken Sie auf die Schaltfläche
 
 ![](mvc-music-store-part-3/_static/image17.png)
 
-Zuerst ändern wir die @model Deklaration, um anzugeben, dass die Ansicht, verschiedene "Genre" erwartet werden Objekte, anstatt nur eine. Ändern Sie die erste Zeile der /Store/Index.cshtml wie folgt:
+Zunächst ändern wir die @model Deklaration, um anzugeben, dass die Sicht mehrere Genre Objekte erwartet, anstatt nur eine zu erhalten. Ändern Sie die erste/Store/Index.cshtml Zeile wie folgt:
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample17.cshtml)]
 
-Dadurch wird der Razor-ansichtsengine, die es einem Modellobjekt verwendet werden, die mehrere "Genre"-Objekte enthalten kann. Wir verwenden eine IEnumerable&lt;"Genre"&gt; anstelle einer Liste&lt;"Genre"&gt; , da es mehr generisch ist, ermöglicht uns, unsere Modelltyp später auf einen beliebigen Objekttyp ändern, die die IEnumerable-Schnittstelle unterstützt.
+Dadurch wird der Razor-Ansichts-Engine mitgeteilt, dass Sie mit einem Modell Objekt arbeitet, das mehrere Genre Objekte enthalten kann. Wir verwenden ein IEnumerable-&lt;Genre&gt; anstatt eine Liste&lt;Genre&gt; da es allgemeinerer ist. Dadurch können wir unseren Modelltyp später in einen beliebigen Objekttyp ändern, der die IEnumerable-Schnittstelle unterstützt.
 
-Als Nächstes müssen wir die Objekte "Genre" in das Modell, wie in den abgeschlossen-Code unten gezeigt durchlaufen.
+Als nächstes durchlaufen wir die Genre Objekte im Modell, wie im nachfolgenden Code der abgeschlossenen Ansicht gezeigt.
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample18.cshtml)]
 
-Beachten Sie, dass die vollständige IntelliSense-Unterstützung haben wir diesem Code eingeben, damit wir bei der Eingabe "@Model." sehen Sie alle Methoden und Eigenschaften, die durch ein IEnumerable vom Typ "Genre" unterstützt.
+Beachten Sie, dass bei der Eingabe dieses Codes vollständige IntelliSense-Unterstützung vorhanden ist, wenn wir "@Model" eingeben. Wir sehen alle Methoden und Eigenschaften, die von einem IEnumerable-Element vom Typ Genre unterstützt werden.
 
 ![](mvc-music-store-part-3/_static/image18.png)
 
-In unserem "Foreach"-Schleife weiß Visual Web Developer an, dass jedes Element des Typs "Genre", sodass wir IntelliSense für die einzelnen finden Sie unter den Typ "Genre".
+In unserer "foreach"-Schleife weiß Visual Web Developer, dass jedes Element vom Typ Genre ist, sodass für jeden Genre-Typ IntelliSense angezeigt wird.
 
 ![](mvc-music-store-part-3/_static/image19.png)
 
-Als Nächstes gerüstfeature untersucht das Genre-Objekt und bestimmt, von denen jeder eine Name-Eigenschaft, wird damit durchläuft und Dateien schreibt. Es generiert auch bearbeiten, Details und Löschen von Links auf jedes einzelne Element. Werfen wir nutzen, die später in unsere Geschäftsführer, aber jetzt möchten wir eine einfache Liste stattdessen zu haben.
+Im nächsten Schritt untersuchte die Gerüstbau Funktion das Genre Objekt und stellte fest, dass jede eine Name-Eigenschaft hat. Sie führt Sie durch und schreibt Sie. Außerdem werden die Links "Bearbeiten", "Details" und "Löschen" für die einzelnen Elemente generiert. Wir nutzen dies später in unserem Store Manager, aber vorerst möchten wir stattdessen eine einfache Liste verwenden.
 
-Wenn wir die Anwendung auszuführen, und navigieren Sie zu/Store, sehen wir, dass die Anzahl und die Liste der Genres wird angezeigt.
+Wenn wir die Anwendung ausführen und zu/Store navigieren, sehen wir, dass sowohl die Anzahl als auch die Liste der Genres angezeigt werden.
 
 ![](mvc-music-store-part-3/_static/image20.png)
 
-## <a name="adding-links-between-pages"></a>Hinzufügen von Verknüpfungen zwischen Seiten
+## <a name="adding-links-between-pages"></a>Hinzufügen von Links zwischen Seiten
 
-Unsere/Store-URL, die Genres derzeit listet Listet die "Genre"-Namen als nur-Text. Lassen Sie uns dies ändern, damit anstelle von nur-Text wir stattdessen den Link "Genre" Namen, auf die entsprechende URL Store/durchsuchen, haben und durch Klicken auf eine Musik "Genre" wie "Disco" zu der/Store/durchsuchen navigiert? Genre = Disco-URL. Wir konnten unsere \Views\Store\Index.cshtml ansichtsvorlage aktualisieren, Ausgabe, die diesen Links, mit wie unten Code **(nicht in Typ – wir werden diese verbessern)**:
+Unsere/Store-URL, die Genres auflistet, listet derzeit die Genre Namen einfach als nur-Text auf. Wir ändern dies, sodass anstelle von nur-Text die Genre Namen mit der entsprechenden/Store/Browse-URL verknüpft werden, damit das Klicken auf ein Musikgenre wie "Disco" zur/Store/Browse? Genre = Disco-URL navigiert. Wir könnten die Ansichts Vorlage "\views\store\index.cshtml" aktualisieren, um diese Links mithilfe von Code wie unten auszugeben **(geben Sie diesen Link nicht ein, da wir ihn verbessern werden)** :
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample19.html)]
 
-Dies funktioniert, jedoch kann dies zu einem späteren Zeitpunkt Problemen, da dabei auf eine hartcodierte Zeichenfolge. Wenn wir den Controller umbenennen möchten, müssten wir z. B. durchsuchen Sie unser Code nach Links, die aktualisiert werden müssen.
+Dies funktioniert, kann aber später zu Problemen führen, da es auf einer hart codierten Zeichenfolge basiert. Wenn wir beispielsweise den Controller umbenennen wollten, müssten wir den Code suchen, der nach links sucht, die aktualisiert werden müssen.
 
-Eine alternative Methode, die wir verwenden können, ist eine HTML-Hilfsmethode nutzen. ASP.NET MVC enthält HTML-Hilfsmethoden, die über unsere Vorlagencode anzeigen, um eine Vielzahl von Aufgaben wie folgt ausführen verfügbar sind. Die Hilfsmethode Html.ActionLink() ist besonders nützlich, und erleichtert Ihnen die Erstellung von HTML &lt;eine&gt; verknüpft und übernimmt die lästigen Details wie das sicherstellen, dass URL-Pfade sind ordnungsgemäß URL-codiert.
+Ein alternativer Ansatz, den wir verwenden können, ist die Verwendung einer HTML-Hilfsmethode. ASP.NET MVC enthält HTML-Hilfsmethoden, die über den Code der Ansichts Vorlage verfügbar sind, um eine Vielzahl allgemeiner Aufgaben wie diese auszuführen. Die "HTML. Action Link ()"-Hilfsmethode ist eine besonders nützliche Methode und vereinfacht das Erstellen von HTML-&lt;einer&gt; Links und kümmert sich um lästige Details wie das sicherstellen, dass URL-Pfade ordnungsgemäß URL-codiert sind.
 
-Html.ActionLink() verfügt über mehrere verschiedene Überladungen zur Angabe so viele Informationen, wie Sie für Ihre Links benötigen. Im einfachsten Fall müssen Sie angeben nur der Text des Links und die Aktionsmethode auf, wenn auf den Link geklickt wird, auf dem Client. Beispielsweise können wir mit "/ Store /" Index()-Methode auf der Seite "Store-Details" mit der Text des Links "Wechseln Sie zu der Store Index" mit dem folgenden Aufruf verknüpfen:
+HTML. Action Link () verfügt über mehrere verschiedene über Ladungen, die es ermöglichen, so viele Informationen anzugeben, wie Sie für Ihre Verknüpfungen benötigen. Im einfachsten Fall geben Sie nur den Linktext und die Aktionsmethode an, zu der Sie wechseln, wenn auf dem Client auf den Link geklickt wird. Beispielsweise können wir eine Verknüpfung mit der "/Store/" Index ()-Methode auf der Seite "Store-Details" mit dem Linktext "Gehe zum Speicher Index" mithilfe des folgenden Aufrufes aufrufen:
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample20.cshtml)]
 
-*Hinweis: In diesem Fall müssen wir nicht den Namen der Controller angegeben werden, da wir nur zu einer anderen Aktion im selben Controller erstellen, die die aktuelle Ansicht rendert.*
+*Hinweis: in diesem Fall müssen wir den Controller Namen nicht angeben, da wir einfach eine Verbindung mit einer anderen Aktion innerhalb desselben Controllers herstellen, der die aktuelle Ansicht rendert.*
 
-Unsere Links auf der Seite "Durchsuchen" müssen jedoch einen Parameter übergeben, deshalb verwenden wir eine andere Überladung der Html.ActionLink-Methode, die drei Parameter akzeptiert:
+Unsere Links zur Seite "Durchsuchen" müssen jedoch einen Parameter übergeben. Daher verwenden wir eine andere Überladung der HTML. Action Link-Methode, die drei Parameter annimmt:
 
-- 1. Text des Links, der den Namen "Genre" angezeigt wird
-- 2. Aktionsname "Controller" (Durchsuchen)
-- 3. Routenparameterwerten, sowohl den Namen ("Genre") und den Wert ("Genre"-Name) angeben
+- 1. Linktext, in dem der Genre Name angezeigt wird
+- 2. Controller Aktionsname (Durchsuchen)
+- 3. Routen Parameterwerte und angeben des Namens (Genre) und des Werts (Genre Name)
 
-Platzieren, dass alle zusammen sieht wie wir diese Links an den Store Index schreiben:
+Im folgenden wird erläutert, wie wir diese Links in die Speicher Index Ansicht schreiben:
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample21.cshtml)]
 
-Jetzt Wenn wir führen das Projekt erneut aus, und greifen Sie auf die URL /Store/ sehen wir eine Liste von Genres. Jedes Genre wird ein Link – beim Klicken auf dauert es uns, unsere/Store/durchsuchen? Genre =*["Genre"]* URL.
+Wenn wir nun das Projekt erneut ausführen und auf die/Store/-URL zugreifen, wird eine Liste mit Genres angezeigt. Jedes Genre ist ein Hyperlink – Wenn Sie darauf klicken, gelangen wir zur URL "/Store/Browse? Genre = *[Genre]* ".
 
 ![](mvc-music-store-part-3/_static/image3.jpg)
 
-Der HTML-Code für die Liste "Genre" sieht folgendermaßen aus:
+Der HTML-Code für die Genre Liste sieht wie folgt aus:
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample22.html)]
 

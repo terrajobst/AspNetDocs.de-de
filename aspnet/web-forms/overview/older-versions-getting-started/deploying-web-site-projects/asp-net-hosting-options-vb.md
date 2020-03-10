@@ -9,11 +9,11 @@ ms.assetid: 492f5ae2-bad7-4107-89a9-f04a9525dee7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4293114002aee15ddace1a3f19c240f35e6065f5
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74620760"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520791"
 ---
 # <a name="aspnet-hosting-options-vb"></a>Optionen zum Hosten von ASP.NET (VB)
 
@@ -42,7 +42,7 @@ Dies ist der erste in einer Reihe von Tutorials, in denen die Schritte zum Berei
 - Strategien für eine reibungslose Aktualisierung der Datenbank in der Produktionsumgebung mit während der Entwicklung vorgenommenen Änderungen.
 - Verfahren zum Protokollieren von Fehlern, die in der Produktionsumgebung auftreten, und zum Benachrichtigen von Entwicklern, wenn ein Fehler auftritt.
 
-Diese Lernprogramme sind so konzipiert, dass Sie präzise sind und Schritt-für-Schritt-Anleitungen mit vielen Screenshots bereitgestellt werden, damit Sie den Prozess visuell durchlaufen können. Dieses erste Tutorial bietet einen Überblick über den ASP.net-Bereitstellungs Prozess und eine Anleitung zum Suchen eines webhostinganbieters. Fangen wir an!
+Diese Lernprogramme sind so konzipiert, dass Sie präzise sind und Schritt-für-Schritt-Anleitungen mit vielen Screenshots bereitgestellt werden, damit Sie den Prozess visuell durchlaufen können. Dieses erste Tutorial bietet einen Überblick über den ASP.net-Bereitstellungs Prozess und eine Anleitung zum Suchen eines webhostinganbieters. Erste Schritte
 
 ## <a name="an-overview-of-the-aspnet-deployment-process"></a>Übersicht über den ASP.net-Bereitstellungs Prozess
 
@@ -76,7 +76,7 @@ Zwei wichtige Überlegungen bei der Auswahl eines Webhost Anbieters sind Custome
 > [!NOTE]
 > Einige Webhostingunternehmen konzentrieren sich auf einen bestimmten Technologie Stapel, wie z. b. .net oder [Lamp](http://en.wikipedia.org/wiki/LAMP_stack) (**L** Inux, **a** pche, **M** ysql und **P** HP). Stellen Sie daher sicher, dass das Unternehmen, das Sie auswählen, ASP.NET-Anwendungen hostet. Stellen Sie außerdem sicher, dass Sie die Version von ASP.NET unterstützen, die Sie zum Erstellen der Anwendung verwenden. Wenn Sie eine datengesteuerte Anwendung erstellen, stellen Sie sicher, dass der Webhost denselben Datenbankserver und die gleiche Version anbietet, die Sie verwenden.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 ASP.NET Webanwendungen werden in der Regel in einer lokalen Entwicklungsumgebung entworfen, erstellt und getestet. Sobald eine Version für die Freigabe bereit ist, wird Sie in eine Produktionsumgebung verschoben. Obwohl es möglich ist, ASP.NET Websites auf Ihrem eigenen Computer oder auf Servern innerhalb Ihres Unternehmens zu hosten, haben viele Unternehmen und Einzelpersonen die Möglichkeit, Ihr Hosting an einen Webhostinganbieter auszulagern.
 

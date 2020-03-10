@@ -9,11 +9,11 @@ ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e55ed9b92814753e95bdfdf26c2f051df6f2630d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642392"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78476823"
 ---
 # <a name="sorting-custom-paged-data-c"></a>Sortieren von benutzerdefinierten ausgelagerten Daten (C#)
 
@@ -144,7 +144,7 @@ Diese Ausnahme tritt auf, weil die `SortExpression` von GridView s `SupplierName
 
 **Abbildung 10**: die Ergebnisse können jetzt nach Lieferant sortiert werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](sorting-custom-paged-data-cs/_static/image16.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die benutzerdefinierte Paginierungs Implementierung, die wir im vorherigen Tutorial überprüft haben, erforderte, dass die Reihenfolge, nach der die Ergebnisse sortiert werden sollen, zur Entwurfszeit angegeben wird. Kurz gesagt, dies bedeutete, dass die Implementierung der benutzerdefinierten Paginierung, die wir implementiert haben, nicht gleichzeitig Sortierfunktionen bereitstellen konnte. In diesem Tutorial haben wir diese Einschränkung überwunden, indem wir die gespeicherte Prozedur von der ersten erweitern, um einen `@sortExpression` Eingabeparameter einzuschließen, mit dem die Ergebnisse sortiert werden könnten.
 
@@ -152,7 +152,7 @@ Nachdem Sie diese gespeicherte Prozedur erstellt und neue Methoden in der dal un
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

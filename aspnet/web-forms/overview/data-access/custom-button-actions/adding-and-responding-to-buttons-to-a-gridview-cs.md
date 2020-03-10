@@ -9,11 +9,11 @@ ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5c87386e4fe2c53b39162071689f2522dcc6c7ac
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74602405"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78442419"
 ---
 # <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>Hinzufügen von Schaltflächen zu einem GridView-Steuerelement und Zuweisen von Funktionen für diese Schaltflächen (C#)
 
@@ -245,9 +245,9 @@ Abbildung 20 zeigt die Seite, wenn Sie die Produkte anzeigen, die von Oma Kelly 
 
 > [!NOTE]
 > Der GridView (und DetailsView) können auch Schaltflächen, LinkButtons oder imagebuttons hinzugefügt werden, die zu ihren templatefields-Vorlagen hinzugefügt wurden. Wie bei dem BoundField auslösen diese Schaltflächen, wenn darauf geklickt wird, ein Postback, wodurch das `RowCommand` Ereignis der GridView ausgelöst wird. Beim Hinzufügen von Schaltflächen in einem TemplateField wird jedoch die `CommandArgument` der Schaltfläche nicht automatisch auf den Index der Zeile festgelegt, wie es bei Verwendung von Button Fields der Fall ist. Wenn Sie den Zeilen Index der Schaltfläche ermitteln müssen, auf die innerhalb des `RowCommand` Ereignis Handlers geklickt wurde, müssen Sie die `CommandArgument`-Eigenschaft der Schaltfläche in der deklarativen Syntax in TemplateField manuell mit dem folgenden Code festlegen:  
-> `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`.
+> [https://login.microsoftonline.com/consumers/](`<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die Steuerelemente GridView, DetailsView und FormView können alle Schaltflächen, LinkButtons oder imagebuttons enthalten. Wenn Sie auf diese Schaltflächen klicken, wird ein Postback ausgelöst und das `ItemCommand`-Ereignis in den Steuerelementen FormView und DetailsView sowie das `RowCommand`-Ereignis in der GridView ausgelöst. Diese datenweb Steuerelemente verfügen über integrierte Funktionen zum Verarbeiten allgemeiner Befehls bezogener Aktionen, wie z. b. das Löschen oder Bearbeiten von Datensätzen. Wir können jedoch auch Schaltflächen verwenden, die beim Klicken auf die Ausführung unseres eigenen benutzerdefinierten Codes reagieren.
 
@@ -255,9 +255,9 @@ Um dies zu erreichen, müssen wir einen Ereignishandler für das `ItemCommand`-o
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
-> [Nächste](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+> [Weiter](adding-and-responding-to-buttons-to-a-gridview-vb.md)

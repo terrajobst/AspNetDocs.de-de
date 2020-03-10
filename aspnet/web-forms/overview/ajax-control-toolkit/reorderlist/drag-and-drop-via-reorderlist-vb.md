@@ -9,11 +9,11 @@ ms.assetid: 848e6bcf-4c3f-4d14-974d-e45b9444ab79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3f7c5749053d8bf587467fb1939fca05ce2872a4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598633"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446085"
 ---
 # <a name="drag-and-drop-via-reorderlist-vb"></a>Drag & Drop über ReorderList (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ReorderList-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Die aktuelle Reihenfolge der Liste muss auf dem Server persistent gespeichert werden.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `ReorderList`-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Die aktuelle Reihenfolge der Liste muss auf dem Server persistent gespeichert werden.
 
@@ -82,4 +82,4 @@ Führen Sie dieses Beispiel im Browser aus, und ordnen Sie die Listenelemente mi
 Die Daten in der Datenbank ändern sich entsprechend der Reihenfolge der neuen Listenelemente ([Klicken Sie, um das Bild in voller Größe anzuzeigen](drag-and-drop-via-reorderlist-vb/_static/image9.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](using-postbacks-with-reorderlist-vb.md)
+> [Previous](using-postbacks-with-reorderlist-vb.md)

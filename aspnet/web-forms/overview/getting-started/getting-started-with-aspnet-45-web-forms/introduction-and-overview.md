@@ -9,11 +9,11 @@ ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
 ms.openlocfilehash: 52d5eb7abe4520ebdf6667d299d055fc7619a635
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615454"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458343"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Getting Started with ASP.NET 4,5 Web Forms und Visual Studio 2017
 
@@ -48,7 +48,7 @@ Um diese Bereiche zu überprüfen, sollten Sie den folgenden Inhalt untersuchen:
 Zu den in dieser Reihe dargestellten ASP.net Web Form-Features gehören:
 
 - Das Webanwendungs Projekt (nicht das Website Projekt)
-- Web Forms
+- Web Forms
 - Master Seiten, Konfiguration
 - Bootstrap
 - Entity Framework Code First, localdb
@@ -83,7 +83,7 @@ Zu den Aufgaben der Lernprogramm Reihe gehören
 - Routen für die Webanwendung werden registriert
 - Implementieren der Fehlerbehandlung und der Fehler Protokollierung
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Diese tutorialreihe richtet sich an Benutzer, die mit Programmier Konzepten vertraut sind, aber noch nicht in ASP.net Web Forms. Wenn Sie bereits mit ASP.net Web Forms vertraut sind, können Sie mit dieser Reihe noch mehr über neue ASP.NET 4,5-Features erfahren. Leser, die mit Programmier Konzepten und ASP.net-Web Forms nicht vertraut sind, finden Sie in den zusätzlichen Web Forms Tutorials im Abschnitt " [Getting Started](../../../index.md) " auf der ASP.NET-Website.
 
@@ -134,7 +134,7 @@ Nach der Rückgabe von PayPal können Sie Ihre Bestellung überprüfen und vervo
 
 ![Wingtip Toys-Bestell Überprüfung](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Vergewissern Sie sich, dass die folgende Software auf Ihrem Computer installiert ist, bevor Sie beginnen:
 
@@ -191,4 +191,4 @@ Kommentare zu dieser tutorialreihe sind willkommen. Wenn diese tutorialreihe akt
 Wenn ein Fehler auftritt, können die entsprechenden Fehlermeldungen verwirrend sein, und es gibt keine gute Erklärung, wie Sie Sie beheben können. Hilfe finden Sie in den ASP.net- [Foren](https://forums.asp.net/). Eine weitere gute Quelle ist der Q-und A-Abschnitt der Beispielseite " [Getting Started with ASP.NET 4,5 Web Forms and Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#)". 
 
 > [!div class="step-by-step"]
-> [Nächste](create-the-project.md)
+> [Weiter](create-the-project.md)

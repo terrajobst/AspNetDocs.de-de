@@ -7,11 +7,11 @@ ms.author: riande
 ms.date: 10/29/2018
 msc.type: content
 ms.openlocfilehash: 5299d9ab057c3096773955a7461e77a80673ebfe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586767"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472305"
 ---
 # <a name="configuration-builders-for-aspnet"></a>Konfigurations-Generatoren für ASP.net
 
@@ -103,7 +103,7 @@ Im vorangehenden Code werden die Eigenschaftswerte auf festgelegt:
 
 Beispielsweise werden die folgenden Werte festgelegt, indem Sie die vorherige *Web. config* -Datei, die Schlüssel/Werte im vorherigen Bild des Umgebungs-Editors und den vorherigen Code verwenden:
 
-|  Key              | {2&gt;Wert&lt;2} |
+|  Key              | value |
 | ----------------- | ------------ |
 |     AppSetting_ServiceID           | AppSetting_ServiceID von "dev"-Variablen|
 |    AppSetting_default            | AppSetting_default Wert aus der enumerationsdatei |
@@ -136,11 +136,11 @@ Im vorangehenden Code werden die Eigenschaftswerte auf festgelegt:
 
 Beispielsweise werden die folgenden Werte festgelegt, indem Sie die vorherige *Web. config* -Datei, die Schlüssel/Werte im vorherigen Bild des Umgebungs-Editors und den vorherigen Code verwenden:
 
-|  Key              | {2&gt;Wert&lt;2} |
+|  Key              | value |
 | ----------------- | ------------ |
 |     ServiceID           | AppSetting_ServiceID von "dev"-Variablen|
-|    Standard            | AppSetting_default Wert aus der enumerationsdatei |
-|    Standard         | ConnStr_default Val von der Gesamt Version|
+|    default            | AppSetting_default Wert aus der enumerationsdatei |
+|    default         | ConnStr_default Val von der Gesamt Version|
 
 ### <a name="tokenpattern"></a>tokenpattern
 
@@ -174,7 +174,7 @@ Das `Expand` Verhalten der Generatoren durchsucht die unformatierten XML-Daten n
 
 **Hinweis:** In einer Windows-Container Umgebung werden Variablen, die zur Laufzeit festgelegt werden, nur in die EntryPoint-Prozessumgebung eingefügt. Apps, die als Dienst oder Non-EntryPoint-Prozess ausgeführt werden, nehmen diese Variablen nur dann entgegen, wenn Sie anderweitig über einen Mechanismus im Container eingefügt werden. Bei [IIS](https://github.com/Microsoft/iis-docker/pull/41) -/[ASP.net](https://github.com/Microsoft/aspnet-docker)-basierten Containern behandelt die aktuelle Version von [Servicemonitor. exe](https://github.com/Microsoft/iis-docker/pull/41) dies nur im *DefaultAppPool* . Andere Windows-basierte containervarianten müssen möglicherweise Ihren eigenen einschleusungs Mechanismus für nicht-EntryPoint-Prozesse entwickeln.
 
-### <a name="usersecretsconfigbuilder"></a>Usersecreungsconfigbuilder
+### <a name="usersecretsconfigbuilder"></a>UserSecretsConfigBuilder
 
 > [!WARNING]
 > Speichern Sie niemals Kenn Wörter, sensible Verbindungs Zeichenfolgen oder andere sensible Daten im Quellcode. Produktionsgeheimnisse sollten nicht für Entwicklungs-oder Testzwecke verwendet werden.
@@ -210,7 +210,7 @@ Die Geheimnis Datei hat das folgende Format:
 </root>
 ```
 
-### <a name="azurekeyvaultconfigbuilder"></a>Azurekeyvaultconfigbuilder
+### <a name="azurekeyvaultconfigbuilder"></a>AzureKeyVaultConfigBuilder
 
 ```xml
 <add name="AzureKeyVault"
@@ -256,7 +256,7 @@ Attribut Details:
 * `keyDelimiter`-Standardwert ist `null`. Wenn dieser Wert angegeben ist, durchläuft der Konfigurations-Generator mehrere Ebenen des Verzeichnisses und erstellt Schlüsselnamen mit diesem Trennzeichen. Wenn dieser Wert `null`ist, untersucht der Konfigurations-Generator nur die oberste Verzeichnisebene.
 * `optional`-Standardwert ist `false`. Gibt an, ob der Konfigurations-Generator Fehler verursachen soll, wenn das Quellverzeichnis nicht vorhanden ist.
 
-### <a name="simplejsonconfigbuilder"></a>Simplejsonconfigbuilder
+### <a name="simplejsonconfigbuilder"></a>SimpleJsonConfigBuilder
 
 > [!WARNING]
 > Speichern Sie niemals Kenn Wörter, sensible Verbindungs Zeichenfolgen oder andere sensible Daten im Quellcode. Produktionsgeheimnisse sollten nicht für Entwicklungs-oder Testzwecke verwendet werden.
@@ -277,7 +277,7 @@ Attribut Details:
 
 * `jsonFile` – Erforderlich. Gibt die JSON-Datei an, aus der gelesen werden soll. Das `~` Zeichen kann am Anfang verwendet werden, um auf den Stamm der APP zu verweisen.
 * `optional` boolescher Wert, der Standardwert ist `true`. Verhindert das Auslösen von Ausnahmen, wenn die JSON-Datei nicht gefunden werden kann.
-* `jsonMode` - `[Flat|Sectional]`. Standardmäßig ist `Flat` festgelegt. Wenn `jsonMode` `Flat`ist, ist die JSON-Datei eine einzelne flatkey/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne flatkey-/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` im `Sectional` Modus konfiguriert ist:
+* `jsonMode` - `[Flat|Sectional]`. `Flat` ist die Standardeinstellung. Wenn `jsonMode` `Flat`ist, ist die JSON-Datei eine einzelne flatkey/Wert-Quelle. Die `EnvironmentConfigBuilder` und `AzureKeyVaultConfigBuilder` sind auch einzelne flatkey-/Wert-Quellen. Wenn die `SimpleJsonConfigBuilder` im `Sectional` Modus konfiguriert ist:
 
   * Die JSON-Datei wird konzeptionell direkt auf der obersten Ebene in mehrere Wörterbücher aufgeteilt.
   * Jedes der Wörterbücher wird nur auf den Konfigurations Abschnitt angewendet, der mit dem an Sie angefügten Eigenschaftsnamen der obersten Ebene übereinstimmt. Beispiel:
@@ -306,7 +306,7 @@ Wenn die Konfigurations-Generatoren Ihren Anforderungen nicht entsprechen, könn
 
 Die `KeyValueConfigBuilder`-Basisklasse stellt einen Großteil der Arbeit und das konsistente Verhalten für Schlüssel-Wert-Konfigurations-Generatoren bereit.
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 * [GitHub-Repository für Konfigurations-Generatoren](https://github.com/aspnet/MicrosoftConfigurationBuilders)
 * [Dienst-zu-Dienst-Authentifizierung für Azure Key Vault mithilfe von .net](/azure/key-vault/service-to-service-authentication#connection-string-support)

@@ -1,33 +1,33 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
-title: 'Teil 1: Datei -> Neues Projekt | Microsoft-Dokumentation'
+title: 'Teil 1: Datei > Neues Projekt | Microsoft-Dokumentation'
 author: JoeStagner
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 1 enthält die Übersicht über "und" Datei/neu Projekt.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. Teil 1 umfasst Übersicht und Datei/Neues Projekt.
 ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: 05a3ace3d8fef9c1f3593f7948e42b4725d70134
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130591"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78516537"
 ---
 # <a name="part-1-file--new-project"></a>Teil 1: Datei > Neues Projekt
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks wird veranschaulicht, wie außerordentlich einfach es ist, erstellen Sie leistungsstarke, skalierbare Anwendungen für die .NET-Plattform. Es wird gezeigt, aus wie die hervorragenden neuen Funktionen in ASP.NET 4 zu verwenden, um eine online-Store, einschließlich der Warenkorb, Auschecken und Verwaltung zu erstellen.
+> Tailspin SpyWorks veranschaulicht, wie einfach es ist, leistungsstarke, skalierbare Anwendungen für die .NET-Plattform zu erstellen. Es zeigt, wie die großartigen neuen Features in ASP.NET 4 verwendet werden, um einen Online Shop zu erstellen, einschließlich Einkaufs-, Checkout-und Verwaltungsfunktionen.
 > 
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die beispielanwendung Tailspin Spyworks erstellen. Teil 1 enthält die Übersicht über "und" Datei/neu Projekt.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der Beispielanwendung Tailspin SpyWorks ausgeführt werden. Teil 1 umfasst Übersicht und Datei/Neues Projekt.
 
-## <a id="_Toc260221666"></a>  Übersicht über die
+## <a id="_Toc260221666"></a>Übersicht über
 
-Dieses Tutorial bietet eine Einführung in ASP.NET WebForms. Wir langsam starten, damit für Anfänger auf Web-Entwicklung ist in Ordnung.
+Dieses Tutorial ist eine Einführung in ASP.net WebForms. Wir fangen langsam an, sodass die Webentwicklung für Einsteiger in Ordnung ist.
 
-Die Anwendung, die wir erstellen, ist es sich um einen einfachen Onlineshop.
+Die Anwendung, die wir aufbauen werden, ist ein einfacher Online-Speicher.
 
 ![](tailspin-spyworks-part-1/_static/image1.jpg)
 
@@ -35,69 +35,69 @@ Besucher können Produkte nach Kategorie durchsuchen:
 
 ![](tailspin-spyworks-part-1/_static/image2.jpg)
 
-Sie können ein einzelnes Produkt anzuzeigen und zu Einkaufswagen hinzufügen:
+Sie können ein einzelnes Produktanzeigen und zum Warenkorb hinzufügen:
 
 ![](tailspin-spyworks-part-1/_static/image3.jpg)
 
-Sie können überprüfen, Einkaufswagen, entfernen alle Elemente, die sie nicht mehr benötigen:
+Sie können Ihren Warenkorb überprüfen und alle Elemente entfernen, die Sie nicht mehr benötigen:
 
 ![](tailspin-spyworks-part-1/_static/image4.jpg)
 
-Sie zur Kasse gehen werden sie aufgefordert.
+Beim Auschecken werden Sie zur Eingabe aufgefordert.
 
 ![](tailspin-spyworks-part-1/_static/image5.jpg)
 
 ![](tailspin-spyworks-part-1/_static/image6.jpg)
 
-Nach dem Sortieren, sehen sie ein einfaches Bestätigungsbildschirm angezeigt:
+Nach der Bestellung wird ein einfacher Bestätigungsbildschirm angezeigt:
 
 ![](tailspin-spyworks-part-1/_static/image7.jpg)
 
-Wir beginnen, indem das Erstellen eines neuen ASP.NET WebForms-Projekts in Visual Studio 2010, und wir werden Funktionen zum Erstellen einer vollständigen funktionsfähigen Anwendung inkrementell hinzufügen. Dabei wird die behandelt mit Masterseiten für konsistente Seitenlayout, AJAX, Validierung, Benutzermitgliedschaft und mehr Zugriff auf die Datenbank, Listen und Raster, Update von Datenseiten, datenüberprüfung.
+Wir beginnen mit der Erstellung eines neuen ASP.net WebForms-Projekts in Visual Studio 2010, und wir fügen inkrementell Features hinzu, um eine komplette funktionsfähige Anwendung zu erstellen. Dabei werden die Datenbankzugriffs-, Listen-und Raster Ansichten, Daten Aktualisierungs Seiten, Datenvalidierung, die Verwendung von Masterseiten für konsistentes Seitenlayout, AJAX, Validierung, Benutzer Mitgliedschaft und mehr behandelt.
 
-Sie Schritt für Schritt nachvollziehen können, oder Sie können die fertige Anwendung herunterladen [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+Sie können Schritt für Schritt ausführen, oder Sie können die abgeschlossene Anwendung von [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/) herunterladen.
 
-Sie können entweder Visual Studio 2010 oder die kostenlose Visual Web Developer 2010 aus [ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/). Um die Anwendung zu erstellen, können Sie entweder SQL Server oder die kostenlose SQL Server Express, die die Datenbank hosten.
+Sie können entweder Visual Studio 2010 oder den kostenlosen Visual Web Developer 2010 aus [https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/)verwenden. Zum Erstellen der Anwendung können Sie entweder SQL Server oder die kostenlose SQL Server Express verwenden, um die Datenbank zu hosten.
 
-## <a id="_Toc260221667"></a>  Datei / neu Projekt
+## <a id="_Toc260221667"></a>Datei/Neues Projekt
 
-Wir beginnen, indem Sie das neue Projekt über das Menü "Datei" in Visual Studio auswählen. Daraufhin wird das Dialogfeld "Neues Projekt".
+Zunächst wählen wir das neue Projekt aus dem Menü "Datei" in Visual Studio aus. Dadurch wird das Dialogfeld "Neues Projekt" geöffnet.
 
 ![](tailspin-spyworks-part-1/_static/image8.jpg)
 
-Ich wähle Visual c# / Web-Vorlagen auf der linken Seite, und wählen Sie dann die Vorlage "ASP.NET Web Application" in der mittleren Spalte. Benennen Sie Ihr Projekt TailspinSpyworks aus, und drücken Sie die Schaltfläche "OK".
+Wählen Sie die Gruppe " C# Visual/Web-Vorlagen" auf der linken Seite aus, und wählen Sie dann die Vorlage "ASP.NET Webanwendung" in der mittleren Spalte aus. Benennen Sie Ihr Projekt tailspinspyworks, und klicken Sie auf die Schaltfläche OK.
 
 ![](tailspin-spyworks-part-1/_static/image9.jpg)
 
-Dadurch wird das Projekt erstellt. Werfen wir einen Blick auf die Ordner, die in unserer Anwendung im Projektmappen-Explorer auf der rechten Seite enthalten sind.
+Dadurch wird das Projekt erstellt. Werfen wir einen Blick auf die Ordner, die in der Anwendung in der Projektmappen-Explorer auf der rechten Seite enthalten sind.
 
 ![](tailspin-spyworks-part-1/_static/image10.jpg)
 
-Die leere Projektmappe nicht vollständig leer ist – eine einfache Ordnerstruktur hinzugefügt:
+Die leere Projekt Mappe ist nicht vollständig leer – Sie fügt eine grundlegende Ordnerstruktur hinzu:
 
 ![](tailspin-spyworks-part-1/_static/image1.png)
 
-Beachten Sie die Konventionen, die von der Projektvorlage für ASP.NET 4 standardmäßig implementiert.
+Beachten Sie die Konventionen, die von der Standard Projektvorlage ASP.NET 4 implementiert werden.
 
-- Der Ordner "Konto" implementiert eine einfache Benutzeroberfläche für ASP. NET Subsystems für die Mitgliedschaft.
-- Der Ordner "Scripts" dient als Repository für clientseitige JavaScript-Dateien, und die Core-jQuery-JS-Dateien werden standardmäßig zur Verfügung gestellt.
-- Der Ordner "Stile" wird verwendet, um unsere Website Visuals (CSS-Stylesheets) organisieren
+- Der Ordner "Account" implementiert eine einfache Benutzeroberfläche für ASP. .Net-Mitgliedschafts Subsystem.
+- Der Ordner "Scripts" dient als Repository für Client seitige JavaScript-Dateien, und die jQuery. js-Kerndateien werden standardmäßig zur Verfügung gestellt.
+- Der Ordner "Styles" wird verwendet, um die Visualisierungen unserer Websites (CSS-Stylesheets) zu organisieren.
 
-Wenn wir F5 drücken, um die Anwendung auszuführen und das Rendern der Seite "default.aspx" wird Folgendes angezeigt.
+Wenn Sie F5 drücken, um die Anwendung auszuführen und die Seite "default. aspx" zu reneln, wird Folgendes angezeigt:
 
 ![](tailspin-spyworks-part-1/_static/image11.jpg)
 
-Ersetzen Sie die Datei "Style.CSS" aus der Standardvorlage für Web Forms, mit dem CSS-Klassen und das zugehörige Image-Dateien, die das visual Asthetics gerendert werden, die wir für unsere Anwendung Tailspin Spyworks möchten, ist unsere erste Anwendung-Erweiterung werden.
+Unsere erste Anwendungs Erweiterung besteht darin, die Datei "Style. CSS" aus der standardmäßigen WebForms-Vorlage durch die CSS-Klassen und die zugehörigen Bilddateien zu ersetzen, die die visuelle Asthetik für unsere Tailspin SpyWorks-Anwendung darstellen.
 
-Danach rendert unsere Seite "default.aspx" wie folgt aus.
+Danach wird unsere default. aspx-Seite wie folgt gerendert.
 
 ![](tailspin-spyworks-part-1/_static/image12.jpg)
 
-Beachten Sie, dass die Abbildung Links oben rechts auf der Seite und die Menüelemente, die auf die Masterseite hinzugefügt wurden. Zeigen Sie nur die Links "Sign In" und "Konto" auf Seiten, die vorhanden sind (generiert durch die Standardvorlage) und den Rest der Seiten, die wir implementiert wird, wenn wir unsere Anwendung erstellen.
+Beachten Sie die Bild links oben rechts auf der Seite und die Menü Elemente, die der Master Seite hinzugefügt wurden. Nur die Links "Anmelden" und "Konto" verweisen auf Seiten, die vorhanden (von der Standardvorlage generiert) und auf die restlichen Seiten, die wir beim Erstellen der Anwendung implementieren werden.
 
-Wir werden auch die Masterseite in das Verzeichnis Stile zu verschieben. Obwohl dies nur eine Einstellung ist kann es etwas einfacher zu machen, wenn wir uns entschieden, unsere Anwendung in der Zukunft "skinable" zu machen.
+Außerdem verschieben wir die Master Seite in das Verzeichnis "Stile". Obwohl dies nur eine bevorzugte Einstellung ist, ist es möglicherweise etwas einfacher, wenn wir die Anwendung in Zukunft "Skinable" machen.
 
-Danach ändern Sie die Masterseite müssen Verweise in allen ASPX-Dateien standardmäßig generiert der ASP.NET Web Forms-Seiten.
+Danach müssen wir die Verweise der Master Seite in allen ASPX-Dateien ändern, die von den standardmäßigen ASP.net WebForms-Seiten generiert werden.
 
 > [!div class="step-by-step"]
-> [Nächste](tailspin-spyworks-part-2.md)
+> [Weiter](tailspin-spyworks-part-2.md)

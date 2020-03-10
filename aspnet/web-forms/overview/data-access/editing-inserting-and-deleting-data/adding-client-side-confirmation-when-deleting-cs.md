@@ -9,11 +9,11 @@ ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e7d53bc65fdbbfa9ce9bfa5fbdbfa0dea598eebe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623502"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78479817"
 ---
 # <a name="adding-client-side-confirmation-when-deleting-c"></a>Hinzufügen von clientseitiger Bestätigung beim Löschen (C#)
 
@@ -125,7 +125,7 @@ Ein alternativer Ansatz ist das Konvertieren der Befehls Felder GridView und Det
 
 Where *ControlID* ist der Wert der Schaltfläche s `ID`-Eigenschaft. Obwohl dieses Muster weiterhin einen hart codierten Typ für die Umwandlung erfordert, entfällt die Indizierung, sodass das Layout ohne einen Laufzeitfehler geändert werden kann.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Die JavaScript-`confirm(string)`-Funktion ist eine häufig verwendete Technik zum Steuern des Workflows für die Formular Übermittlung. Wenn die Funktion ausgeführt wird, wird ein modales, Client seitiges Dialogfeld angezeigt, das zwei Schaltflächen (OK und Abbrechen) enthält. Wenn der Benutzer auf OK klickt, gibt die `confirm(string)`-Funktion `true`zurück. durch Klicken auf Abbrechen wird `false`zurückgegeben Diese Funktion ist mit einem Browser-Verhalten gekoppelt, um eine Formular Übermittlung abzubrechen, wenn ein Ereignishandler während des Übermittlungs Prozesses `false`zurückgibt, kann verwendet werden, um beim Löschen eines Datensatzes eine Bestätigungs-MessageBox anzuzeigen.
 
@@ -133,7 +133,7 @@ Die `confirm(string)`-Funktion kann einem Client seitigen `onclick` Ereignishand
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

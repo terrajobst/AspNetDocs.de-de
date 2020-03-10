@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-timer-control
-title: '[Gewusst wie:] Verwenden Sie das Timer-Steuerelement von ASP.NET AJAX? | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden Sie das ASP.NET AJAX-Timer-Steuerelement? | Microsoft-Dokumentation'
 author: JoeStagner
-description: Das AJAX-Timer-Steuerelement ermöglicht einen Teil einer ASP.NET-Webseite in regelmäßigen Abständen, dynamisch aktualisiert werden anstatt der Benutzers zur Ausführung einer ein...
+description: Das AJAX-Timer-Steuerelement ermöglicht, dass ein Teil einer ASP.NET-Webseite in regelmäßigen Abständen dynamisch aktualisiert wird, anstatt dass der Benutzer eine...
 ms.author: riande
 ms.date: 02/13/2007
 ms.assetid: 1488f788-54ca-43ce-bf65-8179ebbe2c7c
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-timer-control
 msc.type: video
 ms.openlocfilehash: 4db303bc941bb183e531f48634b5c51d37bc0f10
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384746"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510135"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-timer-control"></a>[Gewusst wie:] Verwenden Sie das Timer-Steuerelement von ASP.NET AJAX?
+# <a name="how-do-i-use-the-aspnet-ajax-timer-control"></a>[Gewusst wie:] Verwenden Sie das ASP.NET AJAX-Timer-Steuerelement?
 
-durch [Joe Stagner](https://github.com/JoeStagner)
+von [Joe Stagner](https://github.com/JoeStagner)
 
-Das AJAX-Timer-Steuerelement ermöglicht einen Teil einer ASP.NET-Webseite, dynamisch aktualisiert werden, in regelmäßigen Abständen, anstatt den Benutzer zum Ausführen einer Aktion wie z. B. das Klicken auf eine Schaltfläche.
+Das AJAX-Timer-Steuerelement ermöglicht, dass ein Teil einer ASP.NET-Webseite in regelmäßigen Abständen dynamisch aktualisiert wird, anstatt dass der Benutzer eine Aktion ausführen muss, z. b. das Klicken auf eine Schaltfläche.
 
-[&#9654;Sehen Sie sich Video (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-timer-control)
+[&#9654;Video ansehen (6 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-timer-control)
 
 > [!div class="step-by-step"]
 > [Zurück](how-do-i-use-the-aspnet-ajax-roundedcorners-extender.md)

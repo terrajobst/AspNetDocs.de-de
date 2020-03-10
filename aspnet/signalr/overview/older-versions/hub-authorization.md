@@ -1,113 +1,113 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
-title: Authentifizierung und Autorisierung für SignalR-Hubs (SignalR 1.x) | Microsoft-Dokumentation
+title: Authentifizierung und Autorisierung für signalr-Hubs (signalr 1. x) | Microsoft-Dokumentation
 author: bradygaster
-description: Dieses Thema beschreibt, wie Sie einschränken, welche Benutzer oder Rollen hubmethoden zugreifen können.
+description: In diesem Thema wird beschrieben, wie Sie einschränken, welche Benutzer oder Rollen auf hubmethoden zugreifen können.
 ms.author: bradyg
 ms.date: 10/17/2013
 ms.assetid: 3d2dfc0e-eac2-4076-a468-325d3d01cc7b
 msc.legacyurl: /signalr/overview/older-versions/hub-authorization
 msc.type: authoredcontent
 ms.openlocfilehash: 8182677c8931f060d98d17008b16ad545bee4e69
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112324"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450039"
 ---
 # <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>Authentifizierung und Autorisierung für SignalR-Hubs (SignalR 1.x)
 
-durch [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
+von [Patrick Fletcher](https://github.com/pfletcher), [Tom fitzmacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> Dieses Thema beschreibt, wie Sie einschränken, welche Benutzer oder Rollen hubmethoden zugreifen können.
+> In diesem Thema wird beschrieben, wie Sie einschränken, welche Benutzer oder Rollen auf hubmethoden zugreifen können.
 
 ## <a name="overview"></a>Übersicht
 
 Dieses Thema enthält folgende Abschnitte:
 
-- [Autorisieren von Attribut](#authorizeattribute)
-- [Erzwingen der Authentifizierung für alle hubs](#requireauth)
-- [Benutzerdefinierte Autorisierung](#custom)
-- [Übergeben von Informationen für die Authentifizierung für clients](#passauth)
-- [Authentifizierungsoptionen für .NET-Clients](#authoptions)
+- [Attribut autorisieren](#authorizeattribute)
+- [Authentifizierung für alle Hubs erforderlich](#requireauth)
+- [Angepasste Autorisierung](#custom)
+- [Übergeben von Authentifizierungsinformationen an Clients](#passauth)
+- [Authentifizierungs Optionen für .NET-Clients](#authoptions)
 
-    - [Cookie mit der Formularauthentifizierung](#cookie)
+    - [Cookie mit Formular Authentifizierung](#cookie)
     - [Windows-Authentifizierung](#windows)
-    - [Connection-header](#header)
-    - [Zertifikat](#certificate)
+    - [Verbindungs Header](#header)
+    - [Certificate](#certificate)
 
 <a id="authorizeattribute"></a>
 
-## <a name="authorize-attribute"></a>Autorisieren von Attribut
+## <a name="authorize-attribute"></a>Attribut autorisieren
 
-SignalR stellt die [autorisieren](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) Attribut, um anzugeben, welche Benutzer oder Rollen mit einem Hub oder die Methode zugreifen können. Dieses Attribut befindet sich in der `Microsoft.AspNet.SignalR` Namespace. Sie wenden die `Authorize` Attribut entweder einen Hub oder bestimmte Methoden in einem Hub. Beim Anwenden der `Authorize` Attribut, um eine hubklasse, die angegebene autorisierungsanforderung gilt für alle Methoden in den Hub. Die verschiedenen Typen von autorisierungsanforderungen, die Sie anwenden können, sind unten dargestellt. Ohne die `Authorize` -Attribut, die alle öffentliche Methoden für den Hub werden auf einem Client, der mit dem Hub verbunden ist.
+Signalr stellt das [Autorisierungs](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) Attribut bereit, um anzugeben, welche Benutzer oder Rollen Zugriff auf einen Hub oder eine Methode haben. Dieses Attribut befindet sich im `Microsoft.AspNet.SignalR`-Namespace. Sie wenden das `Authorize`-Attribut entweder auf einen Hub oder bestimmte Methoden in einem Hub an. Wenn Sie das `Authorize`-Attribut auf eine hubklasse anwenden, wird die angegebene Autorisierungs Anforderung auf alle Methoden im Hub angewendet. Die verschiedenen Typen von Autorisierungs Anforderungen, die Sie anwenden können, sind unten dargestellt. Ohne das `Authorize`-Attribut sind alle öffentlichen Methoden auf dem Hub für einen Client verfügbar, der mit dem Hub verbunden ist.
 
-Wenn Sie eine Rolle mit dem Namen "Administrator" in Ihrer Webanwendung definiert haben, können Sie angeben, dass nur Benutzer in dieser Rolle einen Hub mit den folgenden Code zugreifen können.
+Wenn Sie in Ihrer Webanwendung eine Rolle mit dem Namen "admin" definiert haben, können Sie angeben, dass nur Benutzer in dieser Rolle mit folgendem Code auf einen Hub zugreifen können.
 
 [!code-csharp[Main](hub-authorization/samples/sample1.cs)]
 
-Sie können auch angeben, dass ein Hub enthält eine Methode, die für alle Benutzer verfügbar ist, und eine zweite Methode, die nur für authentifizierte Benutzer verfügbar ist, wie unten dargestellt.
+Oder Sie können angeben, dass ein Hub eine Methode enthält, die für alle Benutzer verfügbar ist, und eine zweite Methode, die nur authentifizierten Benutzern zur Verfügung steht, wie unten gezeigt.
 
 [!code-csharp[Main](hub-authorization/samples/sample2.cs)]
 
-Die folgenden Beispiele beziehen sich auf verschiedenen autorisierungsszenarien:
+In den folgenden Beispielen werden verschiedene Autorisierungs Szenarien behandelt:
 
 - `[Authorize]` – nur authentifizierte Benutzer
 - `[Authorize(Roles = "Admin,Manager")]` – nur authentifizierte Benutzer in den angegebenen Rollen
 - `[Authorize(Users = "user1,user2")]` – nur authentifizierte Benutzer mit den angegebenen Benutzernamen
-- `[Authorize(RequireOutgoing=false)]` – nur authentifizierte Benutzer können den Hub aufrufen, aber die Aufrufe vom Server an Clients keine Autorisierung, z. B., Beschränkung Wenn nur bestimmte Benutzer eine Nachricht senden können, aber alle anderen können die Nachricht empfangen. Die RequireOutgoing-Eigenschaft kann nur für die gesamte Hub-Instanz nicht für Einzelpersonen-Methoden in den Hub angewendet werden. Wenn es sich bei RequireOutgoing nicht auf "false" festgelegt ist, werden nur Benutzer, die die autorisierungsanforderung erfüllen vom Server aufgerufen.
+- `[Authorize(RequireOutgoing=false)]` – nur authentifizierte Benutzer können den Hub aufrufen, aber Aufrufe vom Server zurück an Clients werden nicht durch Autorisierung eingeschränkt, wie z. b., wenn nur bestimmte Benutzer eine Nachricht senden können, aber alle anderen Personen die Nachricht empfangen können. Die Eigenschaft "Requirements Outgoing" kann nur auf den gesamten Hub angewendet werden, nicht auf die Einzelpersonen Methoden innerhalb des Hubs. Wenn "Requirements Outgoing" nicht auf "false" festgelegt ist, werden nur Benutzer aufgerufen, die die Autorisierungs Anforderung erfüllen.
 
 <a id="requireauth"></a>
 
-## <a name="require-authentication-for-all-hubs"></a>Erzwingen der Authentifizierung für alle hubs
+## <a name="require-authentication-for-all-hubs"></a>Authentifizierung für alle Hubs erforderlich
 
-Sie können erzwingen der Authentifizierung für alle Hubs und hubmethoden in Ihrer Anwendung durch Aufrufen der [RequireAuthentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) Methode, wenn die Anwendung gestartet wird. Sie können diese Methode verwenden, wenn Sie mehrere Hubs haben und eine Anforderung zur Authentifizierung für alle erzwungen werden sollen. Mit dieser Methode können keine Sie-Serverrolle, Benutzer oder ausgehende Autorisierung angeben. Sie können nur angeben, dass der Zugriff auf die hubmethoden auf authentifizierte Benutzer beschränkt ist. Allerdings können Sie weiterhin das Authorize-Attribut, Hubs oder Methoden ein, geben Sie zusätzliche Anforderungen anwenden. Alle Anforderungen, die Sie in Attributen angeben, wird neben der Authentifizierung die grundlegende Anforderung angewendet.
+Sie können eine Authentifizierung für alle Hubs und hubmethoden in Ihrer Anwendung anfordern, indem Sie die Methode "Requirements [Authentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) " aufrufen, wenn die Anwendung gestartet wird. Sie können diese Methode verwenden, wenn Sie über mehrere Hubs verfügen und eine Authentifizierungsanforderung für alle erzwingen möchten. Mit dieser Methode können Sie keine Rollen-, Benutzer-oder ausgehende Autorisierung angeben. Sie können nur angeben, dass der Zugriff auf die hubmethoden auf authentifizierte Benutzer beschränkt ist. Allerdings können Sie das Autorisierungs Attribut weiterhin auf Hubs oder Methoden anwenden, um zusätzliche Anforderungen anzugeben. Alle Anforderungen, die Sie in Attributen angeben, werden zusätzlich zu den grundlegenden Authentifizierungsanforderungen angewendet.
 
-Das folgende Beispiel zeigt eine Datei "Global.asax" das alle Methoden des Hubs auf authentifizierte Benutzer beschränkt.
+Das folgende Beispiel zeigt eine Global. asax-Datei, die alle hubmethoden auf authentifizierte Benutzer beschränkt.
 
 [!code-csharp[Main](hub-authorization/samples/sample3.cs)]
 
-Aufrufen der `RequireAuthentication()` -Methode, nach der Verarbeitung einer Anforderung SignalR, SignalR löst eine `InvalidOperationException` Ausnahme. Diese Ausnahme wird ausgelöst, da Sie ein Modul auf dem Hubpipeline-Objekt hinzufügen können, nachdem die Pipeline aufgerufen wurde. Im vorherige Beispiel zeigt den Aufruf der `RequireAuthentication` -Methode in der die `Application_Start` Methode, die einmal vor der Verarbeitung der ersten Anforderung ausgeführt wird.
+Wenn Sie die `RequireAuthentication()`-Methode nach der Verarbeitung einer signalr-Anforderung aufzurufen, löst signalr eine `InvalidOperationException`-Ausnahme aus. Diese Ausnahme wird ausgelöst, weil Sie der hubpipeline kein Modul hinzufügen können, nachdem die Pipeline aufgerufen wurde. Das vorherige Beispiel zeigt, wie Sie die `RequireAuthentication`-Methode in der `Application_Start`-Methode aufrufen, die einmal vor der Verarbeitung der ersten Anforderung ausgeführt wird.
 
 <a id="custom"></a>
 
-## <a name="customized-authorization"></a>Benutzerdefinierte Autorisierung
+## <a name="customized-authorization"></a>Angepasste Autorisierung
 
-Bei Bedarf anpassen, wie die Autorisierung bestimmt wird, können Sie eine abgeleitete Klasse erstellen `AuthorizeAttribute` und überschreiben die [UserAuthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) Methode. Diese Methode wird aufgerufen, für jede Anforderung zu bestimmen, ob der Benutzer autorisiert ist, um die Anforderung abzuschließen. In der überschriebenen Methode geben Sie die erforderliche Logik an, für Ihr Szenario für die Autorisierung. Das folgende Beispiel zeigt, wie Sie das Erzwingen der Autorisierung über anspruchsbasierte Identität.
+Wenn Sie die Art der Autorisierung anpassen müssen, können Sie eine Klasse erstellen, die von `AuthorizeAttribute` abgeleitet ist, und die [userauthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) -Methode überschreiben. Diese Methode wird für jede Anforderung aufgerufen, um zu bestimmen, ob der Benutzer autorisiert ist, die Anforderung abzuschließen. In der überschriebenen Methode stellen Sie die erforderliche Logik für Ihr Autorisierungs Szenario bereit. Im folgenden Beispiel wird gezeigt, wie Sie die Autorisierung über eine Anspruchs basierte Identität erzwingen.
 
 [!code-csharp[Main](hub-authorization/samples/sample4.cs)]
 
 <a id="passauth"></a>
 
-## <a name="pass-authentication-information-to-clients"></a>Übergeben von Informationen für die Authentifizierung für clients
+## <a name="pass-authentication-information-to-clients"></a>Übergeben von Authentifizierungsinformationen an Clients
 
-Sie müssen möglicherweise Informationen für die Authentifizierung im Code verwenden, die auf dem Client ausgeführt wird. Sie übergeben die erforderliche Informationen beim Aufruf der Methoden auf dem Client. Beispielsweise könnte eine Chat-Anwendung-Methode als Parameter der Benutzername der Person, die eine Nachricht, übergeben wie unten dargestellt.
+Möglicherweise müssen Sie Authentifizierungsinformationen in dem Code verwenden, der auf dem Client ausgeführt wird. Sie übergeben die erforderlichen Informationen, wenn Sie die Methoden auf dem Client aufrufen. Eine Chat-Anwendungsmethode könnte z. b. den Benutzernamen der Person, die eine Meldung bereitstellt, als Parameter übergeben, wie unten gezeigt.
 
 [!code-csharp[Main](hub-authorization/samples/sample5.cs)]
 
-Oder Sie können ein Objekt, um die Authentifizierungsinformationen darstellen, und übermitteln Sie dieses Objekt als Parameter erstellen, wie unten dargestellt.
+Oder Sie können ein Objekt erstellen, um die Authentifizierungsinformationen darzustellen, und dieses Objekt als Parameter übergeben, wie unten gezeigt.
 
 [!code-csharp[Main](hub-authorization/samples/sample6.cs)]
 
-Sie sollten niemals eine Clientverbindungs-Id für andere Clients übergeben, wie ein böswilliger Benutzer es verwenden kann, um eine Anforderung von diesem Client imitieren.
+Sie sollten die Verbindungs-ID eines Clients niemals an andere Clients übergeben, da Sie von einem böswilligen Benutzer verwendet werden kann, um eine Anforderung von diesem Client zu imitieren.
 
 <a id="authoptions"></a>
 
-## <a name="authentication-options-for-net-clients"></a>Authentifizierungsoptionen für .NET-Clients
+## <a name="authentication-options-for-net-clients"></a>Authentifizierungs Optionen für .NET-Clients
 
-Wenn Sie einen .NET Client, z. B. eine Konsolen-app, die mit einem Hub interagiert, die verfügen authentifizierte Benutzer beschränkt ist. folgende Aktionen ausführen, können Sie die Anmeldeinformationen in ein Cookie, der Connection-Header oder ein Zertifikat für die Authentifizierung übergeben. In die Beispielen in diesem Abschnitt zeigen, wie die verschiedenen Methoden zum Authentifizieren eines Benutzers verwendet wird. Sie sind nicht voll funktionsfähigen SignalR-apps. Weitere Informationen zu mit SignalR .NET-Client zu erhalten, finden Sie unter [-API-Leitfaden für die Hubs - Client für .NET](../guide-to-the-api/hubs-api-guide-net-client.md).
+Wenn Sie über einen .NET-Client verfügen, z. b. eine Konsolen-APP, die mit einem Hub interagiert, der auf authentifizierte Benutzer beschränkt ist, können Sie die Authentifizierungs Anmelde Informationen in einem Cookie, dem Verbindungs Header oder einem Zertifikat übergeben. In den Beispielen in diesem Abschnitt wird gezeigt, wie diese verschiedenen Methoden zum Authentifizieren eines Benutzers verwendet werden. Dabei handelt es sich nicht um voll funktionsfähige signalr-apps. Weitere Informationen zu .NET-Clients mit signalr finden Sie im Leitfaden für die [Hubs-API-.NET-Client](../guide-to-the-api/hubs-api-guide-net-client.md).
 
 <a id="cookie"></a>
 
 ### <a name="cookie"></a>Cookie
 
-Wenn der .NET Client mit einem Hub, der ASP.NET-Formularauthentifizierung verwendet interagiert, müssen Sie manuell das Authentifizierungscookie für die Verbindung festgelegt. Sie Cookies, das Hinzufügen der `CookieContainer` Eigenschaft für die [HubConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) Objekt. Das folgende Beispiel zeigt eine Konsolen-app, die Ruft ein Authentifizierungscookie auf einer Webseite ab und fügt das Cookie für die Verbindung. Die URL `https://www.contoso.com/RemoteLogin` im Beispiel zeigt auf eine Webseite, die Sie erstellen müssen. Die Seite würde abrufen, den bereitgestellten Benutzernamen und das Kennwort, und versuchen, den Benutzer mit den Anmeldeinformationen anzumelden.
+Wenn der .NET-Client mit einem Hub interagiert, der die ASP.NET-Formular Authentifizierung verwendet, müssen Sie das Authentifizierungs Cookie manuell auf der Verbindung festlegen. Das Cookie wird der `CookieContainer`-Eigenschaft des [hubconnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) -Objekts hinzugefügt. Das folgende Beispiel zeigt eine Konsolen-APP, die ein Authentifizierungs Cookie von einer Webseite abruft und dieses Cookie der Verbindung hinzufügt. Die im Beispiel `https://www.contoso.com/RemoteLogin` URL verweist auf eine Webseite, die Sie erstellen müssen. Auf der Seite werden der veröffentlichte Benutzername und das Kennwort abgerufen, und es wird versucht, den Benutzer mit den Anmelde Informationen anzumelden.
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
-Die Konsolen-app sendet die Anmeldeinformationen für www.contoso.com/RemoteLogin die auf eine leere Seite verweisen kann, die den folgenden Code-Behind-Datei enthält.
+Die Konsolen-App stellt die Anmelde Informationen an www.contoso.com/RemoteLogin, die auf eine leere Seite verweisen können, die die folgende Code-Behind-Datei enthält.
 
 [!code-csharp[Main](hub-authorization/samples/sample8.cs)]
 
@@ -115,24 +115,24 @@ Die Konsolen-app sendet die Anmeldeinformationen für www.contoso.com/RemoteLogi
 
 ### <a name="windows-authentication"></a>Windows-Authentifizierung
 
-Bei Verwendung der Windows-Authentifizierung können Sie die Anmeldeinformationen des aktuellen Benutzers übergeben, indem Sie mit der [DefaultCredentials](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx) Eigenschaft. Sie haben die Anmeldeinformationen für die Verbindung auf den Wert des der DefaultCredentials festlegen.
+Wenn Sie die Windows-Authentifizierung verwenden, können Sie die Anmelde Informationen des aktuellen Benutzers mithilfe der [default-Anmelde](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx) Informationen-Eigenschaft übergeben. Sie legen die Anmelde Informationen für die Verbindung mit dem Wert von Default-Anmelde Informationen fest.
 
 [!code-csharp[Main](hub-authorization/samples/sample9.cs?highlight=6)]
 
 <a id="header"></a>
 
-### <a name="connection-header"></a>Connection-header
+### <a name="connection-header"></a>Verbindungs Header
 
-Wenn Ihre Anwendung keine Cookies verwendet wird, können Sie Benutzerinformationen in der Connection-Header übergeben. Beispielsweise können Sie ein Token in der Connection-Header übergeben.
+Wenn Ihre Anwendung keine Cookies verwendet, können Sie Benutzerinformationen im Verbindungs Header übergeben. Beispielsweise können Sie ein Token im Verbindungs Header übergeben.
 
 [!code-csharp[Main](hub-authorization/samples/sample10.cs?highlight=6)]
 
-Klicken Sie dann würden Sie auf dem Hub das Token des Benutzers überprüfen.
+Dann überprüfen Sie im Hub das Token des Benutzers.
 
 <a id="certificate"></a>
 
 ### <a name="certificate"></a>Zertifikat
 
-Sie können ein Clientzertifikat, um zu überprüfen, ob den Benutzer übergeben. Sie fügen Sie das Zertifikat beim Erstellen der Verbindung hinzu. Das folgende Beispiel zeigt, wie nur die Verbindung ein Clientzertifikat hinzugefügt wird; die vollständige Konsolen-app werden nicht angezeigt. Er verwendet den [X509Certificate](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx) Klasse bietet mehrere Möglichkeiten zum Erstellen des Zertifikats.
+Sie können ein Client Zertifikat übergeben, um den Benutzer zu überprüfen. Sie fügen das Zertifikat hinzu, wenn Sie die Verbindung erstellen. Das folgende Beispiel zeigt nur, wie Sie der Verbindung ein Client Zertifikat hinzufügen. die vollständige Konsolen-APP wird nicht angezeigt. Dabei wird die [X509Certificate](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx) -Klasse verwendet, die verschiedene Methoden zum Erstellen des Zertifikats bereitstellt.
 
 [!code-csharp[Main](hub-authorization/samples/sample11.cs?highlight=6)]

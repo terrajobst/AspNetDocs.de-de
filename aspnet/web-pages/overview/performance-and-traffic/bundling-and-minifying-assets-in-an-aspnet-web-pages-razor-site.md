@@ -1,25 +1,25 @@
 ---
 uid: web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site
-title: Bündeln und Minimieren der Objekte in einer ASP.NET Web Pages (Razor) Standort | Microsoft-Dokumentation
+title: Bündeln und minimieren von Assets in einer ASP.net Web Pages-(Razor-) Site | Microsoft-Dokumentation
 author: microsoft
-description: Bündelung und Minimierung werden Methoden zum Beschleunigen Ihrer Site. Bündeln können kombinieren Sie mehrere Dateien für JavaScript (.js) oder mehrere cascading Stylesheet (...)
+description: Bündelung und Minimierung sind Möglichkeiten, Ihre Website schneller zu gestalten. Mithilfe der Bündelung können Sie mehrere JavaScript-Dateien (. js) oder mehrere Cascading Stylesheets (...
 ms.author: riande
 ms.date: 06/21/2012
 ms.assetid: 8906f1e9-4b66-4a03-8e8a-9e9debf8ed91
 msc.legacyurl: /web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site
 msc.type: authoredcontent
 ms.openlocfilehash: 5e42111ad71ec65581e56c73822e23ecd5fcbd58
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59400450"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78516177"
 ---
 # <a name="bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site"></a>Bündeln und Minimieren der Objekte in einer ASP.NET Web Pages-Website (Razor)
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Bündelung und Minimierung werden Methoden zum Beschleunigen Ihrer Site. Bündeln können Sie mehrere JavaScript kombinieren (*js*) Dateien oder mehrere cascading Stylesheet (*CSS*) Dateien, damit sie als eine Einheit, anstatt jeweils einzeln heruntergeladen werden können. Staucht, Leerzeichen und führt andere Arten von Komprimierung, um den heruntergeladenen Dateien möglichst klein eine möglich machen.
+> Bündelung und Minimierung sind Möglichkeiten, Ihre Website schneller zu gestalten. Mithilfe der Bündelung können Sie mehrere JavaScript-Dateien ( *. js*) oder mehrere Cascading Stylesheet-Dateien (*CSS*-Dateien) kombinieren, sodass Sie als Einheit anstatt einzeln heruntergeladen werden können. Bei der Minimierung werden Leerräume gequetscht und andere Komprimierungs Typen durchführt, um die heruntergeladenen Dateien so klein wie möglich zu machen.
 > 
 > > [!NOTE]
-> > Die RC-Version von ASP.NET Web Pages 2 unterstützt keine Bündelung und Minimierung, da das Paket, das die erforderlichen Elemente enthält noch nicht in Microsoft WebMatrix verfügbar ist. Wir entschuldigen uns für diese Unannehmlichkeit. Das Paket wird erwartet, in der endgültigen Version von ASP.NET Web Pages 2 und WebMatrix 2 verfügbar sein.
+> > Die RC-Version von ASP.net Web Pages 2 unterstützt das bündeln und minimieren nicht, da das Paket, das die erforderlichen Elemente enthält, in Microsoft webmatrix noch nicht verfügbar ist. Wir entschuldigen uns für die Unannehmlichkeiten. Es wird erwartet, dass das Paket in der endgültigen Version von ASP.net Web Pages 2 und webmatrix 2 verfügbar ist.

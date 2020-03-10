@@ -9,11 +9,11 @@ ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 263658231ccaa7863508c691a3570bc00b9e8039
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590026"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78486585"
 ---
 # <a name="understanding-action-filters-vb"></a>Grundlegendes zu Aktionsfiltern (VB)
 
@@ -113,7 +113,7 @@ Der Home-Controller in der Liste 3 veranschaulicht, wie Sie den Protokoll Aktion
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample3.vb)]
 
-### <a name="summary"></a>Summary
+### <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie ASP.NET MVC Action Filters eingeführt. Sie haben die vier verschiedenen Arten von Filtern kennengelernt: Autorisierungs Filter, Aktionsfilter, Ergebnis Filter und Ausnahme Filter. Außerdem haben Sie mehr über die Basis `ActionFilterAttribute` Klasse erfahren.
 

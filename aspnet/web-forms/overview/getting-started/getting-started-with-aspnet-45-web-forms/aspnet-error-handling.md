@@ -9,11 +9,11 @@ ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 9514142ca50b33470a3f4c033e4f8e319a9ee09b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636470"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457023"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET – Fehlerbehandlung
 
@@ -25,7 +25,7 @@ von [Erik Reitan](https://github.com/Erikre)
 
 In diesem Tutorial ändern Sie die Wingtip Toys-Beispielanwendung, um Fehlerbehandlung und Fehler Protokollierung einzubeziehen. Die Fehlerbehandlung ermöglicht es der Anwendung, Fehler ordnungsgemäß zu behandeln und Fehlermeldungen entsprechend anzuzeigen. Die Fehler Protokollierung ermöglicht es Ihnen, aufgetretene Fehler zu finden und zu beheben. Dieses Tutorial baut auf dem vorherigen Tutorial "URL-Routing" auf und ist Teil der Wingtip Toys-tutorialreihe.
 
-## <a name="what-youll-learn"></a>Lernen Sie Folgendes:
+## <a name="what-youll-learn"></a>Sie lernen Folgendes:
 
 - So fügen Sie der Konfiguration der Anwendung eine globale Fehlerbehandlung hinzu.
 - Gewusst wie: Hinzufügen der Fehlerbehandlung auf Anwendungs-, Seiten-und Codeebene.
@@ -33,7 +33,7 @@ In diesem Tutorial ändern Sie die Wingtip Toys-Beispielanwendung, um Fehlerbeha
 - Anzeigen von Fehlermeldungen, die die Sicherheit nicht beeinträchtigen.
 - Gewusst wie: Implementieren von Fehler Protokollierungs Modulen und-Handlern (ELMAH)-Fehler Protokollierung.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 ASP.NET-Anwendungen müssen in der Lage sein, Fehler zu behandeln, die während der Ausführung konsistent auftreten. ASP.NET verwendet die Common Language Runtime (CLR), die eine Möglichkeit bietet, Anwendungen von Fehlern auf einheitliche Weise zu benachrichtigen. Wenn ein Fehler auftritt, wird eine Ausnahme ausgelöst. Eine Ausnahme ist ein beliebiger Fehler, eine Bedingung oder ein unerwartetes Verhalten, das von einer Anwendung erkannt wird.
 
@@ -53,7 +53,7 @@ Die Laufzeit verfügt über einen Basissatz von Ausnahmen, die von der `SystemEx
 
 In einer ASP.net-Web Forms Anwendung können Ausnahmen auf der Grundlage einer bestimmten Behandlungs Hierarchie behandelt werden. Eine Ausnahme kann auf den folgenden Ebenen behandelt werden:
 
-- Anwendungsebene
+- Anwendungsschicht
 - Seitenebene
 - Codeebene
 
@@ -139,7 +139,7 @@ Aktualisieren Sie die Konfiguration, indem Sie der Datei " *Web. config* " einen
 2. Fügen Sie den `customErrors` Abschnitt der Datei " *Web. config* " im `<system.web>` Knoten wie folgt hinzu:   
 
     [!code-xml[Main](aspnet-error-handling/samples/sample8.xml?highlight=3-5)]
-3. Speichern Sie die Datei " *Web. config* ".
+3. Speichern Sie die Datei *Web.config* .
 
 Der `customErrors` Abschnitt gibt den Modus an, der auf "on" festgelegt ist. Außerdem wird die `defaultRedirect`angegeben, die der Anwendung mitteilt, zu welcher Seite bei Auftreten eines Fehlers navigiert werden soll. Außerdem haben Sie ein bestimmtes Error-Element hinzugefügt, das angibt, wie ein 404-Fehler behandelt wird, wenn eine Seite nicht gefunden wird. Später in diesem Tutorial fügen Sie zusätzliche Fehlerbehandlung hinzu, mit der die Details eines Fehlers auf Anwendungsebene erfasst werden.
 
@@ -303,7 +303,7 @@ Das Anzeigen des ELMAH-Protokolls ist einfach, aber zunächst wird eine nicht be
 
     ![ASP.net-Fehlerbehandlung-ELMAH-Fehlerprotokoll](aspnet-error-handling/_static/image9.png)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie erfahren, wie Sie Fehler auf Anwendungsebene, auf Seitenebene und auf Codeebene behandeln. Sie haben auch gelernt, wie Sie behandelte und nicht behandelte Fehler zur späteren Überprüfung protokollieren. Sie haben das Dienstprogramm "ELMAH" hinzugefügt, um eine Ausnahme Protokollierung und Benachrichtigung an Ihre Anwendung mithilfe von nuget zu Darüber hinaus haben Sie die Wichtigkeit sicherer Fehlermeldungen kennengelernt.
 
@@ -327,7 +327,7 @@ Weitere Informationen zum Bereitstellen Ihrer Webanwendung in Microsoft Azure fi
 [Protokollieren von Fehler Details mit der ASP.NET Health Monitoring](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
 [ELMAH](https://code.google.com/p/elmah/)
 
-## <a name="acknowledgements"></a>Danksagungen
+## <a name="acknowledgements"></a>Danksagung
 
 Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt dieser tutorialreihe gemacht haben:
 
@@ -359,4 +359,4 @@ Ich möchte den folgenden Personen danken, die bedeutende Beiträge zum Inhalt d
   Visual Studio 2012-Übersetzung: [iniciando com ASP.net Web Forms 4,5-parte 1-Introduction ção e visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
 > [!div class="step-by-step"]
-> [Vorheriges](url-routing.md)
+> [Previous](url-routing.md)

@@ -9,11 +9,11 @@ ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: f83201fc6fd458e730b6bb5ffee184d303b52e90
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611392"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508911"
 ---
 # <a name="using-postbacks-with-reorderlist-c"></a>Verwenden von Postbacks mit dem ReorderList-Steuerelement (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ReorderList-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Wenn die Liste neu angeordnet wird, wird der Server von einem Postback über die Änderung informiert.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das `ReorderList`-Steuerelement im AJAX Control Toolkit bietet eine Liste, die vom Benutzer per Drag & Drop neu angeordnet werden kann. Wenn die Liste neu angeordnet wird, wird der Server von einem Postback über die Änderung informiert.
 
@@ -65,4 +65,4 @@ Zum Schluss muss das `ScriptManager`-Steuerelement auf der Seite abgelegt werden
 Jede Neuanordnung löst ein Postback aus ([Klicken Sie, um das Bild in voller Größe anzuzeigen](using-postbacks-with-reorderlist-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](drag-and-drop-via-reorderlist-cs.md)
+> [Weiter](drag-and-drop-via-reorderlist-cs.md)

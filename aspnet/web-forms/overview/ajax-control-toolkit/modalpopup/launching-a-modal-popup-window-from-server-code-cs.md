@@ -9,11 +9,11 @@ ms.assetid: 2f67d8ef-73ca-447d-a0cc-6e3168431e6a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: fec0ce2cdd24333f65201301718440e1a09d930e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599033"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496977"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-c"></a>Starten eines modalen Popupfensters über den Servercode (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. In einigen Szenarien ist es jedoch erforderlich, dass das modale Popup auf Serverseite ausgelöst wird.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Das ModalPopup-Steuerelement im AJAX Control Toolkit bietet eine einfache Möglichkeit zum Erstellen eines modalen Popups mithilfe Client seitiger Mittel. In einigen Szenarien ist es jedoch erforderlich, dass das modale Popup auf Serverseite ausgelöst wird.
 
@@ -68,4 +68,4 @@ Die `$find()`-Funktion sucht nach einem benannten Element auf der Seite und erwa
 Das modale Popup Fenster wird angezeigt, wenn auf eine der Schaltflächen geklickt wird ([Klicken Sie, um das Bild in voller Größe anzuzeigen](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](using-modalpopup-with-a-repeater-control-cs.md)
+> [Weiter](using-modalpopup-with-a-repeater-control-cs.md)

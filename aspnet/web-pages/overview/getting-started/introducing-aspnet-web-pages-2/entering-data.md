@@ -1,259 +1,259 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
-title: Einführung in ASP.NET Web Pages - eingeben von Datenbankdaten mithilfe von Formularen | Microsoft-Dokumentation
+title: Einführung in ASP.net Web Pages die Eingabe von Datenbankdaten mithilfe von Formularen | Microsoft-Dokumentation
 author: Rick-Anderson
-description: In diesem Tutorial erfahren Sie, wie ein Anmeldeformular erstellen, und geben die Daten, die aus dem Formular in eine Datenbanktabelle bei Verwendung von ASP.NET Web Pages (...)
+description: In diesem Tutorial wird gezeigt, wie Sie ein Eingabeformular erstellen und dann die Daten, die Sie aus dem Formular erhalten, in eine Datenbanktabelle eingeben, wenn Sie ASP.net Web Pages (...
 ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
 ms.openlocfilehash: b9354a7b97a7df9020a681f709e16a92650cfcf0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132971"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506601"
 ---
-# <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Einführung in ASP.NET Web Pages - eingeben von Datenbankdaten mithilfe von Formularen
+# <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Einführung in ASP.net Web Pages Datenbankdaten mithilfe von Formularen
 
-durch [Tom FitzMacken](https://github.com/tfitzmac)
+von [Tom fitzmacken](https://github.com/tfitzmac)
 
-> In diesem Tutorial erfahren Sie, wie ein Anmeldeformular erstellen, und geben dann auf die Daten, die aus dem Formular in eine Datenbanktabelle bei Verwendung von ASP.NET Web Pages (Razor). Es wird vorausgesetzt, Sie haben die Reihe über [Grundlagen von HTML-Formularen in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581).
+> In diesem Tutorial wird gezeigt, wie Sie ein Eingabeformular erstellen und dann die Daten, die Sie aus dem Formular erhalten, in eine Datenbanktabelle eingeben, wenn Sie ASP.net Web Pages (Razor) verwenden. Dabei wird davon ausgegangen, dass Sie die Reihe durch [Grundlagen von HTML-Formularen in ASP.net Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581)abgeschlossen haben.
 > 
 > Sie lernen Folgendes:
 > 
-> - Weitere Informationen zum Verarbeiten von Dateneingabeformularen.
-> - Das Hinzufügen von Daten (Einfügen) in einer Datenbank.
-> - Informationen, um sicherzustellen, dass Benutzer einen erforderlichen Wert in einem Formular (Gewusst wie: Überprüfen von Benutzereingaben) eingegeben haben.
-> - Wie Validierungsfehler angezeigt.
-> - So wechseln Sie zu einer anderen Seite von der aktuellen Seite.
+> - Weitere Informationen zum Verarbeiten von Eingabe Formularen.
+> - Vorgehensweise beim Hinzufügen (einfügen) von Daten in einer Datenbank.
+> - Stellen Sie sicher, dass Benutzer einen erforderlichen Wert in einem Formular eingegeben haben (Überprüfen von Benutzereingaben).
+> - Vorgehensweise beim Anzeigen von Validierungs Fehlern
+> - Springen zu einer anderen Seite von der aktuellen Seite.
 >   
 > 
-> Features/Technologien erläutert:
+> Erörterte Features und Technologien:
 > 
 > - Die `Database.Execute` -Methode.
-> - Die SQL-Anweisung `Insert Into` Anweisung
-> - Die `Validation` Helper.
+> - Die SQL `Insert Into`-Anweisung
+> - Das `Validation`-Hilfsprogramm.
 > - Die `Response.Redirect` -Methode.
 
 ## <a name="what-youll-build"></a>Sie lernen Folgendes
 
-In diesem Tutorial weiter oben, die Sie wurde gezeigt, wie Sie eine Datenbank zu erstellen, eingegebene Daten durch Bearbeitung der Datenbank direkt in WebMatrix, arbeiten der **Datenbank** Arbeitsbereich. In den meisten apps ist, die nicht über eine praktische Möglichkeit zum Einfügen von Daten in die Datenbank jedoch. In diesem Tutorial haben erstelle Sie eine webbasierte Schnittstelle, mit dem Sie oder jemand die Daten eingeben und speichern Sie sie in der Datenbank.
+In dem zuvor gezeigten Tutorial zum Erstellen einer Datenbank haben Sie Datenbankdaten eingegeben, indem Sie die Datenbank direkt in webmatrix bearbeitet haben und im Arbeitsbereich **Datenbank** arbeiten. In den meisten apps ist dies keine praktische Möglichkeit, um Daten in die Datenbank einzufügen. In diesem Tutorial erstellen Sie also eine webbasierte Oberfläche, mit der Sie oder alle Benutzerdaten eingeben und in der Datenbank speichern können.
 
-Sie erstellen eine Seite, in dem Sie neue Filme eingeben können. Die Seite enthält ein Anmeldeformular, die Felder (Textfelder) verfügt, in dem Sie einen Filmtitel, "Genre" und das Jahr eingeben können. Die Seite sieht wie auf dieser Seite aus:
+Sie erstellen eine Seite, auf der Sie neue Filme eingeben können. Die Seite enthält ein Eingabeformular mit Feldern (Textfeldern), in denen Sie einen Filmtitel, ein Genre und ein Jahr eingeben können. Die Seite sieht wie folgt aus:
 
-![Seite im Browser "Film hinzufügen"](entering-data/_static/image1.png)
+![Seite "Film hinzufügen" im Browser](entering-data/_static/image1.png)
 
-Textfelder werden HTML `<input>` Elemente, die sehen, wie dieses Markup:
+Die Textfelder sind HTML-`<input>` Elemente, die wie dieses Markup aussehen:
 
 `<input type="text" name="genre" value="" />`
 
-## <a name="creating-the-basic-entry-form"></a>Erstellen das grundlegende Eintragsformular
+## <a name="creating-the-basic-entry-form"></a>Erstellen des grundlegenden Eingabeformulars
 
-Erstellen Sie eine Seite mit dem Namen *AddMovie.cshtml*.
+Erstellen Sie eine Seite mit dem Namen *addmovie. cshtml*.
 
-Ersetzen Sie dies, was in der Datei mit dem folgenden Markup ist. Überschreiben Sie alles, was; Sie müssen einen Codeblock in Kürze oben hinzufügen.
+Ersetzen Sie die Elemente in der Datei durch das folgende Markup. Alles überschreiben Sie fügen oben einen Codeblock hinzu.
 
 [!code-cshtml[Main](entering-data/samples/sample1.cshtml)]
 
-Dieses Beispiel zeigt die typischen HTML zum Erstellen eines Formulars. Er verwendet `<input>` Elemente für die Textfelder und für die Schaltfläche "Senden". Die Beschriftungen für die Textfelder werden mit standardmäßigen erstellt `<label>` Elemente. Die `<fieldset>` und `<legend>` Elemente fügen Sie einen guten Rahmen um das Formular herum.
+Dieses Beispiel zeigt typische HTML-Code zum Erstellen eines Formulars. Er verwendet `<input>` Elemente für die Textfelder und für die Schaltfläche "Senden". Die Beschriftungen für die Textfelder werden mit Standard `<label>` Elementen erstellt. Die `<fieldset>`-und `<legend>`-Elemente stellen ein schönes Feld um das Formular.
 
-Beachten Sie, dass auf dieser Seite die `<form>` -Element verwendet `post` als Wert für die `method` Attribut. Im vorherigen Tutorial haben Sie ein Formular zum erstellt die `get` Methode. Das war richtig ist, da auch das Formular Werte an den Server gesendet, die Anforderung keine Änderungen vorgenommen. Alles, was zuvor war Abrufen der Daten auf unterschiedliche Weise. Allerdings in dieser Seite *wird* Änderungen vornehmen – also Datenbank neue Datensätze hinzufügen. Daher sollte dieses Formular verwendet die `post` Methode. (Weitere Informationen zu den Unterschieden zwischen `GET` und `POST` Vorgänge, finden Sie unter den[GET, POST und HTTP-Verb Sicherheit](https://go.microsoft.com/fwlink/?LinkId=251581#GET,_POST,_and_HTTP_Verb_Safety) Randleiste im vorherigen Tutorial.)
+Beachten Sie, dass das `<form>`-Element auf dieser Seite `post` als Wert für das `method`-Attribut verwendet. Im vorherigen Tutorial haben Sie ein Formular erstellt, das die `get`-Methode verwendet hat. Das war richtig, denn obwohl das Formular Werte an den Server übermittelt hat, hat die Anforderung keine Änderungen vorgenommen. Alles konnte nicht auf unterschiedliche Weise abgerufen werden. Auf dieser Seite nehmen Sie jedoch Änderungen vor – *Sie werden neue* Datenbankdaten Sätze hinzufügen. Daher sollte in diesem Formular die `post`-Methode verwendet werden. (Weitere Informationen zu den Unterschieden zwischen `GET` und `POST` Vorgängen finden Sie in der Rand Leiste "[Get", "Post" und "http Verb Safety](https://go.microsoft.com/fwlink/?LinkId=251581#GET,_POST,_and_HTTP_Verb_Safety) " im vorherigen Tutorial.)
 
-Beachten Sie, dass jedes Textfeld einen `name` Element (`title`, `genre`, `year`). Im vorherigen Tutorial haben Sie gesehen, werden diese Namen wichtig, da müssen Sie diesen Namen haben, sodass Sie die Eingabe des Benutzers später abrufen können. Sie können beliebige Namen verwenden. Es ist hilfreich, verwenden Sie aussagekräftige Namen ein, mit denen Sie denken Sie daran, welche Daten Sie arbeiten.
+Beachten Sie, dass jedes Textfeld ein `name`-Element enthält (`title`, `genre`, `year`). Wie Sie im vorherigen Tutorial gesehen haben, sind diese Namen wichtig, da Sie diese Namen haben müssen, damit Sie die Eingabe des Benutzers später erhalten können. Sie können beliebige Namen verwenden. Es ist hilfreich, aussagekräftige Namen zu verwenden, die Ihnen helfen zu merken, mit welchen Daten Sie arbeiten.
 
-Die `value` -Attribut der einzelnen `<input>` Element enthält ein wenig mit Razor-Code (z. B. `Request.Form["title"]`). Sie erfahren eine Version von diesen Trick im vorherigen Tutorial zur Beibehaltung des Werts in das Textfeld ein (sofern vorhanden) eingegeben haben, nachdem das Formular übermittelt wurde.
+Das `value`-Attribut jedes `<input>` Elements enthält ein wenig Razor-Code (z. b. `Request.Form["title"]`). Sie haben im vorherigen Tutorial eine Version dieses Tricks kennengelernt, um den im Textfeld (sofern vorhanden) eingegebenen Wert beizubehalten, nachdem das Formular übermittelt wurde.
 
-## <a name="getting-the-form-values"></a>Die Formularwerte abrufen
+## <a name="getting-the-form-values"></a>Die Formular Werte werden erhalten.
 
-Als Nächstes fügen Sie Code, der das Formular verarbeitet. In der Gliederung müssen Sie Folgendes tun:
+Als Nächstes fügen Sie Code hinzu, der das Formular verarbeitet. Im Umriss führen Sie die folgenden Schritte aus:
 
-1. Überprüfen Sie, ob die Seite zurückgesendet wird, wird (übermittelt). Sie möchten Ihren Code nur ausgeführt, wenn Benutzer auf die Schaltfläche geklickt haben, nicht verwendet werden, wenn die Seite zuerst ausgeführt wird.
-2. Die der Benutzer in die Textfelder eingegebenen Werte zu erhalten. In diesem Fall, da das Formular verwendet die `POST` -Verb, erhalten Sie die Formularwerte aus der `Request.Form` Auflistung.
-3. Fügen Sie die Werte als einen neuen Eintrag in der *Filme* Datenbanktabelle.
+1. Überprüfen Sie, ob die Seite gesendet wird (wurde übermittelt). Sie möchten, dass Ihr Code nur ausgeführt wird, wenn Benutzer auf die Schaltfläche geklickt haben, nicht, wenn die Seite zum ersten Mal ausgeführt wird.
+2. Gibt die Werte an, die der Benutzer in die Textfelder eingegeben hat. Da in diesem Fall das Formular das `POST` Verb verwendet, werden die Formular Werte aus der `Request.Form` Auflistung angezeigt.
+3. Fügen Sie die Werte als neuen Datensatz in die Datenbanktabelle " *Movies* " ein.
 
 Fügen Sie am Anfang der Datei den folgenden Code hinzu:
 
 [!code-cshtml[Main](entering-data/samples/sample2.cshtml)]
 
-Die ersten Zeilen erstellen Sie Variablen (`title`, `genre`, und `year`) zum Speichern der Werte aus den Textfeldern. Die Zeile `if(IsPost)` stellt sicher, dass die Variablen festgelegt werden *nur* Benutzer beim Klicken auf die **Film hinzufügen** Schaltfläche – d. h., wenn das Formular gesendet wurde.
+In den ersten Zeilen werden Variablen (`title`, `genre`und `year`) erstellt, um die Werte aus den Textfeldern zu speichern. Die Zeile `if(IsPost)` stellt sicher, dass die Variablen *nur* festgelegt werden, wenn Benutzer auf die Schaltfläche **Film hinzufügen** klicken, d. –., wenn das Formular gepostet wurde.
 
-In einem früheren Tutorial haben Sie gesehen, Sie erhalten den Wert eines Textfelds mithilfe eines Ausdrucks wie `Request.Form["name"]`, wobei *Namen* ist der Name des der `<input>` Element.
+Wie Sie in einem früheren Tutorial gesehen haben, können Sie den Wert eines Textfelds mit einem Ausdruck wie `Request.Form["name"]`erhalten, wobei *Name* der Name des `<input>` Elements ist.
 
-Die Namen der Variablen (`title`, `genre`, und `year`) sind willkürlich. Wie Sie die Namen, die Sie zuweisen `<input>` Elemente, man kann anrufen beliebigen. (Die Namen der Variablen nicht entsprechend die Attributen Name der haben `<input>` Elemente auf dem Formular.) Aber wie bei der `<input>` Elemente, es ist eine gute Idee, Variablennamen verwenden, die die Daten enthalten, die sie enthalten. Wenn Sie Code schreiben, erleichtern konsistente Namen für die Sie Daten speichern, mit dem Sie arbeiten.
+Der Name der Variablen (`title`, `genre`und `year`) ist willkürlich. Wie die Namen, die Sie `<input>` Elementen zuweisen, können Sie Sie beliebig benennen. (Die Namen der Variablen müssen nicht den namens Attributen `<input>` Elemente im Formular entsprechen.) Wie bei den `<input>` Elementen empfiehlt es sich jedoch, Variablennamen zu verwenden, die die darin enthaltenen Daten widerspiegeln. Wenn Sie Code schreiben, können Sie mit konsistenten Namen leichter merken, mit welchen Daten Sie arbeiten.
 
-## <a name="adding-data-to-the-database"></a>Hinzufügen von Daten in der Datenbank
+## <a name="adding-data-to-the-database"></a>Hinzufügen von Daten zur Datenbank
 
-Im Code blockieren Sie die soeben hinzugefügte, nur die *in* die schließende geschweifte Klammer ( `}` ) von der `if` -Block (nicht nur in den Codeblock), fügen Sie den folgenden Code hinzu:
+Fügen Sie im soeben hinzugefügten Codeblock direkt *innerhalb* der schließenden geschweiften Klammer (`}`) des `if`-Blocks (nicht nur innerhalb des Code Blocks) den folgenden Code hinzu:
 
 [!code-csharp[Main](entering-data/samples/sample3.cs)]
 
-In diesem Beispiel ähnelt der Code, den Sie in einem vorherigen Tutorial zum Abrufen und Anzeigen von Daten verwendet. Die Zeile, die mit beginnt `db =` geöffnet, die die Datenbank, z. B. vor, und die nächste Zeile definiert eine SQL-Anweisung erneut als Sie gesehen haben, bevor Sie. Dieses Mal es definiert jedoch eine SQL `Insert Into` Anweisung. Das folgende Beispiel zeigt die allgemeine Syntax von der `Insert Into` Anweisung:
+Dieses Beispiel ähnelt dem Code, den Sie in einem vorherigen Tutorial zum Abrufen und Anzeigen von Daten verwendet haben. Die Zeile, die mit `db =` beginnt, öffnet die Datenbank, wie zuvor, und die nächste Zeile definiert eine SQL-Anweisung, wie Sie zuvor gesehen haben. Diesmal wird jedoch eine SQL `Insert Into`-Anweisung definiert. Das folgende Beispiel zeigt die allgemeine Syntax der `Insert Into`-Anweisung:
 
 `INSERT INTO table (column1, column2, column3, ...) VALUES (value1, value2, value3, ...)`
 
-Das heißt, geben Sie die Tabelle einzufügen, führen Sie dann die Spalten zum Einfügen in und Liste klicken Sie dann auf die einzufügenden Werte. (Wie bereits erwähnt, ist SQL nicht Groß-/Kleinschreibung beachtet, aber manche profitieren, die Schlüsselwörter, um es zu vereinfachen, lesen den Befehl.)
+Dies bedeutet, dass Sie die Tabelle angeben, in die eingefügt werden soll. Anschließend können Sie die einzufügenden Spalten auflisten und dann die einzufügenden Werte auflisten. (Wie bereits erwähnt, wird bei SQL die Groß-/Kleinschreibung nicht beachtet, aber einige Personen haben die Schlüsselwörter groß geschrieben, um das Lesen des Befehls zu vereinfachen.)
 
-Die Spalten, die Sie in einfügen bereits im Befehl angegeben werden – `(Title, Genre, Year)`. Der interessante Teil befindet, wie Sie die Werte aus den Textfeldern in Abrufen der `VALUES` Teil des Befehls. Anstelle der tatsächlichen Werte angezeigt `@0`, `@1`, und `@2`, das sind natürlich Platzhalter. Wenn Sie den Befehl ausführen (auf der `db.Execute` Zeile), übergeben Sie die Werte, die Sie aus den Textfeldern erhalten haben.
+Die Spalten, in die Sie eingefügt werden, sind bereits im Befehl – `(Title, Genre, Year)`aufgeführt. Der interessante Teil ist, wie Sie die Werte aus den Textfeldern in den `VALUES` Teil des Befehls erhalten. Anstelle von tatsächlichen Werten sehen Sie `@0`, `@1`und `@2`. Dies sind natürlich Platzhalter. Wenn Sie den Befehl ausführen (in der `db.Execute` Zeile), übergeben Sie die Werte, die Sie in den Textfeldern erhalten haben.
 
-**Wichtig** Beachten Sie, dass die einzige Möglichkeit, Sie sollte jemals enthalten Daten, die online von einem Benutzer in einer SQL-Anweisung eingegeben ist die Verwendung von Platzhaltern, wie Sie hier sehen (`VALUES(@0, @1, @2)`). Wenn Sie auf der Benutzereingabe in eine SQL-Anweisung verketten, Sie öffnen, selbst für eine SQL-Injection-Angriff, wie unter [Form-Grundlagen in ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) (das vorherige Lernprogramm).
+**Wichtig!** Beachten Sie, dass die einzige Möglichkeit zum Einschließen von Daten, die von einem Benutzer in einer SQL-Anweisung Online eingegeben werden, die Verwendung von Platzhaltern ist, wie hier zu sehen ist (`VALUES(@0, @1, @2)`). Wenn Sie Benutzereingaben in einer SQL-Anweisung verketten, öffnen Sie sich bei einem SQL-Injection-Angriff, wie in den [Grundlagen der Grundlagen in ASP.net Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) (dem vorherigen Tutorial) erläutert.
 
-Immer noch innerhalb der `if` blockieren, die folgende Zeile nach dem Hinzufügen der `db.Execute` Zeile:
+Fügen Sie im `if`-Block nach der `db.Execute` Zeile die folgende Zeile ein:
 
 [!code-css[Main](entering-data/samples/sample4.css)]
 
-Nachdem der neue Film in die Datenbank eingefügt worden ist, springt dieser Zeile Sie (Umleitung) an die *Filme* Seite, damit Sie den Film sehen können, die Sie gerade eingegeben haben. Die `~` Operator bedeutet "Root der Website". (Die `~` Operator funktioniert nur in ASP.NET-Seiten nicht in HTML-Code in der Regel.)
+Nachdem der neue Film in die Datenbank eingefügt wurde, springt Ihnen diese Zeile (Umleitungen) zur Seite " *Movies* " (Umleitungen), damit Sie den soeben eingegebenen Film sehen können. Der `~`-Operator bedeutet "Root of the Website". (Der `~`-Operator funktioniert nur in ASP.NET Seiten, im Allgemeinen nicht in HTML.)
 
-Der Block der vollständige Code sieht wie im folgenden Beispiel aus:
+Der gesamte Codeblock sieht wie im folgenden Beispiel aus:
 
 [!code-cshtml[Main](entering-data/samples/sample5.cshtml)]
 
-## <a name="testing-the-insert-command-so-far"></a>Testen des Insert-Befehls (bisher)
+## <a name="testing-the-insert-command-so-far"></a>Testen des Einfügebefehls (bisher)
 
-Sie sind noch nicht fertig, aber jetzt ist ein guter Zeitpunkt, zu testen.
+Sie sind noch nicht fertig, aber jetzt ist es ein guter Zeitpunkt, zu testen.
 
-In der Strukturansicht der Dateien in WebMatrix, mit der Maustaste der *AddMovie.cshtml* Seite, und klicken Sie dann auf **in Browser starten**.
+Klicken Sie in der Strukturansicht der Dateien in webmatrix mit der rechten Maustaste auf die Seite *addmovie. cshtml* , und klicken Sie dann auf **im Browser starten**.
 
-![Seite im Browser "Film hinzufügen"](entering-data/_static/image2.png)
+![Seite "Film hinzufügen" im Browser](entering-data/_static/image2.png)
 
-(Wenn Sie sich mit einer anderen Seite im Browser beenden, stellen Sie sicher, dass die URL `http://localhost:nnnnn/AddMovie`), wobei *Nnnnn* ist die Portnummer, die Sie verwenden.)
+(Wenn im Browser eine andere Seite angezeigt wird, stellen Sie sicher, dass die URL `http://localhost:nnnnn/AddMovie`) ist, wobei *NNNNN* die von Ihnen verwendete Portnummer ist.)
 
-Haben Sie eine Fehlerseite erhalten? Wenn dies der Fall ist, lesen Sie sie sorgfältig, und stellen Sie sicher, dass der Code genau wie weiter oben aufgeführt wurde.
+Haben Sie eine Fehlerseite erhalten? Wenn dies der Fall ist, lesen Sie ihn sorgfältig durch, und stellen Sie sicher, dass der Code genau so aussieht wie zuvor.
 
-Geben Sie einen Film in der Form &mdash; verwenden, z. B. "Citizen Kane", "Drama" und "1941". (Oder was auch immer.) Klicken Sie dann auf **Film hinzufügen**.
+Geben Sie im Formular einen Film ein, &mdash; z. b. "Bürger-Kane", "Drama" und "1941" zu verwenden. (Oder was auch immer.) Klicken Sie dann auf **Film hinzufügen**.
 
-Wenn alles gut geht, werden Sie umgeleitet, um die *Filme* Seite. Stellen Sie sicher, dass Ihre neue Film aufgeführt ist.
+Wenn alles gut funktioniert, werden Sie zur Seite " *Filme* " umgeleitet. Stellen Sie sicher, dass Ihr neuer Film aufgeführt ist.
 
-![Seite "Movies" mit neu hinzugefügt Film](entering-data/_static/image3.png)
+![Filme Seite mit neu hinzugefügten Film](entering-data/_static/image3.png)
 
 ## <a name="validating-user-input"></a>Überprüfen der Benutzereingabe
 
-Wechseln Sie zurück zu den *AddMovie* Seite, oder führen Sie es noch mal. Geben Sie einen anderen Film, aber dieses Mal ein, geben Sie nur den Titel &mdash; Geben Sie beispielsweise "Einloggen ' in der Rain". Klicken Sie dann auf **Film hinzufügen**.
+Wechseln Sie zurück zur Seite " *addmovie* ", oder führen Sie Sie erneut aus. Geben Sie einen anderen Film ein, aber geben Sie diesmal nur den Titel ein, &mdash; z. b. "singini" in "Regen" eingeben. Klicken Sie dann auf **Film hinzufügen**.
 
-Sie werden umgeleitet, um die *Filme* Seite erneut. Sie finden den neuen Film, jedoch ist es unvollständig.
+Sie werden erneut zur Seite " *Filme* " umgeleitet. Sie finden den neuen Film, aber er ist unvollständig.
 
-![Filme Seite mit neuen Film, die einige Werte fehlen](entering-data/_static/image4.png)
+![Seite "Filme" mit neuem Film, für den einige Werte fehlen](entering-data/_static/image4.png)
 
-Bei der Erstellung der *Filme* Tabelle Sie explizit angegeben, dass keines der Felder null sein kann. Hier haben Sie ein Anmeldeformular für neue Filme, und Sie können Felder leer lassen. Dies ist ein Fehler.
+Beim Erstellen der *Filme* -Tabelle haben Sie explizit gesagt, dass keines der Felder NULL sein kann. Hier haben Sie ein Eingabeformular für neue Filme, und Sie lassen Felder leer. Das ist ein Fehler.
 
-In diesem Fall nicht die Datenbank tatsächlich auslösen (oder *auslösen*) einen Fehler. Sie nicht angegeben haben einen "Genre" oder ein Jahr, also den Code in die *AddMovie* Seite behandelt diese Werte als so genannten *leere Zeichenfolgen*. Wenn die SQL-Anweisung `Insert Into` -Befehl ausgeführt haben, der Felder für "Genre" und das Jahr nicht nützliche Daten darin enthalten, aber sie waren nicht null.
+In diesem Fall hat die Datenbank keinen Fehler ausgelöst *(oder ausgelöst*). Sie haben kein Genre oder Jahr angegeben, daher hat der Code auf der *addmovie* -Seite diese Werte als so genannte *leere*Zeichen folgen behandelt. Wenn der SQL `Insert Into`-Befehl ausgeführt wurde, hatten die Felder Genre und Year keine nützlichen Daten, aber Sie waren nicht NULL.
 
-Natürlich möchten keine Benutzer, die Hälfte leere Filminformationen in die Datenbank eingeben können. Die Lösung ist die Eingabe des Benutzers zu überprüfen. Zunächst die Überprüfung stellt einfach sicher, dass der Benutzer einen Wert für alle Felder eingegeben hat (d. h. keine davon enthält eine leere Zeichenfolge).
+Natürlich sollten Sie nicht zulassen, dass Benutzer halb leere Filminformationen in die Datenbank eingeben. Die Lösung besteht darin, die Eingabe des Benutzers zu überprüfen. Anfänglich wird bei der Überprüfung einfach sichergestellt, dass der Benutzer einen Wert für alle Felder eingegeben hat (d. h., dass keiner der Felder eine leere Zeichenfolge enthält).
 
 > [!TIP]
 > 
-> **NULL und leere Zeichenfolgen**
+> **NULL und leere Zeichen folgen**
 > 
-> Bei der Programmierung wird unterschieden zwischen verschiedenen Arten von "kein Wert." Ein Wert in der Regel ist *null* Wenn nicht festgelegt oder in keiner Weise initialisiert wurde. Im Gegensatz dazu kann eine Variable, die Zeichendaten (Zeichenfolgen) erwartet festgelegt werden, um eine *eine leere Zeichenfolge*. In diesem Fall ist der Wert nicht null; Es wird nur explizit auf eine Zeichenfolge mit Zeichen festgelegt wurde, dessen Länge 0 (null) ist. Diese beiden Anweisungen zeigen die Unterschiede:
+> Beim Programmieren gibt es einen Unterschied zwischen den verschiedenen Begriffen "kein Wert". Im Allgemeinen ist ein Wert *null* , wenn er nie auf irgendeine Weise festgelegt oder initialisiert wurde. Im Gegensatz dazu kann eine Variable, die Zeichendaten (Zeichen folgen) erwartet, auf eine *leere Zeichenfolge*festgelegt werden. In diesem Fall ist der Wert nicht NULL. Sie wurde nur explizit auf eine Zeichenfolge festgelegt, deren Länge 0 (null) ist. Diese beiden Anweisungen zeigen den Unterschied:
 > 
 > [!code-csharp[Main](entering-data/samples/sample6.cs)]
 > 
-> Es wurde ein wenig komplizierter als die, aber der wichtigste Punkt ist, die `null` eine Art unbestimmten Zustand darstellt.
+> Es ist etwas komplizierter als das, aber der wichtigste Punkt ist, dass `null` eine Art nicht ermittelte Zustands darstellt.
 > 
-> Und wieder ist es wichtig zu wissen genau, wenn ein Wert null ist und wenn es nur eine leere Zeichenfolge ist. Im Code für die *AddMovie* Seite erhalten Sie die Werte der Textfelder mit `Request.Form["title"]` und so weiter. Wenn die Seite zuerst ausgeführt wird, (bevor Sie die Schaltfläche klicken), wird der Wert des `Request.Form["title"]` ist null. Aber wenn Sie das Formular übermitteln `Request.Form["title"]` Ruft den Wert des der `title` Textfeld. Ist es nicht offensichtlich, aber ein leeres Textfeld ist nicht null; Es enthält nur eine leere Zeichenfolge. Klicken Sie daher beim Ausführen des Codes als Reaktion auf die Schaltfläche auf, `Request.Form["title"]` verfügt über eine leere Zeichenfolge.
+> Nun ist es wichtig, genau zu verstehen, wenn ein Wert NULL ist und wenn es sich nur um eine leere Zeichenfolge handelt. Im Code für die *addmovie* -Seite erhalten Sie die Werte der Textfelder, indem Sie `Request.Form["title"]` usw. verwenden. Wenn die Seite zum ersten Mal ausgeführt wird (bevor Sie auf die Schaltfläche klicken), ist der Wert von `Request.Form["title"]` NULL. Wenn Sie jedoch das Formular senden, wird `Request.Form["title"]` den Wert des `title` Textfelds abrufen. Es ist nicht offensichtlich, aber ein leeres Textfeld ist nicht NULL. darin ist nur eine leere Zeichenfolge angegeben. Wenn der Code als Reaktion auf den Klick auf die Schaltfläche ausgeführt wird, enthält `Request.Form["title"]` eine leere Zeichenfolge.
 > 
-> Warum ist diese Unterscheidung wichtig? Bei der Erstellung der *Filme* Tabelle Sie explizit angegeben, dass keines der Felder null sein kann. Aber hier haben Sie ein Anmeldeformular für neue Filme, und Sie können Felder leer lassen. Sie erwarten einigermaßen die Datenbank, sich zu beschweren, bei dem Versuch neuer Filme zu speichern, die Werte für "Genre" oder ein Jahr nicht hatten. Aber darum geht es &mdash; , auch wenn Sie diese Textfelder leer lassen, nicht die Werte null sind; sie leere Zeichenfolgen sind. Sie sind daher Speichern neuer Filme auf die Datenbank mit diesen Spalten leer &mdash; jedoch nicht null. &mdash;-Werte sind. Aus diesem Grund müssen Sie sicherstellen, dass Benutzer keine leere Zeichenfolge ist,, dies können Sie senden durch die Eingabe des Benutzers überprüfen.
+> Warum ist dieser Unterschied wichtig? Beim Erstellen der *Filme* -Tabelle haben Sie explizit gesagt, dass keines der Felder NULL sein kann. Hier haben Sie jedoch ein Eingabeformular für neue Filme, und Sie lassen Felder leer. Wenn Sie versuchen, neue Filme zu speichern, bei denen keine Werte für Genre oder Jahr vorhanden waren, sollten Sie davon ausgehen, dass sich die Datenbank beschwert. Aber das ist der Punkt &mdash; auch wenn Sie diese Textfelder leer lassen, sind die Werte nicht NULL. Sie sind leere Zeichen folgen. Daher können Sie neue Filme in der Datenbank speichern, wenn diese Spalten leer &mdash;, aber nicht NULL sind! &mdash;-Werte sind. Daher müssen Sie sicherstellen, dass Benutzer keine leere Zeichenfolge einreichen, was Sie tun können, indem Sie die Eingabe des Benutzers validieren.
 
-### <a name="the-validation-helper"></a>Der Überprüfungshelfer
+### <a name="the-validation-helper"></a>Das Validierungs Hilfsprogramm
 
-ASP.NET Web Pages enthält eine Hilfsprogramm &mdash; der `Validation` Helper &mdash; , Sie verwenden können, um sicherzustellen, dass Benutzer Daten eingeben, die Ihren Anforderungen entspricht. Die `Validation` Hilfsprogramm ist eine der Hilfsprogramme, die für ASP.NET Web Pages, sodass Sie keine installieren Sie es als ein Paket mithilfe von NuGet, die Möglichkeit, die Installation der Gravatar-Hilfe in einem früheren Tutorial enthalten ist.
+ASP.net Web Pages enthält eine Hilfsobjekt &mdash; den `Validation` Helper-&mdash;, mit dem Sie sicherstellen können, dass Benutzerdaten eingeben, die Ihren Anforderungen entsprechen. Das `Validation`-Hilfsprogramm ist eine der in ASP.net Web Pages integrierten Hilfsprogramme, sodass Sie es nicht als Paket mithilfe von nuget installieren müssen, wie Sie das Gravatar-Hilfsprogramm in einem früheren Tutorial installiert haben.
 
-Um die Eingabe des Benutzers zu überprüfen, müssen Sie Folgendes tun:
+Um die Eingabe des Benutzers zu überprüfen, gehen Sie wie folgt vor:
 
-- Verwenden Sie Code, um anzugeben, dass die Werte in die Textfelder auf der Seite erforderlich sein soll.
-- Fügen Sie einen Test in den Code, damit die Filminformationen in der Datenbank hinzugefügt wird, nur dann, wenn alles ordnungsgemäß überprüft.
-- Fügen Sie Code in das Markup zum Anzeigen von Fehlermeldungen an.
+- Verwenden Sie Code, um anzugeben, dass Sie Werte in den Textfeldern auf der Seite benötigen.
+- Fügen Sie einen Test in den Code ein, sodass die Filminformationen nur dann zur Datenbank hinzugefügt werden, wenn alles ordnungsgemäß überprüft wird.
+- Fügen Sie Code in das Markup ein, um Fehlermeldungen anzuzeigen.
 
-In den Codeblock in die *AddMovie* Seite, fügen Sie oben rechts oben Variablendeklarationen, bevor Sie den folgenden Code:
+Fügen Sie im Codeblock auf der *addmovie* -Seite am oberen Rand vor den Variablen Deklarationen den folgenden Code hinzu:
 
 [!code-csharp[Main](entering-data/samples/sample7.cs)]
 
-Rufen Sie `Validation.RequireField` einmal für jedes Feld (`<input>` Element), in dem einen Eintrag erstellt werden sollen. Sie können auch eine benutzerdefinierte Fehlermeldung für jeden Aufruf, wie Sie hier hinzufügen. (Wir verschiedene Nachrichten nur an, dass Sie einfügen können beliebig vorhanden.)
+Sie können `Validation.RequireField` einmal für jedes Feld (`<input>` Element) abrufen, in dem Sie einen Eintrag benötigen. Sie können auch eine benutzerdefinierte Fehlermeldung für jeden-Befehl hinzufügen, wie hier zu sehen. (Wir haben die Nachrichten unterschiedlich geändert, um anzuzeigen, dass Sie dort beliebige Inhalte ablegen können.)
 
-Wenn ein Problem vorliegt, möchten Sie verhindern, dass der neue Filminformationen in der Datenbank eingefügt wird. In der `if(IsPost)` -Block `&&` (logisches AND), um eine andere Bedingung hinzuzufügen, die testet `Validation.IsValid()`. Wenn Sie fertig sind, die gesamte `if(IsPost)` Block sieht aus wie im folgenden Code:
+Wenn ein Problem vorliegt, sollten Sie verhindern, dass die neuen Filminformationen in die Datenbank eingefügt werden. Verwenden Sie im `if(IsPost)`-Block `&&` (logisches and), um eine weitere Bedingung hinzuzufügen, mit der `Validation.IsValid()`getestet wird. Wenn Sie fertig sind, sieht der gesamte `if(IsPost)`-Block wie der folgende Code aus:
 
 [!code-csharp[Main](entering-data/samples/sample8.cs)]
 
-Wenn ein Validierungsfehler mit einem der Felder, die Sie registriert den `Validation` Hilfsprogramms, des der `Validation.IsValid` Methode gibt false zurück. Und in diesem Fall kein Teil des Codes in diesen Block wird ausgeführt, damit keine ungültigen Movie-Einträge in der Datenbank eingefügt werden. Und Sie sind natürlich nicht weitergeleitet die *Filme* Seite.
+Wenn ein Überprüfungs Fehler mit einem der Felder vorliegt, die Sie mithilfe des `Validation`-Hilfsprogramms registriert haben, gibt die `Validation.IsValid`-Methode false zurück. Und in diesem Fall wird kein Code in diesem Block ausgeführt, sodass keine ungültigen Film Einträge in die Datenbank eingefügt werden. Und natürlich werden Sie nicht zur Seite " *Filme* " umgeleitet.
 
-Der vollständigen Code-Block, einschließlich des Validierungscodes, sieht nun wie im folgenden Beispiel aus:
+Der gesamte Codeblock, einschließlich des Validierungs Codes, sieht nun wie im folgenden Beispiel aus:
 
 [!code-cshtml[Main](entering-data/samples/sample9.cshtml?highlight=10)]
 
-## <a name="displaying-validation-errors"></a>Anzeigen von Überprüfungsfehlern
+## <a name="displaying-validation-errors"></a>Anzeigen von Validierungs Fehlern
 
-Im letzte Schritt werden alle Fehlermeldungen angezeigt. Können Sie einzelne Nachrichten für jede Validierungsfehler anzeigen, oder Sie können eine Zusammenfassung oder beides anzeigen. Für dieses Tutorial müssen Sie beide Methoden verwenden, damit Sie sehen, wie es funktioniert.
+Der letzte Schritt besteht darin, Fehlermeldungen anzuzeigen. Sie können einzelne Meldungen für jeden Validierungs Fehler anzeigen, oder Sie können eine Zusammenfassung oder beides anzeigen. In diesem Tutorial führen Sie beides aus, damit Sie sehen können, wie es funktioniert.
 
-Neben den jeweiligen `<input>` -Element, das Sie überprüfen können, rufen die `Html.ValidationMessage` Methode und übergeben sie den Namen der der `<input>` Element, die Sie überprüfen können. Sie fügen die `Html.ValidationMessage` Methode rechts, in dem die Fehlermeldung angezeigt werden sollen. Wenn die Seite ausgeführt wird, wird die `Html.ValidationMessage` -Methode rendert ein `<span>` Element, in dem der Validierungsfehler geht. (Wenn kein Fehler vorliegt, die `<span>` Element gerendert wird, aber es ist kein Text darin.)
+Nennen Sie neben jedem `<input>` Element, das Sie überprüfen, die `Html.ValidationMessage`-Methode, und übergeben Sie den Namen des `<input>` Elements, das Sie überprüfen. Fügen Sie die `Html.ValidationMessage`-Methode an die Stelle, an der die Fehlermeldung angezeigt werden soll. Wenn die Seite ausgeführt wird, rendert die `Html.ValidationMessage`-Methode ein `<span>` Element, bei dem der Überprüfungs Fehler auftritt. (Wenn kein Fehler vorliegt, wird das `<span>` Element gerendert, aber es ist kein Text vorhanden.)
 
-Ändern Sie das Markup auf der Seite, sodass es enthält eine `Html.ValidationMessage` -Methode für jede der drei `<input>` Elemente auf der Seite, wie im folgenden Beispiel:
+Ändern Sie das Markup auf der Seite so, dass es eine `Html.ValidationMessage`-Methode für jedes der drei `<input>` Elemente auf der Seite enthält, wie in diesem Beispiel:
 
 [!code-cshtml[Main](entering-data/samples/sample10.cshtml?highlight=3,8,13)]
 
-Um die Funktionsweise der Zusammenfassung angezeigt wird, außerdem fügen Sie das folgende Markup und code direkt nach der `<h1>Add a Movie</h1>` Element auf der Seite:
+Fügen Sie das folgende Markup und den Code direkt hinter dem `<h1>Add a Movie</h1>`-Element auf der Seite ein, um zu sehen, wie die Zusammenfassung funktioniert:
 
 [!code-cshtml[Main](entering-data/samples/sample11.cshtml)]
 
-In der Standardeinstellung die `Html.ValidationSummary` Methode zeigt alle Nachrichten für die Validierung in einer Liste (ein `<ul>` Elements in einer `<div>` Element). Wie bei der `Html.ValidationMessage` -Methode, das Markup für die Zusammenfassung der Validierung wird immer gerendert; Wenn keine Fehler vorliegen, werden keine Listenelemente gerendert.
+Standardmäßig zeigt die `Html.ValidationSummary`-Methode alle Validierungs Nachrichten in einer Liste an (ein `<ul>` Element, das sich innerhalb eines `<div>`-Elements befindet). Wie bei der `Html.ValidationMessage`-Methode wird das Markup für die Validierungs Zusammenfassung immer gerendert. Wenn keine Fehler vorliegen, werden keine Listenelemente gerendert.
 
-Die Zusammenfassung kann eine alternative Möglichkeit zum validierungsmeldungen werden nicht angezeigt werden die `Html.ValidationMessage` Methode, um jedes Feld-spezifischer Fehler anzuzeigen. Sie können auch sowohl eine Zusammenfassung als auch die Details. Sie können auch die `Html.ValidationSummary` Methode, um eine generische Fehlermeldung angezeigt, und verwenden Sie dann auf einzelne `Html.ValidationMessage` aufrufen, um Details anzuzeigen.
+Die Zusammenfassung kann eine alternative Möglichkeit zum Anzeigen von Validierungs Nachrichten anstelle von verwendet werden, um `Html.ValidationMessage` die einzelnen feldspezifischen Fehler anzuzeigen. Sie können auch eine Zusammenfassung und die Details verwenden. Oder Sie können die `Html.ValidationSummary`-Methode verwenden, um einen generischen Fehler anzuzeigen und dann einzelne `Html.ValidationMessage` Aufrufe zum Anzeigen von Details zu verwenden.
 
-Auf der Seite abgeschlossen sieht nun wie im folgenden Beispiel aus:
+Die Seite "Fertig" sieht nun wie im folgenden Beispiel aus:
 
 [!code-cshtml[Main](entering-data/samples/sample12.cshtml)]
 
-Das ist alles. Sie können die Seite jetzt testen, durch das Hinzufügen eines Films, aber eine oder mehrere Felder auslassen. Wenn Sie dies tun, sehen Sie den folgenden Fehler angezeigt:
+Das ist alles. Sie können die Seite jetzt testen, indem Sie einen Film hinzufügen, aber ein oder mehrere Felder verlassen. Wenn Sie dies tun, wird die folgende Fehleranzeige angezeigt:
 
-![Hinzufügen von Film-Seite, die mit der Überprüfung Fehlermeldungen](entering-data/_static/image5.png)
+![Hinzufügen einer Filmseite mit Validierungs Fehlermeldungen](entering-data/_static/image5.png)
 
-## <a name="styling-the-validation-error-messages"></a>Die Validierungsfehlermeldungen formatieren
+## <a name="styling-the-validation-error-messages"></a>Formatieren der Validierungs Fehlermeldungen
 
-Sie können sehen, dass Fehlermeldungen, aber sie nicht wirklich sehr gut hervorstechen. Es ist eine einfache Möglichkeit, die Fehlermeldungen, jedoch zu formatieren.
+Sie sehen, dass Fehlermeldungen vorliegen, aber Sie sind nicht wirklich gut hervorragend. Es gibt jedoch eine einfache Möglichkeit, die Fehlermeldungen zu formatieren.
 
-So formatieren Sie die einzelne Fehlermeldungen, die angezeigt werden `Html.ValidationMessage`, erstellen Sie eine CSS-Formatklasse `field-validation-error`. Um das Aussehen für die Zusammenfassung der Validierung zu definieren, erstellen Sie eine CSS-Formatklasse `validation-summary-errors`.
+Um die einzelnen Fehlermeldungen zu formatieren, die von `Html.ValidationMessage`angezeigt werden, erstellen Sie eine CSS-Formatklasse mit dem Namen `field-validation-error`. Um das Suchen nach der Validierungs Zusammenfassung zu definieren, erstellen Sie eine CSS-Formatklasse mit dem Namen `validation-summary-errors`.
 
-Um zu sehen, wie dieses Verfahren funktioniert, fügen einen `<style>` Element innerhalb der `<head>` Abschnitt der Seite. Definieren Sie dann die Style-Klassen, die mit dem Namen `field-validation-error` und `validation-summary-errors` , enthalten die folgenden Regeln:
+Um zu sehen, wie diese Technik funktioniert, fügen Sie im `<head>` Abschnitt der Seite ein `<style>` Element hinzu. Definieren Sie dann Stil Klassen mit dem Namen `field-validation-error` und `validation-summary-errors`, die die folgenden Regeln enthalten:
 
 [!code-cshtml[Main](entering-data/samples/sample13.cshtml?highlight=4-17)]
 
-Normalerweise legen Sie wahrscheinlich Formatinformationen in einer separaten *CSS* -Datei, aber aus Gründen der Einfachheit Sie können sie auf der Seite jetzt. (Weiter unten in diesem Tutorial festgelegt, verschieben Sie die CSS-Regeln in einer separaten *CSS* Datei.)
+Normalerweise würden Sie Formatierungsinformationen in eine separate *CSS* -Datei einfügen, aber aus Gründen der Einfachheit können Sie Sie jetzt auf der Seite ablegen. (Später in diesem Tutorial verschieben Sie die CSS-Regeln in eine separate *CSS* -Datei.)
 
-Wenn ein Validierungsfehler, die `Html.ValidationMessage` -Methode rendert ein `<span>` -Element, das umfasst `class="field-validation-error"`. Durch Hinzufügen einer Formatdefinition für diese Klasse, können Sie konfigurieren, wie die Nachricht aussieht. Wenn Fehler vorliegen, die `ValidationSummary` Methode entsprechend dynamisch rendert das Attribut `class="validation-summary-errors"`.
+Wenn ein Validierungs Fehler vorliegt, rendert die `Html.ValidationMessage`-Methode ein `<span>` Element, das `class="field-validation-error"`enthält. Indem Sie eine Format Definition für diese Klasse hinzufügen, können Sie konfigurieren, wie die Nachricht aussieht. Wenn Fehler auftreten, rendert die `ValidationSummary`-Methode das Attribut ebenfalls dynamisch `class="validation-summary-errors"`.
 
-Führen Sie die Seite erneut aus, und lassen Sie absichtlich ein Paar Felder aus. Die Fehler sind jetzt auffälliger. (In der Tat sie overdone sind, aber das ist um zu zeigen, was Sie tun können.)
+Führen Sie die Seite erneut aus, und lassen Sie absichtlich einige Felder aus. Die Fehler sind nun auffälliger. (Tatsächlich sind Sie überladen, aber das ist nur, um zu zeigen, was Sie tun können.)
 
-![Anzeigen von Validierungsfehlern, die Formatvorlage wurde Film-Seite hinzufügen](entering-data/_static/image6.png)
+![Hinzufügen einer Filmseite mit Validierungs Fehlern, die formatiert wurden](entering-data/_static/image6.png)
 
-## <a name="adding-a-link-to-the-movies-page"></a>Hinzufügen eines Links zu der Seite "Movies"
+## <a name="adding-a-link-to-the-movies-page"></a>Hinzufügen eines Links zur Seite "Filme"
 
-Ein letzter Schritt ist, es praktisch sein, die zum Abrufen der *AddMovie* Seite aus dem ursprünglichen Movie-Angebot.
+Der letzte Schritt besteht darin, den Einstieg in die Seite " *addmovie* " aus der ursprünglichen Filmliste zu vereinfachen.
 
-Öffnen der *Filme* Seite erneut. Nach dem schließenden `</div>` Tag, das folgt der `WebGrid` Helper, fügen Sie das folgende Markup hinzu:
+Öffnen Sie die Seite *Filme* erneut. Fügen Sie nach dem schließenden `</div>` Tag, das auf das `WebGrid`-Hilfsprogramm folgt, das folgende Markup hinzu:
 
 [!code-cshtml[Main](entering-data/samples/sample14.cshtml)]
 
-Wie Sie bereits gesehen haben, ASP.NET interpretiert die `~` Operator als Stamm der Website. Sie müssen keine verwenden die `~` Operator ist; können Sie das Markup `<a href="./AddMovie">Add a movie</a>` oder eine andere Möglichkeit, den Pfad zu definieren, die HTML versteht. Aber die `~` Operator ist ein guter allgemeiner Ansatz bei der Erstellung von Links für Razor-Seiten, da die Website eine flexiblere ist – Wenn Sie die aktuelle Seite in einen Unterordner verschieben, wechseln weiterhin der Link zur der *AddMovie* Seite. (Beachten Sie, dass die `~` Operator funktioniert nur in *.cshtml* Seiten. ASP.NET verstanden werden, aber es ist keine standard-HTML.)
+Wie Sie bereits gesehen haben, interpretiert ASP.NET den `~` Operator als das Stammverzeichnis der Website. Sie müssen nicht den `~`-Operator verwenden. Sie können das Markup `<a href="./AddMovie">Add a movie</a>` oder eine andere Methode verwenden, um den Pfad zu definieren, den HTML versteht. Der `~` Operator ist jedoch ein guter allgemeiner Ansatz, wenn Sie Verknüpfungen für Razor Pages erstellen, da die Website flexibler ist – wenn Sie die aktuelle Seite in einen Unterordner verschieben, wird der Link weiterhin zur *addmovie* -Seite weitergeleitet. (Beachten Sie, dass der `~`-Operator nur auf *. cshtml* -Seiten funktioniert. ASP.net versteht sie, aber es handelt sich nicht um Standard-HTML.)
 
-Wenn Sie fertig sind, führen Sie die *Filme* Seite. Es sieht so aus wie auf dieser Seite:
+Wenn Sie fertig sind, führen Sie die Seite *Filme* aus. Diese Seite sieht wie folgt aus:
 
-![Seite "Movies" mit Link zur Seite "Movies hinzufügen" "](entering-data/_static/image7.png)
+![Seite "Filme" mit Link zur Seite "Filme hinzufügen"](entering-data/_static/image7.png)
 
-Klicken Sie auf die **fügen Sie einen Film** Link, um sicherzustellen, dass darin auf die *AddMovie* Seite.
+Klicken Sie auf den Link **Film hinzufügen** , um sicherzustellen, dass er auf die Seite *addmovie* wechselt.
 
-## <a name="coming-up-next"></a>Als Nächstes kommen
+## <a name="coming-up-next"></a>Nächste nächste
 
-Im nächsten Tutorial erfahren Sie, wie, damit Benutzer Daten zu bearbeiten, die bereits in der Datenbank vorhanden ist.
+Im nächsten Tutorial erfahren Sie, wie Sie Benutzern das Bearbeiten von Daten ermöglichen, die bereits in der Datenbank vorhanden sind.
 
-## <a name="complete-listing-for-addmovie-page"></a>Vollständige Liste für AddMovie-Seite
+## <a name="complete-listing-for-addmovie-page"></a>Vervollständigen der Liste für die addmovie-Seite
 
 [!code-cshtml[Main](entering-data/samples/sample15.cshtml)]
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Einführung in ASP.NET-Webprogrammierung mithilfe der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
-- [SQL INSERT INTO-Anweisung](http://www.w3schools.com/sql/sql_insert.asp) auf der Website W3Schools
-- [Überprüfen der Benutzereingabe in der ASP.NET Web Pages-Websites](https://go.microsoft.com/fwlink/?LinkId=253002). Weitere Informationen zum Arbeiten mit der `Validation` Helper.
+- [Einführung in die ASP.net-Webprogrammierung mit der Razor-Syntax](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [SQL INSERT INTO-Anweisung](http://www.w3schools.com/sql/sql_insert.asp) auf der W3Schools-Website
+- Überprüfen [der Benutzereingaben an ASP.net Web Pages Websites](https://go.microsoft.com/fwlink/?LinkId=253002). Weitere Informationen zum Arbeiten mit dem `Validation`-Hilfsprogramm.
 
 > [!div class="step-by-step"]
 > [Zurück](form-basics.md)

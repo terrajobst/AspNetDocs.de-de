@@ -10,11 +10,11 @@ ms.assetid: 2fc4797c-38ef-4cc7-926c-ca431c4739e8
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
 ms.openlocfilehash: f00ac0db453053e53d6d6942dd1557b409f4167b
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985839"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448773"
 ---
 # <a name="action-results-in-web-api-2"></a>Aktionsergebnisse in Web-API 2
 
@@ -26,7 +26,7 @@ Eine Web-API-Controller Aktion kann Folgendes zurückgeben:
 
 1. void
 2. **HttpResponseMessage**
-3. **IHttpActionResult**
+3. **Ihttpactionresult**
 4. Ein anderer Typ
 
 Abhängig davon, welche dieser zurückgegeben wird, verwendet die Web-API einen anderen Mechanismus zum Erstellen der HTTP-Antwort.
@@ -35,14 +35,14 @@ Abhängig davon, welche dieser zurückgegeben wird, verwendet die Web-API einen 
 | --- | --- |
 | void | Rückgabe von leeren 204 (kein Inhalt) |
 | **HttpResponseMessage** | Direkt in eine HTTP-Antwortnachricht konvertieren. |
-| **IHttpActionResult** | Rufen Sie **ExecuteAsync** auf, um ein **httpresponanmessage**-Element zu erstellen und dann in eine HTTP-Antwortnachricht zu konvertieren. |
+| **Ihttpactionresult** | Rufen Sie **ExecuteAsync** auf, um ein **httpresponanmessage**-Element zu erstellen und dann in eine HTTP-Antwortnachricht zu konvertieren. |
 | Anderer Typ | Schreiben Sie den serialisierten Rückgabewert in den Antworttext. gibt 200 zurück (OK). |
 
 Im weiteren Verlauf dieses Themas werden die einzelnen Optionen ausführlicher beschrieben.
 
 ## <a name="void"></a>void
 
-Wenn der Rückgabetyp ist `void`, gibt die Web-API einfach eine leere HTTP-Antwort mit dem Statuscode 204 (kein Inhalt) zurück.
+Wenn der Rückgabetyp `void`ist, gibt die Web-API einfach eine leere HTTP-Antwort mit dem Statuscode 204 (kein Inhalt) zurück.
 
 Beispiel Controller:
 
@@ -112,10 +112,10 @@ Ein Nachteil dieses Ansatzes besteht darin, dass Sie keinen Fehlercode direkt zu
 
 Die Web-API verwendet den Accept-Header in der Anforderung, um das Formatierer auszuwählen. Weitere Informationen finden Sie unter [inhaltsaus](../formats-and-model-binding/content-negotiation.md)Handlung.
 
-Beispiel Anforderung
+Beispielanforderung
 
 [!code-console[Main](action-results/samples/sample12.cmd)]
 
-Beispiel Antwort
+Beispielantwort
 
 [!code-console[Main](action-results/samples/sample13.cmd)]

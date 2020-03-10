@@ -9,11 +9,11 @@ ms.assetid: 49d8a66c-3ea8-4087-839f-179d1d94512a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2b9cdb5af6f33171b191d5a80473c7796eb098d9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589321"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78492771"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>Verarbeiten von Ausnahmen auf BLL- und DAL-Ebene in einer ASP.NET-Seite (C#)
 
@@ -35,7 +35,7 @@ Wie bereits im [vorherigen Tutorial](examining-the-events-associated-with-insert
 
 Wir haben bereits die Ereignisse untersucht, die in Schritt 1 ausgelöst werden, und haben gesehen, wie Sie verwendet werden können, um die Eingabeparameter anzupassen oder den Vorgang abzubrechen. In diesem Tutorial werden wir uns auf die Ereignisse konzentrieren, die nach Abschluss des Vorgangs ausgelöst werden. Mit diesen Ereignis Handlern auf der Post-Ebene können Sie unter anderem ermitteln, ob eine Ausnahme während des Vorgangs aufgetreten ist, und diese ordnungsgemäß behandeln. dabei wird eine benutzerfreundliche, informative Fehlermeldung auf dem Bildschirm angezeigt, anstelle der standardmäßigen ASP.net Ausnahme Seite.
 
-Um die Arbeit mit diesen Ereignissen auf postebene zu veranschaulichen, erstellen wir eine Seite, auf der die Produkte in einer bearbeitbaren GridView aufgeführt sind. Wenn beim Aktualisieren eines Produkts eine Ausnahme ausgelöst wird, wird auf der ASP.NET-Seite eine kurze Meldung oberhalb der GridView angezeigt, in der das Problem aufgetreten ist. Fangen wir an!
+Um die Arbeit mit diesen Ereignissen auf postebene zu veranschaulichen, erstellen wir eine Seite, auf der die Produkte in einer bearbeitbaren GridView aufgeführt sind. Wenn beim Aktualisieren eines Produkts eine Ausnahme ausgelöst wird, wird auf der ASP.NET-Seite eine kurze Meldung oberhalb der GridView angezeigt, in der das Problem aufgetreten ist. Erste Schritte
 
 ## <a name="step-1-creating-an-editable-gridview-of-products"></a>Schritt 1: Erstellen einer bearbeitbaren GridView für Produkte
 
@@ -177,7 +177,7 @@ Durch diese Änderung führt jedes Preis Update, das mehr als doppelt so hoch is
 > [!NOTE]
 > Im Idealfall würden unsere Geschäftslogik Regeln aus den `UpdateProduct` Methoden Überladungen und in eine gängige Methode umgestaltet werden. Dies bleibt für den Reader eine Übung.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beim Einfügen, aktualisieren und Löschen von Vorgängen lösen sowohl das datenweb Steuerelement als auch die ObjectDataSource Ereignisse vor und nach der Ebene aus, die den eigentlichen Vorgang beenden. Wie in diesem Tutorial und der vorhergehenden erläutert wurde, wird beim Arbeiten mit einem bearbeitbaren GridView-Ereignis das `RowUpdating` Ereignis von GridView ausgelöst, gefolgt vom `Updating`-Ereignis von ObjectDataSource. zu diesem Zeitpunkt wird der Update-Befehl an das zugrunde liegende Objekt von ObjectDataSource vorgenommen. Nachdem der Vorgang abgeschlossen wurde, wird das `Updated` Ereignis von ObjectDataSource ausgelöst, gefolgt vom `RowUpdated`-Ereignis der GridView.
 
@@ -187,7 +187,7 @@ Im nächsten Tutorial erfahren Sie, wie Sie die Wahrscheinlichkeit von Ausnahmen
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

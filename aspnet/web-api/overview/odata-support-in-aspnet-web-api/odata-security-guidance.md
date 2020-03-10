@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
-title: Sicherheitsempfehlungen für ASP.NET Web-API 2-OData - ASP.NET 4.x
+title: Sicherheits Leit Faden für ASP.net-Web-API 2 odata-ASP.NET 4. x
 author: MikeWasson
-description: Beschreibt Sicherheitsaspekte zu berücksichtigen, wenn Sie ein Dataset über OData für ASP.NET Web API 2 auf ASP.NET verfügbar machen 4.x.
+description: Beschreibt Sicherheitsaspekte, die bei der Bereitstellung eines Datasets über odata für ASP.net-Web-API 2 auf ASP.NET 4. x zu beachten sind.
 ms.author: riande
 ms.date: 02/06/2013
 ms.custom: seoapril2019
@@ -10,70 +10,70 @@ ms.assetid: b91e6424-1544-4747-bd0b-d1f8418c9653
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
 ms.openlocfilehash: 8194a368cb0629c30e32ec05bf4bed150d442ad8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59393508"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448293"
 ---
-# <a name="security-guidance-for-aspnet-web-api-2-odata"></a>Sicherheitsempfehlungen für ASP.NET Web-API 2 OData
+# <a name="security-guidance-for-aspnet-web-api-2-odata"></a>Sicherheits Leit Faden für ASP.net-Web-API 2 odata
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-In diesem Thema wird beschrieben, einige der Sicherheitsprobleme, die Sie berücksichtigen sollten, wenn Sie ein Dataset über OData für ASP.NET Web API 2 auf ASP.NET verfügbar machen 4.x.
+In diesem Thema werden einige Sicherheitsaspekte beschrieben, die Sie beim verfügbar machen eines Datasets über odata für ASP.net-Web-API 2 auf ASP.NET 4. x berücksichtigen sollten.
 
 ## <a name="edm-security"></a>EDM-Sicherheit
 
-Die Semantik der Abfrage basiert auf Entity Data Model (EDM) gibt nicht die zugrunde liegenden Modelltypen. Sie können eine Eigenschaft ausschließen, aus dem EDM und wird nicht für die Abfrage sichtbar sein. Nehmen wir beispielsweise an, dass Ihr Modell einen Employee-Typ mit einem Gehalt-Eigenschaft enthält. Sie sollten diese Eigenschaft des EDM, um es von Clients ausblenden ausgeschlossen werden.
+Die Abfrage Semantik basiert auf dem Entity Data Model (EDM), nicht auf den zugrunde liegenden Modelltypen. Sie können eine Eigenschaft aus dem EDM ausschließen und sind für die Abfrage nicht sichtbar. Angenommen, das Modell enthält einen Employee-Typ mit einer Gehalt-Eigenschaft. Möglicherweise möchten Sie diese Eigenschaft aus dem EDM ausschließen, um Sie von Clients auszublenden.
 
-Es gibt zwei Möglichkeiten, eine Eigenschaft vom EDM ausschließen. Sie können festlegen, die **[IgnoreDataMember]** Attribut für die Eigenschaft in der Modellklasse:
+Es gibt zwei Möglichkeiten, eine Eigenschaft aus dem EDM auszuschließen. Sie können das Attribut **[ignoredatamember]** für die Eigenschaft in der Modell Klasse festlegen:
 
 [!code-csharp[Main](odata-security-guidance/samples/sample1.cs)]
 
-Sie können auch programmgesteuert die-Eigenschaft von EDM entfernen:
+Sie können die-Eigenschaft auch Programm gesteuert aus dem EDM entfernen:
 
 [!code-csharp[Main](odata-security-guidance/samples/sample2.cs)]
 
-## <a name="query-security"></a>Abfragesicherheit
+## <a name="query-security"></a>Abfrage Sicherheit
 
-Ein böswilliger oder naive-Client möglicherweise zum Erstellen einer Abfrage, die zum Ausführen sehr lange dauert. Im schlimmsten Fall kann dies den Zugriff auf den Dienst unterbrechen.
+Ein böswilliger oder naive Client kann möglicherweise eine Abfrage erstellen, die für die Ausführung sehr viel Zeit in Anspruch nimmt. Im schlimmsten Fall kann dies den Zugriff auf Ihren Dienst stören.
 
-Die **[Queryable]** -Attribut ist ein Aktionsfilter, der analysiert, überprüft und wendet die Abfrage. Der Filter konvertiert die Abfrageoptionen in einem LINQ-Ausdruck. Wenn der OData-Controller gibt eine **"IQueryable"** Typ, der **"IQueryable"** LINQ-Anbieter konvertiert den LINQ-Ausdruck in einer Abfrage. Aus diesem Grund hängt die Leistung auf der LINQ-Anbieter, der verwendet wird, sowie auf den bestimmten Merkmalen Ihres Schemas Dataset oder eine Datenbank.
+Das **[querable]** -Attribut ist ein Aktionsfilter, der die Abfrage analysiert, überprüft und anwendet. Der Filter konvertiert die Abfrage Optionen in einen LINQ-Ausdruck. Wenn der odata-Controller einen **iquerable** -Typ zurückgibt, konvertiert der **iquerable** LINQ-Anbieter den LINQ-Ausdruck in eine Abfrage. Daher ist die Leistung abhängig von dem verwendeten LINQ-Anbieter und den besonderen Merkmalen Ihres Datasets oder Datenbankschemas.
 
-Weitere Informationen zur Verwendung von OData-Abfrageoptionen in ASP.NET Web-API finden Sie unter [unterstützt OData-Abfrageoptionen](supporting-odata-query-options.md).
+Weitere Informationen zur Verwendung von odata-Abfrage Optionen in ASP.net-Web-API finden Sie [unter unterstützen von odata-Abfrage Optionen](supporting-odata-query-options.md).
 
-Wenn Sie wissen, dass alle Clients (z. B. in einer unternehmensumgebung) als vertrauenswürdig eingestuft werden, oder wenn Ihr Dataset klein ist, kann die abfrageleistung kein Problem dar. Andernfalls sollten Sie die folgenden Empfehlungen.
+Wenn Sie wissen, dass alle Clients vertrauenswürdig sind (z. b. in einer Unternehmensumgebung) oder wenn das DataSet klein ist, ist die Abfrageleistung möglicherweise kein Problem. Andernfalls sollten Sie die folgenden Empfehlungen in Erwägung gezogen werden.
 
-- Testen Sie des Diensts mit verschiedenen Abfragen aus, und Stufen Sie die Datenbank.
-- Aktivieren Sie servergesteuertes Paging, um zu vermeiden, ein großes Dataset in einer Abfrage zurückgegeben. Weitere Informationen finden Sie unter [Server-Driven Paging](supporting-odata-query-options.md#server-paging). 
+- Testen Sie den Dienst mit verschiedenen Abfragen, und erstellen Sie ein Profil der Datenbank.
+- Aktivieren Sie das Server gesteuerte Paging, um zu vermeiden, dass ein großes Dataset in einer Abfrage zurückgegeben wird. Weitere Informationen finden Sie unter [Server gesteuerte Auslagerung](supporting-odata-query-options.md#server-paging). 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample3.cs)]
-- Erforderlich $filter und $orderby? Bei einigen Anwendungen können paging, mithilfe von $top und $skip zulassen, aber der anderen Abfrageoptionen deaktivieren. 
+- Benötigen Sie $Filter und $OrderBy? Einige Anwendungen ermöglichen möglicherweise das Paging von Clients, indem $Top und $Skip verwendet werden, aber die anderen Abfrage Optionen werden deaktiviert. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample4.cs)]
-- Beachten Sie, $orderby auf Eigenschaften in einem gruppierten Index zu beschränken. Sortieren von großen Daten ohne gruppierten Index ist langsam. 
+- Beschränken Sie $OrderBy auf Eigenschaften in einem gruppierten Index. Das Sortieren von großen Daten ohne gruppierten Index ist langsam. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample5.cs)]
-- Maximale Knotenanzahl: Die **MaxNodeCount** Eigenschaft **[Queryable]** legt die maximale Anzahl Knoten, die in der Syntaxstruktur $filter erlaubt. Der Standardwert ist 100, aber Sie möchten ein niedrigerer Wert, da eine große Anzahl von Knoten zum Kompilieren langsam sein kann. Dies gilt insbesondere bei Verwendung von LINQ to Objects (z. B. LINQ-Abfragen in einer Auflistung im Arbeitsspeicher, ohne einen zwischengeschalteten LINQ-Anbieter). 
+- Maximale Anzahl von Knoten: die **maxnodecount** -Eigenschaft für **[querable]** legt die maximale Anzahl von Knoten fest, die in der $Filter Syntax Struktur zulässig sind. Der Standardwert ist 100, Sie möchten jedoch möglicherweise einen niedrigeren Wert festlegen, da eine große Anzahl von Knoten langsam kompiliert werden kann. Dies trifft vor allem dann zu, wenn Sie LINQ to Objects verwenden (d. h. LINQ-Abfragen für eine Auflistung im Arbeitsspeicher, ohne einen LINQ-zwischen Anbieter). 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample6.cs)]
-- Deaktivieren Sie ggf. die Funktionen any() und all(), da diese langsam sein können. 
+- Deaktivieren Sie ggf. die Funktionen any () und all (), da diese langsam sein können. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample7.cs)]
-- Wenn alle Zeichenfolgeneigenschaften große Zeichenfolgen enthalten&#8212;z. B. eine produktbeschreibung oder einem Blogeintrag&#8212;sollten Sie die Zeichenfolgenfunktionen deaktivieren. 
+- Wenn Zeichen folgen Eigenschaften z. b&#8212;. große Zeichen folgen enthalten, empfiehlt eine Produktbeschreibung&#8212;oder ein Blogeintrag die Deaktivierung der Zeichen folgen Funktionen. 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample8.cs)]
-- Beachten Sie, untersagen von Filtern auf Navigationseigenschaften. Filterung für Navigationseigenschaften kann in einem Join führen, die je nach Schema Ihrer Datenbank langsam sein kann. Der folgende Code zeigt ein Abfrage-Validierungssteuerelement, das verhindert, dass für Navigationseigenschaften des filtern. Weitere Informationen zu Abfrage-Validierungssteuerelemente, finden Sie unter [Abfragevalidierung](supporting-odata-query-options.md#query-validation). 
+- Sie sollten das Filtern auf Navigations Eigenschaften nicht zulassen. Das Filtern nach Navigations Eigenschaften kann zu einer Verknüpfung führen, die je nach Datenbankschema langsam verläuft. Der folgende Code zeigt ein Abfrage Validierungs Steuerelement, das das Filtern von Navigations Eigenschaften verhindert. Weitere Informationen zu Abfrage Validierungs Steuerelementen finden Sie unter [Abfrage Validierung](supporting-odata-query-options.md#query-validation). 
 
     [!code-csharp[Main](odata-security-guidance/samples/sample9.cs)]
-- Beachten Sie, Einschränken von $filter Abfragen durch Schreiben ein Validierungssteuerelement, das für Ihre Datenbank angepasst wird. Betrachten Sie beispielsweise diese beiden Abfragen aus: 
+- Beschränken Sie $Filter Abfragen, indem Sie ein Validierungs Steuerelement schreiben, das für Ihre Datenbank angepasst ist. Beachten Sie z. b. die folgenden beiden Abfragen: 
 
   - Alle Filme mit Actors, deren Nachname mit "A" beginnt.
-  - Alle Filme im 1994 veröffentlicht wurde.
+  - Alle in 1994 veröffentlichten Filme.
 
-    Es sei denn, Filme Akteure indiziert sind, müssen möglicherweise die erste Abfrage der Datenbank-Engine, um die gesamte Liste von Filmen zu scannen. Während die zweite Abfrage zulässig ist, werden die Annahme, dass Filme von Veröffentlichungsjahr indiziert.
+    Wenn Filme nicht von Actors indiziert werden, kann es für die erste Abfrage erforderlich sein, dass die Datenbank-Engine die gesamte Liste der Filme scannt. Die zweite Abfrage ist zwar möglicherweise akzeptabel, angenommen, die Filme werden nach dem releasejahr indiziert.
 
-    Der folgende Code zeigt ein Validierungssteuerelement, das ermöglicht das Filtern auf die Eigenschaften "ReleaseYear" und "Title", aber keine anderen Eigenschaften.
+    Der folgende Code zeigt ein Validierungs Steuerelement, das das Filtern nach den Eigenschaften "releaseyear" und "Title" ermöglicht, aber keine anderen Eigenschaften.
 
     [!code-csharp[Main](odata-security-guidance/samples/sample10.cs)]
-- Im Allgemeinen sollten Sie die $filter-Funktionen, die Sie benötigen. Wenn Ihre Clients die vollständige ausdrucksfähigkeit der $filter nicht benötigen, können Sie die zulässigen Funktionen begrenzen.
+- Im Allgemeinen sollten Sie überprüfen, welche $Filter Funktionen Sie benötigen. Wenn Ihre Clients die vollständige Ausdruckskraft $Filter nicht benötigen, können Sie die zulässigen Funktionen einschränken.

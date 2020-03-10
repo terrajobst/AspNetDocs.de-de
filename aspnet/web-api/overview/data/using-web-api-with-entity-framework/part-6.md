@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-6
-title: Erstellen Sie den JavaScript-Client | Microsoft-Dokumentation
+title: Erstellen des JavaScript-Clients | Microsoft-Dokumentation
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -9,64 +9,64 @@ ms.assetid: 20360326-b123-4b1e-abae-1d350edf4ce4
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
 ms.openlocfilehash: 74f2cc4e5e401d690042b05b028dfc0c46ae282a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413892"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504723"
 ---
 # <a name="create-the-javascript-client"></a>Erstellen des JavaScript-Clients
 
-durch [Mike Wasson](https://github.com/MikeWasson)
+von [Mike Wasson](https://github.com/MikeWasson)
 
-[Abgeschlossenes Projekt herunterladen](https://github.com/MikeWasson/BookService)
+[Herunterladen des abgeschlossenen Projekts](https://github.com/MikeWasson/BookService)
 
-In diesem Abschnitt erstellen Sie den Client für die Anwendung, die mit HTML, JavaScript, und die ["Knockout.js"](http://knockoutjs.com/) Bibliothek. Wir erstellen die Client-app in Phasen:
+In diesem Abschnitt erstellen Sie den Client für die Anwendung mithilfe von HTML, JavaScript und der [Knockout. js](http://knockoutjs.com/) -Bibliothek. Die Client-App wird in Phasen erstellt:
 
-- Zeigt eine Liste von Büchern.
-- Eine Book-Details werden angezeigt.
-- Ein neues Buch wird hinzugefügt.
+- Eine Liste der Bücher wird angezeigt.
+- Anzeigen eines Buch Details.
+- Hinzufügen eines neuen Buchs.
 
-Die Knockout-Bibliothek wird das Model-View-ViewModel (MVVM)-Muster verwendet:
+Die Knockout-Bibliothek verwendet das Model-View-ViewModel (MVVM)-Muster:
 
-- Die **Modell** ist die serverseitige Darstellung der Daten in der Business-Domäne (in unserem Fall Büchern und Autoren).
-- Die **Ansicht** spielt die Darstellungsschicht (HTML).
-- Die **Ansichtsmodell** ist ein JavaScript-Objekt, das die Modelle enthält. Das Ansichtsmodell ist eine Abstraktion der Code der Benutzeroberfläche. Es wurde keine Kenntnisse über die HTML-Darstellung. Stattdessen es repräsentiert die abstrakte Funktionen in der Ansicht, wie z. B. &quot;eine Liste von Büchern&quot;.
+- Das **Modell** ist die serverseitige Darstellung der Daten in der Geschäftsdomäne (in unserem Fall Bücher und Autoren).
+- Die **Ansicht** ist die Darstellungs Schicht (HTML).
+- Das **Ansichts Modell** ist ein JavaScript-Objekt, das die Modelle enthält. Das Ansichts Modell ist eine Code Abstraktion der Benutzeroberfläche. Die HTML-Darstellung ist nicht bekannt. Stattdessen stellt Sie abstrakte Features der Sicht dar, z. b. &quot;eine Liste der Bücher&quot;.
 
-Die Ansicht an das Ansichtsmodell datengebunden ist. Updates an das Ansichtsmodell werden in der Ansicht automatisch wiedergegeben. Das Ansichtsmodell ruft Ereignisse wie Schaltflächenklicks ebenfalls aus der Ansicht ab.
+Die Sicht ist Daten gebunden an das Ansichts Modell. Updates für das Ansichts Modell werden automatisch in der Ansicht widergespiegelt. Das Ansichts Modell ruft auch Ereignisse aus der Ansicht ab, z. b. Schaltflächen Klicks.
 
 ![](part-6/_static/image1.png)
 
-Dieser Ansatz erleichtert Ihnen so ändern Sie das Layout und die Benutzeroberfläche der app, da Sie die Bindungen ändern können, ohne Code umzuschreiben. Beispielsweise kann eine Liste von Elementen als veranschaulicht eine `<ul>`, ändern Sie ihn später in einer Tabelle.
+Mit diesem Ansatz können Sie das Layout und die Benutzeroberfläche Ihrer APP leicht ändern, da Sie die Bindungen ändern können, ohne Code neu schreiben zu müssen. Beispielsweise können Sie eine Liste von Elementen als `<ul>`anzeigen und Sie später in eine Tabelle ändern.
 
-## <a name="add-the-knockout-library"></a>Fügen Sie die Knockout-Bibliothek
+## <a name="add-the-knockout-library"></a>Hinzufügen der Knockout-Bibliothek
 
-In Visual Studio aus der **Tools** , wählen Sie im Menü **NuGet Package Manager**. Wählen Sie dann **-Paket-Manager-Konsole**. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl aus:
+Wählen Sie in Visual Studio im **Menü Extras** den Befehl **nuget-Paket-Manager**aus. Klicken Sie anschließend auf **Paket-Manager-Konsole**. Geben Sie im Fenster Paket-Manager-Konsole den folgenden Befehl ein:
 
 [!code-console[Main](part-6/samples/sample1.cmd)]
 
-Dieser Befehl fügt die Knockout-Dateien zum Ordner "Scripts" an.
+Mit diesem Befehl werden die Knockout-Dateien dem Ordner "Scripts" hinzugefügt.
 
-## <a name="create-the-view-model"></a>Erstellen des Ansichtsmodells
+## <a name="create-the-view-model"></a>Erstellen des Ansichts Modells
 
-Fügen Sie eine JavaScript-Datei mit dem Namen "App.js", um den Ordner "Scripts" hinzu. (Klicken Sie im Projektmappen-Explorer mit der Maustaste Ordner "Scripts", wählen Sie **hinzufügen**, und wählen Sie dann **JavaScript-Datei**.) Fügen Sie in den folgenden Code:
+Fügen Sie dem Ordner Scripts eine JavaScript-Datei mit dem Namen app. js hinzu. (Klicken Sie in Projektmappen-Explorer mit der rechten Maustaste auf den Ordner Skripts, wählen Sie **Hinzufügen**und dann **JavaScript-Datei**aus.) Fügen Sie den folgenden Code ein:
 
 [!code-javascript[Main](part-6/samples/sample2.js)]
 
-In Knockout die `observable` Klasse ermöglicht die Datenbindung. Wenn der Inhalt der Observable-Objekt ändern, benachrichtigt das beobachtbare Objekt alle datengebundenen Steuerelemente, damit sie sich selbst aktualisiert werden können. (Die `observableArray` Klasse ist die Array-Version von *Observable*.) Zunächst hat unser Ansichtsmodell zwei wahrnehmbare Elemente:
+In Knockout ermöglicht die `observable`-Klasse die Datenbindung. Wenn sich der Inhalt einer wahrnehmbaren Änderung ändert, benachrichtigt das Observable-Steuerelement alle Daten gebundenen Steuerelemente, sodass Sie sich selbst aktualisieren können. (Die `observableArray` Klasse ist die Array Version von *Observable*.) Um mit zu beginnen, verfügt unser Ansichts Modell über zwei Observables:
 
 - `books` enthält die Liste der Bücher.
-- `error` enthält eine Fehlermeldung angezeigt, wenn ein AJAX-Aufruf ein Fehler auftritt.
+- `error` enthält eine Fehlermeldung, wenn ein AJAX-Befehl fehlschlägt.
 
-Die `getAllBooks` Weise wird einen AJAX-Aufruf, um die Liste der Bücher zu erhalten. Und sie das Ergebnis auf überträgt die `books` Array.
+Die `getAllBooks`-Methode führt einen AJAX-Befehl aus, um die Liste der Bücher abzurufen. Anschließend wird das Ergebnis auf das `books` Array gepusht.
 
-Die `ko.applyBindings` Methode ist Teil der die Knockout-Bibliothek. Es dauert das Ansichtsmodell als Parameter und richtet die Datenbindung.
+Die `ko.applyBindings`-Methode ist Teil der Knockout-Bibliothek. Er übernimmt das Ansichts Modell als Parameter und richtet die Datenbindung ein.
 
-## <a name="add-a-script-bundle"></a>Fügen Sie ein Skript-Paket hinzu
+## <a name="add-a-script-bundle"></a>Skript Bündel hinzufügen
 
-Bündelung ist ein Feature in ASP.NET 4.5, die ganz einfach kombinieren oder mehrere Dateien in einer einzelnen Datei gebündelt. Bündelung reduziert die Anzahl der Anforderungen an den Server, der Seitenladezeit verbessert werden kann.
+Bündelung ist ein Feature in ASP.NET 4,5, das das kombinieren oder bündeln mehrerer Dateien in einer einzigen Datei vereinfacht. Die Bündelung reduziert die Anzahl der Anforderungen an den Server, wodurch die Seitenladezeit verbessert werden kann.
 
-Öffnen Sie die Datei App\_Start/BundleConfig.cs. Fügen Sie den folgenden Code, der RegisterBundles-Methode.
+Öffnen Sie die Datei-App\_Start/bundleconfig. cs. Fügen Sie der registerbundles-Methode den folgenden Code hinzu.
 
 [!code-csharp[Main](part-6/samples/sample3.cs)]
 

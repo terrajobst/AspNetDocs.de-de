@@ -9,11 +9,11 @@ ms.assetid: 60512d6a-b572-4b7a-beb3-3e44b4d2020c
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5bda42965f7d1db71b207c0b76e251b8fff64e31
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606121"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508221"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-c"></a>Abfragen von Daten mit dem SqlDataSource-Steuerelement (C#)
 
@@ -117,7 +117,7 @@ Nachdem Sie den Assistenten so konfiguriert haben, dass er die Spalten `ProductI
 
 **Abbildung 9**: Klicken auf die Schaltfläche "Test Abfrage" zum Überprüfen der `SELECT` Abfrage
 
-Zum Abschließen des Assistenten klicken Sie auf Fertig stellen.
+Klicken Sie auf Fertigstellen, um den Assistenten abzuschließen.
 
 Wie bei ObjectDataSource weist der SqlDataSource-Assistent nur den Eigenschaften des Steuer Elements Werte zu, nämlich die Eigenschaften [`ConnectionString`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) und [`SelectCommand`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) . Nachdem Sie den Assistenten abgeschlossen haben, sollte das deklarative Markup Ihres SqlDataSource-Steuer Elements in etwa wie folgt aussehen:
 
@@ -195,7 +195,7 @@ Nachdem Sie den Assistenten abgeschlossen haben, werden der GridView drei boundf
 
 **Abbildung 15**: die GridView zeigt die ID des Produkts, den Namen und den zugehörigen Kategorienamen[an (Klicken Sie, um das Bild in voller Größe anzuzeigen](querying-data-with-the-sqldatasource-control-cs/_static/image23.gif))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial wurde erläutert, wie Daten mithilfe des SqlDataSource-Steuer Elements abgefragt und angezeigt werden. Wie bei ObjectDataSource fungiert auch SqlDataSource als Proxy, der einen deklarativen Ansatz für den Zugriff auf Daten bereitstellt. Die Eigenschaften geben die Datenbank an, mit der eine Verbindung hergestellt werden soll, und die auszuführende SQL `SELECT` Abfrage. Sie können über die Eigenschaftenfenster oder mithilfe des Assistenten zum Konfigurieren von Datenquellen angegeben werden.
 
@@ -203,7 +203,7 @@ In den `SELECT` Abfrage Beispielen, die wir in diesem Tutorial überprüft haben
 
 Fröhliche Programmierung!
 
-## <a name="further-reading"></a>Weiterführende Themen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -213,7 +213,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Das Web. config-`<connectionStrings>` Element](https://msdn.microsoft.com/library/bf7sd233.aspx)
 - [Daten bankverbindungs-Zeichen folgen Verweis](http://www.connectionstrings.com/)
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
@@ -222,4 +222,4 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Die führenden Reviewer für dieses Tutorial waren Susan-Konstante, Bernadette Leigh und David suru. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, können Sie eine Zeile in [mitchell@4GuysFromRolla.comablegen.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [Weiter](using-parameterized-queries-with-the-sqldatasource-cs.md)

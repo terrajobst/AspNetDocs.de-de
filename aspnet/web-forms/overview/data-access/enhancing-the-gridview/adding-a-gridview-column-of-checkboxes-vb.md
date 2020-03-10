@@ -9,11 +9,11 @@ ms.assetid: 39253d05-75c0-41c7-b9d4-a6c58ecf69ce
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c620b2eac5844d4030c1309b45e7d6a72d1f386a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592425"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491883"
 ---
 # <a name="adding-a-gridview-column-of-checkboxes-vb"></a>Hinzufügen einer GridView-Spalte mit Kontrollkästchen (VB)
 
@@ -122,7 +122,7 @@ Mit diesem Code wird durch Klicken auf die Schaltfläche Alle überprüfen ein P
 > [!NOTE]
 > Wenn Sie eine Spalte mit Kontrollkästchen anzeigen, wird ein Ansatz zum auswählen oder Aufheben der Auswahl aller Kontrollkästchen durch ein Kontrollkästchen in der Kopfzeile angezeigt. Außerdem ist für die gesamte Implementierung überprüfen alle/alle deaktivieren ein Postback erforderlich. Die Kontrollkästchen können allerdings vollständig über das Client seitige Skript aktiviert oder deaktiviert werden. Dadurch wird eine benutzerfreundliche Darstellung des Benutzer Erlebnisses bereitgestellt. Aktivieren Sie das Kontrollkästchen Alle [Kontrollkästchen in einer GridView mithilfe eines Client seitigen Skripts und eines Kontrollkästchens überprüfen](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx), um die Verwendung einer Kopfzeile für alle Überprüfungen und das Deaktivieren der Daten im Detail zu untersuchen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In Fällen, in denen Sie es Benutzern ermöglichen müssen, eine beliebige Anzahl von Zeilen aus einer GridView auszuwählen, bevor Sie fortfahren, ist das Hinzufügen einer Spalte mit Kontrollkästchen eine Option. Wie in diesem Tutorial gezeigt, umfasst das Hinzufügen einer Spalte mit Kontrollkästchen in der GridView das Hinzufügen eines TemplateField mit einem CheckBox-websteuer Element. Durch die Verwendung eines websteuer Elements (im Gegensatz zum direkten Einfügen von Markup in die Vorlage, wie im vorherigen Tutorial), wird ASP.NET automatisch daran erinnert, welche Kontrollkästchen waren und nicht über das Postback überprüft wurden. Wir können auch Programm gesteuert auf die Kontrollkästchen im Code zugreifen, um zu bestimmen, ob ein bestimmtes Kontrollkästchen aktiviert ist, oder um den aktivierten Zustand zu ändern.
 
@@ -130,7 +130,7 @@ In diesem Tutorial und dem letzten Artikel wurde das Hinzufügen einer Zeilensel
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

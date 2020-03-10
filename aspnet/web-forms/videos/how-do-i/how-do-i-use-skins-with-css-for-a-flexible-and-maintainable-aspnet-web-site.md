@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
-title: '[Gewusst wie:] Verwenden von Skins mit CSS für eine ASP.NET-Website Flexibilität und Verwaltung | Microsoft-Dokumentation'
+title: '[Gewusst wie:] Verwenden von Skins mit CSS für eine flexible und wart bare ASP.NET-Website | Microsoft-Dokumentation'
 author: rick-anderson
-description: In diesem video Chris Pels zeigt, wie Designs für ASP.NET-Serversteuerelemente erstellen und binden Sie CSS-Formatvorlagen, um zu steuern, die Darstellung der weltsprachen Vertr....
+description: In diesem Video zeigt Chris Pels, wie Sie Skins für ASP.NET-Server Steuerelemente erstellen und dann CSS-Stile integrieren, um die Darstellung der gehäuten Contr zu steuern...
 ms.author: riande
 ms.date: 08/07/2008
 ms.assetid: aaada05a-5735-4d90-b52d-b58e746a1074
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
 msc.type: video
 ms.openlocfilehash: 13edb10900a6278f5bff923be8f4ed9fe5eda9b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398981"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78488169"
 ---
-# <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a>[Gewusst wie:] Verwenden von Skins mit CSS für eine Flexible und verwaltbar ASP.NET-Website
+# <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a>[Gewusst wie:] Verwenden von Skins mit CSS für eine flexible und wart bare ASP.NET-Website
 
-durch [Chris Pels](https://twitter.com/chrispels)
+von [Chris Pels](https://twitter.com/chrispels)
 
-In diesem video Chris Pels zeigt, wie Designs für ASP.NET-Serversteuerelemente erstellen und binden Sie CSS-Formatvorlagen, um die Darstellung der Steuerelemente weltsprachen steuern. Zunächst erfahren Sie, wie eine Skin für ein ASP.NET-Serversteuerelement wie z. B. eine Bezeichnung zu erstellen, die die Darstellung der Bezeichnungen in einer Website steuert. Als Nächstes finden Sie unter der Definition die visuelle Darstellung für ein Design auf CSS-Formatvorlagen zu abstrahieren. Erfahren Sie die Vorteile der Stilinformationen für eine Skin für einen in die CSS-Formatvorlagen, während dieses Vorgangs. Feststellen Sie, wie Sie mehrere Designs und die zugehörigen Formate für ein ASP.NET-Steuerelement wie z. B. eine Bezeichnung, die verwendet werden kann, um die Darstellung bestimmter Typen von Bezeichnungen in einer Website standardisieren erstellen. Abschließend lernen Sie die Vorteile der Anwendung eines CSS-Stils auf mehreren Designs sowie die Möglichkeit für die anzuwendende auf eine generische HTML-Element ein.
+In diesem Video zeigt Chris Pels, wie Sie Skins für ASP.NET-Server Steuerelemente erstellen und dann CSS-Stile integrieren, um die Darstellung der Steuerelemente zu steuern. Zunächst erfahren Sie, wie Sie ein Skin für ein ASP.NET-Server Steuerelement erstellen, z. b. eine Bezeichnung, die die Darstellung von Bezeichnungen in einer Website steuert. Als Nächstes erfahren Sie, wie Sie die Definition des visuellen Erscheinungs Bilds für eine Skin auf CSS-Stile abstrahieren. Während dieses Vorgangs erlernen Sie die Vorteile der Formatierungsinformationen für eine Skin in den CSS-Stilen. Anschließend erfahren Sie, wie Sie mehrere Skins und entsprechende Stile für ein einzelnes ASP.NET-Steuerelement erstellen, z. b. eine Bezeichnung, mit der die Darstellung bestimmter Arten von Bezeichnungen in einer Website standardisiert werden kann. Schließlich erfahren Sie mehr über die Vorteile der Anwendung eines CSS-Stils auf mehrere Skins und die Möglichkeit, Sie auf ein generisches HTML-Element anzuwenden.
 
-[&#9654;Sehen Sie sich Video (29 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site)
+[&#9654;Video ansehen (29 Minuten)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site)

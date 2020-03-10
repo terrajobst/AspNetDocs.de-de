@@ -9,11 +9,11 @@ ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: d8af9c8e7ee1316a5eac90c5959d07c628154e09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600437"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449523"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET and Web Tools für Visual Studio 2013 – Anmerkungen zu dieser Version
 
@@ -40,7 +40,7 @@ von [Microsoft](https://github.com/microsoft)
 - [ASP.net Web Forms](#TOC9)
 - [ASP.NET MVC 5](#TOC10)
 - [ASP.net-Web-API 2](#TOC11)
-- [ASP.net signalr](#TOC13)
+- [ASP.NET SignalR](#TOC13)
 - [ASP.NET Identity](#TOC8)
 - [Microsoft-owin-Komponenten](#TOC7)
 - [Entity Framework 6](#ef6)
@@ -87,7 +87,7 @@ Das neue Dialogfeld ermöglicht es Ihnen, die Standard Authentifizierungs Option
 - Organisations Konten (Active Directory in einer Internetanwendung)
 - Windows-Authentifizierung (Active Directory in einer Intranetanwendung)
 
-![Authentifizierungs Optionen](release-notes/_static/image2.png)
+![Authentifizierungsoptionen](release-notes/_static/image2.png)
 
 Weitere Informationen zum neuen Prozess zum Erstellen von Webprojekten finden Sie unter [Erstellen von ASP.NET-Webprojekten in Visual Studio 2013](creating-web-projects-in-visual-studio.md). Weitere Informationen zu den neuen Authentifizierungs Optionen finden Sie unter [ASP.net Identity](#TOC8) weiter unten in diesem Dokument.
 
@@ -139,7 +139,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Erweiterungen für die Webveröffentlichung
 
-Visual Studio 2013 enthält neue und verbesserte Webveröffentlichungs Features. Dies sind einige der folgenden:
+Visual Studio 2013 enthält neue und verbesserte Webveröffentlichungs Features. Einige davon sind:
 
 - Automatisieren Sie mühelos die [Dateiverschlüsselung von Web. config](https://go.microsoft.com/fwlink/?LinkId=325529). (Dieser Link und die folgenden beiden weisen auf die Dokumentation auf MSDN hin, die möglicherweise erst am Ende des Tages am 10/17 verfügbar ist.)
 - Einfaches [Automatisieren der Offline Schaltung einer Anwendung während der Bereitstellung](https://go.microsoft.com/fwlink/?LinkId=325530).
@@ -280,9 +280,9 @@ Da der Prinzipal für die Anforderung mit der Anforderung weitergeleitet wird, a
 
 Dank eines weiteren großen Beitrags von Brock allen unterstützt ASP.net jetzt vollständig die Cross Origin Request Sharing (cors).
 
-Die Browser Sicherheit verhindert, dass eine Webseite AJAX-Anforderungen an eine andere Domäne sendet. [Cors](http://www.w3.org/TR/cors/) ist ein W3C-Standard, der es einem Server ermöglicht, die Richtlinie für denselben Ursprung zu lockern. Mithilfe von cors kann ein Server einige Ursprungs übergreifende Anforderungen explizit zulassen und andere ablehnen.
+Die Browsersicherheit verhindert, dass eine Webseite AJAX-Anforderungen an eine andere Domäne richtet. [Cors](http://www.w3.org/TR/cors/) ist ein W3C-Standard, der es einem Server ermöglicht, die Richtlinie für denselben Ursprung zu lockern. Mit CORS kann ein Server explizit einige ursprungsübergreifende Anforderungen zulassen und andere ablehnen.
 
-Web-API 2 unterstützt jetzt cors, einschließlich automatischer Behandlung von Preflight-Anforderungen. Weitere Informationen finden Sie unter [Aktivieren von Ursprungs übergreifenden Anforderungen in ASP.net-Web-API](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md).
+Web-API 2 unterstützt jetzt cors, einschließlich automatischer Behandlung von Preflight-Anforderungen. Weitere Informationen finden Sie unter [Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET Web-API](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md).
 
 ### <a name="authentication-filters"></a>Authentifizierungs Filter
 
@@ -624,7 +624,7 @@ In diesem Abschnitt werden bekannte Probleme und wichtige Änderungen im ASP.net
 
 1. Wenn Sie Übersichten verfügen, für die die Überprüfung des antiforgertokens durchzuführen ist, kann bei Verwendung von MVC5 und orgauth der folgende Fehler auftreten, wenn Sie Daten in der Ansicht bereitstellen:
 
-    **Fehler**:
+    **Fehler:**
 
     *Server Fehler in "/"-Anwendung.*
 
@@ -678,7 +678,7 @@ Projektmappe:
 
 2. Testen Sie das Szenario in einem anderen Browser als IE.
 
-### <a name="web-forms-scaffolding"></a>Web Forms Gerüstbau
+### <a name="web-forms-scaffolding"></a>Web Forms-Gerüst
 
 Web Forms Gerüstbau wurde aus VS2013 entfernt und ist in einem zukünftigen Update von Visual Studio verfügbar. Sie können Gerüstbau jedoch weiterhin in einem Web Forms Projekt verwenden, indem Sie MVC-Abhängigkeiten hinzufügen und Gerüstbau für MVC erstellen. Das Projekt enthält eine Kombination aus Web Forms und MVC.
 

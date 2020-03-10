@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/security/index
-title: Sicherheit, Authentifizierung und Autorisierung in ASP.NET Web-API | Microsoft-Dokumentation
+title: Sicherheit, Authentifizierung und Autorisierung in ASP.net-Web-API | Microsoft-Dokumentation
 author: rick-anderson
 description: Sicherheitsprobleme bei der Web-API.
 ms.author: riande
@@ -9,13 +9,13 @@ ms.assetid: bb38add0-5223-4b04-9b12-245911af865a
 msc.legacyurl: /web-api/overview/security
 msc.type: chapter
 ms.openlocfilehash: a8fa905e86d76c1c846418d32d4c390d41ecc9b4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134345"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447189"
 ---
-# <a name="security-authentication-and-authorization-in-aspnet-web-api"></a>Sicherheit, Authentifizierung und Autorisierung in ASP.NET Web-API
+# <a name="security-authentication-and-authorization-in-aspnet-web-api"></a>Sicherheit, Authentifizierung und Autorisierung in ASP.net-Web-API
 
 > Sicherheitsprobleme bei der Web-API.
 

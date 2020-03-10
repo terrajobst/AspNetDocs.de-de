@@ -9,11 +9,11 @@ ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a8ca71b96cb84c97b1a60ae6a3d1a129cd1b0b10
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606387"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509049"
 ---
 # <a name="fighting-bots-vb"></a>Abwehren von Bots (VB)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Automatisierte Bots Verputzen Webprotokolle und andere Websites mit Spam und senden Kommentar Formulare ohne Benutzerinteraktion. Das NOBOT-Steuerelement im ASP.NET AJAX Control Toolkit kann Ihnen helfen, diese Bots zu bekämpfen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Automatisierte Bots Verputzen Webprotokolle und andere Websites mit Spam und senden Kommentar Formulare ohne Benutzerinteraktion. Das NOBOT-Steuerelement im ASP.NET AJAX Control Toolkit kann Ihnen helfen, diese Bots zu bekämpfen.
 
@@ -68,4 +68,4 @@ Wenn Sie dieses Skript ausführen und JavaScript deaktivieren oder das Formular 
 Diese Fehlermeldung wurde möglicherweise von einem bot verursacht ([Klicken Sie, um das Bild in voller Größe anzuzeigen](fighting-bots-vb/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Vorheriges](fighting-bots-cs.md)
+> [Previous](fighting-bots-cs.md)

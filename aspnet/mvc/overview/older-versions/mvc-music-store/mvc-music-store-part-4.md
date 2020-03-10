@@ -2,152 +2,152 @@
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 title: 'Teil 4: Modelle und Datenzugriff | Microsoft-Dokumentation'
 author: jongalloway
-description: Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 4 sind die Modelle und Datenzugriff.
+description: In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 4 werden Modelle und der Datenzugriff behandelt.
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: ab55ca81-ab9b-44a0-8700-dc6da2599335
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 msc.type: authoredcontent
 ms.openlocfilehash: 402be340f1ea3344675e7b859cea8c5130cfc8ee
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129653"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451017"
 ---
 # <a name="part-4-models-and-data-access"></a>Teil 4: Modelle und Datenzugriff
 
-durch [Jon Galloway](https://github.com/jongalloway)
+von [Jon Galloway](https://github.com/jongalloway)
 
-> Die MVC Music Store ist ein lernprogrammanwendung, die eingeführt und erläutert Schritt für Schritt, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwenden.  
+> Der MVC Music Store ist eine Lernprogramm Anwendung, die Schritt für Schritt erläutert, wie ASP.NET MVC und Visual Studio für die Webentwicklung verwendet werden.  
 >   
-> Die MVC Music Store ist eine Implementierung eines einfachen Beispiels die Alben online verkauft und implementiert grundlegende Verwaltung, Benutzeranmeldung und shopping Cart-Funktionalität.
+> Der MVC Music Store ist eine einfache Beispiel Speicher Implementierung, die Musikalben online verkauft und grundlegende Funktionen für Website Verwaltung, Benutzeranmeldung und Warenkorb implementiert.
 > 
-> Dieser tutorialreihe werden alle Schritte ausgeführt, um die ASP.NET MVC Music Store-beispielanwendung zu erstellen. Teil 4 sind die Modelle und Datenzugriff.
+> In dieser tutorialreihe werden alle Schritte erläutert, die zum Erstellen der ASP.NET MVC Music Store-Beispielanwendung ausgeführt wurden. In Teil 4 werden Modelle und der Datenzugriff behandelt.
 
-Bisher haben wir nur "unechten Daten" aus unserer Controllern an unsere Vorlagen anzeigen übergeben wurde. Wir nun können eine echte Datenbank verknüpft. In diesem Tutorial werden wir mit SQL Server Compact Edition (häufig SQL CE genannt) als unsere Datenbank-Engine behandelt. SQL CE ist eine kostenlose, eingebettete, dateibasierte Datenbank, die keine erfordert Installation oder Konfiguration, dadurch wird es wirklich praktisch, für die lokale Entwicklung.
+Bisher haben wir soeben "Dummy-Daten" von unseren Controllern an unsere Ansichts Vorlagen übergeben. Jetzt sind wir bereit, eine echte Datenbank zu verbinden. In diesem Tutorial wird erläutert, wie Sie SQL Server Compact Edition (häufig als SQL CE bezeichnet) als Datenbank-Engine verwenden. Bei SQL CE handelt es sich um eine kostenlose, eingebettete, dateibasierte Datenbank, für die keine Installation oder Konfiguration erforderlich ist, was für die lokale Entwicklung praktisch ist.
 
-## <a name="database-access-with-entity-framework-code-first"></a>Zugriff auf die Datenbank mit Entity Framework Code First
+## <a name="database-access-with-entity-framework-code-first"></a>Datenbankzugriff mit Entity Framework Code First
 
-Wir verwenden die Unterstützung von Entity Framework (EF), die in ASP.NET MVC 3-Projekten, zum Abfragen und aktualisieren Sie die Datenbank enthalten ist. EF ist ein flexibles Objekt relational mapping (ORM), Daten-API, die Entwicklern, Abfragen und Aktualisieren von Daten in einer Datenbank in eine objektorientierte Weise gespeichert ermöglicht.
+Wir verwenden die Unterstützung von Entity Framework (EF), die in ASP.NET MVC 3-Projekten enthalten ist, um die Datenbank abzufragen und zu aktualisieren. EF ist eine flexible ORM-Daten-API (Object Relational Mapping), mit der Entwickler in einer Datenbank gespeicherte Daten in objektorientierter Weise Abfragen und aktualisieren können.
 
-Entitätsframework, Version 4 unterstützt ein bezeichnet der Code-First-Entwicklung-Paradigma. Code First können Sie Model-Objekts zu erstellen, durch das Schreiben von einfachen Klassen (auch bekannt als POCO von "Plain-Old" CLR Objects), und Sie können auch die Datenbank während der Bearbeitung von Klassen erstellen.
+Entity Framework Version 4 unterstützt ein Entwicklungsparadigma namens "Code First". Code First ermöglicht das Erstellen eines Modell Objekts, indem einfache Klassen geschrieben werden (auch als poco aus "Plain-Old" CLR-Objekten bezeichnet), und die Datenbank kann sogar dynamisch von ihren Klassen erstellt werden.
 
-### <a name="changes-to-our-model-classes"></a>Änderungen an unserem ViewModel-Klassen
+### <a name="changes-to-our-model-classes"></a>Änderungen an unseren Modellklassen
 
-Es wird das Datenbank-erstellen-Feature in Entity Framework in diesem Tutorial nutzen. Bevor wir dies tun, stellen jedoch einige kleinere Änderungen lassen Sie uns auf unsere Modellklassen Punkte hinzufügen, die wir später verwenden.
+Wir nutzen das Daten Bank Erstellungs Feature in Entity Framework in diesem Tutorial. Bevor wir dies tun, nehmen wir jedoch einige geringfügige Änderungen an unseren Modellklassen vor, um einige Dinge hinzuzufügen, die wir später verwenden werden.
 
-#### <a name="adding-the-artist-model-classes"></a>Hinzufügen von Modellklassen der Künstler diese geändert hat
+#### <a name="adding-the-artist-model-classes"></a>Hinzufügen der Klassen des Modell Modells
 
-Unsere Alben werden Künstler, zugeordnet werden, damit wir eine einfache Modellklasse, die zum Beschreiben eines Interpreten hinzufügen. Fügen Sie eine neue Klasse, um den Ordner "Models", die mit dem Namen Artist.cs mit den folgenden Code.
+Unsere Alben werden Künstlern zugeordnet, daher fügen wir eine einfache Modell Klasse hinzu, um einen Künstler zu beschreiben. Fügen Sie dem Ordner Models mithilfe des unten gezeigten Codes eine neue Klasse mit dem Namen Artist.cs hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample1.cs)]
 
-#### <a name="updating-our-model-classes"></a>Aktualisieren die Modellklassen
+#### <a name="updating-our-model-classes"></a>Aktualisieren der Modellklassen
 
-Aktualisieren Sie die Album-Klasse, wie unten dargestellt.
+Aktualisieren Sie die-Album Klasse wie unten gezeigt.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample2.cs)]
 
-Stellen Sie als Nächstes die folgenden Updates auf die Klasse "Genre" ein.
+Nehmen Sie als nächstes die folgenden Aktualisierungen an der Genre-Klasse vor.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample3.cs)]
 
-### <a name="adding-the-appdata-folder"></a>Hinzufügen der App\_Datenordner
+### <a name="adding-the-app_data-folder"></a>Hinzufügen der APP\_Datenordner
 
-Fügen wir eine App\_Datenverzeichnis auf das Projekt aus, um unsere SQL Server Express-Datenbankdateien speichern. App\_Daten ist ein besonderes Verzeichnis in ASP.NET die bereits die richtige Sicherheits-Zugriffsberechtigungen für den Zugriff auf die Datenbank hat. Wählen Sie im Menü Projekt ASP.NET-Ordner hinzufügen und dann die App\_Daten.
+Wir fügen dem Projekt eine APP\_Datenverzeichnis hinzu, um unsere SQL Server Express Datenbankdateien zu speichern. App-\_Daten sind ein spezielles Verzeichnis in ASP.net, das bereits über die erforderlichen Sicherheits Zugriffsberechtigungen für den Datenbankzugriff verfügt. Wählen Sie im Menü Projekt die Option ASP.NET-Ordner hinzufügen und dann App-\_Daten aus.
 
 ![](mvc-music-store-part-4/_static/image1.png)
 
-### <a name="creating-a-connection-string-in-the-webconfig-file"></a>Erstellen einer Verbindungszeichenfolge in der Datei "Web.config"
+### <a name="creating-a-connection-string-in-the-webconfig-file"></a>Erstellen einer Verbindungs Zeichenfolge in der Datei "Web. config"
 
-Wir werden einige Zeilen der Website-Konfigurationsdatei hinzufügen, damit Entity Framework erkennt, Herstellen einer Verbindung mit der Datenbank. Doppelklicken Sie auf die Datei "Web.config" im Stammverzeichnis des Projekts.
+Wir fügen der Konfigurationsdatei der Website einige Zeilen hinzu, damit Entity Framework weiß, wie eine Verbindung mit der Datenbank hergestellt wird. Doppelklicken Sie auf die Datei "Web. config", die sich im Stammverzeichnis des Projekts befindet.
 
 ![](mvc-music-store-part-4/_static/image2.png)
 
-Führen Sie einen Bildlauf zum unteren Rand dieser Datei, und fügen eine &lt;ConnectionStrings&gt; direkt oberhalb der letzten Zeile im Abschnitt, wie unten dargestellt.
+Scrollen Sie zum Ende dieser Datei, und fügen Sie einen &lt;connectionStrings&gt; Abschnitt direkt oberhalb der letzten Zeile hinzu, wie unten gezeigt.
 
 [!code-xml[Main](mvc-music-store-part-4/samples/sample4.xml)]
 
-### <a name="adding-a-context-class"></a>Hinzufügen einer Context-Klasse
+### <a name="adding-a-context-class"></a>Hinzufügen einer Kontext Klasse
 
-Mit der rechten Maustaste in den Ordner "Models", und fügen Sie eine neue Klasse namens MusicStoreEntities.cs hinzu.
+Klicken Sie mit der rechten Maustaste auf den Ordner Modelle, und fügen Sie eine neue Klasse namens MusicStoreEntities.cs
 
 ![](mvc-music-store-part-4/_static/image3.png)
 
-Diese Klasse wird den Entity Framework-Datenbankkontext darstellen und wird verarbeiten unserer erstellen, lesen, aktualisieren und delete-Operationen für uns. Der Code für diese Klasse ist unten dargestellt.
+Diese Klasse stellt den Daten Bank Kontext Entity Framework dar und übernimmt die Erstellungs-, Lese-, Aktualisierungs-und Löschvorgänge für uns. Der Code für diese Klasse wird unten dargestellt.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample5.cs)]
 
-Das ist schon alles – es ist keine weitere Konfiguration, spezielle Schnittstellen usw. Unsere MusicStoreEntities-Klasse kann durch die Erweiterung der DbContext-Basisklasse, unsere Datenbankvorgänge für uns zu behandeln. Nun, da wir, die eingebunden haben, fügen Sie einigen weitere Eigenschaften auf unserem Modellklassen einige zusätzliche Informationen in unserer Datenbank nutzen.
+Das ist das, es gibt keine andere Konfiguration, keine speziellen Schnittstellen usw. Durch die Erweiterung der dbcontext-Basisklasse kann unsere Klasse "musicstoreentities" unsere Daten Bank Vorgänge für uns verarbeiten. Nachdem wir nun damit verknüpft sind, fügen wir unseren Modellklassen einige weitere Eigenschaften hinzu, um einige der zusätzlichen Informationen in unserer Datenbank zu nutzen.
 
-### <a name="adding-our-store-catalog-data"></a>Unsere Daten der Store-Katalog hinzufügen
+### <a name="adding-our-store-catalog-data"></a>Hinzufügen von Daten zum Store-Katalog
 
-Es wird ein Feature in Entity Framework nutzen "Seed"-Daten in eine neu erstellte Datenbank hinzufügt. Unsere Store-Katalog mit einer Liste von Genres und Interpreten, Alben ausgefüllt. Der MvcMusicStore-Assets.zip Download – was unsere Website Design-Dateien, die weiter oben in diesem Tutorial verwendete enthalten – verfügt über eine Klassendatei mit Seed-Daten, befindet sich in einem Ordner namens Code.
+Wir nutzen eine Funktion in Entity Framework, die einer neu erstellten Datenbank "Seed"-Daten hinzufügt. Dadurch wird der Store-Katalog mit einer Liste von Genres, Künstlern und Alben vorab aufgefüllt. Der MvcMusicStore-Assets. zip-Download, der unsere zuvor in diesem Tutorial verwendeten Website Designdateien enthielt, verfügt über eine Klassendatei mit diesen Seed-Daten, die sich in einem Ordner mit dem Namen "Code" befindet.
 
-Innerhalb des Codes / Ordner "Models", suchen Sie die SampleData.cs-Datei, und legen Sie sie in den Ordner "Models" in Ihrem Projekt, wie unten dargestellt.
+Suchen Sie im Ordner Code/Models die Datei SampleData.cs, und legen Sie Sie im Ordner Models in unserem Projekt ab, wie unten gezeigt.
 
 ![](mvc-music-store-part-4/_static/image4.png)
 
-Nun müssen wir eine Codezeile erforderlich, um mitzuteilen, Entity Framework über die SampleData-Klasse hinzufügen. Doppelklicken Sie auf die Datei "Global.asax" im Stammverzeichnis des Projekts, öffnen es, und fügen die folgende Zeile am Anfang die Anwendung\_Start-Methode.
+Nun müssen wir eine Codezeile hinzufügen, um Entity Framework über die SampleData-Klasse zu informieren. Doppelklicken Sie auf die Datei Global. asax im Stammverzeichnis des Projekts, um es zu öffnen, und fügen Sie die folgende Zeile am Anfang der Anwendung\_Start-Methode hinzu.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample6.cs)]
 
-An diesem Punkt haben wir die erforderlichen Schritte zum Konfigurieren von Entity Framework für unser Projekt abgeschlossen.
+An diesem Punkt haben wir die notwendigen Schritte zum Konfigurieren von Entity Framework für das Projekt abgeschlossen.
 
 ## <a name="querying-the-database"></a>Abfragen der Datenbank
 
-Jetzt aktualisieren wir unsere StoreController, damit anstelle von "dummy-Daten" stattdessen unsere Datenbank alle zugehörigen Informationen Abfragen aufrufen. Wir beginnen mit Deklarieren eines Feldes in der **StoreController** , die eine Instanz der MusicStoreEntities-Klasse, mit dem Namen StoreDB enthalten soll:
+Nun aktualisieren wir den StoreController, sodass anstelle der Verwendung von "Dummy-Daten" stattdessen die Datenbank aufgerufen wird, um alle Informationen abzufragen. Wir beginnen mit der Deklaration eines Felds auf dem **StoreController** , das eine Instanz der Klasse "musicstoreentities" mit dem Namen "storedb" enthält:
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample7.cs)]
 
-### <a name="updating-the-store-index-to-query-the-database"></a>Aktualisieren des Store-Index zum Abfragen der Datenbank
+### <a name="updating-the-store-index-to-query-the-database"></a>Aktualisieren des Speicher Indexes zum Abfragen der Datenbank
 
-Die MusicStoreEntities-Klasse wird vom Entity Framework verwaltet und stellt eine Auflistungseigenschaft für jede Tabelle in der Datenbank zur Verfügung. Wir aktualisieren unsere StoreControllers Index-Aktion zum Abrufen von allen Genres in der Datenbank. Zuvor haben wir dies von Zeichenfolgendaten fest zu programmieren. Jetzt können wir die Entity Framework-Datenkontext Generes Sammlung stattdessen nur verwenden:
+Die Klasse "musicstoreentities" wird vom Entity Framework verwaltet und macht eine Auflistungs Eigenschaft für jede Tabelle in der Datenbank verfügbar. Wir aktualisieren nun die Index Aktion von StoreController, um alle Genres in unserer Datenbank abzurufen. Zuvor haben wir die Zeichen folgen Daten hart codiert. Nun können Sie einfach die Entity Framework Kontext Generations Auflistung verwenden:
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample8.cs)]
 
-Es müssen keine Änderungen, unsere Vorlage für die Ansicht ausgeführt werden, da wir weiterhin die gleichen StoreIndexViewModel zurückgeben, bevor: wir nur Livedaten aus unserer Datenbank jetzt zurückgeben, zurückgegeben.
+Es müssen keine Änderungen an der Ansichts Vorlage vorgenommen werden, da wir immer noch das gleiche storeindexviewmodel zurückgeben, das wir zuvor zurückgegeben haben. Wir geben jetzt nur noch Livedaten aus unserer Datenbank zurück.
 
-Wenn wir führen das Projekt erneut aus, und rufen Sie die URL "/ Store", sehen wir jetzt eine Liste mit allen Genres in unserer Datenbank:
+Wenn wir das Projekt erneut ausführen und die URL "/Store" aufrufen, sehen wir nun eine Liste aller Genres in unserer Datenbank:
 
 ![](mvc-music-store-part-4/_static/image1.jpg)
 
-### <a name="updating-store-browse-and-details-to-use-live-data"></a>Aktualisieren von Store durchsuchen und Details zur Verwendung von live-Daten
+### <a name="updating-store-browse-and-details-to-use-live-data"></a>Aktualisieren von Store-durchsuchen und Details zur Verwendung von Livedaten
 
-Durch den/Store/durchsuchen? Genre =*[einige Genre]* Aktionsmethode suchen wir nach einer "Genre" anhand des Namens. Wir nur ein Ergebnis, erwarten, da wir immer zwei Einträge für denselben Namen "Genre" haben darf nicht, weshalb wir verwenden können, die. Single() Erweiterung in LINQ-Abfrage für das entsprechende Objekt für "Genre" wie folgt (nicht-Typ dies noch):
+Mit der Action-Methode/Store/Browse? Genre = *[some-Genre]* suchen wir nach einem Genre anhand des Namens. Wir erwarten nur ein Ergebnis, da wir niemals zwei Einträge für denselben Genre Namen haben sollten, und wir können also das verwenden. Single ()-Erweiterung in LINQ, um das entsprechende Genre Objekt wie folgt abzufragen (geben Sie dies noch nicht ein):
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample9.cs)]
 
-Die einzelne Methode nimmt einen Lambdaausdruck als Parameter, der angibt, dass ein einzelnes "Genre"-Objekt, dessen Name mit dem Wert übereinstimmt, die, den wir definiert haben, soll. Im obigen Fall werden wir ein einzelnes "Genre"-Objekt mit dem Namenswert, der übereinstimmende Disco geladen.
+Die Single-Methode nimmt einen Lambda-Ausdruck als Parameter an, der angibt, dass ein einzelnes Genre Objekt so ist, dass sein Name mit dem definierten Wert übereinstimmt. Im obigen Fall laden wir ein einzelnes Genre Objekt mit einem namens Wert, der Disco entspricht.
 
-Werfen wir einen Entity Framework-Feature nutzen, mit der wir an, dass andere verbundene Entitäten, die ebenfalls geladen werden soll, wenn sich das Genre-Objekt abgerufen wird. Dieses Feature heißt die Abfrage Ergebnis strukturieren und ermöglicht es uns, um die Anzahl der zu verringern, müssen wir Zugriff auf die Datenbank, um alle Informationen abrufen, die wir benötigen. Wir möchten die Alben für "Genre" Wir abzurufen, vorab abgerufen werden, damit wir unsere Abfrage durch Hinzufügen von Genres.Include("Albums") aktualisieren, um anzugeben, dass auch die zugehörigen Alben werden soll. Dies ist effizienter, da es sowohl unser "Genre" als auch das Album Daten in einer einzelnen Datenbank-Anforderung abgerufen werden.
+Wir nutzen ein Entity Framework Feature, das es uns ermöglicht, andere Verwandte Entitäten anzugeben, die wir ebenfalls laden möchten, wenn das Genre Objekt abgerufen wird. Diese Funktion wird als Abfrageergebnis Strukturierung bezeichnet und ermöglicht es uns, die Anzahl der Zugriffe auf die Datenbank zu reduzieren, um alle benötigten Informationen abzurufen. Wir möchten die Alben für das Genre, das wir abrufen, vorab abrufen. daher aktualisieren wir unsere Abfrage so, dass Sie aus Genres. include ("Alben") enthalten ist, um anzugeben, dass wir auch Verwandte Alben benötigen. Dies ist effizienter, da sowohl unsere Genre-als auch die Album Daten in einer einzelnen Daten Bank Anforderung abgerufen werden.
 
-Mit den Erklärungen nicht im Weg sieht wie unsere aktualisierte durchsuchen-Controlleraktion:
+Nachfolgend finden Sie eine Erläuterung dazu, wie unsere aktualisierte Aktion zum Durchsuchen von Controllern aussieht:
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample10.cs)]
 
-Wir können jetzt aktualisieren der Store durchsuchen-Ansicht zum Anzeigen von Alben, die in jeder "Genre" verfügbar sind. Öffnen Sie die ansichtsvorlage (gefunden in /Views/Store/Browse.cshtml), und fügen Sie eine Aufzählung von Alben, wie unten dargestellt.
+Wir können nun die Ansicht "Store-durchsuchen" aktualisieren, um die in den einzelnen Genres verfügbaren Alben anzuzeigen. Öffnen Sie die Ansichts Vorlage (in/views/Store/Browse.cshtml), und fügen Sie eine Auflistungs Liste der Alben hinzu, wie unten gezeigt.
 
 [!code-cshtml[Main](mvc-music-store-part-4/samples/sample11.cshtml)]
 
-Ausführung unserer Anwendung, und navigieren zu/Store/durchsuchen? Genre = Jazz zeigt an, die aus der Datenbank, Anzeigen von alle Alben in unserer ausgewählte Genre jetzt unsere Ergebnisse abgerufen werden.
+Wenn wir unsere Anwendung ausführen und zu/Store/Browse? Genre = Jazz navigieren, sehen wir, dass unsere Ergebnisse jetzt aus der Datenbank abgerufen werden, sodass alle Alben in unserem ausgewählten Genre angezeigt werden.
 
 ![](mvc-music-store-part-4/_static/image2.jpg)
 
-Wir stellen die gleiche ändern Sie in unserem/Store/Details / [Id] URL, und Ersetzen Sie unsere unechten Daten durch die Abfrage einer Datenbank, die ein Album lädt, deren ID mit dem Wert des Parameters übereinstimmt.
+Wir nehmen dieselbe Änderung an der/Store/Details/-URL (ID]) vor und ersetzen unsere Dummydaten durch eine Datenbankabfrage, die ein Album lädt, dessen ID mit dem Parameterwert übereinstimmt.
 
 [!code-csharp[Main](mvc-music-store-part-4/samples/sample12.cs)]
 
-Unsere Anwendung ausführen, und Navigieren zum /Store/Details/1 zeigt, dass unsere Ergebnisse jetzt aus der Datenbank abgerufen werden.
+Wenn Sie die Anwendung ausführen und zu/Store/Details/1 navigieren, sehen Sie, dass unsere Ergebnisse jetzt aus der Datenbank abgerufen werden.
 
 ![](mvc-music-store-part-4/_static/image5.png)
 
-Nun, da unsere Seite "Store-Details" zum Anzeigen eines Albums durch die ID des Albums eingerichtet ist, aktualisieren wir die **Durchsuchen** anzeigen, um mit der Detailansicht zu verknüpfen. Wir verwenden Html.ActionLink, genau wie aus dem Store Index Store durchsuchen am Ende des vorherigen Abschnitts verknüpfen. Der vollständige Quellcode für die Ansicht durchsuchen wird unten angezeigt.
+Nachdem die Seite "Store-Details" so eingerichtet ist, dass Sie ein Album anhand der Album-ID anzeigt, aktualisieren wir nun die **browseinsicht** , um eine Verknüpfung mit der Detailansicht zu erhalten. Wir verwenden "HTML. Action Link" genau wie bei der Verknüpfung aus dem Store-Index zum Speichern von durchsuchen am Ende des vorherigen Abschnitts. Die gesamte Quelle für die browseinsicht wird unten angezeigt.
 
 [!code-cshtml[Main](mvc-music-store-part-4/samples/sample13.cshtml)]
 
-Jetzt können wir aus unserer Seite "Store" auf die Seite "Genre" suchen, die die Listen der verfügbaren Alben und durch Klicken auf ein Album wir können Details anzeigen, für die jeweiligen Album zu sehen.
+Wir können nun von unserer Store-Seite zu einer Genre Seite navigieren, die die verfügbaren Alben auflistet, und durch Klicken auf ein Album können wir Details zu diesem Album anzeigen.
 
 ![](mvc-music-store-part-4/_static/image6.png)
 

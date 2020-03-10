@@ -1,310 +1,310 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/caching
-title: Zwischenspeichern von | Microsoft-Dokumentation
+title: Caching | Microsoft-Dokumentation
 author: microsoft
-description: Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. die ausgabezwischenspeicherung...
+description: Ein Verständnis der Zwischenspeicherung ist wichtig für eine leistungsstarke ASP.NET-Anwendung. ASP.NET 1. x bietet drei verschiedene Optionen für die Zwischenspeicherung. Ausgabe Zwischenspeicherung,...
 ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
 ms.openlocfilehash: 4f0b021ca6ca151544dd9fb0587ed9e0cf14ff65
-ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67411242"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464955"
 ---
-# <a name="caching"></a>Zwischenspeicherung
+# <a name="caching"></a>Caching
 
-by [Microsoft](https://github.com/microsoft)
+von [Microsoft](https://github.com/microsoft)
 
-> Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. Zwischenspeichern der Ausgabe, Fragment-caching und der Cache-API.
+> Ein Verständnis der Zwischenspeicherung ist wichtig für eine leistungsstarke ASP.NET-Anwendung. ASP.NET 1. x bietet drei verschiedene Optionen für die Zwischenspeicherung. Ausgabe Zwischenspeicherung, FragmentCaching und Cache-API.
 
-Ein Überblick über die Zwischenspeicherung ist wichtig für eine gut funktionierende ASP.NET-Anwendung. ASP.NET 1.x angeboten drei verschiedene Optionen für die Zwischenspeicherung. Zwischenspeichern der Ausgabe, Fragment-caching und der Cache-API. ASP.NET 2.0 bietet alle drei der folgenden Methoden, aber einige wichtigen zusätzlichen Funktionen hinzugefügt. Es gibt mehrere neue cacheabhängigkeiten und Entwickler haben jetzt die Möglichkeit zum Erstellen von benutzerdefinierten cacheabhängigkeiten. Die Konfiguration des Zwischenspeicherns wurde in ASP.NET 2.0 auch erheblich verbessert.
+Ein Verständnis der Zwischenspeicherung ist wichtig für eine leistungsstarke ASP.NET-Anwendung. ASP.NET 1. x bietet drei verschiedene Optionen für die Zwischenspeicherung. Ausgabe Zwischenspeicherung, FragmentCaching und Cache-API. ASP.NET 2,0 bietet alle drei Methoden, bietet jedoch einige bedeutende zusätzliche Features. Es gibt mehrere neue Cache Abhängigkeiten. Entwickler haben jetzt auch die Möglichkeit, benutzerdefinierte Cache Abhängigkeiten zu erstellen. Die Konfiguration der Zwischenspeicherung wurde in ASP.NET 2,0 ebenfalls erheblich verbessert.
 
 ## <a name="new-features"></a>Neue Funktionen
 
-## <a name="cache-profiles"></a>Cacheprofile
+## <a name="cache-profiles"></a>Cache profile
 
-Mit Cacheprofilen können Entwickler bestimmte Cache-Einstellungen definieren, die für einzelne Seiten angewendet werden können. Z. B. Wenn Sie einige Seiten, die aus dem Cache nach 12 Stunden abgelaufen sein sollte verfügen, können Sie problemlos ein Cacheprofil erstellen, die auf diesen Seiten angewendet werden können. Um ein neues Cacheprofil hinzuzufügen, verwenden die &lt;OutputCacheSettings&gt; Abschnitt in der Konfigurationsdatei. Z. B. im folgenden finden Sie die Konfiguration eines Cacheprofils namens *Twoday* , konfiguriert eine Cachedauer von 12 Stunden.
+Mit Cache Profilen können Entwickler bestimmte Cache Einstellungen definieren, die dann auf einzelne Seiten angewendet werden können. Wenn Sie z. b. einige Seiten haben, die nach 12 Stunden aus dem Cache ablaufen sollen, können Sie problemlos ein Cache Profil erstellen, das auf diese Seiten angewendet werden kann. Zum Hinzufügen eines neuen Cache Profils verwenden Sie den Abschnitt &lt;outputCacheSettings&gt; in der Konfigurationsdatei. Im folgenden finden Sie beispielsweise die Konfiguration eines Cache Profils namens *twoday* , mit dem eine Cache Dauer von 12 Stunden konfiguriert wird.
 
 [!code-xml[Main](caching/samples/sample1.xml)]
 
-Verwenden Sie zum Anwenden dieses Cacheprofil auf eine bestimmte Seite das Attribut "Cacheprofile" der @ OutputCache-Direktive, wie unten dargestellt:
+Um dieses Cache Profil auf eine bestimmte Seite anzuwenden, verwenden Sie das CacheProfile-Attribut der @ OutputCache-Direktive, wie unten dargestellt:
 
 [!code-aspx[Main](caching/samples/sample2.aspx)]
 
-## <a name="custom-cache-dependencies"></a>Benutzerdefinierten Cacheabhängigkeiten
+## <a name="custom-cache-dependencies"></a>Benutzerdefinierte Cache Abhängigkeiten
 
-Entwickler von ASP.NET 1.x und eine Menge für die benutzerdefinierten cacheabhängigkeiten. In ASP.NET 1.x, die CacheDependency-Klasse wurde versiegelt, welche verhindert hat, dass Entwickler ihre eigenen Klassen abgeleitet wird. In ASP.NET 2.0 wird diese Einschränkung entfernt, und Entwickler können ihre eigenen benutzerdefinierten cacheabhängigkeiten zu entwickeln. Die CacheDependency-Klasse ermöglicht die Erstellung einer benutzerdefinierten Cache-Abhängigkeit, die basierend auf Dateien, Verzeichnisse oder Zugriffsschlüssel für den Cache.
+ASP.NET 1. x-Entwickler riefen für benutzerdefinierte Cache Abhängigkeiten auf. In ASP.NET 1. x war die cachedepensklasse versiegelt, wodurch Entwickler daran gehindert wurden, ihre eigenen Klassen davon abzuleiten. In ASP.NET 2,0 wird diese Einschränkung entfernt, und Entwickler können eigene benutzerdefinierte Cache Abhängigkeiten entwickeln. Die cacheabhängigkeits-Klasse ermöglicht das Erstellen einer benutzerdefinierten Cache Abhängigkeit auf der Grundlage von Dateien, Verzeichnissen oder Cache Schlüsseln.
 
-Der folgende Code erstellt z. B. eine neue benutzerdefinierte Cacheabhängigkeit basierend auf eine Datei namens stuff.xml befindet sich im Stammverzeichnis der Webanwendung:
+Der folgende Code erstellt z. b. eine neue benutzerdefinierte Cache Abhängigkeit auf der Grundlage einer Datei namens "stuff. xml" im Stammverzeichnis der Webanwendung:
 
 [!code-csharp[Main](caching/samples/sample3.cs)]
 
-Wenn die Datei stuff.xml ändert, wird in diesem Szenario wird das zwischengespeicherte Element ungültig.
+In diesem Szenario wird das zwischengespeicherte Element für ungültig erklärt, wenn sich die Datei "stuff. xml" ändert.
 
-Es ist auch möglich, eine benutzerdefinierte Cacheabhängigkeit mithilfe der Zugriffsschlüssel für den Cache zu erstellen. Mit dieser Methode wird das Entfernen des Cacheschlüssels die zwischengespeicherten Daten ungültig. Dies wird anhand des folgenden Beispiels veranschaulicht:
+Es ist auch möglich, eine benutzerdefinierte Cache Abhängigkeit mithilfe von Cache Schlüsseln zu erstellen. Wenn diese Methode verwendet wird, werden die zwischengespeicherten Daten durch das Entfernen des Cache Schlüssels ungültig. Dies wird anhand des folgenden Beispiels veranschaulicht:
 
 [!code-csharp[Main](caching/samples/sample4.cs)]
 
-Um das Element für ungültig zu erklären, das oben eingefügt wurden, entfernen Sie einfach das Element, das in den Cache als der Cacheschlüssel fungieren eingefügt wurde.
+Um das oben eingefügte Element für ungültig zu erklären, entfernen Sie einfach das in den Cache eingefügte Element, das als Cache Schlüssel fungiert.
 
 [!code-csharp[Main](caching/samples/sample5.cs)]
 
-Beachten Sie, dass der Schlüssel des Elements, das als Cacheschlüssel fungiert in das Array von Cacheschlüsseln hinzugefügten Wert identisch sein muss.
+Beachten Sie, dass der Schlüssel des Elements, das als Cache Schlüssel fungiert, mit dem Wert identisch sein muss, der dem Array von Cache Schlüsseln hinzugefügt wurde.
 
-## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>SQL-Cache-Dependencies(Also called Table-Based Dependencies) Abrufbasierten
+## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>Abruf basierte SQL-Cache Abhängigkeiten (auch als Tabellen basierte Abhängigkeiten bezeichnet)
 
-SQL Server 7 und 2000 verwenden das Abrufintervall-basierte Modell für die SQL-cacheabhängigkeiten. Das Abrufintervall-basierte Modell wird ein Trigger verwendet, in einer Datenbanktabelle, die ausgelöst wird, wenn Daten in der Tabelle ändern. Auslösen von Updates, die eine **ChangeId** der Benachrichtigung-Tabelle, die ASP.NET regelmäßig überprüft. Wenn die **ChangeId** Feld wurde aktualisiert, ASP.NET weiß, dass die Daten wurden geändert, und sie macht die zwischengespeicherten Daten ungültig.
+SQL Server 7 und 2000 verwenden Sie das Abruf basierte Modell für SQL-Cache Abhängigkeiten. Das Abruf basierte Modell verwendet einen Trigger für eine Datenbanktabelle, die ausgelöst wird, wenn sich Daten in der Tabelle ändern. Dieser auslöst aktualisiert ein **changeid-** Feld in der Benachrichtigungs Tabelle, das ASP.net regelmäßig überprüft. Wenn das **changeid-** Feld aktualisiert wurde, weiß ASP.net, dass sich die Daten geändert haben, und die zwischengespeicherten Daten werden für ungültig erklärt.
 
 > [!NOTE]
-> SQL Server 2005 können Sie auch das Abrufintervall-basierte Modell, aber da das Modell abrufbasierten nicht das effizienteste Modell ist, ist es ratsam, eine abfragebasierte-Modell (weiter unten erläutert) mit SQL Server 2005 zu verwenden.
+> SQL Server 2005 kann auch das Abruf basierte Modell verwenden, aber da das Abruf basierte Modell nicht das effizienteste Modell ist, empfiehlt es sich, ein Abfrage basiertes Modell (später erläutert) mit SQL Server 2005 zu verwenden.
 
-In der Reihenfolge für eine SQL-Cacheabhängigkeit mithilfe des Modells abrufbasierten ordnungsgemäß funktioniert müssen die Tabellen Benachrichtigungen aktiviert haben. Dies kann programmgesteuert mithilfe der Klasse SqlCacheDependencyAdmin erreicht werden oder indem Sie das Aspnet\_regsql.exe-Hilfsprogramm.
+Damit eine SQL-Cache Abhängigkeit, die das Abruf basierte Modell verwendet, ordnungsgemäß funktioniert, müssen die-Tabellen Benachrichtigungen aktiviert haben. Dies kann Programm gesteuert mithilfe der SqlCacheDependencyAdmin-Klasse oder mithilfe des ASPNET\_RegSql. exe-Hilfsprogramms erreicht werden.
 
-Die folgende Befehlszeile registriert die Products-Tabelle in der Northwind-Datenbank befindet sich auf eine SQL Server-Instanz, die mit dem Namen *Dbase* für SQL-cache-Abhängigkeit.
+Mit der folgenden Befehlszeile wird die Products-Tabelle in der Northwind-Datenbank registriert, die sich auf einer SQL Server Instanz namens *dBASE* für die SQL-Cache Abhängigkeit befindet.
 
 [!code-console[Main](caching/samples/sample6.cmd)]
 
-Im folgenden finden eine Erläuterung der Befehlszeilen-Switches, die im obigen Befehl verwendet:
+Im folgenden finden Sie eine Erläuterung der Befehls Zeilenschalter, die im obigen Befehl verwendet werden:
 
-| **Befehlszeilenschalter** | **Zweck** |
+| **Befehls Zeilenschalter** | **Zweck** |
 | --- | --- |
-| -S *server* | Gibt den Namen des Servers an. |
-| – Ed | Gibt an, dass die Datenbank für SQL-Cacheabhängigkeit aktiviert werden soll. |
-| -d *Datenbank\_Name* | Gibt den Datenbanknamen, der für SQL-Cacheabhängigkeit aktiviert werden soll. |
-| -E | Gibt an, Aspnet\_Regsql sollten Windows-Authentifizierung verwenden, beim Verbinden mit der Datenbank. |
-| -et | Gibt an, dass wir eine Datenbanktabelle für die SQL-Cacheabhängigkeit aktiviert werden. |
-| -t *Tabelle\_Name* | Gibt den Namen der Datenbanktabelle an, für die SQL-Cacheabhängigkeit zu aktivieren. |
+| -S *server* | Gibt den Servernamen an. |
+| -Ed | Gibt an, dass die Datenbank für die SQL-Cache Abhängigkeit aktiviert werden soll. |
+| -d *Datenbank\_Name* | Gibt den Datenbanknamen an, der für die SQL-Cache Abhängigkeit aktiviert werden soll. |
+| -E | Gibt an, dass ASPNET\_RegSql beim Herstellen einer Verbindung mit der Datenbank die Windows-Authentifizierung verwenden soll. |
+| -et | Gibt an, dass eine Datenbanktabelle für die SQL-Cache Abhängigkeit aktiviert wird. |
+| -t *\_Name der Tabelle* | Gibt den Namen der Datenbanktabelle an, die für die SQL-Cache Abhängigkeit aktiviert werden soll. |
 
 > [!NOTE]
-> Es stehen anderen Schaltern für Aspnet\_regsql.exe. Führen Sie für eine vollständige Liste Aspnet\_regsql.exe-? über die Befehlszeile.
+> Es stehen weitere Switches für ASPNET\_RegSql. exe zur Verfügung. Eine komplette Liste erhalten Sie, wenn Sie ASPNET\_RegSql. exe ausführen: von der Befehlszeile aus.
 
-Beim Ausführen dieses Befehls werden die folgenden Änderungen mit der SQL Server-Datenbank vorgenommen:
+Wenn dieser Befehl ausgeführt wird, werden die folgenden Änderungen an der SQL Server Datenbank vorgenommen:
 
-- Ein **AspNet\_SqlCacheTablesForChangeNotification** -Tabelle hinzugefügt wird. Diese Tabelle enthält eine Zeile für jede Tabelle in der Datenbank, die für die eine SQL-Cacheabhängigkeit aktiviert wurde.
-- Die folgenden gespeicherten Prozeduren werden in der Datenbank erstellt:
+- Eine **ASPNET-\_sqlcachetablesforchangenotifizierungstabelle** wird hinzugefügt. Diese Tabelle enthält eine Zeile für jede Tabelle in der Datenbank, für die eine SQL-Cache Abhängigkeit aktiviert wurde.
+- Die folgenden gespeicherten Prozeduren werden in der-Datenbank erstellt:
 
-| AspNet\_SqlCachePollingStoredProcedure | Fragt das AspNet\_SqlCacheTablesForChangeNotification-Tabelle und gibt alle Tabellen, die für die SQL-Cacheabhängigkeit und den Wert der ChangeId für jede Tabelle aktiviert sind. Diese gespeicherte Prozedur wird für das Abrufen verwendet, um festzustellen, ob Daten geändert haben. |
+| ASPNET\_sqlcachepollingstoredprocedure | Fragt die ASPNET-\_Tabelle "sqlcachetablesforchangenotifitifitifitifitifitifitifitifitifitifitifitifitifitifi" ab und gibt alle Tabellen zurück, die für die SQL-Cache Abhängigkeit aktiviert sind Diese gespeicherte Prozedur wird für Abfragen verwendet, um zu bestimmen, ob sich die Daten geändert haben. |
 | --- | --- |
-| AspNet\_SqlCacheQueryRegisteredTablesStoredProcedure | Gibt alle Tabellen für SQL-Cacheabhängigkeit aktiviert, indem Sie das AspNet Abfragen\_SqlCacheTablesForChangeNotification-Tabelle und gibt alle Tabellen, die für SQL aktiviert cache-Abhängigkeit. |
-| AspNet\_SqlCacheRegisterTableStoredProcedure | Eine Tabelle für die SQL-Cacheabhängigkeit durch Hinzufügen von den entsprechenden Eintrag in der Benachrichtigungstabelle registriert, und fügt den Trigger. |
-| AspNet\_SqlCacheUnRegisterTableStoredProcedure | Hebt die Registrierung für einer Tabelle für die SQL-Cacheabhängigkeit durch das Entfernen des Eintrags in der Benachrichtigungstabelle aus, und entfernt den Trigger. |
-| AspNet\_SqlCacheUpdateChangeIdStoredProcedure | Aktualisiert die Benachrichtigungstabelle durch Erhöhen der ChangeId für die geänderte Tabelle. ASP.NET verwendet diesen Wert um zu bestimmen, ob die Daten geändert haben. Wie unten angegeben, wird diese gespeicherte Prozedur ausgeführt, durch den Trigger erstellt, wenn die Tabelle aktiviert ist. |
+| ASPNET\_sqlcachequeryregisteredtablesstoredprocedure | Gibt alle für die SQL-Cache Abhängigkeit aktivierten Tabellen zurück, indem die ASPNET-\_sqlcachetablesforchangenotifizierungstabelle abgefragt wird und alle für SQL-Cache Abhängigkeit aktivierten Tabellen zurückgegeben werden. |
+| ASPNET\_sqlcacheregistertablestoredprocedure | Registriert eine Tabelle für die SQL-Cache Abhängigkeit, indem der erforderliche Eintrag in der Benachrichtigungs Tabelle hinzugefügt und der-Cache hinzugefügt wird. |
+| ASPNET\_sqlcacheunregistertablestoredprocedure | Hebt die Registrierung einer Tabelle für die SQL-Cache Abhängigkeit auf, indem der Eintrag in der Benachrichtigungs Tabelle entfernt und der-Cache entfernt wird. |
+| ASPNET\_sqlcacheupdatechangeidstoredprocedure | Aktualisiert die Benachrichtigungs Tabelle durch Erhöhen der changeid für die geänderte Tabelle. ASP.NET verwendet diesen Wert, um zu bestimmen, ob sich die Daten geändert haben. Wie unten angegeben, wird diese gespeicherte Prozedur von dem beim Aktivieren der Tabelle erstellten-ausgelöst. |
 
-- Ein SQL Server-Trigger aufgerufen  **_Tabelle\_Namen_\_AspNet\_SqlCacheNotification\_Trigger** wird für die Tabelle erstellt. Dieser Trigger ausgeführt wird, das AspNet\_SqlCacheUpdateChangeIdStoredProcedure, wenn eine INSERT-, Update- oder DELETE für die Tabelle ausgeführt wird.
-- SQL Server-Rolle namens **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** wird in der Datenbank hinzugefügt.
+- Für die Tabelle wird ein SQL Server-  **_\_namens Table Name_\_ASPNET\_sqlcachenogations\_ausgelöst** . Dieser Triggers führt die ASPNET-\_sqlcacheupdatechangeidstoredprocedure aus, wenn eine INSERT-, Update-oder DELETE-Anweisung für die Tabelle ausgeführt wird.
+- Der Datenbank wird eine SQL Server Rolle namens **ASPNET\_changenozierung\_receivenotificationsonlyaccess** hinzugefügt.
 
-Die **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server-Rolle verfügt über EXEC-Berechtigungen für das AspNet\_SqlCachePollingStoredProcedure. In der Reihenfolge für das Modell abrufen ordnungsgemäß funktioniert, müssen Sie Ihr Konto hinzufügen, auf das Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess-Rolle. Das Aspnet\_regsql.exe-Tool wird dies nicht für Sie.
+Die **ASPNET-\_changenotifizierung\_receivenotificationsonlyaccess** SQL Server Rolle verfügt über exec-Berechtigungen für die ASPNET-\_sqlcachepollingstoredprocedure. Damit das Abruf Modell ordnungsgemäß funktioniert, müssen Sie das Prozess Konto der Rolle "ASPNET\_changenotifizierung\_receivenotificationsonlyaccess" hinzufügen. Das Tool ASPNET\_RegSql. exe führt dies nicht für Sie aus.
 
-### <a name="configuring-polling-based-sql-cache-dependencies"></a>Konfigurieren von Abrufbasierten SQL-Cacheabhängigkeiten
+### <a name="configuring-polling-based-sql-cache-dependencies"></a>Konfigurieren von Abruf basierten SQL-Cache Abhängigkeiten
 
-Es gibt mehrere Schritte, die zum Konfigurieren der SQL-cacheabhängigkeiten abrufbasierten erforderlich sind. Der erste Schritt ist die Datenbank und die Tabelle, die wie oben beschrieben zu aktivieren. Nachdem dieser Schritt abgeschlossen ist, ist der Rest der Konfiguration wie folgt:
+Zum Konfigurieren von Abruf basierten SQL-Cache Abhängigkeiten sind mehrere Schritte erforderlich. Der erste Schritt besteht darin, die Datenbank und die Tabelle wie oben beschrieben zu aktivieren. Nachdem dieser Schritt ausgeführt wurde, sieht der Rest der Konfiguration wie folgt aus:
 
-- Konfigurieren der Konfigurationsdatei an.
-- Konfigurieren von SqlCacheDependency
+- Konfigurieren der ASP.NET-Konfigurationsdatei.
+- Konfigurieren von sqlcacheabhängigkeiten
 
-### <a name="configuring-the-aspnet-configuration-file"></a>Konfigurieren der Konfigurationsdatei
+### <a name="configuring-the-aspnet-configuration-file"></a>Konfigurieren der ASP.NET-Konfigurationsdatei
 
-Zusätzlich zum Hinzufügen einer Verbindungszeichenfolge an, wie in einem vorherigen Modul erläutert, müssen Sie auch konfigurieren eine &lt;Cache&gt; -Element mit einem &lt;SqlCacheDependency&gt; -Element wie unten gezeigt:
+Zusätzlich zum Hinzufügen einer Verbindungs Zeichenfolge, wie in einem vorherigen Modul erläutert, müssen Sie auch ein &lt;Cache&gt;-Element mit einem &lt;sqlcachedepen&gt;-Element konfigurieren, wie unten dargestellt:
 
 [!code-xml[Main](caching/samples/sample7.xml)]
 
-Mit dieser Konfiguration können Sie eine SQL-Cacheabhängigkeit für die *Pubs* Datenbank. Beachten Sie, die die PollTime-Attribut in der &lt;SqlCacheDependency&gt; Element standardmäßig zu 60.000 Millisekunden bzw. einer Minute. (Dieser Wert darf nicht kleiner als 500 Millisekunden sein.) In diesem Beispiel die &lt;hinzufügen&gt; Element Fügt eine neue Datenbank und überschreibt die PollTime, wenn diese Option auf 9000000 Millisekunden.
+Diese Konfiguration ermöglicht eine SQL-Cache Abhängigkeit von der *Pubs* -Datenbank. Beachten Sie, dass das pollTime-Attribut im &lt;sqlcachedepen&gt;-Element standardmäßig 60000 Millisekunden oder 1 Minute beträgt. (Dieser Wert darf nicht kleiner als 500 Millisekunden sein.) In diesem Beispiel fügt das &lt;Add&gt;-Elements eine neue Datenbank hinzu und überschreibt die pollTime-Einstellung auf 9 Millionen Millisekunden.
 
-#### <a name="configuring-the-sqlcachedependency"></a>Konfigurieren von SqlCacheDependency
+#### <a name="configuring-the-sqlcachedependency"></a>Konfigurieren von sqlcacheabhängigkeiten
 
-Der nächste Schritt ist die SqlCacheDependency konfigurieren. Die einfachste Möglichkeit hierzu ist den Wert für das Attribut "SqlDependency" in der @ Outcache-Anweisung wie folgt angeben:
+Der nächste Schritt ist das Konfigurieren von sqlcacheabhängigkeit. Die einfachste Möglichkeit, dies zu erreichen, besteht darin, den Wert für das sqldirective-Attribut in der @ outcache-Direktive wie folgt anzugeben:
 
 [!code-aspx[Main](caching/samples/sample8.aspx)]
 
-In der oben genannten @ OutputCache-Direktive ist für eine SQL-Cacheabhängigkeit konfiguriert die *Autoren* -Tabelle in der *Pubs* Datenbank. Mehrere Abhängigkeiten können konfiguriert werden, indem sie mit einem Semikolon getrennt wie folgt:
+In der obigen @ OutputCache-Direktive wird eine SQL-Cache Abhängigkeit für die *Autoren* Tabelle in der *Pubs* -Datenbank konfiguriert. Mehrere Abhängigkeiten können konfiguriert werden, indem Sie durch ein Semikolon wie folgt getrennt werden:
 
 [!code-aspx[Main](caching/samples/sample9.aspx)]
 
-Eine andere Methode zum Konfigurieren von SqlCacheDependency werden programmgesteuert. Der folgende Code erstellt eine neue SQL-Cacheabhängigkeit für die *Autoren* -Tabelle in der *Pubs* Datenbank.
+Eine andere Methode zum Konfigurieren von sqlcacheabhängigkeiten besteht darin, dies Programm gesteuert zu tun. Mit dem folgenden Code wird eine neue SQL-Cache Abhängigkeit von der Tabelle " *Authors* " in der *Pubs* -Datenbank erstellt.
 
 [!code-csharp[Main](caching/samples/sample10.cs)]
 
-Einer der Vorteile der SQL-Cacheabhängigkeit programmgesteuert zu definieren ist, dass Sie alle Ausnahmen behandeln können, die auftreten können. Angenommen, Sie versuchen, eine SQL-Cacheabhängigkeit für eine Datenbank zu definieren, die nicht für die Benachrichtigung aktiviert wurde eine **DatabaseNotEnabledForNotificationException** Ausnahme ausgelöst. In diesem Fall versuchen Sie, aktivieren Sie die Datenbank für Benachrichtigungen durch Aufrufen der **SqlCacheDependencyAdmin.EnableNotifications** -Methode und übergeben sie den Datenbanknamen.
+Einer der Vorteile der programmgesteuerten Definition der SQL-Cache Abhängigkeit ist, dass Sie alle auftretenden Ausnahmen behandeln können. Wenn Sie z. b. versuchen, eine SQL-Cache Abhängigkeit für eine Datenbank zu definieren, die nicht für eine Benachrichtigung aktiviert wurde, wird eine **DatabaseNotEnabledForNotificationException** -Ausnahme ausgelöst. In diesem Fall können Sie versuchen, die Datenbank für Benachrichtigungen zu aktivieren, indem Sie die **SqlCacheDependencyAdmin. EnableNotifications** -Methode aufrufen und ihr den Datenbanknamen übergeben.
 
-Ebenso, wenn Sie versuchen, eine SQL-Cacheabhängigkeit für eine Tabelle zu definieren, die nicht für die Benachrichtigung aktiviert wurde eine **TableNotEnabledForNotificationException** ausgelöst. Rufen Sie anschließend die **SqlCacheDependencyAdmin.EnableTableForNotifications** Methode und übergeben sie den Datenbanknamen und Tabellennamen.
+Wenn Sie versuchen, eine SQL-Cache Abhängigkeit für eine Tabelle zu definieren, die nicht für eine Benachrichtigung aktiviert wurde, wird eine **TableNotEnabledForNotificationException** ausgelöst. Sie können dann die Methode **SqlCacheDependencyAdmin. enabletablefornotification** aufzurufen, indem Sie den Datenbanknamen und den Tabellennamen übergeben.
 
-Das folgende Codebeispiel veranschaulicht die Behandlung von Ausnahmen ordnungsgemäß zu konfigurieren, wenn Sie eine SQL-Cacheabhängigkeit zu konfigurieren.
+Im folgenden Codebeispiel wird veranschaulicht, wie die Ausnahmebehandlung beim Konfigurieren einer SQL-Cache Abhängigkeit ordnungsgemäß konfiguriert wird.
 
 [!code-csharp[Main](caching/samples/sample11.cs)]
 
 Weitere Informationen: [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
 
-## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>Abfragebasierte SQL-Cacheabhängigkeiten (nur SQLServer 2005)
+## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>Abfrage basierte SQL-Cache Abhängigkeiten (nur SQL Server 2005)
 
-Wenn Sie SQL Server 2005 für SQL-Cacheabhängigkeit zu verwenden, ist das Abrufintervall-basierte Modell nicht erforderlich. Bei Verwendung mit SQL Server 2005, SQL-cacheabhängigkeiten zu kommunizieren direkt über die SQL-Verbindungen mit SQL Server-Instanz (keine weitere Konfiguration ist erforderlich) mit SQL Server 2005-abfragebenachrichtigungen.
+Wenn Sie SQL Server 2005 für die SQL-Cache Abhängigkeit verwenden, ist das Abruf basierte Modell nicht erforderlich. Bei Verwendung mit SQL Server 2005 kommunizieren SQL-Cache Abhängigkeiten direkt über SQL-Verbindungen mit der SQL Server Instanz (es ist keine weitere Konfiguration erforderlich) mithilfe von SQL Server 2005-Abfrage Benachrichtigungen.
 
-Die einfachste Möglichkeit, die abfragebasierte Benachrichtigung aktiviert ist, tun Sie dies deklarativ durch Festlegen der **SqlCacheDependency** Attribut das Datenquellenobjekt **CommandNotification** und Festlegen der **EnableCaching** Attribut **"true"** . Mit dieser Methode ist kein Code erforderlich. Wenn Sie das Ergebnis eines Befehls für die Daten quelländerungen ausgeführt, wird es die Daten im Cache ungültig.
+Die einfachste Möglichkeit, Abfrage basierte Benachrichtigungen zu aktivieren, besteht darin, die deklarative Durchsetzung des **sqlcachedepen-Attributs** des Datenquellen Objekts auf **CommandNotification** zu aktivieren und das Attribut **EnableCaching** auf **true**festzulegen. Mit dieser Methode ist kein Code erforderlich. Wenn sich das Ergebnis eines Befehls, der für die Datenquelle ausgeführt wird, ändert, werden die Cache Daten ungültig.
 
-Im folgenden Beispiel wird ein Datenquellen-Steuerelement für die SQL-Cacheabhängigkeit:
+Im folgenden Beispiel wird ein Datenquellen-Steuerelement für die SQL-Cache Abhängigkeit konfiguriert:
 
 [!code-aspx[Main](caching/samples/sample12.aspx)]
 
-In diesem Fall, wenn die Abfrage angegeben, in der **SelectCommand** zurückgibt, die ein anderes Ergebnis, als er ursprünglich war, die Ergebnisse, die zwischengespeichert werden, werden für ungültig erklärt.
+Wenn in diesem Fall die im **SelectCommand** angegebene Abfrage ein anderes Ergebnis als ursprünglich zurückgibt, werden die zwischengespeicherten Ergebnisse für ungültig erklärt.
 
-Sie können auch angeben, dass alle Datenquellen für SQL-cacheabhängigkeiten aktiviert werden, durch Festlegen der **"SqlDependency"** Attribut der **@ OutputCache** -Direktive **CommandNotification** . Das folgende Beispiel veranschaulicht dies.
+Sie können auch angeben, dass alle Datenquellen für SQL-Cache Abhängigkeiten aktiviert werden sollen, indem Sie das **sqlqueue** -Attribut der **@ OutputCache** -Direktive auf **CommandNotification**festlegen. Dies wird im folgenden Beispiel veranschaulicht.
 
 [!code-aspx[Main](caching/samples/sample13.aspx)]
 
 > [!NOTE]
-> Weitere Informationen zu abfragebenachrichtigungen in SQL Server 2005 finden Sie in der SQL Server-Onlinedokumentation.
+> Weitere Informationen zu Abfrage Benachrichtigungen in SQL Server 2005 finden Sie unter SQL Server-Onlinedokumentation.
 
-Eine andere Methode zum Konfigurieren von einer Abfrage basierenden SQL-Cacheabhängigkeit ist dazu programmgesteuert mithilfe der SqlCacheDependency-Klasse. Im folgenden Codebeispiel wird veranschaulicht, wie dies erreicht wird.
+Eine weitere Methode zum Konfigurieren einer Abfrage basierten SQL-Cache Abhängigkeit ist die programmgesteuerte Verwendung der sqlcachedepensklasse. Im folgenden Codebeispiel wird veranschaulicht, wie dies erreicht wird.
 
 [!code-csharp[Main](caching/samples/sample14.cs)]
 
 Weitere Informationen: [https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp](https://msdn.microsoft.com/library/default.asp?url=/library/enus/dnvs05/html/querynotification.asp)
 
-## <a name="post-cache-substitution"></a>Ersetzung nach dem Zwischenspeichern
+## <a name="post-cache-substitution"></a>Ersetzung nach dem Cache
 
-Zwischenspeichern der Seite kann die Leistung einer Webanwendung erheblich erhöhen. In einigen Fällen benötigen Sie jedoch die meisten der Seite zwischengespeichert werden und einige Fragmenten auf der Seite dynamisch sein. Wenn Sie eine Seite mit Nachrichtenartikel, die für einen festgelegten Zeitraum vollständig statisch ist erstellen, können Sie z. B. die gesamte Seite zwischengespeichert werden festlegen. Wenn Sie ein Drehen von Ad-Banner enthalten, die auf jeder Seitenanforderung geändert beispielsweise, muss der Teil der Seite mit der Ankündigung dynamisch sein. Damit können Sie eine Seite zwischengespeichert, aber einige Inhalte dynamisch zu ersetzen, können Sie die Ersetzung von ASP.NET nach dem Zwischenspeichern verwenden. Mit Ersetzungen nach dem Zwischenspeichern wird die gesamte Seite ausgegeben, die mit bestimmten Teilen, die als von der Zwischenspeicherung ausgenommen zwischengespeichert. Im Beispiel für die Ad-Banner kann das Steuerelement AdRotator Sie Ersetzungen nach dem Zwischenspeichern nutzen, damit Ads dynamisch für jeden Benutzer und für jede seitenaktualisierung erstellt.
+Das Zwischenspeichern einer Seite kann die Leistung einer Webanwendung erheblich steigern. In einigen Fällen ist es jedoch erforderlich, dass der größte Teil der Seite zwischengespeichert wird und einige Fragmente auf der Seite dynamisch sind. Wenn Sie z. b. eine Seite mit Nachrichten Geschichten erstellen, die für festgelegte Zeiträume vollständig statisch ist, können Sie festlegen, dass die gesamte Seite zwischengespeichert wird. Wenn Sie ein gedrehtes Werbebanner einschließen möchten, das bei jeder Seiten Anforderung geändert wurde, muss der Teil der Seite, der die Ankündigung enthält, dynamisch sein. Um das Zwischenspeichern einer Seite, aber das dynamische Ersetzen von Inhalten zu ermöglichen, können Sie die ASP.net-Ersetzung nach dem Cache verwenden. Bei der Ersetzung nach dem Cache wird die gesamte Seite als Ausgabe zwischengespeichert, wobei bestimmte Teile als vom Caching ausgenommen gekennzeichnet sind. Im Beispiel der Werbebanner ermöglicht Ihnen das AdRotator-Steuerelement, die Ersetzung nach dem Cache zu nutzen, sodass für jeden Benutzer und jede Seiten Aktualisierung dynamische Werbeeinblendungen erstellt werden.
 
-Es gibt drei Möglichkeiten zum Implementieren von Ersetzungen nach dem Zwischenspeichern:
+Es gibt drei Möglichkeiten, die Ersetzung nach dem Cache zu implementieren:
 
-- Deklarativ mithilfe der Ersetzung-Steuerelement.
-- Programmgesteuert mithilfe der Ersetzung-Steuerungs-API.
-- Verwenden implizit AdRotator-Steuerelement.
+- Deklarativ, mithilfe des Steuer Elements Ersetzung.
+- Programm gesteuert mit der Steuerelement-API für die Ersetzung.
+- Implizit, mithilfe des AdRotator-Steuer Elements.
 
-### <a name="substitution-control"></a>Ersetzungssteuerelement
+### <a name="substitution-control"></a>Ersetzung-Steuerelement
 
-Die ASP.NET-Substitution-Steuerelements gibt es sich um einen Abschnitt einer zwischengespeicherten Seite, der dynamisch erstellt und nicht als zwischengespeichert. Platzieren Sie ein Ersatz-Steuerelement, an der Position auf der Seite, in dem Sie den dynamischen Inhalt angezeigt werden soll. Zur Laufzeit ruft das Ersatz-Steuerelement eine Methode, die Sie mit der MethodName-Eigenschaft angeben. Die Methode muss eine Zeichenfolge zurückgeben, klicken Sie dann den Inhalt des Steuerelements Ersetzung ersetzt. Die Methode muss es sich um eine statische Methode für das enthaltende Seite oder UserControl-Steuerelement sein. Verwenden des Steuerelements für die Ersetzung bewirkt, dass die clientseitige cachefähigkeit in Server-cachefähigkeit geändert werden, damit die Seite nicht auf dem Client zwischengespeichert wird. Dadurch wird sichergestellt, dass es sich bei zukünftige Anforderungen auf der Seite der Methodenaufruf erneut aus, um dynamischen Inhalt zu generieren.
+Das ASP.net Substitution-Steuerelement gibt einen Abschnitt einer zwischengespeicherten Seite an, der dynamisch erstellt wird, anstatt zwischengespeichert zu werden. Sie platzieren ein Ersetzungs Steuerelement an der Position auf der Seite, auf der der dynamische Inhalt angezeigt werden soll. Zur Laufzeit ruft das Steuerelement Ersetzung eine Methode auf, die Sie mit der MethodName-Eigenschaft angeben. Die Methode muss eine Zeichenfolge zurückgeben, die dann den Inhalt des Ersetzungs Steuer Elements ersetzt. Die-Methode muss eine statische Methode auf der enthaltenden Seite oder dem UserControl-Steuerelement sein. Die Verwendung des Ersetzungs Steuer Elements bewirkt, dass die Client seitige Cache Fähigkeit in Server Cache Fähigkeit geändert wird, sodass die Seite nicht auf dem Client zwischengespeichert wird. Dadurch wird sichergestellt, dass in zukünftigen Anforderungen der Seite die-Methode erneut aufgerufen wird, um dynamischen Inhalt zu generieren.
 
-### <a name="substitution-api"></a>Ersetzung API
+### <a name="substitution-api"></a>Ersetzungs-API
 
-Sie können zum programmgesteuerten Erstellen von dynamischem Inhalt für eine zwischengespeicherte Seite Aufrufen der [WriteSubstitution](https://msdn.microsoft.com/library/system.web.httpresponse.writesubstitution.aspx) -Methode in Ihrer Seitencode, der den Namen einer Methode als Parameter übergeben. Die Methode, die Erstellung des dynamischen Inhalts behandelt, verwendet einen einzelnen ["HttpContext"](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) Parameter und gibt eine Zeichenfolge zurück. Die zurückgegebene Zeichenfolge ist der Inhalt, der am angegebenen Speicherort ersetzt wird. Ein Vorteil von Aufrufen der Methode WriteSubstitution, anstatt das Ersatz-Steuerelement deklarativ ist, können Sie eine Methode zum Aufrufen einer statischen Methode der Seite oder das UserControl-Objekt, anstatt jedes beliebige Objekt aufrufen.
+Um dynamischen Inhalt für eine zwischengespeicherte Seite Programm gesteuert zu erstellen, können Sie die Methode " [Write tesubstitution](https://msdn.microsoft.com/library/system.web.httpresponse.writesubstitution.aspx) " in Ihrem Seitencode aufrufen und dabei den Namen einer Methode als Parameter übergeben. Die Methode, die die Erstellung des dynamischen Inhalts behandelt, nimmt einen einzelnen [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) -Parameter an und gibt eine Zeichenfolge zurück. Die Rückgabe Zeichenfolge ist der Inhalt, der an der angegebenen Position ersetzt wird. Ein Vorteil des Aufrufs der Methode "Write tesubstitution" anstelle der deklarativen Verwendung des Ersetzungs Steuer Elements besteht darin, dass Sie eine Methode eines beliebigen Objekts aufrufen können, anstatt eine statische Methode der Seite oder des UserControl-Objekts aufzurufen.
 
-Aufrufen der Methode WriteSubstitution bewirkt, dass die clientseitige cachefähigkeit in Server-cachefähigkeit geändert werden, damit die Seite nicht auf dem Client zwischengespeichert wird. Dadurch wird sichergestellt, dass es sich bei zukünftige Anforderungen auf der Seite der Methodenaufruf erneut aus, um dynamischen Inhalt zu generieren.
+Das Aufrufen der Methode "Write tesubstitution" bewirkt, dass die Client seitige Cache Fähigkeit in Server Cache Fähigkeit geändert wird, sodass die Seite nicht auf dem Client zwischengespeichert wird. Dadurch wird sichergestellt, dass in zukünftigen Anforderungen der Seite die-Methode erneut aufgerufen wird, um dynamischen Inhalt zu generieren.
 
 ### <a name="adrotator-control"></a>AdRotator-Steuerelement
 
-AdRotator,-Steuerelement implementiert, die Unterstützung intern für Ersetzungen nach dem Zwischenspeichern. Wenn Sie ein AdRotator-Steuerelement auf der Seite platzieren, rendert sie eindeutige Ankündigungen für jede Anforderung – unabhängig davon, ob die übergeordnete Seite zwischengespeichert wird. Daher ist eine Seite, die ein Steuerelement AdRotator enthält nur serverseitig zwischengespeichert.
+Das Server Steuerelement AdRotator implementiert intern die Unterstützung für die Ersetzung nach dem Cache. Wenn Sie ein AdRotator-Steuerelement auf Ihrer Seite platzieren, werden für jede Anforderung eindeutige Ankündigungen angezeigt, unabhängig davon, ob die übergeordnete Seite zwischengespeichert wird. Folglich wird eine Seite, die ein AdRotator-Steuerelement enthält, nur serverseitig zwischengespeichert.
 
 ## <a name="controlcachepolicy-class"></a>ControlCachePolicy-Klasse
 
-Die ControlCachePolicy-Klasse ermöglicht die programmgesteuerte Kontrolle von Fragment-caching mit Benutzersteuerelementen. ASP.NET bettet Benutzersteuerelemente in einer [BasePartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.aspx) Instanz. Die BasePartialCachingControl-Klasse stellt es sich um ein Benutzersteuerelement, das eine Ausgabe hat Zwischenspeichern aktiviert worden sein.
+Die ControlCachePolicy-Klasse ermöglicht die programmgesteuerte Steuerung des Fragmentcaches mithilfe von Benutzer Steuerelementen. ASP.net bettet Benutzer Steuerelemente in einer [BasePartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.aspx) -Instanz ein. Die BasePartialCachingControl-Klasse stellt ein Benutzer Steuerelement dar, für das das Ausgabe Caching aktiviert ist.
 
-Beim Zugriff auf die [BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) Eigenschaft eine [PartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.partialcachingcontrol.aspx) -Steuerelement, erhalten Sie immer ein gültiges ControlCachePolicy-Objekt. Allerdings, wenn Sie Zugriff auf die [UserControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.usercontrol.cachepolicy.aspx) Eigenschaft eine [UserControl](https://msdn.microsoft.com/library/system.web.ui.usercontrol.aspx) Steuerelement nur dann, wenn das Benutzersteuerelement von bereits umschlossen wird, erhalten Sie ein gültiges ControlCachePolicy-Objekt ein BasePartialCachingControl-Steuerelement. Wenn es nicht umschlossen ist, wird das ControlCachePolicy-Objekt, das von der Eigenschaft zurückgegebenen Ausnahmen auslösen, wenn Sie versuchen, die sie bearbeiten, da sie nicht über eine zugeordnete BasePartialCachingControl verfügt. Überprüfen, ob eine Instanz eines Benutzersteuerelements das Zwischenspeichern von unterstützt ohne Generierung von Ausnahmen, die [SupportsCaching](https://msdn.microsoft.com/library/system.web.ui.controlcachepolicy.supportscaching.aspx) Eigenschaft.
+Wenn Sie auf die [BasePartialCachingControl. CachePolicy](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) -Eigenschaft eines [PartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.partialcachingcontrol.aspx) -Steuer Elements zugreifen, erhalten Sie immer ein gültiges ControlCachePolicy-Objekt. Wenn Sie jedoch auf die [UserControl. CachePolicy](https://msdn.microsoft.com/library/system.web.ui.usercontrol.cachepolicy.aspx) -Eigenschaft eines [UserControl](https://msdn.microsoft.com/library/system.web.ui.usercontrol.aspx) -Steuer Elements zugreifen, erhalten Sie nur dann ein gültiges ControlCachePolicy-Objekt, wenn das Benutzer Steuerelement bereits von einem BasePartialCachingControl-Steuerelement umschließt ist. Wenn Sie nicht umschließt ist, löst das von der-Eigenschaft zurückgegebene ControlCachePolicy-Objekt Ausnahmen aus, wenn Sie versuchen, Sie zu bearbeiten, da ihr kein BasePartialCachingControl-Element zugeordnet ist. Überprüfen Sie die [SupportsCaching](https://msdn.microsoft.com/library/system.web.ui.controlcachepolicy.supportscaching.aspx) -Eigenschaft, um zu bestimmen, ob eine UserControl-Instanz Caching ohne das Erzeugen von Ausnahmen unterstützt
 
-Verwenden der ControlCachePolicy-Klasse ist eine von mehreren Möglichkeiten, die Sie die Zwischenspeicherung der Ausgabe aktivieren können. Die folgende Liste beschreibt die Methoden, die Sie zum Aktivieren der ausgabezwischenspeicherung verwenden können:
+Die Verwendung der ControlCachePolicy-Klasse ist eine von mehreren Möglichkeiten zum Aktivieren der Ausgabe Zwischenspeicherung. In der folgenden Liste werden Methoden beschrieben, mit denen Sie die Ausgabe Zwischenspeicherung aktivieren können:
 
-- Verwenden der [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) Direktive zum Aktivieren des ausgabezwischenspeicherung in deklarativen Szenarios.
-- Verwenden der [PartialCachingAttribute](https://msdn.microsoft.com/library/system.web.ui.partialcachingattribute.aspx) Attribut zum Aktivieren der Zwischenspeicherung für ein Benutzersteuerelement in einer CodeBehind-Datei.
-- Verwenden der ControlCachePolicy-Klasse, um die cacheeinstellungen in programmgesteuerte Szenarien angegeben, in dem Sie arbeiten mit BasePartialCachingControl-Instanzen, die dynamisch geladen wird, verwenden die undwurdencacheaktiviertemithilfeeinerdervorherigenMethoden[System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/library/system.web.ui.templatecontrol.loadcontrol.aspx) Methode.
+- Verwenden Sie die [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) -Direktive, um die Ausgabe Zwischenspeicherung in deklarativen Szenarien zu aktivieren.
+- Verwenden Sie das [PartialCachingAttribute](https://msdn.microsoft.com/library/system.web.ui.partialcachingattribute.aspx) -Attribut, um das Zwischenspeichern für ein Benutzer Steuerelement in einer Code Behind-Datei zu aktivieren.
+- Verwenden Sie die ControlCachePolicy-Klasse, um Cache Einstellungen in programmgesteuerten Szenarien anzugeben, in denen Sie mit den BasePartialCachingControl-Instanzen arbeiten, die mithilfe einer der vorherigen Methoden zwischengespeichert und mithilfe der [System. Web. UI. TemplateControl. LoadControl](https://msdn.microsoft.com/library/system.web.ui.templatecontrol.loadcontrol.aspx) -Methode dynamisch geladen wurden.
 
-Eine Instanz ControlCachePolicy kann nur zwischen den Init "und" PreRender-Phasen des Lebenszyklus des Steuerelements erfolgreich bearbeitet werden. Wenn Sie nach der PreRender Phase ein ControlCachePolicy Objekt ändern, löst ASP.NET eine Ausnahme aus, da alle Änderungen nach das Steuerelement gerendert wird, tatsächlich cacheeinstellungen auswirken können nicht (während der Render-Phase ist ein Steuerelement zwischengespeichert). Schließlich ist eine Instanz eines Benutzersteuerelements (und daher dem zugehörigen ControlCachePolicy-Objekt) nur für die programmgesteuerte Bearbeitung verfügbar, wenn es tatsächlich dargestellt wird.
+Eine ControlCachePolicy-Instanz kann nur zwischen den init-und PreRender-Phasen des Steuerungs Lebenszyklus geändert werden. Wenn Sie ein ControlCachePolicy-Objekt nach der PreRender-Phase ändern, löst ASP.net eine Ausnahme aus, da alle Änderungen, die nach dem Rendern des Steuer Elements vorgenommen werden, die Cache Einstellungen nicht beeinflussen können (ein Steuerelement wird während der Renderingphase zwischengespeichert Schließlich ist eine Benutzer Steuerelement Instanz (und damit auch Ihr ControlCachePolicy-Objekt) nur für die programmgesteuerte Bearbeitung verfügbar, wenn Sie tatsächlich gerendert wird.
 
-## <a name="changes-to-caching-configuration---the-ltcachinggt-element"></a>Änderungen an der Caching-Konfiguration – die &lt;zwischenspeichern&gt; Element
+## <a name="changes-to-caching-configuration---the-ltcachinggt-element"></a>Änderungen an der cachingkonfiguration-das &lt;Caching&gt;-Element
 
-Es gibt mehrere Änderungen in ASP.NET 2.0 Cachekonfiguration. Die &lt;zwischenspeichern&gt; Element ist neu in ASP.NET 2.0 und ermöglicht es Ihnen, die in der Konfigurationsdatei caching Konfiguration ändern. Die folgenden Attribute sind verfügbar.
+Es gibt mehrere Änderungen an der cachingkonfiguration in ASP.NET 2,0. Das &lt;Caching&gt;-Elements ist neu in ASP.NET 2,0 und ermöglicht es Ihnen, Änderungen an der Cache Konfiguration in der Konfigurationsdatei vorzunehmen. Die folgenden Attribute sind verfügbar.
 
 | **Element** | **Beschreibung** |
 | --- | --- |
-| **cache** | Optionales Element. Definiert die cacheeinstellungen für globale Anwendungen. |
-| **outputCache** | Optionales Element. Gibt eine anwendungsweite Ausgabecache-Einstellungen. |
-| **outputCacheSettings** | Optionales Element. Gibt die Ausgabe-Cache-Einstellungen, die auf Seiten in der Anwendung angewendet werden können. |
-| **sqlCacheDependency** | Optionales Element. Konfiguriert die SQL-cacheabhängigkeiten für eine ASP.NET-Anwendung. |
+| **Speichern** | Optionales Element. Definiert globale Anwendungscache Einstellungen. |
+| **OutputCache** | Optionales Element. Gibt Anwendungs weite Ausgabe Cache Einstellungen an. |
+| **outputCacheSettings** | Optionales Element. Gibt Ausgabe Cache Einstellungen an, die auf Seiten in der Anwendung angewendet werden können. |
+| **SqlCacheDependency** | Optionales Element. Konfiguriert die SQL-Cacheabhängigkeiten für eine ASP.NET-Anwendung. |
 
-### <a name="the-ltcachegt-element"></a>Die &lt;Cache&gt; Element
+### <a name="the-ltcachegt-element"></a>Das &lt;Cache&gt; Element
 
-Die folgenden Attribute stehen zur Verfügung, in der &lt;Cache&gt; Element:
+Die folgenden Attribute sind im &lt;Cache&gt;-Elements verfügbar:
 
 | **Attribut** | **Beschreibung** |
 | --- | --- |
-| **disableMemoryCollection** | Optionale **booleschen** Attribut. Ruft ab oder legt einen Wert, der angibt, ob die Cachespeichersammlung, die auftritt, wenn der Computer nicht genügend Arbeitsspeicher vorhanden ist, deaktiviert ist. |
-| **disableExpiration** | Optionale **booleschen** Attribut. Ruft ab oder legt einen Wert, der angibt, ob die Cacheablaufzeit deaktiviert ist. Wenn deaktiviert, zwischengespeicherte Elemente laufen nicht ab und Hintergrund durch eine Bereinigung von abgelaufenen Cacheelementen erfolgt nicht. |
-| **privateBytesLimit** | Optionale **Int64** Attribut. Ruft ab oder legt einen Wert, der angibt, dass die maximale Größe der privaten Bytes einer Anwendung, bevor der Cache abgelaufene Elemente abgelaufen ist und es wird versucht, den Speicher freizugeben. Dieser Grenzwert schließt sowohl vom Cache verwendete Arbeitsspeicher als auch normale Arbeitsspeicher speicherplatzaufwand aus der ausgeführten Anwendung. Eine Einstellung von 0 (null) gibt an, dass ASP.NET eine eigene Heuristik verwendet wird, um festzulegen, wann Speicher wieder freigegeben. |
-| **percentagePhysicalMemoryUsedLimit** | Optionale **Int32** Attribut. Ruft ab oder legt einen Wert, der angibt, dass der maximale Prozentsatz des Arbeitsspeichers eines Computers, die von einer Anwendung genutzt werden kann, bevor der Cache abgelaufene Elemente abgelaufen ist und es wird versucht, diese speicherauslastung sowohl vom Cache auch verwendeten Arbeitsspeicher umfasst Arbeitsspeicher freigeben als die normale speicherauslastung der ausgeführten Anwendung. Eine Einstellung von 0 (null) gibt an, dass ASP.NET eine eigene Heuristik verwendet wird, um festzulegen, wann Speicher wieder freigegeben. |
-| **privateBytesPollTime** | Optionale **TimeSpan** Attribut. Ruft ab oder legt einen Wert, der angibt, der des Zeitintervalls zwischen den Abfragen für private Bytes-speichernutzung der Anwendung fest. |
+| **DisableMemoryCollection** | Optionales **Boolean** -Attribut. Ruft einen Wert ab oder legt einen Wert fest, der angibt, ob die Cache Speicher Auflistung deaktiviert ist, wenn der Computer nicht über genügend Arbeitsspeicher verfügt. |
+| **disableablauf** | Optionales **Boolean** -Attribut. Ruft einen Wert ab, der angibt, ob die Cache Ablaufzeit deaktiviert ist Wenn diese Option deaktiviert ist, laufen die zwischengespeicherten Elemente nicht ab, und es erfolgt keine Hintergrund Löschung abgelaufener Cache Elemente. |
+| **PrivateBytesLimit** | Optionales **Int64** -Attribut. Ruft einen Wert ab oder legt einen Wert fest, der die maximale Größe der privaten Bytes einer Anwendung angibt, bevor der Cache abgelaufene Elemente geleert und versucht, Arbeitsspeicher freizugeben. Dieser Grenzwert schließt sowohl den vom Cache genutzten Speicher als auch den normalen Arbeitsspeicher Aufwand aus der laufenden Anwendung ein. Eine Einstellung von NULL gibt an, dass ASP.net eine eigene Heuristik verwendet, um zu bestimmen, wann der Speicher freigegeben werden soll. |
+| **"prozagephysicalmemoryusedlimit"** | Optionales **Int32** -Attribut. Ruft einen Wert ab oder legt einen Wert fest, der den maximalen Prozentsatz des physischen Speichers eines Computers angibt, der von einer Anwendung genutzt werden kann, bevor der Cache abgelaufene Elemente geleert und versucht, Arbeitsspeicher freizugeben. diese Speicherauslastung enthält sowohl den vom Cache verwendeten Speicher. als normale Speicherauslastung der laufenden Anwendung. Eine Einstellung von NULL gibt an, dass ASP.net eine eigene Heuristik verwendet, um zu bestimmen, wann der Speicher freigegeben werden soll. |
+| **PrivateBytesPollTime** | Optionales **TimeSpan** -Attribut. Ruft einen Wert ab oder legt einen Wert fest, der das Zeitintervall zwischen dem Abrufen der Arbeitsspeicher Auslastung der privaten Bytes der Anwendung angibt. |
 
-### <a name="the-ltoutputcachegt-element"></a>Die &lt;OutputCache&gt; Element
+### <a name="the-ltoutputcachegt-element"></a>Das &lt;OutputCache-&gt; Element
 
-Die folgenden Attribute stehen für die &lt;OutputCache&gt; Element.
+Die folgenden Attribute sind für das &lt;OutputCache-&gt;-Element verfügbar.
 
 |       <strong>Attribut</strong>        |                                                                                                                                                                                                                                                       <strong>Beschreibung</strong>                                                                                                                                                                                                                                                       |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   <strong>enableOutputCache</strong>    |                                                                                                                                                          Optionale <strong>booleschen</strong> Attribut. Aktiviert bzw. deaktiviert den Seitenausgabecache. Wenn deaktiviert, werden keine Seiten unabhängig von den Einstellungen für den programmgesteuerten oder deklarativen zwischengespeichert. Standardwert ist <strong>"true"</strong>.                                                                                                                                                           |
-|  <strong>enableFragmentCache</strong>   |                                                Optionale <strong>booleschen</strong> Attribut. Aktiviert bzw. deaktiviert die Fragment-Anwendungscache. Wenn deaktiviert, werden keine Seiten zwischengespeichert, unabhängig von der [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) Direktive oder Zwischenspeichern verwendete Profil. Enthält eine Cache-Control-Header gibt an, dass upstream-Proxy-Server als auch für Browser-Clients nicht in Cache Seitenausgabe erfolgen soll. Standardwert ist <strong>"false"</strong>.                                                 |
-| <strong>sendCacheControlHeader</strong> |                                                                                                                                                      Optionale <strong>booleschen</strong> Attribut. Ruft ab oder legt einen Wert, der angibt, ob die <strong>Cache-Control: Private</strong> -Header vom Ausgabecachemodul standardmäßig gesendet wird. Standardwert ist <strong>"false"</strong>.                                                                                                                                                      |
-|      <strong>omitVaryStar</strong>      | Optionale <strong>booleschen</strong> Attribut. Aktiviert/deaktiviert das Senden einer Http "<strong>variieren: \</ strong ><em>"-Header in der Antwort. Mit der Standardeinstellung "false", eine "</em>* variieren: \* <strong>"-Header für Seiten im Ausgabecache gesendet wird. Wenn der Vary-Header gesendet wird, ermöglicht verschiedene Versionen zwischengespeichert werden basierend auf den in der Vary-Header angegebenen. Z. B. <em>variieren: Benutzer-Agents</em> speichert verschiedene Versionen einer Seite, die basierend auf den Benutzer-Agent, der die Anforderung ausgeben. Standardwert ist ** "false"</strong>. |
+|   <strong>EnableOutputCache</strong>    |                                                                                                                                                          Optionales <strong>Boolean</strong> -Attribut. Aktiviert bzw. deaktiviert den Seiten Ausgabe Cache. Wenn diese Option deaktiviert ist, werden keine Seiten unabhängig von den programmgesteuerten oder deklarativen Einstellungen zwischengespeichert. Der Standardwert lautet <strong>true</strong>.                                                                                                                                                           |
+|  <strong>EnableFragmentCache</strong>   |                                                Optionales <strong>Boolean</strong> -Attribut. Aktiviert bzw. deaktiviert den Cache des Anwendungs Fragments. Wenn diese Option deaktiviert ist, werden unabhängig von der verwendeten [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) -Direktive oder dem verwendeten Cache Profil keine Seiten zwischengespeichert. Schließt einen Cache-Control-Header ein, der angibt, dass Upstreamproxyserver und Browser Clients nicht versuchen sollten, die Seiten Ausgabe zwischenzuspeichern. Der Standardwert ist <strong>false</strong>.                                                 |
+| <strong>SendCacheControlHeader</strong> |                                                                                                                                                      Optionales <strong>Boolean</strong> -Attribut. Ruft einen Wert ab, der angibt, ob der Header " <strong>Cache-Control: Private</strong> " standardmäßig vom Ausgabe Cache Modul gesendet wird, oder legt diesen fest. Der Standardwert ist <strong>false</strong>.                                                                                                                                                      |
+|      <strong>OmitVaryStar</strong>      | Optionales <strong>Boolean</strong> -Attribut. Aktiviert bzw. deaktiviert das Senden eines HTTP-Headers "<strong>Vary: \</strong ><em>" in der Antwort. Mit der Standardeinstellung false wird ein "</em>* Vary: \*<strong>"-Header für Ausgabe zwischengespeicherte Seiten gesendet. Wenn der Vary-Header gesendet wird, können unterschiedliche Versionen basierend auf dem im Vary-Header angegebenen Cache zwischengespeichert werden. Beispielsweise <em>variieren: Benutzer-Agents</em> speichern verschiedene Versionen einer Seite auf der Grundlage des Benutzer-Agents, der die Anforderung ausgibt. Der Standardwert ist * * false</strong>. |
 
-### <a name="the-ltoutputcachesettingsgt-element"></a>Die &lt;OutputCacheSettings&gt; Element
+### <a name="the-ltoutputcachesettingsgt-element"></a>Das &lt;outputCacheSettings-&gt; Element
 
-Die &lt;OutputCacheSettings&gt; -Element ermöglicht für die Erstellung von Cacheprofilen, die wie oben beschrieben. Das einzige untergeordnete Element für die &lt;OutputCacheSettings&gt; Element ist die &lt;OutputCacheProfiles&gt; -Element zum Cacheprofile konfigurieren.
+Das &lt;outputCacheSettings-&gt; Element ermöglicht die Erstellung von Cache Profilen, wie zuvor beschrieben. Das einzige untergeordnete Element für das &lt;outputCacheSettings-&gt; Element ist das &lt;outputCacheProfiles&gt;-Element für die Konfiguration von Cache Profilen.
 
-### <a name="the-ltsqlcachedependencygt-element"></a>Die &lt;SqlCacheDependency&gt; Element
+### <a name="the-ltsqlcachedependencygt-element"></a>Das &lt;sqlcachedepen&gt;-Element
 
-Die folgenden Attribute stehen für die &lt;SqlCacheDependency&gt; Element.
+Die folgenden Attribute sind für das &lt;sqlcachedepen&gt;-Element verfügbar.
 
 | **Attribut** | **Beschreibung** |
 | --- | --- |
-| **enabled** | Erforderliche **booleschen** Attribut. Gibt an, und zwar unabhängig davon, ob Änderungen abgerufen werden. |
-| **pollTime** | Optionale **Int32** Attribut. Legt fest, die Häufigkeit, mit denen SqlCacheDependency fragt die Datenbanktabelle für Änderungen ab. Dieser Wert entspricht der Anzahl der Millisekunden zwischen den einzelnen abrufen. Sie können nicht auf weniger als 500 Millisekunden festgelegt werden. Standardmäßig ist der Wert beträgt 1 Minute. |
+| **enabled** | Erforderliches **Boolesches** Attribut. Gibt an, ob Änderungen abgerufen werden. |
+| **PollTime** | Optionales **Int32** -Attribut. Legt die Häufigkeit fest, mit der sqlcacheabhängigkeiten die Datenbanktabelle auf Änderungen abfragt. Dieser Wert entspricht der Anzahl von Millisekunden zwischen aufeinander folgenden pollingen. Der Wert kann nicht auf weniger als 500 Millisekunden festgelegt werden. Der Standardwert ist 1 Minute. |
 
 ### <a name="more-information"></a>Weitere Informationen
 
-Es gibt einige zusätzliche Informationen, die Sie zur Cachekonfiguration bewusst sein sollten.
+Es gibt einige zusätzliche Informationen, die Sie hinsichtlich der Cache Konfiguration beachten sollten.
 
-- Wenn die Begrenzung für Worker Prozess private Bytes nicht festgelegt ist, wird der Cache eine der folgenden Grenzwerte verwenden: 
+- Wenn der Grenzwert für private Bytes des Arbeitsprozesses nicht festgelegt ist, verwendet der Cache eine der folgenden Einschränkungen: 
 
-    - x86 2GB: 800MB oder 60 % des physischen RAM, welcher Wert kleiner ist
-    - x86 3GB: 1800MB oder 60 % des physischen RAM, welcher Wert kleiner ist
-    - x64: 1 TB oder 60 % des physischen RAM, welcher Wert kleiner ist
-- Wenn sowohl der privaten Arbeitsprozess Bytes beschränkt und &lt;Zwischenspeichern PrivateBytesLimit /&gt; festgelegt ist, wird der Cache wird das Minimum der beiden verwendet werden.
-- Genau wie in 1.x, wir Löschen der Einträge im Cache und GC aufgerufen. Sammeln Sie zwei Gründen: 
+    - x86 2 GB: 800mb oder 60% physischer RAM, je nachdem, welcher Wert kleiner ist
+    - x86 3 GB: 1800 MB oder 60% physischer RAM, je nachdem, welcher Wert kleiner ist
+    - x64:1 Terabyte oder 60% physischer RAM, je nachdem, welcher Wert kleiner ist
+- Wenn sowohl der Grenzwert für private Bytes des Arbeitsprozesses als auch der &lt;Cache PrivateBytesLimit/&gt; festgelegt sind, verwendet der Cache den minimalen der beiden Werte.
+- Wie in 1. x, werden Cache Einträge gelöscht und GC aufgerufen. Sammeln Sie aus zwei Gründen: 
 
-    - Wir sind sehr nahe bei den Grenzwert für private bytes
-    - Der verfügbare Arbeitsspeicher ist nahe bei oder kleiner als 10 %
-- Können Sie effektiv trim deaktivieren und Bedingungen mit unzureichendem verfügbaren Arbeitsspeicher durch Festlegen von cache &lt;Zwischenspeichern PercentagePhysicalMemoryUseLimit /&gt; bis 100.
-- Im Gegensatz zu 1.x, wird die Aufrufe trim und Sammeln von 2.0 angehalten, wenn die letzte Freispeichersammlung. Erfassen gar nicht private Bytes oder die Größe des verwalteten Heaps durch mehr als 1 % der Arbeitsspeichergrenze beschränkt (Cache).
+    - Der Grenzwert für private Bytes liegt sehr nahe.
+    - Der verfügbare Arbeitsspeicher beträgt fast oder weniger als 10%.
+- Sie können Trim und Cache für wenig verfügbaren Arbeitsspeicher effektiv deaktivieren, indem Sie &lt;Cache prozagephysicalmemoryuselimit/&gt; auf 100 festlegen.
+- Im Gegensatz zu 1. x hält 2,0 die Trim-und Collect-Aufrufe an, wenn der letzte GC. Die Sammlung hat die privaten Bytes oder die Größe der verwalteten Heaps nicht um mehr als 1% des (Cache) Arbeitsspeicher Limits reduziert.
 
-## <a name="lab1-custom-cache-dependencies"></a>Lab1: Benutzerdefinierten Cacheabhängigkeiten
+## <a name="lab1-custom-cache-dependencies"></a>Lab1: benutzerdefinierte Cache Abhängigkeiten
 
 1. Erstellen Sie eine neue Website.
-2. Fügen Sie eine XML-Datei namens cache.xml hinzu, und speichern Sie sie in das Stammverzeichnis der Webanwendung.
-3. Fügen Sie den folgenden Code auf der Seite\_Load-Methode im Code-Behind "default.aspx": 
+2. Fügen Sie eine neue XML-Datei mit dem Namen Cache. XML hinzu, und speichern Sie Sie im Stammverzeichnis der Webanwendung.
+3. Fügen Sie der Seite\_Load-Methode im Code Behind von default. aspx den folgenden Code hinzu: 
 
     [!code-csharp[Main](caching/samples/sample15.cs)]
-4. Fügen Sie am Anfang von "default.aspx" in der Quellansicht Folgendes ein: 
+4. Fügen Sie am Anfang der Datei "default. aspx" in der Quell Ansicht Folgendes hinzu: 
 
     [!code-aspx[Main](caching/samples/sample16.aspx)]
-5. Durchsuchen Sie "default.aspx". Was mitteilen die Zeit?
-6. Aktualisieren Sie den Browser. Was mitteilen die Zeit?
-7. Öffnen Sie cache.xml, und fügen Sie den folgenden Code hinzu: 
+5. Durchsuchen Sie "default. aspx". Was sagt die Zeit?
+6. Aktualisieren Sie den Browser. Was sagt die Zeit?
+7. Öffnen Sie Cache. XML, und fügen Sie den folgenden Code hinzu: 
 
     [!code-xml[Main](caching/samples/sample17.xml)]
-8. Cache.xml zu speichern.
-9. Aktualisieren Sie Ihren Browser ein. Was mitteilen die Zeit?
-10. Hier wird erläutert, warum die Zeit aktualisiert, anstatt die zuvor zwischengespeicherten Werte:
+8. Speichern Sie "Cache. xml".
+9. Aktualisieren Sie Ihren Browser. Was sagt die Zeit?
+10. Erläutern Sie, warum die Zeit aktualisiert wurde, statt die zuvor zwischengespeicherten Werte anzuzeigen:
 
-## <a name="lab-2-using-polling-based-cache-dependencies"></a>Übung 2: Verwenden von Abrufbasierten Cacheabhängigkeiten
+## <a name="lab-2-using-polling-based-cache-dependencies"></a>Lab 2: Verwenden von Abruf basierten Cache Abhängigkeiten
 
-Diese Übungseinheit wird das Projekt, das Sie im vorherigen Modul erstellt haben, die können für die Bearbeitung von Daten in der Northwind-Datenbank über ein GridView und DetailsView-Steuerelement, verwendet.
+In diesem Lab wird das Projekt verwendet, das Sie im vorherigen Modul erstellt haben, das die Bearbeitung von Daten in der Northwind-Datenbank über ein GridView-und DetailsView-Steuerelement ermöglicht.
 
 1. Öffnen Sie das Projekt in Visual Studio 2005.
-2. Führen Sie das Aspnet\_Regsql-Hilfsprogramm für die Northwind-Datenbank, um die Datenbank und die Products-Tabelle zu ermöglichen. Verwenden Sie den folgenden Befehl aus einer Visual Studio-Eingabeaufforderung ein: 
+2. Führen Sie das ASPNET\_RegSql-Hilfsprogramm für die Northwind-Datenbank aus, um die Datenbank und die Products-Tabelle zu aktivieren. Verwenden Sie den folgenden Befehl an einer Visual Studio-Eingabeaufforderung: 
 
     [!code-console[Main](caching/samples/sample18.cmd)]
-3. Fügen Sie Ihrer Datei "Web.config" Folgendes ein: 
+3. Fügen Sie der Datei "Web. config" Folgendes hinzu: 
 
     [!code-xml[Main](caching/samples/sample19.xml)]
-4. Fügen Sie eine neue Webform showdata.aspx aufgerufen.
-5. Fügen Sie auf der Seite "showdata.aspx" Folgendes @ Outputcache-Direktive hinzu: 
+4. Fügen Sie ein neues Webformular mit dem Namen "ShowData. aspx" hinzu.
+5. Fügen Sie die folgende @ OutputCache-Direktive zur ShowData. aspx-Seite hinzu: 
 
     [!code-aspx[Main](caching/samples/sample20.aspx)]
-6. Fügen Sie den folgenden Code auf der Seite\_Last showdata.aspx: 
+6. Fügen Sie den folgenden Code auf der Seite\_Laden von "ShowData. aspx" hinzu: 
 
     [!code-html[Main](caching/samples/sample21.html)]
-7. Showdata.aspx fügen Sie ein neues SqlDataSource-Steuerelement hinzu und konfigurieren Sie, dass die Verbindung zur Northwind-Datenbank verwendet. Klicken Sie auf Weiter.
-8. Aktivieren Sie die Kontrollkästchen, ProductName und "ProductID", und klicken Sie auf Weiter.
+7. Fügen Sie "ShowData. aspx" ein neues SqlDataSource-Steuerelement hinzu, und konfigurieren Sie es für die Verwendung der Datenbankverbindung Northwind. Klicken Sie auf Weiter.
+8. Aktivieren Sie die Kontrollkästchen ProductName und ProductID, und klicken Sie auf Weiter.
 9. Klicken Sie auf Fertigstellen.
-10. Hinzufügen einer neuen GridView-Ansicht auf der Seite "showdata.aspx".
-11. Wählen Sie SqlDataSource1 aus der Dropdownliste aus.
-12. Speichern und showdata.aspx durchsuchen. Notieren Sie die angezeigte Zeit.
+10. Fügen Sie der ShowData. aspx-Seite eine neue GridView hinzu.
+11. Wählen Sie in der Dropdown Liste SqlDataSource1 aus.
+12. Speichern und Durchsuchen Sie "ShowData. aspx". Notieren Sie sich die angezeigte Zeit.

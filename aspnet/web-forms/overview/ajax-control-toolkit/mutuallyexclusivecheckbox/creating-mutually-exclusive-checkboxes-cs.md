@@ -9,11 +9,11 @@ ms.assetid: 8e11b813-ba0d-4c29-b0f8-f65db6dbef1e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ddc154601752cc856f00dd4f3207952ab7e0e3e0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606510"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496785"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-c"></a>Erstellen von sich gegenseitig ausschließenden Kontrollkästchen (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Wenn nur eine Reihe von Optionen ausgewählt werden kann, werden normalerweise Options Felder verwendet. Es gibt jedoch einen Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist, ist es nicht möglich, alle Options Felder zu deaktivieren. Kontrollkästchen können jederzeit deaktiviert werden, schließen sich jedoch nicht gegenseitig aus. Dieses Tutorial bietet das Beste aus beiden Ansätzen: Kontrollkästchen, die sich gegenseitig ausschließen.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Wenn nur eine Reihe von Optionen ausgewählt werden kann, werden normalerweise Options Felder verwendet. Es gibt jedoch einen Nachteil: Sobald ein Optionsfeld in einer Gruppe ausgewählt ist, ist es nicht möglich, alle Options Felder zu deaktivieren. Kontrollkästchen können jederzeit deaktiviert werden, schließen sich jedoch nicht gegenseitig aus. Dieses Tutorial bietet das Beste aus beiden Ansätzen: Kontrollkästchen, die sich gegenseitig ausschließen.
 
@@ -50,4 +50,4 @@ Speichern Sie die Seite, und führen Sie Sie aus: Sie können beide Kontrollkäs
 Es kann jeweils nur ein Kontrollkästchen geprüft werden ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-mutually-exclusive-checkboxes-cs/_static/image3.png)).
 
 > [!div class="step-by-step"]
-> [Nächste](creating-mutually-exclusive-checkboxes-vb.md)
+> [Weiter](creating-mutually-exclusive-checkboxes-vb.md)

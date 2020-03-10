@@ -9,11 +9,11 @@ ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c0bf793406e378321f54f0460031c526a0b41a02
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611574"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496161"
 ---
 # <a name="creating-a-rating-control-c"></a>Erstellen eines Bewertungssteuerelements (C#)
 
@@ -23,7 +23,7 @@ von [Christian Wenz](https://github.com/wenz)
 
 > Viele Websites, von e-Commerce bis hin zu Communitysites, bieten ihren Benutzern die Bewertung von Artikeln oder Elementen. Dies erfordert in der Regel einen gewissen Codierungsaufwand, aber wir haben das steuerungstooltoolkit zur Verfügung.
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 Viele Websites, von e-Commerce bis hin zu Communitysites, bieten ihren Benutzern die Bewertung von Artikeln oder Elementen. Dies erfordert in der Regel einen gewissen Codierungsaufwand, aber wir haben das steuerungstooltoolkit zur Verfügung.
 
@@ -69,4 +69,4 @@ Speichern Sie die Seite, und laden Sie Sie in Ihren Browser. Wenn Sie mit dem Ma
 Erstellen eines Bewertungssystems mit minimalem Code ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-rating-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [Nächste](creating-a-rating-control-vb.md)
+> [Weiter](creating-a-rating-control-vb.md)

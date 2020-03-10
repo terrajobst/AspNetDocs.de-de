@@ -9,11 +9,11 @@ ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: df96f3e7422a0537bf1b003a33fe8d71a671ac33
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586219"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490401"
 ---
 # <a name="creating-a-business-logic-layer-c"></a>Erstellen einer Geschäftslogikebene (C#)
 
@@ -173,7 +173,7 @@ Beim Aufrufen der BLL von der Präsentationsebene können wir entscheiden, ob Si
 
 Wie wir in zukünftigen Tutorials sehen werden, kann das Behandeln von Ausnahmen, die beim Verwenden eines datenweb-Steuer Elements zum Einfügen, aktualisieren oder Löschen von Daten aus der BLL erfolgen, direkt in einem Ereignishandler behandelt werden, anstatt Code in `try...catch` Blöcken umschließen zu müssen.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Eine gut strukturierte Anwendung wird in unterschiedliche Ebenen integriert, von denen jede eine bestimmte Rolle kapselt. Im ersten Tutorial dieser Artikel Reihe haben wir eine Datenzugriffs Schicht mithilfe typisierter Datasets erstellt. in diesem Tutorial haben wir eine Geschäftslogik Schicht als eine Reihe von Klassen in den `App_Code` Ordner der Anwendung erstellt, die die DAL aufzurufen. Die BLL implementiert die Logik auf Feldebene und auf Geschäfts Ebene für die Anwendung. Zusätzlich zum Erstellen einer separaten BLL, wie in diesem Tutorial, besteht auch die Möglichkeit, die TableAdapters-Methoden durch die Verwendung von partiellen Klassen zu erweitern. Mit dieser Technik können wir jedoch weder vorhandene Methoden außer Kraft setzen noch die DAL und unsere BLL so sauber wie den Ansatz, den wir in diesem Artikel durchgeführt haben.
 
@@ -181,7 +181,7 @@ Wenn dal und BLL abgeschlossen sind, sind wir bereit, auf der Präsentationsschi
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 

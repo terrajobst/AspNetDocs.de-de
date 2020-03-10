@@ -9,11 +9,11 @@ ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
 ms.openlocfilehash: cdcb3578725c41e3c801afd54e6d34455bc4b281
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618536"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517281"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>ASP.net-Webbereitstellung mithilfe von Visual Studio: Vorbereiten der Daten Bank Bereitstellung
 
@@ -23,7 +23,7 @@ von [Tom Dykstra](https://github.com/tdykstra)
 
 > In dieser tutorialreihe erfahren Sie, wie Sie eine ASP.NET-Webanwendung bereitstellen (veröffentlichen), um Web-Apps oder einen Drittanbieter-Hostinganbieter mithilfe von Visual Studio 2012 oder Visual Studio 2010 zu Azure App Service. Weitere Informationen zur Reihe finden Sie [im ersten Tutorial der Reihe](introduction.md).
 
-## <a name="overview"></a>Übersicht über
+## <a name="overview"></a>Übersicht
 
 In diesem Tutorial wird gezeigt, wie Sie das Projekt für die Daten Bank Bereitstellung vorbereiten. Die Datenbankstruktur und einige (nicht alle) Daten in den beiden Datenbanken der Anwendung müssen für Test-, Staging-und Produktionsumgebungen bereitgestellt werden.
 
@@ -212,7 +212,7 @@ Da Sie das Projekt nicht mit der Produktionsdatenbank ausgeführt haben, ist es 
 3. Klicken Sie auf **OK**.
 4. Befolgen Sie das Verfahren, das Sie zuvor zum Erstellen eines Skripts für die Produktions Datei verwendet haben. Benennen Sie die Skriptdatei *ASPNET-Data-Prod. SQL*.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Beide Datenbanken können jetzt bereitgestellt werden, und Sie verfügen über zwei Skripts zur Datenbereitstellung in Ihrem Projektmappenordner.
 

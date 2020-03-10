@@ -9,11 +9,11 @@ ms.assetid: 041854a5-ea8c-4de0-82f1-121ba6cb2893
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4a7474676b8f502c583e226678de2b275e0ea3c7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590631"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517731"
 ---
 # <a name="unlocking-and-approving-user-accounts-vb"></a>Entsperren und Genehmigen von Benutzerkonten (VB)
 
@@ -174,7 +174,7 @@ Abbildung 7 zeigt die `Verification.aspx` Seite, wenn Sie über einen Browser be
 
 **Abbildung 7**: das neue Benutzerkonto ist nun genehmigt ([Klicken Sie, um das Bild in voller Größe anzuzeigen](unlocking-and-approving-user-accounts-vb/_static/image21.png))
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Alle Mitgliedschafts Benutzerkonten haben zwei Statuswerte, die bestimmen, ob sich der Benutzer bei der Website anmelden kann: `IsLockedOut` und `IsApproved`. Beide Eigenschaften müssen für den Benutzer `True` werden, damit Sie sich anmelden können.
 
@@ -184,7 +184,7 @@ Der genehmigte Status wird häufig als Mittel verwendet, um zu verhindern, dass 
 
 Fröhliche Programmierung!
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -193,4 +193,4 @@ Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRo
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, löschen Sie eine Zeile bei [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Vorheriges](recovering-and-changing-passwords-vb.md)
+> [Previous](recovering-and-changing-passwords-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: 113f10b3-a19a-471b-8ff6-db3c79ce8a91
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a7883d0b05f2fa5a3fdac887f8c8b39d70418fb3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595773"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520065"
 ---
 # <a name="creating-and-managing-roles-c"></a>Erstellen und Verwalten von Rollen (C#)
 
@@ -31,7 +31,7 @@ In der Regel ist es hilfreich, Benutzer in Gruppen oder *Rollen* zu klassifizier
 
 ASP.net bietet ein Rollen Framework zum Definieren von Rollen und zum Zuordnen der Rollen zu Benutzerkonten. Mit dem Rollen Framework können wir Rollen erstellen und löschen, Benutzer zu einer Rolle hinzufügen oder aus einer Rolle entfernen, den Satz von Benutzern ermitteln, die zu einer bestimmten Rolle gehören, und feststellen, ob ein Benutzer zu einer bestimmten Rolle gehört. Nachdem das Rollen Framework konfiguriert wurde, können wir den Zugriff auf Seiten auf Rollen Basis über URL-Autorisierungs Regeln einschränken und zusätzliche Informationen oder Funktionen auf einer Seite auf der Grundlage der aktuell angemeldeten Benutzer Rollen anzeigen oder ausblenden.
 
-In diesem Tutorial werden die erforderlichen Schritte zum Konfigurieren des Rollen-Frameworks erläutert. Danach erstellen wir Webseiten, mit denen Rollen erstellt und gelöscht werden. <a id="_msoanchor_2"> </a>Im Tutorial [*Zuweisen von Rollen zu Benutzern*](assigning-roles-to-users-cs.md) wird erläutert, wie Sie Benutzer zu Rollen hinzufügen und daraus entfernen. Im <a id="_msoanchor_3"> </a>Tutorial zur [*rollenbasierten Autorisierung*](role-based-authorization-cs.md) erfahren Sie, wie Sie den Zugriff auf Seiten auf Rollen Basis beschränken und wie Sie die Seiten Funktionalität abhängig von der Rolle des Besuchs Benutzers anpassen. Fangen wir an!
+In diesem Tutorial werden die erforderlichen Schritte zum Konfigurieren des Rollen-Frameworks erläutert. Danach erstellen wir Webseiten, mit denen Rollen erstellt und gelöscht werden. <a id="_msoanchor_2"> </a>Im Tutorial [*Zuweisen von Rollen zu Benutzern*](assigning-roles-to-users-cs.md) wird erläutert, wie Sie Benutzer zu Rollen hinzufügen und daraus entfernen. Im <a id="_msoanchor_3"> </a>Tutorial zur [*rollenbasierten Autorisierung*](role-based-authorization-cs.md) erfahren Sie, wie Sie den Zugriff auf Seiten auf Rollen Basis beschränken und wie Sie die Seiten Funktionalität abhängig von der Rolle des Besuchs Benutzers anpassen. Erste Schritte
 
 ## <a name="step-1-adding-new-aspnet-pages"></a>Schritt 1: Hinzufügen neuer ASP.NET Seiten
 
@@ -218,7 +218,7 @@ Der Code beginnt mit einem programmgesteuerten Verweis auf das `RoleNameLabel`-w
 > [!NOTE]
 > Die Schaltfläche Rolle löschen erfordert keine Bestätigung vom Benutzer, bevor die Rolle gelöscht wird. Eine der einfachsten Möglichkeiten, eine Aktion zu bestätigen, ist das Dialogfeld Client seitiges bestätigen. Weitere Informationen zu dieser Technik finden Sie unter [Hinzufügen der Client seitigen Bestätigung beim Löschen](https://asp.net/learn/data-access/tutorial-42-cs.aspx).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 Viele Webanwendungen verfügen über bestimmte Autorisierungs Regeln oder Funktionen auf Seitenebene, die nur für bestimmte Benutzer Klassen verfügbar sind. Beispielsweise kann eine Gruppe von Webseiten vorhanden sein, auf die nur Administratoren zugreifen können. Anstatt diese Autorisierungs Regeln auf Benutzerbasis zu definieren, empfiehlt es sich, die Regeln basierend auf einer Rolle zu definieren. Das heißt, dass Benutzer Scott und jisun nicht explizit auf die administrativen Webseiten zugreifen können. ein besser verwaltbarerer Ansatz besteht darin, Mitgliedern der Administrator Rolle den Zugriff auf diese Seiten zu gestatten und dann Scott und jisun als Benutzer anzugeben, die zum Administrator Rolle.
 
@@ -226,7 +226,7 @@ Das Rollen Framework erleichtert das Erstellen und Verwalten von Rollen. In dies
 
 Fröhliche Programmierung!
 
-### <a name="further-reading"></a>Weiterführende Themen
+### <a name="further-reading"></a>Weitere nützliche Informationen
 
 Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in den folgenden Ressourcen:
 
@@ -237,7 +237,7 @@ Weitere Informationen zu den in diesem Tutorial behandelten Themen finden Sie in
 - [Technische Dokumentation für das `<roleManager>`-Element](https://msdn.microsoft.com/library/ms164660.aspx)
 - [Verwenden der Mitgliedschafts-und Rollen-Manager-APIs](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/membership.aspx)
 
-### <a name="about-the-author"></a>Informationen zum Autor
+### <a name="about-the-author"></a>Zum Autor
 
 Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRolla.com, hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist *[Sams Teach Yourself ASP.NET 2,0 in 24 Stunden](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* . Scott kann über [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com) oder über seinen Blog unter [http://ScottOnWriting.NET](http://scottonwriting.net/)erreicht werden.
 
@@ -246,4 +246,4 @@ Scott Mitchell, Autor mehrerer ASP/ASP. net-Bücher und Gründer von 4GuysFromRo
 Diese tutorialreihe wurde von vielen hilfreichen Reviewern geprüft. Zu den führenden Reviewern für dieses Tutorial zählen Alicja Maziarz, Suchi Banerjee und Teresa Murphy. Möchten Sie meine bevorstehenden MSDN-Artikel überprüfen? Wenn dies der Fall ist, löschen Sie eine Zeile bei [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [Nächste](assigning-roles-to-users-cs.md)
+> [Weiter](assigning-roles-to-users-cs.md)

@@ -10,28 +10,28 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-s
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 5671e4f0123ca2b0cb5314336cf4411467feac70
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600485"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431619"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>Tutorial: Echt Zeit Chat mit signalr 2 und MVC 5
 
 In diesem Tutorial wird gezeigt, wie ASP.net signalr 2 verwendet wird, um eine echt Zeit Chat-Anwendung zu erstellen. Sie können signalr zu einer MVC 5-Anwendung hinzufügen und eine Chat Ansicht erstellen, um Nachrichten zu senden und anzuzeigen.
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts
-> * Beispielausführung
+> * Ausführen des Beispiels
 > * Untersuchen des Codes
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>Erforderliche Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der Arbeitsauslastung **ASP.net und Webentwicklung** .
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) mit der Workload **ASP.NET und Webentwicklung**
 
 ## <a name="set-up-the-project"></a>Einrichten des Projekts
 
@@ -111,7 +111,7 @@ In diesem Abschnitt wird gezeigt, wie Sie mit Visual Studio 2017 und signalr 2 e
 
 1. Aktivieren Sie auf der Symbolleiste das **Skript Debugging** , und wählen Sie dann die Schaltfläche wiedergeben aus, um das Beispiel im Debugmodus auszuführen.
 
-    ![Benutzernamen eingeben](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
+    ![Benutzername eingeben](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
 
 1. Wenn der Browser geöffnet wird, geben Sie einen Namen für Ihre Chat Identität ein.
 
@@ -180,7 +180,7 @@ Der Code startet die Verbindung und übergibt dann eine Funktion, um das Click-E
 
 [Herunterladen des abgeschlossenen Projekts](https://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
 
-## <a name="additional-resources"></a>Weitere Ressourcen
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Weitere Informationen zu signalr finden Sie in den folgenden Ressourcen:
 
@@ -192,7 +192,7 @@ Weitere Informationen zu signalr finden Sie in den folgenden Ressourcen:
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-In diesem Tutorial:
+In diesem Tutorial führen Sie Folgendes durch:
 
 > [!div class="checklist"]
 > * Einrichten des Projekts

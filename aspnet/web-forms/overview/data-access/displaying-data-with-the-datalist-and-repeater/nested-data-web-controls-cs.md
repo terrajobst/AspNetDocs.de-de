@@ -9,11 +9,11 @@ ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8ef15bebb2c29976274b0cca1d6ace434ccc55ce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640295"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481269"
 ---
 # <a name="nested-data-web-controls-c"></a>Geschachtelte Datenwebsteuerelemente (C#)
 
@@ -145,7 +145,7 @@ Durch diese Erweiterung werden keine Änderungen am gerenderten Markup der Seite
 
 Wie immer, wenn es um die Analyse der Leistung von zwei Techniken geht, besteht das einzige Surefire-Measure darin, gesteuerte Tests auszuführen, die auf gängige Fallszenarien Ihrer Anwendung zugeschnitten sind.
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie erfahren, wie Sie ein datenweb Steuerelement in einem anderen schachteln können. dabei wird erläutert, wie ein äußerer Repeater ein Element für jede Kategorie mit einem inneren Repeater anzeigt, in dem die Produkte für jede Kategorie in einer Auflistungs Liste aufgelistet werden. Die größte Herausforderung beim Aufbau einer geschachtelten Benutzeroberfläche besteht darin, auf die richtigen Daten zuzugreifen und diese an das innere datenweb Steuerelement zu binden. Es stehen eine Vielzahl von Techniken zur Verfügung, von denen zwei in diesem Tutorial untersucht wurden. Der erste Ansatz, der untersucht wurde, verwendete ObjectDataSource im Outer Data Web Control s-`ItemTemplate`, das über seine `DataSourceID`-Eigenschaft an das innere Daten-websteuer Element gebunden war. Das zweite Verfahren hat über eine Methode in der Code Behind-Klasse der ASP.NET-Seite auf die Daten zugegriffen. Diese Methode kann dann über die Datenbindung-Syntax an die `DataSource` Eigenschaft des inneren Daten-websteuer Elements gebunden werden.
 
@@ -153,7 +153,7 @@ Obwohl die geschachtelte Benutzeroberfläche, die in diesem Tutorial überprüft
 
 Fröhliche Programmierung!
 
-## <a name="about-the-author"></a>Informationen zum Autor
+## <a name="about-the-author"></a>Zum Autor
 
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor der sieben ASP/ASP. net-Bücher und Gründer von [4GuysFromRolla.com](http://www.4guysfromrolla.com), hat seit 1998 mit Microsoft-Webtechnologien gearbeitet. Scott arbeitet als unabhängiger Berater, Ausbilder und Writer. Sein letztes Buch ist [*Sams Teach Yourself ASP.NET 2,0 in 24 Stunden*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Er kann übermitchell@4GuysFromRolla.comerreicht werden [.](mailto:mitchell@4GuysFromRolla.com) oder über seinen Blog finden Sie unter [http://ScottOnWriting.NET](http://ScottOnWriting.NET).
 
