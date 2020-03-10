@@ -1,27 +1,27 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/index
-title: ASP.NET 4 – Entitätsframework 4 und Web Forms fortsetzen | Microsoft-Dokumentation
+title: 'ASP.NET 4: fortfahren mit Entity Framework 4 und Web Forms | Microsoft-Dokumentation'
 author: rick-anderson
-description: 'Gewusst wie: Erstellen der Contoso U-Anwendung als n-schichtige Anwendung mit dem ObjectDataSource-Steuerelement und das Behandeln der Parallelität und Leistung zu maximieren.'
+description: Erfahren Sie, wie Sie die Anwendung "Configuration Manager" mit dem ObjectDataSource-Steuerelement als n-Tier-Anwendung erstellen und die Parallelität behandeln und die Leistung maximieren.
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 25a6b7ba-e374-4c3f-9e53-83f665cfdd21
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef
 msc.type: chapter
 ms.openlocfilehash: a1c149bcc6efad712529bea21f4f13d8b05260d7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108429"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517437"
 ---
-# <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="7d1bb-103">ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)</span><span class="sxs-lookup"><span data-stu-id="7d1bb-103">ASP.NET 4 - Continuing with Entity Framework 4 and Web Forms</span></span>
+# <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="4aace-103">ASP.NET 4 – Entity Framework 4 und Web Forms (Fortsetzung)</span><span class="sxs-lookup"><span data-stu-id="4aace-103">ASP.NET 4 - Continuing with Entity Framework 4 and Web Forms</span></span>
 
-> <span data-ttu-id="7d1bb-104">Gewusst wie: Erstellen der Contoso U-Anwendung als n-schichtige Anwendung mit dem ObjectDataSource-Steuerelement und das Behandeln der Parallelität und Leistung zu maximieren.</span><span class="sxs-lookup"><span data-stu-id="7d1bb-104">How to build the Contoso U application as an n-tier application using the ObjectDataSource control and how to handle concurrency and maximize performance.</span></span>
+> <span data-ttu-id="4aace-104">Erfahren Sie, wie Sie die Anwendung "Configuration Manager" mit dem ObjectDataSource-Steuerelement als n-Tier-Anwendung erstellen und die Parallelität behandeln und die Leistung maximieren.</span><span class="sxs-lookup"><span data-stu-id="4aace-104">How to build the Contoso U application as an n-tier application using the ObjectDataSource control and how to handle concurrency and maximize performance.</span></span>
 
-- [<span data-ttu-id="7d1bb-105">Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte</span><span class="sxs-lookup"><span data-stu-id="7d1bb-105">Entity Framework 4.0 and the ObjectDataSource Control, Part 1: Getting Started</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-- [<span data-ttu-id="7d1bb-106">Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und Komponententests</span><span class="sxs-lookup"><span data-stu-id="7d1bb-106">Entity Framework 4.0 and the ObjectDataSource Control, Part 2: Adding a Business Logic Layer and Unit Tests</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-- [<span data-ttu-id="7d1bb-107">Entitätsframework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern</span><span class="sxs-lookup"><span data-stu-id="7d1bb-107">Entity Framework 4.0 and the ObjectDataSource Control, Part 3: Sorting and Filtering</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
-- [<span data-ttu-id="7d1bb-108">Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4</span><span class="sxs-lookup"><span data-stu-id="7d1bb-108">Handling Concurrency with the Entity Framework 4.0 in ASP.NET 4</span></span>](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
-- [<span data-ttu-id="7d1bb-109">Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4</span><span class="sxs-lookup"><span data-stu-id="7d1bb-109">Maximizing Performance with the Entity Framework 4.0 in ASP.NET 4</span></span>](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
-- [<span data-ttu-id="7d1bb-110">Neue Funktionen in Entity Framework 4.0</span><span class="sxs-lookup"><span data-stu-id="7d1bb-110">What's New in the Entity Framework 4.0</span></span>](what-s-new-in-the-entity-framework-4.md)
+- [<span data-ttu-id="4aace-105">Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 1: Erste Schritte</span><span class="sxs-lookup"><span data-stu-id="4aace-105">Entity Framework 4.0 and the ObjectDataSource Control, Part 1: Getting Started</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+- [<span data-ttu-id="4aace-106">Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 2: Hinzufügen einer Geschäftslogikebene und von Komponententests</span><span class="sxs-lookup"><span data-stu-id="4aace-106">Entity Framework 4.0 and the ObjectDataSource Control, Part 2: Adding a Business Logic Layer and Unit Tests</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+- [<span data-ttu-id="4aace-107">Entity Framework 4.0 und ObjectDataSource-Steuerelement, Teil 3: Sortieren und Filtern</span><span class="sxs-lookup"><span data-stu-id="4aace-107">Entity Framework 4.0 and the ObjectDataSource Control, Part 3: Sorting and Filtering</span></span>](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+- [<span data-ttu-id="4aace-108">Verarbeiten von Parallelität bei Entity Framework 4.0 in ASP.NET 4</span><span class="sxs-lookup"><span data-stu-id="4aace-108">Handling Concurrency with the Entity Framework 4.0 in ASP.NET 4</span></span>](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
+- [<span data-ttu-id="4aace-109">Maximieren der Leistung bei Entity Framework 4.0 in ASP.NET 4</span><span class="sxs-lookup"><span data-stu-id="4aace-109">Maximizing Performance with the Entity Framework 4.0 in ASP.NET 4</span></span>](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+- [<span data-ttu-id="4aace-110">Neue Funktionen in Entity Framework 4.0</span><span class="sxs-lookup"><span data-stu-id="4aace-110">What's New in the Entity Framework 4.0</span></span>](what-s-new-in-the-entity-framework-4.md)

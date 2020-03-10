@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
-title: Visual Studio 2008 und geschachtelte Masterseiten | Microsoft-Dokumentation
+title: Visual Studio 2008 und vornist Master Pages | Microsoft-Dokumentation
 author: JoeStagner
-description: Ich werden können, dass eine Webvorlage aus oswd.org veranschaulichen die Verwendung der Masterseiten und wie sie in Visual Studio 2008 unterstützt werden. Insbesondere zeige ich, te...
+description: Ich verwende eine Webvorlage aus oswd.org, um die Verwendung von Master Seiten und deren Unterstützung in Visual Studio 2008 zu veranschaulichen. Insbesondere zeige ich Ihnen...
 ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: 18637656-3733-4549-b365-94652c596a7b
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
 msc.type: video
 ms.openlocfilehash: 8f841fb02677c12930a0298a5a99a3556bcf50ef
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412241"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462429"
 ---
-# <a name="visual-studio-2008-and-nested-masterpages"></a><span data-ttu-id="6a11a-104">Visual Studio 2008 und geschachtelte Masterseiten</span><span class="sxs-lookup"><span data-stu-id="6a11a-104">Visual Studio 2008 and Nested Masterpages</span></span>
+# <a name="visual-studio-2008-and-nested-masterpages"></a><span data-ttu-id="4b394-104">Visual Studio 2008 und geschachtelte Masterseiten</span><span class="sxs-lookup"><span data-stu-id="4b394-104">Visual Studio 2008 and Nested Masterpages</span></span>
 
-<span data-ttu-id="6a11a-105">durch [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="6a11a-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="4b394-105">von [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="4b394-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="6a11a-106">Ich werden können, dass eine Webvorlage aus oswd.org veranschaulichen die Verwendung der Masterseiten und wie sie in Visual Studio 2008 unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="6a11a-106">I will use a web template from oswd.org to demonstrate the use of Master Pages and how they are supported in Visual Studio 2008.</span></span> <span data-ttu-id="6a11a-107">Insbesondere zeige ich die Vererbungsfeatures mithilfe von zwei Masterseiten.</span><span class="sxs-lookup"><span data-stu-id="6a11a-107">Specifically, I will show the inheritance features by using two Master Pages.</span></span>
+<span data-ttu-id="4b394-106">Ich verwende eine Webvorlage aus oswd.org, um die Verwendung von Master Seiten und deren Unterstützung in Visual Studio 2008 zu veranschaulichen.</span><span class="sxs-lookup"><span data-stu-id="4b394-106">I will use a web template from oswd.org to demonstrate the use of Master Pages and how they are supported in Visual Studio 2008.</span></span> <span data-ttu-id="4b394-107">Insbesondere werden die Vererbungs Features mithilfe von zwei Master Seiten angezeigt.</span><span class="sxs-lookup"><span data-stu-id="4b394-107">Specifically, I will show the inheritance features by using two Master Pages.</span></span>
 
-[<span data-ttu-id="6a11a-108">&#9654;Sehen Sie sich Video (13 Minuten)</span><span class="sxs-lookup"><span data-stu-id="6a11a-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2008-and-nested-masterpages)
+[<span data-ttu-id="4b394-108">&#9654;Video ansehen (13 Minuten)</span><span class="sxs-lookup"><span data-stu-id="4b394-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2008-and-nested-masterpages)

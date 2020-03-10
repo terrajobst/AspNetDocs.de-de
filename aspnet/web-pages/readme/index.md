@@ -2,20 +2,20 @@
 uid: web-pages/readme/index
 title: WebMatrix Readme | Microsoft Docs
 author: rick-anderson
-description: WebMatrix und ASP.NET Web Pages (Razor) Version 1.0-Infodatei
+description: Webmatrix und ASP.net Web Pages (Razor) 1,0 Release-Info
 ms.author: riande
 ms.date: 01/06/2011
 ms.assetid: 9ded2fdb-ac4c-448f-9774-10bff657514c
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 197aadb65bb68d8cdb9d32ff5f98104de366447d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407795"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517287"
 ---
-# <a name="webmatrix-readme"></a><span data-ttu-id="b6133-103">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="b6133-103">WebMatrix Readme</span></span>
+# <a name="webmatrix-readme"></a><span data-ttu-id="23e2f-103">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="23e2f-103">WebMatrix Readme</span></span>
 
-- [<span data-ttu-id="b6133-104">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="b6133-104">WebMatrix Readme</span></span>](overview.md)
-- [<span data-ttu-id="b6133-105">Infodatei für das Release WebMatrix und ASP.NET Web Pages (Razor) Beta 3</span><span class="sxs-lookup"><span data-stu-id="b6133-105">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>](beta3.md)
+- [<span data-ttu-id="23e2f-104">WebMatrix-Infodatei</span><span class="sxs-lookup"><span data-stu-id="23e2f-104">WebMatrix Readme</span></span>](overview.md)
+- [<span data-ttu-id="23e2f-105">Infodatei für das Release WebMatrix und ASP.NET Web Pages (Razor) Beta 3</span><span class="sxs-lookup"><span data-stu-id="23e2f-105">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>](beta3.md)
