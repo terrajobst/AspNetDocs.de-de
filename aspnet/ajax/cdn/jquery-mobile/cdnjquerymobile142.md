@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-mobile/cdnjquerymobile142
-title: jQuery Mobile 1.4.2 für das Microsoft Ajax CDN | Microsoft-Dokumentation
+title: jQuery Mobile 1.4.2 für das Microsoft AJAX CDN | Microsoft-Dokumentation
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,15 +9,15 @@ ms.assetid: cf0c0d88-33b1-465c-a7f7-7928cacac9fa
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile142
 msc.type: content
 ms.openlocfilehash: 23b5aa7755e4bd5b1d771eb6c178994f354cd842
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59405000"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78453627"
 ---
-# <a name="jquery-mobile-142-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="db84c-102">jQuery Mobile 1.4.2 für das Microsoft AJAX CDN</span><span class="sxs-lookup"><span data-stu-id="db84c-102">jQuery Mobile 1.4.2 on the Microsoft Ajax CDN</span></span>
+# <a name="jquery-mobile-142-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="54715-102">jQuery Mobile 1.4.2 für das Microsoft AJAX CDN</span><span class="sxs-lookup"><span data-stu-id="54715-102">jQuery Mobile 1.4.2 on the Microsoft Ajax CDN</span></span>
 
-<span data-ttu-id="db84c-103">JQuery Mobile 1.4.2-Bibliothek enthält die folgenden Dateien:</span><span class="sxs-lookup"><span data-stu-id="db84c-103">The jQuery Mobile 1.4.2 library includes the following files:</span></span>
+<span data-ttu-id="54715-103">Die jQuery Mobile 1.4.2-Bibliothek umfasst die folgenden Dateien:</span><span class="sxs-lookup"><span data-stu-id="54715-103">The jQuery Mobile 1.4.2 library includes the following files:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile.structure-1.4.2.css
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css

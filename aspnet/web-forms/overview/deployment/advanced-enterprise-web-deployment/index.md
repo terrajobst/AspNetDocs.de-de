@@ -1,30 +1,30 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/index
-title: ASP.NET 4 – Unternehmensbereitstellung Serie 4 Weiterführende Themen | Microsoft-Dokumentation
+title: ASP.NET 4-Enterprise Deployment Series 4 Advanced Topics | Microsoft-Dokumentation
 author: rick-anderson
-description: In diesem Tutorial erfahren Sie, wie Sie verschiedene Aufgaben ausführen, die erforderlich oder wünschenswert ist, eine Vielzahl von Bereitstellungsszenarios.
+description: In diesem Tutorial wird gezeigt, wie Sie verschiedene Aufgaben durchführen, die in vielen Szenarien für die Unternehmens Bereitstellung erforderlich oder erwünscht sind.
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: eacf0e3a-c2e9-4f77-a676-249146f393e8
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment
 msc.type: chapter
 ms.openlocfilehash: f72ec780623b4240762f35e479b36895db42cee0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127113"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464127"
 ---
-# <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="c9514-103">ASP.NET 4 – Unternehmensbereitstellung Serie 4: Weiterführende Themen</span><span class="sxs-lookup"><span data-stu-id="c9514-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
+# <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="b9efe-103">ASP.NET 4 – Unternehmensbereitstellung Serie 4: Weiterführende Themen</span><span class="sxs-lookup"><span data-stu-id="b9efe-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
 
-> <span data-ttu-id="c9514-104">In diesem Tutorial erfahren Sie, wie Sie verschiedene Aufgaben ausführen, die erforderlich oder wünschenswert ist, eine Vielzahl von Bereitstellungsszenarios.</span><span class="sxs-lookup"><span data-stu-id="c9514-104">This tutorial will show you how to perform various tasks that are required or desirable in a lot of enterprise deployment scenarios.</span></span>
+> <span data-ttu-id="b9efe-104">In diesem Tutorial wird gezeigt, wie Sie verschiedene Aufgaben durchführen, die in vielen Szenarien für die Unternehmens Bereitstellung erforderlich oder erwünscht sind.</span><span class="sxs-lookup"><span data-stu-id="b9efe-104">This tutorial will show you how to perform various tasks that are required or desirable in a lot of enterprise deployment scenarios.</span></span>
 
-- [<span data-ttu-id="c9514-105">Erweiterte webbasierte Unternehmensbereitstellung</span><span class="sxs-lookup"><span data-stu-id="c9514-105">Advanced Enterprise Web Deployment</span></span>](advanced-enterprise-web-deployment.md)
-- [<span data-ttu-id="c9514-106">Durchführen einer simulierten Bereitstellung</span><span class="sxs-lookup"><span data-stu-id="c9514-106">Performing a "What If" Deployment</span></span>](performing-a-what-if-deployment.md)
-- [<span data-ttu-id="c9514-107">Anpassen von Datenbankbereitstellungen für mehrere Umgebungen</span><span class="sxs-lookup"><span data-stu-id="c9514-107">Customizing Database Deployments for Multiple Environments</span></span>](customizing-database-deployments-for-multiple-environments.md)
-- [<span data-ttu-id="c9514-108">Bereitstellen von Datenbankrollenmitgliedschaften in Testumgebungen</span><span class="sxs-lookup"><span data-stu-id="c9514-108">Deploying Database Role Memberships to Test Environments</span></span>](deploying-database-role-memberships-to-test-environments.md)
-- [<span data-ttu-id="c9514-109">Bereitstellen von Datenbankrollenmitgliedschaften in Unternehmensumgebungen</span><span class="sxs-lookup"><span data-stu-id="c9514-109">Deploying Membership Databases to Enterprise Environments</span></span>](deploying-membership-databases-to-enterprise-environments.md)
-- [<span data-ttu-id="c9514-110">Ausschließen von Dateien und Ordnern von der Bereitstellung</span><span class="sxs-lookup"><span data-stu-id="c9514-110">Excluding Files and Folders from Deployment</span></span>](excluding-files-and-folders-from-deployment.md)
-- [<span data-ttu-id="c9514-111">Offlineschalten von Webanwendungen mit Web Deploy</span><span class="sxs-lookup"><span data-stu-id="c9514-111">Taking Web Applications Offline with Web Deploy</span></span>](taking-web-applications-offline-with-web-deploy.md)
-- [<span data-ttu-id="c9514-112">Ausführen von Windows PowerShell-Skripts aus MSBuild-Projektdateien</span><span class="sxs-lookup"><span data-stu-id="c9514-112">Running Windows PowerShell Scripts from MSBuild Project Files</span></span>](running-windows-powershell-scripts-from-msbuild-project-files.md)
-- [<span data-ttu-id="c9514-113">Behandeln von Problemen mit dem Paketerstellungsprozess</span><span class="sxs-lookup"><span data-stu-id="c9514-113">Troubleshooting the Packaging Process</span></span>](troubleshooting-the-packaging-process.md)
+- [<span data-ttu-id="b9efe-105">Erweiterte webbasierte Unternehmensbereitstellung</span><span class="sxs-lookup"><span data-stu-id="b9efe-105">Advanced Enterprise Web Deployment</span></span>](advanced-enterprise-web-deployment.md)
+- [<span data-ttu-id="b9efe-106">Durchführen einer simulierten Bereitstellung</span><span class="sxs-lookup"><span data-stu-id="b9efe-106">Performing a "What If" Deployment</span></span>](performing-a-what-if-deployment.md)
+- [<span data-ttu-id="b9efe-107">Anpassen von Datenbankbereitstellungen für mehrere Umgebungen</span><span class="sxs-lookup"><span data-stu-id="b9efe-107">Customizing Database Deployments for Multiple Environments</span></span>](customizing-database-deployments-for-multiple-environments.md)
+- [<span data-ttu-id="b9efe-108">Bereitstellen von Datenbankrollenmitgliedschaften in Testumgebungen</span><span class="sxs-lookup"><span data-stu-id="b9efe-108">Deploying Database Role Memberships to Test Environments</span></span>](deploying-database-role-memberships-to-test-environments.md)
+- [<span data-ttu-id="b9efe-109">Bereitstellen von Datenbankrollenmitgliedschaften in Unternehmensumgebungen</span><span class="sxs-lookup"><span data-stu-id="b9efe-109">Deploying Membership Databases to Enterprise Environments</span></span>](deploying-membership-databases-to-enterprise-environments.md)
+- [<span data-ttu-id="b9efe-110">Ausschließen von Dateien und Ordnern von der Bereitstellung</span><span class="sxs-lookup"><span data-stu-id="b9efe-110">Excluding Files and Folders from Deployment</span></span>](excluding-files-and-folders-from-deployment.md)
+- [<span data-ttu-id="b9efe-111">Offlineschalten von Webanwendungen mit Web Deploy</span><span class="sxs-lookup"><span data-stu-id="b9efe-111">Taking Web Applications Offline with Web Deploy</span></span>](taking-web-applications-offline-with-web-deploy.md)
+- [<span data-ttu-id="b9efe-112">Ausführen von Windows PowerShell-Skripts aus MSBuild-Projektdateien</span><span class="sxs-lookup"><span data-stu-id="b9efe-112">Running Windows PowerShell Scripts from MSBuild Project Files</span></span>](running-windows-powershell-scripts-from-msbuild-project-files.md)
+- [<span data-ttu-id="b9efe-113">Behandeln von Problemen mit dem Paketerstellungsprozess</span><span class="sxs-lookup"><span data-stu-id="b9efe-113">Troubleshooting the Packaging Process</span></span>](troubleshooting-the-packaging-process.md)
